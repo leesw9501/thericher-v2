@@ -32,6 +32,7 @@ KIS, credentials, or real order submission.
    - `AGENTS.md`
    - `DECISIONS.md`
    - `RUNBOOK.md`
+   - `agents/README.md`
 2. Ask Claude CLI for a short drift-check before architecture-changing edits.
 3. Implement a small local paper execution layer:
    - order lifecycle contracts for submitted, accepted, filled, rejected, and

@@ -23,6 +23,9 @@ Before changing architecture, promotion rules, or agent governance, ask Claude
 CLI for a short drift-check and judge it against `HANDOFF.md`,
 `ARCHITECTURE.md`, and `DECISIONS.md`.
 
+Check `agents/README.md` for the current lane stateboards. Use the relevant
+agent file for active queues, held resources, running jobs, and handoff notes.
+
 Before ending a long task:
 
 - run the relevant verification commands,

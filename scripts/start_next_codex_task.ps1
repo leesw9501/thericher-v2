@@ -32,6 +32,7 @@ $required = @(
     "AGENTS.md",
     "DECISIONS.md",
     "RUNBOOK.md",
+    "agents/README.md",
     "INTERIM_GOAL_SCRIPT.md"
 )
 
@@ -66,6 +67,12 @@ Write-Host ""
 
 Write-Host "== Completion handoff rule =="
 Write-Host "Before ending a long task, refresh NEXT_CODEX_GOAL.md with the next single objective."
+Write-Host ""
+
+Write-Host "== Agent stateboards =="
+Get-ChildItem -LiteralPath "agents" -Filter "*.md" |
+    Sort-Object Name |
+    ForEach-Object { Write-Host ("ok agents/{0}" -f $_.Name) }
 Write-Host ""
 
 Write-Host "== Active next Codex objective =="

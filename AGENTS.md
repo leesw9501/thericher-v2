@@ -34,7 +34,7 @@ Direction reviewer and drift brake.
 - Does not own implementation.
 - Challenges anything that recreates the v1 report/gate sprawl.
 
-### Strategy Agent
+### Engine Research Agent
 
 Owns research and model quality. This is also the engine research/development
 agent for features, strategy logic, and GPU model experiments.
@@ -44,6 +44,17 @@ agent for features, strategy logic, and GPU model experiments.
 - Keeps the single GPU busy by default once GPU research exists, using bounded
   training and validation jobs that write artifacts outside Git.
 - Cannot modify broker submit code.
+
+### Data Agent
+
+Owns market-data correctness.
+
+- Provider interfaces, local caches, calendars, symbol metadata, resampling,
+  and data-quality warnings.
+- Cannot call KIS APIs or read credentials until a future explicit goal allows
+  it.
+- Cannot create research-blocking data gates unless they are true execution
+  hard stops.
 
 ### Execution Agent
 
@@ -76,6 +87,30 @@ Agents may append observations to `DECISIONS.md`.
 Agents may propose changes to `AGENTS.md`, `ARCHITECTURE.md`, or `RUNBOOK.md`,
 but those changes require explicit user approval before becoming policy.
 
+## Agent Stateboards
+
+Per-agent files live under `agents/`. They are stateboards for durable lanes,
+not policy sources, reports, or gates.
+
+Current stateboards:
+
+- `agents/engine-research.md`
+- `agents/data.md`
+- `agents/execution.md`
+- `agents/infra.md`
+- `agents/review.md`
+
+Create a new stateboard only when a durable independent lane repeatedly needs
+its own queue, held resources, and handoff. Do not create stateboards for
+one-off tasks, investigations, or daily status.
+
+Retire stale stateboards by moving their active work elsewhere and marking the
+file under `agents/README.md` as retired. Prefer retirement over deleting
+history that explains why a lane stopped being active.
+
+`NEXT_CODEX_GOAL.md` remains the single next objective. Agent stateboards may
+hold lane queues, but they do not override the next goal.
+
 ## Next Goal Handoff
 
 For long-running Codex work, the final implementation step is to refresh
@@ -100,13 +135,13 @@ clear owner and respects role boundaries.
 
 Default cadence:
 
-1. Strategy Agent keeps GPU research queued and running when model work is
+1. Engine Research Agent keeps GPU research queued and running when model work is
    available.
 2. While GPU training or validation runs, Codex may advance execution, infra,
    dashboard, or simplification work that does not mutate the same files or
    bypass hard boundaries.
-3. When a GPU job finishes, Strategy Agent records only concise results needed
-   for model selection and starts the next bounded experiment.
+3. When a GPU job finishes, Engine Research Agent records only concise results
+   needed for model selection and starts the next bounded experiment.
 
 GPU and model artifacts must stay outside the Git workspace by default at
 `D:\thericher-v2\model-artifacts`, mounted in Docker as
@@ -131,6 +166,7 @@ parallel status artifacts.
 Long-running work alternates across lanes:
 
 - engine/research,
+- data collection,
 - execution/paper,
 - infra/dashboard,
 - review/simplification.

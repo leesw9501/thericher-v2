@@ -125,3 +125,13 @@ skipped.
 
 Reason: data collection and backtest validation need deterministic higher
 timeframe bars without hiding market-data gaps.
+
+## 2026-07-15 - Agent stateboards
+
+Decision: maintain compact lane stateboards under `agents/` for engine
+research, data, execution, infra, and review. These files track active queues,
+held resources, running jobs, and handoff notes only. `AGENTS.md` remains the
+policy source and `NEXT_CODEX_GOAL.md` remains the single next objective.
+
+Reason: long GPU research and execution/infra work need coordination without
+recreating v1-style report or gate sprawl.

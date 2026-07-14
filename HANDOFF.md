@@ -57,6 +57,7 @@ Implemented and pushed:
 - next-bar backtest harness with fees and slippage,
 - local-only dashboard skeleton,
 - local emergency state for stop-new-orders and cancel-open-orders,
+- agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
 - tests and lint baseline.
@@ -86,6 +87,7 @@ Read these files before changing architecture:
 - `AGENTS.md`
 - `DECISIONS.md`
 - `RUNBOOK.md`
+- `agents/README.md`
 - `INTERIM_GOAL_SCRIPT.md`
 
 Key decisions:
@@ -98,8 +100,10 @@ Key decisions:
 - GPU model artifacts belong outside the repo at
   `D:\thericher-v2\model-artifacts` by default.
 - Long Codex tasks refresh `NEXT_CODEX_GOAL.md` before ending.
-- Strategy Agent is the engine research/development owner and keeps bounded GPU
-  experiments queued by default once GPU research starts.
+- Engine Research Agent keeps bounded GPU experiments queued by default once GPU
+  research starts.
+- Agent stateboards are lane queues only; `NEXT_CODEX_GOAL.md` remains the
+  single next objective.
 - First paper execution target is US equities through KIS.
 - Korean equities are research/data-parallel at first.
 
