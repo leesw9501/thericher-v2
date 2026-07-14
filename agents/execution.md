@@ -29,6 +29,7 @@
 1. Build broker-free local paper execution foundation from existing `Bar` data.
 2. Persist order, fill, and position events through the existing event log.
 3. Enforce duplicate client order id and emergency stop hard stops.
+4. Keep the overnight goal focused on local-only paper execution, not KIS.
 
 ## Running Jobs
 
@@ -41,4 +42,5 @@
 
 ## Next Handoff
 
-- Keep the next execution slice local-only and deterministic.
+- Next long task should complete local paper order lifecycle, deterministic
+  fills, event persistence, and hard-stop tests.

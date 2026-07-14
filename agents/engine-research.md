@@ -30,7 +30,10 @@
 
 1. After local paper execution exists, define the first bounded GPU research
    experiment using existing `Bar` data and external artifacts.
-2. Add walk-forward validation before promoting any model beyond research.
+2. Maintain two GPU research queues once training starts:
+   - short experiments for broad feature/model search,
+   - longer candidate training for deeper validation of promising ideas.
+3. Add walk-forward validation before promoting any model beyond research.
 
 ## Running Jobs
 
@@ -46,3 +49,5 @@
 
 - Do not start GPU training until data and local paper execution can produce
   useful validation targets.
+- Once GPU research begins, alternate short experiments and longer candidate
+  training so the single GPU stays useful without hiding weak validation.
