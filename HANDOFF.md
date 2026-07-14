@@ -57,6 +57,9 @@ Implemented and pushed:
 - next-bar backtest harness with fees and slippage,
 - local-only dashboard skeleton,
 - local emergency state for stop-new-orders and cancel-open-orders,
+- broker-free local paper execution simulator with next-bar-open fills,
+  duplicate client order id protection, emergency-stop blocking, deterministic
+  cash/position replay, and local paper event logging,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -74,7 +77,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `16 passed`
+- `23 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -102,6 +105,8 @@ Key decisions:
 - Operator-provided market data lives outside the repo at `D:\market_data`.
 - Additional market data acquisition must use no-auth, lawful,
   license-compatible sources and stop when those limits are hit.
+- Local paper execution fills at next completed bar open and labels simulated
+  fills with `source: local_paper`.
 - Long Codex tasks refresh `NEXT_CODEX_GOAL.md` before ending.
 - Engine Research Agent keeps bounded GPU experiments queued by default once GPU
   research starts.
@@ -112,15 +117,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Build the first broker-free local paper execution slice:
+Build the first bounded model-validation target:
 
-1. define a local paper order lifecycle,
-2. simulate fills from existing `Bar` data without KIS calls,
-3. persist order/fill/position events through the existing event log,
-4. enforce execution hard stops such as emergency stop and duplicate client
-   order id,
-5. add tests proving no credentials, network, paper broker, or live broker are
-   needed.
+1. inventory existing `D:\market_data` files needed for a small US equity
+   experiment,
+2. connect bars, model decisions, and local paper execution into one repeatable
+   validation loop,
+3. run a CPU smoke baseline first,
+4. prepare the first bounded GPU experiment with artifacts outside Git,
+5. keep short experiment and longer candidate-training queues separate.
 
 Do not start with a dashboard expansion, KIS credentials, or live/paper submit.
 

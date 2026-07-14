@@ -3,17 +3,13 @@
 Read `HANDOFF.md` first, then continue TheRicher v2 from
 `C:\Users\Public\Documents\thericher-v2`.
 
-This is an overnight-style long task. Work autonomously through the phases below
-until the foundation is complete, verification fails in a way you cannot repair,
-or a hard boundary would be crossed.
-
 ## Objective
 
-Build the first broker-free local paper execution foundation for TheRicher v2.
+Build the first bounded model-validation target for TheRicher v2.
 
-This advances the paper trading and live-risk control loops without touching
-KIS, credentials, real broker sessions, or real order submission. It also gives
-future GPU/model research a local execution target for validation.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by connecting existing market data, a simple model decision,
+and the broker-free local paper simulator into one repeatable validation loop.
 
 ## Hard Boundaries
 
@@ -23,12 +19,10 @@ future GPU/model research a local execution target for validation.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
-- Do not download data into the Git workspace.
-- Keep research warnings separate from execution hard stops.
+- Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not expand the dashboard beyond what is needed to verify local state.
-- Do not start GPU training in this goal; prepare the execution target first.
+- Keep local paper fills labeled with `source: local_paper`.
 
 ## Required First Reads
 
@@ -52,136 +46,34 @@ future GPU/model research a local execution target for validation.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
-   Judge the response against the local docs; do not let Claude own
-   implementation.
 
-## Overnight Work Phases
+## Required Work
 
-### Phase 0 - Market Data Inventory and Acquisition
-
-- Treat `D:\market_data` as the operator-provided market data root.
-- Inspect only the structure needed for the active goal; avoid expensive full
-  recursive scans unless needed.
-- Prefer existing data under `D:\market_data`, especially known folders
-  `pit_sources` and `us_equities`.
-- If additional data can be acquired without credentials, payment, login,
-  private APIs, or unclear licensing, acquire as much useful data as reasonable
-  for the current goal and store it under `D:\market_data`, not in Git.
-- Keep minimal provenance notes in `agents/data.md` or completion notes:
-  source, symbols/markets, date range, format, and why it helps the engine.
-- If operator help is needed, update `agents/data.md` under
-  `Operator Help Needed` with exact symbols, markets, date ranges, formats, and
-  the reason automation could not acquire it.
-
-Stop data acquisition for a source when any of these are true:
-
-- it requires KIS, credentials, payment, login, browser-only manual steps, or
-  secret-like files,
-- terms or licensing are unclear,
-- two consecutive automated attempts fail for the same source,
-- the remaining data would not improve the current data collection, backtest,
-  paper trading, or model-validation loop,
-- storage or runtime cost becomes unreasonable for this task.
-
-When acquisition stops, continue with the best available local/sample data and
-report the blocker in the completion report.
-
-### Phase 1 - Inspect Existing Execution and State
-
-- Inspect `src/thericher_v2/contracts.py`, `execution/`, `state/`, `data/`,
-  `backtest/`, and the existing tests.
-- Identify the smallest local-only execution surface that can reuse existing
-  `Bar`, `EmergencyState`, and event-log contracts.
-- Prefer extending existing modules over creating new framework layers.
-
-### Phase 2 - Local Paper Execution Contracts
-
-Implement small immutable/local contracts as needed for:
-
-- submitted local paper order intent,
-- accepted/rejected local paper order result,
-- deterministic simulated fill,
-- canceled local paper order state,
-- local paper portfolio or account snapshot if needed.
-
-Use `Decimal`, UTC-aware timestamps, and `schema_version` consistently with
-existing contracts.
-
-### Phase 3 - Deterministic Simulator
-
-Implement a broker-free local paper simulator that:
-
-- consumes existing `Bar` data,
-- fills accepted orders deterministically from bar open/close or a documented
-  local-only rule,
-- updates cash, positions, and realized events deterministically,
-- rejects duplicate client order ids,
-- blocks new orders when local emergency stop is active,
-- never reads credentials or `.env`,
-- never imports network or KIS client code.
-
-Keep the simulator small. Avoid venue-specific taxes, margin, complex order
-types, partial fills, shorting, and live broker semantics unless the current
-tests require a minimal local placeholder.
-
-### Phase 4 - Event Log Integration
-
-Connect local paper execution to the existing append-only event flow:
-
-- persist local order accepted/rejected/canceled/fill events,
-- ensure replay can recover enough position state for tests,
-- keep JSONL as source of truth and SQLite as rebuildable query view.
-
-Do not create a second state system.
-
-### Phase 5 - Focused Tests
-
-Add tests proving:
-
-- no KIS/network call is needed,
-- no credentials or `.env` are read,
-- duplicate client order ids are rejected,
-- emergency stop blocks new local paper orders,
-- simulated fills update local positions and cash deterministically from
-  `Bar` data,
-- order/fill events are persisted and replayable through the existing event
-  store or a small extension of it.
-
-Run narrower tests while developing, then the full verification below.
-
-### Phase 6 - Stateboard and Handoff Updates
-
-Before ending:
-
-- update `agents/execution.md` with what was completed and the next execution
-  handoff,
-- update `agents/data.md` with data acquired, data still needed, or the stop
-  reason if no more useful data can be acquired,
-- update `agents/engine-research.md` only if the local paper target is ready
-  enough to change GPU research readiness,
-- keep future GPU research planned as two queues: short experiments for fast
-  breadth and longer candidate training for depth, scheduled so the single GPU
-  is not idle once research starts,
-- refresh `NEXT_CODEX_GOAL.md` with the next single objective,
-- keep all stateboard entries short.
-
-## Optional Stretch Work
-
-Only if the core local paper foundation is complete and verified:
-
-- add a tiny backtest-to-local-paper adapter or example test showing a model
-  decision can become a local simulated order without broker authority,
-- add local paper state to the dashboard snapshot read path without adding new
-  dashboard write controls,
-- add data-quality warnings that help paper simulation but do not block
-  research.
-
-Skip stretch work if it risks crossing boundaries or delaying a clean verified
-commit.
+1. Inventory the useful subset of `D:\market_data` for a small US equity model
+   validation loop. Avoid expensive full recursive scans unless needed.
+2. Prefer existing data. Acquire additional data only when it is no-auth,
+   lawful, license-compatible, and useful for the active validation loop.
+3. Build a small validation harness that consumes `Bar` data, produces model or
+   ensemble decisions, converts eligible decisions into local paper
+   `OrderIntent`s, and executes them through the local paper simulator.
+4. Run a CPU smoke baseline first using deterministic sample or local market
+   data.
+5. If the CPU baseline is sound and the GPU environment is available, prepare or
+   run the first bounded GPU experiment. Artifacts must go to
+   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+6. Keep two research queues visible in `agents/engine-research.md`:
+   - short experiments for breadth,
+   - longer candidate training for depth.
+7. Add focused tests proving:
+   - validation uses local paper only,
+   - no broker/network/credential access is needed,
+   - local paper fills remain replayable,
+   - generated artifacts are outside Git or mocked in tests.
+8. Refresh `NEXT_CODEX_GOAL.md` before ending the task.
 
 ## Verification
 
-Required before commit:
+Run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -189,17 +81,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also run any focused test command you used while developing and report it.
+Report any focused test or GPU smoke command used.
 
-## Git
+## Suggested Commit Message
 
-- Keep commits small and purposeful.
-- Commit and push completed work.
-- Suggested commit message:
-
-  ```text
-  Add local paper execution foundation
-  ```
+`Add bounded model validation target`
 
 ## Completion Report
 
@@ -210,7 +96,6 @@ Report:
 - commit hash,
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
+- whether GPU was used and where artifacts were written,
 - what was intentionally not built,
-- next recommended goal,
-- whether local paper execution is ready for the first bounded GPU/model
-  validation target.
+- next recommended goal.

@@ -26,10 +26,10 @@
 
 ## Active Queue
 
-1. Build broker-free local paper execution foundation from existing `Bar` data.
-2. Persist order, fill, and position events through the existing event log.
-3. Enforce duplicate client order id and emergency stop hard stops.
-4. Keep the overnight goal focused on local-only paper execution, not KIS.
+1. Add source filtering to future replay/query views before real broker fills
+   exist.
+2. Keep future KIS adapter work separate from local paper simulator behavior.
+3. Add more realistic order types only when paper-loop evidence needs them.
 
 ## Running Jobs
 
@@ -39,8 +39,12 @@
 
 - Local emergency store exists for stop-new-orders and cancel-open-orders
   requests.
+- Broker-free local paper simulator now supports accepted/rejected/canceled
+  order events, next-bar-open fills, duplicate id rejection, emergency-stop
+  blocking, deterministic account replay, and local paper fill metadata.
 
 ## Next Handoff
 
-- Next long task should complete local paper order lifecycle, deterministic
-  fills, event persistence, and hard-stop tests.
+- Local paper is ready as a validation target for the first bounded model
+  experiment. Future replay must filter `source: local_paper` before broker
+  fills are introduced.

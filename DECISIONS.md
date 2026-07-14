@@ -145,3 +145,12 @@ license-compatible sources. Do not store acquired market data in Git.
 Reason: data collection and model validation need more history than the Git
 repo should hold, and acquisition must not depend on credentials or unclear
 data rights.
+
+## 2026-07-15 - Local paper execution foundation
+
+Decision: local paper execution is broker-free and fills accepted orders at the
+next completed bar open. Local paper fill events use `source: local_paper`; cash
+is rebuilt from fill events, while portfolio snapshots are convenience caches.
+
+Reason: paper execution must be deterministic, replayable, and impossible to
+confuse with future broker or live fills.

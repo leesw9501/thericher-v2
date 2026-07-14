@@ -50,6 +50,9 @@
 
 - Added provider protocol, local CSV provider, sample provider, and deterministic
   timeframe resampling.
+- Inventoried `D:\market_data` at the shallow level for this goal. Top-level
+  folders include `pit_sources` and `us_equities`; no additional download was
+  needed for the broker-free local paper simulator.
 
 ## Next Handoff
 

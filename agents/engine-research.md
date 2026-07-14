@@ -22,14 +22,15 @@
 
 ## Held Resources
 
-- GPU: idle until the first GPU research goal is started.
+- GPU: idle; ready for the first bounded research goal after CPU smoke
+  validation.
 - Model artifacts root: `D:\thericher-v2\model-artifacts`.
 - Docker artifact path: `/app/model_artifacts`.
 
 ## Active Queue
 
-1. After local paper execution exists, define the first bounded GPU research
-   experiment using existing `Bar` data and external artifacts.
+1. Define the first bounded model validation target using existing `Bar` data
+   and the local paper simulator.
 2. Maintain two GPU research queues once training starts:
    - short experiments for broad feature/model search,
    - longer candidate training for deeper validation of promising ideas.
@@ -47,7 +48,7 @@
 
 ## Next Handoff
 
-- Do not start GPU training until data and local paper execution can produce
-  useful validation targets.
+- Start with a CPU smoke validation loop, then run the first bounded GPU
+  experiment only if artifacts are written outside Git.
 - Once GPU research begins, alternate short experiments and longer candidate
   training so the single GPU stays useful without hiding weak validation.
