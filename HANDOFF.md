@@ -50,6 +50,8 @@ Implemented and pushed:
 - append-only JSONL event log,
 - rebuildable SQLite query views,
 - deterministic synthetic OHLCV,
+- market data provider protocol, local CSV/sample providers, and deterministic
+  timeframe resampling for `1m`, `5m`, `10m`, `1h`, and `3h`,
 - simple momentum model,
 - simple ensemble decision,
 - next-bar backtest harness with fees and slippage,
@@ -71,7 +73,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `9 passed`
+- `16 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -95,19 +97,23 @@ Key decisions:
 - GPU/ML work belongs in the research lane/profile.
 - GPU model artifacts belong outside the repo at
   `D:\thericher-v2\model-artifacts` by default.
+- Long Codex tasks refresh `NEXT_CODEX_GOAL.md` before ending.
+- Strategy Agent is the engine research/development owner and keeps bounded GPU
+  experiments queued by default once GPU research starts.
 - First paper execution target is US equities through KIS.
 - Korean equities are research/data-parallel at first.
 
 ## Recommended Next Slice
 
-Build the first real market-data slice without broker calls:
+Build the first broker-free local paper execution slice:
 
-1. define data provider interfaces,
-2. add local CSV/parquet-style sample ingestion,
-3. add timeframe resampling for `1m`, `5m`, `10m`, `1h`, `3h`,
-4. add data-quality checks that warn but do not block research,
-5. add tests for deterministic resampling,
-6. keep KIS adapter as an interface stub only.
+1. define a local paper order lifecycle,
+2. simulate fills from existing `Bar` data without KIS calls,
+3. persist order/fill/position events through the existing event log,
+4. enforce execution hard stops such as emergency stop and duplicate client
+   order id,
+5. add tests proving no credentials, network, paper broker, or live broker are
+   needed.
 
 Do not start with a dashboard expansion, KIS credentials, or live/paper submit.
 

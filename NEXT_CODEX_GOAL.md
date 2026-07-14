@@ -5,8 +5,10 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first real market-data foundation for TheRicher v2 while preserving
-the engine-first architecture and all hard boundaries.
+Build the first broker-free local paper execution foundation for TheRicher v2.
+
+This advances the paper trading and live-risk control loops without touching
+KIS, credentials, or real order submission.
 
 ## Hard Boundaries
 
@@ -19,6 +21,7 @@ the engine-first architecture and all hard boundaries.
 - Keep research warnings separate from execution hard stops.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
+- Do not expand the dashboard beyond what is needed to verify local state.
 
 ## Required Work
 
@@ -30,23 +33,27 @@ the engine-first architecture and all hard boundaries.
    - `DECISIONS.md`
    - `RUNBOOK.md`
 2. Ask Claude CLI for a short drift-check before architecture-changing edits.
-3. Implement a small market-data layer:
-   - provider protocol/interface,
-   - local file/sample provider,
-   - `Bar` serialization/deserialization helpers if needed,
-   - timeframe resampling for `1m`, `5m`, `10m`, `1h`, `3h`,
-   - deterministic sample data fixtures.
+3. Implement a small local paper execution layer:
+   - order lifecycle contracts for submitted, accepted, filled, rejected, and
+     canceled local paper orders,
+   - deterministic local paper broker/simulator that consumes existing `Bar`
+     data,
+   - position and cash updates from simulated fills,
+   - duplicate client order id protection,
+   - emergency stop hard stop before new local paper orders.
 4. Add tests proving:
-   - resampling is deterministic,
-   - generated bars are UTC-aware and complete,
    - no KIS/network call is needed,
-   - the backtest harness can consume resampled bars.
+   - no credentials or `.env` are read,
+   - duplicate client order ids are rejected,
+   - emergency stop blocks new local paper orders,
+   - simulated fills update local positions deterministically from `Bar` data.
 5. Preserve the model artifact policy:
    - research artifacts are external to Git,
    - `THERICHER_HOST_MODEL_ARTIFACT_ROOT` points to the host artifact path,
    - Docker research profile mounts it as `/app/model_artifacts`.
 6. Update `DECISIONS.md` only for accepted architecture decisions.
-7. Keep docs minimal.
+7. Refresh `NEXT_CODEX_GOAL.md` before ending the task so the next Codex task is
+   not stale.
 8. Run verification:
    - `uv run --extra dev pytest -q`
    - `uv run --extra dev ruff check .`
@@ -55,7 +62,7 @@ the engine-first architecture and all hard boundaries.
 
 ## Suggested Commit Message
 
-`Add market data foundation`
+`Add local paper execution foundation`
 
 ## Completion Report
 

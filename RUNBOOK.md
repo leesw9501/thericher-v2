@@ -10,6 +10,31 @@ The engine supports three modes:
 
 Default mode is `off`.
 
+## Long Task Workflow
+
+Start each long Codex task with:
+
+```powershell
+.\scripts\start_next_codex_task.ps1
+```
+
+Then read the required handoff and architecture files printed by the script.
+Before changing architecture, promotion rules, or agent governance, ask Claude
+CLI for a short drift-check and judge it against `HANDOFF.md`,
+`ARCHITECTURE.md`, and `DECISIONS.md`.
+
+Before ending a long task:
+
+- run the relevant verification commands,
+- commit and push completed work when changes are ready,
+- refresh `NEXT_CODEX_GOAL.md` with the next single objective,
+- keep the next goal tied to one engine loop.
+
+When GPU research is active, keep bounded training and validation jobs running
+on the single GPU by default. Other lanes may proceed while those jobs run, as
+long as they do not touch the same ownership boundary or enable broker/live
+behavior prematurely.
+
 ## Emergency Stop
 
 There are two independent emergency actions.

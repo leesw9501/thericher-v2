@@ -64,5 +64,9 @@ Write-Host "uv run --extra dev ruff check ."
 Write-Host "docker compose config --quiet"
 Write-Host ""
 
-Write-Host "== Suggested new Codex objective =="
+Write-Host "== Completion handoff rule =="
+Write-Host "Before ending a long task, refresh NEXT_CODEX_GOAL.md with the next single objective."
+Write-Host ""
+
+Write-Host "== Active next Codex objective =="
 Get-Content -LiteralPath "NEXT_CODEX_GOAL.md" -Raw

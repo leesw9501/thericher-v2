@@ -36,10 +36,13 @@ Direction reviewer and drift brake.
 
 ### Strategy Agent
 
-Owns research and model quality.
+Owns research and model quality. This is also the engine research/development
+agent for features, strategy logic, and GPU model experiments.
 
 - Features, indicators, model experiments, backtests, walk-forward validation,
   attribution, and model registry entries.
+- Keeps the single GPU busy by default once GPU research exists, using bounded
+  training and validation jobs that write artifacts outside Git.
 - Cannot modify broker submit code.
 
 ### Execution Agent
@@ -72,6 +75,42 @@ Agents may append observations to `DECISIONS.md`.
 
 Agents may propose changes to `AGENTS.md`, `ARCHITECTURE.md`, or `RUNBOOK.md`,
 but those changes require explicit user approval before becoming policy.
+
+## Next Goal Handoff
+
+For long-running Codex work, the final implementation step is to refresh
+`NEXT_CODEX_GOAL.md` with the next single objective before ending the task.
+
+The next goal must stay concise and identify which engine loop it advances:
+
+- data collection,
+- feature/model research,
+- backtest and walk-forward validation,
+- paper trading,
+- PnL attribution,
+- live-risk control.
+
+Do not create parallel next-goal documents. The start script reads
+`NEXT_CODEX_GOAL.md`, so stale goals cause repeated work.
+
+## Parallel Work Cadence
+
+Parallel work is allowed across non-conflicting lanes, but each task keeps one
+clear owner and respects role boundaries.
+
+Default cadence:
+
+1. Strategy Agent keeps GPU research queued and running when model work is
+   available.
+2. While GPU training or validation runs, Codex may advance execution, infra,
+   dashboard, or simplification work that does not mutate the same files or
+   bypass hard boundaries.
+3. When a GPU job finishes, Strategy Agent records only concise results needed
+   for model selection and starts the next bounded experiment.
+
+GPU and model artifacts must stay outside the Git workspace by default at
+`D:\thericher-v2\model-artifacts`, mounted in Docker as
+`/app/model_artifacts`.
 
 ## Daily Cadence
 
