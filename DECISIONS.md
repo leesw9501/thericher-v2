@@ -116,3 +116,12 @@ that host path at `/app/model_artifacts`.
 Reason: deep-learning experiments can create large artifacts. Keeping them on
 the larger D drive protects the repo and C drive while preserving a stable path
 for future model registry work.
+
+## 2026-07-15 - Market data resampling anchor
+
+Decision: resample intraday bars into complete UTC-epoch anchored buckets.
+Missing or incomplete source bars do not get gap-filled; their target bucket is
+skipped.
+
+Reason: data collection and backtest validation need deterministic higher
+timeframe bars without hiding market-data gaps.
