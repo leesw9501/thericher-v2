@@ -97,3 +97,22 @@ not call KIS, a broker, or any order endpoint.
 
 Reason: the interim foundation should prove the operator boundary without
 creating accidental trading authority.
+
+## 2026-07-15 - Fresh Codex task handoff
+
+Decision: create `HANDOFF.md`, `NEXT_CODEX_GOAL.md`, and
+`scripts/start_next_codex_task.ps1` so future Codex work can start from v2
+context without dragging v1 thread history forward.
+
+Reason: v2 needs clean context boundaries. A fresh task should read a concise
+handoff, verify the repo, and continue with a narrow engine-first objective.
+
+## 2026-07-15 - GPU model artifact root
+
+Decision: store GPU/research model artifacts outside the Git workspace at
+`D:\thericher-v2\model-artifacts` by default. Docker research profile mounts
+that host path at `/app/model_artifacts`.
+
+Reason: deep-learning experiments can create large artifacts. Keeping them on
+the larger D drive protects the repo and C drive while preserving a stable path
+for future model registry work.

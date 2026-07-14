@@ -13,6 +13,7 @@ venv/
 /data/
 /runtime/
 /models/artifacts/
+/model_artifacts/
 /reports/daily/*.md
 /reports/daily/*.json
 !reports/daily/README.md

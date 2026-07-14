@@ -44,10 +44,12 @@ services:
       THERICHER_MODE: off
       PYTHONPATH: /app/src
       NVIDIA_VISIBLE_DEVICES: all
+      THERICHER_MODEL_ARTIFACT_ROOT: ${THERICHER_MODEL_ARTIFACT_ROOT:-/app/model_artifacts}
     volumes:
       - thericher-v2-runtime:/app/runtime
       - ./data:/app/data
       - ./reports:/app/reports
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
 volumes:
   thericher-v2-runtime:

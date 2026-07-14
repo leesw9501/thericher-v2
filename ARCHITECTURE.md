@@ -51,6 +51,27 @@ Deep-learning models may contribute signals only after they are versioned,
 reproducible, and logged with their feature window, model artifact id, and
 confidence output.
 
+## Model Artifact Storage
+
+GPU research can create large model artifacts. Keep them outside the Git
+workspace by default.
+
+Default host path:
+
+```text
+D:\thericher-v2\model-artifacts
+```
+
+Docker research path:
+
+```text
+/app/model_artifacts
+```
+
+Use `THERICHER_HOST_MODEL_ARTIFACT_ROOT` for the host mount and
+`THERICHER_MODEL_ARTIFACT_ROOT` for the in-container path. The base engine image
+must not require these heavy artifacts for tests or startup.
+
 ## State Policy
 
 Use one SQLite database plus append-only JSONL logs.
