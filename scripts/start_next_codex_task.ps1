@@ -1,6 +1,7 @@
 param(
     [string]$RepoRoot = "C:\Users\Public\Documents\thericher-v2",
-    [string]$ModelArtifactRoot = "D:\thericher-v2\model-artifacts"
+    [string]$ModelArtifactRoot = "D:\thericher-v2\model-artifacts",
+    [string]$MarketDataRoot = "D:\market_data"
 )
 
 $ErrorActionPreference = "Stop"
@@ -57,6 +58,19 @@ if (-not (Test-Path -LiteralPath $ModelArtifactRoot)) {
 }
 Write-Host "ok $ModelArtifactRoot"
 Write-Host "Set THERICHER_HOST_MODEL_ARTIFACT_ROOT=D:/thericher-v2/model-artifacts for Docker."
+Write-Host ""
+
+Write-Host "== Market data root =="
+if (Test-Path -LiteralPath $MarketDataRoot) {
+    Write-Host "ok $MarketDataRoot"
+    Get-ChildItem -LiteralPath $MarketDataRoot -Force |
+        Select-Object -First 20 |
+        ForEach-Object { Write-Host ("- {0}" -f $_.Name) }
+} else {
+    Write-Host "missing $MarketDataRoot"
+    Write-Host "Record exact operator data needs in agents/data.md and the daily report."
+}
+Write-Host "Do not store acquired market data in Git. Use this root or another external data path."
 Write-Host ""
 
 Write-Host "== Verification commands =="

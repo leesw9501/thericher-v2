@@ -23,6 +23,7 @@ future GPU/model research a local execution target for validation.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
+- Do not download data into the Git workspace.
 - Keep research warnings separate from execution hard stops.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
@@ -45,6 +46,7 @@ future GPU/model research a local execution target for validation.
    - `DECISIONS.md`
    - `RUNBOOK.md`
    - `agents/README.md`
+   - `agents/data.md`
    - `agents/engine-research.md`
    - `agents/execution.md`
    - `agents/review.md`
@@ -54,6 +56,35 @@ future GPU/model research a local execution target for validation.
    implementation.
 
 ## Overnight Work Phases
+
+### Phase 0 - Market Data Inventory and Acquisition
+
+- Treat `D:\market_data` as the operator-provided market data root.
+- Inspect only the structure needed for the active goal; avoid expensive full
+  recursive scans unless needed.
+- Prefer existing data under `D:\market_data`, especially known folders
+  `pit_sources` and `us_equities`.
+- If additional data can be acquired without credentials, payment, login,
+  private APIs, or unclear licensing, acquire as much useful data as reasonable
+  for the current goal and store it under `D:\market_data`, not in Git.
+- Keep minimal provenance notes in `agents/data.md` or completion notes:
+  source, symbols/markets, date range, format, and why it helps the engine.
+- If operator help is needed, update `agents/data.md` under
+  `Operator Help Needed` with exact symbols, markets, date ranges, formats, and
+  the reason automation could not acquire it.
+
+Stop data acquisition for a source when any of these are true:
+
+- it requires KIS, credentials, payment, login, browser-only manual steps, or
+  secret-like files,
+- terms or licensing are unclear,
+- two consecutive automated attempts fail for the same source,
+- the remaining data would not improve the current data collection, backtest,
+  paper trading, or model-validation loop,
+- storage or runtime cost becomes unreasonable for this task.
+
+When acquisition stops, continue with the best available local/sample data and
+report the blocker in the completion report.
 
 ### Phase 1 - Inspect Existing Execution and State
 
@@ -124,6 +155,8 @@ Before ending:
 
 - update `agents/execution.md` with what was completed and the next execution
   handoff,
+- update `agents/data.md` with data acquired, data still needed, or the stop
+  reason if no more useful data can be acquired,
 - update `agents/engine-research.md` only if the local paper target is ready
   enough to change GPU research readiness,
 - keep future GPU research planned as two queues: short experiments for fast
@@ -175,6 +208,8 @@ Report:
 - files changed,
 - tests run,
 - commit hash,
+- data found or acquired under `D:\market_data`,
+- data still needed from the operator, if any,
 - what was intentionally not built,
 - next recommended goal,
 - whether local paper execution is ready for the first bounded GPU/model

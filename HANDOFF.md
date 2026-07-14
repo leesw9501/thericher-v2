@@ -99,6 +99,9 @@ Key decisions:
 - GPU/ML work belongs in the research lane/profile.
 - GPU model artifacts belong outside the repo at
   `D:\thericher-v2\model-artifacts` by default.
+- Operator-provided market data lives outside the repo at `D:\market_data`.
+- Additional market data acquisition must use no-auth, lawful,
+  license-compatible sources and stop when those limits are hit.
 - Long Codex tasks refresh `NEXT_CODEX_GOAL.md` before ending.
 - Engine Research Agent keeps bounded GPU experiments queued by default once GPU
   research starts.

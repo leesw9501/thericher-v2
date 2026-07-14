@@ -42,4 +42,6 @@ def test_daily_report_writes_single_bundle(tmp_path) -> None:
     assert bundle.metrics_path.exists()
     assert bundle.next_goal_path.exists()
     assert bundle.metrics["kis_api_calls"] is False
+    assert bundle.metrics["market_data_root"] == "D:\\market_data"
+    assert bundle.metrics["data_operator_help_needed"] == []
     assert len(list(tmp_path.iterdir())) == 3

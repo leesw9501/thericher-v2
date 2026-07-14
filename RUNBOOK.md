@@ -38,6 +38,20 @@ on the single GPU by default. Other lanes may proceed while those jobs run, as
 long as they do not touch the same ownership boundary or enable broker/live
 behavior prematurely.
 
+## Market Data Acquisition
+
+Use `D:\market_data` as the default external market data root. Do not download
+or copy acquired market data into the Git workspace.
+
+Agents may acquire additional data only when it is available without
+credentials, payment, login, private APIs, or unclear licensing. Stop acquisition
+for a source when those limits are hit, when two automated attempts fail, or
+when more data no longer improves the active engine loop.
+
+If operator help is needed, record exact symbols, markets, date ranges, formats,
+and blocker reasons in `agents/data.md` under `Operator Help Needed`. The daily
+report surfaces that section.
+
 ## Emergency Stop
 
 There are two independent emergency actions.
@@ -93,6 +107,7 @@ At 08:00 KST, the daily report should summarize:
 - open risk events,
 - model performance,
 - trading metrics,
+- market data root and operator data requests,
 - blockers,
 - next goal script.
 

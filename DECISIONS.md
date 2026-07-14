@@ -135,3 +135,13 @@ policy source and `NEXT_CODEX_GOAL.md` remains the single next objective.
 
 Reason: long GPU research and execution/infra work need coordination without
 recreating v1-style report or gate sprawl.
+
+## 2026-07-15 - External market data root
+
+Decision: treat `D:\market_data` as the operator-provided market data root.
+Additional data may be acquired there only from no-auth, lawful,
+license-compatible sources. Do not store acquired market data in Git.
+
+Reason: data collection and model validation need more history than the Git
+repo should hold, and acquisition must not depend on credentials or unclear
+data rights.

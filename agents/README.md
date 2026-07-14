@@ -36,6 +36,7 @@ Each agent file keeps the same compact sections:
 - `Held Resources`
 - `Active Queue`
 - `Running Jobs`
+- `Operator Help Needed`
 - `Done Recently`
 - `Next Handoff`
 

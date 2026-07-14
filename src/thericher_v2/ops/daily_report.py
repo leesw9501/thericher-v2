@@ -10,6 +10,9 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+MARKET_DATA_ROOT = Path("D:/market_data")
+DATA_STATEBOARD = Path("agents/data.md")
+
 
 def run_git(args: list[str]) -> str:
     try:
@@ -26,6 +29,25 @@ def run_git(args: list[str]) -> str:
     return output
 
 
+def read_operator_help_needed(path: Path = DATA_STATEBOARD) -> list[str]:
+    if not path.exists():
+        return ["agents/data.md not found"]
+    lines = path.read_text(encoding="utf-8").splitlines()
+    in_section = False
+    items: list[str] = []
+    for line in lines:
+        if line.startswith("## "):
+            if in_section:
+                break
+            in_section = line.strip() == "## Operator Help Needed"
+            continue
+        if in_section and line.startswith("- "):
+            item = line[2:].strip()
+            if item and not item.lower().startswith("none now"):
+                items.append(item)
+    return items
+
+
 @dataclass(frozen=True)
 class DailyBundle:
     date: str
@@ -38,6 +60,7 @@ class DailyBundle:
 def build_metrics(now: datetime) -> dict[str, Any]:
     status = run_git(["status", "--short", "--branch"])
     last_commit = run_git(["log", "-1", "--oneline", "--decorate"])
+    data_help_needed = read_operator_help_needed()
     return {
         "artifact_kind": "daily_operator_review",
         "created_at_utc": now.astimezone(UTC).isoformat(),
@@ -48,9 +71,10 @@ def build_metrics(now: datetime) -> dict[str, Any]:
         "kis_api_calls": False,
         "paper_orders": False,
         "live_orders": False,
-        "recommended_next_goal": (
-            "Implement the first real data adapter after reviewing the v2 skeleton."
-        ),
+        "market_data_root": str(MARKET_DATA_ROOT),
+        "market_data_root_exists": MARKET_DATA_ROOT.exists(),
+        "data_operator_help_needed": data_help_needed,
+        "recommended_next_goal": "Build the broker-free local paper execution foundation.",
     }
 
 
@@ -75,6 +99,16 @@ def write_bundle(output_dir: Path, *, now: datetime | None = None) -> DailyBundl
                 f"- KIS API calls: `{metrics['kis_api_calls']}`",
                 f"- Paper orders: `{metrics['paper_orders']}`",
                 f"- Live orders: `{metrics['live_orders']}`",
+                "",
+                "## Market Data",
+                "",
+                f"- Root: `{metrics['market_data_root']}`",
+                f"- Root exists: `{metrics['market_data_root_exists']}`",
+                "- Operator help needed:",
+                *[
+                    f"  - {item}"
+                    for item in (metrics["data_operator_help_needed"] or ["None"])
+                ],
                 "",
                 "## Git",
                 "",
