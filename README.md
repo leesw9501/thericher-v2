@@ -37,3 +37,22 @@ Every new feature must answer one question:
 > safely promote?
 
 If the answer is no, it does not belong in v2.
+
+## Development Commands
+
+Preferred local workflow:
+
+```powershell
+uv run --extra dev pytest -q
+uv run --extra dev ruff check .
+```
+
+Fallback when using an existing Python environment:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m pytest -q
+```
+
+The base engine has no runtime third-party dependencies. Heavy research
+libraries belong behind the `research` extra and Docker Compose profile.

@@ -1,0 +1,53 @@
+services:
+  engine:
+    build: .
+    command:
+      - python
+      - -m
+      - thericher_v2.ops.daily_report
+      - --print-summary
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - thericher-v2-runtime:/app/runtime
+      - ./reports:/app/reports
+
+  web:
+    build: .
+    command:
+      - python
+      - -m
+      - thericher_v2.dashboard.server
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8787"
+    environment:
+      THERICHER_MODE: off
+      THERICHER_DASHBOARD_TOKEN: ${THERICHER_DASHBOARD_TOKEN:-}
+      PYTHONPATH: /app/src
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - thericher-v2-runtime:/app/runtime
+
+  research:
+    build: .
+    profiles: ["research"]
+    command:
+      - python
+      - -m
+      - thericher_v2.ops.daily_report
+      - --print-summary
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+      NVIDIA_VISIBLE_DEVICES: all
+    volumes:
+      - thericher-v2-runtime:/app/runtime
+      - ./data:/app/data
+      - ./reports:/app/reports
+
+volumes:
+  thericher-v2-runtime:

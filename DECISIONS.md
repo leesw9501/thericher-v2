@@ -73,3 +73,27 @@ Decision: dashboard write actions are limited to two independent controls:
 
 Reason: the operator needs emergency control without turning the dashboard into
 a trading command center.
+
+## 2026-07-14 - Interim foundation contracts
+
+Decision: core engine contracts use immutable dataclasses, UTC-aware timestamps,
+`Decimal` for price and quantity, and `schema_version` fields.
+
+Reason: v2 must avoid hidden floating-point accounting drift and make model,
+state, and execution events replayable.
+
+## 2026-07-14 - State source of truth
+
+Decision: JSONL is the append-only event source. SQLite is a rebuildable query
+view derived from JSONL.
+
+Reason: keeping one source of truth avoids the state divergence that made v1
+runtime artifacts hard to reason about.
+
+## 2026-07-14 - Interim dashboard actions are local only
+
+Decision: dashboard emergency actions write local emergency state only. They do
+not call KIS, a broker, or any order endpoint.
+
+Reason: the interim foundation should prove the operator boundary without
+creating accidental trading authority.
