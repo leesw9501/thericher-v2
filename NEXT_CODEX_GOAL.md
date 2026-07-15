@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first lightweight Engine Research GPU job runner.
+Add the first bounded GPU candidate training job.
 
-This advances feature/model research by connecting the existing agent
-stateboards, PyTorch CUDA research container, candidate metadata, and bounded
-GPU smoke commands into one repeatable local research job loop. The goal is to
-make the Engine Research Agent's queue executable without building a broad
-multi-agent platform.
+This advances feature/model research by moving from GPU smoke execution to a
+small, repeatable candidate-training job for the selected walk-forward
+candidate. The goal is to keep the single GPU useful with bounded training while
+preserving replayable artifacts and avoiding broad agent/process sprawl.
 
 ## Hard Boundaries
 
@@ -29,6 +28,7 @@ multi-agent platform.
 - Do not add heavy GPU dependencies to the base engine or local dev/test path.
 - Run GPU compute/training through the Docker `research` target/profile.
 - Do not create a second next-goal document or a large agent framework.
+- Do not start an unbounded or overnight training run yet.
 
 ## Required First Reads
 
@@ -59,21 +59,25 @@ multi-agent platform.
 1. Treat the current `agents/*.md` files as lane stateboards, not autonomous
    workers. Do not create new agent stateboards unless a durable new lane is
    needed.
-2. Add a small research job representation and CLI that can queue or run one
-   bounded GPU job at a time through existing smoke/experiment commands.
-3. The first job type should run the existing PyTorch training smoke for the
-   selected walk-forward candidate through Docker `research`.
-4. Store generated job outputs outside Git under
+2. Reuse the lightweight research job runner instead of adding a separate
+   orchestration layer.
+3. Add a bounded candidate-training job that consumes selected candidate
+   metadata and deterministic local/sample bars or an explicit local market-data
+   snapshot.
+4. Train only a tiny PyTorch model with strict epoch/step limits in Docker
+   `research`; this is a candidate-training proof, not a production model.
+5. Store generated job, metrics, and model artifacts outside Git under
    `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-5. Keep repo-side state concise: update `agents/engine-research.md` and
+6. Keep repo-side state concise: update `agents/engine-research.md` and
    `agents/infra.md` with the queue/result state, but do not generate many
    reports or gates.
-6. Add focused tests proving:
+7. Add focused tests proving:
    - job artifacts are outside Git,
-   - the job runner does not read credentials or call broker/KIS paths,
+   - candidate training does not read credentials or call broker/KIS paths,
    - PyTorch remains research-container-only,
-   - a missing GPU/backend records a non-fatal prepared state.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - missing GPU/backend records a non-fatal prepared state,
+   - model artifacts are written outside Git.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -96,12 +100,13 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused job-runner command, GPU training smoke, compute smoke,
-runtime smoke, candidate artifact command, or Docker research command used.
+Report any focused candidate-training command, job-runner command, GPU training
+smoke, compute smoke, runtime smoke, candidate artifact command, or Docker
+research command used.
 
 ## Suggested Commit Message
 
-`Add research GPU job runner`
+`Add bounded GPU candidate training`
 
 ## Completion Report
 

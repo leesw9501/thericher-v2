@@ -28,8 +28,8 @@
 
 1. Keep base engine tests free of heavy research dependencies.
 2. Keep PyTorch CUDA confined to the Docker `research` target.
-3. Support a small GPU research job runner without adding a general agent
-   platform.
+3. Support bounded GPU candidate training through the small research job runner
+   without adding a general agent platform.
 
 ## Running Jobs
 
@@ -54,8 +54,11 @@
   research backend is approved.
 - PyTorch CUDA is installed only in Docker `research`; the tiny training smoke
   completed on the RTX 4090 and wrote to `/app/model_artifacts/gpu-training`.
+- Research job runner executed inside Docker `research` and wrote wrapper job
+  artifacts to `/app/model_artifacts/research-jobs`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
-  Docker `research` target and external artifact mount.
+  Docker `research` target and external artifact mount. Avoid host-side agent
+  orchestration until a concrete engine loop needs it.

@@ -83,6 +83,10 @@ Implemented and pushed:
 - research-only PyTorch CUDA backend in the Docker `research` target
   (`torch==2.7.0+cu128` from the PyTorch CUDA 12.8 wheel index), with a tiny GPU
   training smoke that completed on the RTX 4090 and writes outside Git,
+- lightweight Engine Research job runner CLI that executes one bounded
+  `gpu_training_smoke` job at a time inside Docker `research`, writes a wrapper
+  job artifact outside Git, and keeps `agents/*.md` as stateboards rather than
+  autonomous workers,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -100,7 +104,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `60 passed`
+- `66 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -144,13 +148,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first lightweight Engine Research job runner that uses the existing
-agent stateboard and PyTorch research container:
+Add the first bounded GPU candidate training job that uses the existing job
+runner and PyTorch research container:
 
 1. keep `agents/*.md` as stateboards, not autonomous agent processes,
-2. run bounded GPU research jobs through Docker `research`,
-3. write job artifacts outside Git,
-4. record only concise queue/result state needed for the next decision.
+2. consume deterministic local/sample or explicit `D:\market_data` bars,
+3. train a tiny candidate model with strict epoch/step limits,
+4. write model and metrics artifacts outside Git,
+5. record only concise queue/result state needed for the next decision.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

@@ -249,3 +249,15 @@ image, or the local dev/test dependency path.
 Reason: the operator approved PyTorch CUDA, and the RTX 4090 training smoke now
 proves the research container can run a bounded GPU optimizer step while the
 trading engine remains independent from heavy ML runtime dependencies.
+
+## 2026-07-15 - Lightweight research job runner
+
+Decision: introduce a minimal Engine Research job runner with a single
+`gpu_training_smoke` job kind. The runner executes inside Docker `research`,
+reuses existing smoke helpers, writes wrapper artifacts under the external model
+artifact root, and keeps `agents/*.md` as lane stateboards rather than
+autonomous worker processes.
+
+Reason: the GPU research lane needs a repeatable executable queue step before
+longer training starts, but a broad multi-agent platform would recreate process
+sprawl before it improves model research.

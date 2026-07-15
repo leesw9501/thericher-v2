@@ -47,6 +47,8 @@
   adding a framework dependency or a promotion gate.
 - PyTorch CUDA was confined to the Docker `research` stage, with tests checking
   that base/runtime stages and `pyproject.toml` remain torch-free.
+- Research job runner stayed single-kind and artifact-only; it did not create a
+  broad agent platform or new stateboard files.
 
 ## Next Handoff
 

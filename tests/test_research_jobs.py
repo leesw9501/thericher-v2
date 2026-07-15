@@ -1,0 +1,179 @@
+from __future__ import annotations
+
+import json
+import socket
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+import pytest
+
+from thericher_v2.research.jobs import (
+    ResearchJobSpec,
+    run_and_write_research_job,
+)
+from thericher_v2.research.validation import GpuReadiness
+
+
+def test_research_job_runs_injected_training_and_writes_artifacts_outside_repo(
+    tmp_path,
+) -> None:
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-research-job",
+            candidate_artifact=_candidate_artifact(tmp_path),
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=lambda candidate: {
+            "backend": "unit",
+            "operation": "tiny_training_step",
+            "initial_loss": "2.000000",
+            "final_loss": "1.000000",
+            "candidate_experiment_id": candidate["candidate_experiment_id"],
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["candidate_experiment_id"] == "unit_candidate"
+    assert payload["training"]["status"] == "training_ran_only"
+    assert Path(payload["artifacts"]["training_smoke"]).exists()
+    assert payload["artifact_policy"]["repo_storage_allowed"] is False
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        run_and_write_research_job(
+            ResearchJobSpec(job_id="bad-repo-job"),
+            artifact_root=Path.cwd() / "model-artifacts",
+            repo_root=Path.cwd(),
+            gpu=GpuReadiness(
+                available=False,
+                detail="unit",
+                checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+            ),
+        )
+
+
+def test_research_job_missing_gpu_is_prepared_not_trained(tmp_path) -> None:
+    run = run_and_write_research_job(
+        ResearchJobSpec(job_id="missing-gpu-job"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=False,
+            detail="nvidia-smi unavailable",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "prepared_not_trained"
+    assert payload["status"] == "prepared_not_trained"
+    assert payload["training"]["status"] == "prepared_not_trained"
+    assert "GPU readiness unavailable" in payload["reason"]
+
+
+def test_research_job_rejects_unknown_kind() -> None:
+    with pytest.raises(ValueError, match="unsupported research job kind"):
+        ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]
+
+
+def test_research_job_is_offline_and_does_not_read_credentials(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("research job runner must not open network connections")
+
+    original_read_text = Path.read_text
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.startswith(".env"):
+            raise AssertionError("research job runner must not read credential files")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="offline-research-job",
+            candidate_artifact=_candidate_artifact(tmp_path),
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=lambda candidate: {
+            "backend": "unit",
+            "candidate_experiment_id": candidate["candidate_experiment_id"],
+        },
+    )
+
+    assert run.job_artifact.exists()
+
+
+def test_research_job_does_not_import_broker_or_torch_on_base_path() -> None:
+    sys.modules.pop("torch", None)
+    import thericher_v2.research.jobs as jobs
+
+    source = Path(jobs.__file__).read_text(encoding="utf-8").lower()
+    assert "torch" not in sys.modules
+    assert "kis" not in source
+    assert "localpaperbroker" not in source
+    assert "thericher_v2.execution" not in source
+
+
+def test_research_job_keeps_torch_research_container_only() -> None:
+    dockerfile = Path("Dockerfile").read_text(encoding="utf-8")
+    stages = _dockerfile_stages(dockerfile)
+    pyproject = Path("pyproject.toml").read_text(encoding="utf-8").lower()
+    base_dependencies = pyproject.split("[project.optional-dependencies]", maxsplit=1)[0]
+
+    assert "torch" not in base_dependencies
+    assert "torch==" not in stages["base"].lower()
+    assert "torch==" in stages["research"].lower()
+    assert "torch==" not in stages["runtime"].lower()
+
+
+def _candidate_artifact(tmp_path: Path) -> Path:
+    path = tmp_path / "candidate.json"
+    path.write_text(
+        json.dumps(
+            {
+                "candidate_experiment_id": "unit_candidate",
+                "candidate_parameters": {
+                    "lookback": 3,
+                    "timeframe": "1m",
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    return path
+
+
+def _dockerfile_stages(dockerfile: str) -> dict[str, str]:
+    stages: dict[str, str] = {}
+    current_name: str | None = None
+    current_lines: list[str] = []
+    for line in dockerfile.splitlines():
+        lower = line.lower()
+        if lower.startswith("from "):
+            if current_name is not None:
+                stages[current_name] = "\n".join(current_lines)
+            current_lines = [line]
+            current_name = lower.rsplit(" as ", maxsplit=1)[-1].strip()
+        elif current_name is not None:
+            current_lines.append(line)
+    if current_name is not None:
+        stages[current_name] = "\n".join(current_lines)
+    return stages
