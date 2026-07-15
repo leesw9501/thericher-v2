@@ -57,6 +57,8 @@
   including the explicit FCX smoke input used by validation.
 - Reused the FCX Yahoo intraday snapshot explicitly for the bounded experiment
   queue; no additional data was acquired.
+- Reused the same explicit FCX snapshot for walk-forward smoke; no additional
+  data was acquired.
 
 ## Next Handoff
 

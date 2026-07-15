@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review walk-forward additions for v1-style report or gate creep.
+1. Review GPU candidate smoke for v1-style report or gate creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -38,6 +38,7 @@
 - Validation target stayed broker-free, credential-free, and artifact-light.
 - Experiment queue stayed a single runner and concise metrics artifact, with no
   promotion gate or dashboard expansion.
+- Walk-forward stayed capped and artifact-only, with no promotion gate.
 
 ## Next Handoff
 

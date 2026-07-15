@@ -179,3 +179,14 @@ not Git.
 Reason: the engine needs repeatable experiment throughput and PnL attribution
 before heavier GPU training. Keeping the queue bounded avoids recreating v1
 report, gate, or promotion sprawl.
+
+## 2026-07-15 - Walk-forward research attribution
+
+Decision: walk-forward research reuses the bounded experiment queue over capped
+chronological bar windows. It records per-window trade count, ending equity,
+PnL, replay fill count, replay final position, and max drawdown without adding a
+promotion gate.
+
+Reason: model research needs out-of-window behavior and attribution before GPU
+time is spent on longer candidates. The artifact remains concise and outside
+Git so it improves research velocity without recreating v1 report sprawl.

@@ -27,7 +27,8 @@
 ## Active Queue
 
 1. Keep base engine tests free of heavy research dependencies.
-2. Add GPU runtime checks only when the first real training job starts.
+2. Add GPU runtime checks for the first bounded candidate smoke without changing
+   base engine startup.
 
 ## Running Jobs
 
@@ -39,6 +40,7 @@
 - Research profile preserves external model artifact mount policy.
 - Experiment queue prepared GPU candidate smoke metadata using the external
   artifact root only; no heavy training dependency was added.
+- Walk-forward artifacts were written under the external model artifact root.
 
 ## Next Handoff
 

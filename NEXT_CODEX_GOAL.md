@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first walk-forward and PnL-attribution layer to the bounded research
-experiment queue.
+Prepare the first bounded GPU candidate smoke from walk-forward research
+artifacts.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by splitting current short experiments into repeatable
-train/evaluation windows before spending longer GPU time on a candidate.
+PnL attribution by turning the latest walk-forward metrics into one explicitly
+bounded candidate run plan without touching broker, credential, or live-trading
+surfaces.
 
 ## Hard Boundaries
 
@@ -24,6 +25,7 @@ train/evaluation windows before spending longer GPU time on a candidate.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep local paper fills labeled with `source: local_paper`.
+- Do not add heavy GPU dependencies to the base engine test path.
 
 ## Required First Reads
 
@@ -51,33 +53,32 @@ train/evaluation windows before spending longer GPU time on a candidate.
 
 ## Required Work
 
-1. Inspect `src/thericher_v2/research/experiments.py` and the latest experiment
-   artifacts under `D:\thericher-v2\model-artifacts\experiments`.
-2. Add a bounded walk-forward runner that reuses the experiment queue and local
-   validation harness. Start with simple chronological windows; do not add a
-   promotion gate.
-3. Add concise attribution metrics per experiment and per window:
-   - trade count,
-   - ending equity,
-   - PnL,
-   - max drawdown or worst equity dip,
-   - replay fill count and final replay position.
-4. Keep deterministic sample data and explicit local `D:\market_data` snapshots
-   as the only data sources. Prefer existing bars and local resampling.
-5. Write walk-forward metrics artifacts outside Git under the configured model
-   artifact root.
-6. If GPU is available, keep it in prepared state only unless the walk-forward
-   metrics are strong enough to justify one bounded candidate smoke. Artifacts
-   must stay under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-7. Update `agents/engine-research.md` so the two queues stay visible:
+1. Inspect `src/thericher_v2/research/experiments.py` and the latest
+   walk-forward artifacts under `D:\thericher-v2\model-artifacts\experiments`.
+2. Select one candidate configuration from walk-forward summaries using a
+   transparent, non-gating heuristic such as positive total PnL, lower drawdown,
+   and replay consistency.
+3. Add a small candidate-smoke helper or CLI path that writes candidate metadata
+   outside Git. Include:
+   - selected experiment id and parameters,
+   - source walk-forward artifact path,
+   - summary metrics,
+   - GPU readiness,
+   - artifact policy and output root.
+4. If the available research runtime can run a tiny GPU-bound smoke without
+   adding base-engine dependencies, run it and write any artifact outside Git.
+   Otherwise record `prepared_not_trained` with the blocker reason.
+5. Keep deterministic sample data and explicit local `D:\market_data` snapshots
+   as the only data sources.
+6. Update `agents/engine-research.md` so the two queues stay visible:
    - short experiments and walk-forward breadth,
    - longer candidate training for depth.
-8. Add focused tests proving:
-   - walk-forward remains broker-free and credential-free,
-   - per-window metrics are reproducible from local paper replay,
+7. Add focused tests proving:
+   - candidate selection is deterministic and non-gating,
    - artifact paths are outside Git,
-   - external market data use is explicit.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - no broker/network/credential access is needed,
+   - base engine tests do not require GPU packages.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -100,12 +101,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused experiment, walk-forward smoke, local-data smoke, or GPU
-smoke command used.
+Report any focused candidate smoke, GPU readiness, local-data smoke, or
+artifact command used.
 
 ## Suggested Commit Message
 
-`Add walk-forward research attribution`
+`Prepare bounded GPU candidate smoke`
 
 ## Completion Report
 

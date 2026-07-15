@@ -29,10 +29,11 @@
 
 ## Active Queue
 
-1. Add walk-forward train/evaluation splits to the bounded experiment queue.
-2. Add PnL attribution metrics such as trade count, drawdown, and per-window
-   expectancy.
-3. Use stable walk-forward results to start the first longer GPU candidate.
+1. Select one bounded GPU candidate from walk-forward artifacts.
+2. Verify the GPU/research runtime path without adding heavy dependencies to
+   the base engine.
+3. Keep short walk-forward experiments available for breadth while a longer
+   candidate runs.
 
 ## Running Jobs
 
@@ -52,8 +53,10 @@
   under `D:\thericher-v2\model-artifacts\experiments`.
 - Prepared a GPU candidate smoke artifact after the CPU queue completed; no GPU
   training is running.
+- Added capped walk-forward windows and PnL attribution metrics; wrote sample
+  and FCX walk-forward artifacts outside Git.
 
 ## Next Handoff
 
-- Start with walk-forward and attribution metrics before spending long GPU time
-  on a candidate.
+- Start by choosing one candidate from the walk-forward artifact, then run only
+  bounded GPU smoke work with artifacts outside Git.

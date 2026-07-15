@@ -17,8 +17,10 @@ from thericher_v2.research.experiments import (
     default_short_experiment_specs,
     load_experiment_source,
     run_short_experiment_queue,
+    run_walk_forward_queue,
     write_experiment_metrics_artifact,
     write_gpu_candidate_smoke_artifact,
+    write_walk_forward_metrics_artifact,
 )
 from thericher_v2.research.validation import GpuReadiness
 
@@ -166,6 +168,140 @@ def test_gpu_candidate_smoke_artifact_is_prepared_outside_repo(tmp_path) -> None
     assert payload["status"] == "prepared_not_trained"
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
     assert payload["candidate_experiment_id"] == "candidate_m1"
+
+
+def test_walk_forward_metrics_are_replayable_and_reproducible(tmp_path) -> None:
+    source = load_experiment_source(max_bars=90)
+    specs = (
+        ExperimentSpec("wf_m1_lb3", timeframe=Timeframe.M1, lookback=3),
+        ExperimentSpec("wf_m1_lb5", timeframe=Timeframe.M1, lookback=5),
+    )
+
+    first = run_walk_forward_queue(
+        source,
+        queue_id="unit-walk-forward",
+        specs=specs,
+        window_bars=40,
+        step_bars=25,
+        work_root=tmp_path / "first",
+    )
+    second = run_walk_forward_queue(
+        source,
+        queue_id="unit-walk-forward",
+        specs=specs,
+        window_bars=40,
+        step_bars=25,
+        work_root=tmp_path / "second",
+    )
+
+    first_windows = [
+        (window.window, window.experiments)
+        for window in first.windows
+    ]
+    second_windows = [
+        (window.window, window.experiments)
+        for window in second.windows
+    ]
+    assert first_windows == second_windows
+    assert first.experiment_summaries == second.experiment_summaries
+    assert len(first.windows) == 3
+    for window in first.windows:
+        assert window.window.bars_seen == 40
+        for metrics in window.experiments:
+            assert metrics.local_paper_trades == metrics.replay_fill_count
+            assert metrics.final_position == metrics.replay_final_position
+            assert metrics.max_drawdown >= Decimal("0")
+
+
+def test_walk_forward_is_offline_and_does_not_read_credentials(monkeypatch, tmp_path) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("walk-forward must not open network connections")
+
+    original_read_text = Path.read_text
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.startswith(".env"):
+            raise AssertionError("walk-forward must not read credential files")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+
+    result = run_walk_forward_queue(
+        load_experiment_source(max_bars=70),
+        queue_id="offline-walk-forward",
+        specs=(ExperimentSpec("offline_wf_m1"),),
+        window_bars=35,
+        step_bars=20,
+        work_root=tmp_path / "wf",
+    )
+
+    assert result.windows
+
+
+def test_walk_forward_artifact_is_written_outside_repo(tmp_path) -> None:
+    result = run_walk_forward_queue(
+        load_experiment_source(max_bars=70),
+        queue_id="artifact-walk-forward",
+        specs=(ExperimentSpec("artifact_wf_m1"),),
+        window_bars=35,
+        step_bars=20,
+        work_root=tmp_path / "wf",
+    )
+
+    artifact = write_walk_forward_metrics_artifact(
+        result,
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+    )
+
+    payload = json.loads(artifact.read_text(encoding="utf-8"))
+    assert payload["queue_id"] == "artifact-walk-forward"
+    assert payload["window_count"] == 2
+    assert payload["experiment_summaries"][0]["windows_seen"] == 2
+    assert "max_drawdown" in payload["windows"][0]["experiments"][0]
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        write_walk_forward_metrics_artifact(
+            result,
+            artifact_root=Path.cwd() / "model-artifacts",
+            repo_root=Path.cwd(),
+        )
+
+
+def test_walk_forward_external_market_data_is_explicit(tmp_path) -> None:
+    snapshot = tmp_path / "ohlcv_1m.csv.gz"
+    _write_yahoo_snapshot(snapshot, symbol="MSFT", count=70)
+
+    sample_source = load_experiment_source(max_bars=70)
+    external_source = load_experiment_source(
+        yahoo_snapshot=snapshot,
+        symbol="MSFT",
+        max_bars=70,
+    )
+    result = run_walk_forward_queue(
+        external_source,
+        queue_id="external-walk-forward",
+        specs=(ExperimentSpec("external_wf_m1", timeframe=Timeframe.M1, lookback=3),),
+        window_bars=35,
+        step_bars=20,
+        work_root=tmp_path / "wf",
+    )
+
+    assert sample_source.external_path is None
+    assert sample_source.data_source == "deterministic_sample"
+    assert external_source.external_path == snapshot
+    assert result.data_source == str(snapshot)
+    assert result.windows[0].experiments[0].symbol == "MSFT"
+
+
+def test_walk_forward_window_count_is_bounded() -> None:
+    with pytest.raises(ValueError, match="capped"):
+        run_walk_forward_queue(
+            load_experiment_source(max_bars=100),
+            specs=(ExperimentSpec("bounded_wf_m1"),),
+            window_bars=10,
+            step_bars=10,
+        )
 
 
 def _write_yahoo_snapshot(path: Path, *, symbol: str, count: int) -> None:

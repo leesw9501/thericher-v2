@@ -66,6 +66,8 @@ Implemented and pushed:
   artifact writing outside Git,
 - bounded research experiment queue that sweeps small momentum/timeframe
   variants through the validation harness and writes metrics outside Git,
+- walk-forward attribution layer for the experiment queue with chronological
+  windows, per-window replay metrics, PnL, and drawdown,
 - GPU candidate smoke preparation artifact for the first longer research
   candidate, without training or storing artifacts in the repo,
 - agent lane stateboards under `agents/`,
@@ -85,7 +87,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `35 passed`
+- `40 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -125,13 +127,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add walk-forward evaluation and attribution to the bounded research queue:
+Prepare the first bounded GPU candidate smoke from walk-forward results:
 
-1. split deterministic and explicit local market data into train/evaluation
-   windows,
-2. record per-window PnL, trade counts, drawdown, and replay metadata,
-3. keep metrics artifacts outside Git,
-4. use the result to decide the first bounded GPU candidate run.
+1. inspect the latest walk-forward artifacts,
+2. select one candidate configuration without adding a promotion gate,
+3. verify GPU/research runtime without adding heavy dependencies to the base
+   engine,
+4. write candidate metadata and any generated artifacts outside Git.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
