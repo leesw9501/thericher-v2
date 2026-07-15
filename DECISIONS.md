@@ -166,3 +166,16 @@ Git.
 Reason: feature/model research, backtest validation, local paper preparation,
 and PnL attribution need one repeatable loop before adding broker adapters,
 credentials, dashboards, or heavier models.
+
+## 2026-07-15 - Bounded research experiment queue
+
+Decision: short research experiments parameterize the existing validation loop
+instead of adding a second replay path. The default queue sweeps a small,
+bounded set of momentum lookback, threshold, and timeframe variants on
+deterministic sample bars or an explicit local Yahoo snapshot. Metrics and GPU
+candidate smoke artifacts are written under the configured model artifact root,
+not Git.
+
+Reason: the engine needs repeatable experiment throughput and PnL attribution
+before heavier GPU training. Keeping the queue bounded avoids recreating v1
+report, gate, or promotion sprawl.

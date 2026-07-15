@@ -23,6 +23,7 @@ research = [
 [project.scripts]
 thericher-v2-daily-report = "thericher_v2.ops.daily_report:main"
 thericher-v2-dashboard = "thericher_v2.dashboard.server:main"
+thericher-v2-experiment-queue = "thericher_v2.research.experiments:main"
 thericher-v2-validation-smoke = "thericher_v2.research.validation:main"
 
 [tool.pytest.ini_options]

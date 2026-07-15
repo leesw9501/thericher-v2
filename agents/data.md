@@ -55,6 +55,8 @@
 - Confirmed useful US equity Yahoo intraday snapshots under
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`,
   including the explicit FCX smoke input used by validation.
+- Reused the FCX Yahoo intraday snapshot explicitly for the bounded experiment
+  queue; no additional data was acquired.
 
 ## Next Handoff
 

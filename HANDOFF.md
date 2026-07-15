@@ -64,6 +64,10 @@ Implemented and pushed:
   ensemble decisions, and broker-free local paper execution,
 - validation smoke CLI with optional explicit Yahoo intraday snapshot input and
   artifact writing outside Git,
+- bounded research experiment queue that sweeps small momentum/timeframe
+  variants through the validation harness and writes metrics outside Git,
+- GPU candidate smoke preparation artifact for the first longer research
+  candidate, without training or storing artifacts in the repo,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -81,7 +85,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `29 passed`
+- `35 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -121,14 +125,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Run the first bounded research experiment queue on top of the validation
-harness:
+Add walk-forward evaluation and attribution to the bounded research queue:
 
-1. add a tiny experiment runner that sweeps momentum/timeframe inputs against
-   local-paper replay,
-2. record concise metrics artifacts outside Git,
-3. prepare one longer GPU candidate only after the CPU queue is repeatable,
-4. keep model artifacts in `D:\thericher-v2\model-artifacts`.
+1. split deterministic and explicit local market data into train/evaluation
+   windows,
+2. record per-window PnL, trade counts, drawdown, and replay metadata,
+3. keep metrics artifacts outside Git,
+4. use the result to decide the first bounded GPU candidate run.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

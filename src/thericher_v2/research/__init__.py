@@ -1,5 +1,16 @@
 """Research and validation helpers."""
 
+from .experiments import (
+    ExperimentMetrics,
+    ExperimentQueueResult,
+    ExperimentSource,
+    ExperimentSpec,
+    default_short_experiment_specs,
+    load_experiment_source,
+    run_short_experiment_queue,
+    write_experiment_metrics_artifact,
+    write_gpu_candidate_smoke_artifact,
+)
 from .validation import (
     GpuReadiness,
     MarketDataInventory,
@@ -17,17 +28,26 @@ from .validation import (
 )
 
 __all__ = [
+    "ExperimentMetrics",
+    "ExperimentQueueResult",
+    "ExperimentSource",
+    "ExperimentSpec",
     "GpuReadiness",
     "MarketDataInventory",
     "ValidationConfig",
     "ValidationResult",
     "ValidationTrade",
+    "default_short_experiment_specs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
+    "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
     "run_local_paper_validation",
     "run_sample_cpu_smoke",
+    "run_short_experiment_queue",
+    "write_experiment_metrics_artifact",
+    "write_gpu_candidate_smoke_artifact",
     "write_gpu_experiment_plan",
     "write_validation_artifact",
 ]

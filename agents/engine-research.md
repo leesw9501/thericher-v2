@@ -29,11 +29,10 @@
 
 ## Active Queue
 
-1. Short experiments: sweep simple momentum thresholds and timeframe
-   confirmation inputs through the validation harness.
-2. Longer candidate training: prepare one GPU-backed candidate only after the
-   short CPU queue is repeatable.
-3. Add walk-forward validation before promoting any model beyond research.
+1. Add walk-forward train/evaluation splits to the bounded experiment queue.
+2. Add PnL attribution metrics such as trade count, drawdown, and per-window
+   expectancy.
+3. Use stable walk-forward results to start the first longer GPU candidate.
 
 ## Running Jobs
 
@@ -49,9 +48,12 @@
   local paper fills.
 - Wrote smoke artifacts outside Git under
   `D:\thericher-v2\model-artifacts\validation`.
+- Added a bounded short experiment queue and wrote metrics artifacts outside Git
+  under `D:\thericher-v2\model-artifacts\experiments`.
+- Prepared a GPU candidate smoke artifact after the CPU queue completed; no GPU
+  training is running.
 
 ## Next Handoff
 
-- Start with the short CPU experiment queue, then schedule one longer GPU
-  candidate only after baseline metrics are stable and artifacts stay outside
-  Git.
+- Start with walk-forward and attribution metrics before spending long GPU time
+  on a candidate.

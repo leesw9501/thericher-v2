@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded research experiment queue on top of the local validation
-harness.
+Add the first walk-forward and PnL-attribution layer to the bounded research
+experiment queue.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by turning the current one-off validation smoke into repeatable
-short experiments, while preparing one longer GPU candidate without storing
-artifacts in Git.
+PnL attribution by splitting current short experiments into repeatable
+train/evaluation windows before spending longer GPU time on a candidate.
 
 ## Hard Boundaries
 
@@ -52,33 +51,39 @@ artifacts in Git.
 
 ## Required Work
 
-1. Inspect the new validation harness and the latest artifacts under
-   `D:\thericher-v2\model-artifacts\validation`.
-2. Add a small experiment runner that can execute a bounded queue of short CPU
-   experiments against deterministic sample data and explicit local
-   `D:\market_data` snapshots.
-3. Keep the first short queue simple: momentum threshold or timeframe
-   confirmation sweeps are enough. Prefer existing bars and local resampling.
-4. Write concise metrics artifacts outside Git. Include run id, data source,
-   parameters, local-paper trades, ending equity, PnL, and replay metadata.
-5. If GPU is available, prepare or run one longer candidate smoke job only after
-   the CPU queue is repeatable. Artifacts must stay under the configured model
+1. Inspect `src/thericher_v2/research/experiments.py` and the latest experiment
+   artifacts under `D:\thericher-v2\model-artifacts\experiments`.
+2. Add a bounded walk-forward runner that reuses the experiment queue and local
+   validation harness. Start with simple chronological windows; do not add a
+   promotion gate.
+3. Add concise attribution metrics per experiment and per window:
+   - trade count,
+   - ending equity,
+   - PnL,
+   - max drawdown or worst equity dip,
+   - replay fill count and final replay position.
+4. Keep deterministic sample data and explicit local `D:\market_data` snapshots
+   as the only data sources. Prefer existing bars and local resampling.
+5. Write walk-forward metrics artifacts outside Git under the configured model
    artifact root.
-6. Update `agents/engine-research.md` so the two queues stay visible:
-   - short experiments for breadth,
+6. If GPU is available, keep it in prepared state only unless the walk-forward
+   metrics are strong enough to justify one bounded candidate smoke. Artifacts
+   must stay under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+7. Update `agents/engine-research.md` so the two queues stay visible:
+   - short experiments and walk-forward breadth,
    - longer candidate training for depth.
-7. Add focused tests proving:
-   - experiments remain broker-free and credential-free,
-   - metrics are reproducible from local paper replay,
+8. Add focused tests proving:
+   - walk-forward remains broker-free and credential-free,
+   - per-window metrics are reproducible from local paper replay,
    - artifact paths are outside Git,
    - external market data use is explicit.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for this active experiment loop.
+  license-compatible, and useful for this active validation loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -95,12 +100,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused experiment, CPU smoke, local-data smoke, or GPU smoke command
-used.
+Report any focused experiment, walk-forward smoke, local-data smoke, or GPU
+smoke command used.
 
 ## Suggested Commit Message
 
-`Add bounded research experiment queue`
+`Add walk-forward research attribution`
 
 ## Completion Report
 

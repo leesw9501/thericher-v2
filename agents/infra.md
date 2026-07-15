@@ -26,8 +26,8 @@
 
 ## Active Queue
 
-1. Add GPU runtime checks only when the first GPU research goal starts.
-2. Keep base engine tests free of heavy research dependencies.
+1. Keep base engine tests free of heavy research dependencies.
+2. Add GPU runtime checks only when the first real training job starts.
 
 ## Running Jobs
 
@@ -37,6 +37,8 @@
 
 - Docker Compose has `engine`, `web`, and `research` services.
 - Research profile preserves external model artifact mount policy.
+- Experiment queue prepared GPU candidate smoke metadata using the external
+  artifact root only; no heavy training dependency was added.
 
 ## Next Handoff
 
