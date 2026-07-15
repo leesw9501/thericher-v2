@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded candidate replay comparison loop.
+Add the first bounded candidate probability trace and threshold sweep.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by comparing the candidate local-paper replay against a simple
-in-repo baseline on the same market data. The goal is to learn whether the
-trained candidate adds anything beyond the existing momentum baseline before
-running deeper GPU experiments.
+PnL attribution by preserving one bounded candidate probability trace outside
+Git, then replaying a small buy/sell threshold grid against the momentum
+baseline comparison evidence. The goal is to learn whether the candidate can
+trade often enough without rerunning model inference for every threshold pair.
 
 ## Hard Boundaries
 
@@ -61,38 +61,45 @@ running deeper GPU experiments.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory the latest external candidate artifacts:
+2. Inventory the latest external artifacts:
    - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke`
-3. Reuse the same explicit local Yahoo intraday snapshot used by replay first:
+   - `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`
+3. Reuse the explicit local Yahoo intraday snapshot first:
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz`.
-4. Add a small comparison harness or research job kind that:
-   - runs or consumes candidate local-paper replay metrics,
-   - runs the existing simple momentum baseline through broker-free local paper
-     on the same bars,
-   - compares trades, PnL, max drawdown, final position, replay fill count, and
-     event count,
-   - writes comparison artifacts outside Git.
-5. Keep comparison output descriptive only. Do not emit pass/fail, promotion,
+4. Add a small probability trace artifact or job path that records, outside Git:
+   - candidate metadata and model artifact lineage,
+   - ordered symbol/market/timeframe and bounded bar count,
+   - per-example probability with signal and execution bar timestamps,
+   - source data path and artifact policy,
+   - enough alignment data to replay thresholds without another inference pass.
+5. Add a small threshold sweep harness or research job kind that:
+   - consumes the probability trace when available,
+   - otherwise can run one bounded candidate inference through Docker
+     `research`,
+   - replays a small buy/sell threshold grid through broker-free local paper,
+   - compares each candidate threshold result with the existing momentum
+     baseline comparison metrics,
+   - writes sweep artifacts outside Git.
+6. Keep sweep output descriptive only. Do not emit pass/fail, promotion,
    deployment, or gate decisions.
-6. Add focused tests proving:
-   - comparison artifacts are outside Git,
-   - both sides use `source: local_paper` fills only,
+7. Add focused tests proving:
+   - probability trace and sweep artifacts are outside Git,
+   - fills remain `source: local_paper`,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
-   - PyTorch remains research-container-only and lazy for the candidate side,
-   - missing candidate replay/model/GPU/backend records a non-fatal prepared
-     state where relevant,
-   - comparison is deterministic/replayable.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - PyTorch remains research-container-only and lazy,
+   - missing trace/model/GPU/backend records a non-fatal prepared state where
+     relevant,
+   - the sweep is deterministic/replayable from one trace.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
-- Prefer existing Yahoo intraday snapshots if they are useful for this
-  comparison.
+- Prefer existing Yahoo intraday snapshots if they are useful for this sweep.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for this active comparison loop.
+  license-compatible, and useful for this active sweep loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -109,12 +116,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused comparison command, job-runner command, Docker research
-command, or GPU inference/replay smoke used.
+Report any focused trace, sweep, job-runner, Docker research, or GPU inference
+command used.
 
 ## Suggested Commit Message
 
-`Add bounded candidate replay comparison`
+`Add bounded candidate threshold sweep`
 
 ## Completion Report
 

@@ -100,6 +100,11 @@ Implemented and pushed:
   into descriptive buy/sell/hold thresholds, runs only the broker-free local
   paper simulator, keeps simulated fills labeled `source: local_paper`, and
   writes replay/PnL attribution artifacts outside Git,
+- bounded candidate replay comparison job kind in the research job runner; it
+  consumes or runs candidate local-paper replay, runs a gap-tolerant momentum
+  baseline through the same broker-free local paper simulator on the same bars,
+  compares trades, PnL, drawdown, final position, fill count, and event count,
+  and writes descriptive comparison artifacts outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -117,7 +122,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `88 passed`
+- `97 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -161,14 +166,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded candidate replay comparison loop:
+Add the first bounded candidate probability trace and threshold sweep:
 
-1. reuse the explicit local Yahoo intraday snapshot path now mounted into
-   Docker `research` at `/app/market_data`,
-2. run candidate local-paper replay and a simple momentum baseline on the same
-   bars,
-3. compare trades, PnL, drawdown, replay fill counts, and final position,
-4. write concise comparison metrics outside Git,
+1. reuse the explicit CVS Yahoo intraday snapshot and the trained candidate,
+2. persist a bounded probability trace outside Git so threshold variants do not
+   need repeated inference,
+3. sweep a small candidate buy/sell threshold grid against the momentum
+   baseline comparison metrics,
+4. compare trade count, PnL, drawdown, final position, and fill count,
 5. keep the result as research evidence, not a promotion gate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

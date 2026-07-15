@@ -29,19 +29,20 @@
 
 ## Active Queue
 
-1. Compare candidate local-paper replay against a simple momentum baseline on
-   the same explicit local Yahoo intraday bars.
-2. Keep replay thresholds descriptive; do not turn comparison output into a
-   promotion gate.
-3. Prepare the next bounded longer/deeper training candidate only after replay
-   comparison shows what failed or improved.
+1. Persist a bounded candidate probability trace outside Git so threshold
+   variants do not need repeated inference.
+2. Sweep a small candidate buy/sell threshold grid against the momentum
+   baseline comparison metrics.
+3. Prepare the next bounded longer/deeper training candidate only after the
+   threshold sweep shows whether the candidate can trade often enough.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-replay-smoke`, status `completed`, backend
-  `torch`, device `NVIDIA GeForce RTX 4090`, symbol `CVS`, trade count `1`,
-  PnL `0.40959786376953`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke`.
+- Last completed: `bounded-candidate-replay-comparison-smoke`, status
+  `completed`, symbol `CVS`, candidate PnL `0.40959786376953`, baseline PnL
+  `-1.75100213623047`, delta PnL `2.16060000000000`, candidate fills `1`,
+  baseline fills `41`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`.
 
 ## Done Recently
 
@@ -86,10 +87,14 @@
   Yahoo intraday snapshot, mapped candidate probabilities into local paper
   decisions, produced one `source: local_paper` fill, and wrote PnL/drawdown
   attribution outside Git.
+- Added the first bounded `candidate_replay_comparison` job. It consumed the
+  existing candidate replay artifact, ran the simple momentum baseline on the
+  same CVS bars through local paper, and wrote descriptive PnL/drawdown/fill
+  deltas outside Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. Next work
-  should compare candidate replay against a baseline before starting broader
+  should add a probability trace/threshold sweep before starting broader
   scheduling or claiming the Engine Research Agent can keep the GPU busy by
   itself.

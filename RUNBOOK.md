@@ -53,6 +53,10 @@ docker compose --profile research run --rm --no-deps research thericher-v2-resea
 docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-replay-smoke --kind candidate_replay --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --yahoo-snapshot /app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --buy-threshold 0.47 --sell-threshold 0.45
 ```
 
+```powershell
+uv run --extra dev thericher-v2-research-job --job-id bounded-candidate-replay-comparison-smoke --kind candidate_replay_comparison --candidate-replay-artifact D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke\metrics.json --training-metrics-artifact D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke\metrics.json --yahoo-snapshot D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --buy-threshold 0.47 --sell-threshold 0.45
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

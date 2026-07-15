@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review candidate replay comparison for dependency creep.
+1. Review threshold sweep/probability trace work for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -58,6 +58,10 @@
 - Candidate replay extended the job runner with one explicit fourth kind,
   stayed broker-free/local-paper-only, kept fills labeled `source:
   local_paper`, and did not add a promotion gate or dashboard surface.
+- Candidate replay comparison extended the job runner with one explicit fifth
+  kind, stayed artifact-only and local-paper-only, consumed existing replay
+  evidence when available, and did not add a promotion gate, dashboard, or
+  scheduler.
 
 ## Next Handoff
 

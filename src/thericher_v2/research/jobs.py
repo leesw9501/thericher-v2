@@ -12,6 +12,11 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.serialization import to_jsonable
 
+from .candidate_comparison import (
+    BoundedCandidateReplayComparisonResult,
+    CandidateReplayComparisonConfig,
+    run_bounded_candidate_replay_comparison,
+)
 from .candidate_evaluation import (
     BoundedCandidateEvaluationResult,
     CandidateEvaluationConfig,
@@ -47,12 +52,14 @@ ResearchJobKind = Literal[
     "candidate_training",
     "candidate_evaluation",
     "candidate_replay",
+    "candidate_replay_comparison",
 ]
 ResearchJobStatus = Literal[
     "completed",
     "prepared_not_trained",
     "prepared_not_evaluated",
     "prepared_not_replayed",
+    "prepared_not_compared",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
@@ -60,6 +67,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_training",
     "candidate_evaluation",
     "candidate_replay",
+    "candidate_replay_comparison",
 )
 
 
@@ -70,6 +78,7 @@ class ResearchJobSpec:
     candidate_artifact: Path | None = None
     training_metrics_artifact: Path | None = None
     evaluation_artifact: Path | None = None
+    candidate_replay_artifact: Path | None = None
     model_artifact: Path | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
@@ -103,6 +112,7 @@ class ResearchJobResult:
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
         | BoundedCandidateReplayResult
+        | BoundedCandidateReplayComparisonResult
     )
     training_artifact: Path
     model_artifact: Path | None = None
@@ -177,7 +187,8 @@ def _run_job_kind(
     GpuTrainingSmokeResult
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
-    | BoundedCandidateReplayResult,
+    | BoundedCandidateReplayResult
+    | BoundedCandidateReplayComparisonResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -265,6 +276,31 @@ def _run_job_kind(
             else "prepared_not_replayed"
         )
         return replay, replay.replay_artifact, replay.model_artifact, status
+    if spec.kind == "candidate_replay_comparison":
+        comparison = run_bounded_candidate_replay_comparison(
+            config=CandidateReplayComparisonConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                buy_threshold=spec.buy_threshold,
+                sell_threshold=spec.sell_threshold,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            candidate_replay_artifact=spec.candidate_replay_artifact,
+            training_metrics_artifact=spec.training_metrics_artifact,
+            evaluation_artifact=spec.evaluation_artifact,
+            model_artifact=spec.model_artifact,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if comparison.status == "candidate_compared_only"
+            else "prepared_not_compared"
+        )
+        return comparison, comparison.comparison_artifact, comparison.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -296,6 +332,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidate-artifact", type=Path)
     parser.add_argument("--training-metrics-artifact", type=Path)
     parser.add_argument("--evaluation-artifact", type=Path)
+    parser.add_argument("--candidate-replay-artifact", type=Path)
     parser.add_argument("--model-artifact", type=Path)
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
@@ -317,6 +354,7 @@ def main() -> None:
         candidate_artifact=args.candidate_artifact,
         training_metrics_artifact=args.training_metrics_artifact,
         evaluation_artifact=args.evaluation_artifact,
+        candidate_replay_artifact=args.candidate_replay_artifact,
         model_artifact=args.model_artifact,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
@@ -460,6 +498,40 @@ def _research_job_payload(
             "thresholds": training.thresholds,
             "probability_metrics": training.probability_metrics,
         }
+    elif isinstance(training, BoundedCandidateReplayComparisonResult):
+        base["candidate_replay_comparison"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "training_metrics_artifact": (
+                None
+                if training.training_metrics_artifact is None
+                else str(training.training_metrics_artifact)
+            ),
+            "evaluation_artifact": (
+                None if training.evaluation_artifact is None else str(training.evaluation_artifact)
+            ),
+            "model_artifact": (
+                None if training.model_artifact is None else str(training.model_artifact)
+            ),
+            "candidate_replay_artifact": (
+                None
+                if training.candidate_replay_artifact is None
+                else str(training.candidate_replay_artifact)
+            ),
+            "data_source": training.data_source,
+            "symbol": training.symbol,
+            "market": training.market,
+            "timeframe": training.timeframe,
+            "bars_seen": training.bars_seen,
+            "candidate_status": training.candidate_status,
+            "baseline_status": training.baseline_status,
+            "candidate_metrics": training.candidate_metrics,
+            "baseline_metrics": training.baseline_metrics,
+            "source_alignment": training.source_alignment,
+            "deltas": training.deltas,
+            "thresholds": training.thresholds,
+        }
     return to_jsonable(base)
 
 
@@ -473,6 +545,16 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         return artifacts
     if isinstance(result.training, BoundedCandidateReplayResult):
         artifacts = {"candidate_replay": str(result.training_artifact)}
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateReplayComparisonResult):
+        artifacts = {
+            "candidate_replay_comparison": str(result.training_artifact),
+            "baseline_events": str(result.training.baseline_events),
+        }
+        if result.training.candidate_replay_artifact is not None:
+            artifacts["candidate_replay"] = str(result.training.candidate_replay_artifact)
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)
         return artifacts

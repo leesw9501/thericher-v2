@@ -46,6 +46,8 @@
   `source: local_paper`.
 - Candidate replay now consumes local paper only and verified generated fills
   remain labeled with `source: local_paper`.
+- Candidate replay comparison verified both candidate and momentum baseline
+  fills remain labeled with `source: local_paper`.
 
 ## Next Handoff
 

@@ -306,3 +306,17 @@ Reason: candidate models need tradability evidence before deeper GPU training
 or model registry work. Running through local paper preserves replayable fills
 without introducing KIS credentials, broker submit code, live authority,
 promotion gates, or dashboard expansion.
+
+## 2026-07-15 - Bounded candidate replay comparison job
+
+Decision: extend the lightweight research job runner with one
+`candidate_replay_comparison` job kind. It consumes or runs candidate replay,
+runs a gap-tolerant momentum baseline through broker-free `LocalPaperBroker` on
+the same bounded bars, compares PnL, drawdown, trades, fill counts, final
+position, and event counts, and writes descriptive comparison artifacts under
+the external model artifact root.
+
+Reason: candidate replay needs a simple in-repo baseline before deeper GPU
+training or threshold calibration. The comparison remains research evidence,
+not a promotion gate, and does not introduce KIS credentials, broker submit
+code, live authority, dashboards, or scheduler/agent expansion.
