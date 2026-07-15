@@ -29,11 +29,12 @@
 
 ## Active Queue
 
-1. Select one bounded GPU candidate from walk-forward artifacts.
-2. Verify the GPU/research runtime path without adding heavy dependencies to
-   the base engine.
-3. Keep short walk-forward experiments available for breadth while a longer
+1. Verify the research-profile GPU runtime path without adding heavy
+   dependencies to the base engine.
+2. Keep short walk-forward experiments available for breadth while a longer
    candidate runs.
+3. Start the first bounded GPU candidate only after runtime smoke artifacts are
+   outside Git.
 
 ## Running Jobs
 
@@ -55,8 +56,10 @@
   training is running.
 - Added capped walk-forward windows and PnL attribution metrics; wrote sample
   and FCX walk-forward artifacts outside Git.
+- Selected `m1_lb3_b10_s10` as the first walk-forward GPU candidate and wrote a
+  `prepared_not_trained` metadata artifact outside Git.
 
 ## Next Handoff
 
-- Start by choosing one candidate from the walk-forward artifact, then run only
-  bounded GPU smoke work with artifacts outside Git.
+- Start with a research-profile GPU runtime smoke; do not add GPU dependencies
+  to the base engine.

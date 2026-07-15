@@ -5,6 +5,7 @@ from .experiments import (
     ExperimentQueueResult,
     ExperimentSource,
     ExperimentSpec,
+    WalkForwardCandidate,
     WalkForwardExperimentSummary,
     WalkForwardResult,
     WalkForwardWindow,
@@ -13,8 +14,10 @@ from .experiments import (
     load_experiment_source,
     run_short_experiment_queue,
     run_walk_forward_queue,
+    select_walk_forward_candidate,
     write_experiment_metrics_artifact,
     write_gpu_candidate_smoke_artifact,
+    write_walk_forward_gpu_candidate_smoke_artifact,
     write_walk_forward_metrics_artifact,
 )
 from .validation import (
@@ -38,6 +41,7 @@ __all__ = [
     "ExperimentQueueResult",
     "ExperimentSource",
     "ExperimentSpec",
+    "WalkForwardCandidate",
     "WalkForwardExperimentSummary",
     "WalkForwardResult",
     "WalkForwardWindow",
@@ -57,9 +61,11 @@ __all__ = [
     "run_sample_cpu_smoke",
     "run_short_experiment_queue",
     "run_walk_forward_queue",
+    "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
     "write_gpu_candidate_smoke_artifact",
     "write_gpu_experiment_plan",
+    "write_walk_forward_gpu_candidate_smoke_artifact",
     "write_walk_forward_metrics_artifact",
     "write_validation_artifact",
 ]

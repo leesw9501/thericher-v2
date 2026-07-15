@@ -183,6 +183,21 @@ class WalkForwardResult:
             raise ValueError(f"walk-forward is capped at {self.max_windows} windows")
 
 
+@dataclass(frozen=True)
+class WalkForwardCandidate:
+    queue_id: str
+    experiment_id: str
+    parameters: dict[str, Any]
+    summary_metrics: dict[str, Any]
+    source_artifact_path: Path
+    selection_heuristic: str
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.queue_id or not self.experiment_id:
+            raise ValueError("candidate queue_id and experiment_id are required")
+
+
 def default_short_experiment_specs() -> tuple[ExperimentSpec, ...]:
     return (
         ExperimentSpec(
@@ -333,6 +348,62 @@ def write_walk_forward_metrics_artifact(
     return path
 
 
+def select_walk_forward_candidate(walk_forward_artifact: Path) -> WalkForwardCandidate:
+    payload = json.loads(walk_forward_artifact.read_text(encoding="utf-8"))
+    summaries = payload.get("experiment_summaries")
+    if not isinstance(summaries, list) or not summaries:
+        raise ValueError("walk-forward artifact must contain experiment_summaries")
+    selected_summary = min(summaries, key=_candidate_sort_key)
+    experiment_id = str(selected_summary["experiment_id"])
+    return WalkForwardCandidate(
+        queue_id=str(payload["queue_id"]),
+        experiment_id=experiment_id,
+        parameters=_parameters_for_experiment(payload, experiment_id),
+        summary_metrics=_candidate_summary_metrics(selected_summary),
+        source_artifact_path=walk_forward_artifact,
+        selection_heuristic=(
+            "positive total_pnl preferred, then total_pnl desc, max_drawdown asc, "
+            "worst_window_pnl desc, experiment_id asc"
+        ),
+    )
+
+
+def write_walk_forward_gpu_candidate_smoke_artifact(
+    *,
+    walk_forward_artifact: Path,
+    gpu: GpuReadiness,
+    artifact_root: Path,
+    repo_root: Path | None = None,
+) -> Path:
+    _reject_repo_artifact_path(artifact_root, repo_root)
+    candidate = select_walk_forward_candidate(walk_forward_artifact)
+    output_dir = artifact_root / "experiments"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    path = output_dir / f"{candidate.queue_id}-walk-forward-gpu-candidate-smoke.json"
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "queue_id": candidate.queue_id,
+        "created_at_utc": datetime.now(UTC).isoformat(),
+        "status": "prepared_not_trained",
+        "candidate_experiment_id": candidate.experiment_id,
+        "candidate_parameters": to_jsonable(candidate.parameters),
+        "selection_heuristic": candidate.selection_heuristic,
+        "source_walk_forward_artifact": str(candidate.source_artifact_path),
+        "summary_metrics": to_jsonable(candidate.summary_metrics),
+        "gpu": to_jsonable(gpu),
+        "gpu_smoke": {
+            "attempted": False,
+            "reason": _gpu_smoke_reason(gpu),
+        },
+        "artifact_policy": {
+            "root": str(artifact_root),
+            "repo_storage_allowed": False,
+        },
+    }
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+    return path
+
+
 def write_gpu_candidate_smoke_artifact(
     result: ExperimentQueueResult,
     *,
@@ -377,11 +448,35 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--write-artifact", action="store_true")
     parser.add_argument("--artifact-root", type=Path)
     parser.add_argument("--prepare-gpu-candidate", action="store_true")
+    parser.add_argument("--walk-forward-candidate-artifact", type=Path)
     return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
+    artifact_root = args.artifact_root or resolve_model_artifact_root()
+    if args.walk_forward_candidate_artifact is not None:
+        gpu = detect_gpu_readiness()
+        artifact = write_walk_forward_gpu_candidate_smoke_artifact(
+            walk_forward_artifact=args.walk_forward_candidate_artifact,
+            gpu=gpu,
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+        )
+        candidate = select_walk_forward_candidate(args.walk_forward_candidate_artifact)
+        print(
+            json.dumps(
+                {
+                    "candidate": _candidate_payload(candidate),
+                    "artifacts": {"walk_forward_gpu_candidate": str(artifact)},
+                    "gpu": to_jsonable(gpu),
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        return
+
     source = load_experiment_source(
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
@@ -397,7 +492,6 @@ def main() -> None:
         )
     else:
         result = run_short_experiment_queue(source, queue_id=args.queue_id)
-    artifact_root = args.artifact_root or resolve_model_artifact_root()
     artifacts: dict[str, str] = {}
     gpu_payload: dict[str, Any] | None = None
     if args.write_artifact:
@@ -717,6 +811,47 @@ def _candidate_metrics(result: ExperimentQueueResult) -> ExperimentMetrics:
     return result.experiments[0]
 
 
+def _candidate_sort_key(summary: dict[str, Any]) -> tuple[bool, Decimal, Decimal, Decimal, str]:
+    total_pnl = Decimal(str(summary["total_pnl"]))
+    max_drawdown = Decimal(str(summary["max_drawdown"]))
+    worst_window_pnl = Decimal(str(summary["worst_window_pnl"]))
+    return (
+        total_pnl <= Decimal("0"),
+        -total_pnl,
+        max_drawdown,
+        -worst_window_pnl,
+        str(summary["experiment_id"]),
+    )
+
+
+def _parameters_for_experiment(payload: dict[str, Any], experiment_id: str) -> dict[str, Any]:
+    for window in payload.get("windows", []):
+        for experiment in window.get("experiments", []):
+            if str(experiment.get("experiment_id")) == experiment_id:
+                parameters = experiment.get("parameters")
+                if isinstance(parameters, dict):
+                    return parameters
+    raise ValueError(f"walk-forward artifact has no parameters for {experiment_id}")
+
+
+def _candidate_summary_metrics(summary: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": int(summary.get("schema_version", SCHEMA_VERSION)),
+        "experiment_id": str(summary["experiment_id"]),
+        "windows_seen": int(summary["windows_seen"]),
+        "total_trades": int(summary["total_trades"]),
+        "total_pnl": Decimal(str(summary["total_pnl"])),
+        "worst_window_pnl": Decimal(str(summary["worst_window_pnl"])),
+        "max_drawdown": Decimal(str(summary["max_drawdown"])),
+    }
+
+
+def _gpu_smoke_reason(gpu: GpuReadiness) -> str:
+    if not gpu.available:
+        return f"GPU unavailable: {gpu.detail}"
+    return "GPU readiness detected; compute smoke deferred to avoid base-engine GPU dependencies"
+
+
 def _queue_payload(result: ExperimentQueueResult) -> dict[str, Any]:
     return to_jsonable(
         {
@@ -727,6 +862,20 @@ def _queue_payload(result: ExperimentQueueResult) -> dict[str, Any]:
             "max_experiments": result.max_experiments,
             "experiment_count": len(result.experiments),
             "experiments": [_metrics_payload(metrics) for metrics in result.experiments],
+        }
+    )
+
+
+def _candidate_payload(candidate: WalkForwardCandidate) -> dict[str, Any]:
+    return to_jsonable(
+        {
+            "schema_version": candidate.schema_version,
+            "queue_id": candidate.queue_id,
+            "experiment_id": candidate.experiment_id,
+            "parameters": candidate.parameters,
+            "summary_metrics": candidate.summary_metrics,
+            "source_artifact_path": str(candidate.source_artifact_path),
+            "selection_heuristic": candidate.selection_heuristic,
         }
     )
 

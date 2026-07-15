@@ -18,8 +18,10 @@ from thericher_v2.research.experiments import (
     load_experiment_source,
     run_short_experiment_queue,
     run_walk_forward_queue,
+    select_walk_forward_candidate,
     write_experiment_metrics_artifact,
     write_gpu_candidate_smoke_artifact,
+    write_walk_forward_gpu_candidate_smoke_artifact,
     write_walk_forward_metrics_artifact,
 )
 from thericher_v2.research.validation import GpuReadiness
@@ -302,6 +304,213 @@ def test_walk_forward_window_count_is_bounded() -> None:
             window_bars=10,
             step_bars=10,
         )
+
+
+def test_walk_forward_candidate_selection_is_deterministic_and_non_gating(tmp_path) -> None:
+    artifact = tmp_path / "walk-forward.json"
+    artifact.write_text(
+        json.dumps(
+            {
+                "queue_id": "unit-wf",
+                "experiment_summaries": [
+                    {
+                        "schema_version": 1,
+                        "experiment_id": "negative_candidate",
+                        "windows_seen": 2,
+                        "total_trades": 2,
+                        "total_pnl": "-1",
+                        "worst_window_pnl": "-2",
+                        "max_drawdown": "0.5",
+                    },
+                    {
+                        "schema_version": 1,
+                        "experiment_id": "tie_b",
+                        "windows_seen": 2,
+                        "total_trades": 2,
+                        "total_pnl": "5",
+                        "worst_window_pnl": "1",
+                        "max_drawdown": "0.2",
+                    },
+                    {
+                        "schema_version": 1,
+                        "experiment_id": "tie_a",
+                        "windows_seen": 2,
+                        "total_trades": 2,
+                        "total_pnl": "5",
+                        "worst_window_pnl": "1",
+                        "max_drawdown": "0.2",
+                    },
+                ],
+                "windows": [
+                    {
+                        "experiments": [
+                            {
+                                "experiment_id": "tie_a",
+                                "parameters": {"lookback": 3, "timeframe": "1m"},
+                            },
+                            {
+                                "experiment_id": "tie_b",
+                                "parameters": {"lookback": 5, "timeframe": "1m"},
+                            },
+                            {
+                                "experiment_id": "negative_candidate",
+                                "parameters": {"lookback": 7, "timeframe": "1m"},
+                            },
+                        ]
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    candidate = select_walk_forward_candidate(artifact)
+
+    assert candidate.experiment_id == "tie_a"
+    assert candidate.summary_metrics["total_pnl"] == Decimal("5")
+    assert "positive total_pnl preferred" in candidate.selection_heuristic
+
+
+def test_walk_forward_candidate_selection_handles_all_negative_pnl(tmp_path) -> None:
+    artifact = tmp_path / "walk-forward-negative.json"
+    artifact.write_text(
+        json.dumps(
+            {
+                "queue_id": "negative-wf",
+                "experiment_summaries": [
+                    {
+                        "experiment_id": "less_bad",
+                        "windows_seen": 1,
+                        "total_trades": 1,
+                        "total_pnl": "-1",
+                        "worst_window_pnl": "-1",
+                        "max_drawdown": "0.2",
+                    },
+                    {
+                        "experiment_id": "more_bad",
+                        "windows_seen": 1,
+                        "total_trades": 1,
+                        "total_pnl": "-5",
+                        "worst_window_pnl": "-5",
+                        "max_drawdown": "0.1",
+                    },
+                ],
+                "windows": [
+                    {
+                        "experiments": [
+                            {
+                                "experiment_id": "less_bad",
+                                "parameters": {"lookback": 3},
+                            },
+                            {
+                                "experiment_id": "more_bad",
+                                "parameters": {"lookback": 5},
+                            },
+                        ]
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    candidate = select_walk_forward_candidate(artifact)
+
+    assert candidate.experiment_id == "less_bad"
+
+
+def test_walk_forward_gpu_candidate_artifact_is_outside_repo(tmp_path) -> None:
+    result = run_walk_forward_queue(
+        load_experiment_source(max_bars=70),
+        queue_id="candidate-wf",
+        specs=(ExperimentSpec("candidate_wf_m1"),),
+        window_bars=35,
+        step_bars=20,
+        work_root=tmp_path / "wf",
+    )
+    walk_forward_artifact = write_walk_forward_metrics_artifact(
+        result,
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+    )
+    gpu = GpuReadiness(
+        available=False,
+        detail="nvidia-smi unavailable",
+        checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    artifact = write_walk_forward_gpu_candidate_smoke_artifact(
+        walk_forward_artifact=walk_forward_artifact,
+        gpu=gpu,
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+    )
+
+    payload = json.loads(artifact.read_text(encoding="utf-8"))
+    assert artifact.name == "candidate-wf-walk-forward-gpu-candidate-smoke.json"
+    assert payload["status"] == "prepared_not_trained"
+    assert payload["gpu_smoke"]["attempted"] is False
+    assert payload["artifact_policy"]["repo_storage_allowed"] is False
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        write_walk_forward_gpu_candidate_smoke_artifact(
+            walk_forward_artifact=walk_forward_artifact,
+            gpu=gpu,
+            artifact_root=Path.cwd() / "model-artifacts",
+            repo_root=Path.cwd(),
+        )
+
+
+def test_walk_forward_candidate_is_offline_and_does_not_read_credentials(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("candidate smoke must not open network connections")
+
+    original_read_text = Path.read_text
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.startswith(".env"):
+            raise AssertionError("candidate smoke must not read credential files")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+
+    result = run_walk_forward_queue(
+        load_experiment_source(max_bars=70),
+        queue_id="offline-candidate-wf",
+        specs=(ExperimentSpec("offline_candidate_wf_m1"),),
+        window_bars=35,
+        step_bars=20,
+        work_root=tmp_path / "wf",
+    )
+    walk_forward_artifact = write_walk_forward_metrics_artifact(
+        result,
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+    )
+
+    artifact = write_walk_forward_gpu_candidate_smoke_artifact(
+        walk_forward_artifact=walk_forward_artifact,
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+    )
+
+    assert artifact.exists()
+
+
+def test_base_engine_does_not_require_gpu_packages() -> None:
+    pyproject = Path("pyproject.toml").read_text(encoding="utf-8").lower()
+
+    assert "torch" not in pyproject
+    assert "tensorflow" not in pyproject
+    assert "cupy" not in pyproject
 
 
 def _write_yahoo_snapshot(path: Path, *, symbol: str, count: int) -> None:

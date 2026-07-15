@@ -27,8 +27,8 @@
 ## Active Queue
 
 1. Keep base engine tests free of heavy research dependencies.
-2. Add GPU runtime checks for the first bounded candidate smoke without changing
-   base engine startup.
+2. Add a research-profile GPU runtime smoke without changing base engine
+   startup.
 
 ## Running Jobs
 
@@ -41,6 +41,8 @@
 - Experiment queue prepared GPU candidate smoke metadata using the external
   artifact root only; no heavy training dependency was added.
 - Walk-forward artifacts were written under the external model artifact root.
+- Walk-forward candidate smoke used `nvidia-smi` readiness only and deferred GPU
+  compute to the research profile.
 
 ## Next Handoff
 

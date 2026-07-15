@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review GPU candidate smoke for v1-style report or gate creep.
+1. Review research-profile GPU runtime smoke for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -39,6 +39,7 @@
 - Experiment queue stayed a single runner and concise metrics artifact, with no
   promotion gate or dashboard expansion.
 - Walk-forward stayed capped and artifact-only, with no promotion gate.
+- GPU candidate smoke stayed metadata-only and did not add a promotion gate.
 
 ## Next Handoff
 

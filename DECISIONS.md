@@ -190,3 +190,16 @@ promotion gate.
 Reason: model research needs out-of-window behavior and attribution before GPU
 time is spent on longer candidates. The artifact remains concise and outside
 Git so it improves research velocity without recreating v1 report sprawl.
+
+## 2026-07-15 - Walk-forward GPU candidate smoke
+
+Decision: the first GPU candidate smoke selects one experiment from
+walk-forward summaries using a deterministic non-gating heuristic: prefer
+positive total PnL, then higher total PnL, lower drawdown, higher worst-window
+PnL, and experiment id order. The smoke writes candidate metadata and GPU
+readiness outside Git, but does not run GPU training or add GPU dependencies to
+the base engine.
+
+Reason: GPU time should start from explicit evidence, but candidate selection
+must not become a promotion gate or dependency trap before the research runtime
+is proven.

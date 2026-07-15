@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Prepare the first bounded GPU candidate smoke from walk-forward research
-artifacts.
+Add the first research-profile GPU runtime smoke for the selected bounded
+candidate.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by turning the latest walk-forward metrics into one explicitly
-bounded candidate run plan without touching broker, credential, or live-trading
-surfaces.
+This advances feature/model research and reproducible GPU experimentation by
+checking the GPU path in the research lane only, while keeping the base engine
+free of heavy GPU dependencies.
 
 ## Hard Boundaries
 
@@ -53,31 +52,26 @@ surfaces.
 
 ## Required Work
 
-1. Inspect `src/thericher_v2/research/experiments.py` and the latest
-   walk-forward artifacts under `D:\thericher-v2\model-artifacts\experiments`.
-2. Select one candidate configuration from walk-forward summaries using a
-   transparent, non-gating heuristic such as positive total PnL, lower drawdown,
-   and replay consistency.
-3. Add a small candidate-smoke helper or CLI path that writes candidate metadata
-   outside Git. Include:
-   - selected experiment id and parameters,
-   - source walk-forward artifact path,
-   - summary metrics,
-   - GPU readiness,
-   - artifact policy and output root.
-4. If the available research runtime can run a tiny GPU-bound smoke without
-   adding base-engine dependencies, run it and write any artifact outside Git.
-   Otherwise record `prepared_not_trained` with the blocker reason.
-5. Keep deterministic sample data and explicit local `D:\market_data` snapshots
-   as the only data sources.
-6. Update `agents/engine-research.md` so the two queues stay visible:
-   - short experiments and walk-forward breadth,
-   - longer candidate training for depth.
+1. Inspect the selected candidate artifact under
+   `D:\thericher-v2\model-artifacts\experiments`.
+2. Inspect the Docker research service and current dependency layout.
+3. Add a minimal research-profile GPU runtime smoke that can:
+   - detect the GPU,
+   - write a concise JSON result outside Git,
+   - avoid any broker, credential, dashboard, or KIS surface,
+   - avoid adding heavy GPU dependencies to base engine tests.
+4. Prefer an existing runtime capability such as `nvidia-smi`. Add PyTorch,
+   CUDA, or other heavy ML dependencies only inside the research profile and
+   only if doing so is bounded and clearly useful for the smoke.
+5. If a real GPU compute smoke is not available without dependency creep, record
+   a `prepared_not_trained` or `runtime_ready_only` artifact with the reason.
+6. Update `agents/engine-research.md` and `agents/infra.md` so the short
+   experiment queue and longer candidate queue remain visible.
 7. Add focused tests proving:
-   - candidate selection is deterministic and non-gating,
-   - artifact paths are outside Git,
+   - smoke artifact paths are outside Git,
    - no broker/network/credential access is needed,
-   - base engine tests do not require GPU packages.
+   - base engine tests do not require GPU packages,
+   - missing GPU/runtime support records a non-fatal prepared state.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -101,12 +95,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused candidate smoke, GPU readiness, local-data smoke, or
-artifact command used.
+Report any focused GPU runtime smoke, candidate artifact command, or Docker
+research command used.
 
 ## Suggested Commit Message
 
-`Prepare bounded GPU candidate smoke`
+`Add research GPU runtime smoke`
 
 ## Completion Report
 

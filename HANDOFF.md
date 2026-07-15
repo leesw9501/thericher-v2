@@ -69,7 +69,8 @@ Implemented and pushed:
 - walk-forward attribution layer for the experiment queue with chronological
   windows, per-window replay metrics, PnL, and drawdown,
 - GPU candidate smoke preparation artifact for the first longer research
-  candidate, without training or storing artifacts in the repo,
+  candidate, selected from walk-forward metrics without training or storing
+  artifacts in the repo,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -87,7 +88,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `40 passed`
+- `45 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -127,13 +128,12 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Prepare the first bounded GPU candidate smoke from walk-forward results:
+Add the first research-profile GPU runtime smoke:
 
-1. inspect the latest walk-forward artifacts,
-2. select one candidate configuration without adding a promotion gate,
-3. verify GPU/research runtime without adding heavy dependencies to the base
-   engine,
-4. write candidate metadata and any generated artifacts outside Git.
+1. inspect the selected candidate smoke artifact,
+2. verify whether the Docker research profile can run a tiny GPU-bound command,
+3. keep any GPU dependency out of the base engine path,
+4. write smoke outputs outside Git.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
