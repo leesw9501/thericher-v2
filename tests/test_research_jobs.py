@@ -8,6 +8,9 @@ from pathlib import Path
 
 import pytest
 
+from thericher_v2.research.candidate_threshold_robustness import (
+    CandidateThresholdRobustnessSliceConfig,
+)
 from thericher_v2.research.jobs import (
     ResearchJobSpec,
     run_and_write_research_job,
@@ -325,6 +328,64 @@ def test_research_job_runs_candidate_threshold_sweep_kind_with_injected_runner(
     assert Path(payload["artifacts"]["candidate_replay_comparison"]).exists()
 
 
+def test_research_job_runs_candidate_threshold_robustness_kind_with_injected_runner(
+    tmp_path,
+) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    yahoo_snapshot = _yahoo_snapshot(tmp_path)
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-candidate-threshold-robustness-job",
+            kind="candidate_threshold_robustness",
+            training_metrics_artifact=training_artifact,
+            evaluation_artifact=evaluation_artifact,
+            threshold_pairs=((0.70, 0.30), (0.50, 0.30)),
+            robustness_slices=(
+                CandidateThresholdRobustnessSliceConfig(
+                    slice_id="aaa_slice",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=lambda dataset, model, training_payload: {
+            "backend": "unit",
+            "operation": "unit_candidate_probabilities",
+            "probabilities": tuple(
+                0.80 if index % 4 in {0, 1} else 0.20
+                for index in range(len(dataset.labels))
+            ),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_threshold_robustness"
+    robustness = payload["candidate_threshold_robustness"]
+    assert robustness["status"] == "candidate_robustness_replayed_only"
+    assert robustness["completed_slice_count"] == 1
+    assert robustness["slices"][0]["metrics"]["completed_variant_count"] == 2
+    assert Path(payload["artifacts"]["candidate_threshold_robustness"]).exists()
+    assert Path(payload["artifacts"]["source_model"]).exists()
+
+
 def test_research_job_rejects_unknown_kind() -> None:
     with pytest.raises(ValueError, match="unsupported research job kind"):
         ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]
@@ -468,6 +529,51 @@ def _evaluation_artifact(
         ),
         encoding="utf-8",
     )
+    return path
+
+
+def _yahoo_snapshot(tmp_path: Path) -> Path:
+    import csv
+    import gzip
+    from datetime import timedelta
+
+    path = tmp_path / "ohlcv_1m.csv.gz"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    fields = [
+        "symbol",
+        "timestamp_utc",
+        "timestamp_et",
+        "session_date",
+        "bar_time_et",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source",
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for index in range(50):
+            timestamp = start + timedelta(minutes=index)
+            price = 100 + index * 0.02
+            close = price + (0.05 if index % 2 == 0 else -0.03)
+            writer.writerow(
+                {
+                    "symbol": "AAA",
+                    "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                    "timestamp_et": "",
+                    "session_date": "2026-01-02",
+                    "bar_time_et": "",
+                    "open": f"{price:.4f}",
+                    "high": f"{price + 0.10:.4f}",
+                    "low": f"{price - 0.10:.4f}",
+                    "close": f"{close:.4f}",
+                    "volume": str(1000 + index),
+                    "source": "unit",
+                }
+            )
     return path
 
 

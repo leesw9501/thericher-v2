@@ -335,3 +335,19 @@ Reason: candidate probability output needs calibration evidence before deeper
 GPU training. Persisting one trace reduces repeated GPU inference while keeping
 threshold exploration broker-free, credential-free, descriptive, and outside
 the Git workspace.
+
+## 2026-07-15 - Bounded threshold robustness replay job
+
+Decision: extend the lightweight research job runner with one
+`candidate_threshold_robustness` job kind. It loops over a capped set of
+explicit local Yahoo `(snapshot, symbol)` slices, runs or consumes one
+probability trace per slice, and reuses the existing threshold variant replay
+primitive that routes through broker-free local paper. The aggregate artifact
+records per-slice PnL, drawdown, fill count, final position, and threshold
+metadata outside Git.
+
+Reason: threshold sweep evidence from one CVS slice is not enough to decide
+what to train next. Replaying the same variants across a few local slices shows
+whether the candidate behavior is robust without adding a new replay path,
+baseline gate, scheduler, dashboard, KIS access, credentials, or promotion
+decision.

@@ -15,6 +15,12 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_robustness import (
+    BoundedCandidateThresholdRobustnessResult,
+    CandidateThresholdRobustnessConfig,
+    CandidateThresholdRobustnessSliceConfig,
+    run_bounded_candidate_threshold_robustness,
+)
 from .candidate_threshold_sweep import (
     BoundedCandidateProbabilityTraceResult,
     BoundedCandidateThresholdSweepResult,
@@ -96,11 +102,14 @@ __all__ = [
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
+    "BoundedCandidateThresholdRobustnessResult",
     "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
+    "CandidateThresholdRobustnessConfig",
+    "CandidateThresholdRobustnessSliceConfig",
     "CandidateThresholdSweepConfig",
     "CandidateTrainingConfig",
     "CandidateTrainingDataset",
@@ -139,6 +148,7 @@ __all__ = [
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",
+    "run_bounded_candidate_threshold_robustness",
     "run_bounded_candidate_threshold_sweep",
     "run_bounded_candidate_training",
     "run_gpu_compute_smoke",

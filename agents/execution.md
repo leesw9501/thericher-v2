@@ -50,6 +50,8 @@
   fills remain labeled with `source: local_paper`.
 - Threshold sweep replay verified every variant fill remains labeled with
   `source: local_paper`.
+- Threshold robustness replay verified every CVS, FCX, and KO variant fill
+  remains labeled with `source: local_paper`.
 
 ## Next Handoff
 

@@ -72,6 +72,10 @@
 - Bounded `candidate_threshold_sweep` job ran in Docker `research` with PyTorch
   CUDA, wrote one probability trace, and replayed threshold variants under
   `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`.
+- Bounded `candidate_threshold_robustness` job ran in Docker `research` with
+  PyTorch CUDA, wrote per-slice probability traces for CVS, FCX, and KO, and
+  wrote the aggregate robustness artifact under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`.
 
 ## Next Handoff
 

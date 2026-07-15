@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded threshold robustness replay.
+Add the first bounded multi-slice candidate training input.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by replaying the same candidate threshold variants across a
-small capped set of additional local Yahoo intraday windows or symbols. The
-goal is to learn whether the threshold sweep result is robust beyond the first
-CVS slice before starting deeper GPU training.
+PnL attribution by training and evaluating one small PyTorch CUDA candidate from
+explicit local Yahoo intraday slices instead of deterministic sample bars only.
+The goal is to create a better bounded candidate for the existing threshold
+robustness replay, not to promote a model.
 
 ## Hard Boundaries
 
@@ -28,7 +28,7 @@ CVS slice before starting deeper GPU training.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Run model inference that needs PyTorch through Docker `research`.
+- Run model training or inference that needs PyTorch through Docker `research`.
 - Do not create a broad agent framework, scheduler, promotion gate, or dashboard
   expansion.
 - Do not start an unbounded or overnight training run yet.
@@ -64,38 +64,44 @@ CVS slice before starting deeper GPU training.
 2. Inventory the latest external artifacts:
    - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-threshold-sweep-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`
-3. Inventory only a small useful subset of `D:\market_data` for additional US
-   equity Yahoo intraday snapshots or symbols. Avoid expensive full recursive
-   scans unless needed.
-4. Add a small robustness harness or research job kind that:
-   - uses the same candidate model and bounded threshold pairs,
-   - runs or consumes one probability trace per selected slice,
-   - replays threshold variants through broker-free local paper,
-   - records per-slice PnL, drawdown, fill count, final position, and
-     threshold metadata,
-   - writes robustness artifacts outside Git.
-5. Keep robustness output descriptive only. Do not emit pass/fail, promotion,
-   deployment, or gate decisions.
-6. Add focused tests proving:
-   - robustness artifacts are outside Git,
-   - fills remain `source: local_paper`,
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-threshold-robustness-smoke.json`
+3. Inventory only the small useful local Yahoo subset already identified under
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
+   Prefer:
+   - `snapshot=2026-07-09-shadow-t0-8d-probe` for CVS, FCX, and KO,
+   - `snapshot=2026-06-18` only if an extra out-of-slice symbol is needed.
+4. Add a small capped multi-slice training/evaluation source that:
+   - accepts explicit `(snapshot, symbol)` slices,
+   - keeps the existing feature shape unless a decision record justifies a
+     change,
+   - writes artifacts outside Git,
+   - records source slices and row counts,
+   - remains deterministic and replayable in tests.
+5. Train or prepare one bounded PyTorch CUDA candidate inside Docker
+   `research` using the multi-slice input. Keep caps small for this goal.
+6. Evaluate the candidate and, if the candidate is usable, replay it through
+   the existing threshold robustness path on CVS, FCX, and KO.
+7. Keep output descriptive only. Do not emit pass/fail, promotion, deployment,
+   or gate decisions.
+8. Add focused tests proving:
+   - multi-slice artifacts are outside Git,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
    - missing data/model/GPU/backend records a non-fatal prepared state where
      relevant,
-   - robustness replay is deterministic/replayable from traces.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - generated model artifacts are outside Git or mocked in tests,
+   - downstream robustness replay still uses only `source: local_paper` fills.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this robustness loop.
+  this active multi-slice training loop.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for this active robustness loop.
+  license-compatible, and useful for the active goal.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -112,12 +118,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused robustness, trace, sweep, job-runner, Docker research, or GPU
-inference command used.
+Report any focused multi-slice training, evaluation, robustness, Docker
+research, or GPU inference command used.
 
 ## Suggested Commit Message
 
-`Add bounded threshold robustness replay`
+`Add bounded multi-slice candidate training`
 
 ## Completion Report
 

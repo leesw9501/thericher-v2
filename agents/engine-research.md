@@ -29,20 +29,19 @@
 
 ## Active Queue
 
-1. Replay the same candidate threshold variants across a capped set of
-   additional local Yahoo windows or symbols.
-2. Compare PnL, drawdown, fill count, and final position by slice without a
-   promotion gate.
-3. Prepare the next bounded longer/deeper training candidate only after
-   threshold robustness shows what failed or improved.
+1. Add a bounded multi-slice local Yahoo training/evaluation source so the next
+   candidate is not trained only on deterministic sample bars.
+2. Run one capped PyTorch CUDA candidate training job inside Docker `research`
+   using selected local Yahoo slices.
+3. Reuse the robustness replay path to compare the new candidate across CVS,
+   FCX, and KO without a promotion gate.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-threshold-sweep-smoke`, status
-  `completed`, symbol `CVS`, variants `5`, fills `[45, 29, 20, 6, 2]`,
-  best observed PnL in this descriptive smoke `0.19990000000000`, artifacts
-  under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`.
+- Last completed: `bounded-candidate-threshold-robustness-smoke`, status
+  `completed`, slices `CVS`, `FCX`, `KO`, completed variants `15`, total fills
+  `222`, PnL range `-0.691598626708984` to `0.19990000000000`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`.
 
 ## Done Recently
 
@@ -95,10 +94,13 @@
   probability trace once, replayed five candidate threshold pairs on the same
   CVS bars through local paper, and wrote descriptive variant deltas outside
   Git.
+- Added the first bounded `candidate_threshold_robustness` job. It replayed
+  the same five threshold pairs across CVS, FCX, and KO local Yahoo slices,
+  wrote one aggregate robustness artifact outside Git, and kept all output
+  descriptive.
 
 ## Next Handoff
 
-- The files under `agents/` are stateboards, not autonomous workers. Next work
-  should test threshold robustness on more local data before starting broader
-  scheduling or claiming the Engine Research Agent can keep the GPU busy by
-  itself.
+- The files under `agents/` are stateboards, not autonomous workers. The next
+  engine-research task should train/evaluate on multiple local Yahoo slices
+  before starting broader scheduling or claiming robust model quality.

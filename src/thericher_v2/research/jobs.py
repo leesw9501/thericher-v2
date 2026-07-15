@@ -29,6 +29,14 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_robustness import (
+    BoundedCandidateThresholdRobustnessResult,
+    CandidateThresholdRobustnessConfig,
+    CandidateThresholdRobustnessSliceConfig,
+    _candidate_threshold_robustness_slice_payload,
+    parse_robustness_slices,
+    run_bounded_candidate_threshold_robustness,
+)
 from .candidate_threshold_sweep import (
     BoundedCandidateThresholdSweepResult,
     CandidateThresholdSweepConfig,
@@ -60,6 +68,7 @@ ResearchJobKind = Literal[
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
+    "candidate_threshold_robustness",
 ]
 ResearchJobStatus = Literal[
     "completed",
@@ -68,6 +77,7 @@ ResearchJobStatus = Literal[
     "prepared_not_replayed",
     "prepared_not_compared",
     "prepared_not_swept",
+    "prepared_not_robustness_replayed",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
@@ -77,6 +87,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
+    "candidate_threshold_robustness",
 )
 
 
@@ -99,6 +110,7 @@ class ResearchJobSpec:
     buy_threshold: float = 0.55
     sell_threshold: float = 0.45
     threshold_pairs: tuple[tuple[float, float], ...] = ()
+    robustness_slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
     schema_version: int = SCHEMA_VERSION
 
@@ -126,6 +138,7 @@ class ResearchJobResult:
         | BoundedCandidateReplayResult
         | BoundedCandidateReplayComparisonResult
         | BoundedCandidateThresholdSweepResult
+        | BoundedCandidateThresholdRobustnessResult
     )
     training_artifact: Path
     model_artifact: Path | None = None
@@ -202,7 +215,8 @@ def _run_job_kind(
     | BoundedCandidateEvaluationResult
     | BoundedCandidateReplayResult
     | BoundedCandidateReplayComparisonResult
-    | BoundedCandidateThresholdSweepResult,
+    | BoundedCandidateThresholdSweepResult
+    | BoundedCandidateThresholdRobustnessResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -337,6 +351,29 @@ def _run_job_kind(
         )
         status = "completed" if sweep.status == "candidate_swept_only" else "prepared_not_swept"
         return sweep, sweep.sweep_artifact, sweep.model_artifact, status
+    if spec.kind == "candidate_threshold_robustness":
+        robustness = run_bounded_candidate_threshold_robustness(
+            config=CandidateThresholdRobustnessConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                threshold_pairs=spec.threshold_pairs
+                or CandidateThresholdSweepConfig().threshold_pairs,
+                slices=spec.robustness_slices,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            training_metrics_artifact=spec.training_metrics_artifact,
+            evaluation_artifact=spec.evaluation_artifact,
+            model_artifact=spec.model_artifact,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if robustness.status == "candidate_robustness_replayed_only"
+            else "prepared_not_robustness_replayed"
+        )
+        return robustness, robustness.robustness_artifact, robustness.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -380,6 +417,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--buy-threshold", type=float, default=0.55)
     parser.add_argument("--sell-threshold", type=float, default=0.45)
     parser.add_argument("--threshold-pair", action="append", default=[])
+    parser.add_argument("--robustness-slice", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
     return parser
 
@@ -405,6 +443,7 @@ def main() -> None:
         buy_threshold=args.buy_threshold,
         sell_threshold=args.sell_threshold,
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
+        robustness_slices=parse_robustness_slices(args.robustness_slice),
     )
     run = run_and_write_research_job(
         spec,
@@ -614,6 +653,31 @@ def _research_job_payload(
             "variants": training.variants,
             "thresholds": training.thresholds,
         }
+    elif isinstance(training, BoundedCandidateThresholdRobustnessResult):
+        base["candidate_threshold_robustness"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "training_metrics_artifact": (
+                None
+                if training.training_metrics_artifact is None
+                else str(training.training_metrics_artifact)
+            ),
+            "evaluation_artifact": (
+                None if training.evaluation_artifact is None else str(training.evaluation_artifact)
+            ),
+            "model_artifact": (
+                None if training.model_artifact is None else str(training.model_artifact)
+            ),
+            "slice_count": training.slice_count,
+            "completed_slice_count": training.completed_slice_count,
+            "slices": [
+                _candidate_threshold_robustness_slice_payload(item)
+                for item in training.slices
+            ],
+            "thresholds": training.thresholds,
+            "metrics": training.metrics,
+        }
     return to_jsonable(base)
 
 
@@ -648,6 +712,13 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
             )
         if result.training.comparison_artifact is not None:
             artifacts["candidate_replay_comparison"] = str(result.training.comparison_artifact)
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdRobustnessResult):
+        artifacts = {
+            "candidate_threshold_robustness": str(result.training_artifact),
+        }
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)
         return artifacts

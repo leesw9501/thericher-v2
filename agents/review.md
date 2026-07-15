@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review threshold robustness replay for data/query sprawl.
+1. Review multi-slice candidate training for data/query and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -65,6 +65,10 @@
 - Candidate threshold sweep extended the job runner with one explicit sixth
   kind, reused the candidate replay execution path, kept PyTorch lazy/research
   only, and did not add a promotion gate, dashboard, or scheduler.
+- Candidate threshold robustness extended the job runner with one explicit
+  seventh kind, reused the threshold sweep variant primitive, capped slices,
+  kept output descriptive, and did not add a promotion gate, dashboard,
+  scheduler, or autonomous agent process.
 
 ## Next Handoff
 

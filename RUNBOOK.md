@@ -61,6 +61,10 @@ uv run --extra dev thericher-v2-research-job --job-id bounded-candidate-replay-c
 docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-threshold-sweep-smoke --kind candidate_threshold_sweep --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --comparison-artifact /app/model_artifacts/candidate-replay-comparison/bounded-candidate-replay-comparison-smoke/metrics.json --yahoo-snapshot /app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --threshold-pair 0.47:0.455 --threshold-pair 0.50:0.455 --threshold-pair 0.52:0.455 --threshold-pair 0.55:0.455 --threshold-pair 0.60:0.455
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-threshold-robustness-smoke --kind candidate_threshold_robustness --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --max-bars 180 --threshold-pair 0.47:0.455 --threshold-pair 0.50:0.455 --threshold-pair 0.52:0.455 --threshold-pair 0.55:0.455 --threshold-pair 0.60:0.455 --robustness-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download
