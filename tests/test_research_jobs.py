@@ -11,6 +11,7 @@ import pytest
 from thericher_v2.research.candidate_threshold_robustness import (
     CandidateThresholdRobustnessSliceConfig,
 )
+from thericher_v2.research.candidate_training import CandidateDataSliceConfig
 from thericher_v2.research.jobs import (
     ResearchJobSpec,
     run_and_write_research_job,
@@ -94,11 +95,25 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             "model_artifact": str(model_artifact),
         }
 
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
     run = run_and_write_research_job(
         ResearchJobSpec(
             job_id="unit-candidate-training-job",
             kind="candidate_training",
             candidate_artifact=_candidate_artifact(tmp_path),
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="aaa",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="AAA",
+                ),
+                CandidateDataSliceConfig(
+                    slice_id="bbb",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="BBB",
+                ),
+            ),
+            max_bars=40,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -116,6 +131,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
     assert payload["kind"] == "candidate_training"
     assert payload["candidate_training"]["status"] == "candidate_trained_only"
     assert payload["candidate_training"]["metrics"]["backend"] == "unit"
+    assert payload["candidate_training"]["source_slices"][0]["slice_id"] == "aaa"
     assert Path(payload["artifacts"]["candidate_metrics"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
 
@@ -123,12 +139,29 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:
     model_artifact = tmp_path / "external-model.pt"
     model_artifact.write_text("unit-model", encoding="utf-8")
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
 
     run = run_and_write_research_job(
         ResearchJobSpec(
             job_id="unit-candidate-evaluation-job",
             kind="candidate_evaluation",
-            training_metrics_artifact=_training_metrics_artifact(tmp_path, model_artifact),
+            training_metrics_artifact=_training_metrics_artifact(
+                tmp_path,
+                model_artifact,
+                source_slices=(
+                    CandidateDataSliceConfig(
+                        slice_id="aaa",
+                        yahoo_snapshot=yahoo_snapshot,
+                        symbol="AAA",
+                    ),
+                    CandidateDataSliceConfig(
+                        slice_id="bbb",
+                        yahoo_snapshot=yahoo_snapshot,
+                        symbol="BBB",
+                    ),
+                ),
+            ),
+            max_bars=40,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -153,6 +186,7 @@ def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_pa
     assert payload["kind"] == "candidate_evaluation"
     assert payload["candidate_evaluation"]["status"] == "candidate_evaluated_only"
     assert payload["candidate_evaluation"]["metrics"]["backend"] == "unit"
+    assert payload["candidate_evaluation"]["source_slices"][1]["slice_id"] == "bbb"
     assert payload["candidate_evaluation"]["local_paper_conversion"] == "deferred_to_next_goal"
     assert Path(payload["artifacts"]["candidate_evaluation"]).exists()
     assert Path(payload["artifacts"]["source_model"]).exists()
@@ -469,7 +503,35 @@ def _candidate_artifact(tmp_path: Path) -> Path:
     return path
 
 
-def _training_metrics_artifact(tmp_path: Path, model_artifact: Path) -> Path:
+def _training_metrics_artifact(
+    tmp_path: Path,
+    model_artifact: Path,
+    *,
+    source_slices: tuple[CandidateDataSliceConfig, ...] = (),
+) -> Path:
+    return _training_metrics_artifact_with_sources(
+        tmp_path,
+        model_artifact,
+        source_slices=source_slices,
+    )
+
+
+def _training_metrics_artifact_with_sources(
+    tmp_path: Path,
+    model_artifact: Path,
+    *,
+    source_slices: tuple[CandidateDataSliceConfig, ...] = (),
+) -> Path:
+    source_slice_payload = [
+        {
+            "slice_id": data_slice.slice_id,
+            "yahoo_snapshot": str(data_slice.yahoo_snapshot),
+            "symbol": data_slice.symbol,
+            "bars_seen": 40,
+            "examples_seen": 36,
+        }
+        for data_slice in source_slices
+    ]
     path = tmp_path / "training-metrics.json"
     path.write_text(
         json.dumps(
@@ -479,6 +541,7 @@ def _training_metrics_artifact(tmp_path: Path, model_artifact: Path) -> Path:
                     "lookback": 3,
                     "timeframe": "1m",
                 },
+                "source_slices": source_slice_payload,
                 "artifacts": {
                     "model": str(model_artifact),
                 },
@@ -532,7 +595,11 @@ def _evaluation_artifact(
     return path
 
 
-def _yahoo_snapshot(tmp_path: Path) -> Path:
+def _yahoo_snapshot(
+    tmp_path: Path,
+    *,
+    symbols: tuple[str, ...] = ("AAA",),
+) -> Path:
     import csv
     import gzip
     from datetime import timedelta
@@ -555,25 +622,27 @@ def _yahoo_snapshot(tmp_path: Path) -> Path:
     with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
-        for index in range(50):
-            timestamp = start + timedelta(minutes=index)
-            price = 100 + index * 0.02
-            close = price + (0.05 if index % 2 == 0 else -0.03)
-            writer.writerow(
-                {
-                    "symbol": "AAA",
-                    "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
-                    "timestamp_et": "",
-                    "session_date": "2026-01-02",
-                    "bar_time_et": "",
-                    "open": f"{price:.4f}",
-                    "high": f"{price + 0.10:.4f}",
-                    "low": f"{price - 0.10:.4f}",
-                    "close": f"{close:.4f}",
-                    "volume": str(1000 + index),
-                    "source": "unit",
-                }
-            )
+        for symbol_index, symbol in enumerate(symbols):
+            base_price = 100 + symbol_index
+            for index in range(50):
+                timestamp = start + timedelta(minutes=index)
+                price = base_price + index * 0.02
+                close = price + (0.05 if index % 2 == 0 else -0.03)
+                writer.writerow(
+                    {
+                        "symbol": symbol,
+                        "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                        "timestamp_et": "",
+                        "session_date": "2026-01-02",
+                        "bar_time_et": "",
+                        "open": f"{price:.4f}",
+                        "high": f"{price + 0.10:.4f}",
+                        "low": f"{price - 0.10:.4f}",
+                        "close": f"{close:.4f}",
+                        "volume": str(1000 + index),
+                        "source": "unit",
+                    }
+                )
     return path
 
 

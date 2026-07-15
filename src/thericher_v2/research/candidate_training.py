@@ -24,6 +24,7 @@ DEFAULT_CANDIDATE_TRAINING_RUN_ID = "bounded-gpu-candidate-training"
 MAX_CANDIDATE_TRAINING_EPOCHS = 20
 MAX_CANDIDATE_TRAINING_STEPS = 1024
 MAX_CANDIDATE_TRAINING_BARS = 512
+MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 
 
@@ -75,6 +76,23 @@ class CandidateTrainingConfig:
 
 
 @dataclass(frozen=True)
+class CandidateDataSliceConfig:
+    slice_id: str
+    yahoo_snapshot: Path
+    symbol: str
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.slice_id:
+            raise ValueError("slice_id is required")
+        if any(part in self.slice_id for part in ("\\", "/", ":")):
+            raise ValueError("slice_id must not contain path separators")
+        if not self.symbol:
+            raise ValueError("symbol is required")
+        object.__setattr__(self, "symbol", self.symbol.upper())
+
+
+@dataclass(frozen=True)
 class CandidateTrainingDataset:
     features: tuple[tuple[float, ...], ...]
     labels: tuple[int, ...]
@@ -85,6 +103,7 @@ class CandidateTrainingDataset:
     data_source: str
     bars_seen: int
     lookback: int
+    source_slices: tuple[dict[str, Any], ...] = ()
     schema_version: int = SCHEMA_VERSION
 
 
@@ -106,6 +125,7 @@ class BoundedCandidateTrainingResult:
     timeframe: Timeframe | None
     bars_seen: int
     examples_seen: int
+    source_slices: tuple[dict[str, Any], ...]
     max_epochs: int
     max_steps: int
     metrics: dict[str, Any]
@@ -131,6 +151,7 @@ def run_bounded_candidate_training(
     candidate_artifact: Path | None = None,
     yahoo_snapshot: Path | None = None,
     symbol: str | None = None,
+    data_slices: tuple[CandidateDataSliceConfig, ...] = (),
     gpu: GpuReadiness | None = None,
     trainer_runner: CandidateTrainerRunner | None = None,
 ) -> BoundedCandidateTrainingResult:
@@ -144,18 +165,29 @@ def run_bounded_candidate_training(
     candidate = _read_candidate_artifact(candidate_artifact)
     available_backends = _available_gpu_backends()
     selected_backend = "injected" if trainer_runner is not None else _selected_backend()
-    dataset = _load_dataset(
-        config=config,
-        candidate=candidate,
-        yahoo_snapshot=yahoo_snapshot,
-        symbol=symbol,
-    )
+    try:
+        dataset = _load_dataset(
+            config=config,
+            candidate=candidate,
+            yahoo_snapshot=yahoo_snapshot,
+            symbol=symbol,
+            data_slices=data_slices,
+        )
+        dataset_error = None
+    except Exception as exc:  # noqa: BLE001 - training jobs record prepared data failures.
+        dataset = _empty_dataset(
+            data_source="candidate_training_dataset_unavailable",
+            lookback=_candidate_lookback(candidate),
+            source_slices=_source_slices_from_configs(data_slices),
+        )
+        dataset_error = f"candidate training dataset unavailable: {exc}"
 
     result = _run_candidate_training_result(
         config=config,
         candidate_artifact=candidate_artifact,
         candidate=candidate,
         dataset=dataset,
+        dataset_error=dataset_error,
         gpu=gpu,
         available_backends=available_backends,
         selected_backend=selected_backend,
@@ -176,6 +208,7 @@ def _run_candidate_training_result(
     candidate_artifact: Path | None,
     candidate: dict[str, Any],
     dataset: CandidateTrainingDataset,
+    dataset_error: str | None,
     gpu: GpuReadiness,
     available_backends: tuple[str, ...],
     selected_backend: str | None,
@@ -183,6 +216,18 @@ def _run_candidate_training_result(
     metrics_artifact: Path,
     trainer_runner: CandidateTrainerRunner | None,
 ) -> BoundedCandidateTrainingResult:
+    if dataset_error is not None:
+        return _prepared_result(
+            config=config,
+            candidate_artifact=candidate_artifact,
+            candidate=candidate,
+            dataset=dataset,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            metrics_artifact=metrics_artifact,
+            reason=dataset_error,
+        )
     if not gpu.available:
         return _prepared_result(
             config=config,
@@ -251,6 +296,7 @@ def _run_candidate_training_result(
         timeframe=dataset.timeframe,
         bars_seen=dataset.bars_seen,
         examples_seen=len(dataset.labels),
+        source_slices=dataset.source_slices,
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
         metrics=metrics,
@@ -288,6 +334,7 @@ def _prepared_result(
         timeframe=dataset.timeframe,
         bars_seen=dataset.bars_seen,
         examples_seen=len(dataset.labels),
+        source_slices=dataset.source_slices,
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
         metrics={},
@@ -301,23 +348,49 @@ def _load_dataset(
     candidate: dict[str, Any],
     yahoo_snapshot: Path | None,
     symbol: str | None,
+    data_slices: tuple[CandidateDataSliceConfig, ...],
 ) -> CandidateTrainingDataset:
+    if data_slices:
+        return build_multi_slice_candidate_training_dataset(
+            data_slices=data_slices,
+            candidate=candidate,
+            max_bars=config.max_bars,
+            data_source="multi_slice_yahoo_training",
+        )
     if yahoo_snapshot is not None:
         bars = load_yahoo_intraday_1m_bars(
             yahoo_snapshot,
             symbol=symbol,
             max_bars=config.max_bars,
         )
-        data_source = str(yahoo_snapshot)
+        lookback = _candidate_lookback(candidate)
+        dataset = build_candidate_training_dataset(
+            bars,
+            lookback=lookback,
+            data_source=str(yahoo_snapshot),
+        )
+        return _with_source_slices(
+            dataset,
+            (
+                _source_slice_summary(
+                    slice_id=f"s01_{(symbol or bars[0].symbol).upper()}",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol=dataset.symbol,
+                    dataset=dataset,
+                ),
+            ),
+        )
     else:
         provider = SampleBarProvider.trending_1m(count=config.max_bars, seed=29)
         bars = list(provider.base_bars)
         data_source = "deterministic_sample"
+        source_slices = ()
     lookback = _candidate_lookback(candidate)
     return build_candidate_training_dataset(
         bars,
         lookback=lookback,
         data_source=data_source,
+        source_slices=source_slices,
     )
 
 
@@ -326,6 +399,7 @@ def build_candidate_training_dataset(
     *,
     lookback: int,
     data_source: str,
+    source_slices: tuple[dict[str, Any], ...] = (),
 ) -> CandidateTrainingDataset:
     if lookback <= 0:
         raise ValueError("lookback must be positive")
@@ -341,6 +415,7 @@ def build_candidate_training_dataset(
             data_source=data_source,
             bars_seen=0,
             lookback=lookback,
+            source_slices=source_slices,
         )
     first = ordered[0]
     if any(
@@ -379,7 +454,163 @@ def build_candidate_training_dataset(
         data_source=data_source,
         bars_seen=len(ordered),
         lookback=lookback,
+        source_slices=source_slices,
     )
+
+
+def build_multi_slice_candidate_training_dataset(
+    *,
+    data_slices: tuple[CandidateDataSliceConfig, ...],
+    candidate: dict[str, Any],
+    max_bars: int,
+    data_source: str,
+) -> CandidateTrainingDataset:
+    if not data_slices:
+        raise ValueError("at least one data slice is required")
+    if len(data_slices) > MAX_CANDIDATE_DATA_SLICES:
+        raise ValueError(f"data_slices must be <= {MAX_CANDIDATE_DATA_SLICES}")
+    lookback = _candidate_lookback(candidate)
+    features: list[tuple[float, ...]] = []
+    labels: list[int] = []
+    summaries: list[dict[str, Any]] = []
+    feature_names: tuple[str, ...] | None = None
+    market: str | None = None
+    timeframe: Timeframe | None = None
+    bars_seen = 0
+    symbols: list[str] = []
+    for data_slice in data_slices:
+        bars = load_yahoo_intraday_1m_bars(
+            data_slice.yahoo_snapshot,
+            symbol=data_slice.symbol,
+            max_bars=max_bars,
+        )
+        dataset = build_candidate_training_dataset(
+            bars,
+            lookback=lookback,
+            data_source=str(data_slice.yahoo_snapshot),
+        )
+        if feature_names is None:
+            feature_names = dataset.feature_names
+            market = dataset.market
+            timeframe = dataset.timeframe
+        if dataset.feature_names != feature_names:
+            raise ValueError("multi-slice feature names must match")
+        if dataset.lookback != lookback:
+            raise ValueError("multi-slice lookback must match")
+        if dataset.market != market or dataset.timeframe != timeframe:
+            raise ValueError("multi-slice market and timeframe must match")
+        features.extend(dataset.features)
+        labels.extend(dataset.labels)
+        bars_seen += dataset.bars_seen
+        symbols.append(dataset.symbol)
+        summaries.append(
+            _source_slice_summary(
+                slice_id=data_slice.slice_id,
+                yahoo_snapshot=data_slice.yahoo_snapshot,
+                symbol=dataset.symbol,
+                dataset=dataset,
+                bars_seen=dataset.bars_seen,
+                examples_seen=len(dataset.labels),
+            )
+        )
+    return CandidateTrainingDataset(
+        features=tuple(features),
+        labels=tuple(labels),
+        feature_names=feature_names or _feature_names(),
+        symbol=_aggregate_symbol(symbols),
+        market=market or "",
+        timeframe=timeframe or Timeframe.M1,
+        data_source=data_source,
+        bars_seen=bars_seen,
+        lookback=lookback,
+        source_slices=tuple(summaries),
+    )
+
+
+def _with_source_slices(
+    dataset: CandidateTrainingDataset,
+    source_slices: tuple[dict[str, Any], ...],
+) -> CandidateTrainingDataset:
+    return CandidateTrainingDataset(
+        features=dataset.features,
+        labels=dataset.labels,
+        feature_names=dataset.feature_names,
+        symbol=dataset.symbol,
+        market=dataset.market,
+        timeframe=dataset.timeframe,
+        data_source=dataset.data_source,
+        bars_seen=dataset.bars_seen,
+        lookback=dataset.lookback,
+        source_slices=source_slices,
+    )
+
+
+def _empty_dataset(
+    *,
+    data_source: str,
+    lookback: int,
+    source_slices: tuple[dict[str, Any], ...],
+) -> CandidateTrainingDataset:
+    return CandidateTrainingDataset(
+        features=(),
+        labels=(),
+        feature_names=_feature_names(),
+        symbol="",
+        market="",
+        timeframe=Timeframe.M1,
+        data_source=data_source,
+        bars_seen=0,
+        lookback=lookback,
+        source_slices=source_slices,
+    )
+
+
+def _source_slice_summary(
+    *,
+    slice_id: str,
+    yahoo_snapshot: Path,
+    symbol: str,
+    dataset: CandidateTrainingDataset | None,
+    bars_seen: int | None = None,
+    examples_seen: int | None = None,
+) -> dict[str, Any]:
+    return {
+        "slice_id": slice_id,
+        "yahoo_snapshot": str(yahoo_snapshot),
+        "symbol": symbol.upper(),
+        "market": None if dataset is None else dataset.market,
+        "timeframe": None if dataset is None else dataset.timeframe,
+        "bars_seen": dataset.bars_seen if dataset is not None else bars_seen or 0,
+        "examples_seen": (
+            len(dataset.labels)
+            if dataset is not None
+            else examples_seen
+            if examples_seen is not None
+            else 0
+        ),
+        "feature_names": None if dataset is None else dataset.feature_names,
+    }
+
+
+def _source_slices_from_configs(
+    data_slices: tuple[CandidateDataSliceConfig, ...],
+) -> tuple[dict[str, Any], ...]:
+    return tuple(
+        _source_slice_summary(
+            slice_id=data_slice.slice_id,
+            yahoo_snapshot=data_slice.yahoo_snapshot,
+            symbol=data_slice.symbol,
+            dataset=None,
+        )
+        for data_slice in data_slices
+    )
+
+
+def _aggregate_symbol(symbols: list[str]) -> str:
+    unique = tuple(dict.fromkeys(symbol.upper() for symbol in symbols))
+    if len(unique) == 1:
+        return unique[0]
+    return "MULTI"
 
 
 def _run_torch_cuda_candidate_training(
@@ -479,6 +710,7 @@ def _candidate_training_payload(
             "timeframe": result.timeframe,
             "bars_seen": result.bars_seen,
             "examples_seen": result.examples_seen,
+            "source_slices": result.source_slices,
             "max_epochs": result.max_epochs,
             "max_steps": result.max_steps,
             "metrics": result.metrics,
@@ -635,3 +867,30 @@ def _validate_positive_cap(value: int, *, field_name: str, ceiling: int) -> None
         raise ValueError(f"{field_name} must be positive")
     if value > ceiling:
         raise ValueError(f"{field_name} must be <= {ceiling}")
+
+
+def parse_candidate_data_slices(
+    values: list[str] | None,
+) -> tuple[CandidateDataSliceConfig, ...]:
+    if not values:
+        return ()
+    slices: list[CandidateDataSliceConfig] = []
+    for ordinal, value in enumerate(values, start=1):
+        slice_id: str | None = None
+        raw_value = value
+        prefix, separator, rest = value.partition("=")
+        if separator and prefix and not any(part in prefix for part in ("\\", "/", ":")):
+            slice_id = prefix
+            raw_value = rest
+        path_text, separator, symbol = raw_value.rpartition(":")
+        if not separator or not path_text or not symbol:
+            raise ValueError("data slices must use [ID=]SNAPSHOT:SYMBOL format")
+        symbol = symbol.upper()
+        slices.append(
+            CandidateDataSliceConfig(
+                slice_id=slice_id or f"s{ordinal:02d}_{symbol}",
+                yahoo_snapshot=Path(path_text),
+                symbol=symbol,
+            )
+        )
+    return tuple(slices)

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import socket
 import sys
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -12,7 +12,7 @@ from thericher_v2.research.candidate_evaluation import (
     CandidateEvaluationConfig,
     run_bounded_candidate_evaluation,
 )
-from thericher_v2.research.candidate_training import GpuReadiness
+from thericher_v2.research.candidate_training import CandidateDataSliceConfig, GpuReadiness
 
 
 def test_candidate_evaluation_records_injected_success_outside_repo(tmp_path) -> None:
@@ -42,6 +42,76 @@ def test_candidate_evaluation_records_injected_success_outside_repo(tmp_path) ->
             repo_root=Path.cwd(),
             gpu=_unit_gpu(),
         )
+
+
+def test_candidate_evaluation_reuses_training_source_slices(tmp_path) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+    training_artifact = _training_metrics_artifact(
+        tmp_path,
+        model_artifact,
+        source_slices=(
+            CandidateDataSliceConfig(
+                slice_id="aaa",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="AAA",
+            ),
+            CandidateDataSliceConfig(
+                slice_id="bbb",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="BBB",
+            ),
+        ),
+    )
+
+    result = run_bounded_candidate_evaluation(
+        config=CandidateEvaluationConfig(
+            run_id="multi-slice-candidate-evaluation",
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        gpu=_unit_gpu(),
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.evaluation_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_evaluated_only"
+    assert payload["symbol"] == "MULTI"
+    assert payload["bars_seen"] == 80
+    assert payload["examples_seen"] == 72
+    assert [item["slice_id"] for item in payload["source_slices"]] == ["aaa", "bbb"]
+
+
+def test_candidate_evaluation_missing_multi_slice_data_is_prepared(tmp_path) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+
+    result = run_bounded_candidate_evaluation(
+        config=CandidateEvaluationConfig(run_id="missing-multi-slice-evaluation"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=_training_metrics_artifact(
+            tmp_path,
+            model_artifact,
+            source_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="missing",
+                    yahoo_snapshot=tmp_path / "missing.csv.gz",
+                    symbol="AAA",
+                ),
+            ),
+        ),
+        gpu=_unit_gpu(),
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.evaluation_artifact.read_text(encoding="utf-8"))
+    assert result.status == "prepared_not_evaluated"
+    assert "dataset unavailable" in payload["reason"]
+    assert payload["source_slices"][0]["examples_seen"] == 0
 
 
 def test_candidate_evaluation_missing_model_is_prepared_not_evaluated(tmp_path) -> None:
@@ -139,7 +209,18 @@ def _training_metrics_artifact(
     model_artifact: Path,
     *,
     feature_names: list[str] | None = None,
+    source_slices: tuple[CandidateDataSliceConfig, ...] = (),
 ) -> Path:
+    source_slice_payload = [
+        {
+            "slice_id": data_slice.slice_id,
+            "yahoo_snapshot": str(data_slice.yahoo_snapshot),
+            "symbol": data_slice.symbol,
+            "bars_seen": 40,
+            "examples_seen": 36,
+        }
+        for data_slice in source_slices
+    ]
     path = tmp_path / f"training-metrics-{len(list(tmp_path.glob('training-metrics-*')))}.json"
     path.write_text(
         json.dumps(
@@ -150,6 +231,7 @@ def _training_metrics_artifact(
                     "timeframe": "1m",
                 },
                 "candidate_artifact": str(tmp_path / "candidate.json"),
+                "source_slices": source_slice_payload,
                 "artifacts": {
                     "model": str(model_artifact),
                 },
@@ -193,3 +275,54 @@ def _unit_evaluation_runner(dataset, model_artifact, training_payload, _config):
 
 def _raising_evaluation_runner(*_args: object, **_kwargs: object) -> dict[str, object]:
     raise AssertionError("feature mismatch should stop before evaluation")
+
+
+def _yahoo_snapshot(
+    tmp_path: Path,
+    *,
+    symbols: tuple[str, ...],
+    bar_count: int = 50,
+) -> Path:
+    import csv
+    import gzip
+
+    path = tmp_path / "ohlcv_1m.csv.gz"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    fields = [
+        "symbol",
+        "timestamp_utc",
+        "timestamp_et",
+        "session_date",
+        "bar_time_et",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source",
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for symbol_index, symbol in enumerate(symbols):
+            base_price = 100 + symbol_index
+            for index in range(bar_count):
+                timestamp = start + timedelta(minutes=index)
+                price = base_price + index * 0.02
+                close = price + (0.05 if index % 2 == 0 else -0.03)
+                writer.writerow(
+                    {
+                        "symbol": symbol,
+                        "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                        "timestamp_et": "",
+                        "session_date": "2026-01-02",
+                        "bar_time_et": "",
+                        "open": f"{price:.4f}",
+                        "high": f"{price + 0.10:.4f}",
+                        "low": f"{price - 0.10:.4f}",
+                        "close": f"{close:.4f}",
+                        "volume": str(1000 + index),
+                        "source": "unit",
+                    }
+                )
+    return path

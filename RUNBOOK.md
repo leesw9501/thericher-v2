@@ -65,6 +65,14 @@ docker compose --profile research run --rm --no-deps research thericher-v2-resea
 docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-threshold-robustness-smoke --kind candidate_threshold_robustness --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --max-bars 180 --threshold-pair 0.47:0.455 --threshold-pair 0.50:0.455 --threshold-pair 0.52:0.455 --threshold-pair 0.55:0.455 --threshold-pair 0.60:0.455 --robustness-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-training-smoke --kind candidate_training --candidate-artifact /app/model_artifacts/experiments/short-momentum-cpu-queue-walk-forward-gpu-candidate-smoke.json --max-bars 180 --max-epochs 8 --max-steps 256 --data-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
+```
+
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-evaluation-smoke --kind candidate_evaluation --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-multislice-training-smoke/metrics.json --max-bars 180
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

@@ -29,19 +29,19 @@
 
 ## Active Queue
 
-1. Add a bounded multi-slice local Yahoo training/evaluation source so the next
-   candidate is not trained only on deterministic sample bars.
-2. Run one capped PyTorch CUDA candidate training job inside Docker `research`
-   using selected local Yahoo slices.
-3. Reuse the robustness replay path to compare the new candidate across CVS,
-   FCX, and KO without a promotion gate.
+1. Inspect the multi-slice candidate probability traces and derive a small
+   descriptive threshold grid from observed probability quantiles.
+2. Replay the calibrated grid through threshold robustness across CVS, FCX, and
+   KO without a promotion gate.
+3. Decide the next bounded model experiment from calibration evidence, not from
+   a single deterministic sample run.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-threshold-robustness-smoke`, status
+- Last completed: `bounded-candidate-multislice-robustness-smoke`, status
   `completed`, slices `CVS`, `FCX`, `KO`, completed variants `15`, total fills
-  `222`, PnL range `-0.691598626708984` to `0.19990000000000`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`.
+  `0`, PnL range `0` to `0`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`.
 
 ## Done Recently
 
@@ -98,9 +98,14 @@
   the same five threshold pairs across CVS, FCX, and KO local Yahoo slices,
   wrote one aggregate robustness artifact outside Git, and kept all output
   descriptive.
+- Added bounded multi-slice training/evaluation input. The smoke trained one
+  PyTorch CUDA candidate from CVS, FCX, and KO local Yahoo slices, evaluated it
+  from the recorded source slices, then replayed it through threshold
+  robustness. The existing threshold grid produced zero fills, so calibration
+  is the next research step.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should train/evaluate on multiple local Yahoo slices
-  before starting broader scheduling or claiming robust model quality.
+  engine-research task should calibrate thresholds from multi-slice probability
+  traces before starting broader scheduling or claiming robust model quality.

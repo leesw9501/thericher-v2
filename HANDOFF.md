@@ -115,6 +115,10 @@ Implemented and pushed:
   capped set of local Yahoo slices, records per-slice PnL, drawdown, fill
   counts, and final positions, and keeps output descriptive rather than
   promotional,
+- bounded multi-slice candidate training and evaluation input; candidate
+  training/evaluation can now consume explicit local Yahoo `(snapshot, symbol)`
+  slices, preserve the existing four-feature shape, record per-slice row counts
+  and provenance, and write model/evaluation artifacts outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -132,7 +136,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `118 passed`
+- `124 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -176,13 +180,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded multi-slice candidate training input:
+Add the first bounded multi-slice probability calibration probe:
 
-1. reuse the threshold robustness evidence and explicit local Yahoo data,
-2. add a small capped training/evaluation source that can consume multiple
-   `(snapshot, symbol)` slices without storing data in Git,
-3. train one bounded PyTorch CUDA candidate inside Docker `research`,
-4. evaluate and replay it through the existing local-paper robustness path,
+1. reuse the multi-slice training/evaluation artifacts and explicit local Yahoo
+   data,
+2. inspect probability traces for the multi-slice candidate,
+3. derive a small descriptive threshold grid from observed probability
+   quantiles,
+4. replay the grid through the existing threshold robustness path,
 5. keep the result as research evidence, not a promotion gate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

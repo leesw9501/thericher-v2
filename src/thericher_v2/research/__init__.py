@@ -30,9 +30,12 @@ from .candidate_threshold_sweep import (
 )
 from .candidate_training import (
     BoundedCandidateTrainingResult,
+    CandidateDataSliceConfig,
     CandidateTrainingConfig,
     CandidateTrainingDataset,
     build_candidate_training_dataset,
+    build_multi_slice_candidate_training_dataset,
+    parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
 from .experiments import (
@@ -106,6 +109,7 @@ __all__ = [
     "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
+    "CandidateDataSliceConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
     "CandidateThresholdRobustnessConfig",
@@ -138,11 +142,13 @@ __all__ = [
     "DEFAULT_GPU_TRAINING_RUN_ID",
     "DEFAULT_RESEARCH_JOB_ID",
     "build_candidate_training_dataset",
+    "build_multi_slice_candidate_training_dataset",
     "default_short_experiment_specs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
+    "parse_candidate_data_slices",
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
     "run_bounded_candidate_probability_trace",

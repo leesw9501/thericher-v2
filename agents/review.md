@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review multi-slice candidate training for data/query and artifact sprawl.
+1. Review probability calibration for threshold and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -69,6 +69,9 @@
   seventh kind, reused the threshold sweep variant primitive, capped slices,
   kept output descriptive, and did not add a promotion gate, dashboard,
   scheduler, or autonomous agent process.
+- Multi-slice candidate training reused the existing candidate dataset feature
+  builder, shared the slice parser instead of cloning it, kept PyTorch in
+  Docker `research`, and did not add a new replay path or promotion gate.
 
 ## Next Handoff
 

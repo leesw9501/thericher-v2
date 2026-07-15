@@ -5,13 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded multi-slice candidate training input.
+Add the first bounded multi-slice probability calibration probe.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by training and evaluating one small PyTorch CUDA candidate from
-explicit local Yahoo intraday slices instead of deterministic sample bars only.
-The goal is to create a better bounded candidate for the existing threshold
-robustness replay, not to promote a model.
+PnL attribution by deriving a small descriptive threshold grid from the
+multi-slice candidate's observed probability traces, then replaying that grid
+through the existing local-paper robustness path. The goal is to learn why the
+first multi-slice candidate produced zero fills under the previous static
+threshold grid, not to promote a model.
 
 ## Hard Boundaries
 
@@ -28,7 +29,7 @@ robustness replay, not to promote a model.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Run model training or inference that needs PyTorch through Docker `research`.
+- Run model inference that needs PyTorch through Docker `research`.
 - Do not create a broad agent framework, scheduler, promotion gate, or dashboard
   expansion.
 - Do not start an unbounded or overnight training run yet.
@@ -62,44 +63,41 @@ robustness replay, not to promote a model.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Inventory the latest external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-threshold-robustness-smoke.json`
+   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-multislice-training-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-multislice-evaluation-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-training-smoke.json`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-evaluation-smoke.json`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-robustness-smoke.json`
 3. Inventory only the small useful local Yahoo subset already identified under
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
-   Prefer:
-   - `snapshot=2026-07-09-shadow-t0-8d-probe` for CVS, FCX, and KO,
-   - `snapshot=2026-06-18` only if an extra out-of-slice symbol is needed.
-4. Add a small capped multi-slice training/evaluation source that:
-   - accepts explicit `(snapshot, symbol)` slices,
-   - keeps the existing feature shape unless a decision record justifies a
-     change,
-   - writes artifacts outside Git,
-   - records source slices and row counts,
-   - remains deterministic and replayable in tests.
-5. Train or prepare one bounded PyTorch CUDA candidate inside Docker
-   `research` using the multi-slice input. Keep caps small for this goal.
-6. Evaluate the candidate and, if the candidate is usable, replay it through
-   the existing threshold robustness path on CVS, FCX, and KO.
-7. Keep output descriptive only. Do not emit pass/fail, promotion, deployment,
-   or gate decisions.
-8. Add focused tests proving:
-   - multi-slice artifacts are outside Git,
+   Prefer `snapshot=2026-07-09-shadow-t0-8d-probe` for CVS, FCX, and KO.
+4. Add a small calibration helper or research job option that:
+   - consumes candidate probability traces or runs bounded trace inference once
+     per selected slice,
+   - derives a capped threshold grid from observed probability quantiles or
+     ranges,
+   - records the probability ranges and selected threshold pairs,
+   - replays the grid through the existing threshold robustness/local-paper path,
+   - writes calibration artifacts outside Git.
+5. Keep calibration output descriptive only. Do not emit pass/fail, promotion,
+   deployment, or gate decisions.
+6. Add focused tests proving:
+   - calibration artifacts are outside Git,
+   - generated thresholds are capped, deterministic, and derived from trace
+     probabilities,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing data/model/GPU/backend records a non-fatal prepared state where
+   - missing traces/model/GPU/backend records a non-fatal prepared state where
      relevant,
-   - generated model artifacts are outside Git or mocked in tests,
    - downstream robustness replay still uses only `source: local_paper` fills.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this active multi-slice training loop.
+  this active calibration loop.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active goal.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -118,12 +116,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused multi-slice training, evaluation, robustness, Docker
-research, or GPU inference command used.
+Report any focused calibration, trace, robustness, Docker research, or GPU
+inference command used.
 
 ## Suggested Commit Message
 
-`Add bounded multi-slice candidate training`
+`Add bounded probability calibration probe`
 
 ## Completion Report
 

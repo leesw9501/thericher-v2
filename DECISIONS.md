@@ -351,3 +351,19 @@ what to train next. Replaying the same variants across a few local slices shows
 whether the candidate behavior is robust without adding a new replay path,
 baseline gate, scheduler, dashboard, KIS access, credentials, or promotion
 decision.
+
+## 2026-07-15 - Bounded multi-slice candidate training input
+
+Decision: extend candidate training and evaluation to accept capped explicit
+local Yahoo `(snapshot, symbol)` slices. Each slice is converted through the
+existing four-feature candidate dataset builder, then features and labels are
+concatenated in input order with per-slice row counts and provenance recorded
+in the external artifact. The research job runner exposes this through
+repeatable `--data-slice` arguments while keeping PyTorch confined to Docker
+`research`.
+
+Reason: deterministic sample bars are no longer enough for model iteration.
+The engine needs one bounded path from real local data to a model artifact,
+evaluation artifact, and robustness replay without changing feature shape,
+downloading data into Git, adding a new replay path, introducing credentials,
+or creating a promotion gate.

@@ -16,11 +16,13 @@ from thericher_v2.data import SampleBarProvider
 from thericher_v2.serialization import to_jsonable
 
 from .candidate_training import (
+    CandidateDataSliceConfig,
     CandidateTrainingDataset,
     GpuReadiness,
     _candidate_lookback,
     _reject_repo_artifact_path,
     build_candidate_training_dataset,
+    build_multi_slice_candidate_training_dataset,
     detect_gpu_readiness,
     load_yahoo_intraday_1m_bars,
 )
@@ -73,6 +75,7 @@ class BoundedCandidateEvaluationResult:
     timeframe: Timeframe | None
     bars_seen: int
     examples_seen: int
+    source_slices: tuple[dict[str, Any], ...]
     metrics: dict[str, Any]
     evaluation_artifact: Path
     local_paper_conversion: str = "deferred_to_next_goal"
@@ -101,6 +104,7 @@ def run_bounded_candidate_evaluation(
     model_artifact: Path | None = None,
     yahoo_snapshot: Path | None = None,
     symbol: str | None = None,
+    data_slices: tuple[CandidateDataSliceConfig, ...] = (),
     gpu: GpuReadiness | None = None,
     evaluation_runner: CandidateEvaluationRunner | None = None,
 ) -> BoundedCandidateEvaluationResult:
@@ -112,12 +116,22 @@ def run_bounded_candidate_evaluation(
     gpu = gpu or detect_gpu_readiness()
     training_payload, training_read_error = _read_training_metrics(training_metrics_artifact)
     candidate = _candidate_from_training_payload(training_payload)
-    dataset = _load_evaluation_dataset(
-        config=config,
-        candidate=candidate,
-        yahoo_snapshot=yahoo_snapshot,
-        symbol=symbol,
-    )
+    try:
+        dataset = _load_evaluation_dataset(
+            config=config,
+            candidate=candidate,
+            training_payload=training_payload,
+            yahoo_snapshot=yahoo_snapshot,
+            symbol=symbol,
+            data_slices=data_slices,
+        )
+        dataset_error = None
+    except Exception as exc:  # noqa: BLE001 - evaluation jobs record prepared data failures.
+        dataset = _empty_evaluation_dataset(
+            candidate=candidate,
+            data_slices=data_slices or _data_slices_from_training_payload(training_payload),
+        )
+        dataset_error = f"candidate evaluation dataset unavailable: {exc}"
     selected_model_artifact = model_artifact or _model_artifact_from_training_payload(
         training_payload
     )
@@ -132,6 +146,7 @@ def run_bounded_candidate_evaluation(
         candidate=candidate,
         training_payload=training_payload,
         dataset=dataset,
+        dataset_error=dataset_error,
         gpu=gpu,
         available_backends=available_backends,
         selected_backend=selected_backend,
@@ -154,12 +169,26 @@ def _run_candidate_evaluation_result(
     candidate: dict[str, Any],
     training_payload: dict[str, Any],
     dataset: CandidateTrainingDataset,
+    dataset_error: str | None,
     gpu: GpuReadiness,
     available_backends: tuple[str, ...],
     selected_backend: str | None,
     evaluation_artifact: Path,
     evaluation_runner: CandidateEvaluationRunner | None,
 ) -> BoundedCandidateEvaluationResult:
+    if dataset_error is not None:
+        return _prepared_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            dataset=dataset,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            evaluation_artifact=evaluation_artifact,
+            reason=dataset_error,
+        )
     if training_read_error is not None:
         return _prepared_result(
             config=config,
@@ -285,6 +314,7 @@ def _run_candidate_evaluation_result(
         timeframe=dataset.timeframe,
         bars_seen=dataset.bars_seen,
         examples_seen=len(dataset.labels),
+        source_slices=dataset.source_slices,
         metrics=metrics,
         evaluation_artifact=evaluation_artifact,
     )
@@ -322,6 +352,7 @@ def _prepared_result(
         timeframe=dataset.timeframe,
         bars_seen=dataset.bars_seen,
         examples_seen=len(dataset.labels),
+        source_slices=dataset.source_slices,
         metrics={},
         evaluation_artifact=evaluation_artifact,
     )
@@ -331,9 +362,19 @@ def _load_evaluation_dataset(
     *,
     config: CandidateEvaluationConfig,
     candidate: dict[str, Any],
+    training_payload: dict[str, Any],
     yahoo_snapshot: Path | None,
     symbol: str | None,
+    data_slices: tuple[CandidateDataSliceConfig, ...],
 ) -> CandidateTrainingDataset:
+    selected_data_slices = data_slices or _data_slices_from_training_payload(training_payload)
+    if selected_data_slices:
+        return build_multi_slice_candidate_training_dataset(
+            data_slices=selected_data_slices,
+            candidate=candidate,
+            max_bars=config.max_bars,
+            data_source="multi_slice_yahoo_evaluation",
+        )
     if yahoo_snapshot is not None:
         bars = load_yahoo_intraday_1m_bars(
             yahoo_snapshot,
@@ -341,6 +382,7 @@ def _load_evaluation_dataset(
             max_bars=config.max_bars,
         )
         data_source = str(yahoo_snapshot)
+        source_slices = ()
     else:
         provider = SampleBarProvider.trending_1m(
             count=config.max_bars,
@@ -348,11 +390,13 @@ def _load_evaluation_dataset(
         )
         bars = list(provider.base_bars)
         data_source = f"deterministic_sample_heldout_seed{config.sample_seed}"
+        source_slices = ()
     lookback = _candidate_lookback(candidate)
     return build_candidate_training_dataset(
         bars,
         lookback=lookback,
         data_source=data_source,
+        source_slices=source_slices,
     )
 
 
@@ -472,6 +516,7 @@ def _candidate_evaluation_payload(
             "timeframe": result.timeframe,
             "bars_seen": result.bars_seen,
             "examples_seen": result.examples_seen,
+            "source_slices": result.source_slices,
             "metrics": result.metrics,
             "local_paper_conversion": result.local_paper_conversion,
             "artifacts": {
@@ -525,6 +570,31 @@ def _candidate_artifact_from_training_payload(payload: dict[str, Any]) -> Path |
     if not value:
         return None
     return Path(str(value))
+
+
+def _data_slices_from_training_payload(
+    payload: dict[str, Any],
+) -> tuple[CandidateDataSliceConfig, ...]:
+    raw_slices = payload.get("source_slices")
+    if not isinstance(raw_slices, list | tuple):
+        return ()
+    slices: list[CandidateDataSliceConfig] = []
+    for ordinal, raw_slice in enumerate(raw_slices, start=1):
+        if not isinstance(raw_slice, dict):
+            continue
+        snapshot = raw_slice.get("yahoo_snapshot")
+        symbol = raw_slice.get("symbol")
+        if not snapshot or not symbol:
+            continue
+        slice_id = raw_slice.get("slice_id") or f"s{ordinal:02d}_{str(symbol).upper()}"
+        slices.append(
+            CandidateDataSliceConfig(
+                slice_id=str(slice_id),
+                yahoo_snapshot=Path(str(snapshot)),
+                symbol=str(symbol),
+            )
+        )
+    return tuple(slices)
 
 
 def _feature_names_from_training_payload(payload: dict[str, Any]) -> tuple[str, ...]:
@@ -597,3 +667,36 @@ def _infer_hidden_units(state_dict: dict[str, Any]) -> int:
     if shape is None or len(shape) < 1:
         raise ValueError("cannot infer hidden_units from model checkpoint")
     return int(shape[0])
+
+
+def _empty_evaluation_dataset(
+    *,
+    candidate: dict[str, Any],
+    data_slices: tuple[CandidateDataSliceConfig, ...],
+) -> CandidateTrainingDataset:
+    return CandidateTrainingDataset(
+        features=(),
+        labels=(),
+        feature_names=(
+            "lookback_return",
+            "last_bar_return",
+            "bar_range",
+            "volume_change",
+        ),
+        symbol="",
+        market="",
+        timeframe=Timeframe.M1,
+        data_source="candidate_evaluation_dataset_unavailable",
+        bars_seen=0,
+        lookback=_candidate_lookback(candidate),
+        source_slices=tuple(
+            {
+                "slice_id": data_slice.slice_id,
+                "yahoo_snapshot": str(data_slice.yahoo_snapshot),
+                "symbol": data_slice.symbol,
+                "bars_seen": 0,
+                "examples_seen": 0,
+            }
+            for data_slice in data_slices
+        ),
+    )

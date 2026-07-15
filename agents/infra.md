@@ -76,6 +76,13 @@
   PyTorch CUDA, wrote per-slice probability traces for CVS, FCX, and KO, and
   wrote the aggregate robustness artifact under
   `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-threshold-robustness-smoke`.
+- Bounded multi-slice candidate training and evaluation ran in Docker
+  `research` with PyTorch CUDA, wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-multislice-training-smoke`
+  and
+  `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-multislice-evaluation-smoke`,
+  then replayed robustness under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`.
 
 ## Next Handoff
 

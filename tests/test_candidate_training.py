@@ -3,16 +3,19 @@ from __future__ import annotations
 import json
 import socket
 import sys
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
 
 from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
+    CandidateDataSliceConfig,
     CandidateTrainingConfig,
     GpuReadiness,
     build_candidate_training_dataset,
+    build_multi_slice_candidate_training_dataset,
+    parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
 
@@ -36,6 +39,46 @@ def test_candidate_training_builds_dataset_from_sample_bars() -> None:
         "bar_range",
         "volume_change",
     )
+
+
+def test_candidate_training_builds_multi_slice_dataset_without_feature_shape_drift(
+    tmp_path,
+) -> None:
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+
+    dataset = build_multi_slice_candidate_training_dataset(
+        data_slices=(
+            CandidateDataSliceConfig(
+                slice_id="aaa",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="AAA",
+            ),
+            CandidateDataSliceConfig(
+                slice_id="bbb",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="BBB",
+            ),
+        ),
+        candidate={
+            "candidate_experiment_id": "unit_candidate",
+            "candidate_parameters": {"lookback": 3},
+        },
+        max_bars=40,
+        data_source="unit_multi_slice",
+    )
+
+    assert dataset.symbol == "MULTI"
+    assert dataset.market == "US"
+    assert dataset.feature_names == (
+        "lookback_return",
+        "last_bar_return",
+        "bar_range",
+        "volume_change",
+    )
+    assert dataset.bars_seen == 80
+    assert len(dataset.labels) == 72
+    assert [item["slice_id"] for item in dataset.source_slices] == ["aaa", "bbb"]
+    assert [item["examples_seen"] for item in dataset.source_slices] == [36, 36]
 
 
 def test_candidate_training_records_injected_success_and_model_artifact_outside_repo(
@@ -84,6 +127,72 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
                 checked_at=datetime(2026, 1, 2, tzinfo=UTC),
             ),
         )
+
+
+def test_candidate_training_records_multi_slice_source_rows(tmp_path) -> None:
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+    result = run_bounded_candidate_training(
+        config=CandidateTrainingConfig(
+            run_id="unit-multi-slice-candidate-training",
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        candidate_artifact=_candidate_artifact(tmp_path),
+        data_slices=(
+            CandidateDataSliceConfig(
+                slice_id="aaa",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="AAA",
+            ),
+            CandidateDataSliceConfig(
+                slice_id="bbb",
+                yahoo_snapshot=yahoo_snapshot,
+                symbol="BBB",
+            ),
+        ),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=_offline_runner,
+    )
+
+    payload = json.loads(result.metrics_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_trained_only"
+    assert payload["symbol"] == "MULTI"
+    assert payload["bars_seen"] == 80
+    assert payload["examples_seen"] == 72
+    assert [item["slice_id"] for item in payload["source_slices"]] == ["aaa", "bbb"]
+    assert payload["artifact_policy"]["repo_storage_allowed"] is False
+
+
+def test_candidate_training_missing_multi_slice_data_is_prepared(tmp_path) -> None:
+    result = run_bounded_candidate_training(
+        config=CandidateTrainingConfig(run_id="missing-multi-slice-candidate-training"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        candidate_artifact=_candidate_artifact(tmp_path),
+        data_slices=(
+            CandidateDataSliceConfig(
+                slice_id="missing",
+                yahoo_snapshot=tmp_path / "missing.csv.gz",
+                symbol="AAA",
+            ),
+        ),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=_offline_runner,
+    )
+
+    payload = json.loads(result.metrics_artifact.read_text(encoding="utf-8"))
+    assert result.status == "prepared_not_trained"
+    assert "dataset unavailable" in payload["reason"]
+    assert payload["source_slices"][0]["examples_seen"] == 0
 
 
 def test_candidate_training_missing_gpu_is_prepared_not_trained(tmp_path) -> None:
@@ -158,6 +267,17 @@ def test_candidate_training_import_keeps_torch_lazy() -> None:
     assert "kis" not in source
 
 
+def test_parse_candidate_data_slices_uses_last_colon_for_windows_paths() -> None:
+    slices = parse_candidate_data_slices(
+        [r"cvs=D:\market_data\snapshot\ohlcv_1m.csv.gz:CVS"]
+    )
+
+    assert len(slices) == 1
+    assert slices[0].slice_id == "cvs"
+    assert slices[0].symbol == "CVS"
+    assert str(slices[0].yahoo_snapshot).endswith("ohlcv_1m.csv.gz")
+
+
 def _candidate_artifact(tmp_path: Path) -> Path:
     path = tmp_path / "candidate.json"
     path.write_text(
@@ -183,3 +303,54 @@ def _offline_runner(dataset, candidate, model_artifact, _config):  # noqa: ANN00
         "candidate_experiment_id": candidate["candidate_experiment_id"],
         "model_artifact": str(model_artifact),
     }
+
+
+def _yahoo_snapshot(
+    tmp_path: Path,
+    *,
+    symbols: tuple[str, ...],
+    bar_count: int = 50,
+) -> Path:
+    import csv
+    import gzip
+
+    path = tmp_path / "ohlcv_1m.csv.gz"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    fields = [
+        "symbol",
+        "timestamp_utc",
+        "timestamp_et",
+        "session_date",
+        "bar_time_et",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source",
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for symbol_index, symbol in enumerate(symbols):
+            base_price = 100 + symbol_index
+            for index in range(bar_count):
+                timestamp = start + timedelta(minutes=index)
+                price = base_price + index * 0.02
+                close = price + (0.05 if index % 2 == 0 else -0.03)
+                writer.writerow(
+                    {
+                        "symbol": symbol,
+                        "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                        "timestamp_et": "",
+                        "session_date": "2026-01-02",
+                        "bar_time_et": "",
+                        "open": f"{price:.4f}",
+                        "high": f"{price + 0.10:.4f}",
+                        "low": f"{price - 0.10:.4f}",
+                        "close": f"{close:.4f}",
+                        "volume": str(1000 + index),
+                        "source": "unit",
+                    }
+                )
+    return path

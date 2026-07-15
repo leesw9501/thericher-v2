@@ -28,6 +28,7 @@ from .candidate_training import (
     GpuReadiness,
     _reject_repo_artifact_path,
     detect_gpu_readiness,
+    parse_candidate_data_slices,
 )
 
 CandidateThresholdRobustnessStatus = Literal[
@@ -560,25 +561,11 @@ def _int_from_payload(value: object) -> int | None:
 def parse_robustness_slices(
     values: list[str] | None,
 ) -> tuple[CandidateThresholdRobustnessSliceConfig, ...]:
-    if not values:
-        return ()
-    slices: list[CandidateThresholdRobustnessSliceConfig] = []
-    for ordinal, value in enumerate(values, start=1):
-        slice_id: str | None = None
-        raw_value = value
-        prefix, separator, rest = value.partition("=")
-        if separator and prefix and not any(part in prefix for part in ("\\", "/", ":")):
-            slice_id = prefix
-            raw_value = rest
-        path_text, separator, symbol = raw_value.rpartition(":")
-        if not separator or not path_text or not symbol:
-            raise ValueError("robustness slices must use [ID=]SNAPSHOT:SYMBOL format")
-        symbol = symbol.upper()
-        slices.append(
-            CandidateThresholdRobustnessSliceConfig(
-                slice_id=slice_id or f"s{ordinal:02d}_{symbol}",
-                yahoo_snapshot=Path(path_text),
-                symbol=symbol,
-            )
+    return tuple(
+        CandidateThresholdRobustnessSliceConfig(
+            slice_id=data_slice.slice_id,
+            yahoo_snapshot=data_slice.yahoo_snapshot,
+            symbol=data_slice.symbol,
         )
-    return tuple(slices)
+        for data_slice in parse_candidate_data_slices(values)
+    )

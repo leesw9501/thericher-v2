@@ -78,12 +78,14 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` with CVS, FCX, and KO from
   2026-06-29 to 2026-07-09. The robustness smoke reused CVS, FCX, and KO; no
   additional data was acquired.
+- Bounded multi-slice training reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next multi-slice training work should prefer the existing Yahoo snapshots
-  above before acquiring anything new.
+- Next calibration work should prefer the existing Yahoo snapshots above before
+  acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

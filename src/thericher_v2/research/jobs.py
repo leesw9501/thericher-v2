@@ -45,8 +45,10 @@ from .candidate_threshold_sweep import (
 )
 from .candidate_training import (
     BoundedCandidateTrainingResult,
+    CandidateDataSliceConfig,
     CandidateTrainerRunner,
     CandidateTrainingConfig,
+    parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
 from .gpu_training import (
@@ -109,6 +111,7 @@ class ResearchJobSpec:
     max_steps: int = 256
     buy_threshold: float = 0.55
     sell_threshold: float = 0.45
+    data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
     robustness_slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
@@ -250,6 +253,7 @@ def _run_job_kind(
             candidate_artifact=spec.candidate_artifact,
             yahoo_snapshot=spec.yahoo_snapshot,
             symbol=spec.symbol,
+            data_slices=spec.data_slices,
             gpu=gpu,
             trainer_runner=candidate_trainer_runner,
         )
@@ -271,6 +275,7 @@ def _run_job_kind(
             model_artifact=spec.model_artifact,
             yahoo_snapshot=spec.yahoo_snapshot,
             symbol=spec.symbol,
+            data_slices=spec.data_slices,
             gpu=gpu,
             evaluation_runner=candidate_evaluation_runner,
         )
@@ -416,6 +421,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-steps", type=int, default=256)
     parser.add_argument("--buy-threshold", type=float, default=0.55)
     parser.add_argument("--sell-threshold", type=float, default=0.45)
+    parser.add_argument("--data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
     parser.add_argument("--robustness-slice", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
@@ -442,6 +448,7 @@ def main() -> None:
         max_steps=args.max_steps,
         buy_threshold=args.buy_threshold,
         sell_threshold=args.sell_threshold,
+        data_slices=parse_candidate_data_slices(args.data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
         robustness_slices=parse_robustness_slices(args.robustness_slice),
     )
@@ -513,6 +520,7 @@ def _research_job_payload(
             "timeframe": training.timeframe,
             "bars_seen": training.bars_seen,
             "examples_seen": training.examples_seen,
+            "source_slices": training.source_slices,
             "max_epochs": training.max_epochs,
             "max_steps": training.max_steps,
             "metrics": training.metrics,
@@ -541,6 +549,7 @@ def _research_job_payload(
             "timeframe": training.timeframe,
             "bars_seen": training.bars_seen,
             "examples_seen": training.examples_seen,
+            "source_slices": training.source_slices,
             "metrics": training.metrics,
             "local_paper_conversion": training.local_paper_conversion,
         }
