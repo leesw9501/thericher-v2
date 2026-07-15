@@ -41,6 +41,8 @@
 - Walk-forward stayed capped and artifact-only, with no promotion gate.
 - GPU candidate smoke stayed metadata-only and did not add a promotion gate.
 - GPU runtime smoke stayed `nvidia-smi`-only and outside Git.
+- GPU compute smoke stayed research-profile-only, did not add heavy base
+  dependencies, and produced one concise external artifact.
 
 ## Next Handoff
 

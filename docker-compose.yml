@@ -1,6 +1,8 @@
 services:
   engine:
-    build: .
+    build:
+      context: .
+      target: base
     command:
       - python
       - -m
@@ -14,7 +16,9 @@ services:
       - ./reports:/app/reports
 
   web:
-    build: .
+    build:
+      context: .
+      target: base
     command:
       - python
       - -m
@@ -33,8 +37,11 @@ services:
       - thericher-v2-runtime:/app/runtime
 
   research:
-    build: .
+    build:
+      context: .
+      target: research
     profiles: ["research"]
+    gpus: all
     command:
       - python
       - -m

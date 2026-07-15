@@ -213,3 +213,16 @@ packages to the base engine.
 
 Reason: GPU compute work needs a reproducible research path, but base engine
 tests and startup must remain light and broker-free.
+
+## 2026-07-15 - Research GPU compute smoke stays in Docker research
+
+Decision: GPU compute and future training smoke work runs through the Docker
+`research` target/profile. The first compute smoke records the selected
+walk-forward candidate and GPU readiness, writes under `/app/model_artifacts`
+inside Docker, and returns non-fatal `prepared_not_trained` when no research GPU
+compute backend is installed. Heavy compute frameworks are not added to the base
+engine path.
+
+Reason: the RTX 4090 should be used for model research, but the trading engine,
+tests, and local paper loop must stay reproducible without CUDA or ML framework
+dependencies.

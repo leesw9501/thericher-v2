@@ -29,11 +29,12 @@
 
 ## Active Queue
 
-1. Add a research-profile-only GPU compute smoke for the selected candidate.
+1. Choose the first research-only GPU compute backend for Docker `research`
+   and run a tiny bounded training smoke for the selected candidate.
 2. Keep short walk-forward experiments available for breadth while a longer
    candidate runs.
-3. Start the first bounded GPU candidate training only after compute smoke
-   artifacts are outside Git.
+3. Start longer candidate training only after the tiny training smoke writes
+   artifacts outside Git and remains replayable.
 
 ## Running Jobs
 
@@ -59,8 +60,11 @@
   `prepared_not_trained` metadata artifact outside Git.
 - Added a GPU runtime smoke artifact showing RTX 4090 readiness without adding
   heavy GPU dependencies to the base engine.
+- Added a Docker research GPU compute smoke. The research container sees the RTX
+  4090, but no compute backend is installed yet, so the artifact is
+  `prepared_not_trained` rather than a training result.
 
 ## Next Handoff
 
-- Start with a research-profile-only GPU compute smoke; keep heavy dependencies
-  out of the base engine.
+- Decide whether to add a research-only GPU backend such as PyTorch CUDA to the
+  Docker `research` target; keep heavy dependencies out of the base engine.

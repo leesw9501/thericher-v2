@@ -13,3 +13,9 @@ RUN python -m pip install --no-cache-dir --upgrade pip && \
     python -m pip install --no-cache-dir -e .
 
 CMD ["python", "-m", "thericher_v2.ops.daily_report", "--print-summary"]
+
+FROM base AS research
+
+RUN python -m pip install --no-cache-dir -e ".[research]"
+
+FROM base AS runtime

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first research-profile-only GPU compute smoke for the selected bounded
-candidate.
+Choose and add the first research-only GPU compute backend, then run a tiny
+bounded GPU training smoke for the selected candidate.
 
 This advances feature/model research and reproducible GPU experimentation by
-moving from `nvidia-smi` readiness to one tiny bounded GPU compute check, while
-keeping the base engine free of heavy GPU dependencies.
+moving from runtime/compute readiness into the smallest useful model-training
+loop, while keeping the base engine free of heavy GPU dependencies.
 
 ## Hard Boundaries
 
@@ -25,6 +25,9 @@ keeping the base engine free of heavy GPU dependencies.
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep local paper fills labeled with `source: local_paper`.
 - Do not add heavy GPU dependencies to the base engine test path.
+- Run GPU compute/training through the Docker `research` target/profile.
+- If adding PyTorch/CUDA or another heavy framework requires a package choice,
+  check current official guidance first and keep it research-only.
 
 ## Required First Reads
 
@@ -52,27 +55,29 @@ keeping the base engine free of heavy GPU dependencies.
 
 ## Required Work
 
-1. Inspect the selected candidate artifact and GPU runtime smoke artifact under
-   `D:\thericher-v2\model-artifacts`.
-2. Inspect the Docker research service and dependency layout.
-3. Determine whether a tiny GPU compute smoke can run with an already available
-   research-only dependency. If choosing a new ML/GPU framework or CUDA package,
-   check current official guidance first and keep it out of the base engine.
-4. Add a bounded compute smoke that:
-   - records selected candidate id and parameters,
-   - runs only a tiny deterministic tensor/array operation if GPU compute is
-     available,
-   - writes a concise JSON result outside Git,
-   - records `prepared_not_trained` with the blocker reason if compute is not
+1. Confirm or ask for the compute backend choice before adding any heavy
+   framework. Prefer PyTorch CUDA in the Docker `research` target unless the
+   operator chooses otherwise.
+2. Keep the base `engine` and `web` images free of GPU/ML framework
+   dependencies.
+3. Update the Docker `research` target/profile so it can run the selected
+   backend and still writes model artifacts only to `/app/model_artifacts`.
+4. Add a tiny bounded training smoke that:
+   - consumes the selected walk-forward candidate metadata,
+   - uses deterministic local/sample or explicit local market data only,
+   - runs a very small model/tensor training step on GPU if available,
+   - writes a concise result outside Git,
+   - records `prepared_not_trained` with the reason if the backend or GPU is not
      available.
-5. Do not start long training yet. This goal proves runtime only.
+5. Do not start long training yet. This goal proves the research training path
+   only.
 6. Update `agents/engine-research.md` and `agents/infra.md` so the short
    experiment queue and longer candidate queue remain visible.
 7. Add focused tests proving:
-   - compute-smoke artifact paths are outside Git,
+   - training-smoke artifact paths are outside Git,
    - no broker/network/credential access is needed,
    - base engine tests do not require GPU packages,
-   - missing compute runtime records a non-fatal prepared state.
+   - missing GPU/backend records a non-fatal prepared state.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -96,12 +101,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused GPU compute smoke, runtime smoke, candidate artifact command,
-or Docker research command used.
+Report any focused GPU training smoke, compute smoke, runtime smoke, candidate
+artifact command, or Docker research command used.
 
 ## Suggested Commit Message
 
-`Add research GPU compute smoke`
+`Add research GPU training smoke`
 
 ## Completion Report
 

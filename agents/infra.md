@@ -27,8 +27,8 @@
 ## Active Queue
 
 1. Keep base engine tests free of heavy research dependencies.
-2. Add a research-profile-only GPU compute smoke without changing base engine
-   startup.
+2. Add the selected GPU compute framework only to the Docker `research` target
+   after operator approval.
 
 ## Running Jobs
 
@@ -45,8 +45,11 @@
   compute to the research profile.
 - GPU runtime smoke records `nvidia-smi` readiness under the external artifact
   root.
+- Docker `research` now requests GPU access and can write compute-smoke
+  artifacts to `/app/model_artifacts/gpu-compute`; the smoke currently stops at
+  `prepared_not_trained` because no compute backend is installed.
 
 ## Next Handoff
 
-- Before GPU research begins, verify the single-card path without adding heavy
-  dependencies to the base engine.
+- Keep `engine` and `web` on the light base image while GPU training uses the
+  Docker `research` target and external artifact mount.

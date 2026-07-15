@@ -518,6 +518,14 @@ def _reject_repo_artifact_path(artifact_root: Path, repo_root: Path | None) -> N
         return
     resolved_artifact = artifact_root.resolve()
     resolved_repo = repo_root.resolve()
+    if os.name != "nt":
+        docker_repo_root = Path("/app").resolve()
+        docker_artifact_root = docker_repo_root / "model_artifacts"
+        if resolved_repo == docker_repo_root and (
+            resolved_artifact == docker_artifact_root
+            or docker_artifact_root in resolved_artifact.parents
+        ):
+            return
     if resolved_artifact == resolved_repo or resolved_repo in resolved_artifact.parents:
         raise ValueError("artifact_root must be outside the Git workspace")
 

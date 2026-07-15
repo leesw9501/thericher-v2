@@ -73,6 +73,9 @@ Implemented and pushed:
   artifacts in the repo,
 - research-profile GPU runtime smoke CLI that records `nvidia-smi` readiness
   and selected candidate metadata outside Git,
+- research-profile GPU compute smoke CLI that runs only inside the bounded
+  research path, records selected candidate metadata, and writes either
+  `compute_ran_only` or non-fatal `prepared_not_trained` artifacts outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -90,7 +93,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `49 passed`
+- `54 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -113,6 +116,8 @@ Key decisions:
 - Dashboard actions are local-only until broker adapters exist.
 - Base engine has no heavy runtime dependencies.
 - GPU/ML work belongs in the research lane/profile.
+- GPU compute and training must run through the Docker `research` target/profile
+  unless an explicit future decision allows otherwise.
 - GPU model artifacts belong outside the repo at
   `D:\thericher-v2\model-artifacts` by default.
 - Operator-provided market data lives outside the repo at `D:\market_data`.
@@ -130,11 +135,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first research-profile-only GPU compute smoke:
+Choose and add the first research-only GPU compute backend, then run the first
+tiny bounded training smoke:
 
-1. inspect the GPU runtime smoke artifact,
-2. choose or verify a research-only GPU compute dependency,
-3. run a tiny bounded tensor/compute smoke if the dependency is available,
+1. keep the base engine dependency path light,
+2. install the selected backend only in the Docker `research` target/profile,
+3. run a tiny deterministic GPU tensor/training smoke for the selected
+   walk-forward candidate,
 4. write all generated outputs outside Git.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

@@ -20,6 +20,12 @@ from .experiments import (
     write_walk_forward_gpu_candidate_smoke_artifact,
     write_walk_forward_metrics_artifact,
 )
+from .gpu_compute import (
+    DEFAULT_GPU_COMPUTE_RUN_ID,
+    GpuComputeSmokeResult,
+    run_gpu_compute_smoke,
+    write_gpu_compute_smoke_artifact,
+)
 from .gpu_runtime import (
     DEFAULT_GPU_RUNTIME_RUN_ID,
     GpuRuntimeSmokeResult,
@@ -47,6 +53,7 @@ __all__ = [
     "ExperimentQueueResult",
     "ExperimentSource",
     "ExperimentSpec",
+    "GpuComputeSmokeResult",
     "GpuRuntimeSmokeResult",
     "WalkForwardCandidate",
     "WalkForwardExperimentSummary",
@@ -58,6 +65,7 @@ __all__ = [
     "ValidationConfig",
     "ValidationResult",
     "ValidationTrade",
+    "DEFAULT_GPU_COMPUTE_RUN_ID",
     "DEFAULT_GPU_RUNTIME_RUN_ID",
     "default_short_experiment_specs",
     "detect_gpu_readiness",
@@ -65,6 +73,7 @@ __all__ = [
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
+    "run_gpu_compute_smoke",
     "run_local_paper_validation",
     "run_sample_cpu_smoke",
     "run_short_experiment_queue",
@@ -73,6 +82,7 @@ __all__ = [
     "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
     "write_gpu_candidate_smoke_artifact",
+    "write_gpu_compute_smoke_artifact",
     "write_gpu_experiment_plan",
     "write_gpu_runtime_smoke_artifact",
     "write_walk_forward_gpu_candidate_smoke_artifact",
