@@ -12,6 +12,12 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.serialization import to_jsonable
 
+from .candidate_training import (
+    BoundedCandidateTrainingResult,
+    CandidateTrainerRunner,
+    CandidateTrainingConfig,
+    run_bounded_candidate_training,
+)
 from .gpu_training import (
     GpuTrainingSmokeResult,
     TrainingSmokeRunner,
@@ -24,10 +30,10 @@ from .validation import (
     resolve_model_artifact_root,
 )
 
-ResearchJobKind = Literal["gpu_training_smoke"]
+ResearchJobKind = Literal["gpu_training_smoke", "candidate_training"]
 ResearchJobStatus = Literal["completed", "prepared_not_trained"]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
-SUPPORTED_RESEARCH_JOB_KINDS = ("gpu_training_smoke",)
+SUPPORTED_RESEARCH_JOB_KINDS = ("gpu_training_smoke", "candidate_training")
 
 
 @dataclass(frozen=True)
@@ -35,6 +41,11 @@ class ResearchJobSpec:
     job_id: str = DEFAULT_RESEARCH_JOB_ID
     kind: ResearchJobKind = "gpu_training_smoke"
     candidate_artifact: Path | None = None
+    yahoo_snapshot: Path | None = None
+    symbol: str | None = None
+    max_bars: int = 120
+    max_epochs: int = 8
+    max_steps: int = 256
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
     schema_version: int = SCHEMA_VERSION
 
@@ -55,8 +66,9 @@ class ResearchJobResult:
     started_at: datetime
     completed_at: datetime
     reason: str
-    training: GpuTrainingSmokeResult
+    training: GpuTrainingSmokeResult | BoundedCandidateTrainingResult
     training_artifact: Path
+    model_artifact: Path | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -78,24 +90,17 @@ def run_and_write_research_job(
     repo_root: Path | None = None,
     gpu: GpuReadiness | None = None,
     trainer_runner: TrainingSmokeRunner | None = None,
+    candidate_trainer_runner: CandidateTrainerRunner | None = None,
 ) -> ResearchJobRun:
     _reject_repo_artifact_path(artifact_root, repo_root)
     started_at = datetime.now(UTC)
-    if spec.kind != "gpu_training_smoke":
-        raise ValueError(f"unsupported research job kind: {spec.kind}")
-    training = run_gpu_training_smoke(
-        run_id=spec.job_id,
-        candidate_artifact=spec.candidate_artifact,
-        gpu=gpu,
-        trainer_runner=trainer_runner,
-    )
-    training_artifact = write_gpu_training_smoke_artifact(
-        training,
+    training, training_artifact, model_artifact, status = _run_job_kind(
+        spec,
         artifact_root=artifact_root,
         repo_root=repo_root,
-    )
-    status: ResearchJobStatus = (
-        "completed" if training.status == "training_ran_only" else "prepared_not_trained"
+        gpu=gpu,
+        trainer_runner=trainer_runner,
+        candidate_trainer_runner=candidate_trainer_runner,
     )
     result = ResearchJobResult(
         job_id=spec.job_id,
@@ -107,6 +112,7 @@ def run_and_write_research_job(
         reason=training.reason,
         training=training,
         training_artifact=training_artifact,
+        model_artifact=model_artifact,
     )
     job_artifact = write_research_job_artifact(
         result,
@@ -114,6 +120,61 @@ def run_and_write_research_job(
         repo_root=repo_root,
     )
     return ResearchJobRun(result=result, job_artifact=job_artifact)
+
+
+def _run_job_kind(
+    spec: ResearchJobSpec,
+    *,
+    artifact_root: Path,
+    repo_root: Path | None,
+    gpu: GpuReadiness | None,
+    trainer_runner: TrainingSmokeRunner | None,
+    candidate_trainer_runner: CandidateTrainerRunner | None,
+) -> tuple[
+    GpuTrainingSmokeResult | BoundedCandidateTrainingResult,
+    Path,
+    Path | None,
+    ResearchJobStatus,
+]:
+    if spec.kind == "gpu_training_smoke":
+        training = run_gpu_training_smoke(
+            run_id=spec.job_id,
+            candidate_artifact=spec.candidate_artifact,
+            gpu=gpu,
+            trainer_runner=trainer_runner,
+        )
+        training_artifact = write_gpu_training_smoke_artifact(
+            training,
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+        )
+        status: ResearchJobStatus = (
+            "completed" if training.status == "training_ran_only" else "prepared_not_trained"
+        )
+        return training, training_artifact, None, status
+    if spec.kind == "candidate_training":
+        training = run_bounded_candidate_training(
+            config=CandidateTrainingConfig(
+                run_id=spec.job_id,
+                max_epochs=spec.max_epochs,
+                max_steps=spec.max_steps,
+                max_bars=spec.max_bars,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            candidate_artifact=spec.candidate_artifact,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            gpu=gpu,
+            trainer_runner=candidate_trainer_runner,
+        )
+        status = (
+            "completed"
+            if training.status == "candidate_trained_only"
+            else "prepared_not_trained"
+        )
+        return training, training.metrics_artifact, training.model_artifact, status
+    raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
 def write_research_job_artifact(
@@ -142,6 +203,11 @@ def build_parser() -> argparse.ArgumentParser:
         choices=SUPPORTED_RESEARCH_JOB_KINDS,
     )
     parser.add_argument("--candidate-artifact", type=Path)
+    parser.add_argument("--yahoo-snapshot", type=Path)
+    parser.add_argument("--symbol")
+    parser.add_argument("--max-bars", type=int, default=120)
+    parser.add_argument("--max-epochs", type=int, default=8)
+    parser.add_argument("--max-steps", type=int, default=256)
     parser.add_argument("--artifact-root", type=Path)
     return parser
 
@@ -153,6 +219,11 @@ def main() -> None:
         job_id=args.job_id,
         kind=args.kind,
         candidate_artifact=args.candidate_artifact,
+        yahoo_snapshot=args.yahoo_snapshot,
+        symbol=args.symbol,
+        max_bars=args.max_bars,
+        max_epochs=args.max_epochs,
+        max_steps=args.max_steps,
     )
     run = run_and_write_research_job(
         spec,
@@ -165,7 +236,7 @@ def main() -> None:
                 "result": _research_job_payload(run.result, artifact_root),
                 "artifacts": {
                     "research_job": str(run.job_artifact),
-                    "training_smoke": str(run.result.training_artifact),
+                    **_research_job_artifacts(run.result),
                 },
             },
             indent=2,
@@ -179,38 +250,62 @@ def _research_job_payload(
     artifact_root: Path,
 ) -> dict[str, object]:
     training = result.training
-    return to_jsonable(
-        {
-            "schema_version": result.schema_version,
-            "job_id": result.job_id,
-            "kind": result.kind,
-            "status": result.status,
-            "created_at": result.created_at,
-            "started_at": result.started_at,
-            "completed_at": result.completed_at,
-            "reason": result.reason,
-            "candidate_artifact": (
-                None if training.candidate_artifact is None else str(training.candidate_artifact)
-            ),
-            "candidate_experiment_id": training.candidate_experiment_id,
-            "candidate_parameters": training.candidate_parameters or {},
-            "artifacts": {
-                "training_smoke": str(result.training_artifact),
-            },
-            "training": {
-                "status": training.status,
-                "reason": training.reason,
-                "available_backends": training.available_backends,
-                "selected_backend": training.selected_backend,
-                "gpu": training.gpu,
-                "result": training.training_result or {},
-            },
-            "artifact_policy": {
-                "root": str(artifact_root),
-                "repo_storage_allowed": False,
-            },
+    base: dict[str, object] = {
+        "schema_version": result.schema_version,
+        "job_id": result.job_id,
+        "kind": result.kind,
+        "status": result.status,
+        "created_at": result.created_at,
+        "started_at": result.started_at,
+        "completed_at": result.completed_at,
+        "reason": result.reason,
+        "candidate_artifact": (
+            None if training.candidate_artifact is None else str(training.candidate_artifact)
+        ),
+        "candidate_experiment_id": training.candidate_experiment_id,
+        "candidate_parameters": training.candidate_parameters or {},
+        "artifacts": _research_job_artifacts(result),
+        "artifact_policy": {
+            "root": str(artifact_root),
+            "repo_storage_allowed": False,
+        },
+    }
+    if isinstance(training, GpuTrainingSmokeResult):
+        base["training"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "available_backends": training.available_backends,
+            "selected_backend": training.selected_backend,
+            "gpu": training.gpu,
+            "result": training.training_result or {},
         }
-    )
+    elif isinstance(training, BoundedCandidateTrainingResult):
+        base["candidate_training"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "available_backends": training.available_backends,
+            "selected_backend": training.selected_backend,
+            "gpu": training.gpu,
+            "data_source": training.data_source,
+            "symbol": training.symbol,
+            "market": training.market,
+            "timeframe": training.timeframe,
+            "bars_seen": training.bars_seen,
+            "examples_seen": training.examples_seen,
+            "max_epochs": training.max_epochs,
+            "max_steps": training.max_steps,
+            "metrics": training.metrics,
+        }
+    return to_jsonable(base)
+
+
+def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
+    if isinstance(result.training, GpuTrainingSmokeResult):
+        return {"training_smoke": str(result.training_artifact)}
+    artifacts = {"candidate_metrics": str(result.training_artifact)}
+    if result.model_artifact is not None:
+        artifacts["model"] = str(result.model_artifact)
+    return artifacts
 
 
 if __name__ == "__main__":

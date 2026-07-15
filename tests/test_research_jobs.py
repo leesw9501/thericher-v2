@@ -78,6 +78,45 @@ def test_research_job_missing_gpu_is_prepared_not_trained(tmp_path) -> None:
     assert "GPU readiness unavailable" in payload["reason"]
 
 
+def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path) -> None:
+    def runner(dataset, candidate, model_artifact, config):  # noqa: ANN001
+        model_artifact.write_text("unit-model", encoding="utf-8")
+        return {
+            "backend": "unit",
+            "operation": "unit_candidate_training",
+            "examples_seen": len(dataset.labels),
+            "epochs_run": config.max_epochs,
+            "steps_run": 1,
+            "candidate_experiment_id": candidate["candidate_experiment_id"],
+            "model_artifact": str(model_artifact),
+        }
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-candidate-training-job",
+            kind="candidate_training",
+            candidate_artifact=_candidate_artifact(tmp_path),
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_trainer_runner=runner,
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_training"
+    assert payload["candidate_training"]["status"] == "candidate_trained_only"
+    assert payload["candidate_training"]["metrics"]["backend"] == "unit"
+    assert Path(payload["artifacts"]["candidate_metrics"]).exists()
+    assert Path(payload["artifacts"]["model"]).exists()
+
+
 def test_research_job_rejects_unknown_kind() -> None:
     with pytest.raises(ValueError, match="unsupported research job kind"):
         ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]

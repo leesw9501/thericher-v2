@@ -38,6 +38,13 @@ on the single GPU by default. Other lanes may proceed while those jobs run, as
 long as they do not touch the same ownership boundary or enable broker/live
 behavior prematurely.
 
+Bounded GPU research jobs run through Docker `research` and write artifacts to
+the external model artifact mount:
+
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-training-smoke --kind candidate_training --candidate-artifact /app/model_artifacts/experiments/short-momentum-cpu-queue-walk-forward-gpu-candidate-smoke.json --max-bars 120 --max-epochs 8 --max-steps 256
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

@@ -29,17 +29,18 @@
 
 ## Active Queue
 
-1. Add the first bounded GPU candidate training job using the research job
-   runner and selected candidate `m1_lb3_b10_s10`.
-2. Keep short walk-forward experiments available for breadth while bounded
-   candidate training runs.
-3. Start longer/deeper training only after the bounded candidate job writes
-   replayable metrics and model artifacts outside Git.
+1. Evaluate the bounded GPU candidate model output against deterministic or
+   explicit local bars without importing PyTorch into the base engine.
+2. Keep short walk-forward experiments available for breadth while candidate
+   evaluation work starts.
+3. Prepare the next bounded longer/deeper training candidate only after the
+   trained artifact has a replayable evaluation result.
 
 ## Running Jobs
 
-- Last completed: `engine-research-gpu-training-job-smoke`, status `completed`,
-  backend `torch`, device `NVIDIA GeForce RTX 4090`.
+- Last completed: `bounded-candidate-training-smoke`, status `completed`,
+  backend `torch`, device `NVIDIA GeForce RTX 4090`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`.
 
 ## Done Recently
 
@@ -73,9 +74,13 @@
 - Added the first lightweight research job runner. It ran one bounded
   `gpu_training_smoke` job inside Docker `research` and wrote wrapper/training
   artifacts outside Git.
+- Added the first bounded `candidate_training` job. It trained a tiny PyTorch
+  MLP for selected candidate `m1_lb3_b10_s10` inside Docker `research` and
+  wrote metrics/model artifacts outside Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. Next work
-  should use the job runner for the first bounded candidate training job before
-  claiming the Engine Research Agent can keep the GPU busy by itself.
+  should evaluate the trained candidate output before starting broader
+  scheduling or claiming the Engine Research Agent can keep the GPU busy by
+  itself.

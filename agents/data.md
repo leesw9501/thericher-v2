@@ -59,6 +59,8 @@
   queue; no additional data was acquired.
 - Reused the same explicit FCX snapshot for walk-forward smoke; no additional
   data was acquired.
+- Bounded GPU candidate training used deterministic sample bars; no additional
+  data was acquired.
 
 ## Next Handoff
 

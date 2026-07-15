@@ -87,6 +87,10 @@ Implemented and pushed:
   `gpu_training_smoke` job at a time inside Docker `research`, writes a wrapper
   job artifact outside Git, and keeps `agents/*.md` as stateboards rather than
   autonomous workers,
+- bounded GPU candidate training job kind in the research job runner; it
+  consumes selected candidate metadata plus deterministic/sample or explicit
+  local bars, trains a tiny PyTorch model under strict caps in Docker
+  `research`, and writes metrics/model artifacts outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -104,7 +108,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `66 passed`
+- `73 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -148,14 +152,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded GPU candidate training job that uses the existing job
-runner and PyTorch research container:
+Add the first candidate model evaluation loop that consumes the bounded GPU
+candidate training output:
 
-1. keep `agents/*.md` as stateboards, not autonomous agent processes,
-2. consume deterministic local/sample or explicit `D:\market_data` bars,
-3. train a tiny candidate model with strict epoch/step limits,
-4. write model and metrics artifacts outside Git,
-5. record only concise queue/result state needed for the next decision.
+1. load the external candidate-training metrics/model metadata without pulling
+   PyTorch into the base engine,
+2. run a broker-free inference/evaluation pass against deterministic or
+   explicit local bars,
+3. compare candidate decisions against the existing momentum baseline through
+   local paper validation or a tiny adapter,
+4. write concise evaluation metrics outside Git,
+5. keep the result as research evidence, not a promotion gate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

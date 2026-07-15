@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review research-profile GPU compute smoke for dependency creep.
+1. Review candidate model evaluation for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -49,6 +49,9 @@
   that base/runtime stages and `pyproject.toml` remain torch-free.
 - Research job runner stayed single-kind and artifact-only; it did not create a
   broad agent platform or new stateboard files.
+- Candidate training extended the job runner with one explicit second kind,
+  stayed bounded by caps, wrote artifacts outside Git, and did not add a
+  promotion gate, dashboard, broker call, or new report family.
 
 ## Next Handoff
 

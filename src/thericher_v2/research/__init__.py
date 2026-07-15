@@ -1,5 +1,12 @@
 """Research and validation helpers."""
 
+from .candidate_training import (
+    BoundedCandidateTrainingResult,
+    CandidateTrainingConfig,
+    CandidateTrainingDataset,
+    build_candidate_training_dataset,
+    run_bounded_candidate_training,
+)
 from .experiments import (
     ExperimentMetrics,
     ExperimentQueueResult,
@@ -63,6 +70,9 @@ from .validation import (
 )
 
 __all__ = [
+    "BoundedCandidateTrainingResult",
+    "CandidateTrainingConfig",
+    "CandidateTrainingDataset",
     "ExperimentMetrics",
     "ExperimentQueueResult",
     "ExperimentSource",
@@ -87,12 +97,14 @@ __all__ = [
     "DEFAULT_GPU_RUNTIME_RUN_ID",
     "DEFAULT_GPU_TRAINING_RUN_ID",
     "DEFAULT_RESEARCH_JOB_ID",
+    "build_candidate_training_dataset",
     "default_short_experiment_specs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
+    "run_bounded_candidate_training",
     "run_gpu_compute_smoke",
     "run_local_paper_validation",
     "run_sample_cpu_smoke",

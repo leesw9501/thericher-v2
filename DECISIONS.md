@@ -261,3 +261,17 @@ autonomous worker processes.
 Reason: the GPU research lane needs a repeatable executable queue step before
 longer training starts, but a broad multi-agent platform would recreate process
 sprawl before it improves model research.
+
+## 2026-07-15 - Bounded GPU candidate training job
+
+Decision: extend the lightweight research job runner with one
+`candidate_training` job kind. It consumes selected candidate metadata and
+bounded local/sample bar data, trains only a tiny PyTorch model inside Docker
+`research` with strict epoch/step/bar caps, and writes metrics plus model
+artifacts under the external model artifact root. A successful job records
+`candidate_trained_only`; it is research evidence, not a model promotion or
+execution approval.
+
+Reason: the RTX 4090 should start producing replayable model artifacts, but the
+engine still needs a small, inspectable loop before longer training, model
+registry entries, broker adapters, or any live/paper execution authority.
