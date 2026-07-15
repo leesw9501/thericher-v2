@@ -155,6 +155,53 @@ def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_pa
     assert Path(payload["artifacts"]["source_model"]).exists()
 
 
+def test_research_job_runs_candidate_replay_kind_with_injected_runner(tmp_path) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-candidate-replay-job",
+            kind="candidate_replay",
+            training_metrics_artifact=training_artifact,
+            evaluation_artifact=evaluation_artifact,
+            buy_threshold=0.70,
+            sell_threshold=0.30,
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=lambda dataset, model, training_payload: {
+            "backend": "unit",
+            "operation": "unit_candidate_probabilities",
+            "probabilities": tuple(
+                0.80 if index % 4 in {0, 1} else 0.20
+                for index in range(len(dataset.labels))
+            ),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_replay"
+    assert payload["candidate_replay"]["status"] == "candidate_replayed_only"
+    assert payload["candidate_replay"]["replay_fill_count"] > 0
+    assert Path(payload["artifacts"]["candidate_replay"]).exists()
+    assert Path(payload["artifacts"]["source_model"]).exists()
+
+
 def test_research_job_rejects_unknown_kind() -> None:
     with pytest.raises(ValueError, match="unsupported research job kind"):
         ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]
@@ -259,6 +306,40 @@ def _training_metrics_artifact(tmp_path: Path, model_artifact: Path) -> Path:
                         "volume_change",
                     ],
                     "model_artifact": str(model_artifact),
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    return path
+
+
+def _evaluation_artifact(
+    tmp_path: Path,
+    training_artifact: Path,
+    model_artifact: Path,
+) -> Path:
+    path = tmp_path / "evaluation-metrics.json"
+    path.write_text(
+        json.dumps(
+            {
+                "candidate_experiment_id": "unit_candidate",
+                "candidate_parameters": {
+                    "lookback": 3,
+                    "timeframe": "1m",
+                },
+                "training_metrics_artifact": str(training_artifact),
+                "model_artifact": str(model_artifact),
+                "artifacts": {
+                    "source_model": str(model_artifact),
+                },
+                "metrics": {
+                    "feature_names": [
+                        "lookback_return",
+                        "last_bar_return",
+                        "bar_range",
+                        "volume_change",
+                    ],
                 },
             }
         ),

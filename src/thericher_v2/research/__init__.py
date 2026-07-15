@@ -5,6 +5,11 @@ from .candidate_evaluation import (
     CandidateEvaluationConfig,
     run_bounded_candidate_evaluation,
 )
+from .candidate_replay import (
+    BoundedCandidateReplayResult,
+    CandidateReplayConfig,
+    run_bounded_candidate_replay,
+)
 from .candidate_training import (
     BoundedCandidateTrainingResult,
     CandidateTrainingConfig,
@@ -75,9 +80,11 @@ from .validation import (
 )
 
 __all__ = [
-    "BoundedCandidateTrainingResult",
     "BoundedCandidateEvaluationResult",
+    "BoundedCandidateReplayResult",
+    "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
+    "CandidateReplayConfig",
     "CandidateTrainingConfig",
     "CandidateTrainingDataset",
     "ExperimentMetrics",
@@ -112,6 +119,7 @@ __all__ = [
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
+    "run_bounded_candidate_replay",
     "run_bounded_candidate_training",
     "run_gpu_compute_smoke",
     "run_local_paper_validation",

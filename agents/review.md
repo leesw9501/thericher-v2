@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review candidate local-paper replay for dependency creep.
+1. Review candidate replay comparison for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -55,6 +55,9 @@
 - Candidate evaluation extended the job runner with one explicit third kind,
   stayed artifact-only, kept PyTorch lazy/research-only, and deferred
   local-paper conversion instead of creating a promotion gate.
+- Candidate replay extended the job runner with one explicit fourth kind,
+  stayed broker-free/local-paper-only, kept fills labeled `source:
+  local_paper`, and did not add a promotion gate or dashboard surface.
 
 ## Next Handoff
 

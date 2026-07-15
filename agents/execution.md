@@ -44,6 +44,8 @@
   blocking, deterministic account replay, and local paper fill metadata.
 - Bounded validation now consumes local paper only and keeps fills labeled with
   `source: local_paper`.
+- Candidate replay now consumes local paper only and verified generated fills
+  remain labeled with `source: local_paper`.
 
 ## Next Handoff
 

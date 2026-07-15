@@ -65,6 +65,9 @@
   additional data was acquired. Shallow inventory still shows Yahoo intraday
   snapshots under
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
+- Bounded candidate replay reused the explicit CVS Yahoo intraday snapshot at
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz`;
+  no additional data was acquired.
 
 ## Next Handoff
 

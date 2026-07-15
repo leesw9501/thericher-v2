@@ -29,19 +29,19 @@
 
 ## Active Queue
 
-1. Map bounded candidate evaluation probabilities into broker-free local-paper
-   replay decisions.
-2. Prefer an explicit local `D:\market_data` Yahoo intraday snapshot for the
-   next replay so evaluation is not dominated by one-sided sample labels.
-3. Prepare the next bounded longer/deeper training candidate only after the
-   trained artifact has replayable local-paper attribution.
+1. Compare candidate local-paper replay against a simple momentum baseline on
+   the same explicit local Yahoo intraday bars.
+2. Keep replay thresholds descriptive; do not turn comparison output into a
+   promotion gate.
+3. Prepare the next bounded longer/deeper training candidate only after replay
+   comparison shows what failed or improved.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-evaluation-smoke`, status `completed`,
-  backend `torch`, device `NVIDIA GeForce RTX 4090`, accuracy `0.000000`
-  against held-out deterministic sample, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`.
+- Last completed: `bounded-candidate-replay-smoke`, status `completed`, backend
+  `torch`, device `NVIDIA GeForce RTX 4090`, symbol `CVS`, trade count `1`,
+  PnL `0.40959786376953`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke`.
 
 ## Done Recently
 
@@ -82,10 +82,14 @@
   `model.pt` inside Docker `research`, confirmed feature names matched, and
   wrote held-out classification metrics outside Git. Local-paper conversion was
   deferred.
+- Added the first bounded `candidate_replay` job. It used the explicit CVS
+  Yahoo intraday snapshot, mapped candidate probabilities into local paper
+  decisions, produced one `source: local_paper` fill, and wrote PnL/drawdown
+  attribution outside Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. Next work
-  should connect candidate probabilities to local-paper replay before starting
-  broader scheduling or claiming the Engine Research Agent can keep the GPU
-  busy by itself.
+  should compare candidate replay against a baseline before starting broader
+  scheduling or claiming the Engine Research Agent can keep the GPU busy by
+  itself.

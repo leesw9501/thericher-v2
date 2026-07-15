@@ -56,6 +56,7 @@ services:
       - thericher-v2-runtime:/app/runtime
       - ./data:/app/data
       - ./reports:/app/reports
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
 volumes:

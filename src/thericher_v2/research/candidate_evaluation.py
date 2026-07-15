@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import math
 from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -83,6 +84,10 @@ class BoundedCandidateEvaluationResult:
 
 CandidateEvaluationRunner = Callable[
     [CandidateTrainingDataset, Path, dict[str, Any], CandidateEvaluationConfig],
+    dict[str, Any],
+]
+CandidateProbabilityRunner = Callable[
+    [CandidateTrainingDataset, Path, dict[str, Any]],
     dict[str, Any],
 ]
 
@@ -357,6 +362,44 @@ def _run_torch_cuda_candidate_evaluation(
     training_payload: dict[str, Any],
     config: CandidateEvaluationConfig,
 ) -> dict[str, Any]:
+    probability_result = _run_torch_cuda_candidate_probabilities(
+        dataset,
+        model_artifact,
+        training_payload,
+    )
+    probabilities = _probabilities_from_result(probability_result)
+    labels = tuple(int(label) for label in dataset.labels)
+    predictions = tuple(
+        1 if probability >= config.probability_threshold else 0
+        for probability in probabilities
+    )
+    examples = len(labels)
+    correct = sum(
+        1
+        for prediction, label in zip(predictions, labels, strict=True)
+        if prediction == label
+    )
+    loss = _binary_cross_entropy(probabilities, labels)
+    metadata = {
+        key: value for key, value in probability_result.items() if key != "probabilities"
+    }
+    return {
+        **metadata,
+        "operation": "tiny_mlp_next_bar_direction_evaluation",
+        "examples_seen": examples,
+        "loss": f"{loss:.6f}",
+        "accuracy": f"{(correct / examples):.6f}",
+        "mean_probability": f"{(sum(probabilities) / examples):.6f}",
+        "predicted_positive_rate": f"{(sum(predictions) / examples):.6f}",
+        "probability_threshold": f"{config.probability_threshold:.6f}",
+    }
+
+
+def _run_torch_cuda_candidate_probabilities(
+    dataset: CandidateTrainingDataset,
+    model_artifact: Path,
+    training_payload: dict[str, Any],
+) -> dict[str, Any]:
     import torch
 
     if not torch.cuda.is_available():
@@ -378,31 +421,19 @@ def _run_torch_cuda_candidate_evaluation(
     model.load_state_dict(state_dict)
     model.eval()
     x = torch.tensor(dataset.features, dtype=torch.float32, device=device)
-    y = torch.tensor(dataset.labels, dtype=torch.float32, device=device).view(-1, 1)
-    loss_fn = torch.nn.BCEWithLogitsLoss()
     with torch.no_grad():
         logits = model(x)
-        loss = loss_fn(logits, y)
-        probabilities = torch.sigmoid(logits)
-        predictions = (probabilities >= config.probability_threshold).float()
-        accuracy = (predictions == y).float().mean()
-        predicted_positive_rate = predictions.mean()
-        mean_probability = probabilities.mean()
+        probabilities = torch.sigmoid(logits).flatten().detach().cpu().tolist()
     torch.cuda.synchronize()
     return {
         "backend": "torch",
-        "operation": "tiny_mlp_next_bar_direction_evaluation",
+        "operation": "tiny_mlp_next_bar_direction_probabilities",
         "device": torch.cuda.get_device_name(device),
-        "examples_seen": len(dataset.labels),
+        "probabilities": tuple(float(probability) for probability in probabilities),
         "feature_count": len(dataset.feature_names),
         "feature_names": dataset.feature_names,
         "feature_names_match": True,
         "hidden_units": hidden_units,
-        "loss": f"{loss.item():.6f}",
-        "accuracy": f"{accuracy.item():.6f}",
-        "mean_probability": f"{mean_probability.item():.6f}",
-        "predicted_positive_rate": f"{predicted_positive_rate.item():.6f}",
-        "probability_threshold": f"{config.probability_threshold:.6f}",
         "model_artifact": str(model_artifact),
         "candidate_experiment_id": training_payload.get("candidate_experiment_id"),
     }
@@ -521,6 +552,29 @@ def _baseline_classification_metrics(dataset: CandidateTrainingDataset) -> dict[
         "baseline_always_up_accuracy": f"{(positives / examples):.6f}",
         "label_positive_rate": f"{(positives / examples):.6f}",
     }
+
+
+def _probabilities_from_result(result: dict[str, Any]) -> tuple[float, ...]:
+    values = result.get("probabilities")
+    if not isinstance(values, list | tuple):
+        raise ValueError("probability runner must return probabilities")
+    probabilities = tuple(float(value) for value in values)
+    if not probabilities:
+        raise ValueError("probability runner returned no probabilities")
+    if any(not 0 <= probability <= 1 for probability in probabilities):
+        raise ValueError("probabilities must be between 0 and 1")
+    return probabilities
+
+
+def _binary_cross_entropy(probabilities: tuple[float, ...], labels: tuple[int, ...]) -> float:
+    if len(probabilities) != len(labels):
+        raise ValueError("probability count must match label count")
+    epsilon = 1e-12
+    total = 0.0
+    for probability, label in zip(probabilities, labels, strict=True):
+        bounded = min(max(probability, epsilon), 1.0 - epsilon)
+        total += -((label * math.log(bounded)) + ((1 - label) * math.log(1.0 - bounded)))
+    return total / len(labels)
 
 
 def _available_gpu_backends() -> tuple[str, ...]:

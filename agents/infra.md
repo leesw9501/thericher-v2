@@ -22,6 +22,7 @@
 ## Held Resources
 
 - Docker research profile mounts model artifacts at `/app/model_artifacts`.
+- Docker research profile mounts market data read-only at `/app/market_data`.
 - Host artifact root is `D:\thericher-v2\model-artifacts` by default.
 
 ## Active Queue
@@ -62,10 +63,12 @@
 - Bounded `candidate_evaluation` job executed inside Docker `research` with
   PyTorch CUDA and wrote metrics to
   `/app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke`.
+- Bounded `candidate_replay` job executed inside Docker `research` with
+  PyTorch CUDA, read `/app/market_data` read-only, and wrote replay metrics to
+  `/app/model_artifacts/candidate-replay/bounded-candidate-replay-smoke`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
-  Docker `research` target and external artifact mount. Candidate local-paper
-  replay should avoid adding PyTorch to base/runtime images unless a future
-  decision explicitly approves an inference dependency.
+  Docker `research` target and external artifact mount. Candidate replay
+  comparison should keep PyTorch and market-data mounts confined to research.

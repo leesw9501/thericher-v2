@@ -290,3 +290,19 @@ Reason: trained model artifacts need replayable evaluation evidence before GPU
 time is spent on deeper training or any candidate output is mapped into paper
 trading. Keeping evaluation separate from promotion and broker execution avoids
 turning early research into a gate or live authority.
+
+## 2026-07-15 - Bounded candidate local-paper replay job
+
+Decision: extend the lightweight research job runner with one
+`candidate_replay` job kind. It consumes external candidate training/evaluation
+artifacts, reuses the candidate probability path, maps probabilities to
+descriptive buy/sell/hold thresholds, and submits only to the broker-free
+`LocalPaperBroker`. Replay artifacts, event logs, PnL, drawdown, and local paper
+fill counts are written under the external model artifact root. Docker
+`research` mounts `D:\market_data` read-only at `/app/market_data` so replay can
+prefer explicit local snapshots.
+
+Reason: candidate models need tradability evidence before deeper GPU training
+or model registry work. Running through local paper preserves replayable fills
+without introducing KIS credentials, broker submit code, live authority,
+promotion gates, or dashboard expansion.
