@@ -89,6 +89,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             "backend": "unit",
             "operation": "unit_candidate_training",
             "examples_seen": len(dataset.labels),
+            "feature_names": dataset.feature_names,
             "epochs_run": config.max_epochs,
             "steps_run": 1,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
@@ -190,6 +191,75 @@ def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_pa
     assert payload["candidate_evaluation"]["local_paper_conversion"] == "deferred_to_next_goal"
     assert Path(payload["artifacts"]["candidate_evaluation"]).exists()
     assert Path(payload["artifacts"]["source_model"]).exists()
+
+
+def test_research_job_runs_candidate_breadth_queue_kind_with_injected_runners(
+    tmp_path,
+) -> None:
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+
+    def trainer(dataset, candidate, model_artifact, config):  # noqa: ANN001
+        model_artifact.write_text("unit-model", encoding="utf-8")
+        return {
+            "backend": "unit",
+            "operation": "unit_candidate_training",
+            "examples_seen": len(dataset.labels),
+            "feature_names": dataset.feature_names,
+            "epochs_run": config.max_epochs,
+            "steps_run": 1,
+            "candidate_experiment_id": candidate["candidate_experiment_id"],
+            "model_artifact": str(model_artifact),
+        }
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-candidate-breadth-queue-job",
+            kind="candidate_breadth_queue",
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="aaa",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="AAA",
+                ),
+                CandidateDataSliceConfig(
+                    slice_id="bbb",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="BBB",
+                ),
+            ),
+            max_bars=40,
+            max_epochs=2,
+            max_steps=5,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_trainer_runner=trainer,
+        candidate_evaluation_runner=lambda dataset, model, training_payload, _config: {
+            "backend": "unit",
+            "operation": "unit_candidate_evaluation",
+            "examples_seen": len(dataset.labels),
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["kind"] == "candidate_breadth_queue"
+    queue = payload["candidate_breadth_queue"]
+    assert queue["status"] == "candidate_breadth_queued_only"
+    assert queue["variant_count"] == 3
+    assert queue["trained_variant_count"] == 3
+    assert queue["completed_variant_count"] == 3
+    assert queue["selection"]["winner"] is None
+    assert queue["selection"]["promotion_gate"] is False
+    assert Path(payload["artifacts"]["candidate_breadth_queue"]).exists()
 
 
 def test_research_job_runs_candidate_replay_kind_with_injected_runner(tmp_path) -> None:

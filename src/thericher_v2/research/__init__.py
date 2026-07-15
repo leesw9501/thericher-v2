@@ -1,5 +1,13 @@
 """Research and validation helpers."""
 
+from .candidate_breadth_queue import (
+    BoundedCandidateBreadthQueueResult,
+    CandidateBreadthQueueConfig,
+    CandidateBreadthVariantConfig,
+    CandidateBreadthVariantResult,
+    default_candidate_breadth_variants,
+    run_bounded_candidate_breadth_queue,
+)
 from .candidate_comparison import (
     BoundedCandidateReplayComparisonResult,
     CandidateReplayComparisonConfig,
@@ -102,6 +110,7 @@ from .validation import (
 
 __all__ = [
     "BoundedCandidateEvaluationResult",
+    "BoundedCandidateBreadthQueueResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
@@ -109,6 +118,9 @@ __all__ = [
     "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
+    "CandidateBreadthQueueConfig",
+    "CandidateBreadthVariantConfig",
+    "CandidateBreadthVariantResult",
     "CandidateDataSliceConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
@@ -144,6 +156,7 @@ __all__ = [
     "build_candidate_training_dataset",
     "build_multi_slice_candidate_training_dataset",
     "default_short_experiment_specs",
+    "default_candidate_breadth_variants",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
     "load_experiment_source",
@@ -151,6 +164,7 @@ __all__ = [
     "parse_candidate_data_slices",
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
+    "run_bounded_candidate_breadth_queue",
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",

@@ -85,11 +85,13 @@
 - Bounded calibration holdout confirmed CVS, FCX, and KO exist in
   `snapshot=2026-06-18` with about 2,339 to 2,340 bars each; no additional data
   was acquired.
+- Bounded candidate breadth queue reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next candidate breadth work should reuse the existing Yahoo training and
+- Next breadth holdout work should reuse the existing Yahoo training and
   holdout snapshots before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the

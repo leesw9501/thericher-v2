@@ -89,6 +89,9 @@
 - Bounded calibration holdout replay ran in Docker `research` with PyTorch
   CUDA, read `/app/market_data` read-only, and wrote holdout plus robustness
   artifacts under `/app/model_artifacts`.
+- Bounded candidate breadth queue ran in Docker `research` with PyTorch CUDA,
+  read `/app/market_data` read-only, and wrote queue, training, evaluation, and
+  model artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

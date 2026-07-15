@@ -80,6 +80,10 @@
   unchanged, reused the existing robustness/local-paper path, and did not emit
   a best threshold, promotion gate, dashboard, scheduler, or autonomous agent
   process.
+- Candidate breadth queue added one thin job kind, reused existing
+  training/evaluation primitives, capped variants at three, and did not emit a
+  best candidate, promotion gate, dashboard, scheduler, or autonomous agent
+  process.
 
 ## Next Handoff
 

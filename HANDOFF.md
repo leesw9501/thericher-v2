@@ -129,6 +129,12 @@ Implemented and pushed:
   `snapshot=2026-06-18` CVS, FCX, and KO slices, replays through the existing
   threshold robustness/local-paper path, verifies fill sources, and keeps the
   result descriptive,
+- bounded real-data candidate breadth queue; it defines three nearby
+  `m1_lb*_b10_s10` candidate variants, writes candidate metadata outside Git,
+  runs each variant through the existing bounded training/evaluation primitives
+  in Docker `research` under strict caps, and records descriptive
+  probability/evaluation summaries without a winner, recommendation, or
+  promotion gate,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -146,7 +152,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `141 passed`
+- `148 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -190,16 +196,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded real-data candidate breadth queue:
+Add the first bounded breadth holdout replay bridge:
 
-1. reuse the local Yahoo CVS, FCX, and KO slices already proven for training
-   and holdout,
-2. create a tiny bounded queue of short candidate definitions or training
-   variants,
-3. run each candidate through Docker `research` PyTorch CUDA under strict caps,
-4. evaluate and replay only through existing local-paper/holdout paths,
-5. compare the candidates descriptively without selecting a production winner
-   or promoting a model.
+1. consume the external `bounded-candidate-breadth-queue-smoke` artifact,
+2. reuse each variant's existing training/evaluation artifacts and model path,
+3. run a bounded holdout/local-paper replay on the disjoint `snapshot=2026-06-18`
+   CVS, FCX, and KO slices through existing primitives,
+4. compare candidate-by-candidate holdout probability and local-paper metrics
+   descriptively,
+5. avoid selecting a production winner, promotion threshold, scheduler, or
+   dashboard expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

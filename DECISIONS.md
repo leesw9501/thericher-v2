@@ -398,3 +398,19 @@ Reason: probability-derived thresholds can overfit the same slices that created
 them. A disjoint holdout replay checks that circularity before deeper training
 while avoiding new replay code, broker access, credentials, dashboards,
 schedulers, best-threshold fields, promotion gates, or live/paper authority.
+
+## 2026-07-16 - Bounded candidate breadth queue
+
+Decision: extend the research job runner with one `candidate_breadth_queue` job
+kind and a small helper that writes up to three nearby candidate metadata
+artifacts outside Git, then calls the existing bounded candidate training and
+evaluation primitives for each variant under strict `max_bars`, `max_epochs`,
+and `max_steps` caps. The queue records per-variant artifact paths and
+probability/evaluation summaries, but no winner, recommendation, pass/fail
+field, or promotion gate.
+
+Reason: the engine needs breadth evidence around the current
+`m1_lb3_b10_s10` family before spending more GPU time on deeper training. A
+thin queue keeps experimentation repeatable and PyTorch-in-Docker-only while
+avoiding credentials, broker access, new replay code, dashboards, schedulers,
+agent-framework expansion, or v1-style report/gate sprawl.

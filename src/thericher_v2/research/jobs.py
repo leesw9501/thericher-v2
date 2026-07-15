@@ -12,6 +12,12 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.serialization import to_jsonable
 
+from .candidate_breadth_queue import (
+    BoundedCandidateBreadthQueueResult,
+    CandidateBreadthQueueConfig,
+    CandidateBreadthVariantResult,
+    run_bounded_candidate_breadth_queue,
+)
 from .candidate_comparison import (
     BoundedCandidateReplayComparisonResult,
     CandidateReplayComparisonConfig,
@@ -75,6 +81,7 @@ from .validation import (
 
 ResearchJobKind = Literal[
     "gpu_training_smoke",
+    "candidate_breadth_queue",
     "candidate_training",
     "candidate_evaluation",
     "candidate_replay",
@@ -86,6 +93,7 @@ ResearchJobKind = Literal[
 ]
 ResearchJobStatus = Literal[
     "completed",
+    "prepared_not_breadth_queued",
     "prepared_not_trained",
     "prepared_not_evaluated",
     "prepared_not_replayed",
@@ -98,6 +106,7 @@ ResearchJobStatus = Literal[
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
     "gpu_training_smoke",
+    "candidate_breadth_queue",
     "candidate_training",
     "candidate_evaluation",
     "candidate_replay",
@@ -153,6 +162,7 @@ class ResearchJobResult:
     reason: str
     training: (
         GpuTrainingSmokeResult
+        | BoundedCandidateBreadthQueueResult
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
         | BoundedCandidateReplayResult
@@ -233,6 +243,7 @@ def _run_job_kind(
     candidate_probability_runner: CandidateProbabilityRunner | None,
 ) -> tuple[
     GpuTrainingSmokeResult
+    | BoundedCandidateBreadthQueueResult
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
     | BoundedCandidateReplayResult
@@ -261,6 +272,29 @@ def _run_job_kind(
             "completed" if training.status == "training_ran_only" else "prepared_not_trained"
         )
         return training, training_artifact, None, status
+    if spec.kind == "candidate_breadth_queue":
+        breadth = run_bounded_candidate_breadth_queue(
+            config=CandidateBreadthQueueConfig(
+                run_id=spec.job_id,
+                max_epochs=spec.max_epochs,
+                max_steps=spec.max_steps,
+                max_bars=spec.max_bars,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            data_slices=spec.data_slices,
+            gpu=gpu,
+            trainer_runner=candidate_trainer_runner,
+            evaluation_runner=candidate_evaluation_runner,
+        )
+        status = (
+            "completed"
+            if breadth.status == "candidate_breadth_queued_only"
+            else "prepared_not_breadth_queued"
+        )
+        return breadth, breadth.queue_artifact, None, status
     if spec.kind == "candidate_training":
         training = run_bounded_candidate_training(
             config=CandidateTrainingConfig(
@@ -578,6 +612,29 @@ def _research_job_payload(
             "gpu": training.gpu,
             "result": training.training_result or {},
         }
+    elif isinstance(training, BoundedCandidateBreadthQueueResult):
+        base["candidate_breadth_queue"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "variant_count": training.variant_count,
+            "trained_variant_count": training.trained_variant_count,
+            "completed_variant_count": training.completed_variant_count,
+            "max_bars": training.max_bars,
+            "max_epochs": training.max_epochs,
+            "max_steps": training.max_steps,
+            "variants": tuple(
+                _candidate_breadth_queue_variant_payload(item)
+                for item in training.variants
+            ),
+            "metrics": training.metrics,
+            "selection": {
+                "winner": None,
+                "recommendation": None,
+                "promotion_gate": False,
+                "mode": "descriptive_breadth_only",
+            },
+        }
     elif isinstance(training, BoundedCandidateTrainingResult):
         base["candidate_training"] = {
             "status": training.status,
@@ -817,6 +874,8 @@ def _research_job_payload(
 def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     if isinstance(result.training, GpuTrainingSmokeResult):
         return {"training_smoke": str(result.training_artifact)}
+    if isinstance(result.training, BoundedCandidateBreadthQueueResult):
+        return {"candidate_breadth_queue": str(result.training_artifact)}
     if isinstance(result.training, BoundedCandidateEvaluationResult):
         artifacts = {"candidate_evaluation": str(result.training_artifact)}
         if result.model_artifact is not None:
@@ -885,6 +944,42 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     if result.model_artifact is not None:
         artifacts["model"] = str(result.model_artifact)
     return artifacts
+
+
+def _candidate_breadth_queue_variant_payload(
+    item: CandidateBreadthVariantResult,
+) -> dict[str, object]:
+    return {
+        "variant_id": item.variant_id,
+        "status": item.status,
+        "reason": item.reason,
+        "candidate_artifact": str(item.candidate_artifact),
+        "candidate_experiment_id": item.candidate_experiment_id,
+        "candidate_parameters": item.candidate_parameters,
+        "training": {
+            "status": item.training.status,
+            "reason": item.training.reason,
+            "metrics_artifact": str(item.training.metrics_artifact),
+            "model_artifact": (
+                None
+                if item.training.model_artifact is None
+                else str(item.training.model_artifact)
+            ),
+            "selected_backend": item.training.selected_backend,
+            "examples_seen": item.training.examples_seen,
+            "max_epochs": item.training.max_epochs,
+            "max_steps": item.training.max_steps,
+        },
+        "evaluation": {
+            "status": item.evaluation.status,
+            "reason": item.evaluation.reason,
+            "evaluation_artifact": str(item.evaluation.evaluation_artifact),
+            "selected_backend": item.evaluation.selected_backend,
+            "examples_seen": item.evaluation.examples_seen,
+            "local_paper_conversion": item.evaluation.local_paper_conversion,
+        },
+        "metrics": item.metrics,
+    }
 
 
 if __name__ == "__main__":
