@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Approve and add the first research-only GPU compute backend, then run the tiny
-bounded GPU training smoke for the selected candidate.
+Add the first lightweight Engine Research GPU job runner.
 
-This advances feature/model research and reproducible GPU experimentation by
-moving from runtime/training-smoke scaffolding into the smallest useful
-backend-backed model-training loop, while keeping the base engine free of heavy
-GPU dependencies.
+This advances feature/model research by connecting the existing agent
+stateboards, PyTorch CUDA research container, candidate metadata, and bounded
+GPU smoke commands into one repeatable local research job loop. The goal is to
+make the Engine Research Agent's queue executable without building a broad
+multi-agent platform.
 
 ## Hard Boundaries
 
@@ -25,10 +25,10 @@ GPU dependencies.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep local paper fills labeled with `source: local_paper`.
-- Do not add heavy GPU dependencies to the base engine test path.
+- Keep PyTorch CUDA confined to the Docker `research` target/profile.
+- Do not add heavy GPU dependencies to the base engine or local dev/test path.
 - Run GPU compute/training through the Docker `research` target/profile.
-- If adding PyTorch/CUDA or another heavy framework requires a package choice,
-  check current official guidance first and keep it research-only.
+- Do not create a second next-goal document or a large agent framework.
 
 ## Required First Reads
 
@@ -56,30 +56,24 @@ GPU dependencies.
 
 ## Required Work
 
-1. Confirm or ask for the compute backend choice before adding any heavy
-   framework. Prefer PyTorch CUDA in the Docker `research` target unless the
-   operator chooses otherwise.
-2. Keep the base `engine` and `web` images free of GPU/ML framework
-   dependencies.
-3. Update the Docker `research` target/profile so it installs the selected
-   backend and still writes model artifacts only to `/app/model_artifacts`.
-4. Run the existing tiny bounded training smoke so it:
-   - consumes the selected walk-forward candidate metadata,
-   - uses deterministic local/sample or explicit local market data only,
-   - runs a very small model/tensor training step on GPU if available,
-   - writes a concise result outside Git,
-   - records `prepared_not_trained` with the reason if the backend or GPU is not
-     available.
-5. Do not start long training yet. This goal proves the research training path
-   only.
-6. Update `agents/engine-research.md` and `agents/infra.md` so the short
-   experiment queue and longer candidate queue remain visible.
-7. Add focused tests proving:
-   - the backend is installed only in the Docker `research` path,
-   - the training-smoke artifact path remains outside Git,
-   - the base engine tests do not require GPU packages,
-   - missing GPU/backend remains a non-fatal prepared state.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Treat the current `agents/*.md` files as lane stateboards, not autonomous
+   workers. Do not create new agent stateboards unless a durable new lane is
+   needed.
+2. Add a small research job representation and CLI that can queue or run one
+   bounded GPU job at a time through existing smoke/experiment commands.
+3. The first job type should run the existing PyTorch training smoke for the
+   selected walk-forward candidate through Docker `research`.
+4. Store generated job outputs outside Git under
+   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+5. Keep repo-side state concise: update `agents/engine-research.md` and
+   `agents/infra.md` with the queue/result state, but do not generate many
+   reports or gates.
+6. Add focused tests proving:
+   - job artifacts are outside Git,
+   - the job runner does not read credentials or call broker/KIS paths,
+   - PyTorch remains research-container-only,
+   - a missing GPU/backend records a non-fatal prepared state.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -102,12 +96,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused GPU training smoke, compute smoke, runtime smoke, candidate
-artifact command, or Docker research command used.
+Report any focused job-runner command, GPU training smoke, compute smoke,
+runtime smoke, candidate artifact command, or Docker research command used.
 
 ## Suggested Commit Message
 
-`Add research GPU training smoke`
+`Add research GPU job runner`
 
 ## Completion Report
 

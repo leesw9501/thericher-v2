@@ -238,3 +238,14 @@ under the external model artifact root, and records non-fatal
 Reason: the engine needs a reproducible training seam before long GPU jobs, but
 backend selection is an operator-level dependency decision and must not be
 silently locked in by code changes.
+
+## 2026-07-15 - PyTorch CUDA approved for Docker research only
+
+Decision: use PyTorch CUDA as the first GPU compute/training backend, installed
+only in the Docker `research` target as `torch==2.7.0+cu128` from the PyTorch
+CUDA 12.8 wheel index. Do not add PyTorch to `pyproject.toml`, the base engine
+image, or the local dev/test dependency path.
+
+Reason: the operator approved PyTorch CUDA, and the RTX 4090 training smoke now
+proves the research container can run a bounded GPU optimizer step while the
+trading engine remains independent from heavy ML runtime dependencies.

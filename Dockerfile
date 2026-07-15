@@ -16,6 +16,12 @@ CMD ["python", "-m", "thericher_v2.ops.daily_report", "--print-summary"]
 
 FROM base AS research
 
-RUN python -m pip install --no-cache-dir -e ".[research]"
+ARG PYTORCH_VERSION=2.7.0+cu128
+ARG PYTORCH_CUDA_INDEX_URL=https://download.pytorch.org/whl/cu128
+
+RUN python -m pip install --no-cache-dir -e ".[research]" && \
+    python -m pip install --no-cache-dir \
+        "torch==${PYTORCH_VERSION}" \
+        --index-url "${PYTORCH_CUDA_INDEX_URL}"
 
 FROM base AS runtime

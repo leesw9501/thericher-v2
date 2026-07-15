@@ -143,6 +143,19 @@ def test_base_engine_does_not_require_gpu_packages_for_training_smoke() -> None:
     assert "cupy" not in dependencies
 
 
+def test_torch_cuda_backend_is_research_stage_only() -> None:
+    dockerfile = Path("Dockerfile").read_text(encoding="utf-8")
+    stages = _dockerfile_stages(dockerfile)
+
+    assert "base" in stages
+    assert "research" in stages
+    assert "runtime" in stages
+    assert "torch==" not in stages["base"].lower()
+    assert "torch==" in stages["research"].lower()
+    assert "download.pytorch.org/whl/cu128" in stages["research"]
+    assert "torch==" not in stages["runtime"].lower()
+
+
 def _candidate_artifact(tmp_path: Path) -> Path:
     path = tmp_path / "candidate.json"
     path.write_text(
@@ -158,3 +171,21 @@ def _candidate_artifact(tmp_path: Path) -> Path:
         encoding="utf-8",
     )
     return path
+
+
+def _dockerfile_stages(dockerfile: str) -> dict[str, str]:
+    stages: dict[str, str] = {}
+    current_name: str | None = None
+    current_lines: list[str] = []
+    for line in dockerfile.splitlines():
+        lower = line.lower()
+        if lower.startswith("from "):
+            if current_name is not None:
+                stages[current_name] = "\n".join(current_lines)
+            current_lines = [line]
+            current_name = lower.rsplit(" as ", maxsplit=1)[-1].strip()
+        elif current_name is not None:
+            current_lines.append(line)
+    if current_name is not None:
+        stages[current_name] = "\n".join(current_lines)
+    return stages

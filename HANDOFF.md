@@ -80,6 +80,9 @@ Implemented and pushed:
   imports no heavy framework at module load, writes artifacts outside Git, and
   remains `prepared_not_trained` until a research-only backend is approved and
   installed,
+- research-only PyTorch CUDA backend in the Docker `research` target
+  (`torch==2.7.0+cu128` from the PyTorch CUDA 12.8 wheel index), with a tiny GPU
+  training smoke that completed on the RTX 4090 and writes outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -97,7 +100,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `59 passed`
+- `60 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -122,6 +125,8 @@ Key decisions:
 - GPU/ML work belongs in the research lane/profile.
 - GPU compute and training must run through the Docker `research` target/profile
   unless an explicit future decision allows otherwise.
+- PyTorch CUDA is approved only for the Docker `research` target/profile. Keep
+  it out of the base engine and local dev/test dependency path.
 - GPU model artifacts belong outside the repo at
   `D:\thericher-v2\model-artifacts` by default.
 - Operator-provided market data lives outside the repo at `D:\market_data`.
@@ -139,14 +144,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Approve and add the first research-only GPU compute backend, then run the first
-tiny bounded training smoke with a real backend:
+Add the first lightweight Engine Research job runner that uses the existing
+agent stateboard and PyTorch research container:
 
-1. keep the base engine dependency path light,
-2. install the approved backend only in the Docker `research` target/profile,
-3. run the existing tiny deterministic GPU training smoke for the selected
-   walk-forward candidate,
-4. write all generated outputs outside Git.
+1. keep `agents/*.md` as stateboards, not autonomous agent processes,
+2. run bounded GPU research jobs through Docker `research`,
+3. write job artifacts outside Git,
+4. record only concise queue/result state needed for the next decision.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

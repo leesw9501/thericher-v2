@@ -45,6 +45,8 @@
   dependencies, and produced one concise external artifact.
 - GPU training smoke scaffold added one CLI and one focused test file without
   adding a framework dependency or a promotion gate.
+- PyTorch CUDA was confined to the Docker `research` stage, with tests checking
+  that base/runtime stages and `pyproject.toml` remain torch-free.
 
 ## Next Handoff
 

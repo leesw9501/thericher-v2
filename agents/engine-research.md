@@ -29,13 +29,12 @@
 
 ## Active Queue
 
-1. Get operator approval for the first research-only GPU backend, then install
-   it in Docker `research` and run the tiny bounded training smoke for the
-   selected candidate.
+1. Add the first lightweight GPU research job runner so bounded short and
+   longer candidate jobs can be queued without growing report/gate sprawl.
 2. Keep short walk-forward experiments available for breadth while a longer
    candidate runs.
-3. Start longer candidate training only after the tiny training smoke writes
-   artifacts outside Git and remains replayable.
+3. Start longer candidate training only after the job runner writes artifacts
+   outside Git and remains replayable.
 
 ## Running Jobs
 
@@ -67,9 +66,12 @@
 - Added a GPU training smoke scaffold with an injected trainer test seam. Host
   execution sees the RTX 4090 but records `prepared_not_trained` until a
   research-only backend is approved and installed.
+- Installed PyTorch CUDA only in Docker `research` and ran the tiny training
+  smoke on the RTX 4090 for candidate `m1_lb3_b10_s10`; artifact status is
+  `training_ran_only`.
 
 ## Next Handoff
 
-- Recommended next decision: approve PyTorch CUDA, or choose another backend,
-  for the Docker `research` target; keep heavy dependencies out of the base
-  engine.
+- The files under `agents/` are stateboards, not autonomous workers. Next work
+  should add a minimal research job runner before claiming the Engine Research
+  Agent can keep the GPU busy by itself.
