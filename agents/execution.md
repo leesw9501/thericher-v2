@@ -42,9 +42,10 @@
 - Broker-free local paper simulator now supports accepted/rejected/canceled
   order events, next-bar-open fills, duplicate id rejection, emergency-stop
   blocking, deterministic account replay, and local paper fill metadata.
+- Bounded validation now consumes local paper only and keeps fills labeled with
+  `source: local_paper`.
 
 ## Next Handoff
 
-- Local paper is ready as a validation target for the first bounded model
-  experiment. Future replay must filter `source: local_paper` before broker
-  fills are introduced.
+- Future replay must filter `source: local_paper` before broker fills are
+  introduced.

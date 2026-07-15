@@ -5,11 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded model-validation target for TheRicher v2.
+Build the first bounded research experiment queue on top of the local validation
+harness.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by connecting existing market data, a simple model decision,
-and the broker-free local paper simulator into one repeatable validation loop.
+PnL attribution by turning the current one-off validation smoke into repeatable
+short experiments, while preparing one longer GPU candidate without storing
+artifacts in Git.
 
 ## Hard Boundaries
 
@@ -43,33 +45,45 @@ and the broker-free local paper simulator into one repeatable validation loop.
    - `agents/data.md`
    - `agents/engine-research.md`
    - `agents/execution.md`
+   - `agents/infra.md`
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
 
 ## Required Work
 
-1. Inventory the useful subset of `D:\market_data` for a small US equity model
-   validation loop. Avoid expensive full recursive scans unless needed.
-2. Prefer existing data. Acquire additional data only when it is no-auth,
-   lawful, license-compatible, and useful for the active validation loop.
-3. Build a small validation harness that consumes `Bar` data, produces model or
-   ensemble decisions, converts eligible decisions into local paper
-   `OrderIntent`s, and executes them through the local paper simulator.
-4. Run a CPU smoke baseline first using deterministic sample or local market
-   data.
-5. If the CPU baseline is sound and the GPU environment is available, prepare or
-   run the first bounded GPU experiment. Artifacts must go to
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-6. Keep two research queues visible in `agents/engine-research.md`:
+1. Inspect the new validation harness and the latest artifacts under
+   `D:\thericher-v2\model-artifacts\validation`.
+2. Add a small experiment runner that can execute a bounded queue of short CPU
+   experiments against deterministic sample data and explicit local
+   `D:\market_data` snapshots.
+3. Keep the first short queue simple: momentum threshold or timeframe
+   confirmation sweeps are enough. Prefer existing bars and local resampling.
+4. Write concise metrics artifacts outside Git. Include run id, data source,
+   parameters, local-paper trades, ending equity, PnL, and replay metadata.
+5. If GPU is available, prepare or run one longer candidate smoke job only after
+   the CPU queue is repeatable. Artifacts must stay under the configured model
+   artifact root.
+6. Update `agents/engine-research.md` so the two queues stay visible:
    - short experiments for breadth,
    - longer candidate training for depth.
 7. Add focused tests proving:
-   - validation uses local paper only,
-   - no broker/network/credential access is needed,
-   - local paper fills remain replayable,
-   - generated artifacts are outside Git or mocked in tests.
-8. Refresh `NEXT_CODEX_GOAL.md` before ending the task.
+   - experiments remain broker-free and credential-free,
+   - metrics are reproducible from local paper replay,
+   - artifact paths are outside Git,
+   - external market data use is explicit.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+
+## Data Policy
+
+- Start from `D:\market_data`.
+- Acquire additional data only when it is no-auth, lawful,
+  license-compatible, and useful for this active experiment loop.
+- Stop acquisition for a source when it requires credentials/payment/manual
+  access, licensing is unclear, two automated attempts fail, or more data no
+  longer improves the active goal.
+- If operator help is needed, record exact symbols, markets, date ranges,
+  formats, and blocker reasons in `agents/data.md` and the completion report.
 
 ## Verification
 
@@ -81,11 +95,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused test or GPU smoke command used.
+Report any focused experiment, CPU smoke, local-data smoke, or GPU smoke command
+used.
 
 ## Suggested Commit Message
 
-`Add bounded model validation target`
+`Add bounded research experiment queue`
 
 ## Completion Report
 

@@ -22,18 +22,17 @@
 
 ## Held Resources
 
-- GPU: idle; ready for the first bounded research goal after CPU smoke
-  validation.
+- GPU: available for bounded research planning; smoke detected NVIDIA GeForce
+  RTX 4090 with 24564 MiB.
 - Model artifacts root: `D:\thericher-v2\model-artifacts`.
 - Docker artifact path: `/app/model_artifacts`.
 
 ## Active Queue
 
-1. Define the first bounded model validation target using existing `Bar` data
-   and the local paper simulator.
-2. Maintain two GPU research queues once training starts:
-   - short experiments for broad feature/model search,
-   - longer candidate training for deeper validation of promising ideas.
+1. Short experiments: sweep simple momentum thresholds and timeframe
+   confirmation inputs through the validation harness.
+2. Longer candidate training: prepare one GPU-backed candidate only after the
+   short CPU queue is repeatable.
 3. Add walk-forward validation before promoting any model beyond research.
 
 ## Running Jobs
@@ -45,10 +44,14 @@
 - Basic momentum model and next-bar backtest harness exist.
 - Market data can now resample deterministic `1m`, `5m`, `10m`, `1h`, and `3h`
   bars.
+- Added a bounded validation harness that turns `Bar` data into model
+  predictions, ensemble decisions, local paper `OrderIntent`s, and replayable
+  local paper fills.
+- Wrote smoke artifacts outside Git under
+  `D:\thericher-v2\model-artifacts\validation`.
 
 ## Next Handoff
 
-- Start with a CPU smoke validation loop, then run the first bounded GPU
-  experiment only if artifacts are written outside Git.
-- Once GPU research begins, alternate short experiments and longer candidate
-  training so the single GPU stays useful without hiding weak validation.
+- Start with the short CPU experiment queue, then schedule one longer GPU
+  candidate only after baseline metrics are stable and artifacts stay outside
+  Git.

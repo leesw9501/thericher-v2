@@ -17,6 +17,7 @@ models/      rule, statistical, ML, and DL model implementations
 ensemble/    signal combination, confidence, expected edge, disagreement
 backtest/    event simulation, walk-forward, costs, slippage, attribution
 execution/   KIS paper/live adapters, order lifecycle, risk limits
+research/    bounded validation targets, offline experiment harnesses
 state/       SQLite plus append-only JSONL event log
 dashboard/   read-focused monitor plus emergency controls
 ops/         daily reports, next-goal scripts, scheduled maintenance

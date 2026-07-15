@@ -154,3 +154,15 @@ is rebuilt from fill events, while portfolio snapshots are convenience caches.
 
 Reason: paper execution must be deterministic, replayable, and impossible to
 confuse with future broker or live fills.
+
+## 2026-07-15 - Bounded model validation target
+
+Decision: the first model-validation loop uses explicit `Bar` inputs, the simple
+momentum model, ensemble decisions, and broker-free local paper execution. The
+CLI defaults to deterministic sample data; external `D:\market_data` snapshots
+must be passed explicitly. Validation and GPU-plan artifacts are written outside
+Git.
+
+Reason: feature/model research, backtest validation, local paper preparation,
+and PnL attribution need one repeatable loop before adding broker adapters,
+credentials, dashboards, or heavier models.

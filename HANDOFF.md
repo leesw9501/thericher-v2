@@ -60,6 +60,10 @@ Implemented and pushed:
 - broker-free local paper execution simulator with next-bar-open fills,
   duplicate client order id protection, emergency-stop blocking, deterministic
   cash/position replay, and local paper event logging,
+- bounded model-validation harness that connects `Bar` data, a momentum model,
+  ensemble decisions, and broker-free local paper execution,
+- validation smoke CLI with optional explicit Yahoo intraday snapshot input and
+  artifact writing outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -77,7 +81,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `23 passed`
+- `29 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -117,17 +121,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Build the first bounded model-validation target:
+Run the first bounded research experiment queue on top of the validation
+harness:
 
-1. inventory existing `D:\market_data` files needed for a small US equity
-   experiment,
-2. connect bars, model decisions, and local paper execution into one repeatable
-   validation loop,
-3. run a CPU smoke baseline first,
-4. prepare the first bounded GPU experiment with artifacts outside Git,
-5. keep short experiment and longer candidate-training queues separate.
+1. add a tiny experiment runner that sweeps momentum/timeframe inputs against
+   local-paper replay,
+2. record concise metrics artifacts outside Git,
+3. prepare one longer GPU candidate only after the CPU queue is repeatable,
+4. keep model artifacts in `D:\thericher-v2\model-artifacts`.
 
-Do not start with a dashboard expansion, KIS credentials, or live/paper submit.
+Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
 ## Daily Operator Review
 

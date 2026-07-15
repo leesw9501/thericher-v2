@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review local paper execution for hidden broker authority or strategy leakage.
+1. Review the experiment runner for v1-style report or gate creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -35,6 +35,7 @@
 ## Done Recently
 
 - Drift checks kept market-data and handoff changes small.
+- Validation target stayed broker-free, credential-free, and artifact-light.
 
 ## Next Handoff
 

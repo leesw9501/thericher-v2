@@ -30,12 +30,11 @@
 
 ## Active Queue
 
-1. Inventory `D:\market_data` before requesting new data.
-2. Add data-quality checks for missing bars, duplicate bars, and incomplete
+1. Add data-quality checks for missing bars, duplicate bars, and incomplete
    higher timeframe buckets.
-3. Acquire additional no-auth public data only when the source is lawful,
+2. Acquire additional no-auth public data only when the source is lawful,
    license-compatible, and useful for the current engine loop.
-4. Decide the first local cache shape only when real ingestion work starts.
+3. Decide the first local cache shape only when real ingestion work starts.
 
 ## Running Jobs
 
@@ -53,6 +52,9 @@
 - Inventoried `D:\market_data` at the shallow level for this goal. Top-level
   folders include `pit_sources` and `us_equities`; no additional download was
   needed for the broker-free local paper simulator.
+- Confirmed useful US equity Yahoo intraday snapshots under
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`,
+  including the explicit FCX smoke input used by validation.
 
 ## Next Handoff
 
