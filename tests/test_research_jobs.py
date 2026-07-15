@@ -256,6 +256,75 @@ def test_research_job_runs_candidate_replay_comparison_kind_with_injected_runner
     assert Path(payload["artifacts"]["baseline_events"]).exists()
 
 
+def test_research_job_runs_candidate_threshold_sweep_kind_with_injected_runner(
+    tmp_path,
+) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    comparison_artifact = tmp_path / "comparison.json"
+    comparison_artifact.write_text(
+        json.dumps(
+            {
+                "baseline_metrics": {
+                    "pnl": "-1",
+                    "max_drawdown": "2",
+                    "equity": "9999",
+                    "final_position": "1",
+                    "trade_count": 2,
+                    "replay_fill_count": 2,
+                    "event_count": 6,
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-candidate-threshold-sweep-job",
+            kind="candidate_threshold_sweep",
+            training_metrics_artifact=training_artifact,
+            evaluation_artifact=evaluation_artifact,
+            comparison_artifact=comparison_artifact,
+            threshold_pairs=((0.70, 0.30), (0.50, 0.30)),
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=lambda dataset, model, training_payload: {
+            "backend": "unit",
+            "operation": "unit_candidate_probabilities",
+            "probabilities": tuple(
+                0.80 if index % 4 in {0, 1} else 0.20
+                for index in range(len(dataset.labels))
+            ),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_threshold_sweep"
+    sweep = payload["candidate_threshold_sweep"]
+    assert sweep["status"] == "candidate_swept_only"
+    assert sweep["completed_variant_count"] == 2
+    assert sweep["variants"][0]["replay_fill_count"] > 0
+    assert Path(payload["artifacts"]["candidate_threshold_sweep"]).exists()
+    assert Path(payload["artifacts"]["candidate_probability_trace"]).exists()
+    assert Path(payload["artifacts"]["candidate_replay_comparison"]).exists()
+
+
 def test_research_job_rejects_unknown_kind() -> None:
     with pytest.raises(ValueError, match="unsupported research job kind"):
         ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]

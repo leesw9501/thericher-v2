@@ -48,6 +48,8 @@
   remain labeled with `source: local_paper`.
 - Candidate replay comparison verified both candidate and momentum baseline
   fills remain labeled with `source: local_paper`.
+- Threshold sweep replay verified every variant fill remains labeled with
+  `source: local_paper`.
 
 ## Next Handoff
 

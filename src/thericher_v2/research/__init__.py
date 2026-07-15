@@ -15,6 +15,13 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_sweep import (
+    BoundedCandidateProbabilityTraceResult,
+    BoundedCandidateThresholdSweepResult,
+    CandidateThresholdSweepConfig,
+    run_bounded_candidate_probability_trace,
+    run_bounded_candidate_threshold_sweep,
+)
 from .candidate_training import (
     BoundedCandidateTrainingResult,
     CandidateTrainingConfig,
@@ -86,12 +93,15 @@ from .validation import (
 
 __all__ = [
     "BoundedCandidateEvaluationResult",
+    "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
+    "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
+    "CandidateThresholdSweepConfig",
     "CandidateTrainingConfig",
     "CandidateTrainingDataset",
     "ExperimentMetrics",
@@ -126,8 +136,10 @@ __all__ = [
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
+    "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",
+    "run_bounded_candidate_threshold_sweep",
     "run_bounded_candidate_training",
     "run_gpu_compute_smoke",
     "run_local_paper_validation",

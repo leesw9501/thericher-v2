@@ -70,10 +70,14 @@
   no additional data was acquired.
 - Bounded candidate replay comparison reused the same CVS Yahoo intraday
   snapshot; no additional data was acquired.
+- Bounded threshold sweep reused the same CVS Yahoo intraday snapshot; no
+  additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
+- Next robustness replay should inventory only a small useful subset of local
+  Yahoo snapshots or symbols before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

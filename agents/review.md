@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review threshold sweep/probability trace work for dependency creep.
+1. Review threshold robustness replay for data/query sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -62,6 +62,9 @@
   kind, stayed artifact-only and local-paper-only, consumed existing replay
   evidence when available, and did not add a promotion gate, dashboard, or
   scheduler.
+- Candidate threshold sweep extended the job runner with one explicit sixth
+  kind, reused the candidate replay execution path, kept PyTorch lazy/research
+  only, and did not add a promotion gate, dashboard, or scheduler.
 
 ## Next Handoff
 

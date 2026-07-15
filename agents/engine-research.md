@@ -29,20 +29,20 @@
 
 ## Active Queue
 
-1. Persist a bounded candidate probability trace outside Git so threshold
-   variants do not need repeated inference.
-2. Sweep a small candidate buy/sell threshold grid against the momentum
-   baseline comparison metrics.
-3. Prepare the next bounded longer/deeper training candidate only after the
-   threshold sweep shows whether the candidate can trade often enough.
+1. Replay the same candidate threshold variants across a capped set of
+   additional local Yahoo windows or symbols.
+2. Compare PnL, drawdown, fill count, and final position by slice without a
+   promotion gate.
+3. Prepare the next bounded longer/deeper training candidate only after
+   threshold robustness shows what failed or improved.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-replay-comparison-smoke`, status
-  `completed`, symbol `CVS`, candidate PnL `0.40959786376953`, baseline PnL
-  `-1.75100213623047`, delta PnL `2.16060000000000`, candidate fills `1`,
-  baseline fills `41`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`.
+- Last completed: `bounded-candidate-threshold-sweep-smoke`, status
+  `completed`, symbol `CVS`, variants `5`, fills `[45, 29, 20, 6, 2]`,
+  best observed PnL in this descriptive smoke `0.19990000000000`, artifacts
+  under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`.
 
 ## Done Recently
 
@@ -91,10 +91,14 @@
   existing candidate replay artifact, ran the simple momentum baseline on the
   same CVS bars through local paper, and wrote descriptive PnL/drawdown/fill
   deltas outside Git.
+- Added the first bounded `candidate_threshold_sweep` job. It wrote a GPU
+  probability trace once, replayed five candidate threshold pairs on the same
+  CVS bars through local paper, and wrote descriptive variant deltas outside
+  Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. Next work
-  should add a probability trace/threshold sweep before starting broader
+  should test threshold robustness on more local data before starting broader
   scheduling or claiming the Engine Research Agent can keep the GPU busy by
   itself.

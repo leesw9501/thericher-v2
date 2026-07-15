@@ -406,6 +406,7 @@ def _run_local_paper_replay(
     selected_backend: str | None,
     replay_artifact: Path,
     event_store: EventStore,
+    record_decision_events: bool = True,
 ) -> BoundedCandidateReplayResult:
     broker = LocalPaperBroker(
         event_store=event_store,
@@ -426,24 +427,25 @@ def _run_local_paper_replay(
         decisions_seen += 1
         decision_id = _decision_id(config.run_id, signal_bar.symbol, signal_bar.end_ts)
         action = _action_for_probability(probability, config)
-        event_store.append(
-            Event(
-                event_type="candidate_replay_decision",
-                created_at=signal_bar.end_ts,
-                payload={
-                    "source": "candidate_replay",
-                    "run_id": config.run_id,
-                    "decision_id": decision_id,
-                    "market": signal_bar.market,
-                    "symbol": signal_bar.symbol,
-                    "action": action,
-                    "probability": f"{probability:.8f}",
-                    "buy_threshold": f"{config.buy_threshold:.6f}",
-                    "sell_threshold": f"{config.sell_threshold:.6f}",
-                    "model_artifact": str(model_artifact),
-                },
+        if record_decision_events:
+            event_store.append(
+                Event(
+                    event_type="candidate_replay_decision",
+                    created_at=signal_bar.end_ts,
+                    payload={
+                        "source": "candidate_replay",
+                        "run_id": config.run_id,
+                        "decision_id": decision_id,
+                        "market": signal_bar.market,
+                        "symbol": signal_bar.symbol,
+                        "action": action,
+                        "probability": f"{probability:.8f}",
+                        "buy_threshold": f"{config.buy_threshold:.6f}",
+                        "sell_threshold": f"{config.sell_threshold:.6f}",
+                        "model_artifact": str(model_artifact),
+                    },
+                )
             )
-        )
         if execution_bar.start_ts != signal_bar.end_ts:
             skipped_non_contiguous += 1
             continue

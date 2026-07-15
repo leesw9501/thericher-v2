@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded candidate probability trace and threshold sweep.
+Add the first bounded threshold robustness replay.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by preserving one bounded candidate probability trace outside
-Git, then replaying a small buy/sell threshold grid against the momentum
-baseline comparison evidence. The goal is to learn whether the candidate can
-trade often enough without rerunning model inference for every threshold pair.
+PnL attribution by replaying the same candidate threshold variants across a
+small capped set of additional local Yahoo intraday windows or symbols. The
+goal is to learn whether the threshold sweep result is robust beyond the first
+CVS slice before starting deeper GPU training.
 
 ## Hard Boundaries
 
@@ -64,42 +64,38 @@ trade often enough without rerunning model inference for every threshold pair.
 2. Inventory the latest external artifacts:
    - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`
-3. Reuse the explicit local Yahoo intraday snapshot first:
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz`.
-4. Add a small probability trace artifact or job path that records, outside Git:
-   - candidate metadata and model artifact lineage,
-   - ordered symbol/market/timeframe and bounded bar count,
-   - per-example probability with signal and execution bar timestamps,
-   - source data path and artifact policy,
-   - enough alignment data to replay thresholds without another inference pass.
-5. Add a small threshold sweep harness or research job kind that:
-   - consumes the probability trace when available,
-   - otherwise can run one bounded candidate inference through Docker
-     `research`,
-   - replays a small buy/sell threshold grid through broker-free local paper,
-   - compares each candidate threshold result with the existing momentum
-     baseline comparison metrics,
-   - writes sweep artifacts outside Git.
-6. Keep sweep output descriptive only. Do not emit pass/fail, promotion,
+   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-threshold-sweep-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`
+3. Inventory only a small useful subset of `D:\market_data` for additional US
+   equity Yahoo intraday snapshots or symbols. Avoid expensive full recursive
+   scans unless needed.
+4. Add a small robustness harness or research job kind that:
+   - uses the same candidate model and bounded threshold pairs,
+   - runs or consumes one probability trace per selected slice,
+   - replays threshold variants through broker-free local paper,
+   - records per-slice PnL, drawdown, fill count, final position, and
+     threshold metadata,
+   - writes robustness artifacts outside Git.
+5. Keep robustness output descriptive only. Do not emit pass/fail, promotion,
    deployment, or gate decisions.
-7. Add focused tests proving:
-   - probability trace and sweep artifacts are outside Git,
+6. Add focused tests proving:
+   - robustness artifacts are outside Git,
    - fills remain `source: local_paper`,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing trace/model/GPU/backend records a non-fatal prepared state where
+   - missing data/model/GPU/backend records a non-fatal prepared state where
      relevant,
-   - the sweep is deterministic/replayable from one trace.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - robustness replay is deterministic/replayable from traces.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
-- Prefer existing Yahoo intraday snapshots if they are useful for this sweep.
+- Prefer existing Yahoo intraday snapshots and symbols if they are useful for
+  this robustness loop.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for this active sweep loop.
+  license-compatible, and useful for this active robustness loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -116,12 +112,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused trace, sweep, job-runner, Docker research, or GPU inference
-command used.
+Report any focused robustness, trace, sweep, job-runner, Docker research, or GPU
+inference command used.
 
 ## Suggested Commit Message
 
-`Add bounded candidate threshold sweep`
+`Add bounded threshold robustness replay`
 
 ## Completion Report
 

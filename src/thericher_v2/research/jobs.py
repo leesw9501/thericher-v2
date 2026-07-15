@@ -29,6 +29,12 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_sweep import (
+    BoundedCandidateThresholdSweepResult,
+    CandidateThresholdSweepConfig,
+    parse_threshold_pairs,
+    run_bounded_candidate_threshold_sweep,
+)
 from .candidate_training import (
     BoundedCandidateTrainingResult,
     CandidateTrainerRunner,
@@ -53,6 +59,7 @@ ResearchJobKind = Literal[
     "candidate_evaluation",
     "candidate_replay",
     "candidate_replay_comparison",
+    "candidate_threshold_sweep",
 ]
 ResearchJobStatus = Literal[
     "completed",
@@ -60,6 +67,7 @@ ResearchJobStatus = Literal[
     "prepared_not_evaluated",
     "prepared_not_replayed",
     "prepared_not_compared",
+    "prepared_not_swept",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
@@ -68,6 +76,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_evaluation",
     "candidate_replay",
     "candidate_replay_comparison",
+    "candidate_threshold_sweep",
 )
 
 
@@ -79,6 +88,8 @@ class ResearchJobSpec:
     training_metrics_artifact: Path | None = None
     evaluation_artifact: Path | None = None
     candidate_replay_artifact: Path | None = None
+    probability_trace_artifact: Path | None = None
+    comparison_artifact: Path | None = None
     model_artifact: Path | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
@@ -87,6 +98,7 @@ class ResearchJobSpec:
     max_steps: int = 256
     buy_threshold: float = 0.55
     sell_threshold: float = 0.45
+    threshold_pairs: tuple[tuple[float, float], ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
     schema_version: int = SCHEMA_VERSION
 
@@ -113,6 +125,7 @@ class ResearchJobResult:
         | BoundedCandidateEvaluationResult
         | BoundedCandidateReplayResult
         | BoundedCandidateReplayComparisonResult
+        | BoundedCandidateThresholdSweepResult
     )
     training_artifact: Path
     model_artifact: Path | None = None
@@ -188,7 +201,8 @@ def _run_job_kind(
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
     | BoundedCandidateReplayResult
-    | BoundedCandidateReplayComparisonResult,
+    | BoundedCandidateReplayComparisonResult
+    | BoundedCandidateThresholdSweepResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -301,6 +315,28 @@ def _run_job_kind(
             else "prepared_not_compared"
         )
         return comparison, comparison.comparison_artifact, comparison.model_artifact, status
+    if spec.kind == "candidate_threshold_sweep":
+        sweep = run_bounded_candidate_threshold_sweep(
+            config=CandidateThresholdSweepConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                threshold_pairs=spec.threshold_pairs
+                or CandidateThresholdSweepConfig().threshold_pairs,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            probability_trace_artifact=spec.probability_trace_artifact,
+            comparison_artifact=spec.comparison_artifact,
+            training_metrics_artifact=spec.training_metrics_artifact,
+            evaluation_artifact=spec.evaluation_artifact,
+            model_artifact=spec.model_artifact,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = "completed" if sweep.status == "candidate_swept_only" else "prepared_not_swept"
+        return sweep, sweep.sweep_artifact, sweep.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -333,6 +369,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--training-metrics-artifact", type=Path)
     parser.add_argument("--evaluation-artifact", type=Path)
     parser.add_argument("--candidate-replay-artifact", type=Path)
+    parser.add_argument("--probability-trace-artifact", type=Path)
+    parser.add_argument("--comparison-artifact", type=Path)
     parser.add_argument("--model-artifact", type=Path)
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
@@ -341,6 +379,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-steps", type=int, default=256)
     parser.add_argument("--buy-threshold", type=float, default=0.55)
     parser.add_argument("--sell-threshold", type=float, default=0.45)
+    parser.add_argument("--threshold-pair", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
     return parser
 
@@ -355,6 +394,8 @@ def main() -> None:
         training_metrics_artifact=args.training_metrics_artifact,
         evaluation_artifact=args.evaluation_artifact,
         candidate_replay_artifact=args.candidate_replay_artifact,
+        probability_trace_artifact=args.probability_trace_artifact,
+        comparison_artifact=args.comparison_artifact,
         model_artifact=args.model_artifact,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
@@ -363,6 +404,7 @@ def main() -> None:
         max_steps=args.max_steps,
         buy_threshold=args.buy_threshold,
         sell_threshold=args.sell_threshold,
+        threshold_pairs=parse_threshold_pairs(args.threshold_pair),
     )
     run = run_and_write_research_job(
         spec,
@@ -532,6 +574,46 @@ def _research_job_payload(
             "deltas": training.deltas,
             "thresholds": training.thresholds,
         }
+    elif isinstance(training, BoundedCandidateThresholdSweepResult):
+        base["candidate_threshold_sweep"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "training_metrics_artifact": (
+                None
+                if training.training_metrics_artifact is None
+                else str(training.training_metrics_artifact)
+            ),
+            "evaluation_artifact": (
+                None if training.evaluation_artifact is None else str(training.evaluation_artifact)
+            ),
+            "model_artifact": (
+                None if training.model_artifact is None else str(training.model_artifact)
+            ),
+            "probability_trace_artifact": (
+                None
+                if training.probability_trace_artifact is None
+                else str(training.probability_trace_artifact)
+            ),
+            "comparison_artifact": (
+                None if training.comparison_artifact is None else str(training.comparison_artifact)
+            ),
+            "data_source": training.data_source,
+            "symbol": training.symbol,
+            "market": training.market,
+            "timeframe": training.timeframe,
+            "bars_seen": training.bars_seen,
+            "examples_seen": training.examples_seen,
+            "trace_status": training.trace_status,
+            "source_alignment": training.source_alignment,
+            "baseline_metrics": training.baseline_metrics,
+            "variant_count": len(training.variants),
+            "completed_variant_count": sum(
+                1 for variant in training.variants if variant.status == "candidate_replayed_only"
+            ),
+            "variants": training.variants,
+            "thresholds": training.thresholds,
+        }
     return to_jsonable(base)
 
 
@@ -555,6 +637,17 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         }
         if result.training.candidate_replay_artifact is not None:
             artifacts["candidate_replay"] = str(result.training.candidate_replay_artifact)
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdSweepResult):
+        artifacts = {"candidate_threshold_sweep": str(result.training_artifact)}
+        if result.training.probability_trace_artifact is not None:
+            artifacts["candidate_probability_trace"] = str(
+                result.training.probability_trace_artifact
+            )
+        if result.training.comparison_artifact is not None:
+            artifacts["candidate_replay_comparison"] = str(result.training.comparison_artifact)
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)
         return artifacts

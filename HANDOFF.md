@@ -105,6 +105,11 @@ Implemented and pushed:
   baseline through the same broker-free local paper simulator on the same bars,
   compares trades, PnL, drawdown, final position, fill count, and event count,
   and writes descriptive comparison artifacts outside Git,
+- bounded candidate probability trace and threshold sweep job kind in the
+  research job runner; it runs candidate probability inference once, persists
+  an aligned per-example trace outside Git, replays a small buy/sell threshold
+  grid through local paper without rerunning inference, compares each variant
+  to the existing momentum baseline metrics, and keeps output descriptive,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -122,7 +127,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `97 passed`
+- `107 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -166,14 +171,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded candidate probability trace and threshold sweep:
+Add the first bounded threshold robustness replay:
 
-1. reuse the explicit CVS Yahoo intraday snapshot and the trained candidate,
-2. persist a bounded probability trace outside Git so threshold variants do not
-   need repeated inference,
-3. sweep a small candidate buy/sell threshold grid against the momentum
-   baseline comparison metrics,
-4. compare trade count, PnL, drawdown, final position, and fill count,
+1. reuse the threshold sweep evidence and explicit local Yahoo data,
+2. inventory a small useful subset of additional local US equity snapshots or
+   symbols under `D:\market_data`,
+3. replay the same candidate threshold variants across a capped set of
+   additional windows/symbols,
+4. compare PnL, drawdown, final position, and fill count by slice,
 5. keep the result as research evidence, not a promotion gate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

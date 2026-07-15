@@ -320,3 +320,18 @@ Reason: candidate replay needs a simple in-repo baseline before deeper GPU
 training or threshold calibration. The comparison remains research evidence,
 not a promotion gate, and does not introduce KIS credentials, broker submit
 code, live authority, dashboards, or scheduler/agent expansion.
+
+## 2026-07-15 - Bounded candidate threshold sweep job
+
+Decision: extend the lightweight research job runner with one
+`candidate_threshold_sweep` job kind. It writes a bounded candidate probability
+trace outside Git, then replays a capped buy/sell threshold grid through the
+existing candidate local-paper execution path without rerunning inference for
+each threshold pair. Sweep artifacts compare each variant to the existing
+momentum baseline comparison metrics and record local paper fill counts, PnL,
+drawdown, and positions.
+
+Reason: candidate probability output needs calibration evidence before deeper
+GPU training. Persisting one trace reduces repeated GPU inference while keeping
+threshold exploration broker-free, credential-free, descriptive, and outside
+the Git workspace.

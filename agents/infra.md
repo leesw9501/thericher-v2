@@ -29,9 +29,8 @@
 
 1. Keep base engine tests free of heavy research dependencies.
 2. Keep PyTorch CUDA confined to the Docker `research` target.
-3. Support candidate replay comparison and future bounded threshold sweeps
-   through the small research job runner without adding a general agent
-   platform.
+3. Improve Docker research build caching; source edits currently trigger a
+   costly PyTorch reinstall layer.
 
 ## Running Jobs
 
@@ -70,10 +69,12 @@
 - Bounded `candidate_replay_comparison` job consumed the existing replay
   artifact and wrote comparison metrics to
   `D:\thericher-v2\model-artifacts\candidate-replay-comparison\bounded-candidate-replay-comparison-smoke`.
+- Bounded `candidate_threshold_sweep` job ran in Docker `research` with PyTorch
+  CUDA, wrote one probability trace, and replayed threshold variants under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-sweep\bounded-candidate-threshold-sweep-smoke`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
-  Docker `research` target and external artifact mount. Threshold sweep work
-  should reuse one probability trace instead of repeating GPU inference when
-  possible.
+  Docker `research` target and external artifact mount. A future infra slice
+  should restructure Docker layers so source edits do not reinstall PyTorch.
