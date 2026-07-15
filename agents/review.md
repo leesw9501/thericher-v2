@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review holdout replay for threshold reuse and artifact sprawl.
+1. Review candidate breadth queue for bounded scope and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -75,6 +75,10 @@
 - Probability calibration added one deterministic threshold-grid helper and one
   job kind, reused the existing robustness/local-paper path, and did not emit a
   best threshold, promotion gate, dashboard, scheduler, or autonomous agent
+  process.
+- Calibration holdout added one thin job kind, consumed calibration thresholds
+  unchanged, reused the existing robustness/local-paper path, and did not emit
+  a best threshold, promotion gate, dashboard, scheduler, or autonomous agent
   process.
 
 ## Next Handoff

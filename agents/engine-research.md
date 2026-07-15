@@ -29,21 +29,20 @@
 
 ## Active Queue
 
-1. Reuse the calibration-derived threshold grid on a disjoint local Yahoo
-   holdout snapshot before treating the grid as useful evidence.
-2. Inventory whether `snapshot=2026-06-18` contains CVS, FCX, and KO holdout
-   bars; record missing symbols as operator/data needs if not present.
-3. Decide the next bounded model experiment from holdout behavior, not from the
-   same-slice calibrated replay.
+1. Add a tiny bounded real-data candidate breadth queue before longer training.
+2. Reuse CVS, FCX, and KO from `snapshot=2026-07-09-shadow-t0-8d-probe` for
+   training/evaluation and `snapshot=2026-06-18` for holdout replay.
+3. Compare candidate variants descriptively; do not emit a production winner or
+   promotion decision.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-multislice-calibration-smoke`, status
-  `completed`, slices `CVS`, `FCX`, `KO`, derived threshold pairs
+- Last completed: `bounded-candidate-calibration-holdout-smoke`, status
+  `completed`, holdout slices `CVS`, `FCX`, `KO`, reused threshold pairs
   `0.462/0.461`, `0.463/0.461`, `0.464/0.460`, `0.465/0.460`, completed
-  variants `12`, total fills `524`, PnL range `-0.6468` to `-0.0064`,
+  variants `12`, total fills `511`, PnL range `-1.6379` to `0.7608`,
   artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-candidate-multislice-calibration-smoke`.
+  `D:\thericher-v2\model-artifacts\candidate-threshold-holdout\bounded-candidate-calibration-holdout-smoke`.
 
 ## Done Recently
 
@@ -110,9 +109,14 @@
   quantile-based threshold pairs, replayed them through the existing
   robustness/local-paper path, and kept the result descriptive with no
   promotion gate.
+- Added the first bounded calibration holdout replay. The Docker `research`
+  smoke reused the calibration threshold grid unchanged on the disjoint
+  `snapshot=2026-06-18` CVS, FCX, and KO slices, produced 511 local-paper fills,
+  and kept output descriptive with no best threshold or promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should run a bounded holdout replay before starting
-  broader scheduling, longer training, or claiming robust model quality.
+  engine-research task should run a small candidate breadth queue before
+  starting broader scheduling, longer training, or claiming robust model
+  quality.

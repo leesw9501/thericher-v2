@@ -34,6 +34,11 @@ from .candidate_threshold_calibration import (
     CandidateThresholdCalibrationConfig,
     run_bounded_candidate_threshold_calibration,
 )
+from .candidate_threshold_holdout import (
+    BoundedCandidateThresholdHoldoutResult,
+    CandidateThresholdHoldoutConfig,
+    run_bounded_candidate_threshold_holdout,
+)
 from .candidate_threshold_robustness import (
     BoundedCandidateThresholdRobustnessResult,
     CandidateThresholdRobustnessConfig,
@@ -77,6 +82,7 @@ ResearchJobKind = Literal[
     "candidate_threshold_sweep",
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
+    "candidate_threshold_holdout",
 ]
 ResearchJobStatus = Literal[
     "completed",
@@ -87,6 +93,7 @@ ResearchJobStatus = Literal[
     "prepared_not_swept",
     "prepared_not_robustness_replayed",
     "prepared_not_calibrated",
+    "prepared_not_holdout_replayed",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
@@ -98,6 +105,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_threshold_sweep",
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
+    "candidate_threshold_holdout",
 )
 
 
@@ -111,6 +119,7 @@ class ResearchJobSpec:
     candidate_replay_artifact: Path | None = None
     probability_trace_artifact: Path | None = None
     comparison_artifact: Path | None = None
+    calibration_artifact: Path | None = None
     model_artifact: Path | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
@@ -151,6 +160,7 @@ class ResearchJobResult:
         | BoundedCandidateThresholdSweepResult
         | BoundedCandidateThresholdRobustnessResult
         | BoundedCandidateThresholdCalibrationResult
+        | BoundedCandidateThresholdHoldoutResult
     )
     training_artifact: Path
     model_artifact: Path | None = None
@@ -229,7 +239,8 @@ def _run_job_kind(
     | BoundedCandidateReplayComparisonResult
     | BoundedCandidateThresholdSweepResult
     | BoundedCandidateThresholdRobustnessResult
-    | BoundedCandidateThresholdCalibrationResult,
+    | BoundedCandidateThresholdCalibrationResult
+    | BoundedCandidateThresholdHoldoutResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -415,6 +426,28 @@ def _run_job_kind(
             calibration.model_artifact,
             status,
         )
+    if spec.kind == "candidate_threshold_holdout":
+        holdout = run_bounded_candidate_threshold_holdout(
+            config=CandidateThresholdHoldoutConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                slices=spec.robustness_slices,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            calibration_artifact=spec.calibration_artifact,
+            training_metrics_artifact=spec.training_metrics_artifact,
+            evaluation_artifact=spec.evaluation_artifact,
+            model_artifact=spec.model_artifact,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if holdout.status == "candidate_threshold_holdout_replayed_only"
+            else "prepared_not_holdout_replayed"
+        )
+        return holdout, holdout.holdout_artifact, holdout.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -449,6 +482,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidate-replay-artifact", type=Path)
     parser.add_argument("--probability-trace-artifact", type=Path)
     parser.add_argument("--comparison-artifact", type=Path)
+    parser.add_argument("--calibration-artifact", type=Path)
     parser.add_argument("--model-artifact", type=Path)
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
@@ -476,6 +510,7 @@ def main() -> None:
         candidate_replay_artifact=args.candidate_replay_artifact,
         probability_trace_artifact=args.probability_trace_artifact,
         comparison_artifact=args.comparison_artifact,
+        calibration_artifact=args.calibration_artifact,
         model_artifact=args.model_artifact,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
@@ -746,6 +781,36 @@ def _research_job_payload(
             "thresholds": training.thresholds,
             "metrics": training.metrics,
         }
+    elif isinstance(training, BoundedCandidateThresholdHoldoutResult):
+        base["candidate_threshold_holdout"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "source_calibration_artifact": (
+                None
+                if training.source_calibration_artifact is None
+                else str(training.source_calibration_artifact)
+            ),
+            "training_metrics_artifact": (
+                None
+                if training.training_metrics_artifact is None
+                else str(training.training_metrics_artifact)
+            ),
+            "evaluation_artifact": (
+                None if training.evaluation_artifact is None else str(training.evaluation_artifact)
+            ),
+            "model_artifact": (
+                None if training.model_artifact is None else str(training.model_artifact)
+            ),
+            "slice_count": training.slice_count,
+            "completed_slice_count": training.completed_slice_count,
+            "holdout_slices": training.holdout_slices,
+            "probability_summary": training.probability_summary,
+            "thresholds": training.thresholds,
+            "metrics": training.metrics,
+            "local_paper_verification": training.local_paper_verification,
+            "data_requests": training.data_requests,
+        }
     return to_jsonable(base)
 
 
@@ -797,6 +862,21 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         if result.training.robustness_artifact is not None:
             artifacts["candidate_threshold_robustness"] = str(
                 result.training.robustness_artifact
+            )
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdHoldoutResult):
+        artifacts = {
+            "candidate_threshold_holdout": str(result.training_artifact),
+        }
+        if result.training.robustness_artifact is not None:
+            artifacts["candidate_threshold_robustness"] = str(
+                result.training.robustness_artifact
+            )
+        if result.training.source_calibration_artifact is not None:
+            artifacts["source_calibration"] = str(
+                result.training.source_calibration_artifact
             )
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)

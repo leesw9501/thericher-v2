@@ -383,3 +383,18 @@ threshold grid because all observed probabilities were below the lowest static
 buy threshold. Calibration should explain and probe that behavior while staying
 descriptive, broker-free, credential-free, PyTorch-in-Docker-only, and free of a
 new replay path or v1-style gate.
+
+## 2026-07-16 - Bounded calibration holdout replay
+
+Decision: extend the research job runner with one
+`candidate_threshold_holdout` job kind. It reads a completed calibration
+artifact, consumes its threshold pairs unchanged, and replays those thresholds
+on explicit holdout slices through the existing threshold robustness and
+broker-free local-paper path. The holdout artifact records source calibration
+lineage, holdout slices, probability ranges, PnL/drawdown, fill counts,
+local-paper source verification, and missing-data requests when applicable.
+
+Reason: probability-derived thresholds can overfit the same slices that created
+them. A disjoint holdout replay checks that circularity before deeper training
+while avoiding new replay code, broker access, credentials, dashboards,
+schedulers, best-threshold fields, promotion gates, or live/paper authority.

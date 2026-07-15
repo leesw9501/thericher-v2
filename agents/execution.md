@@ -57,6 +57,8 @@
 - Probability-derived calibration robustness replay produced `524` simulated
   fills across CVS, FCX, and KO; every fill source was verified as
   `local_paper`.
+- Calibration holdout replay produced `511` simulated fills across CVS, FCX,
+  and KO; every fill source was verified as `local_paper`.
 
 ## Next Handoff
 

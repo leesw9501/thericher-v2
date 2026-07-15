@@ -77,6 +77,10 @@ docker compose --profile research run --rm --no-deps research thericher-v2-resea
 docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-calibration-smoke --kind candidate_threshold_calibration --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-multislice-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-multislice-evaluation-smoke/metrics.json --max-bars 180 --robustness-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-calibration-holdout-smoke --kind candidate_threshold_holdout --calibration-artifact /app/model_artifacts/candidate-threshold-calibration/bounded-candidate-multislice-calibration-smoke/metrics.json --max-bars 180 --robustness-slice cvs_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice fcx_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice ko_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

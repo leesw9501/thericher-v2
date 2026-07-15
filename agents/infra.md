@@ -86,6 +86,9 @@
 - Bounded multi-slice probability calibration ran in Docker `research` with
   PyTorch CUDA, read `/app/market_data` read-only, and wrote calibration plus
   robustness artifacts under `/app/model_artifacts`.
+- Bounded calibration holdout replay ran in Docker `research` with PyTorch
+  CUDA, read `/app/market_data` read-only, and wrote holdout plus robustness
+  artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

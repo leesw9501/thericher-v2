@@ -124,6 +124,11 @@ Implemented and pushed:
   replays that grid through the existing threshold robustness/local-paper path,
   writes descriptive artifacts outside Git, and records no best threshold,
   promotion, or pass/fail gate,
+- bounded calibration holdout replay; it consumes the calibration threshold
+  grid unchanged, runs bounded holdout traces on the disjoint
+  `snapshot=2026-06-18` CVS, FCX, and KO slices, replays through the existing
+  threshold robustness/local-paper path, verifies fill sources, and keeps the
+  result descriptive,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -141,7 +146,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `134 passed`
+- `141 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -185,16 +190,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded calibration holdout replay:
+Add the first bounded real-data candidate breadth queue:
 
-1. reuse the multi-slice calibration artifact and its derived threshold grid,
-2. inventory the earlier local Yahoo `snapshot=2026-06-18` for usable holdout
-   CVS, FCX, and KO slices,
-3. run bounded probability traces on holdout slices through Docker `research`
-   if data is present,
-4. replay the existing calibration grid through the existing threshold
-   robustness/local-paper path,
-5. compare holdout fill/PnL behavior descriptively without selecting a winner
+1. reuse the local Yahoo CVS, FCX, and KO slices already proven for training
+   and holdout,
+2. create a tiny bounded queue of short candidate definitions or training
+   variants,
+3. run each candidate through Docker `research` PyTorch CUDA under strict caps,
+4. evaluate and replay only through existing local-paper/holdout paths,
+5. compare the candidates descriptively without selecting a production winner
    or promoting a model.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

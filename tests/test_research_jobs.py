@@ -479,6 +479,71 @@ def test_research_job_runs_candidate_threshold_calibration_kind_with_injected_ru
     assert Path(payload["artifacts"]["source_model"]).exists()
 
 
+def test_research_job_runs_candidate_threshold_holdout_kind_with_injected_runner(
+    tmp_path,
+) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    calibration_artifact = _threshold_calibration_artifact(
+        tmp_path,
+        training_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        model_artifact=model_artifact,
+    )
+    yahoo_snapshot = _yahoo_snapshot(tmp_path)
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-holdout-job",
+            kind="candidate_threshold_holdout",
+            calibration_artifact=calibration_artifact,
+            robustness_slices=(
+                CandidateThresholdRobustnessSliceConfig(
+                    slice_id="aaa_holdout",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            max_bars=40,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=lambda dataset, model, training_payload: {
+            "backend": "unit",
+            "operation": "unit_candidate_probabilities",
+            "probabilities": tuple(
+                0.80 if index % 4 in {0, 1} else 0.20
+                for index in range(len(dataset.labels))
+            ),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_threshold_holdout"
+    holdout = payload["candidate_threshold_holdout"]
+    assert holdout["status"] == "candidate_threshold_holdout_replayed_only"
+    assert holdout["thresholds"]["derivation"] == "source_calibration_artifact_unchanged"
+    assert holdout["thresholds"]["promotion_gate"] is False
+    assert holdout["local_paper_verification"]["all_fills_local_paper"] is True
+    assert Path(payload["artifacts"]["candidate_threshold_holdout"]).exists()
+    assert Path(payload["artifacts"]["candidate_threshold_robustness"]).exists()
+    assert Path(payload["artifacts"]["source_calibration"]).exists()
+    assert Path(payload["artifacts"]["source_model"]).exists()
+
+
 def test_research_job_rejects_unknown_kind() -> None:
     with pytest.raises(ValueError, match="unsupported research job kind"):
         ResearchJobSpec(kind="not-a-real-job")  # type: ignore[arg-type]
@@ -646,6 +711,51 @@ def _evaluation_artifact(
                         "bar_range",
                         "volume_change",
                     ],
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    return path
+
+
+def _threshold_calibration_artifact(
+    tmp_path: Path,
+    *,
+    training_artifact: Path,
+    evaluation_artifact: Path,
+    model_artifact: Path,
+) -> Path:
+    path = tmp_path / "threshold-calibration.json"
+    path.write_text(
+        json.dumps(
+            {
+                "status": "candidate_thresholds_calibrated_only",
+                "reason": "unit calibration completed",
+                "candidate_experiment_id": "unit_candidate",
+                "candidate_parameters": {
+                    "lookback": 3,
+                    "timeframe": "1m",
+                },
+                "training_metrics_artifact": str(training_artifact),
+                "evaluation_artifact": str(evaluation_artifact),
+                "model_artifact": str(model_artifact),
+                "thresholds": {
+                    "derivation": "observed_probability_quantiles",
+                    "threshold_pairs": [
+                        {
+                            "buy_threshold": "0.700000",
+                            "sell_threshold": "0.300000",
+                        },
+                        {
+                            "buy_threshold": "0.500000",
+                            "sell_threshold": "0.300000",
+                        },
+                    ],
+                    "promotion_gate": False,
+                },
+                "artifact_policy": {
+                    "repo_storage_allowed": False,
                 },
             }
         ),

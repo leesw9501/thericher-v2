@@ -5,14 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded calibration holdout replay.
+Add the first bounded real-data candidate breadth queue.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by taking the threshold grid derived by the multi-slice
-calibration probe and replaying that same grid on a disjoint local Yahoo
-snapshot if usable holdout data exists. The goal is to detect same-slice
-calibration circularity before deeper training, not to select a winning
-threshold or promote a model.
+This advances feature/model research and backtest/walk-forward validation by
+running a very small set of short candidate training/evaluation variants on the
+existing CVS, FCX, and KO local Yahoo slices. The goal is breadth: learn whether
+nearby candidate definitions produce materially different probability behavior
+before spending GPU time on longer training. This is not a model promotion,
+winner selection, scheduler, or autonomous agent framework.
 
 ## Hard Boundaries
 
@@ -25,11 +25,11 @@ threshold or promote a model.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Keep all simulated fills labeled with `source: local_paper`.
+- Keep any simulated fills labeled with `source: local_paper`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Run model inference that needs PyTorch through Docker `research`.
+- Run model training/inference that needs PyTorch through Docker `research`.
 - Do not create a broad agent framework, scheduler, promotion gate, or dashboard
   expansion.
 - Do not start an unbounded or overnight training run yet.
@@ -62,47 +62,45 @@ threshold or promote a model.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory the latest external calibration artifacts:
+2. Inventory the latest external artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-multislice-training-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-multislice-evaluation-smoke`
    - `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-candidate-multislice-calibration-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-calibration-smoke-robustness`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-calibration-smoke.json`
-   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-cvs`
-   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-fcx`
-   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-ko`
-3. Inventory only the useful local Yahoo holdout subset under
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
-   Start with `snapshot=2026-06-18` and check whether CVS, FCX, and KO are
-   present. Avoid expensive full recursive scans unless needed.
-4. Add a thin calibration-holdout helper or research job option that:
-   - consumes the existing calibration artifact's threshold pairs unchanged,
-   - records the source calibration artifact and holdout snapshot/symbols,
-   - runs or consumes bounded holdout probability traces once per selected
-     slice,
-   - replays the unchanged threshold grid through the existing threshold
-     robustness/local-paper path,
-   - writes holdout artifacts outside Git,
-   - records probability ranges, fill counts, PnL/drawdown, and local-paper
-     source verification descriptively.
-5. If the requested holdout symbols are absent from existing local data, create
-   a non-fatal prepared artifact and record the exact data needed in
-   `agents/data.md` and the completion report.
-6. Keep holdout output descriptive only. Do not emit best/recommended threshold,
-   pass/fail, promotion, deployment, or gate decisions.
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-holdout\bounded-candidate-calibration-holdout-smoke`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-calibration-holdout-smoke.json`
+3. Reuse only the useful local Yahoo subsets already identified under
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`:
+   - training/evaluation: `snapshot=2026-07-09-shadow-t0-8d-probe`,
+   - holdout reference: `snapshot=2026-06-18`.
+   Avoid expensive full recursive scans unless needed.
+4. Add a small candidate breadth helper or research job option that:
+   - defines a capped queue of at most three short candidate variants around
+     the current `m1_lb3_b10_s10` family,
+   - writes candidate metadata and queue artifacts outside Git,
+   - reuses existing candidate training and evaluation primitives,
+   - runs each variant under strict `max_bars`, `max_epochs`, and `max_steps`
+     caps,
+   - records probability/evaluation summaries and artifact paths,
+   - records no best/recommended candidate and no promotion/pass/fail decision.
+5. Run a CPU/injected smoke baseline first. If sound, run the bounded queue in
+   Docker `research` with PyTorch CUDA and external artifacts.
+6. Keep the queue descriptive only. If queue results are too weak or mixed,
+   record that as research evidence, not as a gate.
 7. Add focused tests proving:
-   - holdout artifacts are outside Git,
-   - threshold pairs are consumed from the calibration artifact unchanged,
+   - queue artifacts are outside Git,
+   - candidate count and training caps are enforced,
+   - existing training/evaluation primitives are reused,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing calibration artifact, missing holdout data, missing model/GPU, and
-     missing backend record non-fatal prepared states where relevant,
-   - downstream robustness replay still uses only `source: local_paper` fills.
+   - missing candidate artifacts/data/model/GPU/backend record non-fatal
+     prepared states where relevant.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this active holdout loop.
+  this active breadth loop.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active goal.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -121,12 +119,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused holdout, trace, robustness, Docker research, or GPU
-inference command used.
+Report any focused breadth queue, training, evaluation, Docker research, or GPU
+command used.
 
 ## Suggested Commit Message
 
-`Add bounded calibration holdout replay`
+`Add bounded candidate breadth queue`
 
 ## Completion Report
 
