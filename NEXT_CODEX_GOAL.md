@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Choose and add the first research-only GPU compute backend, then run a tiny
+Approve and add the first research-only GPU compute backend, then run the tiny
 bounded GPU training smoke for the selected candidate.
 
 This advances feature/model research and reproducible GPU experimentation by
-moving from runtime/compute readiness into the smallest useful model-training
-loop, while keeping the base engine free of heavy GPU dependencies.
+moving from runtime/training-smoke scaffolding into the smallest useful
+backend-backed model-training loop, while keeping the base engine free of heavy
+GPU dependencies.
 
 ## Hard Boundaries
 
@@ -60,9 +61,9 @@ loop, while keeping the base engine free of heavy GPU dependencies.
    operator chooses otherwise.
 2. Keep the base `engine` and `web` images free of GPU/ML framework
    dependencies.
-3. Update the Docker `research` target/profile so it can run the selected
+3. Update the Docker `research` target/profile so it installs the selected
    backend and still writes model artifacts only to `/app/model_artifacts`.
-4. Add a tiny bounded training smoke that:
+4. Run the existing tiny bounded training smoke so it:
    - consumes the selected walk-forward candidate metadata,
    - uses deterministic local/sample or explicit local market data only,
    - runs a very small model/tensor training step on GPU if available,
@@ -74,10 +75,10 @@ loop, while keeping the base engine free of heavy GPU dependencies.
 6. Update `agents/engine-research.md` and `agents/infra.md` so the short
    experiment queue and longer candidate queue remain visible.
 7. Add focused tests proving:
-   - training-smoke artifact paths are outside Git,
-   - no broker/network/credential access is needed,
-   - base engine tests do not require GPU packages,
-   - missing GPU/backend records a non-fatal prepared state.
+   - the backend is installed only in the Docker `research` path,
+   - the training-smoke artifact path remains outside Git,
+   - the base engine tests do not require GPU packages,
+   - missing GPU/backend remains a non-fatal prepared state.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy

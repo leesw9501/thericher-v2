@@ -226,3 +226,15 @@ engine path.
 Reason: the RTX 4090 should be used for model research, but the trading engine,
 tests, and local paper loop must stay reproducible without CUDA or ML framework
 dependencies.
+
+## 2026-07-15 - GPU training smoke scaffold before backend approval
+
+Decision: add a tiny GPU training smoke scaffold without adding PyTorch, CUDA,
+or another heavy framework to the base or research dependencies. The scaffold
+uses an injected trainer in tests, imports optional backends lazily, writes
+under the external model artifact root, and records non-fatal
+`prepared_not_trained` until the operator approves a research-only backend.
+
+Reason: the engine needs a reproducible training seam before long GPU jobs, but
+backend selection is an operator-level dependency decision and must not be
+silently locked in by code changes.

@@ -76,6 +76,10 @@ Implemented and pushed:
 - research-profile GPU compute smoke CLI that runs only inside the bounded
   research path, records selected candidate metadata, and writes either
   `compute_ran_only` or non-fatal `prepared_not_trained` artifacts outside Git,
+- optional GPU training smoke CLI with a tiny optimizer/gradient-step seam; it
+  imports no heavy framework at module load, writes artifacts outside Git, and
+  remains `prepared_not_trained` until a research-only backend is approved and
+  installed,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -93,7 +97,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `54 passed`
+- `59 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -135,12 +139,12 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Choose and add the first research-only GPU compute backend, then run the first
-tiny bounded training smoke:
+Approve and add the first research-only GPU compute backend, then run the first
+tiny bounded training smoke with a real backend:
 
 1. keep the base engine dependency path light,
-2. install the selected backend only in the Docker `research` target/profile,
-3. run a tiny deterministic GPU tensor/training smoke for the selected
+2. install the approved backend only in the Docker `research` target/profile,
+3. run the existing tiny deterministic GPU training smoke for the selected
    walk-forward candidate,
 4. write all generated outputs outside Git.
 

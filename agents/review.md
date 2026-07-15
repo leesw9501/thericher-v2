@@ -43,6 +43,8 @@
 - GPU runtime smoke stayed `nvidia-smi`-only and outside Git.
 - GPU compute smoke stayed research-profile-only, did not add heavy base
   dependencies, and produced one concise external artifact.
+- GPU training smoke scaffold added one CLI and one focused test file without
+  adding a framework dependency or a promotion gate.
 
 ## Next Handoff
 

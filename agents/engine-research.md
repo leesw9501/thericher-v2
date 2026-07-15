@@ -29,8 +29,9 @@
 
 ## Active Queue
 
-1. Choose the first research-only GPU compute backend for Docker `research`
-   and run a tiny bounded training smoke for the selected candidate.
+1. Get operator approval for the first research-only GPU backend, then install
+   it in Docker `research` and run the tiny bounded training smoke for the
+   selected candidate.
 2. Keep short walk-forward experiments available for breadth while a longer
    candidate runs.
 3. Start longer candidate training only after the tiny training smoke writes
@@ -63,8 +64,12 @@
 - Added a Docker research GPU compute smoke. The research container sees the RTX
   4090, but no compute backend is installed yet, so the artifact is
   `prepared_not_trained` rather than a training result.
+- Added a GPU training smoke scaffold with an injected trainer test seam. Host
+  execution sees the RTX 4090 but records `prepared_not_trained` until a
+  research-only backend is approved and installed.
 
 ## Next Handoff
 
-- Decide whether to add a research-only GPU backend such as PyTorch CUDA to the
-  Docker `research` target; keep heavy dependencies out of the base engine.
+- Recommended next decision: approve PyTorch CUDA, or choose another backend,
+  for the Docker `research` target; keep heavy dependencies out of the base
+  engine.

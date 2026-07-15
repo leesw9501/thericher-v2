@@ -29,6 +29,8 @@
 1. Keep base engine tests free of heavy research dependencies.
 2. Add the selected GPU compute framework only to the Docker `research` target
    after operator approval.
+3. Once approved, verify the training smoke through `docker compose --profile
+   research run`.
 
 ## Running Jobs
 
@@ -48,6 +50,9 @@
 - Docker `research` now requests GPU access and can write compute-smoke
   artifacts to `/app/model_artifacts/gpu-compute`; the smoke currently stops at
   `prepared_not_trained` because no compute backend is installed.
+- GPU training smoke CLI exists without adding GPU dependencies; it currently
+  writes `prepared_not_trained` under the external artifact root until the
+  research backend is approved.
 
 ## Next Handoff
 

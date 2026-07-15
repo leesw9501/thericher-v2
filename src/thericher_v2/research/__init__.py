@@ -32,6 +32,12 @@ from .gpu_runtime import (
     run_gpu_runtime_smoke,
     write_gpu_runtime_smoke_artifact,
 )
+from .gpu_training import (
+    DEFAULT_GPU_TRAINING_RUN_ID,
+    GpuTrainingSmokeResult,
+    run_gpu_training_smoke,
+    write_gpu_training_smoke_artifact,
+)
 from .validation import (
     GpuReadiness,
     MarketDataInventory,
@@ -55,6 +61,7 @@ __all__ = [
     "ExperimentSpec",
     "GpuComputeSmokeResult",
     "GpuRuntimeSmokeResult",
+    "GpuTrainingSmokeResult",
     "WalkForwardCandidate",
     "WalkForwardExperimentSummary",
     "WalkForwardResult",
@@ -67,6 +74,7 @@ __all__ = [
     "ValidationTrade",
     "DEFAULT_GPU_COMPUTE_RUN_ID",
     "DEFAULT_GPU_RUNTIME_RUN_ID",
+    "DEFAULT_GPU_TRAINING_RUN_ID",
     "default_short_experiment_specs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
@@ -78,6 +86,7 @@ __all__ = [
     "run_sample_cpu_smoke",
     "run_short_experiment_queue",
     "run_gpu_runtime_smoke",
+    "run_gpu_training_smoke",
     "run_walk_forward_queue",
     "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
@@ -85,6 +94,7 @@ __all__ = [
     "write_gpu_compute_smoke_artifact",
     "write_gpu_experiment_plan",
     "write_gpu_runtime_smoke_artifact",
+    "write_gpu_training_smoke_artifact",
     "write_walk_forward_gpu_candidate_smoke_artifact",
     "write_walk_forward_metrics_artifact",
     "write_validation_artifact",
