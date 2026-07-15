@@ -12,6 +12,12 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.serialization import to_jsonable
 
+from .candidate_evaluation import (
+    BoundedCandidateEvaluationResult,
+    CandidateEvaluationConfig,
+    CandidateEvaluationRunner,
+    run_bounded_candidate_evaluation,
+)
 from .candidate_training import (
     BoundedCandidateTrainingResult,
     CandidateTrainerRunner,
@@ -30,10 +36,14 @@ from .validation import (
     resolve_model_artifact_root,
 )
 
-ResearchJobKind = Literal["gpu_training_smoke", "candidate_training"]
-ResearchJobStatus = Literal["completed", "prepared_not_trained"]
+ResearchJobKind = Literal["gpu_training_smoke", "candidate_training", "candidate_evaluation"]
+ResearchJobStatus = Literal["completed", "prepared_not_trained", "prepared_not_evaluated"]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
-SUPPORTED_RESEARCH_JOB_KINDS = ("gpu_training_smoke", "candidate_training")
+SUPPORTED_RESEARCH_JOB_KINDS = (
+    "gpu_training_smoke",
+    "candidate_training",
+    "candidate_evaluation",
+)
 
 
 @dataclass(frozen=True)
@@ -41,6 +51,8 @@ class ResearchJobSpec:
     job_id: str = DEFAULT_RESEARCH_JOB_ID
     kind: ResearchJobKind = "gpu_training_smoke"
     candidate_artifact: Path | None = None
+    training_metrics_artifact: Path | None = None
+    model_artifact: Path | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
     max_bars: int = 120
@@ -66,7 +78,11 @@ class ResearchJobResult:
     started_at: datetime
     completed_at: datetime
     reason: str
-    training: GpuTrainingSmokeResult | BoundedCandidateTrainingResult
+    training: (
+        GpuTrainingSmokeResult
+        | BoundedCandidateTrainingResult
+        | BoundedCandidateEvaluationResult
+    )
     training_artifact: Path
     model_artifact: Path | None = None
     schema_version: int = SCHEMA_VERSION
@@ -91,6 +107,7 @@ def run_and_write_research_job(
     gpu: GpuReadiness | None = None,
     trainer_runner: TrainingSmokeRunner | None = None,
     candidate_trainer_runner: CandidateTrainerRunner | None = None,
+    candidate_evaluation_runner: CandidateEvaluationRunner | None = None,
 ) -> ResearchJobRun:
     _reject_repo_artifact_path(artifact_root, repo_root)
     started_at = datetime.now(UTC)
@@ -101,6 +118,7 @@ def run_and_write_research_job(
         gpu=gpu,
         trainer_runner=trainer_runner,
         candidate_trainer_runner=candidate_trainer_runner,
+        candidate_evaluation_runner=candidate_evaluation_runner,
     )
     result = ResearchJobResult(
         job_id=spec.job_id,
@@ -130,8 +148,9 @@ def _run_job_kind(
     gpu: GpuReadiness | None,
     trainer_runner: TrainingSmokeRunner | None,
     candidate_trainer_runner: CandidateTrainerRunner | None,
+    candidate_evaluation_runner: CandidateEvaluationRunner | None,
 ) -> tuple[
-    GpuTrainingSmokeResult | BoundedCandidateTrainingResult,
+    GpuTrainingSmokeResult | BoundedCandidateTrainingResult | BoundedCandidateEvaluationResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -174,6 +193,27 @@ def _run_job_kind(
             else "prepared_not_trained"
         )
         return training, training.metrics_artifact, training.model_artifact, status
+    if spec.kind == "candidate_evaluation":
+        evaluation = run_bounded_candidate_evaluation(
+            config=CandidateEvaluationConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            training_metrics_artifact=spec.training_metrics_artifact,
+            model_artifact=spec.model_artifact,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            gpu=gpu,
+            evaluation_runner=candidate_evaluation_runner,
+        )
+        status = (
+            "completed"
+            if evaluation.status == "candidate_evaluated_only"
+            else "prepared_not_evaluated"
+        )
+        return evaluation, evaluation.evaluation_artifact, evaluation.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -203,6 +243,8 @@ def build_parser() -> argparse.ArgumentParser:
         choices=SUPPORTED_RESEARCH_JOB_KINDS,
     )
     parser.add_argument("--candidate-artifact", type=Path)
+    parser.add_argument("--training-metrics-artifact", type=Path)
+    parser.add_argument("--model-artifact", type=Path)
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
     parser.add_argument("--max-bars", type=int, default=120)
@@ -219,6 +261,8 @@ def main() -> None:
         job_id=args.job_id,
         kind=args.kind,
         candidate_artifact=args.candidate_artifact,
+        training_metrics_artifact=args.training_metrics_artifact,
+        model_artifact=args.model_artifact,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
         max_bars=args.max_bars,
@@ -296,12 +340,44 @@ def _research_job_payload(
             "max_steps": training.max_steps,
             "metrics": training.metrics,
         }
+    elif isinstance(training, BoundedCandidateEvaluationResult):
+        base["candidate_artifact"] = (
+            None if training.candidate_artifact is None else str(training.candidate_artifact)
+        )
+        base["candidate_evaluation"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "available_backends": training.available_backends,
+            "selected_backend": training.selected_backend,
+            "gpu": training.gpu,
+            "training_metrics_artifact": (
+                None
+                if training.training_metrics_artifact is None
+                else str(training.training_metrics_artifact)
+            ),
+            "model_artifact": (
+                None if training.model_artifact is None else str(training.model_artifact)
+            ),
+            "data_source": training.data_source,
+            "symbol": training.symbol,
+            "market": training.market,
+            "timeframe": training.timeframe,
+            "bars_seen": training.bars_seen,
+            "examples_seen": training.examples_seen,
+            "metrics": training.metrics,
+            "local_paper_conversion": training.local_paper_conversion,
+        }
     return to_jsonable(base)
 
 
 def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     if isinstance(result.training, GpuTrainingSmokeResult):
         return {"training_smoke": str(result.training_artifact)}
+    if isinstance(result.training, BoundedCandidateEvaluationResult):
+        artifacts = {"candidate_evaluation": str(result.training_artifact)}
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
     artifacts = {"candidate_metrics": str(result.training_artifact)}
     if result.model_artifact is not None:
         artifacts["model"] = str(result.model_artifact)

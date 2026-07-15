@@ -28,8 +28,8 @@
 
 1. Keep base engine tests free of heavy research dependencies.
 2. Keep PyTorch CUDA confined to the Docker `research` target.
-3. Support candidate evaluation and future bounded training through the small
-   research job runner without adding a general agent platform.
+3. Support candidate local-paper replay and future bounded training through the
+   small research job runner without adding a general agent platform.
 
 ## Running Jobs
 
@@ -59,10 +59,13 @@
 - Bounded `candidate_training` job executed inside Docker `research` with
   PyTorch CUDA and wrote metrics/model artifacts to
   `/app/model_artifacts/candidate-training/bounded-candidate-training-smoke`.
+- Bounded `candidate_evaluation` job executed inside Docker `research` with
+  PyTorch CUDA and wrote metrics to
+  `/app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
-  Docker `research` target and external artifact mount. Candidate model
-  evaluation should avoid adding PyTorch to base/runtime images unless a future
+  Docker `research` target and external artifact mount. Candidate local-paper
+  replay should avoid adding PyTorch to base/runtime images unless a future
   decision explicitly approves an inference dependency.

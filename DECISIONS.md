@@ -275,3 +275,18 @@ execution approval.
 Reason: the RTX 4090 should start producing replayable model artifacts, but the
 engine still needs a small, inspectable loop before longer training, model
 registry entries, broker adapters, or any live/paper execution authority.
+
+## 2026-07-15 - Bounded candidate evaluation job
+
+Decision: extend the lightweight research job runner with one
+`candidate_evaluation` job kind. It consumes external candidate-training
+metrics/model artifacts, reuses the training dataset feature names, loads
+PyTorch lazily only inside the research evaluator, records held-out
+classification and simple baseline metrics, and writes evaluation artifacts
+under the external model artifact root. Local-paper conversion is explicitly
+deferred to the next goal.
+
+Reason: trained model artifacts need replayable evaluation evidence before GPU
+time is spent on deeper training or any candidate output is mapped into paper
+trading. Keeping evaluation separate from promotion and broker execution avoids
+turning early research into a gate or live authority.

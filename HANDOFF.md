@@ -91,6 +91,10 @@ Implemented and pushed:
   consumes selected candidate metadata plus deterministic/sample or explicit
   local bars, trains a tiny PyTorch model under strict caps in Docker
   `research`, and writes metrics/model artifacts outside Git,
+- bounded candidate evaluation job kind in the research job runner; it consumes
+  external training metrics/model artifacts, reuses the training feature shape,
+  runs PyTorch inference lazily inside Docker `research`, records baseline
+  classification metrics, and writes evaluation artifacts outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -108,7 +112,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `73 passed`
+- `80 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -152,17 +156,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first candidate model evaluation loop that consumes the bounded GPU
-candidate training output:
+Add the first broker-free candidate local-paper replay loop that consumes the
+bounded candidate evaluation output:
 
-1. load the external candidate-training metrics/model metadata without pulling
-   PyTorch into the base engine,
-2. run a broker-free inference/evaluation pass against deterministic or
-   explicit local bars,
-3. compare candidate decisions against the existing momentum baseline through
-   local paper validation or a tiny adapter,
-4. write concise evaluation metrics outside Git,
-5. keep the result as research evidence, not a promotion gate.
+1. load the external candidate-training/evaluation artifacts without adding
+   PyTorch to the base engine,
+2. prefer an explicit local `D:\market_data` Yahoo intraday snapshot for a less
+   one-sided replay than the deterministic sample,
+3. map candidate probabilities into bounded buy/sell/hold decisions,
+4. run only the broker-free local paper simulator and keep fills labeled
+   `source: local_paper`,
+5. write concise replay and PnL attribution metrics outside Git,
+6. keep the result as research evidence, not a promotion gate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

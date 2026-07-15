@@ -45,6 +45,10 @@ the external model artifact mount:
 docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-training-smoke --kind candidate_training --candidate-artifact /app/model_artifacts/experiments/short-momentum-cpu-queue-walk-forward-gpu-candidate-smoke.json --max-bars 120 --max-epochs 8 --max-steps 256
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-evaluation-smoke --kind candidate_evaluation --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --max-bars 120
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

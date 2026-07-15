@@ -61,6 +61,10 @@
   data was acquired.
 - Bounded GPU candidate training used deterministic sample bars; no additional
   data was acquired.
+- Bounded candidate evaluation used held-out deterministic sample bars; no
+  additional data was acquired. Shallow inventory still shows Yahoo intraday
+  snapshots under
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
 
 ## Next Handoff
 

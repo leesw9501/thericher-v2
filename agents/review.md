@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review candidate model evaluation for dependency creep.
+1. Review candidate local-paper replay for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -52,6 +52,9 @@
 - Candidate training extended the job runner with one explicit second kind,
   stayed bounded by caps, wrote artifacts outside Git, and did not add a
   promotion gate, dashboard, broker call, or new report family.
+- Candidate evaluation extended the job runner with one explicit third kind,
+  stayed artifact-only, kept PyTorch lazy/research-only, and deferred
+  local-paper conversion instead of creating a promotion gate.
 
 ## Next Handoff
 

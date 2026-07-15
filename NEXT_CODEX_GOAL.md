@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded candidate model evaluation loop.
+Add the first broker-free candidate local-paper replay loop.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by consuming the external bounded GPU candidate-training output
-and evaluating it against deterministic or explicit local market data. The goal
-is to prove how a trained candidate artifact becomes replayable research
-evidence before starting deeper/longer training.
+This advances feature/model research, paper trading preparation, and PnL
+attribution by taking bounded candidate evaluation output and converting model
+probabilities into replayable local-paper decisions. The goal is to learn
+whether a trained candidate can produce tradable behavior before deeper GPU
+training or model registry work.
 
 ## Hard Boundaries
 
@@ -24,12 +24,11 @@ evidence before starting deeper/longer training.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Keep local paper fills labeled with `source: local_paper` if local paper is
-  used.
+- Keep all simulated fills labeled with `source: local_paper`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Run GPU inference/evaluation that needs PyTorch through Docker `research`.
+- Run model inference that needs PyTorch through Docker `research`.
 - Do not create a broad agent framework, scheduler, promotion gate, or dashboard
   expansion.
 - Do not start an unbounded or overnight training run yet.
@@ -62,36 +61,36 @@ evidence before starting deeper/longer training.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory the external candidate-training artifacts from:
-   `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`.
-3. Reuse the existing feature/dataset shape from candidate training so training
-   and evaluation cannot silently diverge.
-4. Add a small candidate evaluation harness or research job kind that:
-   - consumes candidate metadata plus model/metrics artifacts outside Git,
-   - consumes deterministic sample bars or an explicit local market-data
-     snapshot,
-   - runs PyTorch model loading/inference lazily and only inside the research
-     path,
-   - records bounded classification/decision metrics,
-   - writes evaluation artifacts outside Git.
-5. If local paper conversion is included, keep it broker-free and replayable;
-   otherwise explicitly leave paper conversion for the next goal.
-6. Compare the candidate output against a simple baseline already in the repo
-   where practical, but do not create a promotion gate.
-7. Add focused tests proving:
-   - evaluation artifacts are outside Git,
-   - missing model/GPU/backend records a non-fatal prepared state,
-   - no credentials, KIS, broker submit, or network access is needed,
+2. Inventory the latest external candidate artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`
+3. Prefer an explicit local Yahoo intraday snapshot under `D:\market_data` for
+   replay input. Use deterministic sample bars only as a fallback smoke path.
+4. Add a small local-paper replay harness or research job kind that:
+   - consumes candidate training/evaluation artifacts outside Git,
+   - reuses the candidate evaluation feature path and lazy PyTorch inference,
+   - maps probabilities into bounded buy/sell/hold decisions,
+   - submits only to the broker-free local paper simulator,
+   - records trades, PnL, drawdown or simple equity attribution, and replay
+     fill counts,
+   - writes replay artifacts outside Git.
+5. Keep replay thresholds descriptive and configurable, but do not make them a
+   promotion gate.
+6. Add focused tests proving:
+   - replay artifacts are outside Git,
+   - fills are `source: local_paper`,
+   - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - training and evaluation feature names match.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - missing model/GPU/backend records a non-fatal prepared state,
+   - local paper replay is deterministic/replayable.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
-- Prefer existing data and deterministic samples.
+- Prefer existing Yahoo intraday snapshots if they are useful for this replay.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for this active evaluation loop.
+  license-compatible, and useful for this active replay loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -108,12 +107,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused candidate-evaluation command, job-runner command, Docker
-research command, or GPU inference/evaluation smoke used.
+Report any focused candidate-replay command, job-runner command, Docker
+research command, or GPU inference/replay smoke used.
 
 ## Suggested Commit Message
 
-`Add bounded candidate evaluation loop`
+`Add bounded candidate local-paper replay`
 
 ## Completion Report
 

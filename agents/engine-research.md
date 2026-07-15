@@ -29,18 +29,19 @@
 
 ## Active Queue
 
-1. Evaluate the bounded GPU candidate model output against deterministic or
-   explicit local bars without importing PyTorch into the base engine.
-2. Keep short walk-forward experiments available for breadth while candidate
-   evaluation work starts.
+1. Map bounded candidate evaluation probabilities into broker-free local-paper
+   replay decisions.
+2. Prefer an explicit local `D:\market_data` Yahoo intraday snapshot for the
+   next replay so evaluation is not dominated by one-sided sample labels.
 3. Prepare the next bounded longer/deeper training candidate only after the
-   trained artifact has a replayable evaluation result.
+   trained artifact has replayable local-paper attribution.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-training-smoke`, status `completed`,
-  backend `torch`, device `NVIDIA GeForce RTX 4090`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke`.
+- Last completed: `bounded-candidate-evaluation-smoke`, status `completed`,
+  backend `torch`, device `NVIDIA GeForce RTX 4090`, accuracy `0.000000`
+  against held-out deterministic sample, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-evaluation-smoke`.
 
 ## Done Recently
 
@@ -77,10 +78,14 @@
 - Added the first bounded `candidate_training` job. It trained a tiny PyTorch
   MLP for selected candidate `m1_lb3_b10_s10` inside Docker `research` and
   wrote metrics/model artifacts outside Git.
+- Added the first bounded `candidate_evaluation` job. It loaded the external
+  `model.pt` inside Docker `research`, confirmed feature names matched, and
+  wrote held-out classification metrics outside Git. Local-paper conversion was
+  deferred.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. Next work
-  should evaluate the trained candidate output before starting broader
-  scheduling or claiming the Engine Research Agent can keep the GPU busy by
-  itself.
+  should connect candidate probabilities to local-paper replay before starting
+  broader scheduling or claiming the Engine Research Agent can keep the GPU
+  busy by itself.

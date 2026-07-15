@@ -1,5 +1,10 @@
 """Research and validation helpers."""
 
+from .candidate_evaluation import (
+    BoundedCandidateEvaluationResult,
+    CandidateEvaluationConfig,
+    run_bounded_candidate_evaluation,
+)
 from .candidate_training import (
     BoundedCandidateTrainingResult,
     CandidateTrainingConfig,
@@ -71,6 +76,8 @@ from .validation import (
 
 __all__ = [
     "BoundedCandidateTrainingResult",
+    "BoundedCandidateEvaluationResult",
+    "CandidateEvaluationConfig",
     "CandidateTrainingConfig",
     "CandidateTrainingDataset",
     "ExperimentMetrics",
@@ -104,6 +111,7 @@ __all__ = [
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "resolve_model_artifact_root",
+    "run_bounded_candidate_evaluation",
     "run_bounded_candidate_training",
     "run_gpu_compute_smoke",
     "run_local_paper_validation",
