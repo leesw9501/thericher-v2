@@ -414,3 +414,19 @@ Reason: the engine needs breadth evidence around the current
 thin queue keeps experimentation repeatable and PyTorch-in-Docker-only while
 avoiding credentials, broker access, new replay code, dashboards, schedulers,
 agent-framework expansion, or v1-style report/gate sprawl.
+
+## 2026-07-16 - Bounded breadth holdout bridge
+
+Decision: add a thin breadth holdout bridge and a `candidate_breadth_holdout`
+research job kind for Docker dispatch. The bridge reads an external
+`candidate_breadth_queue` artifact, processes at most three variants, resolves
+each variant's existing training/evaluation/model artifacts, then calls the
+existing threshold calibration and threshold holdout primitives. It records
+per-candidate probability summaries, local-paper fill counts, PnL/drawdown
+ranges, data requests, and fill-source verification outside Git.
+
+Reason: breadth training/evaluation is not enough to decide where deeper GPU
+time should go. The next evidence step must replay the queued candidates on
+disjoint holdout slices through the already proven local-paper path while
+avoiding new replay logic, KIS access, credentials, dashboards, schedulers,
+best-candidate fields, pass/fail decisions, or promotion gates.

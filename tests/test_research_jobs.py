@@ -262,6 +262,61 @@ def test_research_job_runs_candidate_breadth_queue_kind_with_injected_runners(
     assert Path(payload["artifacts"]["candidate_breadth_queue"]).exists()
 
 
+def test_research_job_runs_candidate_breadth_holdout_kind_with_injected_runner(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    queue_artifact = _breadth_queue_artifact(artifact_root, variant_id="unit-lb3")
+    source_dir = tmp_path / "source"
+    holdout_dir = tmp_path / "holdout"
+    source_dir.mkdir()
+    holdout_dir.mkdir()
+    source_snapshot = _yahoo_snapshot(source_dir, symbols=("AAA",))
+    holdout_snapshot = _yahoo_snapshot(holdout_dir, symbols=("AAA",))
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="ubh-job",
+            kind="candidate_breadth_holdout",
+            breadth_queue_artifact=queue_artifact,
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="src",
+                    yahoo_snapshot=source_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            robustness_slices=(
+                CandidateThresholdRobustnessSliceConfig(
+                    slice_id="hold",
+                    yahoo_snapshot=holdout_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            max_bars=40,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=_probability_runner,
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["kind"] == "candidate_breadth_holdout"
+    holdout = payload["candidate_breadth_holdout"]
+    assert holdout["status"] == "candidate_breadth_holdout_replayed_only"
+    assert holdout["processed_variant_count"] == 1
+    assert holdout["completed_variant_count"] == 1
+    assert holdout["selection"]["winner"] is None
+    assert holdout["metrics"]["all_fills_local_paper"] is True
+    assert Path(payload["artifacts"]["candidate_breadth_holdout"]).exists()
+
+
 def test_research_job_runs_candidate_replay_kind_with_injected_runner(tmp_path) -> None:
     model_artifact = tmp_path / "external-model.pt"
     model_artifact.write_text("unit-model", encoding="utf-8")
@@ -832,6 +887,100 @@ def _threshold_calibration_artifact(
         encoding="utf-8",
     )
     return path
+
+
+def _breadth_queue_artifact(artifact_root: Path, *, variant_id: str) -> Path:
+    fixture_dir = artifact_root / "breadth-fixtures" / variant_id
+    fixture_dir.mkdir(parents=True, exist_ok=True)
+    model_artifact = fixture_dir / "model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    training_artifact = fixture_dir / "training.json"
+    evaluation_artifact = fixture_dir / "evaluation.json"
+    candidate_parameters = {
+        "lookback": 3,
+        "timeframe": "1m",
+        "model_id": "momentum_close_v1",
+    }
+    training_artifact.write_text(
+        json.dumps(
+            {
+                "candidate_experiment_id": variant_id,
+                "candidate_parameters": candidate_parameters,
+                "source_slices": [],
+                "artifacts": {
+                    "model": str(model_artifact),
+                },
+                "metrics": {
+                    "feature_names": [
+                        "lookback_return",
+                        "last_bar_return",
+                        "bar_range",
+                        "volume_change",
+                    ],
+                    "model_artifact": str(model_artifact),
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    evaluation_artifact.write_text(
+        json.dumps(
+            {
+                "candidate_experiment_id": variant_id,
+                "candidate_parameters": candidate_parameters,
+                "training_metrics_artifact": str(training_artifact),
+                "model_artifact": str(model_artifact),
+                "artifacts": {
+                    "source_model": str(model_artifact),
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    queue_artifact = artifact_root / "candidate-breadth-queue" / "unit-queue" / "metrics.json"
+    queue_artifact.parent.mkdir(parents=True, exist_ok=True)
+    queue_artifact.write_text(
+        json.dumps(
+            {
+                "status": "candidate_breadth_queued_only",
+                "reason": "unit queue completed",
+                "variant_count": 1,
+                "variants": [
+                    {
+                        "variant_id": variant_id,
+                        "status": "variant_evaluated_only",
+                        "candidate_experiment_id": variant_id,
+                        "candidate_parameters": candidate_parameters,
+                        "training": {
+                            "status": "candidate_trained_only",
+                            "metrics_artifact": str(training_artifact),
+                            "model_artifact": str(model_artifact),
+                        },
+                        "evaluation": {
+                            "status": "candidate_evaluated_only",
+                            "evaluation_artifact": str(evaluation_artifact),
+                        },
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    return queue_artifact
+
+
+def _probability_runner(dataset, model, training_payload):  # noqa: ANN001
+    values = (0.18, 0.32, 0.49, 0.67, 0.84)
+    probabilities = tuple(values[index % len(values)] for index in range(len(dataset.labels)))
+    return {
+        "backend": "unit",
+        "operation": "unit_candidate_probabilities",
+        "probabilities": probabilities,
+        "feature_names": dataset.feature_names,
+        "feature_names_match": True,
+        "model_artifact": str(model),
+        "candidate_experiment_id": training_payload.get("candidate_experiment_id"),
+    }
 
 
 def _yahoo_snapshot(

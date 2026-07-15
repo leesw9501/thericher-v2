@@ -87,11 +87,15 @@
   was acquired.
 - Bounded candidate breadth queue reused CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
+- Bounded breadth holdout bridge reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for source calibration and
+  `snapshot=2026-06-18` for disjoint holdout replay; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next breadth holdout work should reuse the existing Yahoo training and
+- Next depth-training work should reuse the existing Yahoo training and
   holdout snapshots before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the

@@ -92,6 +92,10 @@
 - Bounded candidate breadth queue ran in Docker `research` with PyTorch CUDA,
   read `/app/market_data` read-only, and wrote queue, training, evaluation, and
   model artifacts under `/app/model_artifacts`.
+- Bounded breadth holdout bridge ran in Docker `research` with PyTorch CUDA,
+  consumed `/app/model_artifacts/candidate-breadth-queue/.../metrics.json`,
+  read `/app/market_data` read-only, and wrote breadth holdout, calibration,
+  holdout, robustness, and research job artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

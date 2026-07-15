@@ -59,6 +59,9 @@
   `local_paper`.
 - Calibration holdout replay produced `511` simulated fills across CVS, FCX,
   and KO; every fill source was verified as `local_paper`.
+- Breadth holdout bridge mini smoke produced `400` simulated fills across three
+  candidates and CVS, FCX, and KO holdout slices; every fill source was
+  verified as `local_paper`.
 
 ## Next Handoff
 

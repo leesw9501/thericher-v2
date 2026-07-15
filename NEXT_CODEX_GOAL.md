@@ -5,14 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded breadth holdout replay bridge.
+Add the first bounded depth-training candidate target.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by consuming the existing real-data candidate breadth queue and
-replaying each candidate on disjoint holdout data through the existing
-broker-free local-paper path. The goal is descriptive evidence across nearby
-candidate definitions, not a production winner, promotion rule, scheduler, or
-dashboard.
+PnL attribution by consuming the breadth holdout evidence and scheduling at
+most one candidate for a longer but still capped Docker `research` PyTorch CUDA
+training/evaluation/holdout loop. This is a GPU research scheduling decision,
+not a production winner, promotion rule, scheduler framework, or dashboard.
 
 ## Hard Boundaries
 
@@ -33,6 +32,7 @@ dashboard.
 - Do not create a broad agent framework, scheduler, promotion gate, or dashboard
   expansion.
 - Do not start an unbounded or overnight training run yet.
+- Do not call the selected depth target a production winner or recommendation.
 
 ## Required First Reads
 
@@ -63,47 +63,53 @@ dashboard.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Inventory only the current useful external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-breadth-queue\bounded-candidate-breadth-queue-smoke\metrics.json`
-   - the three variant training artifacts referenced by that queue,
-   - the three variant evaluation artifacts referenced by that queue,
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-breadth-queue-smoke.json`
+   - `D:\thericher-v2\model-artifacts\candidate-breadth-holdout\bounded-candidate-breadth-holdout-mini-smoke\metrics.json`
+   - the three variant calibration artifacts referenced by that bridge,
+   - the three variant holdout artifacts referenced by that bridge,
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-breadth-holdout-mini-smoke.json`
 3. Reuse existing local Yahoo subsets under
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`:
-   - breadth source reference:
+   - depth training/evaluation source:
      `snapshot=2026-07-09-shadow-t0-8d-probe`,
    - holdout replay:
      `snapshot=2026-06-18`.
    Avoid expensive full recursive scans unless needed.
-4. Add a small breadth holdout helper or research job path that:
-   - consumes the breadth queue artifact instead of redefining candidates,
-   - processes at most the three queued variants,
-   - reuses existing probability trace, threshold calibration/robustness, and
-     local-paper replay primitives where practical,
-   - runs bounded holdout replay for CVS, FCX, and KO from `snapshot=2026-06-18`,
-   - records per-candidate probability summaries, local-paper fill counts, PnL,
-     drawdown, and source verification,
+4. Add a small depth target helper or research job path that:
+   - consumes the breadth holdout artifact instead of redefining candidates,
+   - selects at most one candidate for deeper research scheduling using a
+     deterministic descriptive heuristic such as completed holdout first, then
+     fewer local-paper fills, lower max drawdown, higher PnL floor, and
+     variant id order,
+   - records the heuristic as `research_scheduling_only`,
+   - trains the chosen candidate with stricter-than-unbounded but deeper caps
+     than the breadth queue,
+   - evaluates and holdout-replays the depth artifact through existing
+     primitives,
+   - records probability summaries, local-paper fill counts, PnL, drawdown,
+     source verification, and artifact paths,
    - records no best/recommended candidate and no promotion/pass/fail decision.
-5. Prefer reusing the existing `candidate_breadth_queue` job shape or a small
-   artifact consumer over adding yet another broad job kind. Add a new kind only
-   if it keeps the CLI materially simpler and remains a thin leaf.
-6. Run a CPU/injected smoke baseline first. If sound, run the bounded holdout
-   bridge in Docker `research` with PyTorch CUDA and external artifacts.
+5. Prefer reusing existing candidate training/evaluation/calibration/holdout
+   primitives. Add a new job kind only if it keeps Docker dispatch materially
+   simpler and remains a thin leaf.
+6. Run a CPU/injected smoke baseline first. If sound, run the bounded depth
+   target in Docker `research` with PyTorch CUDA and external artifacts.
 7. Add focused tests proving:
-   - breadth queue artifacts are read from outside Git,
-   - no more than three variants are processed,
-   - existing trace/replay/local-paper primitives are reused,
+   - breadth holdout artifacts are read from outside Git,
+   - at most one candidate is scheduled for depth training,
+   - the scheduling heuristic is deterministic and non-promotional,
+   - existing training/evaluation/holdout/local-paper primitives are reused,
    - local-paper fills remain replayable and labeled `source: local_paper`,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing queue/training/evaluation/model/data/GPU/backend states are
-     non-fatal prepared states where relevant.
+   - missing breadth holdout/training/evaluation/model/data/GPU/backend states
+     are non-fatal prepared states where relevant.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this active holdout loop.
+  this active depth-training loop.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active goal.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -122,12 +128,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused breadth holdout, replay, Docker research, or GPU command
-used.
+Report any focused depth target, training, evaluation, holdout, Docker
+research, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add bounded breadth holdout bridge`
+`Add bounded depth candidate target`
 
 ## Completion Report
 

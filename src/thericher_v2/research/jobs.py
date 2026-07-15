@@ -12,6 +12,12 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.serialization import to_jsonable
 
+from .candidate_breadth_holdout import (
+    BoundedCandidateBreadthHoldoutResult,
+    CandidateBreadthHoldoutConfig,
+    CandidateBreadthHoldoutVariantResult,
+    run_bounded_candidate_breadth_holdout,
+)
 from .candidate_breadth_queue import (
     BoundedCandidateBreadthQueueResult,
     CandidateBreadthQueueConfig,
@@ -81,6 +87,7 @@ from .validation import (
 
 ResearchJobKind = Literal[
     "gpu_training_smoke",
+    "candidate_breadth_holdout",
     "candidate_breadth_queue",
     "candidate_training",
     "candidate_evaluation",
@@ -93,6 +100,7 @@ ResearchJobKind = Literal[
 ]
 ResearchJobStatus = Literal[
     "completed",
+    "prepared_not_breadth_holdout_replayed",
     "prepared_not_breadth_queued",
     "prepared_not_trained",
     "prepared_not_evaluated",
@@ -106,6 +114,7 @@ ResearchJobStatus = Literal[
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
     "gpu_training_smoke",
+    "candidate_breadth_holdout",
     "candidate_breadth_queue",
     "candidate_training",
     "candidate_evaluation",
@@ -123,6 +132,7 @@ class ResearchJobSpec:
     job_id: str = DEFAULT_RESEARCH_JOB_ID
     kind: ResearchJobKind = "gpu_training_smoke"
     candidate_artifact: Path | None = None
+    breadth_queue_artifact: Path | None = None
     training_metrics_artifact: Path | None = None
     evaluation_artifact: Path | None = None
     candidate_replay_artifact: Path | None = None
@@ -162,6 +172,7 @@ class ResearchJobResult:
     reason: str
     training: (
         GpuTrainingSmokeResult
+        | BoundedCandidateBreadthHoldoutResult
         | BoundedCandidateBreadthQueueResult
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
@@ -243,6 +254,7 @@ def _run_job_kind(
     candidate_probability_runner: CandidateProbabilityRunner | None,
 ) -> tuple[
     GpuTrainingSmokeResult
+    | BoundedCandidateBreadthHoldoutResult
     | BoundedCandidateBreadthQueueResult
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
@@ -272,6 +284,26 @@ def _run_job_kind(
             "completed" if training.status == "training_ran_only" else "prepared_not_trained"
         )
         return training, training_artifact, None, status
+    if spec.kind == "candidate_breadth_holdout":
+        holdout = run_bounded_candidate_breadth_holdout(
+            config=CandidateBreadthHoldoutConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                source_slices=_robustness_slices_from_data_slices(spec.data_slices),
+                holdout_slices=spec.robustness_slices,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            breadth_queue_artifact=spec.breadth_queue_artifact,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if holdout.status == "candidate_breadth_holdout_replayed_only"
+            else "prepared_not_breadth_holdout_replayed"
+        )
+        return holdout, holdout.holdout_artifact, None, status
     if spec.kind == "candidate_breadth_queue":
         breadth = run_bounded_candidate_breadth_queue(
             config=CandidateBreadthQueueConfig(
@@ -511,6 +543,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=SUPPORTED_RESEARCH_JOB_KINDS,
     )
     parser.add_argument("--candidate-artifact", type=Path)
+    parser.add_argument("--breadth-queue-artifact", type=Path)
     parser.add_argument("--training-metrics-artifact", type=Path)
     parser.add_argument("--evaluation-artifact", type=Path)
     parser.add_argument("--candidate-replay-artifact", type=Path)
@@ -539,6 +572,7 @@ def main() -> None:
         job_id=args.job_id,
         kind=args.kind,
         candidate_artifact=args.candidate_artifact,
+        breadth_queue_artifact=args.breadth_queue_artifact,
         training_metrics_artifact=args.training_metrics_artifact,
         evaluation_artifact=args.evaluation_artifact,
         candidate_replay_artifact=args.candidate_replay_artifact,
@@ -611,6 +645,34 @@ def _research_job_payload(
             "selected_backend": training.selected_backend,
             "gpu": training.gpu,
             "result": training.training_result or {},
+        }
+    elif isinstance(training, BoundedCandidateBreadthHoldoutResult):
+        base["source_breadth_queue_artifact"] = (
+            None
+            if training.source_breadth_queue_artifact is None
+            else str(training.source_breadth_queue_artifact)
+        )
+        base["candidate_breadth_holdout"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "input_variant_count": training.input_variant_count,
+            "processed_variant_count": training.processed_variant_count,
+            "completed_variant_count": training.completed_variant_count,
+            "source_slice_count": training.source_slice_count,
+            "holdout_slice_count": training.holdout_slice_count,
+            "max_bars": training.max_bars,
+            "variants": tuple(
+                _candidate_breadth_holdout_variant_payload(item)
+                for item in training.variants
+            ),
+            "metrics": training.metrics,
+            "selection": {
+                "winner": None,
+                "recommendation": None,
+                "promotion_gate": False,
+                "mode": "descriptive_breadth_holdout_only",
+            },
         }
     elif isinstance(training, BoundedCandidateBreadthQueueResult):
         base["candidate_breadth_queue"] = {
@@ -874,6 +936,8 @@ def _research_job_payload(
 def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     if isinstance(result.training, GpuTrainingSmokeResult):
         return {"training_smoke": str(result.training_artifact)}
+    if isinstance(result.training, BoundedCandidateBreadthHoldoutResult):
+        return {"candidate_breadth_holdout": str(result.training_artifact)}
     if isinstance(result.training, BoundedCandidateBreadthQueueResult):
         return {"candidate_breadth_queue": str(result.training_artifact)}
     if isinstance(result.training, BoundedCandidateEvaluationResult):
@@ -946,6 +1010,35 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     return artifacts
 
 
+def _candidate_breadth_holdout_variant_payload(
+    item: CandidateBreadthHoldoutVariantResult,
+) -> dict[str, object]:
+    return {
+        "variant_id": item.variant_id,
+        "status": item.status,
+        "reason": item.reason,
+        "candidate_experiment_id": item.candidate_experiment_id,
+        "candidate_parameters": item.candidate_parameters,
+        "training_metrics_artifact": (
+            None
+            if item.training_metrics_artifact is None
+            else str(item.training_metrics_artifact)
+        ),
+        "evaluation_artifact": (
+            None if item.evaluation_artifact is None else str(item.evaluation_artifact)
+        ),
+        "model_artifact": None if item.model_artifact is None else str(item.model_artifact),
+        "calibration_artifact": (
+            None if item.calibration_artifact is None else str(item.calibration_artifact)
+        ),
+        "holdout_artifact": None if item.holdout_artifact is None else str(item.holdout_artifact),
+        "robustness_artifact": (
+            None if item.robustness_artifact is None else str(item.robustness_artifact)
+        ),
+        "metrics": item.metrics,
+    }
+
+
 def _candidate_breadth_queue_variant_payload(
     item: CandidateBreadthVariantResult,
 ) -> dict[str, object]:
@@ -980,6 +1073,19 @@ def _candidate_breadth_queue_variant_payload(
         },
         "metrics": item.metrics,
     }
+
+
+def _robustness_slices_from_data_slices(
+    data_slices: tuple[CandidateDataSliceConfig, ...],
+) -> tuple[CandidateThresholdRobustnessSliceConfig, ...]:
+    return tuple(
+        CandidateThresholdRobustnessSliceConfig(
+            slice_id=data_slice.slice_id,
+            yahoo_snapshot=data_slice.yahoo_snapshot,
+            symbol=data_slice.symbol,
+        )
+        for data_slice in data_slices
+    )
 
 
 if __name__ == "__main__":

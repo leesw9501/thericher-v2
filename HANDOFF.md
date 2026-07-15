@@ -135,6 +135,12 @@ Implemented and pushed:
   in Docker `research` under strict caps, and records descriptive
   probability/evaluation summaries without a winner, recommendation, or
   promotion gate,
+- bounded breadth holdout bridge; it consumes the external breadth queue
+  artifact, reuses the existing threshold calibration, robustness replay, and
+  threshold holdout primitives for each queued candidate, verifies disjoint
+  holdout local-paper fills remain `source: local_paper`, and records
+  candidate-by-candidate probability/PnL/drawdown evidence without a winner,
+  recommendation, or promotion gate,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -152,7 +158,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `148 passed`
+- `155 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -196,16 +202,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded breadth holdout replay bridge:
+Add the first bounded depth-training candidate target:
 
-1. consume the external `bounded-candidate-breadth-queue-smoke` artifact,
-2. reuse each variant's existing training/evaluation artifacts and model path,
-3. run a bounded holdout/local-paper replay on the disjoint `snapshot=2026-06-18`
-   CVS, FCX, and KO slices through existing primitives,
-4. compare candidate-by-candidate holdout probability and local-paper metrics
-   descriptively,
-5. avoid selecting a production winner, promotion threshold, scheduler, or
-   dashboard expansion.
+1. consume the external `bounded-candidate-breadth-holdout-mini-smoke`
+   artifact,
+2. pick at most one candidate for deeper research scheduling using a
+   deterministic, non-promotional heuristic,
+3. run a longer but still capped Docker `research` PyTorch CUDA training pass
+   on the existing source CVS, FCX, and KO slices,
+4. evaluate and holdout-replay the depth candidate through existing
+   local-paper/holdout primitives,
+5. keep the result descriptive research evidence, not a production winner,
+   promotion threshold, scheduler, or dashboard expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

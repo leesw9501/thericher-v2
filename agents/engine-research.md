@@ -29,19 +29,19 @@
 
 ## Active Queue
 
-1. Consume the bounded breadth queue artifact and replay the same candidates on
-   disjoint holdout slices.
-2. Reuse CVS, FCX, and KO from `snapshot=2026-06-18` for holdout replay.
-3. Compare candidate variants descriptively; do not emit a production winner or
+1. Consume the bounded breadth holdout artifact and schedule at most one
+   candidate for a deeper capped training pass.
+2. Reuse CVS, FCX, and KO from the existing source and holdout snapshots.
+3. Keep the depth target descriptive; do not emit a production winner or
    promotion decision.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-breadth-queue-smoke`, status `completed`,
-  variants `m1_lb3_b10_s10`, `m1_lb5_b10_s10`, and `m1_lb8_b10_s10`,
-  trained/evaluated variants `3/3`, Docker `research` GPU `NVIDIA GeForce RTX
-  4090`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-breadth-queue\bounded-candidate-breadth-queue-smoke`.
+- Last completed: `bounded-candidate-breadth-holdout-mini-smoke`, status
+  `completed`, variants `m1_lb3_b10_s10`, `m1_lb5_b10_s10`, and
+  `m1_lb8_b10_s10`, processed/completed variants `3/3`, total local-paper fills
+  `400`, Docker `research` GPU `NVIDIA GeForce RTX 4090`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-breadth-holdout\bounded-candidate-breadth-holdout-mini-smoke`.
 
 ## Done Recently
 
@@ -116,10 +116,15 @@
   `research` smoke trained and evaluated three nearby `m1_lb*_b10_s10`
   variants on CVS, FCX, and KO under strict caps and recorded no winner,
   recommendation, or promotion gate.
+- Added the first bounded breadth holdout bridge. The Docker `research` smoke
+  consumed the breadth queue artifact, calibrated each candidate on the source
+  CVS/FCX/KO slices, replayed disjoint holdout CVS/FCX/KO slices through
+  local-paper, verified all fills were `local_paper`, and recorded no winner or
+  promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should consume the breadth queue artifact and add a
-  bounded holdout/local-paper bridge before starting broader scheduling, longer
-  training, or claiming robust model quality.
+  engine-research task should consume the breadth holdout artifact and add a
+  bounded depth-training target before starting broader scheduling or claiming
+  robust model quality.

@@ -85,6 +85,10 @@ docker compose --profile research run --rm --no-deps research thericher-v2-resea
 docker compose --profile research run --rm --no-deps --build research thericher-v2-research-job --job-id bounded-candidate-breadth-queue-smoke --kind candidate_breadth_queue --max-bars 180 --max-epochs 3 --max-steps 64 --data-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-breadth-holdout-mini-smoke --kind candidate_breadth_holdout --breadth-queue-artifact /app/model_artifacts/candidate-breadth-queue/bounded-candidate-breadth-queue-smoke/metrics.json --max-bars 60 --data-slice cvs_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO --robustness-slice cvs_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice fcx_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice ko_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

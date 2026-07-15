@@ -1,5 +1,11 @@
 """Research and validation helpers."""
 
+from .candidate_breadth_holdout import (
+    BoundedCandidateBreadthHoldoutResult,
+    CandidateBreadthHoldoutConfig,
+    CandidateBreadthHoldoutVariantResult,
+    run_bounded_candidate_breadth_holdout,
+)
 from .candidate_breadth_queue import (
     BoundedCandidateBreadthQueueResult,
     CandidateBreadthQueueConfig,
@@ -110,6 +116,7 @@ from .validation import (
 
 __all__ = [
     "BoundedCandidateEvaluationResult",
+    "BoundedCandidateBreadthHoldoutResult",
     "BoundedCandidateBreadthQueueResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
@@ -118,6 +125,8 @@ __all__ = [
     "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
     "CandidateEvaluationConfig",
+    "CandidateBreadthHoldoutConfig",
+    "CandidateBreadthHoldoutVariantResult",
     "CandidateBreadthQueueConfig",
     "CandidateBreadthVariantConfig",
     "CandidateBreadthVariantResult",
@@ -164,6 +173,7 @@ __all__ = [
     "parse_candidate_data_slices",
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
+    "run_bounded_candidate_breadth_holdout",
     "run_bounded_candidate_breadth_queue",
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",

@@ -84,6 +84,10 @@
   training/evaluation primitives, capped variants at three, and did not emit a
   best candidate, promotion gate, dashboard, scheduler, or autonomous agent
   process.
+- Breadth holdout bridge added one thin Docker dispatch kind because the bridge
+  needs to run inside `research`; it reused existing calibration/holdout
+  primitives, capped variants at three, and did not emit a best candidate,
+  promotion gate, dashboard, scheduler, or autonomous agent process.
 
 ## Next Handoff
 
