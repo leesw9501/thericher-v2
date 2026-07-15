@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review probability calibration for threshold and artifact sprawl.
+1. Review holdout replay for threshold reuse and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -72,6 +72,10 @@
 - Multi-slice candidate training reused the existing candidate dataset feature
   builder, shared the slice parser instead of cloning it, kept PyTorch in
   Docker `research`, and did not add a new replay path or promotion gate.
+- Probability calibration added one deterministic threshold-grid helper and one
+  job kind, reused the existing robustness/local-paper path, and did not emit a
+  best threshold, promotion gate, dashboard, scheduler, or autonomous agent
+  process.
 
 ## Next Handoff
 

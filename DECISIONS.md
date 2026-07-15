@@ -367,3 +367,19 @@ The engine needs one bounded path from real local data to a model artifact,
 evaluation artifact, and robustness replay without changing feature shape,
 downloading data into Git, adding a new replay path, introducing credentials,
 or creating a promotion gate.
+
+## 2026-07-15 - Bounded probability-derived threshold calibration
+
+Decision: extend the research job runner with one
+`candidate_threshold_calibration` job kind. It runs or consumes one bounded
+probability trace per explicit slice, derives a capped deterministic threshold
+grid from observed probability quantiles, and then reuses the existing
+threshold robustness/local-paper replay path. Calibration artifacts are written
+outside Git and deliberately avoid best-threshold, pass/fail, promotion, or
+deployment fields.
+
+Reason: the first multi-slice candidate produced zero fills under the static
+threshold grid because all observed probabilities were below the lowest static
+buy threshold. Calibration should explain and probe that behavior while staying
+descriptive, broker-free, credential-free, PyTorch-in-Docker-only, and free of a
+new replay path or v1-style gate.

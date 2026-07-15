@@ -119,6 +119,11 @@ Implemented and pushed:
   training/evaluation can now consume explicit local Yahoo `(snapshot, symbol)`
   slices, preserve the existing four-feature shape, record per-slice row counts
   and provenance, and write model/evaluation artifacts outside Git,
+- bounded multi-slice probability calibration probe; it derives a small
+  deterministic threshold grid from observed candidate probability quantiles,
+  replays that grid through the existing threshold robustness/local-paper path,
+  writes descriptive artifacts outside Git, and records no best threshold,
+  promotion, or pass/fail gate,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -136,7 +141,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `124 passed`
+- `134 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -180,15 +185,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded multi-slice probability calibration probe:
+Add the first bounded calibration holdout replay:
 
-1. reuse the multi-slice training/evaluation artifacts and explicit local Yahoo
-   data,
-2. inspect probability traces for the multi-slice candidate,
-3. derive a small descriptive threshold grid from observed probability
-   quantiles,
-4. replay the grid through the existing threshold robustness path,
-5. keep the result as research evidence, not a promotion gate.
+1. reuse the multi-slice calibration artifact and its derived threshold grid,
+2. inventory the earlier local Yahoo `snapshot=2026-06-18` for usable holdout
+   CVS, FCX, and KO slices,
+3. run bounded probability traces on holdout slices through Docker `research`
+   if data is present,
+4. replay the existing calibration grid through the existing threshold
+   robustness/local-paper path,
+5. compare holdout fill/PnL behavior descriptively without selecting a winner
+   or promoting a model.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

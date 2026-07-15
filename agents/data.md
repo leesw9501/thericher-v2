@@ -80,12 +80,14 @@
   additional data was acquired.
 - Bounded multi-slice training reused CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
+- Bounded probability calibration reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next calibration work should prefer the existing Yahoo snapshots above before
-  acquiring anything new.
+- Next holdout work should inventory `snapshot=2026-06-18` for CVS, FCX, and
+  KO before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

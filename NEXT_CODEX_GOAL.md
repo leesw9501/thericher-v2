@@ -5,14 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded multi-slice probability calibration probe.
+Add the first bounded calibration holdout replay.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by deriving a small descriptive threshold grid from the
-multi-slice candidate's observed probability traces, then replaying that grid
-through the existing local-paper robustness path. The goal is to learn why the
-first multi-slice candidate produced zero fills under the previous static
-threshold grid, not to promote a model.
+PnL attribution by taking the threshold grid derived by the multi-slice
+calibration probe and replaying that same grid on a disjoint local Yahoo
+snapshot if usable holdout data exists. The goal is to detect same-slice
+calibration circularity before deeper training, not to select a winning
+threshold or promote a model.
 
 ## Hard Boundaries
 
@@ -62,42 +62,47 @@ threshold grid, not to promote a model.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory the latest external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-multislice-training-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-multislice-evaluation-smoke`
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-training-smoke.json`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-evaluation-smoke.json`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-robustness-smoke.json`
-3. Inventory only the small useful local Yahoo subset already identified under
+2. Inventory the latest external calibration artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-candidate-multislice-calibration-smoke`
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-calibration-smoke-robustness`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-multislice-calibration-smoke.json`
+   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-cvs`
+   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-fcx`
+   - `D:\thericher-v2\model-artifacts\candidate-probability-trace\bounded-candidate-multislice-calibration-smoke-ko`
+3. Inventory only the useful local Yahoo holdout subset under
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
-   Prefer `snapshot=2026-07-09-shadow-t0-8d-probe` for CVS, FCX, and KO.
-4. Add a small calibration helper or research job option that:
-   - consumes candidate probability traces or runs bounded trace inference once
-     per selected slice,
-   - derives a capped threshold grid from observed probability quantiles or
-     ranges,
-   - records the probability ranges and selected threshold pairs,
-   - replays the grid through the existing threshold robustness/local-paper path,
-   - writes calibration artifacts outside Git.
-5. Keep calibration output descriptive only. Do not emit pass/fail, promotion,
-   deployment, or gate decisions.
-6. Add focused tests proving:
-   - calibration artifacts are outside Git,
-   - generated thresholds are capped, deterministic, and derived from trace
-     probabilities,
+   Start with `snapshot=2026-06-18` and check whether CVS, FCX, and KO are
+   present. Avoid expensive full recursive scans unless needed.
+4. Add a thin calibration-holdout helper or research job option that:
+   - consumes the existing calibration artifact's threshold pairs unchanged,
+   - records the source calibration artifact and holdout snapshot/symbols,
+   - runs or consumes bounded holdout probability traces once per selected
+     slice,
+   - replays the unchanged threshold grid through the existing threshold
+     robustness/local-paper path,
+   - writes holdout artifacts outside Git,
+   - records probability ranges, fill counts, PnL/drawdown, and local-paper
+     source verification descriptively.
+5. If the requested holdout symbols are absent from existing local data, create
+   a non-fatal prepared artifact and record the exact data needed in
+   `agents/data.md` and the completion report.
+6. Keep holdout output descriptive only. Do not emit best/recommended threshold,
+   pass/fail, promotion, deployment, or gate decisions.
+7. Add focused tests proving:
+   - holdout artifacts are outside Git,
+   - threshold pairs are consumed from the calibration artifact unchanged,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing traces/model/GPU/backend records a non-fatal prepared state where
-     relevant,
+   - missing calibration artifact, missing holdout data, missing model/GPU, and
+     missing backend record non-fatal prepared states where relevant,
    - downstream robustness replay still uses only `source: local_paper` fills.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Start from `D:\market_data`.
 - Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this active calibration loop.
+  this active holdout loop.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active goal.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -116,12 +121,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused calibration, trace, robustness, Docker research, or GPU
+Report any focused holdout, trace, robustness, Docker research, or GPU
 inference command used.
 
 ## Suggested Commit Message
 
-`Add bounded probability calibration probe`
+`Add bounded calibration holdout replay`
 
 ## Completion Report
 

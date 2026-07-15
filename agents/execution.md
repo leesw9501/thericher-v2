@@ -54,6 +54,9 @@
   remains labeled with `source: local_paper`.
 - Multi-slice candidate robustness replay produced zero fills under the existing
   grid; no non-local fill source was observed.
+- Probability-derived calibration robustness replay produced `524` simulated
+  fills across CVS, FCX, and KO; every fill source was verified as
+  `local_paper`.
 
 ## Next Handoff
 

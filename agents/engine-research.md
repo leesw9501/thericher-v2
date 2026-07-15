@@ -29,19 +29,21 @@
 
 ## Active Queue
 
-1. Inspect the multi-slice candidate probability traces and derive a small
-   descriptive threshold grid from observed probability quantiles.
-2. Replay the calibrated grid through threshold robustness across CVS, FCX, and
-   KO without a promotion gate.
-3. Decide the next bounded model experiment from calibration evidence, not from
-   a single deterministic sample run.
+1. Reuse the calibration-derived threshold grid on a disjoint local Yahoo
+   holdout snapshot before treating the grid as useful evidence.
+2. Inventory whether `snapshot=2026-06-18` contains CVS, FCX, and KO holdout
+   bars; record missing symbols as operator/data needs if not present.
+3. Decide the next bounded model experiment from holdout behavior, not from the
+   same-slice calibrated replay.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-multislice-robustness-smoke`, status
-  `completed`, slices `CVS`, `FCX`, `KO`, completed variants `15`, total fills
-  `0`, PnL range `0` to `0`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`.
+- Last completed: `bounded-candidate-multislice-calibration-smoke`, status
+  `completed`, slices `CVS`, `FCX`, `KO`, derived threshold pairs
+  `0.462/0.461`, `0.463/0.461`, `0.464/0.460`, `0.465/0.460`, completed
+  variants `12`, total fills `524`, PnL range `-0.6468` to `-0.0064`,
+  artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-candidate-multislice-calibration-smoke`.
 
 ## Done Recently
 
@@ -103,9 +105,14 @@
   from the recorded source slices, then replayed it through threshold
   robustness. The existing threshold grid produced zero fills, so calibration
   is the next research step.
+- Added the first bounded probability-derived calibration probe. The Docker
+  `research` smoke used PyTorch CUDA to trace CVS, FCX, and KO, derived four
+  quantile-based threshold pairs, replayed them through the existing
+  robustness/local-paper path, and kept the result descriptive with no
+  promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should calibrate thresholds from multi-slice probability
-  traces before starting broader scheduling or claiming robust model quality.
+  engine-research task should run a bounded holdout replay before starting
+  broader scheduling, longer training, or claiming robust model quality.

@@ -83,6 +83,9 @@
   `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-multislice-evaluation-smoke`,
   then replayed robustness under
   `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-multislice-robustness-smoke`.
+- Bounded multi-slice probability calibration ran in Docker `research` with
+  PyTorch CUDA, read `/app/market_data` read-only, and wrote calibration plus
+  robustness artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 
