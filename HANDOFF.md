@@ -71,6 +71,8 @@ Implemented and pushed:
 - GPU candidate smoke preparation artifact for the first longer research
   candidate, selected from walk-forward metrics without training or storing
   artifacts in the repo,
+- research-profile GPU runtime smoke CLI that records `nvidia-smi` readiness
+  and selected candidate metadata outside Git,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -88,7 +90,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `45 passed`
+- `49 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -128,12 +130,12 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first research-profile GPU runtime smoke:
+Add the first research-profile-only GPU compute smoke:
 
-1. inspect the selected candidate smoke artifact,
-2. verify whether the Docker research profile can run a tiny GPU-bound command,
-3. keep any GPU dependency out of the base engine path,
-4. write smoke outputs outside Git.
+1. inspect the GPU runtime smoke artifact,
+2. choose or verify a research-only GPU compute dependency,
+3. run a tiny bounded tensor/compute smoke if the dependency is available,
+4. write all generated outputs outside Git.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

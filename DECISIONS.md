@@ -203,3 +203,13 @@ the base engine.
 Reason: GPU time should start from explicit evidence, but candidate selection
 must not become a promotion gate or dependency trap before the research runtime
 is proven.
+
+## 2026-07-15 - Research GPU runtime smoke
+
+Decision: the first GPU runtime smoke uses only existing `nvidia-smi` readiness
+and writes a `runtime_ready_only` or `prepared_not_trained` artifact under the
+external model artifact root. It does not add PyTorch, CUDA, or other heavy GPU
+packages to the base engine.
+
+Reason: GPU compute work needs a reproducible research path, but base engine
+tests and startup must remain light and broker-free.

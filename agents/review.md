@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review research-profile GPU runtime smoke for dependency creep.
+1. Review research-profile GPU compute smoke for dependency creep.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -40,6 +40,7 @@
   promotion gate or dashboard expansion.
 - Walk-forward stayed capped and artifact-only, with no promotion gate.
 - GPU candidate smoke stayed metadata-only and did not add a promotion gate.
+- GPU runtime smoke stayed `nvidia-smi`-only and outside Git.
 
 ## Next Handoff
 

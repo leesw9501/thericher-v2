@@ -29,12 +29,11 @@
 
 ## Active Queue
 
-1. Verify the research-profile GPU runtime path without adding heavy
-   dependencies to the base engine.
+1. Add a research-profile-only GPU compute smoke for the selected candidate.
 2. Keep short walk-forward experiments available for breadth while a longer
    candidate runs.
-3. Start the first bounded GPU candidate only after runtime smoke artifacts are
-   outside Git.
+3. Start the first bounded GPU candidate training only after compute smoke
+   artifacts are outside Git.
 
 ## Running Jobs
 
@@ -58,8 +57,10 @@
   and FCX walk-forward artifacts outside Git.
 - Selected `m1_lb3_b10_s10` as the first walk-forward GPU candidate and wrote a
   `prepared_not_trained` metadata artifact outside Git.
+- Added a GPU runtime smoke artifact showing RTX 4090 readiness without adding
+  heavy GPU dependencies to the base engine.
 
 ## Next Handoff
 
-- Start with a research-profile GPU runtime smoke; do not add GPU dependencies
-  to the base engine.
+- Start with a research-profile-only GPU compute smoke; keep heavy dependencies
+  out of the base engine.
