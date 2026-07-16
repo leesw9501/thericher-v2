@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse exit-timing diagnostic overlay target.
+Build a bounded entry-adverse exit-policy sketch target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by comparing simple diagnostic exit overlays against existing
-local-paper exits after sell-latency attribution showed loss-bearing segments
-waited longer for sell-threshold signals and moved more adversely before exit.
+attribution by turning the completed sell-latency and exit-timing overlay
+evidence into a small research-only exit-policy family that can be tested later
+without selecting a policy or changing execution behavior now.
 
 ## Hard Boundaries
 
@@ -68,26 +68,25 @@ waited longer for sell-threshold signals and moved more adversely before exit.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-sourcebreadth-amgn-loss-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-3. Compare diagnostic overlays against existing local-paper trade paths:
-   - fixed 2-bar, 3-bar, and 5-bar exits,
-   - adverse-move marks at the existing bounded path context,
-   - existing local-paper sell-threshold exits,
-   - fee-aware outcome deltas by loss-bearing and non-negative segment group.
-4. Keep overlay outcomes labeled `source: diagnostic_overlay`; do not mutate or
-   replace existing `source: local_paper` fills.
+3. Describe a compact research-only exit-policy family that could later be
+   replayed, for example:
+   - fixed max-hold overlays,
+   - sell-latency-conditioned exits,
+   - adverse-move-conditioned exits,
+   - exceptions that protect quick non-negative exits.
+4. Record constraints, open risks, and required future replay evidence without
+   selecting or naming any policy as best, passed, promoted, or production
+   ready.
 5. Write one compact descriptive artifact outside Git under
    `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
-6. Keep all results descriptive only. Do not rank data sources, select a
-   branch, define promotion criteria, or produce a pass/fail field.
-7. Do not train, rerun replay, add features, search thresholds, change
+6. Do not train, rerun replay, add features, search thresholds, change
    preprocessing, start a model search, add a scheduler, expand the dashboard,
    touch broker behavior, or add a new job kind unless a referenced artifact is
    missing or corrupt.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +114,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse exit-timing overlay`
+`Add bounded entry-adverse exit-policy sketch`
 
 ## Completion Report
 
@@ -127,6 +126,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- exit-timing overlay findings,
+- exit-policy sketch findings,
 - what was intentionally not built,
 - next goal.

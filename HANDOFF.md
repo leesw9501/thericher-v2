@@ -462,6 +462,13 @@ Implemented and pushed:
   non-negative segments, recorded `4` of `5` loss-bearing segments at or above
   `5` bars versus `0` of `6` non-negative segments, and showed loss-bearing
   segments had larger average adverse movement before sell,
+- bounded entry-adverse exit-timing diagnostic overlay; it consumed existing
+  sell-latency, signal-hygiene, AMGN loss, and wider-sample signal-quality
+  artifacts plus selected local Yahoo rows, reran no training or replay, labeled
+  all fixed 2/3/5-bar overlay outcomes as `source: diagnostic_overlay`, left
+  `source: local_paper` fills unchanged, and found fixed 2-bar exits improved
+  `5` of `5` loss-bearing segments on average while worsening `4` of `6`
+  non-negative segments,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -526,14 +533,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse exit-timing diagnostic overlay target:
+Start one bounded entry-adverse exit-policy sketch target:
 
-1. consume the completed sell-latency, signal-hygiene, AMGN loss, and
-   wider-sample signal-quality artifacts,
-2. compare fixed 2/3/5-bar diagnostic exits and adverse-move overlay marks
-   against the existing local-paper exits without changing replay fills,
-3. write one compact artifact outside Git that describes whether a simple exit
-   overlay would have reduced the observed loss paths,
+1. consume the completed exit-timing overlay and sell-latency artifacts,
+2. describe a small research-only exit-policy family that could preserve quick
+   non-negative exits while limiting delayed loss paths,
+3. write one compact artifact outside Git that names constraints for a future
+   replay target without running replay or selecting a policy,
 4. avoid training, replay reruns, feature changes, broad data search,
    threshold search, branch ranking, dashboards, schedulers, broker behavior,
    or report/gate expansion.

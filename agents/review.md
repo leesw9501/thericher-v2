@@ -25,8 +25,8 @@
 
 ## Active Queue
 
-1. Review the next artifact-only exit-timing overlay diagnostic for bounded
-   scope and artifact sprawl.
+1. Review the next artifact-only exit-policy sketch for bounded scope and
+   artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -296,10 +296,15 @@
   evidence. It added no helper, code path, job kind, CLI, report family, gate,
   dashboard, scheduler, broker path, threshold search, retraining, replay
   rerun, feature/model axis, or model-promotion language.
+- Exit-timing diagnostic overlay stayed artifact-only and reused existing
+  external evidence plus selected local rows. It added no helper, code path,
+  job kind, CLI, report family, gate, dashboard, scheduler, broker path,
+  threshold search, retraining, replay rerun, feature/model axis, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded exit-timing overlay diagnostic before
-  allowing another feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one bounded exit-policy sketch before allowing
+  another feature-set, regularization value, or threshold-only branch.

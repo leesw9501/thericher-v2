@@ -204,11 +204,13 @@
 - Sell-latency attribution reran no execution, consumed existing local-paper
   exit timestamps and source checks, and kept diagnostic timing separate from
   fill evidence.
+- Exit-timing diagnostic overlay reran no execution, labeled fixed-horizon
+  outcomes as `diagnostic_overlay`, and did not mutate existing
+  `source: local_paper` fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next exit-timing overlay should consume existing local-paper evidence
-  only, label overlays separately from fills, and must not touch broker
-  submit/cancel code.
+- The next exit-policy sketch should remain research-only, consume existing
+  local-paper evidence, and must not touch broker submit/cancel code.

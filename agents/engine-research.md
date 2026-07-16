@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse exit-timing diagnostic overlay target before
-   another feature-set, regularization value, or threshold-only branch is tried.
+1. Run one bounded entry-adverse exit-policy sketch target before another
+   feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -334,6 +334,13 @@
   `6.6` bars to first sell signal versus `1.333333333333` for non-negative
   segments, and recorded larger adverse movement before sell in the
   loss-bearing group.
+- Last completed:
+  `bounded-entry-adverse-exit-timing-overlay-20260716`, status
+  `entry_adverse_exit_timing_overlay_only`, consumed existing artifacts and
+  selected local Yahoo rows, labeled fixed 2/3/5-bar overlays as
+  `diagnostic_overlay`, preserved local-paper fills, found fixed 2-bar exits
+  improved `5` of `5` loss-bearing segments on average, and also worsened
+  `4` of `6` non-negative segments.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -639,10 +646,13 @@
   broader than the AMGN zero-range row. The next evidence should compare simple
   diagnostic exit overlays against the existing local-paper exits without
   changing replay.
+- Exit-timing overlay showed a real loss-side benefit but also a non-negative
+  segment trade-off. The next evidence should sketch a research-only exit
+  policy family before any replay rerun or code change.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded exit-timing diagnostic overlay from existing
-  entry-adverse artifacts before another feature-set, preprocessing,
-  regularization value, or threshold-only branch.
+  task should run one bounded exit-policy sketch from existing entry-adverse
+  artifacts before another feature-set, preprocessing, regularization value, or
+  threshold-only branch.
