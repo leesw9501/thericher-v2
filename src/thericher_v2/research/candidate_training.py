@@ -6,6 +6,7 @@ import csv
 import gzip
 import importlib.util
 import json
+import math
 import os
 import subprocess
 from collections import Counter
@@ -27,6 +28,8 @@ MAX_CANDIDATE_TRAINING_STEPS = 1024
 MAX_CANDIDATE_TRAINING_BARS = 512
 DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS = 8
 MAX_CANDIDATE_TRAINING_HIDDEN_UNITS = 64
+DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY = 0.0
+MAX_CANDIDATE_TRAINING_WEIGHT_DECAY = 0.1
 MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 CORE_FEATURE_SET_ID = "core_v1"
@@ -58,6 +61,7 @@ class CandidateTrainingConfig:
     min_examples: int = 8
     learning_rate: float = 0.01
     hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
+    weight_decay: float = DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -86,6 +90,11 @@ class CandidateTrainingConfig:
             self.hidden_units,
             field_name="hidden_units",
             ceiling=MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
+        )
+        _validate_non_negative_float_cap(
+            self.weight_decay,
+            field_name="weight_decay",
+            ceiling=MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
         )
 
 
@@ -143,6 +152,7 @@ class BoundedCandidateTrainingResult:
     max_epochs: int
     max_steps: int
     hidden_units: int
+    weight_decay: float
     metrics: dict[str, Any]
     metrics_artifact: Path
     model_artifact: Path | None = None
@@ -316,6 +326,7 @@ def _run_candidate_training_result(
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
         hidden_units=config.hidden_units,
+        weight_decay=config.weight_decay,
         metrics=metrics,
         metrics_artifact=metrics_artifact,
         model_artifact=model_artifact,
@@ -355,6 +366,7 @@ def _prepared_result(
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
         hidden_units=config.hidden_units,
+        weight_decay=config.weight_decay,
         metrics={},
         metrics_artifact=metrics_artifact,
     )
@@ -676,7 +688,11 @@ def _run_torch_cuda_candidate_training(
         torch.nn.ReLU(),
         torch.nn.Linear(config.hidden_units, 1),
     ).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate)
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=config.learning_rate,
+        weight_decay=config.weight_decay,
+    )
     loss_fn = torch.nn.BCEWithLogitsLoss()
     with torch.no_grad():
         initial_loss = loss_fn(model(x), y)
@@ -707,6 +723,7 @@ def _run_torch_cuda_candidate_training(
             "candidate_parameters": candidate.get("candidate_parameters") or {},
             "feature_names": dataset.feature_names,
             "hidden_units": config.hidden_units,
+            "weight_decay": config.weight_decay,
             "state_dict": model.state_dict(),
         },
         model_artifact,
@@ -721,6 +738,7 @@ def _run_torch_cuda_candidate_training(
         "feature_count": len(dataset.feature_names),
         "feature_names": dataset.feature_names,
         "hidden_units": config.hidden_units,
+        "weight_decay": config.weight_decay,
         "initial_loss": f"{initial_loss.item():.6f}",
         "final_loss": f"{final_loss.item():.6f}",
         "accuracy": f"{accuracy.item():.6f}",
@@ -759,6 +777,8 @@ def _candidate_training_payload(
             "max_steps": result.max_steps,
             "hidden_units": result.hidden_units,
             "model_axis": _model_axis_payload(result.hidden_units),
+            "weight_decay": result.weight_decay,
+            "regularization_axis": _regularization_axis_payload(result.weight_decay),
             "metrics": result.metrics,
             "artifacts": {
                 "metrics": str(result.metrics_artifact),
@@ -776,6 +796,15 @@ def _model_axis_payload(hidden_units: int) -> dict[str, Any]:
     return {
         "axis": "hidden_units",
         "hidden_units": hidden_units,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+
+
+def _regularization_axis_payload(weight_decay: float) -> dict[str, Any]:
+    return {
+        "axis": "weight_decay",
+        "weight_decay": weight_decay,
         "descriptive_only": True,
         "promotion_gate": False,
     }
@@ -992,6 +1021,20 @@ def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
 def _validate_positive_cap(value: int, *, field_name: str, ceiling: int) -> None:
     if value <= 0:
         raise ValueError(f"{field_name} must be positive")
+    if value > ceiling:
+        raise ValueError(f"{field_name} must be <= {ceiling}")
+
+
+def _validate_non_negative_float_cap(
+    value: float,
+    *,
+    field_name: str,
+    ceiling: float,
+) -> None:
+    if not math.isfinite(value):
+        raise ValueError(f"{field_name} must be finite")
+    if value < 0:
+        raise ValueError(f"{field_name} must be non-negative")
     if value > ceiling:
         raise ValueError(f"{field_name} must be <= {ceiling}")
 

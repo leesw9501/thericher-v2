@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded regularization model-axis branch for saturated feature outputs.
+Build a bounded feature-normalization branch for saturated candidate outputs.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by testing whether one capped training regularization selector
-can reduce source-side probability saturation before the next replay loop.
+PnL attribution by testing whether one artifact-driven input normalization
+selector can reduce source-side probability saturation before the next replay
+loop.
 
 ## Hard Boundaries
 
@@ -28,10 +29,10 @@ can reduce source-side probability saturation before the next replay loop.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Do not start a broad scheduler, agent framework, promotion gate, or dashboard
-  expansion.
-- Do not call any threshold, candidate, feature set, or model best,
-  recommended, passed, promoted, or production ready.
+- Do not start a broad scheduler, agent framework, promotion gate, dashboard
+  expansion, preprocessing search, or optimizer search.
+- Do not call any threshold, candidate, feature set, preprocessing branch, or
+  model best, recommended, passed, promoted, or production ready.
 
 ## Required First Reads
 
@@ -62,32 +63,40 @@ can reduce source-side probability saturation before the next replay loop.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-hidden4-bar-pressure-contrast-smoke-20260716`
-   - `bounded-hidden4-derivation-guard-replay-cap2-20260716`
+   - `bounded-weightdecay-bar-pressure-regularization-smoke-20260716`
+   - `bounded-weightdecay-bar-pressure-regularization-replay-cap2-20260716`
+   - `bounded-weightdecay-opportunity-attribution-20260716`
    - `bounded-hidden4-opportunity-attribution-20260716`
-   - `bounded-hidden16-bar-pressure-model-axis-smoke-20260716`
-3. Inspect candidate training optimizer/config flow before adding code.
-4. Add exactly one bounded regularization selector, preferably `weight_decay`,
-   to candidate training and candidate feature-branch jobs only.
+3. Inspect candidate training, evaluation, and probability inference feature
+   tensor flow before adding code.
+4. Add exactly one bounded preprocessing selector, preferably
+   `feature_standardization`, to candidate training and candidate
+   feature-branch jobs only.
 5. Keep defaults behavior-compatible. Evaluation, replay, attribution, and
    broker-facing code must remain checkpoint/artifact-driven rather than
-   accepting an independent regularization value.
-6. Record the regularization axis in training and feature-branch artifacts with
+   accepting an independent preprocessing value.
+6. Persist any feature normalization statistics in external model/training
+   artifacts and make evaluation/probability inference consume them from the
+   artifact lineage.
+7. Record the preprocessing axis in training and feature-branch artifacts with
    descriptive-only metadata and no model-promotion language.
-7. Add focused tests proving:
-   - default training behavior remains unchanged,
-   - invalid or excessive regularization values are rejected,
+8. Add focused tests proving:
+   - default feature tensors remain unchanged,
+   - invalid preprocessing selectors are rejected,
    - the research job runner passes the selector only to training and
      feature-branch jobs,
+   - evaluation/probability paths use artifact-carried normalization metadata,
+   - generated artifacts are outside Git or mocked in tests,
    - PyTorch stays confined to Docker `research` and local tests do not import
      torch.
-8. Run a bounded Docker `research` feature-branch smoke on existing CVS, FCX,
-   and KO local data if the code change is sound. Prefer the current
-   `core_plus_bar_pressure_v1` branch with the regularization selector.
-9. If the feature-branch smoke completes, run the existing cap-limited
-   feature-branch replay or opportunity attribution path only as needed to
-   compare source saturation and holdout opportunity evidence.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Run a bounded Docker `research` feature-branch smoke on existing CVS, FCX,
+   and KO local data if the code change is sound. Prefer
+   `core_plus_bar_pressure_v1`, `hidden_units=4`, and the new normalization
+   selector.
+10. If the feature-branch smoke completes, run the existing cap-limited
+    feature-branch replay or opportunity attribution path only as needed to
+    compare source saturation and holdout opportunity evidence.
+11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +124,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded regularization model axis`
+`Add bounded feature normalization branch`
 
 ## Completion Report
 
@@ -127,6 +136,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- regularization branch findings,
+- feature-normalization branch findings,
 - what was intentionally not built,
 - next recommended goal.

@@ -144,13 +144,17 @@
 - Feature-branch replay opportunity attribution consumed existing guarded
   replay, threshold robustness, and probability trace artifacts for CVS, FCX,
   and KO holdout slices; no additional data was acquired.
+- Regularization model-axis branch reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for training/evaluation and
+  disjoint CVS, FCX, and KO from `snapshot=2026-06-18` for cap-2 holdout
+  replay and opportunity attribution; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while regularization model-axis work reuses existing local snapshots
-  and external artifact lineage.
+  visible while feature-normalization work reuses existing local snapshots and
+  external artifact lineage.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

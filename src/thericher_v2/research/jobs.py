@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
@@ -102,12 +103,15 @@ from .candidate_threshold_sweep import (
 )
 from .candidate_training import (
     DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
+    DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
+    MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
     CandidateTrainerRunner,
     CandidateTrainingConfig,
+    _regularization_axis_payload,
     parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
@@ -205,6 +209,7 @@ class ResearchJobSpec:
     model_artifact: Path | None = None
     candidate_feature_set: str | None = None
     candidate_hidden_units: int | None = None
+    candidate_weight_decay: float | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
     max_bars: int = 120
@@ -247,6 +252,13 @@ class ResearchJobSpec:
                     "candidate_hidden_units must be <= "
                     f"{MAX_CANDIDATE_TRAINING_HIDDEN_UNITS}"
                 )
+        if self.candidate_weight_decay is not None:
+            if self.kind not in {"candidate_training", "candidate_feature_branch"}:
+                raise ValueError(
+                    "candidate_weight_decay is only supported for candidate "
+                    "training or feature branch jobs"
+                )
+            _validate_candidate_weight_decay(self.candidate_weight_decay)
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -477,6 +489,9 @@ def _run_job_kind(
                 max_bars=spec.max_bars,
                 hidden_units=spec.candidate_hidden_units
                 or DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
+                weight_decay=spec.candidate_weight_decay
+                if spec.candidate_weight_decay is not None
+                else DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -526,6 +541,9 @@ def _run_job_kind(
                 max_steps=spec.max_steps,
                 hidden_units=spec.candidate_hidden_units
                 or DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
+                weight_decay=spec.candidate_weight_decay
+                if spec.candidate_weight_decay is not None
+                else DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -810,6 +828,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=SUPPORTED_CANDIDATE_FEATURE_SETS,
     )
     parser.add_argument("--hidden-units", type=int, dest="candidate_hidden_units")
+    parser.add_argument("--weight-decay", type=float, dest="candidate_weight_decay")
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
     parser.add_argument("--max-bars", type=int, default=120)
@@ -852,6 +871,7 @@ def main() -> None:
         model_artifact=args.model_artifact,
         candidate_feature_set=args.candidate_feature_set,
         candidate_hidden_units=args.candidate_hidden_units,
+        candidate_weight_decay=args.candidate_weight_decay,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
         max_bars=args.max_bars,
@@ -1061,6 +1081,8 @@ def _research_job_payload(
                 "descriptive_only": True,
                 "promotion_gate": False,
             },
+            "weight_decay": training.weight_decay,
+            "regularization_axis": _regularization_axis_payload(training.weight_decay),
             "metrics": training.metrics,
         }
     elif isinstance(training, BoundedCandidateEvaluationResult):
@@ -1102,6 +1124,7 @@ def _research_job_payload(
             "reason": training.reason,
             "gpu": training.gpu,
             "feature_set_id": training.feature_set_id,
+            "regularization_axis": _regularization_axis_payload(training.weight_decay),
             "training_status": None
             if training.training is None
             else training.training.status,
@@ -1617,6 +1640,18 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
     if result.model_artifact is not None:
         artifacts["model"] = str(result.model_artifact)
     return artifacts
+
+
+def _validate_candidate_weight_decay(value: float) -> None:
+    if not math.isfinite(value):
+        raise ValueError("candidate_weight_decay must be finite")
+    if value < 0:
+        raise ValueError("candidate_weight_decay must be non-negative")
+    if value > MAX_CANDIDATE_TRAINING_WEIGHT_DECAY:
+        raise ValueError(
+            "candidate_weight_decay must be <= "
+            f"{MAX_CANDIDATE_TRAINING_WEIGHT_DECAY}"
+        )
 
 
 def _candidate_breadth_holdout_variant_payload(

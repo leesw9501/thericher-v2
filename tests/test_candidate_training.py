@@ -12,7 +12,9 @@ from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
+    MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
     CandidateDataSliceConfig,
     CandidateTrainingConfig,
     GpuReadiness,
@@ -151,6 +153,7 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
             "epochs_run": config.max_epochs,
             "steps_run": 1,
             "hidden_units": config.hidden_units,
+            "weight_decay": config.weight_decay,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
@@ -159,6 +162,7 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
         config=CandidateTrainingConfig(
             run_id="unit-candidate-training",
             hidden_units=12,
+            weight_decay=0.02,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -186,6 +190,15 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
     }
     assert payload["metrics"]["backend"] == "unit"
     assert payload["metrics"]["hidden_units"] == 12
+    assert result.weight_decay == 0.02
+    assert payload["weight_decay"] == 0.02
+    assert payload["regularization_axis"] == {
+        "axis": "weight_decay",
+        "weight_decay": 0.02,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+    assert payload["metrics"]["weight_decay"] == 0.02
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
     with pytest.raises(ValueError, match="outside the Git workspace"):
         run_bounded_candidate_training(
@@ -290,6 +303,8 @@ def test_candidate_training_missing_gpu_is_prepared_not_trained(tmp_path) -> Non
     assert result.model_artifact is None
     assert payload["artifacts"]["model"] is None
     assert "GPU readiness unavailable" in payload["reason"]
+    assert payload["weight_decay"] == DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY
+    assert payload["regularization_axis"]["weight_decay"] == 0.0
 
 
 def test_candidate_training_config_rejects_unbounded_caps() -> None:
@@ -303,6 +318,14 @@ def test_candidate_training_config_rejects_unbounded_caps() -> None:
         CandidateTrainingConfig(hidden_units=0)
     with pytest.raises(ValueError, match="hidden_units"):
         CandidateTrainingConfig(hidden_units=MAX_CANDIDATE_TRAINING_HIDDEN_UNITS + 1)
+    with pytest.raises(ValueError, match="weight_decay"):
+        CandidateTrainingConfig(weight_decay=-0.001)
+    with pytest.raises(ValueError, match="weight_decay"):
+        CandidateTrainingConfig(weight_decay=MAX_CANDIDATE_TRAINING_WEIGHT_DECAY + 0.001)
+    with pytest.raises(ValueError, match="weight_decay"):
+        CandidateTrainingConfig(weight_decay=float("nan"))
+    with pytest.raises(ValueError, match="weight_decay"):
+        CandidateTrainingConfig(weight_decay=float("inf"))
 
 
 def test_candidate_training_is_offline_and_does_not_read_credentials(
@@ -388,6 +411,7 @@ def _offline_runner(dataset, candidate, model_artifact, _config):  # noqa: ANN00
     return {
         "backend": "unit",
         "examples_seen": len(dataset.labels),
+        "weight_decay": _config.weight_decay,
         "candidate_experiment_id": candidate["candidate_experiment_id"],
         "model_artifact": str(model_artifact),
     }

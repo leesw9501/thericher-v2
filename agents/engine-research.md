@@ -29,8 +29,9 @@
 
 ## Active Queue
 
-1. Start the next bounded feature/model branch because cap-limited source and
-   holdout threshold evidence stayed negative.
+1. Start a bounded feature-normalization branch because the weight-decay
+   regularization probe still left source-side saturation and zero holdout buy
+   opportunities.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -56,6 +57,12 @@
   opportunities versus `136` sell opportunities, kept replay fill count at
   `0`, and wrote artifacts under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-hidden4-opportunity-attribution-20260716`.
+- Last completed: `bounded-weightdecay-opportunity-attribution-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, consumed the
+  weight-decay `core_plus_bar_pressure_v1` replay, found `0` buy opportunities
+  versus `124` sell opportunities across 6 guarded holdout variants, kept
+  replay fill count at `0`, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-weightdecay-opportunity-attribution-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -242,9 +249,15 @@
   adding a job kind. The guarded hidden4 holdout traces had max probabilities
   near `0.465` to `0.469`, so both `0.998` and `0.999` buy thresholds sat above
   the observed holdout range and produced no buy opportunities.
+- Added one bounded regularization model-axis selector, `weight_decay`, for
+  candidate training and feature-branch jobs only. The Docker `research`
+  smoke used `core_plus_bar_pressure_v1`, `hidden_units=4`, and
+  `weight_decay=0.01`; source max probability remained `1.000000`, cap-2
+  replay produced zero local-paper fills, and attribution found zero holdout
+  buy opportunities.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should test one bounded regularization model-axis branch before running
-  another hidden-units-only branch.
+  task should test one bounded feature-normalization branch before running
+  another hidden-units or threshold-only branch.

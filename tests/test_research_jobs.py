@@ -11,9 +11,13 @@ import pytest
 from thericher_v2.research.candidate_threshold_robustness import (
     CandidateThresholdRobustnessSliceConfig,
 )
-from thericher_v2.research.candidate_training import CandidateDataSliceConfig
+from thericher_v2.research.candidate_training import (
+    MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
+    CandidateDataSliceConfig,
+)
 from thericher_v2.research.jobs import (
     ResearchJobSpec,
+    build_parser,
     run_and_write_research_job,
 )
 from thericher_v2.research.validation import GpuReadiness
@@ -93,6 +97,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             "epochs_run": config.max_epochs,
             "steps_run": 1,
             "hidden_units": config.hidden_units,
+            "weight_decay": config.weight_decay,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
@@ -117,6 +122,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             ),
             max_bars=40,
             candidate_hidden_units=12,
+            candidate_weight_decay=0.02,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -135,8 +141,16 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
     assert payload["candidate_training"]["status"] == "candidate_trained_only"
     assert payload["candidate_training"]["hidden_units"] == 12
     assert payload["candidate_training"]["model_axis"]["hidden_units"] == 12
+    assert payload["candidate_training"]["weight_decay"] == 0.02
+    assert payload["candidate_training"]["regularization_axis"] == {
+        "axis": "weight_decay",
+        "weight_decay": 0.02,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
     assert payload["candidate_training"]["metrics"]["backend"] == "unit"
     assert payload["candidate_training"]["metrics"]["hidden_units"] == 12
+    assert payload["candidate_training"]["metrics"]["weight_decay"] == 0.02
     assert payload["candidate_training"]["source_slices"][0]["slice_id"] == "aaa"
     assert Path(payload["artifacts"]["candidate_metrics"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
@@ -156,6 +170,56 @@ def test_research_job_rejects_hidden_units_outside_training_axis() -> None:
             kind="candidate_training",
             candidate_hidden_units=0,
         )
+
+
+def test_research_job_rejects_weight_decay_outside_training_axis() -> None:
+    with pytest.raises(ValueError, match="candidate_weight_decay"):
+        ResearchJobSpec(
+            job_id="bad-weight-decay-eval",
+            kind="candidate_evaluation",
+            candidate_weight_decay=0.02,
+        )
+
+    with pytest.raises(ValueError, match="candidate_weight_decay"):
+        ResearchJobSpec(
+            job_id="bad-weight-decay-negative",
+            kind="candidate_training",
+            candidate_weight_decay=-0.001,
+        )
+
+    with pytest.raises(ValueError, match="candidate_weight_decay"):
+        ResearchJobSpec(
+            job_id="bad-weight-decay-cap",
+            kind="candidate_training",
+            candidate_weight_decay=MAX_CANDIDATE_TRAINING_WEIGHT_DECAY + 0.001,
+        )
+
+    with pytest.raises(ValueError, match="candidate_weight_decay"):
+        ResearchJobSpec(
+            job_id="bad-weight-decay-nan",
+            kind="candidate_feature_branch",
+            candidate_weight_decay=float("nan"),
+        )
+
+    with pytest.raises(ValueError, match="candidate_weight_decay"):
+        ResearchJobSpec(
+            job_id="bad-weight-decay-inf",
+            kind="candidate_feature_branch",
+            candidate_weight_decay=float("inf"),
+        )
+
+
+def test_research_job_parser_exposes_weight_decay_for_bounded_training_axis() -> None:
+    args = build_parser().parse_args(
+        [
+            "--kind",
+            "candidate_training",
+            "--weight-decay",
+            "0.02",
+        ]
+    )
+
+    assert args.candidate_weight_decay == 0.02
 
 
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:

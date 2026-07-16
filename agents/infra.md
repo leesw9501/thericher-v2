@@ -164,6 +164,13 @@
   smoke, consumed existing `/app/model_artifacts`-style paths resolved to
   `D:\thericher-v2\model-artifacts`, and wrote one attribution artifact under
   the external model artifact root.
+- Regularization model-axis feature branch and cap-2 replay ran in Docker
+  `research` with PyTorch CUDA on the RTX 4090, mounted the current `src`
+  read-only, read `/app/market_data` read-only, and wrote feature-branch,
+  training, evaluation, model, replay, robustness, and research job artifacts
+  under `/app/model_artifacts`. The follow-up opportunity attribution ran
+  locally as artifact-only work and wrote under the external model artifact
+  root.
 
 ## Next Handoff
 

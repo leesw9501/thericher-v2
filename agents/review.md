@@ -159,10 +159,15 @@
   entrypoint that reuses the existing threshold attribution slice helper. It
   added no new research job kind, report, gate, dashboard, scheduler, broker
   path, or model-promotion language.
+- Regularization model-axis work added one bounded selector to the existing
+  candidate training and feature-branch job paths only. It added no new job
+  family, report, gate, dashboard, scheduler, broker path, optimizer search,
+  or model-promotion language, and replay/attribution stayed artifact-driven.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small regularization model-axis branch without
-  creating a broad optimizer search, scheduler, dashboard, or promotion gate.
+- Push the next task toward one small feature-normalization branch without
+  creating a broad preprocessing search, scheduler, dashboard, or promotion
+  gate.

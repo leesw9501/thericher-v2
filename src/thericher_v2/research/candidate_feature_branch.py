@@ -27,12 +27,14 @@ from .candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
     DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
+    DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
     CandidateTrainerRunner,
     CandidateTrainingConfig,
     GpuReadiness,
+    _regularization_axis_payload,
     _reject_repo_artifact_path,
     detect_gpu_readiness,
     run_bounded_candidate_training,
@@ -58,6 +60,7 @@ class CandidateFeatureBranchConfig:
     max_epochs: int = 4
     max_steps: int = 128
     hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
+    weight_decay: float = DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY
     min_examples: int = 8
     schema_version: int = SCHEMA_VERSION
 
@@ -74,6 +77,7 @@ class CandidateFeatureBranchConfig:
             max_epochs=self.max_epochs,
             max_steps=self.max_steps,
             hidden_units=self.hidden_units,
+            weight_decay=self.weight_decay,
             min_examples=self.min_examples,
         )
         CandidateEvaluationConfig(
@@ -99,6 +103,7 @@ class BoundedCandidateFeatureBranchResult:
     candidate_experiment_id: str | None
     candidate_parameters: dict[str, Any]
     feature_set_id: str
+    weight_decay: float
     threshold_loop_closure: dict[str, Any]
     artifact_verification: dict[str, Any]
     training: BoundedCandidateTrainingResult | None
@@ -184,6 +189,7 @@ def run_bounded_candidate_feature_branch(
                 max_epochs=config.max_epochs,
                 max_steps=config.max_steps,
                 hidden_units=config.hidden_units,
+                weight_decay=config.weight_decay,
                 min_examples=config.min_examples,
             ),
             artifact_root=artifact_root,
@@ -240,6 +246,7 @@ def run_bounded_candidate_feature_branch(
         candidate_experiment_id=candidate_experiment_id,
         candidate_parameters=candidate_parameters,
         feature_set_id=config.feature_set_id,
+        weight_decay=config.weight_decay,
         threshold_loop_closure=threshold_loop_closure,
         artifact_verification=artifact_verification,
         training=training,
@@ -284,6 +291,7 @@ def _candidate_feature_branch_payload(
             "candidate_parameters": result.candidate_parameters,
             "feature_set_id": result.feature_set_id,
             "model_axis": _model_axis_payload(result),
+            "regularization_axis": _regularization_axis_payload(result.weight_decay),
             "threshold_loop_closure": result.threshold_loop_closure,
             "artifact_verification": result.artifact_verification,
             "training_status": None if result.training is None else result.training.status,
@@ -445,6 +453,7 @@ def _feature_branch_metrics(
             "descriptive_only": True,
             "promotion_gate": False,
         },
+        "regularization_axis": _regularization_axis_payload(config.weight_decay),
         "threshold_loop_closure_recorded": bool(
             threshold_loop_closure.get("closed_for_current_candidate")
         ),

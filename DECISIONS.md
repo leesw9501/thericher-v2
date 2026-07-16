@@ -671,3 +671,18 @@ guarded buy thresholds had zero holdout buy opportunities while preserving
 local-paper source evidence and broker-disabled source separation. Reusing the
 attribution helper avoids another threshold workflow, KIS access, credentials,
 broker submit code, dashboards, schedulers, or model-promotion language.
+
+## 2026-07-16 - Bounded regularization model axis
+
+Decision: expose one regularization selector, `--weight-decay`, through the
+existing research job runner for `candidate_training` and
+`candidate_feature_branch` only. The default remains `0.0`, values must be
+finite, non-negative, and no more than `0.1`, and the only runtime sink is the
+Docker `research` PyTorch Adam optimizer. Training and feature-branch artifacts
+record a descriptive `regularization_axis` payload with no promotion semantics.
+
+Reason: saturated feature-branch probability evidence needed one bounded
+regularization probe before trying another model path. Keeping the selector on
+the training side preserves evaluation/replay/attribution as checkpoint-driven
+flows and avoids KIS access, credentials, broker submit code, dashboards,
+schedulers, optimizer-search sprawl, or model-promotion language.

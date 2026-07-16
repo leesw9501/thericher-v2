@@ -88,6 +88,7 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
             max_epochs=2,
             max_steps=8,
             hidden_units=12,
+            weight_decay=0.02,
         ),
         artifact_root=artifact_root,
         repo_root=Path.cwd(),
@@ -106,6 +107,13 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
     assert payload["candidate_parameters"]["feature_branch_axis"] == "bar_pressure"
     assert payload["model_axis"]["hidden_units"] == 12
     assert payload["metrics"]["model_axis"]["hidden_units"] == 12
+    assert payload["regularization_axis"] == {
+        "axis": "weight_decay",
+        "weight_decay": 0.02,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+    assert payload["metrics"]["regularization_axis"]["weight_decay"] == 0.02
     assert payload["metrics"]["feature_names"][-3:] == [
         "close_position_in_bar",
         "range_expansion",
@@ -124,6 +132,7 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
             threshold_band_rerun_artifact=band_artifact,
             candidate_feature_set=CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
             candidate_hidden_units=12,
+            candidate_weight_decay=0.02,
             max_bars=40,
             max_epochs=2,
             max_steps=8,
@@ -143,6 +152,8 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     assert branch["status"] == "candidate_feature_branch_evaluated_only"
     assert branch["feature_set_id"] == CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID
     assert branch["metrics"]["model_axis"]["hidden_units"] == 12
+    assert branch["regularization_axis"]["weight_decay"] == 0.02
+    assert branch["metrics"]["regularization_axis"]["weight_decay"] == 0.02
     assert branch["result_scope"]["mode"] == "research_feature_branch_only"
     assert branch["metrics"]["probability_evidence"]["probability_range"] == "0.040000"
     assert Path(payload["artifacts"]["candidate_feature_branch"]).exists()
@@ -275,6 +286,7 @@ def _unit_training_runner(dataset, candidate, model_artifact, config):  # noqa: 
         "feature_count": len(dataset.feature_names),
         "feature_names": dataset.feature_names,
         "hidden_units": config.hidden_units,
+        "weight_decay": config.weight_decay,
         "candidate_experiment_id": candidate["candidate_experiment_id"],
         "model_artifact": str(model_artifact),
     }

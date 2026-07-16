@@ -233,6 +233,12 @@ Implemented and pushed:
   robustness evidence, records per-slice/per-threshold opportunity counts, and
   attributes the zero fills to guarded buy thresholds above the observed
   holdout probability range without rerunning training or broker behavior,
+- bounded regularization model-axis branch; it exposes one capped
+  `weight_decay` selector for candidate training and feature-branch jobs only,
+  keeps the default at `0.0`, records descriptive regularization metadata, ran
+  `core_plus_bar_pressure_v1` with `hidden_units=4` and `weight_decay=0.01` in
+  Docker `research`, then replayed cap-2 holdout thresholds with zero
+  local-paper fills and zero buy opportunities,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -253,7 +259,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `222 passed`
+- `224 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -297,11 +303,11 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded regularization model-axis branch:
+Start the next bounded feature-normalization branch:
 
-1. use the guarded replay opportunity attribution as context,
-2. add one capped regularization selector to the existing candidate training
-   and feature-branch path,
+1. use the regularization replay opportunity attribution as context,
+2. add one artifact-driven feature normalization selector to the existing
+   candidate training and feature-branch path,
 3. run a bounded Docker `research` feature/model branch to see whether source
    saturation and holdout replay opportunity mismatch change,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
