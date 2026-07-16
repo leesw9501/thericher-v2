@@ -1568,10 +1568,53 @@ The same-window AMAT/AMZN path-quality consolidation then completed:
   `0.596/0.476`; the existing `240`-bar wider-holdout artifacts used only
   `0.595/0.476` and `0.596/0.476`.
 
-Next, close the exact threshold-pair parity gap with at most one existing
-Engine Research Agent `candidate_feature_branch_replay` job at `240` bars for
-AMAT/AMZN/BA, then attribute the result. Do not add a job kind or start longer
-candidate training in that task.
+The AMAT/AMZN/BA `240`-bar threshold-pair parity check then completed:
+
+- No exact three-pair `240`-bar replay existed before this task, so one
+  existing Engine Research Agent `candidate_feature_branch_replay` job was
+  queued and run once:
+  `engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1`.
+- The runner used Docker `research` only, mounted current `src` read-only, saw
+  NVIDIA GeForce RTX 4090 with `24564` MiB, reused the existing depth
+  feature-branch artifact, and replayed AMAT, AMZN, and BA from
+  `snapshot=2026-06-18` with `max-bars 240`.
+- Replay artifacts were written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\metrics.json`,
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-robustness\metrics.json`,
+  and the Engine Research Agent status artifact under
+  `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\status.json`.
+- The replay used the exact three threshold pairs from the `120`-bar cadence:
+  `0.594/0.476`, `0.595/0.476`, and `0.596/0.476`.
+- The follow-up path attribution artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`.
+- AMAT/AMZN/BA replay produced `24` verified `source: local_paper` fill
+  events, `12` closed paths, `0` open paths, gross delta `51.195`, and
+  fee-aware delta `50.1660`. Non-local source counts were `{}`, unknown fills
+  were `0`, and unreadable event artifacts were `0`.
+- AMAT carried `18` local-paper fill events, `9` closed paths, `3` negative
+  fee-aware paths, `6` non-negative fee-aware paths, gross delta `49.860`, and
+  fee-aware delta `48.9792`.
+- AMZN carried `6` local-paper fill events, `3` closed paths, `0` negative
+  fee-aware paths, gross delta `1.335`, and fee-aware delta `1.1868`.
+- BA remained zero-fill across all three variants. Its three missing event
+  files are zero-fill empty evidence, not unreadable nonzero evidence.
+- Compared with the prior `120`-bar three-pair evidence, the exact `240`-bar
+  replay added `6` closed paths, `12` local-paper fill events, `2` unique
+  entries, `3` negative fee-aware paths, gross delta `10.455`, and fee-aware
+  delta `9.8853`.
+- Compared with the reused `240`-bar two-pair evidence, the exact three-pair
+  replay added `4` closed paths, `8` local-paper fill events, `1` negative
+  fee-aware path, gross delta `17.065`, and fee-aware delta `16.7220`.
+- Diagnostic path and comparison context stayed `source: diagnostic_overlay`
+  and created no fills, broker outcomes, execution filters, replay rules,
+  feature rules, or model-promotion rules.
+- Runtime Codex sidecars assisted as read-only reviewers: Engine Research
+  verified the exact replay artifacts and Review/Execution checked broker,
+  source-label, and sprawl boundaries. They are not repo-owned workers.
+
+Next, attribute the AMAT negative paths from the exact `240`-bar parity replay
+before another GPU training block. Keep it artifact-only and use existing
+event, trace, path, and local-bar evidence.
 
 ## Daily Operator Review
 

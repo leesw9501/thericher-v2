@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Close the AMAT/AMZN/BA `240`-bar threshold-pair parity gap before any longer
-GPU training block.
+Attribute the AMAT negative paths from the exact `240`-bar threshold-pair parity
+replay before any longer GPU training block.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by checking the same AMAT/AMZN/BA `240`-bar path behavior with
-the same three threshold pairs used by the `120`-bar cadence evidence.
+PnL attribution by explaining the `3` negative AMAT paths that appeared after
+closing the exact threshold-pair parity gap.
 
 ## Hard Boundaries
 
@@ -64,58 +64,47 @@ the same three threshold pairs used by the `120`-bar cadence evidence.
 
 ## Current Evidence To Consume
 
+- Exact threshold-pair parity path attribution:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`
+- Exact threshold-pair parity replay:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\metrics.json`
+- Exact threshold-pair parity robustness/event artifacts:
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-robustness\metrics.json`
 - Same-window AMAT/AMZN consolidation:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`
-- Current AMAT/AMZN `120`-bar path-quality artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`
-- Existing AMAT/AMZN/BA `120`-bar replay artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717\metrics.json`
-- Wider-holdout depth behavior attribution:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
-- Depth feature-branch artifact referenced by the wider-holdout replay:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-depth-validation-20260716\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. First check whether an exact AMAT/AMZN/BA `240`-bar replay already exists
-   with threshold pairs:
-   - `0.594/0.476`
-   - `0.595/0.476`
-   - `0.596/0.476`
-2. If exact evidence already exists, consume it and produce one compact
-   artifact-only attribution outside Git.
-3. If exact evidence is missing, queue at most one existing
-   `candidate_feature_branch_replay` job through the Engine Research Agent
-   runner with:
-   - `max-bars 240`
-   - symbols AMAT, AMZN, and BA from `snapshot=2026-06-18`
-   - threshold pairs `0.594/0.476`, `0.595/0.476`, and `0.596/0.476`
-   - the existing depth feature-branch artifact above
-4. After the replay, attribute the result using existing event, trace, and
-   local-bar evidence. Do not add a new job kind.
-5. Report counts, not decisions:
-   - AMAT/AMZN/BA fill-bearing variants and local-paper fill counts,
-   - closed/open trade paths,
-   - fee-aware and gross deltas,
-   - negative versus non-negative fee-aware path counts,
+1. Consume existing parity replay, path attribution, probability traces, event
+   artifacts, and local AMAT bars only. Do not rerun replay unless nonzero-fill
+   AMAT event or trace evidence is missing.
+2. Produce one compact artifact-only AMAT negative-path attribution outside
+   Git.
+3. Report counts, not decisions:
+   - AMAT negative versus non-negative closed path counts,
+   - gross and fee-aware deltas,
    - entry probability margins,
    - sell-threshold timing after entry,
    - max adverse and favorable movement,
+   - feature-input or trace context already present in existing artifacts,
+   - repeated entry timestamps or duplicate feature signatures, if present,
    - local-paper source verification,
    - diagnostic-overlay source separation,
-   - missing evidence counts,
-   - comparison against the prior `120`-bar and reused `240`-bar evidence.
-6. Do not queue longer candidate training in this task. End with the evidence
+   - missing evidence counts.
+4. Compare AMAT negative paths to AMAT non-negative paths and AMZN non-negative
+   paths as descriptive context only. Do not introduce a threshold, feature
+   rule, replay rule, exit rule, or promotion rule.
+5. Do not queue longer candidate training in this task. End with the evidence
    still missing, if any, before another depth-training block.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the active parity check.
+  license-compatible source clearly improves the active attribution.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -143,7 +132,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Check AMAT AMZN threshold parity`
+`Attribute AMAT negative parity paths`
 
 ## Completion Report
 

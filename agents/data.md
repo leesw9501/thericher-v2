@@ -410,14 +410,18 @@
   `snapshot=2026-06-18` Yahoo 1m file and existing wider-holdout artifacts.
   It observed AMAT `2340` rows, AMZN `2340` rows, and BA `2338` rows, acquired
   no data, and found no missing exact files for the consolidation.
+- Exact threshold-pair parity replay reused the same `snapshot=2026-06-18`
+  Yahoo 1m file for AMAT, AMZN, and BA with `max-bars 240`; no data was
+  acquired. The path attribution reused existing event/trace artifacts plus
+  those local rows and needed no operator data help.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows for the threshold-pair parity replay/attribution; record exact missing
-  artifact names only if existing AMAT/AMZN/BA rows or produced event/trace
-  evidence is insufficient.
+  rows and parity replay artifacts for AMAT negative-path attribution; record
+  exact missing artifact names only if the produced event/trace/path evidence
+  is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

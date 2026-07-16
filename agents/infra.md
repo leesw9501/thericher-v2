@@ -511,6 +511,12 @@
   no Docker or GPU job, changed no dependency, Docker, or compose files, and
   wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Exact threshold-pair parity replay used the existing single-shot Engine
+  Research Agent runner and Docker `research` with current `src` mounted
+  read-only. It saw NVIDIA GeForce RTX 4090, changed no dependency, Docker, or
+  compose files, cleared the external GPU lock, and wrote replay, robustness,
+  runner, and attribution artifacts outside Git under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -532,6 +538,6 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next threshold-pair parity
-  check. Use the existing single-shot Engine Research Agent replay path only,
-  with `src` mounted read-only and model artifacts under `/app/model_artifacts`.
+- Do not add scheduler/coordinator plumbing for the next AMAT negative-path
+  attribution. Use existing artifacts first; no Docker/GPU job is needed unless
+  evidence is missing.

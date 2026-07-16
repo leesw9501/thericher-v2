@@ -942,6 +942,16 @@
   paths, gross delta `34.130`, fee-aware delta `33.4440`, and no missing
   AMAT/AMZN nonzero-fill evidence. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`.
+- Exact threshold-pair parity replay
+  `engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1`
+  ran through the existing Engine Research Agent Docker `research` path with
+  RTX 4090 visible. It replayed AMAT, AMZN, and BA at `240` bars using
+  `0.594/0.476`, `0.595/0.476`, and `0.596/0.476`, produced `24`
+  local-paper fill events, and wrote replay/robustness/runner artifacts
+  outside Git. Follow-up path attribution found `12` closed paths, `3`
+  negative fee-aware AMAT paths, gross delta `51.195`, and fee-aware delta
+  `50.1660`. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`.
 
 ## Next Handoff
 
@@ -949,9 +959,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: close exact threshold-pair parity with at most one
-  existing `candidate_feature_branch_replay` job at `240` bars for
-  AMAT/AMZN/BA, then attribute the local-paper paths.
+- Short experiments queue: attribute the `3` negative AMAT paths from the
+  exact `240`-bar parity replay before another depth run.
 - Longer candidate training queue: hold until a short experiment shows enough
   path-quality evidence and a focused research question.
   Keep the job kind closed and write artifacts outside Git.

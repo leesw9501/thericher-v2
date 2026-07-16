@@ -384,6 +384,13 @@
   `8` closed paths, `0` open paths, `0` non-local fill sources, `0` unknown
   fills, and `0` unreadable event artifacts. All comparison context remained
   diagnostic-only.
+- Exact threshold-pair parity replay used the existing broker-free local-paper
+  path through Engine Research Agent only. It produced `24` verified
+  `source: local_paper` fill events, `12` closed paths, and `0` open paths.
+  AMAT contributed `18` fill events and `3` negative fee-aware paths; AMZN
+  contributed `6` fill events and no negative fee-aware paths; BA remained
+  zero-fill. No non-local, unknown, unreadable, broker, or diagnostic-overlay
+  fills were observed.
 
 ## Next Handoff
 
@@ -410,6 +417,6 @@
 - The next opportunity-gap diagnostic should remain artifact-only unless it
   uses an existing broker-free replay job. Do not lower or turn thresholds into
   an execution rule.
-- Any threshold-pair parity replay/attribution must keep original fills as
+- Any AMAT negative-path attribution must keep original fills as
   `source: local_paper`, count diagnostics separately, and avoid creating
   order intents outside the existing broker-free replay path.
