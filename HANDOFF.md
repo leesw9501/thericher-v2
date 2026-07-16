@@ -594,6 +594,14 @@ Implemented and pushed:
   unchanged as `source: local_paper`, and found the all-three overlay sketch
   skipped the one negative AMD segment while retaining both non-negative AMD
   segments, with all `6` near-miss rows still below the minimum buy threshold,
+- bounded cross-sample entry-filter diagnostic overlay; it consumed the AMD
+  overlay and existing wider entry-adverse artifacts, labeled `56` wider-sample
+  overlay outcomes as `source: diagnostic_overlay`, left the original `18`
+  wider-sample local-paper fills unchanged as `source: local_paper`, and found
+  the AMD-derived all-three sketch did not recur in the wider hidden4 sample:
+  it retained all `3` wider fee-aware negative segments, skipped all `6`
+  wider fee-aware non-negative segments, and kept all `4` batch2 near-threshold
+  rows below buy threshold,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -658,17 +666,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded cross-sample entry-filter overlay diagnostic:
+Start one bounded first-evaluation source-context depth contrast:
 
-1. consume the completed AMD overlay plus existing wider entry-adverse
-   artifacts,
-2. apply the same tiny fixed `diagnostic_overlay` sketches to existing
-   non-AMD entry-adverse segments and near-threshold rows,
-3. report whether the AMD-derived sketch stays narrow or recurs across the
-   wider sample, keeping original fills unchanged and labeled
-   `source: local_paper`,
-4. avoid training, replay reruns, feature/model axes, threshold search,
-   dashboards, schedulers, broker behavior, or report/gate expansion.
+1. keep `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`,
+   `feature_standardization`, source symbols, and evaluation symbols fixed,
+2. raise only bounded training caps for one Docker `research` PyTorch CUDA run,
+3. replay the resulting artifact through the existing local-paper cap-2 path,
+4. compare depth evidence against the completed first-evaluation source-context
+   short run without selecting a winner, threshold, or production candidate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

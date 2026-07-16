@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded cross-sample entry-filter overlay diagnostic from existing
-   wider entry-adverse artifacts before changing source context, feature/model
-   axes, or thresholds again.
+1. Run one bounded first-evaluation source-context depth contrast with the
+   existing entry-adverse feature/model/preprocessing settings before changing
+   source context, feature/model axes, or thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -736,10 +736,14 @@
   both non-negative AMD segments, labeled all overlay outcomes as
   `source: diagnostic_overlay`, and left all original local-paper fills
   unchanged.
+- Cross-sample entry-filter overlay consumed existing wider entry-adverse
+  artifacts only. The AMD-derived all-three sketch did not recur: it retained
+  `3` wider fee-aware negative segments, skipped `6` wider fee-aware
+  non-negative segments, and created no local-paper or broker outcomes.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should cross-check the AMD-derived entry-filter overlay against existing
-  wider entry-adverse evidence before spending another GPU block on source
-  data, feature/model, or threshold changes.
+  task should return to one bounded Docker `research` PyTorch CUDA contrast:
+  same first-evaluation source context, same feature/model settings, deeper
+  caps only, then local-paper replay and artifact-only comparison.

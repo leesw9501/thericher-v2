@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded cross-sample entry-filter overlay diagnostic.
+Run one bounded first-evaluation source-context depth contrast.
 
-This advances PnL attribution, feature/model research, and backtest validation
-by checking whether the AMD-derived diagnostic entry-filter sketches remain
-AMD-specific or recur across the wider existing entry-adverse sample. Use
-existing artifacts and selected local bars only.
+This advances feature/model research, backtest validation, and PnL attribution
+by checking whether a deeper bounded PyTorch CUDA run changes the completed
+first-evaluation source-context evidence. Keep the feature set, model shape,
+regularization, preprocessing, source symbols, and evaluation symbols fixed.
 
 ## Hard Boundaries
 
@@ -33,7 +33,7 @@ existing artifacts and selected local bars only.
   base engine image, runtime image, or local dev/test path.
 - Do not start a broad scheduler, agent framework, promotion gate, dashboard
   expansion, threshold optimizer, preprocessing search, regularization sweep,
-  hidden-units sweep, training-depth sweep, source-context search, or model
+  hidden-units sweep, source-context search, feature-set search, or model
   search.
 - Do not call any threshold, candidate, feature set, preprocessing branch, or
   model best, recommended, passed, promoted, or production ready.
@@ -60,55 +60,55 @@ existing artifacts and selected local bars only.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If this diagnostic
-   can run from existing artifacts and artifact-only scripts, no Claude check
-   is needed.
+3. Ask Claude CLI for a short drift-check before code or architecture edits.
+   Existing Docker `research` jobs and artifact-only comparison scripts do not
+   need a Claude check.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts:
+2. Consume these completed artifacts as the short-run reference:
+   - First-evaluation source-context feature branch:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
+   - First-evaluation source-context replay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716\metrics.json`
+   - First-evaluation source-context attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
    - AMD entry-filter overlay:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-entry-filter-overlay-20260716\metrics.json`
-   - Wider entry-adverse summary:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
-   - Wider entry-adverse signal-quality diagnostic:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-   - Wider entry-adverse trade-path attribution:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-trade-path-20260716\metrics.json`
-   - Wider entry-adverse opportunity attribution:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-opportunity-attribution-20260716\metrics.json`
-   - Existing feature-input concentration diagnostic, if useful for
-     near-threshold row context:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
-3. Reuse only selected rows from the existing
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
-   Yahoo 1m file. Do not acquire data for this task.
-4. Do not rerun training, evaluation, replay, calibration, threshold
-   derivation, or probability inference.
-5. Apply the same fixed diagnostic overlay sketches from the AMD overlay:
-   - upper-wick-lower-than-negative-entry,
-   - close-position-nonzero,
-   - entry-margin-above-negative-entry,
-   - all-three-entry-filter-sketch.
-6. Record compact artifact-only attribution:
-   - which existing wider-sample local-paper entries each overlay would retain
-     or skip,
-   - whether retained/skipped behavior differs for negative and non-negative
-     segments,
-   - how near-threshold rows would be labeled when enough trace evidence is
-     present,
-   - all overlay outcomes with `source: diagnostic_overlay`,
-   - original local-paper fills unchanged and still `source: local_paper`,
-   - any missing artifact fields that prevent a row from being labeled.
-7. If the wider artifacts do not contain enough information to reconstruct
-   comparable feature rows without rerunning inference or replay, stop after a
-   compact inventory artifact and record the exact missing fields.
-8. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
-   feature, training path, replay path, threshold search, policy selection,
-   simulator exit rule, or broker behavior unless a focused parser bug appears.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - Cross-sample entry-filter overlay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-cross-sample-entry-filter-overlay-20260716\metrics.json`
+3. Run one Docker `research` PyTorch CUDA feature-branch job with the same
+   settings as the short reference except bounded training caps:
+   - feature set: `core_plus_entry_adverse_v1`
+   - hidden units: `4`
+   - weight decay: `0.001`
+   - feature preprocessing: `feature_standardization`
+   - max bars: `240`
+   - max epochs: `16`
+   - max steps: `512`
+   - source slices: ANET, APH, APO, APP, ASML, AVGO from
+     `snapshot=2026-06-18`
+   - evaluation/replay slices: AAPL, ABBV, ABNB, ABT, ACN, AMD from
+     `snapshot=2026-06-18`
+4. Replay the deeper artifact through the existing
+   `candidate_feature_branch_replay` path with cap-2 thresholds and the same
+   evaluation/replay slices. Keep every generated fill verified as
+   `source: local_paper`.
+5. Run artifact-only attribution comparing the short and deeper source-context
+   evidence:
+   - probability range and threshold band,
+   - buy/sell opportunity counts,
+   - local-paper fill count and fill-source verification,
+   - PnL and max drawdown range,
+   - AMD segment count and fee-aware delta behavior if fills appear,
+   - whether the completed entry-filter overlays argue against encoding an
+     entry filter.
+6. Do not change feature set, hidden units, regularization, preprocessing,
+   source symbols, evaluation symbols, thresholds by search, simulator exits,
+   broker behavior, dashboard, scheduler, or agent framework.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -138,7 +138,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run cross-sample entry filter overlay diagnostic`
+`Run firsteval source-context depth contrast`
 
 ## Completion Report
 

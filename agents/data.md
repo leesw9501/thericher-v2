@@ -291,13 +291,18 @@
 - AMD entry-filter diagnostic overlay reused selected AMD rows from the
   existing `snapshot=2026-06-18` Yahoo file, found all requested selected
   timestamps, and acquired no additional data.
+- Cross-sample entry-filter overlay reused selected ADBE, ADI, ADP, AEM, AMAT,
+  AMD, AMGN, AMT, and AMZN rows from the existing `snapshot=2026-06-18` Yahoo
+  file, found all requested selected timestamps, and acquired no additional
+  data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; reuse selected rows from the
-  existing `snapshot=2026-06-18` Yahoo file for cross-sample diagnostic
-  entry-filter overlay attribution.
+- The next data task is still not acquisition; reuse ANET, APH, APO, APP,
+  ASML, AVGO, AAPL, ABBV, ABNB, ABT, ACN, and AMD rows from the existing
+  `snapshot=2026-06-18` Yahoo file for the first-evaluation source-context
+  depth contrast.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
