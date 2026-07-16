@@ -381,6 +381,14 @@ Implemented and pushed:
   favorable excursion, and less adverse excursion than the negative group, and
   attributed the second batch's zero fills to buy thresholds sitting above each
   slice's observed maximum probability,
+- bounded entry-adverse hidden-units contrast; it reused the existing
+  `core_plus_entry_adverse_v1` feature set with `feature_standardization`, ran
+  hidden-units `8` training/evaluation in Docker `research` on the capped
+  CVS/FCX/KO source slices and ADBE/ADI/ADP/AEM/AGG/AMAT evaluation slices,
+  replayed cap-2 local-paper thresholds, verified all `4` generated fills as
+  `source: local_paper`, and recorded that the hidden8 replay produced only
+  two closed AMAT segments, both fee-aware negative with fee-aware delta sum
+  `-8.4776`, fewer buy opportunities than hidden4, and higher max drawdown,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -445,16 +453,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse hidden-units contrast target:
+Start one bounded entry-adverse hidden8 loss-attribution diagnostic:
 
-1. reuse the existing `core_plus_entry_adverse_v1` feature set and
-   `feature_standardization`,
-2. train/evaluate one hidden-units `8` contrast in Docker `research` on the
-   same CVS/FCX/KO source slices and a capped ADBE/ADI/ADP/AEM/AGG/AMAT
-   out-of-symbol evaluation sample,
-3. replay cap-2 thresholds through the existing local-paper path and attribute
-   fills or zero-fills outside Git,
-4. avoid new features, threshold search, branch ranking, dashboards,
+1. consume the completed hidden8 feature-branch, replay, opportunity,
+   trade-path, contrast summary, trace, and selected local-bar evidence,
+2. explain why hidden8 produced only AMAT entries and why both closed segments
+   were fee-aware negative,
+3. compare hidden8 AMAT signal/path evidence against the hidden4 wide-sample
+   AMAT evidence without rerunning replay,
+4. write one compact external diagnostic artifact with no hidden-unit ranking,
+   branch selection, threshold search, retraining, replay rerun, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

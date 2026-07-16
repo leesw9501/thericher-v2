@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse hidden-units contrast target.
+Build a bounded entry-adverse hidden8 loss-attribution diagnostic target.
 
-This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by running one GPU model-axis contrast for the existing
-`core_plus_entry_adverse_v1` feature set after the wider signal-quality
-diagnostic.
+This advances PnL attribution and feature/model research by explaining why the
+hidden-units `8` contrast concentrated fills into fee-aware negative AMAT
+segments before another model, feature, preprocessing, threshold, or training
+axis is tried.
 
 ## Hard Boundaries
 
@@ -57,37 +57,38 @@ diagnostic.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before adding code, changing feature
-   builders, or adding a new research job kind. If existing Docker `research`
-   jobs and artifact-only scripts are enough, do not add code.
+3. Ask Claude CLI for a short drift-check before adding a reusable diagnostic
+   helper or changing feature-building code. If a one-off artifact-only script
+   is enough, do not add a helper.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume the current diagnostic context:
+2. Consume only existing external artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-hidden8-feature-branch-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-hidden8-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-hidden8-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-hidden8-trade-path-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-hidden8-contrast-summary-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
-3. Use existing Docker `research` feature-branch code only:
-   - `--candidate-feature-set core_plus_entry_adverse_v1`
-   - `--hidden-units 8`
-   - `--feature-preprocessing feature_standardization`
-   - strict caps no larger than `max-bars 240`, `max-epochs 4`, and
-     `max-steps 128` unless an input artifact proves a smaller cap is required.
-4. Train on existing CVS, FCX, and KO source slices from
-   `snapshot=2026-07-09-shadow-t0-8d-probe`.
-5. Evaluate and replay on the first six wider-sample symbols from
-   `snapshot=2026-06-18`: ADBE, ADI, ADP, AEM, AGG, and AMAT. Keep the
-   existing robustness slice cap rather than changing code.
-6. Run cap-2 local-paper replay through the existing
-   `candidate_feature_branch_replay` path. If fills occur, produce
-   artifact-only opportunity and trade-path attribution; if zero fills occur,
-   produce compact zero-fill attribution.
-7. Keep all results descriptive only. Do not rank hidden-unit values, select a
+3. Resolve probability trace and local-paper event artifact paths from the
+   hidden8 replay or robustness metadata. Reuse selected AMAT rows from
+   `snapshot=2026-06-18` only for path, feature, and forward diagnostic context
+   not already in artifacts.
+4. Produce one compact external diagnostic artifact that explains:
+   - the hidden8 AMAT entry probabilities and threshold gaps,
+   - first sell-threshold timing,
+   - `upper_wick_share` and `low_vs_prior_low_return` around the AMAT entries,
+   - fixed 5/15/30-bar forward diagnostic marks,
+   - adverse/favorable excursion and holding duration,
+   - how the hidden8 AMAT path differs from the hidden4 wide-sample AMAT path,
+   - local-paper source verification.
+5. Keep the result descriptive only. Do not rank hidden-unit values, select a
    branch, define promotion criteria, or produce a pass/fail field.
-8. Do not add features, threshold search, preprocessing search, model search,
-   scheduler, dashboard, broker behavior, or new job kinds.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Do not rerun training, replay, threshold search, model-axis search, or data
+   acquisition unless an input artifact is missing or corrupt.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +116,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse hidden-units contrast`
+`Add bounded entry-adverse hidden8 loss attribution`
 
 ## Completion Report
 
@@ -127,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- entry-adverse hidden-units contrast findings,
+- hidden8 loss-attribution findings,
 - what was intentionally not built,
 - next recommended goal.

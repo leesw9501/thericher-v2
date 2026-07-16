@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse hidden-units contrast before another
-   feature-set or threshold-only branch is tried.
+1. Run one bounded entry-adverse hidden8 loss-attribution diagnostic before
+   another model, feature-set, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -252,6 +252,13 @@
   faster first sell-threshold timing, larger favorable excursion, and less
   adverse excursion than the negative group, and recorded second-batch zero
   fills as buy thresholds above observed slice maximum probabilities.
+- Last completed: `bounded-entry-adverse-hidden8-contrast-summary-20260716`,
+  status `entry_adverse_hidden_units_contrast_summary_only`, ran hidden-units
+  `8` for `core_plus_entry_adverse_v1` in Docker `research`, observed
+  probability range `0.617755`, replayed cap-2 thresholds across the first six
+  wider-sample symbols, produced `4` verified local-paper fills, and attributed
+  both closed AMAT segments as fee-aware negative with fee-aware delta sum
+  `-8.4776`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -516,10 +523,14 @@
 - Signal-quality diagnostics now explain the wider sample enough to spend one
   bounded GPU contrast on hidden-units `8` for the same feature set, without
   adding a new feature axis or threshold search.
+- Hidden-units `8` widened probability evidence but concentrated fills into
+  AMAT losses. The next evidence should explain that loss concentration from
+  existing traces and paths before another model or threshold branch.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded entry-adverse hidden-units `8` contrast from the
-  existing feature set and selected local data before another feature-set,
+  task should run one bounded hidden8 loss-attribution diagnostic from existing
+  feature-branch, replay, opportunity, trade-path, contrast, trace, and
+  selected local-bar evidence before another model, feature-set,
   regularization, preprocessing, or threshold-only branch.

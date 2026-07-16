@@ -169,6 +169,9 @@
 - Wider entry-adverse signal-quality diagnostic reran no execution. It consumed
   existing local-paper replay/event evidence and preserved local-paper source
   verification.
+- Entry-adverse hidden-units contrast ran through the existing broker-free
+  local-paper path, produced `4` verified `source: local_paper` fills, and
+  observed no non-local fill source.
 
 ## Next Handoff
 

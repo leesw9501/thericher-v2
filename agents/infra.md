@@ -255,6 +255,11 @@
   work, consumed existing external artifacts plus selected local Yahoo rows,
   reran no Docker job, used no GPU, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Entry-adverse hidden-units contrast ran in Docker `research` with PyTorch
+  CUDA and RTX 4090 visible, reused the current `src` mount, read
+  `/app/market_data` read-only, and wrote feature-branch, training,
+  evaluation, replay, robustness, opportunity, trade-path, research-job, and
+  contrast artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 
