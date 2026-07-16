@@ -819,13 +819,24 @@
   produced `531` verified local-paper holdout fills, and recorded holdout PnL
   range `-27.9099865722656` to `-0.0580` with max drawdown max
   `38.0201341796875`.
+- Explicit-slice depth attribution
+  `engine-agent-depth-target-explicit-slices-20260717-r1-attribution` consumed
+  existing depth-target, robustness, probability-trace, and local-paper event
+  artifacts only. It ran no new training and found AMAT as the main loss
+  concentration, AGG as the single `0.957193` probability outlier with small
+  losses, and threshold bands overlapping the dense middle of holdout
+  probabilities. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
-  only GPU/Docker research worker. The next task should attribute the completed
-  explicit-slice depth target from existing artifacts before another GPU
-  training block, while avoiding daemon, scheduler, dashboard, auto-commit,
-  broker, credential, or broad multi-agent platform behavior.
+  only GPU/Docker research worker.
+- Before another GPU training block, inspect AMAT/AEM trade paths around the
+  explicit-slice depth target's poor holdout variants and determine a bounded
+  replay-shape diagnostic to test next.
+- Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
+  a daemon, scheduler, dashboard, auto-commit path, broker authority,
+  credential path, or durable multi-agent platform.

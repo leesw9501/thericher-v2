@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Attribute the explicit-slice Engine Research Agent depth target before spending
-more GPU time.
+Inspect AMAT/AEM trade paths from the explicit-slice depth target before
+spending more GPU time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by explaining why the completed explicit-slice depth
-target generated many local-paper fills with poor holdout PnL.
+walk-forward validation by identifying whether a smaller replay-shape
+diagnostic should focus on entry frequency, exit timing, path quality, or a
+cap-limited combination.
 
 ## Hard Boundaries
 
@@ -25,11 +26,12 @@ target generated many local-paper fills with poor holdout PnL.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before attributing the completed explicit-slice
-  depth target.
-- Do not queue another Engine Research Agent job unless the attribution proves
-  the current artifact set is unreadable or incomplete.
-- Do not make Execution, Infra, or Review executable workers in this slice.
+- Do not run new GPU training before the AMAT/AEM trade-path diagnosis is
+  complete.
+- Do not queue another Engine Research Agent job unless the current artifacts
+  are unreadable or incomplete.
+- Do not make Execution, Infra, or Review durable executable workers in this
+  slice.
 - Do not add a daemon, scheduler, Windows service, dashboard, notification
   system, broad autonomous multi-agent platform, coordinator, or auto-commit
   path.
@@ -64,26 +66,31 @@ target generated many local-paper fills with poor holdout PnL.
 
 ## Required Work
 
-1. Consume the completed artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target\engine-agent-depth-target-explicit-slices-20260717-r1\metrics.json`.
-2. Use existing related artifacts only: training metrics, evaluation metrics,
-   calibration, holdout, robustness, probability traces, event artifacts, and
-   selected local Yahoo rows from `D:\market_data` if needed.
-3. Produce one compact external attribution artifact under
+1. Consume the completed attribution artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`.
+2. Consume existing event and probability-trace artifacts for AMAT and AEM
+   holdout variants from
+   `engine-agent-depth-target-explicit-slices-20260717-r1`.
+3. Use selected local Yahoo rows from `D:\market_data` only if needed to
+   explain entry/exit path context.
+4. Reconstruct compact trade-path evidence for:
+   - AMAT worst-loss variants,
+   - AEM high-fill variants,
+   - any AMAT/AEM higher-threshold variants that still lose with fewer fills.
+5. Explain whether AMAT/AEM losses appear driven by entry frequency, entry
+   timing, exit latency, adverse path movement, or open-position exposure.
+6. Produce one compact external diagnostic artifact under
    `D:\thericher-v2\model-artifacts`.
-4. Explain at least:
-   - fill and PnL concentration by holdout slice,
-   - fill and PnL concentration by threshold pair,
-   - whether the `531` holdout fills are caused by threshold bands sitting too
-     close to the probability distribution,
-   - whether the holdout max probability outlier `0.957193` is tied to a single
-     row or slice,
-   - whether loss appears driven by too many entries, delayed exits, or both.
-5. Keep all fill evidence labeled and checked as `source: local_paper`.
-6. If the existing artifacts are insufficient, record the exact missing
-   artifact paths and stop; do not substitute broker, credential, network, or
-   dashboard work.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Keep all fill evidence labeled and checked as `source: local_paper`.
+8. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for trade-path interpretation,
+   - Execution sidecar for local-paper-only evidence,
+   - Review sidecar for v1-sprawl and durable-worker drift.
+   These sidecars do not create durable repo workers and do not override the
+   main Codex integrator.
+9. If artifacts are insufficient, record exact missing paths and stop; do not
+   substitute broker, credential, network, dashboard, or scheduler work.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -112,7 +119,7 @@ local-paper source evidence.
 
 ## Suggested Commit Message
 
-`Attribute explicit-slice depth target`
+`Attribute AMAT AEM depth trade paths`
 
 ## Completion Report
 
@@ -124,7 +131,8 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker were used,
-- produced attribution artifacts,
+- produced diagnostic artifacts,
 - local-paper source evidence,
+- sub-agents used and what they checked,
 - what was intentionally not built,
 - next goal.

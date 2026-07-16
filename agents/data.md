@@ -345,13 +345,16 @@
   `D:\thericher-v2\model-artifacts\data-agent`, and acquired no data. The
   Engine job reused ADBE, ADI, ADP, AEM, AGG, and AMAT from the existing
   `snapshot=2026-06-18` Yahoo 1m file.
+- Explicit-slice depth attribution consumed existing external research
+  artifacts only and did not read additional market-data rows or acquire new
+  data. Its next data need is selected AMAT/AEM local Yahoo rows only if
+  trade-path reconstruction requires bar context.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Attribute the explicit-slice
-  depth target with existing artifacts and selected local Yahoo rows only if
-  needed.
+- The next data task is still not acquisition. Use selected local Yahoo rows
+  only if AMAT/AEM trade-path attribution needs bar context.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

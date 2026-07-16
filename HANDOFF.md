@@ -830,6 +830,37 @@ slice, threshold pair, fill frequency, exit latency, or outlier probability
 rows. Keep the result artifact-only and outside Git unless a small helper is
 clearly needed.
 
+The explicit-slice depth target attribution then completed artifact-only:
+
+- It consumed the existing depth-target, holdout robustness, probability trace,
+  and local-paper event artifacts for
+  `engine-agent-depth-target-explicit-slices-20260717-r1`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, or new market
+  data acquisition.
+- Parsed holdout fills remained `531` verified `source: local_paper` fills
+  with no non-local fill evidence.
+- Variant-grid PnL sum was `-120.63570061035150`; max drawdown max remained
+  `38.0201341796875`.
+- Loss concentration was mainly AMAT, not the AGG max-probability outlier.
+  AGG contained the single `0.957193` probability row, but AGG losses were
+  small compared with AMAT.
+- The first threshold bands overlapped the dense middle of the holdout
+  probability distribution, causing many entries. AMAT still showed sharply
+  negative variants at higher thresholds with fewer fills, so both over-entry
+  and path quality need diagnosis before more GPU training.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts only and updated
+handoff/stateboard documents.
+
+Next, inspect AMAT and AEM trade paths from the explicit-slice depth target.
+Use temporary Codex sub-agents as sidecar reviewers where useful, but keep the
+repo-owned durable workers unchanged: Engine Research and Data are executable
+single-shot workers; Execution, Infra, and Review remain stateboards unless a
+future explicit goal makes a durable worker necessary.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

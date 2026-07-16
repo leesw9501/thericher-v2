@@ -438,12 +438,17 @@
   new executable worker, or model-promotion language. The useful simplification
   finding is evidential: the completed target produced many local-paper fills
   and poor holdout PnL, so attribution should precede another training block.
+- Explicit-slice depth attribution stayed artifact-only and reused existing
+  depth-target, robustness, probability-trace, and event artifacts. It added no
+  code, helper, job kind, CLI, report family, gate, dashboard, scheduler,
+  coordinator, durable worker, broker path, credential path, retraining, replay
+  rerun, simulator rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward artifact-only attribution of the completed
-  explicit-slice depth target. Keep coordination evidence small and avoid
-  daemon, scheduler, dashboard, report branch, broker, credential, or
-  auto-commit behavior.
+- Push the next task toward AMAT/AEM trade-path attribution from existing
+  explicit-slice depth artifacts. Keep coordination evidence small and avoid
+  daemon, scheduler, dashboard, report branch, broker, credential, auto-commit,
+  or durable multi-agent-platform behavior.

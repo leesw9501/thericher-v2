@@ -306,6 +306,10 @@
   threshold variants through the existing broker-free local-paper path,
   produced `531` verified `source: local_paper` fills, and observed no
   non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
+- Explicit-slice depth attribution reran no execution. It parsed the existing
+  holdout event artifacts, preserved `531` fills as `source: local_paper`, and
+  observed no non-local, broker-disabled, unknown, or diagnostic-overlay fill
+  sources.
 
 ## Next Handoff
 

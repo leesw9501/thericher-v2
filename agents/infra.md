@@ -433,6 +433,9 @@
   visible. It completed with return code `0` after about `16` minutes, wrote
   all training/model/calibration/holdout/robustness artifacts under
   `/app/model_artifacts`, and cleared the external GPU lock afterward.
+- Explicit-slice depth attribution ran locally as artifact-only work, used no
+  Docker or GPU job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution`.
 
 ## Next Handoff
 
@@ -448,4 +451,6 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  attribution slice consumes the explicit-slice depth artifacts.
+  trade-path attribution slice consumes explicit-slice depth artifacts.
+- Temporary Codex sub-agents are runtime helpers, not Docker services or repo
+  workers. Do not add a scheduler/coordinator layer for them in the next slice.
