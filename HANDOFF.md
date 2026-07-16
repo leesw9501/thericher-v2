@@ -276,6 +276,14 @@ Implemented and pushed:
   fill-bearing variants had negative PnL while zero-fill variants were flat,
   confirmed `10` fill events with `source: local_paper`, and wrote one compact
   attribution artifact outside Git,
+- bounded out-of-symbol fill-lifecycle attribution; it parsed only existing
+  local-paper event files and selected `snapshot=2026-06-18` bars for the
+  fill-bearing variants, found `10` local-paper fill events, `3` closed
+  segments, `4` open segments, and `4` of `5` fill-bearing variants held an
+  open long position to the bounded window end; ABNB and ACN open segments
+  carried negative bounded-window-end gross deltas, ACN also had small positive
+  closed segments, ABBV had a small negative closed segment, and compact
+  evidence was written outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -340,18 +348,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded fill-lifecycle attribution slice for the out-of-symbol
-loss-bearing local-paper variants:
+Start one bounded post-entry exit-signal attribution slice for the
+out-of-symbol loss-bearing local-paper variants:
 
-1. consume the out-of-symbol replay, opportunity attribution, and loss
-   attribution artifacts as context,
-2. parse only existing local-paper event files and the selected
-   `snapshot=2026-06-18` bars needed for fill-bearing variants,
-3. attribute entry time, side, fill price, final position, post-fill price path,
-   and whether the replay exited or held to the bounded window end,
-4. write any compact fill-lifecycle summary outside Git,
-5. avoid retraining, rerunning replay, new candidate modules, dashboards,
-   gates, schedulers, threshold searches, or broker-facing behavior.
+1. consume the out-of-symbol replay, opportunity attribution, loss
+   attribution, and fill-lifecycle artifacts as context,
+2. read only existing probability traces and selected `snapshot=2026-06-18`
+   bars for fill-bearing variants,
+3. measure whether each open buy segment saw a sell-threshold signal before the
+   bounded window end, plus simple post-entry adverse/favorable movement,
+4. write any compact post-entry signal summary outside Git,
+5. avoid retraining, rerunning replay, changing local-paper behavior, new
+   candidate modules, dashboards, gates, schedulers, threshold searches, or
+   broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

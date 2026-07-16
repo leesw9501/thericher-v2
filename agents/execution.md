@@ -124,6 +124,9 @@
 - Out-of-symbol loss attribution parsed existing fill event evidence and
   confirmed all `10` fill events were `source: local_paper`; no broker path was
   used.
+- Out-of-symbol fill-lifecycle attribution parsed existing local-paper event
+  files and confirmed `10` fill events, `3` closed segments, and `4` open
+  segments without rerunning replay or touching broker code.
 
 ## Next Handoff
 

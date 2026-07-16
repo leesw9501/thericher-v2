@@ -29,8 +29,9 @@
 
 ## Active Queue
 
-1. Start bounded fill-lifecycle attribution for the out-of-symbol loss-bearing
-   variants before another model axis or threshold-only branch is tried.
+1. Start bounded post-entry exit-signal attribution for the out-of-symbol
+   loss-bearing variants before another model axis or threshold-only branch is
+   tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -127,6 +128,13 @@
   `5` zero-fill variants, observed all fill-bearing variants had negative PnL,
   verified `10` local-paper fill events, and wrote one compact artifact outside
   Git.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-fill-lifecycle-20260716`, status
+  `candidate_feature_branch_replay_fill_lifecycle_attribution_only`, parsed
+  existing fill event files plus selected Yahoo bars, found `3` closed
+  segments, `4` open segments, and `4` of `5` fill-bearing variants held an
+  open long position to the bounded window end, with all `10` fill events
+  `source: local_paper`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -342,10 +350,13 @@
   rather than probability range mismatch. The next evidence should connect
   those fills to price path and final position lifecycle before changing model
   or threshold axes.
+- Connected fill-bearing out-of-symbol variants to local-paper lifecycle and
+  selected bar paths. The next evidence should inspect post-entry probability
+  traces to see whether sell signals appeared before the bounded window end.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attribute fill lifecycle for loss-bearing out-of-symbol variants
-  before running another hidden-units, regularization, preprocessing, or
-  threshold-only branch.
+  task should attribute post-entry exit-signal behavior for loss-bearing
+  out-of-symbol variants before running another hidden-units, regularization,
+  preprocessing, or threshold-only branch.

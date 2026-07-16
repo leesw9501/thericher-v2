@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded fill-lifecycle attribution slice for the out-of-symbol
+Build a bounded post-entry exit-signal attribution slice for the out-of-symbol
 loss-bearing local-paper variants.
 
-This advances PnL attribution and paper-trading preparation by connecting the
-loss-bearing out-of-symbol fill events to the selected bars, final positions,
-and post-fill price path before spending GPU time on another model-axis or
-threshold-only branch.
+This advances PnL attribution and paper-trading preparation by checking whether
+the existing probability traces emitted sell-threshold signals after entry, and
+how post-entry price movement related to open positions that remained at the
+bounded window end.
 
 ## Hard Boundaries
 
@@ -67,17 +67,18 @@ threshold-only branch.
    - `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`
    - `bounded-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`
    - `bounded-out-of-symbol-disjoint-eval-loss-attribution-20260716`
-3. Prefer existing artifacts and the selected local Yahoo bars. Do not retrain,
-   rerun replay, or run threshold search unless existing evidence cannot
-   support the attribution.
+   - `bounded-out-of-symbol-disjoint-eval-fill-lifecycle-20260716`
+3. Prefer existing artifacts, probability traces, and selected local Yahoo
+   bars. Do not retrain, rerun replay, or run threshold search unless existing
+   evidence cannot support the attribution.
 4. For fill-bearing out-of-symbol variants only, attribute:
-   - fill event timestamp, side, quantity, price, and source,
-   - symbol, threshold pair, and variant id,
-   - final position and whether replay exited or held to the bounded window end,
-   - post-fill price path from selected bars,
-   - per-variant PnL and drawdown context,
+   - entry fill timestamp, side, price, and source,
+   - post-entry probability path relative to the sell threshold,
+   - first sell-threshold signal timestamp if present,
+   - whether the segment exited or held to the bounded window end,
+   - simple adverse/favorable post-entry price movement,
    - local-paper fill-source verification.
-5. Write any compact fill-lifecycle output outside Git under
+5. Write any compact post-entry signal output outside Git under
    `D:\thericher-v2\model-artifacts`.
 6. Keep the result descriptive only. Do not rank symbols, pick thresholds,
    select a model, or add promotion language.
@@ -109,7 +110,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol fill lifecycle target`
+`Add bounded out-of-symbol post-entry attribution target`
 
 ## Completion Report
 
@@ -121,6 +122,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol fill-lifecycle findings,
+- out-of-symbol post-entry attribution findings,
 - what was intentionally not built,
 - next recommended goal.

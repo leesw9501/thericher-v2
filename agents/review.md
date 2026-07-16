@@ -184,11 +184,15 @@
   added no code, job kind, report family, gate, dashboard, scheduler, broker
   path, threshold search, retraining, rerun replay, or model-promotion
   language.
+- Out-of-symbol fill-lifecycle attribution used existing event artifacts and
+  selected local Yahoo rows only. It added no code, job kind, report family,
+  gate, dashboard, scheduler, broker path, threshold search, retraining, rerun
+  replay, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward compact fill-lifecycle attribution from existing
-  artifacts and selected local bars before allowing another model axis or
+- Push the next task toward compact post-entry exit-signal attribution from
+  existing traces and selected local bars before allowing another model axis or
   threshold-only branch.
