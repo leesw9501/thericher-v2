@@ -310,6 +310,9 @@
   holdout event artifacts, preserved `531` fills as `source: local_paper`, and
   observed no non-local, broker-disabled, unknown, or diagnostic-overlay fill
   sources.
+- AMAT/AEM trade-path diagnostic reran no execution. It inspected `403`
+  AMAT/AEM fills from existing event artifacts, all `source: local_paper`, with
+  no broker-disabled, unknown, diagnostic-overlay, or non-local fill sources.
 
 ## Next Handoff
 
@@ -320,3 +323,5 @@
   keep fills labeled `source: local_paper`.
 - Do not make Execution Agent executable as part of the next multi-agent slice;
   a broker-capable worker needs a future explicit paper-trading goal.
+- Any AMAT/AEM replay-shape overlay must label non-replay outcomes as
+  `source: diagnostic_overlay` and preserve original local-paper fills.

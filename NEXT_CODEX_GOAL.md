@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Inspect AMAT/AEM trade paths from the explicit-slice depth target before
-spending more GPU time.
+Run a bounded AMAT/AEM replay-shape diagnostic overlay before spending more GPU
+time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by identifying whether a smaller replay-shape
-diagnostic should focus on entry frequency, exit timing, path quality, or a
-cap-limited combination.
+walk-forward validation by comparing whether AMAT/AEM damage is more sensitive
+to entry cadence, maximum hold time, early adverse path, or open-position
+exposure.
 
 ## Hard Boundaries
 
@@ -26,10 +26,13 @@ cap-limited combination.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before the AMAT/AEM trade-path diagnosis is
-  complete.
+- Do not run new GPU training before the replay-shape overlay is complete.
 - Do not queue another Engine Research Agent job unless the current artifacts
   are unreadable or incomplete.
+- Do not mutate existing local-paper event artifacts or replay outputs.
+- Keep original fills labeled and checked as `source: local_paper`.
+- Label diagnostic overlay outcomes as `source: diagnostic_overlay`; do not
+  count them as local-paper fills.
 - Do not make Execution, Infra, or Review durable executable workers in this
   slice.
 - Do not add a daemon, scheduler, Windows service, dashboard, notification
@@ -66,31 +69,29 @@ cap-limited combination.
 
 ## Required Work
 
-1. Consume the completed attribution artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`.
-2. Consume existing event and probability-trace artifacts for AMAT and AEM
-   holdout variants from
-   `engine-agent-depth-target-explicit-slices-20260717-r1`.
-3. Use selected local Yahoo rows from `D:\market_data` only if needed to
-   explain entry/exit path context.
-4. Reconstruct compact trade-path evidence for:
-   - AMAT worst-loss variants,
-   - AEM high-fill variants,
-   - any AMAT/AEM higher-threshold variants that still lose with fewer fills.
-5. Explain whether AMAT/AEM losses appear driven by entry frequency, entry
-   timing, exit latency, adverse path movement, or open-position exposure.
-6. Produce one compact external diagnostic artifact under
+1. Consume the completed trade-path diagnostic artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`.
+2. Consume existing AMAT/AEM probability traces, local-paper event artifacts,
+   and selected local Yahoo rows from `snapshot=2026-06-18`.
+3. Build one compact diagnostic overlay artifact under
    `D:\thericher-v2\model-artifacts`.
-7. Keep all fill evidence labeled and checked as `source: local_paper`.
-8. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research sidecar for trade-path interpretation,
-   - Execution sidecar for local-paper-only evidence,
-   - Review sidecar for v1-sprawl and durable-worker drift.
-   These sidecars do not create durable repo workers and do not override the
-   main Codex integrator.
-9. If artifacts are insufficient, record exact missing paths and stop; do not
-   substitute broker, credential, network, dashboard, or scheduler work.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+4. Compare a small bounded shape grid, for example:
+   - max-hold: `3`, `5`, and `8` bars,
+   - cooldown: `0`, `5`, and `10` bars,
+   - optional early adverse mark using first-3-bar MAE/MFE.
+5. Keep the overlay descriptive. It should estimate how entry cadence,
+   max-hold, early adverse path, and open-position exposure would have changed
+   the AMAT/AEM diagnostic marks without changing existing replay fills.
+6. Preserve local-paper source verification from existing event artifacts and
+   separately count all overlay outcomes as `source: diagnostic_overlay`.
+7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for overlay interpretation,
+   - Execution sidecar for source separation,
+   - Review sidecar for sprawl and model-promotion language.
+8. If artifacts are insufficient, record exact missing paths and stop; do not
+   substitute broker, credential, network, dashboard, scheduler, or new GPU
+   training work.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -114,12 +115,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused artifact-only command used, artifact paths, and
-local-paper source evidence.
+Also report any focused artifact-only command used, artifact paths, local-paper
+source evidence, and diagnostic-overlay source evidence.
 
 ## Suggested Commit Message
 
-`Attribute AMAT AEM depth trade paths`
+`Add AMAT AEM replay-shape diagnostic`
 
 ## Completion Report
 
@@ -133,6 +134,7 @@ Report:
 - whether GPU/Docker were used,
 - produced diagnostic artifacts,
 - local-paper source evidence,
+- diagnostic-overlay source evidence,
 - sub-agents used and what they checked,
 - what was intentionally not built,
 - next goal.

@@ -443,12 +443,17 @@
   code, helper, job kind, CLI, report family, gate, dashboard, scheduler,
   coordinator, durable worker, broker path, credential path, retraining, replay
   rerun, simulator rule, or model-promotion language.
+- AMAT/AEM trade-path diagnostic stayed artifact-only and reused existing
+  attribution, trace, event, and selected local Yahoo evidence. It added no
+  code, helper, job kind, CLI, report family, gate, dashboard, scheduler,
+  coordinator, durable worker, broker path, credential path, retraining, replay
+  rerun, simulator rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward AMAT/AEM trade-path attribution from existing
+- Push the next task toward one AMAT/AEM replay-shape overlay from existing
   explicit-slice depth artifacts. Keep coordination evidence small and avoid
   daemon, scheduler, dashboard, report branch, broker, credential, auto-commit,
-  or durable multi-agent-platform behavior.
+  durable multi-agent-platform behavior, or model-promotion language.

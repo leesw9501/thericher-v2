@@ -349,12 +349,14 @@
   artifacts only and did not read additional market-data rows or acquire new
   data. Its next data need is selected AMAT/AEM local Yahoo rows only if
   trade-path reconstruction requires bar context.
+- AMAT/AEM trade-path diagnostic reused selected AEM and AMAT rows from the
+  existing `snapshot=2026-06-18` Yahoo 1m file and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Use selected local Yahoo rows
-  only if AMAT/AEM trade-path attribution needs bar context.
+- The next data task is still not acquisition. Use existing AMAT/AEM local
+  Yahoo rows only if the replay-shape overlay needs bar context.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

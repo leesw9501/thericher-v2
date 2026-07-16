@@ -827,6 +827,11 @@
   losses, and threshold bands overlapping the dense middle of holdout
   probabilities. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`.
+- AMAT/AEM trade-path diagnostic consumed existing explicit-slice artifacts
+  plus selected local Yahoo rows only. It found AMAT loss concentration as
+  path-quality heavy and AEM behavior as more entry-frequency plus open
+  exposure. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`.
 
 ## Next Handoff
 
@@ -834,9 +839,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another GPU training block, inspect AMAT/AEM trade paths around the
-  explicit-slice depth target's poor holdout variants and determine a bounded
-  replay-shape diagnostic to test next.
+- Before another GPU training block, run one bounded AMAT/AEM replay-shape
+  diagnostic overlay using existing traces and bars only.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

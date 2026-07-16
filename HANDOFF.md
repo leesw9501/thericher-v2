@@ -861,6 +861,45 @@ repo-owned durable workers unchanged: Engine Research and Data are executable
 single-shot workers; Execution, Infra, and Review remain stateboards unless a
 future explicit goal makes a durable worker necessary.
 
+The AMAT/AEM trade-path diagnostic then completed artifact-only:
+
+- It consumed the existing attribution, holdout robustness, AMAT/AEM
+  probability traces, AMAT/AEM event artifacts, and selected local Yahoo rows
+  from `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market
+  data acquisition, or durable worker creation.
+- AMAT/AEM covered `12` variants, `403` local-paper fills, `198` closed
+  segments, and `7` open segments; all parsed fill evidence remained
+  `source: local_paper`.
+- AMAT carried the larger closed-path loss concentration: `190` fills,
+  reported PnL sum `-91.3836731445312`, closed fee-aware delta sum
+  `-91.6983`, `94` closed segments, `58` negative fee-aware closed segments,
+  and `2` open segments.
+- AEM showed more entry-frequency plus open-exposure behavior: `213` fills,
+  reported PnL sum `-28.4819274658203`, closed fee-aware delta sum
+  `-31.6787`, `104` closed segments, `68` negative fee-aware closed segments,
+  and `5` open segments without post-entry sell signals before the bounded
+  window end.
+- Engine Research sidecar agreed AMAT high-threshold losers look more like
+  path-quality failures than only delayed exits, while AEM shows more
+  over-entry and delayed/open-exposure behavior.
+- Execution sidecar inspected the 12 AMAT/AEM event files and found `403`
+  fills, all `payload.source: local_paper`, with zero broker-disabled,
+  unknown, diagnostic-overlay, or non-local fill sources.
+- Review sidecar found no blocking sprawl or durable-worker drift, but flagged
+  growing stateboard length as the next simplification watch item.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, run a bounded AMAT/AEM replay-shape diagnostic overlay from existing
+traces and bars. Keep original local-paper fills unchanged, label overlay
+outcomes as `source: diagnostic_overlay`, and compare only a small
+entry-cadence/max-hold shape before any further GPU training.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
