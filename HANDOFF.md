@@ -534,6 +534,13 @@ Implemented and pushed:
   `diagnostic_overlay` marks for the `latency_ge_5_at_2_bar` condition,
   matched the composite helper smoke keys, timestamps, prices, and gross-delta
   sum `-2.486370703125`, and created zero local-paper fills or broker outcomes,
+- bounded fixed entry-adverse PyTorch CUDA validation block; it kept
+  `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`, and
+  `feature_standardization` fixed, trained on ADBE/ADI/ADP/AEM/AGG/AMAT from
+  `snapshot=2026-06-18`, evaluated ANET/APH/APO/APP/ASML/AVGO, recorded
+  evaluation probability range `0.493954`, replayed cap-2 thresholds through
+  local paper with `4` verified `source: local_paper` fills, and attributed `2`
+  closed APH trade paths with fee-aware delta sum `1.4194`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -598,16 +605,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded PyTorch CUDA entry-adverse validation target:
+Start one bounded longer-depth PyTorch CUDA contrast target:
 
-1. keep `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`,
-   and `feature_standardization` fixed,
-2. use existing `D:\market_data` Yahoo rows and Docker `research` only,
-3. run one compact train/evaluate/replay block through existing job kinds,
-4. preserve local-paper-only replay evidence and keep any exit-latency
-   diagnostic marks separate as `source: diagnostic_overlay`,
-5. avoid new helper code, broad model search, threshold search, dashboards,
-   schedulers, broker behavior, or report/gate expansion.
+1. consume the completed ANET/APH/APO/APP/ASML/AVGO validation artifacts,
+2. keep the same source/evaluation split and fixed entry-adverse settings,
+3. increase only bounded training caps within existing limits,
+4. replay the same evaluation slices through local paper and compare against
+   the short block descriptively,
+5. avoid new helper code, model-axis changes, broad model search, threshold
+   search, dashboards, schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

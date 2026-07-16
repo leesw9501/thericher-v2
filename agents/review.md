@@ -25,8 +25,8 @@
 
 ## Active Queue
 
-1. Review the next research-only exit-latency sandbox smoke for bounded scope
-   and artifact sprawl.
+1. Review the next longer-depth GPU contrast for bounded scope and artifact
+   sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -339,11 +339,17 @@
   CLI, report family, gate, dashboard, scheduler, broker path, threshold
   search, replay rerun, feature/model axis, artifact writer, or
   model-promotion language.
+- Fixed entry-adverse GPU validation reused existing Docker `research`
+  feature-branch and replay job kinds plus one artifact-only trade-path
+  summary. It added no code, job kind, CLI, report family, gate, dashboard,
+  scheduler, broker path, threshold search, feature/model axis, simulator exit
+  rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded GPU validation block that reuses
-  existing job kinds and fixed entry-adverse settings before allowing another
-  feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one bounded longer-depth contrast that reuses the
+  same source/evaluation split and fixed entry-adverse settings before allowing
+  another feature-set, regularization value, hidden-unit value, preprocessing
+  value, or threshold-only branch.

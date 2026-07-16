@@ -231,11 +231,15 @@
 - Exit-latency sandbox helper smoke created zero local-paper fills and zero
   broker outcomes while keeping all available marks labeled
   `source: diagnostic_overlay`.
+- Fixed entry-adverse GPU validation replay used the existing broker-free
+  local-paper path only, produced `4` fills on APH, verified every fill as
+  `source: local_paper`, and attributed `2` closed trade paths with no open
+  segments or broker outcomes.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next GPU validation block may replay through the existing broker-free
+- The next longer-depth contrast may replay through the existing broker-free
   local-paper path only; diagnostic exit-latency evidence must remain separate
   from simulated fills.

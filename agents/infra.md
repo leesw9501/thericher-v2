@@ -338,6 +338,10 @@
 - Exit-latency sandbox helper smoke ran locally as artifact-only work, used no
   GPU or Docker research job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Fixed entry-adverse validation ran in Docker `research` with PyTorch CUDA and
+  RTX 4090 visible, read `/app/market_data` read-only, and wrote feature
+  branch, training, evaluation, model, replay, robustness, event, research job,
+  and trade-path artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 
@@ -346,6 +350,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next bounded validation block should use Docker `research` with PyTorch
-  CUDA and write generated artifacts only under
+- The next bounded longer-depth contrast should use Docker `research` with
+  PyTorch CUDA and write generated artifacts only under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.

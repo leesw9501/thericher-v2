@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded Docker `research` PyTorch CUDA validation block with
-   `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`, and
-   `feature_standardization` fixed.
+1. Run one bounded longer-depth Docker `research` PyTorch CUDA contrast using
+   the same entry-adverse settings and ANET/APH/APO/APP/ASML/AVGO evaluation
+   split.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -691,10 +691,15 @@
   selected `snapshot=2026-06-18` Yahoo rows, matched the composite helper smoke
   on `4` latency-matched diagnostic marks with gross-delta sum
   `-2.486370703125`, and created no local-paper fills or broker outcomes.
+- Fixed entry-adverse GPU validation ran in Docker `research` with RTX 4090
+  visible, trained on ADBE/ADI/ADP/AEM/AGG/AMAT, evaluated
+  ANET/APH/APO/APP/ASML/AVGO, recorded probability range `0.493954`, replayed
+  cap-2 local-paper thresholds with `4` fills, and attributed `2` closed APH
+  segments with fee-aware delta sum `1.4194`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should return to one bounded GPU validation block using existing Docker
-  `research` job kinds, fixed entry-adverse settings, existing local Yahoo
-  data, and broker-free local-paper replay.
+  task should run one bounded longer-depth contrast on the same fixed
+  entry-adverse setup before changing feature sets, thresholds, preprocessing,
+  regularization, or hidden units.
