@@ -179,6 +179,9 @@ Implemented and pushed:
   fill-source counting from replay event artifacts, exposes local-paper-only
   evidence, flags mixed or unknown sources, tolerates missing zero-fill event
   files, and rejects unreadable nonzero-fill evidence,
+- broker adapter boundary contracts and disabled KIS execution fuses; the KIS
+  boundary exposes disabled capabilities, unavailable submit/cancel/status
+  results, and a factory that fails closed without network or credential I/O,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -199,7 +202,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `201 passed`
+- `207 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -243,13 +246,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add broker adapter boundary contracts and local-only execution fuses:
+Run a longer bounded GPU feature/model validation using existing job kinds:
 
-1. define the minimal broker adapter protocol and order lifecycle boundary,
-2. add a disabled KIS adapter skeleton that cannot read credentials or call the
-   network,
-3. prove mode/fuse behavior keeps broker submit unavailable by default,
-4. keep local-paper simulator behavior separate and unchanged.
+1. keep PyTorch CUDA inside Docker `research`,
+2. reuse the existing feature-branch and local-paper replay paths,
+3. write all metrics/model artifacts under `D:\thericher-v2\model-artifacts`,
+4. keep results descriptive with no winner, recommendation, promotion, or
+   broker enablement.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

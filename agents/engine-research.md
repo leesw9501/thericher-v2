@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Pause additional threshold/candidate reruns until broker-boundary and
-   source-filtered attribution consumers are in place.
+1. Resume bounded GPU feature/model research through existing job kinds now
+   that source-filtering and disabled broker boundaries are in place.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -157,9 +157,12 @@
   fills, and kept the result descriptive.
 - Local-paper attribution now uses a shared source-filter helper, so research
   evidence can distinguish `source: local_paper` from future broker/live fills.
+- Disabled broker boundary fuses now keep future KIS outcomes distinct from
+  local-paper evidence, so bounded GPU research can resume without broker
+  enablement.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should move toward broker adapter boundaries and fuses before any
-  broader sweep or promotion rule.
+  task should run a bounded longer feature/model validation through existing
+  Docker `research` job kinds, not create another job family or promotion rule.

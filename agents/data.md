@@ -112,12 +112,13 @@
 - Bounded feature-branch replay reused CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe` plus existing external feature
   branch artifacts; no additional data was acquired.
+- Broker-boundary fuse work required no market data reads or acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Broker-boundary work should not require new market data; start from existing
-  local-paper event and replay artifacts before acquiring anything new.
+- The next bounded GPU validation should prefer existing CVS, FCX, and KO Yahoo
+  snapshots before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -26,7 +26,8 @@
 
 ## Active Queue
 
-1. Define broker adapter boundary contracts and disabled-by-default fuses.
+1. Add execution risk-limit preflight only when a future paper-loop goal needs
+   it.
 2. Keep future KIS adapter work separate from local paper simulator behavior.
 3. Add more realistic order types only when paper-loop evidence needs them.
 
@@ -82,8 +83,11 @@
 - Local-paper fill-source evidence is now centralized in an execution helper.
   It can return local-paper-only fills, flag mixed or unknown sources, tolerate
   missing zero-fill event files, and reject unreadable nonzero-fill evidence.
+- Broker adapter boundary contracts now exist with disabled KIS capabilities,
+  typed unavailable submit/cancel/status results, `source: broker_disabled`,
+  and tests proving no network, credentials, broker submit, or event-log writes.
 
 ## Next Handoff
 
-- Add broker adapter boundary contracts and disabled-by-default execution fuses
-  before any KIS API work.
+- Keep broker execution disabled until a future explicit KIS paper goal allows
+  API calls and credential handling.

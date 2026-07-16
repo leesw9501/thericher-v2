@@ -1,5 +1,16 @@
 """Execution boundary helpers."""
 
+from .broker import (
+    BROKER_DISABLED_SOURCE,
+    BROKER_EXECUTION_ENABLED,
+    BrokerAdapter,
+    BrokerCapabilities,
+    BrokerUnavailable,
+    CancelIntent,
+    DisabledKISAdapter,
+    OrderStatusQuery,
+    create_kis_broker_adapter,
+)
 from .emergency import EmergencyStore
 from .fill_source import (
     FillEventArtifact,
@@ -18,7 +29,14 @@ from .local_paper import (
 )
 
 __all__ = [
+    "BROKER_DISABLED_SOURCE",
+    "BROKER_EXECUTION_ENABLED",
     "LOCAL_PAPER_SOURCE",
+    "BrokerAdapter",
+    "BrokerCapabilities",
+    "BrokerUnavailable",
+    "CancelIntent",
+    "DisabledKISAdapter",
     "EmergencyStore",
     "FillEventArtifact",
     "FillSourceEvidence",
@@ -28,6 +46,8 @@ __all__ = [
     "LocalPaperFill",
     "LocalPaperOrderResult",
     "LocalPaperPosition",
+    "OrderStatusQuery",
     "collect_fill_source_evidence",
+    "create_kis_broker_adapter",
     "replay_local_paper_account",
 ]

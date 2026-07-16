@@ -556,3 +556,15 @@ Reason: future broker and live fills must not be confused with local-paper
 research evidence. A small shared helper improves PnL attribution and
 paper-trading safety without adding KIS access, credentials, broker submit
 code, dashboards, reports, schedulers, or another research artifact family.
+
+## 2026-07-16 - Disabled broker adapter boundary fuses
+
+Decision: define the first broker adapter boundary as disabled by default. The
+KIS skeleton exposes disabled capabilities, typed submit/cancel/status
+unavailable results with `source: broker_disabled`, and a factory that raises if
+broker execution is explicitly requested. The boundary performs no network,
+credential, environment, or event-log I/O.
+
+Reason: future KIS paper and live execution needs a clear order lifecycle
+surface, but the current engine must remain unable to submit broker orders or
+confuse disabled broker outcomes with `source: local_paper` fills.
