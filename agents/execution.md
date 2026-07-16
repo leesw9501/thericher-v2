@@ -284,11 +284,16 @@
 - Engine Research Agent runner smoke executed only Docker `research`
   `gpu_training_smoke`; it created no local-paper fills, broker-disabled
   outcomes, broker submit/cancel requests, or diagnostic-overlay fills.
+- Engine Research Agent queued feature replay ran through the existing
+  broker-free local-paper replay path for AXP, AZN, and BA, produced zero
+  fills across `9` variants, recorded missing zero-fill event artifacts as empty
+  evidence, and observed no broker, disabled-broker, unknown, or
+  diagnostic-overlay fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
 - The Engine Research Agent runner must not gain broker authority. If a queued
-  smoke includes replay, it must use the existing broker-free local-paper path
-  and keep fills labeled `source: local_paper`.
+  job includes replay, it must use the existing broker-free local-paper path and
+  keep fills labeled `source: local_paper`.

@@ -124,12 +124,17 @@ uv run --extra dev thericher-v2-engine-research-agent seed-gpu-training-smoke --
 ```
 
 ```powershell
+uv run --extra dev thericher-v2-engine-research-agent enqueue-research-job --job-id bounded-agent-feature-replay --kind candidate_feature_branch_replay -- --feature-branch-artifact /app/model_artifacts/candidate-feature-branch/example/metrics.json --max-bars 120 --robustness-slice example=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ABC
+```
+
+```powershell
 uv run --extra dev thericher-v2-engine-research-agent run-once
 ```
 
 The runner is not a daemon, scheduler, dashboard, notification process, or
-multi-agent platform. If `gpu.lock` remains after an interrupted run, verify no
-Docker `research` job is running before removing the lock manually.
+multi-agent platform. It mounts current `src` read-only into Docker `research`.
+If `gpu.lock` remains after an interrupted run, verify no Docker `research` job
+is running before removing the lock manually.
 
 ## Market Data Acquisition
 

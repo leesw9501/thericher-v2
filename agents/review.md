@@ -406,12 +406,18 @@
   per invocation, and did not add a daemon, loop, scheduler, dashboard,
   notification path, broad multi-agent platform, broker authority, credential
   reads, report family, gate, or local/base PyTorch dependency.
+- Engine Research Agent enqueue stayed on the existing runner, validates a
+  closed research-job kind set, writes one external queue item atomically, and
+  keeps `run-once` as the only executor. The source mount fix reused the
+  existing Docker `research` profile instead of adding a rebuild workflow,
+  daemon, scheduler, dashboard, report branch, broker path, credential path, or
+  local/base PyTorch dependency.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
 - Push the next task toward using the smallest useful Engine Research Agent
-  queue item beyond smoke. Do not turn the runner into a daemon, broad
-  autonomous agent framework, dashboard, report branch, auto-commit path, or
-  broker-capable process.
+  evidence from completed queue artifacts before adding another feature/model
+  axis. Do not turn the runner into a daemon, broad autonomous agent framework,
+  dashboard, report branch, auto-commit path, or broker-capable process.

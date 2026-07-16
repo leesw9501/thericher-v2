@@ -12,11 +12,14 @@ from thericher_v2.research.engine_research_agent import (
     DOCKER_MODEL_ARTIFACT_ROOT,
     RUNNER_EMPTY_QUEUE,
     RUNNER_GPU_LOCKED,
+    SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS,
     _exit_code_for,
     claim_next_job,
+    enqueue_research_job,
     run_once,
     seed_gpu_training_smoke_job,
 )
+from thericher_v2.research.jobs import SUPPORTED_RESEARCH_JOB_KINDS
 
 
 def test_seed_gpu_training_smoke_job_writes_external_queue_item(tmp_path) -> None:
@@ -75,6 +78,109 @@ def test_claim_next_job_is_deterministic_by_queue_filename(tmp_path) -> None:
     assert (artifact_root / "engine-research-agent" / "queue" / "b-job.json").exists()
 
 
+def test_enqueue_research_job_writes_existing_kind_args_outside_repo(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id="unit-feature-replay",
+        research_kind="candidate_feature_branch_replay",
+        research_args=(
+            "--feature-branch-artifact",
+            "/app/model_artifacts/candidate-feature-branch/unit/metrics.json",
+            "--max-bars",
+            "120",
+            "--robustness-slice",
+            "aaa=/app/market_data/unit/ohlcv_1m.csv.gz:AAA",
+        ),
+        queued_at=datetime(2026, 1, 2, tzinfo=UTC),
+        reason="unit bounded replay",
+    )
+
+    payload = json.loads(queue_path.read_text(encoding="utf-8"))
+    assert payload["job_id"] == "unit-feature-replay"
+    assert payload["research_job_args"] == [
+        "--job-id",
+        "unit-feature-replay",
+        "--kind",
+        "candidate_feature_branch_replay",
+        "--feature-branch-artifact",
+        "/app/model_artifacts/candidate-feature-branch/unit/metrics.json",
+        "--max-bars",
+        "120",
+        "--robustness-slice",
+        "aaa=/app/market_data/unit/ohlcv_1m.csv.gz:AAA",
+    ]
+    assert payload["artifact_policy"]["repo_storage_allowed"] is False
+
+    claim = claim_next_job(artifact_root / "engine-research-agent")
+    assert claim is not None
+    assert claim.spec.research_job_args == tuple(payload["research_job_args"])
+
+
+def test_enqueue_research_job_rejects_unknown_kind_without_writing(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+
+    with pytest.raises(ValueError, match="unsupported research job kind"):
+        enqueue_research_job(
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            job_id="bad-kind",
+            research_kind="candidate_broker_live_magic",
+        )
+
+    assert not (artifact_root / "engine-research-agent" / "queue").exists()
+
+
+@pytest.mark.parametrize(
+    "bad_arg",
+    [
+        "--artifact-root",
+        "--env-file",
+        ".env",
+        "KIS_ACCOUNT",
+        "broker-submit",
+        "secret-token",
+        "docker",
+        "thericher-v2-research-job",
+        "bad;arg",
+    ],
+)
+def test_enqueue_research_job_rejects_boundary_args(tmp_path, bad_arg: str) -> None:
+    with pytest.raises(ValueError):
+        enqueue_research_job(
+            artifact_root=tmp_path / "model-artifacts",
+            repo_root=Path.cwd(),
+            job_id="bad-boundary",
+            research_kind="gpu_training_smoke",
+            research_args=(bad_arg,),
+        )
+
+
+def test_claim_ignores_partial_temp_queue_files(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    queue_dir = artifact_root / "engine-research-agent" / "queue"
+    queue_dir.mkdir(parents=True)
+    (queue_dir / ".partial.json.tmp").write_text("{", encoding="utf-8")
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id="complete-job",
+        research_kind="gpu_training_smoke",
+    )
+
+    claim = claim_next_job(artifact_root / "engine-research-agent")
+
+    assert claim is not None
+    assert claim.spec.job_id == "complete-job"
+    assert queue_path.exists() is False
+    assert (queue_dir / ".partial.json.tmp").exists()
+
+
+def test_enqueue_kind_set_matches_research_job_runner() -> None:
+    assert SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS == SUPPORTED_RESEARCH_JOB_KINDS
+
+
 def test_run_once_claims_one_job_and_does_not_double_claim(tmp_path) -> None:
     artifact_root = tmp_path / "model-artifacts"
     seed_gpu_training_smoke_job(
@@ -125,6 +231,8 @@ def test_run_once_claims_one_job_and_does_not_double_claim(tmp_path) -> None:
     ]
     assert "research" in command
     assert "thericher-v2-research-job" in command
+    assert "--volume" in command
+    assert any(item.endswith("src:/app/src:ro") for item in command)
     assert "--artifact-root" in command
     assert DOCKER_MODEL_ARTIFACT_ROOT in command
     assert env["COMPOSE_DISABLE_ENV_FILE"] == "1"

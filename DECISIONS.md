@@ -828,3 +828,19 @@ Reason: the Engine Research Agent needed a first executable worker shape rather
 than only a stateboard. Keeping it single-shot avoids daemon, scheduler,
 notification, dashboard, broad multi-agent framework, auto-commit, broker,
 credential, or `.env` behavior while starting the single-GPU queue cadence.
+
+## 2026-07-17 - Bounded Engine Research Agent enqueue command
+
+Decision: extend the single-shot Engine Research Agent runner with one
+`enqueue-research-job` subcommand for existing `thericher-v2-research-job`
+kinds. Enqueue validates a closed kind set, writes exactly one external JSON
+queue item atomically, rejects queued artifact-root overrides and obvious
+credential, KIS, or broker terms, and leaves `run-once` as the only executor.
+The runner mounts the current `src` read-only into Docker `research` so queued
+jobs use current committed source without rebuilding the PyTorch image.
+
+Reason: the runner needed to execute useful bounded research jobs beyond GPU
+smoke. A single explicit enqueue command keeps queue behavior reproducible while
+avoiding arbitrary shell execution, stateboard-driven behavior, daemon loops,
+schedulers, dashboards, broker authority, credential reads, local/base PyTorch,
+or model-promotion semantics.

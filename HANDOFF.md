@@ -619,6 +619,7 @@ Implemented and pushed:
 - agent lane stateboards under `agents/`,
 - single-shot Engine Research Agent runner CLI with external queue, lock, and
   run-state artifacts,
+- Engine Research Agent enqueue path for existing Docker `research` job kinds,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
 - tests and lint baseline.
@@ -635,7 +636,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `263 passed`
+- `276 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -679,26 +680,28 @@ Key decisions:
 
 ## Recommended Next Slice
 
-The first Engine Research Agent runner now exists as
-`thericher-v2-engine-research-agent`. It claims one external JSON queue item by
-deterministic filename order, uses `gpu.lock` to avoid double-booking the single
-GPU, executes Docker `research` only, and writes run-state under
-`D:\thericher-v2\model-artifacts\engine-research-agent`. The first successful
-runner smoke was `engine-research-agent-gpu-training-smoke-20260717-r2`; it
-selected `torch` on NVIDIA GeForce RTX 4090 and wrote artifacts under
-`D:\thericher-v2\model-artifacts\gpu-training` and
-`D:\thericher-v2\model-artifacts\research-jobs`.
+The Engine Research Agent runner now supports both single-shot enqueue and
+single-shot run flows. The first research-useful queued job beyond smoke was
+`engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2`. It mounted
+current `src` read-only into Docker `research`, replayed the first-evaluation
+depth entry-adverse feature branch on AXP, AZN, and BA from
+`snapshot=2026-06-18`, completed `9` variants, produced zero fills, and
+verified local-paper-only evidence with no non-local, broker, or unknown fill
+sources. Artifacts:
 
-Use the runner for the first research-useful queued job beyond smoke:
+- `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2\status.json`
+- `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2\metrics.json`
+- `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2-robustness\metrics.json`
 
-1. inspect the external runner queue/run state and keep the failed first smoke
-   as diagnostic history,
-2. add only the smallest enqueue path needed for existing
-   `thericher-v2-research-job` kinds,
-3. queue and run one bounded `candidate_feature_branch` or
-   `candidate_feature_branch_replay` job that advances the current
-   entry-adverse/depth research loop,
-4. keep artifacts outside Git and keep broker, credentials, dashboard,
+Attribute that zero-fill replay before changing another model or feature axis:
+
+1. consume the runner run-state, feature-branch replay, robustness, and
+   probability trace artifacts only,
+2. explain whether zero fills came from threshold gaps, probability range,
+   slice shape, or missing signal windows,
+3. preserve local-paper-only source separation,
+4. write one compact external attribution artifact if useful,
+5. keep artifacts outside Git and keep broker, credentials, dashboard,
    scheduler, auto-commit, and broad multi-agent platform behavior out.
 
 ## Daily Operator Review

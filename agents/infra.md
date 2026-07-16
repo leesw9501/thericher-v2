@@ -405,6 +405,12 @@
   `engine-research-agent-gpu-training-smoke-20260717-r2` completed with
   PyTorch CUDA on the RTX 4090 and wrote artifacts under `/app/model_artifacts`
   mounted to `D:\thericher-v2\model-artifacts`.
+- Engine Research Agent enqueue added one explicit subcommand for existing
+  research job kinds and keeps `run-once` as the only executor. A first queued
+  `candidate_feature_branch_replay` attempt exposed stale Docker image source;
+  the runner now mounts current `src` read-only into Docker `research`, and the
+  retry completed with RTX 4090 visible while writing all artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 
@@ -413,7 +419,7 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The runner now has explicit one-job CLI semantics, queue/run artifacts outside
-  Git, and Docker `research` GPU execution. The next infra concern is making
-  useful research queue items easy without adding a daemon, scheduler, or
-  dashboard.
+- The runner now has explicit one-job enqueue/run semantics, queue/run artifacts
+  outside Git, current `src` read-only Docker mount, and Docker `research` GPU
+  execution. Keep future runner changes away from daemon, scheduler, dashboard,
+  notification, or auto-commit behavior.

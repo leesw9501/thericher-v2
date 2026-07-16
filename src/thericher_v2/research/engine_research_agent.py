@@ -32,6 +32,26 @@ AGENT_ROOT_NAME = "engine-research-agent"
 DEFAULT_GPU_SMOKE_JOB_ID = "engine-research-agent-gpu-training-smoke"
 DOCKER_MODEL_ARTIFACT_ROOT = "/app/model_artifacts"
 RESEARCH_JOB_COMMAND = "thericher-v2-research-job"
+SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS = (
+    "gpu_training_smoke",
+    "candidate_breadth_holdout",
+    "candidate_breadth_queue",
+    "candidate_depth_comparison",
+    "candidate_depth_target",
+    "candidate_training",
+    "candidate_evaluation",
+    "candidate_feature_branch",
+    "candidate_feature_branch_replay",
+    "candidate_replay",
+    "candidate_replay_comparison",
+    "candidate_threshold_sweep",
+    "candidate_threshold_robustness",
+    "candidate_threshold_calibration",
+    "candidate_threshold_holdout",
+    "candidate_threshold_attribution",
+    "candidate_threshold_band_rerun",
+    "candidate_threshold_rerun",
+)
 
 RUNNER_COMPLETED = 0
 RUNNER_EMPTY_QUEUE = 20
@@ -60,6 +80,25 @@ _SECRET_MARKERS = (
     "ACCESS_KEY",
     "PRIVATE_KEY",
 )
+_DISALLOWED_RESEARCH_ARG_VALUES = (
+    ".env",
+    "kis",
+    "broker",
+    "credential",
+    "secret",
+    "password",
+    "api-key",
+    "api_key",
+    "token",
+)
+_DISALLOWED_RESEARCH_ARG_FLAGS = (
+    "--artifact-root",
+    "--env",
+    "-e",
+    "--env-file",
+    "--env-from-file",
+    "--network",
+)
 
 
 @dataclass(frozen=True)
@@ -80,8 +119,7 @@ class AgentJobSpec:
             raise ValueError("research_job_args are required")
         if any(not item for item in self.research_job_args):
             raise ValueError("research_job_args must not contain empty values")
-        if "--artifact-root" in self.research_job_args:
-            raise ValueError("artifact root is fixed by the Docker research runner")
+        _validate_research_job_args(self.research_job_args)
         object.__setattr__(self, "queued_at", self.queued_at.astimezone(UTC))
 
 
@@ -160,8 +198,31 @@ def seed_gpu_training_smoke_job(
     job_id: str = DEFAULT_GPU_SMOKE_JOB_ID,
     queued_at: datetime | None = None,
 ) -> Path:
+    return enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        job_id=job_id,
+        queued_at=queued_at or datetime.now(UTC),
+        research_kind="gpu_training_smoke",
+        reason="bounded PyTorch CUDA smoke through Docker research",
+    )
+
+
+def enqueue_research_job(
+    *,
+    artifact_root: Path | None = None,
+    repo_root: Path | None = None,
+    job_id: str,
+    research_kind: str,
+    research_args: tuple[str, ...] = (),
+    queued_at: datetime | None = None,
+    reason: str = "bounded Docker research job",
+) -> Path:
     root = artifact_root or resolve_model_artifact_root()
     _reject_repo_artifact_path(root, repo_root)
+    if research_kind not in SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS:
+        raise ValueError(f"unsupported research job kind: {research_kind}")
+    _reject_repo_path_args(research_args, repo_root)
     spec = AgentJobSpec(
         job_id=job_id,
         kind="docker_research_job",
@@ -169,20 +230,13 @@ def seed_gpu_training_smoke_job(
             "--job-id",
             job_id,
             "--kind",
-            "gpu_training_smoke",
+            research_kind,
+            *research_args,
         ),
         queued_at=queued_at or datetime.now(UTC),
-        reason="bounded PyTorch CUDA smoke through Docker research",
+        reason=reason,
     )
-    queue_dir = resolve_agent_root(root) / "queue"
-    queue_dir.mkdir(parents=True, exist_ok=True)
-    queue_path = queue_dir / f"{spec.job_id}.json"
-    if not queue_path.exists():
-        queue_path.write_text(
-            json.dumps(_agent_job_payload(spec, root), indent=2, sort_keys=True),
-            encoding="utf-8",
-        )
-    return queue_path
+    return _write_queue_spec(spec, root)
 
 
 def claim_next_job(agent_root: Path) -> AgentClaim | None:
@@ -246,6 +300,12 @@ def build_parser() -> argparse.ArgumentParser:
     seed = subparsers.add_parser("seed-gpu-training-smoke")
     seed.add_argument("--job-id", default=DEFAULT_GPU_SMOKE_JOB_ID)
 
+    enqueue = subparsers.add_parser("enqueue-research-job")
+    enqueue.add_argument("--job-id", required=True)
+    enqueue.add_argument("--kind", required=True, choices=SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS)
+    enqueue.add_argument("--reason", default="bounded Docker research job")
+    enqueue.add_argument("research_args", nargs=argparse.REMAINDER)
+
     subparsers.add_parser("run-once")
     return parser
 
@@ -258,6 +318,27 @@ def main() -> None:
             artifact_root=artifact_root,
             repo_root=args.repo_root,
             job_id=args.job_id,
+        )
+        print(
+            json.dumps(
+                {
+                    "status": "queued",
+                    "agent": AGENT_NAME,
+                    "queue_path": str(queue_path),
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        raise SystemExit(RUNNER_COMPLETED)
+    if args.command == "enqueue-research-job":
+        queue_path = enqueue_research_job(
+            artifact_root=artifact_root,
+            repo_root=args.repo_root,
+            job_id=args.job_id,
+            research_kind=args.kind,
+            research_args=_clean_research_args(args.research_args),
+            reason=args.reason,
         )
         print(
             json.dumps(
@@ -286,7 +367,7 @@ def _run_claim(
     checked_at: datetime,
 ) -> AgentRunResult:
     started_at = datetime.now(UTC)
-    command = _docker_research_command(claim.spec)
+    command = _docker_research_command(claim.spec, repo_root=repo_root)
     env = _docker_research_env(artifact_root)
     try:
         completed = executor(command, repo_root, env)
@@ -359,7 +440,7 @@ def _run_subprocess(
     )
 
 
-def _docker_research_command(spec: AgentJobSpec) -> list[str]:
+def _docker_research_command(spec: AgentJobSpec, *, repo_root: Path) -> list[str]:
     return [
         "docker",
         "compose",
@@ -368,6 +449,8 @@ def _docker_research_command(spec: AgentJobSpec) -> list[str]:
         "run",
         "--rm",
         "--no-deps",
+        "--volume",
+        f"{_compose_host_path(repo_root / 'src')}:/app/src:ro",
         "research",
         RESEARCH_JOB_COMMAND,
         *spec.research_job_args,
@@ -415,6 +498,60 @@ def _docker_research_env(artifact_root: Path) -> dict[str, str]:
 
 def _compose_host_path(path: Path) -> str:
     return str(path).replace("\\", "/")
+
+
+def _write_queue_spec(spec: AgentJobSpec, artifact_root: Path) -> Path:
+    queue_dir = resolve_agent_root(artifact_root) / "queue"
+    queue_dir.mkdir(parents=True, exist_ok=True)
+    queue_path = queue_dir / f"{spec.job_id}.json"
+    if queue_path.exists():
+        return queue_path
+    temp_path = queue_path.with_name(f".{queue_path.name}.tmp")
+    temp_path.write_text(
+        json.dumps(_agent_job_payload(spec, artifact_root), indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
+    temp_path.replace(queue_path)
+    return queue_path
+
+
+def _clean_research_args(args: list[str]) -> tuple[str, ...]:
+    cleaned = tuple(str(item) for item in args)
+    if cleaned and cleaned[0] == "--":
+        cleaned = cleaned[1:]
+    return cleaned
+
+
+def _validate_research_job_args(args: tuple[str, ...]) -> None:
+    if "--kind" not in args:
+        raise ValueError("research_job_args must include --kind")
+    kind_index = args.index("--kind")
+    if kind_index == len(args) - 1:
+        raise ValueError("research_job_args must include a kind value")
+    research_kind = args[kind_index + 1]
+    if research_kind not in SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS:
+        raise ValueError(f"unsupported research job kind: {research_kind}")
+    for flag in _DISALLOWED_RESEARCH_ARG_FLAGS:
+        if flag in args:
+            raise ValueError(f"queued research args cannot include {flag}")
+    for item in args:
+        lowered = item.lower()
+        if any(marker in lowered for marker in _DISALLOWED_RESEARCH_ARG_VALUES):
+            raise ValueError("queued research args cannot include credential, KIS, or broker terms")
+        if item in {"docker", RESEARCH_JOB_COMMAND}:
+            raise ValueError("queued research args must not include executable names")
+        if any(separator in item for separator in (";", "&&", "|", "\n", "\r")):
+            raise ValueError("queued research args must be plain argv tokens")
+
+
+def _reject_repo_path_args(args: tuple[str, ...], repo_root: Path | None) -> None:
+    if repo_root is None:
+        return
+    repo_text = str(repo_root.resolve()).lower()
+    for item in args:
+        normalized = item.replace("/", "\\").lower()
+        if repo_text in normalized:
+            raise ValueError("queued research args must not point inside the Git workspace")
 
 
 def _read_agent_job_spec(path: Path) -> AgentJobSpec:

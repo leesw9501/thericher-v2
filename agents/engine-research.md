@@ -29,10 +29,11 @@
 
 ## Active Queue
 
-1. Use the new Engine Research Agent runner for the first research-useful queued
-   Docker `research` job beyond GPU smoke.
+1. Attribute the runner-queued AXP/AZN/BA first-evaluation depth replay
+   zero-fill behavior from existing replay/robustness artifacts.
 2. Keep short experiments for breadth and longer candidate training for depth
-   visible as separate queues.
+   visible as separate queues, using the Engine Research Agent runner when GPU
+   work is needed.
 3. Do not call either path a production recommendation, promotion, or pass/fail
    result.
 
@@ -769,12 +770,23 @@
   `D:\thericher-v2\model-artifacts\engine-research-agent`,
   `D:\thericher-v2\model-artifacts\research-jobs`, and
   `D:\thericher-v2\model-artifacts\gpu-training`.
+- Engine Research Agent enqueue/replay
+  `engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2`
+  claimed one queued `candidate_feature_branch_replay` job, mounted current
+  `src` read-only into Docker `research`, replayed AXP, AZN, and BA from
+  `snapshot=2026-06-18` with threshold pairs `0.594/0.476`, `0.595/0.476`,
+  and `0.596/0.476`, completed `9` variants, produced zero fills, verified
+  all fill evidence as local-paper-only with missing zero-fill event artifacts
+  treated as empty evidence, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\engine-research-agent`,
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay`, and
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
-  The first explicit Engine Research Agent runner now exists as a single-shot
-  CLI. The next task should queue and run one research-useful Docker
-  `research` job beyond smoke while keeping queue/run artifacts outside Git and
-  avoiding daemon, scheduler, dashboard, auto-commit, broker, credential, or
-  broad multi-agent platform behavior.
+  The first explicit Engine Research Agent runner now supports single-shot
+  enqueue and run-once flows. The next task should explain the runner-queued
+  AXP/AZN/BA zero-fill replay from existing artifacts before adding another
+  feature/model axis, while avoiding daemon, scheduler, dashboard, auto-commit,
+  broker, credential, or broad multi-agent platform behavior.
