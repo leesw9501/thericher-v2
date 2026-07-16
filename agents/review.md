@@ -263,10 +263,16 @@
   opportunity-attribution paths only. It added no helper, code path, job kind,
   CLI, report family, gate, dashboard, scheduler, broker path, threshold
   search, training, feature axis, or model-promotion language.
+- Lighter weight-decay contrast reused existing Docker `research`
+  feature-branch and replay paths plus artifact-only opportunity, trade-path,
+  and summary work. It added no helper, code path, job kind, CLI, report
+  family, gate, dashboard, scheduler, broker path, threshold search, feature
+  axis, broad regularization search, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded lighter entry-adverse weight-decay
-  contrast before allowing another feature-set or threshold-only branch.
+- Push the next task toward one artifact-only regularization trace-collapse
+  diagnostic before allowing another feature-set, regularization, or
+  threshold-only branch.

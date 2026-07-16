@@ -182,6 +182,10 @@
 - Weight-decay wider-sample completion replayed AMD/AMGN/AMT/AMZN through the
   same local-paper path, produced zero additional fills, and preserved
   local-paper-only source verification for missing zero-fill event files.
+- Lighter weight-decay replay used the same broker-free local-paper path,
+  produced `4` verified `source: local_paper` fills on AMAT, produced zero
+  additional AMD/AMGN/AMT/AMZN fills, and kept missing zero-fill event files as
+  empty local-paper evidence rather than broker activity.
 
 ## Next Handoff
 

@@ -218,13 +218,18 @@
 - Weight-decay wider-sample completion reused AMD, AMGN, AMT, and AMZN from
   `snapshot=2026-06-18` for replay and zero-fill attribution; no additional
   data was acquired.
+- Lighter weight-decay contrast reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for training, ADBE, ADI, ADP, AEM,
+  AGG, and AMAT from `snapshot=2026-06-18` for first-six evaluation/replay,
+  and AMD, AMGN, AMT, and AMZN from `snapshot=2026-06-18` for wider-sample
+  replay; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is reusing the current
-  source CVS/FCX/KO slices and selected `snapshot=2026-06-18` wider-sample
-  symbols for one lighter entry-adverse weight-decay contrast.
+- The next data task is not more acquisition; it is reusing existing
+  regularization, hidden4, hidden8, opportunity, and trade-path artifacts for
+  one entry-adverse trace-collapse diagnostic.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -276,6 +276,15 @@
   artifact, read `/app/market_data` read-only, and wrote replay, robustness,
   research-job, opportunity, and summary artifacts under the external model
   artifact root.
+- Lighter weight-decay feature-branch training/evaluation and first-six replay
+  ran in Docker `research` with PyTorch CUDA and RTX 4090 visible, reused the
+  current `src` mount, read `/app/market_data` read-only, and wrote
+  feature-branch, training, evaluation, model, replay, robustness, opportunity,
+  trade-path, and summary artifacts under the external model artifact root.
+- Lighter weight-decay batch2 replay also ran in Docker `research`, reused the
+  existing `weight_decay=0.001` feature-branch artifact, produced zero
+  additional fills, and wrote external replay/opportunity evidence without
+  changing Docker services or adding PyTorch to local/base paths.
 
 ## Next Handoff
 

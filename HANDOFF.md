@@ -409,6 +409,14 @@ Implemented and pushed:
   ceiling, then combined first-six plus remaining-symbol evidence into one
   descriptive 10-symbol summary with `4` local-paper fills, `2` buy
   opportunities, `18` zero-fill variants, and fee-aware delta sum `2.6518`,
+- bounded entry-adverse lighter weight-decay contrast; it ran
+  `weight_decay=0.001` with the same `core_plus_entry_adverse_v1`,
+  hidden-units `4`, and `feature_standardization` in Docker `research`,
+  replayed the 10-symbol wider sample, verified `4` local-paper fills,
+  recorded the same two non-negative AMAT closed segments as `weight_decay=0.01`,
+  found zero additional batch2 fills because buy thresholds still sat above the
+  batch2 holdout probability ceiling, and wrote one descriptive summary outside
+  Git with first-six probability range `0.531473`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -473,17 +481,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse lighter weight-decay contrast target:
+Start one bounded entry-adverse regularization trace-collapse diagnostic target:
 
-1. consume the completed `weight_decay=0.01` 10-symbol summary and hidden4
-   wider-sample reference,
-2. run exactly one Docker `research` contrast with the same
-   `core_plus_entry_adverse_v1`, hidden-units `4`, and
-   `feature_standardization`, but `weight_decay=0.001`,
-3. replay cap-2 thresholds through the existing local-paper path and attribute
-   fills or zero-fills outside Git,
-4. avoid broad regularization search, new features, threshold search, branch
-   ranking, dashboards,
+1. consume the completed `weight_decay=0.001`, `weight_decay=0.01`, hidden4
+   wider-sample, and hidden8 attribution artifacts,
+2. produce one compact external diagnostic that compares probability evidence,
+   threshold gaps, buy-opportunity concentration, local-paper fills, and
+   trade-path outcomes,
+3. explain descriptively why the regularized branches reduce negative segments
+   while collapsing opportunity breadth to AMAT and batch2 zero fills,
+4. avoid retraining, broad regularization search, new features, threshold
+   search, branch ranking, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
