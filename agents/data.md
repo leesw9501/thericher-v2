@@ -186,13 +186,16 @@
   from `snapshot=2026-06-18` with `max-bars 240`. No additional data was
   acquired. Compact data-quality summaries remained warning-only; ABNB carried
   one missing 1m interval warning plus incomplete resample bucket warnings.
+- Entry-quality diagnostic reused the same AAPL, ABNB, ABT, ACN, and ABBV
+  `snapshot=2026-06-18` rows plus existing probability traces and event
+  artifacts. No additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is reusing the same
-  out-of-symbol AAPL/ABNB/ABT/ACN/ABBV bars and existing probability traces for
-  a bounded entry-quality diagnostic.
+- The next data task is not more acquisition; it is reusing the current
+  CVS/FCX/KO source slices and AAPL/ABNB/ABT/ACN/ABBV evaluation slices for one
+  bounded entry-adverse feature branch.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

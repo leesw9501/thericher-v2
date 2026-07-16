@@ -324,6 +324,19 @@ Implemented and pushed:
   `source: local_paper` fills, found `2` buy opportunities versus `832` sell
   opportunities, and trade-path attribution found `2` closed ABNB segments,
   both fee-aware negative with total fee-aware delta `-1.8532`,
+- bounded entry-quality diagnostic helper; it consumes provided probability
+  trace entries, `Bar` data, threshold variants, and local-paper verification
+  evidence, emits descriptive buy opportunity, fixed 5/15/30-bar
+  `diagnostic_overlay` marks, adverse/favorable excursion, and sell-threshold
+  timing evidence without writing artifacts or doing network, credential,
+  broker, or market-data I/O,
+- bounded out-of-symbol entry-quality diagnostic; it consumed the completed
+  out-of-symbol feature-branch replay, opportunity attribution, trade-path
+  attribution, probability traces, and selected AAPL/ABNB/ABT/ACN/ABBV bars,
+  found buy opportunities only on ABNB (`2` total, both entered through
+  `source: local_paper`), found all 5/15/30-bar forward close marks negative,
+  and recorded that sell-threshold signals appeared `7` bars after entry but
+  before the later bounded-window adverse extreme,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -344,7 +357,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `238 passed`
+- `242 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -388,18 +401,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded out-of-symbol entry-quality diagnostic target:
+Start one bounded entry-adverse feature branch target:
 
-1. consume the completed out-of-symbol feature-branch evaluation, replay,
-   opportunity attribution, and trade-path artifacts,
-2. inspect the replay probability traces and selected AAPL/ABNB/ABT/ACN/ABBV
-   bars from `snapshot=2026-06-18`,
-3. attribute every buy opportunity and local-paper entry to bounded forward
-   return, adverse/favorable excursion, and sell-threshold timing evidence,
-4. keep the output descriptive and artifact-only unless a tiny pure helper is
-   needed for repeatability,
-5. avoid retraining, new feature/model axes, dashboards, gates, schedulers,
-   threshold searches, or broker-facing behavior.
+1. consume the completed out-of-symbol entry-quality diagnostic artifact,
+2. add at most one interpretable feature-set branch intended to expose
+   pre-entry adverse pressure or weak follow-through,
+3. train on CVS/FCX/KO from `snapshot=2026-07-09-shadow-t0-8d-probe` and
+   evaluate directly on AAPL/ABNB/ABT/ACN/ABBV from `snapshot=2026-06-18`,
+4. replay the resulting feature-branch artifact with threshold cap `2` and
+   `max-bars 240`,
+5. use existing opportunity, trade-path, and entry-quality helpers for compact
+   attribution if replay completes,
+6. avoid broad feature search, model-axis changes, dashboards, gates,
+   schedulers, threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

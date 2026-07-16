@@ -148,6 +148,10 @@
   Follow-up opportunity and trade-path attribution parsed existing event files
   only; trade-path attribution found `2` closed ABNB segments, both
   fee-aware negative, without touching broker submit/cancel code.
+- Entry-quality diagnostic reran no execution. It consumed existing
+  local-paper source verification, linked the two ABNB buy opportunities to
+  local-paper entry fills, kept path marks labeled as diagnostic overlay
+  evidence, and observed no non-local fill source.
 
 ## Next Handoff
 

@@ -230,6 +230,10 @@
   research-job artifacts under `/app/model_artifacts`. Opportunity attribution
   and trade-path attribution ran locally as artifact-only work under
   `D:\thericher-v2\model-artifacts`.
+- Entry-quality diagnostic added a pure local helper and focused tests, with no
+  new runtime dependency, Docker service, research job kind, CLI, or artifact
+  writer. The one-off diagnostic artifact was written locally under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

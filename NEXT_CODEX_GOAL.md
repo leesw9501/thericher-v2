@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded out-of-symbol entry-quality diagnostic target.
+Build a bounded entry-adverse feature branch target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by explaining the buy opportunities and local-paper entries from the
-completed out-of-symbol feature-branch replay before changing another feature,
-model, preprocessing, or threshold axis.
+attribution by trying one interpretable feature-set branch informed by the
+completed out-of-symbol entry-quality diagnostic. The branch should focus on
+pre-entry adverse pressure or weak follow-through evidence, not threshold-only
+tuning.
 
 ## Hard Boundaries
 
@@ -57,37 +58,35 @@ model, preprocessing, or threshold axis.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before architecture-changing edits or
-   before adding a new reusable helper.
+3. Ask Claude CLI for a short drift-check before adding or wiring the feature
+   branch.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed external artifacts as inputs:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-out-of-symbol-eval-bar-pressure-standardized-smoke-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-out-of-symbol-eval-bar-pressure-standardized-replay-cap2-240bars-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-trade-path-20260716\metrics.json`
-3. Reuse only existing local market data from
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
-   for AAPL, ABNB, ABT, ACN, and ABBV.
-4. Inspect replay probability traces and local bars for every buy opportunity
-   and every local-paper entry from the replay.
-5. Produce one compact external diagnostic artifact that records, at minimum:
-   - local-paper source verification,
-   - buy opportunity counts by slice and threshold variant,
-   - forward 5/15/30-bar gross return marks when available,
-   - adverse and favorable excursion after each buy opportunity or entry,
-   - whether a sell-threshold signal appeared before the adverse move or
-     bounded-window end,
-   - which evidence came from diagnostic overlays rather than local-paper
-     fills.
-6. Add a tiny pure helper and focused tests only if it prevents another manual
-   script from being repeated. The helper must accept provided `Bar` and trace
-   data, perform no network or credential I/O, and write no artifacts itself.
-7. Do not rerun training, broad replay, threshold search, model-axis search, or
-   data acquisition unless an input artifact is missing or corrupt.
+2. Use the completed entry-quality diagnostic as context, not as promotion
+   evidence:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-entry-quality-20260716\metrics.json`
+3. Add at most one feature-set branch to the existing candidate feature builder.
+   Keep it interpretable and tied to pre-entry adverse pressure or weak
+   follow-through. Do not add a broad feature search or multiple alternatives.
+4. Run Docker `research` `candidate_feature_branch` with:
+   - the new feature-set id,
+   - `hidden_units=4`,
+   - `feature_standardization`,
+   - bounded caps, including `max-bars 240`,
+   - source training slices CVS, FCX, and KO from
+     `snapshot=2026-07-09-shadow-t0-8d-probe`,
+   - explicit evaluation slices AAPL, ABNB, ABT, ACN, and ABBV from
+     `snapshot=2026-06-18`.
+5. If feature-branch evaluation completes, replay the new feature-branch
+   artifact across AAPL, ABNB, ABT, ACN, and ABBV with threshold cap `2` and
+   `max-bars 240`.
+6. If replay completes, run compact artifact-only attribution using existing
+   opportunity, trade-path, and entry-quality helpers.
+7. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+   select a model, or add promotion language.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -116,7 +115,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol entry-quality diagnostic`
+`Add bounded entry-adverse feature branch`
 
 ## Completion Report
 
@@ -128,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- entry-quality diagnostic findings,
+- entry-adverse feature-branch findings,
 - what was intentionally not built,
 - next recommended goal.

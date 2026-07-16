@@ -214,10 +214,16 @@
   used artifact-only opportunity and trade-path attribution. It added no new
   code, job kind, report family, gate, dashboard, scheduler, broker path,
   threshold search, feature/model axis, or model-promotion language.
+- Entry-quality diagnostic followed Claude drift-check constraints: one pure
+  helper plus focused tests, fixed 5/15/30-bar diagnostic marks, one external
+  artifact, and no job kind, CLI, report family, gate, dashboard, scheduler,
+  broker path, threshold search, ranking, pass/fail, or model-promotion
+  language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded out-of-symbol entry-quality diagnostic
-  before allowing another feature/model axis or threshold-only branch.
+- Push the next task toward one bounded entry-adverse feature branch informed
+  by the entry-quality diagnostic before allowing another model-axis or
+  threshold-only branch.

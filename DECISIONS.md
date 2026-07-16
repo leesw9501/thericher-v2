@@ -735,3 +735,19 @@ probabilities while preserving artifact-driven downstream replay, PyTorch in
 Docker `research`, external artifact storage, and no KIS access, credentials,
 broker submit code, dashboards, schedulers, disjointness gate, or
 model-promotion language.
+
+## 2026-07-16 - Bounded entry-quality diagnostic helper
+
+Decision: add a pure `entry_quality_diagnostic` research helper that consumes
+provided probability trace entries, `Bar` data, threshold variants, and
+local-paper verification evidence. It records buy opportunities, local-paper
+entry linkage, fixed 5/15/30-bar diagnostic marks, adverse/favorable excursion,
+and sell-threshold timing. The helper writes no artifacts, performs no network,
+credential, broker, or market-data I/O, and emits no ranking, pass/fail,
+recommendation, or promotion fields.
+
+Reason: out-of-symbol feature-branch replay produced only two buy opportunities
+and both resulting ABNB entries were fee-aware negative. A small reusable
+diagnostic helper prevents repeated one-off scripts while keeping the evidence
+descriptive, artifact-driven, local-paper-separated, and free of threshold
+search, scheduler, dashboard, broker behavior, or model-promotion language.

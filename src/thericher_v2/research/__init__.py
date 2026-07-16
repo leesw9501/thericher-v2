@@ -90,6 +90,14 @@ from .candidate_training import (
     parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
+from .entry_quality_diagnostic import (
+    DEFAULT_ENTRY_QUALITY_HORIZONS,
+    EntryQualityDiagnosticResult,
+    EntryQualityEntryFill,
+    EntryQualityTraceEntry,
+    EntryQualityVariant,
+    attribute_entry_quality_from_traces,
+)
 from .experiments import (
     ExperimentMetrics,
     ExperimentQueueResult,
@@ -196,6 +204,10 @@ __all__ = [
     "CandidateThresholdSweepConfig",
     "CandidateTrainingConfig",
     "CandidateTrainingDataset",
+    "EntryQualityDiagnosticResult",
+    "EntryQualityEntryFill",
+    "EntryQualityTraceEntry",
+    "EntryQualityVariant",
     "ExperimentMetrics",
     "ExperimentQueueResult",
     "ExperimentSource",
@@ -219,6 +231,7 @@ __all__ = [
     "ValidationResult",
     "ValidationTrade",
     "DEFAULT_GPU_COMPUTE_RUN_ID",
+    "DEFAULT_ENTRY_QUALITY_HORIZONS",
     "DEFAULT_GPU_RUNTIME_RUN_ID",
     "DEFAULT_GPU_TRAINING_RUN_ID",
     "DEFAULT_RESEARCH_JOB_ID",
@@ -231,6 +244,7 @@ __all__ = [
     "detect_gpu_readiness",
     "discover_market_data_inventory",
     "attribute_trade_paths_from_local_paper_events",
+    "attribute_entry_quality_from_traces",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "parse_candidate_data_slices",

@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded out-of-symbol entry-quality diagnostic before another
-   feature/model axis or threshold-only branch is tried.
+1. Run one bounded entry-adverse feature branch before another model-axis or
+   threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -192,6 +192,16 @@
   `trade_path_attributed_only`, used the shared trade-path helper on the
   out-of-symbol evaluation replay, attributed `2` closed ABNB segments, found
   both fee-aware negative, and recorded fee-aware delta sum `-1.8532`.
+- Last completed: bounded entry-quality diagnostic helper, which codifies
+  buy-opportunity and local-paper entry diagnostics from provided probability
+  trace entries and `Bar` data, keeps fixed 5/15/30-bar diagnostic overlay
+  marks, and writes no artifacts itself.
+- Last completed: `bounded-out-of-symbol-eval-entry-quality-20260716`, status
+  `entry_quality_diagnostic_only`, consumed the out-of-symbol replay,
+  opportunity, trade-path, trace, event, and selected bar evidence, found `2`
+  ABNB buy opportunities, both entered via `source: local_paper`, with all
+  5/15/30-bar forward close marks negative and sell-threshold signals `7` bars
+  after entry.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -433,10 +443,15 @@
   negative. The next evidence should inspect entry quality and sell-threshold
   timing around those buy opportunities before changing another model or
   threshold axis.
+- Entry-quality diagnostics show the loss-bearing entries had almost no
+  favorable excursion and negative 5/15/30-bar marks, while sell-threshold
+  signals did appear before the later bounded-window adverse extreme. The next
+  evidence should try one bounded feature branch aimed at pre-entry adverse
+  pressure or weak follow-through, not a threshold-only branch.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a bounded out-of-symbol entry-quality diagnostic from the
-  completed feature-branch replay artifacts before another hidden-units,
-  regularization, preprocessing, feature-set, or threshold-only branch.
+  task should run one bounded entry-adverse feature branch from the completed
+  entry-quality diagnostic before another hidden-units, regularization,
+  preprocessing, broad feature-set, or threshold-only branch.
