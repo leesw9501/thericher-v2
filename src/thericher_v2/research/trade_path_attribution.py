@@ -10,11 +10,11 @@ from pathlib import Path
 from typing import Any
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar
-from thericher_v2.execution import (
-    LOCAL_PAPER_SOURCE,
+from thericher_v2.execution.fill_source import (
     FillEventArtifact,
     collect_fill_source_evidence,
 )
+from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
 
 
 @dataclass(frozen=True)

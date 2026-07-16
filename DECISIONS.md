@@ -968,3 +968,18 @@ trade paths. One pure helper advances PnL attribution while avoiding replay
 reruns, broker/KIS behavior, credential paths, network access, new research job
 kinds, dashboards, schedulers, gates, threshold search, feature-rule
 selection, durable agent workers, and model-promotion semantics.
+
+## 2026-07-17 - Raw pre-entry attribution contract tightening
+
+Decision: tighten the raw pre-entry attribution contracts without adding a new
+job kind, worker, report family, dashboard, scheduler, replay path, or GPU
+training. The raw outcome helper now reuses the feature-input unique-signal key
+constant, imports local-paper constants without the execution barrel, counts
+matched local-paper entry keys separately from local-paper fill events, and the
+raw-band policy explicitly records that it is not a feature rule.
+
+Reason: Claude and sidecar review warned that raw pre-entry attribution is near
+the report-sprawl boundary. A small contract pass keeps the existing evidence
+reusable for feature/model research and PnL attribution while preserving
+diagnostic/local-paper source separation, exact entry joins, missing-evidence
+reporting, external artifact storage, and no broker/KIS/credential behavior.

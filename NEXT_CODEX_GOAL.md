@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Do a bounded simplification and contract pass over the recent raw pre-entry
-attribution helpers.
+Run the first bounded parallel-agent research cadence using the existing
+single-shot Engine Research Agent and Data Agent workers.
 
-This advances feature/model research, PnL attribution, and review/simplification
-by keeping the raw pre-entry evidence reusable before another model, diagnostic
-axis, or GPU training block is added.
+This advances feature/model research and data collection by keeping the GPU
+useful again while a disjoint data lane refreshes local evidence. It also tests
+the practical agent workflow the operator expects without creating a durable
+multi-agent platform.
 
 ## Hard Boundaries
 
@@ -20,13 +21,17 @@ axis, or GPU training block is added.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
-- Do not create a durable multi-agent platform, scheduler, daemon, or
-  auto-commit worker.
+- Do not create a durable multi-agent platform, scheduler, daemon, notification
+  loop, or auto-commit worker.
+- Do not add a new executable agent unless a specific engine loop need is
+  proven and the user explicitly approves it.
 - Do not add a new research job kind unless an existing test proves it removes
   more complexity than it adds.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- Keep PyTorch CUDA inside Docker `research` or the existing Engine Research
+  Agent runner path. Do not add PyTorch to the base/runtime app path.
 - Keep original local-paper fills labeled with `source: local_paper`; keep
   diagnostic rows labeled with `source: diagnostic_overlay`.
 - Do not call any context, band, threshold, model, slice, or feature group
@@ -59,48 +64,39 @@ axis, or GPU training block is added.
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
    If it times out, record that and keep the change tightly scoped.
 
-## Current Evidence To Consume
-
-- Raw pre-entry band-attribution artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\metrics.json`
-- Raw pre-entry outcome-attribution artifact:
-  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-cross-slice-20260717-r1\metrics.json`
-- Source stability artifact:
-  `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`
-
 ## Required Work
 
-1. Inventory only the code and artifact subset needed to understand recent raw
-   pre-entry attribution:
-   - `feature_input_ablation.py`
-   - `raw_pre_entry_outcome_attribution.py`
-   - focused tests for both helpers
-   - the two external raw pre-entry artifacts above.
-2. Keep the pass small. Prefer tests, naming cleanup, and shared contract checks
-   over new abstractions. Add a shared helper only if it removes meaningful
-   duplication or prevents artifact-contract drift.
-3. Verify and, if useful, codify the contract between:
-   - diagnostic rows (`source: diagnostic_overlay`),
-   - raw feature names,
-   - unique-signal or observation keys,
-   - local-paper outcomes (`source: local_paper`),
-   - artifact roots outside Git.
-4. Add or tighten focused tests proving:
-   - no new job kind or scheduler is introduced,
-   - raw-band and raw-outcome payloads remain descriptive-only,
-   - local-paper outcome attribution does not import broker submit/order-intent
-     paths,
-   - missing evidence is reported rather than inferred,
-   - artifact paths stay outside Git or are mocked in tests,
-   - no threshold/rule/promotion language is introduced in payload scopes.
-5. Do not run GPU training. Run only CPU/focused artifact smoke commands if they
-   materially verify the simplification.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Inventory only the relevant external queue and artifact state:
+   - `D:\thericher-v2\model-artifacts\engine-research-agent`
+   - `D:\thericher-v2\model-artifacts\data-agent`
+   - current raw pre-entry contract-smoke artifact
+   - current market-data inventory artifact, if present.
+2. Start or reuse a Data Agent single-shot `market_data_inventory` job. Keep it
+   metadata-only and bounded; no data acquisition unless a no-auth,
+   license-compatible source clearly improves the active loop.
+3. Start or reuse an Engine Research Agent single-shot GPU job using an existing
+   `thericher-v2-research-job` kind. Prefer a short experiment first, then queue
+   a longer candidate only if the short result is sound and the GPU lane is
+   available. Keep both queues visible in `agents/engine-research.md`:
+   - short experiments for breadth,
+   - longer candidate training for depth.
+4. Use Docker `research` with PyTorch CUDA for GPU work. Artifacts must land
+   under `D:\thericher-v2\model-artifacts` on the host and
+   `/app/model_artifacts` in Docker.
+5. While GPU work runs, use Codex runtime sidecars for disjoint read-only
+   checks when useful:
+   - Engine Research sidecar: experiment shape and artifact interpretation,
+   - Data/Infra sidecar: artifact roots, Docker/GPU/data boundaries,
+   - Review/Execution sidecar: sprawl and local-paper-only boundaries.
+   These sidecars are not repo-owned workers.
+6. If a small code/test fix is needed to make the cadence reliable, keep it
+   narrow and prove it with focused tests. Otherwise, make only concise
+   stateboard and next-goal updates.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- This task should use existing artifacts and data, not expand the dataset.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active engine loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -120,11 +116,17 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused CPU smoke, Docker `research`, or GPU command used.
+Also report:
+
+- any focused tests,
+- Data Agent command(s),
+- Engine Research Agent command(s),
+- Docker `research` or GPU smoke command(s),
+- artifact paths written outside Git.
 
 ## Suggested Commit Message
 
-`Tighten raw pre-entry attribution contracts`
+`Run bounded parallel research cadence`
 
 ## Completion Report
 

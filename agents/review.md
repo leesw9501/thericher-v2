@@ -510,14 +510,20 @@
   sweep, or model-promotion language. Claude warned this is near the
   report-sprawl boundary, so the next task should consolidate before adding
   another diagnostic axis.
+- Raw pre-entry contract tightening consolidated behavior without adding a new
+  artifact family beyond one CPU smoke, job kind, report, gate, dashboard,
+  scheduler, coordinator, durable worker, broker path, credential path, replay
+  mutation, threshold search, feature rule, broad sweep, or model-promotion
+  language. It added contract tests for source separation, exact joins, missing
+  evidence, external artifact roots, no job-kind creep, and no broker import
+  side effects.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward bounded simplification of the raw pre-entry
-  attribution helper/artifact contracts before any deeper GPU block. Keep
-  coordination evidence small and avoid daemon, scheduler, dashboard, report
-  branch, broker, credential, auto-commit, durable multi-agent-platform
-  behavior, threshold search, feature-rule selection, or model-promotion
-  language.
+- Push the next task toward bounded Engine Research/Data parallel cadence using
+  existing single-shot workers. Keep coordination evidence small and avoid new
+  durable workers, daemon, scheduler, dashboard, report branch, broker,
+  credential, auto-commit, durable multi-agent-platform behavior, threshold
+  search, feature-rule selection, or model-promotion language.

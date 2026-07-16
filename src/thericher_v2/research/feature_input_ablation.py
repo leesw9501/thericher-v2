@@ -1514,6 +1514,7 @@ def _raw_pre_entry_band_attribution_policy(band_count: int) -> dict[str, Any]:
         "assignment": "sort_by_probability_then_signal_key",
         "per_slice_edges": False,
         "threshold_search": False,
+        "feature_rule": False,
     }
 
 

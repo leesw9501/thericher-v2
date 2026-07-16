@@ -1363,10 +1363,40 @@ The raw pre-entry local-paper outcome attribution then completed:
   tertiles, non-diagnostic row exclusion, artifact-root rejection, and import
   guards against broker submit/order-intent/network/credential paths.
 
-Next, do a bounded simplification/consolidation pass over the recent raw
-pre-entry attribution helpers and artifacts before adding another model or
-diagnostic axis. The goal is to keep the engine evidence reusable without
-letting the research lane become a new v1-style report family.
+The raw pre-entry contract pass then completed:
+
+- It kept the pass to existing helpers and tests. No new research job kind,
+  durable worker, scheduler, dashboard, report family, replay path, broker/KIS
+  path, credential path, model promotion path, Docker job, or GPU training was
+  added.
+- `raw_pre_entry_outcome_attribution` now reuses the feature-input
+  `UNIQUE_SIGNAL_KEY_FIELDS` contract, imports `LOCAL_PAPER_SOURCE` directly
+  from local-paper instead of the execution barrel, and counts unique matched
+  local-paper entry keys separately from local-paper fill event rows.
+- `trade_path_attribution` also avoids the execution barrel for fill-source
+  helpers and local-paper source constants, so importing attribution helpers
+  does not load broker modules.
+- Raw-band attribution policy now explicitly records `feature_rule: false`.
+- Focused tests now cover exact scope/policy contracts, raw outcome not being a
+  research job kind, signal-key sharing, exact variant/symbol/UTC entry joins,
+  missing local-paper trade-path evidence, missing raw feature exclusion,
+  missing top-level artifact reporting, external artifact roots, and import
+  guards against broker submit/order-intent/network/credential paths.
+- CPU artifact smoke wrote:
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-contract-smoke-20260717-r1\metrics.json`.
+  It consumed only existing raw-band and stability artifacts, used no Docker or
+  GPU, acquired no data, and observed `659` diagnostic rows, `302`
+  local-paper entry fills, `302` local-paper fill events, `0` missing trade
+  paths, and `0` non-local fill sources.
+- Runtime Codex sidecars assisted as temporary reviewers: Review checked
+  sprawl/naming, Engine Research checked raw feature and key contracts, and
+  Infra/Data checked artifact-root, import, Docker, and no-credential
+  boundaries. They are not repo-owned workers.
+
+Next, run a bounded parallel-agent research cadence that keeps the single GPU
+useful again: use the existing Engine Research Agent and Data Agent single-shot
+workers, prefer existing data/artifacts, and avoid adding new workers or job
+kinds unless the evidence clearly shows an engine-loop need.
 
 ## Daily Operator Review
 

@@ -902,6 +902,12 @@
   `pre_last_close_position_in_range` had closed fee-aware delta `-48.6654`,
   mid `-60.4253`, and high `-38.7136`, so the raw context remains descriptive
   rather than a rule.
+- Raw pre-entry contract tightening kept the evidence reusable without adding a
+  model axis, job kind, worker, scheduler, dashboard, or GPU run. It pinned the
+  shared unique-signal key contract, exact outcome entry joins, missing
+  evidence behavior, raw feature names, descriptive-only payload scope, and
+  local-paper-only evidence semantics. CPU smoke artifact:
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-contract-smoke-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -909,9 +915,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, consolidate the recent raw pre-entry
-  attribution helpers and artifact contracts so follow-up model work does not
-  depend on a growing chain of one-off reports.
+- The next Engine Research block should use the existing single-shot runner and
+  Docker `research` path to run one bounded GPU experiment from the short
+  queue, while Data Agent refreshes inventory in a disjoint lane. Keep the job
+  kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

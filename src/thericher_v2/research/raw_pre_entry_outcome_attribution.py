@@ -13,12 +13,13 @@ from pathlib import Path
 from typing import Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar
-from thericher_v2.execution import LOCAL_PAPER_SOURCE
+from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
 from thericher_v2.serialization import to_jsonable
 
 from .feature_input_ablation import (
     DEFAULT_HOST_MODEL_ARTIFACT_ROOT,
     RAW_PRE_ENTRY_FEATURE_NAMES,
+    UNIQUE_SIGNAL_KEY_FIELDS,
     FeatureInputAblationConfig,
     _candidate_entry_rows,
     _feature_value,
@@ -45,7 +46,7 @@ RAW_FEATURE_TERTILE_IDS = (
     "tertile_2_mid_value",
     "tertile_3_high_value",
 )
-RAW_SIGNAL_KEY_FIELDS = ("slice_id", "symbol", "execution_bar_start", "offset")
+RAW_SIGNAL_KEY_FIELDS = UNIQUE_SIGNAL_KEY_FIELDS
 
 
 @dataclass(frozen=True)
@@ -441,6 +442,7 @@ def _outcome_summary(
     closed_segments: list[Mapping[str, Any]] = []
     open_segments: list[Mapping[str, Any]] = []
     local_entry_keys = set()
+    local_fill_event_count = 0
     non_local_fill_count = 0
     missing_local_entry_evidence = 0
     for observation in selected:
@@ -450,6 +452,7 @@ def _outcome_summary(
         non_local_fills = tuple(non_local_events_by_entry.get(observation.entry_key, ()))
         if closed or opened or local_fills:
             local_entry_keys.add(observation.entry_key)
+        local_fill_event_count += len(local_fills)
         if observation.entered_local_paper_reference and not (closed or opened or local_fills):
             missing_local_entry_evidence += 1
         non_local_fill_count += len(non_local_fills)
@@ -464,7 +467,7 @@ def _outcome_summary(
         "diagnostic_observation_count": len(selected),
         "unique_signal_count": len({observation.signal_key for observation in selected}),
         "local_paper_entry_fill_count": matched_entry_count,
-        "local_paper_fill_event_count": matched_entry_count,
+        "local_paper_fill_event_count": local_fill_event_count,
         "diagnostic_without_local_paper_entry_fill_count": len(selected) - matched_entry_count,
         "closed_local_paper_path_count": len(closed_segments),
         "open_local_paper_path_count": len(open_segments),

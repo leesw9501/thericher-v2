@@ -517,10 +517,18 @@ def test_feature_input_ablation_raw_band_attribution_is_deterministic() -> None:
 
     assert payload == reversed_payload
     attribution = payload["raw_pre_entry_band_attribution"]
+    assert set(attribution["scope"]) == {
+        "in_sample",
+        "descriptive_only",
+        "band_selection",
+        "held_out_split",
+        "local_paper_replay_changed",
+    }
     assert attribution["scope"]["descriptive_only"] is True
     assert attribution["scope"]["band_selection"] == "none"
     assert attribution["scope"]["local_paper_replay_changed"] is False
     assert attribution["policy"]["threshold_search"] is False
+    assert attribution["policy"]["feature_rule"] is False
     assert attribution["context"]["source_counts"] == {"diagnostic_overlay": 6}
     assert attribution["context"]["diagnostic_overlay_rows_only"] is True
     assert attribution["context"]["skip_reason"] is None

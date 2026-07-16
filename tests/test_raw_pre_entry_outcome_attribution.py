@@ -1,15 +1,26 @@
 from __future__ import annotations
 
+import importlib
+import json
+import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
 
-from thericher_v2.execution import BROKER_DISABLED_SOURCE, LOCAL_PAPER_SOURCE
+from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
+from thericher_v2.research.feature_input_ablation import (
+    RAW_PRE_ENTRY_FEATURE_NAMES,
+    UNIQUE_SIGNAL_KEY_FIELDS,
+)
 from thericher_v2.research.raw_pre_entry_outcome_attribution import (
+    RAW_SIGNAL_KEY_FIELDS,
     RawPreEntryOutcomeAttributionConfig,
     attribute_local_paper_outcomes_by_raw_pre_entry_context,
     run_bounded_raw_pre_entry_outcome_attribution,
 )
+
+BROKER_DISABLED_SOURCE = "broker_disabled"
 
 
 def test_raw_pre_entry_outcome_attribution_summarizes_local_paper_evidence() -> None:
@@ -67,6 +78,7 @@ def test_raw_pre_entry_outcome_attribution_summarizes_local_paper_evidence() -> 
     )
     fill_events = (
         _fill_event("slice_a", "v1", "2026-01-02T14:30:00+00:00", LOCAL_PAPER_SOURCE),
+        _fill_event("slice_a", "v1", "2026-01-02T14:30:00+00:00", LOCAL_PAPER_SOURCE),
         _fill_event("slice_a", "v1", "2026-01-02T14:31:00+00:00", LOCAL_PAPER_SOURCE),
         _fill_event(
             "slice_a",
@@ -101,13 +113,13 @@ def test_raw_pre_entry_outcome_attribution_summarizes_local_paper_evidence() -> 
     assert payload["context"]["diagnostic_source_counts"] == {"diagnostic_overlay": 4}
     assert payload["context"]["local_paper_source_counts"] == {
         BROKER_DISABLED_SOURCE: 1,
-        LOCAL_PAPER_SOURCE: 3,
+        LOCAL_PAPER_SOURCE: 4,
     }
     assert payload["context"]["non_local_fill_source_count"] == 1
     assert overall["diagnostic_observation_count"] == 4
     assert overall["unique_signal_count"] == 4
     assert overall["local_paper_entry_fill_count"] == 2
-    assert overall["local_paper_fill_event_count"] == 2
+    assert overall["local_paper_fill_event_count"] == 3
     assert overall["diagnostic_without_local_paper_entry_fill_count"] == 2
     assert overall["closed_local_paper_path_count"] == 1
     assert overall["open_local_paper_path_count"] == 1
@@ -165,6 +177,126 @@ def test_raw_pre_entry_outcome_attribution_raw_feature_tertiles_are_deterministi
     assert bands["bands"]["tertile_3_high_value"]["diagnostic_observation_count"] == 1
 
 
+def test_raw_pre_entry_outcome_attribution_uses_exact_variant_entry_join() -> None:
+    diagnostic_rows = (
+        _diagnostic_row(
+            slice_id="slice_a",
+            variant_id="v1",
+            timestamp="2026-01-02T23:30:00+09:00",
+            offset=1,
+            close_position="0.10",
+            bucket="pre_entry_down",
+        ),
+        _diagnostic_row(
+            slice_id="slice_a",
+            variant_id="v2",
+            timestamp="2026-01-02T23:30:00+09:00",
+            offset=1,
+            close_position="0.20",
+            bucket="pre_entry_down",
+        ),
+    )
+
+    payload = attribute_local_paper_outcomes_by_raw_pre_entry_context(
+        diagnostic_rows=diagnostic_rows,
+        local_paper_closed_segments=(),
+        local_paper_open_segments=(),
+        local_paper_fill_events=(
+            _fill_event(
+                "slice_a",
+                "v1",
+                "2026-01-02T14:30:00+00:00",
+                LOCAL_PAPER_SOURCE,
+                symbol="aaa",
+            ),
+            _fill_event(
+                "slice_a",
+                "v2",
+                "2026-01-02T14:30:00+00:00",
+                LOCAL_PAPER_SOURCE,
+                symbol="BBB",
+            ),
+        ),
+        local_paper_verification={"all_fills_local_paper": True},
+    )
+
+    overall = payload["overall"]
+    assert overall["diagnostic_observation_count"] == 2
+    assert overall["unique_signal_count"] == 1
+    assert overall["local_paper_entry_fill_count"] == 1
+    assert overall["local_paper_fill_event_count"] == 1
+    assert overall["diagnostic_without_local_paper_entry_fill_count"] == 1
+
+
+def test_raw_pre_entry_outcome_attribution_reports_missing_trade_paths() -> None:
+    diagnostic_rows = (
+        _diagnostic_row(
+            slice_id="slice_a",
+            variant_id="v1",
+            timestamp="2026-01-02T14:30:00+00:00",
+            offset=1,
+            close_position="0.10",
+            bucket="pre_entry_down",
+            entered_local_paper=True,
+        ),
+    )
+
+    payload = attribute_local_paper_outcomes_by_raw_pre_entry_context(
+        diagnostic_rows=diagnostic_rows,
+        local_paper_closed_segments=(),
+        local_paper_open_segments=(),
+        local_paper_fill_events=(
+            _fill_event("slice_a", "v1", "2026-01-02T14:30:00+00:00", LOCAL_PAPER_SOURCE),
+        ),
+        local_paper_verification={
+            "all_fills_local_paper": True,
+            "local_paper_fill_count": 1,
+            "non_local_fill_source_counts": {},
+        },
+    )
+
+    overall = payload["overall"]
+    assert overall["local_paper_entry_fill_count"] == 1
+    assert overall["missing_local_paper_entry_evidence_count"] == 0
+    assert overall["missing_trade_path_evidence_count"] == 1
+
+
+def test_raw_pre_entry_outcome_attribution_excludes_missing_raw_values() -> None:
+    rows = [
+        _diagnostic_row(
+            slice_id="slice_a",
+            variant_id="v1",
+            timestamp=f"2026-01-02T14:3{index}:00+00:00",
+            offset=index,
+            close_position=str(value),
+            bucket="pre_entry_up",
+        )
+        for index, value in enumerate(("0.10", "0.20", "0.80", "0.90"))
+    ]
+    for index, value in enumerate(("10.0", "20.0", "30.0")):
+        pre_entry = rows[index]["pre_entry_3bar"]
+        assert isinstance(pre_entry, dict)
+        pre_entry["last_volume_vs_prior_avg"] = value
+    rows[-1]["pre_entry_3bar"].pop("last_volume_vs_prior_avg")  # type: ignore[union-attr]
+
+    payload = attribute_local_paper_outcomes_by_raw_pre_entry_context(
+        diagnostic_rows=tuple(rows),
+        local_paper_closed_segments=(),
+        local_paper_open_segments=(),
+        local_paper_fill_events=(),
+        local_paper_verification={"all_fills_local_paper": True},
+    )
+
+    volume = payload["by_raw_feature_tertile"]["pre_last_volume_vs_prior_avg"]
+    assert volume["context"]["diagnostic_observation_count"] == 4
+    assert volume["context"]["scored_observation_count"] == 3
+    assert volume["context"]["missing_raw_value_count"] == 1
+    assert volume["context"]["skip_reason"] is None
+    assert all(
+        band["diagnostic_observation_count"] == 1 for band in volume["bands"].values()
+    )
+
+
 def test_raw_pre_entry_outcome_attribution_excludes_non_diagnostic_rows() -> None:
     payload = attribute_local_paper_outcomes_by_raw_pre_entry_context(
         diagnostic_rows=(
@@ -209,6 +341,82 @@ def test_raw_pre_entry_outcome_attribution_rejects_repo_artifact_root(tmp_path) 
         )
 
 
+def test_raw_pre_entry_outcome_attribution_reports_missing_artifacts(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+
+    result = run_bounded_raw_pre_entry_outcome_attribution(
+        config=RawPreEntryOutcomeAttributionConfig(run_id="missing-contract"),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        stability_artifact=tmp_path / "missing-stability.json",
+        raw_band_artifact=tmp_path / "missing-band.json",
+        checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    payload = json.loads(result.attribution_artifact.read_text(encoding="utf-8"))
+    artifact_path = Path(payload["artifacts"]["raw_pre_entry_outcome_attribution"])
+    assert result.status == "prepared_not_raw_pre_entry_outcome_attributed"
+    assert "artifact path is missing" in result.reason
+    assert result.rows_seen == 0
+    assert result.rows_used == 0
+    assert payload["status"] == "prepared_not_raw_pre_entry_outcome_attributed"
+    assert payload["metrics"]["overall"]["diagnostic_observation_count"] == 0
+    assert payload["metrics"]["overall"]["missing_local_paper_entry_evidence_count"] == 0
+    assert payload["metrics"]["source_raw_band_context"] == {"available": False}
+    assert set(payload["metrics"]["scope"]) == {
+        "in_sample",
+        "descriptive_only",
+        "local_paper_replay_changed",
+        "broker_used",
+        "kis_api_called",
+        "credentials_read",
+        "threshold_search",
+        "feature_rule",
+    }
+    assert payload["result_scope"]["descriptive_only"] is True
+    assert payload["result_scope"]["promotion_gate"] is False
+    assert payload["result_scope"]["local_paper_replay_changed"] is False
+    assert payload["artifact_policy"]["repo_storage_allowed"] is False
+    assert artifact_path.resolve().is_relative_to(artifact_root.resolve())
+    rendered = json.dumps(payload).lower()
+    for forbidden in ("winner", "recommendation", "production ready", "live ready"):
+        assert forbidden not in rendered
+
+
+def test_raw_pre_entry_outcome_attribution_is_not_a_research_job_kind() -> None:
+    from thericher_v2.research import jobs
+
+    assert "raw_pre_entry_outcome_attribution" not in jobs.SUPPORTED_RESEARCH_JOB_KINDS
+    assert "raw_pre_entry_outcome" not in jobs.SUPPORTED_RESEARCH_JOB_KINDS
+    with pytest.raises(SystemExit):
+        jobs.build_parser().parse_args(["--kind", "raw_pre_entry_outcome_attribution"])
+
+
+def test_raw_pre_entry_outcome_attribution_reuses_feature_signal_key_contract() -> None:
+    assert RAW_SIGNAL_KEY_FIELDS == UNIQUE_SIGNAL_KEY_FIELDS
+    payload = attribute_local_paper_outcomes_by_raw_pre_entry_context(
+        diagnostic_rows=(),
+        local_paper_closed_segments=(),
+        local_paper_open_segments=(),
+        local_paper_fill_events=(),
+        local_paper_verification={"all_fills_local_paper": True},
+    )
+    assert tuple(payload["context"]["raw_feature_names"]) == RAW_PRE_ENTRY_FEATURE_NAMES
+    assert tuple(payload["by_raw_feature_tertile"]) == RAW_PRE_ENTRY_FEATURE_NAMES
+
+
+def test_raw_pre_entry_outcome_attribution_import_does_not_load_broker_module() -> None:
+    sys.modules.pop("thericher_v2.research.raw_pre_entry_outcome_attribution", None)
+    sys.modules.pop("thericher_v2.research.trade_path_attribution", None)
+    sys.modules.pop("thericher_v2.execution.broker", None)
+
+    importlib.import_module("thericher_v2.research.raw_pre_entry_outcome_attribution")
+
+    assert "thericher_v2.execution.broker" not in sys.modules
+
+
 def test_raw_pre_entry_outcome_attribution_import_has_no_broker_submit_paths() -> None:
     import thericher_v2.research.raw_pre_entry_outcome_attribution as attribution
 
@@ -217,6 +425,7 @@ def test_raw_pre_entry_outcome_attribution_import_has_no_broker_submit_paths() -
     assert "os.environ" not in source
     assert "localpaperbroker" not in source
     assert "orderintent" not in source
+    assert "submit_order" not in source
     assert "submit_and_fill" not in source
     assert "kis_api_called" in source
 
@@ -230,12 +439,13 @@ def _diagnostic_row(
     close_position: str,
     bucket: str,
     entered_local_paper: bool = False,
+    symbol: str = "AAA",
 ) -> dict[str, object]:
     return {
         "source": "diagnostic_overlay",
         "slice_id": slice_id,
         "variant_id": variant_id,
-        "symbol": "AAA",
+        "symbol": symbol,
         "execution_bar_start": timestamp,
         "offset": offset,
         "pre_entry_3bar": {
@@ -257,11 +467,13 @@ def _fill_event(
     variant_id: str,
     timestamp: str,
     source: str,
+    *,
+    symbol: str = "AAA",
 ) -> dict[str, object]:
     return {
         "slice_id": slice_id,
         "variant_id": variant_id,
-        "symbol": "AAA",
+        "symbol": symbol,
         "created_at": timestamp,
         "side": "buy",
         "source": source,

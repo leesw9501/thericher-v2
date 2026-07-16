@@ -484,6 +484,11 @@
   Docker or GPU job, changed no dependency files, and wrote one compact
   artifact under
   `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-cross-slice-20260717-r1`.
+- Raw pre-entry contract tightening ran CPU/focused tests and one CPU artifact
+  smoke only. It used no Docker or GPU job, changed no dependency, compose, or
+  Docker files, kept artifacts outside Git, and narrowed attribution imports so
+  raw outcome/trade-path helpers do not import the execution barrel or load
+  broker modules.
 
 ## Next Handoff
 
@@ -502,3 +507,6 @@
   simplification pass uses existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.
+- The next research cadence should run Docker `research` only through the
+  existing Engine Research Agent single-shot runner, with `src` mounted
+  read-only and model artifacts under `/app/model_artifacts`.

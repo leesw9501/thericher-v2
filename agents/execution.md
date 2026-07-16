@@ -354,6 +354,12 @@
   parsed existing event artifacts and paired existing `source: local_paper`
   paths only; the smoke observed `302` local-paper entry fills, `290` closed
   paths, `12` open paths, and `0` non-local fill sources.
+- Raw pre-entry contract tightening reran no local-paper replay and created no
+  orders, fills, positions, order intents, broker adapters, or broker outcomes.
+  It clarified attribution semantics so `local_paper_entry_fill_count` is the
+  unique matched entry-key count and `local_paper_fill_event_count` is the
+  matched local-paper buy fill event count. CPU smoke observed both as `302`
+  with `0` missing trade paths and `0` non-local fill sources.
 
 ## Next Handoff
 
@@ -374,3 +380,6 @@
 - A simplification pass may inspect local-paper evidence contracts but must not
   rerun replay, mutate fills, submit orders, create order intents, or turn any
   feature context into an execution filter.
+- The next Engine Research cadence may run broker-free local-paper replay only
+  through existing research jobs. It must preserve `source: local_paper` fills
+  and keep diagnostics as `source: diagnostic_overlay`.
