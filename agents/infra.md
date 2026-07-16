@@ -418,6 +418,10 @@
   requirement. Its first smoke claimed one external queue item, read existing
   `D:\market_data` metadata only, and wrote queue/run-state/inventory artifacts
   under `D:\thericher-v2\model-artifacts\data-agent`.
+- Two-worker cadence used disjoint external roots: Data Agent ran locally with
+  no Docker/GPU requirement, while Engine Research Agent ran Docker `research`
+  with current `src` mounted read-only and RTX 4090 visible. Both queues were
+  empty after their single `run-once` invocations.
 
 ## Next Handoff
 
@@ -432,4 +436,5 @@
   notification, or auto-commit behavior.
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
-  separate from Engine Research Agent's Docker/PyTorch lane.
+  separate from Engine Research Agent's Docker/PyTorch lane while the next
+  longer GPU/depth job runs.

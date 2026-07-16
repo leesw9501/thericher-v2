@@ -422,12 +422,16 @@
   and did not add a daemon, scheduler, dashboard, notification path, broad
   agent platform, broker authority, credential reads, network acquisition,
   report family, gate, Docker/PyTorch dependency, or auto-commit path.
+- Two-worker cadence reused existing single-shot runners and external
+  artifacts only. It added no code, coordinator, scheduler, dashboard, report
+  family, gate, auto-commit path, broker authority, credential reads, or new
+  executable worker.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward using the two executable workers in a bounded
-  cadence, not adding a coordinator. Keep coordination evidence small and avoid
-  daemon, scheduler, dashboard, report branch, broker, credential, or
-  auto-commit behavior.
+- Push the next task toward a bounded longer Engine Research Agent GPU/depth
+  job with Data Agent as a companion inventory lane. Keep coordination evidence
+  small and avoid daemon, scheduler, dashboard, report branch, broker,
+  credential, or auto-commit behavior.

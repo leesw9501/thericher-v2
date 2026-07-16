@@ -327,12 +327,16 @@
   metadata only, used bounded head samples for known files, found `2` known
   folders, `5` snapshots, and `5` useful files, and wrote artifacts under
   `D:\thericher-v2\model-artifacts\data-agent`. No data was acquired.
+- Data Agent cadence refresh `data-agent-market-data-inventory-cadence-20260717`
+  claimed one external queued inventory job, again found `2` known folders,
+  `5` snapshots, and `5` useful files under existing `D:\market_data`, wrote
+  under `D:\thericher-v2\model-artifacts\data-agent`, and acquired no data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Use the Data Agent worker as a
-  companion lane while Engine Research Agent keeps GPU/research work moving.
+  companion lane before the next longer Engine Research Agent GPU job.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

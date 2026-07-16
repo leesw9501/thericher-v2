@@ -734,13 +734,37 @@ Inventory summary:
   canonical daily,
 - warnings: none.
 
-Next, use the two executable workers together without adding an orchestrator:
-queue one bounded Engine Research Agent research job and one Data Agent
-inventory refresh, run each single-shot worker, and record only the small
-coordination evidence needed to prove the lanes stay disjoint. Keep Execution
-Agent non-executable until an explicit KIS paper goal allows credentials/API
-calls, and avoid daemon, scheduler, dashboard, auto-commit, and broad
-autonomous platform behavior.
+The first two-worker cadence completed without adding an orchestrator:
+
+- Data Agent job `data-agent-market-data-inventory-cadence-20260717` claimed one
+  queued `market_data_inventory` item, read existing `D:\market_data` metadata
+  only, used no Docker/GPU/network/credentials/broker, and wrote:
+  `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-cadence-20260717\metrics.json`.
+- Engine Research Agent job
+  `engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717` claimed one
+  queued `candidate_feature_branch_replay` item, ran Docker `research` with RTX
+  4090 visible, replayed AMAT/AMZN/BA from `snapshot=2026-06-18`, completed `9`
+  variants, produced `12` verified `source: local_paper` fills, and wrote:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717\metrics.json`.
+
+Lane separation evidence:
+
+- both worker queues were empty after their single `run-once`,
+- Engine Research Agent artifacts stayed under `engine-research-agent`,
+  `candidate-feature-branch-replay`, and `candidate-threshold-robustness`,
+- Data Agent artifacts stayed under `data-agent`,
+- Data Agent did not use Docker/GPU, and Engine Research Agent remained the only
+  Docker `research`/GPU worker.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing single-shot workers and updated
+only handoff/stateboard documents.
+
+Next, put the Engine Research Agent back on the deeper GPU research lane: queue
+one bounded longer candidate training/depth job through the runner, with a Data
+Agent inventory refresh as the companion lane. Keep artifacts outside Git,
+avoid new orchestration, and keep Execution Agent non-executable until an
+explicit KIS paper goal allows credentials/API calls.
 
 ## Daily Operator Review
 

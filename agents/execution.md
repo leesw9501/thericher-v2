@@ -292,6 +292,10 @@
 - Runner-queued zero-fill attribution reran no execution. It consumed existing
   replay/trace artifacts, found `0` buy opportunities and `0` local-paper
   fills, and preserved the broker-free/local-paper-only evidence shape.
+- Two-worker cadence Engine Research Agent replay used the existing broker-free
+  local-paper path for AMAT, AMZN, and BA, produced `12` verified
+  `source: local_paper` fills across AMAT/AMZN variants, and observed no
+  non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
 
 ## Next Handoff
 

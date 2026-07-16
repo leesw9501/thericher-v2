@@ -791,13 +791,21 @@
   opportunities, `0` replay fills, and all fill evidence local-paper-only.
   Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-zero-fill-attribution-20260717\metrics.json`.
+- Two-worker cadence replay
+  `engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717` claimed one
+  Engine Research Agent queue item after a companion Data Agent inventory
+  refresh, ran Docker `research` with RTX 4090 visible, replayed AMAT, AMZN,
+  and BA from `snapshot=2026-06-18`, completed `9` variants, produced `12`
+  verified `source: local_paper` fills and no non-local fill sources, and wrote
+  replay/robustness artifacts outside Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
-  only GPU/Docker research worker. The next task should prove the two-worker
-  cadence with one bounded research queue item and one data inventory refresh,
-  while avoiding daemon, scheduler, dashboard, auto-commit, broker, credential,
-  or broad multi-agent platform behavior.
+  only GPU/Docker research worker. The next task should queue one bounded
+  longer candidate training/depth job through the runner, with Data Agent used
+  only as a companion inventory lane, while avoiding daemon, scheduler,
+  dashboard, auto-commit, broker, credential, or broad multi-agent platform
+  behavior.

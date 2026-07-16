@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the first two-worker cadence with the Engine Research Agent and Data Agent
-single-shot workers.
+Run the first longer Engine Research Agent GPU/depth job through the
+single-shot runner, with Data Agent as a companion inventory lane.
 
-This advances data collection and feature/model research by proving the two
-executable lanes can make progress through disjoint queues and artifact roots
-without adding an orchestrator.
+This advances feature/model research, backtest and walk-forward validation, and
+data collection by putting the GPU research lane back to work while keeping the
+new Data Agent lane useful and separate.
 
 ## Hard Boundaries
 
@@ -62,27 +62,30 @@ without adding an orchestrator.
 
 ## Required Work
 
-1. Inspect the current external worker roots:
-   - `D:\thericher-v2\model-artifacts\engine-research-agent`
-   - `D:\thericher-v2\model-artifacts\data-agent`
-2. Queue and run one Data Agent inventory refresh using existing
-   `D:\market_data` only. Use a unique job id and confirm it claims one job,
-   writes one inventory artifact, and exits.
-3. Queue and run one Engine Research Agent bounded research job through the
-   existing runner. Prefer a research-useful closed job kind over a smoke. A
-   good starting point is a small `candidate_feature_branch_replay` using the
-   existing first-evaluation depth feature-branch artifact and three existing
-   `snapshot=2026-06-18` symbols. Use `gpu_training_smoke` only if the useful
-   replay cannot be queued within the boundaries.
-4. Confirm the two workers stay disjoint:
-   - separate queue directories,
-   - separate run directories,
-   - separate artifact subtrees,
-   - Engine Research Agent may use Docker `research`/GPU,
-   - Data Agent must not use Docker/GPU/network/broker/credentials.
-5. Record only concise coordination evidence in existing stateboards and
-   `HANDOFF.md`. Do not create a new coordination report family.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Queue and run one Data Agent inventory refresh against existing
+   `D:\market_data` before the Engine Research Agent job.
+2. Select one bounded longer Engine Research Agent job from the existing closed
+   research-job kind set. Prefer a GPU/depth or training-oriented job over a
+   replay-only smoke, using existing `D:\market_data` slices and existing
+   external artifacts.
+3. Queue the selected job through `thericher-v2-engine-research-agent
+   enqueue-research-job`, then execute exactly one `run-once`.
+4. Keep the job bounded:
+   - use existing source/evaluation slice caps,
+   - use explicit max epochs/steps/bars,
+   - write artifacts only under `D:\thericher-v2\model-artifacts`,
+   - do not mutate Data Agent queue/artifacts.
+5. If the Engine Research Agent job completes, inspect the compact metrics and
+   record:
+   - Docker `research` command,
+   - GPU availability,
+   - produced artifacts,
+   - local-paper source verification if replay/fills are present,
+   - whether the job adds useful next evidence for short breadth or longer
+     depth queues.
+6. If the Engine Research Agent job cannot run within boundaries, record the
+   blocker and do not substitute broker, credential, network, or dashboard work.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -112,7 +115,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Run first two worker cadence`
+`Run first runner queued depth job`
 
 ## Completion Report
 
@@ -126,6 +129,7 @@ Report:
 - whether GPU/Docker were used,
 - Data Agent queue behavior,
 - Engine Research Agent queue behavior,
-- lane separation evidence,
+- produced artifacts,
+- local-paper source evidence if applicable,
 - what was intentionally not built,
 - next goal.
