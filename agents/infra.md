@@ -264,6 +264,13 @@
   existing external artifacts plus selected local Yahoo rows, reran no Docker
   job, used no GPU, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Entry-adverse weight-decay feature-branch training/evaluation and cap-2
+  replay ran in Docker `research` with PyTorch CUDA and RTX 4090 visible,
+  mounted current `src` read-only, read `/app/market_data` read-only, and wrote
+  feature-branch, training, evaluation, model, replay, robustness, and
+  research-job artifacts under `/app/model_artifacts`. Opportunity, trade-path,
+  and contrast attribution ran locally as artifact-only work under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

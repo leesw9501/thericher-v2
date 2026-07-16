@@ -175,6 +175,10 @@
 - Hidden8 loss attribution reran no execution. It consumed existing
   local-paper replay/event evidence and preserved local-paper source
   verification.
+- Entry-adverse weight-decay replay reused the existing broker-free
+  local-paper path, produced `4` verified `source: local_paper` fills on AMAT,
+  and follow-up opportunity, trade-path, and contrast attribution parsed
+  existing event files only without touching broker submit/cancel code.
 
 ## Next Handoff
 

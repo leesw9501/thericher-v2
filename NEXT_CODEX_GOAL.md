@@ -5,11 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse weight-decay contrast target.
+Build a bounded entry-adverse weight-decay wider-sample completion target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by running one GPU regularization contrast for the existing
-`core_plus_entry_adverse_v1` feature set after hidden8 loss attribution.
+attribution by finishing the same `core_plus_entry_adverse_v1` + hidden-units
+`4` + `weight_decay=0.01` branch on the remaining wider-sample symbols, so the
+regularization evidence can be summarized against the existing 10-symbol
+entry-adverse reference without adding another model or feature axis.
 
 ## Hard Boundaries
 
@@ -64,29 +66,31 @@ attribution by running one GPU regularization contrast for the existing
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume the current diagnostic context:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-hidden8-loss-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-3. Use existing Docker `research` feature-branch code only:
-   - `--candidate-feature-set core_plus_entry_adverse_v1`
-   - `--hidden-units 4`
-   - `--weight-decay 0.01`
-   - `--feature-preprocessing feature_standardization`
-   - strict caps no larger than `max-bars 240`, `max-epochs 4`, and
-     `max-steps 128` unless an input artifact proves a smaller cap is required.
-4. Train on existing CVS, FCX, and KO source slices from
-   `snapshot=2026-07-09-shadow-t0-8d-probe`.
-5. Evaluate and replay on ADBE, ADI, ADP, AEM, AGG, and AMAT from
-   `snapshot=2026-06-18`. Keep the existing robustness slice cap rather than
-   changing code.
-6. Run cap-2 local-paper replay through the existing
-   `candidate_feature_branch_replay` path. If fills occur, produce
-   artifact-only opportunity and trade-path attribution; if zero fills occur,
-   produce compact zero-fill attribution.
+2. Consume the completed first-six weight-decay context:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-weightdecay-feature-branch-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-weightdecay-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-trade-path-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-contrast-summary-20260716\metrics.json`
+3. Use existing Docker `research` feature-branch replay code only. Do not
+   retrain the model, add features, change preprocessing, or derive a new
+   threshold rule.
+4. Replay the existing weight-decay feature-branch artifact with cap-2 local
+   paper on the remaining selected `snapshot=2026-06-18` symbols:
+   - AMD
+   - AMGN
+   - AMT
+   - AMZN
+5. If fills occur, produce artifact-only opportunity and trade-path
+   attribution; if zero fills occur, produce compact zero-fill attribution.
+6. Combine the first-six and remaining-symbol evidence into one descriptive
+   10-symbol weight-decay summary, including local-paper verification and
+   scope notes for comparison against the existing hidden4 wider sample and
+   hidden8 same-sample context.
 7. Keep all results descriptive only. Do not rank regularization values, select
    a branch, define promotion criteria, or produce a pass/fail field.
-8. Do not add features, threshold search, preprocessing search, model search,
-   scheduler, dashboard, broker behavior, or new job kinds.
+8. Do not add training, features, threshold search, preprocessing search, model
+   search, scheduler, dashboard, broker behavior, or new job kinds.
 9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -115,7 +119,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse weight-decay contrast`
+`Complete bounded entry-adverse weight-decay wider sample`
 
 ## Completion Report
 
@@ -127,6 +131,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- entry-adverse weight-decay contrast findings,
+- entry-adverse weight-decay wider-sample findings,
 - what was intentionally not built,
 - next recommended goal.

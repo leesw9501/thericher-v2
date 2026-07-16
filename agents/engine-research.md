@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse weight-decay contrast before another
+1. Complete the entry-adverse weight-decay wider-sample replay before another
    feature-set or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
@@ -265,6 +265,13 @@
   lower average entry probability margin, smaller favorable excursion, larger
   adverse excursion, and fee-aware delta sum `-11.1294` below the hidden4 AMAT
   reference.
+- Last completed: `bounded-entry-adverse-weightdecay-contrast-summary-20260716`,
+  status `entry_adverse_weightdecay_contrast_summary_only`, ran
+  `core_plus_entry_adverse_v1` with hidden-units `4`, `weight_decay=0.01`, and
+  `feature_standardization` in Docker `research`, replayed cap-2 thresholds on
+  ADBE/ADI/ADP/AEM/AGG/AMAT, verified `4` local-paper fills, attributed `2`
+  closed AMAT segments with fee-aware delta sum `2.6518`, and wrote the
+  descriptive contrast under the external artifact root.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -535,10 +542,14 @@
 - Hidden8 loss attribution argues against spending the next block on a wider
   hidden-units axis. The next bounded GPU contrast should keep hidden-units `4`
   and test one regularization setting for the same feature set.
+- The weight-decay contrast produced fewer opportunities than the 10-symbol
+  hidden4 reference but kept its first-six fills local-paper-only and
+  non-negative. The next evidence should finish the same branch on the
+  remaining wider-sample symbols before adding another feature or model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded entry-adverse weight-decay contrast from existing
-  code and selected local data before another feature-set, preprocessing, or
-  threshold-only branch.
+  task should complete the bounded entry-adverse weight-decay wider-sample
+  replay from existing code and selected local data before another feature-set,
+  preprocessing, or threshold-only branch.

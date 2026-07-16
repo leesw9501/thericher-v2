@@ -395,6 +395,13 @@ Implemented and pushed:
   recorded that hidden8 AMAT entries had lower average entry probability margin
   than hidden4 AMAT reference entries, much smaller favorable excursion, much
   larger adverse excursion, and fee-aware delta sum lower by `-11.1294`,
+- bounded entry-adverse weight-decay contrast; it kept
+  `core_plus_entry_adverse_v1`, hidden-units `4`, and
+  `feature_standardization`, ran `weight_decay=0.01` in Docker `research` on
+  CVS/FCX/KO source slices with ADBE/ADI/ADP/AEM/AGG/AMAT evaluation slices,
+  replayed cap-2 local-paper thresholds, verified all `4` fills as
+  `source: local_paper`, attributed `2` closed AMAT segments with fee-aware
+  delta sum `2.6518`, and wrote one descriptive contrast summary outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -459,15 +466,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse weight-decay contrast target:
+Start one bounded entry-adverse weight-decay wider-sample completion target:
 
-1. keep `core_plus_entry_adverse_v1`, hidden-units `4`, and
-   `feature_standardization`,
-2. run one Docker `research` contrast with `weight_decay=0.01` on the same
-   CVS/FCX/KO source slices and ADBE/ADI/ADP/AEM/AGG/AMAT evaluation sample,
-3. replay cap-2 thresholds through the existing local-paper path and attribute
-   fills or zero-fills outside Git,
-4. avoid new features, threshold search, branch ranking, dashboards,
+1. consume the completed weight-decay feature-branch, replay, opportunity,
+   trade-path, and contrast summary artifacts,
+2. replay the same weight-decay branch on the remaining wider-sample symbols
+   AMD, AMGN, AMT, and AMZN from `snapshot=2026-06-18`,
+3. attribute fills or zero-fills outside Git and combine first-six plus
+   remaining-symbol evidence into one descriptive 10-symbol summary,
+4. avoid new training, features, threshold search, branch ranking, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

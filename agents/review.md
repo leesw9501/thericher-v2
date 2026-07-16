@@ -254,10 +254,16 @@
   path, job kind, CLI, report family, gate, dashboard, scheduler, broker path,
   threshold search, retraining, replay rerun, feature/model axis, or
   model-promotion language.
+- Entry-adverse weight-decay contrast reused existing feature-branch and
+  replay paths plus artifact-only attribution. It added no helper, code path,
+  job kind, CLI, report family, gate, dashboard, scheduler, broker path,
+  threshold search, feature axis, or model-promotion language beyond the
+  bounded regularization value requested by the active goal.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded entry-adverse weight-decay contrast
-  before allowing another feature-set or threshold-only branch.
+- Push the next task toward finishing the bounded entry-adverse weight-decay
+  wider-sample replay before allowing another feature-set or threshold-only
+  branch.
