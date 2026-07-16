@@ -306,6 +306,9 @@
 - Signal-hygiene diagnostic ran locally as artifact-only work, consumed
   existing external JSON artifacts only, reran no Docker job, used no GPU, and
   wrote one compact artifact under `D:\thericher-v2\model-artifacts`.
+- Sell-latency attribution ran locally as artifact-only work, consumed existing
+  external JSON artifacts only, reran no Docker job, used no GPU, and wrote one
+  compact artifact under `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -314,5 +317,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next sell-latency attribution should be artifact-only unless a referenced
-  entry-adverse artifact is missing or corrupt.
+- The next exit-timing overlay diagnostic should be artifact-only unless a
+  referenced entry-adverse artifact is missing or corrupt.

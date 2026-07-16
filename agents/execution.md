@@ -201,10 +201,14 @@
 - Signal-hygiene diagnostic reran no execution, consumed existing local-paper
   verification from AMGN and wider-sample artifacts, and observed no non-local
   fill source.
+- Sell-latency attribution reran no execution, consumed existing local-paper
+  exit timestamps and source checks, and kept diagnostic timing separate from
+  fill evidence.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next sell-latency attribution should consume existing local-paper
-  evidence only and must not touch broker submit/cancel code.
+- The next exit-timing overlay should consume existing local-paper evidence
+  only, label overlays separately from fills, and must not touch broker
+  submit/cancel code.

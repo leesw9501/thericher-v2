@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse sell-latency attribution target.
+Build a bounded entry-adverse exit-timing diagnostic overlay target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by checking whether delayed sell-threshold signals and adverse
-movement before exit explain entry-adverse losses more broadly than the narrow
-AMGN zero-range signal-hygiene pattern.
+attribution by comparing simple diagnostic exit overlays against existing
+local-paper exits after sell-latency attribution showed loss-bearing segments
+waited longer for sell-threshold signals and moved more adversely before exit.
 
 ## Hard Boundaries
 
@@ -68,25 +68,26 @@ AMGN zero-range signal-hygiene pattern.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-sourcebreadth-amgn-loss-attribution-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
-3. Compare loss-bearing and non-negative entry-adverse segments for:
-   - bars or minutes to first sell-threshold signal,
-   - adverse movement before first sell signal,
-   - favorable movement before first sell signal,
-   - 5/15/30-bar forward close marks,
-   - fee-aware trade-path outcome.
-4. Write one compact descriptive artifact outside Git under
+3. Compare diagnostic overlays against existing local-paper trade paths:
+   - fixed 2-bar, 3-bar, and 5-bar exits,
+   - adverse-move marks at the existing bounded path context,
+   - existing local-paper sell-threshold exits,
+   - fee-aware outcome deltas by loss-bearing and non-negative segment group.
+4. Keep overlay outcomes labeled `source: diagnostic_overlay`; do not mutate or
+   replace existing `source: local_paper` fills.
+5. Write one compact descriptive artifact outside Git under
    `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
-5. Keep all results descriptive only. Do not rank data sources, select a
+6. Keep all results descriptive only. Do not rank data sources, select a
    branch, define promotion criteria, or produce a pass/fail field.
-6. Do not train, rerun replay, add features, search thresholds, change
+7. Do not train, rerun replay, add features, search thresholds, change
    preprocessing, start a model search, add a scheduler, expand the dashboard,
    touch broker behavior, or add a new job kind unless a referenced artifact is
    missing or corrupt.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -114,7 +115,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse sell-latency attribution`
+`Add bounded entry-adverse exit-timing overlay`
 
 ## Completion Report
 
@@ -126,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- sell-latency attribution findings,
+- exit-timing overlay findings,
 - what was intentionally not built,
 - next goal.

@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse sell-latency attribution target before another
-   feature-set, regularization value, or threshold-only branch is tried.
+1. Run one bounded entry-adverse exit-timing diagnostic overlay target before
+   another feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -326,6 +326,14 @@
   concentrated in one AMGN row that recurred across regularized batch2
   near-threshold rows and the source-breadth loss entry, and recorded that the
   pattern does not explain all hidden4 first-six loss-bearing rows.
+- Last completed:
+  `bounded-entry-adverse-sell-latency-attribution-20260716`, status
+  `entry_adverse_sell_latency_attribution_only`, consumed existing
+  signal-hygiene, AMGN loss, and wider-sample signal-quality artifacts only,
+  compared `11` entry-adverse segments, found loss-bearing segments averaged
+  `6.6` bars to first sell signal versus `1.333333333333` for non-negative
+  segments, and recorded larger adverse movement before sell in the
+  loss-bearing group.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -627,10 +635,14 @@
 - Signal-hygiene diagnostic showed the zero-range/very-low-volume pattern is
   real but narrow. The next evidence should compare sell-threshold latency and
   adverse movement before changing another feature/model axis.
+- Sell-latency attribution showed delayed sell signals and adverse movement are
+  broader than the AMGN zero-range row. The next evidence should compare simple
+  diagnostic exit overlays against the existing local-paper exits without
+  changing replay.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded sell-latency attribution from existing
+  task should run one bounded exit-timing diagnostic overlay from existing
   entry-adverse artifacts before another feature-set, preprocessing,
   regularization value, or threshold-only branch.

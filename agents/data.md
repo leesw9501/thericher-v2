@@ -236,12 +236,15 @@
   was acquired.
 - Signal-hygiene diagnostic consumed existing external artifacts only and
   required no additional market-data reads or acquisition.
+- Sell-latency attribution consumed existing external artifacts only and
+  required no additional market-data reads or acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; sell-latency attribution should reuse
-  existing signal-quality, AMGN loss, and trade-path artifacts.
+- The next data task is not acquisition; exit-timing overlay diagnostics should
+  reuse existing signal-quality, AMGN loss, sell-latency, and trade-path
+  artifacts.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
