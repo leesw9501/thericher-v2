@@ -929,6 +929,13 @@
   local-paper fills, and PnL range `0E-13` to `13.0313000000000`; BA remained
   zero-fill. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-zero-vs-fill-bearing-contrast-20260717-r1\metrics.json`.
+- AMAT/AMZN path-quality attribution consumed the fill-bearing replay, event
+  artifacts, traces, robustness metrics, and selected local Yahoo rows only. It
+  found `6` closed paths, `0` open paths, `0` negative fee-aware paths, gross
+  delta `40.74`, fee-aware delta `40.2807`, all `12` fills as
+  `source: local_paper`, and all diagnostic path context as
+  `source: diagnostic_overlay`. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -936,8 +943,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: attribute AMAT/AMZN fill-bearing paths from the
-  existing contrast using event, trace, and local-bar evidence before another
+- Short experiments queue: consolidate same-window AMAT/AMZN path-quality
+  evidence from existing wider-holdout `240`-bar artifacts before another
   depth run.
 - Longer candidate training queue: hold until a short experiment shows enough
   path-quality evidence and a focused research question.

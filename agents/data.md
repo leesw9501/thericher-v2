@@ -401,13 +401,19 @@
 - Fill-bearing contrast reused the existing AMAT, AMZN, and BA replay artifact
   from the same `snapshot=2026-06-18` Yahoo 1m file. No additional data was
   acquired and no new Data Agent inventory was needed.
+- AMAT/AMZN path-quality attribution reused the same
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+  file, loaded AMAT and AMZN local rows, consumed existing event/trace
+  artifacts, and acquired no additional data. No operator data help is needed
+  for this attribution.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows for AMAT and AMZN path attribution and record exact missing artifact
-  names only if existing event, trace, or local-bar evidence is insufficient.
+  rows and existing wider-holdout artifacts for same-window AMAT/AMZN
+  consolidation; record exact missing artifact names only if the `240`-bar
+  evidence is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

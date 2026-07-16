@@ -503,6 +503,10 @@
   or GPU job, changed no dependency or compose files, and reused existing
   `/app/model_artifacts` paths resolved to
   `D:\thericher-v2\model-artifacts`.
+- AMAT/AMZN path-quality attribution ran locally as artifact-only work, used no
+  Docker or GPU job, changed no dependency, Docker, or compose files, and wrote
+  one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
@@ -524,5 +528,6 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next fill-bearing path
-  attribution. Use existing artifacts first.
+- Do not add scheduler/coordinator plumbing for the next same-window
+  consolidation. Use existing artifacts first, then the existing single-shot
+  Engine Research Agent replay path only if evidence is missing.

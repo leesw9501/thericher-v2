@@ -1496,10 +1496,41 @@ The fill-bearing replay contrast then completed:
   external roots and local-data lineage, and Review/Execution checked
   local-paper-only and no-coordinator boundaries.
 
-Next, attribute the AMAT/AMZN fill-bearing paths using existing event, trace,
-and local-bar evidence before another depth training block. Keep it
-artifact-only and explain whether the fill-bearing evidence is path-quality
-useful or only threshold-hit evidence.
+The AMAT/AMZN fill-bearing path-quality attribution then completed:
+
+- It consumed only existing AMAT/AMZN event artifacts, probability traces,
+  robustness/replay metrics, and local `snapshot=2026-06-18` Yahoo 1m rows.
+  It did not rerun replay, train a model, queue a Docker/GPU job, acquire
+  data, call KIS, read credentials, or add code.
+- The compact artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`.
+- The attribution found `6` fill-bearing variants, `12` local-paper fills,
+  `6` closed paths, `0` open paths, `0` negative fee-aware paths, and `6`
+  non-negative fee-aware paths. Gross delta sum was `40.74`; fee-aware delta
+  sum was `40.2807`.
+- AMAT contributed `3` closed paths, gross delta `39.405`, fee-aware delta
+  `39.0939`, entry probability margins `0.04491384` to `0.04691384`, max
+  adverse movement `-4.1200061035156`, and max favorable movement
+  `13.7099194335938`.
+- AMZN contributed `3` closed paths, gross delta `1.335`, fee-aware delta
+  `1.1868`, entry probability margins `0.33969201` to `0.34169201`, max
+  adverse movement `-0.16499755859375`, and max favorable movement
+  `0.4800067138672`.
+- Every sell-threshold signal after entry matched the local-paper sell fill
+  timestamp. All original fills stayed `source: local_paper`; diagnostic path
+  context stayed `source: diagnostic_overlay`; there were `0` non-local,
+  unknown, unreadable, or missing nonzero-fill event artifacts.
+- Runtime Codex sidecars assisted as temporary reviewers: Engine Research
+  checked path-quality evidence, Data/Infra checked local data and artifact
+  lineage, and Review/Execution checked broker/source-label boundaries. They
+  are not repo-owned workers.
+- Important caveat remains: this AMAT/AMZN/BA replay used `120` bars per slice,
+  while the prior ADBE/ADI/ADP zero-buy contrast used `240` bars per slice.
+
+Next, consolidate same-window AMAT/AMZN evidence from existing wider-holdout
+artifacts before another GPU training block. Prefer existing `240`-bar
+artifacts first; queue at most one existing replay job only if the same-window
+evidence is genuinely missing.
 
 ## Daily Operator Review
 

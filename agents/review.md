@@ -534,13 +534,20 @@
   scheduler, dashboard, coordinator, report family, gate, auto-commit path,
   broker authority, credential reads, data acquisition, replay mutation,
   threshold search, feature rule, or model-promotion language.
+- AMAT/AMZN path-quality attribution reused existing artifacts and wrote one
+  compact external artifact. It added no code, helper, job kind, worker,
+  scheduler, dashboard, coordinator, report family, gate, auto-commit path,
+  broker authority, credential reads, data acquisition, replay mutation,
+  threshold search, feature rule, durable multi-agent platform, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward bounded fill-bearing path attribution using
-  existing artifacts first. Keep coordination evidence small and avoid new
-  durable workers, daemon, scheduler, dashboard, report branch, broker,
-  credential, auto-commit, durable multi-agent-platform behavior, threshold
-  search, feature-rule selection, or model-promotion language.
+- Push the next task toward bounded same-window path-quality consolidation
+  using existing wider-holdout artifacts first. Keep coordination evidence
+  small and avoid new durable workers, daemon, scheduler, dashboard, report
+  branch, broker, credential, auto-commit, durable multi-agent-platform
+  behavior, threshold search, feature-rule selection, or model-promotion
+  language.

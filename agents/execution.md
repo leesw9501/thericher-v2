@@ -374,6 +374,11 @@
   local-paper replay artifacts only and confirmed `12` fills with
   `source: local_paper`, `0` non-local fill sources, `0` unknown fills, and
   `0` unreadable event artifacts.
+- AMAT/AMZN path-quality attribution reran no execution. It parsed existing
+  AMAT/AMZN local-paper event artifacts only, paired `12` fill events into `6`
+  closed paths, observed `0` open paths, preserved every original fill as
+  `source: local_paper`, and kept path/timing diagnostics separate as
+  `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -400,6 +405,6 @@
 - The next opportunity-gap diagnostic should remain artifact-only unless it
   uses an existing broker-free replay job. Do not lower or turn thresholds into
   an execution rule.
-- Any next fill-bearing path attribution must keep original fills as
+- Any same-window path-quality consolidation must keep original fills as
   `source: local_paper`, count diagnostics separately, and avoid creating
   order intents outside the existing broker-free replay path.

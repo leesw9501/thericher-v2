@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Attribute the AMAT/AMZN fill-bearing paths from the bounded replay contrast
-before any longer GPU training block.
+Consolidate same-window AMAT/AMZN path-quality evidence from existing
+wider-holdout artifacts before any longer GPU training block.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by checking whether the existing fill-bearing evidence is
-path-quality useful or only threshold-hit evidence.
+PnL attribution by resolving the current `120`-bar versus `240`-bar caveat for
+the fill-bearing AMAT/AMZN evidence.
 
 ## Hard Boundaries
 
@@ -64,45 +64,50 @@ path-quality useful or only threshold-hit evidence.
 
 ## Current Evidence To Consume
 
+- Current AMAT/AMZN `120`-bar path-quality artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`
 - Fill-bearing contrast artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-zero-vs-fill-bearing-contrast-20260717-r1\metrics.json`
 - Fill-bearing replay artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717\metrics.json`
-- Fill-bearing robustness artifact:
-  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717-robustness\metrics.json`
-- Zero-buy opportunity-gap artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-opportunity-gap-20260717-r1\metrics.json`
+- Wider-holdout depth behavior attribution:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
+- Wider-holdout replay/trade-path artifacts referenced by that attribution, if
+  present under `D:\thericher-v2\model-artifacts`.
+- Local market data:
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Consume existing AMAT and AMZN event artifacts, probability traces, and
-   local `snapshot=2026-06-18` bars only. Do not rerun replay unless existing
-   event evidence is missing for nonzero-fill variants.
-2. Produce one compact artifact-only path-quality attribution outside Git.
-   Prefer existing pure helpers such as trade-path attribution before writing
-   one-off parsing logic.
-3. The attribution must report counts, not decisions:
-   - fill-bearing variants and local-paper fill counts,
+1. Prefer existing wider-holdout artifacts. Do not rerun replay unless
+   same-window AMAT/AMZN event or trace evidence is missing.
+2. If existing wider-holdout evidence is sufficient, produce one compact
+   artifact-only consolidation outside Git.
+3. If same-window evidence is genuinely missing, queue at most one existing
+   `candidate_feature_branch_replay` job through the Engine Research Agent
+   runner with `max-bars 240` for AMAT/AMZN/BA, then attribute the result. Do
+   not add a new job kind.
+4. Report counts, not decisions:
+   - AMAT/AMZN fill-bearing variants and local-paper fill counts,
    - closed/open trade paths,
    - fee-aware and gross deltas,
-   - max adverse and favorable movement,
-   - entry probability margins versus buy thresholds,
+   - negative versus non-negative fee-aware path counts,
+   - entry probability margins,
    - sell-threshold timing after entry,
+   - max adverse and favorable movement,
+   - `120`-bar versus `240`-bar evidence differences,
    - local-paper source verification,
    - diagnostic-overlay source separation,
    - missing evidence counts.
-4. Compare AMAT and AMZN path evidence to the zero-buy contrast only as counts
-   and descriptive context. Do not introduce a new threshold, feature rule, or
-   replay behavior.
-5. Do not queue longer candidate training in this task. The output should say
-   which evidence is still missing before depth training.
+5. Do not queue longer candidate training in this task. End with the evidence
+   still missing, if any, before another depth-training block.
 6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the active attribution.
+  license-compatible source clearly improves the active consolidation.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -130,7 +135,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Attribute fill-bearing replay paths`
+`Consolidate same-window path quality evidence`
 
 ## Completion Report
 
