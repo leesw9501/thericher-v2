@@ -271,6 +271,11 @@
   research-job artifacts under `/app/model_artifacts`. Opportunity, trade-path,
   and contrast attribution ran locally as artifact-only work under
   `D:\thericher-v2\model-artifacts`.
+- Weight-decay wider-sample batch2 replay ran in Docker `research` with
+  PyTorch CUDA and RTX 4090 visible, reused the existing feature-branch
+  artifact, read `/app/market_data` read-only, and wrote replay, robustness,
+  research-job, opportunity, and summary artifacts under the external model
+  artifact root.
 
 ## Next Handoff
 

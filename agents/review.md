@@ -259,11 +259,14 @@
   job kind, CLI, report family, gate, dashboard, scheduler, broker path,
   threshold search, feature axis, or model-promotion language beyond the
   bounded regularization value requested by the active goal.
+- Weight-decay wider-sample completion reused existing replay and
+  opportunity-attribution paths only. It added no helper, code path, job kind,
+  CLI, report family, gate, dashboard, scheduler, broker path, threshold
+  search, training, feature axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward finishing the bounded entry-adverse weight-decay
-  wider-sample replay before allowing another feature-set or threshold-only
-  branch.
+- Push the next task toward one bounded lighter entry-adverse weight-decay
+  contrast before allowing another feature-set or threshold-only branch.

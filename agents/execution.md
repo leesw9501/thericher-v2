@@ -179,6 +179,9 @@
   local-paper path, produced `4` verified `source: local_paper` fills on AMAT,
   and follow-up opportunity, trade-path, and contrast attribution parsed
   existing event files only without touching broker submit/cancel code.
+- Weight-decay wider-sample completion replayed AMD/AMGN/AMT/AMZN through the
+  same local-paper path, produced zero additional fills, and preserved
+  local-paper-only source verification for missing zero-fill event files.
 
 ## Next Handoff
 

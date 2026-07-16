@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Complete the entry-adverse weight-decay wider-sample replay before another
+1. Run one lighter entry-adverse weight-decay contrast before another
    feature-set or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
@@ -272,6 +272,13 @@
   ADBE/ADI/ADP/AEM/AGG/AMAT, verified `4` local-paper fills, attributed `2`
   closed AMAT segments with fee-aware delta sum `2.6518`, and wrote the
   descriptive contrast under the external artifact root.
+- Last completed:
+  `bounded-entry-adverse-weightdecay-wide-sample-summary-20260716`, status
+  `entry_adverse_weightdecay_wide_sample_summary_only`, replayed the same
+  `weight_decay=0.01` branch on AMD/AMGN/AMT/AMZN, found zero additional buy
+  opportunities or fills, and summarized the 10-symbol evidence as `4`
+  local-paper fills, `2` buy opportunities, `18` zero-fill variants, `2`
+  non-negative closed AMAT segments, and fee-aware delta sum `2.6518`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -546,10 +553,14 @@
   hidden4 reference but kept its first-six fills local-paper-only and
   non-negative. The next evidence should finish the same branch on the
   remaining wider-sample symbols before adding another feature or model axis.
+- The completed `weight_decay=0.01` wider sample stayed local-paper-only and
+  reduced negative segments, but it collapsed opportunities to AMAT. The next
+  bounded GPU contrast should test one lighter regularization point before
+  adding another feature or threshold branch.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should complete the bounded entry-adverse weight-decay wider-sample
-  replay from existing code and selected local data before another feature-set,
+  task should run one bounded lighter entry-adverse weight-decay contrast from
+  existing code and selected local data before another feature-set,
   preprocessing, or threshold-only branch.
