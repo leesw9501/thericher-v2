@@ -908,6 +908,13 @@
   evidence behavior, raw feature names, descriptive-only payload scope, and
   local-paper-only evidence semantics. CPU smoke artifact:
   `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-contract-smoke-20260717-r1\metrics.json`.
+- First bounded parallel-agent cadence queued and ran one existing Engine
+  Research Agent Docker `research` job:
+  `engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1`.
+  It replayed ADBE/ADI/ADP with the existing entry-adverse depth feature
+  artifact, completed `3` slices and `3` threshold pairs with RTX 4090 visible,
+  but produced `0` local-paper fills. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -915,10 +922,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- The next Engine Research block should use the existing single-shot runner and
-  Docker `research` path to run one bounded GPU experiment from the short
-  queue, while Data Agent refreshes inventory in a disjoint lane. Keep the job
-  kind closed and write artifacts outside Git.
+- Short experiments queue: diagnose the ADBE/ADI/ADP zero-fill opportunity gap
+  before another depth run. Candidate checks: probability distribution versus
+  derived buy thresholds, buy-opportunity count by slice, and whether a
+  different existing short replay slice has enough local-paper evidence.
+- Longer candidate training queue: hold until a short experiment shows enough
+  replay opportunities or clearly explains why the threshold edge is useful.
+  Keep the job kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

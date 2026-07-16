@@ -517,6 +517,12 @@
   language. It added contract tests for source separation, exact joins, missing
   evidence, external artifact roots, no job-kind creep, and no broker import
   side effects.
+- First bounded parallel-agent cadence reused only existing single-shot Engine
+  Research/Data Agent workers and external artifacts. It added no code, job
+  kind, worker, scheduler, dashboard, coordinator, report family, gate,
+  auto-commit path, broker authority, credential reads, data acquisition, or
+  model-promotion path. The short replay produced zero fills, so a longer depth
+  block was intentionally not queued.
 
 ## Next Handoff
 
@@ -527,3 +533,6 @@
   durable workers, daemon, scheduler, dashboard, report branch, broker,
   credential, auto-commit, durable multi-agent-platform behavior, threshold
   search, feature-rule selection, or model-promotion language.
+- Push the next task toward artifact-only opportunity-gap analysis before
+  another GPU depth run. Keep it small and avoid turning diagnostic thresholds
+  or contexts into rules.

@@ -489,6 +489,12 @@
   Docker files, kept artifacts outside Git, and narrowed attribution imports so
   raw outcome/trade-path helpers do not import the execution barrel or load
   broker modules.
+- First bounded parallel-agent cadence used disjoint external roots. Data Agent
+  ran locally with no Docker/GPU requirement. Engine Research Agent ran one
+  Docker `research` job with current `src` mounted read-only, RTX 4090 visible,
+  and artifacts written under `/app/model_artifacts` mounted to
+  `D:\thericher-v2\model-artifacts`. The external queues were empty afterward
+  and no `gpu.lock` remained.
 
 ## Next Handoff
 
@@ -510,3 +516,5 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
+- Do not add scheduler/coordinator plumbing for the next opportunity-gap
+  diagnostic. Use existing artifacts or one existing single-shot runner job.

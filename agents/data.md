@@ -386,14 +386,22 @@
   raw-outcome, stability, event, and local Yahoo lineage only. It acquired no
   additional data and wrote one CPU smoke artifact outside Git under
   `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-contract-smoke-20260717-r1`.
+- Data Agent cadence refresh `data-agent-market-data-inventory-cadence-20260717-r2`
+  claimed one external queued inventory job beside the Engine Research Agent
+  replay, read existing `D:\market_data` metadata only, again found `2` known
+  folders, `5` snapshots, and `5` useful files, wrote under
+  `D:\thericher-v2\model-artifacts\data-agent`, and acquired no data.
+- Engine Research cadence replay reused ADBE, ADI, and ADP rows from the
+  existing
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`;
+  no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still a bounded inventory refresh beside Engine
-  Research Agent work, not acquisition. Prefer existing `D:\market_data`
-  snapshots and record exact missing artifact names if any research command
-  lacks local evidence.
+- The next data task is still not acquisition. Prefer existing `D:\market_data`
+  snapshots and record exact missing artifact names if the zero-fill
+  opportunity-gap diagnostic lacks local evidence.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

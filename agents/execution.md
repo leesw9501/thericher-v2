@@ -360,6 +360,12 @@
   unique matched entry-key count and `local_paper_fill_event_count` is the
   matched local-paper buy fill event count. CPU smoke observed both as `302`
   with `0` missing trade paths and `0` non-local fill sources.
+- Engine Research cadence replay ran through the existing broker-free
+  local-paper replay path for ADBE, ADI, and ADP. It completed `3` slices and
+  `3` threshold pairs, produced `0` fills, and reported `0` non-local fill
+  sources, `0` unknown fills, and `0` unreadable event artifacts. No orders,
+  broker adapters, order intents, paper broker API calls, or live broker paths
+  were added.
 
 ## Next Handoff
 
@@ -383,3 +389,6 @@
 - The next Engine Research cadence may run broker-free local-paper replay only
   through existing research jobs. It must preserve `source: local_paper` fills
   and keep diagnostics as `source: diagnostic_overlay`.
+- The next opportunity-gap diagnostic should remain artifact-only unless it
+  uses an existing broker-free replay job. Do not lower or turn thresholds into
+  an execution rule.

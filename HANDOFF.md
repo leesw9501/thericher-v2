@@ -1398,6 +1398,45 @@ useful again: use the existing Engine Research Agent and Data Agent single-shot
 workers, prefer existing data/artifacts, and avoid adding new workers or job
 kinds unless the evidence clearly shows an engine-loop need.
 
+The first bounded parallel-agent research cadence then completed:
+
+- Data Agent ran one metadata-only inventory job:
+  `data-agent-market-data-inventory-cadence-20260717-r2`.
+  It read existing `D:\market_data` metadata only, acquired no data, wrote
+  outside Git under
+  `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-cadence-20260717-r2\metrics.json`,
+  and again found `2` known folders, `5` snapshots, and `5` useful files.
+- Engine Research Agent ran one queued Docker `research` job:
+  `engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1`.
+  It used the existing `candidate_feature_branch_replay` job kind, mounted
+  current `src` read-only, saw NVIDIA GeForce RTX 4090 in the Docker research
+  path, reused the existing entry-adverse depth feature-branch artifact, and
+  replayed ADBE/ADI/ADP from the existing `snapshot=2026-06-18` Yahoo 1m data.
+- Engine artifacts were written outside Git under
+  `D:\thericher-v2\model-artifacts\engine-research-agent`,
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\metrics.json`,
+  and
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-robustness\metrics.json`.
+- The short replay completed all `3` slices and `3` threshold pairs, preserved
+  local-paper-only evidence, produced `0` fills, `0` non-local fill sources,
+  `0` unknown fills, and `0` unreadable event artifacts. Source probability
+  evidence was accuracy `0.531780`, loss `0.689288`, max probability
+  `0.596555`, and first buy threshold `0.594000`.
+- Because this short replay produced no fills and sat at the threshold edge, no
+  longer candidate training was queued in this block. Next work should inspect
+  the probability/threshold opportunity gap or choose a different bounded
+  short GPU experiment before another depth run.
+- Runtime Codex sidecars assisted as temporary read-only reviewers: Engine
+  Research recommended the short replay shape and a conditional longer idea,
+  Data/Infra checked queues, Docker, GPU, roots, and locks, and
+  Review/Execution checked no scheduler/broker/order-intent drift. They are
+  not repo-owned workers.
+
+Next, diagnose the zero-fill replay opportunity gap from the bounded parallel
+cadence before queueing another longer GPU training block. Keep it
+artifact-only unless a small existing-job replay is needed to compare a
+bounded alternative.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

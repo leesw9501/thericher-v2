@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the first bounded parallel-agent research cadence using the existing
-single-shot Engine Research Agent and Data Agent workers.
+Diagnose the zero-fill opportunity gap from the first bounded parallel-agent
+research cadence, then queue the next bounded GPU experiment only if the
+diagnostic shows enough actionable replay opportunity.
 
-This advances feature/model research and data collection by keeping the GPU
-useful again while a disjoint data lane refreshes local evidence. It also tests
-the practical agent workflow the operator expects without creating a durable
-multi-agent platform.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by preventing the GPU lane from spending long blocks on a
+threshold edge that produces no local-paper fills.
 
 ## Hard Boundaries
 
@@ -64,41 +64,51 @@ multi-agent platform.
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
    If it times out, record that and keep the change tightly scoped.
 
+## Current Evidence To Consume
+
+- Engine Research Agent status:
+  `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\status.json`
+- Short replay artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\metrics.json`
+- Robustness artifact:
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-robustness\metrics.json`
+- Data Agent inventory:
+  `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-cadence-20260717-r2\metrics.json`
+
 ## Required Work
 
-1. Inventory only the relevant external queue and artifact state:
-   - `D:\thericher-v2\model-artifacts\engine-research-agent`
-   - `D:\thericher-v2\model-artifacts\data-agent`
-   - current raw pre-entry contract-smoke artifact
-   - current market-data inventory artifact, if present.
-2. Start or reuse a Data Agent single-shot `market_data_inventory` job. Keep it
-   metadata-only and bounded; no data acquisition unless a no-auth,
-   license-compatible source clearly improves the active loop.
-3. Start or reuse an Engine Research Agent single-shot GPU job using an existing
-   `thericher-v2-research-job` kind. Prefer a short experiment first, then queue
-   a longer candidate only if the short result is sound and the GPU lane is
-   available. Keep both queues visible in `agents/engine-research.md`:
+1. Inventory only the artifact subset needed to explain why the ADBE/ADI/ADP
+   replay produced `0` fills:
+   - source probability range,
+   - derived buy/sell threshold pairs,
+   - per-slice probability traces or robustness rows if available,
+   - local-paper event artifacts,
+   - existing `D:\market_data` rows only if trace timestamps need context.
+2. Produce a compact artifact-only opportunity-gap summary outside Git under
+   `D:\thericher-v2\model-artifacts`. Prefer a one-off artifact first. Add a
+   reusable helper only if it removes meaningful duplication or prevents a
+   repeated manual calculation.
+3. The summary must report counts, not decisions:
+   - candidate bars or trace rows per slice,
+   - buy-threshold near misses,
+   - max probability versus minimum buy threshold,
+   - potential opportunity counts at already-derived thresholds only,
+   - local-paper fill/source verification,
+   - missing evidence counts.
+4. If the gap diagnostic shows enough replay opportunity in an existing short
+   slice set, queue one bounded Engine Research Agent GPU/Docker `research`
+   job using an existing research job kind. If not, do not queue a longer
+   candidate; recommend the next short experiment instead.
+5. Keep the Engine Research queues visible in `agents/engine-research.md`:
    - short experiments for breadth,
    - longer candidate training for depth.
-4. Use Docker `research` with PyTorch CUDA for GPU work. Artifacts must land
-   under `D:\thericher-v2\model-artifacts` on the host and
-   `/app/model_artifacts` in Docker.
-5. While GPU work runs, use Codex runtime sidecars for disjoint read-only
-   checks when useful:
-   - Engine Research sidecar: experiment shape and artifact interpretation,
-   - Data/Infra sidecar: artifact roots, Docker/GPU/data boundaries,
-   - Review/Execution sidecar: sprawl and local-paper-only boundaries.
-   These sidecars are not repo-owned workers.
-6. If a small code/test fix is needed to make the cadence reliable, keep it
-   narrow and prove it with focused tests. Otherwise, make only concise
-   stateboard and next-goal updates.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for the active engine loop.
+- This task should not acquire data unless a no-auth, lawful,
+  license-compatible source clearly improves the zero-fill diagnosis.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -119,14 +129,14 @@ docker compose config --quiet
 Also report:
 
 - any focused tests,
-- Data Agent command(s),
-- Engine Research Agent command(s),
-- Docker `research` or GPU smoke command(s),
+- any artifact-only smoke command,
+- any Engine Research Agent command,
+- Docker `research` or GPU command if used,
 - artifact paths written outside Git.
 
 ## Suggested Commit Message
 
-`Run bounded parallel research cadence`
+`Diagnose zero-fill replay opportunity gap`
 
 ## Completion Report
 
