@@ -70,6 +70,8 @@
 - Depth-vs-breadth comparison reran no execution, preserved existing
   local-paper source verification, and confirmed both compared artifacts report
   all simulated fills as `local_paper`.
+- Fill-aware threshold rerun replayed stricter threshold variants through the
+  local-paper path and produced zero fills, with no non-local fill source.
 
 ## Next Handoff
 

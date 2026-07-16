@@ -40,6 +40,12 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_rerun import (
+    BoundedCandidateThresholdRerunResult,
+    CandidateThresholdRerunConfig,
+    derive_fill_aware_threshold_pairs,
+    run_bounded_candidate_threshold_rerun,
+)
 from .candidate_threshold_robustness import (
     BoundedCandidateThresholdRobustnessResult,
     CandidateThresholdRobustnessConfig,
@@ -134,6 +140,7 @@ __all__ = [
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
+    "BoundedCandidateThresholdRerunResult",
     "BoundedCandidateThresholdRobustnessResult",
     "BoundedCandidateThresholdSweepResult",
     "BoundedCandidateTrainingResult",
@@ -149,6 +156,7 @@ __all__ = [
     "CandidateDepthTargetSelection",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
+    "CandidateThresholdRerunConfig",
     "CandidateThresholdRobustnessConfig",
     "CandidateThresholdRobustnessSliceConfig",
     "CandidateThresholdSweepConfig",
@@ -182,6 +190,7 @@ __all__ = [
     "build_multi_slice_candidate_training_dataset",
     "default_short_experiment_specs",
     "default_candidate_breadth_variants",
+    "derive_fill_aware_threshold_pairs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
     "load_experiment_source",
@@ -196,6 +205,7 @@ __all__ = [
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",
+    "run_bounded_candidate_threshold_rerun",
     "run_bounded_candidate_threshold_robustness",
     "run_bounded_candidate_threshold_sweep",
     "run_bounded_candidate_training",

@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded comparison-informed fill-aware threshold rerun.
+Add the first bounded zero-fill threshold attribution target.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by using the depth-vs-breadth comparison evidence to run a small
-threshold-only replay for the already selected candidate. This is descriptive
-research evidence for the next bounded GPU/data loop, not a production winner,
-promotion rule, scheduler framework, or dashboard.
+PnL attribution by explaining why the comparison-informed strict threshold
+rerun produced zero fills. The output is descriptive attribution for the next
+bounded threshold band, not a production winner, promotion rule, scheduler
+framework, or dashboard.
 
 ## Hard Boundaries
 
@@ -62,24 +62,23 @@ promotion rule, scheduler framework, or dashboard.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Inventory only the current useful external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-depth-comparison\bounded-candidate-depth-comparison-mini-smoke\metrics.json`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-depth-comparison-mini-smoke.json`
-   - the referenced depth target, breadth holdout, depth training,
-     calibration, holdout replay, evaluation, and model artifacts for selected
-     candidate `m1_lb3_b10_s10`.
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-rerun\bounded-candidate-threshold-rerun-mini-smoke\metrics.json`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-threshold-rerun-mini-smoke.json`
+   - the referenced depth comparison, depth target, source calibration,
+     strict-rerun holdout, robustness, and probability trace artifacts.
 3. Reuse existing local Yahoo subsets under
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m` only
-   for replay context if needed. Avoid expensive full recursive scans.
-4. Add a small threshold-rerun helper or research job path that:
-   - consumes the depth comparison artifact and selected depth target evidence,
-   - derives a capped, deterministic set of stricter fill-aware threshold pairs
-     from the recorded comparison/probability evidence,
-   - reuses existing probability trace, holdout replay, and local-paper
-     primitives instead of retraining unless a small trace regeneration is
-     already required by the existing helper,
-   - records fill counts, PnL, drawdown, probability summaries, threshold pairs,
-     source slices, and local-paper verification,
-   - records the rerun as `research_threshold_rerun_only`,
+   for trace/replay context if needed. Avoid expensive full recursive scans.
+4. Add a small attribution helper or research job path that:
+   - consumes the threshold rerun artifact and referenced robustness/trace
+     artifacts,
+   - records per-slice and per-threshold probability opportunity counts such as
+     `probability >= buy_threshold` and `probability <= sell_threshold`,
+   - records the replay fill count, final position, PnL, drawdown, and
+     local-paper verification already present in the rerun variants,
+   - compares the strict rerun threshold band against the source calibration
+     band descriptively,
+   - records the output as `research_threshold_attribution_only`,
    - records no best/recommended threshold or candidate and no promotion/pass/fail
      decision,
    - adds a new job kind only if it keeps Docker dispatch a thin leaf.
@@ -87,13 +86,13 @@ promotion rule, scheduler framework, or dashboard.
    - short experiments for breadth,
    - longer candidate training for depth.
 6. Add focused tests proving:
-   - comparison and model artifacts are read from outside Git,
-   - threshold scheduling is deterministic and capped,
+   - rerun, robustness, and trace artifacts are read from outside Git,
+   - opportunity-count attribution is deterministic and non-promotional,
    - local-paper source verification is preserved,
    - generated artifacts remain outside Git or mocked in tests,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing comparison/depth/source artifacts are non-fatal prepared states.
+   - missing rerun/robustness/trace artifacts are non-fatal prepared states.
 7. Run a CPU/injected smoke first. If Docker `research` dispatch is added, run
    a bounded Docker smoke using the existing external artifacts.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
@@ -101,10 +100,9 @@ promotion rule, scheduler framework, or dashboard.
 ## Data Policy
 
 - Start from existing `D:\market_data` and external model artifacts.
-- Prefer existing Yahoo intraday snapshots and symbols if replay context is
-  needed.
+- Prefer existing Yahoo intraday snapshots and existing probability traces.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for the active threshold rerun.
+  license-compatible, and useful for the active attribution target.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -121,11 +119,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused threshold rerun, Docker research, or GPU command used.
+Report any focused attribution, Docker research, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add bounded fill-aware threshold rerun`
+`Add bounded threshold zero-fill attribution`
 
 ## Completion Report
 

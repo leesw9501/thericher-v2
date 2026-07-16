@@ -153,6 +153,12 @@ Implemented and pushed:
   probability/fill/PnL/drawdown/cap/data-slice deltas, and stays
   `research_comparison_only` with no winner, recommendation, pass/fail result,
   or promotion gate,
+- bounded comparison-informed fill-aware threshold rerun; it consumes the
+  external depth comparison and depth target artifacts, derives a capped
+  stricter threshold grid for the selected candidate, replays existing holdout
+  slices through the proven local-paper path, and stays
+  `research_threshold_rerun_only` with no winner, recommendation, pass/fail
+  result, scheduler, or promotion gate,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -173,7 +179,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `167 passed`
+- `172 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -217,14 +223,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded comparison-informed fill-aware threshold rerun:
+Add a bounded zero-fill threshold attribution target:
 
-1. consume the external depth comparison artifact,
-2. treat the wider fill count and worse PnL floor/drawdown as scheduling
-   evidence only,
-3. define a capped stricter threshold grid for the selected depth target,
-4. run the grid through existing Docker `research` probability/holdout and
-   local-paper primitives,
+1. consume the external threshold rerun artifact,
+2. explain the zero-fill strict grid using existing probability traces and
+   replay variants,
+3. record per-slice and per-threshold opportunity counts, fill counts, and
+   local-paper verification,
+4. compare against the source calibration threshold band descriptively,
 5. keep the result descriptive, not a production winner, promotion threshold,
    scheduler, or dashboard expansion.
 

@@ -45,6 +45,7 @@ class CandidateThresholdHoldoutConfig:
     run_id: str = DEFAULT_CANDIDATE_THRESHOLD_HOLDOUT_RUN_ID
     max_bars: int = 180
     min_examples: int = 8
+    threshold_pairs: tuple[tuple[float, float], ...] = ()
     slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     sample_seed: int = 37
     starting_cash: Decimal = Decimal("10000")
@@ -60,6 +61,9 @@ class CandidateThresholdHoldoutConfig:
             raise ValueError("max_bars must be positive")
         if self.min_examples <= 0:
             raise ValueError("min_examples must be positive")
+        for buy_threshold, sell_threshold in self.threshold_pairs:
+            if not 0 < sell_threshold < buy_threshold < 1:
+                raise ValueError("threshold_pairs must satisfy 0 < sell < buy < 1")
         if self.starting_cash <= 0:
             raise ValueError("starting_cash must be positive")
         if self.quantity <= 0:
@@ -122,11 +126,12 @@ def run_bounded_candidate_threshold_holdout(
     calibration_payload, calibration_error = _read_calibration_artifact(
         calibration_artifact
     )
-    threshold_pairs = (
-        ()
-        if calibration_error is not None
-        else _threshold_pairs_from_calibration_payload(calibration_payload)
+    source_threshold_pairs = (
+        () if calibration_error is not None else _threshold_pairs_from_calibration_payload(
+            calibration_payload
+        )
     )
+    threshold_pairs = config.threshold_pairs or source_threshold_pairs
     threshold_error = (
         None
         if calibration_error is not None or threshold_pairs
@@ -197,7 +202,11 @@ def run_bounded_candidate_threshold_holdout(
         slice_count=len(config.slices),
         completed_slice_count=0 if robustness is None else robustness.completed_slice_count,
         threshold_pairs=threshold_pairs,
-        thresholds=_thresholds_payload(threshold_pairs, calibration_artifact),
+        thresholds=_thresholds_payload(
+            threshold_pairs,
+            calibration_artifact,
+            override=bool(config.threshold_pairs),
+        ),
         holdout_slices=_holdout_slice_payloads(config.slices, robustness),
         probability_summary=probability_distribution_summary(probabilities),
         local_paper_verification=local_paper_verification,
@@ -448,9 +457,15 @@ def _holdout_metrics(
 def _thresholds_payload(
     threshold_pairs: tuple[tuple[float, float], ...],
     calibration_artifact: Path | None,
+    *,
+    override: bool = False,
 ) -> dict[str, Any]:
     return {
-        "derivation": "source_calibration_artifact_unchanged",
+        "derivation": (
+            "comparison_informed_threshold_override"
+            if override
+            else "source_calibration_artifact_unchanged"
+        ),
         "source_calibration_artifact": None
         if calibration_artifact is None
         else str(calibration_artifact),

@@ -61,6 +61,11 @@ from .candidate_threshold_holdout import (
     CandidateThresholdHoldoutConfig,
     run_bounded_candidate_threshold_holdout,
 )
+from .candidate_threshold_rerun import (
+    BoundedCandidateThresholdRerunResult,
+    CandidateThresholdRerunConfig,
+    run_bounded_candidate_threshold_rerun,
+)
 from .candidate_threshold_robustness import (
     BoundedCandidateThresholdRobustnessResult,
     CandidateThresholdRobustnessConfig,
@@ -109,6 +114,7 @@ ResearchJobKind = Literal[
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
+    "candidate_threshold_rerun",
 ]
 ResearchJobStatus = Literal[
     "completed",
@@ -124,6 +130,7 @@ ResearchJobStatus = Literal[
     "prepared_not_robustness_replayed",
     "prepared_not_calibrated",
     "prepared_not_holdout_replayed",
+    "prepared_not_threshold_reran",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
 SUPPORTED_RESEARCH_JOB_KINDS = (
@@ -140,6 +147,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
+    "candidate_threshold_rerun",
 )
 
 
@@ -202,6 +210,7 @@ class ResearchJobResult:
         | BoundedCandidateThresholdRobustnessResult
         | BoundedCandidateThresholdCalibrationResult
         | BoundedCandidateThresholdHoldoutResult
+        | BoundedCandidateThresholdRerunResult
     )
     training_artifact: Path
     model_artifact: Path | None = None
@@ -285,7 +294,8 @@ def _run_job_kind(
     | BoundedCandidateThresholdSweepResult
     | BoundedCandidateThresholdRobustnessResult
     | BoundedCandidateThresholdCalibrationResult
-    | BoundedCandidateThresholdHoldoutResult,
+    | BoundedCandidateThresholdHoldoutResult
+    | BoundedCandidateThresholdRerunResult,
     Path,
     Path | None,
     ResearchJobStatus,
@@ -574,6 +584,25 @@ def _run_job_kind(
             else "prepared_not_holdout_replayed"
         )
         return holdout, holdout.holdout_artifact, holdout.model_artifact, status
+    if spec.kind == "candidate_threshold_rerun":
+        rerun = run_bounded_candidate_threshold_rerun(
+            config=CandidateThresholdRerunConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            comparison_artifact=spec.comparison_artifact,
+            depth_target_artifact=spec.depth_target_artifact,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if rerun.status == "candidate_threshold_rerun_replayed_only"
+            else "prepared_not_threshold_reran"
+        )
+        return rerun, rerun.rerun_artifact, rerun.model_artifact, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -1059,6 +1088,40 @@ def _research_job_payload(
             "local_paper_verification": training.local_paper_verification,
             "data_requests": training.data_requests,
         }
+    elif isinstance(training, BoundedCandidateThresholdRerunResult):
+        base["source_comparison_artifact"] = (
+            None
+            if training.source_comparison_artifact is None
+            else str(training.source_comparison_artifact)
+        )
+        base["source_depth_target_artifact"] = (
+            None
+            if training.source_depth_target_artifact is None
+            else str(training.source_depth_target_artifact)
+        )
+        base["candidate_threshold_rerun"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "selected_variant_id": training.selected_variant_id,
+            "threshold_schedule": training.threshold_schedule,
+            "source_thresholds": training.source_thresholds,
+            "artifact_verification": training.artifact_verification,
+            "slice_count": training.slice_count,
+            "completed_slice_count": training.completed_slice_count,
+            "holdout_slices": training.holdout_slices,
+            "probability_summary": training.probability_summary,
+            "comparison_metrics": training.comparison_metrics,
+            "metrics": training.metrics,
+            "local_paper_verification": training.local_paper_verification,
+            "selection": {
+                "mode": "research_threshold_rerun_only",
+                "selected_variant_id": training.selected_variant_id,
+                "winner": None,
+                "recommendation": None,
+                "promotion_gate": False,
+            },
+        }
     return to_jsonable(base)
 
 
@@ -1148,6 +1211,33 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         if result.training.robustness_artifact is not None:
             artifacts["candidate_threshold_robustness"] = str(
                 result.training.robustness_artifact
+            )
+        if result.training.source_calibration_artifact is not None:
+            artifacts["source_calibration"] = str(
+                result.training.source_calibration_artifact
+            )
+        if result.model_artifact is not None:
+            artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdRerunResult):
+        artifacts = {
+            "candidate_threshold_rerun": str(result.training_artifact),
+        }
+        if result.training.holdout_artifact is not None:
+            artifacts["candidate_threshold_holdout"] = str(
+                result.training.holdout_artifact
+            )
+        if result.training.robustness_artifact is not None:
+            artifacts["candidate_threshold_robustness"] = str(
+                result.training.robustness_artifact
+            )
+        if result.training.source_comparison_artifact is not None:
+            artifacts["source_comparison"] = str(
+                result.training.source_comparison_artifact
+            )
+        if result.training.source_depth_target_artifact is not None:
+            artifacts["source_depth_target"] = str(
+                result.training.source_depth_target_artifact
             )
         if result.training.source_calibration_artifact is not None:
             artifacts["source_calibration"] = str(

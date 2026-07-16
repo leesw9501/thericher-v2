@@ -97,12 +97,15 @@
   acquired.
 - Bounded depth-vs-breadth comparison consumed existing external artifacts only
   and did not require additional market-data reads or acquisition.
+- Bounded fill-aware threshold rerun reused existing CVS, FCX, and KO holdout
+  Yahoo snapshots plus existing probability traces; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next fill-aware threshold rerun should reuse existing Yahoo snapshots before
-  acquiring anything new.
+- Next zero-fill threshold attribution should reuse existing traces and Yahoo
+  snapshots before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

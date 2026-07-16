@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Use the depth-vs-breadth comparison as scheduling evidence for a capped
-   fill-aware threshold rerun.
+1. Attribute the zero-fill strict threshold rerun before scheduling another
+   threshold band.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -38,12 +38,12 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-depth-comparison-mini-smoke`, status
-  `completed`, selected variant `m1_lb3_b10_s10`, depth-vs-breadth fill delta
-  `+238`, PnL floor delta `-1.88549816894531`, max drawdown delta
-  `+1.63869877929687`, all referenced artifacts present, all simulated fills
-  verified `local_paper`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-depth-comparison\bounded-candidate-depth-comparison-mini-smoke`.
+- Last completed: `bounded-candidate-threshold-rerun-mini-smoke`, status
+  `completed`, selected variant `m1_lb3_b10_s10`, strict threshold pairs
+  `0.457/0.448` through `0.460/0.448`, completed 12 holdout variants across
+  CVS, FCX, and KO, produced `0` fills, verified local-paper evidence, and
+  wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-rerun\bounded-candidate-threshold-rerun-mini-smoke`.
 
 ## Done Recently
 
@@ -132,10 +132,15 @@
   smoke consumed existing external artifacts only, compared selected candidate
   evidence, recorded fill/PnL/drawdown/probability/cap deltas, and stayed
   `research_comparison_only` with no winner or promotion gate.
+- Added the first bounded comparison-informed fill-aware threshold rerun. The
+  Docker `research` smoke reused existing depth target traces and holdout
+  slices, replayed a stricter capped threshold grid through local paper, got
+  zero fills, and stayed `research_threshold_rerun_only` with no winner or
+  promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should use the depth comparison artifact to define a
-  small fill-aware threshold rerun before starting broader scheduling or claiming
-  robust model quality.
+  engine-research task should explain the zero-fill strict rerun from existing
+  probability traces and replay variants before starting broader scheduling or
+  claiming robust model quality.

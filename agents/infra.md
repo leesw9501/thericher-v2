@@ -104,6 +104,10 @@
 - Bounded depth-vs-breadth comparison ran in Docker `research`, consumed
   existing `/app/model_artifacts` artifacts only, and wrote comparison plus
   research job artifacts under `/app/model_artifacts`.
+- Bounded fill-aware threshold rerun ran in Docker `research`, reused existing
+  `/app/model_artifacts` probability traces and `/app/market_data` holdout
+  slices, and wrote rerun, holdout, robustness, and research job artifacts
+  under `/app/model_artifacts`.
 
 ## Next Handoff
 

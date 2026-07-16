@@ -478,3 +478,19 @@ holdout would duplicate work. The output stays `research_comparison_only` and
 does not add KIS access, credentials, broker submit code, PyTorch to the base
 path, a dashboard, scheduler framework, best-candidate field, pass/fail
 decision, or promotion gate.
+
+## 2026-07-16 - Bounded comparison-informed threshold rerun
+
+Decision: add a thin `candidate_threshold_rerun` helper and research job kind.
+It reads the completed external depth comparison and depth target artifacts,
+derives a capped stricter threshold grid from the source calibration thresholds
+and comparison evidence, then reuses the existing threshold holdout,
+robustness, and local-paper replay path. The rerun writes one descriptive
+artifact outside Git and labels the work `research_threshold_rerun_only`.
+
+Reason: the depth target increased fill count while worsening the PnL floor and
+drawdown, so the next bounded step should test a stricter fill-aware grid
+without retraining, optimizing thresholds, ranking pairs, or creating a
+promotion rule. Reusing the holdout path avoids KIS access, credentials, broker
+submit code, dashboard expansion, scheduler logic, and PyTorch in the base
+engine.
