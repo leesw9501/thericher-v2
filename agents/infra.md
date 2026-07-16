@@ -499,6 +499,10 @@
   used no Docker or GPU job, changed no dependency or compose files, and wrote
   one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Fill-bearing contrast also ran locally as artifact-only work, used no Docker
+  or GPU job, changed no dependency or compose files, and reused existing
+  `/app/model_artifacts` paths resolved to
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -520,5 +524,5 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next fill-bearing contrast.
-  Use existing artifacts or one existing single-shot runner job.
+- Do not add scheduler/coordinator plumbing for the next fill-bearing path
+  attribution. Use existing artifacts first.

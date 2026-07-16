@@ -398,13 +398,16 @@
 - ADBE/ADI/ADP opportunity-gap diagnostic consumed existing replay and trace
   artifacts only. It did not read additional market-data rows or acquire data;
   the existing `snapshot=2026-06-18` Yahoo 1m evidence was sufficient.
+- Fill-bearing contrast reused the existing AMAT, AMZN, and BA replay artifact
+  from the same `snapshot=2026-06-18` Yahoo 1m file. No additional data was
+  acquired and no new Data Agent inventory was needed.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  snapshots for a bounded fill-bearing contrast and record exact missing
-  artifact names only if existing replay evidence is insufficient.
+  rows for AMAT and AMZN path attribution and record exact missing artifact
+  names only if existing event, trace, or local-bar evidence is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

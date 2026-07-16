@@ -1466,6 +1466,41 @@ training block: compare the ADBE/ADI/ADP zero-buy evidence against an existing
 or newly queued small replay that produces local-paper fills, using only
 existing Engine Research/Data single-shot workers and existing job kinds.
 
+The fill-bearing replay contrast then completed:
+
+- It found enough existing evidence and did not queue a new replay, Docker
+  job, GPU job, Data Agent job, or longer training block.
+- The contrast consumed the ADBE/ADI/ADP zero-buy opportunity-gap artifact and
+  the existing AMAT/AMZN/BA fill-bearing replay:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717\metrics.json`.
+- Both groups used the same `core_plus_entry_adverse_v1` source feature-branch
+  artifact, the same `snapshot=2026-06-18` Yahoo 1m data source, and the same
+  threshold grid: `0.594/0.476`, `0.595/0.476`, and `0.596/0.476`.
+- The compact artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-zero-vs-fill-bearing-contrast-20260717-r1\metrics.json`.
+- ADBE/ADI/ADP remained the zero-buy group: `708` trace rows, probability max
+  `0.562264`, `0` buy-threshold hits, `0` order intents, `0` events, and
+  `0` fills.
+- AMAT/AMZN/BA was the fill-bearing group: `348` trace rows, probability max
+  `0.935692`, `2` trace rows at or above each buy threshold, `12` order
+  intents, `36` events, `12` trades, and `12` fills. AMAT and AMZN carried the
+  fills; BA remained zero-fill inside the same replay.
+- Fill-source evidence stayed local-paper-only: `fill_source_counts` was
+  `{local_paper: 12}`, with `0` non-local fill sources, `0` unknown fills, and
+  `0` unreadable event artifacts.
+- Important caveat: the fill-bearing replay used `120` bars per slice while
+  the zero-buy replay used `240` bars per slice. Treat this as a bounded
+  short contrast, not a same-window comparison.
+- Runtime Codex sidecars assisted as temporary read-only reviewers: Engine
+  Research confirmed the existing fill-bearing candidate, Data/Infra checked
+  external roots and local-data lineage, and Review/Execution checked
+  local-paper-only and no-coordinator boundaries.
+
+Next, attribute the AMAT/AMZN fill-bearing paths using existing event, trace,
+and local-bar evidence before another depth training block. Keep it
+artifact-only and explain whether the fill-bearing evidence is path-quality
+useful or only threshold-hit evidence.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

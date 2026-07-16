@@ -921,6 +921,14 @@
   stayed below the minimum buy threshold `0.594000`, so no longer GPU/depth
   job was queued from this evidence. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-opportunity-gap-20260717-r1\metrics.json`.
+- Fill-bearing contrast reused the existing
+  `engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717` artifact
+  without a new replay. It matched the same source feature-branch artifact,
+  same `snapshot=2026-06-18` data, and same three threshold pairs. AMAT/AMZN/BA
+  produced `2` buy-threshold hits per threshold, `12` order intents, `12`
+  local-paper fills, and PnL range `0E-13` to `13.0313000000000`; BA remained
+  zero-fill. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-zero-vs-fill-bearing-contrast-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -928,12 +936,11 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: contrast the ADBE/ADI/ADP zero-buy evidence with a
-  bounded fill-bearing replay slice set before another depth run. Prefer an
-  existing fill-bearing artifact first; otherwise queue one existing
-  `candidate_feature_branch_replay` job through the single-shot runner.
+- Short experiments queue: attribute AMAT/AMZN fill-bearing paths from the
+  existing contrast using event, trace, and local-bar evidence before another
+  depth run.
 - Longer candidate training queue: hold until a short experiment shows enough
-  replay opportunities and a focused research question.
+  path-quality evidence and a focused research question.
   Keep the job kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
