@@ -890,3 +890,18 @@ GPU block. Reusing the same helper over all `659` diagnostic rows gives a
 bounded comparison while avoiding replay mutation, broker/KIS access,
 credentials, arbitrary local file reads, dashboard/scheduler/coordinator work,
 new report families, broad sweeps, and model-promotion semantics.
+
+## 2026-07-17 - Slice-aware feature-input evaluation metrics
+
+Decision: extend the existing feature-input ablation runner with in-sample,
+descriptive evaluation metrics: majority-rate context, balanced accuracy,
+class recalls, deterministic average-rank AUC, log loss, per-slice metrics, and
+per-variant metrics. Row metadata is aligned with diagnostic rows only, and
+lineage path resolution rejects traversal outside the configured external model
+artifact and market-data roots.
+
+Reason: full-row accuracy matched the adverse/no-lift majority rate, so raw
+accuracy alone could overstate signal quality. Adding descriptive metrics inside
+the existing artifact keeps the evidence visible without adding a new report
+family, gate, scheduler, dashboard, replay mutation, broker/KIS surface,
+credential path, local/base PyTorch dependency, or model-promotion semantics.

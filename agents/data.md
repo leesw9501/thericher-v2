@@ -367,13 +367,16 @@
 - Full-row feature-input ablation reused the same existing
   `snapshot=2026-06-18` Yahoo 1m rows through stability lineage and acquired no
   additional data.
+- Slice-aware feature-input evaluation reused the existing full-row stability
+  lineage and `D:\market_data` Yahoo rows indirectly through reconstructed
+  diagnostic rows. It acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Reuse existing stability,
-  probability-trace, and local Yahoo evidence for slice/variant-aware
-  validation.
+  probability-trace, slice-aware ablation, and local Yahoo evidence for
+  unique-signal evaluation.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

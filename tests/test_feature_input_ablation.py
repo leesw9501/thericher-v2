@@ -13,6 +13,8 @@ from thericher_v2.research.feature_input_ablation import (
     RAW_PRE_ENTRY_GROUP,
     RAW_PRE_ENTRY_PLUS_PROBABILITY_META_GROUP,
     FeatureInputAblationConfig,
+    _binary_classification_metrics,
+    _descriptive_evaluation_payload,
     _resolve_lineage_path,
     run_bounded_feature_input_ablation,
 )
@@ -27,6 +29,10 @@ def test_feature_input_ablation_runs_injected_and_separates_feature_groups(
     def runner(dataset, model_artifact, config):  # noqa: ANN001
         assert config.max_epochs == 3
         assert dataset.rows_used == 8
+        assert len(dataset.row_metadata) == len(dataset.labels)
+        assert {metadata["source"] for metadata in dataset.row_metadata} == {
+            "diagnostic_overlay"
+        }
         assert [group.group_id for group in dataset.feature_groups] == [
             EXISTING_THRESHOLD_META_BASELINE_GROUP,
             RAW_PRE_ENTRY_GROUP,
@@ -95,6 +101,13 @@ def test_feature_input_ablation_runs_injected_and_separates_feature_groups(
         "probability_margin",
         "probability_rank_pct",
     ]
+    assert payload["metrics"]["descriptive_evaluation_context"]["row_count"] == 8
+    assert payload["metrics"]["descriptive_evaluation_context"]["source_counts"] == {
+        "diagnostic_overlay": 8,
+    }
+    assert payload["metrics"]["descriptive_evaluation_context"][
+        "diagnostic_overlay_rows_only"
+    ] is True
     assert Path(payload["artifacts"]["model"]).exists()
 
 
@@ -173,6 +186,13 @@ def test_feature_input_ablation_all_diagnostic_mode_reconstructs_lineage_rows(
         assert dataset.rows_used == 5
         assert dataset.row_source_counts == {"diagnostic_overlay": 5}
         assert dataset.source_slices == ("unit_full",)
+        assert {metadata["source"] for metadata in dataset.row_metadata} == {
+            "diagnostic_overlay"
+        }
+        assert {metadata["slice_variant_id"] for metadata in dataset.row_metadata} == {
+            "unit_full:t01",
+            "unit_full:t02",
+        }
         model_artifact.write_text("unit-full-row-model", encoding="utf-8")
         return {
             "backend": "unit",
@@ -218,6 +238,16 @@ def test_feature_input_ablation_all_diagnostic_mode_reconstructs_lineage_rows(
     assert payload["metrics"]["row_reconstruction"]["slice_counts"] == {
         "unit_full": 5,
     }
+    assert payload["metrics"]["descriptive_evaluation_context"]["source_counts"] == {
+        "diagnostic_overlay": 5,
+    }
+    assert payload["metrics"]["descriptive_evaluation_context"]["variant_counts"] == {
+        "unit_full:t01": 4,
+        "unit_full:t02": 1,
+    }
+    assert payload["metrics"]["descriptive_evaluation_context"][
+        "unique_signal_count"
+    ] < payload["rows_used"]
     assert payload["metrics"]["row_reconstruction"]["local_paper_replay_changed"] is False
     assert payload["source_evidence"]["all_reference_fills_local_paper"] is True
     assert payload["source_evidence"]["local_paper_reference_fill_count"] == 2
@@ -241,6 +271,83 @@ def test_feature_input_ablation_resolves_model_artifact_lineage_paths(tmp_path) 
     assert host_style == expected
     assert docker_style == expected
     assert _resolve_lineage_path("C:\\Users\\operator\\.env", artifact_root=artifact_root) is None
+    assert (
+        _resolve_lineage_path(
+            "/app/model_artifacts/../secrets/.env",
+            artifact_root=artifact_root,
+        )
+        is None
+    )
+    assert (
+        _resolve_lineage_path(
+            "D:\\thericher-v2\\model-artifacts\\..\\secrets\\.env",
+            artifact_root=artifact_root,
+        )
+        is None
+    )
+    assert (
+        _resolve_lineage_path(
+            "/app/market_data/../secrets/.env",
+            artifact_root=artifact_root,
+        )
+        is None
+    )
+
+
+def test_feature_input_ablation_descriptive_metrics_expose_majority_trap() -> None:
+    metrics = _binary_classification_metrics(
+        labels=(1, 1, 1, 0),
+        probabilities=(0.95, 0.80, 0.70, 0.60),
+    )
+
+    assert metrics["majority_label"] == "adverse_or_no_lift"
+    assert metrics["majority_accuracy"] == "0.750000"
+    assert metrics["accuracy"] == "0.750000"
+    assert metrics["balanced_accuracy"] == "0.500000"
+    assert metrics["negative_recall"] == "0.000000"
+    assert metrics["log_loss"] is not None
+
+
+def test_feature_input_ablation_auc_ties_and_single_class_groups() -> None:
+    tied = _binary_classification_metrics(
+        labels=(1, 0, 1, 0),
+        probabilities=(0.50, 0.50, 0.50, 0.50),
+    )
+    assert tied["auc"] == "0.500000"
+    assert tied["auc_tie_handling"] == "average_rank"
+    assert tied["auc_tie_group_count"] == 1
+    assert tied["auc_tied_score_count"] == 4
+
+    payload = _descriptive_evaluation_payload(
+        labels=(1, 1, 0),
+        probabilities=(0.90, 0.55, 0.45),
+        row_metadata=(
+            {
+                "source": "diagnostic_overlay",
+                "slice_id": "single_positive",
+                "variant_id": "v1",
+                "slice_variant_id": "single_positive:v1",
+            },
+            {
+                "source": "diagnostic_overlay",
+                "slice_id": "single_positive",
+                "variant_id": "v1",
+                "slice_variant_id": "single_positive:v1",
+            },
+            {
+                "source": "diagnostic_overlay",
+                "slice_id": "single_negative",
+                "variant_id": "v2",
+                "slice_variant_id": "single_negative:v2",
+            },
+        ),
+    )
+
+    assert payload["scope"]["in_sample"] is True
+    assert payload["by_slice"]["single_positive"]["auc"] is None
+    assert payload["by_slice"]["single_positive"]["skip_reason"] == "single_class"
+    assert payload["by_slice"]["single_negative"]["balanced_accuracy"] is None
+    assert payload["context"]["diagnostic_overlay_rows_only"] is True
 
 
 def test_feature_input_ablation_rejects_repo_artifact_root(tmp_path) -> None:

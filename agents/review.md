@@ -481,13 +481,18 @@
   flag plus focused tests. It did not add reports, gates, dashboards,
   schedulers, coordinators, durable workers, broker paths, credential paths,
   replay mutations, broad sweeps, or model-promotion language.
+- Slice-aware feature-input evaluation stayed inside the existing
+  feature-input ablation helper/job payload. It added row metadata and
+  descriptive metrics, tightened lineage traversal rejection, and did not add a
+  report family, gate, dashboard, scheduler, coordinator, durable worker,
+  broker path, credential path, replay mutation, broad sweep, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward slice/variant-aware metrics over the same
-  diagnostic rows before any deeper GPU block. Keep coordination evidence small
-  and avoid daemon, scheduler, dashboard, report branch, broker, credential,
-  auto-commit, durable multi-agent-platform behavior, or model-promotion
-  language.
+- Push the next task toward unique-signal metrics over the same diagnostic rows
+  before any deeper GPU block. Keep coordination evidence small and avoid
+  daemon, scheduler, dashboard, report branch, broker, credential, auto-commit,
+  durable multi-agent-platform behavior, or model-promotion language.

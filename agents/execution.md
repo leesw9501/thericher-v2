@@ -335,6 +335,10 @@
   `diagnostic_overlay` rows from existing lineage, preserved the `592`
   `source: local_paper` reference fills as evidence only, and changed no replay
   behavior.
+- Slice-aware feature-input evaluation reran no execution and changed no
+  local-paper behavior. It kept the same `592` `source: local_paper` fills as
+  evidence only and computed metrics over `659` `source: diagnostic_overlay`
+  rows.
 
 ## Next Handoff
 
@@ -348,3 +352,5 @@
 - Any bounded feature-input validation or replay comparison must preserve original
   local-paper fills as `source: local_paper`, label diagnostics as
   `source: diagnostic_overlay`, and avoid broker authority.
+- Unique-signal follow-up metrics should still avoid replay and must not turn
+  diagnostic rows into fills or order intents.

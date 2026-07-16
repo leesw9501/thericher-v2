@@ -1151,9 +1151,44 @@ The full-row feature-input ablation then completed:
   dashboard, coordinator, durable-worker expansion, or model-promotion
   language. A path-resolver watch item was tightened before final verification.
 
-Next, run a bounded slice/variant-aware validation pass over the same `659`
-diagnostic rows before any deeper GPU training. Keep it artifact-driven,
-source-separated, and descriptive.
+The slice-aware feature-input evaluation pass then completed:
+
+- It extended the existing `candidate_feature_input_ablation` runner with
+  in-sample descriptive evaluation metrics inside the existing artifact:
+  majority-rate context, balanced accuracy, class recalls, average-rank AUC,
+  log loss, per-slice metrics, and per-variant metrics.
+- It also threads aligned row metadata for `source`, `slice_id`, `symbol`,
+  `variant_id`, `offset`, and `execution_bar_start`, and rejects lineage paths
+  that use `..` to escape the configured external artifact or market-data
+  roots.
+- Focused tests cover diagnostic-only row metadata, majority-rate traps, tied
+  AUC behavior, single-class slice/variant cells, source separation, and
+  lineage traversal rejection.
+- Docker `research` PyTorch CUDA ran once on NVIDIA GeForce RTX 4090 and wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-slice-aware-cross-slice-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-slice-aware-cross-slice-20260717-r1\feature_input_ablation.pt`.
+- The run used the same `659` diagnostic rows with zero drops and `592`
+  upstream reference fills preserved as `source: local_paper` evidence only.
+  All metric rows were `source: diagnostic_overlay`.
+- The descriptive context showed `382/277` labels, adverse/no-lift majority
+  rate `0.579666`, `256` unique signal keys, and a `2.574219` row-to-unique
+  ratio caused by threshold-variant duplication.
+- Overall metrics:
+  probability-meta baseline accuracy `0.579666`, balanced accuracy `0.500000`,
+  AUC `0.487899`, log loss `0.686541`;
+  raw pre-entry accuracy `0.579666`, balanced accuracy `0.500000`, AUC
+  `0.600998`, log loss `0.671724`;
+  raw plus probability accuracy `0.566009`, balanced accuracy `0.490205`, AUC
+  `0.530828`, log loss `0.679072`.
+- Read this as descriptive evidence only: raw pre-entry has some ranking signal
+  in the duplicated-row view, but the default decision threshold still mostly
+  predicts the majority class. A unique-signal follow-up should come before
+  another deeper GPU training block.
+
+Next, add a bounded unique-signal feature-input evaluation so threshold-variant
+duplication is visible in the metric payload before any deeper GPU training.
+Keep it artifact-driven, source-separated, and descriptive.
 
 ## Daily Operator Review
 

@@ -8,7 +8,7 @@ import importlib.util
 import json
 import math
 from collections import Counter
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
@@ -127,6 +127,7 @@ class FeatureInputAblationDataset:
     row_mode: FeatureInputAblationRowMode
     labels: tuple[int, ...]
     label_names: dict[int, str]
+    row_metadata: tuple[dict[str, str], ...]
     rows_seen: int
     rows_used: int
     rows_dropped: int
@@ -196,6 +197,10 @@ def run_bounded_feature_input_ablation(
         "feature_group_count": len(dataset.feature_groups),
         "feature_groups": [_feature_group_payload(group) for group in dataset.feature_groups],
         "label_counts": _label_counts(dataset.labels),
+        "descriptive_evaluation_context": _descriptive_evaluation_context(
+            labels=dataset.labels,
+            row_metadata=dataset.row_metadata,
+        ),
         "source_slices": dataset.source_slices,
         "row_source_counts": dataset.row_source_counts,
         "row_reconstruction": dataset.reconstruction,
@@ -304,6 +309,9 @@ def _run_torch_cuda_feature_input_ablation(
             probabilities = torch.sigmoid(final_logits)
             predictions = (probabilities >= 0.5).float()
             accuracy = (predictions == y).float().mean()
+        probability_values = tuple(
+            float(value) for value in probabilities.detach().cpu().view(-1).tolist()
+        )
         state_dicts[group.group_id] = model.state_dict()
         group_metrics.append(
             {
@@ -317,6 +325,11 @@ def _run_torch_cuda_feature_input_ablation(
                 "final_loss": f"{final_loss.item():.6f}",
                 "accuracy": f"{accuracy.item():.6f}",
                 "mean_probability": f"{probabilities.mean().item():.6f}",
+                "descriptive_evaluation": _descriptive_evaluation_payload(
+                    labels=dataset.labels,
+                    probabilities=probability_values,
+                    row_metadata=dataset.row_metadata,
+                ),
             }
         )
 
@@ -345,6 +358,11 @@ def _run_torch_cuda_feature_input_ablation(
         "device": torch.cuda.get_device_name(device),
         "examples_seen": len(dataset.labels),
         "hidden_units": config.hidden_units,
+        "evaluation_scope": {
+            "in_sample": True,
+            "descriptive_only": True,
+            "held_out_split": False,
+        },
         "groups": group_metrics,
         "model_artifact": str(model_artifact),
     }
@@ -411,6 +429,7 @@ def _build_dataset(
     )
     labels: list[int] = []
     kept_rows: list[dict[str, Any]] = []
+    row_metadata: list[dict[str, str]] = []
     source_slices: list[str] = []
     row_source_counts = Counter()
     for row in raw_rows:
@@ -425,6 +444,19 @@ def _build_dataset(
         labels.append(label)
         kept_rows.append(row)
         slice_id = str(row.get("slice_id") or "")
+        variant_id = str(row.get("variant_id") or "")
+        row_metadata.append(
+            {
+                "source": str(row.get("source") or "missing"),
+                "slice_id": slice_id or "missing",
+                "role": str(row.get("role") or "missing"),
+                "symbol": str(row.get("symbol") or "missing"),
+                "variant_id": variant_id or "missing",
+                "offset": str(row.get("offset")) if row.get("offset") is not None else "missing",
+                "execution_bar_start": str(row.get("execution_bar_start") or "missing"),
+                "slice_variant_id": f"{slice_id or 'missing'}:{variant_id or 'missing'}",
+            }
+        )
         if slice_id and slice_id not in source_slices:
             source_slices.append(slice_id)
 
@@ -433,6 +465,7 @@ def _build_dataset(
         row_mode=config.row_mode,
         labels=tuple(labels),
         label_names={1: "adverse_or_no_lift", 0: "non_adverse"},
+        row_metadata=tuple(row_metadata),
         rows_seen=len(raw_rows),
         rows_used=len(kept_rows),
         rows_dropped=len(raw_rows) - len(kept_rows),
@@ -909,6 +942,298 @@ def _label_counts(labels: tuple[int, ...]) -> dict[str, int]:
     }
 
 
+def _descriptive_evaluation_context(
+    *,
+    labels: Sequence[int],
+    row_metadata: Sequence[dict[str, str]],
+) -> dict[str, Any]:
+    label_tuple = tuple(labels)
+    row_count = len(label_tuple)
+    source_counts = _metadata_counts(row_metadata, "source")
+    slice_counts = _metadata_counts(row_metadata, "slice_id")
+    variant_counts = _metadata_counts(row_metadata, "slice_variant_id")
+    signal_context = _unique_signal_context(row_metadata)
+    return {
+        "row_count": row_count,
+        "label_counts": _label_counts(label_tuple),
+        "label_rates": _label_rates(label_tuple),
+        "majority_label": _majority_label(label_tuple),
+        "majority_accuracy": _format_metric_float(_majority_accuracy(label_tuple)),
+        "adverse_or_no_lift_rate": _format_metric_float(_label_rate(label_tuple, 1)),
+        "source_counts": source_counts,
+        "diagnostic_overlay_rows_only": source_counts == {"diagnostic_overlay": row_count},
+        "slice_counts": slice_counts,
+        "variant_counts": variant_counts,
+        "unique_signal_count": signal_context["unique_signal_count"],
+        "row_to_unique_signal_ratio": signal_context["row_to_unique_signal_ratio"],
+        "max_variants_per_signal": signal_context["max_variants_per_signal"],
+    }
+
+
+def _descriptive_evaluation_payload(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+) -> dict[str, Any]:
+    return {
+        "scope": {
+            "in_sample": True,
+            "descriptive_only": True,
+            "held_out_split": False,
+            "local_paper_replay_changed": False,
+        },
+        "context": _descriptive_evaluation_context(
+            labels=labels,
+            row_metadata=row_metadata,
+        ),
+        "overall": _binary_classification_metrics(labels, probabilities),
+        "by_slice": _grouped_scored_metrics(
+            labels=labels,
+            probabilities=probabilities,
+            row_metadata=row_metadata,
+            metadata_key="slice_id",
+        ),
+        "by_variant": _grouped_scored_metrics(
+            labels=labels,
+            probabilities=probabilities,
+            row_metadata=row_metadata,
+            metadata_key="slice_variant_id",
+        ),
+    }
+
+
+def _binary_classification_metrics(
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+) -> dict[str, Any]:
+    label_tuple = tuple(int(label) for label in labels)
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    if len(label_tuple) != len(probability_tuple):
+        raise ValueError("labels and probabilities must have the same length")
+    row_count = len(label_tuple)
+    label_counts = _label_counts(label_tuple)
+    predictions = tuple(1 if probability >= 0.5 else 0 for probability in probability_tuple)
+    labeled_predictions = tuple(zip(label_tuple, predictions, strict=True))
+    true_positive = sum(
+        1 for label, prediction in labeled_predictions if label == 1 and prediction == 1
+    )
+    true_negative = sum(
+        1 for label, prediction in labeled_predictions if label == 0 and prediction == 0
+    )
+    false_positive = sum(
+        1 for label, prediction in labeled_predictions if label == 0 and prediction == 1
+    )
+    false_negative = sum(
+        1 for label, prediction in labeled_predictions if label == 1 and prediction == 0
+    )
+    positive_count = true_positive + false_negative
+    negative_count = true_negative + false_positive
+    positive_recall = _safe_divide(true_positive, positive_count)
+    negative_recall = _safe_divide(true_negative, negative_count)
+    balanced_accuracy = None
+    skip_reasons: list[str] = []
+    if positive_recall is None or negative_recall is None:
+        skip_reasons.append("single_class")
+    else:
+        balanced_accuracy = (positive_recall + negative_recall) / 2
+
+    auc_payload = _auc_rank_average(label_tuple, probability_tuple)
+    if auc_payload.get("auc") is None and auc_payload.get("skip_reason"):
+        skip_reasons.append(str(auc_payload["skip_reason"]))
+
+    return {
+        "row_count": row_count,
+        "label_counts": label_counts,
+        "label_rates": _label_rates(label_tuple),
+        "majority_label": _majority_label(label_tuple),
+        "majority_accuracy": _format_metric_float(_majority_accuracy(label_tuple)),
+        "accuracy": _format_metric_float(_safe_divide(true_positive + true_negative, row_count)),
+        "balanced_accuracy": _format_metric_float(balanced_accuracy),
+        "positive_recall": _format_metric_float(positive_recall),
+        "negative_recall": _format_metric_float(negative_recall),
+        "predicted_positive_rate": _format_metric_float(
+            _safe_divide(sum(predictions), row_count)
+        ),
+        "mean_probability": _format_metric_float(
+            _safe_divide(sum(probability_tuple), row_count)
+        ),
+        "log_loss": _format_metric_float(_binary_log_loss(label_tuple, probability_tuple)),
+        "confusion": {
+            "true_positive": true_positive,
+            "true_negative": true_negative,
+            "false_positive": false_positive,
+            "false_negative": false_negative,
+        },
+        "auc": auc_payload.get("auc"),
+        "auc_tie_handling": auc_payload.get("tie_handling"),
+        "auc_tie_group_count": auc_payload.get("tie_group_count"),
+        "auc_tied_score_count": auc_payload.get("tied_score_count"),
+        "skip_reason": ",".join(dict.fromkeys(skip_reasons)) or None,
+    }
+
+
+def _grouped_scored_metrics(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    metadata_key: str,
+) -> dict[str, Any]:
+    if len(labels) != len(probabilities) or len(labels) != len(row_metadata):
+        raise ValueError("labels, probabilities, and row_metadata must have the same length")
+    grouped: dict[str, list[int]] = {}
+    for index, metadata in enumerate(row_metadata):
+        group_id = metadata.get(metadata_key) or "missing"
+        grouped.setdefault(group_id, []).append(index)
+    return {
+        group_id: _binary_classification_metrics(
+            [labels[index] for index in indexes],
+            [probabilities[index] for index in indexes],
+        )
+        for group_id, indexes in sorted(grouped.items())
+    }
+
+
+def _auc_rank_average(
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+) -> dict[str, Any]:
+    label_tuple = tuple(int(label) for label in labels)
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    if len(label_tuple) != len(probability_tuple):
+        raise ValueError("labels and probabilities must have the same length")
+    positive_count = sum(1 for label in label_tuple if label == 1)
+    negative_count = sum(1 for label in label_tuple if label == 0)
+    if positive_count == 0 or negative_count == 0:
+        return {
+            "auc": None,
+            "skip_reason": "single_class",
+            "tie_handling": "average_rank",
+            "tie_group_count": 0,
+            "tied_score_count": 0,
+        }
+
+    ranked = sorted(enumerate(probability_tuple), key=lambda item: item[1])
+    ranks = [0.0] * len(ranked)
+    tie_group_count = 0
+    tied_score_count = 0
+    index = 0
+    while index < len(ranked):
+        end = index + 1
+        while end < len(ranked) and ranked[end][1] == ranked[index][1]:
+            end += 1
+        average_rank = (index + 1 + end) / 2
+        if end - index > 1:
+            tie_group_count += 1
+            tied_score_count += end - index
+        for rank_index in range(index, end):
+            original_index = ranked[rank_index][0]
+            ranks[original_index] = average_rank
+        index = end
+
+    positive_rank_sum = sum(
+        rank for rank, label in zip(ranks, label_tuple, strict=True) if label == 1
+    )
+    auc = (
+        positive_rank_sum - (positive_count * (positive_count + 1) / 2)
+    ) / (positive_count * negative_count)
+    return {
+        "auc": _format_metric_float(auc),
+        "skip_reason": None,
+        "tie_handling": "average_rank",
+        "tie_group_count": tie_group_count,
+        "tied_score_count": tied_score_count,
+    }
+
+
+def _binary_log_loss(
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+) -> float | None:
+    if not labels:
+        return None
+    epsilon = 1e-7
+    total = 0.0
+    for label, probability in zip(labels, probabilities, strict=True):
+        clipped = min(max(float(probability), epsilon), 1.0 - epsilon)
+        total += -(
+            int(label) * math.log(clipped)
+            + (1 - int(label)) * math.log(1.0 - clipped)
+        )
+    return total / len(labels)
+
+
+def _label_rates(labels: tuple[int, ...]) -> dict[str, str | None]:
+    return {
+        "adverse_or_no_lift": _format_metric_float(_label_rate(labels, 1)),
+        "non_adverse": _format_metric_float(_label_rate(labels, 0)),
+    }
+
+
+def _label_rate(labels: tuple[int, ...], label: int) -> float | None:
+    return _safe_divide(sum(1 for value in labels if value == label), len(labels))
+
+
+def _majority_label(labels: tuple[int, ...]) -> str | None:
+    if not labels:
+        return None
+    counts = Counter(labels)
+    if counts[1] == counts[0]:
+        return "tie"
+    return "adverse_or_no_lift" if counts[1] > counts[0] else "non_adverse"
+
+
+def _majority_accuracy(labels: tuple[int, ...]) -> float | None:
+    if not labels:
+        return None
+    counts = Counter(labels)
+    return max(counts[1], counts[0]) / len(labels)
+
+
+def _metadata_counts(
+    row_metadata: Sequence[dict[str, str]],
+    key: str,
+) -> dict[str, int]:
+    counts = Counter(metadata.get(key) or "missing" for metadata in row_metadata)
+    return dict(sorted(counts.items()))
+
+
+def _unique_signal_context(row_metadata: Sequence[dict[str, str]]) -> dict[str, Any]:
+    variants_by_signal: dict[tuple[str, str, str, str], set[str]] = {}
+    for metadata in row_metadata:
+        signal_key = (
+            metadata.get("slice_id") or "missing",
+            metadata.get("symbol") or "missing",
+            metadata.get("execution_bar_start") or "missing",
+            metadata.get("offset") or "missing",
+        )
+        variants_by_signal.setdefault(signal_key, set()).add(
+            metadata.get("variant_id") or "missing"
+        )
+    unique_signal_count = len(variants_by_signal)
+    max_variants = max((len(variants) for variants in variants_by_signal.values()), default=0)
+    return {
+        "unique_signal_count": unique_signal_count,
+        "row_to_unique_signal_ratio": _format_metric_float(
+            _safe_divide(len(row_metadata), unique_signal_count)
+        ),
+        "max_variants_per_signal": max_variants,
+    }
+
+
+def _safe_divide(numerator: float, denominator: float) -> float | None:
+    if denominator == 0:
+        return None
+    return numerator / denominator
+
+
+def _format_metric_float(value: float | None) -> str | None:
+    if value is None or not math.isfinite(value):
+        return None
+    return f"{value:.6f}"
+
+
 def _source_evidence(payload: dict[str, Any]) -> dict[str, Any]:
     evidence = payload.get("source_evidence")
     if not isinstance(evidence, dict):
@@ -964,28 +1289,41 @@ def _resolve_lineage_path(value: Any, *, artifact_root: Path) -> Path | None:
         return artifact_root
     if normalized.startswith(f"{APP_MODEL_ARTIFACT_ROOT}/"):
         relative = PurePosixPath(normalized).relative_to(APP_MODEL_ARTIFACT_ROOT)
-        return artifact_root.joinpath(*relative.parts)
+        safe_parts = _safe_relative_parts(relative)
+        return None if safe_parts is None else artifact_root.joinpath(*safe_parts)
     if normalized == str(APP_MARKET_DATA_ROOT):
         return _app_market_data_host_path(PurePosixPath("."))
     if normalized.startswith(f"{APP_MARKET_DATA_ROOT}/"):
         relative = PurePosixPath(normalized).relative_to(APP_MARKET_DATA_ROOT)
-        return _app_market_data_host_path(relative)
+        safe_parts = _safe_relative_parts(relative)
+        if safe_parts is None:
+            return None
+        return _app_market_data_host_path(PurePosixPath(*safe_parts))
 
     host_model_root = str(DEFAULT_HOST_MODEL_ARTIFACT_ROOT).replace("\\", "/")
     if _starts_with_path(normalized, host_model_root):
         relative = normalized[len(host_model_root) :].lstrip("/")
-        parts = PurePosixPath(relative).parts if relative else ()
-        return artifact_root.joinpath(*parts)
+        safe_parts = _safe_relative_parts(PurePosixPath(relative)) if relative else ()
+        return None if safe_parts is None else artifact_root.joinpath(*safe_parts)
 
     host_market_root = str(DEFAULT_HOST_MARKET_DATA_ROOT).replace("\\", "/")
     if _starts_with_path(normalized, host_market_root):
         relative = normalized[len(host_market_root) :].lstrip("/")
-        parts = PurePosixPath(relative).parts if relative else ()
+        safe_parts = _safe_relative_parts(PurePosixPath(relative)) if relative else ()
+        if safe_parts is None:
+            return None
         docker_market = Path(str(APP_MARKET_DATA_ROOT))
         if docker_market.exists():
-            return docker_market.joinpath(*parts)
-        return DEFAULT_HOST_MARKET_DATA_ROOT.joinpath(*parts)
+            return docker_market.joinpath(*safe_parts)
+        return DEFAULT_HOST_MARKET_DATA_ROOT.joinpath(*safe_parts)
     return None
+
+
+def _safe_relative_parts(relative: PurePosixPath) -> tuple[str, ...] | None:
+    parts = relative.parts
+    if any(part in {"", ".", ".."} for part in parts):
+        return None
+    return parts
 
 
 def _app_market_data_host_path(relative: PurePosixPath) -> Path:

@@ -872,6 +872,12 @@
   The full-row labels were imbalanced (`382/277`), raw pre-entry final loss was
   `0.671724`, probability-meta final loss was `0.686541`, and combined final
   loss was `0.679072`; read this as descriptive evidence only.
+- Slice-aware feature-input evaluation reused the same `659` diagnostic rows
+  and one Docker `research` PyTorch CUDA run. It added majority-rate context,
+  balanced accuracy, AUC, log loss, and per-slice/per-variant metrics. Raw
+  pre-entry showed overall AUC `0.600998`, but accuracy equaled the
+  adverse/no-lift majority rate and balanced accuracy stayed `0.500000` under
+  the default threshold.
 
 ## Next Handoff
 
@@ -879,10 +885,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, run a slice/variant-aware validation pass
-  over the same `659` rows using balanced accuracy, AUC, log loss, and
-  per-slice metrics so label imbalance and duplicated threshold variants are
-  visible.
+- Before another deep training block, collapse or summarize the duplicated
+  threshold-variant rows into unique signal-level metrics so the raw pre-entry
+  ranking evidence is not inflated by repeated variants.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.
