@@ -677,16 +677,22 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded first-evaluation source-context wider-holdout replay
-contrast:
+The completed first-evaluation wider-holdout contrast reused the short and
+depth source-context artifacts without retraining, selected ADBE, ADI, ADP,
+AEM, AGG, AMAT, AMGN, AMT, AMZN, AXP, AZN, and BA from the existing
+`snapshot=2026-06-18` Yahoo 1m file, replayed both artifacts through Docker
+`research`, and verified all generated fills as `source: local_paper`.
 
-1. consume the completed short and depth source-context artifacts,
-2. select a capped deterministic wider holdout sample from the existing
-   `snapshot=2026-06-18` Yahoo 1m file,
-3. replay both artifacts through the existing Docker `research` local-paper
-   cap-2 path without retraining,
-4. compare whether the depth behavior recurs outside AMD without selecting a
-   branch, threshold, or production candidate.
+Start one bounded artifact-only attribution of the wider-holdout depth
+behavior:
+
+1. consume the completed wider-holdout replay, opportunity, trade-path, and
+   contrast artifacts,
+2. inspect AMAT/AMZN depth segments against short-side comparison segments,
+3. compare entry margin, sell-threshold latency, adverse/favorable movement,
+   fee-aware delta, symbol concentration, and zero-fill threshold gaps,
+4. avoid retraining, feature/model axis changes, threshold search, and
+   production-candidate language.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

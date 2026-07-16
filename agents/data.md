@@ -299,14 +299,18 @@
   ASML, AVGO, AAPL, ABBV, ABNB, ABT, ACN, and AMD rows from the existing
   `snapshot=2026-06-18` Yahoo file with `max-bars 240`; no additional data was
   acquired.
+- First-evaluation wider-holdout contrast inventoried only the existing
+  `snapshot=2026-06-18` Yahoo 1m file, found `236` eligible symbols after the
+  fixed source/evaluation exclusions, selected ADBE, ADI, ADP, AEM, AGG, AMAT,
+  AMGN, AMT, AMZN, AXP, AZN, and BA with at least `240` bars, and acquired no
+  additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; select a deterministic capped
-  wider holdout sample from the existing `snapshot=2026-06-18` Yahoo file,
-  excluding the completed source and evaluation symbols, and split replay
-  batches at the existing 6-slice cap.
+- The next data task is still not acquisition; reuse selected AMAT, AMZN, and
+  comparison-symbol rows from the existing `snapshot=2026-06-18` Yahoo file for
+  artifact-only segment attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

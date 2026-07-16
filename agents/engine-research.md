@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded first-evaluation source-context depth contrast with the
-   existing entry-adverse feature/model/preprocessing settings before changing
-   source context, feature/model axes, or thresholds again.
+1. Attribute the wider-holdout first-evaluation depth behavior from existing
+   AMAT/AMZN local-paper segments before changing source context, feature/model
+   axes, or thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -748,10 +748,17 @@
   thresholds with `4` verified AMD `source: local_paper` fills, attributed `2`
   closed non-negative AMD segments with fee-aware delta sum `2.0354`, and
   wrote the depth-vs-short comparison under the external artifact root.
+- First-evaluation source-context wider-holdout contrast reused the completed
+  short/depth feature artifacts without retraining, replayed ADBE, ADI, ADP,
+  AEM, AGG, AMAT, AMGN, AMT, AMZN, AXP, AZN, and BA, and wrote replay,
+  opportunity, trade-path, and comparison artifacts outside Git. Depth produced
+  fewer fills than short (`16` versus `22`) but larger fee-aware delta
+  (`33.444` versus `8.8756`), concentrated in AMAT and AMZN, with `2`
+  negative and `6` non-negative closed segments.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should replay the completed short and depth source-context artifacts on
-  a capped wider holdout sample from `snapshot=2026-06-18`, without retraining
-  or changing feature/model/preprocessing axes.
+  task should explain the AMAT/AMZN wider-holdout depth behavior from existing
+  trace, event, trade-path, and selected local-bar evidence before another GPU
+  feature/model axis change.

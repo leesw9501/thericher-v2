@@ -386,6 +386,13 @@
   artifacts under `/app/model_artifacts`, then local artifact-only opportunity,
   trade-path, and depth-vs-short comparison artifacts were written under
   `D:\thericher-v2\model-artifacts`.
+- First-evaluation wider-holdout contrast ran four existing Docker `research`
+  replay jobs with PyTorch CUDA and RTX 4090 visible, mounted current `src`
+  read-only, read `/app/market_data` read-only, and wrote replay, robustness,
+  event, probability-trace, and research-job artifacts under
+  `/app/model_artifacts`. Follow-up opportunity, trade-path, and comparison
+  artifacts ran locally as artifact-only work under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -394,6 +401,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next wider-holdout replay contrast should run in Docker `research` with
-  PyTorch CUDA and external artifacts only; no Docker dependency or local/base
-  PyTorch change is needed.
+- The next wider-holdout attribution can run locally as artifact-only work; if
+  it leads to another GPU task, keep PyTorch CUDA confined to Docker
+  `research`.

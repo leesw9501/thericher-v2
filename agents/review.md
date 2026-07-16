@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review the next longer-depth GPU contrast for bounded scope and artifact
+1. Review the next wider-holdout attribution for bounded scope and artifact
    sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
@@ -389,13 +389,19 @@
   family, gate, dashboard, scheduler, broker path, threshold search,
   feature/model axis, source-context search, simulator exit rule, or
   model-promotion language.
+- First-evaluation wider-holdout replay contrast reused existing Docker
+  `research` replay jobs plus artifact-only opportunity, trade-path, and
+  comparison scripts. It added no code, job kind, CLI, report family, gate,
+  dashboard, scheduler, broker path, threshold search, retraining,
+  feature/model axis, source-context search, simulator exit rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded wider-holdout replay contrast using
-  completed short/depth source-context artifacts, and reject drift into
+- Push the next task toward one artifact-only wider-holdout segment attribution
+  using completed short/depth source-context artifacts, and reject drift into
   retraining, source-context search, feature-set, regularization, hidden-units,
   preprocessing, threshold-search, dashboard, scheduler, or report/gate
   branches.

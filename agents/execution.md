@@ -270,11 +270,18 @@
   local-paper path only, produced `4` verified `source: local_paper` AMD fills,
   attributed `2` closed non-negative AMD segments with no open segments, and
   observed no broker, disabled-broker, or diagnostic-overlay fills.
+- First-evaluation wider-holdout replay contrast used the existing
+  broker-free local-paper path only in Docker `research`. Short wider replay
+  produced `22` verified `source: local_paper` fills across ADI, AMAT, AMZN,
+  and BA; depth wider replay produced `16` verified `source: local_paper`
+  fills across AMAT and AMZN. Trade-path attribution parsed existing event
+  files only and observed no broker, disabled-broker, or diagnostic-overlay
+  fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next wider-holdout replay contrast should use only the broker-free
-  local-paper replay path and verify any generated fills remain
-  `source: local_paper`.
+- The next wider-holdout attribution should parse existing local-paper event
+  files only; any diagnostic marks must remain separate from `source:
+  local_paper` fills.
