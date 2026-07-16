@@ -258,11 +258,15 @@
 - AMD entry feature-input diagnostic reran no execution and created no
   diagnostic fills. It linked feature rows back to existing local-paper entry
   timestamps only.
+- AMD entry-filter diagnostic overlay reran no execution, created zero
+  local-paper fills and zero broker outcomes, labeled retained/skipped
+  decisions as `source: diagnostic_overlay`, and preserved the existing
+  `source: local_paper` AMD fills unchanged.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next AMD entry-filter diagnostic should leave local-paper fills unchanged
-  and label any retained/skipped overlay outcomes as `source:
-  diagnostic_overlay`.
+- The next cross-sample entry-filter diagnostic should leave local-paper fills
+  unchanged and label any retained/skipped overlay outcomes as
+  `source: diagnostic_overlay`.

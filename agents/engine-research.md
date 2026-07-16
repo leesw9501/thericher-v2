@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded AMD entry-filter diagnostic overlay from the completed
-   segment-quality and feature-input artifacts before changing source context,
-   feature/model axes, or thresholds again.
+1. Run one bounded cross-sample entry-filter overlay diagnostic from existing
+   wider entry-adverse artifacts before changing source context, feature/model
+   axes, or thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -730,10 +730,16 @@
   `low_vs_prior_low_return` lower by about `0.00138`, higher volume change,
   and nonzero close position versus the negative entry; `4` of `6` near-miss
   rows were closer to the negative entry by feature distance.
+- AMD entry-filter diagnostic overlay consumed existing AMD feature-input,
+  segment-quality, and source-context attribution artifacts only. The
+  all-three sketch skipped the one fee-aware negative AMD segment, retained
+  both non-negative AMD segments, labeled all overlay outcomes as
+  `source: diagnostic_overlay`, and left all original local-paper fills
+  unchanged.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should apply only source-labeled diagnostic entry-filter overlays to the
-  existing AMD evidence before spending another GPU block on source data,
-  feature/model, or threshold changes.
+  task should cross-check the AMD-derived entry-filter overlay against existing
+  wider entry-adverse evidence before spending another GPU block on source
+  data, feature/model, or threshold changes.

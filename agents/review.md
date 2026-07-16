@@ -373,12 +373,17 @@
   kind, CLI, report family, gate, dashboard, scheduler, broker path, threshold
   search, replay rerun, feature/model axis, simulator exit rule, or
   model-promotion language.
+- AMD entry-filter diagnostic overlay reused existing artifacts and selected
+  local rows, wrote one compact external artifact, and added no code, helper,
+  job kind, CLI, report family, gate, dashboard, scheduler, broker path,
+  threshold search, replay rerun, feature/model axis, simulator exit rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward artifact-only AMD entry-filter diagnostic overlays,
-  and reject drift into source-context search, feature-set, regularization,
-  hidden-units, preprocessing, training-depth, threshold-search, dashboard,
-  scheduler, or report/gate branches.
+- Push the next task toward artifact-only cross-sample entry-filter diagnostic
+  overlays, and reject drift into source-context search, feature-set,
+  regularization, hidden-units, preprocessing, training-depth,
+  threshold-search, dashboard, scheduler, or report/gate branches.

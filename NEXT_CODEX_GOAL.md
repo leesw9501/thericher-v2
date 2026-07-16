@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded AMD entry-filter diagnostic overlay.
+Run one bounded cross-sample entry-filter overlay diagnostic.
 
 This advances PnL attribution, feature/model research, and backtest validation
-by checking whether a tiny, descriptive set of source-labeled diagnostic entry
-filters would have retained the non-negative AMD entries while skipping the
-negative AMD entry. Use existing artifacts and local bars only.
+by checking whether the AMD-derived diagnostic entry-filter sketches remain
+AMD-specific or recur across the wider existing entry-adverse sample. Use
+existing artifacts and selected local bars only.
 
 ## Hard Boundaries
 
@@ -69,33 +69,46 @@ negative AMD entry. Use existing artifacts and local bars only.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
-   - AMD entry feature-input diagnostic:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-entry-feature-input-20260716\metrics.json`
-   - AMD segment-quality diagnostic:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-source-context-segment-quality-20260716\metrics.json`
-   - first-evaluation source-context attribution:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
-3. Reuse only selected AMD rows from the existing
+   - AMD entry-filter overlay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-entry-filter-overlay-20260716\metrics.json`
+   - Wider entry-adverse summary:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
+   - Wider entry-adverse signal-quality diagnostic:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
+   - Wider entry-adverse trade-path attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-trade-path-20260716\metrics.json`
+   - Wider entry-adverse opportunity attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-opportunity-attribution-20260716\metrics.json`
+   - Existing feature-input concentration diagnostic, if useful for
+     near-threshold row context:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
+3. Reuse only selected rows from the existing
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
    Yahoo 1m file. Do not acquire data for this task.
 4. Do not rerun training, evaluation, replay, calibration, threshold
    derivation, or probability inference.
-5. Apply only a tiny fixed set of diagnostic overlay sketches derived from the
-   completed feature-input artifact, such as:
+5. Apply the same fixed diagnostic overlay sketches from the AMD overlay:
    - upper-wick-lower-than-negative-entry,
    - close-position-nonzero,
-   - entry-margin-above-negative-entry.
+   - entry-margin-above-negative-entry,
+   - all-three-entry-filter-sketch.
 6. Record compact artifact-only attribution:
-   - which existing AMD local-paper entries each overlay would retain or skip,
-   - whether the negative segment is skipped,
-   - whether the two non-negative segments are retained,
-   - how near-miss rows would be labeled,
+   - which existing wider-sample local-paper entries each overlay would retain
+     or skip,
+   - whether retained/skipped behavior differs for negative and non-negative
+     segments,
+   - how near-threshold rows would be labeled when enough trace evidence is
+     present,
    - all overlay outcomes with `source: diagnostic_overlay`,
-   - original local-paper fills unchanged and still `source: local_paper`.
-7. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
+   - original local-paper fills unchanged and still `source: local_paper`,
+   - any missing artifact fields that prevent a row from being labeled.
+7. If the wider artifacts do not contain enough information to reconstruct
+   comparable feature rows without rerunning inference or replay, stop after a
+   compact inventory artifact and record the exact missing fields.
+8. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
    feature, training path, replay path, threshold search, policy selection,
    simulator exit rule, or broker behavior unless a focused parser bug appears.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -125,7 +138,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run AMD entry feature input diagnostic`
+`Run cross-sample entry filter overlay diagnostic`
 
 ## Completion Report
 

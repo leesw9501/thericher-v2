@@ -587,6 +587,13 @@ Implemented and pushed:
   `volume_change` than the fee-aware negative entry, and observed that `4` of
   `6` below-threshold near-miss rows were closer to the negative entry by
   feature distance,
+- bounded AMD entry-filter diagnostic overlay; it consumed the completed AMD
+  feature-input, segment-quality, and source-context attribution artifacts plus
+  selected AMD Yahoo rows only, labeled retained/skipped overlay outcomes as
+  `source: diagnostic_overlay`, left the original `6` local-paper fills
+  unchanged as `source: local_paper`, and found the all-three overlay sketch
+  skipped the one negative AMD segment while retaining both non-negative AMD
+  segments, with all `6` near-miss rows still below the minimum buy threshold,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -651,13 +658,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded AMD entry-filter diagnostic overlay:
+Start one bounded cross-sample entry-filter overlay diagnostic:
 
-1. consume the completed AMD segment-quality and feature-input artifacts,
-2. apply a tiny fixed set of descriptive `diagnostic_overlay` entry-filter
-   sketches to the existing AMD buy-opportunity rows only,
-3. report which local-paper entries would be retained or skipped, keeping
-   original fills unchanged and labeled `source: local_paper`,
+1. consume the completed AMD overlay plus existing wider entry-adverse
+   artifacts,
+2. apply the same tiny fixed `diagnostic_overlay` sketches to existing
+   non-AMD entry-adverse segments and near-threshold rows,
+3. report whether the AMD-derived sketch stays narrow or recurs across the
+   wider sample, keeping original fills unchanged and labeled
+   `source: local_paper`,
 4. avoid training, replay reruns, feature/model axes, threshold search,
    dashboards, schedulers, broker behavior, or report/gate expansion.
 
