@@ -543,3 +543,16 @@ Reusing the existing local-paper path converts that evidence into PnL,
 drawdown, and fill-source attribution without adding KIS access, credentials,
 broker submit code, dashboards, schedulers, or another threshold-only loop on
 the old compressed candidate.
+
+## 2026-07-16 - Local-paper source-filtered attribution helper
+
+Decision: centralize fill-source evidence in a pure execution helper that reads
+event artifacts, counts fills by `source`, returns local-paper-only fill
+payloads, flags mixed or unknown sources, tolerates missing zero-fill event
+files, and records unreadable nonzero-fill event artifacts. Existing research
+verification paths call this helper instead of hand-rolling source counting.
+
+Reason: future broker and live fills must not be confused with local-paper
+research evidence. A small shared helper improves PnL attribution and
+paper-trading safety without adding KIS access, credentials, broker submit
+code, dashboards, reports, schedulers, or another research artifact family.

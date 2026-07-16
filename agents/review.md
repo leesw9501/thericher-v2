@@ -114,10 +114,13 @@
   robustness/local-paper path, consumed the new feature branch rather than
   permuting the old candidate again, and did not emit a best threshold,
   promotion gate, dashboard, scheduler, or autonomous agent process.
+- Source-filtered local-paper attribution stayed a shared execution helper and
+  existing verification call-site update; it did not add a new report family,
+  gate, dashboard, scheduler, or broker adapter implementation.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward a consumer of local-paper evidence, not another
-  bounded rerun over the same artifacts.
+- Push the next task toward explicit broker adapter boundaries and disabled
+  execution fuses, not another bounded rerun over the same artifacts.

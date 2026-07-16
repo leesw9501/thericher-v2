@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Consume replay attribution through source-filtered local-paper views before
-   adding more threshold or candidate reruns.
+1. Pause additional threshold/candidate reruns until broker-boundary and
+   source-filtered attribution consumers are in place.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -155,9 +155,11 @@
   `research` smoke consumed the feature branch artifacts, replayed the changed
   probability evidence through local paper on CVS, FCX, and KO, produced `46`
   fills, and kept the result descriptive.
+- Local-paper attribution now uses a shared source-filter helper, so research
+  evidence can distinguish `source: local_paper` from future broker/live fills.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should move toward source-filtered local-paper attribution/query views
-  before any broader sweep or promotion rule.
+  task should move toward broker adapter boundaries and fuses before any
+  broader sweep or promotion rule.

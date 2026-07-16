@@ -10,7 +10,10 @@ from pathlib import Path
 from typing import Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION
-from thericher_v2.execution import LOCAL_PAPER_SOURCE
+from thericher_v2.execution import (
+    FillEventArtifact,
+    collect_fill_source_evidence,
+)
 from thericher_v2.serialization import to_jsonable
 
 from .candidate_comparison import _payload_dict, _payload_string
@@ -310,39 +313,29 @@ def _holdout_probabilities(
 def _local_paper_verification(
     robustness: BoundedCandidateThresholdRobustnessResult | None,
 ) -> dict[str, Any]:
-    source_counts: dict[str, int] = {}
-    unreadable_artifacts: list[str] = []
-    if robustness is not None:
-        for slice_result in robustness.slices:
-            for variant in slice_result.variants:
-                artifact = variant.events_artifact
-                if not artifact:
-                    continue
-                try:
-                    lines = Path(artifact).read_text(encoding="utf-8").splitlines()
-                except OSError:
-                    if variant.replay_fill_count == 0:
-                        continue
-                    unreadable_artifacts.append(str(artifact))
-                    continue
-                for line in lines:
-                    event = json.loads(line)
-                    if event.get("event_type") != "fill":
-                        continue
-                    source = str(event.get("payload", {}).get("source") or "")
-                    source_counts[source] = source_counts.get(source, 0) + 1
-    non_local = {
-        source: count
-        for source, count in source_counts.items()
-        if source != LOCAL_PAPER_SOURCE
-    }
-    return {
-        "fill_source_counts": source_counts,
-        "local_paper_fill_count": source_counts.get(LOCAL_PAPER_SOURCE, 0),
-        "non_local_fill_source_counts": non_local,
-        "unreadable_event_artifacts": unreadable_artifacts,
-        "all_fills_local_paper": not non_local and not unreadable_artifacts,
-    }
+    return collect_fill_source_evidence(
+        _fill_event_artifacts_from_robustness(robustness)
+    ).to_summary()
+
+
+def _fill_event_artifacts_from_robustness(
+    robustness: BoundedCandidateThresholdRobustnessResult | None,
+) -> tuple[FillEventArtifact, ...]:
+    if robustness is None:
+        return ()
+    artifacts: list[FillEventArtifact] = []
+    for slice_result in robustness.slices:
+        for variant in slice_result.variants:
+            artifacts.append(
+                FillEventArtifact(
+                    path=None
+                    if variant.events_artifact is None
+                    else Path(variant.events_artifact),
+                    expected_fill_count=variant.replay_fill_count,
+                    label=f"{slice_result.slice_id}:{variant.variant_id}",
+                )
+            )
+    return tuple(artifacts)
 
 
 def _holdout_data_requests(

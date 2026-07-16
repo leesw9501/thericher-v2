@@ -175,6 +175,10 @@ Implemented and pushed:
   replay band from feature-branch probability evidence, reuses the existing
   robustness/local-paper path, records PnL/drawdown/fill attribution, and
   verifies all generated fills remain `source: local_paper`,
+- broker-safe local-paper source-filtered attribution helper; it centralizes
+  fill-source counting from replay event artifacts, exposes local-paper-only
+  evidence, flags mixed or unknown sources, tolerates missing zero-fill event
+  files, and rejects unreadable nonzero-fill evidence,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -195,7 +199,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `195 passed`
+- `201 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -239,13 +243,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add broker-safe local-paper source-filtered attribution views:
+Add broker adapter boundary contracts and local-only execution fuses:
 
-1. keep local-paper fills queryable separately before broker fills exist,
-2. add source filtering around replay/query attribution helpers,
-3. prove mixed-source or missing-source data cannot be mistaken for local paper,
-4. avoid KIS, credential, live/paper broker submit, dashboard expansion, or
-   scheduler work.
+1. define the minimal broker adapter protocol and order lifecycle boundary,
+2. add a disabled KIS adapter skeleton that cannot read credentials or call the
+   network,
+3. prove mode/fuse behavior keeps broker submit unavailable by default,
+4. keep local-paper simulator behavior separate and unchanged.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

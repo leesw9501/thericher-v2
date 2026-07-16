@@ -116,8 +116,8 @@
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next local-paper attribution/query work should start from existing event and
-  replay artifacts before acquiring anything new.
+- Broker-boundary work should not require new market data; start from existing
+  local-paper event and replay artifacts before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add broker-safe local-paper source-filtered attribution views.
+Add broker adapter boundary contracts and local-only execution fuses.
 
-This advances paper trading preparation, PnL attribution, and live-risk control
-by making local-paper evidence queryable by fill source before any broker fills
-exist. The feature-branch replay now produces local-paper fills; the next step
-is to make sure future mixed execution data cannot be mistaken for local-paper
-research evidence.
+This advances paper trading preparation and live-risk control by defining the
+smallest broker boundary before any KIS integration exists. The goal is to make
+future broker work explicit and disabled by default while keeping the local
+paper simulator separate.
 
 ## Hard Boundaries
 
@@ -61,38 +60,35 @@ research evidence.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory only the current useful external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-replay-mini-smoke\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-feature-branch-replay-mini-smoke-robustness\metrics.json`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-feature-branch-replay-mini-smoke.json`
-   - referenced local-paper `events.jsonl` artifacts under the replay lineage.
-3. Add a small source-filtered local-paper attribution/query helper that:
-   - reads replay/robustness artifacts or event logs without credentials,
-   - counts fills by `source`,
-   - can return local-paper-only fills and reject or mark non-local sources,
-   - records PnL/fill-count evidence only when `source: local_paper` is proven,
-   - treats missing zero-fill event files as empty evidence but does not ignore
-     unreadable nonzero-fill artifacts,
-   - writes no market data or model artifacts into Git.
-4. Integrate the helper where existing replay attribution currently verifies
-   local-paper fills, without broad rewrites or a new report family.
-5. Add focused tests proving:
-   - local-paper-only evidence is accepted,
-   - mixed or unknown fill sources are detected,
-   - missing zero-fill event artifacts are tolerated,
-   - unreadable nonzero-fill event artifacts are not silently accepted,
-   - no broker/network/credential access is needed,
-   - output stays descriptive and non-promotional.
-6. Run a CPU/local smoke using generated unit artifacts. Docker GPU work is not
-   required unless code paths touch research inference.
+2. Reuse the existing local paper simulator and source-filter evidence helpers;
+   do not add a new replay/report family.
+3. Add minimal broker adapter contracts for:
+   - account mode/capabilities,
+   - order submit intent/result,
+   - cancel intent/result,
+   - order status lookup.
+4. Add a disabled-by-default broker factory or KIS adapter skeleton that returns
+   explicit unavailable results or errors without reading credentials or using
+   the network.
+5. Add local-only execution fuses so broker submit paths cannot be reached
+   unless a future explicit goal enables them.
+6. Add focused tests proving:
+   - no network, KIS API, or credential access is needed,
+   - broker submit/cancel/status are unavailable by default,
+   - local paper execution behavior remains unchanged and separate,
+   - disabled broker results cannot be confused with `source: local_paper`
+     fills,
+   - the implementation stays descriptive and non-promotional.
 7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
-- Start from existing external model artifacts and local-paper event artifacts.
+- This goal should not require new market data.
+- Start from existing local-paper event/replay artifacts only if they are useful
+  for boundary tests.
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for the active attribution loop.
+  license-compatible, and useful for the active boundary loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -109,12 +105,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused local-paper source-filtering or attribution smoke command
-used.
+Report any focused broker-boundary or local-paper smoke command used.
 
 ## Suggested Commit Message
 
-`Add local paper source filtered attribution`
+`Add broker adapter boundary fuses`
 
 ## Completion Report
 

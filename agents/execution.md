@@ -26,8 +26,7 @@
 
 ## Active Queue
 
-1. Add source filtering to future replay/query views before real broker fills
-   exist.
+1. Define broker adapter boundary contracts and disabled-by-default fuses.
 2. Keep future KIS adapter work separate from local paper simulator behavior.
 3. Add more realistic order types only when paper-loop evidence needs them.
 
@@ -80,8 +79,11 @@
   `local_paper`.
 - Feature-branch replay attribution replayed 9 threshold variants through local
   paper, produced `46` fills, and verified every fill source was `local_paper`.
+- Local-paper fill-source evidence is now centralized in an execution helper.
+  It can return local-paper-only fills, flag mixed or unknown sources, tolerate
+  missing zero-fill event files, and reject unreadable nonzero-fill evidence.
 
 ## Next Handoff
 
-- Add source-filtered local-paper attribution/query views before broker fills
-  are introduced.
+- Add broker adapter boundary contracts and disabled-by-default execution fuses
+  before any KIS API work.
