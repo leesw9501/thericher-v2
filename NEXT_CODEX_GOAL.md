@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one artifact-only ADI/AGG feature-input diagnostic before spending more GPU
-time.
+Run one artifact-only cross-slice feature-input stability check before spending
+more GPU time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by checking whether early adverse/no-lift entry
-outcomes can be separated before entry using local OHLCV context, probability
-trace metadata, and cluster/cooldown marks.
+walk-forward validation by checking whether the ADI/AGG pre-entry separation
+direction repeats on a few additional explicit-slice artifacts before any
+bounded model-input or GPU training target is queued.
 
 ## Hard Boundaries
 
@@ -26,9 +26,9 @@ trace metadata, and cluster/cooldown marks.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before the feature-input diagnostic is complete.
-- Do not queue another Engine Research Agent job unless current artifacts are
-  unreadable or incomplete.
+- Do not run new GPU training before this cross-slice diagnostic is complete.
+- Do not queue another Engine Research Agent GPU job unless current artifacts
+  are unreadable or incomplete.
 - Do not mutate existing local-paper event artifacts or replay outputs.
 - Keep original fills labeled and checked as `source: local_paper`.
 - Label diagnostic outcomes as `source: diagnostic_overlay`; do not count them
@@ -69,23 +69,26 @@ trace metadata, and cluster/cooldown marks.
 
 ## Required Work
 
-1. Consume the completed ADI/AGG driver artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-driver-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-entry-cluster-path-quality\metrics.json`.
-2. Focus on ADI and AGG using existing probability traces, event artifacts, and
-   selected local Yahoo rows only.
-3. Build one compact external feature-input diagnostic artifact under
-   `D:\thericher-v2\model-artifacts`.
-4. For each candidate entry row, tag:
+1. Consume the completed ADI/AGG feature-input diagnostic:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-feature-input-diagnostic\metrics.json`.
+2. Select a small additional explicit-slice set from existing artifacts only.
+   Prefer ADBE, AEM, and AMAT if their probability traces and local-paper event
+   artifacts are present; otherwise record exact missing paths and choose the
+   nearest available explicit-slice traces.
+3. Use existing probability traces, event artifacts, and selected local Yahoo
+   rows from `snapshot=2026-06-18` only.
+4. Reconstruct the same candidate-entry row diagnostic shape:
    - pre-entry 3-bar OHLCV context,
    - probability margin and local probability rank,
    - cluster position and cooldown distance,
    - early 3-bar MAE/MFE bucket,
-   - sell-threshold exit outcome.
-5. Compare whether early adverse/no-lift outcomes differ before entry from
-   non-adverse outcomes in ADI and AGG.
-6. Explain whether the next bounded GPU/model-input target should encode
-   entry-cluster and early-path-quality features, or whether more artifact-only
-   evidence is needed first.
+   - sell-threshold exit outcome,
+   - row-level AUC/median separation diagnostics.
+5. Compare whether adverse/no-lift versus non-adverse separation direction is
+   stable across the added slices and the prior ADI/AGG reference.
+6. Explain whether the next bounded target should be:
+   - a model-input/feature branch in Docker `research`, or
+   - one more artifact-only diagnostic.
 7. Preserve local-paper source verification from existing event artifacts and
    separately count all diagnostic outcomes as `source: diagnostic_overlay`.
 8. Use temporary Codex sub-agents as sidecar reviewers where useful:
@@ -124,7 +127,7 @@ source evidence, and diagnostic-overlay source evidence.
 
 ## Suggested Commit Message
 
-`Diagnose ADI AGG entry features`
+`Check cross-slice entry feature stability`
 
 ## Completion Report
 

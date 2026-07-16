@@ -322,6 +322,9 @@
 - ADI/AGG driver attribution reran no execution, preserved `376` original fills
   as `source: local_paper`, and labeled all `1,738` diagnostic outcomes as
   `source: diagnostic_overlay`.
+- ADI/AGG feature-input diagnostic reran no execution, preserved `376`
+  original fills as `source: local_paper`, and labeled all `660` candidate-entry
+  diagnostic rows as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -334,5 +337,5 @@
   a broker-capable worker needs a future explicit paper-trading goal.
 - Any AMAT/AEM replay-shape overlay must label non-replay outcomes as
   `source: diagnostic_overlay` and preserve original local-paper fills.
-- The ADI/AGG feature-input diagnostic must keep the same source separation and
-  must not mutate local-paper replay behavior.
+- The next cross-slice feature-input stability check must keep the same source
+  separation and must not mutate local-paper replay behavior.

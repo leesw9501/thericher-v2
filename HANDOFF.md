@@ -1003,11 +1003,40 @@ Claude drift-check was not needed for this slice because it made no code,
 architecture, or policy edits; it used existing artifacts, temporary Codex
 sidecars, and a compact external diagnostic only.
 
-Next, run one artifact-only feature-input diagnostic on ADI/AGG candidate
-entries. Tag each entry with pre-entry bars, cluster position, cooldown
-distance, early 3-bar MAE/MFE bucket, and sell-threshold outcome to see whether
-the early adverse/no-lift pattern can be separated before entry from local
-OHLCV and probability-trace evidence.
+The ADI/AGG feature-input diagnostic then completed artifact-only:
+
+- It consumed the ADI/AGG driver attribution, AGG/ADI probability traces,
+  existing event artifacts, and selected local Yahoo rows from
+  `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-feature-input-diagnostic\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market data
+  acquisition, replay mutation, or durable worker creation.
+- Original ADI/AGG fills stayed `376` verified `source: local_paper` fills. The
+  diagnostic produced `660` candidate-entry rows labeled
+  `source: diagnostic_overlay`.
+- ADI adverse/no-lift rows leaned toward weaker pre-entry close return and
+  lower close position inside the prior 3-bar range, but the strongest
+  univariate separation stayed modest. AGG showed price-shape separation, while
+  probability-margin and volume mean deltas looked outlier-sensitive once
+  checked with row-level AUC and medians.
+- Engine Research sidecar found the signal exists but is not stable enough
+  across ADI and AGG to justify spending the next block on GPU/model-input
+  training.
+- Execution sidecar verified original fills remained `local_paper`, diagnostic
+  rows remained `diagnostic_overlay`, and no broker, KIS, credential, non-local,
+  or unknown source evidence appeared.
+- Review sidecar found no blocking sprawl, durable-worker drift, scheduler,
+  dashboard, broker creep, or model-promotion language.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, run one artifact-only cross-slice feature-input stability check before
+spending more GPU time. Reuse existing explicit-slice traces, event artifacts,
+and selected local Yahoo rows to see whether the ADI/AGG pre-entry separation
+direction repeats on a few additional slices.
 
 ## Daily Operator Review
 
