@@ -121,6 +121,9 @@
 - Out-of-symbol disjoint-evaluation replay reused the existing local-paper path
   across AAPL, ABNB, ABT, ACN, and ABBV, produced `10` verified
   `source: local_paper` fills, and observed no non-local fill source.
+- Out-of-symbol loss attribution parsed existing fill event evidence and
+  confirmed all `10` fill events were `source: local_paper`; no broker path was
+  used.
 
 ## Next Handoff
 

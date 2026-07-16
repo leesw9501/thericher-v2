@@ -163,13 +163,15 @@
   `snapshot=2026-06-18` Yahoo 1m file, found 250 symbols with 245 eligible
   after excluding CVS, FCX, and KO, selected AAPL, ABNB, ABT, ACN, and ABBV
   with at least 120 rows each, and acquired no additional data.
+- Out-of-symbol loss attribution consumed existing external artifacts only and
+  required no new market-data reads or acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is keeping selected
-  out-of-symbol slice coverage visible while loss attribution consumes existing
-  replay artifacts.
+- The next data task is not more acquisition; it is reading only the selected
+  `snapshot=2026-06-18` bars needed to attribute fill-bearing out-of-symbol
+  lifecycle behavior.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

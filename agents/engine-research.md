@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Start bounded out-of-symbol loss attribution for the disjoint-evaluation
-   feature branch before another model axis or threshold-only branch is tried.
+1. Start bounded fill-lifecycle attribution for the out-of-symbol loss-bearing
+   variants before another model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -120,6 +120,13 @@
   `-0.95330549316406` to `0E-13`, all fills `source: local_paper`, and wrote
   attribution plus compact summary artifacts under the external model artifact
   root.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-loss-attribution-20260716`, status
+  `candidate_feature_branch_replay_loss_attribution_only`, consumed existing
+  replay/robustness/trace artifacts only, found `5` fill-bearing variants and
+  `5` zero-fill variants, observed all fill-bearing variants had negative PnL,
+  verified `10` local-paper fill events, and wrote one compact artifact outside
+  Git.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -331,9 +338,14 @@
   symbols. Probability range was no longer the main mismatch, but fills landed
   with a negative PnL floor, so the next step should attribute loss behavior
   before changing another model axis.
+- Attributed the out-of-symbol negative PnL floor to fill-bearing variants
+  rather than probability range mismatch. The next evidence should connect
+  those fills to price path and final position lifecycle before changing model
+  or threshold axes.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attribute the out-of-symbol loss behavior before running another
-  hidden-units, regularization, preprocessing, or threshold-only branch.
+  task should attribute fill lifecycle for loss-bearing out-of-symbol variants
+  before running another hidden-units, regularization, preprocessing, or
+  threshold-only branch.

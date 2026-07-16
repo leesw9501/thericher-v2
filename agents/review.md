@@ -180,10 +180,15 @@
   local-paper verification, and attribution paths only. It added no code, job
   kind, report family, gate, dashboard, scheduler, broker path, threshold
   search, or model-promotion language.
+- Out-of-symbol loss attribution used existing external artifacts only and
+  added no code, job kind, report family, gate, dashboard, scheduler, broker
+  path, threshold search, retraining, rerun replay, or model-promotion
+  language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward compact loss attribution from existing artifacts
-  before allowing another model axis or threshold-only branch.
+- Push the next task toward compact fill-lifecycle attribution from existing
+  artifacts and selected local bars before allowing another model axis or
+  threshold-only branch.

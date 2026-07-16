@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded out-of-symbol loss attribution slice for the
-disjoint-evaluation feature branch.
+Build a bounded fill-lifecycle attribution slice for the out-of-symbol
+loss-bearing local-paper variants.
 
-This advances PnL attribution and backtest/walk-forward validation by explaining
-why the out-of-symbol replay produced local-paper fills but a negative PnL
-floor, before spending GPU time on another model-axis or threshold-only branch.
+This advances PnL attribution and paper-trading preparation by connecting the
+loss-bearing out-of-symbol fill events to the selected bars, final positions,
+and post-fill price path before spending GPU time on another model-axis or
+threshold-only branch.
 
 ## Hard Boundaries
 
@@ -63,29 +64,24 @@ floor, before spending GPU time on another model-axis or threshold-only branch.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`
-   - `bounded-disjoint-eval-bar-pressure-standardized-replay-cap2-20260716`
-   - `bounded-disjoint-eval-opportunity-attribution-20260716`
    - `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`
    - `bounded-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`
-3. Prefer existing artifacts. Do not retrain, rerun replay, or run threshold
-   search unless the existing replay/robustness/trace artifacts cannot support
-   the attribution.
-4. Attribute the out-of-symbol loss behavior by symbol and threshold using the
-   existing replay, robustness, trace, and local-paper event evidence.
-5. Include at least:
-   - selected symbols and row-count coverage,
-   - per-symbol/per-threshold fill counts,
-   - PnL and drawdown range,
-   - buy/sell opportunity counts,
-   - source-vs-holdout probability range context,
-   - local-paper fill-source verification,
-   - artifact paths used.
-6. Write any compact loss-attribution output outside Git under
+   - `bounded-out-of-symbol-disjoint-eval-loss-attribution-20260716`
+3. Prefer existing artifacts and the selected local Yahoo bars. Do not retrain,
+   rerun replay, or run threshold search unless existing evidence cannot
+   support the attribution.
+4. For fill-bearing out-of-symbol variants only, attribute:
+   - fill event timestamp, side, quantity, price, and source,
+   - symbol, threshold pair, and variant id,
+   - final position and whether replay exited or held to the bounded window end,
+   - post-fill price path from selected bars,
+   - per-variant PnL and drawdown context,
+   - local-paper fill-source verification.
+5. Write any compact fill-lifecycle output outside Git under
    `D:\thericher-v2\model-artifacts`.
-7. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+6. Keep the result descriptive only. Do not rank symbols, pick thresholds,
    select a model, or add promotion language.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -113,7 +109,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol loss attribution target`
+`Add bounded out-of-symbol fill lifecycle target`
 
 ## Completion Report
 
@@ -125,6 +121,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol loss attribution findings,
+- out-of-symbol fill-lifecycle findings,
 - what was intentionally not built,
 - next recommended goal.

@@ -195,6 +195,10 @@
   research-job artifacts under `/app/model_artifacts`. The follow-up
   opportunity attribution and compact summary ran locally as artifact-only
   work under `D:\thericher-v2\model-artifacts`.
+- Out-of-symbol loss attribution ran locally as artifact-only work, consumed
+  existing external replay/robustness/opportunity artifacts, reran no Docker
+  job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 

@@ -269,6 +269,13 @@ Implemented and pushed:
   `-0.95330549316406` to `0E-13`, max drawdown `0.95330549316406`, `7` buy
   opportunities, and `312` sell opportunities, with compact evidence written
   outside Git,
+- bounded out-of-symbol loss attribution; it consumed the existing
+  out-of-symbol replay, robustness, opportunity attribution, and compact
+  summary artifacts without retraining or rerunning replay, found `5`
+  fill-bearing variants and `5` zero-fill variants, observed that all
+  fill-bearing variants had negative PnL while zero-fill variants were flat,
+  confirmed `10` fill events with `source: local_paper`, and wrote one compact
+  attribution artifact outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -333,17 +340,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded out-of-symbol loss attribution slice for the
-disjoint-evaluation feature branch:
+Start one bounded fill-lifecycle attribution slice for the out-of-symbol
+loss-bearing local-paper variants:
 
-1. consume the out-of-symbol replay, robustness, attribution, and compact
-   summary artifacts as context,
-2. attribute loss by symbol and threshold using existing replay/trace evidence,
-3. separate sparse buy opportunity evidence from post-fill PnL and drawdown
-   behavior,
-4. write any compact loss-attribution summary outside Git,
-5. avoid retraining, new candidate modules, dashboards, gates, schedulers,
-   threshold searches, or broker-facing behavior.
+1. consume the out-of-symbol replay, opportunity attribution, and loss
+   attribution artifacts as context,
+2. parse only existing local-paper event files and the selected
+   `snapshot=2026-06-18` bars needed for fill-bearing variants,
+3. attribute entry time, side, fill price, final position, post-fill price path,
+   and whether the replay exited or held to the bounded window end,
+4. write any compact fill-lifecycle summary outside Git,
+5. avoid retraining, rerunning replay, new candidate modules, dashboards,
+   gates, schedulers, threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
