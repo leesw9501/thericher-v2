@@ -223,6 +223,13 @@
 - Trade-path attribution helper added no runtime dependencies, no PyTorch to
   local/base paths, no Docker service changes, and no artifact writer; focused
   tests and a local real-artifact smoke ran through `uv`.
+- Out-of-symbol evaluation feature-branch training/evaluation and cap-2 replay
+  ran in Docker `research` with PyTorch CUDA and RTX 4090 visible, mounted
+  current `src` read-only, read `/app/market_data` read-only, and wrote
+  feature-branch, training, evaluation, model, replay, robustness, event, and
+  research-job artifacts under `/app/model_artifacts`. Opportunity attribution
+  and trade-path attribution ran locally as artifact-only work under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

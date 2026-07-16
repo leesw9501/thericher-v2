@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded out-of-symbol-evaluation feature-branch target.
+Build a bounded out-of-symbol entry-quality diagnostic target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by evaluating the current `core_plus_bar_pressure_v1` branch on the
-out-of-symbol AAPL, ABNB, ABT, ACN, and ABBV slices before trying another
-feature set, model axis, or threshold-only branch.
+attribution by explaining the buy opportunities and local-paper entries from the
+completed out-of-symbol feature-branch replay before changing another feature,
+model, preprocessing, or threshold axis.
 
 ## Hard Boundaries
 
@@ -24,8 +24,7 @@ feature set, model axis, or threshold-only branch.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep simulated fills labeled with `source: local_paper`.
-- Keep diagnostic overlay outcomes labeled separately, for example
-  `source: diagnostic_overlay`.
+- Keep diagnostic overlay outcomes labeled separately from local-paper fills.
 - Keep disabled broker outcomes labeled separately from local paper, for
   example `source: broker_disabled`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
@@ -58,34 +57,38 @@ feature set, model axis, or threshold-only branch.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before architecture-changing edits.
+3. Ask Claude CLI for a short drift-check before architecture-changing edits or
+   before adding a new reusable helper.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`
-   - `bounded-out-of-symbol-disjoint-eval-replay-cap2-240bars-20260716`
-   - `bounded-longer-out-of-symbol-disjoint-eval-trade-path-20260716`
-3. Reuse existing source training slices from
-   `snapshot=2026-07-09-shadow-t0-8d-probe`: CVS, FCX, and KO.
-4. Use explicit evaluation slices from `snapshot=2026-06-18`: AAPL, ABNB, ABT,
-   ACN, and ABBV.
-5. Run Docker `research` `candidate_feature_branch` with:
-   - `core_plus_bar_pressure_v1`,
-   - `hidden_units=4`,
-   - `feature_standardization`,
-   - bounded caps, including `max-bars 240`,
-   - explicit training and evaluation slices.
-6. If feature-branch evaluation completes, replay the new feature-branch
-   artifact across the same out-of-symbol slices with threshold cap `2` and
-   `max-bars 240`.
-7. If replay completes, run compact artifact-only attribution, including
-   local-paper source verification and the trade-path helper.
-8. Keep the result descriptive only. Do not rank symbols, pick thresholds,
-   select a model, or add promotion language.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Consume these completed external artifacts as inputs:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-out-of-symbol-eval-bar-pressure-standardized-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-out-of-symbol-eval-bar-pressure-standardized-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-trade-path-20260716\metrics.json`
+3. Reuse only existing local market data from
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+   for AAPL, ABNB, ABT, ACN, and ABBV.
+4. Inspect replay probability traces and local bars for every buy opportunity
+   and every local-paper entry from the replay.
+5. Produce one compact external diagnostic artifact that records, at minimum:
+   - local-paper source verification,
+   - buy opportunity counts by slice and threshold variant,
+   - forward 5/15/30-bar gross return marks when available,
+   - adverse and favorable excursion after each buy opportunity or entry,
+   - whether a sell-threshold signal appeared before the adverse move or
+     bounded-window end,
+   - which evidence came from diagnostic overlays rather than local-paper
+     fills.
+6. Add a tiny pure helper and focused tests only if it prevents another manual
+   script from being repeated. The helper must accept provided `Bar` and trace
+   data, perform no network or credential I/O, and write no artifacts itself.
+7. Do not rerun training, broad replay, threshold search, model-axis search, or
+   data acquisition unless an input artifact is missing or corrupt.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -113,7 +116,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol evaluation feature branch`
+`Add bounded out-of-symbol entry-quality diagnostic`
 
 ## Completion Report
 
@@ -125,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol-evaluation feature-branch findings,
+- entry-quality diagnostic findings,
 - what was intentionally not built,
 - next recommended goal.

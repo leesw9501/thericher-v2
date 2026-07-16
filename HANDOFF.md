@@ -314,6 +314,16 @@ Implemented and pushed:
   surfaces open segments and non-local sources, calculates holding duration,
   gross and fee-aware deltas, and simple adverse/favorable movement, with no
   new research job kind, broker path, data loader, report, gate, or dashboard,
+- bounded out-of-symbol-evaluation feature-branch target; it trained
+  `core_plus_bar_pressure_v1` with `hidden_units=4` and
+  `feature_standardization` on CVS/FCX/KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`, evaluated directly on
+  AAPL/ABNB/ABT/ACN/ABBV from `snapshot=2026-06-18`, recorded evaluation
+  probability range `0.414124`, replayed out-of-symbol threshold pairs
+  `0.554/0.438` and `0.555/0.438` with `max-bars 240`, produced `4` verified
+  `source: local_paper` fills, found `2` buy opportunities versus `832` sell
+  opportunities, and trade-path attribution found `2` closed ABNB segments,
+  both fee-aware negative with total fee-aware delta `-1.8532`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -378,17 +388,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded out-of-symbol-evaluation feature-branch target:
+Start one bounded out-of-symbol entry-quality diagnostic target:
 
-1. train the existing `core_plus_bar_pressure_v1` branch on the current CVS,
-   FCX, and KO source slices,
-2. evaluate on the out-of-symbol AAPL, ABNB, ABT, ACN, and ABBV slices from
-   `snapshot=2026-06-18`,
-3. replay the resulting feature-branch artifact across the same out-of-symbol
-   slices with threshold cap `2` and `max-bars 240`,
-4. use compact attribution, including the trade-path helper, if replay
-   completes,
-5. avoid new feature sets, model-axis changes, dashboards, gates, schedulers,
+1. consume the completed out-of-symbol feature-branch evaluation, replay,
+   opportunity attribution, and trade-path artifacts,
+2. inspect the replay probability traces and selected AAPL/ABNB/ABT/ACN/ABBV
+   bars from `snapshot=2026-06-18`,
+3. attribute every buy opportunity and local-paper entry to bounded forward
+   return, adverse/favorable excursion, and sell-threshold timing evidence,
+4. keep the output descriptive and artifact-only unless a tiny pure helper is
+   needed for repeatability,
+5. avoid retraining, new feature/model axes, dashboards, gates, schedulers,
    threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

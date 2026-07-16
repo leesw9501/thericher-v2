@@ -142,6 +142,12 @@
 - Trade-path attribution helper reuses shared fill-source evidence, surfaces
   non-local fill sources separately, and does not touch broker submit/cancel
   code.
+- Out-of-symbol evaluation feature-branch replay reused the existing
+  local-paper path across AAPL, ABNB, ABT, ACN, and ABBV, produced `4`
+  verified `source: local_paper` fills, and observed no non-local fill source.
+  Follow-up opportunity and trade-path attribution parsed existing event files
+  only; trade-path attribution found `2` closed ABNB segments, both
+  fee-aware negative, without touching broker submit/cancel code.
 
 ## Next Handoff
 

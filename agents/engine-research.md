@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded out-of-symbol-evaluation feature-branch target before
-   another model axis or threshold-only branch is tried.
+1. Run one bounded out-of-symbol entry-quality diagnostic before another
+   feature/model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -168,6 +168,30 @@
   manual trade-path evidence as a pure function with focused tests, reuses
   shared fill-source verification, handles FIFO partial fills and open segments,
   and matched the longer-window artifact shape in a real-artifact smoke.
+- Last completed:
+  `bounded-out-of-symbol-eval-bar-pressure-standardized-smoke-20260716`,
+  status `candidate_feature_branch_evaluated_only`, trained
+  `core_plus_bar_pressure_v1` with `hidden_units=4` and
+  `feature_standardization` on CVS/FCX/KO source slices, evaluated directly on
+  AAPL, ABNB, ABT, ACN, and ABBV with `1180` examples, recorded probability
+  range `0.414124`, and wrote feature-branch/training/evaluation/model
+  artifacts outside Git.
+- Last completed:
+  `bounded-out-of-symbol-eval-bar-pressure-standardized-replay-cap2-240bars-20260716`,
+  status `completed`, replayed out-of-symbol threshold pairs `0.554/0.438`
+  and `0.555/0.438` across AAPL, ABNB, ABT, ACN, and ABBV with `max-bars 240`,
+  produced `4` verified `source: local_paper` fills, PnL range
+  `-0.9266000000000` to `0E-13`, and wrote replay/robustness/event/research
+  artifacts outside Git.
+- Last completed: `bounded-out-of-symbol-eval-opportunity-attribution-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, found `2` buy
+  opportunities, `832` sell opportunities, `4` replay fills, all fills
+  `source: local_paper`, and wrote an artifact-only attribution under the
+  external model artifact root.
+- Last completed: `bounded-out-of-symbol-eval-trade-path-20260716`, status
+  `trade_path_attributed_only`, used the shared trade-path helper on the
+  out-of-symbol evaluation replay, attributed `2` closed ABNB segments, found
+  both fee-aware negative, and recorded fee-aware delta sum `-1.8532`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -404,10 +428,15 @@
 - Trade-path helper behavior is now codified. The next evidence should return
   to bounded GPU research by evaluating the current feature branch directly on
   the out-of-symbol slices before trying a new feature or model axis.
+- Out-of-symbol feature-branch evaluation reduced entries to two buy
+  opportunities, but both resulting closed ABNB trade segments were fee-aware
+  negative. The next evidence should inspect entry quality and sell-threshold
+  timing around those buy opportunities before changing another model or
+  threshold axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run the bounded out-of-symbol-evaluation feature-branch target
-  before another hidden-units, regularization, preprocessing, or threshold-only
-  branch.
+  task should run a bounded out-of-symbol entry-quality diagnostic from the
+  completed feature-branch replay artifacts before another hidden-units,
+  regularization, preprocessing, feature-set, or threshold-only branch.

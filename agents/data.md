@@ -180,13 +180,19 @@
   acquired.
 - Trade-path attribution helper takes provided `Bar` inputs and does not load
   market data itself; focused tests use in-memory/local temp bars only.
+- Out-of-symbol evaluation feature-branch training reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; evaluation, replay, opportunity
+  attribution, and trade-path attribution reused AAPL, ABNB, ABT, ACN, and ABBV
+  from `snapshot=2026-06-18` with `max-bars 240`. No additional data was
+  acquired. Compact data-quality summaries remained warning-only; ABNB carried
+  one missing 1m interval warning plus incomplete resample bucket warnings.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is reusing the same source
-  CVS/FCX/KO and out-of-symbol AAPL/ABNB/ABT/ACN/ABBV slices for a bounded
-  feature-branch evaluation/replay target.
+- The next data task is not more acquisition; it is reusing the same
+  out-of-symbol AAPL/ABNB/ABT/ACN/ABBV bars and existing probability traces for
+  a bounded entry-quality diagnostic.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

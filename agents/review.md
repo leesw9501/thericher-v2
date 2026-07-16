@@ -209,10 +209,15 @@
   added no job kind, CLI, report family, gate, dashboard, scheduler, broker
   path, threshold search, replay rerun, model-axis change, or model-promotion
   language.
+- Out-of-symbol evaluation feature-branch work reused existing
+  `candidate_feature_branch` and `candidate_feature_branch_replay` paths, then
+  used artifact-only opportunity and trade-path attribution. It added no new
+  code, job kind, report family, gate, dashboard, scheduler, broker path,
+  threshold search, feature/model axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded out-of-symbol-evaluation feature-branch
-  run before allowing another feature/model axis or threshold-only branch.
+- Push the next task toward one bounded out-of-symbol entry-quality diagnostic
+  before allowing another feature/model axis or threshold-only branch.
