@@ -29,8 +29,9 @@
 
 ## Active Queue
 
-1. Resume bounded GPU feature/model research through existing job kinds now
-   that source-filtering and disabled broker boundaries are in place.
+1. Run the next bounded GPU candidate validation through existing job kinds and
+   verify the emitted local Yahoo source slices include compact data-quality
+   summaries.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -174,9 +175,13 @@
 - Warning-only market-data quality checks now explain local Yahoo 1m slice
   issues before more GPU time is spent; the initial CVS/FCX/KO smoke found only
   incomplete higher-timeframe bucket warnings.
+- Candidate training/evaluation artifacts now carry compact
+  `source_slices[].data_quality` summaries for local Yahoo inputs without
+  changing rows, thresholds, replay behavior, or local-paper attribution.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attach warning-only quality summaries to existing research
-  artifacts before another GPU validation run.
+  task should run a bounded GPU validation through existing job kinds and check
+  that the new artifact summaries appear outside Git before interpreting the
+  model evidence.

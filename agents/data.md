@@ -30,8 +30,8 @@
 
 ## Active Queue
 
-1. Thread warning-only data-quality summaries into existing research
-   source-slice artifacts where useful.
+1. Review the first new Docker `research` artifacts that include compact
+   source-slice quality summaries.
 2. Acquire additional no-auth public data only when the source is lawful,
    license-compatible, and useful for the current engine loop.
 3. Decide the first local cache shape only when real ingestion work starts.
@@ -119,12 +119,16 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` found only incomplete resample
   bucket warnings and no duplicate, non-monotonic, or missing 1m interval
   warnings.
+- Threaded compact, warning-only quality summaries into candidate
+  training/evaluation local Yahoo source-slice artifacts. Deterministic sample
+  runs still omit source slices, and unavailable config placeholders remain
+  non-blocking.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Thread warning summaries into existing research source-slice metadata before
-  spending more GPU time on the same local Yahoo slices.
+- Confirm the next bounded GPU validation writes `source_slices[].data_quality`
+  outside Git before interpreting new model evidence.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

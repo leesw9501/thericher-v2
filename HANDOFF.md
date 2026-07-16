@@ -190,6 +190,10 @@ Implemented and pushed:
   non-monotonic timestamps, missing 1m intervals, and incomplete resample
   buckets without mutating bars, gap-filling, reading credentials, or blocking
   research,
+- compact market-data quality summaries in candidate training/evaluation
+  source-slice artifacts; local Yahoo slices now record `bars_seen`,
+  `warning_count`, `blocks_research`, and warning-code counts without changing
+  dataset rows, thresholds, or replay behavior,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -254,12 +258,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Attach market-data quality summaries to existing research artifacts:
+Run a bounded data-quality-visible GPU validation:
 
-1. thread warning-only summaries into candidate data-source/source-slice
-   metadata,
-2. keep summaries descriptive and non-blocking,
-3. reuse existing Docker `research` job kinds for a small smoke,
+1. reuse existing Docker `research` candidate training/evaluation job kinds,
+2. confirm new local Yahoo source-slice artifacts include compact
+   `data_quality` summaries outside Git,
+3. replay through existing broker-free local-paper paths only if the evaluation
+   artifact is sound,
 4. avoid new candidate modules, dashboards, gates, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

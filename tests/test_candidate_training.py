@@ -40,6 +40,7 @@ def test_candidate_training_builds_dataset_from_sample_bars() -> None:
         "bar_range",
         "volume_change",
     )
+    assert dataset.source_slices == ()
 
 
 def test_candidate_training_builds_bar_position_feature_branch() -> None:
@@ -101,6 +102,14 @@ def test_candidate_training_builds_multi_slice_dataset_without_feature_shape_dri
     assert len(dataset.labels) == 72
     assert [item["slice_id"] for item in dataset.source_slices] == ["aaa", "bbb"]
     assert [item["examples_seen"] for item in dataset.source_slices] == [36, 36]
+    assert [item["data_quality"]["bars_seen"] for item in dataset.source_slices] == [40, 40]
+    assert all(
+        item["data_quality"]["blocks_research"] is False for item in dataset.source_slices
+    )
+    assert all(
+        "incomplete_resample_bucket" in item["data_quality"]["warning_codes"]
+        for item in dataset.source_slices
+    )
 
 
 def test_candidate_training_records_injected_success_and_model_artifact_outside_repo(
@@ -187,6 +196,14 @@ def test_candidate_training_records_multi_slice_source_rows(tmp_path) -> None:
     assert payload["bars_seen"] == 80
     assert payload["examples_seen"] == 72
     assert [item["slice_id"] for item in payload["source_slices"]] == ["aaa", "bbb"]
+    assert [item["data_quality"]["bars_seen"] for item in payload["source_slices"]] == [
+        40,
+        40,
+    ]
+    assert all(
+        item["data_quality"]["blocks_research"] is False
+        for item in payload["source_slices"]
+    )
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
 
 
@@ -261,12 +278,15 @@ def test_candidate_training_is_offline_and_does_not_read_credentials(
 
     monkeypatch.setattr(socket, "create_connection", fail_network)
     monkeypatch.setattr(Path, "read_text", guard_read_text)
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA",))
 
     result = run_bounded_candidate_training(
         config=CandidateTrainingConfig(run_id="offline-candidate-training"),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
         candidate_artifact=_candidate_artifact(tmp_path),
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="AAA",
         gpu=GpuReadiness(
             available=True,
             detail="Unit GPU, 24576 MiB",
@@ -275,7 +295,10 @@ def test_candidate_training_is_offline_and_does_not_read_credentials(
         trainer_runner=_offline_runner,
     )
 
+    payload = json.loads(result.metrics_artifact.read_text(encoding="utf-8"))
     assert result.metrics_artifact.exists()
+    assert payload["source_slices"][0]["data_quality"]["bars_seen"] == 50
+    assert payload["source_slices"][0]["data_quality"]["blocks_research"] is False
 
 
 def test_candidate_training_import_keeps_torch_lazy() -> None:

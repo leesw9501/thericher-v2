@@ -22,7 +22,10 @@ from .candidate_training import (
     _candidate_feature_set,
     _candidate_feature_set_or_default,
     _candidate_lookback,
+    _compact_data_quality_summary,
     _reject_repo_artifact_path,
+    _source_slice_summary,
+    _with_source_slices,
     build_candidate_training_dataset,
     build_multi_slice_candidate_training_dataset,
     detect_gpu_readiness,
@@ -383,8 +386,26 @@ def _load_evaluation_dataset(
             symbol=symbol,
             max_bars=config.max_bars,
         )
-        data_source = str(yahoo_snapshot)
-        source_slices = ()
+        lookback = _candidate_lookback(candidate)
+        feature_set = _candidate_feature_set(candidate)
+        dataset = build_candidate_training_dataset(
+            bars,
+            lookback=lookback,
+            data_source=str(yahoo_snapshot),
+            feature_set=feature_set,
+        )
+        return _with_source_slices(
+            dataset,
+            (
+                _source_slice_summary(
+                    slice_id=f"s01_{(symbol or bars[0].symbol).upper()}",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol=dataset.symbol,
+                    dataset=dataset,
+                    data_quality=_compact_data_quality_summary(bars),
+                ),
+            ),
+        )
     else:
         provider = SampleBarProvider.trending_1m(
             count=config.max_bars,

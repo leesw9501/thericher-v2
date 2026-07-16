@@ -8,6 +8,7 @@ import importlib.util
 import json
 import os
 import subprocess
+from collections import Counter
 from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -16,7 +17,7 @@ from pathlib import Path
 from typing import Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe
-from thericher_v2.data import SampleBarProvider
+from thericher_v2.data import SampleBarProvider, assess_bar_quality
 from thericher_v2.serialization import to_jsonable
 
 CandidateTrainingStatus = Literal["candidate_trained_only", "prepared_not_trained"]
@@ -386,6 +387,7 @@ def _load_dataset(
                     yahoo_snapshot=yahoo_snapshot,
                     symbol=dataset.symbol,
                     dataset=dataset,
+                    data_quality=_compact_data_quality_summary(bars),
                 ),
             ),
         )
@@ -526,6 +528,7 @@ def build_multi_slice_candidate_training_dataset(
                 dataset=dataset,
                 bars_seen=dataset.bars_seen,
                 examples_seen=len(dataset.labels),
+                data_quality=_compact_data_quality_summary(bars),
             )
         )
     return CandidateTrainingDataset(
@@ -589,8 +592,9 @@ def _source_slice_summary(
     dataset: CandidateTrainingDataset | None,
     bars_seen: int | None = None,
     examples_seen: int | None = None,
+    data_quality: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    return {
+    summary = {
         "slice_id": slice_id,
         "yahoo_snapshot": str(yahoo_snapshot),
         "symbol": symbol.upper(),
@@ -605,6 +609,20 @@ def _source_slice_summary(
             else 0
         ),
         "feature_names": None if dataset is None else dataset.feature_names,
+    }
+    if data_quality is not None:
+        summary["data_quality"] = data_quality
+    return summary
+
+
+def _compact_data_quality_summary(bars: list[Bar] | tuple[Bar, ...]) -> dict[str, Any]:
+    report = assess_bar_quality(tuple(bars))
+    warning_codes = Counter(warning.code for warning in report.warnings)
+    return {
+        "bars_seen": report.bars_seen,
+        "warning_count": report.warning_count,
+        "blocks_research": report.blocks_research,
+        "warning_codes": dict(sorted(warning_codes.items())),
     }
 
 

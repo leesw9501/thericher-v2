@@ -35,6 +35,7 @@ def test_candidate_evaluation_records_injected_success_outside_repo(tmp_path) ->
     assert payload["metrics"]["backend"] == "unit"
     assert payload["metrics"]["feature_names_match"] is True
     assert payload["local_paper_conversion"] == "deferred_to_next_goal"
+    assert payload["source_slices"] == []
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
     with pytest.raises(ValueError, match="outside the Git workspace"):
         run_bounded_candidate_evaluation(
@@ -83,6 +84,14 @@ def test_candidate_evaluation_reuses_training_source_slices(tmp_path) -> None:
     assert payload["bars_seen"] == 80
     assert payload["examples_seen"] == 72
     assert [item["slice_id"] for item in payload["source_slices"]] == ["aaa", "bbb"]
+    assert [item["data_quality"]["bars_seen"] for item in payload["source_slices"]] == [
+        40,
+        40,
+    ]
+    assert all(
+        item["data_quality"]["blocks_research"] is False
+        for item in payload["source_slices"]
+    )
 
 
 def test_candidate_evaluation_missing_multi_slice_data_is_prepared(tmp_path) -> None:
@@ -180,17 +189,23 @@ def test_candidate_evaluation_is_offline_and_does_not_read_credentials(
     model_artifact.write_text("unit-model", encoding="utf-8")
     monkeypatch.setattr(socket, "create_connection", fail_network)
     monkeypatch.setattr(Path, "read_text", guard_read_text)
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA",))
 
     result = run_bounded_candidate_evaluation(
         config=CandidateEvaluationConfig(run_id="offline-candidate-evaluation"),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
         training_metrics_artifact=_training_metrics_artifact(tmp_path, model_artifact),
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="AAA",
         gpu=_unit_gpu(),
         evaluation_runner=_unit_evaluation_runner,
     )
 
+    payload = json.loads(result.evaluation_artifact.read_text(encoding="utf-8"))
     assert result.evaluation_artifact.exists()
+    assert payload["source_slices"][0]["data_quality"]["bars_seen"] == 50
+    assert payload["source_slices"][0]["data_quality"]["blocks_research"] is False
 
 
 def test_candidate_evaluation_import_keeps_torch_lazy_and_no_broker_paths() -> None:

@@ -580,3 +580,18 @@ Reason: repeated GPU validation is now reusing local Yahoo 1m slices. The
 engine should make data-quality issues visible before spending more GPU time,
 but warnings must not become v1-style gates or reports unless they protect a
 future execution hard stop.
+
+## 2026-07-16 - Compact quality summaries in candidate artifacts
+
+Decision: attach compact `data_quality` summaries to existing candidate
+training/evaluation source-slice metadata when local Yahoo bars are loaded. The
+summary records row count, warning count, non-blocking status, and warning-code
+counts derived from `assess_bar_quality`; deterministic samples and
+config-only unavailable slices keep their existing empty or placeholder source
+metadata.
+
+Reason: the research loop needs slice quality evidence next to model artifacts,
+but it does not need another checker, job family, report, or gate. Keeping the
+projection compact makes repeated GPU experiments easier to compare without
+changing rows, thresholds, replay behavior, broker boundaries, credentials, or
+artifact storage policy.

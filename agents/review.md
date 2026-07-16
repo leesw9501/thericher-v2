@@ -126,10 +126,14 @@
 - Market-data quality checks stayed a pure helper plus focused tests and
   validation CLI summary; they did not add a gate, report family, data
   acquisition path, dashboard, broker behavior, or scheduler.
+- Candidate artifact quality summaries reused the existing checker and
+  source-slice metadata; they did not add a new job family, report, gate,
+  dashboard, scheduler, broker path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward attaching warning summaries to existing research
-  artifacts, without creating a new job family or promotion gate.
+- Push the next task toward a bounded Docker `research` validation that proves
+  the summaries appear in external artifacts, without creating a new job family
+  or promotion gate.

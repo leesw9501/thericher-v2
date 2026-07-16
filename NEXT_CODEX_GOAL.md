@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Attach warning-only market-data quality summaries to existing research artifacts.
+Run the first data-quality-visible bounded GPU validation.
 
-This advances data collection, feature/model research, and backtest/walk-forward
-validation by making local Yahoo slice quality visible in the artifacts that
-drive GPU experiments, without creating gates or new job families.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by proving the new local Yahoo `source_slices[].data_quality`
+summaries appear in external candidate training/evaluation artifacts before the
+next replay evidence is interpreted.
 
 ## Hard Boundaries
 
@@ -61,18 +62,25 @@ drive GPU experiments, without creating gates or new job families.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Reuse `assess_bar_quality`; do not create another data-quality checker.
-3. Attach compact quality summaries to existing candidate training/evaluation
-   source-slice or data-source metadata where local Yahoo bars are loaded.
-4. Keep summaries descriptive and non-blocking. Do not change dataset rows,
-   resampling behavior, local-paper replay, broker boundaries, or model
-   thresholds.
-5. Add focused tests proving summaries are written for local Yahoo slices,
-   omitted or clean for deterministic samples where appropriate, and remain
-   credential/network-free.
-6. Run one small existing Docker `research` smoke only if needed to prove the
-   artifact summary appears outside Git.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Prefer existing `D:\market_data` Yahoo intraday snapshots. Do not acquire
+   more data unless it is no-auth, lawful, license-compatible, and directly
+   useful for this validation.
+3. Run one short Docker `research` candidate training/evaluation smoke on local
+   Yahoo slices and confirm the resulting external artifacts include compact
+   `source_slices[].data_quality` summaries.
+4. If the short smoke is sound and the GPU is available, run one bounded longer
+   candidate training/evaluation pass using existing job kinds and PyTorch CUDA
+   inside Docker `research`.
+5. If evaluation evidence is sound, replay through an existing broker-free
+   local-paper path. Do not add a new replay job kind unless a focused bug fix
+   requires it.
+6. Keep both research queues visible in `agents/engine-research.md`:
+   - short experiments for breadth,
+   - longer candidate training for depth.
+7. Add or adjust focused tests only if code changes are needed. Otherwise keep
+   this task to external artifact execution plus concise stateboard/handoff
+   updates.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -95,11 +103,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused data-quality artifact smoke command used.
+Report the Docker `research` commands used, whether GPU was available, and the
+artifact paths that contain `source_slices[].data_quality`.
 
 ## Suggested Commit Message
 
-`Attach data quality summaries to research artifacts`
+`Run data-quality-visible GPU validation`
 
 ## Completion Report
 
@@ -111,5 +120,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
+- where `source_slices[].data_quality` was observed,
 - what was intentionally not built,
 - next recommended goal.
