@@ -26,6 +26,7 @@ from .candidate_threshold_rerun import (
 from .candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
     DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
     DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
@@ -34,6 +35,7 @@ from .candidate_training import (
     CandidateTrainerRunner,
     CandidateTrainingConfig,
     GpuReadiness,
+    _preprocessing_axis_payload,
     _regularization_axis_payload,
     _reject_repo_artifact_path,
     detect_gpu_readiness,
@@ -61,6 +63,7 @@ class CandidateFeatureBranchConfig:
     max_steps: int = 128
     hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
     weight_decay: float = DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY
+    feature_preprocessing: str = DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
     min_examples: int = 8
     schema_version: int = SCHEMA_VERSION
 
@@ -78,6 +81,7 @@ class CandidateFeatureBranchConfig:
             max_steps=self.max_steps,
             hidden_units=self.hidden_units,
             weight_decay=self.weight_decay,
+            feature_preprocessing=self.feature_preprocessing,
             min_examples=self.min_examples,
         )
         CandidateEvaluationConfig(
@@ -104,6 +108,8 @@ class BoundedCandidateFeatureBranchResult:
     candidate_parameters: dict[str, Any]
     feature_set_id: str
     weight_decay: float
+    feature_preprocessing: str
+    feature_normalization: dict[str, Any] | None
     threshold_loop_closure: dict[str, Any]
     artifact_verification: dict[str, Any]
     training: BoundedCandidateTrainingResult | None
@@ -190,6 +196,7 @@ def run_bounded_candidate_feature_branch(
                 max_steps=config.max_steps,
                 hidden_units=config.hidden_units,
                 weight_decay=config.weight_decay,
+                feature_preprocessing=config.feature_preprocessing,
                 min_examples=config.min_examples,
             ),
             artifact_root=artifact_root,
@@ -247,6 +254,8 @@ def run_bounded_candidate_feature_branch(
         candidate_parameters=candidate_parameters,
         feature_set_id=config.feature_set_id,
         weight_decay=config.weight_decay,
+        feature_preprocessing=config.feature_preprocessing,
+        feature_normalization=None if training is None else training.feature_normalization,
         threshold_loop_closure=threshold_loop_closure,
         artifact_verification=artifact_verification,
         training=training,
@@ -292,6 +301,9 @@ def _candidate_feature_branch_payload(
             "feature_set_id": result.feature_set_id,
             "model_axis": _model_axis_payload(result),
             "regularization_axis": _regularization_axis_payload(result.weight_decay),
+            "feature_preprocessing": result.feature_preprocessing,
+            "preprocessing_axis": _preprocessing_axis_payload(result.feature_preprocessing),
+            "feature_normalization": result.feature_normalization,
             "threshold_loop_closure": result.threshold_loop_closure,
             "artifact_verification": result.artifact_verification,
             "training_status": None if result.training is None else result.training.status,
@@ -454,6 +466,9 @@ def _feature_branch_metrics(
             "promotion_gate": False,
         },
         "regularization_axis": _regularization_axis_payload(config.weight_decay),
+        "feature_preprocessing": config.feature_preprocessing,
+        "preprocessing_axis": _preprocessing_axis_payload(config.feature_preprocessing),
+        "feature_normalization": None if training is None else training.feature_normalization,
         "threshold_loop_closure_recorded": bool(
             threshold_loop_closure.get("closed_for_current_candidate")
         ),

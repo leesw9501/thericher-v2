@@ -102,15 +102,18 @@ from .candidate_threshold_sweep import (
     run_bounded_candidate_threshold_sweep,
 )
 from .candidate_training import (
+    DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
     DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
     DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
     MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
+    SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
     CandidateTrainerRunner,
     CandidateTrainingConfig,
+    _preprocessing_axis_payload,
     _regularization_axis_payload,
     parse_candidate_data_slices,
     run_bounded_candidate_training,
@@ -210,6 +213,7 @@ class ResearchJobSpec:
     candidate_feature_set: str | None = None
     candidate_hidden_units: int | None = None
     candidate_weight_decay: float | None = None
+    candidate_feature_preprocessing: str | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
     max_bars: int = 120
@@ -259,6 +263,19 @@ class ResearchJobSpec:
                     "training or feature branch jobs"
                 )
             _validate_candidate_weight_decay(self.candidate_weight_decay)
+        if self.candidate_feature_preprocessing is not None:
+            if self.kind not in {"candidate_training", "candidate_feature_branch"}:
+                raise ValueError(
+                    "candidate_feature_preprocessing is only supported for "
+                    "candidate training or feature branch jobs"
+                )
+            if self.candidate_feature_preprocessing not in (
+                SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING
+            ):
+                raise ValueError(
+                    "candidate_feature_preprocessing must be one of "
+                    f"{SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING}"
+                )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -492,6 +509,8 @@ def _run_job_kind(
                 weight_decay=spec.candidate_weight_decay
                 if spec.candidate_weight_decay is not None
                 else DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
+                feature_preprocessing=spec.candidate_feature_preprocessing
+                or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -544,6 +563,8 @@ def _run_job_kind(
                 weight_decay=spec.candidate_weight_decay
                 if spec.candidate_weight_decay is not None
                 else DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
+                feature_preprocessing=spec.candidate_feature_preprocessing
+                or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -829,6 +850,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--hidden-units", type=int, dest="candidate_hidden_units")
     parser.add_argument("--weight-decay", type=float, dest="candidate_weight_decay")
+    parser.add_argument(
+        "--feature-preprocessing",
+        choices=SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING,
+        dest="candidate_feature_preprocessing",
+    )
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
     parser.add_argument("--max-bars", type=int, default=120)
@@ -872,6 +898,7 @@ def main() -> None:
         candidate_feature_set=args.candidate_feature_set,
         candidate_hidden_units=args.candidate_hidden_units,
         candidate_weight_decay=args.candidate_weight_decay,
+        candidate_feature_preprocessing=args.candidate_feature_preprocessing,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
         max_bars=args.max_bars,
@@ -1083,6 +1110,11 @@ def _research_job_payload(
             },
             "weight_decay": training.weight_decay,
             "regularization_axis": _regularization_axis_payload(training.weight_decay),
+            "feature_preprocessing": training.feature_preprocessing,
+            "preprocessing_axis": _preprocessing_axis_payload(
+                training.feature_preprocessing
+            ),
+            "feature_normalization": training.feature_normalization,
             "metrics": training.metrics,
         }
     elif isinstance(training, BoundedCandidateEvaluationResult):
@@ -1125,6 +1157,11 @@ def _research_job_payload(
             "gpu": training.gpu,
             "feature_set_id": training.feature_set_id,
             "regularization_axis": _regularization_axis_payload(training.weight_decay),
+            "feature_preprocessing": training.feature_preprocessing,
+            "preprocessing_axis": _preprocessing_axis_payload(
+                training.feature_preprocessing
+            ),
+            "feature_normalization": training.feature_normalization,
             "training_status": None
             if training.training is None
             else training.training.status,

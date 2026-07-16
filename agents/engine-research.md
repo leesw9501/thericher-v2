@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Start a bounded feature-normalization branch because the weight-decay
-   regularization probe still left source-side saturation and zero holdout buy
-   opportunities.
+1. Start a bounded source-vs-holdout probability alignment attribution because
+   feature standardization fixed source-side saturation but still left zero
+   holdout buy opportunities.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -63,6 +63,25 @@
   versus `124` sell opportunities across 6 guarded holdout variants, kept
   replay fill count at `0`, and wrote artifacts under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-weightdecay-opportunity-attribution-20260716`.
+- Last completed:
+  `bounded-standardized-bar-pressure-feature-normalization-smoke-20260716`,
+  status `candidate_feature_branch_evaluated_only`, trained/evaluated
+  `core_plus_bar_pressure_v1` with `hidden_units=4` and
+  `feature_standardization`, recorded source probability range `0.724726`
+  with max probability `0.792910`, and wrote feature-branch, training,
+  evaluation, model, and research-job artifacts outside Git.
+- Last completed:
+  `bounded-standardized-bar-pressure-feature-normalization-replay-cap2-20260716`,
+  status `completed`, replayed source-derived threshold pairs `0.791/0.440`
+  and `0.792/0.440` across CVS, FCX, and KO holdout slices, produced zero
+  local-paper fills, and wrote replay/robustness/research-job artifacts outside
+  Git.
+- Last completed: `bounded-standardized-opportunity-attribution-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, attributed the
+  standardized cap-2 replay to `0` holdout buy opportunities versus `160` sell
+  opportunities across 6 variants, kept replay fill count at `0`, and wrote
+  artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-standardized-opportunity-attribution-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -255,9 +274,16 @@
   `weight_decay=0.01`; source max probability remained `1.000000`, cap-2
   replay produced zero local-paper fills, and attribution found zero holdout
   buy opportunities.
+- Added one bounded feature preprocessing selector,
+  `feature_standardization`, for candidate training and feature-branch jobs
+  only. Docker `research` trained/evaluated `core_plus_bar_pressure_v1` with
+  `hidden_units=4`; source probability range widened to `0.724726`, but
+  cap-2 holdout replay still produced zero local-paper fills and attribution
+  found zero holdout buy opportunities.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should test one bounded feature-normalization branch before running
-  another hidden-units or threshold-only branch.
+  task should inspect source-vs-holdout probability alignment for the
+  standardized branch before running another hidden-units, regularization, or
+  threshold-only branch.

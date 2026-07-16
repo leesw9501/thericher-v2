@@ -23,13 +23,16 @@ from .candidate_training import (
     _candidate_feature_set_or_default,
     _candidate_lookback,
     _compact_data_quality_summary,
+    _preprocessing_axis_payload,
     _reject_repo_artifact_path,
     _source_slice_summary,
     _with_source_slices,
+    apply_training_payload_feature_normalization,
     build_candidate_training_dataset,
     build_multi_slice_candidate_training_dataset,
     detect_gpu_readiness,
     load_yahoo_intraday_1m_bars,
+    validate_checkpoint_feature_normalization,
 )
 
 CandidateEvaluationStatus = Literal["candidate_evaluated_only", "prepared_not_evaluated"]
@@ -224,6 +227,24 @@ def _run_candidate_evaluation_result(
                 f"{expected_feature_names} != {dataset.feature_names}"
             ),
         )
+    try:
+        inference_dataset = apply_training_payload_feature_normalization(
+            dataset,
+            training_payload,
+        )
+    except ValueError as exc:
+        return _prepared_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            dataset=dataset,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            evaluation_artifact=evaluation_artifact,
+            reason=f"candidate feature preprocessing unavailable: {exc}",
+        )
     if model_artifact is None or not model_artifact.exists():
         return _prepared_result(
             config=config,
@@ -250,7 +271,7 @@ def _run_candidate_evaluation_result(
             evaluation_artifact=evaluation_artifact,
             reason=f"GPU readiness unavailable: {gpu.detail}",
         )
-    if len(dataset.labels) < config.min_examples:
+    if len(inference_dataset.labels) < config.min_examples:
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -263,7 +284,7 @@ def _run_candidate_evaluation_result(
             evaluation_artifact=evaluation_artifact,
             reason=(
                 "insufficient evaluation examples: "
-                f"{len(dataset.labels)} < {config.min_examples}"
+                f"{len(inference_dataset.labels)} < {config.min_examples}"
             ),
         )
     if evaluation_runner is None and selected_backend is None:
@@ -281,14 +302,14 @@ def _run_candidate_evaluation_result(
         )
     runner = evaluation_runner or _run_torch_cuda_candidate_evaluation
     try:
-        metrics = runner(dataset, model_artifact, training_payload, config)
+        metrics = runner(inference_dataset, model_artifact, training_payload, config)
     except Exception as exc:  # noqa: BLE001 - evaluation jobs record backend failures.
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
             model_artifact=model_artifact,
             candidate=candidate,
-            dataset=dataset,
+            dataset=inference_dataset,
             gpu=gpu,
             available_backends=available_backends,
             selected_backend=selected_backend,
@@ -296,7 +317,7 @@ def _run_candidate_evaluation_result(
             reason=f"bounded candidate evaluation unavailable: {exc}",
         )
     metrics = {
-        **_baseline_classification_metrics(dataset),
+        **_baseline_classification_metrics(inference_dataset),
         **metrics,
         "local_paper_conversion": "deferred_to_next_goal",
     }
@@ -313,13 +334,13 @@ def _run_candidate_evaluation_result(
         candidate_artifact=_candidate_artifact_from_training_payload(training_payload),
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
-        data_source=dataset.data_source,
-        symbol=dataset.symbol,
-        market=dataset.market,
-        timeframe=dataset.timeframe,
-        bars_seen=dataset.bars_seen,
-        examples_seen=len(dataset.labels),
-        source_slices=dataset.source_slices,
+        data_source=inference_dataset.data_source,
+        symbol=inference_dataset.symbol,
+        market=inference_dataset.market,
+        timeframe=inference_dataset.timeframe,
+        bars_seen=inference_dataset.bars_seen,
+        examples_seen=len(inference_dataset.labels),
+        source_slices=inference_dataset.source_slices,
         metrics=metrics,
         evaluation_artifact=evaluation_artifact,
     )
@@ -481,6 +502,11 @@ def _run_torch_cuda_candidate_probabilities(
     feature_names = tuple(str(name) for name in checkpoint.get("feature_names", ()))
     if feature_names != dataset.feature_names:
         raise ValueError(f"model feature names do not match evaluation dataset: {feature_names}")
+    validate_checkpoint_feature_normalization(
+        checkpoint=checkpoint,
+        training_payload=training_payload,
+        feature_names=dataset.feature_names,
+    )
     state_dict = checkpoint.get("state_dict")
     if not isinstance(state_dict, dict):
         raise ValueError("model checkpoint is missing state_dict")
@@ -505,6 +531,9 @@ def _run_torch_cuda_candidate_probabilities(
         "feature_count": len(dataset.feature_names),
         "feature_names": dataset.feature_names,
         "feature_names_match": True,
+        "feature_preprocessing": dataset.feature_preprocessing,
+        "feature_normalization": dataset.feature_normalization,
+        "preprocessing_axis": _preprocessing_axis_payload(dataset.feature_preprocessing),
         "hidden_units": hidden_units,
         "model_artifact": str(model_artifact),
         "candidate_experiment_id": training_payload.get("candidate_experiment_id"),

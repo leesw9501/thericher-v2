@@ -108,6 +108,10 @@
   existing local-paper robustness path. The weight-decay cap-2 variants still
   had zero fills, missing zero-fill event files were recorded separately, and
   no non-local fill source was observed.
+- Feature-normalization replay rebuilt fill-source evidence from the existing
+  local-paper robustness path. The standardized cap-2 variants still had zero
+  fills, missing zero-fill event files were recorded separately, and no
+  non-local fill source was observed.
 
 ## Next Handoff
 

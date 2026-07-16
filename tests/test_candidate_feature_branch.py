@@ -11,6 +11,7 @@ from thericher_v2.research.candidate_feature_branch import (
     run_bounded_candidate_feature_branch,
 )
 from thericher_v2.research.candidate_training import (
+    CANDIDATE_FEATURE_STANDARDIZATION,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
     GpuReadiness,
@@ -89,6 +90,7 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
             max_steps=8,
             hidden_units=12,
             weight_decay=0.02,
+            feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
         ),
         artifact_root=artifact_root,
         repo_root=Path.cwd(),
@@ -113,7 +115,15 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
         "descriptive_only": True,
         "promotion_gate": False,
     }
+    assert payload["feature_preprocessing"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert payload["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert payload["feature_normalization"]["mode"] == CANDIDATE_FEATURE_STANDARDIZATION
     assert payload["metrics"]["regularization_axis"]["weight_decay"] == 0.02
+    assert payload["metrics"]["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
     assert payload["metrics"]["feature_names"][-3:] == [
         "close_position_in_bar",
         "range_expansion",
@@ -133,6 +143,7 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
             candidate_feature_set=CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
             candidate_hidden_units=12,
             candidate_weight_decay=0.02,
+            candidate_feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
             max_bars=40,
             max_epochs=2,
             max_steps=8,
@@ -154,6 +165,13 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     assert branch["metrics"]["model_axis"]["hidden_units"] == 12
     assert branch["regularization_axis"]["weight_decay"] == 0.02
     assert branch["metrics"]["regularization_axis"]["weight_decay"] == 0.02
+    assert branch["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert branch["feature_normalization"]["mode"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert branch["metrics"]["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
     assert branch["result_scope"]["mode"] == "research_feature_branch_only"
     assert branch["metrics"]["probability_evidence"]["probability_range"] == "0.040000"
     assert Path(payload["artifacts"]["candidate_feature_branch"]).exists()
@@ -287,6 +305,8 @@ def _unit_training_runner(dataset, candidate, model_artifact, config):  # noqa: 
         "feature_names": dataset.feature_names,
         "hidden_units": config.hidden_units,
         "weight_decay": config.weight_decay,
+        "feature_preprocessing": dataset.feature_preprocessing,
+        "feature_normalization": dataset.feature_normalization,
         "candidate_experiment_id": candidate["candidate_experiment_id"],
         "model_artifact": str(model_artifact),
     }

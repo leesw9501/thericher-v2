@@ -8,11 +8,19 @@ from pathlib import Path
 
 import pytest
 
+from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_evaluation import (
     CandidateEvaluationConfig,
     run_bounded_candidate_evaluation,
 )
-from thericher_v2.research.candidate_training import CandidateDataSliceConfig, GpuReadiness
+from thericher_v2.research.candidate_training import (
+    CANDIDATE_FEATURE_STANDARDIZATION,
+    CandidateDataSliceConfig,
+    GpuReadiness,
+    apply_feature_normalization,
+    build_candidate_training_dataset,
+    build_feature_normalization,
+)
 
 
 def test_candidate_evaluation_records_injected_success_outside_repo(tmp_path) -> None:
@@ -91,6 +99,61 @@ def test_candidate_evaluation_reuses_training_source_slices(tmp_path) -> None:
     assert all(
         item["data_quality"]["blocks_research"] is False
         for item in payload["source_slices"]
+    )
+
+
+def test_candidate_evaluation_uses_artifact_feature_normalization(tmp_path) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+    raw_dataset = build_candidate_training_dataset(
+        list(SampleBarProvider.trending_1m(count=120, seed=31).base_bars),
+        lookback=3,
+        data_source="deterministic_sample_heldout_seed31",
+    )
+    feature_normalization = build_feature_normalization(
+        raw_dataset,
+        feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+    )
+    expected_dataset = apply_feature_normalization(
+        raw_dataset,
+        feature_normalization=feature_normalization,
+    )
+
+    def runner(dataset, model, training_payload, _config):  # noqa: ANN001
+        assert model.exists()
+        assert dataset.feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
+        assert dataset.feature_normalization["signature"] == feature_normalization["signature"]
+        assert dataset.features == expected_dataset.features
+        assert training_payload["feature_normalization"]["signature"] == (
+            feature_normalization["signature"]
+        )
+        return {
+            "backend": "unit",
+            "feature_names": dataset.feature_names,
+            "feature_names_match": True,
+            "feature_preprocessing": dataset.feature_preprocessing,
+            "feature_normalization": dataset.feature_normalization,
+            "model_artifact": str(model),
+        }
+
+    result = run_bounded_candidate_evaluation(
+        config=CandidateEvaluationConfig(run_id="standardized-candidate-evaluation"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=_training_metrics_artifact(
+            tmp_path,
+            model_artifact,
+            feature_normalization=feature_normalization,
+        ),
+        gpu=_unit_gpu(),
+        evaluation_runner=runner,
+    )
+
+    payload = json.loads(result.evaluation_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_evaluated_only"
+    assert payload["metrics"]["feature_preprocessing"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert payload["metrics"]["feature_normalization"]["signature"] == (
+        feature_normalization["signature"]
     )
 
 
@@ -225,6 +288,7 @@ def _training_metrics_artifact(
     *,
     feature_names: list[str] | None = None,
     source_slices: tuple[CandidateDataSliceConfig, ...] = (),
+    feature_normalization: dict[str, object] | None = None,
 ) -> Path:
     source_slice_payload = [
         {
@@ -247,6 +311,10 @@ def _training_metrics_artifact(
                 },
                 "candidate_artifact": str(tmp_path / "candidate.json"),
                 "source_slices": source_slice_payload,
+                "feature_preprocessing": "none"
+                if feature_normalization is None
+                else feature_normalization["mode"],
+                "feature_normalization": feature_normalization,
                 "artifacts": {
                     "model": str(model_artifact),
                 },

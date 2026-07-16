@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded feature-normalization branch for saturated candidate outputs.
+Build a bounded source-vs-holdout probability alignment attribution for the
+standardized feature branch.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by testing whether one artifact-driven input normalization
-selector can reduce source-side probability saturation before the next replay
-loop.
+This advances backtest and walk-forward validation plus PnL attribution by
+explaining why `feature_standardization` reduced source-side saturation but the
+cap-2 holdout replay still produced zero buy opportunities and zero local-paper
+fills.
 
 ## Hard Boundaries
 
@@ -30,7 +31,7 @@ loop.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
 - Do not start a broad scheduler, agent framework, promotion gate, dashboard
-  expansion, preprocessing search, or optimizer search.
+  expansion, threshold optimizer, preprocessing search, or model search.
 - Do not call any threshold, candidate, feature set, preprocessing branch, or
   model best, recommended, passed, promoted, or production ready.
 
@@ -63,40 +64,35 @@ loop.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-weightdecay-bar-pressure-regularization-smoke-20260716`
-   - `bounded-weightdecay-bar-pressure-regularization-replay-cap2-20260716`
+   - `bounded-standardized-bar-pressure-feature-normalization-smoke-20260716`
+   - `bounded-standardized-bar-pressure-feature-normalization-replay-cap2-20260716`
+   - `bounded-standardized-opportunity-attribution-20260716`
    - `bounded-weightdecay-opportunity-attribution-20260716`
-   - `bounded-hidden4-opportunity-attribution-20260716`
-3. Inspect candidate training, evaluation, and probability inference feature
-   tensor flow before adding code.
-4. Add exactly one bounded preprocessing selector, preferably
-   `feature_standardization`, to candidate training and candidate
-   feature-branch jobs only.
-5. Keep defaults behavior-compatible. Evaluation, replay, attribution, and
-   broker-facing code must remain checkpoint/artifact-driven rather than
-   accepting an independent preprocessing value.
-6. Persist any feature normalization statistics in external model/training
-   artifacts and make evaluation/probability inference consume them from the
-   artifact lineage.
-7. Record the preprocessing axis in training and feature-branch artifacts with
-   descriptive-only metadata and no model-promotion language.
-8. Add focused tests proving:
-   - default feature tensors remain unchanged,
-   - invalid preprocessing selectors are rejected,
-   - the research job runner passes the selector only to training and
-     feature-branch jobs,
-   - evaluation/probability paths use artifact-carried normalization metadata,
+3. Inspect the existing probability trace, threshold robustness, and
+   opportunity attribution helpers before adding code.
+4. Add one small artifact-only alignment helper or entrypoint that consumes
+   existing source and holdout probability evidence where possible.
+5. Record compact source-vs-holdout evidence outside Git:
+   - source probability min/max/mean/range,
+   - holdout per-slice probability min/max/mean/range or available trace
+     equivalent,
+   - buy/sell threshold opportunity counts,
+   - zero-fill local-paper source verification,
+   - artifact paths used.
+6. Keep the result descriptive only. It must not pick thresholds, select a
+   model, start a promotion gate, or mutate replay behavior.
+7. Add focused tests proving:
+   - attribution consumes artifacts only,
+   - no broker/network/credential access is needed,
+   - zero-fill local-paper evidence remains replayable,
    - generated artifacts are outside Git or mocked in tests,
+   - missing zero-fill event files remain tolerated only for zero-fill variants,
    - PyTorch stays confined to Docker `research` and local tests do not import
      torch.
-9. Run a bounded Docker `research` feature-branch smoke on existing CVS, FCX,
-   and KO local data if the code change is sound. Prefer
-   `core_plus_bar_pressure_v1`, `hidden_units=4`, and the new normalization
-   selector.
-10. If the feature-branch smoke completes, run the existing cap-limited
-    feature-branch replay or opportunity attribution path only as needed to
-    compare source saturation and holdout opportunity evidence.
-11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Run the attribution against the standardized branch artifacts. Use Docker
+   `research` only if an existing trace must be regenerated; otherwise prefer
+   local artifact-only execution.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -119,12 +115,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused tests, Docker `research` commands, GPU availability, and
-artifact paths used.
+Report any focused tests, artifact-only smoke commands, Docker `research`
+commands, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded feature normalization branch`
+`Add bounded probability alignment attribution`
 
 ## Completion Report
 
@@ -136,6 +132,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- feature-normalization branch findings,
+- source-vs-holdout alignment findings,
 - what was intentionally not built,
 - next recommended goal.

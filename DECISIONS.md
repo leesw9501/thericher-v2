@@ -686,3 +686,20 @@ regularization probe before trying another model path. Keeping the selector on
 the training side preserves evaluation/replay/attribution as checkpoint-driven
 flows and avoids KIS access, credentials, broker submit code, dashboards,
 schedulers, optimizer-search sprawl, or model-promotion language.
+
+## 2026-07-16 - Bounded feature preprocessing axis
+
+Decision: expose exactly one preprocessing selector,
+`--feature-preprocessing feature_standardization`, through the existing research
+job runner for `candidate_training` and `candidate_feature_branch` only. The
+default remains `none`. Training computes feature means/scales, writes
+normalization metadata and a signature to external training/model artifacts,
+and evaluation, replay, and probability-trace paths consume the artifact-carried
+metadata rather than accepting an independent preprocessing value.
+
+Reason: saturated feature-branch probability evidence needed one bounded input
+normalization probe. Binding preprocessing to the checkpoint/artifact lineage
+keeps replay deterministic, avoids a broad preprocessing search, keeps PyTorch
+confined to Docker `research`, writes artifacts outside Git, and avoids KIS
+access, credentials, broker submit code, dashboards, schedulers, or
+model-promotion language.

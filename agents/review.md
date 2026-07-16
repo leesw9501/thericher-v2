@@ -163,11 +163,16 @@
   candidate training and feature-branch job paths only. It added no new job
   family, report, gate, dashboard, scheduler, broker path, optimizer search,
   or model-promotion language, and replay/attribution stayed artifact-driven.
+- Feature-normalization work added one bounded preprocessing selector to the
+  existing candidate training and feature-branch job paths only. It added no
+  new job family, report, gate, dashboard, scheduler, broker path,
+  preprocessing search, or model-promotion language, and
+  evaluation/replay/trace stayed artifact-driven.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small feature-normalization branch without
-  creating a broad preprocessing search, scheduler, dashboard, or promotion
-  gate.
+- Push the next task toward one small source-vs-holdout probability alignment
+  attribution without creating a broad preprocessing search, scheduler,
+  dashboard, or promotion gate.

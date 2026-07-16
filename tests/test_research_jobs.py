@@ -12,6 +12,7 @@ from thericher_v2.research.candidate_threshold_robustness import (
     CandidateThresholdRobustnessSliceConfig,
 )
 from thericher_v2.research.candidate_training import (
+    CANDIDATE_FEATURE_STANDARDIZATION,
     MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
     CandidateDataSliceConfig,
 )
@@ -98,6 +99,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             "steps_run": 1,
             "hidden_units": config.hidden_units,
             "weight_decay": config.weight_decay,
+            "feature_preprocessing": dataset.feature_preprocessing,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
@@ -123,6 +125,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             max_bars=40,
             candidate_hidden_units=12,
             candidate_weight_decay=0.02,
+            candidate_feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -151,6 +154,18 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
     assert payload["candidate_training"]["metrics"]["backend"] == "unit"
     assert payload["candidate_training"]["metrics"]["hidden_units"] == 12
     assert payload["candidate_training"]["metrics"]["weight_decay"] == 0.02
+    assert payload["candidate_training"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert payload["candidate_training"]["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert payload["candidate_training"]["feature_normalization"]["mode"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert payload["candidate_training"]["metrics"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
     assert payload["candidate_training"]["source_slices"][0]["slice_id"] == "aaa"
     assert Path(payload["artifacts"]["candidate_metrics"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
@@ -209,6 +224,22 @@ def test_research_job_rejects_weight_decay_outside_training_axis() -> None:
         )
 
 
+def test_research_job_rejects_feature_preprocessing_outside_training_axis() -> None:
+    with pytest.raises(ValueError, match="candidate_feature_preprocessing"):
+        ResearchJobSpec(
+            job_id="bad-feature-preprocessing-eval",
+            kind="candidate_evaluation",
+            candidate_feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+        )
+
+    with pytest.raises(ValueError, match="candidate_feature_preprocessing"):
+        ResearchJobSpec(
+            job_id="bad-feature-preprocessing-value",
+            kind="candidate_training",
+            candidate_feature_preprocessing="broad_preprocessing_search",
+        )
+
+
 def test_research_job_parser_exposes_weight_decay_for_bounded_training_axis() -> None:
     args = build_parser().parse_args(
         [
@@ -220,6 +251,19 @@ def test_research_job_parser_exposes_weight_decay_for_bounded_training_axis() ->
     )
 
     assert args.candidate_weight_decay == 0.02
+
+
+def test_research_job_parser_exposes_feature_preprocessing_for_training_axis() -> None:
+    args = build_parser().parse_args(
+        [
+            "--kind",
+            "candidate_training",
+            "--feature-preprocessing",
+            CANDIDATE_FEATURE_STANDARDIZATION,
+        ]
+    )
+
+    assert args.candidate_feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
 
 
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:

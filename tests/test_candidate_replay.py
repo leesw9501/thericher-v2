@@ -8,12 +8,19 @@ from pathlib import Path
 
 import pytest
 
+from thericher_v2.data import SampleBarProvider
 from thericher_v2.execution import LOCAL_PAPER_SOURCE
 from thericher_v2.research.candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
-from thericher_v2.research.candidate_training import GpuReadiness
+from thericher_v2.research.candidate_training import (
+    CANDIDATE_FEATURE_STANDARDIZATION,
+    GpuReadiness,
+    apply_feature_normalization,
+    build_candidate_training_dataset,
+    build_feature_normalization,
+)
 
 
 def test_candidate_replay_records_local_paper_fills_and_artifact_outside_repo(tmp_path) -> None:
@@ -140,6 +147,70 @@ def test_candidate_replay_missing_backend_is_prepared_not_replayed(monkeypatch, 
     assert "no operator-approved research GPU replay backend" in payload["reason"]
 
 
+def test_candidate_replay_probability_path_uses_artifact_feature_normalization(
+    tmp_path,
+) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    raw_dataset = build_candidate_training_dataset(
+        list(SampleBarProvider.trending_1m(count=40, seed=37).base_bars),
+        lookback=3,
+        data_source="deterministic_sample_replay_seed37",
+    )
+    feature_normalization = build_feature_normalization(
+        raw_dataset,
+        feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+    )
+    expected_dataset = apply_feature_normalization(
+        raw_dataset,
+        feature_normalization=feature_normalization,
+    )
+    training_artifact = _training_metrics_artifact(
+        tmp_path,
+        model_artifact,
+        feature_normalization=feature_normalization,
+    )
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+
+    def runner(dataset, model, training_payload):  # noqa: ANN001
+        assert model.exists()
+        assert dataset.feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
+        assert dataset.features == expected_dataset.features
+        assert training_payload["feature_normalization"]["signature"] == (
+            feature_normalization["signature"]
+        )
+        return {
+            "backend": "unit",
+            "operation": "unit_candidate_probabilities",
+            "probabilities": tuple(0.80 for _ in dataset.labels),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": True,
+            "feature_preprocessing": dataset.feature_preprocessing,
+            "feature_normalization": dataset.feature_normalization,
+            "model_artifact": str(model),
+        }
+
+    result = run_bounded_candidate_replay(
+        config=CandidateReplayConfig(
+            run_id="standardized-candidate-replay",
+            max_bars=40,
+            buy_threshold=0.70,
+            sell_threshold=0.30,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=runner,
+    )
+
+    payload = json.loads(result.replay_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_replayed_only"
+    assert payload["probability_metrics"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+
+
 def test_candidate_replay_is_offline_and_does_not_read_credentials(
     monkeypatch,
     tmp_path,
@@ -226,7 +297,12 @@ def _model_artifact(tmp_path: Path) -> Path:
     return path
 
 
-def _training_metrics_artifact(tmp_path: Path, model_artifact: Path) -> Path:
+def _training_metrics_artifact(
+    tmp_path: Path,
+    model_artifact: Path,
+    *,
+    feature_normalization: dict[str, object] | None = None,
+) -> Path:
     path = tmp_path / "training-metrics.json"
     path.write_text(
         json.dumps(
@@ -239,6 +315,10 @@ def _training_metrics_artifact(tmp_path: Path, model_artifact: Path) -> Path:
                 "artifacts": {
                     "model": str(model_artifact),
                 },
+                "feature_preprocessing": "none"
+                if feature_normalization is None
+                else feature_normalization["mode"],
+                "feature_normalization": feature_normalization,
                 "metrics": {
                     "feature_names": [
                         "lookback_return",

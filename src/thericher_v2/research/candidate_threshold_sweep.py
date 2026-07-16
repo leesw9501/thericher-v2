@@ -39,6 +39,7 @@ from .candidate_replay import (
 from .candidate_training import (
     GpuReadiness,
     _reject_repo_artifact_path,
+    apply_training_payload_feature_normalization,
     detect_gpu_readiness,
 )
 
@@ -437,6 +438,29 @@ def _run_trace_result(
                 f"{expected_feature_names} != {source.dataset.feature_names}"
             ),
         )
+    try:
+        inference_source = CandidateReplaySource(
+            bars=source.bars,
+            dataset=apply_training_payload_feature_normalization(
+                source.dataset,
+                training_payload,
+            ),
+            data_source=source.data_source,
+        )
+    except ValueError as exc:
+        return _prepared_trace_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            trace_artifact=trace_artifact,
+            reason=f"candidate feature preprocessing unavailable: {exc}",
+        )
     if model_artifact is None or not model_artifact.exists():
         return _prepared_trace_result(
             config=config,
@@ -465,7 +489,7 @@ def _run_trace_result(
             trace_artifact=trace_artifact,
             reason=f"GPU readiness unavailable: {gpu.detail}",
         )
-    if len(source.dataset.labels) < config.min_examples:
+    if len(inference_source.dataset.labels) < config.min_examples:
         return _prepared_trace_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -479,7 +503,7 @@ def _run_trace_result(
             trace_artifact=trace_artifact,
             reason=(
                 "insufficient trace examples: "
-                f"{len(source.dataset.labels)} < {config.min_examples}"
+                f"{len(inference_source.dataset.labels)} < {config.min_examples}"
             ),
         )
     if probability_runner is None and selected_backend is None:
@@ -499,7 +523,7 @@ def _run_trace_result(
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities
     try:
-        probability_result = runner(source.dataset, model_artifact, training_payload)
+        probability_result = runner(inference_source.dataset, model_artifact, training_payload)
         probabilities = _probabilities_from_result(probability_result)
     except Exception as exc:  # noqa: BLE001 - trace jobs record backend failures.
         return _prepared_trace_result(
@@ -515,7 +539,7 @@ def _run_trace_result(
             trace_artifact=trace_artifact,
             reason=f"bounded probability trace unavailable: {exc}",
         )
-    if len(probabilities) != len(source.dataset.labels):
+    if len(probabilities) != len(inference_source.dataset.labels):
         return _prepared_trace_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -542,14 +566,14 @@ def _run_trace_result(
         model_artifact=model_artifact,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
-        data_source=source.data_source,
-        symbol=source.dataset.symbol,
-        market=source.dataset.market,
-        timeframe=source.dataset.timeframe,
-        bars_seen=source.dataset.bars_seen,
-        examples_seen=len(source.dataset.labels),
-        lookback=source.dataset.lookback,
-        entries=_trace_entries(source, probabilities),
+        data_source=inference_source.data_source,
+        symbol=inference_source.dataset.symbol,
+        market=inference_source.dataset.market,
+        timeframe=inference_source.dataset.timeframe,
+        bars_seen=inference_source.dataset.bars_seen,
+        examples_seen=len(inference_source.dataset.labels),
+        lookback=inference_source.dataset.lookback,
+        entries=_trace_entries(inference_source, probabilities),
         probability_metrics=_probability_metrics(probabilities, probability_result),
         trace_artifact=trace_artifact,
     )

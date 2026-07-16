@@ -239,6 +239,14 @@ Implemented and pushed:
   `core_plus_bar_pressure_v1` with `hidden_units=4` and `weight_decay=0.01` in
   Docker `research`, then replayed cap-2 holdout thresholds with zero
   local-paper fills and zero buy opportunities,
+- bounded feature-normalization branch; it exposes one artifact-driven
+  `feature_standardization` selector for candidate training and
+  feature-branch jobs only, persists normalization stats/signatures in
+  external training/model artifacts, keeps evaluation/replay/trace paths
+  artifact-driven, ran `core_plus_bar_pressure_v1` with `hidden_units=4` in
+  Docker `research`, reduced source-side saturation to probability range
+  `0.724726`, then replayed cap-2 holdout thresholds with zero local-paper
+  fills and zero holdout buy opportunities,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -259,7 +267,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `224 passed`
+- `229 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -303,15 +311,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded feature-normalization branch:
+Start one bounded source-vs-holdout probability alignment attribution:
 
-1. use the regularization replay opportunity attribution as context,
-2. add one artifact-driven feature normalization selector to the existing
-   candidate training and feature-branch path,
-3. run a bounded Docker `research` feature/model branch to see whether source
-   saturation and holdout replay opportunity mismatch change,
-4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
-   behavior.
+1. use the standardized feature-branch smoke, replay, and attribution artifacts
+   as context,
+2. consume existing source and holdout probability traces where possible,
+3. record compact per-slice probability range/quantile and buy-opportunity
+   evidence outside Git,
+4. avoid retraining, new candidate modules, dashboards, gates, schedulers, or
+   broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

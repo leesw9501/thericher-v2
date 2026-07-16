@@ -10,8 +10,10 @@ import pytest
 
 from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
+    CANDIDATE_FEATURE_STANDARDIZATION,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
     DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
     MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
@@ -45,6 +47,8 @@ def test_candidate_training_builds_dataset_from_sample_bars() -> None:
         "volume_change",
     )
     assert dataset.source_slices == ()
+    assert dataset.feature_preprocessing == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    assert dataset.feature_normalization is None
 
 
 def test_candidate_training_builds_bar_position_feature_branch() -> None:
@@ -144,8 +148,16 @@ def test_candidate_training_builds_multi_slice_dataset_without_feature_shape_dri
 def test_candidate_training_records_injected_success_and_model_artifact_outside_repo(
     tmp_path,
 ) -> None:
+    raw_dataset = build_candidate_training_dataset(
+        list(SampleBarProvider.trending_1m(count=120, seed=29).base_bars),
+        lookback=3,
+        data_source="deterministic_sample",
+    )
+
     def runner(dataset, candidate, model_artifact, config):  # noqa: ANN001
         model_artifact.write_text("unit-model", encoding="utf-8")
+        assert dataset.features == raw_dataset.features
+        assert dataset.feature_preprocessing == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
         return {
             "backend": "unit",
             "operation": "unit_candidate_training",
@@ -154,6 +166,8 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
             "steps_run": 1,
             "hidden_units": config.hidden_units,
             "weight_decay": config.weight_decay,
+            "feature_preprocessing": dataset.feature_preprocessing,
+            "feature_normalization": dataset.feature_normalization,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
@@ -198,6 +212,15 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
         "descriptive_only": True,
         "promotion_gate": False,
     }
+    assert payload["feature_preprocessing"] == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    assert payload["preprocessing_axis"] == {
+        "axis": "feature_preprocessing",
+        "feature_preprocessing": DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+    assert payload["feature_normalization"]["mode"] == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    assert payload["metrics"]["feature_preprocessing"] == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
     assert payload["metrics"]["weight_decay"] == 0.02
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
     with pytest.raises(ValueError, match="outside the Git workspace"):
@@ -210,6 +233,51 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
                 checked_at=datetime(2026, 1, 2, tzinfo=UTC),
             ),
         )
+
+
+def test_candidate_training_standardizes_features_and_records_metadata(tmp_path) -> None:
+    def runner(dataset, _candidate, model_artifact, config):  # noqa: ANN001
+        model_artifact.write_text("unit-model", encoding="utf-8")
+        assert config.feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
+        assert dataset.feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
+        assert dataset.feature_normalization is not None
+        columns = list(zip(*dataset.features, strict=True))
+        assert all(abs(sum(column) / len(column)) < 1e-10 for column in columns)
+        return {
+            "backend": "unit",
+            "feature_preprocessing": dataset.feature_preprocessing,
+            "feature_normalization": dataset.feature_normalization,
+            "feature_names": dataset.feature_names,
+            "model_artifact": str(model_artifact),
+        }
+
+    result = run_bounded_candidate_training(
+        config=CandidateTrainingConfig(
+            run_id="unit-standardized-candidate-training",
+            feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        candidate_artifact=_candidate_artifact(tmp_path),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=runner,
+    )
+
+    payload = json.loads(result.metrics_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_trained_only"
+    assert payload["feature_preprocessing"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert payload["preprocessing_axis"]["feature_preprocessing"] == (
+        CANDIDATE_FEATURE_STANDARDIZATION
+    )
+    assert payload["feature_normalization"]["mode"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert payload["feature_normalization"]["signature"]
+    assert payload["metrics"]["feature_normalization"]["signature"] == (
+        payload["feature_normalization"]["signature"]
+    )
 
 
 def test_candidate_training_records_multi_slice_source_rows(tmp_path) -> None:
@@ -326,6 +394,8 @@ def test_candidate_training_config_rejects_unbounded_caps() -> None:
         CandidateTrainingConfig(weight_decay=float("nan"))
     with pytest.raises(ValueError, match="weight_decay"):
         CandidateTrainingConfig(weight_decay=float("inf"))
+    with pytest.raises(ValueError, match="feature_preprocessing"):
+        CandidateTrainingConfig(feature_preprocessing="broad_preprocessing_search")
 
 
 def test_candidate_training_is_offline_and_does_not_read_credentials(
@@ -412,6 +482,7 @@ def _offline_runner(dataset, candidate, model_artifact, _config):  # noqa: ANN00
         "backend": "unit",
         "examples_seen": len(dataset.labels),
         "weight_decay": _config.weight_decay,
+        "feature_preprocessing": dataset.feature_preprocessing,
         "candidate_experiment_id": candidate["candidate_experiment_id"],
         "model_artifact": str(model_artifact),
     }

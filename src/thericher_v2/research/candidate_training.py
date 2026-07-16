@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import gzip
+import hashlib
 import importlib.util
 import json
 import math
@@ -30,6 +31,13 @@ DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS = 8
 MAX_CANDIDATE_TRAINING_HIDDEN_UNITS = 64
 DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY = 0.0
 MAX_CANDIDATE_TRAINING_WEIGHT_DECAY = 0.1
+DEFAULT_CANDIDATE_FEATURE_PREPROCESSING = "none"
+CANDIDATE_FEATURE_STANDARDIZATION = "feature_standardization"
+SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING = (
+    DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+    CANDIDATE_FEATURE_STANDARDIZATION,
+)
+FEATURE_STANDARDIZATION_SCALE_FLOOR = 1e-12
 MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 CORE_FEATURE_SET_ID = "core_v1"
@@ -62,6 +70,7 @@ class CandidateTrainingConfig:
     learning_rate: float = 0.01
     hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
     weight_decay: float = DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY
+    feature_preprocessing: str = DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -96,6 +105,11 @@ class CandidateTrainingConfig:
             field_name="weight_decay",
             ceiling=MAX_CANDIDATE_TRAINING_WEIGHT_DECAY,
         )
+        if self.feature_preprocessing not in SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING:
+            raise ValueError(
+                "feature_preprocessing must be one of "
+                f"{SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING}"
+            )
 
 
 @dataclass(frozen=True)
@@ -127,6 +141,8 @@ class CandidateTrainingDataset:
     bars_seen: int
     lookback: int
     source_slices: tuple[dict[str, Any], ...] = ()
+    feature_preprocessing: str = DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    feature_normalization: dict[str, Any] | None = None
     schema_version: int = SCHEMA_VERSION
 
 
@@ -153,6 +169,8 @@ class BoundedCandidateTrainingResult:
     max_steps: int
     hidden_units: int
     weight_decay: float
+    feature_preprocessing: str
+    feature_normalization: dict[str, Any] | None
     metrics: dict[str, Any]
     metrics_artifact: Path
     model_artifact: Path | None = None
@@ -290,9 +308,17 @@ def _run_candidate_training_result(
             metrics_artifact=metrics_artifact,
             reason="no operator-approved research GPU training backend installed",
         )
+    feature_normalization = build_feature_normalization(
+        dataset,
+        feature_preprocessing=config.feature_preprocessing,
+    )
+    training_dataset = apply_feature_normalization(
+        dataset,
+        feature_normalization=feature_normalization,
+    )
     runner = trainer_runner or _run_torch_cuda_candidate_training
     try:
-        metrics = runner(dataset, candidate, model_artifact, config)
+        metrics = runner(training_dataset, candidate, model_artifact, config)
     except Exception as exc:  # noqa: BLE001 - candidate jobs record non-fatal backend failures.
         return _prepared_result(
             config=config,
@@ -327,6 +353,8 @@ def _run_candidate_training_result(
         max_steps=config.max_steps,
         hidden_units=config.hidden_units,
         weight_decay=config.weight_decay,
+        feature_preprocessing=config.feature_preprocessing,
+        feature_normalization=feature_normalization,
         metrics=metrics,
         metrics_artifact=metrics_artifact,
         model_artifact=model_artifact,
@@ -367,6 +395,11 @@ def _prepared_result(
         max_steps=config.max_steps,
         hidden_units=config.hidden_units,
         weight_decay=config.weight_decay,
+        feature_preprocessing=config.feature_preprocessing,
+        feature_normalization=build_feature_normalization(
+            dataset,
+            feature_preprocessing=config.feature_preprocessing,
+        ),
         metrics={},
         metrics_artifact=metrics_artifact,
     )
@@ -582,6 +615,8 @@ def _with_source_slices(
         bars_seen=dataset.bars_seen,
         lookback=dataset.lookback,
         source_slices=source_slices,
+        feature_preprocessing=dataset.feature_preprocessing,
+        feature_normalization=dataset.feature_normalization,
     )
 
 
@@ -603,6 +638,8 @@ def _empty_dataset(
         bars_seen=0,
         lookback=lookback,
         source_slices=source_slices,
+        feature_preprocessing=DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+        feature_normalization=None,
     )
 
 
@@ -722,6 +759,9 @@ def _run_torch_cuda_candidate_training(
             "candidate_experiment_id": candidate.get("candidate_experiment_id"),
             "candidate_parameters": candidate.get("candidate_parameters") or {},
             "feature_names": dataset.feature_names,
+            "feature_preprocessing": dataset.feature_preprocessing,
+            "feature_normalization": dataset.feature_normalization,
+            "preprocessing_axis": _preprocessing_axis_payload(dataset.feature_preprocessing),
             "hidden_units": config.hidden_units,
             "weight_decay": config.weight_decay,
             "state_dict": model.state_dict(),
@@ -737,6 +777,9 @@ def _run_torch_cuda_candidate_training(
         "examples_seen": len(dataset.labels),
         "feature_count": len(dataset.feature_names),
         "feature_names": dataset.feature_names,
+        "feature_preprocessing": dataset.feature_preprocessing,
+        "feature_normalization": dataset.feature_normalization,
+        "preprocessing_axis": _preprocessing_axis_payload(dataset.feature_preprocessing),
         "hidden_units": config.hidden_units,
         "weight_decay": config.weight_decay,
         "initial_loss": f"{initial_loss.item():.6f}",
@@ -779,6 +822,9 @@ def _candidate_training_payload(
             "model_axis": _model_axis_payload(result.hidden_units),
             "weight_decay": result.weight_decay,
             "regularization_axis": _regularization_axis_payload(result.weight_decay),
+            "feature_preprocessing": result.feature_preprocessing,
+            "preprocessing_axis": _preprocessing_axis_payload(result.feature_preprocessing),
+            "feature_normalization": result.feature_normalization,
             "metrics": result.metrics,
             "artifacts": {
                 "metrics": str(result.metrics_artifact),
@@ -808,6 +854,280 @@ def _regularization_axis_payload(weight_decay: float) -> dict[str, Any]:
         "descriptive_only": True,
         "promotion_gate": False,
     }
+
+
+def _preprocessing_axis_payload(feature_preprocessing: str) -> dict[str, Any]:
+    return {
+        "axis": "feature_preprocessing",
+        "feature_preprocessing": feature_preprocessing,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+
+
+def build_feature_normalization(
+    dataset: CandidateTrainingDataset,
+    *,
+    feature_preprocessing: str,
+) -> dict[str, Any]:
+    if feature_preprocessing not in SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING:
+        raise ValueError(
+            "feature_preprocessing must be one of "
+            f"{SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING}"
+        )
+    feature_names = tuple(dataset.feature_names)
+    if feature_preprocessing == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+        return _feature_normalization_payload(
+            mode=DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+            feature_names=feature_names,
+            means=(),
+            scales=(),
+            zero_scale_feature_names=(),
+        )
+    if not dataset.features:
+        means = tuple(0.0 for _ in feature_names)
+        scales = tuple(1.0 for _ in feature_names)
+        return _feature_normalization_payload(
+            mode=CANDIDATE_FEATURE_STANDARDIZATION,
+            feature_names=feature_names,
+            means=means,
+            scales=scales,
+            zero_scale_feature_names=feature_names,
+        )
+    width = len(feature_names)
+    if any(len(row) != width for row in dataset.features):
+        raise ValueError("feature rows must match feature_names length")
+    columns = tuple(tuple(row[index] for row in dataset.features) for index in range(width))
+    means = tuple(sum(column) / len(column) for column in columns)
+    scales: list[float] = []
+    zero_scale_feature_names: list[str] = []
+    for name, column, mean in zip(feature_names, columns, means, strict=True):
+        variance = sum((value - mean) ** 2 for value in column) / len(column)
+        scale = math.sqrt(max(variance, 0.0))
+        if not math.isfinite(scale) or scale <= FEATURE_STANDARDIZATION_SCALE_FLOOR:
+            scale = 1.0
+            zero_scale_feature_names.append(name)
+        scales.append(scale)
+    return _feature_normalization_payload(
+        mode=CANDIDATE_FEATURE_STANDARDIZATION,
+        feature_names=feature_names,
+        means=means,
+        scales=tuple(scales),
+        zero_scale_feature_names=tuple(zero_scale_feature_names),
+    )
+
+
+def apply_feature_normalization(
+    dataset: CandidateTrainingDataset,
+    *,
+    feature_normalization: dict[str, Any],
+) -> CandidateTrainingDataset:
+    mode = str(feature_normalization.get("mode") or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING)
+    if mode == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+        return _with_feature_preprocessing(
+            dataset,
+            feature_preprocessing=mode,
+            feature_normalization=feature_normalization,
+        )
+    _validate_feature_normalization_payload(feature_normalization, dataset.feature_names)
+    means = tuple(float(value) for value in feature_normalization["means"])
+    scales = tuple(float(value) for value in feature_normalization["scales"])
+    transformed = tuple(
+        tuple(
+            (value - mean) / scale
+            for value, mean, scale in zip(row, means, scales, strict=True)
+        )
+        for row in dataset.features
+    )
+    return CandidateTrainingDataset(
+        features=transformed,
+        labels=dataset.labels,
+        feature_names=dataset.feature_names,
+        symbol=dataset.symbol,
+        market=dataset.market,
+        timeframe=dataset.timeframe,
+        data_source=dataset.data_source,
+        bars_seen=dataset.bars_seen,
+        lookback=dataset.lookback,
+        source_slices=dataset.source_slices,
+        feature_preprocessing=mode,
+        feature_normalization=feature_normalization,
+    )
+
+
+def apply_training_payload_feature_normalization(
+    dataset: CandidateTrainingDataset,
+    training_payload: dict[str, Any],
+) -> CandidateTrainingDataset:
+    feature_normalization = feature_normalization_from_payload(
+        training_payload,
+        fallback_feature_names=dataset.feature_names,
+    )
+    return apply_feature_normalization(
+        dataset,
+        feature_normalization=feature_normalization,
+    )
+
+
+def feature_normalization_from_payload(
+    payload: dict[str, Any],
+    *,
+    fallback_feature_names: tuple[str, ...],
+) -> dict[str, Any]:
+    value = payload.get("feature_normalization")
+    if value is None:
+        return _feature_normalization_payload(
+            mode=DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+            feature_names=fallback_feature_names,
+            means=(),
+            scales=(),
+            zero_scale_feature_names=(),
+        )
+    if not isinstance(value, dict):
+        raise ValueError("feature_normalization must be a JSON object")
+    mode = str(value.get("mode") or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING)
+    if mode == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+        return _feature_normalization_payload(
+            mode=DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
+            feature_names=fallback_feature_names,
+            means=(),
+            scales=(),
+            zero_scale_feature_names=(),
+        )
+    _validate_feature_normalization_payload(value, fallback_feature_names)
+    return value
+
+
+def validate_checkpoint_feature_normalization(
+    *,
+    checkpoint: dict[str, Any],
+    training_payload: dict[str, Any],
+    feature_names: tuple[str, ...],
+) -> None:
+    payload_normalization = feature_normalization_from_payload(
+        training_payload,
+        fallback_feature_names=feature_names,
+    )
+    checkpoint_value = checkpoint.get("feature_normalization")
+    checkpoint_mode = str(
+        checkpoint.get("feature_preprocessing") or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    )
+    if checkpoint_value is None:
+        if payload_normalization["mode"] != DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+            raise ValueError(
+                "model checkpoint is missing feature_normalization for "
+                f"{payload_normalization['mode']}"
+            )
+        return
+    if not isinstance(checkpoint_value, dict):
+        raise ValueError("model checkpoint feature_normalization must be a JSON object")
+    if checkpoint_mode != str(checkpoint_value.get("mode")):
+        raise ValueError("model checkpoint feature preprocessing metadata is inconsistent")
+    if checkpoint_mode == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+        if payload_normalization["mode"] != DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+            raise ValueError("training metrics and model checkpoint feature preprocessing differ")
+        return
+    _validate_feature_normalization_payload(checkpoint_value, feature_names)
+    if checkpoint_value.get("signature") != payload_normalization.get("signature"):
+        raise ValueError("training metrics and model checkpoint feature normalization differ")
+
+
+def _with_feature_preprocessing(
+    dataset: CandidateTrainingDataset,
+    *,
+    feature_preprocessing: str,
+    feature_normalization: dict[str, Any],
+) -> CandidateTrainingDataset:
+    return CandidateTrainingDataset(
+        features=dataset.features,
+        labels=dataset.labels,
+        feature_names=dataset.feature_names,
+        symbol=dataset.symbol,
+        market=dataset.market,
+        timeframe=dataset.timeframe,
+        data_source=dataset.data_source,
+        bars_seen=dataset.bars_seen,
+        lookback=dataset.lookback,
+        source_slices=dataset.source_slices,
+        feature_preprocessing=feature_preprocessing,
+        feature_normalization=feature_normalization,
+    )
+
+
+def _feature_normalization_payload(
+    *,
+    mode: str,
+    feature_names: tuple[str, ...],
+    means: tuple[float, ...],
+    scales: tuple[float, ...],
+    zero_scale_feature_names: tuple[str, ...],
+) -> dict[str, Any]:
+    applied = mode != DEFAULT_CANDIDATE_FEATURE_PREPROCESSING
+    payload = {
+        "mode": mode,
+        "feature_names": feature_names,
+        "means": means,
+        "scales": scales,
+        "zero_scale_feature_names": zero_scale_feature_names,
+        "scale_floor": FEATURE_STANDARDIZATION_SCALE_FLOOR,
+        "applied": applied,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+    payload["signature"] = _feature_normalization_signature(payload)
+    return payload
+
+
+def _feature_normalization_signature(payload: dict[str, Any]) -> str:
+    mode = str(payload.get("mode") or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING)
+    feature_names = tuple(str(name) for name in payload.get("feature_names", ()))
+    means = tuple(f"{float(value):.12g}" for value in payload.get("means", ()))
+    scales = tuple(f"{float(value):.12g}" for value in payload.get("scales", ()))
+    signature_payload = {
+        "mode": mode,
+        "feature_names": feature_names,
+        "means": means,
+        "scales": scales,
+    }
+    encoded = json.dumps(signature_payload, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _validate_feature_normalization_payload(
+    payload: dict[str, Any],
+    feature_names: tuple[str, ...],
+) -> None:
+    mode = str(payload.get("mode") or DEFAULT_CANDIDATE_FEATURE_PREPROCESSING)
+    if mode not in SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING:
+        raise ValueError(f"unsupported feature preprocessing: {mode}")
+    raw_feature_names = payload.get("feature_names")
+    if not isinstance(raw_feature_names, list | tuple):
+        raise ValueError("feature_normalization feature_names are required")
+    stored_feature_names = tuple(str(name) for name in raw_feature_names)
+    if stored_feature_names != feature_names:
+        raise ValueError(
+            "feature_normalization feature names mismatch: "
+            f"{stored_feature_names} != {feature_names}"
+        )
+    raw_means = payload.get("means")
+    raw_scales = payload.get("scales")
+    if not isinstance(raw_means, list | tuple) or not isinstance(raw_scales, list | tuple):
+        raise ValueError("feature_normalization means and scales are required")
+    if mode == DEFAULT_CANDIDATE_FEATURE_PREPROCESSING:
+        if raw_means or raw_scales:
+            raise ValueError("none feature preprocessing must not carry statistics")
+        return
+    if len(raw_means) != len(feature_names) or len(raw_scales) != len(feature_names):
+        raise ValueError("feature_normalization statistics must match feature count")
+    means = tuple(float(value) for value in raw_means)
+    scales = tuple(float(value) for value in raw_scales)
+    if any(not math.isfinite(value) for value in (*means, *scales)):
+        raise ValueError("feature_normalization statistics must be finite")
+    if any(scale <= 0 for scale in scales):
+        raise ValueError("feature_normalization scales must be positive")
+    expected_signature = _feature_normalization_signature(payload)
+    if payload.get("signature") != expected_signature:
+        raise ValueError("feature_normalization signature mismatch")
 
 
 def detect_gpu_readiness() -> GpuReadiness:

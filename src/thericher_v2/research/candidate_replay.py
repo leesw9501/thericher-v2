@@ -31,6 +31,7 @@ from .candidate_training import (
     _candidate_feature_set,
     _candidate_lookback,
     _reject_repo_artifact_path,
+    apply_training_payload_feature_normalization,
     build_candidate_training_dataset,
     detect_gpu_readiness,
     load_yahoo_intraday_1m_bars,
@@ -283,6 +284,29 @@ def _run_candidate_replay_result(
                 f"{expected_feature_names} != {source.dataset.feature_names}"
             ),
         )
+    try:
+        inference_source = CandidateReplaySource(
+            bars=source.bars,
+            dataset=apply_training_payload_feature_normalization(
+                source.dataset,
+                training_payload,
+            ),
+            data_source=source.data_source,
+        )
+    except ValueError as exc:
+        return _prepared_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            replay_artifact=replay_artifact,
+            reason=f"candidate feature preprocessing unavailable: {exc}",
+        )
     if model_artifact is None or not model_artifact.exists():
         return _prepared_result(
             config=config,
@@ -311,7 +335,7 @@ def _run_candidate_replay_result(
             replay_artifact=replay_artifact,
             reason=f"GPU readiness unavailable: {gpu.detail}",
         )
-    if len(source.dataset.labels) < config.min_examples:
+    if len(inference_source.dataset.labels) < config.min_examples:
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -325,7 +349,7 @@ def _run_candidate_replay_result(
             replay_artifact=replay_artifact,
             reason=(
                 "insufficient replay examples: "
-                f"{len(source.dataset.labels)} < {config.min_examples}"
+                f"{len(inference_source.dataset.labels)} < {config.min_examples}"
             ),
         )
     if probability_runner is None and selected_backend is None:
@@ -345,7 +369,7 @@ def _run_candidate_replay_result(
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities
     try:
-        probability_result = runner(source.dataset, model_artifact, training_payload)
+        probability_result = runner(inference_source.dataset, model_artifact, training_payload)
         probabilities = _probabilities_from_result(probability_result)
     except Exception as exc:  # noqa: BLE001 - replay jobs record backend failures.
         return _prepared_result(
@@ -361,7 +385,7 @@ def _run_candidate_replay_result(
             replay_artifact=replay_artifact,
             reason=f"bounded candidate replay unavailable: {exc}",
         )
-    if len(probabilities) != len(source.dataset.labels):
+    if len(probabilities) != len(inference_source.dataset.labels):
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -381,7 +405,7 @@ def _run_candidate_replay_result(
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
         candidate=candidate,
-        source=source,
+        source=inference_source,
         probabilities=probabilities,
         probability_result=probability_result,
         gpu=gpu,
@@ -812,6 +836,9 @@ def _probability_metrics(
         "device": probability_result.get("device"),
         "feature_names": probability_result.get("feature_names"),
         "feature_names_match": probability_result.get("feature_names_match"),
+        "feature_preprocessing": probability_result.get("feature_preprocessing"),
+        "feature_normalization": probability_result.get("feature_normalization"),
+        "preprocessing_axis": probability_result.get("preprocessing_axis"),
         "hidden_units": probability_result.get("hidden_units"),
         "min_probability": f"{min(probabilities):.6f}",
         "max_probability": f"{max(probabilities):.6f}",
