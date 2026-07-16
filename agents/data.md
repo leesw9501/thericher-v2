@@ -406,13 +406,17 @@
   file, loaded AMAT and AMZN local rows, consumed existing event/trace
   artifacts, and acquired no additional data. No operator data help is needed
   for this attribution.
+- Same-window AMAT/AMZN path-quality consolidation reused the same
+  `snapshot=2026-06-18` Yahoo 1m file and existing wider-holdout artifacts.
+  It observed AMAT `2340` rows, AMZN `2340` rows, and BA `2338` rows, acquired
+  no data, and found no missing exact files for the consolidation.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and existing wider-holdout artifacts for same-window AMAT/AMZN
-  consolidation; record exact missing artifact names only if the `240`-bar
+  rows for the threshold-pair parity replay/attribution; record exact missing
+  artifact names only if existing AMAT/AMZN/BA rows or produced event/trace
   evidence is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the

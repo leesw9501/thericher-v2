@@ -540,14 +540,19 @@
   broker authority, credential reads, data acquisition, replay mutation,
   threshold search, feature rule, durable multi-agent platform, or
   model-promotion language.
+- Same-window AMAT/AMZN consolidation reused existing `240`-bar artifacts and
+  wrote one compact external artifact. It added no code, helper, job kind,
+  worker, scheduler, dashboard, coordinator, report family, gate, auto-commit
+  path, broker authority, credential reads, data acquisition, replay mutation,
+  threshold search, feature rule, durable multi-agent platform, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward bounded same-window path-quality consolidation
-  using existing wider-holdout artifacts first. Keep coordination evidence
-  small and avoid new durable workers, daemon, scheduler, dashboard, report
-  branch, broker, credential, auto-commit, durable multi-agent-platform
-  behavior, threshold search, feature-rule selection, or model-promotion
-  language.
+- Push the next task toward one bounded threshold-pair parity check through the
+  existing replay path. Keep coordination evidence small and avoid new durable
+  workers, daemon, scheduler, dashboard, report branch, broker, credential,
+  auto-commit, durable multi-agent-platform behavior, threshold search,
+  feature-rule selection, or model-promotion language.

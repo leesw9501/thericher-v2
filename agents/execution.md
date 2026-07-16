@@ -379,6 +379,11 @@
   closed paths, observed `0` open paths, preserved every original fill as
   `source: local_paper`, and kept path/timing diagnostics separate as
   `source: diagnostic_overlay`.
+- Same-window AMAT/AMZN consolidation reran no execution. It consumed existing
+  `240`-bar local-paper evidence only, observed `16` AMAT/AMZN fill events,
+  `8` closed paths, `0` open paths, `0` non-local fill sources, `0` unknown
+  fills, and `0` unreadable event artifacts. All comparison context remained
+  diagnostic-only.
 
 ## Next Handoff
 
@@ -405,6 +410,6 @@
 - The next opportunity-gap diagnostic should remain artifact-only unless it
   uses an existing broker-free replay job. Do not lower or turn thresholds into
   an execution rule.
-- Any same-window path-quality consolidation must keep original fills as
+- Any threshold-pair parity replay/attribution must keep original fills as
   `source: local_paper`, count diagnostics separately, and avoid creating
   order intents outside the existing broker-free replay path.

@@ -1527,10 +1527,51 @@ The AMAT/AMZN fill-bearing path-quality attribution then completed:
 - Important caveat remains: this AMAT/AMZN/BA replay used `120` bars per slice,
   while the prior ADBE/ADI/ADP zero-buy contrast used `240` bars per slice.
 
-Next, consolidate same-window AMAT/AMZN evidence from existing wider-holdout
-artifacts before another GPU training block. Prefer existing `240`-bar
-artifacts first; queue at most one existing replay job only if the same-window
-evidence is genuinely missing.
+The same-window AMAT/AMZN path-quality consolidation then completed:
+
+- It consumed existing `120`-bar AMAT/AMZN path-quality evidence and existing
+  `240`-bar wider-holdout behavior/trade-path/replay artifacts only. It did
+  not rerun replay, train a model, queue Docker/GPU work, acquire data, call
+  KIS, read credentials, or add code.
+- The compact consolidation artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`.
+- Existing `D:\market_data` evidence was sufficient: AMAT had `2340` rows,
+  AMZN had `2340` rows, and BA had `2338` rows in
+  `snapshot=2026-06-18`.
+- The `120`-bar evidence had `6` closed AMAT/AMZN paths, `12` local-paper fill
+  events, `0` open paths, `0` negative fee-aware paths, gross delta `40.740`,
+  and fee-aware delta `40.2807`.
+- The reused `240`-bar evidence had `8` closed AMAT/AMZN paths, `16`
+  local-paper fill events, `0` open paths, `2` negative fee-aware AMAT paths,
+  gross delta `34.130`, and fee-aware delta `33.4440`.
+- The `240` minus `120` descriptive delta was `+2` closed paths, `+4`
+  local-paper fill events, `+2` unique entries, `+2` negative fee-aware paths,
+  `-6.610` gross delta, and `-6.8367` fee-aware delta.
+- AMAT carried the `240`-bar path expansion: `6` closed paths, `12`
+  local-paper fill events, `2` negative fee-aware paths, gross delta
+  `33.240`, and fee-aware delta `32.6528`. AMZN had `2` closed paths, `4`
+  local-paper fill events, `0` negative fee-aware paths, gross delta `0.890`,
+  and fee-aware delta `0.7912`.
+- Source evidence stayed clean: all `120`-bar and `240`-bar fills were
+  `source: local_paper`, non-local source counts were `{}`, unknown fill counts
+  were `0`, unreadable event artifacts were `0`, and diagnostic path context
+  stayed `source: diagnostic_overlay`.
+- No exact files were missing for AMAT/AMZN consolidation. The replay artifacts
+  still list `20` missing zero-fill event files for zero-fill symbols/variants;
+  those are empty evidence and did not block AMAT/AMZN path attribution.
+- Runtime Codex sidecars assisted as read-only reviewers: Engine Research
+  verified `240`-bar path evidence, Data/Infra verified local rows and external
+  artifact roots, and Review/Execution checked source-label and sprawl
+  boundaries. They are not repo-owned workers.
+- Remaining caveat: exact threshold-pair parity is not present in the reused
+  artifacts. The `120`-bar cadence used `0.594/0.476`, `0.595/0.476`, and
+  `0.596/0.476`; the existing `240`-bar wider-holdout artifacts used only
+  `0.595/0.476` and `0.596/0.476`.
+
+Next, close the exact threshold-pair parity gap with at most one existing
+Engine Research Agent `candidate_feature_branch_replay` job at `240` bars for
+AMAT/AMZN/BA, then attribute the result. Do not add a job kind or start longer
+candidate training in that task.
 
 ## Daily Operator Review
 

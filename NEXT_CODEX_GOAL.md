@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Consolidate same-window AMAT/AMZN path-quality evidence from existing
-wider-holdout artifacts before any longer GPU training block.
+Close the AMAT/AMZN/BA `240`-bar threshold-pair parity gap before any longer
+GPU training block.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by resolving the current `120`-bar versus `240`-bar caveat for
-the fill-bearing AMAT/AMZN evidence.
+PnL attribution by checking the same AMAT/AMZN/BA `240`-bar path behavior with
+the same three threshold pairs used by the `120`-bar cadence evidence.
 
 ## Hard Boundaries
 
@@ -64,50 +64,58 @@ the fill-bearing AMAT/AMZN evidence.
 
 ## Current Evidence To Consume
 
+- Same-window AMAT/AMZN consolidation:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`
 - Current AMAT/AMZN `120`-bar path-quality artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`
-- Fill-bearing contrast artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-zero-vs-fill-bearing-contrast-20260717-r1\metrics.json`
-- Fill-bearing replay artifact:
+- Existing AMAT/AMZN/BA `120`-bar replay artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-cadence-depth-amat-amzn-ba-20260717\metrics.json`
 - Wider-holdout depth behavior attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
-- Wider-holdout replay/trade-path artifacts referenced by that attribution, if
-  present under `D:\thericher-v2\model-artifacts`.
+- Depth feature-branch artifact referenced by the wider-holdout replay:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-depth-validation-20260716\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Prefer existing wider-holdout artifacts. Do not rerun replay unless
-   same-window AMAT/AMZN event or trace evidence is missing.
-2. If existing wider-holdout evidence is sufficient, produce one compact
-   artifact-only consolidation outside Git.
-3. If same-window evidence is genuinely missing, queue at most one existing
+1. First check whether an exact AMAT/AMZN/BA `240`-bar replay already exists
+   with threshold pairs:
+   - `0.594/0.476`
+   - `0.595/0.476`
+   - `0.596/0.476`
+2. If exact evidence already exists, consume it and produce one compact
+   artifact-only attribution outside Git.
+3. If exact evidence is missing, queue at most one existing
    `candidate_feature_branch_replay` job through the Engine Research Agent
-   runner with `max-bars 240` for AMAT/AMZN/BA, then attribute the result. Do
-   not add a new job kind.
-4. Report counts, not decisions:
-   - AMAT/AMZN fill-bearing variants and local-paper fill counts,
+   runner with:
+   - `max-bars 240`
+   - symbols AMAT, AMZN, and BA from `snapshot=2026-06-18`
+   - threshold pairs `0.594/0.476`, `0.595/0.476`, and `0.596/0.476`
+   - the existing depth feature-branch artifact above
+4. After the replay, attribute the result using existing event, trace, and
+   local-bar evidence. Do not add a new job kind.
+5. Report counts, not decisions:
+   - AMAT/AMZN/BA fill-bearing variants and local-paper fill counts,
    - closed/open trade paths,
    - fee-aware and gross deltas,
    - negative versus non-negative fee-aware path counts,
    - entry probability margins,
    - sell-threshold timing after entry,
    - max adverse and favorable movement,
-   - `120`-bar versus `240`-bar evidence differences,
    - local-paper source verification,
    - diagnostic-overlay source separation,
-   - missing evidence counts.
-5. Do not queue longer candidate training in this task. End with the evidence
+   - missing evidence counts,
+   - comparison against the prior `120`-bar and reused `240`-bar evidence.
+6. Do not queue longer candidate training in this task. End with the evidence
    still missing, if any, before another depth-training block.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the active consolidation.
+  license-compatible source clearly improves the active parity check.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -135,7 +143,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Consolidate same-window path quality evidence`
+`Check AMAT AMZN threshold parity`
 
 ## Completion Report
 

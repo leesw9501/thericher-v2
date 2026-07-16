@@ -936,6 +936,12 @@
   `source: local_paper`, and all diagnostic path context as
   `source: diagnostic_overlay`. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-cadence-depth-amat-amzn-path-quality-20260717-r1\metrics.json`.
+- Same-window AMAT/AMZN path-quality consolidation reused existing `240`-bar
+  wider-holdout artifacts without a new replay. It found `8` closed
+  AMAT/AMZN paths, `16` local-paper fill events, `2` negative fee-aware AMAT
+  paths, gross delta `34.130`, fee-aware delta `33.4440`, and no missing
+  AMAT/AMZN nonzero-fill evidence. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -943,9 +949,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: consolidate same-window AMAT/AMZN path-quality
-  evidence from existing wider-holdout `240`-bar artifacts before another
-  depth run.
+- Short experiments queue: close exact threshold-pair parity with at most one
+  existing `candidate_feature_branch_replay` job at `240` bars for
+  AMAT/AMZN/BA, then attribute the local-paper paths.
 - Longer candidate training queue: hold until a short experiment shows enough
   path-quality evidence and a focused research question.
   Keep the job kind closed and write artifacts outside Git.
