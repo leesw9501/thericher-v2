@@ -245,12 +245,15 @@
   market-data reads or acquisition.
 - Diagnostic exit-overlay helper added no market-data loader and consumes only
   provided `Bar` inputs in tests.
+- Diagnostic exit-overlay helper smoke reused selected
+  `snapshot=2026-06-18` Yahoo rows for ADBE, ADI, ADP, AMAT, and AMGN; no
+  additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the helper smoke should reuse existing
-  `snapshot=2026-06-18` Yahoo rows only where needed.
+- The next data task is not acquisition; the conditional overlay contrast
+  should consume the helper smoke artifact and existing context artifacts.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

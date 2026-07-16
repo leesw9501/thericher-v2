@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Apply the bounded diagnostic exit-overlay helper to existing entry-adverse
-   artifacts in one compact smoke before changing another model axis.
+1. Compare a tiny set of conditional latency/adverse exit-overlay metadata
+   probes before changing another model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -662,10 +662,13 @@
 - Diagnostic exit-overlay helper now codifies fixed 2/3/5-bar overlays and
   conditional latency/adverse metadata from provided segments and `Bar` inputs
   only, with all overlay outcomes labeled `source: diagnostic_overlay`.
+- Diagnostic exit-overlay helper smoke applied the helper to `11` existing
+  entry-adverse segments, produced `33` fixed overlay marks, matched previous
+  one-off timestamp/price evidence for all `33`, and preserved local-paper
+  sources.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded real-artifact smoke through the diagnostic
-  exit-overlay helper before another feature-set, preprocessing,
-  regularization value, or threshold-only branch.
+  task should run one bounded conditional exit-overlay contrast before another
+  feature-set, preprocessing, regularization value, or threshold-only branch.

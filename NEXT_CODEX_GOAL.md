@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded diagnostic exit-overlay helper smoke.
+Build the first bounded conditional exit-overlay contrast.
 
-This advances PnL attribution and backtest/walk-forward validation by applying
-the pure `compute_diagnostic_exit_overlays` helper to existing entry-adverse
-exit-timing evidence and selected local `Bar` inputs, without changing replay,
-training, thresholds, broker behavior, or local-paper fills.
+This advances PnL attribution, backtest/walk-forward validation, and
+feature/model research by using the diagnostic exit-overlay helper smoke to
+compare a tiny set of conditional latency/adverse overlay metadata probes
+across loss-bearing and non-negative entry-adverse trade segments. The result
+must remain descriptive and must not select or apply an exit policy.
 
 ## Hard Boundaries
 
@@ -59,35 +60,36 @@ training, thresholds, broker behavior, or local-paper fills.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If the smoke can
-   run artifact-only with existing code, no Claude check is needed.
+3. Ask Claude CLI for a short drift-check before code edits. If the contrast
+   can run artifact-only with existing code, no Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts as context:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-policy-sketch-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
-3. Use the helper added in the previous task:
-   - `thericher_v2.research.exit_overlay_diagnostic.compute_diagnostic_exit_overlays`
-4. Build one small artifact-only smoke that:
-   - reconstructs a bounded set of existing entry-adverse trade segments from
-     external artifacts,
-   - provides only explicit `Bar` inputs from existing
-     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`,
-   - computes fixed 2/3/5-bar overlays,
-   - includes one conditional latency/adverse metadata probe without selecting
-     an exit policy,
-   - verifies every overlay outcome uses `source: diagnostic_overlay`,
-   - verifies referenced local-paper fills remain `source: local_paper`.
-5. Write one compact smoke artifact outside Git, for example:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
+3. Compare at most three conditional overlay metadata probes, for example:
+   - latency at or above 5 bars with 2-bar overlay context,
+   - latency at or above 5 bars plus adverse move at or below `-1` with 2-bar
+     overlay context,
+   - adverse move at or below `-1` with 3-bar overlay context.
+4. Summarize only descriptive evidence:
+   - loss-bearing versus non-negative segment counts,
+   - conditional metadata counts,
+   - fixed 2/3/5 overlay gross-delta summaries by group,
+   - referenced local-paper source verification,
+   - diagnostic overlay source verification.
+5. Write one compact contrast artifact outside Git, for example:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
 6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
-   training path, replay rerun, threshold search, or policy selection.
-7. Only edit code if the smoke exposes a helper bug; if code changes are needed,
-   ask Claude CLI first and keep the fix focused.
+   training path, replay rerun, threshold search, policy selection, or broker
+   behavior.
+7. Only edit code if the contrast exposes a helper bug; if code changes are
+   needed, ask Claude CLI first and keep the fix focused.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -111,12 +113,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused test, artifact-only smoke command, Docker `research`
-command, GPU availability, and artifact paths used.
+Also report any focused test, artifact-only contrast command, Docker
+`research` command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add diagnostic exit overlay helper smoke`
+`Add conditional exit overlay contrast`
 
 ## Completion Report
 
@@ -128,6 +130,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- helper smoke behavior,
+- conditional contrast behavior,
 - what was intentionally not built,
 - next goal.

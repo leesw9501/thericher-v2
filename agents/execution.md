@@ -212,10 +212,13 @@
 - Diagnostic exit-overlay helper preserves provided local-paper entry/exit
   sources while labeling every overlay outcome as `source: diagnostic_overlay`;
   it does not touch broker submit/cancel code.
+- Diagnostic exit-overlay helper smoke confirmed all referenced local-paper
+  entry/exit sources stayed `source: local_paper` and all `44` helper overlay
+  or metadata outcomes used `source: diagnostic_overlay`.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next helper smoke should prove existing local-paper fills remain distinct
-  from diagnostic overlay outcomes.
+- The next contrast should keep diagnostic overlays separate from local-paper
+  fills and must not apply an exit policy to local-paper replay.

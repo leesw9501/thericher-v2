@@ -482,6 +482,12 @@ Implemented and pushed:
   labels overlay outcomes as `source: diagnostic_overlay`, and performs no
   file, network, credential, broker, CLI, job, dashboard, scheduler, training,
   or replay work,
+- bounded diagnostic exit-overlay helper smoke; it applied the pure helper to
+  `11` existing entry-adverse trade segments and selected
+  `snapshot=2026-06-18` Yahoo rows, produced `33` fixed 2/3/5-bar
+  `diagnostic_overlay` outcomes, matched the previous one-off overlay
+  timestamp/price evidence for all `33` marks, preserved referenced
+  `source: local_paper` fills, and wrote one compact artifact outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -546,15 +552,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded diagnostic exit-overlay helper smoke target:
+Start one bounded conditional exit-overlay contrast target:
 
-1. use the new pure helper on the existing entry-adverse exit-timing context
-   artifacts and selected `snapshot=2026-06-18` Yahoo rows,
-2. write one compact external smoke artifact under
+1. use the helper smoke artifact plus the existing entry-adverse exit-timing and
+   sell-latency context artifacts,
+2. compare a tiny set of conditional latency/adverse overlay metadata probes
+   across loss-bearing and non-negative segment groups,
+3. write one compact external contrast artifact under
    `D:\thericher-v2\model-artifacts`,
-3. verify fixed 2/3/5 overlays stay `source: diagnostic_overlay` and existing
-   local-paper fills stay `source: local_paper`,
-4. avoid new helper code unless a bug is found, and avoid training, replay
+4. keep the result descriptive and avoid selecting or applying an exit policy,
+5. avoid new helper code unless a bug is found, and avoid training, replay
    reruns, broad feature changes, broad data search, threshold search, branch
    ranking, dashboards, schedulers, broker behavior, or report/gate expansion.
 
