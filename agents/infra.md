@@ -299,6 +299,10 @@
   training, evaluation, model, replay, robustness, event, research-job,
   opportunity, trade-path, and summary artifacts under the external model
   artifact root. Follow-up attribution ran locally as artifact-only work.
+- Source-breadth AMGN loss attribution ran locally as artifact-only work,
+  consumed existing external JSON artifacts plus selected AMGN local Yahoo rows,
+  reran no Docker job, used no GPU, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -307,5 +311,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next AMGN loss attribution target should be artifact-only unless a
-  referenced source-breadth artifact is missing or corrupt.
+- The next signal-hygiene diagnostic should be artifact-only unless a
+  referenced entry-adverse artifact is missing or corrupt.

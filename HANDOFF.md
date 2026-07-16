@@ -439,6 +439,15 @@ Implemented and pushed:
   as `source: local_paper`, broke the previous batch2 zero-fill state through
   AMGN, and attributed both closed AMGN segments as fee-aware negative with
   fee-aware delta sum `-4.923`,
+- bounded source-breadth AMGN loss attribution; it consumed existing
+  source-breadth, trade-path, opportunity, and feature-input artifacts plus
+  selected AMGN rows from `snapshot=2026-06-18`, reran no training or replay,
+  found the AMGN buy opportunity was the same feature row as the previous
+  `weight_decay=0.001` batch2 near-threshold AMGN row within `1e-9` tolerance,
+  attributed the entry conversion to probability rising by about `0.0037505`
+  while the minimum buy threshold moved down by `0.005000`, and identified a
+  zero-range, low-volume AMGN signal shape rather than the prior high-upper-wick
+  AMAT non-negative pattern,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -503,14 +512,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded source-breadth AMGN loss attribution target:
+Start one bounded entry-adverse signal-hygiene diagnostic target:
 
-1. consume the completed source-breadth summary, replay, opportunity,
-   trade-path, and feature-input diagnostic artifacts,
-2. inspect the AMGN loss entries against selected `snapshot=2026-06-18` local
-   Yahoo rows and prior AMAT/hidden4 reference feature contexts,
-3. write one compact artifact outside Git that describes whether source
-   breadth restored a known loss pattern or created a new adverse path,
+1. consume the completed AMGN loss attribution, feature-input concentration,
+   and wider entry-adverse signal-quality artifacts,
+2. inspect whether zero-range, `range_expansion=-1`, low-volume-change, or
+   contiguous-window signal-shape patterns recur across loss-bearing entries,
+   non-negative entries, and near-threshold zero-fill rows,
+3. write one compact artifact outside Git that describes the observed pattern
+   counts and path context,
 4. avoid training, replay reruns, feature changes, broad data search,
    threshold search, branch ranking, dashboards, schedulers, broker behavior,
    or report/gate expansion.

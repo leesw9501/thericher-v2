@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded source-breadth AMGN loss attribution target before another
-   feature-set, regularization value, or threshold-only branch is tried.
+1. Run one bounded entry-adverse signal-hygiene diagnostic target before
+   another feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -311,6 +311,14 @@
   AEM, AGG, and AMAT from `snapshot=2026-06-18`, replayed AMD, AMGN, AMT, and
   AMZN, produced `4` local-paper fills on AMGN, and attributed both closed
   AMGN segments as fee-aware negative with fee-aware delta sum `-4.923`.
+- Last completed:
+  `bounded-sourcebreadth-amgn-loss-attribution-20260716`, status
+  `sourcebreadth_amgn_loss_attribution_only`, consumed existing source-breadth,
+  trade-path, opportunity, feature-input, and selected AMGN local-bar evidence,
+  reran no training or replay, found the AMGN entry reused the previous
+  `weight_decay=0.001` batch2 near-threshold AMGN feature row within `1e-9`
+  tolerance, and attributed the conversion to a probability lift plus lower
+  source-breadth buy band around a zero-range, low-volume signal shape.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -605,10 +613,14 @@
   batch2 zero-fill state, but the recovered AMGN fills were both fee-aware
   negative. The next evidence should attribute AMGN loss paths from existing
   artifacts before changing another feature/model or threshold axis.
+- AMGN loss attribution showed source breadth converted an existing
+  near-threshold row into entry rather than finding the earlier AMAT
+  non-negative pattern. The next evidence should inspect zero-range and
+  low-volume signal-shape recurrence across existing entry-adverse artifacts.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded AMGN loss attribution from existing
-  source-breadth artifacts and local data before another feature-set,
+  task should run one bounded signal-hygiene diagnostic from existing
+  entry-adverse artifacts and local data before another feature-set,
   preprocessing, regularization value, or threshold-only branch.

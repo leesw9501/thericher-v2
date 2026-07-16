@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded source-breadth AMGN loss attribution target.
+Build a bounded entry-adverse signal-hygiene diagnostic target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by explaining why the source-breadth `weight_decay=0.001`
-entry-adverse branch broke the prior batch2 zero-fill state but converted that
-new AMGN activity into fee-aware negative local-paper trades.
+attribution by checking whether zero-range, very low-volume-change, or similar
+signal-shape patterns recur across existing entry-adverse loss-bearing entries,
+non-negative entries, and near-threshold zero-fill rows before another
+feature/model or threshold axis is tried.
 
 ## Hard Boundaries
 
@@ -68,19 +69,20 @@ new AMGN activity into fee-aware negative local-paper trades.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-sourcebreadth-weightdecay001-feature-branch-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-sourcebreadth-weightdecay001-replay-cap2-240bars-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-trade-path-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-summary-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-sourcebreadth-amgn-loss-attribution-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
-3. Read only the needed AMGN rows from
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`.
-4. Compare the AMGN loss entries against:
-   - prior AMAT non-negative regularized entry context,
-   - hidden4 negative and non-negative entry-adverse feature contexts,
-   - source-breadth probability margins and sell-threshold timing,
-   - short forward marks and adverse/favorable movement.
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-summary-20260716\metrics.json`
+3. Read only the local Yahoo rows needed to validate signal-shape context from
+   existing `snapshot=2026-06-18` data.
+4. Compare loss-bearing, non-negative, and near-threshold zero-fill signal rows
+   across existing entry-adverse artifacts for:
+   - zero-range bars,
+   - `range_expansion=-1`,
+   - very low `volume_change`,
+   - `close_position_in_bar=0.5` zero-span rows,
+   - immediate forward marks and adverse/favorable movement.
 5. Write one compact descriptive artifact outside Git under
    `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 6. Keep all results descriptive only. Do not rank data sources, select a
@@ -117,7 +119,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded source-breadth AMGN loss attribution`
+`Add bounded entry-adverse signal-hygiene diagnostic`
 
 ## Completion Report
 
@@ -129,6 +131,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- AMGN loss attribution findings,
+- signal-hygiene diagnostic findings,
 - what was intentionally not built,
 - next goal.

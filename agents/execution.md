@@ -195,10 +195,13 @@
   produced `4` verified `source: local_paper` fills on AMGN, and follow-up
   opportunity/trade-path attribution parsed existing event files only. Both
   closed AMGN segments were fee-aware negative.
+- Source-breadth AMGN loss attribution reran no execution, preserved the
+  existing `source: local_paper` fill evidence, and linked the sell-threshold
+  signal to the existing local-paper exit timestamp.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next attribution task should consume existing AMGN local-paper evidence
-  only and must not touch broker submit/cancel code.
+- The next signal-hygiene diagnostic should consume existing local-paper
+  evidence only and must not touch broker submit/cancel code.
