@@ -209,11 +209,13 @@
   `source: local_paper` fills.
 - Exit-policy sketch reran no execution and kept future overlays research-only
   and separate from `source: local_paper` fills.
+- Diagnostic exit-overlay helper preserves provided local-paper entry/exit
+  sources while labeling every overlay outcome as `source: diagnostic_overlay`;
+  it does not touch broker submit/cancel code.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next diagnostic exit-overlay helper must be pure, consume provided
-  segments and bars, label overlays separately, and must not touch broker
-  submit/cancel code.
+- The next helper smoke should prove existing local-paper fills remain distinct
+  from diagnostic overlay outcomes.

@@ -475,6 +475,13 @@ Implemented and pushed:
   2-bar exit as a stress overlay because it worsened most non-negative
   segments, and identified conditional latency-cap or adverse-then-latency
   overlays as the next replayable evidence shape without selecting a policy,
+- bounded diagnostic exit-overlay helper; it adds a pure
+  `compute_diagnostic_exit_overlays` helper that consumes provided trade
+  segments and `Bar` inputs, enforces fixed 2/3/5-bar diagnostic overlays,
+  records conditional latency/adverse metadata without selecting a policy,
+  labels overlay outcomes as `source: diagnostic_overlay`, and performs no
+  file, network, credential, broker, CLI, job, dashboard, scheduler, training,
+  or replay work,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -495,7 +502,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `244 passed`
+- `250 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -539,17 +546,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded diagnostic exit-overlay helper target:
+Start one bounded diagnostic exit-overlay helper smoke target:
 
-1. ask Claude CLI for a short drift-check before adding code,
-2. if the drift-check is acceptable, add the smallest pure helper needed to
-   compute fixed-horizon and conditional diagnostic exit overlays from provided
-   trade segments and `Bar` inputs,
-3. add focused tests proving overlays are labeled `diagnostic_overlay` and do
-   not mutate `source: local_paper` fills,
-4. avoid training, replay reruns, broad feature changes, broad data search,
-   threshold search, branch ranking, dashboards, schedulers, broker behavior,
-   or report/gate expansion.
+1. use the new pure helper on the existing entry-adverse exit-timing context
+   artifacts and selected `snapshot=2026-06-18` Yahoo rows,
+2. write one compact external smoke artifact under
+   `D:\thericher-v2\model-artifacts`,
+3. verify fixed 2/3/5 overlays stay `source: diagnostic_overlay` and existing
+   local-paper fills stay `source: local_paper`,
+4. avoid new helper code unless a bug is found, and avoid training, replay
+   reruns, broad feature changes, broad data search, threshold search, branch
+   ranking, dashboards, schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

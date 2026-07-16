@@ -243,12 +243,14 @@
   was acquired.
 - Exit-policy sketch consumed existing external artifacts only and required no
   market-data reads or acquisition.
+- Diagnostic exit-overlay helper added no market-data loader and consumes only
+  provided `Bar` inputs in tests.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; a diagnostic exit-overlay helper
-  should take provided `Bar` inputs and not load market data itself.
+- The next data task is not acquisition; the helper smoke should reuse existing
+  `snapshot=2026-06-18` Yahoo rows only where needed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

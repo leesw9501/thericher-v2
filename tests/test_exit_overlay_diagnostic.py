@@ -1,0 +1,234 @@
+from __future__ import annotations
+
+import socket
+from copy import deepcopy
+from datetime import UTC, datetime, timedelta
+from decimal import Decimal
+from pathlib import Path
+
+import pytest
+
+from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.execution import LOCAL_PAPER_SOURCE
+from thericher_v2.research.exit_overlay_diagnostic import (
+    DIAGNOSTIC_OVERLAY_SOURCE,
+    ConditionalExitOverlaySpec,
+    DiagnosticExitTradeSegment,
+    compute_diagnostic_exit_overlays,
+)
+
+
+def test_exit_overlay_fixed_horizons_use_provided_bars_and_sources() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    bars = tuple(
+        _bar("AAA", start + timedelta(minutes=index), low=close - 1, close=close)
+        for index, close in enumerate((100, 101, 100, 103, 104, 99, 107))
+    )
+    segment = DiagnosticExitTradeSegment(
+        slice_id="aaa_slice",
+        variant_id="t01",
+        symbol="AAA",
+        entry_timestamp=start + timedelta(minutes=1),
+        entry_price=Decimal("101"),
+        quantity=Decimal("2"),
+        exit_timestamp=start + timedelta(minutes=4),
+        exit_price=Decimal("104"),
+        exit_fee=Decimal("0.02"),
+    )
+
+    result = compute_diagnostic_exit_overlays(
+        segments=(segment,),
+        bars=bars,
+        checked_at=start,
+    )
+
+    overlays = result.segments[0]["fixed_horizon_overlays"]
+    horizon_two = overlays[0]
+    assert tuple(overlay["horizon_bars"] for overlay in overlays) == (2, 3, 5)
+    assert horizon_two["source"] == DIAGNOSTIC_OVERLAY_SOURCE
+    assert horizon_two["timestamp"] == (start + timedelta(minutes=3)).isoformat()
+    assert horizon_two["price"] == "103"
+    assert horizon_two["gross_delta"] == "4"
+    assert horizon_two["gross_delta_vs_local_paper_exit"] == "-2"
+    assert result.metrics["all_overlay_sources_diagnostic"] is True
+    assert result.to_payload()["result_scope"]["mode"] == (
+        "research_diagnostic_exit_overlay_only"
+    )
+
+
+def test_exit_overlay_missing_horizon_is_reported_without_failure() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    result = compute_diagnostic_exit_overlays(
+        segments=(
+            DiagnosticExitTradeSegment(
+                slice_id="aaa_slice",
+                variant_id="t01",
+                symbol="AAA",
+                entry_timestamp=start + timedelta(minutes=1),
+                entry_price=Decimal("101"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=100, close=101)
+            for index in range(4)
+        ),
+        checked_at=start,
+    )
+
+    overlays = result.segments[0]["fixed_horizon_overlays"]
+    assert overlays[0]["available"] is True
+    assert overlays[1]["available"] is False
+    assert overlays[1]["reason"] == "missing_horizon_bar"
+    assert overlays[2]["available"] is False
+    assert overlays[2]["reason"] == "missing_horizon_bar"
+    assert result.metrics["fixed_overlay_missing_horizon_count"] == 2
+
+
+def test_exit_overlay_keeps_local_paper_segment_sources_unchanged() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    segment = DiagnosticExitTradeSegment(
+        slice_id="aaa_slice",
+        variant_id="t01",
+        symbol="AAA",
+        entry_timestamp=start,
+        entry_price=Decimal("10.00"),
+        quantity=Decimal("1"),
+        entry_fee=Decimal("0.01"),
+        entry_source=LOCAL_PAPER_SOURCE,
+        exit_timestamp=start + timedelta(minutes=2),
+        exit_price=Decimal("10.20"),
+        exit_source=LOCAL_PAPER_SOURCE,
+        exit_fee=Decimal("0.01"),
+    )
+    before = deepcopy(segment)
+
+    result = compute_diagnostic_exit_overlays(
+        segments=(segment,),
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=9, close=10 + index / 10)
+            for index in range(8)
+        ),
+        checked_at=start,
+    )
+
+    assert segment == before
+    assert result.segments[0]["entry"]["source"] == LOCAL_PAPER_SOURCE
+    assert result.segments[0]["local_paper_exit"]["source"] == LOCAL_PAPER_SOURCE
+    assert result.segments[0]["fixed_horizon_overlays"][0]["source"] == (
+        DIAGNOSTIC_OVERLAY_SOURCE
+    )
+
+
+def test_exit_overlay_conditional_metadata_does_not_select_policy() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    result = compute_diagnostic_exit_overlays(
+        segments=(
+            DiagnosticExitTradeSegment(
+                slice_id="aaa_slice",
+                variant_id="t01",
+                symbol="AAA",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+                bars_to_first_sell_signal=7,
+            ),
+        ),
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=10 - index, close=10)
+            for index in range(8)
+        ),
+        conditional_overlays=(
+            ConditionalExitOverlaySpec(
+                overlay_id="latency_adverse_probe",
+                horizon_bars=2,
+                min_bars_without_sell_signal=5,
+                adverse_delta_at_or_below=Decimal("-1"),
+            ),
+        ),
+        checked_at=start,
+    )
+
+    metadata = result.segments[0]["conditional_overlay_metadata"][0]
+    assert metadata["source"] == DIAGNOSTIC_OVERLAY_SOURCE
+    assert metadata["metadata_only"] is True
+    assert metadata["conditions_met"] is True
+    assert "selected" not in metadata
+    assert "recommendation" not in metadata
+
+
+def test_exit_overlay_horizons_are_fixed() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    with pytest.raises(ValueError, match="fixed"):
+        compute_diagnostic_exit_overlays(
+            segments=(
+                DiagnosticExitTradeSegment(
+                    slice_id="aaa_slice",
+                    variant_id="t01",
+                    symbol="AAA",
+                    entry_timestamp=start,
+                    entry_price=Decimal("10"),
+                    quantity=Decimal("1"),
+                ),
+            ),
+            bars=tuple(
+                _bar("AAA", start + timedelta(minutes=index), low=9, close=10)
+                for index in range(8)
+            ),
+            horizons=(2, 5),
+            checked_at=start,
+        )
+
+
+def test_exit_overlay_is_offline_and_does_not_read_credentials(monkeypatch) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("exit overlay diagnostic must not open network")
+
+    def fail_read_text(*_args: object, **_kwargs: object) -> str:
+        raise AssertionError("exit overlay diagnostic must not read files")
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", fail_read_text)
+
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    result = compute_diagnostic_exit_overlays(
+        segments=(
+            DiagnosticExitTradeSegment(
+                slice_id="aaa_slice",
+                variant_id="t01",
+                symbol="AAA",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=9, close=10)
+            for index in range(8)
+        ),
+        checked_at=start,
+    )
+
+    assert result.metrics["segment_count"] == 1
+
+
+def _bar(
+    symbol: str,
+    start_ts: datetime,
+    *,
+    low: float | int,
+    close: float | int,
+) -> Bar:
+    low_decimal = Decimal(str(low))
+    close_decimal = Decimal(str(close))
+    return Bar(
+        symbol=symbol,
+        market="US",
+        timeframe=Timeframe.M1,
+        start_ts=start_ts,
+        open=close_decimal,
+        high=close_decimal + Decimal("1"),
+        low=low_decimal,
+        close=close_decimal,
+        volume=Decimal("100"),
+    )

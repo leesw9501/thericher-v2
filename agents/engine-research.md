@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Ask Claude CLI for drift-check, then add one bounded diagnostic exit-overlay
-   helper only if it stays pure and small.
+1. Apply the bounded diagnostic exit-overlay helper to existing entry-adverse
+   artifacts in one compact smoke before changing another model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -659,10 +659,13 @@
 - Exit-policy sketch narrowed the next code step to a pure diagnostic overlay
   helper. Ask Claude before adding it, keep overlays separate from local-paper
   fills, and add focused tests only.
+- Diagnostic exit-overlay helper now codifies fixed 2/3/5-bar overlays and
+  conditional latency/adverse metadata from provided segments and `Bar` inputs
+  only, with all overlay outcomes labeled `source: diagnostic_overlay`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded diagnostic exit-overlay helper slice before
-  another feature-set, preprocessing, regularization value, or threshold-only
-  branch.
+  task should run one bounded real-artifact smoke through the diagnostic
+  exit-overlay helper before another feature-set, preprocessing,
+  regularization value, or threshold-only branch.

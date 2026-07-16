@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review the next diagnostic exit-overlay helper for bounded scope and
+1. Review the next diagnostic exit-overlay helper smoke for bounded scope and
    artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
@@ -305,10 +305,14 @@
   evidence. It added no helper, code path, job kind, CLI, report family, gate,
   dashboard, scheduler, broker path, threshold search, retraining, replay
   rerun, feature/model axis, or model-promotion language.
+- Diagnostic exit-overlay helper stayed a pure helper plus focused tests. It
+  added no job kind, CLI, report family, gate, dashboard, scheduler, broker
+  path, threshold search, replay rerun, feature/model axis, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small diagnostic exit-overlay helper before
-  allowing another feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one small helper smoke before allowing another
+  feature-set, regularization value, or threshold-only branch.

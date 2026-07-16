@@ -316,6 +316,8 @@
 - Exit-policy sketch ran locally as artifact-only work, consumed existing
   external JSON artifacts only, reran no Docker job, used no GPU, and wrote one
   compact artifact under `D:\thericher-v2\model-artifacts`.
+- Diagnostic exit-overlay helper added no Docker dependency, service, GPU
+  requirement, artifact writer, or PyTorch dependency in local/base paths.
 
 ## Next Handoff
 
@@ -324,5 +326,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next diagnostic exit-overlay helper should add no Docker dependency,
-  service, GPU requirement, or artifact storage in Git.
+- The next helper smoke should write any generated artifact only under
+  `D:\thericher-v2\model-artifacts`.

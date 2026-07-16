@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded diagnostic exit-overlay helper.
+Build the first bounded diagnostic exit-overlay helper smoke.
 
-This advances PnL attribution, backtest/walk-forward validation, and
-feature/model research by codifying the repeated one-off exit overlay scripts
-into one small pure helper that computes diagnostic overlay outcomes from
-provided trade segments and `Bar` inputs without mutating local-paper fills.
+This advances PnL attribution and backtest/walk-forward validation by applying
+the pure `compute_diagnostic_exit_overlays` helper to existing entry-adverse
+exit-timing evidence and selected local `Bar` inputs, without changing replay,
+training, thresholds, broker behavior, or local-paper fills.
 
 ## Hard Boundaries
 
@@ -59,32 +59,36 @@ provided trade segments and `Bar` inputs without mutating local-paper fills.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits.
+3. Ask Claude CLI for a short drift-check before code edits. If the smoke can
+   run artifact-only with existing code, no Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as context only:
+2. Consume these completed artifacts as context:
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-policy-sketch-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
-3. Add one small pure helper, likely under `src/thericher_v2/research/`, that:
-   - accepts provided trade segment data and provided `Bar` inputs,
-   - computes fixed-horizon diagnostic exits,
-   - can represent conditional latency/adverse overlay metadata without
-     selecting a policy,
-   - labels every overlay outcome with `source: diagnostic_overlay`,
-   - never mutates local-paper fills or calls broker/execution code.
-4. Add focused tests proving:
-   - fixed 2/3/5-bar overlays use provided bars only,
-   - missing horizon bars are reported without failure,
-   - local-paper fills remain unchanged,
-   - overlay outputs are always `source: diagnostic_overlay`,
-   - no broker/network/credential path is needed.
-5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
-   training path, replay rerun, or policy selection.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+3. Use the helper added in the previous task:
+   - `thericher_v2.research.exit_overlay_diagnostic.compute_diagnostic_exit_overlays`
+4. Build one small artifact-only smoke that:
+   - reconstructs a bounded set of existing entry-adverse trade segments from
+     external artifacts,
+   - provides only explicit `Bar` inputs from existing
+     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`,
+   - computes fixed 2/3/5-bar overlays,
+   - includes one conditional latency/adverse metadata probe without selecting
+     an exit policy,
+   - verifies every overlay outcome uses `source: diagnostic_overlay`,
+   - verifies referenced local-paper fills remain `source: local_paper`.
+5. Write one compact smoke artifact outside Git, for example:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
+6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+   training path, replay rerun, threshold search, or policy selection.
+7. Only edit code if the smoke exposes a helper bug; if code changes are needed,
+   ask Claude CLI first and keep the fix focused.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -107,12 +111,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused tests, artifact-only commands, Docker `research` commands,
-GPU availability, and artifact paths used.
+Also report any focused test, artifact-only smoke command, Docker `research`
+command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add diagnostic exit overlay helper`
+`Add diagnostic exit overlay helper smoke`
 
 ## Completion Report
 
@@ -124,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- helper behavior added,
+- helper smoke behavior,
 - what was intentionally not built,
 - next goal.

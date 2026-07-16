@@ -768,3 +768,18 @@ branch can test whether explicit pre-entry adverse pressure and weak
 follow-through evidence changes probability/replay behavior while keeping
 PyTorch confined to Docker `research`, artifacts outside Git, and all execution
 evidence broker-free and labeled as local paper.
+
+## 2026-07-16 - Bounded diagnostic exit-overlay helper
+
+Decision: add a pure `exit_overlay_diagnostic` research helper that consumes
+provided trade segments and `Bar` inputs, enforces fixed 2/3/5-bar diagnostic
+exit overlays, and can carry conditional latency/adverse metadata without
+selecting an exit policy. Overlay outcomes are labeled
+`source: diagnostic_overlay` and local-paper entry/exit sources are preserved
+as provided.
+
+Reason: repeated one-off exit timing diagnostics needed one reusable
+attribution helper before any replay rerun or exit-policy experiment. Keeping
+the helper pure avoids broker access, credentials, file or network I/O, CLI
+surface, job-kind growth, dashboard work, training, threshold search, and
+model-promotion language.
