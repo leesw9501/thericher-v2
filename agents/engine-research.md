@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded AMD segment-quality diagnostic from the first-evaluation
-   source-context replay before changing source context, feature/model axes, or
-   thresholds again.
+1. Run one bounded AMD entry feature-input diagnostic from the completed
+   segment-quality artifact before changing source context, feature/model axes,
+   or thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -718,10 +718,16 @@
   `research`, replayed AAPL, ABBV, ABNB, ABT, ACN, and AMD, recovered AMD-only
   local-paper fills, and attributed `3` closed AMD segments with fee-aware
   delta sum `3.3752`.
+- AMD segment-quality diagnostic consumed existing source-context trace, event,
+  trade-path, and selected AMD bar evidence only. The fee-aware negative AMD
+  segment had entry margin `0.0000736074447632`, adverse delta about `-5.08`,
+  and negative 2/3/5-bar diagnostic marks, while the two non-negative segments
+  averaged entry margin `0.0009030294418335`, minimal adverse movement, and
+  positive 2/3/5-bar diagnostic marks.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should inspect AMD segment quality from the completed source-context
-  artifacts before spending another GPU block on source data, feature/model, or
-  threshold changes.
+  task should inspect AMD entry feature inputs from the completed
+  segment-quality artifact before spending another GPU block on source data,
+  feature/model, or threshold changes.

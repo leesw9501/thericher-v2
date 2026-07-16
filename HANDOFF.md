@@ -572,6 +572,13 @@ Implemented and pushed:
   replayed AAPL, ABBV, ABNB, ABT, ACN, and AMD with cap-2 thresholds, produced
   `6` verified `source: local_paper` fills on AMD only, and attributed `3`
   closed AMD trade segments with fee-aware delta sum `3.3752`,
+- bounded AMD segment-quality diagnostic; it consumed the first-evaluation
+  source-context replay, robustness, trace, event, and selected AMD bar
+  artifacts only, compared the one fee-aware negative AMD segment against the
+  two non-negative AMD segments, found the negative segment had a much smaller
+  entry probability margin, larger adverse movement, and negative fixed 2/3/5
+  bar `diagnostic_overlay` marks while the non-negative segments had positive
+  fixed horizon marks,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -636,18 +643,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded AMD segment-quality diagnostic:
+Start one bounded AMD entry feature-input diagnostic:
 
-1. consume the completed first-evaluation source-context replay attribution,
-   replay, robustness, probability trace, and local-paper event artifacts,
-2. inspect only the AMD fill-bearing variants and selected AMD bars from
-   `snapshot=2026-06-18`,
-3. compare the negative and non-negative AMD closed segments by entry
-   probability margin, sell-threshold timing, adverse/favorable movement, and
-   simple diagnostic horizon marks,
-4. keep diagnostic marks labeled `source: diagnostic_overlay` and preserve
-   existing `source: local_paper` fill evidence,
-5. avoid training, replay reruns, new feature/model axes, threshold search,
+1. consume the completed AMD segment-quality artifact and its referenced trace,
+   event, and selected AMD bar evidence,
+2. reconstruct the existing `core_plus_entry_adverse_v1` feature inputs for
+   the negative and non-negative AMD entry rows,
+3. compare only descriptive feature/value differences, entry probability
+   margins, and near-threshold rows around the two replay buy bands,
+4. avoid training, replay reruns, feature/model axes, threshold search,
    dashboards, schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

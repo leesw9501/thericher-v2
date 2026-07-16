@@ -252,10 +252,14 @@
   `source: local_paper` fills on AMD only, with no non-local fill sources and
   no broker outcomes. The follow-up trade-path attribution parsed existing
   local-paper events and found `3` closed AMD segments and no open segments.
+- AMD segment-quality diagnostic reran no execution. It preserved the existing
+  `source: local_paper` entry/exit evidence and labeled all fixed horizon
+  marks as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next AMD diagnostic should parse existing local-paper fills only and keep
-  any horizon/overlay marks labeled separately as `source: diagnostic_overlay`.
+- The next AMD feature-input diagnostic should parse existing local-paper fills
+  only for linkage and should not create broker, replay, or diagnostic fill
+  evidence.

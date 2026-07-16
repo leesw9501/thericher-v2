@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded AMD segment-quality diagnostic for the first-evaluation
-source-context replay.
+Run one bounded AMD entry feature-input diagnostic.
 
 This advances PnL attribution, feature/model research, and backtest validation
-by explaining why the new source-context replay recovered AMD fills on the
-second holdout, and why one AMD closed segment was fee-aware negative while two
-were non-negative. Use existing artifacts and local bars only.
+by explaining what feature-input differences separate the first-evaluation
+source-context replay's negative AMD segment from its non-negative AMD
+segments. Use existing artifacts and local bars only.
 
 ## Hard Boundaries
 
@@ -70,31 +69,30 @@ were non-negative. Use existing artifacts and local bars only.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
+   - AMD segment-quality diagnostic:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-source-context-segment-quality-20260716\metrics.json`
    - first-evaluation source-context attribution:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
-   - first-evaluation source-context replay:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716\metrics.json`
    - first-evaluation source-context robustness:
      `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716-robustness\metrics.json`
-   - second-holdout short/depth contrast:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-depth-vs-short-second-holdout-20260716\metrics.json`
 3. Reuse only selected AMD bars from the existing
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
    Yahoo 1m file. Do not acquire data for this task.
-4. Do not rerun training, evaluation, replay, calibration, or threshold
-   derivation.
-5. Focus only on the AMD fill-bearing variants:
-   - `t01_b0p542_s0p497`,
-   - `t02_b0p543_s0p497`.
+4. Do not rerun training, evaluation, replay, calibration, threshold
+   derivation, or probability inference.
+5. Reconstruct the existing `core_plus_entry_adverse_v1` feature inputs for:
+   - AMD entry rows that produced local-paper fills,
+   - nearby AMD top-probability rows around the two replay buy bands,
+   - a compact sample of below-threshold rows if useful for context.
 6. Record compact artifact-only attribution:
-   - entry probability and margin above buy threshold,
-   - first sell-threshold timing after entry,
-   - adverse/favorable movement before exit,
-   - fixed 2/3/5-bar diagnostic horizon marks with
-     `source: diagnostic_overlay`,
-   - local-paper entry/exit source verification,
-   - negative versus non-negative closed-segment contrast,
-   - what differs from the prior zero-fill short/depth second-holdout contrast.
+   - feature values for negative versus non-negative AMD entries,
+   - feature deltas for `upper_wick_share` and `low_vs_prior_low_return`,
+   - entry probability margin and horizon mark context from the segment-quality
+     artifact,
+   - whether below-threshold near-miss rows resemble the negative or
+     non-negative entries,
+   - what this suggests for the next bounded evidence shape without selecting
+     or promoting a model.
 7. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
    feature, training path, replay path, threshold search, policy selection,
    simulator exit rule, or broker behavior unless a focused parser bug appears.
@@ -128,7 +126,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run AMD source context segment diagnostic`
+`Run AMD entry feature input diagnostic`
 
 ## Completion Report
 

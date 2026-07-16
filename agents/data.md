@@ -282,12 +282,15 @@
   `snapshot=2026-06-18` Yahoo file. The attempted 12-source context was not
   run because the existing research job caps training data slices at `6`; no
   additional data was acquired.
+- AMD segment-quality diagnostic reused selected AMD rows from the existing
+  `snapshot=2026-06-18` Yahoo file plus existing external trace/event
+  artifacts; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition; reuse selected AMD rows from the
-  existing `snapshot=2026-06-18` Yahoo file for segment-quality attribution.
+  existing `snapshot=2026-06-18` Yahoo file for feature-input attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
