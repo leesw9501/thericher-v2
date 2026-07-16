@@ -234,10 +234,16 @@
   added no helper, code path, job kind, CLI, report family, gate, dashboard,
   scheduler, broker path, threshold search, retraining, replay rerun, or
   model-promotion language.
+- Wider entry-adverse replay reused existing Docker `research` replay,
+  opportunity attribution, and trade-path helper paths. It added no helper,
+  code path, job kind, CLI, report family, gate, dashboard, scheduler, broker
+  path, threshold search, retraining, feature/model axis, or model-promotion
+  language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded wider entry-adverse replay sample
-  before allowing another feature/model axis or threshold-only branch.
+- Push the next task toward one bounded wider entry-adverse signal-quality
+  diagnostic before allowing another feature/model axis or threshold-only
+  branch.

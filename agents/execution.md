@@ -162,6 +162,10 @@
 - Entry-adverse segment contrast reran no execution. It consumed existing
   local-paper replay/event evidence only and confirmed the contrasted closed
   segments used `source: local_paper` fills.
+- Wider entry-adverse replay ran through the existing broker-free local-paper
+  path in Docker `research`, produced `18` verified `source: local_paper`
+  fills across the first batch, zero fills in the second batch, and observed no
+  non-local fill source.
 
 ## Next Handoff
 

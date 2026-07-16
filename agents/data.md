@@ -198,14 +198,17 @@
 - Entry-adverse segment contrast consumed existing external artifacts plus
   selected AAPL, ABNB, and ACN rows from `snapshot=2026-06-18`; no additional
   data was acquired.
+- Wider entry-adverse replay inventoried the existing `snapshot=2026-06-18`
+  Yahoo 1m file, found `250` total symbols and `240` eligible symbols after
+  excluding source/prior replay symbols, selected ADBE, ADI, ADP, AEM, AGG,
+  AMAT, AMD, AMGN, AMT, and AMZN, and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  external artifacts and inventorying a capped additional symbol set from the
-  existing `snapshot=2026-06-18` local Yahoo slice for a wider entry-adverse
-  replay sample.
+  external artifacts plus selected `snapshot=2026-06-18` local Yahoo rows for
+  a bounded wider entry-adverse signal-quality diagnostic.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

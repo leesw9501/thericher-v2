@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Run one bounded wider entry-adverse replay sample before another
+1. Run one bounded wider entry-adverse signal-quality diagnostic before another
    feature/model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
@@ -238,6 +238,13 @@
   negative segments had negative 5/15/30-bar forward close marks while the ACN
   non-negative segment had non-negative forward marks, and wrote a compact
   descriptive artifact outside Git.
+- Last completed: `bounded-entry-adverse-wide-sample-summary-20260716`, status
+  `entry_adverse_wide_sample_summary_only`, replayed the completed
+  `core_plus_entry_adverse_v1` branch on 10 additional out-of-symbol local
+  Yahoo slices in two Docker `research` batches, verified all `18` fills were
+  `source: local_paper`, found `9` buy opportunities, `9` closed segments, `6`
+  non-negative and `3` negative fee-aware segments, no open segments, and
+  fee-aware delta sum `2.7739`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -495,11 +502,15 @@
 - Entry-adverse segment contrast showed useful path differences, but only four
   closed segments. The next evidence should widen replay to a capped additional
   out-of-symbol sample before changing another feature/model axis.
+- The wider entry-adverse sample produced more closed segments and a positive
+  aggregate fee-aware delta, while a second batch had zero buy opportunities.
+  The next evidence should explain segment quality and zero-fill behavior from
+  existing artifacts before changing another feature/model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded wider entry-adverse replay sample from the
-  completed feature-branch artifact and existing `snapshot=2026-06-18` local
-  Yahoo data before another hidden-units, regularization, preprocessing,
-  feature-set, or threshold-only branch.
+  task should run one bounded wider entry-adverse signal-quality diagnostic
+  from the completed wide-sample replay, opportunity, trade-path, summary,
+  trace, and local-bar evidence before another hidden-units, regularization,
+  preprocessing, feature-set, or threshold-only branch.

@@ -247,6 +247,10 @@
   existing external artifacts plus selected local Yahoo rows, reran no Docker
   research job, used no GPU, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Wider entry-adverse replay ran in Docker `research` with PyTorch CUDA and RTX
+  4090 visible, reused the current `src` mount and read `/app/market_data`
+  read-only, then wrote replay, robustness, opportunity, trade-path, research
+  job, and summary artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

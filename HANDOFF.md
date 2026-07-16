@@ -365,6 +365,14 @@ Implemented and pushed:
   forward close marks while the non-negative ACN segment had non-negative
   forward marks, and recorded no branch ranking, pass/fail field, or threshold
   search,
+- bounded wider entry-adverse replay sample; it inventoried the existing
+  `snapshot=2026-06-18` Yahoo 1m file, found `240` eligible additional
+  symbols after exclusions, replayed `10` deterministic symbols in two Docker
+  `research` batches because the existing robustness config caps slices at
+  `6`, verified all `18` generated fills as `source: local_paper`, recorded `9`
+  buy opportunities, `1718` sell opportunities, `9` closed trade-path segments,
+  `6` non-negative and `3` negative fee-aware segments, fee-aware delta sum
+  `2.7739`, and no open segments,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -429,17 +437,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded wider entry-adverse replay sample:
+Start one bounded wider entry-adverse signal-quality diagnostic:
 
-1. inventory the existing `snapshot=2026-06-18` Yahoo 1m file for a small,
-   deterministic additional US equity symbol set,
-2. reuse the completed `core_plus_entry_adverse_v1` feature-branch artifact and
-   existing Docker `research` replay path with cap-2 thresholds and `max-bars
-   240`,
-3. produce replay, opportunity, and trade-path or zero-fill attribution evidence
-   outside Git, with all generated fills verified as `source: local_paper`,
-4. avoid retraining, new feature/model axes, threshold search, dashboards,
-   schedulers, broker behavior, or report/gate expansion.
+1. consume the completed wide-sample replay, opportunity, trade-path, summary,
+   trace, and selected local-bar evidence,
+2. explain the `6` non-negative versus `3` negative closed segments and the
+   zero-fill second batch with entry probabilities, threshold gaps,
+   entry-adverse feature values, forward marks, and excursion summaries,
+3. write one compact external diagnostic artifact with no branch ranking,
+   pass/fail field, threshold search, retraining, replay rerun, or new feature
+   axis,
+4. keep `agents/*.md` as stateboards and avoid dashboards, schedulers, broker
+   behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

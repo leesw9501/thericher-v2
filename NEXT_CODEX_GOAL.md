@@ -5,12 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded wider entry-adverse replay sample target.
+Build a bounded wider entry-adverse signal-quality diagnostic target.
 
-This advances backtest/walk-forward validation and PnL attribution by replaying
-the completed `core_plus_entry_adverse_v1` branch on a capped additional
-out-of-symbol sample from existing local data before another feature, model,
-preprocessing, threshold, or training axis is tried.
+This advances PnL attribution and feature/model research by explaining the
+completed wider `core_plus_entry_adverse_v1` replay sample before another
+feature, model, preprocessing, threshold, or training axis is tried.
 
 ## Hard Boundaries
 
@@ -57,35 +56,38 @@ preprocessing, threshold, or training axis is tried.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before adding a reusable helper,
-   changing feature-building code, or adding a new research job kind. If
-   existing replay and artifact-only scripts are enough, do not add code.
+3. Ask Claude CLI for a short drift-check before adding a reusable diagnostic
+   helper or changing feature-building code. If a one-off artifact-only script
+   is enough, do not add a helper.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inventory the existing
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
-   file for a deterministic capped additional symbol set:
-   - exclude the source symbols `CVS`, `FCX`, and `KO`,
-   - exclude the already replayed AAPL, ABNB, ABT, ACN, and ABBV slices unless
-     an input artifact is missing,
-   - select at most 10 symbols with at least 240 usable 1m rows,
-   - record the selected symbols and any shortage in `agents/data.md`.
-3. Reuse the existing feature-branch artifact:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-feature-branch-smoke-20260716\metrics.json`
-4. Run the existing Docker `research` replay path with cap-2 threshold pairs
-   and `max-bars 240` for the selected symbols. Keep market data read-only via
-   `/app/market_data` and artifacts under `/app/model_artifacts`.
-5. Produce concise external replay evidence and, if fills occur, artifact-only
-   opportunity and trade-path attribution. If zero fills occur, write a compact
-   zero-fill attribution instead of forcing another threshold branch.
-6. Verify all generated fills are `source: local_paper`. Keep disabled broker
-   and diagnostic overlay outcomes separate if they appear.
-7. Do not rerun training, threshold search, model-axis search, data acquisition,
-   or feature-building changes unless an input artifact is missing or corrupt.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Consume only existing external artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-wide-sample-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-trade-path-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-wide-sample-replay-batch2-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-batch2-opportunity-attribution-20260716\metrics.json`
+3. Resolve probability traces and local-paper event paths from existing replay
+   or robustness metadata. Reuse selected `snapshot=2026-06-18` rows from
+   `D:\market_data` only for segment path or feature context not already in the
+   artifacts.
+4. Produce one compact external diagnostic artifact explaining:
+   - `6` non-negative versus `3` negative fee-aware closed segments,
+   - the second batch's zero buy opportunities and zero fills,
+   - entry probabilities, buy/sell threshold gaps, and first sell-signal timing,
+   - `upper_wick_share` and `low_vs_prior_low_return` at or before entry,
+   - fixed 5/15/30-bar forward diagnostic marks,
+   - adverse/favorable excursion and holding duration,
+   - local-paper source verification.
+5. Keep the result descriptive only. Do not rank symbols or segments, select a
+   branch, define promotion criteria, or produce a pass/fail field.
+6. Do not rerun training, replay, threshold search, model-axis search, or data
+   acquisition unless an input artifact is missing or corrupt.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -113,7 +115,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded wider entry-adverse replay sample`
+`Add bounded wider entry-adverse signal diagnostic`
 
 ## Completion Report
 
@@ -125,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- wider entry-adverse replay findings,
+- wider entry-adverse signal-quality diagnostic findings,
 - what was intentionally not built,
 - next recommended goal.
