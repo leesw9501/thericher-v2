@@ -393,6 +393,10 @@
   `/app/model_artifacts`. Follow-up opportunity, trade-path, and comparison
   artifacts ran locally as artifact-only work under
   `D:\thericher-v2\model-artifacts`.
+- Wider-holdout depth behavior attribution ran locally as artifact-only work,
+  used no GPU or Docker job, consumed existing external JSON artifacts plus
+  selected `D:\market_data` rows, and wrote one compact diagnostic under the
+  external model artifact root.
 
 ## Next Handoff
 
@@ -401,6 +405,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next wider-holdout attribution can run locally as artifact-only work; if
-  it leads to another GPU task, keep PyTorch CUDA confined to Docker
-  `research`.
+- The next runner should use explicit one-job CLI semantics, queue/run artifacts
+  outside Git, and Docker `research` for GPU execution only.

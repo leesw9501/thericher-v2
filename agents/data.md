@@ -304,13 +304,16 @@
   fixed source/evaluation exclusions, selected ADBE, ADI, ADP, AEM, AGG, AMAT,
   AMGN, AMT, AMZN, AXP, AZN, and BA with at least `240` bars, and acquired no
   additional data.
+- Wider-holdout depth behavior attribution reused selected ADBE, ADI, ADP,
+  AEM, AGG, AMAT, AMGN, AMT, AMZN, AXP, AZN, and BA rows from the existing
+  `snapshot=2026-06-18` Yahoo file to reconstruct feature inputs and
+  near-threshold rows; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; reuse selected AMAT, AMZN, and
-  comparison-symbol rows from the existing `snapshot=2026-06-18` Yahoo file for
-  artifact-only segment attribution.
+- The next data task is still not acquisition; the Engine Research Agent runner
+  smoke should prefer existing `D:\market_data` slices.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

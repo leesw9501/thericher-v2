@@ -277,11 +277,15 @@
   fills across AMAT and AMZN. Trade-path attribution parsed existing event
   files only and observed no broker, disabled-broker, or diagnostic-overlay
   fills.
+- Wider-holdout depth behavior attribution reran no execution. It consumed
+  existing local-paper event and trade-path evidence only, preserved short and
+  depth local-paper source verification, and created no broker,
+  disabled-broker, or diagnostic-overlay fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next wider-holdout attribution should parse existing local-paper event
-  files only; any diagnostic marks must remain separate from `source:
-  local_paper` fills.
+- The Engine Research Agent runner must not gain broker authority. If a queued
+  smoke includes replay, it must use the existing broker-free local-paper path
+  and keep fills labeled `source: local_paper`.

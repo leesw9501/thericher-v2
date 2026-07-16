@@ -677,22 +677,21 @@ Key decisions:
 
 ## Recommended Next Slice
 
-The completed first-evaluation wider-holdout contrast reused the short and
-depth source-context artifacts without retraining, selected ADBE, ADI, ADP,
-AEM, AGG, AMAT, AMGN, AMT, AMZN, AXP, AZN, and BA from the existing
-`snapshot=2026-06-18` Yahoo 1m file, replayed both artifacts through Docker
-`research`, and verified all generated fills as `source: local_paper`.
+The completed wider-holdout depth attribution consumed existing replay,
+opportunity, trade-path, trace, and selected local-bar evidence only. It found
+the deeper first-evaluation source-context behavior recurred outside AMD but
+was concentrated in AMAT/AMZN: depth had `8` closed segments versus short's
+`11`, fee-aware sum `33.4440` versus `8.8756`, average entry margin higher by
+about `0.1786`, average sell-threshold latency higher by about `4.2` bars, and
+`2` remaining negative AMAT segments.
 
-Start one bounded artifact-only attribution of the wider-holdout depth
-behavior:
+Start the first lightweight Engine Research Agent GPU queue runner:
 
-1. consume the completed wider-holdout replay, opportunity, trade-path, and
-   contrast artifacts,
-2. inspect AMAT/AMZN depth segments against short-side comparison segments,
-3. compare entry margin, sell-threshold latency, adverse/favorable movement,
-   fee-aware delta, symbol concentration, and zero-fill threshold gaps,
-4. avoid retraining, feature/model axis changes, threshold search, and
-   production-candidate language.
+1. ask Claude for a drift-check because this touches agent orchestration,
+2. keep it as an explicit one-job CLI, not a daemon or broad agent platform,
+3. store queue/run artifacts outside Git under the model artifact root,
+4. run one bounded Docker `research` smoke so the GPU lane starts becoming an
+   actual worker rather than only a stateboard.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

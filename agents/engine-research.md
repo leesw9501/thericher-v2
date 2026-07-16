@@ -29,9 +29,8 @@
 
 ## Active Queue
 
-1. Attribute the wider-holdout first-evaluation depth behavior from existing
-   AMAT/AMZN local-paper segments before changing source context, feature/model
-   axes, or thresholds again.
+1. Build the first lightweight Engine Research Agent GPU queue runner so the
+   lane can claim and run one bounded Docker `research` job per invocation.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -755,10 +754,17 @@
   fewer fills than short (`16` versus `22`) but larger fee-aware delta
   (`33.444` versus `8.8756`), concentrated in AMAT and AMZN, with `2`
   negative and `6` non-negative closed segments.
+- Wider-holdout depth behavior attribution consumed existing short/depth
+  replay, opportunity, trade-path, trace, and selected local-bar evidence only.
+  It found depth average entry margin higher by about `0.1786`, average
+  sell-threshold latency higher by about `4.2` bars, favorable excursion higher
+  by about `3.64`, and AMAT/AMZN concentration with `2` negative AMAT segments
+  still present. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should explain the AMAT/AMZN wider-holdout depth behavior from existing
-  trace, event, trade-path, and selected local-bar evidence before another GPU
-  feature/model axis change.
+  task should create the first explicit Engine Research Agent runner, with
+  queue and run artifacts outside Git, one Docker `research` job per
+  invocation, and no broad scheduler or multi-agent platform.

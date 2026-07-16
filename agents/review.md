@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review the next wider-holdout attribution for bounded scope and artifact
+1. Review the next Engine Research Agent runner for bounded scope and agent
    sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
@@ -395,13 +395,18 @@
   dashboard, scheduler, broker path, threshold search, retraining,
   feature/model axis, source-context search, simulator exit rule, or
   model-promotion language.
+- Wider-holdout depth behavior attribution stayed artifact-only and reused
+  existing trace, trade-path, opportunity, contrast, and local Yahoo evidence.
+  It added no code, helper, job kind, CLI, report family, gate, dashboard,
+  scheduler, broker path, threshold search, retraining, replay rerun,
+  feature/model axis, source-context search, simulator exit rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one artifact-only wider-holdout segment attribution
-  using completed short/depth source-context artifacts, and reject drift into
-  retraining, source-context search, feature-set, regularization, hidden-units,
-  preprocessing, threshold-search, dashboard, scheduler, or report/gate
-  branches.
+- Push the next task toward the smallest useful Engine Research Agent runner:
+  explicit command, one queued Docker `research` job per invocation, external
+  queue/run artifacts, no daemon, no broad multi-agent framework, no dashboard,
+  no broker authority, and no report/gate branches.
