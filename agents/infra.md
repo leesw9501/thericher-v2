@@ -342,6 +342,13 @@
   RTX 4090 visible, read `/app/market_data` read-only, and wrote feature
   branch, training, evaluation, model, replay, robustness, event, research job,
   and trade-path artifacts under `/app/model_artifacts`.
+- Longer-depth entry-adverse contrast ran in Docker `research` with PyTorch
+  CUDA and RTX 4090 visible, mounted current `src` read-only, read
+  `/app/market_data` read-only, wrote feature-branch, training, evaluation,
+  model, replay, robustness, event, and research-job artifacts under
+  `/app/model_artifacts`, then wrote local artifact-only trade-path and
+  depth-vs-short comparison artifacts under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -350,6 +357,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next bounded longer-depth contrast should use Docker `research` with
-  PyTorch CUDA and write generated artifacts only under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- The next short-vs-depth attribution should be artifact-only and should not
+  require a Docker rebuild or another GPU training run unless existing
+  artifacts are incomplete.

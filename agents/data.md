@@ -265,13 +265,17 @@
   `230` eligible symbols after prior exclusions, selected ANET, APH, APO, APP,
   ASML, and AVGO for evaluation, reused ADBE, ADI, ADP, AEM, AGG, and AMAT for
   source training, and acquired no additional data.
+- Longer-depth entry-adverse contrast reused the same `snapshot=2026-06-18`
+  source and evaluation split, loaded 240 bars each for ADBE, ADI, ADP, AEM,
+  AGG, AMAT, ANET, APH, APO, APP, ASML, and AVGO through existing Docker
+  research paths, and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; the longer-depth contrast should
-  reuse the same `snapshot=2026-06-18` source/evaluation split unless an
-  artifact proves the split is unusable.
+- The next data task is still not acquisition; the next artifact-only
+  short-vs-depth attribution should reuse existing probability traces, event
+  artifacts, and selected `snapshot=2026-06-18` bars only.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

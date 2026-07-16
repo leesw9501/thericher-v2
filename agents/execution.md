@@ -235,11 +235,15 @@
   local-paper path only, produced `4` fills on APH, verified every fill as
   `source: local_paper`, and attributed `2` closed trade paths with no open
   segments or broker outcomes.
+- Longer-depth entry-adverse replay used the existing broker-free local-paper
+  path only, produced `4` fills on APH, verified every fill as
+  `source: local_paper`, and attributed `2` closed trade paths with no open
+  segments, broker outcomes, or diagnostic overlay fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next longer-depth contrast may replay through the existing broker-free
-  local-paper path only; diagnostic exit-latency evidence must remain separate
-  from simulated fills.
+- The next short-vs-depth signal/path attribution should consume existing
+  local-paper event artifacts only; diagnostic overlays, if referenced, must
+  remain separate from simulated fills.

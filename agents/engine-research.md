@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded longer-depth Docker `research` PyTorch CUDA contrast using
-   the same entry-adverse settings and ANET/APH/APO/APP/ASML/AVGO evaluation
-   split.
+1. Run one artifact-only depth-vs-short signal/path attribution on the
+   completed ANET/APH/APO/APP/ASML/AVGO entry-adverse artifacts before changing
+   another feature/model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -696,10 +696,16 @@
   ANET/APH/APO/APP/ASML/AVGO, recorded probability range `0.493954`, replayed
   cap-2 local-paper thresholds with `4` fills, and attributed `2` closed APH
   segments with fee-aware delta sum `1.4194`.
+- Longer-depth entry-adverse contrast ran in Docker `research` with RTX 4090
+  visible, kept the same feature/model/source/evaluation settings, raised only
+  training caps to `max_epochs=16` and `max_steps=512`, recorded probability
+  range `0.460215`, replayed cap-2 local-paper thresholds with `4` fills,
+  attributed `2` closed APH segments with fee-aware delta sum `8.0192`, and
+  wrote a depth-vs-short comparison artifact outside Git.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded longer-depth contrast on the same fixed
-  entry-adverse setup before changing feature sets, thresholds, preprocessing,
-  regularization, or hidden units.
+  task should explain the short-vs-depth APH path difference from existing
+  artifacts before changing feature sets, thresholds, preprocessing,
+  regularization, hidden units, or training depth again.

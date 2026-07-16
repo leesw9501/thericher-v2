@@ -541,6 +541,14 @@ Implemented and pushed:
   evaluation probability range `0.493954`, replayed cap-2 thresholds through
   local paper with `4` verified `source: local_paper` fills, and attributed `2`
   closed APH trade paths with fee-aware delta sum `1.4194`,
+- bounded longer-depth entry-adverse PyTorch CUDA contrast; it kept the same
+  feature set, hidden units, weight decay, preprocessing, source symbols, and
+  evaluation symbols as the short block, raised only bounded training caps to
+  `max_epochs=16` and `max_steps=512`, recorded evaluation probability range
+  `0.460215`, replayed cap-2 thresholds with `4` verified
+  `source: local_paper` fills, attributed `2` closed APH trade paths with
+  fee-aware delta sum `8.0192`, and wrote one depth-vs-short comparison
+  artifact outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -605,15 +613,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded longer-depth PyTorch CUDA contrast target:
+Start one artifact-only depth-vs-short signal/path attribution target:
 
-1. consume the completed ANET/APH/APO/APP/ASML/AVGO validation artifacts,
-2. keep the same source/evaluation split and fixed entry-adverse settings,
-3. increase only bounded training caps within existing limits,
-4. replay the same evaluation slices through local paper and compare against
-   the short block descriptively,
-5. avoid new helper code, model-axis changes, broad model search, threshold
-   search, dashboards, schedulers, broker behavior, or report/gate expansion.
+1. consume the completed short and longer-depth ANET/APH/APO/APP/ASML/AVGO
+   feature-branch, replay, trade-path, and comparison artifacts,
+2. focus on the fill-bearing APH variants and their probability traces,
+3. explain why the deeper run lifted fee-aware delta while also increasing max
+   drawdown,
+4. keep all evidence descriptive, local-paper-separated, and outside Git,
+5. avoid new training, replay reruns, feature/model axes, threshold search,
+   dashboards, schedulers, broker behavior, or report/gate expansion unless a
+   focused artifact parser bug appears.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

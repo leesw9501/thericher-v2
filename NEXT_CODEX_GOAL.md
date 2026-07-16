@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded longer-depth PyTorch CUDA entry-adverse contrast.
+Explain the short-vs-depth APH signal/path difference from existing artifacts.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by comparing the completed short fixed entry-adverse validation
-block against one deeper but still capped training/evaluation/replay block on
-the same data split.
+PnL attribution by explaining why the longer-depth entry-adverse run lifted
+fee-aware trade-path delta while also increasing max drawdown, without running
+another training job or changing model axes.
 
 ## Hard Boundaries
 
@@ -33,7 +33,7 @@ the same data split.
   base engine image, runtime image, or local dev/test path.
 - Do not start a broad scheduler, agent framework, promotion gate, dashboard
   expansion, threshold optimizer, preprocessing search, regularization sweep,
-  hidden-units sweep, or model search.
+  hidden-units sweep, training-depth sweep, or model search.
 - Do not call any threshold, candidate, feature set, preprocessing branch, or
   model best, recommended, passed, promoted, or production ready.
 
@@ -59,44 +59,52 @@ the same data split.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If this contrast
-   can run through existing Docker `research` job kinds and artifact-only
-   scripts, no Claude check is needed.
+3. Ask Claude CLI for a short drift-check before code edits. If this
+   attribution can run through existing helpers and artifact-only scripts, no
+   Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume the completed short block as baseline context:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-replay-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-trade-path-20260716\metrics.json`
-3. Confirm Docker `research` can see PyTorch CUDA/GPU before launching the
-   bounded contrast. Keep any smoke output outside Git.
-4. Keep this configuration fixed:
-   - `core_plus_entry_adverse_v1`
-   - `hidden_units=4`
-   - `weight_decay=0.001`
-   - `feature_standardization`
-   - source slices: ADBE, ADI, ADP, AEM, AGG, AMAT from `snapshot=2026-06-18`
-   - evaluation/replay slices: ANET, APH, APO, APP, ASML, AVGO from
-     `snapshot=2026-06-18`
-5. Increase only bounded training depth, for example up to `max_epochs=16` and
-   `max_steps=512`, while keeping `max_bars=240`.
-6. Run the existing Docker `research` feature-branch job, then the existing
-   feature-branch replay job with threshold-pair cap `2` on the same evaluation
-   slices.
-7. Record a compact artifact-only comparison against the short block:
-   probability range, local-paper fill count, PnL range, max drawdown,
-   trade-path segment counts, and fill-source verification.
-8. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+2. Consume these completed artifacts:
+   - short feature branch:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-20260716\metrics.json`
+   - short replay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-replay-20260716\metrics.json`
+   - short trade path:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-trade-path-20260716\metrics.json`
+   - depth feature branch:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-depth-gpu-validation-anet-avgo-20260716\metrics.json`
+   - depth replay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-depth-gpu-validation-anet-avgo-replay-20260716\metrics.json`
+   - depth trade path:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-depth-gpu-validation-anet-avgo-trade-path-20260716\metrics.json`
+   - depth-vs-short comparison:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-depth-vs-short-anet-avgo-20260716\metrics.json`
+3. Focus on APH, the fill-bearing symbol in both runs. Use existing probability
+   traces, threshold variants, local-paper event artifacts, and selected
+   `snapshot=2026-06-18` bars.
+4. Record a compact artifact-only explanation comparing:
+   - threshold pairs,
+   - buy opportunity timestamps and probability margins,
+   - local-paper entry/exit timestamps and prices,
+   - adverse/favorable movement,
+   - sell-threshold timing,
+   - drawdown-relevant path differences,
+   - fill-source verification.
+5. Do not rerun training, replay, threshold calibration, or model evaluation
+   unless an artifact is missing or unreadable.
+6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
    training path, replay path, threshold search, policy selection, simulator
-   exit rule, or broker behavior unless the bounded run exposes a focused bug.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   exit rule, or broker behavior unless a focused artifact parser bug appears.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
+- This task should not acquire data; it should reuse
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active validation loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -120,7 +128,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run bounded entry adverse GPU validation`
+`Explain entry adverse depth signal path`
 
 ## Completion Report
 
