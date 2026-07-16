@@ -321,6 +321,9 @@
 - Diagnostic exit-overlay helper smoke ran locally as artifact-only work, used
   no GPU or Docker research job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Conditional exit-overlay contrast ran locally as artifact-only work, used no
+  GPU or Docker research job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -329,5 +332,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next conditional overlay contrast should write any generated artifact
-  only under `D:\thericher-v2\model-artifacts`.
+- The next exit-latency composite diagnostic should write any generated
+  artifact only under `D:\thericher-v2\model-artifacts`.

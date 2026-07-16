@@ -248,12 +248,14 @@
 - Diagnostic exit-overlay helper smoke reused selected
   `snapshot=2026-06-18` Yahoo rows for ADBE, ADI, ADP, AMAT, and AMGN; no
   additional data was acquired.
+- Conditional exit-overlay contrast consumed existing external artifacts and
+  reused the same selected local Yahoo rows; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the conditional overlay contrast
-  should consume the helper smoke artifact and existing context artifacts.
+- The next data task is not acquisition; the exit-latency composite diagnostic
+  should consume existing external artifacts only.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

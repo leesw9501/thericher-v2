@@ -488,6 +488,14 @@ Implemented and pushed:
   `diagnostic_overlay` outcomes, matched the previous one-off overlay
   timestamp/price evidence for all `33` marks, preserved referenced
   `source: local_paper` fills, and wrote one compact artifact outside Git,
+- bounded conditional exit-overlay contrast; it consumed the helper smoke,
+  exit-timing, sell-latency, and signal-hygiene artifacts, compared `3`
+  conditional latency/adverse metadata probes across `5` loss-bearing and `6`
+  non-negative segments, found `latency_ge_5_at_2_bar` matched `4` of `5`
+  loss-bearing segments and `0` of `6` non-negative segments, kept all `66`
+  overlay/metadata outcomes labeled `source: diagnostic_overlay`, preserved
+  referenced local-paper fill sources, and wrote one compact artifact outside
+  Git without replay or training,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -552,16 +560,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded conditional exit-overlay contrast target:
+Start one bounded diagnostic exit-latency composite overlay target:
 
-1. use the helper smoke artifact plus the existing entry-adverse exit-timing and
-   sell-latency context artifacts,
-2. compare a tiny set of conditional latency/adverse overlay metadata probes
-   across loss-bearing and non-negative segment groups,
-3. write one compact external contrast artifact under
+1. use the conditional exit-overlay contrast and helper smoke artifacts,
+2. compute one descriptive composite diagnostic scenario where only
+   `latency_ge_5_at_2_bar` segments use the fixed 2-bar diagnostic overlay and
+   all other segments retain their existing local-paper exit evidence,
+3. summarize gross-delta and source evidence by loss-bearing versus
+   non-negative groups,
+4. write one compact external artifact under
    `D:\thericher-v2\model-artifacts`,
-4. keep the result descriptive and avoid selecting or applying an exit policy,
-5. avoid new helper code unless a bug is found, and avoid training, replay
+5. keep the result descriptive and avoid selecting or applying an exit policy
+   to local-paper replay,
+6. avoid new helper code unless a bug is found, and avoid training, replay
    reruns, broad feature changes, broad data search, threshold search, branch
    ranking, dashboards, schedulers, broker behavior, or report/gate expansion.
 

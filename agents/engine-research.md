@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Compare a tiny set of conditional latency/adverse exit-overlay metadata
-   probes before changing another model axis.
+1. Build one descriptive exit-latency composite overlay diagnostic before
+   changing another model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -666,9 +666,13 @@
   entry-adverse segments, produced `33` fixed overlay marks, matched previous
   one-off timestamp/price evidence for all `33`, and preserved local-paper
   sources.
+- Conditional exit-overlay contrast compared `3` metadata probes across `5`
+  loss-bearing and `6` non-negative segments. The latency>=5, 2-bar probe
+  matched `4` loss-bearing segments and no non-negative segments, while
+  adverse<=-1 at 3 bars matched only the duplicated AMGN loss path.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded conditional exit-overlay contrast before another
+  task should run one bounded exit-latency composite diagnostic before another
   feature-set, preprocessing, regularization value, or threshold-only branch.

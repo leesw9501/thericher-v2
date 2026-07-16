@@ -215,10 +215,13 @@
 - Diagnostic exit-overlay helper smoke confirmed all referenced local-paper
   entry/exit sources stayed `source: local_paper` and all `44` helper overlay
   or metadata outcomes used `source: diagnostic_overlay`.
+- Conditional exit-overlay contrast kept all `66` overlay/metadata outcomes at
+  `source: diagnostic_overlay`, preserved referenced local-paper sources, and
+  reran no local-paper replay.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next contrast should keep diagnostic overlays separate from local-paper
-  fills and must not apply an exit policy to local-paper replay.
+- The next composite diagnostic must keep substituted overlay marks separate
+  from local-paper fills and must not apply an exit policy to local-paper replay.

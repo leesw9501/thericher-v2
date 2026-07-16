@@ -5,13 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded conditional exit-overlay contrast.
+Build the first bounded diagnostic exit-latency composite overlay.
 
-This advances PnL attribution, backtest/walk-forward validation, and
-feature/model research by using the diagnostic exit-overlay helper smoke to
-compare a tiny set of conditional latency/adverse overlay metadata probes
-across loss-bearing and non-negative entry-adverse trade segments. The result
-must remain descriptive and must not select or apply an exit policy.
+This advances PnL attribution and backtest/walk-forward validation by using the
+conditional exit-overlay contrast to compute one descriptive composite scenario:
+segments matching `latency_ge_5_at_2_bar` use the fixed 2-bar
+`diagnostic_overlay` mark, while all other segments keep their existing
+`source: local_paper` exit evidence. This must not mutate local-paper fills,
+rerun replay, or apply an exit policy to the simulator.
 
 ## Hard Boundaries
 
@@ -60,7 +61,7 @@ must remain descriptive and must not select or apply an exit policy.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If the contrast
+3. Ask Claude CLI for a short drift-check before code edits. If the composite
    can run artifact-only with existing code, no Claude check is needed.
 
 ## Required Work
@@ -68,29 +69,26 @@ must remain descriptive and must not select or apply an exit policy.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts as context:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
-3. Compare at most three conditional overlay metadata probes, for example:
-   - latency at or above 5 bars with 2-bar overlay context,
-   - latency at or above 5 bars plus adverse move at or below `-1` with 2-bar
-     overlay context,
-   - adverse move at or below `-1` with 3-bar overlay context.
-4. Summarize only descriptive evidence:
-   - loss-bearing versus non-negative segment counts,
-   - conditional metadata counts,
-   - fixed 2/3/5 overlay gross-delta summaries by group,
-   - referenced local-paper source verification,
-   - diagnostic overlay source verification.
-5. Write one compact contrast artifact outside Git, for example:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
-6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
-   training path, replay rerun, threshold search, policy selection, or broker
-   behavior.
-7. Only edit code if the contrast exposes a helper bug; if code changes are
+3. Build one compact artifact-only composite diagnostic that:
+   - uses `latency_ge_5_at_2_bar` as the only condition under inspection,
+   - substitutes the fixed 2-bar diagnostic overlay outcome only for matching
+     segments,
+   - keeps existing local-paper exit evidence for all other segments,
+   - labels substituted outcomes with `source: diagnostic_overlay`,
+   - preserves retained outcomes with `source: local_paper`,
+   - summarizes gross-delta and source evidence by loss-bearing versus
+     non-negative segment groups.
+4. Write one compact composite artifact outside Git, for example:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
+5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+   training path, replay rerun, threshold search, policy selection, simulator
+   exit rule, or broker behavior.
+6. Only edit code if the composite exposes a helper bug; if code changes are
    needed, ask Claude CLI first and keep the fix focused.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -113,12 +111,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused test, artifact-only contrast command, Docker
+Also report any focused test, artifact-only composite command, Docker
 `research` command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add conditional exit overlay contrast`
+`Add exit latency composite overlay diagnostic`
 
 ## Completion Report
 
@@ -130,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- conditional contrast behavior,
+- composite diagnostic behavior,
 - what was intentionally not built,
 - next goal.
