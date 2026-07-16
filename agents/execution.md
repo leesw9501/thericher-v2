@@ -349,6 +349,11 @@
   order lifecycle, or order intent path. It summarized `source:
   diagnostic_overlay` feature rows only and preserved `592` existing
   `source: local_paper` fills as evidence counts.
+- Raw pre-entry local-paper outcome attribution reran no local-paper replay and
+  changed no fills, orders, positions, broker adapter, or order intent path. It
+  parsed existing event artifacts and paired existing `source: local_paper`
+  paths only; the smoke observed `302` local-paper entry fills, `290` closed
+  paths, `12` open paths, and `0` non-local fill sources.
 
 ## Next Handoff
 
@@ -366,7 +371,6 @@
   diagnostic rows into fills or order intents.
 - Probability-band diagnostics should still avoid replay and must not become
   order thresholds or order intents.
-- Raw pre-entry feature-context outcome attribution should read existing
-  local-paper fills or trade paths only. It must not rerun replay, mutate fills,
-  submit orders, create order intents, or turn a feature context into an
-  execution filter.
+- A simplification pass may inspect local-paper evidence contracts but must not
+  rerun replay, mutate fills, submit orders, create order intents, or turn any
+  feature context into an execution filter.

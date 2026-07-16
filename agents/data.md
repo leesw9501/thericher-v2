@@ -378,14 +378,18 @@
   Yahoo evidence through the existing feature-input ablation reconstruction. It
   acquired no additional data and wrote only external artifacts under
   `D:\thericher-v2\model-artifacts\feature-input-ablation`.
+- Raw pre-entry local-paper outcome attribution reused existing raw-band,
+  stability, local Yahoo, and local-paper event artifacts only. It acquired no
+  additional data and wrote one external artifact under
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution`.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Reuse existing raw-band
-  attribution, stability, probability-trace, event, trade-path, and local Yahoo
-  evidence for local-paper outcome attribution. Record exact missing event or
-  symbol/date evidence if the join cannot be completed from existing artifacts.
+- The next data task is still not acquisition. If simplification needs artifact
+  examples, use the existing raw-band, raw-outcome, stability, event, and local
+  Yahoo evidence. Record exact missing artifact names if any contract cannot be
+  verified.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

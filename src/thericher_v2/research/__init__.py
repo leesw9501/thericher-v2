@@ -163,6 +163,12 @@ from .jobs import (
     run_and_write_research_job,
     write_research_job_artifact,
 )
+from .raw_pre_entry_outcome_attribution import (
+    RawPreEntryOutcomeAttributionConfig,
+    RawPreEntryOutcomeAttributionResult,
+    attribute_local_paper_outcomes_by_raw_pre_entry_context,
+    run_bounded_raw_pre_entry_outcome_attribution,
+)
 from .trade_path_attribution import (
     TradePathAttributionResult,
     TradePathEventArtifact,
@@ -246,6 +252,8 @@ __all__ = [
     "ResearchJobResult",
     "ResearchJobRun",
     "ResearchJobSpec",
+    "RawPreEntryOutcomeAttributionConfig",
+    "RawPreEntryOutcomeAttributionResult",
     "TradePathAttributionResult",
     "TradePathEventArtifact",
     "WalkForwardCandidate",
@@ -273,6 +281,7 @@ __all__ = [
     "derive_fill_aware_threshold_pairs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
+    "attribute_local_paper_outcomes_by_raw_pre_entry_context",
     "attribute_trade_paths_from_local_paper_events",
     "attribute_entry_quality_from_traces",
     "compute_diagnostic_exit_composite",
@@ -293,6 +302,7 @@ __all__ = [
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",
+    "run_bounded_raw_pre_entry_outcome_attribution",
     "run_bounded_candidate_threshold_attribution",
     "run_bounded_candidate_threshold_band_rerun",
     "run_bounded_candidate_threshold_rerun",

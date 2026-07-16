@@ -952,3 +952,19 @@ reusable while avoiding threshold search, feature-rule selection, broker/KIS
 behavior, credential paths, replay mutation, new job families, report/gate
 sprawl, dashboards, schedulers, durable agent workers, and model-promotion
 semantics.
+
+## 2026-07-17 - Raw pre-entry local-paper outcome attribution
+
+Decision: add one bounded artifact-only local-paper outcome attribution helper
+for raw pre-entry diagnostic context. The helper reconstructs diagnostic rows
+from the existing feature-input stability lineage, reads existing local-paper
+event artifacts referenced by that lineage, reuses trade-path attribution for
+fill pairing, and summarizes local-paper outcomes by raw feature tertiles and
+pre-entry buckets.
+
+Reason: raw pre-entry feature attribution described the high adverse/no-lift
+context, but not how that context related to existing local-paper fills and
+trade paths. One pure helper advances PnL attribution while avoiding replay
+reruns, broker/KIS behavior, credential paths, network access, new research job
+kinds, dashboards, schedulers, gates, threshold search, feature-rule
+selection, durable agent workers, and model-promotion semantics.

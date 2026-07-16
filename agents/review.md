@@ -503,13 +503,21 @@
   scheduler, coordinator, durable worker, broker path, credential path, replay
   mutation, threshold search, feature rule, broad sweep, or model-promotion
   language.
+- Raw pre-entry local-paper outcome attribution added one pure helper and one
+  compact external artifact. It did not add a research job kind, report family,
+  gate, dashboard, scheduler, coordinator, durable worker, broker path,
+  credential path, replay mutation, threshold search, feature rule, broad
+  sweep, or model-promotion language. Claude warned this is near the
+  report-sprawl boundary, so the next task should consolidate before adding
+  another diagnostic axis.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward local-paper outcome attribution for the raw
-  pre-entry feature context before any deeper GPU block. Keep coordination
-  evidence small and avoid daemon, scheduler, dashboard, report branch, broker,
-  credential, auto-commit, durable multi-agent-platform behavior, threshold
-  search, feature-rule selection, or model-promotion language.
+- Push the next task toward bounded simplification of the raw pre-entry
+  attribution helper/artifact contracts before any deeper GPU block. Keep
+  coordination evidence small and avoid daemon, scheduler, dashboard, report
+  branch, broker, credential, auto-commit, durable multi-agent-platform
+  behavior, threshold search, feature-rule selection, or model-promotion
+  language.

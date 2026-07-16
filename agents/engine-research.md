@@ -894,6 +894,14 @@
   `pre_last_close_position_in_range`: high mean `0.118829` versus overall
   `0.433735` and low tertile `0.819891`. The artifact is
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\metrics.json`.
+- Raw pre-entry local-paper outcome attribution ran CPU/artifact-only and
+  wrote
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-cross-slice-20260717-r1\metrics.json`.
+  It joined `659` diagnostic observations to `302` existing local-paper entry
+  fills, `290` closed paths, and `12` open paths. Low
+  `pre_last_close_position_in_range` had closed fee-aware delta `-48.6654`,
+  mid `-60.4253`, and high `-38.7136`, so the raw context remains descriptive
+  rather than a rule.
 
 ## Next Handoff
 
@@ -901,9 +909,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, connect the raw pre-entry feature context
-  to existing local-paper outcome attribution. Keep it descriptive and do not
-  turn the context into a threshold, rule, or replay change.
+- Before another deep training block, consolidate the recent raw pre-entry
+  attribution helpers and artifact contracts so follow-up model work does not
+  depend on a growing chain of one-off reports.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

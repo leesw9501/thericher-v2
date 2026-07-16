@@ -480,6 +480,10 @@
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1`.
   It changed no Docker, compose, or dependency files and kept PyTorch confined
   to the `research` target.
+- Raw pre-entry local-paper outcome attribution ran CPU/artifact-only, used no
+  Docker or GPU job, changed no dependency files, and wrote one compact
+  artifact under
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-cross-slice-20260717-r1`.
 
 ## Next Handoff
 
@@ -494,7 +498,7 @@
   notification, or auto-commit behavior.
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
-  separate from Engine Research Agent's Docker/PyTorch lane while the next raw
-  pre-entry outcome attribution uses existing artifacts.
+  separate from Engine Research Agent's Docker/PyTorch lane while the next
+  simplification pass uses existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.

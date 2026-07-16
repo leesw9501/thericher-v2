@@ -1317,6 +1317,57 @@ context. The goal is to see how the descriptive high-risk raw feature context
 relates to existing broker-free local-paper fills and trade paths before any
 new model training, threshold experiment, or replay behavior change.
 
+The raw pre-entry local-paper outcome attribution then completed:
+
+- It added one pure artifact-only helper,
+  `raw_pre_entry_outcome_attribution`, without adding a research job kind,
+  replay path, scheduler, dashboard, gate, durable worker, broker/KIS path, or
+  credential path.
+- The helper reconstructs `source: diagnostic_overlay` candidate rows through
+  the existing feature-input stability lineage, reads existing event artifacts
+  referenced by that lineage, and reuses trade-path attribution for existing
+  `source: local_paper` fills and paths.
+- Claude drift-check said the scope was not gate drift, but warned this was the
+  marginal unit of report sprawl. The implementation kept one compact helper,
+  one compact external artifact, explicit missing-evidence counts, raw N beside
+  every rate-like view, and no threshold/rule/promotion language.
+- Engine Research and Execution/Review sidecars advised exact-key joins,
+  timezone normalization, diagnostic/local-paper source separation, and no
+  inference from compact selected examples. The implementation joins on exact
+  `slice_id`, `variant_id`, `symbol`, and UTC-normalized entry timestamp.
+- CPU/artifact-only smoke wrote:
+  `D:\thericher-v2\model-artifacts\raw-pre-entry-outcome-attribution\bounded-raw-pre-entry-outcome-attribution-cross-slice-20260717-r1\metrics.json`.
+  No Docker or GPU was used for this task.
+- The smoke consumed the existing raw-band attribution artifact and the
+  cross-slice stability artifact only. It reused existing local Yahoo rows and
+  event artifacts, acquired no additional data, and reran no local-paper replay.
+- Overall join results: `659` diagnostic observations, `256` unique signals,
+  `302` local-paper entry fills, `290` closed local-paper paths, `12` open
+  local-paper paths, `0` non-local fill sources, `0` missing local-paper entry
+  evidence, and `0` missing trade-path evidence. Closed fee-aware delta sum was
+  `-147.8043`; open window gross delta sum was `140.3549658203124`.
+- By `pre_last_close_position_in_range` raw-value tertile, closed fee-aware
+  deltas were `-48.6654` for low, `-60.4253` for mid, and `-38.7136` for high.
+  This does not support turning the earlier low close-position context into an
+  execution rule.
+- By `pre_last_volume_vs_prior_avg` raw-value tertile, closed fee-aware deltas
+  were `-76.1515` for low, `-39.8009` for mid, and `-31.8519` for high. Treat
+  this as descriptive and in-sample only because it is still tied to the same
+  bounded artifact lineage.
+- By pre-entry bucket, `pre_entry_down` had `370` observations, `156`
+  local-paper entry fills, `151` closed paths, and closed fee-aware delta
+  `-81.1599`; `pre_entry_up` had `288` observations, `146` entry fills, `139`
+  closed paths, and closed fee-aware delta `-66.6444`.
+- Focused tests cover exact-key joins, source separation, non-local source
+  surfacing, missing local-paper entry evidence, deterministic raw-feature
+  tertiles, non-diagnostic row exclusion, artifact-root rejection, and import
+  guards against broker submit/order-intent/network/credential paths.
+
+Next, do a bounded simplification/consolidation pass over the recent raw
+pre-entry attribution helpers and artifacts before adding another model or
+diagnostic axis. The goal is to keep the engine evidence reusable without
+letting the research lane become a new v1-style report family.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
