@@ -113,12 +113,15 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` plus existing external feature
   branch artifacts; no additional data was acquired.
 - Broker-boundary fuse work required no market data reads or acquisition.
+- Longer bounded GPU feature/model validation reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next bounded GPU validation should prefer existing CVS, FCX, and KO Yahoo
-  snapshots before acquiring anything new.
+- Add warning-only checks for duplicate bars, non-monotonic timestamps, missing
+  expected 1m bars, and incomplete higher-timeframe buckets before acquiring
+  more data.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

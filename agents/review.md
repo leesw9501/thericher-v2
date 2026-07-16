@@ -120,10 +120,13 @@
 - Broker boundary fuses stayed one small execution module plus focused tests;
   they did not add KIS clients, env/config enablement, event-log writes,
   dashboard controls, schedulers, or a broker framework.
+- Longer bounded GPU feature/model validation reused existing Docker
+  `research` job kinds and external artifacts; it added no new `candidate_*`
+  module, report family, scheduler, dashboard, or promotion gate.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward GPU feature/model evidence using existing job
-  kinds, not another framework, report family, or promotion gate.
+- Push the next task toward warning-only market-data checks that improve
+  validation quality without becoming research-blocking gates.

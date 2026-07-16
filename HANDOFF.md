@@ -182,6 +182,10 @@ Implemented and pushed:
 - broker adapter boundary contracts and disabled KIS execution fuses; the KIS
   boundary exposes disabled capabilities, unavailable submit/cancel/status
   results, and a factory that fails closed without network or credential I/O,
+- longer bounded GPU feature/model validation using existing Docker `research`
+  job kinds; it reran `core_plus_bar_position_v1` with higher caps, wrote
+  artifacts outside Git, then replayed through broker-free local paper with 30
+  verified `source: local_paper` fills and no promotion decision,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -246,13 +250,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Run a longer bounded GPU feature/model validation using existing job kinds:
+Add market-data quality warnings for local Yahoo validation slices:
 
-1. keep PyTorch CUDA inside Docker `research`,
-2. reuse the existing feature-branch and local-paper replay paths,
-3. write all metrics/model artifacts under `D:\thericher-v2\model-artifacts`,
-4. keep results descriptive with no winner, recommendation, promotion, or
-   broker enablement.
+1. detect duplicate/non-monotonic/missing intraday bars without blocking
+   research,
+2. warn on incomplete higher-timeframe buckets without gap-filling data,
+3. keep checks credential-free and local-data-only,
+4. avoid creating gates, dashboards, reports, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

@@ -38,7 +38,14 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-feature-branch-replay-mini-smoke`, status
+- Last completed: `bounded-candidate-feature-branch-deeper-replay-20260716`,
+  status `completed`, candidate
+  `m1_lb3_b10_s10__core_plus_bar_position_v1`, replayed threshold pairs
+  `0.487/0.454`, `0.488/0.454`, and `0.489/0.454` across CVS, FCX, and KO,
+  produced `30` local-paper fills across 9 variants, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-deeper-replay-20260716`.
+- Previous completed: `bounded-candidate-feature-branch-replay-mini-smoke`,
+  status
   `completed`, candidate
   `m1_lb3_b10_s10__core_plus_bar_position_v1`, replayed threshold pairs
   `0.482/0.457`, `0.483/0.457`, and `0.484/0.457` across CVS, FCX, and KO,
@@ -160,9 +167,13 @@
 - Disabled broker boundary fuses now keep future KIS outcomes distinct from
   local-paper evidence, so bounded GPU research can resume without broker
   enablement.
+- Longer bounded feature/model validation reused existing Docker `research`
+  job kinds with PyTorch CUDA, trained/evaluated 708 examples for
+  `core_plus_bar_position_v1`, observed probability range `0.463305`, replayed
+  30 local-paper fills, and kept the result descriptive with no promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a bounded longer feature/model validation through existing
-  Docker `research` job kinds, not create another job family or promotion rule.
+  task should add warning-only market-data quality checks before spending more
+  GPU time on the same local Yahoo slices.

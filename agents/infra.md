@@ -124,6 +124,11 @@
   PyTorch CUDA, consumed external feature branch artifacts, read
   `/app/market_data` read-only, and wrote replay, robustness, probability trace,
   event, and research job artifacts under `/app/model_artifacts`.
+- Longer bounded feature/model validation ran in Docker `research` with
+  PyTorch CUDA on the RTX 4090, reused existing job kinds, read
+  `/app/market_data` read-only, and wrote feature-branch, training,
+  evaluation, replay, robustness, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 

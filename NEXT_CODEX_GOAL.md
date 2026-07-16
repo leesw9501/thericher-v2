@@ -5,12 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run a longer bounded GPU feature/model validation using existing job kinds.
+Add warning-only market-data quality checks for local Yahoo validation slices.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by giving the current feature branch a deeper but still bounded
-Docker `research` run, then replaying the resulting probabilities through the
-broker-free local paper path.
+This advances data collection and backtest/walk-forward validation by making
+the reused local 1m data quality visible before more GPU time is spent on the
+same slices. These checks are warnings for research, not execution gates.
 
 ## Hard Boundaries
 
@@ -62,25 +61,21 @@ broker-free local paper path.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Reuse existing Docker `research` job kinds. Do not add a new
-   `candidate_*` module or job kind unless the existing path is demonstrably
-   insufficient.
-3. Start from existing data and artifacts:
-   - `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz`
-     for CVS, FCX, and KO,
-   - `D:\thericher-v2\model-artifacts\candidate-threshold-band-rerun\bounded-candidate-threshold-band-rerun-mini-smoke\metrics.json`,
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-candidate-feature-branch-mini-smoke\metrics.json`,
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-replay-mini-smoke\metrics.json`.
-4. Run a short Docker `research` smoke first if needed, then run one longer
-   bounded feature/model validation using existing `candidate_feature_branch`
-   and/or `candidate_feature_branch_replay` paths with stricter caps than the
-   mini smoke but still bounded.
-5. Record where artifacts were written and whether the RTX 4090 was used.
-6. Verify replay evidence remains local-paper-only through the existing
-   source-filtered verification.
-7. Add or adjust code only if the run reveals a reproducibility or boundary
-   issue; keep any fix narrowly tested.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Inspect existing `data/` provider and resampling code before adding anything.
+3. Add a small warning-only quality helper for ordered `Bar` data that can
+   detect:
+   - duplicate bars by `(market, symbol, timeframe, start_ts)`,
+   - non-monotonic timestamps,
+   - missing expected 1m intervals inside a single symbol/timeframe stream,
+   - incomplete higher-timeframe buckets when resampling from 1m.
+4. Wire the helper only where it naturally supports local/offline validation.
+   Do not block research runs, mutate bars, gap-fill data, or add a report
+   family.
+5. Add focused tests proving warnings are descriptive, local-only,
+   credential-free, and do not affect local paper or broker boundaries.
+6. Reuse existing `D:\market_data` snapshots for any optional smoke; do not
+   acquire new data unless the code cannot be validated without it.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -103,11 +98,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report the Docker `research` smoke or validation commands used.
+Report any focused data-quality smoke command used.
 
 ## Suggested Commit Message
 
-`Run bounded GPU feature validation`
+`Add market data quality warnings`
 
 ## Completion Report
 
