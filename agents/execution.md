@@ -166,6 +166,9 @@
   path in Docker `research`, produced `18` verified `source: local_paper`
   fills across the first batch, zero fills in the second batch, and observed no
   non-local fill source.
+- Wider entry-adverse signal-quality diagnostic reran no execution. It consumed
+  existing local-paper replay/event evidence and preserved local-paper source
+  verification.
 
 ## Next Handoff
 

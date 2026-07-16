@@ -239,11 +239,15 @@
   code path, job kind, CLI, report family, gate, dashboard, scheduler, broker
   path, threshold search, retraining, feature/model axis, or model-promotion
   language.
+- Wider entry-adverse signal-quality diagnostic stayed artifact-only and reused
+  existing replay, opportunity, trade-path, summary, trace, and selected
+  local-bar evidence. It added no helper, code path, job kind, CLI, report
+  family, gate, dashboard, scheduler, broker path, threshold search,
+  retraining, replay rerun, feature axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded wider entry-adverse signal-quality
-  diagnostic before allowing another feature/model axis or threshold-only
-  branch.
+- Push the next task toward one bounded entry-adverse hidden-units contrast
+  before allowing another feature-set or threshold-only branch.

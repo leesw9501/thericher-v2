@@ -373,6 +373,14 @@ Implemented and pushed:
   buy opportunities, `1718` sell opportunities, `9` closed trade-path segments,
   `6` non-negative and `3` negative fee-aware segments, fee-aware delta sum
   `2.7739`, and no open segments,
+- bounded wider entry-adverse signal-quality diagnostic; it consumed the
+  wide-sample replay, opportunity, trade-path, summary, trace, and selected
+  local-bar evidence without rerunning replay, wrote one compact external
+  diagnostic artifact, found the non-negative segment group had larger average
+  entry probability margin, faster first sell-threshold signal timing, larger
+  favorable excursion, and less adverse excursion than the negative group, and
+  attributed the second batch's zero fills to buy thresholds sitting above each
+  slice's observed maximum probability,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -437,18 +445,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded wider entry-adverse signal-quality diagnostic:
+Start one bounded entry-adverse hidden-units contrast target:
 
-1. consume the completed wide-sample replay, opportunity, trade-path, summary,
-   trace, and selected local-bar evidence,
-2. explain the `6` non-negative versus `3` negative closed segments and the
-   zero-fill second batch with entry probabilities, threshold gaps,
-   entry-adverse feature values, forward marks, and excursion summaries,
-3. write one compact external diagnostic artifact with no branch ranking,
-   pass/fail field, threshold search, retraining, replay rerun, or new feature
-   axis,
-4. keep `agents/*.md` as stateboards and avoid dashboards, schedulers, broker
-   behavior, or report/gate expansion.
+1. reuse the existing `core_plus_entry_adverse_v1` feature set and
+   `feature_standardization`,
+2. train/evaluate one hidden-units `8` contrast in Docker `research` on the
+   same CVS/FCX/KO source slices and a capped ADBE/ADI/ADP/AEM/AGG/AMAT
+   out-of-symbol evaluation sample,
+3. replay cap-2 thresholds through the existing local-paper path and attribute
+   fills or zero-fills outside Git,
+4. avoid new features, threshold search, branch ranking, dashboards,
+   schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

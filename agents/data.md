@@ -202,13 +202,16 @@
   Yahoo 1m file, found `250` total symbols and `240` eligible symbols after
   excluding source/prior replay symbols, selected ADBE, ADI, ADP, AEM, AGG,
   AMAT, AMD, AMGN, AMT, and AMZN, and acquired no additional data.
+- Wider entry-adverse signal-quality diagnostic reused the same selected local
+  Yahoo rows plus external trace and attribution artifacts; no additional data
+  was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  external artifacts plus selected `snapshot=2026-06-18` local Yahoo rows for
-  a bounded wider entry-adverse signal-quality diagnostic.
+  source CVS/FCX/KO slices and the first six selected `snapshot=2026-06-18`
+  local Yahoo symbols for a bounded entry-adverse hidden-units contrast.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

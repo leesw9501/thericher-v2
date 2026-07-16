@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded wider entry-adverse signal-quality diagnostic before another
-   feature/model axis or threshold-only branch is tried.
+1. Run one bounded entry-adverse hidden-units contrast before another
+   feature-set or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -245,6 +245,13 @@
   `source: local_paper`, found `9` buy opportunities, `9` closed segments, `6`
   non-negative and `3` negative fee-aware segments, no open segments, and
   fee-aware delta sum `2.7739`.
+- Last completed: `bounded-entry-adverse-wide-sample-signal-quality-20260716`,
+  status `entry_adverse_wide_signal_quality_diagnostic_only`, consumed existing
+  wide-sample replay, trace, trade-path, and selected local-bar evidence, found
+  the non-negative segment group had higher average entry probability margin,
+  faster first sell-threshold timing, larger favorable excursion, and less
+  adverse excursion than the negative group, and recorded second-batch zero
+  fills as buy thresholds above observed slice maximum probabilities.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -506,11 +513,13 @@
   aggregate fee-aware delta, while a second batch had zero buy opportunities.
   The next evidence should explain segment quality and zero-fill behavior from
   existing artifacts before changing another feature/model axis.
+- Signal-quality diagnostics now explain the wider sample enough to spend one
+  bounded GPU contrast on hidden-units `8` for the same feature set, without
+  adding a new feature axis or threshold search.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded wider entry-adverse signal-quality diagnostic
-  from the completed wide-sample replay, opportunity, trade-path, summary,
-  trace, and local-bar evidence before another hidden-units, regularization,
-  preprocessing, feature-set, or threshold-only branch.
+  task should run one bounded entry-adverse hidden-units `8` contrast from the
+  existing feature set and selected local data before another feature-set,
+  regularization, preprocessing, or threshold-only branch.
