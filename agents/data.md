@@ -250,12 +250,14 @@
   additional data was acquired.
 - Conditional exit-overlay contrast consumed existing external artifacts and
   reused the same selected local Yahoo rows; no additional data was acquired.
+- Exit-latency composite diagnostic consumed existing external artifacts and
+  did not require additional market-data reads or acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the exit-latency composite diagnostic
-  should consume existing external artifacts only.
+- The next data task is not acquisition; the composite helper should consume
+  provided segment payloads and not load market data itself.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

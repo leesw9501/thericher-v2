@@ -496,6 +496,13 @@ Implemented and pushed:
   overlay/metadata outcomes labeled `source: diagnostic_overlay`, preserved
   referenced local-paper fill sources, and wrote one compact artifact outside
   Git without replay or training,
+- bounded exit-latency composite overlay diagnostic; it consumed the
+  conditional contrast, helper smoke, and exit-timing artifacts, computed one
+  descriptive composite scenario where `4` latency-matched loss-bearing
+  segments used fixed 2-bar `diagnostic_overlay` outcomes while the remaining
+  `7` segments kept `source: local_paper` exits, improved overall gross delta
+  from `-1.4563` to `3.383729296875`, preserved source separation, and wrote
+  one compact artifact outside Git without replay or training,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -560,21 +567,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded diagnostic exit-latency composite overlay target:
+Start one bounded diagnostic exit-composite helper target:
 
-1. use the conditional exit-overlay contrast and helper smoke artifacts,
-2. compute one descriptive composite diagnostic scenario where only
-   `latency_ge_5_at_2_bar` segments use the fixed 2-bar diagnostic overlay and
-   all other segments retain their existing local-paper exit evidence,
-3. summarize gross-delta and source evidence by loss-bearing versus
-   non-negative groups,
-4. write one compact external artifact under
-   `D:\thericher-v2\model-artifacts`,
-5. keep the result descriptive and avoid selecting or applying an exit policy
-   to local-paper replay,
-6. avoid new helper code unless a bug is found, and avoid training, replay
-   reruns, broad feature changes, broad data search, threshold search, branch
-   ranking, dashboards, schedulers, broker behavior, or report/gate expansion.
+1. ask Claude CLI for a short drift-check before adding code,
+2. add the smallest pure helper needed to compute source-labeled composite
+   diagnostic outcomes from provided helper segment payloads,
+3. add focused tests proving substituted outcomes stay
+   `source: diagnostic_overlay`, retained outcomes stay `source: local_paper`,
+   and local-paper fills are not mutated,
+4. avoid artifact writers, CLIs, research job kinds, training, replay reruns,
+   broad feature changes, broad data search, threshold search, branch ranking,
+   dashboards, schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

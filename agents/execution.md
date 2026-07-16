@@ -218,10 +218,13 @@
 - Conditional exit-overlay contrast kept all `66` overlay/metadata outcomes at
   `source: diagnostic_overlay`, preserved referenced local-paper sources, and
   reran no local-paper replay.
+- Exit-latency composite diagnostic substituted `4` diagnostic overlay
+  outcomes and retained `7` local-paper outcomes while preserving source
+  separation and rerunning no local-paper replay.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next composite diagnostic must keep substituted overlay marks separate
-  from local-paper fills and must not apply an exit policy to local-paper replay.
+- The next composite helper must keep substituted overlay marks separate from
+  local-paper fills and must not apply an exit policy to local-paper replay.

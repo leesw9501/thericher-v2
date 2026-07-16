@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review the next exit-latency composite diagnostic for bounded scope and
+1. Review the next diagnostic exit-composite helper for bounded scope and
    artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
@@ -317,10 +317,14 @@
   artifacts, wrote one compact external artifact, and added no code, job kind,
   CLI, report family, gate, dashboard, scheduler, broker path, threshold
   search, replay rerun, feature/model axis, or model-promotion language.
+- Exit-latency composite diagnostic reused existing external artifacts, wrote
+  one compact external artifact, and added no code, job kind, CLI, report
+  family, gate, dashboard, scheduler, broker path, threshold search, replay
+  rerun, feature/model axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small exit-latency composite diagnostic before
-  allowing another feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one small pure composite helper before allowing
+  another feature-set, regularization value, or threshold-only branch.

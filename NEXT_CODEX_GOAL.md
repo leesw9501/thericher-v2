@@ -5,14 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded diagnostic exit-latency composite overlay.
+Build the first bounded diagnostic exit-composite helper.
 
-This advances PnL attribution and backtest/walk-forward validation by using the
-conditional exit-overlay contrast to compute one descriptive composite scenario:
-segments matching `latency_ge_5_at_2_bar` use the fixed 2-bar
-`diagnostic_overlay` mark, while all other segments keep their existing
-`source: local_paper` exit evidence. This must not mutate local-paper fills,
-rerun replay, or apply an exit policy to the simulator.
+This advances PnL attribution and backtest/walk-forward validation by codifying
+the repeated one-off composite calculation into one small pure helper that
+combines provided diagnostic overlay segment payloads into source-labeled
+composite outcomes. It must remain descriptive and must not apply an exit
+policy to local-paper replay.
 
 ## Hard Boundaries
 
@@ -61,34 +60,38 @@ rerun replay, or apply an exit policy to the simulator.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If the composite
-   can run artifact-only with existing code, no Claude check is needed.
+3. Ask Claude CLI for a short drift-check before code edits.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as context:
+2. Consume these completed artifacts as context only:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
-3. Build one compact artifact-only composite diagnostic that:
-   - uses `latency_ge_5_at_2_bar` as the only condition under inspection,
-   - substitutes the fixed 2-bar diagnostic overlay outcome only for matching
-     segments,
-   - keeps existing local-paper exit evidence for all other segments,
-   - labels substituted outcomes with `source: diagnostic_overlay`,
-   - preserves retained outcomes with `source: local_paper`,
-   - summarizes gross-delta and source evidence by loss-bearing versus
-     non-negative segment groups.
-4. Write one compact composite artifact outside Git, for example:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
+3. Add one small pure helper, likely in
+   `src/thericher_v2/research/exit_overlay_diagnostic.py`, that:
+   - consumes provided diagnostic overlay segment payloads,
+   - inspects one named conditional overlay metadata id,
+   - substitutes a named fixed-horizon diagnostic overlay only when that
+     condition is met,
+   - retains existing local-paper exit evidence otherwise,
+   - labels substituted outcomes `source: diagnostic_overlay`,
+   - keeps retained outcomes `source: local_paper`,
+   - returns descriptive group/overall metrics,
+   - performs no file, network, credential, broker, CLI, job, dashboard,
+     scheduler, training, replay, or artifact-write work.
+4. Add focused tests proving:
+   - substituted outcomes use `source: diagnostic_overlay`,
+   - retained outcomes use `source: local_paper`,
+   - provided local-paper entry/exit payloads are not mutated,
+   - missing condition or missing fixed overlay is reported without broker I/O,
+   - the helper can summarize loss-bearing versus non-negative groups.
 5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
    training path, replay rerun, threshold search, policy selection, simulator
    exit rule, or broker behavior.
-6. Only edit code if the composite exposes a helper bug; if code changes are
-   needed, ask Claude CLI first and keep the fix focused.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -111,12 +114,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused test, artifact-only composite command, Docker
-`research` command, GPU availability, and artifact paths used.
+Also report any focused test, artifact-only command, Docker `research`
+command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add exit latency composite overlay diagnostic`
+`Add diagnostic exit composite helper`
 
 ## Completion Report
 
@@ -128,6 +131,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- composite diagnostic behavior,
+- helper behavior added,
 - what was intentionally not built,
 - next goal.

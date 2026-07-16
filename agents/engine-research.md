@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Build one descriptive exit-latency composite overlay diagnostic before
-   changing another model axis.
+1. Ask Claude CLI for drift-check, then codify the exit-latency composite
+   calculation as one small pure diagnostic helper.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -670,9 +670,13 @@
   loss-bearing and `6` non-negative segments. The latency>=5, 2-bar probe
   matched `4` loss-bearing segments and no non-negative segments, while
   adverse<=-1 at 3 bars matched only the duplicated AMGN loss path.
+- Exit-latency composite diagnostic substituted fixed 2-bar
+  `diagnostic_overlay` outcomes for the `4` latency-matched loss-bearing
+  segments, retained `7` local-paper exits, and moved overall gross delta from
+  `-1.4563` to `3.383729296875` descriptively without replay.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded exit-latency composite diagnostic before another
+  task should codify the composite calculation as a pure helper before another
   feature-set, preprocessing, regularization value, or threshold-only branch.
