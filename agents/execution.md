@@ -316,6 +316,9 @@
 - AMAT/AEM replay-shape overlay reran no execution, preserved the same `403`
   original fills as `source: local_paper`, and labeled all `1,479` overlay
   outcomes as `source: diagnostic_overlay`.
+- Held-out/context overlay reran no execution, preserved `565` original fills
+  as `source: local_paper`, and labeled all `2,494` overlay outcomes as
+  `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -328,5 +331,5 @@
   a broker-capable worker needs a future explicit paper-trading goal.
 - Any AMAT/AEM replay-shape overlay must label non-replay outcomes as
   `source: diagnostic_overlay` and preserve original local-paper fills.
-- The held-out overlay follow-up must keep the same source separation and must
-  not mutate local-paper replay behavior.
+- The ADI/AGG follow-up must keep the same source separation and must not
+  mutate local-paper replay behavior.

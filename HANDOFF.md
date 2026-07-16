@@ -937,6 +937,40 @@ slice set from existing artifacts. Keep it artifact-only, add one entry-cluster
 cap mark and one pre-entry path-quality bucket, preserve `local_paper` source
 evidence, and keep all overlay outcomes as `diagnostic_overlay`.
 
+The held-out/context replay-shape overlay then completed artifact-only:
+
+- It consumed the AMAT/AEM overlay, existing holdout/source-context robustness
+  artifacts, AGG/ADBE/ADI probability traces, existing event artifacts, and
+  selected local Yahoo rows from `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-heldout-context-replay-shape-overlay\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market data
+  acquisition, replay mutation, or durable worker creation.
+- Original AGG/ADBE/ADI fills stayed `565` verified `source: local_paper`
+  fills. The overlay produced `2,494` outcomes labeled
+  `source: diagnostic_overlay`.
+- Cadence and entry-cluster evidence repeated across the held-out/context set:
+  AGG had `1,361` cooldown-suppressed and `1,917` cluster-cap-suppressed
+  opportunities; ADBE had `724` and `675`; ADI had `699` and `414`.
+- AMAT-style path damage did not repeat uniformly. AGG stayed mostly churn
+  with small diagnostic damage (`-16.077863854216983183` closed fee-aware
+  delta), ADBE looked more AEM-like (`-135.898423535157675082`), and ADI
+  partly repeated heavier path damage (`-348.41501501769951972`) but below
+  AMAT's prior overlay magnitude.
+- Execution sidecar verified source separation: original fills remained
+  `local_paper`, overlay outcomes remained `diagnostic_overlay`, and no broker,
+  non-local, or unknown source evidence appeared.
+- Review sidecar found no policy-doc update, blocking sprawl, durable-worker
+  drift, report/gate creep, or model-promotion language.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, separate entry-cluster churn from early adverse path quality on ADI versus
+AGG using one artifact-only diagnostic. Keep it source-separated and avoid any
+local-paper replay rule change before another GPU training block.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

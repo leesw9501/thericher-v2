@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Check whether the AMAT/AEM replay-shape evidence repeats on a small held-out
-slice set before spending more GPU time.
+Separate entry-cluster churn from early adverse path quality on ADI versus AGG
+before spending more GPU time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by testing whether entry cadence, max-hold, early path
-quality, and open-exposure signals are local to AMAT/AEM or visible in another
-existing holdout context.
+walk-forward validation by explaining why cadence/cluster evidence repeats
+widely while heavier path damage appears concentrated in AMAT and partly in
+ADI.
 
 ## Hard Boundaries
 
@@ -26,13 +26,13 @@ existing holdout context.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before the held-out overlay check is complete.
+- Do not run new GPU training before the ADI/AGG diagnostic is complete.
 - Do not queue another Engine Research Agent job unless current artifacts are
   unreadable or incomplete.
 - Do not mutate existing local-paper event artifacts or replay outputs.
 - Keep original fills labeled and checked as `source: local_paper`.
-- Label diagnostic overlay outcomes as `source: diagnostic_overlay`; do not
-  count them as local-paper fills.
+- Label diagnostic outcomes as `source: diagnostic_overlay`; do not count them
+  as local-paper fills.
 - Do not make Execution, Infra, or Review durable executable workers in this
   slice.
 - Do not add a daemon, scheduler, Windows service, dashboard, notification
@@ -69,34 +69,30 @@ existing holdout context.
 
 ## Required Work
 
-1. Consume the completed AMAT/AEM overlay artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-replay-shape-overlay\metrics.json`.
-2. Choose a tiny held-out set from existing explicit-slice depth artifacts, for
-   example AGG plus one or two nearby existing holdout/source-context slices
-   that already have probability traces and local-paper event artifacts.
-3. Reuse existing probability traces, event artifacts, and selected local Yahoo
-   rows only.
-4. Build one compact external diagnostic artifact under
+1. Consume the completed held-out/context overlay artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-heldout-context-replay-shape-overlay\metrics.json`.
+2. Focus on ADI and AGG using existing probability traces, event artifacts, and
+   selected local Yahoo rows only.
+3. Build one compact external diagnostic artifact under
    `D:\thericher-v2\model-artifacts`.
-5. Apply the same bounded max-hold/cooldown grid and add:
-   - one entry-cluster cap mark,
-   - one pre-entry path-quality bucket using early MAE/MFE or equivalent local
-     bar evidence.
-6. Compare whether held-out evidence repeats the AMAT/AEM pattern:
-   - cadence/open-exposure sensitivity,
-   - path-quality-heavy losses,
-   - early no-lift marks,
-   - source separation between local-paper fills and overlay outcomes.
-7. Preserve local-paper source verification from existing event artifacts and
-   separately count all overlay outcomes as `source: diagnostic_overlay`.
-8. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research sidecar for repeatability interpretation,
+4. Compare:
+   - clustered buy opportunities versus executed diagnostic entries,
+   - early MAE/MFE path-quality buckets,
+   - pre-entry 3-bar buckets,
+   - max-hold/cooldown sensitivity,
+   - original local-paper source evidence versus diagnostic overlay evidence.
+5. Explain whether ADI's heavier damage is mostly entry-cluster churn,
+   early adverse path quality, open exposure, or a combination.
+6. Preserve local-paper source verification from existing event artifacts and
+   separately count all diagnostic outcomes as `source: diagnostic_overlay`.
+7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for interpretation,
    - Execution sidecar for source separation,
    - Review sidecar for sprawl and model-promotion language.
-9. If artifacts are insufficient, record exact missing paths and stop; do not
+8. If artifacts are insufficient, record exact missing paths and stop; do not
    substitute broker, credential, network, dashboard, scheduler, or new GPU
    training work.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -125,7 +121,7 @@ source evidence, and diagnostic-overlay source evidence.
 
 ## Suggested Commit Message
 
-`Check held-out replay-shape overlay`
+`Attribute ADI AGG replay-shape drivers`
 
 ## Completion Report
 

@@ -837,6 +837,10 @@
   cadence/open-exposure sensitive, and AMAT remained path-quality heavy.
   Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-replay-shape-overlay\metrics.json`.
+- Held-out/context overlay consumed AGG/ADBE/ADI existing artifacts only.
+  Cadence/cluster evidence repeated, while heavier path damage appeared mainly
+  in ADI rather than AGG. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-heldout-context-replay-shape-overlay\metrics.json`.
 
 ## Next Handoff
 
@@ -844,9 +848,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another GPU training block, check the same replay-shape evidence on a
-  small held-out slice set with an entry-cluster cap mark and pre-entry
-  path-quality bucket.
+- Before another GPU training block, separate entry-cluster churn from early
+  adverse path quality on ADI versus AGG using existing artifacts only.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

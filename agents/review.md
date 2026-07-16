@@ -453,12 +453,18 @@
   kind, CLI, report family, gate, dashboard, scheduler, coordinator, durable
   worker, broker path, credential path, retraining, replay rerun, simulator
   rule, or model-promotion language.
+- Held-out/context overlay stayed artifact-only and reused existing AGG, ADBE,
+  and ADI trace/event/local Yahoo evidence. It added no code, helper, job kind,
+  CLI, report family, gate, dashboard, scheduler, coordinator, durable worker,
+  broker path, credential path, retraining, replay rerun, simulator rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one held-out replay-shape overlay follow-up from
-  existing artifacts. Keep coordination evidence small and avoid daemon,
-  scheduler, dashboard, report branch, broker, credential, auto-commit, durable
-  multi-agent-platform behavior, or model-promotion language.
+- Push the next task toward one ADI/AGG artifact-only diagnostic that separates
+  entry-cluster churn from early adverse path quality. Keep coordination
+  evidence small and avoid daemon, scheduler, dashboard, report branch, broker,
+  credential, auto-commit, durable multi-agent-platform behavior, or
+  model-promotion language.

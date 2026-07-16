@@ -353,12 +353,14 @@
   existing `snapshot=2026-06-18` Yahoo 1m file and acquired no additional data.
 - AMAT/AEM replay-shape overlay reused the same selected AEM and AMAT local
   Yahoo rows plus existing external artifacts and acquired no additional data.
+- Held-out/context overlay reused selected AGG, ADBE, and ADI rows from the
+  existing `snapshot=2026-06-18` Yahoo 1m file and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Use existing held-out local
-  Yahoo rows only if the follow-up overlay needs bar context.
+- The next data task is still not acquisition. Use existing ADI/AGG local Yahoo
+  rows only if the follow-up diagnostic needs bar context.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
