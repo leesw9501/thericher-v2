@@ -128,6 +128,8 @@ def test_enqueue_research_job_accepts_feature_input_ablation_args(tmp_path) -> N
         research_args=(
             "--feature-input-stability-artifact",
             "/app/model_artifacts/feature-input-stability/unit/metrics.json",
+            "--feature-input-row-mode",
+            "all_diagnostic",
             "--max-epochs",
             "3",
             "--max-steps",
@@ -145,6 +147,8 @@ def test_enqueue_research_job_accepts_feature_input_ablation_args(tmp_path) -> N
         "candidate_feature_input_ablation",
         "--feature-input-stability-artifact",
         "/app/model_artifacts/feature-input-stability/unit/metrics.json",
+        "--feature-input-row-mode",
+        "all_diagnostic",
         "--max-epochs",
         "3",
         "--max-steps",

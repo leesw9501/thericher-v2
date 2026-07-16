@@ -331,6 +331,10 @@
 - Bounded feature-input ablation reran no execution and changed no local-paper
   replay behavior. It used selected `diagnostic_overlay` rows for model-input
   reconnaissance while preserving `592` local-paper fills as source evidence.
+- Full-row feature-input ablation reran no execution, reconstructed `659`
+  `diagnostic_overlay` rows from existing lineage, preserved the `592`
+  `source: local_paper` reference fills as evidence only, and changed no replay
+  behavior.
 
 ## Next Handoff
 
@@ -341,6 +345,6 @@
   keep fills labeled `source: local_paper`.
 - Do not make Execution Agent executable as part of the next multi-agent slice;
   a broker-capable worker needs a future explicit paper-trading goal.
-- Any bounded feature-input ablation or replay comparison must preserve original
+- Any bounded feature-input validation or replay comparison must preserve original
   local-paper fills as `source: local_paper`, label diagnostics as
   `source: diagnostic_overlay`, and avoid broker authority.

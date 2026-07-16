@@ -1108,10 +1108,52 @@ The bounded feature-input ablation then completed:
   promotion-language creep, while noting the new job kind should remain a
   reusable research primitive rather than a growing family.
 
-Next, broaden this feature-input check beyond the `24` selected rows before
-spending a deeper GPU block. Reuse the new helper if possible, consume all `659`
-diagnostic candidate-entry rows from the stability artifact, keep row sources
-separated, and compare whether the same feature-group pattern persists.
+The full-row feature-input ablation then completed:
+
+- It extended the existing `candidate_feature_input_ablation` helper/job with
+  explicit row modes: existing `selected` behavior and `all_diagnostic`
+  lineage reconstruction.
+- Full-row mode reconstructs diagnostic candidate-entry rows from existing
+  stability lineage, probability traces, and local Yahoo rows only. It does not
+  call local-paper replay, broker, KIS, credential, network, scheduler, or
+  durable worker paths.
+- Claude drift-check was attempted before code edits and timed out after about
+  `184` seconds without output. The change stayed bounded by `HANDOFF.md`,
+  `ARCHITECTURE.md`, and `DECISIONS.md`.
+- Focused tests prove selected behavior remains unchanged, full-row lineage
+  rows are `source: diagnostic_overlay`, local-paper fills remain evidence
+  only, row mode is limited to the ablation job, and unknown lineage paths are
+  not read.
+- Local no-backend dry-run wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-local-dryrun-20260717-r2\metrics.json`.
+- Docker `research` PyTorch CUDA run completed on NVIDIA GeForce RTX 4090 and
+  wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2\feature_input_ablation.pt`.
+- The full-row run used `659` reconstructed diagnostic rows with zero drops:
+  `src_adbe=242`, `hold_aem=235`, `hold_amat=182`. Labels were imbalanced:
+  `382` adverse-or-no-lift and `277` non-adverse.
+- Source evidence remained separated: upstream reference fills stayed `592`
+  verified `source: local_paper`; all reconstructed candidate-entry rows were
+  `source: diagnostic_overlay`.
+- Compared with the selected `24`-row run, the full-row pattern did not repeat
+  cleanly. Selected rows were balanced and the combined group had lower final
+  loss (`0.687648`), while the full-row run had raw pre-entry final loss
+  `0.671724`, probability-meta final loss `0.686541`, combined final loss
+  `0.679072`, and accuracy mostly reflected the adverse/no-lift majority rate.
+  Treat this as descriptive research evidence only.
+- Engine Research sidecar advised a slice/variant-aware follow-up using
+  balanced accuracy, AUC, log loss, and per-slice metrics to control for label
+  imbalance and duplicated threshold variants.
+- Infra/Execution/Review sidecars found no broker/KIS/credential boundary
+  breach, no replay mutation, no local/base PyTorch dependency, no scheduler,
+  dashboard, coordinator, durable-worker expansion, or model-promotion
+  language. A path-resolver watch item was tightened before final verification.
+
+Next, run a bounded slice/variant-aware validation pass over the same `659`
+diagnostic rows before any deeper GPU training. Keep it artifact-driven,
+source-separated, and descriptive.
 
 ## Daily Operator Review
 

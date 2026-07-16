@@ -364,13 +364,16 @@
   external trace/event artifacts and acquired no additional data.
 - Bounded feature-input ablation consumed only the existing external
   cross-slice stability artifact and acquired no additional data.
+- Full-row feature-input ablation reused the same existing
+  `snapshot=2026-06-18` Yahoo 1m rows through stability lineage and acquired no
+  additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Reuse the existing stability
-  artifact and its referenced local Yahoo evidence for the full-row
-  feature-input ablation.
+- The next data task is still not acquisition. Reuse existing stability,
+  probability-trace, and local Yahoo evidence for slice/variant-aware
+  validation.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

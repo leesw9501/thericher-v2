@@ -5,13 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Broaden the feature-input ablation from selected diagnostic rows to the full
-cross-slice diagnostic row set.
+Add slice/variant-aware validation metrics for the full-row feature-input
+ablation.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by checking whether the small Docker `research` ablation pattern
-persists across all `659` diagnostic candidate-entry rows before spending
-another deeper GPU training block.
+PnL attribution by checking whether the raw pre-entry feature signal seen in
+the `659` reconstructed diagnostic rows survives label imbalance, per-slice
+concentration, and duplicated threshold variants before any deeper GPU training
+block.
 
 ## Hard Boundaries
 
@@ -72,28 +73,41 @@ another deeper GPU training block.
 ## Required Work
 
 1. Consume:
-   - feature-input ablation artifact:
+   - selected-row ablation artifact:
      `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\metrics.json`,
+   - full-row ablation artifact:
+     `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2\metrics.json`,
    - source stability artifact:
      `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
-2. Extend or reuse the ablation helper so it can explicitly choose selected rows
-   or all diagnostic rows from the source artifact.
-3. Run a CPU/injected focused smoke first proving:
+2. Add or extend a small research-only helper so the same reconstructed rows can
+   report:
+   - row counts and label balance,
+   - adverse/no-lift majority-rate context,
+   - balanced accuracy,
+   - AUC or a deterministic fallback when scores are tied,
+   - log loss,
+   - per-slice metrics,
+   - per-variant metrics or grouped variant counts,
+   - source separation.
+3. Keep the helper artifact-driven. Do not rerun local-paper replay and do not
+   create a new report family.
+4. Add focused tests proving:
    - selected-row behavior remains unchanged,
-   - full-row mode uses only `source: diagnostic_overlay` rows,
+   - full-row mode uses only `source: diagnostic_overlay`,
    - local-paper fills remain evidence only,
-   - artifact paths remain outside Git.
-4. If the smoke is sound, run one bounded Docker `research` PyTorch CUDA
-   full-row ablation with tight caps.
-5. Compare selected-row versus full-row evidence without naming a winner. Report
-   row counts, label balance, feature-group losses/accuracies, and source
-   separation.
-6. Preserve local-paper replay behavior. Do not rerun replay unless a later goal
-   explicitly asks for a replay comparison.
+   - balanced metrics do not reduce to majority-label accuracy,
+   - unknown lineage paths are not read,
+   - generated artifacts remain outside Git or mocked in tests.
+5. If a Docker `research` rerun is useful for the metric payload, run exactly
+   one bounded PyTorch CUDA job with tight caps. Otherwise keep the task CPU
+   and artifact-only, and say why.
+6. Compare selected-row and full-row evidence without selecting or ranking an
+   option. Report row counts, label balance, feature-group losses/accuracies,
+   balanced metrics, per-slice behavior, and source separation.
 7. Use temporary Codex sub-agents as sidecar reviewers where useful:
    - Engine Research sidecar for interpretation,
-   - Infra sidecar for Docker/artifact mount assumptions,
    - Execution sidecar for source separation,
+   - Infra sidecar for Docker/artifact mount assumptions,
    - Review sidecar for sprawl and promotion-language checks.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
@@ -124,7 +138,7 @@ artifact paths, local-paper source evidence, and diagnostic-overlay evidence.
 
 ## Suggested Commit Message
 
-`Broaden feature input ablation rows`
+`Add slice-aware feature input metrics`
 
 ## Completion Report
 

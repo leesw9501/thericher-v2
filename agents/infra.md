@@ -458,6 +458,11 @@
   once in Docker `research` with PyTorch CUDA on RTX 4090. It changed no Docker
   or dependency files and wrote metrics/model artifacts under
   `D:\thericher-v2\model-artifacts\feature-input-ablation`.
+- Full-row feature-input ablation ran locally as a no-backend dry-run and in
+  Docker `research` with PyTorch CUDA on RTX 4090 using the current `src`
+  read-only mount. It changed no Docker or dependency files and wrote
+  metrics/model artifacts under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2`.
 
 ## Next Handoff
 
@@ -473,6 +478,6 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  full-row feature-input ablation runs in Docker `research`.
+  slice/variant-aware validation uses existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.

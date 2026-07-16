@@ -119,8 +119,11 @@ from .candidate_training import (
     run_bounded_candidate_training,
 )
 from .feature_input_ablation import (
+    DEFAULT_FEATURE_INPUT_ABLATION_ROW_MODE,
+    SUPPORTED_FEATURE_INPUT_ABLATION_ROW_MODES,
     BoundedFeatureInputAblationResult,
     FeatureInputAblationConfig,
+    FeatureInputAblationRowMode,
     FeatureInputAblationRunner,
     run_bounded_feature_input_ablation,
 )
@@ -220,6 +223,9 @@ class ResearchJobSpec:
     comparison_artifact: Path | None = None
     calibration_artifact: Path | None = None
     model_artifact: Path | None = None
+    feature_input_row_mode: FeatureInputAblationRowMode = (
+        DEFAULT_FEATURE_INPUT_ABLATION_ROW_MODE
+    )
     candidate_feature_set: str | None = None
     candidate_hidden_units: int | None = None
     candidate_weight_decay: float | None = None
@@ -299,6 +305,18 @@ class ResearchJobSpec:
             raise ValueError(
                 "feature_input_stability_artifact is only supported for "
                 "candidate feature input ablation jobs"
+            )
+        if self.feature_input_row_mode not in SUPPORTED_FEATURE_INPUT_ABLATION_ROW_MODES:
+            raise ValueError(
+                f"unsupported feature_input_row_mode: {self.feature_input_row_mode}"
+            )
+        if (
+            self.feature_input_row_mode != DEFAULT_FEATURE_INPUT_ABLATION_ROW_MODE
+            and self.kind != "candidate_feature_input_ablation"
+        ):
+            raise ValueError(
+                "feature_input_row_mode is only supported for candidate feature "
+                "input ablation jobs"
             )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
@@ -648,6 +666,7 @@ def _run_job_kind(
                 run_id=spec.job_id,
                 max_epochs=spec.max_epochs,
                 max_steps=spec.max_steps,
+                row_mode=spec.feature_input_row_mode,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -889,6 +908,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidate-artifact", type=Path)
     parser.add_argument("--feature-branch-artifact", type=Path)
     parser.add_argument("--feature-input-stability-artifact", type=Path)
+    parser.add_argument(
+        "--feature-input-row-mode",
+        choices=SUPPORTED_FEATURE_INPUT_ABLATION_ROW_MODES,
+        default=DEFAULT_FEATURE_INPUT_ABLATION_ROW_MODE,
+    )
     parser.add_argument("--breadth-queue-artifact", type=Path)
     parser.add_argument("--breadth-holdout-artifact", type=Path)
     parser.add_argument("--depth-target-artifact", type=Path)
@@ -952,6 +976,7 @@ def main() -> None:
         comparison_artifact=args.comparison_artifact,
         calibration_artifact=args.calibration_artifact,
         model_artifact=args.model_artifact,
+        feature_input_row_mode=args.feature_input_row_mode,
         candidate_feature_set=args.candidate_feature_set,
         candidate_hidden_units=args.candidate_hidden_units,
         candidate_weight_decay=args.candidate_weight_decay,
@@ -1274,6 +1299,7 @@ def _research_job_payload(
             "rows_seen": training.rows_seen,
             "rows_used": training.rows_used,
             "rows_dropped": training.rows_dropped,
+            "row_mode": training.metrics.get("row_mode"),
             "label_counts": training.label_counts,
             "feature_group_ids": training.feature_group_ids,
             "source_evidence": training.source_evidence,

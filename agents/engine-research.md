@@ -865,6 +865,13 @@
   (`0.541667` accuracy, final loss `0.687648`), but this is reconnaissance, not
   validation. Artifact:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\metrics.json`.
+- Full-row feature-input ablation reconstructed all `659` cross-slice
+  diagnostic rows from existing stability lineage, ran in Docker `research`
+  with PyTorch CUDA on RTX 4090, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2`.
+  The full-row labels were imbalanced (`382/277`), raw pre-entry final loss was
+  `0.671724`, probability-meta final loss was `0.686541`, and combined final
+  loss was `0.679072`; read this as descriptive evidence only.
 
 ## Next Handoff
 
@@ -872,9 +879,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, broaden the same feature-input ablation
-  from the `24` selected rows to the full `659` diagnostic rows and compare the
-  pattern descriptively.
+- Before another deep training block, run a slice/variant-aware validation pass
+  over the same `659` rows using balanced accuracy, AUC, log loss, and
+  per-slice metrics so label imbalance and duplicated threshold variants are
+  visible.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

@@ -309,10 +309,22 @@ def test_research_job_parser_exposes_feature_input_stability_artifact() -> None:
             "candidate_feature_input_ablation",
             "--feature-input-stability-artifact",
             "/app/model_artifacts/stability/metrics.json",
+            "--feature-input-row-mode",
+            "all_diagnostic",
         ]
     )
 
     assert args.feature_input_stability_artifact.name == "metrics.json"
+    assert args.feature_input_row_mode == "all_diagnostic"
+
+
+def test_research_job_rejects_feature_input_row_mode_outside_ablation() -> None:
+    with pytest.raises(ValueError, match="feature_input_row_mode"):
+        ResearchJobSpec(
+            job_id="bad-feature-input-row-mode",
+            kind="candidate_training",
+            feature_input_row_mode="all_diagnostic",
+        )
 
 
 def test_research_job_runs_feature_input_ablation_with_injected_runner(tmp_path) -> None:
@@ -359,6 +371,7 @@ def test_research_job_runs_feature_input_ablation_with_injected_runner(tmp_path)
     assert payload["kind"] == "candidate_feature_input_ablation"
     ablation = payload["candidate_feature_input_ablation"]
     assert ablation["status"] == "feature_input_ablation_ran_only"
+    assert ablation["row_mode"] == "selected"
     assert ablation["rows_used"] == 8
     assert ablation["source_evidence"]["all_reference_fills_local_paper"] is True
     assert ablation["source_evidence"]["diagnostic_overlay_source_counts"] == {

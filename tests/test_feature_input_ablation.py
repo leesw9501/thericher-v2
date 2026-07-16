@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import csv
+import gzip
 import json
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -11,6 +13,7 @@ from thericher_v2.research.feature_input_ablation import (
     RAW_PRE_ENTRY_GROUP,
     RAW_PRE_ENTRY_PLUS_PROBABILITY_META_GROUP,
     FeatureInputAblationConfig,
+    _resolve_lineage_path,
     run_bounded_feature_input_ablation,
 )
 from thericher_v2.research.validation import GpuReadiness
@@ -148,6 +151,98 @@ def test_feature_input_ablation_uses_diagnostic_overlay_rows_only(tmp_path) -> N
     assert payload["rows_dropped"] == 1
 
 
+def test_feature_input_ablation_all_diagnostic_mode_reconstructs_lineage_rows(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    import thericher_v2.research.feature_input_ablation as ablation
+
+    artifact_root = tmp_path / "model-artifacts"
+    market_data_root = tmp_path / "market_data"
+    monkeypatch.setattr(ablation, "DEFAULT_HOST_MARKET_DATA_ROOT", market_data_root)
+    stability_artifact = _lineage_stability_artifact(
+        tmp_path,
+        artifact_root,
+        market_data_root=market_data_root,
+    )
+
+    def runner(dataset, model_artifact, config):  # noqa: ANN001
+        assert config.row_mode == "all_diagnostic"
+        assert dataset.row_mode == "all_diagnostic"
+        assert dataset.rows_seen == 5
+        assert dataset.rows_used == 5
+        assert dataset.row_source_counts == {"diagnostic_overlay": 5}
+        assert dataset.source_slices == ("unit_full",)
+        model_artifact.write_text("unit-full-row-model", encoding="utf-8")
+        return {
+            "backend": "unit",
+            "operation": "unit_feature_input_ablation",
+            "examples_seen": len(dataset.labels),
+            "groups": [
+                {
+                    "group_id": group.group_id,
+                    "feature_count": len(group.feature_names),
+                    "accuracy": "0.500000",
+                }
+                for group in dataset.feature_groups
+            ],
+            "model_artifact": str(model_artifact),
+        }
+
+    result = run_bounded_feature_input_ablation(
+        config=FeatureInputAblationConfig(
+            run_id="unit-full-row-feature-input",
+            row_mode="all_diagnostic",
+            min_examples=2,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        stability_artifact=stability_artifact,
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        trainer_runner=runner,
+    )
+
+    payload = json.loads(result.metrics_artifact.read_text(encoding="utf-8"))
+    assert result.status == "feature_input_ablation_ran_only"
+    assert payload["row_mode"] == "all_diagnostic"
+    assert payload["rows_seen"] == 5
+    assert payload["rows_used"] == 5
+    assert payload["rows_dropped"] == 0
+    assert payload["metrics"]["row_mode"] == "all_diagnostic"
+    assert payload["metrics"]["row_source_counts"] == {"diagnostic_overlay": 5}
+    assert payload["metrics"]["row_reconstruction"]["rows_reconstructed"] == 5
+    assert payload["metrics"]["row_reconstruction"]["slice_counts"] == {
+        "unit_full": 5,
+    }
+    assert payload["metrics"]["row_reconstruction"]["local_paper_replay_changed"] is False
+    assert payload["source_evidence"]["all_reference_fills_local_paper"] is True
+    assert payload["source_evidence"]["local_paper_reference_fill_count"] == 2
+    assert payload["result_scope"]["local_paper_replay_changed"] is False
+    assert Path(payload["artifacts"]["model"]).exists()
+
+
+def test_feature_input_ablation_resolves_model_artifact_lineage_paths(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+
+    host_style = _resolve_lineage_path(
+        "D:\\thericher-v2\\model-artifacts\\candidate-probability-trace\\unit\\trace.json",
+        artifact_root=artifact_root,
+    )
+    docker_style = _resolve_lineage_path(
+        "/app/model_artifacts/candidate-probability-trace/unit/trace.json",
+        artifact_root=artifact_root,
+    )
+
+    expected = artifact_root / "candidate-probability-trace" / "unit" / "trace.json"
+    assert host_style == expected
+    assert docker_style == expected
+    assert _resolve_lineage_path("C:\\Users\\operator\\.env", artifact_root=artifact_root) is None
+
+
 def test_feature_input_ablation_rejects_repo_artifact_root(tmp_path) -> None:
     stability_artifact = _stability_artifact(tmp_path)
 
@@ -167,6 +262,9 @@ def test_feature_input_ablation_import_keeps_torch_lazy_and_no_kis_paths() -> No
     assert "kis_api_called" in source
     assert "requests" not in source
     assert "os.environ" not in source
+    assert "thericher_v2.execution" not in source
+    assert "localpaperbroker" not in source
+    assert "orderintent" not in source
     assert "broker_used" in source
     assert source.count("import torch") == 1
 
@@ -217,3 +315,138 @@ def _stability_artifact(tmp_path: Path) -> Path:
         encoding="utf-8",
     )
     return artifact
+
+
+def _lineage_stability_artifact(
+    tmp_path: Path,
+    artifact_root: Path,
+    *,
+    market_data_root: Path,
+) -> Path:
+    market_data = _lineage_yahoo_snapshot(market_data_root)
+    trace_path = artifact_root / "candidate-probability-trace" / "unit" / "trace.json"
+    trace_path.parent.mkdir(parents=True)
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    probabilities = (0.40, 0.48, 0.51, 0.56, 0.62, 0.53, 0.45, 0.49)
+    trace_path.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "entries": [
+                    {
+                        "schema_version": 1,
+                        "offset": index,
+                        "probability": probability,
+                        "signal_bar_start": (
+                            start + timedelta(minutes=max(index - 1, 0))
+                        ).isoformat(),
+                        "execution_bar_start": (
+                            start + timedelta(minutes=index)
+                        ).isoformat(),
+                        "execution_open": f"{100 + index * 0.20:.4f}",
+                    }
+                    for index, probability in enumerate(probabilities)
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    artifact = tmp_path / "lineage-stability.json"
+    artifact.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "status": "cross_slice_feature_input_stability_diagnostic_only",
+                "consumed_slices": [
+                    {
+                        "slice_id": "unit_full",
+                        "role": "holdout",
+                        "symbol": "AAA",
+                        "probability_trace_artifact": (
+                            "D:\\thericher-v2\\model-artifacts"
+                            "\\candidate-probability-trace\\unit\\trace.json"
+                        ),
+                        "local_market_data_path": str(market_data),
+                    }
+                ],
+                "metrics": {
+                    "added_source_variant_meta": [
+                        {
+                            "slice_id": "unit_full",
+                            "symbol": "AAA",
+                            "variant_id": "t01",
+                            "buy_threshold": 0.50,
+                            "sell_threshold": 0.46,
+                            "candidate_entry_rows": 4,
+                            "local_paper_fill_count": 2,
+                        },
+                        {
+                            "slice_id": "unit_full",
+                            "symbol": "AAA",
+                            "variant_id": "t02",
+                            "buy_threshold": 0.60,
+                            "sell_threshold": 0.46,
+                            "candidate_entry_rows": 1,
+                            "local_paper_fill_count": 0,
+                        },
+                    ]
+                },
+                "source_evidence": {
+                    "all_reference_fills_local_paper": True,
+                    "local_paper_reference_fill_count": 2,
+                    "diagnostic_overlay_source_counts": {"diagnostic_overlay": 5},
+                    "diagnostic_rows_are_not_local_paper_fills": True,
+                },
+                "selected_candidate_entry_rows": [
+                    {
+                        "source": "local_paper",
+                        "slice_id": "unit_full",
+                        "early_3bar": {"path_quality_bucket": "early_lift"},
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    return artifact
+
+
+def _lineage_yahoo_snapshot(tmp_path: Path) -> Path:
+    tmp_path.mkdir(parents=True, exist_ok=True)
+    path = tmp_path / "ohlcv_1m.csv.gz"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    fields = [
+        "symbol",
+        "timestamp_utc",
+        "timestamp_et",
+        "session_date",
+        "bar_time_et",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source",
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for index in range(12):
+            timestamp = start + timedelta(minutes=index)
+            open_price = 100 + index * 0.20
+            writer.writerow(
+                {
+                    "symbol": "AAA",
+                    "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                    "timestamp_et": "",
+                    "session_date": "2026-01-02",
+                    "bar_time_et": "",
+                    "open": f"{open_price:.4f}",
+                    "high": f"{open_price + (0.15 if index % 2 else 0.45):.4f}",
+                    "low": f"{open_price - (0.35 if index % 3 == 0 else 0.05):.4f}",
+                    "close": f"{open_price + (0.08 if index % 2 else -0.02):.4f}",
+                    "volume": str(1000 + index * 10),
+                    "source": "unit",
+                }
+            )
+    return path

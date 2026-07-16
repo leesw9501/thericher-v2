@@ -477,12 +477,16 @@
   plus focused tests. It did not add reports, gates, dashboards, schedulers,
   coordinators, durable workers, broker paths, credential paths, replay
   mutations, or model-promotion language.
+- Full-row feature-input ablation reused that helper with one explicit row-mode
+  flag plus focused tests. It did not add reports, gates, dashboards,
+  schedulers, coordinators, durable workers, broker paths, credential paths,
+  replay mutations, broad sweeps, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward broadening the same feature-input ablation to all
+- Push the next task toward slice/variant-aware metrics over the same
   diagnostic rows before any deeper GPU block. Keep coordination evidence small
   and avoid daemon, scheduler, dashboard, report branch, broker, credential,
   auto-commit, durable multi-agent-platform behavior, or model-promotion

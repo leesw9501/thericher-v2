@@ -874,3 +874,19 @@ that needed a small reusable ablation before deeper GPU training. Keeping this
 as one bounded research primitive avoids broker access, KIS credentials, replay
 mutation, dashboards, schedulers, broad hyperparameter search, report/gate
 sprawl, and model-promotion semantics.
+
+## 2026-07-17 - Full-row feature-input ablation mode
+
+Decision: extend the existing feature-input ablation helper with an explicit
+row mode. The default `selected` mode preserves prior behavior. The
+`all_diagnostic` mode reconstructs candidate-entry rows from existing stability
+artifact lineage, probability traces, and local market-data rows, labels those
+rows as `source: diagnostic_overlay`, and keeps local-paper fills as source
+evidence only. Lineage path resolution is limited to the configured external
+model-artifact and market-data roots.
+
+Reason: the selected `24`-row ablation was too small to justify another deep
+GPU block. Reusing the same helper over all `659` diagnostic rows gives a
+bounded comparison while avoiding replay mutation, broker/KIS access,
+credentials, arbitrary local file reads, dashboard/scheduler/coordinator work,
+new report families, broad sweeps, and model-promotion semantics.
