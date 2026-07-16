@@ -189,6 +189,12 @@
   artifacts under `/app/model_artifacts`. The follow-up opportunity
   attribution ran locally as artifact-only work under the external model
   artifact root.
+- Out-of-symbol disjoint-evaluation replay ran in Docker `research` after the
+  reboot, mounted current `src` read-only, read `/app/market_data` read-only,
+  confirmed RTX 4090 visibility, and wrote replay, robustness, event, and
+  research-job artifacts under `/app/model_artifacts`. The follow-up
+  opportunity attribution and compact summary ran locally as artifact-only
+  work under `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

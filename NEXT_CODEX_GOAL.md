@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded out-of-symbol replay probe for the disjoint-evaluation feature
-branch.
+Build a bounded out-of-symbol loss attribution slice for the
+disjoint-evaluation feature branch.
 
-This advances backtest and walk-forward validation plus PnL attribution by
-testing whether the disjoint-evaluation-derived feature-branch thresholds still
-produce replayable local-paper behavior on a small set of existing symbols that
-were not used in the latest training/evaluation loop.
+This advances PnL attribution and backtest/walk-forward validation by explaining
+why the out-of-symbol replay produced local-paper fills but a negative PnL
+floor, before spending GPU time on another model-axis or threshold-only branch.
 
 ## Hard Boundaries
 
@@ -67,32 +66,26 @@ were not used in the latest training/evaluation loop.
    - `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`
    - `bounded-disjoint-eval-bar-pressure-standardized-replay-cap2-20260716`
    - `bounded-disjoint-eval-opportunity-attribution-20260716`
-3. Inventory a small useful subset of
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`
-   without doing an expensive full recursive scan.
-4. Select a bounded set of up to five symbols that are present in the snapshot
-   and were not used by the latest source/evaluation loop (`CVS`, `FCX`, `KO`).
-5. Prefer existing data. Acquire no new data unless the current snapshot cannot
-   support the probe and any new source is no-auth, lawful,
-   license-compatible, and useful for this exact loop.
-6. Reuse the existing `candidate_feature_branch_replay` path if possible.
-   Avoid new code unless the existing path cannot express the probe.
-7. Run a bounded Docker `research` replay using:
-   - feature branch artifact:
-     `/app/model_artifacts/candidate-feature-branch/bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716/metrics.json`,
-   - threshold cap: `2`,
-   - existing selected out-of-symbol slices from `snapshot=2026-06-18`.
-8. Run artifact-only opportunity attribution if replay completes.
-9. Record compact evidence outside Git:
-   - selected symbols and why they were available,
-   - replay fill count,
-   - PnL/drawdown range,
-   - opportunity counts,
+   - `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`
+   - `bounded-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`
+3. Prefer existing artifacts. Do not retrain, rerun replay, or run threshold
+   search unless the existing replay/robustness/trace artifacts cannot support
+   the attribution.
+4. Attribute the out-of-symbol loss behavior by symbol and threshold using the
+   existing replay, robustness, trace, and local-paper event evidence.
+5. Include at least:
+   - selected symbols and row-count coverage,
+   - per-symbol/per-threshold fill counts,
+   - PnL and drawdown range,
+   - buy/sell opportunity counts,
+   - source-vs-holdout probability range context,
    - local-paper fill-source verification,
    - artifact paths used.
-10. Keep the result descriptive only. Do not rank symbols, pick thresholds,
-    select a model, or add promotion language.
-11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Write any compact loss-attribution output outside Git under
+   `D:\thericher-v2\model-artifacts`.
+7. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+   select a model, or add promotion language.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,12 +108,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused tests, Docker `research` commands, GPU availability, and
-artifact paths used.
+Report any focused tests, artifact-only commands, Docker `research` commands,
+GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol replay probe`
+`Add bounded out-of-symbol loss attribution target`
 
 ## Completion Report
 
@@ -132,6 +125,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol replay findings,
+- out-of-symbol loss attribution findings,
 - what was intentionally not built,
 - next recommended goal.

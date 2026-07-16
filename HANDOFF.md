@@ -261,6 +261,14 @@ Implemented and pushed:
   CVS/FCX/KO from `snapshot=2026-06-18`; cap-2 replay then produced `4`
   verified `source: local_paper` fills with thresholds `0.525/0.431` and
   `0.526/0.431`,
+- bounded out-of-symbol replay probe; it inventoried the existing
+  `snapshot=2026-06-18` Yahoo 1m file, selected AAPL, ABNB, ABT, ACN, and ABBV
+  after excluding CVS, FCX, and KO, reused the disjoint-evaluation
+  feature-branch artifact through the existing Docker `research` replay path,
+  produced `10` verified `source: local_paper` fills, PnL range
+  `-0.95330549316406` to `0E-13`, max drawdown `0.95330549316406`, `7` buy
+  opportunities, and `312` sell opportunities, with compact evidence written
+  outside Git,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -325,18 +333,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded out-of-symbol replay probe for the disjoint-evaluation
-feature branch:
+Start one bounded out-of-symbol loss attribution slice for the
+disjoint-evaluation feature branch:
 
-1. use the disjoint-evaluation feature branch, replay, and attribution
-   artifacts as context,
-2. choose a small existing set of `snapshot=2026-06-18` symbols not used in
-   training/evaluation if available,
-3. replay the same feature-branch artifact and cap-2 threshold derivation
-   through the existing local-paper path,
-4. record fill/PnL/opportunity attribution outside Git,
-5. avoid retraining, new candidate modules, dashboards, gates, schedulers, or
-   broker-facing behavior.
+1. consume the out-of-symbol replay, robustness, attribution, and compact
+   summary artifacts as context,
+2. attribute loss by symbol and threshold using existing replay/trace evidence,
+3. separate sparse buy opportunity evidence from post-fill PnL and drawdown
+   behavior,
+4. write any compact loss-attribution summary outside Git,
+5. avoid retraining, new candidate modules, dashboards, gates, schedulers,
+   threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

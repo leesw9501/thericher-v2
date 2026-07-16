@@ -176,11 +176,14 @@
   path and CLI flag for the existing feature-branch job only. It added no new
   job kind, report, gate, dashboard, scheduler, broker path, disjointness
   blocker, or model-promotion language.
+- Out-of-symbol replay used existing feature-branch replay, robustness,
+  local-paper verification, and attribution paths only. It added no code, job
+  kind, report family, gate, dashboard, scheduler, broker path, threshold
+  search, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small out-of-symbol replay probe without
-  creating a broad preprocessing search, scheduler, dashboard, or promotion
-  gate.
+- Push the next task toward compact loss attribution from existing artifacts
+  before allowing another model axis or threshold-only branch.

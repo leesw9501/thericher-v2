@@ -29,9 +29,8 @@
 
 ## Active Queue
 
-1. Start a bounded out-of-symbol replay probe for the disjoint-evaluation
-   feature branch to reduce evaluation/replay circularity before another model
-   axis is tried.
+1. Start bounded out-of-symbol loss attribution for the disjoint-evaluation
+   feature branch before another model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -108,6 +107,19 @@
   opportunities, `182` sell opportunities, `4` replay fills, all fills
   `source: local_paper`, and wrote artifacts under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-disjoint-eval-opportunity-attribution-20260716`.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`, status
+  `completed`, replayed disjoint-evaluation-derived thresholds `0.525/0.431`
+  and `0.526/0.431` across AAPL, ABNB, ABT, ACN, and ABBV from
+  `snapshot=2026-06-18`, produced `10` verified `source: local_paper` fills,
+  and wrote replay, robustness, event, and research-job artifacts outside Git.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, found `7` buy
+  opportunities, `312` sell opportunities, replay PnL range
+  `-0.95330549316406` to `0E-13`, all fills `source: local_paper`, and wrote
+  attribution plus compact summary artifacts under the external model artifact
+  root.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -315,10 +327,13 @@
   `candidate_feature_branch`, artifacts record training and evaluation
   lineage, and Docker `research` replay recovered a small number of
   local-paper fills without changing broker behavior.
+- Replayed the disjoint-evaluation feature branch on five additional existing
+  symbols. Probability range was no longer the main mismatch, but fills landed
+  with a negative PnL floor, so the next step should attribute loss behavior
+  before changing another model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should replay the disjoint-evaluation branch on a small set of
-  additional existing symbols before running another hidden-units,
-  regularization, or threshold-only branch.
+  task should attribute the out-of-symbol loss behavior before running another
+  hidden-units, regularization, preprocessing, or threshold-only branch.

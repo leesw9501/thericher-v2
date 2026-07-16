@@ -159,14 +159,17 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` for training and CVS, FCX, and KO
   from `snapshot=2026-06-18` for evaluation/replay; no additional data was
   acquired.
+- Out-of-symbol replay probe inventoried only the existing
+  `snapshot=2026-06-18` Yahoo 1m file, found 250 symbols with 245 eligible
+  after excluding CVS, FCX, and KO, selected AAPL, ABNB, ABT, ACN, and ABBV
+  with at least 120 rows each, and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is keeping quality summaries
-  visible while an out-of-symbol replay probe inventories a small existing
-  subset of `snapshot=2026-06-18` and avoids new acquisition unless current
-  data is insufficient.
+- The next data task is not more acquisition; it is keeping selected
+  out-of-symbol slice coverage visible while loss attribution consumes existing
+  replay artifacts.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
