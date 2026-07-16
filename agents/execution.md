@@ -95,6 +95,8 @@
 - Hidden-units model-axis feature-branch replay produced zero simulated fills
   across CVS, FCX, and KO holdout slices with cap 2; no non-local fill source
   was observed.
+- Hidden-units contrast replay also produced zero simulated fills across CVS,
+  FCX, and KO holdout slices; no non-local fill source was observed.
 
 ## Next Handoff
 

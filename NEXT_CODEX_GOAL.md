@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the next bounded hidden-units contrast branch.
+Build a bounded feature-branch replay threshold derivation guard.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by using the existing `--hidden-units` model-axis selector to
-add one more bounded context point after the `hidden_units=16` branch widened
-probabilities but produced zero holdout fills under the cap-2 replay band.
+This advances PnL attribution, backtest and walk-forward validation, and
+feature/model research by making the existing feature-branch replay path more
+useful when model-axis branches produce saturated max probabilities and the
+current max-anchored threshold derivation yields zero or too few fills.
 
 ## Hard Boundaries
 
@@ -63,24 +63,24 @@ probabilities but produced zero holdout fills under the cap-2 replay band.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-bar-pressure-feature-branch-smoke-20260716`
-   - `bounded-bar-pressure-feature-branch-replay-cap2-20260716`
    - `bounded-hidden16-bar-pressure-model-axis-smoke-20260716`
    - `bounded-hidden16-bar-pressure-model-axis-replay-cap2-20260716`
-3. Add at most one small hidden-units contrast branch. Prefer using the
-   existing `--hidden-units`, `--candidate-feature-set`, candidate feature
-   branch, and feature-branch replay paths before changing code.
-4. Keep existing feature-set defaults replayable. If a feature-set is used for
-   the branch, select it explicitly.
-5. Run CPU/focused tests first if code changes are needed. If no code changes
-   are needed, run a small focused parser/job smoke before Docker.
-6. Run Docker `research` training/evaluation on existing CVS, FCX, and KO local
-   Yahoo slices.
-7. If evaluation evidence is usable for replay context, run a compact
-   cap-limited replay through the existing broker-free local-paper path.
-8. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
-   thresholds, candidates, feature sets, or models.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - `bounded-hidden4-bar-pressure-contrast-smoke-20260716`
+   - `bounded-hidden4-bar-pressure-contrast-replay-cap2-20260716`
+3. Inspect `derive_feature_branch_replay_threshold_pairs` and add one bounded
+   guard or attribution for saturated max-probability outputs. Prefer improving
+   the existing helper over adding a new job family.
+4. Keep the result descriptive. The guard may improve replay coverage, but it
+   must not select a best threshold or promote a model.
+5. Add focused tests proving the guard:
+   - preserves existing non-saturated behavior,
+   - avoids returning fewer pairs solely because max probability rounds to the
+     ceiling,
+   - remains bounded by `threshold_pair_cap`,
+   - keeps replay local-paper only.
+6. Run Docker `research` feature-branch replay on at least one existing
+   hidden-units artifact if the code change is sound.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -108,7 +108,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add hidden-units model axis branch`
+`Bound feature branch replay threshold derivation`
 
 ## Completion Report
 
@@ -120,6 +120,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- hidden-units contrast branch findings,
+- derivation guard findings,
 - what was intentionally not built,
 - next recommended goal.

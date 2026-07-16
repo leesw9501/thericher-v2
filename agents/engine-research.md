@@ -215,9 +215,15 @@
   CVS/FCX/KO examples, observed probability range `0.963878`, then replayed a
   cap-2 holdout band across CVS, FCX, and KO with zero local-paper fills and no
   non-local fill evidence.
+- Ran one hidden-units contrast branch with existing code only. Docker
+  `research` trained/evaluated `core_plus_bar_pressure_v1` with
+  `hidden_units=4` on 348 CVS/FCX/KO examples, observed probability range
+  `0.904793`, then replayed a cap-limited holdout band across CVS, FCX, and KO
+  with zero local-paper fills and no non-local fill evidence. The derived
+  threshold pair count fell to 1 because max probability was `1.000000`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should keep GPU work moving with one hidden-units contrast branch and no
-  promotion language.
+  task should tighten or attribute feature-branch replay threshold derivation
+  for saturated probability outputs before running another hidden-units branch.

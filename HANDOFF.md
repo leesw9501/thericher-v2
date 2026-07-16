@@ -219,6 +219,10 @@ Implemented and pushed:
   at 8, trains/evaluates `core_plus_bar_pressure_v1` with 16 hidden units in
   Docker `research`, and records a cap-2 holdout replay with zero fills and
   local-paper-only evidence,
+- bounded hidden-units contrast branch; it reuses the existing selector with
+  `hidden_units=4`, trains/evaluates the same `core_plus_bar_pressure_v1`
+  branch in Docker `research`, and records another cap-limited holdout replay
+  with zero fills plus local-paper-only evidence,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -283,13 +287,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded hidden-units contrast branch:
+Start the next bounded feature-branch replay derivation guard:
 
 1. use recent source and holdout evidence as context,
-2. run at most one small hidden-units contrast branch using existing candidate
-   training/evaluation/replay job kinds,
-3. train/evaluate/replay it through existing Docker `research` and local-paper
-   paths,
+2. explain why hidden-units branches with saturated max probabilities derive
+   replay thresholds that are too close to the ceiling,
+3. add a small bounded replay-threshold derivation guard or attribution using
+   existing feature-branch replay paths,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
    behavior.
 

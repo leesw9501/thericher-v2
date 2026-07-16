@@ -152,6 +152,10 @@
   the RTX 4090, mounted the current `src` read-only, read `/app/market_data`
   read-only, and wrote training, evaluation, model, replay, robustness, and
   research job artifacts under `/app/model_artifacts`.
+- Hidden-units contrast branch reused Docker `research` with PyTorch CUDA on
+  the RTX 4090, read `/app/market_data` read-only, and wrote training,
+  evaluation, model, replay, robustness, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 
