@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Start a bounded exit-horizon diagnostic overlay for out-of-symbol open
-   segments before another model axis or threshold-only branch is tried.
+1. Start a bounded longer-window out-of-symbol replay before another model axis
+   or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -140,6 +140,12 @@
   consumed existing probability traces and lifecycle evidence, found all `3`
   closed segments had post-entry sell-threshold signals and all `4` open
   segments had no sell-threshold signal before the bounded window end.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-exit-diagnostic-20260716`, status
+  `candidate_feature_branch_replay_exit_diagnostic_overlay_only`, compared
+  open segments against fixed 5-bar and 15-bar `diagnostic_overlay` marks,
+  found only `2` of `8` marks available inside the 120-bar window, and kept
+  diagnostic marks separate from local-paper fill counts.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -362,10 +368,13 @@
   before the bounded window end. The next evidence should keep actual replay
   untouched and compare a tiny diagnostic horizon overlay, clearly separated
   from local-paper fills.
+- The 120-bar replay window was too short for most fixed horizon diagnostics
+  because open entries occurred near the bounded window end. The next evidence
+  should rerun the same out-of-symbol slices with a longer bounded window
+  before changing model or threshold axes.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a compact exit-horizon diagnostic overlay for open
-  out-of-symbol segments before running another hidden-units, regularization,
-  preprocessing, or threshold-only branch.
+  task should run a bounded longer-window out-of-symbol replay before another
+  hidden-units, regularization, preprocessing, or threshold-only branch.

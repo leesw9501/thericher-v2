@@ -192,11 +192,15 @@
   artifacts only. It added no code, job kind, report family, gate, dashboard,
   scheduler, broker path, threshold search, retraining, rerun replay, or
   model-promotion language.
+- Out-of-symbol exit-horizon diagnostic overlay used existing attribution
+  artifacts and selected local Yahoo rows only. It kept diagnostic marks
+  separate from local-paper fills and added no code, job kind, report family,
+  gate, dashboard, scheduler, broker path, threshold search, retraining, rerun
+  replay, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward a compact diagnostic overlay that is clearly
-  separated from local-paper fills before allowing another model axis or
-  threshold-only branch.
+- Push the next task toward one bounded longer-window replay using the existing
+  replay path before allowing another model axis or threshold-only branch.

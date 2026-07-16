@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded exit-horizon diagnostic overlay for the out-of-symbol open
-segments.
+Build a bounded longer-window out-of-symbol replay probe.
 
-This advances PnL attribution and paper-trading preparation by comparing the
-current bounded-window-end marks against a tiny fixed set of descriptive horizon
-marks, while keeping diagnostic overlay outcomes separate from actual
-`local_paper` fills.
+This advances backtest/walk-forward validation and PnL attribution by rerunning
+the same out-of-symbol slices with a longer bounded replay window, because the
+120-bar replay left open entries too close to the window end for useful
+post-entry exit diagnostics.
 
 ## Hard Boundaries
 
@@ -66,28 +65,24 @@ marks, while keeping diagnostic overlay outcomes separate from actual
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-out-of-symbol-disjoint-eval-loss-attribution-20260716`
-   - `bounded-out-of-symbol-disjoint-eval-fill-lifecycle-20260716`
+   - `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`
    - `bounded-out-of-symbol-disjoint-eval-post-entry-attribution-20260716`
-3. Prefer existing artifacts and selected local Yahoo bars. Do not retrain,
-   rerun replay, or run threshold search unless existing evidence cannot
-   support the diagnostic.
-4. For open out-of-symbol segments only, compare current bounded-window-end mark
-   evidence with a tiny fixed horizon set, such as 5 and 15 bars after entry.
-5. Label any non-replay comparison as `source: diagnostic_overlay`; do not add
-   diagnostic marks to local-paper fill counts.
-6. Include at least:
-   - entry timestamp and price,
-   - diagnostic horizon timestamp and price,
-   - current bounded-window-end mark,
-   - gross delta comparison,
-   - local-paper fill-source verification from the source artifact,
+   - `bounded-out-of-symbol-disjoint-eval-exit-diagnostic-20260716`
+3. Reuse the existing feature-branch artifact:
+   `/app/model_artifacts/candidate-feature-branch/bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716/metrics.json`.
+4. Reuse the same out-of-symbol slices from `snapshot=2026-06-18`:
+   AAPL, ABNB, ABT, ACN, and ABBV.
+5. Run the existing Docker `research` `candidate_feature_branch_replay` path
+   with threshold cap `2` and a bounded longer `max-bars` value of `240`.
+6. If replay completes, run compact artifact-only attribution that records:
+   - fill counts and local-paper source verification,
+   - PnL/drawdown range,
+   - opportunity counts,
+   - whether longer-window open segments still lack post-entry sell signals,
    - artifact paths used.
-7. Write any compact diagnostic output outside Git under
-   `D:\thericher-v2\model-artifacts`.
-8. Keep the result descriptive only. Do not rank symbols, pick horizons,
+7. Keep the result descriptive only. Do not rank symbols, pick thresholds,
    select a model, or add promotion language.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +110,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol exit diagnostic target`
+`Add bounded longer-window out-of-symbol replay target`
 
 ## Completion Report
 
@@ -127,6 +122,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol exit diagnostic findings,
+- longer-window out-of-symbol replay findings,
 - what was intentionally not built,
 - next recommended goal.

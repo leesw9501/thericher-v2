@@ -289,6 +289,12 @@ Implemented and pushed:
   confirmed all `3` closed segments lined up with sell-threshold signals, and
   found all `4` open segments had no post-entry sell-threshold signal before
   the bounded window end, with all parsed fills still `source: local_paper`,
+- bounded exit-horizon diagnostic overlay; it consumed existing
+  fill-lifecycle and post-entry artifacts, compared open out-of-symbol
+  segments against fixed 5-bar and 15-bar `diagnostic_overlay` marks without
+  changing replay or local-paper fills, found only `2` of `8` diagnostic marks
+  were available inside the 120-bar bounded window, and recorded that the
+  available ABNB 5-bar marks still had negative gross deltas,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -353,18 +359,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded exit-horizon diagnostic overlay for the out-of-symbol open
-segments:
+Start one bounded longer-window out-of-symbol replay probe:
 
-1. consume the fill-lifecycle and post-entry exit-signal attribution artifacts
-   as context,
-2. read only selected `snapshot=2026-06-18` bars needed for open segments,
-3. compare current bounded-window-end marks to a tiny fixed set of descriptive
-   horizon marks, clearly labeled `source: diagnostic_overlay`,
-4. write any compact exit-horizon diagnostic summary outside Git,
-5. avoid retraining, rerunning replay, changing local-paper behavior, adding
-   diagnostic marks as fills, new candidate modules, dashboards, gates,
-   schedulers, threshold searches, or broker-facing behavior.
+1. consume the prior out-of-symbol replay, post-entry attribution, and
+   exit-diagnostic artifacts as context,
+2. reuse the same disjoint-evaluation feature-branch artifact and the same
+   AAPL, ABNB, ABT, ACN, and ABBV slices from `snapshot=2026-06-18`,
+3. rerun the existing Docker `research` feature-branch replay path with
+   threshold cap `2` and a bounded longer `max-bars` value such as `240`,
+4. run compact artifact-only attribution if replay completes,
+5. avoid retraining, new candidate modules, dashboards, gates, schedulers,
+   threshold searches, model-axis changes, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

@@ -130,6 +130,9 @@
 - Out-of-symbol post-entry attribution reran no execution. It preserved the
   existing `local_paper` fill evidence and found open segments lacked a
   post-entry sell-threshold signal before the bounded window end.
+- Out-of-symbol exit-horizon diagnostic overlay did not create local-paper
+  fills; diagnostic marks were labeled separately from existing
+  `source: local_paper` fill evidence.
 
 ## Next Handoff
 

@@ -207,6 +207,10 @@
   work, consumed existing external traces and lifecycle evidence, reran no
   Docker job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Out-of-symbol exit-horizon diagnostic overlay ran locally as artifact-only
+  work, read selected `D:\market_data` rows, reran no Docker job, and wrote one
+  compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
