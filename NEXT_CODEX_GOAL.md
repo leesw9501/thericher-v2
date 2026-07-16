@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add a bounded unique-signal feature-input evaluation for TheRicher v2.
+Add a bounded unique-signal probability-band diagnostic for TheRicher v2.
 
 This advances feature/model research and backtest/walk-forward validation by
-checking whether the raw pre-entry ranking evidence survives after duplicated
-threshold-variant rows are collapsed or summarized by signal.
+checking whether the raw pre-entry unique-signal scores show deterministic band
+separation across slices before any deeper model training or threshold
+experiment.
 
 ## Hard Boundaries
 
@@ -26,6 +27,8 @@ threshold-variant rows are collapsed or summarized by signal.
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 - Keep original local-paper fills labeled with `source: local_paper`; keep
   diagnostic rows labeled with `source: diagnostic_overlay`.
+- Do not call any band, threshold, model, slice, or feature group selected,
+  passed, promoted, production ready, or live ready.
 
 ## Required First Reads
 
@@ -50,13 +53,14 @@ threshold-variant rows are collapsed or summarized by signal.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
+   If it times out, record that and keep the change tightly scoped.
 
 ## Current Evidence To Consume
 
+- Unique-signal ablation artifact:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1\metrics.json`
 - Slice-aware ablation artifact:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-slice-aware-cross-slice-20260717-r1\metrics.json`
-- Full-row ablation artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-fullrow-cross-slice-20260717-r2\metrics.json`
 - Source stability artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`
 
@@ -64,30 +68,32 @@ threshold-variant rows are collapsed or summarized by signal.
 
 1. Keep the change inside the existing feature-input ablation helper/job unless
    there is a strong reason not to.
-2. Add duplicate-aware unique-signal metrics using a stable signal key such as
-   `slice_id`, `symbol`, `execution_bar_start`, and `offset`.
-3. For each feature group, report unique-signal row context and descriptive
-   metrics using a deterministic aggregation policy for repeated variants.
-   Include label consistency checks and count any mixed-label signals.
-4. Preserve existing selected-row behavior and existing full-row behavior.
-5. Keep metric names descriptive/in-sample; do not imply held-out promotion or
+2. Add deterministic probability-band diagnostics for unique signals, using the
+   already defined unique signal key and mean-probability aggregation.
+3. Use fixed, descriptive bands such as tertiles or quartiles. Do not search for
+   a threshold and do not choose a band for trading.
+4. For each feature group, report band counts, label rates, adverse/no-lift
+   lift versus overall unique-signal rate, and per-slice band summaries.
+5. Preserve existing selected-row, full-row, row-level, slice-aware, and
+   unique-signal behavior.
+6. Keep metric names descriptive/in-sample; do not imply held-out promotion or
    live readiness.
-6. Add focused tests proving:
+7. Add focused tests proving:
    - selected mode behavior is unchanged,
-   - full-row and unique-signal metrics use only `diagnostic_overlay` rows,
+   - incomplete signal keys skip band scoring rather than collapsing together,
+   - band assignment is deterministic under reversed row order,
+   - mixed-label signals are reported and skipped from primary band scoring,
+   - single-class or tiny bands do not crash,
    - local-paper fills remain evidence only,
-   - duplicate variants collapse or summarize deterministically,
-   - mixed-label or single-class signal groups are reported without crashing,
-   - lineage traversal paths are rejected,
    - artifacts are outside Git or mocked in tests.
-7. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research for metric interpretation,
+8. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research for band interpretation,
    - Execution/Review for source separation and sprawl,
    - Infra/Data for artifact and data-boundary checks.
-8. If the new payload needs trained per-row scores, run exactly one bounded
-   Docker `research` PyTorch CUDA job. Otherwise keep it CPU/artifact-only and
-   explain why.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. If band metrics need trained per-row scores in the artifact, run exactly one
+   bounded Docker `research` PyTorch CUDA job. Otherwise keep it CPU/artifact-only
+   and explain why.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +121,7 @@ Also report any focused CPU smoke, Docker `research`, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add unique-signal feature input metrics`
+`Add unique-signal probability band diagnostics`
 
 ## Completion Report
 

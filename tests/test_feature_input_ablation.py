@@ -16,6 +16,7 @@ from thericher_v2.research.feature_input_ablation import (
     _binary_classification_metrics,
     _descriptive_evaluation_payload,
     _resolve_lineage_path,
+    _unique_signal_descriptive_evaluation,
     run_bounded_feature_input_ablation,
 )
 from thericher_v2.research.validation import GpuReadiness
@@ -108,6 +109,10 @@ def test_feature_input_ablation_runs_injected_and_separates_feature_groups(
     assert payload["metrics"]["descriptive_evaluation_context"][
         "diagnostic_overlay_rows_only"
     ] is True
+    assert payload["metrics"]["descriptive_evaluation_context"][
+        "missing_signal_key_row_count"
+    ] == 8
+    assert payload["metrics"]["descriptive_evaluation_context"]["unique_signal_count"] == 0
     assert Path(payload["artifacts"]["model"]).exists()
 
 
@@ -348,6 +353,64 @@ def test_feature_input_ablation_auc_ties_and_single_class_groups() -> None:
     assert payload["by_slice"]["single_positive"]["skip_reason"] == "single_class"
     assert payload["by_slice"]["single_negative"]["balanced_accuracy"] is None
     assert payload["context"]["diagnostic_overlay_rows_only"] is True
+    assert payload["unique_signal_descriptive_evaluation"]["context"][
+        "missing_signal_key_row_count"
+    ] == 3
+    assert payload["unique_signal_descriptive_evaluation"]["context"][
+        "scored_unique_signal_count"
+    ] == 0
+
+
+def test_feature_input_ablation_unique_signal_mean_collapse_is_deterministic() -> None:
+    labels = (1, 1, 0, 0)
+    probabilities = (0.10, 0.90, 0.60, 0.70)
+    metadata = (
+        _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+        _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t02"),
+        _unique_signal_metadata("unit", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        _unique_signal_metadata("unit", "AAA", "2026-01-02T14:31:00+00:00", "2", "t02"),
+    )
+
+    payload = _unique_signal_descriptive_evaluation(
+        labels=labels,
+        probabilities=probabilities,
+        row_metadata=metadata,
+    )
+    reversed_payload = _unique_signal_descriptive_evaluation(
+        labels=tuple(reversed(labels)),
+        probabilities=tuple(reversed(probabilities)),
+        row_metadata=tuple(reversed(metadata)),
+    )
+
+    assert payload == reversed_payload
+    assert payload["aggregation_policy"]["score"] == "mean_probability_across_threshold_variants"
+    assert payload["aggregation_policy"]["variant_selection"] == "none"
+    assert payload["context"]["unique_signal_count"] == 2
+    assert payload["context"]["scored_unique_signal_count"] == 2
+    assert payload["context"]["variant_count_histogram"] == {"2": 2}
+    assert payload["context"]["score_span_max"] == "0.800000"
+    assert payload["overall"]["auc"] == "0.000000"
+    assert payload["delta_vs_row_level"]["unique_minus_row_auc"] == "-0.500000"
+
+
+def test_feature_input_ablation_unique_signal_mixed_labels_are_reported() -> None:
+    payload = _unique_signal_descriptive_evaluation(
+        labels=(1, 0, 0),
+        probabilities=(0.80, 0.20, 0.30),
+        row_metadata=(
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t02"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        ),
+    )
+
+    assert payload["context"]["unique_signal_count"] == 2
+    assert payload["context"]["skipped_mixed_label_signal_count"] == 1
+    assert payload["context"]["skipped_mixed_label_row_count"] == 2
+    assert payload["context"]["scored_unique_signal_count"] == 1
+    assert payload["overall"]["balanced_accuracy"] is None
+    assert payload["overall"]["auc"] is None
+    assert payload["overall"]["skip_reason"] == "single_class"
 
 
 def test_feature_input_ablation_rejects_repo_artifact_root(tmp_path) -> None:
@@ -422,6 +485,24 @@ def _stability_artifact(tmp_path: Path) -> Path:
         encoding="utf-8",
     )
     return artifact
+
+
+def _unique_signal_metadata(
+    slice_id: str,
+    symbol: str,
+    execution_bar_start: str,
+    offset: str,
+    variant_id: str,
+) -> dict[str, str]:
+    return {
+        "source": "diagnostic_overlay",
+        "slice_id": slice_id,
+        "symbol": symbol,
+        "execution_bar_start": execution_bar_start,
+        "offset": offset,
+        "variant_id": variant_id,
+        "slice_variant_id": f"{slice_id}:{variant_id}",
+    }
 
 
 def _lineage_stability_artifact(

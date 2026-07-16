@@ -905,3 +905,18 @@ accuracy alone could overstate signal quality. Adding descriptive metrics inside
 the existing artifact keeps the evidence visible without adding a new report
 family, gate, scheduler, dashboard, replay mutation, broker/KIS surface,
 credential path, local/base PyTorch dependency, or model-promotion semantics.
+
+## 2026-07-17 - Unique-signal feature-input evaluation metrics
+
+Decision: extend the same feature-input ablation payload with duplicate-aware
+unique-signal metrics. Signals are keyed by `slice_id`, `symbol`,
+`execution_bar_start`, and `offset`; repeated threshold-variant rows are scored
+with mean probability; incomplete keys are counted but not collapsed; mixed
+labels are counted and skipped from primary unique-signal metrics.
+
+Reason: the full-row diagnostic set contains `659` rows but only `256` market
+moments, so threshold-variant duplication can make row-level evidence look more
+independent than it is. Keeping unique-signal metrics inside the existing
+artifact exposes that structure without adding a new job family, report, gate,
+scheduler, dashboard, broker/KIS surface, credential path, replay mutation,
+local/base PyTorch dependency, or model-promotion semantics.

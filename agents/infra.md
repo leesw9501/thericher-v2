@@ -467,6 +467,10 @@
   job with current `src` mounted read-only and wrote metrics/model artifacts
   under
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-slice-aware-cross-slice-20260717-r1`.
+- Unique-signal feature-input evaluation ran one Docker `research` PyTorch CUDA
+  job with current `src` mounted read-only and wrote metrics/model artifacts
+  under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1`.
 
 ## Next Handoff
 
@@ -482,6 +486,6 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  unique-signal evaluation uses existing artifacts.
+  probability-band diagnostic uses existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.

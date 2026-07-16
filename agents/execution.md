@@ -339,6 +339,9 @@
   local-paper behavior. It kept the same `592` `source: local_paper` fills as
   evidence only and computed metrics over `659` `source: diagnostic_overlay`
   rows.
+- Unique-signal feature-input evaluation reran no execution and changed no
+  local-paper behavior. It collapsed only diagnostic rows for metric context;
+  the `592` local-paper fills remained source evidence only.
 
 ## Next Handoff
 
@@ -354,3 +357,5 @@
   `source: diagnostic_overlay`, and avoid broker authority.
 - Unique-signal follow-up metrics should still avoid replay and must not turn
   diagnostic rows into fills or order intents.
+- Probability-band diagnostics should still avoid replay and must not become
+  order thresholds or order intents.

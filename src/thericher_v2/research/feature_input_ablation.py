@@ -58,6 +58,7 @@ RAW_PRE_ENTRY_FEATURE_NAMES = (
     "pre_last_close_position_in_range",
     "pre_last_volume_vs_prior_avg",
 )
+UNIQUE_SIGNAL_KEY_FIELDS = ("slice_id", "symbol", "execution_bar_start", "offset")
 
 
 @dataclass(frozen=True)
@@ -964,9 +965,13 @@ def _descriptive_evaluation_context(
         "diagnostic_overlay_rows_only": source_counts == {"diagnostic_overlay": row_count},
         "slice_counts": slice_counts,
         "variant_counts": variant_counts,
+        "complete_signal_row_count": signal_context["complete_signal_row_count"],
+        "missing_signal_key_row_count": signal_context["missing_signal_key_row_count"],
         "unique_signal_count": signal_context["unique_signal_count"],
+        "duplicate_signal_count": signal_context["duplicate_signal_count"],
         "row_to_unique_signal_ratio": signal_context["row_to_unique_signal_ratio"],
         "max_variants_per_signal": signal_context["max_variants_per_signal"],
+        "variant_count_histogram": signal_context["variant_count_histogram"],
     }
 
 
@@ -976,6 +981,13 @@ def _descriptive_evaluation_payload(
     probabilities: Sequence[float],
     row_metadata: Sequence[dict[str, str]],
 ) -> dict[str, Any]:
+    row_level_metrics = _binary_classification_metrics(labels, probabilities)
+    unique_signal_metrics = _unique_signal_descriptive_evaluation(
+        labels=labels,
+        probabilities=probabilities,
+        row_metadata=row_metadata,
+        row_level_metrics=row_level_metrics,
+    )
     return {
         "scope": {
             "in_sample": True,
@@ -987,7 +999,8 @@ def _descriptive_evaluation_payload(
             labels=labels,
             row_metadata=row_metadata,
         ),
-        "overall": _binary_classification_metrics(labels, probabilities),
+        "overall": row_level_metrics,
+        "unique_signal_descriptive_evaluation": unique_signal_metrics,
         "by_slice": _grouped_scored_metrics(
             labels=labels,
             probabilities=probabilities,
@@ -999,6 +1012,91 @@ def _descriptive_evaluation_payload(
             probabilities=probabilities,
             row_metadata=row_metadata,
             metadata_key="slice_variant_id",
+        ),
+    }
+
+
+def _unique_signal_descriptive_evaluation(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    row_level_metrics: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    if len(labels) != len(probabilities) or len(labels) != len(row_metadata):
+        raise ValueError("labels, probabilities, and row_metadata must have the same length")
+
+    grouped: dict[tuple[str, str, str, str], list[int]] = {}
+    missing_key_rows = 0
+    for index, metadata in enumerate(row_metadata):
+        signal_key = _unique_signal_key(metadata)
+        if signal_key is None:
+            missing_key_rows += 1
+            continue
+        grouped.setdefault(signal_key, []).append(index)
+
+    unique_labels: list[int] = []
+    unique_probabilities: list[float] = []
+    unique_metadata: list[dict[str, str]] = []
+    mixed_label_signal_count = 0
+    mixed_label_row_count = 0
+    score_spans: list[float] = []
+
+    for signal_key, indexes in sorted(grouped.items()):
+        signal_labels = {int(labels[index]) for index in indexes}
+        signal_probabilities = [float(probabilities[index]) for index in indexes]
+        score_spans.append(max(signal_probabilities) - min(signal_probabilities))
+        if len(signal_labels) != 1:
+            mixed_label_signal_count += 1
+            mixed_label_row_count += len(indexes)
+            continue
+        unique_labels.append(next(iter(signal_labels)))
+        unique_probabilities.append(sum(signal_probabilities) / len(signal_probabilities))
+        unique_metadata.append(
+            {
+                "source": "diagnostic_overlay",
+                "slice_id": signal_key[0],
+                "symbol": signal_key[1],
+                "execution_bar_start": signal_key[2],
+                "offset": signal_key[3],
+            }
+        )
+
+    overall = _binary_classification_metrics(unique_labels, unique_probabilities)
+    return {
+        "scope": {
+            "in_sample": True,
+            "descriptive_only": True,
+            "held_out_split": False,
+            "local_paper_replay_changed": False,
+        },
+        "aggregation_policy": {
+            "signal_key_fields": UNIQUE_SIGNAL_KEY_FIELDS,
+            "score": "mean_probability_across_threshold_variants",
+            "label": "skip_mixed_label_signals",
+            "missing_key": "skip_from_scored_unique_metrics",
+            "variant_selection": "none",
+        },
+        "context": _unique_signal_scoring_context(
+            labels=labels,
+            row_metadata=row_metadata,
+            grouped=grouped,
+            missing_key_rows=missing_key_rows,
+            mixed_label_signal_count=mixed_label_signal_count,
+            mixed_label_row_count=mixed_label_row_count,
+            scored_unique_signal_count=len(unique_labels),
+            score_spans=score_spans,
+        ),
+        "overall": overall,
+        "by_slice": _grouped_scored_metrics(
+            labels=unique_labels,
+            probabilities=unique_probabilities,
+            row_metadata=unique_metadata,
+            metadata_key="slice_id",
+        ),
+        "delta_vs_row_level": _metric_delta_payload(
+            row_level_metrics or _binary_classification_metrics(labels, probabilities),
+            overall,
         ),
     }
 
@@ -1201,25 +1299,118 @@ def _metadata_counts(
 
 def _unique_signal_context(row_metadata: Sequence[dict[str, str]]) -> dict[str, Any]:
     variants_by_signal: dict[tuple[str, str, str, str], set[str]] = {}
+    missing_key_rows = 0
     for metadata in row_metadata:
-        signal_key = (
-            metadata.get("slice_id") or "missing",
-            metadata.get("symbol") or "missing",
-            metadata.get("execution_bar_start") or "missing",
-            metadata.get("offset") or "missing",
-        )
+        signal_key = _unique_signal_key(metadata)
+        if signal_key is None:
+            missing_key_rows += 1
+            continue
         variants_by_signal.setdefault(signal_key, set()).add(
             metadata.get("variant_id") or "missing"
         )
     unique_signal_count = len(variants_by_signal)
     max_variants = max((len(variants) for variants in variants_by_signal.values()), default=0)
+    complete_signal_row_count = len(row_metadata) - missing_key_rows
     return {
+        "complete_signal_row_count": complete_signal_row_count,
+        "missing_signal_key_row_count": missing_key_rows,
         "unique_signal_count": unique_signal_count,
+        "duplicate_signal_count": sum(
+            1 for variants in variants_by_signal.values() if len(variants) > 1
+        ),
         "row_to_unique_signal_ratio": _format_metric_float(
-            _safe_divide(len(row_metadata), unique_signal_count)
+            _safe_divide(complete_signal_row_count, unique_signal_count)
         ),
         "max_variants_per_signal": max_variants,
+        "variant_count_histogram": _variant_count_histogram(variants_by_signal),
     }
+
+
+def _unique_signal_scoring_context(
+    *,
+    labels: Sequence[int],
+    row_metadata: Sequence[dict[str, str]],
+    grouped: dict[tuple[str, str, str, str], list[int]],
+    missing_key_rows: int,
+    mixed_label_signal_count: int,
+    mixed_label_row_count: int,
+    scored_unique_signal_count: int,
+    score_spans: Sequence[float],
+) -> dict[str, Any]:
+    signal_context = _unique_signal_context(row_metadata)
+    complete_signal_row_count = len(row_metadata) - missing_key_rows
+    return {
+        "row_count": len(labels),
+        "complete_signal_row_count": complete_signal_row_count,
+        "missing_signal_key_row_count": missing_key_rows,
+        "unique_signal_count": len(grouped),
+        "scored_unique_signal_count": scored_unique_signal_count,
+        "skipped_mixed_label_signal_count": mixed_label_signal_count,
+        "skipped_mixed_label_row_count": mixed_label_row_count,
+        "duplicate_signal_count": signal_context["duplicate_signal_count"],
+        "row_to_unique_signal_ratio": signal_context["row_to_unique_signal_ratio"],
+        "max_variants_per_signal": signal_context["max_variants_per_signal"],
+        "variant_count_histogram": signal_context["variant_count_histogram"],
+        "source_counts": _metadata_counts(row_metadata, "source"),
+        "diagnostic_overlay_rows_only": _metadata_counts(row_metadata, "source")
+        == {"diagnostic_overlay": len(row_metadata)},
+        "row_label_counts": _label_counts(tuple(int(label) for label in labels)),
+        "unique_label_counts": _label_counts(tuple(int(label) for label in _labels_by_group(
+            labels=labels,
+            grouped=grouped,
+        ))),
+        "score_span_max": _format_metric_float(max(score_spans) if score_spans else None),
+        "score_span_mean": _format_metric_float(
+            _safe_divide(sum(score_spans), len(score_spans))
+        ),
+    }
+
+
+def _labels_by_group(
+    *,
+    labels: Sequence[int],
+    grouped: dict[tuple[str, str, str, str], list[int]],
+) -> tuple[int, ...]:
+    collapsed: list[int] = []
+    for indexes in grouped.values():
+        signal_labels = {int(labels[index]) for index in indexes}
+        if len(signal_labels) == 1:
+            collapsed.append(next(iter(signal_labels)))
+    return tuple(collapsed)
+
+
+def _unique_signal_key(metadata: dict[str, str]) -> tuple[str, str, str, str] | None:
+    parts = tuple(str(metadata.get(field) or "") for field in UNIQUE_SIGNAL_KEY_FIELDS)
+    if any(part in {"", "missing"} for part in parts):
+        return None
+    return parts
+
+
+def _variant_count_histogram(
+    variants_by_signal: dict[tuple[str, str, str, str], set[str]],
+) -> dict[str, int]:
+    histogram = Counter(len(variants) for variants in variants_by_signal.values())
+    return {str(count): frequency for count, frequency in sorted(histogram.items())}
+
+
+def _metric_delta_payload(
+    row_level_metrics: dict[str, Any],
+    unique_metrics: dict[str, Any],
+) -> dict[str, str | None]:
+    keys = ("accuracy", "balanced_accuracy", "auc", "log_loss")
+    return {
+        f"unique_minus_row_{key}": _format_metric_float(
+            _metric_value(unique_metrics.get(key)) - _metric_value(row_level_metrics.get(key))
+            if _metric_value(unique_metrics.get(key)) is not None
+            and _metric_value(row_level_metrics.get(key)) is not None
+            else None
+        )
+        for key in keys
+    }
+
+
+def _metric_value(value: Any) -> float | None:
+    return _as_float(value)
 
 
 def _safe_divide(numerator: float, denominator: float) -> float | None:

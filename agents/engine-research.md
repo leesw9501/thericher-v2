@@ -878,6 +878,11 @@
   pre-entry showed overall AUC `0.600998`, but accuracy equaled the
   adverse/no-lift majority rate and balanced accuracy stayed `0.500000` under
   the default threshold.
+- Unique-signal feature-input evaluation collapsed `659` diagnostic rows to
+  `256` complete market-moment signals. Raw pre-entry unique-signal AUC was
+  `0.598074`, with slice AUCs `0.598034` on `src_adbe`, `0.517943` on
+  `hold_aem`, and `0.678744` on `hold_amat`; balanced accuracy stayed
+  `0.500000` under the default threshold.
 
 ## Next Handoff
 
@@ -885,9 +890,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, collapse or summarize the duplicated
-  threshold-variant rows into unique signal-level metrics so the raw pre-entry
-  ranking evidence is not inflated by repeated variants.
+- Before another deep training block, inspect deterministic probability bands
+  over unique signals so the raw pre-entry ranking evidence can be checked for
+  monotonicity and slice stability without selecting a threshold.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

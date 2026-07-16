@@ -1190,6 +1190,46 @@ Next, add a bounded unique-signal feature-input evaluation so threshold-variant
 duplication is visible in the metric payload before any deeper GPU training.
 Keep it artifact-driven, source-separated, and descriptive.
 
+The unique-signal feature-input evaluation then completed:
+
+- It extended the existing `candidate_feature_input_ablation` payload with
+  `unique_signal_descriptive_evaluation` beside the existing row-level metrics.
+  Unique signals are keyed by `slice_id`, `symbol`, `execution_bar_start`, and
+  `offset`; repeated threshold variants use mean probability, not max variant.
+- Incomplete signal keys are counted and skipped from scored unique metrics.
+  Mixed-label signals are counted and skipped from primary unique metrics.
+- Focused tests cover selected-mode missing keys, deterministic duplicate
+  collapse, no max-variant selection, mixed-label signal handling, single-class
+  behavior, source separation, and existing lineage/artifact guards.
+- Claude drift-check was attempted before code edits and timed out after about
+  `184` seconds without output. The implementation stayed inside the existing
+  helper/job payload.
+- Docker `research` PyTorch CUDA ran once on NVIDIA GeForce RTX 4090 and wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1\feature_input_ablation.pt`.
+- The run used `659` diagnostic rows, zero drops, `256` complete unique
+  signals, `183` duplicate signals, max `6` variants per signal, zero missing
+  signal keys, and zero mixed-label signals. All metric rows remained
+  `source: diagnostic_overlay`; `592` upstream fills remained
+  `source: local_paper` evidence only.
+- Unique-signal overall metrics:
+  probability-meta baseline AUC `0.473905`, balanced accuracy `0.500000`, log
+  loss `0.687833`;
+  raw pre-entry AUC `0.598074`, balanced accuracy `0.500000`, log loss
+  `0.679958`;
+  raw plus probability AUC `0.529295`, balanced accuracy `0.480087`, log loss
+  `0.684430`.
+- Raw pre-entry ranking evidence survived duplicate collapse, but default
+  threshold behavior still mostly predicts the adverse/no-lift majority class.
+  Slice-level raw pre-entry unique AUC was `0.598034` on `src_adbe`,
+  `0.517943` on `hold_aem`, and `0.678744` on `hold_amat`.
+
+Next, add a bounded unique-signal probability-band diagnostic for the existing
+feature-input ablation payload. The goal is to see whether raw pre-entry scores
+show monotonic or slice-stable label separation across deterministic bands
+before any deeper model training or threshold experiment.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
