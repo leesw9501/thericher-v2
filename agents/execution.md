@@ -159,6 +159,9 @@
 - Feature-branch comparison reran no execution. It consumed existing replay and
   attribution artifacts only and confirmed both compared branches kept fills
   `source: local_paper`.
+- Entry-adverse segment contrast reran no execution. It consumed existing
+  local-paper replay/event evidence only and confirmed the contrasted closed
+  segments used `source: local_paper` fills.
 
 ## Next Handoff
 

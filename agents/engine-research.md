@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse segment-contrast diagnostic before another
+1. Run one bounded wider entry-adverse replay sample before another
    feature/model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
@@ -231,6 +231,13 @@
   `2` buy opportunities, reduced the negative PnL floor by `0.3789`, added one
   non-negative closed segment, increased max drawdown by `0.41109572753904`,
   and wrote a descriptive comparison artifact outside Git.
+- Last completed: `bounded-entry-adverse-segment-contrast-20260716`, status
+  `entry_adverse_segment_contrast_only`, consumed existing replay,
+  trade-path, entry-quality, trace, and selected local-bar evidence, contrasted
+  three fee-aware negative segments against one non-negative segment, found the
+  negative segments had negative 5/15/30-bar forward close marks while the ACN
+  non-negative segment had non-negative forward marks, and wrote a compact
+  descriptive artifact outside Git.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -485,11 +492,14 @@
   but still has negative fee-aware aggregate behavior. The next evidence should
   inspect negative versus non-negative entry-adverse segments before changing
   another feature/model axis.
+- Entry-adverse segment contrast showed useful path differences, but only four
+  closed segments. The next evidence should widen replay to a capped additional
+  out-of-symbol sample before changing another feature/model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded entry-adverse segment-contrast diagnostic from
-  existing replay, trade-path, entry-quality, event, trace, and selected local
-  bar evidence before another hidden-units, regularization, preprocessing,
+  task should run one bounded wider entry-adverse replay sample from the
+  completed feature-branch artifact and existing `snapshot=2026-06-18` local
+  Yahoo data before another hidden-units, regularization, preprocessing,
   feature-set, or threshold-only branch.

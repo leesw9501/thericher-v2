@@ -243,6 +243,10 @@
 - Feature-branch comparison ran locally as artifact-only work, consumed
   existing external artifacts, reran no Docker research job, used no GPU, and
   wrote one compact artifact under `D:\thericher-v2\model-artifacts`.
+- Entry-adverse segment contrast ran locally as artifact-only work, consumed
+  existing external artifacts plus selected local Yahoo rows, reran no Docker
+  research job, used no GPU, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

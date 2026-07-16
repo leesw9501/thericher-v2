@@ -195,13 +195,17 @@
   and entry-quality attribution. No additional data was acquired.
 - Feature-branch comparison consumed existing external artifacts only and
   acquired no additional market data.
+- Entry-adverse segment contrast consumed existing external artifacts plus
+  selected AAPL, ABNB, and ACN rows from `snapshot=2026-06-18`; no additional
+  data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  external artifacts and selected `snapshot=2026-06-18` local slices for a
-  bounded entry-adverse segment-contrast diagnostic.
+  external artifacts and inventorying a capped additional symbol set from the
+  existing `snapshot=2026-06-18` local Yahoo slice for a wider entry-adverse
+  replay sample.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -357,6 +357,14 @@ Implemented and pushed:
   entry-adverse added `4` fills and `2` buy opportunities, lifted PnL min by
   `0.3789`, added one non-negative closed segment, raised max drawdown by
   `0.41109572753904`, and still had negative fee-aware delta sum,
+- bounded entry-adverse segment-contrast diagnostic; it consumed existing
+  replay, trade-path, entry-quality, trace, and selected local-bar evidence,
+  wrote one compact external artifact, contrasted three fee-aware negative
+  segments against one non-negative segment, verified all fills remained
+  `source: local_paper`, found all negative segments had negative 5/15/30-bar
+  forward close marks while the non-negative ACN segment had non-negative
+  forward marks, and recorded no branch ranking, pass/fail field, or threshold
+  search,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -421,19 +429,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse segment-contrast diagnostic:
+Start one bounded wider entry-adverse replay sample:
 
-1. consume the completed `core_plus_entry_adverse_v1` feature-branch, replay,
-   opportunity, trade-path, entry-quality, event, trace, and selected local-bar
-   evidence,
-2. contrast the negative AAPL/ABNB segments against the non-negative ACN
-   segment using entry probabilities, threshold gaps, the two entry-adverse
-   feature values, forward 5/15/30-bar marks, excursion, and sell-threshold
-   timing,
-3. write one compact external diagnostic artifact with no branch ranking,
-   selection, pass/fail field, threshold search, retraining, or replay rerun,
-4. keep `agents/*.md` as stateboards and avoid dashboards, schedulers, broker
-   behavior, or report/gate expansion.
+1. inventory the existing `snapshot=2026-06-18` Yahoo 1m file for a small,
+   deterministic additional US equity symbol set,
+2. reuse the completed `core_plus_entry_adverse_v1` feature-branch artifact and
+   existing Docker `research` replay path with cap-2 thresholds and `max-bars
+   240`,
+3. produce replay, opportunity, and trade-path or zero-fill attribution evidence
+   outside Git, with all generated fills verified as `source: local_paper`,
+4. avoid retraining, new feature/model axes, threshold search, dashboards,
+   schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
