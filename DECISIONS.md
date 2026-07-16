@@ -640,3 +640,18 @@ adding a job family or changing feature-set defaults. Threading the existing
 training config knob preserves prior lineage, keeps PyTorch confined to Docker
 `research`, keeps artifacts outside Git, and avoids KIS, credentials, broker
 submit code, dashboards, schedulers, or model-promotion language.
+
+## 2026-07-16 - Bounded feature-branch replay ceiling guard
+
+Decision: clamp the feature-branch replay buy threshold ceiling below `1.000`
+when `max_probability` floors to an invalid replay threshold. The existing
+`derive_feature_branch_replay_threshold_pairs` helper now preserves
+non-saturated behavior, restores capped pair counts for saturated max evidence,
+and emits compact `saturation_guard` metadata only when the clamp is applied.
+
+Reason: hidden-units feature branches can produce saturated max probabilities,
+which caused cap-limited replay to return fewer threshold pairs without
+changing the local-paper path. A small helper guard improves replay attribution
+while avoiding a new job family, threshold optimization loop, KIS access,
+credentials, broker submit code, dashboards, schedulers, or model-promotion
+language.

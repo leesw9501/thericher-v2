@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded feature-branch replay threshold derivation guard.
+Build bounded saturated feature-branch replay opportunity attribution.
 
 This advances PnL attribution, backtest and walk-forward validation, and
-feature/model research by making the existing feature-branch replay path more
-useful when model-axis branches produce saturated max probabilities and the
-current max-anchored threshold derivation yields zero or too few fills.
+feature/model research by explaining why the guarded hidden-units feature-branch
+replay restored its threshold-pair cap but still produced zero local-paper
+fills.
 
 ## Hard Boundaries
 
@@ -63,24 +63,26 @@ current max-anchored threshold derivation yields zero or too few fills.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-hidden16-bar-pressure-model-axis-smoke-20260716`
-   - `bounded-hidden16-bar-pressure-model-axis-replay-cap2-20260716`
    - `bounded-hidden4-bar-pressure-contrast-smoke-20260716`
    - `bounded-hidden4-bar-pressure-contrast-replay-cap2-20260716`
-3. Inspect `derive_feature_branch_replay_threshold_pairs` and add one bounded
-   guard or attribution for saturated max-probability outputs. Prefer improving
-   the existing helper over adding a new job family.
-4. Keep the result descriptive. The guard may improve replay coverage, but it
-   must not select a best threshold or promote a model.
-5. Add focused tests proving the guard:
-   - preserves existing non-saturated behavior,
-   - avoids returning fewer pairs solely because max probability rounds to the
-     ceiling,
-   - remains bounded by `threshold_pair_cap`,
-   - keeps replay local-paper only.
-6. Run Docker `research` feature-branch replay on at least one existing
-   hidden-units artifact if the code change is sound.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - `bounded-hidden4-derivation-guard-replay-cap2-20260716`
+   - `bounded-hidden16-bar-pressure-model-axis-replay-cap2-20260716`
+3. Inspect existing probability trace, threshold robustness, and threshold
+   attribution helpers before adding code. Prefer reusing or extending a small
+   existing attribution helper over adding a new job family.
+4. Add one bounded attribution path that explains, per slice and threshold pair,
+   whether the guarded `0.998/0.447` and `0.999/0.447` variants had buy
+   opportunities, sell opportunities, local-paper fills, PnL, and drawdown.
+5. Keep the result descriptive. It must not choose a threshold, rank a model, or
+   promote a candidate.
+6. Add focused tests proving the attribution:
+   - consumes existing local artifacts without broker/network/credential access,
+   - handles zero-fill variants with missing event files,
+   - keeps local-paper source evidence separate from disabled broker evidence,
+   - writes generated artifacts outside Git or mocks artifact writes in tests.
+7. Run a bounded Docker `research` or local artifact-only smoke command against
+   the guarded hidden4 replay if the code change is sound.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -108,7 +110,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Bound feature branch replay threshold derivation`
+`Attribute saturated feature branch replay opportunities`
 
 ## Completion Report
 
@@ -120,6 +122,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- derivation guard findings,
+- opportunity attribution findings,
 - what was intentionally not built,
 - next recommended goal.

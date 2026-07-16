@@ -156,6 +156,10 @@
   the RTX 4090, read `/app/market_data` read-only, and wrote training,
   evaluation, model, replay, robustness, and research job artifacts under
   `/app/model_artifacts`.
+- Feature-branch derivation-guard replay ran in Docker `research` after the
+  Windows restart, mounted the current `src` read-only, read `/app/market_data`
+  read-only, and wrote replay, robustness, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 

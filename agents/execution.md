@@ -97,6 +97,9 @@
   was observed.
 - Hidden-units contrast replay also produced zero simulated fills across CVS,
   FCX, and KO holdout slices; no non-local fill source was observed.
+- Feature-branch derivation-guard replay restored the hidden4 cap-2 threshold
+  pair count and still produced zero simulated fills across CVS, FCX, and KO
+  holdout slices; no non-local fill source was observed.
 
 ## Next Handoff
 

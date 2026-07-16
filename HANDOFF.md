@@ -223,6 +223,11 @@ Implemented and pushed:
   `hidden_units=4`, trains/evaluates the same `core_plus_bar_pressure_v1`
   branch in Docker `research`, and records another cap-limited holdout replay
   with zero fills plus local-paper-only evidence,
+- bounded feature-branch replay threshold derivation guard; saturated
+  max-probability evidence now clamps the derived buy ceiling below `1.000`,
+  records compact `saturation_guard` metadata only when applied, and replays
+  the hidden-units contrast artifact with the requested cap restored to two
+  threshold pairs while preserving local-paper-only evidence,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -243,7 +248,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `216 passed`
+- `218 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -287,13 +292,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded feature-branch replay derivation guard:
+Start the next bounded saturated feature-branch replay opportunity attribution:
 
-1. use recent source and holdout evidence as context,
-2. explain why hidden-units branches with saturated max probabilities derive
-   replay thresholds that are too close to the ceiling,
-3. add a small bounded replay-threshold derivation guard or attribution using
-   existing feature-branch replay paths,
+1. use the guarded hidden-units contrast replay as context,
+2. explain why the restored `0.998/0.447` and `0.999/0.447` variants still
+   produced zero fills,
+3. reuse existing probability trace, robustness, and local-paper evidence where
+   possible before running another model branch,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
    behavior.
 

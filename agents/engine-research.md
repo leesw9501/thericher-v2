@@ -38,11 +38,18 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-dq-visible-candidate-replay-cvs-20260716`, status
+- Previous completed: `bounded-dq-visible-candidate-replay-cvs-20260716`, status
   `completed`, candidate `m1_lb3_b10_s10`, replayed CVS at `0.48/0.455`,
   produced `37` `source: local_paper` fills, PnL `-0.08440213623047`, and
   wrote artifacts under
   `D:\thericher-v2\model-artifacts\candidate-replay\bounded-dq-visible-candidate-replay-cvs-20260716`.
+- Last completed: `bounded-hidden4-derivation-guard-replay-cap2-20260716`,
+  status `completed`, candidate
+  `m1_lb3_b10_s10__core_plus_bar_pressure_v1`, replayed guarded threshold
+  pairs `0.998/0.447` and `0.999/0.447` across CVS, FCX, and KO holdout
+  slices, produced zero fills, restored threshold pair count to `2`, and wrote
+  artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-hidden4-derivation-guard-replay-cap2-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -221,9 +228,13 @@
   `0.904793`, then replayed a cap-limited holdout band across CVS, FCX, and KO
   with zero local-paper fills and no non-local fill evidence. The derived
   threshold pair count fell to 1 because max probability was `1.000000`.
+- Added a bounded feature-branch replay threshold derivation guard. Saturated
+  max-probability evidence now clamps the buy ceiling to `0.999`, records
+  `saturation_guard` metadata only when applied, and the hidden4 guarded replay
+  restored the requested cap-2 threshold count while still producing zero fills.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should tighten or attribute feature-branch replay threshold derivation
-  for saturated probability outputs before running another hidden-units branch.
+  task should attribute why the guarded high-threshold hidden4 replay still
+  produced zero fills before running another hidden-units branch.

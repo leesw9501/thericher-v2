@@ -44,6 +44,7 @@ DEFAULT_CANDIDATE_FEATURE_BRANCH_REPLAY_RUN_ID = (
 )
 MAX_FEATURE_BRANCH_REPLAY_THRESHOLD_PAIRS = 3
 THRESHOLD_STEP = Decimal("0.001")
+MAX_FEATURE_BRANCH_REPLAY_BUY_THRESHOLD = Decimal("0.999")
 
 
 @dataclass(frozen=True)
@@ -249,7 +250,7 @@ def derive_feature_branch_replay_threshold_pairs(
     observed_mean = _decimal_metric(probability_evidence.get("mean_probability"))
     if observed_max is None or observed_mean is None:
         return ()
-    buy_ceiling = _floor_threshold(observed_max)
+    buy_ceiling = _bounded_buy_ceiling(observed_max)
     sell_threshold = _floor_threshold(observed_mean)
     pairs: list[tuple[float, float]] = []
     buy = buy_ceiling - (THRESHOLD_STEP * Decimal(cap - 1))
@@ -378,7 +379,7 @@ def _threshold_derivation_payload(
     threshold_pairs: tuple[tuple[float, float], ...],
     cap: int,
 ) -> dict[str, Any]:
-    return {
+    payload: dict[str, Any] = {
         "mode": "feature_branch_probability_range_probe",
         "source_probability_evidence": probability_evidence,
         "threshold_pair_cap": cap,
@@ -393,6 +394,10 @@ def _threshold_derivation_payload(
         "descriptive_only": True,
         "promotion_gate": False,
     }
+    saturation_guard = _saturation_guard_payload(probability_evidence)
+    if saturation_guard is not None:
+        payload["saturation_guard"] = saturation_guard
+    return payload
 
 
 def _feature_branch_replay_metrics(
@@ -460,6 +465,32 @@ def _decimal_metric(value: Any) -> Decimal | None:
 
 def _floor_threshold(value: Decimal) -> Decimal:
     return value.quantize(THRESHOLD_STEP, rounding=ROUND_FLOOR)
+
+
+def _bounded_buy_ceiling(value: Decimal) -> Decimal:
+    return min(_floor_threshold(value), MAX_FEATURE_BRANCH_REPLAY_BUY_THRESHOLD)
+
+
+def _saturation_guard_payload(probability_evidence: dict[str, Any]) -> dict[str, Any] | None:
+    observed_max = _decimal_metric(probability_evidence.get("max_probability"))
+    if observed_max is None:
+        return None
+    raw_buy_ceiling = _floor_threshold(observed_max)
+    bounded_buy_ceiling = min(
+        raw_buy_ceiling,
+        MAX_FEATURE_BRANCH_REPLAY_BUY_THRESHOLD,
+    )
+    if bounded_buy_ceiling == raw_buy_ceiling:
+        return None
+    return {
+        "mode": "max_buy_ceiling_clamped_below_one",
+        "raw_buy_ceiling": f"{raw_buy_ceiling:.6f}",
+        "bounded_buy_ceiling": f"{bounded_buy_ceiling:.6f}",
+        "threshold_step": f"{THRESHOLD_STEP:.6f}",
+        "reason": "max_probability floors to an invalid buy threshold under pair[0] < 1",
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
 
 
 def _rounded_threshold(value: Decimal) -> float:

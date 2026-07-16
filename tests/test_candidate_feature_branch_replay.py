@@ -48,6 +48,7 @@ def test_candidate_feature_branch_replay_uses_local_paper_only(tmp_path) -> None
     assert payload["result_scope"]["descriptive_only"] is True
     assert payload["result_scope"]["promotion_gate"] is False
     assert payload["threshold_derivation"]["mode"] == "feature_branch_probability_range_probe"
+    assert "saturation_guard" not in payload["threshold_derivation"]
     assert payload["metrics"]["research_feature_branch_replay_only"] is True
     assert payload["metrics"]["replay_fill_count_total"] > 0
     assert payload["metrics"]["all_fills_local_paper"] is True
@@ -101,6 +102,52 @@ def test_candidate_feature_branch_replay_research_job_dispatch(tmp_path) -> None
     assert Path(payload["artifacts"]["candidate_threshold_robustness"]).exists()
     assert Path(payload["artifacts"]["source_feature_branch"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
+
+
+def test_candidate_feature_branch_replay_saturated_ceiling_guard_stays_local_paper(
+    tmp_path,
+) -> None:
+    artifact_root, feature_branch_artifact, yahoo_snapshot = _feature_branch_artifacts(
+        tmp_path,
+        probability_evidence={
+            "min_probability": "0.095207",
+            "mean_probability": "0.447684",
+            "max_probability": "1.000000",
+            "probability_range": "0.904793",
+        },
+    )
+
+    result = run_bounded_candidate_feature_branch_replay(
+        config=CandidateFeatureBranchReplayConfig(
+            run_id="unit-feature-branch-replay-saturated",
+            max_bars=40,
+            threshold_pair_cap=2,
+            slices=_slices(yahoo_snapshot),
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        feature_branch_artifact=feature_branch_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_alternating_probability_runner,
+    )
+
+    payload = json.loads(result.feature_branch_replay_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_feature_branch_replayed_only"
+    assert result.threshold_pairs == ((0.998, 0.447), (0.999, 0.447))
+    assert payload["threshold_derivation"]["threshold_pair_cap"] == 2
+    assert payload["threshold_derivation"]["threshold_pair_count"] == 2
+    assert payload["threshold_derivation"]["saturation_guard"] == {
+        "bounded_buy_ceiling": "0.999000",
+        "descriptive_only": True,
+        "mode": "max_buy_ceiling_clamped_below_one",
+        "promotion_gate": False,
+        "raw_buy_ceiling": "1.000000",
+        "reason": "max_probability floors to an invalid buy threshold under pair[0] < 1",
+        "threshold_step": "0.001000",
+    }
+    assert payload["metrics"]["threshold_pair_count"] == 2
+    assert payload["metrics"]["all_fills_local_paper"] is True
+    assert payload["local_paper_verification"]["all_fills_local_paper"] is True
 
 
 def test_candidate_feature_branch_replay_missing_context_is_prepared(tmp_path) -> None:
@@ -182,7 +229,26 @@ def test_derive_feature_branch_replay_threshold_pairs_uses_probability_range() -
     )
 
 
-def _feature_branch_artifacts(tmp_path: Path) -> tuple[Path, Path, Path]:
+def test_derive_feature_branch_replay_threshold_pairs_clamps_saturated_ceiling() -> None:
+    pairs = derive_feature_branch_replay_threshold_pairs(
+        {
+            "min_probability": "0.095207",
+            "mean_probability": "0.447684",
+            "max_probability": "1.000000",
+            "probability_range": "0.904793",
+        },
+        cap=2,
+    )
+
+    assert pairs == ((0.998, 0.447), (0.999, 0.447))
+    assert len(pairs) == 2
+
+
+def _feature_branch_artifacts(
+    tmp_path: Path,
+    *,
+    probability_evidence: dict[str, str] | None = None,
+) -> tuple[Path, Path, Path]:
     artifact_root = tmp_path / "model-artifacts"
     market_root = tmp_path / "market-data"
     yahoo_snapshot = _yahoo_snapshot(market_root, symbols=("AAA", "BBB"))
@@ -255,6 +321,12 @@ def _feature_branch_artifacts(tmp_path: Path) -> tuple[Path, Path, Path]:
             },
         },
     )
+    probability_evidence = probability_evidence or {
+        "min_probability": "0.200000",
+        "mean_probability": "0.460000",
+        "max_probability": "0.720000",
+        "probability_range": "0.520000",
+    }
     _write_json(
         feature_branch_artifact,
         {
@@ -267,12 +339,7 @@ def _feature_branch_artifacts(tmp_path: Path) -> tuple[Path, Path, Path]:
             },
             "metrics": {
                 "research_feature_branch_only": True,
-                "probability_evidence": {
-                    "min_probability": "0.200000",
-                    "mean_probability": "0.460000",
-                    "max_probability": "0.720000",
-                    "probability_range": "0.520000",
-                },
+                "probability_evidence": probability_evidence,
             },
             "artifacts": {
                 "candidate_training": _app_path(training_artifact, artifact_root),

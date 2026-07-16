@@ -151,11 +151,15 @@
 - Hidden-units contrast branch used existing code only and added no new job
   family, report, gate, dashboard, scheduler, broker path, or model-promotion
   language.
+- Feature-branch replay derivation guard changed one existing helper plus
+  focused tests, emitted clamp metadata only when saturated evidence requires
+  it, and added no new job family, report, gate, dashboard, scheduler, broker
+  path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small derivation guard or attribution for
-  feature-branch replay thresholds without creating a broad optimization loop
-  or promotion gate.
+- Push the next task toward one small opportunity attribution for guarded
+  saturated feature-branch replay thresholds without creating a broad
+  optimization loop or promotion gate.
