@@ -858,6 +858,13 @@
   supports one narrow Docker `research` feature-input ablation, not a broad GPU
   sweep. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
+- Bounded feature-input ablation added a reusable research-only job kind and
+  ran in Docker `research` with PyTorch CUDA on RTX 4090. It compared
+  probability-meta-only, raw-pre-entry-only, and combined groups on `24`
+  selected diagnostic rows. The combined group was slightly higher in-sample
+  (`0.541667` accuracy, final loss `0.687648`), but this is reconnaissance, not
+  validation. Artifact:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -865,9 +872,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, run one bounded Docker `research`
-  feature-input ablation that keeps raw pre-entry features separate from
-  probability-derived meta features in the output.
+- Before another deep training block, broaden the same feature-input ablation
+  from the `24` selected rows to the full `659` diagnostic rows and compare the
+  pattern descriptively.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

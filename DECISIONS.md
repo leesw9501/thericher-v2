@@ -860,3 +860,17 @@ executable lane disjoint from Engine Research Agent's Docker/GPU queue while
 avoiding KIS access, credentials, broker behavior, network acquisition, Docker,
 PyTorch, schedulers, dashboards, auto-commit, generic agent orchestration,
 quality gates, and report sprawl.
+
+## 2026-07-17 - Bounded feature-input ablation job
+
+Decision: add one research-only `candidate_feature_input_ablation` job kind and
+helper. It consumes existing feature-input stability artifacts, filters
+candidate-entry rows to `source: diagnostic_overlay`, compares at most three
+explicit feature groups, runs PyTorch lazily only inside Docker `research`, and
+writes metrics/model artifacts outside Git.
+
+Reason: cross-slice diagnostics showed modest but repeatable feature directions
+that needed a small reusable ablation before deeper GPU training. Keeping this
+as one bounded research primitive avoids broker access, KIS credentials, replay
+mutation, dashboards, schedulers, broad hyperparameter search, report/gate
+sprawl, and model-promotion semantics.

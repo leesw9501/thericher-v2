@@ -473,12 +473,17 @@
   evidence. It added no code, helper, job kind, CLI, report family, gate,
   dashboard, scheduler, coordinator, durable worker, broker path, credential
   path, retraining, replay rerun, simulator rule, or model-promotion language.
+- Bounded feature-input ablation added one reusable research helper/job kind
+  plus focused tests. It did not add reports, gates, dashboards, schedulers,
+  coordinators, durable workers, broker paths, credential paths, replay
+  mutations, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small Docker `research` feature-input ablation,
-  not a broad GPU sweep. Keep coordination evidence small and avoid daemon,
-  scheduler, dashboard, report branch, broker, credential, auto-commit,
-  durable multi-agent-platform behavior, or model-promotion language.
+- Push the next task toward broadening the same feature-input ablation to all
+  diagnostic rows before any deeper GPU block. Keep coordination evidence small
+  and avoid daemon, scheduler, dashboard, report branch, broker, credential,
+  auto-commit, durable multi-agent-platform behavior, or model-promotion
+  language.

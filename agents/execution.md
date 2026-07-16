@@ -328,6 +328,9 @@
 - Cross-slice feature-input stability check reran no execution, preserved `592`
   original ADBE/AEM/AMAT fills as `source: local_paper`, and labeled all `659`
   candidate-entry diagnostic rows as `source: diagnostic_overlay`.
+- Bounded feature-input ablation reran no execution and changed no local-paper
+  replay behavior. It used selected `diagnostic_overlay` rows for model-input
+  reconnaissance while preserving `592` local-paper fills as source evidence.
 
 ## Next Handoff
 

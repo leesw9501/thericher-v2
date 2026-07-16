@@ -132,6 +132,11 @@ from .experiments import (
     write_walk_forward_gpu_candidate_smoke_artifact,
     write_walk_forward_metrics_artifact,
 )
+from .feature_input_ablation import (
+    BoundedFeatureInputAblationResult,
+    FeatureInputAblationConfig,
+    run_bounded_feature_input_ablation,
+)
 from .gpu_compute import (
     DEFAULT_GPU_COMPUTE_RUN_ID,
     GpuComputeSmokeResult,
@@ -187,6 +192,7 @@ __all__ = [
     "BoundedCandidateDepthTargetResult",
     "BoundedCandidateFeatureBranchResult",
     "BoundedCandidateFeatureBranchReplayResult",
+    "BoundedFeatureInputAblationResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
@@ -208,6 +214,7 @@ __all__ = [
     "CandidateDepthTargetSelection",
     "CandidateFeatureBranchConfig",
     "CandidateFeatureBranchReplayConfig",
+    "FeatureInputAblationConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
     "CandidateThresholdAttributionConfig",
@@ -278,6 +285,7 @@ __all__ = [
     "run_bounded_candidate_evaluation",
     "run_bounded_candidate_feature_branch",
     "run_bounded_candidate_feature_branch_replay",
+    "run_bounded_feature_input_ablation",
     "run_bounded_candidate_breadth_holdout",
     "run_bounded_candidate_breadth_queue",
     "run_bounded_candidate_depth_comparison",

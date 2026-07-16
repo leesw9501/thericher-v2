@@ -118,6 +118,12 @@ from .candidate_training import (
     parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
+from .feature_input_ablation import (
+    BoundedFeatureInputAblationResult,
+    FeatureInputAblationConfig,
+    FeatureInputAblationRunner,
+    run_bounded_feature_input_ablation,
+)
 from .gpu_training import (
     GpuTrainingSmokeResult,
     TrainingSmokeRunner,
@@ -140,6 +146,7 @@ ResearchJobKind = Literal[
     "candidate_evaluation",
     "candidate_feature_branch",
     "candidate_feature_branch_replay",
+    "candidate_feature_input_ablation",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -160,6 +167,7 @@ ResearchJobStatus = Literal[
     "prepared_not_evaluated",
     "prepared_not_feature_branched",
     "prepared_not_feature_branch_replayed",
+    "prepared_not_feature_input_ablated",
     "prepared_not_replayed",
     "prepared_not_compared",
     "prepared_not_swept",
@@ -182,6 +190,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_evaluation",
     "candidate_feature_branch",
     "candidate_feature_branch_replay",
+    "candidate_feature_input_ablation",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -200,6 +209,7 @@ class ResearchJobSpec:
     kind: ResearchJobKind = "gpu_training_smoke"
     candidate_artifact: Path | None = None
     feature_branch_artifact: Path | None = None
+    feature_input_stability_artifact: Path | None = None
     breadth_queue_artifact: Path | None = None
     breadth_holdout_artifact: Path | None = None
     depth_target_artifact: Path | None = None
@@ -282,6 +292,14 @@ class ResearchJobSpec:
                 "evaluation_data_slices are only supported for candidate feature "
                 "branch jobs"
             )
+        if (
+            self.feature_input_stability_artifact is not None
+            and self.kind != "candidate_feature_input_ablation"
+        ):
+            raise ValueError(
+                "feature_input_stability_artifact is only supported for "
+                "candidate feature input ablation jobs"
+            )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -304,6 +322,7 @@ class ResearchJobResult:
         | BoundedCandidateEvaluationResult
         | BoundedCandidateFeatureBranchResult
         | BoundedCandidateFeatureBranchReplayResult
+        | BoundedFeatureInputAblationResult
         | BoundedCandidateReplayResult
         | BoundedCandidateReplayComparisonResult
         | BoundedCandidateThresholdSweepResult
@@ -340,6 +359,7 @@ def run_and_write_research_job(
     candidate_trainer_runner: CandidateTrainerRunner | None = None,
     candidate_evaluation_runner: CandidateEvaluationRunner | None = None,
     candidate_probability_runner: CandidateProbabilityRunner | None = None,
+    feature_input_ablation_runner: FeatureInputAblationRunner | None = None,
 ) -> ResearchJobRun:
     _reject_repo_artifact_path(artifact_root, repo_root)
     started_at = datetime.now(UTC)
@@ -352,6 +372,7 @@ def run_and_write_research_job(
         candidate_trainer_runner=candidate_trainer_runner,
         candidate_evaluation_runner=candidate_evaluation_runner,
         candidate_probability_runner=candidate_probability_runner,
+        feature_input_ablation_runner=feature_input_ablation_runner,
     )
     result = ResearchJobResult(
         job_id=spec.job_id,
@@ -383,6 +404,7 @@ def _run_job_kind(
     candidate_trainer_runner: CandidateTrainerRunner | None,
     candidate_evaluation_runner: CandidateEvaluationRunner | None,
     candidate_probability_runner: CandidateProbabilityRunner | None,
+    feature_input_ablation_runner: FeatureInputAblationRunner | None,
 ) -> tuple[
     GpuTrainingSmokeResult
     | BoundedCandidateBreadthHoldoutResult
@@ -393,6 +415,7 @@ def _run_job_kind(
     | BoundedCandidateEvaluationResult
     | BoundedCandidateFeatureBranchResult
     | BoundedCandidateFeatureBranchReplayResult
+    | BoundedFeatureInputAblationResult
     | BoundedCandidateReplayResult
     | BoundedCandidateReplayComparisonResult
     | BoundedCandidateThresholdSweepResult
@@ -619,6 +642,30 @@ def _run_job_kind(
             feature_branch_replay.model_artifact,
             status,
         )
+    if spec.kind == "candidate_feature_input_ablation":
+        ablation = run_bounded_feature_input_ablation(
+            config=FeatureInputAblationConfig(
+                run_id=spec.job_id,
+                max_epochs=spec.max_epochs,
+                max_steps=spec.max_steps,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            stability_artifact=spec.feature_input_stability_artifact,
+            gpu=gpu,
+            trainer_runner=feature_input_ablation_runner,
+        )
+        status = (
+            "completed"
+            if ablation.status == "feature_input_ablation_ran_only"
+            else "prepared_not_feature_input_ablated"
+        )
+        return (
+            ablation,
+            ablation.metrics_artifact,
+            ablation.model_artifact,
+            status,
+        )
     if spec.kind == "candidate_replay":
         replay = run_bounded_candidate_replay(
             config=CandidateReplayConfig(
@@ -841,6 +888,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--candidate-artifact", type=Path)
     parser.add_argument("--feature-branch-artifact", type=Path)
+    parser.add_argument("--feature-input-stability-artifact", type=Path)
     parser.add_argument("--breadth-queue-artifact", type=Path)
     parser.add_argument("--breadth-holdout-artifact", type=Path)
     parser.add_argument("--depth-target-artifact", type=Path)
@@ -893,6 +941,7 @@ def main() -> None:
         kind=args.kind,
         candidate_artifact=args.candidate_artifact,
         feature_branch_artifact=args.feature_branch_artifact,
+        feature_input_stability_artifact=args.feature_input_stability_artifact,
         breadth_queue_artifact=args.breadth_queue_artifact,
         breadth_holdout_artifact=args.breadth_holdout_artifact,
         depth_target_artifact=args.depth_target_artifact,
@@ -961,8 +1010,8 @@ def _research_job_payload(
         "candidate_artifact": (
             None if candidate_artifact is None else str(candidate_artifact)
         ),
-        "candidate_experiment_id": training.candidate_experiment_id,
-        "candidate_parameters": training.candidate_parameters or {},
+        "candidate_experiment_id": getattr(training, "candidate_experiment_id", None),
+        "candidate_parameters": getattr(training, "candidate_parameters", {}) or {},
         "artifacts": _research_job_artifacts(result),
         "artifact_policy": {
             "root": str(artifact_root),
@@ -1208,6 +1257,32 @@ def _research_job_payload(
                 "mode": "research_feature_branch_replay_only",
                 "descriptive_only": True,
                 "promotion_gate": False,
+            },
+        }
+    elif isinstance(training, BoundedFeatureInputAblationResult):
+        base["source_feature_input_stability_artifact"] = (
+            None
+            if training.source_stability_artifact is None
+            else str(training.source_stability_artifact)
+        )
+        base["candidate_feature_input_ablation"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "available_backends": training.available_backends,
+            "selected_backend": training.selected_backend,
+            "gpu": training.gpu,
+            "rows_seen": training.rows_seen,
+            "rows_used": training.rows_used,
+            "rows_dropped": training.rows_dropped,
+            "label_counts": training.label_counts,
+            "feature_group_ids": training.feature_group_ids,
+            "source_evidence": training.source_evidence,
+            "metrics": training.metrics,
+            "result_scope": {
+                "mode": "research_feature_input_ablation_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+                "local_paper_replay_changed": False,
             },
         }
     elif isinstance(training, BoundedCandidateReplayResult):
@@ -1553,6 +1628,15 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
             artifacts["candidate_training"] = str(result.training.training_metrics_artifact)
         if result.training.evaluation_artifact is not None:
             artifacts["candidate_evaluation"] = str(result.training.evaluation_artifact)
+        if result.model_artifact is not None:
+            artifacts["model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedFeatureInputAblationResult):
+        artifacts = {"candidate_feature_input_ablation": str(result.training_artifact)}
+        if result.training.source_stability_artifact is not None:
+            artifacts["source_feature_input_stability"] = str(
+                result.training.source_stability_artifact
+            )
         if result.model_artifact is not None:
             artifacts["model"] = str(result.model_artifact)
         return artifacts

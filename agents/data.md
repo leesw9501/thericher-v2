@@ -362,12 +362,15 @@
 - Cross-slice feature-input stability check reused selected ADBE, AEM, and AMAT
   rows from the existing `snapshot=2026-06-18` Yahoo 1m file plus existing
   external trace/event artifacts and acquired no additional data.
+- Bounded feature-input ablation consumed only the existing external
+  cross-slice stability artifact and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Reuse existing explicit-slice
-  local Yahoo rows for the bounded Docker `research` feature-input ablation.
+- The next data task is still not acquisition. Reuse the existing stability
+  artifact and its referenced local Yahoo evidence for the full-row
+  feature-input ablation.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

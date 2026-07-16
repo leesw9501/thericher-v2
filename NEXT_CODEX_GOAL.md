@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded Docker `research` feature-input ablation using the completed
-cross-slice stability evidence.
+Broaden the feature-input ablation from selected diagnostic rows to the full
+cross-slice diagnostic row set.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by checking whether a very small feature branch can separate
-early adverse/no-lift candidate entries without changing local-paper replay.
+PnL attribution by checking whether the small Docker `research` ablation pattern
+persists across all `659` diagnostic candidate-entry rows before spending
+another deeper GPU training block.
 
 ## Hard Boundaries
 
@@ -65,44 +66,41 @@ early adverse/no-lift candidate entries without changing local-paper replay.
 
 3. Ask Claude CLI for a short drift-check before code, architecture, or policy
    edits. Judge the result against `HANDOFF.md`, `ARCHITECTURE.md`, and
-   `DECISIONS.md`.
+   `DECISIONS.md`. If Claude CLI times out again, record the timeout and keep
+   the change tightly scoped.
 
 ## Required Work
 
-1. Consume the completed cross-slice stability artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
-2. Keep the ablation narrow and explicit. Compare at most three input groups:
-   - existing baseline feature shape,
-   - raw pre-entry features only,
-   - raw pre-entry features plus probability-derived meta features.
-3. Treat probability-derived fields separately from raw market features in the
-   artifact output so the result is interpretable.
-4. Use existing explicit-slice data and the existing
-   `snapshot=2026-06-18` Yahoo rows only unless a blocker is recorded.
-5. Run a CPU smoke or deterministic dry-run first if the code path changes.
-6. If the smoke is sound, run one bounded Docker `research` PyTorch CUDA
-   experiment with tight caps. Write all artifacts outside Git.
-7. Preserve local-paper replay behavior. Any replay used for comparison must go
-   through the existing broker-free local-paper simulator and preserve
-   `source: local_paper`.
-8. Add or update focused tests proving:
-   - no broker, KIS, network, or credential access is needed,
-   - model/GPU artifacts resolve outside the Git workspace,
-   - probability-derived and raw feature groups are distinguishable in the
-     ablation output,
-   - local-paper fill source evidence remains replayable and separate from
-     diagnostics.
-9. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research sidecar for ablation interpretation,
+1. Consume:
+   - feature-input ablation artifact:
+     `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\metrics.json`,
+   - source stability artifact:
+     `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
+2. Extend or reuse the ablation helper so it can explicitly choose selected rows
+   or all diagnostic rows from the source artifact.
+3. Run a CPU/injected focused smoke first proving:
+   - selected-row behavior remains unchanged,
+   - full-row mode uses only `source: diagnostic_overlay` rows,
+   - local-paper fills remain evidence only,
+   - artifact paths remain outside Git.
+4. If the smoke is sound, run one bounded Docker `research` PyTorch CUDA
+   full-row ablation with tight caps.
+5. Compare selected-row versus full-row evidence without naming a winner. Report
+   row counts, label balance, feature-group losses/accuracies, and source
+   separation.
+6. Preserve local-paper replay behavior. Do not rerun replay unless a later goal
+   explicitly asks for a replay comparison.
+7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for interpretation,
    - Infra sidecar for Docker/artifact mount assumptions,
    - Execution sidecar for source separation,
    - Review sidecar for sprawl and promotion-language checks.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- This task should use existing data, not expand the dataset.
+- This task should use existing artifacts and data, not expand the dataset.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active validation loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
@@ -126,7 +124,7 @@ artifact paths, local-paper source evidence, and diagnostic-overlay evidence.
 
 ## Suggested Commit Message
 
-`Add bounded feature input ablation`
+`Broaden feature input ablation rows`
 
 ## Completion Report
 

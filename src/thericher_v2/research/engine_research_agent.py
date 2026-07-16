@@ -42,6 +42,7 @@ SUPPORTED_ENQUEUED_RESEARCH_JOB_KINDS = (
     "candidate_evaluation",
     "candidate_feature_branch",
     "candidate_feature_branch_replay",
+    "candidate_feature_input_ablation",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",

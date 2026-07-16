@@ -1069,6 +1069,50 @@ raw pre-entry features from probability-derived meta features. Keep replay
 unchanged, artifacts outside Git, and local-paper source evidence separate from
 diagnostic overlays.
 
+The bounded feature-input ablation then completed:
+
+- It added one small research-only helper/job kind,
+  `candidate_feature_input_ablation`, for repeated feature-group checks over
+  diagnostic candidate-entry rows.
+- It consumes the cross-slice stability artifact, filters selected rows to
+  `source: diagnostic_overlay`, separates raw pre-entry market features from
+  probability-derived meta features, and writes metrics/model artifacts outside
+  Git.
+- Claude drift-check was attempted twice before code edits, but both CLI calls
+  timed out without output. The implementation stayed within `HANDOFF.md`,
+  `ARCHITECTURE.md`, and `DECISIONS.md` boundaries.
+- Local dry-run wrote a prepared artifact because local dev has no torch
+  backend:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-local-dryrun-20260717\metrics.json`.
+- Docker `research` PyTorch CUDA run completed on NVIDIA GeForce RTX 4090 and
+  wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-cross-slice-20260717-r1\feature_input_ablation.pt`.
+- The ablation used `24` selected diagnostic rows from ADBE/AEM/AMAT, balanced
+  `12/12` adverse-or-no-lift versus non-adverse. It preserved the source
+  evidence from the upstream artifact: `592` verified `source: local_paper`
+  fills and `659` diagnostic rows labeled `source: diagnostic_overlay`.
+- In this tiny in-sample run, the combined raw pre-entry plus probability-meta
+  group reached accuracy `0.541667` and final loss `0.687648`, while the
+  probability-meta-only and raw-pre-entry-only groups both recorded accuracy
+  `0.500000`. Treat this as descriptive reconnaissance only.
+- Engine Research sidecar found the implementation matches the bounded goal,
+  but warned the result is too small to treat as validation.
+- Infra sidecar verified PyTorch remains Docker `research` only, no dependency
+  or Docker file changed, and artifacts stayed outside Git.
+- Execution sidecar verified no local-paper replay, broker, KIS, credential,
+  live, or paper-submit path changed. Its source-guard suggestion was added:
+  non-`diagnostic_overlay` selected rows are excluded.
+- Review sidecar found no scheduler, dashboard, coordinator, durable-worker, or
+  promotion-language creep, while noting the new job kind should remain a
+  reusable research primitive rather than a growing family.
+
+Next, broaden this feature-input check beyond the `24` selected rows before
+spending a deeper GPU block. Reuse the new helper if possible, consume all `659`
+diagnostic candidate-entry rows from the stability artifact, keep row sources
+separated, and compare whether the same feature-group pattern persists.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

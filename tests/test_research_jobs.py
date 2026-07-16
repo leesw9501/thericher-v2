@@ -302,6 +302,73 @@ def test_research_job_parser_exposes_evaluation_data_slice() -> None:
     assert args.evaluation_data_slice == ["eval_aaa=/tmp/ohlcv_1m.csv.gz:AAA"]
 
 
+def test_research_job_parser_exposes_feature_input_stability_artifact() -> None:
+    args = build_parser().parse_args(
+        [
+            "--kind",
+            "candidate_feature_input_ablation",
+            "--feature-input-stability-artifact",
+            "/app/model_artifacts/stability/metrics.json",
+        ]
+    )
+
+    assert args.feature_input_stability_artifact.name == "metrics.json"
+
+
+def test_research_job_runs_feature_input_ablation_with_injected_runner(tmp_path) -> None:
+    stability_artifact = _feature_input_stability_artifact(tmp_path)
+
+    def runner(dataset, model_artifact, _config):  # noqa: ANN001
+        model_artifact.write_text("unit-ablation-model", encoding="utf-8")
+        return {
+            "backend": "unit",
+            "operation": "unit_feature_input_ablation",
+            "examples_seen": len(dataset.labels),
+            "groups": [
+                {
+                    "group_id": group.group_id,
+                    "feature_count": len(group.feature_names),
+                    "accuracy": "0.500000",
+                }
+                for group in dataset.feature_groups
+            ],
+            "model_artifact": str(model_artifact),
+        }
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="unit-feature-input-ablation-job",
+            kind="candidate_feature_input_ablation",
+            feature_input_stability_artifact=stability_artifact,
+            max_epochs=3,
+            max_steps=8,
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        feature_input_ablation_runner=runner,
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["status"] == "completed"
+    assert payload["kind"] == "candidate_feature_input_ablation"
+    ablation = payload["candidate_feature_input_ablation"]
+    assert ablation["status"] == "feature_input_ablation_ran_only"
+    assert ablation["rows_used"] == 8
+    assert ablation["source_evidence"]["all_reference_fills_local_paper"] is True
+    assert ablation["source_evidence"]["diagnostic_overlay_source_counts"] == {
+        "diagnostic_overlay": 8,
+    }
+    assert ablation["result_scope"]["local_paper_replay_changed"] is False
+    assert Path(payload["artifacts"]["candidate_feature_input_ablation"]).exists()
+    assert Path(payload["artifacts"]["model"]).exists()
+
+
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:
     model_artifact = tmp_path / "external-model.pt"
     model_artifact.write_text("unit-model", encoding="utf-8")
@@ -1262,6 +1329,54 @@ def _probability_runner(dataset, model, training_payload):  # noqa: ANN001
         "model_artifact": str(model),
         "candidate_experiment_id": training_payload.get("candidate_experiment_id"),
     }
+
+
+def _feature_input_stability_artifact(tmp_path: Path) -> Path:
+    rows = []
+    buckets = [
+        "early_adverse_dominant",
+        "early_no_lift",
+        "early_lift",
+        "early_mixed",
+    ]
+    for index in range(8):
+        rows.append(
+            {
+                "source": "diagnostic_overlay",
+                "slice_id": "unit_slice",
+                "symbol": "AAA",
+                "variant_id": "v1",
+                "probability_margin": 0.01 * (index + 1),
+                "probability_rank_pct": 0.2 + index * 0.05,
+                "pre_entry_3bar": {
+                    "close_return": str(0.001 * index),
+                    "range_pct_of_last_close": str(0.002 * (index + 1)),
+                    "last_close_position_in_range": str(0.1 * (index % 5)),
+                    "last_volume_vs_prior_avg": str(-0.05 * index),
+                },
+                "early_3bar": {
+                    "path_quality_bucket": buckets[index % len(buckets)],
+                },
+            }
+        )
+    artifact = tmp_path / "feature-input-stability.json"
+    artifact.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "status": "cross_slice_feature_input_stability_diagnostic_only",
+                "source_evidence": {
+                    "all_reference_fills_local_paper": True,
+                    "local_paper_reference_fill_count": 12,
+                    "diagnostic_overlay_source_counts": {"diagnostic_overlay": 8},
+                    "diagnostic_rows_are_not_local_paper_fills": True,
+                },
+                "selected_candidate_entry_rows": rows,
+            }
+        ),
+        encoding="utf-8",
+    )
+    return artifact
 
 
 def _yahoo_snapshot(

@@ -118,6 +118,40 @@ def test_enqueue_research_job_writes_existing_kind_args_outside_repo(tmp_path) -
     assert claim.spec.research_job_args == tuple(payload["research_job_args"])
 
 
+def test_enqueue_research_job_accepts_feature_input_ablation_args(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id="unit-feature-input-ablation",
+        research_kind="candidate_feature_input_ablation",
+        research_args=(
+            "--feature-input-stability-artifact",
+            "/app/model_artifacts/feature-input-stability/unit/metrics.json",
+            "--max-epochs",
+            "3",
+            "--max-steps",
+            "8",
+        ),
+        queued_at=datetime(2026, 1, 2, tzinfo=UTC),
+        reason="unit bounded feature-input ablation",
+    )
+
+    payload = json.loads(queue_path.read_text(encoding="utf-8"))
+    assert payload["research_job_args"] == [
+        "--job-id",
+        "unit-feature-input-ablation",
+        "--kind",
+        "candidate_feature_input_ablation",
+        "--feature-input-stability-artifact",
+        "/app/model_artifacts/feature-input-stability/unit/metrics.json",
+        "--max-epochs",
+        "3",
+        "--max-steps",
+        "8",
+    ]
+
+
 def test_enqueue_research_job_rejects_unknown_kind_without_writing(tmp_path) -> None:
     artifact_root = tmp_path / "model-artifacts"
 

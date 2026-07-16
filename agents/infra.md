@@ -454,6 +454,10 @@
 - Cross-slice feature-input stability check ran locally as artifact-only work,
   used no Docker or GPU job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability`.
+- Bounded feature-input ablation ran once locally as a no-backend dry-run and
+  once in Docker `research` with PyTorch CUDA on RTX 4090. It changed no Docker
+  or dependency files and wrote metrics/model artifacts under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation`.
 
 ## Next Handoff
 
@@ -469,6 +473,6 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  bounded feature-input ablation runs in Docker `research`.
+  full-row feature-input ablation runs in Docker `research`.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.
