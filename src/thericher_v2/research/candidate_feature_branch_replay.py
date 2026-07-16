@@ -17,6 +17,27 @@ from thericher_v2.execution import (
 from thericher_v2.serialization import to_jsonable
 
 from .candidate_replay import CandidateProbabilityRunner
+from .candidate_threshold_attribution import (
+    _all_artifacts_exist as _all_attribution_artifacts_exist,
+)
+from .candidate_threshold_attribution import (
+    _artifact_payload as _attribution_artifact_payload,
+)
+from .candidate_threshold_attribution import (
+    _attribution_slices,
+)
+from .candidate_threshold_attribution import (
+    _int_metric as _attribution_int_metric,
+)
+from .candidate_threshold_attribution import (
+    _payload_list as _attribution_payload_list,
+)
+from .candidate_threshold_attribution import (
+    _slice_error as _attribution_slice_error,
+)
+from .candidate_threshold_attribution import (
+    _threshold_pairs_from_payload as _attribution_threshold_pairs_from_payload,
+)
 from .candidate_threshold_rerun import (
     _payload_dict,
     _payload_string,
@@ -42,9 +63,16 @@ CandidateFeatureBranchReplayStatus = Literal[
 DEFAULT_CANDIDATE_FEATURE_BRANCH_REPLAY_RUN_ID = (
     "bounded-candidate-feature-branch-replay"
 )
+DEFAULT_CANDIDATE_FEATURE_BRANCH_REPLAY_ATTRIBUTION_RUN_ID = (
+    "bounded-candidate-feature-branch-replay-attribution"
+)
 MAX_FEATURE_BRANCH_REPLAY_THRESHOLD_PAIRS = 3
 THRESHOLD_STEP = Decimal("0.001")
 MAX_FEATURE_BRANCH_REPLAY_BUY_THRESHOLD = Decimal("0.999")
+CandidateFeatureBranchReplayAttributionStatus = Literal[
+    "candidate_feature_branch_replay_attribution_only",
+    "prepared_not_feature_branch_replay_attributed",
+]
 
 
 @dataclass(frozen=True)
@@ -93,6 +121,39 @@ class BoundedCandidateFeatureBranchReplayResult:
     completed_slice_count: int
     local_paper_verification: dict[str, Any]
     robustness: BoundedCandidateThresholdRobustnessResult | None
+    metrics: dict[str, Any]
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "checked_at", self.checked_at.astimezone(UTC))
+
+
+@dataclass(frozen=True)
+class CandidateFeatureBranchReplayAttributionConfig:
+    run_id: str = DEFAULT_CANDIDATE_FEATURE_BRANCH_REPLAY_ATTRIBUTION_RUN_ID
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.run_id:
+            raise ValueError("run_id is required")
+
+
+@dataclass(frozen=True)
+class BoundedCandidateFeatureBranchReplayAttributionResult:
+    run_id: str
+    status: CandidateFeatureBranchReplayAttributionStatus
+    checked_at: datetime
+    reason: str
+    source_feature_branch_replay_artifact: Path | None
+    source_robustness_artifact: Path | None
+    attribution_artifact: Path
+    candidate_experiment_id: str | None
+    candidate_parameters: dict[str, Any]
+    threshold_pairs: tuple[tuple[float, float], ...]
+    threshold_derivation: dict[str, Any]
+    artifact_verification: dict[str, Any]
+    local_paper_verification: dict[str, Any]
+    slices: tuple[dict[str, Any], ...]
     metrics: dict[str, Any]
     schema_version: int = SCHEMA_VERSION
 
@@ -239,6 +300,119 @@ def run_bounded_candidate_feature_branch_replay(
     return result
 
 
+def run_bounded_candidate_feature_branch_replay_opportunity_attribution(
+    *,
+    config: CandidateFeatureBranchReplayAttributionConfig | None = None,
+    artifact_root: Path,
+    repo_root: Path | None = None,
+    feature_branch_replay_artifact: Path | None = None,
+) -> BoundedCandidateFeatureBranchReplayAttributionResult:
+    config = config or CandidateFeatureBranchReplayAttributionConfig()
+    _reject_repo_artifact_path(artifact_root, repo_root)
+    output_dir = (
+        artifact_root / "candidate-feature-branch-replay-attribution" / config.run_id
+    )
+    output_dir.mkdir(parents=True, exist_ok=True)
+    attribution_artifact = output_dir / "metrics.json"
+
+    resolved_replay_artifact = _resolve_optional_path(
+        feature_branch_replay_artifact,
+        artifact_root,
+    )
+    if resolved_replay_artifact is not None:
+        _reject_repo_artifact_path(resolved_replay_artifact, repo_root)
+    replay_payload, replay_error = _read_json_artifact(
+        resolved_replay_artifact,
+        required_label="candidate feature branch replay artifact",
+    )
+    resolved_robustness_artifact = _resolve_optional_path(
+        _payload_dict(replay_payload, "artifacts").get("candidate_threshold_robustness"),
+        artifact_root,
+    )
+    if resolved_robustness_artifact is not None:
+        _reject_repo_artifact_path(resolved_robustness_artifact, repo_root)
+    robustness_payload, robustness_error = _read_json_artifact(
+        resolved_robustness_artifact,
+        required_label="candidate threshold robustness artifact",
+    )
+    slices = _attribution_slices(robustness_payload, artifact_root)
+    threshold_pairs = _feature_branch_attribution_threshold_pairs(replay_payload)
+    artifact_verification = _feature_branch_attribution_artifact_verification(
+        replay_artifact=resolved_replay_artifact,
+        robustness_artifact=resolved_robustness_artifact,
+        slices=slices,
+    )
+    errors = tuple(
+        error
+        for error in (
+            replay_error,
+            _status_error(
+                replay_payload,
+                expected="candidate_feature_branch_replayed_only",
+                label="candidate feature branch replay",
+            ),
+            robustness_error,
+            _status_error(
+                robustness_payload,
+                expected="candidate_robustness_replayed_only",
+                label="candidate threshold robustness",
+            ),
+            None if threshold_pairs else "feature branch replay threshold pairs are missing",
+            _feature_branch_attribution_artifact_error(artifact_verification),
+            _attribution_slice_error(slices),
+        )
+        if error is not None
+    )
+    status: CandidateFeatureBranchReplayAttributionStatus = (
+        "candidate_feature_branch_replay_attribution_only"
+        if not errors
+        else "prepared_not_feature_branch_replay_attributed"
+    )
+    local_paper_verification = _local_paper_verification_from_attribution_slices(
+        slices,
+        artifact_root,
+    )
+    result = BoundedCandidateFeatureBranchReplayAttributionResult(
+        run_id=config.run_id,
+        status=status,
+        checked_at=datetime.now(UTC),
+        reason=(
+            "bounded feature-branch replay opportunity attribution completed"
+            if status == "candidate_feature_branch_replay_attribution_only"
+            else "; ".join(errors)
+        ),
+        source_feature_branch_replay_artifact=resolved_replay_artifact,
+        source_robustness_artifact=resolved_robustness_artifact,
+        attribution_artifact=attribution_artifact,
+        candidate_experiment_id=_payload_string(
+            replay_payload,
+            "candidate_experiment_id",
+        ),
+        candidate_parameters=_payload_dict(replay_payload, "candidate_parameters"),
+        threshold_pairs=threshold_pairs,
+        threshold_derivation=_payload_dict(replay_payload, "threshold_derivation"),
+        artifact_verification=artifact_verification,
+        local_paper_verification=local_paper_verification,
+        slices=slices,
+        metrics=_feature_branch_attribution_metrics(
+            status=status,
+            threshold_pairs=threshold_pairs,
+            artifact_verification=artifact_verification,
+            local_paper_verification=local_paper_verification,
+            slices=slices,
+        ),
+    )
+    attribution_artifact.write_text(
+        json.dumps(
+            _candidate_feature_branch_replay_attribution_payload(result, artifact_root),
+            indent=2,
+            sort_keys=True,
+        ),
+        encoding="utf-8",
+    )
+    return result
+
+
 def derive_feature_branch_replay_threshold_pairs(
     probability_evidence: dict[str, Any],
     *,
@@ -260,6 +434,55 @@ def derive_feature_branch_replay_threshold_pairs(
             pairs.append(pair)
         buy += THRESHOLD_STEP
     return tuple(pairs)
+
+
+def _candidate_feature_branch_replay_attribution_payload(
+    result: BoundedCandidateFeatureBranchReplayAttributionResult,
+    artifact_root: Path,
+) -> dict[str, Any]:
+    return to_jsonable(
+        {
+            "schema_version": result.schema_version,
+            "run_id": result.run_id,
+            "status": result.status,
+            "checked_at": result.checked_at,
+            "reason": result.reason,
+            "source_feature_branch_replay_artifact": None
+            if result.source_feature_branch_replay_artifact is None
+            else str(result.source_feature_branch_replay_artifact),
+            "source_robustness_artifact": None
+            if result.source_robustness_artifact is None
+            else str(result.source_robustness_artifact),
+            "candidate_experiment_id": result.candidate_experiment_id,
+            "candidate_parameters": result.candidate_parameters,
+            "threshold_pairs": [
+                {
+                    "buy_threshold": f"{buy_threshold:.6f}",
+                    "sell_threshold": f"{sell_threshold:.6f}",
+                }
+                for buy_threshold, sell_threshold in result.threshold_pairs
+            ],
+            "threshold_derivation": result.threshold_derivation,
+            "artifact_verification": result.artifact_verification,
+            "local_paper_verification": result.local_paper_verification,
+            "slices": result.slices,
+            "metrics": result.metrics,
+            "result_scope": {
+                "mode": "research_feature_branch_replay_opportunity_attribution_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
+            "artifacts": {
+                "candidate_feature_branch_replay_attribution": str(
+                    result.attribution_artifact
+                ),
+            },
+            "artifact_policy": {
+                "root": str(artifact_root),
+                "repo_storage_allowed": False,
+            },
+        }
+    )
 
 
 def _candidate_feature_branch_replay_payload(
@@ -426,6 +649,108 @@ def _feature_branch_replay_metrics(
     }
 
 
+def _feature_branch_attribution_threshold_pairs(
+    replay_payload: dict[str, Any],
+) -> tuple[tuple[float, float], ...]:
+    return _attribution_threshold_pairs_from_payload(
+        replay_payload,
+    ) or _attribution_threshold_pairs_from_payload(
+        _payload_dict(replay_payload, "threshold_derivation")
+    )
+
+
+def _feature_branch_attribution_artifact_verification(
+    *,
+    replay_artifact: Path | None,
+    robustness_artifact: Path | None,
+    slices: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    return {
+        "feature_branch_replay": _attribution_artifact_payload(replay_artifact),
+        "robustness": _attribution_artifact_payload(robustness_artifact),
+        "trace_artifacts": {
+            str(slice_payload.get("slice_id")): _attribution_artifact_payload(
+                None
+                if slice_payload.get("probability_trace_artifact") is None
+                else Path(str(slice_payload["probability_trace_artifact"]))
+            )
+            for slice_payload in slices
+        },
+        "network_required": False,
+        "credential_required": False,
+    }
+
+
+def _feature_branch_attribution_artifact_error(
+    artifact_verification: dict[str, Any],
+) -> str | None:
+    if _all_attribution_artifacts_exist(artifact_verification):
+        return None
+    return "referenced feature-branch replay attribution artifacts are missing"
+
+
+def _feature_branch_attribution_metrics(
+    *,
+    status: CandidateFeatureBranchReplayAttributionStatus,
+    threshold_pairs: tuple[tuple[float, float], ...],
+    artifact_verification: dict[str, Any],
+    local_paper_verification: dict[str, Any],
+    slices: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    variants = tuple(
+        variant
+        for slice_payload in slices
+        for variant in _attribution_payload_list(slice_payload, "variants")
+    )
+    return {
+        "status": status,
+        "research_feature_branch_replay_opportunity_attribution_only": True,
+        "comparison_is_descriptive": True,
+        "descriptive_only": True,
+        "promotion_gate": False,
+        "all_referenced_artifacts_exist": _all_attribution_artifacts_exist(
+            artifact_verification
+        ),
+        "threshold_pair_count": len(threshold_pairs),
+        "slice_count": len(slices),
+        "attributed_slice_count": sum(
+            1
+            for slice_payload in slices
+            if slice_payload.get("status") == "slice_threshold_attributed_only"
+        ),
+        "attributed_variant_count": len(variants),
+        "zero_fill_variant_count": sum(
+            1
+            for variant in variants
+            if (_attribution_int_metric(variant.get("replay_fill_count")) or 0) == 0
+        ),
+        "buy_opportunity_count_total": sum(
+            _attribution_int_metric(variant.get("buy_opportunity_count")) or 0
+            for variant in variants
+        ),
+        "sell_opportunity_count_total": sum(
+            _attribution_int_metric(variant.get("sell_opportunity_count")) or 0
+            for variant in variants
+        ),
+        "replay_fill_count_total": sum(
+            _attribution_int_metric(variant.get("replay_fill_count")) or 0
+            for variant in variants
+        ),
+        "local_paper_verification": local_paper_verification,
+        "local_paper_fill_count": local_paper_verification.get(
+            "local_paper_fill_count"
+        ),
+        "non_local_fill_source_counts": local_paper_verification.get(
+            "non_local_fill_source_counts"
+        ),
+        "missing_zero_fill_event_artifacts": local_paper_verification.get(
+            "missing_zero_fill_event_artifacts"
+        ),
+        "all_fills_local_paper": local_paper_verification.get("all_fills_local_paper")
+        is True,
+    }
+
+
 def _local_paper_verification(
     robustness: BoundedCandidateThresholdRobustnessResult | None,
 ) -> dict[str, Any]:
@@ -449,6 +774,37 @@ def _fill_event_artifacts_from_robustness(
                     else Path(variant.events_artifact),
                     expected_fill_count=variant.replay_fill_count,
                     label=f"{slice_result.slice_id}:{variant.variant_id}",
+                )
+            )
+    return tuple(artifacts)
+
+
+def _local_paper_verification_from_attribution_slices(
+    slices: tuple[dict[str, Any], ...],
+    artifact_root: Path,
+) -> dict[str, Any]:
+    return collect_fill_source_evidence(
+        _fill_event_artifacts_from_attribution_slices(slices, artifact_root)
+    ).to_summary()
+
+
+def _fill_event_artifacts_from_attribution_slices(
+    slices: tuple[dict[str, Any], ...],
+    artifact_root: Path,
+) -> tuple[FillEventArtifact, ...]:
+    artifacts: list[FillEventArtifact] = []
+    for slice_payload in slices:
+        slice_id = str(slice_payload.get("slice_id") or "")
+        for variant in _attribution_payload_list(slice_payload, "variants"):
+            variant_id = str(variant.get("variant_id") or "")
+            expected_fill_count = (
+                _attribution_int_metric(variant.get("replay_fill_count")) or 0
+            )
+            artifacts.append(
+                FillEventArtifact(
+                    path=_resolve_optional_path(variant.get("events_artifact"), artifact_root),
+                    expected_fill_count=expected_fill_count,
+                    label=f"{slice_id}:{variant_id}",
                 )
             )
     return tuple(artifacts)

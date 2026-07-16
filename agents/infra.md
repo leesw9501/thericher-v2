@@ -160,6 +160,10 @@
   Windows restart, mounted the current `src` read-only, read `/app/market_data`
   read-only, and wrote replay, robustness, and research job artifacts under
   `/app/model_artifacts`.
+- Feature-branch replay opportunity attribution ran locally as an artifact-only
+  smoke, consumed existing `/app/model_artifacts`-style paths resolved to
+  `D:\thericher-v2\model-artifacts`, and wrote one attribution artifact under
+  the external model artifact root.
 
 ## Next Handoff
 

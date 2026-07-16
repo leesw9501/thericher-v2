@@ -655,3 +655,19 @@ changing the local-paper path. A small helper guard improves replay attribution
 while avoiding a new job family, threshold optimization loop, KIS access,
 credentials, broker submit code, dashboards, schedulers, or model-promotion
 language.
+
+## 2026-07-16 - Bounded feature-branch replay opportunity attribution
+
+Decision: add an artifact-only feature-branch replay opportunity attribution
+entrypoint that consumes an existing feature-branch replay artifact, resolves
+its threshold robustness artifact, reuses the existing probability-trace
+attribution helper, and writes one external attribution artifact. It does not
+add a research job kind, rerun inference, train a model, or replay broker
+orders.
+
+Reason: the guarded hidden4 replay restored the threshold pair cap but still
+produced zero fills. Existing robustness traces were enough to show that the
+guarded buy thresholds had zero holdout buy opportunities while preserving
+local-paper source evidence and broker-disabled source separation. Reusing the
+attribution helper avoids another threshold workflow, KIS access, credentials,
+broker submit code, dashboards, schedulers, or model-promotion language.

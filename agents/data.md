@@ -141,13 +141,16 @@
 - Feature-branch replay derivation guard reused the hidden4
   `core_plus_bar_pressure_v1` artifact and disjoint CVS, FCX, and KO holdout
   snapshots from `snapshot=2026-06-18`; no additional data was acquired.
+- Feature-branch replay opportunity attribution consumed existing guarded
+  replay, threshold robustness, and probability trace artifacts for CVS, FCX,
+  and KO holdout slices; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while saturated replay opportunity attribution reuses existing local
-  snapshots and external probability traces.
+  visible while regularization model-axis work reuses existing local snapshots
+  and external artifact lineage.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

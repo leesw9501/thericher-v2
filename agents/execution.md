@@ -100,6 +100,10 @@
 - Feature-branch derivation-guard replay restored the hidden4 cap-2 threshold
   pair count and still produced zero simulated fills across CVS, FCX, and KO
   holdout slices; no non-local fill source was observed.
+- Feature-branch replay opportunity attribution rebuilt fill-source evidence
+  from robustness JSON event paths. The guarded hidden4 variants still had zero
+  fills, missing zero-fill event files were recorded separately, and no
+  non-local fill source was observed.
 
 ## Next Handoff
 

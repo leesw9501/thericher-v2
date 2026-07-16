@@ -5,12 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build bounded saturated feature-branch replay opportunity attribution.
+Build a bounded regularization model-axis branch for saturated feature outputs.
 
-This advances PnL attribution, backtest and walk-forward validation, and
-feature/model research by explaining why the guarded hidden-units feature-branch
-replay restored its threshold-pair cap but still produced zero local-paper
-fills.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by testing whether one capped training regularization selector
+can reduce source-side probability saturation before the next replay loop.
 
 ## Hard Boundaries
 
@@ -64,25 +63,31 @@ fills.
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
    - `bounded-hidden4-bar-pressure-contrast-smoke-20260716`
-   - `bounded-hidden4-bar-pressure-contrast-replay-cap2-20260716`
    - `bounded-hidden4-derivation-guard-replay-cap2-20260716`
-   - `bounded-hidden16-bar-pressure-model-axis-replay-cap2-20260716`
-3. Inspect existing probability trace, threshold robustness, and threshold
-   attribution helpers before adding code. Prefer reusing or extending a small
-   existing attribution helper over adding a new job family.
-4. Add one bounded attribution path that explains, per slice and threshold pair,
-   whether the guarded `0.998/0.447` and `0.999/0.447` variants had buy
-   opportunities, sell opportunities, local-paper fills, PnL, and drawdown.
-5. Keep the result descriptive. It must not choose a threshold, rank a model, or
-   promote a candidate.
-6. Add focused tests proving the attribution:
-   - consumes existing local artifacts without broker/network/credential access,
-   - handles zero-fill variants with missing event files,
-   - keeps local-paper source evidence separate from disabled broker evidence,
-   - writes generated artifacts outside Git or mocks artifact writes in tests.
-7. Run a bounded Docker `research` or local artifact-only smoke command against
-   the guarded hidden4 replay if the code change is sound.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - `bounded-hidden4-opportunity-attribution-20260716`
+   - `bounded-hidden16-bar-pressure-model-axis-smoke-20260716`
+3. Inspect candidate training optimizer/config flow before adding code.
+4. Add exactly one bounded regularization selector, preferably `weight_decay`,
+   to candidate training and candidate feature-branch jobs only.
+5. Keep defaults behavior-compatible. Evaluation, replay, attribution, and
+   broker-facing code must remain checkpoint/artifact-driven rather than
+   accepting an independent regularization value.
+6. Record the regularization axis in training and feature-branch artifacts with
+   descriptive-only metadata and no model-promotion language.
+7. Add focused tests proving:
+   - default training behavior remains unchanged,
+   - invalid or excessive regularization values are rejected,
+   - the research job runner passes the selector only to training and
+     feature-branch jobs,
+   - PyTorch stays confined to Docker `research` and local tests do not import
+     torch.
+8. Run a bounded Docker `research` feature-branch smoke on existing CVS, FCX,
+   and KO local data if the code change is sound. Prefer the current
+   `core_plus_bar_pressure_v1` branch with the regularization selector.
+9. If the feature-branch smoke completes, run the existing cap-limited
+   feature-branch replay or opportunity attribution path only as needed to
+   compare source saturation and holdout opportunity evidence.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -110,7 +115,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Attribute saturated feature branch replay opportunities`
+`Add bounded regularization model axis`
 
 ## Completion Report
 
@@ -122,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- opportunity attribution findings,
+- regularization branch findings,
 - what was intentionally not built,
 - next recommended goal.

@@ -43,13 +43,19 @@
   produced `37` `source: local_paper` fills, PnL `-0.08440213623047`, and
   wrote artifacts under
   `D:\thericher-v2\model-artifacts\candidate-replay\bounded-dq-visible-candidate-replay-cvs-20260716`.
-- Last completed: `bounded-hidden4-derivation-guard-replay-cap2-20260716`,
+- Previous completed: `bounded-hidden4-derivation-guard-replay-cap2-20260716`,
   status `completed`, candidate
   `m1_lb3_b10_s10__core_plus_bar_pressure_v1`, replayed guarded threshold
   pairs `0.998/0.447` and `0.999/0.447` across CVS, FCX, and KO holdout
   slices, produced zero fills, restored threshold pair count to `2`, and wrote
   artifacts under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-hidden4-derivation-guard-replay-cap2-20260716`.
+- Last completed: `bounded-hidden4-opportunity-attribution-20260716`, status
+  `candidate_feature_branch_replay_attribution_only`, attributed 6 guarded
+  threshold variants across CVS, FCX, and KO holdout traces, found `0` buy
+  opportunities versus `136` sell opportunities, kept replay fill count at
+  `0`, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-hidden4-opportunity-attribution-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -232,9 +238,13 @@
   max-probability evidence now clamps the buy ceiling to `0.999`, records
   `saturation_guard` metadata only when applied, and the hidden4 guarded replay
   restored the requested cap-2 threshold count while still producing zero fills.
+- Added bounded saturated feature-branch replay opportunity attribution without
+  adding a job kind. The guarded hidden4 holdout traces had max probabilities
+  near `0.465` to `0.469`, so both `0.998` and `0.999` buy thresholds sat above
+  the observed holdout range and produced no buy opportunities.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attribute why the guarded high-threshold hidden4 replay still
-  produced zero fills before running another hidden-units branch.
+  task should test one bounded regularization model-axis branch before running
+  another hidden-units-only branch.

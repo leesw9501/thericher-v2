@@ -228,6 +228,11 @@ Implemented and pushed:
   records compact `saturation_guard` metadata only when applied, and replays
   the hidden-units contrast artifact with the requested cap restored to two
   threshold pairs while preserving local-paper-only evidence,
+- bounded saturated feature-branch replay opportunity attribution; it consumes
+  the guarded hidden4 replay artifact, reuses existing probability trace and
+  robustness evidence, records per-slice/per-threshold opportunity counts, and
+  attributes the zero fills to guarded buy thresholds above the observed
+  holdout probability range without rerunning training or broker behavior,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -248,7 +253,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `218 passed`
+- `222 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -292,13 +297,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded saturated feature-branch replay opportunity attribution:
+Start the next bounded regularization model-axis branch:
 
-1. use the guarded hidden-units contrast replay as context,
-2. explain why the restored `0.998/0.447` and `0.999/0.447` variants still
-   produced zero fills,
-3. reuse existing probability trace, robustness, and local-paper evidence where
-   possible before running another model branch,
+1. use the guarded replay opportunity attribution as context,
+2. add one capped regularization selector to the existing candidate training
+   and feature-branch path,
+3. run a bounded Docker `research` feature/model branch to see whether source
+   saturation and holdout replay opportunity mismatch change,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
    behavior.
 

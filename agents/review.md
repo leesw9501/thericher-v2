@@ -155,11 +155,14 @@
   focused tests, emitted clamp metadata only when saturated evidence requires
   it, and added no new job family, report, gate, dashboard, scheduler, broker
   path, or model-promotion language.
+- Feature-branch replay opportunity attribution added an artifact-only
+  entrypoint that reuses the existing threshold attribution slice helper. It
+  added no new research job kind, report, gate, dashboard, scheduler, broker
+  path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small opportunity attribution for guarded
-  saturated feature-branch replay thresholds without creating a broad
-  optimization loop or promotion gate.
+- Push the next task toward one small regularization model-axis branch without
+  creating a broad optimizer search, scheduler, dashboard, or promotion gate.
