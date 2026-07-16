@@ -194,6 +194,10 @@ Implemented and pushed:
   source-slice artifacts; local Yahoo slices now record `bars_seen`,
   `warning_count`, `blocks_research`, and warning-code counts without changing
   dataset rows, thresholds, or replay behavior,
+- data-quality-visible bounded GPU validation using existing Docker `research`
+  job kinds; short and deeper multi-slice candidate training/evaluation runs on
+  CVS, FCX, and KO wrote `source_slices[].data_quality` outside Git, then a
+  broker-free CVS replay produced 37 verified `source: local_paper` fills,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -258,14 +262,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Run a bounded data-quality-visible GPU validation:
+Diagnose and bound the threshold calibration runtime:
 
-1. reuse existing Docker `research` candidate training/evaluation job kinds,
-2. confirm new local Yahoo source-slice artifacts include compact
-   `data_quality` summaries outside Git,
-3. replay through existing broker-free local-paper paths only if the evaluation
-   artifact is sound,
-4. avoid new candidate modules, dashboards, gates, or broker-facing behavior.
+1. reproduce `candidate_threshold_calibration` with a much smaller cap,
+2. add a focused timeout/progress safeguard only if the existing path can still
+   hang without writing an artifact,
+3. rerun a compact calibration or robustness replay after the safeguard,
+4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
+   behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

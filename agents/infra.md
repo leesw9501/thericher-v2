@@ -129,9 +129,16 @@
   `/app/market_data` read-only, and wrote feature-branch, training,
   evaluation, replay, robustness, and research job artifacts under
   `/app/model_artifacts`.
+- Data-quality-visible bounded validation ran in Docker `research` with
+  PyTorch CUDA on the RTX 4090, mounted the current `src` read-only for the new
+  artifact metadata, read `/app/market_data` read-only, and wrote training,
+  evaluation, replay, model, event, SQLite, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
   Docker `research` target and external artifact mount. A future infra slice
   should restructure Docker layers so source edits do not reinstall PyTorch.
+- The calibration path should get a small runtime/progress check before being
+  used again for broader GPU validation.

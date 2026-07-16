@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the first data-quality-visible bounded GPU validation.
+Diagnose and bound the threshold calibration runtime.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by proving the new local Yahoo `source_slices[].data_quality`
-summaries appear in external candidate training/evaluation artifacts before the
-next replay evidence is interpreted.
+PnL attribution by keeping the existing calibration/local-paper replay path
+usable for GPU research without letting a bounded job run indefinitely or fail
+to write an artifact.
 
 ## Hard Boundaries
 
@@ -62,25 +62,20 @@ next replay evidence is interpreted.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Prefer existing `D:\market_data` Yahoo intraday snapshots. Do not acquire
-   more data unless it is no-auth, lawful, license-compatible, and directly
-   useful for this validation.
-3. Run one short Docker `research` candidate training/evaluation smoke on local
-   Yahoo slices and confirm the resulting external artifacts include compact
-   `source_slices[].data_quality` summaries.
-4. If the short smoke is sound and the GPU is available, run one bounded longer
-   candidate training/evaluation pass using existing job kinds and PyTorch CUDA
-   inside Docker `research`.
-5. If evaluation evidence is sound, replay through an existing broker-free
-   local-paper path. Do not add a new replay job kind unless a focused bug fix
-   requires it.
-6. Keep both research queues visible in `agents/engine-research.md`:
-   - short experiments for breadth,
-   - longer candidate training for depth.
-7. Add or adjust focused tests only if code changes are needed. Otherwise keep
-   this task to external artifact execution plus concise stateboard/handoff
-   updates.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Reproduce `candidate_threshold_calibration` with a much smaller cap first
+   using the existing data-quality-visible training/evaluation artifacts.
+3. If the small cap completes, record the observed runtime and artifact paths,
+   then try one modest cap increase. Stop before another long no-output run.
+4. If the path can still run too long without writing an artifact, add the
+   smallest focused runtime/progress safeguard inside the existing calibration
+   path or research job wrapper. Do not create a new job family.
+5. Keep calibration output descriptive. Do not add best-threshold, pass/fail,
+   recommendation, promotion, scheduler, dashboard, broker, or credential
+   behavior.
+6. Add focused tests only for any code change. At minimum prove the safeguard
+   is deterministic, does not touch credentials/network, and still writes
+   artifacts outside Git or is mocked in tests.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -103,12 +98,13 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report the Docker `research` commands used, whether GPU was available, and the
-artifact paths that contain `source_slices[].data_quality`.
+Report the Docker `research` calibration commands used, whether GPU was
+available, and whether every started container finished or was explicitly
+stopped.
 
 ## Suggested Commit Message
 
-`Run data-quality-visible GPU validation`
+`Bound threshold calibration runtime`
 
 ## Completion Report
 
@@ -120,6 +116,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- where `source_slices[].data_quality` was observed,
+- calibration runtime findings,
 - what was intentionally not built,
 - next recommended goal.

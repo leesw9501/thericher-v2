@@ -129,11 +129,15 @@
 - Candidate artifact quality summaries reused the existing checker and
   source-slice metadata; they did not add a new job family, report, gate,
   dashboard, scheduler, broker path, or model-promotion language.
+- Data-quality-visible validation reused existing Docker `research`
+  training/evaluation/replay job kinds and added no code, job family, report,
+  gate, dashboard, scheduler, broker path, or model-promotion language. The
+  stopped calibration attempt should be handled as a bounded-runtime issue, not
+  by adding process sprawl.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward a bounded Docker `research` validation that proves
-  the summaries appear in external artifacts, without creating a new job family
-  or promotion gate.
+- Push the next task toward diagnosing and bounding the calibration runtime
+  path without creating a new job family or promotion gate.

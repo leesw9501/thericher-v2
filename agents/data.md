@@ -30,8 +30,8 @@
 
 ## Active Queue
 
-1. Review the first new Docker `research` artifacts that include compact
-   source-slice quality summaries.
+1. Keep reviewing new Docker `research` artifacts for compact source-slice
+   quality summaries.
 2. Acquire additional no-auth public data only when the source is lawful,
    license-compatible, and useful for the current engine loop.
 3. Decide the first local cache shape only when real ingestion work starts.
@@ -123,12 +123,15 @@
   training/evaluation local Yahoo source-slice artifacts. Deterministic sample
   runs still omit source slices, and unavailable config placeholders remain
   non-blocking.
+- Confirmed new Docker `research` training/evaluation artifacts record compact
+  `source_slices[].data_quality` for CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Confirm the next bounded GPU validation writes `source_slices[].data_quality`
-  outside Git before interpreting new model evidence.
+- The next data task is not more acquisition; it is keeping quality summaries
+  visible while the calibration/replay runtime is bounded.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run the next bounded GPU candidate validation through existing job kinds and
-   verify the emitted local Yahoo source slices include compact data-quality
-   summaries.
+1. Diagnose why `candidate_threshold_calibration` can run past the bounded
+   operator window without emitting an artifact, then rerun a compact
+   calibration or robustness replay.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -39,12 +39,19 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-feature-branch-deeper-replay-20260716`,
-  status `completed`, candidate
-  `m1_lb3_b10_s10__core_plus_bar_position_v1`, replayed threshold pairs
-  `0.487/0.454`, `0.488/0.454`, and `0.489/0.454` across CVS, FCX, and KO,
-  produced `30` local-paper fills across 9 variants, and wrote artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-deeper-replay-20260716`.
+- Last completed: `bounded-dq-visible-candidate-replay-cvs-20260716`, status
+  `completed`, candidate `m1_lb3_b10_s10`, replayed CVS at `0.48/0.455`,
+  produced `37` `source: local_paper` fills, PnL `-0.08440213623047`, and
+  wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-replay\bounded-dq-visible-candidate-replay-cvs-20260716`.
+- Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
+  status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
+  probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
+  carry compact non-blocking `data_quality` summaries.
+- Interrupted: `bounded-dq-visible-candidate-calibration-depth-20260716` ran
+  for more than 10 minutes without writing its calibration artifact and was
+  stopped; diagnose this before relying on the calibration path for longer
+  loops.
 - Previous completed: `bounded-candidate-feature-branch-replay-mini-smoke`,
   status
   `completed`, candidate
@@ -178,10 +185,13 @@
 - Candidate training/evaluation artifacts now carry compact
   `source_slices[].data_quality` summaries for local Yahoo inputs without
   changing rows, thresholds, replay behavior, or local-paper attribution.
+- Data-quality-visible Docker `research` runs confirmed the summaries in both
+  short 80-bar and deeper 240-bar CVS/FCX/KO candidate training/evaluation
+  artifacts, then connected the deeper artifact to a single-symbol local-paper
+  replay.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a bounded GPU validation through existing job kinds and check
-  that the new artifact summaries appear outside Git before interpreting the
-  model evidence.
+  task should keep the GPU path bounded by diagnosing the calibration runtime
+  issue before launching broader threshold calibration or robustness work.
