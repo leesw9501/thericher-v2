@@ -123,10 +123,13 @@
 - Longer bounded GPU feature/model validation reused existing Docker
   `research` job kinds and external artifacts; it added no new `candidate_*`
   module, report family, scheduler, dashboard, or promotion gate.
+- Market-data quality checks stayed a pure helper plus focused tests and
+  validation CLI summary; they did not add a gate, report family, data
+  acquisition path, dashboard, broker behavior, or scheduler.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward warning-only market-data checks that improve
-  validation quality without becoming research-blocking gates.
+- Push the next task toward attaching warning summaries to existing research
+  artifacts, without creating a new job family or promotion gate.

@@ -171,9 +171,12 @@
   job kinds with PyTorch CUDA, trained/evaluated 708 examples for
   `core_plus_bar_position_v1`, observed probability range `0.463305`, replayed
   30 local-paper fills, and kept the result descriptive with no promotion gate.
+- Warning-only market-data quality checks now explain local Yahoo 1m slice
+  issues before more GPU time is spent; the initial CVS/FCX/KO smoke found only
+  incomplete higher-timeframe bucket warnings.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should add warning-only market-data quality checks before spending more
-  GPU time on the same local Yahoo slices.
+  task should attach warning-only quality summaries to existing research
+  artifacts before another GPU validation run.

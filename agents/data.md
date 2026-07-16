@@ -30,8 +30,8 @@
 
 ## Active Queue
 
-1. Add data-quality checks for missing bars, duplicate bars, and incomplete
-   higher timeframe buckets.
+1. Thread warning-only data-quality summaries into existing research
+   source-slice artifacts where useful.
 2. Acquire additional no-auth public data only when the source is lawful,
    license-compatible, and useful for the current engine loop.
 3. Decide the first local cache shape only when real ingestion work starts.
@@ -115,13 +115,16 @@
 - Broker-boundary fuse work required no market data reads or acquisition.
 - Longer bounded GPU feature/model validation reused CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
+- Added warning-only `Bar` data-quality checks. A 240-bar CVS/FCX/KO smoke on
+  `snapshot=2026-07-09-shadow-t0-8d-probe` found only incomplete resample
+  bucket warnings and no duplicate, non-monotonic, or missing 1m interval
+  warnings.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Add warning-only checks for duplicate bars, non-monotonic timestamps, missing
-  expected 1m bars, and incomplete higher-timeframe buckets before acquiring
-  more data.
+- Thread warning summaries into existing research source-slice metadata before
+  spending more GPU time on the same local Yahoo slices.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

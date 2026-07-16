@@ -186,6 +186,10 @@ Implemented and pushed:
   job kinds; it reran `core_plus_bar_position_v1` with higher caps, wrote
   artifacts outside Git, then replayed through broker-free local paper with 30
   verified `source: local_paper` fills and no promotion decision,
+- warning-only market-data quality helper; it reports duplicate bars,
+  non-monotonic timestamps, missing 1m intervals, and incomplete resample
+  buckets without mutating bars, gap-filling, reading credentials, or blocking
+  research,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -206,7 +210,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `207 passed`
+- `213 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -250,13 +254,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add market-data quality warnings for local Yahoo validation slices:
+Attach market-data quality summaries to existing research artifacts:
 
-1. detect duplicate/non-monotonic/missing intraday bars without blocking
-   research,
-2. warn on incomplete higher-timeframe buckets without gap-filling data,
-3. keep checks credential-free and local-data-only,
-4. avoid creating gates, dashboards, reports, or broker-facing behavior.
+1. thread warning-only summaries into candidate data-source/source-slice
+   metadata,
+2. keep summaries descriptive and non-blocking,
+3. reuse existing Docker `research` job kinds for a small smoke,
+4. avoid new candidate modules, dashboards, gates, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

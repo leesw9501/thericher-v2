@@ -568,3 +568,15 @@ credential, environment, or event-log I/O.
 Reason: future KIS paper and live execution needs a clear order lifecycle
 surface, but the current engine must remain unable to submit broker orders or
 confuse disabled broker outcomes with `source: local_paper` fills.
+
+## 2026-07-16 - Warning-only market-data quality checks
+
+Decision: add a pure `Bar` quality helper that returns descriptive warnings for
+duplicate bar keys, non-monotonic timestamps, missing expected 1m intervals, and
+incomplete resample buckets. The helper does no I/O, does not mutate bars,
+does not gap-fill data, and does not block research.
+
+Reason: repeated GPU validation is now reusing local Yahoo 1m slices. The
+engine should make data-quality issues visible before spending more GPU time,
+but warnings must not become v1-style gates or reports unless they protect a
+future execution hard stop.

@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, OrderIntent, Timeframe
-from thericher_v2.data import BarQuery, SampleBarProvider
+from thericher_v2.data import BarQuery, SampleBarProvider, assess_bar_quality
 from thericher_v2.ensemble import decide
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
 from thericher_v2.models import MomentumModel
@@ -428,6 +428,7 @@ def main() -> None:
     else:
         bars = SampleBarProvider.trending_1m(count=args.max_bars, seed=23).base_bars
         data_source = "deterministic_sample"
+    data_quality = assess_bar_quality(tuple(bars))
 
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temp_dir:
         temp_path = Path(temp_dir)
@@ -461,7 +462,16 @@ def main() -> None:
                     )
                 )
 
-    print(json.dumps({"result": _result_payload(result), "artifacts": artifacts}, indent=2))
+    print(
+        json.dumps(
+            {
+                "result": _result_payload(result),
+                "data_quality": to_jsonable(data_quality),
+                "artifacts": artifacts,
+            },
+            indent=2,
+        )
+    )
 
 
 def _validate_bars(bars: list[Bar], *, min_bars: int) -> None:

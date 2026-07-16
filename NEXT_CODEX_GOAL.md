@@ -5,11 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add warning-only market-data quality checks for local Yahoo validation slices.
+Attach warning-only market-data quality summaries to existing research artifacts.
 
-This advances data collection and backtest/walk-forward validation by making
-the reused local 1m data quality visible before more GPU time is spent on the
-same slices. These checks are warnings for research, not execution gates.
+This advances data collection, feature/model research, and backtest/walk-forward
+validation by making local Yahoo slice quality visible in the artifacts that
+drive GPU experiments, without creating gates or new job families.
 
 ## Hard Boundaries
 
@@ -61,20 +61,17 @@ same slices. These checks are warnings for research, not execution gates.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Inspect existing `data/` provider and resampling code before adding anything.
-3. Add a small warning-only quality helper for ordered `Bar` data that can
-   detect:
-   - duplicate bars by `(market, symbol, timeframe, start_ts)`,
-   - non-monotonic timestamps,
-   - missing expected 1m intervals inside a single symbol/timeframe stream,
-   - incomplete higher-timeframe buckets when resampling from 1m.
-4. Wire the helper only where it naturally supports local/offline validation.
-   Do not block research runs, mutate bars, gap-fill data, or add a report
-   family.
-5. Add focused tests proving warnings are descriptive, local-only,
-   credential-free, and do not affect local paper or broker boundaries.
-6. Reuse existing `D:\market_data` snapshots for any optional smoke; do not
-   acquire new data unless the code cannot be validated without it.
+2. Reuse `assess_bar_quality`; do not create another data-quality checker.
+3. Attach compact quality summaries to existing candidate training/evaluation
+   source-slice or data-source metadata where local Yahoo bars are loaded.
+4. Keep summaries descriptive and non-blocking. Do not change dataset rows,
+   resampling behavior, local-paper replay, broker boundaries, or model
+   thresholds.
+5. Add focused tests proving summaries are written for local Yahoo slices,
+   omitted or clean for deterministic samples where appropriate, and remain
+   credential/network-free.
+6. Run one small existing Docker `research` smoke only if needed to prove the
+   artifact summary appears outside Git.
 7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -98,11 +95,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused data-quality smoke command used.
+Report any focused data-quality artifact smoke command used.
 
 ## Suggested Commit Message
 
-`Add market data quality warnings`
+`Attach data quality summaries to research artifacts`
 
 ## Completion Report
 
