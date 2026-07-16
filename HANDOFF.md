@@ -469,6 +469,12 @@ Implemented and pushed:
   `source: local_paper` fills unchanged, and found fixed 2-bar exits improved
   `5` of `5` loss-bearing segments on average while worsening `4` of `6`
   non-negative segments,
+- bounded entry-adverse exit-policy sketch; it consumed existing exit-timing
+  overlay, sell-latency, and signal-hygiene artifacts, reran no training or
+  replay, recorded `5` research-only exit-policy family sketches, kept fixed
+  2-bar exit as a stress overlay because it worsened most non-negative
+  segments, and identified conditional latency-cap or adverse-then-latency
+  overlays as the next replayable evidence shape without selecting a policy,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -533,14 +539,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse exit-policy sketch target:
+Start one bounded diagnostic exit-overlay helper target:
 
-1. consume the completed exit-timing overlay and sell-latency artifacts,
-2. describe a small research-only exit-policy family that could preserve quick
-   non-negative exits while limiting delayed loss paths,
-3. write one compact artifact outside Git that names constraints for a future
-   replay target without running replay or selecting a policy,
-4. avoid training, replay reruns, feature changes, broad data search,
+1. ask Claude CLI for a short drift-check before adding code,
+2. if the drift-check is acceptable, add the smallest pure helper needed to
+   compute fixed-horizon and conditional diagnostic exit overlays from provided
+   trade segments and `Bar` inputs,
+3. add focused tests proving overlays are labeled `diagnostic_overlay` and do
+   not mutate `source: local_paper` fills,
+4. avoid training, replay reruns, broad feature changes, broad data search,
    threshold search, branch ranking, dashboards, schedulers, broker behavior,
    or report/gate expansion.
 

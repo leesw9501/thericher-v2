@@ -207,10 +207,13 @@
 - Exit-timing diagnostic overlay reran no execution, labeled fixed-horizon
   outcomes as `diagnostic_overlay`, and did not mutate existing
   `source: local_paper` fills.
+- Exit-policy sketch reran no execution and kept future overlays research-only
+  and separate from `source: local_paper` fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next exit-policy sketch should remain research-only, consume existing
-  local-paper evidence, and must not touch broker submit/cancel code.
+- The next diagnostic exit-overlay helper must be pure, consume provided
+  segments and bars, label overlays separately, and must not touch broker
+  submit/cancel code.

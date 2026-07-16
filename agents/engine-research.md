@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse exit-policy sketch target before another
-   feature-set, regularization value, or threshold-only branch is tried.
+1. Ask Claude CLI for drift-check, then add one bounded diagnostic exit-overlay
+   helper only if it stays pure and small.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -341,6 +341,13 @@
   `diagnostic_overlay`, preserved local-paper fills, found fixed 2-bar exits
   improved `5` of `5` loss-bearing segments on average, and also worsened
   `4` of `6` non-negative segments.
+- Last completed:
+  `bounded-entry-adverse-exit-policy-sketch-20260716`, status
+  `entry_adverse_exit_policy_sketch_only`, consumed existing exit-timing,
+  sell-latency, and signal-hygiene artifacts only, recorded `5`
+  research-only exit-policy family sketches, kept fixed 2-bar exit as a stress
+  overlay, and identified latency-cap plus adverse-then-latency overlays as the
+  next replayable evidence shape without selecting a policy.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -649,10 +656,13 @@
 - Exit-timing overlay showed a real loss-side benefit but also a non-negative
   segment trade-off. The next evidence should sketch a research-only exit
   policy family before any replay rerun or code change.
+- Exit-policy sketch narrowed the next code step to a pure diagnostic overlay
+  helper. Ask Claude before adding it, keep overlays separate from local-paper
+  fills, and add focused tests only.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded exit-policy sketch from existing entry-adverse
-  artifacts before another feature-set, preprocessing, regularization value, or
-  threshold-only branch.
+  task should run one bounded diagnostic exit-overlay helper slice before
+  another feature-set, preprocessing, regularization value, or threshold-only
+  branch.

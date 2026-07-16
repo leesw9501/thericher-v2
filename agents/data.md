@@ -241,12 +241,14 @@
 - Exit-timing diagnostic overlay reused selected rows from the existing
   `snapshot=2026-06-18` Yahoo data plus external artifacts; no additional data
   was acquired.
+- Exit-policy sketch consumed existing external artifacts only and required no
+  market-data reads or acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; exit-policy sketching should consume
-  existing overlay and sell-latency artifacts only.
+- The next data task is not acquisition; a diagnostic exit-overlay helper
+  should take provided `Bar` inputs and not load market data itself.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse exit-policy sketch target.
+Build the first bounded diagnostic exit-overlay helper.
 
-This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by turning the completed sell-latency and exit-timing overlay
-evidence into a small research-only exit-policy family that can be tested later
-without selecting a policy or changing execution behavior now.
+This advances PnL attribution, backtest/walk-forward validation, and
+feature/model research by codifying the repeated one-off exit overlay scripts
+into one small pure helper that computes diagnostic overlay outcomes from
+provided trade segments and `Bar` inputs without mutating local-paper fills.
 
 ## Hard Boundaries
 
@@ -24,7 +24,8 @@ without selecting a policy or changing execution behavior now.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep simulated fills labeled with `source: local_paper`.
-- Keep diagnostic overlay outcomes labeled separately from local-paper fills.
+- Keep diagnostic overlay outcomes labeled separately from local-paper fills
+  with `source: diagnostic_overlay`.
 - Keep disabled broker outcomes labeled separately from local paper, for
   example `source: broker_disabled`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
@@ -58,35 +59,32 @@ without selecting a policy or changing execution behavior now.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before adding code, changing feature
-   builders, adding a new research job kind, or changing agent governance. If
-   existing artifacts and one-off artifact-only scripts are enough, do not add
-   code.
+3. Ask Claude CLI for a short drift-check before code edits.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts:
+2. Consume these completed artifacts as context only:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-policy-sketch-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sell-latency-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
-3. Describe a compact research-only exit-policy family that could later be
-   replayed, for example:
-   - fixed max-hold overlays,
-   - sell-latency-conditioned exits,
-   - adverse-move-conditioned exits,
-   - exceptions that protect quick non-negative exits.
-4. Record constraints, open risks, and required future replay evidence without
-   selecting or naming any policy as best, passed, promoted, or production
-   ready.
-5. Write one compact descriptive artifact outside Git under
-   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
-6. Do not train, rerun replay, add features, search thresholds, change
-   preprocessing, start a model search, add a scheduler, expand the dashboard,
-   touch broker behavior, or add a new job kind unless a referenced artifact is
-   missing or corrupt.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+3. Add one small pure helper, likely under `src/thericher_v2/research/`, that:
+   - accepts provided trade segment data and provided `Bar` inputs,
+   - computes fixed-horizon diagnostic exits,
+   - can represent conditional latency/adverse overlay metadata without
+     selecting a policy,
+   - labels every overlay outcome with `source: diagnostic_overlay`,
+   - never mutates local-paper fills or calls broker/execution code.
+4. Add focused tests proving:
+   - fixed 2/3/5-bar overlays use provided bars only,
+   - missing horizon bars are reported without failure,
+   - local-paper fills remain unchanged,
+   - overlay outputs are always `source: diagnostic_overlay`,
+   - no broker/network/credential path is needed.
+5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+   training path, replay rerun, or policy selection.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -114,7 +112,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse exit-policy sketch`
+`Add diagnostic exit overlay helper`
 
 ## Completion Report
 
@@ -126,6 +124,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- exit-policy sketch findings,
+- helper behavior added,
 - what was intentionally not built,
 - next goal.
