@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Attribute the zero-fill strict threshold rerun before scheduling another
-   threshold band.
+1. Run a bounded attribution-informed threshold band rerun inside the observed
+   probability range.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -38,12 +38,12 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-threshold-rerun-mini-smoke`, status
-  `completed`, selected variant `m1_lb3_b10_s10`, strict threshold pairs
-  `0.457/0.448` through `0.460/0.448`, completed 12 holdout variants across
-  CVS, FCX, and KO, produced `0` fills, verified local-paper evidence, and
-  wrote artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-rerun\bounded-candidate-threshold-rerun-mini-smoke`.
+- Last completed: `bounded-candidate-threshold-attribution-mini-smoke`, status
+  `completed`, selected variant `m1_lb3_b10_s10`, attributed 12 strict
+  threshold variants across CVS, FCX, and KO, found `0` buy opportunities
+  because strict buy minimum `0.457` exceeded observed probability maximum
+  `0.455766`, preserved local-paper verification, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-attribution\bounded-candidate-threshold-attribution-mini-smoke`.
 
 ## Done Recently
 
@@ -137,10 +137,14 @@
   slices, replayed a stricter capped threshold grid through local paper, got
   zero fills, and stayed `research_threshold_rerun_only` with no winner or
   promotion gate.
+- Added the first bounded zero-fill threshold attribution. The Docker
+  `research` smoke consumed existing rerun, robustness, calibration, and trace
+  artifacts only, found the strict buy band sat above the observed probability
+  range, and stayed `research_threshold_attribution_only` with no winner or
+  promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should explain the zero-fill strict rerun from existing
-  probability traces and replay variants before starting broader scheduling or
-  claiming robust model quality.
+  engine-research task should test a small attribution-informed threshold band
+  without broad scheduling or model-quality claims.

@@ -40,6 +40,11 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_attribution import (
+    BoundedCandidateThresholdAttributionResult,
+    CandidateThresholdAttributionConfig,
+    run_bounded_candidate_threshold_attribution,
+)
 from .candidate_threshold_rerun import (
     BoundedCandidateThresholdRerunResult,
     CandidateThresholdRerunConfig,
@@ -140,6 +145,7 @@ __all__ = [
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
+    "BoundedCandidateThresholdAttributionResult",
     "BoundedCandidateThresholdRerunResult",
     "BoundedCandidateThresholdRobustnessResult",
     "BoundedCandidateThresholdSweepResult",
@@ -156,6 +162,7 @@ __all__ = [
     "CandidateDepthTargetSelection",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
+    "CandidateThresholdAttributionConfig",
     "CandidateThresholdRerunConfig",
     "CandidateThresholdRobustnessConfig",
     "CandidateThresholdRobustnessSliceConfig",
@@ -205,6 +212,7 @@ __all__ = [
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",
+    "run_bounded_candidate_threshold_attribution",
     "run_bounded_candidate_threshold_rerun",
     "run_bounded_candidate_threshold_robustness",
     "run_bounded_candidate_threshold_sweep",

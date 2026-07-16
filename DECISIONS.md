@@ -494,3 +494,19 @@ without retraining, optimizing thresholds, ranking pairs, or creating a
 promotion rule. Reusing the holdout path avoids KIS access, credentials, broker
 submit code, dashboard expansion, scheduler logic, and PyTorch in the base
 engine.
+
+## 2026-07-16 - Bounded zero-fill threshold attribution
+
+Decision: add a thin `candidate_threshold_attribution` helper and research job
+kind. It reads the completed threshold rerun artifact plus its referenced
+robustness, source calibration, and probability trace artifacts, then records
+per-slice and per-threshold buy/sell opportunity counts, replay fill counts,
+PnL, drawdown, and local-paper verification. The output is
+`research_threshold_attribution_only` and records no winner, recommendation,
+pass/fail decision, or promotion gate.
+
+Reason: the fill-aware strict rerun produced zero fills because the strict buy
+band sat above the observed holdout probability range. Explaining that from
+existing artifacts is enough before trying another bounded band; rerunning
+training, inference, broker execution, dashboards, schedulers, or report/gate
+machinery would add process before evidence.

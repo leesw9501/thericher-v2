@@ -108,6 +108,10 @@
   `/app/model_artifacts` probability traces and `/app/market_data` holdout
   slices, and wrote rerun, holdout, robustness, and research job artifacts
   under `/app/model_artifacts`.
+- Bounded zero-fill threshold attribution ran in Docker `research`, consumed
+  existing `/app/model_artifacts` rerun, robustness, calibration, and trace
+  artifacts only, and wrote attribution plus research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 

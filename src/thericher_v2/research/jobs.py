@@ -51,6 +51,11 @@ from .candidate_replay import (
     CandidateReplayConfig,
     run_bounded_candidate_replay,
 )
+from .candidate_threshold_attribution import (
+    BoundedCandidateThresholdAttributionResult,
+    CandidateThresholdAttributionConfig,
+    run_bounded_candidate_threshold_attribution,
+)
 from .candidate_threshold_calibration import (
     BoundedCandidateThresholdCalibrationResult,
     CandidateThresholdCalibrationConfig,
@@ -114,6 +119,7 @@ ResearchJobKind = Literal[
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
+    "candidate_threshold_attribution",
     "candidate_threshold_rerun",
 ]
 ResearchJobStatus = Literal[
@@ -130,6 +136,7 @@ ResearchJobStatus = Literal[
     "prepared_not_robustness_replayed",
     "prepared_not_calibrated",
     "prepared_not_holdout_replayed",
+    "prepared_not_threshold_attributed",
     "prepared_not_threshold_reran",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
@@ -147,6 +154,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_threshold_robustness",
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
+    "candidate_threshold_attribution",
     "candidate_threshold_rerun",
 )
 
@@ -175,6 +183,7 @@ class ResearchJobSpec:
     sell_threshold: float = 0.45
     data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
+    threshold_rerun_artifact: Path | None = None
     robustness_slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
     schema_version: int = SCHEMA_VERSION
@@ -210,6 +219,7 @@ class ResearchJobResult:
         | BoundedCandidateThresholdRobustnessResult
         | BoundedCandidateThresholdCalibrationResult
         | BoundedCandidateThresholdHoldoutResult
+        | BoundedCandidateThresholdAttributionResult
         | BoundedCandidateThresholdRerunResult
     )
     training_artifact: Path
@@ -295,6 +305,7 @@ def _run_job_kind(
     | BoundedCandidateThresholdRobustnessResult
     | BoundedCandidateThresholdCalibrationResult
     | BoundedCandidateThresholdHoldoutResult
+    | BoundedCandidateThresholdAttributionResult
     | BoundedCandidateThresholdRerunResult,
     Path,
     Path | None,
@@ -603,6 +614,19 @@ def _run_job_kind(
             else "prepared_not_threshold_reran"
         )
         return rerun, rerun.rerun_artifact, rerun.model_artifact, status
+    if spec.kind == "candidate_threshold_attribution":
+        attribution = run_bounded_candidate_threshold_attribution(
+            config=CandidateThresholdAttributionConfig(run_id=spec.job_id),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            threshold_rerun_artifact=spec.threshold_rerun_artifact,
+        )
+        status = (
+            "completed"
+            if attribution.status == "candidate_threshold_attribution_only"
+            else "prepared_not_threshold_attributed"
+        )
+        return attribution, attribution.attribution_artifact, None, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -651,6 +675,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--sell-threshold", type=float, default=0.45)
     parser.add_argument("--data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
+    parser.add_argument("--threshold-rerun-artifact", type=Path)
     parser.add_argument("--robustness-slice", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
     return parser
@@ -682,6 +707,7 @@ def main() -> None:
         sell_threshold=args.sell_threshold,
         data_slices=parse_candidate_data_slices(args.data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
+        threshold_rerun_artifact=args.threshold_rerun_artifact,
         robustness_slices=parse_robustness_slices(args.robustness_slice),
     )
     run = run_and_write_research_job(
@@ -1122,6 +1148,33 @@ def _research_job_payload(
                 "promotion_gate": False,
             },
         }
+    elif isinstance(training, BoundedCandidateThresholdAttributionResult):
+        base["source_threshold_rerun_artifact"] = (
+            None
+            if training.source_threshold_rerun_artifact is None
+            else str(training.source_threshold_rerun_artifact)
+        )
+        base["source_robustness_artifact"] = (
+            None
+            if training.source_robustness_artifact is None
+            else str(training.source_robustness_artifact)
+        )
+        base["candidate_threshold_attribution"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "selected_variant_id": training.selected_variant_id,
+            "artifact_verification": training.artifact_verification,
+            "threshold_band_comparison": training.threshold_band_comparison,
+            "slices": training.slices,
+            "metrics": training.metrics,
+            "selection": {
+                "mode": "research_threshold_attribution_only",
+                "selected_variant_id": training.selected_variant_id,
+                "winner": None,
+                "recommendation": None,
+                "promotion_gate": False,
+            },
+        }
     return to_jsonable(base)
 
 
@@ -1245,6 +1298,23 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
             )
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdAttributionResult):
+        artifacts = {
+            "candidate_threshold_attribution": str(result.training_artifact),
+        }
+        if result.training.source_threshold_rerun_artifact is not None:
+            artifacts["source_threshold_rerun"] = str(
+                result.training.source_threshold_rerun_artifact
+            )
+        if result.training.source_robustness_artifact is not None:
+            artifacts["source_robustness"] = str(
+                result.training.source_robustness_artifact
+            )
+        if result.training.source_calibration_artifact is not None:
+            artifacts["source_calibration"] = str(
+                result.training.source_calibration_artifact
+            )
         return artifacts
     artifacts = {"candidate_metrics": str(result.training_artifact)}
     if result.model_artifact is not None:

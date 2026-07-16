@@ -159,6 +159,11 @@ Implemented and pushed:
   slices through the proven local-paper path, and stays
   `research_threshold_rerun_only` with no winner, recommendation, pass/fail
   result, scheduler, or promotion gate,
+- bounded zero-fill threshold attribution; it consumes the external threshold
+  rerun, robustness, calibration, and probability trace artifacts only, records
+  per-slice/per-threshold opportunity counts and local-paper fill counts, and
+  explains the strict grid as above the observed buy-probability range without
+  rerunning training, selecting a winner, or adding a promotion gate,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -179,7 +184,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `172 passed`
+- `177 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -223,16 +228,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded zero-fill threshold attribution target:
+Add a bounded attribution-informed threshold band rerun:
 
-1. consume the external threshold rerun artifact,
-2. explain the zero-fill strict grid using existing probability traces and
-   replay variants,
-3. record per-slice and per-threshold opportunity counts, fill counts, and
-   local-paper verification,
-4. compare against the source calibration threshold band descriptively,
-5. keep the result descriptive, not a production winner, promotion threshold,
-   scheduler, or dashboard expansion.
+1. consume the external threshold attribution artifact,
+2. derive a small exploratory threshold band inside the observed probability
+   range without calling it best or recommended,
+3. replay only through the existing local-paper path using existing traces and
+   local Yahoo snapshots where possible,
+4. record fills, PnL, drawdown, and source verification descriptively,
+5. keep the result out of production promotion, scheduler, and dashboard scope.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

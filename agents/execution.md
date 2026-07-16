@@ -72,6 +72,9 @@
   all simulated fills as `local_paper`.
 - Fill-aware threshold rerun replayed stricter threshold variants through the
   local-paper path and produced zero fills, with no non-local fill source.
+- Zero-fill threshold attribution reran no execution, preserved existing
+  local-paper verification, and attributed the zero fills to thresholds above
+  observed buy opportunities.
 
 ## Next Handoff
 
