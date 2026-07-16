@@ -888,6 +888,12 @@
   `0.488372`, `0.517647`, and `0.694118`; the high tertile had rates
   `0.676471` on `src_adbe`, `0.625000` on `hold_aem`, and `0.777778` on
   `hold_amat`.
+- Raw pre-entry band attribution reused the existing feature-input ablation
+  helper/job and one Docker `research` PyTorch CUDA run. It found the raw
+  pre-entry high-probability tertile characterized mainly by lower
+  `pre_last_close_position_in_range`: high mean `0.118829` versus overall
+  `0.433735` and low tertile `0.819891`. The artifact is
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -895,8 +901,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, explain which raw pre-entry features
-  characterize the high adverse/no-lift tertile across slices.
+- Before another deep training block, connect the raw pre-entry feature context
+  to existing local-paper outcome attribution. Keep it descriptive and do not
+  turn the context into a threshold, rule, or replay change.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

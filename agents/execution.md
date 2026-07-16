@@ -345,6 +345,10 @@
 - Unique-signal probability-band diagnostic reran no execution and changed no
   local-paper behavior. Bands were descriptive diagnostics over
   `source: diagnostic_overlay` rows only.
+- Raw pre-entry band attribution reran no local-paper replay, broker adapter,
+  order lifecycle, or order intent path. It summarized `source:
+  diagnostic_overlay` feature rows only and preserved `592` existing
+  `source: local_paper` fills as evidence counts.
 
 ## Next Handoff
 
@@ -362,5 +366,7 @@
   diagnostic rows into fills or order intents.
 - Probability-band diagnostics should still avoid replay and must not become
   order thresholds or order intents.
-- Raw pre-entry band attribution should still avoid replay and must not turn
-  a diagnostic tertile into an order filter.
+- Raw pre-entry feature-context outcome attribution should read existing
+  local-paper fills or trade paths only. It must not rerun replay, mutate fills,
+  submit orders, create order intents, or turn a feature context into an
+  execution filter.

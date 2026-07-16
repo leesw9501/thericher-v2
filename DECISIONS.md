@@ -935,3 +935,20 @@ slice-stable. One global tertile diagnostic makes that structure visible while
 avoiding threshold search, per-slice fitting, broker/KIS behavior, credential
 paths, replay mutation, report/gate sprawl, dashboards, schedulers, and
 model-promotion semantics.
+
+## 2026-07-17 - Raw pre-entry band feature attribution
+
+Decision: extend the same feature-input ablation payload with descriptive raw
+pre-entry feature attribution by the existing unique-signal global probability
+tertiles. Attribution summarizes only the fixed raw pre-entry feature names,
+collapses duplicate threshold-variant rows before banding, excludes missing raw
+feature values from summaries, and compares the high-probability tertile to the
+overall unique-signal population and the low-probability tertile.
+
+Reason: raw pre-entry probability bands concentrated adverse/no-lift labels,
+but the prior artifact did not explain which input features characterized that
+band. Keeping attribution inside the existing helper/job makes the evidence
+reusable while avoiding threshold search, feature-rule selection, broker/KIS
+behavior, credential paths, replay mutation, new job families, report/gate
+sprawl, dashboards, schedulers, durable agent workers, and model-promotion
+semantics.

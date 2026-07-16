@@ -497,13 +497,19 @@
   diagnostic family and did not add a report family, gate, dashboard,
   scheduler, coordinator, durable worker, broker path, credential path, replay
   mutation, threshold search, broad sweep, or model-promotion language.
+- Raw pre-entry band attribution stayed inside the existing feature-input
+  ablation helper/job payload. It added one descriptive summary family under
+  unique-signal evaluation and did not add a report family, gate, dashboard,
+  scheduler, coordinator, durable worker, broker path, credential path, replay
+  mutation, threshold search, feature rule, broad sweep, or model-promotion
+  language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward raw pre-entry band attribution before any deeper GPU
-  block. Keep coordination evidence small and avoid daemon, scheduler,
-  dashboard, report branch, broker, credential, auto-commit,
-  durable multi-agent-platform behavior, threshold search, or model-promotion
-  language.
+- Push the next task toward local-paper outcome attribution for the raw
+  pre-entry feature context before any deeper GPU block. Keep coordination
+  evidence small and avoid daemon, scheduler, dashboard, report branch, broker,
+  credential, auto-commit, durable multi-agent-platform behavior, threshold
+  search, feature-rule selection, or model-promotion language.

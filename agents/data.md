@@ -374,13 +374,18 @@
   lineage and local Yahoo evidence. It acquired no additional data.
 - Unique-signal probability-band diagnostic reused the same existing stability
   lineage and local Yahoo evidence. It acquired no additional data.
+- Raw pre-entry band attribution reused the same stability lineage and local
+  Yahoo evidence through the existing feature-input ablation reconstruction. It
+  acquired no additional data and wrote only external artifacts under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation`.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Reuse existing stability,
-  probability-trace, probability-band ablation, and local Yahoo evidence for
-  raw pre-entry band attribution.
+- The next data task is still not acquisition. Reuse existing raw-band
+  attribution, stability, probability-trace, event, trade-path, and local Yahoo
+  evidence for local-paper outcome attribution. Record exact missing event or
+  symbol/date evidence if the join cannot be completed from existing artifacts.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -1267,6 +1267,56 @@ is to explain which raw pre-entry features characterize the high adverse/no-lift
 tertile across slices before any deeper training, threshold experiment, or
 replay change.
 
+The raw pre-entry band feature-attribution diagnostic then completed:
+
+- It extended the existing `candidate_feature_input_ablation` payload with
+  `raw_pre_entry_band_attribution` under raw-feature groups'
+  `unique_signal_descriptive_evaluation`.
+- Attribution reuses the same unique-signal collapse and global probability
+  tertile assignment as `probability_band_diagnostics`, excludes incomplete
+  signal keys, skips mixed-label signals, summarizes only the fixed raw
+  pre-entry feature names, and excludes missing raw feature values from summary
+  statistics instead of treating imputed zeros as observations.
+- Claude drift-check returned "no drift" and warned to keep this descriptive,
+  bounded to fixed raw features, and away from threshold/rule language.
+  Engine Research, Infra/Data, and Execution/Review sidecars agreed to keep it
+  inside the existing helper/job payload and to run one Docker `research` CUDA
+  refresh because the prior artifacts did not persist per-row probabilities
+  joined to raw feature values.
+- Focused tests cover deterministic reversed-row attribution, incomplete
+  signal-key skips, mixed-label signal skips, missing raw feature exclusion,
+  source separation, existing selected/full-row behavior, and artifact/path
+  guards.
+- Docker `research` PyTorch CUDA ran once on NVIDIA GeForce RTX 4090 and wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\feature_input_ablation.pt`.
+- The run used `659` diagnostic rows, `256` scored unique signals, zero missing
+  signal keys, zero mixed-label signals, and preserved `592` upstream
+  `source: local_paper` fills as evidence only. All metric rows remained
+  `source: diagnostic_overlay`.
+- Raw pre-entry adverse/no-lift rates by probability tertile remained
+  `0.488372`, `0.517647`, and `0.694118`.
+- The high probability tertile had lower pre-entry close-position context than
+  the full unique-signal population and the low probability tertile:
+  `pre_last_close_position_in_range` high mean `0.118829`, overall mean
+  `0.433735`, low mean `0.819891`; high-vs-overall mean delta `-0.314906` and
+  high-vs-low mean delta `-0.701062`.
+- Other high-vs-low descriptive deltas were `pre_close_return` mean
+  `-0.005105`, `pre_high_low_range_pct` mean `-0.000165`, and
+  `pre_last_volume_vs_prior_avg` mean `0.422191` with median delta
+  `-0.028514`.
+- By-slice high-tertile close-position means stayed low:
+  `src_adbe=0.164050`, `hold_aem=0.085261`, and `hold_amat=0.091722`.
+- Read this as in-sample descriptive input attribution only. It does not choose
+  a trading band, feature rule, threshold, replay change, model promotion, or
+  order filter.
+
+Next, add a bounded local-paper outcome attribution by raw pre-entry feature
+context. The goal is to see how the descriptive high-risk raw feature context
+relates to existing broker-free local-paper fills and trade paths before any
+new model training, threshold experiment, or replay behavior change.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

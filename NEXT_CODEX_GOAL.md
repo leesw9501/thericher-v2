@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add a bounded raw pre-entry band-attribution diagnostic for TheRicher v2.
+Add a bounded local-paper outcome attribution for the raw pre-entry feature
+context.
 
-This advances feature/model research and backtest/walk-forward validation by
-explaining which raw pre-entry features characterize the high adverse/no-lift
-unique-signal tertile before any deeper model training, threshold experiment,
-or replay change.
+This advances PnL attribution and backtest/walk-forward validation by checking
+how the newly described raw pre-entry high adverse/no-lift context relates to
+existing broker-free local-paper fills, trade paths, and diagnostic rows before
+any new model training, threshold experiment, or replay behavior change.
 
 ## Hard Boundaries
 
@@ -27,9 +28,10 @@ or replay change.
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 - Keep original local-paper fills labeled with `source: local_paper`; keep
   diagnostic rows labeled with `source: diagnostic_overlay`.
-- Do not call any band, threshold, model, slice, or feature group selected,
-  passed, promoted, production ready, or live ready.
-- Do not convert a diagnostic tertile into an execution filter or order intent.
+- Do not call any context, band, threshold, model, slice, or feature group
+  selected, passed, promoted, production ready, or live ready.
+- Do not convert a diagnostic feature context into an execution filter, order
+  intent, replay rule, or model-promotion rule.
 
 ## Required First Reads
 
@@ -58,42 +60,51 @@ or replay change.
 
 ## Current Evidence To Consume
 
+- Raw pre-entry band-attribution artifact:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-raw-band-attribution-cross-slice-20260717-r1\metrics.json`
 - Probability-band ablation artifact:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-probability-bands-cross-slice-20260717-r1\metrics.json`
-- Unique-signal ablation artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1\metrics.json`
 - Source stability artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`
+- Depth attribution and trade-path artifacts, if useful:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-attribution\metrics.json`
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`
 
 ## Required Work
 
-1. Keep the change inside the existing feature-input ablation helper/job unless
-   there is a strong reason not to.
-2. For raw pre-entry feature groups, add descriptive feature summaries by
-   unique-signal probability tertile: counts, medians, means, min/max, and
-   per-slice summaries for each raw pre-entry feature.
-3. Compare high-tertile raw feature summaries against the overall unique-signal
-   population and the low tertile. Keep the comparison descriptive; do not
-   search thresholds or choose a feature rule.
-4. Preserve existing selected-row, full-row, row-level, slice-aware,
-   unique-signal, and probability-band behavior.
-5. Keep metric names descriptive/in-sample; do not imply held-out promotion or
-   live readiness.
-6. Add focused tests proving:
-   - selected mode behavior is unchanged,
-   - incomplete signal keys skip attribution rather than collapsing together,
-   - feature attribution is deterministic under reversed row order,
-   - mixed-label signals are reported and skipped from primary attribution,
+1. Inventory only the small artifact subset needed to connect raw pre-entry
+   feature context to existing local-paper outcomes. Avoid broad recursive
+   scans.
+2. Prefer a pure helper inside `research/` or an existing attribution path. Add
+   a new job kind only if there is a strong reuse reason.
+3. Join or compare only existing evidence:
+   - `source: diagnostic_overlay` candidate-entry rows or feature context,
+   - `source: local_paper` fills and trade paths,
+   - existing external artifacts and local Yahoo rows from `D:\market_data`.
+4. If per-signal raw feature context is not persisted in the current artifact,
+   reconstruct it from existing stability lineage rather than dumping large
+   per-row artifacts.
+5. Produce descriptive outcome attribution by raw pre-entry context:
+   counts, local-paper fill counts, closed/open path counts when available,
+   gross PnL or segment outcome summaries when available, and missing-evidence
+   counts.
+6. Keep all names descriptive/in-sample. Do not search thresholds, choose a
+   feature rule, rerun replay, or modify simulator behavior.
+7. Add focused tests proving:
    - local-paper fills remain evidence only,
-   - artifacts are outside Git or mocked in tests.
-7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - diagnostic rows remain `source: diagnostic_overlay`,
+   - no broker/network/credential access is needed,
+   - missing event or trade-path evidence is reported instead of guessed,
+   - artifacts are outside Git or mocked in tests,
+   - no order-intent or execution-filter language/path is introduced.
+8. Use temporary Codex sub-agents as sidecar reviewers where useful:
    - Engine Research for attribution interpretation,
    - Execution/Review for source separation and sprawl,
    - Infra/Data for artifact and data-boundary checks.
-8. If feature attribution needs trained per-row scores in the artifact, run
-   exactly one bounded Docker `research` PyTorch CUDA job. Otherwise keep it
-   CPU/artifact-only and explain why.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. GPU is not expected for this task. Run Docker `research` only if a bounded
+   artifact refresh is strictly needed; otherwise keep the work CPU/artifact
+   only and explain why.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -105,7 +116,8 @@ or replay change.
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
 - If operator help is needed, record exact symbols, markets, date ranges,
-  formats, and blocker reasons in `agents/data.md` and the completion report.
+  formats, artifact names, and blocker reasons in `agents/data.md`,
+  `agents/execution.md`, and the completion report.
 
 ## Verification
 
@@ -121,7 +133,7 @@ Also report any focused CPU smoke, Docker `research`, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add raw pre-entry band attribution`
+`Add local-paper feature context attribution`
 
 ## Completion Report
 

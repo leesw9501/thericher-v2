@@ -59,6 +59,11 @@ RAW_PRE_ENTRY_FEATURE_NAMES = (
     "pre_last_volume_vs_prior_avg",
 )
 UNIQUE_SIGNAL_KEY_FIELDS = ("slice_id", "symbol", "execution_bar_start", "offset")
+PROBABILITY_BAND_IDS = (
+    "tertile_1_low_probability",
+    "tertile_2_mid_probability",
+    "tertile_3_high_probability",
+)
 
 
 @dataclass(frozen=True)
@@ -120,6 +125,7 @@ class FeatureInputGroupDataset:
     feature_roles: dict[str, str]
     features: tuple[tuple[float, ...], ...]
     missing_value_counts: dict[str, int]
+    missing_value_row_indexes: dict[str, tuple[int, ...]]
     schema_version: int = SCHEMA_VERSION
 
 
@@ -137,6 +143,25 @@ class FeatureInputAblationDataset:
     reconstruction: dict[str, Any]
     feature_groups: tuple[FeatureInputGroupDataset, ...]
     schema_version: int = SCHEMA_VERSION
+
+
+@dataclass(frozen=True)
+class _UniqueSignalRecord:
+    signal_key: tuple[str, str, str, str]
+    label: int
+    probability: float
+    metadata: dict[str, str]
+    row_indexes: tuple[int, ...]
+
+
+@dataclass(frozen=True)
+class _UniqueSignalCollapse:
+    grouped: dict[tuple[str, str, str, str], list[int]]
+    records: tuple[_UniqueSignalRecord, ...]
+    missing_key_rows: int
+    mixed_label_signal_count: int
+    mixed_label_row_count: int
+    score_spans: tuple[float, ...]
 
 
 @dataclass(frozen=True)
@@ -330,6 +355,9 @@ def _run_torch_cuda_feature_input_ablation(
                     labels=dataset.labels,
                     probabilities=probability_values,
                     row_metadata=dataset.row_metadata,
+                    feature_names=group.feature_names,
+                    features=group.features,
+                    missing_value_row_indexes=group.missing_value_row_indexes,
                 ),
             }
         )
@@ -855,13 +883,15 @@ def _build_group_dataset(
     feature_names = _group_feature_names(group_id)
     feature_roles = _feature_roles(feature_names)
     missing = Counter()
+    missing_row_indexes: dict[str, list[int]] = {name: [] for name in feature_names}
     features: list[tuple[float, ...]] = []
-    for row in rows:
+    for row_index, row in enumerate(rows):
         values: list[float] = []
         for name in feature_names:
             value = _feature_value(row, name)
             if value is None:
                 missing[name] += 1
+                missing_row_indexes[name].append(row_index)
                 value = 0.0
             values.append(value)
         features.append(tuple(values))
@@ -871,6 +901,11 @@ def _build_group_dataset(
         feature_roles=feature_roles,
         features=tuple(features),
         missing_value_counts=dict(missing),
+        missing_value_row_indexes={
+            name: tuple(indexes)
+            for name, indexes in missing_row_indexes.items()
+            if indexes
+        },
     )
 
 
@@ -980,12 +1015,18 @@ def _descriptive_evaluation_payload(
     labels: Sequence[int],
     probabilities: Sequence[float],
     row_metadata: Sequence[dict[str, str]],
+    feature_names: Sequence[str] | None = None,
+    features: Sequence[Sequence[float]] | None = None,
+    missing_value_row_indexes: dict[str, Sequence[int]] | None = None,
 ) -> dict[str, Any]:
     row_level_metrics = _binary_classification_metrics(labels, probabilities)
     unique_signal_metrics = _unique_signal_descriptive_evaluation(
         labels=labels,
         probabilities=probabilities,
         row_metadata=row_metadata,
+        feature_names=feature_names,
+        features=features,
+        missing_value_row_indexes=missing_value_row_indexes,
         row_level_metrics=row_level_metrics,
     )
     return {
@@ -1021,49 +1062,24 @@ def _unique_signal_descriptive_evaluation(
     labels: Sequence[int],
     probabilities: Sequence[float],
     row_metadata: Sequence[dict[str, str]],
+    feature_names: Sequence[str] | None = None,
+    features: Sequence[Sequence[float]] | None = None,
+    missing_value_row_indexes: dict[str, Sequence[int]] | None = None,
     row_level_metrics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if len(labels) != len(probabilities) or len(labels) != len(row_metadata):
         raise ValueError("labels, probabilities, and row_metadata must have the same length")
 
-    grouped: dict[tuple[str, str, str, str], list[int]] = {}
-    missing_key_rows = 0
-    for index, metadata in enumerate(row_metadata):
-        signal_key = _unique_signal_key(metadata)
-        if signal_key is None:
-            missing_key_rows += 1
-            continue
-        grouped.setdefault(signal_key, []).append(index)
-
-    unique_labels: list[int] = []
-    unique_probabilities: list[float] = []
-    unique_metadata: list[dict[str, str]] = []
-    mixed_label_signal_count = 0
-    mixed_label_row_count = 0
-    score_spans: list[float] = []
-
-    for signal_key, indexes in sorted(grouped.items()):
-        signal_labels = {int(labels[index]) for index in indexes}
-        signal_probabilities = [float(probabilities[index]) for index in indexes]
-        score_spans.append(max(signal_probabilities) - min(signal_probabilities))
-        if len(signal_labels) != 1:
-            mixed_label_signal_count += 1
-            mixed_label_row_count += len(indexes)
-            continue
-        unique_labels.append(next(iter(signal_labels)))
-        unique_probabilities.append(sum(signal_probabilities) / len(signal_probabilities))
-        unique_metadata.append(
-            {
-                "source": "diagnostic_overlay",
-                "slice_id": signal_key[0],
-                "symbol": signal_key[1],
-                "execution_bar_start": signal_key[2],
-                "offset": signal_key[3],
-            }
-        )
-
+    collapse = _collapse_unique_signals(
+        labels=labels,
+        probabilities=probabilities,
+        row_metadata=row_metadata,
+    )
+    unique_labels = tuple(record.label for record in collapse.records)
+    unique_probabilities = tuple(record.probability for record in collapse.records)
+    unique_metadata = tuple(record.metadata for record in collapse.records)
     overall = _binary_classification_metrics(unique_labels, unique_probabilities)
-    return {
+    payload = {
         "scope": {
             "in_sample": True,
             "descriptive_only": True,
@@ -1080,12 +1096,12 @@ def _unique_signal_descriptive_evaluation(
         "context": _unique_signal_scoring_context(
             labels=labels,
             row_metadata=row_metadata,
-            grouped=grouped,
-            missing_key_rows=missing_key_rows,
-            mixed_label_signal_count=mixed_label_signal_count,
-            mixed_label_row_count=mixed_label_row_count,
+            grouped=collapse.grouped,
+            missing_key_rows=collapse.missing_key_rows,
+            mixed_label_signal_count=collapse.mixed_label_signal_count,
+            mixed_label_row_count=collapse.mixed_label_row_count,
             scored_unique_signal_count=len(unique_labels),
-            score_spans=score_spans,
+            score_spans=collapse.score_spans,
         ),
         "overall": overall,
         "probability_band_diagnostics": _probability_band_diagnostics(
@@ -1104,6 +1120,72 @@ def _unique_signal_descriptive_evaluation(
             overall,
         ),
     }
+    raw_attribution = _raw_pre_entry_band_attribution(
+        records=collapse.records,
+        row_metadata=row_metadata,
+        feature_names=feature_names,
+        features=features,
+        missing_value_row_indexes=missing_value_row_indexes,
+        missing_key_rows=collapse.missing_key_rows,
+        mixed_label_signal_count=collapse.mixed_label_signal_count,
+        mixed_label_row_count=collapse.mixed_label_row_count,
+    )
+    if raw_attribution is not None:
+        payload["raw_pre_entry_band_attribution"] = raw_attribution
+    return payload
+
+
+def _collapse_unique_signals(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+) -> _UniqueSignalCollapse:
+    grouped: dict[tuple[str, str, str, str], list[int]] = {}
+    missing_key_rows = 0
+    for index, metadata in enumerate(row_metadata):
+        signal_key = _unique_signal_key(metadata)
+        if signal_key is None:
+            missing_key_rows += 1
+            continue
+        grouped.setdefault(signal_key, []).append(index)
+
+    records: list[_UniqueSignalRecord] = []
+    mixed_label_signal_count = 0
+    mixed_label_row_count = 0
+    score_spans: list[float] = []
+    for signal_key, indexes in sorted(grouped.items()):
+        signal_labels = {int(labels[index]) for index in indexes}
+        signal_probabilities = [float(probabilities[index]) for index in indexes]
+        score_spans.append(max(signal_probabilities) - min(signal_probabilities))
+        if len(signal_labels) != 1:
+            mixed_label_signal_count += 1
+            mixed_label_row_count += len(indexes)
+            continue
+        records.append(
+            _UniqueSignalRecord(
+                signal_key=signal_key,
+                label=next(iter(signal_labels)),
+                probability=sum(signal_probabilities) / len(signal_probabilities),
+                metadata={
+                    "source": "diagnostic_overlay",
+                    "slice_id": signal_key[0],
+                    "symbol": signal_key[1],
+                    "execution_bar_start": signal_key[2],
+                    "offset": signal_key[3],
+                },
+                row_indexes=tuple(indexes),
+            )
+        )
+
+    return _UniqueSignalCollapse(
+        grouped=grouped,
+        records=tuple(records),
+        missing_key_rows=missing_key_rows,
+        mixed_label_signal_count=mixed_label_signal_count,
+        mixed_label_row_count=mixed_label_row_count,
+        score_spans=tuple(score_spans),
+    )
 
 
 def _probability_band_diagnostics(
@@ -1121,13 +1203,11 @@ def _probability_band_diagnostics(
     label_tuple = tuple(int(label) for label in labels)
     probability_tuple = tuple(float(probability) for probability in probabilities)
     row_count = len(label_tuple)
-    skip_reason: str | None = None
-    if row_count == 0:
-        skip_reason = "no_scored_unique_signals"
-    elif row_count < band_count:
-        skip_reason = "insufficient_signals"
-    elif len(set(probability_tuple)) == 1:
-        skip_reason = "tied_probabilities"
+    skip_reason, band_indexes = _probability_band_index_groups(
+        probabilities=probability_tuple,
+        row_metadata=row_metadata,
+        band_count=band_count,
+    )
     if skip_reason is not None:
         return {
             "scope": {
@@ -1143,23 +1223,6 @@ def _probability_band_diagnostics(
             },
             "bands": {},
         }
-
-    ordered_indexes = sorted(
-        range(row_count),
-        key=lambda index: (
-            probability_tuple[index],
-            _unique_signal_key(row_metadata[index]) or ("", "", "", ""),
-        ),
-    )
-    band_indexes: dict[str, list[int]] = {
-        "tertile_1_low_probability": [],
-        "tertile_2_mid_probability": [],
-        "tertile_3_high_probability": [],
-    }
-    band_ids = tuple(band_indexes)
-    for rank, original_index in enumerate(ordered_indexes):
-        band_id = band_ids[min(band_count - 1, (rank * band_count) // row_count)]
-        band_indexes[band_id].append(original_index)
 
     overall_adverse_rate = _label_rate(label_tuple, 1)
     return {
@@ -1186,6 +1249,37 @@ def _probability_band_diagnostics(
             for band_id, indexes in band_indexes.items()
         },
     }
+
+
+def _probability_band_index_groups(
+    *,
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    band_count: int = 3,
+) -> tuple[str | None, dict[str, list[int]]]:
+    if band_count != 3:
+        raise ValueError("only rank tertile diagnostics are supported")
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    row_count = len(probability_tuple)
+    if row_count == 0:
+        return "no_scored_unique_signals", {}
+    if row_count < band_count:
+        return "insufficient_signals", {}
+    if len(set(probability_tuple)) == 1:
+        return "tied_probabilities", {}
+
+    ordered_indexes = sorted(
+        range(row_count),
+        key=lambda index: (
+            probability_tuple[index],
+            _unique_signal_key(row_metadata[index]) or ("", "", "", ""),
+        ),
+    )
+    band_indexes: dict[str, list[int]] = {band_id: [] for band_id in PROBABILITY_BAND_IDS}
+    for rank, original_index in enumerate(ordered_indexes):
+        band_id = PROBABILITY_BAND_IDS[min(band_count - 1, (rank * band_count) // row_count)]
+        band_indexes[band_id].append(original_index)
+    return None, band_indexes
 
 
 def _probability_band_policy(band_count: int) -> dict[str, Any]:
@@ -1281,6 +1375,329 @@ def _probability_band_slice_summary(
             max(probability_tuple) if probability_tuple else None
         ),
     }
+
+
+def _raw_pre_entry_band_attribution(
+    *,
+    records: Sequence[_UniqueSignalRecord],
+    row_metadata: Sequence[dict[str, str]],
+    feature_names: Sequence[str] | None,
+    features: Sequence[Sequence[float]] | None,
+    missing_value_row_indexes: dict[str, Sequence[int]] | None,
+    missing_key_rows: int,
+    mixed_label_signal_count: int,
+    mixed_label_row_count: int,
+    band_count: int = 3,
+) -> dict[str, Any] | None:
+    raw_feature_indexes = _raw_feature_indexes(feature_names)
+    if not raw_feature_indexes:
+        return None
+
+    policy = _raw_pre_entry_band_attribution_policy(band_count)
+    source_counts = _metadata_counts(row_metadata, "source")
+    if features is None:
+        return {
+            "scope": _raw_pre_entry_band_attribution_scope(),
+            "policy": policy,
+            "context": {
+                "raw_feature_names": tuple(raw_feature_indexes),
+                "scored_unique_signal_count": len(records),
+                "attributed_unique_signal_count": 0,
+                "missing_signal_key_row_count": missing_key_rows,
+                "skipped_mixed_label_signal_count": mixed_label_signal_count,
+                "skipped_mixed_label_row_count": mixed_label_row_count,
+                "duplicate_signal_count": _duplicate_record_count(records),
+                "source_counts": source_counts,
+                "diagnostic_overlay_rows_only": source_counts
+                == {"diagnostic_overlay": len(row_metadata)},
+                "band_count": band_count,
+                "skip_reason": "raw_feature_values_unavailable",
+                "raw_feature_duplicate_span_max": {},
+            },
+            "overall_raw_feature_summaries": {},
+            "bands": {},
+            "comparisons": {},
+        }
+
+    feature_rows = tuple(tuple(float(value) for value in row) for row in features)
+    if len(feature_rows) != len(row_metadata):
+        raise ValueError("features and row_metadata must have the same length")
+
+    values_by_feature, duplicate_span_max = _raw_feature_values_by_record(
+        records=records,
+        raw_feature_indexes=raw_feature_indexes,
+        features=feature_rows,
+        missing_value_row_indexes=missing_value_row_indexes or {},
+    )
+    probabilities = tuple(record.probability for record in records)
+    metadata = tuple(record.metadata for record in records)
+    skip_reason, band_indexes = _probability_band_index_groups(
+        probabilities=probabilities,
+        row_metadata=metadata,
+        band_count=band_count,
+    )
+    record_indexes = tuple(range(len(records)))
+    overall_summaries = _raw_feature_summaries(
+        record_indexes=record_indexes,
+        values_by_feature=values_by_feature,
+    )
+    payload = {
+        "scope": _raw_pre_entry_band_attribution_scope(),
+        "policy": policy,
+        "context": {
+            "raw_feature_names": tuple(raw_feature_indexes),
+            "scored_unique_signal_count": len(records),
+            "attributed_unique_signal_count": _attributed_unique_signal_count(
+                record_indexes=record_indexes,
+                values_by_feature=values_by_feature,
+            ),
+            "missing_signal_key_row_count": missing_key_rows,
+            "skipped_mixed_label_signal_count": mixed_label_signal_count,
+            "skipped_mixed_label_row_count": mixed_label_row_count,
+            "duplicate_signal_count": _duplicate_record_count(records),
+            "source_counts": source_counts,
+            "diagnostic_overlay_rows_only": source_counts
+            == {"diagnostic_overlay": len(row_metadata)},
+            "band_count": band_count,
+            "skip_reason": skip_reason,
+            "raw_feature_duplicate_span_max": duplicate_span_max,
+        },
+        "overall_raw_feature_summaries": overall_summaries,
+        "bands": {},
+        "comparisons": {},
+    }
+    if skip_reason is not None:
+        return payload
+
+    bands = {
+        band_id: _raw_feature_band_summary(
+            record_indexes=tuple(indexes),
+            records=records,
+            values_by_feature=values_by_feature,
+        )
+        for band_id, indexes in band_indexes.items()
+    }
+    high_band = bands["tertile_3_high_probability"]["raw_feature_summaries"]
+    low_band = bands["tertile_1_low_probability"]["raw_feature_summaries"]
+    payload["bands"] = bands
+    payload["comparisons"] = {
+        "tertile_3_high_probability_vs_overall": _raw_feature_comparison_payload(
+            high_band,
+            overall_summaries,
+        ),
+        "tertile_3_high_probability_vs_tertile_1_low_probability": (
+            _raw_feature_comparison_payload(high_band, low_band)
+        ),
+    }
+    return payload
+
+
+def _raw_pre_entry_band_attribution_scope() -> dict[str, Any]:
+    return {
+        "in_sample": True,
+        "descriptive_only": True,
+        "band_selection": "none",
+        "held_out_split": False,
+        "local_paper_replay_changed": False,
+    }
+
+
+def _raw_pre_entry_band_attribution_policy(band_count: int) -> dict[str, Any]:
+    return {
+        "signal_key_fields": UNIQUE_SIGNAL_KEY_FIELDS,
+        "score": "mean_probability_across_threshold_variants",
+        "feature_value": "mean_raw_value_across_duplicate_rows",
+        "label": "skip_mixed_label_signals",
+        "missing_key": "skip_from_attribution",
+        "band_family": "global_rank_tertile",
+        "band_count": band_count,
+        "assignment": "sort_by_probability_then_signal_key",
+        "per_slice_edges": False,
+        "threshold_search": False,
+    }
+
+
+def _raw_feature_indexes(feature_names: Sequence[str] | None) -> dict[str, int]:
+    if feature_names is None:
+        return {}
+    indexes = {name: index for index, name in enumerate(feature_names)}
+    return {
+        name: indexes[name]
+        for name in RAW_PRE_ENTRY_FEATURE_NAMES
+        if name in indexes
+    }
+
+
+def _raw_feature_values_by_record(
+    *,
+    records: Sequence[_UniqueSignalRecord],
+    raw_feature_indexes: dict[str, int],
+    features: Sequence[Sequence[float]],
+    missing_value_row_indexes: dict[str, Sequence[int]],
+) -> tuple[dict[str, tuple[float | None, ...]], dict[str, str | None]]:
+    values_by_feature: dict[str, tuple[float | None, ...]] = {}
+    duplicate_span_max: dict[str, str | None] = {}
+    missing_sets = {
+        name: {int(index) for index in indexes}
+        for name, indexes in missing_value_row_indexes.items()
+    }
+    for feature_name, feature_index in raw_feature_indexes.items():
+        record_values: list[float | None] = []
+        spans: list[float] = []
+        missing_rows = missing_sets.get(feature_name, set())
+        for record in records:
+            values: list[float] = []
+            for row_index in record.row_indexes:
+                if row_index in missing_rows:
+                    continue
+                if row_index >= len(features) or feature_index >= len(features[row_index]):
+                    continue
+                value = float(features[row_index][feature_index])
+                if math.isfinite(value):
+                    values.append(value)
+            if not values:
+                record_values.append(None)
+                continue
+            spans.append(max(values) - min(values))
+            record_values.append(sum(values) / len(values))
+        values_by_feature[feature_name] = tuple(record_values)
+        duplicate_span_max[feature_name] = _format_metric_float(max(spans) if spans else None)
+    return values_by_feature, duplicate_span_max
+
+
+def _raw_feature_band_summary(
+    *,
+    record_indexes: Sequence[int],
+    records: Sequence[_UniqueSignalRecord],
+    values_by_feature: dict[str, tuple[float | None, ...]],
+) -> dict[str, Any]:
+    index_tuple = tuple(record_indexes)
+    return {
+        "count": len(index_tuple),
+        "raw_feature_summaries": _raw_feature_summaries(
+            record_indexes=index_tuple,
+            values_by_feature=values_by_feature,
+        ),
+        "by_slice": _raw_feature_band_slice_summaries(
+            record_indexes=index_tuple,
+            records=records,
+            values_by_feature=values_by_feature,
+        ),
+    }
+
+
+def _raw_feature_band_slice_summaries(
+    *,
+    record_indexes: Sequence[int],
+    records: Sequence[_UniqueSignalRecord],
+    values_by_feature: dict[str, tuple[float | None, ...]],
+) -> dict[str, Any]:
+    grouped: dict[str, list[int]] = {}
+    for record_index in record_indexes:
+        slice_id = records[record_index].metadata.get("slice_id") or "missing"
+        grouped.setdefault(slice_id, []).append(record_index)
+    return {
+        slice_id: {
+            "count": len(indexes),
+            "raw_feature_summaries": _raw_feature_summaries(
+                record_indexes=tuple(indexes),
+                values_by_feature=values_by_feature,
+            ),
+        }
+        for slice_id, indexes in sorted(grouped.items())
+    }
+
+
+def _raw_feature_summaries(
+    *,
+    record_indexes: Sequence[int],
+    values_by_feature: dict[str, tuple[float | None, ...]],
+) -> dict[str, Any]:
+    return {
+        feature_name: _raw_feature_summary(
+            values=[values[index] for index in record_indexes],
+        )
+        for feature_name, values in values_by_feature.items()
+    }
+
+
+def _raw_feature_summary(*, values: Sequence[float | None]) -> dict[str, Any]:
+    value_tuple = tuple(values)
+    finite_values = sorted(
+        float(value)
+        for value in value_tuple
+        if value is not None and math.isfinite(float(value))
+    )
+    return {
+        "signal_count": len(value_tuple),
+        "value_count": len(finite_values),
+        "missing_value_count": len(value_tuple) - len(finite_values),
+        "mean": _format_metric_float(_safe_divide(sum(finite_values), len(finite_values))),
+        "median": _format_metric_float(_median(finite_values)),
+        "min": _format_metric_float(min(finite_values) if finite_values else None),
+        "max": _format_metric_float(max(finite_values) if finite_values else None),
+    }
+
+
+def _raw_feature_comparison_payload(
+    left: dict[str, Any],
+    right: dict[str, Any],
+) -> dict[str, Any]:
+    feature_names = sorted(set(left).union(right))
+    return {
+        feature_name: _raw_feature_summary_delta(
+            left.get(feature_name, {}),
+            right.get(feature_name, {}),
+        )
+        for feature_name in feature_names
+    }
+
+
+def _raw_feature_summary_delta(
+    left: dict[str, Any],
+    right: dict[str, Any],
+) -> dict[str, str | None]:
+    left_mean = _metric_value(left.get("mean"))
+    right_mean = _metric_value(right.get("mean"))
+    left_median = _metric_value(left.get("median"))
+    right_median = _metric_value(right.get("median"))
+    return {
+        "mean_delta": _format_metric_float(
+            left_mean - right_mean
+            if left_mean is not None and right_mean is not None
+            else None
+        ),
+        "median_delta": _format_metric_float(
+            left_median - right_median
+            if left_median is not None and right_median is not None
+            else None
+        ),
+    }
+
+
+def _attributed_unique_signal_count(
+    *,
+    record_indexes: Sequence[int],
+    values_by_feature: dict[str, tuple[float | None, ...]],
+) -> int:
+    return sum(
+        1
+        for record_index in record_indexes
+        if any(values[record_index] is not None for values in values_by_feature.values())
+    )
+
+
+def _duplicate_record_count(records: Sequence[_UniqueSignalRecord]) -> int:
+    return sum(1 for record in records if len(record.row_indexes) > 1)
+
+
+def _median(values: Sequence[float]) -> float | None:
+    if not values:
+        return None
+    midpoint = len(values) // 2
+    if len(values) % 2:
+        return float(values[midpoint])
+    return (float(values[midpoint - 1]) + float(values[midpoint])) / 2
 
 
 def _binary_classification_metrics(

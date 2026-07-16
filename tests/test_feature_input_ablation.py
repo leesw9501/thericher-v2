@@ -10,6 +10,7 @@ import pytest
 
 from thericher_v2.research.feature_input_ablation import (
     EXISTING_THRESHOLD_META_BASELINE_GROUP,
+    RAW_PRE_ENTRY_FEATURE_NAMES,
     RAW_PRE_ENTRY_GROUP,
     RAW_PRE_ENTRY_PLUS_PROBABILITY_META_GROUP,
     FeatureInputAblationConfig,
@@ -475,6 +476,132 @@ def test_feature_input_ablation_probability_bands_skip_degenerate_scores() -> No
     assert bands["context"]["skip_reason"] == "tied_probabilities"
     assert bands["context"]["scored_unique_signal_count"] == 3
     assert bands["bands"] == {}
+
+
+def test_feature_input_ablation_raw_band_attribution_is_deterministic() -> None:
+    labels = (0, 0, 1, 0, 1, 1)
+    probabilities = (0.10, 0.20, 0.30, 0.70, 0.80, 0.90)
+    metadata = (
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:32:00+00:00", "3", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:30:00+00:00", "1", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:32:00+00:00", "3", "t01"),
+    )
+    features = (
+        (1.0, 0.10, 0.10, 10.0),
+        (2.0, 0.20, 0.20, 20.0),
+        (3.0, 0.30, 0.30, 30.0),
+        (4.0, 0.40, 0.40, 40.0),
+        (5.0, 0.50, 0.50, 50.0),
+        (6.0, 0.60, 0.60, 0.0),
+    )
+
+    payload = _unique_signal_descriptive_evaluation(
+        labels=labels,
+        probabilities=probabilities,
+        row_metadata=metadata,
+        feature_names=RAW_PRE_ENTRY_FEATURE_NAMES,
+        features=features,
+        missing_value_row_indexes={"pre_last_volume_vs_prior_avg": (5,)},
+    )
+    reversed_payload = _unique_signal_descriptive_evaluation(
+        labels=tuple(reversed(labels)),
+        probabilities=tuple(reversed(probabilities)),
+        row_metadata=tuple(reversed(metadata)),
+        feature_names=RAW_PRE_ENTRY_FEATURE_NAMES,
+        features=tuple(reversed(features)),
+        missing_value_row_indexes={"pre_last_volume_vs_prior_avg": (0,)},
+    )
+
+    assert payload == reversed_payload
+    attribution = payload["raw_pre_entry_band_attribution"]
+    assert attribution["scope"]["descriptive_only"] is True
+    assert attribution["scope"]["band_selection"] == "none"
+    assert attribution["scope"]["local_paper_replay_changed"] is False
+    assert attribution["policy"]["threshold_search"] is False
+    assert attribution["context"]["source_counts"] == {"diagnostic_overlay": 6}
+    assert attribution["context"]["diagnostic_overlay_rows_only"] is True
+    assert attribution["context"]["skip_reason"] is None
+    high = attribution["bands"]["tertile_3_high_probability"]
+    assert high["count"] == 2
+    assert high["by_slice"]["slice_b"]["count"] == 2
+    close_summary = high["raw_feature_summaries"]["pre_close_return"]
+    assert close_summary["signal_count"] == 2
+    assert close_summary["mean"] == "5.500000"
+    assert close_summary["median"] == "5.500000"
+    assert close_summary["min"] == "5.000000"
+    assert close_summary["max"] == "6.000000"
+    volume_summary = high["raw_feature_summaries"]["pre_last_volume_vs_prior_avg"]
+    assert volume_summary["value_count"] == 1
+    assert volume_summary["missing_value_count"] == 1
+    assert volume_summary["mean"] == "50.000000"
+    comparisons = attribution["comparisons"]
+    assert comparisons["tertile_3_high_probability_vs_overall"]["pre_close_return"][
+        "mean_delta"
+    ] == "2.000000"
+    assert comparisons["tertile_3_high_probability_vs_tertile_1_low_probability"][
+        "pre_close_return"
+    ]["median_delta"] == "4.000000"
+
+
+def test_feature_input_ablation_raw_band_attribution_skips_incomplete_keys() -> None:
+    payload = _unique_signal_descriptive_evaluation(
+        labels=(1, 0, 1),
+        probabilities=(0.10, 0.40, 0.90),
+        row_metadata=(
+            {"source": "diagnostic_overlay", "slice_id": "unit"},
+            {"source": "diagnostic_overlay", "symbol": "AAA"},
+            {"source": "diagnostic_overlay", "offset": "3"},
+        ),
+        feature_names=RAW_PRE_ENTRY_FEATURE_NAMES,
+        features=(
+            (1.0, 0.10, 0.10, 10.0),
+            (2.0, 0.20, 0.20, 20.0),
+            (3.0, 0.30, 0.30, 30.0),
+        ),
+    )
+
+    attribution = payload["raw_pre_entry_band_attribution"]
+    assert attribution["context"]["missing_signal_key_row_count"] == 3
+    assert attribution["context"]["scored_unique_signal_count"] == 0
+    assert attribution["context"]["skip_reason"] == "no_scored_unique_signals"
+    assert attribution["bands"] == {}
+    assert attribution["overall_raw_feature_summaries"]["pre_close_return"][
+        "signal_count"
+    ] == 0
+
+
+def test_feature_input_ablation_raw_band_attribution_skips_mixed_labels() -> None:
+    payload = _unique_signal_descriptive_evaluation(
+        labels=(1, 0, 0, 1, 1),
+        probabilities=(0.95, 0.05, 0.20, 0.60, 0.90),
+        row_metadata=(
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t02"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:32:00+00:00", "3", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:33:00+00:00", "4", "t01"),
+        ),
+        feature_names=RAW_PRE_ENTRY_FEATURE_NAMES,
+        features=(
+            (999.0, 0.10, 0.10, 10.0),
+            (-999.0, 0.20, 0.20, 20.0),
+            (1.0, 0.30, 0.30, 30.0),
+            (2.0, 0.40, 0.40, 40.0),
+            (3.0, 0.50, 0.50, 50.0),
+        ),
+    )
+
+    attribution = payload["raw_pre_entry_band_attribution"]
+    assert attribution["context"]["skipped_mixed_label_signal_count"] == 1
+    assert attribution["context"]["skipped_mixed_label_row_count"] == 2
+    assert attribution["context"]["scored_unique_signal_count"] == 3
+    assert attribution["overall_raw_feature_summaries"]["pre_close_return"]["mean"] == "2.000000"
+    assert attribution["bands"]["tertile_3_high_probability"]["raw_feature_summaries"][
+        "pre_close_return"
+    ]["mean"] == "3.000000"
 
 
 def test_feature_input_ablation_rejects_repo_artifact_root(tmp_path) -> None:
