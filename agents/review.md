@@ -219,11 +219,16 @@
   artifact, and no job kind, CLI, report family, gate, dashboard, scheduler,
   broker path, threshold search, ranking, pass/fail, or model-promotion
   language.
+- Entry-adverse feature branch followed Claude drift-check constraints: one
+  feature-set ID, exactly two features derived from existing current/prior bar
+  inputs, existing Docker `research` feature-branch/replay paths, and
+  artifact-only attribution. It added no new job kind, CLI, report family,
+  gate, dashboard, scheduler, broker path, threshold search, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded entry-adverse feature branch informed
-  by the entry-quality diagnostic before allowing another model-axis or
-  threshold-only branch.
+- Push the next task toward one bounded artifact-only feature-branch comparison
+  before allowing another feature/model axis or threshold-only branch.

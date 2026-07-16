@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse feature branch target.
+Build a bounded feature-branch comparison target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by trying one interpretable feature-set branch informed by the
-completed out-of-symbol entry-quality diagnostic. The branch should focus on
-pre-entry adverse pressure or weak follow-through evidence, not threshold-only
-tuning.
+attribution by comparing the completed out-of-symbol `core_plus_bar_pressure_v1`
+branch against the completed `core_plus_entry_adverse_v1` branch before trying
+another feature, model, preprocessing, or threshold axis.
 
 ## Hard Boundaries
 
@@ -58,36 +57,37 @@ tuning.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before adding or wiring the feature
-   branch.
+3. Ask Claude CLI for a short drift-check before adding a reusable comparison
+   helper. If a one-off artifact-only script is enough, do not add a helper.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Use the completed entry-quality diagnostic as context, not as promotion
-   evidence:
+2. Consume only existing external artifacts as inputs. At minimum compare:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-out-of-symbol-eval-bar-pressure-standardized-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-out-of-symbol-eval-bar-pressure-standardized-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-trade-path-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-out-of-symbol-eval-entry-quality-20260716\metrics.json`
-3. Add at most one feature-set branch to the existing candidate feature builder.
-   Keep it interpretable and tied to pre-entry adverse pressure or weak
-   follow-through. Do not add a broad feature search or multiple alternatives.
-4. Run Docker `research` `candidate_feature_branch` with:
-   - the new feature-set id,
-   - `hidden_units=4`,
-   - `feature_standardization`,
-   - bounded caps, including `max-bars 240`,
-   - source training slices CVS, FCX, and KO from
-     `snapshot=2026-07-09-shadow-t0-8d-probe`,
-   - explicit evaluation slices AAPL, ABNB, ABT, ACN, and ABBV from
-     `snapshot=2026-06-18`.
-5. If feature-branch evaluation completes, replay the new feature-branch
-   artifact across AAPL, ABNB, ABT, ACN, and ABBV with threshold cap `2` and
-   `max-bars 240`.
-6. If replay completes, run compact artifact-only attribution using existing
-   opportunity, trade-path, and entry-quality helpers.
-7. Keep the result descriptive only. Do not rank symbols, pick thresholds,
-   select a model, or add promotion language.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-feature-branch-smoke-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-feature-branch-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-branch-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-branch-trade-path-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-branch-entry-quality-20260716\metrics.json`
+3. Produce one compact external comparison artifact that records descriptive
+   deltas for:
+   - probability evidence,
+   - buy and sell opportunity counts,
+   - local-paper fill counts and source verification,
+   - PnL and drawdown ranges,
+   - closed/open trade-path segment counts and fee-aware delta summaries,
+   - 5/15/30-bar entry-quality diagnostic mark counts.
+4. Do not rerun training, broad replay, threshold search, model-axis search, or
+   data acquisition unless an input artifact is missing or corrupt.
+5. Do not rank branches, select a branch, define promotion criteria, or produce
+   a pass/fail field. Keep the result descriptive only.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +115,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse feature branch`
+`Add bounded feature branch comparison`
 
 ## Completion Report
 
@@ -127,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- entry-adverse feature-branch findings,
+- feature-branch comparison findings,
 - what was intentionally not built,
 - next recommended goal.

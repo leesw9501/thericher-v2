@@ -152,6 +152,10 @@
   local-paper source verification, linked the two ABNB buy opportunities to
   local-paper entry fills, kept path marks labeled as diagnostic overlay
   evidence, and observed no non-local fill source.
+- Entry-adverse feature-branch replay reused the existing local-paper path,
+  produced `8` verified `source: local_paper` fills, and observed no non-local
+  fill source. Follow-up opportunity, trade-path, and entry-quality attribution
+  parsed existing event files only and reran no broker behavior.
 
 ## Next Handoff
 

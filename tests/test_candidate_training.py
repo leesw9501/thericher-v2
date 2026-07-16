@@ -4,15 +4,18 @@ import json
 import socket
 import sys
 from datetime import UTC, datetime, timedelta
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
+from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
     CANDIDATE_FEATURE_STANDARDIZATION,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID,
     DEFAULT_CANDIDATE_FEATURE_PREPROCESSING,
     DEFAULT_CANDIDATE_TRAINING_WEIGHT_DECAY,
     MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
@@ -95,6 +98,67 @@ def test_candidate_training_builds_bar_pressure_feature_branch() -> None:
     assert all(0 <= row[4] <= 1 for row in dataset.features)
     assert all(isinstance(row[5], float) for row in dataset.features)
     assert all(isinstance(row[6], float) for row in dataset.features)
+
+
+def test_candidate_training_builds_entry_adverse_feature_branch() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    bars = [
+        _unit_bar("AAA", start, open_="100", high="100.5", low="99.5", close="100.2"),
+        _unit_bar(
+            "AAA",
+            start + timedelta(minutes=1),
+            open_="100.2",
+            high="100.6",
+            low="99.8",
+            close="100.1",
+        ),
+        _unit_bar(
+            "AAA",
+            start + timedelta(minutes=2),
+            open_="100.1",
+            high="100.4",
+            low="99.0",
+            close="99.7",
+        ),
+        _unit_bar(
+            "AAA",
+            start + timedelta(minutes=3),
+            open_="100",
+            high="100",
+            low="100",
+            close="100",
+        ),
+        _unit_bar(
+            "AAA",
+            start + timedelta(minutes=4),
+            open_="100",
+            high="100.2",
+            low="99.7",
+            close="99.9",
+        ),
+    ]
+
+    dataset = build_candidate_training_dataset(
+        bars,
+        lookback=3,
+        data_source="unit",
+        feature_set=CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID,
+    )
+
+    assert dataset.feature_names == (
+        "lookback_return",
+        "last_bar_return",
+        "bar_range",
+        "volume_change",
+        "close_position_in_bar",
+        "range_expansion",
+        "bar_body_return",
+        "upper_wick_share",
+        "low_vs_prior_low_return",
+    )
+    assert len(dataset.features[0]) == 9
+    assert dataset.features[0][7] == 0.0
+    assert dataset.features[0][8] == pytest.approx((100 / 99) - 1)
 
 
 def test_candidate_training_builds_multi_slice_dataset_without_feature_shape_drift(
@@ -537,3 +601,25 @@ def _yahoo_snapshot(
                     }
                 )
     return path
+
+
+def _unit_bar(
+    symbol: str,
+    start_ts: datetime,
+    *,
+    open_: str,
+    high: str,
+    low: str,
+    close: str,
+) -> Bar:
+    return Bar(
+        symbol=symbol,
+        market="US",
+        timeframe=Timeframe.M1,
+        start_ts=start_ts,
+        open=Decimal(open_),
+        high=Decimal(high),
+        low=Decimal(low),
+        close=Decimal(close),
+        volume=Decimal("100"),
+    )

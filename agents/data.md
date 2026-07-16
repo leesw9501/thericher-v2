@@ -189,13 +189,17 @@
 - Entry-quality diagnostic reused the same AAPL, ABNB, ABT, ACN, and ABBV
   `snapshot=2026-06-18` rows plus existing probability traces and event
   artifacts. No additional data was acquired.
+- Entry-adverse feature branch reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for training, and AAPL, ABNB, ABT,
+  ACN, and ABBV from `snapshot=2026-06-18` for evaluation, replay, trade-path,
+  and entry-quality attribution. No additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  CVS/FCX/KO source slices and AAPL/ABNB/ABT/ACN/ABBV evaluation slices for one
-  bounded entry-adverse feature branch.
+  external artifacts and the same local slices for a bounded feature-branch
+  comparison.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

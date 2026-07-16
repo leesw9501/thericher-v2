@@ -751,3 +751,20 @@ and both resulting ABNB entries were fee-aware negative. A small reusable
 diagnostic helper prevents repeated one-off scripts while keeping the evidence
 descriptive, artifact-driven, local-paper-separated, and free of threshold
 search, scheduler, dashboard, broker behavior, or model-promotion language.
+
+## 2026-07-16 - Explicit entry-adverse feature branch
+
+Decision: add one `core_plus_entry_adverse_v1` feature-set branch as a superset
+of `core_plus_bar_pressure_v1`. It adds exactly two interpretable features,
+`upper_wick_share` and `low_vs_prior_low_return`, both derived from the existing
+current/prior `Bar` inputs. The branch is available through the existing
+candidate training, feature-branch, and research-job paths only, with no new job
+kind, CLI, scheduler, dashboard, gate, threshold search, broker path, or model
+promotion fields.
+
+Reason: entry-quality diagnostics showed the loss-bearing out-of-symbol entries
+had weak forward marks and minimal favorable excursion. One bounded feature
+branch can test whether explicit pre-entry adverse pressure and weak
+follow-through evidence changes probability/replay behavior while keeping
+PyTorch confined to Docker `research`, artifacts outside Git, and all execution
+evidence broker-free and labeled as local paper.

@@ -16,6 +16,7 @@ from thericher_v2.research.candidate_training import (
     CANDIDATE_FEATURE_STANDARDIZATION,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID,
     CandidateDataSliceConfig,
     GpuReadiness,
 )
@@ -131,6 +132,43 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
         "close_position_in_bar",
         "range_expansion",
         "bar_body_return",
+    ]
+
+
+def test_candidate_feature_branch_can_target_entry_adverse_axis(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    band_artifact = _threshold_band_artifact(artifact_root)
+
+    result = run_bounded_candidate_feature_branch(
+        config=CandidateFeatureBranchConfig(
+            run_id="unit-entry-adverse-feature-branch",
+            feature_set_id=CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID,
+            max_bars=40,
+            max_epochs=2,
+            max_steps=8,
+            hidden_units=4,
+            feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        threshold_band_rerun_artifact=band_artifact,
+        gpu=_unit_gpu(),
+        trainer_runner=_unit_training_runner,
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.feature_branch_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_feature_branch_evaluated_only"
+    assert payload["feature_set_id"] == CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID
+    assert payload["candidate_parameters"]["feature_set"] == (
+        CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID
+    )
+    assert payload["candidate_parameters"]["feature_branch_axis"] == "entry_adverse"
+    assert payload["model_axis"]["hidden_units"] == 4
+    assert payload["feature_preprocessing"] == CANDIDATE_FEATURE_STANDARDIZATION
+    assert payload["metrics"]["feature_names"][-2:] == [
+        "upper_wick_share",
+        "low_vs_prior_low_return",
     ]
 
 

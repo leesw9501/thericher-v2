@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse feature branch before another model-axis or
-   threshold-only branch is tried.
+1. Run one bounded feature-branch comparison before another feature/model axis
+   or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -202,6 +202,29 @@
   ABNB buy opportunities, both entered via `source: local_paper`, with all
   5/15/30-bar forward close marks negative and sell-threshold signals `7` bars
   after entry.
+- Last completed: `bounded-entry-adverse-feature-branch-smoke-20260716`, status
+  `candidate_feature_branch_evaluated_only`, added
+  `core_plus_entry_adverse_v1`, trained on CVS/FCX/KO source slices, evaluated
+  directly on AAPL, ABNB, ABT, ACN, and ABBV with `1180` examples, and recorded
+  probability range `0.417344`.
+- Last completed:
+  `bounded-entry-adverse-feature-branch-replay-cap2-240bars-20260716`, status
+  `completed`, replayed thresholds `0.524/0.478` and `0.525/0.478` across the
+  out-of-symbol slices, produced `8` verified `source: local_paper` fills, PnL
+  range `-0.5477000000000` to `0.2254000000000`, and max drawdown
+  `1.3644012207031`.
+- Last completed:
+  `bounded-entry-adverse-feature-branch-opportunity-attribution-20260716`,
+  found `4` buy opportunities, `682` sell opportunities, `8` replay fills, and
+  all fills `source: local_paper`.
+- Last completed: `bounded-entry-adverse-feature-branch-trade-path-20260716`,
+  attributed `4` closed segments, found `3` fee-aware negative and `1`
+  non-negative segment, and recorded fee-aware delta sum `-1.0069`.
+- Last completed:
+  `bounded-entry-adverse-feature-branch-entry-quality-20260716`, found `4`
+  entered buy opportunities across AAPL, ABNB, and ACN; `3` of `4` 5/15/30-bar
+  forward close marks were negative, and all fills stayed `source:
+  local_paper`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -448,10 +471,15 @@
   signals did appear before the later bounded-window adverse extreme. The next
   evidence should try one bounded feature branch aimed at pre-entry adverse
   pressure or weak follow-through, not a threshold-only branch.
+- The entry-adverse feature branch changed opportunity distribution and reduced
+  the negative PnL floor versus the prior out-of-symbol branch, but total
+  trade-path fee-aware delta stayed negative. Compare the two completed
+  branches artifact-only before changing another feature/model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded entry-adverse feature branch from the completed
-  entry-quality diagnostic before another hidden-units, regularization,
-  preprocessing, broad feature-set, or threshold-only branch.
+  task should run one bounded feature-branch comparison from the completed
+  out-of-symbol bar-pressure and entry-adverse artifacts before another
+  hidden-units, regularization, preprocessing, feature-set, or threshold-only
+  branch.

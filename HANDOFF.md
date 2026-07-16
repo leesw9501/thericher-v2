@@ -337,6 +337,19 @@ Implemented and pushed:
   `source: local_paper`), found all 5/15/30-bar forward close marks negative,
   and recorded that sell-threshold signals appeared `7` bars after entry but
   before the later bounded-window adverse extreme,
+- bounded entry-adverse feature branch; it adds `core_plus_entry_adverse_v1` as
+  a superset of `core_plus_bar_pressure_v1` with exactly two extra features,
+  `upper_wick_share` and `low_vs_prior_low_return`, then ran Docker `research`
+  feature-branch training/evaluation with `hidden_units=4`,
+  `feature_standardization`, `max-bars 240`, CVS/FCX/KO source slices, and
+  direct AAPL/ABNB/ABT/ACN/ABBV evaluation slices,
+- bounded entry-adverse out-of-symbol replay and attribution; the cap-2
+  240-bar replay used thresholds `0.524/0.478` and `0.525/0.478`, produced `8`
+  verified `source: local_paper` fills, PnL range `-0.5477000000000` to
+  `0.2254000000000`, `4` buy opportunities, `682` sell opportunities, `4`
+  closed trade-path segments with fee-aware delta sum `-1.0069`, and
+  entry-quality marks showing `3` of `4` 5/15/30-bar forward close marks were
+  negative,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -357,7 +370,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `242 passed`
+- `244 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -401,18 +414,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse feature branch target:
+Start one bounded feature-branch comparison target:
 
-1. consume the completed out-of-symbol entry-quality diagnostic artifact,
-2. add at most one interpretable feature-set branch intended to expose
-   pre-entry adverse pressure or weak follow-through,
-3. train on CVS/FCX/KO from `snapshot=2026-07-09-shadow-t0-8d-probe` and
-   evaluate directly on AAPL/ABNB/ABT/ACN/ABBV from `snapshot=2026-06-18`,
-4. replay the resulting feature-branch artifact with threshold cap `2` and
-   `max-bars 240`,
-5. use existing opportunity, trade-path, and entry-quality helpers for compact
-   attribution if replay completes,
-6. avoid broad feature search, model-axis changes, dashboards, gates,
+1. compare the completed `core_plus_bar_pressure_v1` out-of-symbol evaluation
+   branch against the completed `core_plus_entry_adverse_v1` branch,
+2. consume only existing external feature-branch, replay, opportunity,
+   trade-path, and entry-quality artifacts,
+3. record descriptive deltas for probability evidence, buy/sell opportunities,
+   local-paper fills, PnL, drawdown, closed trade-path segments, and forward
+   diagnostic marks,
+4. keep the comparison artifact-only unless a tiny pure helper prevents another
+   manual script,
+5. avoid retraining, replay reruns, new feature/model axes, dashboards, gates,
    schedulers, threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

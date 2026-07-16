@@ -43,10 +43,12 @@ OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 CORE_FEATURE_SET_ID = "core_v1"
 CORE_PLUS_BAR_POSITION_FEATURE_SET_ID = "core_plus_bar_position_v1"
 CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID = "core_plus_bar_pressure_v1"
+CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID = "core_plus_entry_adverse_v1"
 SUPPORTED_CANDIDATE_FEATURE_SETS = (
     CORE_FEATURE_SET_ID,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID,
 )
 
 
@@ -1298,6 +1300,15 @@ def _feature_vector(
             _range_expansion(current=current, prior=prior),
             _bar_body_return(current),
         )
+    if feature_set == CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID:
+        return (
+            *base,
+            _close_position_in_bar(current),
+            _range_expansion(current=current, prior=prior),
+            _bar_body_return(current),
+            _upper_wick_share(current),
+            _low_vs_prior_low_return(current=current, prior=prior),
+        )
     raise ValueError(f"unsupported candidate feature_set: {feature_set}")
 
 
@@ -1317,6 +1328,18 @@ def _bar_body_return(bar: Bar) -> float:
     return _relative_change(bar.close, bar.open)
 
 
+def _upper_wick_share(bar: Bar) -> float:
+    span = float(bar.high - bar.low)
+    if span == 0:
+        return 0.0
+    upper = float(bar.high - max(bar.open, bar.close)) / span
+    return min(max(upper, 0.0), 1.0)
+
+
+def _low_vs_prior_low_return(*, current: Bar, prior: Bar) -> float:
+    return _relative_change(current.low, prior.low)
+
+
 def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
     base = (
         "lookback_return",
@@ -1334,6 +1357,15 @@ def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
             "close_position_in_bar",
             "range_expansion",
             "bar_body_return",
+        )
+    if feature_set == CORE_PLUS_ENTRY_ADVERSE_FEATURE_SET_ID:
+        return (
+            *base,
+            "close_position_in_bar",
+            "range_expansion",
+            "bar_body_return",
+            "upper_wick_share",
+            "low_vs_prior_low_return",
         )
     raise ValueError(f"unsupported candidate feature_set: {feature_set}")
 
