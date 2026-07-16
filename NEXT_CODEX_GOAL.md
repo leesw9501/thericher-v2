@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded feature-branch local-paper replay attribution target.
+Add broker-safe local-paper source-filtered attribution views.
 
-This advances backtest validation and PnL attribution by taking the changed
-probability evidence from `core_plus_bar_position_v1` and replaying it through
-the broker-free local paper simulator. This is not a threshold-only rerun of the
-old compressed candidate; it is the next check for the newly trained feature
-branch.
+This advances paper trading preparation, PnL attribution, and live-risk control
+by making local-paper evidence queryable by fill source before any broker fills
+exist. The feature-branch replay now produces local-paper fills; the next step
+is to make sure future mixed execution data cannot be mistaken for local-paper
+research evidence.
 
 ## Hard Boundaries
 
@@ -62,47 +62,37 @@ branch.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Inventory only the current useful external artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-candidate-feature-branch-mini-smoke\metrics.json`
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-feature-branch-mini-smoke.json`
-   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-feature-branch-mini-smoke-training\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-evaluation\bounded-candidate-feature-branch-mini-smoke-evaluation\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-feature-branch-mini-smoke-training\model.pt`
-   - the referenced threshold band context artifact.
-3. Reuse existing local Yahoo subsets under
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
-   Avoid expensive full recursive scans and do not acquire new data unless the
-   feature-branch replay cannot proceed without it.
-4. Add one small feature-branch replay target that:
-   - consumes the feature-branch training/evaluation/model artifacts as context,
-   - runs a bounded probability trace or equivalent probability feed for the
-     feature branch,
-   - converts eligible feature-branch decisions into local paper `OrderIntent`s,
-   - executes them only through the local paper simulator,
-   - records PnL, drawdown, fill count, and probability-distribution evidence
-     descriptively,
-   - writes all generated artifacts outside Git,
-   - does not select a production winner, promotion threshold, or pass/fail
-     result.
-5. Keep the two research queues visible in `agents/engine-research.md`:
-   - short experiments for breadth,
-   - longer candidate training for depth.
-6. Add focused tests proving:
-   - the replay uses local paper only,
-   - context artifacts can be missing and result in a prepared state,
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-replay-mini-smoke\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-candidate-feature-branch-replay-mini-smoke-robustness\metrics.json`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-feature-branch-replay-mini-smoke.json`
+   - referenced local-paper `events.jsonl` artifacts under the replay lineage.
+3. Add a small source-filtered local-paper attribution/query helper that:
+   - reads replay/robustness artifacts or event logs without credentials,
+   - counts fills by `source`,
+   - can return local-paper-only fills and reject or mark non-local sources,
+   - records PnL/fill-count evidence only when `source: local_paper` is proven,
+   - treats missing zero-fill event files as empty evidence but does not ignore
+     unreadable nonzero-fill artifacts,
+   - writes no market data or model artifacts into Git.
+4. Integrate the helper where existing replay attribution currently verifies
+   local-paper fills, without broad rewrites or a new report family.
+5. Add focused tests proving:
+   - local-paper-only evidence is accepted,
+   - mixed or unknown fill sources are detected,
+   - missing zero-fill event artifacts are tolerated,
+   - unreadable nonzero-fill event artifacts are not silently accepted,
    - no broker/network/credential access is needed,
-   - PyTorch remains research-container-only and lazy,
-   - generated artifacts remain outside Git or mocked in tests,
    - output stays descriptive and non-promotional.
-7. Run a CPU/injected smoke first. If Docker `research` dispatch is added, run
-   a bounded Docker smoke using existing local data and external artifacts.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. Run a CPU/local smoke using generated unit artifacts. Docker GPU work is not
+   required unless code paths touch research inference.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
-- Start from existing `D:\market_data` and external model artifacts.
-- Prefer existing Yahoo intraday snapshots before acquiring anything new.
+- Start from existing external model artifacts and local-paper event artifacts.
+- Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for the active replay loop.
+  license-compatible, and useful for the active attribution loop.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -119,12 +109,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused feature-branch replay, local-paper, Docker research, or GPU
-command used.
+Report any focused local-paper source-filtering or attribution smoke command
+used.
 
 ## Suggested Commit Message
 
-`Add bounded feature branch replay attribution`
+`Add local paper source filtered attribution`
 
 ## Completion Report
 

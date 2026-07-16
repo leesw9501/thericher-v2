@@ -40,6 +40,11 @@ from .candidate_feature_branch import (
     CandidateFeatureBranchConfig,
     run_bounded_candidate_feature_branch,
 )
+from .candidate_feature_branch_replay import (
+    BoundedCandidateFeatureBranchReplayResult,
+    CandidateFeatureBranchReplayConfig,
+    run_bounded_candidate_feature_branch_replay,
+)
 from .candidate_replay import (
     BoundedCandidateReplayResult,
     CandidateReplayConfig,
@@ -154,6 +159,7 @@ __all__ = [
     "BoundedCandidateDepthComparisonResult",
     "BoundedCandidateDepthTargetResult",
     "BoundedCandidateFeatureBranchResult",
+    "BoundedCandidateFeatureBranchReplayResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
@@ -174,6 +180,7 @@ __all__ = [
     "CandidateDepthTargetConfig",
     "CandidateDepthTargetSelection",
     "CandidateFeatureBranchConfig",
+    "CandidateFeatureBranchReplayConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
     "CandidateThresholdAttributionConfig",
@@ -222,6 +229,7 @@ __all__ = [
     "resolve_model_artifact_root",
     "run_bounded_candidate_evaluation",
     "run_bounded_candidate_feature_branch",
+    "run_bounded_candidate_feature_branch_replay",
     "run_bounded_candidate_breadth_holdout",
     "run_bounded_candidate_breadth_queue",
     "run_bounded_candidate_depth_comparison",

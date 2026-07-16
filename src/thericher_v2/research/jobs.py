@@ -50,6 +50,11 @@ from .candidate_feature_branch import (
     CandidateFeatureBranchConfig,
     run_bounded_candidate_feature_branch,
 )
+from .candidate_feature_branch_replay import (
+    BoundedCandidateFeatureBranchReplayResult,
+    CandidateFeatureBranchReplayConfig,
+    run_bounded_candidate_feature_branch_replay,
+)
 from .candidate_replay import (
     BoundedCandidateReplayResult,
     CandidateProbabilityRunner,
@@ -124,6 +129,7 @@ ResearchJobKind = Literal[
     "candidate_training",
     "candidate_evaluation",
     "candidate_feature_branch",
+    "candidate_feature_branch_replay",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -143,6 +149,7 @@ ResearchJobStatus = Literal[
     "prepared_not_trained",
     "prepared_not_evaluated",
     "prepared_not_feature_branched",
+    "prepared_not_feature_branch_replayed",
     "prepared_not_replayed",
     "prepared_not_compared",
     "prepared_not_swept",
@@ -163,6 +170,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_training",
     "candidate_evaluation",
     "candidate_feature_branch",
+    "candidate_feature_branch_replay",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -180,6 +188,7 @@ class ResearchJobSpec:
     job_id: str = DEFAULT_RESEARCH_JOB_ID
     kind: ResearchJobKind = "gpu_training_smoke"
     candidate_artifact: Path | None = None
+    feature_branch_artifact: Path | None = None
     breadth_queue_artifact: Path | None = None
     breadth_holdout_artifact: Path | None = None
     depth_target_artifact: Path | None = None
@@ -232,6 +241,7 @@ class ResearchJobResult:
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
         | BoundedCandidateFeatureBranchResult
+        | BoundedCandidateFeatureBranchReplayResult
         | BoundedCandidateReplayResult
         | BoundedCandidateReplayComparisonResult
         | BoundedCandidateThresholdSweepResult
@@ -320,6 +330,7 @@ def _run_job_kind(
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
     | BoundedCandidateFeatureBranchResult
+    | BoundedCandidateFeatureBranchReplayResult
     | BoundedCandidateReplayResult
     | BoundedCandidateReplayComparisonResult
     | BoundedCandidateThresholdSweepResult
@@ -502,6 +513,30 @@ def _run_job_kind(
             feature_branch,
             feature_branch.feature_branch_artifact,
             feature_branch.model_artifact,
+            status,
+        )
+    if spec.kind == "candidate_feature_branch_replay":
+        feature_branch_replay = run_bounded_candidate_feature_branch_replay(
+            config=CandidateFeatureBranchReplayConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                slices=spec.robustness_slices,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            feature_branch_artifact=spec.feature_branch_artifact,
+            gpu=gpu,
+            probability_runner=candidate_probability_runner,
+        )
+        status = (
+            "completed"
+            if feature_branch_replay.status == "candidate_feature_branch_replayed_only"
+            else "prepared_not_feature_branch_replayed"
+        )
+        return (
+            feature_branch_replay,
+            feature_branch_replay.feature_branch_replay_artifact,
+            feature_branch_replay.model_artifact,
             status,
         )
     if spec.kind == "candidate_replay":
@@ -724,6 +759,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=SUPPORTED_RESEARCH_JOB_KINDS,
     )
     parser.add_argument("--candidate-artifact", type=Path)
+    parser.add_argument("--feature-branch-artifact", type=Path)
     parser.add_argument("--breadth-queue-artifact", type=Path)
     parser.add_argument("--breadth-holdout-artifact", type=Path)
     parser.add_argument("--depth-target-artifact", type=Path)
@@ -758,6 +794,7 @@ def main() -> None:
         job_id=args.job_id,
         kind=args.kind,
         candidate_artifact=args.candidate_artifact,
+        feature_branch_artifact=args.feature_branch_artifact,
         breadth_queue_artifact=args.breadth_queue_artifact,
         breadth_holdout_artifact=args.breadth_holdout_artifact,
         depth_target_artifact=args.depth_target_artifact,
@@ -1021,6 +1058,28 @@ def _research_job_payload(
             "metrics": training.metrics,
             "result_scope": {
                 "mode": "research_feature_branch_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
+        }
+    elif isinstance(training, BoundedCandidateFeatureBranchReplayResult):
+        base["source_feature_branch_artifact"] = (
+            None
+            if training.source_feature_branch_artifact is None
+            else str(training.source_feature_branch_artifact)
+        )
+        base["candidate_feature_branch_replay"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "threshold_derivation": training.threshold_derivation,
+            "artifact_verification": training.artifact_verification,
+            "slice_count": training.slice_count,
+            "completed_slice_count": training.completed_slice_count,
+            "local_paper_verification": training.local_paper_verification,
+            "metrics": training.metrics,
+            "result_scope": {
+                "mode": "research_feature_branch_replay_only",
                 "descriptive_only": True,
                 "promotion_gate": False,
             },
@@ -1351,6 +1410,23 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
             artifacts["source_threshold_band_rerun"] = str(
                 result.training.source_threshold_band_rerun_artifact
             )
+        if result.model_artifact is not None:
+            artifacts["model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateFeatureBranchReplayResult):
+        artifacts = {"candidate_feature_branch_replay": str(result.training_artifact)}
+        if result.training.robustness is not None:
+            artifacts["candidate_threshold_robustness"] = str(
+                result.training.robustness.robustness_artifact
+            )
+        if result.training.source_feature_branch_artifact is not None:
+            artifacts["source_feature_branch"] = str(
+                result.training.source_feature_branch_artifact
+            )
+        if result.training.training_metrics_artifact is not None:
+            artifacts["candidate_training"] = str(result.training.training_metrics_artifact)
+        if result.training.evaluation_artifact is not None:
+            artifacts["candidate_evaluation"] = str(result.training.evaluation_artifact)
         if result.model_artifact is not None:
             artifacts["model"] = str(result.model_artifact)
         return artifacts

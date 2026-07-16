@@ -120,6 +120,10 @@
   consumed the external threshold band rerun artifact, read `/app/market_data`
   read-only, and wrote feature branch, training, evaluation, model, and
   research job artifacts under `/app/model_artifacts`.
+- Bounded feature-branch replay attribution ran in Docker `research` with
+  PyTorch CUDA, consumed external feature branch artifacts, read
+  `/app/market_data` read-only, and wrote replay, robustness, probability trace,
+  event, and research job artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

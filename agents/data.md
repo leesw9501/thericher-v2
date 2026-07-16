@@ -109,12 +109,15 @@
 - Bounded feature/model branch reused CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe` plus existing external threshold
   band artifacts; no additional data was acquired.
+- Bounded feature-branch replay reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` plus existing external feature
+  branch artifacts; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next feature-branch replay should start from existing CVS, FCX, and KO slices
-  before acquiring anything new.
+- Next local-paper attribution/query work should start from existing event and
+  replay artifacts before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -78,8 +78,10 @@
 - Attribution-informed threshold band rerun replayed 12 threshold variants
   through local paper, produced `247` fills, and verified every fill source was
   `local_paper`.
+- Feature-branch replay attribution replayed 9 threshold variants through local
+  paper, produced `46` fills, and verified every fill source was `local_paper`.
 
 ## Next Handoff
 
-- Future replay must filter `source: local_paper` before broker fills are
-  introduced.
+- Add source-filtered local-paper attribution/query views before broker fills
+  are introduced.

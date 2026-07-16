@@ -526,3 +526,20 @@ showing that the candidate can generate local-paper fills again, but the
 slice-level PnL/drawdown evidence is mixed. Further progress should branch to
 feature/model research rather than repeatedly adjusting thresholds around the
 same compressed probability distribution.
+
+## 2026-07-16 - Bounded feature-branch replay attribution
+
+Decision: add a thin `candidate_feature_branch_replay` helper and research job
+kind. It reads the completed external feature-branch artifact, resolves its
+training, evaluation, and model artifacts, derives a capped replay band from
+the feature-branch probability evidence, then reuses the existing
+threshold-robustness and broker-free local-paper path. The output is
+`research_feature_branch_replay_only` and records no winner, recommendation,
+pass/fail decision, scheduler, or promotion gate.
+
+Reason: the first `core_plus_bar_position_v1` feature branch changed the
+probability distribution enough to justify one bounded replay attribution step.
+Reusing the existing local-paper path converts that evidence into PnL,
+drawdown, and fill-source attribution without adding KIS access, credentials,
+broker submit code, dashboards, schedulers, or another threshold-only loop on
+the old compressed candidate.

@@ -170,6 +170,11 @@ Implemented and pushed:
   proven local-paper path, records `247` local-paper fills across 12 variants,
   and closes the threshold-only loop as descriptive evidence rather than a
   model-quality decision,
+- bounded feature-branch replay attribution; it consumes the external
+  `core_plus_bar_position_v1` feature-branch artifacts, derives a capped
+  replay band from feature-branch probability evidence, reuses the existing
+  robustness/local-paper path, records PnL/drawdown/fill attribution, and
+  verifies all generated fills remain `source: local_paper`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -190,7 +195,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `189 passed`
+- `195 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -234,14 +239,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded feature-branch replay attribution target:
+Add broker-safe local-paper source-filtered attribution views:
 
-1. consume the external feature branch artifact from
-   `bounded-candidate-feature-branch-mini-smoke`,
-2. turn its changed probability evidence into a bounded local-paper replay,
-3. keep fills labeled `source: local_paper` and artifacts outside Git,
-4. record PnL/drawdown/fill attribution descriptively,
-5. avoid production promotion, scheduler, dashboard expansion, or broker work.
+1. keep local-paper fills queryable separately before broker fills exist,
+2. add source filtering around replay/query attribution helpers,
+3. prove mixed-source or missing-source data cannot be mistaken for local paper,
+4. avoid KIS, credential, live/paper broker submit, dashboard expansion, or
+   scheduler work.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

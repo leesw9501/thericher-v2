@@ -109,6 +109,10 @@ docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Do
 docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-band-rerun-mini-smoke --kind candidate_threshold_band_rerun --threshold-attribution-artifact /app/model_artifacts/candidate-threshold-attribution/bounded-candidate-threshold-attribution-mini-smoke/metrics.json
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-feature-branch-replay-mini-smoke --kind candidate_feature_branch_replay --feature-branch-artifact /app/model_artifacts/candidate-feature-branch/bounded-candidate-feature-branch-mini-smoke/metrics.json --max-bars 120 --robustness-slice src_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice src_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice src_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

@@ -28,6 +28,7 @@ from .candidate_evaluation import (
 from .candidate_training import (
     CandidateTrainingDataset,
     GpuReadiness,
+    _candidate_feature_set,
     _candidate_lookback,
     _reject_repo_artifact_path,
     build_candidate_training_dataset,
@@ -626,6 +627,7 @@ def _load_replay_source(
         list(ordered),
         lookback=_candidate_lookback(candidate),
         data_source=data_source,
+        feature_set=_candidate_feature_set(candidate),
     )
     return CandidateReplaySource(bars=ordered, dataset=dataset, data_source=data_source)
 

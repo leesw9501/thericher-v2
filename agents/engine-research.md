@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Convert the new feature-branch probability evidence into a bounded
-   local-paper replay/attribution loop; do not treat it as production evidence.
+1. Consume replay attribution through source-filtered local-paper views before
+   adding more threshold or candidate reruns.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -38,13 +38,12 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-feature-branch-mini-smoke`, status
+- Last completed: `bounded-candidate-feature-branch-replay-mini-smoke`, status
   `completed`, candidate
-  `m1_lb3_b10_s10__core_plus_bar_position_v1`, trained/evaluated a one-axis
-  `core_plus_bar_position_v1` branch on CVS, FCX, and KO, recorded probability
-  evidence with min `0.171124`, max `0.484606`, mean `0.457413`, range
-  `0.313482`, and wrote artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-candidate-feature-branch-mini-smoke`.
+  `m1_lb3_b10_s10__core_plus_bar_position_v1`, replayed threshold pairs
+  `0.482/0.457`, `0.483/0.457`, and `0.484/0.457` across CVS, FCX, and KO,
+  produced `46` local-paper fills across 9 variants, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-candidate-feature-branch-replay-mini-smoke`.
 
 ## Done Recently
 
@@ -152,9 +151,13 @@
   smoke consumed the threshold band rerun as context, trained/evaluated
   `core_plus_bar_position_v1` on CVS, FCX, and KO, recorded a changed
   probability range, and wrote model/evaluation artifacts outside Git.
+- Added the first bounded feature-branch replay attribution target. The Docker
+  `research` smoke consumed the feature branch artifacts, replayed the changed
+  probability evidence through local paper on CVS, FCX, and KO, produced `46`
+  fills, and kept the result descriptive.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should replay the new feature-branch probabilities
-  through local paper before any broader sweep or promotion rule.
+  task should move toward source-filtered local-paper attribution/query views
+  before any broader sweep or promotion rule.
