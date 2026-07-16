@@ -412,12 +412,18 @@
   existing Docker `research` profile instead of adding a rebuild workflow,
   daemon, scheduler, dashboard, report branch, broker path, credential path, or
   local/base PyTorch dependency.
+- Runner-queued zero-fill attribution reused an existing attribution primitive,
+  wrote one external artifact, and added no code, helper, job kind, CLI, report
+  family, gate, dashboard, scheduler, broker path, credential path, threshold
+  search, retraining, replay rerun, feature/model axis, simulator rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward using the smallest useful Engine Research Agent
-  evidence from completed queue artifacts before adding another feature/model
-  axis. Do not turn the runner into a daemon, broad autonomous agent framework,
-  dashboard, report branch, auto-commit path, or broker-capable process.
+- Push the next task toward the smallest second executable role worker, not a
+  broad autonomous agent framework. A Data Agent single-shot inventory/quality
+  worker is acceptable if it advances data collection and preserves external
+  artifacts, no credentials, no broker authority, no daemon, no scheduler, no
+  dashboard, no report branch, and no auto-commit path.

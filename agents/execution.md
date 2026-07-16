@@ -289,6 +289,9 @@
   fills across `9` variants, recorded missing zero-fill event artifacts as empty
   evidence, and observed no broker, disabled-broker, unknown, or
   diagnostic-overlay fills.
+- Runner-queued zero-fill attribution reran no execution. It consumed existing
+  replay/trace artifacts, found `0` buy opportunities and `0` local-paper
+  fills, and preserved the broker-free/local-paper-only evidence shape.
 
 ## Next Handoff
 
@@ -297,3 +300,5 @@
 - The Engine Research Agent runner must not gain broker authority. If a queued
   job includes replay, it must use the existing broker-free local-paper path and
   keep fills labeled `source: local_paper`.
+- Do not make Execution Agent executable as part of the next multi-agent slice;
+  a broker-capable worker needs a future explicit paper-trading goal.

@@ -411,6 +411,9 @@
   the runner now mounts current `src` read-only into Docker `research`, and the
   retry completed with RTX 4090 visible while writing all artifacts under
   `/app/model_artifacts`.
+- Runner-queued zero-fill attribution ran locally as artifact-only work, used
+  no GPU or Docker job, consumed existing external JSON artifacts, and wrote one
+  compact artifact under `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -423,3 +426,6 @@
   outside Git, current `src` read-only Docker mount, and Docker `research` GPU
   execution. Keep future runner changes away from daemon, scheduler, dashboard,
   notification, or auto-commit behavior.
+- A future Data Agent worker should reuse the same external queue/run-state
+  discipline but use a separate `data-agent` artifact root and no GPU/Docker
+  requirement unless a later data job explicitly needs Docker.

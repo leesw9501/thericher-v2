@@ -315,12 +315,17 @@
   the existing
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`;
   no additional data was acquired.
+- Runner-queued zero-fill attribution reused existing AXP, AZN, and BA
+  probability trace artifacts plus the same `snapshot=2026-06-18` Yahoo rows
+  indirectly through those traces; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; runner-queued research jobs
-  should prefer existing `D:\market_data` slices.
+- The next data task is still not acquisition. To make multi-agent work real,
+  implement a narrow single-shot Data Agent worker that claims one external data
+  inventory/quality job, reads only from `D:\market_data`, writes one compact
+  artifact outside Git, and exits.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

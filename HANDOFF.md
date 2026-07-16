@@ -687,22 +687,38 @@ current `src` read-only into Docker `research`, replayed the first-evaluation
 depth entry-adverse feature branch on AXP, AZN, and BA from
 `snapshot=2026-06-18`, completed `9` variants, produced zero fills, and
 verified local-paper-only evidence with no non-local, broker, or unknown fill
-sources. Artifacts:
+sources.
 
-- `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2\status.json`
-- `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2\metrics.json`
-- `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-20260717-r2-robustness\metrics.json`
+The follow-up attribution consumed only existing runner, replay, robustness,
+and probability trace artifacts. It wrote one compact external artifact:
 
-Attribute that zero-fill replay before changing another model or feature axis:
+- `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-zero-fill-attribution-20260717\metrics.json`
 
-1. consume the runner run-state, feature-branch replay, robustness, and
-   probability trace artifacts only,
-2. explain whether zero fills came from threshold gaps, probability range,
-   slice shape, or missing signal windows,
-3. preserve local-paper-only source separation,
-4. write one compact external attribution artifact if useful,
-5. keep artifacts outside Git and keep broker, credentials, dashboard,
-   scheduler, auto-commit, and broad multi-agent platform behavior out.
+Attribution summary:
+
+- source probability max was `0.596555`, which derived buy thresholds
+  `0.594000`, `0.595000`, and `0.596000`,
+- AXP/AZN/BA holdout max probabilities were `0.542807`, `0.518582`, and
+  `0.561073`,
+- combined holdout max was `0.561073`, leaving the minimum buy threshold
+  `0.032927` above observed holdout probabilities,
+- buy opportunity count was `0`, sell opportunity count was `333`, replay fill
+  count was `0`, and all fill evidence remained local-paper-only,
+- missing event artifacts were recorded only for zero-fill variants and treated
+  as empty evidence, not as non-local fills.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used an existing attribution primitive and
+updated only handoff/stateboard documents.
+
+Next, make the user's multi-agent expectation real with the smallest useful
+second executable worker: a narrow Data Agent single-shot worker that can claim
+one external data inventory/quality job, read only from `D:\market_data`, write
+one compact artifact under `D:\thericher-v2\model-artifacts\data-agent`, and
+exit. Keep Engine Research Agent as the only GPU/Docker research worker, keep
+Execution Agent non-executable until an explicit KIS paper goal allows
+credentials/API calls, and avoid daemon, scheduler, dashboard, auto-commit, and
+broad autonomous platform behavior.
 
 ## Daily Operator Review
 

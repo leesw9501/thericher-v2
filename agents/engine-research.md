@@ -29,12 +29,13 @@
 
 ## Active Queue
 
-1. Attribute the runner-queued AXP/AZN/BA first-evaluation depth replay
-   zero-fill behavior from existing replay/robustness artifacts.
-2. Keep short experiments for breadth and longer candidate training for depth
-   visible as separate queues, using the Engine Research Agent runner when GPU
-   work is needed.
-3. Do not call either path a production recommendation, promotion, or pass/fail
+1. Short experiments for breadth: use runner-queued replay, attribution, and
+   probability-range checks on existing `D:\market_data` slices.
+2. Longer candidate training for depth: use bounded Docker `research` jobs when
+   GPU work is needed and write artifacts outside Git.
+3. Coordinate with future non-GPU role workers through disjoint external
+   queues/artifact roots rather than shared mutable repo files.
+4. Do not call either path a production recommendation, promotion, or pass/fail
    result.
 
 ## Running Jobs
@@ -781,12 +782,22 @@
   `D:\thericher-v2\model-artifacts\engine-research-agent`,
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay`, and
   `D:\thericher-v2\model-artifacts\candidate-threshold-robustness`.
+- Engine Research Agent queued replay attribution
+  `engine-agent-feature-replay-firsteval-depth-axp-azn-ba-zero-fill-attribution-20260717`
+  consumed existing runner, replay, robustness, and probability trace artifacts
+  only. Holdout probabilities never reached the derived buy thresholds:
+  combined holdout max `0.561073` versus minimum buy threshold `0.594000`
+  left a `0.032927` gap, with `0` buy opportunities, `333` sell
+  opportunities, `0` replay fills, and all fill evidence local-paper-only.
+  Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-axp-azn-ba-zero-fill-attribution-20260717\metrics.json`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
-  The first explicit Engine Research Agent runner now supports single-shot
-  enqueue and run-once flows. The next task should explain the runner-queued
-  AXP/AZN/BA zero-fill replay from existing artifacts before adding another
-  feature/model axis, while avoiding daemon, scheduler, dashboard, auto-commit,
-  broker, credential, or broad multi-agent platform behavior.
+  The first explicit Engine Research Agent runner supports single-shot enqueue
+  and run-once flows. Only Engine Research Agent is executable today; Data,
+  Execution, Infra, and Review remain stateboards. The next task should add the
+  smallest non-GPU executable role worker, preferably a single-shot Data Agent
+  inventory/quality worker, while avoiding daemon, scheduler, dashboard,
+  auto-commit, broker, credential, or broad multi-agent platform behavior.
