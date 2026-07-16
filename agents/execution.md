@@ -224,10 +224,13 @@
 - Diagnostic exit-composite helper keeps substituted outcomes at
   `source: diagnostic_overlay`, retained outcomes at `source: local_paper`, and
   does not mutate local-paper entry/exit payloads.
+- Diagnostic exit-composite helper smoke preserved the same source separation
+  on existing artifacts and reran no local-paper replay.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next composite helper smoke must keep substituted overlay marks separate
-  from local-paper fills and must not apply an exit policy to local-paper replay.
+- The next research-only exit-latency replay sandbox must keep diagnostic marks
+  separate from local-paper fills and must not apply an exit policy to
+  local-paper replay.

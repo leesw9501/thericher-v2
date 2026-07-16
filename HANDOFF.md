@@ -511,6 +511,14 @@ Implemented and pushed:
   `source: local_paper` exits otherwise, returns descriptive group/overall
   metrics, and performs no file, network, credential, broker, CLI, job,
   dashboard, scheduler, training, replay, or artifact-write work,
+- bounded diagnostic exit-composite helper smoke; it applied the pure
+  `compute_diagnostic_exit_composite` helper to existing composite context
+  artifacts, reproduced the one-off source counts of `4`
+  `diagnostic_overlay` outcomes and `7` `local_paper` outcomes, matched the
+  one-off gross-delta sums including overall composite sum
+  `3.383729296875`, existing local-paper sum `-1.4563`, and delta
+  `4.840029296875`, and wrote one compact artifact outside Git without replay
+  or training,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -575,18 +583,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded diagnostic exit-composite helper smoke target:
+Start one bounded research-only exit-latency replay sandbox target:
 
-1. use the new pure helper on the existing exit-latency composite context
-   artifacts,
-2. write one compact external smoke artifact under
-   `D:\thericher-v2\model-artifacts`,
-3. verify the helper reproduces the one-off composite source counts and gross
-   delta summaries,
-4. avoid new helper code unless a bug is found, and avoid artifact writers,
-   CLIs, research job kinds, training, replay reruns, broad feature changes,
-   broad data search, threshold search, branch ranking, dashboards, schedulers,
-   broker behavior, or report/gate expansion.
+1. ask Claude CLI for a short drift-check before adding code,
+2. add the smallest research-only helper needed to compute diagnostic
+   exit-latency marks from provided decision/trace timing and `Bar` inputs,
+3. keep output source-labeled as `diagnostic_overlay` and leave existing
+   `source: local_paper` evidence untouched,
+4. add focused tests for no broker, no credentials, no local-paper mutation,
+   and missing-bar/missing-signal reporting,
+5. avoid artifact writers, CLIs, research job kinds, training, broad feature
+   changes, broad data search, threshold search, branch ranking, dashboards,
+   schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

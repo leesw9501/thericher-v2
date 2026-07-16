@@ -254,12 +254,14 @@
   did not require additional market-data reads or acquisition.
 - Diagnostic exit-composite helper added no market-data loader and consumes
   provided payloads only in focused tests.
+- Diagnostic exit-composite helper smoke consumed existing external artifacts
+  only and acquired no additional market data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the composite helper smoke should
-  consume existing external artifacts only.
+- The next data task is not acquisition; the exit-latency replay sandbox helper
+  should consume provided `Bar` inputs and not load market data itself.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
