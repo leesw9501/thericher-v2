@@ -369,6 +369,10 @@
   or Docker job, consumed existing external JSON/event artifacts plus selected
   AMD Yahoo rows, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- AMD entry feature-input diagnostic ran locally as artifact-only work, used no
+  GPU or Docker job, imported the existing light feature builder for formula
+  parity, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -377,6 +381,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next AMD feature-input diagnostic should run locally as artifact-only
-  work unless a focused parser bug appears; no Docker rebuild or PyTorch
-  dependency change is needed.
+- The next AMD entry-filter overlay should run locally as artifact-only work
+  unless a focused parser bug appears; no Docker rebuild or PyTorch dependency
+  change is needed.

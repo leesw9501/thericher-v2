@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded AMD entry feature-input diagnostic from the completed
-   segment-quality artifact before changing source context, feature/model axes,
-   or thresholds again.
+1. Run one bounded AMD entry-filter diagnostic overlay from the completed
+   segment-quality and feature-input artifacts before changing source context,
+   feature/model axes, or thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -724,10 +724,16 @@
   and negative 2/3/5-bar diagnostic marks, while the two non-negative segments
   averaged entry margin `0.0009030294418335`, minimal adverse movement, and
   positive 2/3/5-bar diagnostic marks.
+- AMD entry feature-input diagnostic reconstructed existing
+  `core_plus_entry_adverse_v1` inputs for AMD entry and near-threshold rows.
+  Non-negative entries had `upper_wick_share` lower by about `0.1881`,
+  `low_vs_prior_low_return` lower by about `0.00138`, higher volume change,
+  and nonzero close position versus the negative entry; `4` of `6` near-miss
+  rows were closer to the negative entry by feature distance.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should inspect AMD entry feature inputs from the completed
-  segment-quality artifact before spending another GPU block on source data,
+  task should apply only source-labeled diagnostic entry-filter overlays to the
+  existing AMD evidence before spending another GPU block on source data,
   feature/model, or threshold changes.

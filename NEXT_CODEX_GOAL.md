@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded AMD entry feature-input diagnostic.
+Run one bounded AMD entry-filter diagnostic overlay.
 
 This advances PnL attribution, feature/model research, and backtest validation
-by explaining what feature-input differences separate the first-evaluation
-source-context replay's negative AMD segment from its non-negative AMD
-segments. Use existing artifacts and local bars only.
+by checking whether a tiny, descriptive set of source-labeled diagnostic entry
+filters would have retained the non-negative AMD entries while skipping the
+negative AMD entry. Use existing artifacts and local bars only.
 
 ## Hard Boundaries
 
@@ -69,30 +69,29 @@ segments. Use existing artifacts and local bars only.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
+   - AMD entry feature-input diagnostic:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-entry-feature-input-20260716\metrics.json`
    - AMD segment-quality diagnostic:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-source-context-segment-quality-20260716\metrics.json`
    - first-evaluation source-context attribution:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
-   - first-evaluation source-context robustness:
-     `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716-robustness\metrics.json`
-3. Reuse only selected AMD bars from the existing
+3. Reuse only selected AMD rows from the existing
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
    Yahoo 1m file. Do not acquire data for this task.
 4. Do not rerun training, evaluation, replay, calibration, threshold
    derivation, or probability inference.
-5. Reconstruct the existing `core_plus_entry_adverse_v1` feature inputs for:
-   - AMD entry rows that produced local-paper fills,
-   - nearby AMD top-probability rows around the two replay buy bands,
-   - a compact sample of below-threshold rows if useful for context.
+5. Apply only a tiny fixed set of diagnostic overlay sketches derived from the
+   completed feature-input artifact, such as:
+   - upper-wick-lower-than-negative-entry,
+   - close-position-nonzero,
+   - entry-margin-above-negative-entry.
 6. Record compact artifact-only attribution:
-   - feature values for negative versus non-negative AMD entries,
-   - feature deltas for `upper_wick_share` and `low_vs_prior_low_return`,
-   - entry probability margin and horizon mark context from the segment-quality
-     artifact,
-   - whether below-threshold near-miss rows resemble the negative or
-     non-negative entries,
-   - what this suggests for the next bounded evidence shape without selecting
-     or promoting a model.
+   - which existing AMD local-paper entries each overlay would retain or skip,
+   - whether the negative segment is skipped,
+   - whether the two non-negative segments are retained,
+   - how near-miss rows would be labeled,
+   - all overlay outcomes with `source: diagnostic_overlay`,
+   - original local-paper fills unchanged and still `source: local_paper`.
 7. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
    feature, training path, replay path, threshold search, policy selection,
    simulator exit rule, or broker behavior unless a focused parser bug appears.

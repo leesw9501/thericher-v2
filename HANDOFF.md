@@ -579,6 +579,14 @@ Implemented and pushed:
   entry probability margin, larger adverse movement, and negative fixed 2/3/5
   bar `diagnostic_overlay` marks while the non-negative segments had positive
   fixed horizon marks,
+- bounded AMD entry feature-input diagnostic; it reconstructed
+  `core_plus_entry_adverse_v1` inputs for the AMD entry rows and top
+  near-threshold rows from existing trace and bar evidence only, found the
+  non-negative AMD entries had lower average `upper_wick_share`, nonzero
+  `close_position_in_bar`, lower `low_vs_prior_low_return`, and higher
+  `volume_change` than the fee-aware negative entry, and observed that `4` of
+  `6` below-threshold near-miss rows were closer to the negative entry by
+  feature distance,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -643,14 +651,13 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded AMD entry feature-input diagnostic:
+Start one bounded AMD entry-filter diagnostic overlay:
 
-1. consume the completed AMD segment-quality artifact and its referenced trace,
-   event, and selected AMD bar evidence,
-2. reconstruct the existing `core_plus_entry_adverse_v1` feature inputs for
-   the negative and non-negative AMD entry rows,
-3. compare only descriptive feature/value differences, entry probability
-   margins, and near-threshold rows around the two replay buy bands,
+1. consume the completed AMD segment-quality and feature-input artifacts,
+2. apply a tiny fixed set of descriptive `diagnostic_overlay` entry-filter
+   sketches to the existing AMD buy-opportunity rows only,
+3. report which local-paper entries would be retained or skipped, keeping
+   original fills unchanged and labeled `source: local_paper`,
 4. avoid training, replay reruns, feature/model axes, threshold search,
    dashboards, schedulers, broker behavior, or report/gate expansion.
 

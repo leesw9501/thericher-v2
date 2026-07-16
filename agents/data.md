@@ -285,12 +285,16 @@
 - AMD segment-quality diagnostic reused selected AMD rows from the existing
   `snapshot=2026-06-18` Yahoo file plus existing external trace/event
   artifacts; no additional data was acquired.
+- AMD entry feature-input diagnostic reused the same selected AMD rows plus
+  existing external trace and segment-quality artifacts; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition; reuse selected AMD rows from the
-  existing `snapshot=2026-06-18` Yahoo file for feature-input attribution.
+  existing `snapshot=2026-06-18` Yahoo file for diagnostic entry-filter
+  overlay attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

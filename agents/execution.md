@@ -255,11 +255,14 @@
 - AMD segment-quality diagnostic reran no execution. It preserved the existing
   `source: local_paper` entry/exit evidence and labeled all fixed horizon
   marks as `source: diagnostic_overlay`.
+- AMD entry feature-input diagnostic reran no execution and created no
+  diagnostic fills. It linked feature rows back to existing local-paper entry
+  timestamps only.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next AMD feature-input diagnostic should parse existing local-paper fills
-  only for linkage and should not create broker, replay, or diagnostic fill
-  evidence.
+- The next AMD entry-filter diagnostic should leave local-paper fills unchanged
+  and label any retained/skipped overlay outcomes as `source:
+  diagnostic_overlay`.
