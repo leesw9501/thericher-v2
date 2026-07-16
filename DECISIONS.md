@@ -430,3 +430,34 @@ time should go. The next evidence step must replay the queued candidates on
 disjoint holdout slices through the already proven local-paper path while
 avoiding new replay logic, KIS access, credentials, dashboards, schedulers,
 best-candidate fields, pass/fail decisions, or promotion gates.
+
+## 2026-07-16 - Bounded depth candidate target
+
+Decision: add a thin `candidate_depth_target` helper and research job kind. It
+reads the completed external breadth holdout artifact, selects at most one
+completed variant with a deterministic `research_scheduling_only` heuristic,
+writes a derived candidate artifact outside Git, then reuses the existing
+candidate training, candidate evaluation, threshold calibration, and threshold
+holdout primitives. The depth target records probability summaries,
+local-paper fill counts, PnL, drawdown, source artifact verification, and
+artifact paths, but no winner, recommendation, pass/fail field, or promotion
+gate.
+
+Reason: breadth holdout evidence identifies where bounded GPU depth training
+should spend time next, but it must not become a production selection rule. A
+single thin leaf job keeps PyTorch confined to Docker `research`, keeps
+artifacts outside Git, reuses the local-paper replay path, and avoids KIS
+access, credentials, dashboards, schedulers, autonomous agent expansion, or
+v1-style report/gate sprawl.
+
+## 2026-07-16 - Zero-fill local-paper event verification
+
+Decision: local-paper holdout verification treats a missing `events.jsonl` for
+a replay variant with `replay_fill_count == 0` as empty evidence, not as an
+unreadable artifact failure. Variants with one or more fills still require
+their event artifacts to be readable, and non-`local_paper` fill sources still
+fail verification.
+
+Reason: threshold variants can complete with no local-paper fills and therefore
+have no events to replay. The verification should prove fill sources, not
+mistake absence of zero-fill events for broker/non-local activity.

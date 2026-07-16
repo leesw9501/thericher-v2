@@ -317,6 +317,119 @@ def test_research_job_runs_candidate_breadth_holdout_kind_with_injected_runner(
     assert Path(payload["artifacts"]["candidate_breadth_holdout"]).exists()
 
 
+def test_research_job_runs_candidate_depth_target_kind_with_injected_runners(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    queue_artifact = _breadth_queue_artifact(artifact_root, variant_id="unit-lb3")
+    source_dir = tmp_path / "source"
+    holdout_dir = tmp_path / "holdout"
+    source_dir.mkdir()
+    holdout_dir.mkdir()
+    source_snapshot = _yahoo_snapshot(source_dir, symbols=("AAA",))
+    holdout_snapshot = _yahoo_snapshot(holdout_dir, symbols=("AAA",))
+    breadth_run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="ubh-source",
+            kind="candidate_breadth_holdout",
+            breadth_queue_artifact=queue_artifact,
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="src",
+                    yahoo_snapshot=source_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            robustness_slices=(
+                CandidateThresholdRobustnessSliceConfig(
+                    slice_id="hold",
+                    yahoo_snapshot=holdout_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            max_bars=40,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_probability_runner=_probability_runner,
+    )
+
+    def trainer(dataset, candidate, model_artifact, config):  # noqa: ANN001
+        model_artifact.write_text("unit-depth-model", encoding="utf-8")
+        return {
+            "backend": "unit",
+            "operation": "unit_candidate_depth_training",
+            "examples_seen": len(dataset.labels),
+            "feature_names": dataset.feature_names,
+            "epochs_run": config.max_epochs,
+            "steps_run": 1,
+            "candidate_experiment_id": candidate["candidate_experiment_id"],
+            "model_artifact": str(model_artifact),
+        }
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="udt-job",
+            kind="candidate_depth_target",
+            breadth_holdout_artifact=breadth_run.result.training_artifact,
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="src",
+                    yahoo_snapshot=source_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            robustness_slices=(
+                CandidateThresholdRobustnessSliceConfig(
+                    slice_id="hold",
+                    yahoo_snapshot=holdout_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            max_bars=45,
+            max_epochs=5,
+            max_steps=160,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_trainer_runner=trainer,
+        candidate_evaluation_runner=lambda dataset, model, training_payload, _config: {
+            "backend": "unit",
+            "operation": "unit_candidate_depth_evaluation",
+            "examples_seen": len(dataset.labels),
+            "feature_names_match": tuple(training_payload["metrics"]["feature_names"])
+            == dataset.feature_names,
+            "model_artifact": str(model),
+        },
+        candidate_probability_runner=_probability_runner,
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    assert run.result.status == "completed"
+    assert payload["kind"] == "candidate_depth_target"
+    depth = payload["candidate_depth_target"]
+    assert depth["status"] == "candidate_depth_target_ran_only"
+    assert depth["selected_variant_count"] == 1
+    assert depth["selection"]["mode"] == "research_scheduling_only"
+    assert depth["selection"]["winner"] is None
+    assert depth["selection"]["recommendation"] is None
+    assert depth["metrics"]["all_fills_local_paper"] is True
+    assert Path(payload["artifacts"]["candidate_depth_target"]).exists()
+    assert Path(payload["artifacts"]["candidate_training"]).exists()
+    assert Path(payload["artifacts"]["candidate_threshold_holdout"]).exists()
+    assert Path(payload["artifacts"]["model"]).exists()
+
+
 def test_research_job_runs_candidate_replay_kind_with_injected_runner(tmp_path) -> None:
     model_artifact = tmp_path / "external-model.pt"
     model_artifact.write_text("unit-model", encoding="utf-8")

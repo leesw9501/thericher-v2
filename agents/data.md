@@ -91,12 +91,16 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` for source calibration and
   `snapshot=2026-06-18` for disjoint holdout replay; no additional data was
   acquired.
+- Bounded depth target reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for deeper training/evaluation and
+  `snapshot=2026-06-18` for disjoint holdout replay; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next depth-training work should reuse the existing Yahoo training and
-  holdout snapshots before acquiring anything new.
+- Next depth-vs-breadth comparison should reuse existing artifacts and Yahoo
+  snapshots before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

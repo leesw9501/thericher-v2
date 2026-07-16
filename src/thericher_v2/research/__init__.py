@@ -19,6 +19,12 @@ from .candidate_comparison import (
     CandidateReplayComparisonConfig,
     run_bounded_candidate_replay_comparison,
 )
+from .candidate_depth_target import (
+    BoundedCandidateDepthTargetResult,
+    CandidateDepthTargetConfig,
+    CandidateDepthTargetSelection,
+    run_bounded_candidate_depth_target,
+)
 from .candidate_evaluation import (
     BoundedCandidateEvaluationResult,
     CandidateEvaluationConfig,
@@ -118,6 +124,7 @@ __all__ = [
     "BoundedCandidateEvaluationResult",
     "BoundedCandidateBreadthHoldoutResult",
     "BoundedCandidateBreadthQueueResult",
+    "BoundedCandidateDepthTargetResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
     "BoundedCandidateReplayResult",
@@ -131,6 +138,8 @@ __all__ = [
     "CandidateBreadthVariantConfig",
     "CandidateBreadthVariantResult",
     "CandidateDataSliceConfig",
+    "CandidateDepthTargetConfig",
+    "CandidateDepthTargetSelection",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
     "CandidateThresholdRobustnessConfig",
@@ -175,6 +184,7 @@ __all__ = [
     "run_bounded_candidate_evaluation",
     "run_bounded_candidate_breadth_holdout",
     "run_bounded_candidate_breadth_queue",
+    "run_bounded_candidate_depth_target",
     "run_bounded_candidate_probability_trace",
     "run_bounded_candidate_replay_comparison",
     "run_bounded_candidate_replay",

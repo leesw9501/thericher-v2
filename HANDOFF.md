@@ -141,6 +141,15 @@ Implemented and pushed:
   holdout local-paper fills remain `source: local_paper`, and records
   candidate-by-candidate probability/PnL/drawdown evidence without a winner,
   recommendation, or promotion gate,
+- bounded depth target; it consumes the external breadth holdout artifact,
+  selects at most one completed candidate with a deterministic
+  `research_scheduling_only` heuristic, retrains/evaluates/calibrates/holdout
+  replays the chosen candidate in Docker `research` with PyTorch CUDA under
+  deeper but still capped limits, and records probability/PnL/drawdown/fill
+  source evidence without a winner, recommendation, or promotion gate,
+- local-paper holdout source verification now treats missing event files for
+  zero-fill replay variants as empty evidence rather than a non-local fill
+  failure, while still failing unreadable artifacts for variants with fills,
 - agent lane stateboards under `agents/`,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
@@ -158,7 +167,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `155 passed`
+- `162 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -202,18 +211,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add the first bounded depth-training candidate target:
+Add a bounded depth-vs-breadth evidence comparison:
 
-1. consume the external `bounded-candidate-breadth-holdout-mini-smoke`
+1. consume the external depth target artifact and the source breadth holdout
    artifact,
-2. pick at most one candidate for deeper research scheduling using a
-   deterministic, non-promotional heuristic,
-3. run a longer but still capped Docker `research` PyTorch CUDA training pass
-   on the existing source CVS, FCX, and KO slices,
-4. evaluate and holdout-replay the depth candidate through existing
-   local-paper/holdout primitives,
-5. keep the result descriptive research evidence, not a production winner,
-   promotion threshold, scheduler, or dashboard expansion.
+2. compare only the selected candidate's breadth-holdout evidence against the
+   deeper retraining evidence,
+3. record deltas for probability summaries, local-paper fill counts, PnL,
+   drawdown, selected backend, source artifacts, and data slices,
+4. keep the comparison descriptive and scheduling-oriented, not a production
+   winner, promotion threshold, scheduler, or dashboard expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

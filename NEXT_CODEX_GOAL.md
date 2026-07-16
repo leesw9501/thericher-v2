@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add the first bounded depth-training candidate target.
+Add the first bounded depth-vs-breadth evidence comparison.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by consuming the breadth holdout evidence and scheduling at
-most one candidate for a longer but still capped Docker `research` PyTorch CUDA
-training/evaluation/holdout loop. This is a GPU research scheduling decision,
-not a production winner, promotion rule, scheduler framework, or dashboard.
+PnL attribution by comparing the selected depth target against the breadth
+holdout evidence that scheduled it. This is descriptive research evidence for
+the next bounded GPU job, not a production winner, promotion rule, scheduler
+framework, or dashboard.
 
 ## Hard Boundaries
 
@@ -24,15 +24,14 @@ not a production winner, promotion rule, scheduler framework, or dashboard.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Keep all simulated fills labeled with `source: local_paper`.
+- Keep simulated fills labeled with `source: local_paper`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Run model training/inference that needs PyTorch through Docker `research`.
-- Do not create a broad agent framework, scheduler, promotion gate, or dashboard
+- Do not start a broad scheduler, agent framework, promotion gate, or dashboard
   expansion.
-- Do not start an unbounded or overnight training run yet.
-- Do not call the selected depth target a production winner or recommendation.
+- Do not call any candidate best, recommended, passed, promoted, or production
+  ready.
 
 ## Required First Reads
 
@@ -63,55 +62,46 @@ not a production winner, promotion rule, scheduler framework, or dashboard.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Inventory only the current useful external artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-depth-target\bounded-candidate-depth-target-mini-smoke\metrics.json`
+   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-depth-target-mini-smoke.json`
    - `D:\thericher-v2\model-artifacts\candidate-breadth-holdout\bounded-candidate-breadth-holdout-mini-smoke\metrics.json`
-   - the three variant calibration artifacts referenced by that bridge,
-   - the three variant holdout artifacts referenced by that bridge,
-   - `D:\thericher-v2\model-artifacts\research-jobs\bounded-candidate-breadth-holdout-mini-smoke.json`
+   - the selected candidate's referenced breadth calibration, holdout,
+     robustness, training, evaluation, and model artifacts.
 3. Reuse existing local Yahoo subsets under
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`:
-   - depth training/evaluation source:
-     `snapshot=2026-07-09-shadow-t0-8d-probe`,
-   - holdout replay:
-     `snapshot=2026-06-18`.
-   Avoid expensive full recursive scans unless needed.
-4. Add a small depth target helper or research job path that:
-   - consumes the breadth holdout artifact instead of redefining candidates,
-   - selects at most one candidate for deeper research scheduling using a
-     deterministic descriptive heuristic such as completed holdout first, then
-     fewer local-paper fills, lower max drawdown, higher PnL floor, and
-     variant id order,
-   - records the heuristic as `research_scheduling_only`,
-   - trains the chosen candidate with stricter-than-unbounded but deeper caps
-     than the breadth queue,
-   - evaluates and holdout-replays the depth artifact through existing
-     primitives,
-   - records probability summaries, local-paper fill counts, PnL, drawdown,
-     source verification, and artifact paths,
-   - records no best/recommended candidate and no promotion/pass/fail decision.
-5. Prefer reusing existing candidate training/evaluation/calibration/holdout
-   primitives. Add a new job kind only if it keeps Docker dispatch materially
-   simpler and remains a thin leaf.
-6. Run a CPU/injected smoke baseline first. If sound, run the bounded depth
-   target in Docker `research` with PyTorch CUDA and external artifacts.
-7. Add focused tests proving:
-   - breadth holdout artifacts are read from outside Git,
-   - at most one candidate is scheduled for depth training,
-   - the scheduling heuristic is deterministic and non-promotional,
-   - existing training/evaluation/holdout/local-paper primitives are reused,
-   - local-paper fills remain replayable and labeled `source: local_paper`,
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m` only
+   for verification context if needed. Avoid expensive full recursive scans.
+4. Add a small comparison helper or research job path that:
+   - consumes the depth target artifact and its source breadth holdout artifact,
+   - compares only the selected candidate's breadth-holdout evidence against
+     the deeper retraining evidence,
+   - records deltas for probability summaries, local-paper fill counts, PnL,
+     drawdown, selected backend, caps, data slices, and source artifact
+     verification,
+   - records the comparison as `research_comparison_only`,
+   - records no best/recommended candidate and no promotion/pass/fail decision,
+   - reuses existing artifact readers and local-paper verification conventions,
+     adding a new job kind only if it keeps Docker dispatch a thin leaf.
+5. Keep the two research queues visible in `agents/engine-research.md`:
+   - short experiments for breadth,
+   - longer candidate training for depth.
+6. Add focused tests proving:
+   - comparison artifacts are read from outside Git,
+   - only the selected depth target is compared,
+   - comparison is deterministic and non-promotional,
+   - local-paper source verification is preserved,
    - no credentials, KIS, broker submit, live mode, or network access is needed,
    - PyTorch remains research-container-only and lazy,
-   - missing breadth holdout/training/evaluation/model/data/GPU/backend states
-     are non-fatal prepared states where relevant.
+   - missing depth/breadth/source artifacts are non-fatal prepared states.
+7. Run a CPU/injected smoke first. If Docker `research` dispatch is added, run
+   a bounded Docker smoke using the existing external artifacts.
 8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
-- Start from `D:\market_data`.
-- Prefer existing Yahoo intraday snapshots and symbols if they are useful for
-  this active depth-training loop.
+- Start from existing `D:\market_data` and external model artifacts.
+- Prefer existing Yahoo intraday snapshots and symbols if any context is needed.
 - Acquire additional data only when it is no-auth, lawful,
-  license-compatible, and useful for the active goal.
+  license-compatible, and useful for the active comparison.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -128,12 +118,11 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused depth target, training, evaluation, holdout, Docker
-research, or GPU command used.
+Report any focused comparison, Docker research, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add bounded depth candidate target`
+`Add bounded depth comparison evidence`
 
 ## Completion Report
 

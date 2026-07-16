@@ -62,6 +62,11 @@
 - Breadth holdout bridge mini smoke produced `400` simulated fills across three
   candidates and CVS, FCX, and KO holdout slices; every fill source was
   verified as `local_paper`.
+- Depth target mini smoke produced `347` simulated fills across CVS, FCX, and
+  KO holdout slices; every fill source was verified as `local_paper`.
+- Holdout verification now treats missing event files for zero-fill replay
+  variants as empty evidence while still requiring readable event artifacts for
+  variants that produce fills.
 
 ## Next Handoff
 

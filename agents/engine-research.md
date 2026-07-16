@@ -29,19 +29,21 @@
 
 ## Active Queue
 
-1. Consume the bounded breadth holdout artifact and schedule at most one
-   candidate for a deeper capped training pass.
-2. Reuse CVS, FCX, and KO from the existing source and holdout snapshots.
-3. Keep the depth target descriptive; do not emit a production winner or
-   promotion decision.
+1. Compare the bounded depth target artifact against the selected candidate's
+   source breadth-holdout evidence.
+2. Keep short-experiment breadth and longer depth queues visible, but do not
+   call either path a production recommendation.
+3. Use the comparison to decide the next bounded GPU research job without
+   adding a promotion gate or scheduler framework.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-breadth-holdout-mini-smoke`, status
-  `completed`, variants `m1_lb3_b10_s10`, `m1_lb5_b10_s10`, and
-  `m1_lb8_b10_s10`, processed/completed variants `3/3`, total local-paper fills
-  `400`, Docker `research` GPU `NVIDIA GeForce RTX 4090`, artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-breadth-holdout\bounded-candidate-breadth-holdout-mini-smoke`.
+- Last completed: `bounded-candidate-depth-target-mini-smoke`, status
+  `completed`, selected variant `m1_lb3_b10_s10`, Docker `research` backend
+  `torch`, GPU `NVIDIA GeForce RTX 4090`, source/holdout examples `348`,
+  holdout local-paper fills `347`, all fills verified `local_paper`, artifacts
+  under
+  `D:\thericher-v2\model-artifacts\candidate-depth-target\bounded-candidate-depth-target-mini-smoke`.
 
 ## Done Recently
 
@@ -121,10 +123,15 @@
   CVS/FCX/KO slices, replayed disjoint holdout CVS/FCX/KO slices through
   local-paper, verified all fills were `local_paper`, and recorded no winner or
   promotion gate.
+- Added the first bounded depth target. The Docker `research` smoke consumed
+  the breadth holdout artifact, selected `m1_lb3_b10_s10` with a deterministic
+  `research_scheduling_only` heuristic, retrained/evaluated/calibrated/holdout
+  replayed it under deeper bounded caps, produced `347` holdout local-paper
+  fills, and recorded no winner or promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should consume the breadth holdout artifact and add a
-  bounded depth-training target before starting broader scheduling or claiming
-  robust model quality.
+  engine-research task should compare the depth target artifact against the
+  source breadth holdout evidence before starting broader scheduling or
+  claiming robust model quality.

@@ -96,6 +96,11 @@
   consumed `/app/model_artifacts/candidate-breadth-queue/.../metrics.json`,
   read `/app/market_data` read-only, and wrote breadth holdout, calibration,
   holdout, robustness, and research job artifacts under `/app/model_artifacts`.
+- Bounded depth target ran in Docker `research` with PyTorch CUDA, consumed
+  `/app/model_artifacts/candidate-breadth-holdout/.../metrics.json`, read
+  `/app/market_data` read-only, and wrote depth target, candidate, training,
+  evaluation, calibration, holdout, robustness, model, and research job
+  artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

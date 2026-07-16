@@ -25,7 +25,7 @@
 
 ## Active Queue
 
-1. Review candidate breadth queue for bounded scope and artifact sprawl.
+1. Review depth-vs-breadth comparison for bounded scope and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -88,6 +88,13 @@
   needs to run inside `research`; it reused existing calibration/holdout
   primitives, capped variants at three, and did not emit a best candidate,
   promotion gate, dashboard, scheduler, or autonomous agent process.
+- Depth target added one thin Docker dispatch kind because training/evaluation
+  need to run inside `research`; it reused existing
+  training/evaluation/calibration/holdout primitives, selected at most one
+  candidate for research scheduling only, and did not emit a best candidate,
+  promotion gate, dashboard, scheduler, or autonomous agent process.
+- Zero-fill local-paper verification was narrowed rather than expanded into a
+  gate: missing event files are tolerated only when replay fill count is zero.
 
 ## Next Handoff
 

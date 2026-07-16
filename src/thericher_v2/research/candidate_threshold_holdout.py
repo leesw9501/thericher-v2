@@ -312,6 +312,8 @@ def _local_paper_verification(
                 try:
                     lines = Path(artifact).read_text(encoding="utf-8").splitlines()
                 except OSError:
+                    if variant.replay_fill_count == 0:
+                        continue
                     unreadable_artifacts.append(str(artifact))
                     continue
                 for line in lines:

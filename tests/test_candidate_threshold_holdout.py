@@ -135,6 +135,40 @@ def test_candidate_threshold_holdout_missing_calibration_is_prepared(tmp_path) -
     assert payload["artifacts"]["candidate_threshold_robustness"] is None
 
 
+def test_candidate_threshold_holdout_allows_missing_events_for_zero_fill_variants(
+    tmp_path,
+) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    calibration_artifact = _calibration_artifact(
+        tmp_path,
+        training_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        model_artifact=model_artifact,
+        threshold_pairs=((0.99, 0.01),),
+    )
+
+    result = run_bounded_candidate_threshold_holdout(
+        config=_single_slice_config(
+            _yahoo_snapshot(tmp_path),
+            run_id="zero-fill-holdout",
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        calibration_artifact=calibration_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_middle_probability_runner,
+    )
+
+    assert result.status == "candidate_threshold_holdout_replayed_only"
+    assert result.local_paper_verification["local_paper_fill_count"] == 0
+    assert result.local_paper_verification["unreadable_event_artifacts"] == []
+    assert result.local_paper_verification["all_fills_local_paper"] is True
+    assert result.robustness is not None
+    assert result.robustness.slices[0].variants[0].replay_fill_count == 0
+
+
 def test_candidate_threshold_holdout_missing_data_records_request(tmp_path) -> None:
     model_artifact = _model_artifact(tmp_path)
     training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
@@ -315,6 +349,19 @@ def _alternating_probability_runner(dataset, model_artifact, training_payload): 
             0.80 if index % 4 in {0, 1} else 0.20
             for index in range(len(dataset.labels))
         ),
+        "feature_names": dataset.feature_names,
+        "feature_names_match": True,
+        "candidate_experiment_id": training_payload["candidate_experiment_id"],
+    }
+
+
+def _middle_probability_runner(dataset, model_artifact, training_payload):  # noqa: ANN001
+    assert model_artifact.exists()
+    assert tuple(training_payload["metrics"]["feature_names"]) == dataset.feature_names
+    return {
+        "backend": "unit",
+        "operation": "unit_candidate_probabilities",
+        "probabilities": tuple(0.50 for _ in range(len(dataset.labels))),
         "feature_names": dataset.feature_names,
         "feature_names_match": True,
         "candidate_experiment_id": training_payload["candidate_experiment_id"],
