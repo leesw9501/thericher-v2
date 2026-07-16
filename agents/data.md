@@ -414,14 +414,18 @@
   Yahoo 1m file for AMAT, AMZN, and BA with `max-bars 240`; no data was
   acquired. The path attribution reused existing event/trace artifacts plus
   those local rows and needed no operator data help.
+- AMAT negative-path attribution reused existing parity artifacts, existing
+  wider-holdout feature-input context, and selected AMAT/AMZN rows from
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`;
+  no data was acquired and no operator data help is needed for this evidence.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and parity replay artifacts for AMAT negative-path attribution; record
-  exact missing artifact names only if the produced event/trace/path evidence
-  is insufficient.
+  rows and external artifacts for the next bounded multi-agent cadence; record
+  exact missing artifact names only if an existing Engine Research/Data worker
+  cannot proceed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

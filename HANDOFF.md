@@ -1612,9 +1612,45 @@ The AMAT/AMZN/BA `240`-bar threshold-pair parity check then completed:
   verified the exact replay artifacts and Review/Execution checked broker,
   source-label, and sprawl boundaries. They are not repo-owned workers.
 
-Next, attribute the AMAT negative paths from the exact `240`-bar parity replay
-before another GPU training block. Keep it artifact-only and use existing
-event, trace, path, and local-bar evidence.
+The AMAT negative-path attribution then completed:
+
+- It consumed existing parity replay, robustness, trace, event, path
+  attribution, wider-holdout feature-input context, and local AMAT/AMZN Yahoo
+  rows only. It did not rerun replay, train a model, queue Docker/GPU work,
+  acquire data, call KIS, read credentials, add code, or create a new worker.
+- The compact artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`.
+- The `3` negative AMAT paths were one repeated market moment across three
+  threshold variants: entry `2026-06-09T16:46:00+00:00`, entry probability
+  `1.00000000`, margins `0.404` to `0.406`, two-bar sell-threshold latency,
+  gross delta `-3.87`, and fee-aware delta `-4.1532`.
+- AMAT non-negative paths were `6` variant rows over `2` unique entries, gross
+  delta `53.730`, fee-aware delta `53.1324`, and longer sell-threshold latency
+  of `8` to `16` bars. AMZN non-negative paths were `3` rows over one unique
+  entry, gross delta `1.335`, and fee-aware delta `1.1868`.
+- Existing feature-input context showed one repeated AMAT negative feature
+  signature, two AMAT non-negative signatures, and one AMZN non-negative
+  signature. The parity probability traces themselves did not retain feature
+  payload fields, so this context is explicitly sourced from existing
+  wider-holdout behavior attribution by symbol and timestamp.
+- Source evidence stayed clean: all `24` parsed fills were
+  `source: local_paper`; non-local fills, unknown fills, unreadable event
+  artifacts, missing exact source files, missing feature context, and missing
+  nonzero event/trace evidence were all `0`. BA still has `3` missing
+  zero-fill event artifacts, treated as empty zero-fill evidence.
+- Diagnostic context stayed `source: diagnostic_overlay` and created `0`
+  local-paper fills, broker outcomes, order intents, execution filters, replay
+  rules, feature rules, or model-promotion rules.
+- Runtime Codex sidecars assisted as read-only reviewers: Engine Research
+  independently checked path, trace, and feature-payload availability, while
+  Review/Execution checked broker/source-label/sprawl boundaries. They are not
+  repo-owned workers.
+
+Next, run a bounded multi-agent research cadence using the existing Engine
+Research and Data single-shot workers plus temporary Codex sidecars. Keep the
+single GPU useful through one bounded Docker `research` job if the evidence
+supports it, and clarify the remaining role-agent gap without creating a
+durable scheduler, daemon, coordinator, or broker-capable worker.
 
 ## Daily Operator Review
 

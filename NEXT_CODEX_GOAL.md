@@ -5,12 +5,24 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Attribute the AMAT negative paths from the exact `240`-bar threshold-pair parity
-replay before any longer GPU training block.
+Run one bounded multi-agent research cadence using the existing executable
+workers and temporary Codex sidecars.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by explaining the `3` negative AMAT paths that appeared after
-closing the exact threshold-pair parity gap.
+This advances feature/model research, data collection, backtest validation, and
+PnL attribution by turning the latest AMAT negative-path evidence into one
+focused follow-up while making the current role-agent reality explicit.
+
+## Current Agent Reality
+
+- Engine Research Agent has an executable single-shot worker:
+  `thericher-v2-engine-research-agent`.
+- Data Agent has an executable single-shot worker:
+  `thericher-v2-data-agent`.
+- Execution, Infra, and Review are currently stateboards plus temporary Codex
+  sidecar roles, not repo-owned executable workers.
+- Do not build a durable agent platform just to satisfy the label "agent".
+  Create another executable role worker only when it improves a named engine
+  loop and the operator explicitly approves that worker.
 
 ## Hard Boundaries
 
@@ -20,10 +32,10 @@ closing the exact threshold-pair parity gap.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
-- Do not create a durable multi-agent platform, scheduler, daemon, notification
-  loop, or auto-commit worker.
-- Do not add a new executable agent unless a specific engine loop need is
-  proven and the user explicitly approves it.
+- Do not create a durable multi-agent platform, scheduler, daemon,
+  notification loop, coordinator, or auto-commit worker.
+- Do not add a new executable agent unless a specific engine-loop need is
+  proven and the operator explicitly approves it.
 - Do not add a new research job kind.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
@@ -32,9 +44,9 @@ closing the exact threshold-pair parity gap.
   Agent runner path. Do not add PyTorch to the base/runtime app path.
 - Keep original local-paper fills labeled with `source: local_paper`; keep
   diagnostic rows labeled with `source: diagnostic_overlay`.
-- Do not call any context, band, threshold, model, slice, or feature group
-  selected, passed, promoted, production ready, or live ready.
-- Do not convert a diagnostic context into an execution filter, order intent,
+- Do not label any context, band, threshold, model, slice, or feature group as
+  selected, passed, promoted, winner, best, production ready, or live ready.
+- Do not convert diagnostic context into an execution filter, order intent,
   replay rule, feature rule, or model-promotion rule.
 
 ## Required First Reads
@@ -64,47 +76,45 @@ closing the exact threshold-pair parity gap.
 
 ## Current Evidence To Consume
 
-- Exact threshold-pair parity path attribution:
+- AMAT negative-path attribution:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`
+- Exact parity path attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`
-- Exact threshold-pair parity replay:
+- Exact parity replay:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\metrics.json`
-- Exact threshold-pair parity robustness/event artifacts:
+- Exact parity robustness/event artifacts:
   `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-robustness\metrics.json`
-- Same-window AMAT/AMZN consolidation:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\same-window-amat-amzn-path-quality-consolidation-20260717-r1\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Consume existing parity replay, path attribution, probability traces, event
-   artifacts, and local AMAT bars only. Do not rerun replay unless nonzero-fill
-   AMAT event or trace evidence is missing.
-2. Produce one compact artifact-only AMAT negative-path attribution outside
-   Git.
-3. Report counts, not decisions:
-   - AMAT negative versus non-negative closed path counts,
-   - gross and fee-aware deltas,
-   - entry probability margins,
-   - sell-threshold timing after entry,
-   - max adverse and favorable movement,
-   - feature-input or trace context already present in existing artifacts,
-   - repeated entry timestamps or duplicate feature signatures, if present,
-   - local-paper source verification,
-   - diagnostic-overlay source separation,
-   - missing evidence counts.
-4. Compare AMAT negative paths to AMAT non-negative paths and AMZN non-negative
-   paths as descriptive context only. Do not introduce a threshold, feature
-   rule, replay rule, exit rule, or promotion rule.
-5. Do not queue longer candidate training in this task. End with the evidence
-   still missing, if any, before another depth-training block.
+1. Use temporary Codex sidecars for distinct lane checks:
+   - Engine Research: propose one bounded follow-up from the AMAT
+     negative-path evidence.
+   - Data/Infra: verify local data roots, artifact roots, Docker/GPU readiness,
+     and queue/lock state.
+   - Review/Execution: verify no broker, credential, source-label, or
+     agent-platform drift.
+2. Run the Data Agent single-shot inventory only if it materially helps this
+   cadence; otherwise state why existing data evidence is sufficient.
+3. Keep the GPU useful with at most one bounded Engine Research Agent Docker
+   `research` job if the evidence supports a clear question. Prefer existing
+   job kinds and existing data/artifacts.
+4. If the AMAT negative-path feature context can be evaluated through an
+   existing research primitive, use that. If not, run a small existing replay or
+   artifact-only diagnostic and record the exact compatibility gap.
+5. Keep a concise capability note in `agents/README.md` or `HANDOFF.md` if the
+   current executable-worker gap needs clarification. Do not add a new worker
+   in this goal unless the operator explicitly confirms which role should become
+   executable.
 6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the active attribution.
+  license-compatible source clearly improves the active cadence.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -126,13 +136,13 @@ Also report:
 
 - any focused tests,
 - any artifact-only smoke command,
-- any Engine Research Agent command,
-- Docker `research` or GPU command if used,
+- any Engine Research Agent or Data Agent command,
+- any Docker `research` or GPU command,
 - artifact paths written outside Git.
 
 ## Suggested Commit Message
 
-`Attribute AMAT negative parity paths`
+`Run bounded multi-agent research cadence`
 
 ## Completion Report
 
@@ -141,12 +151,12 @@ Report:
 - files changed,
 - tests run,
 - commit hash,
+- which sidecars or executable workers were used,
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker were used and where artifacts were written,
 - produced diagnostic or research artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
-- sub-agents used and what they checked,
 - what was intentionally not built,
 - next goal.

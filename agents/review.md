@@ -553,13 +553,21 @@
   acquisition, replay mutation beyond the bounded existing local replay,
   threshold search, feature rule, durable multi-agent platform, or
   model-promotion language.
+- AMAT negative-path attribution stayed artifact-only and reused existing
+  parity, wider-holdout, event, trace, and local-bar evidence. It added no
+  code, helper, job kind, worker, scheduler, dashboard, coordinator, report
+  family, gate, auto-commit path, broker authority, credential reads, data
+  acquisition, replay mutation, threshold search, feature rule, durable
+  multi-agent platform, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded AMAT negative-path attribution using
-  existing parity artifacts first. Keep coordination evidence small and avoid
-  new durable workers, daemon, scheduler, dashboard, report branch, broker,
-  credential, auto-commit, durable multi-agent-platform behavior, threshold
-  search, feature-rule selection, or model-promotion language.
+- Push the next task toward one bounded multi-agent cadence using existing
+  Engine Research/Data single-shot workers and temporary Codex sidecars. If a
+  new executable role worker is proposed, require a specific engine-loop need
+  and explicit operator approval. Avoid new durable workers, daemon, scheduler,
+  dashboard, report branch, broker, credential, auto-commit, durable
+  multi-agent-platform behavior, threshold search, feature-rule selection, or
+  model-promotion language.

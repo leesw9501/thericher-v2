@@ -517,6 +517,10 @@
   compose files, cleared the external GPU lock, and wrote replay, robustness,
   runner, and attribution artifacts outside Git under
   `D:\thericher-v2\model-artifacts`.
+- AMAT negative-path attribution ran locally as artifact-only work, used no
+  Docker or GPU job, changed no dependency, Docker, or compose files, and wrote
+  one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
@@ -538,6 +542,6 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next AMAT negative-path
-  attribution. Use existing artifacts first; no Docker/GPU job is needed unless
-  evidence is missing.
+- Do not add scheduler/coordinator plumbing for the next multi-agent cadence.
+  Use existing Engine Research/Data single-shot workers plus temporary Codex
+  sidecars; keep any Docker/GPU work inside the existing `research` path.

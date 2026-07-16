@@ -952,6 +952,13 @@
   negative fee-aware AMAT paths, gross delta `51.195`, and fee-aware delta
   `50.1660`. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`.
+- AMAT negative-path attribution consumed existing parity path, trace, event,
+  wider-holdout feature-input, and local-bar evidence only. It found the `3`
+  negative AMAT paths are one repeated `16:46 UTC` market moment across three
+  threshold variants, with entry probability `1.00000000`, margins `0.404` to
+  `0.406`, two-bar sell-threshold latency, gross delta `-3.87`, and fee-aware
+  delta `-4.1532`. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -959,10 +966,11 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: attribute the `3` negative AMAT paths from the
-  exact `240`-bar parity replay before another depth run.
-- Longer candidate training queue: hold until a short experiment shows enough
-  path-quality evidence and a focused research question.
+- Short experiments queue: use the AMAT negative-path feature/context evidence
+  to decide one bounded follow-up, preferably through an existing Docker
+  `research` job or artifact-only diagnostic.
+- Longer candidate training queue: hold until a bounded follow-up defines a
+  focused model-input or replay-shape question.
   Keep the job kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,

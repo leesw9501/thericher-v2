@@ -391,6 +391,11 @@
   contributed `6` fill events and no negative fee-aware paths; BA remained
   zero-fill. No non-local, unknown, unreadable, broker, or diagnostic-overlay
   fills were observed.
+- AMAT negative-path attribution reran no execution and created no fills,
+  orders, positions, order intents, broker adapters, or broker outcomes. It
+  preserved all `24` referenced fills as `source: local_paper`, labeled
+  descriptive path/feature context as `source: diagnostic_overlay`, and counted
+  `0` non-local, unknown, unreadable, or missing nonzero-fill evidence.
 
 ## Next Handoff
 
@@ -414,9 +419,9 @@
 - The next Engine Research cadence may run broker-free local-paper replay only
   through existing research jobs. It must preserve `source: local_paper` fills
   and keep diagnostics as `source: diagnostic_overlay`.
-- The next opportunity-gap diagnostic should remain artifact-only unless it
-  uses an existing broker-free replay job. Do not lower or turn thresholds into
-  an execution rule.
-- Any AMAT negative-path attribution must keep original fills as
+- The next multi-agent cadence may use temporary Execution sidecar review, but
+  do not make Execution Agent executable until a future explicit paper-trading
+  goal needs broker or risk-loop work.
+- Any follow-up from AMAT negative-path evidence must keep original fills as
   `source: local_paper`, count diagnostics separately, and avoid creating
   order intents outside the existing broker-free replay path.
