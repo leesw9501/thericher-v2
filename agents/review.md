@@ -334,10 +334,16 @@
   tests. It added no job kind, CLI, report family, gate, dashboard, scheduler,
   broker path, threshold search, replay rerun, simulator exit rule,
   feature/model axis, artifact writer, or model-promotion language.
+- Exit-latency sandbox helper smoke reused existing artifacts and selected
+  local bars, wrote one compact external artifact, and added no code, job kind,
+  CLI, report family, gate, dashboard, scheduler, broker path, threshold
+  search, replay rerun, feature/model axis, artifact writer, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small exit-latency sandbox smoke before
-  allowing another feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one bounded GPU validation block that reuses
+  existing job kinds and fixed entry-adverse settings before allowing another
+  feature-set, regularization value, or threshold-only branch.

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded research-only exit-latency sandbox helper smoke.
+Run one bounded PyTorch CUDA entry-adverse validation block.
 
-This advances PnL attribution and backtest/walk-forward validation by applying
-the pure `compute_exit_latency_sandbox_marks` helper to existing entry-adverse
-exit-latency context and selected local `Bar` inputs, without changing
-local-paper replay or simulator behavior.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by returning from exit-latency diagnostics to one compact
+Docker `research` train/evaluate/replay loop with fixed entry-adverse settings
+and broker-free local paper evidence.
 
 ## Hard Boundaries
 
@@ -59,39 +59,36 @@ local-paper replay or simulator behavior.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If the smoke can
-   run artifact-only with existing code, no Claude check is needed.
+3. Ask Claude CLI for a short drift-check before code edits. If this block can
+   run through existing Docker `research` job kinds, no Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as context:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-composite-helper-smoke-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
-3. Use the helper added in the previous task:
-   - `thericher_v2.research.exit_overlay_diagnostic.compute_exit_latency_sandbox_marks`
-4. Build one compact artifact-only smoke that:
-   - reconstructs bounded sandbox segments from existing entry-adverse
-     exit-timing evidence,
-   - provides explicit `Bar` inputs from existing
-     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`,
-   - provides exit signal timing records from existing local-paper exit timing
-     evidence,
-   - emits diagnostic marks with `source: diagnostic_overlay`,
-   - verifies no local-paper fills or broker outcomes are created,
-   - compares mark source counts and gross-delta summaries to the composite
-     helper smoke where possible.
-5. Write one compact smoke artifact outside Git, for example:
+2. Use the completed exit-latency sandbox smoke as context:
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-sandbox-helper-smoke-20260716\metrics.json`
-6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
-   training path, replay rerun, threshold search, policy selection, simulator
-   exit rule, or broker behavior.
-7. Only edit code if the smoke exposes a helper bug; if code changes are needed,
-   ask Claude CLI first and keep the fix focused.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+3. Confirm Docker `research` can see PyTorch CUDA/GPU before launching the
+   bounded block. Keep any smoke output outside Git.
+4. Keep this model configuration fixed:
+   - `core_plus_entry_adverse_v1`
+   - `hidden_units=4`
+   - `weight_decay=0.001`
+   - `feature_standardization`
+5. Prefer existing data under `D:\market_data`. Use a shallow deterministic
+   inventory only if a compact evaluation set must be selected.
+6. Run one bounded train/evaluate/replay path through existing job kinds:
+   - Docker `research` for train/evaluate work,
+   - existing local-paper replay path for simulated fills,
+   - max bars no more than `240`,
+   - epochs and steps capped at the current research-job limits.
+7. If replay produces fills, record concise PnL, drawdown, fill-source, and
+   trade-path evidence from existing helpers or artifact-only scripts. If replay
+   produces zero fills, record concise opportunity/threshold-gap evidence.
+8. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+   training path, replay path, threshold search, policy selection, simulator
+   exit rule, or broker behavior unless the bounded run exposes a focused bug.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -119,7 +116,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add exit latency sandbox helper smoke`
+`Run bounded entry adverse GPU validation`
 
 ## Completion Report
 
@@ -131,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- helper smoke behavior,
+- validation behavior,
 - what was intentionally not built,
 - next goal.

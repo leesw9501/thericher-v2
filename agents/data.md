@@ -258,12 +258,17 @@
   only and acquired no additional market data.
 - Research-only exit-latency sandbox helper added no market-data loader and
   consumes provided `Bar` inputs only in focused tests.
+- Exit-latency sandbox helper smoke reused selected ADBE, ADI, ADP, AEM, AMAT,
+  and AMGN rows from `snapshot=2026-06-18`, loaded `1560` bars total, and
+  acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the exit-latency sandbox smoke should
-  reuse existing `snapshot=2026-06-18` Yahoo rows only where needed.
+- The next data task is still not acquisition; the bounded GPU validation block
+  should prefer existing `snapshot=2026-06-18` and
+  `snapshot=2026-07-09-shadow-t0-8d-probe` Yahoo rows with only shallow
+  inventory if a compact evaluation set is needed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

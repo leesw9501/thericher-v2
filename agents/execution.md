@@ -228,10 +228,14 @@
   on existing artifacts and reran no local-paper replay.
 - Research-only exit-latency sandbox helper emits diagnostic marks only and
   creates zero local-paper fills or broker outcomes.
+- Exit-latency sandbox helper smoke created zero local-paper fills and zero
+  broker outcomes while keeping all available marks labeled
+  `source: diagnostic_overlay`.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next exit-latency sandbox smoke must keep diagnostic marks separate from
-  local-paper fills and must not apply an exit policy to local-paper replay.
+- The next GPU validation block may replay through the existing broker-free
+  local-paper path only; diagnostic exit-latency evidence must remain separate
+  from simulated fills.

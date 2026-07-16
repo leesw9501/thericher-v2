@@ -29,8 +29,9 @@
 
 ## Active Queue
 
-1. Run one real-artifact smoke through the research-only exit-latency sandbox
-   helper before changing another model axis.
+1. Run one bounded Docker `research` PyTorch CUDA validation block with
+   `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`, and
+   `feature_standardization` fixed.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -686,10 +687,14 @@
   records and `Bar` inputs, emits `source: diagnostic_overlay` marks when the
   latency condition is met, and reports missing signal/bar/horizon states
   without touching local-paper replay.
+- Exit-latency sandbox helper smoke consumed existing real artifacts and
+  selected `snapshot=2026-06-18` Yahoo rows, matched the composite helper smoke
+  on `4` latency-matched diagnostic marks with gross-delta sum
+  `-2.486370703125`, and created no local-paper fills or broker outcomes.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded real-artifact smoke through the exit-latency
-  sandbox helper before another feature-set, preprocessing, regularization
-  value, or threshold-only branch.
+  task should return to one bounded GPU validation block using existing Docker
+  `research` job kinds, fixed entry-adverse settings, existing local Yahoo
+  data, and broker-free local-paper replay.

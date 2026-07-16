@@ -528,6 +528,12 @@ Implemented and pushed:
   without normal diagnostic failures, and perform no file, network,
   credential, broker, CLI, job, dashboard, scheduler, training, replay, or
   artifact-write work,
+- bounded research-only exit-latency sandbox helper smoke; it applied the pure
+  sandbox helper to `11` existing entry-adverse segments and selected
+  `snapshot=2026-06-18` Yahoo rows, produced `4` available
+  `diagnostic_overlay` marks for the `latency_ge_5_at_2_bar` condition,
+  matched the composite helper smoke keys, timestamps, prices, and gross-delta
+  sum `-2.486370703125`, and created zero local-paper fills or broker outcomes,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -592,18 +598,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded research-only exit-latency sandbox helper smoke target:
+Start one bounded PyTorch CUDA entry-adverse validation target:
 
-1. use the new pure helper on existing entry-adverse exit-latency context
-   artifacts and selected `snapshot=2026-06-18` Yahoo rows,
-2. write one compact external smoke artifact under
-   `D:\thericher-v2\model-artifacts`,
-3. compare sandbox diagnostic marks against the composite helper smoke source
-   counts and gross-delta summaries,
-4. avoid new helper code unless a bug is found, and avoid artifact writers,
-   CLIs, research job kinds, training, broad feature changes, broad data
-   search, threshold search, branch ranking, dashboards, schedulers, broker
-   behavior, or report/gate expansion.
+1. keep `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`,
+   and `feature_standardization` fixed,
+2. use existing `D:\market_data` Yahoo rows and Docker `research` only,
+3. run one compact train/evaluate/replay block through existing job kinds,
+4. preserve local-paper-only replay evidence and keep any exit-latency
+   diagnostic marks separate as `source: diagnostic_overlay`,
+5. avoid new helper code, broad model search, threshold search, dashboards,
+   schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
