@@ -101,6 +101,9 @@
   `/app/market_data` read-only, and wrote depth target, candidate, training,
   evaluation, calibration, holdout, robustness, model, and research job
   artifacts under `/app/model_artifacts`.
+- Bounded depth-vs-breadth comparison ran in Docker `research`, consumed
+  existing `/app/model_artifacts` artifacts only, and wrote comparison plus
+  research job artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

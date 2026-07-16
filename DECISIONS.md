@@ -461,3 +461,20 @@ fail verification.
 Reason: threshold variants can complete with no local-paper fills and therefore
 have no events to replay. The verification should prove fill sources, not
 mistake absence of zero-fill events for broker/non-local activity.
+
+## 2026-07-16 - Bounded depth-vs-breadth evidence comparison
+
+Decision: add a thin `candidate_depth_comparison` helper and research job kind.
+It reads the completed external depth target artifact and the breadth holdout
+artifact that scheduled it, compares only the selected variant's breadth
+evidence against the depth evidence, and writes one descriptive comparison
+artifact outside Git. The comparison records probability summary deltas,
+local-paper fill count delta, PnL/drawdown deltas, cap deltas, data-slice
+evidence, and referenced artifact existence.
+
+Reason: the first depth target needs a compact evidence loop before spending
+more GPU time. Comparing existing artifacts is enough; rerunning training or
+holdout would duplicate work. The output stays `research_comparison_only` and
+does not add KIS access, credentials, broker submit code, PyTorch to the base
+path, a dashboard, scheduler framework, best-candidate field, pass/fail
+decision, or promotion gate.

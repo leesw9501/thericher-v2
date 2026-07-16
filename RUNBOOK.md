@@ -93,6 +93,10 @@ docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Do
 docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-depth-target-mini-smoke --kind candidate_depth_target --breadth-holdout-artifact /app/model_artifacts/candidate-breadth-holdout/bounded-candidate-breadth-holdout-mini-smoke/metrics.json --max-bars 120 --max-epochs 6 --max-steps 192 --data-slice src_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice src_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice src_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO --robustness-slice hold_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice hold_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice hold_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-depth-comparison-mini-smoke --kind candidate_depth_comparison --depth-target-artifact /app/model_artifacts/candidate-depth-target/bounded-candidate-depth-target-mini-smoke/metrics.json
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

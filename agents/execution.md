@@ -67,6 +67,9 @@
 - Holdout verification now treats missing event files for zero-fill replay
   variants as empty evidence while still requiring readable event artifacts for
   variants that produce fills.
+- Depth-vs-breadth comparison reran no execution, preserved existing
+  local-paper source verification, and confirmed both compared artifacts report
+  all simulated fills as `local_paper`.
 
 ## Next Handoff
 

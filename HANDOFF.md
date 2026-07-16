@@ -147,6 +147,12 @@ Implemented and pushed:
   replays the chosen candidate in Docker `research` with PyTorch CUDA under
   deeper but still capped limits, and records probability/PnL/drawdown/fill
   source evidence without a winner, recommendation, or promotion gate,
+- bounded depth-vs-breadth comparison; it consumes the external depth target
+  and breadth holdout artifacts, compares only the selected candidate's
+  pre-depth holdout evidence against the deeper training evidence, records
+  probability/fill/PnL/drawdown/cap/data-slice deltas, and stays
+  `research_comparison_only` with no winner, recommendation, pass/fail result,
+  or promotion gate,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -167,7 +173,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `162 passed`
+- `167 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -211,16 +217,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded depth-vs-breadth evidence comparison:
+Add a bounded comparison-informed fill-aware threshold rerun:
 
-1. consume the external depth target artifact and the source breadth holdout
-   artifact,
-2. compare only the selected candidate's breadth-holdout evidence against the
-   deeper retraining evidence,
-3. record deltas for probability summaries, local-paper fill counts, PnL,
-   drawdown, selected backend, source artifacts, and data slices,
-4. keep the comparison descriptive and scheduling-oriented, not a production
-   winner, promotion threshold, scheduler, or dashboard expansion.
+1. consume the external depth comparison artifact,
+2. treat the wider fill count and worse PnL floor/drawdown as scheduling
+   evidence only,
+3. define a capped stricter threshold grid for the selected depth target,
+4. run the grid through existing Docker `research` probability/holdout and
+   local-paper primitives,
+5. keep the result descriptive, not a production winner, promotion threshold,
+   scheduler, or dashboard expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

@@ -25,7 +25,8 @@
 
 ## Active Queue
 
-1. Review depth-vs-breadth comparison for bounded scope and artifact sprawl.
+1. Review comparison-informed fill-aware threshold rerun for bounded scope and artifact
+   sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -95,6 +96,9 @@
   promotion gate, dashboard, scheduler, or autonomous agent process.
 - Zero-fill local-paper verification was narrowed rather than expanded into a
   gate: missing event files are tolerated only when replay fill count is zero.
+- Depth-vs-breadth comparison added one thin artifact-diff job, reran no
+  training or holdout work, and did not emit a best candidate, promotion gate,
+  dashboard, scheduler, or autonomous agent process.
 
 ## Next Handoff
 

@@ -29,6 +29,11 @@ from .candidate_comparison import (
     CandidateReplayComparisonConfig,
     run_bounded_candidate_replay_comparison,
 )
+from .candidate_depth_comparison import (
+    BoundedCandidateDepthComparisonResult,
+    CandidateDepthComparisonConfig,
+    run_bounded_candidate_depth_comparison,
+)
 from .candidate_depth_target import (
     BoundedCandidateDepthTargetResult,
     CandidateDepthTargetConfig,
@@ -94,6 +99,7 @@ ResearchJobKind = Literal[
     "gpu_training_smoke",
     "candidate_breadth_holdout",
     "candidate_breadth_queue",
+    "candidate_depth_comparison",
     "candidate_depth_target",
     "candidate_training",
     "candidate_evaluation",
@@ -108,6 +114,7 @@ ResearchJobStatus = Literal[
     "completed",
     "prepared_not_breadth_holdout_replayed",
     "prepared_not_breadth_queued",
+    "prepared_not_depth_compared",
     "prepared_not_depth_targeted",
     "prepared_not_trained",
     "prepared_not_evaluated",
@@ -123,6 +130,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "gpu_training_smoke",
     "candidate_breadth_holdout",
     "candidate_breadth_queue",
+    "candidate_depth_comparison",
     "candidate_depth_target",
     "candidate_training",
     "candidate_evaluation",
@@ -142,6 +150,7 @@ class ResearchJobSpec:
     candidate_artifact: Path | None = None
     breadth_queue_artifact: Path | None = None
     breadth_holdout_artifact: Path | None = None
+    depth_target_artifact: Path | None = None
     training_metrics_artifact: Path | None = None
     evaluation_artifact: Path | None = None
     candidate_replay_artifact: Path | None = None
@@ -183,6 +192,7 @@ class ResearchJobResult:
         GpuTrainingSmokeResult
         | BoundedCandidateBreadthHoldoutResult
         | BoundedCandidateBreadthQueueResult
+        | BoundedCandidateDepthComparisonResult
         | BoundedCandidateDepthTargetResult
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
@@ -266,6 +276,7 @@ def _run_job_kind(
     GpuTrainingSmokeResult
     | BoundedCandidateBreadthHoldoutResult
     | BoundedCandidateBreadthQueueResult
+    | BoundedCandidateDepthComparisonResult
     | BoundedCandidateDepthTargetResult
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
@@ -315,6 +326,20 @@ def _run_job_kind(
             else "prepared_not_breadth_holdout_replayed"
         )
         return holdout, holdout.holdout_artifact, None, status
+    if spec.kind == "candidate_depth_comparison":
+        comparison = run_bounded_candidate_depth_comparison(
+            config=CandidateDepthComparisonConfig(run_id=spec.job_id),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            depth_target_artifact=spec.depth_target_artifact,
+            breadth_holdout_artifact=spec.breadth_holdout_artifact,
+        )
+        status = (
+            "completed"
+            if comparison.status == "candidate_depth_compared_only"
+            else "prepared_not_depth_compared"
+        )
+        return comparison, comparison.comparison_artifact, None, status
     if spec.kind == "candidate_depth_target":
         depth = run_bounded_candidate_depth_target(
             config=CandidateDepthTargetConfig(
@@ -580,6 +605,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidate-artifact", type=Path)
     parser.add_argument("--breadth-queue-artifact", type=Path)
     parser.add_argument("--breadth-holdout-artifact", type=Path)
+    parser.add_argument("--depth-target-artifact", type=Path)
     parser.add_argument("--training-metrics-artifact", type=Path)
     parser.add_argument("--evaluation-artifact", type=Path)
     parser.add_argument("--candidate-replay-artifact", type=Path)
@@ -610,6 +636,7 @@ def main() -> None:
         candidate_artifact=args.candidate_artifact,
         breadth_queue_artifact=args.breadth_queue_artifact,
         breadth_holdout_artifact=args.breadth_holdout_artifact,
+        depth_target_artifact=args.depth_target_artifact,
         training_metrics_artifact=args.training_metrics_artifact,
         evaluation_artifact=args.evaluation_artifact,
         candidate_replay_artifact=args.candidate_replay_artifact,
@@ -709,6 +736,37 @@ def _research_job_payload(
                 "recommendation": None,
                 "promotion_gate": False,
                 "mode": "descriptive_breadth_holdout_only",
+            },
+        }
+    elif isinstance(training, BoundedCandidateDepthComparisonResult):
+        base["source_depth_target_artifact"] = (
+            None
+            if training.source_depth_target_artifact is None
+            else str(training.source_depth_target_artifact)
+        )
+        base["source_breadth_holdout_artifact"] = (
+            None
+            if training.source_breadth_holdout_artifact is None
+            else str(training.source_breadth_holdout_artifact)
+        )
+        base["candidate_depth_comparison"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "selected_variant_id": training.selected_variant_id,
+            "selected_variant_count": training.selected_variant_count,
+            "input_variant_count": training.input_variant_count,
+            "artifact_verification": training.artifact_verification,
+            "breadth_evidence": training.breadth_evidence,
+            "depth_evidence": training.depth_evidence,
+            "deltas": training.deltas,
+            "metrics": training.metrics,
+            "selection": {
+                "mode": "research_comparison_only",
+                "selected_variant_id": training.selected_variant_id,
+                "selected_variant_count": training.selected_variant_count,
+                "winner": None,
+                "recommendation": None,
+                "promotion_gate": False,
             },
         }
     elif isinstance(training, BoundedCandidateDepthTargetResult):
@@ -1011,6 +1069,8 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         return {"candidate_breadth_holdout": str(result.training_artifact)}
     if isinstance(result.training, BoundedCandidateBreadthQueueResult):
         return {"candidate_breadth_queue": str(result.training_artifact)}
+    if isinstance(result.training, BoundedCandidateDepthComparisonResult):
+        return {"candidate_depth_comparison": str(result.training_artifact)}
     if isinstance(result.training, BoundedCandidateDepthTargetResult):
         artifacts = {"candidate_depth_target": str(result.training_artifact)}
         if result.training.candidate_artifact is not None:

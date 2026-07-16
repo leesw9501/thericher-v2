@@ -29,21 +29,21 @@
 
 ## Active Queue
 
-1. Compare the bounded depth target artifact against the selected candidate's
-   source breadth-holdout evidence.
-2. Keep short-experiment breadth and longer depth queues visible, but do not
-   call either path a production recommendation.
-3. Use the comparison to decide the next bounded GPU research job without
-   adding a promotion gate or scheduler framework.
+1. Use the depth-vs-breadth comparison as scheduling evidence for a capped
+   fill-aware threshold rerun.
+2. Keep short experiments for breadth and longer candidate training for depth
+   visible as separate queues.
+3. Do not call either path a production recommendation, promotion, or pass/fail
+   result.
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-depth-target-mini-smoke`, status
-  `completed`, selected variant `m1_lb3_b10_s10`, Docker `research` backend
-  `torch`, GPU `NVIDIA GeForce RTX 4090`, source/holdout examples `348`,
-  holdout local-paper fills `347`, all fills verified `local_paper`, artifacts
-  under
-  `D:\thericher-v2\model-artifacts\candidate-depth-target\bounded-candidate-depth-target-mini-smoke`.
+- Last completed: `bounded-candidate-depth-comparison-mini-smoke`, status
+  `completed`, selected variant `m1_lb3_b10_s10`, depth-vs-breadth fill delta
+  `+238`, PnL floor delta `-1.88549816894531`, max drawdown delta
+  `+1.63869877929687`, all referenced artifacts present, all simulated fills
+  verified `local_paper`, artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-depth-comparison\bounded-candidate-depth-comparison-mini-smoke`.
 
 ## Done Recently
 
@@ -128,10 +128,14 @@
   `research_scheduling_only` heuristic, retrained/evaluated/calibrated/holdout
   replayed it under deeper bounded caps, produced `347` holdout local-paper
   fills, and recorded no winner or promotion gate.
+- Added the first bounded depth-vs-breadth comparison. The Docker `research`
+  smoke consumed existing external artifacts only, compared selected candidate
+  evidence, recorded fill/PnL/drawdown/probability/cap deltas, and stayed
+  `research_comparison_only` with no winner or promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should compare the depth target artifact against the
-  source breadth holdout evidence before starting broader scheduling or
-  claiming robust model quality.
+  engine-research task should use the depth comparison artifact to define a
+  small fill-aware threshold rerun before starting broader scheduling or claiming
+  robust model quality.
