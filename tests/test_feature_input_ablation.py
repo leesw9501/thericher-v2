@@ -15,6 +15,7 @@ from thericher_v2.research.feature_input_ablation import (
     FeatureInputAblationConfig,
     _binary_classification_metrics,
     _descriptive_evaluation_payload,
+    _probability_band_diagnostics,
     _resolve_lineage_path,
     _unique_signal_descriptive_evaluation,
     run_bounded_feature_input_ablation,
@@ -359,6 +360,9 @@ def test_feature_input_ablation_auc_ties_and_single_class_groups() -> None:
     assert payload["unique_signal_descriptive_evaluation"]["context"][
         "scored_unique_signal_count"
     ] == 0
+    bands = payload["unique_signal_descriptive_evaluation"]["probability_band_diagnostics"]
+    assert bands["context"]["skip_reason"] == "no_scored_unique_signals"
+    assert bands["bands"] == {}
 
 
 def test_feature_input_ablation_unique_signal_mean_collapse_is_deterministic() -> None:
@@ -411,6 +415,66 @@ def test_feature_input_ablation_unique_signal_mixed_labels_are_reported() -> Non
     assert payload["overall"]["balanced_accuracy"] is None
     assert payload["overall"]["auc"] is None
     assert payload["overall"]["skip_reason"] == "single_class"
+    assert payload["probability_band_diagnostics"]["context"][
+        "skip_reason"
+    ] == "insufficient_signals"
+
+
+def test_feature_input_ablation_probability_bands_are_deterministic() -> None:
+    labels = (0, 0, 1, 0, 1, 1)
+    probabilities = (0.10, 0.20, 0.30, 0.70, 0.80, 0.90)
+    metadata = (
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        _unique_signal_metadata("slice_a", "AAA", "2026-01-02T14:32:00+00:00", "3", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:30:00+00:00", "1", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:31:00+00:00", "2", "t01"),
+        _unique_signal_metadata("slice_b", "BBB", "2026-01-02T14:32:00+00:00", "3", "t01"),
+    )
+
+    bands = _probability_band_diagnostics(
+        labels=labels,
+        probabilities=probabilities,
+        row_metadata=metadata,
+    )
+    reversed_bands = _probability_band_diagnostics(
+        labels=tuple(reversed(labels)),
+        probabilities=tuple(reversed(probabilities)),
+        row_metadata=tuple(reversed(metadata)),
+    )
+
+    assert bands == reversed_bands
+    assert bands["policy"]["family"] == "global_rank_tertile"
+    assert bands["policy"]["per_slice_edges"] is False
+    assert bands["policy"]["threshold_search"] is False
+    assert bands["scope"]["band_selection"] == "none"
+    assert bands["context"]["overall_adverse_or_no_lift_rate"] == "0.500000"
+    assert bands["bands"]["tertile_1_low_probability"]["adverse_or_no_lift_rate"] == "0.000000"
+    assert bands["bands"]["tertile_1_low_probability"][
+        "lift_vs_overall_adverse_or_no_lift_rate"
+    ] == "0.000000"
+    assert bands["bands"]["tertile_2_mid_probability"]["adverse_or_no_lift_rate"] == "0.500000"
+    assert bands["bands"]["tertile_3_high_probability"]["adverse_or_no_lift_rate"] == "1.000000"
+    assert bands["bands"]["tertile_3_high_probability"][
+        "lift_vs_overall_adverse_or_no_lift_rate"
+    ] == "2.000000"
+    assert bands["bands"]["tertile_3_high_probability"]["by_slice"]["slice_b"]["count"] == 2
+
+
+def test_feature_input_ablation_probability_bands_skip_degenerate_scores() -> None:
+    bands = _probability_band_diagnostics(
+        labels=(1, 0, 1),
+        probabilities=(0.50, 0.50, 0.50),
+        row_metadata=(
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:30:00+00:00", "1", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:31:00+00:00", "2", "t01"),
+            _unique_signal_metadata("unit", "AAA", "2026-01-02T14:32:00+00:00", "3", "t01"),
+        ),
+    )
+
+    assert bands["context"]["skip_reason"] == "tied_probabilities"
+    assert bands["context"]["scored_unique_signal_count"] == 3
+    assert bands["bands"] == {}
 
 
 def test_feature_input_ablation_rejects_repo_artifact_root(tmp_path) -> None:

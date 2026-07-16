@@ -883,6 +883,11 @@
   `0.598074`, with slice AUCs `0.598034` on `src_adbe`, `0.517943` on
   `hold_aem`, and `0.678744` on `hold_amat`; balanced accuracy stayed
   `0.500000` under the default threshold.
+- Unique-signal probability-band diagnostic used global rank tertiles over the
+  same `256` scored unique signals. Raw pre-entry adverse/no-lift rates were
+  `0.488372`, `0.517647`, and `0.694118`; the high tertile had rates
+  `0.676471` on `src_adbe`, `0.625000` on `hold_aem`, and `0.777778` on
+  `hold_amat`.
 
 ## Next Handoff
 
@@ -890,9 +895,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another deep training block, inspect deterministic probability bands
-  over unique signals so the raw pre-entry ranking evidence can be checked for
-  monotonicity and slice stability without selecting a threshold.
+- Before another deep training block, explain which raw pre-entry features
+  characterize the high adverse/no-lift tertile across slices.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

@@ -1088,6 +1088,11 @@ def _unique_signal_descriptive_evaluation(
             score_spans=score_spans,
         ),
         "overall": overall,
+        "probability_band_diagnostics": _probability_band_diagnostics(
+            labels=unique_labels,
+            probabilities=unique_probabilities,
+            row_metadata=unique_metadata,
+        ),
         "by_slice": _grouped_scored_metrics(
             labels=unique_labels,
             probabilities=unique_probabilities,
@@ -1097,6 +1102,183 @@ def _unique_signal_descriptive_evaluation(
         "delta_vs_row_level": _metric_delta_payload(
             row_level_metrics or _binary_classification_metrics(labels, probabilities),
             overall,
+        ),
+    }
+
+
+def _probability_band_diagnostics(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    band_count: int = 3,
+) -> dict[str, Any]:
+    if len(labels) != len(probabilities) or len(labels) != len(row_metadata):
+        raise ValueError("labels, probabilities, and row_metadata must have the same length")
+    if band_count != 3:
+        raise ValueError("only rank tertile diagnostics are supported")
+
+    label_tuple = tuple(int(label) for label in labels)
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    row_count = len(label_tuple)
+    skip_reason: str | None = None
+    if row_count == 0:
+        skip_reason = "no_scored_unique_signals"
+    elif row_count < band_count:
+        skip_reason = "insufficient_signals"
+    elif len(set(probability_tuple)) == 1:
+        skip_reason = "tied_probabilities"
+    if skip_reason is not None:
+        return {
+            "scope": {
+                "in_sample": True,
+                "descriptive_only": True,
+                "band_selection": "none",
+            },
+            "policy": _probability_band_policy(band_count),
+            "context": {
+                "scored_unique_signal_count": row_count,
+                "band_count": band_count,
+                "skip_reason": skip_reason,
+            },
+            "bands": {},
+        }
+
+    ordered_indexes = sorted(
+        range(row_count),
+        key=lambda index: (
+            probability_tuple[index],
+            _unique_signal_key(row_metadata[index]) or ("", "", "", ""),
+        ),
+    )
+    band_indexes: dict[str, list[int]] = {
+        "tertile_1_low_probability": [],
+        "tertile_2_mid_probability": [],
+        "tertile_3_high_probability": [],
+    }
+    band_ids = tuple(band_indexes)
+    for rank, original_index in enumerate(ordered_indexes):
+        band_id = band_ids[min(band_count - 1, (rank * band_count) // row_count)]
+        band_indexes[band_id].append(original_index)
+
+    overall_adverse_rate = _label_rate(label_tuple, 1)
+    return {
+        "scope": {
+            "in_sample": True,
+            "descriptive_only": True,
+            "band_selection": "none",
+        },
+        "policy": _probability_band_policy(band_count),
+        "context": {
+            "scored_unique_signal_count": row_count,
+            "band_count": band_count,
+            "skip_reason": None,
+            "overall_adverse_or_no_lift_rate": _format_metric_float(overall_adverse_rate),
+            **_probability_tie_context(probability_tuple),
+        },
+        "bands": {
+            band_id: _probability_band_summary(
+                labels=[label_tuple[index] for index in indexes],
+                probabilities=[probability_tuple[index] for index in indexes],
+                row_metadata=[row_metadata[index] for index in indexes],
+                overall_adverse_rate=overall_adverse_rate,
+            )
+            for band_id, indexes in band_indexes.items()
+        },
+    }
+
+
+def _probability_band_policy(band_count: int) -> dict[str, Any]:
+    return {
+        "family": "global_rank_tertile",
+        "band_count": band_count,
+        "assignment": "sort_by_probability_then_signal_key",
+        "edges": "observed_rank_edges",
+        "per_slice_edges": False,
+        "threshold_search": False,
+    }
+
+
+def _probability_band_summary(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    overall_adverse_rate: float | None,
+) -> dict[str, Any]:
+    label_tuple = tuple(int(label) for label in labels)
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    band_adverse_rate = _label_rate(label_tuple, 1)
+    return {
+        "count": len(label_tuple),
+        "label_counts": _label_counts(label_tuple),
+        "adverse_or_no_lift_rate": _format_metric_float(band_adverse_rate),
+        "lift_vs_overall_adverse_or_no_lift_rate": _format_metric_float(
+            _safe_divide(band_adverse_rate, overall_adverse_rate)
+            if band_adverse_rate is not None and overall_adverse_rate is not None
+            else None
+        ),
+        "probability_min": _format_metric_float(
+            min(probability_tuple) if probability_tuple else None
+        ),
+        "probability_max": _format_metric_float(
+            max(probability_tuple) if probability_tuple else None
+        ),
+        "probability_mean": _format_metric_float(
+            _safe_divide(sum(probability_tuple), len(probability_tuple))
+        ),
+        "by_slice": _probability_band_slice_summaries(
+            labels=label_tuple,
+            probabilities=probability_tuple,
+            row_metadata=row_metadata,
+            overall_adverse_rate=overall_adverse_rate,
+        ),
+    }
+
+
+def _probability_band_slice_summaries(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    row_metadata: Sequence[dict[str, str]],
+    overall_adverse_rate: float | None,
+) -> dict[str, Any]:
+    grouped: dict[str, list[int]] = {}
+    for index, metadata in enumerate(row_metadata):
+        grouped.setdefault(metadata.get("slice_id") or "missing", []).append(index)
+    return {
+        slice_id: _probability_band_slice_summary(
+            labels=[labels[index] for index in indexes],
+            probabilities=[probabilities[index] for index in indexes],
+            overall_adverse_rate=overall_adverse_rate,
+        )
+        for slice_id, indexes in sorted(grouped.items())
+    }
+
+
+def _probability_band_slice_summary(
+    *,
+    labels: Sequence[int],
+    probabilities: Sequence[float],
+    overall_adverse_rate: float | None,
+) -> dict[str, Any]:
+    label_tuple = tuple(int(label) for label in labels)
+    probability_tuple = tuple(float(probability) for probability in probabilities)
+    adverse_rate = _label_rate(label_tuple, 1)
+    return {
+        "count": len(label_tuple),
+        "label_counts": _label_counts(label_tuple),
+        "adverse_or_no_lift_rate": _format_metric_float(adverse_rate),
+        "lift_vs_overall_adverse_or_no_lift_rate": _format_metric_float(
+            _safe_divide(adverse_rate, overall_adverse_rate)
+            if adverse_rate is not None and overall_adverse_rate is not None
+            else None
+        ),
+        "probability_min": _format_metric_float(
+            min(probability_tuple) if probability_tuple else None
+        ),
+        "probability_max": _format_metric_float(
+            max(probability_tuple) if probability_tuple else None
         ),
     }
 
@@ -1411,6 +1593,15 @@ def _metric_delta_payload(
 
 def _metric_value(value: Any) -> float | None:
     return _as_float(value)
+
+
+def _probability_tie_context(probabilities: Sequence[float]) -> dict[str, int]:
+    counts = Counter(probabilities)
+    tied_groups = [count for count in counts.values() if count > 1]
+    return {
+        "tie_group_count": len(tied_groups),
+        "tied_score_count": sum(tied_groups),
+    }
 
 
 def _safe_divide(numerator: float, denominator: float) -> float | None:

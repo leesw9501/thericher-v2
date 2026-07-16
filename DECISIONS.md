@@ -920,3 +920,18 @@ independent than it is. Keeping unique-signal metrics inside the existing
 artifact exposes that structure without adding a new job family, report, gate,
 scheduler, dashboard, broker/KIS surface, credential path, replay mutation,
 local/base PyTorch dependency, or model-promotion semantics.
+
+## 2026-07-17 - Unique-signal probability-band diagnostics
+
+Decision: extend the unique-signal feature-input evaluation with one
+descriptive probability-band diagnostic family: global rank tertiles over
+scored unique signals. Band edges are assigned by deterministic sorting on
+probability and signal key, reused for per-slice summaries, and never searched
+or used as a trading threshold.
+
+Reason: raw pre-entry unique-signal AUC suggested ranking evidence, but AUC
+alone does not show whether adverse/no-lift concentration is monotonic or
+slice-stable. One global tertile diagnostic makes that structure visible while
+avoiding threshold search, per-slice fitting, broker/KIS behavior, credential
+paths, replay mutation, report/gate sprawl, dashboards, schedulers, and
+model-promotion semantics.

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Add a bounded unique-signal probability-band diagnostic for TheRicher v2.
+Add a bounded raw pre-entry band-attribution diagnostic for TheRicher v2.
 
 This advances feature/model research and backtest/walk-forward validation by
-checking whether the raw pre-entry unique-signal scores show deterministic band
-separation across slices before any deeper model training or threshold
-experiment.
+explaining which raw pre-entry features characterize the high adverse/no-lift
+unique-signal tertile before any deeper model training, threshold experiment,
+or replay change.
 
 ## Hard Boundaries
 
@@ -29,6 +29,7 @@ experiment.
   diagnostic rows labeled with `source: diagnostic_overlay`.
 - Do not call any band, threshold, model, slice, or feature group selected,
   passed, promoted, production ready, or live ready.
+- Do not convert a diagnostic tertile into an execution filter or order intent.
 
 ## Required First Reads
 
@@ -57,10 +58,10 @@ experiment.
 
 ## Current Evidence To Consume
 
+- Probability-band ablation artifact:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-probability-bands-cross-slice-20260717-r1\metrics.json`
 - Unique-signal ablation artifact:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-unique-signal-cross-slice-20260717-r1\metrics.json`
-- Slice-aware ablation artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-slice-aware-cross-slice-20260717-r1\metrics.json`
 - Source stability artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`
 
@@ -68,32 +69,31 @@ experiment.
 
 1. Keep the change inside the existing feature-input ablation helper/job unless
    there is a strong reason not to.
-2. Add deterministic probability-band diagnostics for unique signals, using the
-   already defined unique signal key and mean-probability aggregation.
-3. Use fixed, descriptive bands such as tertiles or quartiles. Do not search for
-   a threshold and do not choose a band for trading.
-4. For each feature group, report band counts, label rates, adverse/no-lift
-   lift versus overall unique-signal rate, and per-slice band summaries.
-5. Preserve existing selected-row, full-row, row-level, slice-aware, and
-   unique-signal behavior.
-6. Keep metric names descriptive/in-sample; do not imply held-out promotion or
+2. For raw pre-entry feature groups, add descriptive feature summaries by
+   unique-signal probability tertile: counts, medians, means, min/max, and
+   per-slice summaries for each raw pre-entry feature.
+3. Compare high-tertile raw feature summaries against the overall unique-signal
+   population and the low tertile. Keep the comparison descriptive; do not
+   search thresholds or choose a feature rule.
+4. Preserve existing selected-row, full-row, row-level, slice-aware,
+   unique-signal, and probability-band behavior.
+5. Keep metric names descriptive/in-sample; do not imply held-out promotion or
    live readiness.
-7. Add focused tests proving:
+6. Add focused tests proving:
    - selected mode behavior is unchanged,
-   - incomplete signal keys skip band scoring rather than collapsing together,
-   - band assignment is deterministic under reversed row order,
-   - mixed-label signals are reported and skipped from primary band scoring,
-   - single-class or tiny bands do not crash,
+   - incomplete signal keys skip attribution rather than collapsing together,
+   - feature attribution is deterministic under reversed row order,
+   - mixed-label signals are reported and skipped from primary attribution,
    - local-paper fills remain evidence only,
    - artifacts are outside Git or mocked in tests.
-8. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research for band interpretation,
+7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research for attribution interpretation,
    - Execution/Review for source separation and sprawl,
    - Infra/Data for artifact and data-boundary checks.
-9. If band metrics need trained per-row scores in the artifact, run exactly one
-   bounded Docker `research` PyTorch CUDA job. Otherwise keep it CPU/artifact-only
-   and explain why.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. If feature attribution needs trained per-row scores in the artifact, run
+   exactly one bounded Docker `research` PyTorch CUDA job. Otherwise keep it
+   CPU/artifact-only and explain why.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -121,7 +121,7 @@ Also report any focused CPU smoke, Docker `research`, or GPU command used.
 
 ## Suggested Commit Message
 
-`Add unique-signal probability band diagnostics`
+`Add raw pre-entry band attribution`
 
 ## Completion Report
 

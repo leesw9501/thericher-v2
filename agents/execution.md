@@ -342,6 +342,9 @@
 - Unique-signal feature-input evaluation reran no execution and changed no
   local-paper behavior. It collapsed only diagnostic rows for metric context;
   the `592` local-paper fills remained source evidence only.
+- Unique-signal probability-band diagnostic reran no execution and changed no
+  local-paper behavior. Bands were descriptive diagnostics over
+  `source: diagnostic_overlay` rows only.
 
 ## Next Handoff
 
@@ -359,3 +362,5 @@
   diagnostic rows into fills or order intents.
 - Probability-band diagnostics should still avoid replay and must not become
   order thresholds or order intents.
+- Raw pre-entry band attribution should still avoid replay and must not turn
+  a diagnostic tertile into an order filter.

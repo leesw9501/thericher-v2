@@ -492,13 +492,18 @@
   descriptive metrics and did not add a report family, gate, dashboard,
   scheduler, coordinator, durable worker, broker path, credential path, replay
   mutation, broad sweep, or model-promotion language.
+- Unique-signal probability-band diagnostic stayed inside the existing
+  feature-input ablation helper/job payload. It added one global tertile
+  diagnostic family and did not add a report family, gate, dashboard,
+  scheduler, coordinator, durable worker, broker path, credential path, replay
+  mutation, threshold search, broad sweep, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward probability-band diagnostics over the same unique
-  signals before any deeper GPU block. Keep coordination evidence small and
-  avoid daemon, scheduler, dashboard, report branch, broker, credential,
-  auto-commit, durable multi-agent-platform behavior, or model-promotion
+- Push the next task toward raw pre-entry band attribution before any deeper GPU
+  block. Keep coordination evidence small and avoid daemon, scheduler,
+  dashboard, report branch, broker, credential, auto-commit,
+  durable multi-agent-platform behavior, threshold search, or model-promotion
   language.

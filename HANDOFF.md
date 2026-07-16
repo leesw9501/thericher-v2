@@ -1230,6 +1230,43 @@ feature-input ablation payload. The goal is to see whether raw pre-entry scores
 show monotonic or slice-stable label separation across deterministic bands
 before any deeper model training or threshold experiment.
 
+The unique-signal probability-band diagnostic then completed:
+
+- It extended each feature group's `unique_signal_descriptive_evaluation` with
+  `probability_band_diagnostics`.
+- Band policy is global rank tertiles only. Bands are assigned by deterministic
+  `(probability, signal_key)` ordering over scored unique signals, then reused
+  for per-slice summaries. There is no band choice, threshold search, replay
+  mutation, broker/KIS path, credential read, report family, scheduler,
+  dashboard, durable worker, or promotion semantic.
+- Claude drift-check completed and advised tertiles only, global edges, and
+  descriptive naming. Engine Research, Execution/Review, and Data/Infra
+  sidecars agreed to keep this inside the existing helper/job payload.
+- Focused tests cover incomplete signal-key skips, deterministic reversed-order
+  band assignment, degenerate tied-probability skips, source separation, and
+  existing artifact/path guards.
+- Docker `research` PyTorch CUDA ran once on NVIDIA GeForce RTX 4090 and wrote:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-probability-bands-cross-slice-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\bounded-feature-input-ablation-probability-bands-cross-slice-20260717-r1\feature_input_ablation.pt`.
+- The run used `659` diagnostic rows, `256` scored unique signals, zero missing
+  signal keys, zero mixed-label signals, and preserved `592` upstream
+  `source: local_paper` fills as evidence only.
+- Raw pre-entry unique-signal adverse/no-lift rates by global tertile were
+  `0.488372`, `0.517647`, and `0.694118`, with high-tertile lift `1.225477`
+  versus the overall unique rate `0.566406`.
+- Raw pre-entry high-tertile rates by slice were `0.676471` on `src_adbe`,
+  `0.625000` on `hold_aem`, and `0.777778` on `hold_amat`. Baseline
+  probability-meta tertiles were flat, and combined raw-plus-probability
+  tertiles were not monotonic.
+- Read this as descriptive in-sample ranking evidence only. It does not select
+  a trading band or threshold.
+
+Next, add a bounded raw pre-entry band feature-attribution diagnostic. The goal
+is to explain which raw pre-entry features characterize the high adverse/no-lift
+tertile across slices before any deeper training, threshold experiment, or
+replay change.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
