@@ -25,8 +25,7 @@
 
 ## Active Queue
 
-1. Review the next attribution-informed threshold band rerun for bounded scope
-   and artifact sprawl.
+1. Review the next feature/model branch for bounded scope and artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -107,6 +106,10 @@
   reran no training, inference, or local-paper execution, and did not emit a
   best threshold, promotion gate, dashboard, scheduler, or autonomous agent
   process.
+- Attribution-informed threshold band rerun added one thin wrapper around the
+  existing holdout/robustness/local-paper path, closed the immediate
+  threshold-only loop, and did not emit a best threshold, promotion gate,
+  dashboard, scheduler, or autonomous agent process.
 
 ## Next Handoff
 

@@ -164,6 +164,12 @@ Implemented and pushed:
   per-slice/per-threshold opportunity counts and local-paper fill counts, and
   explains the strict grid as above the observed buy-probability range without
   rerunning training, selecting a winner, or adding a promotion gate,
+- bounded attribution-informed threshold band rerun; it consumes the external
+  attribution artifact, derives a capped source-calibration band inside the
+  observed probability range, replays existing holdout traces through the
+  proven local-paper path, records `247` local-paper fills across 12 variants,
+  and closes the threshold-only loop as descriptive evidence rather than a
+  model-quality decision,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -184,7 +190,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `177 passed`
+- `183 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -228,15 +234,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded attribution-informed threshold band rerun:
+Add a bounded feature/model branch target after threshold loop closure:
 
-1. consume the external threshold attribution artifact,
-2. derive a small exploratory threshold band inside the observed probability
-   range without calling it best or recommended,
-3. replay only through the existing local-paper path using existing traces and
-   local Yahoo snapshots where possible,
-4. record fills, PnL, drawdown, and source verification descriptively,
-5. keep the result out of production promotion, scheduler, and dashboard scope.
+1. consume the external threshold band rerun artifact,
+2. treat the current threshold-only loop as closed unless a new feature/model
+   branch changes the probability distribution,
+3. add one small feature/model branch target that can improve probability
+   separation before another replay sweep,
+4. keep PyTorch confined to Docker `research` and artifacts outside Git,
+5. keep the result descriptive, with no production promotion, scheduler, or
+   dashboard expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

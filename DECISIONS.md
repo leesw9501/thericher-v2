@@ -510,3 +510,19 @@ band sat above the observed holdout probability range. Explaining that from
 existing artifacts is enough before trying another bounded band; rerunning
 training, inference, broker execution, dashboards, schedulers, or report/gate
 machinery would add process before evidence.
+
+## 2026-07-16 - Bounded attribution-informed threshold band rerun
+
+Decision: add a thin `candidate_threshold_band_rerun` helper and research job
+kind. It reads the zero-fill attribution artifact and its rerun lineage,
+derives a capped exploratory band from source calibration thresholds below the
+observed probability ceiling, then reuses the existing threshold holdout,
+robustness, probability-trace, and local-paper replay path. The output is
+`research_threshold_band_rerun_only` and records no winner, recommendation,
+pass/fail decision, scheduler, or promotion gate.
+
+Reason: one bounded inside-range replay closes the threshold-only loop by
+showing that the candidate can generate local-paper fills again, but the
+slice-level PnL/drawdown evidence is mixed. Further progress should branch to
+feature/model research rather than repeatedly adjusting thresholds around the
+same compressed probability distribution.

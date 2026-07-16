@@ -105,6 +105,10 @@ docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Do
 docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-attribution-mini-smoke --kind candidate_threshold_attribution --threshold-rerun-artifact /app/model_artifacts/candidate-threshold-rerun/bounded-candidate-threshold-rerun-mini-smoke/metrics.json
 ```
 
+```powershell
+docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-band-rerun-mini-smoke --kind candidate_threshold_band_rerun --threshold-attribution-artifact /app/model_artifacts/candidate-threshold-attribution/bounded-candidate-threshold-attribution-mini-smoke/metrics.json
+```
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

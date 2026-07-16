@@ -75,6 +75,9 @@
 - Zero-fill threshold attribution reran no execution, preserved existing
   local-paper verification, and attributed the zero fills to thresholds above
   observed buy opportunities.
+- Attribution-informed threshold band rerun replayed 12 threshold variants
+  through local paper, produced `247` fills, and verified every fill source was
+  `local_paper`.
 
 ## Next Handoff
 

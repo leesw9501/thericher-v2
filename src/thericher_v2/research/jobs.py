@@ -56,6 +56,11 @@ from .candidate_threshold_attribution import (
     CandidateThresholdAttributionConfig,
     run_bounded_candidate_threshold_attribution,
 )
+from .candidate_threshold_band_rerun import (
+    BoundedCandidateThresholdBandRerunResult,
+    CandidateThresholdBandRerunConfig,
+    run_bounded_candidate_threshold_band_rerun,
+)
 from .candidate_threshold_calibration import (
     BoundedCandidateThresholdCalibrationResult,
     CandidateThresholdCalibrationConfig,
@@ -120,6 +125,7 @@ ResearchJobKind = Literal[
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
     "candidate_threshold_attribution",
+    "candidate_threshold_band_rerun",
     "candidate_threshold_rerun",
 ]
 ResearchJobStatus = Literal[
@@ -137,6 +143,7 @@ ResearchJobStatus = Literal[
     "prepared_not_calibrated",
     "prepared_not_holdout_replayed",
     "prepared_not_threshold_attributed",
+    "prepared_not_threshold_band_reran",
     "prepared_not_threshold_reran",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
@@ -155,6 +162,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_threshold_calibration",
     "candidate_threshold_holdout",
     "candidate_threshold_attribution",
+    "candidate_threshold_band_rerun",
     "candidate_threshold_rerun",
 )
 
@@ -183,6 +191,7 @@ class ResearchJobSpec:
     sell_threshold: float = 0.45
     data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
+    threshold_attribution_artifact: Path | None = None
     threshold_rerun_artifact: Path | None = None
     robustness_slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
@@ -220,6 +229,7 @@ class ResearchJobResult:
         | BoundedCandidateThresholdCalibrationResult
         | BoundedCandidateThresholdHoldoutResult
         | BoundedCandidateThresholdAttributionResult
+        | BoundedCandidateThresholdBandRerunResult
         | BoundedCandidateThresholdRerunResult
     )
     training_artifact: Path
@@ -306,6 +316,7 @@ def _run_job_kind(
     | BoundedCandidateThresholdCalibrationResult
     | BoundedCandidateThresholdHoldoutResult
     | BoundedCandidateThresholdAttributionResult
+    | BoundedCandidateThresholdBandRerunResult
     | BoundedCandidateThresholdRerunResult,
     Path,
     Path | None,
@@ -627,6 +638,23 @@ def _run_job_kind(
             else "prepared_not_threshold_attributed"
         )
         return attribution, attribution.attribution_artifact, None, status
+    if spec.kind == "candidate_threshold_band_rerun":
+        band_rerun = run_bounded_candidate_threshold_band_rerun(
+            config=CandidateThresholdBandRerunConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            threshold_attribution_artifact=spec.threshold_attribution_artifact,
+            gpu=gpu,
+        )
+        status = (
+            "completed"
+            if band_rerun.status == "candidate_threshold_band_rerun_replayed_only"
+            else "prepared_not_threshold_band_reran"
+        )
+        return band_rerun, band_rerun.band_rerun_artifact, None, status
     raise ValueError(f"unsupported research job kind: {spec.kind}")
 
 
@@ -675,6 +703,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--sell-threshold", type=float, default=0.45)
     parser.add_argument("--data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
+    parser.add_argument("--threshold-attribution-artifact", type=Path)
     parser.add_argument("--threshold-rerun-artifact", type=Path)
     parser.add_argument("--robustness-slice", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
@@ -707,6 +736,7 @@ def main() -> None:
         sell_threshold=args.sell_threshold,
         data_slices=parse_candidate_data_slices(args.data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
+        threshold_attribution_artifact=args.threshold_attribution_artifact,
         threshold_rerun_artifact=args.threshold_rerun_artifact,
         robustness_slices=parse_robustness_slices(args.robustness_slice),
     )
@@ -1175,6 +1205,34 @@ def _research_job_payload(
                 "promotion_gate": False,
             },
         }
+    elif isinstance(training, BoundedCandidateThresholdBandRerunResult):
+        base["source_threshold_attribution_artifact"] = (
+            None
+            if training.source_attribution_artifact is None
+            else str(training.source_attribution_artifact)
+        )
+        base["source_threshold_rerun_artifact"] = (
+            None
+            if training.source_threshold_rerun_artifact is None
+            else str(training.source_threshold_rerun_artifact)
+        )
+        base["candidate_threshold_band_rerun"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "selected_variant_id": training.selected_variant_id,
+            "threshold_derivation": training.threshold_derivation,
+            "artifact_verification": training.artifact_verification,
+            "slice_count": training.slice_count,
+            "completed_slice_count": training.completed_slice_count,
+            "holdout_slices": training.holdout_slices,
+            "metrics": training.metrics,
+            "local_paper_verification": training.local_paper_verification,
+            "result_scope": {
+                "mode": "research_threshold_band_rerun_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
+        }
     return to_jsonable(base)
 
 
@@ -1310,6 +1368,31 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         if result.training.source_robustness_artifact is not None:
             artifacts["source_robustness"] = str(
                 result.training.source_robustness_artifact
+            )
+        if result.training.source_calibration_artifact is not None:
+            artifacts["source_calibration"] = str(
+                result.training.source_calibration_artifact
+            )
+        return artifacts
+    if isinstance(result.training, BoundedCandidateThresholdBandRerunResult):
+        artifacts = {
+            "candidate_threshold_band_rerun": str(result.training_artifact),
+        }
+        if result.training.holdout_artifact is not None:
+            artifacts["candidate_threshold_holdout"] = str(
+                result.training.holdout_artifact
+            )
+        if result.training.robustness_artifact is not None:
+            artifacts["candidate_threshold_robustness"] = str(
+                result.training.robustness_artifact
+            )
+        if result.training.source_attribution_artifact is not None:
+            artifacts["source_threshold_attribution"] = str(
+                result.training.source_attribution_artifact
+            )
+        if result.training.source_threshold_rerun_artifact is not None:
+            artifacts["source_threshold_rerun"] = str(
+                result.training.source_threshold_rerun_artifact
             )
         if result.training.source_calibration_artifact is not None:
             artifacts["source_calibration"] = str(

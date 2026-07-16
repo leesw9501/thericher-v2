@@ -103,12 +103,15 @@
 - Bounded zero-fill threshold attribution consumed existing external rerun,
   robustness, calibration, and probability trace artifacts; no additional data
   was acquired.
+- Bounded attribution-informed threshold band rerun reused existing CVS, FCX,
+  and KO holdout Yahoo snapshots plus existing probability traces; no
+  additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next attribution-informed threshold band rerun should reuse existing traces
-  and Yahoo snapshots before acquiring anything new.
+- Next feature/model branch should start from existing CVS, FCX, and KO slices
+  before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

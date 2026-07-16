@@ -112,6 +112,10 @@
   existing `/app/model_artifacts` rerun, robustness, calibration, and trace
   artifacts only, and wrote attribution plus research job artifacts under
   `/app/model_artifacts`.
+- Bounded attribution-informed threshold band rerun ran in Docker `research`,
+  reused existing `/app/model_artifacts` traces and `/app/market_data` holdout
+  slices, and wrote band rerun, holdout, robustness, and research job artifacts
+  under `/app/model_artifacts`.
 
 ## Next Handoff
 

@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run a bounded attribution-informed threshold band rerun inside the observed
-   probability range.
+1. Branch to a bounded feature/model target; do not keep iterating thresholds
+   around the same compressed probability distribution.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -38,12 +38,11 @@
 
 ## Running Jobs
 
-- Last completed: `bounded-candidate-threshold-attribution-mini-smoke`, status
-  `completed`, selected variant `m1_lb3_b10_s10`, attributed 12 strict
-  threshold variants across CVS, FCX, and KO, found `0` buy opportunities
-  because strict buy minimum `0.457` exceeded observed probability maximum
-  `0.455766`, preserved local-paper verification, and wrote artifacts under
-  `D:\thericher-v2\model-artifacts\candidate-threshold-attribution\bounded-candidate-threshold-attribution-mini-smoke`.
+- Last completed: `bounded-candidate-threshold-band-rerun-mini-smoke`, status
+  `completed`, selected variant `m1_lb3_b10_s10`, replayed source-calibration
+  pairs `0.452/0.449` through `0.455/0.448` across CVS, FCX, and KO, produced
+  `247` local-paper fills across 12 variants, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-band-rerun\bounded-candidate-threshold-band-rerun-mini-smoke`.
 
 ## Done Recently
 
@@ -142,9 +141,14 @@
   artifacts only, found the strict buy band sat above the observed probability
   range, and stayed `research_threshold_attribution_only` with no winner or
   promotion gate.
+- Added the first bounded attribution-informed threshold band rerun. The Docker
+  `research` smoke reused existing probability traces and disjoint holdout
+  Yahoo slices, replayed four inside-range threshold pairs through local paper,
+  produced `247` fills, and kept the result descriptive with no winner or
+  promotion gate.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  engine-research task should test a small attribution-informed threshold band
-  without broad scheduling or model-quality claims.
+  engine-research task should move to feature/model branching rather than
+  continuing threshold-only reruns.
