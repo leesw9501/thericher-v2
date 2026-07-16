@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse source-breadth training contrast before another
+1. Run one bounded source-breadth AMGN loss attribution target before another
    feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
@@ -303,6 +303,14 @@
   non-negative entry, and recorded batch2 top-probability margins remained
   below buy thresholds for hidden4, `weight_decay=0.01`, and
   `weight_decay=0.001`.
+- Last completed:
+  `bounded-entry-adverse-sourcebreadth-weightdecay001-summary-20260716`,
+  status `entry_adverse_sourcebreadth_weightdecay001_summary_only`, trained
+  the fixed `core_plus_entry_adverse_v1`, hidden-units `4`,
+  `weight_decay=0.001`, `feature_standardization` branch on ADBE, ADI, ADP,
+  AEM, AGG, and AMAT from `snapshot=2026-06-18`, replayed AMD, AMGN, AMT, and
+  AMZN, produced `4` local-paper fills on AMGN, and attributed both closed
+  AMGN segments as fee-aware negative with fee-aware delta sum `-4.923`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -593,10 +601,14 @@
   should keep feature set, model size, preprocessing, and `weight_decay=0.001`
   fixed while testing one wider source-symbol training context against the
   batch2 symbols.
+- Source-breadth training moved fills away from AMAT and broke the previous
+  batch2 zero-fill state, but the recovered AMGN fills were both fee-aware
+  negative. The next evidence should attribute AMGN loss paths from existing
+  artifacts before changing another feature/model or threshold axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded source-breadth training contrast from existing
-  code and local data before another feature-set, preprocessing, regularization
-  value, or threshold-only branch.
+  task should run one bounded AMGN loss attribution from existing
+  source-breadth artifacts and local data before another feature-set,
+  preprocessing, regularization value, or threshold-only branch.

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse source-breadth training contrast target.
+Build a bounded source-breadth AMGN loss attribution target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by testing whether a wider symbol source context reduces the
-AMAT-only concentration seen in the `weight_decay=0.001` entry-adverse branch
-without changing feature set, model size, preprocessing, or replay machinery.
+attribution by explaining why the source-breadth `weight_decay=0.001`
+entry-adverse branch broke the prior batch2 zero-fill state but converted that
+new AMGN activity into fee-aware negative local-paper trades.
 
 ## Hard Boundaries
 
@@ -60,39 +60,36 @@ without changing feature set, model size, preprocessing, or replay machinery.
 
 3. Ask Claude CLI for a short drift-check before adding code, changing feature
    builders, adding a new research job kind, or changing agent governance. If
-   existing Docker `research` jobs and artifact-only scripts are enough, do not
-   add code.
+   existing artifacts and one-off artifact-only scripts are enough, do not add
+   code.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume the completed feature-input concentration diagnostic:
+2. Consume these completed artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-sourcebreadth-weightdecay001-feature-branch-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-sourcebreadth-weightdecay001-replay-cap2-240bars-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-opportunity-attribution-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-trade-path-20260716\metrics.json`
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-summary-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
-3. Use existing Docker `research` feature-branch code only:
-   - `--candidate-feature-set core_plus_entry_adverse_v1`
-   - `--hidden-units 4`
-   - `--weight-decay 0.001`
-   - `--feature-preprocessing feature_standardization`
-   - strict caps no larger than `max-bars 240`, `max-epochs 4`, and
-     `max-steps 128`.
-4. Train on ADBE, ADI, ADP, AEM, AGG, and AMAT from
-   `snapshot=2026-06-18`.
-5. Evaluate and replay symbol-disjoint AMD, AMGN, AMT, and AMZN from
-   `snapshot=2026-06-18`.
-6. Run cap-2 local-paper replay through the existing
-   `candidate_feature_branch_replay` path. If fills occur, produce
-   artifact-only opportunity and trade-path attribution; if zero fills occur,
-   produce compact zero-fill attribution.
-7. Compare the result descriptively against:
-   - the feature-input concentration diagnostic,
-   - the previous `weight_decay=0.001` CVS/FCX/KO-source 10-symbol summary,
-   - the hidden4 wider-sample context.
-8. Keep all results descriptive only. Do not rank data sources, select a
+3. Read only the needed AMGN rows from
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`.
+4. Compare the AMGN loss entries against:
+   - prior AMAT non-negative regularized entry context,
+   - hidden4 negative and non-negative entry-adverse feature contexts,
+   - source-breadth probability margins and sell-threshold timing,
+   - short forward marks and adverse/favorable movement.
+5. Write one compact descriptive artifact outside Git under
+   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+6. Keep all results descriptive only. Do not rank data sources, select a
    branch, define promotion criteria, or produce a pass/fail field.
-9. Do not add features, threshold search, preprocessing search, model search,
-   scheduler, dashboard, broker behavior, or new job kinds.
-10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Do not train, rerun replay, add features, search thresholds, change
+   preprocessing, start a model search, add a scheduler, expand the dashboard,
+   touch broker behavior, or add a new job kind unless a referenced artifact is
+   missing or corrupt.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -120,7 +117,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse source-breadth contrast`
+`Add bounded source-breadth AMGN loss attribution`
 
 ## Completion Report
 
@@ -132,6 +129,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- source-breadth contrast findings,
+- AMGN loss attribution findings,
 - what was intentionally not built,
 - next goal.

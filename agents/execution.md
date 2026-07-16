@@ -191,8 +191,14 @@
   `weight_decay=0.01`, and `weight_decay=0.001` artifacts.
 - Feature-input concentration diagnostic reran no execution and only matched
   existing local-paper entry timestamps to probability traces and local bars.
+- Source-breadth replay used the existing broker-free local-paper path,
+  produced `4` verified `source: local_paper` fills on AMGN, and follow-up
+  opportunity/trade-path attribution parsed existing event files only. Both
+  closed AMGN segments were fee-aware negative.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
+- The next attribution task should consume existing AMGN local-paper evidence
+  only and must not touch broker submit/cancel code.

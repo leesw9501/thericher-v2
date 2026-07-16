@@ -25,7 +25,8 @@
 
 ## Active Queue
 
-1. Review the next feature/model branch for bounded scope and artifact sprawl.
+1. Review the next artifact-only AMGN loss attribution for bounded scope and
+   artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -277,10 +278,16 @@
   CLI, report family, gate, dashboard, scheduler, broker path, threshold
   search, retraining, replay rerun, feature/model axis, or model-promotion
   language.
+- Source-breadth contrast reused existing Docker `research` feature-branch and
+  replay paths plus artifact-only opportunity, trade-path, and summary work.
+  It added no helper, code path, job kind, CLI, report family, gate, dashboard,
+  scheduler, broker path, threshold search, feature axis, broad model search,
+  or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded source-breadth training contrast before
-  allowing another feature-set, regularization value, or threshold-only branch.
+- Push the next task toward one bounded source-breadth AMGN loss attribution
+  before allowing another feature-set, regularization value, or threshold-only
+  branch.

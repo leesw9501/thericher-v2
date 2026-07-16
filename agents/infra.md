@@ -293,6 +293,12 @@
   imported existing light research/data helpers only, reran no Docker job, used
   no GPU, and wrote one compact diagnostic under the external model artifact
   root.
+- Source-breadth feature-branch training/evaluation and cap-2 replay ran in
+  Docker `research` with PyTorch CUDA and RTX 4090 visible, reused current
+  `src` read-only, read `/app/market_data` read-only, and wrote feature-branch,
+  training, evaluation, model, replay, robustness, event, research-job,
+  opportunity, trade-path, and summary artifacts under the external model
+  artifact root. Follow-up attribution ran locally as artifact-only work.
 
 ## Next Handoff
 
@@ -301,3 +307,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
+- The next AMGN loss attribution target should be artifact-only unless a
+  referenced source-breadth artifact is missing or corrupt.

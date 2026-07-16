@@ -431,6 +431,14 @@ Implemented and pushed:
   regularized AMAT entries were the same unique signal row as the hidden4 AMAT
   non-negative entry while batch2 top-probability rows stayed below buy
   thresholds in all three traces,
+- bounded entry-adverse source-breadth contrast; it kept
+  `core_plus_entry_adverse_v1`, hidden-units `4`, `weight_decay=0.001`, and
+  `feature_standardization`, trained in Docker `research` on ADBE, ADI, ADP,
+  AEM, AGG, and AMAT from `snapshot=2026-06-18`, evaluated and replayed AMD,
+  AMGN, AMT, and AMZN from the same snapshot, verified all `4` generated fills
+  as `source: local_paper`, broke the previous batch2 zero-fill state through
+  AMGN, and attributed both closed AMGN segments as fee-aware negative with
+  fee-aware delta sum `-4.923`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -495,17 +503,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse source-breadth training contrast target:
+Start one bounded source-breadth AMGN loss attribution target:
 
-1. consume the completed feature-input concentration diagnostic,
-2. use existing Docker `research` feature-branch code with
-   `core_plus_entry_adverse_v1`, hidden-units `4`, `weight_decay=0.001`, and
-   `feature_standardization`,
-3. train on ADBE/ADI/ADP/AEM/AGG/AMAT from `snapshot=2026-06-18` and
-   evaluate/replay symbol-disjoint AMD/AMGN/AMT/AMZN from the same snapshot,
-4. avoid code changes, broad data search, regularization search, new features,
-   threshold search, branch ranking, dashboards,
-   schedulers, broker behavior, or report/gate expansion.
+1. consume the completed source-breadth summary, replay, opportunity,
+   trade-path, and feature-input diagnostic artifacts,
+2. inspect the AMGN loss entries against selected `snapshot=2026-06-18` local
+   Yahoo rows and prior AMAT/hidden4 reference feature contexts,
+3. write one compact artifact outside Git that describes whether source
+   breadth restored a known loss pattern or created a new adverse path,
+4. avoid training, replay reruns, feature changes, broad data search,
+   threshold search, branch ranking, dashboards, schedulers, broker behavior,
+   or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
