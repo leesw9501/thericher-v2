@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Diagnose the zero-fill opportunity gap from the first bounded parallel-agent
-research cadence, then queue the next bounded GPU experiment only if the
-diagnostic shows enough actionable replay opportunity.
+Run a bounded short fill-bearing replay contrast for the current entry-adverse
+depth branch before any longer GPU training block.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by preventing the GPU lane from spending long blocks on a
-threshold edge that produces no local-paper fills.
+PnL attribution by comparing the ADBE/ADI/ADP zero-buy replay evidence against
+a small replay slice set that has or can produce broker-free local-paper fills.
 
 ## Hard Boundaries
 
@@ -25,8 +24,7 @@ threshold edge that produces no local-paper fills.
   loop, or auto-commit worker.
 - Do not add a new executable agent unless a specific engine loop need is
   proven and the user explicitly approves it.
-- Do not add a new research job kind unless an existing test proves it removes
-  more complexity than it adds.
+- Do not add a new research job kind.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
@@ -36,8 +34,8 @@ threshold edge that produces no local-paper fills.
   diagnostic rows labeled with `source: diagnostic_overlay`.
 - Do not call any context, band, threshold, model, slice, or feature group
   selected, passed, promoted, production ready, or live ready.
-- Do not convert a diagnostic feature context into an execution filter, order
-  intent, replay rule, feature rule, or model-promotion rule.
+- Do not convert a diagnostic context into an execution filter, order intent,
+  replay rule, feature rule, or model-promotion rule.
 
 ## Required First Reads
 
@@ -66,49 +64,45 @@ threshold edge that produces no local-paper fills.
 
 ## Current Evidence To Consume
 
-- Engine Research Agent status:
-  `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\status.json`
-- Short replay artifact:
+- Zero-buy ADBE/ADI/ADP opportunity-gap artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-opportunity-gap-20260717-r1\metrics.json`
+- Source replay artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\metrics.json`
-- Robustness artifact:
+- Source robustness artifact:
   `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-robustness\metrics.json`
-- Data Agent inventory:
+- Existing local data inventory:
   `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-cadence-20260717-r2\metrics.json`
 
 ## Required Work
 
-1. Inventory only the artifact subset needed to explain why the ADBE/ADI/ADP
-   replay produced `0` fills:
-   - source probability range,
-   - derived buy/sell threshold pairs,
-   - per-slice probability traces or robustness rows if available,
-   - local-paper event artifacts,
-   - existing `D:\market_data` rows only if trace timestamps need context.
-2. Produce a compact artifact-only opportunity-gap summary outside Git under
-   `D:\thericher-v2\model-artifacts`. Prefer a one-off artifact first. Add a
-   reusable helper only if it removes meaningful duplication or prevents a
-   repeated manual calculation.
-3. The summary must report counts, not decisions:
-   - candidate bars or trace rows per slice,
-   - buy-threshold near misses,
-   - max probability versus minimum buy threshold,
-   - potential opportunity counts at already-derived thresholds only,
-   - local-paper fill/source verification,
+1. Check for an existing fill-bearing replay artifact for the same
+   entry-adverse depth branch and `snapshot=2026-06-18` symbols before running
+   anything new. Prefer existing artifacts over new replay.
+2. If existing evidence is enough, produce one compact artifact-only contrast
+   outside Git. If not, queue exactly one bounded Engine Research Agent
+   `candidate_feature_branch_replay` job using an existing job kind, at most
+   three symbols, `max-bars 240`, and existing `D:\market_data` rows.
+3. The contrast must report counts, not decisions:
+   - trace rows and probability ranges by slice group,
+   - buy-threshold hits and near misses at already-derived thresholds only,
+   - order intents, events, trades, fills, and PnL ranges,
+   - local-paper source verification,
+   - diagnostic-overlay source separation,
    - missing evidence counts.
-4. If the gap diagnostic shows enough replay opportunity in an existing short
-   slice set, queue one bounded Engine Research Agent GPU/Docker `research`
-   job using an existing research job kind. If not, do not queue a longer
-   candidate; recommend the next short experiment instead.
-5. Keep the Engine Research queues visible in `agents/engine-research.md`:
+4. If a new replay is queued, use the existing Data Agent inventory runner only
+   if it materially helps confirm local data availability.
+5. Do not queue longer candidate training in this task. The output should say
+   which short contrast evidence is still missing before depth training.
+6. Keep Engine Research queues visible in `agents/engine-research.md`:
    - short experiments for breadth,
    - longer candidate training for depth.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
 - This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the zero-fill diagnosis.
+  license-compatible source clearly improves the active contrast.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
@@ -136,7 +130,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Diagnose zero-fill replay opportunity gap`
+`Diagnose fill-bearing replay contrast`
 
 ## Completion Report
 

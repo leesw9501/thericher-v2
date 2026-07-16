@@ -523,16 +523,20 @@
   auto-commit path, broker authority, credential reads, data acquisition, or
   model-promotion path. The short replay produced zero fills, so a longer depth
   block was intentionally not queued.
+- ADBE/ADI/ADP opportunity-gap diagnostic wrote one compact external artifact
+  and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, replay mutation, threshold search,
+  feature rule, or model-promotion language. Temporary Codex sidecars were
+  read-only runtime reviewers, not repo-owned workers.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward bounded Engine Research/Data parallel cadence using
-  existing single-shot workers. Keep coordination evidence small and avoid new
-  durable workers, daemon, scheduler, dashboard, report branch, broker,
-  credential, auto-commit, durable multi-agent-platform behavior, threshold
-  search, feature-rule selection, or model-promotion language.
-- Push the next task toward artifact-only opportunity-gap analysis before
-  another GPU depth run. Keep it small and avoid turning diagnostic thresholds
-  or contexts into rules.
+- Push the next task toward a bounded fill-bearing contrast using existing
+  artifacts first and at most one existing single-shot Engine Research job.
+  Keep coordination evidence small and avoid new durable workers, daemon,
+  scheduler, dashboard, report branch, broker, credential, auto-commit,
+  durable multi-agent-platform behavior, threshold search, feature-rule
+  selection, or model-promotion language.

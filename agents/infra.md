@@ -495,6 +495,10 @@
   and artifacts written under `/app/model_artifacts` mounted to
   `D:\thericher-v2\model-artifacts`. The external queues were empty afterward
   and no `gpu.lock` remained.
+- ADBE/ADI/ADP opportunity-gap diagnostic ran locally as artifact-only work,
+  used no Docker or GPU job, changed no dependency or compose files, and wrote
+  one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
@@ -516,5 +520,5 @@
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
   read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next opportunity-gap
-  diagnostic. Use existing artifacts or one existing single-shot runner job.
+- Do not add scheduler/coordinator plumbing for the next fill-bearing contrast.
+  Use existing artifacts or one existing single-shot runner job.

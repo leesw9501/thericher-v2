@@ -915,6 +915,12 @@
   artifact, completed `3` slices and `3` threshold pairs with RTX 4090 visible,
   but produced `0` local-paper fills. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1\metrics.json`.
+- ADBE/ADI/ADP opportunity-gap diagnostic consumed existing replay and trace
+  artifacts only, wrote one external artifact, and found `0` buy-threshold
+  hits across `708` holdout trace rows. Holdout max probability `0.562264`
+  stayed below the minimum buy threshold `0.594000`, so no longer GPU/depth
+  job was queued from this evidence. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-opportunity-gap-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -922,12 +928,12 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: diagnose the ADBE/ADI/ADP zero-fill opportunity gap
-  before another depth run. Candidate checks: probability distribution versus
-  derived buy thresholds, buy-opportunity count by slice, and whether a
-  different existing short replay slice has enough local-paper evidence.
+- Short experiments queue: contrast the ADBE/ADI/ADP zero-buy evidence with a
+  bounded fill-bearing replay slice set before another depth run. Prefer an
+  existing fill-bearing artifact first; otherwise queue one existing
+  `candidate_feature_branch_replay` job through the single-shot runner.
 - Longer candidate training queue: hold until a short experiment shows enough
-  replay opportunities or clearly explains why the threshold edge is useful.
+  replay opportunities and a focused research question.
   Keep the job kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,

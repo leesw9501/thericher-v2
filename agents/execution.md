@@ -366,6 +366,10 @@
   sources, `0` unknown fills, and `0` unreadable event artifacts. No orders,
   broker adapters, order intents, paper broker API calls, or live broker paths
   were added.
+- ADBE/ADI/ADP opportunity-gap diagnostic reran no execution and created no
+  fills, orders, positions, order intents, broker adapters, or broker outcomes.
+  It preserved zero-fill local-paper evidence, reported `0` non-local fill
+  sources, and labeled the summary as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -392,3 +396,6 @@
 - The next opportunity-gap diagnostic should remain artifact-only unless it
   uses an existing broker-free replay job. Do not lower or turn thresholds into
   an execution rule.
+- Any next fill-bearing contrast must keep original fills as
+  `source: local_paper`, count diagnostics separately, and avoid creating
+  order intents outside the existing broker-free replay path.

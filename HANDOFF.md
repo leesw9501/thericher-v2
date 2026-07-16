@@ -1437,6 +1437,35 @@ cadence before queueing another longer GPU training block. Keep it
 artifact-only unless a small existing-job replay is needed to compare a
 bounded alternative.
 
+The ADBE/ADI/ADP zero-fill opportunity-gap diagnostic then completed:
+
+- It consumed only existing Engine Research Agent replay, robustness,
+  probability trace, status, and Data Agent inventory artifacts. It did not
+  rerun local paper, train a model, queue another GPU job, call KIS, read
+  credentials, acquire data, or add code.
+- The compact artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-firsteval-depth-adbe-adi-adp-20260717-r1-opportunity-gap-20260717-r1\metrics.json`.
+- The diagnostic counted `708` holdout probability trace rows across ADBE,
+  ADI, and ADP. Holdout max probability was `0.562264` versus the minimum
+  buy threshold `0.594000`, leaving a `0.031736` gap. There were `0` rows at
+  or above any derived buy threshold, `0` near misses within `0.025` below the
+  buy thresholds, and `3` rows within `0.050` below them.
+- Sell-side context existed (`246` rows at or below sell threshold `0.476`),
+  but no buy threshold was reached from a flat position, so the replay emitted
+  `0` order intents, `0` events, `0` trades, and `0` local-paper fills.
+- Local-paper source evidence stayed clean: `0` non-local fill sources, `0`
+  unknown fills, `0` unreadable event artifacts, and `9` missing zero-fill
+  event artifacts treated as empty evidence for zero-fill variants.
+- Runtime Codex sidecars assisted as temporary read-only reviewers: Engine
+  Research independently checked probability/threshold counts, Data/Infra
+  checked external roots and path mapping, and Review/Execution checked
+  broker, source-label, and multi-agent drift. They are not repo-owned workers.
+
+Next, run a bounded short fill-bearing contrast before another longer GPU
+training block: compare the ADBE/ADI/ADP zero-buy evidence against an existing
+or newly queued small replay that produces local-paper fills, using only
+existing Engine Research/Data single-shot workers and existing job kinds.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

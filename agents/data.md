@@ -395,13 +395,16 @@
   existing
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`;
   no additional data was acquired.
+- ADBE/ADI/ADP opportunity-gap diagnostic consumed existing replay and trace
+  artifacts only. It did not read additional market-data rows or acquire data;
+  the existing `snapshot=2026-06-18` Yahoo 1m evidence was sufficient.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  snapshots and record exact missing artifact names if the zero-fill
-  opportunity-gap diagnostic lacks local evidence.
+  snapshots for a bounded fill-bearing contrast and record exact missing
+  artifact names only if existing replay evidence is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
