@@ -193,13 +193,15 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` for training, and AAPL, ABNB, ABT,
   ACN, and ABBV from `snapshot=2026-06-18` for evaluation, replay, trade-path,
   and entry-quality attribution. No additional data was acquired.
+- Feature-branch comparison consumed existing external artifacts only and
+  acquired no additional market data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  external artifacts and the same local slices for a bounded feature-branch
-  comparison.
+  external artifacts and selected `snapshot=2026-06-18` local slices for a
+  bounded entry-adverse segment-contrast diagnostic.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded feature-branch comparison before another feature/model axis
-   or threshold-only branch is tried.
+1. Run one bounded entry-adverse segment-contrast diagnostic before another
+   feature/model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -225,6 +225,12 @@
   entered buy opportunities across AAPL, ABNB, and ACN; `3` of `4` 5/15/30-bar
   forward close marks were negative, and all fills stayed `source:
   local_paper`.
+- Last completed: `bounded-feature-branch-comparison-20260716`, status
+  `feature_branch_comparison_only`, consumed only existing bar-pressure and
+  entry-adverse artifacts, found entry-adverse added `4` local-paper fills and
+  `2` buy opportunities, reduced the negative PnL floor by `0.3789`, added one
+  non-negative closed segment, increased max drawdown by `0.41109572753904`,
+  and wrote a descriptive comparison artifact outside Git.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -475,11 +481,15 @@
   the negative PnL floor versus the prior out-of-symbol branch, but total
   trade-path fee-aware delta stayed negative. Compare the two completed
   branches artifact-only before changing another feature/model axis.
+- The feature-branch comparison shows entry-adverse changed trade distribution
+  but still has negative fee-aware aggregate behavior. The next evidence should
+  inspect negative versus non-negative entry-adverse segments before changing
+  another feature/model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded feature-branch comparison from the completed
-  out-of-symbol bar-pressure and entry-adverse artifacts before another
-  hidden-units, regularization, preprocessing, feature-set, or threshold-only
-  branch.
+  task should run one bounded entry-adverse segment-contrast diagnostic from
+  existing replay, trade-path, entry-quality, event, trace, and selected local
+  bar evidence before another hidden-units, regularization, preprocessing,
+  feature-set, or threshold-only branch.

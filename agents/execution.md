@@ -156,6 +156,9 @@
   produced `8` verified `source: local_paper` fills, and observed no non-local
   fill source. Follow-up opportunity, trade-path, and entry-quality attribution
   parsed existing event files only and reran no broker behavior.
+- Feature-branch comparison reran no execution. It consumed existing replay and
+  attribution artifacts only and confirmed both compared branches kept fills
+  `source: local_paper`.
 
 ## Next Handoff
 

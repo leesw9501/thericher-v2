@@ -240,6 +240,9 @@
   feature-branch, training, evaluation, model, replay, robustness, event, and
   research-job artifacts under `/app/model_artifacts`. Follow-up attribution
   ran locally as artifact-only work under `D:\thericher-v2\model-artifacts`.
+- Feature-branch comparison ran locally as artifact-only work, consumed
+  existing external artifacts, reran no Docker research job, used no GPU, and
+  wrote one compact artifact under `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

@@ -350,6 +350,13 @@ Implemented and pushed:
   closed trade-path segments with fee-aware delta sum `-1.0069`, and
   entry-quality marks showing `3` of `4` 5/15/30-bar forward close marks were
   negative,
+- bounded feature-branch comparison; it consumed only the existing
+  `core_plus_bar_pressure_v1` and `core_plus_entry_adverse_v1` external
+  artifacts, wrote one descriptive comparison artifact outside Git, verified
+  both branches kept fills `source: local_paper`, and recorded that
+  entry-adverse added `4` fills and `2` buy opportunities, lifted PnL min by
+  `0.3789`, added one non-negative closed segment, raised max drawdown by
+  `0.41109572753904`, and still had negative fee-aware delta sum,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -414,19 +421,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded feature-branch comparison target:
+Start one bounded entry-adverse segment-contrast diagnostic:
 
-1. compare the completed `core_plus_bar_pressure_v1` out-of-symbol evaluation
-   branch against the completed `core_plus_entry_adverse_v1` branch,
-2. consume only existing external feature-branch, replay, opportunity,
-   trade-path, and entry-quality artifacts,
-3. record descriptive deltas for probability evidence, buy/sell opportunities,
-   local-paper fills, PnL, drawdown, closed trade-path segments, and forward
-   diagnostic marks,
-4. keep the comparison artifact-only unless a tiny pure helper prevents another
-   manual script,
-5. avoid retraining, replay reruns, new feature/model axes, dashboards, gates,
-   schedulers, threshold searches, or broker-facing behavior.
+1. consume the completed `core_plus_entry_adverse_v1` feature-branch, replay,
+   opportunity, trade-path, entry-quality, event, trace, and selected local-bar
+   evidence,
+2. contrast the negative AAPL/ABNB segments against the non-negative ACN
+   segment using entry probabilities, threshold gaps, the two entry-adverse
+   feature values, forward 5/15/30-bar marks, excursion, and sell-threshold
+   timing,
+3. write one compact external diagnostic artifact with no branch ranking,
+   selection, pass/fail field, threshold search, retraining, or replay rerun,
+4. keep `agents/*.md` as stateboards and avoid dashboards, schedulers, broker
+   behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 
