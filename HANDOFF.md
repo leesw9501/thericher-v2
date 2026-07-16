@@ -253,6 +253,14 @@ Implemented and pushed:
   and local-paper verification, showing the standardized branch source max
   probability `0.792910` versus holdout max `0.526492` and buy threshold min
   `0.791000`,
+- bounded disjoint-evaluation feature-branch target; feature-branch jobs can
+  now pass explicit evaluation slices separately from training slices while
+  preserving default behavior, artifacts record both training and evaluation
+  source-slice lineage, and the Docker `research` smoke trained on CVS/FCX/KO
+  from `snapshot=2026-07-09-shadow-t0-8d-probe` while evaluating on disjoint
+  CVS/FCX/KO from `snapshot=2026-06-18`; cap-2 replay then produced `4`
+  verified `source: local_paper` fills with thresholds `0.525/0.431` and
+  `0.526/0.431`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -273,7 +281,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `230 passed`
+- `234 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -317,14 +325,17 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded disjoint-evaluation feature-branch target:
+Start one bounded out-of-symbol replay probe for the disjoint-evaluation
+feature branch:
 
-1. use the standardized alignment attribution as context,
-2. let feature-branch evaluation consume explicit disjoint evaluation slices
-   while training still uses its source slices,
-3. keep defaults unchanged and replay/checkpoint behavior artifact-driven,
-4. run a small Docker `research` smoke before any broader model-axis work,
-5. avoid new candidate modules, dashboards, gates, schedulers, or
+1. use the disjoint-evaluation feature branch, replay, and attribution
+   artifacts as context,
+2. choose a small existing set of `snapshot=2026-06-18` symbols not used in
+   training/evaluation if available,
+3. replay the same feature-branch artifact and cap-2 threshold derivation
+   through the existing local-paper path,
+4. record fill/PnL/opportunity attribution outside Git,
+5. avoid retraining, new candidate modules, dashboards, gates, schedulers, or
    broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

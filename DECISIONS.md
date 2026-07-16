@@ -718,3 +718,20 @@ range. The existing attribution helper already consumed replay, robustness, and
 trace artifacts, so adding one compact block there avoids duplicate
 artifact-only workflows, KIS access, credentials, broker submit code,
 dashboards, schedulers, alignment scores, or model-promotion language.
+
+## 2026-07-16 - Bounded disjoint-evaluation feature branch
+
+Decision: allow `candidate_feature_branch` to receive explicit evaluation data
+slices separately from training data slices. When no evaluation slices are
+provided, the feature-branch path keeps its previous behavior and evaluates on
+the training slices or the training artifact lineage. Feature-branch artifacts
+surface both training and evaluation source-slice lineage as descriptive
+metadata.
+
+Reason: source-derived probability evidence produced buy thresholds above the
+observed holdout range. Letting a feature branch evaluate on disjoint local
+slices before replaying keeps threshold derivation closer to out-of-sample
+probabilities while preserving artifact-driven downstream replay, PyTorch in
+Docker `research`, external artifact storage, and no KIS access, credentials,
+broker submit code, dashboards, schedulers, disjointness gate, or
+model-promotion language.

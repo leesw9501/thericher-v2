@@ -1,7 +1,9 @@
+import csv
+import gzip
 import json
 import socket
 import sys
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -14,6 +16,7 @@ from thericher_v2.research.candidate_training import (
     CANDIDATE_FEATURE_STANDARDIZATION,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    CandidateDataSliceConfig,
     GpuReadiness,
 )
 from thericher_v2.research.jobs import ResearchJobSpec, run_and_write_research_job
@@ -131,9 +134,89 @@ def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None
     ]
 
 
+def test_candidate_feature_branch_defaults_evaluation_to_training_slices(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+    source_slice = CandidateDataSliceConfig(
+        slice_id="src_aaa",
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="AAA",
+    )
+
+    result = run_bounded_candidate_feature_branch(
+        config=CandidateFeatureBranchConfig(
+            run_id="unit-default-evaluation-slices",
+            max_bars=40,
+            max_epochs=2,
+            max_steps=8,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        threshold_band_rerun_artifact=_threshold_band_artifact(artifact_root),
+        data_slices=(source_slice,),
+        gpu=_unit_gpu(),
+        trainer_runner=_unit_training_runner,
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.feature_branch_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_feature_branch_evaluated_only"
+    assert payload["training_source_slices"][0]["slice_id"] == "src_aaa"
+    assert payload["evaluation_source_slices"][0]["slice_id"] == "src_aaa"
+    assert payload["metrics"]["training_source_slices"][0]["symbol"] == "AAA"
+    assert payload["metrics"]["evaluation_source_slices"][0]["symbol"] == "AAA"
+
+
+def test_candidate_feature_branch_can_use_disjoint_evaluation_slices(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
+    source_slice = CandidateDataSliceConfig(
+        slice_id="src_aaa",
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="AAA",
+    )
+    evaluation_slice = CandidateDataSliceConfig(
+        slice_id="eval_bbb",
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="BBB",
+    )
+
+    result = run_bounded_candidate_feature_branch(
+        config=CandidateFeatureBranchConfig(
+            run_id="unit-disjoint-evaluation-slices",
+            max_bars=40,
+            max_epochs=2,
+            max_steps=8,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        threshold_band_rerun_artifact=_threshold_band_artifact(artifact_root),
+        data_slices=(source_slice,),
+        evaluation_data_slices=(evaluation_slice,),
+        gpu=_unit_gpu(),
+        trainer_runner=_unit_training_runner,
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.feature_branch_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_feature_branch_evaluated_only"
+    assert payload["training_source_slices"][0]["slice_id"] == "src_aaa"
+    assert payload["training_source_slices"][0]["symbol"] == "AAA"
+    assert payload["evaluation_source_slices"][0]["slice_id"] == "eval_bbb"
+    assert payload["evaluation_source_slices"][0]["symbol"] == "BBB"
+    assert payload["metrics"]["training_source_slices"][0]["slice_id"] == "src_aaa"
+    assert payload["metrics"]["evaluation_source_slices"][0]["slice_id"] == "eval_bbb"
+    assert payload["metrics"]["probability_evidence"]["probability_range"] == "0.040000"
+
+
 def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     artifact_root = tmp_path / "model-artifacts"
     band_artifact = _threshold_band_artifact(artifact_root)
+    yahoo_snapshot = _yahoo_snapshot(tmp_path, symbols=("AAA", "BBB"))
 
     run = run_and_write_research_job(
         ResearchJobSpec(
@@ -144,6 +227,20 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
             candidate_hidden_units=12,
             candidate_weight_decay=0.02,
             candidate_feature_preprocessing=CANDIDATE_FEATURE_STANDARDIZATION,
+            data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="src_aaa",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="AAA",
+                ),
+            ),
+            evaluation_data_slices=(
+                CandidateDataSliceConfig(
+                    slice_id="eval_bbb",
+                    yahoo_snapshot=yahoo_snapshot,
+                    symbol="BBB",
+                ),
+            ),
             max_bars=40,
             max_epochs=2,
             max_steps=8,
@@ -172,6 +269,10 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     assert branch["metrics"]["preprocessing_axis"]["feature_preprocessing"] == (
         CANDIDATE_FEATURE_STANDARDIZATION
     )
+    assert branch["training_source_slices"][0]["slice_id"] == "src_aaa"
+    assert branch["evaluation_source_slices"][0]["slice_id"] == "eval_bbb"
+    assert branch["metrics"]["training_source_slices"][0]["symbol"] == "AAA"
+    assert branch["metrics"]["evaluation_source_slices"][0]["symbol"] == "BBB"
     assert branch["result_scope"]["mode"] == "research_feature_branch_only"
     assert branch["metrics"]["probability_evidence"]["probability_range"] == "0.040000"
     assert Path(payload["artifacts"]["candidate_feature_branch"]).exists()
@@ -282,6 +383,53 @@ def _threshold_band_artifact(artifact_root: Path) -> Path:
         ),
         encoding="utf-8",
     )
+    return path
+
+
+def _yahoo_snapshot(
+    tmp_path: Path,
+    *,
+    symbols: tuple[str, ...] = ("AAA",),
+) -> Path:
+    path = tmp_path / "ohlcv_1m.csv.gz"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    fields = [
+        "symbol",
+        "timestamp_utc",
+        "timestamp_et",
+        "session_date",
+        "bar_time_et",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source",
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for symbol_index, symbol in enumerate(symbols):
+            base_price = 100 + symbol_index
+            for index in range(50):
+                timestamp = start + timedelta(minutes=index)
+                price = base_price + index * 0.02
+                close = price + (0.05 if index % 2 == 0 else -0.03)
+                writer.writerow(
+                    {
+                        "symbol": symbol,
+                        "timestamp_utc": timestamp.isoformat().replace("+00:00", "Z"),
+                        "timestamp_et": "",
+                        "session_date": "2026-01-02",
+                        "bar_time_et": "",
+                        "open": f"{price:.4f}",
+                        "high": f"{price + 0.10:.4f}",
+                        "low": f"{price - 0.10:.4f}",
+                        "close": f"{close:.4f}",
+                        "volume": str(1000 + index),
+                        "source": "unit",
+                    }
+                )
     return path
 
 

@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Start a bounded disjoint-evaluation feature-branch target because
-   source-vs-holdout attribution showed source-derived buy thresholds were far
-   above holdout probabilities.
+1. Start a bounded out-of-symbol replay probe for the disjoint-evaluation
+   feature branch to reduce evaluation/replay circularity before another model
+   axis is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -89,6 +89,25 @@
   `0.791000`, threshold gap `0.264508`, zero buy opportunities, and zero
   local-paper fills. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-standardized-probability-alignment-20260716`.
+- Last completed:
+  `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`, status
+  `completed`, trained `core_plus_bar_pressure_v1` with
+  `feature_standardization` on CVS/FCX/KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe`, evaluated on disjoint CVS/FCX/KO
+  from `snapshot=2026-06-18`, recorded evaluation probability range
+  `0.504265`, and wrote feature-branch/training/evaluation/model/research-job
+  artifacts outside Git.
+- Last completed:
+  `bounded-disjoint-eval-bar-pressure-standardized-replay-cap2-20260716`,
+  status `completed`, replayed disjoint-evaluation-derived thresholds
+  `0.525/0.431` and `0.526/0.431` across CVS, FCX, and KO eval slices,
+  produced `4` verified `source: local_paper` fills, and wrote replay,
+  robustness, event, and research-job artifacts outside Git.
+- Last completed: `bounded-disjoint-eval-opportunity-attribution-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, found `2` buy
+  opportunities, `182` sell opportunities, `4` replay fills, all fills
+  `source: local_paper`, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-disjoint-eval-opportunity-attribution-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -291,10 +310,15 @@
   source-vs-holdout probability alignment deltas. The standardized branch's
   source max probability exceeded holdout max by `0.266418`, explaining why
   source-derived buy thresholds produced zero holdout buy opportunities.
+- Added one bounded disjoint-evaluation feature-branch path. Defaults are
+  unchanged, job runner accepts `--evaluation-data-slice` only for
+  `candidate_feature_branch`, artifacts record training and evaluation
+  lineage, and Docker `research` replay recovered a small number of
+  local-paper fills without changing broker behavior.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should make feature-branch evaluation accept explicit disjoint slices
-  before running another hidden-units, regularization, or threshold-only
-  branch.
+  task should replay the disjoint-evaluation branch on a small set of
+  additional existing symbols before running another hidden-units,
+  regularization, or threshold-only branch.

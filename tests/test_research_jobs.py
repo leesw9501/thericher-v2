@@ -240,6 +240,29 @@ def test_research_job_rejects_feature_preprocessing_outside_training_axis() -> N
         )
 
 
+def test_research_job_rejects_evaluation_data_slices_outside_feature_branch(
+    tmp_path,
+) -> None:
+    yahoo_snapshot = _yahoo_snapshot(tmp_path)
+    evaluation_slice = CandidateDataSliceConfig(
+        slice_id="eval_aaa",
+        yahoo_snapshot=yahoo_snapshot,
+        symbol="AAA",
+    )
+
+    ResearchJobSpec(
+        job_id="good-feature-branch-evaluation-slice",
+        kind="candidate_feature_branch",
+        evaluation_data_slices=(evaluation_slice,),
+    )
+    with pytest.raises(ValueError, match="evaluation_data_slices"):
+        ResearchJobSpec(
+            job_id="bad-evaluation-slice-training",
+            kind="candidate_training",
+            evaluation_data_slices=(evaluation_slice,),
+        )
+
+
 def test_research_job_parser_exposes_weight_decay_for_bounded_training_axis() -> None:
     args = build_parser().parse_args(
         [
@@ -264,6 +287,19 @@ def test_research_job_parser_exposes_feature_preprocessing_for_training_axis() -
     )
 
     assert args.candidate_feature_preprocessing == CANDIDATE_FEATURE_STANDARDIZATION
+
+
+def test_research_job_parser_exposes_evaluation_data_slice() -> None:
+    args = build_parser().parse_args(
+        [
+            "--kind",
+            "candidate_feature_branch",
+            "--evaluation-data-slice",
+            "eval_aaa=/tmp/ohlcv_1m.csv.gz:AAA",
+        ]
+    )
+
+    assert args.evaluation_data_slice == ["eval_aaa=/tmp/ohlcv_1m.csv.gz:AAA"]
 
 
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:

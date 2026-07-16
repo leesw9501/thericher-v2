@@ -223,6 +223,7 @@ class ResearchJobSpec:
     sell_threshold: float = 0.45
     threshold_pair_cap: int = DEFAULT_JOB_CALIBRATION_THRESHOLD_PAIR_CAP
     data_slices: tuple[CandidateDataSliceConfig, ...] = ()
+    evaluation_data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
     threshold_attribution_artifact: Path | None = None
     threshold_band_rerun_artifact: Path | None = None
@@ -276,6 +277,11 @@ class ResearchJobSpec:
                     "candidate_feature_preprocessing must be one of "
                     f"{SUPPORTED_CANDIDATE_FEATURE_PREPROCESSING}"
                 )
+        if self.evaluation_data_slices and self.kind != "candidate_feature_branch":
+            raise ValueError(
+                "evaluation_data_slices are only supported for candidate feature "
+                "branch jobs"
+            )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -572,6 +578,7 @@ def _run_job_kind(
             yahoo_snapshot=spec.yahoo_snapshot,
             symbol=spec.symbol,
             data_slices=spec.data_slices,
+            evaluation_data_slices=spec.evaluation_data_slices,
             gpu=gpu,
             trainer_runner=candidate_trainer_runner,
             evaluation_runner=candidate_evaluation_runner,
@@ -868,6 +875,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_JOB_CALIBRATION_THRESHOLD_PAIR_CAP,
     )
     parser.add_argument("--data-slice", action="append", default=[])
+    parser.add_argument("--evaluation-data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
     parser.add_argument("--threshold-attribution-artifact", type=Path)
     parser.add_argument("--threshold-band-rerun-artifact", type=Path)
@@ -908,6 +916,7 @@ def main() -> None:
         sell_threshold=args.sell_threshold,
         threshold_pair_cap=args.threshold_pair_cap,
         data_slices=parse_candidate_data_slices(args.data_slice),
+        evaluation_data_slices=parse_candidate_data_slices(args.evaluation_data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
         threshold_attribution_artifact=args.threshold_attribution_artifact,
         threshold_band_rerun_artifact=args.threshold_band_rerun_artifact,
@@ -1170,6 +1179,8 @@ def _research_job_payload(
             else training.evaluation.status,
             "threshold_loop_closure": training.threshold_loop_closure,
             "artifact_verification": training.artifact_verification,
+            "training_source_slices": training.training_source_slices,
+            "evaluation_source_slices": training.evaluation_source_slices,
             "metrics": training.metrics,
             "result_scope": {
                 "mode": "research_feature_branch_only",

@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded disjoint-evaluation feature-branch target.
+Build a bounded out-of-symbol replay probe for the disjoint-evaluation feature
+branch.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by letting a feature-branch candidate train on source slices but
-derive evaluation probability evidence from explicit disjoint evaluation
-slices before the next replay loop.
+This advances backtest and walk-forward validation plus PnL attribution by
+testing whether the disjoint-evaluation-derived feature-branch thresholds still
+produce replayable local-paper behavior on a small set of existing symbols that
+were not used in the latest training/evaluation loop.
 
 ## Hard Boundaries
 
@@ -63,42 +64,34 @@ slices before the next replay loop.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-standardized-bar-pressure-feature-normalization-smoke-20260716`
-   - `bounded-standardized-bar-pressure-feature-normalization-replay-cap2-20260716`
-   - `bounded-standardized-probability-alignment-20260716`
-3. Inspect candidate feature-branch training/evaluation data-slice flow before
-   changing code.
-4. Add one bounded path for feature-branch evaluation to consume explicit
-   disjoint evaluation slices while training continues to consume source
-   slices.
-5. Keep defaults behavior-compatible. If no disjoint evaluation slices are
-   provided, feature-branch evaluation must keep its current behavior.
-6. Keep evaluation, replay, and probability traces artifact-driven. Do not add
-   an independent preprocessing, model, threshold, or replay value to
-   downstream jobs.
-7. Record training source-slice lineage and evaluation source-slice lineage in
-   the feature-branch artifact with descriptive-only metadata and no
-   model-promotion language.
-8. Add focused tests proving:
-   - default feature-branch training/evaluation slice behavior is unchanged,
-   - explicit disjoint evaluation slices are passed only to feature-branch
-     evaluation,
-   - the research job runner exposes the new bounded path only where needed,
-   - generated artifacts are outside Git or mocked in tests,
-   - no broker/network/credential access is needed,
-   - PyTorch stays confined to Docker `research` and local tests do not import
-     torch.
-9. Run a bounded Docker `research` feature-branch smoke using existing local
-   data:
-   - source training slices: CVS, FCX, KO from
-     `snapshot=2026-07-09-shadow-t0-8d-probe`,
-   - disjoint evaluation slices: CVS, FCX, KO from `snapshot=2026-06-18`,
-   - feature set: `core_plus_bar_pressure_v1`,
-   - hidden units: `4`,
-   - feature preprocessing: `feature_standardization`.
-10. If the feature-branch smoke completes, run the existing cap-limited replay
-    and attribution only as needed to compare source/evaluation/holdout
-    probability evidence.
+   - `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`
+   - `bounded-disjoint-eval-bar-pressure-standardized-replay-cap2-20260716`
+   - `bounded-disjoint-eval-opportunity-attribution-20260716`
+3. Inventory a small useful subset of
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`
+   without doing an expensive full recursive scan.
+4. Select a bounded set of up to five symbols that are present in the snapshot
+   and were not used by the latest source/evaluation loop (`CVS`, `FCX`, `KO`).
+5. Prefer existing data. Acquire no new data unless the current snapshot cannot
+   support the probe and any new source is no-auth, lawful,
+   license-compatible, and useful for this exact loop.
+6. Reuse the existing `candidate_feature_branch_replay` path if possible.
+   Avoid new code unless the existing path cannot express the probe.
+7. Run a bounded Docker `research` replay using:
+   - feature branch artifact:
+     `/app/model_artifacts/candidate-feature-branch/bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716/metrics.json`,
+   - threshold cap: `2`,
+   - existing selected out-of-symbol slices from `snapshot=2026-06-18`.
+8. Run artifact-only opportunity attribution if replay completes.
+9. Record compact evidence outside Git:
+   - selected symbols and why they were available,
+   - replay fill count,
+   - PnL/drawdown range,
+   - opportunity counts,
+   - local-paper fill-source verification,
+   - artifact paths used.
+10. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+    select a model, or add promotion language.
 11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -127,7 +120,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded disjoint evaluation feature branch`
+`Add bounded out-of-symbol replay probe`
 
 ## Completion Report
 
@@ -139,6 +132,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- disjoint-evaluation feature-branch findings,
+- out-of-symbol replay findings,
 - what was intentionally not built,
 - next recommended goal.

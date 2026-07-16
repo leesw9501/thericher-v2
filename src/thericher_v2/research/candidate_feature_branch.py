@@ -112,6 +112,8 @@ class BoundedCandidateFeatureBranchResult:
     feature_normalization: dict[str, Any] | None
     threshold_loop_closure: dict[str, Any]
     artifact_verification: dict[str, Any]
+    training_source_slices: tuple[dict[str, Any], ...]
+    evaluation_source_slices: tuple[dict[str, Any], ...]
     training: BoundedCandidateTrainingResult | None
     evaluation: BoundedCandidateEvaluationResult | None
     metrics: dict[str, Any]
@@ -130,6 +132,7 @@ def run_bounded_candidate_feature_branch(
     yahoo_snapshot: Path | None = None,
     symbol: str | None = None,
     data_slices: tuple[CandidateDataSliceConfig, ...] = (),
+    evaluation_data_slices: tuple[CandidateDataSliceConfig, ...] = (),
     gpu: GpuReadiness | None = None,
     trainer_runner: CandidateTrainerRunner | None = None,
     evaluation_runner: CandidateEvaluationRunner | None = None,
@@ -220,7 +223,7 @@ def run_bounded_candidate_feature_branch(
             model_artifact=training.model_artifact,
             yahoo_snapshot=yahoo_snapshot,
             symbol=symbol,
-            data_slices=data_slices,
+            data_slices=evaluation_data_slices or data_slices,
             gpu=gpu,
             evaluation_runner=evaluation_runner,
         )
@@ -258,6 +261,8 @@ def run_bounded_candidate_feature_branch(
         feature_normalization=None if training is None else training.feature_normalization,
         threshold_loop_closure=threshold_loop_closure,
         artifact_verification=artifact_verification,
+        training_source_slices=() if training is None else training.source_slices,
+        evaluation_source_slices=() if evaluation is None else evaluation.source_slices,
         training=training,
         evaluation=evaluation,
         metrics=_feature_branch_metrics(
@@ -306,6 +311,8 @@ def _candidate_feature_branch_payload(
             "feature_normalization": result.feature_normalization,
             "threshold_loop_closure": result.threshold_loop_closure,
             "artifact_verification": result.artifact_verification,
+            "training_source_slices": result.training_source_slices,
+            "evaluation_source_slices": result.evaluation_source_slices,
             "training_status": None if result.training is None else result.training.status,
             "evaluation_status": None
             if result.evaluation is None
@@ -472,6 +479,8 @@ def _feature_branch_metrics(
         "threshold_loop_closure_recorded": bool(
             threshold_loop_closure.get("closed_for_current_candidate")
         ),
+        "training_source_slices": () if training is None else training.source_slices,
+        "evaluation_source_slices": () if evaluation is None else evaluation.source_slices,
         "training_status": None if training is None else training.status,
         "evaluation_status": None if evaluation is None else evaluation.status,
         "training_examples_seen": 0 if training is None else training.examples_seen,

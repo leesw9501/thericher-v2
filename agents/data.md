@@ -155,13 +155,18 @@
 - Source-vs-holdout probability alignment consumed existing standardized
   feature-branch replay, robustness, probability trace, and attribution
   artifacts only; no additional data was acquired.
+- Disjoint-evaluation feature branch reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` for training and CVS, FCX, and KO
+  from `snapshot=2026-06-18` for evaluation/replay; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while disjoint-evaluation feature-branch work reuses existing local
-  snapshots and external artifact lineage.
+  visible while an out-of-symbol replay probe inventories a small existing
+  subset of `snapshot=2026-06-18` and avoids new acquisition unless current
+  data is insufficient.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

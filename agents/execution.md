@@ -115,6 +115,9 @@
 - Source-vs-holdout probability alignment reran no execution. It reused the
   existing feature-branch replay attribution local-paper verification, kept
   replay fill count at zero, and observed no non-local fill source.
+- Disjoint-evaluation feature-branch replay used the existing local-paper path
+  and produced `4` verified `source: local_paper` fills with no non-local fill
+  source.
 
 ## Next Handoff
 

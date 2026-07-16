@@ -172,11 +172,15 @@
   feature-branch replay opportunity attribution artifact. It added no new
   module, job kind, artifact family, report, gate, dashboard, scheduler,
   broker path, alignment score, or model-promotion language.
+- Disjoint-evaluation feature-branch work added one bounded slice-plumbing
+  path and CLI flag for the existing feature-branch job only. It added no new
+  job kind, report, gate, dashboard, scheduler, broker path, disjointness
+  blocker, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small disjoint-evaluation feature-branch path
-  without creating a broad preprocessing search, scheduler, dashboard, or
-  promotion gate.
+- Push the next task toward one small out-of-symbol replay probe without
+  creating a broad preprocessing search, scheduler, dashboard, or promotion
+  gate.
