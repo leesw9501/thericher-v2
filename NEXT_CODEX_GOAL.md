@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse regularization trace-collapse diagnostic target.
+Build a bounded entry-adverse feature-input concentration diagnostic target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by explaining, from existing artifacts, why the `weight_decay=0.01`
-and `weight_decay=0.001` entry-adverse branches reduce negative trade-path
-segments while collapsing buy-opportunity breadth to sparse AMAT-only fills and
-zero-fill batch2 replays.
+attribution by explaining whether the surviving regularized AMAT entries,
+hidden4 negative/non-negative entries, and batch2 near-threshold rows occupy
+different `core_plus_entry_adverse_v1` feature regions.
 
 ## Hard Boundaries
 
@@ -61,42 +60,38 @@ zero-fill batch2 replays.
 
 3. Ask Claude CLI for a short drift-check before adding code, changing feature
    builders, adding a new research job kind, or changing agent governance. If
-   existing artifacts and artifact-only scripts are enough, do not add code.
+   existing code, local bars, and artifact-only scripts are enough, do not add
+   code.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these existing regularization and context artifacts:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay001-wide-sample-summary-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-wide-sample-summary-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay001-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay001-wide-sample-batch2-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay001-trade-path-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-wide-sample-batch2-opportunity-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-weightdecay-trade-path-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-hidden8-loss-attribution-20260716\metrics.json`
-3. Use existing artifacts only unless a referenced file is missing or corrupt.
-   Do not retrain, rerun replay, or add feature/model/threshold axes for this
-   target.
-4. Produce one compact external diagnostic artifact that compares:
-   - first-six probability evidence and deltas,
-   - buy-threshold gaps against observed holdout probabilities,
-   - buy/sell opportunity concentration across the first-six and batch2 slices,
-   - local-paper fill counts and zero-fill variant counts,
-   - closed trade-path segment counts, fee-aware deltas, and adverse/favorable
-     movement where available.
-5. Explain the observed regularization trace-collapse descriptively. The output
-   should help decide whether the next bounded work should inspect feature
-   inputs, entry timing, or model shape, but must not choose or promote a path.
-6. Keep all results descriptive only. Do not rank regularization values, select
-   a branch, define promotion criteria, or produce a pass/fail field.
-7. Do not add features, threshold search, preprocessing search, model search,
-   scheduler, dashboard, broker behavior, or new job kinds.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Consume the completed trace-collapse diagnostic:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-regularization-trace-collapse-20260716\metrics.json`
+3. Reuse existing probability traces, opportunity/trade-path artifacts, and
+   selected local Yahoo rows from `snapshot=2026-06-18`. Do not acquire data.
+4. Reconstruct or read only the `core_plus_entry_adverse_v1` feature inputs
+   needed for:
+   - regularized AMAT buy-opportunity rows that became local-paper entries,
+   - hidden4 negative and non-negative entered rows from the wider sample,
+   - batch2 rows near the buy thresholds that still produced zero buys.
+5. Compare compact distributions for the entry-adverse features and nearby
+   context features, including:
+   - `upper_wick_share`,
+   - `low_vs_prior_low_return`,
+   - `close_position_in_bar`,
+   - `range_expansion`,
+   - `bar_body_return`,
+   - probability margin versus buy threshold.
+6. Produce one compact external diagnostic artifact that explains whether the
+   surviving regularized entries are concentrated in a narrow feature pattern.
+7. Keep all results descriptive only. Do not rank branches, select a branch,
+   define promotion criteria, or produce a pass/fail field.
+8. Do not retrain, rerun replay, add features, threshold search, preprocessing
+   search, model search, scheduler, dashboard, broker behavior, or new job
+   kinds.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -124,7 +119,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse regularization trace diagnostic`
+`Add bounded entry-adverse feature-input diagnostic`
 
 ## Completion Report
 
@@ -136,6 +131,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- regularization trace-collapse findings,
+- feature-input concentration findings,
 - what was intentionally not built,
 - next goal.

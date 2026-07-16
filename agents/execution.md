@@ -186,6 +186,9 @@
   produced `4` verified `source: local_paper` fills on AMAT, produced zero
   additional AMD/AMGN/AMT/AMZN fills, and kept missing zero-fill event files as
   empty local-paper evidence rather than broker activity.
+- Regularization trace-collapse diagnostic reran no execution and preserved
+  existing local-paper source verification across hidden4, hidden8,
+  `weight_decay=0.01`, and `weight_decay=0.001` artifacts.
 
 ## Next Handoff
 

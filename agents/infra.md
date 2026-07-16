@@ -285,6 +285,10 @@
   existing `weight_decay=0.001` feature-branch artifact, produced zero
   additional fills, and wrote external replay/opportunity evidence without
   changing Docker services or adding PyTorch to local/base paths.
+- Regularization trace-collapse diagnostic ran locally as artifact-only work,
+  consumed existing external JSON artifacts, reran no Docker job, used no GPU,
+  and wrote one compact diagnostic under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 

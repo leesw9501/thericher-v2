@@ -29,7 +29,7 @@
 
 ## Active Queue
 
-1. Produce one artifact-only entry-adverse regularization trace-collapse
+1. Produce one artifact-only entry-adverse feature-input concentration
    diagnostic before another feature-set, regularization, or threshold-only
    branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
@@ -288,6 +288,14 @@
   wider sample, found `4` local-paper fills, `2` buy opportunities, `18`
   zero-fill variants, `2` non-negative closed AMAT segments, fee-aware delta
   sum `2.6518`, and first-six probability range `0.531473`.
+- Last completed:
+  `bounded-entry-adverse-regularization-trace-collapse-20260716`, status
+  `entry_adverse_regularization_trace_collapse_diagnostic_only`, consumed
+  existing hidden4, hidden8, `weight_decay=0.01`, and `weight_decay=0.001`
+  artifacts only, reran no training or replay, verified referenced fills stayed
+  local-paper-only, and recorded that regularization removed hidden4 negative
+  segments while reducing buy opportunities from `9` to `2` and replay fills
+  from `18` to `4`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -567,10 +575,16 @@
   probability-range delta and still leaving batch2 at zero buy opportunities.
   The next evidence should diagnose this regularization trace-collapse from
   existing artifacts before adding another feature, model, or threshold branch.
+- The regularization trace-collapse diagnostic points to a feature-input
+  concentration question: the surviving regularized entries are AMAT-only while
+  batch2 max probabilities sit below the buy bands. The next evidence should
+  compare entry-adverse feature inputs for entered AMAT rows, hidden4 negative
+  and non-negative rows, and batch2 near-threshold rows before another GPU
+  model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should build one artifact-only regularization trace-collapse diagnostic
-  from existing entry-adverse artifacts before another feature-set,
+  task should build one artifact-only feature-input concentration diagnostic
+  from existing entry-adverse artifacts and local bars before another feature-set,
   preprocessing, regularization, or threshold-only branch.

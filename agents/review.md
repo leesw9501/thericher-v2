@@ -268,11 +268,15 @@
   and summary work. It added no helper, code path, job kind, CLI, report
   family, gate, dashboard, scheduler, broker path, threshold search, feature
   axis, broad regularization search, or model-promotion language.
+- Regularization trace-collapse diagnostic consumed existing external artifacts
+  only and added no helper, code path, job kind, CLI, report family, gate,
+  dashboard, scheduler, broker path, threshold search, retraining, replay
+  rerun, feature/model axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one artifact-only regularization trace-collapse
+- Push the next task toward one artifact-only feature-input concentration
   diagnostic before allowing another feature-set, regularization, or
   threshold-only branch.

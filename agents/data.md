@@ -223,13 +223,15 @@
   AGG, and AMAT from `snapshot=2026-06-18` for first-six evaluation/replay,
   and AMD, AMGN, AMT, and AMZN from `snapshot=2026-06-18` for wider-sample
   replay; no additional data was acquired.
+- Regularization trace-collapse diagnostic consumed existing external
+  artifacts only and acquired no additional market data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is reusing existing
-  regularization, hidden4, hidden8, opportunity, and trade-path artifacts for
-  one entry-adverse trace-collapse diagnostic.
+- The next data task is not acquisition; it may read selected existing
+  `snapshot=2026-06-18` local Yahoo rows to compare entry-adverse feature inputs
+  for AMAT entries and batch2 near-threshold rows.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -417,6 +417,13 @@ Implemented and pushed:
   found zero additional batch2 fills because buy thresholds still sat above the
   batch2 holdout probability ceiling, and wrote one descriptive summary outside
   Git with first-six probability range `0.531473`,
+- bounded entry-adverse regularization trace-collapse diagnostic; it consumed
+  existing hidden4, hidden8, `weight_decay=0.01`, and `weight_decay=0.001`
+  artifacts only, reran no training or replay, verified referenced fills stayed
+  local-paper-only, and wrote one external diagnostic showing regularization
+  removed the hidden4 negative segments but reduced buy opportunities from `9`
+  to `2`, replay fills from `18` to `4`, and widened the batch2 buy-threshold
+  gap from `0.001121` to `0.004303` and `0.007378`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -481,17 +488,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse regularization trace-collapse diagnostic target:
+Start one bounded entry-adverse feature-input concentration diagnostic target:
 
-1. consume the completed `weight_decay=0.001`, `weight_decay=0.01`, hidden4
-   wider-sample, and hidden8 attribution artifacts,
-2. produce one compact external diagnostic that compares probability evidence,
-   threshold gaps, buy-opportunity concentration, local-paper fills, and
-   trade-path outcomes,
-3. explain descriptively why the regularized branches reduce negative segments
-   while collapsing opportunity breadth to AMAT and batch2 zero fills,
-4. avoid retraining, broad regularization search, new features, threshold
-   search, branch ranking, dashboards,
+1. consume the completed regularization trace-collapse diagnostic plus existing
+   probability traces, opportunity artifacts, and selected local Yahoo bars,
+2. compare entry-adverse feature inputs for AMAT buy opportunities, hidden4
+   negative/non-negative entries, and batch2 near-threshold rows,
+3. produce one compact external diagnostic that explains whether surviving
+   regularized entries are concentrated in a narrow feature pattern,
+4. avoid retraining, replay reruns, broad regularization search, new features,
+   threshold search, branch ranking, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
