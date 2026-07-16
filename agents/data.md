@@ -209,13 +209,15 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` for training, and ADBE, ADI, ADP,
   AEM, AGG, and AMAT from `snapshot=2026-06-18` for evaluation/replay; no
   additional data was acquired.
+- Hidden8 loss attribution reused the hidden8 external artifacts and selected
+  AMAT rows from `snapshot=2026-06-18`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reusing the current
-  hidden8 artifacts plus selected `snapshot=2026-06-18` AMAT and peer rows for
-  a bounded hidden8 loss-attribution diagnostic.
+  source CVS/FCX/KO slices and the first six selected `snapshot=2026-06-18`
+  symbols for a bounded entry-adverse weight-decay contrast.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -260,6 +260,10 @@
   `/app/market_data` read-only, and wrote feature-branch, training,
   evaluation, replay, robustness, opportunity, trade-path, research-job, and
   contrast artifacts under `/app/model_artifacts`.
+- Hidden8 loss attribution ran locally as artifact-only work, consumed
+  existing external artifacts plus selected local Yahoo rows, reran no Docker
+  job, used no GPU, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 

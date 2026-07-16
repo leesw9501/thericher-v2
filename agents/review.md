@@ -249,11 +249,15 @@
   helper, code path, job kind, CLI, report family, gate, dashboard, scheduler,
   broker path, threshold search, retraining beyond the bounded model-axis run,
   feature axis, or model-promotion language.
+- Hidden8 loss attribution stayed artifact-only and reused existing external
+  artifacts plus selected AMAT local-bar evidence. It added no helper, code
+  path, job kind, CLI, report family, gate, dashboard, scheduler, broker path,
+  threshold search, retraining, replay rerun, feature/model axis, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded entry-adverse hidden8 loss-attribution
-  diagnostic before allowing another model, feature-set, or threshold-only
-  branch.
+- Push the next task toward one bounded entry-adverse weight-decay contrast
+  before allowing another feature-set or threshold-only branch.

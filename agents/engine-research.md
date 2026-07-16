@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse hidden8 loss-attribution diagnostic before
-   another model, feature-set, or threshold-only branch is tried.
+1. Run one bounded entry-adverse weight-decay contrast before another
+   feature-set or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -259,6 +259,12 @@
   wider-sample symbols, produced `4` verified local-paper fills, and attributed
   both closed AMAT segments as fee-aware negative with fee-aware delta sum
   `-8.4776`.
+- Last completed: `bounded-entry-adverse-hidden8-loss-attribution-20260716`,
+  status `entry_adverse_hidden8_loss_attribution_only`, consumed existing
+  hidden8 artifacts plus selected AMAT bars, found hidden8 AMAT segments had
+  lower average entry probability margin, smaller favorable excursion, larger
+  adverse excursion, and fee-aware delta sum `-11.1294` below the hidden4 AMAT
+  reference.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -526,11 +532,13 @@
 - Hidden-units `8` widened probability evidence but concentrated fills into
   AMAT losses. The next evidence should explain that loss concentration from
   existing traces and paths before another model or threshold branch.
+- Hidden8 loss attribution argues against spending the next block on a wider
+  hidden-units axis. The next bounded GPU contrast should keep hidden-units `4`
+  and test one regularization setting for the same feature set.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded hidden8 loss-attribution diagnostic from existing
-  feature-branch, replay, opportunity, trade-path, contrast, trace, and
-  selected local-bar evidence before another model, feature-set,
-  regularization, preprocessing, or threshold-only branch.
+  task should run one bounded entry-adverse weight-decay contrast from existing
+  code and selected local data before another feature-set, preprocessing, or
+  threshold-only branch.

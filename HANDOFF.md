@@ -389,6 +389,12 @@ Implemented and pushed:
   `source: local_paper`, and recorded that the hidden8 replay produced only
   two closed AMAT segments, both fee-aware negative with fee-aware delta sum
   `-8.4776`, fewer buy opportunities than hidden4, and higher max drawdown,
+- bounded entry-adverse hidden8 loss attribution; it consumed existing hidden8
+  feature-branch, replay, opportunity, trade-path, contrast, trace, and AMAT
+  local-bar evidence only, wrote one compact external diagnostic artifact, and
+  recorded that hidden8 AMAT entries had lower average entry probability margin
+  than hidden4 AMAT reference entries, much smaller favorable excursion, much
+  larger adverse excursion, and fee-aware delta sum lower by `-11.1294`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -453,16 +459,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse hidden8 loss-attribution diagnostic:
+Start one bounded entry-adverse weight-decay contrast target:
 
-1. consume the completed hidden8 feature-branch, replay, opportunity,
-   trade-path, contrast summary, trace, and selected local-bar evidence,
-2. explain why hidden8 produced only AMAT entries and why both closed segments
-   were fee-aware negative,
-3. compare hidden8 AMAT signal/path evidence against the hidden4 wide-sample
-   AMAT evidence without rerunning replay,
-4. write one compact external diagnostic artifact with no hidden-unit ranking,
-   branch selection, threshold search, retraining, replay rerun, dashboards,
+1. keep `core_plus_entry_adverse_v1`, hidden-units `4`, and
+   `feature_standardization`,
+2. run one Docker `research` contrast with `weight_decay=0.01` on the same
+   CVS/FCX/KO source slices and ADBE/ADI/ADP/AEM/AGG/AMAT evaluation sample,
+3. replay cap-2 thresholds through the existing local-paper path and attribute
+   fills or zero-fills outside Git,
+4. avoid new features, threshold search, branch ranking, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
