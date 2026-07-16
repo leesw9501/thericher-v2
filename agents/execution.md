@@ -296,6 +296,11 @@
   local-paper path for AMAT, AMZN, and BA, produced `12` verified
   `source: local_paper` fills across AMAT/AMZN variants, and observed no
   non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
+- Runner-queued longer depth attempt
+  `engine-agent-depth-target-longer-mini-breadth-20260717-r1` created no
+  broker, disabled-broker, unknown, diagnostic-overlay, or local-paper fills.
+  Its local-paper verification remained empty and local-only because no
+  calibration or holdout slices were configured.
 
 ## Next Handoff
 

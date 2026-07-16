@@ -426,12 +426,18 @@
   artifacts only. It added no code, coordinator, scheduler, dashboard, report
   family, gate, auto-commit path, broker authority, credential reads, or new
   executable worker.
+- Runner-queued longer depth attempt reused existing single-shot runners and
+  external artifacts only. It added no code, coordinator, scheduler, dashboard,
+  report family, gate, auto-commit path, broker authority, credential reads,
+  new executable worker, or model-promotion language. The useful simplification
+  finding is procedural: explicit `--data-slice` and `--robustness-slice`
+  inputs are required for a depth target to reach calibration/holdout.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward a bounded longer Engine Research Agent GPU/depth
-  job with Data Agent as a companion inventory lane. Keep coordination evidence
-  small and avoid daemon, scheduler, dashboard, report branch, broker,
-  credential, or auto-commit behavior.
+- Push the next task toward a bounded explicit-slice Engine Research Agent
+  GPU/depth job with Data Agent as a companion inventory lane. Keep
+  coordination evidence small and avoid daemon, scheduler, dashboard, report
+  branch, broker, credential, or auto-commit behavior.

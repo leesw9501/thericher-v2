@@ -798,6 +798,16 @@
   and BA from `snapshot=2026-06-18`, completed `9` variants, produced `12`
   verified `source: local_paper` fills and no non-local fill sources, and wrote
   replay/robustness artifacts outside Git.
+- Runner-queued longer depth attempt
+  `engine-agent-depth-target-longer-mini-breadth-20260717-r1` claimed one
+  Engine Research Agent queue item after a companion Data Agent inventory
+  refresh, ran Docker `research` with RTX 4090 visible, selected the existing
+  `m1_lb3_b10_s10` breadth-holdout variant for research scheduling, trained
+  and evaluated on PyTorch CUDA with `max_bars=180`, `max_epochs=16`, and
+  `max_steps=512`, and wrote candidate-depth/training/evaluation artifacts
+  outside Git. Status was `prepared_not_depth_targeted` because the queued
+  command omitted explicit `--data-slice` and `--robustness-slice` arguments;
+  calibration and holdout counts were `0`.
 
 ## Next Handoff
 
@@ -805,7 +815,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker. The next task should queue one bounded
-  longer candidate training/depth job through the runner, with Data Agent used
-  only as a companion inventory lane, while avoiding daemon, scheduler,
+  `candidate_depth_target` job through the runner with explicit existing
+  Yahoo 1m `--data-slice` and `--robustness-slice` arguments, with Data Agent
+  used only as a companion inventory lane, while avoiding daemon, scheduler,
   dashboard, auto-commit, broker, credential, or broad multi-agent platform
   behavior.

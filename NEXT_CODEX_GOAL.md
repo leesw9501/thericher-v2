@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the first longer Engine Research Agent GPU/depth job through the
-single-shot runner, with Data Agent as a companion inventory lane.
+Run an explicit-slice Engine Research Agent GPU/depth target through the
+single-shot runner, with Data Agent as the companion inventory lane.
 
 This advances feature/model research, backtest and walk-forward validation, and
-data collection by putting the GPU research lane back to work while keeping the
-new Data Agent lane useful and separate.
+data collection by correcting the previous runner-queued depth attempt, which
+trained and evaluated on GPU but stopped at `prepared_not_depth_targeted`
+because no source or holdout slices were queued.
 
 ## Hard Boundaries
 
@@ -64,28 +65,35 @@ new Data Agent lane useful and separate.
 
 1. Queue and run one Data Agent inventory refresh against existing
    `D:\market_data` before the Engine Research Agent job.
-2. Select one bounded longer Engine Research Agent job from the existing closed
-   research-job kind set. Prefer a GPU/depth or training-oriented job over a
-   replay-only smoke, using existing `D:\market_data` slices and existing
-   external artifacts.
-3. Queue the selected job through `thericher-v2-engine-research-agent
-   enqueue-research-job`, then execute exactly one `run-once`.
-4. Keep the job bounded:
-   - use existing source/evaluation slice caps,
-   - use explicit max epochs/steps/bars,
-   - write artifacts only under `D:\thericher-v2\model-artifacts`,
-   - do not mutate Data Agent queue/artifacts.
-5. If the Engine Research Agent job completes, inspect the compact metrics and
-   record:
+2. Queue exactly one Engine Research Agent `candidate_depth_target` job through
+   `thericher-v2-engine-research-agent enqueue-research-job`.
+3. Use the existing breadth-holdout artifact:
+   `/app/model_artifacts/candidate-breadth-holdout/bounded-candidate-breadth-holdout-mini-smoke/metrics.json`.
+4. Include explicit existing Yahoo 1m source and holdout slices. Use the
+   runner/CLI format:
+
+   ```powershell
+   --data-slice src_adbe=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADBE
+   --data-slice src_adi=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADI
+   --data-slice src_adp=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADP
+   --robustness-slice hold_aem=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AEM
+   --robustness-slice hold_agg=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AGG
+   --robustness-slice hold_amat=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AMAT
+   ```
+
+5. Keep the job bounded with explicit caps such as `--max-bars 180`,
+   `--max-epochs 16`, and `--max-steps 512`.
+6. Execute exactly one Engine Research Agent `run-once`.
+7. Inspect the compact metrics and record:
    - Docker `research` command,
    - GPU availability,
    - produced artifacts,
-   - local-paper source verification if replay/fills are present,
-   - whether the job adds useful next evidence for short breadth or longer
-     depth queues.
-6. If the Engine Research Agent job cannot run within boundaries, record the
-   blocker and do not substitute broker, credential, network, or dashboard work.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - whether status reached `candidate_depth_target_ran_only`,
+   - calibration/holdout slice counts,
+   - local-paper source verification if replay/fills are present.
+8. If the job still ends as `prepared_not_depth_targeted`, record the blocker
+   and do not run a second Engine Research Agent job in the same slice.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,7 +123,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Run first runner queued depth job`
+`Run explicit-slice depth target`
 
 ## Completion Report
 

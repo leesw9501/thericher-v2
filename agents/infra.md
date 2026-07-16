@@ -422,6 +422,12 @@
   no Docker/GPU requirement, while Engine Research Agent ran Docker `research`
   with current `src` mounted read-only and RTX 4090 visible. Both queues were
   empty after their single `run-once` invocations.
+- Runner-queued longer depth attempt used the same disjoint external roots:
+  Data Agent ran locally with no Docker/GPU requirement, while Engine Research
+  Agent ran Docker `research` with current `src` mounted read-only and RTX 4090
+  visible. The Engine command completed with return code `0`, but the research
+  payload stayed `prepared_not_depth_targeted` because source/holdout slices
+  were not queued.
 
 ## Next Handoff
 
@@ -437,4 +443,4 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  longer GPU/depth job runs.
+  explicit-slice GPU/depth job runs.

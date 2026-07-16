@@ -760,11 +760,39 @@ Claude drift-check was not needed for this slice because it made no code,
 architecture, or policy edits; it used existing single-shot workers and updated
 only handoff/stateboard documents.
 
-Next, put the Engine Research Agent back on the deeper GPU research lane: queue
-one bounded longer candidate training/depth job through the runner, with a Data
-Agent inventory refresh as the companion lane. Keep artifacts outside Git,
-avoid new orchestration, and keep Execution Agent non-executable until an
-explicit KIS paper goal allows credentials/API calls.
+The first runner-queued longer depth attempt also completed without adding an
+orchestrator:
+
+- Data Agent job `data-agent-market-data-inventory-depthjob-20260717-r1`
+  claimed one queued `market_data_inventory` item, read existing
+  `D:\market_data` metadata only, found `2` known folders, `5` snapshots, and
+  `5` useful files, and acquired no data.
+- Engine Research Agent job
+  `engine-agent-depth-target-longer-mini-breadth-20260717-r1` claimed one
+  queued `candidate_depth_target` item, ran Docker `research` with RTX 4090
+  visible, selected the existing `m1_lb3_b10_s10` breadth-holdout variant for
+  research scheduling, trained and evaluated with `max_bars=180`,
+  `max_epochs=16`, and `max_steps=512`, and wrote:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target\engine-agent-depth-target-longer-mini-breadth-20260717-r1\metrics.json`.
+
+Important result: the depth attempt ended as `prepared_not_depth_targeted`, not
+`candidate_depth_target_ran_only`, because the queued command omitted explicit
+`--data-slice` and `--robustness-slice` arguments. Training and evaluation ran
+on PyTorch CUDA (`torch`, NVIDIA GeForce RTX 4090), but calibration and holdout
+slice counts were both `0`; local-paper verification remained empty and
+local-only with no non-local fill sources.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing single-shot workers and updated
+only handoff/stateboard documents.
+
+Next, rerun the same `candidate_depth_target` lane through the Engine Research
+Agent runner with explicit existing Yahoo 1m slices, for example
+`src_adbe=/app/market_data/.../snapshot=2026-06-18/ohlcv_1m.csv.gz:ADBE` as a
+`--data-slice` and `hold_aem=/app/market_data/.../snapshot=2026-06-18/ohlcv_1m.csv.gz:AEM`
+as a `--robustness-slice`. Keep artifacts outside Git, avoid new orchestration,
+and keep Execution Agent non-executable until an explicit KIS paper goal allows
+credentials/API calls.
 
 ## Daily Operator Review
 
