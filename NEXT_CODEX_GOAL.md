@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run an explicit-slice Engine Research Agent GPU/depth target through the
-single-shot runner, with Data Agent as the companion inventory lane.
+Attribute the explicit-slice Engine Research Agent depth target before spending
+more GPU time.
 
-This advances feature/model research, backtest and walk-forward validation, and
-data collection by correcting the previous runner-queued depth attempt, which
-trained and evaluated on GPU but stopped at `prepared_not_depth_targeted`
-because no source or holdout slices were queued.
+This advances PnL attribution, feature/model research, and backtest and
+walk-forward validation by explaining why the completed explicit-slice depth
+target generated many local-paper fills with poor holdout PnL.
 
 ## Hard Boundaries
 
@@ -26,8 +25,10 @@ because no source or holdout slices were queued.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Keep PyTorch CUDA confined to the Docker `research` target/profile.
-- Keep Data Agent non-GPU and non-Docker in this slice.
+- Do not run new GPU training before attributing the completed explicit-slice
+  depth target.
+- Do not queue another Engine Research Agent job unless the attribution proves
+  the current artifact set is unreadable or incomplete.
 - Do not make Execution, Infra, or Review executable workers in this slice.
 - Do not add a daemon, scheduler, Windows service, dashboard, notification
   system, broad autonomous multi-agent platform, coordinator, or auto-commit
@@ -63,37 +64,26 @@ because no source or holdout slices were queued.
 
 ## Required Work
 
-1. Queue and run one Data Agent inventory refresh against existing
-   `D:\market_data` before the Engine Research Agent job.
-2. Queue exactly one Engine Research Agent `candidate_depth_target` job through
-   `thericher-v2-engine-research-agent enqueue-research-job`.
-3. Use the existing breadth-holdout artifact:
-   `/app/model_artifacts/candidate-breadth-holdout/bounded-candidate-breadth-holdout-mini-smoke/metrics.json`.
-4. Include explicit existing Yahoo 1m source and holdout slices. Use the
-   runner/CLI format:
-
-   ```powershell
-   --data-slice src_adbe=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADBE
-   --data-slice src_adi=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADI
-   --data-slice src_adp=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ADP
-   --robustness-slice hold_aem=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AEM
-   --robustness-slice hold_agg=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AGG
-   --robustness-slice hold_amat=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:AMAT
-   ```
-
-5. Keep the job bounded with explicit caps such as `--max-bars 180`,
-   `--max-epochs 16`, and `--max-steps 512`.
-6. Execute exactly one Engine Research Agent `run-once`.
-7. Inspect the compact metrics and record:
-   - Docker `research` command,
-   - GPU availability,
-   - produced artifacts,
-   - whether status reached `candidate_depth_target_ran_only`,
-   - calibration/holdout slice counts,
-   - local-paper source verification if replay/fills are present.
-8. If the job still ends as `prepared_not_depth_targeted`, record the blocker
-   and do not run a second Engine Research Agent job in the same slice.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Consume the completed artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target\engine-agent-depth-target-explicit-slices-20260717-r1\metrics.json`.
+2. Use existing related artifacts only: training metrics, evaluation metrics,
+   calibration, holdout, robustness, probability traces, event artifacts, and
+   selected local Yahoo rows from `D:\market_data` if needed.
+3. Produce one compact external attribution artifact under
+   `D:\thericher-v2\model-artifacts`.
+4. Explain at least:
+   - fill and PnL concentration by holdout slice,
+   - fill and PnL concentration by threshold pair,
+   - whether the `531` holdout fills are caused by threshold bands sitting too
+     close to the probability distribution,
+   - whether the holdout max probability outlier `0.957193` is tied to a single
+     row or slice,
+   - whether loss appears driven by too many entries, delayed exits, or both.
+5. Keep all fill evidence labeled and checked as `source: local_paper`.
+6. If the existing artifacts are insufficient, record the exact missing
+   artifact paths and stop; do not substitute broker, credential, network, or
+   dashboard work.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -117,13 +107,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any worker commands, focused tests, Docker `research` command
-observed through the Engine Research Agent status, GPU availability, and
-artifact paths used.
+Also report any focused artifact-only command used, artifact paths, and
+local-paper source evidence.
 
 ## Suggested Commit Message
 
-`Run explicit-slice depth target`
+`Attribute explicit-slice depth target`
 
 ## Completion Report
 
@@ -135,9 +124,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker were used,
-- Data Agent queue behavior,
-- Engine Research Agent queue behavior,
-- produced artifacts,
-- local-paper source evidence if applicable,
+- produced attribution artifacts,
+- local-paper source evidence,
 - what was intentionally not built,
 - next goal.

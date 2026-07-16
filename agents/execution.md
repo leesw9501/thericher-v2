@@ -301,6 +301,11 @@
   broker, disabled-broker, unknown, diagnostic-overlay, or local-paper fills.
   Its local-paper verification remained empty and local-only because no
   calibration or holdout slices were configured.
+- Explicit-slice runner depth target
+  `engine-agent-depth-target-explicit-slices-20260717-r1` replayed holdout
+  threshold variants through the existing broker-free local-paper path,
+  produced `531` verified `source: local_paper` fills, and observed no
+  non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
 
 ## Next Handoff
 

@@ -428,6 +428,11 @@
   visible. The Engine command completed with return code `0`, but the research
   payload stayed `prepared_not_depth_targeted` because source/holdout slices
   were not queued.
+- Explicit-slice runner depth target used the same single-shot runner and
+  Docker `research` path with current `src` mounted read-only and RTX 4090
+  visible. It completed with return code `0` after about `16` minutes, wrote
+  all training/model/calibration/holdout/robustness artifacts under
+  `/app/model_artifacts`, and cleared the external GPU lock afterward.
 
 ## Next Handoff
 
@@ -443,4 +448,4 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the next
-  explicit-slice GPU/depth job runs.
+  attribution slice consumes the explicit-slice depth artifacts.

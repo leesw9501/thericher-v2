@@ -808,15 +808,24 @@
   outside Git. Status was `prepared_not_depth_targeted` because the queued
   command omitted explicit `--data-slice` and `--robustness-slice` arguments;
   calibration and holdout counts were `0`.
+- Explicit-slice runner depth target
+  `engine-agent-depth-target-explicit-slices-20260717-r1` claimed one Engine
+  Research Agent queue item after a companion Data Agent inventory refresh,
+  ran Docker `research` with RTX 4090 visible, trained/evaluated
+  `m1_lb3_b10_s10` on ADBE/ADI/ADP source slices, calibrated and replayed
+  AEM/AGG/AMAT holdout slices, and reached
+  `candidate_depth_target_ran_only`. It used `max_bars=180`,
+  `max_epochs=16`, and `max_steps=512`, saw `540` bars and `528` examples,
+  produced `531` verified local-paper holdout fills, and recorded holdout PnL
+  range `-27.9099865722656` to `-0.0580` with max drawdown max
+  `38.0201341796875`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
-  only GPU/Docker research worker. The next task should queue one bounded
-  `candidate_depth_target` job through the runner with explicit existing
-  Yahoo 1m `--data-slice` and `--robustness-slice` arguments, with Data Agent
-  used only as a companion inventory lane, while avoiding daemon, scheduler,
-  dashboard, auto-commit, broker, credential, or broad multi-agent platform
-  behavior.
+  only GPU/Docker research worker. The next task should attribute the completed
+  explicit-slice depth target from existing artifacts before another GPU
+  training block, while avoiding daemon, scheduler, dashboard, auto-commit,
+  broker, credential, or broad multi-agent platform behavior.

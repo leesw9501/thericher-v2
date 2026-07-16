@@ -337,12 +337,21 @@
   known folders, `5` snapshots, and `5` useful files under existing
   `D:\market_data`, wrote under
   `D:\thericher-v2\model-artifacts\data-agent`, and acquired no data.
+- Data Agent companion refresh
+  `data-agent-market-data-inventory-explicit-depth-20260717-r1` claimed one
+  external queued inventory job before the explicit-slice depth target, again
+  found `2` known folders, `5` snapshots, and `5` useful files under existing
+  `D:\market_data`, wrote under
+  `D:\thericher-v2\model-artifacts\data-agent`, and acquired no data. The
+  Engine job reused ADBE, ADI, ADP, AEM, AGG, and AMAT from the existing
+  `snapshot=2026-06-18` Yahoo 1m file.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. Use the Data Agent worker as a
-  companion lane before the explicit-slice Engine Research Agent depth job.
+- The next data task is still not acquisition. Attribute the explicit-slice
+  depth target with existing artifacts and selected local Yahoo rows only if
+  needed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

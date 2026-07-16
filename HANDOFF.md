@@ -794,6 +794,42 @@ as a `--robustness-slice`. Keep artifacts outside Git, avoid new orchestration,
 and keep Execution Agent non-executable until an explicit KIS paper goal allows
 credentials/API calls.
 
+The explicit-slice depth target then completed through the runner:
+
+- Data Agent job `data-agent-market-data-inventory-explicit-depth-20260717-r1`
+  claimed one queued inventory item, read existing `D:\market_data` metadata
+  only, again found `2` known folders, `5` snapshots, and `5` useful files, and
+  acquired no data.
+- Engine Research Agent job `engine-agent-depth-target-explicit-slices-20260717-r1`
+  claimed one queued `candidate_depth_target` item and ran exactly one Docker
+  `research` `run-once` with current `src` mounted read-only. It used
+  `src_adbe`, `src_adi`, and `src_adp` as source slices and `hold_aem`,
+  `hold_agg`, and `hold_amat` as holdout slices from the existing
+  `snapshot=2026-06-18` Yahoo 1m file.
+- Status reached `candidate_depth_target_ran_only` with PyTorch CUDA
+  (`torch`, NVIDIA GeForce RTX 4090), `max_bars=180`, `max_epochs=16`,
+  `max_steps=512`, `540` bars, and `528` examples.
+- Training loss moved from `0.690765` to `0.689105`; evaluation accuracy was
+  `0.543561`, equal to the majority baseline, with probability range
+  `0.023383`.
+- Calibration completed `3` slices and `18` variants with `631` local-paper
+  fills. Holdout completed `3` slices and `18` variants with `531` verified
+  `source: local_paper` fills, no non-local sources, PnL range `-27.9099865722656`
+  to `-0.0580`, and max drawdown max `38.0201341796875`.
+- Main artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target\engine-agent-depth-target-explicit-slices-20260717-r1\metrics.json`.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing single-shot workers and updated
+only handoff/stateboard documents.
+
+Next, attribute the explicit-slice depth target before spending more GPU time.
+Consume existing depth target, robustness, probability trace, and local-paper
+event artifacts only. Find whether the poor holdout result is concentrated by
+slice, threshold pair, fill frequency, exit latency, or outlier probability
+rows. Keep the result artifact-only and outside Git unless a small helper is
+clearly needed.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
