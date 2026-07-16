@@ -248,11 +248,14 @@
   produced zero fills; missing zero-fill event files were recorded as empty
   evidence, and no broker, disabled-broker, or diagnostic-overlay fills were
   observed.
+- First-evaluation source-context replay produced `6` verified
+  `source: local_paper` fills on AMD only, with no non-local fill sources and
+  no broker outcomes. The follow-up trade-path attribution parsed existing
+  local-paper events and found `3` closed AMD segments and no open segments.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next source-context contrast may train/evaluate in Docker `research`, but
-  any replay must still use the existing broker-free local-paper path only and
-  keep broker, diagnostic-overlay, and local-paper sources separate.
+- The next AMD diagnostic should parse existing local-paper fills only and keep
+  any horizon/overlay marks labeled separately as `source: diagnostic_overlay`.

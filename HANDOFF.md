@@ -564,6 +564,14 @@ Implemented and pushed:
   produced zero local-paper fills for both runs, and attributed the zero-fill
   result to buy thresholds sitting above every selected slice's observed
   probability ceiling,
+- bounded first-evaluation source-context contrast; the planned 12-symbol
+  source context was blocked by the existing `candidate_feature_branch`
+  `data_slices <= 6` cap, so no cap/code change was made and a cap-compliant
+  ANET/APH/APO/APP/ASML/AVGO source context was trained/evaluated in Docker
+  `research` with the same entry-adverse feature/model/preprocessing settings,
+  replayed AAPL, ABBV, ABNB, ABT, ACN, and AMD with cap-2 thresholds, produced
+  `6` verified `source: local_paper` fills on AMD only, and attributed `3`
+  closed AMD trade segments with fee-aware delta sum `3.3752`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -628,21 +636,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded source-context entry-adverse GPU contrast:
+Start one bounded AMD segment-quality diagnostic:
 
-1. consume the completed second-holdout replay attribution and APH signal/path
-   attribution artifacts,
-2. keep `core_plus_entry_adverse_v1`, hidden-units `4`, `weight_decay=0.001`,
-   `feature_standardization`, short bounded training caps, and cap-2 replay,
-3. train once in Docker `research` with the original source symbols plus the
-   first evaluation symbols as the only changed data context,
-4. evaluate and replay AAPL, ABBV, ABNB, ABT, ACN, and AMD from
+1. consume the completed first-evaluation source-context replay attribution,
+   replay, robustness, probability trace, and local-paper event artifacts,
+2. inspect only the AMD fill-bearing variants and selected AMD bars from
    `snapshot=2026-06-18`,
-5. attribute probability ceilings, threshold gaps, fills, PnL, drawdown, and
-   local-paper source evidence descriptively,
-6. avoid new feature/model axes, threshold search, dashboards, schedulers,
-   broker behavior, or report/gate expansion unless a focused artifact parser
-   bug appears.
+3. compare the negative and non-negative AMD closed segments by entry
+   probability margin, sell-threshold timing, adverse/favorable movement, and
+   simple diagnostic horizon marks,
+4. keep diagnostic marks labeled `source: diagnostic_overlay` and preserve
+   existing `source: local_paper` fill evidence,
+5. avoid training, replay reruns, new feature/model axes, threshold search,
+   dashboards, schedulers, broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

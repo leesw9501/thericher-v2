@@ -358,11 +358,17 @@
   job kind, CLI, report family, gate, dashboard, scheduler, broker path,
   threshold search, retraining, feature/model axis, simulator exit rule, or
   model-promotion language.
+- First-evaluation source-context contrast used existing Docker `research`
+  feature-branch and replay jobs plus one artifact-only attribution. It left
+  the discovered `data_slices <= 6` cap unchanged and added no code, job kind,
+  CLI, report family, gate, dashboard, scheduler, broker path, threshold
+  search, feature/model axis, simulator exit rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded source-context contrast, and reject
-  any drift into a feature-set, regularization, hidden-units, preprocessing,
-  training-depth, threshold-search, dashboard, scheduler, or report/gate branch.
+- Push the next task toward artifact-only AMD segment-quality attribution, and
+  reject drift into source-context search, feature-set, regularization,
+  hidden-units, preprocessing, training-depth, threshold-search, dashboard,
+  scheduler, or report/gate branches.

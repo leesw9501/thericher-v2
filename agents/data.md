@@ -277,15 +277,17 @@
   rows after excluding ADBE, ADI, ADP, AEM, AGG, AMAT, ANET, APH, APO, APP,
   ASML, and AVGO, selected AAPL, ABBV, ABNB, ABT, ACN, and AMD, and acquired
   no additional data.
+- First-evaluation source-context contrast reused ANET, APH, APO, APP, ASML,
+  AVGO, AAPL, ABBV, ABNB, ABT, ACN, and AMD from the existing
+  `snapshot=2026-06-18` Yahoo file. The attempted 12-source context was not
+  run because the existing research job caps training data slices at `6`; no
+  additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition; reuse the existing
-  `snapshot=2026-06-18` Yahoo file for the bounded source-context contrast,
-  using the original source symbols plus ANET, APH, APO, APP, ASML, and AVGO
-  as training context and AAPL, ABBV, ABNB, ABT, ACN, and AMD as the held-out
-  replay group.
+- The next data task is still not acquisition; reuse selected AMD rows from the
+  existing `snapshot=2026-06-18` Yahoo file for segment-quality attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

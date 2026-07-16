@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded source-context entry-adverse GPU contrast after the
-   second-holdout replay produced zero buy opportunities for both short and
-   longer-depth artifacts.
+1. Run one bounded AMD segment-quality diagnostic from the first-evaluation
+   source-context replay before changing source context, feature/model axes, or
+   thresholds again.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -712,11 +712,16 @@
   artifacts on AAPL, ABBV, ABNB, ABT, ACN, and AMD. Both runs produced zero
   buy opportunities, zero local-paper fills, flat PnL/drawdown, and compact
   zero-fill threshold-gap attribution under the external model artifact root.
+- First-evaluation source-context contrast discovered the existing
+  `candidate_feature_branch` data-slice cap of `6`, left it unchanged, trained
+  the cap-compliant ANET/APH/APO/APP/ASML/AVGO source context in Docker
+  `research`, replayed AAPL, ABBV, ABNB, ABT, ACN, and AMD, recovered AMD-only
+  local-paper fills, and attributed `3` closed AMD segments with fee-aware
+  delta sum `3.3752`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should keep the entry-adverse feature set, model size, preprocessing,
-  regularization, and short training caps fixed while changing only the source
-  data context to see whether the second-holdout probability ceiling remains
-  below the replay buy bands.
+  task should inspect AMD segment quality from the completed source-context
+  artifacts before spending another GPU block on source data, feature/model, or
+  threshold changes.

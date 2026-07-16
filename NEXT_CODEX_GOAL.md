@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded source-context entry-adverse GPU contrast.
+Run one bounded AMD segment-quality diagnostic for the first-evaluation
+source-context replay.
 
-This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by checking whether the second-holdout zero-fill behavior came
-from the completed short/depth artifacts' narrow source context. Keep the model
-and feature axes fixed; change only the training/evaluation data context once.
+This advances PnL attribution, feature/model research, and backtest validation
+by explaining why the new source-context replay recovered AMD fills on the
+second holdout, and why one AMD closed segment was fee-aware negative while two
+were non-negative. Use existing artifacts and local bars only.
 
 ## Hard Boundaries
 
@@ -33,7 +34,8 @@ and feature axes fixed; change only the training/evaluation data context once.
   base engine image, runtime image, or local dev/test path.
 - Do not start a broad scheduler, agent framework, promotion gate, dashboard
   expansion, threshold optimizer, preprocessing search, regularization sweep,
-  hidden-units sweep, training-depth sweep, or model search.
+  hidden-units sweep, training-depth sweep, source-context search, or model
+  search.
 - Do not call any threshold, candidate, feature set, preprocessing branch, or
   model best, recommended, passed, promoted, or production ready.
 
@@ -59,58 +61,44 @@ and feature axes fixed; change only the training/evaluation data context once.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits. If this contrast
-   can run through existing Docker `research` job kinds and artifact-only
-   scripts, no Claude check is needed.
+3. Ask Claude CLI for a short drift-check before code edits. If this diagnostic
+   can run from existing artifacts and artifact-only scripts, no Claude check
+   is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
-   - second-holdout contrast:
+   - first-evaluation source-context attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
+   - first-evaluation source-context replay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716\metrics.json`
+   - first-evaluation source-context robustness:
+     `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716-robustness\metrics.json`
+   - second-holdout short/depth contrast:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-depth-vs-short-second-holdout-20260716\metrics.json`
-   - APH signal/path attribution:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-depth-vs-short-aph-signal-path-20260716\metrics.json`
-   - short feature branch:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-fixed-gpu-validation-anet-avgo-20260716\metrics.json`
-   - depth feature branch:
-     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-depth-gpu-validation-anet-avgo-20260716\metrics.json`
-3. Reuse only the existing
+3. Reuse only selected AMD bars from the existing
    `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
    Yahoo 1m file. Do not acquire data for this task.
-4. Keep the candidate fixed:
-   - feature set: `core_plus_entry_adverse_v1`,
-   - hidden units: `4`,
-   - weight decay: `0.001`,
-   - feature preprocessing: `feature_standardization`,
-   - `max-bars=240`,
-   - short bounded caps: `max-epochs=8`, `max-steps=256`.
-5. Change only the data context:
-   - training/source slices: ADBE, ADI, ADP, AEM, AGG, AMAT, ANET, APH, APO,
-     APP, ASML, AVGO from `snapshot=2026-06-18`,
-   - direct evaluation and replay slices: AAPL, ABBV, ABNB, ABT, ACN, AMD from
-     the same snapshot.
-6. Confirm Docker `research` can see PyTorch CUDA/GPU before launching
-   training.
-7. Run the existing Docker `research` feature-branch job once with the fixed
-   candidate settings and changed source context.
-8. Run the existing Docker `research` feature-branch replay job once on the
-   six second-holdout symbols with threshold-pair cap `2`.
-9. Record compact artifact-only attribution:
-   - training/evaluation symbols and row counts,
-   - probability range/ceiling changes versus the consumed short/depth and
-     second-holdout artifacts,
-   - threshold pairs and buy/sell opportunity counts,
-   - local-paper fill counts and fill-source verification,
-   - PnL range and max drawdown,
-   - trade-path segment counts when fills exist,
-   - zero-fill threshold gaps when fills do not exist,
-   - a descriptive comparison against the completed second-holdout contrast.
-10. Do not run a feature-set, hidden-units, regularization, preprocessing,
-    training-depth, threshold, exit-policy, simulator, broker, dashboard, or
-    scheduler branch.
-11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+4. Do not rerun training, evaluation, replay, calibration, or threshold
+   derivation.
+5. Focus only on the AMD fill-bearing variants:
+   - `t01_b0p542_s0p497`,
+   - `t02_b0p543_s0p497`.
+6. Record compact artifact-only attribution:
+   - entry probability and margin above buy threshold,
+   - first sell-threshold timing after entry,
+   - adverse/favorable movement before exit,
+   - fixed 2/3/5-bar diagnostic horizon marks with
+     `source: diagnostic_overlay`,
+   - local-paper entry/exit source verification,
+   - negative versus non-negative closed-segment contrast,
+   - what differs from the prior zero-fill short/depth second-holdout contrast.
+7. Do not add a helper, CLI, research job kind, dashboard, scheduler, model
+   feature, training path, replay path, threshold search, policy selection,
+   simulator exit rule, or broker behavior unless a focused parser bug appears.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -140,7 +128,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run entry adverse source context contrast`
+`Run AMD source context segment diagnostic`
 
 ## Completion Report
 

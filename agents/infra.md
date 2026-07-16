@@ -359,6 +359,12 @@
   `/app/market_data` read-only, wrote replay/robustness/research-job artifacts
   under `/app/model_artifacts`, then wrote one compact attribution artifact
   under `D:\thericher-v2\model-artifacts`.
+- First-evaluation source-context contrast attempted the planned 12-source
+  command, observed the existing `data_slices <= 6` cap, did not rebuild or
+  change code, then ran the cap-compliant six-source Docker `research`
+  feature-branch and replay jobs with RTX 4090 visible. Artifacts were written
+  under `/app/model_artifacts` plus one compact attribution under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -367,6 +373,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next source-context contrast should reuse Docker `research` with the
-  current `src` read-only mount, avoid rebuilding unless the image is missing,
-  and keep PyTorch out of local/base dependency paths.
+- The next AMD diagnostic should run locally as artifact-only work unless a
+  focused helper bug appears; no Docker rebuild or PyTorch dependency change is
+  needed.
