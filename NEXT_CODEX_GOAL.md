@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse signal-hygiene diagnostic target.
+Build a bounded entry-adverse sell-latency attribution target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by checking whether zero-range, very low-volume-change, or similar
-signal-shape patterns recur across existing entry-adverse loss-bearing entries,
-non-negative entries, and near-threshold zero-fill rows before another
-feature/model or threshold axis is tried.
+attribution by checking whether delayed sell-threshold signals and adverse
+movement before exit explain entry-adverse losses more broadly than the narrow
+AMGN zero-range signal-hygiene pattern.
 
 ## Hard Boundaries
 
@@ -69,29 +68,25 @@ feature/model or threshold axis is tried.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Consume these completed artifacts:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-signal-hygiene-diagnostic-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-sourcebreadth-amgn-loss-attribution-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-signal-quality-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-summary-20260716\metrics.json`
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-sourcebreadth-weightdecay001-summary-20260716\metrics.json`
-3. Read only the local Yahoo rows needed to validate signal-shape context from
-   existing `snapshot=2026-06-18` data.
-4. Compare loss-bearing, non-negative, and near-threshold zero-fill signal rows
-   across existing entry-adverse artifacts for:
-   - zero-range bars,
-   - `range_expansion=-1`,
-   - very low `volume_change`,
-   - `close_position_in_bar=0.5` zero-span rows,
-   - immediate forward marks and adverse/favorable movement.
-5. Write one compact descriptive artifact outside Git under
+3. Compare loss-bearing and non-negative entry-adverse segments for:
+   - bars or minutes to first sell-threshold signal,
+   - adverse movement before first sell signal,
+   - favorable movement before first sell signal,
+   - 5/15/30-bar forward close marks,
+   - fee-aware trade-path outcome.
+4. Write one compact descriptive artifact outside Git under
    `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
-6. Keep all results descriptive only. Do not rank data sources, select a
+5. Keep all results descriptive only. Do not rank data sources, select a
    branch, define promotion criteria, or produce a pass/fail field.
-7. Do not train, rerun replay, add features, search thresholds, change
+6. Do not train, rerun replay, add features, search thresholds, change
    preprocessing, start a model search, add a scheduler, expand the dashboard,
    touch broker behavior, or add a new job kind unless a referenced artifact is
    missing or corrupt.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -119,7 +114,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse signal-hygiene diagnostic`
+`Add bounded entry-adverse sell-latency attribution`
 
 ## Completion Report
 
@@ -131,6 +126,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- signal-hygiene diagnostic findings,
+- sell-latency attribution findings,
 - what was intentionally not built,
 - next goal.

@@ -448,6 +448,13 @@ Implemented and pushed:
   while the minimum buy threshold moved down by `0.005000`, and identified a
   zero-range, low-volume AMGN signal shape rather than the prior high-upper-wick
   AMAT non-negative pattern,
+- bounded entry-adverse signal-hygiene diagnostic; it consumed existing AMGN
+  loss, feature-input concentration, wider-sample signal-quality, and
+  source-breadth artifacts, reran no training or replay, found the
+  zero-range/very-low-volume pattern concentrated in one AMGN signal row that
+  recurred across prior regularized batch2 near-threshold rows and the
+  source-breadth AMGN loss entry, and recorded that the pattern does not
+  explain all first-six hidden4 loss-bearing rows,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -512,15 +519,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse signal-hygiene diagnostic target:
+Start one bounded entry-adverse sell-latency attribution target:
 
-1. consume the completed AMGN loss attribution, feature-input concentration,
-   and wider entry-adverse signal-quality artifacts,
-2. inspect whether zero-range, `range_expansion=-1`, low-volume-change, or
-   contiguous-window signal-shape patterns recur across loss-bearing entries,
-   non-negative entries, and near-threshold zero-fill rows,
-3. write one compact artifact outside Git that describes the observed pattern
-   counts and path context,
+1. consume the completed signal-hygiene, AMGN loss, and wider entry-adverse
+   signal-quality artifacts,
+2. compare first sell-threshold timing, adverse movement before sell, and
+   forward marks across loss-bearing and non-negative entry-adverse segments,
+3. write one compact artifact outside Git that describes whether delayed sell
+   signals are a broader loss pattern than the AMGN zero-range row,
 4. avoid training, replay reruns, feature changes, broad data search,
    threshold search, branch ranking, dashboards, schedulers, broker behavior,
    or report/gate expansion.

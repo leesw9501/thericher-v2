@@ -25,8 +25,8 @@
 
 ## Active Queue
 
-1. Review the next artifact-only signal-hygiene diagnostic for bounded scope
-   and artifact sprawl.
+1. Review the next artifact-only sell-latency attribution for bounded scope and
+   artifact sprawl.
 2. Keep agent stateboards short and retire stale ones.
 
 ## Running Jobs
@@ -288,10 +288,14 @@
   path, job kind, CLI, report family, gate, dashboard, scheduler, broker path,
   threshold search, retraining, replay rerun, feature/model axis, or
   model-promotion language.
+- Signal-hygiene diagnostic stayed artifact-only and reused existing external
+  evidence. It added no helper, code path, job kind, CLI, report family, gate,
+  dashboard, scheduler, broker path, threshold search, retraining, replay
+  rerun, feature/model axis, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded signal-hygiene diagnostic before
+- Push the next task toward one bounded sell-latency attribution before
   allowing another feature-set, regularization value, or threshold-only branch.

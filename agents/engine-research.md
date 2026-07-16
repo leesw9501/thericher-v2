@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Run one bounded entry-adverse signal-hygiene diagnostic target before
-   another feature-set, regularization value, or threshold-only branch is tried.
+1. Run one bounded entry-adverse sell-latency attribution target before another
+   feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -319,6 +319,13 @@
   `weight_decay=0.001` batch2 near-threshold AMGN feature row within `1e-9`
   tolerance, and attributed the conversion to a probability lift plus lower
   source-breadth buy band around a zero-range, low-volume signal shape.
+- Last completed:
+  `bounded-entry-adverse-signal-hygiene-diagnostic-20260716`, status
+  `entry_adverse_signal_hygiene_diagnostic_only`, consumed existing
+  entry-adverse artifacts only, found the zero-range/very-low-volume pattern
+  concentrated in one AMGN row that recurred across regularized batch2
+  near-threshold rows and the source-breadth loss entry, and recorded that the
+  pattern does not explain all hidden4 first-six loss-bearing rows.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -617,10 +624,13 @@
   near-threshold row into entry rather than finding the earlier AMAT
   non-negative pattern. The next evidence should inspect zero-range and
   low-volume signal-shape recurrence across existing entry-adverse artifacts.
+- Signal-hygiene diagnostic showed the zero-range/very-low-volume pattern is
+  real but narrow. The next evidence should compare sell-threshold latency and
+  adverse movement before changing another feature/model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run one bounded signal-hygiene diagnostic from existing
-  entry-adverse artifacts and local data before another feature-set,
-  preprocessing, regularization value, or threshold-only branch.
+  task should run one bounded sell-latency attribution from existing
+  entry-adverse artifacts before another feature-set, preprocessing,
+  regularization value, or threshold-only branch.

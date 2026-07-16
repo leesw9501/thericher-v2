@@ -198,10 +198,13 @@
 - Source-breadth AMGN loss attribution reran no execution, preserved the
   existing `source: local_paper` fill evidence, and linked the sell-threshold
   signal to the existing local-paper exit timestamp.
+- Signal-hygiene diagnostic reran no execution, consumed existing local-paper
+  verification from AMGN and wider-sample artifacts, and observed no non-local
+  fill source.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next signal-hygiene diagnostic should consume existing local-paper
+- The next sell-latency attribution should consume existing local-paper
   evidence only and must not touch broker submit/cancel code.
