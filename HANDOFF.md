@@ -602,6 +602,17 @@ Implemented and pushed:
   it retained all `3` wider fee-aware negative segments, skipped all `6`
   wider fee-aware non-negative segments, and kept all `4` batch2 near-threshold
   rows below buy threshold,
+- bounded first-evaluation source-context depth contrast; it reused the same
+  `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`,
+  `feature_standardization`, ANET/APH/APO/APP/ASML/AVGO source context, and
+  AAPL/ABBV/ABNB/ABT/ACN/AMD evaluation context, raised only training caps to
+  `max_epochs=16` and `max_steps=512` in Docker `research`, replayed cap-2
+  thresholds with `4` verified `source: local_paper` AMD fills, attributed `2`
+  closed non-negative AMD segments with fee-aware delta sum `2.0354`, and
+  wrote a depth-vs-short comparison artifact showing probability range
+  increased by `0.079126`, local-paper fill count fell by `2`, max drawdown
+  fell by `2.593618`, and the cross-sample overlay still argues against
+  encoding the AMD-derived entry filter,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -666,14 +677,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded first-evaluation source-context depth contrast:
+Start one bounded first-evaluation source-context wider-holdout replay
+contrast:
 
-1. keep `core_plus_entry_adverse_v1`, `hidden_units=4`, `weight_decay=0.001`,
-   `feature_standardization`, source symbols, and evaluation symbols fixed,
-2. raise only bounded training caps for one Docker `research` PyTorch CUDA run,
-3. replay the resulting artifact through the existing local-paper cap-2 path,
-4. compare depth evidence against the completed first-evaluation source-context
-   short run without selecting a winner, threshold, or production candidate.
+1. consume the completed short and depth source-context artifacts,
+2. select a capped deterministic wider holdout sample from the existing
+   `snapshot=2026-06-18` Yahoo 1m file,
+3. replay both artifacts through the existing Docker `research` local-paper
+   cap-2 path without retraining,
+4. compare whether the depth behavior recurs outside AMD without selecting a
+   branch, threshold, or production candidate.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

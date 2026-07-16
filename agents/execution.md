@@ -266,10 +266,15 @@
   local-paper fills and zero broker outcomes, labeled retained/skipped
   decisions as `source: diagnostic_overlay`, and preserved the existing
   `source: local_paper` wider-sample fills unchanged.
+- First-evaluation source-context depth replay used the existing broker-free
+  local-paper path only, produced `4` verified `source: local_paper` AMD fills,
+  attributed `2` closed non-negative AMD segments with no open segments, and
+  observed no broker, disabled-broker, or diagnostic-overlay fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next depth contrast should use only the broker-free local-paper replay
-  path and verify any generated fills remain `source: local_paper`.
+- The next wider-holdout replay contrast should use only the broker-free
+  local-paper replay path and verify any generated fills remain
+  `source: local_paper`.

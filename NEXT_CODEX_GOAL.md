@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded first-evaluation source-context depth contrast.
+Run one bounded wider-holdout replay contrast for the completed
+first-evaluation source-context short/depth artifacts.
 
-This advances feature/model research, backtest validation, and PnL attribution
-by checking whether a deeper bounded PyTorch CUDA run changes the completed
-first-evaluation source-context evidence. Keep the feature set, model shape,
-regularization, preprocessing, source symbols, and evaluation symbols fixed.
+This advances backtest validation and PnL attribution by checking whether the
+AMD-only depth behavior recurs on a capped wider symbol sample. Do not train a
+new model in this task.
 
 ## Hard Boundaries
 
@@ -61,54 +61,65 @@ regularization, preprocessing, source symbols, and evaluation symbols fixed.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before code or architecture edits.
-   Existing Docker `research` jobs and artifact-only comparison scripts do not
-   need a Claude check.
+   Existing Docker `research` replay jobs and artifact-only comparison scripts
+   do not need a Claude check.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as the short-run reference:
-   - First-evaluation source-context feature branch:
+2. Consume these completed artifacts:
+   - Short first-evaluation source-context feature branch:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
-   - First-evaluation source-context replay:
+   - Short first-evaluation source-context replay:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-firsteval-source-context-second-holdout-replay-20260716\metrics.json`
-   - First-evaluation source-context attribution:
+   - Short first-evaluation source-context attribution:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-second-holdout-20260716\metrics.json`
+   - Deeper first-evaluation source-context feature branch:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-depth-validation-20260716\metrics.json`
+   - Deeper first-evaluation source-context replay:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\bounded-entry-adverse-firsteval-source-context-depth-second-holdout-replay-20260716\metrics.json`
+   - Deeper first-evaluation source-context opportunity attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-depth-second-holdout-20260716\metrics.json`
+   - Deeper first-evaluation source-context trade-path attribution:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-depth-trade-path-20260716\metrics.json`
+   - Depth-vs-short comparison:
+     `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-depth-vs-short-20260716\metrics.json`
    - AMD entry-filter overlay:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-amd-entry-filter-overlay-20260716\metrics.json`
    - Cross-sample entry-filter overlay:
      `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-cross-sample-entry-filter-overlay-20260716\metrics.json`
-3. Run one Docker `research` PyTorch CUDA feature-branch job with the same
-   settings as the short reference except bounded training caps:
-   - feature set: `core_plus_entry_adverse_v1`
-   - hidden units: `4`
-   - weight decay: `0.001`
-   - feature preprocessing: `feature_standardization`
+3. Inventory only the useful symbol subset in the existing
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+   file. Avoid expensive full recursive scans.
+4. Select a deterministic capped wider holdout sample from that snapshot:
+   - at most `12` symbols,
+   - each with at least `240` bars,
+   - exclude the fixed source symbols `ANET`, `APH`, `APO`, `APP`, `ASML`,
+     `AVGO`,
+   - exclude the current evaluation symbols `AAPL`, `ABBV`, `ABNB`, `ABT`,
+     `ACN`, `AMD`,
+   - split into batches of at most `6` symbols because the existing robustness
+     path caps slice count.
+5. Replay both the short and deeper source-context feature artifacts through
+   the existing `candidate_feature_branch_replay` path on the same wider
+   holdout batches:
    - max bars: `240`
-   - max epochs: `16`
-   - max steps: `512`
-   - source slices: ANET, APH, APO, APP, ASML, AVGO from
-     `snapshot=2026-06-18`
-   - evaluation/replay slices: AAPL, ABBV, ABNB, ABT, ACN, AMD from
-     `snapshot=2026-06-18`
-4. Replay the deeper artifact through the existing
-   `candidate_feature_branch_replay` path with cap-2 thresholds and the same
-   evaluation/replay slices. Keep every generated fill verified as
-   `source: local_paper`.
-5. Run artifact-only attribution comparing the short and deeper source-context
-   evidence:
-   - probability range and threshold band,
+   - threshold pair cap: `2`
+   - use Docker `research`
+   - do not retrain or change the feature/model/preprocessing settings
+6. Run artifact-only attribution for each completed replay:
    - buy/sell opportunity counts,
    - local-paper fill count and fill-source verification,
    - PnL and max drawdown range,
-   - AMD segment count and fee-aware delta behavior if fills appear,
-   - whether the completed entry-filter overlays argue against encoding an
-     entry filter.
-6. Do not change feature set, hidden units, regularization, preprocessing,
-   source symbols, evaluation symbols, thresholds by search, simulator exits,
-   broker behavior, dashboard, scheduler, or agent framework.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - per-symbol fill-bearing behavior.
+7. If any wider-holdout fills appear, run trade-path attribution from existing
+   local-paper event artifacts and selected local bars. Keep all source checks
+   explicit.
+8. Write one compact external comparison artifact that says whether the
+   first-evaluation depth behavior recurs outside AMD, without selecting a
+   branch, threshold, or production candidate.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -138,7 +149,7 @@ command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Run firsteval source-context depth contrast`
+`Run firsteval depth wider holdout contrast`
 
 ## Completion Report
 

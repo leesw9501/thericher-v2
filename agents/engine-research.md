@@ -740,10 +740,18 @@
   artifacts only. The AMD-derived all-three sketch did not recur: it retained
   `3` wider fee-aware negative segments, skipped `6` wider fee-aware
   non-negative segments, and created no local-paper or broker outcomes.
+- First-evaluation source-context depth contrast reused the fixed
+  `core_plus_entry_adverse_v1`, hidden4, `weight_decay=0.001`,
+  `feature_standardization`, ANET/APH/APO/APP/ASML/AVGO source context, and
+  AAPL/ABBV/ABNB/ABT/ACN/AMD evaluation context. The deeper Docker `research`
+  run raised only caps to `max_epochs=16` and `max_steps=512`, replayed cap-2
+  thresholds with `4` verified AMD `source: local_paper` fills, attributed `2`
+  closed non-negative AMD segments with fee-aware delta sum `2.0354`, and
+  wrote the depth-vs-short comparison under the external artifact root.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should return to one bounded Docker `research` PyTorch CUDA contrast:
-  same first-evaluation source context, same feature/model settings, deeper
-  caps only, then local-paper replay and artifact-only comparison.
+  task should replay the completed short and depth source-context artifacts on
+  a capped wider holdout sample from `snapshot=2026-06-18`, without retraining
+  or changing feature/model/preprocessing axes.

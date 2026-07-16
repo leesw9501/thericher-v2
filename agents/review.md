@@ -383,12 +383,19 @@
   job kind, CLI, report family, gate, dashboard, scheduler, broker path,
   threshold search, replay rerun, feature/model axis, simulator exit rule, or
   model-promotion language.
+- First-evaluation source-context depth contrast reused existing Docker
+  `research` feature-branch/replay jobs plus artifact-only opportunity,
+  trade-path, and comparison scripts. It added no code, job kind, CLI, report
+  family, gate, dashboard, scheduler, broker path, threshold search,
+  feature/model axis, source-context search, simulator exit rule, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded depth contrast with fixed
-  first-evaluation source context, and reject drift into source-context search,
-  feature-set, regularization, hidden-units, preprocessing, threshold-search,
-  dashboard, scheduler, or report/gate branches.
+- Push the next task toward one bounded wider-holdout replay contrast using
+  completed short/depth source-context artifacts, and reject drift into
+  retraining, source-context search, feature-set, regularization, hidden-units,
+  preprocessing, threshold-search, dashboard, scheduler, or report/gate
+  branches.

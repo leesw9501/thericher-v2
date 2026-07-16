@@ -379,6 +379,13 @@
 - Cross-sample entry-filter overlay ran locally as artifact-only work, used no
   GPU or Docker job, reused existing `D:\market_data` rows, and wrote one
   compact artifact under `D:\thericher-v2\model-artifacts`.
+- First-evaluation source-context depth feature-branch and replay jobs ran in
+  Docker `research` with PyTorch CUDA and RTX 4090 visible after Docker was
+  restarted. They read `/app/market_data` read-only, wrote feature-branch,
+  training, evaluation, model, replay, robustness, event, and research-job
+  artifacts under `/app/model_artifacts`, then local artifact-only opportunity,
+  trade-path, and depth-vs-short comparison artifacts were written under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -387,6 +394,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next depth contrast should run in Docker `research` with PyTorch CUDA and
-  external artifacts only; no Docker dependency or local/base PyTorch change is
-  needed.
+- The next wider-holdout replay contrast should run in Docker `research` with
+  PyTorch CUDA and external artifacts only; no Docker dependency or local/base
+  PyTorch change is needed.
