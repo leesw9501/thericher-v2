@@ -349,12 +349,16 @@
   depth-vs-short comparison scripts. It added no code, job kind, CLI, report
   family, gate, dashboard, scheduler, broker path, threshold search,
   feature/model axis, simulator exit rule, or model-promotion language.
+- Short-vs-depth APH signal/path attribution consumed existing artifacts and
+  selected APH bars only. It added no code, job kind, CLI, report family, gate,
+  dashboard, scheduler, broker path, threshold search, retraining, replay
+  rerun, feature/model axis, simulator exit rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one artifact-only explanation of the short-vs-depth
-  APH signal/path difference before allowing another feature-set,
-  regularization value, hidden-unit value, preprocessing value, training-depth
-  change, or threshold-only branch.
+- Push the next task toward one bounded second-holdout replay contrast from the
+  completed short/depth feature-branch artifacts before allowing another
+  feature-set, regularization value, hidden-unit value, preprocessing value,
+  training-depth change, or threshold-only branch.

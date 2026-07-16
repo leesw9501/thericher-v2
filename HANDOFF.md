@@ -549,6 +549,13 @@ Implemented and pushed:
   `source: local_paper` fills, attributed `2` closed APH trade paths with
   fee-aware delta sum `8.0192`, and wrote one depth-vs-short comparison
   artifact outside Git,
+- bounded short-vs-depth APH signal/path attribution; it consumed existing
+  feature-branch, replay, trade-path, trace, event, and selected APH bar
+  artifacts only, found the deeper run entered APH one execution bar earlier at
+  `150.25` versus `151.24`, exited seven execution bars later at `154.29`
+  versus `151.98`, lifted representative fee-aware delta by `3.2999`, and
+  attributed the larger max drawdown to staying long through a later
+  close-marked peak and pullback before the `13:49` local-paper exit,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -613,17 +620,20 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one artifact-only depth-vs-short signal/path attribution target:
+Start one bounded second-holdout replay contrast:
 
-1. consume the completed short and longer-depth ANET/APH/APO/APP/ASML/AVGO
-   feature-branch, replay, trade-path, and comparison artifacts,
-2. focus on the fill-bearing APH variants and their probability traces,
-3. explain why the deeper run lifted fee-aware delta while also increasing max
-   drawdown,
-4. keep all evidence descriptive, local-paper-separated, and outside Git,
-5. avoid new training, replay reruns, feature/model axes, threshold search,
-   dashboards, schedulers, broker behavior, or report/gate expansion unless a
-   focused artifact parser bug appears.
+1. consume the completed short and longer-depth entry-adverse feature-branch
+   artifacts,
+2. select a fresh deterministic capped symbol group from
+   `snapshot=2026-06-18` after excluding the source and ANET/APH/APO/APP/ASML/AVGO
+   evaluation symbols,
+3. replay both completed feature-branch artifacts through the existing Docker
+   `research` feature-branch replay path with threshold-pair cap `2`,
+4. attribute fills, zero-fill gaps, PnL, drawdown, and fill sources
+   descriptively,
+5. avoid retraining, new model axes, threshold search, dashboards, schedulers,
+   broker behavior, or report/gate expansion unless a focused artifact parser
+   bug appears.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

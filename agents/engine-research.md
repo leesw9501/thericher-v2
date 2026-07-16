@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one artifact-only depth-vs-short signal/path attribution on the
-   completed ANET/APH/APO/APP/ASML/AVGO entry-adverse artifacts before changing
-   another feature/model axis.
+1. Run one bounded second-holdout replay contrast for the completed short and
+   longer-depth entry-adverse artifacts before changing another feature/model
+   axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -702,10 +702,15 @@
   range `0.460215`, replayed cap-2 local-paper thresholds with `4` fills,
   attributed `2` closed APH segments with fee-aware delta sum `8.0192`, and
   wrote a depth-vs-short comparison artifact outside Git.
+- Short-vs-depth APH signal/path attribution consumed existing artifacts only,
+  reran no training or replay, and found the deeper run's fee-aware lift came
+  from one-bar-earlier APH entry plus a later sell-threshold crossing, while
+  the larger drawdown came from staying long through a later close-marked peak
+  and pullback.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should explain the short-vs-depth APH path difference from existing
-  artifacts before changing feature sets, thresholds, preprocessing,
-  regularization, hidden units, or training depth again.
+  task should run a second-holdout replay contrast from existing short/depth
+  feature-branch artifacts before changing feature sets, thresholds,
+  preprocessing, regularization, hidden units, or training depth again.

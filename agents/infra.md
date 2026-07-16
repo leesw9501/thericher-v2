@@ -349,6 +349,10 @@
   `/app/model_artifacts`, then wrote local artifact-only trade-path and
   depth-vs-short comparison artifacts under
   `D:\thericher-v2\model-artifacts`.
+- Short-vs-depth APH signal/path attribution ran locally as artifact-only work,
+  used no GPU or Docker job, consumed existing external JSON/event artifacts
+  plus selected APH bars, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -357,6 +361,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next short-vs-depth attribution should be artifact-only and should not
-  require a Docker rebuild or another GPU training run unless existing
-  artifacts are incomplete.
+- The next second-holdout contrast should reuse Docker `research` replay
+  without retraining or rebuilding unless current images/artifacts are missing.

@@ -239,11 +239,15 @@
   path only, produced `4` fills on APH, verified every fill as
   `source: local_paper`, and attributed `2` closed trade paths with no open
   segments, broker outcomes, or diagnostic overlay fills.
+- Short-vs-depth APH signal/path attribution reran no execution. It consumed
+  existing local-paper event artifacts, verified the referenced fills stayed
+  `source: local_paper`, and observed no broker outcomes or diagnostic overlay
+  fills.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next short-vs-depth signal/path attribution should consume existing
-  local-paper event artifacts only; diagnostic overlays, if referenced, must
-  remain separate from simulated fills.
+- The next second-holdout contrast may replay through the existing broker-free
+  local-paper path only; any follow-up attribution should keep broker,
+  diagnostic-overlay, and local-paper sources separate.
