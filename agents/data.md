@@ -256,12 +256,14 @@
   provided payloads only in focused tests.
 - Diagnostic exit-composite helper smoke consumed existing external artifacts
   only and acquired no additional market data.
+- Research-only exit-latency sandbox helper added no market-data loader and
+  consumes provided `Bar` inputs only in focused tests.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the exit-latency replay sandbox helper
-  should consume provided `Bar` inputs and not load market data itself.
+- The next data task is not acquisition; the exit-latency sandbox smoke should
+  reuse existing `snapshot=2026-06-18` Yahoo rows only where needed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded research-only exit-latency replay sandbox helper.
+Build the first bounded research-only exit-latency sandbox helper smoke.
 
-This advances PnL attribution and backtest/walk-forward validation by moving
-from post-hoc composite segment calculations toward a small pure helper that
-can compute diagnostic exit-latency marks from provided decision/trace timing
-and `Bar` inputs. It must remain research-only and must not apply an exit
-policy to local-paper replay.
+This advances PnL attribution and backtest/walk-forward validation by applying
+the pure `compute_exit_latency_sandbox_marks` helper to existing entry-adverse
+exit-latency context and selected local `Bar` inputs, without changing
+local-paper replay or simulator behavior.
 
 ## Hard Boundaries
 
@@ -60,38 +59,39 @@ policy to local-paper replay.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits.
+3. Ask Claude CLI for a short drift-check before code edits. If the smoke can
+   run artifact-only with existing code, no Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as context only:
+2. Consume these completed artifacts as context:
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-composite-helper-smoke-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
-3. Add one small pure research helper, likely under
-   `src/thericher_v2/research/`, that:
-   - consumes provided decision/trace timing records and provided `Bar` inputs,
-   - finds a first sell/exit signal latency from provided records,
-   - emits diagnostic exit-latency marks after a bounded bar horizon when the
-     latency condition is met,
-   - labels diagnostic marks with `source: diagnostic_overlay`,
-   - reports missing signal, missing entry bar, and missing horizon bar without
-     raising for normal diagnostic gaps,
-   - never mutates local-paper fills or calls broker/execution code,
-   - performs no file, network, credential, CLI, job, dashboard, scheduler,
-     training, replay, or artifact-write work.
-4. Add focused tests proving:
-   - diagnostic marks use `source: diagnostic_overlay`,
-   - no local-paper fills are created or mutated,
-   - missing signal/bar/horizon states are reported,
-   - the helper needs no broker/network/credential path,
-   - group/summary metrics remain descriptive only.
-5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-exit-timing-overlay-20260716\metrics.json`
+3. Use the helper added in the previous task:
+   - `thericher_v2.research.exit_overlay_diagnostic.compute_exit_latency_sandbox_marks`
+4. Build one compact artifact-only smoke that:
+   - reconstructs bounded sandbox segments from existing entry-adverse
+     exit-timing evidence,
+   - provides explicit `Bar` inputs from existing
+     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`,
+   - provides exit signal timing records from existing local-paper exit timing
+     evidence,
+   - emits diagnostic marks with `source: diagnostic_overlay`,
+   - verifies no local-paper fills or broker outcomes are created,
+   - compares mark source counts and gross-delta summaries to the composite
+     helper smoke where possible.
+5. Write one compact smoke artifact outside Git, for example:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-sandbox-helper-smoke-20260716\metrics.json`
+6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
    training path, replay rerun, threshold search, policy selection, simulator
    exit rule, or broker behavior.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Only edit code if the smoke exposes a helper bug; if code changes are needed,
+   ask Claude CLI first and keep the fix focused.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -114,12 +114,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused test, artifact-only command, Docker `research`
+Also report any focused test, artifact-only smoke command, Docker `research`
 command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add exit latency sandbox helper`
+`Add exit latency sandbox helper smoke`
 
 ## Completion Report
 
@@ -131,6 +131,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- helper behavior added,
+- helper smoke behavior,
 - what was intentionally not built,
 - next goal.

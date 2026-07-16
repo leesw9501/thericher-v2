@@ -169,6 +169,103 @@ class DiagnosticExitCompositeResult:
         }
 
 
+@dataclass(frozen=True)
+class ExitLatencySandboxSegment:
+    slice_id: str
+    variant_id: str
+    symbol: str
+    entry_timestamp: datetime
+    entry_price: Decimal
+    quantity: Decimal
+    class_label: str = "unclassified"
+    market: str = "US"
+    entry_source: str = LOCAL_PAPER_SOURCE
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.slice_id:
+            raise ValueError("slice_id is required")
+        if not self.variant_id:
+            raise ValueError("variant_id is required")
+        if not self.symbol:
+            raise ValueError("symbol is required")
+        if not self.class_label:
+            raise ValueError("class_label is required")
+        if not self.entry_source:
+            raise ValueError("entry_source is required")
+        object.__setattr__(self, "symbol", self.symbol.upper())
+        object.__setattr__(self, "market", self.market.upper())
+        object.__setattr__(
+            self,
+            "entry_timestamp",
+            self.entry_timestamp.astimezone(UTC),
+        )
+        object.__setattr__(
+            self,
+            "entry_price",
+            _positive_decimal(self.entry_price, "entry_price"),
+        )
+        object.__setattr__(
+            self,
+            "quantity",
+            _positive_decimal(self.quantity, "quantity"),
+        )
+
+
+@dataclass(frozen=True)
+class ExitLatencySignalRecord:
+    symbol: str
+    offset: int
+    execution_timestamp: datetime
+    is_exit_signal: bool
+    probability: float | None = None
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.symbol:
+            raise ValueError("symbol is required")
+        if self.offset < 0:
+            raise ValueError("offset must be non-negative")
+        object.__setattr__(self, "symbol", self.symbol.upper())
+        object.__setattr__(
+            self,
+            "execution_timestamp",
+            self.execution_timestamp.astimezone(UTC),
+        )
+        if self.probability is not None:
+            probability = float(self.probability)
+            if probability < 0 or probability > 1:
+                raise ValueError("probability must be between 0 and 1")
+            object.__setattr__(self, "probability", probability)
+
+
+@dataclass(frozen=True)
+class ExitLatencySandboxResult:
+    checked_at: datetime
+    segments: tuple[dict[str, Any], ...]
+    group_summaries: dict[str, Any]
+    metrics: dict[str, Any]
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "checked_at", self.checked_at.astimezone(UTC))
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "schema_version": self.schema_version,
+            "checked_at": self.checked_at.isoformat(),
+            "status": "exit_latency_sandbox_only",
+            "segments": list(self.segments),
+            "group_summaries": self.group_summaries,
+            "metrics": self.metrics,
+            "result_scope": {
+                "mode": "research_exit_latency_sandbox_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
+        }
+
+
 def compute_diagnostic_exit_overlays(
     *,
     segments: tuple[DiagnosticExitTradeSegment, ...],
@@ -225,6 +322,46 @@ def compute_diagnostic_exit_overlays(
         checked_at=checked_at,
         segments=result_segments,
         metrics=_metrics(result_segments),
+    )
+
+
+def compute_exit_latency_sandbox_marks(
+    *,
+    segments: tuple[ExitLatencySandboxSegment, ...],
+    signal_records: tuple[ExitLatencySignalRecord, ...],
+    bars: tuple[Bar, ...],
+    min_bars_without_exit_signal: int = 5,
+    diagnostic_horizon_bars: int = 2,
+    checked_at: datetime | None = None,
+) -> ExitLatencySandboxResult:
+    """Return research-only exit-latency marks from provided traces and bars."""
+
+    if min_bars_without_exit_signal < 0:
+        raise ValueError("min_bars_without_exit_signal must be non-negative")
+    if diagnostic_horizon_bars not in DEFAULT_EXIT_OVERLAY_HORIZONS:
+        raise ValueError("diagnostic_horizon_bars must use fixed 2, 3, or 5 bars")
+    checked_at = checked_at or datetime.now(UTC)
+    bars_by_symbol = _bars_by_symbol(bars)
+    records_by_symbol = _signal_records_by_symbol(signal_records)
+    segment_payloads = tuple(
+        _exit_latency_segment_payload(
+            segment=segment,
+            signal_records=records_by_symbol.get(segment.symbol, ()),
+            bars=bars_by_symbol.get(segment.symbol, ()),
+            min_bars_without_exit_signal=min_bars_without_exit_signal,
+            diagnostic_horizon_bars=diagnostic_horizon_bars,
+        )
+        for segment in segments
+    )
+    group_summaries = _latency_group_summaries(segment_payloads)
+    return ExitLatencySandboxResult(
+        checked_at=checked_at,
+        segments=segment_payloads,
+        group_summaries=group_summaries,
+        metrics=_latency_sandbox_metrics(
+            segments=segment_payloads,
+            group_summaries=group_summaries,
+        ),
     )
 
 
@@ -540,6 +677,302 @@ def _metrics(segments: tuple[dict[str, Any], ...]) -> dict[str, Any]:
             overlay["source"] == DIAGNOSTIC_OVERLAY_SOURCE
             for overlay in fixed_overlays + conditional_metadata
         ),
+    }
+
+
+def _signal_records_by_symbol(
+    records: tuple[ExitLatencySignalRecord, ...],
+) -> dict[str, tuple[ExitLatencySignalRecord, ...]]:
+    grouped: dict[str, list[ExitLatencySignalRecord]] = {}
+    for record in records:
+        grouped.setdefault(record.symbol, []).append(record)
+    return {
+        symbol: tuple(
+            sorted(
+                symbol_records,
+                key=lambda record: (record.execution_timestamp, record.offset),
+            )
+        )
+        for symbol, symbol_records in grouped.items()
+    }
+
+
+def _exit_latency_segment_payload(
+    *,
+    segment: ExitLatencySandboxSegment,
+    signal_records: tuple[ExitLatencySignalRecord, ...],
+    bars: tuple[Bar, ...],
+    min_bars_without_exit_signal: int,
+    diagnostic_horizon_bars: int,
+) -> dict[str, Any]:
+    entry_index = _bar_index(bars, segment.entry_timestamp)
+    first_exit_signal = _first_exit_signal_after_entry(
+        records=signal_records,
+        entry_timestamp=segment.entry_timestamp,
+    )
+    signal_index = (
+        None
+        if first_exit_signal is None
+        else _bar_index(bars, first_exit_signal.execution_timestamp)
+    )
+    mark, latency_bars, condition_met = _exit_latency_mark(
+        segment=segment,
+        bars=bars,
+        entry_index=entry_index,
+        first_exit_signal=first_exit_signal,
+        signal_index=signal_index,
+        min_bars_without_exit_signal=min_bars_without_exit_signal,
+        diagnostic_horizon_bars=diagnostic_horizon_bars,
+    )
+    return {
+        "slice_id": segment.slice_id,
+        "variant_id": segment.variant_id,
+        "symbol": segment.symbol,
+        "market": segment.market,
+        "class_label": segment.class_label,
+        "status": "exit_latency_sandbox_attributed_only",
+        "entry": {
+            "timestamp": segment.entry_timestamp.isoformat(),
+            "price": _format_decimal(segment.entry_price),
+            "quantity": _format_decimal(segment.quantity),
+            "source": segment.entry_source,
+        },
+        "latency_condition": {
+            "min_bars_without_exit_signal": min_bars_without_exit_signal,
+            "diagnostic_horizon_bars": diagnostic_horizon_bars,
+            "latency_bars": latency_bars,
+            "condition_met": condition_met,
+        },
+        "first_exit_signal": None
+        if first_exit_signal is None
+        else _exit_signal_payload(first_exit_signal),
+        "diagnostic_mark": mark,
+    }
+
+
+def _first_exit_signal_after_entry(
+    *,
+    records: tuple[ExitLatencySignalRecord, ...],
+    entry_timestamp: datetime,
+) -> ExitLatencySignalRecord | None:
+    normalized = entry_timestamp.astimezone(UTC)
+    for record in records:
+        if record.execution_timestamp <= normalized:
+            continue
+        if record.is_exit_signal:
+            return record
+    return None
+
+
+def _exit_latency_mark(
+    *,
+    segment: ExitLatencySandboxSegment,
+    bars: tuple[Bar, ...],
+    entry_index: int | None,
+    first_exit_signal: ExitLatencySignalRecord | None,
+    signal_index: int | None,
+    min_bars_without_exit_signal: int,
+    diagnostic_horizon_bars: int,
+) -> tuple[dict[str, Any], int | None, bool | None]:
+    if entry_index is None:
+        return (
+            _unavailable_latency_mark(
+                reason="missing_entry_bar",
+                horizon=diagnostic_horizon_bars,
+            ),
+            None,
+            None,
+        )
+    if first_exit_signal is None:
+        return (
+            _unavailable_latency_mark(
+                reason="missing_exit_signal",
+                horizon=diagnostic_horizon_bars,
+            ),
+            None,
+            None,
+        )
+    if signal_index is None:
+        return (
+            _unavailable_latency_mark(
+                reason="missing_exit_signal_bar",
+                horizon=diagnostic_horizon_bars,
+            ),
+            None,
+            None,
+        )
+    latency_bars = signal_index - entry_index
+    if latency_bars < 0:
+        return (
+            _unavailable_latency_mark(
+                reason="exit_signal_before_entry_bar",
+                horizon=diagnostic_horizon_bars,
+            ),
+            latency_bars,
+            None,
+        )
+    if latency_bars < min_bars_without_exit_signal:
+        return (
+            _unavailable_latency_mark(
+                reason="latency_condition_not_met",
+                horizon=diagnostic_horizon_bars,
+            ),
+            latency_bars,
+            False,
+        )
+    target_index = entry_index + diagnostic_horizon_bars
+    if target_index >= len(bars):
+        return (
+            _unavailable_latency_mark(
+                reason="missing_horizon_bar",
+                horizon=diagnostic_horizon_bars,
+            ),
+            latency_bars,
+            True,
+        )
+    target = bars[target_index]
+    close_delta = target.close - segment.entry_price
+    return (
+        {
+            "available": True,
+            "source": DIAGNOSTIC_OVERLAY_SOURCE,
+            "horizon_bars": diagnostic_horizon_bars,
+            "timestamp": target.start_ts.isoformat(),
+            "price_source": "bar_close",
+            "price": _format_decimal(target.close),
+            "close_delta_from_entry": _format_decimal(close_delta),
+            "gross_delta": _format_decimal(close_delta * segment.quantity),
+        },
+        latency_bars,
+        True,
+    )
+
+
+def _unavailable_latency_mark(*, reason: str, horizon: int) -> dict[str, Any]:
+    return {
+        "available": False,
+        "reason": reason,
+        "horizon_bars": horizon,
+        "source": DIAGNOSTIC_OVERLAY_SOURCE,
+    }
+
+
+def _exit_signal_payload(record: ExitLatencySignalRecord) -> dict[str, Any]:
+    return {
+        "offset": record.offset,
+        "execution_timestamp": record.execution_timestamp.isoformat(),
+        "is_exit_signal": record.is_exit_signal,
+        "probability": None
+        if record.probability is None
+        else f"{record.probability:.8f}",
+    }
+
+
+def _latency_group_summaries(
+    segments: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    groups = sorted({str(segment["class_label"]) for segment in segments})
+    return {
+        group: _latency_summary_for_segments(
+            tuple(segment for segment in segments if segment["class_label"] == group)
+        )
+        for group in groups
+    }
+
+
+def _latency_summary_for_segments(
+    segments: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    marks = tuple(segment["diagnostic_mark"] for segment in segments)
+    available_marks = tuple(mark for mark in marks if mark["available"])
+    latency_values = tuple(
+        segment["latency_condition"]["latency_bars"]
+        for segment in segments
+        if segment["latency_condition"]["latency_bars"] is not None
+    )
+    return {
+        "segment_count": len(segments),
+        "diagnostic_mark_available_count": len(available_marks),
+        "latency_condition_met_count": sum(
+            1
+            for segment in segments
+            if segment["latency_condition"]["condition_met"] is True
+        ),
+        "latency_condition_not_met_count": sum(
+            1
+            for segment in segments
+            if segment["latency_condition"]["condition_met"] is False
+        ),
+        "missing_state_counts": _latency_missing_state_counts(marks),
+        "gross_delta": _decimal_summary(
+            _decimal_values(available_marks, key="gross_delta")
+        ),
+        "latency_bars": _integer_summary(latency_values),
+    }
+
+
+def _latency_sandbox_metrics(
+    *,
+    segments: tuple[dict[str, Any], ...],
+    group_summaries: dict[str, Any],
+) -> dict[str, Any]:
+    marks = tuple(segment["diagnostic_mark"] for segment in segments)
+    missing_counts = _latency_missing_state_counts(marks)
+    return {
+        "research_exit_latency_sandbox_only": True,
+        "descriptive_only": True,
+        "promotion_gate": False,
+        "segment_count": len(segments),
+        "group_count": len(group_summaries),
+        "diagnostic_mark_available_count": sum(1 for mark in marks if mark["available"]),
+        "latency_condition_met_count": sum(
+            1
+            for segment in segments
+            if segment["latency_condition"]["condition_met"] is True
+        ),
+        "latency_condition_not_met_count": sum(
+            1
+            for segment in segments
+            if segment["latency_condition"]["condition_met"] is False
+        ),
+        "missing_exit_signal_count": missing_counts.get("missing_exit_signal", 0),
+        "missing_entry_bar_count": missing_counts.get("missing_entry_bar", 0),
+        "missing_horizon_bar_count": missing_counts.get("missing_horizon_bar", 0),
+        "missing_exit_signal_bar_count": missing_counts.get(
+            "missing_exit_signal_bar",
+            0,
+        ),
+        "all_diagnostic_marks_source_diagnostic": all(
+            mark["source"] == DIAGNOSTIC_OVERLAY_SOURCE for mark in marks
+        ),
+        "local_paper_fill_count": 0,
+        "replay_ran": False,
+        "training_ran": False,
+        "simulator_exit_rule_added": False,
+    }
+
+
+def _latency_missing_state_counts(
+    marks: tuple[dict[str, Any], ...],
+) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for mark in marks:
+        if mark["available"]:
+            continue
+        reason = str(mark.get("reason") or "unknown")
+        counts[reason] = counts.get(reason, 0) + 1
+    return dict(sorted(counts.items()))
+
+
+def _integer_summary(values: tuple[int, ...]) -> dict[str, Any]:
+    if not values:
+        return {"count": 0, "min": None, "max": None, "mean": None}
+    total = sum(values)
+    return {
+        "count": len(values),
+        "min": min(values),
+        "max": max(values),
+        "mean": _format_decimal(Decimal(total) / Decimal(len(values))),
     }
 
 

@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Ask Claude CLI for drift-check, then add one research-only exit-latency
-   replay sandbox helper before changing another model axis.
+1. Run one real-artifact smoke through the research-only exit-latency sandbox
+   helper before changing another model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -682,10 +682,14 @@
   source counts and gross-delta sums with the pure helper, including `4`
   diagnostic overlay outcomes, `7` local-paper outcomes, and overall composite
   gross sum `3.383729296875`.
+- Research-only exit-latency sandbox helper now consumes provided trace timing
+  records and `Bar` inputs, emits `source: diagnostic_overlay` marks when the
+  latency condition is met, and reports missing signal/bar/horizon states
+  without touching local-paper replay.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should add one bounded research-only exit-latency replay sandbox helper
-  before another feature-set, preprocessing, regularization value, or
-  threshold-only branch.
+  task should run one bounded real-artifact smoke through the exit-latency
+  sandbox helper before another feature-set, preprocessing, regularization
+  value, or threshold-only branch.

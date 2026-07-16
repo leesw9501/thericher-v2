@@ -14,8 +14,11 @@ from thericher_v2.research.exit_overlay_diagnostic import (
     DIAGNOSTIC_OVERLAY_SOURCE,
     ConditionalExitOverlaySpec,
     DiagnosticExitTradeSegment,
+    ExitLatencySandboxSegment,
+    ExitLatencySignalRecord,
     compute_diagnostic_exit_composite,
     compute_diagnostic_exit_overlays,
+    compute_exit_latency_sandbox_marks,
 )
 
 
@@ -303,6 +306,196 @@ def test_exit_composite_reports_missing_condition_and_fixed_overlay_offline(
     assert missing_fixed.segments[0]["composite_outcome"]["source"] == (
         LOCAL_PAPER_SOURCE
     )
+
+
+def test_exit_latency_sandbox_emits_diagnostic_mark_when_latency_condition_met() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    result = compute_exit_latency_sandbox_marks(
+        segments=(
+            ExitLatencySandboxSegment(
+                slice_id="loss",
+                variant_id="t01",
+                symbol="AAA",
+                class_label="loss_bearing",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        signal_records=(
+            ExitLatencySignalRecord(
+                symbol="AAA",
+                offset=5,
+                execution_timestamp=start + timedelta(minutes=5),
+                is_exit_signal=True,
+                probability=0.25,
+            ),
+        ),
+        bars=tuple(
+            _bar(
+                "AAA",
+                start + timedelta(minutes=index),
+                low=10 - index / 2 - 1,
+                close=10 - index / 2,
+            )
+            for index in range(8)
+        ),
+        min_bars_without_exit_signal=5,
+        diagnostic_horizon_bars=2,
+        checked_at=start,
+    )
+
+    segment = result.segments[0]
+    mark = segment["diagnostic_mark"]
+    assert mark["available"] is True
+    assert mark["source"] == DIAGNOSTIC_OVERLAY_SOURCE
+    assert mark["timestamp"] == (start + timedelta(minutes=2)).isoformat()
+    assert mark["gross_delta"] == "-1"
+    assert segment["latency_condition"]["latency_bars"] == 5
+    assert segment["latency_condition"]["condition_met"] is True
+    assert result.group_summaries["loss_bearing"]["diagnostic_mark_available_count"] == 1
+    assert result.metrics["local_paper_fill_count"] == 0
+    assert result.to_payload()["result_scope"]["mode"] == (
+        "research_exit_latency_sandbox_only"
+    )
+
+
+def test_exit_latency_sandbox_reports_missing_signal_bar_and_horizon() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    missing_signal = compute_exit_latency_sandbox_marks(
+        segments=(
+            ExitLatencySandboxSegment(
+                slice_id="no_signal",
+                variant_id="t01",
+                symbol="AAA",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        signal_records=(),
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=9, close=10)
+            for index in range(4)
+        ),
+        checked_at=start,
+    )
+
+    assert missing_signal.segments[0]["diagnostic_mark"]["reason"] == (
+        "missing_exit_signal"
+    )
+    assert missing_signal.metrics["missing_exit_signal_count"] == 1
+
+    missing_entry_bar = compute_exit_latency_sandbox_marks(
+        segments=(
+            ExitLatencySandboxSegment(
+                slice_id="missing_entry",
+                variant_id="t01",
+                symbol="BBB",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        signal_records=(
+            ExitLatencySignalRecord(
+                symbol="BBB",
+                offset=1,
+                execution_timestamp=start + timedelta(minutes=1),
+                is_exit_signal=True,
+            ),
+        ),
+        bars=(),
+        checked_at=start,
+    )
+
+    assert missing_entry_bar.segments[0]["diagnostic_mark"]["reason"] == (
+        "missing_entry_bar"
+    )
+    assert missing_entry_bar.metrics["missing_entry_bar_count"] == 1
+
+    missing_horizon = compute_exit_latency_sandbox_marks(
+        segments=(
+            ExitLatencySandboxSegment(
+                slice_id="missing_horizon",
+                variant_id="t01",
+                symbol="CCC",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+            ),
+        ),
+        signal_records=(
+            ExitLatencySignalRecord(
+                symbol="CCC",
+                offset=1,
+                execution_timestamp=start + timedelta(minutes=1),
+                is_exit_signal=True,
+            ),
+        ),
+        bars=(
+            _bar("CCC", start, low=9, close=10),
+            _bar("CCC", start + timedelta(minutes=1), low=9, close=10),
+        ),
+        min_bars_without_exit_signal=1,
+        diagnostic_horizon_bars=3,
+        checked_at=start,
+    )
+
+    assert missing_horizon.segments[0]["diagnostic_mark"]["reason"] == (
+        "missing_horizon_bar"
+    )
+    assert missing_horizon.metrics["missing_horizon_bar_count"] == 1
+
+
+def test_exit_latency_sandbox_is_offline_and_does_not_mutate_inputs(monkeypatch) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("exit latency sandbox must not open network")
+
+    def fail_read_text(*_args: object, **_kwargs: object) -> str:
+        raise AssertionError("exit latency sandbox must not read files")
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", fail_read_text)
+
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    segments = (
+        ExitLatencySandboxSegment(
+            slice_id="offline",
+            variant_id="t01",
+            symbol="AAA",
+            entry_timestamp=start,
+            entry_price=Decimal("10"),
+            quantity=Decimal("1"),
+        ),
+    )
+    records = (
+        ExitLatencySignalRecord(
+            symbol="AAA",
+            offset=2,
+            execution_timestamp=start + timedelta(minutes=2),
+            is_exit_signal=True,
+        ),
+    )
+    before_segments = deepcopy(segments)
+    before_records = deepcopy(records)
+
+    result = compute_exit_latency_sandbox_marks(
+        segments=segments,
+        signal_records=records,
+        bars=tuple(
+            _bar("AAA", start + timedelta(minutes=index), low=9, close=10)
+            for index in range(5)
+        ),
+        min_bars_without_exit_signal=5,
+        diagnostic_horizon_bars=2,
+        checked_at=start,
+    )
+
+    assert segments == before_segments
+    assert records == before_records
+    assert result.segments[0]["diagnostic_mark"]["source"] == DIAGNOSTIC_OVERLAY_SOURCE
+    assert result.metrics["replay_ran"] is False
 
 
 def _composite_overlay_segments(start: datetime) -> tuple[dict[str, object], ...]:

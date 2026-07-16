@@ -519,6 +519,15 @@ Implemented and pushed:
   `3.383729296875`, existing local-paper sum `-1.4563`, and delta
   `4.840029296875`, and wrote one compact artifact outside Git without replay
   or training,
+- bounded research-only exit-latency sandbox helper; it adds
+  `ExitLatencySandboxSegment`, `ExitLatencySignalRecord`, and
+  `compute_exit_latency_sandbox_marks` as pure research helpers that consume
+  provided trace timing records and `Bar` inputs, emit source-labeled
+  `diagnostic_overlay` marks only when latency and bounded horizon conditions
+  are met, report missing signal, entry-bar, signal-bar, and horizon states
+  without normal diagnostic failures, and perform no file, network,
+  credential, broker, CLI, job, dashboard, scheduler, training, replay, or
+  artifact-write work,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -539,7 +548,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `253 passed`
+- `256 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -583,18 +592,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded research-only exit-latency replay sandbox target:
+Start one bounded research-only exit-latency sandbox helper smoke target:
 
-1. ask Claude CLI for a short drift-check before adding code,
-2. add the smallest research-only helper needed to compute diagnostic
-   exit-latency marks from provided decision/trace timing and `Bar` inputs,
-3. keep output source-labeled as `diagnostic_overlay` and leave existing
-   `source: local_paper` evidence untouched,
-4. add focused tests for no broker, no credentials, no local-paper mutation,
-   and missing-bar/missing-signal reporting,
-5. avoid artifact writers, CLIs, research job kinds, training, broad feature
-   changes, broad data search, threshold search, branch ranking, dashboards,
-   schedulers, broker behavior, or report/gate expansion.
+1. use the new pure helper on existing entry-adverse exit-latency context
+   artifacts and selected `snapshot=2026-06-18` Yahoo rows,
+2. write one compact external smoke artifact under
+   `D:\thericher-v2\model-artifacts`,
+3. compare sandbox diagnostic marks against the composite helper smoke source
+   counts and gross-delta summaries,
+4. avoid new helper code unless a bug is found, and avoid artifact writers,
+   CLIs, research job kinds, training, broad feature changes, broad data
+   search, threshold search, branch ranking, dashboards, schedulers, broker
+   behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

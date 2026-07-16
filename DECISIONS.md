@@ -798,3 +798,19 @@ calculation that should not stay as one-off script logic. A small pure helper
 keeps the evidence reusable while avoiding broker behavior, credentials, file
 or network I/O, artifact writers, CLIs, research job kinds, dashboards,
 schedulers, replay mutation, policy selection, and model-promotion language.
+
+## 2026-07-16 - Bounded research-only exit-latency sandbox helper
+
+Decision: add pure research helpers for exit-latency sandbox marks:
+`ExitLatencySandboxSegment`, `ExitLatencySignalRecord`, and
+`compute_exit_latency_sandbox_marks`. The helper consumes provided trace timing
+records and `Bar` inputs, emits `source: diagnostic_overlay` marks only when a
+bounded latency condition is met, and reports missing signal, entry-bar,
+signal-bar, or horizon evidence as diagnostic states.
+
+Reason: composite segment evidence is useful but post-hoc. A small
+source-labeled sandbox helper lets research inspect exit-latency timing before
+any simulator or local-paper replay change, while avoiding KIS access,
+credentials, broker behavior, file or network I/O, artifact writers, CLIs,
+research job kinds, dashboards, schedulers, threshold search, and
+model-promotion language.

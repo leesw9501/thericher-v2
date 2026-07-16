@@ -332,6 +332,9 @@
 - Diagnostic exit-composite helper smoke ran locally as artifact-only work,
   used no GPU or Docker research job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Research-only exit-latency sandbox helper added no Docker dependency,
+  service, GPU requirement, artifact writer, or PyTorch dependency in
+  local/base paths.
 
 ## Next Handoff
 
@@ -340,6 +343,5 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next exit-latency replay sandbox helper should add no Docker dependency,
-  service, GPU requirement, artifact writer, or PyTorch dependency in
-  local/base paths.
+- The next exit-latency sandbox smoke should write any generated artifact only
+  under `D:\thericher-v2\model-artifacts`.
