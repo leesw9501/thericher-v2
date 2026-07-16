@@ -850,6 +850,14 @@
   artifact-only cross-slice stability check should precede another GPU/model
   input run. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-feature-input-diagnostic\metrics.json`.
+- Cross-slice feature-input stability check reused existing ADBE/AEM/AMAT
+  traces, event artifacts, and local Yahoo rows only. It reconstructed `659`
+  diagnostic candidate-entry rows, preserved `592` source-verified
+  `local_paper` fills, and found modest but repeated directions for
+  probability rank, probability margin, and last-volume-vs-prior-average. It
+  supports one narrow Docker `research` feature-input ablation, not a broad GPU
+  sweep. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
 
 ## Next Handoff
 
@@ -857,9 +865,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another GPU training block, run one cross-slice feature-input
-  stability check to see whether the ADI/AGG pre-entry separation direction
-  repeats on additional explicit-slice artifacts.
+- Before another deep training block, run one bounded Docker `research`
+  feature-input ablation that keeps raw pre-entry features separate from
+  probability-derived meta features in the output.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

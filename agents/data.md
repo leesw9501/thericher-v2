@@ -359,12 +359,15 @@
   `snapshot=2026-06-18` Yahoo 1m file and acquired no additional data.
 - ADI/AGG feature-input diagnostic reused selected ADI and AGG rows from the
   existing `snapshot=2026-06-18` Yahoo 1m file and acquired no additional data.
+- Cross-slice feature-input stability check reused selected ADBE, AEM, and AMAT
+  rows from the existing `snapshot=2026-06-18` Yahoo 1m file plus existing
+  external trace/event artifacts and acquired no additional data.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Reuse existing explicit-slice
-  local Yahoo rows for the cross-slice feature-input stability check.
+  local Yahoo rows for the bounded Docker `research` feature-input ablation.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

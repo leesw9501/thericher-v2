@@ -468,13 +468,17 @@
   helper, job kind, CLI, report family, gate, dashboard, scheduler,
   coordinator, durable worker, broker path, credential path, retraining, replay
   rerun, simulator rule, or model-promotion language.
+- Cross-slice feature-input stability check stayed artifact-only and reused
+  existing ADBE/AEM/AMAT trace, event, prior diagnostic, and local Yahoo
+  evidence. It added no code, helper, job kind, CLI, report family, gate,
+  dashboard, scheduler, coordinator, durable worker, broker path, credential
+  path, retraining, replay rerun, simulator rule, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small artifact-only cross-slice feature-input
-  stability check before another GPU/model-input run. Keep coordination
-  evidence small and avoid daemon, scheduler, dashboard, report branch, broker,
-  credential, auto-commit, durable multi-agent-platform behavior, or
-  model-promotion language.
+- Push the next task toward one small Docker `research` feature-input ablation,
+  not a broad GPU sweep. Keep coordination evidence small and avoid daemon,
+  scheduler, dashboard, report branch, broker, credential, auto-commit,
+  durable multi-agent-platform behavior, or model-promotion language.

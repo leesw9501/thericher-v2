@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one artifact-only cross-slice feature-input stability check before spending
-more GPU time.
+Run one bounded Docker `research` feature-input ablation using the completed
+cross-slice stability evidence.
 
-This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by checking whether the ADI/AGG pre-entry separation
-direction repeats on a few additional explicit-slice artifacts before any
-bounded model-input or GPU training target is queued.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by checking whether a very small feature branch can separate
+early adverse/no-lift candidate entries without changing local-paper replay.
 
 ## Hard Boundaries
 
@@ -25,14 +24,15 @@ bounded model-input or GPU training target is queued.
 - Do not acquire market data in this slice unless a tiny no-auth,
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
-  `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before this cross-slice diagnostic is complete.
-- Do not queue another Engine Research Agent GPU job unless current artifacts
-  are unreadable or incomplete.
+  `D:\thericher-v2\model-artifacts` or the configured artifact root mounted as
+  `/app/model_artifacts` in Docker.
+- Use Docker `research` with PyTorch CUDA for any GPU/model run.
+- Do not add PyTorch to the base/local runtime.
+- Do not run a broad hyperparameter sweep.
 - Do not mutate existing local-paper event artifacts or replay outputs.
 - Keep original fills labeled and checked as `source: local_paper`.
-- Label diagnostic outcomes as `source: diagnostic_overlay`; do not count them
-  as local-paper fills.
+- Label any diagnostic rows or outcomes as `source: diagnostic_overlay`; do not
+  count them as local-paper fills.
 - Do not make Execution, Infra, or Review durable executable workers in this
   slice.
 - Do not add a daemon, scheduler, Windows service, dashboard, notification
@@ -63,41 +63,40 @@ bounded model-input or GPU training target is queued.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before any code or architecture
-   edits. If the slice stays artifact-only plus stateboard updates, record why a
-   drift-check was not needed.
+3. Ask Claude CLI for a short drift-check before code, architecture, or policy
+   edits. Judge the result against `HANDOFF.md`, `ARCHITECTURE.md`, and
+   `DECISIONS.md`.
 
 ## Required Work
 
-1. Consume the completed ADI/AGG feature-input diagnostic:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-feature-input-diagnostic\metrics.json`.
-2. Select a small additional explicit-slice set from existing artifacts only.
-   Prefer ADBE, AEM, and AMAT if their probability traces and local-paper event
-   artifacts are present; otherwise record exact missing paths and choose the
-   nearest available explicit-slice traces.
-3. Use existing probability traces, event artifacts, and selected local Yahoo
-   rows from `snapshot=2026-06-18` only.
-4. Reconstruct the same candidate-entry row diagnostic shape:
-   - pre-entry 3-bar OHLCV context,
-   - probability margin and local probability rank,
-   - cluster position and cooldown distance,
-   - early 3-bar MAE/MFE bucket,
-   - sell-threshold exit outcome,
-   - row-level AUC/median separation diagnostics.
-5. Compare whether adverse/no-lift versus non-adverse separation direction is
-   stable across the added slices and the prior ADI/AGG reference.
-6. Explain whether the next bounded target should be:
-   - a model-input/feature branch in Docker `research`, or
-   - one more artifact-only diagnostic.
-7. Preserve local-paper source verification from existing event artifacts and
-   separately count all diagnostic outcomes as `source: diagnostic_overlay`.
-8. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research sidecar for interpretation,
+1. Consume the completed cross-slice stability artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
+2. Keep the ablation narrow and explicit. Compare at most three input groups:
+   - existing baseline feature shape,
+   - raw pre-entry features only,
+   - raw pre-entry features plus probability-derived meta features.
+3. Treat probability-derived fields separately from raw market features in the
+   artifact output so the result is interpretable.
+4. Use existing explicit-slice data and the existing
+   `snapshot=2026-06-18` Yahoo rows only unless a blocker is recorded.
+5. Run a CPU smoke or deterministic dry-run first if the code path changes.
+6. If the smoke is sound, run one bounded Docker `research` PyTorch CUDA
+   experiment with tight caps. Write all artifacts outside Git.
+7. Preserve local-paper replay behavior. Any replay used for comparison must go
+   through the existing broker-free local-paper simulator and preserve
+   `source: local_paper`.
+8. Add or update focused tests proving:
+   - no broker, KIS, network, or credential access is needed,
+   - model/GPU artifacts resolve outside the Git workspace,
+   - probability-derived and raw feature groups are distinguishable in the
+     ablation output,
+   - local-paper fill source evidence remains replayable and separate from
+     diagnostics.
+9. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for ablation interpretation,
+   - Infra sidecar for Docker/artifact mount assumptions,
    - Execution sidecar for source separation,
-   - Review sidecar for sprawl and model-promotion language.
-9. If artifacts are insufficient, record exact missing paths and stop; do not
-   substitute broker, credential, network, dashboard, scheduler, or new GPU
-   training work.
+   - Review sidecar for sprawl and promotion-language checks.
 10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
@@ -122,12 +121,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused artifact-only command used, artifact paths, local-paper
-source evidence, and diagnostic-overlay source evidence.
+Also report any focused CPU smoke, Docker `research`, or GPU command used,
+artifact paths, local-paper source evidence, and diagnostic-overlay evidence.
 
 ## Suggested Commit Message
 
-`Check cross-slice entry feature stability`
+`Add bounded feature input ablation`
 
 ## Completion Report
 
@@ -138,8 +137,8 @@ Report:
 - commit hash,
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
-- whether GPU/Docker were used,
-- produced diagnostic artifacts,
+- whether GPU/Docker were used and where artifacts were written,
+- produced diagnostic or research artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - sub-agents used and what they checked,

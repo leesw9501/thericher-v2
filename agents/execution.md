@@ -325,6 +325,9 @@
 - ADI/AGG feature-input diagnostic reran no execution, preserved `376`
   original fills as `source: local_paper`, and labeled all `660` candidate-entry
   diagnostic rows as `source: diagnostic_overlay`.
+- Cross-slice feature-input stability check reran no execution, preserved `592`
+  original ADBE/AEM/AMAT fills as `source: local_paper`, and labeled all `659`
+  candidate-entry diagnostic rows as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -335,7 +338,6 @@
   keep fills labeled `source: local_paper`.
 - Do not make Execution Agent executable as part of the next multi-agent slice;
   a broker-capable worker needs a future explicit paper-trading goal.
-- Any AMAT/AEM replay-shape overlay must label non-replay outcomes as
-  `source: diagnostic_overlay` and preserve original local-paper fills.
-- The next cross-slice feature-input stability check must keep the same source
-  separation and must not mutate local-paper replay behavior.
+- Any bounded feature-input ablation or replay comparison must preserve original
+  local-paper fills as `source: local_paper`, label diagnostics as
+  `source: diagnostic_overlay`, and avoid broker authority.

@@ -1033,10 +1033,41 @@ Claude drift-check was not needed for this slice because it made no code,
 architecture, or policy edits; it used existing artifacts, temporary Codex
 sidecars, and a compact external diagnostic only.
 
-Next, run one artifact-only cross-slice feature-input stability check before
-spending more GPU time. Reuse existing explicit-slice traces, event artifacts,
-and selected local Yahoo rows to see whether the ADI/AGG pre-entry separation
-direction repeats on a few additional slices.
+The cross-slice feature-input stability check then completed artifact-only:
+
+- It consumed the ADI/AGG feature-input diagnostic, ADBE/AEM/AMAT explicit-slice
+  probability traces, existing event artifacts, and selected local Yahoo rows
+  from `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-feature-input-stability\engine-agent-depth-target-explicit-slices-20260717-r1-cross-slice-feature-input-stability\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market data
+  acquisition, replay mutation, or durable worker creation.
+- Original ADBE/AEM/AMAT fills stayed `592` verified `source: local_paper`
+  fills. The diagnostic produced `659` candidate-entry rows labeled
+  `source: diagnostic_overlay`.
+- Stable-direction evidence remained modest: probability rank, probability
+  margin, and last-volume-vs-prior-average repeated direction in `5/5` slices
+  with average directional AUC around `0.526` to `0.534`.
+- Pre-entry close position and prior range repeated direction in `4/5` slices,
+  but flipped on one symbol each. Other entry-shape and cluster features stayed
+  mixed across the five slices.
+- Engine Research sidecar found enough evidence for one narrow Docker
+  `research` feature-branch ablation, but not for a broad GPU training sweep.
+- Execution sidecar verified original fills remained `local_paper`, diagnostic
+  rows remained `diagnostic_overlay`, and no broker, KIS, credential, non-local,
+  or unknown source evidence appeared.
+- Review sidecar found no artifact sprawl, durable-worker drift, scheduler,
+  dashboard, broker creep, or model-promotion language. It also flagged the
+  temporary generator as a cleanup item; it was removed before commit.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, run one bounded Docker `research` feature-input ablation that separates
+raw pre-entry features from probability-derived meta features. Keep replay
+unchanged, artifacts outside Git, and local-paper source evidence separate from
+diagnostic overlays.
 
 ## Daily Operator Review
 
