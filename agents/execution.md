@@ -139,6 +139,9 @@
 - Longer-window trade-path attribution parsed existing event files and
   confirmed all `14` fill events remained `source: local_paper`; no broker path
   was used.
+- Trade-path attribution helper reuses shared fill-source evidence, surfaces
+  non-local fill sources separately, and does not touch broker submit/cancel
+  code.
 
 ## Next Handoff
 

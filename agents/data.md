@@ -178,12 +178,15 @@
 - Longer-window trade-path attribution read selected ABNB, ACN, and ABBV bars
   from the existing `snapshot=2026-06-18` Yahoo 1m file; no additional data was
   acquired.
+- Trade-path attribution helper takes provided `Bar` inputs and does not load
+  market data itself; focused tests use in-memory/local temp bars only.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is keeping selected local-bar
-  fixtures minimal while a reusable trade-path attribution helper is codified.
+- The next data task is not more acquisition; it is reusing the same source
+  CVS/FCX/KO and out-of-symbol AAPL/ABNB/ABT/ACN/ABBV slices for a bounded
+  feature-branch evaluation/replay target.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

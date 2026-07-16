@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Codify a bounded trade-path attribution helper.
+Build a bounded out-of-symbol-evaluation feature-branch target.
 
-This advances PnL attribution and paper-trading preparation by turning the
-manual longer-window trade-path attribution into a small reusable helper that
-can inspect future local-paper replay artifacts without creating another broad
-report or gate workflow.
+This advances feature/model research, backtest/walk-forward validation, and PnL
+attribution by evaluating the current `core_plus_bar_pressure_v1` branch on the
+out-of-symbol AAPL, ABNB, ABT, ACN, and ABBV slices before trying another
+feature set, model axis, or threshold-only branch.
 
 ## Hard Boundaries
 
@@ -64,31 +64,28 @@ report or gate workflow.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Ask Claude CLI for a short drift-check before code edits, then judge it
-   against `HANDOFF.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
-3. Use recent artifacts as behavior context, not as promotion evidence:
+2. Use recent artifacts as context, not as promotion evidence:
+   - `bounded-disjoint-eval-bar-pressure-standardized-smoke-20260716`
    - `bounded-out-of-symbol-disjoint-eval-replay-cap2-240bars-20260716`
-   - `bounded-longer-out-of-symbol-disjoint-eval-post-entry-summary-20260716`
    - `bounded-longer-out-of-symbol-disjoint-eval-trade-path-20260716`
-4. Add a small pure helper near the existing feature-branch replay attribution
-   path that can derive closed trade segments from local-paper event artifacts
-   plus selected bars.
-5. Keep it artifact-driven and broker-free:
-   - parse local-paper fill events,
-   - pair buy/sell fills into closed segments,
-   - calculate holding duration,
-   - calculate gross and fee-aware deltas,
-   - calculate simple adverse/favorable movement from provided bars,
-   - report local-paper fill-source verification.
-6. Avoid adding a new research job kind unless the existing call path cannot
-   express the helper. Prefer a direct function with focused tests.
-7. Add focused tests proving:
-   - local-paper sources are counted and non-local fills are surfaced,
-   - fee-aware deltas are deterministic,
-   - missing zero-fill event files remain tolerated only for zero-fill cases
-     where applicable,
-   - no broker, network, credential, or `.env` access is required.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+3. Reuse existing source training slices from
+   `snapshot=2026-07-09-shadow-t0-8d-probe`: CVS, FCX, and KO.
+4. Use explicit evaluation slices from `snapshot=2026-06-18`: AAPL, ABNB, ABT,
+   ACN, and ABBV.
+5. Run Docker `research` `candidate_feature_branch` with:
+   - `core_plus_bar_pressure_v1`,
+   - `hidden_units=4`,
+   - `feature_standardization`,
+   - bounded caps, including `max-bars 240`,
+   - explicit training and evaluation slices.
+6. If feature-branch evaluation completes, replay the new feature-branch
+   artifact across the same out-of-symbol slices with threshold cap `2` and
+   `max-bars 240`.
+7. If replay completes, run compact artifact-only attribution, including
+   local-paper source verification and the trade-path helper.
+8. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+   select a model, or add promotion language.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -116,7 +113,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded trade path attribution helper`
+`Add bounded out-of-symbol evaluation feature branch`
 
 ## Completion Report
 
@@ -128,6 +125,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- trade-path helper behavior,
+- out-of-symbol-evaluation feature-branch findings,
 - what was intentionally not built,
 - next recommended goal.

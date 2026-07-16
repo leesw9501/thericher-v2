@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Codify a bounded trade-path attribution helper before another model axis or
-   threshold-only branch is tried.
+1. Run one bounded out-of-symbol-evaluation feature-branch target before
+   another model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -164,6 +164,10 @@
   `7` closed segments, found `5` fee-aware negative and `2` non-negative
   segments, recorded fee-aware delta sum `-2.5214`, and verified all `14`
   parsed fills were `source: local_paper`.
+- Last completed: bounded trade-path attribution helper, which codifies the
+  manual trade-path evidence as a pure function with focused tests, reuses
+  shared fill-source verification, handles FIFO partial fills and open segments,
+  and matched the longer-window artifact shape in a real-artifact smoke.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -397,9 +401,13 @@
   losses, not open-position residue. The next step should codify this
   attribution so future replay artifacts can be inspected without manual
   scripts.
+- Trade-path helper behavior is now codified. The next evidence should return
+  to bounded GPU research by evaluating the current feature branch directly on
+  the out-of-symbol slices before trying a new feature or model axis.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should codify the compact trade-path attribution helper before another
-  hidden-units, regularization, preprocessing, or threshold-only branch.
+  task should run the bounded out-of-symbol-evaluation feature-branch target
+  before another hidden-units, regularization, preprocessing, or threshold-only
+  branch.

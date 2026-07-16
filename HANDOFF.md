@@ -307,6 +307,13 @@ Implemented and pushed:
   evidence only, attributed `7` closed trade segments, found `5` fee-aware
   negative segments and `2` non-negative segments, fee-aware delta sum
   `-2.5214`, and confirmed all `14` parsed fills were `source: local_paper`,
+- bounded trade-path attribution helper; it adds a pure
+  `attribute_trade_paths_from_local_paper_events` helper that consumes provided
+  `Bar` data and local-paper event artifacts, reuses the shared fill-source
+  evidence helper, pairs buy/sell fills with FIFO partial-fill handling,
+  surfaces open segments and non-local sources, calculates holding duration,
+  gross and fee-aware deltas, and simple adverse/favorable movement, with no
+  new research job kind, broker path, data loader, report, gate, or dashboard,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -327,7 +334,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `234 passed`
+- `238 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -371,16 +378,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Codify one bounded trade-path attribution helper:
+Start one bounded out-of-symbol-evaluation feature-branch target:
 
-1. ask Claude CLI for a short drift-check before code edits,
-2. reuse the current manual trade-path evidence as the target behavior,
-3. add a small pure helper near the existing feature-branch replay attribution
-   code rather than a new job family,
-4. add focused tests for local-paper source filtering, fee-aware deltas, and
-   no broker/network/credential access,
-5. avoid broad attribution frameworks, dashboards, gates, schedulers,
-   threshold searches, model-axis changes, or broker-facing behavior.
+1. train the existing `core_plus_bar_pressure_v1` branch on the current CVS,
+   FCX, and KO source slices,
+2. evaluate on the out-of-symbol AAPL, ABNB, ABT, ACN, and ABBV slices from
+   `snapshot=2026-06-18`,
+3. replay the resulting feature-branch artifact across the same out-of-symbol
+   slices with threshold cap `2` and `max-bars 240`,
+4. use compact attribution, including the trade-path helper, if replay
+   completes,
+5. avoid new feature sets, model-axis changes, dashboards, gates, schedulers,
+   threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

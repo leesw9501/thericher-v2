@@ -136,6 +136,11 @@ from .jobs import (
     run_and_write_research_job,
     write_research_job_artifact,
 )
+from .trade_path_attribution import (
+    TradePathAttributionResult,
+    TradePathEventArtifact,
+    attribute_trade_paths_from_local_paper_events,
+)
 from .validation import (
     GpuReadiness,
     MarketDataInventory,
@@ -201,6 +206,8 @@ __all__ = [
     "ResearchJobResult",
     "ResearchJobRun",
     "ResearchJobSpec",
+    "TradePathAttributionResult",
+    "TradePathEventArtifact",
     "WalkForwardCandidate",
     "WalkForwardExperimentSummary",
     "WalkForwardResult",
@@ -223,6 +230,7 @@ __all__ = [
     "derive_fill_aware_threshold_pairs",
     "detect_gpu_readiness",
     "discover_market_data_inventory",
+    "attribute_trade_paths_from_local_paper_events",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "parse_candidate_data_slices",

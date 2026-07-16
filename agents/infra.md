@@ -220,6 +220,9 @@
   consumed existing external replay/robustness/event/trace artifacts plus
   selected `D:\market_data` rows, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Trade-path attribution helper added no runtime dependencies, no PyTorch to
+  local/base paths, no Docker service changes, and no artifact writer; focused
+  tests and a local real-artifact smoke ran through `uv`.
 
 ## Next Handoff
 
