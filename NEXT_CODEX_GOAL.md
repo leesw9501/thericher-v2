@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded entry-adverse feature-input concentration diagnostic target.
+Build a bounded entry-adverse source-breadth training contrast target.
 
 This advances feature/model research, backtest/walk-forward validation, and PnL
-attribution by explaining whether the surviving regularized AMAT entries,
-hidden4 negative/non-negative entries, and batch2 near-threshold rows occupy
-different `core_plus_entry_adverse_v1` feature regions.
+attribution by testing whether a wider symbol source context reduces the
+AMAT-only concentration seen in the `weight_decay=0.001` entry-adverse branch
+without changing feature set, model size, preprocessing, or replay machinery.
 
 ## Hard Boundaries
 
@@ -60,38 +60,39 @@ different `core_plus_entry_adverse_v1` feature regions.
 
 3. Ask Claude CLI for a short drift-check before adding code, changing feature
    builders, adding a new research job kind, or changing agent governance. If
-   existing code, local bars, and artifact-only scripts are enough, do not add
-   code.
+   existing Docker `research` jobs and artifact-only scripts are enough, do not
+   add code.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume the completed trace-collapse diagnostic:
-   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-regularization-trace-collapse-20260716\metrics.json`
-3. Reuse existing probability traces, opportunity/trade-path artifacts, and
-   selected local Yahoo rows from `snapshot=2026-06-18`. Do not acquire data.
-4. Reconstruct or read only the `core_plus_entry_adverse_v1` feature inputs
-   needed for:
-   - regularized AMAT buy-opportunity rows that became local-paper entries,
-   - hidden4 negative and non-negative entered rows from the wider sample,
-   - batch2 rows near the buy thresholds that still produced zero buys.
-5. Compare compact distributions for the entry-adverse features and nearby
-   context features, including:
-   - `upper_wick_share`,
-   - `low_vs_prior_low_return`,
-   - `close_position_in_bar`,
-   - `range_expansion`,
-   - `bar_body_return`,
-   - probability margin versus buy threshold.
-6. Produce one compact external diagnostic artifact that explains whether the
-   surviving regularized entries are concentrated in a narrow feature pattern.
-7. Keep all results descriptive only. Do not rank branches, select a branch,
-   define promotion criteria, or produce a pass/fail field.
-8. Do not retrain, rerun replay, add features, threshold search, preprocessing
-   search, model search, scheduler, dashboard, broker behavior, or new job
-   kinds.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Consume the completed feature-input concentration diagnostic:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-feature-input-concentration-20260716\metrics.json`
+3. Use existing Docker `research` feature-branch code only:
+   - `--candidate-feature-set core_plus_entry_adverse_v1`
+   - `--hidden-units 4`
+   - `--weight-decay 0.001`
+   - `--feature-preprocessing feature_standardization`
+   - strict caps no larger than `max-bars 240`, `max-epochs 4`, and
+     `max-steps 128`.
+4. Train on ADBE, ADI, ADP, AEM, AGG, and AMAT from
+   `snapshot=2026-06-18`.
+5. Evaluate and replay symbol-disjoint AMD, AMGN, AMT, and AMZN from
+   `snapshot=2026-06-18`.
+6. Run cap-2 local-paper replay through the existing
+   `candidate_feature_branch_replay` path. If fills occur, produce
+   artifact-only opportunity and trade-path attribution; if zero fills occur,
+   produce compact zero-fill attribution.
+7. Compare the result descriptively against:
+   - the feature-input concentration diagnostic,
+   - the previous `weight_decay=0.001` CVS/FCX/KO-source 10-symbol summary,
+   - the hidden4 wider-sample context.
+8. Keep all results descriptive only. Do not rank data sources, select a
+   branch, define promotion criteria, or produce a pass/fail field.
+9. Do not add features, threshold search, preprocessing search, model search,
+   scheduler, dashboard, broker behavior, or new job kinds.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -119,7 +120,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded entry-adverse feature-input diagnostic`
+`Add bounded entry-adverse source-breadth contrast`
 
 ## Completion Report
 
@@ -131,6 +132,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- feature-input concentration findings,
+- source-breadth contrast findings,
 - what was intentionally not built,
 - next goal.

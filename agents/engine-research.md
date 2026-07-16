@@ -29,9 +29,8 @@
 
 ## Active Queue
 
-1. Produce one artifact-only entry-adverse feature-input concentration
-   diagnostic before another feature-set, regularization, or threshold-only
-   branch is tried.
+1. Run one bounded entry-adverse source-breadth training contrast before another
+   feature-set, regularization value, or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -296,6 +295,14 @@
   local-paper-only, and recorded that regularization removed hidden4 negative
   segments while reducing buy opportunities from `9` to `2` and replay fills
   from `18` to `4`.
+- Last completed:
+  `bounded-entry-adverse-feature-input-concentration-20260716`, status
+  `entry_adverse_feature_input_concentration_diagnostic_only`, consumed
+  existing traces, trade paths, and selected local Yahoo rows only, found the
+  regularized AMAT entries were the same unique signal row as hidden4 AMAT
+  non-negative entry, and recorded batch2 top-probability margins remained
+  below buy thresholds for hidden4, `weight_decay=0.01`, and
+  `weight_decay=0.001`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -581,10 +588,15 @@
   compare entry-adverse feature inputs for entered AMAT rows, hidden4 negative
   and non-negative rows, and batch2 near-threshold rows before another GPU
   model axis.
+- Feature-input concentration showed the regularized AMAT entries are not new
+  breadth; they are the same hidden4 AMAT non-negative row. The next evidence
+  should keep feature set, model size, preprocessing, and `weight_decay=0.001`
+  fixed while testing one wider source-symbol training context against the
+  batch2 symbols.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should build one artifact-only feature-input concentration diagnostic
-  from existing entry-adverse artifacts and local bars before another feature-set,
-  preprocessing, regularization, or threshold-only branch.
+  task should run one bounded source-breadth training contrast from existing
+  code and local data before another feature-set, preprocessing, regularization
+  value, or threshold-only branch.

@@ -424,6 +424,13 @@ Implemented and pushed:
   removed the hidden4 negative segments but reduced buy opportunities from `9`
   to `2`, replay fills from `18` to `4`, and widened the batch2 buy-threshold
   gap from `0.001121` to `0.004303` and `0.007378`,
+- bounded entry-adverse feature-input concentration diagnostic; it consumed the
+  trace-collapse diagnostic, existing probability traces, trade-path artifacts,
+  and selected `snapshot=2026-06-18` Yahoo rows, reran no training or replay,
+  reconstructed `core_plus_entry_adverse_v1` feature inputs, and found the
+  regularized AMAT entries were the same unique signal row as the hidden4 AMAT
+  non-negative entry while batch2 top-probability rows stayed below buy
+  thresholds in all three traces,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -488,15 +495,15 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded entry-adverse feature-input concentration diagnostic target:
+Start one bounded entry-adverse source-breadth training contrast target:
 
-1. consume the completed regularization trace-collapse diagnostic plus existing
-   probability traces, opportunity artifacts, and selected local Yahoo bars,
-2. compare entry-adverse feature inputs for AMAT buy opportunities, hidden4
-   negative/non-negative entries, and batch2 near-threshold rows,
-3. produce one compact external diagnostic that explains whether surviving
-   regularized entries are concentrated in a narrow feature pattern,
-4. avoid retraining, replay reruns, broad regularization search, new features,
+1. consume the completed feature-input concentration diagnostic,
+2. use existing Docker `research` feature-branch code with
+   `core_plus_entry_adverse_v1`, hidden-units `4`, `weight_decay=0.001`, and
+   `feature_standardization`,
+3. train on ADBE/ADI/ADP/AEM/AGG/AMAT from `snapshot=2026-06-18` and
+   evaluate/replay symbol-disjoint AMD/AMGN/AMT/AMZN from the same snapshot,
+4. avoid code changes, broad data search, regularization search, new features,
    threshold search, branch ranking, dashboards,
    schedulers, broker behavior, or report/gate expansion.
 

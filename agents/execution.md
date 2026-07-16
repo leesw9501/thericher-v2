@@ -189,6 +189,8 @@
 - Regularization trace-collapse diagnostic reran no execution and preserved
   existing local-paper source verification across hidden4, hidden8,
   `weight_decay=0.01`, and `weight_decay=0.001` artifacts.
+- Feature-input concentration diagnostic reran no execution and only matched
+  existing local-paper entry timestamps to probability traces and local bars.
 
 ## Next Handoff
 

@@ -272,11 +272,15 @@
   only and added no helper, code path, job kind, CLI, report family, gate,
   dashboard, scheduler, broker path, threshold search, retraining, replay
   rerun, feature/model axis, or model-promotion language.
+- Feature-input concentration diagnostic reused existing code and external
+  artifacts from a local one-off script, added no helper, code path, job kind,
+  CLI, report family, gate, dashboard, scheduler, broker path, threshold
+  search, retraining, replay rerun, feature/model axis, or model-promotion
+  language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one artifact-only feature-input concentration
-  diagnostic before allowing another feature-set, regularization, or
-  threshold-only branch.
+- Push the next task toward one bounded source-breadth training contrast before
+  allowing another feature-set, regularization value, or threshold-only branch.

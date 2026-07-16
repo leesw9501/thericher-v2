@@ -289,6 +289,10 @@
   consumed existing external JSON artifacts, reran no Docker job, used no GPU,
   and wrote one compact diagnostic under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Feature-input concentration diagnostic ran locally as artifact-only work,
+  imported existing light research/data helpers only, reran no Docker job, used
+  no GPU, and wrote one compact diagnostic under the external model artifact
+  root.
 
 ## Next Handoff
 

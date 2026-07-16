@@ -225,13 +225,16 @@
   replay; no additional data was acquired.
 - Regularization trace-collapse diagnostic consumed existing external
   artifacts only and acquired no additional market data.
+- Feature-input concentration diagnostic reused existing probability traces and
+  selected `snapshot=2026-06-18` local Yahoo rows; no additional data was
+  acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; it may read selected existing
-  `snapshot=2026-06-18` local Yahoo rows to compare entry-adverse feature inputs
-  for AMAT entries and batch2 near-threshold rows.
+- The next data task is not acquisition; it reuses `snapshot=2026-06-18`
+  symbols ADBE, ADI, ADP, AEM, AGG, AMAT, AMD, AMGN, AMT, and AMZN for one
+  symbol-disjoint source-breadth training contrast.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
