@@ -5,12 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run a cap-limited calibration holdout replay.
+Build the next bounded feature/model branch.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by taking the bounded calibration artifact from the
-data-quality-visible candidate and replaying its threshold pairs on disjoint
-local Yahoo holdout slices through the existing broker-free local-paper path.
+PnL attribution by moving beyond threshold-only tuning after the cap-limited
+source and disjoint holdout replays stayed negative.
 
 ## Hard Boundaries
 
@@ -62,19 +61,20 @@ local Yahoo holdout slices through the existing broker-free local-paper path.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Use the existing cap-limited calibration artifact:
-   `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-calibration-runtime-3slice-80-cap2-20260716\metrics.json`.
-3. Prefer existing disjoint holdout data under
-   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`.
-4. Run a compact Docker `research` `candidate_threshold_holdout` job on CVS,
-   FCX, and KO with bounded `max_bars`. Stop before another long no-output run.
-5. Verify all generated fills are `source: local_paper` and record PnL,
-   drawdown, fill counts, probability ranges, and artifact paths as
-   descriptive evidence only.
-6. Compare source calibration versus holdout evidence only descriptively. Do
-   not rank, recommend, promote, or pass/fail thresholds or candidates.
-7. Add or adjust focused tests only if code changes are required.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Use recent artifacts as context, not as promotion evidence:
+   - `bounded-dq-visible-candidate-training-depth-20260716`
+   - `bounded-dq-visible-candidate-evaluation-depth-20260716`
+   - `bounded-calibration-runtime-3slice-80-cap2-20260716`
+   - `bounded-dq-visible-calibration-holdout-cap2-20260716`
+3. Add at most one small feature-set or model-axis branch. Prefer extending the
+   existing candidate feature builder over creating a new job family.
+4. Run CPU/focused tests first, then Docker `research` training/evaluation on
+   existing CVS, FCX, and KO local Yahoo slices if code changes are sound.
+5. If evaluation evidence is sound, run a compact cap-limited calibration or
+   replay through the existing broker-free local-paper path.
+6. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
+   thresholds or candidates.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -97,13 +97,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report the Docker `research` holdout command used, whether GPU was available,
-where artifacts were written, and whether every started container finished or
-was explicitly stopped.
+Report any focused tests, Docker `research` commands, GPU availability, and
+artifact paths used.
 
 ## Suggested Commit Message
 
-`Run cap-limited calibration holdout replay`
+`Add next bounded feature model branch`
 
 ## Completion Report
 
@@ -115,6 +114,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- holdout replay findings,
+- feature/model branch findings,
 - what was intentionally not built,
 - next recommended goal.

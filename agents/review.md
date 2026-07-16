@@ -137,10 +137,13 @@
 - Calibration runtime control exposed an existing threshold-pair cap through
   the research job runner and runbook instead of adding a scheduler, new job
   family, gate, dashboard, broker path, or model-promotion language.
+- Cap-limited calibration holdout reused the existing holdout/robustness
+  local-paper path and added no code, new job family, report, gate, dashboard,
+  scheduler, broker path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
 - Push the next task toward using cap-limited evidence for the next research
-  step without creating a new job family or promotion gate.
+  feature/model branch without creating a new job family or promotion gate.

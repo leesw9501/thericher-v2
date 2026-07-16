@@ -203,6 +203,11 @@ Implemented and pushed:
   Docker job specs to three derived pairs, and the runbook calibration smoke
   uses cap 2 after a full-grid 80-bar, 3-slice attempt exceeded 3 minutes
   without a final artifact,
+- cap-limited calibration holdout replay; the cap-2 source calibration
+  produced 214 local-paper fills with negative PnL range, and the disjoint
+  `snapshot=2026-06-18` CVS/FCX/KO holdout produced 228 verified
+  `source: local_paper` fills with negative PnL range, so threshold-only
+  iteration should pause in favor of feature/model work,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -267,14 +272,12 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Use the bounded calibration path for the next compact evidence loop:
+Start the next bounded feature/model branch:
 
-1. run a cap-limited calibration/robustness pass on existing quality-visible
-   artifacts,
-2. compare replay evidence against the recent single-CVS replay without adding
-   a promotion decision,
-3. decide whether the next research block should be breadth, depth, or feature
-   work based on descriptive PnL/drawdown/fill evidence,
+1. use recent source and holdout evidence as context,
+2. add at most one small feature-set or model-axis branch,
+3. train/evaluate/replay it through existing Docker `research` and local-paper
+   paths,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
    behavior.
 

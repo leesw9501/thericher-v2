@@ -128,12 +128,14 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
 - Calibration runtime probes reused the same CVS, FCX, and KO local Yahoo
   snapshot; no additional data was acquired.
+- Cap-limited calibration holdout reused disjoint CVS, FCX, and KO data from
+  `snapshot=2026-06-18`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while cap-limited calibration/replay evidence is compared.
+  visible while the next feature/model branch reuses existing local snapshots.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

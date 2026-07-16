@@ -139,6 +139,10 @@
   then completed the same shape with `--threshold-pair-cap 2` and wrote
   calibration, robustness, model, and research job artifacts under
   `/app/model_artifacts`.
+- Cap-limited calibration holdout ran in Docker `research` with PyTorch CUDA,
+  read `/app/market_data` read-only, and wrote holdout, robustness,
+  probability trace, event, SQLite, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 

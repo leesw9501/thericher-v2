@@ -86,6 +86,9 @@
 - Broker adapter boundary contracts now exist with disabled KIS capabilities,
   typed unavailable submit/cancel/status results, `source: broker_disabled`,
   and tests proving no network, credentials, broker submit, or event-log writes.
+- Cap-limited calibration holdout replay produced `228` simulated fills across
+  CVS, FCX, and KO holdout slices; every fill source was verified as
+  `local_paper`.
 
 ## Next Handoff
 

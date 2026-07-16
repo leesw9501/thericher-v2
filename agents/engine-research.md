@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Use the cap-limited calibration path for the next compact robustness or
-   holdout evidence loop.
+1. Start the next bounded feature/model branch because cap-limited source and
+   holdout threshold evidence stayed negative.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -57,6 +57,10 @@
   `bounded-calibration-runtime-3slice-80-cap2-20260716` finished an 80-bar,
   three-slice calibration with `threshold_pair_cap=2` in about 2 minutes 36
   seconds, replayed 6 variants, and produced 214 local-paper fills.
+- Last completed: `bounded-dq-visible-calibration-holdout-cap2-20260716`,
+  status `completed`, replayed the cap-2 thresholds on disjoint CVS, FCX, and
+  KO holdout slices, produced 228 verified `source: local_paper` fills, and
+  recorded holdout PnL range `-0.76329816894531` to `-0.10999633789062`.
 - Previous completed: `bounded-candidate-feature-branch-replay-mini-smoke`,
   status
   `completed`, candidate
@@ -197,9 +201,12 @@
 - Calibration runtime is now bounded at the research job wrapper with
   `--threshold-pair-cap`; the runbook smoke uses cap 2 to avoid accidentally
   replaying the full derived grid across multiple slices.
+- Cap-limited calibration holdout kept fills local paper but stayed negative
+  across the disjoint slices, so the next research block should branch to
+  feature/model inputs rather than continuing threshold-only tuning.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should use the cap-limited calibration evidence to decide the next
-  breadth/depth/feature research step without promotion language.
+  task should keep GPU work moving with one bounded feature/model branch and
+  no promotion language.
