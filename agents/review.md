@@ -144,10 +144,14 @@
   feature-branch job, and replay job. It added one feature-set ID plus explicit
   job arguments, and added no new job family, report, gate, dashboard,
   scheduler, broker path, or model-promotion language.
+- Hidden-units model-axis branch reused an existing `CandidateTrainingConfig`
+  knob and existing candidate training/feature-branch jobs. It added one
+  selector plus bounded validation and added no new job family, report, gate,
+  dashboard, scheduler, broker path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one small model-axis branch without creating a new
-  job family or promotion gate.
+- Push the next task toward one small hidden-units contrast branch without
+  creating a new job family or promotion gate.

@@ -25,6 +25,8 @@ DEFAULT_CANDIDATE_TRAINING_RUN_ID = "bounded-gpu-candidate-training"
 MAX_CANDIDATE_TRAINING_EPOCHS = 20
 MAX_CANDIDATE_TRAINING_STEPS = 1024
 MAX_CANDIDATE_TRAINING_BARS = 512
+DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS = 8
+MAX_CANDIDATE_TRAINING_HIDDEN_UNITS = 64
 MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 CORE_FEATURE_SET_ID = "core_v1"
@@ -55,7 +57,7 @@ class CandidateTrainingConfig:
     max_bars: int = 120
     min_examples: int = 8
     learning_rate: float = 0.01
-    hidden_units: int = 8
+    hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -80,8 +82,11 @@ class CandidateTrainingConfig:
             raise ValueError("min_examples must be positive")
         if self.learning_rate <= 0:
             raise ValueError("learning_rate must be positive")
-        if self.hidden_units <= 0:
-            raise ValueError("hidden_units must be positive")
+        _validate_positive_cap(
+            self.hidden_units,
+            field_name="hidden_units",
+            ceiling=MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
+        )
 
 
 @dataclass(frozen=True)
@@ -137,6 +142,7 @@ class BoundedCandidateTrainingResult:
     source_slices: tuple[dict[str, Any], ...]
     max_epochs: int
     max_steps: int
+    hidden_units: int
     metrics: dict[str, Any]
     metrics_artifact: Path
     model_artifact: Path | None = None
@@ -309,6 +315,7 @@ def _run_candidate_training_result(
         source_slices=dataset.source_slices,
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
+        hidden_units=config.hidden_units,
         metrics=metrics,
         metrics_artifact=metrics_artifact,
         model_artifact=model_artifact,
@@ -347,6 +354,7 @@ def _prepared_result(
         source_slices=dataset.source_slices,
         max_epochs=config.max_epochs,
         max_steps=config.max_steps,
+        hidden_units=config.hidden_units,
         metrics={},
         metrics_artifact=metrics_artifact,
     )
@@ -749,6 +757,8 @@ def _candidate_training_payload(
             "source_slices": result.source_slices,
             "max_epochs": result.max_epochs,
             "max_steps": result.max_steps,
+            "hidden_units": result.hidden_units,
+            "model_axis": _model_axis_payload(result.hidden_units),
             "metrics": result.metrics,
             "artifacts": {
                 "metrics": str(result.metrics_artifact),
@@ -760,6 +770,15 @@ def _candidate_training_payload(
             },
         }
     )
+
+
+def _model_axis_payload(hidden_units: int) -> dict[str, Any]:
+    return {
+        "axis": "hidden_units",
+        "hidden_units": hidden_units,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
 
 
 def detect_gpu_readiness() -> GpuReadiness:

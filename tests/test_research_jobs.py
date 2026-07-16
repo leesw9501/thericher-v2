@@ -92,6 +92,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
             "feature_names": dataset.feature_names,
             "epochs_run": config.max_epochs,
             "steps_run": 1,
+            "hidden_units": config.hidden_units,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
@@ -115,6 +116,7 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
                 ),
             ),
             max_bars=40,
+            candidate_hidden_units=12,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -131,10 +133,29 @@ def test_research_job_runs_candidate_training_kind_with_injected_runner(tmp_path
     assert payload["status"] == "completed"
     assert payload["kind"] == "candidate_training"
     assert payload["candidate_training"]["status"] == "candidate_trained_only"
+    assert payload["candidate_training"]["hidden_units"] == 12
+    assert payload["candidate_training"]["model_axis"]["hidden_units"] == 12
     assert payload["candidate_training"]["metrics"]["backend"] == "unit"
+    assert payload["candidate_training"]["metrics"]["hidden_units"] == 12
     assert payload["candidate_training"]["source_slices"][0]["slice_id"] == "aaa"
     assert Path(payload["artifacts"]["candidate_metrics"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
+
+
+def test_research_job_rejects_hidden_units_outside_training_axis() -> None:
+    with pytest.raises(ValueError, match="candidate_hidden_units"):
+        ResearchJobSpec(
+            job_id="bad-hidden-units-eval",
+            kind="candidate_evaluation",
+            candidate_hidden_units=12,
+        )
+
+    with pytest.raises(ValueError, match="candidate_hidden_units"):
+        ResearchJobSpec(
+            job_id="bad-hidden-units-cap",
+            kind="candidate_training",
+            candidate_hidden_units=0,
+        )
 
 
 def test_research_job_runs_candidate_evaluation_kind_with_injected_runner(tmp_path) -> None:

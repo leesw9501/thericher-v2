@@ -214,6 +214,11 @@ Implemented and pushed:
   runner, trains/evaluates CVS/FCX/KO in Docker `research`, and replays a
   cap-2 holdout band through local paper with all fills verified as
   `source: local_paper`,
+- bounded hidden-units model-axis branch; it exposes `--hidden-units` for
+  candidate training and feature-branch jobs only, keeps the existing default
+  at 8, trains/evaluates `core_plus_bar_pressure_v1` with 16 hidden units in
+  Docker `research`, and records a cap-2 holdout replay with zero fills and
+  local-paper-only evidence,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -234,7 +239,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `215 passed`
+- `216 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -278,10 +283,10 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start the next bounded model-axis branch:
+Start the next bounded hidden-units contrast branch:
 
 1. use recent source and holdout evidence as context,
-2. add at most one small model-axis branch using existing candidate
+2. run at most one small hidden-units contrast branch using existing candidate
    training/evaluation/replay job kinds,
 3. train/evaluate/replay it through existing Docker `research` and local-paper
    paths,

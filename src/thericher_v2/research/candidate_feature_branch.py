@@ -26,6 +26,7 @@ from .candidate_threshold_rerun import (
 from .candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
@@ -56,6 +57,7 @@ class CandidateFeatureBranchConfig:
     max_bars: int = 120
     max_epochs: int = 4
     max_steps: int = 128
+    hidden_units: int = DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS
     min_examples: int = 8
     schema_version: int = SCHEMA_VERSION
 
@@ -71,6 +73,7 @@ class CandidateFeatureBranchConfig:
             max_bars=self.max_bars,
             max_epochs=self.max_epochs,
             max_steps=self.max_steps,
+            hidden_units=self.hidden_units,
             min_examples=self.min_examples,
         )
         CandidateEvaluationConfig(
@@ -180,6 +183,7 @@ def run_bounded_candidate_feature_branch(
                 max_bars=config.max_bars,
                 max_epochs=config.max_epochs,
                 max_steps=config.max_steps,
+                hidden_units=config.hidden_units,
                 min_examples=config.min_examples,
             ),
             artifact_root=artifact_root,
@@ -279,6 +283,7 @@ def _candidate_feature_branch_payload(
             "candidate_experiment_id": result.candidate_experiment_id,
             "candidate_parameters": result.candidate_parameters,
             "feature_set_id": result.feature_set_id,
+            "model_axis": _model_axis_payload(result),
             "threshold_loop_closure": result.threshold_loop_closure,
             "artifact_verification": result.artifact_verification,
             "training_status": None if result.training is None else result.training.status,
@@ -434,6 +439,12 @@ def _feature_branch_metrics(
     return {
         "research_feature_branch_only": True,
         "feature_set_id": config.feature_set_id,
+        "model_axis": {
+            "axis": "hidden_units",
+            "hidden_units": config.hidden_units,
+            "descriptive_only": True,
+            "promotion_gate": False,
+        },
         "threshold_loop_closure_recorded": bool(
             threshold_loop_closure.get("closed_for_current_candidate")
         ),
@@ -468,3 +479,12 @@ def _probability_evidence(metrics: dict[str, Any]) -> dict[str, Any]:
         "loss",
     )
     return {field: metrics[field] for field in fields if field in metrics}
+
+
+def _model_axis_payload(result: BoundedCandidateFeatureBranchResult) -> dict[str, Any]:
+    return {
+        "axis": "hidden_units",
+        "hidden_units": result.metrics.get("model_axis", {}).get("hidden_units"),
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }

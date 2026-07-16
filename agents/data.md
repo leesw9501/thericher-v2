@@ -134,12 +134,15 @@
   `snapshot=2026-07-09-shadow-t0-8d-probe` for training/evaluation and
   disjoint CVS, FCX, and KO from `snapshot=2026-06-18` for cap-2 holdout
   replay; no additional data was acquired.
+- Hidden-units model-axis branch reused the same CVS, FCX, and KO source and
+  disjoint holdout snapshots; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while the next model-axis branch reuses existing local snapshots.
+  visible while the next hidden-units contrast branch reuses existing local
+  snapshots.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

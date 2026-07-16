@@ -12,6 +12,7 @@ from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
     CandidateDataSliceConfig,
     CandidateTrainingConfig,
     GpuReadiness,
@@ -149,12 +150,16 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
             "examples_seen": len(dataset.labels),
             "epochs_run": config.max_epochs,
             "steps_run": 1,
+            "hidden_units": config.hidden_units,
             "candidate_experiment_id": candidate["candidate_experiment_id"],
             "model_artifact": str(model_artifact),
         }
 
     result = run_bounded_candidate_training(
-        config=CandidateTrainingConfig(run_id="unit-candidate-training"),
+        config=CandidateTrainingConfig(
+            run_id="unit-candidate-training",
+            hidden_units=12,
+        ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
         candidate_artifact=_candidate_artifact(tmp_path),
@@ -172,7 +177,15 @@ def test_candidate_training_records_injected_success_and_model_artifact_outside_
     assert result.model_artifact.exists()
     assert payload["status"] == "candidate_trained_only"
     assert payload["candidate_experiment_id"] == "unit_candidate"
+    assert payload["hidden_units"] == 12
+    assert payload["model_axis"] == {
+        "axis": "hidden_units",
+        "hidden_units": 12,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
     assert payload["metrics"]["backend"] == "unit"
+    assert payload["metrics"]["hidden_units"] == 12
     assert payload["artifact_policy"]["repo_storage_allowed"] is False
     with pytest.raises(ValueError, match="outside the Git workspace"):
         run_bounded_candidate_training(
@@ -286,6 +299,10 @@ def test_candidate_training_config_rejects_unbounded_caps() -> None:
         CandidateTrainingConfig(max_steps=1025)
     with pytest.raises(ValueError, match="max_bars"):
         CandidateTrainingConfig(max_bars=513)
+    with pytest.raises(ValueError, match="hidden_units"):
+        CandidateTrainingConfig(hidden_units=0)
+    with pytest.raises(ValueError, match="hidden_units"):
+        CandidateTrainingConfig(hidden_units=MAX_CANDIDATE_TRAINING_HIDDEN_UNITS + 1)
 
 
 def test_candidate_training_is_offline_and_does_not_read_credentials(

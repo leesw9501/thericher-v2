@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the next bounded model-axis branch.
+Run the next bounded hidden-units contrast branch.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by keeping the GPU research lane moving after the bounded
-`core_plus_bar_pressure_v1` feature branch produced descriptive source and
-holdout replay context.
+PnL attribution by using the existing `--hidden-units` model-axis selector to
+add one more bounded context point after the `hidden_units=16` branch widened
+probabilities but produced zero holdout fills under the cap-2 replay band.
 
 ## Hard Boundaries
 
@@ -31,8 +31,8 @@ holdout replay context.
   base engine image, runtime image, or local dev/test path.
 - Do not start a broad scheduler, agent framework, promotion gate, or dashboard
   expansion.
-- Do not call any threshold, candidate, or model best, recommended, passed,
-  promoted, or production ready.
+- Do not call any threshold, candidate, feature set, or model best,
+  recommended, passed, promoted, or production ready.
 
 ## Required First Reads
 
@@ -65,20 +65,22 @@ holdout replay context.
 2. Use recent artifacts as context, not as promotion evidence:
    - `bounded-bar-pressure-feature-branch-smoke-20260716`
    - `bounded-bar-pressure-feature-branch-replay-cap2-20260716`
-   - `bounded-dq-visible-candidate-training-depth-20260716`
-   - `bounded-dq-visible-candidate-evaluation-depth-20260716`
-3. Add at most one small model-axis branch. Prefer extending existing
-   `CandidateTrainingConfig`, candidate metadata, or research job arguments
-   over creating a new job family.
+   - `bounded-hidden16-bar-pressure-model-axis-smoke-20260716`
+   - `bounded-hidden16-bar-pressure-model-axis-replay-cap2-20260716`
+3. Add at most one small hidden-units contrast branch. Prefer using the
+   existing `--hidden-units`, `--candidate-feature-set`, candidate feature
+   branch, and feature-branch replay paths before changing code.
 4. Keep existing feature-set defaults replayable. If a feature-set is used for
-   the new model-axis branch, select it explicitly.
-5. Run CPU/focused tests first, then Docker `research` training/evaluation on
-   existing CVS, FCX, and KO local Yahoo slices if code changes are sound.
-6. If evaluation evidence is usable for replay context, run a compact
+   the branch, select it explicitly.
+5. Run CPU/focused tests first if code changes are needed. If no code changes
+   are needed, run a small focused parser/job smoke before Docker.
+6. Run Docker `research` training/evaluation on existing CVS, FCX, and KO local
+   Yahoo slices.
+7. If evaluation evidence is usable for replay context, run a compact
    cap-limited replay through the existing broker-free local-paper path.
-7. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
+8. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
    thresholds, candidates, feature sets, or models.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -106,7 +108,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded model axis branch`
+`Add hidden-units model axis branch`
 
 ## Completion Report
 
@@ -118,6 +120,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- model-axis branch findings,
+- hidden-units contrast branch findings,
 - what was intentionally not built,
 - next recommended goal.

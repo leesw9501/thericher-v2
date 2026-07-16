@@ -625,3 +625,18 @@ mutating prior `core_plus_bar_position_v1` lineage or adding another job
 family. Explicit feature-set selection preserves replayability while allowing
 Docker `research` to train/evaluate/replay the new branch with artifacts
 outside Git and all simulated fills checked as `source: local_paper`.
+
+## 2026-07-16 - Explicit hidden-units model axis
+
+Decision: expose one model-axis selector, `--hidden-units`, through the
+existing research job runner for `candidate_training` and
+`candidate_feature_branch` only. The default remains 8, the selector is capped,
+and evaluation/replay jobs remain checkpoint-driven rather than accepting a
+second architecture value. Training and feature-branch artifacts record a
+derived `model_axis` payload with no promotion semantics.
+
+Reason: the next research step needed one bounded model-axis branch without
+adding a job family or changing feature-set defaults. Threading the existing
+training config knob preserves prior lineage, keeps PyTorch confined to Docker
+`research`, keeps artifacts outside Git, and avoids KIS, credentials, broker
+submit code, dashboards, schedulers, or model-promotion language.

@@ -101,6 +101,8 @@ from .candidate_threshold_sweep import (
     run_bounded_candidate_threshold_sweep,
 )
 from .candidate_training import (
+    DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
+    MAX_CANDIDATE_TRAINING_HIDDEN_UNITS,
     SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
@@ -202,6 +204,7 @@ class ResearchJobSpec:
     calibration_artifact: Path | None = None
     model_artifact: Path | None = None
     candidate_feature_set: str | None = None
+    candidate_hidden_units: int | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
     max_bars: int = 120
@@ -231,6 +234,19 @@ class ResearchJobSpec:
             raise ValueError(
                 f"unsupported candidate feature_set: {self.candidate_feature_set}"
             )
+        if self.candidate_hidden_units is not None:
+            if self.kind not in {"candidate_training", "candidate_feature_branch"}:
+                raise ValueError(
+                    "candidate_hidden_units is only supported for candidate "
+                    "training or feature branch jobs"
+                )
+            if self.candidate_hidden_units <= 0:
+                raise ValueError("candidate_hidden_units must be positive")
+            if self.candidate_hidden_units > MAX_CANDIDATE_TRAINING_HIDDEN_UNITS:
+                raise ValueError(
+                    "candidate_hidden_units must be <= "
+                    f"{MAX_CANDIDATE_TRAINING_HIDDEN_UNITS}"
+                )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -459,6 +475,8 @@ def _run_job_kind(
                 max_epochs=spec.max_epochs,
                 max_steps=spec.max_steps,
                 max_bars=spec.max_bars,
+                hidden_units=spec.candidate_hidden_units
+                or DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -506,6 +524,8 @@ def _run_job_kind(
                 max_bars=spec.max_bars,
                 max_epochs=spec.max_epochs,
                 max_steps=spec.max_steps,
+                hidden_units=spec.candidate_hidden_units
+                or DEFAULT_CANDIDATE_TRAINING_HIDDEN_UNITS,
             ),
             artifact_root=artifact_root,
             repo_root=repo_root,
@@ -789,6 +809,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--candidate-feature-set",
         choices=SUPPORTED_CANDIDATE_FEATURE_SETS,
     )
+    parser.add_argument("--hidden-units", type=int, dest="candidate_hidden_units")
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
     parser.add_argument("--max-bars", type=int, default=120)
@@ -830,6 +851,7 @@ def main() -> None:
         calibration_artifact=args.calibration_artifact,
         model_artifact=args.model_artifact,
         candidate_feature_set=args.candidate_feature_set,
+        candidate_hidden_units=args.candidate_hidden_units,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
         max_bars=args.max_bars,
@@ -1032,6 +1054,13 @@ def _research_job_payload(
             "source_slices": training.source_slices,
             "max_epochs": training.max_epochs,
             "max_steps": training.max_steps,
+            "hidden_units": training.hidden_units,
+            "model_axis": {
+                "axis": "hidden_units",
+                "hidden_units": training.hidden_units,
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
             "metrics": training.metrics,
         }
     elif isinstance(training, BoundedCandidateEvaluationResult):

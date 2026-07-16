@@ -92,6 +92,9 @@
 - Bar-pressure feature-branch replay produced `6` simulated fills across CVS,
   FCX, and KO holdout slices with cap 2; every observed fill source was
   verified as `local_paper`.
+- Hidden-units model-axis feature-branch replay produced zero simulated fills
+  across CVS, FCX, and KO holdout slices with cap 2; no non-local fill source
+  was observed.
 
 ## Next Handoff
 

@@ -210,9 +210,14 @@
   observed probability range `0.517376`, then replayed a cap-2 holdout band
   across CVS, FCX, and KO with `6` verified local-paper fills and PnL range
   `-0.23820000000000` to `0.15070000000000`.
+- Added one bounded hidden-units model-axis branch. Docker `research`
+  trained/evaluated `core_plus_bar_pressure_v1` with `hidden_units=16` on 348
+  CVS/FCX/KO examples, observed probability range `0.963878`, then replayed a
+  cap-2 holdout band across CVS, FCX, and KO with zero local-paper fills and no
+  non-local fill evidence.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should keep GPU work moving with one bounded model-axis branch and no
+  task should keep GPU work moving with one hidden-units contrast branch and no
   promotion language.

@@ -148,6 +148,10 @@
   `/app/market_data` read-only, and wrote feature branch, training,
   evaluation, model, replay, robustness, event, SQLite, and research job
   artifacts under `/app/model_artifacts`.
+- Hidden-units model-axis branch ran in Docker `research` with PyTorch CUDA on
+  the RTX 4090, mounted the current `src` read-only, read `/app/market_data`
+  read-only, and wrote training, evaluation, model, replay, robustness, and
+  research job artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 
