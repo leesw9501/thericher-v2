@@ -89,6 +89,9 @@
 - Cap-limited calibration holdout replay produced `228` simulated fills across
   CVS, FCX, and KO holdout slices; every fill source was verified as
   `local_paper`.
+- Bar-pressure feature-branch replay produced `6` simulated fills across CVS,
+  FCX, and KO holdout slices with cap 2; every observed fill source was
+  verified as `local_paper`.
 
 ## Next Handoff
 

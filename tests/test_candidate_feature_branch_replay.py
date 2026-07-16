@@ -80,6 +80,7 @@ def test_candidate_feature_branch_replay_research_job_dispatch(tmp_path) -> None
             kind="candidate_feature_branch_replay",
             feature_branch_artifact=feature_branch_artifact,
             max_bars=40,
+            threshold_pair_cap=2,
             robustness_slices=_slices(yahoo_snapshot),
         ),
         artifact_root=artifact_root,
@@ -93,6 +94,8 @@ def test_candidate_feature_branch_replay_research_job_dispatch(tmp_path) -> None
     assert payload["kind"] == "candidate_feature_branch_replay"
     replay = payload["candidate_feature_branch_replay"]
     assert replay["status"] == "candidate_feature_branch_replayed_only"
+    assert replay["threshold_derivation"]["threshold_pair_cap"] == 2
+    assert replay["metrics"]["threshold_pair_count"] == 2
     assert replay["metrics"]["all_fills_local_paper"] is True
     assert Path(payload["artifacts"]["candidate_feature_branch_replay"]).exists()
     assert Path(payload["artifacts"]["candidate_threshold_robustness"]).exists()

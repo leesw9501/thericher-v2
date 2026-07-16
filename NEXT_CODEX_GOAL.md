@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the next bounded feature/model branch.
+Build the next bounded model-axis branch.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by moving beyond threshold-only tuning after the cap-limited
-source and disjoint holdout replays stayed negative.
+PnL attribution by keeping the GPU research lane moving after the bounded
+`core_plus_bar_pressure_v1` feature branch produced descriptive source and
+holdout replay context.
 
 ## Hard Boundaries
 
@@ -62,19 +63,22 @@ source and disjoint holdout replays stayed negative.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
+   - `bounded-bar-pressure-feature-branch-smoke-20260716`
+   - `bounded-bar-pressure-feature-branch-replay-cap2-20260716`
    - `bounded-dq-visible-candidate-training-depth-20260716`
    - `bounded-dq-visible-candidate-evaluation-depth-20260716`
-   - `bounded-calibration-runtime-3slice-80-cap2-20260716`
-   - `bounded-dq-visible-calibration-holdout-cap2-20260716`
-3. Add at most one small feature-set or model-axis branch. Prefer extending the
-   existing candidate feature builder over creating a new job family.
-4. Run CPU/focused tests first, then Docker `research` training/evaluation on
+3. Add at most one small model-axis branch. Prefer extending existing
+   `CandidateTrainingConfig`, candidate metadata, or research job arguments
+   over creating a new job family.
+4. Keep existing feature-set defaults replayable. If a feature-set is used for
+   the new model-axis branch, select it explicitly.
+5. Run CPU/focused tests first, then Docker `research` training/evaluation on
    existing CVS, FCX, and KO local Yahoo slices if code changes are sound.
-5. If evaluation evidence is sound, run a compact cap-limited calibration or
-   replay through the existing broker-free local-paper path.
-6. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
-   thresholds or candidates.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. If evaluation evidence is usable for replay context, run a compact
+   cap-limited replay through the existing broker-free local-paper path.
+7. Keep all output descriptive. Do not rank, recommend, promote, or pass/fail
+   thresholds, candidates, feature sets, or models.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -102,7 +106,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add next bounded feature model branch`
+`Add bounded model axis branch`
 
 ## Completion Report
 
@@ -114,6 +118,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- feature/model branch findings,
+- model-axis branch findings,
 - what was intentionally not built,
 - next recommended goal.

@@ -140,10 +140,14 @@
 - Cap-limited calibration holdout reused the existing holdout/robustness
   local-paper path and added no code, new job family, report, gate, dashboard,
   scheduler, broker path, or model-promotion language.
+- Bar-pressure feature branch reused the existing candidate feature builder,
+  feature-branch job, and replay job. It added one feature-set ID plus explicit
+  job arguments, and added no new job family, report, gate, dashboard,
+  scheduler, broker path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward using cap-limited evidence for the next research
-  feature/model branch without creating a new job family or promotion gate.
+- Push the next task toward one small model-axis branch without creating a new
+  job family or promotion gate.

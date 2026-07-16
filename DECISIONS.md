@@ -609,3 +609,19 @@ for minutes without writing the final calibration artifact because robustness
 variants are replayed sequentially. A small cap keeps calibration usable in the
 single-GPU lane without adding a scheduler, new job family, promotion gate,
 dashboard, broker behavior, or credential access.
+
+## 2026-07-16 - Explicit bar-pressure feature branch
+
+Decision: add `core_plus_bar_pressure_v1` as one supported candidate feature
+set inside the existing training feature builder. It keeps the previous
+`candidate_feature_branch` default unchanged, adds explicit
+`--candidate-feature-set` selection to the existing research job runner, and
+passes `--threshold-pair-cap` through the existing feature-branch replay job.
+The feature branch records `feature_branch_axis: bar_pressure` and stays
+descriptive only.
+
+Reason: the next research step needed one bounded feature/model branch without
+mutating prior `core_plus_bar_position_v1` lineage or adding another job
+family. Explicit feature-set selection preserves replayability while allowing
+Docker `research` to train/evaluate/replay the new branch with artifacts
+outside Git and all simulated fills checked as `source: local_paper`.

@@ -25,6 +25,8 @@ from .candidate_threshold_rerun import (
 )
 from .candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
+    CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+    SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
     CandidateTrainerRunner,
@@ -40,12 +42,17 @@ CandidateFeatureBranchStatus = Literal[
     "prepared_not_feature_branched",
 ]
 DEFAULT_CANDIDATE_FEATURE_BRANCH_RUN_ID = "bounded-candidate-feature-branch"
+DEFAULT_CANDIDATE_FEATURE_BRANCH_FEATURE_SET_ID = CORE_PLUS_BAR_POSITION_FEATURE_SET_ID
+FEATURE_BRANCH_AXIS_BY_FEATURE_SET = {
+    CORE_PLUS_BAR_POSITION_FEATURE_SET_ID: "bar_position",
+    CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID: "bar_pressure",
+}
 
 
 @dataclass(frozen=True)
 class CandidateFeatureBranchConfig:
     run_id: str = DEFAULT_CANDIDATE_FEATURE_BRANCH_RUN_ID
-    feature_set_id: str = CORE_PLUS_BAR_POSITION_FEATURE_SET_ID
+    feature_set_id: str = DEFAULT_CANDIDATE_FEATURE_BRANCH_FEATURE_SET_ID
     max_bars: int = 120
     max_epochs: int = 4
     max_steps: int = 128
@@ -57,6 +64,8 @@ class CandidateFeatureBranchConfig:
             raise ValueError("run_id is required")
         if not self.feature_set_id:
             raise ValueError("feature_set_id is required")
+        if self.feature_set_id not in SUPPORTED_CANDIDATE_FEATURE_SETS:
+            raise ValueError(f"unsupported candidate feature_set: {self.feature_set_id}")
         CandidateTrainingConfig(
             run_id=f"{self.run_id}-cap-validation",
             max_bars=self.max_bars,
@@ -349,8 +358,12 @@ def _feature_branch_parameters(
 ) -> dict[str, Any]:
     parameters = dict(source_parameters)
     parameters["feature_set"] = feature_set_id
-    parameters["feature_branch_axis"] = "bar_position"
+    parameters["feature_branch_axis"] = _feature_branch_axis(feature_set_id)
     return parameters
+
+
+def _feature_branch_axis(feature_set_id: str) -> str:
+    return FEATURE_BRANCH_AXIS_BY_FEATURE_SET.get(feature_set_id, feature_set_id)
 
 
 def _threshold_loop_closure(payload: dict[str, Any]) -> dict[str, Any]:

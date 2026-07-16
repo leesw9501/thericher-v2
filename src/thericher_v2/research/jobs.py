@@ -101,6 +101,7 @@ from .candidate_threshold_sweep import (
     run_bounded_candidate_threshold_sweep,
 )
 from .candidate_training import (
+    SUPPORTED_CANDIDATE_FEATURE_SETS,
     BoundedCandidateTrainingResult,
     CandidateDataSliceConfig,
     CandidateTrainerRunner,
@@ -200,6 +201,7 @@ class ResearchJobSpec:
     comparison_artifact: Path | None = None
     calibration_artifact: Path | None = None
     model_artifact: Path | None = None
+    candidate_feature_set: str | None = None
     yahoo_snapshot: Path | None = None
     symbol: str | None = None
     max_bars: int = 120
@@ -222,6 +224,13 @@ class ResearchJobSpec:
             raise ValueError("job_id is required")
         if self.kind not in SUPPORTED_RESEARCH_JOB_KINDS:
             raise ValueError(f"unsupported research job kind: {self.kind}")
+        if (
+            self.candidate_feature_set is not None
+            and self.candidate_feature_set not in SUPPORTED_CANDIDATE_FEATURE_SETS
+        ):
+            raise ValueError(
+                f"unsupported candidate feature_set: {self.candidate_feature_set}"
+            )
         object.__setattr__(self, "created_at", self.created_at.astimezone(UTC))
 
 
@@ -492,6 +501,8 @@ def _run_job_kind(
         feature_branch = run_bounded_candidate_feature_branch(
             config=CandidateFeatureBranchConfig(
                 run_id=spec.job_id,
+                feature_set_id=spec.candidate_feature_set
+                or CandidateFeatureBranchConfig().feature_set_id,
                 max_bars=spec.max_bars,
                 max_epochs=spec.max_epochs,
                 max_steps=spec.max_steps,
@@ -522,6 +533,7 @@ def _run_job_kind(
             config=CandidateFeatureBranchReplayConfig(
                 run_id=spec.job_id,
                 max_bars=spec.max_bars,
+                threshold_pair_cap=spec.threshold_pair_cap,
                 slices=spec.robustness_slices,
             ),
             artifact_root=artifact_root,
@@ -773,6 +785,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--comparison-artifact", type=Path)
     parser.add_argument("--calibration-artifact", type=Path)
     parser.add_argument("--model-artifact", type=Path)
+    parser.add_argument(
+        "--candidate-feature-set",
+        choices=SUPPORTED_CANDIDATE_FEATURE_SETS,
+    )
     parser.add_argument("--yahoo-snapshot", type=Path)
     parser.add_argument("--symbol")
     parser.add_argument("--max-bars", type=int, default=120)
@@ -813,6 +829,7 @@ def main() -> None:
         comparison_artifact=args.comparison_artifact,
         calibration_artifact=args.calibration_artifact,
         model_artifact=args.model_artifact,
+        candidate_feature_set=args.candidate_feature_set,
         yahoo_snapshot=args.yahoo_snapshot,
         symbol=args.symbol,
         max_bars=args.max_bars,

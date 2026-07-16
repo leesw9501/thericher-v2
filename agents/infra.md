@@ -143,6 +143,11 @@
   read `/app/market_data` read-only, and wrote holdout, robustness,
   probability trace, event, SQLite, and research job artifacts under
   `/app/model_artifacts`.
+- Bar-pressure feature branch and cap-2 replay ran in Docker `research` with
+  PyTorch CUDA on the RTX 4090, mounted the current `src` read-only, read
+  `/app/market_data` read-only, and wrote feature branch, training,
+  evaluation, model, replay, robustness, event, SQLite, and research job
+  artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

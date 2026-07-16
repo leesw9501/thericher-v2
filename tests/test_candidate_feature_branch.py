@@ -12,6 +12,7 @@ from thericher_v2.research.candidate_feature_branch import (
 )
 from thericher_v2.research.candidate_training import (
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
+    CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
     GpuReadiness,
 )
 from thericher_v2.research.jobs import ResearchJobSpec, run_and_write_research_job
@@ -75,6 +76,40 @@ def test_candidate_feature_branch_trains_and_evaluates_feature_axis(
         )
 
 
+def test_candidate_feature_branch_can_target_bar_pressure_axis(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    band_artifact = _threshold_band_artifact(artifact_root)
+
+    result = run_bounded_candidate_feature_branch(
+        config=CandidateFeatureBranchConfig(
+            run_id="unit-bar-pressure-feature-branch",
+            feature_set_id=CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
+            max_bars=40,
+            max_epochs=2,
+            max_steps=8,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        threshold_band_rerun_artifact=band_artifact,
+        gpu=_unit_gpu(),
+        trainer_runner=_unit_training_runner,
+        evaluation_runner=_unit_evaluation_runner,
+    )
+
+    payload = json.loads(result.feature_branch_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_feature_branch_evaluated_only"
+    assert payload["feature_set_id"] == CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID
+    assert payload["candidate_parameters"]["feature_set"] == (
+        CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID
+    )
+    assert payload["candidate_parameters"]["feature_branch_axis"] == "bar_pressure"
+    assert payload["metrics"]["feature_names"][-3:] == [
+        "close_position_in_bar",
+        "range_expansion",
+        "bar_body_return",
+    ]
+
+
 def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     artifact_root = tmp_path / "model-artifacts"
     band_artifact = _threshold_band_artifact(artifact_root)
@@ -84,6 +119,7 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
             job_id="unit-feature-branch-job",
             kind="candidate_feature_branch",
             threshold_band_rerun_artifact=band_artifact,
+            candidate_feature_set=CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
             max_bars=40,
             max_epochs=2,
             max_steps=8,
@@ -101,6 +137,7 @@ def test_candidate_feature_branch_research_job_dispatch(tmp_path) -> None:
     assert payload["status"] == "completed"
     branch = payload["candidate_feature_branch"]
     assert branch["status"] == "candidate_feature_branch_evaluated_only"
+    assert branch["feature_set_id"] == CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID
     assert branch["result_scope"]["mode"] == "research_feature_branch_only"
     assert branch["metrics"]["probability_evidence"]["probability_range"] == "0.040000"
     assert Path(payload["artifacts"]["candidate_feature_branch"]).exists()

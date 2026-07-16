@@ -204,9 +204,15 @@
 - Cap-limited calibration holdout kept fills local paper but stayed negative
   across the disjoint slices, so the next research block should branch to
   feature/model inputs rather than continuing threshold-only tuning.
+- Added `core_plus_bar_pressure_v1` as one bounded feature-set branch using the
+  existing candidate feature builder and research job family. Docker
+  `research` trained/evaluated 348 CVS/FCX/KO examples with 7 features,
+  observed probability range `0.517376`, then replayed a cap-2 holdout band
+  across CVS, FCX, and KO with `6` verified local-paper fills and PnL range
+  `-0.23820000000000` to `0.15070000000000`.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should keep GPU work moving with one bounded feature/model branch and
-  no promotion language.
+  task should keep GPU work moving with one bounded model-axis branch and no
+  promotion language.

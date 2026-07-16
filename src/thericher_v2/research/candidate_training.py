@@ -29,9 +29,11 @@ MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
 CORE_FEATURE_SET_ID = "core_v1"
 CORE_PLUS_BAR_POSITION_FEATURE_SET_ID = "core_plus_bar_position_v1"
+CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID = "core_plus_bar_pressure_v1"
 SUPPORTED_CANDIDATE_FEATURE_SETS = (
     CORE_FEATURE_SET_ID,
     CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
+    CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID,
 )
 
 
@@ -921,6 +923,13 @@ def _feature_vector(
         return base
     if feature_set == CORE_PLUS_BAR_POSITION_FEATURE_SET_ID:
         return (*base, _close_position_in_bar(current))
+    if feature_set == CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID:
+        return (
+            *base,
+            _close_position_in_bar(current),
+            _range_expansion(current=current, prior=prior),
+            _bar_body_return(current),
+        )
     raise ValueError(f"unsupported candidate feature_set: {feature_set}")
 
 
@@ -930,6 +939,14 @@ def _close_position_in_bar(bar: Bar) -> float:
         return 0.5
     position = float(bar.close - bar.low) / span
     return min(max(position, 0.0), 1.0)
+
+
+def _range_expansion(*, current: Bar, prior: Bar) -> float:
+    return _relative_change(current.high - current.low, prior.high - prior.low)
+
+
+def _bar_body_return(bar: Bar) -> float:
+    return _relative_change(bar.close, bar.open)
 
 
 def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
@@ -943,6 +960,13 @@ def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
         return base
     if feature_set == CORE_PLUS_BAR_POSITION_FEATURE_SET_ID:
         return (*base, "close_position_in_bar")
+    if feature_set == CORE_PLUS_BAR_PRESSURE_FEATURE_SET_ID:
+        return (
+            *base,
+            "close_position_in_bar",
+            "range_expansion",
+            "bar_body_return",
+        )
     raise ValueError(f"unsupported candidate feature_set: {feature_set}")
 
 
