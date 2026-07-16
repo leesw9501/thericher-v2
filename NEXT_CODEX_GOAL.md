@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Separate entry-cluster churn from early adverse path quality on ADI versus AGG
-before spending more GPU time.
+Run one artifact-only ADI/AGG feature-input diagnostic before spending more GPU
+time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by explaining why cadence/cluster evidence repeats
-widely while heavier path damage appears concentrated in AMAT and partly in
-ADI.
+walk-forward validation by checking whether early adverse/no-lift entry
+outcomes can be separated before entry using local OHLCV context, probability
+trace metadata, and cluster/cooldown marks.
 
 ## Hard Boundaries
 
@@ -26,7 +26,7 @@ ADI.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before the ADI/AGG diagnostic is complete.
+- Do not run new GPU training before the feature-input diagnostic is complete.
 - Do not queue another Engine Research Agent job unless current artifacts are
   unreadable or incomplete.
 - Do not mutate existing local-paper event artifacts or replay outputs.
@@ -69,30 +69,33 @@ ADI.
 
 ## Required Work
 
-1. Consume the completed held-out/context overlay artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-heldout-context-replay-shape-overlay\metrics.json`.
+1. Consume the completed ADI/AGG driver artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-driver-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-entry-cluster-path-quality\metrics.json`.
 2. Focus on ADI and AGG using existing probability traces, event artifacts, and
    selected local Yahoo rows only.
-3. Build one compact external diagnostic artifact under
+3. Build one compact external feature-input diagnostic artifact under
    `D:\thericher-v2\model-artifacts`.
-4. Compare:
-   - clustered buy opportunities versus executed diagnostic entries,
-   - early MAE/MFE path-quality buckets,
-   - pre-entry 3-bar buckets,
-   - max-hold/cooldown sensitivity,
-   - original local-paper source evidence versus diagnostic overlay evidence.
-5. Explain whether ADI's heavier damage is mostly entry-cluster churn,
-   early adverse path quality, open exposure, or a combination.
-6. Preserve local-paper source verification from existing event artifacts and
+4. For each candidate entry row, tag:
+   - pre-entry 3-bar OHLCV context,
+   - probability margin and local probability rank,
+   - cluster position and cooldown distance,
+   - early 3-bar MAE/MFE bucket,
+   - sell-threshold exit outcome.
+5. Compare whether early adverse/no-lift outcomes differ before entry from
+   non-adverse outcomes in ADI and AGG.
+6. Explain whether the next bounded GPU/model-input target should encode
+   entry-cluster and early-path-quality features, or whether more artifact-only
+   evidence is needed first.
+7. Preserve local-paper source verification from existing event artifacts and
    separately count all diagnostic outcomes as `source: diagnostic_overlay`.
-7. Use temporary Codex sub-agents as sidecar reviewers where useful:
+8. Use temporary Codex sub-agents as sidecar reviewers where useful:
    - Engine Research sidecar for interpretation,
    - Execution sidecar for source separation,
    - Review sidecar for sprawl and model-promotion language.
-8. If artifacts are insufficient, record exact missing paths and stop; do not
+9. If artifacts are insufficient, record exact missing paths and stop; do not
    substitute broker, credential, network, dashboard, scheduler, or new GPU
    training work.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -121,7 +124,7 @@ source evidence, and diagnostic-overlay source evidence.
 
 ## Suggested Commit Message
 
-`Attribute ADI AGG replay-shape drivers`
+`Diagnose ADI AGG entry features`
 
 ## Completion Report
 

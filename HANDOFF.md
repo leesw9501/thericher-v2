@@ -971,6 +971,44 @@ Next, separate entry-cluster churn from early adverse path quality on ADI versus
 AGG using one artifact-only diagnostic. Keep it source-separated and avoid any
 local-paper replay rule change before another GPU training block.
 
+The ADI/AGG replay-shape driver attribution then completed artifact-only:
+
+- It consumed the held-out/context overlay, existing AGG/ADI probability traces,
+  existing event artifacts, and selected local Yahoo rows from
+  `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-driver-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-entry-cluster-path-quality\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market data
+  acquisition, replay mutation, or durable worker creation.
+- Original AGG/ADI fills stayed `376` verified `source: local_paper` fills. The
+  diagnostic produced `1,738` outcomes labeled `source: diagnostic_overlay`.
+- ADI had fewer churn markers than AGG (`414` cluster-cap suppressions versus
+  `1,917`, and `699` cooldown suppressions versus `1,361`) but much larger
+  closed diagnostic damage (`-348.41501501769951972` versus
+  `-16.077863854216983183`).
+- ADI loss per closed diagnostic segment was about `-0.4438407834620376047`
+  versus AGG `-0.0173627039462386427`, so raw entry-cluster churn does not
+  explain the ADI/AGG contrast.
+- Engine Research sidecar found ADI's dominant driver is early adverse path
+  quality, with open exposure secondary. ADI early-adverse bucket carried the
+  core damage, while later-in-cluster entries were harmful per segment but too
+  few to explain the aggregate.
+- Execution sidecar verified original fills remained `local_paper`, diagnostic
+  outcomes remained `diagnostic_overlay`, and no broker, non-local, or unknown
+  source evidence appeared.
+- Review sidecar found no policy-doc update, blocking sprawl, durable-worker
+  drift, report/gate creep, or model-promotion language.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, run one artifact-only feature-input diagnostic on ADI/AGG candidate
+entries. Tag each entry with pre-entry bars, cluster position, cooldown
+distance, early 3-bar MAE/MFE bucket, and sell-threshold outcome to see whether
+the early adverse/no-lift pattern can be separated before entry from local
+OHLCV and probability-trace evidence.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

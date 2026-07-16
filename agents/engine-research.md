@@ -841,6 +841,9 @@
   Cadence/cluster evidence repeated, while heavier path damage appeared mainly
   in ADI rather than AGG. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-heldout-context-replay-shape-overlay\metrics.json`.
+- ADI/AGG driver attribution found ADI damage is mainly early adverse path
+  quality, not raw entry-cluster churn. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-driver-attribution\engine-agent-depth-target-explicit-slices-20260717-r1-adi-agg-entry-cluster-path-quality\metrics.json`.
 
 ## Next Handoff
 
@@ -848,8 +851,8 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another GPU training block, separate entry-cluster churn from early
-  adverse path quality on ADI versus AGG using existing artifacts only.
+- Before another GPU training block, run one ADI/AGG feature-input diagnostic
+  to see whether early adverse/no-lift entries can be separated before entry.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

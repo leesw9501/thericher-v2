@@ -445,6 +445,9 @@
 - Held-out/context overlay ran locally as artifact-only work, used no Docker or
   GPU job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay`.
+- ADI/AGG driver attribution ran locally as artifact-only work, used no Docker
+  or GPU job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-driver-attribution`.
 
 ## Next Handoff
 
@@ -460,6 +463,6 @@
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
   separate from Engine Research Agent's Docker/PyTorch lane while the ADI/AGG
-  follow-up consumes existing artifacts.
+  feature-input diagnostic consumes existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.
