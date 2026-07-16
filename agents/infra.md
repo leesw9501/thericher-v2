@@ -439,6 +439,9 @@
 - AMAT/AEM trade-path diagnostic ran locally as artifact-only work, used no
   Docker or GPU job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic`.
+- AMAT/AEM replay-shape overlay ran locally as artifact-only work, used no
+  Docker or GPU job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay`.
 
 ## Next Handoff
 
@@ -453,7 +456,7 @@
   notification, or auto-commit behavior.
 - Data Agent now reuses the same external queue/run-state discipline with a
   separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
-  separate from Engine Research Agent's Docker/PyTorch lane while the next
-  replay-shape overlay consumes explicit-slice depth artifacts.
+  separate from Engine Research Agent's Docker/PyTorch lane while the held-out
+  overlay follow-up consumes existing artifacts.
 - Temporary Codex sub-agents are runtime helpers, not Docker services or repo
   workers. Do not add a scheduler/coordinator layer for them in the next slice.

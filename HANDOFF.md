@@ -900,6 +900,43 @@ traces and bars. Keep original local-paper fills unchanged, label overlay
 outcomes as `source: diagnostic_overlay`, and compare only a small
 entry-cadence/max-hold shape before any further GPU training.
 
+The AMAT/AEM replay-shape diagnostic overlay then completed artifact-only:
+
+- It consumed the AMAT/AEM trade-path diagnostic, AMAT/AEM probability traces,
+  existing event artifacts, and selected local Yahoo rows from
+  `snapshot=2026-06-18`.
+- It wrote one compact external artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-replay-shape-overlay\metrics.json`.
+- It used no Docker, GPU, broker, credential, network, KIS API, new market
+  data acquisition, replay mutation, or durable worker creation.
+- Original AMAT/AEM fills stayed `403` verified `source: local_paper` fills.
+  The overlay produced `1,479` source-separated outcomes labeled
+  `source: diagnostic_overlay`.
+- The overlay grid covered `108` summaries from `12` AMAT/AEM threshold
+  variants across max-hold `3`, `5`, and `8` bars and cooldown `0`, `5`, and
+  `10` bars.
+- Cooldown mainly suppressed churn: combined closed diagnostic segments fell
+  from `276/242/230` at cooldown `0` to `104/99/95` at cooldown `10` across
+  max-hold `3/5/8`, but diagnostic losses stayed negative.
+- AEM showed more cadence/open-exposure sensitivity, including more first-3-bar
+  no-lift marks. AMAT stayed path-quality heavy: fewer diagnostic closed
+  segments than AEM (`656` versus `805`) but much larger closed diagnostic loss
+  (`-448.48063889770692837` versus `-132.289600891113956329`).
+- Execution sidecar verified original fills remained `local_paper`, overlay
+  outcomes remained `diagnostic_overlay`, and no broker, non-local, or unknown
+  source evidence appeared.
+- Review sidecar found no blocking sprawl, durable-worker drift, promotion
+  language, or gate creep.
+
+Claude drift-check was not needed for this slice because it made no code,
+architecture, or policy edits; it used existing artifacts, temporary Codex
+sidecars, and a compact external diagnostic only.
+
+Next, check whether the same replay-shape evidence repeats on a small held-out
+slice set from existing artifacts. Keep it artifact-only, add one entry-cluster
+cap mark and one pre-entry path-quality bucket, preserve `local_paper` source
+evidence, and keep all overlay outcomes as `diagnostic_overlay`.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

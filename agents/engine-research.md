@@ -832,6 +832,11 @@
   path-quality heavy and AEM behavior as more entry-frequency plus open
   exposure. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`.
+- AMAT/AEM replay-shape overlay consumed existing traces, event artifacts, and
+  selected local rows only. Cooldown reduced diagnostic churn, AEM looked more
+  cadence/open-exposure sensitive, and AMAT remained path-quality heavy.
+  Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-replay-shape-overlay\metrics.json`.
 
 ## Next Handoff
 
@@ -839,8 +844,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Before another GPU training block, run one bounded AMAT/AEM replay-shape
-  diagnostic overlay using existing traces and bars only.
+- Before another GPU training block, check the same replay-shape evidence on a
+  small held-out slice set with an entry-cluster cap mark and pre-entry
+  path-quality bucket.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

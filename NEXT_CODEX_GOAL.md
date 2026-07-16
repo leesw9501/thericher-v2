@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run a bounded AMAT/AEM replay-shape diagnostic overlay before spending more GPU
-time.
+Check whether the AMAT/AEM replay-shape evidence repeats on a small held-out
+slice set before spending more GPU time.
 
 This advances PnL attribution, feature/model research, and backtest and
-walk-forward validation by comparing whether AMAT/AEM damage is more sensitive
-to entry cadence, maximum hold time, early adverse path, or open-position
-exposure.
+walk-forward validation by testing whether entry cadence, max-hold, early path
+quality, and open-exposure signals are local to AMAT/AEM or visible in another
+existing holdout context.
 
 ## Hard Boundaries
 
@@ -26,9 +26,9 @@ exposure.
   lawful, license-compatible external fixture is absolutely required.
 - Do not store generated artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
-- Do not run new GPU training before the replay-shape overlay is complete.
-- Do not queue another Engine Research Agent job unless the current artifacts
-  are unreadable or incomplete.
+- Do not run new GPU training before the held-out overlay check is complete.
+- Do not queue another Engine Research Agent job unless current artifacts are
+  unreadable or incomplete.
 - Do not mutate existing local-paper event artifacts or replay outputs.
 - Keep original fills labeled and checked as `source: local_paper`.
 - Label diagnostic overlay outcomes as `source: diagnostic_overlay`; do not
@@ -69,29 +69,34 @@ exposure.
 
 ## Required Work
 
-1. Consume the completed trade-path diagnostic artifact:
-   `D:\thericher-v2\model-artifacts\candidate-depth-target-trade-path-diagnostic\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-trade-paths\metrics.json`.
-2. Consume existing AMAT/AEM probability traces, local-paper event artifacts,
-   and selected local Yahoo rows from `snapshot=2026-06-18`.
-3. Build one compact diagnostic overlay artifact under
+1. Consume the completed AMAT/AEM overlay artifact:
+   `D:\thericher-v2\model-artifacts\candidate-depth-target-replay-shape-overlay\engine-agent-depth-target-explicit-slices-20260717-r1-amat-aem-replay-shape-overlay\metrics.json`.
+2. Choose a tiny held-out set from existing explicit-slice depth artifacts, for
+   example AGG plus one or two nearby existing holdout/source-context slices
+   that already have probability traces and local-paper event artifacts.
+3. Reuse existing probability traces, event artifacts, and selected local Yahoo
+   rows only.
+4. Build one compact external diagnostic artifact under
    `D:\thericher-v2\model-artifacts`.
-4. Compare a small bounded shape grid, for example:
-   - max-hold: `3`, `5`, and `8` bars,
-   - cooldown: `0`, `5`, and `10` bars,
-   - optional early adverse mark using first-3-bar MAE/MFE.
-5. Keep the overlay descriptive. It should estimate how entry cadence,
-   max-hold, early adverse path, and open-position exposure would have changed
-   the AMAT/AEM diagnostic marks without changing existing replay fills.
-6. Preserve local-paper source verification from existing event artifacts and
+5. Apply the same bounded max-hold/cooldown grid and add:
+   - one entry-cluster cap mark,
+   - one pre-entry path-quality bucket using early MAE/MFE or equivalent local
+     bar evidence.
+6. Compare whether held-out evidence repeats the AMAT/AEM pattern:
+   - cadence/open-exposure sensitivity,
+   - path-quality-heavy losses,
+   - early no-lift marks,
+   - source separation between local-paper fills and overlay outcomes.
+7. Preserve local-paper source verification from existing event artifacts and
    separately count all overlay outcomes as `source: diagnostic_overlay`.
-7. Use temporary Codex sub-agents as sidecar reviewers where useful:
-   - Engine Research sidecar for overlay interpretation,
+8. Use temporary Codex sub-agents as sidecar reviewers where useful:
+   - Engine Research sidecar for repeatability interpretation,
    - Execution sidecar for source separation,
    - Review sidecar for sprawl and model-promotion language.
-8. If artifacts are insufficient, record exact missing paths and stop; do not
+9. If artifacts are insufficient, record exact missing paths and stop; do not
    substitute broker, credential, network, dashboard, scheduler, or new GPU
    training work.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+10. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -120,7 +125,7 @@ source evidence, and diagnostic-overlay source evidence.
 
 ## Suggested Commit Message
 
-`Add AMAT AEM replay-shape diagnostic`
+`Check held-out replay-shape overlay`
 
 ## Completion Report
 
