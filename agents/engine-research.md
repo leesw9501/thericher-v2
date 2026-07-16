@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Build the first lightweight Engine Research Agent GPU queue runner so the
-   lane can claim and run one bounded Docker `research` job per invocation.
+1. Use the new Engine Research Agent runner for the first research-useful queued
+   Docker `research` job beyond GPU smoke.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -761,10 +761,20 @@
   by about `3.64`, and AMAT/AMZN concentration with `2` negative AMAT segments
   still present. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`.
+- Engine Research Agent runner smoke
+  `engine-research-agent-gpu-training-smoke-20260717-r2` claimed one external
+  queue item, ran Docker `research` `gpu_training_smoke`, selected `torch` on
+  NVIDIA GeForce RTX 4090, reduced the tiny-smoke loss from `19.334999` to
+  `8.037852`, and wrote queue/run-state plus research artifacts under
+  `D:\thericher-v2\model-artifacts\engine-research-agent`,
+  `D:\thericher-v2\model-artifacts\research-jobs`, and
+  `D:\thericher-v2\model-artifacts\gpu-training`.
 
 ## Next Handoff
 
-- The files under `agents/` are stateboards, not autonomous workers. The next
-  task should create the first explicit Engine Research Agent runner, with
-  queue and run artifacts outside Git, one Docker `research` job per
-  invocation, and no broad scheduler or multi-agent platform.
+- The files under `agents/` are stateboards, not autonomous policy sources.
+  The first explicit Engine Research Agent runner now exists as a single-shot
+  CLI. The next task should queue and run one research-useful Docker
+  `research` job beyond smoke while keeping queue/run artifacts outside Git and
+  avoiding daemon, scheduler, dashboard, auto-commit, broker, credential, or
+  broad multi-agent platform behavior.

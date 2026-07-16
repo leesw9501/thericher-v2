@@ -113,6 +113,24 @@ docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Do
 docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-feature-branch-replay-mini-smoke --kind candidate_feature_branch_replay --feature-branch-artifact /app/model_artifacts/candidate-feature-branch/bounded-candidate-feature-branch-mini-smoke/metrics.json --max-bars 120 --robustness-slice src_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice src_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice src_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
 ```
 
+## Engine Research Agent Runner
+
+Use the runner when the Engine Research Agent should claim exactly one queued
+GPU research job and then exit. Queue and run-state files live outside Git under
+`D:\thericher-v2\model-artifacts\engine-research-agent`.
+
+```powershell
+uv run --extra dev thericher-v2-engine-research-agent seed-gpu-training-smoke --job-id engine-research-agent-gpu-training-smoke
+```
+
+```powershell
+uv run --extra dev thericher-v2-engine-research-agent run-once
+```
+
+The runner is not a daemon, scheduler, dashboard, notification process, or
+multi-agent platform. If `gpu.lock` remains after an interrupted run, verify no
+Docker `research` job is running before removing the lock manually.
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

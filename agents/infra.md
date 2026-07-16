@@ -397,6 +397,14 @@
   used no GPU or Docker job, consumed existing external JSON artifacts plus
   selected `D:\market_data` rows, and wrote one compact diagnostic under the
   external model artifact root.
+- Engine Research Agent runner added one local CLI entrypoint while keeping
+  GPU execution in Docker `research`. The first smoke attempt was claimed and
+  recorded as failed because the sanitized subprocess environment hid Docker
+  Compose plugin discovery; the allowlist now preserves required Windows
+  profile/appdata paths while filtering secret-like env keys. The second smoke
+  `engine-research-agent-gpu-training-smoke-20260717-r2` completed with
+  PyTorch CUDA on the RTX 4090 and wrote artifacts under `/app/model_artifacts`
+  mounted to `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -405,5 +413,7 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next runner should use explicit one-job CLI semantics, queue/run artifacts
-  outside Git, and Docker `research` for GPU execution only.
+- The runner now has explicit one-job CLI semantics, queue/run artifacts outside
+  Git, and Docker `research` GPU execution. The next infra concern is making
+  useful research queue items easy without adding a daemon, scheduler, or
+  dashboard.

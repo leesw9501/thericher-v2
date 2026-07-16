@@ -617,6 +617,8 @@ Implemented and pushed:
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
 - agent lane stateboards under `agents/`,
+- single-shot Engine Research Agent runner CLI with external queue, lock, and
+  run-state artifacts,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
 - tests and lint baseline.
@@ -633,7 +635,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `256 passed`
+- `263 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -677,23 +679,27 @@ Key decisions:
 
 ## Recommended Next Slice
 
-The completed wider-holdout depth attribution consumed existing replay,
-opportunity, trade-path, trace, and selected local-bar evidence only. It found
-the deeper first-evaluation source-context behavior recurred outside AMD but
-was concentrated in AMAT/AMZN: depth had `8` closed segments versus short's
-`11`, fee-aware sum `33.4440` versus `8.8756`, average entry margin higher by
-about `0.1786`, average sell-threshold latency higher by about `4.2` bars, and
-`2` remaining negative AMAT segments.
+The first Engine Research Agent runner now exists as
+`thericher-v2-engine-research-agent`. It claims one external JSON queue item by
+deterministic filename order, uses `gpu.lock` to avoid double-booking the single
+GPU, executes Docker `research` only, and writes run-state under
+`D:\thericher-v2\model-artifacts\engine-research-agent`. The first successful
+runner smoke was `engine-research-agent-gpu-training-smoke-20260717-r2`; it
+selected `torch` on NVIDIA GeForce RTX 4090 and wrote artifacts under
+`D:\thericher-v2\model-artifacts\gpu-training` and
+`D:\thericher-v2\model-artifacts\research-jobs`.
 
-Start the first lightweight Engine Research Agent GPU queue runner:
+Use the runner for the first research-useful queued job beyond smoke:
 
-1. ask Claude for a drift-check because this touches agent orchestration,
-2. keep it as an explicit one-job CLI, not a daemon or broad agent platform,
-3. store queue/run artifacts outside Git under the model artifact root,
-4. run one bounded Docker `research` smoke so the GPU lane starts becoming an
-   actual worker rather than only a stateboard.
-
-Do not start with a dashboard expansion, KIS credentials, or broker submit.
+1. inspect the external runner queue/run state and keep the failed first smoke
+   as diagnostic history,
+2. add only the smallest enqueue path needed for existing
+   `thericher-v2-research-job` kinds,
+3. queue and run one bounded `candidate_feature_branch` or
+   `candidate_feature_branch_replay` job that advances the current
+   entry-adverse/depth research loop,
+4. keep artifacts outside Git and keep broker, credentials, dashboard,
+   scheduler, auto-commit, and broad multi-agent platform behavior out.
 
 ## Daily Operator Review
 

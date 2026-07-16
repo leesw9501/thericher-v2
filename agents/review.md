@@ -401,12 +401,17 @@
   scheduler, broker path, threshold search, retraining, replay rerun,
   feature/model axis, source-context search, simulator exit rule, or
   model-promotion language.
+- Engine Research Agent runner added one single-shot CLI and one focused test
+  file. It uses external queue/run artifacts, claims one Docker `research` job
+  per invocation, and did not add a daemon, loop, scheduler, dashboard,
+  notification path, broad multi-agent platform, broker authority, credential
+  reads, report family, gate, or local/base PyTorch dependency.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward the smallest useful Engine Research Agent runner:
-  explicit command, one queued Docker `research` job per invocation, external
-  queue/run artifacts, no daemon, no broad multi-agent framework, no dashboard,
-  no broker authority, and no report/gate branches.
+- Push the next task toward using the smallest useful Engine Research Agent
+  queue item beyond smoke. Do not turn the runner into a daemon, broad
+  autonomous agent framework, dashboard, report branch, auto-commit path, or
+  broker-capable process.

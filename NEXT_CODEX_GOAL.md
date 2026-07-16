@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first lightweight Engine Research Agent GPU queue runner.
+Queue and run the first research-useful Engine Research Agent job beyond GPU
+smoke.
 
-This advances feature/model research and infra by turning the Engine Research
-Agent from a stateboard-only lane into one explicit, bounded worker command that
-can pick one queued Docker `research` job, run it with PyTorch CUDA, record the
-result outside Git, and leave the next job visible for Codex/operator review.
+This advances feature/model research and infra by making the new single-shot
+Engine Research Agent runner useful for existing bounded Docker `research` job
+kinds, not only for a tiny CUDA smoke.
 
 ## Hard Boundaries
 
@@ -31,8 +31,9 @@ result outside Git, and leave the next job visible for Codex/operator review.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
 - Do not add PyTorch or other heavy ML dependencies to `pyproject.toml`, the
   base engine image, runtime image, or local dev/test path.
-- Do not create a broad autonomous multi-agent platform, daemon, Windows
-  service, web UI, scheduler, notification system, or report family.
+- Do not turn the runner into a daemon, scheduler, Windows service, dashboard,
+  notification system, broad autonomous multi-agent platform, or auto-commit
+  path.
 - Do not let any agent commit, push, call brokers, read credentials, or mutate
   another lane's files without Codex integration.
 - Do not call any threshold, candidate, feature set, preprocessing branch, or
@@ -61,45 +62,53 @@ result outside Git, and leave the next job visible for Codex/operator review.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before code or architecture edits.
-   This goal touches agent orchestration, so get the drift-check before
-   implementing.
+   This goal touches agent orchestration and research-job queue semantics, so
+   get the drift-check before implementing.
 
 ## Required Work
 
-1. Treat `agents/*.md` as lane stateboards, not autonomous policy sources.
-2. Add the smallest useful Engine Research Agent runner:
-   - explicit CLI command, not a background daemon,
-   - one queued job per invocation,
-   - clear file/lock behavior so the single GPU is not double-booked,
-   - queue and run-state artifacts outside Git under
-     `D:\thericher-v2\model-artifacts`,
-   - Docker `research` execution only for GPU jobs,
-   - no broker/network/credential behavior.
-3. Seed or document one bounded GPU queue item that uses existing local data and
-   current research job kinds. Prefer a short PyTorch CUDA smoke or a bounded
-   `candidate_feature_branch`/replay job that is useful for the active research
-   loop.
-4. Run the agent runner once in a bounded smoke:
+1. Inspect the external runner state under
+   `D:\thericher-v2\model-artifacts\engine-research-agent`. Keep the first
+   failed smoke as diagnostic history; do not silently delete run-state.
+2. Add only the smallest enqueue path needed for existing
+   `thericher-v2-research-job` kinds:
+   - explicit CLI command, not a background loop,
+   - one queued job per enqueue command,
+   - strict job id and argument validation,
+   - reject `--artifact-root` in queued args because the runner owns
+     `/app/model_artifacts`,
+   - queue artifacts outside Git only,
+   - no stateboard-as-input behavior.
+3. Queue one bounded research-useful job through the runner. Prefer a current
+   `candidate_feature_branch` or `candidate_feature_branch_replay` job that
+   advances the entry-adverse/depth research loop using existing
+   `D:\market_data` and existing external model artifacts.
+4. Run the agent runner once:
    - it should claim at most one job,
    - execute or cleanly prepare/skip with a reason,
-   - write a compact external run artifact,
-   - preserve local-paper-only fill evidence if replay is involved.
-5. Keep other roles lightweight:
+   - write compact external run-state,
+   - if replay is involved, preserve local-paper-only fill evidence.
+5. Keep two research queues visible in `agents/engine-research.md`:
+   - short experiments for breadth,
+   - longer candidate training for depth.
+6. Keep other roles lightweight:
    - Data Agent records data needs only,
    - Infra Agent records Docker/GPU runtime notes,
    - Execution Agent stays broker-disabled,
    - Review Agent checks for sprawl.
-6. Add focused tests proving:
-   - queue claim is deterministic and does not double-claim,
-   - queue/run artifacts are outside Git or mocked in tests,
-   - no credentials, KIS, broker submit, or `.env` reads are needed,
+7. Add focused tests proving:
+   - enqueue validation is deterministic and external-only,
+   - queued args cannot override artifact root or request obvious
+     credential/broker/KIS behavior,
+   - runner still claims at most one job,
+   - no `.env`, credential, broker, or network access is needed,
    - PyTorch remains absent from local/base dependencies.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- This task should not acquire data unless the selected smoke job needs a
+- This task should not acquire data unless the queued research job needs a
   no-auth, license-compatible missing slice.
 - Acquire additional data only when it is no-auth, lawful,
   license-compatible, and useful for the active validation loop.
@@ -124,7 +133,7 @@ artifact paths used.
 
 ## Suggested Commit Message
 
-`Add lightweight engine research agent runner`
+`Queue first research-useful engine agent job`
 
 ## Completion Report
 
@@ -136,6 +145,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
+- runner queue behavior,
 - validation behavior,
 - what was intentionally not built,
 - next goal.

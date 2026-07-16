@@ -814,3 +814,17 @@ any simulator or local-paper replay change, while avoiding KIS access,
 credentials, broker behavior, file or network I/O, artifact writers, CLIs,
 research job kinds, dashboards, schedulers, threshold search, and
 model-promotion language.
+
+## 2026-07-17 - Single-shot Engine Research Agent runner
+
+Decision: add one explicit `thericher-v2-engine-research-agent` CLI with
+`seed-gpu-training-smoke` and `run-once`. The runner stores queue, lock, and
+run-state artifacts under the external model artifact root, claims at most one
+JSON queue item by deterministic filename order and atomic move, uses a single
+GPU lock file, and executes GPU work only through Docker `research` by calling
+the existing `thericher-v2-research-job` command.
+
+Reason: the Engine Research Agent needed a first executable worker shape rather
+than only a stateboard. Keeping it single-shot avoids daemon, scheduler,
+notification, dashboard, broad multi-agent framework, auto-commit, broker,
+credential, or `.env` behavior while starting the single-GPU queue cadence.

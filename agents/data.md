@@ -308,6 +308,9 @@
   AEM, AGG, AMAT, AMGN, AMT, AMZN, AXP, AZN, and BA rows from the existing
   `snapshot=2026-06-18` Yahoo file to reconstruct feature inputs and
   near-threshold rows; no additional data was acquired.
+- Engine Research Agent runner smoke used Docker `research`
+  `gpu_training_smoke` only, read no market-data slices, and acquired no
+  additional data.
 
 ## Next Handoff
 

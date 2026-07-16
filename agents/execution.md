@@ -281,6 +281,9 @@
   existing local-paper event and trade-path evidence only, preserved short and
   depth local-paper source verification, and created no broker,
   disabled-broker, or diagnostic-overlay fills.
+- Engine Research Agent runner smoke executed only Docker `research`
+  `gpu_training_smoke`; it created no local-paper fills, broker-disabled
+  outcomes, broker submit/cancel requests, or diagnostic-overlay fills.
 
 ## Next Handoff
 
