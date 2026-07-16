@@ -295,6 +295,13 @@ Implemented and pushed:
   changing replay or local-paper fills, found only `2` of `8` diagnostic marks
   were available inside the 120-bar bounded window, and recorded that the
   available ABNB 5-bar marks still had negative gross deltas,
+- bounded longer-window out-of-symbol replay; it reused the same
+  disjoint-evaluation feature-branch artifact and AAPL, ABNB, ABT, ACN, and
+  ABBV slices with `max-bars 240`, ran in Docker `research` with RTX 4090
+  visible, produced `14` verified `source: local_paper` fills, PnL range
+  `-0.8866000000000` to `0E-13`, `7` buy opportunities, `548` sell
+  opportunities, and a compact post-entry summary showing all `7` segments
+  closed with sell-threshold signals and no open segments remained,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -359,17 +366,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded longer-window out-of-symbol replay probe:
+Start one bounded longer-window trade-path attribution slice:
 
-1. consume the prior out-of-symbol replay, post-entry attribution, and
-   exit-diagnostic artifacts as context,
-2. reuse the same disjoint-evaluation feature-branch artifact and the same
-   AAPL, ABNB, ABT, ACN, and ABBV slices from `snapshot=2026-06-18`,
-3. rerun the existing Docker `research` feature-branch replay path with
-   threshold cap `2` and a bounded longer `max-bars` value such as `240`,
-4. run compact artifact-only attribution if replay completes,
-5. avoid retraining, new candidate modules, dashboards, gates, schedulers,
-   threshold searches, model-axis changes, or broker-facing behavior.
+1. consume the 240-bar out-of-symbol replay, opportunity attribution, and
+   post-entry summary artifacts as context,
+2. parse only existing local-paper event files, probability traces, and
+   selected `snapshot=2026-06-18` bars for fill-bearing variants,
+3. attribute each closed trade segment by entry price, sell signal timing, exit
+   price, holding duration, fees, and simple adverse/favorable movement,
+4. write compact trade-path evidence outside Git,
+5. avoid retraining, rerunning replay, new candidate modules, dashboards,
+   gates, schedulers, threshold searches, model-axis changes, or broker-facing
+   behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

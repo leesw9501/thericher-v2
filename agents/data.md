@@ -173,12 +173,14 @@
 - Out-of-symbol exit-horizon diagnostic overlay read selected ABNB and ACN rows
   from the existing `snapshot=2026-06-18` Yahoo 1m file for open segments; no
   additional data was acquired.
+- Longer-window out-of-symbol replay reused AAPL, ABNB, ABT, ACN, and ABBV from
+  `snapshot=2026-06-18` with `max-bars 240`; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not more acquisition; it is reusing the same selected
-  `snapshot=2026-06-18` out-of-symbol slices for a bounded longer-window replay.
+- The next data task is not more acquisition; it is reading only selected
+  `snapshot=2026-06-18` bars needed for longer-window trade-path attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

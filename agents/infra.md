@@ -211,6 +211,11 @@
   work, read selected `D:\market_data` rows, reran no Docker job, and wrote one
   compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Longer-window out-of-symbol replay ran in Docker `research` with PyTorch CUDA
+  environment and RTX 4090 visible, mounted current `src` read-only, read
+  `/app/market_data` read-only, and wrote replay, robustness, event, and
+  research-job artifacts under `/app/model_artifacts`. Follow-up attribution
+  ran locally as artifact-only work.
 
 ## Next Handoff
 

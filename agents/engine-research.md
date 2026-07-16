@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Start a bounded longer-window out-of-symbol replay before another model axis
-   or threshold-only branch is tried.
+1. Start a bounded longer-window trade-path attribution slice before another
+   model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -146,6 +146,18 @@
   open segments against fixed 5-bar and 15-bar `diagnostic_overlay` marks,
   found only `2` of `8` marks available inside the 120-bar window, and kept
   diagnostic marks separate from local-paper fill counts.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-replay-cap2-240bars-20260716`, status
+  `completed`, replayed AAPL, ABNB, ABT, ACN, and ABBV with `max-bars 240`,
+  produced `14` verified `source: local_paper` fills, PnL range
+  `-0.8866000000000` to `0E-13`, and wrote replay, robustness, event, and
+  research-job artifacts outside Git.
+- Last completed:
+  `bounded-longer-out-of-symbol-disjoint-eval-post-entry-summary-20260716`,
+  status
+  `candidate_feature_branch_replay_longer_window_post_entry_summary_only`,
+  found `7` closed segments, all with post-entry sell-threshold signals, and
+  no open segments remaining in the 240-bar replay.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -372,9 +384,12 @@
   because open entries occurred near the bounded window end. The next evidence
   should rerun the same out-of-symbol slices with a longer bounded window
   before changing model or threshold axes.
+- The 240-bar replay closed all fill-bearing segments but still left negative
+  PnL. The next evidence should attribute closed trade paths before changing
+  model or threshold axes.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a bounded longer-window out-of-symbol replay before another
+  task should attribute longer-window closed trade paths before another
   hidden-units, regularization, preprocessing, or threshold-only branch.

@@ -133,6 +133,9 @@
 - Out-of-symbol exit-horizon diagnostic overlay did not create local-paper
   fills; diagnostic marks were labeled separately from existing
   `source: local_paper` fill evidence.
+- Longer-window out-of-symbol replay reused the existing local-paper path,
+  produced `14` verified `source: local_paper` fills, and observed no non-local
+  fill source.
 
 ## Next Handoff
 
