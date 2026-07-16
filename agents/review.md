@@ -134,10 +134,13 @@
   gate, dashboard, scheduler, broker path, or model-promotion language. The
   stopped calibration attempt should be handled as a bounded-runtime issue, not
   by adding process sprawl.
+- Calibration runtime control exposed an existing threshold-pair cap through
+  the research job runner and runbook instead of adding a scheduler, new job
+  family, gate, dashboard, broker path, or model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward diagnosing and bounding the calibration runtime
-  path without creating a new job family or promotion gate.
+- Push the next task toward using cap-limited evidence for the next research
+  step without creating a new job family or promotion gate.

@@ -595,3 +595,17 @@ but it does not need another checker, job family, report, or gate. Keeping the
 projection compact makes repeated GPU experiments easier to compare without
 changing rows, thresholds, replay behavior, broker boundaries, credentials, or
 artifact storage policy.
+
+## 2026-07-16 - Bounded calibration job threshold cap
+
+Decision: expose `--threshold-pair-cap` on the existing research job runner for
+`candidate_threshold_calibration`, with a conservative job-wrapper default of
+three derived threshold pairs. The underlying calibration helper keeps its
+existing validation and descriptive output; this only gives Docker research
+jobs a smaller runtime control.
+
+Reason: a 3-slice, 80-bar calibration replay with the full derived grid can run
+for minutes without writing the final calibration artifact because robustness
+variants are replayed sequentially. A small cap keeps calibration usable in the
+single-GPU lane without adding a scheduler, new job family, promotion gate,
+dashboard, broker behavior, or credential access.

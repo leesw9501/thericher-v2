@@ -681,6 +681,7 @@ def test_research_job_runs_candidate_threshold_calibration_kind_with_injected_ru
                 ),
             ),
             max_bars=40,
+            threshold_pair_cap=2,
         ),
         artifact_root=tmp_path / "model-artifacts",
         repo_root=Path.cwd(),
@@ -693,7 +694,7 @@ def test_research_job_runs_candidate_threshold_calibration_kind_with_injected_ru
             "backend": "unit",
             "operation": "unit_candidate_probabilities",
             "probabilities": tuple(
-                0.80 if index % 4 in {0, 1} else 0.20
+                0.20 + (0.60 * ((index + 1) / (len(dataset.labels) + 1)))
                 for index in range(len(dataset.labels))
             ),
             "feature_names": dataset.feature_names,
@@ -711,6 +712,8 @@ def test_research_job_runs_candidate_threshold_calibration_kind_with_injected_ru
     assert calibration["status"] == "candidate_thresholds_calibrated_only"
     assert calibration["ready_trace_count"] == 1
     assert calibration["thresholds"]["derivation"] == "observed_probability_quantiles"
+    assert calibration["thresholds"]["threshold_pair_cap"] == 2
+    assert len(calibration["thresholds"]["threshold_pairs"]) == 2
     assert calibration["thresholds"]["promotion_gate"] is False
     assert Path(payload["artifacts"]["candidate_threshold_calibration"]).exists()
     assert Path(payload["artifacts"]["candidate_threshold_robustness"]).exists()

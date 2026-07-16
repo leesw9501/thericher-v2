@@ -126,12 +126,14 @@
 - Confirmed new Docker `research` training/evaluation artifacts record compact
   `source_slices[].data_quality` for CVS, FCX, and KO from
   `snapshot=2026-07-09-shadow-t0-8d-probe`; no additional data was acquired.
+- Calibration runtime probes reused the same CVS, FCX, and KO local Yahoo
+  snapshot; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is keeping quality summaries
-  visible while the calibration/replay runtime is bounded.
+  visible while cap-limited calibration/replay evidence is compared.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

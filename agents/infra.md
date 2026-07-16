@@ -134,11 +134,16 @@
   artifact metadata, read `/app/market_data` read-only, and wrote training,
   evaluation, replay, model, event, SQLite, and research job artifacts under
   `/app/model_artifacts`.
+- Calibration runtime probing ran in Docker `research` with PyTorch CUDA,
+  confirmed the uncapped 80-bar, 3-slice path can exceed the operator window,
+  then completed the same shape with `--threshold-pair-cap 2` and wrote
+  calibration, robustness, model, and research job artifacts under
+  `/app/model_artifacts`.
 
 ## Next Handoff
 
 - Keep `engine` and `web` on the light base image while GPU training uses the
   Docker `research` target and external artifact mount. A future infra slice
   should restructure Docker layers so source edits do not reinstall PyTorch.
-- The calibration path should get a small runtime/progress check before being
-  used again for broader GPU validation.
+- Prefer cap-limited calibration commands until the local-paper variant replay
+  loop is made faster or more incremental.

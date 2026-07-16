@@ -161,6 +161,7 @@ ResearchJobStatus = Literal[
     "prepared_not_threshold_reran",
 ]
 DEFAULT_RESEARCH_JOB_ID = "engine-research-gpu-training-smoke"
+DEFAULT_JOB_CALIBRATION_THRESHOLD_PAIR_CAP = 3
 SUPPORTED_RESEARCH_JOB_KINDS = (
     "gpu_training_smoke",
     "candidate_breadth_holdout",
@@ -206,6 +207,7 @@ class ResearchJobSpec:
     max_steps: int = 256
     buy_threshold: float = 0.55
     sell_threshold: float = 0.45
+    threshold_pair_cap: int = DEFAULT_JOB_CALIBRATION_THRESHOLD_PAIR_CAP
     data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
     threshold_attribution_artifact: Path | None = None
@@ -638,6 +640,7 @@ def _run_job_kind(
             config=CandidateThresholdCalibrationConfig(
                 run_id=spec.job_id,
                 max_bars=spec.max_bars,
+                threshold_pair_cap=spec.threshold_pair_cap,
                 slices=spec.robustness_slices,
             ),
             artifact_root=artifact_root,
@@ -777,6 +780,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-steps", type=int, default=256)
     parser.add_argument("--buy-threshold", type=float, default=0.55)
     parser.add_argument("--sell-threshold", type=float, default=0.45)
+    parser.add_argument(
+        "--threshold-pair-cap",
+        type=int,
+        default=DEFAULT_JOB_CALIBRATION_THRESHOLD_PAIR_CAP,
+    )
     parser.add_argument("--data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
     parser.add_argument("--threshold-attribution-artifact", type=Path)
@@ -812,6 +820,7 @@ def main() -> None:
         max_steps=args.max_steps,
         buy_threshold=args.buy_threshold,
         sell_threshold=args.sell_threshold,
+        threshold_pair_cap=args.threshold_pair_cap,
         data_slices=parse_candidate_data_slices(args.data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
         threshold_attribution_artifact=args.threshold_attribution_artifact,

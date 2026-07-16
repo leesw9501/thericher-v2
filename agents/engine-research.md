@@ -29,9 +29,8 @@
 
 ## Active Queue
 
-1. Diagnose why `candidate_threshold_calibration` can run past the bounded
-   operator window without emitting an artifact, then rerun a compact
-   calibration or robustness replay.
+1. Use the cap-limited calibration path for the next compact robustness or
+   holdout evidence loop.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -52,6 +51,12 @@
   for more than 10 minutes without writing its calibration artifact and was
   stopped; diagnose this before relying on the calibration path for longer
   loops.
+- Completed runtime probe: `bounded-calibration-runtime-cvs-40-20260716`
+  finished a 40-bar, one-slice calibration in about 35 seconds.
+- Completed bounded cap probe:
+  `bounded-calibration-runtime-3slice-80-cap2-20260716` finished an 80-bar,
+  three-slice calibration with `threshold_pair_cap=2` in about 2 minutes 36
+  seconds, replayed 6 variants, and produced 214 local-paper fills.
 - Previous completed: `bounded-candidate-feature-branch-replay-mini-smoke`,
   status
   `completed`, candidate
@@ -189,9 +194,12 @@
   short 80-bar and deeper 240-bar CVS/FCX/KO candidate training/evaluation
   artifacts, then connected the deeper artifact to a single-symbol local-paper
   replay.
+- Calibration runtime is now bounded at the research job wrapper with
+  `--threshold-pair-cap`; the runbook smoke uses cap 2 to avoid accidentally
+  replaying the full derived grid across multiple slices.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should keep the GPU path bounded by diagnosing the calibration runtime
-  issue before launching broader threshold calibration or robustness work.
+  task should use the cap-limited calibration evidence to decide the next
+  breadth/depth/feature research step without promotion language.

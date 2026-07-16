@@ -198,6 +198,11 @@ Implemented and pushed:
   job kinds; short and deeper multi-slice candidate training/evaluation runs on
   CVS, FCX, and KO wrote `source_slices[].data_quality` outside Git, then a
   broker-free CVS replay produced 37 verified `source: local_paper` fills,
+- calibration job runtime control; the research job runner now exposes
+  `--threshold-pair-cap` for `candidate_threshold_calibration`, defaults
+  Docker job specs to three derived pairs, and the runbook calibration smoke
+  uses cap 2 after a full-grid 80-bar, 3-slice attempt exceeded 3 minutes
+  without a final artifact,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -262,12 +267,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Diagnose and bound the threshold calibration runtime:
+Use the bounded calibration path for the next compact evidence loop:
 
-1. reproduce `candidate_threshold_calibration` with a much smaller cap,
-2. add a focused timeout/progress safeguard only if the existing path can still
-   hang without writing an artifact,
-3. rerun a compact calibration or robustness replay after the safeguard,
+1. run a cap-limited calibration/robustness pass on existing quality-visible
+   artifacts,
+2. compare replay evidence against the recent single-CVS replay without adding
+   a promotion decision,
+3. decide whether the next research block should be breadth, depth, or feature
+   work based on descriptive PnL/drawdown/fill evidence,
 4. avoid new candidate modules, dashboards, gates, schedulers, or broker-facing
    behavior.
 

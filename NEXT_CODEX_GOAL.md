@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Diagnose and bound the threshold calibration runtime.
+Run a cap-limited calibration holdout replay.
 
 This advances feature/model research, backtest and walk-forward validation, and
-PnL attribution by keeping the existing calibration/local-paper replay path
-usable for GPU research without letting a bounded job run indefinitely or fail
-to write an artifact.
+PnL attribution by taking the bounded calibration artifact from the
+data-quality-visible candidate and replaying its threshold pairs on disjoint
+local Yahoo holdout slices through the existing broker-free local-paper path.
 
 ## Hard Boundaries
 
@@ -62,20 +62,19 @@ to write an artifact.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Reproduce `candidate_threshold_calibration` with a much smaller cap first
-   using the existing data-quality-visible training/evaluation artifacts.
-3. If the small cap completes, record the observed runtime and artifact paths,
-   then try one modest cap increase. Stop before another long no-output run.
-4. If the path can still run too long without writing an artifact, add the
-   smallest focused runtime/progress safeguard inside the existing calibration
-   path or research job wrapper. Do not create a new job family.
-5. Keep calibration output descriptive. Do not add best-threshold, pass/fail,
-   recommendation, promotion, scheduler, dashboard, broker, or credential
-   behavior.
-6. Add focused tests only for any code change. At minimum prove the safeguard
-   is deterministic, does not touch credentials/network, and still writes
-   artifacts outside Git or is mocked in tests.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+2. Use the existing cap-limited calibration artifact:
+   `D:\thericher-v2\model-artifacts\candidate-threshold-calibration\bounded-calibration-runtime-3slice-80-cap2-20260716\metrics.json`.
+3. Prefer existing disjoint holdout data under
+   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18`.
+4. Run a compact Docker `research` `candidate_threshold_holdout` job on CVS,
+   FCX, and KO with bounded `max_bars`. Stop before another long no-output run.
+5. Verify all generated fills are `source: local_paper` and record PnL,
+   drawdown, fill counts, probability ranges, and artifact paths as
+   descriptive evidence only.
+6. Compare source calibration versus holdout evidence only descriptively. Do
+   not rank, recommend, promote, or pass/fail thresholds or candidates.
+7. Add or adjust focused tests only if code changes are required.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -98,13 +97,13 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report the Docker `research` calibration commands used, whether GPU was
-available, and whether every started container finished or was explicitly
-stopped.
+Report the Docker `research` holdout command used, whether GPU was available,
+where artifacts were written, and whether every started container finished or
+was explicitly stopped.
 
 ## Suggested Commit Message
 
-`Bound threshold calibration runtime`
+`Run cap-limited calibration holdout replay`
 
 ## Completion Report
 
@@ -116,6 +115,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- calibration runtime findings,
+- holdout replay findings,
 - what was intentionally not built,
 - next recommended goal.
