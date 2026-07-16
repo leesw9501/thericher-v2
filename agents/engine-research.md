@@ -29,9 +29,8 @@
 
 ## Active Queue
 
-1. Start bounded post-entry exit-signal attribution for the out-of-symbol
-   loss-bearing variants before another model axis or threshold-only branch is
-   tried.
+1. Start a bounded exit-horizon diagnostic overlay for out-of-symbol open
+   segments before another model axis or threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -135,6 +134,12 @@
   segments, `4` open segments, and `4` of `5` fill-bearing variants held an
   open long position to the bounded window end, with all `10` fill events
   `source: local_paper`.
+- Last completed:
+  `bounded-out-of-symbol-disjoint-eval-post-entry-attribution-20260716`,
+  status `candidate_feature_branch_replay_post_entry_attribution_only`,
+  consumed existing probability traces and lifecycle evidence, found all `3`
+  closed segments had post-entry sell-threshold signals and all `4` open
+  segments had no sell-threshold signal before the bounded window end.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -353,10 +358,14 @@
 - Connected fill-bearing out-of-symbol variants to local-paper lifecycle and
   selected bar paths. The next evidence should inspect post-entry probability
   traces to see whether sell signals appeared before the bounded window end.
+- Confirmed open loss-bearing segments had no post-entry sell-threshold signal
+  before the bounded window end. The next evidence should keep actual replay
+  untouched and compare a tiny diagnostic horizon overlay, clearly separated
+  from local-paper fills.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attribute post-entry exit-signal behavior for loss-bearing
-  out-of-symbol variants before running another hidden-units, regularization,
+  task should run a compact exit-horizon diagnostic overlay for open
+  out-of-symbol segments before running another hidden-units, regularization,
   preprocessing, or threshold-only branch.

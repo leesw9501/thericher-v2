@@ -127,6 +127,9 @@
 - Out-of-symbol fill-lifecycle attribution parsed existing local-paper event
   files and confirmed `10` fill events, `3` closed segments, and `4` open
   segments without rerunning replay or touching broker code.
+- Out-of-symbol post-entry attribution reran no execution. It preserved the
+  existing `local_paper` fill evidence and found open segments lacked a
+  post-entry sell-threshold signal before the bounded window end.
 
 ## Next Handoff
 

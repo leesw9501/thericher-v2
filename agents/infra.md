@@ -203,6 +203,10 @@
   read selected `D:\market_data` Yahoo rows plus existing external event files,
   reran no Docker job, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Out-of-symbol post-entry exit-signal attribution ran locally as artifact-only
+  work, consumed existing external traces and lifecycle evidence, reran no
+  Docker job, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 

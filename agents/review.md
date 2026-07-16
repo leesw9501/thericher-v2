@@ -188,11 +188,15 @@
   selected local Yahoo rows only. It added no code, job kind, report family,
   gate, dashboard, scheduler, broker path, threshold search, retraining, rerun
   replay, or model-promotion language.
+- Out-of-symbol post-entry attribution used existing traces and lifecycle
+  artifacts only. It added no code, job kind, report family, gate, dashboard,
+  scheduler, broker path, threshold search, retraining, rerun replay, or
+  model-promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward compact post-entry exit-signal attribution from
-  existing traces and selected local bars before allowing another model axis or
+- Push the next task toward a compact diagnostic overlay that is clearly
+  separated from local-paper fills before allowing another model axis or
   threshold-only branch.

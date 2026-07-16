@@ -168,13 +168,14 @@
 - Out-of-symbol fill-lifecycle attribution read only selected AAPL, ABNB, ACN,
   and ABBV rows from the existing `snapshot=2026-06-18` Yahoo 1m file for
   fill-bearing variants; no additional data was acquired.
+- Out-of-symbol post-entry exit-signal attribution consumed existing trace and
+  lifecycle artifacts only; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is not more acquisition; it is reading only selected
-  `snapshot=2026-06-18` bars and existing probability traces needed for
-  post-entry exit-signal attribution.
+  `snapshot=2026-06-18` bars needed for a diagnostic overlay on open segments.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

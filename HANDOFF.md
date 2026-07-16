@@ -284,6 +284,11 @@ Implemented and pushed:
   carried negative bounded-window-end gross deltas, ACN also had small positive
   closed segments, ABBV had a small negative closed segment, and compact
   evidence was written outside Git,
+- bounded post-entry exit-signal attribution; it consumed existing probability
+  traces and fill-lifecycle evidence only, found `7` post-entry segments,
+  confirmed all `3` closed segments lined up with sell-threshold signals, and
+  found all `4` open segments had no post-entry sell-threshold signal before
+  the bounded window end, with all parsed fills still `source: local_paper`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -348,19 +353,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded post-entry exit-signal attribution slice for the
-out-of-symbol loss-bearing local-paper variants:
+Start one bounded exit-horizon diagnostic overlay for the out-of-symbol open
+segments:
 
-1. consume the out-of-symbol replay, opportunity attribution, loss
-   attribution, and fill-lifecycle artifacts as context,
-2. read only existing probability traces and selected `snapshot=2026-06-18`
-   bars for fill-bearing variants,
-3. measure whether each open buy segment saw a sell-threshold signal before the
-   bounded window end, plus simple post-entry adverse/favorable movement,
-4. write any compact post-entry signal summary outside Git,
-5. avoid retraining, rerunning replay, changing local-paper behavior, new
-   candidate modules, dashboards, gates, schedulers, threshold searches, or
-   broker-facing behavior.
+1. consume the fill-lifecycle and post-entry exit-signal attribution artifacts
+   as context,
+2. read only selected `snapshot=2026-06-18` bars needed for open segments,
+3. compare current bounded-window-end marks to a tiny fixed set of descriptive
+   horizon marks, clearly labeled `source: diagnostic_overlay`,
+4. write any compact exit-horizon diagnostic summary outside Git,
+5. avoid retraining, rerunning replay, changing local-paper behavior, adding
+   diagnostic marks as fills, new candidate modules, dashboards, gates,
+   schedulers, threshold searches, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

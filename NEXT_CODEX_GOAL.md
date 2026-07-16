@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded post-entry exit-signal attribution slice for the out-of-symbol
-loss-bearing local-paper variants.
+Build a bounded exit-horizon diagnostic overlay for the out-of-symbol open
+segments.
 
-This advances PnL attribution and paper-trading preparation by checking whether
-the existing probability traces emitted sell-threshold signals after entry, and
-how post-entry price movement related to open positions that remained at the
-bounded window end.
+This advances PnL attribution and paper-trading preparation by comparing the
+current bounded-window-end marks against a tiny fixed set of descriptive horizon
+marks, while keeping diagnostic overlay outcomes separate from actual
+`local_paper` fills.
 
 ## Hard Boundaries
 
@@ -25,6 +25,8 @@ bounded window end.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or the configured artifact root.
 - Keep simulated fills labeled with `source: local_paper`.
+- Keep diagnostic overlay outcomes labeled separately, for example
+  `source: diagnostic_overlay`.
 - Keep disabled broker outcomes labeled separately from local paper, for
   example `source: broker_disabled`.
 - Keep PyTorch CUDA confined to the Docker `research` target/profile.
@@ -64,25 +66,28 @@ bounded window end.
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
 2. Use recent artifacts as context, not as promotion evidence:
-   - `bounded-out-of-symbol-disjoint-eval-replay-cap2-20260716`
-   - `bounded-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`
    - `bounded-out-of-symbol-disjoint-eval-loss-attribution-20260716`
    - `bounded-out-of-symbol-disjoint-eval-fill-lifecycle-20260716`
-3. Prefer existing artifacts, probability traces, and selected local Yahoo
-   bars. Do not retrain, rerun replay, or run threshold search unless existing
-   evidence cannot support the attribution.
-4. For fill-bearing out-of-symbol variants only, attribute:
-   - entry fill timestamp, side, price, and source,
-   - post-entry probability path relative to the sell threshold,
-   - first sell-threshold signal timestamp if present,
-   - whether the segment exited or held to the bounded window end,
-   - simple adverse/favorable post-entry price movement,
-   - local-paper fill-source verification.
-5. Write any compact post-entry signal output outside Git under
+   - `bounded-out-of-symbol-disjoint-eval-post-entry-attribution-20260716`
+3. Prefer existing artifacts and selected local Yahoo bars. Do not retrain,
+   rerun replay, or run threshold search unless existing evidence cannot
+   support the diagnostic.
+4. For open out-of-symbol segments only, compare current bounded-window-end mark
+   evidence with a tiny fixed horizon set, such as 5 and 15 bars after entry.
+5. Label any non-replay comparison as `source: diagnostic_overlay`; do not add
+   diagnostic marks to local-paper fill counts.
+6. Include at least:
+   - entry timestamp and price,
+   - diagnostic horizon timestamp and price,
+   - current bounded-window-end mark,
+   - gross delta comparison,
+   - local-paper fill-source verification from the source artifact,
+   - artifact paths used.
+7. Write any compact diagnostic output outside Git under
    `D:\thericher-v2\model-artifacts`.
-6. Keep the result descriptive only. Do not rank symbols, pick thresholds,
+8. Keep the result descriptive only. Do not rank symbols, pick horizons,
    select a model, or add promotion language.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -110,7 +115,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded out-of-symbol post-entry attribution target`
+`Add bounded out-of-symbol exit diagnostic target`
 
 ## Completion Report
 
@@ -122,6 +127,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- out-of-symbol post-entry attribution findings,
+- out-of-symbol exit diagnostic findings,
 - what was intentionally not built,
 - next recommended goal.
