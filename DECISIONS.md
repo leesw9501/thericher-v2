@@ -783,3 +783,18 @@ attribution helper before any replay rerun or exit-policy experiment. Keeping
 the helper pure avoids broker access, credentials, file or network I/O, CLI
 surface, job-kind growth, dashboard work, training, threshold search, and
 model-promotion language.
+
+## 2026-07-16 - Bounded diagnostic exit-composite helper
+
+Decision: extend `exit_overlay_diagnostic` with a pure
+`compute_diagnostic_exit_composite` helper. It consumes provided diagnostic
+overlay segment payloads, inspects one named conditional metadata id,
+substitutes a named fixed-horizon diagnostic overlay only when that condition is
+met, retains local-paper exits otherwise, and returns descriptive group and
+overall metrics with explicit source labels.
+
+Reason: the exit-latency composite diagnostic showed a useful recurring
+calculation that should not stay as one-off script logic. A small pure helper
+keeps the evidence reusable while avoiding broker behavior, credentials, file
+or network I/O, artifact writers, CLIs, research job kinds, dashboards,
+schedulers, replay mutation, policy selection, and model-promotion language.

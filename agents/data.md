@@ -252,12 +252,14 @@
   reused the same selected local Yahoo rows; no additional data was acquired.
 - Exit-latency composite diagnostic consumed existing external artifacts and
   did not require additional market-data reads or acquisition.
+- Diagnostic exit-composite helper added no market-data loader and consumes
+  provided payloads only in focused tests.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is not acquisition; the composite helper should consume
-  provided segment payloads and not load market data itself.
+- The next data task is not acquisition; the composite helper smoke should
+  consume existing external artifacts only.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

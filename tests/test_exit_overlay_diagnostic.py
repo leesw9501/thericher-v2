@@ -14,6 +14,7 @@ from thericher_v2.research.exit_overlay_diagnostic import (
     DIAGNOSTIC_OVERLAY_SOURCE,
     ConditionalExitOverlaySpec,
     DiagnosticExitTradeSegment,
+    compute_diagnostic_exit_composite,
     compute_diagnostic_exit_overlays,
 )
 
@@ -210,6 +211,153 @@ def test_exit_overlay_is_offline_and_does_not_read_credentials(monkeypatch) -> N
     )
 
     assert result.metrics["segment_count"] == 1
+
+
+def test_exit_composite_substitutes_diagnostic_and_retains_local_paper() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    overlay_segments = _composite_overlay_segments(start)
+
+    result = compute_diagnostic_exit_composite(
+        segments=overlay_segments,
+        condition_overlay_id="latency_ge_5_at_2_bar",
+        fixed_horizon_bars=2,
+        checked_at=start,
+    )
+
+    loss = result.segments[0]
+    non_negative = result.segments[1]
+    assert loss["condition_met"] is True
+    assert loss["composite_status"] == "diagnostic_overlay_substituted"
+    assert loss["composite_outcome"]["source"] == DIAGNOSTIC_OVERLAY_SOURCE
+    assert non_negative["condition_met"] is False
+    assert non_negative["composite_status"] == "condition_not_met_retained_local_paper"
+    assert non_negative["composite_outcome"]["source"] == LOCAL_PAPER_SOURCE
+    assert result.group_summaries["loss_bearing"]["condition_met_count"] == 1
+    assert result.group_summaries["non_negative"]["condition_met_count"] == 0
+    assert result.metrics["substituted_outcomes_are_diagnostic_overlay"] is True
+    assert result.metrics["retained_outcomes_are_local_paper"] is True
+    assert result.to_payload()["result_scope"]["mode"] == (
+        "research_diagnostic_exit_composite_only"
+    )
+
+
+def test_exit_composite_does_not_mutate_provided_payloads() -> None:
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    overlay_segments = _composite_overlay_segments(start)
+    before = deepcopy(overlay_segments)
+
+    compute_diagnostic_exit_composite(
+        segments=overlay_segments,
+        condition_overlay_id="latency_ge_5_at_2_bar",
+        fixed_horizon_bars=2,
+        checked_at=start,
+    )
+
+    assert overlay_segments == before
+
+
+def test_exit_composite_reports_missing_condition_and_fixed_overlay_offline(
+    monkeypatch,
+) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("exit composite diagnostic must not open network")
+
+    def fail_read_text(*_args: object, **_kwargs: object) -> str:
+        raise AssertionError("exit composite diagnostic must not read files")
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", fail_read_text)
+
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    overlay_segments = _composite_overlay_segments(start)
+
+    missing_condition = compute_diagnostic_exit_composite(
+        segments=(overlay_segments[0],),
+        condition_overlay_id="missing_condition",
+        fixed_horizon_bars=2,
+        checked_at=start,
+    )
+
+    assert missing_condition.metrics["missing_condition_count"] == 1
+    assert missing_condition.segments[0]["composite_outcome"]["source"] == (
+        LOCAL_PAPER_SOURCE
+    )
+
+    missing_fixed_segment = deepcopy(overlay_segments[0])
+    missing_fixed_segment["fixed_horizon_overlays"] = tuple(
+        overlay
+        for overlay in missing_fixed_segment["fixed_horizon_overlays"]
+        if overlay["horizon_bars"] != 2
+    )
+    missing_fixed = compute_diagnostic_exit_composite(
+        segments=(missing_fixed_segment,),
+        condition_overlay_id="latency_ge_5_at_2_bar",
+        fixed_horizon_bars=2,
+        checked_at=start,
+    )
+
+    assert missing_fixed.metrics["missing_fixed_overlay_count"] == 1
+    assert missing_fixed.segments[0]["composite_status"] == (
+        "missing_fixed_overlay_retained_local_paper"
+    )
+    assert missing_fixed.segments[0]["composite_outcome"]["source"] == (
+        LOCAL_PAPER_SOURCE
+    )
+
+
+def _composite_overlay_segments(start: datetime) -> tuple[dict[str, object], ...]:
+    conditional = (
+        ConditionalExitOverlaySpec(
+            overlay_id="latency_ge_5_at_2_bar",
+            horizon_bars=2,
+            min_bars_without_sell_signal=5,
+        ),
+    )
+    result = compute_diagnostic_exit_overlays(
+        segments=(
+            DiagnosticExitTradeSegment(
+                slice_id="loss",
+                variant_id="t01",
+                symbol="AAA",
+                entry_timestamp=start,
+                entry_price=Decimal("10"),
+                quantity=Decimal("1"),
+                exit_timestamp=start + timedelta(minutes=4),
+                exit_price=Decimal("8"),
+                bars_to_first_sell_signal=5,
+            ),
+            DiagnosticExitTradeSegment(
+                slice_id="nonneg",
+                variant_id="t01",
+                symbol="BBB",
+                entry_timestamp=start,
+                entry_price=Decimal("20"),
+                quantity=Decimal("1"),
+                exit_timestamp=start + timedelta(minutes=2),
+                exit_price=Decimal("22"),
+                bars_to_first_sell_signal=2,
+            ),
+        ),
+        bars=tuple(
+            _bar(
+                "AAA",
+                start + timedelta(minutes=index),
+                low=10 - index / 2 - 1,
+                close=10 - index / 2,
+            )
+            for index in range(8)
+        )
+        + tuple(
+            _bar("BBB", start + timedelta(minutes=index), low=19, close=20 + index)
+            for index in range(8)
+        ),
+        conditional_overlays=conditional,
+        checked_at=start,
+    )
+    return (
+        {**result.segments[0], "class_label": "loss_bearing"},
+        {**result.segments[1], "class_label": "non_negative"},
+    )
 
 
 def _bar(

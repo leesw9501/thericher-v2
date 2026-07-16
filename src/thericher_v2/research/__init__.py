@@ -102,8 +102,10 @@ from .exit_overlay_diagnostic import (
     DEFAULT_EXIT_OVERLAY_HORIZONS,
     DIAGNOSTIC_OVERLAY_SOURCE,
     ConditionalExitOverlaySpec,
+    DiagnosticExitCompositeResult,
     DiagnosticExitOverlayResult,
     DiagnosticExitTradeSegment,
+    compute_diagnostic_exit_composite,
     compute_diagnostic_exit_overlays,
 )
 from .experiments import (
@@ -217,6 +219,7 @@ __all__ = [
     "EntryQualityTraceEntry",
     "EntryQualityVariant",
     "ConditionalExitOverlaySpec",
+    "DiagnosticExitCompositeResult",
     "DiagnosticExitOverlayResult",
     "DiagnosticExitTradeSegment",
     "ExperimentMetrics",
@@ -258,6 +261,7 @@ __all__ = [
     "discover_market_data_inventory",
     "attribute_trade_paths_from_local_paper_events",
     "attribute_entry_quality_from_traces",
+    "compute_diagnostic_exit_composite",
     "compute_diagnostic_exit_overlays",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",

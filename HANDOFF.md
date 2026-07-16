@@ -503,6 +503,14 @@ Implemented and pushed:
   `7` segments kept `source: local_paper` exits, improved overall gross delta
   from `-1.4563` to `3.383729296875`, preserved source separation, and wrote
   one compact artifact outside Git without replay or training,
+- bounded diagnostic exit-composite helper; it extends
+  `exit_overlay_diagnostic` with a pure `compute_diagnostic_exit_composite`
+  helper that consumes provided diagnostic overlay segment payloads, inspects
+  one named conditional metadata id, substitutes a named fixed-horizon
+  `diagnostic_overlay` only when the condition is met, retains
+  `source: local_paper` exits otherwise, returns descriptive group/overall
+  metrics, and performs no file, network, credential, broker, CLI, job,
+  dashboard, scheduler, training, replay, or artifact-write work,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -523,7 +531,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `250 passed`
+- `253 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -567,17 +575,18 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded diagnostic exit-composite helper target:
+Start one bounded diagnostic exit-composite helper smoke target:
 
-1. ask Claude CLI for a short drift-check before adding code,
-2. add the smallest pure helper needed to compute source-labeled composite
-   diagnostic outcomes from provided helper segment payloads,
-3. add focused tests proving substituted outcomes stay
-   `source: diagnostic_overlay`, retained outcomes stay `source: local_paper`,
-   and local-paper fills are not mutated,
-4. avoid artifact writers, CLIs, research job kinds, training, replay reruns,
-   broad feature changes, broad data search, threshold search, branch ranking,
-   dashboards, schedulers, broker behavior, or report/gate expansion.
+1. use the new pure helper on the existing exit-latency composite context
+   artifacts,
+2. write one compact external smoke artifact under
+   `D:\thericher-v2\model-artifacts`,
+3. verify the helper reproduces the one-off composite source counts and gross
+   delta summaries,
+4. avoid new helper code unless a bug is found, and avoid artifact writers,
+   CLIs, research job kinds, training, replay reruns, broad feature changes,
+   broad data search, threshold search, branch ranking, dashboards, schedulers,
+   broker behavior, or report/gate expansion.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

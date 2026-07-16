@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Ask Claude CLI for drift-check, then codify the exit-latency composite
-   calculation as one small pure diagnostic helper.
+1. Run one real-artifact smoke through the diagnostic exit-composite helper
+   before changing another model axis.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -674,9 +674,14 @@
   `diagnostic_overlay` outcomes for the `4` latency-matched loss-bearing
   segments, retained `7` local-paper exits, and moved overall gross delta from
   `-1.4563` to `3.383729296875` descriptively without replay.
+- Diagnostic exit-composite helper now codifies the source-labeled composite
+  calculation as a pure helper with focused tests for substituted diagnostic
+  outcomes, retained local-paper outcomes, missing metadata, and group
+  summaries.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should codify the composite calculation as a pure helper before another
-  feature-set, preprocessing, regularization value, or threshold-only branch.
+  task should run one bounded real-artifact smoke through the composite helper
+  before another feature-set, preprocessing, regularization value, or
+  threshold-only branch.

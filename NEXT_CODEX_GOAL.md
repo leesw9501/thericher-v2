@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build the first bounded diagnostic exit-composite helper.
+Build the first bounded diagnostic exit-composite helper smoke.
 
-This advances PnL attribution and backtest/walk-forward validation by codifying
-the repeated one-off composite calculation into one small pure helper that
-combines provided diagnostic overlay segment payloads into source-labeled
-composite outcomes. It must remain descriptive and must not apply an exit
-policy to local-paper replay.
+This advances PnL attribution and backtest/walk-forward validation by applying
+the pure `compute_diagnostic_exit_composite` helper to the existing
+exit-latency composite context artifacts, verifying it reproduces the one-off
+source counts and gross-delta summaries without mutating local-paper fills.
 
 ## Hard Boundaries
 
@@ -60,38 +59,37 @@ policy to local-paper replay.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Ask Claude CLI for a short drift-check before code edits.
+3. Ask Claude CLI for a short drift-check before code edits. If the smoke can
+   run artifact-only with existing code, no Claude check is needed.
 
 ## Required Work
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Consume these completed artifacts as context only:
+2. Consume these completed artifacts as context:
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-latency-composite-overlay-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-conditional-exit-overlay-contrast-20260716\metrics.json`
    - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-diagnostic-exit-overlay-helper-smoke-20260716\metrics.json`
-3. Add one small pure helper, likely in
-   `src/thericher_v2/research/exit_overlay_diagnostic.py`, that:
-   - consumes provided diagnostic overlay segment payloads,
-   - inspects one named conditional overlay metadata id,
-   - substitutes a named fixed-horizon diagnostic overlay only when that
-     condition is met,
-   - retains existing local-paper exit evidence otherwise,
-   - labels substituted outcomes `source: diagnostic_overlay`,
-   - keeps retained outcomes `source: local_paper`,
-   - returns descriptive group/overall metrics,
-   - performs no file, network, credential, broker, CLI, job, dashboard,
-     scheduler, training, replay, or artifact-write work.
-4. Add focused tests proving:
-   - substituted outcomes use `source: diagnostic_overlay`,
-   - retained outcomes use `source: local_paper`,
-   - provided local-paper entry/exit payloads are not mutated,
-   - missing condition or missing fixed overlay is reported without broker I/O,
-   - the helper can summarize loss-bearing versus non-negative groups.
-5. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
+3. Use the helper added in the previous task:
+   - `thericher_v2.research.exit_overlay_diagnostic.compute_diagnostic_exit_composite`
+4. Build one compact artifact-only smoke that:
+   - enriches provided helper smoke segment payloads with existing class labels,
+   - uses `latency_ge_5_at_2_bar` as the condition id,
+   - substitutes fixed 2-bar diagnostic overlays only when the condition is
+     met,
+   - retains existing local-paper exits otherwise,
+   - verifies substituted outcomes are `source: diagnostic_overlay`,
+   - verifies retained outcomes are `source: local_paper`,
+   - compares output source counts and gross-delta sums to the one-off
+     composite artifact.
+5. Write one compact smoke artifact outside Git, for example:
+   - `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-exit-composite-helper-smoke-20260716\metrics.json`
+6. Do not add a CLI, research job kind, dashboard, scheduler, model feature,
    training path, replay rerun, threshold search, policy selection, simulator
    exit rule, or broker behavior.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+7. Only edit code if the smoke exposes a helper bug; if code changes are needed,
+   ask Claude CLI first and keep the fix focused.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -114,12 +112,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report any focused test, artifact-only command, Docker `research`
+Also report any focused test, artifact-only smoke command, Docker `research`
 command, GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add diagnostic exit composite helper`
+`Add diagnostic exit composite helper smoke`
 
 ## Completion Report
 
@@ -131,6 +129,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- helper behavior added,
+- helper smoke behavior,
 - what was intentionally not built,
 - next goal.

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
@@ -10,6 +11,7 @@ from typing import Any
 from thericher_v2.contracts import SCHEMA_VERSION, Bar
 
 DIAGNOSTIC_OVERLAY_SOURCE = "diagnostic_overlay"
+LOCAL_PAPER_SOURCE = "local_paper"
 DEFAULT_EXIT_OVERLAY_HORIZONS: tuple[int, int, int] = (2, 3, 5)
 
 
@@ -21,12 +23,12 @@ class DiagnosticExitTradeSegment:
     entry_timestamp: datetime
     entry_price: Decimal
     quantity: Decimal
-    entry_source: str = "local_paper"
+    entry_source: str = LOCAL_PAPER_SOURCE
     market: str = "US"
     entry_fee: Decimal = Decimal("0")
     exit_timestamp: datetime | None = None
     exit_price: Decimal | None = None
-    exit_source: str | None = "local_paper"
+    exit_source: str | None = LOCAL_PAPER_SOURCE
     exit_fee: Decimal = Decimal("0")
     bars_to_first_sell_signal: int | None = None
     schema_version: int = SCHEMA_VERSION
@@ -138,6 +140,35 @@ class DiagnosticExitOverlayResult:
         }
 
 
+@dataclass(frozen=True)
+class DiagnosticExitCompositeResult:
+    checked_at: datetime
+    segments: tuple[dict[str, Any], ...]
+    group_summaries: dict[str, Any]
+    overall_summary: dict[str, Any]
+    metrics: dict[str, Any]
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "checked_at", self.checked_at.astimezone(UTC))
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "schema_version": self.schema_version,
+            "checked_at": self.checked_at.isoformat(),
+            "status": "diagnostic_exit_composite_only",
+            "segments": list(self.segments),
+            "group_summaries": self.group_summaries,
+            "overall_summary": self.overall_summary,
+            "metrics": self.metrics,
+            "result_scope": {
+                "mode": "research_diagnostic_exit_composite_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
+        }
+
+
 def compute_diagnostic_exit_overlays(
     *,
     segments: tuple[DiagnosticExitTradeSegment, ...],
@@ -194,6 +225,83 @@ def compute_diagnostic_exit_overlays(
         checked_at=checked_at,
         segments=result_segments,
         metrics=_metrics(result_segments),
+    )
+
+
+def compute_diagnostic_exit_composite(
+    *,
+    segments: tuple[dict[str, Any], ...],
+    condition_overlay_id: str,
+    fixed_horizon_bars: int,
+    group_key: str = "class_label",
+    checked_at: datetime | None = None,
+) -> DiagnosticExitCompositeResult:
+    """Return descriptive composite outcomes without replaying local paper."""
+
+    if not condition_overlay_id:
+        raise ValueError("condition_overlay_id is required")
+    if fixed_horizon_bars not in DEFAULT_EXIT_OVERLAY_HORIZONS:
+        raise ValueError("fixed_horizon_bars must use fixed 2, 3, or 5 bars")
+    checked_at = checked_at or datetime.now(UTC)
+    composite_segments: list[dict[str, Any]] = []
+
+    for segment in segments:
+        group = str(segment.get(group_key) or "unclassified")
+        condition = _find_condition_metadata(
+            segment=segment,
+            condition_overlay_id=condition_overlay_id,
+        )
+        fixed_overlay = _find_fixed_overlay_payload(
+            segment=segment,
+            horizon=fixed_horizon_bars,
+        )
+        local_paper_exit = _copy_payload(segment.get("local_paper_exit"))
+        condition_met = condition is not None and condition.get("conditions_met") is True
+        if condition_met and _fixed_overlay_available(fixed_overlay):
+            composite_outcome = _diagnostic_composite_outcome(
+                fixed_overlay=fixed_overlay,
+                local_paper_exit=local_paper_exit,
+            )
+            composite_status = "diagnostic_overlay_substituted"
+        else:
+            composite_outcome = _retained_local_paper_outcome(
+                local_paper_exit=local_paper_exit,
+            )
+            composite_status = _retained_status(
+                condition=condition,
+                fixed_overlay=fixed_overlay,
+                condition_met=condition_met,
+            )
+        composite_segments.append(
+            {
+                "slice_id": str(segment.get("slice_id") or ""),
+                "variant_id": str(segment.get("variant_id") or ""),
+                "symbol": str(segment.get("symbol") or ""),
+                "market": str(segment.get("market") or ""),
+                "class_label": group,
+                "condition_id": condition_overlay_id,
+                "condition_met": condition_met,
+                "composite_status": composite_status,
+                "entry": _copy_payload(segment.get("entry")),
+                "existing_local_paper_exit": local_paper_exit,
+                "condition_metadata": _copy_payload(condition),
+                "fixed_overlay_reference": _fixed_overlay_reference(fixed_overlay),
+                "composite_outcome": composite_outcome,
+            }
+        )
+
+    result_segments = tuple(composite_segments)
+    group_summaries = _composite_group_summaries(result_segments)
+    overall_summary = _composite_overall_summary(result_segments)
+    return DiagnosticExitCompositeResult(
+        checked_at=checked_at,
+        segments=result_segments,
+        group_summaries=group_summaries,
+        overall_summary=overall_summary,
+        metrics=_composite_metrics(
+            segments=result_segments,
+            group_summaries=group_summaries,
+        ),
     )
 
 
@@ -432,6 +540,307 @@ def _metrics(segments: tuple[dict[str, Any], ...]) -> dict[str, Any]:
             overlay["source"] == DIAGNOSTIC_OVERLAY_SOURCE
             for overlay in fixed_overlays + conditional_metadata
         ),
+    }
+
+
+def _find_condition_metadata(
+    *,
+    segment: dict[str, Any],
+    condition_overlay_id: str,
+) -> dict[str, Any] | None:
+    for metadata in segment.get("conditional_overlay_metadata", ()):
+        if metadata.get("overlay_id") == condition_overlay_id:
+            return metadata
+    return None
+
+
+def _find_fixed_overlay_payload(
+    *,
+    segment: dict[str, Any],
+    horizon: int,
+) -> dict[str, Any] | None:
+    for overlay in segment.get("fixed_horizon_overlays", ()):
+        if overlay.get("horizon_bars") == horizon:
+            return overlay
+    return None
+
+
+def _fixed_overlay_available(overlay: dict[str, Any] | None) -> bool:
+    return overlay is not None and overlay.get("available") is True
+
+
+def _diagnostic_composite_outcome(
+    *,
+    fixed_overlay: dict[str, Any] | None,
+    local_paper_exit: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if fixed_overlay is None:
+        return {
+            "available": False,
+            "reason": "missing_fixed_overlay",
+            "source": DIAGNOSTIC_OVERLAY_SOURCE,
+        }
+    outcome = {
+        "available": True,
+        "timestamp": fixed_overlay.get("timestamp"),
+        "price": fixed_overlay.get("price"),
+        "gross_delta": fixed_overlay.get("gross_delta"),
+        "delta_vs_existing_local_paper_gross": fixed_overlay.get(
+            "gross_delta_vs_local_paper_exit"
+        ),
+        "source": DIAGNOSTIC_OVERLAY_SOURCE,
+        "source_detail": {
+            "type": "fixed_horizon_diagnostic_overlay",
+            "horizon_bars": fixed_overlay.get("horizon_bars"),
+            "source": fixed_overlay.get("source"),
+        },
+    }
+    if outcome["delta_vs_existing_local_paper_gross"] is None and local_paper_exit:
+        local_gross = _payload_decimal(local_paper_exit, "gross_delta")
+        overlay_gross = _payload_decimal(fixed_overlay, "gross_delta")
+        if local_gross is not None and overlay_gross is not None:
+            outcome["delta_vs_existing_local_paper_gross"] = _format_decimal(
+                overlay_gross - local_gross
+            )
+    return outcome
+
+
+def _retained_local_paper_outcome(
+    *,
+    local_paper_exit: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if local_paper_exit is None:
+        return {
+            "available": False,
+            "reason": "missing_local_paper_exit",
+            "source": None,
+        }
+    return {
+        "available": True,
+        "timestamp": local_paper_exit.get("timestamp"),
+        "price": local_paper_exit.get("price"),
+        "gross_delta": local_paper_exit.get("gross_delta"),
+        "delta_vs_existing_local_paper_gross": "0",
+        "source": local_paper_exit.get("source"),
+        "source_detail": {
+            "type": "existing_local_paper_exit",
+            "source": local_paper_exit.get("source"),
+        },
+    }
+
+
+def _retained_status(
+    *,
+    condition: dict[str, Any] | None,
+    fixed_overlay: dict[str, Any] | None,
+    condition_met: bool,
+) -> str:
+    if condition is None:
+        return "missing_condition_retained_local_paper"
+    if not condition_met:
+        return "condition_not_met_retained_local_paper"
+    if fixed_overlay is None:
+        return "missing_fixed_overlay_retained_local_paper"
+    if fixed_overlay.get("available") is not True:
+        return "unavailable_fixed_overlay_retained_local_paper"
+    return "retained_local_paper"
+
+
+def _fixed_overlay_reference(overlay: dict[str, Any] | None) -> dict[str, Any] | None:
+    if overlay is None:
+        return None
+    return {
+        "horizon_bars": overlay.get("horizon_bars"),
+        "available": overlay.get("available"),
+        "reason": overlay.get("reason"),
+        "source": overlay.get("source"),
+        "timestamp": overlay.get("timestamp"),
+        "price": overlay.get("price"),
+        "gross_delta": overlay.get("gross_delta"),
+    }
+
+
+def _copy_payload(value: Any) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise ValueError("payload values must be dictionaries")
+    return deepcopy(value)
+
+
+def _composite_group_summaries(
+    segments: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    groups = sorted({str(segment["class_label"]) for segment in segments})
+    return {
+        group: _composite_summary_for_segments(
+            tuple(segment for segment in segments if segment["class_label"] == group)
+        )
+        for group in groups
+    }
+
+
+def _composite_overall_summary(
+    segments: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    return _composite_summary_for_segments(segments)
+
+
+def _composite_summary_for_segments(
+    segments: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    composite_values = _decimal_values(
+        tuple(segment["composite_outcome"] for segment in segments),
+        key="gross_delta",
+    )
+    local_values = _decimal_values(
+        tuple(
+            segment["existing_local_paper_exit"]
+            for segment in segments
+            if segment["existing_local_paper_exit"] is not None
+        ),
+        key="gross_delta",
+    )
+    delta_values = _decimal_values(
+        tuple(segment["composite_outcome"] for segment in segments),
+        key="delta_vs_existing_local_paper_gross",
+    )
+    return {
+        "segment_count": len(segments),
+        "condition_met_count": sum(1 for segment in segments if segment["condition_met"]),
+        "composite_gross_delta": _decimal_summary(composite_values),
+        "existing_local_paper_gross_delta": _decimal_summary(local_values),
+        "composite_delta_vs_local_paper": _decimal_summary(delta_values),
+        "composite_source_counts": _source_counts(
+            tuple(segment["composite_outcome"] for segment in segments)
+        ),
+    }
+
+
+def _composite_metrics(
+    *,
+    segments: tuple[dict[str, Any], ...],
+    group_summaries: dict[str, Any],
+) -> dict[str, Any]:
+    substituted = tuple(
+        segment
+        for segment in segments
+        if segment["composite_status"] == "diagnostic_overlay_substituted"
+    )
+    retained = tuple(
+        segment
+        for segment in segments
+        if segment["composite_status"] != "diagnostic_overlay_substituted"
+    )
+    missing_condition_count = sum(
+        1
+        for segment in segments
+        if segment["composite_status"] == "missing_condition_retained_local_paper"
+    )
+    missing_fixed_overlay_count = sum(
+        1
+        for segment in segments
+        if segment["composite_status"] == "missing_fixed_overlay_retained_local_paper"
+    )
+    unavailable_fixed_overlay_count = sum(
+        1
+        for segment in segments
+        if segment["composite_status"] == "unavailable_fixed_overlay_retained_local_paper"
+    )
+    return {
+        "research_diagnostic_exit_composite_only": True,
+        "descriptive_only": True,
+        "promotion_gate": False,
+        "segment_count": len(segments),
+        "group_count": len(group_summaries),
+        "condition_met_count": sum(1 for segment in segments if segment["condition_met"]),
+        "diagnostic_overlay_composite_count": len(substituted),
+        "local_paper_composite_count": sum(
+            1
+            for segment in retained
+            if segment["composite_outcome"].get("source") == LOCAL_PAPER_SOURCE
+        ),
+        "missing_condition_count": missing_condition_count,
+        "missing_fixed_overlay_count": missing_fixed_overlay_count,
+        "unavailable_fixed_overlay_count": unavailable_fixed_overlay_count,
+        "composite_source_counts": _source_counts(
+            tuple(segment["composite_outcome"] for segment in segments)
+        ),
+        "referenced_local_paper_sources_remain_local_paper": all(
+            _payload_source(segment.get("entry")) == LOCAL_PAPER_SOURCE
+            and _payload_source(segment.get("existing_local_paper_exit"))
+            == LOCAL_PAPER_SOURCE
+            for segment in segments
+        ),
+        "substituted_outcomes_are_diagnostic_overlay": all(
+            segment["composite_outcome"].get("source") == DIAGNOSTIC_OVERLAY_SOURCE
+            for segment in substituted
+        ),
+        "retained_outcomes_are_local_paper": all(
+            segment["composite_outcome"].get("source") == LOCAL_PAPER_SOURCE
+            for segment in retained
+            if segment["composite_outcome"].get("available") is True
+        ),
+        "replay_ran": False,
+        "training_ran": False,
+        "simulator_exit_rule_added": False,
+    }
+
+
+def _source_counts(payloads: tuple[dict[str, Any], ...]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for payload in payloads:
+        source = str(payload.get("source") or "missing")
+        counts[source] = counts.get(source, 0) + 1
+    return dict(sorted(counts.items()))
+
+
+def _decimal_values(
+    payloads: tuple[dict[str, Any], ...],
+    *,
+    key: str,
+) -> tuple[Decimal, ...]:
+    values: list[Decimal] = []
+    for payload in payloads:
+        value = _payload_decimal(payload, key)
+        if value is not None:
+            values.append(value)
+    return tuple(values)
+
+
+def _payload_decimal(payload: dict[str, Any] | None, key: str) -> Decimal | None:
+    if payload is None or payload.get(key) is None:
+        return None
+    return _decimal(payload[key])
+
+
+def _payload_source(payload: dict[str, Any] | None) -> str | None:
+    if payload is None:
+        return None
+    source = payload.get("source")
+    return None if source is None else str(source)
+
+
+def _decimal_summary(values: tuple[Decimal, ...]) -> dict[str, Any]:
+    if not values:
+        return {
+            "count": 0,
+            "min": None,
+            "max": None,
+            "mean": None,
+            "sum": "0",
+            "negative_count": 0,
+            "non_negative_count": 0,
+        }
+    total = sum(values, Decimal("0"))
+    return {
+        "count": len(values),
+        "min": _format_decimal(min(values)),
+        "max": _format_decimal(max(values)),
+        "mean": _format_decimal(total / Decimal(len(values))),
+        "sum": _format_decimal(total),
+        "negative_count": sum(1 for value in values if value < 0),
+        "non_negative_count": sum(1 for value in values if value >= 0),
     }
 
 
