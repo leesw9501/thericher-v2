@@ -45,6 +45,11 @@ from .candidate_evaluation import (
     CandidateEvaluationRunner,
     run_bounded_candidate_evaluation,
 )
+from .candidate_feature_branch import (
+    BoundedCandidateFeatureBranchResult,
+    CandidateFeatureBranchConfig,
+    run_bounded_candidate_feature_branch,
+)
 from .candidate_replay import (
     BoundedCandidateReplayResult,
     CandidateProbabilityRunner,
@@ -118,6 +123,7 @@ ResearchJobKind = Literal[
     "candidate_depth_target",
     "candidate_training",
     "candidate_evaluation",
+    "candidate_feature_branch",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -136,6 +142,7 @@ ResearchJobStatus = Literal[
     "prepared_not_depth_targeted",
     "prepared_not_trained",
     "prepared_not_evaluated",
+    "prepared_not_feature_branched",
     "prepared_not_replayed",
     "prepared_not_compared",
     "prepared_not_swept",
@@ -155,6 +162,7 @@ SUPPORTED_RESEARCH_JOB_KINDS = (
     "candidate_depth_target",
     "candidate_training",
     "candidate_evaluation",
+    "candidate_feature_branch",
     "candidate_replay",
     "candidate_replay_comparison",
     "candidate_threshold_sweep",
@@ -192,6 +200,7 @@ class ResearchJobSpec:
     data_slices: tuple[CandidateDataSliceConfig, ...] = ()
     threshold_pairs: tuple[tuple[float, float], ...] = ()
     threshold_attribution_artifact: Path | None = None
+    threshold_band_rerun_artifact: Path | None = None
     threshold_rerun_artifact: Path | None = None
     robustness_slices: tuple[CandidateThresholdRobustnessSliceConfig, ...] = ()
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
@@ -222,6 +231,7 @@ class ResearchJobResult:
         | BoundedCandidateDepthTargetResult
         | BoundedCandidateTrainingResult
         | BoundedCandidateEvaluationResult
+        | BoundedCandidateFeatureBranchResult
         | BoundedCandidateReplayResult
         | BoundedCandidateReplayComparisonResult
         | BoundedCandidateThresholdSweepResult
@@ -309,6 +319,7 @@ def _run_job_kind(
     | BoundedCandidateDepthTargetResult
     | BoundedCandidateTrainingResult
     | BoundedCandidateEvaluationResult
+    | BoundedCandidateFeatureBranchResult
     | BoundedCandidateReplayResult
     | BoundedCandidateReplayComparisonResult
     | BoundedCandidateThresholdSweepResult
@@ -464,6 +475,35 @@ def _run_job_kind(
             else "prepared_not_evaluated"
         )
         return evaluation, evaluation.evaluation_artifact, evaluation.model_artifact, status
+    if spec.kind == "candidate_feature_branch":
+        feature_branch = run_bounded_candidate_feature_branch(
+            config=CandidateFeatureBranchConfig(
+                run_id=spec.job_id,
+                max_bars=spec.max_bars,
+                max_epochs=spec.max_epochs,
+                max_steps=spec.max_steps,
+            ),
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            threshold_band_rerun_artifact=spec.threshold_band_rerun_artifact,
+            yahoo_snapshot=spec.yahoo_snapshot,
+            symbol=spec.symbol,
+            data_slices=spec.data_slices,
+            gpu=gpu,
+            trainer_runner=candidate_trainer_runner,
+            evaluation_runner=candidate_evaluation_runner,
+        )
+        status = (
+            "completed"
+            if feature_branch.status == "candidate_feature_branch_evaluated_only"
+            else "prepared_not_feature_branched"
+        )
+        return (
+            feature_branch,
+            feature_branch.feature_branch_artifact,
+            feature_branch.model_artifact,
+            status,
+        )
     if spec.kind == "candidate_replay":
         replay = run_bounded_candidate_replay(
             config=CandidateReplayConfig(
@@ -704,6 +744,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--data-slice", action="append", default=[])
     parser.add_argument("--threshold-pair", action="append", default=[])
     parser.add_argument("--threshold-attribution-artifact", type=Path)
+    parser.add_argument("--threshold-band-rerun-artifact", type=Path)
     parser.add_argument("--threshold-rerun-artifact", type=Path)
     parser.add_argument("--robustness-slice", action="append", default=[])
     parser.add_argument("--artifact-root", type=Path)
@@ -737,6 +778,7 @@ def main() -> None:
         data_slices=parse_candidate_data_slices(args.data_slice),
         threshold_pairs=parse_threshold_pairs(args.threshold_pair),
         threshold_attribution_artifact=args.threshold_attribution_artifact,
+        threshold_band_rerun_artifact=args.threshold_band_rerun_artifact,
         threshold_rerun_artifact=args.threshold_rerun_artifact,
         robustness_slices=parse_robustness_slices(args.robustness_slice),
     )
@@ -956,6 +998,32 @@ def _research_job_payload(
             "source_slices": training.source_slices,
             "metrics": training.metrics,
             "local_paper_conversion": training.local_paper_conversion,
+        }
+    elif isinstance(training, BoundedCandidateFeatureBranchResult):
+        base["source_threshold_band_rerun_artifact"] = (
+            None
+            if training.source_threshold_band_rerun_artifact is None
+            else str(training.source_threshold_band_rerun_artifact)
+        )
+        base["candidate_feature_branch"] = {
+            "status": training.status,
+            "reason": training.reason,
+            "gpu": training.gpu,
+            "feature_set_id": training.feature_set_id,
+            "training_status": None
+            if training.training is None
+            else training.training.status,
+            "evaluation_status": None
+            if training.evaluation is None
+            else training.evaluation.status,
+            "threshold_loop_closure": training.threshold_loop_closure,
+            "artifact_verification": training.artifact_verification,
+            "metrics": training.metrics,
+            "result_scope": {
+                "mode": "research_feature_branch_only",
+                "descriptive_only": True,
+                "promotion_gate": False,
+            },
         }
     elif isinstance(training, BoundedCandidateReplayResult):
         base["candidate_replay"] = {
@@ -1270,6 +1338,21 @@ def _research_job_artifacts(result: ResearchJobResult) -> dict[str, str]:
         artifacts = {"candidate_evaluation": str(result.training_artifact)}
         if result.model_artifact is not None:
             artifacts["source_model"] = str(result.model_artifact)
+        return artifacts
+    if isinstance(result.training, BoundedCandidateFeatureBranchResult):
+        artifacts = {"candidate_feature_branch": str(result.training_artifact)}
+        if result.training.candidate_artifact is not None:
+            artifacts["candidate"] = str(result.training.candidate_artifact)
+        if result.training.training_metrics_artifact is not None:
+            artifacts["candidate_training"] = str(result.training.training_metrics_artifact)
+        if result.training.evaluation_artifact is not None:
+            artifacts["candidate_evaluation"] = str(result.training.evaluation_artifact)
+        if result.training.source_threshold_band_rerun_artifact is not None:
+            artifacts["source_threshold_band_rerun"] = str(
+                result.training.source_threshold_band_rerun_artifact
+            )
+        if result.model_artifact is not None:
+            artifacts["model"] = str(result.model_artifact)
         return artifacts
     if isinstance(result.training, BoundedCandidateReplayResult):
         artifacts = {"candidate_replay": str(result.training_artifact)}

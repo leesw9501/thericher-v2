@@ -26,6 +26,12 @@ MAX_CANDIDATE_TRAINING_STEPS = 1024
 MAX_CANDIDATE_TRAINING_BARS = 512
 MAX_CANDIDATE_DATA_SLICES = 6
 OPTIONAL_CANDIDATE_TRAINING_BACKENDS = ("torch",)
+CORE_FEATURE_SET_ID = "core_v1"
+CORE_PLUS_BAR_POSITION_FEATURE_SET_ID = "core_plus_bar_position_v1"
+SUPPORTED_CANDIDATE_FEATURE_SETS = (
+    CORE_FEATURE_SET_ID,
+    CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
+)
 
 
 @dataclass(frozen=True)
@@ -178,6 +184,7 @@ def run_bounded_candidate_training(
         dataset = _empty_dataset(
             data_source="candidate_training_dataset_unavailable",
             lookback=_candidate_lookback(candidate),
+            feature_set=_candidate_feature_set_or_default(candidate),
             source_slices=_source_slices_from_configs(data_slices),
         )
         dataset_error = f"candidate training dataset unavailable: {exc}"
@@ -364,10 +371,12 @@ def _load_dataset(
             max_bars=config.max_bars,
         )
         lookback = _candidate_lookback(candidate)
+        feature_set = _candidate_feature_set(candidate)
         dataset = build_candidate_training_dataset(
             bars,
             lookback=lookback,
             data_source=str(yahoo_snapshot),
+            feature_set=feature_set,
         )
         return _with_source_slices(
             dataset,
@@ -386,10 +395,12 @@ def _load_dataset(
         data_source = "deterministic_sample"
         source_slices = ()
     lookback = _candidate_lookback(candidate)
+    feature_set = _candidate_feature_set(candidate)
     return build_candidate_training_dataset(
         bars,
         lookback=lookback,
         data_source=data_source,
+        feature_set=feature_set,
         source_slices=source_slices,
     )
 
@@ -399,16 +410,18 @@ def build_candidate_training_dataset(
     *,
     lookback: int,
     data_source: str,
+    feature_set: str = CORE_FEATURE_SET_ID,
     source_slices: tuple[dict[str, Any], ...] = (),
 ) -> CandidateTrainingDataset:
     if lookback <= 0:
         raise ValueError("lookback must be positive")
+    feature_names = _feature_names(feature_set)
     ordered = sorted(bars, key=lambda bar: bar.start_ts)
     if not ordered:
         return CandidateTrainingDataset(
             features=(),
             labels=(),
-            feature_names=_feature_names(),
+            feature_names=feature_names,
             symbol="",
             market="",
             timeframe=Timeframe.M1,
@@ -436,18 +449,18 @@ def build_candidate_training_dataset(
         current = ordered[index]
         next_bar = ordered[index + 1]
         features.append(
-            (
-                _relative_change(current.close, anchor.close),
-                _relative_change(current.close, prior.close),
-                _relative_change(current.high, current.low),
-                _relative_change(current.volume + 1, prior.volume + 1),
+            _feature_vector(
+                current=current,
+                prior=prior,
+                anchor=anchor,
+                feature_set=feature_set,
             )
         )
         labels.append(1 if next_bar.close > current.close else 0)
     return CandidateTrainingDataset(
         features=tuple(features),
         labels=tuple(labels),
-        feature_names=_feature_names(),
+        feature_names=feature_names,
         symbol=first.symbol,
         market=first.market,
         timeframe=first.timeframe,
@@ -470,6 +483,7 @@ def build_multi_slice_candidate_training_dataset(
     if len(data_slices) > MAX_CANDIDATE_DATA_SLICES:
         raise ValueError(f"data_slices must be <= {MAX_CANDIDATE_DATA_SLICES}")
     lookback = _candidate_lookback(candidate)
+    feature_set = _candidate_feature_set(candidate)
     features: list[tuple[float, ...]] = []
     labels: list[int] = []
     summaries: list[dict[str, Any]] = []
@@ -488,6 +502,7 @@ def build_multi_slice_candidate_training_dataset(
             bars,
             lookback=lookback,
             data_source=str(data_slice.yahoo_snapshot),
+            feature_set=feature_set,
         )
         if feature_names is None:
             feature_names = dataset.feature_names
@@ -516,7 +531,7 @@ def build_multi_slice_candidate_training_dataset(
     return CandidateTrainingDataset(
         features=tuple(features),
         labels=tuple(labels),
-        feature_names=feature_names or _feature_names(),
+        feature_names=feature_names or _feature_names(feature_set),
         symbol=_aggregate_symbol(symbols),
         market=market or "",
         timeframe=timeframe or Timeframe.M1,
@@ -549,12 +564,13 @@ def _empty_dataset(
     *,
     data_source: str,
     lookback: int,
+    feature_set: str,
     source_slices: tuple[dict[str, Any], ...],
 ) -> CandidateTrainingDataset:
     return CandidateTrainingDataset(
         features=(),
         labels=(),
-        feature_names=_feature_names(),
+        feature_names=_feature_names(feature_set),
         symbol="",
         market="",
         timeframe=Timeframe.M1,
@@ -846,6 +862,23 @@ def _candidate_lookback(candidate: dict[str, Any]) -> int:
     return max(1, lookback)
 
 
+def _candidate_feature_set(candidate: dict[str, Any]) -> str:
+    parameters = candidate.get("candidate_parameters")
+    if not isinstance(parameters, dict):
+        return CORE_FEATURE_SET_ID
+    feature_set = str(parameters.get("feature_set") or CORE_FEATURE_SET_ID)
+    if feature_set not in SUPPORTED_CANDIDATE_FEATURE_SETS:
+        raise ValueError(f"unsupported candidate feature_set: {feature_set}")
+    return feature_set
+
+
+def _candidate_feature_set_or_default(candidate: dict[str, Any]) -> str:
+    try:
+        return _candidate_feature_set(candidate)
+    except ValueError:
+        return CORE_FEATURE_SET_ID
+
+
 def _relative_change(numerator: Any, denominator: Any) -> float:
     base = float(denominator)
     if base == 0:
@@ -853,13 +886,46 @@ def _relative_change(numerator: Any, denominator: Any) -> float:
     return (float(numerator) / base) - 1.0
 
 
-def _feature_names() -> tuple[str, ...]:
-    return (
+def _feature_vector(
+    *,
+    current: Bar,
+    prior: Bar,
+    anchor: Bar,
+    feature_set: str,
+) -> tuple[float, ...]:
+    base = (
+        _relative_change(current.close, anchor.close),
+        _relative_change(current.close, prior.close),
+        _relative_change(current.high, current.low),
+        _relative_change(current.volume + 1, prior.volume + 1),
+    )
+    if feature_set == CORE_FEATURE_SET_ID:
+        return base
+    if feature_set == CORE_PLUS_BAR_POSITION_FEATURE_SET_ID:
+        return (*base, _close_position_in_bar(current))
+    raise ValueError(f"unsupported candidate feature_set: {feature_set}")
+
+
+def _close_position_in_bar(bar: Bar) -> float:
+    span = float(bar.high - bar.low)
+    if span == 0:
+        return 0.5
+    position = float(bar.close - bar.low) / span
+    return min(max(position, 0.0), 1.0)
+
+
+def _feature_names(feature_set: str = CORE_FEATURE_SET_ID) -> tuple[str, ...]:
+    base = (
         "lookback_return",
         "last_bar_return",
         "bar_range",
         "volume_change",
     )
+    if feature_set == CORE_FEATURE_SET_ID:
+        return base
+    if feature_set == CORE_PLUS_BAR_POSITION_FEATURE_SET_ID:
+        return (*base, "close_position_in_bar")
+    raise ValueError(f"unsupported candidate feature_set: {feature_set}")
 
 
 def _validate_positive_cap(value: int, *, field_name: str, ceiling: int) -> None:

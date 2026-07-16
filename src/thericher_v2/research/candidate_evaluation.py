@@ -19,6 +19,8 @@ from .candidate_training import (
     CandidateDataSliceConfig,
     CandidateTrainingDataset,
     GpuReadiness,
+    _candidate_feature_set,
+    _candidate_feature_set_or_default,
     _candidate_lookback,
     _reject_repo_artifact_path,
     build_candidate_training_dataset,
@@ -392,10 +394,12 @@ def _load_evaluation_dataset(
         data_source = f"deterministic_sample_heldout_seed{config.sample_seed}"
         source_slices = ()
     lookback = _candidate_lookback(candidate)
+    feature_set = _candidate_feature_set(candidate)
     return build_candidate_training_dataset(
         bars,
         lookback=lookback,
         data_source=data_source,
+        feature_set=feature_set,
         source_slices=source_slices,
     )
 
@@ -433,7 +437,10 @@ def _run_torch_cuda_candidate_evaluation(
         "examples_seen": examples,
         "loss": f"{loss:.6f}",
         "accuracy": f"{(correct / examples):.6f}",
+        "min_probability": f"{min(probabilities):.6f}",
+        "max_probability": f"{max(probabilities):.6f}",
         "mean_probability": f"{(sum(probabilities) / examples):.6f}",
+        "probability_range": f"{(max(probabilities) - min(probabilities)):.6f}",
         "predicted_positive_rate": f"{(sum(predictions) / examples):.6f}",
         "probability_threshold": f"{config.probability_threshold:.6f}",
     }
@@ -677,12 +684,7 @@ def _empty_evaluation_dataset(
     return CandidateTrainingDataset(
         features=(),
         labels=(),
-        feature_names=(
-            "lookback_return",
-            "last_bar_return",
-            "bar_range",
-            "volume_change",
-        ),
+        feature_names=_empty_feature_names(candidate),
         symbol="",
         market="",
         timeframe=Timeframe.M1,
@@ -700,3 +702,13 @@ def _empty_evaluation_dataset(
             for data_slice in data_slices
         ),
     )
+
+
+def _empty_feature_names(candidate: dict[str, Any]) -> tuple[str, ...]:
+    feature_set = _candidate_feature_set_or_default(candidate)
+    return build_candidate_training_dataset(
+        [],
+        lookback=1,
+        data_source="candidate_evaluation_dataset_unavailable",
+        feature_set=feature_set,
+    ).feature_names

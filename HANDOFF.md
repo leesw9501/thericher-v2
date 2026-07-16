@@ -190,7 +190,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `183 passed`
+- `189 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -234,16 +234,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Add a bounded feature/model branch target after threshold loop closure:
+Add a bounded feature-branch replay attribution target:
 
-1. consume the external threshold band rerun artifact,
-2. treat the current threshold-only loop as closed unless a new feature/model
-   branch changes the probability distribution,
-3. add one small feature/model branch target that can improve probability
-   separation before another replay sweep,
-4. keep PyTorch confined to Docker `research` and artifacts outside Git,
-5. keep the result descriptive, with no production promotion, scheduler, or
-   dashboard expansion.
+1. consume the external feature branch artifact from
+   `bounded-candidate-feature-branch-mini-smoke`,
+2. turn its changed probability evidence into a bounded local-paper replay,
+3. keep fills labeled `source: local_paper` and artifacts outside Git,
+4. record PnL/drawdown/fill attribution descriptively,
+5. avoid production promotion, scheduler, dashboard expansion, or broker work.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

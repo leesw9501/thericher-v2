@@ -10,6 +10,7 @@ import pytest
 
 from thericher_v2.data import SampleBarProvider
 from thericher_v2.research.candidate_training import (
+    CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
     CandidateDataSliceConfig,
     CandidateTrainingConfig,
     GpuReadiness,
@@ -39,6 +40,27 @@ def test_candidate_training_builds_dataset_from_sample_bars() -> None:
         "bar_range",
         "volume_change",
     )
+
+
+def test_candidate_training_builds_bar_position_feature_branch() -> None:
+    bars = list(SampleBarProvider.trending_1m(count=20, seed=31).base_bars)
+
+    dataset = build_candidate_training_dataset(
+        bars,
+        lookback=3,
+        data_source="deterministic_sample",
+        feature_set=CORE_PLUS_BAR_POSITION_FEATURE_SET_ID,
+    )
+
+    assert dataset.feature_names == (
+        "lookback_return",
+        "last_bar_return",
+        "bar_range",
+        "volume_change",
+        "close_position_in_bar",
+    )
+    assert len(dataset.features[0]) == 5
+    assert all(0 <= row[-1] <= 1 for row in dataset.features)
 
 
 def test_candidate_training_builds_multi_slice_dataset_without_feature_shape_drift(

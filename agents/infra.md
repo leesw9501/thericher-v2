@@ -116,6 +116,10 @@
   reused existing `/app/model_artifacts` traces and `/app/market_data` holdout
   slices, and wrote band rerun, holdout, robustness, and research job artifacts
   under `/app/model_artifacts`.
+- Bounded feature/model branch ran in Docker `research` with PyTorch CUDA,
+  consumed the external threshold band rerun artifact, read `/app/market_data`
+  read-only, and wrote feature branch, training, evaluation, model, and
+  research job artifacts under `/app/model_artifacts`.
 
 ## Next Handoff
 

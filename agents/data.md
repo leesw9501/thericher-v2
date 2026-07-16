@@ -106,11 +106,14 @@
 - Bounded attribution-informed threshold band rerun reused existing CVS, FCX,
   and KO holdout Yahoo snapshots plus existing probability traces; no
   additional data was acquired.
+- Bounded feature/model branch reused CVS, FCX, and KO from
+  `snapshot=2026-07-09-shadow-t0-8d-probe` plus existing external threshold
+  band artifacts; no additional data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- Next feature/model branch should start from existing CVS, FCX, and KO slices
+- Next feature-branch replay should start from existing CVS, FCX, and KO slices
   before acquiring anything new.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
