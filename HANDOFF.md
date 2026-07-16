@@ -556,6 +556,14 @@ Implemented and pushed:
   versus `151.98`, lifted representative fee-aware delta by `3.2999`, and
   attributed the larger max drawdown to staying long through a later
   close-marked peak and pullback before the `13:49` local-paper exit,
+- bounded second-holdout short-vs-depth replay contrast; it reused the
+  completed short and longer-depth entry-adverse artifacts, selected AAPL,
+  ABBV, ABNB, ABT, ACN, and AMD from the existing `snapshot=2026-06-18` Yahoo
+  file after excluding the source and first evaluation symbols, ran both
+  replay paths in Docker `research` with RTX 4090 visible and cap-2 thresholds,
+  produced zero local-paper fills for both runs, and attributed the zero-fill
+  result to buy thresholds sitting above every selected slice's observed
+  probability ceiling,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -620,18 +628,19 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded second-holdout replay contrast:
+Start one bounded source-context entry-adverse GPU contrast:
 
-1. consume the completed short and longer-depth entry-adverse feature-branch
-   artifacts,
-2. select a fresh deterministic capped symbol group from
-   `snapshot=2026-06-18` after excluding the source and ANET/APH/APO/APP/ASML/AVGO
-   evaluation symbols,
-3. replay both completed feature-branch artifacts through the existing Docker
-   `research` feature-branch replay path with threshold-pair cap `2`,
-4. attribute fills, zero-fill gaps, PnL, drawdown, and fill sources
-   descriptively,
-5. avoid retraining, new model axes, threshold search, dashboards, schedulers,
+1. consume the completed second-holdout replay attribution and APH signal/path
+   attribution artifacts,
+2. keep `core_plus_entry_adverse_v1`, hidden-units `4`, `weight_decay=0.001`,
+   `feature_standardization`, short bounded training caps, and cap-2 replay,
+3. train once in Docker `research` with the original source symbols plus the
+   first evaluation symbols as the only changed data context,
+4. evaluate and replay AAPL, ABBV, ABNB, ABT, ACN, and AMD from
+   `snapshot=2026-06-18`,
+5. attribute probability ceilings, threshold gaps, fills, PnL, drawdown, and
+   local-paper source evidence descriptively,
+6. avoid new feature/model axes, threshold search, dashboards, schedulers,
    broker behavior, or report/gate expansion unless a focused artifact parser
    bug appears.
 

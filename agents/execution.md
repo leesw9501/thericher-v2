@@ -243,11 +243,16 @@
   existing local-paper event artifacts, verified the referenced fills stayed
   `source: local_paper`, and observed no broker outcomes or diagnostic overlay
   fills.
+- Second-holdout replay contrast used the existing broker-free local-paper path
+  in Docker `research` for both short and longer-depth artifacts. Both runs
+  produced zero fills; missing zero-fill event files were recorded as empty
+  evidence, and no broker, disabled-broker, or diagnostic-overlay fills were
+  observed.
 
 ## Next Handoff
 
 - Keep broker execution disabled until a future explicit KIS paper goal allows
   API calls and credential handling.
-- The next second-holdout contrast may replay through the existing broker-free
-  local-paper path only; any follow-up attribution should keep broker,
-  diagnostic-overlay, and local-paper sources separate.
+- The next source-context contrast may train/evaluate in Docker `research`, but
+  any replay must still use the existing broker-free local-paper path only and
+  keep broker, diagnostic-overlay, and local-paper sources separate.

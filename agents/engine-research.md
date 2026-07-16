@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Run one bounded second-holdout replay contrast for the completed short and
-   longer-depth entry-adverse artifacts before changing another feature/model
-   axis.
+1. Run one bounded source-context entry-adverse GPU contrast after the
+   second-holdout replay produced zero buy opportunities for both short and
+   longer-depth artifacts.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -707,10 +707,16 @@
   from one-bar-earlier APH entry plus a later sell-threshold crossing, while
   the larger drawdown came from staying long through a later close-marked peak
   and pullback.
+- Second-holdout replay contrast ran existing Docker `research`
+  feature-branch replay twice for the short and longer-depth entry-adverse
+  artifacts on AAPL, ABBV, ABNB, ABT, ACN, and AMD. Both runs produced zero
+  buy opportunities, zero local-paper fills, flat PnL/drawdown, and compact
+  zero-fill threshold-gap attribution under the external model artifact root.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should run a second-holdout replay contrast from existing short/depth
-  feature-branch artifacts before changing feature sets, thresholds,
-  preprocessing, regularization, hidden units, or training depth again.
+  task should keep the entry-adverse feature set, model size, preprocessing,
+  regularization, and short training caps fixed while changing only the source
+  data context to see whether the second-holdout probability ceiling remains
+  below the replay buy bands.

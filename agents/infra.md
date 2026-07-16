@@ -353,6 +353,12 @@
   used no GPU or Docker job, consumed existing external JSON/event artifacts
   plus selected APH bars, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts`.
+- Second-holdout replay contrast ran two existing Docker `research`
+  feature-branch replay jobs after confirming PyTorch CUDA `2.7.0+cu128` and
+  RTX 4090 visibility. It mounted current `src` read-only, read
+  `/app/market_data` read-only, wrote replay/robustness/research-job artifacts
+  under `/app/model_artifacts`, then wrote one compact attribution artifact
+  under `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -361,5 +367,6 @@
   should restructure Docker layers so source edits do not reinstall PyTorch.
 - Prefer cap-limited calibration commands until the local-paper variant replay
   loop is made faster or more incremental.
-- The next second-holdout contrast should reuse Docker `research` replay
-  without retraining or rebuilding unless current images/artifacts are missing.
+- The next source-context contrast should reuse Docker `research` with the
+  current `src` read-only mount, avoid rebuilding unless the image is missing,
+  and keep PyTorch out of local/base dependency paths.
