@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+import thericher_v2.research.candidate_feature_branch_replay as feature_branch_replay
 from thericher_v2.execution import BROKER_DISABLED_SOURCE, LOCAL_PAPER_SOURCE
 from thericher_v2.research.candidate_feature_branch_replay import (
     CandidateFeatureBranchReplayAttributionConfig,
@@ -29,10 +30,54 @@ def test_feature_branch_replay_attribution_describes_zero_fill_opportunities(
 
     payload = json.loads(result.attribution_artifact.read_text(encoding="utf-8"))
     first_variant = payload["slices"][0]["variants"][0]
+    alignment = payload["source_vs_holdout_probability_alignment"]
     assert result.status == "candidate_feature_branch_replay_attribution_only"
     assert (
         payload["result_scope"]["mode"]
         == "research_feature_branch_replay_opportunity_attribution_only"
+    )
+    assert alignment["mode"] == "source_vs_holdout_probability_alignment_attribution"
+    assert alignment["source_probability_summary"] == {
+        "min": "0.100000",
+        "max": "0.800000",
+        "mean": "0.450000",
+        "range": "0.700000",
+        "label_positive_rate": "0.460000",
+        "predicted_positive_rate": "0.030000",
+    }
+    assert alignment["holdout_probability_summary"] == {
+        "slice_count": 1,
+        "count": 3,
+        "min": "0.200000",
+        "max": "0.997000",
+        "mean": "0.532333",
+        "range": "0.797000",
+    }
+    assert alignment["source_to_holdout_delta"] == {
+        "holdout_min_minus_source_min": "0.100000",
+        "holdout_max_minus_source_max": "0.197000",
+        "holdout_mean_minus_source_mean": "0.082333",
+        "holdout_range_minus_source_range": "0.097000",
+    }
+    assert alignment["threshold_gap"] == {
+        "buy_threshold_min": "0.998000",
+        "buy_threshold_max": "0.999000",
+        "sell_threshold_min": "0.447000",
+        "sell_threshold_max": "0.447000",
+        "buy_threshold_min_minus_holdout_max": "0.001000",
+        "sell_threshold_max_minus_holdout_min": "0.247000",
+        "buy_threshold_min_above_holdout_max": True,
+    }
+    assert alignment["opportunities"] == {
+        "buy_opportunity_count_total": 0,
+        "sell_opportunity_count_total": 4,
+        "replay_fill_count_total": 0,
+    }
+    assert (
+        payload["metrics"]["source_vs_holdout_probability_alignment"][
+            "threshold_gap"
+        ]["buy_threshold_min_above_holdout_max"]
+        is True
     )
     assert payload["metrics"]["buy_opportunity_count_total"] == 0
     assert payload["metrics"]["sell_opportunity_count_total"] == 4
@@ -88,6 +133,13 @@ def test_feature_branch_replay_attribution_is_offline_and_does_not_read_credenti
     )
 
     assert result.status == "candidate_feature_branch_replay_attribution_only"
+
+
+def test_feature_branch_replay_attribution_import_keeps_torch_lazy() -> None:
+    source = Path(feature_branch_replay.__file__).read_text(encoding="utf-8").lower()
+
+    assert "import torch" not in source
+    assert "from torch" not in source
 
 
 def test_feature_branch_replay_attribution_keeps_broker_disabled_source_separate(
@@ -253,6 +305,14 @@ def _feature_branch_replay_attribution_artifacts(
             ],
             "threshold_derivation": {
                 "mode": "feature_branch_probability_range_probe",
+                "source_probability_evidence": {
+                    "min_probability": "0.100000",
+                    "max_probability": "0.800000",
+                    "mean_probability": "0.450000",
+                    "probability_range": "0.700000",
+                    "label_positive_rate": "0.460000",
+                    "predicted_positive_rate": "0.030000",
+                },
                 "threshold_pair_cap": 2,
                 "threshold_pair_count": 2,
                 "threshold_pairs": [

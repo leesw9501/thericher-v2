@@ -247,6 +247,12 @@ Implemented and pushed:
   Docker `research`, reduced source-side saturation to probability range
   `0.724726`, then replayed cap-2 holdout thresholds with zero local-paper
   fills and zero holdout buy opportunities,
+- bounded source-vs-holdout probability alignment attribution; it extends the
+  existing feature-branch replay opportunity attribution artifact with compact
+  source and holdout probability summaries, threshold gaps, opportunity counts,
+  and local-paper verification, showing the standardized branch source max
+  probability `0.792910` versus holdout max `0.526492` and buy threshold min
+  `0.791000`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -267,7 +273,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `229 passed`
+- `230 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -311,14 +317,14 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded source-vs-holdout probability alignment attribution:
+Start one bounded disjoint-evaluation feature-branch target:
 
-1. use the standardized feature-branch smoke, replay, and attribution artifacts
-   as context,
-2. consume existing source and holdout probability traces where possible,
-3. record compact per-slice probability range/quantile and buy-opportunity
-   evidence outside Git,
-4. avoid retraining, new candidate modules, dashboards, gates, schedulers, or
+1. use the standardized alignment attribution as context,
+2. let feature-branch evaluation consume explicit disjoint evaluation slices
+   while training still uses its source slices,
+3. keep defaults unchanged and replay/checkpoint behavior artifact-driven,
+4. run a small Docker `research` smoke before any broader model-axis work,
+5. avoid new candidate modules, dashboards, gates, schedulers, or
    broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.

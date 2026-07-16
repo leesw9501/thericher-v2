@@ -703,3 +703,18 @@ keeps replay deterministic, avoids a broad preprocessing search, keeps PyTorch
 confined to Docker `research`, writes artifacts outside Git, and avoids KIS
 access, credentials, broker submit code, dashboards, schedulers, or
 model-promotion language.
+
+## 2026-07-16 - Bounded source-vs-holdout probability alignment attribution
+
+Decision: extend the existing feature-branch replay opportunity attribution
+artifact with a descriptive `source_vs_holdout_probability_alignment` block.
+The block records source probability summaries, holdout probability summaries,
+signed deltas, threshold gaps, opportunity counts, and local-paper verification
+without creating a new research job kind or artifact family.
+
+Reason: the standardized feature branch reduced source-side saturation but its
+source-derived buy thresholds still sat above the observed holdout probability
+range. The existing attribution helper already consumed replay, robustness, and
+trace artifacts, so adding one compact block there avoids duplicate
+artifact-only workflows, KIS access, credentials, broker submit code,
+dashboards, schedulers, alignment scores, or model-promotion language.

@@ -153,6 +153,7 @@ class BoundedCandidateFeatureBranchReplayAttributionResult:
     threshold_derivation: dict[str, Any]
     artifact_verification: dict[str, Any]
     local_paper_verification: dict[str, Any]
+    source_vs_holdout_probability_alignment: dict[str, Any]
     slices: tuple[dict[str, Any], ...]
     metrics: dict[str, Any]
     schema_version: int = SCHEMA_VERSION
@@ -372,6 +373,11 @@ def run_bounded_candidate_feature_branch_replay_opportunity_attribution(
         slices,
         artifact_root,
     )
+    probability_alignment = _source_vs_holdout_probability_alignment(
+        replay_payload=replay_payload,
+        slices=slices,
+        threshold_pairs=threshold_pairs,
+    )
     result = BoundedCandidateFeatureBranchReplayAttributionResult(
         run_id=config.run_id,
         status=status,
@@ -393,12 +399,14 @@ def run_bounded_candidate_feature_branch_replay_opportunity_attribution(
         threshold_derivation=_payload_dict(replay_payload, "threshold_derivation"),
         artifact_verification=artifact_verification,
         local_paper_verification=local_paper_verification,
+        source_vs_holdout_probability_alignment=probability_alignment,
         slices=slices,
         metrics=_feature_branch_attribution_metrics(
             status=status,
             threshold_pairs=threshold_pairs,
             artifact_verification=artifact_verification,
             local_paper_verification=local_paper_verification,
+            source_vs_holdout_probability_alignment=probability_alignment,
             slices=slices,
         ),
     )
@@ -465,6 +473,9 @@ def _candidate_feature_branch_replay_attribution_payload(
             "threshold_derivation": result.threshold_derivation,
             "artifact_verification": result.artifact_verification,
             "local_paper_verification": result.local_paper_verification,
+            "source_vs_holdout_probability_alignment": (
+                result.source_vs_holdout_probability_alignment
+            ),
             "slices": result.slices,
             "metrics": result.metrics,
             "result_scope": {
@@ -695,6 +706,7 @@ def _feature_branch_attribution_metrics(
     threshold_pairs: tuple[tuple[float, float], ...],
     artifact_verification: dict[str, Any],
     local_paper_verification: dict[str, Any],
+    source_vs_holdout_probability_alignment: dict[str, Any],
     slices: tuple[dict[str, Any], ...],
 ) -> dict[str, Any]:
     variants = tuple(
@@ -746,9 +758,248 @@ def _feature_branch_attribution_metrics(
         "missing_zero_fill_event_artifacts": local_paper_verification.get(
             "missing_zero_fill_event_artifacts"
         ),
+        "source_vs_holdout_probability_alignment": {
+            "source_probability_summary": source_vs_holdout_probability_alignment.get(
+                "source_probability_summary",
+            ),
+            "holdout_probability_summary": source_vs_holdout_probability_alignment.get(
+                "holdout_probability_summary",
+            ),
+            "source_to_holdout_delta": source_vs_holdout_probability_alignment.get(
+                "source_to_holdout_delta",
+            ),
+            "threshold_gap": source_vs_holdout_probability_alignment.get(
+                "threshold_gap",
+            ),
+        },
         "all_fills_local_paper": local_paper_verification.get("all_fills_local_paper")
         is True,
     }
+
+
+def _source_vs_holdout_probability_alignment(
+    *,
+    replay_payload: dict[str, Any],
+    slices: tuple[dict[str, Any], ...],
+    threshold_pairs: tuple[tuple[float, float], ...],
+) -> dict[str, Any]:
+    source_summary = _source_probability_summary(replay_payload)
+    holdout_summary = _holdout_probability_summary(slices)
+    source_to_holdout_delta = _source_to_holdout_delta(
+        source_summary=source_summary,
+        holdout_summary=holdout_summary,
+    )
+    threshold_gap = _threshold_gap(
+        threshold_pairs=threshold_pairs,
+        holdout_summary=holdout_summary,
+    )
+    return {
+        "mode": "source_vs_holdout_probability_alignment_attribution",
+        "source_probability_summary": source_summary,
+        "holdout_probability_summary": holdout_summary,
+        "source_to_holdout_delta": source_to_holdout_delta,
+        "threshold_gap": threshold_gap,
+        "slices": tuple(_slice_alignment_payload(slice_payload) for slice_payload in slices),
+        "opportunities": {
+            "buy_opportunity_count_total": sum(
+                _attribution_int_metric(variant.get("buy_opportunity_count")) or 0
+                for slice_payload in slices
+                for variant in _attribution_payload_list(slice_payload, "variants")
+            ),
+            "sell_opportunity_count_total": sum(
+                _attribution_int_metric(variant.get("sell_opportunity_count")) or 0
+                for slice_payload in slices
+                for variant in _attribution_payload_list(slice_payload, "variants")
+            ),
+            "replay_fill_count_total": sum(
+                _attribution_int_metric(variant.get("replay_fill_count")) or 0
+                for slice_payload in slices
+                for variant in _attribution_payload_list(slice_payload, "variants")
+            ),
+        },
+        "comparison_is_descriptive": True,
+        "descriptive_only": True,
+        "promotion_gate": False,
+    }
+
+
+def _source_probability_summary(replay_payload: dict[str, Any]) -> dict[str, Any]:
+    evidence = _payload_dict(
+        _payload_dict(replay_payload, "threshold_derivation"),
+        "source_probability_evidence",
+    ) or _payload_dict(_payload_dict(replay_payload, "metrics"), "source_probability_evidence")
+    return {
+        "min": _formatted_probability(evidence.get("min_probability")),
+        "max": _formatted_probability(evidence.get("max_probability")),
+        "mean": _formatted_probability(evidence.get("mean_probability")),
+        "range": _formatted_probability(evidence.get("probability_range")),
+        "label_positive_rate": _formatted_probability(
+            evidence.get("label_positive_rate"),
+        ),
+        "predicted_positive_rate": _formatted_probability(
+            evidence.get("predicted_positive_rate"),
+        ),
+    }
+
+
+def _holdout_probability_summary(slices: tuple[dict[str, Any], ...]) -> dict[str, Any]:
+    summaries = tuple(
+        _payload_dict(slice_payload, "probability_summary")
+        for slice_payload in slices
+    )
+    counts = tuple(_attribution_int_metric(summary.get("count")) or 0 for summary in summaries)
+    mins = tuple(
+        value for value in (_float_metric(summary.get("min")) for summary in summaries)
+        if value is not None
+    )
+    maxes = tuple(
+        value for value in (_float_metric(summary.get("max")) for summary in summaries)
+        if value is not None
+    )
+    weighted_means = tuple(
+        (count, mean)
+        for count, mean in zip(
+            counts,
+            (_float_metric(summary.get("mean")) for summary in summaries),
+            strict=True,
+        )
+        if count > 0 and mean is not None
+    )
+    total_count = sum(counts)
+    weighted_mean = (
+        None
+        if not weighted_means
+        else sum(count * mean for count, mean in weighted_means) / total_count
+    )
+    holdout_min = None if not mins else min(mins)
+    holdout_max = None if not maxes else max(maxes)
+    probability_range = (
+        None
+        if holdout_min is None or holdout_max is None
+        else holdout_max - holdout_min
+    )
+    return {
+        "slice_count": len(slices),
+        "count": total_count,
+        "min": _format_float(holdout_min),
+        "max": _format_float(holdout_max),
+        "mean": _format_float(weighted_mean),
+        "range": _format_float(probability_range),
+    }
+
+
+def _source_to_holdout_delta(
+    *,
+    source_summary: dict[str, Any],
+    holdout_summary: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "holdout_min_minus_source_min": _number_delta(
+            source_summary.get("min"),
+            holdout_summary.get("min"),
+        ),
+        "holdout_max_minus_source_max": _number_delta(
+            source_summary.get("max"),
+            holdout_summary.get("max"),
+        ),
+        "holdout_mean_minus_source_mean": _number_delta(
+            source_summary.get("mean"),
+            holdout_summary.get("mean"),
+        ),
+        "holdout_range_minus_source_range": _number_delta(
+            source_summary.get("range"),
+            holdout_summary.get("range"),
+        ),
+    }
+
+
+def _threshold_gap(
+    *,
+    threshold_pairs: tuple[tuple[float, float], ...],
+    holdout_summary: dict[str, Any],
+) -> dict[str, Any]:
+    buy_min, buy_max = _threshold_min_max(threshold_pairs, index=0)
+    sell_min, sell_max = _threshold_min_max(threshold_pairs, index=1)
+    holdout_max = _float_metric(holdout_summary.get("max"))
+    holdout_min = _float_metric(holdout_summary.get("min"))
+    return {
+        "buy_threshold_min": _format_float(buy_min),
+        "buy_threshold_max": _format_float(buy_max),
+        "sell_threshold_min": _format_float(sell_min),
+        "sell_threshold_max": _format_float(sell_max),
+        "buy_threshold_min_minus_holdout_max": _number_delta(
+            _format_float(holdout_max),
+            _format_float(buy_min),
+        ),
+        "sell_threshold_max_minus_holdout_min": _number_delta(
+            _format_float(holdout_min),
+            _format_float(sell_max),
+        ),
+        "buy_threshold_min_above_holdout_max": (
+            None if buy_min is None or holdout_max is None else buy_min > holdout_max
+        ),
+    }
+
+
+def _slice_alignment_payload(slice_payload: dict[str, Any]) -> dict[str, Any]:
+    variants = _attribution_payload_list(slice_payload, "variants")
+    return {
+        "slice_id": _payload_string(slice_payload, "slice_id"),
+        "symbol": _payload_string(slice_payload, "symbol"),
+        "status": _payload_string(slice_payload, "status"),
+        "probability_summary": _payload_dict(slice_payload, "probability_summary"),
+        "buy_opportunity_count_total": sum(
+            _attribution_int_metric(variant.get("buy_opportunity_count")) or 0
+            for variant in variants
+        ),
+        "sell_opportunity_count_total": sum(
+            _attribution_int_metric(variant.get("sell_opportunity_count")) or 0
+            for variant in variants
+        ),
+        "replay_fill_count_total": sum(
+            _attribution_int_metric(variant.get("replay_fill_count")) or 0
+            for variant in variants
+        ),
+        "promotion_gate": False,
+    }
+
+
+def _threshold_min_max(
+    pairs: tuple[tuple[float, float], ...],
+    *,
+    index: int,
+) -> tuple[float | None, float | None]:
+    values = tuple(pair[index] for pair in pairs)
+    if not values:
+        return None, None
+    return min(values), max(values)
+
+
+def _number_delta(left: Any, right: Any) -> str | None:
+    left_value = _decimal_metric(left)
+    right_value = _decimal_metric(right)
+    if left_value is None or right_value is None:
+        return None
+    return f"{right_value - left_value:.6f}"
+
+
+def _formatted_probability(value: Any) -> str | None:
+    return _format_float(_float_metric(value))
+
+
+def _float_metric(value: Any) -> float | None:
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _format_float(value: float | None) -> str | None:
+    if value is None:
+        return None
+    return f"{value:.6f}"
 
 
 def _local_paper_verification(

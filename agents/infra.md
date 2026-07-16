@@ -178,6 +178,10 @@
   under `/app/model_artifacts`. The follow-up opportunity attribution ran
   locally as artifact-only work and wrote under the external model artifact
   root.
+- Source-vs-holdout probability alignment ran locally as artifact-only work,
+  consumed existing standardized `/app/model_artifacts` lineage resolved to
+  `D:\thericher-v2\model-artifacts`, and wrote one updated attribution artifact
+  under the external model artifact root.
 
 ## Next Handoff
 

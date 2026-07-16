@@ -29,9 +29,9 @@
 
 ## Active Queue
 
-1. Start a bounded source-vs-holdout probability alignment attribution because
-   feature standardization fixed source-side saturation but still left zero
-   holdout buy opportunities.
+1. Start a bounded disjoint-evaluation feature-branch target because
+   source-vs-holdout attribution showed source-derived buy thresholds were far
+   above holdout probabilities.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -82,6 +82,13 @@
   opportunities across 6 variants, kept replay fill count at `0`, and wrote
   artifacts under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-standardized-opportunity-attribution-20260716`.
+- Last completed: `bounded-standardized-probability-alignment-20260716`,
+  status `candidate_feature_branch_replay_attribution_only`, extended the
+  standardized replay attribution with source-vs-holdout probability
+  summaries: source max `0.792910`, holdout max `0.526492`, buy threshold min
+  `0.791000`, threshold gap `0.264508`, zero buy opportunities, and zero
+  local-paper fills. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-standardized-probability-alignment-20260716`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -280,10 +287,14 @@
   `hidden_units=4`; source probability range widened to `0.724726`, but
   cap-2 holdout replay still produced zero local-paper fills and attribution
   found zero holdout buy opportunities.
+- Extended existing feature-branch replay opportunity attribution with compact
+  source-vs-holdout probability alignment deltas. The standardized branch's
+  source max probability exceeded holdout max by `0.266418`, explaining why
+  source-derived buy thresholds produced zero holdout buy opportunities.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should inspect source-vs-holdout probability alignment for the
-  standardized branch before running another hidden-units, regularization, or
-  threshold-only branch.
+  task should make feature-branch evaluation accept explicit disjoint slices
+  before running another hidden-units, regularization, or threshold-only
+  branch.

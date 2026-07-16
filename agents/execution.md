@@ -112,6 +112,9 @@
   local-paper robustness path. The standardized cap-2 variants still had zero
   fills, missing zero-fill event files were recorded separately, and no
   non-local fill source was observed.
+- Source-vs-holdout probability alignment reran no execution. It reused the
+  existing feature-branch replay attribution local-paper verification, kept
+  replay fill count at zero, and observed no non-local fill source.
 
 ## Next Handoff
 

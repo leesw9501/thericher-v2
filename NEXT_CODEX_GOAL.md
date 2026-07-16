@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded source-vs-holdout probability alignment attribution for the
-standardized feature branch.
+Build a bounded disjoint-evaluation feature-branch target.
 
-This advances backtest and walk-forward validation plus PnL attribution by
-explaining why `feature_standardization` reduced source-side saturation but the
-cap-2 holdout replay still produced zero buy opportunities and zero local-paper
-fills.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution by letting a feature-branch candidate train on source slices but
+derive evaluation probability evidence from explicit disjoint evaluation
+slices before the next replay loop.
 
 ## Hard Boundaries
 
@@ -66,33 +65,41 @@ fills.
 2. Use recent artifacts as context, not as promotion evidence:
    - `bounded-standardized-bar-pressure-feature-normalization-smoke-20260716`
    - `bounded-standardized-bar-pressure-feature-normalization-replay-cap2-20260716`
-   - `bounded-standardized-opportunity-attribution-20260716`
-   - `bounded-weightdecay-opportunity-attribution-20260716`
-3. Inspect the existing probability trace, threshold robustness, and
-   opportunity attribution helpers before adding code.
-4. Add one small artifact-only alignment helper or entrypoint that consumes
-   existing source and holdout probability evidence where possible.
-5. Record compact source-vs-holdout evidence outside Git:
-   - source probability min/max/mean/range,
-   - holdout per-slice probability min/max/mean/range or available trace
-     equivalent,
-   - buy/sell threshold opportunity counts,
-   - zero-fill local-paper source verification,
-   - artifact paths used.
-6. Keep the result descriptive only. It must not pick thresholds, select a
-   model, start a promotion gate, or mutate replay behavior.
-7. Add focused tests proving:
-   - attribution consumes artifacts only,
-   - no broker/network/credential access is needed,
-   - zero-fill local-paper evidence remains replayable,
+   - `bounded-standardized-probability-alignment-20260716`
+3. Inspect candidate feature-branch training/evaluation data-slice flow before
+   changing code.
+4. Add one bounded path for feature-branch evaluation to consume explicit
+   disjoint evaluation slices while training continues to consume source
+   slices.
+5. Keep defaults behavior-compatible. If no disjoint evaluation slices are
+   provided, feature-branch evaluation must keep its current behavior.
+6. Keep evaluation, replay, and probability traces artifact-driven. Do not add
+   an independent preprocessing, model, threshold, or replay value to
+   downstream jobs.
+7. Record training source-slice lineage and evaluation source-slice lineage in
+   the feature-branch artifact with descriptive-only metadata and no
+   model-promotion language.
+8. Add focused tests proving:
+   - default feature-branch training/evaluation slice behavior is unchanged,
+   - explicit disjoint evaluation slices are passed only to feature-branch
+     evaluation,
+   - the research job runner exposes the new bounded path only where needed,
    - generated artifacts are outside Git or mocked in tests,
-   - missing zero-fill event files remain tolerated only for zero-fill variants,
+   - no broker/network/credential access is needed,
    - PyTorch stays confined to Docker `research` and local tests do not import
      torch.
-8. Run the attribution against the standardized branch artifacts. Use Docker
-   `research` only if an existing trace must be regenerated; otherwise prefer
-   local artifact-only execution.
-9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+9. Run a bounded Docker `research` feature-branch smoke using existing local
+   data:
+   - source training slices: CVS, FCX, KO from
+     `snapshot=2026-07-09-shadow-t0-8d-probe`,
+   - disjoint evaluation slices: CVS, FCX, KO from `snapshot=2026-06-18`,
+   - feature set: `core_plus_bar_pressure_v1`,
+   - hidden units: `4`,
+   - feature preprocessing: `feature_standardization`.
+10. If the feature-branch smoke completes, run the existing cap-limited replay
+    and attribution only as needed to compare source/evaluation/holdout
+    probability evidence.
+11. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -115,12 +122,12 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Report any focused tests, artifact-only smoke commands, Docker `research`
-commands, GPU availability, and artifact paths used.
+Report any focused tests, Docker `research` commands, GPU availability, and
+artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded probability alignment attribution`
+`Add bounded disjoint evaluation feature branch`
 
 ## Completion Report
 
@@ -132,6 +139,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- source-vs-holdout alignment findings,
+- disjoint-evaluation feature-branch findings,
 - what was intentionally not built,
 - next recommended goal.
