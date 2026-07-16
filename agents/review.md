@@ -417,13 +417,17 @@
   family, gate, dashboard, scheduler, broker path, credential path, threshold
   search, retraining, replay rerun, feature/model axis, simulator rule, or
   model-promotion language.
+- Data Agent runner added one single-shot CLI, one closed job kind, and one
+  focused test file. It writes one descriptive inventory artifact outside Git
+  and did not add a daemon, scheduler, dashboard, notification path, broad
+  agent platform, broker authority, credential reads, network acquisition,
+  report family, gate, Docker/PyTorch dependency, or auto-commit path.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward the smallest second executable role worker, not a
-  broad autonomous agent framework. A Data Agent single-shot inventory/quality
-  worker is acceptable if it advances data collection and preserves external
-  artifacts, no credentials, no broker authority, no daemon, no scheduler, no
-  dashboard, no report branch, and no auto-commit path.
+- Push the next task toward using the two executable workers in a bounded
+  cadence, not adding a coordinator. Keep coordination evidence small and avoid
+  daemon, scheduler, dashboard, report branch, broker, credential, or
+  auto-commit behavior.

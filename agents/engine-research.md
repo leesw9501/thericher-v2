@@ -795,9 +795,9 @@
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
-  The first explicit Engine Research Agent runner supports single-shot enqueue
-  and run-once flows. Only Engine Research Agent is executable today; Data,
-  Execution, Infra, and Review remain stateboards. The next task should add the
-  smallest non-GPU executable role worker, preferably a single-shot Data Agent
-  inventory/quality worker, while avoiding daemon, scheduler, dashboard,
-  auto-commit, broker, credential, or broad multi-agent platform behavior.
+  Engine Research Agent and Data Agent now both have single-shot executable
+  workers with disjoint queue/artifact roots. Engine Research Agent remains the
+  only GPU/Docker research worker. The next task should prove the two-worker
+  cadence with one bounded research queue item and one data inventory refresh,
+  while avoiding daemon, scheduler, dashboard, auto-commit, broker, credential,
+  or broad multi-agent platform behavior.

@@ -414,6 +414,10 @@
 - Runner-queued zero-fill attribution ran locally as artifact-only work, used
   no GPU or Docker job, consumed existing external JSON artifacts, and wrote one
   compact artifact under `D:\thericher-v2\model-artifacts`.
+- Data Agent runner added one local CLI entrypoint and no Docker/GPU/PyTorch
+  requirement. Its first smoke claimed one external queue item, read existing
+  `D:\market_data` metadata only, and wrote queue/run-state/inventory artifacts
+  under `D:\thericher-v2\model-artifacts\data-agent`.
 
 ## Next Handoff
 
@@ -426,6 +430,6 @@
   outside Git, current `src` read-only Docker mount, and Docker `research` GPU
   execution. Keep future runner changes away from daemon, scheduler, dashboard,
   notification, or auto-commit behavior.
-- A future Data Agent worker should reuse the same external queue/run-state
-  discipline but use a separate `data-agent` artifact root and no GPU/Docker
-  requirement unless a later data job explicitly needs Docker.
+- Data Agent now reuses the same external queue/run-state discipline with a
+  separate `data-agent` artifact root and no GPU/Docker requirement. Keep it
+  separate from Engine Research Agent's Docker/PyTorch lane.

@@ -136,6 +136,27 @@ multi-agent platform. It mounts current `src` read-only into Docker `research`.
 If `gpu.lock` remains after an interrupted run, verify no Docker `research` job
 is running before removing the lock manually.
 
+## Data Agent Runner
+
+Use the runner when Data Agent should claim exactly one queued non-GPU data job
+and then exit. Queue, run-state, and inventory artifacts live outside Git under
+`D:\thericher-v2\model-artifacts\data-agent`.
+
+```powershell
+uv run --extra dev thericher-v2-data-agent --artifact-root D:\thericher-v2\model-artifacts enqueue-data-job --job-id data-agent-market-data-inventory --market-data-root D:\market_data
+```
+
+```powershell
+uv run --extra dev thericher-v2-data-agent --artifact-root D:\thericher-v2\model-artifacts run-once
+```
+
+The Data Agent runner is not a daemon, scheduler, dashboard, notification
+process, broad multi-agent platform, broker-capable process, or data
+acquisition tool. Its first job kind, `market_data_inventory`, performs a
+bounded shallow inventory over known `D:\market_data` folders and writes a
+descriptive artifact only. It does not use Docker, GPU, PyTorch, network calls,
+credentials, KIS, or broker code.
+
 ## Market Data Acquisition
 
 Use `D:\market_data` as the default external market data root. Do not download

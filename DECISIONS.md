@@ -844,3 +844,19 @@ smoke. A single explicit enqueue command keeps queue behavior reproducible while
 avoiding arbitrary shell execution, stateboard-driven behavior, daemon loops,
 schedulers, dashboards, broker authority, credential reads, local/base PyTorch,
 or model-promotion semantics.
+
+## 2026-07-17 - Single-shot Data Agent runner
+
+Decision: add one explicit `thericher-v2-data-agent` CLI with
+`enqueue-data-job` and `run-once` for a closed first kind,
+`market_data_inventory`. The worker stores queue, run-state, and inventory
+artifacts under `D:\thericher-v2\model-artifacts\data-agent`, claims at most one
+queued job per invocation, reads only existing market-data paths, and writes a
+descriptive inventory artifact outside Git.
+
+Reason: the operator wants role agents that do real parallel lane work rather
+than only markdown stateboards. A non-GPU Data Agent worker creates a second
+executable lane disjoint from Engine Research Agent's Docker/GPU queue while
+avoiding KIS access, credentials, broker behavior, network acquisition, Docker,
+PyTorch, schedulers, dashboards, auto-commit, generic agent orchestration,
+quality gates, and report sprawl.

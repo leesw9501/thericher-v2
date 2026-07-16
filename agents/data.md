@@ -27,14 +27,18 @@
 - Local repo data path is ignored by Git under `/data/`.
 - Operator-provided market data root: `D:\market_data`.
 - Known top-level folders: `pit_sources`, `us_equities`.
+- Data Agent artifact root:
+  `D:\thericher-v2\model-artifacts\data-agent`.
 
 ## Active Queue
 
-1. Keep reviewing new Docker `research` artifacts for compact source-slice
-   quality summaries.
-2. Acquire additional no-auth public data only when the source is lawful,
+1. Use the single-shot Data Agent runner for bounded inventory refreshes over
+   existing `D:\market_data` before adding acquisition.
+2. Keep reviewing new Docker `research` artifacts for compact source-slice
+   context, but do not turn data warnings into research gates.
+3. Acquire additional no-auth public data only when the source is lawful,
    license-compatible, and useful for the current engine loop.
-3. Decide the first local cache shape only when real ingestion work starts.
+4. Decide the first local cache shape only when real ingestion work starts.
 
 ## Running Jobs
 
@@ -318,14 +322,17 @@
 - Runner-queued zero-fill attribution reused existing AXP, AZN, and BA
   probability trace artifacts plus the same `snapshot=2026-06-18` Yahoo rows
   indirectly through those traces; no additional data was acquired.
+- Data Agent worker `data-agent-market-data-inventory-20260717` claimed one
+  external queued `market_data_inventory` job, read existing `D:\market_data`
+  metadata only, used bounded head samples for known files, found `2` known
+  folders, `5` snapshots, and `5` useful files, and wrote artifacts under
+  `D:\thericher-v2\model-artifacts\data-agent`. No data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. To make multi-agent work real,
-  implement a narrow single-shot Data Agent worker that claims one external data
-  inventory/quality job, reads only from `D:\market_data`, writes one compact
-  artifact outside Git, and exits.
+- The next data task is still not acquisition. Use the Data Agent worker as a
+  companion lane while Engine Research Agent keeps GPU/research work moving.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

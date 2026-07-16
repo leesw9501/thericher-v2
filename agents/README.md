@@ -26,6 +26,19 @@ boundaries. They should help at least one engine loop:
   and deployment plumbing.
 - `review.md`: simplicity review, v1-sprawl checks, and boundary drift checks.
 
+## Executable Workers
+
+- Engine Research Agent: `thericher-v2-engine-research-agent`, single-shot
+  Docker `research` job enqueue/run worker with artifacts under
+  `D:\thericher-v2\model-artifacts\engine-research-agent`.
+- Data Agent: `thericher-v2-data-agent`, single-shot non-GPU data inventory
+  worker with artifacts under
+  `D:\thericher-v2\model-artifacts\data-agent`.
+
+Execution, Infra, and Review do not have executable workers yet. Do not create
+one unless the next goal names a durable lane need and the worker improves a
+specific engine loop.
+
 ## Stateboard Shape
 
 Each agent file keeps the same compact sections:

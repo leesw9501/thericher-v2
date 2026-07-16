@@ -620,6 +620,8 @@ Implemented and pushed:
 - single-shot Engine Research Agent runner CLI with external queue, lock, and
   run-state artifacts,
 - Engine Research Agent enqueue path for existing Docker `research` job kinds,
+- single-shot Data Agent runner CLI with external queue/run-state artifacts and
+  a bounded market-data inventory job,
 - daily report bundle generator,
 - Dockerfile and compose services: `engine`, `web`, `research`,
 - tests and lint baseline.
@@ -636,7 +638,7 @@ docker compose config --quiet
 
 Expected result:
 
-- `276 passed`
+- `284 passed`
 - `All checks passed!`
 - Docker compose config exits zero
 
@@ -673,6 +675,8 @@ Key decisions:
 - Long Codex tasks refresh `NEXT_CODEX_GOAL.md` before ending.
 - Engine Research Agent keeps bounded GPU experiments queued by default once GPU
   research starts.
+- Data Agent has a separate non-GPU single-shot runner for descriptive
+  inventory jobs under `D:\thericher-v2\model-artifacts\data-agent`.
 - Agent stateboards are lane queues only; `NEXT_CODEX_GOAL.md` remains the
   single next objective.
 - First paper execution target is US equities through KIS.
@@ -711,14 +715,32 @@ Claude drift-check was not needed for this slice because it made no code,
 architecture, or policy edits; it used an existing attribution primitive and
 updated only handoff/stateboard documents.
 
-Next, make the user's multi-agent expectation real with the smallest useful
-second executable worker: a narrow Data Agent single-shot worker that can claim
-one external data inventory/quality job, read only from `D:\market_data`, write
-one compact artifact under `D:\thericher-v2\model-artifacts\data-agent`, and
-exit. Keep Engine Research Agent as the only GPU/Docker research worker, keep
-Execution Agent non-executable until an explicit KIS paper goal allows
-credentials/API calls, and avoid daemon, scheduler, dashboard, auto-commit, and
-broad autonomous platform behavior.
+The Data Agent now has the smallest useful second executable worker:
+`thericher-v2-data-agent`. It supports single-shot `enqueue-data-job` and
+`run-once` flows for the closed first kind `market_data_inventory`. The first
+smoke job, `data-agent-market-data-inventory-20260717`, read existing
+`D:\market_data` metadata only, used no Docker/GPU/network/credentials/broker,
+and wrote:
+
+- `D:\thericher-v2\model-artifacts\data-agent\runs\data-agent-market-data-inventory-20260717\status.json`
+- `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-20260717\metrics.json`
+
+Inventory summary:
+
+- known folders: `2`,
+- snapshots inspected: `5`,
+- useful files: `5`,
+- folders found: Yahoo intraday starter canonical 1m and Yahoo daily universe
+  canonical daily,
+- warnings: none.
+
+Next, use the two executable workers together without adding an orchestrator:
+queue one bounded Engine Research Agent research job and one Data Agent
+inventory refresh, run each single-shot worker, and record only the small
+coordination evidence needed to prove the lanes stay disjoint. Keep Execution
+Agent non-executable until an explicit KIS paper goal allows credentials/API
+calls, and avoid daemon, scheduler, dashboard, auto-commit, and broad
+autonomous platform behavior.
 
 ## Daily Operator Review
 
