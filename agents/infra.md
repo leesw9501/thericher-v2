@@ -216,6 +216,10 @@
   `/app/market_data` read-only, and wrote replay, robustness, event, and
   research-job artifacts under `/app/model_artifacts`. Follow-up attribution
   ran locally as artifact-only work.
+- Longer-window trade-path attribution ran locally as artifact-only work,
+  consumed existing external replay/robustness/event/trace artifacts plus
+  selected `D:\market_data` rows, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 

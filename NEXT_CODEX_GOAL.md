@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded longer-window trade-path attribution slice.
+Codify a bounded trade-path attribution helper.
 
-This advances PnL attribution and paper-trading preparation by explaining the
-closed trade paths from the 240-bar out-of-symbol replay before spending GPU
-time on another model-axis or threshold-only branch.
+This advances PnL attribution and paper-trading preparation by turning the
+manual longer-window trade-path attribution into a small reusable helper that
+can inspect future local-paper replay artifacts without creating another broad
+report or gate workflow.
 
 ## Hard Boundaries
 
@@ -63,27 +64,31 @@ time on another model-axis or threshold-only branch.
 
 1. Treat `agents/*.md` as lane stateboards, not autonomous workers. Update them
    only where they clarify the active engine loop.
-2. Use recent artifacts as context, not as promotion evidence:
+2. Ask Claude CLI for a short drift-check before code edits, then judge it
+   against `HANDOFF.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
+3. Use recent artifacts as behavior context, not as promotion evidence:
    - `bounded-out-of-symbol-disjoint-eval-replay-cap2-240bars-20260716`
-   - `bounded-longer-out-of-symbol-disjoint-eval-opportunity-attribution-20260716`
    - `bounded-longer-out-of-symbol-disjoint-eval-post-entry-summary-20260716`
-3. Prefer existing artifacts, probability traces, event files, and selected
-   local Yahoo bars. Do not retrain, rerun replay, or run threshold search
-   unless existing evidence cannot support the attribution.
-4. For fill-bearing variants in the 240-bar replay, attribute each closed trade
-   segment with:
-   - entry timestamp, price, source, and fee,
-   - first sell-threshold signal timing,
-   - exit timestamp, price, source, and fee,
-   - holding duration,
-   - gross and fee-aware deltas,
-   - simple adverse/favorable movement from selected bars,
-   - local-paper fill-source verification.
-5. Write compact trade-path evidence outside Git under
-   `D:\thericher-v2\model-artifacts`.
-6. Keep the result descriptive only. Do not rank symbols, pick thresholds,
-   select a model, or add promotion language.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+   - `bounded-longer-out-of-symbol-disjoint-eval-trade-path-20260716`
+4. Add a small pure helper near the existing feature-branch replay attribution
+   path that can derive closed trade segments from local-paper event artifacts
+   plus selected bars.
+5. Keep it artifact-driven and broker-free:
+   - parse local-paper fill events,
+   - pair buy/sell fills into closed segments,
+   - calculate holding duration,
+   - calculate gross and fee-aware deltas,
+   - calculate simple adverse/favorable movement from provided bars,
+   - report local-paper fill-source verification.
+6. Avoid adding a new research job kind unless the existing call path cannot
+   express the helper. Prefer a direct function with focused tests.
+7. Add focused tests proving:
+   - local-paper sources are counted and non-local fills are surfaced,
+   - fee-aware deltas are deterministic,
+   - missing zero-fill event files remain tolerated only for zero-fill cases
+     where applicable,
+   - no broker, network, credential, or `.env` access is required.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
@@ -111,7 +116,7 @@ GPU availability, and artifact paths used.
 
 ## Suggested Commit Message
 
-`Add bounded longer-window trade path target`
+`Add bounded trade path attribution helper`
 
 ## Completion Report
 
@@ -123,6 +128,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU was used and where artifacts were written,
-- longer-window trade-path findings,
+- trade-path helper behavior,
 - what was intentionally not built,
 - next recommended goal.

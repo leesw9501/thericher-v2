@@ -29,8 +29,8 @@
 
 ## Active Queue
 
-1. Start a bounded longer-window trade-path attribution slice before another
-   model axis or threshold-only branch is tried.
+1. Codify a bounded trade-path attribution helper before another model axis or
+   threshold-only branch is tried.
 2. Keep short experiments for breadth and longer candidate training for depth
    visible as separate queues.
 3. Do not call either path a production recommendation, promotion, or pass/fail
@@ -158,6 +158,12 @@
   `candidate_feature_branch_replay_longer_window_post_entry_summary_only`,
   found `7` closed segments, all with post-entry sell-threshold signals, and
   no open segments remaining in the 240-bar replay.
+- Last completed:
+  `bounded-longer-out-of-symbol-disjoint-eval-trade-path-20260716`, status
+  `candidate_feature_branch_replay_trade_path_attribution_only`, attributed
+  `7` closed segments, found `5` fee-aware negative and `2` non-negative
+  segments, recorded fee-aware delta sum `-2.5214`, and verified all `14`
+  parsed fills were `source: local_paper`.
 - Previous completed: `bounded-dq-visible-candidate-evaluation-depth-20260716`,
   status `completed`, candidate `m1_lb3_b10_s10`, evaluated 708 examples,
   probability range `0.451895`, and confirmed CVS, FCX, and KO source slices
@@ -387,9 +393,13 @@
 - The 240-bar replay closed all fill-bearing segments but still left negative
   PnL. The next evidence should attribute closed trade paths before changing
   model or threshold axes.
+- Trade-path attribution shows the longer-window losses are closed-trade
+  losses, not open-position residue. The next step should codify this
+  attribution so future replay artifacts can be inspected without manual
+  scripts.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous workers. The next
-  task should attribute longer-window closed trade paths before another
+  task should codify the compact trade-path attribution helper before another
   hidden-units, regularization, preprocessing, or threshold-only branch.

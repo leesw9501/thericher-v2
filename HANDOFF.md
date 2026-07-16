@@ -302,6 +302,11 @@ Implemented and pushed:
   `-0.8866000000000` to `0E-13`, `7` buy opportunities, `548` sell
   opportunities, and a compact post-entry summary showing all `7` segments
   closed with sell-threshold signals and no open segments remained,
+- bounded longer-window trade-path attribution; it consumed the 240-bar replay,
+  robustness, opportunity, post-entry, event, trace, and selected local-bar
+  evidence only, attributed `7` closed trade segments, found `5` fee-aware
+  negative segments and `2` non-negative segments, fee-aware delta sum
+  `-2.5214`, and confirmed all `14` parsed fills were `source: local_paper`,
 - local-paper holdout source verification now treats missing event files for
   zero-fill replay variants as empty evidence rather than a non-local fill
   failure, while still failing unreadable artifacts for variants with fills,
@@ -366,18 +371,16 @@ Key decisions:
 
 ## Recommended Next Slice
 
-Start one bounded longer-window trade-path attribution slice:
+Codify one bounded trade-path attribution helper:
 
-1. consume the 240-bar out-of-symbol replay, opportunity attribution, and
-   post-entry summary artifacts as context,
-2. parse only existing local-paper event files, probability traces, and
-   selected `snapshot=2026-06-18` bars for fill-bearing variants,
-3. attribute each closed trade segment by entry price, sell signal timing, exit
-   price, holding duration, fees, and simple adverse/favorable movement,
-4. write compact trade-path evidence outside Git,
-5. avoid retraining, rerunning replay, new candidate modules, dashboards,
-   gates, schedulers, threshold searches, model-axis changes, or broker-facing
-   behavior.
+1. ask Claude CLI for a short drift-check before code edits,
+2. reuse the current manual trade-path evidence as the target behavior,
+3. add a small pure helper near the existing feature-branch replay attribution
+   code rather than a new job family,
+4. add focused tests for local-paper source filtering, fee-aware deltas, and
+   no broker/network/credential access,
+5. avoid broad attribution frameworks, dashboards, gates, schedulers,
+   threshold searches, model-axis changes, or broker-facing behavior.
 
 Do not start with a dashboard expansion, KIS credentials, or broker submit.
 

@@ -136,6 +136,9 @@
 - Longer-window out-of-symbol replay reused the existing local-paper path,
   produced `14` verified `source: local_paper` fills, and observed no non-local
   fill source.
+- Longer-window trade-path attribution parsed existing event files and
+  confirmed all `14` fill events remained `source: local_paper`; no broker path
+  was used.
 
 ## Next Handoff
 
