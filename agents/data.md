@@ -32,15 +32,14 @@
 
 ## Active Queue
 
-1. Run one bounded source-context inventory for the non-AMAT evidence deficit:
-   determine whether the remaining `+3` row and `+5` unique-key shortfall is
-   due to local data availability, artifact provenance, or missing local-paper
-   label context.
-2. Use existing named metrics artifacts first. Use only shallow local data
-   metadata or exact symbol/timestamp checks if needed; avoid broad recursive
-   `D:\market_data` scans.
-3. Do not acquire data in this pass unless the next single objective explicitly
-   allows a no-auth, license-compatible acquisition attempt.
+1. No immediate data acquisition, broad scan, inventory refresh, or operator
+   data-help task is open.
+2. Non-AMAT source-context inventory found no immediate operator data request
+   and no no-auth acquisition need. The only raw gap is conditional ADP
+   `2026-06-09T14:05:00Z`; reopen only if a future objective explicitly tries
+   to rescue that strict-label row.
+3. Fresh-symbol, MPWR, non-AMAT, and AMAT-bridge entries are passive context
+   unless a future single objective names exact missing symbols or date ranges.
 4. Keep data-quality checks as warnings until execution hard stops need them.
 5. Future acquisition or cache-shape work requires a specific ingestion
    objective and must stop on credentials, payment, manual access, unclear
@@ -61,6 +60,13 @@
   data, but it identified the next Data question: decide whether the remaining
   `+3` row and `+5` unique-key shortfall is raw local data availability,
   artifact/provenance reuse, missing local-paper label context, or a mix.
+- Non-AMAT source-context inventory wrote
+  `D:\thericher-v2\model-artifacts\data-agent\non-amat-source-context-inventory-20260717-r1\metrics.json`.
+  It found the blocker is mixed but not primarily raw local data availability:
+  prior AMAT-bridge provenance reuse and missing local-paper label context are
+  primary, while the only explicit raw gap is conditional ADP
+  `2026-06-09T14:05:00Z`. No immediate operator data request or acquisition is
+  justified.
 - Added provider protocol, local CSV provider, sample provider, and deterministic
   timeframe resampling.
 - Inventoried `D:\market_data` at the shallow level for this goal. Top-level

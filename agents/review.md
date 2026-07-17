@@ -803,6 +803,10 @@
   `3/8` unique-key deficit, avoiding GPU/replay/training/ablation, broad data
   scans, acquisition, helper/job-kind expansion, gates, report families, and
   promotion/risk/execution rules.
+- Non-AMAT Data source-context inventory stayed bounded and found no immediate
+  operator data request or acquisition need. It kept compute closed because the
+  blocker is primarily provenance/label context, not broad raw data
+  availability.
 
 ## Next Handoff
 
@@ -814,9 +818,10 @@
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- Queue hygiene, post-compaction review, Engine Research evidence-question
-  definition, and non-AMAT evidence-floor inventory are complete. Rotate to Data
-  for a bounded source-context inventory before opening compute. Do not stop for
-  ordinary lane choice; stop only for true operator decisions such as
+- Queue hygiene, post-compaction review, Engine Research evidence-question,
+  non-AMAT evidence-floor inventory, and Data source-context inventory are
+  complete. Run one small simplification pass to retire/compact non-AMAT branch
+  context as passive evidence before opening any further compute. Do not stop
+  for ordinary lane choice; stop only for true operator decisions such as
   credentials, broker/KIS behavior, live/paper authority, public exposure,
   dependency/runtime expansion, or unclear data rights.

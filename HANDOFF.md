@@ -2632,6 +2632,20 @@ whether the non-AMAT evidence deficit is blocked by local data availability,
 artifact provenance, or missing local-paper label context. Keep it bounded to
 existing named artifacts and shallow/exact local data checks only.
 
+Data source-context inventory wrote:
+`D:\thericher-v2\model-artifacts\data-agent\non-amat-source-context-inventory-20260717-r1\metrics.json`.
+It found the blocker is mixed but not primarily raw local data availability.
+Primary blockers are prior AMAT-bridge provenance reuse and missing local-paper
+label context. The only explicit raw data gap is conditional and narrow: ADP
+`2026-06-09T14:05:00Z` (`2026-06-09T23:05:00+09:00`) is missing from the named
+Yahoo 1m snapshot while surrounding ADP rows exist. No immediate operator data
+request or no-auth acquisition is justified. Keep non-AMAT branch
+`hold_no_compute`.
+
+Next, run one small Review/Simplification pass to retire or compact the
+non-AMAT branch context as passive evidence unless a future objective names a
+fresh independent evidence source. Do not create a report/gate family.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

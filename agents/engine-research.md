@@ -34,8 +34,9 @@
    `hold_no_compute`: `5/8` strict label-ready rows, `3/8` strict unique
    timing-context keys, and `0` fresh strict rows/keys outside prior
    AMAT-bridge reuse.
-3. Rotate to Data for one bounded source-context inventory before spending GPU
-   or replay time on this branch.
+3. Data source-context inventory found no immediate raw-data acquisition or
+   operator-data request; the blocker is primarily provenance reuse and missing
+   local-paper label context. Keep this branch `hold_no_compute`.
 4. Short experiments, replay, attribution, probability checks, trace compute,
    trace recompute, training, threshold search, and exit-policy work are held
    until the evidence floor is met by a future bounded objective.
@@ -402,6 +403,12 @@
   strict rows/keys outside prior AMAT-bridge reuse. No bounded GPU, replay,
   model-input, training, ablation, trace, threshold, or exit-policy objective
   was opened.
+- Non-AMAT Data source-context inventory wrote
+  `D:\thericher-v2\model-artifacts\data-agent\non-amat-source-context-inventory-20260717-r1\metrics.json`.
+  It found no immediate operator data request or acquisition need. The branch
+  remains `hold_no_compute` because the blocker is primarily AMAT-bridge
+  provenance reuse and missing local-paper label context, not broad raw data
+  availability.
 - Basic momentum model and next-bar backtest harness exist.
 - Market data can now resample deterministic `1m`, `5m`, `10m`, `1h`, and `3h`
   bars.
@@ -1216,11 +1223,10 @@
   only GPU/Docker research worker. Execution, Infra, and Review are stateboards
   plus temporary Codex sidecar roles, not repo-owned executable workers.
 - Short experiments queue: no compute question is ready after the non-AMAT
-  evidence-floor inventory. Do not spend GPU time on MPWR/fresh-symbol replay,
-  non-AMAT model-input ablation, trace compute, trace recompute, training,
-  threshold search, or exit-policy work until a Data/source-context artifact
-  identifies fresh independent local data/provenance support and a future
-  objective explicitly opens compute.
+  evidence-floor and Data source-context inventories. Do not spend GPU time on
+  MPWR/fresh-symbol replay, non-AMAT model-input ablation, trace compute, trace
+  recompute, training, threshold search, or exit-policy work until a future
+  objective names a fresh independent evidence source.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.
