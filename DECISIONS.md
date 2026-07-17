@@ -1001,3 +1001,61 @@ reduces wasted replay work while preserving source separation: ranked context
 is `source: diagnostic_overlay`, any later replay must remain existing
 broker-free local paper, and the prefilter has no execution, risk, or promotion
 authority.
+
+## 2026-07-18 - Readiness-driven role agents and recoverable memory
+
+Decision: Codex orchestrates three durable lanes: Data, Engine Research, and
+Execution. Validation is temporary and independent; Infra and Review are
+invoked capabilities. Lanes advance ready, non-conflicting work without fixed
+percentages or forced rotation. `NEXT_CODEX_GOAL.md` remains the one company
+objective, stateboards remain current projections, and durable run/evidence
+history belongs in an append-only external ledger plus rebuildable catalog.
+Only one concise daily operator summary is written.
+
+At each company-goal boundary, Codex also reviews direction, lane readiness,
+resources, policy fit, and role lifecycle. It may make reversible no-cost role
+and operating-policy changes autonomously; only genuine operator authority or
+materially different business/risk choices are escalated.
+
+Reason: the operator has limited daily review time, while useful data,
+research, and execution preparation can proceed independently. This structure
+preserves ownership and recovery without creating separate goal authorities,
+standing process teams, or report sprawl.
+
+The daily summary may report zero broker or order activity only from a fresh,
+timestamped runtime snapshot. Missing, invalid, future, or stale evidence is
+reported as unknown so a persistent old snapshot cannot create false safety.
+
+## 2026-07-18 - Autonomous free inputs with bounded storage
+
+Decision: Data may acquire no-auth, no-cost, lawful, license-compatible inputs
+that directly improve an active engine loop, and Research may adopt comparable
+public models, weights, and routine dependencies after lightweight provenance,
+license, and security checks. Paid, login-gated, manual-license, major-runtime,
+or framework-changing inputs require operator approval. Data and generated
+artifacts stay on `D:`; warn at 20 percent free space and stop autonomous
+acquisition before falling below 15 percent.
+
+Reason: broad evidence gathering should not wait for routine approval, but cost,
+rights ambiguity, unsafe model loading, and storage exhaustion remain real
+operator or engineering risks.
+
+## 2026-07-18 - Early KIS paper milestone and falsification review
+
+Decision: KIS paper is an early execution-evidence milestone independent of
+model profitability. The operator first authorizes read-only paper account
+access; Codex then proposes a bounded paper capital envelope from reconciled
+buying power and intended shadow live capital for operator approval. Routine
+paper activity inside that envelope does not need repeated approval. Live mode
+always requires separate authority.
+
+Claude is a falsification-first challenger at leakage and survivorship
+decisions, breadth-to-depth selection, sealed holdout use, unexpectedly strong
+claims, correlated ensembles, KIS capital/risk changes, incident recovery, and
+major architecture or runtime growth. Its verdict is advisory and scoped to
+the named boundary. Emergency containment never waits for review, and secrets,
+account identifiers, and raw sealed labels are never sent to Claude.
+
+Reason: paper trading must not be delayed by a profitability bureaucracy, while
+capital, leakage, confirmation bias, and architectural drift deserve an
+independent challenge before a decision is relied on.

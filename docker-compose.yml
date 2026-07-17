@@ -10,10 +10,16 @@ services:
       - --print-summary
     environment:
       THERICHER_MODE: off
+      THERICHER_REPO_ROOT: /app
+      THERICHER_MARKET_DATA_ROOT: /app/market_data
+      THERICHER_RUNTIME_STATUS: /app/runtime/operator_status.json
       PYTHONPATH: /app/src
     volumes:
       - thericher-v2-runtime:/app/runtime
       - ./reports:/app/reports
+      - ./NEXT_CODEX_GOAL.md:/app/NEXT_CODEX_GOAL.md:ro
+      - ./agents:/app/agents:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
 
   web:
     build:
@@ -49,6 +55,9 @@ services:
       - --print-summary
     environment:
       THERICHER_MODE: off
+      THERICHER_REPO_ROOT: /app
+      THERICHER_MARKET_DATA_ROOT: /app/market_data
+      THERICHER_RUNTIME_STATUS: /app/runtime/operator_status.json
       PYTHONPATH: /app/src
       NVIDIA_VISIBLE_DEVICES: all
       THERICHER_MODEL_ARTIFACT_ROOT: ${THERICHER_MODEL_ARTIFACT_ROOT:-/app/model_artifacts}
@@ -56,6 +65,8 @@ services:
       - thericher-v2-runtime:/app/runtime
       - ./data:/app/data
       - ./reports:/app/reports
+      - ./NEXT_CODEX_GOAL.md:/app/NEXT_CODEX_GOAL.md:ro
+      - ./agents:/app/agents:ro
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 

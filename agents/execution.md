@@ -1,621 +1,110 @@
 # Execution Agent
 
+## Status
+
+- Broker-free execution readiness is active.
+- The KIS adapter is disabled.
+- No KIS, credential, account, order, or capital authority exists.
+- External paper and live execution remain unavailable.
+
 ## Engine Loop
 
-- paper trading
-- live-risk control
-- PnL attribution
+- Paper trading.
+- Live-risk control.
+- PnL attribution through deterministic fill and account reconciliation.
 
 ## Owns
 
-- Local paper order lifecycle, simulated fills, positions, and cash accounting.
-- Broker adapter boundaries, KIS paper/live adapters when explicitly allowed.
-- Execution hard stops such as emergency stop, duplicate client order id, and
-  risk limits.
+- Deterministic order lifecycle, fills, positions, cash, buying power, open
+  orders, cancellation, and account reconciliation.
+- Execution risk limits, idempotency, emergency stops, and fail-closed behavior.
+- Broker-neutral contracts and broker adapters when separately authorized.
+- Local broker-free simulation with fills labeled `source: local_paper`.
 
 ## Must Not
 
-- Introduce strategy logic beyond risk checks.
-- Call KIS APIs until a future goal explicitly allows it.
-- Place paper or live orders until explicitly allowed.
-- Read credentials or `.env`.
+- Call KIS or any external broker, read credentials, or discover account data
+  without explicit operator authority.
+- Submit, cancel, replace, or query real external paper or live orders under the
+  current authority.
+- Load public model code into execution paths.
+- Add strategy, feature, threshold, model-promotion, or profitability logic
+  beyond deterministic execution risk checks.
+- Treat research diagnostics, model profitability, or replay output as broker
+  authority.
 
-## Held Resources
+## Resources
 
-- Local emergency state only.
+- Existing broker-free simulator and `source: local_paper` event evidence.
+- Existing local emergency-stop state and deterministic account replay.
+- Existing disabled broker boundary with unavailable KIS capabilities.
+- No held credentials, KIS sessions, account identifiers, or approved capital.
 
-## Active Queue
+## Current Objective
 
-1. Add execution risk-limit preflight only when a future paper-loop goal needs
-   it.
-2. Keep future KIS adapter work separate from local paper simulator behavior.
-3. Add more realistic order types only when paper-loop evidence needs them.
+- Define typed broker-neutral account, buying-power, order, partial-fill,
+  cancel, open-order, and reconciliation contracts for the disabled boundary.
+- Prove those contracts with deterministic fake-transport tests only.
+- Keep all production KIS transport and credential paths disabled.
 
-## Running Jobs
+## Ready Queue
+
+1. Define typed account and buying-power snapshots with timestamps, currency,
+   settled cash, available cash, exposure, and explicit unavailable states.
+2. Define order request, acknowledgement, rejection, partial-fill, fill,
+   cancel, and terminal-state contracts with stable client and broker ids.
+3. Define typed open-order and reconciliation results for positions, cash,
+   fills, duplicate events, stale snapshots, and mismatches.
+4. Add fake-transport tests for partial fills, repeated events, cancel races,
+   unknown orders, restart recovery, and reconciliation failure.
+5. Verify local simulation continues to emit `source: local_paper` and cannot
+   select a KIS transport.
+
+## Running
 
 - None.
 
-## Done Recently
+## Durable Knowledge
 
-- Local-paper fill-source evidence now includes a small replay invariant audit:
-  expected fill counts are compared with observed `source: local_paper` fills
-  per artifact, mismatches are surfaced in summaries, and no replay behavior,
-  broker code, order intents, credentials, KIS path, or durable worker changed.
-- Local emergency store exists for stop-new-orders and cancel-open-orders
-  requests.
-- Broker-free local paper simulator now supports accepted/rejected/canceled
-  order events, next-bar-open fills, duplicate id rejection, emergency-stop
-  blocking, deterministic account replay, and local paper fill metadata.
-- Bounded validation now consumes local paper only and keeps fills labeled with
-  `source: local_paper`.
-- Candidate replay now consumes local paper only and verified generated fills
-  remain labeled with `source: local_paper`.
-- Candidate replay comparison verified both candidate and momentum baseline
-  fills remain labeled with `source: local_paper`.
-- Threshold sweep replay verified every variant fill remains labeled with
-  `source: local_paper`.
-- Threshold robustness replay verified every CVS, FCX, and KO variant fill
-  remains labeled with `source: local_paper`.
-- Multi-slice candidate robustness replay produced zero fills under the existing
-  grid; no non-local fill source was observed.
-- Probability-derived calibration robustness replay produced `524` simulated
-  fills across CVS, FCX, and KO; every fill source was verified as
-  `local_paper`.
-- Calibration holdout replay produced `511` simulated fills across CVS, FCX,
-  and KO; every fill source was verified as `local_paper`.
-- Breadth holdout bridge mini smoke produced `400` simulated fills across three
-  candidates and CVS, FCX, and KO holdout slices; every fill source was
-  verified as `local_paper`.
-- Depth target mini smoke produced `347` simulated fills across CVS, FCX, and
-  KO holdout slices; every fill source was verified as `local_paper`.
-- Holdout verification now treats missing event files for zero-fill replay
-  variants as empty evidence while still requiring readable event artifacts for
-  variants that produce fills.
-- Depth-vs-breadth comparison reran no execution, preserved existing
-  local-paper source verification, and confirmed both compared artifacts report
-  all simulated fills as `local_paper`.
-- Fill-aware threshold rerun replayed stricter threshold variants through the
-  local-paper path and produced zero fills, with no non-local fill source.
-- Zero-fill threshold attribution reran no execution, preserved existing
-  local-paper verification, and attributed the zero fills to thresholds above
-  observed buy opportunities.
-- Attribution-informed threshold band rerun replayed 12 threshold variants
-  through local paper, produced `247` fills, and verified every fill source was
-  `local_paper`.
-- Feature-branch replay attribution replayed 9 threshold variants through local
-  paper, produced `46` fills, and verified every fill source was `local_paper`.
-- Local-paper fill-source evidence is now centralized in an execution helper.
-  It can return local-paper-only fills, flag mixed or unknown sources, tolerate
-  missing zero-fill event files, and reject unreadable nonzero-fill evidence.
-- Broker adapter boundary contracts now exist with disabled KIS capabilities,
-  typed unavailable submit/cancel/status results, `source: broker_disabled`,
-  and tests proving no network, credentials, broker submit, or event-log writes.
-- Cap-limited calibration holdout replay produced `228` simulated fills across
-  CVS, FCX, and KO holdout slices; every fill source was verified as
-  `local_paper`.
-- Bar-pressure feature-branch replay produced `6` simulated fills across CVS,
-  FCX, and KO holdout slices with cap 2; every observed fill source was
-  verified as `local_paper`.
-- Hidden-units model-axis feature-branch replay produced zero simulated fills
-  across CVS, FCX, and KO holdout slices with cap 2; no non-local fill source
-  was observed.
-- Hidden-units contrast replay also produced zero simulated fills across CVS,
-  FCX, and KO holdout slices; no non-local fill source was observed.
-- Feature-branch derivation-guard replay restored the hidden4 cap-2 threshold
-  pair count and still produced zero simulated fills across CVS, FCX, and KO
-  holdout slices; no non-local fill source was observed.
-- Feature-branch replay opportunity attribution rebuilt fill-source evidence
-  from robustness JSON event paths. The guarded hidden4 variants still had zero
-  fills, missing zero-fill event files were recorded separately, and no
-  non-local fill source was observed.
-- Regularization model-axis replay rebuilt fill-source evidence from the
-  existing local-paper robustness path. The weight-decay cap-2 variants still
-  had zero fills, missing zero-fill event files were recorded separately, and
-  no non-local fill source was observed.
-- Feature-normalization replay rebuilt fill-source evidence from the existing
-  local-paper robustness path. The standardized cap-2 variants still had zero
-  fills, missing zero-fill event files were recorded separately, and no
-  non-local fill source was observed.
-- Source-vs-holdout probability alignment reran no execution. It reused the
-  existing feature-branch replay attribution local-paper verification, kept
-  replay fill count at zero, and observed no non-local fill source.
-- Disjoint-evaluation feature-branch replay used the existing local-paper path
-  and produced `4` verified `source: local_paper` fills with no non-local fill
-  source.
-- Out-of-symbol disjoint-evaluation replay reused the existing local-paper path
-  across AAPL, ABNB, ABT, ACN, and ABBV, produced `10` verified
-  `source: local_paper` fills, and observed no non-local fill source.
-- Out-of-symbol loss attribution parsed existing fill event evidence and
-  confirmed all `10` fill events were `source: local_paper`; no broker path was
-  used.
-- Out-of-symbol fill-lifecycle attribution parsed existing local-paper event
-  files and confirmed `10` fill events, `3` closed segments, and `4` open
-  segments without rerunning replay or touching broker code.
-- Out-of-symbol post-entry attribution reran no execution. It preserved the
-  existing `local_paper` fill evidence and found open segments lacked a
-  post-entry sell-threshold signal before the bounded window end.
-- Out-of-symbol exit-horizon diagnostic overlay did not create local-paper
-  fills; diagnostic marks were labeled separately from existing
-  `source: local_paper` fill evidence.
-- Longer-window out-of-symbol replay reused the existing local-paper path,
-  produced `14` verified `source: local_paper` fills, and observed no non-local
-  fill source.
-- Longer-window trade-path attribution parsed existing event files and
-  confirmed all `14` fill events remained `source: local_paper`; no broker path
-  was used.
-- Trade-path attribution helper reuses shared fill-source evidence, surfaces
-  non-local fill sources separately, and does not touch broker submit/cancel
-  code.
-- Out-of-symbol evaluation feature-branch replay reused the existing
-  local-paper path across AAPL, ABNB, ABT, ACN, and ABBV, produced `4`
-  verified `source: local_paper` fills, and observed no non-local fill source.
-  Follow-up opportunity and trade-path attribution parsed existing event files
-  only; trade-path attribution found `2` closed ABNB segments, both
-  fee-aware negative, without touching broker submit/cancel code.
-- Entry-quality diagnostic reran no execution. It consumed existing
-  local-paper source verification, linked the two ABNB buy opportunities to
-  local-paper entry fills, kept path marks labeled as diagnostic overlay
-  evidence, and observed no non-local fill source.
-- Entry-adverse feature-branch replay reused the existing local-paper path,
-  produced `8` verified `source: local_paper` fills, and observed no non-local
-  fill source. Follow-up opportunity, trade-path, and entry-quality attribution
-  parsed existing event files only and reran no broker behavior.
-- Feature-branch comparison reran no execution. It consumed existing replay and
-  attribution artifacts only and confirmed both compared branches kept fills
-  `source: local_paper`.
-- Entry-adverse segment contrast reran no execution. It consumed existing
-  local-paper replay/event evidence only and confirmed the contrasted closed
-  segments used `source: local_paper` fills.
-- Wider entry-adverse replay ran through the existing broker-free local-paper
-  path in Docker `research`, produced `18` verified `source: local_paper`
-  fills across the first batch, zero fills in the second batch, and observed no
-  non-local fill source.
-- Wider entry-adverse signal-quality diagnostic reran no execution. It consumed
-  existing local-paper replay/event evidence and preserved local-paper source
-  verification.
-- Entry-adverse hidden-units contrast ran through the existing broker-free
-  local-paper path, produced `4` verified `source: local_paper` fills, and
-  observed no non-local fill source.
-- Hidden8 loss attribution reran no execution. It consumed existing
-  local-paper replay/event evidence and preserved local-paper source
-  verification.
-- Entry-adverse weight-decay replay reused the existing broker-free
-  local-paper path, produced `4` verified `source: local_paper` fills on AMAT,
-  and follow-up opportunity, trade-path, and contrast attribution parsed
-  existing event files only without touching broker submit/cancel code.
-- Weight-decay wider-sample completion replayed AMD/AMGN/AMT/AMZN through the
-  same local-paper path, produced zero additional fills, and preserved
-  local-paper-only source verification for missing zero-fill event files.
-- Lighter weight-decay replay used the same broker-free local-paper path,
-  produced `4` verified `source: local_paper` fills on AMAT, produced zero
-  additional AMD/AMGN/AMT/AMZN fills, and kept missing zero-fill event files as
-  empty local-paper evidence rather than broker activity.
-- Regularization trace-collapse diagnostic reran no execution and preserved
-  existing local-paper source verification across hidden4, hidden8,
-  `weight_decay=0.01`, and `weight_decay=0.001` artifacts.
-- Feature-input concentration diagnostic reran no execution and only matched
-  existing local-paper entry timestamps to probability traces and local bars.
-- Source-breadth replay used the existing broker-free local-paper path,
-  produced `4` verified `source: local_paper` fills on AMGN, and follow-up
-  opportunity/trade-path attribution parsed existing event files only. Both
-  closed AMGN segments were fee-aware negative.
-- Source-breadth AMGN loss attribution reran no execution, preserved the
-  existing `source: local_paper` fill evidence, and linked the sell-threshold
-  signal to the existing local-paper exit timestamp.
-- Signal-hygiene diagnostic reran no execution, consumed existing local-paper
-  verification from AMGN and wider-sample artifacts, and observed no non-local
-  fill source.
-- Sell-latency attribution reran no execution, consumed existing local-paper
-  exit timestamps and source checks, and kept diagnostic timing separate from
-  fill evidence.
-- Exit-timing diagnostic overlay reran no execution, labeled fixed-horizon
-  outcomes as `diagnostic_overlay`, and did not mutate existing
-  `source: local_paper` fills.
-- Exit-policy sketch reran no execution and kept future overlays research-only
-  and separate from `source: local_paper` fills.
-- Diagnostic exit-overlay helper preserves provided local-paper entry/exit
-  sources while labeling every overlay outcome as `source: diagnostic_overlay`;
-  it does not touch broker submit/cancel code.
-- Diagnostic exit-overlay helper smoke confirmed all referenced local-paper
-  entry/exit sources stayed `source: local_paper` and all `44` helper overlay
-  or metadata outcomes used `source: diagnostic_overlay`.
-- Conditional exit-overlay contrast kept all `66` overlay/metadata outcomes at
-  `source: diagnostic_overlay`, preserved referenced local-paper sources, and
-  reran no local-paper replay.
-- Exit-latency composite diagnostic substituted `4` diagnostic overlay
-  outcomes and retained `7` local-paper outcomes while preserving source
-  separation and rerunning no local-paper replay.
-- Diagnostic exit-composite helper keeps substituted outcomes at
-  `source: diagnostic_overlay`, retained outcomes at `source: local_paper`, and
-  does not mutate local-paper entry/exit payloads.
-- Diagnostic exit-composite helper smoke preserved the same source separation
-  on existing artifacts and reran no local-paper replay.
-- Research-only exit-latency sandbox helper emits diagnostic marks only and
-  creates zero local-paper fills or broker outcomes.
-- Exit-latency sandbox helper smoke created zero local-paper fills and zero
-  broker outcomes while keeping all available marks labeled
-  `source: diagnostic_overlay`.
-- Fixed entry-adverse GPU validation replay used the existing broker-free
-  local-paper path only, produced `4` fills on APH, verified every fill as
-  `source: local_paper`, and attributed `2` closed trade paths with no open
-  segments or broker outcomes.
-- Longer-depth entry-adverse replay used the existing broker-free local-paper
-  path only, produced `4` fills on APH, verified every fill as
-  `source: local_paper`, and attributed `2` closed trade paths with no open
-  segments, broker outcomes, or diagnostic overlay fills.
-- Short-vs-depth APH signal/path attribution reran no execution. It consumed
-  existing local-paper event artifacts, verified the referenced fills stayed
-  `source: local_paper`, and observed no broker outcomes or diagnostic overlay
-  fills.
-- Second-holdout replay contrast used the existing broker-free local-paper path
-  in Docker `research` for both short and longer-depth artifacts. Both runs
-  produced zero fills; missing zero-fill event files were recorded as empty
-  evidence, and no broker, disabled-broker, or diagnostic-overlay fills were
-  observed.
-- First-evaluation source-context replay produced `6` verified
-  `source: local_paper` fills on AMD only, with no non-local fill sources and
-  no broker outcomes. The follow-up trade-path attribution parsed existing
-  local-paper events and found `3` closed AMD segments and no open segments.
-- AMD segment-quality diagnostic reran no execution. It preserved the existing
-  `source: local_paper` entry/exit evidence and labeled all fixed horizon
-  marks as `source: diagnostic_overlay`.
-- AMD entry feature-input diagnostic reran no execution and created no
-  diagnostic fills. It linked feature rows back to existing local-paper entry
-  timestamps only.
-- AMD entry-filter diagnostic overlay reran no execution, created zero
-  local-paper fills and zero broker outcomes, labeled retained/skipped
-  decisions as `source: diagnostic_overlay`, and preserved the existing
-  `source: local_paper` AMD fills unchanged.
-- Cross-sample entry-filter overlay reran no execution, created zero
-  local-paper fills and zero broker outcomes, labeled retained/skipped
-  decisions as `source: diagnostic_overlay`, and preserved the existing
-  `source: local_paper` wider-sample fills unchanged.
-- First-evaluation source-context depth replay used the existing broker-free
-  local-paper path only, produced `4` verified `source: local_paper` AMD fills,
-  attributed `2` closed non-negative AMD segments with no open segments, and
-  observed no broker, disabled-broker, or diagnostic-overlay fills.
-- First-evaluation wider-holdout replay contrast used the existing
-  broker-free local-paper path only in Docker `research`. Short wider replay
-  produced `22` verified `source: local_paper` fills across ADI, AMAT, AMZN,
-  and BA; depth wider replay produced `16` verified `source: local_paper`
-  fills across AMAT and AMZN. Trade-path attribution parsed existing event
-  files only and observed no broker, disabled-broker, or diagnostic-overlay
-  fills.
-- Wider-holdout depth behavior attribution reran no execution. It consumed
-  existing local-paper event and trade-path evidence only, preserved short and
-  depth local-paper source verification, and created no broker,
-  disabled-broker, or diagnostic-overlay fills.
-- Engine Research Agent runner smoke executed only Docker `research`
-  `gpu_training_smoke`; it created no local-paper fills, broker-disabled
-  outcomes, broker submit/cancel requests, or diagnostic-overlay fills.
-- Engine Research Agent queued feature replay ran through the existing
-  broker-free local-paper replay path for AXP, AZN, and BA, produced zero
-  fills across `9` variants, recorded missing zero-fill event artifacts as empty
-  evidence, and observed no broker, disabled-broker, unknown, or
-  diagnostic-overlay fills.
-- Runner-queued zero-fill attribution reran no execution. It consumed existing
-  replay/trace artifacts, found `0` buy opportunities and `0` local-paper
-  fills, and preserved the broker-free/local-paper-only evidence shape.
-- Two-worker cadence Engine Research Agent replay used the existing broker-free
-  local-paper path for AMAT, AMZN, and BA, produced `12` verified
-  `source: local_paper` fills across AMAT/AMZN variants, and observed no
-  non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
-- Runner-queued longer depth attempt
-  `engine-agent-depth-target-longer-mini-breadth-20260717-r1` created no
-  broker, disabled-broker, unknown, diagnostic-overlay, or local-paper fills.
-  Its local-paper verification remained empty and local-only because no
-  calibration or holdout slices were configured.
-- Explicit-slice runner depth target
-  `engine-agent-depth-target-explicit-slices-20260717-r1` replayed holdout
-  threshold variants through the existing broker-free local-paper path,
-  produced `531` verified `source: local_paper` fills, and observed no
-  non-local, broker-disabled, unknown, or diagnostic-overlay fill sources.
-- Explicit-slice depth attribution reran no execution. It parsed the existing
-  holdout event artifacts, preserved `531` fills as `source: local_paper`, and
-  observed no non-local, broker-disabled, unknown, or diagnostic-overlay fill
-  sources.
-- AMAT/AEM trade-path diagnostic reran no execution. It inspected `403`
-  AMAT/AEM fills from existing event artifacts, all `source: local_paper`, with
-  no broker-disabled, unknown, diagnostic-overlay, or non-local fill sources.
-- AMAT/AEM replay-shape overlay reran no execution, preserved the same `403`
-  original fills as `source: local_paper`, and labeled all `1,479` overlay
-  outcomes as `source: diagnostic_overlay`.
-- Held-out/context overlay reran no execution, preserved `565` original fills
-  as `source: local_paper`, and labeled all `2,494` overlay outcomes as
-  `source: diagnostic_overlay`.
-- ADI/AGG driver attribution reran no execution, preserved `376` original fills
-  as `source: local_paper`, and labeled all `1,738` diagnostic outcomes as
-  `source: diagnostic_overlay`.
-- ADI/AGG feature-input diagnostic reran no execution, preserved `376`
-  original fills as `source: local_paper`, and labeled all `660` candidate-entry
-  diagnostic rows as `source: diagnostic_overlay`.
-- Cross-slice feature-input stability check reran no execution, preserved `592`
-  original ADBE/AEM/AMAT fills as `source: local_paper`, and labeled all `659`
-  candidate-entry diagnostic rows as `source: diagnostic_overlay`.
-- Bounded feature-input ablation reran no execution and changed no local-paper
-  replay behavior. It used selected `diagnostic_overlay` rows for model-input
-  reconnaissance while preserving `592` local-paper fills as source evidence.
-- Full-row feature-input ablation reran no execution, reconstructed `659`
-  `diagnostic_overlay` rows from existing lineage, preserved the `592`
-  `source: local_paper` reference fills as evidence only, and changed no replay
-  behavior.
-- Slice-aware feature-input evaluation reran no execution and changed no
-  local-paper behavior. It kept the same `592` `source: local_paper` fills as
-  evidence only and computed metrics over `659` `source: diagnostic_overlay`
-  rows.
-- Unique-signal feature-input evaluation reran no execution and changed no
-  local-paper behavior. It collapsed only diagnostic rows for metric context;
-  the `592` local-paper fills remained source evidence only.
-- Unique-signal probability-band diagnostic reran no execution and changed no
-  local-paper behavior. Bands were descriptive diagnostics over
-  `source: diagnostic_overlay` rows only.
-- Raw pre-entry band attribution reran no local-paper replay, broker adapter,
-  order lifecycle, or order intent path. It summarized `source:
-  diagnostic_overlay` feature rows only and preserved `592` existing
-  `source: local_paper` fills as evidence counts.
-- Raw pre-entry local-paper outcome attribution reran no local-paper replay and
-  changed no fills, orders, positions, broker adapter, or order intent path. It
-  parsed existing event artifacts and paired existing `source: local_paper`
-  paths only; the smoke observed `302` local-paper entry fills, `290` closed
-  paths, `12` open paths, and `0` non-local fill sources.
-- Raw pre-entry contract tightening reran no local-paper replay and created no
-  orders, fills, positions, order intents, broker adapters, or broker outcomes.
-  It clarified attribution semantics so `local_paper_entry_fill_count` is the
-  unique matched entry-key count and `local_paper_fill_event_count` is the
-  matched local-paper buy fill event count. CPU smoke observed both as `302`
-  with `0` missing trade paths and `0` non-local fill sources.
-- Engine Research cadence replay ran through the existing broker-free
-  local-paper replay path for ADBE, ADI, and ADP. It completed `3` slices and
-  `3` threshold pairs, produced `0` fills, and reported `0` non-local fill
-  sources, `0` unknown fills, and `0` unreadable event artifacts. No orders,
-  broker adapters, order intents, paper broker API calls, or live broker paths
-  were added.
-- ADBE/ADI/ADP opportunity-gap diagnostic reran no execution and created no
-  fills, orders, positions, order intents, broker adapters, or broker outcomes.
-  It preserved zero-fill local-paper evidence, reported `0` non-local fill
-  sources, and labeled the summary as `source: diagnostic_overlay`.
-- Fill-bearing contrast reran no execution. It consumed existing AMAT/AMZN/BA
-  local-paper replay artifacts only and confirmed `12` fills with
-  `source: local_paper`, `0` non-local fill sources, `0` unknown fills, and
-  `0` unreadable event artifacts.
-- AMAT/AMZN path-quality attribution reran no execution. It parsed existing
-  AMAT/AMZN local-paper event artifacts only, paired `12` fill events into `6`
-  closed paths, observed `0` open paths, preserved every original fill as
-  `source: local_paper`, and kept path/timing diagnostics separate as
-  `source: diagnostic_overlay`.
-- Same-window AMAT/AMZN consolidation reran no execution. It consumed existing
-  `240`-bar local-paper evidence only, observed `16` AMAT/AMZN fill events,
-  `8` closed paths, `0` open paths, `0` non-local fill sources, `0` unknown
-  fills, and `0` unreadable event artifacts. All comparison context remained
-  diagnostic-only.
-- Exact threshold-pair parity replay used the existing broker-free local-paper
-  path through Engine Research Agent only. It produced `24` verified
-  `source: local_paper` fill events, `12` closed paths, and `0` open paths.
-  AMAT contributed `18` fill events and `3` negative fee-aware paths; AMZN
-  contributed `6` fill events and no negative fee-aware paths; BA remained
-  zero-fill. No non-local, unknown, unreadable, broker, or diagnostic-overlay
-  fills were observed.
-- AMAT negative-path attribution reran no execution and created no fills,
-  orders, positions, order intents, broker adapters, or broker outcomes. It
-  preserved all `24` referenced fills as `source: local_paper`, labeled
-  descriptive path/feature context as `source: diagnostic_overlay`, and counted
-  `0` non-local, unknown, unreadable, or missing nonzero-fill evidence.
-- AMAT negative-shape recurrence scan also reran no execution and created no
-  fills, orders, positions, order intents, broker adapters, or broker outcomes.
-  It preserved referenced parity fills as `source: local_paper`, kept `8`
-  recurrence comparison records as `source: diagnostic_overlay`, and observed
-  `0` outside-AMAT exact recurrence records in the scanned evidence.
-- AMAT recurrence feature-input compatibility smoke reran no local-paper
-  replay and created no fills, orders, positions, order intents, broker
-  adapters, or broker outcomes. It used existing ablation code only to test
-  input compatibility, produced `0` diagnostic rows, and preserved recurrence
-  source evidence as descriptive reference material.
-- AMAT recurrence/path bridge and follow-up ablation reran no local-paper
-  replay and created no fills, orders, positions, order intents, broker
-  adapters, broker outcomes, execution filters, or simulator rules. The bridge
-  emitted `31` `source: diagnostic_overlay` rows while preserving referenced
-  original fills as `source: local_paper`. The `local_paper_reference` payload
-  is evidence linkage only; the ablation consumed diagnostic rows for
-  model-input context and did not create fills or replay behavior.
-- Duplicate-aware AMAT bridge decision also reran no local-paper replay and
-  created no fills, orders, positions, order intents, broker adapters, broker
-  outcomes, execution filters, simulator rules, feature rules, or threshold
-  rules. It only recorded that current diagnostic evidence should not drive
-  more model work before independent path evidence is scanned.
-- Independent non-AMAT evidence scan reran no local-paper replay and created no
-  fills, orders, positions, order intents, broker adapters, broker outcomes,
-  execution filters, simulator rules, feature rules, or threshold rules. It
-  inspected existing closed trade/path segments only: source artifacts
-  preserved `56` referenced fill events as `source: local_paper`, while the
-  `7` candidate scan rows were emitted as `source: diagnostic_overlay`.
-- Non-AMAT bridge-feasibility pass reran no local-paper replay and created no
-  fills, orders, positions, order intents, broker adapters, broker outcomes,
-  execution filters, simulator rules, feature rules, or threshold rules. It
-  referenced `14` local-paper fill events from existing event artifacts and
-  emitted `7` diagnostic rows as `source: diagnostic_overlay`.
-- Duplicate-aware non-AMAT feasibility decision reran no local-paper replay and
-  created no fills, orders, positions, order intents, broker adapters, broker
-  outcomes, execution filters, simulator rules, feature rules, or threshold
-  rules. It preserved `14` referenced fills as `source: local_paper`, kept `7`
-  reconstructed rows as `source: diagnostic_overlay`, and queued no compute
-  from current evidence.
-- Broader non-AMAT label-ready inventory reran no local-paper replay and
-  created no fills, orders, positions, order intents, broker adapters, broker
-  outcomes, execution filters, simulator rules, feature rules, or threshold
-  rules. It referenced `16` existing local-paper fill sources for `8`
-  additional row-shaped candidates and kept those reconstructed inventory rows
-  as `source: diagnostic_overlay`.
-- Fresh-symbol replay probe ran through the existing broker-free local-paper
-  research path only. It created `0` order intents, `0` fills, `0` positions,
-  `0` broker outcomes, and no event files with nonzero fills. Replay
-  verification reported `all_fills_local_paper: true`,
-  `non_local_fill_source_counts: {}`, and `unknown_fill_count: 0`; the compact
-  probe artifact kept summary context diagnostic-only and created no execution
-  filters, feature rules, threshold rules, or replay rules.
-- Fresh-symbol opportunity prefilter reran no local-paper replay and created
-  `0` order intents, `0` fills, `0` positions, `0` broker outcomes, and no
-  event artifacts. Ranked probability-gap summaries are
-  `source: diagnostic_overlay` research context only. The helper records
-  `no_execution_authority` and must not become an execution threshold, risk
-  rule, broker policy, replay rule, feature rule, or live/paper KIS behavior.
-- Fresh-symbol trace/data availability inventory ran no local-paper replay and
-  created `0` order intents, `0` fills, `0` positions, and `0` broker outcomes.
-  All candidate rows are `source: diagnostic_overlay`; trace availability is
-  not an execution threshold, order-intent generator, risk rule, broker policy,
-  replay rule, or live/paper KIS behavior.
-- Fresh-symbol trace-only GPU batch also ran no local-paper replay and created
-  `0` order intents, `0` fills, `0` positions, and `0` broker outcomes. The
-  crossing evidence remains `source: diagnostic_overlay` until a future
-  broker-free replay creates local-paper fills.
-- Fresh-symbol replay-selection ran through the existing broker-free
-  threshold-robustness/local-paper path only. It completed `12` variants over
-  MRVL, MU, SNDK, and COHR, observed `100` local-paper order intents and `100`
-  fill events, and `collect_fill_source_evidence` verified
-  `fill_source_counts: {"local_paper": 100}`,
-  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
-  `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
-  diagnostic-overlay, KIS, live, or external paper broker fills were observed.
-- Fresh-symbol trade-path attribution parsed existing replay-selection event
-  artifacts only. It preserved `100` original fills as `source: local_paper`,
-  paired them into `50` closed segments and `0` open segments, observed `0`
-  unmatched sell fills, and labeled reconstructed path context as
-  `source: diagnostic_overlay`. It created no fills, orders, order intents,
-  broker adapters, broker outcomes, execution filters, simulator rules,
-  feature rules, or threshold rules.
-- Fresh-symbol duplicate-aware simplification consumed existing attribution and
-  replay artifacts only. It carried forward `100` fills as
-  `source: local_paper`, kept reconstructed path context as
-  `source: diagnostic_overlay`, and collapsed evidence without mutating replay,
-  fills, orders, order intents, broker adapters, broker outcomes, execution
-  filters, simulator rules, feature rules, threshold rules, risk rules, or
-  live/paper KIS behavior.
-- Fresh-symbol path-shape comparison consumed existing artifacts only and
-  carried forward the same `100` `source: local_paper` fills plus `17`
-  `source: diagnostic_overlay` unique path contexts. It created no fills,
-  orders, order intents, broker adapters, broker outcomes, execution filters,
-  simulator rules, feature rules, threshold rules, risk rules, exit policies,
-  or live/paper KIS behavior.
-- Fresh-symbol lane-rotation inventory consumed artifact and market-data
-  provenance only. It created no fills, orders, order intents, positions,
-  broker adapters, broker outcomes, local-paper replay, execution filters,
-  simulator rules, feature rules, threshold rules, risk rules, exit policies,
-  or live/paper KIS behavior.
-- Independent fresh-symbol trace-only GPU batch created no fills, orders, order
-  intents, positions, broker adapters, broker outcomes, local-paper replay,
-  execution filters, simulator rules, feature rules, threshold rules, risk
-  rules, exit policies, or live/paper KIS behavior. MPWR/STX threshold crossing
-  counts are `source: diagnostic_overlay` only and are not execution thresholds
-  or replay triggers.
-- Fresh-symbol trace-comparison planning created no fills, orders, order
-  intents, positions, broker adapters, broker outcomes, local-paper replay,
-  execution filters, simulator rules, feature rules, threshold rules, risk
-  rules, exit policies, gates, or live/paper KIS behavior. MPWR was marked only
-  as a future separate replay candidate, not replay authorization.
-- MPWR-only replay-selection ran through the existing broker-free
-  threshold-robustness/local-paper path only. It completed `3` MPWR variants,
-  observed `24` local-paper order intents and `24` fill events, and verified
-  `fill_source_counts: {"local_paper": 24}`,
-  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
-  `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
-  diagnostic-overlay, KIS, live, or external paper broker fills were observed.
-- MPWR trade-path attribution parsed existing replay-selection event artifacts
-  only. It preserved `24` original fills as `source: local_paper`, paired them
-  into `12` raw closed segments and `0` open segments, observed `0` unmatched
-  sell fills, reconciled final positions to `0`, and labeled duplicate-aware
-  reconstructed path context as `source: diagnostic_overlay`. It created no
-  fills, orders, order intents, broker adapters, broker outcomes, execution
-  filters, simulator rules, feature rules, threshold rules, or replay rules.
-- MPWR hold/rotate decision consumed existing artifacts only. It preserved the
-  `24` historical local-paper fills as evidence, used duplicate-aware
-  diagnostic-overlay context for PnL interpretation, and held MPWR without
-  creating orders, order intents, broker outcomes, execution filters, simulator
-  rules, feature rules, threshold rules, replay rules, risk rules, or broker
-  authority.
-- Post-MPWR Data Agent lane-rotation inventory referenced historical
-  local-paper evidence only. It created no new fills, orders, order intents,
-  positions, broker adapters, broker outcomes, local-paper replay, execution
-  filters, simulator rules, feature rules, threshold rules, risk rules, exit
-  policies, or live/paper KIS behavior.
-- Post-MPWR fresh-symbol Review/Simplification referenced historical
-  local-paper evidence only and retired active fresh-symbol queue context. It
-  created no new fills, orders, order intents, positions, broker adapters,
-  broker outcomes, local-paper replay, execution filters, simulator rules,
-  feature rules, threshold rules, risk rules, exit policies, or live/paper KIS
-  behavior.
-- Stale research queue hygiene referenced historical local-paper and
-  diagnostic-overlay evidence only through existing artifacts and stateboards.
-  It created no fills, orders, order intents, positions, broker adapters,
-  broker outcomes, local-paper replay, execution filters, simulator rules,
-  feature rules, threshold rules, risk rules, exit policies, or live/paper KIS
-  behavior.
+- Execution correctness is deterministic: identical ordered inputs must produce
+  identical order, account, risk, and reconciliation state.
+- Reconciliation is an execution responsibility and must fail closed on stale,
+  incomplete, contradictory, or unrecognized broker state.
+- Broker-facing types must represent partial success and unavailable data; they
+  must not collapse uncertainty into a successful result.
+- Model and strategy code remain outside execution. Execution may consume only
+  explicit typed intents after independent risk validation.
+- `local_paper` is the source label for broker-free simulated fills; diagnostics
+  are not fills and must not be relabeled as local paper.
+- KIS paper is an early execution milestone measured independently of strategy
+  profitability. Profitability neither grants nor blocks broker authority.
+
+## Recovery
+
+- Rebuild state from typed account, position, open-order, fill, and cancel
+  snapshots before accepting any new intent.
+- Reconcile by stable ids and event ordering; repeated events must be
+  idempotent and missing or conflicting state must stop new orders.
+- Preserve emergency-stop state across restart and surface unresolved orders or
+  account mismatches for operator review.
+- Current recovery stops at fake transport or `local_paper`, never KIS.
+
+## Recent Evidence
+
+- The local simulator deterministically covers accept, reject, cancel,
+  duplicate-id, and next-bar-fill behavior.
+- Fill-source checks preserve simulated fills as `source: local_paper` and
+  separate diagnostic evidence from execution events.
+- The disabled broker boundary returns typed unavailable outcomes, and tests
+  demonstrate no network, credential, broker-submit, or broker-event writes.
 
 ## Next Handoff
 
-- Keep broker execution disabled until a future explicit KIS paper goal allows
-  API calls and credential handling.
-- The Engine Research Agent runner must not gain broker authority. If a queued
-  job includes replay, it must use the existing broker-free local-paper path and
-  keep fills labeled `source: local_paper`.
-- Do not make Execution Agent executable as part of the next multi-agent slice;
-  a broker-capable worker needs a future explicit paper-trading goal.
-- Any bounded feature-input validation or replay comparison must preserve original
-  local-paper fills as `source: local_paper`, label diagnostics as
-  `source: diagnostic_overlay`, and avoid broker authority.
-- Unique-signal follow-up metrics should still avoid replay and must not turn
-  diagnostic rows into fills or order intents.
-- Probability-band diagnostics should still avoid replay and must not become
-  order thresholds or order intents.
-- A simplification pass may inspect local-paper evidence contracts but must not
-  rerun replay, mutate fills, submit orders, create order intents, or turn any
-  feature context into an execution filter.
-- Any future Engine Research replay objective may run broker-free local-paper
-  replay only through existing research jobs. It must preserve `source:
-  local_paper` fills and keep diagnostics as `source: diagnostic_overlay`.
-- Temporary Execution sidecar review may continue, but do not make Execution
-  Agent executable until a future explicit paper-trading goal needs broker or
-  risk-loop work.
-- Any bridge from AMAT negative-path or recurrence evidence into feature-input
-  rows must keep original fills as `source: local_paper`, count diagnostics
-  separately as `source: diagnostic_overlay`, and avoid creating order intents
-  outside the existing broker-free replay path.
-- Any future duplicate-aware follow-up may inspect existing local-paper
-  evidence or run broker-free replay only through existing research jobs. It
-  must not create execution filters, order intents, broker authority, or
-  live/paper KIS behavior.
-- Fresh-symbol replay is no longer active. Any future explicit replay objective
-  must use only the existing broker-free local-paper research path, preserve
-  generated fills as `source: local_paper`, keep diagnostics as
-  `source: diagnostic_overlay`, and avoid execution filters, order intents,
-  feature rules, threshold rules, replay rules, broker authority, and live/paper
-  KIS behavior.
-- An opportunity-prefilter may rank probabilities, but it must not become an
-  execution threshold, order-intent generator, risk rule, broker policy, or
-  live/paper KIS behavior.
-- If a later trace/data inventory identifies a crossing candidate, replay may
-  still run only through existing broker-free local-paper research jobs and
-  must verify `source: local_paper` fills before any bridge or PnL attribution.
-- Any future attribution objective should parse existing event artifacts only
-  unless a later goal explicitly allows replay. It must preserve original fills
-  as `source: local_paper`, label reconstructed path/feature context as
-  `source: diagnostic_overlay`, and avoid creating new orders, order intents,
-  broker outcomes, execution filters, simulator rules, feature rules, or
-  threshold rules.
-- Any future simplification pass may inspect attributed local-paper paths, but
-  it must not mutate replay, invent execution filters, or turn diagnostic
-  context into order-intent logic.
-- Treat the retired fresh-symbol branch as descriptive evidence only, not an
-  automated gate or execution rule. Future data or review work may reference
-  the hold but must not alter local-paper or broker behavior.
-- Any future trace-only GPU batch must not create local-paper fills or order
-  intents. Any later replay goal must explicitly preserve `source:
-  local_paper` fills and remain broker-free.
-- Any future trace-comparison or replay-selection planning pass must stay
-  artifact-only. If it proposes a later replay, that replay must be a separate
-  explicit goal through the existing broker-free local-paper path.
-- MPWR hold/rotate, post-MPWR Data inventory, and post-MPWR Review/Simplification
-  are complete. Future queue hygiene may classify stale evidence, but must not
-  mutate local-paper fills, create order intents, infer broker behavior, or turn
-  data/provenance observations into execution rules.
-- Queue hygiene is complete. The next operator-review bundle may classify
-  stale and held evidence, but must not create broker, risk, replay,
-  local-paper, order, fill, or execution-rule behavior.
+- Implement only the typed readiness contracts and fake-transport tests in the
+  ready queue; do not add a working KIS transport or credential access.
+- Keep the KIS adapter disabled and preserve `source: local_paper` in local
+  simulation.
+- A later read-only KIS authority decision and a later KIS paper-capital
+  approval are separate operator decisions.
+- KIS paper remains an early milestone independent of model profitability;
+  deterministic risk and reconciliation are its acceptance criteria.

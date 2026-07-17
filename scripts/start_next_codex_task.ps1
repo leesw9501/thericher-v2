@@ -34,7 +34,10 @@ $required = @(
     "DECISIONS.md",
     "RUNBOOK.md",
     "agents/README.md",
-    "INTERIM_GOAL_SCRIPT.md"
+    "agents/data.md",
+    "agents/engine-research.md",
+    "agents/execution.md",
+    "GOAL_SCRIPT.md"
 )
 
 foreach ($file in $required) {

@@ -2,254 +2,218 @@
 
 ## Modes
 
-The engine supports three modes:
+Policy distinguishes four execution concepts:
 
-- `off`: collect data and run research only. No order placement.
-- `paper`: KIS paper trading allowed within risk limits.
-- `live`: live trading allowed only after explicit promotion and capital caps.
+- `off`: data and research only; no fills or broker calls.
+- `local_simulation`: broker-free simulation; existing fill source is
+  `local_paper`.
+- `kis_paper`: KIS virtual account after explicit authority and capital
+  approval.
+- `kis_live`: KIS real account after separate explicit authority.
 
-Default mode is `off`.
+Current code may expose a smaller mode enum until the execution contract goal
+implements this separation. Default behavior remains off and broker-disabled.
 
-## Long Task Workflow
+## Long Codex Task
 
-Start each long Codex task with:
+Start with:
 
 ```powershell
 .\scripts\start_next_codex_task.ps1
 ```
 
-Then read the required handoff and architecture files printed by the script.
-Before changing architecture, promotion rules, or agent governance, ask Claude
-CLI for a short drift-check and judge it against `HANDOFF.md`,
-`ARCHITECTURE.md`, and `DECISIONS.md`.
+Read the files printed by the script, then use `GOAL_SCRIPT.md` as the short
+operator launcher and `NEXT_CODEX_GOAL.md` as the only authoritative objective.
 
-Check `agents/README.md` for the current lane stateboards. Use the relevant
-agent file for active queues, held resources, running jobs, and handoff notes.
+Codex should:
 
-Before ending a long task:
+1. Check recovery state and uncommitted work.
+2. Decompose the company outcome into disjoint Data, Research, and Execution
+   work packages.
+3. Run ready packages in parallel through role agents or existing workers.
+4. Integrate shared contracts and independent Validation evidence.
+5. Run verification, commit, push, and refresh the next goal.
+6. Continue with the refreshed goal while no real approval or external blocker
+   requires the operator.
 
-- run the relevant verification commands,
-- commit and push completed work when changes are ready,
-- refresh `NEXT_CODEX_GOAL.md` with the next single objective,
-- keep the next goal tied to one engine loop.
+Do not stop merely to ask which required lane should work next. Do not use
+fixed lane percentages or forced rotation.
 
-When GPU research is active, keep bounded training and validation jobs running
-on the single GPU by default. Other lanes may proceed while those jobs run, as
-long as they do not touch the same ownership boundary or enable broker/live
-behavior prematurely.
+## Existing Workers
 
-Bounded GPU research jobs run through Docker `research` and write artifacts to
-the external model artifact mount:
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-training-smoke --kind candidate_training --candidate-artifact /app/model_artifacts/experiments/short-momentum-cpu-queue-walk-forward-gpu-candidate-smoke.json --max-bars 120 --max-epochs 8 --max-steps 256
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-evaluation-smoke --kind candidate_evaluation --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --max-bars 120
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-replay-smoke --kind candidate_replay --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --yahoo-snapshot /app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --buy-threshold 0.47 --sell-threshold 0.45
-```
-
-```powershell
-uv run --extra dev thericher-v2-research-job --job-id bounded-candidate-replay-comparison-smoke --kind candidate_replay_comparison --candidate-replay-artifact D:\thericher-v2\model-artifacts\candidate-replay\bounded-candidate-replay-smoke\metrics.json --training-metrics-artifact D:\thericher-v2\model-artifacts\candidate-training\bounded-candidate-training-smoke\metrics.json --yahoo-snapshot D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-07-09-shadow-t0-8d-probe\ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --buy-threshold 0.47 --sell-threshold 0.45
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-threshold-sweep-smoke --kind candidate_threshold_sweep --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --comparison-artifact /app/model_artifacts/candidate-replay-comparison/bounded-candidate-replay-comparison-smoke/metrics.json --yahoo-snapshot /app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz --symbol CVS --max-bars 180 --threshold-pair 0.47:0.455 --threshold-pair 0.50:0.455 --threshold-pair 0.52:0.455 --threshold-pair 0.55:0.455 --threshold-pair 0.60:0.455
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-threshold-robustness-smoke --kind candidate_threshold_robustness --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-evaluation-smoke/metrics.json --max-bars 180 --threshold-pair 0.47:0.455 --threshold-pair 0.50:0.455 --threshold-pair 0.52:0.455 --threshold-pair 0.55:0.455 --threshold-pair 0.60:0.455 --robustness-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-training-smoke --kind candidate_training --candidate-artifact /app/model_artifacts/experiments/short-momentum-cpu-queue-walk-forward-gpu-candidate-smoke.json --max-bars 180 --max-epochs 8 --max-steps 256 --data-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-evaluation-smoke --kind candidate_evaluation --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-multislice-training-smoke/metrics.json --max-bars 180
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-multislice-calibration-smoke --kind candidate_threshold_calibration --training-metrics-artifact /app/model_artifacts/candidate-training/bounded-candidate-multislice-training-smoke/metrics.json --evaluation-artifact /app/model_artifacts/candidate-evaluation/bounded-candidate-multislice-evaluation-smoke/metrics.json --max-bars 180 --threshold-pair-cap 2 --robustness-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps research thericher-v2-research-job --job-id bounded-candidate-calibration-holdout-smoke --kind candidate_threshold_holdout --calibration-artifact /app/model_artifacts/candidate-threshold-calibration/bounded-candidate-multislice-calibration-smoke/metrics.json --max-bars 180 --robustness-slice cvs_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice fcx_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice ko_holdout=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --build research thericher-v2-research-job --job-id bounded-candidate-breadth-queue-smoke --kind candidate_breadth_queue --max-bars 180 --max-epochs 3 --max-steps 64 --data-slice cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-breadth-holdout-mini-smoke --kind candidate_breadth_holdout --breadth-queue-artifact /app/model_artifacts/candidate-breadth-queue/bounded-candidate-breadth-queue-smoke/metrics.json --max-bars 60 --data-slice cvs_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice fcx_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice ko_src=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO --robustness-slice cvs_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice fcx_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice ko_hold=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-depth-target-mini-smoke --kind candidate_depth_target --breadth-holdout-artifact /app/model_artifacts/candidate-breadth-holdout/bounded-candidate-breadth-holdout-mini-smoke/metrics.json --max-bars 120 --max-epochs 6 --max-steps 192 --data-slice src_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --data-slice src_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --data-slice src_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO --robustness-slice hold_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:CVS --robustness-slice hold_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:FCX --robustness-slice hold_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:KO
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-depth-comparison-mini-smoke --kind candidate_depth_comparison --depth-target-artifact /app/model_artifacts/candidate-depth-target/bounded-candidate-depth-target-mini-smoke/metrics.json
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-rerun-mini-smoke --kind candidate_threshold_rerun --comparison-artifact /app/model_artifacts/candidate-depth-comparison/bounded-candidate-depth-comparison-mini-smoke/metrics.json
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-attribution-mini-smoke --kind candidate_threshold_attribution --threshold-rerun-artifact /app/model_artifacts/candidate-threshold-rerun/bounded-candidate-threshold-rerun-mini-smoke/metrics.json
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-threshold-band-rerun-mini-smoke --kind candidate_threshold_band_rerun --threshold-attribution-artifact /app/model_artifacts/candidate-threshold-attribution/bounded-candidate-threshold-attribution-mini-smoke/metrics.json
-```
-
-```powershell
-docker compose --profile research run --rm --no-deps --volume C:/Users/Public/Documents/thericher-v2/src:/app/src:ro research thericher-v2-research-job --job-id bounded-candidate-feature-branch-replay-mini-smoke --kind candidate_feature_branch_replay --feature-branch-artifact /app/model_artifacts/candidate-feature-branch/bounded-candidate-feature-branch-mini-smoke/metrics.json --max-bars 120 --robustness-slice src_cvs=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:CVS --robustness-slice src_fcx=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:FCX --robustness-slice src_ko=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-07-09-shadow-t0-8d-probe/ohlcv_1m.csv.gz:KO
-```
-
-## Engine Research Agent Runner
-
-Use the runner when the Engine Research Agent should claim exactly one queued
-GPU research job and then exit. Queue and run-state files live outside Git under
-`D:\thericher-v2\model-artifacts\engine-research-agent`.
-
-```powershell
-uv run --extra dev thericher-v2-engine-research-agent seed-gpu-training-smoke --job-id engine-research-agent-gpu-training-smoke
-```
-
-```powershell
-uv run --extra dev thericher-v2-engine-research-agent enqueue-research-job --job-id bounded-agent-feature-replay --kind candidate_feature_branch_replay -- --feature-branch-artifact /app/model_artifacts/candidate-feature-branch/example/metrics.json --max-bars 120 --robustness-slice example=/app/market_data/us_equities/yahoo_intraday_starter/canonical/ohlcv_1m/snapshot=2026-06-18/ohlcv_1m.csv.gz:ABC
-```
+Engine Research claims one queued Docker research job and exits:
 
 ```powershell
 uv run --extra dev thericher-v2-engine-research-agent run-once
 ```
 
-The runner is not a daemon, scheduler, dashboard, notification process, or
-multi-agent platform. It mounts current `src` read-only into Docker `research`.
-If `gpu.lock` remains after an interrupted run, verify no Docker `research` job
-is running before removing the lock manually.
-
-## Data Agent Runner
-
-Use the runner when Data Agent should claim exactly one queued non-GPU data job
-and then exit. Queue, run-state, and inventory artifacts live outside Git under
-`D:\thericher-v2\model-artifacts\data-agent`.
-
-```powershell
-uv run --extra dev thericher-v2-data-agent --artifact-root D:\thericher-v2\model-artifacts enqueue-data-job --job-id data-agent-market-data-inventory --market-data-root D:\market_data
-```
+Data claims one queued non-GPU data job and exits:
 
 ```powershell
 uv run --extra dev thericher-v2-data-agent --artifact-root D:\thericher-v2\model-artifacts run-once
 ```
 
-The Data Agent runner is not a daemon, scheduler, dashboard, notification
-process, broad multi-agent platform, broker-capable process, or data
-acquisition tool. Its first job kind, `market_data_inventory`, performs a
-bounded shallow inventory over known `D:\market_data` folders and writes a
-descriptive artifact only. It does not use Docker, GPU, PyTorch, network calls,
-credentials, KIS, or broker code.
+Queue and run state stay outside Git under the role's external artifact root.
+These workers are not daemons, schedulers, or autonomous coordinators. Verify a
+stale lock against the real process/container before changing it.
 
-## Market Data Acquisition
+Execution has no executable worker yet. Use temporary role workers and fake
+transports until a recurring KIS paper objective justifies one bounded
+single-shot worker.
 
-Use `D:\market_data` as the default external market data root. Do not download
-or copy acquired market data into the Git workspace.
+## Data Acquisition
 
-Agents may acquire additional data only when it is available without
-credentials, payment, login, private APIs, or unclear licensing. Stop acquisition
-for a source when those limits are hit, when two automated attempts fail, or
-when more data no longer improves the active engine loop.
+Use `D:\market_data`. Never download market data into the repository.
 
-If operator help is needed, record exact symbols, markets, date ranges, formats,
-and blocker reasons in `agents/data.md` under `Operator Help Needed`. The daily
-report surfaces that section.
+Data may be acquired automatically when it is useful, no-cost, no-auth,
+license-compatible for private use, bounded, and deduplicated. Paid, logged-in,
+manual-agreement, private-API, or unclear-rights sources require operator
+approval.
 
-## Emergency Stop
+Warn at a projected 20 percent D-drive free-space level. Stop new large data or
+training work before crossing 15 percent. If operator action is needed, report:
 
-There are two independent emergency actions.
+- source and current URL,
+- symbols, dates, timeframe, and format,
+- expected size and current price,
+- exact acquisition steps,
+- engine-loop value and free alternatives,
+- blocker and decision requested.
 
-### Stop New Orders
+Stop pursuing a source after two bounded automated failures, when rights are
+unclear, or when marginal coverage no longer improves a named engine loop.
 
-Effect:
+## Research Campaigns
 
-- prevents new orders,
-- persists across engine restart,
-- does not automatically cancel existing open orders.
+Do not add another artifact-specific job kind when a campaign parameter or
+generic primitive can express the question.
 
-Resume requires explicit local confirmation.
+A campaign freezes:
 
-### Cancel Open Orders
+- dataset and snapshot IDs,
+- realizable target and feature timing,
+- chronological train/calibration/validation splits,
+- purge/embargo and sealed holdout policy,
+- fees, spread, slippage, FX, and sizing assumptions,
+- naive and CPU baselines,
+- primary after-cost metric and falsification checks,
+- breadth/depth/ensemble/replication budget and stop rules.
 
-Effect:
+Existing short 1m evidence is pipeline/development context until Data records
+enough independent chronological coverage. CPU preparation may continue while
+GPU work is held. Once eligible work exists, run one GPU job at a time through
+Docker `research`, using BF16/mixed precision, cached materialized inputs, and
+recoverable checkpoints where appropriate.
 
-- asks the broker adapter to cancel currently open orders,
-- logs every cancel request and result,
-- does not resume new order placement.
+Free public assets stay in research. Record source, version, hash, and license;
+prefer safe serialization; isolate unavoidable untrusted formats. Never pass
+model code or checkpoint loading into Execution.
 
-This action is separate from stop-new-orders so the operator can choose whether
-to freeze only new activity or also clear open orders.
+## Claude Challenger
 
-## Live Promotion Draft Criteria
+Ask Claude once at a bias-prone decision boundary defined in `AGENTS.md`.
+Containment and emergency stops never wait for review; Claude challenges the
+subsequent recovery or resume decision.
 
-These are initial planning criteria and must be encoded in versioned config
-before live mode exists.
+The prompt should include only redacted evidence identifiers and ask for:
 
-- at least 20 paper trading days,
-- at least 300 to 500 paper trades,
-- positive expectancy after fees and slippage,
-- positive expectancy under 2x cost stress,
-- maximum drawdown within 6 to 8 percent,
-- zero daily loss-limit violations,
-- no dependence on one or two symbols for most profit,
-- walk-forward and out-of-sample consistency,
-- operator review approval before each capital ramp.
+1. the claim,
+2. the strongest kill test,
+3. leakage, survivorship, and selection-bias risks,
+4. the naive baseline and blast radius,
+5. what would reverse the conclusion,
+6. a verdict of `unsupported`, `uncertain`, or `supported-with-limits`, plus the
+   smallest decisive next action.
 
-Daily return above 1 percent after costs is treated as a strong result but not a
-promotion rule by itself. It can also signal overfitting or lucky regime
-exposure.
+Do not send credentials, account identifiers, raw sealed-holdout labels, or
+unnecessary row-level data. Do not create a Claude report family. Record a
+review only when it changes a durable decision or a named promotion/recovery
+boundary.
 
-## Daily Review
+## KIS Paper Authority
 
-At 08:00 KST, the daily report should summarize:
+KIS paper should begin before model profitability when execution hard stops are
+ready. Use a deterministic baseline for the first live-like evidence loop.
 
-- what changed,
-- current mode,
-- engine heartbeat,
-- paper/live status,
-- open risk events,
-- model performance,
-- trading metrics,
-- market data root and operator data requests,
-- blockers,
-- next goal script.
+Authority sequence:
 
-One concise report bundle per day is preferred.
+1. Operator authorizes read-only KIS paper credentials and account queries.
+2. Execution validates the paper endpoint and masked account identity, then
+   reconciles cash, orderable funds, positions, and open orders.
+3. Codex proposes a paper capital envelope based on:
 
-## Dashboard Minimum
+   ```text
+   min(reconciled KIS paper funds, intended shadow live capital)
+   ```
 
-The dashboard shows:
+   KRW 5,000,000 is the current planning reference, not automatic authority.
+4. Operator approves or changes the envelope once.
+5. A one-symbol, one-share limit-order canary proves submit, status, fill or
+   cancel, event persistence, restart reconciliation, and duplicate suppression.
+6. Routine paper operation may continue inside the approved envelope and hard
+   limits without repeated approval.
 
-- mode,
-- heartbeat,
-- KIS connectivity,
-- cash and equity by currency,
-- holdings,
-- open orders,
-- recent fills and rejects,
-- model signals,
-- ensemble action,
-- confidence,
-- expected edge,
-- risk score,
-- stop-new-orders state,
-- cancel-open-orders action status.
+Never size upward merely because the virtual account has large buying power.
+Margin, shorting, leverage, unsupported order types, and live endpoints remain
+disabled until separately approved.
 
-The dashboard must not show secrets, raw KIS payloads, or unrestricted order
-controls.
+Unknown broker outcomes stop new entries. Persist intent before submission,
+query KIS rather than retry blindly, and reconcile by broker/account facts.
+
+## Recovery
+
+At task start, after interruption, and before relying on a checkpoint:
+
+1. Inspect nonterminal role jobs and real process/container identity.
+2. Verify input, dataset, code/runtime, checkpoint, and committed output hashes.
+3. Classify each active run as `resume`, `restart`, `reconcile`, `complete`,
+   `unrecoverable`, or `operator`.
+4. Reconcile every Execution `outcome_unknown` before another submission.
+5. Persist changed classifications and actions in the shared ledger when that
+   substrate exists.
+6. Tell the operator only about anomalies, unresolved exposure, lost evidence,
+   or a decision they actually own.
+
+Do not produce recovery packets or success reports.
+
+## Emergency Actions
+
+`stop new orders` prevents new entries and persists across restart. Exits and
+cancellations remain available.
+
+`cancel open orders` enumerates confirmed open broker orders, requests
+cancellation, records each outcome, and reconciles again. Never cancel or
+flatten from stale local state.
+
+Resume requires clean reconciliation and an understood bounded failure. Claude
+challenges recovery after an unexplained broker, data, holdout, or risk incident;
+the operator retains final authority for unresolved exposure or live behavior.
+
+## Daily Operator Review
+
+When 08:00 KST automation is enabled, generate one concise human-facing summary:
+
+- company objective and outcomes,
+- active mode and execution/recovery anomalies,
+- after-cost research or paper metrics,
+- data coverage and exact operator data requests,
+- running Data/Research/Execution work,
+- the canonical `NEXT_CODEX_GOAL.md` link,
+- every prioritized decision that only the operator can make, with duplicate or
+  dependent questions consolidated but no arbitrary count limit.
+
+Machine-readable metrics may stay in the shared external evidence substrate.
+Do not create a daily copy of the next goal.
+
+## Verification
+
+Before committing and pushing completed work:
+
+```powershell
+uv run --extra dev pytest -q
+uv run --extra dev ruff check .
+docker compose config --quiet
+```
+
+Run additional focused tests for changed behavior. Report anything that could
+not be run.

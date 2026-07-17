@@ -14,6 +14,11 @@ The center of the product is a repeatable loop:
 5. Attribute wins, losses, slippage, and model decisions.
 6. Promote only robust engines to small live capital.
 
+KIS paper trading is an early source of live-like execution evidence, not a
+prize reserved for a profitable model. A deterministic baseline may enter a
+bounded paper loop once execution hard stops work, while model research
+continues independently.
+
 ## Why v2 Exists
 
 v1 became too focused on readiness packets, gates, handoffs, and operator
@@ -25,6 +30,9 @@ minimum needed for research velocity and live-risk control.
 
 The engine must improve faster than the documents grow.
 
+The operating north star is independent live-like evidence produced per hour of
+operator attention.
+
 Success is measured by:
 
 - number of valid strategy experiments completed,
@@ -33,6 +41,9 @@ Success is measured by:
 - clarity of PnL attribution,
 - ability to stop trading immediately,
 - absence of accidental live orders.
+
+Model count, commit count, artifact count, and GPU utilization are not success
+metrics by themselves.
 
 ## Market Scope
 

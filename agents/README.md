@@ -1,99 +1,95 @@
 # Agent Stateboards
 
-These files are lane stateboards, not reports, gates, or policy sources.
-`AGENTS.md` owns agent policy. `NEXT_CODEX_GOAL.md` owns the single next Codex
-objective.
+`AGENTS.md` owns policy. `NEXT_CODEX_GOAL.md` owns the company objective. These
+files are concise current projections for durable role lanes; they are not
+reports, policy sources, or historical ledgers.
 
-Use these stateboards to keep long-running work moving while preserving role
-boundaries. They should help at least one engine loop:
+## Operating Model
 
-- data collection,
-- feature/model research,
-- backtest and walk-forward validation,
-- paper trading,
-- PnL attribution,
-- live-risk control.
+```text
+Operator -> Codex Orchestrator -> Role Agents
+```
 
-## Active Stateboards
+Codex decomposes one company objective into disjoint work packages and assigns
+them to ready roles. Data, Research, and Execution may progress in parallel. A
+blocked lane does not stop another ready lane. Codex integrates shared contracts,
+verification, Git, recovery, and the next objective.
 
-- `engine-research.md`: features, strategy experiments, model training, GPU
-  jobs, backtests, and walk-forward validation.
-- `data.md`: market data ingestion, local caches, calendars, resampling, and
-  data-quality warnings.
-- `execution.md`: local paper execution, broker adapters, order lifecycle,
-  fills, positions, and execution hard stops.
-- `infra.md`: Docker, dependencies, GPU runtime, artifact mounts, schedules,
-  and deployment plumbing.
-- `review.md`: simplicity review, v1-sprawl checks, and boundary drift checks.
+## Active Durable Stateboards
 
-## Capability Reality Check
+- `data.md`: acquisition, canonical data, provenance, calendars, dataset
+  manifests, splits, resampling, and data quality.
+- `engine-research.md`: hypotheses, campaign contracts, CPU/GPU models,
+  backtests, walk-forward validation, and analytical attribution.
+- `execution.md`: local simulation, account/order/fill/position contracts,
+  reconciliation, accounting PnL, risk, emergency behavior, and later KIS.
 
-In repo documents, "agent" means a lane role plus stateboard unless it is listed
-below as an executable worker. Only Engine Research and Data currently have
-single-shot CLI workers. There are no persistent autonomous agents,
-orchestrators, or Codex thread workers owned by the repo.
+## Independent And Invoked Roles
 
-This means the current repo does not silently run five durable role agents in
-parallel. Parallel role work can happen during a Codex task through temporary
-sidecars, while persistent repo-owned workers must be added one role at a time
-only when they improve a named engine loop.
+- Validation is a temporary independent role. It receives frozen inputs, writes
+  linked evidence, and exits; it has no durable stateboard yet.
+- Infra is invoked for Docker, GPU, dependencies, mounts, storage, CI, and
+  runtime reproducibility.
+- Review is a lightweight integration checkpoint. Claude challenges the
+  bias-prone decision boundaries listed in `AGENTS.md`.
 
-## Executable Workers
+Historical `infra.md` and `review.md` stateboards are retired. Preserve them as
+short pointers to Git/external evidence; do not reopen a standing queue without
+repeated independent work.
 
-- Engine Research Agent: `thericher-v2-engine-research-agent`, single-shot
-  Docker `research` job enqueue/run worker with artifacts under
-  `D:\thericher-v2\model-artifacts\engine-research-agent`.
-- Data Agent: `thericher-v2-data-agent`, single-shot non-GPU data inventory
-  worker with artifacts under
-  `D:\thericher-v2\model-artifacts\data-agent`.
+## Capability Reality
 
-Execution, Infra, and Review do not have executable workers yet. Do not create
-one unless the next goal names a durable lane need and the worker improves a
-specific engine loop.
+- Engine Research has the single-shot
+  `thericher-v2-engine-research-agent` worker.
+- Data has the single-shot `thericher-v2-data-agent` worker.
+- Execution has no executable worker yet.
+- Temporary Codex sub-agents can implement or review disjoint role work during
+  an active Codex task.
+- No repo-owned daemon, scheduler, autonomous coordinator, or permanent LLM
+  process currently exists.
 
-## Codex Runtime Sub-Agents
-
-In a Codex task, temporary sub-agents may be used as role-scoped sidecar
-reviewers or workers when the user asks for parallel agent work. These are not
-repo-owned executable workers and do not replace the stateboards above.
-
-Use them for disjoint, bounded work such as:
-
-- Engine Research sidecar: inspect experiment artifacts or propose a bounded
-  diagnostic shape.
-- Data sidecar: inspect existing local data evidence without credentials or
-  broad scans.
-- Execution sidecar: verify local-paper-only evidence and broker boundaries.
-- Infra sidecar: verify Docker/artifact mount assumptions.
-- Review sidecar: check v1-style sprawl, docs growth, gates, dashboards, or
-  coordinator drift.
-
-Main Codex remains the integrator. Sidecars should not mutate overlapping
-files, create durable workers, add schedulers, or bypass `NEXT_CODEX_GOAL.md`.
+The stateboard is the durable lane identity. A runtime sub-agent or worker is a
+bounded executor, not permanent memory.
 
 ## Stateboard Shape
 
-Each agent file keeps the same compact sections:
+Keep only current, high-signal sections:
 
-- `Engine Loop`
-- `Owns`
-- `Must Not`
-- `Held Resources`
-- `Active Queue`
-- `Running Jobs`
-- `Operator Help Needed`
-- `Done Recently`
-- `Next Handoff`
+- status and engine loop,
+- ownership and prohibitions,
+- resources,
+- current objective and ready queue,
+- running work,
+- operator help,
+- durable knowledge,
+- recovery,
+- a few evidence pointers,
+- next handoff.
 
-Keep entries short. Long experiment outputs belong outside the repo or in a
-future model registry, not in these files.
+Replace stale status instead of appending history. Details remain in Git at the
+pre-compaction commit `8f416f8` and in external artifacts.
 
-## Retired Stateboards
+## Shared Memory
 
-None.
+Each active role receives logical working-memory, permanent-knowledge, history,
+evidence, and recovery views over one planned shared substrate:
 
-## Review Notes
+```text
+D:\thericher-v2\model-artifacts\_control\ledger\YYYY-MM.jsonl
+D:\thericher-v2\model-artifacts\_control\catalog.sqlite
+```
 
-If stateboards become long historical ledgers, prefer compacting old details
-into `HANDOFF.md` or an external artifact summary instead of adding new report
-families.
+Until that substrate is implemented, stateboards and exact artifact pointers
+are the recovery bridge. Do not create per-agent databases, vector stores,
+history documents, daily goal files, or recovery reports.
+
+## Lifecycle
+
+Start new work as a temporary role assignment. Create a stateboard only after a
+role has a distinct authority boundary and recurring work across multiple Codex
+tasks or owns an independent resource. Move an empty role to invoked/standby
+status. Retire duplicate or stale roles without deleting the Git history that
+explains them. Codex reviews this portfolio at each company-goal boundary and
+may make these reversible lifecycle changes without waiting for routine
+operator approval; authority, cost, credential, capital, and live-risk changes
+still follow `AGENTS.md`.
