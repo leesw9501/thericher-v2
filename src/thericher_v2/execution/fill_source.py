@@ -27,6 +27,8 @@ class FillSourceEvidence:
     local_paper_fills: tuple[dict[str, Any], ...]
     unreadable_event_artifacts: tuple[str, ...]
     missing_zero_fill_event_artifacts: tuple[str, ...]
+    expected_fill_count_total: int
+    fill_count_mismatches: tuple[dict[str, int | str], ...]
     unknown_fill_count: int
 
     @property
@@ -45,10 +47,24 @@ class FillSourceEvidence:
             and self.unknown_fill_count == 0
         )
 
+    @property
+    def local_paper_fill_count_matches_expected(self) -> bool:
+        return not self.fill_count_mismatches
+
+    @property
+    def local_paper_replay_invariant_passed(self) -> bool:
+        return self.all_fills_local_paper and self.local_paper_fill_count_matches_expected
+
     def to_summary(self) -> dict[str, Any]:
         return {
             "fill_source_counts": self.fill_source_counts,
             "local_paper_fill_count": self.fill_source_counts.get(LOCAL_PAPER_SOURCE, 0),
+            "expected_fill_count_total": self.expected_fill_count_total,
+            "local_paper_fill_count_matches_expected": (
+                self.local_paper_fill_count_matches_expected
+            ),
+            "fill_count_mismatches": list(self.fill_count_mismatches),
+            "local_paper_replay_invariant_passed": self.local_paper_replay_invariant_passed,
             "non_local_fill_source_counts": self.non_local_fill_source_counts,
             "unknown_fill_count": self.unknown_fill_count,
             "unreadable_event_artifacts": list(self.unreadable_event_artifacts),
@@ -66,8 +82,11 @@ def collect_fill_source_evidence(
     local_paper_fills: list[dict[str, Any]] = []
     unreadable_artifacts: list[str] = []
     missing_zero_fill_artifacts: list[str] = []
+    expected_fill_count_total = 0
+    fill_count_mismatches: list[dict[str, int | str]] = []
     unknown_fill_count = 0
     for event_artifact in event_artifacts:
+        expected_fill_count_total += event_artifact.expected_fill_count
         path = event_artifact.path
         if path is None or not path.exists():
             if event_artifact.expected_fill_count == 0:
@@ -89,6 +108,17 @@ def collect_fill_source_evidence(
         except (TypeError, json.JSONDecodeError):
             unreadable_artifacts.append(_artifact_label(event_artifact))
             continue
+        local_paper_count_for_artifact = sum(
+            1 for payload in fill_payloads if payload.get("source") == LOCAL_PAPER_SOURCE
+        )
+        if local_paper_count_for_artifact != event_artifact.expected_fill_count:
+            fill_count_mismatches.append(
+                {
+                    "artifact": _artifact_label(event_artifact),
+                    "expected_fill_count": event_artifact.expected_fill_count,
+                    "observed_local_paper_fill_count": local_paper_count_for_artifact,
+                }
+            )
         for payload in fill_payloads:
             source = payload.get("source")
             if not isinstance(source, str) or not source:
@@ -102,6 +132,8 @@ def collect_fill_source_evidence(
         local_paper_fills=tuple(local_paper_fills),
         unreadable_event_artifacts=tuple(unreadable_artifacts),
         missing_zero_fill_event_artifacts=tuple(missing_zero_fill_artifacts),
+        expected_fill_count_total=expected_fill_count_total,
+        fill_count_mismatches=tuple(fill_count_mismatches),
         unknown_fill_count=unknown_fill_count,
     )
 

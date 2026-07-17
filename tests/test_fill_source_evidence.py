@@ -32,6 +32,9 @@ def test_fill_source_evidence_accepts_local_paper_only(tmp_path) -> None:
     assert evidence.all_fills_local_paper is True
     assert evidence.to_summary()["all_fills_local_paper"] is True
     assert evidence.to_summary()["local_paper_fill_count"] == 2
+    assert evidence.to_summary()["expected_fill_count_total"] == 2
+    assert evidence.to_summary()["local_paper_fill_count_matches_expected"] is True
+    assert evidence.to_summary()["local_paper_replay_invariant_passed"] is True
     assert evidence.local_paper_fills[0]["client_order_id"] == "a"
     assert evidence.non_local_fill_source_counts == {}
 
@@ -55,6 +58,32 @@ def test_fill_source_evidence_detects_mixed_and_unknown_sources(tmp_path) -> Non
     assert evidence.all_fills_local_paper is False
     assert summary["non_local_fill_source_counts"] == {"broker_paper": 1, "": 1}
     assert summary["unknown_fill_count"] == 1
+    assert summary["local_paper_replay_invariant_passed"] is False
+
+
+def test_fill_source_evidence_flags_expected_local_paper_fill_count_mismatch(
+    tmp_path,
+) -> None:
+    events = tmp_path / "events.jsonl"
+    _write_events(events, (_fill_event(source=LOCAL_PAPER_SOURCE, client_order_id="a"),))
+
+    evidence = collect_fill_source_evidence(
+        (FillEventArtifact(path=events, expected_fill_count=2, label="slice_a"),)
+    )
+    summary = evidence.to_summary()
+
+    assert evidence.all_fills_local_paper is True
+    assert summary["local_paper_fill_count"] == 1
+    assert summary["expected_fill_count_total"] == 2
+    assert summary["local_paper_fill_count_matches_expected"] is False
+    assert summary["local_paper_replay_invariant_passed"] is False
+    assert summary["fill_count_mismatches"] == [
+        {
+            "artifact": "slice_a",
+            "expected_fill_count": 2,
+            "observed_local_paper_fill_count": 1,
+        }
+    ]
 
 
 def test_fill_source_evidence_tolerates_missing_zero_fill_artifact(tmp_path) -> None:
@@ -67,6 +96,8 @@ def test_fill_source_evidence_tolerates_missing_zero_fill_artifact(tmp_path) -> 
 
     assert summary["all_fills_local_paper"] is True
     assert summary["local_paper_fill_count"] == 0
+    assert summary["expected_fill_count_total"] == 0
+    assert summary["local_paper_fill_count_matches_expected"] is True
     assert summary["unreadable_event_artifacts"] == []
     assert summary["missing_zero_fill_event_artifacts"] == [str(missing)]
 

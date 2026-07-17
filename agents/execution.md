@@ -26,12 +26,10 @@
 
 ## Active Queue
 
-1. Add one bounded broker-free local-paper replay invariant audit for existing
-   simulator fills/account replay.
-2. Add execution risk-limit preflight only when a future paper-loop goal needs
+1. Add execution risk-limit preflight only when a future paper-loop goal needs
    it.
-3. Keep future KIS adapter work separate from local paper simulator behavior.
-4. Add more realistic order types only when paper-loop evidence needs them.
+2. Keep future KIS adapter work separate from local paper simulator behavior.
+3. Add more realistic order types only when paper-loop evidence needs them.
 
 ## Running Jobs
 
@@ -39,6 +37,10 @@
 
 ## Done Recently
 
+- Local-paper fill-source evidence now includes a small replay invariant audit:
+  expected fill counts are compared with observed `source: local_paper` fills
+  per artifact, mismatches are surfaced in summaries, and no replay behavior,
+  broker code, order intents, credentials, KIS path, or durable worker changed.
 - Local emergency store exists for stop-new-orders and cancel-open-orders
   requests.
 - Broker-free local paper simulator now supports accepted/rejected/canceled

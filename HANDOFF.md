@@ -2653,9 +2653,19 @@ independent non-AMAT evidence, an explicit ADP strict-label rescue, or new
 independent local-paper label context. Do not spend GPU/replay/training time on
 this branch from the current evidence.
 
-Next, rotate to Execution/Paper and add one bounded broker-free local-paper
-replay invariant audit. The goal is to make local paper fills and account replay
-easier to trust before future model work feeds the paper loop.
+Execution/Paper added a bounded broker-free local-paper replay invariant audit.
+`collect_fill_source_evidence` now also compares expected fill counts against
+observed `source: local_paper` fill counts per artifact and exposes a compact
+`local_paper_replay_invariant_passed` summary without changing replay behavior.
+Focused tests cover local-only fills, mixed/unknown sources, zero-fill missing
+artifacts, unreadable nonzero artifacts, and expected-count mismatches. The
+external smoke artifact is:
+`D:\thericher-v2\model-artifacts\execution-paper\local-paper-fill-source-parity-audit-20260717-r1\metrics.json`.
+
+Next, rotate to Infra and add one bounded artifact-root and Docker research
+mount sanity check. This should improve reproducibility for GPU/model and
+local-paper artifacts without adding Docker layers, dependencies, schedulers,
+daemons, dashboards, notification loops, or durable multi-agent platform code.
 
 ## Daily Operator Review
 

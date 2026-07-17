@@ -27,12 +27,14 @@
 
 ## Active Queue
 
-1. Keep base `engine` and `web` environments free of heavy research
+1. Add one bounded artifact-root and Docker `research` mount sanity check so
+   GPU/model and paper-loop artifacts stay outside Git.
+2. Keep base `engine` and `web` environments free of heavy research
    dependencies.
-2. Keep PyTorch CUDA confined to Docker `research`.
-3. No immediate Docker/GPU, dependency, build-cache, scheduler, coordinator,
+3. Keep PyTorch CUDA confined to Docker `research`.
+4. No immediate dependency, build-cache, scheduler, coordinator,
    dashboard, notification, auto-commit, or platform task is open.
-4. Docker layer/cache improvement is passive infra context until a future
+5. Docker layer/cache improvement is passive infra context until a future
    single objective explicitly selects that infra slice.
 
 ## Running Jobs
