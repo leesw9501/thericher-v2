@@ -2605,10 +2605,21 @@ operator decisions, such as approvals for credentials, broker/KIS behavior,
 live/paper authority, public exposure, dependency/runtime expansion, or
 unclear data rights.
 
-Next, auto-select the next lane as Engine Research and define one bounded
-duplicate-aware evidence question before spending GPU time. Do not run compute,
-replay, training, data acquisition, Docker/GPU dependency work, broker work, or
-durable-platform work until that question is explicit.
+Engine Research evidence-question planning selected the smaller non-AMAT
+independent label-ready floor question before spending GPU time. The compact
+planning artifact is outside Git:
+`D:\thericher-v2\model-artifacts\engine-research-planning\non-amat-independent-evidence-question-20260717-r1\metrics.json`.
+It consumed only handoff/stateboard context, existing named metrics artifacts,
+and read-only sidecar review. It kept non-AMAT model-input/ablation
+`hold_no_compute`: current strict label-ready evidence remains `5` rows and
+`3` unique timing-context keys, and the broader inventory added `0` fresh strict
+unique contexts outside prior AMAT-bridge reuse.
+
+Next, run one bounded artifact-only non-AMAT independent evidence inventory to
+answer the selected row/key deficit question. Do not run compute, replay,
+training, data acquisition, market-data row reads, Docker/GPU dependency work,
+broker work, or durable-platform work unless a future single objective opens it
+explicitly.
 
 ## Daily Operator Review
 

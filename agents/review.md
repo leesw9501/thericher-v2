@@ -792,6 +792,12 @@
 - Operator clarification after post-compaction review: ordinary strategic lane
   choice should not block progress. Codex should auto-select the next lane by
   lane rotation and only stop for true operator decisions.
+- Non-AMAT evidence-question planning stayed one compact external planning
+  artifact, not a report/gate family. It improved feature/model research and
+  PnL attribution by making the evidence floor explicit before compute, while
+  avoiding broad `D:\market_data` scans, data acquisition, replay, trace,
+  training, ablation, scheduler/coordinator/dashboard work, durable platform
+  work, and promotion/risk/execution rules.
 
 ## Next Handoff
 
@@ -803,8 +809,9 @@
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- Queue hygiene and post-compaction review are complete. Auto-select the next
-  lane by lane rotation, starting with Engine Research evidence-question
-  definition. Do not stop for ordinary lane choice; stop only for true operator
+- Queue hygiene, post-compaction review, and Engine Research evidence-question
+  definition are complete. Auto-select the next lane by lane rotation and answer
+  the selected non-AMAT evidence-floor question artifact-only before opening
+  compute. Do not stop for ordinary lane choice; stop only for true operator
   decisions such as credentials, broker/KIS behavior, live/paper authority,
   public exposure, dependency/runtime expansion, or unclear data rights.
