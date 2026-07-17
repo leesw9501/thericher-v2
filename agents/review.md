@@ -745,6 +745,16 @@
   promotion language. It retired stale fresh-symbol active-queue context into
   passive evidence and used three temporary Codex sidecars as runtime reviewers,
   then closed them.
+- Stale research queue hygiene wrote one compact external artifact and added no
+  code, helper, job kind, worker, scheduler, dashboard, coordinator, report
+  family, gate, auto-commit path, broker authority, credential reads, data
+  acquisition, market-data reads, replay rerun, trace compute, trace recompute,
+  training, ablation, threshold search, exit simulation, feature rule,
+  simulator rule, durable multi-agent platform, or promotion language. It
+  retired stale Engine Research/Data handoff entries, held non-AMAT and longer
+  training context outside active compute, and found no ready independent
+  evidence question. It used three temporary Codex sidecars as runtime
+  reviewers, then closed them.
 
 ## Next Handoff
 
@@ -763,7 +773,7 @@
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- The next queue-hygiene pass is acceptable if it reduces stale handoff weight
-  and surfaces one next independent evidence question. It must not become a
+- Queue hygiene is complete and found no ready independent evidence question.
+  The next step should be one concise operator decision bundle, not another
   report family, gate, scheduler, coordinator, durable worker, replay queue,
   training run, threshold search, or promotion workflow.

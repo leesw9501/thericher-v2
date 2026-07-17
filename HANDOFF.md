@@ -2469,11 +2469,40 @@ The post-MPWR fresh-symbol Review/Simplification pass then completed:
   threshold crossings are not execution thresholds, replay rules, gates, risk
   rules, or promotion criteria.
 
-Next, run one bounded queue-hygiene pass over older Engine Research and Data
-stateboard handoffs to surface the next independent non-fresh-symbol evidence
-question. Keep it artifact-only and avoid compute, data acquisition, new
-helpers, new job kinds, schedulers, dashboards, gates, promotion rules, or
-durable platform work.
+The older Engine Research/Data queue-hygiene pass then completed:
+
+- Temporary Codex sidecars covered Review, Engine Research, and Data/Infra
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The pass consumed stateboards and existing external artifacts only. It
+  performed no market-data row read, broad recursive scan, acquisition, replay,
+  training, ablation, trace compute, trace recompute, threshold search, exit
+  simulation, KIS call, broker action, credential read, helper change, contract
+  change, job kind change, Docker change, dependency change, gate, promotion
+  rule, or report family.
+- The compact queue-hygiene artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\review-simplification\review-stale-research-queue-hygiene-20260717-r1\metrics.json`.
+- Result: no next independent non-fresh-symbol evidence question is ready for
+  compute. The fresh-symbol compute branch, DELL/MPWR/STX/WDC trace-only
+  recommendation, MPWR future replay candidate, post-MPWR Data inventory
+  follow-up, and old attribution/trace-comparison/MPWR handoff bullets are
+  retired from active queue context.
+- Held passive context remains: longer candidate training, non-AMAT
+  model-input/ablation, AMAT bridge lineage, and the conditional ADP strict
+  early-label row. The non-AMAT branch stays `hold_no_compute` because it has
+  only `5` strict label-ready rows and `3` strict unique timing-context keys
+  against the current `min_examples=8` floor, while broader inventory added
+  `0` fresh strict unique contexts outside prior AMAT-bridge reuse.
+- No operator data is needed now. The ADP missing strict bar
+  `2026-06-09T14:05:00+00:00` is only a conditional future data need if a later
+  goal explicitly tries to rescue that exact row.
+
+Next, prepare one concise operator decision bundle summarizing retired and held
+queues, then ask which strategic lane should open next. Do not continue into
+compute, data acquisition, replay, training, scheduler/coordinator work, or
+durable multi-agent platform work until that lane is chosen or a future
+artifact defines a bounded evidence question.
 
 ## Daily Operator Review
 

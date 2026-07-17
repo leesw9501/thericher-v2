@@ -549,37 +549,28 @@
   `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`.
   It retired the fresh-symbol active queue without reading market-data rows,
   scanning `D:\market_data`, acquiring data, or requesting operator data.
+- Stale research queue hygiene
+  `review-stale-research-queue-hygiene-20260717-r1` consumed stateboards and
+  existing artifacts only. It performed no `D:\market_data` scan, no row-level
+  market-data read, no acquisition, and no operator data request. Data follow-up
+  remains closed: the ADP missing strict early-label bar at
+  `2026-06-09T14:05:00+00:00` is only a conditional future need if a later
+  objective explicitly tries to rescue that exact row.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. MRVL, MU, SNDK, and COHR already
-  have local rows, compatible traces, local-paper event artifacts, and
-  attributed path context. Future data work should stay artifact/local-row
-  scoped unless a new objective names exact missing symbols or date ranges.
-- The next lane-rotation inventory should stay bounded to known local data and
-  artifact roots. Exclude the held MRVL/MU/SNDK/COHR branch from compute
-  recommendations, and acquire nothing unless a future objective names exact
-  missing symbols or date ranges.
-- The next trace-comparison or replay-selection planning artifact can reuse
-  existing trace artifacts and local data provenance only. Data Agent has no
-  acquisition task unless a later goal names exact missing symbols or date
-  ranges.
-- The next MPWR hold/rotate decision should consume existing external artifacts
-  only. Data Agent has no acquisition task for that goal.
-- The next lane should be Data, but stay bounded to existing local data and
-  artifact provenance. Prefer a shallow, targeted inventory that identifies the
-  next useful non-MPWR evidence batch or proves no data-lane follow-up is worth
-  running. Do not acquire data unless a future objective names exact missing
-  symbols or date ranges.
-- Data has no immediate acquisition or inventory follow-up after the post-MPWR
-  inventory. Rotate to Review/Simplification. A future trace-only GPU proposal
-  needs a new bounded Data artifact with independent non-held symbols, exact
-  clean local rows, no compatible existing trace, and no source-context leakage.
-- Fresh-symbol is now passive context, not a Data active queue. The next queue
-  hygiene pass may inspect stateboard handoffs and existing artifact names, but
-  should not scan `D:\market_data` or acquire data unless a future objective
-  names exact missing symbols/date ranges.
+- Data has no immediate acquisition, scan, inventory, or operator-help task
+  after the post-MPWR inventory and stale queue-hygiene pass.
+- Fresh-symbol, MPWR, MRVL/MU/SNDK/COHR, DELL/WDC/STX, GLW/INTC/QCOM, APP,
+  non-AMAT, and AMAT bridge entries are passive context unless a future single
+  objective names exact missing symbols or date ranges.
+- A future trace-only GPU proposal needs a new bounded Data artifact with
+  independent non-held symbols, exact clean local rows, no compatible existing
+  trace, and no source-context leakage before it can ask Engine Research to
+  spend compute.
+- Do not scan `D:\market_data` or acquire data for operator-review or
+  queue-hygiene goals.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

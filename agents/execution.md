@@ -538,6 +538,12 @@
   broker outcomes, local-paper replay, execution filters, simulator rules,
   feature rules, threshold rules, risk rules, exit policies, or live/paper KIS
   behavior.
+- Stale research queue hygiene referenced historical local-paper and
+  diagnostic-overlay evidence only through existing artifacts and stateboards.
+  It created no fills, orders, order intents, positions, broker adapters,
+  broker outcomes, local-paper replay, execution filters, simulator rules,
+  feature rules, threshold rules, risk rules, exit policies, or live/paper KIS
+  behavior.
 
 ## Next Handoff
 
@@ -606,6 +612,6 @@
   are complete. Future queue hygiene may classify stale evidence, but must not
   mutate local-paper fills, create order intents, infer broker behavior, or turn
   data/provenance observations into execution rules.
-- The next queue-hygiene pass must remain non-execution work. It may classify
-  stale evidence, but must not create broker, risk, replay, local-paper, order,
-  fill, or execution-rule behavior.
+- Queue hygiene is complete. The next operator-review bundle may classify
+  stale and held evidence, but must not create broker, risk, replay,
+  local-paper, order, fill, or execution-rule behavior.

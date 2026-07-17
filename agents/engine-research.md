@@ -1171,19 +1171,31 @@
   DELL/WDC/STX/GLW/INTC/QCOM/APP are passive/deferred context only. No replay,
   trace compute, trace recompute, training, ablation, threshold search,
   exit-policy simulation, new helper, job kind, or promotion rule was added.
+- Stale research queue hygiene
+  `review-stale-research-queue-hygiene-20260717-r1` consumed older Engine
+  Research/Data/Review stateboards and existing artifacts only, then confirmed
+  no next independent non-fresh-symbol evidence question is ready. Fresh-symbol
+  replay/trace/training, DELL/MPWR/STX/WDC trace-only follow-up, MPWR replay,
+  and post-MPWR Data follow-up are retired from active queue context. Non-AMAT
+  model-input/ablation remains `hold_no_compute` because strict evidence is
+  still only `5` label-ready rows and `3` unique timing-context keys against
+  the current `min_examples=8` floor, with `0` fresh strict unique contexts
+  added by broader inventory outside prior AMAT-bridge reuse. No replay, trace
+  compute, trace recompute, training, ablation, threshold search, Docker/GPU
+  job, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
 - The files under `agents/` are stateboards, not autonomous policy sources.
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
-  only GPU/Docker research worker.
-- Short experiments queue: the fresh-symbol branch is no longer active. Rotate
-  to queue hygiene over older Engine Research/Data handoffs to surface the next
-  independent non-fresh-symbol evidence question. Do not spend GPU time on
-  MPWR/fresh-symbol replay, trace compute, trace recompute, training, ablation,
-  threshold search, or exit-policy work until a later artifact defines a new
-  bounded question.
+  only GPU/Docker research worker. Execution, Infra, and Review are stateboards
+  plus temporary Codex sidecar roles, not repo-owned executable workers.
+- Short experiments queue: no ready compute question exists after queue
+  hygiene. Do not spend GPU time on MPWR/fresh-symbol replay, non-AMAT
+  model-input ablation, trace compute, trace recompute, training, threshold
+  search, or exit-policy work until a later artifact defines a new bounded
+  duplicate-aware evidence question.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

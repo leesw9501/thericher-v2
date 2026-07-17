@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded queue-hygiene pass over older Engine Research and Data
-stateboard handoffs.
+Prepare one concise operator decision bundle after stale queue hygiene.
 
-This advances backtest and walk-forward validation by retiring stale active
-queue context and surfacing the next independent non-fresh-symbol evidence
-question, without running compute or growing process.
+This advances review/simplification and backtest/walk-forward validation by
+summarizing which queues were retired, which contexts are merely held, and which
+strategic lane the operator should choose next. This is a decision point; do not
+invent a new compute or data objective without operator direction.
 
 ## Current Agent Reality
 
@@ -20,15 +20,10 @@ question, without running compute or growing process.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- For this goal, use temporary Codex sidecars only if useful:
-  - Review: identify stale queue/context sprawl.
-  - Engine Research: identify one next independent non-fresh-symbol evidence
-    question without queueing compute.
-  - Data/Infra: verify no data acquisition, broad scan, Docker, or dependency
-    work is needed.
-- These sidecars are runtime collaborators. Do not build a durable multi-agent
-  platform, scheduler, daemon, coordinator, notification loop, dashboard, or
-  auto-commit worker in this goal.
+- Temporary Codex sidecars may be used as role reviewers for this goal, but they
+  are runtime collaborators. Do not build a durable multi-agent platform,
+  scheduler, daemon, coordinator, notification loop, dashboard, or auto-commit
+  worker.
 
 ## Hard Boundaries
 
@@ -44,11 +39,10 @@ question, without running compute or growing process.
   threshold search, replay rerun, exit-policy simulation, broker execution, or
   data acquisition.
 - Do not perform a broad recursive scan of `D:\market_data`.
-- Do not turn queue-hygiene output into execution thresholds, risk rules,
-  broker policies, replay rules, feature rules, gates, or model-promotion
-  rules.
+- Do not turn held evidence into execution thresholds, risk rules, broker
+  policies, replay rules, feature rules, gates, or model-promotion rules.
 - Do not store generated GPU/model artifacts or market data in the repo. Use
-  `D:\thericher-v2\model-artifacts` for any external artifact.
+  `D:\thericher-v2\model-artifacts` for external artifacts if needed.
 
 ## Required First Reads
 
@@ -74,40 +68,51 @@ question, without running compute or growing process.
 
 3. Ask Claude CLI for a short drift-check before adding or changing any helper,
    job kind, dispatch path, agent governance, artifact contract, data contract,
-   replay contract, attribution contract, or local-paper behavior. If the pass
-   can be produced by reading stateboards and existing artifact summaries with
-   a one-off script, prefer that.
+   replay contract, attribution contract, local-paper behavior, or daily-report
+   policy. A concise operator bundle from existing artifacts/stateboards should
+   not need a Claude check.
 
 ## Evidence To Consume
 
+- Queue-hygiene artifact:
+  `D:\thericher-v2\model-artifacts\review-simplification\review-stale-research-queue-hygiene-20260717-r1\metrics.json`
 - Post-MPWR fresh-symbol retirement artifact:
   `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`
-- `agents/engine-research.md`
-- `agents/data.md`
-- `agents/review.md`
+- Current stateboards under `agents/`
 - `HANDOFF.md`
 
 Known facts to preserve:
 
 - The fresh-symbol compute branch is retired from the active queue.
 - MPWR and MRVL/MU/SNDK/COHR are passive held evidence, not active compute.
+- DELL/MPWR/STX/WDC trace-only follow-up and MPWR replay follow-up are retired.
+- Non-AMAT model-input/ablation is `hold_no_compute`: only `5` strict
+  label-ready rows and `3` strict unique timing-context keys are available
+  against the current `min_examples=8` floor, with `0` fresh strict unique
+  contexts added by broader inventory outside prior AMAT-bridge reuse.
 - No immediate data-lane, Engine Research, GPU, replay, or acquisition follow-up
-  is justified by the latest fresh-symbol artifacts.
-- Longer candidate training is held until a future artifact defines enough
-  independent duplicate-aware context.
+  is justified by the latest artifacts.
+- No operator data is needed now. The ADP missing strict early-label bar is only
+  a conditional future need.
 
 ## Required Work
 
-1. Inspect older Engine Research and Data stateboard handoffs for stale active
-   queue entries that were already resolved by later artifacts.
-2. Produce one compact external queue-hygiene artifact recording:
-   - consumed stateboards/artifacts,
-   - stale context retired,
-   - active held context that remains passive,
-   - one recommended next independent non-fresh-symbol evidence question, or a
-     clear reason no such question is ready.
-3. Update `HANDOFF.md` and agent stateboards only as needed to keep queues clean.
-4. Refresh `NEXT_CODEX_GOAL.md` again before ending with one single objective.
+1. Produce one concise operator decision bundle under the daily report paths for
+   the current KST date:
+   - `reports/daily/YYYY-MM-DD-summary.md`
+   - `reports/daily/YYYY-MM-DD-metrics.json`
+   - `reports/daily/YYYY-MM-DD-next-goal.md`
+2. The bundle should ask the operator to choose one next strategic lane, such as:
+   - open a new bounded data universe,
+   - define the next model-input research question,
+   - prepare local-paper/paper-trading readiness work,
+   - improve GPU/research infra ergonomics without new schedulers,
+   - simplify/review before more compute.
+3. Keep the bundle short. Do not create multiple reports or a new report family.
+4. Update `HANDOFF.md` and agent stateboards only if needed to point to the
+   operator decision bundle.
+5. Refresh `NEXT_CODEX_GOAL.md` before ending so the next objective waits for,
+   or clearly records, the operator lane decision.
 
 ## Verification
 
@@ -121,16 +126,15 @@ docker compose config --quiet
 
 Also report:
 
-- the queue-hygiene command or primitive used,
-- any sidecars or executable workers used,
+- which sidecars or executable workers were used,
 - whether Docker/GPU was used,
-- produced artifact paths,
-- what stale context was retired or held,
-- what lane should rotate next and why.
+- produced report/artifact paths,
+- what operator decision is needed,
+- what was intentionally not built.
 
 ## Suggested Commit Message
 
-`Clean stale research queue context`
+`Prepare operator decision bundle`
 
 ## Completion Report
 
@@ -143,8 +147,6 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced artifacts,
-- local-paper source evidence if referenced,
-- diagnostic-overlay source evidence if referenced,
+- produced reports/artifacts,
 - what was intentionally not built,
-- next goal.
+- next goal or operator decision needed.

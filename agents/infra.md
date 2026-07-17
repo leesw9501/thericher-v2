@@ -664,6 +664,11 @@
   scheduler, coordinator, dashboard, notification, worker, or Engine Research
   Agent files, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\review-simplification`.
+- Stale research queue hygiene ran locally as CPU/artifact-only work, used no
+  Docker or GPU job, changed no dependency, Docker, compose, scheduler,
+  coordinator, dashboard, notification, worker, or Engine Research/Data Agent
+  files, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\review-simplification`.
 
 ## Next Handoff
 
@@ -716,6 +721,7 @@
   Review/Simplification pass are complete. Do not add Docker layers,
   schedulers, daemons, coordinator plumbing, dashboard, notification, durable
   multi-agent platform, or dependency changes for queue hygiene.
-- The next queue-hygiene pass should stay local/artifact-only. Do not add
-  Docker layers, schedulers, daemons, coordinator plumbing, dashboard,
-  notification, durable multi-agent platform, or dependency changes.
+- Queue hygiene is complete. The next operator-review bundle should stay
+  local/artifact-only. Do not add Docker layers, schedulers, daemons,
+  coordinator plumbing, dashboard, notification, durable multi-agent platform,
+  or dependency changes.
