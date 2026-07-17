@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one compact post-compaction handoff review.
+Pause for operator direction and choose the next strategic lane.
 
-This advances review/simplification and backtest/walk-forward validation by
-checking whether the lane-5 simplification sequence should pause for operator
-direction or open one new bounded non-compute objective. Do not open compute,
-data acquisition, broker, Docker/GPU, dependency, scheduler, dashboard, or
-durable-platform work from this review.
+This advances review/simplification by preventing review-only work from
+becoming process scaffolding. The lane-5 simplification sequence is complete:
+stale queues were retired, Engine/Data/Infra active queues were compacted, and
+the post-compaction handoff review found no further useful bounded
+non-compute simplification objective.
 
 ## Current Agent Reality
 
@@ -21,9 +21,9 @@ durable-platform work from this review.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- Temporary Codex sidecars may review stale context, but do not build a durable
-  multi-agent platform, scheduler, daemon, coordinator, notification loop,
-  dashboard, or auto-commit worker.
+- Temporary Codex sidecars may review or inspect bounded evidence, but do not
+  build a durable multi-agent platform, scheduler, daemon, coordinator,
+  notification loop, dashboard, or auto-commit worker.
 
 ## Hard Boundaries
 
@@ -36,13 +36,14 @@ durable-platform work from this review.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, dashboard, or auto-commit worker.
 - Do not run model training, ablation, trace compute, trace recompute,
-  threshold search, replay rerun, exit-policy simulation, broker execution, or
-  data acquisition.
+  threshold search, replay rerun, exit-policy simulation, broker execution,
+  data acquisition, Docker/GPU/dependency work, or another review-only pass
+  until the operator chooses a lane.
 - Do not perform a broad recursive scan of `D:\market_data`.
 - Do not turn held evidence into execution thresholds, risk rules, broker
   policies, replay rules, feature rules, gates, or model-promotion rules.
 - Do not store generated GPU/model artifacts or market data in the repo. Use
-  `D:\thericher-v2\model-artifacts` for any external review artifact.
+  `D:\thericher-v2\model-artifacts` for external artifacts.
 
 ## Required First Reads
 
@@ -65,30 +66,34 @@ durable-platform work from this review.
    - `agents/execution.md`
    - `agents/infra.md`
    - `agents/review.md`
-   - `D:\thericher-v2\model-artifacts\review-simplification\operator-selected-simplification-review-20260717-r1\metrics.json`
-   - `D:\thericher-v2\model-artifacts\review-simplification\stateboard-active-queue-compaction-20260717-r1\metrics.json`
+   - `D:\thericher-v2\model-artifacts\review-simplification\post-compaction-handoff-review-20260717-r1\metrics.json`
 
 3. Ask Claude CLI for a short drift-check before changing architecture,
    promotion rules, agent governance, helper/job contracts, replay/local-paper
-   behavior, or daily-report policy. A compact artifact/stateboard review
-   should not need a Claude check.
+   behavior, daily-report policy, or any durable worker policy.
 
 ## Required Work
 
-1. Inspect current handoff/stateboards and the two latest review artifacts.
-2. Decide whether any bounded non-compute simplification objective remains
-   useful, or whether work should pause for operator direction.
-3. Produce one compact external review artifact under
-   `D:\thericher-v2\model-artifacts\review-simplification` recording:
-   - consumed handoff/stateboards/artifacts,
-   - whether another bounded non-compute objective is recommended,
-   - why compute/acquisition/broker/Docker/platform work remains closed.
-4. Update `HANDOFF.md` and `agents/review.md` only if needed.
-5. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
+Ask the operator to choose exactly one next strategic lane. Do not start
+implementation until the operator chooses.
+
+Recommended lanes:
+
+1. Engine Research: define one new duplicate-aware evidence question before
+   spending GPU time.
+2. Data: define one exact data-collection or data-quality objective with stop
+   rules.
+3. Execution/Paper: prepare the next broker-free paper-loop or risk-control
+   slice without KIS credentials.
+4. Infra: improve reproducibility only if a concrete runtime bottleneck is
+   selected.
+5. Review/Simplification: only if tied to a concrete engine-loop risk, not
+   another general cleanup pass.
 
 ## Verification
 
-Run:
+If the next task only asks for operator direction, no tests are required. Once
+a lane is selected and implementation changes are made, run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -96,30 +101,19 @@ uv run --extra dev ruff check .
 docker compose config --quiet
 ```
 
-Also report:
-
-- sidecars or executable workers used,
-- whether Docker/GPU was used,
-- produced artifact paths,
-- whether work should pause or continue with a bounded non-compute objective,
-- what was intentionally not built,
-- next goal.
-
 ## Suggested Commit Message
 
-`Review post-compaction handoff`
+`Choose next strategic lane`
 
 ## Completion Report
 
-Report:
+When a lane is selected in a future task, report:
 
+- chosen lane,
 - files changed,
 - tests run,
 - commit hash,
 - sidecars or executable workers used,
-- data found or acquired under `D:\market_data`,
-- data still needed from the operator, if any,
-- whether GPU/Docker compute was used and where artifacts were written,
-- produced artifacts,
+- whether data, Docker/GPU, or broker behavior was touched,
 - what was intentionally not built,
 - next recommended goal.

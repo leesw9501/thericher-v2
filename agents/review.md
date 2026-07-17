@@ -25,9 +25,8 @@
 
 ## Active Queue
 
-1. Run one compact post-compaction handoff review.
-2. Decide whether the next objective should pause for operator direction or
-   open one bounded non-compute simplification objective.
+1. No immediate Review/Simplification task is open.
+2. Pause for operator direction before opening another lane.
 
 ## Running Jobs
 
@@ -35,8 +34,8 @@
 
 ## Operator Help Needed
 
-- None. The operator selected lane 5: run another simplification/review pass
-  before more compute.
+- Choose the next strategic lane. Current review says another review-only pass
+  would risk process sprawl unless it is tied to a concrete engine loop.
 
 ## Done Recently
 
@@ -784,19 +783,23 @@
   Docker/GPU, dependency, build-cache, scheduler, coordinator, dashboard,
   notification, auto-commit, or platform task. Held resources and history were
   preserved.
+- Post-compaction handoff review
+  `post-compaction-handoff-review-20260717-r1` consumed current handoff,
+  stateboards, and the two latest simplification artifacts only. It found no
+  further useful bounded non-compute simplification objective and recommends
+  pausing for operator lane direction to avoid v1-style review/report sprawl.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- The operator selected lane 5, so the next follow-up is simplification/review,
-  not automatic attribution, data inventory, replay, training, or trace-compute
-  work.
+- The operator-selected lane-5 simplification sequence is complete. Do not
+  continue review-only work unless a future goal ties it to a concrete engine
+  loop.
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- Queue hygiene is complete and found no ready independent evidence question.
-  The broad `Active Queue` wording in Engine Research, Data, and Infra has
-  been compacted. Next, run a compact post-compaction handoff review and decide
-  whether to pause for operator direction or open a new bounded non-compute
-  objective.
+- Queue hygiene and post-compaction review are complete. Pause for operator
+  direction before opening compute, data acquisition, replay, training,
+  Docker/GPU, broker, scheduler, dashboard, durable-platform, or further
+  simplification work.
