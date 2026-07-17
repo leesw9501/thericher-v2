@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded Data Agent lane-rotation inventory for the next independent
-evidence batch.
+Run one bounded Engine Research trace-only GPU batch for DELL, MPWR, STX, and
+WDC.
 
-This advances data collection and feature/model research by using existing
-`D:\market_data` rows plus external artifact provenance to decide what, if
-anything, should be investigated after the held MRVL/MU/SNDK/COHR fresh-symbol
-branch.
+This advances feature/model research by filling the trace gap identified by
+the Data Agent lane-rotation inventory, while keeping replay, local-paper
+execution, model training, and threshold iteration held.
 
 ## Current Agent Reality
 
@@ -22,11 +21,9 @@ branch.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
 - For this goal, actually use temporary Codex sidecars in parallel when useful:
-  - Data: verify inventory scope and whether existing local data is enough.
-  - Engine Research: identify which inventory result could become a bounded
-    future research question.
-  - Execution/Review: verify no source-separation, broker, gate, or process
-    sprawl drift.
+  - Engine Research: verify trace-only command shape and threshold context.
+  - Data: verify DELL/MPWR/STX/WDC local rows and no acquisition need.
+  - Execution/Review: verify no replay/order/gate semantics.
 - These sidecars are runtime collaborators. Do not build a durable multi-agent
   platform, scheduler, daemon, coordinator, notification loop, dashboard, or
   auto-commit worker in this goal.
@@ -35,28 +32,23 @@ branch.
 
 - Do not call KIS APIs.
 - Do not place paper or live orders through any broker.
+- Do not run local-paper replay or create order intents/fills.
 - Do not read credentials, `.env`, or secret-like files.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, dashboard, or auto-commit worker.
-- Do not run model training, ablation, trace recomputation, replay reruns,
-  threshold search, exit-policy simulation, or broker/local-paper execution.
+- Do not run model training, ablation, replay reruns, threshold search,
+  exit-policy simulation, or broker/local-paper execution.
 - Do not download market data into the Git workspace.
-- Do not acquire new market data unless it is no-auth, lawful,
-  license-compatible, narrowly useful for this inventory, and stored outside
-  Git under `D:\market_data`.
-- Stop acquisition attempts when sources require credentials/payment/manual
-  access, licensing is unclear, two automated attempts fail for the same
-  source, or more data no longer improves this objective.
+- Do not acquire new market data.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Keep inventory rows and provenance summaries labeled as
-  `source: diagnostic_overlay`.
-- Do not turn the inventory into a replay trigger, execution threshold,
-  order-intent generator, risk rule, broker policy, feature rule, gate, or
-  model-promotion rule.
+- Keep trace candidate summaries labeled as `source: diagnostic_overlay`.
+- Do not turn trace probabilities into replay triggers, execution thresholds,
+  order-intent generators, risk rules, broker policies, feature rules, gates,
+  or model-promotion rules.
 
 ## Required First Reads
 
@@ -81,56 +73,53 @@ branch.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before adding or changing any helper,
-   job kind, dispatch path, agent governance, artifact contract, or acquisition
-   contract. If the inventory can be done with the existing Data Agent runner
-   or a direct artifact script, prefer that over adding code.
+   job kind, dispatch path, agent governance, artifact contract, or replay
+   contract. If the trace batch can directly call the existing trace primitive
+   or existing Engine Research Agent runner without code changes, prefer that.
 
 ## Evidence To Consume
 
-- Path-shape comparison artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`
-- Duplicate-aware simplification artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-duplicate-aware-decision-20260717-r1\metrics.json`
-- Data Agent trace/data availability artifact:
-  `D:\thericher-v2\model-artifacts\data-agent\fresh-symbol-trace-data-availability-20260717-r1\metrics.json`
+- Data Agent lane-rotation inventory:
+  `D:\thericher-v2\model-artifacts\data-agent\data-agent-fresh-symbol-lane-rotation-inventory-20260717-r1\metrics.json`
+- Fresh-symbol trace-only batch for prior symbols:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`
+- Short source-context feature branch:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
 - Known local Yahoo snapshot:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 Known facts to confirm:
 
-- The MRVL/MU/SNDK/COHR branch is held for replay/training.
-- The path-shape comparison recommends no model, replay, or exit-timing
-  follow-up for that branch.
-- Earlier data inventory listed trace-missing clean candidates including DELL,
-  MPWR, STX, APP, and WDC, plus any remaining clean candidates not yet consumed.
+- MRVL, MU, SNDK, and COHR are held and must not be included.
+- GLW, INTC, and QCOM already have crossing traces; do not replay them here.
+- APP is deferred because it is marked as a source-context training symbol.
+- DELL, MPWR, STX, and WDC have clean first-`240` local Yahoo windows and no
+  compatible short source-context trace.
 
 ## Required Work
 
-1. Confirm the held branch facts above and exclude MRVL/MU/SNDK/COHR from any
-   compute recommendation.
-2. Inventory a useful, bounded subset of existing local data and artifact
-   provenance for the next independent evidence batch. Avoid expensive full
-   recursive scans unless the known artifacts are insufficient.
-3. Prefer the existing Data Agent runner if it fits; otherwise use a direct
-   artifact-only script. Do not add a new worker or job kind.
-4. Summarize candidate rows by symbol with:
-   - local data availability,
-   - first-`240` bar cleanliness if already available cheaply,
-   - compatible trace availability,
-   - prior branch/exclusion reason,
-   - whether a future trace-only GPU question is justified.
-5. Produce at most one compact external inventory artifact recording:
+1. Confirm the lane-rotation inventory facts above.
+2. Run or prepare exactly one bounded trace-only GPU batch for DELL, MPWR, STX,
+   and WDC using the existing trace primitive/path:
+   - `max_bars=240`,
+   - existing `snapshot=2026-06-18`,
+   - existing short source-context feature branch,
+   - artifacts outside Git.
+3. Do not run replay, local paper, training, ablation, threshold search, or exit
+   simulation.
+4. Produce one compact external batch summary recording:
    - consumed artifact paths,
-   - market-data roots inspected,
-   - acquisition attempts and stop reason, if any,
-   - candidate list and exclusions,
-   - recommendation for the next engine lane,
-   - no promotion/gate/execution-rule semantics.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending:
-   - If enough independent clean candidates exist, the next goal may be a
-     small trace-only Engine Research question.
-   - If not, rotate to execution/paper readiness or review/simplification
-     instead of forcing compute.
+   - per-symbol trace artifact paths,
+   - probability min/mean/max,
+   - threshold gap against the fixed descriptive buy threshold,
+   - threshold crossing counts,
+   - source/model/data lineage,
+   - no replay/order/gate semantics.
+5. Refresh `NEXT_CODEX_GOAL.md` again before ending:
+   - If one or more of DELL/MPWR/STX/WDC cross the fixed descriptive threshold,
+     make the next goal a compact trace-comparison or replay-selection planning
+     artifact first, not immediate replay.
+   - If none cross, rotate away from fresh-symbol trace compute.
 
 ## Verification
 
@@ -144,15 +133,15 @@ docker compose config --quiet
 
 Also report:
 
-- the inventory command or focused smoke used,
+- the trace command used,
 - any sidecars or executable workers used,
 - whether Docker/GPU was used,
-- produced artifact path, if any,
-- whether future GPU trace/replay/model work is justified.
+- produced artifact paths,
+- whether future replay/model work is justified.
 
 ## Suggested Commit Message
 
-`Compare fresh-symbol path shapes`
+`Inventory next fresh-symbol trace batch`
 
 ## Completion Report
 
@@ -166,7 +155,7 @@ Report:
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
 - produced artifacts,
-- local-paper source evidence carried forward,
+- local-paper source evidence carried forward, if any,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,
 - next goal.

@@ -2214,6 +2214,39 @@ identify the next independent evidence batch, or record that no useful data
 lane follow-up remains. Do not queue replay, trace compute, training, or exit
 simulation unless a later single objective explicitly allows it.
 
+The fresh-symbol Data Agent lane-rotation inventory then completed:
+
+- Temporary Codex sidecars covered Data, Engine Research, and Execution/Review
+  checks in parallel. They were runtime collaborators only; no durable
+  multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or new repo-owned worker was added.
+- The inventory consumed the path-shape comparison, duplicate-aware
+  simplification, trace/data availability, and fresh-symbol trace-only batch
+  artifacts. It performed one targeted read of the known
+  `snapshot=2026-06-18` Yahoo gzip for the `17` candidate symbols only; it did
+  not perform a recursive market-data scan.
+- The compact inventory artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\data-agent\data-agent-fresh-symbol-lane-rotation-inventory-20260717-r1\metrics.json`.
+- Result: MRVL, MU, SNDK, and COHR stayed excluded as a held branch. AMT, AMGN,
+  AXP, AZN, and AGG stayed excluded because compatible traces did not cross the
+  descriptive buy threshold. GLW, INTC, and QCOM already have crossing traces
+  from the fresh-symbol trace-only batch, but are not replay triggers in this
+  inventory. APP is clean and trace-missing but deferred because it is marked as
+  a source-context training symbol.
+- The next independent trace-only candidate batch is DELL, MPWR, STX, and WDC.
+  Each has a clean first-`240` local Yahoo window, no compatible short
+  source-context trace, and no held-branch evidence. No operator data or
+  acquisition is needed.
+- The inventory created no fills, orders, order intents, broker outcomes,
+  replay, trace compute, training, ablation, threshold search, exit simulation,
+  feature rule, gate, promotion rule, scheduler, or durable worker. Candidate
+  rows stayed `source: diagnostic_overlay`, and the held branch carried forward
+  `100` referenced fills as `source: local_paper` evidence only.
+
+Next, run one bounded Engine Research trace-only GPU batch for DELL, MPWR, STX,
+and WDC using the existing trace primitive in Docker `research`. Do not run
+replay, training, ablation, threshold search, or exit simulation in that goal.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

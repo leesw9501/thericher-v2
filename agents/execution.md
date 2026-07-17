@@ -491,6 +491,11 @@
   orders, order intents, broker adapters, broker outcomes, execution filters,
   simulator rules, feature rules, threshold rules, risk rules, exit policies,
   or live/paper KIS behavior.
+- Fresh-symbol lane-rotation inventory consumed artifact and market-data
+  provenance only. It created no fills, orders, order intents, positions,
+  broker adapters, broker outcomes, local-paper replay, execution filters,
+  simulator rules, feature rules, threshold rules, risk rules, exit policies,
+  or live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -548,3 +553,6 @@
 - Treat the current fresh-symbol hold as descriptive evidence only, not an
   automated gate or execution rule. A future data-lane inventory may reference
   the hold but must not alter local-paper or broker behavior.
+- The next trace-only GPU batch must not create local-paper fills or order
+  intents. Any later replay goal must explicitly preserve `source:
+  local_paper` fills and remain broker-free.

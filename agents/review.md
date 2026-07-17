@@ -685,6 +685,14 @@
   multi-agent platform, or promotion language. It used three temporary Codex
   sidecars as role reviewers, then closed them. The result supports rotating
   lanes instead of stretching the branch into another diagnostic family.
+- Fresh-symbol lane-rotation inventory wrote one compact external artifact and
+  added no code, helper, job kind, worker, scheduler, dashboard, coordinator,
+  report family, gate, auto-commit path, broker authority, credential reads,
+  data acquisition, replay rerun, trace compute, training, ablation, threshold
+  search, exit simulation, feature rule, simulator rule, durable multi-agent
+  platform, or promotion language. It used three temporary Codex sidecars as
+  role reviewers, then closed them. The result narrows the next GPU work to a
+  trace-only four-symbol batch rather than replay or model training.
 
 ## Next Handoff
 
@@ -700,3 +708,6 @@
   it feeds the engine loop; do not create a report family, promotion decision,
   scheduler/coordinator, durable multi-agent platform, replay run, training run,
   exit simulation, or execution rule.
+- The next trace-only goal is acceptable because it advances feature/model
+  research from a bounded data inventory. It must not grow into replay,
+  training, model promotion, scheduler/coordinator work, or a report family.

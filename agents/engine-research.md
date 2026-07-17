@@ -1104,6 +1104,12 @@
   `11.4870` and mean adverse excursion `-1.5544`. The branch remains held:
   no model-input, exit-timing, replay, or training follow-up is justified from
   this evidence.
+- Fresh-symbol Data Agent lane-rotation inventory
+  `data-agent-fresh-symbol-lane-rotation-inventory-20260717-r1` found the next
+  independent clean trace-missing batch is DELL, MPWR, STX, and WDC. GLW, INTC,
+  and QCOM already have crossing traces but should be kept as comparison
+  context, not immediate replay triggers. APP is deferred because it appears in
+  source-context training scope. No GPU work ran during the inventory.
 
 ## Next Handoff
 
@@ -1112,8 +1118,8 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Rotate to a data-lane inventory for the next independent
-  evidence batch before spending more GPU time.
+  fresh-symbol branch. Next GPU work should be trace-only for DELL, MPWR, STX,
+  and WDC, with no replay or training in that trace goal.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

@@ -620,6 +620,11 @@
   It changed no dependency, Docker, compose, scheduler, coordinator, dashboard,
   notification, worker, or Engine Research Agent files and used no Docker/GPU
   compute.
+- Fresh-symbol lane-rotation inventory ran locally as CPU/artifact-only work,
+  read one known Yahoo gzip snapshot directly, and wrote one compact artifact
+  under `D:\thericher-v2\model-artifacts\data-agent`. It changed no dependency,
+  Docker, compose, scheduler, coordinator, dashboard, notification, worker, or
+  Engine Research Agent files and used no Docker/GPU compute.
 
 ## Next Handoff
 
@@ -665,3 +670,7 @@
   in parallel, but do not add a scheduler, daemon, coordinator, dashboard,
   notification loop, durable multi-agent platform, Docker layer change, or
   dependency change.
+- The next DELL/MPWR/STX/WDC trace-only batch should use the existing Docker
+  `research` path with current `src` mounted read-only and artifacts under
+  `/app/model_artifacts`. Do not add Docker layers, schedulers, daemons, or
+  coordinator plumbing.
