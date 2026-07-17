@@ -463,6 +463,14 @@
   `0` order intents, `0` fills, `0` positions, and `0` broker outcomes. The
   crossing evidence remains `source: diagnostic_overlay` until a future
   broker-free replay creates local-paper fills.
+- Fresh-symbol replay-selection ran through the existing broker-free
+  threshold-robustness/local-paper path only. It completed `12` variants over
+  MRVL, MU, SNDK, and COHR, observed `100` local-paper order intents and `100`
+  fill events, and `collect_fill_source_evidence` verified
+  `fill_source_counts: {"local_paper": 100}`,
+  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
+  `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
+  diagnostic-overlay, KIS, live, or external paper broker fills were observed.
 
 ## Next Handoff
 
@@ -509,6 +517,8 @@
 - If a later trace/data inventory identifies a crossing candidate, replay may
   still run only through existing broker-free local-paper research jobs and
   must verify `source: local_paper` fills before any bridge or PnL attribution.
-- The immediate next replay-selection may create local-paper fills only through
-  existing broker-free research jobs. It must not gain broker/KIS authority and
-  must verify `source: local_paper` fills before attribution.
+- The immediate next attribution should parse existing replay-selection event
+  artifacts only. It must preserve all original fills as `source: local_paper`,
+  label any reconstructed path/feature context as `source: diagnostic_overlay`,
+  and avoid creating new orders, order intents, broker outcomes, execution
+  filters, simulator rules, feature rules, or threshold rules.

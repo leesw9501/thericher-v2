@@ -1060,6 +1060,17 @@
   All `7` traces completed and crossed the fixed `0.541000` descriptive buy
   threshold; MRVL was strongest at `0.565431`, gap `+0.024431`. No replay,
   orders, fills, training, ablation, new job kind, or dispatch path was added.
+- Fresh-symbol replay-selection
+  `engine-agent-fresh-symbol-replay-selection-20260717-r1` consumed the
+  existing MRVL, MU, SNDK, and COHR traces directly through the existing
+  threshold-robustness/local-paper primitive in Docker `research`, completed
+  `4` slices and `12` variants at threshold pairs `0.541/0.497`,
+  `0.542/0.497`, and `0.543/0.497`, and produced `100` verified
+  `source: local_paper` fills. Compact artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`.
+  PnL was mixed: MRVL and MU variants were positive, while SNDK and COHR were
+  negative. No trace recompute, training, ablation, data acquisition, new job
+  kind, dispatch path, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1067,10 +1078,11 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: run one small broker-free replay-selection over the
-  strongest crossing traces first: MRVL, MU, SNDK, and COHR. Consume the
-  existing trace artifacts through the existing threshold-robustness/replay
-  primitive, then verify all fills are `source: local_paper` before attribution.
+- Short experiments queue: attribute the fresh-symbol replay-selection paths
+  before broader replay. Consume the replay-selection robustness/event
+  artifacts and selected local bars only; summarize closed/open paths,
+  symbol/threshold PnL, adverse/favorable movement, and duplicate threshold
+  behavior with fills still verified as `source: local_paper`.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

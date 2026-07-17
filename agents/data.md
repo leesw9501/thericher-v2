@@ -484,12 +484,19 @@
 - Fresh-symbol trace-only GPU batch reused the same local Yahoo snapshot for
   MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM at `max_bars=240`. All traces used
   existing rows and wrote artifacts outside Git; no data was acquired.
+- Fresh-symbol replay-selection reused the same
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+  file for MRVL, MU, SNDK, and COHR at `max_bars=240`, consumed existing trace
+  artifacts, and acquired no data. The replay-selection produced fills, so the
+  next data need is selected local bar context for trade-path attribution, not
+  acquisition.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. The replay-selection symbols
-  MRVL, MU, SNDK, and COHR already have local rows and compatible traces.
+- The next data task is still not acquisition. MRVL, MU, SNDK, and COHR already
+  have local rows, compatible traces, and local-paper event artifacts; provide
+  selected bar context only as needed for trade-path attribution.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

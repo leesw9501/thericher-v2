@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded fresh-symbol broker-free local-paper replay-selection from the
-strongest trace-only crossing symbols.
+Attribute the fresh-symbol replay-selection trade paths and PnL.
 
-This advances backtest validation and PnL attribution by converting the best
-fresh-symbol probability traces into a small local-paper replay, without KIS,
-credentials, live/paper broker calls, training, or broader search.
+This advances PnL attribution and backtest validation by consuming the `100`
+broker-free local-paper fills created by the fresh-symbol replay-selection and
+turning them into compact closed/open trade-path evidence before any broader
+replay, model training, feature rule, or threshold iteration.
 
 ## Current Agent Reality
 
@@ -34,18 +34,14 @@ credentials, live/paper broker calls, training, or broader search.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not run model training, feature-input ablation, trace recomputation, broad
+- Do not run model training, ablation, trace recomputation, replay reruns,
   threshold search, or data acquisition.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Prefer existing trace artifacts and existing broker-free local-paper replay
-  primitives. Do not add a new job kind or executable worker unless direct
-  helper use is impossible, and ask Claude CLI first if a dispatch change is
-  needed.
-- Keep diagnostic context labeled as `source: diagnostic_overlay`.
-- Any fills created by the local simulator must remain `source: local_paper`.
-- Do not turn replay-selection into a live execution threshold, order-intent
+- Keep diagnostic/path context labeled as `source: diagnostic_overlay`.
+- Preserve all referenced fills as `source: local_paper`.
+- Do not turn attribution into a live execution threshold, order-intent
   generator, risk rule, broker policy, feature rule, gate, or model-promotion
   rule.
 
@@ -72,68 +68,64 @@ credentials, live/paper broker calls, training, or broader search.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: verify the replay-selection helper shape and threshold
-     pairs.
-   - Execution/Review: verify local-paper-only fills and no execution/gate
-     semantics.
-   - Infra: verify Docker `research` only if replay runs in Docker.
+   - Engine Research: verify trade-path helper shape and attribution fields.
+   - Data: verify selected MRVL/MU/SNDK/COHR local bar context.
+   - Execution/Review: verify local-paper-only fills, diagnostic-overlay
+     context, and no execution/gate semantics.
 
-4. Ask Claude CLI for a short drift-check before adding or changing any
-   research-job dispatch path. If existing helper calls can consume the traces
-   safely, prefer that over adding code.
+4. Ask Claude CLI for a short drift-check before adding or changing any helper,
+   job kind, dispatch path, agent governance, or attribution contract. If the
+   existing trade-path attribution helper can consume the artifacts safely,
+   prefer that over adding code.
 
 ## Evidence To Consume
 
+- Replay-selection compact artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`
+- Replay-selection robustness artifact:
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`
 - Trace-only batch summary:
   `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`
-- Short source-context feature branch:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
-Top crossing traces to replay first:
+Known replay-selection facts to confirm:
 
-- MRVL:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_mrvl\trace.json`
-- MU:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_mu\trace.json`
-- SNDK:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_sndk\trace.json`
-- COHR:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_cohr\trace.json`
+- `4` slices completed: MRVL, MU, SNDK, COHR.
+- `12` threshold variants completed using:
+  - `0.541000 / 0.497000`
+  - `0.542000 / 0.497000`
+  - `0.543000 / 0.497000`
+- `100` local-paper order intents and `100` local-paper fills were observed.
+- Fill-source verification reported `fill_source_counts: {"local_paper": 100}`,
+  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
+  `all_fills_local_paper: true`.
+- PnL evidence is mixed: MRVL and MU variants were positive, while SNDK and
+  COHR were negative.
 
 ## Required Work
 
-1. Confirm the trace-only result:
-   - `7` requested symbols,
-   - `7` completed compatible traces,
-   - `7` symbols crossed the fixed descriptive buy threshold `0.541000`,
-   - best symbol MRVL max probability `0.565431`, gap `+0.024431`,
-   - no replay, no order intents, and no fills in the trace-only batch.
-2. Run one bounded replay-selection for only MRVL, MU, SNDK, and COHR.
-   Prefer an existing helper path that consumes `probability_trace_artifact`
-   directly, such as the threshold-robustness primitive, so the traces do not
-   need to be recomputed.
-3. Use the fixed feature-branch replay threshold pairs:
-   - `0.541000 / 0.497000`
-   - `0.542000 / 0.497000`
-   - `0.543000 / 0.497000`
-4. Keep the replay broker-free and local-paper-only. Verify:
-   - all fills, if any, are `source: local_paper`,
-   - diagnostic rows remain `source: diagnostic_overlay`,
-   - no KIS, credentials, network, broker submit/cancel/status, or live/paper
-     external broker behavior occurred.
-5. Produce one compact external replay-selection artifact recording:
-   - symbols and trace artifacts consumed,
-   - threshold pairs used,
-   - local-paper fill/order-intent counts,
-   - fill-source verification,
-   - PnL/path summary if fills occur,
+1. Confirm the replay-selection artifact and robustness artifact match the facts
+   above and that all fills remain `source: local_paper`.
+2. Parse the existing replay event artifacts only. Do not rerun replay.
+3. Load only the selected MRVL, MU, SNDK, and COHR local bars needed to attribute
+   those event paths.
+4. Use or adapt the existing trade-path attribution helper if it fits. Prefer a
+   direct artifact script over a new job kind.
+5. Produce one compact external attribution artifact recording:
+   - symbols and threshold variants consumed,
+   - event artifacts consumed,
+   - local-paper fill-source verification,
+   - closed path count and open path count,
+   - per-symbol and per-threshold PnL/drawdown/path summary,
+   - adverse/favorable movement context where available,
+   - repeated-threshold/duplicate-market-moment notes,
+   - diagnostic rows labeled `source: diagnostic_overlay`,
    - no promotion/gate/execution-rule semantics.
-6. If replay creates local-paper fills, refresh `NEXT_CODEX_GOAL.md` toward a
-   bounded PnL/trade-path attribution goal. If replay still creates no fills,
-   rotate to review/simplification or a different Engine Research input
-   question instead of repeating fresh-symbol replay.
+6. If attribution identifies a clear bounded model-input or exit-timing question,
+   refresh `NEXT_CODEX_GOAL.md` toward one artifact-only or helper-sized follow
+   up. If attribution is too mixed or duplicated, rotate to review/simplification
+   instead of forcing another replay/training block.
 7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
@@ -148,15 +140,15 @@ docker compose config --quiet
 
 Also report:
 
-- the replay-selection command used,
-- any focused replay-selection smoke/assertion command,
+- the attribution command or focused smoke used,
 - any sidecars used,
-- whether Docker/PyTorch CUDA was used and where artifacts were written,
-- whether a future attribution or replay is justified.
+- whether Docker/GPU was used,
+- produced attribution artifact path,
+- whether a future model/replay follow-up is justified.
 
 ## Suggested Commit Message
 
-`Run fresh-symbol replay selection`
+`Attribute fresh-symbol replay paths`
 
 ## Completion Report
 
@@ -169,7 +161,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced replay-selection artifacts,
+- produced attribution artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,

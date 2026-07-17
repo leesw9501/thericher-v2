@@ -2078,11 +2078,42 @@ The bounded fresh-symbol trace-only GPU batch then completed:
   rule, feature rule, gate, or promotion path. Candidate summaries remain
   `source: diagnostic_overlay`.
 
-Next, run one bounded broker-free local-paper replay-selection over the strongest
-crossing traces before broader replay. Start with MRVL, MU, SNDK, and COHR,
-consume the existing trace artifacts through the existing broker-free
-threshold-robustness/replay primitive, and verify `source: local_paper` fills
-before any attribution.
+The fresh-symbol replay-selection then completed:
+
+- Temporary Codex sidecars covered Engine Research, Execution/Review, and Infra
+  checks. They were runtime helpers only; no durable multi-agent platform,
+  scheduler, daemon, coordinator, dashboard, notification loop, auto-commit
+  path, or new repo-owned worker was added.
+- Docker `research` ran with current `src` mounted read-only, consumed the
+  existing MRVL, MU, SNDK, and COHR trace artifacts directly through
+  `run_bounded_candidate_threshold_robustness`, and did not recompute traces,
+  train, ablate, acquire data, or add a job kind.
+- The replay used threshold pairs `0.541/0.497`, `0.542/0.497`, and
+  `0.543/0.497` over `max_bars=240` from the existing
+  `snapshot=2026-06-18` Yahoo 1m file.
+- The compact replay-selection artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`.
+  The robustness artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`.
+- Result: `4` slices and `12` variants completed, producing `100`
+  local-paper order intents and `100` replay fills across MRVL, MU, SNDK, and
+  COHR. Fill-source verification found `100` `local_paper` fills,
+  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
+  `all_fills_local_paper: true`.
+- PnL evidence is mixed and needs attribution before more compute: MRVL variants
+  were `+1.6185`, MU variants were `+9.4546`, SNDK variants ranged from
+  `-19.5323` to `-2.8661`, and COHR variants were `-3.3103`.
+  Max drawdown across variants was `36.40854140625`.
+- The run called no KIS API, read no credentials or `.env`, used no external
+  broker, created no live/paper broker orders, added no execution threshold,
+  feature rule, risk rule, gate, promotion rule, durable worker, scheduler, or
+  dashboard.
+
+Next, attribute the fresh-symbol replay-selection fills before running broader
+replay or model work. Consume the replay-selection and robustness artifacts,
+parse only existing local-paper event files plus selected local bars, and
+produce one compact trade-path/PnL attribution artifact with all fills still
+verified as `source: local_paper`.
 
 ## Daily Operator Review
 

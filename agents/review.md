@@ -650,15 +650,24 @@
   authority, credential reads, data acquisition, replay mutation, training,
   ablation, threshold sweep, feature rule, durable multi-agent platform, or
   promotion language.
+- Fresh-symbol replay-selection directly reused the existing
+  threshold-robustness/local-paper primitive with supplied trace artifacts,
+  wrote one compact external replay-selection artifact plus the standard
+  robustness/event artifacts, and added no code, helper, job kind, worker,
+  scheduler, dashboard, coordinator, report family, gate, auto-commit path,
+  broker authority, credential reads, data acquisition, trace recompute,
+  training, ablation, broad threshold search, feature rule, durable
+  multi-agent platform, or promotion language. The `100` generated fills were
+  all verified as `source: local_paper`, making attribution justified before
+  broader replay.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- The next replay-selection is justified by trace crossings, but keep it small
-  and broker-free. Avoid turning the trace batch into a gate, broad universe
-  search, execution threshold, model-promotion workflow, or durable worker.
-  Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
-  branch, broker authority, credential path, auto-commit, durable
-  multi-agent-platform behavior, threshold search, feature rules, or
-  model-promotion language.
+- The next attribution is justified by `100` local-paper fills, but keep it
+  artifact-only and compact. Avoid turning replay-selection into a gate, broad
+  universe search, execution threshold, model-promotion workflow, durable
+  worker, scheduler, dashboard, report branch, broker authority, credential
+  path, auto-commit behavior, threshold search, feature rule, or simulator
+  rule.

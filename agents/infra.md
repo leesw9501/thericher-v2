@@ -595,6 +595,14 @@
   compact summary under `D:\thericher-v2\model-artifacts`, changed no Docker,
   compose, dependency, scheduler, coordinator, dashboard, notification, worker,
   or Engine Research Agent files, and added no job kind or dispatch path.
+- Fresh-symbol replay-selection used Docker `research` with current `src`
+  mounted read-only, read `/app/market_data` read-only, consumed existing
+  `/app/model_artifacts` trace/model artifacts, and wrote replay-selection plus
+  robustness/event artifacts outside Git under
+  `D:\thericher-v2\model-artifacts`. GPU/CUDA was visible in the research
+  container, but no training or trace recompute ran. No Docker, compose,
+  dependency, scheduler, coordinator, dashboard, notification, worker, or
+  Engine Research Agent files were changed.
 
 ## Next Handoff
 
@@ -629,7 +637,7 @@
 - The next data-lane trace availability inventory should stay local and
   artifact-only unless it proves a small future Engine Research trace-compute
   batch is worth the GPU time.
-- The next fresh-symbol replay-selection should use Docker `research` and an
-  existing broker-free replay primitive that can consume existing trace
-  artifacts. Do not add a scheduler, daemon, coordinator, dashboard,
-  notification, durable multi-agent platform, or Docker layer change.
+- The next fresh-symbol attribution should be artifact/local-data work first.
+  Use Docker only if an existing helper requires the research environment; do
+  not add a scheduler, daemon, coordinator, dashboard, notification, durable
+  multi-agent platform, Docker layer change, or dependency change.
