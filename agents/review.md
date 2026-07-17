@@ -25,13 +25,20 @@
 
 ## Active Queue
 
-1. Review the next Engine Research Agent runner for bounded scope and agent
-   sprawl.
-2. Keep agent stateboards short and retire stale ones.
+1. Compact broad `Active Queue` wording in Engine Research, Data, and Infra so
+   it cannot be mistaken for immediate compute, scan, acquisition, or Docker
+   authorization.
+2. Keep stateboards short and retire stale current-state wording before more
+   compute.
 
 ## Running Jobs
 
 - None.
+
+## Operator Help Needed
+
+- None. The operator selected lane 5: run another simplification/review pass
+  before more compute.
 
 ## Done Recently
 
@@ -761,17 +768,27 @@
   explicitly avoids GPU, replay, ablation, trace compute, data acquisition,
   scheduler/coordinator work, gates, promotion rules, and durable multi-agent
   platform work.
+- Operator-selected simplification/review pass
+  `operator-selected-simplification-review-20260717-r1` recorded the lane 5
+  choice, retired stale operator-decision-needed current-state wording, left the
+  historical daily bundle unchanged, and identified broad Engine Research,
+  Data, and Infra `Active Queue` text as the next simplification target. It
+  used temporary Codex sidecars as read-only reviewers and added no compute,
+  acquisition, broker/local-paper mutation, Docker/GPU, dependency, scheduler,
+  coordinator, dashboard, gate, promotion rule, report family, or durable
+  platform work.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- The next follow-up is blocked on operator lane choice, not another automatic
-  attribution, data inventory, replay, training, or trace-compute task.
+- The operator selected lane 5, so the next follow-up is simplification/review,
+  not automatic attribution, data inventory, replay, training, or trace-compute
+  work.
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
 - Queue hygiene is complete and found no ready independent evidence question.
-  The next step should be one concise operator decision bundle, not another
-  report family, gate, scheduler, coordinator, durable worker, replay queue,
-  training run, threshold search, or promotion workflow.
+  Next, compact broad `Active Queue` wording in Engine Research, Data, and
+  Infra so a future Codex does not infer immediate compute, scan, acquisition,
+  Docker/GPU, or platform authorization from stale standing queues.

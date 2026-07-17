@@ -2521,14 +2521,38 @@ The daily operator decision bundle then completed:
   `reports/daily/2026-07-17-summary.md`,
   `reports/daily/2026-07-17-metrics.json`, and
   `reports/daily/2026-07-17-next-goal.md`.
-- Result: operator decision is required. Queue hygiene found no ready bounded
-  compute question, while non-AMAT raw pre-entry feature context remains only a
-  near-candidate and is not ready for compute. No operator data is needed now;
-  the ADP missing strict early-label bar remains conditional future data only.
+- Result: the operator decision bundle asked for one strategic lane. The
+  operator chose lane 5: run another simplification/review pass before more
+  compute.
 
-Next, wait for the operator to choose exactly one strategic lane before opening
-new compute, data acquisition, replay, training, scheduler/coordinator work, or
-durable multi-agent platform work.
+The operator-selected simplification/review pass then completed:
+
+- Temporary Codex sidecars covered Review and Engine/Data/Execution/Infra
+  boundary checks in parallel, then were closed. They were runtime collaborators
+  only; no durable multi-agent platform, scheduler, daemon, coordinator,
+  dashboard, notification loop, auto-commit path, or repo-owned worker was
+  added.
+- The pass consumed existing stateboards, the daily bundle, and external
+  artifact summaries only. It performed no market-data scan, row-level
+  market-data read, acquisition, replay, training, ablation, trace compute,
+  trace recompute, threshold search, exit simulation, KIS call, broker action,
+  credential read, helper change, contract change, job kind change, Docker
+  change, dependency change, gate, promotion rule, or report family.
+- The compact review artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\review-simplification\operator-selected-simplification-review-20260717-r1\metrics.json`.
+- Result: stale current-state wording that said an operator lane decision was
+  still required is superseded. The daily bundle remains historical and was not
+  rewritten. `agents/README.md` remains accurate. Engine Research, Data, and
+  Infra stateboard tails already prohibit immediate compute, acquisition, and
+  platform work, but their broad `Active Queue` sections are now the next
+  useful simplification target.
+- No compute, data acquisition, broker/local-paper mutation, Docker/GPU,
+  dependency, scheduler, coordinator, dashboard, durable platform, gate, or
+  promotion work is ready.
+
+Next, run one focused stateboard active-queue compaction pass over Engine
+Research, Data, and Infra to remove broad standing-queue ambiguity before any
+compute or data acquisition.
 
 ## Daily Operator Review
 

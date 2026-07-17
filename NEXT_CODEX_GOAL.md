@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Wait for the operator to choose the next strategic lane.
+Run one focused stateboard active-queue compaction pass over Engine Research,
+Data, and Infra.
 
 This advances review/simplification and backtest/walk-forward validation by
-preventing stale held evidence from turning into automatic compute or process
-growth. Do not invent a new research, data, replay, or infra objective without
-the operator's lane choice.
+removing broad standing-queue ambiguity that could make a future Codex infer
+immediate compute, scan, acquisition, Docker/GPU, or platform authorization
+from stale stateboard text.
 
 ## Current Agent Reality
 
@@ -20,9 +21,9 @@ the operator's lane choice.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- Temporary Codex sidecars are runtime collaborators only. Do not build a
-  durable multi-agent platform, scheduler, daemon, coordinator, notification
-  loop, dashboard, or auto-commit worker while waiting for lane choice.
+- Temporary Codex sidecars may review stale context, but do not build a durable
+  multi-agent platform, scheduler, daemon, coordinator, notification loop,
+  dashboard, or auto-commit worker.
 
 ## Hard Boundaries
 
@@ -40,7 +41,8 @@ the operator's lane choice.
 - Do not perform a broad recursive scan of `D:\market_data`.
 - Do not turn held evidence into execution thresholds, risk rules, broker
   policies, replay rules, feature rules, gates, or model-promotion rules.
-- Do not store generated GPU/model artifacts or market data in the repo.
+- Do not store generated GPU/model artifacts or market data in the repo. Use
+  `D:\thericher-v2\model-artifacts` for any external review artifact.
 
 ## Required First Reads
 
@@ -63,49 +65,71 @@ the operator's lane choice.
    - `agents/execution.md`
    - `agents/infra.md`
    - `agents/review.md`
-   - `reports/daily/2026-07-17-summary.md`
-   - `reports/daily/2026-07-17-metrics.json`
-   - `reports/daily/2026-07-17-next-goal.md`
+   - `D:\thericher-v2\model-artifacts\review-simplification\operator-selected-simplification-review-20260717-r1\metrics.json`
 
-## Operator Decision Needed
-
-Queue hygiene found no ready bounded compute question. The latest daily bundle
-asks the operator to choose exactly one next strategic lane:
-
-1. Open a new bounded data universe.
-2. Define the next model-input research question.
-3. Prepare local-paper or paper-trading readiness work.
-4. Improve GPU/research infra ergonomics without schedulers.
-5. Run another simplification/review pass before more compute.
-
-Known facts to preserve:
-
-- Fresh-symbol compute, DELL/MPWR/STX/WDC trace-only follow-up, MPWR replay
-  follow-up, and post-MPWR Data follow-up are retired from active queue context.
-- MPWR and MRVL/MU/SNDK/COHR are passive held evidence, not active compute.
-- Non-AMAT model-input/ablation is `hold_no_compute`: only `5` strict
-  label-ready rows and `3` strict unique timing-context keys are available
-  against `min_examples=8`, with `0` fresh strict unique contexts added outside
-  prior AMAT-bridge reuse.
-- No immediate data-lane, Engine Research, GPU, replay, or acquisition follow-up
-  is justified by the latest artifacts.
-- No operator data is needed now. The ADP missing strict early-label bar is only
-  a conditional future need.
+3. Ask Claude CLI for a short drift-check before changing architecture,
+   promotion rules, agent governance, helper/job contracts, replay/local-paper
+   behavior, or daily-report policy. A narrow stateboard text compaction should
+   not need a Claude check.
 
 ## Required Work
 
-1. Ask the operator to choose exactly one lane from the list above.
-2. Do not edit code, run compute, acquire data, or create new workflow
-   scaffolding while waiting for the decision.
-3. After the operator chooses a lane, replace this file with one single next
-   objective tied to that lane and the relevant engine loop.
+1. Inspect only current stateboard text and existing review artifacts.
+2. Compact broad `Active Queue` wording in:
+   - `agents/engine-research.md`
+   - `agents/data.md`
+   - `agents/infra.md`
+3. The compacted queues must say what is actually current:
+   - no ready compute question,
+   - no data acquisition or broad scan task,
+   - no Docker/GPU or scheduler/platform task,
+   - held contexts are passive until a future single objective names exact
+     evidence.
+4. Produce one compact external review artifact under
+   `D:\thericher-v2\model-artifacts\review-simplification` recording:
+   - consumed stateboards/artifacts,
+   - stateboard sections compacted,
+   - stale ambiguity removed,
+   - confirmation that no compute, acquisition, broker work, Docker/GPU work,
+     dependency change, or durable platform work was performed.
+5. Update `HANDOFF.md` and `agents/review.md` only as needed to record the
+   compaction result.
+6. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
+
+## Verification
+
+Run:
+
+```powershell
+uv run --extra dev pytest -q
+uv run --extra dev ruff check .
+docker compose config --quiet
+```
+
+Also report:
+
+- sidecars or executable workers used,
+- whether Docker/GPU was used,
+- produced artifact paths,
+- what stale ambiguity was removed,
+- what was intentionally not built,
+- next goal.
 
 ## Suggested Commit Message
 
-`Record operator lane decision`
+`Compact stateboard active queues`
 
 ## Completion Report
 
-If the operator has not chosen a lane yet, report that work is paused on the
-lane decision and list the five options. If a lane is chosen later, report the
-new single objective and any files changed.
+Report:
+
+- files changed,
+- tests run,
+- commit hash,
+- sidecars or executable workers used,
+- data found or acquired under `D:\market_data`,
+- data still needed from the operator, if any,
+- whether GPU/Docker compute was used and where artifacts were written,
+- produced artifacts,
+- what was intentionally not built,
+- next recommended goal.
