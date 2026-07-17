@@ -977,6 +977,20 @@
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\metrics.json`
   and
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\compatibility_diagnostic.json`.
+- AMAT recurrence/path bridge rebuilt `31` diagnostic feature-input rows from
+  existing parity path plus wider-holdout behavior evidence and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-amat-recurrence-path-bridge-20260717-r1\metrics.json`.
+  It preserved diagnostic rows as `source: diagnostic_overlay`, referenced
+  original fills as `source: local_paper`, and created no replay, order intent,
+  feature rule, threshold rule, or new worker.
+- Engine Research Agent then queued one existing
+  `candidate_feature_input_ablation` job:
+  `engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1`. Docker
+  `research` ran with PyTorch backend, wrote metrics/model artifacts under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1`,
+  and kept all rows diagnostic-only. The duplicate-aware context is small:
+  `31` rows collapse to `12` complete unique signal keys, AMAT accounts for
+  `20` rows, and the AMAT negative core remains one repeated market moment.
 
 ## Next Handoff
 
@@ -984,13 +998,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: build a bounded artifact-only bridge from
-  recurrence/path evidence to the existing feature-input stability contract, if
-  enough independent diagnostic rows can be reconstructed without a new job
-  kind. Use the existing ablation primitive only after the contract fits.
-- Longer candidate training queue: hold until the bridge or a justified replay
-  batch defines a focused model-input or replay-shape question. Keep the job
-  kind closed and write artifacts outside Git.
+- Short experiments queue: inspect duplicate-aware bridge ablation metrics and
+  decide whether one bounded independent-evidence replay is justified. Prefer
+  artifact inspection first; avoid another training block if the evidence is
+  only duplicated AMAT context.
+- Longer candidate training queue: hold until independent rows or a specific
+  replay-shape question justifies Docker `research` work. Keep job kinds closed
+  and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

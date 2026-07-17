@@ -406,6 +406,13 @@
   adapters, or broker outcomes. It used existing ablation code only to test
   input compatibility, produced `0` diagnostic rows, and preserved recurrence
   source evidence as descriptive reference material.
+- AMAT recurrence/path bridge and follow-up ablation reran no local-paper
+  replay and created no fills, orders, positions, order intents, broker
+  adapters, broker outcomes, execution filters, or simulator rules. The bridge
+  emitted `31` `source: diagnostic_overlay` rows while preserving referenced
+  original fills as `source: local_paper`. The `local_paper_reference` payload
+  is evidence linkage only; the ablation consumed diagnostic rows for
+  model-input context and did not create fills or replay behavior.
 
 ## Next Handoff
 
@@ -436,3 +443,7 @@
   rows must keep original fills as `source: local_paper`, count diagnostics
   separately as `source: diagnostic_overlay`, and avoid creating order intents
   outside the existing broker-free replay path.
+- The next duplicate-aware follow-up may inspect existing local-paper evidence
+  or run broker-free replay only through existing research jobs. It must not
+  create execution filters, order intents, broker authority, or live/paper KIS
+  behavior.

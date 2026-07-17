@@ -575,15 +575,29 @@
   threshold search, feature rule, durable multi-agent platform, or
   model-promotion language. The result tightened the next question to a bounded
   adapter, not a blind replay or broad GPU sweep.
+- AMAT recurrence/path bridge stayed artifact-only, reused existing evidence,
+  and wrote one feature-input stability-shaped artifact outside Git. The
+  follow-up ablation reused the existing Engine Research Agent runner and
+  existing `candidate_feature_input_ablation` job kind. This added no code,
+  helper, job kind, worker, scheduler, dashboard, coordinator, report family,
+  gate, auto-commit path, broker authority, credential reads, data acquisition,
+  replay mutation, threshold search, feature rule, durable multi-agent
+  platform, or execution behavior. The main risk to carry forward is evidential
+  duplication: `31` rows collapse to `12` complete unique signal keys, and the
+  AMAT negative core remains one repeated market moment. AMAT also dominates
+  the bridge with `20` of `31` rows, so any follow-up should inspect
+  unique-signal evidence before adding compute.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
 - Push the next task toward one bounded artifact-only bridge into the existing
-  feature-input stability contract before another GPU job. If the operator
-  wants more repo-owned executable role agents, make that an explicit
-  worker-expansion goal with one safe role and a named engine-loop benefit.
+  feature-input stability contract before another GPU job. The bridge now
+  exists, so push the next task toward duplicate-aware inspection and at most
+  one justified independent-evidence follow-up. If the operator wants more
+  repo-owned executable role agents, make that an explicit worker-expansion
+  goal with one safe role and a named engine-loop benefit.
   Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
   branch, broker authority, credential path, auto-commit, durable
   multi-agent-platform behavior, threshold search, feature rules, or

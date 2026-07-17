@@ -536,6 +536,14 @@
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1`.
   GPU was visible, but the smoke stopped before training because the recurrence
   artifact did not satisfy the feature-input stability contract.
+- AMAT recurrence/path bridge ran locally as artifact-only work and wrote under
+  `D:\thericher-v2\model-artifacts\feature-input-stability`. The follow-up
+  Engine Research Agent job
+  `engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1` ran once in
+  Docker `research` with PyTorch backend, mounted current `src` read-only, kept
+  artifacts under `/app/model_artifacts` mapped to
+  `D:\thericher-v2\model-artifacts`, and changed no dependency, Docker,
+  compose, scheduler, coordinator, or dashboard files.
 
 ## Next Handoff
 
@@ -561,3 +569,6 @@
 - Do not add scheduler/coordinator plumbing for the next cadence. Use existing
   Engine Research/Data single-shot workers plus temporary Codex sidecars; keep
   any Docker/GPU work inside the existing `research` path.
+- After a Windows restart, keep checking Docker daemon readiness before each
+  Engine Research Agent run. If the duplicate-aware follow-up needs compute,
+  use the same single-shot Docker `research` path and external artifact mount.

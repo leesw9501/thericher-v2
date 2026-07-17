@@ -431,14 +431,18 @@
   `2,340`, AMZN `2,340`, and BA `2,338` rows from
   `2026-06-09T13:30:00Z` to `2026-06-16T19:59:00Z`. No new data was acquired;
   the blocker is feature-input contract shape, not data availability.
+- AMAT recurrence/path bridge reused existing `snapshot=2026-06-18` Yahoo
+  rows for ADI, AMAT, AMZN, and BA plus existing external artifacts. No data
+  was acquired, no expensive full recursive scan was needed, and no operator
+  data help is needed for this bridge or its ablation.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts while building a recurrence-to-feature-input
-  stability bridge; record exact missing artifact names only if the bridge
-  cannot reconstruct required rows.
+  rows and external artifacts while inspecting the duplicate-aware AMAT bridge
+  ablation. Record exact missing symbols, dates, or artifact names only if an
+  independent-evidence follow-up cannot be built from existing data.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

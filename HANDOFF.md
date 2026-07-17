@@ -1719,11 +1719,49 @@ The AMAT recurrence feature-input compatibility check then completed:
   diagnostic row became an execution filter, replay rule, feature rule,
   threshold rule, or order intent.
 
-Next, build a bounded bridge from recurrence/path evidence to the existing
-feature-input stability contract, only if it can be done as a small
-artifact-only adapter using existing artifacts and `D:\market_data`. If the
-adapter cannot produce enough independent diagnostic rows, record that and use
-an explicitly justified replay batch later rather than expanding blindly.
+The AMAT recurrence/path bridge and ablation then completed:
+
+- Runtime Codex sidecars again covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary read-only helpers, not
+  repo-owned workers or a durable multi-agent platform.
+- A small artifact-only bridge converted exact parity path evidence plus
+  wider-holdout behavior evidence into the existing feature-input stability
+  row shape. It wrote outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-amat-recurrence-path-bridge-20260717-r1\metrics.json`.
+- The bridge reconstructed `31` diagnostic rows across ADI, AMAT, AMZN, and
+  BA, with `14` adverse/no-lift rows and `17` non-adverse rows. Rows came from
+  exact parity path attribution (`12`) and wider-holdout behavior attribution
+  (`19`). Missing evidence count was `0`.
+- The diagnostic rows stayed `source: diagnostic_overlay`; referenced original
+  fills stayed `source: local_paper` with `17` local-paper reference fills and
+  `31` local-paper reference rows. The bridge created no order intents,
+  replay rule, feature rule, threshold rule, broker outcome, KIS access,
+  credential access, new research job kind, or durable worker.
+- Because the bridge emitted more than the current `8`-row floor, the existing
+  Engine Research Agent single-shot runner queued and ran one Docker
+  `research` ablation:
+  `engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1`.
+- The ablation wrote outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\metrics.json`,
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\feature_input_ablation.pt`,
+  and
+  `D:\thericher-v2\model-artifacts\research-jobs\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1.json`.
+- Docker `research` used the current `src` read-only mount and PyTorch backend
+  inside the research target only. The ablation saw `31` rows, all diagnostic
+  overlay, with `12` complete unique signal keys. Duplicate structure remains
+  heavy: row-to-unique-signal ratio was `2.583333`, max variants per signal was
+  `4`, AMAT accounted for `20` of `31` rows, and the AMAT negative core is
+  still one repeated market moment.
+- Training groups were bounded to `8` steps/epochs: threshold metadata final
+  loss `0.687638`, raw pre-entry final loss `0.697254`, and combined raw plus
+  probability metadata final loss `0.680195`. Treat this as descriptive model
+  input evidence only. `local_paper_reference` is evidence linkage; the bridge
+  and ablation did not create fills, orders, order intents, or replay behavior.
+
+Next, inspect the duplicate-aware AMAT bridge ablation output and decide one
+bounded independent-evidence follow-up. Do not create new job kinds, durable
+agent platform, execution filters, feature rules, threshold rules, or broad GPU
+sweeps from this small and duplicate-heavy evidence.
 
 ## Daily Operator Review
 
