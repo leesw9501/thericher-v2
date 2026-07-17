@@ -1788,10 +1788,37 @@ The duplicate-aware AMAT bridge follow-up decision then completed:
   filter, feature rule, threshold rule, new job kind, or durable agent platform
   was created.
 
-Next, perform an artifact-only independent-evidence scan over existing
-wider-holdout trade-path artifacts before any replay, ablation, or GPU work.
-Start with the three source artifacts listed in the decision artifact and look
-for non-AMAT symbol/timestamp keys outside the current bridge keys.
+The independent-evidence scan then completed:
+
+- It consumed only the duplicate-aware decision, AMAT bridge, bridge ablation,
+  three existing wider-holdout trade-path artifacts, and the existing
+  `snapshot=2026-06-18` local Yahoo 1m file. It did not run Docker/GPU,
+  replay, training, ablation, KIS, broker code, credentials, network, data
+  acquisition, a new job kind, or a new worker.
+- The compact external artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-amat-independent-evidence-scan-20260717-r1\metrics.json`.
+- The scan saw `28` closed trade/path segment rows across the three source
+  artifacts. `19` rows repeated current bridge symbol/timestamp keys. Outside
+  those bridge keys, `7` non-AMAT rows remained across ADBE, ADI, ADP, and AEM,
+  collapsing to `4` timing-context keys.
+- The four non-AMAT timing-context keys had fee-aware sign balance `2`
+  negative and `2` non-negative. Entry and exit bars were present in the local
+  `snapshot=2026-06-18` file, but the trade-path segments did not carry raw
+  feature payloads, so the scan alone is not enough for another ablation.
+- Original trade-path fills stayed `source: local_paper`; reconstructed scan
+  rows stayed `source: diagnostic_overlay`. The scan created no fills, orders,
+  order intents, broker outcomes, execution filters, replay rules, feature
+  rules, threshold rules, or promotion rules.
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They confirmed the independent non-AMAT evidence is
+  narrow, the data/artifact roots are present, Docker/GPU is unnecessary for
+  the scan, and source-label/broker boundaries remain intact.
+
+Next, inspect the existing probability/feature lineage for those four
+non-AMAT timing-context keys and either build one compact bridge-readiness
+artifact or record the precise feature-context shortfall. Keep that follow-up
+artifact-only first; do not replay, train, run Docker/GPU, or create a new job
+kind until the lineage proves a bounded next compute question.
 
 ## Daily Operator Review
 

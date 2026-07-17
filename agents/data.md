@@ -440,14 +440,21 @@
   `572,894` rows and `250` symbols, including ADI `2,339`, AMAT `2,340`,
   AMZN `2,340`, and BA `2,338` rows. No data was acquired, and no operator
   data help is needed before scanning existing wider-holdout artifacts.
+- Independent non-AMAT evidence scan reused the same
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+  file and the three existing trade-path artifacts only. Data/Infra sidecar
+  verified the local file has `572,894` data rows, and local coverage for the
+  scan symbols was ADBE `2,340`, ADI `2,339`, ADP `2,235`, AEM `2,336`, AMAT
+  `2,340`, AMZN `2,340`, and BA `2,338`. The scan found all candidate entry
+  and exit bars, acquired no data, and needs no operator data help.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts while scanning wider-holdout trade-path evidence
-  for independent non-AMAT rows. Record exact missing symbols, dates, or
-  artifact names only if that scan cannot be built from existing data.
+  rows and external artifacts while inspecting probability/feature lineage for
+  the four non-AMAT scan keys. Record exact missing symbols, dates, or artifact
+  names only if lineage cannot be built from existing data.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -999,6 +999,13 @@
   threshold-variant duplicated. The smallest next step is to scan existing
   wider-holdout trade-path artifacts for non-AMAT independent rows before any
   further ablation or replay.
+- Independent non-AMAT trade-path evidence scan ran artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-amat-independent-evidence-scan-20260717-r1\metrics.json`.
+  It found `7` non-AMAT rows outside current bridge symbol/timestamp keys,
+  collapsing to `4` timing-context keys across ADBE, ADI, ADP, and AEM. The
+  trade-path rows have local-paper path evidence and local bar coverage, but
+  no raw feature payload, so another ablation or replay is not justified from
+  this scan alone.
 
 ## Next Handoff
 
@@ -1006,13 +1013,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: scan existing wider-holdout trade-path artifacts for
-  non-AMAT independent rows outside the current AMAT bridge keys. Keep this
-  artifact-only first; avoid another training block or replay unless the scan
-  records a precise shortfall and one small existing-job batch is justified.
-- Longer candidate training queue: hold until independent rows or a specific
-  replay-shape question justifies Docker `research` work. Keep job kinds closed
-  and write artifacts outside Git.
+- Short experiments queue: inspect existing probability/feature lineage for the
+  four non-AMAT timing-context keys from the independent-evidence scan. Produce
+  one bridge-readiness artifact or record the exact feature-context shortfall.
+  Keep it artifact-only before any Docker/GPU work.
+- Longer candidate training queue: hold until a lineage artifact, not this scan
+  alone, defines a specific replay-shape or model-input question. Keep job
+  kinds closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

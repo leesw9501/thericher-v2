@@ -418,6 +418,12 @@
   outcomes, execution filters, simulator rules, feature rules, or threshold
   rules. It only recorded that current diagnostic evidence should not drive
   more model work before independent path evidence is scanned.
+- Independent non-AMAT evidence scan reran no local-paper replay and created no
+  fills, orders, positions, order intents, broker adapters, broker outcomes,
+  execution filters, simulator rules, feature rules, or threshold rules. It
+  inspected existing closed trade/path segments only: source artifacts
+  preserved `56` referenced fill events as `source: local_paper`, while the
+  `7` candidate scan rows were emitted as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -452,7 +458,7 @@
   or run broker-free replay only through existing research jobs. It must not
   create execution filters, order intents, broker authority, or live/paper KIS
   behavior.
-- The next independent-evidence scan should parse existing local-paper
-  trade-path artifacts only. It must preserve original fills as
+- The next lineage follow-up should parse existing local-paper trade-path and
+  probability/feature artifacts only. It must preserve original fills as
   `source: local_paper` and any reconstructed row as
   `source: diagnostic_overlay`.
