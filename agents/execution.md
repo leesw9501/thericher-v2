@@ -485,6 +485,12 @@
   fills, orders, order intents, broker adapters, broker outcomes, execution
   filters, simulator rules, feature rules, threshold rules, risk rules, or
   live/paper KIS behavior.
+- Fresh-symbol path-shape comparison consumed existing artifacts only and
+  carried forward the same `100` `source: local_paper` fills plus `17`
+  `source: diagnostic_overlay` unique path contexts. It created no fills,
+  orders, order intents, broker adapters, broker outcomes, execution filters,
+  simulator rules, feature rules, threshold rules, risk rules, exit policies,
+  or live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -539,7 +545,6 @@
 - The next simplification pass may inspect attributed local-paper paths, but it
   must not mutate replay, invent execution filters, or turn diagnostic context
   into order-intent logic.
-- A future path-shape comparison may inspect duplicate-aware local-paper paths,
-  but it must remain diagnostic-only and must not become an execution threshold,
-  order-intent generator, risk rule, broker policy, simulator rule, or live KIS
-  behavior.
+- Treat the current fresh-symbol hold as descriptive evidence only, not an
+  automated gate or execution rule. A future data-lane inventory may reference
+  the hold but must not alter local-paper or broker behavior.

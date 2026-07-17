@@ -2182,6 +2182,38 @@ is useful, make it a compact artifact-only path-shape comparison across the
 duplicate-aware unique moments, focused on adverse/favorable excursion and exit
 timing, before rotating away from this branch.
 
+The fresh-symbol duplicate-aware path-shape comparison then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks in parallel. They were runtime collaborators only; no durable
+  multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or new repo-owned worker was added.
+- The comparison consumed only the duplicate-aware simplification, trade-path
+  attribution, and replay-selection artifacts. It did not read market data,
+  rerun replay, train, ablate, recompute traces, search thresholds, simulate
+  exits, call KIS, read credentials, use network, acquire data, add a helper,
+  or add a job kind.
+- The compact comparison artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`.
+- Result: the `17` duplicate-aware unique market moments split into `10`
+  negative and `7` non-negative fee-aware moments. Negative moments summed to
+  `-52.8990`, with mean favorable excursion `1.5925` and mean adverse
+  excursion `-9.8895`. Non-negative moments summed to `+41.1295`, with mean
+  favorable excursion `11.4870` and mean adverse excursion `-1.5544`.
+- Losses are not explained away as threshold noise: SNDK and COHR losses
+  survived duplicate collapse. Positives survived numerically, but MU was only
+  one unique market moment and MRVL stayed modest and mixed.
+- All referenced fills carried forward as `source: local_paper`, all unique
+  path-shape context remained `source: diagnostic_overlay`, and the artifact
+  recorded no promotion, gate, execution threshold, broker policy, feature
+  rule, simulator rule, exit policy, or model/replay follow-up.
+
+Next, rotate away from fresh-symbol compute. Run a bounded Data Agent
+lane-rotation inventory over existing local data and artifact provenance to
+identify the next independent evidence batch, or record that no useful data
+lane follow-up remains. Do not queue replay, trace compute, training, or exit
+simulation unless a later single objective explicitly allows it.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

@@ -614,6 +614,12 @@
   It changed no dependency, Docker, compose, scheduler, coordinator, dashboard,
   notification, worker, or Engine Research Agent files and used no Docker/GPU
   compute.
+- Fresh-symbol path-shape comparison ran locally as CPU/artifact-only work and
+  wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification`.
+  It changed no dependency, Docker, compose, scheduler, coordinator, dashboard,
+  notification, worker, or Engine Research Agent files and used no Docker/GPU
+  compute.
 
 ## Next Handoff
 
@@ -654,7 +660,8 @@
   multi-agent platform, Docker layer change, or dependency change.
 - The next simplification pass should also stay local/artifact-only unless a
   future explicit compute question is proven.
-- The next path-shape comparison, if run, should stay local/artifact-only and
-  should use temporary Codex sidecars only for scoped review; do not add a
-  scheduler, daemon, coordinator, dashboard, notification loop, durable
-  multi-agent platform, Docker layer change, or dependency change.
+- The next data-lane inventory should use the existing Data Agent runner or a
+  direct artifact script only if simpler. Temporary Codex sidecars may review
+  in parallel, but do not add a scheduler, daemon, coordinator, dashboard,
+  notification loop, durable multi-agent platform, Docker layer change, or
+  dependency change.

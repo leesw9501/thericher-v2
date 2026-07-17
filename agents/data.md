@@ -498,6 +498,11 @@
 - Fresh-symbol duplicate-aware simplification consumed existing replay,
   robustness, and trade-path attribution artifacts only. It performed no new
   market-data scan or acquisition, and it did not need additional operator data.
+- Fresh-symbol path-shape comparison consumed existing simplification,
+  trade-path attribution, and replay-selection artifacts only. It performed no
+  `D:\market_data` read, no market-data scan, and no acquisition. The artifacts
+  already contained adverse/favorable excursion, entry/exit timestamps,
+  threshold repetition, and symbol concentration needed for the comparison.
 
 ## Next Handoff
 
@@ -506,9 +511,10 @@
   have local rows, compatible traces, local-paper event artifacts, and
   attributed path context. Future data work should stay artifact/local-row
   scoped unless a new objective names exact missing symbols or date ranges.
-- If a future path-shape comparison runs, use the existing attribution artifact
-  first. Read local bars only if the artifact lacks the needed excursion or
-  timing fields; do not acquire data for this branch.
+- The next lane-rotation inventory should stay bounded to known local data and
+  artifact roots. Exclude the held MRVL/MU/SNDK/COHR branch from compute
+  recommendations, and acquire nothing unless a future objective names exact
+  missing symbols or date ranges.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

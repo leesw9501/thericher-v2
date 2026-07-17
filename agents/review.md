@@ -677,6 +677,14 @@
   durable multi-agent platform, or promotion language. It collapsed `50` paths
   to `17` unique market moments and held the branch for replay/training instead
   of forcing compute from duplicate-heavy evidence.
+- Fresh-symbol path-shape comparison wrote one compact external artifact and
+  added no code, helper, job kind, worker, scheduler, dashboard, coordinator,
+  report family, gate, auto-commit path, broker authority, credential reads,
+  data acquisition, replay rerun, trace recompute, training, ablation,
+  threshold search, exit simulation, feature rule, simulator rule, durable
+  multi-agent platform, or promotion language. It used three temporary Codex
+  sidecars as role reviewers, then closed them. The result supports rotating
+  lanes instead of stretching the branch into another diagnostic family.
 
 ## Next Handoff
 
@@ -688,7 +696,7 @@
   worker, scheduler, dashboard, report branch, broker authority, credential
   path, auto-commit behavior, threshold search, feature rule, or simulator
   rule.
-- The next follow-up, if any, should be one artifact-only path-shape comparison
-  over duplicate-aware unique moments. Do not create a new report family,
-  promotion decision, scheduler/coordinator, durable multi-agent platform,
-  replay run, training run, exit simulation, or execution rule.
+- The next follow-up should rotate lanes. A bounded data inventory is fine if
+  it feeds the engine loop; do not create a report family, promotion decision,
+  scheduler/coordinator, durable multi-agent platform, replay run, training run,
+  exit simulation, or execution rule.

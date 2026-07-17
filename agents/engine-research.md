@@ -1093,6 +1093,17 @@
   collapse while MU is not independent enough and MRVL is only mildly positive.
   No Docker/GPU compute, trace recompute, replay rerun, training, ablation,
   threshold search, new helper, job kind, or promotion rule was added.
+- Fresh-symbol duplicate-aware path-shape comparison
+  `engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1` ran
+  artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`.
+  It compared the `17` unique market moments as `10` negative and `7`
+  non-negative fee-aware paths. Negative moments summed to `-52.8990`, with
+  mean favorable excursion `1.5925` and mean adverse excursion `-9.8895`;
+  non-negative moments summed to `+41.1295`, with mean favorable excursion
+  `11.4870` and mean adverse excursion `-1.5544`. The branch remains held:
+  no model-input, exit-timing, replay, or training follow-up is justified from
+  this evidence.
 
 ## Next Handoff
 
@@ -1101,8 +1112,8 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. If reopened, the next check should be artifact-only path
-  shape comparison over the `17` unique moments, not compute.
+  fresh-symbol branch. Rotate to a data-lane inventory for the next independent
+  evidence batch before spending more GPU time.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.
