@@ -1059,3 +1059,25 @@ account identifiers, and raw sealed labels are never sent to Claude.
 Reason: paper trading must not be delayed by a profitability bureaucracy, while
 capital, leakage, confirmation bias, and architectural drift deserve an
 independent challenge before a decision is relied on.
+
+## 2026-07-18 - Byte-bound campaigns and durable fake execution
+
+Decision: catalog-backed campaign runs consume loader-attested Data-owned
+`CatalogedBars` created from the same verified file bytes that are parsed into
+bars; normal direct construction is rejected. Campaigns
+reject raw bar lists, dataset or timeframe mismatches, temporary replay state,
+and artifact overwrite. Local-paper JSONL, SQLite, emergency state, and hashes
+remain external and replayable. Current short intraday and post-constructed
+daily evidence is development-only, not ranking or sealed-holdout evidence.
+
+The broker-neutral fake atomically persists intent before accepting submit,
+round-trips JSON state across restart, and fails closed on `outcome_unknown`
+until authoritative status and any progressed fill evidence are atomically
+merged and cleanly reconciled. This does not enable KIS or grant broker
+authority.
+
+Reason: Review reproduced cases where caller-supplied hashes, mismatched
+timeframes, deleted replay state, volatile intents, and cached acknowledgements
+could make an apparently successful test stronger than its durable evidence.
+Binding bytes, timing, source, and recovery closes those failures without a new
+worker, report family, gate, broker endpoint, credential path, or scheduler.

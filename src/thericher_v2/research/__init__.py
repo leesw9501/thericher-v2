@@ -1,5 +1,14 @@
 """Research and validation helpers."""
 
+from .campaign import (
+    SUPPORTED_NAIVE_BASELINES,
+    CampaignContract,
+    CampaignCosts,
+    CampaignFold,
+    CampaignWindow,
+    CatalogDatasetRef,
+    ExecutableTarget,
+)
 from .candidate_breadth_holdout import (
     BoundedCandidateBreadthHoldoutResult,
     CandidateBreadthHoldoutConfig,
@@ -183,6 +192,8 @@ from .trade_path_attribution import (
 from .validation import (
     GpuReadiness,
     MarketDataInventory,
+    NaiveBaselineRun,
+    ReplayEvidence,
     ValidationConfig,
     ValidationResult,
     ValidationTrade,
@@ -191,12 +202,19 @@ from .validation import (
     load_yahoo_intraday_1m_bars,
     resolve_model_artifact_root,
     run_local_paper_validation,
+    run_naive_cpu_baseline,
     run_sample_cpu_smoke,
     write_gpu_experiment_plan,
     write_validation_artifact,
 )
 
 __all__ = [
+    "CampaignContract",
+    "CampaignCosts",
+    "CampaignFold",
+    "CampaignWindow",
+    "CatalogDatasetRef",
+    "ExecutableTarget",
     "BoundedCandidateEvaluationResult",
     "BoundedCandidateBreadthHoldoutResult",
     "BoundedCandidateBreadthQueueResult",
@@ -272,6 +290,8 @@ __all__ = [
     "WalkForwardWindowResult",
     "GpuReadiness",
     "MarketDataInventory",
+    "NaiveBaselineRun",
+    "ReplayEvidence",
     "ValidationConfig",
     "ValidationResult",
     "ValidationTrade",
@@ -282,6 +302,7 @@ __all__ = [
     "DEFAULT_GPU_TRAINING_RUN_ID",
     "DEFAULT_RESEARCH_JOB_ID",
     "DIAGNOSTIC_OVERLAY_SOURCE",
+    "SUPPORTED_NAIVE_BASELINES",
     "build_candidate_training_dataset",
     "build_multi_slice_candidate_training_dataset",
     "default_short_experiment_specs",
@@ -321,6 +342,7 @@ __all__ = [
     "run_bounded_candidate_training",
     "run_gpu_compute_smoke",
     "run_local_paper_validation",
+    "run_naive_cpu_baseline",
     "run_sample_cpu_smoke",
     "run_short_experiment_queue",
     "run_gpu_runtime_smoke",

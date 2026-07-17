@@ -2,9 +2,8 @@
 
 ## Status
 
-Active, no running job. The current Data task improves the **data collection**
-loop by making existing local coverage training-ready without creating a new
-research gate.
+Active, no running job. The bounded training-readiness catalog is complete and
+improves the **data collection** loop without creating a new research gate.
 
 ## Engine Loop
 
@@ -38,20 +37,22 @@ research gate.
 
 ## Current Objective
 
-Produce a training-ready catalog and useful free-data coverage from existing
-local data. Current intraday evidence is smoke-ready, not model-selection-ready:
-catalog symbol/date splits, label availability, leakage checks, holdout rules,
-and quality summaries before it is treated as model-selection evidence.
+For the refreshed objective, inspect only the newest useful daily snapshot for
+the predeclared `SPY`, `QQQ`, and `IWM` instruments. Define one adjustment and
+ordering policy, then publish a hash-bound external subset only if it can
+honestly support development training.
 
 ## Ready Queue
 
-1. Build or refresh the bounded catalog from known local roots when an active
-   Engine Research objective needs exact symbols, date ranges, or holdout
-   eligibility.
-2. Identify a specific free, no-auth, license-compatible coverage gap only when
+1. Answer a specific catalog question from Engine Research without rescanning
+   unchanged files.
+2. Continue the official symbol-directory prospective series with a new dated
+   immutable snapshot when a future active goal requests capture; never
+   overwrite or treat it as historical PIT evidence.
+3. Identify a specific free, no-auth, license-compatible coverage gap only when
    existing local data cannot serve the active objective and free space remains
    above the hard floor.
-3. Keep the ADP `2026-06-09T14:05:00Z` strict early-label bar as conditional
+4. Keep the ADP `2026-06-09T14:05:00Z` strict early-label bar as conditional
    context only; reopen it only for a goal that explicitly rescues that row.
 
 ## Running
@@ -75,14 +76,44 @@ and quality summaries before it is treated as model-selection evidence.
 - Daily/PIT: `D:\market_data\pit_sources` is a known root, but no exact
   daily-file count, symbols, dates, or license coverage is currently verified;
   catalog it before relying on it.
+- The 2026-07-18 catalog fully inspected the three named intraday files and the
+  newest daily snapshot. Intraday row counts are 572,894, 7,103, and 8,276;
+  `snapshot=2026-06-23` daily contains 7,390,436 rows. Five daily snapshots
+  were shallow-inventoried and SHA-256 hashed.
+- The r2 integration catalog has stable ID
+  `sha256:63f761b45b7b080ca9dcabde0f2d27ddb6464d6ec5f6234b977baf08ca8d95bb`.
+  Each inspected entry exposes a stable Data-owned `dataset_id`, prefixed
+  `dataset_hash`, UTC construction timestamp, and Research-compatible ranking
+  and sealed-holdout eligibility facts.
+- Data exports immutable `CatalogedBars` and an offline Yahoo canonical 1-minute
+  loader that verifies the catalog's SHA-256 against the actual gzip bytes
+  before parsing one homogeneous symbol stream. Direct construction is closed;
+  only the verified loader creates this campaign evidence. It uses no Research
+  imports, network, or credentials.
+- No inspected file is model-selection training eligible or sealed-holdout
+  eligible. Intraday coverage is under the 20-session catalog floor and its
+  point-in-time universe provenance is unproven. Daily point-in-time universe,
+  delisting, corporate-action, and full-OHLC adjustment provenance is unproven.
+- During the r2 catalog run, `D:` had 40.61% free space and no data, network, or
+  credential access occurred.
+- The first official Nasdaq Trader symbol-directory snapshot was captured at
+  `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18`.
+  It contains unaltered `nasdaqlisted.txt`, `otherlisted.txt`, and
+  `TradingSystemAddsDeletes.txt` plus one manifest. It is private,
+  non-commercial, prospective-only evidence and does not repair historical
+  universe membership, survivorship, or delisting history.
+- SEC files were not requested: compliant automation would require an honest
+  identifying User-Agent/contact, and no operator identity was supplied or
+  invented.
 - Warning-only checks have found incomplete resample buckets; the known ABNB
   first-240-bar window has one missing 1-minute interval. Do not treat either
   as an execution hard stop.
 
 ## Recovery
 
-- Start from the active objective, inspect only the exact local coverage it
-  needs, and reuse the catalog/artifacts before scanning broadly.
+- Recovery state is `complete`: reuse the r2 catalog artifact before
+  inspecting unchanged files. Start new work only from a precise active-goal
+  coverage or provenance requirement.
 - Stop acquisition on credential/payment/manual access, unclear rights, two
   consecutive automated failures for one source, loss of active-goal benefit,
   or projected breach of the 15% free-space floor.
@@ -91,6 +122,15 @@ and quality summaries before it is treated as model-selection evidence.
 
 ## Recent Evidence
 
+- `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`:
+  first immutable official-source prospective universe snapshot; all three
+  recorded hashes reverified, with Nasdaq file-creation timestamps from
+  `2026-07-17 14:01` through `14:03` as stated in the source files.
+- `D:\thericher-v2\model-artifacts\data-agent\training-readiness-catalog\data-agent-training-readiness-20260718-r2\catalog.json`:
+  canonical Research-integration artifact with deterministic catalog and
+  dataset identities; zero ranking or sealed-holdout eligible files.
+- `D:\thericher-v2\model-artifacts\data-agent\training-readiness-catalog\data-agent-training-readiness-20260718-r1\catalog.json`:
+  preserved pre-integration field shape; superseded by r2 for new consumers.
 - `data-agent-market-data-inventory-cadence-20260717-r2`: bounded metadata
   inventory confirmed 2 roots, 5 snapshots, and 5 useful files; no acquisition.
 - `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1`: no immediate
@@ -99,7 +139,6 @@ and quality summaries before it is treated as model-selection evidence.
 
 ## Next Handoff
 
-Keep the next Data step scoped to the training-ready catalog or an exact
-coverage gap named by the active goal. Fresh-symbol, MPWR, AMAT bridge, and
-non-AMAT context remain passive unless that goal names the required symbols and
-date ranges.
+Hand Engine Research one fixed-instrument daily manifest with explicit parser,
+development-training, ranking, and sealed-holdout eligibility. Do not broaden
+the inventory or substitute symbols based on observed performance.

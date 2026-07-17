@@ -2,8 +2,10 @@
 
 ## Status
 
-- Campaign preparation only; no research job is running.
-- GPU training is held until the Data Agent publishes a campaign-ready dataset.
+- Generic catalog-backed campaign contract and deterministic CPU naive baseline
+  are review-hardened; no research job is running.
+- GPU training remains held until Data publishes a development-training-
+  eligible fixed-instrument daily entry.
 - Current projection only; history remains in Git `8f416f8` and external artifacts.
 
 ## Engine Loop
@@ -36,13 +38,11 @@
 
 ## Current Objective
 
-- Prepare one reproducible research campaign for the next Data-owned dataset.
-- The campaign contract must bind dataset identity, universe, split windows,
-  labels, decision timestamps, fill timestamps, costs, models, and metrics.
-- Resolve target/fill semantics before training: current next-close targets do
-  not match a strategy filled at the next open.
-- CPU baseline, public-model, test, and campaign-config preparation may proceed
-  as bounded development work; none establishes candidate rank.
+- Prepare the refreshed daily campaign for the predeclared `SPY`, `QQQ`, and
+  `IWM` set without selecting instruments from performance.
+- Run all frozen naive baselines first. Use one bounded Docker PyTorch CUDA
+  breadth set only after Data eligibility and the Claude contract challenge.
+- Keep all results development-only; do not enter depth or promotion.
 
 ## Breadth Queue
 
@@ -72,6 +72,16 @@
 
 ## Durable Knowledge
 
+- Campaign runs reject raw bar lists, derive dataset identity from Data-owned
+  `CatalogedBars`, verify its id/hash, and reject timeframe mismatch before
+  prediction.
+- Phase filtering, forward disjoint windows, label-horizon purge/embargo, and
+  sealed-holdout isolation remain enforced.
+- Ranking contracts reject zero slippage and catalog-ineligible or late-built
+  sealed holdouts. Naive baselines use the same local-paper timing and costs.
+- CPU baseline replay evidence now requires an external work directory and
+  preserves event JSONL, SQLite, and emergency state with paths and hashes in
+  the existing validation artifact. Artifacts are exclusive-create only.
 - Existing 1m evidence covers too few sessions for reliable generalization.
 - The current next-close prediction target is misaligned with next-open fills.
 - Previously inspected holdouts may be non-forward or burned by repeated use.
@@ -93,6 +103,15 @@
 
 ## Recent Evidence
 
+- Focused campaign plus legacy validation tests pass (`10 passed`): real gzip
+  hash binding, byte tamper, raw-list/id/hash/timeframe rejection, durable
+  replay, costs, deterministic payload, offline behavior, and smoke compatibility.
+- Claude verdict: `supported-with-limits`; hash pinning, pre-prediction phase
+  filtering, horizon gaps, and baseline timing parity were incorporated.
+- Production development smoke
+  `catalog-r2-aapl-bound-r1-development-fold-1-always_long` preserved 56
+  `local_paper` fills and replay hashes outside Git. It finished flat with
+  after-cost PnL `-7.8754`; this validates plumbing, not signal quality.
 - Existing 1m feature, trace, replay, and attribution work showed that the
   research plumbing operates, but outcomes were mixed and often duplicated
   across thresholds or reused slices.
@@ -102,9 +121,8 @@
 
 ## Next Handoff
 
-- Data Agent: provide one immutable campaign-ready dataset with manifest,
-  symbols, sessions, quality notes, and explicit split recommendations.
-- Engine Research: accept it through one campaign contract, run breadth CPU and
-  public-model baselines, then authorize bounded GPU depth only if warranted.
-- Return one concise campaign result covering forward validation, untouched
-  holdout performance, slippage sensitivity, and PnL attribution.
+- Data Agent: provide the fixed-instrument daily manifest and eligibility facts.
+- Engine Research: run daily CPU baselines and at most one bounded GPU breadth
+  set if development training is supported.
+- Return one concise development result with forward folds, costs, replay
+  hashes, and PnL attribution; do not claim an untouched holdout.

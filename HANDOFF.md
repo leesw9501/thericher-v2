@@ -71,9 +71,14 @@ The repository already contains:
 - append-only JSONL events with rebuildable SQLite query state,
 - market-data provider interfaces, local/sample providers, and deterministic
   `1m`, `5m`, `10m`, `1h`, and `3h` resampling,
+- stable training-readiness catalogs and byte-verified `CatalogedBars`,
 - deterministic backtest and bounded validation paths,
+- forward campaign contracts with target timing, purge/embargo, costs, and
+  durable local-paper replay evidence,
 - broker-free local paper orders, fills, cash, positions, replay, duplicate-id
   protection, and emergency state,
+- broker-neutral lifecycle contracts with an atomic, restartable fake
+  transport; all KIS behavior remains disabled,
 - research experiment, walk-forward, attribution, and artifact helpers,
 - Docker research profiles with PyTorch CUDA smoke/training support,
 - external artifact mounts and mount sanity checks,
@@ -99,31 +104,49 @@ Known useful intraday files are:
    - sessions from 2026-06-29 through 2026-07-09
 
 A larger daily universe exists at
-`D:\market_data\us_equities\yahoo_daily_universe\canonical\ohlcv_daily`, but it
-needs a bounded range, ordering, adjustment, corporate-action, and
-point-in-time inventory before model-input use.
+`D:\market_data\us_equities\yahoo_daily_universe\canonical\ohlcv_daily`. Five
+snapshots were inventoried and the newest 7,390,436-row file was fully scanned,
+but adjustment, corporate-action, and point-in-time limitations still prevent
+ranking or sealed-holdout use.
 
 Current intraday data is suitable for parser, feature, replay, and development
 smokes. It is not broad or independent enough for credible model ranking or a
 final profitability claim.
 
-Primary inventory evidence:
+Current canonical evidence:
 
-- `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-training-ready-inventory-20260717-r1\metrics.json`
-- `D:\thericher-v2\model-artifacts\data-agent\training-ready-data-inventory-20260717-r1\metrics.json`
+- `D:\thericher-v2\model-artifacts\data-agent\training-readiness-catalog\data-agent-training-readiness-20260718-r2\catalog.json`
+  has stable catalog/dataset hashes and marks zero files ranking or sealed-
+  holdout eligible.
+- `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`
+  records the first immutable Nasdaq current-directory snapshot. It is
+  prospective-only and does not repair historical survivorship or delistings.
+
+`D:` had 40.61 percent free after acquisition. SEC current mappings were not
+collected because compliant automation needs an honest identifying contact;
+none was invented. No operator data action is required for the current goal.
 
 The Data stateboard owns exact catalog status and operator data requests.
 
 ## Research Reality
 
-Treat prior short intraday results as development evidence only. Known threats
-that must be corrected before candidate ranking are:
+The first catalog-backed campaign now binds the actual gzip bytes to immutable
+`CatalogedBars`, rejects raw bars and timeframe mismatches, uses completed-close
+decisions with next-open entry and following-open exit, and preserves event
+JSONL, SQLite state, emergency state, and hashes outside Git. Ranking contracts
+require positive slippage and Data eligibility; sealed holdout cannot be tuned.
 
-- labels based on next close while local paper enters at next open,
-- reverse or otherwise non-forward evaluation slices,
+The bounded AAPL `always_long` development smoke produced 56 local-paper fills,
+finished flat, and lost `7.8754` after costs. It proves the path, not a profitable
+signal. Evidence:
+
+- `D:\thericher-v2\model-artifacts\validation\catalog-r2-aapl-bound-r1-development-fold-1-always_long.json`
+
+Treat prior short intraday results as development evidence only. Remaining
+threats before candidate ranking include:
+
 - previously inspected or burned holdout evidence,
 - overlapping walk-forward windows that exaggerate independence,
-- zero-slippage defaults and incomplete after-cost attribution,
 - repeated threshold variants over the same underlying market moments.
 
 Engine Research keeps separate breadth and depth queues. Breadth screens many
@@ -133,9 +156,15 @@ Docker with PyTorch CUDA. GPU availability never outranks data correctness.
 
 ## Execution Reality
 
-The broker-free simulator is the only enabled execution path. KIS is disabled,
-no credentials have been read, and no broker call or order has been made as
-part of this operating-model refresh.
+The broker-free simulator is the only enabled execution path. The broker-
+neutral fake requires an intent to be atomically persisted before submit,
+survives JSON restart, handles partial/full fills and cancellation, and blocks
+retry while an outcome is unknown until authoritative resolution and clean
+reconciliation. Fake fills use `source: in_memory_broker`; broker-free simulator
+fills remain `source: local_paper`.
+
+KIS is disabled, no credentials have been read, and no broker call or order has
+been made.
 
 KIS paper is an early execution milestone, not a reward for model
 profitability. A later goal should first request operator authority for
@@ -190,7 +219,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` defines the first coordinated Data, Research, and Execution
-readiness increment. No operator help is required for that objective. Paid data,
-read-only KIS authority, the paper capital envelope, and live capital remain
-future explicit decisions.
+`NEXT_CODEX_GOAL.md` defines a fixed-instrument daily development campaign using
+existing data, followed by a bounded PyTorch CUDA breadth experiment only if the
+Data contract supports development training. No operator help is required.
+Paid data, read-only KIS authority, the paper capital envelope, and live capital
+remain future explicit decisions.

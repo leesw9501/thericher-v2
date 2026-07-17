@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import hashlib
 import json
 import os
 import subprocess
@@ -13,19 +14,91 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
-from typing import Any
+from typing import Any, Protocol
 
-from thericher_v2.contracts import SCHEMA_VERSION, Bar, OrderIntent, Timeframe
-from thericher_v2.data import BarQuery, SampleBarProvider, assess_bar_quality
+from thericher_v2.contracts import (
+    SCHEMA_VERSION,
+    Bar,
+    EmergencyState,
+    ModelPrediction,
+    OrderIntent,
+    Signal,
+    Timeframe,
+)
+from thericher_v2.data import BarQuery, CatalogedBars, SampleBarProvider, assess_bar_quality
 from thericher_v2.ensemble import decide
-from thericher_v2.execution import EmergencyStore, LocalPaperBroker
+from thericher_v2.execution import (
+    LOCAL_PAPER_SOURCE,
+    EmergencyStore,
+    LocalPaperBroker,
+    LocalPaperFill,
+)
 from thericher_v2.models import MomentumModel
 from thericher_v2.serialization import to_jsonable
 from thericher_v2.state import Event, EventStore
 
+from .campaign import (
+    CampaignContract,
+    CampaignPhase,
+    NaiveBaselineId,
+)
+
 DEFAULT_MODEL_ARTIFACT_ROOT = Path("D:/thericher-v2/model-artifacts")
 DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
 VALIDATION_SOURCE = "bounded_validation"
+
+
+class PredictionModel(Protocol):
+    lookback: int
+
+    def predict(self, bars: list[Bar]) -> ModelPrediction: ...
+
+
+@dataclass(frozen=True)
+class _NaiveBaselineModel:
+    baseline_id: NaiveBaselineId
+    deterministic_seed: int
+    lookback: int = 0
+
+    def predict(self, bars: list[Bar]) -> ModelPrediction:
+        if not bars:
+            raise ValueError("naive baseline requires at least one completed bar")
+        latest = bars[-1]
+        if self.baseline_id == "always_long":
+            action = "buy"
+            reason = "always_long_baseline"
+        elif self.baseline_id == "previous_bar_direction":
+            action = "buy" if latest.close > latest.open else "hold"
+            reason = "completed_bar_direction_baseline"
+        elif self.baseline_id == "flat":
+            action = "hold"
+            reason = "flat_baseline"
+        else:  # pragma: no cover - CampaignContract rejects unsupported values.
+            raise ValueError(f"unsupported naive baseline: {self.baseline_id}")
+        confidence = Decimal("1") if action == "buy" else Decimal("0")
+        signal = Signal(
+            symbol=latest.symbol,
+            market=latest.market,
+            action=action,
+            strength=confidence,
+            reason=reason,
+            timeframe=Timeframe(latest.timeframe),
+            generated_at=latest.end_ts,
+        )
+        return ModelPrediction(
+            model_id=f"naive_{self.baseline_id}",
+            model_version="1.0.0",
+            symbol=latest.symbol,
+            market=latest.market,
+            signal=signal,
+            confidence=confidence,
+            expected_edge_bps=Decimal("0"),
+            feature_window_end=latest.end_ts,
+            metadata={
+                "baseline_id": self.baseline_id,
+                "deterministic_seed": self.deterministic_seed,
+            },
+        )
 
 
 @dataclass(frozen=True)
@@ -86,11 +159,72 @@ class ValidationResult:
     equity: Decimal
     event_count: int
     data_source: str
+    total_fees: Decimal
+    total_slippage: Decimal
+    campaign_id: str | None = None
+    campaign_contract_hash: str | None = None
+    campaign_phase: CampaignPhase | None = None
+    campaign_fold_id: str | None = None
+    baseline_id: NaiveBaselineId | None = None
+    deterministic_seed: int | None = None
+    dataset_id: str | None = None
+    dataset_hash: str | None = None
+    dataset_source_path: Path | None = None
     schema_version: int = SCHEMA_VERSION
 
     @property
     def pnl(self) -> Decimal:
         return self.equity - self.starting_cash
+
+    @property
+    def after_cost_pnl(self) -> Decimal:
+        return self.pnl
+
+    @property
+    def gross_pnl(self) -> Decimal:
+        return self.after_cost_pnl + self.total_fees + self.total_slippage
+
+
+@dataclass(frozen=True)
+class ReplayEvidence:
+    work_dir: Path
+    event_jsonl_path: Path
+    event_jsonl_sha256: str
+    state_sqlite_path: Path
+    state_sqlite_sha256: str
+    emergency_path: Path
+    emergency_sha256: str
+    fill_source: str = LOCAL_PAPER_SOURCE
+    schema_version: int = SCHEMA_VERSION
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": self.schema_version,
+            "fill_source": self.fill_source,
+            "work_dir": str(self.work_dir),
+            "event_jsonl": {
+                "path": str(self.event_jsonl_path),
+                "sha256": self.event_jsonl_sha256,
+            },
+            "state_sqlite": {
+                "path": str(self.state_sqlite_path),
+                "sha256": self.state_sqlite_sha256,
+            },
+            "emergency": {
+                "path": str(self.emergency_path),
+                "sha256": self.emergency_sha256,
+            },
+        }
+
+
+@dataclass(frozen=True)
+class NaiveBaselineRun:
+    baseline_id: NaiveBaselineId
+    result: ValidationResult
+    artifact_path: Path
+    replay_evidence: ReplayEvidence
+    fill_source: str = LOCAL_PAPER_SOURCE
+    schema_version: int = SCHEMA_VERSION
 
 
 def discover_market_data_inventory(
@@ -181,18 +315,74 @@ def load_yahoo_intraday_1m_bars(
 
 
 def run_local_paper_validation(
-    bars: list[Bar],
+    bars: list[Bar] | CatalogedBars,
     *,
     event_store: EventStore,
     emergency_store: EmergencyStore,
-    model: MomentumModel | None = None,
+    model: PredictionModel | None = None,
     config: ValidationConfig | None = None,
     data_source: str = "sample",
+    campaign: CampaignContract | None = None,
+    phase: CampaignPhase = "development",
+    fold_id: str | None = None,
+    tuning: bool = False,
+    baseline_id: NaiveBaselineId | None = None,
 ) -> ValidationResult:
-    config = config or ValidationConfig()
     model = model or MomentumModel()
-    ordered = sorted(bars, key=lambda bar: bar.start_ts)
-    _validate_bars(ordered, min_bars=max(config.min_bars, model.lookback + 3))
+    cataloged_data: CatalogedBars | None = None
+    if campaign is not None:
+        if not isinstance(bars, CatalogedBars):
+            raise ValueError("campaign validation requires Data-owned CatalogedBars")
+        cataloged_data = bars
+        campaign.verify_cataloged_dataset(
+            dataset_id=cataloged_data.dataset_id,
+            dataset_hash=cataloged_data.dataset_hash,
+        )
+        if any(bar.timeframe != campaign.timeframe for bar in cataloged_data.bars):
+            raise ValueError("CatalogedBars timeframe does not match campaign timeframe")
+        raw_bars = list(cataloged_data.bars)
+        data_source = f"cataloged:{cataloged_data.source_path}"
+    elif isinstance(bars, CatalogedBars):
+        raw_bars = list(bars.bars)
+    else:
+        raw_bars = bars
+    ordered = sorted(raw_bars, key=lambda bar: bar.start_ts)
+    resolved_fold_id: str | None = None
+    if campaign is not None:
+        resolved_fold_id, window = campaign.resolve_window(
+            phase,
+            fold_id=fold_id,
+            tuning=tuning,
+        )
+        ordered = [
+            bar
+            for bar in ordered
+            if bar.start_ts >= window.start_utc and bar.end_ts <= window.end_utc
+        ]
+        if baseline_id is not None and baseline_id not in campaign.naive_baselines:
+            raise ValueError("baseline_id is not frozen in the campaign contract")
+        if config is None:
+            suffix = resolved_fold_id or "sealed"
+            config = ValidationConfig(
+                run_id=f"{campaign.campaign_id}-{phase}-{suffix}",
+                fee_bps=campaign.costs.fee_bps,
+                slippage_bps=campaign.costs.slippage_bps,
+            )
+        elif (
+            config.fee_bps != campaign.costs.fee_bps
+            or config.slippage_bps != campaign.costs.slippage_bps
+        ):
+            raise ValueError("validation costs must match the frozen campaign contract")
+    else:
+        config = config or ValidationConfig()
+        if baseline_id is not None:
+            raise ValueError("baseline_id requires a campaign contract")
+
+    required_tail = 3 if campaign is None else campaign.target.exit_bar_offset + 1
+    _validate_bars(
+        ordered,
+        min_bars=max(config.min_bars, model.lookback + required_tail),
+    )
 
     broker = LocalPaperBroker(
         event_store=event_store,
@@ -203,13 +393,20 @@ def run_local_paper_validation(
     )
     trades: list[ValidationTrade] = []
     decisions_seen = 0
+    total_fees = Decimal("0")
+    total_slippage = Decimal("0")
 
-    for index in range(model.lookback + 1, len(ordered) - 1):
+    first_signal_index = model.lookback + 1 if campaign is None else model.lookback
+    final_offset = 1 if campaign is None else campaign.target.exit_bar_offset
+    for index in range(first_signal_index, len(ordered) - final_offset):
         signal_window = ordered[: index + 1]
         signal_bar = ordered[index]
-        execution_bar = ordered[index + 1]
         prediction = model.predict(signal_window)
+        if campaign is not None and prediction.feature_window_end != signal_bar.end_ts:
+            raise ValueError("campaign prediction must use only data through signal bar close")
         decision = decide([prediction])
+        if campaign is not None and decision.decided_at != signal_bar.end_ts:
+            raise ValueError("campaign decision must occur at the completed signal bar close")
         decisions_seen += 1
         decision_id = _decision_id(config.run_id, decision.symbol, signal_bar.end_ts)
         event_store.append(
@@ -237,6 +434,78 @@ def run_local_paper_validation(
             )
         )
 
+        if campaign is not None:
+            if decision.action != "buy":
+                continue
+            account = broker.account()
+            if account.quantity(market=signal_bar.market, symbol=signal_bar.symbol) != 0:
+                raise RuntimeError("campaign target requires a flat account before entry")
+            entry_bar = ordered[index + campaign.target.entry_bar_offset]
+            exit_bar = ordered[index + campaign.target.exit_bar_offset]
+            entry_order = OrderIntent(
+                client_order_id=f"{config.run_id}-{len(trades) + 1:04d}",
+                symbol=signal_bar.symbol,
+                market=signal_bar.market,
+                side="buy",
+                quantity=config.quantity,
+                limit_price=None,
+                decision_id=decision_id,
+                created_at=signal_bar.end_ts,
+            )
+            entry = broker.submit_and_fill_next_bar(
+                entry_order,
+                signal_bar=signal_bar,
+                execution_bar=entry_bar,
+            )
+            if entry.fill is None:
+                continue
+            trades.append(
+                _validation_trade(
+                    entry_order,
+                    entry.fill,
+                    signal_bar_end=signal_bar.end_ts,
+                )
+            )
+            total_fees += entry.fill.fee
+            total_slippage += _slippage_cost(
+                entry.fill.price,
+                entry_bar.open,
+                entry.fill.quantity,
+            )
+
+            exit_order = OrderIntent(
+                client_order_id=f"{config.run_id}-{len(trades) + 1:04d}",
+                symbol=signal_bar.symbol,
+                market=signal_bar.market,
+                side="sell",
+                quantity=entry.fill.quantity,
+                limit_price=None,
+                decision_id=f"{decision_id}:target-exit",
+                created_at=entry_bar.end_ts,
+            )
+            exit_execution = broker.submit_and_fill_next_bar(
+                exit_order,
+                signal_bar=entry_bar,
+                execution_bar=exit_bar,
+            )
+            if exit_execution.fill is None:
+                raise RuntimeError("campaign target exit did not produce a local-paper fill")
+            trades.append(
+                _validation_trade(
+                    exit_order,
+                    exit_execution.fill,
+                    signal_bar_end=entry_bar.end_ts,
+                )
+            )
+            total_fees += exit_execution.fill.fee
+            total_slippage += _slippage_cost(
+                exit_execution.fill.price,
+                exit_bar.open,
+                exit_execution.fill.quantity,
+            )
+            continue
+
+        execution_bar = ordered[index + 1]
         account = broker.account()
         position = account.quantity(market=signal_bar.market, symbol=signal_bar.symbol)
         if decision.action == "buy" and position <= 0:
@@ -264,16 +533,17 @@ def run_local_paper_validation(
         if execution.fill is None:
             continue
         trades.append(
-            ValidationTrade(
-                client_order_id=order.client_order_id,
-                decision_id=decision_id,
-                side=execution.fill.side,
-                quantity=execution.fill.quantity,
-                price=execution.fill.price,
-                fee=execution.fill.fee,
+            _validation_trade(
+                order,
+                execution.fill,
                 signal_bar_end=signal_bar.end_ts,
-                filled_at=execution.fill.filled_at,
             )
+        )
+        total_fees += execution.fill.fee
+        total_slippage += _slippage_cost(
+            execution.fill.price,
+            execution_bar.open,
+            execution.fill.quantity,
         )
 
     account = broker.account()
@@ -297,6 +567,19 @@ def run_local_paper_validation(
         equity=equity,
         event_count=len(list(event_store.iter_events())),
         data_source=data_source,
+        total_fees=total_fees,
+        total_slippage=total_slippage,
+        campaign_id=None if campaign is None else campaign.campaign_id,
+        campaign_contract_hash=None if campaign is None else campaign.contract_hash,
+        campaign_phase=None if campaign is None else phase,
+        campaign_fold_id=resolved_fold_id,
+        baseline_id=baseline_id,
+        deterministic_seed=None if campaign is None else campaign.deterministic_seed,
+        dataset_id=None if cataloged_data is None else cataloged_data.dataset_id,
+        dataset_hash=None if cataloged_data is None else cataloged_data.dataset_hash,
+        dataset_source_path=(
+            None if cataloged_data is None else cataloged_data.source_path.resolve()
+        ),
     )
 
 
@@ -330,6 +613,104 @@ def run_sample_cpu_smoke(work_dir: Path | None = None) -> ValidationResult:
     return result
 
 
+def run_naive_cpu_baseline(
+    cataloged_bars: CatalogedBars,
+    *,
+    campaign: CampaignContract,
+    artifact_root: Path,
+    work_dir: Path,
+    phase: CampaignPhase = "development",
+    fold_id: str | None = None,
+    baseline_id: NaiveBaselineId | None = None,
+    repo_root: Path | None = None,
+    starting_cash: Decimal = Decimal("10000"),
+    quantity: Decimal = Decimal("1"),
+) -> NaiveBaselineRun:
+    """Run one deterministic CPU baseline through the campaign validation path."""
+
+    selected_baseline = baseline_id or campaign.naive_baselines[0]
+    if selected_baseline not in campaign.naive_baselines:
+        raise ValueError("baseline_id is not frozen in the campaign contract")
+    resolved_fold_id, selected_window = campaign.resolve_window(
+        phase,
+        fold_id=fold_id,
+        tuning=False,
+    )
+    suffix = resolved_fold_id or "sealed"
+    run_id = f"{campaign.campaign_id}-{phase}-{suffix}-{selected_baseline}"
+    config = ValidationConfig(
+        run_id=run_id,
+        starting_cash=starting_cash,
+        quantity=quantity,
+        fee_bps=campaign.costs.fee_bps,
+        slippage_bps=campaign.costs.slippage_bps,
+    )
+    resolved_repo_root = repo_root or Path.cwd()
+    resolved_work_dir = work_dir.resolve()
+    _reject_repo_artifact_path(resolved_work_dir, resolved_repo_root)
+    _reject_repo_artifact_path(artifact_root, resolved_repo_root)
+    artifact_path = _validation_artifact_path(artifact_root, run_id)
+    _require_new_path(artifact_path, "validation artifact")
+
+    event_jsonl_path = resolved_work_dir / "events.jsonl"
+    state_sqlite_path = resolved_work_dir / "state.sqlite"
+    emergency_path = resolved_work_dir / "emergency.json"
+    for path, label in (
+        (event_jsonl_path, "event JSONL"),
+        (state_sqlite_path, "state SQLite"),
+        (emergency_path, "emergency state"),
+    ):
+        _require_new_path(path, label)
+    resolved_work_dir.mkdir(parents=True, exist_ok=True)
+
+    emergency_store = EmergencyStore(emergency_path)
+    emergency_store.write(
+        EmergencyState(
+            stop_new_orders=False,
+            cancel_open_orders_requested=False,
+            reason="campaign_baseline_initial_state",
+            updated_at=selected_window.start_utc,
+        )
+    )
+    result = run_local_paper_validation(
+        cataloged_bars,
+        event_store=EventStore(state_sqlite_path, event_jsonl_path),
+        emergency_store=emergency_store,
+        model=_NaiveBaselineModel(
+            baseline_id=selected_baseline,
+            deterministic_seed=campaign.deterministic_seed,
+        ),
+        config=config,
+        campaign=campaign,
+        phase=phase,
+        fold_id=fold_id,
+        baseline_id=selected_baseline,
+    )
+    replay_evidence = ReplayEvidence(
+        work_dir=resolved_work_dir,
+        event_jsonl_path=event_jsonl_path,
+        event_jsonl_sha256=_sha256_file(event_jsonl_path),
+        state_sqlite_path=state_sqlite_path,
+        state_sqlite_sha256=_sha256_file(state_sqlite_path),
+        emergency_path=emergency_path,
+        emergency_sha256=_sha256_file(emergency_path),
+    )
+    artifact_path = write_validation_artifact(
+        result,
+        artifact_root=artifact_root,
+        repo_root=resolved_repo_root,
+        campaign=campaign,
+        cataloged_data=cataloged_bars,
+        replay_evidence=replay_evidence,
+    )
+    return NaiveBaselineRun(
+        baseline_id=selected_baseline,
+        result=result,
+        artifact_path=artifact_path,
+        replay_evidence=replay_evidence,
+    )
+
+
 def resolve_model_artifact_root() -> Path:
     configured = (
         os.environ.get("THERICHER_HOST_MODEL_ARTIFACT_ROOT")
@@ -343,12 +724,28 @@ def write_validation_artifact(
     *,
     artifact_root: Path,
     repo_root: Path | None = None,
+    campaign: CampaignContract | None = None,
+    cataloged_data: CatalogedBars | None = None,
+    replay_evidence: ReplayEvidence | None = None,
 ) -> Path:
     _reject_repo_artifact_path(artifact_root, repo_root)
-    output_dir = artifact_root / "validation"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    path = output_dir / f"{result.run_id}.json"
-    path.write_text(json.dumps(_result_payload(result), indent=2, sort_keys=True), encoding="utf-8")
+    path = _validation_artifact_path(artifact_root, result.run_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = _result_payload(result)
+    if campaign is not None:
+        payload["campaign_contract"] = campaign.to_payload()
+        payload["campaign_contract_hash"] = campaign.contract_hash
+    if cataloged_data is not None:
+        payload["cataloged_data"] = {
+            "dataset_id": cataloged_data.dataset_id,
+            "dataset_hash": cataloged_data.dataset_hash,
+            "source_path": str(cataloged_data.source_path.resolve()),
+        }
+    if replay_evidence is not None:
+        payload["replay_evidence"] = replay_evidence.to_payload()
+    rendered = json.dumps(payload, indent=2, sort_keys=True)
+    with path.open("x", encoding="utf-8") as handle:
+        handle.write(rendered)
     return path
 
 
@@ -491,6 +888,28 @@ def _validate_bars(bars: list[Bar], *, min_bars: int) -> None:
             raise ValueError("validation bars must be contiguous")
 
 
+def _validation_trade(
+    order: OrderIntent,
+    fill: LocalPaperFill,
+    *,
+    signal_bar_end: datetime,
+) -> ValidationTrade:
+    return ValidationTrade(
+        client_order_id=order.client_order_id,
+        decision_id=order.decision_id,
+        side=fill.side,
+        quantity=fill.quantity,
+        price=fill.price,
+        fee=fill.fee,
+        signal_bar_end=signal_bar_end,
+        filled_at=fill.filled_at,
+    )
+
+
+def _slippage_cost(fill_price: Decimal, reference_open: Decimal, quantity: Decimal) -> Decimal:
+    return abs(fill_price - reference_open) * quantity
+
+
 def _parse_utc(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(UTC)
 
@@ -519,8 +938,40 @@ def _result_payload(result: ValidationResult) -> dict[str, Any]:
             "pnl": result.pnl,
             "event_count": result.event_count,
             "data_source": result.data_source,
+            "total_fees": result.total_fees,
+            "total_slippage": result.total_slippage,
+            "gross_pnl": result.gross_pnl,
+            "after_cost_pnl": result.after_cost_pnl,
+            "campaign_id": result.campaign_id,
+            "campaign_contract_hash": result.campaign_contract_hash,
+            "campaign_phase": result.campaign_phase,
+            "campaign_fold_id": result.campaign_fold_id,
+            "baseline_id": result.baseline_id,
+            "deterministic_seed": result.deterministic_seed,
+            "dataset_id": result.dataset_id,
+            "dataset_hash": result.dataset_hash,
+            "dataset_source_path": (
+                None if result.dataset_source_path is None else str(result.dataset_source_path)
+            ),
         }
     )
+
+
+def _validation_artifact_path(artifact_root: Path, run_id: str) -> Path:
+    return artifact_root / "validation" / f"{run_id}.json"
+
+
+def _require_new_path(path: Path, label: str) -> None:
+    if path.exists():
+        raise FileExistsError(f"{label} already exists: {path}")
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return f"sha256:{digest.hexdigest()}"
 
 
 def _reject_repo_artifact_path(artifact_root: Path, repo_root: Path | None) -> None:

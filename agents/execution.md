@@ -2,109 +2,70 @@
 
 ## Status
 
-- Broker-free execution readiness is active.
-- The KIS adapter is disabled.
-- No KIS, credential, account, order, or capital authority exists.
-- External paper and live execution remain unavailable.
-
-## Engine Loop
-
-- Paper trading.
-- Live-risk control.
-- PnL attribution through deterministic fill and account reconciliation.
+- Broker-neutral lifecycle readiness is implemented with an offline fake
+  transport and an explicit local persistence path.
+- KIS remains disabled. No credential, account, network, order, or capital
+  authority exists.
+- Existing broker-free fills remain labeled `source: local_paper`; fake broker
+  fills use `source: in_memory_broker`.
 
 ## Owns
 
-- Deterministic order lifecycle, fills, positions, cash, buying power, open
-  orders, cancellation, and account reconciliation.
-- Execution risk limits, idempotency, emergency stops, and fail-closed behavior.
-- Broker-neutral contracts and broker adapters when separately authorized.
-- Local broker-free simulation with fills labeled `source: local_paper`.
+- Deterministic intent, submit, fill, cancel, open-order, restart, and
+  reconciliation behavior.
+- Cash, positions, accounting PnL, risk limits, emergency controls, and future
+  broker adapters when separately authorized.
+- Fail-closed treatment of duplicate, stale, mismatched, or unknown outcomes.
 
-## Must Not
+## Current Evidence
 
-- Call KIS or any external broker, read credentials, or discover account data
-  without explicit operator authority.
-- Submit, cancel, replace, or query real external paper or live orders under the
-  current authority.
-- Load public model code into execution paths.
-- Add strategy, feature, threshold, model-promotion, or profitability logic
-  beyond deterministic execution risk checks.
-- Treat research diagnostics, model profitability, or replay output as broker
-  authority.
-
-## Resources
-
-- Existing broker-free simulator and `source: local_paper` event evidence.
-- Existing local emergency-stop state and deterministic account replay.
-- Existing disabled broker boundary with unavailable KIS capabilities.
-- No held credentials, KIS sessions, account identifiers, or approved capital.
-
-## Current Objective
-
-- Define typed broker-neutral account, buying-power, order, partial-fill,
-  cancel, open-order, and reconciliation contracts for the disabled boundary.
-- Prove those contracts with deterministic fake-transport tests only.
-- Keep all production KIS transport and credential paths disabled.
-
-## Ready Queue
-
-1. Define typed account and buying-power snapshots with timestamps, currency,
-   settled cash, available cash, exposure, and explicit unavailable states.
-2. Define order request, acknowledgement, rejection, partial-fill, fill,
-   cancel, and terminal-state contracts with stable client and broker ids.
-3. Define typed open-order and reconciliation results for positions, cash,
-   fills, duplicate events, stale snapshots, and mismatches.
-4. Add fake-transport tests for partial fills, repeated events, cancel races,
-   unknown orders, restart recovery, and reconciliation failure.
-5. Verify local simulation continues to emit `source: local_paper` and cannot
-   select a KIS transport.
-
-## Running
-
-- None.
-
-## Durable Knowledge
-
-- Execution correctness is deterministic: identical ordered inputs must produce
-  identical order, account, risk, and reconciliation state.
-- Reconciliation is an execution responsibility and must fail closed on stale,
-  incomplete, contradictory, or unrecognized broker state.
-- Broker-facing types must represent partial success and unavailable data; they
-  must not collapse uncertainty into a successful result.
-- Model and strategy code remain outside execution. Execution may consume only
-  explicit typed intents after independent risk validation.
-- `local_paper` is the source label for broker-free simulated fills; diagnostics
-  are not fills and must not be relabeled as local paper.
-- KIS paper is an early execution milestone measured independently of strategy
-  profitability. Profitability neither grants nor blocks broker authority.
+- Immutable account, buying-power, order, fill, cancel, open-order, and
+  reconciliation contracts use `Decimal` and UTC timestamps.
+- `InMemoryBrokerTransport` permits submit only after `record_intent` has been
+  atomically persisted as JSON at an explicitly supplied `state_path`.
+- Exported state is JSON-safe; persisted bytes reload into a fresh transport
+  before a submit retry.
+- Open orders can be cancelled. `outcome_unknown` blocks retry even when an ack
+  exists. Unchanged outcomes require monotonic status evidence; newly observed
+  partial or full fills additionally require unique immutable fill evidence
+  whose exact quantity and weighted price match the authoritative status.
+- Reconciliation sets `safe_to_submit=False` for duplicate ids, mismatched
+  local/external state, stale snapshots, incomplete snapshots, or unknown
+  outcomes.
+- Authoritative status and fill evidence are persisted atomically and survive a
+  fresh restart before clean reconciliation.
+- Focused evidence: `tests/test_broker_lifecycle.py` and
+  `tests/test_broker_boundary.py` pass together without network or credentials.
 
 ## Recovery
 
-- Rebuild state from typed account, position, open-order, fill, and cancel
-  snapshots before accepting any new intent.
-- Reconcile by stable ids and event ordering; repeated events must be
-  idempotent and missing or conflicting state must stop new orders.
-- Preserve emergency-stop state across restart and surface unresolved orders or
-  account mismatches for operator review.
-- Current recovery stops at fake transport or `local_paper`, never KIS.
+- Read the explicit JSON state file and reload it with
+  `InMemoryBrokerTransport.from_state(..., state_path=...)`; the in-memory
+  payload must match the persisted bytes.
+- Reconcile account, buying power, open orders, and fills before accepting a
+  new intent after restart.
+- Missing, contradictory, stale, or outcome-unknown evidence fails closed.
+- Current recovery stops at the in-memory fake or `local_paper`, never KIS.
 
-## Recent Evidence
+## Ready Queue
 
-- The local simulator deterministically covers accept, reject, cancel,
-  duplicate-id, and next-bar-fill behavior.
-- Fill-source checks preserve simulated fills as `source: local_paper` and
-  separate diagnostic evidence from execution events.
-- The disabled broker boundary returns typed unavailable outcomes, and tests
-  demonstrate no network, credential, broker-submit, or broker-event writes.
+1. Add the smallest deterministic pre-submit risk decision for persisted
+   broker requests using existing `RiskLimits`, account, and buying-power
+   evidence.
+2. Keep append-only execution event integration as a later bounded step after
+   the risk decision contract is independently validated.
+3. After explicit operator authorization, add read-only KIS paper account and
+   buying-power discovery behind the existing disabled boundary.
 
-## Next Handoff
+## Operator Help
 
-- Implement only the typed readiness contracts and fake-transport tests in the
-  ready queue; do not add a working KIS transport or credential access.
-- Keep the KIS adapter disabled and preserve `source: local_paper` in local
-  simulation.
-- A later read-only KIS authority decision and a later KIS paper-capital
-  approval are separate operator decisions.
-- KIS paper remains an early milestone independent of model profitability;
-  deterministic risk and reconciliation are its acceptance criteria.
+- None now.
+- Read-only KIS paper credential/account authority and a later paper capital
+  envelope remain separate future decisions.
+
+## Must Not
+
+- Call KIS, use network or credentials, submit external orders, or enable live
+  behavior under current authority.
+- Add strategy or model-selection logic to execution.
+- Relabel fake broker fills as `local_paper`.
