@@ -29,20 +29,19 @@
 
 ## Active Queue
 
-1. A bounded non-compute question is ready: using only existing non-AMAT
-   feasibility, label-ready, and queue-hygiene summaries, does non-AMAT
-   evidence outside AMAT-bridge lineage meet the duplicate-aware floor for a
-   later model-input pass; if not, what exact row/key deficit remains?
-2. Answer that question with one artifact-only inventory before spending GPU or
-   replay time. Current strict label-ready evidence remains `5` rows and `3`
-   unique timing-context keys, with `0` fresh strict unique contexts added
-   outside prior AMAT-bridge reuse.
-3. Short experiments, replay, attribution, probability checks, trace compute,
+1. No immediate Engine Research compute question is ready.
+2. Non-AMAT independent evidence-floor inventory is answered and remains
+   `hold_no_compute`: `5/8` strict label-ready rows, `3/8` strict unique
+   timing-context keys, and `0` fresh strict rows/keys outside prior
+   AMAT-bridge reuse.
+3. Rotate to Data for one bounded source-context inventory before spending GPU
+   or replay time on this branch.
+4. Short experiments, replay, attribution, probability checks, trace compute,
    trace recompute, training, threshold search, and exit-policy work are held
    until the evidence floor is met by a future bounded objective.
-4. Longer candidate training is held until a replay or inventory artifact
+5. Longer candidate training is held until a replay or inventory artifact
    defines a specific model-input question with enough context.
-5. Keep job kinds closed, write artifacts outside Git, and do not treat held
+6. Keep job kinds closed, write artifacts outside Git, and do not treat held
    context as promotion, pass/fail, production, broker, or risk policy.
 
 ## Running Jobs
@@ -395,6 +394,14 @@
   threshold search, exit simulation, Docker/GPU job, data acquisition,
   market-data scan/read, broker/KIS action, helper/job-kind change, gate,
   promotion rule, report family, or durable platform work was opened.
+- Non-AMAT independent evidence-floor inventory consumed existing named metrics
+  artifacts only and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\non-amat-independent-evidence-floor-inventory-20260717-r1\metrics.json`.
+  It kept `hold_no_compute`: independent evidence remains `5/8` strict
+  label-ready rows and `3/8` strict unique timing-context keys, with `0` fresh
+  strict rows/keys outside prior AMAT-bridge reuse. No bounded GPU, replay,
+  model-input, training, ablation, trace, threshold, or exit-policy objective
+  was opened.
 - Basic momentum model and next-bar backtest harness exist.
 - Market data can now resample deterministic `1m`, `5m`, `10m`, `1h`, and `3h`
   bars.
@@ -1208,12 +1215,12 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker. Execution, Infra, and Review are stateboards
   plus temporary Codex sidecar roles, not repo-owned executable workers.
-- Short experiments queue: a non-compute evidence-floor question is ready, but
-  no compute question is ready. Do not spend GPU time on MPWR/fresh-symbol
-  replay, non-AMAT model-input ablation, trace compute, trace recompute,
-  training, threshold search, or exit-policy work until the artifact-only
-  inventory answers that row/key deficit question and meets the duplicate-aware
-  evidence floor.
+- Short experiments queue: no compute question is ready after the non-AMAT
+  evidence-floor inventory. Do not spend GPU time on MPWR/fresh-symbol replay,
+  non-AMAT model-input ablation, trace compute, trace recompute, training,
+  threshold search, or exit-policy work until a Data/source-context artifact
+  identifies fresh independent local data/provenance support and a future
+  objective explicitly opens compute.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

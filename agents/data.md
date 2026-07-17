@@ -32,12 +32,17 @@
 
 ## Active Queue
 
-1. No immediate data acquisition, scan, inventory refresh, or operator-help
-   task is open.
-2. Fresh-symbol, MPWR, non-AMAT, and AMAT-bridge entries are passive context
-   unless a future single objective names exact missing symbols or date ranges.
-3. Keep data-quality checks as warnings until execution hard stops need them.
-4. Future acquisition or cache-shape work requires a specific ingestion
+1. Run one bounded source-context inventory for the non-AMAT evidence deficit:
+   determine whether the remaining `+3` row and `+5` unique-key shortfall is
+   due to local data availability, artifact provenance, or missing local-paper
+   label context.
+2. Use existing named metrics artifacts first. Use only shallow local data
+   metadata or exact symbol/timestamp checks if needed; avoid broad recursive
+   `D:\market_data` scans.
+3. Do not acquire data in this pass unless the next single objective explicitly
+   allows a no-auth, license-compatible acquisition attempt.
+4. Keep data-quality checks as warnings until execution hard stops need them.
+5. Future acquisition or cache-shape work requires a specific ingestion
    objective and must stop on credentials, payment, manual access, unclear
    licensing, repeated source failure, or no active-goal benefit.
 
@@ -52,6 +57,10 @@
 
 ## Done Recently
 
+- Non-AMAT evidence-floor inventory did not read market-data rows or acquire
+  data, but it identified the next Data question: decide whether the remaining
+  `+3` row and `+5` unique-key shortfall is raw local data availability,
+  artifact/provenance reuse, missing local-paper label context, or a mix.
 - Added provider protocol, local CSV provider, sample provider, and deterministic
   timeframe resampling.
 - Inventoried `D:\market_data` at the shallow level for this goal. Top-level

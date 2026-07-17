@@ -2615,11 +2615,22 @@ and read-only sidecar review. It kept non-AMAT model-input/ablation
 `3` unique timing-context keys, and the broader inventory added `0` fresh strict
 unique contexts outside prior AMAT-bridge reuse.
 
-Next, run one bounded artifact-only non-AMAT independent evidence inventory to
-answer the selected row/key deficit question. Do not run compute, replay,
-training, data acquisition, market-data row reads, Docker/GPU dependency work,
-broker work, or durable-platform work unless a future single objective opens it
-explicitly.
+The bounded artifact-only non-AMAT independent evidence inventory answered that
+question and wrote:
+`D:\thericher-v2\model-artifacts\feature-input-stability\non-amat-independent-evidence-floor-inventory-20260717-r1\metrics.json`.
+It kept `hold_no_compute`: independent strict label-ready evidence remains
+`5/8` rows and `3/8` unique timing-context keys, with `0` fresh strict rows and
+`0` fresh strict keys added outside prior AMAT-bridge reuse. The broader
+inventory only reaches `13` rows and `6` keys by reusing prior AMAT-bridge
+lineage, so it is not fresh independent support. No GPU, replay, training,
+ablation, trace compute, threshold search, data acquisition, market-data row
+read, broker/KIS action, credential read, helper/job-kind change, gate, report
+family, or durable platform work was opened.
+
+Next, rotate to Data and run one bounded source-context inventory to determine
+whether the non-AMAT evidence deficit is blocked by local data availability,
+artifact provenance, or missing local-paper label context. Keep it bounded to
+existing named artifacts and shallow/exact local data checks only.
 
 ## Daily Operator Review
 

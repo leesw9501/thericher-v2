@@ -798,6 +798,11 @@
   avoiding broad `D:\market_data` scans, data acquisition, replay, trace,
   training, ablation, scheduler/coordinator/dashboard work, durable platform
   work, and promotion/risk/execution rules.
+- Non-AMAT evidence-floor inventory stayed one compact external artifact and
+  kept compute closed. It recorded `hold_no_compute` with a clear `5/8` row and
+  `3/8` unique-key deficit, avoiding GPU/replay/training/ablation, broad data
+  scans, acquisition, helper/job-kind expansion, gates, report families, and
+  promotion/risk/execution rules.
 
 ## Next Handoff
 
@@ -809,9 +814,9 @@
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- Queue hygiene, post-compaction review, and Engine Research evidence-question
-  definition are complete. Auto-select the next lane by lane rotation and answer
-  the selected non-AMAT evidence-floor question artifact-only before opening
-  compute. Do not stop for ordinary lane choice; stop only for true operator
-  decisions such as credentials, broker/KIS behavior, live/paper authority,
-  public exposure, dependency/runtime expansion, or unclear data rights.
+- Queue hygiene, post-compaction review, Engine Research evidence-question
+  definition, and non-AMAT evidence-floor inventory are complete. Rotate to Data
+  for a bounded source-context inventory before opening compute. Do not stop for
+  ordinary lane choice; stop only for true operator decisions such as
+  credentials, broker/KIS behavior, live/paper authority, public exposure,
+  dependency/runtime expansion, or unclear data rights.
