@@ -2504,6 +2504,32 @@ compute, data acquisition, replay, training, scheduler/coordinator work, or
 durable multi-agent platform work until that lane is chosen or a future
 artifact defines a bounded evidence question.
 
+The daily operator decision bundle then completed:
+
+- Temporary Codex sidecars covered Review, Engine Research, and
+  Data/Execution/Infra checks in parallel, then were closed. They were runtime
+  collaborators only; no durable multi-agent platform, scheduler, daemon,
+  coordinator, dashboard, notification loop, auto-commit path, or repo-owned
+  worker was added.
+- The bundle consumed existing stateboards and artifacts only. It performed no
+  market-data scan, row-level market-data read, acquisition, replay, training,
+  ablation, trace compute, trace recompute, threshold search, exit simulation,
+  KIS call, broker action, credential read, helper change, contract change, job
+  kind change, Docker change, dependency change, gate, promotion rule, or report
+  family.
+- The one allowed daily bundle was written under:
+  `reports/daily/2026-07-17-summary.md`,
+  `reports/daily/2026-07-17-metrics.json`, and
+  `reports/daily/2026-07-17-next-goal.md`.
+- Result: operator decision is required. Queue hygiene found no ready bounded
+  compute question, while non-AMAT raw pre-entry feature context remains only a
+  near-candidate and is not ready for compute. No operator data is needed now;
+  the ADP missing strict early-label bar remains conditional future data only.
+
+Next, wait for the operator to choose exactly one strategic lane before opening
+new compute, data acquisition, replay, training, scheduler/coordinator work, or
+durable multi-agent platform work.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

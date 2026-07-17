@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Prepare one concise operator decision bundle after stale queue hygiene.
+Wait for the operator to choose the next strategic lane.
 
 This advances review/simplification and backtest/walk-forward validation by
-summarizing which queues were retired, which contexts are merely held, and which
-strategic lane the operator should choose next. This is a decision point; do not
-invent a new compute or data objective without operator direction.
+preventing stale held evidence from turning into automatic compute or process
+growth. Do not invent a new research, data, replay, or infra objective without
+the operator's lane choice.
 
 ## Current Agent Reality
 
@@ -20,10 +20,9 @@ invent a new compute or data objective without operator direction.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- Temporary Codex sidecars may be used as role reviewers for this goal, but they
-  are runtime collaborators. Do not build a durable multi-agent platform,
-  scheduler, daemon, coordinator, notification loop, dashboard, or auto-commit
-  worker.
+- Temporary Codex sidecars are runtime collaborators only. Do not build a
+  durable multi-agent platform, scheduler, daemon, coordinator, notification
+  loop, dashboard, or auto-commit worker while waiting for lane choice.
 
 ## Hard Boundaries
 
@@ -41,8 +40,7 @@ invent a new compute or data objective without operator direction.
 - Do not perform a broad recursive scan of `D:\market_data`.
 - Do not turn held evidence into execution thresholds, risk rules, broker
   policies, replay rules, feature rules, gates, or model-promotion rules.
-- Do not store generated GPU/model artifacts or market data in the repo. Use
-  `D:\thericher-v2\model-artifacts` for external artifacts if needed.
+- Do not store generated GPU/model artifacts or market data in the repo.
 
 ## Required First Reads
 
@@ -65,31 +63,30 @@ invent a new compute or data objective without operator direction.
    - `agents/execution.md`
    - `agents/infra.md`
    - `agents/review.md`
+   - `reports/daily/2026-07-17-summary.md`
+   - `reports/daily/2026-07-17-metrics.json`
+   - `reports/daily/2026-07-17-next-goal.md`
 
-3. Ask Claude CLI for a short drift-check before adding or changing any helper,
-   job kind, dispatch path, agent governance, artifact contract, data contract,
-   replay contract, attribution contract, local-paper behavior, or daily-report
-   policy. A concise operator bundle from existing artifacts/stateboards should
-   not need a Claude check.
+## Operator Decision Needed
 
-## Evidence To Consume
+Queue hygiene found no ready bounded compute question. The latest daily bundle
+asks the operator to choose exactly one next strategic lane:
 
-- Queue-hygiene artifact:
-  `D:\thericher-v2\model-artifacts\review-simplification\review-stale-research-queue-hygiene-20260717-r1\metrics.json`
-- Post-MPWR fresh-symbol retirement artifact:
-  `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`
-- Current stateboards under `agents/`
-- `HANDOFF.md`
+1. Open a new bounded data universe.
+2. Define the next model-input research question.
+3. Prepare local-paper or paper-trading readiness work.
+4. Improve GPU/research infra ergonomics without schedulers.
+5. Run another simplification/review pass before more compute.
 
 Known facts to preserve:
 
-- The fresh-symbol compute branch is retired from the active queue.
+- Fresh-symbol compute, DELL/MPWR/STX/WDC trace-only follow-up, MPWR replay
+  follow-up, and post-MPWR Data follow-up are retired from active queue context.
 - MPWR and MRVL/MU/SNDK/COHR are passive held evidence, not active compute.
-- DELL/MPWR/STX/WDC trace-only follow-up and MPWR replay follow-up are retired.
 - Non-AMAT model-input/ablation is `hold_no_compute`: only `5` strict
   label-ready rows and `3` strict unique timing-context keys are available
-  against the current `min_examples=8` floor, with `0` fresh strict unique
-  contexts added by broader inventory outside prior AMAT-bridge reuse.
+  against `min_examples=8`, with `0` fresh strict unique contexts added outside
+  prior AMAT-bridge reuse.
 - No immediate data-lane, Engine Research, GPU, replay, or acquisition follow-up
   is justified by the latest artifacts.
 - No operator data is needed now. The ADP missing strict early-label bar is only
@@ -97,56 +94,18 @@ Known facts to preserve:
 
 ## Required Work
 
-1. Produce one concise operator decision bundle under the daily report paths for
-   the current KST date:
-   - `reports/daily/YYYY-MM-DD-summary.md`
-   - `reports/daily/YYYY-MM-DD-metrics.json`
-   - `reports/daily/YYYY-MM-DD-next-goal.md`
-2. The bundle should ask the operator to choose one next strategic lane, such as:
-   - open a new bounded data universe,
-   - define the next model-input research question,
-   - prepare local-paper/paper-trading readiness work,
-   - improve GPU/research infra ergonomics without new schedulers,
-   - simplify/review before more compute.
-3. Keep the bundle short. Do not create multiple reports or a new report family.
-4. Update `HANDOFF.md` and agent stateboards only if needed to point to the
-   operator decision bundle.
-5. Refresh `NEXT_CODEX_GOAL.md` before ending so the next objective waits for,
-   or clearly records, the operator lane decision.
-
-## Verification
-
-Run:
-
-```powershell
-uv run --extra dev pytest -q
-uv run --extra dev ruff check .
-docker compose config --quiet
-```
-
-Also report:
-
-- which sidecars or executable workers were used,
-- whether Docker/GPU was used,
-- produced report/artifact paths,
-- what operator decision is needed,
-- what was intentionally not built.
+1. Ask the operator to choose exactly one lane from the list above.
+2. Do not edit code, run compute, acquire data, or create new workflow
+   scaffolding while waiting for the decision.
+3. After the operator chooses a lane, replace this file with one single next
+   objective tied to that lane and the relevant engine loop.
 
 ## Suggested Commit Message
 
-`Prepare operator decision bundle`
+`Record operator lane decision`
 
 ## Completion Report
 
-Report:
-
-- files changed,
-- tests run,
-- commit hash,
-- which sidecars or executable workers were used,
-- data found or acquired under `D:\market_data`,
-- data still needed from the operator, if any,
-- whether GPU/Docker compute was used and where artifacts were written,
-- produced reports/artifacts,
-- what was intentionally not built,
-- next goal or operator decision needed.
+If the operator has not chosen a lane yet, report that work is paused on the
+lane decision and list the five options. If a lane is chosen later, report the
+new single objective and any files changed.

@@ -755,21 +755,19 @@
   training context outside active compute, and found no ready independent
   evidence question. It used three temporary Codex sidecars as runtime
   reviewers, then closed them.
+- Daily operator decision bundle
+  `reports/daily/2026-07-17-*` created one concise daily bundle after queue
+  hygiene. It asks the operator to choose exactly one next strategic lane and
+  explicitly avoids GPU, replay, ablation, trace compute, data acquisition,
+  scheduler/coordinator work, gates, promotion rules, and durable multi-agent
+  platform work.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- The next attribution is justified by `100` local-paper fills, but keep it
-  artifact-only and compact. Avoid turning replay-selection into a gate, broad
-  universe search, execution threshold, model-promotion workflow, durable
-  worker, scheduler, dashboard, report branch, broker authority, credential
-  path, auto-commit behavior, threshold search, feature rule, or simulator
-  rule.
-- The next follow-up should rotate lanes. A bounded data inventory is fine if
-  it feeds the engine loop; do not create a report family, promotion decision,
-  scheduler/coordinator, durable multi-agent platform, replay run, training run,
-  exit simulation, or execution rule.
+- The next follow-up is blocked on operator lane choice, not another automatic
+  attribution, data inventory, replay, training, or trace-compute task.
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
