@@ -1121,6 +1121,15 @@
   and `1` crossing row. DELL and WDC stayed below threshold. No replay, order
   intents, fills, training, ablation, threshold search, new job kind, or
   dispatch path was added.
+- Fresh-symbol trace-comparison replay-selection planning
+  `fresh-symbol-trace-comparison-replay-planning-20260717-r1` ran
+  artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1\metrics.json`.
+  It compared MPWR/STX against GLW/INTC/QCOM crossing context plus DELL/WDC
+  non-crossing context, kept MRVL/MU/SNDK/COHR held, and selected MPWR as the
+  only future separate replay candidate. No replay, trace recompute, training,
+  ablation, threshold search, Docker/GPU job, new helper, job kind, or
+  dispatch path was added.
 
 ## Next Handoff
 
@@ -1129,9 +1138,9 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Next work should be artifact-only trace comparison or
-  replay-selection planning across MPWR/STX and the already-traced GLW/INTC/QCOM
-  context, with no immediate replay or training.
+  fresh-symbol branch. Next work may run exactly one MPWR-only broker-free
+  local-paper replay-selection using the existing trace and fixed descriptive
+  threshold pairs; no trace recompute, training, ablation, or threshold search.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

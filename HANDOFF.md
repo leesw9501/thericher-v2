@@ -2277,6 +2277,35 @@ STX against GLW, INTC, and QCOM crossing context, while keeping
 MRVL/MU/SNDK/COHR held. The planning artifact may recommend a later bounded
 broker-free replay goal, but must not run replay itself.
 
+The fresh-symbol trace-comparison replay-selection planning artifact then
+completed:
+
+- Claude drift-check and temporary Codex sidecars covered artifact shape,
+  Engine Research comparison, Data lineage, and Execution/Review boundaries.
+  They were runtime collaborators only; no durable multi-agent platform,
+  scheduler, daemon, coordinator, dashboard, notification loop, auto-commit
+  path, or new repo-owned worker was added.
+- The planning pass consumed existing trace/provenance artifacts only. It did
+  not rerun inference, train, ablate, replay local paper, search thresholds,
+  simulate exits, call KIS, read credentials, use network, acquire market data,
+  add a helper, or add a job kind.
+- The compact planning artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1\metrics.json`.
+- Result: MPWR was the only future separate replay candidate. It had max
+  probability `0.550297`, gap `+0.009297`, and `4` crossings over the fixed
+  descriptive `0.541000` threshold. STX crossed only once with gap
+  `+0.000606`. GLW, INTC, and QCOM stayed comparison-only context; DELL and
+  WDC stayed non-crossing context; MRVL/MU/SNDK/COHR stayed held.
+- The artifact created `0` order intents, `0` fills, `0` broker outcomes, no
+  event logs, and no execution, risk, replay, feature, threshold, gate, or
+  promotion rules. All trace rows stayed `source: diagnostic_overlay`; carried
+  local-paper evidence remained historical reference only.
+
+Next, run one bounded MPWR-only broker-free local-paper replay-selection using
+the existing MPWR probability trace and fixed descriptive threshold pairs. Do
+not recompute traces, train, ablate, search thresholds, include STX, GLW, INTC,
+QCOM, or add held MRVL/MU/SNDK/COHR symbols.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

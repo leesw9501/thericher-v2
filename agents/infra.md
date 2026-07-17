@@ -632,6 +632,13 @@
   `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1`
   and changed no Docker, compose, dependency, scheduler, coordinator,
   dashboard, notification, worker, or Engine Research Agent files.
+- Fresh-symbol trace-comparison planning ran locally as CPU/artifact-only work,
+  consumed existing external JSON artifacts, and wrote one compact planning
+  artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1`.
+  It used no Docker/GPU job and changed no Docker, compose, dependency,
+  scheduler, coordinator, dashboard, notification, worker, or Engine Research
+  Agent files.
 
 ## Next Handoff
 
@@ -685,3 +692,6 @@
   artifact-only and should not require Docker unless an existing helper makes
   that simpler. Do not add Docker layers, schedulers, daemons, or coordinator
   plumbing.
+- The next MPWR-only replay-selection may use Docker `research` only if the
+  existing local-paper replay primitive is easier to invoke there. Do not add
+  Docker layers, schedulers, daemons, or coordinator plumbing.

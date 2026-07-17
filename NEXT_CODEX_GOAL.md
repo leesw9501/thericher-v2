@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build one compact fresh-symbol trace-comparison and replay-selection planning
-artifact.
+Run one bounded MPWR-only broker-free local-paper replay-selection using the
+existing probability trace.
 
-This advances feature/model research and prepares a possible later
-backtest/local-paper validation step by comparing trace-only evidence before
-any replay is run.
+This advances backtest and walk-forward validation by testing whether the
+single fresh-symbol trace selected by the planning artifact can create
+replayable local-paper evidence, without expanding symbol scope or rerunning
+model compute.
 
 ## Current Agent Reality
 
@@ -21,10 +22,10 @@ any replay is run.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
 - For this goal, use temporary Codex sidecars in parallel when useful:
-  - Engine Research: compare trace evidence and shape the planning artifact.
-  - Data: verify all compared traces use existing local Yahoo rows only.
-  - Execution/Review: verify planning does not become replay, thresholds, gates,
-    or broker behavior.
+  - Engine Research: verify the existing trace-to-replay primitive/command.
+  - Data: verify MPWR uses existing local Yahoo rows and no acquisition.
+  - Execution/Review: verify broker-free local-paper-only replay and no gate or
+    promotion drift.
 - These sidecars are runtime collaborators. Do not build a durable multi-agent
   platform, scheduler, daemon, coordinator, notification loop, dashboard, or
   auto-commit worker in this goal.
@@ -33,23 +34,25 @@ any replay is run.
 
 - Do not call KIS APIs.
 - Do not place paper or live orders through any broker.
-- Do not run local-paper replay or create order intents/fills.
 - Do not read credentials, `.env`, or secret-like files.
 - Do not expose a public dashboard.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, dashboard, or auto-commit worker.
-- Do not run model training, ablation, replay reruns, threshold search,
-  exit-policy simulation, or broker/local-paper execution.
+- Do not run model training, ablation, trace recompute, threshold search,
+  exit-policy simulation, or broker execution.
 - Do not download market data into the Git workspace.
 - Do not acquire new market data.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Keep trace comparisons labeled as `source: diagnostic_overlay`.
-- Do not turn trace probabilities into execution thresholds, order-intent
-  generators, risk rules, broker policies, replay rules, feature rules, gates,
-  or model-promotion rules.
+- Local-paper replay is allowed only through the existing broker-free local
+  paper research path. Any generated fills must remain labeled
+  `source: local_paper`.
+- Do not include STX, GLW, INTC, QCOM, DELL, WDC, APP, or held
+  MRVL/MU/SNDK/COHR in the replay.
+- Do not turn replay output into execution thresholds, risk rules, broker
+  policies, replay rules, feature rules, gates, or model-promotion rules.
 
 ## Required First Reads
 
@@ -75,58 +78,59 @@ any replay is run.
 
 3. Ask Claude CLI for a short drift-check before adding or changing any helper,
    job kind, dispatch path, agent governance, artifact contract, replay
-   contract, or planning artifact schema. If the comparison can be produced by
-   a direct artifact script with no repo code changes, prefer that.
+   contract, or local-paper behavior. If MPWR replay can directly call the
+   existing threshold-robustness/local-paper primitive with the existing trace
+   artifact and no code changes, prefer that.
 
 ## Evidence To Consume
 
+- Fresh-symbol trace-comparison planning artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1\metrics.json`
 - Independent fresh-symbol trace-only batch:
   `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1\metrics.json`
-- Prior fresh-symbol trace-only batch:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`
-- Data Agent lane-rotation inventory:
-  `D:\thericher-v2\model-artifacts\data-agent\data-agent-fresh-symbol-lane-rotation-inventory-20260717-r1\metrics.json`
-- Held-branch path-shape comparison:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`
+- MPWR probability trace:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1-fresh_mpwr\trace.json`
 - Short source-context feature branch:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
+- Known local Yahoo snapshot:
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 Known facts to preserve:
 
-- MRVL, MU, SNDK, and COHR are held after duplicate-aware path/PnL evidence and
-  must not be added to a replay queue by this planning pass.
-- GLW, INTC, and QCOM have prior crossing traces and should be comparison
-  context only.
-- MPWR and STX crossed the fixed descriptive buy threshold in the independent
-  trace-only batch.
-- DELL and WDC did not cross the fixed descriptive buy threshold.
+- MPWR is the only future replay candidate selected by the planning artifact.
+- MPWR max probability was `0.550297`, gap `+0.009297`, with `4` crossings
+  against fixed descriptive buy threshold `0.541000`.
+- STX, GLW, INTC, and QCOM remain comparison context only.
+- DELL and WDC remain non-crossing context.
 - APP remains deferred as a source-context training symbol.
+- MRVL, MU, SNDK, and COHR remain held after duplicate-aware path/PnL evidence.
 
 ## Required Work
 
 1. Confirm the facts above from the consumed artifacts.
-2. Produce one compact external planning artifact that compares at least:
-   - MPWR and STX,
-   - GLW, INTC, and QCOM,
-   - DELL and WDC as non-crossing context,
-   - held MRVL/MU/SNDK/COHR only as exclusion context.
-3. Compare trace evidence without rerunning inference:
-   - probability min/mean/max,
-   - fixed descriptive threshold gap against `0.541000`,
-   - crossing counts,
-   - top diagnostic contexts,
-   - lineage and local data source,
-   - whether the symbol is held, comparison-only, non-crossing, or potential
-     later replay candidate.
-4. If the planning artifact recommends a later replay, cap it to a very small
-   explicit symbol set and mark it as a future separate goal only. Do not run
-   replay in this goal.
+2. Run exactly one bounded MPWR-only broker-free local-paper replay-selection
+   using existing trace evidence only:
+   - `max_bars=240`,
+   - existing `snapshot=2026-06-18`,
+   - existing MPWR probability trace,
+   - fixed threshold pairs `0.541/0.497`, `0.542/0.497`, and `0.543/0.497`,
+   - artifacts outside Git.
+3. Do not recompute traces, run inference, train, ablate, search thresholds,
+   simulate exits, acquire data, or add symbols.
+4. Produce one compact external replay-selection artifact recording:
+   - consumed artifact paths,
+   - fixed threshold pairs,
+   - replay variant metrics,
+   - local-paper order intent and fill counts,
+   - local-paper fill source verification,
+   - PnL/drawdown/final position evidence,
+   - no broker/KIS/gate/promotion semantics.
 5. Refresh `NEXT_CODEX_GOAL.md` again before ending:
-   - If the planning artifact finds a narrow replay question, make the next
-     goal a bounded broker-free local-paper replay-selection run using existing
-     traces only.
-   - If it does not find a narrow replay question, rotate away from
-     fresh-symbol work.
+   - If MPWR produces fills, make the next goal a compact trade-path/PnL
+     attribution over the MPWR local-paper events before any broader replay or
+     model work.
+   - If MPWR produces zero fills, make the next goal a compact zero-fill
+     opportunity attribution or rotate away from fresh-symbol work.
 
 ## Verification
 
@@ -140,14 +144,16 @@ docker compose config --quiet
 
 Also report:
 
-- the planning artifact path,
-- any sidecars used,
+- the replay command or primitive used,
+- any sidecars or executable workers used,
 - whether Docker/GPU was used,
-- whether future replay is justified and why.
+- produced artifact paths,
+- local-paper source verification,
+- whether future attribution is justified and why.
 
 ## Suggested Commit Message
 
-`Run independent fresh-symbol trace batch`
+`Plan fresh-symbol replay selection`
 
 ## Completion Report
 
@@ -161,7 +167,7 @@ Report:
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
 - produced artifacts,
-- local-paper source evidence carried forward, if any,
+- local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,
 - next goal.

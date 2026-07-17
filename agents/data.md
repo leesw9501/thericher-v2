@@ -517,6 +517,10 @@
   timestamps, non-monotonic rows, missing 1m intervals, or OHLCV invariant
   failures. No data was acquired, no market data was written, and no operator
   data help is needed.
+- Fresh-symbol trace-comparison planning consumed the two trace batch summaries
+  and lane-rotation inventory only. All compared symbols use the same existing
+  `snapshot=2026-06-18` Yahoo lineage; no recursive scan, acquisition, market
+  data write, credential read, or operator data request was needed.
 
 ## Next Handoff
 
@@ -533,6 +537,9 @@
   existing trace artifacts and local data provenance only. Data Agent has no
   acquisition task unless a later goal names exact missing symbols or date
   ranges.
+- The next MPWR-only replay-selection goal should reuse the existing MPWR trace
+  and the same local Yahoo snapshot. Data Agent has no acquisition task for
+  that goal.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -502,6 +502,11 @@
   rules, exit policies, or live/paper KIS behavior. MPWR/STX threshold crossing
   counts are `source: diagnostic_overlay` only and are not execution thresholds
   or replay triggers.
+- Fresh-symbol trace-comparison planning created no fills, orders, order
+  intents, positions, broker adapters, broker outcomes, local-paper replay,
+  execution filters, simulator rules, feature rules, threshold rules, risk
+  rules, exit policies, gates, or live/paper KIS behavior. MPWR was marked only
+  as a future separate replay candidate, not replay authorization.
 
 ## Next Handoff
 
@@ -565,3 +570,6 @@
 - The next trace-comparison or replay-selection planning pass must stay
   artifact-only. If it proposes a later replay, that replay must be a separate
   explicit goal through the existing broker-free local-paper path.
+- The next MPWR-only replay-selection may create local-paper order intents and
+  fills only through the existing broker-free local-paper research path, and
+  must verify all generated fills are `source: local_paper`.
