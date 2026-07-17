@@ -637,6 +637,12 @@
   replay mutation, threshold search, feature rule, durable multi-agent
   platform, or promotion language. It explicitly avoided `should_replay`,
   `winner`, `approved`, and execution-threshold semantics.
+- Fresh-symbol trace/data availability inventory wrote one compact external
+  artifact and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, replay mutation, trace compute,
+  threshold search, feature rule, durable multi-agent platform, or promotion
+  language. It kept all candidate summaries `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -648,10 +654,10 @@
   If the operator wants more repo-owned executable role agents, make that an
   explicit worker-expansion goal with one safe role and a named engine-loop
   benefit.
-- Next, rotate to a bounded data/trace availability inventory instead of adding
-  another replay diagnostic. Keep it to one compact external artifact and avoid
-  turning trace availability into a gate, scheduler, broad universe search, or
-  model-promotion workflow.
+- Next, allow at most one bounded trace-only Engine Research batch before any
+  fresh-symbol replay. Keep it to the named symbols from the inventory and
+  avoid turning trace availability into a gate, scheduler, broad universe
+  search, execution threshold, or model-promotion workflow.
   Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
   branch, broker authority, credential path, auto-commit, durable
   multi-agent-platform behavior, threshold search, feature rules, or

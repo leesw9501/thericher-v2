@@ -2013,6 +2013,43 @@ is a bounded trace/data availability inventory over existing local Yahoo rows
 and existing probability traces, so a future Engine Research task can decide
 whether a small trace-compute batch is justified instead of forcing replay.
 
+The bounded fresh-symbol trace/data availability inventory then completed:
+
+- Temporary Codex sidecars covered Data, Engine Research, and Review/Execution
+  checks. They were runtime helpers only; no durable multi-agent platform,
+  scheduler, daemon, coordinator, notification loop, auto-commit path, or new
+  repo-owned worker was added.
+- One compact external inventory artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\data-agent\fresh-symbol-trace-data-availability-20260717-r1\metrics.json`.
+  It read the existing local Yahoo snapshot
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`,
+  the existing `candidate-probability-trace` root, the short source-context
+  feature-branch artifact, the fresh-symbol prefilter, and the no-fill probe.
+- Scope stayed at `17` symbols: AMT, AMGN, AXP, AZN, AGG, MRVL, COHR, MU,
+  GLW, INTC, SNDK, QCOM, DELL, MPWR, STX, APP, and WDC. Current/prior/no-fill
+  symbols ADBE, ADI, ADP, AEM, AMAT, AMZN, BA, AAPL, ABBV, ABT, and ACN
+  remained excluded; AMD and ABNB remained avoided.
+- Result: `5` symbols had compatible short source-context traces and `0`
+  compatible traces crossed the descriptive `0.541000` buy threshold. `12`
+  symbols had clean local first-`240` rows but no compatible trace. The artifact
+  recorded row counts, warning-only first-`240` data quality, trace lineage,
+  max probability and gap where available, and all ranked rows as
+  `source: diagnostic_overlay`.
+- The exact future trace-compute inventory is MRVL, COHR, MU, GLW, INTC, SNDK,
+  QCOM, DELL, MPWR, STX, APP, and WDC. The recommended next small GPU trace-only
+  batch is the first seven prefilter data-only symbols: MRVL, COHR, MU, GLW,
+  INTC, SNDK, and QCOM, using `max_bars=240` over
+  `2026-06-09T13:30:00+00:00` through `2026-06-09T17:29:00+00:00`.
+- No trace compute, Docker/GPU job, replay, training, ablation, KIS API, broker
+  submit, credential read, network access, data acquisition, order intents,
+  fills, execution threshold, risk rule, replay rule, feature rule, gate, or
+  promotion path was created.
+
+Next, if continuing the fresh-symbol branch, run one bounded Engine Research
+trace-only batch for MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM before any replay.
+Replay should remain held until a compatible trace actually crosses the fixed
+descriptive threshold.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

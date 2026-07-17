@@ -585,6 +585,11 @@
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter`.
   No Docker/GPU job was queued because existing compatible traces were enough
   to show `0` threshold-crossing candidates.
+- Fresh-symbol trace/data availability inventory ran locally as artifact-only
+  work. It changed no Docker, compose, dependency, scheduler, coordinator,
+  dashboard, notification, worker, or Engine Research Agent files, wrote under
+  `D:\thericher-v2\model-artifacts\data-agent`, and used no Docker/GPU compute.
+  It justified a future small Engine Research trace-only GPU batch, not replay.
 
 ## Next Handoff
 
@@ -619,3 +624,7 @@
 - The next data-lane trace availability inventory should stay local and
   artifact-only unless it proves a small future Engine Research trace-compute
   batch is worth the GPU time.
+- The next fresh-symbol compute should use Docker `research` through the
+  existing Engine Research Agent path or the smallest trace-only equivalent;
+  do not add a scheduler, daemon, coordinator, dashboard, notification, or
+  durable multi-agent platform.

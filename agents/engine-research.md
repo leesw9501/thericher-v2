@@ -1047,6 +1047,12 @@
   Result: `12` candidates, `5` scored, `0` threshold-crossing candidates, and
   no replay. AMT was closest at probability max `0.539972`, gap `-0.001028`
   below the derived buy threshold `0.541000`.
+- Fresh-symbol trace/data inventory
+  `fresh-symbol-trace-data-availability-20260717-r1` ran as artifact-only Data
+  work. It found `5` compatible short source-context traces with `0` threshold
+  crossings and `12` clean local first-`240` candidates still needing compatible
+  traces. The recommended next Engine Research step is trace-only GPU compute
+  for MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM before any replay.
 
 ## Next Handoff
 
@@ -1054,11 +1060,11 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: do not repeat blind fresh-symbol replays. Hold
-  replay until a trace/data availability inventory shows a small fresh trace
-  batch is justified and the resulting probabilities cross a fixed derived buy
-  threshold. Keep any future replay through the existing Engine Research Agent
-  and existing `candidate_feature_branch_replay` kind only.
+- Short experiments queue: run one small trace-only batch for MRVL, COHR, MU,
+  GLW, INTC, SNDK, and QCOM using the short source-context model and existing
+  local Yahoo rows. Hold replay until one compatible trace crosses the fixed
+  derived buy threshold; any later replay must stay through the existing Engine
+  Research Agent and existing `candidate_feature_branch_replay` kind.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Build a bounded fresh-symbol trace/data availability inventory before any
-further fresh-symbol replay.
+Run the first bounded fresh-symbol trace-only GPU batch before any further
+fresh-symbol replay.
 
-This advances data collection, feature/model research, and backtest validation
-by separating “clean local bars exist” from “compatible probability trace
-exists” before spending GPU or replay time again.
+This advances feature/model research and backtest validation by using the
+existing short source-context model to compute compatible probability traces for
+clean fresh symbols, then deciding whether replay is even worth a later goal.
 
 ## Current Agent Reality
 
@@ -34,13 +34,14 @@ exists” before spending GPU or replay time again.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not add a new research job kind, executable worker, or CLI.
-- Do not run replay, model training, feature-input ablation, broad threshold
-  search, or data acquisition.
+- Do not run local-paper replay in this goal.
+- Do not run model training, feature-input ablation, broad threshold search, or
+  data acquisition.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Prefer existing `D:\market_data` rows and existing probability traces.
+- Prefer the existing Docker `research` path with PyTorch CUDA for trace
+  inference. Keep base/runtime dependencies torch-free.
 - Keep ranked or reconstructed context labeled as `source: diagnostic_overlay`.
 - Do not turn trace availability into an execution threshold, order-intent
   generator, risk rule, broker policy, replay rule, feature rule, gate, or
@@ -69,21 +70,22 @@ exists” before spending GPU or replay time again.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Data/Infra: verify clean local-bar candidates and existing trace roots
-     without broad scans or acquisition.
-   - Engine Research: verify compatible trace lineage against the short
-     feature-branch model and whether a future trace-compute batch is justified.
+   - Engine Research: verify trace-only execution shape and source-model
+     compatibility.
+   - Infra: verify Docker daemon, `research` service, CUDA visibility, and
+     artifact mounts after the Windows restart.
    - Review/Execution: verify no replay/order/gate semantics creep in.
 
-4. Ask Claude CLI for a short drift-check before architecture-changing edits.
-   If it times out, record that and keep changes tightly scoped.
+4. Ask Claude CLI for a short drift-check before adding or changing any
+   research-job dispatch path. If an existing Docker command can run trace-only
+   safely, prefer that over adding code.
 
 ## Evidence To Consume
 
+- Trace/data availability inventory:
+  `D:\thericher-v2\model-artifacts\data-agent\fresh-symbol-trace-data-availability-20260717-r1\metrics.json`
 - Fresh-symbol opportunity prefilter:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter\engine-agent-fresh-symbol-opportunity-prefilter-20260717-r1\metrics.json`
-- Fresh-symbol no-fill probe:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-short-replay-probe-20260717-r1\metrics.json`
 - Short source-context feature branch:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
 - Candidate probability trace root:
@@ -93,38 +95,41 @@ exists” before spending GPU or replay time again.
 
 ## Required Work
 
-1. Record the prefilter result as the starting point:
-   - `12` candidates,
-   - `5` scored from existing compatible traces,
-   - `0` threshold-crossing candidates,
-   - AMT closest at max probability `0.539972`, gap `-0.001028`,
-   - no replay, no order intents, and no fills.
-2. Build one bounded trace/data availability inventory using existing files:
-   - existing `snapshot=2026-06-18` local Yahoo rows,
-   - existing `candidate-probability-trace` artifacts,
-   - the short source-context feature-branch model lineage.
-3. Avoid expensive full recursive market-data scans. Reading the single local
-   Yahoo snapshot and known trace root is allowed. Start from at most `24`
-   fresh symbols:
-   - include clean candidates from the prefilter/Data sidecar,
-   - include symbols with existing compatible short source-context traces,
-   - exclude current branch, prior AMAT-bridge, and immediate no-fill replay
-     symbols: ADBE, ADI, ADP, AEM, AMAT, AMZN, BA, AAPL, ABBV, ABT, ACN,
-   - continue avoiding AMD and ABNB unless the inventory proves no better
-     candidates exist.
-4. Produce one compact external inventory artifact recording:
-   - candidate symbols,
-   - local row counts and first-`240`-bar data-quality warnings,
-   - whether a compatible probability trace exists,
-   - max probability and threshold gap when a compatible trace exists,
-   - whether a future trace-compute batch is justified,
-   - exact symbols/windows that would need trace compute,
-   - no broker/KIS/credential/network/data-acquisition/replay behavior.
-5. Do not run trace compute in this goal. If the inventory justifies trace
-   compute, refresh `NEXT_CODEX_GOAL.md` toward one small Engine Research Agent
-   trace-compute or replay-selection goal. If it does not, rotate toward an
-   execution/paper or review/simplification lane.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Confirm the inventory result:
+   - `17` inventory candidates,
+   - `5` compatible short source-context traces,
+   - `0` compatible threshold crossings,
+   - `12` clean local first-`240` candidates missing compatible traces,
+   - no trace compute, no replay, no order intents, and no fills.
+2. Run one bounded trace-only batch for:
+   - MRVL, COHR, MU, GLW, INTC, SNDK, QCOM.
+3. Use the exact local data window from the inventory:
+   - Yahoo snapshot:
+     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+   - `max_bars=240`
+   - `2026-06-09T13:30:00+00:00` through
+     `2026-06-09T17:29:00+00:00`
+   - slice IDs: `fresh_mrvl`, `fresh_cohr`, `fresh_mu`, `fresh_glw`,
+     `fresh_intc`, `fresh_sndk`, `fresh_qcom`.
+4. Use the short source-context model lineage from:
+   `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`.
+5. Prefer an existing trace-only primitive through Docker `research`. If the
+   current single-shot runner cannot dispatch trace-only work, add the smallest
+   bounded trace-only dispatch needed inside the existing research-job/Engine
+   Research Agent path after Claude drift-check. Do not add a new daemon,
+   scheduler, durable worker, dashboard, or broad platform.
+6. Produce one compact external trace-batch artifact recording:
+   - symbols and windows traced,
+   - source model and data-source compatibility,
+   - probability count, max probability, threshold gap, and crossing count,
+   - CUDA/Docker readiness and artifact root,
+   - no replay/order/fill/broker/KIS/credential/network/data-acquisition
+     behavior.
+7. If at least one compatible trace crosses the fixed descriptive buy threshold
+   `0.541000`, refresh `NEXT_CODEX_GOAL.md` toward one small broker-free
+   local-paper replay-selection goal. If none cross, rotate to review or a
+   different Engine Research input question instead of replaying.
+8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -138,15 +143,15 @@ docker compose config --quiet
 
 Also report:
 
-- any focused artifact/inventory smoke command,
-- any Data Agent runner command used,
+- the trace-only command used,
+- any focused trace-batch smoke/assertion command,
 - any sidecars used,
-- artifact paths written outside Git,
-- whether Docker/GPU compute was used and why.
+- whether Docker/PyTorch CUDA was used and where artifacts were written,
+- whether a future replay is justified.
 
 ## Suggested Commit Message
 
-`Inventory fresh-symbol trace availability`
+`Run fresh-symbol trace-only batch`
 
 ## Completion Report
 
@@ -159,8 +164,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced inventory artifacts,
-- local-paper source evidence, if any,
+- produced trace artifacts,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,
 - next goal.

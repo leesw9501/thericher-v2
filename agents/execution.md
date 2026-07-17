@@ -454,6 +454,11 @@
   `source: diagnostic_overlay` research context only. The helper records
   `no_execution_authority` and must not become an execution threshold, risk
   rule, broker policy, replay rule, feature rule, or live/paper KIS behavior.
+- Fresh-symbol trace/data availability inventory ran no local-paper replay and
+  created `0` order intents, `0` fills, `0` positions, and `0` broker outcomes.
+  All candidate rows are `source: diagnostic_overlay`; trace availability is
+  not an execution threshold, order-intent generator, risk rule, broker policy,
+  replay rule, or live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -500,3 +505,6 @@
 - If a later trace/data inventory identifies a crossing candidate, replay may
   still run only through existing broker-free local-paper research jobs and
   must verify `source: local_paper` fills before any bridge or PnL attribution.
+- The immediate next trace-only batch must not create order intents or fills.
+  If it later justifies replay, keep replay broker-free and verify
+  `source: local_paper` fills before attribution.
