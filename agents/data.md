@@ -527,6 +527,11 @@
   snapshot has `572,894` rows, MPWR has `2,328` rows, and at least `240` rows
   are available for the bounded replay. No data was acquired, no market data
   was written, and no operator data help is needed.
+- MPWR trade-path attribution reused the same snapshot and selected MPWR local
+  bars only. Data sidecar verified the replay fill timestamp range
+  `2026-06-09T14:59:00Z` to `2026-06-09T17:16:00Z`, exact fill bars present
+  `8/8`, continuous MPWR 1m path across the range `138/138`, and missing bars
+  `0`. No data was acquired and no operator data help is needed.
 
 ## Next Handoff
 
@@ -543,9 +548,8 @@
   existing trace artifacts and local data provenance only. Data Agent has no
   acquisition task unless a later goal names exact missing symbols or date
   ranges.
-- The next MPWR trade-path attribution should reuse the existing MPWR
-  replay-selection event artifacts and selected local Yahoo rows only. Data
-  Agent has no acquisition task for that goal.
+- The next MPWR hold/rotate decision should consume existing external artifacts
+  only. Data Agent has no acquisition task for that goal.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

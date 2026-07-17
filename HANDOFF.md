@@ -2344,6 +2344,46 @@ Next, run one compact MPWR local-paper trade-path/PnL attribution over the
 three replay-selection event artifacts before any broader replay, model work,
 or exit-policy simulation.
 
+The MPWR local-paper trade-path/PnL attribution then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The attribution directly reused the existing
+  `attribute_trade_paths_from_local_paper_events` helper with three existing
+  MPWR event artifacts and `240` selected MPWR local Yahoo bars. No helper, job
+  kind, attribution contract, replay contract, local-paper behavior, or agent
+  governance was changed, so no Claude drift-check was required.
+- The compact attribution artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\fresh-symbol-mpwr-trade-path-attribution-20260717-r1\metrics.json`.
+- Result: `24` original fills were verified as `source: local_paper`, paired
+  into `12` raw closed segments and `0` open segments, with `0` unmatched sell
+  fills and all final positions reconciled. Raw fee-aware delta was
+  `-15.9264`.
+- Duplicate-aware collapse showed the raw `12` segments are the same `4` MPWR
+  market moments repeated across the three threshold variants. The unique
+  market moments had fee-aware sum `-5.3088`, with `2` negative and `2`
+  non-negative moments. The worst unique moment was the
+  `2026-06-09T15:53:00Z` to `2026-06-09T15:56:00Z` path at `-17.4486`
+  fee-aware delta, with adverse delta `-23.3773951171875` and almost no
+  favorable excursion.
+- Reconstructed path context is recorded as `source: diagnostic_overlay`.
+  Original entry/exit fill payloads remain `source: local_paper`. The artifact
+  includes a consumer note that the raw helper segments preserve original fill
+  sources, while duplicate-aware rows are the preferred diagnostic-overlay
+  context and unique PnL basis.
+- The run did not call KIS, use broker submit/cancel/status, read credentials
+  or `.env`, use network, acquire data, write market data, rerun replay, train,
+  ablate, recompute traces, search thresholds, simulate exits, add symbols,
+  create gates, create promotion rules, or touch Docker/dependency files.
+  Docker/GPU was not used.
+
+Next, run one compact MPWR hold/rotate decision artifact that consumes only the
+MPWR replay-selection and trade-path attribution artifacts. It should decide
+whether this MPWR branch is held and which lane should rotate next, without
+running replay, training, trace compute, threshold search, or exit simulation.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

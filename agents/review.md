@@ -714,6 +714,13 @@
   training, ablation, threshold search, exit simulation, feature rule,
   simulator rule, durable multi-agent platform, or promotion language. It used
   three temporary Codex sidecars as runtime reviewers, then closed them.
+- MPWR trade-path attribution wrote one compact external artifact and added no
+  code, helper, job kind, worker, scheduler, dashboard, coordinator, report
+  family, gate, auto-commit path, broker authority, credential reads, data
+  acquisition, replay rerun, trace recompute, training, ablation, threshold
+  search, exit simulation, feature rule, simulator rule, durable multi-agent
+  platform, or promotion language. It used three temporary Codex sidecars as
+  runtime reviewers, then closed them.
 
 ## Next Handoff
 
@@ -736,8 +743,8 @@
   it stays one compact external artifact. It must not become immediate replay,
   a broad universe search, a promotion gate, a scheduler/coordinator, or a new
   report family.
-- The next MPWR trade-path attribution goal is acceptable if it parses existing
-  local-paper event artifacts only and stays one compact external artifact. It
-  must not grow into replay reruns, threshold search, exit simulation, broad
-  replay queue, gate, report family, scheduler/coordinator, durable worker, or
-  promotion workflow.
+- The next MPWR hold/rotate decision goal is acceptable if it consumes existing
+  MPWR artifacts only and stays one compact external artifact. It must not grow
+  into replay reruns, threshold search, exit simulation, broad replay queue,
+  gate, report family, scheduler/coordinator, durable worker, or promotion
+  workflow.

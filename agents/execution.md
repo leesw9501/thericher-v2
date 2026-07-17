@@ -514,6 +514,13 @@
   `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
   `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
   diagnostic-overlay, KIS, live, or external paper broker fills were observed.
+- MPWR trade-path attribution parsed existing replay-selection event artifacts
+  only. It preserved `24` original fills as `source: local_paper`, paired them
+  into `12` raw closed segments and `0` open segments, observed `0` unmatched
+  sell fills, reconciled final positions to `0`, and labeled duplicate-aware
+  reconstructed path context as `source: diagnostic_overlay`. It created no
+  fills, orders, order intents, broker adapters, broker outcomes, execution
+  filters, simulator rules, feature rules, threshold rules, or replay rules.
 
 ## Next Handoff
 
@@ -577,9 +584,8 @@
 - The next trace-comparison or replay-selection planning pass must stay
   artifact-only. If it proposes a later replay, that replay must be a separate
   explicit goal through the existing broker-free local-paper path.
-- The next MPWR trade-path attribution should parse existing replay-selection
-  event artifacts only. It must preserve the `24` generated fills as
-  `source: local_paper`, label any reconstructed path context as
-  `source: diagnostic_overlay`, and avoid creating new orders, order intents,
-  broker outcomes, execution filters, simulator rules, feature rules, threshold
-  rules, or replay rules.
+- The next MPWR hold/rotate decision should consume existing artifacts only. It
+  must preserve the `24` local-paper fills as historical evidence, use
+  duplicate-aware diagnostic-overlay context for PnL interpretation, and avoid
+  creating new orders, order intents, broker outcomes, execution filters,
+  simulator rules, feature rules, threshold rules, replay rules, or risk rules.

@@ -644,6 +644,11 @@
   coordinator, dashboard, notification, worker, or Engine Research Agent files,
   and wrote one compact artifact plus robustness/event artifacts under
   `D:\thericher-v2\model-artifacts`.
+- MPWR trade-path attribution ran locally as CPU/artifact-only work, used no
+  Docker or GPU job, changed no dependency, Docker, compose, scheduler,
+  coordinator, dashboard, notification, worker, or Engine Research Agent files,
+  and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
@@ -697,7 +702,6 @@
   artifact-only and should not require Docker unless an existing helper makes
   that simpler. Do not add Docker layers, schedulers, daemons, or coordinator
   plumbing.
-- The next MPWR trade-path attribution should stay local/artifact-only unless
-  an existing helper requires Docker. Do not add Docker layers, schedulers,
-  daemons, coordinator plumbing, dashboard, notification, or dependency
-  changes.
+- The next MPWR hold/rotate decision should stay local/artifact-only and should
+  not require Docker. Do not add Docker layers, schedulers, daemons,
+  coordinator plumbing, dashboard, notification, or dependency changes.

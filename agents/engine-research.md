@@ -1139,6 +1139,15 @@
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-mpwr-replay-selection-20260717-r1\metrics.json`.
   No trace recompute, training, ablation, threshold search, Docker/GPU job, new
   helper, job kind, dispatch path, or promotion rule was added.
+- MPWR trade-path attribution
+  `fresh-symbol-mpwr-trade-path-attribution-20260717-r1` reused the existing
+  trade-path helper on the three MPWR event artifacts and selected MPWR bars.
+  It attributed `24` local-paper fills into `12` raw closed segments and `0`
+  open segments, then collapsed repeated threshold variants to `4` unique
+  market moments with duplicate-aware fee-aware sum `-5.3088`. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\fresh-symbol-mpwr-trade-path-attribution-20260717-r1\metrics.json`.
+  No replay rerun, trace recompute, training, ablation, threshold search,
+  exit-policy simulation, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1147,9 +1156,10 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Next work should parse the MPWR replay-selection event
-  artifacts into compact trade-path/PnL attribution before any broader replay,
-  trace compute, training, ablation, threshold search, or exit-policy work.
+  fresh-symbol branch. Next work should run one artifact-only MPWR hold/rotate
+  decision from replay-selection plus trade-path attribution evidence before
+  any broader replay, trace compute, training, ablation, threshold search, or
+  exit-policy work.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.
