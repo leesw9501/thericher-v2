@@ -424,6 +424,11 @@
   inspected existing closed trade/path segments only: source artifacts
   preserved `56` referenced fill events as `source: local_paper`, while the
   `7` candidate scan rows were emitted as `source: diagnostic_overlay`.
+- Non-AMAT bridge-feasibility pass reran no local-paper replay and created no
+  fills, orders, positions, order intents, broker adapters, broker outcomes,
+  execution filters, simulator rules, feature rules, or threshold rules. It
+  referenced `14` local-paper fill events from existing event artifacts and
+  emitted `7` diagnostic rows as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -458,7 +463,8 @@
   or run broker-free replay only through existing research jobs. It must not
   create execution filters, order intents, broker authority, or live/paper KIS
   behavior.
-- The next lineage follow-up should parse existing local-paper trade-path and
-  probability/feature artifacts only. It must preserve original fills as
-  `source: local_paper` and any reconstructed row as
-  `source: diagnostic_overlay`.
+- The next non-AMAT feasibility decision should parse existing artifacts only.
+  It must preserve original fills as `source: local_paper`, keep reconstructed
+  rows as `source: diagnostic_overlay`, and avoid execution filters, order
+  intents, feature rules, threshold rules, replay rules, broker authority, and
+  live/paper KIS behavior.

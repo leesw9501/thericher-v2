@@ -1006,6 +1006,15 @@
   trade-path rows have local-paper path evidence and local bar coverage, but
   no raw feature payload, so another ablation or replay is not justified from
   this scan alone.
+- Non-AMAT bridge-feasibility pass ran artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`.
+  It materialized `7` raw-feature diagnostic rows across `4` non-AMAT
+  timing-context keys from existing traces, local bars, and local-paper paths.
+  ADP is missing the strict early `2026-06-09T14:05:00+00:00` local bar, so
+  only `5` rows and `3` unique timing-context keys are strict
+  early-label-ready. This stays below the current default ablation
+  `min_examples=8`, so no Docker/GPU ablation is justified from this artifact
+  alone.
 
 ## Next Handoff
 
@@ -1013,13 +1022,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: inspect existing probability/feature lineage for the
-  four non-AMAT timing-context keys from the independent-evidence scan. Produce
-  one bridge-readiness artifact or record the exact feature-context shortfall.
-  Keep it artifact-only before any Docker/GPU work.
-- Longer candidate training queue: hold until a lineage artifact, not this scan
-  alone, defines a specific replay-shape or model-input question. Keep job
-  kinds closed and write artifacts outside Git.
+- Short experiments queue: record a duplicate-aware non-AMAT feasibility
+  decision from the new bridge-feasibility artifact. Keep it artifact-only and
+  decide whether to stop the branch, look for one more existing label-ready
+  non-AMAT row, or name a precise future replay/data requirement.
+- Longer candidate training queue: hold until a decision artifact, not this
+  feasibility artifact alone, defines a specific replay-shape or model-input
+  question. Keep job kinds closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

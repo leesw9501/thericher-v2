@@ -447,14 +447,20 @@
   scan symbols was ADBE `2,340`, ADI `2,339`, ADP `2,235`, AEM `2,336`, AMAT
   `2,340`, AMZN `2,340`, and BA `2,338`. The scan found all candidate entry
   and exit bars, acquired no data, and needs no operator data help.
+- Non-AMAT bridge-feasibility pass reused the same local Yahoo file plus
+  existing wide-sample trace/event artifacts only. It found exact local bars
+  and complete strict pre-entry windows for ADBE, ADI, ADP, and AEM, but ADP
+  is missing strict early bar `2026-06-09T14:05:00+00:00`; no data was acquired.
+  No operator data help is needed unless a future goal requires strict
+  contiguous early windows for this exact ADP row.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts while inspecting probability/feature lineage for
-  the four non-AMAT scan keys. Record exact missing symbols, dates, or artifact
-  names only if lineage cannot be built from existing data.
+  rows and external artifacts while recording the non-AMAT feasibility decision.
+  Record exact missing symbols, dates, or artifact names only if the decision
+  identifies a future data requirement.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

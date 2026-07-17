@@ -1820,6 +1820,43 @@ artifact or record the precise feature-context shortfall. Keep that follow-up
 artifact-only first; do not replay, train, run Docker/GPU, or create a new job
 kind until the lineage proves a bounded next compute question.
 
+The non-AMAT bridge-feasibility pass then completed:
+
+- It consumed the independent-evidence scan, wide-sample trade-path artifact,
+  wide-sample opportunity attribution, referenced probability traces, existing
+  local-paper event artifacts, and the existing `snapshot=2026-06-18` local
+  Yahoo 1m file. It did not run Docker/GPU, replay, training, ablation,
+  threshold search, KIS, broker code, credentials, network, data acquisition, a
+  new job kind, or a new worker.
+- The compact external artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`.
+- All four target non-AMAT keys matched probability traces, local-paper
+  entry/exit fills, and strict pre-entry local bars. The pass materialized `7`
+  raw-feature bridge rows across `4` unique timing-context keys:
+  ADBE, ADI, ADP, and AEM.
+- Raw feature payloads were absent from trade-path and probability-trace
+  entries, so raw pre-entry features were reconstructed from existing local
+  bars using the existing feature-input ablation formulas and labeled as
+  diagnostic context. No feature rule was created.
+- Strict label-ready evidence is smaller than the raw row count. ADP is missing
+  the strict early `2026-06-09T14:05:00+00:00` local bar, so only `5` rows and
+  `3` unique timing-context keys are strict early-label-ready. The unique
+  fee-aware sign balance remains `2` negative and `2` non-negative, but the
+  strict feature-input label-ready set remains below the current default
+  feature-input ablation `min_examples=8`.
+- Original fills stayed `source: local_paper`; reconstructed rows stayed
+  `source: diagnostic_overlay`. The pass created no fills, orders, order
+  intents, broker outcomes, execution filters, replay rules, feature rules,
+  threshold rules, or promotion rules.
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They confirmed the traces and local data exist,
+  Docker/GPU is unnecessary, and source-label/broker boundaries remain intact.
+
+Next, record a duplicate-aware decision over this non-AMAT feasibility artifact
+before any replay, ablation, or GPU work. The decision should say whether the
+branch stops here, needs one more existing non-AMAT label-ready row, or has a
+precise future replay/data requirement.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

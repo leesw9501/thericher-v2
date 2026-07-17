@@ -556,6 +556,12 @@
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-amat-independent-evidence-scan-20260717-r1\metrics.json`.
   It read one existing local Yahoo gzip snapshot and external JSON artifacts
   only.
+- Non-AMAT bridge-feasibility pass ran locally as artifact-only work, used no
+  Docker/GPU job, changed no dependency, Docker, compose, scheduler,
+  coordinator, dashboard, or worker files, and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`.
+  It read existing external JSON/JSONL artifacts and one local Yahoo gzip
+  snapshot only.
 
 ## Next Handoff
 
@@ -584,6 +590,6 @@
 - After a Windows restart, keep checking Docker daemon readiness before each
   Engine Research Agent run. If the duplicate-aware follow-up needs compute,
   use the same single-shot Docker `research` path and external artifact mount.
-- The next non-AMAT bridge-feasibility pass should stay local and artifact-only
-  while inspecting existing probability/feature lineage. Use Docker `research`
-  only after a lineage artifact defines a bounded compute question.
+- The next non-AMAT feasibility decision should stay local and artifact-only.
+  Use Docker `research` only after a decision artifact defines a bounded
+  compute question.

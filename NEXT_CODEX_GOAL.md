@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run a capped non-AMAT bridge-feasibility pass over existing wide-sample
-probability, feature, local-bar, and local-paper lineage.
+Record a duplicate-aware decision for the non-AMAT bridge-feasibility branch.
 
 This advances feature/model research, backtest validation, PnL attribution, and
-data collection by checking whether the `4` non-AMAT timing-context keys found
-by the independent-evidence scan can become bridge-ready diagnostic rows before
-any replay, ablation, or GPU work.
+data collection by deciding whether the current non-AMAT bridge evidence stops
+here, needs one more existing label-ready row, or has a precise future
+replay/data requirement before any ablation or GPU work.
 
 ## Current Agent Reality
 
@@ -36,8 +35,10 @@ any replay, ablation, or GPU work.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
 - Do not add a new research job kind.
-- Do not run Docker/GPU for this pass.
-- Do not run ablation, replay, training, threshold search, or data acquisition.
+- Do not run Docker/GPU compute for this decision. `docker compose config
+  --quiet` is allowed only as required non-running verification.
+- Do not run ablation, replay, training, threshold search, data acquisition, or
+  new executable workers.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
@@ -71,10 +72,10 @@ any replay, ablation, or GPU work.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: inspect whether existing probability/feature lineage can
-     materialize the `4` non-AMAT timing-context keys.
-   - Data/Infra: verify local data and artifact roots; confirm no Docker/GPU is
-     needed.
+   - Engine Research: review whether the feasibility artifact justifies
+     another existing artifact probe or should stop the branch.
+   - Data/Infra: verify the ADP strict early-bar shortfall and confirm no
+     Docker/GPU compute or acquisition is needed.
    - Review/Execution: verify source labels, broker boundaries, and
      multi-agent drift.
 
@@ -83,6 +84,8 @@ any replay, ablation, or GPU work.
 
 ## Evidence To Consume
 
+- Non-AMAT bridge-feasibility artifact:
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`
 - Independent-evidence scan:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-amat-independent-evidence-scan-20260717-r1\metrics.json`
 - Duplicate-aware AMAT bridge decision:
@@ -91,42 +94,34 @@ any replay, ablation, or GPU work.
   `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-amat-recurrence-path-bridge-20260717-r1\metrics.json`
 - AMAT bridge ablation:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\metrics.json`
-- Wider-sample trade paths:
+- Wider-sample trade paths and opportunity attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-trade-path-20260716\metrics.json`
-- Wider-sample opportunity attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-opportunity-attribution-20260716\metrics.json`
-- Wider-sample replay and robustness artifacts referenced by that opportunity
-  attribution.
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Inspect the independent-evidence scan and focus only on these non-AMAT keys:
-   - ADBE `2026-06-09T14:03:00+00:00`
-   - ADI `2026-06-09T14:31:00+00:00`
-   - ADP `2026-06-09T14:03:00+00:00`
-   - AEM `2026-06-09T15:53:00+00:00`
-2. Resolve existing probability trace, local bar, local-paper path, and feature
-   lineage for those keys only. Avoid broad recursive scans.
-3. Build one compact external artifact under `D:\thericher-v2\model-artifacts`
-   that records whether each key is bridge-ready. For each key, record:
-   - matched probability trace entry,
-   - matched local bar evidence,
-   - matched local-paper entry/exit evidence,
-   - fee-aware sign label basis,
-   - raw feature availability or exact missing feature-context reason,
-   - source artifact lineage.
-4. If the four keys can be materialized into the existing feature-input
-   stability row shape without replay or training, write those rows as
-   `source: diagnostic_overlay` and keep local-paper fills as evidence only.
-   If they cannot, record the exact shortfall instead of forcing a bridge.
-5. Deduplicate by symbol, entry timestamp, and timing context. Record row count,
-   unique signal count, symbol concentration, fee-aware sign balance, and
-   missing evidence.
-6. Do not run Docker/GPU, ablation, replay, training, data acquisition, new
-   workers, or new job kinds in this goal.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Inspect the non-AMAT feasibility artifact and verify:
+   - raw-feature bridge-ready row count,
+   - strict feature-input label-ready row count,
+   - duplicate/variant structure,
+   - fee-aware sign balance,
+   - ADP strict early-bar shortfall,
+   - local-paper and diagnostic-overlay source evidence.
+2. Compare the feasibility artifact against the prior AMAT bridge decision and
+   current default feature-input ablation `min_examples=8`.
+3. Build one compact external decision artifact under
+   `D:\thericher-v2\model-artifacts` that records:
+   - whether to queue no compute from current evidence,
+   - whether one more existing non-AMAT label-ready row is needed,
+   - whether a precise future replay or data requirement exists,
+   - source lineage and missing evidence.
+4. Prefer stopping or holding the branch if existing artifacts do not provide
+   enough independent label-ready rows. Do not force replay or ablation.
+5. Do not run Docker/GPU compute, ablation, replay, training, data acquisition,
+   new workers, or new job kinds in this goal.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -143,11 +138,11 @@ Also report:
 - any focused test or artifact-only smoke command,
 - any sidecars used,
 - artifact paths written outside Git,
-- that Docker/GPU was not run for the pass.
+- that Docker/GPU compute was not run for the decision.
 
 ## Suggested Commit Message
 
-`Add non-AMAT bridge feasibility target`
+`Record non-AMAT bridge feasibility`
 
 ## Completion Report
 
@@ -159,8 +154,8 @@ Report:
 - which sidecars or executable workers were used,
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
-- whether GPU/Docker were used and where artifacts were written,
-- produced diagnostic artifacts,
+- whether GPU/Docker compute was used and where artifacts were written,
+- produced diagnostic/decision artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,
