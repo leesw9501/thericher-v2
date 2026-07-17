@@ -2306,6 +2306,44 @@ the existing MPWR probability trace and fixed descriptive threshold pairs. Do
 not recompute traces, train, ablate, search thresholds, include STX, GLW, INTC,
 QCOM, or add held MRVL/MU/SNDK/COHR symbols.
 
+The MPWR-only broker-free local-paper replay-selection then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The replay used the existing
+  `run_bounded_candidate_threshold_robustness` primitive directly with
+  `CandidateThresholdRobustnessSliceConfig.probability_trace_artifact`, because
+  the public CLI robustness path cannot pass a per-slice trace artifact and
+  could recompute traces. No helper, job kind, dispatch path, replay contract,
+  local-paper behavior, or agent governance was changed, so no Claude
+  drift-check was required for this direct primitive call.
+- The compact replay-selection artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-mpwr-replay-selection-20260717-r1\metrics.json`.
+  The standard robustness/event artifacts were written under
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\fresh-symbol-mpwr-replay-selection-20260717-r1`.
+- Result: MPWR completed `1` slice and `3` fixed variants at threshold pairs
+  `0.541/0.497`, `0.542/0.497`, and `0.543/0.497`, using `max_bars=240` and
+  the existing `snapshot=2026-06-18` Yahoo rows. Each variant produced `8`
+  order intents, `8` fills, PnL `-5.308800000000`, max drawdown
+  `19.3140000000`, and final position `0`; aggregate fill count was `24`.
+- `collect_fill_source_evidence` verified
+  `fill_source_counts: {"local_paper": 24}`,
+  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
+  `all_fills_local_paper: true`. `source_alignment.same_trace_evidence` was
+  true for symbol, market, timeframe, bars, examples, and lookback; only the
+  host-vs-Docker data-source string differed by mount path.
+- The run did not call KIS, use broker submit/cancel/status, read credentials
+  or `.env`, use network, acquire data, write market data, train, ablate,
+  recompute traces, search thresholds, simulate exits, add symbols, create
+  gates, create promotion rules, or touch Docker/dependency files. Docker/GPU
+  was not used for this CPU/local trace-consuming replay.
+
+Next, run one compact MPWR local-paper trade-path/PnL attribution over the
+three replay-selection event artifacts before any broader replay, model work,
+or exit-policy simulation.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

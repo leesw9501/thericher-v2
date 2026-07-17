@@ -507,6 +507,13 @@
   execution filters, simulator rules, feature rules, threshold rules, risk
   rules, exit policies, gates, or live/paper KIS behavior. MPWR was marked only
   as a future separate replay candidate, not replay authorization.
+- MPWR-only replay-selection ran through the existing broker-free
+  threshold-robustness/local-paper path only. It completed `3` MPWR variants,
+  observed `24` local-paper order intents and `24` fill events, and verified
+  `fill_source_counts: {"local_paper": 24}`,
+  `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
+  `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
+  diagnostic-overlay, KIS, live, or external paper broker fills were observed.
 
 ## Next Handoff
 
@@ -570,6 +577,9 @@
 - The next trace-comparison or replay-selection planning pass must stay
   artifact-only. If it proposes a later replay, that replay must be a separate
   explicit goal through the existing broker-free local-paper path.
-- The next MPWR-only replay-selection may create local-paper order intents and
-  fills only through the existing broker-free local-paper research path, and
-  must verify all generated fills are `source: local_paper`.
+- The next MPWR trade-path attribution should parse existing replay-selection
+  event artifacts only. It must preserve the `24` generated fills as
+  `source: local_paper`, label any reconstructed path context as
+  `source: diagnostic_overlay`, and avoid creating new orders, order intents,
+  broker outcomes, execution filters, simulator rules, feature rules, threshold
+  rules, or replay rules.

@@ -639,6 +639,11 @@
   It used no Docker/GPU job and changed no Docker, compose, dependency,
   scheduler, coordinator, dashboard, notification, worker, or Engine Research
   Agent files.
+- MPWR-only replay-selection ran locally as CPU trace-consuming replay work,
+  used no Docker/GPU job, changed no dependency, Docker, compose, scheduler,
+  coordinator, dashboard, notification, worker, or Engine Research Agent files,
+  and wrote one compact artifact plus robustness/event artifacts under
+  `D:\thericher-v2\model-artifacts`.
 
 ## Next Handoff
 
@@ -692,6 +697,7 @@
   artifact-only and should not require Docker unless an existing helper makes
   that simpler. Do not add Docker layers, schedulers, daemons, or coordinator
   plumbing.
-- The next MPWR-only replay-selection may use Docker `research` only if the
-  existing local-paper replay primitive is easier to invoke there. Do not add
-  Docker layers, schedulers, daemons, or coordinator plumbing.
+- The next MPWR trade-path attribution should stay local/artifact-only unless
+  an existing helper requires Docker. Do not add Docker layers, schedulers,
+  daemons, coordinator plumbing, dashboard, notification, or dependency
+  changes.

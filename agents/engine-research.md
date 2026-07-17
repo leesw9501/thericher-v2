@@ -1130,6 +1130,15 @@
   only future separate replay candidate. No replay, trace recompute, training,
   ablation, threshold search, Docker/GPU job, new helper, job kind, or
   dispatch path was added.
+- MPWR-only replay-selection
+  `fresh-symbol-mpwr-replay-selection-20260717-r1` directly reused the existing
+  threshold-robustness/local-paper primitive with the existing MPWR trace
+  artifact. It completed `1` slice and `3` fixed variants at `max_bars=240`,
+  produced `24` verified `source: local_paper` fills, and wrote the compact
+  replay-selection artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-mpwr-replay-selection-20260717-r1\metrics.json`.
+  No trace recompute, training, ablation, threshold search, Docker/GPU job, new
+  helper, job kind, dispatch path, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1138,9 +1147,9 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Next work may run exactly one MPWR-only broker-free
-  local-paper replay-selection using the existing trace and fixed descriptive
-  threshold pairs; no trace recompute, training, ablation, or threshold search.
+  fresh-symbol branch. Next work should parse the MPWR replay-selection event
+  artifacts into compact trade-path/PnL attribution before any broader replay,
+  trace compute, training, ablation, threshold search, or exit-policy work.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

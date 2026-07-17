@@ -707,6 +707,13 @@
   ablation, threshold search, exit simulation, feature rule, simulator rule,
   durable multi-agent platform, or promotion language. It used Claude
   drift-check plus three temporary Codex sidecars, then closed the sidecars.
+- MPWR-only replay-selection wrote one compact external artifact plus standard
+  robustness/event artifacts and added no code, helper, job kind, worker,
+  scheduler, dashboard, coordinator, report family, gate, auto-commit path,
+  broker authority, credential reads, data acquisition, trace recompute,
+  training, ablation, threshold search, exit simulation, feature rule,
+  simulator rule, durable multi-agent platform, or promotion language. It used
+  three temporary Codex sidecars as runtime reviewers, then closed them.
 
 ## Next Handoff
 
@@ -729,7 +736,8 @@
   it stays one compact external artifact. It must not become immediate replay,
   a broad universe search, a promotion gate, a scheduler/coordinator, or a new
   report family.
-- The next MPWR-only replay-selection goal is acceptable if it stays a single
-  bounded broker-free local-paper replay using existing trace evidence only and
-  does not grow into a threshold search, broad replay queue, gate, report
-  family, scheduler/coordinator, or promotion workflow.
+- The next MPWR trade-path attribution goal is acceptable if it parses existing
+  local-paper event artifacts only and stays one compact external artifact. It
+  must not grow into replay reruns, threshold search, exit simulation, broad
+  replay queue, gate, report family, scheduler/coordinator, durable worker, or
+  promotion workflow.
