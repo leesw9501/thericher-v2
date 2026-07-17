@@ -603,6 +603,11 @@
   container, but no training or trace recompute ran. No Docker, compose,
   dependency, scheduler, coordinator, dashboard, notification, worker, or
   Engine Research Agent files were changed.
+- Fresh-symbol trade-path attribution ran locally as CPU/artifact-only work
+  through existing helpers. It used no Docker or GPU job, changed no dependency,
+  Docker, compose, scheduler, coordinator, dashboard, notification, worker, or
+  Engine Research Agent files, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
 
 ## Next Handoff
 
@@ -641,3 +646,5 @@
   Use Docker only if an existing helper requires the research environment; do
   not add a scheduler, daemon, coordinator, dashboard, notification, durable
   multi-agent platform, Docker layer change, or dependency change.
+- The next simplification pass should also stay local/artifact-only unless a
+  future explicit compute question is proven.

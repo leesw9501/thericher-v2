@@ -1071,6 +1071,16 @@
   PnL was mixed: MRVL and MU variants were positive, while SNDK and COHR were
   negative. No trace recompute, training, ablation, data acquisition, new job
   kind, dispatch path, or promotion rule was added.
+- Fresh-symbol replay-selection trade-path attribution
+  `engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1` reused
+  the existing trade-path helper on the 12 local-paper event artifacts and
+  selected MRVL/MU/SNDK/COHR local bars only. It attributed `100` local-paper
+  fills into `50` closed segments and `0` open segments, with fee-aware closed
+  delta sum `-18.6423`. MRVL and MU were positive, while SNDK and COHR drove
+  losses. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`.
+  No replay rerun, trace recompute, training, ablation, threshold search, data
+  acquisition, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1078,11 +1088,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: attribute the fresh-symbol replay-selection paths
-  before broader replay. Consume the replay-selection robustness/event
-  artifacts and selected local bars only; summarize closed/open paths,
-  symbol/threshold PnL, adverse/favorable movement, and duplicate threshold
-  behavior with fills still verified as `source: local_paper`.
+- Short experiments queue: hold broader replay/training until a compact
+  duplicate-aware simplification pass collapses the fresh-symbol attribution
+  into unique market moments and identifies one bounded next question, if any.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

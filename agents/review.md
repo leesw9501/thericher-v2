@@ -660,6 +660,15 @@
   multi-agent platform, or promotion language. The `100` generated fills were
   all verified as `source: local_paper`, making attribution justified before
   broader replay.
+- Fresh-symbol trade-path attribution reused the existing trade-path helper and
+  wrote one compact external artifact. It added no code, helper, job kind,
+  worker, scheduler, dashboard, coordinator, report family, gate, auto-commit
+  path, broker authority, credential reads, data acquisition, replay rerun,
+  trace recompute, training, ablation, threshold search, feature rule,
+  simulator rule, durable multi-agent platform, or promotion language. It found
+  `50` closed paths, `0` open paths, and mixed repeated threshold-variant
+  evidence, so a compact duplicate-aware simplification pass should precede
+  any new compute.
 
 ## Next Handoff
 
@@ -671,3 +680,7 @@
   worker, scheduler, dashboard, report branch, broker authority, credential
   path, auto-commit behavior, threshold search, feature rule, or simulator
   rule.
+- The next simplification pass should collapse duplicate threshold-variant
+  evidence into unique market moments and decide whether to hold or ask one
+  bounded follow-up question. Do not create a new report family or promotion
+  decision.

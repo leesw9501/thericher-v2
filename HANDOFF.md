@@ -2115,6 +2115,42 @@ parse only existing local-paper event files plus selected local bars, and
 produce one compact trade-path/PnL attribution artifact with all fills still
 verified as `source: local_paper`.
 
+The fresh-symbol trade-path attribution then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks. They were runtime helpers only; no durable multi-agent platform,
+  scheduler, daemon, coordinator, dashboard, notification loop, auto-commit
+  path, or new repo-owned worker was added.
+- The attribution consumed only the replay-selection compact artifact, the
+  threshold-robustness artifact, the existing 12 local-paper `events.jsonl`
+  files, and selected MRVL, MU, SNDK, and COHR bars from the existing
+  `snapshot=2026-06-18` Yahoo 1m file. It did not rerun replay, train, ablate,
+  recompute traces, search thresholds, call KIS, read credentials, use network,
+  acquire data, or add a helper/job kind.
+- The compact attribution artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`.
+- Result: `100` referenced fills remained `source: local_paper`, with
+  `50` closed trade-path segments, `0` open segments, `0` unmatched sell fills,
+  `0` non-local fills, and `0` unknown fills. Closed fee-aware delta summed to
+  `-18.6423` across the 50 segments, with `29` negative and `21` non-negative
+  fee-aware segments.
+- By symbol, fee-aware closed-path sums were MRVL `+4.8555`, MU `+28.3638`,
+  SNDK `-41.9307`, and COHR `-9.9309`. SNDK drove the loss concentration,
+  while MU carried the clearest positive path evidence.
+- All selected local bars were present: MRVL, MU, SNDK, and COHR each loaded
+  `240` bars from `2026-06-09T13:30:00Z` through
+  `2026-06-09T17:29:00Z`; all fill timestamps matched local bar timestamps.
+- Path context rows were labeled `source: diagnostic_overlay`. The attribution
+  created no fills, orders, order intents, broker outcomes, execution filters,
+  simulator rules, feature rules, threshold rules, gate, promotion rule, durable
+  worker, scheduler, or dashboard.
+
+Next, do not force another replay or training block from this mixed,
+threshold-duplicated evidence. Run one compact review/simplification pass that
+collapses the fresh-symbol replay-selection and trade-path attribution into
+duplicate-aware unique market-moment evidence, then decide whether the branch
+has a bounded model-input or exit-timing question or should be held.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

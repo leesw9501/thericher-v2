@@ -490,13 +490,19 @@
   artifacts, and acquired no data. The replay-selection produced fills, so the
   next data need is selected local bar context for trade-path attribution, not
   acquisition.
+- Fresh-symbol trade-path attribution reused the same snapshot and loaded
+  exactly `240` selected bars each for MRVL, MU, SNDK, and COHR. All replay fill
+  timestamps had matching local bar timestamps, no bars were missing, and no
+  data was acquired. The artifact is
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. MRVL, MU, SNDK, and COHR already
-  have local rows, compatible traces, and local-paper event artifacts; provide
-  selected bar context only as needed for trade-path attribution.
+  have local rows, compatible traces, local-paper event artifacts, and
+  attributed path context. Future data work should stay artifact/local-row
+  scoped unless a new objective names exact missing symbols or date ranges.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

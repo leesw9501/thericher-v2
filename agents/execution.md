@@ -471,6 +471,13 @@
   `non_local_fill_source_counts: {}`, `unknown_fill_count: 0`, and
   `all_fills_local_paper: true`. No broker, disabled-broker, unknown,
   diagnostic-overlay, KIS, live, or external paper broker fills were observed.
+- Fresh-symbol trade-path attribution parsed existing replay-selection event
+  artifacts only. It preserved `100` original fills as `source: local_paper`,
+  paired them into `50` closed segments and `0` open segments, observed `0`
+  unmatched sell fills, and labeled reconstructed path context as
+  `source: diagnostic_overlay`. It created no fills, orders, order intents,
+  broker adapters, broker outcomes, execution filters, simulator rules,
+  feature rules, or threshold rules.
 
 ## Next Handoff
 
@@ -522,3 +529,6 @@
   label any reconstructed path/feature context as `source: diagnostic_overlay`,
   and avoid creating new orders, order intents, broker outcomes, execution
   filters, simulator rules, feature rules, or threshold rules.
+- The next simplification pass may inspect attributed local-paper paths, but it
+  must not mutate replay, invent execution filters, or turn diagnostic context
+  into order-intent logic.
