@@ -1164,6 +1164,13 @@
   MPWR hold decision. No replay, trace compute, trace recompute, training,
   ablation, threshold search, exit-policy simulation, new helper, job kind, or
   promotion rule was added.
+- Post-MPWR fresh-symbol Review/Simplification
+  `review-post-mpwr-fresh-symbol-retirement-20260717-r1` retired the
+  fresh-symbol compute branch from the active replay, trace, and training
+  queue. MPWR and MRVL/MU/SNDK/COHR are held as passive evidence only;
+  DELL/WDC/STX/GLW/INTC/QCOM/APP are passive/deferred context only. No replay,
+  trace compute, trace recompute, training, ablation, threshold search,
+  exit-policy simulation, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1171,11 +1178,12 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: hold MPWR and the broader fresh-symbol replay branch.
-  Rotate the next long work block to Review/Simplification. Do not spend GPU
-  time on MPWR, fresh-symbol replay, trace compute, trace recompute, training,
-  ablation, threshold search, or exit-policy work until a later artifact defines
-  a new bounded question.
+- Short experiments queue: the fresh-symbol branch is no longer active. Rotate
+  to queue hygiene over older Engine Research/Data handoffs to surface the next
+  independent non-fresh-symbol evidence question. Do not spend GPU time on
+  MPWR/fresh-symbol replay, trace compute, trace recompute, training, ablation,
+  threshold search, or exit-policy work until a later artifact defines a new
+  bounded question.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

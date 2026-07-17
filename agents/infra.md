@@ -659,6 +659,11 @@
   scheduler, coordinator, dashboard, notification, worker, or Engine Research
   Agent files, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\data-agent`.
+- Post-MPWR fresh-symbol Review/Simplification ran locally as CPU/artifact-only
+  work, used no Docker or GPU job, changed no dependency, Docker, compose,
+  scheduler, coordinator, dashboard, notification, worker, or Engine Research
+  Agent files, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\review-simplification`.
 
 ## Next Handoff
 
@@ -687,38 +692,30 @@
 - After a Windows restart, keep checking Docker daemon readiness before each
   Engine Research Agent run. If the duplicate-aware follow-up needs compute,
   use the same single-shot Docker `research` path and external artifact mount.
-- The next fresh-symbol opportunity-prefilter or replay may use Docker
-  `research` only through the existing Engine Research Agent single-shot runner
-  and existing research job kinds. Do not add scheduler/coordinator plumbing.
-- The next data-lane trace availability inventory should stay local and
+- Fresh-symbol opportunity/replay work is retired from the active queue. Any
+  future explicit compute objective may use Docker `research` only through the
+  existing Engine Research Agent single-shot runner and existing research job
+  kinds. Do not add scheduler/coordinator plumbing.
+- Any future data-lane trace availability inventory should stay local and
   artifact-only unless it proves a small future Engine Research trace-compute
   batch is worth the GPU time.
-- The next fresh-symbol attribution should be artifact/local-data work first.
-  Use Docker only if an existing helper requires the research environment; do
-  not add a scheduler, daemon, coordinator, dashboard, notification, durable
-  multi-agent platform, Docker layer change, or dependency change.
-- The next simplification pass should also stay local/artifact-only unless a
+- Fresh-symbol attribution is retired from the active queue. Any future
+  attribution should be artifact/local-data work first. Use Docker only if an
+  existing helper requires the research environment; do not add a scheduler,
+  daemon, coordinator, dashboard, notification, durable multi-agent platform,
+  Docker layer change, or dependency change.
+- Any future simplification pass should also stay local/artifact-only unless a
   future explicit compute question is proven.
 - The next data-lane inventory should use the existing Data Agent runner or a
   direct artifact script only if simpler. Temporary Codex sidecars may review
   in parallel, but do not add a scheduler, daemon, coordinator, dashboard,
   notification loop, durable multi-agent platform, Docker layer change, or
   dependency change.
-- The next DELL/MPWR/STX/WDC trace-only batch should use the existing Docker
-  `research` path with current `src` mounted read-only and artifacts under
-  `/app/model_artifacts`. Do not add Docker layers, schedulers, daemons, or
-  coordinator plumbing.
-- The next trace-comparison or replay-selection planning pass should be
-  artifact-only and should not require Docker unless an existing helper makes
-  that simpler. Do not add Docker layers, schedulers, daemons, or coordinator
-  plumbing.
-- The next MPWR hold/rotate decision should stay local/artifact-only and should
-  not require Docker. Do not add Docker layers, schedulers, daemons,
-  coordinator plumbing, dashboard, notification, or dependency changes.
-- The next Data-lane inventory should also stay local/artifact-only unless a
-  future explicit objective proves Docker is needed. Do not add Docker layers,
+- The DELL/MPWR/STX/WDC trace-only batch, trace-comparison planning, MPWR
+  hold/rotate decision, post-MPWR Data inventory, and post-MPWR
+  Review/Simplification pass are complete. Do not add Docker layers,
   schedulers, daemons, coordinator plumbing, dashboard, notification, durable
-  multi-agent platform, or dependency changes.
-- The next Review/Simplification pass should also stay local/artifact-only. Do
-  not add Docker layers, schedulers, daemons, coordinator plumbing, dashboard,
+  multi-agent platform, or dependency changes for queue hygiene.
+- The next queue-hygiene pass should stay local/artifact-only. Do not add
+  Docker layers, schedulers, daemons, coordinator plumbing, dashboard,
   notification, durable multi-agent platform, or dependency changes.

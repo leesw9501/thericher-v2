@@ -2442,6 +2442,39 @@ the fresh-symbol branch can be retired from the active queue without replay,
 training, trace compute, acquisition, gates, promotion rules, or durable
 platform work.
 
+The post-MPWR fresh-symbol Review/Simplification pass then completed:
+
+- Temporary Codex sidecars covered Review, Engine Research, and Data/Execution
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The review consumed existing artifacts only. It performed no market-data
+  read, broad recursive scan, acquisition, replay, training, ablation, trace
+  compute, trace recompute, threshold search, exit simulation, KIS call, broker
+  action, credential read, helper change, contract change, job kind change,
+  Docker change, dependency change, gate, promotion rule, or report family.
+- The compact review artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`.
+- Result: the fresh-symbol compute branch is retired from the active replay,
+  trace, and training queue. The DELL/MPWR/STX/WDC trace-only recommendation is
+  consumed and retired; MPWR is retired as a future replay candidate after
+  duplicate-aware fee-aware PnL `-5.3088` over `4` unique market moments; the
+  post-MPWR Data inventory item is closed with no follow-up.
+- MPWR and MRVL/MU/SNDK/COHR remain held as passive evidence, not active
+  compute. DELL/WDC are passive non-crossing context, STX is passive
+  thin-crossing context, GLW/INTC/QCOM are passive already-traced comparison
+  context, and APP remains deferred possible source-context training scope.
+- Historical fills remain `source: local_paper` evidence only. Reconstructed
+  trace/path context remains `source: diagnostic_overlay`. Descriptive
+  threshold crossings are not execution thresholds, replay rules, gates, risk
+  rules, or promotion criteria.
+
+Next, run one bounded queue-hygiene pass over older Engine Research and Data
+stateboard handoffs to surface the next independent non-fresh-symbol evidence
+question. Keep it artifact-only and avoid compute, data acquisition, new
+helpers, new job kinds, schedulers, dashboards, gates, promotion rules, or
+durable platform work.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

@@ -544,6 +544,11 @@
   no row-level market-data read, and needs no operator data. The stop reason is
   that no exact missing symbol/date range exists and the post-MPWR evidence
   question is already answered by existing artifacts.
+- Post-MPWR fresh-symbol Review/Simplification consumed existing artifacts only
+  and wrote
+  `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`.
+  It retired the fresh-symbol active queue without reading market-data rows,
+  scanning `D:\market_data`, acquiring data, or requesting operator data.
 
 ## Next Handoff
 
@@ -571,6 +576,10 @@
   inventory. Rotate to Review/Simplification. A future trace-only GPU proposal
   needs a new bounded Data artifact with independent non-held symbols, exact
   clean local rows, no compatible existing trace, and no source-context leakage.
+- Fresh-symbol is now passive context, not a Data active queue. The next queue
+  hygiene pass may inspect stateboard handoffs and existing artifact names, but
+  should not scan `D:\market_data` or acquire data unless a future objective
+  names exact missing symbols/date ranges.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

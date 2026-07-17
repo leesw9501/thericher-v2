@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one artifact-only Review/Simplification pass over post-MPWR fresh-symbol
-leftovers.
+Run one bounded queue-hygiene pass over older Engine Research and Data
+stateboard handoffs.
 
-This advances backtest and walk-forward validation by deciding whether the
-fresh-symbol branch should be retired from the active queue after MPWR hold and
-post-MPWR data inventory, without forcing more process or compute.
+This advances backtest and walk-forward validation by retiring stale active
+queue context and surfacing the next independent non-fresh-symbol evidence
+question, without running compute or growing process.
 
 ## Current Agent Reality
 
@@ -21,9 +21,11 @@ post-MPWR data inventory, without forcing more process or compute.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
 - For this goal, use temporary Codex sidecars only if useful:
-  - Review: check sprawl, stale queue, and retirement criteria.
-  - Engine Research: verify no replay/training/trace compute is justified.
-  - Data/Execution: verify no data acquisition or broker/local-paper mutation.
+  - Review: identify stale queue/context sprawl.
+  - Engine Research: identify one next independent non-fresh-symbol evidence
+    question without queueing compute.
+  - Data/Infra: verify no data acquisition, broad scan, Docker, or dependency
+    work is needed.
 - These sidecars are runtime collaborators. Do not build a durable multi-agent
   platform, scheduler, daemon, coordinator, notification loop, dashboard, or
   auto-commit worker in this goal.
@@ -42,10 +44,11 @@ post-MPWR data inventory, without forcing more process or compute.
   threshold search, replay rerun, exit-policy simulation, broker execution, or
   data acquisition.
 - Do not perform a broad recursive scan of `D:\market_data`.
-- Do not turn review output into execution thresholds, risk rules, broker
-  policies, replay rules, feature rules, gates, or model-promotion rules.
+- Do not turn queue-hygiene output into execution thresholds, risk rules,
+  broker policies, replay rules, feature rules, gates, or model-promotion
+  rules.
 - Do not store generated GPU/model artifacts or market data in the repo. Use
-  `D:\thericher-v2\model-artifacts` for external review artifacts.
+  `D:\thericher-v2\model-artifacts` for any external artifact.
 
 ## Required First Reads
 
@@ -71,45 +74,40 @@ post-MPWR data inventory, without forcing more process or compute.
 
 3. Ask Claude CLI for a short drift-check before adding or changing any helper,
    job kind, dispatch path, agent governance, artifact contract, data contract,
-   replay contract, attribution contract, or local-paper behavior. If the
-   simplification can be produced by reading existing artifacts with a one-off
-   script, prefer that.
+   replay contract, attribution contract, or local-paper behavior. If the pass
+   can be produced by reading stateboards and existing artifact summaries with
+   a one-off script, prefer that.
 
 ## Evidence To Consume
 
-- Post-MPWR Data Agent inventory:
-  `D:\thericher-v2\model-artifacts\data-agent\data-agent-post-mpwr-lane-rotation-inventory-20260717-r1\metrics.json`
-- MPWR hold/rotate decision artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`
-- Trace-comparison planning artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1\metrics.json`
-- Fresh-symbol path-shape context:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`
+- Post-MPWR fresh-symbol retirement artifact:
+  `D:\thericher-v2\model-artifacts\review-simplification\review-post-mpwr-fresh-symbol-retirement-20260717-r1\metrics.json`
+- `agents/engine-research.md`
+- `agents/data.md`
+- `agents/review.md`
+- `HANDOFF.md`
 
 Known facts to preserve:
 
-- MPWR is held after duplicate-aware local-paper attribution.
-- MRVL, MU, SNDK, and COHR remain held from the prior fresh-symbol branch.
-- DELL and WDC stayed below the descriptive threshold.
-- STX is a single thin crossing context, not a replay trigger.
-- GLW, INTC, and QCOM are already-traced comparison context, not immediate
-  replay or acquisition triggers.
-- APP remains deferred as possible source-context training scope.
+- The fresh-symbol compute branch is retired from the active queue.
+- MPWR and MRVL/MU/SNDK/COHR are passive held evidence, not active compute.
 - No immediate data-lane, Engine Research, GPU, replay, or acquisition follow-up
-  is justified by the latest artifacts.
+  is justified by the latest fresh-symbol artifacts.
+- Longer candidate training is held until a future artifact defines enough
+  independent duplicate-aware context.
 
 ## Required Work
 
-1. Produce one compact external simplification artifact recording:
-   - consumed artifact paths,
-   - stale/held active-queue items,
-   - which symbols or branches should be retired, held, or left as passive
-     context,
-   - why no replay, training, trace compute, acquisition, gate, threshold
-     search, exit-policy, promotion, or durable platform work follows.
-2. Update `HANDOFF.md` and agent stateboards only as needed to keep the active
-   queues clean.
-3. Refresh `NEXT_CODEX_GOAL.md` again before ending with one single objective.
+1. Inspect older Engine Research and Data stateboard handoffs for stale active
+   queue entries that were already resolved by later artifacts.
+2. Produce one compact external queue-hygiene artifact recording:
+   - consumed stateboards/artifacts,
+   - stale context retired,
+   - active held context that remains passive,
+   - one recommended next independent non-fresh-symbol evidence question, or a
+     clear reason no such question is ready.
+3. Update `HANDOFF.md` and agent stateboards only as needed to keep queues clean.
+4. Refresh `NEXT_CODEX_GOAL.md` again before ending with one single objective.
 
 ## Verification
 
@@ -123,16 +121,16 @@ docker compose config --quiet
 
 Also report:
 
-- the simplification command or primitive used,
+- the queue-hygiene command or primitive used,
 - any sidecars or executable workers used,
 - whether Docker/GPU was used,
 - produced artifact paths,
-- what active queue context was retired or held,
+- what stale context was retired or held,
 - what lane should rotate next and why.
 
 ## Suggested Commit Message
 
-`Retire post-MPWR fresh-symbol queue`
+`Clean stale research queue context`
 
 ## Completion Report
 

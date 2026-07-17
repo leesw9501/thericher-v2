@@ -532,6 +532,12 @@
   positions, broker adapters, broker outcomes, local-paper replay, execution
   filters, simulator rules, feature rules, threshold rules, risk rules, exit
   policies, or live/paper KIS behavior.
+- Post-MPWR fresh-symbol Review/Simplification referenced historical
+  local-paper evidence only and retired active fresh-symbol queue context. It
+  created no new fills, orders, order intents, positions, broker adapters,
+  broker outcomes, local-paper replay, execution filters, simulator rules,
+  feature rules, threshold rules, risk rules, exit policies, or live/paper KIS
+  behavior.
 
 ## Next Handoff
 
@@ -552,9 +558,9 @@
 - A simplification pass may inspect local-paper evidence contracts but must not
   rerun replay, mutate fills, submit orders, create order intents, or turn any
   feature context into an execution filter.
-- The next Engine Research follow-up may run broker-free local-paper replay only
-  through existing research jobs. It must preserve `source: local_paper` fills
-  and keep diagnostics as `source: diagnostic_overlay`.
+- Any future Engine Research replay objective may run broker-free local-paper
+  replay only through existing research jobs. It must preserve `source:
+  local_paper` fills and keep diagnostics as `source: diagnostic_overlay`.
 - Temporary Execution sidecar review may continue, but do not make Execution
   Agent executable until a future explicit paper-trading goal needs broker or
   risk-loop work.
@@ -562,13 +568,13 @@
   rows must keep original fills as `source: local_paper`, count diagnostics
   separately as `source: diagnostic_overlay`, and avoid creating order intents
   outside the existing broker-free replay path.
-- The next duplicate-aware follow-up may inspect existing local-paper evidence
-  or run broker-free replay only through existing research jobs. It must not
-  create execution filters, order intents, broker authority, or live/paper KIS
-  behavior.
-- The next fresh-symbol replay probe may use only the existing broker-free
-  local-paper research path. It must preserve generated fills as
-  `source: local_paper`, keep any diagnostic rows as
+- Any future duplicate-aware follow-up may inspect existing local-paper
+  evidence or run broker-free replay only through existing research jobs. It
+  must not create execution filters, order intents, broker authority, or
+  live/paper KIS behavior.
+- Fresh-symbol replay is no longer active. Any future explicit replay objective
+  must use only the existing broker-free local-paper research path, preserve
+  generated fills as `source: local_paper`, keep diagnostics as
   `source: diagnostic_overlay`, and avoid execution filters, order intents,
   feature rules, threshold rules, replay rules, broker authority, and live/paper
   KIS behavior.
@@ -578,31 +584,28 @@
 - If a later trace/data inventory identifies a crossing candidate, replay may
   still run only through existing broker-free local-paper research jobs and
   must verify `source: local_paper` fills before any bridge or PnL attribution.
-- The immediate next attribution should parse existing replay-selection event
-  artifacts only. It must preserve all original fills as `source: local_paper`,
-  label any reconstructed path/feature context as `source: diagnostic_overlay`,
-  and avoid creating new orders, order intents, broker outcomes, execution
-  filters, simulator rules, feature rules, or threshold rules.
-- The next simplification pass may inspect attributed local-paper paths, but it
-  must not mutate replay, invent execution filters, or turn diagnostic context
-  into order-intent logic.
-- Treat the current fresh-symbol hold as descriptive evidence only, not an
-  automated gate or execution rule. A future data-lane inventory may reference
+- Any future attribution objective should parse existing event artifacts only
+  unless a later goal explicitly allows replay. It must preserve original fills
+  as `source: local_paper`, label reconstructed path/feature context as
+  `source: diagnostic_overlay`, and avoid creating new orders, order intents,
+  broker outcomes, execution filters, simulator rules, feature rules, or
+  threshold rules.
+- Any future simplification pass may inspect attributed local-paper paths, but
+  it must not mutate replay, invent execution filters, or turn diagnostic
+  context into order-intent logic.
+- Treat the retired fresh-symbol branch as descriptive evidence only, not an
+  automated gate or execution rule. Future data or review work may reference
   the hold but must not alter local-paper or broker behavior.
-- The next trace-only GPU batch must not create local-paper fills or order
+- Any future trace-only GPU batch must not create local-paper fills or order
   intents. Any later replay goal must explicitly preserve `source:
   local_paper` fills and remain broker-free.
-- The next trace-comparison or replay-selection planning pass must stay
+- Any future trace-comparison or replay-selection planning pass must stay
   artifact-only. If it proposes a later replay, that replay must be a separate
   explicit goal through the existing broker-free local-paper path.
-- The next MPWR hold/rotate decision should consume existing artifacts only. It
-  must preserve the `24` local-paper fills as historical evidence, use
-  duplicate-aware diagnostic-overlay context for PnL interpretation, and avoid
-  creating new orders, order intents, broker outcomes, execution filters,
-  simulator rules, feature rules, threshold rules, replay rules, or risk rules.
-- The next Data-lane inventory must not mutate local-paper fills, create order
-  intents, infer broker behavior, or turn data/provenance observations into
-  execution rules.
-- The next Review/Simplification pass may retire stale active-queue context but
-  must not mutate fills, rerun replay, create order intents, infer broker
-  behavior, or turn trace context into execution/risk rules.
+- MPWR hold/rotate, post-MPWR Data inventory, and post-MPWR Review/Simplification
+  are complete. Future queue hygiene may classify stale evidence, but must not
+  mutate local-paper fills, create order intents, infer broker behavior, or turn
+  data/provenance observations into execution rules.
+- The next queue-hygiene pass must remain non-execution work. It may classify
+  stale evidence, but must not create broker, risk, replay, local-paper, order,
+  fill, or execution-rule behavior.

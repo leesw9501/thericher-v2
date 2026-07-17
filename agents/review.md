@@ -736,6 +736,15 @@
   exit simulation, feature rule, simulator rule, durable multi-agent platform,
   or promotion language. It used three temporary Codex sidecars as runtime
   reviewers, then closed them.
+- Post-MPWR fresh-symbol Review/Simplification wrote one compact external
+  artifact and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, market-data reads, replay rerun, trace
+  compute, trace recompute, training, ablation, threshold search, exit
+  simulation, feature rule, simulator rule, durable multi-agent platform, or
+  promotion language. It retired stale fresh-symbol active-queue context into
+  passive evidence and used three temporary Codex sidecars as runtime reviewers,
+  then closed them.
 
 ## Next Handoff
 
@@ -751,25 +760,10 @@
   it feeds the engine loop; do not create a report family, promotion decision,
   scheduler/coordinator, durable multi-agent platform, replay run, training run,
   exit simulation, or execution rule.
-- The next trace-only goal is acceptable because it advances feature/model
-  research from a bounded data inventory. It must not grow into replay,
-  training, model promotion, scheduler/coordinator work, or a report family.
-- The next trace-comparison or replay-selection planning goal is acceptable if
-  it stays one compact external artifact. It must not become immediate replay,
-  a broad universe search, a promotion gate, a scheduler/coordinator, or a new
-  report family.
-- The next MPWR hold/rotate decision goal is acceptable if it consumes existing
-  MPWR artifacts only and stays one compact external artifact. It must not grow
-  into replay reruns, threshold search, exit simulation, broad replay queue,
-  gate, report family, scheduler/coordinator, durable worker, or promotion
-  workflow.
-- The next Data-lane inventory is acceptable if it stays one bounded
-  artifact/provenance pass that feeds the engine loop. It must not become a
-  broad universe crawl, acquisition project, report family, gate, scheduler,
-  coordinator, durable worker, replay queue, training run, threshold search, or
-  promotion workflow.
-- The next Review/Simplification pass is acceptable if it retires stale
-  post-MPWR/fresh-symbol active-queue context into one compact artifact and
-  stateboard update. It must not create a new report family, gate, scheduler,
-  coordinator, durable worker, replay queue, training run, threshold search, or
-  promotion workflow.
+- The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
+  and post-MPWR Review/Simplification goals are complete. Keep them as passive
+  context, not active queue items or report families.
+- The next queue-hygiene pass is acceptable if it reduces stale handoff weight
+  and surfaces one next independent evidence question. It must not become a
+  report family, gate, scheduler, coordinator, durable worker, replay queue,
+  training run, threshold search, or promotion workflow.
