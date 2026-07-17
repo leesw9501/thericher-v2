@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Inspect the duplicate-aware AMAT bridge ablation output and decide one bounded
-independent-evidence follow-up.
+Run an artifact-only independent-evidence scan for non-AMAT bridge candidates
+from existing wider-holdout trade-path artifacts.
 
 This advances feature/model research, backtest validation, PnL attribution, and
-data collection by checking whether the AMAT recurrence/path bridge produced
-useful model-input evidence, or whether it mostly duplicated one market moment.
+data collection by checking whether existing local-paper path evidence can
+provide new symbol/timestamp rows before any replay, ablation, or GPU work.
 
 ## Current Agent Reality
 
@@ -35,13 +35,12 @@ useful model-input evidence, or whether it mostly duplicated one market moment.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
 - Do not add a new research job kind.
+- Do not run Docker/GPU for this scan.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Keep PyTorch CUDA inside Docker `research` or the existing Engine Research
-  Agent runner path. Do not add PyTorch to the base/runtime app path.
 - Keep original local-paper fills labeled with `source: local_paper`; keep
-  diagnostic rows labeled with `source: diagnostic_overlay`.
+  reconstructed diagnostic rows labeled with `source: diagnostic_overlay`.
 - Avoid promotional model-quality language except when quoting unavoidable
   existing artifact field names.
 - Do not convert diagnostic context into an execution filter, order intent,
@@ -70,10 +69,10 @@ useful model-input evidence, or whether it mostly duplicated one market moment.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: inspect duplicate-aware bridge ablation metrics and the
-     smallest useful follow-up.
-   - Data/Infra: verify local data, artifact roots, queue/lock state, and
-     Docker readiness after restarts.
+   - Engine Research: inspect whether existing trade-path artifacts can supply
+     independent non-AMAT rows.
+   - Data/Infra: verify local data and artifact roots; confirm no Docker/GPU is
+     needed.
    - Review/Execution: verify source labels, broker boundaries, and
      multi-agent drift.
 
@@ -82,45 +81,40 @@ useful model-input evidence, or whether it mostly duplicated one market moment.
 
 ## Evidence To Consume
 
+- Duplicate-aware AMAT bridge decision:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-bridge-duplicate-aware-decision-20260717-r1\metrics.json`
 - AMAT recurrence/path bridge:
   `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-amat-recurrence-path-bridge-20260717-r1\metrics.json`
 - AMAT bridge ablation:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\metrics.json`
-- AMAT bridge ablation model artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\feature_input_ablation.pt`
-- Engine Research Agent run status:
-  `D:\thericher-v2\model-artifacts\engine-research-agent\runs\engine-agent-amat-recurrence-path-bridge-ablation-20260717-r1\status.json`
-- Exact parity path attribution:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`
-- Wider holdout depth behavior attribution:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
+- Short wider-holdout trade paths:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-short-wider-holdout-trade-path-20260716\metrics.json`
+- Depth wider-holdout trade paths:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-depth-wider-holdout-trade-path-20260716\metrics.json`
+- Wider-sample trade paths:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-wide-sample-trade-path-20260716\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Inspect the bridge and ablation artifacts. Summarize:
+1. Inspect the decision, bridge, ablation, and three trade-path artifacts.
+2. Build one compact external artifact-only scan under
+   `D:\thericher-v2\model-artifacts` that summarizes closed trade/path segments
+   outside the current AMAT-heavy bridge keys.
+3. Deduplicate by symbol, entry timestamp, and available feature/timing context.
+   Record:
    - row count,
-   - complete unique signal count,
-   - row-to-unique-signal ratio,
-   - label balance,
-   - per-slice concentration,
-   - group losses or descriptive metrics already present.
-2. Decide whether the current evidence is too duplicate-heavy for more model
-   work. Treat `31` rows collapsing to `12` complete unique signals, and the
-   repeated AMAT negative market moment, as a serious caveat. Also note that
-   AMAT accounts for `20` of `31` bridge rows.
-3. If the evidence is too duplicate-heavy, write a compact external
-   artifact-only decision under `D:\thericher-v2\model-artifacts` explaining the
-   exact independent rows or replay evidence needed next. Do not run Docker/GPU.
-4. If a follow-up is justified from existing evidence, run at most one existing
-   Engine Research Agent job. Prefer an existing replay or ablation primitive;
-   do not add a job kind, worker, scheduler, or broad sweep.
-5. Use existing `D:\market_data` first. Acquire additional data only when it is
-   no-auth, lawful, license-compatible, and directly needed for the active
-   follow-up. Stop acquisition attempts when sources need credentials/payment,
-   licensing is unclear, two automated attempts fail for the same source, or the
-   new data no longer improves this goal.
+   - unique signal count,
+   - symbol concentration,
+   - label balance if labels can be reconstructed,
+   - source artifact lineage,
+   - missing feature or bar evidence.
+4. Prefer non-AMAT symbols. If the existing artifacts still concentrate in AMAT
+   or only repeat the current bridge keys, record the shortfall instead of
+   forcing replay.
+5. Do not run Docker/GPU, ablation, replay, training, data acquisition, or new
+   workers in this goal.
 6. Preserve source labels:
    - original fills remain `source: local_paper`,
    - diagnostic rows remain `source: diagnostic_overlay`.
@@ -139,13 +133,13 @@ docker compose config --quiet
 Also report:
 
 - any focused test or artifact-only smoke command,
-- any Engine Research Agent or Data Agent command,
-- any Docker `research` or GPU command,
-- artifact paths written outside Git.
+- any sidecars used,
+- artifact paths written outside Git,
+- that Docker/GPU was not run for the scan.
 
 ## Suggested Commit Message
 
-`Record AMAT bridge ablation`
+`Record AMAT duplicate decision`
 
 ## Completion Report
 
@@ -158,7 +152,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker were used and where artifacts were written,
-- produced diagnostic or research artifacts,
+- produced diagnostic artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,

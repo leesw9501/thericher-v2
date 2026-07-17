@@ -1758,10 +1758,40 @@ The AMAT recurrence/path bridge and ablation then completed:
   input evidence only. `local_paper_reference` is evidence linkage; the bridge
   and ablation did not create fills, orders, order intents, or replay behavior.
 
-Next, inspect the duplicate-aware AMAT bridge ablation output and decide one
-bounded independent-evidence follow-up. Do not create new job kinds, durable
-agent platform, execution filters, feature rules, threshold rules, or broad GPU
-sweeps from this small and duplicate-heavy evidence.
+The duplicate-aware AMAT bridge follow-up decision then completed:
+
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary read-only helpers and were
+  closed after use.
+- No Docker/GPU/model work was queued from the AMAT bridge ablation. Existing
+  Docker/GPU readiness remained good, but the evidence was already readable
+  from external artifacts and was too duplicate-heavy to justify more compute.
+- The compact decision artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-bridge-duplicate-aware-decision-20260717-r1\metrics.json`.
+- The decision consumed the AMAT bridge and ablation artifacts only. It
+  recorded `31` bridge rows, `31` ablation rows used, `0` dropped rows, `12`
+  complete unique signal keys, row-to-unique-signal ratio `2.583333`, duplicate
+  signal count `11`, and max variants per signal `4`.
+- Row labels were `14` adverse/no-lift and `17` non-adverse. The ablation's
+  unique-signal context had `5` adverse/no-lift and `7` non-adverse signals.
+  AMAT remained the concentration risk with `20` of `31` rows and `8` of `12`
+  complete unique signals. The AMAT negative core remained one repeated
+  `2026-06-09T16:46:00+00:00` market moment.
+- Group metrics stayed descriptive and in-sample. Final losses were:
+  threshold metadata `0.687638`, raw pre-entry `0.697254`, and combined raw
+  plus probability metadata `0.680195`. Unique-signal AUCs were `0.571429`,
+  `0.571429`, and `0.685714`; balanced accuracy stayed `0.500000`.
+- Source boundaries stayed intact: diagnostic rows were
+  `source: diagnostic_overlay`, referenced fills stayed `source: local_paper`,
+  `local_paper_reference` stayed evidence linkage only, and no KIS, broker,
+  credential, data acquisition, replay mutation, order intent, execution
+  filter, feature rule, threshold rule, new job kind, or durable agent platform
+  was created.
+
+Next, perform an artifact-only independent-evidence scan over existing
+wider-holdout trade-path artifacts before any replay, ablation, or GPU work.
+Start with the three source artifacts listed in the decision artifact and look
+for non-AMAT symbol/timestamp keys outside the current bridge keys.
 
 ## Daily Operator Review
 

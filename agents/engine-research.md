@@ -991,6 +991,14 @@
   and kept all rows diagnostic-only. The duplicate-aware context is small:
   `31` rows collapse to `12` complete unique signal keys, AMAT accounts for
   `20` rows, and the AMAT negative core remains one repeated market moment.
+- Duplicate-aware AMAT bridge follow-up decision ran as artifact-only work and
+  wrote
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-bridge-duplicate-aware-decision-20260717-r1\metrics.json`.
+  It consumed the bridge and ablation artifacts, did not queue Docker/GPU work,
+  and recorded that current evidence is small, in-sample, AMAT-heavy, and
+  threshold-variant duplicated. The smallest next step is to scan existing
+  wider-holdout trade-path artifacts for non-AMAT independent rows before any
+  further ablation or replay.
 
 ## Next Handoff
 
@@ -998,10 +1006,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: inspect duplicate-aware bridge ablation metrics and
-  decide whether one bounded independent-evidence replay is justified. Prefer
-  artifact inspection first; avoid another training block if the evidence is
-  only duplicated AMAT context.
+- Short experiments queue: scan existing wider-holdout trade-path artifacts for
+  non-AMAT independent rows outside the current AMAT bridge keys. Keep this
+  artifact-only first; avoid another training block or replay unless the scan
+  records a precise shortfall and one small existing-job batch is justified.
 - Longer candidate training queue: hold until independent rows or a specific
   replay-shape question justifies Docker `research` work. Keep job kinds closed
   and write artifacts outside Git.

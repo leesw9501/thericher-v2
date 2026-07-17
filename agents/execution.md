@@ -413,6 +413,11 @@
   original fills as `source: local_paper`. The `local_paper_reference` payload
   is evidence linkage only; the ablation consumed diagnostic rows for
   model-input context and did not create fills or replay behavior.
+- Duplicate-aware AMAT bridge decision also reran no local-paper replay and
+  created no fills, orders, positions, order intents, broker adapters, broker
+  outcomes, execution filters, simulator rules, feature rules, or threshold
+  rules. It only recorded that current diagnostic evidence should not drive
+  more model work before independent path evidence is scanned.
 
 ## Next Handoff
 
@@ -447,3 +452,7 @@
   or run broker-free replay only through existing research jobs. It must not
   create execution filters, order intents, broker authority, or live/paper KIS
   behavior.
+- The next independent-evidence scan should parse existing local-paper
+  trade-path artifacts only. It must preserve original fills as
+  `source: local_paper` and any reconstructed row as
+  `source: diagnostic_overlay`.

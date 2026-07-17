@@ -435,14 +435,19 @@
   rows for ADI, AMAT, AMZN, and BA plus existing external artifacts. No data
   was acquired, no expensive full recursive scan was needed, and no operator
   data help is needed for this bridge or its ablation.
+- Duplicate-aware AMAT bridge decision consumed existing bridge/ablation
+  artifacts only. Data/Infra sidecar verified `snapshot=2026-06-18` still has
+  `572,894` rows and `250` symbols, including ADI `2,339`, AMAT `2,340`,
+  AMZN `2,340`, and BA `2,338` rows. No data was acquired, and no operator
+  data help is needed before scanning existing wider-holdout artifacts.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts while inspecting the duplicate-aware AMAT bridge
-  ablation. Record exact missing symbols, dates, or artifact names only if an
-  independent-evidence follow-up cannot be built from existing data.
+  rows and external artifacts while scanning wider-holdout trade-path evidence
+  for independent non-AMAT rows. Record exact missing symbols, dates, or
+  artifact names only if that scan cannot be built from existing data.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
