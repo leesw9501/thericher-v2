@@ -34,6 +34,21 @@
   outcomes.
 - Authoritative status and fill evidence are persisted atomically and survive a
   fresh restart before clean reconciliation.
+- A single immutable pre-submit risk decision now evaluates only the exact
+  durably recorded request. It consumes fresh account, buying-power,
+  open-order, reconciliation, emergency, count, PnL, position, price, and
+  `RiskLimits` evidence without submitting the order.
+- Risk decisions use stable fail-closed reason codes and fresh, matching typed
+  position evidence. Buys use the conservative reference/limit/market price,
+  while long-only sells prove reductions by quantity and never project a
+  negative position.
+- A proven long reduction may bypass entry-only stops and capacity limits, but
+  never durable-intent, account, evidence, open-order, or reconciliation
+  integrity checks.
+- Local paper keeps exact next-bar continuity for intraday data. Generic D1
+  validation accepts a later complete caller-supplied observed bar; exact +1/+2
+  dataset-index adjacency is proven by the active campaign, not a calendar
+  service. Fill time, open price, and `local_paper` source are unchanged.
 - Focused evidence: `tests/test_broker_lifecycle.py` and
   `tests/test_broker_boundary.py` pass together without network or credentials.
 
@@ -49,11 +64,9 @@
 
 ## Ready Queue
 
-1. Add the smallest deterministic pre-submit risk decision for persisted
-   broker requests using existing `RiskLimits`, account, and buying-power
-   evidence.
-2. Keep append-only execution event integration as a later bounded step after
-   the risk decision contract is independently validated.
+1. Integrate the pure risk decision immediately before a future authorized
+   transport submit without combining evaluation and side effects.
+2. Keep append-only execution event integration as a later bounded step.
 3. After explicit operator authorization, add read-only KIS paper account and
    buying-power discovery behind the existing disabled boundary.
 

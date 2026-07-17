@@ -17,6 +17,7 @@ from thericher_v2.contracts import (
     Bar,
     OrderIntent,
     Side,
+    Timeframe,
     decimal_value,
     non_negative,
     require_utc,
@@ -367,10 +368,19 @@ class LocalPaperBroker:
             raise ValueError("signal_bar must match order market and symbol")
         if execution_bar.symbol != order.symbol or execution_bar.market != order.market:
             raise ValueError("execution_bar must match order market and symbol")
-        if execution_bar.start_ts != signal_bar.end_ts:
-            raise ValueError("execution_bar must start at signal_bar.end_ts")
+        if execution_bar.timeframe != signal_bar.timeframe:
+            raise ValueError("signal and execution bars must use the same timeframe")
         if not signal_bar.complete or not execution_bar.complete:
             raise ValueError("signal and execution bars must be complete")
+        if signal_bar.timeframe == Timeframe.D1:
+            if (
+                execution_bar.start_ts <= signal_bar.start_ts
+                or execution_bar.start_ts.date() <= signal_bar.start_ts.date()
+            ):
+                raise ValueError("daily execution_bar must be on a later observed UTC date")
+            return
+        if execution_bar.start_ts != signal_bar.end_ts:
+            raise ValueError("execution_bar must start at signal_bar.end_ts")
 
     def _execution_price(self, price: Decimal, side: Side) -> Decimal:
         adjustment = Decimal("1") + (self.slippage_bps / Decimal("10000"))

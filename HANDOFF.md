@@ -75,10 +75,14 @@ The repository already contains:
 - deterministic backtest and bounded validation paths,
 - forward campaign contracts with target timing, purge/embargo, costs, and
   durable local-paper replay evidence,
+- a fixed-instrument RAW D1 development campaign with factor sensitivity and
+  bounded Docker/PyTorch CUDA training,
 - broker-free local paper orders, fills, cash, positions, replay, duplicate-id
   protection, and emergency state,
 - broker-neutral lifecycle contracts with an atomic, restartable fake
   transport; all KIS behavior remains disabled,
+- a pure pre-submit risk decision using fresh typed position, account,
+  buying-power, open-order, reconciliation, and emergency evidence,
 - research experiment, walk-forward, attribution, and artifact helpers,
 - Docker research profiles with PyTorch CUDA smoke/training support,
 - external artifact mounts and mount sanity checks,
@@ -109,6 +113,22 @@ snapshots were inventoried and the newest 7,390,436-row file was fully scanned,
 but adjustment, corporate-action, and point-in-time limitations still prevent
 ranking or sealed-holdout use.
 
+The campaign-ready fixed ETF subset is:
+
+- `D:\market_data\us_equities\fixed_etf_daily\canonical\ohlcv_1d\snapshot=2026-07-18-r2`
+- 21,823 raw OHLCV rows: SPY 8,405, QQQ 6,863, IWM 6,555
+- dataset SHA-256
+  `3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e`
+- manifest SHA-256
+  `909937ca2031eaf3b90e84974d3809b377f22abcf8214a3fe1695303a2e2ae6a`
+
+The sibling manifest, dataset identity, bytes, mount-portable path tail, and
+parent lineage are verified together. Development training is eligible;
+ranking and sealed holdout are not. Adjusted fields are diagnostics only and
+cannot enter campaign bars, fills, features, labels, thresholds, or metrics.
+The current factor-change flags are useful diagnostics but are not
+authoritative dividend or split lineage.
+
 Current intraday data is suitable for parser, feature, replay, and development
 smokes. It is not broad or independent enough for credible model ranking or a
 final profitability claim.
@@ -122,7 +142,7 @@ Current canonical evidence:
   records the first immutable Nasdaq current-directory snapshot. It is
   prospective-only and does not repair historical survivorship or delistings.
 
-`D:` had 40.61 percent free after acquisition. SEC current mappings were not
+`D:` has about 40.6 percent free. SEC current mappings were not
 collected because compliant automation needs an honest identifying contact;
 none was invented. No operator data action is required for the current goal.
 
@@ -130,29 +150,34 @@ The Data stateboard owns exact catalog status and operator data requests.
 
 ## Research Reality
 
-The first catalog-backed campaign now binds the actual gzip bytes to immutable
-`CatalogedBars`, rejects raw bars and timeframe mismatches, uses completed-close
-decisions with next-open entry and following-open exit, and preserves event
-JSONL, SQLite state, emergency state, and hashes outside Git. Ranking contracts
-require positive slippage and Data eligibility; sealed holdout cannot be tuned.
+The fixed RAW D1 campaign uses the latest 896 common sessions from 2022-11-22
+through 2026-06-22. Its disjoint split is
+`252 development / 2 purge / 63 validation / 2 embargo / 512 development /
+2 purge / 63 validation`. Completed session `t` enters at the adjacent observed
+`t+1` raw open and exits at `t+2` raw open, with 10 bps fee and 5 bps adverse
+slippage per fill. All replay evidence is external, monotonic, flat at the end,
+and labeled `source: local_paper`.
 
-The bounded AAPL `always_long` development smoke produced 56 local-paper fills,
-finished flat, and lost `7.8754` after costs. It proves the path, not a profitable
-signal. Evidence:
+The complete CPU preflight is:
 
-- `D:\thericher-v2\model-artifacts\validation\catalog-r2-aapl-bound-r1-development-fold-1-always_long.json`
+- `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-development-20260718-cpu-r2\cpu-summary.json`
+- SHA-256 `9ee93a8bf4ecfff92bd71d7c49c613dd8fe567e5ab7f70e23feffed4c4462c95`
+- 36 replay cells and 108 verified replay-state hashes
+- both trading baselines lost after costs; factor sensitivity was
+  `supported-with-limits`
 
-Treat prior short intraday results as development evidence only. Remaining
-threats before candidate ranking include:
+The bounded Docker/PyTorch CUDA result is:
 
-- previously inspected or burned holdout evidence,
-- overlapping walk-forward windows that exaggerate independence,
-- repeated threshold variants over the same underlying market moments.
+- `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-development-20260718-cuda-r1\summary.json`
+- SHA-256 `5db680e1ba72a17b089a5c44372443289b2411c690f6372b6c6f2e3e35ac1d89`
+- six fixed checkpoints, 72 replay cells, and 216 verified replay-state hashes
+- PyTorch `2.7.0+cu128` on RTX 4090; maximum recorded allocation 18,129,408 bytes
 
-Engine Research keeps separate breadth and depth queues. Breadth screens many
-cheap hypotheses; depth spends GPU time only on candidates with a frozen
-campaign contract and eligible Data manifest. One GPU job runs at a time inside
-Docker with PyTorch CUDA. GPU availability never outranks data correctness.
+The CUDA evidence is structurally valid but the research verdict is
+`unsupported`. `d1-pressure-lb20` changed sign for IWM/fold-1 and QQQ/fold-1
+under factor exclusion, and aggregate item order reversed. No candidate was
+selected or promoted, and no profitability claim is permitted. The interrupted
+`cpu-r1` attempt has no summary and is non-authoritative.
 
 ## Execution Reality
 
@@ -162,6 +187,14 @@ survives JSON restart, handles partial/full fills and cancellation, and blocks
 retry while an outcome is unknown until authoritative resolution and clean
 reconciliation. Fake fills use `source: in_memory_broker`; broker-free simulator
 fills remain `source: local_paper`.
+
+The pure pre-submit risk decision consumes a fresh matching
+`PositionSnapshot` and proves sell safety by quantity rather than notional.
+Verified long reductions may bypass entry-only emergency, loss, and order-count
+caps, while missing/stale/mismatched position, incomplete open orders, unsafe
+reconciliation, unknown outcomes, and non-durable intents still fail closed.
+It does not submit. Generic D1 local paper accepts a later caller-supplied
+observed bar; the daily campaign separately proves exact `+1/+2` adjacency.
 
 KIS is disabled, no credentials have been read, and no broker call or order has
 been made.
@@ -219,8 +252,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` defines a fixed-instrument daily development campaign using
-existing data, followed by a bounded PyTorch CUDA breadth experiment only if the
-Data contract supports development training. No operator help is required.
-Paid data, read-only KIS authority, the paper capital envelope, and live capital
-remain future explicit decisions.
+`NEXT_CODEX_GOAL.md` now makes Data lead the unresolved factor sensitivity:
+qualify explicit corporate-action and distribution evidence for SPY, QQQ, and
+IWM, then replay the existing fixed checkpoints without new training. No
+operator help is currently required. Paid data, read-only KIS authority, the
+paper capital envelope, and live capital remain future explicit decisions.

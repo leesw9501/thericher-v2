@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import socket
+from dataclasses import replace
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -25,6 +26,30 @@ def _bar(index: int) -> Bar:
         low=open_price - Decimal("0.5"),
         close=close,
         volume=Decimal("1000"),
+    )
+
+
+def _daily_bar(
+    start_ts: datetime,
+    *,
+    open_price: Decimal = Decimal("100"),
+    symbol: str = "AAPL",
+    market: str = "US",
+    timeframe: Timeframe = Timeframe.D1,
+    complete: bool = True,
+) -> Bar:
+    close = open_price + Decimal("0.25")
+    return Bar(
+        symbol=symbol,
+        market=market,
+        timeframe=timeframe,
+        start_ts=start_ts,
+        open=open_price,
+        high=close + Decimal("0.5"),
+        low=open_price - Decimal("0.5"),
+        close=close,
+        volume=Decimal("1000"),
+        complete=complete,
     )
 
 
@@ -188,4 +213,78 @@ def test_non_next_bar_execution_is_rejected_by_contract(tmp_path) -> None:
             "bad-next-bar",
             signal_bar=_bar(0),
             execution_bar=_bar(2),
+        )
+
+
+@pytest.mark.parametrize(
+    ("signal_start", "execution_start"),
+    (
+        (
+            datetime(2026, 1, 2, tzinfo=UTC),
+            datetime(2026, 1, 5, tzinfo=UTC),
+        ),
+        (
+            datetime(2025, 12, 24, tzinfo=UTC),
+            datetime(2025, 12, 26, tzinfo=UTC),
+        ),
+    ),
+    ids=("weekend-adjacent-observed-bars", "christmas-closure-adjacent-observed-bars"),
+)
+def test_daily_fill_accepts_adjacent_observed_bars_across_known_closures(
+    tmp_path,
+    signal_start: datetime,
+    execution_start: datetime,
+) -> None:
+    broker = _broker(tmp_path)
+    signal = _daily_bar(signal_start)
+    execution = _daily_bar(execution_start, open_price=Decimal("101"))
+
+    result = broker.submit_and_fill_next_bar(
+        _order(f"daily-{execution_start.date().isoformat()}"),
+        signal_bar=signal,
+        execution_bar=execution,
+    )
+
+    assert result.fill is not None
+    assert result.fill.filled_at == execution.start_ts
+    assert result.fill.price == Decimal("101.0000")
+    assert result.fill.source == "local_paper"
+
+
+def test_daily_fill_rejects_reversed_same_date_and_mismatched_bars(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    signal = _daily_bar(datetime(2026, 1, 2, tzinfo=UTC))
+    valid_execution = _daily_bar(datetime(2026, 1, 5, tzinfo=UTC))
+    cases = (
+        (
+            _daily_bar(datetime(2026, 1, 1, tzinfo=UTC)),
+            "later observed UTC date",
+        ),
+        (
+            _daily_bar(datetime(2026, 1, 2, 20, tzinfo=UTC)),
+            "later observed UTC date",
+        ),
+        (replace(valid_execution, symbol="MSFT"), "match order"),
+        (replace(valid_execution, market="CA"), "match order"),
+        (replace(valid_execution, timeframe=Timeframe.H1), "same timeframe"),
+        (replace(valid_execution, complete=False), "must be complete"),
+    )
+
+    for index, (execution, message) in enumerate(cases):
+        order = _order(f"daily-invalid-{index}")
+        broker.submit_order(order)
+        with pytest.raises(ValueError, match=message):
+            broker.fill_next_bar(
+                order.client_order_id,
+                signal_bar=signal,
+                execution_bar=execution,
+            )
+
+    incomplete_signal_order = _order("daily-incomplete-signal")
+    broker.submit_order(incomplete_signal_order)
+    with pytest.raises(ValueError, match="must be complete"):
+        broker.fill_next_bar(
+            incomplete_signal_order.client_order_id,
+            signal_bar=replace(signal, complete=False),
+            execution_bar=valid_execution,
         )

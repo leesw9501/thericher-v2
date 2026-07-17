@@ -1081,3 +1081,37 @@ timeframes, deleted replay state, volatile intents, and cached acknowledgements
 could make an apparently successful test stronger than its durable evidence.
 Binding bytes, timing, source, and recovery closes those failures without a new
 worker, report family, gate, broker endpoint, credential path, or scheduler.
+
+## 2026-07-18 - Fixed RAW D1 campaign and sensitivity falsification
+
+Decision: freeze one development-only RAW D1 campaign for `SPY`, `QQQ`, and
+`IWM` with exact observed-session boundaries, next-open entry and exit, nonzero
+costs, fold-local preprocessing, three fixed candidates, and at most six Docker
+PyTorch CUDA fits. Primary and factor-exclusion replays use the same trained
+checkpoints. Any after-cost sign or aggregate relative-order instability makes
+the sensitivity verdict `unsupported`.
+
+The completed evidence is structurally valid but unsupported: two
+`d1-pressure-lb20` cells changed sign and aggregate order changed. No candidate
+is selected or promoted, and the result is not a profitability claim. Data now
+owns qualification of explicit corporate-action and distribution evidence;
+Research may replay existing checkpoints against that evidence without
+retraining.
+
+Reason: the bounded campaign proved the data-to-training-to-local-paper recovery
+loop while falsification exposed that heuristic adjustment-factor dates can
+materially change the research conclusion. More GPU search would compound an
+unresolved data assumption rather than strengthen the engine.
+
+## 2026-07-18 - Typed long-reduction pre-submit risk
+
+Decision: pre-submit risk remains a pure decision over the exact durably
+persisted request and fresh typed evidence. Long-only sells must prove available
+quantity with a matching `PositionSnapshot`; notional alone is insufficient. A
+verified reduction may bypass entry-only emergency, loss, order-count,
+open-order-count, and maximum-position caps, but durability, account,
+open-order, position, and reconciliation integrity still fail closed.
+
+Reason: exits should not be trapped by limits intended to prevent new exposure,
+while stale or ambiguous state must never authorize an unsafe sell. This adds no
+submit side effect, KIS call, credential path, broker authority, or live mode.

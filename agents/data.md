@@ -2,8 +2,9 @@
 
 ## Status
 
-Active, no running job. The bounded training-readiness catalog is complete and
-improves the **data collection** loop without creating a new research gate.
+Active, no running job. The raw-price fixed-instrument daily r2 correction is
+complete; the next bounded gap is explicit corporate-action and distribution
+evidence for the same three instruments.
 
 ## Engine Loop
 
@@ -37,23 +38,20 @@ improves the **data collection** loop without creating a new research gate.
 
 ## Current Objective
 
-For the refreshed objective, inspect only the newest useful daily snapshot for
-the predeclared `SPY`, `QQQ`, and `IWM` instruments. Define one adjustment and
-ordering policy, then publish a hash-bound external subset only if it can
-honestly support development training.
+Qualify no-auth, no-cost, license-compatible split and cash-distribution event
+histories for `SPY`, `QQQ`, and `IWM`. Prefer existing local evidence and
+official issuer sources. Preserve accepted bytes and provenance in one
+immutable, hash-bound external snapshot without modifying r2.
 
 ## Ready Queue
 
-1. Answer a specific catalog question from Engine Research without rescanning
-   unchanged files.
-2. Continue the official symbol-directory prospective series with a new dated
-   immutable snapshot when a future active goal requests capture; never
-   overwrite or treat it as historical PIT evidence.
-3. Identify a specific free, no-auth, license-compatible coverage gap only when
-   existing local data cannot serve the active objective and free space remains
-   above the hard floor.
-4. Keep the ADP `2026-06-09T14:05:00Z` strict early-label bar as conditional
-   context only; reopen it only for a goal that explicitly rescues that row.
+1. Inspect bounded existing metadata under `D:\market_data` for event histories.
+2. If missing, acquire only directly useful official, no-auth, no-cost event
+   records with clear private-use compatibility.
+3. Normalize accepted dates and event types into one immutable snapshot and
+   manifest that retains raw-source hashes and retrieval provenance.
+4. Independently verify mapping coverage over the fixed 896-session campaign
+   window; document unresolved gaps as warnings, not ranking eligibility.
 
 ## Running
 
@@ -90,12 +88,46 @@ honestly support development training.
   before parsing one homogeneous symbol stream. Direct construction is closed;
   only the verified loader creates this campaign evidence. It uses no Research
   imports, network, or credentials.
-- No inspected file is model-selection training eligible or sealed-holdout
-  eligible. Intraday coverage is under the 20-session catalog floor and its
-  point-in-time universe provenance is unproven. Daily point-in-time universe,
-  delisting, corporate-action, and full-OHLC adjustment provenance is unproven.
-- During the r2 catalog run, `D:` had 40.61% free space and no data, network, or
-  credential access occurred.
+- No file in the r2 training-readiness catalog is model-selection training or
+  sealed-holdout eligible. Intraday coverage is under the 20-session catalog
+  floor and its point-in-time universe provenance is unproven.
+- The fixed ETF daily r1 subset has dataset ID
+  `us_equities.fixed_etf_daily.1d.snapshot=2026-07-18-r1` and hash
+  `sha256:7f161319d01cfedf762d738fea98ebb9800ce3acd61ee48af7e550e85fc2fbf6`.
+  It contains 21,823 ordered rows: SPY 8,405 (`1993-01-29` to `2026-06-22`),
+  QQQ 6,863 (`1999-03-10` to `2026-06-22`), and IWM 6,555 (`2000-05-26` to
+  `2026-06-22`). Parser and development-training eligibility are true;
+  ranking and sealed-holdout eligibility are false because construction is
+  post-period and historical PIT/independence evidence is unproven. Its bytes
+  remain immutable, but it is superseded by r2 for campaign use because its
+  canonical prices are adjusted rather than executable raw prices.
+- The fixed ETF daily r2 subset has dataset ID
+  `us_equities.fixed_etf_daily.1d.snapshot=2026-07-18-r2` and hash
+  `sha256:3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e`.
+  It preserves the same 21,823 rows and date ranges while canonical OHLC and
+  volume are raw. Parser and development-training eligibility are true;
+  ranking and sealed-holdout eligibility remain false.
+- Daily adjustment policy
+  `yahoo_adj_close_price_factor_raw_volume_v1` uses
+  `factor = raw_adj_close / raw_close`, multiplies raw OHLC by that factor, and
+  leaves raw volume unchanged. Yahoo's factor can combine dividend and split
+  effects; this is not a split-only volume adjustment and adjusted prices are
+  not executable historical fills.
+- R2 factor-change diagnostics use
+  `abs(current_factor / previous_factor - 1) >= 0.0001` on adjacent observed
+  sessions and flag the current date. Counts are SPY 135, QQQ 89, and IWM 106.
+  Exclude any campaign lookback, signal, entry, exit, feature, label, fill,
+  threshold, or metric sample touching a flagged date. These flags are not
+  authoritative corporate-action or dividend lineage.
+- The strictly local daily loader treats the r2 gzip byte hash as authoritative,
+  then requires the sibling UTF-8 r2 manifest to bind the caller dataset ID,
+  dataset/subset hashes, mount-portable snapshot-directory/file path tail,
+  parent r1, original source, and supersession lineage. It creates attested
+  `CatalogedBars` only from raw canonical OHLCV; adjusted diagnostics cannot
+  enter loader bars. The factor-change helper enforces the same lineage.
+- During the fixed ETF daily r2 run, `D:` remained 40.61% free. R2 was derived
+  only from verified r1 bytes; the 7,390,436-row original was not rescanned and
+  no network, credentials, or GPU were used.
 - The first official Nasdaq Trader symbol-directory snapshot was captured at
   `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18`.
   It contains unaltered `nasdaqlisted.txt`, `otherlisted.txt`, and
@@ -111,9 +143,13 @@ honestly support development training.
 
 ## Recovery
 
-- Recovery state is `complete`: reuse the r2 catalog artifact before
-  inspecting unchanged files. Start new work only from a precise active-goal
-  coverage or provenance requirement.
+- Recovery state is `complete`: use the fixed ETF daily r2 manifest for
+  development campaigns and retain r1 only as immutable lineage. Reuse the r2
+  catalog artifact before inspecting unchanged files.
+- Recover or mount the r2 subset only together with its unchanged sibling
+  `manifest.json`. A different Windows/POSIX root is allowed when the snapshot
+  directory name and `ohlcv_1d.csv.gz` basename are preserved; missing,
+  tampered, or trailing-identity-inconsistent evidence is rejected.
 - Stop acquisition on credential/payment/manual access, unclear rights, two
   consecutive automated failures for one source, loss of active-goal benefit,
   or projected breach of the 15% free-space floor.
@@ -122,6 +158,15 @@ honestly support development training.
 
 ## Recent Evidence
 
+- `D:\market_data\us_equities\fixed_etf_daily\canonical\ohlcv_1d\snapshot=2026-07-18-r2\manifest.json`:
+  raw canonical campaign subset with r2 hash
+  `sha256:3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e`;
+  records parent r1 and original-source hashes plus all factor-change dates.
+- `D:\market_data\us_equities\fixed_etf_daily\canonical\ohlcv_1d\snapshot=2026-07-18-r1\manifest.json`:
+  preserved immutable lineage, superseded for campaign use; source hash
+  `sha256:1690a766a820b3e6385c76605c7e02548ab0e428148c93f85388c7a6a8b065b4`,
+  subset hash
+  `sha256:7f161319d01cfedf762d738fea98ebb9800ce3acd61ee48af7e550e85fc2fbf6`.
 - `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`:
   first immutable official-source prospective universe snapshot; all three
   recorded hashes reverified, with Nasdaq file-creation timestamps from
@@ -139,6 +184,7 @@ honestly support development training.
 
 ## Next Handoff
 
-Hand Engine Research one fixed-instrument daily manifest with explicit parser,
-development-training, ranking, and sealed-holdout eligibility. Do not broaden
-the inventory or substitute symbols based on observed performance.
+Supply Engine Research with hash-bound event dates, event types, coverage, and
+provenance for a no-retraining sensitivity replay. Research must keep r2 raw
+fills unchanged and may not use the event snapshot to claim ranking, sealed
+holdout independence, model selection, or profitability.

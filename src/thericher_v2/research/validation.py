@@ -227,6 +227,15 @@ class NaiveBaselineRun:
     schema_version: int = SCHEMA_VERSION
 
 
+@dataclass(frozen=True)
+class CampaignReplayRun:
+    result: ValidationResult
+    artifact_path: Path
+    replay_evidence: ReplayEvidence
+    fill_source: str = LOCAL_PAPER_SOURCE
+    schema_version: int = SCHEMA_VERSION
+
+
 def discover_market_data_inventory(
     root: Path = DEFAULT_MARKET_DATA_ROOT,
 ) -> MarketDataInventory:
@@ -327,6 +336,7 @@ def run_local_paper_validation(
     fold_id: str | None = None,
     tuning: bool = False,
     baseline_id: NaiveBaselineId | None = None,
+    eligible_signal_starts: frozenset[datetime] | None = None,
 ) -> ValidationResult:
     model = model or MomentumModel()
     cataloged_data: CatalogedBars | None = None
@@ -401,6 +411,11 @@ def run_local_paper_validation(
     for index in range(first_signal_index, len(ordered) - final_offset):
         signal_window = ordered[: index + 1]
         signal_bar = ordered[index]
+        if (
+            eligible_signal_starts is not None
+            and signal_bar.start_ts not in eligible_signal_starts
+        ):
+            continue
         prediction = model.predict(signal_window)
         if campaign is not None and prediction.feature_window_end != signal_bar.end_ts:
             raise ValueError("campaign prediction must use only data through signal bar close")
@@ -625,19 +640,68 @@ def run_naive_cpu_baseline(
     repo_root: Path | None = None,
     starting_cash: Decimal = Decimal("10000"),
     quantity: Decimal = Decimal("1"),
+    run_label: str | None = None,
+    eligible_signal_starts: frozenset[datetime] | None = None,
 ) -> NaiveBaselineRun:
     """Run one deterministic CPU baseline through the campaign validation path."""
 
     selected_baseline = baseline_id or campaign.naive_baselines[0]
     if selected_baseline not in campaign.naive_baselines:
         raise ValueError("baseline_id is not frozen in the campaign contract")
-    resolved_fold_id, selected_window = campaign.resolve_window(
-        phase,
-        fold_id=fold_id,
-        tuning=False,
-    )
+    resolved_fold_id, _ = campaign.resolve_window(phase, fold_id=fold_id, tuning=False)
     suffix = resolved_fold_id or "sealed"
     run_id = f"{campaign.campaign_id}-{phase}-{suffix}-{selected_baseline}"
+    if run_label is not None:
+        _validate_run_label(run_label)
+        run_id = f"{run_id}-{run_label}"
+    replay = run_campaign_model_replay(
+        cataloged_bars,
+        campaign=campaign,
+        model=_NaiveBaselineModel(
+            baseline_id=selected_baseline,
+            deterministic_seed=campaign.deterministic_seed,
+        ),
+        run_id=run_id,
+        artifact_root=artifact_root,
+        work_dir=work_dir,
+        phase=phase,
+        fold_id=fold_id,
+        baseline_id=selected_baseline,
+        repo_root=repo_root,
+        starting_cash=starting_cash,
+        quantity=quantity,
+        eligible_signal_starts=eligible_signal_starts,
+        emergency_reason="campaign_baseline_initial_state",
+    )
+    return NaiveBaselineRun(
+        baseline_id=selected_baseline,
+        result=replay.result,
+        artifact_path=replay.artifact_path,
+        replay_evidence=replay.replay_evidence,
+    )
+
+
+def run_campaign_model_replay(
+    cataloged_bars: CatalogedBars,
+    *,
+    campaign: CampaignContract,
+    model: PredictionModel,
+    run_id: str,
+    artifact_root: Path,
+    work_dir: Path,
+    phase: CampaignPhase = "validation",
+    fold_id: str | None = None,
+    baseline_id: NaiveBaselineId | None = None,
+    repo_root: Path | None = None,
+    starting_cash: Decimal = Decimal("10000"),
+    quantity: Decimal = Decimal("1"),
+    eligible_signal_starts: frozenset[datetime] | None = None,
+    emergency_reason: str = "campaign_model_initial_state",
+) -> CampaignReplayRun:
+    """Persist one model replay through the existing local-paper evidence path."""
+
+    _validate_run_label(run_id)
+    _, selected_window = campaign.resolve_window(phase, fold_id=fold_id, tuning=False)
     config = ValidationConfig(
         run_id=run_id,
         starting_cash=starting_cash,
@@ -668,24 +732,24 @@ def run_naive_cpu_baseline(
         EmergencyState(
             stop_new_orders=False,
             cancel_open_orders_requested=False,
-            reason="campaign_baseline_initial_state",
+            reason=emergency_reason,
             updated_at=selected_window.start_utc,
         )
     )
+    event_store = EventStore(state_sqlite_path, event_jsonl_path)
     result = run_local_paper_validation(
         cataloged_bars,
-        event_store=EventStore(state_sqlite_path, event_jsonl_path),
+        event_store=event_store,
         emergency_store=emergency_store,
-        model=_NaiveBaselineModel(
-            baseline_id=selected_baseline,
-            deterministic_seed=campaign.deterministic_seed,
-        ),
+        model=model,
         config=config,
         campaign=campaign,
         phase=phase,
         fold_id=fold_id,
-        baseline_id=selected_baseline,
+        baseline_id=baseline_id,
+        eligible_signal_starts=eligible_signal_starts,
     )
+    _assert_campaign_replay_invariants(result, event_store)
     replay_evidence = ReplayEvidence(
         work_dir=resolved_work_dir,
         event_jsonl_path=event_jsonl_path,
@@ -703,8 +767,7 @@ def run_naive_cpu_baseline(
         cataloged_data=cataloged_bars,
         replay_evidence=replay_evidence,
     )
-    return NaiveBaselineRun(
-        baseline_id=selected_baseline,
+    return CampaignReplayRun(
         result=result,
         artifact_path=artifact_path,
         replay_evidence=replay_evidence,
@@ -884,8 +947,34 @@ def _validate_bars(bars: list[Bar], *, min_bars: int) -> None:
     ):
         raise ValueError("validation bars must be complete and share symbol, market, timeframe")
     for prior, current in zip(bars, bars[1:], strict=False):
-        if current.start_ts != prior.end_ts:
+        if first.timeframe == Timeframe.D1:
+            if current.start_ts <= prior.start_ts:
+                raise ValueError("daily validation bars must be strictly chronological")
+        elif current.start_ts != prior.end_ts:
             raise ValueError("validation bars must be contiguous")
+
+
+def _assert_campaign_replay_invariants(
+    result: ValidationResult,
+    event_store: EventStore,
+) -> None:
+    if result.final_position != 0:
+        raise RuntimeError("campaign replay must finish flat")
+    if len(result.trades) % 2:
+        raise RuntimeError("campaign replay must contain complete entry/exit pairs")
+    prior_exit: datetime | None = None
+    for entry, exit_fill in zip(result.trades[::2], result.trades[1::2], strict=True):
+        if entry.side != "buy" or exit_fill.side != "sell":
+            raise RuntimeError("campaign replay trades must be long-only entry/exit pairs")
+        if exit_fill.filled_at < entry.filled_at:
+            raise RuntimeError("campaign replay exit cannot precede its entry")
+        if prior_exit is not None and entry.signal_bar_end < prior_exit:
+            raise RuntimeError("campaign signal cannot precede the prior exit")
+        prior_exit = exit_fill.filled_at
+
+    timestamps = [event.created_at for event in event_store.iter_events()]
+    if any(current < prior for prior, current in zip(timestamps, timestamps[1:], strict=False)):
+        raise RuntimeError("campaign event timestamps must be nondecreasing")
 
 
 def _validation_trade(
@@ -964,6 +1053,11 @@ def _validation_artifact_path(artifact_root: Path, run_id: str) -> Path:
 def _require_new_path(path: Path, label: str) -> None:
     if path.exists():
         raise FileExistsError(f"{label} already exists: {path}")
+
+
+def _validate_run_label(value: str) -> None:
+    if not value.strip() or any(character in value for character in ("/", "\\", ":")):
+        raise ValueError("run identifier must be nonempty and contain no path separators")
 
 
 def _sha256_file(path: Path) -> str:

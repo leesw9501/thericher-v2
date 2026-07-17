@@ -325,6 +325,12 @@ class InMemoryBrokerTransport:
     def fills(self) -> tuple[BrokerFill, ...]:
         return tuple(self._fills[key] for key in sorted(self._fills))
 
+    def is_intent_durable(self, request: BrokerOrderRequest) -> bool:
+        return (
+            self._intents.get(request.client_order_id) == request
+            and request.client_order_id in self._durable_intents
+        )
+
     def record_intent(self, request: BrokerOrderRequest) -> BrokerOrderRequest:
         existing = self._intents.get(request.client_order_id)
         if existing is not None:
