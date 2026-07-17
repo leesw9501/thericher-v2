@@ -566,6 +566,10 @@
   work, used no Docker/GPU compute, changed no dependency, Docker, compose,
   scheduler, coordinator, dashboard, or worker files, and wrote
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`.
+- Broader non-AMAT label-ready inventory ran locally as artifact-only work,
+  used no Docker/GPU compute, changed no dependency, Docker, compose,
+  scheduler, coordinator, dashboard, or worker files, and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -594,6 +598,6 @@
 - After a Windows restart, keep checking Docker daemon readiness before each
   Engine Research Agent run. If the duplicate-aware follow-up needs compute,
   use the same single-shot Docker `research` path and external artifact mount.
-- The next non-AMAT inventory should stay local and artifact-only. Use Docker
-  `research` only after an inventory or decision artifact defines a bounded
-  compute question.
+- The next fresh-symbol replay probe may use Docker `research` only through the
+  existing Engine Research Agent single-shot runner and existing research job
+  kinds. Do not add scheduler/coordinator plumbing.

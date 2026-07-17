@@ -457,14 +457,18 @@
   the same local Yahoo snapshot only. It acquired no data and confirmed the ADP
   `2026-06-09T14:05:00+00:00` bar is only a conditional future requirement if a
   later goal attempts to rescue the ADP strict early-label row.
+- Broader non-AMAT label-ready inventory scanned known external artifact roots
+  and selected `snapshot=2026-06-18` local Yahoo rows only. It confirmed ADBE,
+  ADI, AEM, AMZN, and BA checked bars are present, while ADP still lacks
+  `2026-06-09T14:05:00+00:00`. No data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts while inventorying for additional non-AMAT strict
-  label-ready rows. Record exact missing symbols, dates, or artifact names only
-  if the inventory identifies a future data requirement.
+  rows while selecting fresh-symbol replay slices outside current baseline and
+  prior AMAT-bridge timing contexts. Record exact missing symbols, dates, or
+  artifact names only if the replay probe identifies a future data requirement.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

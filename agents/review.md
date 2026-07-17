@@ -615,13 +615,20 @@
   feature rule, durable multi-agent platform, or execution behavior. It held
   the branch until existing artifacts can supply at least `+3` strict
   label-ready rows, preferably with `+5` strict unique timing-context keys.
+- Broader non-AMAT label-ready inventory wrote one compact external artifact
+  and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, replay mutation, threshold search,
+  feature rule, durable multi-agent platform, or execution behavior. It found
+  row floor only by reusing prior AMAT-bridge lineage, so the branch stayed
+  `hold_no_compute`.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded artifact-only inventory before any
-  replay, ablation, or GPU work. If the operator wants more repo-owned
+- Push the next task toward one bounded fresh-symbol replay probe through
+  existing single-shot runner paths only. If the operator wants more repo-owned
   executable role agents, make that an explicit worker-expansion goal with one
   safe role and a named engine-loop benefit.
   Avoid quietly adding durable workers, daemon, scheduler, dashboard, report

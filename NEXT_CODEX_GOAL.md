@@ -5,13 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run a broader artifact-only inventory for additional non-AMAT strict
-label-ready rows from existing artifacts.
+Run one bounded fresh-symbol local-paper replay probe for non-AMAT evidence
+outside the current bridge lineage.
 
 This advances feature/model research, backtest validation, PnL attribution, and
-data collection by deciding whether the current non-AMAT branch has enough
-existing evidence to justify a later bounded compute question, or should stop
-and rotate lanes.
+paper-trading preparation by seeking fresh timing-context evidence rather than
+reusing the same prior AMAT-bridge rows again.
 
 ## Current Agent Reality
 
@@ -36,15 +35,17 @@ and rotate lanes.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
 - Do not add a new research job kind.
-- Do not run Docker/GPU compute for this inventory. `docker compose config
-  --quiet` is allowed only as required non-running verification.
-- Do not run ablation, replay, training, threshold search, data acquisition, or
-  new executable workers.
+- Do not run ablation, training, threshold search, data acquisition, or new
+  executable workers.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Keep original local-paper fills labeled with `source: local_paper`; keep
-  reconstructed diagnostic rows labeled with `source: diagnostic_overlay`.
+- Use Docker/GPU only through the existing Engine Research Agent single-shot
+  runner and existing research job kinds if the selected replay probe requires
+  it.
+- Replay must remain broker-free local paper only. Generated fills must be
+  `source: local_paper`; reconstructed or summary rows must be
+  `source: diagnostic_overlay`.
 - Avoid promotional model-quality language except when quoting unavoidable
   existing artifact field names.
 - Do not convert diagnostic context into an execution filter, order intent,
@@ -73,65 +74,56 @@ and rotate lanes.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: assess whether any newly inventoried non-AMAT rows are
-     enough for a future bounded model-input question.
-   - Data/Infra: verify artifact paths, local data references, and that no
-     Docker/GPU compute or acquisition is needed.
-   - Review/Execution: verify source labels, broker boundaries, and
-     multi-agent drift.
+   - Engine Research: select one bounded existing feature-branch replay shape
+     and review whether the probe is narrow enough.
+   - Data/Infra: verify candidate fresh symbols have enough existing local
+     Yahoo rows and Docker/runner readiness if compute is needed.
+   - Review/Execution: verify local-paper-only source labels, broker
+     boundaries, and multi-agent drift.
 
 4. Ask Claude CLI for a short drift-check before architecture-changing edits.
    If it times out, record that and keep changes tightly scoped.
 
 ## Evidence To Consume
 
+- Non-AMAT label-ready inventory:
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`
 - Non-AMAT feasibility decision:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`
-- Non-AMAT bridge-feasibility artifact:
-  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`
-- Independent-evidence scan:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-amat-independent-evidence-scan-20260717-r1\metrics.json`
-- Duplicate-aware AMAT bridge decision:
-  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-bridge-duplicate-aware-decision-20260717-r1\metrics.json`
-- Existing candidate-feature-branch replay/attribution roots under
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`
-  and `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay`.
-- Existing feature-input roots under
-  `D:\thericher-v2\model-artifacts\feature-input-stability` and
-  `D:\thericher-v2\model-artifacts\feature-input-ablation`.
-- Local market data only as referenced by existing artifacts, especially:
+- First-evaluation wider-holdout attribution:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
+- Existing feature-branch artifacts referenced by that attribution, especially
+  the short and depth source-context feature branches.
+- Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
-
-Avoid expensive full recursive scans. Start with known artifact directories and
-bounded filename/metadata discovery.
 
 ## Required Work
 
-1. Inventory existing artifacts for additional non-AMAT rows that can become
-   strict feature-input label-ready evidence without replay, training, ablation,
-   threshold search, or data acquisition.
-2. Deduplicate by timing-context key and source lineage. Carry the current
-   non-AMAT baseline of `5` strict label-ready rows and `3` strict unique
-   timing-context keys.
-3. Determine whether existing artifacts can supply at least `+3` additional
-   strict label-ready rows to meet the current default feature-input ablation
-   `min_examples=8`.
-4. Prefer `+5` additional strict unique timing-context keys before recommending
-   any future duplicate-aware compute question.
-5. Preserve the ADP `2026-06-09T14:05:00+00:00` missing bar as a conditional
-   future data requirement only; do not acquire data in this goal.
-6. Build one compact external inventory artifact under
-   `D:\thericher-v2\model-artifacts` that records:
-   - artifacts scanned,
-   - additional strict label-ready rows found,
-   - duplicate structure,
-   - local-paper and diagnostic-overlay source evidence,
-   - whether the branch should stop, stay held, or queue a future bounded
-     question.
-7. If existing artifacts cannot supply at least `+3` strict rows, record a
-   branch stop or lane-rotation recommendation rather than forcing replay or
-   compute.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Exclude symbols and timing contexts already used by the current non-AMAT
+   baseline and prior AMAT bridge lineage:
+   - ADBE, ADI, ADP, AEM, AMAT, AMZN, and BA timing contexts already recorded
+     in the current branch.
+2. Select a very small fresh-symbol set from existing `snapshot=2026-06-18`
+   rows. Prefer symbols with at least `240` bars and no current-branch timing
+   reuse.
+3. Use only an existing feature-branch replay shape and existing research job
+   kind. Do not create a new job kind, helper, replay path, threshold search,
+   or model axis.
+4. If a replay probe is run, run one bounded broker-free local-paper replay
+   through the existing Engine Research Agent runner or the equivalent existing
+   Docker `research` command shape. Keep artifacts outside Git.
+5. If Docker/runner readiness or artifact lineage blocks a safe replay, record
+   a compact external blocked/selection artifact instead of inventing new
+   plumbing.
+6. After the probe, build one compact external artifact that records:
+   - selected symbols and exclusion rationale,
+   - replay or blocked command lineage,
+   - local-paper fill-source evidence,
+   - any fresh non-AMAT timing contexts found,
+   - whether those contexts are candidates for a later strict label-ready
+     bridge,
+   - no broker/KIS/credential/data-acquisition behavior.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -146,13 +138,14 @@ docker compose config --quiet
 Also report:
 
 - any focused artifact-only smoke command,
+- any Engine Research/Data Agent runner command used,
 - any sidecars used,
 - artifact paths written outside Git,
-- that Docker/GPU compute was not run for the inventory.
+- whether Docker/GPU compute was used and why.
 
 ## Suggested Commit Message
 
-`Inventory non-AMAT label-ready evidence`
+`Probe fresh-symbol local-paper evidence`
 
 ## Completion Report
 
@@ -165,7 +158,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced diagnostic/inventory artifacts,
+- produced replay/diagnostic artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,

@@ -1022,6 +1022,13 @@
   `+3` existing strict label-ready rows are needed for the row floor, and `+5`
   strict unique timing-context keys are preferred before another duplicate-aware
   model-input pass.
+- Broader non-AMAT label-ready inventory ran artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`.
+  It found `8` additional strict local-bar-ready rows across ADI, AMZN, and BA,
+  but all reused prior AMAT bridge lineage and added `0` fresh strict unique
+  timing-context keys. Branch status stayed `hold_no_compute`; the next useful
+  research step is fresh-symbol evidence rather than another pass over the same
+  bridge rows.
 
 ## Next Handoff
 
@@ -1029,14 +1036,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: run a broader artifact-only inventory over known
-  existing candidate-feature-branch and feature-input artifacts for additional
-  non-AMAT strict label-ready rows. Do not replay, train, or ablate; stop or
-  rotate lanes if existing artifacts cannot supply at least `+3` strict rows.
-- Longer candidate training queue: hold until an inventory or decision artifact
-  defines a specific replay-shape or model-input question with enough
-  duplicate-aware context. Keep job kinds closed and write artifacts outside
-  Git.
+- Short experiments queue: rotate to one bounded fresh-symbol local-paper replay
+  probe through the existing Engine Research Agent runner and existing research
+  job kinds. Exclude current baseline and prior AMAT-bridge timing contexts;
+  seek fresh non-AMAT local-paper evidence before any ablation or training.
+- Longer candidate training queue: hold until a replay/inventory artifact
+  defines a specific model-input question with enough duplicate-aware context.
+  Keep job kinds closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

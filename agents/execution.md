@@ -435,6 +435,12 @@
   rules. It preserved `14` referenced fills as `source: local_paper`, kept `7`
   reconstructed rows as `source: diagnostic_overlay`, and queued no compute
   from current evidence.
+- Broader non-AMAT label-ready inventory reran no local-paper replay and
+  created no fills, orders, positions, order intents, broker adapters, broker
+  outcomes, execution filters, simulator rules, feature rules, or threshold
+  rules. It referenced `16` existing local-paper fill sources for `8`
+  additional row-shaped candidates and kept those reconstructed inventory rows
+  as `source: diagnostic_overlay`.
 
 ## Next Handoff
 
@@ -469,8 +475,9 @@
   or run broker-free replay only through existing research jobs. It must not
   create execution filters, order intents, broker authority, or live/paper KIS
   behavior.
-- The next non-AMAT inventory should parse existing artifacts only. It must
-  preserve original fills as `source: local_paper`, keep reconstructed rows as
+- The next fresh-symbol replay probe may use only the existing broker-free
+  local-paper research path. It must preserve generated fills as
+  `source: local_paper`, keep any diagnostic rows as
   `source: diagnostic_overlay`, and avoid execution filters, order intents,
   feature rules, threshold rules, replay rules, broker authority, and live/paper
   KIS behavior.

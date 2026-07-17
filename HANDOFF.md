@@ -1887,6 +1887,48 @@ label-ready rows from existing artifacts. If existing artifacts cannot supply
 at least `+3` strict rows without replay/training, record that the branch should
 stop or rotate lanes instead of forcing compute.
 
+The broader non-AMAT label-ready inventory then completed:
+
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary read-only helpers and were
+  closed after use; no repo-owned worker, daemon, scheduler, coordinator, or
+  durable multi-agent platform was added.
+- The compact external inventory artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`.
+- It scanned only known existing `metrics.json` files under
+  `candidate-feature-branch-replay-attribution`,
+  `candidate-feature-branch-replay`, `feature-input-stability`, and
+  `feature-input-ablation`, plus selected rows from the existing
+  `snapshot=2026-06-18` Yahoo 1m file. It did not run Docker/GPU compute,
+  replay, training, ablation, threshold search, KIS, broker code,
+  credentials, network, data acquisition, a new job kind, or a new worker.
+- Baseline stayed `5` strict label-ready rows and `3` strict unique timing
+  contexts. The inventory found `8` additional strict local-bar-ready rows
+  across ADI, AMZN, and BA, but all were reused from the prior AMAT bridge
+  lineage. Fresh additional strict unique timing-context count was `0`.
+- Row floor can be met only if prior AMAT-bridge lineage is reused:
+  combined strict rows `13`, combined strict unique timing contexts `6`.
+  The preferred `+5` additional strict unique timing-context target was not
+  met. A conservative local-paper-path view counts only `4` ADI/BA rows with
+  `path_bar_count >= 3`; the AMZN rows have strict local bars available but
+  local-paper `path_bar_count` is `2`.
+- Decision: `branch_status: hold_no_compute`. Do not queue ablation, replay,
+  training, or Docker/GPU compute from this inventory alone. The useful next
+  engine step is fresh-symbol evidence outside the current baseline and prior
+  AMAT bridge lineage, not another pass over the same rows.
+- Source boundaries stayed intact: referenced fills stayed
+  `source: local_paper`, reconstructed inventory rows stayed
+  `source: diagnostic_overlay`, and no fills, orders, order intents, broker
+  outcomes, execution filters, replay rules, feature rules, threshold rules, or
+  promotion rules were created. ADP `2026-06-09T14:05:00+00:00` remains only a
+  conditional future data requirement if a later goal tries to rescue that row.
+
+Next, rotate to a bounded fresh-symbol local-paper replay probe using the
+existing Engine Research Agent runner and existing research job kinds only. The
+probe should seek fresh non-AMAT timing-context evidence outside the current
+baseline and prior AMAT bridge lineage while preserving local-paper and
+diagnostic source separation.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
