@@ -625,6 +625,13 @@
   under `D:\thericher-v2\model-artifacts\data-agent`. It changed no dependency,
   Docker, compose, scheduler, coordinator, dashboard, notification, worker, or
   Engine Research Agent files and used no Docker/GPU compute.
+- Independent fresh-symbol trace-only GPU batch ran in Docker `research` with
+  current `src` mounted read-only, PyTorch CUDA confined to the research
+  container, and artifacts under `/app/model_artifacts`. It wrote the compact
+  batch summary under
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1`
+  and changed no Docker, compose, dependency, scheduler, coordinator,
+  dashboard, notification, worker, or Engine Research Agent files.
 
 ## Next Handoff
 
@@ -674,3 +681,7 @@
   `research` path with current `src` mounted read-only and artifacts under
   `/app/model_artifacts`. Do not add Docker layers, schedulers, daemons, or
   coordinator plumbing.
+- The next trace-comparison or replay-selection planning pass should be
+  artifact-only and should not require Docker unless an existing helper makes
+  that simpler. Do not add Docker layers, schedulers, daemons, or coordinator
+  plumbing.

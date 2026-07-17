@@ -511,6 +511,12 @@
   QCOM already have crossing traces but are not replay triggers here; APP is
   clean but deferred as a source-context training symbol. No data was acquired
   and no operator data help is needed.
+- Independent fresh-symbol trace-only GPU batch reused the same local Yahoo
+  snapshot for DELL, MPWR, STX, and WDC at `max_bars=240`. Data sidecar
+  confirmed all four have clean first-`240` windows with no duplicate
+  timestamps, non-monotonic rows, missing 1m intervals, or OHLCV invariant
+  failures. No data was acquired, no market data was written, and no operator
+  data help is needed.
 
 ## Next Handoff
 
@@ -523,9 +529,10 @@
   artifact roots. Exclude the held MRVL/MU/SNDK/COHR branch from compute
   recommendations, and acquire nothing unless a future objective names exact
   missing symbols or date ranges.
-- The next Engine Research trace-only batch should reuse existing local Yahoo
-  rows for DELL, MPWR, STX, and WDC. Data Agent has no acquisition task for
-  that batch.
+- The next trace-comparison or replay-selection planning artifact can reuse
+  existing trace artifacts and local data provenance only. Data Agent has no
+  acquisition task unless a later goal names exact missing symbols or date
+  ranges.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

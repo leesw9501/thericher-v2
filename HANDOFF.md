@@ -2247,6 +2247,36 @@ Next, run one bounded Engine Research trace-only GPU batch for DELL, MPWR, STX,
 and WDC using the existing trace primitive in Docker `research`. Do not run
 replay, training, ablation, threshold search, or exit simulation in that goal.
 
+The independent fresh-symbol trace-only GPU batch then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks in parallel. They were runtime collaborators only; no durable
+  multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or new repo-owned worker was added.
+- Docker `research` ran with PyTorch CUDA and current `src` mounted read-only.
+  The batch directly called the existing
+  `run_bounded_candidate_probability_trace` primitive for DELL, MPWR, STX, and
+  WDC at `max_bars=240`, using the existing `snapshot=2026-06-18` Yahoo rows
+  and the existing short source-context feature branch.
+- The compact batch summary was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1\metrics.json`.
+- Result: all `4` traces completed and wrote per-symbol probability traces.
+  MPWR crossed the fixed descriptive buy threshold `0.541000` with max
+  probability `0.550297`, gap `+0.009297`, and `4` crossing rows. STX crossed
+  lightly with max `0.541606`, gap `+0.000606`, and `1` crossing row. DELL
+  maxed at `0.538627` and WDC at `0.539256`, both below threshold.
+- The batch ran no replay, local-paper execution, training, ablation, threshold
+  search, exit simulation, KIS API, broker submit, credential read, market-data
+  acquisition, order intents, fills, feature rule, execution threshold, gate,
+  promotion rule, scheduler, or durable worker. Candidate summaries stayed
+  `source: diagnostic_overlay`.
+
+Next, do not replay immediately from MPWR/STX crossings. Build one compact
+trace-comparison or replay-selection planning artifact that compares MPWR and
+STX against GLW, INTC, and QCOM crossing context, while keeping
+MRVL/MU/SNDK/COHR held. The planning artifact may recommend a later bounded
+broker-free replay goal, but must not run replay itself.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

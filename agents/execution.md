@@ -496,6 +496,12 @@
   broker adapters, broker outcomes, local-paper replay, execution filters,
   simulator rules, feature rules, threshold rules, risk rules, exit policies,
   or live/paper KIS behavior.
+- Independent fresh-symbol trace-only GPU batch created no fills, orders, order
+  intents, positions, broker adapters, broker outcomes, local-paper replay,
+  execution filters, simulator rules, feature rules, threshold rules, risk
+  rules, exit policies, or live/paper KIS behavior. MPWR/STX threshold crossing
+  counts are `source: diagnostic_overlay` only and are not execution thresholds
+  or replay triggers.
 
 ## Next Handoff
 
@@ -556,3 +562,6 @@
 - The next trace-only GPU batch must not create local-paper fills or order
   intents. Any later replay goal must explicitly preserve `source:
   local_paper` fills and remain broker-free.
+- The next trace-comparison or replay-selection planning pass must stay
+  artifact-only. If it proposes a later replay, that replay must be a separate
+  explicit goal through the existing broker-free local-paper path.

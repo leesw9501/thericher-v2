@@ -1110,6 +1110,17 @@
   and QCOM already have crossing traces but should be kept as comparison
   context, not immediate replay triggers. APP is deferred because it appears in
   source-context training scope. No GPU work ran during the inventory.
+- Independent fresh-symbol trace-only GPU batch
+  `engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1` directly
+  used the existing probability-trace primitive inside Docker `research` with
+  PyTorch CUDA for DELL, MPWR, STX, and WDC at `max_bars=240`. All `4` traces
+  completed and wrote
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-independent-trace-only-batch-20260717-r1\metrics.json`.
+  MPWR crossed the fixed descriptive buy threshold `0.541000` with max
+  `0.550297` and `4` crossing rows; STX crossed lightly with max `0.541606`
+  and `1` crossing row. DELL and WDC stayed below threshold. No replay, order
+  intents, fills, training, ablation, threshold search, new job kind, or
+  dispatch path was added.
 
 ## Next Handoff
 
@@ -1118,8 +1129,9 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Next GPU work should be trace-only for DELL, MPWR, STX,
-  and WDC, with no replay or training in that trace goal.
+  fresh-symbol branch. Next work should be artifact-only trace comparison or
+  replay-selection planning across MPWR/STX and the already-traced GLW/INTC/QCOM
+  context, with no immediate replay or training.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.
