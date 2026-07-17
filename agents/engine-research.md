@@ -29,14 +29,15 @@
 
 ## Active Queue
 
-1. Short experiments for breadth: use runner-queued replay, attribution, and
-   probability-range checks on existing `D:\market_data` slices.
-2. Longer candidate training for depth: use bounded Docker `research` jobs when
-   GPU work is needed and write artifacts outside Git.
-3. Coordinate with future non-GPU role workers through disjoint external
-   queues/artifact roots rather than shared mutable repo files.
-4. Do not call either path a production recommendation, promotion, or pass/fail
-   result.
+1. No immediate Engine Research compute question is ready.
+2. Short experiments, replay, attribution, probability checks, trace compute,
+   trace recompute, training, threshold search, and exit-policy work are held
+   until a future single objective names a bounded duplicate-aware evidence
+   question.
+3. Longer candidate training is held until a replay or inventory artifact
+   defines a specific model-input question with enough context.
+4. Keep job kinds closed, write artifacts outside Git, and do not treat held
+   context as promotion, pass/fail, production, broker, or risk policy.
 
 ## Running Jobs
 

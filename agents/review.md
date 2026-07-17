@@ -25,11 +25,9 @@
 
 ## Active Queue
 
-1. Compact broad `Active Queue` wording in Engine Research, Data, and Infra so
-   it cannot be mistaken for immediate compute, scan, acquisition, or Docker
-   authorization.
-2. Keep stateboards short and retire stale current-state wording before more
-   compute.
+1. Run one compact post-compaction handoff review.
+2. Decide whether the next objective should pause for operator direction or
+   open one bounded non-compute simplification objective.
 
 ## Running Jobs
 
@@ -777,6 +775,15 @@
   acquisition, broker/local-paper mutation, Docker/GPU, dependency, scheduler,
   coordinator, dashboard, gate, promotion rule, report family, or durable
   platform work.
+- Stateboard active-queue compaction
+  `stateboard-active-queue-compaction-20260717-r1` compacted only the
+  `Active Queue` sections in Engine Research, Data, and Infra. Engine Research
+  now holds replay, trace, training, ablation, threshold, and exit-policy work
+  until a future bounded evidence question; Data now has no immediate scan,
+  inventory, acquisition, or operator-help task; Infra now has no immediate
+  Docker/GPU, dependency, build-cache, scheduler, coordinator, dashboard,
+  notification, auto-commit, or platform task. Held resources and history were
+  preserved.
 
 ## Next Handoff
 
@@ -789,6 +796,7 @@
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
 - Queue hygiene is complete and found no ready independent evidence question.
-  Next, compact broad `Active Queue` wording in Engine Research, Data, and
-  Infra so a future Codex does not infer immediate compute, scan, acquisition,
-  Docker/GPU, or platform authorization from stale standing queues.
+  The broad `Active Queue` wording in Engine Research, Data, and Infra has
+  been compacted. Next, run a compact post-compaction handoff review and decide
+  whether to pause for operator direction or open a new bounded non-compute
+  objective.

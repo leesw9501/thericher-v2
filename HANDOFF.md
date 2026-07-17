@@ -2554,6 +2554,33 @@ Next, run one focused stateboard active-queue compaction pass over Engine
 Research, Data, and Infra to remove broad standing-queue ambiguity before any
 compute or data acquisition.
 
+The stateboard active-queue compaction pass then completed:
+
+- Temporary Codex sidecars covered Review and Engine/Data/Infra boundary checks
+  in parallel, then were closed. They were runtime collaborators only; no
+  durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The pass edited only the `Active Queue` sections in
+  `agents/engine-research.md`, `agents/data.md`, and `agents/infra.md`.
+  Held resources and historical `Done Recently` evidence were preserved.
+- The compact review artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\review-simplification\stateboard-active-queue-compaction-20260717-r1\metrics.json`.
+- Result: Engine Research now says no immediate compute question is ready;
+  replay, trace, training, ablation, threshold, and exit-policy work are held
+  until a future bounded duplicate-aware evidence question. Data now says no
+  immediate acquisition, scan, inventory refresh, or operator-help task is
+  open. Infra now says no immediate Docker/GPU, dependency, build-cache,
+  scheduler, coordinator, dashboard, notification, auto-commit, or platform
+  task is open.
+- The pass performed no market-data scan, row-level market-data read,
+  acquisition, replay, training, ablation, trace compute, trace recompute,
+  threshold search, exit simulation, KIS call, broker action, credential read,
+  helper change, contract change, job kind change, Docker change, dependency
+  change, gate, promotion rule, report family, or durable platform work.
+
+Next, run one compact post-compaction handoff review to decide whether to pause
+for operator direction or open a new bounded non-compute objective.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

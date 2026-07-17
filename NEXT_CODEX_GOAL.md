@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one focused stateboard active-queue compaction pass over Engine Research,
-Data, and Infra.
+Run one compact post-compaction handoff review.
 
 This advances review/simplification and backtest/walk-forward validation by
-removing broad standing-queue ambiguity that could make a future Codex infer
-immediate compute, scan, acquisition, Docker/GPU, or platform authorization
-from stale stateboard text.
+checking whether the lane-5 simplification sequence should pause for operator
+direction or open one new bounded non-compute objective. Do not open compute,
+data acquisition, broker, Docker/GPU, dependency, scheduler, dashboard, or
+durable-platform work from this review.
 
 ## Current Agent Reality
 
@@ -66,35 +66,25 @@ from stale stateboard text.
    - `agents/infra.md`
    - `agents/review.md`
    - `D:\thericher-v2\model-artifacts\review-simplification\operator-selected-simplification-review-20260717-r1\metrics.json`
+   - `D:\thericher-v2\model-artifacts\review-simplification\stateboard-active-queue-compaction-20260717-r1\metrics.json`
 
 3. Ask Claude CLI for a short drift-check before changing architecture,
    promotion rules, agent governance, helper/job contracts, replay/local-paper
-   behavior, or daily-report policy. A narrow stateboard text compaction should
-   not need a Claude check.
+   behavior, or daily-report policy. A compact artifact/stateboard review
+   should not need a Claude check.
 
 ## Required Work
 
-1. Inspect only current stateboard text and existing review artifacts.
-2. Compact broad `Active Queue` wording in:
-   - `agents/engine-research.md`
-   - `agents/data.md`
-   - `agents/infra.md`
-3. The compacted queues must say what is actually current:
-   - no ready compute question,
-   - no data acquisition or broad scan task,
-   - no Docker/GPU or scheduler/platform task,
-   - held contexts are passive until a future single objective names exact
-     evidence.
-4. Produce one compact external review artifact under
+1. Inspect current handoff/stateboards and the two latest review artifacts.
+2. Decide whether any bounded non-compute simplification objective remains
+   useful, or whether work should pause for operator direction.
+3. Produce one compact external review artifact under
    `D:\thericher-v2\model-artifacts\review-simplification` recording:
-   - consumed stateboards/artifacts,
-   - stateboard sections compacted,
-   - stale ambiguity removed,
-   - confirmation that no compute, acquisition, broker work, Docker/GPU work,
-     dependency change, or durable platform work was performed.
-5. Update `HANDOFF.md` and `agents/review.md` only as needed to record the
-   compaction result.
-6. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
+   - consumed handoff/stateboards/artifacts,
+   - whether another bounded non-compute objective is recommended,
+   - why compute/acquisition/broker/Docker/platform work remains closed.
+4. Update `HANDOFF.md` and `agents/review.md` only if needed.
+5. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
 
 ## Verification
 
@@ -111,13 +101,13 @@ Also report:
 - sidecars or executable workers used,
 - whether Docker/GPU was used,
 - produced artifact paths,
-- what stale ambiguity was removed,
+- whether work should pause or continue with a bounded non-compute objective,
 - what was intentionally not built,
 - next goal.
 
 ## Suggested Commit Message
 
-`Compact stateboard active queues`
+`Review post-compaction handoff`
 
 ## Completion Report
 

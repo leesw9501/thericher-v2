@@ -32,13 +32,14 @@
 
 ## Active Queue
 
-1. Use the single-shot Data Agent runner for bounded inventory refreshes over
-   existing `D:\market_data` before adding acquisition.
-2. Keep reviewing new Docker `research` artifacts for compact source-slice
-   context, but do not turn data warnings into research gates.
-3. Acquire additional no-auth public data only when the source is lawful,
-   license-compatible, and useful for the current engine loop.
-4. Decide the first local cache shape only when real ingestion work starts.
+1. No immediate data acquisition, scan, inventory refresh, or operator-help
+   task is open.
+2. Fresh-symbol, MPWR, non-AMAT, and AMAT-bridge entries are passive context
+   unless a future single objective names exact missing symbols or date ranges.
+3. Keep data-quality checks as warnings until execution hard stops need them.
+4. Future acquisition or cache-shape work requires a specific ingestion
+   objective and must stop on credentials, payment, manual access, unclear
+   licensing, repeated source failure, or no active-goal benefit.
 
 ## Running Jobs
 

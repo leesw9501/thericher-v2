@@ -27,10 +27,13 @@
 
 ## Active Queue
 
-1. Keep base engine tests free of heavy research dependencies.
-2. Keep PyTorch CUDA confined to the Docker `research` target.
-3. Improve Docker research build caching; source edits currently trigger a
-   costly PyTorch reinstall layer.
+1. Keep base `engine` and `web` environments free of heavy research
+   dependencies.
+2. Keep PyTorch CUDA confined to Docker `research`.
+3. No immediate Docker/GPU, dependency, build-cache, scheduler, coordinator,
+   dashboard, notification, auto-commit, or platform task is open.
+4. Docker layer/cache improvement is passive infra context until a future
+   single objective explicitly selects that infra slice.
 
 ## Running Jobs
 
