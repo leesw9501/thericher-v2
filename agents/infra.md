@@ -578,6 +578,13 @@
   Git under `D:\thericher-v2\model-artifacts`, cleared the external GPU lock,
   and changed no dependency, Docker, compose, scheduler, coordinator,
   dashboard, notification, or worker files.
+- Fresh-symbol opportunity prefilter ran locally as artifact-only work. It
+  changed no Docker, compose, dependency, scheduler, coordinator, dashboard,
+  notification, worker, or Engine Research Agent files, and wrote its compact
+  artifact outside Git under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter`.
+  No Docker/GPU job was queued because existing compatible traces were enough
+  to show `0` threshold-crossing candidates.
 
 ## Next Handoff
 
@@ -609,3 +616,6 @@
 - The next fresh-symbol opportunity-prefilter or replay may use Docker
   `research` only through the existing Engine Research Agent single-shot runner
   and existing research job kinds. Do not add scheduler/coordinator plumbing.
+- The next data-lane trace availability inventory should stay local and
+  artifact-only unless it proves a small future Engine Research trace-compute
+  batch is worth the GPU time.

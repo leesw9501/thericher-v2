@@ -468,15 +468,22 @@
   sub-day gaps, and no selected OHLCV invariant failures. ABNB was usable but
   skipped because its first `240` bars include one missing 1m interval; AMD was
   skipped because it appears in prior diagnostic context. No data was acquired.
+- Fresh-symbol opportunity prefilter reused the same local Yahoo snapshot and
+  acquired no data. Data/Infra sidecar selected clean first-`240`-bar windows
+  for MRVL, COHR, MU, GLW, INTC, SNDK, QCOM, DELL, MPWR, STX, APP, and WDC.
+  The implemented prefilter consumed seven of those clean data-only candidates
+  plus five compatible existing trace candidates. All data-only candidates were
+  recorded as trace-missing/compute-disabled rather than replay candidates.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows while building an opportunity-prefilter for fresh-symbol replay slices.
-  Record exact missing symbols, dates, windows, or artifact names only if the
-  prefilter identifies a useful threshold-crossing candidate that lacks local
-  bars.
+  rows while building a bounded trace/data availability inventory. Record which
+  clean symbols already have compatible probability traces, which only have
+  local bars, and whether a small future trace-compute batch is justified.
+  Record exact missing symbols, dates, windows, or artifact names only if that
+  inventory finds a useful candidate that lacks local bars.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -983,3 +983,21 @@ the report-sprawl boundary. A small contract pass keeps the existing evidence
 reusable for feature/model research and PnL attribution while preserving
 diagnostic/local-paper source separation, exact entry joins, missing-evidence
 reporting, external artifact storage, and no broker/KIS/credential behavior.
+
+## 2026-07-17 - Bounded replay opportunity prefilter
+
+Decision: add one research-only feature-branch replay opportunity prefilter.
+The helper reads an existing feature-branch artifact, derives replay thresholds
+with the existing helper, consumes at most 12 local-data/probability-trace
+candidates, ranks only diagnostic probability gaps, and writes one compact
+external artifact. By default it consumes existing trace artifacts only and
+does not run Docker/GPU, replay, orders, fills, broker code, credentials,
+network, data acquisition, a job kind, worker, scheduler, gate, or report
+family.
+
+Reason: repeated blind fresh-symbol replays were producing zero fills because
+observed probabilities stayed below derived buy thresholds. A small prefilter
+reduces wasted replay work while preserving source separation: ranked context
+is `source: diagnostic_overlay`, any later replay must remain existing
+broker-free local paper, and the prefilter has no execution, risk, or promotion
+authority.

@@ -45,6 +45,12 @@ from .candidate_feature_branch_replay import (
     CandidateFeatureBranchReplayConfig,
     run_bounded_candidate_feature_branch_replay,
 )
+from .candidate_feature_branch_replay_prefilter import (
+    BoundedCandidateFeatureBranchReplayPrefilterResult,
+    CandidateFeatureBranchReplayPrefilterConfig,
+    CandidateFeatureBranchReplayPrefilterSliceConfig,
+    run_bounded_candidate_feature_branch_replay_opportunity_prefilter,
+)
 from .candidate_replay import (
     BoundedCandidateReplayResult,
     CandidateReplayConfig,
@@ -198,6 +204,7 @@ __all__ = [
     "BoundedCandidateDepthTargetResult",
     "BoundedCandidateFeatureBranchResult",
     "BoundedCandidateFeatureBranchReplayResult",
+    "BoundedCandidateFeatureBranchReplayPrefilterResult",
     "BoundedFeatureInputAblationResult",
     "BoundedCandidateProbabilityTraceResult",
     "BoundedCandidateReplayComparisonResult",
@@ -220,6 +227,8 @@ __all__ = [
     "CandidateDepthTargetSelection",
     "CandidateFeatureBranchConfig",
     "CandidateFeatureBranchReplayConfig",
+    "CandidateFeatureBranchReplayPrefilterConfig",
+    "CandidateFeatureBranchReplayPrefilterSliceConfig",
     "FeatureInputAblationConfig",
     "CandidateReplayComparisonConfig",
     "CandidateReplayConfig",
@@ -294,6 +303,7 @@ __all__ = [
     "run_bounded_candidate_evaluation",
     "run_bounded_candidate_feature_branch",
     "run_bounded_candidate_feature_branch_replay",
+    "run_bounded_candidate_feature_branch_replay_opportunity_prefilter",
     "run_bounded_feature_input_ablation",
     "run_bounded_candidate_breadth_holdout",
     "run_bounded_candidate_breadth_queue",

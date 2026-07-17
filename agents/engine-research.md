@@ -1038,6 +1038,15 @@
   `0` order intents, `0` local-paper fills, and `0` strict-bridge timing
   contexts. The compact probe artifact is
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-short-replay-probe-20260717-r1\metrics.json`.
+- Fresh-symbol replay opportunity prefilter
+  `engine-agent-fresh-symbol-opportunity-prefilter-20260717-r1` ran locally as
+  research-only artifact work. It added a small helper, consumed existing
+  compatible short traces for AMT, AMGN, AXP, AZN, and AGG plus clean data-only
+  candidates MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM, and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter\engine-agent-fresh-symbol-opportunity-prefilter-20260717-r1\metrics.json`.
+  Result: `12` candidates, `5` scored, `0` threshold-crossing candidates, and
+  no replay. AMT was closest at probability max `0.539972`, gap `-0.001028`
+  below the derived buy threshold `0.541000`.
 
 ## Next Handoff
 
@@ -1045,10 +1054,11 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: do not repeat blind fresh-symbol replays. Build or
-  reuse a bounded opportunity-prefilter that ranks fresh local slices by
-  probability versus the derived buy threshold, then run at most one small
-  broker-free replay only if a threshold-crossing opportunity exists.
+- Short experiments queue: do not repeat blind fresh-symbol replays. Hold
+  replay until a trace/data availability inventory shows a small fresh trace
+  batch is justified and the resulting probabilities cross a fixed derived buy
+  threshold. Keep any future replay through the existing Engine Research Agent
+  and existing `candidate_feature_branch_replay` kind only.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

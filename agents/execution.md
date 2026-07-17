@@ -448,6 +448,12 @@
   `non_local_fill_source_counts: {}`, and `unknown_fill_count: 0`; the compact
   probe artifact kept summary context diagnostic-only and created no execution
   filters, feature rules, threshold rules, or replay rules.
+- Fresh-symbol opportunity prefilter reran no local-paper replay and created
+  `0` order intents, `0` fills, `0` positions, `0` broker outcomes, and no
+  event artifacts. Ranked probability-gap summaries are
+  `source: diagnostic_overlay` research context only. The helper records
+  `no_execution_authority` and must not become an execution threshold, risk
+  rule, broker policy, replay rule, feature rule, or live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -491,3 +497,6 @@
 - An opportunity-prefilter may rank probabilities, but it must not become an
   execution threshold, order-intent generator, risk rule, broker policy, or
   live/paper KIS behavior.
+- If a later trace/data inventory identifies a crossing candidate, replay may
+  still run only through existing broker-free local-paper research jobs and
+  must verify `source: local_paper` fills before any bridge or PnL attribution.

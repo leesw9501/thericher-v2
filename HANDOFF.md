@@ -1973,6 +1973,46 @@ feature-branch probability evidence, rank candidate fresh slices by whether
 they can cross the derived buy threshold, and run at most one small replay only
 if a threshold-crossing opportunity exists.
 
+The bounded fresh-symbol replay opportunity prefilter then completed:
+
+- Claude drift-check and temporary Codex sidecars covered architecture drift,
+  Engine Research shape, Data/Infra readiness, and Review/Execution boundaries.
+  No durable multi-agent platform, scheduler, daemon, coordinator, or worker
+  was added.
+- One small research helper was added:
+  `src\thericher_v2\research\candidate_feature_branch_replay_prefilter.py`.
+  It derives replay thresholds from an existing feature-branch artifact, ranks
+  at most `12` candidate slices by diagnostic probability gap, caps bars at
+  `240`, caps later replay candidates at `4`, and by default consumes existing
+  probability traces only. It adds no research job kind, CLI, scheduler, gate,
+  report family, broker authority, credential path, or model-promotion rule.
+- Focused tests were added in
+  `tests\test_candidate_feature_branch_replay_prefilter.py` for ranking,
+  exclusions, external artifact storage, no default trace compute, and
+  no-execution/no-promotion wording.
+- The compact external prefilter artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter\engine-agent-fresh-symbol-opportunity-prefilter-20260717-r1\metrics.json`.
+- The artifact consumed the short source-context feature branch, the previous
+  no-fill replay/probe lineage, existing compatible short probability traces
+  for AMT, AMGN, AXP, AZN, and AGG, and clean local-data candidates MRVL,
+  COHR, MU, GLW, INTC, SNDK, and QCOM from the existing
+  `snapshot=2026-06-18` Yahoo 1m file. It did not run Docker/GPU, replay,
+  training, ablation, KIS, broker code, credentials, network, or data
+  acquisition.
+- Result: `12` candidates, `5` scored from existing compatible traces, and
+  `0` threshold-crossing candidates. AMT was closest with max probability
+  `0.539972`, gap `-0.001028` below the minimum derived buy threshold
+  `0.541000`. The seven clean data candidates had no trace artifacts and were
+  recorded as trace-compute-disabled, not replay candidates.
+- Since crossing count was `0`, no local-paper replay was run. The prefilter
+  created `0` order intents, `0` fills, no event artifacts, no execution
+  filters, no feature rules, no threshold rules, and no replay rules.
+
+Next, rotate away from blind fresh-symbol replay. The useful data-lane follow-up
+is a bounded trace/data availability inventory over existing local Yahoo rows
+and existing probability traces, so a future Engine Research task can decide
+whether a small trace-compute batch is justified instead of forcing replay.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
