@@ -29,7 +29,9 @@
 
 ## Active Queue
 
-1. No immediate Engine Research compute question is ready.
+1. Select one bounded fresh evidence question before reopening GPU/replay
+   compute. Compute remains held unless that question identifies enough
+   independent local-paper label context.
 2. Non-AMAT branch is retired to passive evidence after evidence-floor,
    Data source-context, and Review/Simplification passes. Reopen only if a
    future single objective names fresh independent non-AMAT evidence, an

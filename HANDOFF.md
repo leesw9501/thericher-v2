@@ -2662,10 +2662,20 @@ artifacts, unreadable nonzero artifacts, and expected-count mismatches. The
 external smoke artifact is:
 `D:\thericher-v2\model-artifacts\execution-paper\local-paper-fill-source-parity-audit-20260717-r1\metrics.json`.
 
-Next, rotate to Infra and add one bounded artifact-root and Docker research
-mount sanity check. This should improve reproducibility for GPU/model and
-local-paper artifacts without adding Docker layers, dependencies, schedulers,
-daemons, dashboards, notification loops, or durable multi-agent platform code.
+Infra added a bounded artifact-root and Docker research mount sanity check.
+Focused tests now verify that Docker `research` owns `/app/model_artifacts`,
+mounts `/app/market_data` read-only, keeps base services away from GPU/model
+artifact mounts, and keeps local/base dependencies torch-free. The resolved
+Compose config smoke was written outside Git:
+`D:\thericher-v2\model-artifacts\infra\artifact-mount-sanity-20260717-r1\metrics.json`.
+No container, GPU training, data acquisition, broker/KIS behavior, credential
+read, Docker layer change, dependency change, scheduler, daemon, dashboard,
+notification loop, durable platform code, or report/gate family was added.
+
+Next, rotate to Engine Research and select one bounded fresh evidence question
+that can either justify a small future GPU/replay job or explicitly keep compute
+held. Avoid retired non-AMAT/fresh-symbol queue reuse unless the objective
+identifies genuinely fresh independent local-paper label context.
 
 ## Daily Operator Review
 
