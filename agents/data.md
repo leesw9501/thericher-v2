@@ -495,6 +495,9 @@
   timestamps had matching local bar timestamps, no bars were missing, and no
   data was acquired. The artifact is
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`.
+- Fresh-symbol duplicate-aware simplification consumed existing replay,
+  robustness, and trade-path attribution artifacts only. It performed no new
+  market-data scan or acquisition, and it did not need additional operator data.
 
 ## Next Handoff
 
@@ -503,6 +506,9 @@
   have local rows, compatible traces, local-paper event artifacts, and
   attributed path context. Future data work should stay artifact/local-row
   scoped unless a new objective names exact missing symbols or date ranges.
+- If a future path-shape comparison runs, use the existing attribution artifact
+  first. Read local bars only if the artifact lacks the needed excursion or
+  timing fields; do not acquire data for this branch.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

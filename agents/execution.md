@@ -478,6 +478,13 @@
   `source: diagnostic_overlay`. It created no fills, orders, order intents,
   broker adapters, broker outcomes, execution filters, simulator rules,
   feature rules, or threshold rules.
+- Fresh-symbol duplicate-aware simplification consumed existing attribution and
+  replay artifacts only. It carried forward `100` fills as
+  `source: local_paper`, kept reconstructed path context as
+  `source: diagnostic_overlay`, and collapsed evidence without mutating replay,
+  fills, orders, order intents, broker adapters, broker outcomes, execution
+  filters, simulator rules, feature rules, threshold rules, risk rules, or
+  live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -532,3 +539,7 @@
 - The next simplification pass may inspect attributed local-paper paths, but it
   must not mutate replay, invent execution filters, or turn diagnostic context
   into order-intent logic.
+- A future path-shape comparison may inspect duplicate-aware local-paper paths,
+  but it must remain diagnostic-only and must not become an execution threshold,
+  order-intent generator, risk rule, broker policy, simulator rule, or live KIS
+  behavior.

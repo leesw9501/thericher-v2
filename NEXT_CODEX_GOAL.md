@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one compact duplicate-aware simplification pass over the fresh-symbol
-replay-selection attribution.
+Run one compact artifact-only path-shape comparison over the duplicate-aware
+fresh-symbol replay evidence.
 
-This advances PnL attribution and backtest validation by collapsing the
-threshold-duplicated MRVL/MU/SNDK/COHR trade-path evidence into unique market
-moments before any broader replay, model training, feature rule, exit rule, or
+This advances PnL attribution and backtest validation by comparing the `17`
+unique MRVL/MU/SNDK/COHR market moments that survived duplicate collapse before
+any broader replay, model training, exit-policy simulation, feature rule, or
 threshold iteration.
 
 ## Current Agent Reality
@@ -21,9 +21,13 @@ threshold iteration.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- Temporary sidecars may run in parallel for scoped review, but do not build a
-  durable multi-agent platform, scheduler, daemon, coordinator, notification
-  loop, or auto-commit worker in this goal.
+- For this goal, actually use temporary Codex sidecars in parallel when useful:
+  - Engine Research: inspect positive vs negative path-shape evidence.
+  - Data: confirm no new data read/acquisition is needed.
+  - Execution/Review: verify source separation and no rule/gate semantics.
+- These sidecars are runtime collaborators. Do not build a durable multi-agent
+  platform, scheduler, daemon, coordinator, notification loop, dashboard, or
+  auto-commit worker in this goal.
 
 ## Hard Boundaries
 
@@ -34,7 +38,7 @@ threshold iteration.
 - Do not import v1 modules wholesale.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
-  notification loop, coordinator, or auto-commit worker.
+  notification loop, coordinator, dashboard, or auto-commit worker.
 - Do not run model training, ablation, trace recomputation, replay reruns,
   threshold search, exit-policy simulation, or data acquisition.
 - Do not download market data into the Git workspace.
@@ -42,7 +46,7 @@ threshold iteration.
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 - Keep diagnostic/path context labeled as `source: diagnostic_overlay`.
 - Preserve all referenced fills as `source: local_paper`.
-- Do not turn simplification into a live execution threshold, order-intent
+- Do not turn this comparison into a live execution threshold, order-intent
   generator, risk rule, broker policy, feature rule, exit rule, gate, or
   model-promotion rule.
 
@@ -68,66 +72,55 @@ threshold iteration.
    - `agents/infra.md`
    - `agents/review.md`
 
-3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: verify duplicate-aware grouping and possible next
-     research question.
-   - Execution/Review: verify source separation and no rule/gate semantics.
-   - Data: verify no new market-data read is needed beyond existing artifacts.
-
-4. Ask Claude CLI for a short drift-check before adding or changing any helper,
-   job kind, dispatch path, agent governance, or attribution contract. If the
-   simplification can be done as a direct artifact script, prefer that over
-   adding code.
+3. Ask Claude CLI for a short drift-check before adding or changing any helper,
+   job kind, dispatch path, agent governance, attribution contract, or replay
+   contract. If the comparison can be done as a direct artifact script, prefer
+   that over adding code.
 
 ## Evidence To Consume
 
+- Duplicate-aware simplification artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-duplicate-aware-decision-20260717-r1\metrics.json`
 - Trade-path attribution artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`
 - Replay-selection compact artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`
-- Replay-selection robustness artifact:
-  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-fresh-symbol-replay-selection-20260717-r1\metrics.json`
 
-Known attribution facts to confirm:
+Known facts to confirm:
 
 - `100` referenced fills remained `source: local_paper`.
-- `50` closed segments and `0` open segments were attributed.
-- Closed fee-aware delta sum was `-18.6423`.
-- Symbol fee-aware sums were:
-  - MRVL: `+4.8555`
-  - MU: `+28.3638`
-  - SNDK: `-41.9307`
-  - COHR: `-9.9309`
-- `17` duplicate closed market moments were recorded across nearby threshold
-  variants.
+- `50` raw closed paths collapsed to `17` unique market moments.
+- Duplicate-aware unique fee-aware delta summed to `-11.7695`.
+- SNDK and COHR losses survived duplicate collapse.
+- MRVL was mildly positive across `4` unique moments.
+- MU was positive but only `1` unique market moment.
 
 ## Required Work
 
-1. Confirm the attribution artifact matches the facts above and remains
-   local-paper-only.
-2. Collapse closed trade paths into unique market-moment keys, at minimum:
-   symbol, entry timestamp, exit timestamp, and direction.
-3. Summarize duplicate-aware evidence by symbol and by threshold band:
-   - unique market-moment count,
-   - repeated threshold-variant count,
-   - negative/non-negative fee-aware count,
-   - fee-aware delta sum/min/max,
-   - adverse/favorable path context.
-4. Record whether the apparent SNDK and COHR losses survive duplicate collapse,
-   and whether MU/MRVL positive paths are independent enough to justify another
-   bounded question.
-5. Produce one compact external simplification artifact recording:
+1. Confirm the simplification artifact matches the facts above and remains
+   local-paper-only with diagnostic-only path context.
+2. Compare duplicate-aware positive and negative path shapes without rerunning
+   replay:
+   - adverse excursion,
+   - favorable excursion,
+   - holding duration,
+   - exit timing,
+   - symbol concentration,
+   - repeated threshold-variant count.
+3. Record whether the losses appear path-shape-specific or simply duplicated
+   threshold noise.
+4. Record whether any follow-up is justified:
+   - artifact-only model-input question,
+   - artifact-only exit-timing question,
+   - no follow-up and rotate lanes.
+5. Produce at most one compact external artifact recording:
    - consumed artifact paths,
-   - duplicate-aware grouping rules,
+   - grouping and comparison rules,
    - local-paper source verification carried forward,
    - diagnostic-overlay source verification,
-   - hold/continue recommendation for this branch,
+   - hold/rotate recommendation,
    - no promotion/gate/execution-rule semantics.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending:
-   - If a bounded next question is justified, make it artifact-only or
-     helper-sized first.
-   - If evidence remains mixed or duplicate-heavy, rotate to review,
-     simplification, or another lane instead of forcing replay/training.
+6. Refresh `NEXT_CODEX_GOAL.md` again before ending.
 
 ## Verification
 
@@ -141,15 +134,15 @@ docker compose config --quiet
 
 Also report:
 
-- the simplification command or focused smoke used,
+- the comparison command or focused smoke used,
 - any sidecars used,
 - whether Docker/GPU was used,
-- produced simplification artifact path,
-- whether a future model/replay follow-up is justified.
+- produced artifact path, if any,
+- whether a future model/replay/exit follow-up is justified.
 
 ## Suggested Commit Message
 
-`Attribute fresh-symbol replay paths`
+`Simplify fresh-symbol replay attribution`
 
 ## Completion Report
 
@@ -162,7 +155,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced simplification artifacts,
+- produced artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,

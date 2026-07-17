@@ -2151,6 +2151,37 @@ collapses the fresh-symbol replay-selection and trade-path attribution into
 duplicate-aware unique market-moment evidence, then decide whether the branch
 has a bounded model-input or exit-timing question or should be held.
 
+The fresh-symbol duplicate-aware simplification then completed:
+
+- Temporary Codex sidecars covered Engine Research and Execution/Review checks.
+  They were runtime helpers only; no durable multi-agent platform, scheduler,
+  daemon, coordinator, dashboard, notification loop, auto-commit path, or new
+  repo-owned worker was added.
+- The simplification consumed the replay-selection compact artifact, the
+  threshold-robustness artifact, and the trade-path attribution artifact only.
+  It did not rerun replay, train, ablate, recompute traces, search thresholds,
+  simulate exits, call KIS, read credentials, use network, acquire data, add a
+  helper, or add a job kind.
+- The compact simplification artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-duplicate-aware-decision-20260717-r1\metrics.json`.
+- Result: `50` raw closed paths collapsed to `17` unique market moments, with
+  `33` repeated threshold-variant segments removed from the main evidence
+  count. Duplicate-aware unique fee-aware delta summed to `-11.7695`.
+- By duplicate-aware symbol evidence, SNDK remained negative at `7` unique
+  moments and `-19.5323`, COHR remained negative at `5` unique moments and
+  `-3.3103`, MRVL was only modestly positive at `4` unique moments and
+  `+1.6185`, and MU was positive but thin at `1` unique market moment and
+  `+9.4546`.
+- All referenced fills carried forward as `source: local_paper`, reconstructed
+  path context remained `source: diagnostic_overlay`, and the artifact recorded
+  no promotion, gate, execution threshold, broker policy, feature rule,
+  simulator rule, or model/replay follow-up.
+
+Next, keep the fresh-symbol branch held for replay/training. If one more check
+is useful, make it a compact artifact-only path-shape comparison across the
+duplicate-aware unique moments, focused on adverse/favorable excursion and exit
+timing, before rotating away from this branch.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

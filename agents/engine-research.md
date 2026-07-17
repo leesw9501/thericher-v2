@@ -1081,6 +1081,18 @@
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-trade-path-20260717-r1\metrics.json`.
   No replay rerun, trace recompute, training, ablation, threshold search, data
   acquisition, new helper, job kind, or promotion rule was added.
+- Fresh-symbol duplicate-aware simplification
+  `engine-agent-fresh-symbol-replay-selection-duplicate-aware-decision-20260717-r1`
+  ran artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-replay-selection-duplicate-aware-decision-20260717-r1\metrics.json`.
+  It collapsed `50` raw closed paths to `17` unique market moments, removing
+  `33` threshold-variant repeats from the main evidence count. Duplicate-aware
+  fee-aware sum was `-11.7695`: SNDK `-19.5323` over `7` unique moments, COHR
+  `-3.3103` over `5`, MRVL `+1.6185` over `4`, and MU `+9.4546` over `1`.
+  The branch is held for replay/training because SNDK/COHR losses survive
+  collapse while MU is not independent enough and MRVL is only mildly positive.
+  No Docker/GPU compute, trace recompute, replay rerun, training, ablation,
+  threshold search, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1088,9 +1100,9 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: hold broader replay/training until a compact
-  duplicate-aware simplification pass collapses the fresh-symbol attribution
-  into unique market moments and identifies one bounded next question, if any.
+- Short experiments queue: hold broader replay/training on the current
+  fresh-symbol branch. If reopened, the next check should be artifact-only path
+  shape comparison over the `17` unique moments, not compute.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

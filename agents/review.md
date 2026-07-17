@@ -669,6 +669,14 @@
   `50` closed paths, `0` open paths, and mixed repeated threshold-variant
   evidence, so a compact duplicate-aware simplification pass should precede
   any new compute.
+- Fresh-symbol duplicate-aware simplification wrote one compact external
+  artifact and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, replay rerun, trace recompute, training,
+  ablation, threshold search, exit simulation, feature rule, simulator rule,
+  durable multi-agent platform, or promotion language. It collapsed `50` paths
+  to `17` unique market moments and held the branch for replay/training instead
+  of forcing compute from duplicate-heavy evidence.
 
 ## Next Handoff
 
@@ -680,7 +688,7 @@
   worker, scheduler, dashboard, report branch, broker authority, credential
   path, auto-commit behavior, threshold search, feature rule, or simulator
   rule.
-- The next simplification pass should collapse duplicate threshold-variant
-  evidence into unique market moments and decide whether to hold or ask one
-  bounded follow-up question. Do not create a new report family or promotion
-  decision.
+- The next follow-up, if any, should be one artifact-only path-shape comparison
+  over duplicate-aware unique moments. Do not create a new report family,
+  promotion decision, scheduler/coordinator, durable multi-agent platform,
+  replay run, training run, exit simulation, or execution rule.

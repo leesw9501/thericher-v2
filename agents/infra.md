@@ -608,6 +608,12 @@
   Docker, compose, scheduler, coordinator, dashboard, notification, worker, or
   Engine Research Agent files, and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Fresh-symbol duplicate-aware simplification ran locally as CPU/artifact-only
+  work and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+  It changed no dependency, Docker, compose, scheduler, coordinator, dashboard,
+  notification, worker, or Engine Research Agent files and used no Docker/GPU
+  compute.
 
 ## Next Handoff
 
@@ -648,3 +654,7 @@
   multi-agent platform, Docker layer change, or dependency change.
 - The next simplification pass should also stay local/artifact-only unless a
   future explicit compute question is proven.
+- The next path-shape comparison, if run, should stay local/artifact-only and
+  should use temporary Codex sidecars only for scoped review; do not add a
+  scheduler, daemon, coordinator, dashboard, notification loop, durable
+  multi-agent platform, Docker layer change, or dependency change.
