@@ -1156,6 +1156,14 @@
   (`-5.3088`) and the three threshold variants repeated the same four market
   moments. No replay, trace recompute, training, ablation, threshold search,
   exit-policy simulation, new helper, job kind, or promotion rule was added.
+- Post-MPWR Data Agent lane-rotation inventory
+  `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1` found no
+  immediate Engine Research or GPU work should be recommended. The prior
+  DELL/MPWR/STX/WDC trace-only recommendation has already been consumed by the
+  later trace batch, trace-comparison planning, MPWR replay/attribution, and
+  MPWR hold decision. No replay, trace compute, trace recompute, training,
+  ablation, threshold search, exit-policy simulation, new helper, job kind, or
+  promotion rule was added.
 
 ## Next Handoff
 
@@ -1164,9 +1172,10 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
 - Short experiments queue: hold MPWR and the broader fresh-symbol replay branch.
-  Rotate the next long work block to Data. Do not spend GPU time on MPWR,
-  fresh-symbol replay, trace recompute, training, ablation, threshold search,
-  or exit-policy work until a later artifact defines a new bounded question.
+  Rotate the next long work block to Review/Simplification. Do not spend GPU
+  time on MPWR, fresh-symbol replay, trace compute, trace recompute, training,
+  ablation, threshold search, or exit-policy work until a later artifact defines
+  a new bounded question.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

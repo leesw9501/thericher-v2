@@ -2410,6 +2410,38 @@ and artifact provenance. The next goal should avoid replay, training, trace
 compute, threshold search, exit simulation, data acquisition, broad recursive
 scans, and any durable multi-agent platform work.
 
+The post-MPWR Data Agent lane-rotation inventory then completed:
+
+- Temporary Codex sidecars covered Data, Engine Research, and Execution/Review
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The inventory consumed existing artifacts only, plus a path-existence check
+  for the known `snapshot=2026-06-18` Yahoo gzip. It performed no row-level
+  market-data read, broad recursive scan, acquisition, replay, training,
+  ablation, trace compute, trace recompute, threshold search, exit simulation,
+  KIS call, broker action, credential read, helper change, contract change, job
+  kind change, Docker change, or dependency change.
+- The compact inventory artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\data-agent\data-agent-post-mpwr-lane-rotation-inventory-20260717-r1\metrics.json`.
+- Result: no immediate data-lane follow-up and no acquisition are justified.
+  The previous DELL/MPWR/STX/WDC trace-only recommendation was already
+  consumed by the later trace batch, trace-comparison planning, MPWR replay,
+  MPWR attribution, and MPWR hold decision. MPWR is held; MRVL/MU/SNDK/COHR
+  remain held as prior fresh-symbol branch context.
+- DELL and WDC stayed below the descriptive threshold; STX is a single thin
+  crossing context; GLW, INTC, and QCOM remain already-traced comparison
+  context rather than data acquisition or immediate replay triggers. APP stays
+  deferred as possible source-context training scope.
+- Coverage and "no acquisition needed" apply only to this bounded inventory and
+  the targeted artifacts/local path, not to the full market-data universe.
+
+Next, rotate to one artifact-only Review/Simplification pass over post-MPWR
+trace-comparison leftovers and held-branch state. The goal is to decide whether
+the fresh-symbol branch can be retired from the active queue without replay,
+training, trace compute, acquisition, gates, promotion rules, or durable
+platform work.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

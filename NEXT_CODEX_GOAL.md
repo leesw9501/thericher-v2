@@ -5,11 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded Data Agent lane-rotation inventory after the MPWR hold decision.
+Run one artifact-only Review/Simplification pass over post-MPWR fresh-symbol
+leftovers.
 
-This advances data collection and backtest/walk-forward validation by checking
-existing local data and artifact provenance for the next useful evidence batch,
-or by proving that no immediate data-lane follow-up is worth running.
+This advances backtest and walk-forward validation by deciding whether the
+fresh-symbol branch should be retired from the active queue after MPWR hold and
+post-MPWR data inventory, without forcing more process or compute.
 
 ## Current Agent Reality
 
@@ -20,9 +21,9 @@ or by proving that no immediate data-lane follow-up is worth running.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
 - For this goal, use temporary Codex sidecars only if useful:
-  - Data: inspect the inventory criteria and local/artifact provenance.
-  - Engine Research: verify the inventory does not smuggle in replay/training.
-  - Execution/Review: verify no broker, gate, promotion, or sprawl drift.
+  - Review: check sprawl, stale queue, and retirement criteria.
+  - Engine Research: verify no replay/training/trace compute is justified.
+  - Data/Execution: verify no data acquisition or broker/local-paper mutation.
 - These sidecars are runtime collaborators. Do not build a durable multi-agent
   platform, scheduler, daemon, coordinator, notification loop, dashboard, or
   auto-commit worker in this goal.
@@ -38,20 +39,13 @@ or by proving that no immediate data-lane follow-up is worth running.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, dashboard, or auto-commit worker.
 - Do not run model training, ablation, trace compute, trace recompute,
-  threshold search, replay rerun, exit-policy simulation, or broker execution.
-- Do not turn data inventory output into execution thresholds, risk rules,
-  broker policies, replay rules, feature rules, gates, or model-promotion
-  rules.
-- Do not acquire new market data unless it is no-auth, lawful,
-  license-compatible, useful to this active inventory, and strictly bounded by
-  exact missing symbols or date ranges found during the inventory.
-- Do not perform a broad recursive scan of `D:\market_data`; prefer targeted
-  known roots and existing artifact provenance.
+  threshold search, replay rerun, exit-policy simulation, broker execution, or
+  data acquisition.
+- Do not perform a broad recursive scan of `D:\market_data`.
+- Do not turn review output into execution thresholds, risk rules, broker
+  policies, replay rules, feature rules, gates, or model-promotion rules.
 - Do not store generated GPU/model artifacts or market data in the repo. Use
-  `D:\thericher-v2\model-artifacts`, `D:\market_data`, `/app/model_artifacts`,
-  or `/app/market_data` as appropriate.
-- Treat MPWR, MRVL, MU, SNDK, and COHR as held for fresh-symbol replay/training
-  unless this inventory only references them as provenance context.
+  `D:\thericher-v2\model-artifacts` for external review artifacts.
 
 ## Required First Reads
 
@@ -78,52 +72,44 @@ or by proving that no immediate data-lane follow-up is worth running.
 3. Ask Claude CLI for a short drift-check before adding or changing any helper,
    job kind, dispatch path, agent governance, artifact contract, data contract,
    replay contract, attribution contract, or local-paper behavior. If the
-   inventory can be produced by reading existing artifacts and known local-data
-   roots with a one-off script, prefer that.
+   simplification can be produced by reading existing artifacts with a one-off
+   script, prefer that.
 
 ## Evidence To Consume
 
+- Post-MPWR Data Agent inventory:
+  `D:\thericher-v2\model-artifacts\data-agent\data-agent-post-mpwr-lane-rotation-inventory-20260717-r1\metrics.json`
 - MPWR hold/rotate decision artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`
-- MPWR replay-selection compact artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-mpwr-replay-selection-20260717-r1\metrics.json`
-- MPWR trade-path attribution artifact:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\fresh-symbol-mpwr-trade-path-attribution-20260717-r1\metrics.json`
-- Fresh-symbol lane-rotation inventory artifact:
-  `D:\thericher-v2\model-artifacts\data-agent\data-agent-fresh-symbol-lane-rotation-inventory-20260717-r1\metrics.json`
 - Trace-comparison planning artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-selection\fresh-symbol-trace-comparison-replay-planning-20260717-r1\metrics.json`
-- Known local Yahoo snapshot, if a targeted local-row check is needed:
-  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+- Fresh-symbol path-shape context:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-simplification\engine-agent-fresh-symbol-replay-path-shape-comparison-20260717-r1\metrics.json`
 
 Known facts to preserve:
 
 - MPWR is held after duplicate-aware local-paper attribution.
-- MPWR evidence remains local-paper simulator evidence only, not broker-paper or
-  live evidence.
-- Existing fresh-symbol replay/training branches are held unless a later
-  bounded artifact defines a new question.
-- Data acquisition is not currently requested by the evidence.
+- MRVL, MU, SNDK, and COHR remain held from the prior fresh-symbol branch.
+- DELL and WDC stayed below the descriptive threshold.
+- STX is a single thin crossing context, not a replay trigger.
+- GLW, INTC, and QCOM are already-traced comparison context, not immediate
+  replay or acquisition triggers.
+- APP remains deferred as possible source-context training scope.
+- No immediate data-lane, Engine Research, GPU, replay, or acquisition follow-up
+  is justified by the latest artifacts.
 
 ## Required Work
 
-1. Inventory existing artifact provenance and only the necessary targeted local
-   data roots for a next-lane recommendation.
-2. Decide whether the next useful evidence batch should be:
-   - another bounded data/provenance cleanup,
-   - a future trace-only GPU batch,
-   - a future artifact-only review/simplification pass,
-   - or no immediate data-lane follow-up.
-3. Produce one compact external artifact recording:
+1. Produce one compact external simplification artifact recording:
    - consumed artifact paths,
-   - any targeted local data paths inspected,
-   - data found or missing,
-   - acquisition decision and stop reason,
-   - held-symbol exclusions,
-   - recommended next lane/objective,
-   - no replay, broker, KIS, gate, threshold-search, exit-policy, promotion, or
-     durable multi-agent semantics.
-4. Refresh `NEXT_CODEX_GOAL.md` again before ending with one single objective.
+   - stale/held active-queue items,
+   - which symbols or branches should be retired, held, or left as passive
+     context,
+   - why no replay, training, trace compute, acquisition, gate, threshold
+     search, exit-policy, promotion, or durable platform work follows.
+2. Update `HANDOFF.md` and agent stateboards only as needed to keep the active
+   queues clean.
+3. Refresh `NEXT_CODEX_GOAL.md` again before ending with one single objective.
 
 ## Verification
 
@@ -137,17 +123,16 @@ docker compose config --quiet
 
 Also report:
 
-- the inventory command or primitive used,
+- the simplification command or primitive used,
 - any sidecars or executable workers used,
 - whether Docker/GPU was used,
 - produced artifact paths,
-- local data found or missing,
-- acquisition decision and stop reason,
+- what active queue context was retired or held,
 - what lane should rotate next and why.
 
 ## Suggested Commit Message
 
-`Run post-MPWR data lane inventory`
+`Retire post-MPWR fresh-symbol queue`
 
 ## Completion Report
 

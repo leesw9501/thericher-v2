@@ -728,6 +728,14 @@
   ablation, threshold search, exit simulation, feature rule, simulator rule,
   durable multi-agent platform, or promotion language. It used three temporary
   Codex sidecars as runtime reviewers, then closed them.
+- Post-MPWR Data Agent lane-rotation inventory wrote one compact external
+  artifact and added no code, helper, job kind, worker, scheduler, dashboard,
+  coordinator, report family, gate, auto-commit path, broker authority,
+  credential reads, data acquisition, row-level market-data reads, replay
+  rerun, trace compute, trace recompute, training, ablation, threshold search,
+  exit simulation, feature rule, simulator rule, durable multi-agent platform,
+  or promotion language. It used three temporary Codex sidecars as runtime
+  reviewers, then closed them.
 
 ## Next Handoff
 
@@ -758,5 +766,10 @@
 - The next Data-lane inventory is acceptable if it stays one bounded
   artifact/provenance pass that feeds the engine loop. It must not become a
   broad universe crawl, acquisition project, report family, gate, scheduler,
+  coordinator, durable worker, replay queue, training run, threshold search, or
+  promotion workflow.
+- The next Review/Simplification pass is acceptable if it retires stale
+  post-MPWR/fresh-symbol active-queue context into one compact artifact and
+  stateboard update. It must not create a new report family, gate, scheduler,
   coordinator, durable worker, replay queue, training run, threshold search, or
   promotion workflow.

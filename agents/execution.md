@@ -527,6 +527,11 @@
   creating orders, order intents, broker outcomes, execution filters, simulator
   rules, feature rules, threshold rules, replay rules, risk rules, or broker
   authority.
+- Post-MPWR Data Agent lane-rotation inventory referenced historical
+  local-paper evidence only. It created no new fills, orders, order intents,
+  positions, broker adapters, broker outcomes, local-paper replay, execution
+  filters, simulator rules, feature rules, threshold rules, risk rules, exit
+  policies, or live/paper KIS behavior.
 
 ## Next Handoff
 
@@ -598,3 +603,6 @@
 - The next Data-lane inventory must not mutate local-paper fills, create order
   intents, infer broker behavior, or turn data/provenance observations into
   execution rules.
+- The next Review/Simplification pass may retire stale active-queue context but
+  must not mutate fills, rerun replay, create order intents, infer broker
+  behavior, or turn trace context into execution/risk rules.

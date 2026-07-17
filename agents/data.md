@@ -536,6 +536,14 @@
   sidecar verified no additional market-data read, acquisition, market-data
   write, network access, credential read, or operator data was needed. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`.
+- Post-MPWR Data Agent lane-rotation inventory consumed existing artifacts
+  only plus a path-existence check for the known `snapshot=2026-06-18` Yahoo
+  gzip. It wrote
+  `D:\thericher-v2\model-artifacts\data-agent\data-agent-post-mpwr-lane-rotation-inventory-20260717-r1\metrics.json`,
+  found no immediate data-lane follow-up, attempted no acquisition, performed
+  no row-level market-data read, and needs no operator data. The stop reason is
+  that no exact missing symbol/date range exists and the post-MPWR evidence
+  question is already answered by existing artifacts.
 
 ## Next Handoff
 
@@ -559,6 +567,10 @@
   next useful non-MPWR evidence batch or proves no data-lane follow-up is worth
   running. Do not acquire data unless a future objective names exact missing
   symbols or date ranges.
+- Data has no immediate acquisition or inventory follow-up after the post-MPWR
+  inventory. Rotate to Review/Simplification. A future trace-only GPU proposal
+  needs a new bounded Data artifact with independent non-held symbols, exact
+  clean local rows, no compatible existing trace, and no source-context leakage.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

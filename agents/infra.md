@@ -654,6 +654,11 @@
   coordinator, dashboard, notification, worker, or Engine Research Agent files,
   and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision`.
+- Post-MPWR Data Agent lane-rotation inventory ran locally as CPU/artifact-only
+  work, used no Docker or GPU job, changed no dependency, Docker, compose,
+  scheduler, coordinator, dashboard, notification, worker, or Engine Research
+  Agent files, and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\data-agent`.
 
 ## Next Handoff
 
@@ -714,3 +719,6 @@
   future explicit objective proves Docker is needed. Do not add Docker layers,
   schedulers, daemons, coordinator plumbing, dashboard, notification, durable
   multi-agent platform, or dependency changes.
+- The next Review/Simplification pass should also stay local/artifact-only. Do
+  not add Docker layers, schedulers, daemons, coordinator plumbing, dashboard,
+  notification, durable multi-agent platform, or dependency changes.
