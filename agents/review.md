@@ -26,7 +26,8 @@
 ## Active Queue
 
 1. No immediate Review/Simplification task is open.
-2. Pause for operator direction before opening another lane.
+2. Let Codex auto-select the next lane by lane rotation unless a true operator
+   decision is required.
 
 ## Running Jobs
 
@@ -34,8 +35,8 @@
 
 ## Operator Help Needed
 
-- Choose the next strategic lane. Current review says another review-only pass
-  would risk process sprawl unless it is tied to a concrete engine loop.
+- None. The operator clarified that ordinary lane choice should not block
+  progress because all lanes are eventually required.
 
 ## Done Recently
 
@@ -788,6 +789,9 @@
   stateboards, and the two latest simplification artifacts only. It found no
   further useful bounded non-compute simplification objective and recommends
   pausing for operator lane direction to avoid v1-style review/report sprawl.
+- Operator clarification after post-compaction review: ordinary strategic lane
+  choice should not block progress. Codex should auto-select the next lane by
+  lane rotation and only stop for true operator decisions.
 
 ## Next Handoff
 
@@ -799,7 +803,8 @@
 - The trace-only, trace-comparison, MPWR hold/rotate, post-MPWR Data inventory,
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
-- Queue hygiene and post-compaction review are complete. Pause for operator
-  direction before opening compute, data acquisition, replay, training,
-  Docker/GPU, broker, scheduler, dashboard, durable-platform, or further
-  simplification work.
+- Queue hygiene and post-compaction review are complete. Auto-select the next
+  lane by lane rotation, starting with Engine Research evidence-question
+  definition. Do not stop for ordinary lane choice; stop only for true operator
+  decisions such as credentials, broker/KIS behavior, live/paper authority,
+  public exposure, dependency/runtime expansion, or unclear data rights.

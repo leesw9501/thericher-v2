@@ -5,13 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Pause for operator direction and choose the next strategic lane.
+Auto-select the next lane as Engine Research and define one bounded
+duplicate-aware evidence question before spending GPU time.
 
-This advances review/simplification by preventing review-only work from
-becoming process scaffolding. The lane-5 simplification sequence is complete:
-stale queues were retired, Engine/Data/Infra active queues were compacted, and
-the post-compaction handoff review found no further useful bounded
-non-compute simplification objective.
+This advances feature/model research, backtest and walk-forward validation, and
+PnL attribution. The operator clarified that ordinary lane choice should not
+block progress because all lanes are eventually required. Codex should use the
+existing lane-rotation policy and stop only for true operator decisions.
 
 ## Current Agent Reality
 
@@ -37,8 +37,7 @@ non-compute simplification objective.
   notification loop, coordinator, dashboard, or auto-commit worker.
 - Do not run model training, ablation, trace compute, trace recompute,
   threshold search, replay rerun, exit-policy simulation, broker execution,
-  data acquisition, Docker/GPU/dependency work, or another review-only pass
-  until the operator chooses a lane.
+  data acquisition, Docker/GPU/dependency work, or another review-only pass.
 - Do not perform a broad recursive scan of `D:\market_data`.
 - Do not turn held evidence into execution thresholds, risk rules, broker
   policies, replay rules, feature rules, gates, or model-promotion rules.
@@ -70,30 +69,29 @@ non-compute simplification objective.
 
 3. Ask Claude CLI for a short drift-check before changing architecture,
    promotion rules, agent governance, helper/job contracts, replay/local-paper
-   behavior, daily-report policy, or any durable worker policy.
+   behavior, daily-report policy, durable worker policy, or any compute/data
+   contract.
 
 ## Required Work
 
-Ask the operator to choose exactly one next strategic lane. Do not start
-implementation until the operator chooses.
-
-Recommended lanes:
-
-1. Engine Research: define one new duplicate-aware evidence question before
-   spending GPU time.
-2. Data: define one exact data-collection or data-quality objective with stop
-   rules.
-3. Execution/Paper: prepare the next broker-free paper-loop or risk-control
-   slice without KIS credentials.
-4. Infra: improve reproducibility only if a concrete runtime bottleneck is
-   selected.
-5. Review/Simplification: only if tied to a concrete engine-loop risk, not
-   another general cleanup pass.
+1. Inspect current stateboards and the post-compaction review artifact.
+2. Select the smallest useful Engine Research evidence question that could
+   justify later GPU time.
+3. Keep the question duplicate-aware and bounded. It must specify:
+   - the evidence source artifacts or stateboard context it uses,
+   - why the question improves feature/model research or PnL attribution,
+   - what compute, replay, training, ablation, threshold search, or data
+     acquisition remains explicitly closed,
+   - what evidence would be enough to open a later bounded GPU or replay goal.
+4. Produce one compact external planning artifact under
+   `D:\thericher-v2\model-artifacts\engine-research-planning`.
+5. Update `HANDOFF.md`, `agents/engine-research.md`, and `agents/review.md`
+   only if needed.
+6. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
 
 ## Verification
 
-If the next task only asks for operator direction, no tests are required. Once
-a lane is selected and implementation changes are made, run:
+Run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -103,17 +101,17 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Choose next strategic lane`
+`Define next engine research evidence question`
 
 ## Completion Report
 
-When a lane is selected in a future task, report:
+Report:
 
-- chosen lane,
 - files changed,
 - tests run,
 - commit hash,
 - sidecars or executable workers used,
 - whether data, Docker/GPU, or broker behavior was touched,
+- produced artifacts,
 - what was intentionally not built,
 - next recommended goal.

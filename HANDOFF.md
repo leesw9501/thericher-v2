@@ -2598,9 +2598,17 @@ The compact post-compaction handoff review then completed:
   scaffolding. Engine Research, Data, Infra, and Execution remain closed until
   a future single objective names a concrete lane and evidence question.
 
-Next, pause for operator direction. The operator should choose one strategic
-lane before any further compute, data acquisition, replay, training, Docker/GPU,
-broker, scheduler, dashboard, or durable-platform work opens.
+Operator clarification after this review: the default loop should not stop for
+a lane choice when the lanes are all required eventually. Codex should choose
+the next lane by the existing lane-rotation policy and only stop for true
+operator decisions, such as approvals for credentials, broker/KIS behavior,
+live/paper authority, public exposure, dependency/runtime expansion, or
+unclear data rights.
+
+Next, auto-select the next lane as Engine Research and define one bounded
+duplicate-aware evidence question before spending GPU time. Do not run compute,
+replay, training, data acquisition, Docker/GPU dependency work, broker work, or
+durable-platform work until that question is explicit.
 
 ## Daily Operator Review
 
