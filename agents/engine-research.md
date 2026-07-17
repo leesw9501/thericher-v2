@@ -30,19 +30,17 @@
 ## Active Queue
 
 1. No immediate Engine Research compute question is ready.
-2. Non-AMAT independent evidence-floor inventory is answered and remains
-   `hold_no_compute`: `5/8` strict label-ready rows, `3/8` strict unique
-   timing-context keys, and `0` fresh strict rows/keys outside prior
-   AMAT-bridge reuse.
-3. Data source-context inventory found no immediate raw-data acquisition or
-   operator-data request; the blocker is primarily provenance reuse and missing
-   local-paper label context. Keep this branch `hold_no_compute`.
-4. Short experiments, replay, attribution, probability checks, trace compute,
+2. Non-AMAT branch is retired to passive evidence after evidence-floor,
+   Data source-context, and Review/Simplification passes. Reopen only if a
+   future single objective names fresh independent non-AMAT evidence, an
+   explicit ADP strict-label rescue, or new independent local-paper label
+   context.
+3. Short experiments, replay, attribution, probability checks, trace compute,
    trace recompute, training, threshold search, and exit-policy work are held
    until the evidence floor is met by a future bounded objective.
-5. Longer candidate training is held until a replay or inventory artifact
+4. Longer candidate training is held until a replay or inventory artifact
    defines a specific model-input question with enough context.
-6. Keep job kinds closed, write artifacts outside Git, and do not treat held
+5. Keep job kinds closed, write artifacts outside Git, and do not treat held
    context as promotion, pass/fail, production, broker, or risk policy.
 
 ## Running Jobs
@@ -409,6 +407,10 @@
   remains `hold_no_compute` because the blocker is primarily AMAT-bridge
   provenance reuse and missing local-paper label context, not broad raw data
   availability.
+- Non-AMAT branch retirement review wrote
+  `D:\thericher-v2\model-artifacts\review-simplification\non-amat-held-branch-retirement-20260717-r1\metrics.json`
+  and moved the branch to passive evidence. No GPU, replay, trace, training,
+  ablation, threshold, or data-acquisition objective remains open for it.
 - Basic momentum model and next-bar backtest harness exist.
 - Market data can now resample deterministic `1m`, `5m`, `10m`, `1h`, and `3h`
   bars.
@@ -1222,11 +1224,10 @@
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker. Execution, Infra, and Review are stateboards
   plus temporary Codex sidecar roles, not repo-owned executable workers.
-- Short experiments queue: no compute question is ready after the non-AMAT
-  evidence-floor and Data source-context inventories. Do not spend GPU time on
-  MPWR/fresh-symbol replay, non-AMAT model-input ablation, trace compute, trace
-  recompute, training, threshold search, or exit-policy work until a future
-  objective names a fresh independent evidence source.
+- Short experiments queue: no compute question is ready. Do not spend GPU time
+  on MPWR/fresh-symbol replay, non-AMAT model-input ablation, trace compute,
+  trace recompute, training, threshold search, or exit-policy work until a
+  future objective names a fresh independent evidence source.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

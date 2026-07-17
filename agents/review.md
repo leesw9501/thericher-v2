@@ -26,7 +26,9 @@
 ## Active Queue
 
 1. No immediate Review/Simplification task is open.
-2. Let Codex auto-select the next lane by lane rotation unless a true operator
+2. Non-AMAT branch retirement is complete; keep it as passive evidence, not an
+   active queue or recurring review target.
+3. Let Codex auto-select the next lane by lane rotation unless a true operator
    decision is required.
 
 ## Running Jobs
@@ -807,6 +809,9 @@
   operator data request or acquisition need. It kept compute closed because the
   blocker is primarily provenance/label context, not broad raw data
   availability.
+- Non-AMAT branch retirement stayed one compact external artifact and moved the
+  branch to passive evidence, avoiding another review loop, report family,
+  gate, GPU/replay/training work, data acquisition, or scheduler/platform work.
 
 ## Next Handoff
 
@@ -819,9 +824,9 @@
   and post-MPWR Review/Simplification goals are complete. Keep them as passive
   context, not active queue items or report families.
 - Queue hygiene, post-compaction review, Engine Research evidence-question,
-  non-AMAT evidence-floor inventory, and Data source-context inventory are
-  complete. Run one small simplification pass to retire/compact non-AMAT branch
-  context as passive evidence before opening any further compute. Do not stop
-  for ordinary lane choice; stop only for true operator decisions such as
+  non-AMAT evidence-floor inventory, Data source-context inventory, and
+  non-AMAT branch retirement are complete. Rotate to Execution/Paper for a
+  bounded broker-free local-paper replay invariant audit. Do not stop for
+  ordinary lane choice; stop only for true operator decisions such as
   credentials, broker/KIS behavior, live/paper authority, public exposure,
   dependency/runtime expansion, or unclear data rights.

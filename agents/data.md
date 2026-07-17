@@ -34,14 +34,13 @@
 
 1. No immediate data acquisition, broad scan, inventory refresh, or operator
    data-help task is open.
-2. Non-AMAT source-context inventory found no immediate operator data request
-   and no no-auth acquisition need. The only raw gap is conditional ADP
+2. Fresh-symbol, MPWR, non-AMAT, and AMAT-bridge entries are passive context
+   unless a future single objective names exact missing symbols or date ranges.
+   For non-AMAT, the only known raw gap is conditional ADP
    `2026-06-09T14:05:00Z`; reopen only if a future objective explicitly tries
    to rescue that strict-label row.
-3. Fresh-symbol, MPWR, non-AMAT, and AMAT-bridge entries are passive context
-   unless a future single objective names exact missing symbols or date ranges.
-4. Keep data-quality checks as warnings until execution hard stops need them.
-5. Future acquisition or cache-shape work requires a specific ingestion
+3. Keep data-quality checks as warnings until execution hard stops need them.
+4. Future acquisition or cache-shape work requires a specific ingestion
    objective and must stop on credentials, payment, manual access, unclear
    licensing, repeated source failure, or no active-goal benefit.
 
@@ -67,6 +66,9 @@
   primary, while the only explicit raw gap is conditional ADP
   `2026-06-09T14:05:00Z`. No immediate operator data request or acquisition is
   justified.
+- Non-AMAT branch retirement review moved that context to passive evidence; no
+  Data acquisition, broad scan, inventory refresh, or operator-help task remains
+  open for it.
 - Added provider protocol, local CSV provider, sample provider, and deterministic
   timeframe resampling.
 - Inventoried `D:\market_data` at the shallow level for this goal. Top-level

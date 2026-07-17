@@ -26,10 +26,12 @@
 
 ## Active Queue
 
-1. Add execution risk-limit preflight only when a future paper-loop goal needs
+1. Add one bounded broker-free local-paper replay invariant audit for existing
+   simulator fills/account replay.
+2. Add execution risk-limit preflight only when a future paper-loop goal needs
    it.
-2. Keep future KIS adapter work separate from local paper simulator behavior.
-3. Add more realistic order types only when paper-loop evidence needs them.
+3. Keep future KIS adapter work separate from local paper simulator behavior.
+4. Add more realistic order types only when paper-loop evidence needs them.
 
 ## Running Jobs
 

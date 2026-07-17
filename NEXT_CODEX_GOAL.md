@@ -5,24 +5,11 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one small Review/Simplification pass to retire or compact the non-AMAT
-branch context as passive evidence.
+Add one bounded broker-free local-paper replay invariant audit.
 
-This advances feature/model research and backtest and walk-forward validation
-by preventing a known `hold_no_compute` branch from repeatedly re-entering the
-active queue without fresh independent evidence.
-
-## Current State
-
-- Non-AMAT evidence-floor inventory kept the branch `hold_no_compute`:
-  `5/8` strict rows, `3/8` strict unique keys, `0` fresh rows/keys outside prior
-  AMAT-bridge reuse.
-- Data source-context inventory found the blocker is not primarily broad raw
-  local-data availability.
-- Primary blockers are prior AMAT-bridge provenance reuse and missing
-  local-paper label context.
-- The only explicit raw gap is conditional ADP `2026-06-09T14:05:00Z`; no
-  immediate operator data request or no-auth acquisition is justified.
+This advances paper trading and PnL attribution by making existing local-paper
+fills and deterministic account replay easier to verify before future model
+work feeds the paper loop.
 
 ## Hard Boundaries
 
@@ -36,7 +23,7 @@ active queue without fresh independent evidence.
   notification loop, coordinator, dashboard, or auto-commit worker.
 - Do not run model training, ablation, trace compute, trace recompute,
   threshold search, replay rerun, exit-policy simulation, broker execution,
-  data acquisition, Docker/GPU/dependency work, or another broad review pass.
+  data acquisition, Docker/GPU/dependency work, or another review-only pass.
 - Do not perform a broad recursive scan of `D:\market_data`.
 - Do not turn held evidence into execution thresholds, risk rules, broker
   policies, replay rules, feature rules, gates, or model-promotion rules.
@@ -59,31 +46,33 @@ active queue without fresh independent evidence.
    - `DECISIONS.md`
    - `RUNBOOK.md`
    - `agents/README.md`
-   - `agents/review.md`
+   - `agents/execution.md`
    - `agents/engine-research.md`
    - `agents/data.md`
-   - `agents/execution.md`
    - `agents/infra.md`
-   - `D:\thericher-v2\model-artifacts\data-agent\non-amat-source-context-inventory-20260717-r1\metrics.json`
-   - `D:\thericher-v2\model-artifacts\feature-input-stability\non-amat-independent-evidence-floor-inventory-20260717-r1\metrics.json`
+   - `agents/review.md`
+   - `D:\thericher-v2\model-artifacts\review-simplification\non-amat-held-branch-retirement-20260717-r1\metrics.json`
 
 3. Ask Claude CLI for a short drift-check before changing architecture,
    promotion rules, agent governance, helper/job contracts, replay/local-paper
    behavior, daily-report policy, durable worker policy, or any compute/data
-   contract.
+   contract. A small invariant helper/test inside the existing local-paper
+   boundary does not require Claude unless it changes replay behavior.
 
 ## Required Work
 
-1. Confirm whether non-AMAT branch context can be retired from active queues and
-   kept only as passive evidence until a future objective names a fresh
-   independent evidence source.
-2. Keep the review bounded to the two latest external artifacts and relevant
-   stateboard text.
-3. Produce at most one compact external review artifact under
-   `D:\thericher-v2\model-artifacts\review-simplification`.
-4. Update `HANDOFF.md`, `agents/review.md`, `agents/engine-research.md`, and
-   `agents/data.md` only if needed.
-5. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
+1. Inspect the existing local-paper simulator, event/fill metadata, account
+   replay, and tests.
+2. Add the smallest useful invariant audit for existing local-paper replay. It
+   should verify source separation and deterministic accounting without broker
+   access.
+3. Keep it local-only and focused. Prefer a helper plus focused tests over a new
+   framework, report family, gate, daemon, or dashboard.
+4. If an external smoke artifact is useful, write one compact artifact under
+   `D:\thericher-v2\model-artifacts\execution-paper`.
+5. Update `HANDOFF.md`, `agents/execution.md`, and other stateboards only if
+   needed.
+6. Refresh `NEXT_CODEX_GOAL.md` before ending with one single next objective.
 
 ## Verification
 
@@ -97,7 +86,7 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Retire non-AMAT held branch context`
+`Add local paper replay invariant audit`
 
 ## Completion Report
 
@@ -109,6 +98,6 @@ Report:
 - sidecars or executable workers used,
 - whether data acquisition, Docker/GPU, or broker behavior was touched,
 - produced artifacts,
-- what was retired or kept passive,
+- invariant added,
 - what was intentionally not built,
 - next recommended goal.

@@ -2646,6 +2646,17 @@ Next, run one small Review/Simplification pass to retire or compact the
 non-AMAT branch context as passive evidence unless a future objective names a
 fresh independent evidence source. Do not create a report/gate family.
 
+Review/Simplification retired the non-AMAT branch from active queues and wrote:
+`D:\thericher-v2\model-artifacts\review-simplification\non-amat-held-branch-retirement-20260717-r1\metrics.json`.
+Keep it only as passive evidence until a future single objective names fresh
+independent non-AMAT evidence, an explicit ADP strict-label rescue, or new
+independent local-paper label context. Do not spend GPU/replay/training time on
+this branch from the current evidence.
+
+Next, rotate to Execution/Paper and add one bounded broker-free local-paper
+replay invariant audit. The goal is to make local paper fills and account replay
+easier to trust before future model work feeds the paper loop.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:
