@@ -1015,6 +1015,13 @@
   early-label-ready. This stays below the current default ablation
   `min_examples=8`, so no Docker/GPU ablation is justified from this artifact
   alone.
+- Duplicate-aware non-AMAT feasibility decision ran artifact-only and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`.
+  It held the branch and queued no compute: strict label-ready evidence is `5`
+  rows and `3` unique timing-context keys, below `min_examples=8`. At least
+  `+3` existing strict label-ready rows are needed for the row floor, and `+5`
+  strict unique timing-context keys are preferred before another duplicate-aware
+  model-input pass.
 
 ## Next Handoff
 
@@ -1022,13 +1029,14 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: record a duplicate-aware non-AMAT feasibility
-  decision from the new bridge-feasibility artifact. Keep it artifact-only and
-  decide whether to stop the branch, look for one more existing label-ready
-  non-AMAT row, or name a precise future replay/data requirement.
-- Longer candidate training queue: hold until a decision artifact, not this
-  feasibility artifact alone, defines a specific replay-shape or model-input
-  question. Keep job kinds closed and write artifacts outside Git.
+- Short experiments queue: run a broader artifact-only inventory over known
+  existing candidate-feature-branch and feature-input artifacts for additional
+  non-AMAT strict label-ready rows. Do not replay, train, or ablate; stop or
+  rotate lanes if existing artifacts cannot supply at least `+3` strict rows.
+- Longer candidate training queue: hold until an inventory or decision artifact
+  defines a specific replay-shape or model-input question with enough
+  duplicate-aware context. Keep job kinds closed and write artifacts outside
+  Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

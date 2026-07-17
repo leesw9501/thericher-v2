@@ -429,6 +429,12 @@
   execution filters, simulator rules, feature rules, or threshold rules. It
   referenced `14` local-paper fill events from existing event artifacts and
   emitted `7` diagnostic rows as `source: diagnostic_overlay`.
+- Duplicate-aware non-AMAT feasibility decision reran no local-paper replay and
+  created no fills, orders, positions, order intents, broker adapters, broker
+  outcomes, execution filters, simulator rules, feature rules, or threshold
+  rules. It preserved `14` referenced fills as `source: local_paper`, kept `7`
+  reconstructed rows as `source: diagnostic_overlay`, and queued no compute
+  from current evidence.
 
 ## Next Handoff
 
@@ -463,8 +469,8 @@
   or run broker-free replay only through existing research jobs. It must not
   create execution filters, order intents, broker authority, or live/paper KIS
   behavior.
-- The next non-AMAT feasibility decision should parse existing artifacts only.
-  It must preserve original fills as `source: local_paper`, keep reconstructed
-  rows as `source: diagnostic_overlay`, and avoid execution filters, order
-  intents, feature rules, threshold rules, replay rules, broker authority, and
-  live/paper KIS behavior.
+- The next non-AMAT inventory should parse existing artifacts only. It must
+  preserve original fills as `source: local_paper`, keep reconstructed rows as
+  `source: diagnostic_overlay`, and avoid execution filters, order intents,
+  feature rules, threshold rules, replay rules, broker authority, and live/paper
+  KIS behavior.

@@ -562,6 +562,10 @@
   `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-bridge-feasibility-20260717-r1\metrics.json`.
   It read existing external JSON/JSONL artifacts and one local Yahoo gzip
   snapshot only.
+- Duplicate-aware non-AMAT feasibility decision ran locally as artifact-only
+  work, used no Docker/GPU compute, changed no dependency, Docker, compose,
+  scheduler, coordinator, dashboard, or worker files, and wrote
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -590,6 +594,6 @@
 - After a Windows restart, keep checking Docker daemon readiness before each
   Engine Research Agent run. If the duplicate-aware follow-up needs compute,
   use the same single-shot Docker `research` path and external artifact mount.
-- The next non-AMAT feasibility decision should stay local and artifact-only.
-  Use Docker `research` only after a decision artifact defines a bounded
+- The next non-AMAT inventory should stay local and artifact-only. Use Docker
+  `research` only after an inventory or decision artifact defines a bounded
   compute question.

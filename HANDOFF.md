@@ -1852,10 +1852,40 @@ The non-AMAT bridge-feasibility pass then completed:
   Review/Execution checks. They confirmed the traces and local data exist,
   Docker/GPU is unnecessary, and source-label/broker boundaries remain intact.
 
-Next, record a duplicate-aware decision over this non-AMAT feasibility artifact
-before any replay, ablation, or GPU work. The decision should say whether the
-branch stops here, needs one more existing non-AMAT label-ready row, or has a
-precise future replay/data requirement.
+The duplicate-aware non-AMAT feasibility decision then completed:
+
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary read-only helpers and were
+  closed after use; no repo-owned worker, daemon, scheduler, coordinator, or
+  durable multi-agent platform was added.
+- The compact external decision artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`.
+- It consumed the non-AMAT bridge-feasibility artifact, independent non-AMAT
+  scan, AMAT duplicate-aware decision, AMAT bridge/ablation artifacts, wider
+  trade-path artifacts, and the existing local Yahoo 1m snapshot. It did not
+  run Docker/GPU compute, replay, training, ablation, threshold search, KIS,
+  broker code, credentials, network, data acquisition, a new job kind, or a
+  new worker.
+- Decision: hold the non-AMAT bridge-feasibility branch and queue no compute
+  from current evidence. The raw bridge has `7` rows across `4` unique timing
+  contexts, but the strict feature-input label-ready set has only `5` rows and
+  `3` unique contexts, below the current default feature-input ablation
+  `min_examples=8`.
+- At least `+3` existing non-AMAT strict label-ready rows are needed just to
+  meet the row floor, and `+5` strict unique timing-context keys are preferred
+  for an eight-unique-signal duplicate-aware context. ADP remains a conditional
+  future data requirement only if a later goal tries to rescue that row:
+  missing strict early bar `2026-06-09T14:05:00+00:00`.
+- Source boundaries stayed intact: referenced fills stayed
+  `source: local_paper`, reconstructed rows stayed
+  `source: diagnostic_overlay`, and no fills, orders, order intents, broker
+  outcomes, execution filters, replay rules, feature rules, threshold rules, or
+  promotion rules were created.
+
+Next, run a broader artifact-only inventory for additional non-AMAT strict
+label-ready rows from existing artifacts. If existing artifacts cannot supply
+at least `+3` strict rows without replay/training, record that the branch should
+stop or rotate lanes instead of forcing compute.
 
 ## Daily Operator Review
 
