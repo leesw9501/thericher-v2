@@ -529,6 +529,13 @@
   recurrence artifact wrote under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`
   with no dependency, Docker, compose, scheduler, or coordinator changes.
+- AMAT recurrence feature-input compatibility smoke ran locally through the
+  existing `candidate_feature_input_ablation` job kind, used no Docker/GPU job,
+  changed no dependency, Docker, compose, scheduler, or coordinator files, and
+  wrote metrics plus compatibility diagnostics under
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1`.
+  GPU was visible, but the smoke stopped before training because the recurrence
+  artifact did not satisfy the feature-input stability contract.
 
 ## Next Handoff
 
@@ -549,8 +556,8 @@
   workers. Do not add a scheduler/coordinator layer for them in the next slice.
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
-  read-only and model artifacts under `/app/model_artifacts`, if the evidence
-  defines a clear GPU-backed question.
+  read-only and model artifacts under `/app/model_artifacts`, after the
+  recurrence bridge or another artifact defines a clear GPU-backed question.
 - Do not add scheduler/coordinator plumbing for the next cadence. Use existing
   Engine Research/Data single-shot workers plus temporary Codex sidecars; keep
   any Docker/GPU work inside the existing `research` path.

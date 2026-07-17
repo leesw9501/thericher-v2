@@ -5,13 +5,14 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded Engine Research follow-up from the AMAT recurrence scan, while
-answering the operator's role-agent expectation without creating platform
-sprawl.
+Build the first bounded bridge from AMAT recurrence/path evidence into the
+existing feature-input stability contract, without creating a new research job
+kind or durable agent platform.
 
 This advances feature/model research, backtest validation, PnL attribution, and
-data collection by expanding or closing the current AMAT negative-shape evidence
-loop with existing workers and artifacts.
+data collection by making the latest AMAT evidence consumable by existing
+diagnostic/model-input primitives only if enough independent rows can be
+reconstructed.
 
 ## Current Agent Reality
 
@@ -21,9 +22,9 @@ loop with existing workers and artifacts.
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
-- The repo does not yet run many durable autonomous agents in parallel. Codex
-  may spawn temporary sidecars during a task, but a new repo-owned worker should
-  be added only for a named engine-loop benefit.
+- Do not build additional repo-owned executable role workers in this goal unless
+  the latest operator message explicitly names the role and behavior to make
+  executable.
 
 ## Hard Boundaries
 
@@ -35,8 +36,6 @@ loop with existing workers and artifacts.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not add a new executable role worker in this goal unless the latest
-  operator message explicitly names the role and behavior to make executable.
 - Do not add a new research job kind.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
@@ -77,14 +76,16 @@ loop with existing workers and artifacts.
 
 ## Evidence To Consume
 
+- Feature-input compatibility diagnostic:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\compatibility_diagnostic.json`
+- Compatibility smoke metrics:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\metrics.json`
 - AMAT negative-shape recurrence scan:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`
 - AMAT negative-path attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`
 - Exact parity path attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`
-- Exact parity replay:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\metrics.json`
 - Data Agent cadence inventory:
   `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-multiagent-cadence-20260717-r1\metrics.json`
 - Local market data:
@@ -93,39 +94,33 @@ loop with existing workers and artifacts.
 ## Required Work
 
 1. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: decide whether the recurrence scan supports one existing
-     Docker `research` replay or a smaller artifact-only diagnostic.
-   - Data/Infra: verify data/artifact roots, queue/lock state, Docker research
-     readiness, and GPU visibility if a Docker job is considered.
-   - Review/Execution: verify no broker, credential, source-label, role-agent,
-     or diagnostic-to-execution drift.
-2. Prefer one existing Engine Research Agent Docker `research` job that expands
-   independent closed-segment evidence from existing `D:\market_data` rows, if
-   a bounded symbol batch can answer the recurrence question.
-3. If the evidence does not support a GPU-backed replay, do not force one.
-   Instead, run one small artifact-only compatibility diagnostic and record why
-   the AMAT recurrence schema still cannot feed the existing
-   `feature_input_ablation` primitive directly.
-4. Run Data Agent inventory only if it materially helps the follow-up; otherwise
-   reuse the latest inventory and explain why no acquisition is needed.
-5. Keep the operator-facing role-agent answer concise:
-   - state which repo-owned executable workers exist now,
-   - state which roles are only stateboards/sidecars,
-   - recommend the first safe additional executable role, if any, without
-     building it unless explicitly named by the operator.
-6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
-
-## Data Policy
-
-- Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- Do not acquire data unless a no-auth, lawful, license-compatible source
-  clearly improves the active follow-up.
-- Stop acquisition for a source when it requires credentials/payment/manual
-  access, licensing is unclear, two automated attempts fail, or more data no
-  longer improves the active goal.
-- If operator help is needed, record exact artifact names, symbols, markets,
-  date ranges, formats, and blocker reasons in `agents/data.md`, the handoff,
-  and the completion report.
+   - Engine Research: inspect whether the bridge can produce enough independent
+     diagnostic rows for existing feature-input ablation.
+   - Data/Infra: verify needed local rows, artifact roots, queue/lock state,
+     and whether Docker/GPU should remain idle until the bridge fits.
+   - Review/Execution: verify source-label, broker, credential, and
+     durable-agent-platform boundaries.
+2. Build the smallest useful bridge as artifact-only work or a focused helper
+   if code is needed. It must output a feature-input stability-shaped artifact
+   only when the existing evidence can supply the required contract:
+   `selected_candidate_entry_rows` or `consumed_slices` plus
+   `metrics.added_source_variant_meta`.
+3. The bridge must preserve:
+   - diagnostic rows as `source: diagnostic_overlay`,
+   - original fills as `source: local_paper`,
+   - exact symbol/variant/timestamp/offset/probability/threshold context,
+   - explicit missing-evidence counts.
+4. If the bridge produces at least `8` labeled diagnostic rows, run the existing
+   `candidate_feature_input_ablation` primitive against that artifact. Prefer
+   Docker `research` only if the input contract is satisfied and GPU work is
+   actually reached.
+5. If fewer than `8` rows can be reconstructed, do not force a GPU job. Write a
+   compact external artifact explaining the row shortfall and the exact replay
+   or data evidence needed next.
+6. Do not acquire data unless an explicit no-auth, lawful, license-compatible
+   source materially improves this bridge. Existing `D:\market_data` should be
+   enough for the first pass.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -146,7 +141,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Record bounded multi-agent cadence`
+`Record AMAT recurrence compatibility`
 
 ## Completion Report
 

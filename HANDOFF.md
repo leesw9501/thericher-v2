@@ -1683,13 +1683,47 @@ The bounded multi-agent research cadence then completed:
   durable scheduler, daemon, coordinator, auto-commit worker, dashboard,
   execution filter, replay rule, or new executable role worker was added.
 
-Next, run one bounded Engine Research follow-up through existing primitives.
-Prefer a Docker `research` job with PyTorch CUDA only when the recurrence
-artifact gives a clear research question; otherwise run one small
-artifact-compatible diagnostic and record the compatibility gap. If the
-operator wants more repo-owned executable agents, start with a separate
-explicit worker-expansion decision instead of quietly building a durable
-multi-agent platform.
+The AMAT recurrence feature-input compatibility check then completed:
+
+- Runtime Codex sidecars again covered Engine Research, Data/Infra, and
+  Review/Execution checks. All three recommended against a blind Docker replay:
+  current recurrence evidence has only `31` closed rows, `8` unique
+  symbol/timestamp/feature records, and `3` outside-AMAT unique records, with
+  `0` exact outside-AMAT recurrence records.
+- Data/Infra verified the system is operationally ready: `D:\market_data`
+  exists, the latest Data Agent inventory has `2` known folders, `5` snapshots,
+  and `5` useful files, Engine/Data queues and locks are empty, Docker Compose
+  config passes, the `research` service is available, and NVIDIA GeForce RTX
+  4090 is visible. No data was acquired.
+- Instead of queuing a blind replay, one existing local research primitive was
+  run as a compatibility smoke:
+  `candidate_feature_input_ablation` with row mode `all_diagnostic`, job id
+  `engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1`, and
+  source artifact
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`.
+- The smoke wrote outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\research-jobs\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1.json`.
+- It stopped at `prepared_not_feature_input_ablated` with `0` rows used. The
+  precise reconstruction error was
+  `stability artifact lacks consumed_slices or added_source_variant_meta`.
+- A compact compatibility diagnostic was written outside Git:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\compatibility_diagnostic.json`.
+  It records that the recurrence payload is descriptive path/feature comparison
+  evidence, not a feature-input stability artifact. Existing ablation needs
+  `selected_candidate_entry_rows` or `consumed_slices` plus
+  `metrics.added_source_variant_meta` to reconstruct diagnostic rows.
+- No Docker/GPU job ran in this cycle, no new research job kind or executable
+  role worker was added, no KIS/broker/credential path was touched, and no
+  diagnostic row became an execution filter, replay rule, feature rule,
+  threshold rule, or order intent.
+
+Next, build a bounded bridge from recurrence/path evidence to the existing
+feature-input stability contract, only if it can be done as a small
+artifact-only adapter using existing artifacts and `D:\market_data`. If the
+adapter cannot produce enough independent diagnostic rows, record that and use
+an explicitly justified replay batch later rather than expanding blindly.
 
 ## Daily Operator Review
 

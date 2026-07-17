@@ -967,6 +967,16 @@
   the existing feature-input ablation primitive does not directly consume this
   AMAT negative-path attribution schema. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`.
+- AMAT recurrence feature-input compatibility smoke used the existing
+  `candidate_feature_input_ablation` primitive locally with row mode
+  `all_diagnostic` and source artifact set to the recurrence scan. It stopped at
+  `prepared_not_feature_input_ablated` with `0` rows used and reconstruction
+  error `stability artifact lacks consumed_slices or added_source_variant_meta`.
+  A companion compatibility diagnostic recorded the adapter fields required
+  before any GPU ablation can use this evidence. Artifacts:
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-amat-recurrence-feature-input-compatibility-20260717-r1\compatibility_diagnostic.json`.
 
 ## Next Handoff
 
@@ -974,12 +984,13 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: consume the recurrence artifact and run one bounded
-  follow-up through an existing primitive. Prefer a Docker `research` replay or
-  feature-input job only if its input contract already fits the evidence.
-- Longer candidate training queue: hold until the follow-up defines a focused
-  model-input or replay-shape question. Keep the job kind closed and write
-  artifacts outside Git.
+- Short experiments queue: build a bounded artifact-only bridge from
+  recurrence/path evidence to the existing feature-input stability contract, if
+  enough independent diagnostic rows can be reconstructed without a new job
+  kind. Use the existing ablation primitive only after the contract fits.
+- Longer candidate training queue: hold until the bridge or a justified replay
+  batch defines a focused model-input or replay-shape question. Keep the job
+  kind closed and write artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

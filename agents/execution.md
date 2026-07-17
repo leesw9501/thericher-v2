@@ -401,6 +401,11 @@
   It preserved referenced parity fills as `source: local_paper`, kept `8`
   recurrence comparison records as `source: diagnostic_overlay`, and observed
   `0` outside-AMAT exact recurrence records in the scanned evidence.
+- AMAT recurrence feature-input compatibility smoke reran no local-paper
+  replay and created no fills, orders, positions, order intents, broker
+  adapters, or broker outcomes. It used existing ablation code only to test
+  input compatibility, produced `0` diagnostic rows, and preserved recurrence
+  source evidence as descriptive reference material.
 
 ## Next Handoff
 
@@ -427,6 +432,7 @@
 - Temporary Execution sidecar review may continue, but do not make Execution
   Agent executable until a future explicit paper-trading goal needs broker or
   risk-loop work.
-- Any follow-up from AMAT negative-path or recurrence evidence must keep
-  original fills as `source: local_paper`, count diagnostics separately, and
-  avoid creating order intents outside the existing broker-free replay path.
+- Any bridge from AMAT negative-path or recurrence evidence into feature-input
+  rows must keep original fills as `source: local_paper`, count diagnostics
+  separately as `source: diagnostic_overlay`, and avoid creating order intents
+  outside the existing broker-free replay path.

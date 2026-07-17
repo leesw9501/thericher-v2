@@ -425,14 +425,20 @@
   `5` useful files, wrote under `D:\thericher-v2\model-artifacts\data-agent`,
   and acquired no data. The follow-up recurrence scan reused existing external
   artifacts and the same `snapshot=2026-06-18` Yahoo lineage only.
+- AMAT recurrence feature-input compatibility smoke reused the same recurrence
+  artifact and Data Agent inventory only. The Data/Infra sidecar verified
+  `snapshot=2026-06-18` has `572,894` rows and `250` symbols, including AMAT
+  `2,340`, AMZN `2,340`, and BA `2,338` rows from
+  `2026-06-09T13:30:00Z` to `2026-06-16T19:59:00Z`. No new data was acquired;
+  the blocker is feature-input contract shape, not data availability.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts for the next bounded Engine Research follow-up;
-  record exact missing artifact names only if an existing Engine Research/Data
-  worker cannot proceed.
+  rows and external artifacts while building a recurrence-to-feature-input
+  stability bridge; record exact missing artifact names only if the bridge
+  cannot reconstruct required rows.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -567,15 +567,24 @@
   multi-agent platform, or model-promotion language. No GPU job was queued
   because the sidecar review found the next useful question was schema
   compatibility and recurrence, not another training block.
+- AMAT recurrence feature-input compatibility smoke reused the existing
+  `candidate_feature_input_ablation` job kind and wrote one companion
+  compatibility diagnostic outside Git. It added no code, helper, job kind,
+  worker, scheduler, dashboard, coordinator, report family, gate, auto-commit
+  path, broker authority, credential reads, data acquisition, replay mutation,
+  threshold search, feature rule, durable multi-agent platform, or
+  model-promotion language. The result tightened the next question to a bounded
+  adapter, not a blind replay or broad GPU sweep.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded Engine Research follow-up using
-  existing primitives. If the operator wants more repo-owned executable role
-  agents, make that an explicit worker-expansion goal with one safe role and a
-  named engine-loop benefit. Avoid quietly adding durable workers, daemon,
-  scheduler, dashboard, report branch, broker authority, credential path,
-  auto-commit, durable multi-agent-platform behavior, threshold search, feature
-  rules, or model-promotion language.
+- Push the next task toward one bounded artifact-only bridge into the existing
+  feature-input stability contract before another GPU job. If the operator
+  wants more repo-owned executable role agents, make that an explicit
+  worker-expansion goal with one safe role and a named engine-loop benefit.
+  Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
+  branch, broker authority, credential path, auto-commit, durable
+  multi-agent-platform behavior, threshold search, feature rules, or
+  model-promotion language.
