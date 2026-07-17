@@ -559,15 +559,23 @@
   family, gate, auto-commit path, broker authority, credential reads, data
   acquisition, replay mutation, threshold search, feature rule, durable
   multi-agent platform, or model-promotion language.
+- AMAT negative-shape recurrence cadence used temporary Codex sidecars plus the
+  existing Data Agent worker, wrote one compact external artifact, and added no
+  code, helper, job kind, worker, scheduler, dashboard, coordinator, report
+  family, gate, auto-commit path, broker authority, credential reads, data
+  acquisition, replay mutation, threshold search, feature rule, durable
+  multi-agent platform, or model-promotion language. No GPU job was queued
+  because the sidecar review found the next useful question was schema
+  compatibility and recurrence, not another training block.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded multi-agent cadence using existing
-  Engine Research/Data single-shot workers and temporary Codex sidecars. If a
-  new executable role worker is proposed, require a specific engine-loop need
-  and explicit operator approval. Avoid new durable workers, daemon, scheduler,
-  dashboard, report branch, broker, credential, auto-commit, durable
-  multi-agent-platform behavior, threshold search, feature-rule selection, or
-  model-promotion language.
+- Push the next task toward one bounded Engine Research follow-up using
+  existing primitives. If the operator wants more repo-owned executable role
+  agents, make that an explicit worker-expansion goal with one safe role and a
+  named engine-loop benefit. Avoid quietly adding durable workers, daemon,
+  scheduler, dashboard, report branch, broker authority, credential path,
+  auto-commit, durable multi-agent-platform behavior, threshold search, feature
+  rules, or model-promotion language.

@@ -521,6 +521,14 @@
   Docker or GPU job, changed no dependency, Docker, or compose files, and wrote
   one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- Bounded multi-agent recurrence cadence verified Docker/GPU readiness but did
+  not queue an Engine Research Docker job. Data Agent ran locally under its
+  external artifact root, Engine Research queue/lock directories were empty,
+  `docker compose config --quiet` passed, the `research` profile was available,
+  and `nvidia-smi` reported NVIDIA GeForce RTX 4090 with `24564` MiB. The
+  recurrence artifact wrote under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`
+  with no dependency, Docker, compose, scheduler, or coordinator changes.
 
 ## Next Handoff
 
@@ -541,7 +549,8 @@
   workers. Do not add a scheduler/coordinator layer for them in the next slice.
 - The next research cadence should run Docker `research` only through the
   existing Engine Research Agent single-shot runner, with `src` mounted
-  read-only and model artifacts under `/app/model_artifacts`.
-- Do not add scheduler/coordinator plumbing for the next multi-agent cadence.
-  Use existing Engine Research/Data single-shot workers plus temporary Codex
-  sidecars; keep any Docker/GPU work inside the existing `research` path.
+  read-only and model artifacts under `/app/model_artifacts`, if the evidence
+  defines a clear GPU-backed question.
+- Do not add scheduler/coordinator plumbing for the next cadence. Use existing
+  Engine Research/Data single-shot workers plus temporary Codex sidecars; keep
+  any Docker/GPU work inside the existing `research` path.

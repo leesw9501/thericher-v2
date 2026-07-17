@@ -1646,11 +1646,50 @@ The AMAT negative-path attribution then completed:
   Review/Execution checked broker/source-label/sprawl boundaries. They are not
   repo-owned workers.
 
-Next, run a bounded multi-agent research cadence using the existing Engine
-Research and Data single-shot workers plus temporary Codex sidecars. Keep the
-single GPU useful through one bounded Docker `research` job if the evidence
-supports it, and clarify the remaining role-agent gap without creating a
-durable scheduler, daemon, coordinator, or broker-capable worker.
+The bounded multi-agent research cadence then completed:
+
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary task helpers, not repo-owned
+  workers. The repo still has only two executable single-shot workers:
+  `thericher-v2-engine-research-agent` and `thericher-v2-data-agent`.
+- Data Agent inventory
+  `data-agent-market-data-inventory-multiagent-cadence-20260717-r1` ran
+  locally, found `2` known folders, `5` snapshots, and `5` useful files under
+  `D:\market_data`, and acquired no data.
+- Docker/GPU readiness was verified by the Data/Infra sidecar: Docker daemon
+  reachable, `docker compose config --quiet` passing, research profile
+  available, NVIDIA GeForce RTX 4090 visible with `24564` MiB, and no
+  TheRicher research container running.
+- Engine Research sidecar recommended an artifact-only recurrence diagnostic
+  before another GPU job. No Docker/GPU research job was queued in this cadence
+  because the current `feature_input_ablation` primitive does not directly
+  consume the AMAT negative-path attribution schema, and the immediate question
+  was whether the AMAT negative shape recurred in existing evidence.
+- The recurrence diagnostic artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`.
+- It scanned `31` closed-segment rows, `8` unique symbol/timestamp/feature
+  records, and `3` outside-AMAT unique records. The exact AMAT negative feature
+  signature did not recur outside AMAT in the scanned evidence:
+  same-feature-signature outside-AMAT unique records `0`, same-entry-timestamp
+  outside-AMAT unique records `0`, outside-AMAT negative fee-aware records
+  `0`.
+- Original fills stayed `source: local_paper`: parity and AMAT negative
+  artifacts each referenced `24` local-paper fills, wider context referenced
+  `38` local-paper entry/exit sources, and non-local, unknown, and unreadable
+  fill evidence counts were `0`. Recurrence comparison rows stayed
+  `source: diagnostic_overlay` and created `0` local-paper fills and `0`
+  broker outcomes.
+- Review/Execution sidecar confirmed no KIS, credentials, broker submit/cancel,
+  durable scheduler, daemon, coordinator, auto-commit worker, dashboard,
+  execution filter, replay rule, or new executable role worker was added.
+
+Next, run one bounded Engine Research follow-up through existing primitives.
+Prefer a Docker `research` job with PyTorch CUDA only when the recurrence
+artifact gives a clear research question; otherwise run one small
+artifact-compatible diagnostic and record the compatibility gap. If the
+operator wants more repo-owned executable agents, start with a separate
+explicit worker-expansion decision instead of quietly building a durable
+multi-agent platform.
 
 ## Daily Operator Review
 

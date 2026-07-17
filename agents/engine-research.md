@@ -959,6 +959,14 @@
   `0.406`, two-bar sell-threshold latency, gross delta `-3.87`, and fee-aware
   delta `-4.1532`. Artifact:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`.
+- AMAT negative-shape recurrence scan ran as artifact-only work after
+  Engine Research sidecar review. It scanned `31` closed-segment rows and `8`
+  unique symbol/timestamp/feature records from existing parity and wider
+  holdout evidence. The exact AMAT negative feature signature did not recur
+  outside AMAT in the scanned records. No Docker/GPU job was queued because
+  the existing feature-input ablation primitive does not directly consume this
+  AMAT negative-path attribution schema. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -966,12 +974,12 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: use the AMAT negative-path feature/context evidence
-  to decide one bounded follow-up, preferably through an existing Docker
-  `research` job or artifact-only diagnostic.
-- Longer candidate training queue: hold until a bounded follow-up defines a
-  focused model-input or replay-shape question.
-  Keep the job kind closed and write artifacts outside Git.
+- Short experiments queue: consume the recurrence artifact and run one bounded
+  follow-up through an existing primitive. Prefer a Docker `research` replay or
+  feature-input job only if its input contract already fits the evidence.
+- Longer candidate training queue: hold until the follow-up defines a focused
+  model-input or replay-shape question. Keep the job kind closed and write
+  artifacts outside Git.
 - Temporary Codex sub-agents may assist as sidecar reviewers, but do not create
   a daemon, scheduler, dashboard, auto-commit path, broker authority,
   credential path, or durable multi-agent platform.

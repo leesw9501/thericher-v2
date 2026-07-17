@@ -418,14 +418,21 @@
   wider-holdout feature-input context, and selected AMAT/AMZN rows from
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`;
   no data was acquired and no operator data help is needed for this evidence.
+- Data Agent inventory
+  `data-agent-market-data-inventory-multiagent-cadence-20260717-r1` claimed
+  one external queued job for the bounded multi-agent cadence, read existing
+  `D:\market_data` metadata only, found `2` known folders, `5` snapshots, and
+  `5` useful files, wrote under `D:\thericher-v2\model-artifacts\data-agent`,
+  and acquired no data. The follow-up recurrence scan reused existing external
+  artifacts and the same `snapshot=2026-06-18` Yahoo lineage only.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows and external artifacts for the next bounded multi-agent cadence; record
-  exact missing artifact names only if an existing Engine Research/Data worker
-  cannot proceed.
+  rows and external artifacts for the next bounded Engine Research follow-up;
+  record exact missing artifact names only if an existing Engine Research/Data
+  worker cannot proceed.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

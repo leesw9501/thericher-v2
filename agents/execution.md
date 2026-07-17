@@ -396,6 +396,11 @@
   preserved all `24` referenced fills as `source: local_paper`, labeled
   descriptive path/feature context as `source: diagnostic_overlay`, and counted
   `0` non-local, unknown, unreadable, or missing nonzero-fill evidence.
+- AMAT negative-shape recurrence scan also reran no execution and created no
+  fills, orders, positions, order intents, broker adapters, or broker outcomes.
+  It preserved referenced parity fills as `source: local_paper`, kept `8`
+  recurrence comparison records as `source: diagnostic_overlay`, and observed
+  `0` outside-AMAT exact recurrence records in the scanned evidence.
 
 ## Next Handoff
 
@@ -416,12 +421,12 @@
 - A simplification pass may inspect local-paper evidence contracts but must not
   rerun replay, mutate fills, submit orders, create order intents, or turn any
   feature context into an execution filter.
-- The next Engine Research cadence may run broker-free local-paper replay only
+- The next Engine Research follow-up may run broker-free local-paper replay only
   through existing research jobs. It must preserve `source: local_paper` fills
   and keep diagnostics as `source: diagnostic_overlay`.
-- The next multi-agent cadence may use temporary Execution sidecar review, but
-  do not make Execution Agent executable until a future explicit paper-trading
-  goal needs broker or risk-loop work.
-- Any follow-up from AMAT negative-path evidence must keep original fills as
-  `source: local_paper`, count diagnostics separately, and avoid creating
-  order intents outside the existing broker-free replay path.
+- Temporary Execution sidecar review may continue, but do not make Execution
+  Agent executable until a future explicit paper-trading goal needs broker or
+  risk-loop work.
+- Any follow-up from AMAT negative-path or recurrence evidence must keep
+  original fills as `source: local_paper`, count diagnostics separately, and
+  avoid creating order intents outside the existing broker-free replay path.

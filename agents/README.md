@@ -33,6 +33,11 @@ below as an executable worker. Only Engine Research and Data currently have
 single-shot CLI workers. There are no persistent autonomous agents,
 orchestrators, or Codex thread workers owned by the repo.
 
+This means the current repo does not silently run five durable role agents in
+parallel. Parallel role work can happen during a Codex task through temporary
+sidecars, while persistent repo-owned workers must be added one role at a time
+only when they improve a named engine loop.
+
 ## Executable Workers
 
 - Engine Research Agent: `thericher-v2-engine-research-agent`, single-shot

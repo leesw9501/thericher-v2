@@ -5,12 +5,13 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded multi-agent research cadence using the existing executable
-workers and temporary Codex sidecars.
+Run one bounded Engine Research follow-up from the AMAT recurrence scan, while
+answering the operator's role-agent expectation without creating platform
+sprawl.
 
-This advances feature/model research, data collection, backtest validation, and
-PnL attribution by turning the latest AMAT negative-path evidence into one
-focused follow-up while making the current role-agent reality explicit.
+This advances feature/model research, backtest validation, PnL attribution, and
+data collection by expanding or closing the current AMAT negative-shape evidence
+loop with existing workers and artifacts.
 
 ## Current Agent Reality
 
@@ -18,11 +19,11 @@ focused follow-up while making the current role-agent reality explicit.
   `thericher-v2-engine-research-agent`.
 - Data Agent has an executable single-shot worker:
   `thericher-v2-data-agent`.
-- Execution, Infra, and Review are currently stateboards plus temporary Codex
-  sidecar roles, not repo-owned executable workers.
-- Do not build a durable agent platform just to satisfy the label "agent".
-  Create another executable role worker only when it improves a named engine
-  loop and the operator explicitly approves that worker.
+- Execution, Infra, and Review are stateboards plus temporary Codex sidecar
+  roles, not repo-owned executable workers.
+- The repo does not yet run many durable autonomous agents in parallel. Codex
+  may spawn temporary sidecars during a task, but a new repo-owned worker should
+  be added only for a named engine-loop benefit.
 
 ## Hard Boundaries
 
@@ -34,8 +35,8 @@ focused follow-up while making the current role-agent reality explicit.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not add a new executable agent unless a specific engine-loop need is
-  proven and the operator explicitly approves it.
+- Do not add a new executable role worker in this goal unless the latest
+  operator message explicitly names the role and behavior to make executable.
 - Do not add a new research job kind.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
@@ -72,55 +73,59 @@ focused follow-up while making the current role-agent reality explicit.
    - `agents/review.md`
 
 3. Ask Claude CLI for a short drift-check before architecture-changing edits.
-   If it times out, record that and keep the change tightly scoped.
+   If it times out, record that and keep changes tightly scoped.
 
-## Current Evidence To Consume
+## Evidence To Consume
 
+- AMAT negative-shape recurrence scan:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-shape-recurrence-scan-20260717-r1\metrics.json`
 - AMAT negative-path attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-negative-path-attribution-20260717-r1\metrics.json`
 - Exact parity path attribution:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-path-attribution\metrics.json`
 - Exact parity replay:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1\metrics.json`
-- Exact parity robustness/event artifacts:
-  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-feature-replay-parity-depth-amat-amzn-ba-240bars-20260717-r1-robustness\metrics.json`
+- Data Agent cadence inventory:
+  `D:\thericher-v2\model-artifacts\data-agent\market-data-inventory\data-agent-market-data-inventory-multiagent-cadence-20260717-r1\metrics.json`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Use temporary Codex sidecars for distinct lane checks:
-   - Engine Research: propose one bounded follow-up from the AMAT
-     negative-path evidence.
-   - Data/Infra: verify local data roots, artifact roots, Docker/GPU readiness,
-     and queue/lock state.
-   - Review/Execution: verify no broker, credential, source-label, or
-     agent-platform drift.
-2. Run the Data Agent single-shot inventory only if it materially helps this
-   cadence; otherwise state why existing data evidence is sufficient.
-3. Keep the GPU useful with at most one bounded Engine Research Agent Docker
-   `research` job if the evidence supports a clear question. Prefer existing
-   job kinds and existing data/artifacts.
-4. If the AMAT negative-path feature context can be evaluated through an
-   existing research primitive, use that. If not, run a small existing replay or
-   artifact-only diagnostic and record the exact compatibility gap.
-5. Keep a concise capability note in `agents/README.md` or `HANDOFF.md` if the
-   current executable-worker gap needs clarification. Do not add a new worker
-   in this goal unless the operator explicitly confirms which role should become
-   executable.
+1. Use temporary Codex sidecars for disjoint checks when useful:
+   - Engine Research: decide whether the recurrence scan supports one existing
+     Docker `research` replay or a smaller artifact-only diagnostic.
+   - Data/Infra: verify data/artifact roots, queue/lock state, Docker research
+     readiness, and GPU visibility if a Docker job is considered.
+   - Review/Execution: verify no broker, credential, source-label, role-agent,
+     or diagnostic-to-execution drift.
+2. Prefer one existing Engine Research Agent Docker `research` job that expands
+   independent closed-segment evidence from existing `D:\market_data` rows, if
+   a bounded symbol batch can answer the recurrence question.
+3. If the evidence does not support a GPU-backed replay, do not force one.
+   Instead, run one small artifact-only compatibility diagnostic and record why
+   the AMAT recurrence schema still cannot feed the existing
+   `feature_input_ablation` primitive directly.
+4. Run Data Agent inventory only if it materially helps the follow-up; otherwise
+   reuse the latest inventory and explain why no acquisition is needed.
+5. Keep the operator-facing role-agent answer concise:
+   - state which repo-owned executable workers exist now,
+   - state which roles are only stateboards/sidecars,
+   - recommend the first safe additional executable role, if any, without
+     building it unless explicitly named by the operator.
 6. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Data Policy
 
 - Prefer existing `D:\market_data` snapshots before acquiring anything new.
-- This task should not acquire data unless a no-auth, lawful,
-  license-compatible source clearly improves the active cadence.
+- Do not acquire data unless a no-auth, lawful, license-compatible source
+  clearly improves the active follow-up.
 - Stop acquisition for a source when it requires credentials/payment/manual
   access, licensing is unclear, two automated attempts fail, or more data no
   longer improves the active goal.
 - If operator help is needed, record exact artifact names, symbols, markets,
-  date ranges, formats, and blocker reasons in `agents/data.md`,
-  `agents/execution.md`, and the completion report.
+  date ranges, formats, and blocker reasons in `agents/data.md`, the handoff,
+  and the completion report.
 
 ## Verification
 
@@ -134,15 +139,14 @@ docker compose config --quiet
 
 Also report:
 
-- any focused tests,
-- any artifact-only smoke command,
+- any focused test or artifact-only smoke command,
 - any Engine Research Agent or Data Agent command,
 - any Docker `research` or GPU command,
 - artifact paths written outside Git.
 
 ## Suggested Commit Message
 
-`Run bounded multi-agent research cadence`
+`Record bounded multi-agent cadence`
 
 ## Completion Report
 
