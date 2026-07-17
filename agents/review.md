@@ -643,21 +643,21 @@
   credential reads, data acquisition, replay mutation, trace compute,
   threshold search, feature rule, durable multi-agent platform, or promotion
   language. It kept all candidate summaries `source: diagnostic_overlay`.
+- Fresh-symbol trace-only GPU batch directly called the existing trace helper
+  inside Docker `research`, wrote one compact external batch artifact plus
+  per-symbol traces, and added no code, helper, job kind, worker, scheduler,
+  dashboard, coordinator, report family, gate, auto-commit path, broker
+  authority, credential reads, data acquisition, replay mutation, training,
+  ablation, threshold sweep, feature rule, durable multi-agent platform, or
+  promotion language.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded opportunity-prefilter before any
-  further fresh-symbol replay. A small tested selector is acceptable only if it
-  directly reduces zero-fill replay waste in the feature/model validation loop.
-  If the operator wants more repo-owned executable role agents, make that an
-  explicit worker-expansion goal with one safe role and a named engine-loop
-  benefit.
-- Next, allow at most one bounded trace-only Engine Research batch before any
-  fresh-symbol replay. Keep it to the named symbols from the inventory and
-  avoid turning trace availability into a gate, scheduler, broad universe
-  search, execution threshold, or model-promotion workflow.
+- The next replay-selection is justified by trace crossings, but keep it small
+  and broker-free. Avoid turning the trace batch into a gate, broad universe
+  search, execution threshold, model-promotion workflow, or durable worker.
   Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
   branch, broker authority, credential path, auto-commit, durable
   multi-agent-platform behavior, threshold search, feature rules, or

@@ -5,12 +5,12 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run the first bounded fresh-symbol trace-only GPU batch before any further
-fresh-symbol replay.
+Run one bounded fresh-symbol broker-free local-paper replay-selection from the
+strongest trace-only crossing symbols.
 
-This advances feature/model research and backtest validation by using the
-existing short source-context model to compute compatible probability traces for
-clean fresh symbols, then deciding whether replay is even worth a later goal.
+This advances backtest validation and PnL attribution by converting the best
+fresh-symbol probability traces into a small local-paper replay, without KIS,
+credentials, live/paper broker calls, training, or broader search.
 
 ## Current Agent Reality
 
@@ -34,18 +34,20 @@ clean fresh symbols, then deciding whether replay is even worth a later goal.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not run local-paper replay in this goal.
-- Do not run model training, feature-input ablation, broad threshold search, or
-  data acquisition.
+- Do not run model training, feature-input ablation, trace recomputation, broad
+  threshold search, or data acquisition.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Prefer the existing Docker `research` path with PyTorch CUDA for trace
-  inference. Keep base/runtime dependencies torch-free.
-- Keep ranked or reconstructed context labeled as `source: diagnostic_overlay`.
-- Do not turn trace availability into an execution threshold, order-intent
-  generator, risk rule, broker policy, replay rule, feature rule, gate, or
-  model-promotion rule.
+- Prefer existing trace artifacts and existing broker-free local-paper replay
+  primitives. Do not add a new job kind or executable worker unless direct
+  helper use is impossible, and ask Claude CLI first if a dispatch change is
+  needed.
+- Keep diagnostic context labeled as `source: diagnostic_overlay`.
+- Any fills created by the local simulator must remain `source: local_paper`.
+- Do not turn replay-selection into a live execution threshold, order-intent
+  generator, risk rule, broker policy, feature rule, gate, or model-promotion
+  rule.
 
 ## Required First Reads
 
@@ -70,66 +72,69 @@ clean fresh symbols, then deciding whether replay is even worth a later goal.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: verify trace-only execution shape and source-model
-     compatibility.
-   - Infra: verify Docker daemon, `research` service, CUDA visibility, and
-     artifact mounts after the Windows restart.
-   - Review/Execution: verify no replay/order/gate semantics creep in.
+   - Engine Research: verify the replay-selection helper shape and threshold
+     pairs.
+   - Execution/Review: verify local-paper-only fills and no execution/gate
+     semantics.
+   - Infra: verify Docker `research` only if replay runs in Docker.
 
 4. Ask Claude CLI for a short drift-check before adding or changing any
-   research-job dispatch path. If an existing Docker command can run trace-only
+   research-job dispatch path. If existing helper calls can consume the traces
    safely, prefer that over adding code.
 
 ## Evidence To Consume
 
-- Trace/data availability inventory:
-  `D:\thericher-v2\model-artifacts\data-agent\fresh-symbol-trace-data-availability-20260717-r1\metrics.json`
-- Fresh-symbol opportunity prefilter:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-prefilter\engine-agent-fresh-symbol-opportunity-prefilter-20260717-r1\metrics.json`
+- Trace-only batch summary:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`
 - Short source-context feature branch:
   `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
-- Candidate probability trace root:
-  `D:\thericher-v2\model-artifacts\candidate-probability-trace`
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
+Top crossing traces to replay first:
+
+- MRVL:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_mrvl\trace.json`
+- MU:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_mu\trace.json`
+- SNDK:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_sndk\trace.json`
+- COHR:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-fresh_cohr\trace.json`
+
 ## Required Work
 
-1. Confirm the inventory result:
-   - `17` inventory candidates,
-   - `5` compatible short source-context traces,
-   - `0` compatible threshold crossings,
-   - `12` clean local first-`240` candidates missing compatible traces,
-   - no trace compute, no replay, no order intents, and no fills.
-2. Run one bounded trace-only batch for:
-   - MRVL, COHR, MU, GLW, INTC, SNDK, QCOM.
-3. Use the exact local data window from the inventory:
-   - Yahoo snapshot:
-     `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
-   - `max_bars=240`
-   - `2026-06-09T13:30:00+00:00` through
-     `2026-06-09T17:29:00+00:00`
-   - slice IDs: `fresh_mrvl`, `fresh_cohr`, `fresh_mu`, `fresh_glw`,
-     `fresh_intc`, `fresh_sndk`, `fresh_qcom`.
-4. Use the short source-context model lineage from:
-   `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`.
-5. Prefer an existing trace-only primitive through Docker `research`. If the
-   current single-shot runner cannot dispatch trace-only work, add the smallest
-   bounded trace-only dispatch needed inside the existing research-job/Engine
-   Research Agent path after Claude drift-check. Do not add a new daemon,
-   scheduler, durable worker, dashboard, or broad platform.
-6. Produce one compact external trace-batch artifact recording:
-   - symbols and windows traced,
-   - source model and data-source compatibility,
-   - probability count, max probability, threshold gap, and crossing count,
-   - CUDA/Docker readiness and artifact root,
-   - no replay/order/fill/broker/KIS/credential/network/data-acquisition
-     behavior.
-7. If at least one compatible trace crosses the fixed descriptive buy threshold
-   `0.541000`, refresh `NEXT_CODEX_GOAL.md` toward one small broker-free
-   local-paper replay-selection goal. If none cross, rotate to review or a
-   different Engine Research input question instead of replaying.
-8. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+1. Confirm the trace-only result:
+   - `7` requested symbols,
+   - `7` completed compatible traces,
+   - `7` symbols crossed the fixed descriptive buy threshold `0.541000`,
+   - best symbol MRVL max probability `0.565431`, gap `+0.024431`,
+   - no replay, no order intents, and no fills in the trace-only batch.
+2. Run one bounded replay-selection for only MRVL, MU, SNDK, and COHR.
+   Prefer an existing helper path that consumes `probability_trace_artifact`
+   directly, such as the threshold-robustness primitive, so the traces do not
+   need to be recomputed.
+3. Use the fixed feature-branch replay threshold pairs:
+   - `0.541000 / 0.497000`
+   - `0.542000 / 0.497000`
+   - `0.543000 / 0.497000`
+4. Keep the replay broker-free and local-paper-only. Verify:
+   - all fills, if any, are `source: local_paper`,
+   - diagnostic rows remain `source: diagnostic_overlay`,
+   - no KIS, credentials, network, broker submit/cancel/status, or live/paper
+     external broker behavior occurred.
+5. Produce one compact external replay-selection artifact recording:
+   - symbols and trace artifacts consumed,
+   - threshold pairs used,
+   - local-paper fill/order-intent counts,
+   - fill-source verification,
+   - PnL/path summary if fills occur,
+   - no promotion/gate/execution-rule semantics.
+6. If replay creates local-paper fills, refresh `NEXT_CODEX_GOAL.md` toward a
+   bounded PnL/trade-path attribution goal. If replay still creates no fills,
+   rotate to review/simplification or a different Engine Research input
+   question instead of repeating fresh-symbol replay.
+7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -143,15 +148,15 @@ docker compose config --quiet
 
 Also report:
 
-- the trace-only command used,
-- any focused trace-batch smoke/assertion command,
+- the replay-selection command used,
+- any focused replay-selection smoke/assertion command,
 - any sidecars used,
 - whether Docker/PyTorch CUDA was used and where artifacts were written,
-- whether a future replay is justified.
+- whether a future attribution or replay is justified.
 
 ## Suggested Commit Message
 
-`Run fresh-symbol trace-only batch`
+`Run fresh-symbol replay selection`
 
 ## Completion Report
 
@@ -164,7 +169,8 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced trace artifacts,
+- produced replay-selection artifacts,
+- local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,
 - next goal.

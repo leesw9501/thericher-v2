@@ -590,6 +590,11 @@
   dashboard, notification, worker, or Engine Research Agent files, wrote under
   `D:\thericher-v2\model-artifacts\data-agent`, and used no Docker/GPU compute.
   It justified a future small Engine Research trace-only GPU batch, not replay.
+- Fresh-symbol trace-only batch used Docker `research` with PyTorch CUDA on the
+  RTX 4090 and current `src` mounted read-only. It wrote trace artifacts and a
+  compact summary under `D:\thericher-v2\model-artifacts`, changed no Docker,
+  compose, dependency, scheduler, coordinator, dashboard, notification, worker,
+  or Engine Research Agent files, and added no job kind or dispatch path.
 
 ## Next Handoff
 
@@ -624,7 +629,7 @@
 - The next data-lane trace availability inventory should stay local and
   artifact-only unless it proves a small future Engine Research trace-compute
   batch is worth the GPU time.
-- The next fresh-symbol compute should use Docker `research` through the
-  existing Engine Research Agent path or the smallest trace-only equivalent;
-  do not add a scheduler, daemon, coordinator, dashboard, notification, or
-  durable multi-agent platform.
+- The next fresh-symbol replay-selection should use Docker `research` and an
+  existing broker-free replay primitive that can consume existing trace
+  artifacts. Do not add a scheduler, daemon, coordinator, dashboard,
+  notification, durable multi-agent platform, or Docker layer change.

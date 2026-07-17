@@ -2050,6 +2050,40 @@ trace-only batch for MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM before any replay
 Replay should remain held until a compatible trace actually crosses the fixed
 descriptive threshold.
 
+The bounded fresh-symbol trace-only GPU batch then completed:
+
+- Docker `research` ran with PyTorch CUDA on the RTX 4090 and current `src`
+  mounted read-only. No research-job dispatch path, job kind, scheduler, daemon,
+  coordinator, dashboard, notification loop, durable worker, or repo code was
+  added.
+- The trace-only command directly called the existing
+  `run_bounded_candidate_probability_trace` primitive for MRVL, COHR, MU, GLW,
+  INTC, SNDK, and QCOM. It used the short source-context model from
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
+  and the existing local Yahoo snapshot
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+  at `max_bars=240`.
+- Individual trace artifacts were written under
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace\engine-agent-fresh-symbol-trace-only-batch-20260717-r1-*`.
+  The compact batch summary was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`.
+- Result: all `7` traces completed with compatible source-model and data-source
+  lineage, and all `7` crossed the fixed descriptive buy threshold `0.541000`.
+  Best max probability was MRVL `0.565431`, gap `+0.024431`; then MU
+  `0.564291`, SNDK `0.560831`, COHR `0.554502`, INTC `0.552250`, GLW
+  `0.542333`, and QCOM `0.541235`.
+- The batch ran no replay, training, ablation, KIS API, broker submit,
+  credential read, network access, market-data acquisition, order intents,
+  fills, positions, broker outcomes, execution threshold, risk rule, replay
+  rule, feature rule, gate, or promotion path. Candidate summaries remain
+  `source: diagnostic_overlay`.
+
+Next, run one bounded broker-free local-paper replay-selection over the strongest
+crossing traces before broader replay. Start with MRVL, MU, SNDK, and COHR,
+consume the existing trace artifacts through the existing broker-free
+threshold-robustness/replay primitive, and verify `source: local_paper` fills
+before any attribution.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

@@ -1053,6 +1053,13 @@
   crossings and `12` clean local first-`240` candidates still needing compatible
   traces. The recommended next Engine Research step is trace-only GPU compute
   for MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM before any replay.
+- Fresh-symbol trace-only GPU batch
+  `engine-agent-fresh-symbol-trace-only-batch-20260717-r1` directly used the
+  existing trace primitive inside Docker `research` with PyTorch CUDA and wrote
+  `D:\thericher-v2\model-artifacts\candidate-probability-trace-batch\engine-agent-fresh-symbol-trace-only-batch-20260717-r1\metrics.json`.
+  All `7` traces completed and crossed the fixed `0.541000` descriptive buy
+  threshold; MRVL was strongest at `0.565431`, gap `+0.024431`. No replay,
+  orders, fills, training, ablation, new job kind, or dispatch path was added.
 
 ## Next Handoff
 
@@ -1060,11 +1067,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: run one small trace-only batch for MRVL, COHR, MU,
-  GLW, INTC, SNDK, and QCOM using the short source-context model and existing
-  local Yahoo rows. Hold replay until one compatible trace crosses the fixed
-  derived buy threshold; any later replay must stay through the existing Engine
-  Research Agent and existing `candidate_feature_branch_replay` kind.
+- Short experiments queue: run one small broker-free replay-selection over the
+  strongest crossing traces first: MRVL, MU, SNDK, and COHR. Consume the
+  existing trace artifacts through the existing threshold-robustness/replay
+  primitive, then verify all fills are `source: local_paper` before attribution.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

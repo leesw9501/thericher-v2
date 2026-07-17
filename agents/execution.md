@@ -459,6 +459,10 @@
   All candidate rows are `source: diagnostic_overlay`; trace availability is
   not an execution threshold, order-intent generator, risk rule, broker policy,
   replay rule, or live/paper KIS behavior.
+- Fresh-symbol trace-only GPU batch also ran no local-paper replay and created
+  `0` order intents, `0` fills, `0` positions, and `0` broker outcomes. The
+  crossing evidence remains `source: diagnostic_overlay` until a future
+  broker-free replay creates local-paper fills.
 
 ## Next Handoff
 
@@ -505,6 +509,6 @@
 - If a later trace/data inventory identifies a crossing candidate, replay may
   still run only through existing broker-free local-paper research jobs and
   must verify `source: local_paper` fills before any bridge or PnL attribution.
-- The immediate next trace-only batch must not create order intents or fills.
-  If it later justifies replay, keep replay broker-free and verify
-  `source: local_paper` fills before attribution.
+- The immediate next replay-selection may create local-paper fills only through
+  existing broker-free research jobs. It must not gain broker/KIS authority and
+  must verify `source: local_paper` fills before attribution.

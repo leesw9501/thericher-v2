@@ -481,13 +481,15 @@
   traces, and wrote
   `D:\thericher-v2\model-artifacts\data-agent\fresh-symbol-trace-data-availability-20260717-r1\metrics.json`.
   No data was acquired.
+- Fresh-symbol trace-only GPU batch reused the same local Yahoo snapshot for
+  MRVL, COHR, MU, GLW, INTC, SNDK, and QCOM at `max_bars=240`. All traces used
+  existing rows and wrote artifacts outside Git; no data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
-- The next data task is still not acquisition. The useful next symbols already
-  have local bars; the missing evidence is compatible trace output for MRVL,
-  COHR, MU, GLW, INTC, SNDK, QCOM, DELL, MPWR, STX, APP, and WDC.
+- The next data task is still not acquisition. The replay-selection symbols
+  MRVL, MU, SNDK, and COHR already have local rows and compatible traces.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record
