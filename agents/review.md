@@ -622,15 +622,25 @@
   feature rule, durable multi-agent platform, or execution behavior. It found
   row floor only by reusing prior AMAT-bridge lineage, so the branch stayed
   `hold_no_compute`.
+- Fresh-symbol replay probe reused the existing Engine Research Agent runner
+  and existing `candidate_feature_branch_replay` job kind, wrote one compact
+  external probe artifact, and added no code, helper, job kind, worker,
+  scheduler, dashboard, coordinator, report family, gate, auto-commit path,
+  broker authority, credential reads, data acquisition, threshold search,
+  feature rule, durable multi-agent platform, or promotion language. It
+  produced `0` fills, so repeating the same blind replay shape would be
+  process waste rather than engine progress.
 
 ## Next Handoff
 
 - Challenge any new document or workflow that does not improve a named engine
   loop.
-- Push the next task toward one bounded fresh-symbol replay probe through
-  existing single-shot runner paths only. If the operator wants more repo-owned
-  executable role agents, make that an explicit worker-expansion goal with one
-  safe role and a named engine-loop benefit.
+- Push the next task toward one bounded opportunity-prefilter before any
+  further fresh-symbol replay. A small tested selector is acceptable only if it
+  directly reduces zero-fill replay waste in the feature/model validation loop.
+  If the operator wants more repo-owned executable role agents, make that an
+  explicit worker-expansion goal with one safe role and a named engine-loop
+  benefit.
   Avoid quietly adding durable workers, daemon, scheduler, dashboard, report
   branch, broker authority, credential path, auto-commit, durable
   multi-agent-platform behavior, threshold search, feature rules, or

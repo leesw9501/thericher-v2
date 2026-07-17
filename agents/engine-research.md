@@ -1029,6 +1029,15 @@
   timing-context keys. Branch status stayed `hold_no_compute`; the next useful
   research step is fresh-symbol evidence rather than another pass over the same
   bridge rows.
+- Fresh-symbol short feature-branch replay
+  `engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1` ran
+  through the existing Engine Research Agent Docker `research` path with
+  `candidate_feature_branch_replay`. It used AAPL, ABBV, ABT, and ACN at
+  `240` bars, derived threshold pairs `0.541/0.497`, `0.542/0.497`, and
+  `0.543/0.497`, completed all `4` slices and `12` variants, but produced
+  `0` order intents, `0` local-paper fills, and `0` strict-bridge timing
+  contexts. The compact probe artifact is
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-short-replay-probe-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -1036,10 +1045,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: rotate to one bounded fresh-symbol local-paper replay
-  probe through the existing Engine Research Agent runner and existing research
-  job kinds. Exclude current baseline and prior AMAT-bridge timing contexts;
-  seek fresh non-AMAT local-paper evidence before any ablation or training.
+- Short experiments queue: do not repeat blind fresh-symbol replays. Build or
+  reuse a bounded opportunity-prefilter that ranks fresh local slices by
+  probability versus the derived buy threshold, then run at most one small
+  broker-free replay only if a threshold-crossing opportunity exists.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

@@ -461,14 +461,22 @@
   and selected `snapshot=2026-06-18` local Yahoo rows only. It confirmed ADBE,
   ADI, AEM, AMZN, and BA checked bars are present, while ADP still lacks
   `2026-06-09T14:05:00+00:00`. No data was acquired.
+- Fresh-symbol replay selection reused the same
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
+  file. AAPL, ABBV, ABT, and ACN each had at least `240` selected 1m bars,
+  `236` replay examples, no selected duplicate timestamps, no selected
+  sub-day gaps, and no selected OHLCV invariant failures. ABNB was usable but
+  skipped because its first `240` bars include one missing 1m interval; AMD was
+  skipped because it appears in prior diagnostic context. No data was acquired.
 
 ## Next Handoff
 
 - Keep data-quality checks as warnings until execution hard stops need them.
 - The next data task is still not acquisition. Prefer existing `D:\market_data`
-  rows while selecting fresh-symbol replay slices outside current baseline and
-  prior AMAT-bridge timing contexts. Record exact missing symbols, dates, or
-  artifact names only if the replay probe identifies a future data requirement.
+  rows while building an opportunity-prefilter for fresh-symbol replay slices.
+  Record exact missing symbols, dates, windows, or artifact names only if the
+  prefilter identifies a useful threshold-crossing candidate that lacks local
+  bars.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

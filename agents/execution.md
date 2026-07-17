@@ -441,6 +441,13 @@
   rules. It referenced `16` existing local-paper fill sources for `8`
   additional row-shaped candidates and kept those reconstructed inventory rows
   as `source: diagnostic_overlay`.
+- Fresh-symbol replay probe ran through the existing broker-free local-paper
+  research path only. It created `0` order intents, `0` fills, `0` positions,
+  `0` broker outcomes, and no event files with nonzero fills. Replay
+  verification reported `all_fills_local_paper: true`,
+  `non_local_fill_source_counts: {}`, and `unknown_fill_count: 0`; the compact
+  probe artifact kept summary context diagnostic-only and created no execution
+  filters, feature rules, threshold rules, or replay rules.
 
 ## Next Handoff
 
@@ -481,3 +488,6 @@
   `source: diagnostic_overlay`, and avoid execution filters, order intents,
   feature rules, threshold rules, replay rules, broker authority, and live/paper
   KIS behavior.
+- An opportunity-prefilter may rank probabilities, but it must not become an
+  execution threshold, order-intent generator, risk rule, broker policy, or
+  live/paper KIS behavior.

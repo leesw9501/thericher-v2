@@ -1929,6 +1929,50 @@ probe should seek fresh non-AMAT timing-context evidence outside the current
 baseline and prior AMAT bridge lineage while preserving local-paper and
 diagnostic source separation.
 
+The fresh-symbol local-paper replay probe then completed:
+
+- Runtime Codex sidecars covered Engine Research, Data/Infra, and
+  Review/Execution checks. They were temporary scoped helpers; no repo-owned
+  sidecar platform, scheduler, daemon, coordinator, notification loop, or
+  auto-commit worker was added.
+- Engine Research Agent queued and ran the existing
+  `candidate_feature_branch_replay` job
+  `engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1`
+  through Docker `research` with current `src` mounted read-only and artifacts
+  under `/app/model_artifacts` mapped to
+  `D:\thericher-v2\model-artifacts`.
+- The selected fresh-symbol slice set was AAPL, ABBV, ABT, and ACN, each with
+  the first `240` local Yahoo 1m bars and `236` replay examples from
+  `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`.
+  ABNB was skipped because its selected window has one missing 1m interval;
+  AMD was skipped because it appears in prior diagnostic context. Current
+  branch symbols ADBE, ADI, ADP, AEM, AMAT, AMZN, and BA remained excluded.
+- The replay used the short source-context feature branch
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`.
+  Thresholds were derived by the existing helper as `0.541/0.497`,
+  `0.542/0.497`, and `0.543/0.497`; no manual threshold search was run.
+- Replay and robustness artifacts were written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1\metrics.json`
+  and
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1-robustness\metrics.json`.
+  The compact diagnostic artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-short-replay-probe-20260717-r1\metrics.json`.
+- Result: the existing runner path completed, but produced `0` order intents,
+  `0` local-paper fills, and `0` fresh timing contexts for strict bridge work.
+  The best observed probability was ACN `0.535336`, still below the minimum
+  derived buy threshold `0.541`. Local-paper verification stayed clean:
+  `all_fills_local_paper: true`, `non_local_fill_source_counts: {}`, and
+  `unknown_fill_count: 0`.
+- The probe ran no training, ablation, data acquisition, KIS API, broker submit,
+  credential read, new job kind, helper script, execution filter, replay rule,
+  feature rule, threshold rule, or promotion gate.
+
+Next, build or reuse a bounded opportunity-prefilter before spending another
+replay on fresh symbols. The prefilter should consume existing local data and
+feature-branch probability evidence, rank candidate fresh slices by whether
+they can cross the derived buy threshold, and run at most one small replay only
+if a threshold-crossing opportunity exists.
+
 ## Daily Operator Review
 
 The operator wants daily review at 08:00 KST. Keep reports to one bundle:

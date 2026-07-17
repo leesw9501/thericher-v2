@@ -5,18 +5,19 @@ Read `HANDOFF.md` first, then continue TheRicher v2 from
 
 ## Objective
 
-Run one bounded fresh-symbol local-paper replay probe for non-AMAT evidence
-outside the current bridge lineage.
+Build the first bounded fresh-symbol replay opportunity prefilter, then run at
+most one small local-paper replay only if the prefilter finds a
+threshold-crossing opportunity.
 
 This advances feature/model research, backtest validation, PnL attribution, and
-paper-trading preparation by seeking fresh timing-context evidence rather than
-reusing the same prior AMAT-bridge rows again.
+paper-trading preparation by reducing blind zero-fill replays before any more
+model-input or training work.
 
 ## Current Agent Reality
 
-- Engine Research Agent has an executable single-shot worker:
+- Engine Research Agent has an executable single-shot Docker research worker:
   `thericher-v2-engine-research-agent`.
-- Data Agent has an executable single-shot worker:
+- Data Agent has an executable single-shot metadata worker:
   `thericher-v2-data-agent`.
 - Execution, Infra, and Review are stateboards plus temporary Codex sidecar
   roles, not repo-owned executable workers.
@@ -34,22 +35,22 @@ reusing the same prior AMAT-bridge rows again.
 - Do not create report/gate sprawl.
 - Do not create a durable multi-agent platform, scheduler, daemon,
   notification loop, coordinator, or auto-commit worker.
-- Do not add a new research job kind.
-- Do not run ablation, training, threshold search, data acquisition, or new
-  executable workers.
+- Do not add broker authority to the Engine Research Agent.
+- Do not run live or broker paper trading.
+- Do not run model training, feature-input ablation, broad threshold search, or
+  data acquisition.
 - Do not download market data into the Git workspace.
 - Do not store generated GPU/model artifacts in the repo. Use
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 - Use Docker/GPU only through the existing Engine Research Agent single-shot
-  runner and existing research job kinds if the selected replay probe requires
-  it.
-- Replay must remain broker-free local paper only. Generated fills must be
-  `source: local_paper`; reconstructed or summary rows must be
+  runner and existing research job kinds unless a tiny tested selector can run
+  locally without model artifacts entering Git.
+- Replay, if run, must remain broker-free local paper only. Generated fills
+  must be `source: local_paper`; reconstructed or summary rows must be
   `source: diagnostic_overlay`.
-- Avoid promotional model-quality language except when quoting unavoidable
-  existing artifact field names.
-- Do not convert diagnostic context into an execution filter, order intent,
-  replay rule, feature rule, threshold rule, or model-promotion rule.
+- A probability prefilter must not become an execution threshold, order-intent
+  generator, risk rule, broker policy, replay rule, feature rule, or
+  model-promotion rule.
 
 ## Required First Reads
 
@@ -74,56 +75,73 @@ reusing the same prior AMAT-bridge rows again.
    - `agents/review.md`
 
 3. Use temporary Codex sidecars for disjoint checks when useful:
-   - Engine Research: select one bounded existing feature-branch replay shape
-     and review whether the probe is narrow enough.
-   - Data/Infra: verify candidate fresh symbols have enough existing local
+   - Engine Research: review the smallest opportunity-prefilter shape and
+     whether an existing research primitive is enough.
+   - Data/Infra: verify candidate symbols/windows have enough existing local
      Yahoo rows and Docker/runner readiness if compute is needed.
-   - Review/Execution: verify local-paper-only source labels, broker
-     boundaries, and multi-agent drift.
+   - Review/Execution: verify the prefilter cannot become broker/order logic
+     and that any replay remains local-paper-only.
 
 4. Ask Claude CLI for a short drift-check before architecture-changing edits.
    If it times out, record that and keep changes tightly scoped.
 
 ## Evidence To Consume
 
-- Non-AMAT label-ready inventory:
-  `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`
-- Non-AMAT feasibility decision:
+- Fresh-symbol no-fill probe:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\engine-agent-fresh-symbol-short-replay-probe-20260717-r1\metrics.json`
+- Fresh-symbol replay artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay\engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1\metrics.json`
+- Fresh-symbol robustness artifact:
+  `D:\thericher-v2\model-artifacts\candidate-threshold-robustness\engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1-robustness\metrics.json`
+- Short source-context feature branch:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch\bounded-entry-adverse-firsteval-source-context-validation-20260716\metrics.json`
+- Prior non-AMAT decision:
   `D:\thericher-v2\model-artifacts\feature-input-ablation\engine-agent-non-amat-bridge-feasibility-decision-20260717-r1\metrics.json`
-- First-evaluation wider-holdout attribution:
-  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\bounded-entry-adverse-firsteval-source-context-wider-holdout-depth-attribution-20260717\metrics.json`
-- Existing feature-branch artifacts referenced by that attribution, especially
-  the short and depth source-context feature branches.
 - Local market data:
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m\snapshot=2026-06-18\ohlcv_1m.csv.gz`
 
 ## Required Work
 
-1. Exclude symbols and timing contexts already used by the current non-AMAT
-   baseline and prior AMAT bridge lineage:
-   - ADBE, ADI, ADP, AEM, AMAT, AMZN, and BA timing contexts already recorded
-     in the current branch.
-2. Select a very small fresh-symbol set from existing `snapshot=2026-06-18`
-   rows. Prefer symbols with at least `240` bars and no current-branch timing
-   reuse.
-3. Use only an existing feature-branch replay shape and existing research job
-   kind. Do not create a new job kind, helper, replay path, threshold search,
-   or model axis.
-4. If a replay probe is run, run one bounded broker-free local-paper replay
-   through the existing Engine Research Agent runner or the equivalent existing
-   Docker `research` command shape. Keep artifacts outside Git.
-5. If Docker/runner readiness or artifact lineage blocks a safe replay, record
-   a compact external blocked/selection artifact instead of inventing new
-   plumbing.
-6. After the probe, build one compact external artifact that records:
-   - selected symbols and exclusion rationale,
-   - replay or blocked command lineage,
-   - local-paper fill-source evidence,
-   - any fresh non-AMAT timing contexts found,
-   - whether those contexts are candidates for a later strict label-ready
-     bridge,
+1. Record why the previous fresh replay produced no fills:
+   - selected symbols AAPL, ABBV, ABT, and ACN,
+   - derived threshold pairs `0.541/0.497`, `0.542/0.497`, `0.543/0.497`,
+   - best observed probability ACN `0.535336`, below the minimum buy threshold,
+   - `0` order intents, `0` fills, and `0` strict-bridge timing contexts.
+2. Define a bounded opportunity-prefilter that ranks fresh local slices by
+   probability versus the derived buy threshold. Prefer reusing existing
+   probability-trace or robustness primitives. A small tested selector in the
+   existing research package is allowed only if it directly prevents repeated
+   zero-fill replay work and does not add a worker, scheduler, gate, or report
+   family.
+3. Exclude symbols and timing contexts already used by the current baseline,
+   prior AMAT bridge lineage, and the no-fill fresh replay:
+   - ADBE, ADI, ADP, AEM, AMAT, AMZN, BA,
+   - AAPL, ABBV, ABT, ACN for immediate replay repetition.
+4. Use existing `snapshot=2026-06-18` rows first. Avoid expensive full
+   recursive scans. Start with at most `12` fresh candidate symbols and at most
+   `240` bars per symbol unless the codebase already has a safer smaller
+   convention.
+5. Produce one compact external prefilter artifact recording:
+   - candidate symbols/windows,
+   - data row counts and selected-window warnings,
+   - probability maxima and threshold gaps,
+   - threshold-crossing candidates, if any,
+   - excluded symbols and rationale,
    - no broker/KIS/credential/data-acquisition behavior.
-7. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
+6. If no candidate crosses the derived buy threshold, stop the branch for this
+   goal and refresh `NEXT_CODEX_GOAL.md` toward a lane rotation instead of
+   forcing another replay.
+7. If one or more candidates cross the derived buy threshold, run at most one
+   bounded broker-free local-paper replay through the existing Engine Research
+   Agent runner or equivalent existing Docker `research` command shape:
+   - at most `4` symbols,
+   - at most `240` bars per symbol,
+   - existing research job kind only,
+   - artifacts outside Git.
+8. After any replay, write one compact external artifact recording local-paper
+   fill-source evidence, fresh timing contexts, and whether any contexts are
+   candidates for a later strict label-ready bridge.
+9. Refresh `NEXT_CODEX_GOAL.md` again before ending the task.
 
 ## Verification
 
@@ -137,7 +155,7 @@ docker compose config --quiet
 
 Also report:
 
-- any focused artifact-only smoke command,
+- any focused artifact or selector smoke command,
 - any Engine Research/Data Agent runner command used,
 - any sidecars used,
 - artifact paths written outside Git,
@@ -145,7 +163,7 @@ Also report:
 
 ## Suggested Commit Message
 
-`Probe fresh-symbol local-paper evidence`
+`Add fresh-symbol opportunity prefilter`
 
 ## Completion Report
 
@@ -158,7 +176,7 @@ Report:
 - data found or acquired under `D:\market_data`,
 - data still needed from the operator, if any,
 - whether GPU/Docker compute was used and where artifacts were written,
-- produced replay/diagnostic artifacts,
+- produced prefilter/replay/diagnostic artifacts,
 - local-paper source evidence,
 - diagnostic-overlay source evidence,
 - what was intentionally not built,

@@ -570,6 +570,14 @@
   used no Docker/GPU compute, changed no dependency, Docker, compose,
   scheduler, coordinator, dashboard, or worker files, and wrote
   `D:\thericher-v2\model-artifacts\feature-input-stability\engine-agent-non-amat-label-ready-inventory-20260717-r1\metrics.json`.
+- Fresh-symbol replay probe
+  `engine-agent-fresh-symbol-short-replay-aapl-abbv-abt-acn-20260717-r1` used
+  the existing Engine Research Agent single-shot runner and Docker `research`
+  service with current `src` mounted read-only. It wrote replay, robustness,
+  probability-trace, research-job, runner, and compact probe artifacts outside
+  Git under `D:\thericher-v2\model-artifacts`, cleared the external GPU lock,
+  and changed no dependency, Docker, compose, scheduler, coordinator,
+  dashboard, notification, or worker files.
 
 ## Next Handoff
 
@@ -598,6 +606,6 @@
 - After a Windows restart, keep checking Docker daemon readiness before each
   Engine Research Agent run. If the duplicate-aware follow-up needs compute,
   use the same single-shot Docker `research` path and external artifact mount.
-- The next fresh-symbol replay probe may use Docker `research` only through the
-  existing Engine Research Agent single-shot runner and existing research job
-  kinds. Do not add scheduler/coordinator plumbing.
+- The next fresh-symbol opportunity-prefilter or replay may use Docker
+  `research` only through the existing Engine Research Agent single-shot runner
+  and existing research job kinds. Do not add scheduler/coordinator plumbing.
