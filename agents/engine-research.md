@@ -1148,6 +1148,14 @@
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution\fresh-symbol-mpwr-trade-path-attribution-20260717-r1\metrics.json`.
   No replay rerun, trace recompute, training, ablation, threshold search,
   exit-policy simulation, new helper, job kind, or promotion rule was added.
+- MPWR hold/rotate decision
+  `fresh-symbol-mpwr-hold-rotate-decision-20260717-r1` consumed existing MPWR
+  replay-selection and trade-path attribution artifacts only and wrote
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`.
+  It held MPWR because duplicate-aware local-paper PnL stayed negative
+  (`-5.3088`) and the three threshold variants repeated the same four market
+  moments. No replay, trace recompute, training, ablation, threshold search,
+  exit-policy simulation, new helper, job kind, or promotion rule was added.
 
 ## Next Handoff
 
@@ -1155,11 +1163,10 @@
   Engine Research Agent and Data Agent now both have single-shot executable
   workers with disjoint queue/artifact roots. Engine Research Agent remains the
   only GPU/Docker research worker.
-- Short experiments queue: hold broader replay/training on the current
-  fresh-symbol branch. Next work should run one artifact-only MPWR hold/rotate
-  decision from replay-selection plus trade-path attribution evidence before
-  any broader replay, trace compute, training, ablation, threshold search, or
-  exit-policy work.
+- Short experiments queue: hold MPWR and the broader fresh-symbol replay branch.
+  Rotate the next long work block to Data. Do not spend GPU time on MPWR,
+  fresh-symbol replay, trace recompute, training, ablation, threshold search,
+  or exit-policy work until a later artifact defines a new bounded question.
 - Longer candidate training queue: hold until a replay/inventory artifact
   defines a specific model-input question with enough duplicate-aware context.
   Keep job kinds closed and write artifacts outside Git.

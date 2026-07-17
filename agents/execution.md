@@ -521,6 +521,12 @@
   reconstructed path context as `source: diagnostic_overlay`. It created no
   fills, orders, order intents, broker adapters, broker outcomes, execution
   filters, simulator rules, feature rules, threshold rules, or replay rules.
+- MPWR hold/rotate decision consumed existing artifacts only. It preserved the
+  `24` historical local-paper fills as evidence, used duplicate-aware
+  diagnostic-overlay context for PnL interpretation, and held MPWR without
+  creating orders, order intents, broker outcomes, execution filters, simulator
+  rules, feature rules, threshold rules, replay rules, risk rules, or broker
+  authority.
 
 ## Next Handoff
 
@@ -589,3 +595,6 @@
   duplicate-aware diagnostic-overlay context for PnL interpretation, and avoid
   creating new orders, order intents, broker outcomes, execution filters,
   simulator rules, feature rules, threshold rules, replay rules, or risk rules.
+- The next Data-lane inventory must not mutate local-paper fills, create order
+  intents, infer broker behavior, or turn data/provenance observations into
+  execution rules.

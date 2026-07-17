@@ -532,6 +532,10 @@
   `2026-06-09T14:59:00Z` to `2026-06-09T17:16:00Z`, exact fill bars present
   `8/8`, continuous MPWR 1m path across the range `138/138`, and missing bars
   `0`. No data was acquired and no operator data help is needed.
+- MPWR hold/rotate decision consumed existing external artifacts only. Data
+  sidecar verified no additional market-data read, acquisition, market-data
+  write, network access, credential read, or operator data was needed. Artifact:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`.
 
 ## Next Handoff
 
@@ -550,6 +554,11 @@
   ranges.
 - The next MPWR hold/rotate decision should consume existing external artifacts
   only. Data Agent has no acquisition task for that goal.
+- The next lane should be Data, but stay bounded to existing local data and
+  artifact provenance. Prefer a shallow, targeted inventory that identifies the
+  next useful non-MPWR evidence batch or proves no data-lane follow-up is worth
+  running. Do not acquire data unless a future objective names exact missing
+  symbols or date ranges.
 - Stop acquisition attempts when sources require credentials/payment/manual
   access, licensing is unclear, two consecutive automated attempts fail for the
   same source, or newly acquired data no longer improves the active goal. Record

@@ -649,6 +649,11 @@
   coordinator, dashboard, notification, worker, or Engine Research Agent files,
   and wrote one compact artifact under
   `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-attribution`.
+- MPWR hold/rotate decision ran locally as CPU/artifact-only work, used no
+  Docker or GPU job, changed no dependency, Docker, compose, scheduler,
+  coordinator, dashboard, notification, worker, or Engine Research Agent files,
+  and wrote one compact artifact under
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision`.
 
 ## Next Handoff
 
@@ -705,3 +710,7 @@
 - The next MPWR hold/rotate decision should stay local/artifact-only and should
   not require Docker. Do not add Docker layers, schedulers, daemons,
   coordinator plumbing, dashboard, notification, or dependency changes.
+- The next Data-lane inventory should also stay local/artifact-only unless a
+  future explicit objective proves Docker is needed. Do not add Docker layers,
+  schedulers, daemons, coordinator plumbing, dashboard, notification, durable
+  multi-agent platform, or dependency changes.

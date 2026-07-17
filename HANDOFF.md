@@ -2379,10 +2379,36 @@ The MPWR local-paper trade-path/PnL attribution then completed:
   create gates, create promotion rules, or touch Docker/dependency files.
   Docker/GPU was not used.
 
-Next, run one compact MPWR hold/rotate decision artifact that consumes only the
-MPWR replay-selection and trade-path attribution artifacts. It should decide
-whether this MPWR branch is held and which lane should rotate next, without
-running replay, training, trace compute, threshold search, or exit simulation.
+The MPWR hold/rotate decision then completed:
+
+- Temporary Codex sidecars covered Engine Research, Data, and Execution/Review
+  checks in parallel, then were closed. They were runtime collaborators only;
+  no durable multi-agent platform, scheduler, daemon, coordinator, dashboard,
+  notification loop, auto-commit path, or repo-owned worker was added.
+- The decision consumed existing external artifacts only: MPWR replay-selection,
+  MPWR trade-path attribution, trace-comparison planning, and held
+  fresh-symbol path-shape context. It did not read market data, acquire data,
+  rerun replay, train, ablate, recompute traces, search thresholds, simulate
+  exits, call KIS, read credentials, use broker APIs, or change any helper,
+  contract, job kind, Docker file, dependency, or agent governance.
+- The compact decision artifact was written outside Git:
+  `D:\thericher-v2\model-artifacts\candidate-feature-branch-replay-decision\fresh-symbol-mpwr-hold-rotate-decision-20260717-r1\metrics.json`.
+- Result: MPWR is held. Replay-selection produced `24` fills, all
+  `source: local_paper`; attribution paired them into `12` raw closed
+  segments and `0` open segments. Duplicate-aware collapse showed the raw
+  paths are `4` unique MPWR market moments repeated across three threshold
+  variants, with unique fee-aware sum `-5.3088`, `2` negative moments, and
+  `2` non-negative moments. The raw repeated sum `-15.9264` remains secondary
+  context only.
+- The decision is descriptive only. It does not claim MPWR is untradeable,
+  declare fixed thresholds bad, create broker-paper/live evidence, or create a
+  gate, promotion rule, risk rule, execution threshold, replay rule, feature
+  rule, simulator rule, or exit policy.
+
+Next, rotate to one bounded Data Agent lane inventory over existing local data
+and artifact provenance. The next goal should avoid replay, training, trace
+compute, threshold search, exit simulation, data acquisition, broad recursive
+scans, and any durable multi-agent platform work.
 
 ## Daily Operator Review
 
