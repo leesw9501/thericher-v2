@@ -2,11 +2,11 @@
 
 ## Objective
 
-Diagnose the rejected KIS virtual-paper overseas open-order inquiry using only
-public official documentation and the existing redacted failure evidence.
+Run exactly one post-diagnosis KIS virtual-paper read-only discovery through
+the existing bounded client.
 
-This advances paper-trading readiness without touching an account or submitting
-an order.
+This advances paper-trading readiness by obtaining one live-like account-state
+observation, never by submitting an order.
 
 ## Required First Reads
 
@@ -16,37 +16,41 @@ and the Data, Engine Research, Execution, and Review stateboards.
 
 ## Authority And Boundaries
 
-- Do not read `.env`, credentials, account identifiers, or `KIS_LIVE_*`.
-- Do not call a KIS API, submit, cancel, modify, or query an order/account, or
-  change `THERICHER_MODE`.
-- Public official KIS documentation and official GitHub examples may be read.
-- Keep the existing redacted `open_orders_rejected` evidence immutable.
-- Do not propose a paper capital envelope, canary order, live behavior, new
-  broker framework, worker, scheduler, dashboard, report/gate family, or model
-  change.
+- The existing operator approval permits one use of only the four
+  `KIS_PAPER_*` values through `load_kis_paper_config`; do not inspect or print
+  `.env`, credentials, account identifiers, or `KIS_LIVE_*`.
+- Use only the fixed virtual host and existing `execution.kis_readonly` client.
+  Make one discovery attempt; do not retry it automatically.
+- Keep `THERICHER_MODE=off`; do not submit, modify, or cancel an order, query a
+  live account, allocate paper capital, or propose a capital envelope.
+- Persist only the existing external redacted evidence shape under
+  `D:\thericher-v2\model-artifacts`. Do not copy account state into Git, logs,
+  Claude prompts, or the completion report.
+- Do not add a broker framework, worker, scheduler, dashboard, report/gate
+  family, market-data change, or model work.
 
 ## Required Work
 
-1. Execution compares the exact virtual-paper host, endpoint, method, TR ID,
-   required query fields, continuation behavior, and account-product handling
-   in `execution.kis_readonly` against current official sources.
-2. If a documented mismatch is proven, make only the smallest isolated
-   read-only correction and add fake-transport tests. If no mismatch is proven,
-   record the precise non-secret operator verification needed for a future retry.
-3. Data and Review independently check that no market-data, credential, or
-   process-sprawl change leaked into the diagnosis.
-4. Refresh stateboards, `HANDOFF.md`, and this next single goal; verify, commit,
-   and push.
+1. Execution runs one bounded discovery using the existing CLI/client. It must
+   preserve the prior failure artifact, keep submission disabled, and write one
+   new external evidence artifact only for this attempt.
+2. If it fails closed, do not retry. Inspect only its status, reason, fixed
+   endpoint/TR ID, and HTTP-status metadata; never persist or report response
+   text or response-derived codes.
+3. If it collects a snapshot, confirm only that the reconciliation remains
+   `safe_to_submit: false`; do not expose values or advance to capital planning.
+4. Data and Review confirm that the run changed no market data and added no
+   process sprawl. Refresh stateboards, `HANDOFF.md`, and this next single goal,
+   then verify, commit, and push.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
 `docker compose --env-file .env.example config --quiet`.
 
-Report the official sources consulted, exact proven mismatch or remaining
-operator check, tests, commit/push result, intentionally omitted work, and the
-next recommended goal.
+Report only the safe discovery outcome, external artifact path, tests,
+commit/push result, intentionally omitted work, and the next recommended goal.
 
 ## Suggested Commit Message
 
-`Diagnose KIS paper open-order access`
+`Retry KIS paper read-only discovery`

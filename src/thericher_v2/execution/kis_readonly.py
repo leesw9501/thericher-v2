@@ -34,6 +34,8 @@ KIS_PAPER_ENV_KEYS = (
     "KIS_PAPER_ACCOUNT_PRODUCT_CODE",
 )
 KIS_PAPER_US_EXCHANGES = ("NASD", "NYSE", "AMEX")
+# KIS documents `inquire-nccs` NASD as the single US-wide query value.
+KIS_PAPER_OPEN_ORDER_QUERY_EXCHANGES = ("NASD",)
 KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE = "NASD"
 KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL = "SPY"
 KIS_PAPER_ORDERABLE_REFERENCE_PRICE = Decimal("1")
@@ -43,8 +45,9 @@ MAX_KIS_PAPER_BALANCE_PAGES = 10
 class KisPaperReadOnlyError(RuntimeError):
     """A non-secret reason why a read-only discovery must fail closed."""
 
-    def __init__(self, code: str) -> None:
+    def __init__(self, code: str, *, diagnostic: Mapping[str, str] | None = None) -> None:
         self.code = code
+        self.diagnostic = dict(diagnostic or {})
         super().__init__(code)
 
 
@@ -400,6 +403,7 @@ class KisPaperDiscoveryOutcome:
     captured_at: datetime
     snapshot: KisPaperReadOnlySnapshot | None = None
     reconciliation: KisPaperReadOnlyReconciliation | None = None
+    diagnostic: Mapping[str, str] = field(default_factory=dict)
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -409,6 +413,22 @@ class KisPaperDiscoveryOutcome:
             self.snapshot is not None or self.reconciliation is not None
         ):
             raise ValueError("failed discovery must not retain partial account evidence")
+        if self.status == "collected" and self.diagnostic:
+            raise ValueError("collected discovery must not retain failure diagnostics")
+        if set(self.diagnostic) - {
+            "endpoint",
+            "tr_id",
+            "http_status",
+        }:
+            raise ValueError("read-only diagnostics must be an allowlisted string mapping")
+        if any(
+            not isinstance(key, str) or not isinstance(value, str)
+            for key, value in self.diagnostic.items()
+        ):
+            raise ValueError("read-only diagnostics must be an allowlisted string mapping")
+        if self.diagnostic:
+            _validate_read_only_diagnostic(self.diagnostic)
+        object.__setattr__(self, "diagnostic", dict(self.diagnostic))
         object.__setattr__(self, "captured_at", require_utc(self.captured_at, "captured_at"))
 
     def evidence_payload(self) -> dict[str, Any]:
@@ -422,6 +442,8 @@ class KisPaperDiscoveryOutcome:
             "submit_capability": False,
         }
         if self.snapshot is None or self.reconciliation is None:
+            if self.diagnostic:
+                payload["diagnostic"] = dict(self.diagnostic)
             return payload
         payload["snapshot"] = {
             "identity": {
@@ -551,7 +573,11 @@ class KisPaperReadOnlyClient:
                 query=query,
                 continuation_header=continuation_header,
             )
-            payload = _successful_payload(response, "balance_rejected")
+            payload = _successful_payload(
+                response,
+                "balance_rejected",
+                endpoint=KIS_PAPER_BALANCE_ENDPOINT,
+            )
             positions.extend(_parse_balance_positions(payload, exchange, captured_at))
             continuation = response.header("tr_cont").strip().upper()
             if continuation not in {"M", "F"}:
@@ -586,7 +612,11 @@ class KisPaperReadOnlyClient:
                 "ITEM_CD": KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL,
             },
         )
-        payload = _successful_payload(response, "orderable_funds_rejected")
+        payload = _successful_payload(
+            response,
+            "orderable_funds_rejected",
+            endpoint=KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
+        )
         output = payload.get("output")
         if not isinstance(output, Mapping):
             raise KisPaperReadOnlyError("orderable_funds_response_incomplete")
@@ -619,7 +649,7 @@ class KisPaperReadOnlyClient:
         captured_at: datetime,
     ) -> KisPaperOpenOrdersSnapshot:
         orders: list[KisPaperOpenOrder] = []
-        for exchange in KIS_PAPER_US_EXCHANGES:
+        for exchange in KIS_PAPER_OPEN_ORDER_QUERY_EXCHANGES:
             query = {
                 "CANO": self._config.account_number,
                 "ACNT_PRDT_CD": self._config.account_product_code,
@@ -636,8 +666,12 @@ class KisPaperReadOnlyClient:
                     query=query,
                     continuation_header=continuation_header,
                 )
-                payload = _successful_payload(response, "open_orders_rejected")
-                orders.extend(_parse_open_orders(payload, exchange, captured_at))
+                payload = _successful_payload(
+                    response,
+                    "open_orders_rejected",
+                    endpoint=KIS_PAPER_OPEN_ORDERS_ENDPOINT,
+                )
+                orders.extend(_parse_open_orders(payload, captured_at))
                 continuation = response.header("tr_cont").strip().upper()
                 if continuation not in {"M", "F"}:
                     break
@@ -678,7 +712,7 @@ class KisPaperReadOnlyClient:
             "tr_id": endpoint.tr_id,
             "custtype": "P",
         }
-        if continuation_header:
+        if continuation_header or endpoint == KIS_PAPER_OPEN_ORDERS_ENDPOINT:
             headers["tr_cont"] = continuation_header
         return self._transport.request(
             KisHttpRequest(
@@ -771,6 +805,7 @@ def run_kis_paper_readonly_discovery(
             status="failed_closed",
             reason_code=error.code,
             captured_at=captured_at,
+            diagnostic=error.diagnostic,
         )
     except Exception:
         outcome = KisPaperDiscoveryOutcome(
@@ -929,14 +964,54 @@ def _require_http_success(response: KisHttpResponse, code: str) -> None:
         raise KisPaperReadOnlyError(code)
 
 
-def _successful_payload(response: KisHttpResponse, code: str) -> Mapping[str, Any]:
-    _require_http_success(response, code)
-    payload = response.payload()
-    if payload.get("rt_cd") != "0":
-        raise KisPaperReadOnlyError(code)
+def _successful_payload(
+    response: KisHttpResponse,
+    code: str,
+    *,
+    endpoint: KisPaperReadOnlyEndpoint,
+) -> Mapping[str, Any]:
+    try:
+        payload = response.payload()
+    except KisPaperReadOnlyError as error:
+        if response.status_code != 200:
+            raise KisPaperReadOnlyError(
+                code,
+                diagnostic=_failure_diagnostic(response, endpoint),
+            ) from error
+        raise
+    if response.status_code != 200 or payload.get("rt_cd") != "0":
+        raise KisPaperReadOnlyError(
+            code,
+            diagnostic=_failure_diagnostic(response, endpoint),
+        )
     return payload
 
 
+def _failure_diagnostic(
+    response: KisHttpResponse,
+    endpoint: KisPaperReadOnlyEndpoint,
+) -> dict[str, str]:
+    """Persist only fixed request identity and safe response codes, never free text."""
+
+    diagnostic = {
+        "endpoint": endpoint.name,
+        "tr_id": endpoint.tr_id,
+        "http_status": str(response.status_code),
+    }
+    return diagnostic
+
+
+def _validate_read_only_diagnostic(diagnostic: Mapping[str, str]) -> None:
+    required = {"endpoint", "tr_id", "http_status"}
+    if not required <= set(diagnostic):
+        raise ValueError("read-only diagnostics must identify the failed request")
+    endpoint_by_name = {endpoint.name: endpoint.tr_id for endpoint in KIS_PAPER_READ_ONLY_ENDPOINTS}
+    endpoint_name = diagnostic["endpoint"]
+    if endpoint_by_name.get(endpoint_name) != diagnostic["tr_id"]:
+        raise ValueError("read-only diagnostics must use an allowlisted endpoint")
+    status = diagnostic["http_status"]
+    if not status.isdecimal() or not 100 <= int(status) <= 599:
+        raise ValueError("read-only diagnostic status must be an HTTP status")
 def _parse_balance_positions(
     payload: Mapping[str, Any],
     expected_exchange: str,
@@ -987,7 +1062,6 @@ def _ensure_unique_positions(positions: list[KisPaperPosition]) -> None:
 
 def _parse_open_orders(
     payload: Mapping[str, Any],
-    expected_exchange: str,
     captured_at: datetime,
 ) -> list[KisPaperOpenOrder]:
     raw_rows = payload.get("output")
@@ -1002,7 +1076,7 @@ def _parse_open_orders(
         if not isinstance(row, Mapping):
             raise KisPaperReadOnlyError("open_orders_response_incomplete")
         exchange = _response_text(row, "ovrs_excg_cd", "open_orders_response_incomplete").upper()
-        if exchange != expected_exchange:
+        if exchange not in KIS_PAPER_US_EXCHANGES:
             raise KisPaperReadOnlyError("open_orders_response_incomplete")
         requested_quantity = _response_decimal(
             row, "ft_ord_qty", "open_orders_response_incomplete"

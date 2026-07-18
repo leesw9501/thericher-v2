@@ -68,12 +68,19 @@
   allowlisting, no order actions, complete typed open-order parsing, redaction,
   external-only evidence, and fail-closed reconciliation. The focused suite
   passed before the one corrected real discovery attempt.
+- Public official samples now confirm the virtual `VTTS3018R` mapping, GET
+  query shape, `M`/`F` to `N` continuation, and the US-wide `NASD` behavior of
+  `inquire-nccs`. The reader now makes one `NASD` open-order query, accepts
+  mixed US venue rows, and emits only fixed endpoint/TR ID plus HTTP status on
+  a rejection; it never persists response text or response-derived codes.
+- The existing `open_orders_rejected` evidence has no response status or server
+  detail, so this is a spec alignment rather than a proven root-cause fix.
 
 ## Current Objective
 
-- Diagnose the rejected virtual-paper overseas open-order read against public
-  official documentation only. This is an offline comparison: do not read
-  `.env`, call KIS, or perform any account or order action.
+- Run one already approved virtual-paper read-only discovery after the public
+  spec alignment. The existing loader may read only its four paper keys; do not
+  inspect `.env` manually, read live keys, submit, modify, cancel, or retry.
 
 ## Recovery
 
@@ -84,15 +91,14 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
-- Do not automatically retry the corrected KIS discovery. Preserve its
-  non-secret fail-closed evidence. A future explicitly bounded retry must first
-  establish why the virtual-paper open-order read was rejected without exposing
-  account or credential values.
+- The next one-time retry must preserve the prior failure artifact and use the
+  fixed reader only. If it fails, do not retry; inspect only its redacted
+  endpoint/TR ID/HTTP-status metadata before choosing the next action.
 
 ## Ready Queue
 
-1. Keep the read-only KIS boundary isolated and await a later approved,
-   non-secret diagnosis or retry of the rejected virtual-paper open-order read.
+1. Run one approved, non-secret read-only retry of the corrected virtual-paper
+   open-order discovery, then stop regardless of outcome.
 2. After a complete typed snapshot exists, reconcile it without submit/cancel
    behavior and then propose a paper capital envelope for operator approval.
 3. Keep pure risk integration and append-only execution events as later bounded
@@ -100,11 +106,10 @@
 
 ## Operator Help
 
-- No capital decision is ready. Before a future retry, the operator may need to
-  verify that the configured virtual account supports the overseas-stock
-  open-order inquiry and its account-product pairing; no secret or account
-  number is needed in the report. The paper capital envelope remains the next
-  decision only after successful reconciliation.
+- No capital decision is ready. If the one corrected retry still fails, the
+  next non-secret check is whether the virtual Open API app is paired with the
+  intended overseas-stock paper account and its product suffix. The paper
+  capital envelope remains a later decision after successful reconciliation.
 
 ## Must Not
 

@@ -44,6 +44,8 @@ class FakeKisTransport:
     reject_balance: bool = False
     reject_open_orders: bool = False
     partial_open_orders: bool = False
+    open_order_exchange: str = "NASD"
+    paginated_open_orders: bool = False
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -52,14 +54,47 @@ class FakeKisTransport:
         tr_id = request.headers["tr_id"]
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
             if self.reject_open_orders:
-                return KisHttpResponse.from_payload({"rt_cd": "1"})
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "1",
+                        "msg_cd": "mock-server-code-should-not-persist",
+                        "msg1": "must-not-persist-free-text",
+                    },
+                    status_code=403,
+                )
             if self.partial_open_orders:
                 return KisHttpResponse.from_payload(
                     {"rt_cd": "0", "output": []},
                     headers={"tr_cont": "M"},
                 )
+            if self.paginated_open_orders:
+                if request.headers["tr_cont"] == "":
+                    return KisHttpResponse.from_payload(
+                        {
+                            "rt_cd": "0",
+                            "output": [_open_order_payload(exchange="NASD")],
+                            "ctx_area_fk200": "next-fk",
+                            "ctx_area_nk200": "next-nk",
+                        },
+                        headers={"tr_cont": "M"},
+                    )
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output": [
+                            _open_order_payload(
+                                exchange="NYSE",
+                                order_number="ORD-123456790",
+                            )
+                        ],
+                    }
+                )
             exchange = request.query["OVRS_EXCG_CD"]
-            rows = [_open_order_payload()] if exchange == "NASD" else []
+            rows = (
+                [_open_order_payload(exchange=self.open_order_exchange)]
+                if exchange == "NASD"
+                else []
+            )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": rows})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
             if self.reject_balance:
@@ -183,12 +218,10 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
 
     snapshot = client.snapshot()
 
-    assert len(transport.requests) == 8
+    assert len(transport.requests) == 6
     assert transport.requests[0].method == "POST"
     assert all(request.method == "GET" for request in transport.requests[1:])
     assert [request.headers["tr_id"] for request in transport.requests[1:]] == [
-        KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
-        KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
         KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
         KIS_PAPER_BALANCE_ENDPOINT.tr_id,
         KIS_PAPER_BALANCE_ENDPOINT.tr_id,
@@ -203,6 +236,9 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
         "https://openapivts.koreainvestment.com:29443"
         "/uapi/overseas-stock/v1/trading/inquire-nccs",
     }
+    assert transport.requests[1].query["OVRS_EXCG_CD"] == "NASD"
+    assert transport.requests[1].headers["tr_cont"] == ""
+    assert all("tr_cont" not in request.headers for request in transport.requests[2:])
     assert snapshot.identity.masked_account == "****5678-**"
     assert snapshot.cash.available_cash == Decimal("1200.50")
     assert snapshot.orderable_funds.orderable_funds == Decimal("1199.75")
@@ -372,6 +408,51 @@ def test_open_order_evidence_rejection_or_partial_response_fails_closed(
     assert "super-secret-value" not in evidence
     assert "12345678" not in evidence
     assert "snapshot" not in evidence
+    if reason_code == "open_orders_rejected":
+        assert json.loads(evidence)["diagnostic"] == {
+            "endpoint": "open_orders",
+            "tr_id": KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
+            "http_status": "403",
+        }
+        assert "must-not-persist-free-text" not in evidence
+        assert "mock-server-code-should-not-persist" not in evidence
+
+
+@pytest.mark.parametrize("exchange", ("NASD", "NYSE", "AMEX"))
+def test_nasd_open_order_query_accepts_documented_us_wide_rows(exchange: str) -> None:
+    transport = FakeKisTransport(open_order_exchange=exchange)
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert snapshot.open_orders.orders[0].exchange == exchange
+    open_order_requests = [
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id
+    ]
+    assert len(open_order_requests) == 1
+    assert open_order_requests[0].query["OVRS_EXCG_CD"] == "NASD"
+    assert open_order_requests[0].headers["tr_cont"] == ""
+
+
+def test_nasd_open_order_query_preserves_mixed_rows_and_continuation() -> None:
+    transport = FakeKisTransport(paginated_open_orders=True)
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert {order.exchange for order in snapshot.open_orders.orders} == {"NASD", "NYSE"}
+    open_order_requests = [
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id
+    ]
+    assert len(open_order_requests) == 2
+    assert open_order_requests[0].headers["tr_cont"] == ""
+    assert open_order_requests[0].query["CTX_AREA_FK200"] == ""
+    assert open_order_requests[0].query["CTX_AREA_NK200"] == ""
+    assert open_order_requests[1].headers["tr_cont"] == "N"
+    assert open_order_requests[1].query["CTX_AREA_FK200"] == "next-fk"
+    assert open_order_requests[1].query["CTX_AREA_NK200"] == "next-nk"
 
 
 def test_evidence_root_inside_repository_is_rejected() -> None:
@@ -387,6 +468,32 @@ def test_evidence_root_inside_repository_is_rejected() -> None:
             outcome,
             artifact_root=repository_root / "model-artifacts",
             repository_root=repository_root,
+        )
+
+
+def test_failure_diagnostics_reject_unallowlisted_fields_or_mismatched_request_identity() -> None:
+    with pytest.raises(ValueError, match="allowlisted string mapping"):
+        KisPaperDiscoveryOutcome(
+            status="failed_closed",
+            reason_code="open_orders_rejected",
+            captured_at=NOW,
+            diagnostic={
+                "endpoint": "open_orders",
+                "tr_id": KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
+                "http_status": "403",
+                "opaque_server_value": "tokenlike-response-value",
+            },
+        )
+    with pytest.raises(ValueError, match="allowlisted endpoint"):
+        KisPaperDiscoveryOutcome(
+            status="failed_closed",
+            reason_code="open_orders_rejected",
+            captured_at=NOW,
+            diagnostic={
+                "endpoint": "open_orders",
+                "tr_id": KIS_PAPER_BALANCE_ENDPOINT.tr_id,
+                "http_status": "403",
+            },
         )
 
 
@@ -410,11 +517,15 @@ def _position_payload() -> dict[str, str]:
     }
 
 
-def _open_order_payload() -> dict[str, str]:
+def _open_order_payload(
+    *,
+    exchange: str = "NASD",
+    order_number: str = "ORD-123456789",
+) -> dict[str, str]:
     return {
-        "odno": "ORD-123456789",
+        "odno": order_number,
         "pdno": "SPY",
-        "ovrs_excg_cd": "NASD",
+        "ovrs_excg_cd": exchange,
         "tr_crcy_cd": "USD",
         "sll_buy_dvsn_cd": "02",
         "ft_ord_qty": "5",

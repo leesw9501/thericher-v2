@@ -48,10 +48,11 @@ success metrics.
 
 ## Current Boundaries
 
-- The next bounded KIS diagnosis reads no `.env`, makes no KIS API call, and
-  does not access an account. It may consult public official documentation
-  only. Order submit/cancel, paper capital, `KIS_LIVE_*`, live behavior, and
-  mode changes remain disabled.
+- The next bounded KIS retry may run the existing read-only virtual-paper
+  discovery exactly once. Its loader may read only the four approved
+  `KIS_PAPER_*` values; do not inspect `.env` manually or read `KIS_LIVE_*`.
+  Order submit/cancel, paper capital, live behavior, and mode changes remain
+  disabled. A failed run is not retried automatically.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -239,6 +240,18 @@ evidence under `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly`.
 No account snapshot, cash, position, open-order record, order action, capital
 allocation, or live behavior was produced.
 
+An offline comparison against the current official
+[inquire-nccs sample](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_nccs/inquire_nccs.py)
+and its shared
+[virtual-environment helper](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/kis_auth.py)
+confirmed the pinned host, GET path, virtual `VTTS3018R`, 8-2 account shape,
+query fields, and `M`/`F` to `N` continuation. It also documented that one
+`NASD` query is US-wide. The reader now issues that single query, accepts its
+`NASD`/`NYSE`/`AMEX` rows, and sends the documented empty initial `tr_cont` only
+for this endpoint. It records only fixed endpoint/TR ID and HTTP status on a
+future rejection, never response text or response-derived codes. The prior
+generic failure cannot prove a root cause.
+
 KIS paper is an early execution milestone, not a reward for model profitability.
 After the approved read-only discovery reconciles buying power, Codex proposes a
 paper capital envelope based on the smaller of actual orderable paper funds and
@@ -291,7 +304,7 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now performs an offline public-document diagnosis of the
-rejected KIS virtual-paper open-order query. The KIS capital envelope is not
-ready until a future complete read-only reconciliation exists. Paid data, order
-submission, and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now runs one approved, post-diagnosis read-only discovery.
+The KIS capital envelope is not ready until a future complete read-only
+reconciliation exists. Paid data, order submission, and live capital remain
+separate future decisions.
