@@ -5,8 +5,12 @@
 - Broker-neutral lifecycle readiness is implemented with an offline fake
   transport and an explicit local persistence path.
 - KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
-  read-only virtual-account discovery while `THERICHER_MODE=off`; no credential
-  has yet been read and no account, order, or capital evidence exists.
+  read-only virtual-account discovery while `THERICHER_MODE=off`. The initial
+  balance probe failed closed, then the corrected open-order-first discovery
+  wrote only
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20260718T075158554844Z-failed_closed.json`
+  with reason `open_orders_rejected`. Neither artifact retains an account
+  snapshot, position, cash, orderable-funds, or open-order record.
 - Existing broker-free fills remain labeled `source: local_paper`; fake broker
   fills use `source: in_memory_broker`.
 
@@ -52,6 +56,18 @@
   service. Fill time, open price, and `local_paper` source are unchanged.
 - Focused evidence: `tests/test_broker_lifecycle.py` and
   `tests/test_broker_boundary.py` pass together without network or credentials.
+- `execution.kis_readonly` is a separate, typed virtual-paper discovery
+  boundary. It accepts only the four approved paper `.env` keys, pins the exact
+  virtual host, uses injected transport, permits only fixed balance,
+  orderable-funds, and open-order reads, and emits redacted external evidence.
+  A collected snapshot requires complete paginated open-order evidence; an
+  unavailable or partial response fails closed without a synthetic empty view.
+  It has no order action path and does not alter the disabled broker adapter or
+  `local_paper`.
+- `tests/test_kis_readonly.py` proves host/config rejection, fixed request
+  allowlisting, no order actions, complete typed open-order parsing, redaction,
+  external-only evidence, and fail-closed reconciliation. The focused suite
+  passed before the one corrected real discovery attempt.
 
 ## Recovery
 
@@ -62,20 +78,27 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
+- Do not automatically retry the corrected KIS discovery. Preserve its
+  non-secret fail-closed evidence. A future explicitly bounded retry must first
+  establish why the virtual-paper open-order read was rejected without exposing
+  account or credential values.
 
 ## Ready Queue
 
-1. Add the smallest read-only KIS paper boundary for masked account identity,
-   cash, orderable funds, positions, and open orders using only `KIS_PAPER_*`.
-2. Produce one typed snapshot and reconcile it without submit/cancel behavior,
-   then propose a paper capital envelope for operator approval.
+1. Keep the read-only KIS boundary isolated and await a later approved,
+   non-secret diagnosis or retry of the rejected virtual-paper open-order read.
+2. After a complete typed snapshot exists, reconcile it without submit/cancel
+   behavior and then propose a paper capital envelope for operator approval.
 3. Keep pure risk integration and append-only execution events as later bounded
    steps after capital and submit authority exist.
 
 ## Operator Help
 
-- None before read-only discovery. The paper capital envelope is the next
-  operator decision after successful reconciliation.
+- No capital decision is ready. Before a future retry, the operator may need to
+  verify that the configured virtual account supports the overseas-stock
+  open-order inquiry and its account-product pairing; no secret or account
+  number is needed in the report. The paper capital envelope remains the next
+  decision only after successful reconciliation.
 
 ## Must Not
 

@@ -578,7 +578,18 @@ def _external_snapshot_dir(path: Path, *, repo_root: Path | None) -> Path:
     if repo_root is not None:
         root = Path(repo_root).resolve(strict=False)
         if snapshot == root or snapshot.is_relative_to(root):
-            raise ValueError("corporate-action snapshot must be outside Git")
+            docker_mount_roots = (
+                Path("/app/market_data").resolve(),
+                Path("/app/model_artifacts").resolve(),
+            )
+            if not (
+                root == Path("/app").resolve()
+                and any(
+                    snapshot == mount_root or snapshot.is_relative_to(mount_root)
+                    for mount_root in docker_mount_roots
+                )
+            ):
+                raise ValueError("corporate-action snapshot must be outside Git")
     if any((parent / ".git").exists() for parent in (snapshot, *snapshot.parents)):
         raise ValueError("corporate-action snapshot must be outside Git")
     return snapshot

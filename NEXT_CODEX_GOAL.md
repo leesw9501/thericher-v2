@@ -2,66 +2,55 @@
 
 ## Objective
 
-Run two non-conflicting lanes in parallel:
+Build one compact, reproducible PnL-attribution view for the completed
+development-only explicit-event replay `raw-d1-explicit-events-20260718-r3`.
 
-- qualify Tiingo EOD distribution and split evidence for `SPY`, `QQQ`, and
-  `IWM`, then run the frozen 36-cell explicit-event replay if accepted;
-- establish the first read-only KIS paper account snapshot and reconciliation
-  without submitting, cancelling, or modifying an order.
+This advances PnL attribution. It must explain local-paper trade, cost, and
+realized-PnL evidence without making a model-selection or profitability claim.
 
-This advances data collection, feature/model validation, and paper-trading
-readiness.
+## Required First Reads
 
-## Approved Authority
+Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`,
+`VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
+`agents/README.md`, and the Data, Engine Research, Execution, and Review
+stateboards.
 
-- Read only `TIINGO_API_TOKEN` and `KIS_PAPER_*` from the ignored root `.env`.
-- Use Tiingo's standard EOD endpoint for the three fixed ETFs.
-- Use KIS virtual-account endpoints only for account identity, cash, orderable
-  funds, positions, and open orders.
-- Keep `THERICHER_MODE=off`. Never print or persist secrets or unmasked account
-  identifiers, including in Git, artifacts, logs, tests, or Claude prompts.
+## Authority And Boundaries
 
-No paid data, KIS order submit/cancel, paper capital authority, KIS live
-credential access, live behavior, or mode change is approved.
+- Use only immutable local data and artifacts already under `D:\market_data`
+  and `D:\thericher-v2\model-artifacts`.
+- Do not read `.env`, call a network API, access KIS, acquire data, submit an
+  order, change `THERICHER_MODE`, or use live credentials.
+- Do not retrain, use CUDA, create new candidates, change checkpoints, rank,
+  select, promote, or claim profitability.
+- Keep source artifacts immutable; write at most one new external attribution
+  artifact under `D:\thericher-v2\model-artifacts`.
+- Preserve `source: local_paper`, the r3 summary hash
+  `sha256:3cac5f0b14e602c6a0043bb141fa7d6add1ca02b8ab4e214145443a1d8711609`,
+  and the parent `unsupported` verdict.
 
 ## Required Work
 
-1. Data preserves exact Tiingo EOD responses for `2022-11-22` through
-   `2026-06-22` under `D:\market_data`, then builds and validates one immutable
-   snapshot from `divCash` and `splitFactor` with r2 lineage.
-2. Independent Validation checks rights, full observed-session coverage, date
-   semantics, hashes, event mapping, and retrospective-only limits.
-3. Research runs the existing 18 baseline and 18 candidate replays only if the
-   snapshot is accepted. Reuse all six checkpoint bytes and train zero models.
-4. Execution adds the smallest read-only KIS paper boundary needed to fetch and
-   type account, buying-power, position, and open-order evidence, then performs
-   one masked snapshot and reconciliation. It must have no submit side effect.
-5. Codex integrates both lanes, runs simplification review, refreshes stateboards
-   and the next single goal, verifies, commits, and pushes.
-
-A blocked Data or KIS source must not stop the other ready lane. After read-only
-KIS reconciliation, propose a paper capital envelope for operator approval; do
-not place the canary order in this objective.
-
-## Boundaries
-
-- Keep raw r2 bars, existing fills, source summaries, checkpoint bytes, and the
-  parent `unsupported` verdict unchanged.
-- No ranking, promotion, candidate selection, sealed-holdout use, profitability
-  claim, new training, scheduler, daemon, dashboard, report/job family, durable
-  role, or broad broker/data framework.
-- Data stays under `D:\market_data`; generated evidence stays under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- Missing, blank, rejected, stale, mismatched, or incomplete credential/account
-  evidence fails closed without exposing its value.
+1. Engine Research owns a small read-only consumer of r3 summary/event evidence
+   that aggregates realized PnL, fees, slippage, trade counts, and flat-ending
+   state by fixed cell. It must verify referenced external artifact hashes.
+2. Data independently confirms the attribution reads the pinned r2 and Tiingo
+   lineage only, without rewriting snapshots or interpreting adjusted fields.
+3. Review checks that the result remains a single evidence artifact rather than
+   a dashboard, report family, gate, scheduler, or promotion mechanism.
+4. Add focused tests for local-only operation, artifact hash failure, immutable
+   source handling, and no broker/credential/network path.
+5. Refresh stateboards, `HANDOFF.md`, and this next single goal; verify, commit,
+   and push.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
-`docker compose config --quiet`. Report source coverage, replay results, masked
-KIS facts, reconciliation, GPU use, intentionally omitted work, commit hash,
-and push result.
+`docker compose --env-file .env.example config --quiet`.
+
+Report the external attribution artifact hash, data lineage checked, tests,
+commit/push result, intentionally omitted work, and the next recommended goal.
 
 ## Suggested Commit Message
 
-`Run event replay and inspect KIS paper account`
+`Add explicit-event replay attribution`

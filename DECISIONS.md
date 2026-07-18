@@ -1153,3 +1153,18 @@ Codex proposes a capital envelope for a separate operator decision.
 Reason: authenticated EOD data closes the current corporate-action evidence gap,
 while read-only paper facts advance execution readiness without conflating
 credential availability with order or capital authority.
+
+## 2026-07-18 - Explicit-event replay preserves the unsupported verdict
+
+Decision: accept `raw-d1-explicit-events-20260718-r3` only as retrospective,
+development-only replay evidence. It reused the fixed six checkpoint bytes on
+CPU, trained zero models, executed 18 baseline and 18 candidate cells, kept all
+fills `source: local_paper`, and ended flat. The summary SHA-256 is
+`3cac5f0b14e602c6a0043bb141fa7d6add1ca02b8ab4e214145443a1d8711609`.
+The parent factor-sensitivity verdict remains `unsupported`; r3 cannot rank,
+select, promote, or support a profitability claim.
+
+Reason: explicit Tiingo event evidence removed the current date-mapping
+assumption without changing the original candidate set, checkpoints, or
+training. A compact read-only attribution is the next useful question; blind
+GPU search would not resolve the existing falsification result.

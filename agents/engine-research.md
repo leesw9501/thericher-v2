@@ -8,8 +8,9 @@
   eligible and ranking/holdout ineligible.
 - The CUDA evidence is structurally valid but the factor sensitivity verdict is
   `unsupported`; no candidate is selected or promoted.
-- The explicit-event replay preparation contract is implemented, but no
-  accepted event snapshot exists and no replay or training is running.
+- Data's Tiingo EOD snapshot is loader-attested for r2, and frozen replay
+  `raw-d1-explicit-events-20260718-r3` completed its 36 cells on CPU with zero
+  training. It preserves the parent `unsupported` verdict.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -41,18 +42,36 @@
 
 ## Current Objective
 
-- Wait for Data to provide a loader-attested corporate-action snapshot from the
-  approved standard Tiingo EOD acquisition.
-- Then reuse the existing six checkpoints for the frozen 36-cell explicit-event
-  replay. Do not retrain, change candidates, rank, or select a model.
+- Produce one compact, read-only PnL attribution comparison from the immutable
+  r3 summary, event evidence, and validation artifacts. It must describe
+  evidence, costs, and trade counts without ranking, selecting, or promoting a
+  model.
+
+## Explicit-Event Replay
+
+- `scripts/run_frozen_explicit_event_replay.py` is the sole CLI bridge. Its
+  default is preparation only; the explicit `--execute` path runs only the
+  frozen 36 local-paper cells, reads no environment or network data, probes no
+  CUDA device, and trains zero models.
+- Authoritative completed evidence is
+  `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-explicit-events-20260718-r3\summary.json`
+  with SHA-256
+  `3cac5f0b14e602c6a0043bb141fa7d6add1ca02b8ab4e214145443a1d8711609`.
+  It has 18 baseline and 18 candidate cells, 145 independently rechecked
+  artifact hashes including the source summary, `source: local_paper` fills,
+  flat final positions, `torch_cpu` inference, and zero training runs.
+- The earlier r1 interruption and r2 summary-write failure are incomplete and
+  non-authoritative external recovery evidence. Preserve them; do not reuse or
+  overwrite either run id.
 
 ## Breadth Queue
 
-1. Receive loader-attested event dates, coverage, and provenance from Data.
-2. Prepare the frozen replay and verify r2 lineage, the source summary, and all
-   six existing checkpoints without training.
-3. Replay 18 baseline and 18 candidate cells under the explicit event mask.
-4. Compare only sensitivity stability; do not use the result for ranking.
+1. Read the completed r3 evidence and derive a compact reproducible PnL/cost/
+   trade attribution artifact outside Git.
+2. Compare explicit-event masking only as a stability observation; do not
+   use it for a winner, ranking, promotion, or new hypothesis tuning.
+3. Queue no new GPU training until the attribution review names a falsifiable
+   data or model question that respects the sticky `unsupported` verdict.
 
 ## Depth Queue
 
@@ -95,6 +114,9 @@
 - Before a production run, reject any dataset id/hash/path mismatch, unsafe
   campaign path component, derived path outside the artifact root, split
   mismatch, existing artifact target, or artifact path inside Git.
+- The preparation runner fails before any plan is returned when the event
+  loader is not replay eligible; source summary/checkpoint hash or structure,
+  r2 lineage, or fold-local pre-fit standardization mismatch also fails closed.
 - A completed run is recoverable from
   `daily-campaign/<campaign_id>/summary.json`; without it, treat scattered
   replay/checkpoint files as an incomplete run and restart with a new run id.
@@ -110,16 +132,21 @@
   checkpoints, 72 replay cells, and 216 replay-state hash checks; summary
   SHA-256 is
   `5db680e1ba72a17b089a5c44372443289b2411c690f6372b6c6f2e3e35ac1d89`.
+- A read-only recheck matched all six current checkpoint byte hashes to that
+  source summary; every summary standardization record remains `development`
+  phase and matches its own fold. No model was loaded or trained.
 - All fills remained `source: local_paper`, every replay ended flat, and all six
   checkpoints reloaded with `weights_only=True`.
 - `d1-pressure-lb20` changed sign for IWM/fold-1 and QQQ/fold-1 under factor
   exclusion, and aggregate relative order changed. The final verdict is
   `unsupported`, so no profitability, ranking, or promotion claim is allowed.
 - The interrupted `cpu-r1` attempt has no summary and is non-authoritative.
+- The Tiingo snapshot has 46 qualified cash-distribution events and zero splits
+  across the fixed ETFs. R3 completed from it with no retraining and did not
+  alter the parent `unsupported` verdict.
 
 ## Next Handoff
 
-- Data leads the next bounded objective. Once its explicit event manifest is
-  independently validated, Research prepares and runs the existing checkpoints
-  without retraining. Preserve the current summaries as development-only
-  evidence and do not rank, promote, name a winner, or claim profitability.
+- Research leads compact, read-only attribution of the completed r3 replay.
+  Preserve all summaries as development-only evidence and do not rank,
+  promote, name a winner, or claim profitability.

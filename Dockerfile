@@ -12,6 +12,8 @@ COPY src ./src
 RUN python -m pip install --no-cache-dir --upgrade pip && \
     python -m pip install --no-cache-dir -e .
 
+COPY scripts ./scripts
+
 CMD ["python", "-m", "thericher_v2.ops.daily_report", "--print-summary"]
 
 FROM base AS research

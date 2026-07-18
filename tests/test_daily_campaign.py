@@ -56,6 +56,7 @@ from thericher_v2.research.daily_campaign import (
     prepare_daily_explicit_event_replay,
     run_daily_cpu_baselines,
     run_daily_cuda_breadth,
+    run_daily_explicit_event_replay,
     write_daily_campaign_summary,
 )
 from thericher_v2.research.validation import run_local_paper_validation
@@ -348,6 +349,80 @@ def test_prepare_explicit_event_replay_is_no_training_and_fixed_36_cells(
     assert prepared.retrospective_only is True
     assert prepared.ranking is prepared.promotion is prepared.candidate_selection is False
     assert prepared.sealed_holdout is prepared.profitability_claim is False
+
+
+def test_run_explicit_event_replay_reuses_cpu_checkpoints_and_local_paper_only(
+    daily_plan,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "events-execute")
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    torch = pytest.importorskip("torch", reason="requires the research runtime")
+
+    def fail_training(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("explicit-event replay must not train or build batches")
+
+    def fail_cuda_probe() -> bool:
+        raise AssertionError("explicit-event replay must not inspect or use CUDA")
+
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.build_daily_training_batch",
+        fail_training,
+    )
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.train_daily_candidate_torch_cuda",
+        fail_training,
+    )
+    monkeypatch.setattr(torch.cuda, "is_available", fail_cuda_probe)
+
+    prepared = prepare_daily_explicit_event_replay(
+        daily_plan,
+        corporate_actions=actions,
+        source_summary_path=summary_path,
+        expected_source_summary_sha256=summary_hash,
+        replay_id="unit-explicit-events-execute-r1",
+        artifact_root=artifact_root,
+    )
+    result = run_daily_explicit_event_replay(
+        daily_plan,
+        replay_plan=prepared,
+        artifact_root=artifact_root,
+        work_root=artifact_root / "daily-campaign" / prepared.replay_id,
+    )
+
+    assert len(result.cells) == 36
+    assert sum(cell.cell.kind == "baseline" for cell in result.cells) == 18
+    assert sum(cell.cell.kind == "candidate" for cell in result.cells) == 18
+    assert result.execution_backend == "torch_cpu"
+    assert all(cell.replay.fill_source == "local_paper" for cell in result.cells)
+    assert all(cell.replay.replay_evidence.fill_source == "local_paper" for cell in result.cells)
+    assert all(cell.replay.result.final_position == 0 for cell in result.cells)
+    assert all(cell.replay.artifact_path.is_file() for cell in result.cells)
+    assert result.summary_sha256 == _file_sha256(result.summary_path)
+
+    payload = json.loads(result.summary_path.read_text())
+    assert payload["parent_sensitivity_verdict"] == "unsupported"
+    assert payload["execution"] == {
+        "backend": "torch_cpu",
+        "training_runs": 0,
+        "frozen_cells": 36,
+        "baseline_cells": 18,
+        "candidate_cells": 18,
+        "fill_source": "local_paper",
+        "all_final_positions_flat": True,
+    }
+    assert payload["labels"] == {
+        "development_only": True,
+        "retrospective_only": True,
+        "ranking": False,
+        "promotion": False,
+        "candidate_selection": False,
+        "sealed_holdout": False,
+        "profitability_claim": False,
+    }
 
 
 def test_prepare_explicit_event_replay_rejects_ineligible_or_tampered_inputs(

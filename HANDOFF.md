@@ -48,10 +48,10 @@ success metrics.
 
 ## Current Boundaries
 
-- The current goal may read only `TIINGO_API_TOKEN` and `KIS_PAPER_*` from the
-  ignored root `.env`. Tiingo EOD collection and KIS virtual-account read-only
-  discovery are approved; order submit/cancel, paper capital, `KIS_LIVE_*`,
-  live behavior, and mode changes remain disabled.
+- The next bounded attribution goal reads no `.env`, makes no network call, and
+  does not access KIS. Its completed predecessor used only the approved
+  `TIINGO_API_TOKEN` and `KIS_PAPER_*` scope; order submit/cancel, paper
+  capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -79,8 +79,8 @@ The repository already contains:
   durable local-paper replay evidence,
 - a fixed-instrument RAW D1 development campaign with factor sensitivity and
   bounded Docker/PyTorch CUDA training,
-- a fail-closed corporate-action snapshot contract and a no-retraining replay
-  preparation path for the fixed RAW D1 campaign,
+- a fail-closed corporate-action snapshot contract and completed no-retraining
+  local-paper explicit-event replay for the fixed RAW D1 campaign,
 - broker-free local paper orders, fills, cash, positions, replay, duplicate-id
   protection, and emergency state,
 - broker-neutral lifecycle contracts with an atomic, restartable fake
@@ -150,13 +150,16 @@ Current canonical evidence:
 collected because compliant automation needs an honest identifying contact;
 none was invented.
 
-No corporate-action snapshot has been accepted yet. Official issuer pages
-confirm distribution-date semantics, but automated preservation rights and a
-complete split/no-split history for all three ETFs are not sufficiently clear.
-The operator has now authorized the ignored `.env` `TIINGO_API_TOKEN` for the
-standard Tiingo EOD endpoint. A manual SPY probe succeeded and returned
-`divCash=1.594937` on `2024-03-15` with `splitFactor=1.0`; this proves endpoint
-access and field availability but is not the immutable campaign snapshot.
+The approved Tiingo standard EOD collection produced one immutable private-use
+snapshot at
+`D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
+It binds exact raw SPY/QQQ/IWM responses to r2 sessions, 46 cash-distribution
+events, zero split events, and the replay-only normalized dataset hash
+`3587beb050cabd9b3be0d68a66395b9a1a369010f2515fb22d7287d7b87d06f8`.
+Its manifest hash is
+`89fdc4717f3b3a596a58afe1242ad1680f141a6abf92f4a92115b603df77ccf4`.
+It proves returned-session coverage, not that a future source re-pull cannot
+restate data; any later comparison must create a new immutable snapshot.
 
 The Data stateboard owns exact catalog status and operator data requests.
 
@@ -191,11 +194,15 @@ under factor exclusion, and aggregate item order reversed. No candidate was
 selected or promoted, and no profitability claim is permitted. The interrupted
 `cpu-r1` attempt has no summary and is non-authoritative.
 
-The explicit-event replay path is preparation-only. It binds a loader-attested
-event snapshot to r2, verifies the existing source summary and six checkpoints,
-and freezes 36 future baseline/candidate replay cells with zero training. No
-accepted event snapshot exists, so no explicit-event replay, artifact, model
-selection, or new GPU run has occurred.
+The explicit-event replay `raw-d1-explicit-events-20260718-r3` is complete at
+`D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-explicit-events-20260718-r3\summary.json`
+with SHA-256
+`3cac5f0b14e602c6a0043bb141fa7d6add1ca02b8ab4e214145443a1d8711609`.
+It reused the six fixed checkpoints on CPU, trained zero models, executed 18
+baseline plus 18 candidate cells, kept every fill `source: local_paper`, and
+finished every cell flat. Its development-only labels and sticky parent
+`unsupported` verdict remain unchanged. The r1 interruption and r2
+summary-write failure are incomplete, non-authoritative external artifacts.
 
 ## Execution Reality
 
@@ -214,10 +221,12 @@ reconciliation, unknown outcomes, and non-durable intents still fail closed.
 It does not submit. Generic D1 local paper accepts a later caller-supplied
 observed bar; the daily campaign separately proves exact `+1/+2` adjacency.
 
-No KIS credential has been read and no broker call or order has been made. The
-operator has authorized `KIS_PAPER_*` for one read-only virtual-account
-discovery of masked identity, cash, orderable funds, positions, and open orders
-while `THERICHER_MODE=off` remains unchanged.
+One scoped KIS virtual-paper read-only discovery was attempted while
+`THERICHER_MODE=off` remained unchanged. The corrected open-order-first request
+was rejected, so the boundary failed closed and wrote only redacted failure
+evidence under `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly`.
+No account snapshot, cash, position, open-order record, order action, capital
+allocation, or live behavior was produced.
 
 KIS paper is an early execution milestone, not a reward for model profitability.
 After the approved read-only discovery reconciles buying power, Codex proposes a
@@ -271,8 +280,7 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now runs two approved lanes in parallel: Tiingo EOD event
-qualification plus the 36-cell no-retraining replay, and KIS paper read-only
-account discovery plus reconciliation. The next operator decision is the paper
-capital envelope. Paid data, order submission, and live capital remain separate
-future decisions.
+`NEXT_CODEX_GOAL.md` now narrows to compact, read-only PnL attribution of the
+completed explicit-event replay. The KIS capital envelope is not ready until a
+future complete read-only reconciliation exists. Paid data, order submission,
+and live capital remain separate future decisions.

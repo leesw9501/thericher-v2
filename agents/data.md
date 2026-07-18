@@ -2,9 +2,9 @@
 
 ## Status
 
-Ready, no running job. The operator approved standard Tiingo EOD acquisition
-for the three fixed instruments; the offline corporate-action snapshot contract
-is implemented and awaits immutable source bytes.
+Ready, no running job. The approved Tiingo standard EOD acquisition completed
+and produced one loader-attested, retrospective-only corporate-action snapshot
+for the three fixed instruments.
 
 ## Engine Loop
 
@@ -39,17 +39,17 @@ is implemented and awaits immutable source bytes.
 
 ## Current Objective
 
-Capture standard Tiingo EOD records for `SPY`, `QQQ`, and `IWM` in one
-immutable, hash-bound external snapshot without modifying r2. Derive only
-`cash_distribution` from `divCash` and `split` from `splitFactor`.
+The Tiingo EOD corporate-action evidence lane is complete. Preserve the
+immutable snapshot and supply its loader-attested event dates to the bounded
+no-retraining replay only; do not use it for ranking or sealed evidence.
 
 ## Ready Queue
 
-1. Capture exact EOD response bytes for the fixed campaign range under
-   `D:\market_data` using only the approved Tiingo token.
-2. Normalize SPY/QQQ/IWM distributions and splits with request provenance.
-3. Load the snapshot through the offline contract and independently verify the
-   exact fixed 896-session coverage before Research consumes it.
+1. Hand the loader-attested Tiingo snapshot identity and event dates to the
+   orchestrator for the bounded explicit-event replay.
+2. On a future approved re-pull, compare only normalized `date`/`divCash`/
+   `splitFactor` evidence against this immutable snapshot; any difference
+   invalidates its claimed event completeness rather than overwriting it.
 
 ## Running
 
@@ -124,6 +124,25 @@ immutable, hash-bound external snapshot without modifying r2. Derive only
 - The operator's standard EOD probe succeeded for SPY from `2024-03-14` through
   `2024-03-18`; `2024-03-15` returned `divCash=1.594937` and
   `splitFactor=1.0`. This is access evidence, not a durable campaign snapshot.
+- Tiingo standard EOD acquisition completed at `2026-07-18T07:38:24.283185Z`.
+  The immutable private-use snapshot is
+  `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
+  It is loader-attested to r2's exact 896 observed sessions per symbol and has
+  normalized dataset hash
+  `sha256:3587beb050cabd9b3be0d68a66395b9a1a369010f2515fb22d7287d7b87d06f8`,
+  manifest hash
+  `sha256:89fdc4717f3b3a596a58afe1242ad1680f141a6abf92f4a92115b603df77ccf4`,
+  and raw response hashes SPY
+  `sha256:3d51ed9fb21d3e51734425fe1deebd284bdb181558152869bb4d2ffeb242a28d`,
+  QQQ
+  `sha256:8cb772bafa4cb7cbe90f3db916ba56c6198785e99854db2b16265ab2a0a16956`,
+  and IWM
+  `sha256:fb53eac5a06c8963e485e16bc30c46c05a69c43fdf2ee3904cf577afe6b0ddf0`.
+  Derived evidence has 15 SPY cash distributions, 16 QQQ cash distributions,
+  15 IWM cash distributions, and zero splits. It passed the seven-calendar-day
+  post-campaign retrieval lag. This proves returned-session coverage, not that
+  Tiingo can never later restate an event; a future immutable re-pull comparison
+  is the falsifier.
 - The corporate-action loader is offline and fail-closed. It requires immutable
   raw and normalized hashes, exact r2 lineage, source/rights/as-of facts,
   explicit per-symbol/event-type coverage, New York session-date semantics,
@@ -153,9 +172,10 @@ immutable, hash-bound external snapshot without modifying r2. Derive only
 
 ## Recovery
 
-- Recovery state is `ready`: the loader contract and approved EOD source path
-  are known, but there is no accepted event snapshot to recover. Use the fixed
-  ETF daily r2 manifest for development campaigns and retain r1 as lineage.
+- Recovery state is `complete`: do not overwrite the Tiingo snapshot. A
+  later source comparison must create a new disjoint snapshot and retain this
+  one as the original evidence. Use the fixed ETF daily r2 manifest for
+  development campaigns and retain r1 as lineage.
 - Recover or mount the r2 subset only together with its unchanged sibling
   `manifest.json`. A different Windows/POSIX root is allowed when the snapshot
   directory name and `ohlcv_1d.csv.gz` basename are preserved; missing,
@@ -177,6 +197,9 @@ immutable, hash-bound external snapshot without modifying r2. Derive only
   `sha256:1690a766a820b3e6385c76605c7e02548ab0e428148c93f85388c7a6a8b065b4`,
   subset hash
   `sha256:7f161319d01cfedf762d738fea98ebb9800ce3acd61ee48af7e550e85fc2fbf6`.
+- `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1\manifest.json`:
+  exact raw per-symbol Tiingo EOD bytes bound to normalized evidence and r2
+  lineage; replay-only, not ranking or sealed-holdout eligible.
 - `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`:
   first immutable official-source prospective universe snapshot; all three
   recorded hashes reverified, with Nasdaq file-creation timestamps from
@@ -194,8 +217,7 @@ immutable, hash-bound external snapshot without modifying r2. Derive only
 
 ## Next Handoff
 
-After operator authorization, supply Engine Research with loader-attested event
-dates, event types, coverage, and provenance for a no-retraining sensitivity
-replay. Research must keep r2 raw fills unchanged and may not use the event
-snapshot to claim ranking, sealed-holdout independence, model selection, or
-profitability.
+For the compact r3 attribution, independently confirm the pinned r2 and Tiingo
+snapshot lineage and hashes only. Do not rewrite either snapshot, acquire data,
+or interpret adjusted fields; attribution remains retrospective development
+evidence and cannot support ranking, model selection, or profitability.

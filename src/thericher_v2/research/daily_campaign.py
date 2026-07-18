@@ -26,6 +26,8 @@ from thericher_v2.data import (
     CatalogedCorporateActions,
     load_fixed_etf_daily_factor_change_dates,
 )
+from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
+from thericher_v2.state import EventStore
 
 from .campaign import (
     CampaignContract,
@@ -425,6 +427,31 @@ class DailyExplicitEventReplayPlan:
             raise ValueError("explicit-event plan must freeze 36 replays and zero training")
 
 
+@dataclass(frozen=True)
+class DailyExplicitEventReplayCellResult:
+    cell: DailyExplicitEventReplayCellPlan
+    replay: NaiveBaselineRun | CampaignReplayRun
+    schema_version: int = SCHEMA_VERSION
+
+
+@dataclass(frozen=True)
+class DailyExplicitEventReplayResult:
+    replay_plan: DailyExplicitEventReplayPlan
+    cells: tuple[DailyExplicitEventReplayCellResult, ...]
+    summary_path: Path
+    summary_sha256: str
+    execution_backend: Literal["torch_cpu"] = "torch_cpu"
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if (
+            self.replay_plan.parent_sensitivity_verdict != "unsupported"
+            or self.replay_plan.training_runs != 0
+            or len(self.cells) != 36
+        ):
+            raise ValueError("explicit-event replay must preserve the frozen no-training contract")
+
+
 DailyTrainer = Callable[
     [DailyCandidateSpec, DailyTrainingBatch, Path],
     dict[str, object],
@@ -805,6 +832,401 @@ def prepare_daily_explicit_event_replay(
         r2_manifest_hash=corporate_actions.r2_manifest_hash,
         cells=tuple(cells),
     )
+
+
+def run_daily_explicit_event_replay(
+    plan: DailyCampaignPlan,
+    *,
+    replay_plan: DailyExplicitEventReplayPlan,
+    artifact_root: Path,
+    work_root: Path,
+    repo_root: Path | None = None,
+) -> DailyExplicitEventReplayResult:
+    """Execute the already frozen explicit-event cells through local paper only."""
+
+    resolved_repo_root = (repo_root or Path.cwd()).resolve()
+    resolved_artifact_root = Path(artifact_root).resolve()
+    _reject_repo_path(resolved_artifact_root, resolved_repo_root)
+    if Path(artifact_root).is_symlink():
+        raise ValueError("explicit-event artifact_root cannot be a symlink")
+    if replay_plan.artifact_root != resolved_artifact_root:
+        raise ValueError("explicit-event plan artifact_root does not match execution root")
+    if replay_plan.source_campaign_id != plan.contract.campaign_id:
+        raise ValueError("explicit-event plan does not match the source campaign")
+    if replay_plan.source_summary_path.is_symlink():
+        raise ValueError("explicit-event source summary cannot be a symlink")
+    _assert_artifact_hash(
+        replay_plan.source_summary_path,
+        replay_plan.source_summary_sha256,
+        "explicit-event source summary",
+    )
+    _assert_explicit_event_replay_plan(plan, replay_plan)
+
+    expected_work_root = _contained_artifact_path(
+        resolved_artifact_root,
+        "daily-campaign",
+        replay_plan.replay_id,
+    )
+    if Path(work_root).resolve() != expected_work_root:
+        raise ValueError("explicit-event work_root must be the declared replay artifact directory")
+    if expected_work_root.exists():
+        raise FileExistsError(f"explicit-event replay target already exists: {expected_work_root}")
+
+    run_ids = tuple(
+        _explicit_event_run_id(plan, replay_plan, cell) for cell in replay_plan.cells
+    )
+    if len(set(run_ids)) != len(run_ids):
+        raise ValueError("explicit-event replay cell run ids must be unique")
+    for run_id in run_ids:
+        artifact_path = resolved_artifact_root / "validation" / f"{run_id}.json"
+        if artifact_path.exists():
+            raise FileExistsError(
+                f"explicit-event validation artifact already exists: {artifact_path}"
+            )
+
+    predictors = _explicit_event_cpu_predictors(plan, replay_plan)
+    cells: list[DailyExplicitEventReplayCellResult] = []
+    for cell in replay_plan.cells:
+        run_id = _explicit_event_run_id(plan, replay_plan, cell)
+        work_dir = (
+            expected_work_root
+            / cell.fold_id
+            / cell.kind
+            / cell.item_id
+            / cell.symbol.lower()
+        )
+        eligible_signal_starts = frozenset(cell.eligible_signal_starts)
+        if cell.kind == "baseline":
+            replay = run_naive_cpu_baseline(
+                plan.cataloged_for(cell.symbol),
+                campaign=plan.contract,
+                artifact_root=resolved_artifact_root,
+                work_dir=work_dir,
+                phase="validation",
+                fold_id=cell.fold_id,
+                baseline_id=cell.item_id,
+                repo_root=resolved_repo_root,
+                run_label=_explicit_event_baseline_label(replay_plan.replay_id, cell.symbol),
+                eligible_signal_starts=eligible_signal_starts,
+            )
+        else:
+            candidate, standardization, predictor = predictors[(cell.fold_id, cell.item_id)]
+            replay = run_campaign_model_replay(
+                plan.cataloged_for(cell.symbol),
+                campaign=plan.contract,
+                model=_DailyCandidateModel(candidate, standardization, predictor),
+                run_id=run_id,
+                artifact_root=resolved_artifact_root,
+                work_dir=work_dir,
+                phase="validation",
+                fold_id=cell.fold_id,
+                repo_root=resolved_repo_root,
+                eligible_signal_starts=eligible_signal_starts,
+                emergency_reason="explicit_event_replay_initial_state",
+            )
+        result = DailyExplicitEventReplayCellResult(cell=cell, replay=replay)
+        _assert_explicit_event_replay_evidence(result)
+        cells.append(result)
+
+    if len(cells) != 36:
+        raise RuntimeError("explicit-event replay must execute exactly 36 frozen cells")
+    summary_path = _write_daily_explicit_event_replay_summary(
+        replay_plan,
+        tuple(cells),
+        path=expected_work_root / "summary.json",
+    )
+    return DailyExplicitEventReplayResult(
+        replay_plan=replay_plan,
+        cells=tuple(cells),
+        summary_path=summary_path,
+        summary_sha256=_sha256_file(summary_path),
+    )
+
+
+def _assert_explicit_event_replay_plan(
+    plan: DailyCampaignPlan,
+    replay_plan: DailyExplicitEventReplayPlan,
+) -> None:
+    if (
+        replay_plan.parent_sensitivity_verdict != "unsupported"
+        or replay_plan.training_runs != 0
+        or replay_plan.ranking
+        or replay_plan.promotion
+        or replay_plan.candidate_selection
+        or replay_plan.sealed_holdout
+        or replay_plan.profitability_claim
+    ):
+        raise ValueError(
+            "explicit-event replay must remain development-only with parent unsupported"
+        )
+    baseline_cells = tuple(cell for cell in replay_plan.cells if cell.kind == "baseline")
+    candidate_cells = tuple(cell for cell in replay_plan.cells if cell.kind == "candidate")
+    if len(baseline_cells) != 18 or len(candidate_cells) != 18:
+        raise ValueError("explicit-event replay must contain 18 baseline and 18 candidate cells")
+    for cell in replay_plan.cells:
+        known_folds = {fold.fold_id for fold in plan.folds}
+        if cell.symbol not in DAILY_SYMBOLS or cell.fold_id not in known_folds:
+            raise ValueError("explicit-event replay cell has an unknown symbol or fold")
+        if tuple(sorted(cell.eligible_signal_starts)) != cell.eligible_signal_starts:
+            raise ValueError("explicit-event eligible signal starts must be sorted")
+        if len(set(cell.eligible_signal_starts)) != len(cell.eligible_signal_starts):
+            raise ValueError("explicit-event eligible signal starts must be unique")
+        if cell.kind == "baseline":
+            if (
+                cell.item_id not in plan.contract.naive_baselines
+                or cell.checkpoint_path is not None
+                or cell.checkpoint_sha256 is not None
+                or cell.standardization is not None
+            ):
+                raise ValueError("explicit-event baseline cell is malformed")
+        elif cell.item_id not in {candidate.candidate_id for candidate in DAILY_CANDIDATES}:
+            raise ValueError("explicit-event candidate cell is malformed")
+
+
+def _explicit_event_cpu_predictors(
+    plan: DailyCampaignPlan,
+    replay_plan: DailyExplicitEventReplayPlan,
+) -> dict[
+    tuple[str, str],
+    tuple[DailyCandidateSpec, DailyFeatureStandardization, DailyProbabilityPredictor],
+]:
+    predictors: dict[
+        tuple[str, str],
+        tuple[DailyCandidateSpec, DailyFeatureStandardization, DailyProbabilityPredictor],
+    ] = {}
+    checkpoint_contracts: dict[
+        tuple[str, str], tuple[Path, str, DailyFeatureStandardization]
+    ] = {}
+    for cell in replay_plan.cells:
+        if cell.kind != "candidate":
+            continue
+        if (
+            cell.checkpoint_path is None
+            or cell.checkpoint_sha256 is None
+            or cell.standardization is None
+        ):
+            raise ValueError("explicit-event candidate checkpoint contract is incomplete")
+        candidate = _daily_candidate_for_id(cell.item_id)
+        _assert_artifact_hash(
+            cell.checkpoint_path,
+            cell.checkpoint_sha256,
+            "explicit-event source checkpoint",
+        )
+        _assert_fold_local_standardization(plan, cell.fold_id, cell.standardization)
+        key = (cell.fold_id, cell.item_id)
+        contract = (cell.checkpoint_path, cell.checkpoint_sha256, cell.standardization)
+        prior_contract = checkpoint_contracts.get(key)
+        if prior_contract is not None:
+            if prior_contract != contract:
+                raise ValueError("explicit-event candidate checkpoint contract is inconsistent")
+            continue
+        checkpoint_contracts[key] = contract
+        predictors[key] = (
+            candidate,
+            cell.standardization,
+            load_daily_torch_cpu_predictor(
+                candidate,
+                cell.checkpoint_path,
+                cell.standardization,
+            ),
+        )
+    if len(predictors) != DAILY_MAX_TRAINING_RUNS:
+        raise ValueError("explicit-event replay must reuse exactly six source checkpoints")
+    return predictors
+
+
+def _explicit_event_baseline_label(replay_id: str, symbol: str) -> str:
+    return f"{replay_id}-{symbol.lower()}"
+
+
+def _explicit_event_run_id(
+    plan: DailyCampaignPlan,
+    replay_plan: DailyExplicitEventReplayPlan,
+    cell: DailyExplicitEventReplayCellPlan,
+) -> str:
+    if cell.kind == "baseline":
+        return "-".join(
+            (
+                plan.contract.campaign_id,
+                "validation",
+                cell.fold_id,
+                cell.item_id,
+                _explicit_event_baseline_label(replay_plan.replay_id, cell.symbol),
+            )
+        )
+    return "-".join(
+        (
+            replay_plan.replay_id,
+            "validation",
+            cell.fold_id,
+            "candidate",
+            cell.item_id,
+            cell.symbol.lower(),
+        )
+    )
+
+
+def _assert_explicit_event_replay_evidence(
+    cell_result: DailyExplicitEventReplayCellResult,
+) -> None:
+    cell = cell_result.cell
+    replay = cell_result.replay
+    evidence = replay.replay_evidence
+    if (
+        replay.fill_source != LOCAL_PAPER_SOURCE
+        or evidence.fill_source != LOCAL_PAPER_SOURCE
+        or replay.result.final_position != 0
+    ):
+        raise RuntimeError("explicit-event replay must remain flat with local-paper fills")
+    for path, expected_hash, label in (
+        (evidence.event_jsonl_path, evidence.event_jsonl_sha256, "event JSONL"),
+        (evidence.state_sqlite_path, evidence.state_sqlite_sha256, "state SQLite"),
+        (evidence.emergency_path, evidence.emergency_sha256, "emergency state"),
+    ):
+        _assert_artifact_hash(path, expected_hash, f"explicit-event {label}")
+    events = tuple(EventStore(evidence.state_sqlite_path, evidence.event_jsonl_path).iter_events())
+    timestamps = tuple(event.created_at for event in events)
+    if any(current < prior for prior, current in zip(timestamps, timestamps[1:], strict=False)):
+        raise RuntimeError("explicit-event replay event timestamps must be nondecreasing")
+    fills = tuple(event for event in events if event.event_type == "fill")
+    if any(event.payload.get("source") != LOCAL_PAPER_SOURCE for event in fills):
+        raise RuntimeError("explicit-event replay fill source must remain local_paper")
+    expected_ends = {
+        signal_start + Timeframe.D1.duration for signal_start in cell.eligible_signal_starts
+    }
+    prediction_events = tuple(
+        event for event in events if event.event_type == "model_prediction"
+    )
+    if len(prediction_events) != len(expected_ends) or {
+        event.created_at for event in prediction_events
+    } != expected_ends:
+        raise RuntimeError("explicit-event replay consumed a signal outside its frozen mask")
+
+
+def _write_daily_explicit_event_replay_summary(
+    replay_plan: DailyExplicitEventReplayPlan,
+    cells: tuple[DailyExplicitEventReplayCellResult, ...],
+    *,
+    path: Path,
+) -> Path:
+    if path.exists():
+        raise FileExistsError(f"explicit-event replay summary already exists: {path}")
+    if len(cells) != 36:
+        raise ValueError("explicit-event replay summary requires exactly 36 cells")
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "created_at_utc": datetime.now(UTC).isoformat(),
+        "replay_id": replay_plan.replay_id,
+        "source_campaign_id": replay_plan.source_campaign_id,
+        "parent_sensitivity_verdict": replay_plan.parent_sensitivity_verdict,
+        "labels": {
+            "development_only": True,
+            "retrospective_only": True,
+            "ranking": False,
+            "promotion": False,
+            "candidate_selection": False,
+            "sealed_holdout": False,
+            "profitability_claim": False,
+        },
+        "inputs": {
+            "source_summary": {
+                "path": str(replay_plan.source_summary_path),
+                "sha256": replay_plan.source_summary_sha256,
+            },
+            "corporate_actions": {
+                "dataset_id": replay_plan.corporate_action_dataset_id,
+                "dataset_hash": replay_plan.corporate_action_dataset_hash,
+                "manifest_hash": replay_plan.corporate_action_manifest_hash,
+            },
+            "r2": {
+                "dataset_id": replay_plan.r2_dataset_id,
+                "dataset_hash": replay_plan.r2_dataset_hash,
+                "manifest_hash": replay_plan.r2_manifest_hash,
+            },
+        },
+        "execution": {
+            "backend": "torch_cpu",
+            "training_runs": 0,
+            "frozen_cells": len(cells),
+            "baseline_cells": sum(cell.cell.kind == "baseline" for cell in cells),
+            "candidate_cells": sum(cell.cell.kind == "candidate" for cell in cells),
+            "fill_source": LOCAL_PAPER_SOURCE,
+            "all_final_positions_flat": True,
+        },
+        "cells": [_explicit_event_replay_cell_payload(cell) for cell in cells],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    try:
+        with temporary.open("x", encoding="utf-8") as handle:
+            json.dump(payload, handle, default=str, indent=2, sort_keys=True)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return path
+
+
+def _explicit_event_replay_cell_payload(
+    cell_result: DailyExplicitEventReplayCellResult,
+) -> dict[str, object]:
+    cell = cell_result.cell
+    replay = cell_result.replay
+    checkpoint: dict[str, object] | None = None
+    if cell.kind == "candidate":
+        if (
+            cell.checkpoint_path is None
+            or cell.checkpoint_sha256 is None
+            or cell.standardization is None
+        ):
+            raise ValueError("explicit-event candidate replay cell is incomplete")
+        checkpoint = {
+            "path": str(cell.checkpoint_path),
+            "sha256": cell.checkpoint_sha256,
+            "preprocessing": {
+                "fit_phase": "development",
+                "fit_fold_id": cell.standardization.fold_id,
+            },
+        }
+    return {
+        "kind": cell.kind,
+        "item_id": cell.item_id,
+        "symbol": cell.symbol,
+        "fold_id": cell.fold_id,
+        "eligible_signal_count": len(cell.eligible_signal_starts),
+        "eligible_signal_starts_sha256": _explicit_event_starts_hash(
+            cell.eligible_signal_starts
+        ),
+        "checkpoint": checkpoint,
+        "validation_artifact": {
+            "path": str(replay.artifact_path),
+            "sha256": _sha256_file(replay.artifact_path),
+        },
+        "replay_evidence": replay.replay_evidence.to_payload(),
+        "verification": {
+            "fill_source": replay.fill_source,
+            "final_position": replay.result.final_position,
+            "decisions_seen": replay.result.decisions_seen,
+            "trades": len(replay.result.trades),
+            "events": replay.result.event_count,
+        },
+    }
+
+
+def _explicit_event_starts_hash(starts: tuple[datetime, ...]) -> str:
+    return _sha256_bytes("\n".join(value.isoformat() for value in starts).encode("utf-8"))
+
+
+def _daily_candidate_for_id(candidate_id: str) -> DailyCandidateSpec:
+    candidate = next(
+        (item for item in DAILY_CANDIDATES if item.candidate_id == candidate_id),
+        None,
+    )
+    if candidate is None:
+        raise ValueError("explicit-event candidate is not in the frozen daily set")
+    return candidate
 
 
 def run_daily_cpu_baselines(
@@ -1411,6 +1833,51 @@ def load_daily_torch_predictor(
         torch.nn.Linear(candidate.hidden_units, 1),
     ).to(device)
     model.load_state_dict(checkpoint["state_dict"])
+    model.eval()
+
+    def predict(standardized_features: tuple[float, ...]) -> float:
+        with torch.no_grad():
+            tensor = torch.tensor(
+                [standardized_features],
+                dtype=torch.float32,
+                device=device,
+            )
+            return float(torch.sigmoid(model(tensor)).item())
+
+    return predict
+
+
+def load_daily_torch_cpu_predictor(
+    candidate: DailyCandidateSpec,
+    checkpoint_path: Path,
+    standardization: DailyFeatureStandardization,
+) -> DailyProbabilityPredictor:
+    """Load a frozen daily checkpoint on CPU without probing or using CUDA."""
+
+    import torch
+
+    _require_frozen_candidate(candidate)
+    device = torch.device("cpu")
+    try:
+        checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=True)
+    except Exception as exc:
+        raise ValueError("source checkpoint is not a safe CPU-loadable checkpoint") from exc
+    if not isinstance(checkpoint, dict) or (
+        checkpoint.get("schema_version") != SCHEMA_VERSION
+        or checkpoint.get("model_kind") != "daily_tiny_mlp_v1"
+        or checkpoint.get("candidate") != _candidate_payload(candidate)
+        or checkpoint.get("standardization") != standardization.to_payload()
+    ):
+        raise ValueError("source checkpoint contract mismatch")
+    model = torch.nn.Sequential(
+        torch.nn.Linear(len(standardization.feature_names), candidate.hidden_units),
+        torch.nn.ReLU(),
+        torch.nn.Linear(candidate.hidden_units, 1),
+    ).to(device)
+    try:
+        model.load_state_dict(checkpoint["state_dict"], strict=True)
+    except (RuntimeError, TypeError, ValueError) as exc:
+        raise ValueError("source checkpoint model state is incompatible") from exc
     model.eval()
 
     def predict(standardized_features: tuple[float, ...]) -> float:
