@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 import hashlib
 import io
 import json
@@ -10,6 +11,7 @@ import os
 import re
 import shutil
 import tempfile
+import warnings
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
@@ -49,11 +51,35 @@ DEFAULT_TIINGO_SNAPSHOT_ROOT = (
     / "canonical"
     / "tiingo_standard_eod"
 )
+DEFAULT_TIINGO_RAW_D1_SNAPSHOT_ROOT = (
+    DEFAULT_MARKET_DATA_ROOT
+    / "us_equities"
+    / "fixed_etf_daily"
+    / "canonical"
+    / "tiingo_raw_d1"
+)
 TIINGO_EOD_ENDPOINT = "https://api.tiingo.com/tiingo/daily/{symbol}/prices"
 TIINGO_SOURCE_ID_PREFIX = "tiingo-standard-eod"
 MINIMUM_RETRIEVAL_LAG_DAYS = 7
 FIXED_R2_CAMPAIGN_SESSION_COUNT = 896
 _ENV_TOKEN_RE = re.compile(r"TIINGO_API_TOKEN=(.*)\Z")
+_TIINGO_RAW_D1_COLUMNS = (
+    "symbol",
+    "date",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "div_cash",
+    "split_factor",
+)
+_TIINGO_RAW_D1_SCOPE = {
+    "retrospective_development_replay_only": True,
+    "point_in_time_eligible": False,
+    "ranking_eligible": False,
+    "sealed_holdout_eligible": False,
+}
 
 
 class TiingoEodAcquisitionError(ValueError):
@@ -86,11 +112,55 @@ class TiingoEodSnapshotResult:
     catalog: CatalogedCorporateActions
 
 
+@dataclass(frozen=True, slots=True)
+class TiingoRawD1SnapshotResult:
+    """Non-secret facts from one immutable raw-D1 comparison snapshot."""
+
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    source_raw_hashes: Mapping[str, str]
+    row_count: int
+
+
+@dataclass(frozen=True, slots=True)
+class _TiingoRawD1Row:
+    symbol: str
+    session_date: date
+    open: Decimal
+    high: Decimal
+    low: Decimal
+    close: Decimal
+    volume: Decimal
+    div_cash: Decimal
+    split_factor: Decimal
+
+
+@dataclass(frozen=True, slots=True)
+class _TiingoRawD1Source:
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    raw_responses: Mapping[str, bytes]
+    raw_hashes: Mapping[str, str]
+    raw_sizes: Mapping[str, int]
+
+
 def default_tiingo_snapshot_dir(retrieval_date: date) -> Path:
     """Return a dated, disjoint path; callers still get overwrite protection."""
 
     return DEFAULT_TIINGO_SNAPSHOT_ROOT / (
         f"snapshot={retrieval_date.isoformat()}-tiingo-eod-corporate-actions-r1"
+    )
+
+
+def default_tiingo_raw_d1_snapshot_dir(derivation_date: date) -> Path:
+    """Return a dated disjoint destination for one raw-D1 comparison snapshot."""
+
+    return DEFAULT_TIINGO_RAW_D1_SNAPSHOT_ROOT / (
+        f"snapshot={derivation_date.isoformat()}-tiingo-raw-d1-r1"
     )
 
 
@@ -310,6 +380,95 @@ def normalize_tiingo_standard_eod_response(
     )
 
 
+def normalize_tiingo_raw_d1_response(
+    *,
+    symbol: str,
+    raw_response: bytes,
+    expected_session_dates: frozenset[date],
+) -> tuple[_TiingoRawD1Row, ...]:
+    """Normalize only raw D1 fields; provider adjusted fields never enter output."""
+
+    return _normalize_tiingo_raw_d1_response(
+        symbol=symbol,
+        raw_response=raw_response,
+        expected_session_dates=expected_session_dates,
+        require_campaign_span=True,
+    )
+
+
+def _normalize_tiingo_raw_d1_response(
+    *,
+    symbol: str,
+    raw_response: bytes,
+    expected_session_dates: frozenset[date],
+    require_campaign_span: bool,
+) -> tuple[_TiingoRawD1Row, ...]:
+    requested_symbol = _requested_symbol(symbol)
+    expected = _validated_single_symbol_sessions(
+        expected_session_dates,
+        requested_symbol,
+        require_campaign_span=require_campaign_span,
+    )
+    if not isinstance(raw_response, bytes) or not raw_response:
+        raise ValueError(f"Tiingo EOD response is missing for {requested_symbol}")
+    try:
+        payload = json.loads(raw_response.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(
+            f"Tiingo EOD response is not valid UTF-8 JSON for {requested_symbol}"
+        ) from exc
+    if not isinstance(payload, list) or not payload:
+        raise ValueError(f"Tiingo EOD response must be a nonempty array for {requested_symbol}")
+
+    rows: list[_TiingoRawD1Row] = []
+    observed_dates: set[date] = set()
+    previous_date: date | None = None
+    for row in payload:
+        if not isinstance(row, dict):
+            raise ValueError(f"Tiingo EOD row must be an object for {requested_symbol}")
+        session_date = _tiingo_session_date(row.get("date"), requested_symbol)
+        if session_date in observed_dates:
+            raise ValueError(f"Tiingo EOD response has duplicate dates for {requested_symbol}")
+        if previous_date is not None and session_date <= previous_date:
+            raise ValueError(
+                f"Tiingo EOD response dates are not strictly ascending for {requested_symbol}"
+            )
+        observed_dates.add(session_date)
+        previous_date = session_date
+        prices = tuple(
+            _tiingo_decimal(row.get(field), field, requested_symbol)
+            for field in ("open", "high", "low", "close")
+        )
+        volume = _tiingo_decimal(row.get("volume"), "volume", requested_symbol)
+        div_cash = _tiingo_decimal(row.get("divCash"), "divCash", requested_symbol)
+        split_factor = _tiingo_decimal(
+            row.get("splitFactor"), "splitFactor", requested_symbol
+        )
+        _validate_raw_d1_values(
+            *prices,
+            volume,
+            div_cash,
+            split_factor,
+            label=f"{requested_symbol} {session_date}",
+        )
+        rows.append(
+            _TiingoRawD1Row(
+                symbol=requested_symbol,
+                session_date=session_date,
+                open=prices[0],
+                high=prices[1],
+                low=prices[2],
+                close=prices[3],
+                volume=volume,
+                div_cash=div_cash,
+                split_factor=split_factor,
+            )
+        )
+    if observed_dates != expected:
+        raise ValueError(f"Tiingo EOD session coverage is incomplete for {requested_symbol}")
+    return tuple(rows)
+
+
 def build_tiingo_eod_corporate_action_snapshot(
     *,
     destination: Path,
@@ -438,6 +597,74 @@ def acquire_fixed_tiingo_eod_corporate_action_snapshot(
         retrieved_at_utc=retrieved_at,
         market_data_root=market_data_root,
         repo_root=repo_root,
+    )
+
+
+def build_tiingo_raw_d1_comparison_snapshot(
+    *,
+    destination: Path,
+    source_snapshot_dir: Path,
+    r2_lineage: R2CorporateActionLineage,
+    derived_at_utc: datetime,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> TiingoRawD1SnapshotResult:
+    """Derive one immutable raw-D1 input from existing attested Tiingo bytes."""
+
+    derived_at = _utc_datetime(derived_at_utc, "derived_at_utc")
+    _validate_observed_session_dates(r2_lineage.observed_session_dates)
+    source = _load_tiingo_raw_d1_source(
+        source_snapshot_dir=source_snapshot_dir,
+        r2_lineage=r2_lineage,
+        repo_root=repo_root,
+    )
+    _validate_raw_d1_destination(
+        destination=destination,
+        source_snapshot_dir=source.snapshot_dir,
+        r2_snapshot_dir=r2_lineage.snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    rows_by_symbol = {
+        symbol: normalize_tiingo_raw_d1_response(
+            symbol=symbol,
+            raw_response=source.raw_responses[symbol],
+            expected_session_dates=r2_lineage.observed_session_dates[symbol],
+        )
+        for symbol in CORPORATE_ACTION_SYMBOLS
+    }
+    rows = tuple(row for symbol in CORPORATE_ACTION_SYMBOLS for row in rows_by_symbol[symbol])
+    subset_bytes = _gzip_bytes(_raw_d1_csv_bytes(rows))
+    dataset_hash = _sha256(subset_bytes)
+    destination_path = Path(destination)
+    staging = _create_staging_directory(destination_path)
+    try:
+        (staging / "ohlcv_1d.csv.gz").write_bytes(subset_bytes)
+        manifest = _tiingo_raw_d1_manifest(
+            snapshot_dir=destination_path,
+            dataset_hash=dataset_hash,
+            subset_size=len(subset_bytes),
+            source=source,
+            r2_lineage=r2_lineage,
+            rows_by_symbol=rows_by_symbol,
+            derived_at_utc=derived_at,
+        )
+        manifest_bytes = _json_bytes(manifest)
+        (staging / "manifest.json").write_bytes(manifest_bytes)
+        os.rename(staging, destination_path)
+        staging.parent.rmdir()
+    except Exception:
+        if staging.parent.exists():
+            shutil.rmtree(staging.parent)
+        raise
+    manifest_hash = _sha256((destination_path / "manifest.json").read_bytes())
+    return TiingoRawD1SnapshotResult(
+        snapshot_dir=destination_path,
+        dataset_id=f"us_equities.fixed_etf_tiingo_raw_d1.{destination_path.name}",
+        dataset_hash=dataset_hash,
+        manifest_hash=manifest_hash,
+        source_raw_hashes=dict(source.raw_hashes),
+        row_count=len(rows),
     )
 
 
@@ -694,7 +921,12 @@ def _validate_observed_session_dates(
         raise ValueError("r2 fixed campaign session coverage is incomplete")
 
 
-def _validated_single_symbol_sessions(value: frozenset[date], symbol: str) -> frozenset[date]:
+def _validated_single_symbol_sessions(
+    value: frozenset[date],
+    symbol: str,
+    *,
+    require_campaign_span: bool = True,
+) -> frozenset[date]:
     if (
         not isinstance(value, frozenset)
         or not value
@@ -704,7 +936,10 @@ def _validated_single_symbol_sessions(value: frozenset[date], symbol: str) -> fr
     campaign = frozenset(
         item for item in value if CAMPAIGN_COVERAGE_START <= item <= CAMPAIGN_COVERAGE_END
     )
-    if campaign != value or not {CAMPAIGN_COVERAGE_START, CAMPAIGN_COVERAGE_END} <= campaign:
+    if campaign != value or (
+        require_campaign_span
+        and not {CAMPAIGN_COVERAGE_START, CAMPAIGN_COVERAGE_END} <= campaign
+    ):
         raise ValueError(f"r2 observed sessions do not span the fixed campaign for {symbol}")
     return campaign
 
@@ -796,3 +1031,284 @@ def _sha256(data: bytes) -> str:
 
 def _json_bytes(value: object) -> bytes:
     return (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
+
+
+def _load_tiingo_raw_d1_source(
+    *,
+    source_snapshot_dir: Path,
+    r2_lineage: R2CorporateActionLineage,
+    repo_root: Path | None,
+) -> _TiingoRawD1Source:
+    source = _external_snapshot_dir(source_snapshot_dir, repo_root=repo_root)
+    manifest_path = source / "manifest.json"
+    manifest_bytes = _read_external_snapshot_file(source, manifest_path, "Tiingo source manifest")
+    try:
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Tiingo source manifest is not valid UTF-8 JSON") from exc
+    if not isinstance(manifest, dict):
+        raise ValueError("Tiingo source manifest must be an object")
+    dataset_id = _required_text(manifest.get("dataset_id"), "Tiingo source dataset_id")
+    dataset_hash = _required_sha256(manifest.get("dataset_hash"), "Tiingo source dataset_hash")
+    manifest_hash = _sha256(manifest_bytes)
+    _load_attested_snapshot(
+        source,
+        dataset_hash=dataset_hash,
+        manifest_hash=manifest_hash,
+        r2_lineage=r2_lineage,
+        repo_root=repo_root,
+    )
+
+    raw_entries = manifest.get("raw_sources")
+    if not isinstance(raw_entries, list):
+        raise ValueError("Tiingo source raw evidence is missing")
+    entries = {
+        entry.get("source_id"): entry
+        for entry in raw_entries
+        if isinstance(entry, dict)
+    }
+    raw_responses: dict[str, bytes] = {}
+    raw_hashes: dict[str, str] = {}
+    raw_sizes: dict[str, int] = {}
+    for symbol in CORPORATE_ACTION_SYMBOLS:
+        source_id = f"{TIINGO_SOURCE_ID_PREFIX}-{symbol.lower()}"
+        entry = entries.get(source_id)
+        if not isinstance(entry, dict) or entry.get("filename") != f"{symbol}.json":
+            raise ValueError(f"Tiingo source raw evidence is invalid for {symbol}")
+        expected_hash = _required_sha256(entry.get("sha256"), f"Tiingo source {symbol} hash")
+        expected_size = entry.get("size_bytes")
+        if (
+            isinstance(expected_size, bool)
+            or not isinstance(expected_size, int)
+            or expected_size <= 0
+        ):
+            raise ValueError(f"Tiingo source {symbol} size is invalid")
+        raw = _read_external_snapshot_file(source, source / "raw" / f"{symbol}.json", "Tiingo raw")
+        if len(raw) != expected_size or _sha256(raw) != expected_hash:
+            raise ValueError(f"Tiingo source raw hash mismatch for {symbol}")
+        raw_responses[symbol] = raw
+        raw_hashes[symbol] = expected_hash
+        raw_sizes[symbol] = expected_size
+    return _TiingoRawD1Source(
+        snapshot_dir=source,
+        dataset_id=dataset_id,
+        dataset_hash=dataset_hash,
+        manifest_hash=manifest_hash,
+        raw_responses=raw_responses,
+        raw_hashes=raw_hashes,
+        raw_sizes=raw_sizes,
+    )
+
+
+def _validate_raw_d1_destination(
+    *,
+    destination: Path,
+    source_snapshot_dir: Path,
+    r2_snapshot_dir: Path,
+    market_data_root: Path,
+    repo_root: Path | None,
+) -> None:
+    _validate_destination(destination, r2_snapshot_dir, market_data_root)
+    resolved_destination = Path(destination).resolve(strict=False)
+    source = Path(source_snapshot_dir).resolve(strict=True)
+    if (
+        resolved_destination.is_relative_to(source)
+        or source.is_relative_to(resolved_destination)
+    ):
+        raise ValueError("Tiingo raw-D1 snapshot cannot overlap the source snapshot")
+    _assert_external_path(resolved_destination, repo_root=repo_root)
+    usage = shutil.disk_usage(Path(market_data_root).resolve(strict=True))
+    if usage.free / usage.total < 0.20:
+        warnings.warn(
+            "Tiingo raw-D1 derivation is below the 20% market-data free-space warning level",
+            RuntimeWarning,
+            stacklevel=2,
+        )
+
+
+def _tiingo_raw_d1_manifest(
+    *,
+    snapshot_dir: Path,
+    dataset_hash: str,
+    subset_size: int,
+    source: _TiingoRawD1Source,
+    r2_lineage: R2CorporateActionLineage,
+    rows_by_symbol: Mapping[str, tuple[_TiingoRawD1Row, ...]],
+    derived_at_utc: datetime,
+) -> dict[str, Any]:
+    rows = tuple(row for symbol in CORPORATE_ACTION_SYMBOLS for row in rows_by_symbol[symbol])
+    return {
+        "schema_version": 1,
+        "kind": "fixed_etf_tiingo_raw_d1_comparison",
+        "dataset_id": f"us_equities.fixed_etf_tiingo_raw_d1.{snapshot_dir.name}",
+        "dataset_hash": dataset_hash,
+        "immutable_snapshot": True,
+        "symbols": list(CORPORATE_ACTION_SYMBOLS),
+        "symbol_order": list(CORPORATE_ACTION_SYMBOLS),
+        "row_count": len(rows),
+        "per_symbol_counts": {
+            symbol: len(rows_by_symbol[symbol]) for symbol in CORPORATE_ACTION_SYMBOLS
+        },
+        "date_ranges": {
+            symbol: {
+                "min": rows_by_symbol[symbol][0].session_date.isoformat(),
+                "max": rows_by_symbol[symbol][-1].session_date.isoformat(),
+                "sessions": len(rows_by_symbol[symbol]),
+            }
+            for symbol in CORPORATE_ACTION_SYMBOLS
+        },
+        "subset": {
+            "path": str(snapshot_dir / "ohlcv_1d.csv.gz"),
+            "size_bytes": subset_size,
+            "sha256": dataset_hash,
+            "schema": list(_TIINGO_RAW_D1_COLUMNS),
+            "format": "csv.gz",
+            "ordering": "symbol_order_then_date_ascending",
+        },
+        "source_lineage": {
+            "tiingo_corporate_actions": {
+                "dataset_id": source.dataset_id,
+                "dataset_hash": source.dataset_hash,
+                "manifest_sha256": source.manifest_hash,
+                "snapshot_name": source.snapshot_dir.name,
+                "manifest_path": str(source.snapshot_dir / "manifest.json"),
+            },
+            "r2_calendar": {
+                "dataset_id": r2_lineage.dataset_id,
+                "dataset_hash": r2_lineage.dataset_hash,
+                "manifest_sha256": r2_lineage.manifest_hash,
+                "snapshot_name": r2_lineage.snapshot_dir.name,
+                "subset_path": str(r2_lineage.snapshot_dir / "ohlcv_1d.csv.gz"),
+                "manifest_path": str(r2_lineage.snapshot_dir / "manifest.json"),
+            },
+        },
+        "source_raw_responses": [
+            {
+                "symbol": symbol,
+                "filename": f"{symbol}.json",
+                "sha256": source.raw_hashes[symbol],
+                "size_bytes": source.raw_sizes[symbol],
+            }
+            for symbol in CORPORATE_ACTION_SYMBOLS
+        ],
+        "campaign_coverage": {
+            "start": CAMPAIGN_COVERAGE_START.isoformat(),
+            "end": CAMPAIGN_COVERAGE_END.isoformat(),
+            "calendar_lineage": "verified_r2_observed_sessions",
+        },
+        "snapshot_metadata": {
+            "derived_at_utc": _format_utc(derived_at_utc),
+            "source_as_of": CAMPAIGN_COVERAGE_END.isoformat(),
+            "revision": "tiingo-standard-eod-raw-d1-r1",
+        },
+        "raw_price_policy": "copy_raw_ohlcv_without_price_rescaling",
+        "corporate_action_policy": "copy_divCash_and_splitFactor_without_derived_events",
+        "normalization_fields": [
+            "date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "divCash",
+            "splitFactor",
+        ],
+        "scope": dict(_TIINGO_RAW_D1_SCOPE),
+    }
+
+
+def _external_snapshot_dir(path: Path, *, repo_root: Path | None) -> Path:
+    candidate = Path(path)
+    if candidate.is_symlink():
+        raise ValueError("Tiingo source snapshot cannot be a symlink")
+    try:
+        snapshot = candidate.resolve(strict=True)
+    except FileNotFoundError as exc:
+        raise ValueError("Tiingo source snapshot directory is missing") from exc
+    if not snapshot.is_dir():
+        raise ValueError("Tiingo source snapshot must be a directory")
+    _assert_external_path(snapshot, repo_root=repo_root)
+    return snapshot
+
+
+def _assert_external_path(path: Path, *, repo_root: Path | None) -> None:
+    candidate = Path(path).resolve(strict=False)
+    if repo_root is not None:
+        root = Path(repo_root).resolve(strict=False)
+        docker_market_data = Path("/app/market_data").resolve()
+        if candidate == root or candidate.is_relative_to(root):
+            if root != Path("/app").resolve() or not candidate.is_relative_to(docker_market_data):
+                raise ValueError("Tiingo raw-D1 data must be outside Git")
+    if any((parent / ".git").exists() for parent in (candidate, *candidate.parents)):
+        raise ValueError("Tiingo raw-D1 data must be outside Git")
+
+
+def _read_external_snapshot_file(snapshot: Path, path: Path, label: str) -> bytes:
+    try:
+        relative = path.relative_to(snapshot)
+    except ValueError as exc:
+        raise ValueError(f"{label} must be inside the snapshot") from exc
+    current = snapshot
+    for part in relative.parts:
+        current /= part
+        if current.is_symlink():
+            raise ValueError(f"{label} cannot use symlinks")
+    try:
+        resolved = path.resolve(strict=True)
+    except FileNotFoundError as exc:
+        raise ValueError(f"{label} is missing") from exc
+    if not resolved.is_file() or not resolved.is_relative_to(snapshot):
+        raise ValueError(f"{label} must be a regular file inside the snapshot")
+    return resolved.read_bytes()
+
+
+def _validate_raw_d1_values(
+    open_price: Decimal,
+    high_price: Decimal,
+    low_price: Decimal,
+    close_price: Decimal,
+    volume: Decimal,
+    div_cash: Decimal,
+    split_factor: Decimal,
+    *,
+    label: str,
+) -> None:
+    prices = (open_price, high_price, low_price, close_price)
+    if any(price <= 0 for price in prices):
+        raise ValueError(f"Tiingo raw price must be positive for {label}")
+    if volume < 0:
+        raise ValueError(f"Tiingo raw volume cannot be negative for {label}")
+    if high_price < max(prices) or low_price > min(prices):
+        raise ValueError(f"Tiingo raw OHLC range is invalid for {label}")
+    if div_cash < 0:
+        raise ValueError(f"Tiingo divCash cannot be negative for {label}")
+    if split_factor <= 0:
+        raise ValueError(f"Tiingo splitFactor must be positive for {label}")
+
+
+def _raw_d1_csv_bytes(rows: tuple[_TiingoRawD1Row, ...]) -> bytes:
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=_TIINGO_RAW_D1_COLUMNS, lineterminator="\n")
+    writer.writeheader()
+    for row in rows:
+        writer.writerow(
+            {
+                "symbol": row.symbol,
+                "date": row.session_date.isoformat(),
+                "open": format(row.open, "f"),
+                "high": format(row.high, "f"),
+                "low": format(row.low, "f"),
+                "close": format(row.close, "f"),
+                "volume": format(row.volume, "f"),
+                "div_cash": format(row.div_cash, "f"),
+                "split_factor": format(row.split_factor, "f"),
+            }
+        )
+    return buffer.getvalue().encode("utf-8")
+
+
+def _gzip_bytes(data: bytes) -> bytes:
+    buffer = io.BytesIO()
+    with gzip.GzipFile(filename="", fileobj=buffer, mode="wb", mtime=0) as compressed:
+        compressed.write(data)
+    return buffer.getvalue()

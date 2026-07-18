@@ -2,60 +2,59 @@
 
 ## Objective
 
-Build one immutable Tiingo raw-D1 comparison snapshot for SPY, QQQ, and IWM
-from the existing Tiingo Standard EOD raw responses, bound to the fixed-ETF r2
-sessions.
+Consume the immutable Tiingo raw-D1 comparison snapshot in one frozen,
+no-retraining local-paper source-sensitivity replay of the existing unsupported
+fixed-ETF campaign.
 
-This advances data collection and a development-only data-source robustness
-check for the existing unsupported campaign. It does not select a model.
+This advances backtest and walk-forward validation. The result is not
+independent validation because the Tiingo representation is bound to r2's fixed
+session calendar; it cannot select a model or support a profitability claim.
 
 ## Required First Reads
 
 Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`, `VISION.md`,
 `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`,
-the Data, Engine Research, and Execution stateboards, plus the invoked Review
+and the Data, Engine Research, and Execution stateboards. Invoke the Review
 checkpoint.
 
 ## Authority And Boundaries
 
 - Do not read `.env`, credentials, account identifiers, or `KIS_LIVE_*`; do not
-  make a Tiingo or KIS network request, access an account, or change
-  `THERICHER_MODE`.
-- Use only the existing immutable Tiingo source snapshot under
-  `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
-  Store new derived bytes under `D:\market_data` and run artifacts under
-  `D:\thericher-v2\model-artifacts`, never Git. Preserve the 20% warning and
-  15% hard free-space floor on `D:`.
-- The result is development-only. Do not open ranking or sealed evidence, train
-  a model, use GPU, select a candidate, make a profitability claim, or alter
-  broker/execution behavior.
-- Use the existing catalog/manifest and Tiingo corporate-action patterns. Do
-  not add a broad provider framework, worker, scheduler, dashboard, or
-  report/gate family.
+  make a network request, access an account, change `THERICHER_MODE`, or alter
+  broker behavior.
+- Use only the immutable inputs under `D:\market_data`: r2, the Tiingo
+  corporate-action snapshot, and
+  `fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1`.
+  Keep run artifacts under `D:\thericher-v2\model-artifacts`, never Git.
+- No GPU training, retraining, model search, new candidate, ranking, promotion,
+  sealed-holdout access, or profitability claim. Every fill remains
+  `source: local_paper`.
+- Do not add a provider framework, scheduler, worker, dashboard, report family,
+  or a second replay CLI. Extend the existing campaign path only as far as this
+  one frozen replay needs.
 
 ## Required Work
 
-1. Ask Claude for a short drift-check before changing the Tiingo parser or
-   source contract. Share no credentials, raw responses, or unnecessary
-   row-level data.
-2. Extend only the smallest existing Tiingo path needed to normalize raw D1
-   OHLCV plus `divCash` and `splitFactor` from the three exact source files for
-   the 896 r2 sessions. Fail closed on missing/extra sessions, unclear raw-field
-   semantics, source tampering, bad lineage, or an existing destination.
-3. Derive one dated external snapshot with hashes, source lineage, schema,
-   raw-versus-adjusted policy, and development-only eligibility in the existing
-   manifest/catalog shape. Do not copy or overwrite the source snapshot.
-4. Data and Engine Research confirm the snapshot is only a frozen input for one
-   future no-retraining source-sensitivity replay. Review checks scope and
-   simplification. Refresh stateboards, `HANDOFF.md`, and this next goal;
-   verify, commit, and push.
+1. Ask Claude for a brief drift-check before changing the daily campaign input
+   contract. Share no raw rows, credentials, or artifacts containing them.
+2. Add the smallest offline Tiingo raw-D1 loader needed to create Data-owned
+   `CatalogedBars`. It must re-attest the derived subset hash, parent Tiingo raw
+   hashes, r2 lineage, exact per-symbol 896-session calendar, raw OHLCV
+   semantics, and absence of adjusted fields before Research receives bars.
+3. Reuse the frozen checkpoints, candidate definitions, timing, costs, explicit
+   corporate-action input, and local-paper path for exactly one no-retraining
+   replay. Keep the parent `unsupported` verdict sticky regardless of the
+   comparison result.
+4. Write one bounded external summary with input hashes and an explicit
+   development-only, non-independent scope. Update Data and Engine stateboards,
+   `HANDOFF.md`, and this next goal; verify, commit, and push.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
-`docker compose --env-file .env.example config --quiet`. Report the focused
-derivation command and only safe artifact/data paths and hashes.
+`docker compose --env-file .env.example config --quiet`. Report any focused
+loader/replay command and only safe paths and hashes.
 
 ## Suggested Commit Message
 
-`Add Tiingo raw D1 comparison snapshot`
+`Replay frozen campaign on Tiingo raw D1`

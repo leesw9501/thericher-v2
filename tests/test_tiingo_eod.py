@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import gzip
 import json
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
 import pytest
 
+import thericher_v2.data.tiingo_eod as tiingo_eod
 from thericher_v2.data.corporate_actions import (
     CAMPAIGN_COVERAGE_END,
     CAMPAIGN_COVERAGE_START,
@@ -17,7 +19,9 @@ from thericher_v2.data.tiingo_eod import (
     R2CorporateActionLineage,
     TiingoEodAcquisitionError,
     build_tiingo_eod_corporate_action_snapshot,
+    build_tiingo_raw_d1_comparison_snapshot,
     fetch_tiingo_standard_eod_responses,
+    normalize_tiingo_raw_d1_response,
     normalize_tiingo_standard_eod_response,
 )
 
@@ -102,6 +106,121 @@ def test_normalizer_rejects_missing_or_extra_r2_observed_sessions() -> None:
     with pytest.raises(ValueError, match="session coverage is incomplete"):
         normalize_tiingo_standard_eod_response(
             symbol="SPY", raw_response=extra, expected_session_dates=_sessions()
+        )
+
+
+def test_raw_d1_normalizer_is_prefix_invariant_and_ignores_adjusted_fields() -> None:
+    rows = [
+        _row(CAMPAIGN_COVERAGE_START),
+        _row(CAMPAIGN_COVERAGE_END, div_cash="1.0", split_factor="2"),
+    ]
+    full = normalize_tiingo_raw_d1_response(
+        symbol="SPY", raw_response=_payload(rows), expected_session_dates=_sessions()
+    )
+    prefix = tiingo_eod._normalize_tiingo_raw_d1_response(
+        symbol="SPY",
+        raw_response=_payload(rows[:1]),
+        expected_session_dates=frozenset({CAMPAIGN_COVERAGE_START}),
+        require_campaign_span=False,
+    )
+
+    assert full[:1] == prefix
+    assert tiingo_eod._raw_d1_csv_bytes(full[:1]) == tiingo_eod._raw_d1_csv_bytes(prefix)
+    assert b"adjClose" in _payload(rows)
+    assert b"adjClose" not in tiingo_eod._raw_d1_csv_bytes(full)
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "match"),
+    [
+        ("open", None, "open is missing or malformed"),
+        ("volume", "-1", "raw volume cannot be negative"),
+        ("high", "99", "raw OHLC range is invalid"),
+    ],
+)
+def test_raw_d1_normalizer_rejects_invalid_raw_values(
+    field: str, value: str | None, match: str
+) -> None:
+    rows = [_row(CAMPAIGN_COVERAGE_START), _row(CAMPAIGN_COVERAGE_END)]
+    if value is None:
+        rows[0].pop(field)
+    else:
+        rows[0][field] = value
+
+    with pytest.raises(ValueError, match=match):
+        normalize_tiingo_raw_d1_response(
+            symbol="SPY", raw_response=_payload(rows), expected_session_dates=_sessions()
+        )
+
+
+def test_raw_d1_snapshot_is_external_and_hash_bound(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    market_root = tmp_path / "market"
+    market_root.mkdir()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    lineage = _lineage(market_root)
+    source = market_root / "events" / "snapshot=2026-07-18-tiingo-eod-r1"
+    source_result = build_tiingo_eod_corporate_action_snapshot(
+        destination=source,
+        raw_responses=_responses(),
+        r2_lineage=lineage,
+        retrieved_at_utc=_eligible_retrieval(),
+        market_data_root=market_root,
+        repo_root=repo_root,
+    )
+    destination = market_root / "daily" / "snapshot=2026-07-18-tiingo-raw-d1-r1"
+
+    def unexpected_fetch(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("raw-D1 derivation must not fetch or read a token")
+
+    monkeypatch.setattr(tiingo_eod, "fetch_tiingo_standard_eod_responses", unexpected_fetch)
+    result = build_tiingo_raw_d1_comparison_snapshot(
+        destination=destination,
+        source_snapshot_dir=source,
+        r2_lineage=lineage,
+        derived_at_utc=datetime(2026, 7, 18, 2, 3, 4, tzinfo=UTC),
+        market_data_root=market_root,
+        repo_root=repo_root,
+    )
+
+    manifest = json.loads((destination / "manifest.json").read_text(encoding="utf-8"))
+    subset = gzip.decompress((destination / "ohlcv_1d.csv.gz").read_bytes())
+    assert result.source_raw_hashes == source_result.raw_hashes
+    assert result.row_count == 6
+    assert not (destination / "raw").exists()
+    assert b"adjClose" not in subset
+    assert manifest["scope"] == {
+        "retrospective_development_replay_only": True,
+        "point_in_time_eligible": False,
+        "ranking_eligible": False,
+        "sealed_holdout_eligible": False,
+    }
+    assert manifest["source_lineage"]["tiingo_corporate_actions"]["dataset_hash"] == (
+        source_result.dataset_hash
+    )
+    with pytest.raises(FileExistsError, match="already exists"):
+        build_tiingo_raw_d1_comparison_snapshot(
+            destination=destination,
+            source_snapshot_dir=source,
+            r2_lineage=lineage,
+            derived_at_utc=datetime(2026, 7, 18, 2, 3, 4, tzinfo=UTC),
+            market_data_root=market_root,
+            repo_root=repo_root,
+        )
+
+    raw_path = source / "raw" / "SPY.json"
+    raw_bytes = raw_path.read_bytes()
+    raw_path.write_bytes(b"x" + raw_bytes[1:])
+    with pytest.raises(ValueError, match="raw source hash mismatch"):
+        build_tiingo_raw_d1_comparison_snapshot(
+            destination=market_root / "daily" / "snapshot=tampered",
+            source_snapshot_dir=source,
+            r2_lineage=lineage,
+            derived_at_utc=datetime(2026, 7, 18, 2, 3, 4, tzinfo=UTC),
+            market_data_root=market_root,
+            repo_root=repo_root,
         )
 
 
@@ -258,6 +377,11 @@ def _row(
 ) -> dict[str, str]:
     return {
         "date": f"{session.isoformat()}T00:00:00.000Z",
+        "open": "100.0",
+        "high": "101.0",
+        "low": "99.0",
+        "close": "100.5",
+        "volume": "1000",
         "divCash": div_cash,
         "splitFactor": split_factor,
         "adjClose": "this-must-not-enter-normalized-evidence",

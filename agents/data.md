@@ -2,10 +2,10 @@
 
 ## Status
 
-Ready, no running job. The approved Tiingo standard EOD acquisition completed
-and produced one loader-attested, retrospective-only corporate-action snapshot
-for the three fixed instruments. The bounded no-auth source triage found no
-eligible new pilot.
+Ready, no running job. The approved Tiingo standard EOD acquisition produced a
+loader-attested retrospective corporate-action snapshot and one immutable raw
+D1 comparison snapshot for the three fixed instruments. The bounded no-auth
+source triage found no eligible new pilot.
 
 ## Engine Loop
 
@@ -40,19 +40,16 @@ eligible new pilot.
 
 ## Current Objective
 
-No-auth triage is complete without acquisition. `pit_sources` contains only
-template workspaces for paid Sharadar and Norgate sources; neither has a raw
-file or membership sample. Stooq requested browser verification, which was not
-bypassed, and the already-captured Nasdaq directory is current/prospective only.
-The next bounded goal derives an independent raw D1 comparison snapshot from
-the already immutable Tiingo raw responses for the fixed ETFs; it needs no new
-request or credential read.
+No-auth triage is complete without acquisition. The immutable Tiingo raw-D1
+snapshot now exists and needs no new request or credential read. It is a
+separate-provider representation bound to r2's exact session calendar, not
+independent validation or a source of ranking evidence.
 
 ## Ready Queue
 
-1. In the next goal, derive exact raw D1 OHLCV plus corporate-action fields from
-   the existing immutable Tiingo SPY/QQQ/IWM responses and bind them to r2's 896
-   sessions. Keep the result development-only and make no new request.
+1. Support one narrow offline loader for the immutable Tiingo raw-D1 snapshot,
+   then re-attest its source hashes, r2 calendar lineage, and exact 896 sessions
+   before Research uses it in one frozen no-retraining replay. No new request.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -151,6 +148,16 @@ request or credential read.
   post-campaign retrieval lag. This proves returned-session coverage, not that
   Tiingo can never later restate an event; a future immutable re-pull comparison
   is the falsifier.
+- The derived raw-D1 comparison snapshot is
+  `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1`.
+  Its 2,688 rows are exactly 896 SPY, 896 QQQ, and 896 IWM sessions; dataset
+  hash is `sha256:9056112167ab920335cb8a5f3c2f45d540a04e1132ee6eb231bac16ee11d7a3d`
+  and manifest hash is
+  `sha256:44a6316e9821694886fa3f791ddb19ec56a435dbaf765417a9568b4a3e57f421`.
+  It has only raw OHLCV, `div_cash`, and `split_factor`, no copied raw response,
+  and no adjusted output field. It is replay-only and cannot establish an
+  independent validation, rank a model, open a holdout, or support a
+  profitability claim.
 - The corporate-action loader is offline and fail-closed. It requires immutable
   raw and normalized hashes, exact r2 lineage, source/rights/as-of facts,
   explicit per-symbol/event-type coverage, New York session-date semantics,
@@ -180,9 +187,9 @@ request or credential read.
 
 ## Recovery
 
-- Recovery state is `complete`: do not overwrite the Tiingo snapshot. A
-  later source comparison must create a new disjoint snapshot and retain this
-  one as the original evidence. Use the fixed ETF daily r2 manifest for
+- Recovery state is `complete`: do not overwrite either Tiingo snapshot. A
+  later source comparison must create a new disjoint snapshot and retain these
+  inputs as original evidence. Use the fixed ETF daily r2 manifest for
   development campaigns and retain r1 as lineage.
 - Recover or mount the r2 subset only together with its unchanged sibling
   `manifest.json`. A different Windows/POSIX root is allowed when the snapshot
@@ -208,6 +215,9 @@ request or credential read.
 - `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1\manifest.json`:
   exact raw per-symbol Tiingo EOD bytes bound to normalized evidence and r2
   lineage; replay-only, not ranking or sealed-holdout eligible.
+- `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1\manifest.json`:
+  raw OHLCV and explicit corporate-action fields derived from the exact Tiingo
+  source bytes; replay-only, not independent validation or ranking evidence.
 - `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`:
   first immutable official-source prospective universe snapshot; all three
   recorded hashes reverified, with Nasdaq file-creation timestamps from
@@ -225,10 +235,8 @@ request or credential read.
 
 ## Next Handoff
 
-Data independently confirmed that r3 attribution reads the pinned r2 and Tiingo
-lineage only: all IDs and dataset/manifest hashes match both immutable
-manifests, and Tiingo's own `r2_lineage` matches r2. Do not rewrite either
-snapshot or interpret adjusted fields. No no-auth candidate expanded the
-frontier. The next goal derives a separate raw D1 comparison snapshot outside
-Git from existing immutable Tiingo bytes; it must not read credentials, access
-KIS, make a new request, or use a paid upgrade.
+Data derived and rechecked the Tiingo raw-D1 snapshot outside Git without a
+credential read, network request, or raw response copy. Future replay code must
+re-attest its parent Tiingo hashes and r2 calendar before producing bars. Do not
+rewrite either snapshot, interpret the result as independent validation, or use
+adjusted fields. No paid upgrade or operator data action is needed.

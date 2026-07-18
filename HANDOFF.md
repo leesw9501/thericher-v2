@@ -165,13 +165,18 @@ A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
 has only empty raw/template workspaces for paid Sharadar and Norgate source
 paths. Stooq requested browser verification and was not bypassed; the existing
 official Nasdaq directory is current/prospective only and cannot repair
-historical universe or price provenance. The next useful bounded step is the
-existing immutable Tiingo Standard EOD raw D1 comparison for SPY/QQQ/IWM. Its
-three raw response files each have 896 rows and fields
-`date,close,high,low,open,volume,adjClose,adjHigh,adjLow,adjOpen,adjVolume,divCash,splitFactor`.
-The next snapshot derives from those verified bytes without a new API request;
-it can test source sensitivity development-only, not create ranking or sealed
-evidence.
+historical universe or price provenance. The existing Tiingo bytes now also
+have one derived raw-D1 snapshot at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1`.
+It has 2,688 rows (896 exact r2 sessions per SPY/QQQ/IWM), dataset hash
+`9056112167ab920335cb8a5f3c2f45d540a04e1132ee6eb231bac16ee11d7a3d`, and
+manifest hash `44a6316e9821694886fa3f791ddb19ec56a435dbaf765417a9568b4a3e57f421`.
+It keeps only raw OHLCV plus `div_cash` and `split_factor`, copies no raw source
+file, and binds the parent Tiingo hashes and r2 calendar lineage. It is a
+separate-provider representation conditioned on r2's session calendar, not an
+independent validation, holdout, selection, or profitability result. A narrow
+offline loader and one frozen no-retraining sensitivity replay are the next
+bounded step.
 
 The Data stateboard owns exact catalog status and operator data requests.
 
