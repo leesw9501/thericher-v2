@@ -18,6 +18,9 @@ offline-attested. It is a separate Data object, not a `CatalogedBars` provider
 or a campaign/paper/model input. The provider silently returned its newest
 10,000 bars per symbol rather than the requested 2017 start, so r1 preserves
 only its actual 129 common-session window and that limitation remains explicit.
+A nonpersistent SPY scope probe then returned a separate 10,000-bar 2024 window,
+so date-window access is supported even though the observed per-response cap
+remains unresolved as a provider contract.
 
 ## Engine Loop
 
@@ -56,18 +59,19 @@ The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
 `unsupported`. The CVS/FCX/KO intraday smoke is complete from a loader-attested
 short snapshot. The current IEX r1 is 5-minute descriptive evidence only. Its
-next Data question is whether one bounded earlier request can return a
-non-overlapping historical window, not source adjudication, training, or a
-performance dataset.
+next Data task is one predeclared, rate-limited archive snapshot for the
+disjoint pre-r1 period, not source adjudication, training, or a performance
+dataset.
 
 ## Ready Queue
 
-1. Make one bounded, no-overwrite Tiingo IEX historical-window probe before
-   `2026-01-13` to determine whether the observed 10,000-bar response is a
-   request-size cap. Preserve no raw rows from the probe. If it yields a
-   non-overlapping window, a later goal may build one new chunked snapshot; if
-   it is empty, repeats r1, or rejects access, count the outcome and stop after
-   two bounded failures for this source.
+1. Build one no-overwrite Tiingo IEX archive snapshot for SPY/QQQ/IWM from
+   2017-08-01 through 2026-01-12 using the 21 predeclared five-calendar-month
+   windows in `NEXT_CODEX_GOAL.md`. It has 63 fixed requests in three
+   21-request batches, must reject a 10,000-row chunk as capped, and must retain
+   exact raw chunks plus an offline hash-attesting aggregate loader. Estimated
+   external storage is at most 90 MiB; do not widen symbols, add a provider, or
+   overwrite r1.
 2. If the allowed sources cannot provide useful additional history, record the
    smallest concrete paid-data request with product, cost, coverage, rights,
    and an exact operator decision; do not create a placeholder provider.
@@ -81,8 +85,9 @@ performance dataset.
 
 ## Operator Help Needed
 
-- None. The operator-approved Tiingo entitlement was used only for the fixed
-  IEX r1 requests; paid upgrades remain prohibited.
+- None. The operator-approved Tiingo entitlement is limited to the fixed r1
+  evidence and the exact pre-r1 archive plan in `NEXT_CODEX_GOAL.md`; paid
+  upgrades remain prohibited.
 
 ## Durable Knowledge
 
@@ -111,6 +116,14 @@ performance dataset.
   signal. IEX-only volume is not consolidated volume. No adjusted fields,
   corporate-action lineage, timestamp-boundary claim, PIT membership,
   campaign, paper, ranking, training, or profitability use is allowed.
+- The nonpersistent SPY IEX scope probe used 2024-01-02 through 2024-06-28,
+  5-minute explicit OHLCV fields, `afterHours=false`, and `forceFill=false`.
+  It returned HTTP 200, 10,000 rows, schema
+  `date/open/high/low/close/volume`, first timestamp
+  `2024-01-02T19:40:00Z`, and last timestamp `2024-06-28T19:55:00Z`. No raw
+  bytes, hash, cache, artifact, or snapshot was retained. This proves a
+  non-overlapping historical window is reachable, not full-window completeness
+  or a documented response-cap contract.
 - Intraday: `snapshot=2026-07-09-shadow-t0-8d-probe` contains CVS, FCX, and KO
   from 2026-06-29 through 2026-07-09. It is suitable for bounded smoke work.
 - Daily/PIT: `D:\market_data\pit_sources` contains only template workspaces for

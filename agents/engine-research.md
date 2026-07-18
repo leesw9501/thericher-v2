@@ -80,10 +80,10 @@
 
 ## Breadth Queue
 
-- Wait for Data to determine whether Tiingo IEX can retrieve a non-overlapping
-  pre-2026-01-13 5-minute window. Do not use r1 or the completed short-data
-  smoke as model-selection input or start a GPU job merely to fill idle
-  capacity.
+- Data confirmed one non-overlapping 2024 Tiingo IEX window without retaining
+  its bytes. Wait for its pre-r1 chunked archive snapshot; do not use r1, the
+  probe, or the completed short-data smoke as model-selection input or start a
+  GPU job merely to fill idle capacity.
 
 ## Depth Queue
 
@@ -151,6 +151,10 @@
   consolidated volume, timestamp-boundary semantics, adjustments, corporate
   actions, PIT membership, independence, model suitability, or a 1-minute
   execution path.
+- The nonpersistent SPY 2024 probe returned a different 10,000-bar window,
+  from `2024-01-02T19:40:00Z` through `2024-06-28T19:55:00Z`. It establishes
+  only date-window reachability. It has no stored bytes, source hash, dataset
+  identity, training use, campaign use, or research result.
 
 ## Recovery
 
@@ -214,7 +218,8 @@
   comparison is also unsupported. The broad-Yahoo feature/outcome substrate is
   complete and remains descriptive. The intraday multi-timeframe local-paper
   baseline is also complete but remains a short-data pipeline smoke. Tiingo
-  IEX r1 adds only a hash-attested 5-minute descriptive window. Data must first
-  resolve its 10,000-bar response limit before any further historical-intraday
-  research decision. Do not rank, promote, name a winner, claim profitability,
-  or start GPU training.
+  IEX r1 adds only a hash-attested 5-minute descriptive window. The bounded
+  2024 probe confirms date-window access but not completeness. Data next builds
+  a rate-limited pre-r1 archive before any historical-intraday research
+  decision. Do not rank, promote, name a winner, claim profitability, or start
+  GPU training.

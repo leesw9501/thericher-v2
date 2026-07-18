@@ -1368,3 +1368,33 @@ Reason: this gives the engine a replayable, hash-bound intraday source without
 quietly turning a provider-limited response into a market-wide performance or
 execution claim. Preserving the cap makes a later chunking decision evidence-led
 rather than an unbounded download loop.
+
+## 2026-07-19 - Tiingo IEX date-window access supports a bounded archive attempt
+
+Decision: accept the nonpersistent SPY scope probe as `windowed access
+supported`. The exact 2024-01-02 through 2024-06-28 request returned HTTP 200,
+10,000 rows, fields `date/open/high/low/close/volume`, first timestamp
+`2024-01-02T19:40:00Z`, and last timestamp `2024-06-28T19:55:00Z`. It did not
+write raw bytes, a hash, cache, artifact, or snapshot. The response is
+non-overlapping with r1, so Tiingo IEX honors the historical date window for
+this bounded observation.
+
+This does not prove the provider's cap contract or complete requested-window
+coverage: it again returned exactly 10,000 rows and began partway through its
+first session. The next Data objective is therefore one predeclared archive of
+the disjoint 2017-08-01 through 2026-01-12 period, using 21 five-calendar-month
+windows, three fixed ETFs, 63 exact requests in three 21-request batches, and
+an estimated external footprint below 90 MiB. Any chunk reaching 10,000 rows,
+returning an out-of-window session, or failing source validation must fail the
+archive rather than silently entering it.
+
+This supersedes the prior entry's current-goal IEX probe wording only: the
+operator-approved token may now be read solely for those predeclared archive
+requests, through the same safe reader. It still does not authorize another
+Tiingo product, paid upgrade, redistribution, other credential, KIS, order,
+capital, model, campaign, paper, GPU, or live activity. R1 remains immutable
+and separate.
+
+Reason: one date-filtered observation is enough to replace an availability
+guess with a bounded archive plan, but not enough to justify an unbounded
+historical download or a research-quality claim.

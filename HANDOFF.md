@@ -49,11 +49,12 @@ success metrics.
 ## Current Boundaries
 
 - KIS remains failed closed. The current Data goal may read only
-  `TIINGO_API_TOKEN` through its safe reader for the exact bounded IEX scope
-  probe in `NEXT_CODEX_GOAL.md`; it reads no other `.env` key, makes no KIS API
-  call, and accesses no account. Any later KIS re-probe needs non-secret pairing
-  confirmation and separate one-time authority. Order submit/cancel, paper
-  capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
+  `TIINGO_API_TOKEN` through its safe reader for the exact predeclared IEX
+  archive requests in `NEXT_CODEX_GOAL.md`; it reads no other `.env` key, makes
+  no KIS API call, and accesses no account. Any later KIS re-probe needs
+  non-secret pairing confirmation and separate one-time authority. Order
+  submit/cancel, paper capital, `KIS_LIVE_*`, live behavior, and mode changes
+  remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -185,6 +186,13 @@ volume is IEX-only, and it has no adjustment/corporate-action, point-in-time,
 timestamp-boundary, execution, ranking, campaign, paper, or profitability
 claim. Its offline Data loader remains intentionally outside `CatalogedBars`,
 provider, campaign, and paper APIs.
+
+The one nonpersistent SPY query for 2024-01-02 through 2024-06-28 returned
+HTTP 200 with 10,000 bars, `date/open/high/low/close/volume`, first timestamp
+`2024-01-02T19:40:00Z`, and last timestamp `2024-06-28T19:55:00Z`. It retained
+no bytes, hash, cache, artifact, or snapshot. That supports date-window access
+and a bounded pre-r1 archive attempt; it does not prove a documented cap,
+complete requested-window coverage, source independence, or research use.
 
 Current canonical evidence:
 
@@ -459,11 +467,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` next asks the Data lane to make one bounded pre-r1 Tiingo
-IEX window probe for `SPY`/`QQQ`/`IWM`. Its only question is whether the
-observed 10,000-bar cap is a response-size limit that can expose a
-non-overlapping older window. It must not overwrite r1, create a new snapshot,
-touch KIS, orders, models, GPU, or live behavior. KIS remains failed closed
-pending the non-secret pairing check and a separately authorized future probe.
-The KIS capital envelope, paid data, order submission, and live capital remain
-separate future decisions.
+`NEXT_CODEX_GOAL.md` next asks the Data lane to build one rate-limited,
+chunked, pre-r1 Tiingo IEX archive for `SPY`/`QQQ`/`IWM`. It predeclares 21
+sub-cap windows, 63 requests in three batches, and a 90 MiB storage ceiling.
+It must not overwrite r1 or touch KIS, orders, models, GPU, or live behavior.
+KIS remains failed closed pending the non-secret pairing check and a separately
+authorized future probe. The KIS capital envelope, paid data, order submission,
+and live capital remain separate future decisions.
