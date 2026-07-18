@@ -2,9 +2,9 @@
 
 ## Status
 
-Waiting for operator authority, no running job. The offline corporate-action
-snapshot contract is implemented, but no source has yet met the complete
-coverage, rights, and no-auth requirements for the three fixed instruments.
+Ready, no running job. The operator approved standard Tiingo EOD acquisition
+for the three fixed instruments; the offline corporate-action snapshot contract
+is implemented and awaits immutable source bytes.
 
 ## Engine Loop
 
@@ -19,7 +19,8 @@ coverage, rights, and no-auth requirements for the three fixed instruments.
 
 ## Must Not
 
-- Call KIS, read credentials or `.env`, or modify broker/strategy code.
+- Call KIS, read any `.env` value except `TIINGO_API_TOKEN`, or modify
+  broker/strategy code. Never expose or persist the token.
 - Use paid, login-gated, manual, or license-unclear sources without operator
   approval.
 - Turn research data-quality warnings into blocking gates unless execution
@@ -38,15 +39,15 @@ coverage, rights, and no-auth requirements for the three fixed instruments.
 
 ## Current Objective
 
-After explicit operator authorization, capture Tiingo split and distribution
-records for `SPY`, `QQQ`, and `IWM` in one immutable, hash-bound external
-snapshot without modifying r2. Until then, do not create or read credentials.
+Capture standard Tiingo EOD records for `SPY`, `QQQ`, and `IWM` in one
+immutable, hash-bound external snapshot without modifying r2. Derive only
+`cash_distribution` from `divCash` and `split` from `splitFactor`.
 
 ## Ready Queue
 
-1. Obtain operator authority for a free Tiingo Starter account/API token and
-   corporate-actions endpoint access.
-2. Capture only SPY/QQQ/IWM distributions and splits under `D:\market_data`.
+1. Capture exact EOD response bytes for the fixed campaign range under
+   `D:\market_data` using only the approved Tiingo token.
+2. Normalize SPY/QQQ/IWM distributions and splits with request provenance.
 3. Load the snapshot through the offline contract and independently verify the
    exact fixed 896-session coverage before Research consumes it.
 
@@ -56,10 +57,7 @@ snapshot without modifying r2. Until then, do not create or read credentials.
 
 ## Operator Help Needed
 
-- Approve use of a free Tiingo Starter account/API token for private retrieval
-  of SPY/QQQ/IWM distributions and splits, including corporate-actions beta
-  activation if Tiingo still requires it. This is no-spend authority; paid
-  upgrades remain prohibited without a separate approval.
+- None. Standard EOD token use is approved; paid upgrades remain prohibited.
 
 ## Durable Knowledge
 
@@ -123,6 +121,9 @@ snapshot without modifying r2. Until then, do not create or read credentials.
   Official issuer pages support distribution ex-date semantics but did not
   establish both automated preservation rights and complete split/no-split
   coverage for all three ETFs. Absence of a split row cannot prove no split.
+- The operator's standard EOD probe succeeded for SPY from `2024-03-14` through
+  `2024-03-18`; `2024-03-15` returned `divCash=1.594937` and
+  `splitFactor=1.0`. This is access evidence, not a durable campaign snapshot.
 - The corporate-action loader is offline and fail-closed. It requires immutable
   raw and normalized hashes, exact r2 lineage, source/rights/as-of facts,
   explicit per-symbol/event-type coverage, New York session-date semantics,
@@ -152,9 +153,9 @@ snapshot without modifying r2. Until then, do not create or read credentials.
 
 ## Recovery
 
-- Recovery state is `operator`: the loader contract is complete, but there is
-  no accepted event snapshot to recover. Use the fixed ETF daily r2 manifest
-  for development campaigns and retain r1 only as immutable lineage.
+- Recovery state is `ready`: the loader contract and approved EOD source path
+  are known, but there is no accepted event snapshot to recover. Use the fixed
+  ETF daily r2 manifest for development campaigns and retain r1 as lineage.
 - Recover or mount the r2 subset only together with its unchanged sibling
   `manifest.json`. A different Windows/POSIX root is allowed when the snapshot
   directory name and `ohlcv_1d.csv.gz` basename are preserved; missing,

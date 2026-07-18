@@ -4,8 +4,9 @@
 
 - Broker-neutral lifecycle readiness is implemented with an offline fake
   transport and an explicit local persistence path.
-- KIS remains disabled. No credential, account, network, order, or capital
-  authority exists.
+- KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
+  read-only virtual-account discovery while `THERICHER_MODE=off`; no credential
+  has yet been read and no account, order, or capital evidence exists.
 - Existing broker-free fills remain labeled `source: local_paper`; fake broker
   fills use `source: in_memory_broker`.
 
@@ -64,21 +65,23 @@
 
 ## Ready Queue
 
-1. Integrate the pure risk decision immediately before a future authorized
-   transport submit without combining evaluation and side effects.
-2. Keep append-only execution event integration as a later bounded step.
-3. After explicit operator authorization, add read-only KIS paper account and
-   buying-power discovery behind the existing disabled boundary.
+1. Add the smallest read-only KIS paper boundary for masked account identity,
+   cash, orderable funds, positions, and open orders using only `KIS_PAPER_*`.
+2. Produce one typed snapshot and reconcile it without submit/cancel behavior,
+   then propose a paper capital envelope for operator approval.
+3. Keep pure risk integration and append-only execution events as later bounded
+   steps after capital and submit authority exist.
 
 ## Operator Help
 
-- None now.
-- Read-only KIS paper credential/account authority and a later paper capital
-  envelope remain separate future decisions.
+- None before read-only discovery. The paper capital envelope is the next
+  operator decision after successful reconciliation.
 
 ## Must Not
 
-- Call KIS, use network or credentials, submit external orders, or enable live
-  behavior under current authority.
+- Read `KIS_LIVE_*`, any unrelated `.env` key, or expose paper secrets/account
+  identifiers. Read-only KIS paper network calls are the only allowed KIS use.
+- Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
+  paper capital; or enable live behavior under current authority.
 - Add strategy or model-selection logic to execution.
 - Relabel fake broker fills as `local_paper`.

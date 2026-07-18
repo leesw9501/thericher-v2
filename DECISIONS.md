@@ -1136,3 +1136,20 @@ Reason: adjustment-factor heuristics materially changed the research conclusion,
 while a missing event row is not evidence that no event occurred. A narrow
 offline contract and no-retraining replay resolve that assumption without more
 GPU search, report/gate sprawl, or credential creep.
+
+## 2026-07-18 - Scoped Tiingo and KIS paper read-only authority
+
+Decision: the operator authorized the ignored root `.env` `TIINGO_API_TOKEN`
+for standard Tiingo EOD retrieval of SPY, QQQ, and IWM, and `KIS_PAPER_*` for
+one read-only virtual-account discovery of masked identity, cash, orderable
+funds, positions, and open orders. Secrets and unmasked account identifiers may
+not enter logs, tests, artifacts, Git, reports, or Claude prompts.
+
+`THERICHER_MODE=off` remains fixed. This authority does not include KIS submit,
+modify, cancel, paper capital allocation, `KIS_LIVE_*` access, live behavior,
+paid data, or unrelated `.env` keys. After successful paper reconciliation,
+Codex proposes a capital envelope for a separate operator decision.
+
+Reason: authenticated EOD data closes the current corporate-action evidence gap,
+while read-only paper facts advance execution readiness without conflating
+credential availability with order or capital authority.

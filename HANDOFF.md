@@ -48,8 +48,10 @@ success metrics.
 
 ## Current Boundaries
 
-- KIS access, credentials, account queries, broker submission, and live mode are
-  disabled unless a current goal carries the required operator approval.
+- The current goal may read only `TIINGO_API_TOKEN` and `KIS_PAPER_*` from the
+  ignored root `.env`. Tiingo EOD collection and KIS virtual-account read-only
+  discovery are approved; order submit/cancel, paper capital, `KIS_LIVE_*`,
+  live behavior, and mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -151,10 +153,10 @@ none was invented.
 No corporate-action snapshot has been accepted yet. Official issuer pages
 confirm distribution-date semantics, but automated preservation rights and a
 complete split/no-split history for all three ETFs are not sufficiently clear.
-The no-auth acquisition path therefore stopped fail-closed. The smallest useful
-operator action is to authorize a free Tiingo Starter account/API token, limited
-to private retrieval of SPY/QQQ/IWM distributions and splits. No credential has
-been created or read, and no data was downloaded for this objective.
+The operator has now authorized the ignored `.env` `TIINGO_API_TOKEN` for the
+standard Tiingo EOD endpoint. A manual SPY probe succeeded and returned
+`divCash=1.594937` on `2024-03-15` with `splitFactor=1.0`; this proves endpoint
+access and field availability but is not the immutable campaign snapshot.
 
 The Data stateboard owns exact catalog status and operator data requests.
 
@@ -212,17 +214,18 @@ reconciliation, unknown outcomes, and non-durable intents still fail closed.
 It does not submit. Generic D1 local paper accepts a later caller-supplied
 observed bar; the daily campaign separately proves exact `+1/+2` adjacency.
 
-KIS is disabled, no credentials have been read, and no broker call or order has
-been made.
+No KIS credential has been read and no broker call or order has been made. The
+operator has authorized `KIS_PAPER_*` for one read-only virtual-account
+discovery of masked identity, cash, orderable funds, positions, and open orders
+while `THERICHER_MODE=off` remains unchanged.
 
-KIS paper is an early execution milestone, not a reward for model
-profitability. A later goal should first request operator authority for
-read-only paper account access. After buying power is reconciled, Codex proposes
-a paper capital envelope based on the smaller of actual orderable paper funds
-and intended shadow live capital; the current planning reference is KRW
-5,000,000. The operator approves or changes that envelope once. Routine paper
-work inside it then continues without repeated approval. Live mode remains a
-separate decision.
+KIS paper is an early execution milestone, not a reward for model profitability.
+After the approved read-only discovery reconciles buying power, Codex proposes a
+paper capital envelope based on the smaller of actual orderable paper funds and
+intended shadow live capital; the current planning reference is KRW 5,000,000.
+The operator approves or changes that envelope once. Routine paper work inside
+it then continues without repeated approval. Submit/cancel and live mode remain
+separate decisions.
 
 ## Agent State
 
@@ -268,7 +271,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` is ready for the operator-authorized corporate-action
-snapshot and 36-cell no-retraining replay. Codex must not create or read a
-Tiingo token before that approval. Paid data, read-only KIS authority, the paper
-capital envelope, and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now runs two approved lanes in parallel: Tiingo EOD event
+qualification plus the 36-cell no-retraining replay, and KIS paper read-only
+account discovery plus reconciliation. The next operator decision is the paper
+capital envelope. Paid data, order submission, and live capital remain separate
+future decisions.

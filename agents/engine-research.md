@@ -41,8 +41,8 @@
 
 ## Current Objective
 
-- Wait for Data to provide a loader-attested corporate-action snapshot after
-  operator-authorized acquisition.
+- Wait for Data to provide a loader-attested corporate-action snapshot from the
+  approved standard Tiingo EOD acquisition.
 - Then reuse the existing six checkpoints for the frozen 36-cell explicit-event
   replay. Do not retrain, change candidates, rank, or select a model.
 
