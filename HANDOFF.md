@@ -479,10 +479,26 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` next asks the Data lane for a no-cost, decision-ready
-comparison of the smallest paid PIT-capable US daily research source. It must
-use official public facts only and cannot purchase, log in, download data, add
-a provider, or touch KIS, orders, models, GPU, or live behavior. KIS remains
-failed closed pending the non-secret pairing check and a separately authorized
-future probe. The KIS capital envelope, data purchase, order submission, and
-live capital remain separate future decisions.
+The official-public source review selects no purchased product. Norgate US
+Stocks Platinum is the only candidate with public price and footprint suitable
+for a small trial decision: USD 346.50 for six months, with delisted securities,
+historical index membership, major-exchange listing history, daily price/volume,
+and corporate-action indicators. Its published footprint is 2 GB download and
+9.1 GB on disk; current `D:` free space is 40.60 percent. The personal-use EULA
+bans redistribution and requires deletion of Data and Derived Data when a
+subscription lapses, so any future Norgate ingest and dependent artifacts remain
+outside Git and need a deletion path.
+
+Sharadar `SEP` is a real documented alternative for daily US listed/delisted
+OHLCV, adjusted/unadjusted prices, corporate actions, ticker changes, and
+bulk/Tables delivery. Its public price is login-gated, and the public evidence
+reviewed does not establish historical index or per-date exchange membership,
+storage, or personal-use terms. It can resolve only part of the active PIT
+blocker without a vendor conversation; it is not selected for the trial.
+
+`NEXT_CODEX_GOAL.md` now waits for one operator decision on a free Norgate
+three-week Platinum trial. The operator must create the account and accept its
+identity/EULA terms. Codex must not sign up, download, purchase, touch KIS,
+orders, models, GPU, or live behavior until that approval and a later scoped
+task exist. KIS remains failed closed pending the non-secret pairing check and
+a separately authorized future probe.

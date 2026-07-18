@@ -1420,3 +1420,39 @@ make the archive look complete while breaking its raw-to-canonical attestation.
 The outcome does not prove a provider defect, complete-history absence, source
 reliability, or any research, validation, campaign, paper, or profitability
 claim. A later long-history requirement needs a newly approved source plan.
+
+## 2026-07-19 - Norgate trial is the smallest public-evidence PIT candidate
+
+Decision: make no purchase and add no provider. The official-public comparison
+selects Norgate US Stocks Platinum only as the smallest **trial candidate with
+public price and footprint** for the present daily PIT research blocker. Its
+six-month price is USD 346.50; it documents delisted securities, historical
+index membership, major-exchange listing identification, daily price/volume,
+and corporate-action indicators. Its published US Platinum footprint is a 2 GB
+download and 9.1 GB on disk, which remains well above the local 20 percent
+warning and 15 percent stop thresholds at the observed 40.60 percent free space
+on `D:`.
+
+The source has material constraints: membership is provided as a per-date
+plugin answer rather than raw constituent lists, the database is proprietary
+and Windows-oriented, Python support is Windows-only, and the personal-use
+EULA prohibits redistribution and requires deletion of Data and Derived Data
+when a subscription lapses. A free three-week trial is therefore the next
+operator decision, not a data acquisition authorization. It must verify the
+actual Python fields, unadjusted OHLCV export, corporate-action lineage,
+per-date membership semantics, and licensed host-to-Docker boundary before any
+separate purchase question.
+
+Sharadar is not selected for the trial, but it is not absent: its official `SEP`
+page documents daily US listed/delisted OHLCV from 1998, adjusted/unadjusted
+prices, corporate-action, ticker-change, and delisting-reason fields, plus
+Tables API and bulk export. The current price is login-gated, and the public
+evidence reviewed does not establish historical index or per-date exchange
+membership, a storage estimate, or personal-use rights. SEP therefore resolves
+part of the blocker but cannot be treated as a decision-ready complete PIT
+universe source without a vendor conversation.
+
+Reason: selecting a source with verified coverage and constraints is more
+valuable than extending model work on survivor-selected evidence. Recording one
+trial decision avoids both a paid-data leap and a new provider/gate/report
+framework.

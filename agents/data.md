@@ -62,15 +62,79 @@ short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
 
+## PIT Source Decision (2026-07-19)
+
+**Recommendation: evaluate Norgate US Stocks Platinum through its free trial
+before any purchase.** It is the only candidate in this comparison with a
+current public price and published footprint that joins delisted securities,
+historical index membership, major-exchange listing history, daily
+price/volume, and corporate-action indicators in one local Windows product.
+The 6-month subscription is USD 346.50; 12 months is USD 630.00. Platinum
+includes history back to 1990, while its major-exchange listing identifier is
+documented back to January 1995.
+
+- **PIT universe and delistings:** Platinum includes delisted securities and
+  historical index constituents. The historical-membership plugin answers
+  whether a listed or delisted security was in an index on a day; it does not
+  provide raw constituent-change lists. Major-exchange listing status is
+  separately documented per trading date from 1995. This is useful daily PIT
+  research evidence, not a claim of a complete all-US universe or pre-1995
+  coverage.
+- **Price and corporate actions:** Norgate exposes daily price/volume and a
+  configurable no-price/volume-adjustment mode, plus dividend and capital-event
+  indicators (splits, reverse splits, stock dividends, rights issues, and
+  complex reorganizations). A trial must still prove the exact Windows-Python
+  fields, raw OHLCV export, and event-lineage representation needed here.
+- **Delivery:** NDU stores a proprietary local relational database and supports
+  Python on Windows plus historical-price CSV/TXT export. It does not promise
+  direct Linux/Docker access, so a trial must test a licensed host-to-Docker
+  research boundary before any integration code is proposed.
+- **Rights and retention:** the current EULA permits personal investment or
+  trading use on two personal computers and a database backup, but prohibits
+  redistribution and commercial use. On subscription lapse it requires deletion
+  of Data and Derived Data. Norgate-originated data and affected artifacts must
+  therefore stay out of Git and have a documented deletion path; this is a
+  material constraint, not a paper-trading or live authority.
+- **Storage:** Norgate publishes a 2 GB download and 9.1 GB on-disk estimate
+  for US Platinum, with 500 MB free required on `C:` even when its database is
+  located elsewhere. The current `D:` free space is 40.60 percent, so the
+  published 9.1 GB footprint remains above the 20 percent warning and 15
+  percent stop thresholds. `C:` has more than the required 500 MB free.
+
+Official evidence: [packages](https://norgatedata.com/stockmarketpackages.php),
+[content tables](https://norgatedata.com/data-content-tables.php),
+[historical-membership FAQ](https://norgatedata.com/data-package-faq.php),
+[delivery and adjustment](https://norgatedata.com/ndu-overview.php),
+[installation and storage](https://norgatedata.com/ndu-installation.php), and
+[EULA](https://norgatedata.com/subscribe/eula.php).
+
+**Sharadar comparison:** the official `SEP` product page documents daily US
+listed and delisted equities from 1998, adjusted and unadjusted OHLCV, and
+corporate-action, delisting-reason, and ticker-change fields. It also documents
+two daily update times plus Tables API and bulk-export delivery. However, its
+current price is login-gated, and the public material reviewed does not prove
+historical index constituent membership or per-date major-exchange universe
+membership, a storage footprint, or personal-use rights. Nasdaq's public
+license refers to an executed order form and internal-business use. SEP can
+therefore address raw daily price, corporate-action, and delisting evidence,
+but is not a complete or decision-ready answer to this project's PIT-universe
+requirement from the public evidence alone.
+
+Official evidence: [Sharadar SEP](https://data.nasdaq.com/databases/SEP),
+[Nasdaq Data Link product documentation](https://docs.data.nasdaq.com/docs/data-organization),
+and [Nasdaq license terms](https://data.nasdaq.com/terms).
+
 ## Ready Queue
 
-1. Compare official public information for the smallest rights-cleared paid
-   source that can provide US daily point-in-time membership/delistings and raw
-   OHLCV/corporate-action evidence. Record one decision-ready Sharadar versus
-   Norgate recommendation before requesting any operator spend.
-2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
+1. Await the operator's approval or rejection of the free Norgate US Stocks
+   Platinum trial. Do not create an account, accept the EULA, download, or
+   purchase on the operator's behalf.
+2. After an explicit approval and an operator-created trial, verify the
+   Windows-Python access, no-adjustment OHLCV, event fields, per-date universe
+   semantics, and licensed storage boundary before proposing a paid purchase.
+3. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
-3. If an operator later approves a source, collect only the specifically
+4. If an operator later approves a source, collect only the specifically
    approved product under a new bounded goal; templates are not evidence.
 
 ## Running
@@ -79,8 +143,12 @@ there is no r2 snapshot or new historical-intraday research input.
 
 ## Operator Help Needed
 
-- None. Paid upgrades and data purchase remain prohibited until a later,
-  concrete source/product/cost/rights recommendation receives approval.
+- Approve or reject this exact no-cost external action: **"Approve a free
+  three-week Norgate US Stocks Platinum trial, using my own identity and
+  accepting Norgate's EULA, solely to verify the Windows-Python research
+  boundary, PIT membership/delisting access, no-adjustment OHLCV, and
+  corporate-action fields. Do not purchase the USD 346.50 six-month subscription
+  or download data into the project until I approve a later scoped step."**
 
 ## Durable Knowledge
 
