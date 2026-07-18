@@ -8,7 +8,8 @@ import io
 import json
 import socket
 import urllib.request
-from datetime import UTC, date, datetime, timedelta
+from dataclasses import replace
+from datetime import UTC, date, datetime, timedelta, timezone
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
@@ -29,6 +30,7 @@ from thericher_v2.data.corporate_actions import (
     CORPORATE_ACTION_COLUMNS,
     CORPORATE_ACTION_EVENT_TYPES,
 )
+from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 from thericher_v2.execution import EmergencyStore
 from thericher_v2.research.daily_campaign import (
     DAILY_CANDIDATES,
@@ -49,6 +51,7 @@ from thericher_v2.research.daily_campaign import (
     DailyCatalogFacts,
     DailyReplayCell,
     build_daily_campaign_plan,
+    build_daily_source_sensitivity_replay_plan,
     build_daily_training_batch,
     check_daily_sensitivity,
     eligible_daily_signal_starts_for_dates,
@@ -105,6 +108,56 @@ def daily_plan(tmp_path_factory: pytest.TempPathFactory):
             development_training_eligible=True,
         ),
         campaign_id="unit-raw-d1-development",
+    )
+
+
+def _source_sensitivity_target_fixture(daily_plan, root: Path):
+    snapshot = root / "snapshot=unit-tiingo-raw-d1-r1"
+    snapshot.mkdir(parents=True, exist_ok=True)
+    raw_path = snapshot / "ohlcv_1d.csv.gz"
+    raw_bytes = b"unit-tiingo-raw-d1-source-sensitivity\n"
+    raw_path.write_bytes(raw_bytes)
+    manifest_path = snapshot / "manifest.json"
+    manifest_path.write_text(
+        json.dumps(
+            {
+                "dataset_id": "us_equities.fixed_etf_tiingo_raw_d1.snapshot=unit-tiingo-raw-d1-r1",
+                "dataset_hash": _bytes_sha256(raw_bytes),
+                "kind": "unit_tiingo_raw_d1",
+            },
+            indent=2,
+            sort_keys=True,
+        ),
+        encoding="utf-8",
+    )
+    dataset_id = "us_equities.fixed_etf_tiingo_raw_d1.snapshot=unit-tiingo-raw-d1-r1"
+    dataset_hash = _bytes_sha256(raw_bytes)
+    shift = Decimal("7.25")
+    target_bars = tuple(
+        _cataloged_bars_from_verified_loader(
+            dataset_id=dataset_id,
+            dataset_hash=dataset_hash,
+            source_path=raw_path,
+            bars=tuple(
+                replace(
+                    bar,
+                    open=bar.open + shift,
+                    high=bar.high + shift,
+                    low=bar.low + shift,
+                    close=bar.close + shift,
+                )
+                for bar in source.bars
+            ),
+        )
+        for source in daily_plan.cataloged_bars
+    )
+    return (
+        build_daily_source_sensitivity_replay_plan(
+            daily_plan,
+            target_bars,
+            replay_campaign_id="unit-tiingo-raw-d1-replay",
+        ),
+        _file_sha256(manifest_path),
     )
 
 
@@ -351,6 +404,79 @@ def test_prepare_explicit_event_replay_is_no_training_and_fixed_36_cells(
     assert prepared.sealed_holdout is prepared.profitability_claim is False
 
 
+def test_prepare_explicit_event_replay_reattests_legacy_timezone_contract(
+    daily_plan,
+    tmp_path: Path,
+) -> None:
+    legacy_plan = replace(
+        daily_plan,
+        contract=replace(
+            daily_plan.contract,
+            campaign_id="raw-d1-development-20260718-cuda-r1",
+        ),
+    )
+    actions = _corporate_actions_fixture(
+        legacy_plan,
+        tmp_path / "legacy-contract-events",
+    )
+    artifact_root, summary_path, _ = _write_source_cuda_summary(legacy_plan, tmp_path)
+    summary = json.loads(summary_path.read_text())
+    legacy_contract_hash = (
+        "sha256:abdd71954a4b04b1baa9b40fab89688a74dc524e0fd3f52291b6ca41eba34f78"
+    )
+    summary["campaign_contract_hash"] = legacy_contract_hash
+    summary["split"] = _source_summary_schedule_fixture(legacy_plan)
+    summary["costs"] = {
+        "fee_bps_per_fill": "10",
+        "slippage_bps_per_fill": "5",
+    }
+    summary["execution_timing"] = {
+        "signal": "completed_observed_session_t",
+        "entry_observed_session_offset": 1,
+        "exit_observed_session_offset": 2,
+        "calendar_contiguity_required": False,
+        "common_session_adjacency_proven": True,
+        "signal_cadence_observed_sessions": DAILY_SIGNAL_CADENCE,
+    }
+    legacy_summary_hash = _rewrite_json(summary_path, summary)
+
+    prepared = prepare_daily_explicit_event_replay(
+        legacy_plan,
+        corporate_actions=actions,
+        source_summary_path=summary_path,
+        expected_source_summary_sha256=legacy_summary_hash,
+        replay_id="unit-explicit-legacy-timezone-contract",
+        artifact_root=artifact_root,
+    )
+
+    assert prepared.source_campaign_contract_hash == legacy_contract_hash
+
+    summary["campaign_contract_hash"] = "sha256:" + "a" * 64
+    arbitrary_summary_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="campaign contract or labels mismatch"):
+        prepare_daily_explicit_event_replay(
+            legacy_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=arbitrary_summary_hash,
+            replay_id="unit-explicit-legacy-timezone-contract-arbitrary",
+            artifact_root=artifact_root,
+        )
+
+    summary["campaign_contract_hash"] = legacy_contract_hash
+    summary["split"]["folds"][0]["validation_sessions"] += 1
+    drifted_summary_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="functional contract mismatch"):
+        prepare_daily_explicit_event_replay(
+            legacy_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=drifted_summary_hash,
+            replay_id="unit-explicit-legacy-timezone-contract-drift",
+            artifact_root=artifact_root,
+        )
+
+
 def test_run_explicit_event_replay_reuses_cpu_checkpoints_and_local_paper_only(
     daily_plan,
     monkeypatch: pytest.MonkeyPatch,
@@ -423,6 +549,171 @@ def test_run_explicit_event_replay_reuses_cpu_checkpoints_and_local_paper_only(
         "sealed_holdout": False,
         "profitability_claim": False,
     }
+
+
+def test_source_sensitivity_plan_requires_distinct_exact_target_input(
+    daily_plan,
+    tmp_path: Path,
+) -> None:
+    target, _ = _source_sensitivity_target_fixture(daily_plan, tmp_path)
+
+    assert target.common_sessions == daily_plan.common_sessions
+    assert target.folds == daily_plan.folds
+    assert target.embargo_sessions == daily_plan.embargo_sessions
+    assert target.factor_change_dates == ((), (), ())
+    assert target.contract.catalog.dataset_id != daily_plan.contract.catalog.dataset_id
+    assert target.contract.to_payload()["costs"] == daily_plan.contract.to_payload()["costs"]
+
+    with pytest.raises(ValueError, match="must differ from the source dataset"):
+        build_daily_source_sensitivity_replay_plan(
+            daily_plan,
+            daily_plan.cataloged_bars,
+            replay_campaign_id="unit-source-sensitivity-same-input",
+        )
+
+    truncated = tuple(
+        _cataloged_bars_from_verified_loader(
+            dataset_id=item.dataset_id,
+            dataset_hash=item.dataset_hash,
+            source_path=item.source_path,
+            bars=item.bars[:-1] if item.bars[0].symbol == "SPY" else item.bars,
+        )
+        for item in target.cataloged_bars
+    )
+    with pytest.raises(ValueError, match="sessions must exactly match the source plan"):
+        build_daily_source_sensitivity_replay_plan(
+            daily_plan,
+            truncated,
+            replay_campaign_id="unit-source-sensitivity-truncated",
+        )
+
+
+def test_source_sensitivity_replay_reuses_source_checkpoints_on_target_bars(
+    daily_plan,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "source-sensitivity-events")
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    target, target_manifest_hash = _source_sensitivity_target_fixture(daily_plan, tmp_path)
+    torch = pytest.importorskip("torch", reason="requires the research runtime")
+
+    def fail_training(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("source-sensitivity replay must not train or build batches")
+
+    def fail_cuda_probe() -> bool:
+        raise AssertionError("source-sensitivity replay must not inspect or use CUDA")
+
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.build_daily_training_batch",
+        fail_training,
+    )
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.train_daily_candidate_torch_cuda",
+        fail_training,
+    )
+    monkeypatch.setattr(torch.cuda, "is_available", fail_cuda_probe)
+
+    prepared = prepare_daily_explicit_event_replay(
+        daily_plan,
+        replay_target_plan=target,
+        corporate_actions=actions,
+        source_summary_path=summary_path,
+        expected_source_summary_sha256=summary_hash,
+        replay_id="unit-source-sensitivity-execute-r1",
+        artifact_root=artifact_root,
+        replay_target_manifest_hash=target_manifest_hash,
+    )
+    result = run_daily_explicit_event_replay(
+        daily_plan,
+        replay_target_plan=target,
+        replay_plan=prepared,
+        artifact_root=artifact_root,
+        work_root=artifact_root / "daily-campaign" / prepared.replay_id,
+    )
+
+    assert len(result.cells) == 36
+    assert prepared.source_sensitivity_target is not None
+    assert prepared.source_sensitivity_target.dataset_id == target.contract.catalog.dataset_id
+    assert prepared.source_sensitivity_target.dataset_hash == target.contract.catalog.dataset_hash
+    assert all(cell.replay.fill_source == "local_paper" for cell in result.cells)
+    assert all(cell.replay.result.final_position == 0 for cell in result.cells)
+
+    payload = json.loads(result.summary_path.read_text())
+    assert payload["labels"]["non_independent"] is True
+    assert payload["inputs"]["replay_input"] == {
+        "campaign_id": target.contract.campaign_id,
+        "campaign_contract_hash": target.contract.contract_hash,
+        "dataset_id": target.contract.catalog.dataset_id,
+        "dataset_hash": target.contract.catalog.dataset_hash,
+        "manifest_hash": target_manifest_hash,
+        "source_path": str(target.cataloged_bars[0].source_path.resolve()),
+        "price_basis": "raw_ohlcv_only",
+        "calendar_lineage": "r2_inherited_exact_sessions",
+        "common_sessions_sha256": prepared.source_sensitivity_target.common_sessions_sha256,
+        "standardization_source": {
+            "campaign_id": daily_plan.contract.campaign_id,
+            "campaign_contract_hash": daily_plan.contract.contract_hash,
+            "dataset_id": daily_plan.contract.catalog.dataset_id,
+            "dataset_hash": daily_plan.contract.catalog.dataset_hash,
+            "recomputed": False,
+        },
+        "explicit_action_handling": "signal_mask_only_no_price_adjustment",
+        "price_adjustments_applied": 0,
+    }
+    assert payload["execution"]["local_paper_cells"] == 36
+    assert payload["execution"]["flat_cells"] == 36
+    assert payload["execution"]["external_broker_submissions"] == 0
+    assert payload["interpretation"] == {
+        "non_independent": True,
+        "reason": "target_bars_use_the_frozen_r2_observed_session_calendar",
+        "not_for_selection": True,
+        "not_for_profitability_claim": True,
+    }
+
+
+def test_source_sensitivity_replay_rejects_target_manifest_or_contract_drift(
+    daily_plan,
+    tmp_path: Path,
+) -> None:
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "source-sensitivity-drift")
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    target, target_manifest_hash = _source_sensitivity_target_fixture(daily_plan, tmp_path)
+
+    with pytest.raises(ValueError, match="target manifest SHA-256 mismatch"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            replay_target_plan=target,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-source-sensitivity-manifest-drift",
+            artifact_root=artifact_root,
+            replay_target_manifest_hash="sha256:" + "0" * 64,
+        )
+
+    drifted_target = replace(
+        target,
+        contract=replace(
+            target.contract,
+            deterministic_seed=target.contract.deterministic_seed + 1,
+        ),
+    )
+    with pytest.raises(ValueError, match="must retain source timing and costs"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            replay_target_plan=drifted_target,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-source-sensitivity-contract-drift",
+            artifact_root=artifact_root,
+            replay_target_manifest_hash=target_manifest_hash,
+        )
 
 
 def test_prepare_explicit_event_replay_rejects_ineligible_or_tampered_inputs(
@@ -1291,6 +1582,39 @@ def _standardization_fixture(daily_plan, fold_id: str, feature_set: str) -> dict
         "feature_names": list(feature_names),
         "means": [0.0] * len(feature_names),
         "scales": [1.0] * len(feature_names),
+    }
+
+
+def _source_summary_schedule_fixture(daily_plan) -> dict:
+    legacy_timezone = timezone(timedelta(hours=9))
+    return {
+        "latest_common_sessions": len(daily_plan.common_sessions),
+        "folds": [
+            {
+                "fold_id": fold.fold_id,
+                "development_start": fold.development[0]
+                .astimezone(legacy_timezone)
+                .isoformat(),
+                "development_end": fold.development[-1]
+                .astimezone(legacy_timezone)
+                .isoformat(),
+                "development_sessions": len(fold.development),
+                "purge_dates": [value.date().isoformat() for value in fold.purge],
+                "validation_start": fold.validation[0]
+                .astimezone(legacy_timezone)
+                .isoformat(),
+                "validation_end": fold.validation[-1]
+                .astimezone(legacy_timezone)
+                .isoformat(),
+                "validation_sessions": len(fold.validation),
+            }
+            for fold in daily_plan.folds
+        ],
+        "embargo_dates": [
+            value.date().isoformat() for value in daily_plan.embargo_sessions
+        ],
+        "purge_observed_sessions": DAILY_PURGE_SESSIONS,
+        "embargo_observed_sessions": DAILY_EMBARGO_SESSIONS,
     }
 
 

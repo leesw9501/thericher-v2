@@ -7,7 +7,7 @@ import json
 import math
 import os
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path, PurePosixPath, PureWindowsPath
@@ -59,6 +59,13 @@ DAILY_LEARNING_RATE = 0.005
 DAILY_WEIGHT_DECAY = 0.0001
 DAILY_EPOCHS = 12
 DAILY_MAX_TRAINING_RUNS = 6
+_LEGACY_RAW_D1_CUDA_CONTRACTS = {
+    (
+        "raw-d1-development-20260718-cuda-r1",
+        "us_equities.fixed_etf_daily.1d.snapshot=2026-07-18-r2",
+        "sha256:3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e",
+    ): "sha256:abdd71954a4b04b1baa9b40fab89688a74dc524e0fd3f52291b6ca41eba34f78",
+}
 
 DailyScenario = Literal["primary", "factor_sensitivity"]
 DailyFeatureSet = Literal["core", "pressure"]
@@ -394,6 +401,38 @@ class DailyExplicitEventReplayCellPlan:
 
 
 @dataclass(frozen=True)
+class DailySourceSensitivityTarget:
+    campaign_id: str
+    campaign_contract_hash: str
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    source_path: Path
+    common_sessions_sha256: str
+    calendar_lineage: Literal["r2_inherited_exact_sessions"] = (
+        "r2_inherited_exact_sessions"
+    )
+    price_basis: Literal["raw_ohlcv_only"] = "raw_ohlcv_only"
+    explicit_action_handling: Literal["signal_mask_only_no_price_adjustment"] = (
+        "signal_mask_only_no_price_adjustment"
+    )
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.campaign_id.strip() or not self.dataset_id.strip():
+            raise ValueError("source-sensitivity target identity is required")
+        for value, label in (
+            (self.campaign_contract_hash, "campaign contract hash"),
+            (self.dataset_hash, "dataset hash"),
+            (self.manifest_hash, "manifest hash"),
+            (self.common_sessions_sha256, "common sessions hash"),
+        ):
+            _require_sha256(value, f"source-sensitivity target {label}")
+        if self.calendar_lineage != "r2_inherited_exact_sessions":
+            raise ValueError("source-sensitivity target calendar lineage is invalid")
+
+
+@dataclass(frozen=True)
 class DailyExplicitEventReplayPlan:
     replay_id: str
     source_campaign_id: str
@@ -407,6 +446,8 @@ class DailyExplicitEventReplayPlan:
     r2_dataset_hash: str
     r2_manifest_hash: str
     cells: tuple[DailyExplicitEventReplayCellPlan, ...]
+    source_campaign_contract_hash: str
+    source_sensitivity_target: DailySourceSensitivityTarget | None = None
     parent_sensitivity_verdict: Literal["unsupported"] = "unsupported"
     training_runs: int = 0
     development_only: bool = True
@@ -425,6 +466,7 @@ class DailyExplicitEventReplayPlan:
             or len(self.cells) != 36
         ):
             raise ValueError("explicit-event plan must freeze 36 replays and zero training")
+        _require_sha256(self.source_campaign_contract_hash, "source campaign contract hash")
 
 
 @dataclass(frozen=True)
@@ -639,6 +681,167 @@ def build_daily_campaign_plan(
     return completed_plan
 
 
+def build_daily_source_sensitivity_replay_plan(
+    source_plan: DailyCampaignPlan,
+    replay_cataloged_bars: tuple[CatalogedBars, ...],
+    *,
+    replay_campaign_id: str,
+) -> DailyCampaignPlan:
+    """Bind one attested price representation to the frozen source schedule only."""
+
+    _validate_safe_path_component(replay_campaign_id, "replay_campaign_id")
+    if replay_campaign_id == source_plan.contract.campaign_id:
+        raise ValueError("replay_campaign_id must differ from the source campaign_id")
+    if len(replay_cataloged_bars) != len(DAILY_SYMBOLS):
+        raise ValueError("source-sensitivity replay requires SPY, QQQ, and IWM in fixed order")
+    symbols = tuple(item.bars[0].symbol for item in replay_cataloged_bars)
+    if symbols != DAILY_SYMBOLS:
+        raise ValueError("source-sensitivity replay input order must be SPY, QQQ, IWM")
+    first = replay_cataloged_bars[0]
+    for item in replay_cataloged_bars:
+        if item.dataset_id != first.dataset_id or item.dataset_hash != first.dataset_hash:
+            raise ValueError("source-sensitivity symbols must share one attested dataset")
+        if item.source_path.resolve() != first.source_path.resolve():
+            raise ValueError("source-sensitivity symbols must share one attested RAW file")
+        if any(bar.timeframe != Timeframe.D1 or not bar.complete for bar in item.bars):
+            raise ValueError("source-sensitivity replay accepts only complete attested D1 Bars")
+        if tuple(bar.start_ts for bar in item.bars) != source_plan.common_sessions:
+            raise ValueError(
+                "source-sensitivity replay sessions must exactly match the source plan"
+            )
+    if (
+        first.dataset_id == source_plan.contract.catalog.dataset_id
+        and first.dataset_hash == source_plan.contract.catalog.dataset_hash
+    ):
+        raise ValueError("source-sensitivity replay input must differ from the source dataset")
+
+    replay_catalog = CatalogDatasetRef(
+        catalog_id=(
+            f"{source_plan.contract.catalog.catalog_id}:source-sensitivity:"
+            f"{first.dataset_hash.removeprefix('sha256:')[:16]}"
+        ),
+        dataset_id=first.dataset_id,
+        dataset_hash=first.dataset_hash,
+        constructed_as_of_utc=source_plan.contract.catalog.constructed_as_of_utc,
+        ranking_eligible=False,
+        sealed_holdout_eligible=False,
+    )
+    replay_contract = replace(
+        source_plan.contract,
+        campaign_id=replay_campaign_id,
+        catalog=replay_catalog,
+    )
+    plan = DailyCampaignPlan(
+        contract=replay_contract,
+        cataloged_bars=replay_cataloged_bars,
+        factor_change_dates=tuple(() for _ in DAILY_SYMBOLS),
+        common_sessions=source_plan.common_sessions,
+        folds=source_plan.folds,
+        embargo_sessions=source_plan.embargo_sessions,
+        boundary_proofs=(),
+    )
+    completed = replace(plan, boundary_proofs=prove_daily_campaign_boundaries(plan))
+    _assert_source_sensitivity_replay_compatibility(source_plan, completed)
+    for fold in completed.folds:
+        for symbol in DAILY_SYMBOLS:
+            for phase in ("development", "validation"):
+                for scenario in ("primary", "factor_sensitivity"):
+                    completed.execution_timing_proofs(
+                        symbol,
+                        fold.fold_id,
+                        phase,
+                        scenario=scenario,
+                    )
+    return completed
+
+
+def _assert_source_sensitivity_replay_compatibility(
+    source_plan: DailyCampaignPlan,
+    replay_plan: DailyCampaignPlan,
+) -> None:
+    if (
+        source_plan.common_sessions != replay_plan.common_sessions
+        or source_plan.folds != replay_plan.folds
+        or source_plan.embargo_sessions != replay_plan.embargo_sessions
+        or source_plan.boundary_proofs != replay_plan.boundary_proofs
+    ):
+        raise ValueError("source-sensitivity replay must retain the source session schedule")
+    source_contract = source_plan.contract.to_payload()
+    replay_contract = replay_plan.contract.to_payload()
+    for payload in (source_contract, replay_contract):
+        payload.pop("campaign_id")
+        payload.pop("catalog")
+    if source_contract != replay_contract:
+        raise ValueError("source-sensitivity replay must retain source timing and costs")
+    if any(replay_plan.factor_dates_for(symbol) for symbol in DAILY_SYMBOLS):
+        raise ValueError("source-sensitivity replay cannot apply target factor diagnostics")
+
+
+def _resolve_replay_input_manifest_hash(
+    plan: DailyCampaignPlan,
+    expected_manifest_hash: str | None,
+) -> str:
+    manifest_path = plan.cataloged_bars[0].source_path.resolve().parent / "manifest.json"
+    if manifest_path.is_symlink():
+        raise ValueError("explicit-event replay input manifest cannot be a symlink")
+    try:
+        actual_manifest_hash = _sha256_file(manifest_path)
+    except OSError as exc:
+        raise ValueError("explicit-event replay input manifest is not readable") from exc
+    if expected_manifest_hash is None:
+        return actual_manifest_hash
+    _require_sha256(expected_manifest_hash, "explicit-event replay input manifest SHA-256")
+    if actual_manifest_hash != expected_manifest_hash:
+        raise ValueError("explicit-event replay input manifest SHA-256 mismatch")
+    return expected_manifest_hash
+
+
+def _source_sensitivity_target(
+    target_plan: DailyCampaignPlan,
+    expected_manifest_hash: str | None,
+) -> DailySourceSensitivityTarget:
+    if expected_manifest_hash is None:
+        raise ValueError("source-sensitivity replay requires the target manifest SHA-256")
+    return DailySourceSensitivityTarget(
+        campaign_id=target_plan.contract.campaign_id,
+        campaign_contract_hash=target_plan.contract.contract_hash,
+        dataset_id=target_plan.contract.catalog.dataset_id,
+        dataset_hash=target_plan.contract.catalog.dataset_hash,
+        manifest_hash=_resolve_replay_input_manifest_hash(
+            target_plan,
+            expected_manifest_hash,
+        ),
+        source_path=target_plan.cataloged_bars[0].source_path.resolve(),
+        common_sessions_sha256=_daily_sessions_sha256(target_plan.common_sessions),
+    )
+
+
+def _assert_replay_target_matches_plan(
+    replay_plan: DailyExplicitEventReplayPlan,
+    target_plan: DailyCampaignPlan,
+    target_requested: bool,
+) -> None:
+    target = replay_plan.source_sensitivity_target
+    if not target_requested:
+        if target is not None:
+            raise ValueError("explicit-event plan unexpectedly declares a replay target")
+        return
+    if target is None or (
+        target.campaign_id != target_plan.contract.campaign_id
+        or target.campaign_contract_hash != target_plan.contract.contract_hash
+        or target.dataset_id != target_plan.contract.catalog.dataset_id
+        or target.dataset_hash != target_plan.contract.catalog.dataset_hash
+        or target.source_path != target_plan.cataloged_bars[0].source_path.resolve()
+        or target.common_sessions_sha256
+        != _daily_sessions_sha256(target_plan.common_sessions)
+    ):
+        raise ValueError("explicit-event plan does not match the replay target")
+
+
+def _daily_sessions_sha256(sessions: tuple[datetime, ...]) -> str:
+    return _sha256_bytes("\n".join(value.isoformat() for value in sessions).encode("utf-8"))
+
+
 def prove_daily_campaign_boundaries(
     plan: DailyCampaignPlan,
 ) -> tuple[DailyBoundaryProof, ...]:
@@ -692,21 +895,26 @@ def prove_daily_campaign_boundaries(
 
 
 def prepare_daily_explicit_event_replay(
-    plan: DailyCampaignPlan,
+    source_plan: DailyCampaignPlan,
     *,
+    replay_target_plan: DailyCampaignPlan | None = None,
     corporate_actions: CatalogedCorporateActions,
     source_summary_path: Path,
     expected_source_summary_sha256: str,
     replay_id: str,
     artifact_root: Path,
+    replay_target_manifest_hash: str | None = None,
     repo_root: Path | None = None,
 ) -> DailyExplicitEventReplayPlan:
-    """Validate immutable inputs and freeze a no-training 36-cell replay plan."""
+    """Freeze target bars against source checkpoints without retraining either."""
 
     if not isinstance(corporate_actions, CatalogedCorporateActions):
         raise TypeError("corporate_actions must be CatalogedCorporateActions")
+    target = replay_target_plan or source_plan
+    if replay_target_plan is not None:
+        _assert_source_sensitivity_replay_compatibility(source_plan, target)
     _validate_safe_path_component(replay_id, "replay_id")
-    if replay_id == plan.contract.campaign_id:
+    if replay_id == source_plan.contract.campaign_id:
         raise ValueError("replay_id must differ from the source campaign_id")
     resolved_root = artifact_root.resolve()
     _reject_repo_path(resolved_root, repo_root or Path.cwd())
@@ -715,7 +923,7 @@ def prepare_daily_explicit_event_replay(
     source_campaign_dir = _contained_artifact_path(
         resolved_root,
         "daily-campaign",
-        plan.contract.campaign_id,
+        source_plan.contract.campaign_id,
     )
     expected_summary_path = source_campaign_dir / "summary.json"
     supplied_summary_path = Path(source_summary_path)
@@ -726,12 +934,11 @@ def prepare_daily_explicit_event_replay(
     ):
         raise ValueError("source summary must be the exact non-symlink campaign summary")
     _assert_no_symlink_artifact_components(
-        resolved_root,
-        ("daily-campaign", plan.contract.campaign_id, "summary.json"),
+        resolved_root, ("daily-campaign", source_plan.contract.campaign_id, "summary.json")
     )
     corporate_actions.assert_replay_eligible()
-    _assert_corporate_action_r2_lineage(plan, corporate_actions)
-    _assert_corporate_action_event_membership(plan, corporate_actions)
+    _assert_corporate_action_r2_lineage(source_plan, corporate_actions)
+    _assert_corporate_action_event_membership(target, corporate_actions)
     summary_path = supplied_summary_path
     _require_sha256(expected_source_summary_sha256, "source summary SHA-256")
     try:
@@ -746,13 +953,13 @@ def prepare_daily_explicit_event_replay(
         raise ValueError("source CUDA summary must be valid UTF-8 JSON") from exc
     if not isinstance(summary, dict):
         raise ValueError("source CUDA summary must be a JSON object")
-    _assert_source_summary_contract(plan, summary)
+    source_campaign_contract_hash = _assert_source_summary_contract(source_plan, summary)
     checkpoints = _source_checkpoint_contracts(
-        plan,
+        source_plan,
         summary.get("checkpoints"),
         artifact_root=resolved_root,
     )
-    for fold in plan.folds:
+    for fold in source_plan.folds:
         for candidate in DAILY_CANDIDATES:
             checkpoint_path, _, standardization = checkpoints[
                 (fold.fold_id, candidate.candidate_id)
@@ -767,12 +974,12 @@ def prepare_daily_explicit_event_replay(
         for symbol in DAILY_SYMBOLS
     }
     cells: list[DailyExplicitEventReplayCellPlan] = []
-    for fold in plan.folds:
+    for fold in target.folds:
         for symbol in DAILY_SYMBOLS:
             eligible = tuple(
                 sorted(
                     eligible_daily_signal_starts_for_dates(
-                        plan,
+                        target,
                         symbol,
                         fold.fold_id,
                         "validation",
@@ -780,7 +987,7 @@ def prepare_daily_explicit_event_replay(
                     )
                 )
             )
-            for baseline_id in plan.contract.naive_baselines:
+            for baseline_id in target.contract.naive_baselines:
                 cells.append(
                     DailyExplicitEventReplayCellPlan(
                         kind="baseline",
@@ -798,7 +1005,7 @@ def prepare_daily_explicit_event_replay(
                 eligible = tuple(
                     sorted(
                         eligible_daily_signal_starts_for_dates(
-                            plan,
+                            target,
                             symbol,
                             fold.fold_id,
                             "validation",
@@ -820,7 +1027,7 @@ def prepare_daily_explicit_event_replay(
                 )
     return DailyExplicitEventReplayPlan(
         replay_id=replay_id,
-        source_campaign_id=plan.contract.campaign_id,
+        source_campaign_id=source_plan.contract.campaign_id,
         artifact_root=resolved_root,
         source_summary_path=summary_path,
         source_summary_sha256=expected_source_summary_sha256,
@@ -831,12 +1038,19 @@ def prepare_daily_explicit_event_replay(
         r2_dataset_hash=corporate_actions.r2_dataset_hash,
         r2_manifest_hash=corporate_actions.r2_manifest_hash,
         cells=tuple(cells),
+        source_campaign_contract_hash=source_campaign_contract_hash,
+        source_sensitivity_target=(
+            _source_sensitivity_target(target, replay_target_manifest_hash)
+            if replay_target_plan is not None
+            else None
+        ),
     )
 
 
 def run_daily_explicit_event_replay(
-    plan: DailyCampaignPlan,
+    source_plan: DailyCampaignPlan,
     *,
+    replay_target_plan: DailyCampaignPlan | None = None,
     replay_plan: DailyExplicitEventReplayPlan,
     artifact_root: Path,
     work_root: Path,
@@ -844,6 +1058,9 @@ def run_daily_explicit_event_replay(
 ) -> DailyExplicitEventReplayResult:
     """Execute the already frozen explicit-event cells through local paper only."""
 
+    target = replay_target_plan or source_plan
+    if replay_target_plan is not None:
+        _assert_source_sensitivity_replay_compatibility(source_plan, target)
     resolved_repo_root = (repo_root or Path.cwd()).resolve()
     resolved_artifact_root = Path(artifact_root).resolve()
     _reject_repo_path(resolved_artifact_root, resolved_repo_root)
@@ -851,8 +1068,9 @@ def run_daily_explicit_event_replay(
         raise ValueError("explicit-event artifact_root cannot be a symlink")
     if replay_plan.artifact_root != resolved_artifact_root:
         raise ValueError("explicit-event plan artifact_root does not match execution root")
-    if replay_plan.source_campaign_id != plan.contract.campaign_id:
+    if replay_plan.source_campaign_id != source_plan.contract.campaign_id:
         raise ValueError("explicit-event plan does not match the source campaign")
+    _assert_replay_target_matches_plan(replay_plan, target, replay_target_plan is not None)
     if replay_plan.source_summary_path.is_symlink():
         raise ValueError("explicit-event source summary cannot be a symlink")
     _assert_artifact_hash(
@@ -860,7 +1078,25 @@ def run_daily_explicit_event_replay(
         replay_plan.source_summary_sha256,
         "explicit-event source summary",
     )
-    _assert_explicit_event_replay_plan(plan, replay_plan)
+    try:
+        source_summary = json.loads(replay_plan.source_summary_path.read_bytes())
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("explicit-event source summary is not valid UTF-8 JSON") from exc
+    if _assert_source_summary_contract(source_plan, source_summary) != (
+        replay_plan.source_campaign_contract_hash
+    ):
+        raise ValueError("explicit-event plan source contract hash does not match")
+    _assert_artifact_hash(
+        target.cataloged_bars[0].source_path,
+        target.contract.catalog.dataset_hash,
+        "explicit-event replay input",
+    )
+    if replay_plan.source_sensitivity_target is not None:
+        _resolve_replay_input_manifest_hash(
+            target,
+            replay_plan.source_sensitivity_target.manifest_hash,
+        )
+    _assert_explicit_event_replay_plan(target, replay_plan)
 
     expected_work_root = _contained_artifact_path(
         resolved_artifact_root,
@@ -873,7 +1109,7 @@ def run_daily_explicit_event_replay(
         raise FileExistsError(f"explicit-event replay target already exists: {expected_work_root}")
 
     run_ids = tuple(
-        _explicit_event_run_id(plan, replay_plan, cell) for cell in replay_plan.cells
+        _explicit_event_run_id(target, replay_plan, cell) for cell in replay_plan.cells
     )
     if len(set(run_ids)) != len(run_ids):
         raise ValueError("explicit-event replay cell run ids must be unique")
@@ -884,10 +1120,10 @@ def run_daily_explicit_event_replay(
                 f"explicit-event validation artifact already exists: {artifact_path}"
             )
 
-    predictors = _explicit_event_cpu_predictors(plan, replay_plan)
+    predictors = _explicit_event_cpu_predictors(source_plan, replay_plan)
     cells: list[DailyExplicitEventReplayCellResult] = []
     for cell in replay_plan.cells:
-        run_id = _explicit_event_run_id(plan, replay_plan, cell)
+        run_id = _explicit_event_run_id(target, replay_plan, cell)
         work_dir = (
             expected_work_root
             / cell.fold_id
@@ -898,8 +1134,8 @@ def run_daily_explicit_event_replay(
         eligible_signal_starts = frozenset(cell.eligible_signal_starts)
         if cell.kind == "baseline":
             replay = run_naive_cpu_baseline(
-                plan.cataloged_for(cell.symbol),
-                campaign=plan.contract,
+                target.cataloged_for(cell.symbol),
+                campaign=target.contract,
                 artifact_root=resolved_artifact_root,
                 work_dir=work_dir,
                 phase="validation",
@@ -912,8 +1148,8 @@ def run_daily_explicit_event_replay(
         else:
             candidate, standardization, predictor = predictors[(cell.fold_id, cell.item_id)]
             replay = run_campaign_model_replay(
-                plan.cataloged_for(cell.symbol),
-                campaign=plan.contract,
+                target.cataloged_for(cell.symbol),
+                campaign=target.contract,
                 model=_DailyCandidateModel(candidate, standardization, predictor),
                 run_id=run_id,
                 artifact_root=resolved_artifact_root,
@@ -1113,48 +1349,94 @@ def _write_daily_explicit_event_replay_summary(
         raise FileExistsError(f"explicit-event replay summary already exists: {path}")
     if len(cells) != 36:
         raise ValueError("explicit-event replay summary requires exactly 36 cells")
+    local_paper_cells = sum(
+        cell.replay.fill_source == LOCAL_PAPER_SOURCE for cell in cells
+    )
+    flat_cells = sum(cell.replay.result.final_position == 0 for cell in cells)
+    if local_paper_cells != len(cells) or flat_cells != len(cells):
+        raise ValueError("explicit-event summary cannot claim incomplete local-paper evidence")
+    target = replay_plan.source_sensitivity_target
+    labels: dict[str, object] = {
+        "development_only": True,
+        "retrospective_only": True,
+        "ranking": False,
+        "promotion": False,
+        "candidate_selection": False,
+        "sealed_holdout": False,
+        "profitability_claim": False,
+    }
+    inputs: dict[str, object] = {
+        "source_summary": {
+            "path": str(replay_plan.source_summary_path),
+            "sha256": replay_plan.source_summary_sha256,
+        },
+        "corporate_actions": {
+            "dataset_id": replay_plan.corporate_action_dataset_id,
+            "dataset_hash": replay_plan.corporate_action_dataset_hash,
+            "manifest_hash": replay_plan.corporate_action_manifest_hash,
+        },
+        "r2": {
+            "dataset_id": replay_plan.r2_dataset_id,
+            "dataset_hash": replay_plan.r2_dataset_hash,
+            "manifest_hash": replay_plan.r2_manifest_hash,
+        },
+    }
+    execution: dict[str, object] = {
+        "backend": "torch_cpu",
+        "training_runs": 0,
+        "frozen_cells": len(cells),
+        "baseline_cells": sum(cell.cell.kind == "baseline" for cell in cells),
+        "candidate_cells": sum(cell.cell.kind == "candidate" for cell in cells),
+        "fill_source": LOCAL_PAPER_SOURCE,
+        "all_final_positions_flat": flat_cells == len(cells),
+    }
+    if target is not None:
+        labels["non_independent"] = True
+        inputs["replay_input"] = {
+            "campaign_id": target.campaign_id,
+            "campaign_contract_hash": target.campaign_contract_hash,
+            "dataset_id": target.dataset_id,
+            "dataset_hash": target.dataset_hash,
+            "manifest_hash": target.manifest_hash,
+            "source_path": str(target.source_path),
+            "price_basis": target.price_basis,
+            "calendar_lineage": target.calendar_lineage,
+            "common_sessions_sha256": target.common_sessions_sha256,
+            "standardization_source": {
+                "campaign_id": replay_plan.source_campaign_id,
+                "campaign_contract_hash": replay_plan.source_campaign_contract_hash,
+                "dataset_id": replay_plan.r2_dataset_id,
+                "dataset_hash": replay_plan.r2_dataset_hash,
+                "recomputed": False,
+            },
+            "explicit_action_handling": target.explicit_action_handling,
+            "price_adjustments_applied": 0,
+        }
+        execution.update(
+            {
+                "local_paper_cells": local_paper_cells,
+                "flat_cells": flat_cells,
+                "external_broker_submissions": 0,
+            }
+        )
     payload = {
         "schema_version": SCHEMA_VERSION,
         "created_at_utc": datetime.now(UTC).isoformat(),
         "replay_id": replay_plan.replay_id,
         "source_campaign_id": replay_plan.source_campaign_id,
         "parent_sensitivity_verdict": replay_plan.parent_sensitivity_verdict,
-        "labels": {
-            "development_only": True,
-            "retrospective_only": True,
-            "ranking": False,
-            "promotion": False,
-            "candidate_selection": False,
-            "sealed_holdout": False,
-            "profitability_claim": False,
-        },
-        "inputs": {
-            "source_summary": {
-                "path": str(replay_plan.source_summary_path),
-                "sha256": replay_plan.source_summary_sha256,
-            },
-            "corporate_actions": {
-                "dataset_id": replay_plan.corporate_action_dataset_id,
-                "dataset_hash": replay_plan.corporate_action_dataset_hash,
-                "manifest_hash": replay_plan.corporate_action_manifest_hash,
-            },
-            "r2": {
-                "dataset_id": replay_plan.r2_dataset_id,
-                "dataset_hash": replay_plan.r2_dataset_hash,
-                "manifest_hash": replay_plan.r2_manifest_hash,
-            },
-        },
-        "execution": {
-            "backend": "torch_cpu",
-            "training_runs": 0,
-            "frozen_cells": len(cells),
-            "baseline_cells": sum(cell.cell.kind == "baseline" for cell in cells),
-            "candidate_cells": sum(cell.cell.kind == "candidate" for cell in cells),
-            "fill_source": LOCAL_PAPER_SOURCE,
-            "all_final_positions_flat": True,
-        },
+        "labels": labels,
+        "inputs": inputs,
+        "execution": execution,
         "cells": [_explicit_event_replay_cell_payload(cell) for cell in cells],
     }
+    if target is not None:
+        payload["interpretation"] = {
+            "non_independent": True,
+            "reason": "target_bars_use_the_frozen_r2_observed_session_calendar",
+            "not_for_selection": True,
+            "not_for_profitability_claim": True,
+        }
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.tmp")
     try:
@@ -1929,7 +2211,7 @@ def _assert_corporate_action_event_membership(
 def _assert_source_summary_contract(
     plan: DailyCampaignPlan,
     summary: dict[str, Any],
-) -> None:
+) -> str:
     expected_labels = {
         "candidate_selection": False,
         "development_only": True,
@@ -1942,12 +2224,24 @@ def _assert_source_summary_contract(
     cuda = summary.get("cuda")
     training_policy = summary.get("training_policy")
     sensitivity = summary.get("sensitivity")
+    source_contract_hash = summary.get("campaign_contract_hash")
+    _require_sha256(source_contract_hash, "source CUDA summary campaign contract hash")
     if (
         summary.get("campaign_id") != plan.contract.campaign_id
-        or summary.get("campaign_contract_hash") != plan.contract.contract_hash
         or summary.get("labels") != expected_labels
     ):
         raise ValueError("source CUDA summary campaign contract or labels mismatch")
+    if source_contract_hash != plan.contract.contract_hash:
+        legacy_key = (
+            plan.contract.campaign_id,
+            plan.contract.catalog.dataset_id,
+            plan.contract.catalog.dataset_hash,
+        )
+        if _LEGACY_RAW_D1_CUDA_CONTRACTS.get(legacy_key) != source_contract_hash:
+            raise ValueError("source CUDA summary campaign contract or labels mismatch")
+        # Older evidence serialized a non-UTC offset before current contract
+        # normalization. Compare its frozen executable schedule by instant.
+        _assert_source_summary_schedule_compatibility(plan, summary)
     if not isinstance(dataset, dict) or (
         dataset.get("catalog_id") != plan.contract.catalog.catalog_id
         or dataset.get("dataset_id") != plan.contract.catalog.dataset_id
@@ -1969,6 +2263,69 @@ def _assert_source_summary_contract(
         raise ValueError("source summary training policy must freeze six runs")
     if not isinstance(sensitivity, dict) or sensitivity.get("verdict") != "unsupported":
         raise ValueError("source summary parent sensitivity verdict must be unsupported")
+    return source_contract_hash
+
+
+def _assert_source_summary_schedule_compatibility(
+    plan: DailyCampaignPlan,
+    summary: dict[str, Any],
+) -> None:
+    split = summary.get("split")
+    costs = summary.get("costs")
+    timing = summary.get("execution_timing")
+    if not isinstance(split, dict) or not isinstance(costs, dict) or not isinstance(timing, dict):
+        raise ValueError("source CUDA summary functional contract is incomplete")
+    expected_timing = {
+        "signal": "completed_observed_session_t",
+        "entry_observed_session_offset": 1,
+        "exit_observed_session_offset": 2,
+        "calendar_contiguity_required": False,
+        "common_session_adjacency_proven": True,
+        "signal_cadence_observed_sessions": DAILY_SIGNAL_CADENCE,
+    }
+    if (
+        split.get("latest_common_sessions") != len(plan.common_sessions)
+        or split.get("purge_observed_sessions") != DAILY_PURGE_SESSIONS
+        or split.get("embargo_observed_sessions") != DAILY_EMBARGO_SESSIONS
+        or split.get("embargo_dates")
+        != [value.date().isoformat() for value in plan.embargo_sessions]
+        or timing != expected_timing
+    ):
+        raise ValueError("source CUDA summary functional contract mismatch")
+    try:
+        fee_bps = Decimal(str(costs["fee_bps_per_fill"]))
+        slippage_bps = Decimal(str(costs["slippage_bps_per_fill"]))
+    except (KeyError, ArithmeticError) as exc:
+        raise ValueError("source CUDA summary cost contract is malformed") from exc
+    if fee_bps != DAILY_FEE_BPS or slippage_bps != DAILY_SLIPPAGE_BPS:
+        raise ValueError("source CUDA summary functional contract mismatch")
+    observed_folds = split.get("folds")
+    if not isinstance(observed_folds, list) or len(observed_folds) != len(plan.folds):
+        raise ValueError("source CUDA summary functional contract mismatch")
+    for observed, expected in zip(observed_folds, plan.folds, strict=True):
+        if not isinstance(observed, dict) or (
+            observed.get("fold_id") != expected.fold_id
+            or observed.get("development_sessions") != len(expected.development)
+            or observed.get("validation_sessions") != len(expected.validation)
+            or observed.get("purge_dates")
+            != [value.date().isoformat() for value in expected.purge]
+        ):
+            raise ValueError("source CUDA summary functional contract mismatch")
+        for field, expected_value in (
+            ("development_start", expected.development[0]),
+            ("development_end", expected.development[-1]),
+            ("validation_start", expected.validation[0]),
+            ("validation_end", expected.validation[-1]),
+        ):
+            try:
+                observed_value = require_utc(
+                    datetime.fromisoformat(str(observed[field])),
+                    f"source {field}",
+                )
+            except (KeyError, ValueError) as exc:
+                raise ValueError("source CUDA summary functional contract is malformed") from exc
+            if observed_value != expected_value:
+                raise ValueError("source CUDA summary functional contract mismatch")
 
 
 def _source_checkpoint_contracts(

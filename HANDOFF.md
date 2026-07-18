@@ -234,6 +234,20 @@ are not independent. Its scope is arithmetic consistency of shared local-paper
 evidence, not independent execution quality, strategy selection, or
 profitability.
 
+The bounded Tiingo raw-D1 source-sensitivity replay is complete at
+`D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-tiingo-source-sensitivity-20260718-r1\summary.json`
+with SHA-256
+`2e91c133fd12e0e28a7011eb0c1d3f661fe0fffab094ab00b679d3a566a14ff3`.
+It reused the six r2 source checkpoints on CPU, trained zero models, executed
+18 baseline plus 18 candidate cells with `source: local_paper`, and finished
+every cell flat. The strict loader verified the pinned raw-D1 gzip hash plus
+decompressed canonical CSV content against the parent Tiingo bytes, allowing the
+Windows snapshot to re-attest in Docker. Across matching r2 explicit-event
+cells, decision count, trade count, and after-cost-PnL sign did not change.
+That is descriptive, non-independent evidence only because the r2 session
+calendar remains shared; the parent `unsupported` verdict stays sticky and no
+selection, promotion, or profitability claim is permitted.
+
 ## Execution Reality
 
 The broker-free simulator is the only enabled execution path. The broker-
@@ -351,8 +365,9 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now consumes the verified Tiingo raw-D1 input in one
-frozen local-paper source-sensitivity replay of the fixed ETF campaign. KIS
-remains failed closed pending the non-secret pairing check and a separately
-authorized future probe. The KIS capital envelope, paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now asks Data to assess whether the existing broad daily
+snapshot can form a small, explicitly development-only US-equity universe
+without implying point-in-time membership. KIS remains failed closed pending the
+non-secret pairing check and a separately authorized future probe. The KIS
+capital envelope, paid data, order submission, and live capital remain separate
+future decisions.

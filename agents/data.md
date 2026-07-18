@@ -5,8 +5,8 @@
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
-three fixed instruments. The bounded no-auth source triage found no eligible
-new pilot.
+three fixed instruments. The one permitted source-sensitivity replay completed
+outside Git; the bounded no-auth source triage found no eligible new pilot.
 
 ## Engine Loop
 
@@ -41,16 +41,17 @@ new pilot.
 
 ## Current Objective
 
-No-auth triage is complete without acquisition. The immutable Tiingo raw-D1
-snapshot now has an offline loader that re-attests r2 and parent Tiingo evidence
-before Research receives bars. It needs no new request or credential read and
-remains a separate-provider representation bound to r2's exact session
-calendar, not independent validation or ranking evidence.
+The Tiingo raw-D1 comparison is complete. Its loader re-attests r2 and parent
+Tiingo evidence before Research receives bars, and its completed replay used no
+new request or credential read. It remains a separate-provider representation
+bound to r2's exact session calendar, not independent validation or ranking
+evidence.
 
 ## Ready Queue
 
-1. Support one frozen no-retraining Tiingo raw-D1 replay with the existing
-   offline loader. No new request, provider, or data acquisition is needed.
+1. Inventory the existing broad daily snapshot for a small, explicitly
+   development-only US-equity universe candidate without acquiring data or
+   implying point-in-time membership.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -159,6 +160,13 @@ calendar, not independent validation or ranking evidence.
   and no adjusted output field. It is replay-only and cannot establish an
   independent validation, rank a model, open a holdout, or support a
   profitability claim.
+- The completed source-sensitivity replay is at
+  `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-tiingo-source-sensitivity-20260718-r1\summary.json`
+  with SHA-256
+  `2e91c133fd12e0e28a7011eb0c1d3f661fe0fffab094ab00b679d3a566a14ff3`.
+  Its loader pins the gzip dataset hash and compares the decompressed canonical
+  CSV to attested Tiingo raw responses, so the Windows snapshot re-attests in
+  Docker without accepting altered content.
 - The corporate-action loader is offline and fail-closed. It requires immutable
   raw and normalized hashes, exact r2 lineage, source/rights/as-of facts,
   explicit per-symbol/event-type coverage, New York session-date semantics,
@@ -237,8 +245,9 @@ calendar, not independent validation or ranking evidence.
 ## Next Handoff
 
 Data derived and rechecked the Tiingo raw-D1 snapshot outside Git without a
-credential read, network request, or raw response copy. Its offline loader now
-re-attests parent Tiingo hashes, reloaded r2 lineage, exact 896 sessions, and
-canonical raw-D1 bytes before producing bars. Do not rewrite either snapshot,
-interpret a replay as independent validation, or use adjusted fields. No paid
-upgrade or operator data action is needed.
+credential read, network request, or raw response copy. The completed replay
+used its strict loader and produced no data acquisition request. Do not rewrite
+either snapshot, interpret the replay as independent validation, or use
+adjusted fields. The next useful data question is whether the existing broad
+daily snapshot can support a narrowly labeled development-only universe; no
+paid upgrade or operator data action is needed yet.

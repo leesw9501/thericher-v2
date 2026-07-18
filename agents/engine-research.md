@@ -11,6 +11,9 @@
 - Data's Tiingo EOD snapshot is loader-attested for r2, and frozen replay
   `raw-d1-explicit-events-20260718-r3` completed its 36 cells on CPU with zero
   training. It preserves the parent `unsupported` verdict.
+- The permitted Tiingo raw-D1 source-sensitivity replay is also complete with
+  zero training, 36 local-paper cells, and the same sticky `unsupported`
+  verdict. It is non-independent because r2 fixed the session calendar.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -42,11 +45,10 @@
 
 ## Current Objective
 
-- The Tiingo raw-D1 snapshot is now immutable. The next development-only
-  falsifiable question is whether the `d1-pressure-lb20` instability persists
-  under that separate-provider representation, while keeping r2's session
-  calendar fixed. Data's narrow loader is complete; keep GPU idle and run one
-  frozen no-retraining comparison.
+- The fixed-ETF source-sensitivity question is complete. Its result did not
+  change the parent unsupported state and cannot open more GPU work. Keep the
+  GPU idle while Data determines whether an existing broad daily snapshot can
+  support a separately labeled development-only universe.
 
 ## Explicit-Event Replay
 
@@ -67,9 +69,7 @@
 
 ## Breadth Queue
 
-- Prepare one frozen, no-retraining data-source sensitivity replay using the
-  raw-D1 loader's parent-hash, reloaded-r2, and exact-session attestation. It
-  remains development-only and must preserve the sticky `unsupported` verdict.
+- None until a broader dataset has a bounded provenance and survivorship scope.
 
 ## Depth Queue
 
@@ -142,6 +142,17 @@
 - The Tiingo snapshot has 46 qualified cash-distribution events and zero splits
   across the fixed ETFs. R3 completed from it with no retraining and did not
   alter the parent `unsupported` verdict.
+- The source-sensitivity replay is
+  `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-tiingo-source-sensitivity-20260718-r1\summary.json`
+  with SHA-256
+  `2e91c133fd12e0e28a7011eb0c1d3f661fe0fffab094ab00b679d3a566a14ff3`.
+  It reused all six source checkpoints on CPU, trained zero models, completed
+  18 baseline plus 18 candidate cells with `local_paper` fills and flat final
+  positions, and recomputed neither standardization nor price adjustments.
+  Across the 36 corresponding r2 explicit-event cells, decision count, trade
+  count, and after-cost-PnL sign did not change. This is descriptive only: the
+  shared r2 session calendar makes it non-independent and it cannot select,
+  promote, or claim profitability.
 - The completed descriptive attribution is
   `D:\thericher-v2\model-artifacts\attribution\raw-d1-explicit-events-20260718-r3-attribution-r1\summary.json`
   with SHA-256
@@ -153,9 +164,7 @@
 
 ## Next Handoff
 
-- Data owns the immutable Tiingo raw-D1 comparison snapshot at
-  `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1`.
-  It is not independent validation because it uses r2's fixed session calendar.
-  Research may consume the existing strict loader in one frozen no-retraining
-  replay only. Do not rank, promote, name a winner, claim profitability, or
-  start GPU training.
+- The frozen fixed-ETF work is exhausted for model promotion: r2 factor
+  sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
+  source check. Do not rank, promote, name a winner, claim profitability, or
+  start GPU training. Await Data's bounded broad-universe suitability result.

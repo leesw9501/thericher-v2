@@ -23,12 +23,17 @@ from thericher_v2.data import (
     load_cataloged_corporate_actions,
     load_cataloged_yahoo_daily_1d_bars,
 )
+from thericher_v2.data.tiingo_eod import (
+    load_cataloged_tiingo_raw_d1_bars,
+    load_fixed_r2_corporate_action_lineage,
+)
 from thericher_v2.research.daily_campaign import (
     DAILY_SYMBOLS,
     DailyCampaignPlan,
     DailyCatalogFacts,
     DailyExplicitEventReplayPlan,
     build_daily_campaign_plan,
+    build_daily_source_sensitivity_replay_plan,
     prepare_daily_explicit_event_replay,
     run_daily_explicit_event_replay,
 )
@@ -47,6 +52,15 @@ class PreparedReplay:
     replay_plan: DailyExplicitEventReplayPlan
     artifact_root: Path
     repo_root: Path
+    replay_target_plan: DailyCampaignPlan | None = None
+
+
+@dataclass(frozen=True)
+class TiingoRawD1Arguments:
+    snapshot: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -70,6 +84,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--source-summary-sha256", required=True)
     parser.add_argument("--replay-id", required=True)
     parser.add_argument("--artifact-root", type=Path, required=True)
+    parser.add_argument("--tiingo-raw-d1-snapshot", type=Path)
+    parser.add_argument("--tiingo-raw-d1-dataset-id")
+    parser.add_argument("--tiingo-raw-d1-dataset-hash")
+    parser.add_argument("--tiingo-raw-d1-manifest-hash")
     parser.add_argument("--repo-root", type=Path, default=DEFAULT_REPO_ROOT)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--execute", action="store_true")
@@ -92,6 +110,7 @@ def execute_frozen_explicit_event_replay(args: argparse.Namespace) -> dict[str, 
     prepared = _prepare_replay(args)
     result = run_daily_explicit_event_replay(
         prepared.campaign,
+        replay_target_plan=prepared.replay_target_plan,
         replay_plan=prepared.replay_plan,
         artifact_root=prepared.artifact_root,
         work_root=(
@@ -105,6 +124,10 @@ def execute_frozen_explicit_event_replay(args: argparse.Namespace) -> dict[str, 
 def attribute_frozen_explicit_event_replay(args: argparse.Namespace) -> dict[str, Any]:
     """Attest local inputs, then write one descriptive r3 attribution artifact."""
 
+    if _tiingo_raw_d1_arguments(args) is not None:
+        raise ValueError(
+            "--attribute does not support a source-sensitivity replay input"
+        )
     if not args.replay_summary_sha256 or not args.attribution_id:
         raise ValueError("--attribute requires --replay-summary-sha256 and --attribution-id")
     prepared = _prepare_replay(args)
@@ -154,6 +177,7 @@ def _prepare_replay(args: argparse.Namespace) -> PreparedReplay:
     repo_root = Path(args.repo_root).resolve()
     artifact_root = _external_directory(Path(args.artifact_root), "artifact root", repo_root)
     r2_subset = _external_file(Path(args.r2_subset), "r2 subset", repo_root)
+    raw_d1 = _tiingo_raw_d1_arguments(args)
     _verify_file_hash(
         r2_subset.parent / "manifest.json",
         args.r2_manifest_hash,
@@ -205,8 +229,44 @@ def _prepare_replay(args: argparse.Namespace) -> PreparedReplay:
         repo_root=repo_root,
     )
 
+    replay_target_plan: DailyCampaignPlan | None = None
+    if raw_d1 is not None:
+        if r2_subset.name != "ohlcv_1d.csv.gz":
+            raise ValueError("Tiingo raw-D1 replay requires the canonical r2 subset name")
+        r2_lineage = load_fixed_r2_corporate_action_lineage(r2_subset.parent)
+        if (
+            r2_lineage.dataset_id != args.r2_dataset_id
+            or r2_lineage.dataset_hash != args.r2_dataset_hash
+            or r2_lineage.manifest_hash != args.r2_manifest_hash
+        ):
+            raise ValueError("Tiingo raw-D1 r2 lineage does not match the CLI pins")
+        raw_d1_snapshot = _external_directory(
+            raw_d1.snapshot,
+            "Tiingo raw-D1 snapshot",
+            repo_root,
+        )
+        replay_cataloged_bars = tuple(
+            load_cataloged_tiingo_raw_d1_bars(
+                raw_d1_snapshot,
+                dataset_id=raw_d1.dataset_id,
+                expected_dataset_hash=raw_d1.dataset_hash,
+                expected_manifest_hash=raw_d1.manifest_hash,
+                source_snapshot_dir=snapshot,
+                r2_lineage=r2_lineage,
+                symbol=symbol,
+                repo_root=repo_root,
+            )
+            for symbol in DAILY_SYMBOLS
+        )
+        replay_target_plan = build_daily_source_sensitivity_replay_plan(
+            campaign,
+            replay_cataloged_bars,
+            replay_campaign_id=f"{args.replay_id}-input",
+        )
+
     replay_plan = prepare_daily_explicit_event_replay(
         campaign,
+        replay_target_plan=replay_target_plan,
         corporate_actions=corporate_actions,
         source_summary_path=(
             artifact_root / "daily-campaign" / args.source_campaign_id / "summary.json"
@@ -214,6 +274,9 @@ def _prepare_replay(args: argparse.Namespace) -> PreparedReplay:
         expected_source_summary_sha256=args.source_summary_sha256,
         replay_id=args.replay_id,
         artifact_root=artifact_root,
+        replay_target_manifest_hash=(
+            raw_d1.manifest_hash if raw_d1 is not None else None
+        ),
         repo_root=repo_root,
     )
     return PreparedReplay(
@@ -221,6 +284,7 @@ def _prepare_replay(args: argparse.Namespace) -> PreparedReplay:
         replay_plan=replay_plan,
         artifact_root=artifact_root,
         repo_root=repo_root,
+        replay_target_plan=replay_target_plan,
     )
 
 
@@ -241,7 +305,7 @@ def _prepared_payload(prepared: Any) -> dict[str, Any]:
         )
     ):
         raise RuntimeError("explicit-event preparation contract is incomplete")
-    return {
+    payload = {
         "status": "prepared_not_executed",
         "replay_id": prepared.replay_id,
         "source_campaign_id": prepared.source_campaign_id,
@@ -263,13 +327,25 @@ def _prepared_payload(prepared: Any) -> dict[str, Any]:
             "executed": 0,
         },
     }
+    target = getattr(prepared, "source_sensitivity_target", None)
+    if target is not None:
+        payload["source_sensitivity"] = {
+            "replay_input_dataset_id": target.dataset_id,
+            "replay_input_dataset_hash": target.dataset_hash,
+            "replay_input_manifest_hash": target.manifest_hash,
+            "calendar_lineage": target.calendar_lineage,
+            "standardization_recomputed": False,
+            "price_adjustments_applied": 0,
+            "non_independent": True,
+        }
+    return payload
 
 
 def _executed_payload(result: Any) -> dict[str, Any]:
     replay_plan = result.replay_plan
     baseline_cells = tuple(cell for cell in result.cells if cell.cell.kind == "baseline")
     candidate_cells = tuple(cell for cell in result.cells if cell.cell.kind == "candidate")
-    return {
+    payload = {
         "status": "executed",
         "replay_id": replay_plan.replay_id,
         "source_campaign_id": replay_plan.source_campaign_id,
@@ -290,6 +366,38 @@ def _executed_payload(result: Any) -> dict[str, Any]:
             "sha256": result.summary_sha256,
         },
     }
+    target = replay_plan.source_sensitivity_target
+    if target is not None:
+        payload["source_sensitivity"] = {
+            "replay_input_dataset_id": target.dataset_id,
+            "replay_input_dataset_hash": target.dataset_hash,
+            "replay_input_manifest_hash": target.manifest_hash,
+            "non_independent": True,
+        }
+    return payload
+
+
+def _tiingo_raw_d1_arguments(args: argparse.Namespace) -> TiingoRawD1Arguments | None:
+    values = (
+        args.tiingo_raw_d1_snapshot,
+        args.tiingo_raw_d1_dataset_id,
+        args.tiingo_raw_d1_dataset_hash,
+        args.tiingo_raw_d1_manifest_hash,
+    )
+    if not any(value is not None for value in values):
+        return None
+    if any(value is None or not str(value).strip() for value in values):
+        raise ValueError(
+            "Tiingo raw-D1 replay requires snapshot, dataset id, dataset hash, and manifest hash"
+        )
+    _require_sha256(str(args.tiingo_raw_d1_dataset_hash), "Tiingo raw-D1 dataset hash")
+    _require_sha256(str(args.tiingo_raw_d1_manifest_hash), "Tiingo raw-D1 manifest hash")
+    return TiingoRawD1Arguments(
+        snapshot=Path(args.tiingo_raw_d1_snapshot),
+        dataset_id=str(args.tiingo_raw_d1_dataset_id),
+        dataset_hash=str(args.tiingo_raw_d1_dataset_hash),
+        manifest_hash=str(args.tiingo_raw_d1_manifest_hash),
+    )
 
 
 def _assert_tiingo_snapshot_contract(snapshot: Path) -> None:

@@ -152,6 +152,140 @@ def test_attribution_requires_pinned_source_hash_and_new_output_id(
         runner_module.attribute_frozen_explicit_event_replay(args)
 
 
+def test_runner_requires_all_tiingo_raw_d1_pins(
+    runner_module: ModuleType,
+    tmp_path: Path,
+) -> None:
+    args = _arguments(runner_module, tmp_path)
+    args.tiingo_raw_d1_snapshot = tmp_path / "raw-d1"
+
+    with pytest.raises(ValueError, match="requires snapshot, dataset id, dataset hash"):
+        runner_module.prepare_frozen_explicit_event_replay(args)
+
+
+def test_runner_forwards_attested_tiingo_raw_d1_as_a_frozen_target(
+    runner_module: ModuleType,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    args = _arguments(runner_module, tmp_path)
+    raw_snapshot = tmp_path / "raw-d1"
+    raw_snapshot.mkdir()
+    args.tiingo_raw_d1_snapshot = raw_snapshot
+    args.tiingo_raw_d1_dataset_id = (
+        "us_equities.fixed_etf_tiingo_raw_d1.snapshot=unit-raw-d1"
+    )
+    args.tiingo_raw_d1_dataset_hash = "sha256:" + "e" * 64
+    args.tiingo_raw_d1_manifest_hash = "sha256:" + "f" * 64
+
+    campaign = SimpleNamespace(common_sessions=(datetime(2024, 1, 2, tzinfo=UTC),))
+    target = object()
+    actions = object()
+    calls: dict[str, object] = {}
+
+    monkeypatch.setattr(
+        runner_module,
+        "load_cataloged_yahoo_daily_1d_bars",
+        lambda *_args, **_kwargs: object(),
+    )
+    monkeypatch.setattr(
+        runner_module,
+        "build_daily_campaign_plan",
+        lambda *_args, **_kwargs: campaign,
+    )
+    monkeypatch.setattr(
+        runner_module,
+        "load_cataloged_corporate_actions",
+        lambda *_args, **_kwargs: actions,
+    )
+    r2_lineage = SimpleNamespace(
+        dataset_id=args.r2_dataset_id,
+        dataset_hash=args.r2_dataset_hash,
+        manifest_hash=args.r2_manifest_hash,
+    )
+
+    def load_r2_lineage(path: Path) -> object:
+        calls["r2_lineage_path"] = path
+        return r2_lineage
+
+    monkeypatch.setattr(
+        runner_module,
+        "load_fixed_r2_corporate_action_lineage",
+        load_r2_lineage,
+    )
+
+    def load_raw(snapshot: Path, **kwargs: object) -> object:
+        calls.setdefault("raw_symbols", []).append(kwargs["symbol"])
+        calls["raw_snapshot"] = snapshot
+        calls["raw_kwargs"] = kwargs
+        return object()
+
+    def build_target(
+        source_campaign: object,
+        bars: tuple[object, ...],
+        **kwargs: object,
+    ) -> object:
+        calls["target_source_campaign"] = source_campaign
+        calls["target_bars"] = bars
+        calls["target_kwargs"] = kwargs
+        return target
+
+    prepared = _prepared_fixture(args)
+
+    def prepare(source_campaign: object, **kwargs: object) -> object:
+        calls["prepared_source_campaign"] = source_campaign
+        calls["preparation_kwargs"] = kwargs
+        return prepared
+
+    monkeypatch.setattr(runner_module, "load_cataloged_tiingo_raw_d1_bars", load_raw)
+    monkeypatch.setattr(
+        runner_module,
+        "build_daily_source_sensitivity_replay_plan",
+        build_target,
+    )
+    monkeypatch.setattr(runner_module, "prepare_daily_explicit_event_replay", prepare)
+
+    runner_module.prepare_frozen_explicit_event_replay(args)
+
+    assert calls["r2_lineage_path"] == args.r2_subset.parent
+    assert calls["raw_symbols"] == ["SPY", "QQQ", "IWM"]
+    assert calls["raw_snapshot"] == raw_snapshot.resolve()
+    raw_kwargs = calls["raw_kwargs"]
+    assert raw_kwargs["dataset_id"] == args.tiingo_raw_d1_dataset_id
+    assert raw_kwargs["expected_dataset_hash"] == args.tiingo_raw_d1_dataset_hash
+    assert raw_kwargs["expected_manifest_hash"] == args.tiingo_raw_d1_manifest_hash
+    assert raw_kwargs["source_snapshot_dir"] == args.corporate_action_snapshot.resolve()
+    assert raw_kwargs["r2_lineage"] is r2_lineage
+    assert calls["target_source_campaign"] is campaign
+    assert len(calls["target_bars"]) == 3
+    assert calls["target_kwargs"] == {
+        "replay_campaign_id": f"{args.replay_id}-input"
+    }
+    assert calls["prepared_source_campaign"] is campaign
+    assert calls["preparation_kwargs"]["replay_target_plan"] is target
+    assert (
+        calls["preparation_kwargs"]["replay_target_manifest_hash"]
+        == args.tiingo_raw_d1_manifest_hash
+    )
+
+
+def test_attribution_rejects_tiingo_raw_d1_source_sensitivity_input(
+    runner_module: ModuleType,
+    tmp_path: Path,
+) -> None:
+    args = _arguments(runner_module, tmp_path)
+    args.attribute = True
+    args.tiingo_raw_d1_snapshot = tmp_path / "raw-d1"
+    args.tiingo_raw_d1_dataset_id = (
+        "us_equities.fixed_etf_tiingo_raw_d1.snapshot=unit-raw-d1"
+    )
+    args.tiingo_raw_d1_dataset_hash = "sha256:" + "e" * 64
+    args.tiingo_raw_d1_manifest_hash = "sha256:" + "f" * 64
+
+    with pytest.raises(ValueError, match="does not support a source-sensitivity replay input"):
+        runner_module.attribute_frozen_explicit_event_replay(args)
+
+
 def _arguments(runner_module: ModuleType, tmp_path: Path):
     r2_dir = tmp_path / "r2"
     r2_dir.mkdir()

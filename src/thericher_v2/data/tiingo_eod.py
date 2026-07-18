@@ -750,7 +750,11 @@ def load_cataloged_tiingo_raw_d1_bars(
         source=source,
         r2_lineage=verified_r2,
     )
-    if subset_bytes != _gzip_bytes(_raw_d1_csv_bytes(rows)):
+    try:
+        canonical_subset_bytes = gzip.decompress(subset_bytes)
+    except OSError as exc:
+        raise ValueError("Tiingo raw-D1 subset is not a valid gzip stream") from exc
+    if canonical_subset_bytes != _raw_d1_csv_bytes(rows):
         raise ValueError("Tiingo raw-D1 subset does not match attested raw source bytes")
 
     bars = tuple(

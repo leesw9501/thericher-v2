@@ -280,6 +280,40 @@ def test_raw_d1_loader_reattests_896_session_input_without_network_or_credential
     assert loaded.bars[-1].start_ts.date() == CAMPAIGN_COVERAGE_END
 
 
+def test_raw_d1_loader_accepts_a_pinned_portable_gzip_representation(
+    raw_d1_loader_fixture: _RawD1LoaderFixture,
+) -> None:
+    snapshot = raw_d1_loader_fixture.snapshot_dir
+    subset_path = snapshot / "ohlcv_1d.csv.gz"
+    manifest_path = snapshot / "manifest.json"
+    original_subset = subset_path.read_bytes()
+    original_manifest = manifest_path.read_bytes()
+    try:
+        canonical_csv = gzip.decompress(original_subset)
+        portable_subset = gzip.compress(canonical_csv, compresslevel=1, mtime=0)
+        assert portable_subset != original_subset
+        portable_hash = "sha256:" + hashlib.sha256(portable_subset).hexdigest()
+        subset_path.write_bytes(portable_subset)
+        manifest = json.loads(original_manifest)
+        manifest["dataset_hash"] = portable_hash
+        manifest["subset"]["sha256"] = portable_hash
+        manifest["subset"]["size_bytes"] = len(portable_subset)
+        portable_manifest_hash = _write_json(manifest_path, manifest)
+
+        loaded = _load_raw_d1_fixture(
+            raw_d1_loader_fixture,
+            symbol="SPY",
+            dataset_hash=portable_hash,
+            manifest_hash=portable_manifest_hash,
+        )
+
+        assert len(loaded.bars) == 896
+        assert loaded.dataset_hash == portable_hash
+    finally:
+        subset_path.write_bytes(original_subset)
+        manifest_path.write_bytes(original_manifest)
+
+
 def test_raw_d1_loader_rejects_parent_raw_and_r2_lineage_tampering(
     raw_d1_loader_fixture: _RawD1LoaderFixture,
 ) -> None:

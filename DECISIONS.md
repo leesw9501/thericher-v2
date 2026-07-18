@@ -1182,3 +1182,25 @@ Reason: matching accounting over the same simulated fills establishes internal
 consistency, not realistic execution quality, edge, or expected performance.
 Keeping that boundary in the artifact prevents a descriptive PnL view from
 quietly becoming selection or profitability evidence.
+
+## 2026-07-18 - Tiingo raw-D1 source sensitivity remains non-independent
+
+Decision: accept `raw-d1-tiingo-source-sensitivity-20260718-r1` only as one
+hash-bound, retrospective, development-only source representation check. It
+reused the six fixed r2 checkpoints on CPU, trained zero models, executed 36
+local-paper cells, and finished each flat. Its summary SHA-256 is
+`2e91c133fd12e0e28a7011eb0c1d3f661fe0fffab094ab00b679d3a566a14ff3`.
+The raw-D1 loader pins the compressed dataset hash and verifies its decompressed
+canonical CSV against the attested parent Tiingo bytes, preserving content
+integrity across Windows and Docker gzip implementations.
+
+Across the corresponding r2 explicit-event cells, decision count, trade count,
+and after-cost-PnL sign did not change. This does not reverse the parent
+factor-sensitivity verdict: the raw-D1 data shares r2's observed-session
+calendar and is not independent validation. It cannot rank, select, promote,
+open a holdout, support profitability, or trigger new GPU training.
+
+Reason: the check falsifies only a narrow bar-source representation concern
+while retaining the original calendar and all frozen model inputs. A broader,
+explicitly scoped development dataset is more valuable than extending this
+fixed-ETF campaign or adding a new report/gate layer.
