@@ -2,9 +2,7 @@
 
 from __future__ import annotations
 
-import csv
 import hashlib
-import io
 import json
 import os
 import platform
@@ -20,16 +18,22 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
+from .norgate_candidate_union import (
+    DEFAULT_MARKET_DATA_ROOT,
+    load_norgate_candidate_union,
+    select_rank_quantile_candidates,
+)
+from .norgate_candidate_union import (
+    NorgateCandidateSelection as TiingoCoverageSelection,
+)
 from .tiingo_eod import TIINGO_EOD_ENDPOINT, read_tiingo_api_token
 
-DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
 DEFAULT_PROBE_ARTIFACT_ROOT = (
     Path("D:/thericher-v2/model-artifacts/data-agent/tiingo-eod-coverage-probe")
 )
 MAX_TIINGO_COVERAGE_REQUESTS = 12
 DEFAULT_TIINGO_COVERAGE_SAMPLE_SIZE = 12
 TIINGO_COVERAGE_PROBE_VERSION = "tiingo-eod-coverage-probe-r1"
-_CANDIDATE_COLUMNS = ("candidate_rank", "symbol")
 _SUMMARY_FILE = "summary.json"
 _SNAPSHOT_SUFFIX = "-tiingo-eod-coverage-probe-r1"
 _SELECTION_ALGORITHM = "rank_quantile_inclusive_v1"
@@ -52,16 +56,6 @@ class _RejectRedirect(HTTPRedirectHandler):
         _new_url: str,
     ) -> Request:
         raise TiingoCoverageProbeError("Tiingo coverage redirects are not allowed")
-
-
-@dataclass(frozen=True, slots=True)
-class TiingoCoverageSelection:
-    """In-memory candidate selection; symbols must never be serialized."""
-
-    candidate_count: int
-    candidate_union_hash: str
-    selected_ranks: tuple[int, ...]
-    selected_symbols: tuple[str, ...]
 
 
 @dataclass(frozen=True, slots=True)
@@ -115,37 +109,14 @@ def load_tiingo_coverage_selection(
 
     if not 1 <= sample_size <= MAX_TIINGO_COVERAGE_REQUESTS:
         raise ValueError("Tiingo coverage sample size is outside the request budget")
-    root = _validated_external_root(market_data_root, repo_root=repo_root)
-    candidate_path = _validated_external_file(
-        candidate_union_path, root=root, repo_root=repo_root, label="candidate union"
+    union = load_norgate_candidate_union(
+        candidate_union_path=candidate_union_path,
+        candidate_union_manifest_path=candidate_union_manifest_path,
+        expected_candidate_union_hash=expected_candidate_union_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
     )
-    manifest_path = _validated_external_file(
-        candidate_union_manifest_path, root=root, repo_root=repo_root, label="candidate manifest"
-    )
-    expected_hash = _required_sha256(expected_candidate_union_hash, "candidate union hash")
-    candidate_bytes = candidate_path.read_bytes()
-    candidate_hash = _sha256(candidate_bytes)
-    if candidate_hash != expected_hash:
-        raise ValueError("Tiingo coverage candidate union hash mismatch")
-    manifest = _load_candidate_manifest(manifest_path)
-    _validate_candidate_manifest(
-        manifest,
-        candidate_path=candidate_path,
-        candidate_hash=candidate_hash,
-    )
-    candidates = _parse_ranked_candidates(candidate_bytes)
-    candidate_count = _positive_int(manifest.get("candidate_count"), "candidate count")
-    if len(candidates) != candidate_count:
-        raise ValueError("Tiingo coverage candidate count is inconsistent")
-    if candidate_count < sample_size:
-        raise ValueError("Tiingo coverage candidate union is smaller than the sample")
-    selected_ranks = _quantile_ranks(candidate_count, sample_size)
-    return TiingoCoverageSelection(
-        candidate_count=candidate_count,
-        candidate_union_hash=candidate_hash,
-        selected_ranks=selected_ranks,
-        selected_symbols=tuple(candidates[rank - 1] for rank in selected_ranks),
-    )
+    return select_rank_quantile_candidates(union, sample_size=sample_size)
 
 
 def run_tiingo_eod_coverage_probe(
@@ -422,116 +393,6 @@ def _response_document(response: TiingoCoverageResponse) -> dict[str, object]:
     }
 
 
-def _load_candidate_manifest(path: Path) -> dict[str, object]:
-    try:
-        parsed = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise ValueError("Tiingo coverage candidate manifest is invalid") from exc
-    if not isinstance(parsed, dict):
-        raise ValueError("Tiingo coverage candidate manifest must be an object")
-    return parsed
-
-
-def _validate_candidate_manifest(
-    manifest: dict[str, object],
-    *,
-    candidate_path: Path,
-    candidate_hash: str,
-) -> None:
-    if (manifest.get("schema_version"), manifest.get("kind")) != (
-        1,
-        "norgate_sp500_current_past_membership_matrix",
-    ):
-        raise ValueError("Tiingo coverage candidate manifest schema is invalid")
-    scope = manifest.get("scope")
-    if not isinstance(scope, dict) or any(
-        scope.get(key) is not False
-        for key in (
-            "direct_historical_universe_list",
-            "publication_time_proven",
-            "pit_eligible",
-            "campaign_eligible",
-            "model_eligible",
-        )
-    ):
-        raise ValueError("Tiingo coverage candidate manifest scope is invalid")
-    files = manifest.get("files")
-    if not isinstance(files, dict):
-        raise ValueError("Tiingo coverage candidate manifest files are invalid")
-    candidate_file = files.get("candidate_union")
-    if not isinstance(candidate_file, dict):
-        raise ValueError("Tiingo coverage candidate manifest lineage is invalid")
-    if candidate_file.get("path") != candidate_path.name:
-        raise ValueError("Tiingo coverage candidate manifest path is invalid")
-    if _required_sha256(candidate_file.get("sha256"), "manifest candidate hash") != candidate_hash:
-        raise ValueError("Tiingo coverage candidate manifest hash mismatch")
-    if candidate_file.get("size_bytes") != candidate_path.stat().st_size:
-        raise ValueError("Tiingo coverage candidate manifest size is inconsistent")
-    if tuple(candidate_file.get("columns", ())) != _CANDIDATE_COLUMNS:
-        raise ValueError("Tiingo coverage candidate manifest columns are invalid")
-
-
-def _parse_ranked_candidates(candidate_bytes: bytes) -> tuple[str, ...]:
-    try:
-        reader = csv.DictReader(io.StringIO(candidate_bytes.decode("utf-8"), newline=""))
-    except UnicodeDecodeError as exc:
-        raise ValueError("Tiingo coverage candidate union is not UTF-8") from exc
-    if tuple(reader.fieldnames or ()) != _CANDIDATE_COLUMNS:
-        raise ValueError("Tiingo coverage candidate union columns are invalid")
-    candidates: list[str] = []
-    for expected_rank, row in enumerate(reader, start=1):
-        if set(row) != set(_CANDIDATE_COLUMNS):
-            raise ValueError("Tiingo coverage candidate union row is invalid")
-        rank = row.get("candidate_rank")
-        symbol = row.get("symbol")
-        if rank != str(expected_rank) or not isinstance(symbol, str) or not _valid_symbol(symbol):
-            raise ValueError("Tiingo coverage candidate union row is invalid")
-        candidates.append(symbol)
-    if not candidates or len(set(candidates)) != len(candidates):
-        raise ValueError("Tiingo coverage candidate union is invalid")
-    return tuple(candidates)
-
-
-def _quantile_ranks(candidate_count: int, sample_size: int) -> tuple[int, ...]:
-    if sample_size == 1:
-        return (1,)
-    ranks = tuple(
-        1 + index * (candidate_count - 1) // (sample_size - 1)
-        for index in range(sample_size)
-    )
-    if len(set(ranks)) != sample_size:
-        raise ValueError("Tiingo coverage sample ranks are invalid")
-    return ranks
-
-
-def _validated_external_root(market_data_root: Path, *, repo_root: Path | None) -> Path:
-    root = Path(market_data_root)
-    if not root.is_dir() or root.is_symlink():
-        raise ValueError("Tiingo coverage market-data root must exist")
-    resolved = root.resolve()
-    if repo_root is not None and resolved.is_relative_to(Path(repo_root).resolve()):
-        raise ValueError("Tiingo coverage market-data root must stay outside Git")
-    return resolved
-
-
-def _validated_external_file(
-    path: Path,
-    *,
-    root: Path,
-    repo_root: Path | None,
-    label: str,
-) -> Path:
-    candidate = Path(path)
-    if not candidate.is_file() or candidate.is_symlink():
-        raise ValueError(f"Tiingo coverage {label} must be a regular file")
-    resolved = candidate.resolve()
-    if not resolved.is_relative_to(root):
-        raise ValueError(f"Tiingo coverage {label} must stay under market data")
-    if repo_root is not None and resolved.is_relative_to(Path(repo_root).resolve()):
-        raise ValueError(f"Tiingo coverage {label} must stay outside Git")
-    return resolved
-
-
 def _validate_destination(
     destination: Path,
     *,
@@ -637,25 +498,6 @@ def _utc_datetime(value: datetime, label: str) -> datetime:
 
 def _format_utc(value: datetime) -> str:
     return value.astimezone(UTC).isoformat().replace("+00:00", "Z")
-
-
-def _valid_symbol(value: str) -> bool:
-    return bool(value) and value == value.strip() and value == value.upper() and "\n" not in value
-
-
-def _positive_int(value: object, label: str) -> int:
-    if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
-        raise ValueError(f"Tiingo coverage {label} is invalid")
-    return value
-
-
-def _required_sha256(value: object, label: str) -> str:
-    text = str(value or "")
-    if len(text) != 71 or not text.startswith("sha256:") or any(
-        character not in "0123456789abcdef" for character in text[7:]
-    ):
-        raise ValueError(f"Tiingo coverage {label} is invalid")
-    return text
 
 
 def _sha256(data: bytes) -> str:

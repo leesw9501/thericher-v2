@@ -230,9 +230,17 @@ Official [Tiingo terms](https://app.tiingo.com/tos/) and
 [API documentation](https://www.tiingo.com/documentation/general) allow the
 operator's internal personal use but prohibit redistribution. Public Starter
 pricing lists a 500-unique-symbol monthly cap, so no 541-symbol automatic pull
-is authorized by this evidence. The next Data objective is a 30-symbol raw
-daily acquisition pilot with exact external provenance and no symbol
-substitution; it remains development evidence only.
+is authorized by this evidence. The first 30-symbol raw-daily acquisition pilot
+is complete at
+`D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r1`.
+It made 30 requests with 29 available responses, one unavailable response, and
+13,724 canonical raw-field rows. Dataset SHA-256 is
+`ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`; manifest
+SHA-256 is `69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
+The 29 available candidates have only 18 common sessions and histories from 18
+to 501 rows. This is private-use source evidence, not a point-in-time universe,
+common panel, campaign, model, GPU, or paper input. The next Data objective is
+one disjoint 30-symbol shard with the same external-only, no-substitution scope.
 
 The approved Tiingo standard EOD collection produced one immutable private-use
 snapshot at
@@ -605,8 +613,14 @@ The Tiingo coverage probe is complete: 11 of 12 fixed deterministic requests
 were available and one was a recorded HTTP-404, with no selected symbols or raw
 rows persisted. The external summary hash is
 `sha256:4b2ef16520fdd530ae7cf6bbadc9dbe46cd9526670d859c2484097d3def9fce0`.
-Claude's result was `supported-with-limits`: the only safe follow-up is a
-30-symbol, rate-bounded raw-daily pilot after a data-contract drift-check. It
-must use only the approved Tiingo token, write under `D:\market_data`, retain
-unavailable symbols as gaps, and remain private-use, non-PIT, non-campaign,
-non-model, non-GPU, and non-paper evidence.
+The first Claude-reviewed 30-symbol raw-daily pilot is also complete. It
+recorded 29 available responses, one unavailable response, 13,724 raw-field
+rows, and only 18 common sessions across the available candidates. Dataset
+SHA-256 is `ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`;
+manifest SHA-256 is
+`69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
+Claude's `supported-with-limits` verdict remains bounded to acquisition
+mechanics and private-use retention. The only safe follow-up is one disjoint,
+30-symbol raw-daily shard that re-attests the predecessor, uses the approved
+Tiingo token only, writes under `D:\market_data`, retains gaps without
+substitution, and stays non-PIT, non-campaign, non-model, non-GPU, and non-paper.

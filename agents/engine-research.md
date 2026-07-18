@@ -63,7 +63,10 @@
   outside `CatalogedBars`, campaign, model, and GPU inputs. Its fixed-ETF
   source-alignment snapshot is `literal_raw_ohlcv_difference`, with only 483
   Norgate sessions per symbol against 896 pinned Tiingo sessions; it creates no
-  GPU or breadth-queue eligibility.
+  GPU or breadth-queue eligibility. The first 30-symbol Tiingo raw-daily pilot
+  has 29 available responses but only 18 common sessions across them and 18 to
+  501 rows per candidate. It is source evidence for Data only, not a common
+  panel or a GPU/model input.
 
 ## Explicit-Event Replay
 
@@ -86,7 +89,9 @@
 
 - No breadth batch is currently eligible. The fixed RAW D1 verdict is
   `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate's
-  host-only raw-D1 provider has no cataloged or campaign input.
+  host-only raw-D1 provider has no cataloged or campaign input. The first Tiingo
+  30-symbol raw-daily pilot has only 18 common sessions, so it also supplies no
+  breadth eligibility.
 - When Data supplies one hash-bound development-training-eligible dataset and a
   frozen campaign contract, enumerate one finite breadth batch before launch:
   CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two

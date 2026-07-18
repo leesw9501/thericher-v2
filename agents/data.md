@@ -135,11 +135,16 @@ recarray with only `Date` and `Index Constituent` fields. No symbols, values,
 rows, cache, artifact, or dataset were retained. That validates API shape, not
 membership availability or a PIT universe.
 
-The next ready Data item is a Claude-reviewed, deterministic 30-symbol Tiingo
-standard-EOD raw-daily acquisition pilot. It may read only the approved
-`TIINGO_API_TOKEN`, preserve exact external raw-response provenance, record
-gaps without substitution, and remain private-use, non-PIT, non-campaign,
-non-model evidence. It is a data-contract test, not a GPU trigger.
+The first Claude-reviewed Tiingo raw-daily pilot is complete. It retained one
+external 30-request snapshot with 29 available responses, one recorded gap,
+and variable returned histories. Its 29 available candidates share only 18
+sessions, so it is not a common panel, PIT source, campaign input, model input,
+or GPU trigger.
+
+The next ready Data item is one deterministic, disjoint 30-symbol Tiingo
+raw-daily shard. It must bind the first snapshot before selecting from the
+remaining ranked candidates, retain exact external provenance and gaps without
+substitution, and remain private-use, non-PIT, non-campaign, non-model evidence.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -294,10 +299,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. After a Claude data-contract drift-check, build and run one 30-symbol Tiingo
-   raw-daily pilot from the fixed external candidate union. It must not exceed
-   the observed hourly request headroom, replace any missing symbol, or claim
-   that the date-less union is a historical tradable universe.
+1. Build and run one deterministic, disjoint 30-symbol Tiingo raw-daily shard
+   after re-attesting the first snapshot and preserving its exact non-PIT scope.
+   It must not exceed observed request headroom, replace a gap, reuse a selected
+   rank, or claim the date-less union is a historical tradable universe.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
@@ -583,6 +588,14 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 - `D:\thericher-v2\model-artifacts\data-agent\tiingo-eod-coverage-probe\snapshot=2026-07-18-tiingo-eod-coverage-probe-r1\summary.json`:
   12-request, symbol-private Tiingo standard-EOD reachability summary with 11
   available responses, one unavailable response, no retry, and no raw data.
+- `D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r1\manifest.json`:
+  completed 30-request private-use raw-daily pilot with 29 available responses,
+  one unavailable response, 13,724 canonical raw-field rows, dataset SHA-256
+  `ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`,
+  manifest SHA-256
+  `69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`, and
+  a hash-attested Tiingo private-internal-use marker. Its returned histories
+  are uneven and share only 18 sessions; it is not a model or GPU input.
 - `data-agent-market-data-inventory-cadence-20260717-r2`: bounded metadata
   inventory confirmed 2 roots, 5 snapshots, and 5 useful files; no acquisition.
 - `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1`: no immediate
@@ -619,8 +632,16 @@ That snapshot is now complete at
 `norgatedata==1.0.77`, matrix SHA-256
 `d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55`.
 It has a deletion marker and no staging residue, but is not a direct historical
-list, publication-time evidence, PIT data, or an Engine input. The next bounded
-Data task is a 30-symbol Tiingo raw-daily pilot. Tiingo's current
+list, publication-time evidence, PIT data, or an Engine input. The first
+30-symbol Tiingo raw-daily pilot is complete at
+`D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r1`:
+29 available responses, one unavailable response, 13,724 raw-field rows,
+dataset SHA-256 `ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`,
+and manifest SHA-256
+`69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
+The 29 available candidates have only 18 common sessions and must not enter
+model/GPU work. The next bounded Data task is one disjoint 30-symbol shard,
+not an automatic batch. Tiingo's current
 [terms](https://app.tiingo.com/tos/) and
 [general documentation](https://www.tiingo.com/documentation/general) permit
 the operator's private internal use but prohibit redistribution. Public Starter

@@ -1760,3 +1760,26 @@ Reason: a small raw-data pilot validates the real acquisition contract and
 protects the free-tier limit before a larger private dataset is retained. It
 advances the data loop without turning a date-less candidate union into a
 survivorship-safe research universe.
+
+## 2026-07-19 - First Tiingo raw-daily pilot remains source evidence
+
+Decision: retain the completed 30-request Tiingo standard-EOD raw-daily pilot
+at `D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r1` as private-use source evidence
+only. It completed without retry at `2026-07-18T21:04:10.820971Z`, retained 29
+available raw responses and one HTTP-404 gap, and produced 13,724 canonical
+raw-field rows. Dataset SHA-256 is
+`ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`; manifest
+SHA-256 is `69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
+The snapshot includes the hash-attested Tiingo private-internal-use marker
+required by the reviewed retention contract.
+
+The 29 available candidates have 18 common returned sessions, while individual
+histories range from 18 to 501 rows. This is insufficient for a common-panel,
+point-in-time, campaign, model, GPU, paper, source-selection, or profitability
+claim. The next reversible step is one separately bounded, disjoint 30-symbol
+shard, not a scheduler or automatic bulk pull.
+
+Reason: successful transport and raw provenance prove the acquisition mechanics
+but do not solve survivorship, publication-time, listing-history, or common
+coverage limitations. Preserving those limits avoids using GPU work to create a
+misleading research result.
