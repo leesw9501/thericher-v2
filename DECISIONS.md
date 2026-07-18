@@ -1514,3 +1514,33 @@ where a superficially matching event marker can leak future information. Neither
 fixture establishes PIT availability, universe completeness, delistings, general
 corporate-action lineage, a provider contract, campaign eligibility, or a
 purchase decision.
+
+## 2026-07-19 - Norgate capital-event timing is non-actionable by default
+
+Decision: record one more literal `SMCI` stored-field observation and add no
+consumer code. A `2024-09-27` through `2024-10-02` daily price request returned
+four ordered, non-duplicate rows. Its derived `Close`/`Unadjusted Close` ratio
+changed only on `2024-10-01`. The corresponding capital-event request again
+returned 501 rows across the wider trial horizon; explicit in-memory clipping
+left four rows with one nonzero `Capital Event` marker on `2024-09-30`. The
+issuer states that its 10-for-1 split became effective after the close on
+`2024-09-30` and split-adjusted trading began `2024-10-01`.
+
+Claude's falsification review returned `supported-with-limits` for the literal
+one-session ordering only. The conservative operational consequence is a
+prohibition: a capital-event marker cannot be assumed to be the local
+price-ratio-transition date or a same-session actionable signal without a
+separate source-timestamp contract. It does not claim when Norgate populated
+the marker, that all events lag by one session, or that the ratio isolates
+split adjustment.
+
+The next bounded question may inspect the existing query signature and public
+setting documentation, then classify the one observed ratio-change magnitude
+against the issuer's 10-for-1 split without changing any local Norgate setting.
+If those facts do not establish the field meaning, record `unsupported` and
+stop this semantic branch rather than infer a general convention.
+
+Reason: the stored marker and ratio transition differ on the very fixture where
+the issuer's after-close effective time matters. Refusing same-session use is a
+safe limitation, whereas generalizing the lag or price-field semantics would
+create an unmeasured leakage surface.

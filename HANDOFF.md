@@ -311,7 +311,19 @@ public S&P effective-before-open date; clipped `SMCI` Capital Event marked
 trading began `2024-10-01`. Claude supports those literal observations only.
 Do not use the capital-event date as a price-adjustment, ex-date, or
 availability timestamp; the next check compares it with the
-`Close`/`Unadjusted Close` ratio transition. A Docker `engine`
+`Close`/`Unadjusted Close` ratio transition.
+Subsequent `SMCI` timing evidence used `2024-09-27` through `2024-10-02`: four
+ordered daily price rows had a `Close`/`Unadjusted Close` ratio transition only
+on `2024-10-01`; the 501-row capital-event response clipped to four rows with
+one marker on `2024-09-30`. This is consistent with the issuer's after-close
+effective time and next-session split-adjusted trading, but only as a literal
+stored-field observation. It prohibits treating a marker as same-session
+actionable or as the price-ratio date; it does not establish population time,
+a general lag, or that the ratio isolates split adjustment. The next bounded
+check may inspect the existing query signature and public setting documentation
+and classify this fixture's ratio-change magnitude without changing any local
+Norgate setting.
+A Docker `engine`
 runtime probe listed 166 top-level files through the `/app/market_data` `ro`
 mount, but no proprietary Docker query or export bridge is licensed or
 implemented. This is compatibility
@@ -501,10 +513,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The Norgate trial's first fixture check is complete and does not justify a
+The Norgate trial's fixture and timing checks are complete and do not justify a
 purchase, cleanup, provider, or research promotion. The next objective is one
-bounded Data-owned comparison of the `SMCI` Capital Event marker with the local
-daily `Close`/`Unadjusted Close` ratio transition. It must create no
-provider/cache/export/campaign path and keep all Norgate data outside Git.
-Any timing ambiguity is a limitation, not a reason to buy data or adapt
-historical prices.
+bounded Data-owned inspection of the existing `SMCI` ratio-change magnitude and
+current public adjustment-setting documentation, with no local setting mutation.
+It must create no provider/cache/export/campaign path and keep all Norgate data
+outside Git. Any unresolved field meaning is a limitation, not a reason to buy
+data or adapt historical prices.

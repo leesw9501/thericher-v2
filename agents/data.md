@@ -70,14 +70,15 @@ short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
 
-The Norgate trial compatibility and first fixture check are complete. `PLTR`
-changed `Index Constituent` false-to-true on `2024-09-23`, matching the public
-S&P effective-before-open date. A client-clipped `SMCI` Capital Event marker
-landed on `2024-09-30`, the issuer's split-effective date, while
-split-adjusted trading began `2024-10-01`. These are date-scoped observations,
-not data-semantic or availability claims. The next ready Data item compares the
-SMCI marker with the `Close`/`Unadjusted Close` ratio transition; it must not
-become a provider or research-data integration.
+The Norgate trial compatibility, first fixture, and timing checks are complete.
+`PLTR` membership changed false-to-true on `2024-09-23`. For the local `SMCI`
+fixture, the client-clipped `Capital Event` marker is `2024-09-30`, while the
+derived `Close`/`Unadjusted Close` ratio transitions on `2024-10-01`. These are
+date-scoped stored-field observations, not availability or field-semantic
+claims. The next ready Data item may inspect current public adjustment-setting
+documentation and classify this one ratio-change magnitude without mutating
+local Norgate settings; it must not become a provider or research-data
+integration.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -179,6 +180,29 @@ Official fixtures: [S&P DJI notice](https://press.spglobal.com/2024-09-06-Palant
 [SMCI Form 8-K](https://www.sec.gov/Archives/edgar/data/1375365/000137536524000028/smci-20240806.htm),
 and [SMCI Form 10-Q](https://www.sec.gov/Archives/edgar/data/1375365/000137536525000005/smci-20240930.htm).
 
+## Norgate Capital-Event Timing (2026-07-19)
+
+A second bounded `SMCI` query retained no raw rows or values. The requested
+`2024-09-27` through `2024-10-02` daily price result had four ordered,
+non-duplicate rows. Its derived `Close`/`Unadjusted Close` ratio changed only
+on `2024-10-01`. The matching capital-event request returned 501 rows from
+`2024-07-18` through `2026-07-17`; after explicit in-memory clipping it had
+four rows and one `Capital Event` marker, on `2024-09-30`.
+
+The issuer records the 10-for-1 split as effective after the close on
+`2024-09-30` and split-adjusted trading from `2024-10-01`. Claude returned
+`supported-with-limits` for the literal one-session ordering. It supports only
+the conservative prohibition against treating this marker as a price-ratio date
+or same-session actionable input without a source-timestamp contract. It does
+not show a general provider lag, marker population time, event semantics, or
+that `Close`/`Unadjusted Close` isolates split adjustment.
+
+The remaining bounded question is whether the observed ratio-change magnitude
+is consistent with this issuer's 10-for-1 split under the current documented
+local adjustment setting. If documentation or a no-side-effect query cannot
+establish that field meaning, record `unsupported` and end this semantics
+branch rather than add a workaround.
+
 **Sharadar comparison:** the official `SEP` product page documents daily US
 listed and delisted equities from 1998, adjusted and unadjusted OHLCV, and
 corporate-action, delisting-reason, and ticker-change fields. It also documents
@@ -197,10 +221,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Compare the existing `SMCI` Capital Event marker with the local daily
-   `Close`/`Unadjusted Close` ratio transition over the existing narrow fixture
-   window. Do not purchase, export, or integrate the trial database into a
-   provider or `CatalogedBars` path.
+1. Inspect the existing `SMCI` ratio-change magnitude against current public
+   adjustment-setting documentation without mutating local Norgate settings.
+   Do not purchase, export, or integrate the trial database into a provider or
+   `CatalogedBars` path.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
