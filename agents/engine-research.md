@@ -42,9 +42,10 @@
 
 ## Current Objective
 
-- Attribution of the immutable r3 replay is complete. Keep GPU work idle until
-  an execution or research question supplies a falsifiable hypothesis that can
-  respect the sticky `unsupported` verdict.
+- The next Data goal has one development-only falsifiable question: whether the
+  `d1-pressure-lb20` factor-sensitivity instability persists on an independent
+  Tiingo raw D1 snapshot for the same fixed ETFs. Keep GPU idle; the first step
+  is data construction and a no-retraining comparison plan.
 
 ## Explicit-Event Replay
 
@@ -65,9 +66,9 @@
 
 ## Breadth Queue
 
-- No breadth experiment is queued. A new one must begin with a falsifiable data
-  or model question that can respect the sticky `unsupported` verdict; do not
-  run GPU work merely to fill idle capacity.
+- After the Tiingo raw D1 snapshot is loader-attested, prepare one frozen,
+  no-retraining data-source robustness replay. It remains development-only and
+  must preserve the sticky `unsupported` verdict.
 
 ## Depth Queue
 
@@ -151,6 +152,7 @@
 
 ## Next Handoff
 
-- Research is not the active lane until a new falsifiable model or data question
-  exists. Preserve all summaries and the attribution as development-only
-  evidence; do not rank, promote, name a winner, or claim profitability.
+- Data now owns the Tiingo raw D1 comparison snapshot. Once it is immutable and
+  loader-attested, Research may prepare one frozen no-retraining replay to test
+  data-source sensitivity only. Do not rank, promote, name a winner, claim
+  profitability, or start GPU training.

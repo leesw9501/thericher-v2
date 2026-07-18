@@ -4,7 +4,8 @@
 
 Ready, no running job. The approved Tiingo standard EOD acquisition completed
 and produced one loader-attested, retrospective-only corporate-action snapshot
-for the three fixed instruments.
+for the three fixed instruments. The bounded no-auth source triage found no
+eligible new pilot.
 
 ## Engine Loop
 
@@ -39,17 +40,22 @@ for the three fixed instruments.
 
 ## Current Objective
 
-The Tiingo EOD corporate-action evidence lane is complete. Preserve the
-immutable snapshot and supply its loader-attested event dates to the bounded
-no-retraining replay only; do not use it for ranking or sealed evidence.
+No-auth triage is complete without acquisition. `pit_sources` contains only
+template workspaces for paid Sharadar and Norgate sources; neither has a raw
+file or membership sample. Stooq requested browser verification, which was not
+bypassed, and the already-captured Nasdaq directory is current/prospective only.
+The next bounded goal derives an independent raw D1 comparison snapshot from
+the already immutable Tiingo raw responses for the fixed ETFs; it needs no new
+request or credential read.
 
 ## Ready Queue
 
-1. Hand the loader-attested Tiingo snapshot identity and event dates to the
-   orchestrator for the bounded explicit-event replay.
-2. On a future approved re-pull, compare only normalized `date`/`divCash`/
-   `splitFactor` evidence against this immutable snapshot; any difference
-   invalidates its claimed event completeness rather than overwriting it.
+1. In the next goal, derive exact raw D1 OHLCV plus corporate-action fields from
+   the existing immutable Tiingo SPY/QQQ/IWM responses and bind them to r2's 896
+   sessions. Keep the result development-only and make no new request.
+2. If future work needs historical point-in-time universe membership, prepare a
+   concrete paid-data request for Sharadar or Norgate with product, cost,
+   coverage, and rights; templates are not evidence.
 
 ## Running
 
@@ -69,9 +75,11 @@ no-retraining replay only; do not use it for ranking or sealed evidence.
   and spans `2026-06-09T13:30:00Z` through `2026-06-16T19:59:00Z`.
 - Intraday: `snapshot=2026-07-09-shadow-t0-8d-probe` contains CVS, FCX, and KO
   from 2026-06-29 through 2026-07-09. It is suitable for bounded smoke work.
-- Daily/PIT: `D:\market_data\pit_sources` is a known root, but no exact
-  daily-file count, symbols, dates, or license coverage is currently verified;
-  catalog it before relying on it.
+- Daily/PIT: `D:\market_data\pit_sources` contains only template workspaces for
+  `nasdaq_data_link_sharadar_sep_sfp` and `norgate_us_platinum_or_diamond`.
+  Both raw directories are empty and neither has `membership.csv`; do not run
+  the legacy intake/gate instructions in their README files or treat templates
+  as source evidence.
 - The 2026-07-18 catalog fully inspected the three named intraday files and the
   newest daily snapshot. Intraday row counts are 572,894, 7,103, and 8,276;
   `snapshot=2026-06-23` daily contains 7,390,436 rows. Five daily snapshots
@@ -220,6 +228,7 @@ no-retraining replay only; do not use it for ranking or sealed evidence.
 Data independently confirmed that r3 attribution reads the pinned r2 and Tiingo
 lineage only: all IDs and dataset/manifest hashes match both immutable
 manifests, and Tiingo's own `r2_lineage` matches r2. Do not rewrite either
-snapshot or interpret adjusted fields. The next goal is a bounded no-auth source
-triage for the next research-data frontier; it must stay outside Git and use no
-credentials or KIS access.
+snapshot or interpret adjusted fields. No no-auth candidate expanded the
+frontier. The next goal derives a separate raw D1 comparison snapshot outside
+Git from existing immutable Tiingo bytes; it must not read credentials, access
+KIS, make a new request, or use a paid upgrade.

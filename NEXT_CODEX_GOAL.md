@@ -2,12 +2,12 @@
 
 ## Objective
 
-Advance data collection by finding and, only when eligible, capturing one
-bounded no-auth US-equity data pilot that improves the next research-data
-frontier.
+Build one immutable Tiingo raw-D1 comparison snapshot for SPY, QQQ, and IWM
+from the existing Tiingo Standard EOD raw responses, bound to the fixed-ETF r2
+sessions.
 
-The KIS execution lane remains failed closed and does not block this independent
-Data-lane objective.
+This advances data collection and a development-only data-source robustness
+check for the existing unsupported campaign. It does not select a model.
 
 ## Required First Reads
 
@@ -18,43 +18,44 @@ checkpoint.
 
 ## Authority And Boundaries
 
-- Do not read `.env`, use `TIINGO_API_TOKEN`, call KIS, or access an account.
-- Keep all acquired bytes under `D:\market_data`, never Git. Preserve the 20%
-  warning and 15% hard free-space floor on `D:`.
-- Consider only sources that are no-auth, no-cost, lawful for this private use,
-  and whose current terms and provenance are sufficiently clear. Do not bypass a
-  login, paywall, rate limit, or manual agreement.
-- A pilot must increase a named coverage or provenance capability; do not
-  duplicate existing fixed-ETF bytes merely to make a new artifact.
-- Do not mark any new data ranking or sealed-holdout eligible without evidence,
-  train a model, use GPU, alter KIS behavior, or add a scheduler, dashboard,
-  report/gate family, or broad provider framework.
+- Do not read `.env`, credentials, account identifiers, or `KIS_LIVE_*`; do not
+  make a Tiingo or KIS network request, access an account, or change
+  `THERICHER_MODE`.
+- Use only the existing immutable Tiingo source snapshot under
+  `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
+  Store new derived bytes under `D:\market_data` and run artifacts under
+  `D:\thericher-v2\model-artifacts`, never Git. Preserve the 20% warning and
+  15% hard free-space floor on `D:`.
+- The result is development-only. Do not open ranking or sealed evidence, train
+  a model, use GPU, select a candidate, make a profitability claim, or alter
+  broker/execution behavior.
+- Use the existing catalog/manifest and Tiingo corporate-action patterns. Do
+  not add a broad provider framework, worker, scheduler, dashboard, or
+  report/gate family.
 
 ## Required Work
 
-1. Data performs a targeted metadata inventory of `D:\market_data\pit_sources`
-   and the known canonical roots. Avoid an expensive full recursive scan.
-2. Assess at most two official/no-auth source candidates against exact coverage,
-   adjustment, historical-universe, rights, and storage facts. Engine Research
-   states the smallest additional coverage that would unlock a falsifiable next
-   data or model question.
-3. If one candidate is eligible and materially useful, acquire one narrow,
-   immutable pilot outside Git with raw bytes, a concise manifest, and a
-   provenance/eligibility result. Otherwise record the bounded reason no pilot
-   was acquired and stop pursuing that source after two automated failures.
-4. Data and Review independently check source boundaries and simplification.
-   Refresh the Data stateboard, `HANDOFF.md`, and this single next goal; verify,
-   commit, and push.
-
-Ask Claude for a short drift-check only before a provider-contract or runtime
-change. Do not use Claude for credentials, raw market data, or source payloads.
+1. Ask Claude for a short drift-check before changing the Tiingo parser or
+   source contract. Share no credentials, raw responses, or unnecessary
+   row-level data.
+2. Extend only the smallest existing Tiingo path needed to normalize raw D1
+   OHLCV plus `divCash` and `splitFactor` from the three exact source files for
+   the 896 r2 sessions. Fail closed on missing/extra sessions, unclear raw-field
+   semantics, source tampering, bad lineage, or an existing destination.
+3. Derive one dated external snapshot with hashes, source lineage, schema,
+   raw-versus-adjusted policy, and development-only eligibility in the existing
+   manifest/catalog shape. Do not copy or overwrite the source snapshot.
+4. Data and Engine Research confirm the snapshot is only a frozen input for one
+   future no-retraining source-sensitivity replay. Review checks scope and
+   simplification. Refresh stateboards, `HANDOFF.md`, and this next goal;
+   verify, commit, and push.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
-`docker compose --env-file .env.example config --quiet`. Report any focused
-inventory or acquisition command separately.
+`docker compose --env-file .env.example config --quiet`. Report the focused
+derivation command and only safe artifact/data paths and hashes.
 
 ## Suggested Commit Message
 
-`Triage next US equity data source`
+`Add Tiingo raw D1 comparison snapshot`

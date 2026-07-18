@@ -161,6 +161,18 @@ Its manifest hash is
 It proves returned-session coverage, not that a future source re-pull cannot
 restate data; any later comparison must create a new immutable snapshot.
 
+A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
+has only empty raw/template workspaces for paid Sharadar and Norgate source
+paths. Stooq requested browser verification and was not bypassed; the existing
+official Nasdaq directory is current/prospective only and cannot repair
+historical universe or price provenance. The next useful bounded step is the
+existing immutable Tiingo Standard EOD raw D1 comparison for SPY/QQQ/IWM. Its
+three raw response files each have 896 rows and fields
+`date,close,high,low,open,volume,adjClose,adjHigh,adjLow,adjOpen,adjVolume,divCash,splitFactor`.
+The next snapshot derives from those verified bytes without a new API request;
+it can test source sensitivity development-only, not create ranking or sealed
+evidence.
+
 The Data stateboard owns exact catalog status and operator data requests.
 
 ## Research Reality
@@ -332,8 +344,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now advances the Data lane with a bounded no-auth source
-triage for the next research-data frontier. KIS remains failed closed pending
-the non-secret pairing check and a separately authorized future probe. The KIS
-capital envelope, paid data, order submission, and live capital remain separate
-future decisions.
+`NEXT_CODEX_GOAL.md` now derives a bounded Tiingo raw D1 comparison snapshot
+from existing immutable bytes for the fixed ETF campaign. KIS remains failed
+closed pending the non-secret pairing check and a separately authorized future
+probe. The KIS capital envelope, paid data, order submission, and live capital
+remain separate future decisions.
