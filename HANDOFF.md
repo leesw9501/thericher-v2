@@ -48,10 +48,10 @@ success metrics.
 
 ## Current Boundaries
 
-- The next bounded attribution goal reads no `.env`, makes no network call, and
-  does not access KIS. Its completed predecessor used only the approved
-  `TIINGO_API_TOKEN` and `KIS_PAPER_*` scope; order submit/cancel, paper
-  capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
+- The next bounded KIS diagnosis reads no `.env`, makes no KIS API call, and
+  does not access an account. It may consult public official documentation
+  only. Order submit/cancel, paper capital, `KIS_LIVE_*`, live behavior, and
+  mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -204,6 +204,17 @@ finished every cell flat. Its development-only labels and sticky parent
 `unsupported` verdict remain unchanged. The r1 interruption and r2
 summary-write failure are incomplete, non-authoritative external artifacts.
 
+Its compact read-only attribution is
+`D:\thericher-v2\model-artifacts\attribution\raw-d1-explicit-events-20260718-r3-attribution-r1\summary.json`
+with SHA-256
+`3de06a073b50f4b3b548a14a2d6040ebcb713b78b9a69a08b4add5f129b86e70`.
+It independently rechecked r3 and 144 referenced cell evidence hashes, records
+36 fixed cells and 300 local-paper fills, and confirms every cell finishes
+flat. It deliberately omits cross-cell PnL sums because the cells overlap and
+are not independent. Its scope is arithmetic consistency of shared local-paper
+evidence, not independent execution quality, strategy selection, or
+profitability.
+
 ## Execution Reality
 
 The broker-free simulator is the only enabled execution path. The broker-
@@ -280,7 +291,7 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now narrows to compact, read-only PnL attribution of the
-completed explicit-event replay. The KIS capital envelope is not ready until a
-future complete read-only reconciliation exists. Paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now performs an offline public-document diagnosis of the
+rejected KIS virtual-paper open-order query. The KIS capital envelope is not
+ready until a future complete read-only reconciliation exists. Paid data, order
+submission, and live capital remain separate future decisions.

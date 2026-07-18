@@ -42,10 +42,9 @@
 
 ## Current Objective
 
-- Produce one compact, read-only PnL attribution comparison from the immutable
-  r3 summary, event evidence, and validation artifacts. It must describe
-  evidence, costs, and trade counts without ranking, selecting, or promoting a
-  model.
+- Attribution of the immutable r3 replay is complete. Keep GPU work idle until
+  an execution or research question supplies a falsifiable hypothesis that can
+  respect the sticky `unsupported` verdict.
 
 ## Explicit-Event Replay
 
@@ -66,12 +65,9 @@
 
 ## Breadth Queue
 
-1. Read the completed r3 evidence and derive a compact reproducible PnL/cost/
-   trade attribution artifact outside Git.
-2. Compare explicit-event masking only as a stability observation; do not
-   use it for a winner, ranking, promotion, or new hypothesis tuning.
-3. Queue no new GPU training until the attribution review names a falsifiable
-   data or model question that respects the sticky `unsupported` verdict.
+- No breadth experiment is queued. A new one must begin with a falsifiable data
+  or model question that can respect the sticky `unsupported` verdict; do not
+  run GPU work merely to fill idle capacity.
 
 ## Depth Queue
 
@@ -144,9 +140,17 @@
 - The Tiingo snapshot has 46 qualified cash-distribution events and zero splits
   across the fixed ETFs. R3 completed from it with no retraining and did not
   alter the parent `unsupported` verdict.
+- The completed descriptive attribution is
+  `D:\thericher-v2\model-artifacts\attribution\raw-d1-explicit-events-20260718-r3-attribution-r1\summary.json`
+  with SHA-256
+  `3de06a073b50f4b3b548a14a2d6040ebcb713b78b9a69a08b4add5f129b86e70`.
+  It verifies r3 plus 144 cell evidence files, records 36 fixed cells and 300
+  `local_paper` fills, omits cross-cell PnL aggregation because cells overlap,
+  and labels its scope arithmetic-consistency-only rather than independent
+  execution-quality or profitability evidence.
 
 ## Next Handoff
 
-- Research leads compact, read-only attribution of the completed r3 replay.
-  Preserve all summaries as development-only evidence and do not rank,
-  promote, name a winner, or claim profitability.
+- Research is not the active lane until a new falsifiable model or data question
+  exists. Preserve all summaries and the attribution as development-only
+  evidence; do not rank, promote, name a winner, or claim profitability.

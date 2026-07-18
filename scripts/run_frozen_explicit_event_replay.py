@@ -4,7 +4,8 @@ This is deliberately a local, read-only bridge between Data's immutable
 corporate-action snapshot and the existing daily-campaign preparation contract.
 It does not acquire data, read environment files, inspect CUDA, or train. By
 default it only prepares the plan; ``--execute`` runs its already-frozen 36
-cells through the local paper simulator.
+cells through the local paper simulator; ``--attribute`` reads a completed
+frozen replay and writes one descriptive external attribution artifact.
 """
 
 from __future__ import annotations
@@ -30,6 +31,10 @@ from thericher_v2.research.daily_campaign import (
     build_daily_campaign_plan,
     prepare_daily_explicit_event_replay,
     run_daily_explicit_event_replay,
+)
+from thericher_v2.research.replay_attribution import (
+    FrozenReplayAttributionContract,
+    attribute_frozen_local_paper_replay,
 )
 
 DEFAULT_REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -66,7 +71,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--replay-id", required=True)
     parser.add_argument("--artifact-root", type=Path, required=True)
     parser.add_argument("--repo-root", type=Path, default=DEFAULT_REPO_ROOT)
-    parser.add_argument("--execute", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--execute", action="store_true")
+    mode.add_argument("--attribute", action="store_true")
+    parser.add_argument("--replay-summary-sha256")
+    parser.add_argument("--attribution-id")
     return parser
 
 
@@ -91,6 +100,54 @@ def execute_frozen_explicit_event_replay(args: argparse.Namespace) -> dict[str, 
         repo_root=prepared.repo_root,
     )
     return _executed_payload(result)
+
+
+def attribute_frozen_explicit_event_replay(args: argparse.Namespace) -> dict[str, Any]:
+    """Attest local inputs, then write one descriptive r3 attribution artifact."""
+
+    if not args.replay_summary_sha256 or not args.attribution_id:
+        raise ValueError("--attribute requires --replay-summary-sha256 and --attribution-id")
+    prepared = _prepare_replay(args)
+    replay_plan = prepared.replay_plan
+    baseline_count = sum(cell.kind == "baseline" for cell in replay_plan.cells)
+    candidate_count = sum(cell.kind == "candidate" for cell in replay_plan.cells)
+    result = attribute_frozen_local_paper_replay(
+        source_summary_path=(
+            prepared.artifact_root / "daily-campaign" / replay_plan.replay_id / "summary.json"
+        ),
+        contract=FrozenReplayAttributionContract(
+            replay_id=replay_plan.replay_id,
+            source_campaign_id=replay_plan.source_campaign_id,
+            replay_summary_sha256=args.replay_summary_sha256,
+            source_campaign_summary_sha256=replay_plan.source_summary_sha256,
+            parent_sensitivity_verdict=replay_plan.parent_sensitivity_verdict,
+            r2_dataset_id=replay_plan.r2_dataset_id,
+            r2_dataset_hash=replay_plan.r2_dataset_hash,
+            r2_manifest_hash=replay_plan.r2_manifest_hash,
+            corporate_action_dataset_id=replay_plan.corporate_action_dataset_id,
+            corporate_action_dataset_hash=replay_plan.corporate_action_dataset_hash,
+            corporate_action_manifest_hash=replay_plan.corporate_action_manifest_hash,
+            expected_cell_count=len(replay_plan.cells),
+            expected_baseline_cell_count=baseline_count,
+            expected_candidate_cell_count=candidate_count,
+        ),
+        artifact_root=prepared.artifact_root,
+        attribution_id=args.attribution_id,
+        repository_root=prepared.repo_root,
+    )
+    return {
+        "status": "attributed_only",
+        "replay_id": replay_plan.replay_id,
+        "source_campaign_id": replay_plan.source_campaign_id,
+        "parent_sensitivity_verdict": replay_plan.parent_sensitivity_verdict,
+        "training_runs": 0,
+        "artifact": {
+            "path": str(result.artifact_path),
+            "sha256": result.artifact_sha256,
+        },
+        "cells": result.cell_count,
+        "local_paper_fill_count": result.local_paper_fill_count,
+    }
 
 
 def _prepare_replay(args: argparse.Namespace) -> PreparedReplay:
@@ -352,11 +409,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
-        payload = (
-            execute_frozen_explicit_event_replay(args)
-            if args.execute
-            else prepare_frozen_explicit_event_replay(args)
-        )
+        if args.attribute:
+            payload = attribute_frozen_explicit_event_replay(args)
+        elif args.execute:
+            payload = execute_frozen_explicit_event_replay(args)
+        else:
+            payload = prepare_frozen_explicit_event_replay(args)
     except (OSError, RuntimeError, ValueError) as exc:
         parser.error(str(exc))
     print(json.dumps(payload, indent=2, sort_keys=True))

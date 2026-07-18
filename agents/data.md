@@ -217,7 +217,8 @@ no-retraining replay only; do not use it for ranking or sealed evidence.
 
 ## Next Handoff
 
-For the compact r3 attribution, independently confirm the pinned r2 and Tiingo
-snapshot lineage and hashes only. Do not rewrite either snapshot, acquire data,
-or interpret adjusted fields; attribution remains retrospective development
-evidence and cannot support ranking, model selection, or profitability.
+Data independently confirmed that r3 attribution reads the pinned r2 and Tiingo
+lineage only: all IDs and dataset/manifest hashes match both immutable
+manifests, and Tiingo's own `r2_lineage` matches r2. Do not rewrite either
+snapshot, acquire data, or interpret adjusted fields. The next KIS offline
+diagnosis has no Data action unless it discovers a concrete market-data need.

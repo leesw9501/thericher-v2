@@ -69,6 +69,12 @@
   external-only evidence, and fail-closed reconciliation. The focused suite
   passed before the one corrected real discovery attempt.
 
+## Current Objective
+
+- Diagnose the rejected virtual-paper overseas open-order read against public
+  official documentation only. This is an offline comparison: do not read
+  `.env`, call KIS, or perform any account or order action.
+
 ## Recovery
 
 - Read the explicit JSON state file and reload it with

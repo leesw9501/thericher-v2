@@ -1168,3 +1168,17 @@ Reason: explicit Tiingo event evidence removed the current date-mapping
 assumption without changing the original candidate set, checkpoints, or
 training. A compact read-only attribution is the next useful question; blind
 GPU search would not resolve the existing falsification result.
+
+## 2026-07-18 - Replay attribution is accounting consistency only
+
+Decision: accept the external r3 attribution only as a hash-bound accounting
+check of fixed local-paper replay cells. It verifies source and evidence hashes,
+FIFO realized after-cost PnL, fees, slippage, fill counts, replayed cash, and
+flat positions per cell. Its output carries the parent `unsupported` verdict,
+states that the fills are shared evidence, and omits cross-cell PnL aggregation
+because the cells overlap and are not independent.
+
+Reason: matching accounting over the same simulated fills establishes internal
+consistency, not realistic execution quality, edge, or expected performance.
+Keeping that boundary in the artifact prevents a descriptive PnL view from
+quietly becoming selection or profitability evidence.

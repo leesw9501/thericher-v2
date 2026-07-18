@@ -141,6 +141,17 @@ def test_runner_forwards_attested_inputs_and_only_prepares_frozen_cells(
     }
 
 
+def test_attribution_requires_pinned_source_hash_and_new_output_id(
+    runner_module: ModuleType,
+    tmp_path: Path,
+) -> None:
+    args = _arguments(runner_module, tmp_path)
+    args.attribute = True
+
+    with pytest.raises(ValueError, match="requires --replay-summary-sha256 and --attribution-id"):
+        runner_module.attribute_frozen_explicit_event_replay(args)
+
+
 def _arguments(runner_module: ModuleType, tmp_path: Path):
     r2_dir = tmp_path / "r2"
     r2_dir.mkdir()
