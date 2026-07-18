@@ -48,13 +48,11 @@ success metrics.
 
 ## Current Boundaries
 
-- KIS remains failed closed. The current Data goal may read only
-  `TIINGO_API_TOKEN` through its safe reader for the exact predeclared IEX
-  archive requests in `NEXT_CODEX_GOAL.md`; it reads no other `.env` key, makes
-  no KIS API call, and accesses no account. Any later KIS re-probe needs
-  non-secret pairing confirmation and separate one-time authority. Order
-  submit/cancel, paper capital, `KIS_LIVE_*`, live behavior, and mode changes
-  remain disabled.
+- KIS remains failed closed. No current task may read `.env` values or call KIS;
+  prior scoped Tiingo and KIS authorities do not widen a new objective. Any
+  later KIS re-probe needs non-secret pairing confirmation and separate one-time
+  authority. Order submit/cancel, paper capital, `KIS_LIVE_*`, live behavior,
+  and mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -270,10 +268,11 @@ holdout, execution-quality, or profitability claim. Default smoke evidence was
 intentionally temporary; specify an external work root only when durable event
 evidence is genuinely needed.
 
-Claude CLI drift-check was attempted but the installed CLI is not logged in.
-The Data, Engine Research, Execution, and Review role checks were completed
-instead. Do not treat that tool outage as a Claude approval; retry it before a
-future material bias, capital, or architecture decision after it is available.
+A prior Claude CLI attempt was unavailable. The earlier role checks remain
+valid historical evidence. The Norgate trial
+compatibility decision later received a concise Claude `supported-with-limits`
+verdict; it covers connector availability only, not PIT correctness, event
+semantics, or a research decision.
 
 A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
 has only empty raw/template workspaces for paid Sharadar and Norgate source
@@ -295,6 +294,22 @@ hashes, exact canonical raw-D1 bytes, and 896 sessions before returning a
 bounded step.
 
 The Data stateboard owns exact catalog status and operator data requests.
+
+The operator-created Norgate US Stocks Platinum trial now has a bounded local
+compatibility result. Its configured D: path is
+`D:\market_data\us_equities\norgate_us_platinum_trial`; after an operator
+location switch and update it contained 429 files / 6.12 GiB, with a newer file
+time than the retained C: copy. Windows `norgatedata==1.0.77` exposed daily
+OHLCV, Turnover, Unadjusted Close, Dividend, Index Constituent, Major Exchange
+Listed, and Capital Event fields. Membership/listing queries honored a short
+range, while `capital_event_timeseries` returned the wider trial horizon. The
+trial is about two years; explicit client-side clipping is therefore a future
+consumer requirement, not an implemented provider feature. A Docker `engine`
+runtime probe listed 166 top-level files through the `/app/market_data` `ro`
+mount, but no proprietary Docker query or export bridge is licensed or
+implemented. This is compatibility
+only, not PIT, data-correctness, provider, campaign, model, paper, or purchase
+evidence. Keep the C: copy and all Norgate data outside Git.
 
 ## Research Reality
 
@@ -479,26 +494,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The official-public source review selects no purchased product. Norgate US
-Stocks Platinum is the only candidate with public price and footprint suitable
-for a small trial decision: USD 346.50 for six months, with delisted securities,
-historical index membership, major-exchange listing history, daily price/volume,
-and corporate-action indicators. Its published footprint is 2 GB download and
-9.1 GB on disk; current `D:` free space is 40.60 percent. The personal-use EULA
-bans redistribution and requires deletion of Data and Derived Data when a
-subscription lapses, so any future Norgate ingest and dependent artifacts remain
-outside Git and need a deletion path.
-
-Sharadar `SEP` is a real documented alternative for daily US listed/delisted
-OHLCV, adjusted/unadjusted prices, corporate actions, ticker changes, and
-bulk/Tables delivery. Its public price is login-gated, and the public evidence
-reviewed does not establish historical index or per-date exchange membership,
-storage, or personal-use terms. It can resolve only part of the active PIT
-blocker without a vendor conversation; it is not selected for the trial.
-
-`NEXT_CODEX_GOAL.md` now waits for one operator decision on a free Norgate
-three-week Platinum trial. The operator must create the account and accept its
-identity/EULA terms. Codex must not sign up, download, purchase, touch KIS,
-orders, models, GPU, or live behavior until that approval and a later scoped
-task exist. KIS remains failed closed pending the non-secret pairing check and
-a separately authorized future probe.
+The Norgate trial compatibility target is complete and does not justify a
+purchase, cleanup, provider, or research promotion. The next objective is one
+bounded Data-owned known-fixture semantics check: it may compare a public
+official membership/corporate-action fixture within the trial horizon against
+the local query results, but it must create no provider/cache/export/campaign
+path and must keep all Norgate data outside Git. Any conclusion short of
+unambiguous fixture behavior remains a limitation, not a reason to buy data.

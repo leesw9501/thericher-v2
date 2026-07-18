@@ -1456,3 +1456,34 @@ Reason: selecting a source with verified coverage and constraints is more
 valuable than extending model work on survivor-selected evidence. Recording one
 trial decision avoids both a paid-data leap and a new provider/gate/report
 framework.
+
+## 2026-07-19 - Norgate trial is compatibility-only
+
+Decision: record the operator-created Norgate US Stocks Platinum trial as a
+Windows/Python compatibility result only. The operator selected
+`D:\market_data\us_equities\norgate_us_platinum_trial` and ran an update; the
+directory then held 429 files / 6.12 GiB and had a later file time than the
+retained C: copy. Preserve the C: copy. Do not treat this as proof that D: is
+the sole active database or that cleanup is safe.
+
+Bounded local `norgatedata==1.0.77` queries exposed daily OHLCV, Turnover,
+Unadjusted Close, Dividend, Index Constituent, Major Exchange Listed, and
+Capital Event fields. Short membership/listing requests obeyed the requested
+range. `capital_event_timeseries` returned the wider trial horizon despite a
+short-range request, so future consumers must explicitly clip results and its
+date-filter contract remains unproven. The trial's observed history is about
+two years. A Docker `engine` runtime probe listed 166 top-level files through
+the D: directory's `ro` market-data mount, but that is only a technical mount
+fact, not a licensed container database or export boundary.
+
+Claude's falsification-first review returned `supported-with-limits` for this
+compatibility claim. It does not establish point-in-time universe correctness,
+source correctness, event timing/lineage, long-history coverage, provider
+integration, campaign eligibility, paper use, or a case for purchase. No
+provider, cache, `CatalogedBars` path, raw export, artifact, model, GPU job,
+KIS action, or order path is created.
+
+Reason: connector availability and field names are useful evidence, but treating
+them as historical semantics would reintroduce leakage and survivorship risk.
+One known-fixture semantics check is the next bounded question; it is not a
+subscription decision.

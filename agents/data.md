@@ -22,6 +22,11 @@ A nonpersistent SPY scope probe then returned a separate 10,000-bar 2024 window,
 so date-window access is supported even though the observed per-response cap
 remains unresolved as a provider contract.
 
+The operator-completed Norgate US Stocks Platinum trial compatibility check is
+also complete. It establishes only a local Windows/Python field-access boundary
+and a D: database update path; it does not open a provider, campaign, model, or
+paper-trading input.
+
 ## Engine Loop
 
 - Data collection.
@@ -46,6 +51,9 @@ remains unresolved as a provider contract.
 
 - Market-data root: `D:\market_data`; known roots: `pit_sources` and
   `us_equities`.
+- Norgate trial database: `D:\market_data\us_equities\norgate_us_platinum_trial`.
+  The retained `C:\ProgramData\Norgate Data` copy is not to be deleted until a
+  later, separately justified cleanup decision.
 - External Data artifacts: `D:\thericher-v2\model-artifacts\data-agent`.
 - Storage policy: maintain at least 15% free space; warn at 20%; do not acquire
   or expand local data when doing so would breach the 15% hard floor.
@@ -61,6 +69,10 @@ all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
 short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
+
+The Norgate trial compatibility check is complete. The next ready Data item is
+a bounded known-fixture semantics check; it must not become a provider or
+research-data integration.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -108,6 +120,36 @@ Official evidence: [packages](https://norgatedata.com/stockmarketpackages.php),
 [installation and storage](https://norgatedata.com/ndu-installation.php), and
 [EULA](https://norgatedata.com/subscribe/eula.php).
 
+## Norgate Trial Compatibility (2026-07-19)
+
+The operator-created US Stocks Platinum trial is installed at
+`D:\market_data\us_equities\norgate_us_platinum_trial`. After the operator
+selected that location and ran an update, it contained 429 files and 6.12 GiB;
+its newest file time was later than the retained C: copy. This is evidence of a
+successful D: update path, not proof that D: is the only active database or that
+the C: copy can be deleted. D: remained 40.44 percent free.
+
+Windows `norgatedata==1.0.77` bounded local queries exposed daily `Open`,
+`High`, `Low`, `Close`, `Volume`, `Turnover`, `Unadjusted Close`, and `Dividend`
+fields, plus `Index Constituent`, `Major Exchange Listed`, and `Capital Event`
+series. Listing and membership honored the requested short range. In contrast,
+`capital_event_timeseries` returned the wider trial horizon for a short-range
+request, so its date-filter contract is unproven and any later consumer must
+clip output explicitly before use. The observed trial horizon is about two
+years.
+
+A Docker `engine` runtime probe listed 166 top-level files in the named D:
+directory through the existing `/app/market_data` mount, whose runtime options
+were `ro`. That proves only a technical read-only mount boundary; it does not
+establish that the proprietary database may be queried in Docker or that a
+licensed export bridge is appropriate.
+
+Claude's falsification-first review returned `supported-with-limits` for
+Windows/Python compatibility only. Point-in-time universe correctness, source
+correctness, event timestamps and lineage, long-history availability, Docker
+rights, provider integration, research eligibility, and paper-trading use remain
+unproven.
+
 **Sharadar comparison:** the official `SEP` product page documents daily US
 listed and delisted equities from 1998, adjusted and unadjusted OHLCV, and
 corporate-action, delisting-reason, and ticker-change fields. It also documents
@@ -126,15 +168,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Await the operator's approval or rejection of the free Norgate US Stocks
-   Platinum trial. Do not create an account, accept the EULA, download, or
-   purchase on the operator's behalf.
-2. After an explicit approval and an operator-created trial, verify the
-   Windows-Python access, no-adjustment OHLCV, event fields, per-date universe
-   semantics, and licensed storage boundary before proposing a paid purchase.
-3. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
+1. Run only the next bounded Norgate known-fixture semantics check. Do not
+   purchase, export, or integrate the trial database into a provider or
+   `CatalogedBars` path.
+2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
-4. If an operator later approves a source, collect only the specifically
+3. If an operator later approves a source, collect only the specifically
    approved product under a new bounded goal; templates are not evidence.
 
 ## Running
@@ -143,17 +182,22 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Operator Help Needed
 
-- Approve or reject this exact no-cost external action: **"Approve a free
-  three-week Norgate US Stocks Platinum trial, using my own identity and
-  accepting Norgate's EULA, solely to verify the Windows-Python research
-  boundary, PIT membership/delisting access, no-adjustment OHLCV, and
-  corporate-action fields. Do not purchase the USD 346.50 six-month subscription
-  or download data into the project until I approve a later scoped step."**
+- None. Do not delete the retained C: copy or purchase/renew Norgate from this
+  compatibility result.
 
 ## Durable Knowledge
 
 - Known inventory: 2 top-level roots, 5 snapshots, and 5 useful files under
   `D:\market_data` in the 2026-07-17 bounded inventories.
+- Norgate US Stocks Platinum trial compatibility is `supported-with-limits`:
+  D: held 429 files / 6.12 GiB after the operator location switch and update;
+  Windows package `norgatedata==1.0.77` exposed daily OHLCV, Turnover,
+  Unadjusted Close, Dividend, Index Constituent, Major Exchange Listed, and
+  Capital Event access. Short listing/membership requests clipped correctly,
+  but `capital_event_timeseries` returned the full trial horizon. No raw rows,
+  export, reusable trial artifact, provider, campaign, or Docker query path was
+  created. This does not prove PIT, event lineage, long-history, or research
+  eligibility.
 - Intraday: Yahoo 1-minute canonical data at
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
   `snapshot=2026-06-18\ohlcv_1m.csv.gz` contains 572,894 rows, 250 symbols,
@@ -431,3 +475,7 @@ loader-attested lineage. The strict Tiingo IEX archive contract is retained as
 an unexecuted publication path, but its fixed retrieval plan is closed after
 two validation failures and must not be retried automatically. A future
 universe-wide research claim still needs PIT membership and delistings.
+The Norgate trial now supplies a local compatibility signal only. Keep its data
+outside Git, preserve the retained C: copy, and do not interpret the D: mount as
+a licensed Docker database path. The next Norgate work is one known-fixture
+semantics check, not a provider implementation or a purchase recommendation.
