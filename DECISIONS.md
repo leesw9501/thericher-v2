@@ -1322,3 +1322,49 @@ execution and would either reject normal session gaps or tempt the system to
 invent higher-timeframe execution bars. Keeping completed-bar decisions and
 next-bar 1-minute execution explicit preserves timing while remaining a narrow
 pipeline smoke.
+
+## 2026-07-19 - Tiingo IEX r1 records the returned window, not requested history
+
+Decision: accept one immutable private-use Tiingo IEX 5-minute snapshot for
+fixed SPY/QQQ/IWM as Data-owned descriptive evidence only. The operator-approved
+`TIINGO_API_TOKEN` was used for exactly three fixed HTTPS requests with
+`resampleFreq=5min`, explicit OHLCV columns, `afterHours=false`, and
+`forceFill=false`; no other credential, KIS call, order, GPU, model, campaign,
+or paper path was used. The external snapshot is
+`fixed_etf_intraday/canonical/tiingo_iex_5m/snapshot=2026-07-19-tiingo-iex-5m-r1`
+with dataset hash
+`sha256:1531d803fb259c5f2233cc1b5f94441eb52bab9f31938232644879cc4aa1fcb6` and
+manifest hash
+`sha256:a1dee1cddf12e22b9448806094ce6fbbcc6aa16ed13719ab720f3e9fbd1d3ab8`.
+
+This is a separate, narrow IEX authority alongside the earlier standard-EOD
+authority, not a broad Tiingo-product or credential authorization. For the
+current next goal it permits only the one or two exact IEX scope probes named
+in `NEXT_CODEX_GOAL.md`; it does not authorize paid upgrades, redistribution,
+other Tiingo endpoints, other `.env` keys, KIS, or any order/capital action.
+
+Although the query requested 2017-08-01 through 2026-07-10, each response
+contained its newest 10,000 bars, yielding only 129 common New York sessions
+from 2026-01-13 through 2026-07-10. The manifest preserves both requested and
+actual coverage. Do not label r1 as full history or infer that an earlier range
+is unavailable; the next bounded Data question is whether an explicitly older
+window returns non-overlapping bytes. Do not overwrite r1.
+
+The loader retains raw response hashes, canonical gzip and manifest hashes,
+rejects redirects, Git destinations, symlinks, overwrite, bad OHLCV, duplicate
+or unordered timestamps, non-5-minute or out-of-session timestamps, low disk
+space, and tampering. It reattests offline, but deliberately returns a separate
+snapshot object rather than `CatalogedBars`, `MarketDataProvider`, campaign, or
+local-paper input. IEX-only volume is not consolidated volume; timestamp
+boundary semantics, adjustments, corporate actions, PIT membership,
+independence, execution quality, ranking, promotion, and profitability remain
+unsupported.
+
+Claude CLI was unavailable because it was not logged in. A temporary Review
+Agent supplied a `supported with limits` check; that review was a drift brake,
+not an approval.
+
+Reason: this gives the engine a replayable, hash-bound intraday source without
+quietly turning a provider-limited response into a market-wide performance or
+execution claim. Preserving the cap makes a later chunking decision evidence-led
+rather than an unbounded download loop.

@@ -58,6 +58,8 @@
   CPU/GPU model work. The deterministic intraday multi-timeframe local-paper
   baseline is complete on short CVS/FCX/KO evidence; it is pipeline evidence
   only and cannot rank, promote, open a holdout, or claim profitability.
+  Tiingo IEX r1 is a separate 5-minute descriptive snapshot and does not alter
+  those boundaries.
 
 ## Explicit-Event Replay
 
@@ -78,9 +80,10 @@
 
 ## Breadth Queue
 
-- Wait for Data to expand or close the SPY/QQQ/IWM historical intraday evidence
-  gap. Do not use the completed short-data smoke as model-selection input or
-  start a GPU job merely to fill idle capacity.
+- Wait for Data to determine whether Tiingo IEX can retrieve a non-overlapping
+  pre-2026-01-13 5-minute window. Do not use r1 or the completed short-data
+  smoke as model-selection input or start a GPU job merely to fill idle
+  capacity.
 
 ## Depth Queue
 
@@ -142,6 +145,12 @@
   two contiguous 1-minute bars for local-paper entry and flattening. Each
   timeframe has an isolated event store, exactly two `local_paper` fills, and a
   flat replayed position. It emits no PnL, candidate, campaign, or model result.
+- Tiingo IEX r1 is not a `CatalogedBars` stream. It has 10,000 5-minute bars
+  and 129 shared sessions per SPY/QQQ/IWM from 2026-01-13 through 2026-07-10,
+  with a hash-attested manifest. It is IEX-only and does not establish
+  consolidated volume, timestamp-boundary semantics, adjustments, corporate
+  actions, PIT membership, independence, model suitability, or a 1-minute
+  execution path.
 
 ## Recovery
 
@@ -204,6 +213,8 @@
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1
   comparison is also unsupported. The broad-Yahoo feature/outcome substrate is
   complete and remains descriptive. The intraday multi-timeframe local-paper
-  baseline is also complete but remains a short-data pipeline smoke. The next
-  bounded step is Data's historical intraday expansion attempt; do not rank,
-  promote, name a winner, claim profitability, or start GPU training.
+  baseline is also complete but remains a short-data pipeline smoke. Tiingo
+  IEX r1 adds only a hash-attested 5-minute descriptive window. Data must first
+  resolve its 10,000-bar response limit before any further historical-intraday
+  research decision. Do not rank, promote, name a winner, claim profitability,
+  or start GPU training.

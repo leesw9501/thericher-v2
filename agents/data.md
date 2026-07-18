@@ -13,6 +13,12 @@ raw bars remain unavailable at the public wrapper boundary. The same bounded
 module now derives future-only, next-observed-session outcomes after
 re-attestation; it does not widen that raw-bar boundary.
 
+The first Tiingo IEX 5-minute fixed-ETF snapshot is also complete and
+offline-attested. It is a separate Data object, not a `CatalogedBars` provider
+or a campaign/paper/model input. The provider silently returned its newest
+10,000 bars per symbol rather than the requested 2017 start, so r1 preserves
+only its actual 129 common-session window and that limitation remains explicit.
+
 ## Engine Loop
 
 - Data collection.
@@ -48,20 +54,23 @@ re-attestation; it does not widen that raw-bar boundary.
 
 The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
-`unsupported`. The CVS/FCX/KO intraday smoke is now complete from a
-loader-attested short snapshot. The next Data-owned task is one bounded,
-license-safe attempt to expand historical intraday coverage for SPY/QQQ/IWM,
-not source adjudication, training, or a performance dataset.
+`unsupported`. The CVS/FCX/KO intraday smoke is complete from a loader-attested
+short snapshot. The current IEX r1 is 5-minute descriptive evidence only. Its
+next Data question is whether one bounded earlier request can return a
+non-overlapping historical window, not source adjudication, training, or a
+performance dataset.
 
 ## Ready Queue
 
-1. Attempt one bounded historical intraday expansion for fixed SPY/QQQ/IWM
-   through existing evidence or a no-cost, no-auth, license-compatible source.
-   Use only `TIINGO_API_TOKEN` if needed; stop rather than bypass rights,
-   payment, login, manual access, or the D-drive floor.
-2. If the allowed sources cannot provide useful history, record the smallest
-   concrete paid-data request with product, cost, coverage, rights, and an
-   exact operator decision; do not create a placeholder provider.
+1. Make one bounded, no-overwrite Tiingo IEX historical-window probe before
+   `2026-01-13` to determine whether the observed 10,000-bar response is a
+   request-size cap. Preserve no raw rows from the probe. If it yields a
+   non-overlapping window, a later goal may build one new chunked snapshot; if
+   it is empty, repeats r1, or rejects access, count the outcome and stop after
+   two bounded failures for this source.
+2. If the allowed sources cannot provide useful additional history, record the
+   smallest concrete paid-data request with product, cost, coverage, rights,
+   and an exact operator decision; do not create a placeholder provider.
 3. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -72,7 +81,8 @@ not source adjudication, training, or a performance dataset.
 
 ## Operator Help Needed
 
-- None. Standard EOD token use is approved; paid upgrades remain prohibited.
+- None. The operator-approved Tiingo entitlement was used only for the fixed
+  IEX r1 requests; paid upgrades remain prohibited.
 
 ## Durable Knowledge
 
@@ -82,6 +92,25 @@ not source adjudication, training, or a performance dataset.
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
   `snapshot=2026-06-18\ohlcv_1m.csv.gz` contains 572,894 rows, 250 symbols,
   and spans `2026-06-09T13:30:00Z` through `2026-06-16T19:59:00Z`.
+- The target ETF subset in that Yahoo 1-minute snapshot is exactly 2,340 rows
+  each for SPY/QQQ/IWM: six complete regular sessions from 2026-06-09 through
+  2026-06-16 with no in-session gaps. It is still unofficial short-window
+  evidence, not historical model-quality evidence.
+- Tiingo IEX r1 is
+  `D:\market_data\us_equities\fixed_etf_intraday\canonical\tiingo_iex_5m\snapshot=2026-07-19-tiingo-iex-5m-r1`.
+  Its dataset ID is
+  `us_equities.fixed_etf_tiingo_iex_intraday.5m.snapshot=2026-07-19-tiingo-iex-5m-r1`,
+  dataset hash is
+  `sha256:1531d803fb259c5f2233cc1b5f94441eb52bab9f31938232644879cc4aa1fcb6`,
+  and manifest hash is
+  `sha256:a1dee1cddf12e22b9448806094ce6fbbcc6aa16ed13719ab720f3e9fbd1d3ab8`.
+  It retains exact raw IEX responses plus hash-bound 5-minute canonical bars:
+  10,000 bars and 129 common New York sessions per symbol, from 2026-01-13 to
+  2026-07-10. The request asked for 2017-08-01 through 2026-07-10 but the
+  provider returned the trailing 10,000 bars without an explicit truncation
+  signal. IEX-only volume is not consolidated volume. No adjusted fields,
+  corporate-action lineage, timestamp-boundary claim, PIT membership,
+  campaign, paper, ranking, training, or profitability use is allowed.
 - Intraday: `snapshot=2026-07-09-shadow-t0-8d-probe` contains CVS, FCX, and KO
   from 2026-06-29 through 2026-07-09. It is suitable for bounded smoke work.
 - Daily/PIT: `D:\market_data\pit_sources` contains only template workspaces for

@@ -48,10 +48,12 @@ success metrics.
 
 ## Current Boundaries
 
-- KIS remains failed closed. The current Data goal reads no `.env`, makes no KIS
-  API call, and accesses no account. Any later KIS re-probe needs non-secret
-  pairing confirmation and separate one-time authority. Order submit/cancel,
-  paper capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
+- KIS remains failed closed. The current Data goal may read only
+  `TIINGO_API_TOKEN` through its safe reader for the exact bounded IEX scope
+  probe in `NEXT_CODEX_GOAL.md`; it reads no other `.env` key, makes no KIS API
+  call, and accesses no account. Any later KIS re-probe needs non-secret pairing
+  confirmation and separate one-time authority. Order submit/cancel, paper
+  capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -165,6 +167,24 @@ authoritative dividend or split lineage.
 Current intraday data is suitable for parser, feature, replay, and development
 smokes. It is not broad or independent enough for credible model ranking or a
 final profitability claim.
+
+One new fixed-ETF Tiingo IEX 5-minute snapshot is now available at
+`D:\market_data\us_equities\fixed_etf_intraday\canonical\tiingo_iex_5m\snapshot=2026-07-19-tiingo-iex-5m-r1`.
+It has dataset ID
+`us_equities.fixed_etf_tiingo_iex_intraday.5m.snapshot=2026-07-19-tiingo-iex-5m-r1`,
+dataset hash
+`sha256:1531d803fb259c5f2233cc1b5f94441eb52bab9f31938232644879cc4aa1fcb6`, and
+manifest hash
+`sha256:a1dee1cddf12e22b9448806094ce6fbbcc6aa16ed13719ab720f3e9fbd1d3ab8`.
+It preserves raw per-symbol IEX responses and reattested 5-minute canonical
+OHLCV for SPY/QQQ/IWM. The request named 2017-08-01 through 2026-07-10, but the
+provider returned only the newest 10,000 bars per symbol: 129 common sessions
+from 2026-01-13 through 2026-07-10. Treat that response cap as a source fact,
+not hidden historical coverage. It is IEX-only rather than consolidated, its
+volume is IEX-only, and it has no adjustment/corporate-action, point-in-time,
+timestamp-boundary, execution, ranking, campaign, paper, or profitability
+claim. Its offline Data loader remains intentionally outside `CatalogedBars`,
+provider, campaign, and paper APIs.
 
 Current canonical evidence:
 
@@ -439,11 +459,11 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks the Data lane to make one bounded historical
-intraday-data expansion attempt for `SPY`/`QQQ`/`IWM`, using only existing data
-or an approved no-cost, no-auth, license-compatible source. It may use only the
-approved Tiingo token when necessary, must preserve D-drive limits and stop
-rules, and must not touch KIS, orders, models, GPU, or live behavior. KIS
-remains failed closed pending the non-secret pairing check and a separately
-authorized future probe. The KIS capital envelope, paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` next asks the Data lane to make one bounded pre-r1 Tiingo
+IEX window probe for `SPY`/`QQQ`/`IWM`. Its only question is whether the
+observed 10,000-bar cap is a response-size limit that can expose a
+non-overlapping older window. It must not overwrite r1, create a new snapshot,
+touch KIS, orders, models, GPU, or live behavior. KIS remains failed closed
+pending the non-secret pairing check and a separately authorized future probe.
+The KIS capital envelope, paid data, order submission, and live capital remain
+separate future decisions.
