@@ -2,61 +2,69 @@
 
 ## Objective
 
-Build and run one small, offline coverage audit for the two immutable Tiingo
-standard-EOD raw-daily snapshots:
+Establish the smallest bounded Data contract for the already-installed Norgate
+US Stocks Platinum trial to determine whether a fixed `SPY`/`QQQ`/`IWM` raw-D1
+snapshot can become a reproducible **development-only** source that is separate
+from the unresolved Tiingo factor-sensitive evidence.
 
-- `snapshot=2026-07-18-tiingo-standard-eod-pilot-r1`
-- `snapshot=2026-07-18-tiingo-standard-eod-pilot-r2`
-
-The audit must distinguish the useful r2 501-session descriptive panel from
-the r1/r2 combined 18-session overlap. It advances the data-quality and
-research-readiness loop by deciding whether a later, separate bounded shard
-would materially improve coverage. It must not turn either snapshot into a
-historical tradable universe, point-in-time data, or a model input.
+This advances the data-collection and future model-validation loop. It does
+not authorize a broad historical universe, a model campaign, or GPU training.
 
 ## Ownership
 
-- **Data Agent:** owns exact snapshot re-attestation, aggregate coverage
-  measurement, external summary provenance, and one bounded recommendation.
-- **Review/Claude:** provides a concise falsification-first check before a
-  coverage result is used to propose another acquisition or research boundary.
-- **Engine Research Agent:** is an observer. It must not consume, train, rank,
-  ensemble, or schedule GPU work from the audit.
+- **Data Agent:** owns the Windows-host-only, read-only trial probe, exact
+  source/provenance contract, external data/artifact layout, and the narrow
+  eligibility verdict.
+- **Engine Research Agent:** is an observer. It may state the minimum
+  completed-session and event-mask requirements the Data contract must expose,
+  but must not train, rank, ensemble, or schedule CPU/GPU work.
+- **Review/Claude:** provides one falsification-first drift check before a new
+  load-bearing source contract is relied on.
 
 ## Boundaries
 
-- Do not read `.env`, credentials, or any token. Do not call Tiingo, KIS, or
-  any network source. Do not acquire more data in this objective.
-- Re-attest both exact canonical/manifest hashes and Tiingo rights markers
-  offline before calculating any fact. Keep raw responses and candidate symbols
-  external; the audit summary may contain only aggregate counts, date ranges,
-  hashes, row-count distributions, overlap counts, scope, and limitations.
-- Write one immutable audit summary only under
-  `D:\thericher-v2\model-artifacts\data-agent`; never copy data into Git.
-  Do not create a report family, dashboard, scheduler, provider/catalog,
-  feature, strategy, model, GPU job, Docker work, broker call, KIS use, or
-  public service.
-- Keep all audit outputs `pit=false`, `ranking=false`, `holdout=false`,
-  `campaign=false`, `model=false`, `gpu=false`, and `paper=false`.
-- The audit may recommend one later bounded acquisition only when it names the
-  expected data-loop value, unique-symbol budget effect, storage effect, stop
-  rule, and the fact that would reverse the recommendation. It must not start
-  that acquisition itself.
+- Use only the already-installed Norgate trial on Windows through its local
+  client. Do not read `.env`, credentials, tokens, or broker state; do not call
+  KIS, submit orders, or use a network data API.
+- Do not renew, purchase, change trial settings, delete either Norgate copy, or
+  query Norgate from Docker. Stop and report if local use requires a new login,
+  acceptance, payment, or manual operator action.
+- Keep any retained Norgate-derived data under `D:\market_data` and generated
+  metadata under `D:\thericher-v2\model-artifacts`; never write either to Git.
+  Preserve a deletion/rights marker suitable for the trial terms.
+- Fix symbols to `SPY`, `QQQ`, and `IWM`; use explicit bounded dates and the
+  official query-local no-adjustment setting. Do not infer adjustment semantics,
+  repair bars, fill gaps, transform prices, or combine rows with Tiingo.
+- Treat the source's capital-event dates as conservative exclusion evidence
+  only. Do not claim an event timestamp, same-session actionability, point-in-
+  time universe correctness, ranking, holdout, campaign, model, GPU, paper, or
+  profitability eligibility.
+- Do not acquire another Tiingo shard. The completed aggregate audit already
+  proved that R1 binds the 18-session combined floor; the 56-group R2 coverage
+  filter remains descriptive only.
 
 ## Required Work
 
-1. Read both manifests through their offline verifiers and ask Claude to
-   challenge survivorship, selection bias, shared-session interpretation, and
-   any proposal for another shard. Do not send raw rows, symbols, or secrets.
-2. Implement the smallest mock-tested offline audit helper and CLI. Tests must
-   prove hash/rights-marker tampering fails, no network/token/broker/Docker
-   access is needed, raw values and symbols do not enter the summary, and r2
-   panel facts are not misrepresented as combined-panel or PIT eligibility.
-3. Run the audit once against the two external snapshots. Report only aggregate
-   evidence and the external summary path/hash. Update the Data and Engine
-   stateboards with the resulting next acquisition recommendation or stop rule.
-4. Refresh `HANDOFF.md`, `DECISIONS.md`, and this goal, then continue while no
-   real operator approval boundary remains.
+1. Ask Claude for a concise falsification-first review of the proposed fixed
+   ETF contract. Include the claim, raw/no-adjustment assumption, event-date
+   uncertainty, source independence limits, strongest kill test, and the fact
+   that would make the source unusable. Do not send Norgate rows, symbols beyond
+   the fixed three, or secrets.
+2. Reuse the existing host-only Norgate primitives where possible. Add the
+   smallest mock-tested builder/verifier and CLI needed to retain one immutable
+   external raw-D1 snapshot with raw OHLCV, query settings, returned session
+   coverage, conservative event exclusion metadata, hashes, rights/deletion
+   marker, and explicit non-eligibility scope. The verifier must fail closed on
+   raw/canonical/marker tampering and must not need network, token, broker, or
+   Docker access.
+3. Run one bounded local build against the installed trial. Report only source
+   coverage, hashes, aggregate counts, event-mask bounds, and the narrow
+   development-data verdict. If the local client cannot meet the contract,
+   preserve only safe external recovery evidence and close the path rather than
+   changing settings or retrying broadly.
+4. Keep the Engine stateboard clear that no CPU/GPU breadth, depth, or ensemble
+   work opens unless the resulting Data verdict explicitly says so. Refresh
+   `HANDOFF.md`, `DECISIONS.md`, and this goal before continuing.
 
 ## Verification
 
@@ -68,9 +76,10 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the Claude verdict, audit result, external artifact hash/path, next
-acquisition recommendation, and any genuine operator action required.
+Report the Claude verdict, local-source result, external paths/hashes, retained
+rights/deletion evidence, any genuine operator action required, and whether the
+result changes GPU eligibility.
 
 ## Suggested Commit Message
 
-`Add Tiingo disjoint daily shard`
+`Add Tiingo coverage audit`

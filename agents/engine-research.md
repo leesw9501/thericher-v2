@@ -65,9 +65,11 @@
   Norgate sessions per symbol against 896 pinned Tiingo sessions; it creates no
   GPU or breadth-queue eligibility. Tiingo raw-daily R1 has 29 available
   responses with only 18 common sessions, while disjoint R2 has 29 available
-  responses with 501 common sessions. The combined 58-candidate set still has
-  only 18 common sessions. Both remain source evidence for Data only, not a
-  point-in-time common panel or GPU/model input.
+  responses with 501 common sessions. The hash-re-attested aggregate audit
+  reports 56 existing groups covering R2's returned window, but the combined
+  58-candidate set still has only 18 common sessions because R1 binds it. Both
+  remain source evidence for Data only, not a point-in-time common panel or
+  GPU/model input.
 
 ## Explicit-Event Replay
 
@@ -91,9 +93,9 @@
 - No breadth batch is currently eligible. The fixed RAW D1 verdict is
   `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate's
   host-only raw-D1 provider has no cataloged or campaign input. Tiingo raw-daily
-  R2's 501-session descriptive panel does not repair its date-less universe,
-  and R1/R2 combined still has only 18 common sessions, so neither supplies
-  breadth eligibility.
+  R2's 501-session descriptive panel and its 56-group descriptive coverage
+  filter do not repair its date-less universe, while R1/R2 combined still has
+  only 18 common sessions, so neither supplies breadth eligibility.
 - When Data supplies one hash-bound development-training-eligible dataset and a
   frozen campaign contract, enumerate one finite breadth batch before launch:
   CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two

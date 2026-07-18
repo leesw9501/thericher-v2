@@ -1806,3 +1806,25 @@ next step is a bounded offline coverage audit, not automatic collection.
 Reason: the second shard proves that some rank regions have consistent returned
 history, which is useful data-coverage evidence. It does not validate a
 tradable universe or justify consuming GPU capacity for a misleading model run.
+
+## 2026-07-19 - Tiingo aggregate audit defers a third coverage shard
+
+Decision: retain one offline, aggregate-only audit at
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`,
+SHA-256 `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+It re-attested the two exact raw/canonical/rights snapshots without a token,
+network, broker, Docker, or credential read. R1 has 18 common returned
+sessions, R2 has 501, their combined intersection remains 18, and 56 existing
+candidate groups cover the R2 returned window.
+
+Defer a third Tiingo shard when its only proposed value is raising the combined
+common-session floor: adding candidates cannot increase an existing
+intersection, and the short-history R1 group is binding. The 56-group filter
+is a private descriptive observation only, not a point-in-time universe,
+campaign, model, GPU, paper, source-selection, or profitability input.
+
+Reason: the audit resolves a concrete acquisition question using existing
+evidence and avoids spending source quota or GPU time on an invalid inference.
+The next data question is whether the already-installed Norgate trial can
+produce a separately bounded fixed-ETF raw-D1 development source; it must not
+merge these Tiingo snapshots into a model dataset by implication.

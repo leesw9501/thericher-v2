@@ -138,14 +138,15 @@ membership availability or a PIT universe.
 The two Claude-reviewed Tiingo raw-daily snapshots are complete. R1 retained
 29 available responses, one gap, and uneven returned histories. Hash-bound R2
 excluded every R1 rank and retained 29 available responses, one gap, and 14,529
-raw-field rows; all 29 R2 candidates share 501 returned sessions. Across both
-snapshots, however, 58 available candidates still share only 18 sessions. The
-evidence remains private-use, non-PIT, non-campaign, non-model, and non-GPU.
-
-The next ready Data item is an offline coverage audit of the two snapshots. It
-must re-attest their exact raw/canonical/rights evidence, emit symbol-private
-aggregate coverage facts, and decide whether another bounded shard has a named
-data-loop value. It must not acquire data or infer a historical tradable universe.
+raw-field rows; all 29 R2 candidates share 501 returned sessions. The completed
+offline audit re-attested exact hashes and rights markers, then wrote aggregate
+facts at
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`,
+SHA-256 `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+Across both snapshots, 58 available candidates share only 18 sessions, while
+56 candidate groups cover the R2 501-session returned window. The R1 floor is
+binding, so a third Tiingo shard cannot raise the combined intersection. This
+remains private-use, non-PIT, non-campaign, non-model, and non-GPU evidence.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -300,13 +301,16 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Build one offline, symbol-private coverage audit for the two Tiingo
-   raw-daily snapshots. Re-attest exact hashes and markers, record aggregate
-   panel/completeness facts, and make one bounded recommendation about a later
-   third shard. Do not read a token, call a network source, or acquire data.
-2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
+1. Evaluate the installed Norgate trial only through one fixed-ETF raw-D1
+   source contract. Keep it Windows-host-only, read-only, and external; do not
+   turn the result into a provider, campaign, model, or GPU input unless its
+   own bounded contract proves that narrower claim.
+2. Do not acquire a third Tiingo raw-daily shard merely to increase the R1/R2
+   common-session count. The audit found the R1 floor binding and 56 existing
+   groups already cover R2's descriptive window.
+3. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
-3. If an operator later approves a source, collect only the specifically
+4. If an operator later approves a source, collect only the specifically
    approved product under a new bounded goal; templates are not evidence.
 
 ## Running
@@ -605,6 +609,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
   Its 29 available candidates each returned 501 sessions, but no PIT or model
   eligibility opens from this date-less union.
+- `D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`:
+  hash-attested aggregate-only audit summary, SHA-256
+  `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+  It reports R1/R2 common coverage of 18, R2 common coverage of 501, and 56
+  existing candidate groups covering the R2 window. It has no symbols, prices,
+  PIT, campaign, model, GPU, or paper claim.
 - `data-agent-market-data-inventory-cadence-20260717-r2`: bounded metadata
   inventory confirmed 2 roots, 5 snapshots, and 5 useful files; no acquisition.
 - `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1`: no immediate
@@ -656,8 +666,11 @@ dataset SHA-256 `6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc
 and manifest SHA-256
 `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
 R2 alone has 501 common returned sessions, but the 58-candidate combined set
-still has only 18. The next bounded Data task is an offline coverage audit, not
-an automatic third shard. Tiingo's current
+still has only 18. The completed aggregate audit confirms that 56 existing
+groups cover R2's window and that R1 binds the combined floor, so do not pull a
+third shard merely for more common sessions. The next bounded Data task
+evaluates the installed Norgate trial's fixed-ETF raw-D1 source contract, not a
+model input. Tiingo's current
 [terms](https://app.tiingo.com/tos/) and
 [general documentation](https://www.tiingo.com/documentation/general) permit
 the operator's private internal use but prohibit redistribution. Public Starter

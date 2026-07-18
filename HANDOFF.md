@@ -246,8 +246,15 @@ It made 30 requests with 29 available responses, one unavailable response, and
 14,529 canonical raw-field rows. Dataset SHA-256 is
 `6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`; manifest
 SHA-256 is `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
-R2 alone has 501 common returned sessions, but R1/R2 combined still has 18.
-The next Data objective is an offline coverage audit, not automatic acquisition.
+The completed offline coverage audit re-attested both snapshots and their
+rights markers at
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`,
+SHA-256 `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+It confirms R2 alone has 501 common returned sessions, R1/R2 combined has 18,
+and 56 existing candidate groups cover the R2 501-session returned window.
+The combined floor is bound by R1. Do not acquire a third Tiingo shard merely
+to increase it; the source remains non-PIT, non-campaign, non-model, non-GPU,
+and non-paper evidence.
 
 The approved Tiingo standard EOD collection produced one immutable private-use
 snapshot at
@@ -631,8 +638,11 @@ interval: 29 available responses, one unavailable response, 14,529 rows,
 dataset SHA-256 `6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`,
 and manifest SHA-256
 `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
-R2's available candidates have 501 common sessions, but R1/R2 combined has
-only 18 and remains non-PIT, non-campaign, non-model, non-GPU, and non-paper.
-Claude's `supported-with-limits` verdict remains bounded to acquisition
-mechanics and private-use retention. The next safe follow-up is one offline,
-symbol-private coverage audit before any later acquisition decision.
+The completed offline audit hash-re-attested both source snapshots and wrote
+only aggregate facts at
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`,
+SHA-256 `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+R2 has 501 common returned sessions, R1/R2 has 18, and 56 existing candidate
+groups fully cover the R2 window. Claude's `supported-with-limits` verdict
+therefore supports deferring a third shard for coverage alone; nothing opens
+PIT, campaign, model, GPU, or paper eligibility.
