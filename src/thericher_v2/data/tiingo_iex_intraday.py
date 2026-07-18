@@ -14,8 +14,9 @@ import json
 import os
 import shutil
 import tempfile
+import time
 import warnings
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal, InvalidOperation
@@ -33,17 +34,19 @@ from .tiingo_eod import read_tiingo_api_token
 
 DEFAULT_MARKET_DATA_ROOT = Path(r"D:\market_data")
 DEFAULT_TIINGO_IEX_INTRADAY_SNAPSHOT_ROOT = (
-    DEFAULT_MARKET_DATA_ROOT
-    / "us_equities"
-    / "fixed_etf_intraday"
-    / "canonical"
-    / "tiingo_iex_5m"
+    DEFAULT_MARKET_DATA_ROOT / "us_equities" / "fixed_etf_intraday" / "canonical" / "tiingo_iex_5m"
 )
 TIINGO_IEX_INTRADAY_ENDPOINT = "https://api.tiingo.com/iex/{symbol}/prices"
 TIINGO_IEX_INTRADAY_DATASET_ID_PREFIX = "us_equities.fixed_etf_tiingo_iex_intraday.5m"
 TIINGO_IEX_INTRADAY_REVISION = "tiingo-iex-5m-r1"
+TIINGO_IEX_PRE_R1_ARCHIVE_REVISION = "tiingo-iex-5m-pre-r1-archive-r2"
 TIINGO_IEX_INTRADAY_TIMEFRAME = Timeframe.M5
 TIINGO_IEX_INTRADAY_COLUMNS = ("open", "high", "low", "close", "volume")
+TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK = 10_000
+TIINGO_IEX_PRE_R1_ARCHIVE_MAX_SIZE_BYTES = 90 * 1024 * 1024
+_ARCHIVE_COVERAGE_POLICY = (
+    "returned coverage is recorded; source-window completeness is not asserted"
+)
 _CANONICAL_COLUMNS = (
     "symbol",
     "start_ts",
@@ -139,6 +142,67 @@ class TiingoIexIntradaySnapshotResult:
     common_session_count: int
 
 
+@dataclass(frozen=True, slots=True)
+class TiingoIexArchiveWindow:
+    """One fixed, inclusive source window in the pre-r1 archive contract."""
+
+    index: int
+    requested_start: date
+    source_as_of: date
+
+
+TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS = (
+    TiingoIexArchiveWindow(1, date(2017, 8, 1), date(2017, 12, 31)),
+    TiingoIexArchiveWindow(2, date(2018, 1, 1), date(2018, 5, 31)),
+    TiingoIexArchiveWindow(3, date(2018, 6, 1), date(2018, 10, 31)),
+    TiingoIexArchiveWindow(4, date(2018, 11, 1), date(2019, 3, 31)),
+    TiingoIexArchiveWindow(5, date(2019, 4, 1), date(2019, 8, 31)),
+    TiingoIexArchiveWindow(6, date(2019, 9, 1), date(2020, 1, 31)),
+    TiingoIexArchiveWindow(7, date(2020, 2, 1), date(2020, 6, 30)),
+    TiingoIexArchiveWindow(8, date(2020, 7, 1), date(2020, 11, 30)),
+    TiingoIexArchiveWindow(9, date(2020, 12, 1), date(2021, 4, 30)),
+    TiingoIexArchiveWindow(10, date(2021, 5, 1), date(2021, 9, 30)),
+    TiingoIexArchiveWindow(11, date(2021, 10, 1), date(2022, 2, 28)),
+    TiingoIexArchiveWindow(12, date(2022, 3, 1), date(2022, 7, 31)),
+    TiingoIexArchiveWindow(13, date(2022, 8, 1), date(2022, 12, 31)),
+    TiingoIexArchiveWindow(14, date(2023, 1, 1), date(2023, 5, 31)),
+    TiingoIexArchiveWindow(15, date(2023, 6, 1), date(2023, 10, 31)),
+    TiingoIexArchiveWindow(16, date(2023, 11, 1), date(2024, 3, 31)),
+    TiingoIexArchiveWindow(17, date(2024, 4, 1), date(2024, 8, 31)),
+    TiingoIexArchiveWindow(18, date(2024, 9, 1), date(2025, 1, 31)),
+    TiingoIexArchiveWindow(19, date(2025, 2, 1), date(2025, 6, 30)),
+    TiingoIexArchiveWindow(20, date(2025, 7, 1), date(2025, 11, 30)),
+    TiingoIexArchiveWindow(21, date(2025, 12, 1), date(2026, 1, 12)),
+)
+
+
+@dataclass(frozen=True, slots=True)
+class TiingoIexPreR1ArchiveSnapshot:
+    """Offline-attested pre-r1 archive with no provider or research adapter."""
+
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    retrieved_at_utc: datetime
+    bars_by_symbol: Mapping[str, tuple[Bar, ...]]
+    r1_snapshot: TiingoIexIntradaySnapshot
+
+
+@dataclass(frozen=True, slots=True)
+class TiingoIexPreR1ArchiveSnapshotResult:
+    """Non-secret facts from one immutable pre-r1 archive snapshot."""
+
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    raw_chunk_hashes: Mapping[tuple[str, int], str]
+    retrieved_at_utc: datetime
+    row_count: int
+    common_session_count: int
+
+
 def default_tiingo_iex_intraday_snapshot_dir(retrieval_date: date) -> Path:
     """Return the disjoint destination for one date-stamped fixed-ETF snapshot."""
 
@@ -149,12 +213,19 @@ def default_tiingo_iex_intraday_snapshot_dir(retrieval_date: date) -> Path:
     )
 
 
+def _utc_now() -> datetime:
+    """Return the current UTC time through one testable clock boundary."""
+
+    return datetime.now(UTC)
+
+
 def fetch_tiingo_iex_intraday_responses(
     *,
     env_path: Path,
     requested_start: date,
     source_as_of: date,
     timeout_seconds: float = 120.0,
+    on_response: Callable[[str, datetime], None] | None = None,
 ) -> dict[str, bytes]:
     """Fetch exactly one fixed 5-minute response per approved ETF symbol."""
 
@@ -188,6 +259,8 @@ def fetch_tiingo_iex_intraday_responses(
             raise TiingoIexIntradayAcquisitionError(
                 f"Tiingo IEX response is unavailable for {symbol}"
             )
+        if on_response is not None:
+            on_response(symbol, _utc_now())
         responses[symbol] = payload
     return responses
 
@@ -423,12 +496,396 @@ def load_tiingo_iex_intraday_snapshot(
     )
 
 
-def normalize_tiingo_iex_intraday_response(
+def default_tiingo_iex_pre_r1_archive_snapshot_dir(retrieval_date: date) -> Path:
+    """Return the external destination for the fixed pre-r1 archive."""
+
+    if type(retrieval_date) is not date:
+        raise ValueError("retrieval_date must be a date")
+    return DEFAULT_TIINGO_IEX_INTRADAY_SNAPSHOT_ROOT / (
+        f"snapshot={retrieval_date.isoformat()}-{TIINGO_IEX_PRE_R1_ARCHIVE_REVISION}"
+    )
+
+
+def tiingo_iex_pre_r1_archive_request_plan() -> tuple[TiingoIexArchiveWindow, ...]:
+    """Expose the fixed, non-network archive plan for a later acquisition owner."""
+
+    return TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS
+
+
+def _load_pre_r1_archive_r1_snapshot(
+    *,
+    r1_snapshot_dir: Path,
+    r1_dataset_id: str,
+    r1_expected_dataset_hash: str,
+    r1_expected_manifest_hash: str,
+    market_data_root: Path,
+    repo_root: Path | None,
+) -> TiingoIexIntradaySnapshot:
+    """Reattest r1 before acquisition and again before r2 publication."""
+
+    return load_tiingo_iex_intraday_snapshot(
+        r1_snapshot_dir,
+        dataset_id=r1_dataset_id,
+        expected_dataset_hash=r1_expected_dataset_hash,
+        expected_manifest_hash=r1_expected_manifest_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+
+
+def acquire_tiingo_iex_pre_r1_archive_snapshot(
+    *,
+    env_path: Path,
+    destination: Path,
+    r1_snapshot_dir: Path,
+    r1_dataset_id: str,
+    r1_expected_dataset_hash: str,
+    r1_expected_manifest_hash: str,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+    retrieved_at_utc: datetime | None = None,
+    timeout_seconds: float = 120.0,
+) -> TiingoIexPreR1ArchiveSnapshotResult:
+    """Fetch the fixed 3 x 21 schedule in memory, then publish one archive.
+
+    It makes no staging snapshot while retrieval is incomplete.  Each batch
+    starts at least 61 minutes after the prior batch start and rechecks storage
+    before issuing its seven fixed-window, three-symbol requests.
+    """
+
+    if timeout_seconds <= 0:
+        raise ValueError("Tiingo IEX timeout_seconds must be positive")
+    _validate_destination(destination, market_data_root=market_data_root, repo_root=repo_root)
+    _load_pre_r1_archive_r1_snapshot(
+        r1_snapshot_dir=r1_snapshot_dir,
+        r1_dataset_id=r1_dataset_id,
+        r1_expected_dataset_hash=r1_expected_dataset_hash,
+        r1_expected_manifest_hash=r1_expected_manifest_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    root = Path(market_data_root).resolve(strict=True)
+    raw_chunks: dict[tuple[str, int], bytes] = {}
+    raw_chunk_retrieved_at_utc: dict[tuple[str, int], datetime] = {}
+    batch_timings: dict[int, tuple[datetime, datetime]] = {}
+    previous_batch_start: float | None = None
+    for offset in range(0, len(TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS), 7):
+        if previous_batch_start is not None:
+            remaining = 61 * 60 - (time.monotonic() - previous_batch_start)
+            if remaining > 0:
+                time.sleep(remaining)
+        _check_free_space(root)
+        previous_batch_start = time.monotonic()
+        batch_number = offset // 7 + 1
+        batch_started_at = _utc_datetime(_utc_now(), "archive batch start")
+        for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS[offset : offset + 7]:
+            response_retrieved_at_utc: dict[str, datetime] = {}
+
+            def record_response(
+                symbol: str,
+                observed_at_utc: datetime,
+                response_times: dict[str, datetime] = response_retrieved_at_utc,
+            ) -> None:
+                if symbol in response_times:
+                    raise TiingoIexIntradayAcquisitionError(
+                        "Tiingo IEX archive response timestamp is duplicated"
+                    )
+                response_times[symbol] = _utc_datetime(
+                    observed_at_utc, "archive response retrieval"
+                )
+
+            responses = fetch_tiingo_iex_intraday_responses(
+                env_path=env_path,
+                requested_start=window.requested_start,
+                source_as_of=window.source_as_of,
+                timeout_seconds=timeout_seconds,
+                on_response=record_response,
+            )
+            if set(responses) != set(CORPORATE_ACTION_SYMBOLS):
+                raise TiingoIexIntradayAcquisitionError(
+                    "Tiingo IEX archive request did not return exact fixed symbols"
+                )
+            if set(response_retrieved_at_utc) != set(CORPORATE_ACTION_SYMBOLS):
+                raise TiingoIexIntradayAcquisitionError(
+                    "Tiingo IEX archive response timestamps are incomplete"
+                )
+            for symbol in CORPORATE_ACTION_SYMBOLS:
+                raw = responses[symbol]
+                _validated_archive_raw_chunk_bars(raw, symbol=symbol, window=window)
+                raw_chunks[(symbol, window.index)] = raw
+                raw_chunk_retrieved_at_utc[(symbol, window.index)] = response_retrieved_at_utc[
+                    symbol
+                ]
+        batch_timings[batch_number] = (
+            batch_started_at,
+            _utc_datetime(_utc_now(), "archive batch completion"),
+        )
+    retrieved_at = _utc_datetime(retrieved_at_utc or _utc_now(), "retrieved_at_utc")
+    return build_tiingo_iex_pre_r1_archive_snapshot(
+        destination=destination,
+        raw_chunks=raw_chunks,
+        raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        batch_timings=batch_timings,
+        r1_snapshot_dir=r1_snapshot_dir,
+        r1_dataset_id=r1_dataset_id,
+        r1_expected_dataset_hash=r1_expected_dataset_hash,
+        r1_expected_manifest_hash=r1_expected_manifest_hash,
+        retrieved_at_utc=retrieved_at,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+
+
+def build_tiingo_iex_pre_r1_archive_snapshot(
+    *,
+    destination: Path,
+    raw_chunks: Mapping[tuple[str, int], bytes],
+    raw_chunk_retrieved_at_utc: Mapping[tuple[str, int], datetime],
+    batch_timings: Mapping[int, tuple[datetime, datetime]],
+    r1_snapshot_dir: Path,
+    r1_dataset_id: str,
+    r1_expected_dataset_hash: str,
+    r1_expected_manifest_hash: str,
+    retrieved_at_utc: datetime,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> TiingoIexPreR1ArchiveSnapshotResult:
+    """Atomically write one validated, fixed-window archive from fetched bytes.
+
+    This function deliberately has no network or credential path.  It accepts
+    all 63 raw chunks at once, validates them before writing a final directory,
+    and binds the result to an offline-reattested r1 snapshot.
+    """
+
+    retrieved_at = _utc_datetime(retrieved_at_utc, "retrieved_at_utc")
+    _validate_destination(destination, market_data_root=market_data_root, repo_root=repo_root)
+    r1_snapshot = _load_pre_r1_archive_r1_snapshot(
+        r1_snapshot_dir=r1_snapshot_dir,
+        r1_dataset_id=r1_dataset_id,
+        r1_expected_dataset_hash=r1_expected_dataset_hash,
+        r1_expected_manifest_hash=r1_expected_manifest_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    validated_raw_chunk_times, validated_batch_timings = _validate_archive_acquisition_timing(
+        raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        batch_timings=batch_timings,
+        archive_retrieved_at_utc=retrieved_at,
+    )
+    bars_by_symbol, raw_hashes, raw_sizes, chunk_coverage = _archive_normalize_raw_chunks(
+        raw_chunks
+    )
+    common_sessions = _validate_common_session_coverage(bars_by_symbol)
+    _validate_archive_r1_disjointness(bars_by_symbol, r1_snapshot)
+
+    ordered_bars = tuple(
+        bar for symbol in CORPORATE_ACTION_SYMBOLS for bar in bars_by_symbol[symbol]
+    )
+    normalized_bytes = _gzip_bytes(_canonical_csv_bytes(ordered_bars))
+    dataset_hash = _sha256(normalized_bytes)
+    destination_path = Path(destination)
+    manifest = _archive_manifest(
+        snapshot_dir=destination_path,
+        dataset_hash=dataset_hash,
+        normalized_size=len(normalized_bytes),
+        raw_hashes=raw_hashes,
+        raw_sizes=raw_sizes,
+        chunk_coverage=chunk_coverage,
+        raw_chunk_retrieved_at_utc=validated_raw_chunk_times,
+        batch_timings=validated_batch_timings,
+        bars_by_symbol=bars_by_symbol,
+        common_sessions=common_sessions,
+        r1_snapshot=r1_snapshot,
+        retrieved_at_utc=retrieved_at,
+    )
+    manifest_bytes = _json_bytes(manifest)
+    total_size = sum(raw_sizes.values()) + len(normalized_bytes) + len(manifest_bytes)
+    if total_size > TIINGO_IEX_PRE_R1_ARCHIVE_MAX_SIZE_BYTES:
+        raise ValueError("Tiingo IEX pre-r1 archive exceeds the 90 MiB storage ceiling")
+
+    staging = _create_staging_directory(destination_path)
+    try:
+        raw_dir = staging / "raw"
+        for symbol in CORPORATE_ACTION_SYMBOLS:
+            symbol_dir = raw_dir / symbol
+            symbol_dir.mkdir(parents=True)
+            for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS:
+                (symbol_dir / _archive_chunk_filename(window)).write_bytes(
+                    raw_chunks[(symbol, window.index)]
+                )
+        (staging / "ohlcv_5m.csv.gz").write_bytes(normalized_bytes)
+        (staging / "manifest.json").write_bytes(manifest_bytes)
+        load_tiingo_iex_pre_r1_archive_snapshot(
+            staging,
+            dataset_id=_dataset_id(destination_path),
+            expected_dataset_hash=dataset_hash,
+            expected_manifest_hash=_sha256(manifest_bytes),
+            r1_snapshot_dir=r1_snapshot_dir,
+            market_data_root=market_data_root,
+            repo_root=repo_root,
+        )
+        os.rename(staging, destination_path)
+        staging.parent.rmdir()
+    except Exception:
+        if staging.parent.exists():
+            shutil.rmtree(staging.parent)
+        raise
+
+    snapshot = load_tiingo_iex_pre_r1_archive_snapshot(
+        destination_path,
+        dataset_id=_dataset_id(destination_path),
+        expected_dataset_hash=dataset_hash,
+        expected_manifest_hash=_sha256((destination_path / "manifest.json").read_bytes()),
+        r1_snapshot_dir=r1_snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    return TiingoIexPreR1ArchiveSnapshotResult(
+        snapshot_dir=destination_path,
+        dataset_id=snapshot.dataset_id,
+        dataset_hash=snapshot.dataset_hash,
+        manifest_hash=snapshot.manifest_hash,
+        raw_chunk_hashes=MappingProxyType(dict(raw_hashes)),
+        retrieved_at_utc=snapshot.retrieved_at_utc,
+        row_count=sum(len(bars) for bars in snapshot.bars_by_symbol.values()),
+        common_session_count=len(common_sessions),
+    )
+
+
+def load_tiingo_iex_pre_r1_archive_snapshot(
+    snapshot_dir: Path,
+    *,
+    dataset_id: str,
+    expected_dataset_hash: str,
+    expected_manifest_hash: str,
+    r1_snapshot_dir: Path,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> TiingoIexPreR1ArchiveSnapshot:
+    """Offline-reattest every chunk, aggregate, and bound r1 reference."""
+
+    snapshot = _snapshot_dir(snapshot_dir, market_data_root=market_data_root, repo_root=repo_root)
+    if dataset_id != _dataset_id(snapshot):
+        raise ValueError(
+            "Tiingo IEX pre-r1 archive dataset_id is inconsistent with its snapshot path"
+        )
+    _validate_sha256(expected_dataset_hash, "expected_dataset_hash")
+    _validate_sha256(expected_manifest_hash, "expected_manifest_hash")
+    manifest_bytes = _read_snapshot_file(
+        snapshot, snapshot / "manifest.json", "Tiingo IEX archive manifest"
+    )
+    manifest_hash = _sha256(manifest_bytes)
+    if manifest_hash != expected_manifest_hash:
+        raise ValueError("Tiingo IEX pre-r1 archive manifest hash mismatch")
+    try:
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Tiingo IEX pre-r1 archive manifest is not valid UTF-8 JSON") from exc
+    if not isinstance(manifest, dict):
+        raise ValueError("Tiingo IEX pre-r1 archive manifest must be an object")
+
+    retrieved_at, r1_reference = _validate_archive_manifest_header(
+        manifest,
+        snapshot=snapshot,
+        dataset_id=dataset_id,
+        dataset_hash=expected_dataset_hash,
+    )
+    r1_snapshot = load_tiingo_iex_intraday_snapshot(
+        r1_snapshot_dir,
+        dataset_id=r1_reference["dataset_id"],
+        expected_dataset_hash=r1_reference["dataset_hash"],
+        expected_manifest_hash=r1_reference["manifest_hash"],
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    _validate_archive_r1_reference(r1_reference, r1_snapshot)
+    raw_entries = _validated_archive_raw_entries(
+        manifest,
+        snapshot=snapshot,
+    )
+    raw_chunk_retrieved_at_utc = {
+        key: _utc_text(
+            entry["retrieved_at_utc"],
+            f"archive raw retrieval for {key[0]} window {key[1]}",
+        )
+        for key, entry in raw_entries.items()
+    }
+    _, batch_timings = _validate_archive_acquisition_timing(
+        raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        batch_timings=_archive_batch_timings_from_manifest(manifest.get("acquisition_timing")),
+        archive_retrieved_at_utc=retrieved_at,
+    )
+    raw_chunks: dict[tuple[str, int], bytes] = {}
+    for symbol, window in _archive_chunk_order():
+        entry = raw_entries[(symbol, window.index)]
+        raw = _read_snapshot_file(
+            snapshot,
+            snapshot / "raw" / symbol / _archive_chunk_filename(window),
+            "Tiingo IEX archive raw",
+        )
+        if len(raw) != entry["size_bytes"] or _sha256(raw) != entry["sha256"]:
+            raise ValueError(
+                f"Tiingo IEX archive raw hash mismatch for {symbol} window {window.index}"
+            )
+        raw_chunks[(symbol, window.index)] = raw
+    bars_by_symbol, raw_hashes, raw_sizes, chunk_coverage = _archive_normalize_raw_chunks(
+        raw_chunks
+    )
+    common_sessions = _validate_common_session_coverage(bars_by_symbol)
+    _validate_archive_r1_disjointness(bars_by_symbol, r1_snapshot)
+
+    ordered_bars = tuple(
+        bar for symbol in CORPORATE_ACTION_SYMBOLS for bar in bars_by_symbol[symbol]
+    )
+    normalized_bytes = _read_snapshot_file(
+        snapshot,
+        snapshot / "ohlcv_5m.csv.gz",
+        "Tiingo IEX archive normalized data",
+    )
+    if _sha256(normalized_bytes) != expected_dataset_hash:
+        raise ValueError("Tiingo IEX pre-r1 archive dataset hash mismatch")
+    if normalized_bytes != _gzip_bytes(_canonical_csv_bytes(ordered_bars)):
+        raise ValueError(
+            "Tiingo IEX pre-r1 archive normalized data does not match attested raw bytes"
+        )
+    if (
+        sum(raw_sizes.values()) + len(normalized_bytes) + len(manifest_bytes)
+        > TIINGO_IEX_PRE_R1_ARCHIVE_MAX_SIZE_BYTES
+    ):
+        raise ValueError("Tiingo IEX pre-r1 archive exceeds the 90 MiB storage ceiling")
+    _validate_archive_manifest_content(
+        manifest,
+        snapshot=snapshot,
+        dataset_hash=expected_dataset_hash,
+        normalized_size=len(normalized_bytes),
+        raw_hashes=raw_hashes,
+        raw_sizes=raw_sizes,
+        chunk_coverage=chunk_coverage,
+        raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        batch_timings=batch_timings,
+        bars_by_symbol=bars_by_symbol,
+        common_sessions=common_sessions,
+        r1_snapshot=r1_snapshot,
+        retrieved_at_utc=retrieved_at,
+    )
+    return TiingoIexPreR1ArchiveSnapshot(
+        snapshot_dir=snapshot,
+        dataset_id=dataset_id,
+        dataset_hash=expected_dataset_hash,
+        manifest_hash=manifest_hash,
+        retrieved_at_utc=retrieved_at,
+        bars_by_symbol=MappingProxyType(dict(bars_by_symbol)),
+        r1_snapshot=r1_snapshot,
+    )
+
+
+def _normalize_tiingo_iex_intraday_response(
     *,
     symbol: str,
     raw_response: bytes,
     requested_start: date,
     source_as_of: date,
+    require_source_as_of: bool,
 ) -> tuple[Bar, ...]:
     """Parse the selected provider fields while preserving timestamp uncertainty."""
 
@@ -482,13 +939,34 @@ def normalize_tiingo_iex_intraday_response(
                 complete=True,
             )
         except ValueError as exc:
-            raise ValueError(f"Tiingo IEX OHLCV is invalid for {requested_symbol}") from exc
+            raise ValueError(
+                "Tiingo IEX OHLCV is invalid for "
+                f"{requested_symbol} at {_format_utc(timestamp)}"
+            ) from exc
         bars.append(bar)
         observed_timestamps.add(timestamp)
         previous_timestamp = timestamp
-    if _new_york_session_date(bars[-1].start_ts) != source_as_of:
+    if require_source_as_of and _new_york_session_date(bars[-1].start_ts) != source_as_of:
         raise ValueError(f"Tiingo IEX response does not reach source_as_of for {requested_symbol}")
     return tuple(bars)
+
+
+def normalize_tiingo_iex_intraday_response(
+    *,
+    symbol: str,
+    raw_response: bytes,
+    requested_start: date,
+    source_as_of: date,
+) -> tuple[Bar, ...]:
+    """Parse one r1 response and require it to reach the r1 source-as-of day."""
+
+    return _normalize_tiingo_iex_intraday_response(
+        symbol=symbol,
+        raw_response=raw_response,
+        requested_start=requested_start,
+        source_as_of=source_as_of,
+        require_source_as_of=True,
+    )
 
 
 def _open_without_redirect(request: Request, *, timeout: float) -> Any:
@@ -1032,8 +1510,10 @@ def _validate_sha256(value: object, label: str) -> None:
 
 
 def _is_sha256(value: str) -> bool:
-    return len(value) == 71 and value.startswith("sha256:") and all(
-        character in "0123456789abcdef" for character in value[7:]
+    return (
+        len(value) == 71
+        and value.startswith("sha256:")
+        and all(character in "0123456789abcdef" for character in value[7:])
     )
 
 
@@ -1078,3 +1558,562 @@ def _utc_text(value: object, label: str) -> datetime:
         return _utc_datetime(datetime.fromisoformat(value.replace("Z", "+00:00")), label)
     except ValueError as exc:
         raise ValueError(f"Tiingo IEX {label} is invalid") from exc
+
+
+def _archive_chunk_order() -> tuple[tuple[str, TiingoIexArchiveWindow], ...]:
+    return tuple(
+        (symbol, window)
+        for symbol in CORPORATE_ACTION_SYMBOLS
+        for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS
+    )
+
+
+def _archive_window_by_index(index: int) -> TiingoIexArchiveWindow:
+    if isinstance(index, bool) or not isinstance(index, int):
+        raise ValueError("Tiingo IEX archive window index is invalid")
+    for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS:
+        if window.index == index:
+            return window
+    raise ValueError("Tiingo IEX archive window index is invalid")
+
+
+def _archive_chunk_filename(window: TiingoIexArchiveWindow) -> str:
+    return f"window-{window.index:02d}.json"
+
+
+def _archive_normalize_raw_chunks(
+    raw_chunks: Mapping[tuple[str, int], bytes],
+) -> tuple[
+    dict[str, tuple[Bar, ...]],
+    dict[tuple[str, int], str],
+    dict[tuple[str, int], int],
+    dict[tuple[str, int], dict[str, Any]],
+]:
+    expected_keys = {(symbol, window.index) for symbol, window in _archive_chunk_order()}
+    if set(raw_chunks) != expected_keys:
+        raise ValueError("Tiingo IEX archive raw chunks must contain all 63 fixed chunks")
+    chunks_by_symbol: dict[str, dict[int, tuple[Bar, ...]]] = {
+        symbol: {} for symbol in CORPORATE_ACTION_SYMBOLS
+    }
+    raw_hashes: dict[tuple[str, int], str] = {}
+    raw_sizes: dict[tuple[str, int], int] = {}
+    chunk_coverage: dict[tuple[str, int], dict[str, Any]] = {}
+    for symbol, window in _archive_chunk_order():
+        key = (symbol, window.index)
+        raw = raw_chunks[key]
+        if not isinstance(raw, bytes):
+            raise ValueError(f"Tiingo IEX archive raw response must be bytes for {symbol}")
+        bars = _validated_archive_raw_chunk_bars(raw, symbol=symbol, window=window)
+        chunks_by_symbol[symbol][window.index] = bars
+        raw_hashes[key] = _sha256(raw)
+        raw_sizes[key] = len(raw)
+        chunk_coverage[key] = _archive_chunk_coverage(bars)
+    bars_by_symbol = {
+        symbol: _merge_archive_bars(symbol, chunks_by_symbol[symbol])
+        for symbol in CORPORATE_ACTION_SYMBOLS
+    }
+    return bars_by_symbol, raw_hashes, raw_sizes, chunk_coverage
+
+
+def _validated_archive_raw_chunk_bars(
+    raw: bytes,
+    *,
+    symbol: str,
+    window: TiingoIexArchiveWindow,
+) -> tuple[Bar, ...]:
+    row_count = _archive_raw_row_count(raw, symbol=symbol, window=window)
+    if row_count >= TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK:
+        raise _archive_cap_error()
+    bars = _normalize_tiingo_iex_intraday_response(
+        symbol=symbol,
+        raw_response=raw,
+        requested_start=window.requested_start,
+        source_as_of=window.source_as_of,
+        require_source_as_of=False,
+    )
+    if len(bars) >= TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK:
+        raise _archive_cap_error()
+    return bars
+
+
+def _archive_raw_row_count(
+    raw: bytes,
+    *,
+    symbol: str,
+    window: TiingoIexArchiveWindow,
+) -> int:
+    if not isinstance(raw, bytes) or not raw:
+        raise ValueError(
+            f"Tiingo IEX archive response is missing for {symbol} window {window.index}"
+        )
+    try:
+        payload = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(
+            f"Tiingo IEX archive response is not valid UTF-8 JSON for {symbol} "
+            f"window {window.index}"
+        ) from exc
+    if not isinstance(payload, list) or not payload:
+        raise ValueError(
+            f"Tiingo IEX archive response must be a nonempty array for {symbol} "
+            f"window {window.index}"
+        )
+    return len(payload)
+
+
+def _archive_cap_error() -> ValueError:
+    return ValueError(
+        "Tiingo IEX archive chunk reaches the "
+        f"{TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK} row cap"
+    )
+
+
+def _archive_chunk_coverage(bars: tuple[Bar, ...]) -> dict[str, Any]:
+    sessions = _session_dates(bars)
+    return {
+        "row_count": len(bars),
+        "first_start_ts": _format_utc(bars[0].start_ts),
+        "last_start_ts": _format_utc(bars[-1].start_ts),
+        "first_session": min(sessions).isoformat(),
+        "last_session": max(sessions).isoformat(),
+    }
+
+
+def _merge_archive_bars(
+    symbol: str,
+    chunks: Mapping[int, tuple[Bar, ...]],
+) -> tuple[Bar, ...]:
+    if set(chunks) != {window.index for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS}:
+        raise ValueError(f"Tiingo IEX archive chunks are incomplete for {symbol}")
+    result: list[Bar] = []
+    previous: datetime | None = None
+    for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS:
+        for bar in chunks[window.index]:
+            if previous is not None and bar.start_ts <= previous:
+                raise ValueError(f"Tiingo IEX archive chunks overlap for {symbol}")
+            result.append(bar)
+            previous = bar.start_ts
+    if not result:
+        raise ValueError(f"Tiingo IEX archive has no bars for {symbol}")
+    return tuple(result)
+
+
+def _validate_archive_r1_disjointness(
+    bars_by_symbol: Mapping[str, tuple[Bar, ...]],
+    r1_snapshot: TiingoIexIntradaySnapshot,
+) -> None:
+    for symbol in CORPORATE_ACTION_SYMBOLS:
+        archive_bars = bars_by_symbol.get(symbol)
+        r1_bars = r1_snapshot.bars_by_symbol.get(symbol)
+        if not archive_bars or not r1_bars:
+            raise ValueError(f"Tiingo IEX archive r1 boundary is unavailable for {symbol}")
+        if archive_bars[-1].start_ts >= r1_bars[0].start_ts:
+            raise ValueError(f"Tiingo IEX archive is not disjoint before r1 for {symbol}")
+
+
+def _archive_manifest(
+    *,
+    snapshot_dir: Path,
+    dataset_hash: str,
+    normalized_size: int,
+    raw_hashes: Mapping[tuple[str, int], str],
+    raw_sizes: Mapping[tuple[str, int], int],
+    chunk_coverage: Mapping[tuple[str, int], Mapping[str, Any]],
+    raw_chunk_retrieved_at_utc: Mapping[tuple[str, int], datetime],
+    batch_timings: Mapping[int, tuple[datetime, datetime]],
+    bars_by_symbol: Mapping[str, tuple[Bar, ...]],
+    common_sessions: frozenset[date],
+    r1_snapshot: TiingoIexIntradaySnapshot,
+    retrieved_at_utc: datetime,
+) -> dict[str, Any]:
+    return {
+        "schema_version": 2,
+        "kind": "fixed_etf_tiingo_iex_intraday_pre_r1_archive",
+        "dataset_id": _dataset_id(snapshot_dir),
+        "dataset_hash": dataset_hash,
+        "immutable_snapshot": True,
+        "symbols": list(CORPORATE_ACTION_SYMBOLS),
+        "symbol_order": list(CORPORATE_ACTION_SYMBOLS),
+        "normalized_data": {
+            "path": str(snapshot_dir / "ohlcv_5m.csv.gz"),
+            "size_bytes": normalized_size,
+            "sha256": dataset_hash,
+            "schema": list(_CANONICAL_COLUMNS),
+            "format": "csv.gz",
+            "ordering": "symbol_order_then_start_ts_ascending",
+        },
+        "raw_sources": _archive_raw_sources(
+            snapshot_dir=snapshot_dir,
+            raw_hashes=raw_hashes,
+            raw_sizes=raw_sizes,
+            chunk_coverage=chunk_coverage,
+            raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        ),
+        "coverage_by_symbol": _coverage_by_symbol(bars_by_symbol),
+        "common_session_coverage": {
+            "session_count": len(common_sessions),
+            "first_session": min(common_sessions).isoformat(),
+            "last_session": max(common_sessions).isoformat(),
+            "session_dates_sha256": _date_set_hash(common_sessions),
+            "minimum_required_session_count": _MIN_COMMON_SESSIONS,
+        },
+        "archive_contract": {
+            "windows": [
+                {
+                    "index": window.index,
+                    "requested_start": window.requested_start.isoformat(),
+                    "source_as_of": window.source_as_of.isoformat(),
+                }
+                for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS
+            ],
+            "request_count": len(CORPORATE_ACTION_SYMBOLS) * len(TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS),
+            "batch_count": 3,
+            "windows_per_batch": 7,
+            "minimum_elapsed_seconds_between_batch_starts": 61 * 60,
+            "max_rows_per_chunk_exclusive": TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK,
+            "storage_ceiling_bytes": TIINGO_IEX_PRE_R1_ARCHIVE_MAX_SIZE_BYTES,
+            "coverage_policy": _ARCHIVE_COVERAGE_POLICY,
+            "cross_chunk_overlap": {
+                "detected": False,
+                "policy": "strictly increasing start_ts per symbol across fixed window order",
+            },
+        },
+        "acquisition_timing": _archive_acquisition_timing_record(batch_timings),
+        "r1_snapshot_reference": _archive_r1_reference(r1_snapshot),
+        "snapshot_metadata": {
+            "retrieved_at_utc": _format_utc(retrieved_at_utc),
+            "revision": TIINGO_IEX_PRE_R1_ARCHIVE_REVISION,
+        },
+        "source_contract": dict(_SOURCE_CONTRACT),
+        "data_semantics": dict(_DATA_SEMANTICS),
+        "scope": dict(_SCOPE),
+    }
+
+
+def _archive_raw_sources(
+    *,
+    snapshot_dir: Path,
+    raw_hashes: Mapping[tuple[str, int], str],
+    raw_sizes: Mapping[tuple[str, int], int],
+    chunk_coverage: Mapping[tuple[str, int], Mapping[str, Any]],
+    raw_chunk_retrieved_at_utc: Mapping[tuple[str, int], datetime],
+) -> list[dict[str, Any]]:
+    return [
+        {
+            "symbol": symbol,
+            "window_index": window.index,
+            "source_id": f"tiingo-iex-intraday-5m-{symbol.lower()}-window-{window.index:02d}",
+            "provider": "Tiingo IEX historical intraday API",
+            "source_url": TIINGO_IEX_INTRADAY_ENDPOINT.format(symbol=symbol),
+            "source_kind": "licensed_api",
+            "acquisition_mode": "operator_authorized_api",
+            "use_scope": "private_internal_use",
+            "request": _query_record(window.requested_start, window.source_as_of),
+            "filename": _archive_chunk_filename(window),
+            "path": str(snapshot_dir / "raw" / symbol / _archive_chunk_filename(window)),
+            "sha256": raw_hashes[(symbol, window.index)],
+            "size_bytes": raw_sizes[(symbol, window.index)],
+            "returned_coverage": dict(chunk_coverage[(symbol, window.index)]),
+            "retrieved_at_utc": _format_utc(
+                raw_chunk_retrieved_at_utc[(symbol, window.index)]
+            ),
+        }
+        for symbol, window in _archive_chunk_order()
+    ]
+
+
+def _archive_r1_reference(r1_snapshot: TiingoIexIntradaySnapshot) -> dict[str, Any]:
+    return {
+        "snapshot_name": r1_snapshot.snapshot_dir.name,
+        "dataset_id": r1_snapshot.dataset_id,
+        "dataset_hash": r1_snapshot.dataset_hash,
+        "manifest_hash": r1_snapshot.manifest_hash,
+        "first_start_ts_by_symbol": {
+            symbol: _format_utc(r1_snapshot.bars_by_symbol[symbol][0].start_ts)
+            for symbol in CORPORATE_ACTION_SYMBOLS
+        },
+        "disjointness": "archive bars must be strictly before r1 bars for each symbol",
+    }
+
+
+def _validate_archive_manifest_header(
+    manifest: Mapping[str, Any],
+    *,
+    snapshot: Path,
+    dataset_id: str,
+    dataset_hash: str,
+) -> tuple[datetime, Mapping[str, Any]]:
+    if (
+        manifest.get("schema_version") != 2
+        or manifest.get("kind") != "fixed_etf_tiingo_iex_intraday_pre_r1_archive"
+        or manifest.get("immutable_snapshot") is not True
+        or manifest.get("symbols") != list(CORPORATE_ACTION_SYMBOLS)
+        or manifest.get("symbol_order") != list(CORPORATE_ACTION_SYMBOLS)
+        or manifest.get("source_contract") != _SOURCE_CONTRACT
+        or manifest.get("data_semantics") != _DATA_SEMANTICS
+        or manifest.get("scope") != _SCOPE
+        or manifest.get("archive_contract") != _archive_contract_record()
+    ):
+        raise ValueError("Tiingo IEX pre-r1 archive manifest contract is invalid")
+    if _required_text(manifest.get("dataset_id"), "Tiingo IEX archive dataset_id") != dataset_id:
+        raise ValueError("Tiingo IEX pre-r1 archive manifest dataset_id mismatch")
+    if (
+        _required_sha256(manifest.get("dataset_hash"), "Tiingo IEX archive dataset_hash")
+        != dataset_hash
+    ):
+        raise ValueError("Tiingo IEX pre-r1 archive manifest dataset hash mismatch")
+    metadata = manifest.get("snapshot_metadata")
+    if not isinstance(metadata, dict):
+        raise ValueError("Tiingo IEX pre-r1 archive snapshot metadata is missing")
+    retrieved_at = _utc_text(metadata.get("retrieved_at_utc"), "archive retrieved_at_utc")
+    if metadata != {
+        "retrieved_at_utc": _format_utc(retrieved_at),
+        "revision": TIINGO_IEX_PRE_R1_ARCHIVE_REVISION,
+    }:
+        raise ValueError("Tiingo IEX pre-r1 archive snapshot metadata is invalid")
+    normalized = manifest.get("normalized_data")
+    if not isinstance(normalized, dict) or normalized != {
+        "path": normalized.get("path"),
+        "size_bytes": normalized.get("size_bytes"),
+        "sha256": normalized.get("sha256"),
+        "schema": list(_CANONICAL_COLUMNS),
+        "format": "csv.gz",
+        "ordering": "symbol_order_then_start_ts_ascending",
+    }:
+        raise ValueError("Tiingo IEX pre-r1 archive normalized-data contract is invalid")
+    _assert_manifest_path_tail(
+        normalized["path"],
+        snapshot_name=snapshot.name,
+        parts=("ohlcv_5m.csv.gz",),
+        label="archive normalized",
+    )
+    if (
+        normalized["sha256"] != dataset_hash
+        or not isinstance(normalized["size_bytes"], int)
+        or normalized["size_bytes"] <= 0
+    ):
+        raise ValueError("Tiingo IEX pre-r1 archive normalized-data identity is invalid")
+    r1_reference = manifest.get("r1_snapshot_reference")
+    if not isinstance(r1_reference, dict):
+        raise ValueError("Tiingo IEX pre-r1 archive r1 reference is invalid")
+    return retrieved_at, r1_reference
+
+
+def _archive_contract_record() -> dict[str, Any]:
+    return {
+        "windows": [
+            {
+                "index": window.index,
+                "requested_start": window.requested_start.isoformat(),
+                "source_as_of": window.source_as_of.isoformat(),
+            }
+            for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS
+        ],
+        "request_count": len(CORPORATE_ACTION_SYMBOLS) * len(TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS),
+        "batch_count": 3,
+        "windows_per_batch": 7,
+        "minimum_elapsed_seconds_between_batch_starts": 61 * 60,
+        "max_rows_per_chunk_exclusive": TIINGO_IEX_PRE_R1_ARCHIVE_MAX_ROWS_PER_CHUNK,
+        "storage_ceiling_bytes": TIINGO_IEX_PRE_R1_ARCHIVE_MAX_SIZE_BYTES,
+        "coverage_policy": _ARCHIVE_COVERAGE_POLICY,
+        "cross_chunk_overlap": {
+            "detected": False,
+            "policy": "strictly increasing start_ts per symbol across fixed window order",
+        },
+    }
+
+
+def _archive_acquisition_timing_record(
+    batch_timings: Mapping[int, tuple[datetime, datetime]],
+) -> dict[str, Any]:
+    return {
+        "batches": [
+            {
+                "batch_index": batch_index,
+                "first_window_index": (batch_index - 1) * 7 + 1,
+                "last_window_index": batch_index * 7,
+                "started_at_utc": _format_utc(batch_timings[batch_index][0]),
+                "completed_at_utc": _format_utc(batch_timings[batch_index][1]),
+            }
+            for batch_index in range(1, 4)
+        ]
+    }
+
+
+def _validate_archive_acquisition_timing(
+    *,
+    raw_chunk_retrieved_at_utc: Mapping[tuple[str, int], datetime],
+    batch_timings: Mapping[int, tuple[datetime, datetime]],
+    archive_retrieved_at_utc: datetime,
+) -> tuple[dict[tuple[str, int], datetime], dict[int, tuple[datetime, datetime]]]:
+    expected_keys = {(symbol, window.index) for symbol, window in _archive_chunk_order()}
+    if set(raw_chunk_retrieved_at_utc) != expected_keys:
+        raise ValueError("Tiingo IEX archive response timestamps must cover all 63 fixed chunks")
+    raw_times = {
+        key: _utc_datetime(value, f"archive response retrieval for {key[0]} window {key[1]}")
+        for key, value in raw_chunk_retrieved_at_utc.items()
+    }
+    if set(batch_timings) != {1, 2, 3}:
+        raise ValueError("Tiingo IEX archive batch timing must cover all three fixed batches")
+    validated_batches: dict[int, tuple[datetime, datetime]] = {}
+    previous_started_at: datetime | None = None
+    for batch_index in range(1, 4):
+        timing = batch_timings[batch_index]
+        if not isinstance(timing, tuple) or len(timing) != 2:
+            raise ValueError("Tiingo IEX archive batch timing is invalid")
+        started_at = _utc_datetime(timing[0], f"archive batch {batch_index} start")
+        completed_at = _utc_datetime(timing[1], f"archive batch {batch_index} completion")
+        if completed_at < started_at:
+            raise ValueError("Tiingo IEX archive batch completion precedes its start")
+        if (
+            previous_started_at is not None
+            and (started_at - previous_started_at).total_seconds() < 61 * 60
+        ):
+            raise ValueError("Tiingo IEX archive batch starts are less than 61 minutes apart")
+        first_window_offset = (batch_index - 1) * 7
+        for window in TIINGO_IEX_PRE_R1_ARCHIVE_WINDOWS[
+            first_window_offset : first_window_offset + 7
+        ]:
+            for symbol in CORPORATE_ACTION_SYMBOLS:
+                observed_at = raw_times[(symbol, window.index)]
+                if observed_at < started_at or observed_at > completed_at:
+                    raise ValueError(
+                        "Tiingo IEX archive response retrieval is outside its attested batch"
+                    )
+        validated_batches[batch_index] = (started_at, completed_at)
+        previous_started_at = started_at
+    archive_retrieved_at = _utc_datetime(archive_retrieved_at_utc, "retrieved_at_utc")
+    if archive_retrieved_at < validated_batches[3][1]:
+        raise ValueError("Tiingo IEX archive retrieval precedes the final batch completion")
+    return raw_times, validated_batches
+
+
+def _archive_batch_timings_from_manifest(value: object) -> dict[int, tuple[datetime, datetime]]:
+    if not isinstance(value, dict) or set(value) != {"batches"}:
+        raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+    batches = value["batches"]
+    if not isinstance(batches, list) or len(batches) != 3:
+        raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+    result: dict[int, tuple[datetime, datetime]] = {}
+    for batch_index, entry in enumerate(batches, start=1):
+        if not isinstance(entry, dict) or entry.get("batch_index") != batch_index:
+            raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+        if entry.get("first_window_index") != (batch_index - 1) * 7 + 1:
+            raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+        if entry.get("last_window_index") != batch_index * 7:
+            raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+        if set(entry) != {
+            "batch_index",
+            "first_window_index",
+            "last_window_index",
+            "started_at_utc",
+            "completed_at_utc",
+        }:
+            raise ValueError("Tiingo IEX pre-r1 archive acquisition timing is invalid")
+        result[batch_index] = (
+            _utc_text(entry["started_at_utc"], f"archive batch {batch_index} start"),
+            _utc_text(entry["completed_at_utc"], f"archive batch {batch_index} completion"),
+        )
+    return result
+
+
+def _validated_archive_raw_entries(
+    manifest: Mapping[str, Any],
+    *,
+    snapshot: Path,
+) -> dict[tuple[str, int], Mapping[str, Any]]:
+    entries_value = manifest.get("raw_sources")
+    if not isinstance(entries_value, list) or len(entries_value) != len(_archive_chunk_order()):
+        raise ValueError("Tiingo IEX pre-r1 archive raw evidence is invalid")
+    entries: dict[tuple[str, int], Mapping[str, Any]] = {}
+    for (symbol, window), entry in zip(_archive_chunk_order(), entries_value, strict=True):
+        if not isinstance(entry, dict):
+            raise ValueError("Tiingo IEX pre-r1 archive raw evidence is invalid")
+        expected = {
+            "symbol": symbol,
+            "window_index": window.index,
+            "source_id": f"tiingo-iex-intraday-5m-{symbol.lower()}-window-{window.index:02d}",
+            "provider": "Tiingo IEX historical intraday API",
+            "source_url": TIINGO_IEX_INTRADAY_ENDPOINT.format(symbol=symbol),
+            "source_kind": "licensed_api",
+            "acquisition_mode": "operator_authorized_api",
+            "use_scope": "private_internal_use",
+            "request": _query_record(window.requested_start, window.source_as_of),
+            "filename": _archive_chunk_filename(window),
+        }
+        if any(entry.get(key) != value for key, value in expected.items()):
+            raise ValueError("Tiingo IEX pre-r1 archive raw evidence is invalid")
+        _assert_manifest_path_tail(
+            entry.get("path"),
+            snapshot_name=snapshot.name,
+            parts=("raw", symbol, _archive_chunk_filename(window)),
+            label="archive raw",
+        )
+        if _required_sha256(entry.get("sha256"), "Tiingo IEX archive raw sha256") != entry.get(
+            "sha256"
+        ):
+            raise ValueError("Tiingo IEX pre-r1 archive raw evidence is invalid")
+        if not isinstance(entry.get("size_bytes"), int) or entry["size_bytes"] <= 0:
+            raise ValueError("Tiingo IEX pre-r1 archive raw evidence is invalid")
+        _utc_text(
+            entry.get("retrieved_at_utc"),
+            f"archive raw retrieval for {symbol} window {window.index}",
+        )
+        entries[(symbol, window.index)] = entry
+    return entries
+
+
+def _validate_archive_r1_reference(
+    reference: Mapping[str, Any],
+    r1_snapshot: TiingoIexIntradaySnapshot,
+) -> None:
+    if dict(reference) != _archive_r1_reference(r1_snapshot):
+        raise ValueError(
+            "Tiingo IEX pre-r1 archive r1 reference does not match the reattested r1 snapshot"
+        )
+
+
+def _validate_archive_manifest_content(
+    manifest: Mapping[str, Any],
+    *,
+    snapshot: Path,
+    dataset_hash: str,
+    normalized_size: int,
+    raw_hashes: Mapping[tuple[str, int], str],
+    raw_sizes: Mapping[tuple[str, int], int],
+    chunk_coverage: Mapping[tuple[str, int], Mapping[str, Any]],
+    raw_chunk_retrieved_at_utc: Mapping[tuple[str, int], datetime],
+    batch_timings: Mapping[int, tuple[datetime, datetime]],
+    bars_by_symbol: Mapping[str, tuple[Bar, ...]],
+    common_sessions: frozenset[date],
+    r1_snapshot: TiingoIexIntradaySnapshot,
+    retrieved_at_utc: datetime,
+) -> None:
+    expected = _archive_manifest(
+        snapshot_dir=snapshot,
+        dataset_hash=dataset_hash,
+        normalized_size=normalized_size,
+        raw_hashes=raw_hashes,
+        raw_sizes=raw_sizes,
+        chunk_coverage=chunk_coverage,
+        raw_chunk_retrieved_at_utc=raw_chunk_retrieved_at_utc,
+        batch_timings=batch_timings,
+        bars_by_symbol=bars_by_symbol,
+        common_sessions=common_sessions,
+        r1_snapshot=r1_snapshot,
+        retrieved_at_utc=retrieved_at_utc,
+    )
+    actual = dict(manifest)
+    expected_without_paths = dict(expected)
+    for value in (actual, expected_without_paths):
+        normalized = dict(value["normalized_data"])
+        normalized.pop("path", None)
+        value["normalized_data"] = normalized
+        raw = []
+        for entry in value["raw_sources"]:
+            entry_without_path = dict(entry)
+            entry_without_path.pop("path", None)
+            raw.append(entry_without_path)
+        value["raw_sources"] = raw
+    if actual != expected_without_paths:
+        raise ValueError("Tiingo IEX pre-r1 archive manifest content does not match attested data")

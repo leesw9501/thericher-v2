@@ -1398,3 +1398,25 @@ and separate.
 Reason: one date-filtered observation is enough to replace an availability
 guess with a bounded archive plan, but not enough to justify an unbounded
 historical download or a research-quality claim.
+
+## 2026-07-19 - Strict Tiingo IEX pre-r1 archive stops without publication
+
+Decision: retain the bounded r2 chunked archive contract and its strict `Bar`
+validation, but close the exact 2017-08-01 through 2026-01-12 Tiingo IEX
+retrieval plan after its permitted validation-related retries. Do not retry it
+automatically, relax high/low containment, repair/fill a rejected source bar,
+or create a partial snapshot.
+
+The first archive attempt rejected an unreproducible SPY OHLCV row in the first
+window. A nonpersistent exact-window probe subsequently returned
+8,502/8,501/8,502 SPY/QQQ/IWM rows with no simple OHLC violation and retained
+no bytes. The final permitted attempt later rejected SPY
+`2018-04-25T15:25:00Z` because high/low did not contain open and close. No raw
+response, cache, hash, artifact, final r2 directory, or staging directory was
+retained.
+
+Reason: accepting, altering, or silently dropping a malformed source bar would
+make the archive look complete while breaking its raw-to-canonical attestation.
+The outcome does not prove a provider defect, complete-history absence, source
+reliability, or any research, validation, campaign, paper, or profitability
+claim. A later long-history requirement needs a newly approved source plan.

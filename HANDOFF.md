@@ -194,6 +194,18 @@ no bytes, hash, cache, artifact, or snapshot. That supports date-window access
 and a bounded pre-r1 archive attempt; it does not prove a documented cap,
 complete requested-window coverage, source independence, or research use.
 
+The approved, fixed pre-r1 Tiingo IEX archive plan then stopped with no r2
+snapshot. Its first strict validation attempt rejected an unreproducible SPY
+OHLCV row in the 2017-08-01 through 2017-12-31 window. One nonpersistent exact
+window probe returned 8,502/8,501/8,502 rows for SPY/QQQ/IWM with no simple
+OHLC violation and retained no bytes. The final permitted archive attempt later
+rejected SPY `2018-04-25T15:25:00Z` because high/low did not contain open and
+close. No raw bytes, cache, hash, external r2 directory, or staging directory
+was retained; D: remained 40.6% free. This proves neither a provider defect nor
+complete history, reliability, independence, validation, campaign, paper, or
+profitability eligibility. Retain the strict r2 contract, but do not repair or
+fill invalid bars or retry this plan automatically.
+
 Current canonical evidence:
 
 - `D:\thericher-v2\model-artifacts\data-agent\training-readiness-catalog\data-agent-training-readiness-20260718-r2\catalog.json`
@@ -467,10 +479,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` next asks the Data lane to build one rate-limited,
-chunked, pre-r1 Tiingo IEX archive for `SPY`/`QQQ`/`IWM`. It predeclares 21
-sub-cap windows, 63 requests in three batches, and a 90 MiB storage ceiling.
-It must not overwrite r1 or touch KIS, orders, models, GPU, or live behavior.
-KIS remains failed closed pending the non-secret pairing check and a separately
-authorized future probe. The KIS capital envelope, paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` next asks the Data lane for a no-cost, decision-ready
+comparison of the smallest paid PIT-capable US daily research source. It must
+use official public facts only and cannot purchase, log in, download data, add
+a provider, or touch KIS, orders, models, GPU, or live behavior. KIS remains
+failed closed pending the non-secret pairing check and a separately authorized
+future probe. The KIS capital envelope, data purchase, order submission, and
+live capital remain separate future decisions.

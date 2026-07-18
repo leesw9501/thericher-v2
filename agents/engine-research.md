@@ -80,10 +80,11 @@
 
 ## Breadth Queue
 
-- Data confirmed one non-overlapping 2024 Tiingo IEX window without retaining
-  its bytes. Wait for its pre-r1 chunked archive snapshot; do not use r1, the
-  probe, or the completed short-data smoke as model-selection input or start a
-  GPU job merely to fill idle capacity.
+- The fixed Tiingo IEX pre-r1 archive plan exhausted its strict validation
+  retries without a snapshot. Do not use r1, the probe, the failed archive, or
+  the completed short-data smoke as model-selection input. Wait for a future
+  independently sourced, rights-cleared Data decision before opening historical
+  intraday research or a GPU job.
 
 ## Depth Queue
 
@@ -219,7 +220,8 @@
   complete and remains descriptive. The intraday multi-timeframe local-paper
   baseline is also complete but remains a short-data pipeline smoke. Tiingo
   IEX r1 adds only a hash-attested 5-minute descriptive window. The bounded
-  2024 probe confirms date-window access but not completeness. Data next builds
-  a rate-limited pre-r1 archive before any historical-intraday research
-  decision. Do not rank, promote, name a winner, claim profitability, or start
-  GPU training.
+2024 probe confirms date-window access but not completeness. The pre-r1 archive
+plan is now closed after two strict source-validation failures with no snapshot.
+Data next prepares a minimum PIT-capable source decision before any historical
+intraday research decision. Do not rank, promote, name a winner, claim
+profitability, or start GPU training.

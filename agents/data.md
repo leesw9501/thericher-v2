@@ -58,26 +58,20 @@ remains unresolved as a provider contract.
 The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
 `unsupported`. The CVS/FCX/KO intraday smoke is complete from a loader-attested
-short snapshot. The current IEX r1 is 5-minute descriptive evidence only. Its
-next Data task is one predeclared, rate-limited archive snapshot for the
-disjoint pre-r1 period, not source adjudication, training, or a performance
-dataset.
+short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
+pre-r1 archive attempt is closed after strict source validation failed twice;
+there is no r2 snapshot or new historical-intraday research input.
 
 ## Ready Queue
 
-1. Build one no-overwrite Tiingo IEX archive snapshot for SPY/QQQ/IWM from
-   2017-08-01 through 2026-01-12 using the 21 predeclared five-calendar-month
-   windows in `NEXT_CODEX_GOAL.md`. It has 63 fixed requests in three
-   21-request batches, must reject a 10,000-row chunk as capped, and must retain
-   exact raw chunks plus an offline hash-attesting aggregate loader. Estimated
-   external storage is at most 90 MiB; do not widen symbols, add a provider, or
-   overwrite r1.
-2. If the allowed sources cannot provide useful additional history, record the
-   smallest concrete paid-data request with product, cost, coverage, rights,
-   and an exact operator decision; do not create a placeholder provider.
-3. If future work needs historical point-in-time universe membership, prepare a
-   concrete paid-data request for Sharadar or Norgate with product, cost,
-   coverage, and rights; templates are not evidence.
+1. Compare official public information for the smallest rights-cleared paid
+   source that can provide US daily point-in-time membership/delistings and raw
+   OHLCV/corporate-action evidence. Record one decision-ready Sharadar versus
+   Norgate recommendation before requesting any operator spend.
+2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
+   relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
+3. If an operator later approves a source, collect only the specifically
+   approved product under a new bounded goal; templates are not evidence.
 
 ## Running
 
@@ -85,9 +79,8 @@ dataset.
 
 ## Operator Help Needed
 
-- None. The operator-approved Tiingo entitlement is limited to the fixed r1
-  evidence and the exact pre-r1 archive plan in `NEXT_CODEX_GOAL.md`; paid
-  upgrades remain prohibited.
+- None. Paid upgrades and data purchase remain prohibited until a later,
+  concrete source/product/cost/rights recommendation receives approval.
 
 ## Durable Knowledge
 
@@ -124,6 +117,15 @@ dataset.
   bytes, hash, cache, artifact, or snapshot was retained. This proves a
   non-overlapping historical window is reachable, not full-window completeness
   or a documented response-cap contract.
+- The approved pre-r1 Tiingo IEX archive plan stopped without publication after
+  two strict validation failures. The first attempt rejected an unreproducible
+  SPY OHLCV row in the 2017-08-01 through 2017-12-31 window. A nonpersistent
+  exact-window probe returned 8,502/8,501/8,502 rows for SPY/QQQ/IWM with no
+  simple OHLC violation and retained no bytes. The final permitted attempt
+  later rejected SPY `2018-04-25T15:25:00Z` because its high/low did not contain
+  open and close. No raw response, cache, hash, r2 directory, or staging
+  directory was retained. This does not establish a provider defect,
+  completeness, source reliability, or research eligibility.
 - Intraday: `snapshot=2026-07-09-shadow-t0-8d-probe` contains CVS, FCX, and KO
   from 2026-06-29 through 2026-07-09. It is suitable for bounded smoke work.
 - Daily/PIT: `D:\market_data\pit_sources` contains only template workspaces for
@@ -301,6 +303,9 @@ dataset.
 - Stop acquisition on credential/payment/manual access, unclear rights, two
   consecutive automated failures for one source, loss of active-goal benefit,
   or projected breach of the 15% free-space floor.
+- The exact Tiingo IEX pre-r1 archive plan is exhausted. Do not rerun it without
+  a new operator-approved plan; retain the strict r2 contract and do not repair,
+  normalize, or fill rejected source bars.
 - Record a genuine unresolved requirement in `Operator Help`; retain detailed
   historical lineage in Git commit `8f416f8` and external artifacts.
 
@@ -354,5 +359,7 @@ common-session start, or unwrap either source into a campaign/local-paper path.
 The next local-paper smoke may use only the existing short intraday snapshot;
 it is not a performance dataset. That smoke is complete; do not treat it as
 historical coverage. The next source expansion must retain a manifest and
-loader-attested lineage. A future universe-wide research claim still needs PIT
-membership and delistings.
+loader-attested lineage. The strict Tiingo IEX archive contract is retained as
+an unexecuted publication path, but its fixed retrieval plan is closed after
+two validation failures and must not be retried automatically. A future
+universe-wide research claim still needs PIT membership and delistings.

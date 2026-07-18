@@ -203,6 +203,18 @@ def test_normalizer_preserves_gapped_sessions_but_rejects_invalid_timestamps() -
         )
 
 
+def test_normalizer_identifies_the_timestamp_of_invalid_ohlcv() -> None:
+    rows = _rows("SPY")
+    rows[0]["high"] = "99"
+    with pytest.raises(ValueError, match="SPY at 2026-06-01T13:30:00Z"):
+        intraday.normalize_tiingo_iex_intraday_response(
+            symbol="SPY",
+            raw_response=_payload(rows),
+            requested_start=_REQUESTED_START,
+            source_as_of=_SOURCE_AS_OF,
+        )
+
+
 def test_build_rejects_repo_destination_and_insufficient_common_sessions(tmp_path: Path) -> None:
     market_root = tmp_path / "market"
     market_root.mkdir()
