@@ -1828,3 +1828,31 @@ evidence and avoids spending source quota or GPU time on an invalid inference.
 The next data question is whether the already-installed Norgate trial can
 produce a separately bounded fixed-ETF raw-D1 development source; it must not
 merge these Tiingo snapshots into a model dataset by implication.
+
+## 2026-07-19 - Norgate fixed-ETF trial raw-D1 is development-source evidence only
+
+Decision: retain the host-only fixed `SPY`/`QQQ`/`IWM` Norgate trial snapshot
+at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`.
+It contains 1,449 raw OHLCV rows over 483 common sessions from 2024-07-18
+through 2026-06-22. The data SHA-256 is
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993`; the
+manifest SHA-256 is
+`5c8a5f06e618aaf3ec0ee7dc58ec9f545839fbfc87dc5476d52a8b4b4602458c`.
+The immutable external directory includes raw data, conservative exclusion
+metadata, hashes, and a trial-lapse deletion marker. The source build used
+ephemeral `norgatedata==1.0.77`, without a project dependency, network data
+API, credential read, broker call, Docker query, or Git-resident data.
+
+The manifest records `NONE` only as a requested stock-price adjustment setting.
+It explicitly clips a range-padded capital-event response and observed zero
+nonzero markers, neither of which establishes adjustment semantics or absence
+of events. Claude's falsification-first verdict was `supported-with-limits`.
+Therefore r2 is only development-source evidence: all training, model, GPU,
+campaign, point-in-time, paper, ranking, and source-preference eligibility
+remain false. Preserve r1 as superseded recovery evidence rather than editing
+or deleting it. The only next semantic action is one bounded field-level probe
+that may refine conservative exclusions; it cannot promote this source.
+
+Reason: the snapshot gives Data a reproducible local source fact while keeping
+unknown corporate-action and adjustment behavior out of research conclusions.

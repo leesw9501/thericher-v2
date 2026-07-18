@@ -70,6 +70,10 @@
   58-candidate set still has only 18 common sessions because R1 binds it. Both
   remain source evidence for Data only, not a point-in-time common panel or
   GPU/model input.
+  The retained Norgate trial raw-D1 r2 snapshot is likewise development-source
+  evidence only: requested `NONE` adjustment semantics and zero observed event
+  markers remain unproven, so it does not reopen breadth, depth, ensemble, or
+  CUDA work.
 
 ## Explicit-Event Replay
 
@@ -96,6 +100,9 @@
   R2's 501-session descriptive panel and its 56-group descriptive coverage
   filter do not repair its date-less universe, while R1/R2 combined still has
   only 18 common sessions, so neither supplies breadth eligibility.
+- Keep the breadth recipe prepared, not running: finite CPU baselines plus
+  compact PyTorch MLP and TCN candidates at fixed seeds. A valid campaign
+  contract, not idle GPU capacity, is the launch condition.
 - When Data supplies one hash-bound development-training-eligible dataset and a
   frozen campaign contract, enumerate one finite breadth batch before launch:
   CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two
@@ -251,4 +258,6 @@
 plan is now closed after two strict source-validation failures with no snapshot.
 Data next prepares a minimum PIT-capable source decision before any historical
 intraday research decision. Do not rank, promote, name a winner, claim
-profitability, or start GPU training.
+profitability, or start GPU training. The newly retained Norgate raw-D1 r2
+source does not change that conclusion; its next field-level probe may improve
+event exclusions only.

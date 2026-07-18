@@ -27,6 +27,21 @@ also complete. It establishes only a local Windows/Python field-access boundary
 and a D: database update path; it does not open a provider, campaign, model, or
 paper-trading input.
 
+The first fixed-ETF trial raw-D1 source snapshot is complete at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`.
+It has 1,449 raw OHLCV rows across 483 common `SPY`/`QQQ`/`IWM` sessions from
+2024-07-18 through 2026-06-22; dataset SHA-256 is
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993` and
+manifest SHA-256 is
+`5c8a5f06e618aaf3ec0ee7dc58ec9f545839fbfc87dc5476d52a8b4b4602458c`.
+The host-only build used ephemeral `norgatedata==1.0.77`, recorded an external
+deletion marker, and explicitly clipped range-padded capital-event output.
+`NONE` is a requested query setting rather than verified adjustment semantics;
+zero observed nonzero markers does not prove that no events occurred. Claude
+returned `supported-with-limits`, so this is development-source evidence only,
+not training, model, GPU, campaign, PIT, paper, ranking, or source-preference
+evidence. Preserve r1 as superseded recovery evidence.
+
 The bounded Norgate S&P 500 membership snapshot is complete at
 `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
 It has a 541-item date-less candidate union and 266,647 sparse membership rows
@@ -114,6 +129,13 @@ observed `TOTALRETURN` default, and this one ratio transition is tenfold. These
 facts are magnitude-consistent with the documented split but do not establish
 field meaning, availability, or a general rule. The semantics branch is
 `unsupported` and closed without a setting change.
+
+The separately retained Norgate trial raw-D1 r2 snapshot is now the current
+fixed-ETF source fact. It is host-only, raw OHLCV, hash-bound, and externally
+stored, but intentionally not a `CatalogedBars` or campaign input: requested
+`NONE` adjustment and no observed event markers cannot establish adjustment or
+corporate-action semantics. Its explicit scope keeps training, model, GPU,
+PIT, paper, ranking, and source selection false.
 
 The narrow Windows-host-only Norgate raw-daily provider is complete. It accepts
 only bounded US `1d` queries with UTC-midnight labels, asks the official client
@@ -301,10 +323,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Evaluate the installed Norgate trial only through one fixed-ETF raw-D1
-   source contract. Keep it Windows-host-only, read-only, and external; do not
-   turn the result into a provider, campaign, model, or GPU input unless its
-   own bounded contract proves that narrower claim.
+1. Probe one fixed-ETF Norgate `Dividend` marker response against the retained
+   r2 session window only if it can remain host-only, read-only, bounded, and
+   nonpersistent until its response shape is understood. It may refine
+   conservative exclusion metadata, but must not establish timing, adjustment,
+   PIT, campaign, model, or GPU eligibility.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase the R1/R2
    common-session count. The audit found the R1 floor binding and 56 existing
    groups already cover R2's descriptive window.
@@ -335,6 +358,17 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   export, reusable trial artifact, provider, campaign, or Docker query path was
   created. This does not prove PIT, event lineage, long-history, or research
   eligibility.
+- Norgate fixed-ETF trial raw-D1 r2 is the authoritative retained development
+  source fact. It contains 1,449 raw OHLCV rows / 483 common sessions from
+  2024-07-18 through 2026-06-22 with dataset SHA-256
+  `a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993` and
+  manifest SHA-256
+  `5c8a5f06e618aaf3ec0ee7dc58ec9f545839fbfc87dc5476d52a8b4b4602458c`.
+  The r2 manifest has an external deletion marker, a requested `NONE` setting
+  with unverified semantics, and a clipped padded-event response. It observed
+  zero nonzero markers, which is not absence-of-events evidence. Its scope
+  explicitly forbids training, model/GPU, campaign, PIT, paper, ranking, and
+  source-preference use. The older r1 is superseded recovery evidence only.
 - Intraday: Yahoo 1-minute canonical data at
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
   `snapshot=2026-06-18\ohlcv_1m.csv.gz` contains 572,894 rows, 250 symbols,
@@ -668,9 +702,12 @@ and manifest SHA-256
 R2 alone has 501 common returned sessions, but the 58-candidate combined set
 still has only 18. The completed aggregate audit confirms that 56 existing
 groups cover R2's window and that R1 binds the combined floor, so do not pull a
-third shard merely for more common sessions. The next bounded Data task
-evaluates the installed Norgate trial's fixed-ETF raw-D1 source contract, not a
-model input. Tiingo's current
+third shard merely for more common sessions. The first Norgate fixed-ETF raw-D1
+source contract is now r2 at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`;
+it is source evidence only. The next bounded Data task may make one
+field-level, nonpersistent `Dividend` probe to refine exclusions, not a model
+input. Tiingo's current
 [terms](https://app.tiingo.com/tos/) and
 [general documentation](https://www.tiingo.com/documentation/general) permit
 the operator's private internal use but prohibit redistribution. Public Starter

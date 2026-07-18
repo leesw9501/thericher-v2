@@ -589,6 +589,22 @@ unnecessary row-level data.
 
 ## Next Objective
 
+The first fixed-ETF Norgate trial raw-D1 source snapshot is now complete at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`.
+It retains 1,449 raw OHLCV rows across 483 common sessions for `SPY`, `QQQ`,
+and `IWM`, from 2024-07-18 through 2026-06-22. Its dataset SHA-256 is
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993`; its
+manifest SHA-256 is
+`5c8a5f06e618aaf3ec0ee7dc58ec9f545839fbfc87dc5476d52a8b4b4602458c`.
+The local source build used ephemeral `norgatedata==1.0.77` through the
+already-installed Windows trial, explicitly clipped a range-padded capital-event
+response, and retained a rights/deletion marker. Claude's final verdict was
+`supported-with-limits`: `NONE` is only the requested query setting, and zero
+observed markers does not establish that no corporate events occurred. The r2
+snapshot is development-source evidence only; it is not eligible for training,
+model/GPU work, PIT, paper, ranking, or a source-preference claim. Preserve the
+earlier r1 directory as superseded recovery evidence; do not reuse it.
+
 The Norgate trial's bounded semantic branch remains `unsupported` for
 provider/campaign field meaning, and direct historical-universe enumeration is
 also `unsupported`. The distinct membership-matrix construction completed at
