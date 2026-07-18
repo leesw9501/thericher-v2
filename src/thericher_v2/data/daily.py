@@ -7,6 +7,7 @@ import gzip
 import hashlib
 import io
 import json
+import sys
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time
 from decimal import ROUND_HALF_EVEN, Decimal, InvalidOperation, localcontext
@@ -588,6 +589,11 @@ def load_cataloged_yahoo_daily_1d_bars(
     )
 
 
+_DEVELOPMENT_FEATURE_ACCESSOR_CALLER = (
+    "thericher_v2.research.development_daily_features"
+)
+
+
 def load_broad_daily_development_universe() -> DevelopmentDailyUniverse:
     """Load the one predeclared Yahoo snapshot for retrospective development only.
 
@@ -596,6 +602,37 @@ def load_broad_daily_development_universe() -> DevelopmentDailyUniverse:
     claim.
     """
 
+    universe, _ = _load_broad_daily_development_universe_data()
+    return universe
+
+
+def _reverify_broad_daily_development_feature_input(
+    universe: DevelopmentDailyUniverse,
+) -> tuple[tuple[Bar, ...], ...]:
+    """Return re-attested bars only to the bounded feature materializer."""
+
+    caller_module = sys._getframe(1).f_globals.get("__name__")
+    if caller_module != _DEVELOPMENT_FEATURE_ACCESSOR_CALLER:
+        raise PermissionError("development feature input is restricted to its materializer")
+    if not isinstance(universe, DevelopmentDailyUniverse):
+        raise TypeError("development feature input requires DevelopmentDailyUniverse")
+    reattested_universe, streams = _load_broad_daily_development_universe_data()
+    if reattested_universe != universe:
+        raise ValueError("development feature input does not match re-attested source")
+    if any(not bar.complete for stream in streams for bar in stream):
+        raise ValueError("development feature input requires completed bars")
+    return streams
+
+
+def _load_broad_daily_development_universe_data(
+) -> tuple[DevelopmentDailyUniverse, tuple[tuple[Bar, ...], ...]]:
+    """Re-attest and parse the fixed source without exposing its raw bars publicly."""
+
+    caller_module = sys._getframe(1).f_globals.get("__name__")
+    if caller_module != __name__:
+        raise PermissionError(
+            "broad daily raw input is restricted to Data-owned loaders"
+        )
     reference = BROAD_DAILY_DEVELOPMENT_UNIVERSE
     _validate_broad_daily_development_reference(reference)
     source_path = reference.snapshot_path
@@ -750,7 +787,7 @@ def load_broad_daily_development_universe() -> DevelopmentDailyUniverse:
             raise ValueError(
                 "broad daily development symbols must share identical sessions"
             )
-    return DevelopmentDailyUniverse(
+    universe = DevelopmentDailyUniverse(
         reference=reference,
         streams=tuple(
             DevelopmentDailyStream(
@@ -765,6 +802,7 @@ def load_broad_daily_development_universe() -> DevelopmentDailyUniverse:
             for symbol in reference.symbols
         ),
     )
+    return universe, tuple(tuple(bars_by_symbol[symbol]) for symbol in reference.symbols)
 
 
 def load_fixed_etf_daily_factor_change_dates(

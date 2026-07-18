@@ -15,8 +15,9 @@
   zero training, 36 local-paper cells, and the same sticky `unsupported`
   verdict. It is non-independent because r2 fixed the session calendar.
 - Data has pinned a separate broad-Yahoo development-only ETF wrapper. It is
-  not campaign-ready and cannot justify model training, ranking, promotion, or
-  any profitability claim.
+  not campaign-ready and now feeds one small, re-attested, in-memory feature
+  materializer. It cannot justify model training, ranking, promotion, or any
+  profitability claim.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -48,10 +49,11 @@
 
 ## Current Objective
 
-- The fixed-ETF source-sensitivity question remains unsupported. The new broad
-  ETF wrapper can support only a pure, read-only feature-materialization check;
-  it cannot open GPU training, a campaign, paper replay, ranking, promotion, or
-  a sealed holdout.
+- The fixed-ETF source-sensitivity question remains unsupported. The broad ETF
+  wrapper now supplies descriptive features only; the next bounded step may
+  define one clearly future-available outcome while keeping all output
+  development-only and non-campaign. It cannot open GPU training, paper replay,
+  ranking, promotion, or a sealed holdout.
 
 ## Explicit-Event Replay
 
@@ -72,9 +74,9 @@
 
 ## Breadth Queue
 
-- Build one small, deterministic, no-lookahead feature materializer that takes
-  the development-only wrapper as a distinct type. It must remain descriptive
-  and cannot create labels, decisions, orders, candidates, or a campaign.
+- Define one small, deterministic, one-observed-session outcome materializer
+  paired with the development-only feature result. It must preserve the source
+  limitations and cannot train, decide, order, rank, select, or form a campaign.
 
 ## Depth Queue
 
@@ -117,6 +119,11 @@
   survivor-selected; PIT membership, delistings, and raw corporate-action
   semantics are unproven. It returns a wrapper rather than a campaign-ready
   `CatalogedBars` tuple, so Research must not bypass that boundary.
+- Its first feature materializer emits only in-memory rows after completed
+  session close: five-session and one-session raw-close returns, same-session
+  high/low range, and one-session volume change. Data re-attests the fixed gzip
+  and manifest for each call, its raw parser is restricted to Data-module
+  callers, and no feature can read a later bar.
 
 ## Recovery
 
@@ -177,7 +184,8 @@
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
-  source check. The next bounded research step is a pure no-lookahead feature
-  materializer for the separate broad-Yahoo wrapper. Do not rank, promote, name
-  a winner, claim profitability, start GPU training, or connect it to a
-  campaign or paper execution.
+  source check. The broad-Yahoo feature materializer is complete and remains
+  descriptive. The next bounded research step is one development-only,
+  one-observed-session outcome definition; do not rank, promote, name a winner,
+  claim profitability, start GPU training, or connect it to campaign or paper
+  execution.

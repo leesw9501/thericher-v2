@@ -1221,3 +1221,20 @@ without pretending that current screener membership represents historical
 membership. The narrow wrapper preserves byte lineage and prevents accidental
 direct use by existing campaign APIs without adding a provider framework,
 registry, artifact family, scheduler, or data gate.
+
+## 2026-07-18 - Development-only daily features stay behind Data reattestation
+
+Decision: the broad-Yahoo wrapper may feed exactly one in-memory Engine feature
+materializer through a Data-owned reattestation path. The raw parser accepts
+only Data-module callers; the materializer is the sole allowlisted external
+consumer. It returns five-session and one-session raw-close returns,
+same-session high/low range, and one-session volume change after completed
+session close, preserving the source wrapper, hash, and limitations. It cannot
+create labels, scores, candidates, artifacts, campaign inputs, paper orders, or
+profitability claims.
+
+Reason: that makes an exploratory feature substrate reproducible and
+no-lookahead without treating a survivor-selected, raw-corporate-action-unknown
+source as execution or model-selection evidence. Tests cover chronological
+alignment, immutable result metadata, future OHLCV isolation, source tampering,
+and attempted `CatalogedBars` or direct raw-parser bypasses.

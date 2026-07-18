@@ -76,6 +76,8 @@ The repository already contains:
 - stable training-readiness catalogs and byte-verified `CatalogedBars`,
 - a static hash-bound broad-daily ETF wrapper that is intentionally not a
   campaign-ready input,
+- one Data-re-attested, in-memory no-lookahead daily feature materializer for
+  that separate development-only wrapper,
 - deterministic backtest and bounded validation paths,
 - forward campaign contracts with target timing, purge/embargo, costs, and
   durable local-paper replay evidence,
@@ -129,6 +131,14 @@ It returns the common 6,555-session window from `2000-05-26` through
 reference is inception-truncated and survivor-selected; point-in-time
 membership, delisting coverage, and raw corporate-action semantics remain
 unproven.
+
+The wrapper's first consumer is a small in-memory feature materializer. For
+each completed session it emits five-session and one-session raw-close returns,
+same-session high/low range, and one-session volume change only after Data
+re-attests the fixed gzip and manifest. Its first real-data smoke created
+19,650 rows from `2000-06-05` through `2026-06-22`, ordered by session then
+`SPY`, `QQQ`, and `IWM`. It preserves the original source hash and limitations;
+it has no label, score, decision, artifact, campaign adapter, or trading use.
 
 The campaign-ready fixed ETF subset is:
 
@@ -378,9 +388,9 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks Engine Research for one small, deterministic,
-no-lookahead feature materializer over the separate development-only ETF
-wrapper. It must not train, rank, campaign, paper trade, or claim profitability.
-KIS remains failed closed pending the non-secret pairing check and a separately
+`NEXT_CODEX_GOAL.md` now asks Engine Research and Data for one small,
+development-only outcome materializer paired with the separate ETF features.
+It must not train, rank, campaign, paper trade, or claim profitability. KIS
+remains failed closed pending the non-secret pairing check and a separately
 authorized future probe. The KIS capital envelope, paid data, order submission,
 and live capital remain separate future decisions.

@@ -7,6 +7,8 @@ loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
 three fixed instruments. The broad Yahoo daily snapshot now also has one
 hash-bound, retrospective-only `SPY`/`QQQ`/`IWM` development-universe wrapper.
+Its first consumer is a Data-re-attested, in-memory Engine feature materializer;
+raw bars remain unavailable at the public wrapper boundary.
 
 ## Engine Loop
 
@@ -41,16 +43,18 @@ hash-bound, retrospective-only `SPY`/`QQQ`/`IWM` development-universe wrapper.
 
 ## Current Objective
 
-The broad Yahoo daily suitability work is complete. Its static wrapper pins the
-`2026-06-23` gzip and manifest and exposes the common `SPY`/`QQQ`/`IWM` session
-window only behind a development-only type. It is not point-in-time, training,
-campaign, paper-trading, ranking, or holdout evidence.
+The broad Yahoo daily suitability work and its first feature consumer are
+complete. The static wrapper pins the `2026-06-23` gzip and manifest, exposes
+the common `SPY`/`QQQ`/`IWM` session window only behind a development-only type,
+and re-attests bytes before the one allowlisted Engine materializer receives
+raw bars. It is not point-in-time, campaign, paper-trading, ranking, or
+holdout evidence.
 
 ## Ready Queue
 
-1. Support a bounded, read-only Engine feature-materialization check over the
-   existing development-only ETF wrapper. Do not acquire data or expand its
-   universe.
+1. Support a bounded, read-only Engine outcome-materialization check over the
+   existing development-only ETF wrapper without widening its raw-bar access.
+   Do not acquire data or expand its universe.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -256,7 +260,10 @@ campaign, paper-trading, ranking, or holdout evidence.
 ## Next Handoff
 
 The broad Yahoo snapshot is usable only as the pinned, static development-only
-ETF wrapper. Do not widen symbols, alter `2000-05-26` common-session start, or
-unwrap it into a campaign/local-paper path. A future universe-wide research
-claim still needs PIT membership, delistings, and corporate-action evidence; no
-operator data action is needed for the next read-only feature step.
+ETF wrapper. Its feature materializer re-attests the gzip and manifest and
+accepts only `SPY`/`QQQ`/`IWM` raw bars internally; external callers cannot
+retrieve the parser result. Do not widen symbols, alter `2000-05-26`
+common-session start, or unwrap it into a campaign/local-paper path. A future
+universe-wide research claim still needs PIT membership, delistings, and
+corporate-action evidence; no operator data action is needed for the next
+read-only outcome step.
