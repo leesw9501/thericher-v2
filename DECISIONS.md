@@ -1619,3 +1619,32 @@ Reason: a minimal raw-D1 seam is needed to test the installed trial without
 turning proprietary local data into a Docker bridge or a prematurely promoted
 research source. A later historical-universe question must be its own bounded
 contract before any extraction or model work.
+
+## 2026-07-19 - Norgate has no direct historical-universe list API
+
+Decision: close the bounded Norgate direct-enumeration branch as
+`unsupported`. Official package documentation describes
+`index_constituent_timeseries(symbol, indexname, ...)` as a per-symbol
+membership series, while `watchlist_symbols(watchlistname)` and
+`database_symbols(databasename)` have no as-of parameter. Local
+`norgatedata==1.0.77` signatures match those shapes.
+
+Two permitted in-memory host calls corroborated the contract without retaining
+source data: `S&P 500 Current & Past` produced a 541-item list with no as-of
+input, and a bounded PLTR membership request for 2024-09-23 through 2024-09-24
+produced a two-row `Date`/`Index Constituent` recarray inside the requested
+window. This validates only list-versus-per-symbol API shape. It does not prove
+membership publication time, complete historical constituents, delisting
+coverage, exact effective timestamps, a direct historical-list source, or
+model/PIT eligibility.
+
+Claude returned `unsupported` for the direct-list claim; the independent Data
+review agreed on the function shapes. Do not add a scraper, export, inferred
+universe, or convenience adapter to evade this conclusion. A future fixed
+candidate-union plus per-symbol membership **matrix** is a distinct source
+construction and needs its own bounded contract, source hashes, retention
+rules, and leakage review.
+
+Reason: confusing a union list with an as-of universe recreates survivorship
+bias at the data boundary. Preserving the two documented primitives separately
+leaves a testable path without pretending the vendor exposes a stronger API.

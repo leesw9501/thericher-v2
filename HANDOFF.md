@@ -346,6 +346,18 @@ label convention, not a Norgate source-timestamp claim. This creates neither a
 catalog nor campaign/model/paper eligibility, and does not reopen the closed
 field-semantics branch.
 
+The next bounded Norgate audit closed direct historical-universe enumeration as
+`unsupported`. The official Python API documents
+`index_constituent_timeseries(symbol, indexname, ...)` as a per-symbol boolean
+series; `watchlist_symbols` and `database_symbols` have no as-of-date argument.
+Two in-memory host probes matched that shape: `S&P 500 Current & Past` returned
+a 541-item candidate list without an as-of input, while one bounded PLTR
+membership call returned a two-row `Date`/`Index Constituent` recarray within
+its requested two-day window. No symbols, values, rows, cache, artifact, or
+dataset were retained. A later matrix may combine these documented source facts
+only under a new explicit contract; it must not be described as a direct
+historical-list API or as publication-time/PIT proof.
+
 ## Research Reality
 
 The fixed RAW D1 campaign uses the latest 896 common sessions from 2022-11-22
@@ -539,9 +551,9 @@ unnecessary row-level data.
 ## Next Objective
 
 The Norgate trial's bounded semantic branch remains `unsupported` for
-provider/campaign field meaning. The next objective is a narrow,
-Claude-reviewed, host-only historical-universe capability audit: determine
-whether the existing trial can enumerate a date-specific US universe without
-creating a snapshot or assuming PIT semantics. It may establish only API
-capability limits; it cannot open a campaign, GPU job, purchase recommendation,
-or research promotion.
+provider/campaign field meaning, and direct historical-universe enumeration is
+also `unsupported`. The next objective is a narrow, Claude-reviewed,
+host-only membership-matrix snapshot for the fixed `S&P 500 Current & Past`
+candidate union. It may retain only explicit per-symbol/date membership facts
+outside Git with deletion/provenance evidence. It cannot open a campaign, GPU
+job, purchase recommendation, or research promotion.

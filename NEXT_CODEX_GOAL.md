@@ -2,62 +2,65 @@
 
 ## Objective
 
-Establish a bounded, host-only Norgate historical-universe capability contract.
+Build one bounded, external-only Norgate membership-matrix snapshot for the
+fixed `S&P 500 Current & Past` candidate union.
 
-Determine whether the existing Norgate US Stocks Platinum trial can enumerate a
-date-specific US equity universe for a later data contract, without creating a
-dataset or inferring point-in-time semantics from a convenient API shape.
-
-This advances data collection toward a survivorship-aware development source.
-It is not bulk extraction, a data snapshot, a campaign, model training, GPU
-work, paper trading, or a live step.
+The snapshot must preserve the two documented source facts separately: a
+date-less candidate union and per-symbol/date membership series. It may support
+a later survivorship-aware data contract, but it is not a direct historical
+universe list, publication-time proof, campaign input, or model-training input.
 
 ## Ownership
 
-- **Data Agent:** owns public API evidence, a bounded local capability probe,
-  and the resulting limits.
-- **Review/Claude:** perform a falsification-first data-contract drift-check
-  before any local query. Do not receive rows, credentials, or trial data.
-- **Engine Research Agent:** remains an observer; it must not consume the
-  result as a model or campaign input.
+- **Data Agent:** owns the host-only builder, external snapshot, provenance,
+  storage checks, and data-contract limits.
+- **Review/Claude:** challenge the source construction before implementation:
+  candidate completeness, membership timestamp use, date bounds, leakage,
+  retention, and failure behavior.
+- **Engine Research Agent:** remains an observer. It must not consume the
+  matrix as `CatalogedBars`, a model input, a campaign universe, or GPU work.
 
 ## Boundaries
 
-- Use only the existing Windows Norgate trial and its official Python package.
-  Do not read `.env`, credentials, KIS data, or secret-like files.
-- Do not change an NDU, Python-package, global, or user configuration. Do not
-  install a permanent project dependency; an ephemeral official package overlay
-  is allowed only for the bounded host probe.
-- Keep all trial output in process: no export, cache, artifact, manifest,
-  dataset, Git data, Docker mount/query path, or raw rows/symbol lists in
-  logs or Markdown.
-- Use at most two bounded local data-plane calls after public documentation and
-  runtime function-signature inspection identify the most direct candidate.
-- Report only function identity, parameter shape, requested as-of dates,
-  result shape/count, and validation outcome. Do not claim source publication
-  time, historical constituent completeness, delisting coverage, exact
-  membership semantics, or model eligibility unless the source itself binds it.
-- Do not create `CatalogedBars`, a provider for a dynamic universe, a campaign,
-  GPU job, model, paper order, execution path, or public service. Preserve the
-  retained C: copy and keep `THERICHER_MODE=off`.
+- Use only the already observed `S&P 500 Current & Past` union (expected count
+  541) and official `norgatedata` membership calls on the Windows host. Do not
+  use Docker, KIS, `.env`, credentials, or secret-like files.
+- Use the exact fixed candidate union once, deterministic candidate ordering,
+  `PaddingType.NONE`, and one explicitly recorded actual trial window. If the
+  candidate count changes, a response is malformed/unordered, or a requested
+  membership series is missing, stop without publishing a partial snapshot.
+- Store data and its manifest only under `D:\market_data`; never Git, C:,
+  Docker, or `D:\thericher-v2\model-artifacts`. Preserve the retained C: NDU
+  copy. Confirm D: remains above the 20% warning and 15% hard floor first.
+- Persist only the minimum membership matrix and its external manifest/hash
+  lineage. Do not store price, volume, corporate-action, account, or raw
+  package logs. The manifest must include a deletion/retention scope for the
+  Norgate EULA and must not contain raw symbols or rows in Git documentation.
+- Do not create `CatalogedBars`, a general provider, a campaign, strategy,
+  model, GPU job, paper order, execution path, dashboard, or public service.
+- Do not call the result a direct historical-universe list or infer membership
+  publication time, constituent completeness beyond the fixed union, delisting
+  coverage, or model eligibility.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first drift-check before editing or
-   running a data-plane probe. State the target claim, strongest kill test,
-   survivorship/PIT risks, two-call cap, and no-persistence rule.
-2. Consult official Norgate public package documentation and inspect the local
-   package's callable surface/signatures without printing data. Identify the
-   single most direct documented route, if any, to enumerate an index universe
-   at an explicit historical date.
-3. Run no more than two tight, in-memory host queries. Validate that returned
-   results honor the requested as-of boundary and distinguish a historical
-   universe enumeration from a current-symbol list or per-symbol boolean.
-4. Record the result as `supported-with-limits`, `uncertain`, or `unsupported`.
-   If a historical list cannot be proven, stop the branch rather than add a
-   workaround, scraper, export, or inferred universe.
-5. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md` only with durable
-   capability facts, then replace this goal.
+1. Ask Claude for a concise falsification-first drift-check before edits or
+   data acquisition. State the target source contract, candidate-count stop
+   rule, malformed-response stop rule, membership-date limitations, retention
+   obligation, and the fact that a union plus matrix is not a direct list.
+2. Implement the smallest host-only builder and mock-based tests. It must make
+   a deterministic one-time union query and bounded per-symbol membership
+   queries, write only atomically outside Git after all validation succeeds,
+   and leave no partial publication on failure.
+3. Run the builder once against the existing trial only if the preflight and
+   tests pass. Report just snapshot path, candidate count, actual date window,
+   membership row count, hashes, validation outcome, package version, and disk
+   state. Do not print symbols or raw membership rows.
+4. Add a small external deletion instruction/marker with the snapshot so that
+   Norgate-origin data can be removed if the trial/subscription ends. Do not
+   add a recurring report or retention service.
+5. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`, replace this
+   goal, then continue only if no true approval boundary remains.
 
 ## Verification
 
@@ -69,9 +72,9 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the Claude verdict, public source used, focused probe summary, and any
-operator data help actually required.
+Report the Claude verdict, focused builder test, external snapshot summary, and
+any genuine operator data help required.
 
 ## Suggested Commit Message
 
-`Audit Norgate historical universe capability`
+`Add Norgate membership matrix snapshot`

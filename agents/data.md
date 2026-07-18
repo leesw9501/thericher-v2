@@ -88,10 +88,20 @@ only daily OHLCV into `Bar` values in memory. An ephemeral
 package is not a project dependency, no trial rows were persisted, and the
 adapter is not a catalog, Docker bridge, campaign, or research-data input.
 
-The next ready Data item is a bounded historical-universe capability audit. It
-must establish only whether the existing Norgate trial can enumerate a
-date-specific US universe under a later data contract; it must not create a
-snapshot, campaign, or inferred point-in-time claim.
+The bounded historical-universe capability audit is complete and direct
+date-specific enumeration is `unsupported`. Official documentation and the
+local `norgatedata==1.0.77` signatures show that `watchlist_symbols` and
+`database_symbols` have no as-of parameter, while
+`index_constituent_timeseries` requires an already-known symbol. Its two
+in-memory host probes returned a 541-item `S&P 500 Current & Past` candidate
+list with no requested date, then a two-row bounded per-symbol membership
+recarray with only `Date` and `Index Constituent` fields. No symbols, values,
+rows, cache, artifact, or dataset were retained. That validates API shape, not
+membership availability or a PIT universe.
+
+The next ready Data item is a separately contracted membership-matrix snapshot
+for that fixed candidate union. It must preserve source membership facts per
+symbol/date rather than relabel the union as a direct historical universe.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -246,10 +256,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. After a Claude data-contract drift-check, run one bounded Windows-host-only
-   Norgate historical-universe capability audit. Keep all trial data in memory:
-   no cache/export/artifact, Docker bridge, campaign, or `CatalogedBars`
-   promotion.
+1. After a Claude data-contract drift-check, build at most one external-only
+   Norgate `S&P 500 Current & Past` membership-matrix snapshot. It must use the
+   fixed candidate union plus explicit per-symbol membership series, retain a
+   hash manifest outside Git, and remain outside Docker, `CatalogedBars`,
+   campaign, and model inputs.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
@@ -559,5 +570,6 @@ local compatibility evidence. Keep its data outside Git, preserve the retained
 C: copy, and do not interpret the D: mount as a licensed Docker database path.
 The adapter's UTC-midnight session label is an engine convention, not a source
 timestamp claim; it does not resolve provider-field semantics or open a data
-snapshot, campaign, model, or purchase recommendation. The next Norgate work
-is a bounded historical-universe capability audit, not bulk extraction.
+snapshot, campaign, model, or purchase recommendation. Direct historical
+universe enumeration is closed as `unsupported`: a future snapshot must retain
+the candidate union and per-symbol membership matrix as separate source facts.
