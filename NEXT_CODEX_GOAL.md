@@ -2,53 +2,59 @@
 
 ## Objective
 
-Diagnose the virtual-paper overseas balance failure using only public official
-documentation and the existing redacted evidence.
+Advance data collection by finding and, only when eligible, capturing one
+bounded no-auth US-equity data pilot that improves the next research-data
+frontier.
 
-This advances paper-trading readiness without touching an account or making a
-second probe.
+The KIS execution lane remains failed closed and does not block this independent
+Data-lane objective.
 
 ## Required First Reads
 
 Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`, `VISION.md`,
 `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`,
-and the Data, Engine Research, Execution, and Review stateboards.
+the Data, Engine Research, and Execution stateboards, plus the invoked Review
+checkpoint.
 
 ## Authority And Boundaries
 
-- Do not read `.env`, credentials, account identifiers, or `KIS_LIVE_*`.
-- Do not call a KIS API, submit, cancel, modify, or query an order/account, or
-  change `THERICHER_MODE`.
-- Public official KIS documentation and official GitHub examples may be read.
-- Preserve the two immutable redacted failure artifacts. The newest safe facts
-  are `balance_rejected`, `balance`, `VTTS3012R`, and HTTP `500`; do not infer a
-  root cause from them or report raw response content.
-- Do not propose paper capital, execute a new probe, enable live behavior, or
-  add a broker framework, worker, scheduler, dashboard, report/gate family,
-  market-data change, or model work.
+- Do not read `.env`, use `TIINGO_API_TOKEN`, call KIS, or access an account.
+- Keep all acquired bytes under `D:\market_data`, never Git. Preserve the 20%
+  warning and 15% hard free-space floor on `D:`.
+- Consider only sources that are no-auth, no-cost, lawful for this private use,
+  and whose current terms and provenance are sufficiently clear. Do not bypass a
+  login, paywall, rate limit, or manual agreement.
+- A pilot must increase a named coverage or provenance capability; do not
+  duplicate existing fixed-ETF bytes merely to make a new artifact.
+- Do not mark any new data ranking or sealed-holdout eligible without evidence,
+  train a model, use GPU, alter KIS behavior, or add a scheduler, dashboard,
+  report/gate family, or broad provider framework.
 
 ## Required Work
 
-1. Execution compares the fixed virtual balance host, GET path, `VTTS3012R`,
-   query fields, US-exchange coverage, continuation behavior, and 8-2 account
-   product handling against current official public sources.
-2. If a documented mismatch is proven, make only the smallest isolated
-   read-only correction with fake-transport tests. Otherwise, write a ranked
-   non-secret hypothesis list and the exact operator pairing check that would
-   distinguish it; do not make another KIS call.
-3. Data and Review independently confirm no market-data, credential, or
-   process-sprawl change leaked into the diagnosis. Refresh stateboards,
-   `HANDOFF.md`, and this next single goal; verify, commit, and push.
+1. Data performs a targeted metadata inventory of `D:\market_data\pit_sources`
+   and the known canonical roots. Avoid an expensive full recursive scan.
+2. Assess at most two official/no-auth source candidates against exact coverage,
+   adjustment, historical-universe, rights, and storage facts. Engine Research
+   states the smallest additional coverage that would unlock a falsifiable next
+   data or model question.
+3. If one candidate is eligible and materially useful, acquire one narrow,
+   immutable pilot outside Git with raw bytes, a concise manifest, and a
+   provenance/eligibility result. Otherwise record the bounded reason no pilot
+   was acquired and stop pursuing that source after two automated failures.
+4. Data and Review independently check source boundaries and simplification.
+   Refresh the Data stateboard, `HANDOFF.md`, and this single next goal; verify,
+   commit, and push.
+
+Ask Claude for a short drift-check only before a provider-contract or runtime
+change. Do not use Claude for credentials, raw market data, or source payloads.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
-`docker compose --env-file .env.example config --quiet`.
-
-Report official sources, the exact proven mismatch or ranked remaining
-hypotheses, tests, commit/push result, intentionally omitted work, and the next
-recommended goal.
+`docker compose --env-file .env.example config --quiet`. Report any focused
+inventory or acquisition command separately.
 
 ## Suggested Commit Message
 
-`Diagnose KIS paper balance access`
+`Triage next US equity data source`

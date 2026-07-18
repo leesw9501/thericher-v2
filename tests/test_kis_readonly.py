@@ -238,7 +238,7 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
     }
     assert transport.requests[1].query["OVRS_EXCG_CD"] == "NASD"
     assert transport.requests[1].headers["tr_cont"] == ""
-    assert all("tr_cont" not in request.headers for request in transport.requests[2:])
+    assert all(request.headers["tr_cont"] == "" for request in transport.requests[2:])
     assert snapshot.identity.masked_account == "****5678-**"
     assert snapshot.cash.available_cash == Decimal("1200.50")
     assert snapshot.orderable_funds.orderable_funds == Decimal("1199.75")

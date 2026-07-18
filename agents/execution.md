@@ -82,12 +82,22 @@
   a rejection; it never persists response text or response-derived codes.
 - The existing `open_orders_rejected` evidence has no response status or server
   detail, so this is a spec alignment rather than a proven root-cause fix.
+- The current official `inquire-balance` sample confirms the virtual host, GET
+  path, `VTTS3012R`, 8-2 account split, mock `NASD`/`NYSE`/`AMEX` coverage,
+  query fields, and continuation shape. Its shared helper always sends
+  `tr_cont`, including `""` initially. The reader now does that for every
+  allowlisted GET; fake-transport tests prove header emission only. This closes
+  a documented deviation, not the balance HTTP `500` cause, and no post-change
+  probe was made.
+- Data and Review found no market-data, credential, artifact, or process-sprawl
+  change in this diagnosis. Claude's `supported-with-limits` review agrees that
+  no causal or recovery-success claim is justified.
 
 ## Current Objective
 
-- Diagnose the virtual-paper balance HTTP 500 against public official sources
-  and safe existing evidence only. Do not read `.env`, call KIS, submit,
-  modify, cancel, or retry.
+- Keep KIS failed closed while the Data lane advances. Do not read `.env`, call
+  KIS, submit, modify, cancel, or retry. A later verification requires both the
+  non-secret pairing confirmation below and separate one-time authority.
 
 ## Recovery
 
@@ -98,26 +108,30 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
-- Preserve both failure artifacts. The next step is public-document diagnosis;
-  HTTP `500` alone does not establish a TR, account-product, funding, or sandbox
-  cause. Any future probe requires a separate bounded decision.
+- Preserve both failure artifacts. HTTP `500` alone does not establish a TR,
+  account-product, funding, or sandbox cause. The documented `tr_cont` header
+  deviation is corrected but unproven as a cause. Any future probe requires a
+  separately authorized verification path, never an automatic retry.
 
 ## Ready Queue
 
-1. Compare the fixed balance reader against current official public sources and
-   record only a ranked, non-secret hypothesis list plus one proposed next
-   probe; do not make that probe in the diagnosis task.
-2. After a complete typed snapshot exists, reconcile it without submit/cancel
+1. Obtain only yes/no confirmation that the app is a distinct virtual-paper
+   app, the virtual securities account and Open API service are active, and the
+   configured 8-2 pair belongs to that virtual account. Do not request values.
+2. If all three are confirmed, draft a separate one-time read-only verification
+   request; do not schedule or make a probe.
+3. After a complete typed snapshot exists, reconcile it without submit/cancel
    behavior and then propose a paper capital envelope for operator approval.
-3. Keep pure risk integration and append-only execution events as later bounded
+4. Keep pure risk integration and append-only execution events as later bounded
    steps after capital and submit authority exist.
 
 ## Operator Help
 
-- No capital decision is ready. The next diagnosis may ask the operator only to
-  verify, without sharing values, that the virtual Open API app is paired with
-  the intended overseas-stock paper account and its product suffix. The paper
-  capital envelope remains a later decision after successful reconciliation.
+- No capital decision is ready. Reply only yes/no, without sharing values: is
+  the app a dedicated virtual-paper app; are the virtual securities account and
+  Open API service active; and does the configured 8-2 account/product pair
+  belong to that virtual account rather than a real account? The paper capital
+  envelope remains a later decision after successful reconciliation.
 
 ## Must Not
 

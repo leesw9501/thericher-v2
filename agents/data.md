@@ -220,5 +220,6 @@ no-retraining replay only; do not use it for ranking or sealed evidence.
 Data independently confirmed that r3 attribution reads the pinned r2 and Tiingo
 lineage only: all IDs and dataset/manifest hashes match both immutable
 manifests, and Tiingo's own `r2_lineage` matches r2. Do not rewrite either
-snapshot, acquire data, or interpret adjusted fields. The next KIS balance
-diagnosis has no Data action unless it discovers a concrete market-data need.
+snapshot or interpret adjusted fields. The next goal is a bounded no-auth source
+triage for the next research-data frontier; it must stay outside Git and use no
+credentials or KIS access.

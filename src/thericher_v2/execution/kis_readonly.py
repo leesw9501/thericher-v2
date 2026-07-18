@@ -711,9 +711,8 @@ class KisPaperReadOnlyClient:
             "appsecret": self._config.app_secret,
             "tr_id": endpoint.tr_id,
             "custtype": "P",
+            "tr_cont": continuation_header,
         }
-        if continuation_header or endpoint == KIS_PAPER_OPEN_ORDERS_ENDPOINT:
-            headers["tr_cont"] = continuation_header
         return self._transport.request(
             KisHttpRequest(
                 method="GET",

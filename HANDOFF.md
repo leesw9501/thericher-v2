@@ -48,10 +48,10 @@ success metrics.
 
 ## Current Boundaries
 
-- The next bounded KIS diagnosis reads no `.env`, makes no KIS API call, and
-  accesses no account. It may consult public official documentation only.
-  Order submit/cancel, paper capital, `KIS_LIVE_*`, live behavior, and mode
-  changes remain disabled.
+- KIS remains failed closed. The current Data goal reads no `.env`, makes no KIS
+  API call, and accesses no account. Any later KIS re-probe needs non-secret
+  pairing confirmation and separate one-time authority. Order submit/cancel,
+  paper capital, `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
@@ -246,9 +246,9 @@ and its shared
 confirmed the pinned host, GET path, virtual `VTTS3018R`, 8-2 account shape,
 query fields, and `M`/`F` to `N` continuation. It also documented that one
 `NASD` query is US-wide. The reader now issues that single query, accepts its
-`NASD`/`NYSE`/`AMEX` rows, and sends the documented empty initial `tr_cont` only
-for this endpoint. It records only fixed endpoint/TR ID and HTTP status on a
-future rejection, never response text or response-derived codes. The prior
+`NASD`/`NYSE`/`AMEX` rows, and sends the documented empty initial `tr_cont` for
+every fixed read-only GET. It records only fixed endpoint/TR ID and HTTP status
+on a future rejection, never response text or response-derived codes. The prior
 generic failure cannot prove a root cause.
 
 The one approved post-diagnosis retry is complete and failed closed at the
@@ -261,6 +261,24 @@ there is no account snapshot, response text, or response-derived code. The
 later failure means open orders did not block this one run, not that the earlier
 open-order issue is resolved. Do not retry automatically or infer a cause from
 the HTTP status alone.
+
+The current official
+[inquire-balance sample](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_balance/inquire_balance.py)
+confirms the virtual host, GET path, `VTTS3012R`, 8-2 account split,
+`NASD`/`NYSE`/`AMEX` mock coverage, query fields, and `M`/`F` to `N`
+continuation. The shared official helper sends `tr_cont`, including `""` on an
+initial GET. The client had omitted that header for balance and orderable-funds
+reads; it now emits it for every fixed read-only GET and has fake-transport
+coverage. This removes one documented deviation; it does not explain, resolve,
+or establish a cause for the HTTP `500`, and no post-change probe was run.
+
+The remaining first discriminator is non-secret operator confirmation that the
+separate virtual app, virtual securities account, and its 8-2 account/product
+pair are active and matched. If that is confirmed, a separately authorized
+one-time read-only probe can distinguish the corrected request from an
+unavailable or unsupported virtual service. Keep only fixed endpoint/TR ID/HTTP
+status metadata on any future failure, never response text or response-derived
+codes.
 
 KIS paper is an early execution milestone, not a reward for model profitability.
 After the approved read-only discovery reconciles buying power, Codex proposes a
@@ -314,7 +332,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now diagnoses the virtual-paper balance HTTP 500 from
-public official sources and safe existing evidence only. The KIS capital
-envelope is not ready until a future complete read-only reconciliation exists.
-Paid data, order submission, and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now advances the Data lane with a bounded no-auth source
+triage for the next research-data frontier. KIS remains failed closed pending
+the non-secret pairing check and a separately authorized future probe. The KIS
+capital envelope, paid data, order submission, and live capital remain separate
+future decisions.
