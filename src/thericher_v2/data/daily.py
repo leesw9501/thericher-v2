@@ -7,6 +7,7 @@ import gzip
 import hashlib
 import io
 import json
+from dataclasses import dataclass
 from datetime import UTC, date, datetime, time
 from decimal import ROUND_HALF_EVEN, Decimal, InvalidOperation, localcontext
 from pathlib import Path, PurePosixPath
@@ -74,6 +75,75 @@ R2_SUBSET_COLUMNS = (
     "asset_type",
     "yahoo_symbol",
     "source",
+)
+
+
+@dataclass(frozen=True)
+class DevelopmentDailyUniverseRef:
+    """One immutable, retrospective-only reference to a Yahoo daily snapshot."""
+
+    dataset_id: str
+    snapshot: str
+    snapshot_path: Path
+    manifest_path: Path
+    dataset_hash: str
+    manifest_hash: str
+    snapshot_created_at_utc: str
+    common_session_start: date
+    symbols: tuple[str, ...]
+    source_name: str
+    retrospective_development_replay_only: bool
+    development_ref_universe_is_inception_truncated_and_survivor_selected: bool
+    point_in_time_eligible: bool
+    survivorship_bias_risk: str
+    delisting_coverage: str
+    corporate_action_policy: str
+
+
+@dataclass(frozen=True)
+class DevelopmentDailyStream:
+    """A non-campaign summary of one development-only daily stream."""
+
+    symbol: str
+    dataset_id: str
+    dataset_hash: str
+    source_path: Path
+    session_count: int
+    first_start_ts: datetime
+    last_start_ts: datetime
+
+
+@dataclass(frozen=True)
+class DevelopmentDailyUniverse:
+    """Hash-bound descriptive streams retained behind a development boundary."""
+
+    reference: DevelopmentDailyUniverseRef
+    streams: tuple[DevelopmentDailyStream, ...]
+
+
+BROAD_DAILY_DEVELOPMENT_UNIVERSE = DevelopmentDailyUniverseRef(
+    dataset_id="us_equities.yahoo_daily_universe.1d.snapshot=2026-06-23",
+    snapshot="2026-06-23",
+    snapshot_path=Path(
+        "D:/market_data/us_equities/yahoo_daily_universe/canonical/ohlcv_daily/"
+        "snapshot=2026-06-23/ohlcv_daily.csv.gz"
+    ),
+    manifest_path=Path(
+        "D:/market_data/us_equities/yahoo_daily_universe/manifests/"
+        "yahoo_daily_universe_snapshot=2026-06-23.json"
+    ),
+    dataset_hash="sha256:1690a766a820b3e6385c76605c7e02548ab0e428148c93f85388c7a6a8b065b4",
+    manifest_hash="sha256:642eff01919da260b388a66303db1954c68d7cd6ceb9685cac3c923d348b9a03",
+    snapshot_created_at_utc="2026-06-23T06:14:33Z",
+    common_session_start=date(2000, 5, 26),
+    symbols=FIXED_ETF_DAILY_SYMBOLS,
+    source_name="yahoo_chart_unofficial",
+    retrospective_development_replay_only=True,
+    development_ref_universe_is_inception_truncated_and_survivor_selected=True,
+    point_in_time_eligible=False,
+    survivorship_bias_risk="present",
+    delisting_coverage="unproven",
+    corporate_action_policy="raw_ohlcv_unadjusted_unverified",
 )
 
 
@@ -518,6 +588,185 @@ def load_cataloged_yahoo_daily_1d_bars(
     )
 
 
+def load_broad_daily_development_universe() -> DevelopmentDailyUniverse:
+    """Load the one predeclared Yahoo snapshot for retrospective development only.
+
+    The ref deliberately cannot be configured by callers. It exposes only
+    stream summaries, not campaign-ready bars, and is not a historical universe
+    claim.
+    """
+
+    reference = BROAD_DAILY_DEVELOPMENT_UNIVERSE
+    _validate_broad_daily_development_reference(reference)
+    source_path = reference.snapshot_path
+    try:
+        snapshot_bytes = source_path.read_bytes()
+    except FileNotFoundError as exc:
+        raise ValueError("broad daily development snapshot is missing") from exc
+    actual_dataset_hash = _sha256_bytes(snapshot_bytes)
+    if actual_dataset_hash != reference.dataset_hash:
+        raise ValueError(
+            "broad daily development snapshot hash mismatch: "
+            f"expected {reference.dataset_hash}, observed {actual_dataset_hash}"
+        )
+
+    try:
+        manifest_bytes = reference.manifest_path.read_bytes()
+    except FileNotFoundError as exc:
+        raise ValueError("broad daily development manifest is missing") from exc
+    actual_manifest_hash = _sha256_bytes(manifest_bytes)
+    if actual_manifest_hash != reference.manifest_hash:
+        raise ValueError("broad daily development manifest hash mismatch")
+    try:
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("broad daily development manifest must be valid UTF-8 JSON") from exc
+    _validate_broad_daily_development_manifest(
+        manifest,
+        reference=reference,
+        snapshot_size=len(snapshot_bytes),
+    )
+
+    bars_by_symbol: dict[str, list[Bar]] = {
+        symbol: [] for symbol in reference.symbols
+    }
+    first_observed_sessions: dict[str, date] = {}
+    seen_symbol_dates: set[tuple[str, date]] = set()
+    try:
+        with gzip.open(
+            io.BytesIO(snapshot_bytes),
+            "rt",
+            encoding="utf-8",
+            newline="",
+        ) as handle:
+            reader = csv.DictReader(handle)
+            schema = tuple(reader.fieldnames or ())
+            missing_columns = [
+                column for column in SOURCE_REQUIRED_COLUMNS if column not in schema
+            ]
+            if missing_columns:
+                raise ValueError(
+                    "broad daily development source schema missing columns: "
+                    f"{', '.join(missing_columns)}"
+                )
+            for row in reader:
+                symbol = str(row.get("symbol") or "").strip().upper()
+                if symbol not in bars_by_symbol:
+                    continue
+                if str(row.get("source") or "").strip() != reference.source_name:
+                    raise ValueError(
+                        "broad daily development source provenance is inconsistent "
+                        f"for {symbol}"
+                    )
+                date_text = str(row.get("date") or "").strip()
+                try:
+                    session = date.fromisoformat(date_text)
+                except ValueError as exc:
+                    raise ValueError(
+                        f"invalid broad daily development date for {symbol}: {date_text}"
+                    ) from exc
+                first_observed = first_observed_sessions.get(symbol)
+                if first_observed is None or session < first_observed:
+                    first_observed_sessions[symbol] = session
+                if session < reference.common_session_start:
+                    continue
+                key = (symbol, session)
+                if key in seen_symbol_dates:
+                    raise ValueError(
+                        "duplicate broad daily development row: "
+                        f"{symbol} {session.isoformat()}"
+                    )
+                seen_symbol_dates.add(key)
+                open_price = _finite_decimal(
+                    str(row.get("open") or ""), f"{symbol} {session} open"
+                )
+                high_price = _finite_decimal(
+                    str(row.get("high") or ""), f"{symbol} {session} high"
+                )
+                low_price = _finite_decimal(
+                    str(row.get("low") or ""), f"{symbol} {session} low"
+                )
+                close_price = _finite_decimal(
+                    str(row.get("close") or ""), f"{symbol} {session} close"
+                )
+                volume = _finite_decimal(
+                    str(row.get("volume") or ""), f"{symbol} {session} volume"
+                )
+                _validate_raw_ohlcv(
+                    open_price,
+                    high_price,
+                    low_price,
+                    close_price,
+                    volume,
+                    label=f"{symbol} {session}",
+                )
+                bar = Bar(
+                    symbol=symbol,
+                    market="US",
+                    timeframe=Timeframe.D1,
+                    start_ts=datetime.combine(session, time(), tzinfo=UTC),
+                    open=open_price,
+                    high=high_price,
+                    low=low_price,
+                    close=close_price,
+                    volume=volume,
+                    complete=True,
+                )
+                stream = bars_by_symbol[symbol]
+                if stream and bar.start_ts <= stream[-1].start_ts:
+                    raise ValueError(
+                        "broad daily development rows must be strictly chronological "
+                        f"for {symbol}"
+                    )
+                stream.append(bar)
+    except (OSError, UnicodeDecodeError) as exc:
+        raise ValueError("broad daily development snapshot is not valid gzip CSV") from exc
+
+    missing_symbols = [symbol for symbol, bars in bars_by_symbol.items() if not bars]
+    if missing_symbols:
+        raise ValueError(
+            "broad daily development snapshot is missing fixed symbols: "
+            f"{', '.join(missing_symbols)}"
+        )
+    observed_inception_bound = max(first_observed_sessions.values())
+    if observed_inception_bound != reference.common_session_start:
+        raise ValueError(
+            "broad daily development common_session_start must equal the latest "
+            "fixed-symbol inception"
+        )
+    if any(
+        bars_by_symbol[symbol][0].start_ts.date() != reference.common_session_start
+        for symbol in reference.symbols
+    ):
+        raise ValueError(
+            "broad daily development symbols must begin at common_session_start"
+        )
+    expected_sessions = tuple(
+        bar.start_ts for bar in bars_by_symbol[reference.symbols[0]]
+    )
+    for symbol in reference.symbols[1:]:
+        observed_sessions = tuple(bar.start_ts for bar in bars_by_symbol[symbol])
+        if observed_sessions != expected_sessions:
+            raise ValueError(
+                "broad daily development symbols must share identical sessions"
+            )
+    return DevelopmentDailyUniverse(
+        reference=reference,
+        streams=tuple(
+            DevelopmentDailyStream(
+                symbol=symbol,
+                dataset_id=reference.dataset_id,
+                dataset_hash=actual_dataset_hash,
+                source_path=source_path,
+                session_count=len(bars_by_symbol[symbol]),
+                first_start_ts=bars_by_symbol[symbol][0].start_ts,
+                last_start_ts=bars_by_symbol[symbol][-1].start_ts,
+            )
+            for symbol in reference.symbols
+        ),
+    )
+
+
 def load_fixed_etf_daily_factor_change_dates(
     path: Path,
     *,
@@ -546,6 +795,115 @@ def load_fixed_etf_daily_factor_change_dates(
         if flag == "1":
             flagged_dates.append(date.fromisoformat(row["date"]))
     return tuple(flagged_dates)
+
+
+def _validate_broad_daily_development_reference(
+    reference: DevelopmentDailyUniverseRef,
+) -> None:
+    _validate_sha256(reference.dataset_hash, "development dataset_hash")
+    _validate_sha256(reference.manifest_hash, "development manifest_hash")
+    if not reference.snapshot:
+        raise ValueError("development snapshot is required")
+    expected_snapshot_dir = f"snapshot={reference.snapshot}"
+    expected_dataset_id = (
+        "us_equities.yahoo_daily_universe.1d." + expected_snapshot_dir
+    )
+    if reference.dataset_id != expected_dataset_id:
+        raise ValueError("development dataset_id is inconsistent with its snapshot")
+    if reference.symbols != FIXED_ETF_DAILY_SYMBOLS:
+        raise ValueError("development universe symbols must be exactly SPY, QQQ, IWM")
+    if not reference.snapshot_created_at_utc:
+        raise ValueError("development snapshot_created_at_utc is required")
+    if not isinstance(reference.common_session_start, date):
+        raise ValueError("development common_session_start must be a date")
+    if reference.source_name != "yahoo_chart_unofficial":
+        raise ValueError("development source must remain yahoo_chart_unofficial")
+    snapshot_tail = (
+        "canonical",
+        "ohlcv_daily",
+        expected_snapshot_dir,
+        "ohlcv_daily.csv.gz",
+    )
+    if _path_tail(reference.snapshot_path, len(snapshot_tail)) != snapshot_tail:
+        raise ValueError("development snapshot path is inconsistent with its snapshot")
+    manifest_tail = (
+        "manifests",
+        f"yahoo_daily_universe_snapshot={reference.snapshot}.json",
+    )
+    if _path_tail(reference.manifest_path, len(manifest_tail)) != manifest_tail:
+        raise ValueError("development manifest path is inconsistent with its snapshot")
+    if not reference.retrospective_development_replay_only:
+        raise ValueError("development reference must remain retrospective-only")
+    if not (
+        reference.development_ref_universe_is_inception_truncated_and_survivor_selected
+    ):
+        raise ValueError(
+            "development reference must retain inception and survivor limitations"
+        )
+    if reference.point_in_time_eligible:
+        raise ValueError("development reference must remain point-in-time ineligible")
+    if reference.survivorship_bias_risk != "present":
+        raise ValueError("development reference must retain survivorship risk")
+    if reference.delisting_coverage != "unproven":
+        raise ValueError("development reference must retain unproven delisting coverage")
+    if reference.corporate_action_policy != "raw_ohlcv_unadjusted_unverified":
+        raise ValueError("development reference must retain raw corporate-action limits")
+
+
+def _validate_broad_daily_development_manifest(
+    manifest: Any,
+    *,
+    reference: DevelopmentDailyUniverseRef,
+    snapshot_size: int,
+) -> None:
+    if not isinstance(manifest, dict):
+        raise ValueError("broad daily development manifest must be an object")
+    if manifest.get("dataset") != "yahoo_daily_universe":
+        raise ValueError("broad daily development manifest dataset is inconsistent")
+    if manifest.get("schema_version") != 1:
+        raise ValueError("broad daily development manifest schema is unsupported")
+    if manifest.get("snapshot") != reference.snapshot:
+        raise ValueError("broad daily development manifest snapshot is inconsistent")
+    if manifest.get("created_at_utc") != reference.snapshot_created_at_utc:
+        raise ValueError("broad daily development manifest vintage is inconsistent")
+    if manifest.get("publish_status") != "published":
+        raise ValueError("broad daily development manifest is not published")
+    if manifest.get("partial_status") != "complete":
+        raise ValueError("broad daily development manifest is not complete")
+    request = manifest.get("request")
+    if not isinstance(request, dict) or request.get("interval") != "1d":
+        raise ValueError("broad daily development manifest interval is inconsistent")
+    files = manifest.get("files")
+    if not isinstance(files, list):
+        raise ValueError("broad daily development manifest files are required")
+    expected_tail = (
+        "canonical",
+        "ohlcv_daily",
+        f"snapshot={reference.snapshot}",
+        "ohlcv_daily.csv.gz",
+    )
+    matching_files = [
+        entry
+        for entry in files
+        if isinstance(entry, dict)
+        and _path_tail(str(entry.get("path") or ""), len(expected_tail))
+        == expected_tail
+    ]
+    if len(matching_files) != 1:
+        raise ValueError("broad daily development manifest has no unique snapshot file")
+    file_entry = matching_files[0]
+    manifest_dataset_hash = "sha256:" + str(file_entry.get("sha256") or "")
+    _validate_sha256(manifest_dataset_hash, "development manifest dataset sha256")
+    if manifest_dataset_hash != reference.dataset_hash:
+        raise ValueError("broad daily development manifest dataset hash is inconsistent")
+    manifest_size = file_entry.get("bytes")
+    if not isinstance(manifest_size, int) or manifest_size != snapshot_size:
+        raise ValueError("broad daily development manifest size is inconsistent")
+
+
+def _path_tail(path: Path | str, count: int) -> tuple[str, ...]:
+    parts = PurePosixPath(str(path).replace("\\", "/")).parts
+    return tuple(parts[-count:])
 
 
 def _validate_sibling_r2_manifest(

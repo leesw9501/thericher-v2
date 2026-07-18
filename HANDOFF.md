@@ -74,6 +74,8 @@ The repository already contains:
 - market-data provider interfaces, local/sample providers, and deterministic
   `1m`, `5m`, `10m`, `1h`, and `3h` resampling,
 - stable training-readiness catalogs and byte-verified `CatalogedBars`,
+- a static hash-bound broad-daily ETF wrapper that is intentionally not a
+  campaign-ready input,
 - deterministic backtest and bounded validation paths,
 - forward campaign contracts with target timing, purge/embargo, costs, and
   durable local-paper replay evidence,
@@ -116,6 +118,17 @@ A larger daily universe exists at
 snapshots were inventoried and the newest 7,390,436-row file was fully scanned,
 but adjustment, corporate-action, and point-in-time limitations still prevent
 ranking or sealed-holdout use.
+
+The newest broad snapshot now has one static development-only reference for
+predeclared `SPY`, `QQQ`, and `IWM`. It pins the `2026-06-23` canonical gzip
+hash `1690a766a820b3e6385c76605c7e02548ab0e428148c93f85388c7a6a8b065b4`
+and manifest hash
+`642eff01919da260b388a66303db1954c68d7cd6ceb9685cac3c923d348b9a03`.
+It returns the common 6,555-session window from `2000-05-26` through
+`2026-06-22` behind a development-only wrapper, not a campaign input. The
+reference is inception-truncated and survivor-selected; point-in-time
+membership, delisting coverage, and raw corporate-action semantics remain
+unproven.
 
 The campaign-ready fixed ETF subset is:
 
@@ -365,9 +378,9 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks Data to assess whether the existing broad daily
-snapshot can form a small, explicitly development-only US-equity universe
-without implying point-in-time membership. KIS remains failed closed pending the
-non-secret pairing check and a separately authorized future probe. The KIS
-capital envelope, paid data, order submission, and live capital remain separate
-future decisions.
+`NEXT_CODEX_GOAL.md` now asks Engine Research for one small, deterministic,
+no-lookahead feature materializer over the separate development-only ETF
+wrapper. It must not train, rank, campaign, paper trade, or claim profitability.
+KIS remains failed closed pending the non-secret pairing check and a separately
+authorized future probe. The KIS capital envelope, paid data, order submission,
+and live capital remain separate future decisions.

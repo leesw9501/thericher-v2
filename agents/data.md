@@ -5,8 +5,8 @@
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
-three fixed instruments. The one permitted source-sensitivity replay completed
-outside Git; the bounded no-auth source triage found no eligible new pilot.
+three fixed instruments. The broad Yahoo daily snapshot now also has one
+hash-bound, retrospective-only `SPY`/`QQQ`/`IWM` development-universe wrapper.
 
 ## Engine Loop
 
@@ -41,17 +41,16 @@ outside Git; the bounded no-auth source triage found no eligible new pilot.
 
 ## Current Objective
 
-The Tiingo raw-D1 comparison is complete. Its loader re-attests r2 and parent
-Tiingo evidence before Research receives bars, and its completed replay used no
-new request or credential read. It remains a separate-provider representation
-bound to r2's exact session calendar, not independent validation or ranking
-evidence.
+The broad Yahoo daily suitability work is complete. Its static wrapper pins the
+`2026-06-23` gzip and manifest and exposes the common `SPY`/`QQQ`/`IWM` session
+window only behind a development-only type. It is not point-in-time, training,
+campaign, paper-trading, ranking, or holdout evidence.
 
 ## Ready Queue
 
-1. Inventory the existing broad daily snapshot for a small, explicitly
-   development-only US-equity universe candidate without acquiring data or
-   implying point-in-time membership.
+1. Support a bounded, read-only Engine feature-materialization check over the
+   existing development-only ETF wrapper. Do not acquire data or expand its
+   universe.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -88,6 +87,15 @@ evidence.
   Each inspected entry exposes a stable Data-owned `dataset_id`, prefixed
   `dataset_hash`, UTC construction timestamp, and Research-compatible ranking
   and sealed-holdout eligibility facts.
+- The broad Yahoo development reference is fixed to
+  `us_equities.yahoo_daily_universe.1d.snapshot=2026-06-23`, gzip hash
+  `sha256:1690a766a820b3e6385c76605c7e02548ab0e428148c93f85388c7a6a8b065b4`,
+  and manifest hash
+  `sha256:642eff01919da260b388a66303db1954c68d7cd6ceb9685cac3c923d348b9a03`.
+  It returns 6,555 common daily sessions for predeclared `SPY`, `QQQ`, and
+  `IWM` from `2000-05-26` through `2026-06-22`. It is inception-truncated and
+  survivor-selected, has unproven PIT/delisting coverage and unverified raw
+  corporate-action history, and is not a market proxy or campaign input.
 - Data exports immutable `CatalogedBars` and an offline Yahoo canonical 1-minute
   loader that verifies the catalog's SHA-256 against the actual gzip bytes
   before parsing one homogeneous symbol stream. Direct construction is closed;
@@ -227,6 +235,9 @@ evidence.
 - `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1\manifest.json`:
   raw OHLCV and explicit corporate-action fields derived from the exact Tiingo
   source bytes; replay-only, not independent validation or ranking evidence.
+- `D:\market_data\us_equities\yahoo_daily_universe\manifests\yahoo_daily_universe_snapshot=2026-06-23.json`:
+  manifest for the fixed development-only ETF wrapper; its one canonical gzip
+  is byte-pinned and no derived subset or artifact was written.
 - `D:\market_data\us_equities\official_symbol_directory\raw\snapshot=2026-07-18\manifest.json`:
   first immutable official-source prospective universe snapshot; all three
   recorded hashes reverified, with Nasdaq file-creation timestamps from
@@ -244,10 +255,8 @@ evidence.
 
 ## Next Handoff
 
-Data derived and rechecked the Tiingo raw-D1 snapshot outside Git without a
-credential read, network request, or raw response copy. The completed replay
-used its strict loader and produced no data acquisition request. Do not rewrite
-either snapshot, interpret the replay as independent validation, or use
-adjusted fields. The next useful data question is whether the existing broad
-daily snapshot can support a narrowly labeled development-only universe; no
-paid upgrade or operator data action is needed yet.
+The broad Yahoo snapshot is usable only as the pinned, static development-only
+ETF wrapper. Do not widen symbols, alter `2000-05-26` common-session start, or
+unwrap it into a campaign/local-paper path. A future universe-wide research
+claim still needs PIT membership, delistings, and corporate-action evidence; no
+operator data action is needed for the next read-only feature step.

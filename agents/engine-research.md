@@ -14,6 +14,9 @@
 - The permitted Tiingo raw-D1 source-sensitivity replay is also complete with
   zero training, 36 local-paper cells, and the same sticky `unsupported`
   verdict. It is non-independent because r2 fixed the session calendar.
+- Data has pinned a separate broad-Yahoo development-only ETF wrapper. It is
+  not campaign-ready and cannot justify model training, ranking, promotion, or
+  any profitability claim.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -45,10 +48,10 @@
 
 ## Current Objective
 
-- The fixed-ETF source-sensitivity question is complete. Its result did not
-  change the parent unsupported state and cannot open more GPU work. Keep the
-  GPU idle while Data determines whether an existing broad daily snapshot can
-  support a separately labeled development-only universe.
+- The fixed-ETF source-sensitivity question remains unsupported. The new broad
+  ETF wrapper can support only a pure, read-only feature-materialization check;
+  it cannot open GPU training, a campaign, paper replay, ranking, promotion, or
+  a sealed holdout.
 
 ## Explicit-Event Replay
 
@@ -69,7 +72,9 @@
 
 ## Breadth Queue
 
-- None until a broader dataset has a bounded provenance and survivorship scope.
+- Build one small, deterministic, no-lookahead feature materializer that takes
+  the development-only wrapper as a distinct type. It must remain descriptive
+  and cannot create labels, decisions, orders, candidates, or a campaign.
 
 ## Depth Queue
 
@@ -106,6 +111,12 @@
 - The fixed CUDA set is hidden 8, ReLU, standardization, learning rate 0.005,
   weight decay 0.0001, threshold 0.5, 12 epochs, seed 71. Torch remains lazy and
   own checkpoints load with `weights_only=True`.
+- The broad Yahoo wrapper pins one 1,300-symbol snapshot but returns only the
+  predeclared `SPY`/`QQQ`/`IWM` common window: 6,555 sessions from
+  `2000-05-26` to `2026-06-22`. It is explicitly inception-truncated and
+  survivor-selected; PIT membership, delistings, and raw corporate-action
+  semantics are unproven. It returns a wrapper rather than a campaign-ready
+  `CatalogedBars` tuple, so Research must not bypass that boundary.
 
 ## Recovery
 
@@ -166,5 +177,7 @@
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
-  source check. Do not rank, promote, name a winner, claim profitability, or
-  start GPU training. Await Data's bounded broad-universe suitability result.
+  source check. The next bounded research step is a pure no-lookahead feature
+  materializer for the separate broad-Yahoo wrapper. Do not rank, promote, name
+  a winner, claim profitability, start GPU training, or connect it to a
+  campaign or paper execution.

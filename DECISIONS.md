@@ -1204,3 +1204,20 @@ Reason: the check falsifies only a narrow bar-source representation concern
 while retaining the original calendar and all frozen model inputs. A broader,
 explicitly scoped development dataset is more valuable than extending this
 fixed-ETF campaign or adding a new report/gate layer.
+
+## 2026-07-18 - Broad Yahoo daily reference is development-only
+
+Decision: accept exactly one static, hash-bound broad-Yahoo daily reference for
+predeclared `SPY`, `QQQ`, and `IWM`. It pins the `2026-06-23` canonical gzip and
+manifest, exposes only their common session window beginning `2000-05-26`, and
+returns a dedicated development-universe wrapper rather than a campaign-ready
+input. It is explicitly inception-truncated and survivor-selected; PIT
+membership, delisting coverage, and raw corporate-action semantics remain
+unproven. It cannot justify training, campaign replay, paper trading, ranking,
+holdout, promotion, or profitability claims.
+
+Reason: the snapshot gives a reproducible read-only feature-development input
+without pretending that current screener membership represents historical
+membership. The narrow wrapper preserves byte lineage and prevents accidental
+direct use by existing campaign APIs without adding a provider framework,
+registry, artifact family, scheduler, or data gate.
