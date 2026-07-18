@@ -12,6 +12,7 @@ from pathlib import Path
 import pytest
 
 import thericher_v2.data.daily as daily_module
+import thericher_v2.research.development_daily_features as feature_module
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data import (
     BROAD_DAILY_DEVELOPMENT_UNIVERSE,
@@ -25,7 +26,10 @@ from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 from thericher_v2.research.development_daily_features import (
     FEATURE_AVAILABILITY,
     FEATURE_NAMES,
+    OUTCOME_AVAILABILITY,
     RAW_CLOSE_LIMITATION,
+    RAW_NEXT_OBSERVED_CLOSE_OUTCOME_LIMITATION,
+    materialize_development_daily_feature_outcomes,
     materialize_development_daily_features,
 )
 from thericher_v2.research.validation import run_local_paper_validation
@@ -51,6 +55,7 @@ _SOURCE_SESSIONS = (
     date(2026, 6, 25),
     date(2026, 6, 26),
     date(2026, 6, 29),
+    date(2026, 6, 30),
 )
 
 
@@ -327,6 +332,153 @@ def test_feature_materializer_requires_six_completed_sessions(
         materialize_development_daily_features(load_broad_daily_development_universe())
 
 
+def test_materializes_future_outcomes_in_next_observed_session_order(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _install_fixture(tmp_path, monkeypatch, rows=_source_rows(session_count=7))
+    features = materialize_development_daily_features(
+        load_broad_daily_development_universe()
+    )
+
+    outcomes = materialize_development_daily_feature_outcomes(features)
+
+    assert outcomes.feature_result is features
+    assert outcomes.source_hash == features.source_hash
+    assert outcomes.outcome_availability == OUTCOME_AVAILABILITY
+    assert (
+        outcomes.raw_next_observed_close_outcome_limitation
+        == RAW_NEXT_OBSERVED_CLOSE_OUTCOME_LIMITATION
+    )
+    assert [row.feature.symbol for row in outcomes.rows] == ["SPY", "QQQ", "IWM"]
+    assert [row.feature.session for row in outcomes.rows] == [_SOURCE_SESSIONS[5]] * 3
+    assert [row.outcome_session for row in outcomes.rows] == [_SOURCE_SESSIONS[6]] * 3
+    assert [row.calendar_days_to_outcome for row in outcomes.rows] == [3, 3, 3]
+    assert outcomes.rows[0].raw_next_observed_close_return == (
+        Decimal("108") / Decimal("107") - 1
+    )
+    with pytest.raises(FrozenInstanceError):
+        outcomes.rows[0].outcome_session = date(2026, 7, 1)  # type: ignore[misc]
+
+
+def test_outcome_materializer_uses_only_the_next_raw_close(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    initial_rows = _source_rows(session_count=8)
+    _install_fixture(tmp_path / "initial", monkeypatch, rows=initial_rows)
+    initial = materialize_development_daily_feature_outcomes(
+        materialize_development_daily_features(load_broad_daily_development_universe())
+    )
+
+    tail_changed_rows = [dict(row) for row in initial_rows]
+    for row in tail_changed_rows:
+        if row["date"] == _SOURCE_SESSIONS[7].isoformat():
+            row.update(
+                {
+                    "open": "500",
+                    "high": "510",
+                    "low": "490",
+                    "close": "505",
+                    "volume": "999999",
+                }
+            )
+    _install_fixture(tmp_path / "tail", monkeypatch, rows=tail_changed_rows)
+    tail_changed = materialize_development_daily_feature_outcomes(
+        materialize_development_daily_features(load_broad_daily_development_universe())
+    )
+    assert [
+        row for row in initial.rows if row.outcome_session < _SOURCE_SESSIONS[7]
+    ] == [
+        row for row in tail_changed.rows if row.outcome_session < _SOURCE_SESSIONS[7]
+    ]
+
+    next_non_close_changed_rows = [dict(row) for row in initial_rows]
+    for row in next_non_close_changed_rows:
+        if row["date"] == _SOURCE_SESSIONS[6].isoformat():
+            close = int(row["close"])
+            row.update(
+                {
+                    "open": str(close - 1),
+                    "high": str(close + 5),
+                    "low": str(close - 5),
+                    "volume": "999999",
+                }
+            )
+    _install_fixture(tmp_path / "next-non-close", monkeypatch, rows=next_non_close_changed_rows)
+    next_non_close_changed = materialize_development_daily_feature_outcomes(
+        materialize_development_daily_features(load_broad_daily_development_universe())
+    )
+    assert [
+        row for row in initial.rows if row.outcome_session == _SOURCE_SESSIONS[6]
+    ] == [
+        row
+        for row in next_non_close_changed.rows
+        if row.outcome_session == _SOURCE_SESSIONS[6]
+    ]
+
+    next_close_changed_rows = [dict(row) for row in initial_rows]
+    for row in next_close_changed_rows:
+        if row["date"] == _SOURCE_SESSIONS[6].isoformat():
+            close = int(row["close"]) + 20
+            row.update(
+                {
+                    "open": str(close - 1),
+                    "high": str(close + 5),
+                    "low": str(close - 5),
+                    "close": str(close),
+                }
+            )
+    _install_fixture(tmp_path / "next-close", monkeypatch, rows=next_close_changed_rows)
+    next_close_changed = materialize_development_daily_feature_outcomes(
+        materialize_development_daily_features(load_broad_daily_development_universe())
+    )
+    initial_next_rows = [
+        row for row in initial.rows if row.outcome_session == _SOURCE_SESSIONS[6]
+    ]
+    changed_next_rows = [
+        row
+        for row in next_close_changed.rows
+        if row.outcome_session == _SOURCE_SESSIONS[6]
+    ]
+    assert [row.feature for row in initial_next_rows] == [
+        row.feature for row in changed_next_rows
+    ]
+    assert all(
+        before.raw_next_observed_close_return
+        != after.raw_next_observed_close_return
+        for before, after in zip(initial_next_rows, changed_next_rows, strict=True)
+    )
+
+
+@pytest.mark.parametrize("artifact", ["snapshot", "manifest"])
+def test_outcome_materializer_rejects_forged_or_tampered_feature_source(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    artifact: str,
+) -> None:
+    _install_fixture(tmp_path / artifact, monkeypatch, rows=_source_rows(session_count=7))
+    features = materialize_development_daily_features(
+        load_broad_daily_development_universe()
+    )
+
+    with pytest.raises(ValueError, match="does not match re-attested source"):
+        materialize_development_daily_feature_outcomes(replace(features, rows=()))
+    with pytest.raises(ValueError, match="source hash is inconsistent"):
+        materialize_development_daily_feature_outcomes(
+            replace(features, source_hash="sha256:" + "0" * 64)
+        )
+
+    target = (
+        features.source.reference.snapshot_path
+        if artifact == "snapshot"
+        else features.source.reference.manifest_path
+    )
+    target.write_bytes(b"tampered source")
+    with pytest.raises(ValueError, match=f"{artifact} hash mismatch"):
+        materialize_development_daily_feature_outcomes(features)
+
+
 def test_feature_materializer_does_not_use_future_or_adjusted_values(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -350,8 +502,8 @@ def test_feature_materializer_does_not_use_future_or_adjusted_values(
         load_broad_daily_development_universe()
     )
     assert [
-        row for row in initial.rows if row.session < _SOURCE_SESSIONS[-1]
-    ] == [row for row in future_changed.rows if row.session < _SOURCE_SESSIONS[-1]]
+        row for row in initial.rows if row.session < _SOURCE_SESSIONS[6]
+    ] == [row for row in future_changed.rows if row.session < _SOURCE_SESSIONS[6]]
 
     adjusted_only_rows = [dict(row) for row in initial_rows]
     for row in adjusted_only_rows:
@@ -384,6 +536,11 @@ def test_feature_materializer_rejects_stale_or_plain_cataloged_input(
     universe = load_broad_daily_development_universe()
     with pytest.raises(PermissionError, match="restricted to its materializer"):
         daily_module._reverify_broad_daily_development_feature_input(universe)
+    with pytest.raises(PermissionError, match="restricted to its materializer module"):
+        feature_module._materialize_development_daily_features_from_streams(
+            universe,
+            (),
+        )
 
     cataloged = _cataloged_bars_from_verified_loader(
         dataset_id="unit.cataloged.1d",
@@ -405,6 +562,22 @@ def test_feature_materializer_rejects_stale_or_plain_cataloged_input(
     )
     with pytest.raises(TypeError, match="require DevelopmentDailyUniverse"):
         materialize_development_daily_features((cataloged,))  # type: ignore[arg-type]
+
+    outcome = materialize_development_daily_feature_outcomes(
+        materialize_development_daily_features(universe)
+    )
+    with pytest.raises(TypeError, match="require DevelopmentDailyFeatureResult"):
+        materialize_development_daily_feature_outcomes((cataloged,))  # type: ignore[arg-type]
+    with pytest.raises(
+        ValueError,
+        match="campaign validation requires Data-owned CatalogedBars",
+    ):
+        run_local_paper_validation(
+            outcome,
+            event_store=None,
+            emergency_store=None,
+            campaign=object(),
+        )
 
 
 def _source_rows(*, session_count: int = 6) -> list[dict[str, str]]:

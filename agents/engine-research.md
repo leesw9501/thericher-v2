@@ -16,8 +16,8 @@
   verdict. It is non-independent because r2 fixed the session calendar.
 - Data has pinned a separate broad-Yahoo development-only ETF wrapper. It is
   not campaign-ready and now feeds one small, re-attested, in-memory feature
-  materializer. It cannot justify model training, ranking, promotion, or any
-  profitability claim.
+  and future-only outcome materializer. It cannot justify model training,
+  ranking, promotion, or any profitability claim.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -50,10 +50,10 @@
 ## Current Objective
 
 - The fixed-ETF source-sensitivity question remains unsupported. The broad ETF
-  wrapper now supplies descriptive features only; the next bounded step may
-  define one clearly future-available outcome while keeping all output
-  development-only and non-campaign. It cannot open GPU training, paper replay,
-  ranking, promotion, or a sealed holdout.
+  wrapper now supplies descriptive features plus explicit future-only outcomes.
+  Wait for the bounded full-history Tiingo data check before opening any new
+  CPU/GPU model work. It cannot open paper replay, ranking, promotion, or a
+  sealed holdout.
 
 ## Explicit-Event Replay
 
@@ -74,9 +74,9 @@
 
 ## Breadth Queue
 
-- Define one small, deterministic, one-observed-session outcome materializer
-  paired with the development-only feature result. It must preserve the source
-  limitations and cannot train, decide, order, rank, select, or form a campaign.
+- Await Data's bounded full-history Tiingo EOD and corporate-action evidence
+  check. Do not use the Yahoo development outcome as a model-selection input or
+  start a new GPU job merely to fill idle capacity.
 
 ## Depth Queue
 
@@ -124,6 +124,11 @@
   high/low range, and one-session volume change. Data re-attests the fixed gzip
   and manifest for each call, its raw parser is restricted to Data-module
   callers, and no feature can read a later bar.
+- Its paired outcome materializer re-attests the same source, recomputes the
+  canonical feature result before use, and derives only
+  `raw_close(next observed session) / raw_close(t) - 1`. It records the future
+  outcome session and calendar-day gap, skips the terminal feature rows, and
+  remains in-memory, non-campaign, and non-decisional.
 
 ## Recovery
 
@@ -184,8 +189,7 @@
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
-  source check. The broad-Yahoo feature materializer is complete and remains
-  descriptive. The next bounded research step is one development-only,
-  one-observed-session outcome definition; do not rank, promote, name a winner,
-  claim profitability, start GPU training, or connect it to campaign or paper
-  execution.
+  source check. The broad-Yahoo feature/outcome substrate is complete and
+  remains descriptive. The next bounded step is Data's full-history Tiingo EOD
+  evidence check; do not rank, promote, name a winner, claim profitability,
+  start GPU training, or connect either source to campaign or paper execution.

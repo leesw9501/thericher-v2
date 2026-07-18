@@ -8,7 +8,9 @@ comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
 three fixed instruments. The broad Yahoo daily snapshot now also has one
 hash-bound, retrospective-only `SPY`/`QQQ`/`IWM` development-universe wrapper.
 Its first consumer is a Data-re-attested, in-memory Engine feature materializer;
-raw bars remain unavailable at the public wrapper boundary.
+raw bars remain unavailable at the public wrapper boundary. The same bounded
+module now derives future-only, next-observed-session outcomes after
+re-attestation; it does not widen that raw-bar boundary.
 
 ## Engine Loop
 
@@ -43,18 +45,19 @@ raw bars remain unavailable at the public wrapper boundary.
 
 ## Current Objective
 
-The broad Yahoo daily suitability work and its first feature consumer are
-complete. The static wrapper pins the `2026-06-23` gzip and manifest, exposes
-the common `SPY`/`QQQ`/`IWM` session window only behind a development-only type,
-and re-attests bytes before the one allowlisted Engine materializer receives
-raw bars. It is not point-in-time, campaign, paper-trading, ranking, or
-holdout evidence.
+The broad Yahoo daily suitability work, feature materializer, and future-only
+outcome materializer are complete. The static wrapper pins the `2026-06-23`
+gzip and manifest, exposes the common `SPY`/`QQQ`/`IWM` session window only
+behind a development-only type, and re-attests bytes before the one allowlisted
+Engine module receives raw bars. It remains non-PIT, non-campaign,
+non-paper-trading, non-ranking, and non-holdout evidence.
 
 ## Ready Queue
 
-1. Support a bounded, read-only Engine outcome-materialization check over the
-   existing development-only ETF wrapper without widening its raw-bar access.
-   Do not acquire data or expand its universe.
+1. Use the approved standard Tiingo EOD token only to determine whether a new,
+   immutable full-history `SPY`/`QQQ`/`IWM` raw-EOD and corporate-action
+   snapshot can be acquired under the existing no-cost limits. Keep it separate
+   from the Yahoo wrapper and do not overwrite the existing short Tiingo data.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -260,10 +263,11 @@ holdout evidence.
 ## Next Handoff
 
 The broad Yahoo snapshot is usable only as the pinned, static development-only
-ETF wrapper. Its feature materializer re-attests the gzip and manifest and
+ETF wrapper. Its feature/outcome module re-attests the gzip and manifest and
 accepts only `SPY`/`QQQ`/`IWM` raw bars internally; external callers cannot
-retrieve the parser result. Do not widen symbols, alter `2000-05-26`
-common-session start, or unwrap it into a campaign/local-paper path. A future
-universe-wide research claim still needs PIT membership, delistings, and
-corporate-action evidence; no operator data action is needed for the next
-read-only outcome step.
+retrieve the parser result. Each outcome is future-only and uses the next
+observed raw close, with its calendar gap recorded. Do not widen symbols, alter
+`2000-05-26` common-session start, or unwrap it into a campaign/local-paper
+path. A future universe-wide research claim still needs PIT membership,
+delistings, and corporate-action evidence; the next bounded Data step may use
+the already approved Tiingo EOD token to improve the latter evidence.

@@ -2,48 +2,55 @@
 
 ## Objective
 
-Build one small, deterministic, development-only daily outcome materializer
-paired with the existing `SPY`/`QQQ`/`IWM` feature result.
+Build one bounded, immutable full-history Tiingo standard-EOD evidence snapshot
+for `SPY`, `QQQ`, and `IWM` outside Git.
 
-This advances feature/model research preparation. It must not train a model or
-turn the broad Yahoo source into campaign, paper-trading, ranking, promotion, or
-profitability evidence.
+This advances data collection for future feature/model research. It must not
+train a model or turn the snapshot into campaign, paper-trading, ranking,
+promotion, or profitability evidence.
 
 ## Required First Reads
 
 Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`, `VISION.md`,
 `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`,
-and the Data and Engine Research stateboards. Ask Claude for a short leakage
-falsification check before changing the data-to-research boundary, then invoke
-the Review checkpoint.
+and the Data and Engine Research stateboards. Ask Claude for a short
+provenance/overreach falsification check before changing the external data
+contract, then invoke the Review checkpoint.
 
-## Boundaries
+## Approved Authority And Boundaries
 
-- Do not read `.env`, credentials, or account data; make no network, KIS, or
-  broker call, and leave `THERICHER_MODE=off`.
-- Use only the existing static broad-daily wrapper and its feature result. Do
-  not acquire, rewrite, widen, or copy market data; do not breach the `D:`
-  free-space floor.
-- Do not train a model, use the GPU, create decisions, candidates, a campaign,
-  local/external orders, artifacts, or a profitability claim.
-- Keep the existing Data raw-bar boundary closed to generic callers. Do not add
-  a provider framework, feature/label registry, scheduler, dashboard, report
-  family, or v1-style gate.
+- Read only `TIINGO_API_TOKEN` from the ignored root `.env`; never print, log,
+  store, commit, or send it to Claude. Do not read any other `.env` key.
+- Use only Tiingo's already approved no-cost standard daily endpoints for
+  `SPY`, `QQQ`, and `IWM`. Do not purchase, upgrade, use a login-gated source,
+  call KIS, submit an order, or access live credentials.
+- Keep `THERICHER_MODE=off`. Do not train, use GPU, create candidates,
+  campaigns, paper/local orders, a dashboard, or a profitability claim.
+- Store raw responses, normalized data, manifests, and any Data artifact only
+  under `D:\market_data` or `D:\thericher-v2\model-artifacts`; never Git.
+  Warn below 20% free `D:` space and stop before the 15% floor.
+- Preserve the existing short Tiingo and Yahoo snapshots unchanged. A new
+  snapshot must have a new disjoint identifier and must not silently replace an
+  existing source.
 
 ## Required Work
 
-1. Let Data and Engine Research define one explicit one-observed-session daily
-   outcome for each feature row, with unambiguous timing: features at completed
-   session `t`, outcome derived only from the next observed completed session,
-   and an explicit statement that the outcome is unavailable at `t`.
-2. Keep the result immutable and in memory. Preserve the source hash and all
-   development-only limitations, including raw corporate-action uncertainty,
-   survivorship, unproven PIT membership, and unproven delisting coverage.
-3. Add focused tests for session alignment across weekend/holiday gaps,
-   deterministic ordering, feature/outcome timing separation, source
-   reattestation, no generic raw-bar or `CatalogedBars` bypass, and rejection of
-   any attempt to use the result as a campaign or local-paper input.
-4. Update the Data and Engine Research stateboards, `HANDOFF.md`, and this next
+1. Inventory the existing Tiingo snapshots and estimate the bounded download
+   before any request. Stop and report rather than retrying when standard access,
+   rights, quota, or free-space checks fail.
+2. If the standard API provides the history, acquire exactly one new immutable
+   `SPY`/`QQQ`/`IWM` raw-EOD plus corporate-action snapshot with raw response
+   hashes, normalized-data hash, source/as-of metadata, exact symbol/date
+   coverage, and explicit `divCash`/`splitFactor` semantics. No secret-like
+   value may enter a response-derived artifact.
+3. Add or extend only the narrow offline Data loader and focused tests needed to
+   re-attest the new snapshot. Keep it separate from the Yahoo wrapper and all
+   campaign `CatalogedBars` paths.
+4. State precisely what the new history does and does not establish. It may
+   improve retrospective development evidence; it does not establish point in
+   time universe membership, independence, ranking, sealed holdout validity, or
+   profitability.
+5. Update Data and Engine Research stateboards, `HANDOFF.md`, and this next
    goal before ending the task.
 
 ## Verification
@@ -53,4 +60,4 @@ Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
 
 ## Suggested Commit Message
 
-`Add development daily outcome materializer`
+`Add full-history Tiingo EOD evidence`

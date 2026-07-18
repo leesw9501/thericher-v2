@@ -78,6 +78,8 @@ The repository already contains:
   campaign-ready input,
 - one Data-re-attested, in-memory no-lookahead daily feature materializer for
   that separate development-only wrapper,
+- one paired, future-only next-observed-session raw-close outcome materializer
+  that stays outside campaigns and decisions,
 - deterministic backtest and bounded validation paths,
 - forward campaign contracts with target timing, purge/embargo, costs, and
   durable local-paper replay evidence,
@@ -132,13 +134,17 @@ reference is inception-truncated and survivor-selected; point-in-time
 membership, delisting coverage, and raw corporate-action semantics remain
 unproven.
 
-The wrapper's first consumer is a small in-memory feature materializer. For
+The wrapper's first consumer is a small in-memory feature/outcome module. For
 each completed session it emits five-session and one-session raw-close returns,
 same-session high/low range, and one-session volume change only after Data
-re-attests the fixed gzip and manifest. Its first real-data smoke created
-19,650 rows from `2000-06-05` through `2026-06-22`, ordered by session then
-`SPY`, `QQQ`, and `IWM`. It preserves the original source hash and limitations;
-it has no label, score, decision, artifact, campaign adapter, or trading use.
+re-attests the fixed gzip and manifest. It then re-attests again before pairing
+each canonical feature at `t` with
+`raw_close(next observed session) / raw_close(t) - 1`; the future outcome
+session and calendar-day gap are explicit, and terminal features have no padded
+outcome. Real-data smoke created 19,650 feature rows and 19,647 outcome rows;
+the first pair is `2000-06-05 -> 2000-06-06` and the last is
+`2026-06-18 -> 2026-06-22`. It preserves the original source hash and
+limitations; it has no decision, artifact, campaign adapter, or trading use.
 
 The campaign-ready fixed ETF subset is:
 
@@ -388,9 +394,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks Engine Research and Data for one small,
-development-only outcome materializer paired with the separate ETF features.
-It must not train, rank, campaign, paper trade, or claim profitability. KIS
-remains failed closed pending the non-secret pairing check and a separately
-authorized future probe. The KIS capital envelope, paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now asks Data to check whether the already approved Tiingo
+standard EOD access can create a separate immutable full-history
+`SPY`/`QQQ`/`IWM` raw-EOD and corporate-action snapshot. It must not train,
+rank, campaign, paper trade, or claim profitability. KIS remains failed closed
+pending the non-secret pairing check and a separately authorized future probe.
+The KIS capital envelope, paid data, order submission, and live capital remain
+separate future decisions.

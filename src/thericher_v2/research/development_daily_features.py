@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
@@ -21,6 +22,11 @@ FEATURE_NAMES = (
 FEATURE_AVAILABILITY = "after_completed_session_close"
 RAW_CLOSE_LIMITATION = (
     "raw close return features can be distorted by unverified corporate actions"
+)
+OUTCOME_AVAILABILITY = "after_completed_next_observed_session_close"
+RAW_NEXT_OBSERVED_CLOSE_OUTCOME_LIMITATION = (
+    "raw next-observed-session close returns can be distorted by unverified "
+    "corporate actions"
 )
 _ONE = Decimal("1")
 _MINIMUM_SESSIONS = 6
@@ -50,6 +56,27 @@ class DevelopmentDailyFeatureResult:
     raw_close_limitation: str
 
 
+@dataclass(frozen=True)
+class DevelopmentDailyFeatureOutcomeRow:
+    """One future-only raw-close outcome paired with an immutable feature row."""
+
+    feature: DevelopmentDailyFeatureRow
+    outcome_session: date
+    calendar_days_to_outcome: int
+    raw_next_observed_close_return: Decimal
+
+
+@dataclass(frozen=True)
+class DevelopmentDailyFeatureOutcomeResult:
+    """In-memory development outcomes that remain separate from decision inputs."""
+
+    feature_result: DevelopmentDailyFeatureResult
+    source_hash: str
+    rows: tuple[DevelopmentDailyFeatureOutcomeRow, ...]
+    outcome_availability: str
+    raw_next_observed_close_outcome_limitation: str
+
+
 def materialize_development_daily_features(
     universe: DevelopmentDailyUniverse,
 ) -> DevelopmentDailyFeatureResult:
@@ -58,6 +85,87 @@ def materialize_development_daily_features(
     if not isinstance(universe, DevelopmentDailyUniverse):
         raise TypeError("development daily features require DevelopmentDailyUniverse")
     streams = _reverify_broad_daily_development_feature_input(universe)
+    return _materialize_development_daily_features_from_streams(universe, streams)
+
+
+def materialize_development_daily_feature_outcomes(
+    feature_result: DevelopmentDailyFeatureResult,
+) -> DevelopmentDailyFeatureOutcomeResult:
+    """Pair each feature row with one future raw-close outcome, never a decision."""
+
+    if not isinstance(feature_result, DevelopmentDailyFeatureResult):
+        raise TypeError(
+            "development daily outcomes require DevelopmentDailyFeatureResult"
+        )
+    source = feature_result.source
+    if not isinstance(source, DevelopmentDailyUniverse):
+        raise TypeError(
+            "development daily feature outcome source requires DevelopmentDailyUniverse"
+        )
+    if feature_result.source_hash != source.reference.dataset_hash:
+        raise ValueError("development daily feature result source hash is inconsistent")
+    streams = _reverify_broad_daily_development_feature_input(source)
+    reattested_features = _materialize_development_daily_features_from_streams(
+        source, streams
+    )
+    if reattested_features != feature_result:
+        raise ValueError(
+            "development daily feature result does not match re-attested source"
+        )
+    bars_by_symbol = dict(
+        zip(source.reference.symbols, streams, strict=True)
+    )
+    index_by_symbol_and_session = {
+        symbol: {bar.start_ts.date(): index for index, bar in enumerate(bars)}
+        for symbol, bars in bars_by_symbol.items()
+    }
+    rows: list[DevelopmentDailyFeatureOutcomeRow] = []
+    for feature in feature_result.rows:
+        bars = bars_by_symbol.get(feature.symbol)
+        feature_index = index_by_symbol_and_session.get(feature.symbol, {}).get(
+            feature.session
+        )
+        if bars is None or feature_index is None:
+            raise ValueError("development feature row is not present in re-attested bars")
+        if feature_index + 1 >= len(bars):
+            continue
+        feature_bar = bars[feature_index]
+        outcome_bar = bars[feature_index + 1]
+        if outcome_bar.start_ts <= feature_bar.start_ts:
+            raise ValueError("development outcome bars must be strictly chronological")
+        outcome_session = outcome_bar.start_ts.date()
+        calendar_days_to_outcome = (outcome_session - feature.session).days
+        if calendar_days_to_outcome <= 0:
+            raise ValueError("development outcome session must follow its feature session")
+        rows.append(
+            DevelopmentDailyFeatureOutcomeRow(
+                feature=feature,
+                outcome_session=outcome_session,
+                calendar_days_to_outcome=calendar_days_to_outcome,
+                raw_next_observed_close_return=outcome_bar.close / feature_bar.close
+                - _ONE,
+            )
+        )
+    return DevelopmentDailyFeatureOutcomeResult(
+        feature_result=feature_result,
+        source_hash=feature_result.source_hash,
+        rows=tuple(rows),
+        outcome_availability=OUTCOME_AVAILABILITY,
+        raw_next_observed_close_outcome_limitation=(
+            RAW_NEXT_OBSERVED_CLOSE_OUTCOME_LIMITATION
+        ),
+    )
+
+
+def _materialize_development_daily_features_from_streams(
+    universe: DevelopmentDailyUniverse,
+    streams: tuple[tuple[Bar, ...], ...],
+) -> DevelopmentDailyFeatureResult:
+    caller_module = sys._getframe(1).f_globals.get("__name__")
+    if caller_module != __name__:
+        raise PermissionError(
+            "development feature stream input is restricted to its materializer module"
+        )
     if len(streams) != len(universe.reference.symbols):
         raise ValueError("development feature streams do not match fixed symbols")
 

@@ -1238,3 +1238,20 @@ no-lookahead without treating a survivor-selected, raw-corporate-action-unknown
 source as execution or model-selection evidence. Tests cover chronological
 alignment, immutable result metadata, future OHLCV isolation, source tampering,
 and attempted `CatalogedBars` or direct raw-parser bypasses.
+
+## 2026-07-18 - Development-only outcomes remain explicit future evidence
+
+Decision: keep next-observed-session outcomes inside the existing allowlisted
+feature module rather than opening another raw-bar accessor. Before deriving an
+outcome, it re-attests the fixed source and recomputes the canonical feature
+result. Each immutable row pairs a feature at completed session `t` with
+`raw_close(next observed session) / raw_close(t) - 1`, records the future
+session and calendar-day gap, and omits terminal feature rows. The outcome has
+its own raw-corporate-action limitation and cannot serve as a decision, campaign
+input, paper order, ranking, promotion, or profitability claim.
+
+Reason: explicit timing prevents a future label from appearing as an available
+feature, while using the existing trusted-module boundary avoids another raw
+input API. Tests reject forged/tampered source state and generic stream access,
+verify all fixed symbols against future OHLCV changes, and preserve the
+`CatalogedBars` campaign boundary.
