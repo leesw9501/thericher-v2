@@ -4,21 +4,30 @@ import builtins
 import csv
 import gzip
 import hashlib
+import io
 import json
 import socket
 import urllib.request
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
 
 import pytest
 
-from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe
 from thericher_v2.data import (
+    CatalogedCorporateActions,
     build_fixed_etf_daily_raw_subset,
     build_fixed_etf_daily_subset,
+    load_cataloged_corporate_actions,
     load_cataloged_yahoo_daily_1d_bars,
+)
+from thericher_v2.data.corporate_actions import (
+    CAMPAIGN_COVERAGE_END,
+    CAMPAIGN_COVERAGE_START,
+    CORPORATE_ACTION_COLUMNS,
+    CORPORATE_ACTION_EVENT_TYPES,
 )
 from thericher_v2.execution import EmergencyStore
 from thericher_v2.research.daily_campaign import (
@@ -42,7 +51,9 @@ from thericher_v2.research.daily_campaign import (
     build_daily_campaign_plan,
     build_daily_training_batch,
     check_daily_sensitivity,
+    eligible_daily_signal_starts_for_dates,
     executable_open_to_open_pnl,
+    prepare_daily_explicit_event_replay,
     run_daily_cpu_baselines,
     run_daily_cuda_breadth,
     write_daily_campaign_summary,
@@ -206,6 +217,365 @@ def test_sensitivity_rejects_all_item_relative_order_reversal() -> None:
     )
     assert check.relative_order_changed is True
     assert check.verdict == "unsupported"
+
+
+def test_explicit_date_mask_uses_inclusive_i_minus_20_through_i_plus_2(
+    daily_plan,
+) -> None:
+    bars = daily_plan.phase_bars("SPY", "fold-1", "validation")
+    event_index = 22
+    event_dates = frozenset({bars[event_index].start_ts.date()})
+    primary = eligible_daily_signal_starts_for_dates(
+        daily_plan,
+        "SPY",
+        "fold-1",
+        "validation",
+        affected_session_dates=frozenset(),
+    )
+    explicit = eligible_daily_signal_starts_for_dates(
+        daily_plan,
+        "SPY",
+        "fold-1",
+        "validation",
+        affected_session_dates=event_dates,
+    )
+    by_start = {bar.start_ts: index for index, bar in enumerate(bars)}
+    excluded_indices = {by_start[start] for start in primary - explicit}
+    expected = {
+        index
+        for index in range(20, len(bars) - 2, DAILY_SIGNAL_CADENCE)
+        if index - 20 <= event_index <= index + 2
+    }
+
+    assert excluded_indices == expected
+    assert min(excluded_indices) + 2 == event_index
+    assert max(excluded_indices) - 20 == event_index
+    assert daily_plan.eligible_signal_starts(
+        "SPY",
+        "fold-1",
+        "validation",
+        scenario="factor_sensitivity",
+    ) == eligible_daily_signal_starts_for_dates(
+        daily_plan,
+        "SPY",
+        "fold-1",
+        "validation",
+        affected_session_dates=frozenset(daily_plan.factor_dates_for("SPY")),
+    )
+    with pytest.raises(TypeError, match="frozenset of dates"):
+        eligible_daily_signal_starts_for_dates(
+            daily_plan,
+            "SPY",
+            "fold-1",
+            "validation",
+            affected_session_dates=frozenset(
+                {datetime(2024, 1, 2, tzinfo=UTC)}
+            ),
+        )
+
+
+def test_prepare_explicit_event_replay_is_no_training_and_fixed_36_cells(
+    daily_plan,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "events-success")
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+
+    def fail_training(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("explicit-event preparation must not train or build batches")
+
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.build_daily_training_batch",
+        fail_training,
+    )
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.train_daily_candidate_torch_cuda",
+        fail_training,
+    )
+    monkeypatch.setattr(
+        "thericher_v2.research.daily_campaign.run_daily_cuda_breadth",
+        fail_training,
+    )
+    import torch
+
+    load_calls: list[Path] = []
+    original_load = torch.load
+
+    def tracked_cpu_load(path: Path, **kwargs: object):
+        assert kwargs == {"map_location": "cpu", "weights_only": True}
+        load_calls.append(Path(path))
+        return original_load(path, **kwargs)
+
+    def fail_cuda_probe() -> bool:
+        raise AssertionError("explicit-event preparation must not inspect or use CUDA")
+
+    monkeypatch.setattr(torch, "load", tracked_cpu_load)
+    monkeypatch.setattr(torch.cuda, "is_available", fail_cuda_probe)
+
+    prepared = prepare_daily_explicit_event_replay(
+        daily_plan,
+        corporate_actions=actions,
+        source_summary_path=summary_path,
+        expected_source_summary_sha256=summary_hash,
+        replay_id="unit-explicit-events-r1",
+        artifact_root=artifact_root,
+    )
+
+    assert isinstance(actions, CatalogedCorporateActions)
+    assert prepared.training_runs == 0
+    assert prepared.parent_sensitivity_verdict == "unsupported"
+    assert prepared.artifact_root == artifact_root.resolve()
+    assert len(prepared.cells) == 36
+    assert len(load_calls) == 6
+    assert len(set(load_calls)) == 6
+    assert sum(cell.kind == "baseline" for cell in prepared.cells) == 18
+    assert sum(cell.kind == "candidate" for cell in prepared.cells) == 18
+    assert all(
+        cell.checkpoint_path is None and cell.checkpoint_sha256 is None
+        for cell in prepared.cells
+        if cell.kind == "baseline"
+    )
+    assert all(
+        cell.checkpoint_path is not None
+        and cell.checkpoint_sha256 == _file_sha256(cell.checkpoint_path)
+        for cell in prepared.cells
+        if cell.kind == "candidate"
+    )
+    assert prepared.development_only is True
+    assert prepared.retrospective_only is True
+    assert prepared.ranking is prepared.promotion is prepared.candidate_selection is False
+    assert prepared.sealed_holdout is prepared.profitability_claim is False
+
+
+def test_prepare_explicit_event_replay_rejects_ineligible_or_tampered_inputs(
+    daily_plan,
+    tmp_path: Path,
+) -> None:
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    ineligible = _corporate_actions_fixture(
+        daily_plan,
+        tmp_path / "events-ineligible",
+        coverage_status="incomplete",
+    )
+    with pytest.raises(ValueError, match="not replay eligible"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=ineligible,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-ineligible",
+            artifact_root=artifact_root,
+        )
+
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "events-valid")
+    with pytest.raises(ValueError, match="summary SHA-256 mismatch"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256="sha256:" + "0" * 64,
+            replay_id="unit-explicit-summary-tamper",
+            artifact_root=artifact_root,
+        )
+
+    valid_r2_manifest_hash = actions.r2_manifest_hash
+    object.__setattr__(actions, "r2_manifest_hash", "sha256:" + "0" * 64)
+    with pytest.raises(ValueError, match="r2 manifest"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-lineage-tamper",
+            artifact_root=artifact_root,
+        )
+    object.__setattr__(actions, "r2_manifest_hash", valid_r2_manifest_hash)
+
+    summary = json.loads(summary_path.read_text())
+    summary["sensitivity"]["verdict"] = "supported-with-limits"
+    verdict_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="verdict must be unsupported"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=verdict_hash,
+            replay_id="unit-explicit-parent-verdict",
+            artifact_root=artifact_root,
+        )
+    summary["sensitivity"]["verdict"] = "unsupported"
+    summary["checkpoints"][0]["standardization"]["scales"][0] = 0
+    malformed_standardization_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="standardization is malformed"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=malformed_standardization_hash,
+            replay_id="unit-explicit-malformed-standardization",
+            artifact_root=artifact_root,
+        )
+    summary["checkpoints"][0]["standardization"]["scales"][0] = 1.0
+    summary_hash = _rewrite_json(summary_path, summary)
+    checkpoint = (
+        artifact_root
+        / "daily-campaign"
+        / daily_plan.contract.campaign_id
+        / summary["checkpoints"][0]["fold_id"]
+        / f"{summary['checkpoints'][0]['candidate_id']}.pt"
+    )
+    import torch
+
+    checkpoint_bytes = checkpoint.read_bytes()
+    payload = torch.load(checkpoint, map_location="cpu", weights_only=True)
+    payload["state_dict"].pop(next(iter(payload["state_dict"])))
+    torch.save(payload, checkpoint)
+    summary["checkpoints"][0]["sha256"] = _file_sha256(checkpoint)
+    incompatible_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="model state is incompatible"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=incompatible_hash,
+            replay_id="unit-explicit-checkpoint-structure",
+            artifact_root=artifact_root,
+        )
+
+    checkpoint.write_bytes(checkpoint_bytes)
+    summary["checkpoints"][0]["sha256"] = _file_sha256(checkpoint)
+    summary_hash = _rewrite_json(summary_path, summary)
+    checkpoint.write_bytes(checkpoint.read_bytes() + b"tampered")
+    with pytest.raises(ValueError, match="checkpoint SHA-256 mismatch"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-checkpoint-tamper",
+            artifact_root=artifact_root,
+        )
+
+
+def test_prepare_explicit_event_replay_rejects_fake_repo_and_outside_paths(
+    daily_plan,
+    tmp_path: Path,
+) -> None:
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "events-paths")
+    outside_dates = {
+        symbol: date(2025, 1, 2 + index)
+        for index, symbol in enumerate(DAILY_SYMBOLS)
+    }
+    outside_events = _corporate_actions_fixture(
+        daily_plan,
+        tmp_path / "events-outside-plan",
+        event_dates=outside_dates,
+    )
+    with pytest.raises(ValueError, match="outside plan.common_sessions"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=outside_events,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-event-outside-plan",
+            artifact_root=artifact_root,
+        )
+    fake = SimpleNamespace(
+        assert_replay_eligible=lambda: (_ for _ in ()).throw(
+            AssertionError("fake method must not be called")
+        )
+    )
+    with pytest.raises(TypeError, match="must be CatalogedCorporateActions"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=fake,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-fake",
+            artifact_root=artifact_root,
+        )
+
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-repo-root",
+            artifact_root=Path.cwd(),
+            repo_root=Path.cwd(),
+        )
+
+    outside_summary = tmp_path / "outside-summary.json"
+    outside_summary.write_bytes(summary_path.read_bytes())
+    with pytest.raises(ValueError, match="exact non-symlink campaign summary"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=outside_summary,
+            expected_source_summary_sha256=_file_sha256(outside_summary),
+            replay_id="unit-explicit-outside-summary",
+            artifact_root=artifact_root,
+        )
+
+    summary = json.loads(summary_path.read_text())
+    outside_checkpoint = tmp_path / "outside.pt"
+    outside_checkpoint.write_bytes(b"outside")
+    summary["checkpoints"][0]["path"] = str(outside_checkpoint)
+    summary["checkpoints"][0]["sha256"] = _file_sha256(outside_checkpoint)
+    outside_checkpoint_hash = _rewrite_json(summary_path, summary)
+    with pytest.raises(ValueError, match="expected artifact-relative tail"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=outside_checkpoint_hash,
+            replay_id="unit-explicit-outside-checkpoint",
+            artifact_root=artifact_root,
+        )
+
+
+def test_prepare_explicit_event_replay_rejects_symlinked_evidence_component(
+    daily_plan,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    artifact_root, summary_path, summary_hash = _write_source_cuda_summary(
+        daily_plan, tmp_path
+    )
+    actions = _corporate_actions_fixture(daily_plan, tmp_path / "events-symlink")
+    summary = json.loads(summary_path.read_text())
+    checkpoint = (
+        artifact_root
+        / "daily-campaign"
+        / daily_plan.contract.campaign_id
+        / summary["checkpoints"][0]["fold_id"]
+        / f"{summary['checkpoints'][0]['candidate_id']}.pt"
+    )
+    path_type = type(checkpoint)
+    original_is_symlink = path_type.is_symlink
+
+    def injected_is_symlink(path: Path) -> bool:
+        return path == checkpoint or original_is_symlink(path)
+
+    monkeypatch.setattr(path_type, "is_symlink", injected_is_symlink)
+    with pytest.raises(ValueError, match="cannot contain symlinks"):
+        prepare_daily_explicit_event_replay(
+            daily_plan,
+            corporate_actions=actions,
+            source_summary_path=summary_path,
+            expected_source_summary_sha256=summary_hash,
+            replay_id="unit-explicit-symlink",
+            artifact_root=artifact_root,
+        )
 
 
 def test_daily_targets_use_raw_next_opens_and_fold_local_development_stats(
@@ -530,6 +900,329 @@ def _decision_counts(cells) -> dict[tuple[str, str, str], int]:
     return {key: next(iter(counts)) for key, counts in grouped.items()}
 
 
+def _corporate_actions_fixture(
+    daily_plan,
+    root: Path,
+    *,
+    coverage_status: str = "complete",
+    event_dates: dict[str, date] | None = None,
+) -> CatalogedCorporateActions:
+    dates = event_dates or {
+        symbol: daily_plan.phase_bars(symbol, "fold-2", "validation")[
+            10 + index * 10
+        ].start_ts.date()
+        for index, symbol in enumerate(DAILY_SYMBOLS)
+    }
+    snapshot, dataset_id, dataset_hash, manifest_hash = (
+        _write_corporate_action_snapshot(
+            daily_plan,
+            root,
+            dates,
+            coverage_status=coverage_status,
+        )
+    )
+    observed_campaign_dates = {
+        session.date() for session in daily_plan.common_sessions
+    } | set(dates.values()) | {CAMPAIGN_COVERAGE_START, CAMPAIGN_COVERAGE_END}
+    observed_dates = {
+        symbol: frozenset(observed_campaign_dates) for symbol in DAILY_SYMBOLS
+    }
+    return load_cataloged_corporate_actions(
+        snapshot,
+        dataset_id=dataset_id,
+        expected_dataset_hash=dataset_hash,
+        expected_manifest_hash=manifest_hash,
+        expected_r2_dataset_id=daily_plan.contract.catalog.dataset_id,
+        expected_r2_dataset_hash=daily_plan.contract.catalog.dataset_hash,
+        expected_r2_manifest_hash=_file_sha256(
+            daily_plan.cataloged_bars[0].source_path.parent / "manifest.json"
+        ),
+        observed_session_dates=observed_dates,
+        require_replay_eligible=coverage_status == "complete",
+        repo_root=Path.cwd(),
+    )
+
+
+def _write_corporate_action_snapshot(
+    daily_plan,
+    root: Path,
+    dates: dict[str, date],
+    *,
+    coverage_status: str,
+) -> tuple[Path, str, str, str]:
+    snapshot = root / "snapshot=unit-events-r1"
+    raw_root = snapshot / "raw"
+    raw_root.mkdir(parents=True)
+    raw_bytes = b'{"source":"unit"}\n'
+    raw_path = raw_root / "unit-source.json"
+    raw_path.write_bytes(raw_bytes)
+    rows = [
+        {
+            "event_id": f"{symbol.lower()}-cash",
+            "symbol": symbol,
+            "event_type": "cash_distribution",
+            "source_date_kind": "ex_date",
+            "source_event_date": dates[symbol].isoformat(),
+            "affected_session_date": dates[symbol].isoformat(),
+            "cash_amount": "1.0",
+            "currency": "USD",
+            "split_numerator": "",
+            "split_denominator": "",
+            "source_id": "unit-source",
+            "source_record_id": f"{symbol.lower()}-record",
+            "mapping_rule_id": "identity_observed_session_v1",
+            "mapping_status": "mapped",
+        }
+        for symbol in DAILY_SYMBOLS
+    ]
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=CORPORATE_ACTION_COLUMNS, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    event_bytes = buffer.getvalue().encode()
+    event_path = snapshot / "corporate_actions.csv"
+    event_path.write_bytes(event_bytes)
+    dataset_hash = _bytes_sha256(event_bytes)
+    dataset_id = f"us_equities.fixed_etf_corporate_actions.{snapshot.name}"
+    retrieval = "2026-07-18T01:02:03Z"
+    coverage = []
+    for symbol in DAILY_SYMBOLS:
+        for event_type in CORPORATE_ACTION_EVENT_TYPES:
+            count = int(event_type == "cash_distribution")
+            coverage.append(
+                {
+                    "symbol": symbol,
+                    "event_type": event_type,
+                    "start": CAMPAIGN_COVERAGE_START.isoformat(),
+                    "end": CAMPAIGN_COVERAGE_END.isoformat(),
+                    "status": coverage_status,
+                    "event_count": count,
+                    "source_ids": ["unit-source"],
+                }
+            )
+    r2_snapshot = daily_plan.contract.catalog.dataset_id.rsplit(".", 1)[-1]
+    r2_manifest_hash = _file_sha256(
+        daily_plan.cataloged_bars[0].source_path.parent / "manifest.json"
+    )
+    manifest = {
+        "schema_version": 1,
+        "kind": "fixed_etf_corporate_actions",
+        "dataset_id": dataset_id,
+        "dataset_hash": dataset_hash,
+        "immutable_snapshot": True,
+        "symbols": list(DAILY_SYMBOLS),
+        "event_types": list(CORPORATE_ACTION_EVENT_TYPES),
+        "date_kinds": ["ex_date", "split_trading_date"],
+        "normalized_events": {
+            "path": f"/market_data/{snapshot.name}/corporate_actions.csv",
+            "sha256": dataset_hash,
+            "size_bytes": len(event_bytes),
+            "schema": list(CORPORATE_ACTION_COLUMNS),
+        },
+        "raw_sources": [
+            {
+                "source_id": "unit-source",
+                "provider": "Unit Fixture",
+                "source_url": "https://unit.example/corporate-actions",
+                "source_kind": "issuer_download",
+                "acquisition_mode": "manual_operator",
+                "use_scope": "private_internal_use",
+                "rights_status": "confirmed",
+                "symbols": sorted(DAILY_SYMBOLS),
+                "event_types": sorted(CORPORATE_ACTION_EVENT_TYPES),
+                "coverage_start": CAMPAIGN_COVERAGE_START.isoformat(),
+                "coverage_end": CAMPAIGN_COVERAGE_END.isoformat(),
+                "filename": raw_path.name,
+                "path": f"/market_data/{snapshot.name}/raw/{raw_path.name}",
+                "sha256": _bytes_sha256(raw_bytes),
+                "size_bytes": len(raw_bytes),
+                "retrieved_at_utc": retrieval,
+                "source_as_of": CAMPAIGN_COVERAGE_END.isoformat(),
+                "revision": "unit-r1",
+            }
+        ],
+        "snapshot_metadata": {
+            "retrieved_at_utc": retrieval,
+            "source_as_of": CAMPAIGN_COVERAGE_END.isoformat(),
+            "revision": "unit-r1",
+        },
+        "campaign_coverage": {
+            "start": CAMPAIGN_COVERAGE_START.isoformat(),
+            "end": CAMPAIGN_COVERAGE_END.isoformat(),
+        },
+        "coverage": coverage,
+        "date_semantics": {
+            "exchange_timezone": "America/New_York",
+            "session_date_semantics": "date_only_no_utc_conversion",
+            "non_session_policy": "reject",
+            "ambiguous_effective_date_policy": "reject",
+        },
+        "mapping_policy": {
+            "id": "identity_observed_session_v1",
+            "status": "mapped_only",
+            "calendar_lineage": "verified_r2_observed_sessions",
+        },
+        "duplicate_policy": {
+            "event_id": "reject",
+            "source_record": "reject",
+            "identical_normalized_action": "preserve_records_collapse_mask_date",
+            "conflict": "reject",
+        },
+        "scope": {
+            "retrospective_development_replay_only": True,
+            "point_in_time_eligible": False,
+            "ranking_eligible": False,
+            "sealed_holdout_eligible": False,
+        },
+        "r2_lineage": {
+            "dataset_id": daily_plan.contract.catalog.dataset_id,
+            "dataset_hash": daily_plan.contract.catalog.dataset_hash,
+            "manifest_sha256": r2_manifest_hash,
+            "snapshot_name": r2_snapshot,
+            "subset_path": f"/market_data/{r2_snapshot}/ohlcv_1d.csv.gz",
+            "manifest_path": f"/market_data/{r2_snapshot}/manifest.json",
+        },
+    }
+    manifest_path = snapshot / "manifest.json"
+    manifest_bytes = json.dumps(manifest, indent=2, sort_keys=True).encode()
+    manifest_path.write_bytes(manifest_bytes)
+    return snapshot, dataset_id, dataset_hash, _bytes_sha256(manifest_bytes)
+
+
+def _write_source_cuda_summary(
+    daily_plan,
+    root: Path,
+) -> tuple[Path, Path, str]:
+    torch = pytest.importorskip("torch", reason="requires the research runtime")
+
+    artifact_root = root / "artifacts"
+    campaign_root = artifact_root / "daily-campaign" / daily_plan.contract.campaign_id
+    campaign_root.mkdir(parents=True)
+    checkpoints = []
+    for fold in daily_plan.folds:
+        for candidate in DAILY_CANDIDATES:
+            fold_root = campaign_root / fold.fold_id
+            fold_root.mkdir(exist_ok=True)
+            path = fold_root / f"{candidate.candidate_id}.pt"
+            standardization = _standardization_fixture(
+                daily_plan,
+                fold.fold_id,
+                candidate.feature_set,
+            )
+            model = torch.nn.Sequential(
+                torch.nn.Linear(len(standardization["feature_names"]), candidate.hidden_units),
+                torch.nn.ReLU(),
+                torch.nn.Linear(candidate.hidden_units, 1),
+            )
+            checkpoint_standardization = {
+                **standardization,
+                "feature_names": tuple(standardization["feature_names"]),
+                "means": tuple(standardization["means"]),
+                "scales": tuple(standardization["scales"]),
+            }
+            with path.open("xb") as handle:
+                torch.save(
+                    {
+                        "schema_version": SCHEMA_VERSION,
+                        "model_kind": "daily_tiny_mlp_v1",
+                        "candidate": {
+                            "candidate_id": candidate.candidate_id,
+                            "feature_set": candidate.feature_set,
+                            "lookback": candidate.lookback,
+                            "hidden_units": candidate.hidden_units,
+                            "activation": candidate.activation,
+                            "learning_rate": candidate.learning_rate,
+                            "weight_decay": candidate.weight_decay,
+                            "threshold": candidate.threshold,
+                            "epochs": candidate.epochs,
+                            "seed": candidate.seed,
+                        },
+                        "standardization": checkpoint_standardization,
+                        "state_dict": model.state_dict(),
+                    },
+                    handle,
+                )
+            checkpoints.append(
+                {
+                    "fold_id": fold.fold_id,
+                    "candidate_id": candidate.candidate_id,
+                    "path": _declared_artifact_path(
+                        "daily-campaign",
+                        daily_plan.contract.campaign_id,
+                        fold.fold_id,
+                        f"{candidate.candidate_id}.pt",
+                    ),
+                    "sha256": _file_sha256(path),
+                    "standardization": standardization,
+                }
+            )
+    payload = {
+        "campaign_id": daily_plan.contract.campaign_id,
+        "campaign_contract_hash": daily_plan.contract.contract_hash,
+        "labels": {
+            "candidate_selection": False,
+            "development_only": True,
+            "profitability_claim": False,
+            "promotion": False,
+            "ranking": False,
+            "sealed_holdout": False,
+        },
+        "dataset": {
+            "catalog_id": daily_plan.contract.catalog.catalog_id,
+            "dataset_id": daily_plan.contract.catalog.dataset_id,
+            "dataset_hash": daily_plan.contract.catalog.dataset_hash,
+            "price_basis": "raw_ohlcv_only",
+            "symbols": list(DAILY_SYMBOLS),
+        },
+        "cuda": {"used": True, "training_runs": 6},
+        "training_policy": {
+            "runs": 6,
+            "maximum_runs": 6,
+            "retraining_by_validation_scenario": False,
+        },
+        "sensitivity": {"verdict": "unsupported"},
+        "checkpoints": checkpoints,
+    }
+    path = campaign_root / "summary.json"
+    summary_hash = _rewrite_json(path, payload)
+    return artifact_root, path, summary_hash
+
+
+def _rewrite_json(path: Path, payload: object) -> str:
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+    return _file_sha256(path)
+
+
+def _standardization_fixture(daily_plan, fold_id: str, feature_set: str) -> dict:
+    fold = daily_plan.fold_for(fold_id)
+    feature_names = (
+        "lookback_return",
+        "last_bar_return",
+        "bar_range",
+        "volume_change",
+    )
+    if feature_set == "pressure":
+        feature_names = (
+            *feature_names,
+            "close_position",
+            "range_expansion",
+            "bar_body_return",
+        )
+    return {
+        "fit_phase": "development",
+        "fit_fold_id": fold_id,
+        "development_start": fold.development[0].isoformat(),
+        "development_end": (fold.development[-1] + Timeframe.D1.duration).isoformat(),
+        "feature_names": list(feature_names),
+        "means": [0.0] * len(feature_names),
+        "scales": [1.0] * len(feature_names),
+    }
+
+
+def _declared_artifact_path(*parts: str) -> str:
+    return str(PurePosixPath("/app/model_artifacts", *parts))
+
+
 def _write_source_snapshot(path: Path) -> None:
     sessions = _business_sessions(date(2021, 1, 4), DAILY_COMMON_SESSIONS)
     with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
@@ -591,3 +1284,7 @@ def _m1_bar(start: datetime) -> Bar:
 
 def _file_sha256(path: Path) -> str:
     return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _bytes_sha256(value: bytes) -> str:
+    return "sha256:" + hashlib.sha256(value).hexdigest()

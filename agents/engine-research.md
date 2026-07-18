@@ -8,6 +8,8 @@
   eligible and ranking/holdout ineligible.
 - The CUDA evidence is structurally valid but the factor sensitivity verdict is
   `unsupported`; no candidate is selected or promoted.
+- The explicit-event replay preparation contract is implemented, but no
+  accepted event snapshot exists and no replay or training is running.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -39,17 +41,17 @@
 
 ## Current Objective
 
-- Wait for Data-owned explicit corporate-action and distribution evidence for
-  `SPY`, `QQQ`, and `IWM`.
-- Reuse the existing six checkpoints to compare the heuristic factor mask with
-  an explicit event mask. Do not retrain, change candidates, or select a model.
+- Wait for Data to provide a loader-attested corporate-action snapshot after
+  operator-authorized acquisition.
+- Then reuse the existing six checkpoints for the frozen 36-cell explicit-event
+  replay. Do not retrain, change candidates, rank, or select a model.
 
 ## Breadth Queue
 
-1. Receive hash-bound event dates, event types, and provenance from Data.
-2. Map events to affected lookback, signal, entry, and exit sessions without
-   changing raw fills or the frozen split.
-3. Replay existing baselines and checkpoints under the explicit event mask.
+1. Receive loader-attested event dates, coverage, and provenance from Data.
+2. Prepare the frozen replay and verify r2 lineage, the source summary, and all
+   six existing checkpoints without training.
+3. Replay 18 baseline and 18 candidate cells under the explicit event mask.
 4. Compare only sensitivity stability; do not use the result for ranking.
 
 ## Depth Queue
@@ -80,6 +82,10 @@
 - Candidate/baseline after-cost sign instability or any aggregate relative-order
   change across present baselines and candidates makes the sensitivity verdict
   `unsupported`; it does not select a model.
+- Explicit event masking excludes every signal start whose inclusive observed
+  index window `[i-20, i+2]` touches a qualified event session. Preparation
+  freezes 36 future replay cells, zero training, and the parent `unsupported`
+  verdict; it cannot rank, promote, select, open a holdout, or claim profit.
 - The fixed CUDA set is hidden 8, ReLU, standardization, learning rate 0.005,
   weight decay 0.0001, threshold 0.5, 12 epochs, seed 71. Torch remains lazy and
   own checkpoints load with `weights_only=True`.
@@ -114,6 +120,6 @@
 ## Next Handoff
 
 - Data leads the next bounded objective. Once its explicit event manifest is
-  independently validated, Research replays the existing checkpoints without
-  retraining. Preserve the current summaries as development-only evidence and
-  do not rank, promote, name a winner, or claim profitability.
+  independently validated, Research prepares and runs the existing checkpoints
+  without retraining. Preserve the current summaries as development-only
+  evidence and do not rank, promote, name a winner, or claim profitability.

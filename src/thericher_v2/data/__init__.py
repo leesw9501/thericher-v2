@@ -10,6 +10,11 @@ from .catalog import (
     select_catalog_dataset,
     write_training_readiness_catalog,
 )
+from .corporate_actions import (
+    CatalogedCorporateActions,
+    CorporateActionEvent,
+    load_cataloged_corporate_actions,
+)
 from .daily import (
     ADJUSTMENT_POLICY_ID,
     DEVELOPMENT_MIN_SESSIONS,
@@ -41,6 +46,8 @@ __all__ = [
     "DEVELOPMENT_MIN_SESSIONS",
     "FACTOR_CHANGE_RELATIVE_THRESHOLD",
     "CatalogedBars",
+    "CatalogedCorporateActions",
+    "CorporateActionEvent",
     "DEFAULT_DAILY_ROOT",
     "DEFAULT_INTRADAY_PATHS",
     "DEFAULT_MODEL_ARTIFACT_ROOT",
@@ -64,6 +71,7 @@ __all__ = [
     "inspect_ohlcv_file",
     "load_cataloged_yahoo_intraday_1m_bars",
     "load_cataloged_yahoo_daily_1d_bars",
+    "load_cataloged_corporate_actions",
     "load_fixed_etf_daily_factor_change_dates",
     "resample_bars",
     "select_catalog_dataset",

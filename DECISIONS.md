@@ -1115,3 +1115,24 @@ open-order, position, and reconciliation integrity still fail closed.
 Reason: exits should not be trapped by limits intended to prevent new exposure,
 while stale or ambiguous state must never authorize an unsafe sell. This adds no
 submit side effect, KIS call, credential path, broker authority, or live mode.
+
+## 2026-07-18 - Explicit-event evidence before sensitivity replay
+
+Decision: the RAW D1 factor-sensitivity question may use explicit distributions
+and splits only through a Data-owned, loader-attested external snapshot. The
+snapshot must bind raw and normalized bytes, exact r2 lineage, event-date and
+session semantics, coverage, provenance, rights, and source-as-of facts. Research
+may then reuse the existing six checkpoints for 36 fixed replay cells with zero
+training; the parent `unsupported` verdict remains sticky and the result cannot
+rank, promote, select, open a holdout, or claim profitability.
+
+No current no-auth source proved both usable preservation rights and complete
+split/no-split coverage for SPY, QQQ, and IWM. Acquisition therefore stopped
+fail-closed. A free Tiingo account/token is the smallest remaining source path,
+but creating or reading that credential requires operator approval and grants
+no paid-data, KIS, broker, or live authority.
+
+Reason: adjustment-factor heuristics materially changed the research conclusion,
+while a missing event row is not evidence that no event occurred. A narrow
+offline contract and no-retraining replay resolve that assumption without more
+GPU search, report/gate sprawl, or credential creep.

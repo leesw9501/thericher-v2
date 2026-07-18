@@ -77,6 +77,8 @@ The repository already contains:
   durable local-paper replay evidence,
 - a fixed-instrument RAW D1 development campaign with factor sensitivity and
   bounded Docker/PyTorch CUDA training,
+- a fail-closed corporate-action snapshot contract and a no-retraining replay
+  preparation path for the fixed RAW D1 campaign,
 - broker-free local paper orders, fills, cash, positions, replay, duplicate-id
   protection, and emergency state,
 - broker-neutral lifecycle contracts with an atomic, restartable fake
@@ -144,7 +146,15 @@ Current canonical evidence:
 
 `D:` has about 40.6 percent free. SEC current mappings were not
 collected because compliant automation needs an honest identifying contact;
-none was invented. No operator data action is required for the current goal.
+none was invented.
+
+No corporate-action snapshot has been accepted yet. Official issuer pages
+confirm distribution-date semantics, but automated preservation rights and a
+complete split/no-split history for all three ETFs are not sufficiently clear.
+The no-auth acquisition path therefore stopped fail-closed. The smallest useful
+operator action is to authorize a free Tiingo Starter account/API token, limited
+to private retrieval of SPY/QQQ/IWM distributions and splits. No credential has
+been created or read, and no data was downloaded for this objective.
 
 The Data stateboard owns exact catalog status and operator data requests.
 
@@ -178,6 +188,12 @@ The CUDA evidence is structurally valid but the research verdict is
 under factor exclusion, and aggregate item order reversed. No candidate was
 selected or promoted, and no profitability claim is permitted. The interrupted
 `cpu-r1` attempt has no summary and is non-authoritative.
+
+The explicit-event replay path is preparation-only. It binds a loader-attested
+event snapshot to r2, verifies the existing source summary and six checkpoints,
+and freezes 36 future baseline/candidate replay cells with zero training. No
+accepted event snapshot exists, so no explicit-event replay, artifact, model
+selection, or new GPU run has occurred.
 
 ## Execution Reality
 
@@ -252,8 +268,7 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now makes Data lead the unresolved factor sensitivity:
-qualify explicit corporate-action and distribution evidence for SPY, QQQ, and
-IWM, then replay the existing fixed checkpoints without new training. No
-operator help is currently required. Paid data, read-only KIS authority, the
-paper capital envelope, and live capital remain future explicit decisions.
+`NEXT_CODEX_GOAL.md` is ready for the operator-authorized corporate-action
+snapshot and 36-cell no-retraining replay. Codex must not create or read a
+Tiingo token before that approval. Paid data, read-only KIS authority, the paper
+capital envelope, and live capital remain separate future decisions.

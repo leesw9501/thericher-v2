@@ -2,9 +2,9 @@
 
 ## Status
 
-Active, no running job. The raw-price fixed-instrument daily r2 correction is
-complete; the next bounded gap is explicit corporate-action and distribution
-evidence for the same three instruments.
+Waiting for operator authority, no running job. The offline corporate-action
+snapshot contract is implemented, but no source has yet met the complete
+coverage, rights, and no-auth requirements for the three fixed instruments.
 
 ## Engine Loop
 
@@ -38,20 +38,17 @@ evidence for the same three instruments.
 
 ## Current Objective
 
-Qualify no-auth, no-cost, license-compatible split and cash-distribution event
-histories for `SPY`, `QQQ`, and `IWM`. Prefer existing local evidence and
-official issuer sources. Preserve accepted bytes and provenance in one
-immutable, hash-bound external snapshot without modifying r2.
+After explicit operator authorization, capture Tiingo split and distribution
+records for `SPY`, `QQQ`, and `IWM` in one immutable, hash-bound external
+snapshot without modifying r2. Until then, do not create or read credentials.
 
 ## Ready Queue
 
-1. Inspect bounded existing metadata under `D:\market_data` for event histories.
-2. If missing, acquire only directly useful official, no-auth, no-cost event
-   records with clear private-use compatibility.
-3. Normalize accepted dates and event types into one immutable snapshot and
-   manifest that retains raw-source hashes and retrieval provenance.
-4. Independently verify mapping coverage over the fixed 896-session campaign
-   window; document unresolved gaps as warnings, not ranking eligibility.
+1. Obtain operator authority for a free Tiingo Starter account/API token and
+   corporate-actions endpoint access.
+2. Capture only SPY/QQQ/IWM distributions and splits under `D:\market_data`.
+3. Load the snapshot through the offline contract and independently verify the
+   exact fixed 896-session coverage before Research consumes it.
 
 ## Running
 
@@ -59,7 +56,10 @@ immutable, hash-bound external snapshot without modifying r2.
 
 ## Operator Help Needed
 
-- None now.
+- Approve use of a free Tiingo Starter account/API token for private retrieval
+  of SPY/QQQ/IWM distributions and splits, including corporate-actions beta
+  activation if Tiingo still requires it. This is no-spend authority; paid
+  upgrades remain prohibited without a separate approval.
 
 ## Durable Knowledge
 
@@ -119,6 +119,15 @@ immutable, hash-bound external snapshot without modifying r2.
   Exclude any campaign lookback, signal, entry, exit, feature, label, fill,
   threshold, or metric sample touching a flagged date. These flags are not
   authoritative corporate-action or dividend lineage.
+- The bounded source review found no existing local corporate-action history.
+  Official issuer pages support distribution ex-date semantics but did not
+  establish both automated preservation rights and complete split/no-split
+  coverage for all three ETFs. Absence of a split row cannot prove no split.
+- The corporate-action loader is offline and fail-closed. It requires immutable
+  raw and normalized hashes, exact r2 lineage, source/rights/as-of facts,
+  explicit per-symbol/event-type coverage, New York session-date semantics,
+  and loader-only attestation. It rejects Git paths, symlinks, tampering,
+  ambiguous dates, conflicts, incomplete coverage, and forged objects.
 - The strictly local daily loader treats the r2 gzip byte hash as authoritative,
   then requires the sibling UTF-8 r2 manifest to bind the caller dataset ID,
   dataset/subset hashes, mount-portable snapshot-directory/file path tail,
@@ -143,9 +152,9 @@ immutable, hash-bound external snapshot without modifying r2.
 
 ## Recovery
 
-- Recovery state is `complete`: use the fixed ETF daily r2 manifest for
-  development campaigns and retain r1 only as immutable lineage. Reuse the r2
-  catalog artifact before inspecting unchanged files.
+- Recovery state is `operator`: the loader contract is complete, but there is
+  no accepted event snapshot to recover. Use the fixed ETF daily r2 manifest
+  for development campaigns and retain r1 only as immutable lineage.
 - Recover or mount the r2 subset only together with its unchanged sibling
   `manifest.json`. A different Windows/POSIX root is allowed when the snapshot
   directory name and `ohlcv_1d.csv.gz` basename are preserved; missing,
@@ -184,7 +193,8 @@ immutable, hash-bound external snapshot without modifying r2.
 
 ## Next Handoff
 
-Supply Engine Research with hash-bound event dates, event types, coverage, and
-provenance for a no-retraining sensitivity replay. Research must keep r2 raw
-fills unchanged and may not use the event snapshot to claim ranking, sealed
-holdout independence, model selection, or profitability.
+After operator authorization, supply Engine Research with loader-attested event
+dates, event types, coverage, and provenance for a no-retraining sensitivity
+replay. Research must keep r2 raw fills unchanged and may not use the event
+snapshot to claim ranking, sealed-holdout independence, model selection, or
+profitability.

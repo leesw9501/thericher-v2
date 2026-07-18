@@ -21,7 +21,11 @@ from thericher_v2.contracts import (
     Timeframe,
     require_utc,
 )
-from thericher_v2.data import CatalogedBars, load_fixed_etf_daily_factor_change_dates
+from thericher_v2.data import (
+    CatalogedBars,
+    CatalogedCorporateActions,
+    load_fixed_etf_daily_factor_change_dates,
+)
 
 from .campaign import (
     CampaignContract,
@@ -147,26 +151,18 @@ class DailyCampaignPlan:
         *,
         scenario: DailyScenario,
     ) -> frozenset[datetime]:
-        bars = self.phase_bars(symbol, fold_id, phase)
-        factor_dates = set(self.factor_dates_for(symbol))
-        indices: list[int] = []
-        for index in range(
-            DAILY_SHARED_MAX_LOOKBACK,
-            len(bars) - ExecutableTarget().exit_bar_offset,
-            DAILY_SIGNAL_CADENCE,
-        ):
-            if scenario == "factor_sensitivity" and any(
-                bar.start_ts.date() in factor_dates
-                for bar in bars[
-                    index - DAILY_SHARED_MAX_LOOKBACK : index
-                    + ExecutableTarget().exit_bar_offset
-                    + 1
-                ]
-            ):
-                continue
-            indices.append(index)
-        self._prove_execution_timing(bars, tuple(indices))
-        return frozenset(bars[index].start_ts for index in indices)
+        affected_dates = (
+            frozenset(self.factor_dates_for(symbol))
+            if scenario == "factor_sensitivity"
+            else frozenset()
+        )
+        return eligible_daily_signal_starts_for_dates(
+            self,
+            symbol,
+            fold_id,
+            phase,
+            affected_session_dates=affected_dates,
+        )
 
     def execution_timing_proofs(
         self,
@@ -219,6 +215,41 @@ class DailyCampaignPlan:
                 )
             )
         return tuple(proofs)
+
+
+def eligible_daily_signal_starts_for_dates(
+    plan: DailyCampaignPlan,
+    symbol: str,
+    fold_id: str,
+    phase: Literal["development", "validation"],
+    *,
+    affected_session_dates: frozenset[date],
+) -> frozenset[datetime]:
+    """Apply the frozen observed-session [i-20, i+2] exclusion window."""
+
+    if not isinstance(affected_session_dates, frozenset) or any(
+        type(value) is not date for value in affected_session_dates
+    ):
+        raise TypeError("affected_session_dates must be a frozenset of dates")
+    bars = plan.phase_bars(symbol, fold_id, phase)
+    indices = tuple(
+        index
+        for index in range(
+            DAILY_SHARED_MAX_LOOKBACK,
+            len(bars) - ExecutableTarget().exit_bar_offset,
+            DAILY_SIGNAL_CADENCE,
+        )
+        if not any(
+            bar.start_ts.date() in affected_session_dates
+            for bar in bars[
+                index - DAILY_SHARED_MAX_LOOKBACK : index
+                + ExecutableTarget().exit_bar_offset
+                + 1
+            ]
+        )
+    )
+    plan._prove_execution_timing(bars, indices)
+    return frozenset(bars[index].start_ts for index in indices)
 
 
 @dataclass(frozen=True)
@@ -345,6 +376,53 @@ class DailyCandidateResult:
     summary_sha256: str
     development_only: bool = True
     schema_version: int = SCHEMA_VERSION
+
+
+@dataclass(frozen=True)
+class DailyExplicitEventReplayCellPlan:
+    kind: Literal["baseline", "candidate"]
+    item_id: str
+    symbol: str
+    fold_id: str
+    eligible_signal_starts: tuple[datetime, ...]
+    checkpoint_path: Path | None = None
+    checkpoint_sha256: str | None = None
+    standardization: DailyFeatureStandardization | None = None
+    schema_version: int = SCHEMA_VERSION
+
+
+@dataclass(frozen=True)
+class DailyExplicitEventReplayPlan:
+    replay_id: str
+    source_campaign_id: str
+    artifact_root: Path
+    source_summary_path: Path
+    source_summary_sha256: str
+    corporate_action_dataset_id: str
+    corporate_action_dataset_hash: str
+    corporate_action_manifest_hash: str
+    r2_dataset_id: str
+    r2_dataset_hash: str
+    r2_manifest_hash: str
+    cells: tuple[DailyExplicitEventReplayCellPlan, ...]
+    parent_sensitivity_verdict: Literal["unsupported"] = "unsupported"
+    training_runs: int = 0
+    development_only: bool = True
+    retrospective_only: bool = True
+    ranking: bool = False
+    promotion: bool = False
+    candidate_selection: bool = False
+    sealed_holdout: bool = False
+    profitability_claim: bool = False
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if (
+            self.parent_sensitivity_verdict != "unsupported"
+            or self.training_runs != 0
+            or len(self.cells) != 36
+        ):
+            raise ValueError("explicit-event plan must freeze 36 replays and zero training")
 
 
 DailyTrainer = Callable[
@@ -584,6 +662,149 @@ def prove_daily_campaign_boundaries(
             )
         )
     return tuple(proofs)
+
+
+def prepare_daily_explicit_event_replay(
+    plan: DailyCampaignPlan,
+    *,
+    corporate_actions: CatalogedCorporateActions,
+    source_summary_path: Path,
+    expected_source_summary_sha256: str,
+    replay_id: str,
+    artifact_root: Path,
+    repo_root: Path | None = None,
+) -> DailyExplicitEventReplayPlan:
+    """Validate immutable inputs and freeze a no-training 36-cell replay plan."""
+
+    if not isinstance(corporate_actions, CatalogedCorporateActions):
+        raise TypeError("corporate_actions must be CatalogedCorporateActions")
+    _validate_safe_path_component(replay_id, "replay_id")
+    if replay_id == plan.contract.campaign_id:
+        raise ValueError("replay_id must differ from the source campaign_id")
+    resolved_root = artifact_root.resolve()
+    _reject_repo_path(resolved_root, repo_root or Path.cwd())
+    if Path(artifact_root).is_symlink():
+        raise ValueError("artifact_root cannot be a symlink")
+    source_campaign_dir = _contained_artifact_path(
+        resolved_root,
+        "daily-campaign",
+        plan.contract.campaign_id,
+    )
+    expected_summary_path = source_campaign_dir / "summary.json"
+    supplied_summary_path = Path(source_summary_path)
+    if (
+        not supplied_summary_path.is_absolute()
+        or supplied_summary_path != expected_summary_path
+        or supplied_summary_path.is_symlink()
+    ):
+        raise ValueError("source summary must be the exact non-symlink campaign summary")
+    _assert_no_symlink_artifact_components(
+        resolved_root,
+        ("daily-campaign", plan.contract.campaign_id, "summary.json"),
+    )
+    corporate_actions.assert_replay_eligible()
+    _assert_corporate_action_r2_lineage(plan, corporate_actions)
+    _assert_corporate_action_event_membership(plan, corporate_actions)
+    summary_path = supplied_summary_path
+    _require_sha256(expected_source_summary_sha256, "source summary SHA-256")
+    try:
+        summary_bytes = summary_path.read_bytes()
+    except OSError as exc:
+        raise ValueError("source CUDA summary is not readable") from exc
+    if _sha256_bytes(summary_bytes) != expected_source_summary_sha256:
+        raise ValueError("source CUDA summary SHA-256 mismatch")
+    try:
+        summary = json.loads(summary_bytes)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("source CUDA summary must be valid UTF-8 JSON") from exc
+    if not isinstance(summary, dict):
+        raise ValueError("source CUDA summary must be a JSON object")
+    _assert_source_summary_contract(plan, summary)
+    checkpoints = _source_checkpoint_contracts(
+        plan,
+        summary.get("checkpoints"),
+        artifact_root=resolved_root,
+    )
+    for fold in plan.folds:
+        for candidate in DAILY_CANDIDATES:
+            checkpoint_path, _, standardization = checkpoints[
+                (fold.fold_id, candidate.candidate_id)
+            ]
+            _validate_daily_torch_checkpoint_cpu(
+                candidate,
+                checkpoint_path,
+                standardization,
+            )
+    affected_dates = {
+        symbol: corporate_actions.affected_session_dates(symbol)
+        for symbol in DAILY_SYMBOLS
+    }
+    cells: list[DailyExplicitEventReplayCellPlan] = []
+    for fold in plan.folds:
+        for symbol in DAILY_SYMBOLS:
+            eligible = tuple(
+                sorted(
+                    eligible_daily_signal_starts_for_dates(
+                        plan,
+                        symbol,
+                        fold.fold_id,
+                        "validation",
+                        affected_session_dates=affected_dates[symbol],
+                    )
+                )
+            )
+            for baseline_id in plan.contract.naive_baselines:
+                cells.append(
+                    DailyExplicitEventReplayCellPlan(
+                        kind="baseline",
+                        item_id=baseline_id,
+                        symbol=symbol,
+                        fold_id=fold.fold_id,
+                        eligible_signal_starts=eligible,
+                    )
+                )
+        for candidate in DAILY_CANDIDATES:
+            checkpoint_path, checkpoint_hash, standardization = checkpoints[
+                (fold.fold_id, candidate.candidate_id)
+            ]
+            for symbol in DAILY_SYMBOLS:
+                eligible = tuple(
+                    sorted(
+                        eligible_daily_signal_starts_for_dates(
+                            plan,
+                            symbol,
+                            fold.fold_id,
+                            "validation",
+                            affected_session_dates=affected_dates[symbol],
+                        )
+                    )
+                )
+                cells.append(
+                    DailyExplicitEventReplayCellPlan(
+                        kind="candidate",
+                        item_id=candidate.candidate_id,
+                        symbol=symbol,
+                        fold_id=fold.fold_id,
+                        eligible_signal_starts=eligible,
+                        checkpoint_path=checkpoint_path,
+                        checkpoint_sha256=checkpoint_hash,
+                        standardization=standardization,
+                    )
+                )
+    return DailyExplicitEventReplayPlan(
+        replay_id=replay_id,
+        source_campaign_id=plan.contract.campaign_id,
+        artifact_root=resolved_root,
+        source_summary_path=summary_path,
+        source_summary_sha256=expected_source_summary_sha256,
+        corporate_action_dataset_id=corporate_actions.dataset_id,
+        corporate_action_dataset_hash=corporate_actions.dataset_hash,
+        corporate_action_manifest_hash=corporate_actions.manifest_hash,
+        r2_dataset_id=corporate_actions.r2_dataset_id,
+        r2_dataset_hash=corporate_actions.r2_dataset_hash,
+        r2_manifest_hash=corporate_actions.r2_manifest_hash,
+        cells=tuple(cells),
+    )
 
 
 def run_daily_cpu_baselines(
@@ -1202,6 +1423,285 @@ def load_daily_torch_predictor(
             return float(torch.sigmoid(model(tensor)).item())
 
     return predict
+
+
+def _assert_corporate_action_r2_lineage(
+    plan: DailyCampaignPlan,
+    corporate_actions: CatalogedCorporateActions,
+) -> None:
+    if (
+        corporate_actions.r2_dataset_id != plan.contract.catalog.dataset_id
+        or corporate_actions.r2_dataset_hash != plan.contract.catalog.dataset_hash
+    ):
+        raise ValueError("corporate-action r2 lineage does not match the daily campaign")
+    r2_path = plan.cataloged_bars[0].source_path.resolve()
+    r2_manifest = r2_path.parent / "manifest.json"
+    try:
+        current_r2_hash = _sha256_file(r2_path)
+        current_manifest_hash = _sha256_file(r2_manifest)
+    except OSError as exc:
+        raise ValueError("daily r2 lineage files are not readable") from exc
+    if current_r2_hash != corporate_actions.r2_dataset_hash:
+        raise ValueError("daily r2 bytes changed after attestation")
+    if current_manifest_hash != corporate_actions.r2_manifest_hash:
+        raise ValueError("daily r2 manifest does not match corporate-action lineage")
+
+
+def _assert_corporate_action_event_membership(
+    plan: DailyCampaignPlan,
+    corporate_actions: CatalogedCorporateActions,
+) -> None:
+    common_dates = frozenset(session.date() for session in plan.common_sessions)
+    for event in corporate_actions.events:
+        if event.symbol not in DAILY_SYMBOLS:
+            raise ValueError("corporate-action event has unexpected symbol membership")
+        if event.affected_session_date not in common_dates:
+            raise ValueError("corporate-action event date is outside plan.common_sessions")
+
+
+def _assert_source_summary_contract(
+    plan: DailyCampaignPlan,
+    summary: dict[str, Any],
+) -> None:
+    expected_labels = {
+        "candidate_selection": False,
+        "development_only": True,
+        "profitability_claim": False,
+        "promotion": False,
+        "ranking": False,
+        "sealed_holdout": False,
+    }
+    dataset = summary.get("dataset")
+    cuda = summary.get("cuda")
+    training_policy = summary.get("training_policy")
+    sensitivity = summary.get("sensitivity")
+    if (
+        summary.get("campaign_id") != plan.contract.campaign_id
+        or summary.get("campaign_contract_hash") != plan.contract.contract_hash
+        or summary.get("labels") != expected_labels
+    ):
+        raise ValueError("source CUDA summary campaign contract or labels mismatch")
+    if not isinstance(dataset, dict) or (
+        dataset.get("catalog_id") != plan.contract.catalog.catalog_id
+        or dataset.get("dataset_id") != plan.contract.catalog.dataset_id
+        or dataset.get("dataset_hash") != plan.contract.catalog.dataset_hash
+        or dataset.get("price_basis") != "raw_ohlcv_only"
+        or tuple(dataset.get("symbols") or ()) != DAILY_SYMBOLS
+    ):
+        raise ValueError("source CUDA summary dataset identity mismatch")
+    if not isinstance(cuda, dict) or (
+        cuda.get("used") is not True
+        or cuda.get("training_runs") != DAILY_MAX_TRAINING_RUNS
+    ):
+        raise ValueError("source summary must identify the fixed six-run CUDA campaign")
+    if not isinstance(training_policy, dict) or (
+        training_policy.get("runs") != DAILY_MAX_TRAINING_RUNS
+        or training_policy.get("maximum_runs") != DAILY_MAX_TRAINING_RUNS
+        or training_policy.get("retraining_by_validation_scenario") is not False
+    ):
+        raise ValueError("source summary training policy must freeze six runs")
+    if not isinstance(sensitivity, dict) or sensitivity.get("verdict") != "unsupported":
+        raise ValueError("source summary parent sensitivity verdict must be unsupported")
+
+
+def _source_checkpoint_contracts(
+    plan: DailyCampaignPlan,
+    value: object,
+    *,
+    artifact_root: Path,
+) -> dict[
+    tuple[str, str],
+    tuple[Path, str, DailyFeatureStandardization],
+]:
+    if not isinstance(value, list):
+        raise ValueError("source summary checkpoints must be a list")
+    expected = {
+        (fold.fold_id, candidate.candidate_id)
+        for fold in plan.folds
+        for candidate in DAILY_CANDIDATES
+    }
+    parsed: dict[
+        tuple[str, str],
+        tuple[Path, str, DailyFeatureStandardization],
+    ] = {}
+    seen_paths: set[Path] = set()
+    for item in value:
+        if not isinstance(item, dict):
+            raise ValueError("source checkpoint entry must be an object")
+        key = (str(item.get("fold_id")), str(item.get("candidate_id")))
+        if key not in expected or key in parsed:
+            raise ValueError("source checkpoint matrix is duplicated or unexpected")
+        candidate = next(
+            (
+                candidate
+                for candidate in DAILY_CANDIDATES
+                if candidate.candidate_id == key[1]
+            ),
+            None,
+        )
+        expected_hash = str(item.get("sha256"))
+        _require_sha256(expected_hash, "source checkpoint SHA-256")
+        expected_tail = (
+            "daily-campaign",
+            plan.contract.campaign_id,
+            key[0],
+            f"{key[1]}.pt",
+        )
+        path = _rebase_summary_artifact_path(
+            item.get("path"),
+            artifact_root,
+            expected_tail,
+            "source checkpoint",
+        )
+        if path in seen_paths or candidate is None:
+            raise ValueError("source checkpoint matrix is duplicated or unexpected")
+        _assert_artifact_hash(path, expected_hash, "source checkpoint")
+        standardization = _parse_source_standardization(
+            plan,
+            key[0],
+            candidate,
+            item.get("standardization"),
+        )
+        parsed[key] = (path, expected_hash, standardization)
+        seen_paths.add(path)
+    if set(parsed) != expected:
+        raise ValueError("source checkpoint matrix does not match the fixed candidates")
+    return parsed
+
+
+def _parse_source_standardization(
+    plan: DailyCampaignPlan,
+    fold_id: str,
+    candidate: DailyCandidateSpec,
+    value: object,
+) -> DailyFeatureStandardization:
+    if not isinstance(value, dict) or (
+        value.get("fit_phase") != "development"
+        or value.get("fit_fold_id") != fold_id
+    ):
+        raise ValueError("source checkpoint standardization is malformed")
+    try:
+        feature_names = tuple(str(item) for item in value["feature_names"])
+        means = tuple(float(item) for item in value["means"])
+        scales = tuple(float(item) for item in value["scales"])
+        development_start = require_utc(
+            datetime.fromisoformat(str(value["development_start"])),
+            "development_start",
+        )
+        development_end = require_utc(
+            datetime.fromisoformat(str(value["development_end"])),
+            "development_end",
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("source checkpoint standardization is malformed") from exc
+    if (
+        feature_names != daily_feature_names(candidate.feature_set)
+        or len(means) != len(feature_names)
+        or len(scales) != len(feature_names)
+        or any(not math.isfinite(item) for item in (*means, *scales))
+        or any(item <= 0 for item in scales)
+    ):
+        raise ValueError("source checkpoint standardization is malformed")
+    standardization = DailyFeatureStandardization(
+        fold_id=fold_id,
+        development_start=development_start,
+        development_end=development_end,
+        feature_names=feature_names,
+        means=means,
+        scales=scales,
+    )
+    _assert_fold_local_standardization(plan, fold_id, standardization)
+    return standardization
+
+
+def _validate_daily_torch_checkpoint_cpu(
+    candidate: DailyCandidateSpec,
+    checkpoint_path: Path,
+    standardization: DailyFeatureStandardization,
+) -> None:
+    import torch
+
+    _require_frozen_candidate(candidate)
+    try:
+        checkpoint = torch.load(
+            checkpoint_path,
+            map_location="cpu",
+            weights_only=True,
+        )
+    except Exception as exc:
+        raise ValueError("source checkpoint is not a safe CPU-loadable checkpoint") from exc
+    if not isinstance(checkpoint, dict) or (
+        checkpoint.get("schema_version") != SCHEMA_VERSION
+        or checkpoint.get("model_kind") != "daily_tiny_mlp_v1"
+        or checkpoint.get("candidate") != _candidate_payload(candidate)
+        or checkpoint.get("standardization") != standardization.to_payload()
+    ):
+        raise ValueError("source checkpoint contract mismatch")
+    model = torch.nn.Sequential(
+        torch.nn.Linear(len(standardization.feature_names), candidate.hidden_units),
+        torch.nn.ReLU(),
+        torch.nn.Linear(candidate.hidden_units, 1),
+    )
+    try:
+        model.load_state_dict(checkpoint.get("state_dict"), strict=True)
+    except (RuntimeError, TypeError, ValueError) as exc:
+        raise ValueError("source checkpoint model state is incompatible") from exc
+
+
+def _rebase_summary_artifact_path(
+    value: object,
+    artifact_root: Path,
+    expected_tail: tuple[str, ...],
+    label: str,
+) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{label} path is required")
+    declared_parts = tuple(part for part in value.replace("\\", "/").split("/") if part)
+    if any(part in {".", ".."} for part in declared_parts) or (
+        len(declared_parts) < len(expected_tail)
+        or declared_parts[-len(expected_tail) :] != expected_tail
+    ):
+        raise ValueError(f"{label} does not have the expected artifact-relative tail")
+    resolved_root = artifact_root.resolve()
+    _assert_no_symlink_artifact_components(resolved_root, expected_tail)
+    candidate = resolved_root.joinpath(*expected_tail).resolve()
+    if resolved_root not in candidate.parents:
+        raise ValueError(f"{label} escapes artifact_root")
+    return candidate
+
+
+def _assert_no_symlink_artifact_components(
+    artifact_root: Path,
+    relative_parts: tuple[str, ...],
+) -> None:
+    current = artifact_root
+    for part in relative_parts:
+        current /= part
+        if current.is_symlink():
+            raise ValueError("summary-declared artifact paths cannot contain symlinks")
+
+
+def _assert_artifact_hash(path: Path, expected_hash: str, label: str) -> None:
+    try:
+        actual_hash = _sha256_file(path)
+    except OSError as exc:
+        raise ValueError(f"{label} is not readable") from exc
+    if actual_hash != expected_hash:
+        raise ValueError(f"{label} SHA-256 mismatch")
+
+
+def _require_sha256(value: str, label: str) -> None:
+    if (
+        not isinstance(value, str)
+        or not value.startswith("sha256:")
+        or len(value) != 71
+        or any(character not in "0123456789abcdef" for character in value[7:])
+    ):
+        raise ValueError(f"{label} must use lowercase sha256:<64 hex>")
+
+
+def _sha256_bytes(value: bytes) -> str:
+    return "sha256:" + hashlib.sha256(value).hexdigest()
 
 
 def _window(sessions: tuple[datetime, ...]) -> CampaignWindow:
