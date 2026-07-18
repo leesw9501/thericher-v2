@@ -174,8 +174,10 @@ manifest hash `44a6316e9821694886fa3f791ddb19ec56a435dbaf765417a9568b4a3e57f421`
 It keeps only raw OHLCV plus `div_cash` and `split_factor`, copies no raw source
 file, and binds the parent Tiingo hashes and r2 calendar lineage. It is a
 separate-provider representation conditioned on r2's session calendar, not an
-independent validation, holdout, selection, or profitability result. A narrow
-offline loader and one frozen no-retraining sensitivity replay are the next
+independent validation, holdout, selection, or profitability result. The
+offline loader now re-attests r2 from disk, parent Tiingo raw evidence, snapshot
+hashes, exact canonical raw-D1 bytes, and 896 sessions before returning a
+`CatalogedBars` stream. One frozen no-retraining sensitivity replay is the next
 bounded step.
 
 The Data stateboard owns exact catalog status and operator data requests.
@@ -349,8 +351,8 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now derives a bounded Tiingo raw D1 comparison snapshot
-from existing immutable bytes for the fixed ETF campaign. KIS remains failed
-closed pending the non-secret pairing check and a separately authorized future
-probe. The KIS capital envelope, paid data, order submission, and live capital
-remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now consumes the verified Tiingo raw-D1 input in one
+frozen local-paper source-sensitivity replay of the fixed ETF campaign. KIS
+remains failed closed pending the non-secret pairing check and a separately
+authorized future probe. The KIS capital envelope, paid data, order submission,
+and live capital remain separate future decisions.

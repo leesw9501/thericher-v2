@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import csv
 import gzip
+import hashlib
 import json
+from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
@@ -14,6 +17,10 @@ from thericher_v2.data.corporate_actions import (
     CORPORATE_ACTION_SYMBOLS,
     load_cataloged_corporate_actions,
 )
+from thericher_v2.data.daily import (
+    build_fixed_etf_daily_raw_subset,
+    build_fixed_etf_daily_subset,
+)
 from thericher_v2.data.tiingo_eod import (
     MINIMUM_RETRIEVAL_LAG_DAYS,
     R2CorporateActionLineage,
@@ -21,9 +28,36 @@ from thericher_v2.data.tiingo_eod import (
     build_tiingo_eod_corporate_action_snapshot,
     build_tiingo_raw_d1_comparison_snapshot,
     fetch_tiingo_standard_eod_responses,
+    load_cataloged_tiingo_raw_d1_bars,
+    load_fixed_r2_corporate_action_lineage,
     normalize_tiingo_raw_d1_response,
     normalize_tiingo_standard_eod_response,
 )
+
+_DAILY_SOURCE_COLUMNS = (
+    "symbol",
+    "date",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "adj_close",
+    "asset_type",
+    "yahoo_symbol",
+    "source",
+)
+
+
+@dataclass(frozen=True)
+class _RawD1LoaderFixture:
+    repo_root: Path
+    r2_lineage: R2CorporateActionLineage
+    source_snapshot_dir: Path
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
 
 
 class _Response:
@@ -224,6 +258,110 @@ def test_raw_d1_snapshot_is_external_and_hash_bound(
         )
 
 
+def test_raw_d1_loader_reattests_896_session_input_without_network_or_credentials(
+    raw_d1_loader_fixture: _RawD1LoaderFixture,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def unexpected_access(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("raw-D1 loader must stay offline and never read a token")
+
+    monkeypatch.setattr(tiingo_eod, "fetch_tiingo_standard_eod_responses", unexpected_access)
+    monkeypatch.setattr(tiingo_eod, "read_tiingo_api_token", unexpected_access)
+
+    loaded = _load_raw_d1_fixture(raw_d1_loader_fixture, symbol="SPY")
+
+    assert loaded.dataset_id == raw_d1_loader_fixture.dataset_id
+    assert loaded.dataset_hash == raw_d1_loader_fixture.dataset_hash
+    assert loaded.source_path == raw_d1_loader_fixture.snapshot_dir / "ohlcv_1d.csv.gz"
+    assert len(loaded.bars) == 896
+    assert {bar.symbol for bar in loaded.bars} == {"SPY"}
+    assert all(bar.timeframe.value == "1d" and bar.complete for bar in loaded.bars)
+    assert loaded.bars[0].start_ts.date() == CAMPAIGN_COVERAGE_START
+    assert loaded.bars[-1].start_ts.date() == CAMPAIGN_COVERAGE_END
+
+
+def test_raw_d1_loader_rejects_parent_raw_and_r2_lineage_tampering(
+    raw_d1_loader_fixture: _RawD1LoaderFixture,
+) -> None:
+    parent_raw = raw_d1_loader_fixture.source_snapshot_dir / "raw" / "SPY.json"
+    original_parent_raw = parent_raw.read_bytes()
+    try:
+        parent_raw.write_bytes(original_parent_raw + b"tamper")
+        with pytest.raises(ValueError, match="raw (source size|hash) mismatch"):
+            _load_raw_d1_fixture(raw_d1_loader_fixture, symbol="SPY")
+    finally:
+        parent_raw.write_bytes(original_parent_raw)
+
+    manifest_path = raw_d1_loader_fixture.snapshot_dir / "manifest.json"
+    original_manifest = manifest_path.read_bytes()
+    try:
+        manifest = json.loads(original_manifest)
+        manifest["source_lineage"]["r2_calendar"]["dataset_hash"] = "sha256:" + "c" * 64
+        tampered_manifest_hash = _write_json(manifest_path, manifest)
+        with pytest.raises(ValueError, match="r2 calendar lineage is invalid"):
+            _load_raw_d1_fixture(
+                raw_d1_loader_fixture,
+                symbol="SPY",
+                manifest_hash=tampered_manifest_hash,
+            )
+    finally:
+        manifest_path.write_bytes(original_manifest)
+
+
+def test_raw_d1_loader_rejects_adjusted_or_noncanonical_subset_bytes(
+    raw_d1_loader_fixture: _RawD1LoaderFixture,
+) -> None:
+    snapshot = raw_d1_loader_fixture.snapshot_dir
+    subset_path = snapshot / "ohlcv_1d.csv.gz"
+    manifest_path = snapshot / "manifest.json"
+    original_subset = subset_path.read_bytes()
+    original_manifest = manifest_path.read_bytes()
+    try:
+        raw_csv = gzip.decompress(original_subset)
+        header, body = raw_csv.split(b"\n", 1)
+        adjusted_csv = header + b",adjClose\n" + body
+        adjusted_subset = tiingo_eod._gzip_bytes(adjusted_csv)
+        adjusted_hash = "sha256:" + hashlib.sha256(adjusted_subset).hexdigest()
+        subset_path.write_bytes(adjusted_subset)
+
+        manifest = json.loads(original_manifest)
+        manifest["dataset_hash"] = adjusted_hash
+        manifest["subset"]["sha256"] = adjusted_hash
+        manifest["subset"]["size_bytes"] = len(adjusted_subset)
+        manifest["subset"]["schema"].append("adjClose")
+        adjusted_manifest_hash = _write_json(manifest_path, manifest)
+        with pytest.raises(ValueError, match="subset evidence is invalid"):
+            _load_raw_d1_fixture(
+                raw_d1_loader_fixture,
+                symbol="SPY",
+                dataset_hash=adjusted_hash,
+                manifest_hash=adjusted_manifest_hash,
+            )
+
+        subset_path.write_bytes(original_subset)
+        manifest_path.write_bytes(original_manifest)
+        changed_csv = raw_csv.replace(b",100.0,101.0,99.0,100.5,", b",100.1,101.0,99.0,100.5,", 1)
+        assert changed_csv != raw_csv
+        changed_subset = tiingo_eod._gzip_bytes(changed_csv)
+        changed_hash = "sha256:" + hashlib.sha256(changed_subset).hexdigest()
+        subset_path.write_bytes(changed_subset)
+        manifest = json.loads(original_manifest)
+        manifest["dataset_hash"] = changed_hash
+        manifest["subset"]["sha256"] = changed_hash
+        manifest["subset"]["size_bytes"] = len(changed_subset)
+        changed_manifest_hash = _write_json(manifest_path, manifest)
+        with pytest.raises(ValueError, match="does not match attested raw source bytes"):
+            _load_raw_d1_fixture(
+                raw_d1_loader_fixture,
+                symbol="SPY",
+                dataset_hash=changed_hash,
+                manifest_hash=changed_manifest_hash,
+            )
+    finally:
+        subset_path.write_bytes(original_subset)
+        manifest_path.write_bytes(original_manifest)
+
+
 def test_snapshot_is_immutable_hash_bound_and_replay_only(tmp_path: Path) -> None:
     market_root = tmp_path / "market"
     market_root.mkdir()
@@ -394,3 +532,132 @@ def _payload(rows: list[dict[str, str]]) -> bytes:
 
 def _eligible_retrieval() -> datetime:
     return datetime(2026, 7, 18, 1, 2, 3, tzinfo=UTC)
+
+
+@pytest.fixture(scope="module")
+def raw_d1_loader_fixture(tmp_path_factory: pytest.TempPathFactory) -> _RawD1LoaderFixture:
+    root = tmp_path_factory.mktemp("tiingo-raw-d1-loader")
+    market_root = root / "market"
+    market_root.mkdir()
+    repo_root = root / "repo"
+    repo_root.mkdir()
+    sessions = _full_campaign_sessions()
+
+    source_path = market_root / "source.csv.gz"
+    _write_daily_source(source_path, sessions)
+    r1_snapshot = market_root / "r1" / "snapshot=fixture-r1"
+    r1_snapshot.parent.mkdir()
+    build_fixed_etf_daily_subset(source_path, r1_snapshot)
+    r2_snapshot = market_root / "r2" / "snapshot=fixture-r2"
+    r2_snapshot.parent.mkdir()
+    build_fixed_etf_daily_raw_subset(r1_snapshot, r2_snapshot)
+    r2_lineage = load_fixed_r2_corporate_action_lineage(r2_snapshot)
+
+    source_snapshot_dir = market_root / "events" / "snapshot=fixture-tiingo-eod-r1"
+    source_snapshot_dir.parent.mkdir()
+    build_tiingo_eod_corporate_action_snapshot(
+        destination=source_snapshot_dir,
+        raw_responses=_responses_for_sessions(sessions),
+        r2_lineage=r2_lineage,
+        retrieved_at_utc=_eligible_retrieval(),
+        market_data_root=market_root,
+        repo_root=repo_root,
+    )
+    snapshot_dir = market_root / "daily" / "snapshot=fixture-tiingo-raw-d1-r1"
+    snapshot_dir.parent.mkdir()
+    snapshot = build_tiingo_raw_d1_comparison_snapshot(
+        destination=snapshot_dir,
+        source_snapshot_dir=source_snapshot_dir,
+        r2_lineage=r2_lineage,
+        derived_at_utc=datetime(2026, 7, 18, 2, 3, 4, tzinfo=UTC),
+        market_data_root=market_root,
+        repo_root=repo_root,
+    )
+    return _RawD1LoaderFixture(
+        repo_root=repo_root,
+        r2_lineage=r2_lineage,
+        source_snapshot_dir=source_snapshot_dir,
+        snapshot_dir=snapshot_dir,
+        dataset_id=snapshot.dataset_id,
+        dataset_hash=snapshot.dataset_hash,
+        manifest_hash=snapshot.manifest_hash,
+    )
+
+
+def _load_raw_d1_fixture(
+    fixture: _RawD1LoaderFixture,
+    *,
+    symbol: str,
+    dataset_hash: str | None = None,
+    manifest_hash: str | None = None,
+):
+    return load_cataloged_tiingo_raw_d1_bars(
+        fixture.snapshot_dir,
+        dataset_id=fixture.dataset_id,
+        expected_dataset_hash=dataset_hash or fixture.dataset_hash,
+        expected_manifest_hash=manifest_hash or fixture.manifest_hash,
+        source_snapshot_dir=fixture.source_snapshot_dir,
+        r2_lineage=fixture.r2_lineage,
+        symbol=symbol,
+        repo_root=fixture.repo_root,
+    )
+
+
+def _full_campaign_sessions() -> tuple[date, ...]:
+    weekdays: list[date] = []
+    current = CAMPAIGN_COVERAGE_START
+    while current <= CAMPAIGN_COVERAGE_END:
+        if current.weekday() < 5:
+            weekdays.append(current)
+        current += timedelta(days=1)
+    sessions = tuple(sorted({*weekdays[:895], CAMPAIGN_COVERAGE_END}))
+    assert len(sessions) == 896
+    assert sessions[0] == CAMPAIGN_COVERAGE_START
+    assert sessions[-1] == CAMPAIGN_COVERAGE_END
+    return sessions
+
+
+def _responses_for_sessions(sessions: tuple[date, ...]) -> dict[str, bytes]:
+    return {
+        symbol: _payload(
+            [
+                _row(
+                    session,
+                    div_cash="1.0" if symbol == "SPY" and session == sessions[-1] else "0",
+                    split_factor="2" if symbol == "QQQ" and session == sessions[-1] else "1",
+                )
+                for session in sessions
+            ]
+        )
+        for symbol in CORPORATE_ACTION_SYMBOLS
+    }
+
+
+def _write_daily_source(path: Path, sessions: tuple[date, ...]) -> None:
+    rows = [
+        {
+            "symbol": symbol,
+            "date": session.isoformat(),
+            "open": "100",
+            "high": "110",
+            "low": "90",
+            "close": "100",
+            "volume": "1000",
+            "adj_close": "50",
+            "asset_type": "stock",
+            "yahoo_symbol": symbol,
+            "source": "tiingo_raw_d1_loader_fixture",
+        }
+        for symbol in CORPORATE_ACTION_SYMBOLS
+        for session in sessions
+    ]
+    with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=_DAILY_SOURCE_COLUMNS)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def _write_json(path: Path, value: object) -> str:
+    payload = (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    path.write_bytes(payload)
+    return "sha256:" + hashlib.sha256(payload).hexdigest()

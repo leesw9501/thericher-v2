@@ -37,14 +37,14 @@ checkpoint.
 
 1. Ask Claude for a brief drift-check before changing the daily campaign input
    contract. Share no raw rows, credentials, or artifacts containing them.
-2. Add the smallest offline Tiingo raw-D1 loader needed to create Data-owned
-   `CatalogedBars`. It must re-attest the derived subset hash, parent Tiingo raw
-   hashes, r2 lineage, exact per-symbol 896-session calendar, raw OHLCV
-   semantics, and absence of adjusted fields before Research receives bars.
+2. Use the existing offline Tiingo raw-D1 loader; do not weaken its r2,
+   parent-raw, exact-896-session, canonical-byte, or raw-OHLCV attestation.
+   Extend the daily campaign input contract only enough to separate the frozen
+   r2 checkpoint source from an attested replay bar input.
 3. Reuse the frozen checkpoints, candidate definitions, timing, costs, explicit
-   corporate-action input, and local-paper path for exactly one no-retraining
-   replay. Keep the parent `unsupported` verdict sticky regardless of the
-   comparison result.
+   corporate-action input, and local-paper path for exactly one 36-cell,
+   no-retraining replay. Keep the parent `unsupported` verdict sticky regardless
+   of the comparison result.
 4. Write one bounded external summary with input hashes and an explicit
    development-only, non-independent scope. Update Data and Engine stateboards,
    `HANDOFF.md`, and this next goal; verify, commit, and push.

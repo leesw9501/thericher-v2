@@ -17,11 +17,13 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
 from decimal import Decimal, InvalidOperation
 from math import gcd
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+
+from thericher_v2.contracts import Bar, Timeframe
 
 from .corporate_actions import (
     CAMPAIGN_COVERAGE_END,
@@ -34,6 +36,7 @@ from .corporate_actions import (
     load_cataloged_corporate_actions,
 )
 from .daily import load_cataloged_yahoo_daily_1d_bars
+from .local import CatalogedBars, _cataloged_bars_from_verified_loader, _validate_sha256
 
 DEFAULT_MARKET_DATA_ROOT = Path(r"D:\market_data")
 DEFAULT_R2_SNAPSHOT_DIR = (
@@ -668,6 +671,111 @@ def build_tiingo_raw_d1_comparison_snapshot(
     )
 
 
+def load_cataloged_tiingo_raw_d1_bars(
+    snapshot_dir: Path,
+    *,
+    dataset_id: str,
+    expected_dataset_hash: str,
+    expected_manifest_hash: str,
+    source_snapshot_dir: Path,
+    r2_lineage: R2CorporateActionLineage,
+    symbol: str,
+    market: str = "US",
+    repo_root: Path | None = None,
+) -> CatalogedBars:
+    """Load one raw-D1 stream only after re-attesting every local dependency.
+
+    The comparison snapshot is development-only and uses r2's observed calendar.
+    It does not expose Tiingo adjusted fields or infer corporate-action behavior.
+    """
+
+    resolved_dataset_id = _required_text(dataset_id, "dataset_id")
+    _validate_sha256(expected_dataset_hash, "expected_dataset_hash")
+    _validate_sha256(expected_manifest_hash, "expected_manifest_hash")
+    requested_symbol = _requested_symbol(symbol)
+    resolved_market = market.strip().upper()
+    if not resolved_market:
+        raise ValueError("market is required")
+
+    verified_r2 = _reattest_r2_lineage(r2_lineage, repo_root=repo_root)
+    snapshot = _external_snapshot_dir(snapshot_dir, repo_root=repo_root)
+    if not snapshot.name.startswith("snapshot="):
+        raise ValueError("Tiingo raw-D1 snapshot must use a snapshot= directory")
+    expected_dataset_id = f"us_equities.fixed_etf_tiingo_raw_d1.{snapshot.name}"
+    if resolved_dataset_id != expected_dataset_id:
+        raise ValueError("Tiingo raw-D1 dataset_id is inconsistent with its snapshot path")
+
+    manifest_path = snapshot / "manifest.json"
+    manifest_bytes = _read_external_snapshot_file(
+        snapshot, manifest_path, "Tiingo raw-D1 manifest"
+    )
+    actual_manifest_hash = _sha256(manifest_bytes)
+    if actual_manifest_hash != expected_manifest_hash:
+        raise ValueError("Tiingo raw-D1 manifest hash mismatch")
+    try:
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Tiingo raw-D1 manifest is not valid UTF-8 JSON") from exc
+    if not isinstance(manifest, dict):
+        raise ValueError("Tiingo raw-D1 manifest must be an object")
+
+    source = _load_tiingo_raw_d1_source(
+        source_snapshot_dir=source_snapshot_dir,
+        r2_lineage=verified_r2,
+        repo_root=repo_root,
+    )
+    rows_by_symbol = {
+        fixed_symbol: normalize_tiingo_raw_d1_response(
+            symbol=fixed_symbol,
+            raw_response=source.raw_responses[fixed_symbol],
+            expected_session_dates=verified_r2.observed_session_dates[fixed_symbol],
+        )
+        for fixed_symbol in CORPORATE_ACTION_SYMBOLS
+    }
+    rows = tuple(
+        row for fixed_symbol in CORPORATE_ACTION_SYMBOLS for row in rows_by_symbol[fixed_symbol]
+    )
+    subset_path = snapshot / "ohlcv_1d.csv.gz"
+    subset_bytes = _read_external_snapshot_file(
+        snapshot, subset_path, "Tiingo raw-D1 subset"
+    )
+    actual_dataset_hash = _sha256(subset_bytes)
+    if actual_dataset_hash != expected_dataset_hash:
+        raise ValueError("Tiingo raw-D1 dataset hash mismatch")
+    _validate_tiingo_raw_d1_manifest(
+        manifest,
+        snapshot_dir=snapshot,
+        dataset_id=resolved_dataset_id,
+        dataset_hash=actual_dataset_hash,
+        source=source,
+        r2_lineage=verified_r2,
+    )
+    if subset_bytes != _gzip_bytes(_raw_d1_csv_bytes(rows)):
+        raise ValueError("Tiingo raw-D1 subset does not match attested raw source bytes")
+
+    bars = tuple(
+        Bar(
+            symbol=row.symbol,
+            market=resolved_market,
+            timeframe=Timeframe.D1,
+            start_ts=datetime.combine(row.session_date, time(), tzinfo=UTC),
+            open=row.open,
+            high=row.high,
+            low=row.low,
+            close=row.close,
+            volume=row.volume,
+            complete=True,
+        )
+        for row in rows_by_symbol[requested_symbol]
+    )
+    return _cataloged_bars_from_verified_loader(
+        dataset_id=resolved_dataset_id,
+        dataset_hash=actual_dataset_hash,
+        source_path=subset_path,
+        bars=bars,
+    )
+
+
 def _load_attested_snapshot(
     snapshot_dir: Path,
     *,
@@ -1033,6 +1141,29 @@ def _json_bytes(value: object) -> bytes:
     return (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
 
 
+def _reattest_r2_lineage(
+    r2_lineage: R2CorporateActionLineage,
+    *,
+    repo_root: Path | None,
+) -> R2CorporateActionLineage:
+    if not isinstance(r2_lineage, R2CorporateActionLineage):
+        raise ValueError("Tiingo raw-D1 requires an r2 lineage")
+    verified = load_fixed_r2_corporate_action_lineage(r2_lineage.snapshot_dir)
+    _assert_external_path(verified.snapshot_dir, repo_root=repo_root)
+    if (
+        verified.dataset_id != r2_lineage.dataset_id
+        or verified.dataset_hash != r2_lineage.dataset_hash
+        or verified.manifest_hash != r2_lineage.manifest_hash
+        or verified.observed_session_dates != r2_lineage.observed_session_dates
+    ):
+        raise ValueError("Tiingo raw-D1 r2 lineage re-attestation mismatch")
+    _validate_observed_session_dates(
+        verified.observed_session_dates,
+        require_fixed_r2_count=True,
+    )
+    return verified
+
+
 def _load_tiingo_raw_d1_source(
     *,
     source_snapshot_dir: Path,
@@ -1098,6 +1229,129 @@ def _load_tiingo_raw_d1_source(
         raw_hashes=raw_hashes,
         raw_sizes=raw_sizes,
     )
+
+
+def _validate_tiingo_raw_d1_manifest(
+    manifest: Mapping[str, Any],
+    *,
+    snapshot_dir: Path,
+    dataset_id: str,
+    dataset_hash: str,
+    source: _TiingoRawD1Source,
+    r2_lineage: R2CorporateActionLineage,
+) -> None:
+    if (
+        manifest.get("schema_version") != 1
+        or manifest.get("kind") != "fixed_etf_tiingo_raw_d1_comparison"
+        or manifest.get("immutable_snapshot") is not True
+    ):
+        raise ValueError("Tiingo raw-D1 manifest contract is invalid")
+    if _required_text(manifest.get("dataset_id"), "Tiingo raw-D1 dataset_id") != dataset_id:
+        raise ValueError("Tiingo raw-D1 manifest dataset_id mismatch")
+    if _required_sha256(
+        manifest.get("dataset_hash"), "Tiingo raw-D1 dataset_hash"
+    ) != dataset_hash:
+        raise ValueError("Tiingo raw-D1 manifest dataset hash mismatch")
+    if manifest.get("symbols") != list(CORPORATE_ACTION_SYMBOLS) or manifest.get(
+        "symbol_order"
+    ) != list(CORPORATE_ACTION_SYMBOLS):
+        raise ValueError("Tiingo raw-D1 manifest symbol contract is invalid")
+
+    subset = manifest.get("subset")
+    if not isinstance(subset, dict):
+        raise ValueError("Tiingo raw-D1 manifest subset evidence is missing")
+    if (
+        _required_sha256(subset.get("sha256"), "Tiingo raw-D1 subset sha256")
+        != dataset_hash
+        or subset.get("schema") != list(_TIINGO_RAW_D1_COLUMNS)
+        or subset.get("format") != "csv.gz"
+        or subset.get("ordering") != "symbol_order_then_date_ascending"
+    ):
+        raise ValueError("Tiingo raw-D1 manifest subset evidence is invalid")
+    _assert_manifest_path_tail(
+        subset.get("path"),
+        snapshot_name=snapshot_dir.name,
+        basename="ohlcv_1d.csv.gz",
+        label="Tiingo raw-D1 subset path",
+    )
+
+    source_lineage = manifest.get("source_lineage")
+    if not isinstance(source_lineage, dict):
+        raise ValueError("Tiingo raw-D1 manifest source lineage is missing")
+    tiingo_lineage = source_lineage.get("tiingo_corporate_actions")
+    if not isinstance(tiingo_lineage, dict) or any(
+        tiingo_lineage.get(key) != expected
+        for key, expected in {
+            "dataset_id": source.dataset_id,
+            "dataset_hash": source.dataset_hash,
+            "manifest_sha256": source.manifest_hash,
+            "snapshot_name": source.snapshot_dir.name,
+        }.items()
+    ):
+        raise ValueError("Tiingo raw-D1 source snapshot lineage is invalid")
+    _assert_manifest_path_tail(
+        tiingo_lineage.get("manifest_path"),
+        snapshot_name=source.snapshot_dir.name,
+        basename="manifest.json",
+        label="Tiingo raw-D1 source manifest path",
+    )
+
+    r2_manifest_lineage = source_lineage.get("r2_calendar")
+    if not isinstance(r2_manifest_lineage, dict) or any(
+        r2_manifest_lineage.get(key) != expected
+        for key, expected in {
+            "dataset_id": r2_lineage.dataset_id,
+            "dataset_hash": r2_lineage.dataset_hash,
+            "manifest_sha256": r2_lineage.manifest_hash,
+            "snapshot_name": r2_lineage.snapshot_dir.name,
+        }.items()
+    ):
+        raise ValueError("Tiingo raw-D1 r2 calendar lineage is invalid")
+    _assert_manifest_path_tail(
+        r2_manifest_lineage.get("subset_path"),
+        snapshot_name=r2_lineage.snapshot_dir.name,
+        basename="ohlcv_1d.csv.gz",
+        label="Tiingo raw-D1 r2 subset path",
+    )
+    _assert_manifest_path_tail(
+        r2_manifest_lineage.get("manifest_path"),
+        snapshot_name=r2_lineage.snapshot_dir.name,
+        basename="manifest.json",
+        label="Tiingo raw-D1 r2 manifest path",
+    )
+
+    if (
+        manifest.get("raw_price_policy") != "copy_raw_ohlcv_without_price_rescaling"
+        or manifest.get("corporate_action_policy")
+        != "copy_divCash_and_splitFactor_without_derived_events"
+        or manifest.get("normalization_fields")
+        != [
+            "date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "divCash",
+            "splitFactor",
+        ]
+        or manifest.get("scope") != _TIINGO_RAW_D1_SCOPE
+    ):
+        raise ValueError("Tiingo raw-D1 data semantics are invalid")
+
+
+def _assert_manifest_path_tail(
+    value: object,
+    *,
+    snapshot_name: str,
+    basename: str,
+    label: str,
+) -> None:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{label} is invalid")
+    parts = PurePosixPath(value.replace("\\", "/")).parts
+    if len(parts) < 2 or tuple(parts[-2:]) != (snapshot_name, basename):
+        raise ValueError(f"{label} is invalid")
 
 
 def _validate_raw_d1_destination(

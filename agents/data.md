@@ -3,9 +3,10 @@
 ## Status
 
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
-loader-attested retrospective corporate-action snapshot and one immutable raw
-D1 comparison snapshot for the three fixed instruments. The bounded no-auth
-source triage found no eligible new pilot.
+loader-attested retrospective corporate-action snapshot, immutable raw-D1
+comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
+three fixed instruments. The bounded no-auth source triage found no eligible
+new pilot.
 
 ## Engine Loop
 
@@ -41,15 +42,15 @@ source triage found no eligible new pilot.
 ## Current Objective
 
 No-auth triage is complete without acquisition. The immutable Tiingo raw-D1
-snapshot now exists and needs no new request or credential read. It is a
-separate-provider representation bound to r2's exact session calendar, not
-independent validation or a source of ranking evidence.
+snapshot now has an offline loader that re-attests r2 and parent Tiingo evidence
+before Research receives bars. It needs no new request or credential read and
+remains a separate-provider representation bound to r2's exact session
+calendar, not independent validation or ranking evidence.
 
 ## Ready Queue
 
-1. Support one narrow offline loader for the immutable Tiingo raw-D1 snapshot,
-   then re-attest its source hashes, r2 calendar lineage, and exact 896 sessions
-   before Research uses it in one frozen no-retraining replay. No new request.
+1. Support one frozen no-retraining Tiingo raw-D1 replay with the existing
+   offline loader. No new request, provider, or data acquisition is needed.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -236,7 +237,8 @@ independent validation or a source of ranking evidence.
 ## Next Handoff
 
 Data derived and rechecked the Tiingo raw-D1 snapshot outside Git without a
-credential read, network request, or raw response copy. Future replay code must
-re-attest its parent Tiingo hashes and r2 calendar before producing bars. Do not
-rewrite either snapshot, interpret the result as independent validation, or use
-adjusted fields. No paid upgrade or operator data action is needed.
+credential read, network request, or raw response copy. Its offline loader now
+re-attests parent Tiingo hashes, reloaded r2 lineage, exact 896 sessions, and
+canonical raw-D1 bytes before producing bars. Do not rewrite either snapshot,
+interpret a replay as independent validation, or use adjusted fields. No paid
+upgrade or operator data action is needed.

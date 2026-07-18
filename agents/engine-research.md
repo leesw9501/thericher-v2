@@ -45,8 +45,8 @@
 - The Tiingo raw-D1 snapshot is now immutable. The next development-only
   falsifiable question is whether the `d1-pressure-lb20` instability persists
   under that separate-provider representation, while keeping r2's session
-  calendar fixed. Keep GPU idle; first add a narrow loader and run one frozen
-  no-retraining comparison.
+  calendar fixed. Data's narrow loader is complete; keep GPU idle and run one
+  frozen no-retraining comparison.
 
 ## Explicit-Event Replay
 
@@ -67,9 +67,9 @@
 
 ## Breadth Queue
 
-- Prepare one frozen, no-retraining data-source sensitivity replay after the
-  raw-D1 loader re-attests parent Tiingo hashes and r2 sessions. It remains
-  development-only and must preserve the sticky `unsupported` verdict.
+- Prepare one frozen, no-retraining data-source sensitivity replay using the
+  raw-D1 loader's parent-hash, reloaded-r2, and exact-session attestation. It
+  remains development-only and must preserve the sticky `unsupported` verdict.
 
 ## Depth Queue
 
@@ -156,6 +156,6 @@
 - Data owns the immutable Tiingo raw-D1 comparison snapshot at
   `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1`.
   It is not independent validation because it uses r2's fixed session calendar.
-  Research may add the smallest loader and run one frozen no-retraining replay
-  only. Do not rank, promote, name a winner, claim profitability, or start GPU
-  training.
+  Research may consume the existing strict loader in one frozen no-retraining
+  replay only. Do not rank, promote, name a winner, claim profitability, or
+  start GPU training.
