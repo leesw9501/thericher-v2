@@ -2,11 +2,11 @@
 
 ## Objective
 
-Run exactly one post-diagnosis KIS virtual-paper read-only discovery through
-the existing bounded client.
+Diagnose the virtual-paper overseas balance failure using only public official
+documentation and the existing redacted evidence.
 
-This advances paper-trading readiness by obtaining one live-like account-state
-observation, never by submitting an order.
+This advances paper-trading readiness without touching an account or making a
+second probe.
 
 ## Required First Reads
 
@@ -16,41 +16,39 @@ and the Data, Engine Research, Execution, and Review stateboards.
 
 ## Authority And Boundaries
 
-- The existing operator approval permits one use of only the four
-  `KIS_PAPER_*` values through `load_kis_paper_config`; do not inspect or print
-  `.env`, credentials, account identifiers, or `KIS_LIVE_*`.
-- Use only the fixed virtual host and existing `execution.kis_readonly` client.
-  Make one discovery attempt; do not retry it automatically.
-- Keep `THERICHER_MODE=off`; do not submit, modify, or cancel an order, query a
-  live account, allocate paper capital, or propose a capital envelope.
-- Persist only the existing external redacted evidence shape under
-  `D:\thericher-v2\model-artifacts`. Do not copy account state into Git, logs,
-  Claude prompts, or the completion report.
-- Do not add a broker framework, worker, scheduler, dashboard, report/gate
-  family, market-data change, or model work.
+- Do not read `.env`, credentials, account identifiers, or `KIS_LIVE_*`.
+- Do not call a KIS API, submit, cancel, modify, or query an order/account, or
+  change `THERICHER_MODE`.
+- Public official KIS documentation and official GitHub examples may be read.
+- Preserve the two immutable redacted failure artifacts. The newest safe facts
+  are `balance_rejected`, `balance`, `VTTS3012R`, and HTTP `500`; do not infer a
+  root cause from them or report raw response content.
+- Do not propose paper capital, execute a new probe, enable live behavior, or
+  add a broker framework, worker, scheduler, dashboard, report/gate family,
+  market-data change, or model work.
 
 ## Required Work
 
-1. Execution runs one bounded discovery using the existing CLI/client. It must
-   preserve the prior failure artifact, keep submission disabled, and write one
-   new external evidence artifact only for this attempt.
-2. If it fails closed, do not retry. Inspect only its status, reason, fixed
-   endpoint/TR ID, and HTTP-status metadata; never persist or report response
-   text or response-derived codes.
-3. If it collects a snapshot, confirm only that the reconciliation remains
-   `safe_to_submit: false`; do not expose values or advance to capital planning.
-4. Data and Review confirm that the run changed no market data and added no
-   process sprawl. Refresh stateboards, `HANDOFF.md`, and this next single goal,
-   then verify, commit, and push.
+1. Execution compares the fixed virtual balance host, GET path, `VTTS3012R`,
+   query fields, US-exchange coverage, continuation behavior, and 8-2 account
+   product handling against current official public sources.
+2. If a documented mismatch is proven, make only the smallest isolated
+   read-only correction with fake-transport tests. Otherwise, write a ranked
+   non-secret hypothesis list and the exact operator pairing check that would
+   distinguish it; do not make another KIS call.
+3. Data and Review independently confirm no market-data, credential, or
+   process-sprawl change leaked into the diagnosis. Refresh stateboards,
+   `HANDOFF.md`, and this next single goal; verify, commit, and push.
 
 ## Verification
 
 Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
 `docker compose --env-file .env.example config --quiet`.
 
-Report only the safe discovery outcome, external artifact path, tests,
-commit/push result, intentionally omitted work, and the next recommended goal.
+Report official sources, the exact proven mismatch or ranked remaining
+hypotheses, tests, commit/push result, intentionally omitted work, and the next
+recommended goal.
 
 ## Suggested Commit Message
 
-`Retry KIS paper read-only discovery`
+`Diagnose KIS paper balance access`

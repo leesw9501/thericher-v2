@@ -11,6 +11,13 @@
   `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20260718T075158554844Z-failed_closed.json`
   with reason `open_orders_rejected`. Neither artifact retains an account
   snapshot, position, cash, orderable-funds, or open-order record.
+- The one approved post-diagnosis retry also failed closed, this time as
+  `balance_rejected` at `balance` / `VTTS3012R` with HTTP `500`. Its external
+  evidence is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20260718T095422248003Z-failed_closed.json`
+  (SHA-256 `9ee43196ee53305cb62eee5ba582d8f56bce17b2c9f297094abe5f482b4738d8`)
+  and contains no snapshot, response text, or response-derived code. This does
+  not prove a cause or resolve the earlier open-order issue.
 - Existing broker-free fills remain labeled `source: local_paper`; fake broker
   fills use `source: in_memory_broker`.
 
@@ -78,9 +85,9 @@
 
 ## Current Objective
 
-- Run one already approved virtual-paper read-only discovery after the public
-  spec alignment. The existing loader may read only its four paper keys; do not
-  inspect `.env` manually, read live keys, submit, modify, cancel, or retry.
+- Diagnose the virtual-paper balance HTTP 500 against public official sources
+  and safe existing evidence only. Do not read `.env`, call KIS, submit,
+  modify, cancel, or retry.
 
 ## Recovery
 
@@ -91,14 +98,15 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
-- The next one-time retry must preserve the prior failure artifact and use the
-  fixed reader only. If it fails, do not retry; inspect only its redacted
-  endpoint/TR ID/HTTP-status metadata before choosing the next action.
+- Preserve both failure artifacts. The next step is public-document diagnosis;
+  HTTP `500` alone does not establish a TR, account-product, funding, or sandbox
+  cause. Any future probe requires a separate bounded decision.
 
 ## Ready Queue
 
-1. Run one approved, non-secret read-only retry of the corrected virtual-paper
-   open-order discovery, then stop regardless of outcome.
+1. Compare the fixed balance reader against current official public sources and
+   record only a ranked, non-secret hypothesis list plus one proposed next
+   probe; do not make that probe in the diagnosis task.
 2. After a complete typed snapshot exists, reconcile it without submit/cancel
    behavior and then propose a paper capital envelope for operator approval.
 3. Keep pure risk integration and append-only execution events as later bounded
@@ -106,9 +114,9 @@
 
 ## Operator Help
 
-- No capital decision is ready. If the one corrected retry still fails, the
-  next non-secret check is whether the virtual Open API app is paired with the
-  intended overseas-stock paper account and its product suffix. The paper
+- No capital decision is ready. The next diagnosis may ask the operator only to
+  verify, without sharing values, that the virtual Open API app is paired with
+  the intended overseas-stock paper account and its product suffix. The paper
   capital envelope remains a later decision after successful reconciliation.
 
 ## Must Not
