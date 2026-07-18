@@ -4,8 +4,9 @@
 
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
-comparison snapshot, and strict offline raw-D1 `CatalogedBars` loader for the
-three fixed instruments. The broad Yahoo daily snapshot now also has one
+comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one
+separate full-history evidence snapshot for the three fixed instruments. The
+broad Yahoo daily snapshot now also has one
 hash-bound, retrospective-only `SPY`/`QQQ`/`IWM` development-universe wrapper.
 Its first consumer is a Data-re-attested, in-memory Engine feature materializer;
 raw bars remain unavailable at the public wrapper boundary. The same bounded
@@ -45,19 +46,16 @@ re-attestation; it does not widen that raw-bar boundary.
 
 ## Current Objective
 
-The broad Yahoo daily suitability work, feature materializer, and future-only
-outcome materializer are complete. The static wrapper pins the `2026-06-23`
-gzip and manifest, exposes the common `SPY`/`QQQ`/`IWM` session window only
-behind a development-only type, and re-attests bytes before the one allowlisted
-Engine module receives raw bars. It remains non-PIT, non-campaign,
-non-paper-trading, non-ranking, and non-holdout evidence.
+The full-history Tiingo snapshot is complete and offline-attested. It remains
+separate from the Yahoo wrapper and all campaign `CatalogedBars` paths. The
+next bounded cross-lane question is descriptive raw-D1 source alignment, not
+training, promotion, or another data acquisition.
 
 ## Ready Queue
 
-1. Use the approved standard Tiingo EOD token only to determine whether a new,
-   immutable full-history `SPY`/`QQQ`/`IWM` raw-EOD and corporate-action
-   snapshot can be acquired under the existing no-cost limits. Keep it separate
-   from the Yahoo wrapper and do not overwrite the existing short Tiingo data.
+1. Support one read-only comparison of the new Tiingo full-history raw fields
+   with the existing fixed ETF raw-D1 evidence. Do not turn differences into a
+   data gate or a model-selection claim.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -146,6 +144,22 @@ non-paper-trading, non-ranking, and non-holdout evidence.
 - The operator's standard EOD probe succeeded for SPY from `2024-03-14` through
   `2024-03-18`; `2024-03-15` returned `divCash=1.594937` and
   `splitFactor=1.0`. This is access evidence, not a durable campaign snapshot.
+- Tiingo full-history standard-EOD evidence was acquired once at
+  `2026-07-18T14:29:04.184884Z` into
+  `D:\market_data\us_equities\fixed_etf_full_history\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-full-history-r1`.
+  It queried `1900-01-01` through confirmed session `2026-07-10`, passed an
+  eight-calendar-day retrieval lag, and has dataset hash
+  `sha256:9ee21b6d955320b3855955b2072749e239b4b15e382dfbb6521e18f6f41a0016`
+  and manifest hash
+  `sha256:7d16513ec3acdd746ae3f2402ba7e8e09d3d43f7c8e033cdd2feea0bd639a99c`.
+  It contains 8,418 SPY sessions (`1993-01-29` to `2026-07-10`), 6,876 QQQ
+  sessions (`1999-03-10` to `2026-07-10`), and 6,568 IWM sessions
+  (`2000-05-26` to `2026-07-10`), totaling 21,862 rows. The normalized data
+  keeps raw OHLCV plus `div_cash` and `split_factor`, excluding adjusted fields.
+  The offline loader rehashes raw and normalized bytes, rejects redirects before
+  a token can be forwarded, requires every response to reach `source_as_of`,
+  and requires common listed-session coverage. It is development evidence only,
+  not PIT, ranking, holdout, campaign, paper-trading, or profitability evidence.
 - Tiingo standard EOD acquisition completed at `2026-07-18T07:38:24.283185Z`.
   The immutable private-use snapshot is
   `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
@@ -211,8 +225,8 @@ non-paper-trading, non-ranking, and non-holdout evidence.
 
 ## Recovery
 
-- Recovery state is `complete`: do not overwrite either Tiingo snapshot. A
-  later source comparison must create a new disjoint snapshot and retain these
+- Recovery state is `complete`: do not overwrite any Tiingo snapshot. A later
+  source re-pull comparison must create a new disjoint snapshot and retain these
   inputs as original evidence. Use the fixed ETF daily r2 manifest for
   development campaigns and retain r1 as lineage.
 - Recover or mount the r2 subset only together with its unchanged sibling
@@ -242,6 +256,9 @@ non-paper-trading, non-ranking, and non-holdout evidence.
 - `D:\market_data\us_equities\fixed_etf_daily\canonical\tiingo_raw_d1\snapshot=2026-07-18-tiingo-raw-d1-r1\manifest.json`:
   raw OHLCV and explicit corporate-action fields derived from the exact Tiingo
   source bytes; replay-only, not independent validation or ranking evidence.
+- `D:\market_data\us_equities\fixed_etf_full_history\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-full-history-r1\manifest.json`:
+  one immutable raw-response and normalized-field record of the returned full
+  Tiingo window; it is not a replacement for the short campaign snapshot.
 - `D:\market_data\us_equities\yahoo_daily_universe\manifests\yahoo_daily_universe_snapshot=2026-06-23.json`:
   manifest for the fixed development-only ETF wrapper; its one canonical gzip
   is byte-pinned and no derived subset or artifact was written.
@@ -262,12 +279,11 @@ non-paper-trading, non-ranking, and non-holdout evidence.
 
 ## Next Handoff
 
-The broad Yahoo snapshot is usable only as the pinned, static development-only
-ETF wrapper. Its feature/outcome module re-attests the gzip and manifest and
-accepts only `SPY`/`QQQ`/`IWM` raw bars internally; external callers cannot
-retrieve the parser result. Each outcome is future-only and uses the next
-observed raw close, with its calendar gap recorded. Do not widen symbols, alter
-`2000-05-26` common-session start, or unwrap it into a campaign/local-paper
-path. A future universe-wide research claim still needs PIT membership,
-delistings, and corporate-action evidence; the next bounded Data step may use
-the already approved Tiingo EOD token to improve the latter evidence.
+The broad Yahoo snapshot remains usable only as the pinned, static
+development-only ETF wrapper. Its feature/outcome module re-attests the gzip
+and manifest and accepts only `SPY`/`QQQ`/`IWM` raw bars internally; external
+callers cannot retrieve the parser result. The new Tiingo full-history snapshot
+is a separate read-only source whose overlap may be measured descriptively, but
+it must not widen symbols, alter the `2000-05-26` common-session start, or
+unwrap either source into a campaign/local-paper path. A future universe-wide
+research claim still needs PIT membership and delistings.

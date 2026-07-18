@@ -18,6 +18,9 @@
   not campaign-ready and now feeds one small, re-attested, in-memory feature
   and future-only outcome materializer. It cannot justify model training,
   ranking, promotion, or any profitability claim.
+- Data also froze a separate Tiingo full-history raw-EOD evidence snapshot. It
+  is not campaign-ready; first measure descriptive raw-source alignment before
+  considering it for any feature or model research.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -51,9 +54,9 @@
 
 - The fixed-ETF source-sensitivity question remains unsupported. The broad ETF
   wrapper now supplies descriptive features plus explicit future-only outcomes.
-  Wait for the bounded full-history Tiingo data check before opening any new
-  CPU/GPU model work. It cannot open paper replay, ranking, promotion, or a
-  sealed holdout.
+  Tiingo full-history evidence is available, but only a bounded, read-only
+  raw-source alignment check may proceed before any new CPU/GPU model work. It
+  cannot open paper replay, ranking, promotion, or a sealed holdout.
 
 ## Explicit-Event Replay
 
@@ -74,9 +77,10 @@
 
 ## Breadth Queue
 
-- Await Data's bounded full-history Tiingo EOD and corporate-action evidence
-  check. Do not use the Yahoo development outcome as a model-selection input or
-  start a new GPU job merely to fill idle capacity.
+- Use the full-history Tiingo evidence only for a bounded raw-D1 alignment
+  diagnostic with existing fixed ETF evidence. Do not use the Yahoo development
+  outcome as a model-selection input or start a new GPU job merely to fill idle
+  capacity.
 
 ## Depth Queue
 
@@ -129,6 +133,10 @@
   `raw_close(next observed session) / raw_close(t) - 1`. It records the future
   outcome session and calendar-day gap, skips the terminal feature rows, and
   remains in-memory, non-campaign, and non-decisional.
+- The new Tiingo snapshot records 21,862 raw-field rows through `2026-07-10`
+  and enforces a confirmed final session plus shared listed-session coverage.
+  It is a retrieval-time data record, not point-in-time universe evidence or an
+  independent validation set.
 
 ## Recovery
 
@@ -190,6 +198,6 @@
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
   source check. The broad-Yahoo feature/outcome substrate is complete and
-  remains descriptive. The next bounded step is Data's full-history Tiingo EOD
-  evidence check; do not rank, promote, name a winner, claim profitability,
-  start GPU training, or connect either source to campaign or paper execution.
+  remains descriptive. The next bounded step is an offline source-alignment
+  diagnostic; do not rank, promote, name a winner, claim profitability, start
+  GPU training, or connect either source to campaign or paper execution.

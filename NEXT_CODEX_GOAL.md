@@ -2,56 +2,49 @@
 
 ## Objective
 
-Build one bounded, immutable full-history Tiingo standard-EOD evidence snapshot
-for `SPY`, `QQQ`, and `IWM` outside Git.
+Build one bounded, offline raw-D1 source-alignment diagnostic for `SPY`, `QQQ`,
+and `IWM` using the existing fixed ETF evidence and the new full-history Tiingo
+standard-EOD snapshot.
 
-This advances data collection for future feature/model research. It must not
-train a model or turn the snapshot into campaign, paper-trading, ranking,
-promotion, or profitability evidence.
+This advances feature/model research by measuring retrospective source agreement
+before any new model work. It is not an independence test, a model-selection
+input, a campaign, a paper-trading result, or a profitability claim.
 
 ## Required First Reads
 
 Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`, `VISION.md`,
 `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`,
 and the Data and Engine Research stateboards. Ask Claude for a short
-provenance/overreach falsification check before changing the external data
-contract, then invoke the Review checkpoint.
+source-alignment overreach check before changing a cross-source contract, then
+invoke the Review checkpoint.
 
-## Approved Authority And Boundaries
+## Boundaries
 
-- Read only `TIINGO_API_TOKEN` from the ignored root `.env`; never print, log,
-  store, commit, or send it to Claude. Do not read any other `.env` key.
-- Use only Tiingo's already approved no-cost standard daily endpoints for
-  `SPY`, `QQQ`, and `IWM`. Do not purchase, upgrade, use a login-gated source,
-  call KIS, submit an order, or access live credentials.
-- Keep `THERICHER_MODE=off`. Do not train, use GPU, create candidates,
-  campaigns, paper/local orders, a dashboard, or a profitability claim.
-- Store raw responses, normalized data, manifests, and any Data artifact only
-  under `D:\market_data` or `D:\thericher-v2\model-artifacts`; never Git.
-  Warn below 20% free `D:` space and stop before the 15% floor.
-- Preserve the existing short Tiingo and Yahoo snapshots unchanged. A new
-  snapshot must have a new disjoint identifier and must not silently replace an
-  existing source.
+- Read only existing external market-data evidence. Do not read `.env`, call a
+  network API, download data, call KIS, submit or simulate orders, or access
+  credentials.
+- Do not train, use GPU, create candidates, run a campaign, produce local-paper
+  fills, rank a model, open a holdout, or make a profitability claim.
+- Re-attest every input through its owning Data loader. Do not expose raw bars
+  or turn the Tiingo snapshot into `CatalogedBars`.
+- Keep the comparison bounded to the exact `SPY`/`QQQ`/`IWM` overlap. Preserve
+  all existing snapshots and write no new external artifact unless a single
+  small deterministic summary is necessary for recovery.
 
 ## Required Work
 
-1. Inventory the existing Tiingo snapshots and estimate the bounded download
-   before any request. Stop and report rather than retrying when standard access,
-   rights, quota, or free-space checks fail.
-2. If the standard API provides the history, acquire exactly one new immutable
-   `SPY`/`QQQ`/`IWM` raw-EOD plus corporate-action snapshot with raw response
-   hashes, normalized-data hash, source/as-of metadata, exact symbol/date
-   coverage, and explicit `divCash`/`splitFactor` semantics. No secret-like
-   value may enter a response-derived artifact.
-3. Add or extend only the narrow offline Data loader and focused tests needed to
-   re-attest the new snapshot. Keep it separate from the Yahoo wrapper and all
-   campaign `CatalogedBars` paths.
-4. State precisely what the new history does and does not establish. It may
-   improve retrospective development evidence; it does not establish point in
-   time universe membership, independence, ranking, sealed holdout validity, or
-   profitability.
-5. Update Data and Engine Research stateboards, `HANDOFF.md`, and this next
-   goal before ending the task.
+1. Inventory and re-attest the fixed raw-D1 evidence and full-history Tiingo
+   snapshot without reading raw files through an unverified path.
+2. Add the smallest Data-owned, in-memory alignment result needed to measure
+   common-session coverage and raw OHLCV agreement/differences by symbol. Keep
+   adjusted fields and corporate-action inference out of the comparison.
+3. Add focused tests proving the diagnostic is offline, credential-free,
+   rejects tampered input, remains outside campaign/paper paths, and does not
+   call model or broker code.
+4. Run one actual external-data smoke and record only concise descriptive facts:
+   coverage, agreement/difference counts, and limits. State that matching data
+   does not prove independence, PIT validity, execution quality, or profit.
+5. Update the Data and Engine stateboards, `HANDOFF.md`, and this next goal.
 
 ## Verification
 
@@ -60,4 +53,4 @@ Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
 
 ## Suggested Commit Message
 
-`Add full-history Tiingo EOD evidence`
+`Add raw daily source alignment diagnostic`

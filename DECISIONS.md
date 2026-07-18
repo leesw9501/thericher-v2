@@ -1255,3 +1255,21 @@ feature, while using the existing trusted-module boundary avoids another raw
 input API. Tests reject forged/tampered source state and generic stream access,
 verify all fixed symbols against future OHLCV changes, and preserve the
 `CatalogedBars` campaign boundary.
+
+## 2026-07-18 - Full-history Tiingo evidence stays descriptive
+
+Decision: accept one immutable Tiingo standard-EOD full-history record for
+`SPY`, `QQQ`, and `IWM`, queried from `1900-01-01` through confirmed session
+`2026-07-10`. Its raw response hashes, normalized hash, coverage, and
+`divCash`/`splitFactor` fields are offline-attested outside Git. The loader
+rejects redirects before an authorization header can be forwarded, requires each
+response to reach its confirmed `source_as_of`, and requires common coverage
+after all three instruments exist.
+
+This record is development evidence only. It does not establish point-in-time
+membership, delisting coverage, source independence, ranking, holdout validity,
+campaign eligibility, paper-trading eligibility, model selection, or profit.
+
+Reason: a frozen retrieval improves reproducibility and makes a bounded raw
+source-alignment check possible without pretending that one provider's present
+history solves survivorship, execution, or model-quality questions.

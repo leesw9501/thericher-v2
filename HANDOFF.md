@@ -190,6 +190,19 @@ Its manifest hash is
 It proves returned-session coverage, not that a future source re-pull cannot
 restate data; any later comparison must create a new immutable snapshot.
 
+One separate, full-history Tiingo EOD evidence snapshot now lives at
+`D:\market_data\us_equities\fixed_etf_full_history\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-full-history-r1`.
+It queried `1900-01-01` through the confirmed `2026-07-10` session and contains
+21,862 raw-field rows: SPY 8,418 (`1993-01-29`), QQQ 6,876 (`1999-03-10`), and
+IWM 6,568 (`2000-05-26`), all ending `2026-07-10`. Its normalized dataset hash
+is `9ee21b6d955320b3855955b2072749e239b4b15e382dfbb6521e18f6f41a0016` and its
+manifest hash is `7d16513ec3acdd746ae3f2402ba7e8e09d3d43f7c8e033cdd2feea0bd639a99c`.
+The loader preserves raw OHLCV, `divCash`, and `splitFactor`, excludes adjusted
+fields, re-attests raw and normalized bytes offline, rejects redirects, and
+requires confirmed final/common listed-session coverage. It remains development
+evidence only: not a PIT universe, independent validation, ranking, holdout,
+campaign, paper-trading, or profitability input.
+
 A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
 has only empty raw/template workspaces for paid Sharadar and Norgate source
 paths. Stooq requested browser verification and was not bypassed; the existing
@@ -394,10 +407,9 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks Data to check whether the already approved Tiingo
-standard EOD access can create a separate immutable full-history
-`SPY`/`QQQ`/`IWM` raw-EOD and corporate-action snapshot. It must not train,
-rank, campaign, paper trade, or claim profitability. KIS remains failed closed
-pending the non-secret pairing check and a separately authorized future probe.
-The KIS capital envelope, paid data, order submission, and live capital remain
-separate future decisions.
+`NEXT_CODEX_GOAL.md` now asks for a bounded, offline raw-D1 source-alignment
+diagnostic between the existing fixed ETF evidence and the new Tiingo history.
+It must not train, rank, campaign, paper trade, or claim profitability. KIS
+remains failed closed pending the non-secret pairing check and a separately
+authorized future probe. The KIS capital envelope, paid data, order submission,
+and live capital remain separate future decisions.
