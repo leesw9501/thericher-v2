@@ -1727,3 +1727,36 @@ Reason: retrying with changed settings or repeatedly sampling older windows
 cannot create trial entitlement and would consume time without improving an
 engine loop. Keep the trial's current two-year local facts; pursue no-cost,
 approved alternatives before proposing any purchase.
+
+## 2026-07-19 - Tiingo broad-data expansion starts with a capped pilot
+
+Decision: retain the completed Tiingo standard-EOD coverage probe as technical
+reachability evidence only, and expand next through one deterministic,
+30-symbol raw-daily acquisition pilot rather than a 541-symbol automatic pull.
+The probe queried 2024-07-18 through 2026-07-17, issued exactly 12 requests,
+recorded 11 nonempty HTTP-200 responses plus one HTTP-404, and persisted no
+selected symbols, raw rows, prices, volumes, or token. Its metadata-only
+summary is under
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-eod-coverage-probe\snapshot=2026-07-18-tiingo-eod-coverage-probe-r1\summary.json`, SHA-256
+`4b2ef16520fdd530ae7cf6bbadc9dbe46cd9526670d859c2484097d3def9fce0`.
+
+Current official [Tiingo terms](https://app.tiingo.com/tos/) and
+[general API documentation](https://www.tiingo.com/documentation/general) allow
+the operator's internal personal use and prohibit redistribution. Public
+[Starter pricing](https://www.tiingo.com/about/pricing) lists 500 unique symbols
+per month, below the external Norgate union's 541 candidates. The pilot therefore
+uses a deterministic subset, records unavailable requests as gaps without proxy
+or ticker substitution, and writes exact external source evidence only under
+`D:\market_data`. It cannot infer membership, point-in-time availability,
+source completeness, or a tradable historical universe.
+
+Claude returned `supported-with-limits`: 12/541 is only a small technical
+sample, and the direction reverses if published terms disallow the retention
+pattern or if observed gap/rate behavior makes the bounded pass unreliable.
+No model, GPU, campaign, paper, broker, or source-selection authority opens
+from this decision.
+
+Reason: a small raw-data pilot validates the real acquisition contract and
+protects the free-tier limit before a larger private dataset is retained. It
+advances the data loop without turning a date-less candidate union into a
+survivorship-safe research universe.

@@ -217,6 +217,23 @@ Current canonical evidence:
 collected because compliant automation needs an honest identifying contact;
 none was invented.
 
+The newest Tiingo standard-EOD probe made exactly 12 deterministic requests
+against the external Norgate candidate union for 2024-07-18 through 2026-07-17.
+It recorded 11 nonempty HTTP-200 responses and one HTTP-404 without retry or
+substitution. Its symbol-private, metadata-only external summary is
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-eod-coverage-probe\snapshot=2026-07-18-tiingo-eod-coverage-probe-r1\summary.json`, SHA-256
+`4b2ef16520fdd530ae7cf6bbadc9dbe46cd9526670d859c2484097d3def9fce0`.
+This is technical reachability only, not point-in-time, universe, campaign,
+model, GPU, or paper evidence.
+
+Official [Tiingo terms](https://app.tiingo.com/tos/) and
+[API documentation](https://www.tiingo.com/documentation/general) allow the
+operator's internal personal use but prohibit redistribution. Public Starter
+pricing lists a 500-unique-symbol monthly cap, so no 541-symbol automatic pull
+is authorized by this evidence. The next Data objective is a 30-symbol raw
+daily acquisition pilot with exact external provenance and no symbol
+substitution; it remains development evidence only.
+
 The approved Tiingo standard EOD collection produced one immutable private-use
 snapshot at
 `D:\market_data\us_equities\fixed_etf_corporate_actions\canonical\tiingo_standard_eod\snapshot=2026-07-18-tiingo-eod-corporate-actions-r1`.
@@ -584,8 +601,12 @@ the last two years. It is an entitlement limit, not a NDU setting to alter. A
 paid subscription is the only known longer-history route and remains an
 operator approval decision; no action is requested now.
 
-The next objective is a bounded Tiingo EOD coverage probe for a deterministic
-sample from the external Norgate candidate union. It may use the already
-approved `TIINGO_API_TOKEN`, must preserve secret boundaries, and must establish
-coverage/response behavior before any wider no-cost daily acquisition. It does
-not open a model, GPU, campaign, KIS, or source-promotion path.
+The Tiingo coverage probe is complete: 11 of 12 fixed deterministic requests
+were available and one was a recorded HTTP-404, with no selected symbols or raw
+rows persisted. The external summary hash is
+`sha256:4b2ef16520fdd530ae7cf6bbadc9dbe46cd9526670d859c2484097d3def9fce0`.
+Claude's result was `supported-with-limits`: the only safe follow-up is a
+30-symbol, rate-bounded raw-daily pilot after a data-contract drift-check. It
+must use only the approved Tiingo token, write under `D:\market_data`, retain
+unavailable symbols as gaps, and remain private-use, non-PIT, non-campaign,
+non-model, non-GPU, and non-paper evidence.

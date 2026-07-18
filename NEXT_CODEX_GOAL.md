@@ -2,49 +2,63 @@
 
 ## Objective
 
-Measure Tiingo standard-EOD coverage for one deterministic 12-symbol sample
-drawn from the external Norgate `S&P 500 Current & Past` candidate union.
+Build and run one deterministic 30-symbol Tiingo standard-EOD raw-daily
+acquisition pilot from the external Norgate `S&P 500 Current & Past` candidate
+union.
 
-The probe decides only whether a later no-cost broad daily acquisition is worth
-planning. It must not create a universe claim, a data snapshot, a campaign, or
-a model/GPU job.
+The pilot proves only whether a small, rate-bounded private-use raw-data
+snapshot can be acquired and recovered correctly. It must not claim a
+historical universe, point-in-time membership, source completeness, model
+quality, or profitability.
 
 ## Ownership
 
-- **Data Agent:** owns deterministic sample selection, approved-token use,
-  request budgeting, response coverage, and provenance limits.
-- **Review/Claude:** is optional unless results would be used for a source,
-  survivorship, temporal-availability, or model-promotion claim.
-- **Engine Research Agent:** remains an observer and cannot consume the probe.
+- **Data Agent:** owns candidate selection, approved-token isolation, request
+  pacing, raw-response provenance, canonical local validation, and storage.
+- **Review/Claude:** must make one short falsification-first data-contract
+  check before architecture-changing edits or the live acquisition run.
+- **Engine Research Agent:** remains an observer. It cannot consume, model,
+  rank, train, or schedule GPU work from this pilot.
 
 ## Boundaries
 
-- Read only `TIINGO_API_TOKEN` from `.env` using the existing approved narrow
-  helper. Do not read, log, expose, or send any other `.env` value to Claude.
-- Use exactly 12 deterministic symbols selected from the already external
-  candidate union, with an algorithm/version/union hash recorded outside Git.
-  Do not print or commit selected symbols, raw rows, prices, volumes, or token.
-- Make at most 12 Tiingo standard-EOD requests over one fixed two-year daily
-  window. Stop on `401`, `403`, `429`, malformed responses, or storage-policy
-  violation; do not retry, change windows, or silently replace missing symbols.
-- Record only aggregate availability, per-response row-count/date-range
-  summaries, HTTP/error class, request count, package/source version, and
-  external evidence path under `D:\thericher-v2\model-artifacts\data-agent`.
-  Do not write Tiingo raw data to Git or create a data snapshot in this goal.
-- Do not call Norgate, Docker, KIS, broker code, or a public service. Do not
-  create a provider, catalog, campaign, strategy, model, GPU job, paper order,
-  report family, dashboard, or source-selection rule.
+- Read only `TIINGO_API_TOKEN` through the existing approved narrow helper.
+  Never read, log, expose, or send any other `.env` value to Claude.
+- Use exactly 30 deterministic candidates selected from the external union.
+  Preserve the selection algorithm, union hash, original candidate and request
+  identifier only in external source evidence. Do not print or commit symbols,
+  raw rows, prices, volumes, response bodies, or token.
+- Do not substitute a missing, empty, malformed, or rejected candidate with a
+  proxy, sibling ticker, guessed delisting, or a different candidate. Record it
+  as a gap and stop on auth, rate, malformed, storage, or contract failure.
+- Limit the live pass to 30 requests, no retries, and the observed 50-request
+  hourly account limit. Use one fixed 2024-07-18 through 2026-07-17 daily
+  window. Do not query another date range or start a second pass.
+- Persist exact raw responses, a hash-attested canonical raw-field subset, and
+  a manifest only under `D:\market_data`; use an external staging directory and
+  atomic publication. Keep all output private and non-redistributable under
+  Tiingo's current terms.
+- The pilot must remain `pit=false`, `ranking=false`, `holdout=false`,
+  `campaign=false`, `model=false`, `gpu=false`, and `paper=false`. Do not add a
+  provider/catalog, feature, strategy, model, GPU job, Docker work, broker
+  call, KIS use, dashboard, report family, scheduler, or public service.
+- Check D: immediately before the live pass. Warn below 20 percent free and
+  stop below 15 percent. Do not create data or model artifacts in Git.
 
 ## Required Work
 
-1. Inspect the existing narrow Tiingo helper and external Norgate union
-   manifest; define deterministic sample selection and a fixed date window
-   before reading the token or making a request.
-2. Add the smallest mock-tested probe helper/script. Tests must prove only the
-   approved token is read, request count is capped, no raw data is persisted,
-   selected symbols are absent from Git outputs, and an error stops cleanly.
-3. Run once only after tests and fresh D: preflight pass. Report only aggregate
-   coverage and external summary hash/path; preserve raw API responses nowhere.
+1. Read the existing Tiingo narrow helper, coverage probe, and external union
+   manifest. Ask Claude for a concise drift-check that challenges symbol
+   semantics, raw/canonical policy, request pacing, recovery, and the non-PIT
+   boundary. Do not send raw rows, candidate symbols, or secrets.
+2. Implement the smallest mock-tested raw-daily pilot helper and CLI. Tests
+   must prove: approved-token-only access; exactly 30 capped/no-retry requests;
+   external-only atomic output; tamper detection; no symbol substitution;
+   safe failure/recovery; no broker, Docker, or credential access beyond the
+   approved token.
+3. Run focused tests and a fresh D: preflight, then run the one live pass once.
+   Report aggregate counts and external hashes/paths only. If it stops, retain
+   the partial external evidence and do not rerun it.
 4. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`, replace this
    goal, then continue while no real operator approval boundary remains.
 
@@ -58,9 +72,9 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report aggregate availability, request count, token boundary result, external
-summary path/hash, and any genuine operator data action required.
+Report the Claude verdict, aggregate result, storage result, external
+snapshot/manifest hashes, and any genuine operator data action required.
 
 ## Suggested Commit Message
 
-`Probe Tiingo broad daily coverage`
+`Add Tiingo daily acquisition pilot`

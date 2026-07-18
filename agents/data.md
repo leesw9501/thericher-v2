@@ -51,6 +51,18 @@ the last two years, so this is trial entitlement rather than a discovered NDU
 setting issue. A longer Norgate history requires a paid subscription decision;
 no configuration or download action is pending.
 
+The bounded Tiingo standard-EOD coverage probe is complete. It used exactly 12
+deterministic rank-quantile candidates over 2024-07-18 through 2026-07-17 and
+returned 11 nonempty HTTP-200 responses plus one recorded HTTP-404, with no
+retry, substitution, selected symbol, raw row, price, volume, or token
+persistence. Its external summary is
+`D:\thericher-v2\model-artifacts\data-agent\tiingo-eod-coverage-probe\snapshot=2026-07-18-tiingo-eod-coverage-probe-r1\summary.json`
+with SHA-256
+`4b2ef16520fdd530ae7cf6bbadc9dbe46cd9526670d859c2484097d3def9fce0`.
+This proves only a small technical reachability sample. It does not establish a
+historical universe, point-in-time membership, source completeness, or model
+eligibility.
+
 ## Engine Loop
 
 - Data collection.
@@ -123,10 +135,11 @@ recarray with only `Date` and `Index Constituent` fields. No symbols, values,
 rows, cache, artifact, or dataset were retained. That validates API shape, not
 membership availability or a PIT universe.
 
-The next ready Data item is a bounded Tiingo EOD coverage probe for a
-deterministic external sample of the Norgate candidate union. It may read only
-the approved `TIINGO_API_TOKEN` and must establish source coverage before any
-larger no-cost daily acquisition or research-use conclusion.
+The next ready Data item is a Claude-reviewed, deterministic 30-symbol Tiingo
+standard-EOD raw-daily acquisition pilot. It may read only the approved
+`TIINGO_API_TOKEN`, preserve exact external raw-response provenance, record
+gaps without substitution, and remain private-use, non-PIT, non-campaign,
+non-model evidence. It is a data-contract test, not a GPU trigger.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -281,11 +294,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. After a Claude data-contract drift-check, build at most one external-only
-   Norgate `S&P 500 Current & Past` membership-matrix snapshot. It must use the
-   fixed candidate union plus explicit per-symbol membership series, retain a
-   hash manifest outside Git, and remain outside Docker, `CatalogedBars`,
-   campaign, and model inputs.
+1. After a Claude data-contract drift-check, build and run one 30-symbol Tiingo
+   raw-daily pilot from the fixed external candidate union. It must not exceed
+   the observed hourly request headroom, replace any missing symbol, or claim
+   that the date-less union is a historical tradable universe.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
@@ -568,6 +580,9 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   dataset identities; zero ranking or sealed-holdout eligible files.
 - `D:\thericher-v2\model-artifacts\data-agent\training-readiness-catalog\data-agent-training-readiness-20260718-r1\catalog.json`:
   preserved pre-integration field shape; superseded by r2 for new consumers.
+- `D:\thericher-v2\model-artifacts\data-agent\tiingo-eod-coverage-probe\snapshot=2026-07-18-tiingo-eod-coverage-probe-r1\summary.json`:
+  12-request, symbol-private Tiingo standard-EOD reachability summary with 11
+  available responses, one unavailable response, no retry, and no raw data.
 - `data-agent-market-data-inventory-cadence-20260717-r2`: bounded metadata
   inventory confirmed 2 roots, 5 snapshots, and 5 useful files; no acquisition.
 - `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1`: no immediate
@@ -605,5 +620,11 @@ That snapshot is now complete at
 `d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55`.
 It has a deletion marker and no staging residue, but is not a direct historical
 list, publication-time evidence, PIT data, or an Engine input. The next bounded
-Data question is the fixed-ETF Norgate daily-history coverage audit; do not
-infer an explanation or eligibility in advance.
+Data task is a 30-symbol Tiingo raw-daily pilot. Tiingo's current
+[terms](https://app.tiingo.com/tos/) and
+[general documentation](https://www.tiingo.com/documentation/general) permit
+the operator's private internal use but prohibit redistribution. Public Starter
+pricing also lists 500 unique symbols per month, so the date-less 541-item
+union must not be requested as one automatic batch. The pilot must preserve
+that bound, write data only under `D:\market_data`, and create no model, GPU,
+campaign, or source-selection claim.
