@@ -296,7 +296,7 @@ bounded step.
 The Data stateboard owns exact catalog status and operator data requests.
 
 The operator-created Norgate US Stocks Platinum trial now has a bounded local
-compatibility result. Its configured D: path is
+compatibility result and two date-scoped fixture observations. Its configured D: path is
 `D:\market_data\us_equities\norgate_us_platinum_trial`; after an operator
 location switch and update it contained 429 files / 6.12 GiB, with a newer file
 time than the retained C: copy. Windows `norgatedata==1.0.77` exposed daily
@@ -304,7 +304,14 @@ OHLCV, Turnover, Unadjusted Close, Dividend, Index Constituent, Major Exchange
 Listed, and Capital Event fields. Membership/listing queries honored a short
 range, while `capital_event_timeseries` returned the wider trial horizon. The
 trial is about two years; explicit client-side clipping is therefore a future
-consumer requirement, not an implemented provider feature. A Docker `engine`
+consumer requirement, not an implemented provider feature. In the observed
+fixtures, `PLTR` changed membership false-to-true on `2024-09-23`, matching the
+public S&P effective-before-open date; clipped `SMCI` Capital Event marked
+`2024-09-30`, matching the issuer's split-effective date while split-adjusted
+trading began `2024-10-01`. Claude supports those literal observations only.
+Do not use the capital-event date as a price-adjustment, ex-date, or
+availability timestamp; the next check compares it with the
+`Close`/`Unadjusted Close` ratio transition. A Docker `engine`
 runtime probe listed 166 top-level files through the `/app/market_data` `ro`
 mount, but no proprietary Docker query or export bridge is licensed or
 implemented. This is compatibility
@@ -494,10 +501,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The Norgate trial compatibility target is complete and does not justify a
+The Norgate trial's first fixture check is complete and does not justify a
 purchase, cleanup, provider, or research promotion. The next objective is one
-bounded Data-owned known-fixture semantics check: it may compare a public
-official membership/corporate-action fixture within the trial horizon against
-the local query results, but it must create no provider/cache/export/campaign
-path and must keep all Norgate data outside Git. Any conclusion short of
-unambiguous fixture behavior remains a limitation, not a reason to buy data.
+bounded Data-owned comparison of the `SMCI` Capital Event marker with the local
+daily `Close`/`Unadjusted Close` ratio transition. It must create no
+provider/cache/export/campaign path and keep all Norgate data outside Git.
+Any timing ambiguity is a limitation, not a reason to buy data or adapt
+historical prices.

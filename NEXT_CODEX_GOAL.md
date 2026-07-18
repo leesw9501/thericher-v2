@@ -2,57 +2,58 @@
 
 ## Objective
 
-Run one bounded Norgate trial semantics check using public, independently
-verifiable fixtures inside the observed trial horizon.
+Test the observed date relationship between the Norgate `Capital Event` marker
+and its daily `Close`/`Unadjusted Close` ratio transition for the existing
+`SMCI` split fixture.
 
-This advances data collection and backtest-validation readiness by testing the
-meaning of two local point-in-time signals. It is not a provider implementation,
-purchase decision, data export, campaign, model, paper-trading, or live step.
+This advances data collection and backtest-validation readiness by trying to
+falsify a leakage-prone interpretation before any provider or research use. It
+is not a provider implementation, purchase decision, data export, campaign,
+model, paper-trading, or live step.
 
 ## Ownership
 
-- **Data Agent:** owns fixture selection, bounded local queries, date handling,
-  and evidence wording.
-- **Infra capability:** confirms only the existing host/Docker read-only mount
-  when needed. It must not implement a bridge.
-- **Review/Claude:** use a short falsification check before relying on a
-  positive fixture conclusion. Claude is advisory; no credential or raw rows.
+- **Data Agent:** owns one tight local query pair, explicit date clipping, and
+  non-raw derived timing evidence.
+- **Review/Claude:** challenge any conclusion that narrows event availability
+  or the interpretation of derived price-ratio timing. Claude is advisory; send
+  no credentials or raw rows.
 
 ## Boundaries
 
 - Use only the existing operator-created Norgate trial at
-  `D:\market_data\us_equities\norgate_us_platinum_trial` and public,
-  no-auth official sources for fixture facts.
+  `D:\market_data\us_equities\norgate_us_platinum_trial` and the existing
+  official SMCI filing facts.
 - Do not read `.env`, credentials, or KIS data. Do not buy, renew, upgrade,
   export, redistribute, or delete Norgate data. Preserve the retained C: copy.
 - Do not add a provider, cache, dependency, `CatalogedBars` path, Docker query
   bridge, manifest, raw-data artifact, campaign, model, GPU job, paper order,
   or live behavior.
-- Do not infer a complete PIT universe, delisting coverage, event lineage,
-  source correctness, or long-history eligibility from these two fixtures.
+- Do not infer event availability, ex-date semantics, event type/ratio
+  meaning or coverage, complete PIT history, universe correctness, or research
+  eligibility from this one fixture.
 - Keep `THERICHER_MODE=off`; all broker submission, modification, cancel, and
   capital allocation remain disabled.
 
 ## Required Work
 
-1. Select two independently documented fixtures within the local trial range:
-   one historical index-membership change and one capital event. Prefer original
-   official index/issuer notices; if neither can be established without an
-   ambiguous source, record that limitation and do not substitute a weaker claim.
-2. Query the local Windows Norgate package over tight before/after windows.
-   Record only symbol, requested and returned date bounds, field name, counts,
-   indicator transitions, and non-secret query behavior. Do not retain or print
-   raw market-data rows.
-3. For the capital-event query, independently apply an in-memory date clip and
-   demonstrate whether the returned series requires that clip. Do not implement
-   reusable provider code from the result.
-4. Compare observed indicator timing with the public fixture date. A mismatch,
-   missing transition, unclear effective-date convention, or ambiguous event
-   type is a valid `unsupported` result, not a reason to adjust data or retry
-   unboundedly.
-5. Request a concise Claude falsification verdict before recording any positive
-   semantic finding. Update `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`
-   only with durable facts, then replace this goal.
+1. Query `SMCI` daily price data and `Capital Event` over one tight window
+   spanning `2024-09-27` through `2024-10-02`. Explicitly clip the event result
+   in memory before comparison, even if it again returns the wider trial range.
+2. Record only requested and returned bounds, row counts, event-marker dates,
+   and whether the derived `Close`/`Unadjusted Close` ratio changes on
+   `2024-09-30`, `2024-10-01`, another date, or not deterministically. Do not
+   print or retain raw market-data rows or price values.
+3. Compare that timing with the issuer's documented after-close effective time
+   on `2024-09-30` and split-adjusted trading on `2024-10-01`. Treat a marker
+   on `2024-09-30` as unavailable for same-session use unless a separate
+   source-timestamp contract proves otherwise.
+4. Ask Claude for a concise falsification verdict before recording a positive
+   timing conclusion. A mismatch, ambiguous ratio transition, duplicate dates,
+   or unproven source availability is `unsupported`; do not repair, shift, or
+   reinterpret source data.
+5. Update `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md` only with durable
+   facts, then replace this goal.
 
 ## Verification
 
@@ -64,8 +65,8 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report any focused local probe and official fixture source used.
+Report the focused local probe and official filing source used.
 
 ## Suggested Commit Message
 
-`Check Norgate fixture semantics`
+`Test Norgate capital-event timing`

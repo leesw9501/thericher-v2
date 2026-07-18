@@ -1487,3 +1487,30 @@ Reason: connector availability and field names are useful evidence, but treating
 them as historical semantics would reintroduce leakage and survivorship risk.
 One known-fixture semantics check is the next bounded question; it is not a
 subscription decision.
+
+## 2026-07-19 - Norgate fixture observations remain date-scoped
+
+Decision: retain only two limited local observations. A tight `PLTR` historical
+membership request returned its requested `2024-09-18` through `2024-09-27`
+window and changed `Index Constituent` from false to true on `2024-09-23`, the
+date S&P DJI made the addition effective before the open. A tight `SMCI`
+capital-event request ignored its requested `2024-09-26` through `2024-10-04`
+range and returned the full observed trial horizon; after an explicit in-memory
+clip, its seven requested-window rows contained one `Capital Event` marker on
+`2024-09-30`. That matches the issuer's stated split-effective date, while
+split-adjusted trading began on `2024-10-01`.
+
+Claude's falsification review returned `supported-with-limits` for those literal
+date observations only. The capital-event marker must not be treated as the
+price-adjustment date, ex-date, event availability time, event type, or ratio.
+The next bounded check compares the marker with the local `Close` to
+`Unadjusted Close` ratio transition across the same window. A mismatch or an
+ambiguous transition remains `unsupported` rather than an invitation to repair
+or reinterpret source data.
+
+Reason: the membership fixture corroborates one observed per-date transition, but
+the SMCI effective-after-close versus next-session trading distinction is exactly
+where a superficially matching event marker can leak future information. Neither
+fixture establishes PIT availability, universe completeness, delistings, general
+corporate-action lineage, a provider contract, campaign eligibility, or a
+purchase decision.

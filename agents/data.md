@@ -70,9 +70,14 @@ short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
 
-The Norgate trial compatibility check is complete. The next ready Data item is
-a bounded known-fixture semantics check; it must not become a provider or
-research-data integration.
+The Norgate trial compatibility and first fixture check are complete. `PLTR`
+changed `Index Constituent` false-to-true on `2024-09-23`, matching the public
+S&P effective-before-open date. A client-clipped `SMCI` Capital Event marker
+landed on `2024-09-30`, the issuer's split-effective date, while
+split-adjusted trading began `2024-10-01`. These are date-scoped observations,
+not data-semantic or availability claims. The next ready Data item compares the
+SMCI marker with the `Close`/`Unadjusted Close` ratio transition; it must not
+become a provider or research-data integration.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -150,6 +155,30 @@ correctness, event timestamps and lineage, long-history availability, Docker
 rights, provider integration, research eligibility, and paper-trading use remain
 unproven.
 
+## Norgate Fixture Observations (2026-07-19)
+
+The first bounded semantics check used original public sources and retained no
+raw Norgate rows. A `PLTR` S&P 500 membership query requested and returned
+`2024-09-18` through `2024-09-27` (eight rows); its `Index Constituent`
+transition was false-to-true on `2024-09-23`, matching S&P DJI's
+effective-before-open date. A `SMCI` capital-event query requested
+`2024-09-26` through `2024-10-04` but returned `2024-07-18` through
+`2026-07-17`; explicit in-memory clipping yielded seven rows and one
+nonzero `Capital Event` date, `2024-09-30`. The issuer records the 10-for-1
+split as effective after the close that day, with split-adjusted trading from
+`2024-10-01`.
+
+Claude returned `supported-with-limits`: the observations support only those
+literal date matches. The membership fixture cannot separate before-open
+effectiveness from first-trading-session convention. The capital-event marker
+must not be interpreted as price-adjustment, ex-date, or usable same-session
+availability. The next test must compare it with the local
+`Close`/`Unadjusted Close` ratio transition before any broader statement.
+
+Official fixtures: [S&P DJI notice](https://press.spglobal.com/2024-09-06-Palantir-Technologies%2C-Dell-Technologies%2C-and-Erie-Indemnity-Set-to-Join-S-P-500-Others-to-Join-S-P-MidCap-400-and-S-P-SmallCap-600),
+[SMCI Form 8-K](https://www.sec.gov/Archives/edgar/data/1375365/000137536524000028/smci-20240806.htm),
+and [SMCI Form 10-Q](https://www.sec.gov/Archives/edgar/data/1375365/000137536525000005/smci-20240930.htm).
+
 **Sharadar comparison:** the official `SEP` product page documents daily US
 listed and delisted equities from 1998, adjusted and unadjusted OHLCV, and
 corporate-action, delisting-reason, and ticker-change fields. It also documents
@@ -168,9 +197,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Run only the next bounded Norgate known-fixture semantics check. Do not
-   purchase, export, or integrate the trial database into a provider or
-   `CatalogedBars` path.
+1. Compare the existing `SMCI` Capital Event marker with the local daily
+   `Close`/`Unadjusted Close` ratio transition over the existing narrow fixture
+   window. Do not purchase, export, or integrate the trial database into a
+   provider or `CatalogedBars` path.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
