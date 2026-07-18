@@ -1273,3 +1273,24 @@ campaign eligibility, paper-trading eligibility, model selection, or profit.
 Reason: a frozen retrieval improves reproducibility and makes a bounded raw
 source-alignment check possible without pretending that one provider's present
 history solves survivorship, execution, or model-quality questions.
+
+## 2026-07-18 - Exact raw source alignment is unsupported
+
+Decision: do not add a reusable cross-source alignment helper, tolerance,
+normalization, rescale, source preference, or derived artifact. A read-only,
+loader-attested smoke compared the r2 Yahoo-lineage raw snapshot
+`sha256:3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e`
+with the full-history Tiingo snapshot
+`sha256:9ee21b6d955320b3855955b2072749e239b4b15e382dfbb6521e18f6f41a0016`.
+
+For the predeclared Tiingo-side latest 60 common sessions with `divCash=0` and
+`splitFactor=1`, every symbol had a difference in at least one raw OHLCV field
+on all 60 sessions. Exact `Decimal` matches in `open/high/low/close/volume`
+were `1/2/3/2/1` for IWM, `1/2/4/2/0` for QQQ, and `6/1/4/2/0` for SPY.
+This is an exact representation observation only; it does not establish either
+source's correctness, adjustment semantics, interchangeability, independence,
+PIT validity, execution quality, or profitability.
+
+Reason: adding a post-hoc tolerance after this falsifier would turn the check
+into a way to rationalize provider differences. Preserve both immutable inputs
+and move to an independent, bounded engine-loop task instead.

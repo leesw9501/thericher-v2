@@ -203,6 +203,20 @@ requires confirmed final/common listed-session coverage. It remains development
 evidence only: not a PIT universe, independent validation, ranking, holdout,
 campaign, paper-trading, or profitability input.
 
+The bounded r2 Yahoo-lineage versus full-history Tiingo raw-D1 diagnostic is
+complete and `unsupported`. It re-attested r2 dataset hash
+`3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e` and
+Tiingo dataset hash
+`9ee21b6d955320b3855955b2072749e239b4b15e382dfbb6521e18f6f41a0016`, then
+used the predeclared latest 60 common Tiingo sessions with no Tiingo cash
+distribution or split. Every symbol had at least one raw OHLCV difference on
+all 60 sessions; exact `Decimal` matches in `open/high/low/close/volume` were
+IWM `1/2/3/2/1`, QQQ `1/2/4/2/0`, and SPY `6/1/4/2/0`. Do not introduce a
+tolerance, normalization, rescale, source preference, helper, test family, or
+external artifact from this result. It says nothing about source correctness,
+adjustment semantics, interchangeability, independence, PIT, execution, or
+profitability.
+
 A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
 has only empty raw/template workspaces for paid Sharadar and Norgate source
 paths. Stooq requested browser verification and was not bypassed; the existing
@@ -407,9 +421,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks for a bounded, offline raw-D1 source-alignment
-diagnostic between the existing fixed ETF evidence and the new Tiingo history.
-It must not train, rank, campaign, paper trade, or claim profitability. KIS
-remains failed closed pending the non-secret pairing check and a separately
-authorized future probe. The KIS capital envelope, paid data, order submission,
-and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now asks for a bounded, offline intraday multi-timeframe
+local-paper baseline using existing 1-minute evidence. It must exercise
+`1m`/`5m`/`10m`/`1h`/`3h` resampling and preserve local-paper-only replay
+boundaries without training, ranking, KIS, credentials, network access, or a
+profitability claim. KIS remains failed closed pending the non-secret pairing
+check and a separately authorized future probe. The KIS capital envelope, paid
+data, order submission, and live capital remain separate future decisions.

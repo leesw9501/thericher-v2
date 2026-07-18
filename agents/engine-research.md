@@ -18,9 +18,9 @@
   not campaign-ready and now feeds one small, re-attested, in-memory feature
   and future-only outcome materializer. It cannot justify model training,
   ranking, promotion, or any profitability claim.
-- Data also froze a separate Tiingo full-history raw-EOD evidence snapshot. It
-  is not campaign-ready; first measure descriptive raw-source alignment before
-  considering it for any feature or model research.
+- Data also froze a separate Tiingo full-history raw-EOD evidence snapshot. Its
+  bounded exact raw-source alignment check is `unsupported`; it does not open
+  feature, model, campaign, or paper work for that source.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -52,11 +52,12 @@
 
 ## Current Objective
 
-- The fixed-ETF source-sensitivity question remains unsupported. The broad ETF
-  wrapper now supplies descriptive features plus explicit future-only outcomes.
-  Tiingo full-history evidence is available, but only a bounded, read-only
-  raw-source alignment check may proceed before any new CPU/GPU model work. It
-  cannot open paper replay, ranking, promotion, or a sealed holdout.
+- The fixed-ETF source-sensitivity question and the full-history exact
+  raw-source alignment check are unsupported. The broad ETF wrapper supplies
+  descriptive features plus explicit future-only outcomes, but neither opens
+  CPU/GPU model work. The next bounded target is a deterministic intraday
+  multi-timeframe local-paper baseline using existing short evidence; it cannot
+  rank, promote, open a holdout, or claim profitability.
 
 ## Explicit-Event Replay
 
@@ -77,10 +78,9 @@
 
 ## Breadth Queue
 
-- Use the full-history Tiingo evidence only for a bounded raw-D1 alignment
-  diagnostic with existing fixed ETF evidence. Do not use the Yahoo development
-  outcome as a model-selection input or start a new GPU job merely to fill idle
-  capacity.
+- Support one deterministic intraday `1m`/`5m`/`10m`/`1h`/`3h` local-paper
+  baseline from existing short data. Do not use it as a model-selection input
+  or start a GPU job merely to fill idle capacity.
 
 ## Depth Queue
 
@@ -196,8 +196,8 @@
 ## Next Handoff
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
-  sensitivity remains unsupported and Tiingo raw-D1 is only a non-independent
-  source check. The broad-Yahoo feature/outcome substrate is complete and
-  remains descriptive. The next bounded step is an offline source-alignment
-  diagnostic; do not rank, promote, name a winner, claim profitability, start
-  GPU training, or connect either source to campaign or paper execution.
+  sensitivity remains unsupported, and the full-history Tiingo exact raw-D1
+  comparison is also unsupported. The broad-Yahoo feature/outcome substrate is
+  complete and remains descriptive. The next bounded step is an offline
+  intraday multi-timeframe local-paper baseline; do not rank, promote, name a
+  winner, claim profitability, or start GPU training.

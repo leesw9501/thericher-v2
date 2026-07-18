@@ -46,16 +46,18 @@ re-attestation; it does not widen that raw-bar boundary.
 
 ## Current Objective
 
-The full-history Tiingo snapshot is complete and offline-attested. It remains
-separate from the Yahoo wrapper and all campaign `CatalogedBars` paths. The
-next bounded cross-lane question is descriptive raw-D1 source alignment, not
-training, promotion, or another data acquisition.
+The full-history Tiingo snapshot is complete and offline-attested. Its bounded
+exact raw-D1 comparison with the r2 Yahoo-lineage snapshot is `unsupported`, so
+it remains separate from the Yahoo wrapper and all campaign `CatalogedBars`
+paths. The next bounded cross-lane task is an existing-data intraday resampling
+and local-paper smoke, not new acquisition, source adjudication, or training.
 
 ## Ready Queue
 
-1. Support one read-only comparison of the new Tiingo full-history raw fields
-   with the existing fixed ETF raw-D1 evidence. Do not turn differences into a
-   data gate or a model-selection claim.
+1. Support one offline intraday smoke from the existing small CVS/FCX/KO
+   canonical 1-minute snapshot through the Data loader and deterministic
+   `1m`/`5m`/`10m`/`1h`/`3h` resampling. Do not acquire data or treat its short
+   window as a performance dataset.
 2. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
@@ -223,6 +225,16 @@ training, promotion, or another data acquisition.
   first-240-bar window has one missing 1-minute interval. Do not treat either
   as an execution hard stop.
 
+## Recent Diagnostic
+
+- The exact r2 Yahoo-lineage versus full-history Tiingo raw-D1 check is
+  `unsupported`. With both dataset hashes re-attested, the predeclared latest
+  60 common Tiingo sessions with `divCash=0` and `splitFactor=1` had at least
+  one OHLCV difference for every session and symbol. Exact `Decimal`
+  `open/high/low/close/volume` matches were IWM `1/2/3/2/1`, QQQ
+  `1/2/4/2/0`, and SPY `6/1/4/2/0`. Do not add a tolerance, normalization,
+  rescale, helper, or data-quality gate from it.
+
 ## Recovery
 
 - Recovery state is `complete`: do not overwrite any Tiingo snapshot. A later
@@ -283,7 +295,9 @@ The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip
 and manifest and accepts only `SPY`/`QQQ`/`IWM` raw bars internally; external
 callers cannot retrieve the parser result. The new Tiingo full-history snapshot
-is a separate read-only source whose overlap may be measured descriptively, but
-it must not widen symbols, alter the `2000-05-26` common-session start, or
-unwrap either source into a campaign/local-paper path. A future universe-wide
-research claim still needs PIT membership and delistings.
+is a separate read-only source; its exact raw-D1 comparison is closed as
+`unsupported` and must not widen symbols, alter the `2000-05-26`
+common-session start, or unwrap either source into a campaign/local-paper path.
+The next local-paper smoke may use only the existing short intraday snapshot;
+it is not a performance dataset. A future universe-wide research claim still
+needs PIT membership and delistings.
