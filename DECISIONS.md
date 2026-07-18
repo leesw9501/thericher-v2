@@ -1885,3 +1885,31 @@ model, GPU, campaign, PIT, paper, ranking, or source-preference eligibility.
 Reason: excluding a source marker plus neighboring observed sessions is a
 conservative, low-blast-radius operation while keeping all economic and timing
 interpretations out of the engine.
+
+## 2026-07-19 - Norgate broad panel is development-training evidence only
+
+Decision: retain one externally stored, static Norgate raw-D1 panel at
+`D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+It re-attests the fixed 541-item candidate-union/membership snapshot and the
+fixed-ETF r2 calendar parent, then preserves raw OHLCV only for the 523
+candidates whose responses exactly match all 483 returned sessions from
+2024-07-18 through 2026-06-22. The remaining 18 candidates are recorded as
+session mismatches without repair, substitution, or source merge. The data hash
+is `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`; the
+manifest hash is
+`sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+
+Claude's falsification-first verdict was `supported-with-limits`. The candidate
+union is date-less, the static exact-session selection is survivorship and
+availability selected, the 100-symbol threshold is operational rather than a
+coverage or quality proof, and requested `NONE` adjustment semantics remain
+unverified. Accordingly, the panel's sole positive flag is
+`development_training_eligible` for later engineering preparation. It is not
+membership, point-in-time, adjustment, source-preference, campaign, model, GPU,
+ranking, holdout, paper, or profitability evidence.
+
+Reason: a reproducible, broad, locally available development substrate is more
+useful than idling research indefinitely, while explicitly isolating the known
+survivorship and corporate-action limitations from model-selection and capital
+decisions. A later model target must re-attest this exact lineage, freeze target
+timing, temporal splits, costs, baselines, and stop rules before any CUDA run.

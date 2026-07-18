@@ -202,6 +202,78 @@ def verify_norgate_sp500_membership_snapshot(
     )
 
 
+def load_verified_norgate_sp500_membership_scope(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> tuple[NorgateMembershipSnapshotResult, tuple[str, ...]]:
+    """Return one verified snapshot together with its ordered candidate scope."""
+
+    result = verify_norgate_sp500_membership_snapshot(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    return result, _load_candidate_union_from_verified_snapshot(result)
+
+
+def load_verified_norgate_sp500_candidate_union(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> tuple[str, ...]:
+    """Load only the hash-attested candidate scope from a verified snapshot."""
+
+    _result, candidates = load_verified_norgate_sp500_membership_scope(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    return candidates
+
+
+def _load_candidate_union_from_verified_snapshot(
+    result: NorgateMembershipSnapshotResult,
+) -> tuple[str, ...]:
+    try:
+        manifest = json.loads((result.snapshot_dir / _MANIFEST_FILE).read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Norgate membership candidate manifest is invalid") from exc
+    if not isinstance(manifest, dict):
+        raise ValueError("Norgate membership candidate manifest is invalid")
+    files = manifest.get("files")
+    if not isinstance(files, dict):
+        raise ValueError("Norgate membership candidate files are invalid")
+    candidate_bytes = _validate_file(
+        result.snapshot_dir,
+        files.get("candidate_union"),
+        expected_name=_CANDIDATE_FILE,
+        label="candidate union",
+    )
+    try:
+        reader = csv.DictReader(io.StringIO(candidate_bytes.decode("utf-8"), newline=""))
+        fieldnames = tuple(reader.fieldnames or ())
+        rows = tuple(reader)
+    except (UnicodeDecodeError, csv.Error) as exc:
+        raise ValueError("Norgate membership candidate union is invalid") from exc
+    if fieldnames != _CANDIDATE_COLUMNS or len(rows) != result.candidate_count:
+        raise ValueError("Norgate membership candidate union is invalid")
+    candidates: list[str] = []
+    for expected_rank, row in enumerate(rows, start=1):
+        try:
+            rank = int(row.get("candidate_rank", ""))
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Norgate membership candidate rank is invalid") from exc
+        if rank != expected_rank:
+            raise ValueError("Norgate membership candidate rank is invalid")
+        candidates.append(_candidate_symbol(row.get("symbol")))
+    if len(set(candidates)) != len(candidates):
+        raise ValueError("Norgate membership candidate union has duplicates")
+    return tuple(candidates)
+
+
 def _verify_snapshot(
     snapshot_dir: Path,
     *,

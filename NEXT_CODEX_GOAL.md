@@ -2,71 +2,100 @@
 
 ## Objective
 
-Build one bounded, local two-year Norgate broad daily development-panel source
-from the already-retained S&P 500 current/past candidate union and membership
-matrix. The result should be an externally stored, reproducible source contract
-that can become the next honest path toward finite GPU breadth work, without
-claiming point-in-time investability or strategy performance.
+Build the first bounded, broad-panel development validation loop from the
+completed Norgate trial panel. The loop must reattest external data lineage,
+freeze one no-holdout chronological research contract, run CPU baselines, and,
+only when that preparation is sound, run one finite serial PyTorch CUDA breadth
+batch. This is engineering research only, not a strategy-selection, paper, or
+profitability result.
 
 ## Ownership
 
-- **Data Agent:** owns the Windows-host-only read, panel contract, source
-  availability facts, immutable external snapshot, and narrow readiness verdict.
-- **Engine Research Agent:** states the minimum static-panel shape required for
-  future development-only breadth work, but does not train, rank, ensemble, or
-  reserve GPU in this goal.
-- **Review/Claude:** gives one concise falsification-first review before this
-  broader source contract is relied on.
+- **Data Agent:** owns the smallest offline, hash-reattesting loader or feature
+  materializer for the exact external panel and its parent lineage.
+- **Engine Research Agent:** owns the target, temporal split, costs, baselines,
+  finite CUDA candidates, external artifacts, and stop rules.
+- **Validation Agent:** independently checks the frozen contract and completed
+  artifacts without tuning a candidate. It does not open a sealed holdout.
+- **Review/Claude:** gives a concise falsification-first review before the
+  static-panel contract is relied on or CUDA work begins.
 
-## Boundaries
+## Fixed Inputs And Boundaries
 
-- Use only the already-installed local Norgate trial on Windows. Do not read
-  `.env`, credentials, tokens, broker state, or secret-like files; do not call
-  KIS, submit orders, use a network data API, query Norgate from Docker, change
-  Norgate settings, renew, purchase, or delete either local Norgate copy.
-- Use only the already retained 541-item candidate union and sparse membership
-  matrix at
-  `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
-  Fix the price window to 2024-07-18 through 2026-06-22. Do not enumerate a new
-  universe, query historical membership again, widen dates, or substitute a
-  symbol.
-- Request query-local `NONE` adjustment and `NONE` padding only. Preserve raw
-  OHLCV and returned-session facts; do not infer adjustment semantics, repair
-  bars, fill gaps, transform prices, or use `Dividend`/`Capital Event` fields
-  as action timestamps. Do not combine rows with Tiingo, Yahoo, or another
-  source.
-- A static development subset may include only symbols with an exact, strictly
-  ordered 483-session response matching the fixed Norgate parent calendar. At
-  least 100 such symbols are required before marking the panel
-  `development_training_eligible`; otherwise retain only noneligible source
-  evidence. This limited eligibility is never PIT, ranking, holdout, paper,
-  source-preference, or profitability eligibility.
-- Retain raw source bytes only under `D:\market_data`, with hashes and a
-  Norgate deletion/rights marker. Store generated metadata only under
-  `D:\thericher-v2\model-artifacts`; never write data or artifacts to Git.
-  Check free space before work; warn below 20 percent and stop before 15 percent.
-- No CPU/GPU model training, model loading, campaign, trade decision, paper
-  activity, or profitability claim is allowed in this goal.
+- Use only
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
+  with data hash
+  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
+  and manifest hash
+  `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+  Reattest its membership and fixed-ETF calendar parents before each consumer.
+- Keep the 523 selected static candidates, 18 recorded session mismatches, and
+  483 returned sessions from 2024-07-18 through 2026-06-22 fixed. Do not use
+  membership rows to choose samples, infer point-in-time membership, fill gaps,
+  repair bars, merge sources, or broaden the panel.
+- Requested `NONE` adjustment semantics, corporate-action timing, historical
+  coverage, and point-in-time universe truth remain unproven. Every artifact and
+  result must retain those limitations and remain development-only.
+- Do not call KIS, read `.env`, credentials, tokens, broker state, or secret-like
+  files. Keep `THERICHER_MODE=off`; submit no order and make no broker/network
+  data call. Existing local-paper fills, if a unit test reaches them, keep
+  `source: local_paper`.
+- Do not query Norgate from Docker. Raw panel bytes remain under `D:\market_data`.
+  Derived features, contracts, metrics, checkpoints, and recovery metadata stay
+  under `D:\thericher-v2\model-artifacts` and use `/app/model_artifacts` in
+  Docker. Retain an external Norgate deletion/rights linkage for every derived
+  artifact; never store data, model, or generated artifact bytes in Git.
+- Check free space before external writes; warn below 20 percent and stop new
+  acquisition or training before the 15 percent hard floor. Do not add a
+  scheduler, daemon, queue framework, dashboard, report family, model-serving
+  path, or public endpoint.
+- A sealed holdout, model promotion, model ranking, ensemble, KIS paper, live
+  behavior, and profitability claim are out of scope regardless of metrics.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first review: state the static-panel
-   claim, survivorship/membership-publication and adjustment risks, the
-   strongest kill test, naive alternative of retaining only current narrow
-   sources, blast radius, and the fact that closes the path. Do not send raw
-   rows, candidate symbols, secrets, or account data.
-2. Reuse existing Norgate and membership primitives. Add only the smallest
-   mock-tested builder/verifier and CLI necessary to read the fixed candidate
-   union, record returned/unavailable counts, retain one exact-session static
-   raw-D1 subset, and verify its parent/membership/hash/rights lineage offline.
-3. Run one bounded local build. Report aggregate candidate availability,
-   selected static-panel count, common-session count, hashes, external paths,
-   free-space result, and the narrow readiness verdict. If the local source
-   requires manual action or cannot meet the contract, preserve safe recovery
-   evidence, close this branch, and do not retry broadly.
-4. Keep Engine Research explicit that GPU remains unavailable until the Data
-   verdict establishes the limited development-training contract. Refresh
-   `HANDOFF.md`, stateboards, `DECISIONS.md`, and this goal before continuing.
+1. Ask Claude for a concise falsification-first review of the proposed
+   development-only target, feature timestamps, static-panel survivorship and
+   corporate-action risks, chronological split, naive baseline, strongest kill
+   test, and the fact that stops CUDA. Do not send rows, symbols, raw labels,
+   secrets, or account information.
+2. Reuse existing Data and campaign contracts where they fit. Add only the
+   smallest offline verifier/loader and feature-target materializer needed to
+   expose the exact panel to Research while reattesting its full parent lineage.
+   Freeze one completed-close decision target with an explicit future outcome,
+   a time-ordered development/validation split, costs, purge/embargo, fixed
+   feature lookback, deterministic seeds, and no sealed holdout.
+3. Run CPU smoke baselines first: at minimum flat/naive direction and one
+   deterministic linear baseline. Record feature/label counts, split boundaries,
+   no-lookahead proof, class/return distribution, and all lineage hashes in an
+   external immutable run directory. CUDA is eligible only if these checks pass;
+   a baseline need not be profitable or beat another baseline.
+4. If CUDA is available in the existing PyTorch research container and the CPU
+   contract passes, run exactly four serial development-only GPU jobs: compact
+   MLP and compact temporal-convolution candidates, each with two fixed seeds.
+   Record device, CUDA peak memory, input/contract hashes, per-job metrics,
+   checkpoints using safe loading, and stop reason. Do not tune after observing
+   validation metrics, auto-refill the queue, or select an ensemble.
+5. Have Validation independently reattest the frozen inputs and completed run
+   artifacts, check that no broker/network/credential access occurred, and label
+   the outcome engineering-only. Unexpectedly strong output, leakage evidence,
+   or a material baseline claim requires a new Claude review before any later
+   promotion decision.
+6. Refresh `HANDOFF.md`, the Data and Engine stateboards, `DECISIONS.md`, and
+   this goal before continuing. Keep the short and long research queues visible:
+   the completed finite breadth batch becomes input to a later depth decision,
+   never an automatic queue refill.
+
+## Stop Rules
+
+- Stop before CUDA if parent hashes, session ordering, feature/label timestamps,
+  temporal split, CPU baseline, artifact root, or rights/deletion linkage fails.
+- If CUDA or the research image is unavailable, preserve the CPU evidence and
+  prepared immutable contract, record `prepared_not_run`, and continue safe
+  independent work rather than retrying blindly.
+- Stop and seek a new bounded goal on a source-rights ambiguity, storage-floor
+  breach, corrupt external artifact, or any condition that would require
+  credentials, broker access, data acquisition, or a model/paper/live decision.
 
 ## Verification
 
@@ -76,9 +105,10 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the Claude verdict, source result, external paths/hashes, retained
-rights/deletion evidence, genuine operator action if any, and GPU eligibility.
+Also report the focused CPU baseline command and, if run, the Docker CUDA
+command, CUDA device/memory result, external artifact paths, Claude verdict,
+and every stop condition triggered.
 
 ## Suggested Commit Message
 
-`Add Norgate trial dividend exclusions`
+`Add broad development validation loop`

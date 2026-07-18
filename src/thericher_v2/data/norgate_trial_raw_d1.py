@@ -388,6 +388,37 @@ def verify_norgate_trial_raw_d1_snapshot(
     )
 
 
+def load_verified_norgate_trial_raw_d1_session_scope(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> tuple[NorgateTrialRawD1Result, tuple[date, ...]]:
+    """Return a verified raw-D1 parent and its exact common-session calendar."""
+
+    return _verified_parent_session_evidence(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+
+
+def load_verified_norgate_trial_raw_d1_common_sessions(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> tuple[date, ...]:
+    """Load the hash-attested common session calendar without returning prices."""
+
+    _parent, common_sessions = load_verified_norgate_trial_raw_d1_session_scope(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    return common_sessions
+
+
 def build_norgate_trial_dividend_exclusion_snapshot(
     *,
     destination: Path,

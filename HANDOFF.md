@@ -616,10 +616,27 @@ amounts or event timestamps. Claude's pre-probe verdict was `uncertain` and
 required an exact, nonzero marker response for all three symbols; that bounded
 condition was met. This refines exclusion metadata only: adjustment semantics,
 PIT, campaign, model, GPU, paper, ranking, and source preference remain false.
-The next single target is a bounded local two-year broad development panel from
-the existing Norgate 541-candidate/membership evidence. It must remain
-survivorship- and publication-time-limited, but it is the direct data path to a
-future finite GPU breadth contract.
+
+That panel is now complete at
+`D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+It preserves raw OHLCV only for the 523 of 541 fixed candidates whose one local
+response exactly matched the 483-session r2 calendar; 18 session-mismatch
+candidates were recorded but excluded without repair. Dataset SHA-256 is
+`3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`; manifest
+SHA-256 is `a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+Claude's `supported-with-limits` review requires the static selection and its
+100-symbol operational threshold to remain explicitly non-coverage,
+non-membership, non-PIT, and non-adjustment evidence. The manifest therefore
+opens only `development_training_eligible` for engineering breadth preparation;
+model, GPU, campaign, ranking, holdout, paper, and profitability eligibility
+remain false until a separate bounded research contract is verified.
+
+The next single target is to expose this exact panel through an offline,
+hash-reattesting development loader, freeze a small no-holdout model contract,
+and run CPU naive/linear baselines before a finite serial CUDA breadth batch.
+The path must retain the static-panel limitations, use no broker or credential,
+and produce external-only artifacts. It is research infrastructure and
+engineering evidence only, not a strategy-selection, paper, or profit claim.
 
 The Norgate trial's bounded semantic branch remains `unsupported` for
 provider/campaign field meaning, and direct historical-universe enumeration is

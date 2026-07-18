@@ -54,6 +54,19 @@ Claude's `uncertain` review required exactly those nonzero, exact-session facts;
 the facts held, but r3 remains exclusion metadata only with every training,
 model, GPU, campaign, PIT, paper, ranking, and source-preference scope false.
 
+The local Norgate broad development panel is complete at
+`D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+It retained 523 of the fixed 541 candidates with an exact 483-session response
+and recorded 18 session mismatches without repair or substitution. Dataset
+SHA-256 is `3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`;
+manifest SHA-256 is
+`a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+Claude's `supported-with-limits` review makes its static selection and
+100-symbol threshold explicitly non-coverage/non-quality evidence. The panel
+is `development_training_eligible` for future engineering breadth preparation
+only; PIT, ranking, holdout, campaign, model, GPU, paper, source-preference,
+and profitability eligibility remain false.
+
 The bounded Norgate S&P 500 membership snapshot is complete at
 `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
 It has a 541-item date-less candidate union and 266,647 sparse membership rows
@@ -155,6 +168,15 @@ source-returned dates rather than dividend/event timestamps; this did not
 reopen the already-closed adjustment semantics branch or any research
 eligibility. Its only effect is a hash-bound external exclusion record linked
 to r2.
+
+The Norgate broad panel is now complete. It re-attests the fixed membership and
+r2 calendar parents, retains only the 523 of 541 candidates with exact
+483-session raw-D1 responses, and records 18 session mismatches without repair
+or substitution. It is a static development retrieval subset, not historical
+membership, coverage, adjustment, or point-in-time evidence. Its limited
+`development_training_eligible` flag opens only a future offline loader and
+frozen engineering campaign contract; it does not itself start a model, GPU,
+campaign, ranking, holdout, paper, or profitability path.
 
 The narrow Windows-host-only Norgate raw-daily provider is complete. It accepts
 only bounded US `1d` queries with UTC-midnight labels, asks the official client
@@ -342,12 +364,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Build one bounded, local Norgate two-year broad development panel from the
-   already-retained 541-item S&P 500 current/past candidate union and sparse
-   membership matrix. Keep the source host-only, raw/no-adjustment, external,
-   and explicitly non-PIT. It may establish static development-panel readiness
-   only after full manifest/session validation; it must not imply ranking,
-   holdout, paper, or source-preference eligibility.
+1. Supply the completed Norgate broad panel only through a future offline,
+   hash-reattesting loader and frozen development-only Engine campaign contract.
+   Do not use membership rows as selection facts or bypass the external parent
+   lineage.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase the R1/R2
    common-session count. The audit found the R1 floor binding and 56 existing
    groups already cover R2's descriptive window.
@@ -398,6 +418,19 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   retains no dividend amounts, treats the marker dates as non-actionable, and
   cannot change r2's non-training, non-model/GPU, non-campaign, non-PIT,
   non-paper, non-ranking, or non-source-preference scope.
+- The Norgate broad development panel is
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+  It preserves 523 exact-session raw-D1 candidates from the fixed 541-item
+  retrieval union across the 483-session 2024-07-18 through 2026-06-22 window;
+  18 candidates are retained only as session-mismatch availability evidence.
+  Dataset SHA-256 is
+  `3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d` and
+  manifest SHA-256 is
+  `a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+  Claude returned `supported-with-limits`: the static filter and 100-symbol
+  threshold are neither coverage/quality nor membership/PIT evidence. This is
+  development-training preparation only; all campaign, model, GPU, ranking,
+  holdout, paper, source-preference, and profitability claims remain false.
 - Intraday: Yahoo 1-minute canonical data at
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
   `snapshot=2026-06-18\ohlcv_1m.csv.gz` contains 572,894 rows, 250 symbols,
@@ -736,9 +769,16 @@ source contract is now r2 at
 `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`;
 it is source evidence only. Its r3 `Dividend` exclusion sidecar is complete:
 24 source markers, 71 conservative exclusions, no stored amounts or event-time
-claim, and no model input. The next bounded Data task is a local two-year broad
-development-panel build from the already-retained Norgate candidate/membership
-evidence, not an automatic promotion to ranking, paper, or source preference.
+claim, and no model input. The completed broad development panel is at
+`D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`:
+523 of 541 fixed candidates have exact 483-session responses, while 18
+mismatches remain explicit availability evidence. Its data and manifest hashes
+are `3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d` and
+`a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+It can be consumed only by a future offline, hash-reattesting,
+development-only loader and frozen research contract; it does not establish
+PIT, adjustment, coverage, campaign, model, GPU, ranking, holdout, paper, or
+profitability eligibility.
 Tiingo's current
 [terms](https://app.tiingo.com/tos/) and
 [general documentation](https://www.tiingo.com/documentation/general) permit

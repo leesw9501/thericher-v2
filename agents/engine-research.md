@@ -21,6 +21,11 @@
 - Data also froze a separate Tiingo full-history raw-EOD evidence snapshot. Its
   bounded exact raw-source alignment check is `unsupported`; it does not open
   feature, model, campaign, or paper work for that source.
+- Data has now retained a hash-attested Norgate broad development panel with
+  523 exact-session candidates across 483 sessions. Its static retrieval filter
+  is not membership, point-in-time, coverage, adjustment, model, or GPU
+  evidence. It opens preparation for one development-only research contract,
+  not an active training job.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -78,6 +83,11 @@
   exclusions, but source-marker timing and adjustment semantics remain
   unproven. It improves a Data exclusion record only and still does not reopen
   breadth, depth, ensemble, or CUDA work.
+  The separate Norgate broad panel has 523 exact-session candidates from a
+  fixed 541-item retrieval union and 18 recorded mismatches. It is only
+  `development_training_eligible`; a future offline loader, explicit target,
+  temporal split, cost model, and CPU baseline must be frozen before any GPU
+  candidate can start.
 
 ## Explicit-Event Replay
 
@@ -98,19 +108,19 @@
 
 ## Breadth Queue
 
-- No breadth batch is currently eligible. The fixed RAW D1 verdict is
-  `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate's
-  host-only raw-D1 provider has no cataloged or campaign input. Tiingo raw-daily
-  R2's 501-session descriptive panel and its 56-group descriptive coverage
-  filter do not repair its date-less universe, while R1/R2 combined still has
-  only 18 common sessions, so neither supplies breadth eligibility.
+- No breadth batch is running. The fixed RAW D1 verdict is `unsupported`; broad
+  Yahoo and Tiingo IEX remain descriptive-only; Tiingo raw-daily R2's 501-session
+  descriptive panel and its 56-group coverage filter do not repair its date-less
+  universe. The Norgate static panel creates one development-only preparation
+  path, but is not a campaign or GPU input until its offline loader and frozen
+  CPU baseline contract prove the named boundaries.
 - Keep the breadth recipe prepared, not running: finite CPU baselines plus
   compact PyTorch MLP and TCN candidates at fixed seeds. A valid campaign
   contract, not idle GPU capacity, is the launch condition.
-- When Data supplies one hash-bound development-training-eligible dataset and a
-  frozen campaign contract, enumerate one finite breadth batch before launch:
-  CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two
-  fixed seeds. Run the four GPU jobs serially on the one GPU.
+- When the Norgate loader and one hash-bound campaign contract are complete,
+  enumerate one finite breadth batch before launch: CPU naive/linear/tree
+  baselines plus compact PyTorch MLP and TCN, each at two fixed seeds. Run the
+  four GPU jobs serially on the one GPU.
 - CPU may prepare only the already-enumerated next fold, lineage check,
   baseline, or replay while that finite GPU batch runs. Do not auto-refill a
   queue, create a scheduler, or launch a job merely to occupy the GPU.
@@ -159,6 +169,16 @@
 - The fixed CUDA set is hidden 8, ReLU, standardization, learning rate 0.005,
   weight decay 0.0001, threshold 0.5, 12 epochs, seed 71. Torch remains lazy and
   own checkpoints load with `weights_only=True`.
+- The Norgate broad development panel is hash-attested at
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1` with 523
+  selected exact-session candidates, 18 mismatches, 483 sessions, data hash
+  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`,
+  and manifest hash
+  `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+  Claude's `supported-with-limits` verdict keeps static selection and the
+  100-symbol threshold outside any coverage, quality, membership, PIT,
+  adjustment, ranking, holdout, campaign, model, GPU, paper, or profitability
+  claim until a new limited research contract is verified.
 - The broad Yahoo wrapper pins one 1,300-symbol snapshot but returns only the
   predeclared `SPY`/`QQQ`/`IWM` common window: 6,555 sessions from
   `2000-05-26` to `2026-06-22`. It is explicitly inception-truncated and
@@ -260,8 +280,8 @@
   IEX r1 adds only a hash-attested 5-minute descriptive window. The bounded
 2024 probe confirms date-window access but not completeness. The pre-r1 archive
 plan is now closed after two strict source-validation failures with no snapshot.
-Data next prepares a minimum PIT-capable source decision before any historical
-intraday research decision. Do not rank, promote, name a winner, claim
-profitability, or start GPU training. The newly retained Norgate raw-D1 r2
-source and r3 sidecar do not change that conclusion. Data next prepares a
-bounded broad development panel before any new research training decision.
+Data's broad Norgate panel is now complete but opens only a development-only
+preparation path. Next, Data must expose it through an offline reattesting
+loader and Engine must freeze a target, temporal split, costs, stop rules, and
+CPU baseline before any finite CUDA breadth batch. Do not rank, promote, name a
+winner, open a sealed holdout, claim profitability, or start a GPU job early.
