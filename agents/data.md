@@ -43,6 +43,14 @@ raw OHLCV equality occurred on only 96 `SPY`, 111 `QQQ`, and 201 `IWM` common
 sessions. Its manifest and marker forbid campaign, model, paper, PIT, and
 source-preference use.
 
+The Norgate daily-history capability audit is closed as `supported`: the local
+client returned zero rows for the two windows before 2024-07-18 and 483 rows
+per ETF from 2024-07-18 through 2026-06-22. Its fields remained stable. The
+official Norgate trial page and FAQ explicitly limit US trial daily history to
+the last two years, so this is trial entitlement rather than a discovered NDU
+setting issue. A longer Norgate history requires a paid subscription decision;
+no configuration or download action is pending.
+
 ## Engine Loop
 
 - Data collection.
@@ -115,10 +123,10 @@ recarray with only `Date` and `Index Constituent` fields. No symbols, values,
 rows, cache, artifact, or dataset were retained. That validates API shape, not
 membership availability or a PIT universe.
 
-The next ready Data item is a bounded Norgate daily-history coverage audit for
-the fixed ETFs. It must distinguish a query-bound result from local trial
-coverage without storing new raw data, changing NDU settings, or inferring a
-research-use conclusion.
+The next ready Data item is a bounded Tiingo EOD coverage probe for a
+deterministic external sample of the Norgate candidate union. It may read only
+the approved `TIINGO_API_TOKEN` and must establish source coverage before any
+larger no-cost daily acquisition or research-use conclusion.
 
 ## PIT Source Decision (2026-07-19)
 

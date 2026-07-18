@@ -2,52 +2,49 @@
 
 ## Objective
 
-Determine whether the fixed-ETF Norgate raw-D1 history boundary observed at
-2024-07-18 is caused by the bounded query shape or by the locally installed
-trial data coverage.
+Measure Tiingo standard-EOD coverage for one deterministic 12-symbol sample
+drawn from the external Norgate `S&P 500 Current & Past` candidate union.
 
-This is a small Data Agent capability audit. It may clarify an exact operator
-NDU action if local coverage is missing, but it must not change settings,
-download data, retain new raw data, choose a source, or open research/GPU work.
+The probe decides only whether a later no-cost broad daily acquisition is worth
+planning. It must not create a universe claim, a data snapshot, a campaign, or
+a model/GPU job.
 
 ## Ownership
 
-- **Data Agent:** owns the bounded host-only probe, local coverage metadata,
-  and exact operator request if configuration is needed.
-- **Review/Claude:** is optional unless the result would be used for a
-  survivorship, temporal-availability, or data-promotion claim.
-- **Engine Research Agent:** remains an observer and cannot consume the result.
+- **Data Agent:** owns deterministic sample selection, approved-token use,
+  request budgeting, response coverage, and provenance limits.
+- **Review/Claude:** is optional unless results would be used for a source,
+  survivorship, temporal-availability, or model-promotion claim.
+- **Engine Research Agent:** remains an observer and cannot consume the probe.
 
 ## Boundaries
 
-- Use only the existing Windows-host Norgate trial, fixed `SPY`/`QQQ`/`IWM`,
-  D1, query-local `StockPriceAdjustmentType.NONE`, `PaddingType.NONE`, and
-  `numpy-recarray`. Do not use Docker, KIS, `.env`, credentials, or secrets.
-- Use at most three predeclared non-overlapping date windows that distinguish
-  before-boundary, boundary, and current coverage. Record only per-symbol row
-  counts, minimum/maximum returned dates, response fields, package version,
-  and errors; never raw OHLCV values or rows.
-- Do not change NDU settings, invoke an updater, create exports/snapshots,
-  persist a cache/artifact, or retry with different settings. Do not infer why
-  coverage is absent merely from an empty/short response.
-- Inspect only non-secret local metadata or official local-package help needed
-  to identify an operator configuration step. Do not inspect `.env`, account,
-  browser, or unrelated user files.
-- Do not create a provider, catalog, campaign, strategy, model, GPU job,
-  paper order, report family, dashboard, or public service.
+- Read only `TIINGO_API_TOKEN` from `.env` using the existing approved narrow
+  helper. Do not read, log, expose, or send any other `.env` value to Claude.
+- Use exactly 12 deterministic symbols selected from the already external
+  candidate union, with an algorithm/version/union hash recorded outside Git.
+  Do not print or commit selected symbols, raw rows, prices, volumes, or token.
+- Make at most 12 Tiingo standard-EOD requests over one fixed two-year daily
+  window. Stop on `401`, `403`, `429`, malformed responses, or storage-policy
+  violation; do not retry, change windows, or silently replace missing symbols.
+- Record only aggregate availability, per-response row-count/date-range
+  summaries, HTTP/error class, request count, package/source version, and
+  external evidence path under `D:\thericher-v2\model-artifacts\data-agent`.
+  Do not write Tiingo raw data to Git or create a data snapshot in this goal.
+- Do not call Norgate, Docker, KIS, broker code, or a public service. Do not
+  create a provider, catalog, campaign, strategy, model, GPU job, paper order,
+  report family, dashboard, or source-selection rule.
 
 ## Required Work
 
-1. Check the prior alignment evidence and choose the three date windows before
-   calling the local client. State the falsification condition: shorter or empty
-   historical responses do not prove the reason for the coverage limit.
-2. Run the maximum nine bounded host-only calls once, in deterministic
-   symbol/window order. Keep the results in process and print only aggregate
-   metadata permitted above.
-3. Inspect local Norgate updater/package documentation or non-secret metadata
-   only if necessary. If an operator action is needed, report exact UI steps,
-   expected download size, data-history benefit, and why no automatic change was
-   made. If no action is discoverable, close the audit as `unsupported`.
+1. Inspect the existing narrow Tiingo helper and external Norgate union
+   manifest; define deterministic sample selection and a fixed date window
+   before reading the token or making a request.
+2. Add the smallest mock-tested probe helper/script. Tests must prove only the
+   approved token is read, request count is capped, no raw data is persisted,
+   selected symbols are absent from Git outputs, and an error stops cleanly.
+3. Run once only after tests and fresh D: preflight pass. Report only aggregate
+   coverage and external summary hash/path; preserve raw API responses nowhere.
 4. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`, replace this
    goal, then continue while no real operator approval boundary remains.
 
@@ -61,9 +58,9 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the windows, aggregate response metadata, result, any exact operator
-action needed, and no raw data.
+Report aggregate availability, request count, token boundary result, external
+summary path/hash, and any genuine operator data action required.
 
 ## Suggested Commit Message
 
-`Add Norgate raw-D1 alignment snapshot`
+`Probe Tiingo broad daily coverage`

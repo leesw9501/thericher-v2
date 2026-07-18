@@ -1704,3 +1704,26 @@ order was added.
 Reason: the source terms called raw are provider-defined and the Norgate return
 coverage is shorter. Treating observed differences as a winner would be a
 source-selection claim unsupported by this experiment.
+
+## 2026-07-19 - Norgate trial history is an entitlement limit
+
+Decision: close the fixed-ETF Norgate daily-history audit as `supported` for
+the local trial's available price coverage. Nine bounded host-only `NONE` /
+`NONE` / `numpy-recarray` calls across the three fixed symbols returned zero
+rows for `2000-01-03` through `2022-07-17` and `2022-07-18` through
+`2024-07-17`, then 483 rows each from `2024-07-18` through `2026-06-22`.
+The response fields were stable and no call failed. No raw row, cache, export,
+or new external artifact was retained.
+
+Official [trial terms](https://norgatedata.com/subscribe/freetrial.php) say US
+Platinum trial daily price history is limited to two years; the public
+[trial page](https://norgatedata.com/freetrial.php) and
+[FAQ](https://norgatedata.com/faq.php) say the same. The observed boundary is
+therefore consistent with the entitlement, not evidence of a query defect or a
+local NDU setting that Codex should change. Official subscription material lists
+longer US history by paid tier, which is an operator cost decision.
+
+Reason: retrying with changed settings or repeatedly sampling older windows
+cannot create trial entitlement and would consume time without improving an
+engine loop. Keep the trial's current two-year local facts; pursue no-cost,
+approved alternatives before proposing any purchase.

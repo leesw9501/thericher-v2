@@ -574,8 +574,18 @@ ineligible. Its dataset SHA-256 is
 `a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993`; manifest
 SHA-256 is `c37ca34c02df84ebd3f7d684ad87f27c62e36607d8f7ca3751504115205c6a91`.
 
-The next objective is a bounded Norgate daily-history coverage audit for the
-same fixed ETFs. It must determine whether the observed 2024-07-18 history
-boundary is a query-bound behavior or local trial coverage without retaining
-new raw data, changing NDU settings, calling KIS, reading credentials, using
-Docker as a Norgate client, or opening model work.
+The bounded Norgate daily-history coverage audit is complete. Across
+`2000-01-03` through `2022-07-17`, `2022-07-18` through `2024-07-17`, and
+`2024-07-18` through `2026-06-22`, the fixed ETFs returned 0, 0, and 483 rows
+per symbol respectively. Fields were stable and no request failed. This matches
+the official [Norgate free-trial terms](https://norgatedata.com/freetrial.php)
+and [FAQ](https://norgatedata.com/faq.php): US trial daily history is limited to
+the last two years. It is an entitlement limit, not a NDU setting to alter. A
+paid subscription is the only known longer-history route and remains an
+operator approval decision; no action is requested now.
+
+The next objective is a bounded Tiingo EOD coverage probe for a deterministic
+sample from the external Norgate candidate union. It may use the already
+approved `TIINGO_API_TOKEN`, must preserve secret boundaries, and must establish
+coverage/response behavior before any wider no-cost daily acquisition. It does
+not open a model, GPU, campaign, KIS, or source-promotion path.
