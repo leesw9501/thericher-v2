@@ -34,6 +34,15 @@ covering 2024-07-18 through 2026-07-17. Its manifest, hashes, and deletion
 marker are external-only. It remains explicitly non-PIT, non-campaign, and
 non-model eligible.
 
+The fixed-ETF Norgate raw-D1 alignment snapshot is also complete at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_raw_d1_alignment\snapshot=2026-07-18-norgate-raw-d1-alignment-r1`.
+It is `literal_raw_ohlcv_difference`, not a source choice: Norgate returned
+483 sessions per ETF from 2024-07-18 through 2026-06-22, while the pinned
+Tiingo source has 896 and 413 additional earlier sessions per ETF. All-field
+raw OHLCV equality occurred on only 96 `SPY`, 111 `QQQ`, and 201 `IWM` common
+sessions. Its manifest and marker forbid campaign, model, paper, PIT, and
+source-preference use.
+
 ## Engine Loop
 
 - Data collection.
@@ -106,9 +115,10 @@ recarray with only `Date` and `Index Constituent` fields. No symbols, values,
 rows, cache, artifact, or dataset were retained. That validates API shape, not
 membership availability or a PIT universe.
 
-The next ready Data item is a separately contracted, fixed-ETF Norgate raw-D1
-cross-source alignment check. It must stay host-only and preserve raw-source
-lineage before any data eligibility or research-use conclusion.
+The next ready Data item is a bounded Norgate daily-history coverage audit for
+the fixed ETFs. It must distinguish a query-bound result from local trial
+coverage without storing new raw data, changing NDU settings, or inferring a
+research-use conclusion.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -587,5 +597,5 @@ That snapshot is now complete at
 `d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55`.
 It has a deletion marker and no staging residue, but is not a direct historical
 list, publication-time evidence, PIT data, or an Engine input. The next bounded
-Data question is raw-D1 cross-source alignment for the existing three fixed
-ETFs; do not infer eligibility in advance.
+Data question is the fixed-ETF Norgate daily-history coverage audit; do not
+infer an explanation or eligibility in advance.

@@ -1674,3 +1674,33 @@ paper order, or service was added.
 Reason: this preserves the vendor's actual two-part source shape and its
 retention obligation without silently turning a convenience union into a
 survivorship-safe universe or model input.
+
+## 2026-07-19 - Norgate raw-D1 alignment does not select a source
+
+Decision: retain one bounded host-only raw-D1 alignment snapshot at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_raw_d1_alignment\snapshot=2026-07-18-norgate-raw-d1-alignment-r1`.
+It queried `SPY`/`QQQ`/`IWM` from 2022-11-22 through 2026-06-22 with Norgate
+query-local `NONE` adjustment, `NONE` padding, and `numpy-recarray`, then
+compared raw OHLCV decimals against the existing hash-pinned Tiingo raw-D1
+loader. Dataset SHA-256 is
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993`; manifest
+SHA-256 is `c37ca34c02df84ebd3f7d684ad87f27c62e36607d8f7ca3751504115205c6a91`.
+
+The result is `literal_raw_ohlcv_difference`. Norgate returned 483 sessions
+per ETF, from 2024-07-18 through 2026-06-22; Tiingo has 896 sessions and 413
+additional earlier sessions per ETF. There are no Norgate-only sessions. On
+the common sessions, all five OHLCV fields matched on 96 `SPY`, 111 `QQQ`, and
+201 `IWM` sessions. Open and close matched for every common session, but high,
+low, and especially volume counts differ. This is not evidence that either
+source is preferable or that either is incorrect.
+
+Claude returned `supported-with-limits`: an equality or difference count can
+describe the representations but cannot prove adjustment semantics, timing,
+PIT correctness, or training eligibility. The snapshot's external marker and
+manifest prohibit source preference, campaign, model, paper, and PIT use. No
+Docker client, provider/catalog, campaign, GPU job, KIS action, or live/paper
+order was added.
+
+Reason: the source terms called raw are provider-defined and the Norgate return
+coverage is shorter. Treating observed differences as a winner would be a
+source-selection claim unsupported by this experiment.

@@ -60,7 +60,10 @@
   only and cannot rank, promote, open a holdout, or claim profitability.
   Tiingo IEX r1 is a separate 5-minute descriptive snapshot and does not alter
   those boundaries. Norgate now has a host-only raw-D1 adapter, but it remains
-  outside `CatalogedBars`, campaign, model, and GPU inputs.
+  outside `CatalogedBars`, campaign, model, and GPU inputs. Its fixed-ETF
+  source-alignment snapshot is `literal_raw_ohlcv_difference`, with only 483
+  Norgate sessions per symbol against 896 pinned Tiingo sessions; it creates no
+  GPU or breadth-queue eligibility.
 
 ## Explicit-Event Replay
 

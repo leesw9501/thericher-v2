@@ -562,8 +562,20 @@ external deletion marker. Claude's construction review was
 membership, and nothing proves publication-time availability. The snapshot is
 therefore not a direct historical list, PIT/campaign/model input, or GPU work.
 
-The next objective is a separate, bounded Windows-host-only raw-D1
-cross-source alignment check for the existing fixed ETF set. It must use
-query-local unadjusted Norgate fields, external-only storage, and explicit
-limitations before any data eligibility conclusion. It cannot call KIS, read
-credentials, submit orders, use Docker as a Norgate client, or begin model work.
+The separate bounded Windows-host-only raw-D1 alignment is now complete at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_raw_d1_alignment\snapshot=2026-07-18-norgate-raw-d1-alignment-r1`.
+The requested 2022-11-22 through 2026-06-22 window returned 483 Norgate
+sessions per fixed ETF, all from 2024-07-18 onward, while the pinned Tiingo
+source has 896 sessions and 413 additional earlier sessions per ETF. It is
+`literal_raw_ohlcv_difference`: all-field raw OHLCV equality counts are 96 for
+`SPY`, 111 for `QQQ`, and 201 for `IWM`. The snapshot has no Norgate-only
+sessions, does not choose a source, and remains PIT/campaign/model/paper
+ineligible. Its dataset SHA-256 is
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993`; manifest
+SHA-256 is `c37ca34c02df84ebd3f7d684ad87f27c62e36607d8f7ca3751504115205c6a91`.
+
+The next objective is a bounded Norgate daily-history coverage audit for the
+same fixed ETFs. It must determine whether the observed 2024-07-18 history
+boundary is a query-bound behavior or local trial coverage without retaining
+new raw data, changing NDU settings, calling KIS, reading credentials, using
+Docker as a Norgate client, or opening model work.

@@ -2,64 +2,54 @@
 
 ## Objective
 
-Build one bounded, host-only raw-D1 cross-source alignment snapshot for the
-fixed `SPY`/`QQQ`/`IWM` ETF set, using Norgate's query-local unadjusted daily
-fields and the existing external Tiingo raw-D1 source only as a comparison.
+Determine whether the fixed-ETF Norgate raw-D1 history boundary observed at
+2024-07-18 is caused by the bounded query shape or by the locally installed
+trial data coverage.
 
-The outcome is a data-source evidence result. It may establish or deny narrow
-raw-field alignment, but it must not declare a research dataset eligible or
-start CPU/GPU model work.
+This is a small Data Agent capability audit. It may clarify an exact operator
+NDU action if local coverage is missing, but it must not change settings,
+download data, retain new raw data, choose a source, or open research/GPU work.
 
 ## Ownership
 
-- **Data Agent:** owns the minimal host-only extractor, snapshot lineage,
-  comparison, storage, and source limitations.
-- **Review/Claude:** challenges field adjustment, date boundaries, comparison
-  semantics, survivorship, and any eligibility claim before reliance.
-- **Engine Research Agent:** observes only. It must not consume this snapshot,
-  schedule a campaign, or launch a GPU job.
+- **Data Agent:** owns the bounded host-only probe, local coverage metadata,
+  and exact operator request if configuration is needed.
+- **Review/Claude:** is optional unless the result would be used for a
+  survivorship, temporal-availability, or data-promotion claim.
+- **Engine Research Agent:** remains an observer and cannot consume the result.
 
 ## Boundaries
 
-- Use only the existing Norgate trial on the Windows host, the fixed three
-  ETFs, D1, `StockPriceAdjustmentType.NONE`, `PaddingType.NONE`, explicit
-  `numpy-recarray`, and one bounded date window. Do not use Docker, KIS,
-  `.env`, credentials, or secret-like files.
-- Store Norgate-origin output, manifest, hashes, comparison summary, and EULA
-  deletion marker only under `D:\market_data`; never Git, C:, Docker, or
-  `D:\thericher-v2\model-artifacts`. Preserve the retained C: NDU copy.
-- Confirm D: is at or above the 20% warning level before acquisition and stop
-  below the 15% hard floor. Do not extract a wider universe or retry by silently
-  shortening dates, dropping symbols, or changing adjustments.
-- Keep the Norgate snapshot distinct from the membership matrix and from the
-  Tiingo snapshot. Do not create a provider, `CatalogedBars` loader, campaign,
-  strategy, model, GPU queue, paper order, report family, dashboard, or public
-  service.
-- Compare only literal raw-D1 fields and explicit common sessions. Do not
-  normalize, rescale, choose a preferred source, or infer corporate-action,
-  timestamp, publication-time, PIT, delisting, or model-training eligibility.
-- Do not print or place raw bars, prices, volumes, symbols beyond the fixed
-  public ETF names, tokens, account data, or row-level data in Git artifacts.
+- Use only the existing Windows-host Norgate trial, fixed `SPY`/`QQQ`/`IWM`,
+  D1, query-local `StockPriceAdjustmentType.NONE`, `PaddingType.NONE`, and
+  `numpy-recarray`. Do not use Docker, KIS, `.env`, credentials, or secrets.
+- Use at most three predeclared non-overlapping date windows that distinguish
+  before-boundary, boundary, and current coverage. Record only per-symbol row
+  counts, minimum/maximum returned dates, response fields, package version,
+  and errors; never raw OHLCV values or rows.
+- Do not change NDU settings, invoke an updater, create exports/snapshots,
+  persist a cache/artifact, or retry with different settings. Do not infer why
+  coverage is absent merely from an empty/short response.
+- Inspect only non-secret local metadata or official local-package help needed
+  to identify an operator configuration step. Do not inspect `.env`, account,
+  browser, or unrelated user files.
+- Do not create a provider, catalog, campaign, strategy, model, GPU job,
+  paper order, report family, dashboard, or public service.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first drift-check before editing or
-   acquisition. State the raw-field contract, fixed date window, adjustment and
-   padding settings, exact comparison scope, stop rules, and the fact that
-   source alignment cannot itself create eligibility.
-2. Implement the smallest mock-tested host-only extractor and comparison helper.
-   It must validate every response, use deterministic ordering, stage externally
-   until all three symbols validate, and leave no partial published snapshot on
-   a source or comparison failure.
-3. Read the already cataloged Tiingo raw-D1 data through its existing approved
-   local boundary. Compare only session presence and literal field equality or
-   inequality counts for the fixed common window; record counts and hashes, not
-   raw values or a winner.
-4. Run once only after tests and fresh D: preflight pass. Report only external
-   path, date window, symbol count, session/count summaries, comparison counts,
-   hashes, package version, disk state, and validation outcome.
-5. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`, replace this
-   goal, then continue only if no true operator approval boundary remains.
+1. Check the prior alignment evidence and choose the three date windows before
+   calling the local client. State the falsification condition: shorter or empty
+   historical responses do not prove the reason for the coverage limit.
+2. Run the maximum nine bounded host-only calls once, in deterministic
+   symbol/window order. Keep the results in process and print only aggregate
+   metadata permitted above.
+3. Inspect local Norgate updater/package documentation or non-secret metadata
+   only if necessary. If an operator action is needed, report exact UI steps,
+   expected download size, data-history benefit, and why no automatic change was
+   made. If no action is discoverable, close the audit as `unsupported`.
+4. Refresh `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md`, replace this
+   goal, then continue while no real operator approval boundary remains.
 
 ## Verification
 
@@ -71,9 +61,9 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the Claude verdict, focused tests, external snapshot summary, and any
-genuine operator data help required.
+Report the windows, aggregate response metadata, result, any exact operator
+action needed, and no raw data.
 
 ## Suggested Commit Message
 
-`Add Norgate membership matrix snapshot`
+`Add Norgate raw-D1 alignment snapshot`
