@@ -27,6 +27,13 @@ also complete. It establishes only a local Windows/Python field-access boundary
 and a D: database update path; it does not open a provider, campaign, model, or
 paper-trading input.
 
+The bounded Norgate S&P 500 membership snapshot is complete at
+`D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
+It has a 541-item date-less candidate union and 266,647 sparse membership rows
+covering 2024-07-18 through 2026-07-17. Its manifest, hashes, and deletion
+marker are external-only. It remains explicitly non-PIT, non-campaign, and
+non-model eligible.
+
 ## Engine Loop
 
 - Data collection.
@@ -99,9 +106,9 @@ recarray with only `Date` and `Index Constituent` fields. No symbols, values,
 rows, cache, artifact, or dataset were retained. That validates API shape, not
 membership availability or a PIT universe.
 
-The next ready Data item is a separately contracted membership-matrix snapshot
-for that fixed candidate union. It must preserve source membership facts per
-symbol/date rather than relabel the union as a direct historical universe.
+The next ready Data item is a separately contracted, fixed-ETF Norgate raw-D1
+cross-source alignment check. It must stay host-only and preserve raw-source
+lineage before any data eligibility or research-use conclusion.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -573,3 +580,12 @@ timestamp claim; it does not resolve provider-field semantics or open a data
 snapshot, campaign, model, or purchase recommendation. Direct historical
 universe enumeration is closed as `unsupported`: a future snapshot must retain
 the candidate union and per-symbol membership matrix as separate source facts.
+That snapshot is now complete at
+`D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`:
+541 candidates, 266,647 sparse rows, 2024-07-18 through 2026-07-17,
+`norgatedata==1.0.77`, matrix SHA-256
+`d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55`.
+It has a deletion marker and no staging residue, but is not a direct historical
+list, publication-time evidence, PIT data, or an Engine input. The next bounded
+Data question is raw-D1 cross-source alignment for the existing three fixed
+ETFs; do not infer eligibility in advance.

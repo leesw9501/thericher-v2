@@ -552,8 +552,18 @@ unnecessary row-level data.
 
 The Norgate trial's bounded semantic branch remains `unsupported` for
 provider/campaign field meaning, and direct historical-universe enumeration is
-also `unsupported`. The next objective is a narrow, Claude-reviewed,
-host-only membership-matrix snapshot for the fixed `S&P 500 Current & Past`
-candidate union. It may retain only explicit per-symbol/date membership facts
-outside Git with deletion/provenance evidence. It cannot open a campaign, GPU
-job, purchase recommendation, or research promotion.
+also `unsupported`. The distinct membership-matrix construction completed at
+`D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
+It records a 541-item candidate union and 266,647 sparse per-symbol/date rows
+for 2024-07-18 through 2026-07-17, with matrix SHA-256
+`d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55` and an
+external deletion marker. Claude's construction review was
+`supported-with-limits`: the union is a tripwire, sparse absence is not false
+membership, and nothing proves publication-time availability. The snapshot is
+therefore not a direct historical list, PIT/campaign/model input, or GPU work.
+
+The next objective is a separate, bounded Windows-host-only raw-D1
+cross-source alignment check for the existing fixed ETF set. It must use
+query-local unadjusted Norgate fields, external-only storage, and explicit
+limitations before any data eligibility conclusion. It cannot call KIS, read
+credentials, submit orders, use Docker as a Norgate client, or begin model work.

@@ -1648,3 +1648,29 @@ rules, and leakage review.
 Reason: confusing a union list with an as-of universe recreates survivorship
 bias at the data boundary. Preserving the two documented primitives separately
 leaves a testable path without pretending the vendor exposes a stronger API.
+
+## 2026-07-19 - Norgate membership matrix remains source evidence only
+
+Decision: retain one host-only external snapshot at
+`D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
+It has a deterministic 541-item `S&P 500 Current & Past` candidate union and
+266,647 sparse per-symbol/date membership rows from 2024-07-18 through
+2026-07-17. The matrix SHA-256 is
+`d28060bfa5d81f913edc6d3500a46b7fdbc6bd00c8746e39068894b036758b55`; the
+manifest SHA-256 is
+`1bbf0ac04b653605b32496e09f0b6728f250b54f149f2f28858bef5ca32f5d8a`.
+The package was the ephemeral host-only `norgatedata==1.0.77`; D: had 40.44%
+free space before and after construction. The external snapshot includes its
+own EULA deletion marker and no staging directory remains.
+
+The manifest records `pit_eligible=false`, `campaign_eligible=false`, and
+`model_eligible=false`. A missing sparse row is not interpreted as false
+membership, the union count is only an observed tripwire, and the source gives
+no membership publication-time proof. Claude returned `supported-with-limits`
+for this limited construction, not for a historical universe or research claim.
+No Docker bridge, provider/catalog, raw-price extraction, campaign, GPU job,
+paper order, or service was added.
+
+Reason: this preserves the vendor's actual two-part source shape and its
+retention obligation without silently turning a convenience union into a
+survivorship-safe universe or model input.
