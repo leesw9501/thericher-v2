@@ -59,7 +59,8 @@
   baseline is complete on short CVS/FCX/KO evidence; it is pipeline evidence
   only and cannot rank, promote, open a holdout, or claim profitability.
   Tiingo IEX r1 is a separate 5-minute descriptive snapshot and does not alter
-  those boundaries.
+  those boundaries. Norgate now has a host-only raw-D1 adapter, but it remains
+  outside `CatalogedBars`, campaign, model, and GPU inputs.
 
 ## Explicit-Event Replay
 
@@ -81,8 +82,8 @@
 ## Breadth Queue
 
 - No breadth batch is currently eligible. The fixed RAW D1 verdict is
-  `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate
-  has no provider/campaign input yet.
+  `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate's
+  host-only raw-D1 provider has no cataloged or campaign input.
 - When Data supplies one hash-bound development-training-eligible dataset and a
   frozen campaign contract, enumerate one finite breadth batch before launch:
   CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two

@@ -1595,3 +1595,27 @@ consistent with existing safety boundaries, but warned that a generic
 therefore records prohibitions and finite activation conditions rather than a
 utilization target. The current RAW D1, broad Yahoo, Tiingo IEX, and Norgate
 trial observations do not open this batch.
+
+## 2026-07-19 - Norgate raw-daily access stays host-only and non-cataloged
+
+Decision: add one `NorgateRawDailyBarProvider` behind the existing
+`MarketDataProvider` shape. It is Windows-host-only, accepts only bounded US
+`1d` UTC-midnight queries, lazy-loads the optional official package, and calls
+`price_timeseries` with query-local `StockPriceAdjustmentType.NONE`,
+`PaddingType.NONE`, and an explicit `numpy-recarray` response. It maps only
+`Date`/OHLCV to existing `Bar` values in process and rejects malformed,
+out-of-window, or unordered responses rather than repair or persistence.
+
+The host smoke used an ephemeral official `norgatedata==1.0.77` dependency and
+returned four validated `SPY` bars for `2024-09-27` through exclusive
+`2024-10-03`; no raw row, price, cache, artifact, dataset, or project dependency
+was retained. Claude's architecture review and an independent static review
+both returned `supported-with-limits`. The adapter's date label is an engine
+convention, not a source timestamp fact. It does not establish field semantics,
+PIT correctness, a Norgate export right, a catalog, campaign eligibility,
+model quality, paper use, or a purchase decision.
+
+Reason: a minimal raw-D1 seam is needed to test the installed trial without
+turning proprietary local data into a Docker bridge or a prematurely promoted
+research source. A later historical-universe question must be its own bounded
+contract before any extraction or model work.

@@ -40,6 +40,7 @@ from .local import (
     bar_to_record,
     load_cataloged_yahoo_intraday_1m_bars,
 )
+from .norgate_daily import NorgateRawDailyBarProvider, NorgateUnavailableError
 from .provider import BarQuery, MarketDataProvider
 from .quality import BarQualityReport, BarQualityWarning, assess_bar_quality
 from .resample import SUPPORTED_RESAMPLE_TIMEFRAMES, resample_bars
@@ -67,6 +68,8 @@ __all__ = [
     "BarQualityWarning",
     "LocalCsvBarProvider",
     "MarketDataProvider",
+    "NorgateRawDailyBarProvider",
+    "NorgateUnavailableError",
     "SUPPORTED_RESAMPLE_TIMEFRAMES",
     "SampleBarProvider",
     "assess_bar_quality",

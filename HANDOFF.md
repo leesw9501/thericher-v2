@@ -335,6 +335,17 @@ implemented. This is compatibility
 only, not PIT, data-correctness, provider, campaign, model, paper, or purchase
 evidence. Keep the C: copy and all Norgate data outside Git.
 
+The repository now has `NorgateRawDailyBarProvider`, a Windows-host-only raw
+US-D1 adapter. It lazy-loads the optional official package, requires bounded
+UTC-midnight `BarQuery` dates, explicitly requests query-local `NONE` and a
+`numpy-recarray`, and keeps response rows in memory. A host smoke with
+ephemeral `norgatedata==1.0.77` returned four validated `SPY` bars for
+`2024-09-27` through exclusive `2024-10-03`; it recorded no rows, prices,
+artifact, cache, or project dependency. The UTC-midnight date is an engine
+label convention, not a Norgate source-timestamp claim. This creates neither a
+catalog nor campaign/model/paper eligibility, and does not reopen the closed
+field-semantics branch.
+
 ## Research Reality
 
 The fixed RAW D1 campaign uses the latest 896 common sessions from 2022-11-22
@@ -527,9 +538,10 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The Norgate trial's bounded semantic branch is closed as `unsupported` for
-provider/campaign field meaning. The next objective is a narrow architecture-
-reviewed Windows-host-only raw-daily provider adapter: query-local `NONE`
-adjustment only, no data cache/export/artifact, no Docker bridge, and mock-only
-tests in Git. It may prove local adapter behavior but cannot open a campaign,
-GPU job, purchase recommendation, or research promotion.
+The Norgate trial's bounded semantic branch remains `unsupported` for
+provider/campaign field meaning. The next objective is a narrow,
+Claude-reviewed, host-only historical-universe capability audit: determine
+whether the existing trial can enumerate a date-specific US universe without
+creating a snapshot or assuming PIT semantics. It may establish only API
+capability limits; it cannot open a campaign, GPU job, purchase recommendation,
+or research promotion.

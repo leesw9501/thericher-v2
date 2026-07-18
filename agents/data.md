@@ -79,10 +79,19 @@ facts are magnitude-consistent with the documented split but do not establish
 field meaning, availability, or a general rule. The semantics branch is
 `unsupported` and closed without a setting change.
 
-The next ready Data item is a narrow, Claude-reviewed Windows-host-only
-Norgate raw-daily provider adapter using the query-local `NONE` setting. It
-must neither persist/export trial data nor create a Docker, campaign, or
-research-data integration.
+The narrow Windows-host-only Norgate raw-daily provider is complete. It accepts
+only bounded US `1d` queries with UTC-midnight labels, asks the official client
+for a query-local `NONE` adjustment and `numpy-recarray` response, and maps
+only daily OHLCV into `Bar` values in memory. An ephemeral
+`norgatedata==1.0.77` host smoke returned the requested `SPY` window from
+`2024-09-27` through exclusive `2024-10-03` with four validated bars. The
+package is not a project dependency, no trial rows were persisted, and the
+adapter is not a catalog, Docker bridge, campaign, or research-data input.
+
+The next ready Data item is a bounded historical-universe capability audit. It
+must establish only whether the existing Norgate trial can enumerate a
+date-specific US universe under a later data contract; it must not create a
+snapshot, campaign, or inferred point-in-time claim.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -237,10 +246,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. After a Claude architecture drift-check, build a narrow Windows-host-only
-   Norgate raw-daily provider adapter using query-local `NONE` adjustment.
-   Keep all trial data in memory: no cache/export/artifact, Docker bridge,
-   campaign, or `CatalogedBars` promotion.
+1. After a Claude data-contract drift-check, run one bounded Windows-host-only
+   Norgate historical-universe capability audit. Keep all trial data in memory:
+   no cache/export/artifact, Docker bridge, campaign, or `CatalogedBars`
+   promotion.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically
@@ -545,7 +554,10 @@ loader-attested lineage. The strict Tiingo IEX archive contract is retained as
 an unexecuted publication path, but its fixed retrieval plan is closed after
 two validation failures and must not be retried automatically. A future
 universe-wide research claim still needs PIT membership and delistings.
-The Norgate trial now supplies a local compatibility signal only. Keep its data
-outside Git, preserve the retained C: copy, and do not interpret the D: mount as
-a licensed Docker database path. The next Norgate work is one known-fixture
-semantics check, not a provider implementation or a purchase recommendation.
+The Norgate trial now supplies a narrow host-only raw-D1 adapter as well as
+local compatibility evidence. Keep its data outside Git, preserve the retained
+C: copy, and do not interpret the D: mount as a licensed Docker database path.
+The adapter's UTC-midnight session label is an engine convention, not a source
+timestamp claim; it does not resolve provider-field semantics or open a data
+snapshot, campaign, model, or purchase recommendation. The next Norgate work
+is a bounded historical-universe capability audit, not bulk extraction.
