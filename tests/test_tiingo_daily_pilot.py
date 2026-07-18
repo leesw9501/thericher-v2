@@ -13,12 +13,16 @@ import pytest
 
 from thericher_v2.data.norgate_candidate_union import rank_quantile_ranks
 from thericher_v2.data.tiingo_daily_pilot import (
+    TIINGO_DAILY_SHARD_VERSION,
     TIINGO_INTERNAL_USE_CLAUSE,
     TIINGO_TERMS_URL,
     TiingoDailyPilotError,
     acquire_tiingo_daily_pilot,
+    acquire_tiingo_daily_shard,
     default_tiingo_daily_pilot_dir,
+    default_tiingo_daily_shard_dir,
     verify_tiingo_daily_pilot_snapshot,
+    verify_tiingo_daily_shard_snapshot,
 )
 
 _START = date(2024, 7, 18)
@@ -384,6 +388,156 @@ def test_default_destination_uses_external_market_data_root() -> None:
     )
 
 
+def test_disjoint_shard_rechecks_predecessor_and_uses_a_distinct_identity(
+    tmp_path: Path,
+) -> None:
+    root, candidate_path, manifest_path, expected_hash, repo = _candidate_union(
+        tmp_path, symbol_count=60
+    )
+    predecessor = _acquire(
+        root=root,
+        candidate_path=candidate_path,
+        manifest_path=manifest_path,
+        expected_hash=expected_hash,
+        env_path=_env(tmp_path),
+        repo=repo,
+        opener=lambda _request, *, timeout: _Response(_payload()),
+        sample_size=30,
+        destination=root / "pilot" / "snapshot=2026-07-19-tiingo-standard-eod-pilot-r1",
+    )
+    calls = 0
+
+    def opener(_request, *, timeout: float) -> _Response:
+        nonlocal calls
+        calls += 1
+        return _Response(_payload())
+
+    shard = acquire_tiingo_daily_shard(
+        candidate_union_path=candidate_path,
+        candidate_union_manifest_path=manifest_path,
+        expected_candidate_union_hash=expected_hash,
+        predecessor_snapshot_dir=predecessor.snapshot_dir,
+        expected_predecessor_dataset_hash=predecessor.dataset_hash,
+        expected_predecessor_manifest_hash=predecessor.manifest_hash,
+        env_path=_env(tmp_path),
+        destination=root / "pilot" / "snapshot=2026-07-19-tiingo-standard-eod-pilot-r2",
+        requested_start=_START,
+        requested_end=_END,
+        retrieved_at_utc=datetime(2026, 7, 19, 1, tzinfo=UTC),
+        market_data_root=root,
+        repo_root=repo,
+        opener=opener,
+        disk_usage=lambda _path: SimpleNamespace(total=100, free=50),
+    )
+
+    assert calls == 30
+    assert shard.completed is True
+    manifest = json.loads((shard.snapshot_dir / "manifest.json").read_text(encoding="utf-8"))
+    predecessor_manifest = json.loads(
+        (predecessor.snapshot_dir / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert manifest["pilot_version"] == TIINGO_DAILY_SHARD_VERSION
+    assert manifest["candidate_union"]["selection_algorithm"] == "rank_quantile_excluding_ranks_v1"
+    assert len(manifest["candidate_union"]["selected_ranks"]) == 30
+    assert not (
+        set(manifest["candidate_union"]["selected_ranks"])
+        & set(predecessor_manifest["candidate_union"]["selected_ranks"])
+    )
+    assert verify_tiingo_daily_shard_snapshot(
+        shard.snapshot_dir,
+        expected_dataset_hash=shard.dataset_hash,
+        expected_manifest_hash=shard.manifest_hash,
+        predecessor_snapshot_dir=predecessor.snapshot_dir,
+        expected_predecessor_dataset_hash=predecessor.dataset_hash,
+        expected_predecessor_manifest_hash=predecessor.manifest_hash,
+        expected_candidate_union_hash=expected_hash,
+        market_data_root=root,
+        repo_root=repo,
+    ) == shard
+
+    manifest["retrieved_at_utc"] = "2026-07-19T00:59:00Z"
+    tampered_manifest = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+    (shard.snapshot_dir / "manifest.json").write_bytes(tampered_manifest.encode("utf-8"))
+    with pytest.raises(ValueError, match="pacing evidence"):
+        verify_tiingo_daily_shard_snapshot(
+            shard.snapshot_dir,
+            expected_dataset_hash=shard.dataset_hash,
+            expected_manifest_hash="sha256:"
+            + hashlib.sha256(tampered_manifest.encode("utf-8")).hexdigest(),
+            predecessor_snapshot_dir=predecessor.snapshot_dir,
+            expected_predecessor_dataset_hash=predecessor.dataset_hash,
+            expected_predecessor_manifest_hash=predecessor.manifest_hash,
+            expected_candidate_union_hash=expected_hash,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+    def unexpected_request(*_args: object, **_kwargs: object) -> _Response:
+        raise AssertionError("predecessor mismatch must fail before a request")
+
+    with pytest.raises(ValueError, match="manifest hash mismatch"):
+        acquire_tiingo_daily_shard(
+            candidate_union_path=candidate_path,
+            candidate_union_manifest_path=manifest_path,
+            expected_candidate_union_hash=expected_hash,
+            predecessor_snapshot_dir=predecessor.snapshot_dir,
+            expected_predecessor_dataset_hash=predecessor.dataset_hash,
+            expected_predecessor_manifest_hash="sha256:" + "0" * 64,
+            env_path=_env(tmp_path),
+            destination=root / "other" / "snapshot=2026-07-19-tiingo-standard-eod-pilot-r2",
+            requested_start=_START,
+            requested_end=_END,
+            retrieved_at_utc=datetime(2026, 7, 19, 1, tzinfo=UTC),
+            market_data_root=root,
+            repo_root=repo,
+            opener=unexpected_request,
+            disk_usage=lambda _path: SimpleNamespace(total=100, free=50),
+        )
+
+
+def test_shard_rejects_early_pacing_and_has_a_distinct_default_destination(tmp_path: Path) -> None:
+    root, candidate_path, manifest_path, expected_hash, repo = _candidate_union(
+        tmp_path, symbol_count=60
+    )
+    predecessor = _acquire(
+        root=root,
+        candidate_path=candidate_path,
+        manifest_path=manifest_path,
+        expected_hash=expected_hash,
+        env_path=_env(tmp_path),
+        repo=repo,
+        opener=lambda _request, *, timeout: _Response(_payload()),
+        sample_size=30,
+        destination=root / "pilot" / "snapshot=2026-07-19-tiingo-standard-eod-pilot-r1",
+    )
+
+    def unexpected_request(*_args: object, **_kwargs: object) -> _Response:
+        raise AssertionError("early shard must fail before a request")
+
+    with pytest.raises(ValueError, match="wait one hour"):
+        acquire_tiingo_daily_shard(
+            candidate_union_path=candidate_path,
+            candidate_union_manifest_path=manifest_path,
+            expected_candidate_union_hash=expected_hash,
+            predecessor_snapshot_dir=predecessor.snapshot_dir,
+            expected_predecessor_dataset_hash=predecessor.dataset_hash,
+            expected_predecessor_manifest_hash=predecessor.manifest_hash,
+            env_path=_env(tmp_path),
+            destination=root / "pilot" / "snapshot=2026-07-19-tiingo-standard-eod-pilot-r2",
+            requested_start=_START,
+            requested_end=_END,
+            retrieved_at_utc=datetime(2026, 7, 19, 0, 59, tzinfo=UTC),
+            market_data_root=root,
+            repo_root=repo,
+            opener=unexpected_request,
+            disk_usage=lambda _path: SimpleNamespace(total=100, free=50),
+        )
+    assert default_tiingo_daily_shard_dir(date(2026, 7, 19)) == Path(
+        "D:/market_data/us_equities/tiingo_standard_eod_pilot/canonical/"
+        "snapshot=2026-07-19-tiingo-standard-eod-pilot-r2"
+    )
+
+
 def _acquire(
     *,
     root: Path,
@@ -415,14 +569,19 @@ def _acquire(
     )
 
 
-def _candidate_union(tmp_path: Path) -> tuple[Path, Path, Path, str, Path]:
+def _candidate_union(
+    tmp_path: Path, *, symbol_count: int = len(_SYMBOLS)
+) -> tuple[Path, Path, Path, str, Path]:
     root = tmp_path / "market_data"
     snapshot = root / "norgate" / "snapshot=fixture"
     snapshot.mkdir(parents=True)
     repo = tmp_path / "repo"
     repo.mkdir()
     candidate_path = snapshot / "candidate_union.csv"
-    rows = "".join(f"{rank},{symbol}\n" for rank, symbol in enumerate(_SYMBOLS, start=1))
+    symbols = _SYMBOLS if symbol_count == len(_SYMBOLS) else tuple(
+        f"SYMBOL{rank:04d}" for rank in range(1, symbol_count + 1)
+    )
+    rows = "".join(f"{rank},{symbol}\n" for rank, symbol in enumerate(symbols, start=1))
     candidate_bytes = ("candidate_rank,symbol\n" + rows).encode("utf-8")
     candidate_path.write_bytes(candidate_bytes)
     expected_hash = "sha256:" + hashlib.sha256(candidate_bytes).hexdigest()
@@ -432,7 +591,7 @@ def _candidate_union(tmp_path: Path) -> tuple[Path, Path, Path, str, Path]:
             {
                 "schema_version": 1,
                 "kind": "norgate_sp500_current_past_membership_matrix",
-                "candidate_count": len(_SYMBOLS),
+                "candidate_count": len(symbols),
                 "scope": {
                     "direct_historical_universe_list": False,
                     "publication_time_proven": False,

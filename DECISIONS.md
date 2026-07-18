@@ -1783,3 +1783,26 @@ Reason: successful transport and raw provenance prove the acquisition mechanics
 but do not solve survivorship, publication-time, listing-history, or common
 coverage limitations. Preserving those limits avoids using GPU work to create a
 misleading research result.
+
+## 2026-07-19 - Tiingo r2 shard improves coverage but not eligibility
+
+Decision: retain the completed, r1-bound Tiingo standard-EOD r2 shard at
+`D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r2` as private-use source evidence only.
+It re-attested r1 before selection, excluded all 30 predecessor ranks, enforced
+one hour of pacing, issued exactly 30 requests with no retry, and retained 29
+available raw responses plus one HTTP-404 gap. Dataset SHA-256 is
+`6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`; manifest
+SHA-256 is `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
+The r2 snapshot contains 14,529 canonical raw-field rows and its 29 available
+candidates share 501 returned sessions.
+
+R2 does not repair the date-less candidate union, historical membership,
+publication-time, listing-history, or delisting limitations. R1 and R2 together
+have 58 available candidates but only 18 common sessions because the r1 returns
+are uneven. Neither snapshot, separately or combined, is a point-in-time,
+campaign, model, GPU, paper, source-selection, or profitability input. The
+next step is a bounded offline coverage audit, not automatic collection.
+
+Reason: the second shard proves that some rank regions have consistent returned
+history, which is useful data-coverage evidence. It does not validate a
+tradable universe or justify consuming GPU capacity for a misleading model run.

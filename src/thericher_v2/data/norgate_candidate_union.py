@@ -6,10 +6,13 @@ import csv
 import hashlib
 import io
 import json
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
 DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
+RANK_QUANTILE_INCLUSIVE_V1 = "rank_quantile_inclusive_v1"
+RANK_QUANTILE_EXCLUDING_RANKS_V1 = "rank_quantile_excluding_ranks_v1"
 _CANDIDATE_COLUMNS = ("candidate_rank", "symbol")
 _INELIGIBLE_SCOPE_KEYS = (
     "direct_historical_universe_list",
@@ -37,6 +40,8 @@ class NorgateCandidateSelection:
     candidate_union_hash: str
     selected_ranks: tuple[int, ...]
     selected_symbols: tuple[str, ...]
+    excluded_ranks: tuple[int, ...] = ()
+    selection_algorithm: str = RANK_QUANTILE_INCLUSIVE_V1
 
 
 def load_norgate_candidate_union(
@@ -75,16 +80,28 @@ def load_norgate_candidate_union(
 
 
 def select_rank_quantile_candidates(
-    union: NorgateCandidateUnion, *, sample_size: int
+    union: NorgateCandidateUnion,
+    *,
+    sample_size: int,
+    excluded_ranks: Sequence[int] = (),
 ) -> NorgateCandidateSelection:
     """Select inclusive integer quantiles without creating a membership interpretation."""
 
-    ranks = rank_quantile_ranks(union.candidate_count, sample_size=sample_size)
+    excluded = _normalized_excluded_ranks(excluded_ranks, candidate_count=union.candidate_count)
+    ranks = rank_complement_quantiles(
+        union.candidate_count,
+        excluded_ranks=excluded,
+        sample_size=sample_size,
+    )
     return NorgateCandidateSelection(
         candidate_count=union.candidate_count,
         candidate_union_hash=union.candidate_union_hash,
         selected_ranks=ranks,
         selected_symbols=tuple(union.candidates[rank - 1] for rank in ranks),
+        excluded_ranks=excluded,
+        selection_algorithm=(
+            RANK_QUANTILE_EXCLUDING_RANKS_V1 if excluded else RANK_QUANTILE_INCLUSIVE_V1
+        ),
     )
 
 
@@ -110,6 +127,47 @@ def rank_quantile_ranks(candidate_count: int, *, sample_size: int) -> tuple[int,
         )
     if len(set(ranks)) != sample_size:
         raise ValueError("Norgate candidate sample ranks are invalid")
+    return ranks
+
+
+def rank_complement_quantiles(
+    candidate_count: int,
+    *,
+    excluded_ranks: Sequence[int],
+    sample_size: int,
+) -> tuple[int, ...]:
+    """Return inclusive quantiles from a validated ordered rank complement."""
+
+    excluded = _normalized_excluded_ranks(excluded_ranks, candidate_count=candidate_count)
+    excluded_set = set(excluded)
+    remaining = tuple(
+        rank for rank in range(1, candidate_count + 1) if rank not in excluded_set
+    )
+    positions = rank_quantile_ranks(len(remaining), sample_size=sample_size)
+    return tuple(remaining[position - 1] for position in positions)
+
+
+def _normalized_excluded_ranks(
+    excluded_ranks: Sequence[int], *, candidate_count: int
+) -> tuple[int, ...]:
+    if isinstance(excluded_ranks, (str, bytes)):
+        raise ValueError("Norgate candidate excluded ranks are invalid")
+    try:
+        ranks = tuple(excluded_ranks)
+    except TypeError as exc:
+        raise ValueError("Norgate candidate excluded ranks are invalid") from exc
+    if any(
+        not isinstance(rank, int)
+        or isinstance(rank, bool)
+        or rank < 1
+        or rank > candidate_count
+        for rank in ranks
+    ):
+        raise ValueError("Norgate candidate excluded ranks are invalid")
+    if ranks != tuple(sorted(set(ranks))):
+        raise ValueError("Norgate candidate excluded ranks are invalid")
+    if len(ranks) >= candidate_count:
+        raise ValueError("Norgate candidate excluded ranks leave no candidates")
     return ranks
 
 

@@ -239,8 +239,15 @@ It made 30 requests with 29 available responses, one unavailable response, and
 SHA-256 is `69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
 The 29 available candidates have only 18 common sessions and histories from 18
 to 501 rows. This is private-use source evidence, not a point-in-time universe,
-common panel, campaign, model, GPU, or paper input. The next Data objective is
-one disjoint 30-symbol shard with the same external-only, no-substitution scope.
+common panel, campaign, model, GPU, or paper input. The disjoint r2 shard is
+also complete at
+`D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r2`.
+It made 30 requests with 29 available responses, one unavailable response, and
+14,529 canonical raw-field rows. Dataset SHA-256 is
+`6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`; manifest
+SHA-256 is `76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
+R2 alone has 501 common returned sessions, but R1/R2 combined still has 18.
+The next Data objective is an offline coverage audit, not automatic acquisition.
 
 The approved Tiingo standard EOD collection produced one immutable private-use
 snapshot at
@@ -619,8 +626,13 @@ rows, and only 18 common sessions across the available candidates. Dataset
 SHA-256 is `ecc5bf5c34ea1606fcea80ade658d4b95964033387149a7c273de7858652af56`;
 manifest SHA-256 is
 `69493180e553af940810d3a07afe248d77febd2aee5105304dc777985ea7901f`.
+The r1-bound disjoint shard also completed after its enforced one-hour pacing
+interval: 29 available responses, one unavailable response, 14,529 rows,
+dataset SHA-256 `6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`,
+and manifest SHA-256
+`76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
+R2's available candidates have 501 common sessions, but R1/R2 combined has
+only 18 and remains non-PIT, non-campaign, non-model, non-GPU, and non-paper.
 Claude's `supported-with-limits` verdict remains bounded to acquisition
-mechanics and private-use retention. The only safe follow-up is one disjoint,
-30-symbol raw-daily shard that re-attests the predecessor, uses the approved
-Tiingo token only, writes under `D:\market_data`, retains gaps without
-substitution, and stays non-PIT, non-campaign, non-model, non-GPU, and non-paper.
+mechanics and private-use retention. The next safe follow-up is one offline,
+symbol-private coverage audit before any later acquisition decision.

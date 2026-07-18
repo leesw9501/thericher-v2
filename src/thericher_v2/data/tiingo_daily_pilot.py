@@ -13,7 +13,7 @@ import uuid
 import warnings
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
-from datetime import UTC, date, datetime, time
+from datetime import UTC, date, datetime, time, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
@@ -23,8 +23,11 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from .norgate_candidate_union import (
     DEFAULT_MARKET_DATA_ROOT,
+    RANK_QUANTILE_EXCLUDING_RANKS_V1,
+    RANK_QUANTILE_INCLUSIVE_V1,
     NorgateCandidateSelection,
     load_norgate_candidate_union,
+    rank_complement_quantiles,
     rank_quantile_ranks,
     select_rank_quantile_candidates,
 )
@@ -36,6 +39,7 @@ DEFAULT_TIINGO_DAILY_PILOT_ROOT = (
 MAX_TIINGO_DAILY_PILOT_REQUESTS = 30
 DEFAULT_TIINGO_DAILY_PILOT_SAMPLE_SIZE = 30
 TIINGO_DAILY_PILOT_VERSION = "tiingo-standard-eod-pilot-r1"
+TIINGO_DAILY_SHARD_VERSION = "tiingo-standard-eod-pilot-r2"
 TIINGO_TERMS_URL = "https://app.tiingo.com/tos/"
 TIINGO_TERMS_RETRIEVED_DATE = date(2026, 7, 19)
 TIINGO_INTERNAL_USE_CLAUSE = "All data via the API is for internal consumption only."
@@ -43,6 +47,7 @@ _CANONICAL_FILE = "ohlcv_1d.csv.gz"
 _MANIFEST_FILE = "manifest.json"
 _RETENTION_FILE = "TIINGO_PRIVATE_INTERNAL_DATA_MARKER.txt"
 _SNAPSHOT_SUFFIX = "-tiingo-standard-eod-pilot-r1"
+_SHARD_SNAPSHOT_SUFFIX = "-tiingo-standard-eod-pilot-r2"
 _RAW_COLUMNS = (
     "candidate_rank",
     "candidate_symbol",
@@ -127,6 +132,41 @@ class TiingoDailyPilotResult:
     free_percent: float
 
 
+@dataclass(frozen=True, slots=True)
+class TiingoDailyPilotPredecessor:
+    """Completed r1 evidence required before one disjoint r2 shard may run."""
+
+    snapshot_dir: Path
+    dataset_hash: str
+    manifest_hash: str
+    candidate_union_hash: str
+    candidate_count: int
+    selected_ranks: tuple[int, ...]
+    retrieved_at_utc: datetime
+
+
+@dataclass(frozen=True, slots=True)
+class _SnapshotSpec:
+    version: str
+    suffix: str
+    selection_algorithm: str
+    requires_predecessor: bool
+
+
+_PILOT_SPEC = _SnapshotSpec(
+    version=TIINGO_DAILY_PILOT_VERSION,
+    suffix=_SNAPSHOT_SUFFIX,
+    selection_algorithm=RANK_QUANTILE_INCLUSIVE_V1,
+    requires_predecessor=False,
+)
+_SHARD_SPEC = _SnapshotSpec(
+    version=TIINGO_DAILY_SHARD_VERSION,
+    suffix=_SHARD_SNAPSHOT_SUFFIX,
+    selection_algorithm=RANK_QUANTILE_EXCLUDING_RANKS_V1,
+    requires_predecessor=True,
+)
+
+
 def default_tiingo_daily_pilot_dir(retrieval_date: date) -> Path:
     """Return the external snapshot destination for this pilot revision."""
 
@@ -134,6 +174,16 @@ def default_tiingo_daily_pilot_dir(retrieval_date: date) -> Path:
         raise ValueError("Tiingo daily pilot retrieval date must not include a time")
     return DEFAULT_TIINGO_DAILY_PILOT_ROOT / (
         f"snapshot={retrieval_date.isoformat()}{_SNAPSHOT_SUFFIX}"
+    )
+
+
+def default_tiingo_daily_shard_dir(retrieval_date: date) -> Path:
+    """Return the external destination for the one disjoint shard revision."""
+
+    if isinstance(retrieval_date, datetime):
+        raise ValueError("Tiingo daily shard retrieval date must not include a time")
+    return DEFAULT_TIINGO_DAILY_PILOT_ROOT / (
+        f"snapshot={retrieval_date.isoformat()}{_SHARD_SNAPSHOT_SUFFIX}"
     )
 
 
@@ -153,6 +203,9 @@ def acquire_tiingo_daily_pilot(
     opener: Callable[..., Any] | None = None,
     timeout_seconds: float = 20.0,
     disk_usage: Callable[[str | Path], Any] = shutil.disk_usage,
+    _selection: NorgateCandidateSelection | None = None,
+    _predecessor: TiingoDailyPilotPredecessor | None = None,
+    _spec: _SnapshotSpec = _PILOT_SPEC,
 ) -> TiingoDailyPilotResult:
     """Acquire exactly one capped pass and atomically retain its external evidence."""
 
@@ -162,18 +215,30 @@ def acquire_tiingo_daily_pilot(
     retrieved_at = _utc_datetime(retrieved_at_utc, "Tiingo daily pilot retrieval time")
     if timeout_seconds <= 0:
         raise ValueError("Tiingo daily pilot timeout must be positive")
-    union = load_norgate_candidate_union(
-        candidate_union_path=candidate_union_path,
-        candidate_union_manifest_path=candidate_union_manifest_path,
-        expected_candidate_union_hash=expected_candidate_union_hash,
-        market_data_root=market_data_root,
-        repo_root=repo_root,
+    _validate_snapshot_spec(_spec)
+    if _selection is None:
+        union = load_norgate_candidate_union(
+            candidate_union_path=candidate_union_path,
+            candidate_union_manifest_path=candidate_union_manifest_path,
+            expected_candidate_union_hash=expected_candidate_union_hash,
+            market_data_root=market_data_root,
+            repo_root=repo_root,
+        )
+        selection = select_rank_quantile_candidates(union, sample_size=sample_size)
+    else:
+        selection = _selection
+    _validate_selection(selection, sample_size=sample_size, spec=_spec)
+    _validate_predecessor_for_acquisition(
+        _predecessor,
+        selection=selection,
+        retrieved_at_utc=retrieved_at,
+        spec=_spec,
     )
-    selection = select_rank_quantile_candidates(union, sample_size=sample_size)
     target, root = _validate_destination(
         destination,
         market_data_root=market_data_root,
         repo_root=repo_root,
+        snapshot_suffix=_spec.suffix,
     )
     _assert_no_staging_residue(target)
     free_percent = _validate_storage(root, disk_usage=disk_usage)
@@ -265,6 +330,8 @@ def acquire_tiingo_daily_pilot(
             stop_reason=stop_reason,
             free_percent=free_percent,
             market_data_root=root,
+            spec=_spec,
+            predecessor=_predecessor,
         )
         manifest_bytes = _json_bytes(manifest)
         (staging / _MANIFEST_FILE).write_bytes(manifest_bytes)
@@ -281,6 +348,8 @@ def acquire_tiingo_daily_pilot(
             market_data_root=market_data_root,
             repo_root=repo_root,
             require_destination_name=True,
+            spec=_spec,
+            expected_predecessor=_predecessor,
         )
     except Exception as exc:
         _quarantine_failed_snapshot(target)
@@ -302,6 +371,140 @@ def acquire_tiingo_daily_pilot(
     )
 
 
+def load_completed_tiingo_daily_pilot_predecessor(
+    snapshot_dir: Path,
+    *,
+    expected_dataset_hash: str,
+    expected_manifest_hash: str,
+    expected_candidate_union_hash: str,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> TiingoDailyPilotPredecessor:
+    """Load one verified completed r1 pilot before a disjoint shard is selected."""
+
+    result = verify_tiingo_daily_pilot_snapshot(
+        snapshot_dir,
+        expected_dataset_hash=expected_dataset_hash,
+        expected_manifest_hash=expected_manifest_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    if not result.completed or result.request_count != MAX_TIINGO_DAILY_PILOT_REQUESTS:
+        raise ValueError("Tiingo daily shard predecessor is not a completed full pilot")
+    manifest_bytes = _read_snapshot_file(
+        result.snapshot_dir, _MANIFEST_FILE, "Tiingo daily shard predecessor manifest"
+    )
+    try:
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Tiingo daily shard predecessor manifest is invalid") from exc
+    if not isinstance(manifest, dict):
+        raise ValueError("Tiingo daily shard predecessor manifest is invalid")
+    candidate_union = manifest.get("candidate_union")
+    if not isinstance(candidate_union, dict):
+        raise ValueError("Tiingo daily shard predecessor candidate union is invalid")
+    candidate_hash = _required_sha256(
+        candidate_union.get("sha256"), "shard predecessor candidate union hash"
+    )
+    if candidate_hash != _required_sha256(
+        expected_candidate_union_hash, "expected shard candidate union hash"
+    ):
+        raise ValueError("Tiingo daily shard predecessor candidate union hash mismatch")
+    candidate_count = _positive_int(
+        candidate_union.get("candidate_count"), "shard predecessor candidate count"
+    )
+    selected_ranks = _rank_list(
+        candidate_union.get("selected_ranks"),
+        candidate_count=candidate_count,
+        label="shard predecessor selected ranks",
+    )
+    if len(selected_ranks) != MAX_TIINGO_DAILY_PILOT_REQUESTS:
+        raise ValueError("Tiingo daily shard predecessor selected rank count is invalid")
+    retrieved_at = _utc_datetime(
+        _datetime_value(manifest.get("retrieved_at_utc"), "shard predecessor retrieval time"),
+        "shard predecessor retrieval time",
+    )
+    return TiingoDailyPilotPredecessor(
+        snapshot_dir=result.snapshot_dir,
+        dataset_hash=result.dataset_hash,
+        manifest_hash=result.manifest_hash,
+        candidate_union_hash=candidate_hash,
+        candidate_count=candidate_count,
+        selected_ranks=selected_ranks,
+        retrieved_at_utc=retrieved_at,
+    )
+
+
+def acquire_tiingo_daily_shard(
+    *,
+    candidate_union_path: Path,
+    candidate_union_manifest_path: Path,
+    expected_candidate_union_hash: str,
+    predecessor_snapshot_dir: Path,
+    expected_predecessor_dataset_hash: str,
+    expected_predecessor_manifest_hash: str,
+    env_path: Path,
+    destination: Path,
+    requested_start: date,
+    requested_end: date,
+    retrieved_at_utc: datetime,
+    sample_size: int = MAX_TIINGO_DAILY_PILOT_REQUESTS,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+    opener: Callable[..., Any] | None = None,
+    timeout_seconds: float = 20.0,
+    disk_usage: Callable[[str | Path], Any] = shutil.disk_usage,
+) -> TiingoDailyPilotResult:
+    """Acquire one r2 rank-complement shard after verified r1 evidence."""
+
+    if sample_size != MAX_TIINGO_DAILY_PILOT_REQUESTS:
+        raise ValueError("Tiingo daily shard must use exactly 30 requests")
+    predecessor = load_completed_tiingo_daily_pilot_predecessor(
+        predecessor_snapshot_dir,
+        expected_dataset_hash=expected_predecessor_dataset_hash,
+        expected_manifest_hash=expected_predecessor_manifest_hash,
+        expected_candidate_union_hash=expected_candidate_union_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    union = load_norgate_candidate_union(
+        candidate_union_path=candidate_union_path,
+        candidate_union_manifest_path=candidate_union_manifest_path,
+        expected_candidate_union_hash=expected_candidate_union_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    _validate_predecessor_against_union(
+        predecessor,
+        candidate_union_hash=union.candidate_union_hash,
+        candidate_count=union.candidate_count,
+    )
+    selection = select_rank_quantile_candidates(
+        union,
+        sample_size=sample_size,
+        excluded_ranks=predecessor.selected_ranks,
+    )
+    return acquire_tiingo_daily_pilot(
+        candidate_union_path=candidate_union_path,
+        candidate_union_manifest_path=candidate_union_manifest_path,
+        expected_candidate_union_hash=expected_candidate_union_hash,
+        env_path=env_path,
+        destination=destination,
+        requested_start=requested_start,
+        requested_end=requested_end,
+        retrieved_at_utc=retrieved_at_utc,
+        sample_size=sample_size,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+        opener=opener,
+        timeout_seconds=timeout_seconds,
+        disk_usage=disk_usage,
+        _selection=selection,
+        _predecessor=predecessor,
+        _spec=_SHARD_SPEC,
+    )
+
+
 def verify_tiingo_daily_pilot_snapshot(
     snapshot_dir: Path,
     *,
@@ -319,6 +522,43 @@ def verify_tiingo_daily_pilot_snapshot(
         market_data_root=market_data_root,
         repo_root=repo_root,
         require_destination_name=True,
+        spec=_PILOT_SPEC,
+        expected_predecessor=None,
+    )
+
+
+def verify_tiingo_daily_shard_snapshot(
+    snapshot_dir: Path,
+    *,
+    expected_dataset_hash: str,
+    expected_manifest_hash: str,
+    predecessor_snapshot_dir: Path,
+    expected_predecessor_dataset_hash: str,
+    expected_predecessor_manifest_hash: str,
+    expected_candidate_union_hash: str,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> TiingoDailyPilotResult:
+    """Re-attest one r2 shard and its explicit r1 predecessor offline."""
+
+    predecessor = load_completed_tiingo_daily_pilot_predecessor(
+        predecessor_snapshot_dir,
+        expected_dataset_hash=expected_predecessor_dataset_hash,
+        expected_manifest_hash=expected_predecessor_manifest_hash,
+        expected_candidate_union_hash=expected_candidate_union_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+
+    return _verify_snapshot(
+        snapshot_dir,
+        expected_dataset_hash=expected_dataset_hash,
+        expected_manifest_hash=expected_manifest_hash,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+        require_destination_name=True,
+        spec=_SHARD_SPEC,
+        expected_predecessor=predecessor,
     )
 
 
@@ -459,12 +699,16 @@ def _verify_snapshot(
     market_data_root: Path,
     repo_root: Path | None,
     require_destination_name: bool,
+    spec: _SnapshotSpec,
+    expected_predecessor: TiingoDailyPilotPredecessor | None,
 ) -> TiingoDailyPilotResult:
+    _validate_snapshot_spec(spec)
     snapshot = _validated_snapshot_dir(
         snapshot_dir,
         market_data_root=market_data_root,
         repo_root=repo_root,
         require_destination_name=require_destination_name,
+        snapshot_suffix=spec.suffix,
     )
     manifest_bytes = _read_snapshot_file(snapshot, _MANIFEST_FILE, "Tiingo daily pilot manifest")
     if _sha256(manifest_bytes) != _required_sha256(expected_manifest_hash, "manifest hash"):
@@ -475,7 +719,13 @@ def _verify_snapshot(
         raise ValueError("Tiingo daily pilot manifest is invalid") from exc
     if not isinstance(manifest, dict):
         raise ValueError("Tiingo daily pilot manifest must be an object")
-    _validate_manifest_header(manifest, snapshot=snapshot, dataset_hash=expected_dataset_hash)
+    _validate_manifest_header(
+        manifest,
+        snapshot=snapshot,
+        dataset_hash=expected_dataset_hash,
+        spec=spec,
+        expected_predecessor=expected_predecessor,
+    )
     responses = _validated_responses(manifest, snapshot=snapshot)
     _validate_response_sequence(manifest, responses)
     canonical_bytes = _read_snapshot_file(
@@ -542,12 +792,17 @@ def _verify_snapshot(
 
 
 def _validate_manifest_header(
-    manifest: dict[str, object], *, snapshot: Path, dataset_hash: str
+    manifest: dict[str, object],
+    *,
+    snapshot: Path,
+    dataset_hash: str,
+    spec: _SnapshotSpec,
+    expected_predecessor: TiingoDailyPilotPredecessor | None,
 ) -> None:
     if (
         manifest.get("schema_version") != 1
         or manifest.get("kind") != "tiingo_standard_eod_daily_pilot"
-        or manifest.get("pilot_version") != TIINGO_DAILY_PILOT_VERSION
+        or manifest.get("pilot_version") != spec.version
         or manifest.get("dataset_id") != _dataset_id(snapshot)
         or manifest.get("dataset_hash") != _required_sha256(dataset_hash, "dataset hash")
         or manifest.get("immutable_snapshot") is not True
@@ -565,25 +820,190 @@ def _validate_manifest_header(
     _validate_window(
         _date_value(requested_window.get("start")), _date_value(requested_window.get("end"))
     )
+    retrieved_at = _utc_datetime(
+        _datetime_value(manifest.get("retrieved_at_utc"), "retrieval time"),
+        "retrieval time",
+    )
     candidate_union = manifest.get("candidate_union")
     if not isinstance(candidate_union, dict):
         raise ValueError("Tiingo daily pilot candidate union is invalid")
     candidate_count = _positive_int(candidate_union.get("candidate_count"), "candidate count")
-    _required_sha256(candidate_union.get("sha256"), "candidate union hash")
+    candidate_hash = _required_sha256(candidate_union.get("sha256"), "candidate union hash")
     if (
         not isinstance(candidate_union.get("path"), str)
         or not candidate_union["path"].strip()
-        or candidate_union.get("selection_algorithm") != "rank_quantile_inclusive_v1"
+        or candidate_union.get("selection_algorithm") != spec.selection_algorithm
     ):
         raise ValueError("Tiingo daily pilot candidate union is invalid")
-    ranks = candidate_union.get("selected_ranks")
-    if not isinstance(ranks, list) or not 1 <= len(ranks) <= MAX_TIINGO_DAILY_PILOT_REQUESTS:
+    ranks = _rank_list(
+        candidate_union.get("selected_ranks"),
+        candidate_count=candidate_count,
+        label="selected ranks",
+    )
+    if not 1 <= len(ranks) <= MAX_TIINGO_DAILY_PILOT_REQUESTS:
         raise ValueError("Tiingo daily pilot selected ranks are invalid")
-    expected_ranks = rank_quantile_ranks(candidate_count, sample_size=len(ranks))
-    if ranks != list(expected_ranks):
+    if spec.requires_predecessor:
+        if expected_predecessor is None:
+            raise ValueError("Tiingo daily shard predecessor is required")
+        _validate_predecessor_against_union(
+            expected_predecessor,
+            candidate_union_hash=candidate_hash,
+            candidate_count=candidate_count,
+        )
+        if manifest.get("predecessor") != _predecessor_document(expected_predecessor):
+            raise ValueError("Tiingo daily shard predecessor evidence is invalid")
+        if retrieved_at < expected_predecessor.retrieved_at_utc + timedelta(hours=1):
+            raise ValueError("Tiingo daily shard pacing evidence is invalid")
+        excluded = _rank_list(
+            candidate_union.get("excluded_ranks"),
+            candidate_count=candidate_count,
+            label="excluded ranks",
+        )
+        if excluded != expected_predecessor.selected_ranks:
+            raise ValueError("Tiingo daily shard excluded ranks are invalid")
+        expected_ranks = rank_complement_quantiles(
+            candidate_count,
+            excluded_ranks=excluded,
+            sample_size=len(ranks),
+        )
+    else:
+        if expected_predecessor is not None or manifest.get("predecessor") is not None:
+            raise ValueError("Tiingo daily pilot predecessor evidence is invalid")
+        if candidate_union.get("excluded_ranks") not in (None, []):
+            raise ValueError("Tiingo daily pilot excluded ranks are invalid")
+        expected_ranks = rank_quantile_ranks(candidate_count, sample_size=len(ranks))
+    if ranks != expected_ranks:
         raise ValueError("Tiingo daily pilot selected ranks are invalid")
     if candidate_union.get("symbols_persisted_external_only") is not True:
         raise ValueError("Tiingo daily pilot candidate privacy scope is invalid")
+
+
+def _validate_snapshot_spec(spec: _SnapshotSpec) -> None:
+    if spec not in (_PILOT_SPEC, _SHARD_SPEC):
+        raise ValueError("Tiingo daily snapshot specification is invalid")
+
+
+def _validate_selection(
+    selection: NorgateCandidateSelection, *, sample_size: int, spec: _SnapshotSpec
+) -> None:
+    if selection.selection_algorithm != spec.selection_algorithm:
+        raise ValueError("Tiingo daily pilot selection algorithm is invalid")
+    ranks = _rank_list(
+        selection.selected_ranks,
+        candidate_count=selection.candidate_count,
+        label="selection ranks",
+    )
+    if len(ranks) != sample_size or len(selection.selected_symbols) != sample_size:
+        raise ValueError("Tiingo daily pilot selection size is invalid")
+    excluded = _rank_list(
+        selection.excluded_ranks,
+        candidate_count=selection.candidate_count,
+        label="selection excluded ranks",
+        allow_empty=True,
+    )
+    if spec.requires_predecessor:
+        if not excluded or set(ranks) & set(excluded):
+            raise ValueError("Tiingo daily shard selection is invalid")
+        expected = rank_complement_quantiles(
+            selection.candidate_count,
+            excluded_ranks=excluded,
+            sample_size=sample_size,
+        )
+    else:
+        if excluded:
+            raise ValueError("Tiingo daily pilot selection is invalid")
+        expected = rank_quantile_ranks(selection.candidate_count, sample_size=sample_size)
+    if ranks != expected:
+        raise ValueError("Tiingo daily pilot selection ranks are invalid")
+
+
+def _validate_predecessor_for_acquisition(
+    predecessor: TiingoDailyPilotPredecessor | None,
+    *,
+    selection: NorgateCandidateSelection,
+    retrieved_at_utc: datetime,
+    spec: _SnapshotSpec,
+) -> None:
+    if not spec.requires_predecessor:
+        if predecessor is not None:
+            raise ValueError("Tiingo daily pilot cannot have a predecessor")
+        return
+    if predecessor is None:
+        raise ValueError("Tiingo daily shard predecessor is required")
+    _validate_predecessor_against_union(
+        predecessor,
+        candidate_union_hash=selection.candidate_union_hash,
+        candidate_count=selection.candidate_count,
+    )
+    if selection.excluded_ranks != predecessor.selected_ranks:
+        raise ValueError("Tiingo daily shard excluded ranks are invalid")
+    if retrieved_at_utc < predecessor.retrieved_at_utc + timedelta(hours=1):
+        raise ValueError("Tiingo daily shard must wait one hour after its predecessor")
+
+
+def _validate_predecessor_against_union(
+    predecessor: TiingoDailyPilotPredecessor,
+    *,
+    candidate_union_hash: str,
+    candidate_count: int,
+) -> None:
+    if not isinstance(predecessor, TiingoDailyPilotPredecessor):
+        raise ValueError("Tiingo daily shard predecessor is invalid")
+    if (
+        _required_sha256(predecessor.dataset_hash, "shard predecessor dataset hash")
+        != predecessor.dataset_hash
+        or _required_sha256(predecessor.manifest_hash, "shard predecessor manifest hash")
+        != predecessor.manifest_hash
+        or _required_sha256(predecessor.candidate_union_hash, "shard predecessor union hash")
+        != candidate_union_hash
+        or predecessor.candidate_count != candidate_count
+    ):
+        raise ValueError("Tiingo daily shard predecessor is invalid")
+    ranks = _rank_list(
+        predecessor.selected_ranks,
+        candidate_count=candidate_count,
+        label="shard predecessor selected ranks",
+    )
+    if len(ranks) != MAX_TIINGO_DAILY_PILOT_REQUESTS or ranks != predecessor.selected_ranks:
+        raise ValueError("Tiingo daily shard predecessor selected ranks are invalid")
+    _utc_datetime(predecessor.retrieved_at_utc, "shard predecessor retrieval time")
+
+
+def _predecessor_document(predecessor: TiingoDailyPilotPredecessor) -> dict[str, object]:
+    return {
+        "snapshot_dir": str(predecessor.snapshot_dir),
+        "dataset_hash": predecessor.dataset_hash,
+        "manifest_hash": predecessor.manifest_hash,
+        "candidate_union_hash": predecessor.candidate_union_hash,
+        "candidate_count": predecessor.candidate_count,
+        "selected_ranks": list(predecessor.selected_ranks),
+        "retrieved_at_utc": _format_utc(predecessor.retrieved_at_utc),
+    }
+
+
+def _rank_list(
+    value: object,
+    *,
+    candidate_count: int,
+    label: str,
+    allow_empty: bool = False,
+) -> tuple[int, ...]:
+    if not isinstance(value, (list, tuple)):
+        raise ValueError(f"Tiingo daily pilot {label} are invalid")
+    ranks = tuple(value)
+    if (
+        (not allow_empty and not ranks)
+        or any(
+            not isinstance(rank, int)
+            or isinstance(rank, bool)
+            or rank < 1
+            or rank > candidate_count
+            for rank in ranks
+        )
+        or ranks != tuple(sorted(set(ranks)))
+    ):
+        raise ValueError(f"Tiingo daily pilot {label} are invalid")
+    return ranks
 
 
 def _validate_response_sequence(
@@ -800,24 +1220,29 @@ def _manifest(
     stop_reason: str | None,
     free_percent: float,
     market_data_root: Path,
+    spec: _SnapshotSpec,
+    predecessor: TiingoDailyPilotPredecessor | None,
 ) -> dict[str, object]:
-    return {
+    candidate_union: dict[str, object] = {
+        "path": str(Path(candidate_union_path).resolve()),
+        "sha256": selection.candidate_union_hash,
+        "candidate_count": selection.candidate_count,
+        "selection_algorithm": selection.selection_algorithm,
+        "selected_ranks": list(selection.selected_ranks),
+        "symbols_persisted_external_only": True,
+    }
+    if selection.excluded_ranks:
+        candidate_union["excluded_ranks"] = list(selection.excluded_ranks)
+    manifest: dict[str, object] = {
         "schema_version": 1,
         "kind": "tiingo_standard_eod_daily_pilot",
-        "pilot_version": TIINGO_DAILY_PILOT_VERSION,
+        "pilot_version": spec.version,
         "dataset_id": _dataset_id(snapshot_dir),
         "dataset_hash": dataset_hash,
         "immutable_snapshot": True,
         "completed": stop_reason is None,
         "stop_reason": stop_reason,
-        "candidate_union": {
-            "path": str(Path(candidate_union_path).resolve()),
-            "sha256": selection.candidate_union_hash,
-            "candidate_count": selection.candidate_count,
-            "selection_algorithm": "rank_quantile_inclusive_v1",
-            "selected_ranks": list(selection.selected_ranks),
-            "symbols_persisted_external_only": True,
-        },
+        "candidate_union": candidate_union,
         "requested_window": {
             "start": requested_start.isoformat(),
             "end": requested_end.isoformat(),
@@ -855,6 +1280,9 @@ def _manifest(
             "Raw payloads and candidate identifiers are private external evidence only.",
         ],
     }
+    if predecessor is not None:
+        manifest["predecessor"] = _predecessor_document(predecessor)
+    return manifest
 
 
 def _response_document(response: _PilotResponse) -> dict[str, object]:
@@ -961,6 +1389,7 @@ def _validate_destination(
     *,
     market_data_root: Path,
     repo_root: Path | None,
+    snapshot_suffix: str,
 ) -> tuple[Path, Path]:
     root = Path(market_data_root)
     if not root.is_dir() or root.is_symlink():
@@ -976,15 +1405,15 @@ def _validate_destination(
         raise ValueError("Tiingo daily pilot destination must stay outside Git")
     if not target.is_relative_to(root):
         raise ValueError("Tiingo daily pilot destination must stay under market data")
-    if not target.name.startswith("snapshot=") or not target.name.endswith(_SNAPSHOT_SUFFIX):
+    if not target.name.startswith("snapshot=") or not target.name.endswith(snapshot_suffix):
         raise ValueError("Tiingo daily pilot destination must use the required snapshot name")
     return target, root
 
 
 def _assert_no_staging_residue(destination: Path) -> None:
-    if destination.parent.is_dir() and any(
-        list(destination.parent.glob(".stage-*"))
-        + list(destination.parent.glob(".rejected-*"))
+    if destination.parent.is_dir() and (
+        any(destination.parent.glob(".stage-*"))
+        or any(destination.parent.glob(".rejected-*"))
     ):
         raise FileExistsError("Tiingo daily pilot staging residue requires recovery")
 
@@ -1006,6 +1435,7 @@ def _validated_snapshot_dir(
     market_data_root: Path,
     repo_root: Path | None,
     require_destination_name: bool,
+    snapshot_suffix: str,
 ) -> Path:
     root = Path(market_data_root).resolve()
     snapshot = Path(snapshot_dir)
@@ -1017,7 +1447,7 @@ def _validated_snapshot_dir(
     if repo_root is not None and snapshot.is_relative_to(Path(repo_root).resolve()):
         raise ValueError("Tiingo daily pilot snapshot must stay outside Git")
     if require_destination_name and (
-        not snapshot.name.startswith("snapshot=") or not snapshot.name.endswith(_SNAPSHOT_SUFFIX)
+        not snapshot.name.startswith("snapshot=") or not snapshot.name.endswith(snapshot_suffix)
     ):
         raise ValueError("Tiingo daily pilot snapshot name is invalid")
     return snapshot
@@ -1158,6 +1588,15 @@ def _date_value(value: object) -> date:
         return date.fromisoformat(value)
     except ValueError as exc:
         raise ValueError("Tiingo daily pilot date value is invalid") from exc
+
+
+def _datetime_value(value: object, label: str) -> datetime:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"Tiingo daily pilot {label} is invalid")
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError(f"Tiingo daily pilot {label} is invalid") from exc
 
 
 def _optional_date(value: object) -> date | None:
