@@ -46,19 +46,23 @@ re-attestation; it does not widen that raw-bar boundary.
 
 ## Current Objective
 
-The full-history Tiingo snapshot is complete and offline-attested. Its bounded
-exact raw-D1 comparison with the r2 Yahoo-lineage snapshot is `unsupported`, so
-it remains separate from the Yahoo wrapper and all campaign `CatalogedBars`
-paths. The next bounded cross-lane task is an existing-data intraday resampling
-and local-paper smoke, not new acquisition, source adjudication, or training.
+The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
+all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
+`unsupported`. The CVS/FCX/KO intraday smoke is now complete from a
+loader-attested short snapshot. The next Data-owned task is one bounded,
+license-safe attempt to expand historical intraday coverage for SPY/QQQ/IWM,
+not source adjudication, training, or a performance dataset.
 
 ## Ready Queue
 
-1. Support one offline intraday smoke from the existing small CVS/FCX/KO
-   canonical 1-minute snapshot through the Data loader and deterministic
-   `1m`/`5m`/`10m`/`1h`/`3h` resampling. Do not acquire data or treat its short
-   window as a performance dataset.
-2. If future work needs historical point-in-time universe membership, prepare a
+1. Attempt one bounded historical intraday expansion for fixed SPY/QQQ/IWM
+   through existing evidence or a no-cost, no-auth, license-compatible source.
+   Use only `TIINGO_API_TOKEN` if needed; stop rather than bypass rights,
+   payment, login, manual access, or the D-drive floor.
+2. If the allowed sources cannot provide useful history, record the smallest
+   concrete paid-data request with product, cost, coverage, rights, and an
+   exact operator decision; do not create a placeholder provider.
+3. If future work needs historical point-in-time universe membership, prepare a
    concrete paid-data request for Sharadar or Norgate with product, cost,
    coverage, and rights; templates are not evidence.
 
@@ -234,6 +238,13 @@ and local-paper smoke, not new acquisition, source adjudication, or training.
   `open/high/low/close/volume` matches were IWM `1/2/3/2/1`, QQQ
   `1/2/4/2/0`, and SPY `6/1/4/2/0`. Do not add a tolerance, normalization,
   rescale, helper, or data-quality gate from it.
+- The short intraday smoke re-attested
+  `us_equities.yahoo_intraday_starter.1m.snapshot=2026-07-09-shadow-t0-8d-probe`
+  with hash `sha256:8a21be83e26ffad950a0b8a37a37c349d4c57de5526f52ff13103cf26c659bd6`.
+  CVS had 2,758 loaded 1-minute bars; FCX and KO had 2,759 each. All three
+  completed the `1m`/`5m`/`10m`/`1h`/`3h` local-paper smoke cells with two
+  local-paper fills and flat replay. CVS's known missing minute and irregular
+  tail remain warnings; neither was repaired or used as a quality gate.
 
 ## Recovery
 
@@ -299,5 +310,7 @@ is a separate read-only source; its exact raw-D1 comparison is closed as
 `unsupported` and must not widen symbols, alter the `2000-05-26`
 common-session start, or unwrap either source into a campaign/local-paper path.
 The next local-paper smoke may use only the existing short intraday snapshot;
-it is not a performance dataset. A future universe-wide research claim still
-needs PIT membership and delistings.
+it is not a performance dataset. That smoke is complete; do not treat it as
+historical coverage. The next source expansion must retain a manifest and
+loader-attested lineage. A future universe-wide research claim still needs PIT
+membership and delistings.

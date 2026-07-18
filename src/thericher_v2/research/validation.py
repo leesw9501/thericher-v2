@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any, Literal, Protocol
 
 from thericher_v2.contracts import (
     SCHEMA_VERSION,
@@ -24,14 +24,25 @@ from thericher_v2.contracts import (
     OrderIntent,
     Signal,
     Timeframe,
+    require_utc,
 )
-from thericher_v2.data import BarQuery, CatalogedBars, SampleBarProvider, assess_bar_quality
+from thericher_v2.data import (
+    SUPPORTED_RESAMPLE_TIMEFRAMES,
+    BarQuery,
+    CatalogedBars,
+    SampleBarProvider,
+    assess_bar_quality,
+    resample_bars,
+)
 from thericher_v2.ensemble import decide
 from thericher_v2.execution import (
     LOCAL_PAPER_SOURCE,
     EmergencyStore,
+    FillEventArtifact,
     LocalPaperBroker,
     LocalPaperFill,
+    collect_fill_source_evidence,
+    replay_local_paper_account,
 )
 from thericher_v2.models import MomentumModel
 from thericher_v2.serialization import to_jsonable
@@ -46,6 +57,7 @@ from .campaign import (
 DEFAULT_MODEL_ARTIFACT_ROOT = Path("D:/thericher-v2/model-artifacts")
 DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
 VALIDATION_SOURCE = "bounded_validation"
+INTRADAY_MULTITIMEFRAME_BASELINE_SOURCE = "intraday_multitimeframe_baseline"
 
 
 class PredictionModel(Protocol):
@@ -183,6 +195,64 @@ class ValidationResult:
     @property
     def gross_pnl(self) -> Decimal:
         return self.after_cost_pnl + self.total_fees + self.total_slippage
+
+
+@dataclass(frozen=True)
+class MultiTimeframeBaselineCell:
+    timeframe: Timeframe
+    resampled_bar_count: int
+    status: Literal["completed", "skipped"]
+    skip_reason: str | None
+    decision_bar_end: datetime | None
+    decision_id: str | None
+    local_paper_fill_count: int
+    all_fills_local_paper: bool
+    final_position: Decimal | None
+    replayed_final_position: Decimal | None
+    work_dir: Path | None
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "timeframe", Timeframe(self.timeframe))
+        if self.resampled_bar_count < 0 or self.local_paper_fill_count < 0:
+            raise ValueError("baseline counts must be non-negative")
+        if self.status not in {"completed", "skipped"}:
+            raise ValueError("baseline status must be completed or skipped")
+        if self.decision_bar_end is not None:
+            object.__setattr__(
+                self,
+                "decision_bar_end",
+                require_utc(self.decision_bar_end, "decision_bar_end"),
+            )
+        if self.status == "completed":
+            if (
+                self.skip_reason is not None
+                or self.decision_bar_end is None
+                or self.decision_id is None
+                or self.final_position is None
+                or self.replayed_final_position is None
+            ):
+                raise ValueError("completed baseline cell is missing replay evidence")
+        elif (
+            self.skip_reason is None
+            or self.decision_bar_end is not None
+            or self.decision_id is not None
+            or self.local_paper_fill_count != 0
+            or self.final_position is not None
+            or self.replayed_final_position is not None
+            or self.work_dir is not None
+        ):
+            raise ValueError("skipped baseline cell must not contain execution evidence")
+
+
+@dataclass(frozen=True)
+class MultiTimeframeBaselineResult:
+    run_id: str
+    dataset_id: str
+    dataset_hash: str
+    source_path: Path
+    cells: tuple[MultiTimeframeBaselineCell, ...]
+    schema_version: int = SCHEMA_VERSION
 
 
 @dataclass(frozen=True)
@@ -596,6 +666,260 @@ def run_local_paper_validation(
             None if cataloged_data is None else cataloged_data.source_path.resolve()
         ),
     )
+
+
+def run_intraday_multitimeframe_local_paper_baseline(
+    source: CatalogedBars,
+    *,
+    run_id: str = "intraday-multitimeframe-local-paper-baseline",
+    work_root: Path | None = None,
+    repo_root: Path | None = None,
+) -> MultiTimeframeBaselineResult:
+    """Replay one completed bar per timeframe through isolated local-paper stores.
+
+    The completed resampled bar is the decision input. Entry and deterministic
+    flattening happen on the next two contiguous 1-minute bars, so resampled
+    session gaps never become invented execution bars.
+    """
+
+    _validate_run_label(run_id)
+    bars = _validated_intraday_baseline_source(source)
+    if work_root is None:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temp_dir:
+            return _run_intraday_multitimeframe_baseline(
+                source=source,
+                bars=bars,
+                run_id=run_id,
+                work_root=Path(temp_dir),
+                retain_work_paths=False,
+            )
+
+    resolved_root = Path(work_root)
+    _reject_repo_artifact_path(resolved_root, repo_root or Path.cwd())
+    run_root = resolved_root / "intraday-multitimeframe-baseline" / run_id
+    _require_new_path(run_root, "intraday multitimeframe baseline work directory")
+    run_root.mkdir(parents=True, exist_ok=False)
+    return _run_intraday_multitimeframe_baseline(
+        source=source,
+        bars=bars,
+        run_id=run_id,
+        work_root=run_root,
+        retain_work_paths=True,
+    )
+
+
+def _validated_intraday_baseline_source(source: CatalogedBars) -> tuple[Bar, ...]:
+    if not isinstance(source, CatalogedBars):
+        raise TypeError("intraday baseline requires Data-owned CatalogedBars")
+    bars = tuple(sorted(source.bars, key=lambda bar: bar.start_ts))
+    if not bars:
+        raise ValueError("intraday baseline requires at least one bar")
+    first = bars[0]
+    if (
+        first.timeframe != Timeframe.M1
+        or not first.complete
+        or any(
+            bar.timeframe != Timeframe.M1
+            or not bar.complete
+            or bar.symbol != first.symbol
+            or bar.market != first.market
+            for bar in bars
+        )
+    ):
+        raise ValueError("intraday baseline requires complete homogeneous 1m bars")
+    if any(
+        current.start_ts <= prior.start_ts
+        for prior, current in zip(bars, bars[1:], strict=False)
+    ):
+        raise ValueError("intraday baseline bars must be strictly chronological")
+    return bars
+
+
+def _run_intraday_multitimeframe_baseline(
+    *,
+    source: CatalogedBars,
+    bars: tuple[Bar, ...],
+    run_id: str,
+    work_root: Path,
+    retain_work_paths: bool,
+) -> MultiTimeframeBaselineResult:
+    m1_by_start = {bar.start_ts: bar for bar in bars}
+    cells: list[MultiTimeframeBaselineCell] = []
+    for timeframe in SUPPORTED_RESAMPLE_TIMEFRAMES:
+        resampled = tuple(resample_bars(bars, timeframe))
+        selected = _select_multitimeframe_execution_bars(resampled, m1_by_start)
+        if selected is None:
+            skip_reason = (
+                "no_complete_resampled_bars"
+                if not resampled
+                else "no_completed_bar_with_two_following_1m_bars"
+            )
+            cells.append(
+                MultiTimeframeBaselineCell(
+                    timeframe=timeframe,
+                    resampled_bar_count=len(resampled),
+                    status="skipped",
+                    skip_reason=skip_reason,
+                    decision_bar_end=None,
+                    decision_id=None,
+                    local_paper_fill_count=0,
+                    all_fills_local_paper=True,
+                    final_position=None,
+                    replayed_final_position=None,
+                    work_dir=None,
+                )
+            )
+            continue
+
+        decision_bar, signal_bar, entry_bar, exit_bar = selected
+        cell_dir = work_root / timeframe.value
+        cell_dir.mkdir(parents=True, exist_ok=False)
+        event_store = EventStore(cell_dir / "state.sqlite", cell_dir / "events.jsonl")
+        broker = LocalPaperBroker(
+            event_store=event_store,
+            emergency_store=EmergencyStore(cell_dir / "emergency.json"),
+        )
+        decision_id = _multitimeframe_decision_id(run_id, timeframe, decision_bar)
+        _append_multitimeframe_baseline_decision(
+            event_store=event_store,
+            run_id=run_id,
+            decision_id=decision_id,
+            decision_bar=decision_bar,
+        )
+        entry_order = OrderIntent(
+            client_order_id=f"{run_id}-{timeframe.value}-entry",
+            symbol=decision_bar.symbol,
+            market=decision_bar.market,
+            side="buy",
+            quantity=Decimal("1"),
+            limit_price=None,
+            decision_id=decision_id,
+            created_at=decision_bar.end_ts,
+        )
+        entry = broker.submit_and_fill_next_bar(
+            entry_order,
+            signal_bar=signal_bar,
+            execution_bar=entry_bar,
+        )
+        if entry.fill is None:
+            raise RuntimeError("multitimeframe baseline entry did not produce a local-paper fill")
+
+        exit_order = OrderIntent(
+            client_order_id=f"{run_id}-{timeframe.value}-exit",
+            symbol=decision_bar.symbol,
+            market=decision_bar.market,
+            side="sell",
+            quantity=entry.fill.quantity,
+            limit_price=None,
+            decision_id=f"{decision_id}:flatten",
+            created_at=entry_bar.end_ts,
+        )
+        exit_execution = broker.submit_and_fill_next_bar(
+            exit_order,
+            signal_bar=entry_bar,
+            execution_bar=exit_bar,
+        )
+        if exit_execution.fill is None:
+            raise RuntimeError("multitimeframe baseline exit did not produce a local-paper fill")
+
+        event_path = cell_dir / "events.jsonl"
+        fill_evidence = collect_fill_source_evidence(
+            (
+                FillEventArtifact(
+                    path=event_path,
+                    expected_fill_count=2,
+                    label=f"{run_id}:{timeframe.value}",
+                ),
+            )
+        )
+        if not fill_evidence.local_paper_replay_invariant_passed:
+            raise RuntimeError("multitimeframe baseline must preserve local-paper-only fills")
+        final_position = broker.account().quantity(
+            market=decision_bar.market,
+            symbol=decision_bar.symbol,
+        )
+        replayed_final_position = replay_local_paper_account(event_store).quantity(
+            market=decision_bar.market,
+            symbol=decision_bar.symbol,
+        )
+        if final_position != 0 or replayed_final_position != final_position:
+            raise RuntimeError(
+                "multitimeframe baseline must finish with a replayable flat position"
+            )
+        cells.append(
+            MultiTimeframeBaselineCell(
+                timeframe=timeframe,
+                resampled_bar_count=len(resampled),
+                status="completed",
+                skip_reason=None,
+                decision_bar_end=decision_bar.end_ts,
+                decision_id=decision_id,
+                local_paper_fill_count=len(fill_evidence.local_paper_fills),
+                all_fills_local_paper=fill_evidence.all_fills_local_paper,
+                final_position=final_position,
+                replayed_final_position=replayed_final_position,
+                work_dir=cell_dir if retain_work_paths else None,
+            )
+        )
+    return MultiTimeframeBaselineResult(
+        run_id=run_id,
+        dataset_id=source.dataset_id,
+        dataset_hash=source.dataset_hash,
+        source_path=source.source_path.resolve(),
+        cells=tuple(cells),
+    )
+
+
+def _select_multitimeframe_execution_bars(
+    resampled: tuple[Bar, ...],
+    m1_by_start: dict[datetime, Bar],
+) -> tuple[Bar, Bar, Bar, Bar] | None:
+    for decision_bar in resampled:
+        signal_bar = m1_by_start.get(decision_bar.end_ts - Timeframe.M1.duration)
+        entry_bar = m1_by_start.get(decision_bar.end_ts)
+        exit_bar = m1_by_start.get(decision_bar.end_ts + Timeframe.M1.duration)
+        if signal_bar is None or entry_bar is None or exit_bar is None:
+            continue
+        if signal_bar.end_ts != decision_bar.end_ts or entry_bar.start_ts != signal_bar.end_ts:
+            continue
+        if exit_bar.start_ts != entry_bar.end_ts:
+            continue
+        return decision_bar, signal_bar, entry_bar, exit_bar
+    return None
+
+
+def _append_multitimeframe_baseline_decision(
+    *,
+    event_store: EventStore,
+    run_id: str,
+    decision_id: str,
+    decision_bar: Bar,
+) -> None:
+    event_store.append(
+        Event(
+            event_type="ensemble_decision",
+            created_at=decision_bar.end_ts,
+            payload={
+                "source": INTRADAY_MULTITIMEFRAME_BASELINE_SOURCE,
+                "run_id": run_id,
+                "decision_id": decision_id,
+                "symbol": decision_bar.symbol,
+                "market": decision_bar.market,
+                "timeframe": decision_bar.timeframe.value,
+                "action": "buy",
+                "confidence": "1",
+                "expected_edge_bps": "0",
+                "risk_score": "0",
+                "prediction_ids": [],
+                "reason": "completed_bar_local_paper_baseline",
+            },
+        )
+    )
+
+
+def _multitimeframe_decision_id(run_id: str, timeframe: Timeframe, bar: Bar) -> str:
+    compact_ts = bar.end_ts.strftime("%Y%m%dT%H%M%SZ")
+    return f"{run_id}:{timeframe.value}:{bar.symbol}:{compact_ts}"
 
 
 def run_sample_cpu_smoke(work_dir: Path | None = None) -> ValidationResult:

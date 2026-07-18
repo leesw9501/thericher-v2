@@ -1294,3 +1294,31 @@ PIT validity, execution quality, or profitability.
 Reason: adding a post-hoc tolerance after this falsifier would turn the check
 into a way to rationalize provider differences. Preserve both immutable inputs
 and move to an independent, bounded engine-loop task instead.
+
+## 2026-07-18 - Intraday baseline keeps decision and execution timeframes separate
+
+Decision: accept one offline, local-paper-only pipeline smoke for a Data-attested
+1-minute stream. For each supported `1m`/`5m`/`10m`/`1h`/`3h` bar, the first
+complete resampled bar with two following contiguous 1-minute bars is a
+deterministic decision input; the two 1-minute bars perform the local-paper
+entry and flatten. Each timeframe uses an isolated event store and must have
+exactly two `source: local_paper` fills plus a replayed flat final position.
+
+The result exposes source identity, counts, timing identity, fill-source
+verification, and terminal position only. It creates no PnL result, candidate,
+campaign, model artifact, ranking, holdout, or profitability claim. Temporary
+work is discarded by default; durable event evidence requires an explicit root
+outside Git.
+
+The read-only smoke re-attested
+`us_equities.yahoo_intraday_starter.1m.snapshot=2026-07-09-shadow-t0-8d-probe`
+with dataset hash
+`sha256:8a21be83e26ffad950a0b8a37a37c349d4c57de5526f52ff13103cf26c659bd6`.
+CVS, FCX, and KO completed all five timeframe cells with two local-paper fills
+and flat replayed positions; no persistent artifact was needed.
+
+Reason: the existing generic validator requires same-timeframe contiguous
+execution and would either reject normal session gaps or tempt the system to
+invent higher-timeframe execution bars. Keeping completed-bar decisions and
+next-bar 1-minute execution explicit preserves timing while remaining a narrow
+pipeline smoke.

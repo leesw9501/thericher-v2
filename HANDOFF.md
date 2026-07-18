@@ -217,6 +217,24 @@ external artifact from this result. It says nothing about source correctness,
 adjustment semantics, interchangeability, independence, PIT, execution, or
 profitability.
 
+The offline intraday multi-timeframe local-paper baseline is complete. It
+re-attested the existing CVS/FCX/KO 1-minute snapshot
+`us_equities.yahoo_intraday_starter.1m.snapshot=2026-07-09-shadow-t0-8d-probe`
+with hash
+`sha256:8a21be83e26ffad950a0b8a37a37c349d4c57de5526f52ff13103cf26c659bd6`.
+For each symbol it used a completed `1m`/`5m`/`10m`/`1h`/`3h` resampled bar as
+the decision input, then exactly the next two contiguous 1-minute bars for
+local-paper entry and flattening. All 15 cells had two `source: local_paper`
+fills and replayed flat. The result carries no PnL, ranking, model, campaign,
+holdout, execution-quality, or profitability claim. Default smoke evidence was
+intentionally temporary; specify an external work root only when durable event
+evidence is genuinely needed.
+
+Claude CLI drift-check was attempted but the installed CLI is not logged in.
+The Data, Engine Research, Execution, and Review role checks were completed
+instead. Do not treat that tool outage as a Claude approval; retry it before a
+future material bias, capital, or architecture decision after it is available.
+
 A bounded no-auth triage acquired no new data. `D:\market_data\pit_sources`
 has only empty raw/template workspaces for paid Sharadar and Norgate source
 paths. Stooq requested browser verification and was not bypassed; the existing
@@ -421,10 +439,11 @@ unnecessary row-level data.
 
 ## Next Objective
 
-`NEXT_CODEX_GOAL.md` now asks for a bounded, offline intraday multi-timeframe
-local-paper baseline using existing 1-minute evidence. It must exercise
-`1m`/`5m`/`10m`/`1h`/`3h` resampling and preserve local-paper-only replay
-boundaries without training, ranking, KIS, credentials, network access, or a
-profitability claim. KIS remains failed closed pending the non-secret pairing
-check and a separately authorized future probe. The KIS capital envelope, paid
-data, order submission, and live capital remain separate future decisions.
+`NEXT_CODEX_GOAL.md` now asks the Data lane to make one bounded historical
+intraday-data expansion attempt for `SPY`/`QQQ`/`IWM`, using only existing data
+or an approved no-cost, no-auth, license-compatible source. It may use only the
+approved Tiingo token when necessary, must preserve D-drive limits and stop
+rules, and must not touch KIS, orders, models, GPU, or live behavior. KIS
+remains failed closed pending the non-secret pairing check and a separately
+authorized future probe. The KIS capital envelope, paid data, order submission,
+and live capital remain separate future decisions.

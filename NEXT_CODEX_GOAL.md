@@ -2,55 +2,56 @@
 
 ## Objective
 
-Build one bounded, offline intraday multi-timeframe local-paper baseline from
-the existing canonical 1-minute CVS/FCX/KO evidence.
+Build one bounded, source-attested historical intraday-data expansion for
+`SPY`, `QQQ`, and `IWM`.
 
-This advances backtest and walk-forward validation plus paper-trading readiness
-by proving that one completed-bar decision path can consume deterministic
-`1m`, `5m`, `10m`, `1h`, and `3h` bars and remain fully replayable through the
-local paper simulator. It is a pipeline smoke, not a strategy-selection,
-execution-quality, or profitability result.
+This advances data collection for later feature/model research. It must either
+produce one useful, replayable external snapshot with a Data-owned loader or
+close the unavailable-source path cleanly with an exact operator request. It is
+not model training, a campaign, a ranking result, or a profitability claim.
 
 ## Required First Reads
 
 Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`, `VISION.md`,
 `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`,
-and the Data, Engine Research, and Execution stateboards. Ask Claude for a
-short scope-drift check before changing a shared validation or execution
-contract, then invoke the Review checkpoint.
+and the Data and Engine Research stateboards. Before accepting a new source or
+data-lineage contract, ask Claude for a short bias/drift check; if the CLI is
+unavailable, record that fact and use the Review checkpoint without treating it
+as approval.
 
 ## Boundaries
 
-- Use only existing local market-data evidence, starting with the small
-  CVS/FCX/KO 1-minute snapshot. Re-attest it through the Data-owned loader; do
-  not read `.env`, credentials, or raw files through an unverified path.
-- Do not call a network API, acquire data, call KIS, submit broker orders, or
-  query a broker account. Every generated fill must remain `source: local_paper`.
-- Do not train a model, use GPU, create model artifacts, run a campaign, rank
-  a candidate, open a holdout, or make a performance/profitability claim.
-- Keep the change to the smallest shared Data/Research/Execution contract that
-  actually enables the smoke. Do not add a scheduler, provider framework,
-  report family, dashboard, or a second validation system.
+- Start from existing `D:\market_data` evidence. Do not download market data
+  into Git or overwrite an existing snapshot.
+- Only `TIINGO_API_TOKEN` may be read if an already approved Tiingo endpoint
+  genuinely needs it. Never print, log, commit, artifact, or send it to Claude.
+- Do not call KIS, read other credentials, submit or simulate orders, use GPU,
+  train a model, create a candidate/campaign, or claim performance.
+- Use only no-cost, no-auth, license-compatible sources or the already approved
+  Tiingo entitlement. Do not pay, log in, accept manual terms, bypass access
+  controls, or add a placeholder provider.
+- Warn before projected D-drive free space falls below 20%; stop acquisition
+  before the 15% floor. Stop a source after two bounded automated failures or
+  when its marginal coverage no longer helps this objective.
 
 ## Required Work
 
-1. Re-attest the exact existing 1-minute input and inventory its usable
-   completed-bar spans without exposing raw rows in durable output.
-2. Reuse or minimally complete deterministic resampling for `1m`, `5m`, `10m`,
-   `1h`, and `3h`, preserving incomplete-bucket omission and per-symbol/timeframe
-   isolation.
-3. Add one small deterministic completed-bar baseline that produces a decision,
-   eligible `OrderIntent`, and replayable local-paper fill path for each usable
-   timeframe. Flatten or explicitly account for any final position.
-4. Run a CPU smoke on deterministic sample bars first, then one read-only local
-   data smoke if the attested window supports it. Record only concise counts,
-   data limitations, and local-paper replay facts outside Git when recovery
-   evidence is genuinely needed.
-5. Add focused tests proving resampling boundaries, offline/credential-free
-   execution, local-paper-only fills, replayability, and artifact placement
-   outside Git when an artifact is written.
-6. Update the Data, Engine Research, and Execution stateboards, `HANDOFF.md`,
-   and this next goal before ending the task.
+1. Make a bounded metadata inventory of current SPY/QQQ/IWM intraday coverage,
+   exact gap, and D-drive capacity; avoid a broad recursive scan.
+2. Assess at most two eligible acquisition paths, including the approved Tiingo
+   entitlement where useful. Confirm endpoint scope, rights, retention, and
+   expected coverage before retrieval; do not infer paid entitlement.
+3. If one path meets the boundary, acquire exactly one deduplicated fixed-symbol
+   snapshot under `D:\market_data`, with a concise manifest and Data-owned
+   hash-attesting loader. Preserve source/coverage limitations and keep it out
+   of campaign/paper/model APIs.
+4. If no path is eligible or sufficient, stop cleanly. Record the concrete gap
+   and, only when a paid source would materially solve it, prepare one concise
+   operator request with product, price, coverage, rights, size, and steps.
+5. Add focused tests for loader attestation, offline replay, source limitation,
+   storage boundary, and no credential/network dependency after acquisition.
+6. Update the Data and Engine Research stateboards, `HANDOFF.md`, and this next
+   goal before ending the task.
 
 ## Verification
 
@@ -59,4 +60,4 @@ Run `uv run --extra dev pytest -q`, `uv run --extra dev ruff check .`, and
 
 ## Suggested Commit Message
 
-`Add intraday multi-timeframe local paper baseline`
+`Add bounded intraday data evidence`

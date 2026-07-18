@@ -20,6 +20,11 @@
   not prove a cause or resolve the earlier open-order issue.
 - Existing broker-free fills remain labeled `source: local_paper`; fake broker
   fills use `source: in_memory_broker`.
+- The completed offline intraday baseline used isolated local-paper event stores
+  for CVS, FCX, and KO across `1m`/`5m`/`10m`/`1h`/`3h`. Each of its 15 cells
+  had exactly two `source: local_paper` fills and a flat replayed position. It
+  made no KIS call, read no credential, changed no mode, and retained no
+  persistent smoke artifact.
 
 ## Owns
 

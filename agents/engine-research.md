@@ -55,9 +55,9 @@
 - The fixed-ETF source-sensitivity question and the full-history exact
   raw-source alignment check are unsupported. The broad ETF wrapper supplies
   descriptive features plus explicit future-only outcomes, but neither opens
-  CPU/GPU model work. The next bounded target is a deterministic intraday
-  multi-timeframe local-paper baseline using existing short evidence; it cannot
-  rank, promote, open a holdout, or claim profitability.
+  CPU/GPU model work. The deterministic intraday multi-timeframe local-paper
+  baseline is complete on short CVS/FCX/KO evidence; it is pipeline evidence
+  only and cannot rank, promote, open a holdout, or claim profitability.
 
 ## Explicit-Event Replay
 
@@ -78,9 +78,9 @@
 
 ## Breadth Queue
 
-- Support one deterministic intraday `1m`/`5m`/`10m`/`1h`/`3h` local-paper
-  baseline from existing short data. Do not use it as a model-selection input
-  or start a GPU job merely to fill idle capacity.
+- Wait for Data to expand or close the SPY/QQQ/IWM historical intraday evidence
+  gap. Do not use the completed short-data smoke as model-selection input or
+  start a GPU job merely to fill idle capacity.
 
 ## Depth Queue
 
@@ -137,6 +137,11 @@
   and enforces a confirmed final session plus shared listed-session coverage.
   It is a retrieval-time data record, not point-in-time universe evidence or an
   independent validation set.
+- The intraday baseline accepts only Data-owned 1-minute `CatalogedBars`. It
+  resamples one completed bar per target timeframe, then uses exactly the next
+  two contiguous 1-minute bars for local-paper entry and flattening. Each
+  timeframe has an isolated event store, exactly two `local_paper` fills, and a
+  flat replayed position. It emits no PnL, candidate, campaign, or model result.
 
 ## Recovery
 
@@ -198,6 +203,7 @@
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1
   comparison is also unsupported. The broad-Yahoo feature/outcome substrate is
-  complete and remains descriptive. The next bounded step is an offline
-  intraday multi-timeframe local-paper baseline; do not rank, promote, name a
-  winner, claim profitability, or start GPU training.
+  complete and remains descriptive. The intraday multi-timeframe local-paper
+  baseline is also complete but remains a short-data pipeline smoke. The next
+  bounded step is Data's historical intraday expansion attempt; do not rank,
+  promote, name a winner, claim profitability, or start GPU training.
