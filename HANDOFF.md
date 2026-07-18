@@ -319,10 +319,15 @@ one marker on `2024-09-30`. This is consistent with the issuer's after-close
 effective time and next-session split-adjusted trading, but only as a literal
 stored-field observation. It prohibits treating a marker as same-session
 actionable or as the price-ratio date; it does not establish population time,
-a general lag, or that the ratio isolates split adjustment. The next bounded
-check may inspect the existing query signature and public setting documentation
-and classify this fixture's ratio-change magnitude without changing any local
-Norgate setting.
+a general lag, or that the ratio isolates split adjustment. The final bounded
+metadata check found query-level `stock_price_adjustment_setting` and
+`padding_setting`, with an observed `TOTALRETURN` default and a tenfold ratio
+transition on `2024-10-01`. Official Norgate material makes that magnitude
+consistent with the split, but does not bind the Python setting to UI semantics
+or show that the ratio isolates splits. Claude supports the literal observation
+only; the semantic branch is `unsupported` for provider/campaign field meaning
+and is closed without a setting change. A future load-bearing use must reopen
+under its own data contract.
 A Docker `engine`
 runtime probe listed 166 top-level files through the `/app/market_data` `ro`
 mount, but no proprietary Docker query or export bridge is licensed or
@@ -395,6 +400,15 @@ cells, decision count, trade count, and after-cost-PnL sign did not change.
 That is descriptive, non-independent evidence only because the r2 session
 calendar remains shared; the parent `unsupported` verdict stays sticky and no
 selection, promotion, or profitability claim is permitted.
+
+GPU research is eligibility-driven rather than utilization-driven. A finite
+predeclared breadth batch may start only from a hash-bound dataset explicitly
+eligible for development training and a contract with fixed target, costs,
+temporal split, metrics, and stop rules. It then uses CPU baselines plus two
+fixed-seed MLP/TCN candidates, followed only by sensitivity/Claude-cleared
+depth and out-of-fold-only ensemble work. No scheduler or automatic refill is
+allowed, and idle is correct when the contract is absent. Current research data
+does not meet those conditions.
 
 ## Execution Reality
 
@@ -513,10 +527,9 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The Norgate trial's fixture and timing checks are complete and do not justify a
-purchase, cleanup, provider, or research promotion. The next objective is one
-bounded Data-owned inspection of the existing `SMCI` ratio-change magnitude and
-current public adjustment-setting documentation, with no local setting mutation.
-It must create no provider/cache/export/campaign path and keep all Norgate data
-outside Git. Any unresolved field meaning is a limitation, not a reason to buy
-data or adapt historical prices.
+The Norgate trial's bounded semantic branch is closed as `unsupported` for
+provider/campaign field meaning. The next objective is a narrow architecture-
+reviewed Windows-host-only raw-daily provider adapter: query-local `NONE`
+adjustment only, no data cache/export/artifact, no Docker bridge, and mock-only
+tests in Git. It may prove local adapter behavior but cannot open a campaign,
+GPU job, purchase recommendation, or research promotion.

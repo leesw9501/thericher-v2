@@ -1544,3 +1544,54 @@ Reason: the stored marker and ratio transition differ on the very fixture where
 the issuer's after-close effective time matters. Refusing same-session use is a
 safe limitation, whereas generalizing the lag or price-field semantics would
 create an unmeasured leakage surface.
+
+## 2026-07-19 - Norgate split-field meaning remains unsupported
+
+Decision: close the bounded Norgate semantics branch without mutating a local
+setting or adding consumer code. The local `price_timeseries` signature exposes
+query-level `stock_price_adjustment_setting` and `padding_setting`; its observed
+default argument is `StockPriceAdjustmentType.TOTALRETURN`, with `CAPITAL`,
+`CAPITALSPECIAL`, `NONE`, and `TOTALRETURN` enum members. Under that unchanged
+call behavior, the four-row `SMCI` window's `Close`/`Unadjusted Close` ratio
+transition category was tenfold on `2024-10-01`, consistent with the issuer's
+10-for-1 split and the prior marker-then-ratio ordering.
+
+Official Norgate material says price adjustment is configurable, capital
+reconstructions include splits, and pre-ex-date prices are adjusted by the
+previous/new share ratio when that adjustment is selected. It also labels
+`Capital Event` as effective for holding at the close on the day before an
+ex-date. Claude returned `supported-with-limits` only for the literal
+magnitude-consistency observation. The evidence does not bind Python
+`TOTALRETURN` to the cited UI semantics, show that the ratio isolates splits
+from dividends or other adjustments, establish source timestamps, or support a
+general rule.
+
+Reason: further semantic resolution would require changing a local setting or
+widening fixtures, neither of which is justified by this trial question. The
+branch is therefore `unsupported` for provider/campaign field meaning. A future
+load-bearing use must reopen it under its own bounded data contract.
+
+## 2026-07-19 - GPU research uses finite eligibility-driven batches
+
+Decision: reduce avoidable GPU idle time only with a finite, pre-enumerated
+research batch whose dataset is hash-bound and explicitly development-training
+eligible and whose campaign contract fixes target, costs, temporal split,
+metrics, and stop rules. This does not authorize a job today.
+
+When eligible, breadth runs CPU naive/linear/tree baselines plus compact
+PyTorch MLP and TCN candidates with two fixed seeds each, serially on the one
+GPU. Depth admits at most two candidates with three seeds only after temporal
+sensitivity and a Claude challenge. Ensemble work requires independent
+out-of-fold predictions and starts with equal-weight probability averaging and
+disagreement abstention. CPU may prepare the already-enumerated batch while the
+GPU runs. No daemon, scheduler, automatic refill, sealed-holdout tuning,
+untrusted-weight loading, or execution-process model loading is allowed. Idle
+is the default when those preconditions are absent or paper reliability needs
+the resources.
+
+Reason: Claude's `supported-with-limits` drift review found the mechanics
+consistent with existing safety boundaries, but warned that a generic
+`keep one GPU occupied` rule would become queue-depth pressure. This policy
+therefore records prohibitions and finite activation conditions rather than a
+utilization target. The current RAW D1, broad Yahoo, Tiingo IEX, and Norgate
+trial observations do not open this batch.

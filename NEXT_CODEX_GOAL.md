@@ -2,62 +2,58 @@
 
 ## Objective
 
-Classify whether the observed local `SMCI` `Close`/`Unadjusted Close` ratio
-transition has a magnitude consistent with the issuer's 10-for-1 split under
-the current documented Norgate price-setting behavior, without changing a local
-Norgate setting.
+Build a narrow Windows-host-only Norgate raw-daily provider adapter behind the
+existing market-data interface, using the official query-level `NONE` adjustment
+setting without modifying a local Norgate configuration.
 
-This advances data collection and backtest-validation readiness by resolving or
-closing one field-meaning question before any provider or research use. It is
-not a provider implementation, purchase decision, data export, campaign,
-model, paper-trading, or live step.
+This advances data collection toward a reproducible development-data path and
+the future eligibility-driven GPU research batch. It is not a data export,
+Docker bridge, campaign, training run, model selection, paper-trading, or live
+step.
 
 ## Ownership
 
-- **Data Agent:** owns package/API metadata inspection, one no-side-effect
-  local derivation, and non-raw evidence wording.
-- **Review/Claude:** challenge any conclusion about field meaning or split
-  interpretation. Claude is advisory; send no credentials or raw rows.
+- **Data Agent:** owns the adapter, source-boundary tests, one nonpersistent
+  host smoke, and source limitations.
+- **Review/Claude:** give a short architecture drift-check before implementation
+  and independently review the boundary before integration. Do not send raw
+  rows, credentials, or trial data.
+- **Infra capability:** confirm only that the adapter is host-Windows-only; it
+  must not create a Docker/Norgate bridge.
 
 ## Boundaries
 
 - Use only the existing operator-created Norgate trial at
-  `D:\market_data\us_equities\norgate_us_platinum_trial`, the existing
-  `SMCI` window, and public no-auth vendor/issuer documentation.
-- Do not read `.env`, credentials, or KIS data. Do not buy, renew, upgrade,
-  export, redistribute, or delete Norgate data. Preserve the retained C: copy.
-- Do not change Norgate global or user settings. If an API setting is not
-  demonstrably query-local and side-effect-free, inspect it only and do not use
-  it.
-- Do not add a provider, cache, dependency, `CatalogedBars` path, Docker query
-  bridge, manifest, raw-data artifact, campaign, model, GPU job, paper order,
-  or live behavior.
-- Do not infer a general split-adjustment rule, event availability, point-in-
-  time correctness, event type/ratio coverage, universe correctness, or
-  research eligibility from this one fixture.
-- Keep `THERICHER_MODE=off`; all broker submission, modification, cancel, and
-  capital allocation remain disabled.
+  `D:\market_data\us_equities\norgate_us_platinum_trial` through its official
+  Windows Python package. Do not read `.env`, credentials, or KIS data.
+- Use a query-local `StockPriceAdjustmentType.NONE` setting only. Do not write
+  or mutate an NDU/global/user configuration.
+- Keep raw Norgate data in process only: no cache, export, artifact, manifest,
+  Git data, derived dataset, or Docker mount/query path.
+- Lazy-load the optional Norgate package and fail closed on a non-Windows host
+  or unavailable package. Tests must use injected fakes, not actual trial data.
+- Do not create `CatalogedBars`, a campaign, GPU job, model, paper order,
+  execution path, or public service. Do not claim point-in-time correctness,
+  event semantics, research eligibility, or provider rights beyond this adapter.
+- Preserve the retained C: copy and keep `THERICHER_MODE=off`.
 
 ## Required Work
 
-1. Inspect the local `norgatedata` query signature/docstring and public vendor
-   documentation for the current price-adjustment setting behavior. Record only
-   non-secret field and setting names plus whether any setting is clearly
-   query-local; do not alter a setting.
-2. Reuse the exact `SMCI` `2024-09-27` through `2024-10-02` price window under
-   the existing no-side-effect behavior. Record only bounds, row count, and a
-   derived ratio-change category: tenfold, one-tenth, unchanged, other, or
-   indeterminable. Do not print or retain raw price values or rows.
-3. Compare that category with the issuer's documented 10-for-1 split. If the
-   available setting/field facts do not establish that the ratio isolates the
-   split for this fixture, record `unsupported`; do not infer or normalize a
-   general adjustment convention.
-4. Ask Claude for a concise falsification verdict before recording any positive
-   field-meaning conclusion. A missing, ambiguous, or non-query-local setting
-   is a valid stop condition for this branch, not a reason to mutate settings
-   or expand queries.
-5. Update `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md` only with durable
-   facts, then replace this goal.
+1. Ask Claude for a concise architecture drift-check before editing. State the
+   existing provider interface, lazy optional dependency, host-only boundary,
+   query-local `NONE` setting, no-persistence rule, and no campaign use.
+2. Implement the smallest adapter following existing provider patterns. It must
+   request only the caller's bounded symbol/date window, map raw daily OHLCV
+   into existing `Bar` contracts, validate ordinary bar invariants, and avoid
+   changing any Norgate setting.
+3. Add focused mock-based tests proving no network, credentials, setting mutation,
+   Docker use, raw-data persistence, or package import at module import time is
+   required. Cover unavailable/non-Windows failure and bounded raw-bar mapping.
+4. Run one host-only nonpersistent smoke query against the existing trial.
+   Report only symbol, requested/returned bounds, count, fields, and validation
+   outcome; do not print or save raw rows or price values.
+5. Update `agents/data.md`, `HANDOFF.md`, and `DECISIONS.md` with only durable
+   boundary facts, then replace this goal.
 
 ## Verification
 
@@ -69,8 +65,8 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the focused local metadata/derivation probe and official source used.
+Report the focused host smoke and Claude verdict.
 
 ## Suggested Commit Message
 
-`Classify Norgate split ratio semantics`
+`Add host-only Norgate daily provider`

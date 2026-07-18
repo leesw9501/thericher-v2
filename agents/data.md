@@ -70,15 +70,19 @@ short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
 
-The Norgate trial compatibility, first fixture, and timing checks are complete.
-`PLTR` membership changed false-to-true on `2024-09-23`. For the local `SMCI`
-fixture, the client-clipped `Capital Event` marker is `2024-09-30`, while the
-derived `Close`/`Unadjusted Close` ratio transitions on `2024-10-01`. These are
-date-scoped stored-field observations, not availability or field-semantic
-claims. The next ready Data item may inspect current public adjustment-setting
-documentation and classify this one ratio-change magnitude without mutating
-local Norgate settings; it must not become a provider or research-data
-integration.
+The Norgate trial compatibility and semantics checks are complete. `PLTR`
+membership changed false-to-true on `2024-09-23`; for `SMCI`, the client-clipped
+`Capital Event` marker is `2024-09-30` and the derived ratio transition is
+`2024-10-01`. The query signature has a query-level adjustment option with an
+observed `TOTALRETURN` default, and this one ratio transition is tenfold. These
+facts are magnitude-consistent with the documented split but do not establish
+field meaning, availability, or a general rule. The semantics branch is
+`unsupported` and closed without a setting change.
+
+The next ready Data item is a narrow, Claude-reviewed Windows-host-only
+Norgate raw-daily provider adapter using the query-local `NONE` setting. It
+must neither persist/export trial data nor create a Docker, campaign, or
+research-data integration.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -197,11 +201,23 @@ or same-session actionable input without a source-timestamp contract. It does
 not show a general provider lag, marker population time, event semantics, or
 that `Close`/`Unadjusted Close` isolates split adjustment.
 
-The remaining bounded question is whether the observed ratio-change magnitude
-is consistent with this issuer's 10-for-1 split under the current documented
-local adjustment setting. If documentation or a no-side-effect query cannot
-establish that field meaning, record `unsupported` and end this semantics
-branch rather than add a workaround.
+The final metadata check used no setting mutation or raw values. The local
+`price_timeseries` signature exposes query-level
+`stock_price_adjustment_setting` and `padding_setting`; the observed default
+is `StockPriceAdjustmentType.TOTALRETURN` with `CAPITAL`, `CAPITALSPECIAL`,
+`NONE`, and `TOTALRETURN` enum members. Under that unchanged default call, the
+four-row ratio transition category was tenfold on `2024-10-01`.
+
+Official Norgate material says adjustment settings are configurable, capital
+reconstructions include splits, and a selected split adjustment applies the
+previous/new share ratio to prices before the ex-date. This makes the one
+tenfold observation magnitude-consistent with the issuer's 10-for-1 split.
+Claude returned `supported-with-limits` only for that literal consistency:
+the evidence does not bind Python `TOTALRETURN` to UI semantics, show that the
+ratio isolates splits from other adjustments, establish a source timestamp, or
+justify a general rule. The field-meaning semantic branch is therefore
+`unsupported` and closed. Reopen it only under a future load-bearing data
+contract, not by changing settings or expanding this fixture.
 
 **Sharadar comparison:** the official `SEP` product page documents daily US
 listed and delisted equities from 1998, adjusted and unadjusted OHLCV, and
@@ -221,10 +237,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Inspect the existing `SMCI` ratio-change magnitude against current public
-   adjustment-setting documentation without mutating local Norgate settings.
-   Do not purchase, export, or integrate the trial database into a provider or
-   `CatalogedBars` path.
+1. After a Claude architecture drift-check, build a narrow Windows-host-only
+   Norgate raw-daily provider adapter using query-local `NONE` adjustment.
+   Keep all trial data in memory: no cache/export/artifact, Docker bridge,
+   campaign, or `CatalogedBars` promotion.
 2. Do not automatically retry the exhausted Tiingo IEX pre-r1 archive plan,
    relax its Bar invariants, repair/fill bad rows, or create a provider from r1.
 3. If an operator later approves a source, collect only the specifically

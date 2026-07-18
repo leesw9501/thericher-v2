@@ -46,7 +46,7 @@
 
 ## Resources
 
-- GPU: NVIDIA GeForce RTX 4090, 24564 MiB; idle after the bounded CUDA run.
+- GPU: NVIDIA GeForce RTX 4090, 24564 MiB; no active engine-owned job.
 - Host artifact root: `D:\thericher-v2\model-artifacts`.
 - Docker artifact root: `/app/model_artifacts`.
 
@@ -80,15 +80,29 @@
 
 ## Breadth Queue
 
-- The fixed Tiingo IEX pre-r1 archive plan exhausted its strict validation
-  retries without a snapshot. Do not use r1, the probe, the failed archive, or
-  the completed short-data smoke as model-selection input. Wait for a future
-  independently sourced, rights-cleared Data decision before opening historical
-  intraday research or a GPU job.
+- No breadth batch is currently eligible. The fixed RAW D1 verdict is
+  `unsupported`; broad Yahoo and Tiingo IEX remain descriptive-only; Norgate
+  has no provider/campaign input yet.
+- When Data supplies one hash-bound development-training-eligible dataset and a
+  frozen campaign contract, enumerate one finite breadth batch before launch:
+  CPU naive/linear/tree baselines plus compact PyTorch MLP and TCN, each at two
+  fixed seeds. Run the four GPU jobs serially on the one GPU.
+- CPU may prepare only the already-enumerated next fold, lineage check,
+  baseline, or replay while that finite GPU batch runs. Do not auto-refill a
+  queue, create a scheduler, or launch a job merely to occupy the GPU.
 
 ## Depth Queue
 
-- None. This campaign cannot promote work into depth or open a sealed holdout.
+- No depth work is currently eligible. A finite breadth result may promote at
+  most two candidates to three fixed seeds only after temporal sensitivity and
+  a Claude falsification verdict. A sealed holdout remains closed.
+
+## Ensemble Queue
+
+- No ensemble work is currently eligible. It requires two or more candidates
+  with independent out-of-fold predictions; begin only with equal-weight
+  probability averaging and disagreement abstention. Do not tune stacking on
+  shared validation or holdout predictions.
 
 ## Running
 
