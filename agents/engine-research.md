@@ -74,6 +74,10 @@
   evidence only: requested `NONE` adjustment semantics and zero observed event
   markers remain unproven, so it does not reopen breadth, depth, ensemble, or
   CUDA work.
+  Its r3 `Dividend` sidecar has 24 source markers and 71 conservative
+  exclusions, but source-marker timing and adjustment semantics remain
+  unproven. It improves a Data exclusion record only and still does not reopen
+  breadth, depth, ensemble, or CUDA work.
 
 ## Explicit-Event Replay
 
@@ -259,5 +263,5 @@ plan is now closed after two strict source-validation failures with no snapshot.
 Data next prepares a minimum PIT-capable source decision before any historical
 intraday research decision. Do not rank, promote, name a winner, claim
 profitability, or start GPU training. The newly retained Norgate raw-D1 r2
-source does not change that conclusion; its next field-level probe may improve
-event exclusions only.
+source and r3 sidecar do not change that conclusion. Data next prepares a
+bounded broad development panel before any new research training decision.

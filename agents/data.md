@@ -42,6 +42,18 @@ returned `supported-with-limits`, so this is development-source evidence only,
 not training, model, GPU, campaign, PIT, paper, ranking, or source-preference
 evidence. Preserve r1 as superseded recovery evidence.
 
+The r2 parent now has one immutable exclusion-only r3 sidecar at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\dividend_marker_exclusions\snapshot=2026-07-18-norgate-trial-raw-d1-r3-dividend-exclusions-r1`.
+Its manifest SHA-256 is
+`d5de2b77d02e4f7eb5b84392b8b5287b319c9218c034aa9e9613d80c57b4dd3c` and it
+references the exact r2 hashes. One no-network local `Dividend` probe returned
+an exact 483-session response and eight nonzero markers for each fixed ETF;
+the sidecar records 24 source markers and 71 marker-plus-adjacent exclusions.
+It stores no dividend amounts and does not name marker dates as event times.
+Claude's `uncertain` review required exactly those nonzero, exact-session facts;
+the facts held, but r3 remains exclusion metadata only with every training,
+model, GPU, campaign, PIT, paper, ranking, and source-preference scope false.
+
 The bounded Norgate S&P 500 membership snapshot is complete at
 `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
 It has a 541-item date-less candidate union and 266,647 sparse membership rows
@@ -136,6 +148,13 @@ stored, but intentionally not a `CatalogedBars` or campaign input: requested
 `NONE` adjustment and no observed event markers cannot establish adjustment or
 corporate-action semantics. Its explicit scope keeps training, model, GPU,
 PIT, paper, ranking, and source selection false.
+
+The r3 `Dividend` sidecar now supplies 24 nonzero source markers and 71
+conservative exclusions after one exact-session local probe. The markers remain
+source-returned dates rather than dividend/event timestamps; this did not
+reopen the already-closed adjustment semantics branch or any research
+eligibility. Its only effect is a hash-bound external exclusion record linked
+to r2.
 
 The narrow Windows-host-only Norgate raw-daily provider is complete. It accepts
 only bounded US `1d` queries with UTC-midnight labels, asks the official client
@@ -323,11 +342,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Probe one fixed-ETF Norgate `Dividend` marker response against the retained
-   r2 session window only if it can remain host-only, read-only, bounded, and
-   nonpersistent until its response shape is understood. It may refine
-   conservative exclusion metadata, but must not establish timing, adjustment,
-   PIT, campaign, model, or GPU eligibility.
+1. Build one bounded, local Norgate two-year broad development panel from the
+   already-retained 541-item S&P 500 current/past candidate union and sparse
+   membership matrix. Keep the source host-only, raw/no-adjustment, external,
+   and explicitly non-PIT. It may establish static development-panel readiness
+   only after full manifest/session validation; it must not imply ranking,
+   holdout, paper, or source-preference eligibility.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase the R1/R2
    common-session count. The audit found the R1 floor binding and 56 existing
    groups already cover R2's descriptive window.
@@ -369,6 +389,15 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   zero nonzero markers, which is not absence-of-events evidence. Its scope
   explicitly forbids training, model/GPU, campaign, PIT, paper, ranking, and
   source-preference use. The older r1 is superseded recovery evidence only.
+- The r2-linked Norgate `Dividend` sidecar is
+  `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\dividend_marker_exclusions\snapshot=2026-07-18-norgate-trial-raw-d1-r3-dividend-exclusions-r1`.
+  Its manifest SHA-256 is
+  `d5de2b77d02e4f7eb5b84392b8b5287b319c9218c034aa9e9613d80c57b4dd3c`.
+  A single exact-session local probe observed eight nonzero markers for each
+  fixed ETF, 24 total, yielding 71 conservative source-marker exclusions. It
+  retains no dividend amounts, treats the marker dates as non-actionable, and
+  cannot change r2's non-training, non-model/GPU, non-campaign, non-PIT,
+  non-paper, non-ranking, or non-source-preference scope.
 - Intraday: Yahoo 1-minute canonical data at
   `D:\market_data\us_equities\yahoo_intraday_starter\canonical\ohlcv_1m`.
   `snapshot=2026-06-18\ohlcv_1m.csv.gz` contains 572,894 rows, 250 symbols,
@@ -705,9 +734,12 @@ groups cover R2's window and that R1 binds the combined floor, so do not pull a
 third shard merely for more common sessions. The first Norgate fixed-ETF raw-D1
 source contract is now r2 at
 `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`;
-it is source evidence only. The next bounded Data task may make one
-field-level, nonpersistent `Dividend` probe to refine exclusions, not a model
-input. Tiingo's current
+it is source evidence only. Its r3 `Dividend` exclusion sidecar is complete:
+24 source markers, 71 conservative exclusions, no stored amounts or event-time
+claim, and no model input. The next bounded Data task is a local two-year broad
+development-panel build from the already-retained Norgate candidate/membership
+evidence, not an automatic promotion to ranking, paper, or source preference.
+Tiingo's current
 [terms](https://app.tiingo.com/tos/) and
 [general documentation](https://www.tiingo.com/documentation/general) permit
 the operator's private internal use but prohibit redistribution. Public Starter

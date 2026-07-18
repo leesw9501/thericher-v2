@@ -605,6 +605,22 @@ snapshot is development-source evidence only; it is not eligible for training,
 model/GPU work, PIT, paper, ranking, or a source-preference claim. Preserve the
 earlier r1 directory as superseded recovery evidence; do not reuse it.
 
+One bounded local `Dividend` field probe then returned an exact 483-session
+response for every fixed ETF, with eight nonzero source markers per symbol. It
+produced the immutable, exclusion-only r3 sidecar at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\dividend_marker_exclusions\snapshot=2026-07-18-norgate-trial-raw-d1-r3-dividend-exclusions-r1`.
+Its parent data/manifest hashes are r2's hashes above; sidecar manifest SHA-256
+is `d5de2b77d02e4f7eb5b84392b8b5287b319c9218c034aa9e9613d80c57b4dd3c`.
+It records 24 source markers and 71 adjacent-session exclusions, not dividend
+amounts or event timestamps. Claude's pre-probe verdict was `uncertain` and
+required an exact, nonzero marker response for all three symbols; that bounded
+condition was met. This refines exclusion metadata only: adjustment semantics,
+PIT, campaign, model, GPU, paper, ranking, and source preference remain false.
+The next single target is a bounded local two-year broad development panel from
+the existing Norgate 541-candidate/membership evidence. It must remain
+survivorship- and publication-time-limited, but it is the direct data path to a
+future finite GPU breadth contract.
+
 The Norgate trial's bounded semantic branch remains `unsupported` for
 provider/campaign field meaning, and direct historical-universe enumeration is
 also `unsupported`. The distinct membership-matrix construction completed at

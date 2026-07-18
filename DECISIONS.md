@@ -1856,3 +1856,32 @@ that may refine conservative exclusions; it cannot promote this source.
 
 Reason: the snapshot gives Data a reproducible local source fact while keeping
 unknown corporate-action and adjustment behavior out of research conclusions.
+
+## 2026-07-19 - Norgate dividend markers are exclusion-only sidecar evidence
+
+Decision: retain one immutable, external sidecar at
+`D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\dividend_marker_exclusions\snapshot=2026-07-18-norgate-trial-raw-d1-r3-dividend-exclusions-r1`.
+It re-attests the exact r2 parent dataset hash
+`a283e60cf9a28eb3e1f1a37b35abc575bc99c0e0971a8b226af445888fd6c993` and r2
+manifest hash `5c8a5f06e618aaf3ec0ee7dc58ec9f545839fbfc87dc5476d52a8b4b4602458c`.
+The sidecar manifest SHA-256 is
+`d5de2b77d02e4f7eb5b84392b8b5287b319c9218c034aa9e9613d80c57b4dd3c`.
+
+One bounded host-only `price_timeseries` probe with requested `NONE` adjustment
+and `NONE` padding returned an exact 483-session `Dividend` field response for
+each fixed ETF. Each had eight nonzero source markers, yielding 24 total
+markers and 71 marker-plus-adjacent observed-session exclusions. The sidecar
+stores marker-derived exclusions and a deletion marker, not dividend amounts or
+raw rows.
+
+Claude's pre-probe verdict was `uncertain`: it required exact parent-session
+coverage and at least one nonzero marker for every fixed symbol, otherwise r2
+had to remain unchanged. The measured response met that condition. This does
+not establish event time, ex-date, payment date, adjustment semantics,
+point-in-time availability, completeness, or absence of unmarked events.
+Therefore r3 is exclusion metadata only and does not change any training,
+model, GPU, campaign, PIT, paper, ranking, or source-preference eligibility.
+
+Reason: excluding a source marker plus neighboring observed sessions is a
+conservative, low-blast-radius operation while keeping all economic and timing
+interpretations out of the engine.
