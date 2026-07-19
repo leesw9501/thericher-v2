@@ -7,6 +7,10 @@
 - Data's replacement inventory found no fresh local training candidate. GPU
   remains unassigned until Data freezes a new eligible contract; a prospective
   three-ETF EOD refresh does not change that boundary.
+- The durable destination is now a target-position policy graph: opportunity
+  selection, timestamped multi-timeframe evidence, entry/exit policy,
+  constrained target-weight allocation, and deterministic execution. It is a
+  research architecture, not a new model batch or a broker authority.
 - Data marks the fixed `SPY`, `QQQ`, `IWM` r2 dataset development-training
   eligible and ranking/holdout ineligible.
 - The CUDA evidence is structurally valid but the factor sensitivity verdict is
@@ -47,6 +51,8 @@
 
 - Frozen research hypotheses, features, targets, costs, candidates, and seeds.
 - CPU baselines, bounded CUDA training, local-paper replay, and sensitivity.
+- Layer-specific evidence, cross-fitted prediction lineage, and attribution for
+  opportunity, entry, allocation, and exit research.
 - One external campaign recovery summary; not a report or job family.
 
 ## Must Not
@@ -55,6 +61,8 @@
 - Use adjusted diagnostics in features, targets, fills, thresholds, or metrics.
 - Treat this development dataset as ranking, promotion, sealed holdout, model
   selection, a winner, or evidence of profitability.
+- Let a learned model emit an order, jointly tune graph layers on shared
+  validation predictions, or treat a model count as a research outcome.
 - Add a scheduler, queue framework, artifact-specific job kind, or dependency.
 
 ## Resources
@@ -144,19 +152,26 @@
   training candidate. A prospective three-ETF EOD refresh is lineage only. Do
   not add a tree, TCN, seed, parameter sweep, depth candidate, or ensemble
   merely to occupy the GPU.
+- Once Data freezes a genuinely eligible campaign, the first breadth roster is
+  deliberately diverse rather than MLP-only: naive/linear/tree baselines, one
+  compact sequence candidate, and at most one small attention or public
+  time-series-foundation benchmark. It starts with the simple target-position
+  baseline and adds graph layers one at a time.
 
 ## Depth Queue
 
 - No depth work is currently eligible. A finite breadth result may promote at
-  most two candidates to three fixed seeds only after temporal sensitivity and
-  a Claude falsification verdict. A sealed holdout remains closed.
+  most two candidates to three fixed seeds only after temporal sensitivity,
+  cross-fitted upstream evidence, and a Claude falsification verdict. A sealed
+  holdout remains closed.
 
 ## Ensemble Queue
 
-- No ensemble work is currently eligible. It requires two or more candidates
-  with independent out-of-fold predictions; begin only with equal-weight
-  probability averaging and disagreement abstention. Do not tune stacking on
-  shared validation or holdout predictions.
+- No ensemble or learned fusion work is currently eligible. It requires two or
+  more candidates with independent out-of-fold predictions. Begin only with
+  equal-weight probability averaging and disagreement abstention; fit a later
+  fusion/allocation layer only on nested or cross-fitted upstream predictions,
+  never on shared validation or holdout predictions.
 
 ## Running
 
@@ -171,6 +186,14 @@
   `t+2` open exit, 10 bps fee and 5 bps slippage per fill.
 - Daily plan checks prove exact common-session `+1/+2` timing even across
   weekend/holiday gaps; generic intraday continuity remains strict.
+- In the target-position graph, each evidence item carries `decision_as_of`,
+  `feature_window_end`, `valid_until`, model/rule lineage, expected net edge,
+  uncertainty, and missing/stale status. Fusion may use only completed bars and
+  valid evidence; allocation consumes target-state evidence, never an order.
+- The graph must be proven incrementally: deterministic universe/signal/sizing
+  first, then one additional selection, multi-timeframe, fusion, allocation, or
+  exit layer at a time. Each added layer needs a matched after-cost comparison
+  and layer-level replay attribution before it is retained.
 - Every lane uses a shared max-lookback-20, two-observed-session cadence.
   Durable campaign replay must finish flat and have nondecreasing event times.
 - Two observed purge sessions separate each development/validation pair; two
@@ -336,6 +359,12 @@ Data's bounded local replacement inventory is complete and found no fresh local
 training candidate. Engine may retain the corrected synthetic CUDA bootstrap
 evidence only; it must not consume r4 rows, launch another model family, or
 create an ensemble while Data records the narrow prospective EOD lineage.
+
+When a new eligible contract exists, implement the target-position graph in
+small, falsifiable increments rather than reviving the static MLP batch. Data
+must first freeze completed-bar multi-timeframe evidence. Engine then starts
+with a deterministic target-position baseline and records cross-fitted lineage
+before any learned fusion, allocator, or exit policy is considered.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1

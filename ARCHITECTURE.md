@@ -3,10 +3,21 @@
 ## Core Pipeline
 
 ```text
-market data -> features -> models -> ensemble -> sizing -> risk -> broker -> state
-                                                        -> dashboard
-                                                        -> daily review
+market data -> point-in-time data contract -> opportunity selection
+                                           -> per-symbol evidence experts
+existing positions -----------------------> entry / hold / reduce / exit policy
+opportunity + evidence + position state --> trade policy -> target allocation
+target positions --------------------------------------> deterministic risk
+                                                        -> broker intent
+                                                        -> state / attribution
+                                                        -> dashboard / daily review
 ```
+
+The trading engine is a target-position policy graph, not a monolithic
+buy/sell model. At one immutable `as_of` decision timestamp the graph is
+acyclic. Across timestamps, only durable portfolio and broker state feed the
+next graph evaluation. A learned node can produce evidence or a desired target
+state; only deterministic Execution code may create an `OrderIntent`.
 
 ## Modules
 
@@ -27,16 +38,103 @@ Durable work is owned by Data, Engine Research, and Execution lanes. Codex may
 run their disjoint work packages in parallel. Validation is independent and
 temporary; Infra and Review are invoked capabilities.
 
-## Timeframe Policy
+## Target-Position Policy Graph
+
+The graph has four product decisions and one non-negotiable execution boundary.
+Each decision has a distinct training target, owner, evidence contract, and
+attribution field. It prevents a successful-looking signal from hiding whether
+the error came from symbol selection, timing, sizing, exit handling, or fills.
+
+1. **Opportunity selection** chooses a point-in-time eligible universe and
+   ranks symbols worth evaluating. It runs on slow horizons and can reject a
+   symbol without creating a trade signal.
+2. **Per-symbol evidence experts** independently evaluate completed `1m`,
+   `5m`, `10m`, `1h`, and `3h` inputs. An expert can be a rule, statistical
+   model, tree, sequence model, or foundation-model benchmark.
+3. **Trade policy** fuses valid evidence into `enter`, `hold`, `reduce`,
+   `exit`, or `abstain`. Entry and exit use related evidence but are separate
+   tasks; an exit is not merely the inverse of a buy signal.
+4. **Target-position allocation** converts eligible trade-policy outputs and
+   current positions into desired long-only portfolio weights. It accounts for
+   expected net edge, uncertainty, volatility, liquidity, costs, concentration,
+   correlation, drawdown, and capital availability.
+5. **Deterministic risk and execution** validates the delta between current and
+   target positions, applies hard limits and emergency state, persists intent,
+   and only then creates a broker-facing order intent.
+
+The initial production-shaped scope is long-only. Shorting, leverage, and any
+learned direct-order policy require their own later authority and validation.
+
+### Ownership Boundary
+
+- **Data** owns the point-in-time eligibility facts, calendars, completed-bar
+  resampling, provenance, and stale/missing conditions. It does not rank a
+  strategy's opportunities.
+- **Engine Research** owns opportunity scores, multi-timeframe experts, fusion,
+  learned allocation proposals, exit hypotheses, and their campaign evidence.
+  Its output is a proposed target state with uncertainty, never an order.
+- **Execution** owns current positions, cash, hard constraints, feasible target
+  deltas, intent persistence, reconciliation, and the broker boundary. It may
+  reject or reduce a proposed target but never invents alpha or loads model
+  weights.
+- **Validation** receives frozen upstream evidence and evaluates an incremental
+  layer without tuning it.
+
+### Decision Evidence Contract
+
+Every learned or rule-based node must emit versioned, timestamped evidence,
+not a bare vote or an order. The durable record must identify:
+
+- `decision_as_of`, `feature_window_end`, source dataset/snapshot, timeframe,
+  and whether every input bar was complete;
+- universe or position state used, model/rule version, artifact hash, and
+  feature schema hash;
+- action or score, calibrated probability when applicable, expected **net**
+  edge, uncertainty, horizon, and explicit `valid_until`;
+- missing, stale, abstain, and data-quality conditions; and
+- the upstream evidence IDs used by fusion, allocation, and exit decisions.
+
+Evidence older than its declared validity window is not silently forward-filled.
+The fusion policy must either apply its predeclared stale-evidence treatment or
+abstain. This makes an incomplete `1h` or `3h` bar impossible to masquerade as
+a completed higher-timeframe signal.
+
+### Layered Proof Rule
+
+The graph is a destination architecture, not permission to build six learned
+layers at once. Each layer must earn its complexity against a simpler frozen
+baseline on one new eligible campaign contract:
+
+1. deterministic universe filter, one simple entry signal, volatility-targeted
+   sizing, and deterministic exits;
+2. one independently validated opportunity or single-timeframe signal model;
+3. completed-bar multi-timeframe experts, then a calibrated fusion model using
+   only upstream out-of-fold predictions;
+4. a constrained allocation model, if it improves after-cost robustness over
+   deterministic volatility/concentration sizing; and
+5. an independent exit model, if it improves over fixed risk exits without
+   increasing hidden turnover or tail risk.
+
+All model-family comparisons use chronological, purged and embargoed splits.
+Fusion and allocation require nested or cross-fitted upstream predictions: no
+layer may train on a prediction produced in-sample by an upstream expert. The
+final temporal holdout remains untouched until the entire preceding layer set is
+frozen. A failed incremental comparison removes that layer from the candidate
+graph rather than being tuned around indefinitely.
+
+### Timeframe Policy
 
 Default production policy is hierarchical, not free-form weighted blending.
 
-- 1h and 3h: regime and direction filter.
-- 10m: confirmation and trend stability.
-- 1m and 5m: entry and exit timing.
+- `3h` and `1h`: market regime, direction, and opportunity context.
+- `10m`: confirmation, volatility, and trend stability.
+- `5m` and `1m`: entry, reduction, and exit timing.
 
-Research may test alternative ensemble methods, but production promotion must
-show why the combination is stable, interpretable, and robust out of sample.
+All timeframes are derived from the same exchange-calendar-resampled bar stream.
+At a fast decision time, a slower expert may use only its most recently **fully
+closed** bar and must expose its age and expiry. Research may test alternative
+expert topologies, but promotion must show stable, interpretable, after-cost
+out-of-sample value over the simpler graph.
 
 ## Model Policy
 
@@ -62,6 +160,23 @@ splits, costs, baselines, metrics, compute budget, and stop rules. Breadth work
 screens diverse hypotheses; depth work trains only selected candidates;
 ensemble work uses independently generated predictions; replication checks
 reproducibility and simple falsification controls.
+
+For a future eligible contract, breadth should contain materially different
+families rather than repeated MLP variants: linear and tree baselines, compact
+sequence candidates such as GRU/LSTM and TCN, a small attention model when the
+data supports it, and a narrowly scoped time-series foundation-model benchmark.
+Chronos and TimesFM are forecasting benchmarks, not direct trading policies;
+their outputs must pass the same causal, cost, and allocation validation as
+locally trained models. Financial language models require separately timestamped
+and rights-cleared text data before they may enter a signal experiment.
+
+External design references are inputs to research, not dependencies or evidence
+of profitability: [Qlib's model/strategy/execution research architecture](https://github.com/microsoft/qlib),
+the original [Temporal Fusion Transformer paper](https://arxiv.org/abs/1912.09363),
+[Chronos](https://github.com/amazon-science/chronos-forecasting), and
+[TimesFM](https://github.com/google-research/timesfm). Any public code or
+weights still follow the provenance, license, safe-serialization, and research
+isolation rules below.
 
 Existing short 1m snapshots are development evidence until a Data-owned
 manifest shows enough chronological coverage for model selection. Labels must
@@ -191,7 +306,10 @@ not prerequisites for starting bounded paper evidence collection.
 
 ## Dashboard Boundary
 
-The dashboard is authenticated and mostly read-only.
+The dashboard is authenticated, local/LAN-bound, and mostly read-only. The
+existing Docker `web` service is a local monitor only; it neither reads KIS
+credentials nor calls a broker. A future KIS-paper console is a separately
+authorized Execution objective, not an implicit consequence of this design.
 
 Read:
 
@@ -208,8 +326,19 @@ Read:
 
 Write:
 
-- stop new orders,
-- cancel open orders,
-- resume only after explicit local confirmation.
+- pause new entries,
+- request cancellation of open orders,
+- later, pause discretionary strategy reductions only after a separately
+  authorized paper-execution objective;
+- resume only after explicit local confirmation and fresh reconciliation.
+
+No dashboard action may suppress a hard-risk exit, emergency containment, or
+reconciliation requirement. A requested "sell stop" therefore means pausing
+discretionary strategy reductions, never trapping a position by blocking a
+verified risk exit. Before KIS paper read-only reconciliation succeeds, broker
+facts such as holdings, prices, cash, and open orders are shown as `unknown`,
+not as empty or locally inferred values. The browser reads a sanitized runtime
+snapshot; credentials, account identifiers, and raw broker payloads never enter
+the web process.
 
 The dashboard must never expose KIS secrets or raw broker payloads.

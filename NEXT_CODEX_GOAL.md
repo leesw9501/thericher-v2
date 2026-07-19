@@ -13,6 +13,10 @@ paper-trading, or profitability work.
   (`sha256:c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`).
 - The prior fixed-ETF Tiingo snapshot ends at `2026-07-10`.
 - Paid PIT data remains an operator purchase decision. Do not buy or enroll.
+- The target-position policy graph is now the durable engine direction, but this
+  narrow data goal does not implement it, train its experts, or build the future
+  KIS paper console. It only preserves prospective lineage needed by later
+  eligible research.
 
 ## Start
 
@@ -41,7 +45,8 @@ paper-trading, or profitability work.
 - No KIS, order, local-paper, live, or `THERICHER_MODE` change.
 - No credential access except that one approved Tiingo token line.
 - No Yahoo/IEX/Norgate/broad-universe/paid action, model training, GPU data job,
-  r4 retry, model comparison, ensemble, scheduler, daemon, or report family.
+  r4 retry, model comparison, ensemble, dashboard/KIS-console change,
+  scheduler, daemon, or report family.
 
 ## Completion
 

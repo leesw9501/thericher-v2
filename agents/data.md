@@ -9,6 +9,12 @@ It found no fresh local daily source for a new training contract. The broad
 Yahoo snapshot is limited to a future Data-only schema preflight; it is not a
 model, GPU, ranking, paper, or profitability input.
 
+The target-position policy graph now makes Data's future handoff explicit:
+every resampled timeframe must carry completed-bar `as_of`, source lineage,
+calendar anchor, gap/staleness state, and an expiry suitable for downstream
+multi-timeframe fusion. This is a future contract requirement, not permission
+to turn current descriptive data into a model input.
+
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one
@@ -131,7 +137,8 @@ eligibility.
 ## Owns
 
 - Provider interfaces, local caches, calendars, symbol metadata, resampling,
-  and warning-only data-quality summaries.
+  warning-only data-quality summaries, and completed-bar/staleness provenance
+  for downstream decision evidence.
 - Inventory and license-compatible reuse/acquisition of market data.
 
 ## Must Not
@@ -405,6 +412,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    symbols, provider scope, or data rights, and do not create a model contract.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort remains bounded source evidence.
+3. When a new eligible multi-timeframe dataset exists, freeze one Data-owned
+   completed-bar evidence contract before Engine trains any expert: each
+   timeframe needs an exchange-calendar anchor, `feature_window_end`,
+   `valid_until`, and explicit missing/stale handling.
 
 ## Historical Queue Context
 

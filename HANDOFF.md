@@ -46,6 +46,33 @@ Useful independent evidence per hour of operator attention is the practical
 north star. Model count, GPU utilization, commit count, and report count are not
 success metrics.
 
+## Target-Position Engine Direction
+
+The durable target architecture is a target-position policy graph, evaluated on
+one immutable `as_of` snapshot at a time:
+
+```text
+PIT opportunity selection -> per-symbol multi-timeframe evidence
+                           -> enter / hold / reduce / exit policy
+current positions --------> constrained target-weight allocation
+target deltas ------------> deterministic risk -> persisted broker intent
+```
+
+The graph separates which symbols deserve attention, whether to enter or leave
+them, how much capital to allocate, and how to execute safely. Each node emits
+timestamped evidence with an expiry and lineage; learned code never creates an
+order. Initial scope is long-only. Build and validate the graph incrementally:
+a simple deterministic baseline first, then one added layer at a time with
+chronological cross-fitting, an untouched final holdout, and layer-level PnL
+attribution. The full definition and dashboard boundary live in
+`ARCHITECTURE.md`.
+
+This replaces neither the current data requirement nor current execution
+authority. No fresh model-eligible contract exists yet, and KIS remains failed
+closed. The eventual Docker-local paper console is read-focused and exposes
+sanitized holdings, prices, open orders, and safety state only after successful
+read-only reconciliation; it does not grant submit authority by itself.
+
 ## Current Boundaries
 
 - KIS remains failed closed. No current task may read `.env` values or call KIS;

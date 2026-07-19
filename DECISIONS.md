@@ -2086,3 +2086,77 @@ is authorized here.
 
 Reason: preserve research velocity through clean forward collection while not
 spending GPU time on a known non-PIT, reused, or unsupported historical slice.
+
+## 2026-07-19 - Target-position policy graph and staged local paper console
+
+Decision: make the durable engine architecture a **target-position policy
+graph**, replacing the underspecified `models -> ensemble -> sizing` path. At a
+single immutable `as_of` decision time, the graph is acyclic and has these
+separate responsibilities:
+
+1. point-in-time opportunity selection and symbol ranking;
+2. parallel per-symbol evidence experts over completed `1m`, `5m`, `10m`,
+   `1h`, and `3h` bars;
+3. entry/hold/reduce/exit policy with explicit abstention;
+4. constrained long-only target-weight allocation; and
+5. deterministic risk, intent persistence, reconciliation, and execution.
+
+Existing position state may feed the exit policy and allocator, but a learned
+node may never emit an order. Every rule or model must emit timestamped
+evidence with source/feature lineage, model identity, expected net edge,
+uncertainty, horizon, `valid_until`, and missing/stale state. Faster decisions
+can use only fully completed slower bars and must expose their age; no
+in-progress higher-timeframe value or silent forward fill is permitted.
+
+The graph is introduced incrementally, not as six learned layers at once:
+
+1. establish a deterministic universe/signal/volatility-targeted-sizing/exit
+   baseline;
+2. admit one opportunity or single-timeframe model only after its own
+   chronological evidence;
+3. add multi-timeframe experts, then calibrated fusion on nested or
+   cross-fitted upstream predictions only;
+4. add a learned allocator only if it improves after-cost robustness against
+   deterministic concentration and volatility constraints; and
+5. add an independent exit model only if it improves over fixed hard exits
+   without hidden turnover or tail-risk deterioration.
+
+Every added layer needs a frozen campaign contract, purged/embargoed temporal
+splits, an untouched final holdout, matched cost/slippage assumptions, and
+layer-level replay attribution. Shared in-sample expert predictions may not
+train fusion or allocation. A failed layer is removed from the candidate graph
+rather than tuned indefinitely. This structure guides the future breadth queue:
+linear/tree baselines, compact sequence candidates, small attention models when
+data supports them, and narrowly bounded Chronos/TimesFM benchmarks are model
+families, not pre-approved winners or direct trading policies.
+
+Claude's falsification-first architecture review returned `uncertain`. It
+supports the separation and evidence-not-orders boundary but requires nested
+cross-fitting at expert/fusion boundaries, frozen historical universe membership
+before downstream fitting, no cross-layer shared tuning, and incremental rather
+than end-to-end validation. The verdict does not authorize training, data
+promotion, KIS access, capital, or order submission.
+
+The eventual Docker-local KIS paper console is a separate Execution objective.
+It will read a sanitized, fresh reconciliation snapshot and show mode,
+connectivity/freshness, holdings, prices, cash/equity, open orders, and safety
+state. Its initial controls are local pause-new-entries and cancellation request.
+A later pause of discretionary reductions may never block hard-risk exits,
+emergency containment, or reconciliation. The web process may not read broker
+credentials or call KIS; it gains no submit authority until the existing
+read-only, capital-envelope, and separate submission approvals are complete.
+
+No present data contract becomes model-eligible, no new role/daemon/framework is
+created, and the current Tiingo prospective-data objective remains unchanged.
+
+Research references, used as design inputs only: [Qlib](https://github.com/microsoft/qlib),
+[Temporal Fusion Transformer](https://arxiv.org/abs/1912.09363),
+[PyPortfolioOpt](https://pyportfolioopt.readthedocs.io/en/latest/UserGuide.html),
+[Chronos](https://github.com/amazon-science/chronos-forecasting), and
+[TimesFM](https://github.com/google-research/timesfm).
+
+Reason: this preserves the operator's desired hierarchy of symbol selection,
+entry timing, sizing, and exits while keeping model uncertainty, execution
+safety, and PnL attribution separable. It avoids a monolithic neural policy or
+unbounded MLP/Transformer search, and it makes a useful KIS paper console an
+execution-learning tool rather than a premature public trading interface.

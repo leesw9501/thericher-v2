@@ -20,6 +20,10 @@
   not prove a cause or resolve the earlier open-order issue.
 - Existing broker-free fills remain labeled `source: local_paper`; fake broker
   fills use `source: in_memory_broker`.
+- The target-position policy graph is now the upstream contract: models may
+  propose timestamped target states and weights, while Execution alone turns a
+  validated current-to-target delta into a persisted intent. It does not accept
+  a model-emitted order or sizing override.
 - The completed offline intraday baseline used isolated local-paper event stores
   for CVS, FCX, and KO across `1m`/`5m`/`10m`/`1h`/`3h`. Each of its 15 cells
   had exactly two `source: local_paper` fills and a flat replayed position. It
@@ -32,6 +36,8 @@
   reconciliation behavior.
 - Cash, positions, accounting PnL, risk limits, emergency controls, and future
   broker adapters when separately authorized.
+- Deterministic enforcement of target-weight, concentration, exposure, loss,
+  and reconciliation constraints before any target delta can become an intent.
 - Fail-closed treatment of duplicate, stale, mismatched, or unknown outcomes.
 
 ## Current Evidence
@@ -97,12 +103,22 @@
 - Data and Review found no market-data, credential, artifact, or process-sprawl
   change in this diagnosis. Claude's `supported-with-limits` review agrees that
   no causal or recovery-success claim is justified.
+- The existing Docker-local dashboard is a monitor only. A future minimal
+  paper-console must read sanitized fresh snapshots, show `unknown` rather than
+  inferred empty KIS state, and write only local safety state until separate
+  KIS paper submit authority exists. Planned controls are pause-new-entries,
+  cancellation request, and a later pause of discretionary reductions; no
+  control may block a verified hard-risk exit or reconciliation requirement.
 
 ## Current Objective
 
 - Keep KIS failed closed while the Data lane advances. Do not read `.env`, call
   KIS, submit, modify, cancel, or retry. A later verification requires both the
   non-secret pairing confirmation below and separate one-time authority.
+- Do not turn the dashboard plan into a KIS integration during this objective.
+  The eventual Docker paper-console is a bounded Execution goal after successful
+  read-only reconciliation; it must not make the web process a credential or
+  broker client.
 
 ## Recovery
 
@@ -129,6 +145,10 @@
    behavior and then propose a paper capital envelope for operator approval.
 4. Keep pure risk integration and append-only execution events as later bounded
    steps after capital and submit authority exist.
+5. In a later, separately bounded Docker UI objective, project fresh sanitized
+   account/position/order facts and local safety controls into the existing
+   localhost-bound web service. Do not add direct broker calls to the web
+   process.
 
 ## Operator Help
 
@@ -145,4 +165,6 @@
 - Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
   paper capital; or enable live behavior under current authority.
 - Add strategy or model-selection logic to execution.
+- Let a dashboard "sell pause" suppress a hard-risk exit, emergency action, or
+  reconciliation requirement.
 - Relabel fake broker fills as `local_paper`.
