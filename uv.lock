@@ -331,6 +331,8 @@ source = { editable = "." }
 
 [package.optional-dependencies]
 dev = [
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "pytest" },
     { name = "ruff" },
 ]
@@ -342,6 +344,7 @@ research = [
 
 [package.metadata]
 requires-dist = [
+    { name = "numpy", marker = "extra == 'dev'", specifier = ">=2.0" },
     { name = "numpy", marker = "extra == 'research'", specifier = ">=2.0" },
     { name = "pandas", marker = "extra == 'research'", specifier = ">=2.2" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },

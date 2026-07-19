@@ -47,6 +47,7 @@ services:
       context: .
       target: research
     profiles: ["research"]
+    network_mode: none
     gpus: all
     command:
       - python
