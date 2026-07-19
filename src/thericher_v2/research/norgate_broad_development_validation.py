@@ -766,7 +766,7 @@ def _train_torch_cuda(
         weight_decay=spec.weight_decay,
     )
     loss_fn = torch.nn.BCEWithLogitsLoss()
-    last_loss = 0.0
+    last_loss: Any | None = None
     for _ in range(spec.epochs):
         for start in range(0, len(train_x), spec.batch_size):
             end = min(start + spec.batch_size, len(train_x))
@@ -775,8 +775,10 @@ def _train_torch_cuda(
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            last_loss = float(loss.item())
+            last_loss = loss.detach()
     torch.cuda.synchronize(device)
+    if last_loss is None:  # Defensive only: the verified development split is nonempty.
+        raise ValueError("CUDA training received no development batches")
     with torch.no_grad():
         probabilities = torch.sigmoid(model(validation_x)).view(-1).cpu().numpy()
     payload = {
@@ -796,7 +798,7 @@ def _train_torch_cuda(
         "torch_version": torch.__version__,
         "epochs": spec.epochs,
         "examples": int(len(train_x)),
-        "final_batch_loss": f"{last_loss:.8f}",
+        "final_batch_loss": f"{float(last_loss.item()):.8f}",
         "cuda_peak_memory_bytes": int(torch.cuda.max_memory_allocated(device)),
         "safe_weights_only_reload": True,
     }
