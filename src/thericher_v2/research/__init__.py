@@ -199,6 +199,13 @@ from .jobs import (
     run_and_write_research_job,
     write_research_job_artifact,
 )
+from .kis_paper_baseline import (
+    KIS_PAPER_BASELINE_M1_BARS,
+    KIS_PAPER_BASELINE_SCHEMA_ID,
+    KisPaperBaselineEvaluation,
+    KisPaperBaselineInput,
+    evaluate_kis_paper_baseline,
+)
 from .raw_pre_entry_outcome_attribution import (
     RawPreEntryOutcomeAttributionConfig,
     RawPreEntryOutcomeAttributionResult,
@@ -239,6 +246,10 @@ __all__ = [
     "CampaignCosts",
     "CampaignFold",
     "CampaignWindow",
+    "KIS_PAPER_BASELINE_M1_BARS",
+    "KIS_PAPER_BASELINE_SCHEMA_ID",
+    "KisPaperBaselineEvaluation",
+    "KisPaperBaselineInput",
     "CampaignReplayRun",
     "CatalogDatasetRef",
     "ExecutableTarget",
@@ -361,6 +372,7 @@ __all__ = [
     "compute_exit_latency_sandbox_marks",
     "check_daily_sensitivity",
     "eligible_daily_signal_starts_for_dates",
+    "evaluate_kis_paper_baseline",
     "load_experiment_source",
     "load_yahoo_intraday_1m_bars",
     "parse_candidate_data_slices",

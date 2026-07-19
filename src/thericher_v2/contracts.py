@@ -15,6 +15,17 @@ from typing import Any, Literal
 SCHEMA_VERSION = 1
 Side = Literal["buy", "sell"]
 Action = Literal["buy", "sell", "hold"]
+TargetAction = Literal["enter", "hold", "reduce", "exit", "abstain"]
+TargetInputStatus = Literal[
+    "ready",
+    "missing",
+    "stale",
+    "incomplete",
+    "duplicate",
+    "non_contiguous",
+    "misaligned",
+    "future",
+]
 
 
 class Timeframe(StrEnum):
@@ -175,6 +186,72 @@ class EnsembleDecision:
         object.__setattr__(self, "decided_at", require_utc(self.decided_at, "decided_at"))
         if self.confidence > Decimal("1") or self.risk_score > Decimal("1"):
             raise ValueError("confidence and risk_score must be between 0 and 1")
+
+
+@dataclass(frozen=True)
+class TargetExposureProposal:
+    """A model-side target state that Execution may map to an order delta."""
+
+    proposal_id: str
+    symbol: str
+    market: str
+    action: TargetAction
+    target_exposure: Decimal
+    confidence: Decimal
+    feature_schema_id: str
+    input_status: TargetInputStatus
+    decided_at: datetime
+    valid_until: datetime
+    feature_window_end: datetime | None
+    reason: str
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.proposal_id.strip() or not self.feature_schema_id.strip():
+            raise ValueError("target proposal identifiers must be nonempty")
+        if not self.reason.strip():
+            raise ValueError("target proposal reason must be nonempty")
+        if self.action not in {"enter", "hold", "reduce", "exit", "abstain"}:
+            raise ValueError("target proposal action is invalid")
+        if self.input_status not in {
+            "ready",
+            "missing",
+            "stale",
+            "incomplete",
+            "duplicate",
+            "non_contiguous",
+            "misaligned",
+            "future",
+        }:
+            raise ValueError("target proposal input_status is invalid")
+        object.__setattr__(self, "symbol", self.symbol.upper())
+        object.__setattr__(self, "market", self.market.upper())
+        object.__setattr__(
+            self,
+            "target_exposure",
+            non_negative(self.target_exposure, "target_exposure"),
+        )
+        object.__setattr__(self, "confidence", non_negative(self.confidence, "confidence"))
+        object.__setattr__(self, "decided_at", require_utc(self.decided_at, "decided_at"))
+        object.__setattr__(self, "valid_until", require_utc(self.valid_until, "valid_until"))
+        if self.feature_window_end is not None:
+            object.__setattr__(
+                self,
+                "feature_window_end",
+                require_utc(self.feature_window_end, "feature_window_end"),
+            )
+        if self.target_exposure > Decimal("1") or self.confidence > Decimal("1"):
+            raise ValueError("target exposure and confidence must be between 0 and 1")
+        if self.valid_until < self.decided_at:
+            raise ValueError("valid_until cannot precede decided_at")
+        if self.feature_window_end is not None and self.feature_window_end > self.decided_at:
+            raise ValueError("feature_window_end cannot follow decided_at")
+        if self.input_status != "ready" and self.action != "abstain":
+            raise ValueError("unready inputs must abstain")
+        if self.action in {"abstain", "exit"} and self.target_exposure != 0:
+            raise ValueError("abstain and exit proposals must target zero exposure")
+        if self.action == "enter" and self.target_exposure == 0:
+            raise ValueError("enter proposals must target positive exposure")
 
 
 @dataclass(frozen=True)

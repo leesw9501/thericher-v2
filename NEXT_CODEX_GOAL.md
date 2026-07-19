@@ -2,56 +2,93 @@
 
 ## Objective
 
-Create one immutable, prospective Tiingo standard-EOD refresh for the already
-approved `SPY`/`QQQ`/`IWM` scope. This is forward data lineage only, not model,
-paper-trading, or profitability work.
+Qualify or reject one **in-memory** KIS paper raw-`1m` runtime input during a
+bounded US market-session probe. The outcome is either a precisely qualified
+90-bar input contract or an explicit observed limitation; both are valid.
 
-## Context
+This is not KIS order submission, account mutation, capital deployment, raw
+market-data persistence, GPU training, or a profitability claim.
 
-- The local replacement inventory found no fresh local training candidate:
-  `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`
-  (`sha256:c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`).
-- The prior fixed-ETF Tiingo snapshot ends at `2026-07-10`.
-- The operator has prohibited new paid market-data purchases, subscriptions,
-  renewals, and upgrades. The already approved Tiingo free-tier scope and the
-  existing Norgate trial remain usable only within their rights; do not buy,
-  enroll, upgrade, or frame a paid source as this goal's resolution.
-- The target-position policy graph is now the durable engine direction, but this
-  narrow data goal does not implement it, train its experts, or build the future
-  KIS paper console. It only preserves prospective lineage needed by later
-  eligible research.
+## Completed Foundation
 
-## Start
+- `data.kis_capability` contains the dated `declared` / `observed` /
+  `qualified` / `unavailable` record and an in-memory completed-bar cache.
+- `execution.kis_market_data` permits only KIS paper token issuance and the
+  raw overseas `1m` endpoint. It has fake-transport coverage for a KIS-shaped
+  page and explicit continuation; it never creates a `Bar` from unqualified
+  timestamps.
+- `research.kis_paper_baseline` consumes exactly 90 completed `1m` bars and
+  deterministic local 18-`5m` / 9-`10m` resamples, then emits a target-exposure
+  proposal or abstains. Execution alone can map a ready proposal to local paper;
+  tests prove replayable `source: local_paper` fills with no network or
+  credential access.
+- The earlier sanitized probe observed successful raw `QQQ` `1m` first and
+  continuation pages at
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-market-data-probe\20260719T054216611479Z\summary.json`.
+  The first client version incorrectly required market `rt_cd` on the OAuth
+  response. Its corrected HTTP/token-only handling passed fake coverage and one
+  bounded real `QQQ`/`NAS` read: 120 raw rows in descending exchange-time order
+  from `19:59` to `18:00`, with `next` present and `more=0`. It retained no raw
+  market data. Its sanitized result is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
+  (`sha256:81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
+  Do not infer time conversion or completed-bar semantics from that one page or
+  retry in a loop.
 
-1. Run `.\scripts\start_next_codex_task.ps1` and read the required project,
-   policy, and Data/Engine stateboard files.
-2. Ask Claude for a short falsification-first check before relying on returned
-   coverage, revisions, or prospective eligibility.
+## Required First Reads
 
-## Data Work
+1. Run `.\scripts\start_next_codex_task.ps1`.
+2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
+   `RUNBOOK.md`, `agents/data.md`, `agents/engine-research.md`, and
+   `agents/execution.md`.
+3. Ask Claude for a short falsification-first drift check before changing the
+   raw-`1m` capability from `observed` to `qualified`.
 
-1. Use the existing guarded reader to read only `TIINGO_API_TOKEN` from root
-   `.env`; never print, log, retain, or parse another value.
-2. Make at most three standard-EOD requests, exactly `SPY`, `QQQ`, and `IWM`,
-   for dates after `2026-07-10`. Do not widen symbols, endpoints, history, or
-   provider scope.
-3. Store raw bytes, normalized raw-D1 fields, hashes, rights marker, dates, and
-   gaps in a new immutable `D:\market_data` snapshot. Do not overwrite or merge
-   the prior source.
-4. Reattest offline on host and Docker where practical. Keep all data/artifacts
-   external to Git and classify the result as prospective lineage only.
-5. Keep the unresolved historical listing/delisting, as-of-universe, and
-   adjustment-lineage limitation visible without proposing a paid-data remedy.
-   A later KIS market-hours read-only data-fit probe is a separate goal, not an
-   exception to this objective's KIS boundary.
+## Work Packages
+
+### Data
+
+1. Define the predeclared qualification facts for this one raw-`1m` capability:
+   exchange/Korea-to-UTC interpretation, strict one-minute ordering, one known
+   overlap/deduplication rule, completed-bar exclusion, freshness budget, and
+   in-memory-only rights status.
+2. Do not store KIS market bytes. Persistent cache/data writes under
+   `D:\market_data` remain prohibited until storage rights are confirmed.
+3. Promote only this exact capability to `qualified` if every predeclared fact
+   has fresh sanitized evidence. Otherwise retain `observed` with the smallest
+   unresolved fact; do not create a proxy source or a report family.
+
+### Execution
+
+1. During the next regular US session, make at most one fresh `KIS_PAPER_*`
+   token attempt for this objective. If it fails, record only sanitized status
+   and stop KIS network work for this objective.
+2. If token issuance succeeds, issue one `QQQ`/`NAS` raw-`1m` first page and at
+   most one documented continuation. Capture only response shape, row count,
+   timestamp bounds, overlap, continuation facts, and local clock; never raw
+   prices, token, account identifier, or account endpoint data.
+3. Keep imports, tests, local paper, and web processes credential- and
+   network-free. Do not call KIS order, cancel, modify, live, or account-mutate
+   endpoints, and do not change `THERICHER_MODE`.
+
+### Engine Research
+
+1. Keep the fixed 90-`1m` / 18-`5m` / 9-`10m` baseline unchanged. Use it only with
+   in-memory completed bars after Data qualifies the capability; otherwise it
+   must abstain.
+2. Do not introduce GPU work, learned models, ensembles, `1h`, `3h`, adjusted
+   prices, corporate actions, news, order book, external universe inputs, or
+   KIS paper submission.
 
 ## Boundaries
 
-- No KIS, order, local-paper, live, or `THERICHER_MODE` change.
-- No credential access except that one approved Tiingo token line.
-- No Yahoo/IEX/Norgate/broad-universe/paid action, model training, GPU data job,
-  r4 retry, model comparison, ensemble, dashboard/KIS-console change,
-  scheduler, daemon, or report family.
+- Do not read `KIS_LIVE_*`, output/log/commit credentials or account data, buy
+  data, enable live behavior, create a daemon/scheduler/report family, or write
+  KIS raw bytes to Git or `D:`.
+- No capital envelope or paper order approval is implied. Local-paper-only
+  replay remains permitted and fills must retain `source: local_paper`.
+- Do not claim a market-session fact from old weekend evidence, a page cap, an
+  error response, or documentation alone.
 
 ## Completion
 
@@ -63,5 +100,5 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Commit, push, and report the snapshot/hash, coverage, gaps/revisions, token
-scope used, blocked model condition, and next objective.
+Commit, push, and report the capability verdict, exact sanitized KIS calls,
+local-paper status, remaining account/data gaps, and next objective.

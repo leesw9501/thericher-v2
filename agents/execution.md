@@ -4,6 +4,26 @@
 
 - Broker-neutral lifecycle readiness is implemented with an offline fake
   transport and an explicit local persistence path.
+- A bounded 2026-07-19 KIS paper read-only probe now proved that token issuance
+  and a `NASD` balance/position response work. Its sanitized account summary is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
+  It retained no account values or symbols. `NYSE` balance, open orders, and
+  orderable funds returned `EGW00201`, so they remain unresolved rather than
+  inferred empty. A separate sanitized market-data probe observed raw unadjusted
+  daily and `1m` continuation pages at
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-market-data-probe\20260719T054216611479Z\summary.json`.
+- The raw-minute client is now isolated to token plus one KIS paper market-data
+  endpoint and parses only observed raw fields; it cannot place, change, or
+  cancel an order. A bounded client instance reuses one successful token for an
+  explicit continuation instead of refreshing it per page. Its first
+  implementation incorrectly required market `rt_cd` on the OAuth response;
+  corrected HTTP/token-only handling passed a fake test and one bounded
+  `QQQ`/`NAS` read of 120 descending raw-minute rows (`19:59` through `18:00`)
+  with continuation metadata. Sanitized evidence:
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
+  (`sha256:81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
+  Do not infer qualified timestamp or completed-bar semantics from that one page
+  or retry in a loop.
 - KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
   read-only virtual-account discovery while `THERICHER_MODE=off`. The initial
   balance probe failed closed, then the corrected open-order-first discovery
@@ -112,11 +132,17 @@
 
 ## Current Objective
 
-- Keep KIS failed closed while the current Data objective advances. Do not read
-  `.env`, call KIS, submit, modify, cancel, or retry in that objective. A
-  subsequent explicitly bounded, market-hours-only verification may make one
-  read-only KIS paper data/connectivity probe after the non-secret pairing
-  confirmation below; it has no submit, cancel, capital, or live authority.
+- Keep KIS **submission** and live behavior failed closed. The active bounded
+  objective may use `KIS_PAPER_*` only through an explicitly invoked,
+  read-only data or account boundary during trading or non-trading hours. It
+  has no submit, cancel, capital, or live authority.
+- The next probe's engine-loop purpose is to qualify or reject the smallest
+  KIS-native input contract, not to fetch an unbounded archive. It must measure
+  one intraday first/continuation sequence, timestamp order, overlap/deduping,
+  completed-bar/freshness behavior, response counts, and pagination facts. The
+  first paper candidate requires only 90 completed `1m` bars and deterministic
+  `5m`/`10m` resamples; it abstains if the in-memory cache is short. No
+  `1h`/`3h`, learned model, or order path opens from documentation alone.
 - Do not turn the dashboard plan into a KIS integration during this objective.
   The eventual Docker paper-console is a bounded Execution goal after successful
   read-only reconciliation; it must not make the web process a credential or
@@ -138,11 +164,13 @@
 
 ## Ready Queue
 
-1. Obtain only yes/no confirmation that the app is a distinct virtual-paper
-   app, the virtual securities account and Open API service are active, and the
-   configured 8-2 pair belongs to that virtual account. Do not request values.
-2. If all three are confirmed, draft a separate one-time read-only verification
-   request; do not schedule or make a probe.
+1. During the next US market session, make at most one fresh paper-token attempt
+   for the bounded raw-`1m` data-fit probe. On token failure, stop all KIS calls
+   for that bounded objective; on success, make one first page and at most one
+   documented continuation without retaining raw rows.
+2. Resolve the remaining read-only `NYSE` balance, open-order, and orderable
+   funds behavior only after the raw-minute contract is decided; do not treat
+   their current errors as account facts.
 3. After a complete typed snapshot exists, reconcile it without submit/cancel
    behavior and then propose a paper capital envelope for operator approval.
 4. Keep pure risk integration and append-only execution events as later bounded
@@ -154,11 +182,9 @@
 
 ## Operator Help
 
-- No capital decision is ready. Reply only yes/no, without sharing values: is
-  the app a dedicated virtual-paper app; are the virtual securities account and
-  Open API service active; and does the configured 8-2 account/product pair
-  belong to that virtual account rather than a real account? The paper capital
-  envelope remains a later decision after successful reconciliation.
+- No operator action is needed for the current KIS-native baseline work. The
+  paper capital envelope remains a later decision after complete read-only
+  reconciliation and a proposed bounded amount.
 
 ## Must Not
 

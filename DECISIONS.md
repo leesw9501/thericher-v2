@@ -2172,9 +2172,9 @@ material limitation; it must be disclosed on any model result rather than turned
 into a purchase request or silently repaired with a static survivor universe.
 
 This limitation blocks a claim of generalizable historical model edge, not a
-future bounded KIS virtual-paper execution-learning phase. Once the current
-non-broker data objective is complete and the relevant exchange is in regular
-hours, Execution may run one separately bounded, read-only KIS paper probe. It
+future bounded KIS virtual-paper execution-learning phase. Execution may run a
+separately bounded, read-only KIS paper probe during trading or non-trading
+hours; only future submission and fill behavior requires a market session. It
 will verify only connectivity and data fitness: a declared overseas daily-series
 request, a declared intraday-bar request with its continuation behavior, returned
 timestamp boundaries, response count, adjustment fields/semantics when present,
@@ -2203,3 +2203,89 @@ does not authorize an automatic workaround.
 Reason: this keeps the project moving toward real paper-execution evidence
 without pretending that free/trial historical data proves an edge, reopening a
 paid-data path, or letting broker connectivity become order authority.
+
+## 2026-07-19 - KIS-native observed input boundary
+
+Decision: adopt KIS runtime availability as the active paper-model boundary.
+The operator requires a practical, free-data path to paper evidence, so an
+unavailable input is removed from the active graph rather than deferred behind a
+paid source. Offline data may still develop a prototype, but its feature schema
+must be reconstructed from KIS-compatible completed bars before a paper model
+can use it. This is a deployability rule, not a claim that KIS history repairs
+point-in-time membership, survivorship, or historical model validation.
+
+One bounded, paper-credential, read-only capability probe completed during the
+non-trading weekend. It created no order, cancellation, account mutation, mode
+change, or live request. Its sanitized market-data summary is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-market-data-probe\20260719T054216611479Z\summary.json`.
+For `QQQ`, the unadjusted daily request returned 100 OHLCV rows from
+`2024-08-09` through `2024-12-31` with continuation header `F`; its retention
+and multi-page daily history remain unverified. The adjusted request returned
+`HTTP 500` / `EGW00201`, so adjusted price and corporate-action inputs are
+unavailable for the initial contract. The `1m` endpoint returned 120 bars for
+`2026-07-17` and a continuation request returned another 120 earlier bars with
+one observed boundary overlap; it exposes local and Korea timestamp fields plus
+raw OHLCV and volume. This qualifies only the fact that KIS can page raw `1m`
+bars, not a complete retention, rate, storage-rights, or adjustment conclusion.
+
+The paired account probe summary is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
+It proved a KIS paper `NASD` balance/position response and an empty `AMEX`
+response without retaining account values or symbols. `NYSE` balance, open
+orders, and orderable funds returned `EGW00201`; they remain unresolved
+endpoint/sandbox or non-trading-hour behavior, not empty account facts. The
+existing read-only client now uses the observed working token content type
+(`application/json`) and accept header, with no widening of its allowlist.
+
+The initial runtime candidate is therefore a fixed, small-exposure, raw-bar-only
+baseline: 90 fully completed `1m` OHLCV bars and deterministic `5m`/`10m`
+resamples. It must abstain on an incomplete cache. `1h`, `3h`, adjusted prices,
+corporate actions, order book, news, external universe labels, learned models,
+ensembles, learned allocation, and learned exits remain inactive until their
+own KIS/reconstruction evidence exists. Claude's falsification-first review
+returned `supported-with-limits`: a page cap is not a lookback requirement,
+capability observations must be dated, transfer tolerances must be predeclared,
+and the limited-validation exception applies only to the simple baseline.
+
+Reason: this turns observed KIS constraints into an executable model design and
+keeps paper readiness moving without making weak historical evidence, an API
+page size, or a failed sandbox endpoint look stronger than it is.
+
+Implementation: the broker-free foundation now has a compact KIS capability
+record, an in-memory completed-bar cache, a narrow raw-minute read-only parser,
+a common target-exposure proposal, and a fixed 90-`1m` / 18-`5m` / 9-`10m`
+baseline that maps only through deterministic local-paper execution. The
+research module never creates an `OrderIntent`; Execution maps a ready target
+delta. Local fills remain `source: local_paper` and replay from the event store.
+
+Qualification permits an in-memory runtime feature only; it does not grant raw
+data persistence. A confirmed storage-rights status remains necessary before
+market bytes or a cache are written under `D:\market_data`. This preserves the
+paper-first path without turning an unverified retention right into a hidden
+archive.
+
+The first post-implementation raw-minute client check surfaced a local boundary
+bug: OAuth token responses do not need the market-data `rt_cd` field. After the
+client was corrected to require only HTTP success and a token, its fake response
+test and one bounded real paper read succeeded. The real `QQQ`/`NAS` response
+returned 120 raw bars in descending exchange-time order from `19:59` through
+`18:00`, with `next` present and `more=0`; it retained no raw price, token,
+account, or order data. Its sanitized evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
+with SHA-256
+`81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`.
+This strengthens the dated raw-page observation only; time conversion,
+completed-bar behavior, overlap handling, rate, and storage rights remain
+unqualified.
+
+The read-only client now reuses a successfully issued token within one bounded
+client instance, so a first page plus its explicit continuation needs one token
+attempt rather than one credential request per page. The token is not persisted,
+logged, or shared with execution; a new bounded objective creates a new client.
+
+Claude's falsification-first verdict on the in-memory versus persistent-storage
+boundary was `uncertain`. It specifically requires a discriminating timestamp
+mapping, an in-progress-bar completeness observation, and a repeatable
+continuation overlap rule before qualification. It found the current blast
+radius low because the KIS execution adapter remains disabled and the foundation
+maps only to `local_paper`; that constraint must remain in force.

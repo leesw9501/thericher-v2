@@ -31,6 +31,14 @@ from .daily import (
     load_cataloged_yahoo_daily_1d_bars,
     load_fixed_etf_daily_factor_change_dates,
 )
+from .kis_capability import (
+    CompletedBarCache,
+    CompletedBarWindow,
+    KisCapabilityState,
+    KisMarketDataCapability,
+    KisStorageRightsStatus,
+    observed_kis_paper_capabilities,
+)
 from .local import (
     CSV_FIELDS,
     CatalogedBars,
@@ -56,6 +64,8 @@ __all__ = [
     "DevelopmentDailyUniverseRef",
     "FACTOR_CHANGE_RELATIVE_THRESHOLD",
     "CatalogedBars",
+    "CompletedBarCache",
+    "CompletedBarWindow",
     "CatalogedCorporateActions",
     "CorporateActionEvent",
     "DEFAULT_DAILY_ROOT",
@@ -67,6 +77,9 @@ __all__ = [
     "BarQualityReport",
     "BarQualityWarning",
     "LocalCsvBarProvider",
+    "KisCapabilityState",
+    "KisMarketDataCapability",
+    "KisStorageRightsStatus",
     "MarketDataProvider",
     "NorgateRawDailyBarProvider",
     "NorgateUnavailableError",
@@ -86,6 +99,7 @@ __all__ = [
     "load_cataloged_yahoo_daily_1d_bars",
     "load_cataloged_corporate_actions",
     "load_fixed_etf_daily_factor_change_dates",
+    "observed_kis_paper_capabilities",
     "resample_bars",
     "select_catalog_dataset",
     "write_training_readiness_catalog",

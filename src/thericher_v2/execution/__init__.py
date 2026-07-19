@@ -39,6 +39,7 @@ from .local_paper import (
     replay_local_paper_account,
 )
 from .risk import PreSubmitRiskDecision, RiskReason, evaluate_pre_submit_risk
+from .target_position import target_proposal_to_order_intent
 
 __all__ = [
     "BROKER_DISABLED_SOURCE",
@@ -76,4 +77,5 @@ __all__ = [
     "create_kis_broker_adapter",
     "evaluate_pre_submit_risk",
     "replay_local_paper_account",
+    "target_proposal_to_order_intent",
 ]

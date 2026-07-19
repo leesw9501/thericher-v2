@@ -11,6 +11,20 @@
   selection, timestamped multi-timeframe evidence, entry/exit policy,
   constrained target-weight allocation, and deterministic execution. It is a
   research architecture, not a new model batch or a broker authority.
+- The active paper-first research boundary is KIS-native: a runtime feature may
+  be used only after a dated KIS capability record proves that it can be
+  reconstructed from completed bars. The initial candidate is a simple,
+  fixed-exposure bar-only baseline using 90 completed `1m` bars plus local
+  `5m`/`10m` resamples; `1h`/`3h`, external-universe, action, news, and
+  order-book inputs remain inactive until qualified.
+- The foundation now exposes that baseline as a target-exposure proposal only.
+  It abstains on missing, stale, incomplete, duplicate, non-contiguous, future,
+  or misaligned windows, and has no broker, credential, or network import.
+  It remains a local-paper fixture until raw KIS time and completed-bar semantics
+  qualify the input contract.
+- Execution has observed a successful raw `1m` page and one continuation, but
+  not retention, cache-recovery, or adjusted-price availability. Treat raw
+  `1m` as an input-contract candidate, not a trained-model or GPU permission.
 - Data marks the fixed `SPY`, `QQQ`, `IWM` r2 dataset development-training
   eligible and ranking/holdout ineligible.
 - The CUDA evidence is structurally valid but the factor sensitivity verdict is
@@ -73,6 +87,10 @@
 
 ## Current Objective
 
+- Keep the completed deterministic KIS-native baseline fixed while Data and
+  Execution qualify the raw input contract. Do not start a GPU campaign merely
+  because the historical dataset is limited. The paper-first exception does not
+  extend to learned models, ensembles, learned allocation, or learned exits.
 - The fixed-ETF source-sensitivity question and the full-history exact
   raw-source alignment check are unsupported. The broad ETF wrapper supplies
   descriptive features plus explicit future-only outcomes, but neither opens

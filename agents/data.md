@@ -183,6 +183,20 @@ prospective collection within their rights, but their limitations stay explicit:
 they do not become a point-in-time historical universe or a generalizable model
 claim by substitution.
 
+The active data direction is KIS-native paper readiness. Data owns the compact
+runtime feature contract, but does not call KIS. Execution's dated read-only
+probe now observed raw unadjusted daily and 120-row `1m` pages with one working
+continuation, while adjusted daily returned `EGW00201`. The corrected raw-minute
+client also reproduced one 120-row `QQQ`/`NAS` page in descending exchange-time
+order from `19:59` to `18:00`. The observation does not yet qualify retention,
+timestamp conversion, completed-bar semantics, overlap handling, or cache
+recovery. The new compact capability record and completed-bar cache are
+in-memory only. A qualified runtime field may be used in memory even while
+storage rights are unverified; persistent market bytes under `D:` still need
+confirmed rights. The initial candidate is therefore 90 completed raw `1m`
+OHLCV bars and local `5m`/`10m` resamples; `1h`/`3h` and all unverified fields
+are inactive, not assumed.
+
 The Norgate trial compatibility and semantics checks are complete. `PLTR`
 membership changed false-to-true on `2024-09-23`; for `SMCI`, the client-clipped
 `Capital Event` marker is `2024-09-30` and the derived ratio transition is
@@ -417,15 +431,18 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Capture one immutable prospective standard-Tiingo-EOD refresh for only
+1. At the next bounded KIS market-session probe, review sanitized timestamp,
+   continuation, overlap, completed-bar, freshness, and storage-rights evidence
+   for the existing raw-`1m` capability. Qualify only in-memory use if every
+   runtime fact is established; do not write raw bytes before rights are
+   confirmed.
+2. Capture one immutable prospective standard-Tiingo-EOD refresh for only
    `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source boundary. Do not widen
    symbols, provider scope, or data rights, and do not create a model contract.
-2. Do not acquire a third Tiingo raw-daily shard merely to increase common
+3. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort remains bounded source evidence.
-3. When a new eligible multi-timeframe dataset exists, freeze one Data-owned
-   completed-bar evidence contract before Engine trains any expert: each
-   timeframe needs an exchange-calendar anchor, `feature_window_end`,
-   `valid_until`, and explicit missing/stale handling.
+4. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
+   continuation, and cache-recovery evidence qualifies it.
 
 ## Historical Queue Context
 

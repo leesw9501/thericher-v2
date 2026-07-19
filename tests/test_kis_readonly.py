@@ -158,7 +158,7 @@ def test_transport_rejects_non_allowlisted_requests_before_network(monkeypatch) 
         KisHttpRequest(
             method="POST",
             url="https://openapivts.koreainvestment.com:29443/oauth2/tokenP",
-            headers={"content-type": "application/json"},
+            headers={"content-type": "application/json", "accept": "application/json"},
             json_body={
                 "grant_type": "client_credentials",
                 "appkey": "test",
@@ -220,6 +220,10 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
 
     assert len(transport.requests) == 6
     assert transport.requests[0].method == "POST"
+    assert transport.requests[0].headers == {
+        "content-type": "application/json",
+        "accept": "application/json",
+    }
     assert all(request.method == "GET" for request in transport.requests[1:])
     assert [request.headers["tr_id"] for request in transport.requests[1:]] == [
         KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,

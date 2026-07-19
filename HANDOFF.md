@@ -68,8 +68,8 @@ attribution. The full definition and dashboard boundary live in
 `ARCHITECTURE.md`.
 
 This replaces neither the current data requirement nor current execution
-authority. No fresh model-eligible contract exists yet, and KIS remains failed
-closed. The eventual Docker-local paper console is read-focused and exposes
+authority. No fresh model-eligible contract exists yet, and KIS submission/live
+remains failed closed. The eventual Docker-local paper console is read-focused and exposes
 sanitized holdings, prices, open orders, and safety state only after successful
 read-only reconciliation; it does not grant submit authority by itself.
 
@@ -79,13 +79,55 @@ otherwise perfect research dataset. KIS paper still needs its minimal execution
 boundaries, a fresh reconciliation path, and a separately approved capital
 envelope before any submission begins.
 
+The immediate product path is KIS-native paper readiness. Active model inputs
+must be reconstructible from KIS-compatible, completed market bars at decision
+time. The first candidate is deliberately small: 90 completed `1m` bars plus
+deterministic `5m`/`10m` resamples, with explicit abstention on a missing
+window. `1h`/`3h`, order-book, news, corporate-action, and external-universe
+features remain inactive until KIS capability evidence qualifies them. Offline
+sources may develop a prototype but cannot silently supply a paper-time feature.
+
+The broker-free foundation is now implemented: `data.kis_capability` keeps the
+dated KIS capability record and completed-bar cache in memory; the raw-minute
+KIS reader parses observed page fields without converting unqualified timestamps
+into `Bar`; `research.kis_paper_baseline` produces only a target-exposure
+proposal from exactly 90/18/9 completed bar views; and Execution alone maps that
+proposal to a local-paper `OrderIntent`. Focused tests cover missing, stale,
+incomplete, duplicate, and non-contiguous abstention plus replayable
+`source: local_paper` fills. This is not KIS order support or an active paper
+model.
+
 ## Current Boundaries
 
-- KIS remains failed closed. No current task may read `.env` values or call KIS;
-  prior scoped Tiingo and KIS authorities do not widen a new objective. Any
-  later KIS re-probe needs non-secret pairing confirmation and separate one-time
-  authority. Order submit/cancel, paper capital, `KIS_LIVE_*`, live behavior,
-  and mode changes remain disabled.
+- KIS submission/live remains failed closed. The current KIS-native objective
+  may read only `KIS_PAPER_*` through explicitly invoked, allowlisted read-only
+  data/account probes; imports, tests, local simulation, and the web process
+  remain credential- and network-free. Order submit/cancel, paper capital,
+  `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
+- The 2026-07-19 KIS paper probes observed a `NASD` balance/position response,
+  a 100-row unadjusted daily page, and two paged raw `1m` pages. Adjusted daily
+  fields and several account endpoints returned `EGW00201`; those facts remain
+  unavailable or unresolved rather than being inferred from another provider.
+- The raw-minute client initially mistook an OAuth response without market
+  `rt_cd` for an auth failure; its corrected HTTP/token-only handling passed
+  fake transport tests and one bounded real `QQQ`/`NAS` paper read. It returned
+  120 raw bars in descending exchange-time order from `19:59` to `18:00`, with
+  a continuation indicator, and retained no raw price, token, or account value.
+  A single client instance reuses its one successful token for a bounded first
+  page plus continuation read; it does not refresh credentials per page.
+  Sanitized evidence is at
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
+  (SHA-256 `81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
+  The response does not qualify time conversion, completed-bar behavior,
+  overlap/deduplication, rate, or storage rights; do not retry in a loop.
+- Claude's latest falsification-first review is `uncertain`, not adverse to the
+  direction. It requires a discriminating timestamp mapping, a live
+  in-progress-bar completeness observation, and a repeatable overlap rule
+  before the capability can become `qualified`. The KIS execution adapter is
+  still code-disabled; only `local_paper` can consume the current baseline.
+- A `qualified` KIS capability permits an in-memory completed-bar window only.
+  Persistent raw-byte/cache storage still requires confirmed rights; otherwise
+  retain only sanitized capability evidence outside Git.
 - Existing broker-free fills keep `source: local_paper`.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under

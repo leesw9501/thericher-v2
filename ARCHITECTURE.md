@@ -19,6 +19,40 @@ acyclic. Across timestamps, only durable portfolio and broker state feed the
 next graph evaluation. A learned node can produce evidence or a desired target
 state; only deterministic Execution code may create an `OrderIntent`.
 
+## Deployability-First Input Contract
+
+The active paper-trading graph is constrained first by what KIS can provide at
+the decision timestamp, not by the broadest offline dataset that happens to be
+available. This improves the data-collection and paper-trading loops: a feature
+that cannot be recreated during a KIS paper session cannot silently become a
+runtime dependency.
+
+Each active input belongs to one compact, versioned KIS capability record. It
+names the non-secret endpoint/category, exchange and symbol scope, raw field,
+bar interval, exchange-calendar/session interpretation, completed-bar rule,
+freshness budget, history/paging cost, storage-rights status, and a dated
+observed response reference. Its state is one of `declared`, `observed`,
+`qualified`, or `unavailable`; documentation alone is never `observed`.
+
+Only `qualified` KIS-reconstructible fields may enter an active paper model.
+Offline Tiingo, Norgate, or other lawful development data may still support a
+prototype, but a prototype is not paper-deployable until the exact feature
+schema can be rebuilt from KIS-compatible bars and passes a predeclared
+per-feature transfer tolerance. The record is a small engine data contract, not
+a report family, gate system, scheduler, or second data catalog.
+
+`qualified` permits an in-memory runtime input only. Persistent raw-byte or
+cache storage requires separately confirmed storage rights; `unverified`
+rights keep the contract in memory and retain only sanitized capability
+evidence. `prohibited` rights cannot be qualified. This lets a bounded paper
+canary learn from a completed runtime window without silently acquiring a local
+historical archive.
+
+An unavailable input is removed from the active graph and recorded with its
+missing dependency. It is not replaced by an inferred value, a hidden provider,
+or a paper-trading blocker. A later observed KIS capability can reactivate that
+branch through a new bounded contract.
+
 ## Modules
 
 ```text
@@ -48,9 +82,10 @@ the error came from symbol selection, timing, sizing, exit handling, or fills.
 1. **Opportunity selection** chooses a point-in-time eligible universe and
    ranks symbols worth evaluating. It runs on slow horizons and can reject a
    symbol without creating a trade signal.
-2. **Per-symbol evidence experts** independently evaluate completed `1m`,
-   `5m`, `10m`, `1h`, and `3h` inputs. An expert can be a rule, statistical
-   model, tree, sequence model, or foundation-model benchmark.
+2. **Per-symbol evidence experts** independently evaluate only the completed
+   KIS-qualified subset of `1m`, `5m`, `10m`, `1h`, and `3h` inputs. An expert
+   can be a rule, statistical model, tree, sequence model, or foundation-model
+   benchmark.
 3. **Trade policy** fuses valid evidence into `enter`, `hold`, `reduce`,
    `exit`, or `abstain`. Entry and exit use related evidence but are separate
    tasks; an exit is not merely the inverse of a buy signal.
@@ -122,9 +157,19 @@ final temporal holdout remains untouched until the entire preceding layer set is
 frozen. A failed incremental comparison removes that layer from the candidate
 graph rather than being tuned around indefinitely.
 
+The sole paper-first exception is a fixed, simple bar-only baseline with a
+small approved exposure envelope. It may collect bounded KIS paper evidence
+when long historical validation is limited, provided the input contract is
+qualified, the strategy abstains on missing data, and the execution hard stops
+are active. This exception does not promote the baseline, prove an edge, or
+extend to learned, ensemble, allocation, or exit models without their ordinary
+evidence.
+
 ### Timeframe Policy
 
-Default production policy is hierarchical, not free-form weighted blending.
+The full hierarchy is a candidate topology, not an automatically enabled
+production policy. A timeframe becomes active only after its KIS capability
+record is qualified; otherwise its expert is absent rather than fed a proxy.
 
 - `3h` and `1h`: market regime, direction, and opportunity context.
 - `10m`: confirmation, volatility, and trend stability.
@@ -135,6 +180,34 @@ At a fast decision time, a slower expert may use only its most recently **fully
 closed** bar and must expose its age and expiry. Research may test alternative
 expert topologies, but promotion must show stable, interpretable, after-cost
 out-of-sample value over the simpler graph.
+
+### Initial KIS Paper Baseline
+
+The first intended deployable candidate deliberately uses less than the observed
+single-request intraday page size instead of equating an API page size with a
+model requirement:
+
+- the latest **90 completed `1m` OHLCV bars**, session state, timestamp, and
+  explicit missing/stale flags form the primary input window;
+- `5m` and `10m` views are deterministic local resamples of those same 90
+  completed bars, yielding 18 and 9 completed bars respectively when available;
+- `1h` and `3h` experts, order-book features, news, corporate-action fields,
+  and external universe labels are inactive until separately qualified; and
+- if the rolling KIS-compatible cache lacks a complete window, the baseline
+  abstains. It does not page a broker on every inference or fill the window from
+  another provider.
+
+The `90`-bar value is an initial bounded hypothesis, not a permanent setting.
+A `120`, `300`, multi-session, or higher-timeframe window may be introduced
+only after observed KIS retention, continuation, rate, and cache-recovery
+evidence shows it can be supplied with headroom. The runtime cache is filled by
+bounded startup/backfill work and ongoing bars; model inference reads the local
+completed-bar cache rather than making a broker request for every decision.
+
+The baseline outputs `enter`, `hold`, `reduce`, `exit`, or `abstain`, a bounded
+target exposure fraction, confidence, `valid_until`, and input-status evidence.
+It never outputs KIS request fields or an order. Execution alone maps an
+accepted target delta to a KIS-compatible paper `OrderIntent`.
 
 ## Model Policy
 
@@ -182,6 +255,12 @@ Existing short 1m snapshots are development evidence until a Data-owned
 manifest shows enough chronological coverage for model selection. Labels must
 be realizable after the assumed fill, and final holdouts must remain sealed from
 tuning.
+
+For paper deployment, model-byte provenance is not enough: its KIS feature
+reconstruction comparison must be frozen before use. The comparison declares a
+numeric tolerance for every transformed feature before it runs; a material
+difference, stale bar, missing field, or unavailable source causes abstention
+or removes the candidate, never an undocumented substitution.
 
 Free public models and weights stay inside the research boundary. Record source,
 version, hash, and license context; prefer safe serialization; isolate code that

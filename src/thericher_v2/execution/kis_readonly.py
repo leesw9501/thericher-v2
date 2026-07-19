@@ -535,7 +535,10 @@ class KisPaperReadOnlyClient:
             KisHttpRequest(
                 method="POST",
                 url=f"{self._config.base_url}{KIS_PAPER_TOKEN_PATH}",
-                headers={"content-type": "application/json; charset=utf-8"},
+                headers={
+                    "content-type": "application/json",
+                    "accept": "application/json",
+                },
                 json_body={
                     "grant_type": "client_credentials",
                     "appkey": self._config.app_key,
