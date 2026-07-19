@@ -101,6 +101,30 @@ def test_rejects_lookahead_or_noncanonical_rows(tmp_path: Path) -> None:
         )
 
 
+def test_rejects_cross_source_lookalike_parent_before_cpu_or_cuda(tmp_path: Path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    lookalike = replace(
+        _dataset(tmp_path),
+        parent_dataset_hash="sha256:" + "e" * 64,
+        parent_manifest_hash="sha256:" + "f" * 64,
+    )
+
+    with pytest.raises(ValueError, match="fixed parent lineage"):
+        run_norgate_broad_development_cpu_baseline(
+            lookalike,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+    with pytest.raises(ValueError, match="fixed parent lineage"):
+        run_norgate_broad_development_cuda_job(
+            lookalike,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+            job_id="mlp-seed-71",
+        )
+
+
 def test_rejects_artifacts_inside_git_and_cuda_before_cpu(tmp_path: Path) -> None:
     repo = tmp_path / "repo"
     repo.mkdir()
@@ -268,8 +292,8 @@ def _dataset(tmp_path: Path) -> NorgateBroadDevelopmentDataset:
         artifact_dir=tmp_path / "derived-feature-artifact",
         artifact_hash="sha256:" + "a" * 64,
         contract_hash="sha256:" + "b" * 64,
-        parent_dataset_hash="sha256:" + "c" * 64,
-        parent_manifest_hash="sha256:" + "d" * 64,
+        parent_dataset_hash=FIXED_PARENT_DATASET_HASH,
+        parent_manifest_hash=FIXED_PARENT_MANIFEST_HASH,
         features=features,
         labels=labels,
         decision_indices=decision_indices,

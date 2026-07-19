@@ -90,9 +90,16 @@
   breadth, depth, ensemble, or CUDA work.
   The separate Norgate broad panel has now completed its single allowed
   engineering loader/target/split/baseline loop. It remains static,
-  survivor/availability-conditioned evidence. Its next useful role is only a
-  source-side falsification target for Data's offline Tiingo r2 cohort; it does
-  not reopen GPU work.
+  survivor/availability-conditioned evidence. Data's completed Tiingo r2
+  cohort reattests 29 linked ranks, 483 overlap sessions, 18 forward-only
+  sessions, 153 markers, and 3,316 conservative exclusions at
+  `D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`
+  (manifest SHA-256
+  `dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`).
+  The Engine intake exposes only identity/count/scope metadata and keeps all
+  training, model, ranking, ensemble, campaign, paper, PnL, and profitability
+  flags false. The next work is a Claude-reviewed source-separated contract,
+  not a new GPU job.
 
 ## Explicit-Event Replay
 
@@ -117,9 +124,10 @@
   Yahoo and Tiingo IEX remain descriptive-only; the static Norgate panel closed
   with two completed MLP observations near the linear baseline and two untested
   TCN compute rejections. It cannot be refilled, retried, ranked, or ensembled.
-- Data's offline Tiingo r2 cross-source cohort is the only ready research
-  preparation. It opens no model job by itself; Engine may add only a guard that
-  prevents silent source mixing or training reuse.
+- Data's completed Tiingo r2 cross-source cohort is the only ready research
+  preparation. It opens no model job by itself; Engine must use it only to
+  prepare a source-separated contract and must not bypass the metadata-only
+  intake or silently mix source prices.
 - For a later verified dataset, breadth must predeclare naive, regularized
   linear, tabular-tree, and compact MLP candidates. TCN enters only after a
   CUDA preflight estimates a bounded wall-clock cost. GPU idle time alone never
@@ -289,10 +297,10 @@
 
 Do not reopen the static Norgate validation batch. Its valid output is two
 completed MLP engineering observations and two explicitly compute-rejected,
-untested TCN jobs, not a four-model comparison. The next Engine action is only
-to guard Data's Tiingo r2 cross-source cohort from training/model reuse and to
-wait for a later, Claude-reviewed research contract before enumerating new
-breadth, depth, or ensemble work.
+untested TCN jobs, not a four-model comparison. The Tiingo r2 cross-source
+cohort and metadata-only Engine intake are complete. The next Engine action is
+to freeze or reject one Claude-reviewed source-separated research contract
+before enumerating new breadth, depth, or ensemble work.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1

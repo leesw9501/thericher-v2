@@ -610,15 +610,17 @@ unnecessary row-level data.
 
 ## Next Objective
 
-**Current target, superseding the older historical context below:** build an
-offline Tiingo r2/Norgate cross-source validation cohort from existing local
-bytes. It will retain the 29-symbol Tiingo r2 lineage, 501 returned sessions,
-the fixed 483-session overlap with the static Norgate panel, a forward-only
-boundary for the remaining 18 Tiingo sessions, and conservative event-window
-exclusions. It uses no token, network, broker, or model training and remains
-non-PIT, non-ranking, non-paper, and non-profitability evidence. The goal is to
-falsify fragile provider-specific engineering results later, not to declare a
-tradable model.
+**Current target, superseding the older historical context below:** the offline
+Tiingo r2/Norgate cross-source cohort is complete at
+`D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`.
+Its sole `manifest.json` is 79,969 bytes with SHA-256
+`dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`.
+It reattests the fixed Tiingo r2 and Norgate parents, retains 29 linked ranks,
+501 Tiingo sessions, 483 overlap sessions, 18 forward-only sessions, 153
+Tiingo action markers, and 3,316 conservative `t-20..t+2` rank-decision
+exclusions. Host and Docker reattestation agree. It is metadata-only,
+cross-source engineering evidence: non-PIT, non-training, non-model,
+non-ranking, non-paper, and non-profitability evidence.
 
 The first fixed-ETF Norgate trial raw-D1 source snapshot is now complete at
 `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`.
@@ -662,12 +664,13 @@ opens only `development_training_eligible` for engineering breadth preparation;
 model, GPU, campaign, ranking, holdout, paper, and profitability eligibility
 remain false until a separate bounded research contract is verified.
 
-The next single target is to expose this exact panel through an offline,
-hash-reattesting development loader, freeze a small no-holdout model contract,
-and run CPU naive/linear baselines before a finite serial CUDA breadth batch.
-The path must retain the static-panel limitations, use no broker or credential,
-and produce external-only artifacts. It is research infrastructure and
-engineering evidence only, not a strategy-selection, paper, or profit claim.
+The next single target is a source-separated research-contract preflight. It
+must use the completed cohort only as a falsification/mask input, keep provider
+prices unmerged, and establish or reject one frozen development-only candidate
+contract before any new CPU/GPU model batch. It must retain the static-panel
+limitations, use no broker or credential, and produce external-only evidence.
+It is research infrastructure and engineering evidence only, not a
+strategy-selection, paper, or profit claim.
 
 The Norgate trial's bounded semantic branch remains `unsupported` for
 provider/campaign field meaning, and direct historical-universe enumeration is

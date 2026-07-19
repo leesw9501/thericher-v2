@@ -70,10 +70,15 @@ and profitability eligibility remain false.
 The static-panel engineering loop consumed that panel through a derived feature
 artifact only. Its two completed MLP jobs did not beat the fixed CPU linear
 baseline, and its two TCN jobs are compute-rejected and untested rather than
-negative model evidence. Data must not refill that model queue. The next ready
-Data work is an offline Tiingo r2/Norgate cross-source cohort: 29 existing
-Tiingo r2 symbols, 501 Tiingo sessions, a fixed 483-session overlap, and a
-conservative event-window exclusion record without any provider call.
+negative model evidence. Data must not refill that model queue. The offline
+Tiingo r2/Norgate cohort is now complete at
+`D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`:
+29 linked ranks, 501 Tiingo sessions, 483 overlap sessions, 18 forward-only
+sessions, 153 action markers, and 3,316 conservative `t-20..t+2` exclusions.
+Its manifest SHA-256 is
+`dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`.
+It makes no provider-quality, PIT, training, model, GPU, campaign, paper, or
+profitability claim.
 
 The bounded Norgate S&P 500 membership snapshot is complete at
 `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
@@ -372,10 +377,9 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Build one compact, offline Tiingo r2 cross-source validation cohort against
-   the Norgate broad panel. Reattest both parents, retain rank linkage and
-   conservative event-window exclusions, keep the later 18 Tiingo sessions
-   forward-only, and do not create a model input or mix source price fields.
+1. Support one source-separated research-contract preflight from the completed
+   cohort without creating a new data download, raw-bar export, or provider
+   price merge. Surface only existing rank/session/mask metadata.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort is the bounded source validation input.
 
@@ -741,12 +745,13 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Next Handoff
 
-The immediate next Data objective is the offline Tiingo r2 cross-source cohort,
-not a third shard or another download. It must reattest the existing 29-symbol,
-501-session r2 source and the 523-symbol, 483-session Norgate panel, reserve
-the 483 shared sessions for later falsification only, retain the last 18 Tiingo
-sessions as forward-only, and record event-window exclusions without making a
-PIT, campaign, model, GPU, paper, or profitability claim.
+The Tiingo r2 cross-source cohort is complete, not a third shard or another
+download. It reattests the existing 29-symbol, 501-session r2 source and the
+523-symbol, 483-session Norgate panel, reserves the 483 shared sessions for
+falsification only, retains the last 18 Tiingo sessions as forward-only, and
+records conservative action-window exclusions without making a PIT, campaign,
+model, GPU, paper, or profitability claim. The next Data contribution is only
+the metadata needed by a source-separated research-contract preflight.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip

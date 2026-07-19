@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
+import shutil
 import socket
 import subprocess
 from datetime import UTC, date, datetime
@@ -313,6 +315,139 @@ def test_tamper_and_preflight_fail_closed_without_request(tmp_path: Path) -> Non
             repo=floor_repo,
             opener=unexpected_request,
             sample_size=3,
+        )
+
+
+def test_reconstruction_compares_canonical_csv_not_gzip_encoding(tmp_path: Path) -> None:
+    root, candidate_path, manifest_path, expected_hash, repo = _candidate_union(tmp_path)
+    result = _acquire(
+        root=root,
+        candidate_path=candidate_path,
+        manifest_path=manifest_path,
+        expected_hash=expected_hash,
+        env_path=_env(tmp_path),
+        repo=repo,
+        opener=lambda _request, *, timeout: _Response(_payload()),
+        sample_size=3,
+    )
+    canonical_path = result.snapshot_dir / "ohlcv_1d.csv.gz"
+    reencoded = gzip.compress(
+        gzip.decompress(canonical_path.read_bytes()), compresslevel=1, mtime=0
+    )
+    assert reencoded != canonical_path.read_bytes()
+    canonical_path.write_bytes(reencoded)
+    # Re-encoding creates a distinct snapshot identity. This test verifies only
+    # that canonical reconstruction is content-based once its new byte hashes
+    # have been explicitly attested.
+    snapshot_manifest = result.snapshot_dir / "manifest.json"
+    manifest = json.loads(snapshot_manifest.read_text(encoding="utf-8"))
+    encoded_hash = "sha256:" + hashlib.sha256(reencoded).hexdigest()
+    manifest["dataset_hash"] = encoded_hash
+    manifest["files"]["canonical_raw_fields"]["sha256"] = encoded_hash
+    manifest["files"]["canonical_raw_fields"]["size_bytes"] = len(reencoded)
+    snapshot_manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    manifest_hash = "sha256:" + hashlib.sha256(snapshot_manifest.read_bytes()).hexdigest()
+
+    verified = verify_tiingo_daily_pilot_snapshot(
+        result.snapshot_dir,
+        expected_dataset_hash=encoded_hash,
+        expected_manifest_hash=manifest_hash,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    assert verified.dataset_hash == encoded_hash
+    assert verified.manifest_hash == manifest_hash
+
+
+def test_rejects_reordered_canonical_csv_after_new_snapshot_identity(tmp_path: Path) -> None:
+    root, candidate_path, manifest_path, expected_hash, repo = _candidate_union(tmp_path)
+    result = _acquire(
+        root=root,
+        candidate_path=candidate_path,
+        manifest_path=manifest_path,
+        expected_hash=expected_hash,
+        env_path=_env(tmp_path),
+        repo=repo,
+        opener=lambda _request, *, timeout: _Response(_payload()),
+        sample_size=3,
+    )
+    canonical_path = result.snapshot_dir / "ohlcv_1d.csv.gz"
+    lines = gzip.decompress(canonical_path.read_bytes()).splitlines(keepends=True)
+    assert len(lines) > 2
+    lines[1], lines[2] = lines[2], lines[1]
+    reordered = gzip.compress(b"".join(lines), mtime=0)
+    canonical_path.write_bytes(reordered)
+
+    snapshot_manifest = result.snapshot_dir / "manifest.json"
+    manifest = json.loads(snapshot_manifest.read_text(encoding="utf-8"))
+    reordered_hash = "sha256:" + hashlib.sha256(reordered).hexdigest()
+    manifest["dataset_hash"] = reordered_hash
+    manifest["files"]["canonical_raw_fields"]["sha256"] = reordered_hash
+    manifest["files"]["canonical_raw_fields"]["size_bytes"] = len(reordered)
+    snapshot_manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    manifest_hash = "sha256:" + hashlib.sha256(snapshot_manifest.read_bytes()).hexdigest()
+
+    with pytest.raises(ValueError, match="canonical data does not match raw evidence"):
+        verify_tiingo_daily_pilot_snapshot(
+            result.snapshot_dir,
+            expected_dataset_hash=reordered_hash,
+            expected_manifest_hash=manifest_hash,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_mounted_snapshot_still_rejects_raw_canonical_byte_tampering(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, candidate_path, manifest_path, expected_hash, repo = _candidate_union(tmp_path)
+    result = _acquire(
+        root=root,
+        candidate_path=candidate_path,
+        manifest_path=manifest_path,
+        expected_hash=expected_hash,
+        env_path=_env(tmp_path),
+        repo=repo,
+        opener=lambda _request, *, timeout: _Response(_payload()),
+        sample_size=3,
+    )
+    mounted_root = repo / root.name
+    shutil.copytree(root, mounted_root)
+    mounted_snapshot = mounted_root / result.snapshot_dir.relative_to(root)
+    original_is_mount = Path.is_mount
+
+    def is_market_data_mount(path: Path) -> bool:
+        return path.resolve() == mounted_root.resolve() or original_is_mount(path)
+
+    monkeypatch.setattr(Path, "is_mount", is_market_data_mount)
+    assert verify_tiingo_daily_pilot_snapshot(
+        mounted_snapshot,
+        expected_dataset_hash=result.dataset_hash,
+        expected_manifest_hash=result.manifest_hash,
+        market_data_root=mounted_root,
+        repo_root=repo,
+    ).dataset_hash == result.dataset_hash
+
+    canonical = mounted_snapshot / "ohlcv_1d.csv.gz"
+    canonical.write_bytes(canonical.read_bytes() + b"tampered")
+    import thericher_v2.data.tiingo_daily_pilot as pilot
+
+    def unexpected_decompression(*_args: object, **_kwargs: object) -> bytes:
+        raise AssertionError("raw dataset hash must reject before decompression")
+
+    monkeypatch.setattr(pilot, "_gzip_content", unexpected_decompression)
+    with pytest.raises(ValueError, match="dataset hash mismatch"):
+        verify_tiingo_daily_pilot_snapshot(
+            mounted_snapshot,
+            expected_dataset_hash=result.dataset_hash,
+            expected_manifest_hash=result.manifest_hash,
+            market_data_root=mounted_root,
+            repo_root=repo,
         )
 
 

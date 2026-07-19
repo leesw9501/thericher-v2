@@ -725,6 +725,7 @@ def _verify_snapshot(
         dataset_hash=expected_dataset_hash,
         spec=spec,
         expected_predecessor=expected_predecessor,
+        market_data_root=market_data_root,
     )
     responses = _validated_responses(manifest, snapshot=snapshot)
     _validate_response_sequence(manifest, responses)
@@ -764,8 +765,13 @@ def _verify_snapshot(
         requested_start=_date_value(manifest.get("requested_window", {}).get("start")),
         requested_end=_date_value(manifest.get("requested_window", {}).get("end")),
     )
-    expected_canonical = _gzip_bytes(_canonical_csv_bytes(reconstructed_rows))
-    if canonical_bytes != expected_canonical:
+    # The fixed compressed-byte digest was checked above; compare content here so
+    # reconstruction does not depend on the verifier runtime's gzip encoding.
+    expected_canonical = _canonical_csv_bytes(reconstructed_rows)
+    observed_canonical = _gzip_content(
+        canonical_bytes, label="Tiingo daily pilot canonical data"
+    )
+    if observed_canonical != expected_canonical:
         raise ValueError("Tiingo daily pilot canonical data does not match raw evidence")
     aggregate = _aggregate(responses)
     if manifest.get("aggregate") != aggregate:
@@ -798,6 +804,7 @@ def _validate_manifest_header(
     dataset_hash: str,
     spec: _SnapshotSpec,
     expected_predecessor: TiingoDailyPilotPredecessor | None,
+    market_data_root: Path,
 ) -> None:
     if (
         manifest.get("schema_version") != 1
@@ -850,7 +857,11 @@ def _validate_manifest_header(
             candidate_union_hash=candidate_hash,
             candidate_count=candidate_count,
         )
-        if manifest.get("predecessor") != _predecessor_document(expected_predecessor):
+        if not _predecessor_document_matches(
+            manifest.get("predecessor"),
+            expected=_predecessor_document(expected_predecessor),
+            market_data_root=market_data_root,
+        ):
             raise ValueError("Tiingo daily shard predecessor evidence is invalid")
         if retrieved_at < expected_predecessor.retrieved_at_utc + timedelta(hours=1):
             raise ValueError("Tiingo daily shard pacing evidence is invalid")
@@ -981,6 +992,30 @@ def _predecessor_document(predecessor: TiingoDailyPilotPredecessor) -> dict[str,
     }
 
 
+def _predecessor_document_matches(
+    value: object,
+    *,
+    expected: dict[str, object],
+    market_data_root: Path,
+) -> bool:
+    if not isinstance(value, dict):
+        return False
+    declared = dict(value)
+    expected_copy = dict(expected)
+    declared_path = declared.pop("snapshot_dir", None)
+    expected_path = expected_copy.pop("snapshot_dir", None)
+    if declared != expected_copy or not isinstance(expected_path, str):
+        return False
+    try:
+        return _rebase_market_snapshot(
+            declared_path,
+            market_data_root=market_data_root,
+            label="Tiingo predecessor snapshot",
+        ) == Path(expected_path).resolve()
+    except ValueError:
+        return False
+
+
 def _rank_list(
     value: object,
     *,
@@ -1081,7 +1116,7 @@ def _validate_storage_manifest(manifest: dict[str, object], *, market_data_root:
     storage = manifest.get("storage")
     if not isinstance(storage, dict):
         raise ValueError("Tiingo daily pilot storage evidence is invalid")
-    if storage.get("root") != str(Path(market_data_root).resolve()):
+    if not _storage_root_matches(storage.get("root"), market_data_root=market_data_root):
         raise ValueError("Tiingo daily pilot storage root is invalid")
     if (
         _nonnegative_float(storage.get("free_percent"), "storage free percent") < 15
@@ -1089,6 +1124,20 @@ def _validate_storage_manifest(manifest: dict[str, object], *, market_data_root:
         or storage.get("hard_floor_percent") != 15
     ):
         raise ValueError("Tiingo daily pilot storage evidence is invalid")
+
+
+def _storage_root_matches(value: object, *, market_data_root: Path) -> bool:
+    root = Path(market_data_root).resolve()
+    if value == str(root):
+        return True
+    if not root.is_mount() or not isinstance(value, str):
+        return False
+    normalized = value.replace("\\", "/")
+    is_windows_absolute = len(normalized) >= 3 and normalized[1:3] == ":/"
+    if not normalized.startswith("/") and not is_windows_absolute:
+        return False
+    parts = tuple(part for part in normalized.split("/") if part)
+    return bool(parts) and parts[-1].casefold() == root.name.casefold()
 
 
 def _validated_responses(
@@ -1444,13 +1493,54 @@ def _validated_snapshot_dir(
     snapshot = snapshot.resolve()
     if not snapshot.is_relative_to(root):
         raise ValueError("Tiingo daily pilot snapshot must stay under market data")
-    if repo_root is not None and snapshot.is_relative_to(Path(repo_root).resolve()):
+    if (
+        repo_root is not None
+        and snapshot.is_relative_to(Path(repo_root).resolve())
+        and not root.is_mount()
+    ):
         raise ValueError("Tiingo daily pilot snapshot must stay outside Git")
     if require_destination_name and (
         not snapshot.name.startswith("snapshot=") or not snapshot.name.endswith(snapshot_suffix)
     ):
         raise ValueError("Tiingo daily pilot snapshot name is invalid")
     return snapshot
+
+
+def _rebase_market_snapshot(
+    value: object,
+    *,
+    market_data_root: Path,
+    label: str,
+) -> Path:
+    root = Path(market_data_root)
+    if not root.is_dir() or root.is_symlink():
+        raise ValueError(f"{label} market-data root is invalid")
+    root = root.resolve()
+    if not isinstance(value, str) or not value.strip() or value != value.strip():
+        raise ValueError(f"{label} is invalid")
+    raw = value
+    declared = Path(raw)
+    if declared.is_dir() and not declared.is_symlink():
+        resolved = declared.resolve()
+        if resolved != root and resolved.is_relative_to(root):
+            return resolved
+    parts = tuple(part for part in raw.replace("\\", "/").split("/") if part)
+    anchors = [index for index, part in enumerate(parts) if part.casefold() == root.name.casefold()]
+    if not anchors:
+        raise ValueError(f"{label} root is invalid")
+    relative_parts = parts[anchors[-1] + 1 :]
+    if (
+        not relative_parts
+        or any(
+            part in {".", ".."} or any(character in part for character in ("\\", ":"))
+            for part in relative_parts
+        )
+    ):
+        raise ValueError(f"{label} path is invalid")
+    rebased = root.joinpath(*relative_parts).resolve()
+    if rebased == root or not rebased.is_relative_to(root) or rebased.is_symlink():
+        raise ValueError(f"{label} escapes market data")
+    return rebased
 
 
 def _validate_storage(root: Path, *, disk_usage: Callable[[str | Path], Any]) -> float:
@@ -1665,6 +1755,14 @@ def _gzip_bytes(data: bytes) -> bytes:
     with gzip.GzipFile(filename="", fileobj=buffer, mode="wb", mtime=0) as compressed:
         compressed.write(data)
     return buffer.getvalue()
+
+
+def _gzip_content(data: bytes, *, label: str) -> bytes:
+    try:
+        with gzip.GzipFile(fileobj=io.BytesIO(data), mode="rb") as compressed:
+            return compressed.read()
+    except OSError as exc:
+        raise ValueError(f"{label} is invalid") from exc
 
 
 def _sha256(data: bytes) -> str:

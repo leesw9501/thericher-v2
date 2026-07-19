@@ -577,6 +577,11 @@ def _validated_arrays(dataset: NorgateBroadDevelopmentDataset) -> dict[str, Any]
     _require_sha256(dataset.contract_hash, "contract_hash")
     _require_sha256(dataset.parent_dataset_hash, "parent_dataset_hash")
     _require_sha256(dataset.parent_manifest_hash, "parent_manifest_hash")
+    if (
+        dataset.parent_dataset_hash != FIXED_PARENT_DATASET_HASH
+        or dataset.parent_manifest_hash != FIXED_PARENT_MANIFEST_HASH
+    ):
+        raise ValueError("Norgate broad validation requires the fixed parent lineage")
     if dataset.discontinuity_excluded_count < 0:
         raise ValueError("discontinuity_excluded_count must be non-negative")
     numpy = _numpy()

@@ -1975,3 +1975,35 @@ against the existing artifact and contract hashes.
 
 Reason: this eliminates a stale-image execution mismatch without expanding
 network, credential, broker, model-promotion, or artifact-storage authority.
+
+## 2026-07-19 - Tiingo/Norgate cross-source cohort is engineering evidence only
+
+Decision: retain one compact external cohort at
+`D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`.
+Its only file is `manifest.json`, 79,969 bytes with SHA-256
+`dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`. It
+reattests Tiingo r2 data/manifest hashes
+`6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1` and
+`76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`, plus
+the Norgate broad-panel data/manifest hashes
+`3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d` and
+`a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+
+The cohort records only 29 rank/symbol links, 501 Tiingo sessions, the first
+483 Norgate-overlap sessions, 18 Tiingo forward-only sessions, 153 returned
+Tiingo action markers, and 3,316 conservative `t-20..t+2` exclusions. It
+never merges price fields or exposes bars, features, labels, training, model,
+ranking, ensemble, campaign, paper, PnL, or profitability inputs. Its Engine
+intake is metadata-only and enforces those false scopes.
+
+The Tiingo verifier first checks the pinned compressed-byte hash, then compares
+the decompressed canonical CSV with the raw-response reconstruction. This
+preserves fixed-input identity while allowing the verifier itself to run across
+host and Docker gzip implementations. Host and Docker reattestation agreed.
+Claude and independent validation both returned `supported-with-limits`:
+attestation does not prove Tiingo upstream truth, point-in-time membership,
+survivorship, Norgate adjustment semantics, or an independent model result.
+
+Reason: the engine needs a narrow source-side falsification substrate before
+opening a fresh model contract, without turning weak source agreement into a
+false claim of tradability or spending GPU time on a silently mixed dataset.
