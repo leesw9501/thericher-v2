@@ -52,7 +52,13 @@ from .local import (
 from .norgate_daily import NorgateRawDailyBarProvider, NorgateUnavailableError
 from .provider import BarQuery, MarketDataProvider
 from .quality import BarQualityReport, BarQualityWarning, assess_bar_quality
-from .resample import SUPPORTED_RESAMPLE_TIMEFRAMES, resample_bars
+from .resample import (
+    SUPPORTED_RESAMPLE_TIMEFRAMES,
+    SessionResampleResult,
+    SessionWindow,
+    resample_bars,
+    resample_session_bars,
+)
 from .synthetic import generate_trending_bars
 
 __all__ = [
@@ -87,6 +93,8 @@ __all__ = [
     "NorgateUnavailableError",
     "SUPPORTED_RESAMPLE_TIMEFRAMES",
     "SampleBarProvider",
+    "SessionResampleResult",
+    "SessionWindow",
     "assess_bar_quality",
     "bar_from_record",
     "bar_to_record",
@@ -103,6 +111,7 @@ __all__ = [
     "load_fixed_etf_daily_factor_change_dates",
     "observed_kis_paper_capabilities",
     "resample_bars",
+    "resample_session_bars",
     "select_catalog_dataset",
     "write_training_readiness_catalog",
 ]

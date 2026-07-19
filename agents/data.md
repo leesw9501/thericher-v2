@@ -15,6 +15,12 @@ calendar anchor, gap/staleness state, and an expiry suitable for downstream
 multi-timeframe fusion. This is a future contract requirement, not permission
 to turn current descriptive data into a model input.
 
+Data now exposes a pure `SessionWindow` primitive for a caller-supplied UTC
+session. It anchors `1m` to `5m`/`10m`/`1h`/`3h` buckets at the declared open,
+rejects out-of-window bars, and returns skipped bucket starts for gaps or a
+short terminal interval. It infers no exchange calendar or DST rule and is not
+connected to the KIS baseline, a runtime cache, a model, or paper execution.
+
 For the active KIS-native contract, Data has fixed one additional future
 qualification fact: a raw `1m` bar's open-versus-close timestamp label needs an
 independent anchor. A single internally consistent KIS snapshot cannot establish

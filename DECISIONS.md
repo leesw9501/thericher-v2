@@ -2556,3 +2556,28 @@ retain the pure baseline and local-paper coverage, then prove that no binding
 or a binding for a changed capability produces an `unqualified` abstention and
 no local-paper intent. No credential, KIS call, data read, artifact, model,
 broker, or execution authority changes.
+
+## 2026-07-19 - Add explicit-session resampling without calendar activation
+
+Decision: retain the existing generic UTC-epoch `resample_bars` behavior and
+add a separate Data-owned `SessionWindow` primitive for caller-supplied UTC
+open/close bounds. It accepts only one homogeneous `1m` stream, anchors target
+`5m`/`10m`/`1h`/`3h` buckets at the declared session open, rejects every
+out-of-window bar, and returns complete bars plus explicit skipped bucket
+starts for gaps, duplicates, incomplete source bars, or a short terminal
+bucket. An empty declared session reports every missing full bucket and its
+terminal partial bucket rather than appearing complete. It never joins a second
+session or infers an exchange calendar or DST.
+
+Reason: the architecture needs session-aligned higher timeframes, but the
+current KIS observations cannot safely supply an inferred calendar. Keeping the
+window explicit makes the arithmetic useful without silently extending the
+KIS/model/paper authority or changing the established UTC-epoch path.
+
+Claude's falsification-first verdict was `supported-with-limits`: every output
+must be fully covered by contiguous source timestamps inside one declared
+window, and skipped data must stay visible rather than disappear silently.
+Synthetic summer/winter caller-supplied sessions, gaps, duplicates, partial
+terminal buckets, and adjacent-session rejection provide that boundary. No
+KIS call, credential, data file, artifact, model, GPU, broker, or timeframe
+activation is added.

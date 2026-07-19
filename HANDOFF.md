@@ -194,8 +194,9 @@ The repository already contains:
 
 - immutable UTC/`Decimal` core contracts,
 - append-only JSONL events with rebuildable SQLite query state,
-- market-data provider interfaces, local/sample providers, and deterministic
-  `1m`, `5m`, `10m`, `1h`, and `3h` resampling,
+- market-data provider interfaces, local/sample providers, generic UTC-epoch
+  resampling, and an additive explicit-session `1m` to `5m`/`10m`/`1h`/`3h`
+  primitive that surfaces skipped buckets without activating any paper input,
 - stable training-readiness catalogs and byte-verified `CatalogedBars`,
 - a static hash-bound broad-daily ETF wrapper that is intentionally not a
   campaign-ready input,

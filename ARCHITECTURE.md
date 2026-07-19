@@ -191,6 +191,12 @@ closed** bar and must expose its age and expiry. Research may test alternative
 expert topologies, but promotion must show stable, interpretable, after-cost
 out-of-sample value over the simpler graph.
 
+The Data layer has a pure `SessionWindow` resampling primitive for a caller that
+already knows one UTC session open and close. It anchors buckets at that open,
+rejects out-of-window bars, and exposes skipped partial or gapped buckets. It
+does not infer an exchange calendar or daylight-saving rule, and it does not
+activate a timeframe until the separate KIS capability evidence is qualified.
+
 ### Initial KIS Paper Baseline
 
 The first intended deployable candidate deliberately uses less than the observed
