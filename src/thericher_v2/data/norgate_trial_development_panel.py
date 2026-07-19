@@ -894,7 +894,11 @@ def _validate_existing_snapshot(
     snapshot = snapshot.resolve()
     if not snapshot.is_relative_to(root):
         raise ValueError("Norgate development-panel snapshot must stay under market data")
-    if repo_root is not None and snapshot.is_relative_to(Path(repo_root).resolve()):
+    if (
+        repo_root is not None
+        and snapshot.is_relative_to(Path(repo_root).resolve())
+        and not root.is_mount()
+    ):
         raise ValueError("Norgate development-panel snapshot must stay outside Git")
     if not snapshot.name.startswith("snapshot=") or not snapshot.name.endswith(_SNAPSHOT_SUFFIX):
         raise ValueError("Norgate development-panel snapshot name is invalid")
