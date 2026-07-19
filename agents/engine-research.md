@@ -26,6 +26,11 @@
   is not membership, point-in-time, coverage, adjustment, model, or GPU
   evidence. It opens preparation for one development-only research contract,
   not an active training job.
+- The panel's bounded engineering loop is now closed as partial execution only:
+  r3 CPU and fixed MLP seeds 71/113 completed, neither beat the linear
+  baseline, and TCN seeds 71/113 are compute-rejected and untested. No static
+  panel candidate, seed extension, model selection, ensemble, PnL, paper, or
+  profitability claim is open.
 - Generated campaign evidence remains external under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
@@ -83,11 +88,11 @@
   exclusions, but source-marker timing and adjustment semantics remain
   unproven. It improves a Data exclusion record only and still does not reopen
   breadth, depth, ensemble, or CUDA work.
-  The separate Norgate broad panel has 523 exact-session candidates from a
-  fixed 541-item retrieval union and 18 recorded mismatches. It is only
-  `development_training_eligible`; a future offline loader, explicit target,
-  temporal split, cost model, and CPU baseline must be frozen before any GPU
-  candidate can start.
+  The separate Norgate broad panel has now completed its single allowed
+  engineering loader/target/split/baseline loop. It remains static,
+  survivor/availability-conditioned evidence. Its next useful role is only a
+  source-side falsification target for Data's offline Tiingo r2 cohort; it does
+  not reopen GPU work.
 
 ## Explicit-Event Replay
 
@@ -109,21 +114,16 @@
 ## Breadth Queue
 
 - No breadth batch is running. The fixed RAW D1 verdict is `unsupported`; broad
-  Yahoo and Tiingo IEX remain descriptive-only; Tiingo raw-daily R2's 501-session
-  descriptive panel and its 56-group coverage filter do not repair its date-less
-  universe. The Norgate static panel creates one development-only preparation
-  path, but is not a campaign or GPU input until its offline loader and frozen
-  CPU baseline contract prove the named boundaries.
-- Keep the breadth recipe prepared, not running: finite CPU baselines plus
-  compact PyTorch MLP and TCN candidates at fixed seeds. A valid campaign
-  contract, not idle GPU capacity, is the launch condition.
-- When the Norgate loader and one hash-bound campaign contract are complete,
-  enumerate one finite breadth batch before launch: CPU naive/linear/tree
-  baselines plus compact PyTorch MLP and TCN, each at two fixed seeds. Run the
-  four GPU jobs serially on the one GPU.
-- CPU may prepare only the already-enumerated next fold, lineage check,
-  baseline, or replay while that finite GPU batch runs. Do not auto-refill a
-  queue, create a scheduler, or launch a job merely to occupy the GPU.
+  Yahoo and Tiingo IEX remain descriptive-only; the static Norgate panel closed
+  with two completed MLP observations near the linear baseline and two untested
+  TCN compute rejections. It cannot be refilled, retried, ranked, or ensembled.
+- Data's offline Tiingo r2 cross-source cohort is the only ready research
+  preparation. It opens no model job by itself; Engine may add only a guard that
+  prevents silent source mixing or training reuse.
+- For a later verified dataset, breadth must predeclare naive, regularized
+  linear, tabular-tree, and compact MLP candidates. TCN enters only after a
+  CUDA preflight estimates a bounded wall-clock cost. GPU idle time alone never
+  opens a job; CPU may prepare lineage/baseline work while one eligible job runs.
 
 ## Depth Queue
 
@@ -228,6 +228,9 @@
   replay/checkpoint files as an incomplete run and restart with a new run id.
 - Stop if fold-local preprocessing, observed-session adjacency, flat replay, or
   event-time monotonicity cannot be proven.
+- Treat `norgate-broad-development-validation-r2` and `r3` TCN directories as
+  `restart` recovery evidence: they have no checkpoint, prediction, or summary.
+  The r3 compute-rejection JSON is a resource decision, not a model result.
 
 ## Recent Evidence
 
@@ -270,7 +273,26 @@
   and labels its scope arithmetic-consistency-only rather than independent
   execution-quality or profitability evidence.
 
+- `D:\thericher-v2\model-artifacts\norgate-broad-development-features\r2-3c1b21bde92e4623`
+  is the verified static-panel feature artifact: data hash
+  `sha256:3f03d6cdc669e174c7cc1c79edb0921d1781f79e364302df88a38d6a314e72e7`
+  and contract hash
+  `sha256:29fca05b61c9702967b59c66ac60a8b8a06de73b309b9e292b64a544b059779a`.
+  r3 CPU baseline plus MLP seeds 71/113 completed under commit `1b77ce0`;
+  their date-mean accuracy was `0.50269` linear, `0.49865` MLP-71, and
+  `0.50028` MLP-113. TCN-71 was stopped twice without a final artifact after
+  observed lower bounds of 904 and 1,252 seconds; TCN-113 never started.
+  `cuda/temporal-conv-compute-rejection.json` SHA-256 is
+  `7ffe6db283af7a1c5287614967342c036f29d8eb9b0ab80c08254bb3a34cb3bc`.
+
 ## Next Handoff
+
+Do not reopen the static Norgate validation batch. Its valid output is two
+completed MLP engineering observations and two explicitly compute-rejected,
+untested TCN jobs, not a four-model comparison. The next Engine action is only
+to guard Data's Tiingo r2 cross-source cohort from training/model reuse and to
+wait for a later, Claude-reviewed research contract before enumerating new
+breadth, depth, or ensemble work.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1

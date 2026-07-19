@@ -13,7 +13,12 @@ def test_research_profile_mounts_external_artifact_and_market_data_roots() -> No
 
     assert "target: research" in research
     assert 'profiles: ["research"]' in research
+    assert "network_mode: none" in research
+    assert "read_only: true" in research
+    assert "- /tmp" in research
     assert "gpus: all" in research
+    assert "./src:/app/src:ro" in research
+    assert "./scripts:/app/scripts:ro" in research
     assert (
         "THERICHER_MODEL_ARTIFACT_ROOT: "
         "${THERICHER_MODEL_ARTIFACT_ROOT:-/app/model_artifacts}"

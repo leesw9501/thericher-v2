@@ -469,8 +469,29 @@ eligible for development training and a contract with fixed target, costs,
 temporal split, metrics, and stop rules. It then uses CPU baselines plus two
 fixed-seed MLP/TCN candidates, followed only by sensitivity/Claude-cleared
 depth and out-of-fold-only ensemble work. No scheduler or automatic refill is
-allowed, and idle is correct when the contract is absent. Current research data
-does not meet those conditions.
+allowed, and idle is correct when the contract is absent. No remaining dataset
+currently meets those conditions for a new model batch.
+
+The static Norgate panel has now completed its one permitted engineering-only
+validation loop. Derived feature artifact
+`D:\thericher-v2\model-artifacts\norgate-broad-development-features\r2-3c1b21bde92e4623`
+re-attests the raw parent and has artifact hash
+`sha256:3f03d6cdc669e174c7cc1c79edb0921d1781f79e364302df88a38d6a314e72e7`.
+The r3 CPU/MLP evidence uses the same contract hash
+`sha256:29fca05b61c9702967b59c66ac60a8b8a06de73b309b9e292b64a544b059779a`.
+Date-mean accuracy was `0.50269` for the fixed linear baseline, `0.49865` for
+MLP seed 71, and `0.50028` for MLP seed 113. Both MLP checkpoints safe-reload
+and neither result is strong, selected, or ensemble-eligible.
+
+The compact TCN is untested, not negative evidence: two bounded attempts wrote
+no checkpoint, prediction, or summary before manual stop after observed lower
+bounds of 904 and 1,252 seconds. A representative CUDA preflight measured
+`0.5538` seconds per TCN step versus `0.0281` for MLP. The external r3
+`cuda/temporal-conv-compute-rejection.json` records this resource decision;
+it must not be described as a completed four-model breadth comparison. Claude
+returned `supported-with-limits` for closing this static-panel work with two
+completed MLP jobs and two compute-rejected, untested TCN jobs. No static-panel
+retry, model extension, ranking, ensemble, PnL, paper, or live use is open.
 
 ## Execution Reality
 
@@ -588,6 +609,16 @@ unnecessary row-level data.
 - Codex checks cross-role dependencies and recovery claims before resuming.
 
 ## Next Objective
+
+**Current target, superseding the older historical context below:** build an
+offline Tiingo r2/Norgate cross-source validation cohort from existing local
+bytes. It will retain the 29-symbol Tiingo r2 lineage, 501 returned sessions,
+the fixed 483-session overlap with the static Norgate panel, a forward-only
+boundary for the remaining 18 Tiingo sessions, and conservative event-window
+exclusions. It uses no token, network, broker, or model training and remains
+non-PIT, non-ranking, non-paper, and non-profitability evidence. The goal is to
+falsify fragile provider-specific engineering results later, not to declare a
+tradable model.
 
 The first fixed-ETF Norgate trial raw-D1 source snapshot is now complete at
 `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-07-18-norgate-trial-raw-d1-r2`.

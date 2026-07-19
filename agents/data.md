@@ -67,6 +67,14 @@ is `development_training_eligible` for future engineering breadth preparation
 only; PIT, ranking, holdout, campaign, model, GPU, paper, source-preference,
 and profitability eligibility remain false.
 
+The static-panel engineering loop consumed that panel through a derived feature
+artifact only. Its two completed MLP jobs did not beat the fixed CPU linear
+baseline, and its two TCN jobs are compute-rejected and untested rather than
+negative model evidence. Data must not refill that model queue. The next ready
+Data work is an offline Tiingo r2/Norgate cross-source cohort: 29 existing
+Tiingo r2 symbols, 501 Tiingo sessions, a fixed 483-session overlap, and a
+conservative event-window exclusion record without any provider call.
+
 The bounded Norgate S&P 500 membership snapshot is complete at
 `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
 It has a 541-item date-less candidate union and 266,647 sparse membership rows
@@ -364,6 +372,15 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
+1. Build one compact, offline Tiingo r2 cross-source validation cohort against
+   the Norgate broad panel. Reattest both parents, retain rank linkage and
+   conservative event-window exclusions, keep the later 18 Tiingo sessions
+   forward-only, and do not create a model input or mix source price fields.
+2. Do not acquire a third Tiingo raw-daily shard merely to increase common
+   coverage; the existing r2 cohort is the bounded source validation input.
+
+## Historical Queue Context
+
 1. Supply the completed Norgate broad panel only through a future offline,
    hash-reattesting loader and frozen development-only Engine campaign contract.
    Do not use membership rows as selection facts or bypass the external parent
@@ -654,6 +671,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 - Record a genuine unresolved requirement in `Operator Help`; retain detailed
   historical lineage in Git commit `8f416f8` and external artifacts.
 
+- The Norgate static validation r2/r3 TCN directories contain no final artifact
+  and are recovery evidence only. Do not delete, overwrite, or reinterpret
+  them as failed model metrics; r3's compact compute-rejection JSON names the
+  exact restart boundary.
+
 ## Recent Evidence
 
 - `D:\market_data\us_equities\fixed_etf_daily\canonical\ohlcv_1d\snapshot=2026-07-18-r2\manifest.json`:
@@ -718,6 +740,13 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   already answered by existing artifacts.
 
 ## Next Handoff
+
+The immediate next Data objective is the offline Tiingo r2 cross-source cohort,
+not a third shard or another download. It must reattest the existing 29-symbol,
+501-session r2 source and the 523-symbol, 483-session Norgate panel, reserve
+the 483 shared sessions for later falsification only, retain the last 18 Tiingo
+sessions as forward-only, and record event-window exclusions without making a
+PIT, campaign, model, GPU, paper, or profitability claim.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip

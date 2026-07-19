@@ -1913,3 +1913,65 @@ useful than idling research indefinitely, while explicitly isolating the known
 survivorship and corporate-action limitations from model-selection and capital
 decisions. A later model target must re-attest this exact lineage, freeze target
 timing, temporal splits, costs, baselines, and stop rules before any CUDA run.
+
+## 2026-07-19 - Static-panel CUDA result is partial engineering evidence only
+
+Decision: close the first static Norgate engineering loop as two completed MLP
+jobs and two compute-rejected, untested TCN jobs. The verified feature artifact
+is `D:\thericher-v2\model-artifacts\norgate-broad-development-features\r2-3c1b21bde92e4623`
+with data hash `sha256:3f03d6cdc669e174c7cc1c79edb0921d1781f79e364302df88a38d6a314e72e7`
+and contract hash
+`sha256:29fca05b61c9702967b59c66ac60a8b8a06de73b309b9e292b64a544b059779a`.
+The r3 CPU linear date-mean accuracy was `0.50269`; MLP seeds 71 and 113 were
+`0.49865` and `0.50028`. Neither was strong or selected.
+
+The TCN is not judged ineffective. Two bounded attempts for seed 71 produced no
+checkpoint, predictions, or summary before manual stop after observed lower
+bounds of 904 and 1,252 seconds. The first static batch therefore is not a
+four-model comparison. The external r3
+`cuda/temporal-conv-compute-rejection.json`, SHA-256
+`7ffe6db283af7a1c5287614967342c036f29d8eb9b0ab80c08254bb3a34cb3bc`, records
+the untested resource classification. TCN seed 113 was not started.
+
+Claude's `supported-with-limits` review permits closing the static work only
+with that wording. Future TCN work begins with a harness diagnosis and CUDA
+preflight on a verified future dataset; it must not use these stops as a
+performance or model-quality result. No seed expansion, model selection,
+ensemble, PnL, paper, or live authority opens.
+
+Reason: the panel remains survivor/availability conditioned with unresolved
+raw-adjustment and corporate-action semantics. Additional model variants would
+compound selection bias without adding a valid decision boundary.
+
+## 2026-07-19 - Docker permits verified external data mounts only
+
+Decision: retain the existing Git-boundary protection for market-data snapshots,
+with one read-only verification exception: a market-data root physically nested
+under a container repository path is accepted only when that root itself is an
+OS mount point. This allows the configured D: bind mount at `/app/market_data`
+to reattest in Docker without treating an ordinary Git subdirectory as external
+data. Non-mount nested paths remain rejected and the artifact root remains
+external/mounted only.
+
+Reason: Docker path layout alone cannot distinguish `/app/market_data` from a
+checked-in directory. The mount-point condition preserves the data-outside-Git
+invariant while making the verified research container portable.
+
+## 2026-07-19 - Research source mounts are read-only and commit-scoped
+
+Decision: the research Compose profile may bind-mount `./src` and `./scripts`
+read-only to run current verified source without rebuilding the large CUDA
+image. Its container filesystem is read-only with a disposable `/tmp`; external
+market data remains read-only, artifacts remain on the external artifact mount,
+and network isolation remains enabled. A research result using those mounts must
+record the committed source revision or explicitly be treated as uncommitted
+engineering evidence.
+
+Claude's short drift check was `supported-with-limits`: the mount can shadow
+the image-installed source, so a dirty or unrecorded host source revision would
+make provenance uncertain. The reattestation here used source commit
+`1b77ce0250f869befd5ba3b26b61e4ee3249b7a8` and verified 237,325 feature rows
+against the existing artifact and contract hashes.
+
+Reason: this eliminates a stale-image execution mismatch without expanding
+network, credential, broker, model-promotion, or artifact-storage authority.

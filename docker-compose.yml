@@ -48,7 +48,10 @@ services:
       target: research
     profiles: ["research"]
     network_mode: none
+    read_only: true
     gpus: all
+    tmpfs:
+      - /tmp
     command:
       - python
       - -m
@@ -66,6 +69,8 @@ services:
       - thericher-v2-runtime:/app/runtime
       - ./data:/app/data
       - ./reports:/app/reports
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
       - ./NEXT_CODEX_GOAL.md:/app/NEXT_CODEX_GOAL.md:ro
       - ./agents:/app/agents:ro
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro

@@ -2,100 +2,91 @@
 
 ## Objective
 
-Build the first bounded, broad-panel development validation loop from the
-completed Norgate trial panel. The loop must reattest external data lineage,
-freeze one no-holdout chronological research contract, run CPU baselines, and,
-only when that preparation is sound, run one finite serial PyTorch CUDA breadth
-batch. This is engineering research only, not a strategy-selection, paper, or
-profitability result.
+Build one offline, hash-attested Tiingo r2 cross-source validation cohort for
+the existing Norgate static development panel. The cohort must make it possible
+to falsify Norgate-only engineering findings later without mixing sources,
+opening model training, or making a point-in-time, ranking, paper, or
+profitability claim.
 
 ## Ownership
 
-- **Data Agent:** owns the smallest offline, hash-reattesting loader or feature
-  materializer for the exact external panel and its parent lineage.
-- **Engine Research Agent:** owns the target, temporal split, costs, baselines,
-  finite CUDA candidates, external artifacts, and stop rules.
-- **Validation Agent:** independently checks the frozen contract and completed
-  artifacts without tuning a candidate. It does not open a sealed holdout.
+- **Data Agent:** owns the smallest local reattestation, cohort manifest, and
+  conservative corporate-action exclusion evidence.
+- **Engine Research Agent:** owns the read-only intake boundary that prevents
+  the cohort from becoming a training, model, ensemble, or paper input in this
+  objective.
+- **Validation Agent:** independently reattests the completed cohort and
+  verifies that no credential, network, broker, or model boundary was crossed.
 - **Review/Claude:** gives a concise falsification-first review before the
-  static-panel contract is relied on or CUDA work begins.
+  cross-source cohort is relied on by a later research contract.
 
 ## Fixed Inputs And Boundaries
 
-- Use only
-  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
-  with data hash
+- Reuse only the existing Tiingo Standard EOD r2 snapshot at
+  `D:\market_data\us_equities\tiingo_standard_eod_pilot\canonical\snapshot=2026-07-18-tiingo-standard-eod-pilot-r2`.
+  Its source data hash is
+  `sha256:6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1`
+  and manifest hash is
+  `sha256:76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`.
+- Reattest the existing Norgate broad panel at
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+  Its data and manifest hashes remain
   `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
-  and manifest hash
-  `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
-  Reattest its membership and fixed-ETF calendar parents before each consumer.
-- Keep the 523 selected static candidates, 18 recorded session mismatches, and
-  483 returned sessions from 2024-07-18 through 2026-06-22 fixed. Do not use
-  membership rows to choose samples, infer point-in-time membership, fill gaps,
-  repair bars, merge sources, or broaden the panel.
-- Requested `NONE` adjustment semantics, corporate-action timing, historical
-  coverage, and point-in-time universe truth remain unproven. Every artifact and
-  result must retain those limitations and remain development-only.
-- Do not call KIS, read `.env`, credentials, tokens, broker state, or secret-like
-  files. Keep `THERICHER_MODE=off`; submit no order and make no broker/network
-  data call. Existing local-paper fills, if a unit test reaches them, keep
-  `source: local_paper`.
-- Do not query Norgate from Docker. Raw panel bytes remain under `D:\market_data`.
-  Derived features, contracts, metrics, checkpoints, and recovery metadata stay
-  under `D:\thericher-v2\model-artifacts` and use `/app/model_artifacts` in
-  Docker. Retain an external Norgate deletion/rights linkage for every derived
-  artifact; never store data, model, or generated artifact bytes in Git.
-- Check free space before external writes; warn below 20 percent and stop new
-  acquisition or training before the 15 percent hard floor. Do not add a
-  scheduler, daemon, queue framework, dashboard, report family, model-serving
-  path, or public endpoint.
-- A sealed holdout, model promotion, model ranking, ensemble, KIS paper, live
-  behavior, and profitability claim are out of scope regardless of metrics.
+  and `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+- The intended cohort is the 29 available Tiingo r2 symbols, its 501 common
+  returned sessions, and the 483-session overlapping Norgate slice. The later
+  18 Tiingo sessions are forward-only evidence, not a selection or training
+  slice. Verify all counts from bytes rather than trusting this description.
+- Use raw `open`, `high`, `low`, `close`, `volume`, `div_cash`, `split_factor`,
+  date, rank, and lineage only. Do not use adjusted fields, repair/fill data,
+  infer corporate-action timing, or mix price fields from the two providers.
+- Do not read `.env`, credentials, or tokens. Do not make a network, Tiingo,
+  Norgate, KIS, broker, or order call. Keep `THERICHER_MODE=off`.
+- Do not train models, launch GPU work, open a sealed holdout, rank/select a
+  candidate, build an ensemble, calculate PnL, submit local-paper orders, or
+  expose a service.
+- Store only a compact derived manifest/exclusion artifact under `D:\market_data`
+  or `D:\thericher-v2\model-artifacts`, never in Git. Avoid duplicating raw
+  rows; cap derived bytes below 1 MiB and preserve the D: 20/15 percent
+  warning/hard floors.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first review of the proposed
-   development-only target, feature timestamps, static-panel survivorship and
-   corporate-action risks, chronological split, naive baseline, strongest kill
-   test, and the fact that stops CUDA. Do not send rows, symbols, raw labels,
-   secrets, or account information.
-2. Reuse existing Data and campaign contracts where they fit. Add only the
-   smallest offline verifier/loader and feature-target materializer needed to
-   expose the exact panel to Research while reattesting its full parent lineage.
-   Freeze one completed-close decision target with an explicit future outcome,
-   a time-ordered development/validation split, costs, purge/embargo, fixed
-   feature lookback, deterministic seeds, and no sealed holdout.
-3. Run CPU smoke baselines first: at minimum flat/naive direction and one
-   deterministic linear baseline. Record feature/label counts, split boundaries,
-   no-lookahead proof, class/return distribution, and all lineage hashes in an
-   external immutable run directory. CUDA is eligible only if these checks pass;
-   a baseline need not be profitable or beat another baseline.
-4. If CUDA is available in the existing PyTorch research container and the CPU
-   contract passes, run exactly four serial development-only GPU jobs: compact
-   MLP and compact temporal-convolution candidates, each with two fixed seeds.
-   Record device, CUDA peak memory, input/contract hashes, per-job metrics,
-   checkpoints using safe loading, and stop reason. Do not tune after observing
-   validation metrics, auto-refill the queue, or select an ensemble.
-5. Have Validation independently reattest the frozen inputs and completed run
-   artifacts, check that no broker/network/credential access occurred, and label
-   the outcome engineering-only. Unexpectedly strong output, leakage evidence,
-   or a material baseline claim requires a new Claude review before any later
-   promotion decision.
+1. Ask Claude for a short falsification-first review of the proposed overlap,
+   rank-exclusion linkage, event mask, survivor/PIT limitations, and the fact
+   that keeps the cohort out of model work. Do not send rows, symbols, raw
+   labels, tokens, or account information.
+2. Data Agent builds the smallest offline verifier/materializer that rehashes
+   the exact Tiingo r2 and Norgate parents. It must retain the Tiingo rank
+   linkage, the exact 29-symbol/501-session facts, the 483-session overlap, the
+   later 18-session forward-only boundary, and a conservative mask for every
+   event date plus any feature/label window touching it.
+3. Data Agent writes one immutable compact external cohort manifest and tests
+   tamper rejection, row/session/rank mismatch rejection, event-mask bounds,
+   path containment, and absence of credential/network access.
+4. Engine Research adds only the read-only intake guard needed to ensure the
+   cross-source cohort cannot be silently mixed into Norgate training or reused
+   as a ranking, ensemble, paper, PnL, or profitability input. Do not add a new
+   campaign, model class, scheduler, or general data platform.
+5. Validation independently reattests both parents and the derived cohort,
+   checks the no-model/no-broker/no-network boundary, and labels the result
+   cross-source engineering evidence only.
 6. Refresh `HANDOFF.md`, the Data and Engine stateboards, `DECISIONS.md`, and
-   this goal before continuing. Keep the short and long research queues visible:
-   the completed finite breadth batch becomes input to a later depth decision,
-   never an automatic queue refill.
+   this goal before continuing. Keep the static-panel CUDA run recorded as two
+   completed MLP jobs and two compute-rejected, untested TCN jobs; do not retry
+   it within this objective.
 
 ## Stop Rules
 
-- Stop before CUDA if parent hashes, session ordering, feature/label timestamps,
-  temporal split, CPU baseline, artifact root, or rights/deletion linkage fails.
-- If CUDA or the research image is unavailable, preserve the CPU evidence and
-  prepared immutable contract, record `prepared_not_run`, and continue safe
-  independent work rather than retrying blindly.
-- Stop and seek a new bounded goal on a source-rights ambiguity, storage-floor
-  breach, corrupt external artifact, or any condition that would require
-  credentials, broker access, data acquisition, or a model/paper/live decision.
+- Stop before writing if either parent hash, session ordering, rank linkage,
+  raw field schema, event mask, overlap count, artifact root, or free-space
+  check fails.
+- Stop and keep the existing inputs unchanged on a source-rights ambiguity,
+  missing raw fields, a mismatch that would require a provider call, or any
+  path that would read credentials or cross a broker boundary.
+- The cohort remains non-PIT and survivor-conditioned even if all checks pass.
+  A later model contract needs a new Claude review and independent temporal or
+  source-separated validation before it can open a breadth queue.
 
 ## Verification
 
@@ -105,10 +96,9 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Also report the focused CPU baseline command and, if run, the Docker CUDA
-command, CUDA device/memory result, external artifact paths, Claude verdict,
-and every stop condition triggered.
+Report the exact external parent and derived paths/hashes, validation verdict,
+tests, data still needed from the operator, and every stop condition triggered.
 
 ## Suggested Commit Message
 
-`Add broad development validation loop`
+`Add Tiingo cross-source validation cohort`
