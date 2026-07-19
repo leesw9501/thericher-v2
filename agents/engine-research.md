@@ -98,8 +98,13 @@
   `dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`).
   The Engine intake exposes only identity/count/scope metadata and keeps all
   training, model, ranking, ensemble, campaign, paper, PnL, and profitability
-  flags false. The next work is a Claude-reviewed source-separated contract,
-  not a new GPU job.
+  flags false. The r4 source-separated contract is now complete at
+  `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
+  SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+  It permits only the next finite engineering batch: fixed CPU baselines and
+  MLP-32/seed-71 plus MLP-64/seed-113 CUDA jobs. Claude and independent
+  Validation both returned `supported-with-limits`; it opens no ranking,
+  promotion, ensemble, paper, PnL, profitability, PIT, or sealed holdout.
 
 ## Explicit-Event Replay
 
@@ -120,18 +125,16 @@
 
 ## Breadth Queue
 
-- No breadth batch is running. The fixed RAW D1 verdict is `unsupported`; broad
-  Yahoo and Tiingo IEX remain descriptive-only; the static Norgate panel closed
-  with two completed MLP observations near the linear baseline and two untested
-  TCN compute rejections. It cannot be refilled, retried, ranked, or ensembled.
-- Data's completed Tiingo r2 cross-source cohort is the only ready research
-  preparation. It opens no model job by itself; Engine must use it only to
-  prepare a source-separated contract and must not bypass the metadata-only
-  intake or silently mix source prices.
-- For a later verified dataset, breadth must predeclare naive, regularized
-  linear, tabular-tree, and compact MLP candidates. TCN enters only after a
-  CUDA preflight estimates a bounded wall-clock cost. GPU idle time alone never
-  opens a job; CPU may prepare lineage/baseline work while one eligible job runs.
+- No breadth batch is running. The static Norgate panel closed with two completed
+  MLP observations near the linear baseline and two untested TCN compute
+  rejections; it cannot be refilled, retried, ranked, or ensembled.
+- The r4 source-separated contract is the only ready breadth item. Run exactly
+  its naive and regularized-linear CPU baselines, then its two fixed MLP CUDA
+  jobs. Fit only development rows; purge is untouched and validation is fixed
+  engineering evaluation only. One GPU job may run at a time, with 180-second
+  and 4,096-MiB per-job caps and no automatic retry.
+- Do not add a tree, TCN, extra seed, alternative parameter, depth candidate, or
+  ensemble to this batch. GPU idle time alone never opens a new job.
 
 ## Depth Queue
 
@@ -291,16 +294,21 @@
   `0.50028` MLP-113. TCN-71 was stopped twice without a final artifact after
   observed lower bounds of 904 and 1,252 seconds; TCN-113 never started.
   `cuda/temporal-conv-compute-rejection.json` SHA-256 is
-  `7ffe6db283af7a1c5287614967342c036f29d8eb9b0ab80c08254bb3a34cb3bc`.
+   `7ffe6db283af7a1c5287614967342c036f29d8eb9b0ab80c08254bb3a34cb3bc`.
+- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`
+  is the only approved engineering-batch preflight, SHA-256
+  `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+  It retains 9,904 rows after the 10,053-to-9,904 Norgate-only conditioning
+  reconciliation, and forbids forward-only Tiingo use, promotion, and PnL.
 
 ## Next Handoff
 
 Do not reopen the static Norgate validation batch. Its valid output is two
 completed MLP engineering observations and two explicitly compute-rejected,
-untested TCN jobs, not a four-model comparison. The Tiingo r2 cross-source
-cohort and metadata-only Engine intake are complete. The next Engine action is
-to freeze or reject one Claude-reviewed source-separated research contract
-before enumerating new breadth, depth, or ensemble work.
+untested TCN jobs, not a four-model comparison. The Tiingo r2 cohort,
+metadata-only Engine intake, and r4 source-separated contract are complete.
+Next, implement and run only the contract's finite CPU and two-MLP CUDA batch;
+fit development rows only and leave purge/validation behavior fixed.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1

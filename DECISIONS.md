@@ -2007,3 +2007,31 @@ survivorship, Norgate adjustment semantics, or an independent model result.
 Reason: the engine needs a narrow source-side falsification substrate before
 opening a fresh model contract, without turning weak source agreement into a
 false claim of tradability or spending GPU time on a silently mixed dataset.
+
+## 2026-07-19 - Source-separated batch contract opens one finite engineering run
+
+Decision: retain the immutable external contract at
+`D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
+SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+It reattests the Tiingo/Norgate cohort and Norgate feature artifact, fixes 29
+rank/symbol pairs, and separates sources: Norgate alone supplies prices,
+features, and labels; Tiingo supplies only attested rank/session/returned-marker
+metadata. The 18 forward-only Tiingo sessions are prohibited. The Tiingo marker
+mask leaves 10,053 pairs; an exact Norgate-only raw-discontinuity rule removes
+149 more, leaving 9,904 rows: 6,434 development, 50 purge, and 3,420 validation.
+
+The next batch is fixed to naive and regularized-linear CPU baselines plus
+MLP-32/seed-71 and MLP-64/seed-113 PyTorch CUDA jobs, one at a time with
+180-second and 4,096-MiB caps. It fits development rows only; purge is unused;
+validation is fixed engineering evaluation and cannot tune, rank, promote, or
+select a winner. No tree, TCN, extra seed, depth work, ensemble, paper, PnL,
+profitability, or live implication opens from this decision.
+
+Claude and independent Validation returned `supported-with-limits`. The static
+survivor/availability construction, non-PIT `t+2` Norgate discontinuity filter,
+unverified raw-adjustment/action semantics, and returned-marker dates remain
+material limitations. Any future PIT, holdout, paper, or live use needs a new
+contract rather than inheriting this one.
+
+Reason: a small hash-attested batch can exercise the CUDA research loop without
+mistaking resource utilization or static-source performance for trading evidence.

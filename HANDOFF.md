@@ -610,6 +610,33 @@ unnecessary row-level data.
 
 ## Next Objective
 
+**Latest state, superseding the older target statement below:** the first
+source-separated research-contract preflight is complete. Its current immutable
+external artifact is
+`D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
+SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+It reattests the completed Tiingo/Norgate cohort and the Norgate feature
+artifact, fixes 29 exact rank/symbol pairs, and keeps Norgate as the sole
+price, feature, and label source. Tiingo contributes only attested
+rank/session/returned-marker metadata; its 18 forward-only sessions never
+enter the slice.
+
+The contract has 10,053 rank-decision pairs after the Tiingo conservative mask
+and 9,904 after the explicitly attested Norgate raw-discontinuity conditioning:
+6,434 development, 50 purge, and 3,420 validation rows. The 149-row difference
+is explicit and checks Norgate `t-20..t+2` dependencies at a 20 percent raw
+discontinuity threshold; it is not a corporate-action assertion and is not
+point-in-time safe. Claude and the independent Validation Agent both returned
+`supported-with-limits`. This remains static survivor/availability-conditioned
+engineering evidence only, with raw-adjustment and action semantics unverified.
+
+The next bounded action is exactly one offline CPU baseline plus the two
+predeclared PyTorch CUDA MLP jobs, one GPU job at a time, each capped at 180
+seconds and 4,096 MiB. Fit only development rows; keep the purge untouched and
+use validation only for fixed, non-promotional engineering evaluation. Do not
+open any other model family, depth work, ensemble, ranking, paper, PnL, or live
+path from this batch.
+
 **Current target, superseding the older historical context below:** the offline
 Tiingo r2/Norgate cross-source cohort is complete at
 `D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`.

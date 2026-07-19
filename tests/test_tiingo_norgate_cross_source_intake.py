@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import socket
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -134,6 +135,46 @@ def test_intake_has_no_execution_broker_or_model_imports() -> None:
         assert forbidden not in source
 
 
+def test_source_separation_input_exposes_only_attested_mask_and_lineage(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    cohort = _source_separation_cohort(tmp_path)
+    _stub_loader(monkeypatch, cohort)
+
+    result = intake_module.load_verified_tiingo_norgate_source_separation_contract_input(
+        cohort.artifact_dir
+    )
+
+    assert result.rank_symbols == ((2, "AAA"), (10, "BBB"))
+    assert result.overlap_session_dates == tuple(
+        (date(2024, 1, 1) + timedelta(days=index)).isoformat() for index in range(483)
+    )
+    assert result.forward_only_session_dates[0] == "2025-04-28"
+    assert result.overlap_marker_indices_by_rank[2] == (100,)
+    assert result.forward_only_marker_indices_by_rank[2] == (483,)
+    assert result.excluded_decision_indices_by_rank[2] == tuple(range(98, 121))
+    assert 97 not in result.excluded_decision_indices_by_rank[2]
+    assert 121 not in result.excluded_decision_indices_by_rank[2]
+    assert result.excluded_decision_indices_by_rank[10] == ()
+    for attribute in ("bars", "features", "labels", "metadata", "__iter__"):
+        assert not hasattr(result, attribute)
+
+
+def test_source_separation_input_rejects_an_off_by_one_marker_mask(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    cohort = _source_separation_cohort(tmp_path)
+    cohort.metadata["conservative_marker_mask"]["per_rank"][0][
+        "excluded_decision_indices"
+    ] = list(range(99, 121))
+    _stub_loader(monkeypatch, cohort)
+
+    with pytest.raises(ValueError, match="marker exclusions"):
+        intake_module.load_verified_tiingo_norgate_source_separation_contract_input(
+            cohort.artifact_dir
+        )
+
+
 def _stub_loader(
     monkeypatch: pytest.MonkeyPatch, cohort: TiingoNorgateCrossSourceCohort
 ) -> None:
@@ -209,3 +250,65 @@ def _metadata() -> dict[str, Any]:
             "excluded_rank_decision_pair_count": 302,
         },
     }
+
+
+def _source_separation_cohort(tmp_path: Path) -> TiingoNorgateCrossSourceCohort:
+    overlap_dates = tuple(date(2024, 1, 1) + timedelta(days=index) for index in range(483))
+    forward_dates = tuple(date(2025, 4, 28) + timedelta(days=index) for index in range(18))
+    excluded = list(range(98, 121))
+    metadata = _metadata()
+    metadata["rank_linkage"] = {
+        "available_rank_count": 2,
+        "pairs": [
+            {"candidate_rank": 2, "symbol": "AAA"},
+            {"candidate_rank": 10, "symbol": "BBB"},
+        ],
+    }
+    metadata["session_contract"] = {
+        "norgate_overlap_session_count": 483,
+        "forward_only_session_count": 18,
+        "forward_only_price_source": "tiingo_only",
+        "norgate_fields_in_forward_only_slice": False,
+        "overlap_session_dates": [item.isoformat() for item in overlap_dates],
+        "forward_only_session_dates": [item.isoformat() for item in forward_dates],
+    }
+    metadata["conservative_marker_mask"] = {
+        "reference_window": {
+            "candidate_decision_index_range": "20..480",
+            "entry_index": "t+1",
+            "feature_source_index_range": "t-20..t",
+            "inclusive_dependency_index_range": "t-20..t+2",
+            "outcome_exit_index": "t+2",
+            "reference_only_not_a_training_contract": True,
+        },
+        "per_rank": [
+            {
+                "candidate_rank": 2,
+                "overlap_marker_session_indices": [100],
+                "forward_only_marker_session_indices": [483],
+                "excluded_decision_indices": excluded,
+            },
+            {
+                "candidate_rank": 10,
+                "overlap_marker_session_indices": [],
+                "forward_only_marker_session_indices": [],
+                "excluded_decision_indices": [],
+            },
+        ],
+        "total_marker_count": 2,
+        "excluded_rank_decision_pair_count": len(excluded),
+    }
+    return TiingoNorgateCrossSourceCohort(
+        artifact_dir=tmp_path / "cohort-r1",
+        manifest_hash="sha256:" + "a" * 64,
+        tiingo_dataset_hash="sha256:" + "b" * 64,
+        tiingo_manifest_hash="sha256:" + "c" * 64,
+        norgate_dataset_hash="sha256:" + "d" * 64,
+        norgate_manifest_hash="sha256:" + "e" * 64,
+        rank_count=2,
+        overlap_session_count=483,
+        forward_only_session_count=18,
+        marker_count=2,
+        excluded_decision_count=len(excluded),
+        metadata=metadata,
+    )

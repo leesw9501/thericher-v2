@@ -221,8 +221,16 @@ facts at
 SHA-256 `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
 Across both snapshots, 58 available candidates share only 18 sessions, while
 56 candidate groups cover the R2 501-session returned window. The R1 floor is
-binding, so a third Tiingo shard cannot raise the combined intersection. This
-remains private-use, non-PIT, non-campaign, non-model, and non-GPU evidence.
+  binding, so a third Tiingo shard cannot raise the combined intersection. This
+  remains private-use, non-PIT, non-campaign, non-model, and non-GPU evidence.
+
+The source-separated contract preflight is complete at
+`D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
+SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+Data supplied only reattested Tiingo/Norgate parent hashes, 29 exact rank/symbol
+links, 483 overlap and 18 forward-only sessions, and conservative marker masks.
+Norgate remains the sole price/feature/label source. No download, provider
+query, raw-bar export, or source merge was needed.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -377,9 +385,8 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Support one source-separated research-contract preflight from the completed
-   cohort without creating a new data download, raw-bar export, or provider
-   price merge. Surface only existing rank/session/mask metadata.
+1. Support only reattestation for the fixed r4 source-separated batch; do not
+   create a new download, raw-bar export, provider query, or price merge.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort is the bounded source validation input.
 
@@ -733,10 +740,14 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
   eligibility opens from this date-less union.
 - `D:\thericher-v2\model-artifacts\data-agent\tiingo-daily-coverage-audit\snapshot=2026-07-18-tiingo-daily-coverage-audit-r1\summary.json`:
   hash-attested aggregate-only audit summary, SHA-256
-  `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
-  It reports R1/R2 common coverage of 18, R2 common coverage of 501, and 56
-  existing candidate groups covering the R2 window. It has no symbols, prices,
-  PIT, campaign, model, GPU, or paper claim.
+   `e81ed382b9a68b0430a680c2c762a692822370a5a30cc96d21174065da0abb0c`.
+   It reports R1/R2 common coverage of 18, R2 common coverage of 501, and 56
+   existing candidate groups covering the R2 window. It has no symbols, prices,
+   PIT, campaign, model, GPU, or paper claim.
+- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`:
+  compact external-only source-separated batch contract, SHA-256
+  `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+  It records no provider rows and binds Tiingo to lineage/masks only.
 - `data-agent-market-data-inventory-cadence-20260717-r2`: bounded metadata
   inventory confirmed 2 roots, 5 snapshots, and 5 useful files; no acquisition.
 - `data-agent-post-mpwr-lane-rotation-inventory-20260717-r1`: no immediate
@@ -745,13 +756,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Next Handoff
 
-The Tiingo r2 cross-source cohort is complete, not a third shard or another
-download. It reattests the existing 29-symbol, 501-session r2 source and the
-523-symbol, 483-session Norgate panel, reserves the 483 shared sessions for
-falsification only, retains the last 18 Tiingo sessions as forward-only, and
-records conservative action-window exclusions without making a PIT, campaign,
-model, GPU, paper, or profitability claim. The next Data contribution is only
-the metadata needed by a source-separated research-contract preflight.
+The Tiingo r2 cross-source cohort and r4 source-separated contract are complete,
+not a third shard or another download. The only next Data contribution is
+offline reattestation while Engine runs the predeclared finite batch. Keep the
+483 shared sessions and 18 forward-only sessions in their current mask/lineage
+roles; do not widen them into a provider-price or model-input merge.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip

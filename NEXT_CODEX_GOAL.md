@@ -2,83 +2,72 @@
 
 ## Objective
 
-Build one bounded, offline source-separated research-contract preflight for a
-future development-only model batch. It must either freeze a small,
-hash-attested contract that can later open one CPU baseline plus finite PyTorch
-CUDA breadth batch, or reject that path with specific evidence. It does not
-train a model in this objective.
+Run one finite, offline source-separated engineering batch using only the
+verified r4 contract. Complete a CPU baseline first, then exactly two bounded
+PyTorch CUDA MLP jobs. This opens CUDA as a measured research resource, not an
+open-ended parameter sweep or an investability claim.
 
-The purpose is to turn existing data into an honest next experiment, not to
-increase GPU utilization by running arbitrary parameter sweeps.
+## Fixed Contract
 
-## Ownership
+- Contract:
+  `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`
+  with SHA-256
+  `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
+- Parents: the completed Tiingo/Norgate cohort and Norgate broad feature
+  artifact reattested by that contract. Do not reopen the static 523-symbol
+  MLP/TCN batch or use its runner as this batch's runner.
+- Norgate is the sole price, feature, and label source. Tiingo may provide only
+  contract-attested rank/session/marker lineage. The 18 Tiingo forward-only
+  sessions are forbidden.
+- Use the exact `(rank, symbol)` roster and retained source rows in the
+  contract. Fit only decision indices `20..319`; use `320..321` neither for fit
+  nor evaluation; evaluate `322..480` once with no tuning or candidate choice.
+- The Norgate raw-discontinuity filter uses `t-20..t+2`; it is static offline
+  conditioning, not point-in-time safe and not a corporate-action assertion.
 
-- **Data Agent:** reattests the completed Tiingo/Norgate cohort and supplies
-  only source-separated lineage, session, rank, and conservative mask facts.
-- **Engine Research Agent:** owns one frozen development-only contract with
-  target timing, temporal split, costs, candidate family, compute budget, and
-  stop rules. It must not launch training yet.
-- **Validation Agent:** independently checks leakage, survivorship scope,
-  source separation, holdout status, and whether the proposed batch is honestly
-  bounded.
-- **Review/Claude:** gives a concise falsification-first verdict before the
-  contract can authorize a later GPU goal.
+## Required Batch
 
-## Fixed Inputs And Boundaries
+1. Reattest the r4 contract and parents on host before any model array is made.
+   Prove the batch loader selects Norgate rows only, preserves the contract mask
+   and exact split, and does not expose Tiingo prices/labels or forward sessions.
+2. Implement the smallest dedicated batch harness. It must write only compact
+   run evidence and safe model/checkpoint artifacts under
+   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never Git.
+3. Run the fixed CPU baseline first: `naive_always_long` and one
+   regularized-linear classifier. Record deterministic development and one-time
+   validation metrics, but do not compare them to select a winner.
+4. If the CPU baseline and CUDA availability are sound, use the Docker
+   `research` profile with network disabled to run, exactly once each:
+   - `mlp-hidden-32-seed-71`, 12 epochs, batch size 1024;
+   - `mlp-hidden-64-seed-113`, 12 epochs, batch size 1024.
+   Run one GPU job at a time. Enforce a 180-second wall-clock and 4,096-MiB
+   per-job cap. Preserve bounded failure evidence and do not retry automatically.
+5. Keep `agents/engine-research.md` explicit: this is the breadth queue's sole
+   active finite batch; depth and ensemble queues remain blocked. Data has no
+   new download task while this batch runs.
+6. Ask Claude for a concise falsification-first review before interpreting an
+   unexpectedly strong result or changing the batch. Use temporary independent
+   Validation after the run; it must not tune a candidate.
+7. Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this next goal after
+   the batch. Continue with the smallest evidence-led objective; do not wait for
+   routine operator scheduling.
 
-- Reuse only the completed external cohort at
-  `D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`.
-  Its manifest SHA-256 is
-  `sha256:dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`.
-- Its fixed parents remain Tiingo r2 data/manifest
-  `sha256:6decf91002aa0029d7cda1cb0b5131d1f440129624c84db2cca0d98579e4ccc1` /
-  `sha256:76234da1951bccb54d74ab0f07358d138e861331914405cae6b91538f25ddb9e`
-  and Norgate broad-panel data/manifest
-  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d` /
-  `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
-- Preserve the cohort's 29 linked ranks, 483 overlap sessions, 18 forward-only
-  sessions, 153 returned markers, and 3,316 conservative `t-20..t+2`
-  exclusions. Marker dates are returned-session markers, not event timestamps.
-- Do not mix Tiingo and Norgate price fields, repair rows, infer event timing,
-  call network providers, read `.env` or credentials, call KIS, submit orders,
-  compute PnL, or expose a service.
-- Do not reopen the completed static Norgate MLP/TCN batch, retry its TCN,
-  select a model, rank candidates, open a sealed holdout, create an ensemble,
-  or start CPU/GPU training in this objective.
-- Keep all generated evidence under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`, not Git.
+## Hard Boundaries
 
-## Required Work
+- Do not call network providers, KIS, brokers, or local-paper execution.
+- Do not read `.env`, credentials, account data, or secret-like files.
+- Do not create PnL, paper, ranking, promotion, ensemble, sealed-holdout, or
+  profitability claims.
+- Do not add a tree, TCN, extra seed, extra parameter sweep, depth candidate,
+  or automatic retry.
+- Do not use GPU utilization by itself as a success metric.
 
-1. Ask Claude for a short falsification-first review before changing the
-   research contract boundary. State the candidate claim, strongest kill test,
-   leakage/survivorship risks, naive baseline, source-separation rule, and the
-   fact that would reject the future breadth batch. Do not send rows, tokens,
-   account data, or sealed labels.
-2. Data reattests the existing cohort and exposes only the smallest metadata
-   needed to formulate a candidate slice: parent hashes, rank linkage, session
-   geometry, mask geometry, and explicit source roles. Do not loosen the
-   metadata-only Engine intake or create a raw-bar export.
-3. Engine writes or extends one compact immutable external research-contract
-   artifact. It must predeclare one Norgate-only development source, Tiingo's
-   falsification-only role, feature/target time geometry, a temporal split with
-   purge/embargo, source-specific cost assumptions, naive and regularized
-   baselines, a compact MLP breadth candidate, CUDA wall-clock/VRAM budget, and
-   stop conditions. It must explicitly say that the result cannot rank,
-   promote, paper trade, or claim profit.
-4. Validation independently reattests the contract and its parents. It must
-   reject any future leakage, source-price mixing, use of forward-only sessions
-   as a performance holdout, action-window omission, or unexplained candidate
-   selection.
-5. If the contract is supported-with-limits and all checks pass, refresh the
-   next goal to run exactly the predeclared finite CPU baseline and CUDA breadth
-   batch. If it is unsupported or uncertain, preserve the evidence and refresh
-   the next goal toward the smallest data or contract repair instead.
-6. Refresh `HANDOFF.md`, Data/Engine stateboards, `DECISIONS.md`, and this goal
-   before continuing. Keep the static-panel CUDA history as two completed MLP
-   observations and two compute-rejected, untested TCN jobs.
+## Tests And Verification
 
-## Verification
+Add focused tests for contract-only loading, development-only fitting,
+purge/validation isolation, no network/credential/broker access, bounded CUDA
+configuration, external-only artifact placement, and replayable artifact
+metadata. Then run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -86,10 +75,10 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the external contract path/hash or rejection evidence, Claude and
-Validation verdicts, data still needed from the operator, and why GPU was or
-was not opened.
+Report the CPU/CUDA commands, GPU availability and observed resource caps,
+external artifact paths/hashes, failures if any, Claude/Validation verdicts,
+and why no broader model search was opened.
 
 ## Suggested Commit Message
 
-`Add source-separated research contract preflight`
+`Run finite source-separated research batch`
