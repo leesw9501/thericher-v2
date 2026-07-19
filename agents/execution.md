@@ -24,6 +24,21 @@
   (`sha256:81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
   Do not infer qualified timestamp or completed-bar semantics from that one page
   or retry in a loop.
+- The official KIS raw-minute sample requires `PINC=0` on a first page,
+  `PINC=1` on continuation, and a `KEYB` one exchange-local minute before the
+  preceding page's oldest bar. The isolated client now fixes that no-overlap
+  request shape in fake-transport coverage before the next real probe.
+- The offline raw-minute qualification harness v4 reserves a single external
+  objective attempt before a possible token, records
+  `reserved -> network_started -> summary_written`, pins artifact/Git roots,
+  synchronizes each marker, rechecks fresh time immediately before the network
+  boundary and first page, rejects redirects and oversized pages, and permits
+  one first page plus at most one continuation in the fixed verified 2026-07-20
+  Nasdaq window. It writes counts, timestamp bounds, exact-boundary facts, and
+  booleans only outside Git from typed sanitized inputs. Its only result is
+  `observed` or `rejected`; a self-consistent snapshot cannot promote a
+  completed-bar contract. No credential or KIS network call occurred while
+  preparing this harness.
 - KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
   read-only virtual-account discovery while `THERICHER_MODE=off`. The initial
   balance probe failed closed, then the corrected open-order-first discovery
@@ -134,15 +149,27 @@
 
 - Keep KIS **submission** and live behavior failed closed. The active bounded
   objective may use `KIS_PAPER_*` only through an explicitly invoked,
-  read-only data or account boundary during trading or non-trading hours. It
-  has no submit, cancel, capital, or live authority.
-- The next probe's engine-loop purpose is to qualify or reject the smallest
-  KIS-native input contract, not to fetch an unbounded archive. It must measure
-  one intraday first/continuation sequence, timestamp order, overlap/deduping,
-  completed-bar/freshness behavior, response counts, and pagination facts. The
-  first paper candidate requires only 90 completed `1m` bars and deterministic
-  `5m`/`10m` resamples; it abstains if the in-memory cache is short. No
-  `1h`/`3h`, learned model, or order path opens from documentation alone.
+  read-only market-data boundary for `QQQ`/`SPY` on `NAS`. It has no submit,
+  cancel, account, position, buying-power, open-order, capital, or live
+  authority.
+- Run the approved historical capability probe once before the date-limited
+  raw-minute observation: one token, at most three daily pages and three raw
+  `1m` pages total, with only sanitized data-fitness metadata written outside
+  Git. It may not create a dataset or claim retention, storage rights, or model
+  suitability.
+- Its first approved invocation stopped before token issuance with
+  `config_missing`, leaving no reservation or external summary. The nonsecret
+  preflight saw `THERICHER_MODE=off` but no configured paper app key/secret in
+  the approved `.env` prefix; do not retry until that configuration is fixed.
+- The next probe's engine-loop purpose is to record or reject the smallest
+  KIS-native input observation, not to fetch an unbounded archive. It must
+  measure one intraday first/continuation sequence, timestamp order,
+  overlap/deduping, completed-bar/freshness behavior, response counts, and
+  pagination facts. The first paper candidate requires only 90 completed `1m`
+  bars and deterministic `5m`/`10m` resamples; it abstains if the in-memory
+  cache is short. No `1h`/`3h`, learned model, or order path opens from this
+  observation. The prepared probe cannot promote a capability from field
+  self-consistency; a later Data objective must establish any label evidence.
 - Do not turn the dashboard plan into a KIS integration during this objective.
   The eventual Docker paper-console is a bounded Execution goal after successful
   read-only reconciliation; it must not make the web process a credential or
@@ -164,17 +191,17 @@
 
 ## Ready Queue
 
-1. During the next US market session, make at most one fresh paper-token attempt
-   for the bounded raw-`1m` data-fit probe. On token failure, stop all KIS calls
-   for that bounded objective; on success, make one first page and at most one
-   documented continuation without retaining raw rows.
-2. Resolve the remaining read-only `NYSE` balance, open-order, and orderable
-   funds behavior only after the raw-minute contract is decided; do not treat
-   their current errors as account facts.
-3. After a complete typed snapshot exists, reconcile it without submit/cancel
-   behavior and then propose a paper capital envelope for operator approval.
+1. Run the approved QQQ/SPY historical capability probe once, then hand only
+   its sanitized metadata to Data. Do not retry after any lifecycle reservation.
+2. During the fixed verified 2026-07-20 Nasdaq session window, independently
+   check the official calendar, pass `--confirm-no-exception`, and make at most
+   one fresh paper-token attempt for the bounded raw-`1m` observation. On token
+   failure, stop all KIS calls for that bounded objective; on success, make one
+   first page and at most one documented continuation without retaining raw rows.
+3. Do not schedule account, balance, position, orderable-funds, open-order,
+   submit, or cancel work under current authority.
 4. Keep pure risk integration and append-only execution events as later bounded
-   steps after capital and submit authority exist.
+   steps after separate account, capital, and submit authority exist.
 5. In a later, separately bounded Docker UI objective, project fresh sanitized
    account/position/order facts and local safety controls into the existing
    localhost-bound web service. Do not add direct broker calls to the web
@@ -182,14 +209,19 @@
 
 ## Operator Help
 
-- No operator action is needed for the current KIS-native baseline work. The
-  paper capital envelope remains a later decision after complete read-only
-  reconciliation and a proposed bounded amount.
+- Configure the existing `.env` without sharing values: keep
+  `THERICHER_MODE=off`, then place nonempty `KIS_PAPER_APP_KEY` and
+  `KIS_PAPER_APP_SECRET` before any Tiingo, account, or live key. The optional
+  `THERICHER_*MODEL_ARTIFACT_ROOT` settings may remain before them. Once that
+  secret-safe prefix is valid, Execution can make the still-unreserved one-shot
+  historical market-data call. The paper capital envelope and any account
+  reconciliation remain later decisions.
 
 ## Must Not
 
-- Read `KIS_LIVE_*`, any unrelated `.env` key, or expose paper secrets/account
-  identifiers. Read-only KIS paper network calls are the only allowed KIS use.
+- Read `KIS_LIVE_*`, expose paper secrets/account identifiers, or read any `.env`
+  key outside the three approved nonsecret `THERICHER_*` settings and two paper
+  app keys. Read-only KIS paper network calls are the only allowed KIS use.
 - Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
   paper capital; or enable live behavior under current authority.
 - Add strategy or model-selection logic to execution.

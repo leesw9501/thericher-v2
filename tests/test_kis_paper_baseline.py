@@ -11,6 +11,12 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.kis_capability import (
+    KisCapabilityState,
+    KisMarketDataCapability,
+    KisStorageRightsStatus,
+    observed_kis_paper_capabilities,
+)
 from thericher_v2.execution import (
     EmergencyStore,
     LocalPaperBroker,
@@ -22,6 +28,7 @@ from thericher_v2.execution.fill_source import FillEventArtifact
 from thericher_v2.research import kis_paper_baseline
 from thericher_v2.research.kis_paper_baseline import (
     KIS_PAPER_BASELINE_SCHEMA_ID,
+    KisPaperBaselineInput,
     evaluate_kis_paper_baseline,
 )
 from thericher_v2.state import EventStore
@@ -32,6 +39,7 @@ def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples() -> None:
 
     result = evaluate_kis_paper_baseline(
         bars[:90],
+        capability=_qualified_capability(),
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -69,6 +77,7 @@ def test_baseline_abstains_for_unusable_input() -> None:
     for bars, as_of, expected_status in cases:
         result = evaluate_kis_paper_baseline(
             bars,
+            capability=_qualified_capability(),
             symbol="QQQ",
             market="US",
             as_of=as_of,
@@ -80,10 +89,120 @@ def test_baseline_abstains_for_unusable_input() -> None:
         assert result.proposal.input_status == expected_status
 
 
+def test_baseline_abstains_until_a_matching_kis_capability_is_qualified() -> None:
+    bars = _bars(90)
+    observed_raw_minute, _ = observed_kis_paper_capabilities()
+
+    observed_result = evaluate_kis_paper_baseline(
+        bars,
+        capability=observed_raw_minute,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+    mismatched_result = evaluate_kis_paper_baseline(
+        bars,
+        capability=_qualified_capability(symbol_scope=("IWM",)),
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+
+    for result in (observed_result, mismatched_result):
+        assert result.baseline_input is None
+        assert result.proposal.action == "abstain"
+        assert result.proposal.input_status == "unqualified"
+        assert result.proposal.reason == "baseline_input_capability_unqualified"
+
+
+def test_nasdaq_baseline_abstains_for_a_non_us_market_stream() -> None:
+    bars = [replace(bar, market="KR") for bar in _bars(90)]
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=_qualified_capability(),
+        symbol="QQQ",
+        market="KR",
+        as_of=bars[-1].end_ts,
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.proposal.input_status == "unqualified"
+    assert result.proposal.market == "KR"
+
+
+def test_baseline_stays_pinned_to_qqq_even_when_a_capability_scope_is_broader() -> None:
+    bars = [replace(bar, symbol="SPY") for bar in _bars(90)]
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=_qualified_capability(symbol_scope=("QQQ", "SPY")),
+        symbol="SPY",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.proposal.input_status == "unqualified"
+
+
+def test_baseline_rejects_a_qualified_capability_from_another_endpoint_category() -> None:
+    bars = _bars(90)
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=_qualified_capability(endpoint_category="overseas_stock_daily"),
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.proposal.input_status == "unqualified"
+
+
+def test_baseline_input_rejects_incomplete_direct_construction() -> None:
+    bars = _bars(90)
+    baseline_input = evaluate_kis_paper_baseline(
+        bars,
+        capability=_qualified_capability(),
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    ).baseline_input
+    assert baseline_input is not None
+
+    with pytest.raises(ValueError, match="complete"):
+        KisPaperBaselineInput(
+            m1_bars=(
+                replace(baseline_input.m1_bars[0], complete=False),
+                *baseline_input.m1_bars[1:],
+            ),
+            m5_bars=baseline_input.m5_bars,
+            m10_bars=baseline_input.m10_bars,
+            feature_window_end=baseline_input.feature_window_end,
+        )
+
+    with pytest.raises(ValueError, match="match local raw resampling"):
+        KisPaperBaselineInput(
+            m1_bars=baseline_input.m1_bars,
+            m5_bars=(
+                replace(baseline_input.m5_bars[0], volume=Decimal("999999")),
+                *baseline_input.m5_bars[1:],
+            ),
+            m10_bars=baseline_input.m10_bars,
+            feature_window_end=baseline_input.feature_window_end,
+        )
+
+
 def test_execution_maps_ready_target_to_replayable_local_paper_fill(tmp_path: Path) -> None:
     bars = _bars(92)
     proposal = evaluate_kis_paper_baseline(
         bars[:90],
+        capability=_qualified_capability(),
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -145,6 +264,7 @@ def test_baseline_and_local_replay_are_network_and_credential_free(
 
     proposal = evaluate_kis_paper_baseline(
         bars[:90],
+        capability=_qualified_capability(),
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -185,3 +305,26 @@ def _bars(count: int) -> list[Bar]:
             )
         )
     return result
+
+
+def _qualified_capability(
+    *,
+    symbol_scope: tuple[str, ...] = ("QQQ",),
+    endpoint_category: str = "overseas_stock_intraday",
+) -> KisMarketDataCapability:
+    return KisMarketDataCapability(
+        capability_id="unit.kis.paper.raw-1m",
+        state=KisCapabilityState.QUALIFIED,
+        endpoint_category=endpoint_category,
+        exchange_scope=("NAS",),
+        symbol_scope=symbol_scope,
+        raw_fields=("open", "high", "low", "last", "evol"),
+        timeframe=Timeframe.M1,
+        time_semantics="unit bar-open timestamp evidence",
+        completed_bar_rule="unit current-minute exclusion",
+        freshness_budget=timedelta(minutes=2),
+        paging_facts="unit contiguous continuation",
+        storage_rights=KisStorageRightsStatus.UNVERIFIED,
+        evidence_reference="unit-capability-evidence",
+        observed_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )

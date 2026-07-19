@@ -2289,3 +2289,188 @@ mapping, an in-progress-bar completeness observation, and a repeatable
 continuation overlap rule before qualification. It found the current blast
 radius low because the KIS execution adapter remains disabled and the foundation
 maps only to `local_paper`; that constraint must remain in force.
+
+## 2026-07-19 - Raw-minute timestamp labels need an independent anchor
+
+Decision: do not promote the KIS raw-`1m` capability from a self-consistent
+one-shot response alone. A bounded offline harness now constrains a future
+regular-session probe to one client/token, one first page, and at most one
+continuation; it writes only row counts, timestamp bounds, overlap facts, and
+booleans under the external artifact root. It does not read credentials or
+make a request until explicitly executed during its narrow session window.
+
+Claude's falsification-first verdict is `uncertain`: matching KIS exchange and
+Korea fields can disprove an internal mismatch, but cannot by itself prove
+whether the row timestamp labels the opening or closing minute. Therefore the
+harness may report internal facts but cannot output a promotable capability
+without an independent label-semantic anchor. Failure artifacts accept only
+closed reason codes, avoiding arbitrary response or exception text.
+
+Reason: a one-minute timestamp shift would create a silent completed-bar and
+feature-time error even if all same-response consistency checks pass. Retaining
+the capability as `observed` is a narrow data-contract limitation, not a new
+report/gate system or a reason to delay unrelated local-paper work.
+
+The official KIS sample for the same raw-minute endpoint additionally specifies
+`PINC=0` for the first request, `PINC=1` for continuation, and a `KEYB` one
+exchange-local minute before the preceding page's oldest bar. The narrow client
+now applies that documented no-overlap continuation contract and fake tests
+prove its request shape. This corrects future paging behavior only; no KIS
+request was made and it does not resolve the raw timestamp-label limitation.
+
+## 2026-07-19 - One-shot raw-minute probe and baseline capability gate
+
+Decision: harden the active raw-`1m` probe before consuming its one allowed
+paper-token attempt. The runner now pins the repository and external artifact
+roots, uses the shared external control root for its atomic objective-specific
+reservation, rejects HTTP redirects, and limits each page to 120 rows before
+any possible token request. A
+rerun with that reservation exits before configuration or network access. A
+continuation must be both non-overlapping and exactly contiguous at the
+one-minute boundary; it is skipped if the narrow execution envelope has elapsed.
+
+The bar-label condition is now a dated metadata-only anchor with an identifier,
+evidence reference, UTC observation time, and explicit `bar_open` or
+`bar_close` semantics rather than a caller-supplied boolean. No such anchor is
+currently present, so the next real probe can record `observed` evidence but
+cannot promote the capability. A complete exchange-calendar implementation is
+not added for this single shot; Codex verifies the specific regular session,
+including holidays and early closes, immediately before invocation.
+
+Engine now requires a matching `qualified` KIS capability before the fixed
+90-`1m` baseline can construct a proposal. It otherwise emits an explicit
+`unqualified` abstention, and direct baseline inputs must be complete,
+contiguous, and identical to their local `5m`/`10m` resamples. This turns the
+existing paper-time data rule into code without adding a model, broker path,
+scheduler, raw-data cache, or external order authority.
+
+Claude's falsification-first verdict was `supported-with-limits`: the missing
+gate and gap check were real, the one-shot reservation must not reuse the
+timestamp run id, and an absent independent label anchor must remain a hard
+promotion limit. The follow-up changes remain offline; no KIS request or
+credential read occurred while making them.
+
+## 2026-07-19 - Keep the one-shot raw-minute probe observed-only
+
+Decision: simplify the KIS raw-`1m` v4 probe so its only completed outcomes are
+sanitized `observed` or `rejected`. Remove metadata-anchor loading and forbid a
+one-shot result from becoming `candidate_qualified` or updating a capability.
+The target raw-`1m` capability stays `observed` after this objective. A later,
+independent Data objective may assess timestamp-label evidence and must receive
+the required Claude challenge before any promotion.
+
+Reason: a writable local metadata file cannot by itself establish that a raw KIS
+timestamp labels a bar open rather than close. Treating it as a qualification
+input would overstate one snapshot's evidence and open a silent feature-time
+risk. The smaller observed-only contract preserves paper-readiness learning
+without adding a report, gate, calendar service, or promotion workflow.
+
+Implementation: the runner now permits only the preverified 2026-07-20 Nasdaq
+session window, based on Nasdaq's official 2026 calendar at
+`https://www.nasdaqtrader.com/Trader.aspx?id=calendar`. It rejects all other
+dates before configuration, reservation, or network access. Its external
+one-shot state records `reserved -> network_started -> summary_written`; if the
+summary cannot be persisted after a network boundary, `network_started` remains
+as a non-retryable recovery fact. The continuation query is validated against
+the first page's cursor and documented prior-minute key. Reservation descendants
+are resolved and rejected if a symlink/junction can escape the external control
+root or enter Git.
+
+The paper config loader accepts only the approved nonsecret `THERICHER_*`
+runtime keys before the two paper app keys, then stops. Any unexpected
+pre-paper key fails closed; it does not progress to the KIS token boundary.
+The fixed baseline now also rejects a non-`US` market for the `QQQ`/`NAS`
+capability before a ready proposal can reach local paper.
+
+Claude's falsification-first verdict was `supported-with-limits`: simplify the
+probe, pin the one-shot date, and keep source-provenance widening out of the
+generic `Bar` contract until a real KIS-to-`Bar` adapter exists. Codex retained
+the additional child-path validation because resolving only the external root
+does not protect a pre-existing `reservations` junction. All changes and tests
+remain offline; no credential or KIS request occurred.
+
+## 2026-07-19 - Harden the bounded raw-minute observation before its one token
+
+Decision: close the final preflight gaps before consuming the permitted raw
+`1m` observation. The runner rechecks a fresh New York clock after its approved
+paper-config read, immediately before its network-start lifecycle transition,
+and again in the harness immediately before the first page request. A delay or
+suspend therefore produces a sanitized rejected/no-op path rather than a stale
+window call. The initial reservation and each transition now flush marker bytes
+with `fsync`; a write/durability failure leaves a non-retryable marker rather
+than reopening the token boundary.
+
+The external summary writer now accepts only typed observed evidence or typed
+sanitized failure input and creates its own projection. It cannot persist an
+arbitrary caller dictionary with prices, rows, response bodies, or credentials.
+The paper configuration reader now consumes an unapproved key byte-by-byte and
+fails before reading its value, so a malformed/reordered `.env` cannot make a
+later `KIS_LIVE_*` or account value part of the probe input. The fixed baseline
+also pins `US` `QQQ`/`NAS` to the `overseas_stock_intraday` capability category.
+
+Independent role review found that generic `Bar` objects do not yet carry a
+source-capability identity. Codex deliberately does not add a caller-supplied
+provenance string that would only simulate that assurance. The current observed
+capability remains fail-closed; a future actual KIS-to-`Bar` adapter must bind
+provenance before a qualified runtime stream can reach this baseline.
+
+Claude's falsification-first verdict on execution timing was
+`supported-with-limits`: one cold-start cron could miss the narrow safe-second
+range, while a small date-limited external preflight fan-out is safer only when
+every invocation shares this host's `D:` reservation. The active local Codex
+automation therefore has six fixed KST checks within the one 2026-07-20 Nasdaq
+window. Only the first successful reservation can reach the one token; every
+other invocation exits before credential loading. This is an external,
+objective-expiring operating aid, not repository scheduler code or a durable
+job family.
+
+## 2026-07-19 - Historical KIS support probe remains metadata-only
+
+Decision: accept the operator's narrow KIS paper authorization for one
+historical capability observation: `QQQ` and `SPY` only, one `KIS_PAPER_*`
+token, at most three daily pages and three raw-`1m` pages in total. The only
+recorded outcome is technical support/data fitness metadata: fixed scope, call
+counts, date/timestamp bounds, daily OHLCV field presence, pagination facts,
+and raw-minute overlap/boundary facts. No raw quote, price, volume, row,
+cursor, response body, token, credential, account identifier, or account value
+may be printed or persisted.
+
+The authorization excludes order, cancel, account, position, buying-power,
+open-order, and every live endpoint. `THERICHER_MODE=off` remains required. The
+single-token client has a direct-only, redirect-rejecting allowlist for OAuth,
+overseas daily, and overseas raw-`1m` requests; tests reject broker and live
+paths before transport open. Its external lifecycle reservation is append-only
+and non-retryable even if a marker snapshot disappears.
+
+Claude's falsification-first review returned `supported-with-limits`: the
+request and page bounds must be enforced before credential-bearing traffic, and
+the result cannot be treated as evidence of retention, rate limits, adjustment
+or corporate-action semantics, point-in-time coverage, storage rights, or model
+fitness. This decision does not widen the separate 2026-07-20 raw-minute
+observation, whose output remains `observed` or `rejected` and not promotable.
+
+Reason: the small sample gives the active KIS-compatible-input investigation a
+dated technical fact while preserving the no-archive, no-account, no-order, and
+no-model-promotion boundaries. It is a bounded engine-loop probe, not a new
+provider, scheduler, report, or data contract.
+
+## 2026-07-19 - Simplify raw-minute session confirmation
+
+Decision: remove the separate raw-minute session-clearance artifact and helper
+script. Before the one date-limited raw-minute runner can read its paper config,
+it now requires an explicit `--confirm-no-exception` flag. The external
+automation performs the independent official Nasdaq calendar check immediately
+before supplying that flag. The runner still pins its date/window, rechecks the
+clock, and uses the durable external one-shot reservation/ledger to block every
+retry after a possible network boundary.
+
+Claude's follow-up simplification review returned `uncertain`: the large
+one-shot surface can become process sprawl, but the shared reservation ledger
+and typed secret-safe projection remain justified by concurrent date-limited
+preflight and raw-data boundaries. Codex therefore removed the extra clearance
+state while retaining direct-only request allowlisting, one-token reuse,
+non-retryable lifecycle evidence, and tests for confirmation-before-config.
+
+Reason: calendar confirmation is an invocation fact, not evidence that needs a
+second durable artifact. This reduces state, code, and operational steps
+without weakening the actual KIS side-effect or secret boundaries.

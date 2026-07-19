@@ -15,13 +15,17 @@ from thericher_v2.contracts import (
     Timeframe,
     require_utc,
 )
-from thericher_v2.data.kis_capability import CompletedBarCache
+from thericher_v2.data.kis_capability import CompletedBarCache, KisMarketDataCapability
 from thericher_v2.data.resample import resample_bars
 
 KIS_PAPER_BASELINE_SCHEMA_ID = "kis-paper-baseline-1m-90-v1"
 KIS_PAPER_BASELINE_M1_BARS = 90
 KIS_PAPER_BASELINE_MAX_AGE = timedelta(minutes=2)
 KIS_PAPER_BASELINE_TARGET_EXPOSURE = Decimal("0.05")
+KIS_PAPER_BASELINE_MARKET = "US"
+KIS_PAPER_BASELINE_SYMBOL = "QQQ"
+KIS_PAPER_BASELINE_ENDPOINT_CATEGORY = "overseas_stock_intraday"
+_KIS_PAPER_BASELINE_REQUIRED_FIELDS = frozenset({"open", "high", "low", "last", "evol"})
 
 
 @dataclass(frozen=True)
@@ -52,6 +56,19 @@ class KisPaperBaselineInput:
             raise ValueError("baseline 5m input must be locally resampled")
         if any(bar.timeframe != Timeframe.M10 for bar in self.m10_bars):
             raise ValueError("baseline 10m input must be locally resampled")
+        _require_complete_contiguous_stream(self.m1_bars, "baseline raw input")
+        _require_complete_contiguous_stream(self.m5_bars, "baseline 5m input")
+        _require_complete_contiguous_stream(self.m10_bars, "baseline 10m input")
+        if (
+            self.m5_bars[-1].end_ts != self.feature_window_end
+            or self.m10_bars[-1].end_ts != self.feature_window_end
+            or self.m1_bars[-1].end_ts != self.feature_window_end
+        ):
+            raise ValueError("baseline feature window end must match all complete inputs")
+        if self.m5_bars != tuple(resample_bars(self.m1_bars, Timeframe.M5)):
+            raise ValueError("baseline 5m input must match local raw resampling")
+        if self.m10_bars != tuple(resample_bars(self.m1_bars, Timeframe.M10)):
+            raise ValueError("baseline 10m input must match local raw resampling")
 
 
 @dataclass(frozen=True)
@@ -64,6 +81,7 @@ class KisPaperBaselineEvaluation:
 def evaluate_kis_paper_baseline(
     bars: Sequence[Bar],
     *,
+    capability: KisMarketDataCapability,
     symbol: str,
     market: str,
     as_of: datetime,
@@ -76,10 +94,26 @@ def evaluate_kis_paper_baseline(
     if not resolved_symbol or not resolved_market:
         raise ValueError("symbol and market are required")
     observed_at = require_utc(as_of, "as_of")
+    if not _is_eligible_baseline_capability(
+        capability,
+        symbol=resolved_symbol,
+        market=resolved_market,
+    ):
+        return KisPaperBaselineEvaluation(
+            proposal=_abstain(
+                symbol=resolved_symbol,
+                market=resolved_market,
+                decided_at=observed_at,
+                status="unqualified",
+                reason="baseline_input_capability_unqualified",
+            ),
+            baseline_input=None,
+        )
+    assert capability.freshness_budget is not None
     window = CompletedBarCache(tuple(bars)).latest_window(
         count=KIS_PAPER_BASELINE_M1_BARS,
         as_of=observed_at,
-        max_age=max_age,
+        max_age=min(max_age, capability.freshness_budget),
     )
     if window.status != "ready":
         return KisPaperBaselineEvaluation(
@@ -193,3 +227,39 @@ def _require_expected_stream(bars: tuple[Bar, ...], *, symbol: str, market: str)
         for bar in bars
     ):
         raise ValueError("baseline bars do not match the expected complete 1m stream")
+
+
+def _is_eligible_baseline_capability(
+    capability: KisMarketDataCapability,
+    *,
+    symbol: str,
+    market: str,
+) -> bool:
+    return (
+        capability.paper_model_eligible
+        and capability.endpoint_category == KIS_PAPER_BASELINE_ENDPOINT_CATEGORY
+        and capability.timeframe == Timeframe.M1
+        and "NAS" in capability.exchange_scope
+        and symbol == KIS_PAPER_BASELINE_SYMBOL
+        and KIS_PAPER_BASELINE_SYMBOL in capability.symbol_scope
+        and market == KIS_PAPER_BASELINE_MARKET
+        and _KIS_PAPER_BASELINE_REQUIRED_FIELDS.issubset(capability.raw_fields)
+        and capability.freshness_budget is not None
+    )
+
+
+def _require_complete_contiguous_stream(bars: tuple[Bar, ...], label: str) -> None:
+    first = bars[0]
+    if any(
+        not bar.complete
+        or bar.symbol != first.symbol
+        or bar.market != first.market
+        or bar.timeframe != first.timeframe
+        for bar in bars
+    ):
+        raise ValueError(f"{label} must be complete and from one stream")
+    if any(
+        current.start_ts != previous.end_ts
+        for previous, current in zip(bars, bars[1:], strict=False)
+    ):
+        raise ValueError(f"{label} must be contiguous")

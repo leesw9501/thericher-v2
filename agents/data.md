@@ -15,6 +15,15 @@ calendar anchor, gap/staleness state, and an expiry suitable for downstream
 multi-timeframe fusion. This is a future contract requirement, not permission
 to turn current descriptive data into a model input.
 
+For the active KIS-native contract, Data has fixed one additional future
+qualification fact: a raw `1m` bar's open-versus-close timestamp label needs an
+independent anchor. A single internally consistent KIS snapshot cannot establish
+it. The v4 one-shot harness deliberately records only `observed` or `rejected`
+runtime evidence; it does not load an anchor or promote a capability. Raw bytes
+remain unstored, and its external writer accepts only typed observed evidence or
+typed sanitized failures rather than caller-provided documents. No KIS call
+occurred during its preparation.
+
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one
@@ -182,6 +191,12 @@ Tiingo free-tier scope and Norgate trial may support bounded development and
 prospective collection within their rights, but their limitations stay explicit:
 they do not become a point-in-time historical universe or a generalizable model
 claim by substitution.
+The current KIS data work is an Execution-owned, one-shot metadata-only probe:
+only `QQQ`/`SPY`, one paper token, at most three daily and three raw-`1m` pages,
+and no raw rows, credentials, account facts, cache, or `D:\market_data` write.
+Data reviews its sanitized scope, page, field-presence, continuation, and
+date/timestamp-bound facts only. It cannot use the result as a dataset,
+campaign, or training input, and it keeps the raw-`1m` capability `observed`.
 
 The active data direction is KIS-native paper readiness. Data owns the compact
 runtime feature contract, but does not call KIS. Execution's dated read-only
@@ -196,6 +211,13 @@ storage rights are unverified; persistent market bytes under `D:` still need
 confirmed rights. The initial candidate is therefore 90 completed raw `1m`
 OHLCV bars and local `5m`/`10m` resamples; `1h`/`3h` and all unverified fields
 are inactive, not assumed.
+
+The next one-shot KIS probe must retain only timestamp bounds/counts. A
+no-overlap continuation is not sufficient: its newest timestamp must be exactly
+one minute before the first page's oldest timestamp. The v4 probe is fixed to
+the verified 2026-07-20 Nasdaq session and cannot promote from any outcome.
+Until a later independent label-evidence objective succeeds, this input remains
+`observed` and Engine receives no paper runtime bars.
 
 The Norgate trial compatibility and semantics checks are complete. `PLTR`
 membership changed false-to-true on `2024-09-23`; for `SMCI`, the client-clipped
@@ -431,17 +453,21 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. At the next bounded KIS market-session probe, review sanitized timestamp,
-   continuation, overlap, completed-bar, freshness, and storage-rights evidence
-   for the existing raw-`1m` capability. Qualify only in-memory use if every
-   runtime fact is established; do not write raw bytes before rights are
-   confirmed.
-2. Capture one immutable prospective standard-Tiingo-EOD refresh for only
+1. Review the immediately approved QQQ/SPY historical probe only through its
+   sanitized endpoint, page-count, field-presence, continuation, and
+   date/timestamp-bound facts. It does not confer retention, storage rights,
+   data quality, campaign, or training eligibility; do not write raw bytes.
+2. At the next bounded KIS market-session probe, review sanitized timestamp,
+   continuation-key/no-overlap, completed-bar, freshness, and storage-rights evidence
+   for the existing raw-`1m` capability. Retain it as `observed` after either
+   outcome; a later independently scoped Data objective may assess promotion.
+   Do not write raw bytes before rights are confirmed.
+3. Capture one immutable prospective standard-Tiingo-EOD refresh for only
    `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source boundary. Do not widen
    symbols, provider scope, or data rights, and do not create a model contract.
-3. Do not acquire a third Tiingo raw-daily shard merely to increase common
+4. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort remains bounded source evidence.
-4. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
+5. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
    continuation, and cache-recovery evidence qualifies it.
 
 ## Historical Queue Context

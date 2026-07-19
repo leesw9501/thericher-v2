@@ -90,20 +90,29 @@ sources may develop a prototype but cannot silently supply a paper-time feature.
 The broker-free foundation is now implemented: `data.kis_capability` keeps the
 dated KIS capability record and completed-bar cache in memory; the raw-minute
 KIS reader parses observed page fields without converting unqualified timestamps
-into `Bar`; `research.kis_paper_baseline` produces only a target-exposure
-proposal from exactly 90/18/9 completed bar views; and Execution alone maps that
-proposal to a local-paper `OrderIntent`. Focused tests cover missing, stale,
-incomplete, duplicate, and non-contiguous abstention plus replayable
+into `Bar`; `research.kis_paper_baseline` requires a matching qualified
+capability before producing a target-exposure proposal from exactly 90/18/9
+completed bar views; and Execution alone maps that proposal to a local-paper
+`OrderIntent`. Focused tests cover capability, missing, stale, incomplete,
+duplicate, non-contiguous, and malformed-resample abstention plus replayable
 `source: local_paper` fills. This is not KIS order support or an active paper
 model.
 
 ## Current Boundaries
 
 - KIS submission/live remains failed closed. The current KIS-native objective
-  may read only `KIS_PAPER_*` through explicitly invoked, allowlisted read-only
-  data/account probes; imports, tests, local simulation, and the web process
-  remain credential- and network-free. Order submit/cancel, paper capital,
-  `KIS_LIVE_*`, live behavior, and mode changes remain disabled.
+  may read only `KIS_PAPER_*` through explicitly invoked, allowlisted
+  **market-data** probes for `QQQ`/`SPY`; account, position, buying-power,
+  open-order, submit, cancel, `KIS_LIVE_*`, paper capital, mode changes, and
+  live behavior remain disabled. Imports, tests, local simulation, and the web
+  process remain credential- and network-free.
+- The operator-approved immediate QQQ/SPY historical capability runner was
+  invoked once but stopped at its secret-safe config preflight with
+  `config_missing`; it made no KIS request and wrote no reservation or summary.
+  A nonsecret check found `THERICHER_MODE=off` but no configured paper app key
+  or secret in the reader's approved `.env` prefix. Configure those two values
+  before retrying this still-unreserved objective; never move or expose account
+  or live values to make the reader pass.
 - The 2026-07-19 KIS paper probes observed a `NASD` balance/position response,
   a 100-row unadjusted daily page, and two paged raw `1m` pages. Adjusted daily
   fields and several account endpoints returned `EGW00201`; those facts remain
@@ -115,6 +124,9 @@ model.
   a continuation indicator, and retained no raw price, token, or account value.
   A single client instance reuses its one successful token for a bounded first
   page plus continuation read; it does not refresh credentials per page.
+  The first request uses `PINC=0`; the continuation uses the documented
+  `PINC=1` rule and a `KEYB` one exchange-local minute before the preceding
+  page's oldest bar, so the next probe expects no duplicate boundary row.
   Sanitized evidence is at
   `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
   (SHA-256 `81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
@@ -125,6 +137,19 @@ model.
   in-progress-bar completeness observation, and a repeatable overlap rule
   before the capability can become `qualified`. The KIS execution adapter is
   still code-disabled; only `local_paper` can consume the current baseline.
+- The offline `kis_minute_qualification` harness v4 reserves one external,
+  objective-specific attempt before a possible token, records
+  `reserved -> network_started -> summary_written`, pins its artifact and Git
+  roots, synchronizes each marker before a possible network side effect, rejects
+  redirects and oversized pages, and requires a no-overlap **and exact
+  one-minute boundary**. It rechecks a fresh clock after configuration,
+  immediately before its network marker, and immediately before its first page.
+  It accepts only the preverified 2026-07-20 Nasdaq session window and requires
+  `--confirm-no-exception` after an independent official-calendar check; it
+  writes sanitized metadata only from typed evidence/failure inputs. A one-shot
+  result is always `observed` or `rejected`; it cannot promote a capability or
+  read a bar-label anchor. No credential was read and no KIS request was made
+  while preparing this v4 harness.
 - A `qualified` KIS capability permits an in-memory completed-bar window only.
   Persistent raw-byte/cache storage still requires confirmed rights; otherwise
   retain only sanitized capability evidence outside Git.

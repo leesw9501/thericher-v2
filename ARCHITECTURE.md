@@ -34,7 +34,17 @@ freshness budget, history/paging cost, storage-rights status, and a dated
 observed response reference. Its state is one of `declared`, `observed`,
 `qualified`, or `unavailable`; documentation alone is never `observed`.
 
+A raw timestamp's open-versus-close label must have an independently
+falsifiable anchor before it can define completed-bar timing. Agreement among
+multiple fields of the same KIS response is useful integrity evidence but is
+not that anchor. Until it exists, the capability stays `observed` and no model
+may rely on an inferred timestamp shift.
+
 Only `qualified` KIS-reconstructible fields may enter an active paper model.
+The fixed paper baseline requires that matching capability object at its public
+input boundary, accepts only its fixed `US` `QQQ`/`NAS`
+`overseas_stock_intraday` stream, and emits an explicit `unqualified`
+abstention otherwise.
 Offline Tiingo, Norgate, or other lawful development data may still support a
 prototype, but a prototype is not paper-deployable until the exact feature
 schema can be rebuilt from KIS-compatible bars and passes a predeclared
@@ -194,7 +204,8 @@ model requirement:
 - `1h` and `3h` experts, order-book features, news, corporate-action fields,
   and external universe labels are inactive until separately qualified; and
 - if the rolling KIS-compatible cache lacks a complete window, the baseline
-  abstains. It does not page a broker on every inference or fill the window from
+  abstains; a matching qualified capability and exact local resamples are also
+  required. It does not page a broker on every inference or fill the window from
   another provider.
 
 The `90`-bar value is an initial bounded hypothesis, not a permanent setting.

@@ -130,6 +130,81 @@ unnecessary row-level data. Do not create a Claude report family. Record a
 review only when it changes a durable decision or a named promotion/recovery
 boundary.
 
+## Bounded KIS Historical Capability Probe
+
+This one-time procedure improves the data-collection loop by checking the
+smallest KIS historical response shapes that could later inform a
+KIS-compatible input contract. It is not an archive, a retention test, a
+dataset acquisition, a model input, or a broker-account check.
+
+The operator-approved scope is fixed: one `KIS_PAPER_*` token; only `QQQ` and
+`SPY` on `NAS`; at most three daily pages and three raw-`1m` pages in total;
+no order, cancel, account, position, buying-power, open-order, or live endpoint.
+It retains only sanitized fixed-scope metadata under
+`D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe`.
+Raw values, cursors, response bodies, credentials, and account facts are never
+printed or persisted.
+
+Run exactly once after checking the external control reservation:
+
+```powershell
+uv run python scripts\probe_kis_paper_historical_data.py --execute
+```
+
+The reader stops after the two paper app values and never reads account/live
+values. Its approved `.env` prefix is `THERICHER_MODE=off`, optional
+`THERICHER_HOST_MODEL_ARTIFACT_ROOT` / `THERICHER_MODEL_ARTIFACT_ROOT`, then
+nonempty `KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET`; put Tiingo, account,
+and live keys after that prefix. Do not paste values into commands, logs, or
+task messages.
+
+The external lifecycle is `reserved -> network_started -> summary_written`.
+Any lifecycle record blocks a retry. A successful sample can establish only
+dated endpoint/paging/field-presence facts. It cannot establish long retention,
+rate limits, adjustment/corporate-action semantics, point-in-time coverage,
+storage rights, or model fitness.
+
+## Bounded KIS Raw-Minute Qualification
+
+This one-shot procedure improves the data-collection and paper-trading loops:
+it tests whether a KIS-native completed-bar input can be reconstructed without
+turning the broker into a historical-data archive.
+
+Run only during the fixed, preverified **2026-07-20** Nasdaq session window,
+13:30 through 15:40 New York time on a ten-minute boundary and seconds 10-45:
+
+```powershell
+uv run python scripts\probe_kis_paper_raw_minute.py --execute --confirm-no-exception
+```
+
+The date is pinned after checking Nasdaq's official
+[2026 trading calendar](https://www.nasdaqtrader.com/Trader.aspx?id=calendar):
+July 20 is neither a listed closure nor early close. The script rejects every
+other date before configuration, reservation, or network access; it is not a
+general exchange-calendar implementation.
+
+Before supplying `--confirm-no-exception`, independently check the official
+Nasdaq calendar for a new closure or early-close exception. Outside that window
+the command must return before reading `.env` or making a KIS network request.
+Inside it, the runner requires that explicit confirmation and checks an external
+one-shot reservation in the shared external control root before reading its
+pinned paper config, rechecks a fresh clock before reservation and before the
+network boundary, then checks once more immediately before its first page. It
+issues at most one token request, reads one `QQQ`/`NAS` raw `1m` page and at most one
+continuation using the documented `PINC=0` to `PINC=1` / prior-minute `KEYB`
+contract. The continuation must have no overlap and begin exactly one minute
+before the first page's oldest timestamp. The runner rejects HTTP redirects,
+accepts at most 120 rows per page, writes only sanitized metadata under the
+pinned `D:\thericher-v2\model-artifacts` root from typed evidence/failure input,
+synchronizes its reservation lifecycle before a possible side effect, and never calls account, order,
+cancel, or live endpoints or writes raw rows to `D:\market_data`.
+
+A one-shot response is always `observed` or `rejected`, never a promotion. Its
+external attempt marker records `reserved -> network_started -> summary_written`;
+if summary persistence fails, `network_started` remains and blocks retry. A
+future, independently scoped Data objective may assess timestamp-label evidence
+and ask Claude before any capability update.
+
 ## KIS Paper Authority
 
 KIS paper should begin before model profitability when execution hard stops are

@@ -2,97 +2,131 @@
 
 ## Objective
 
-Qualify or reject one **in-memory** KIS paper raw-`1m` runtime input during a
-bounded US market-session probe. The outcome is either a precisely qualified
-90-bar input contract or an explicit observed limitation; both are valid.
+Complete two strictly separated, metadata-only KIS paper market-data
+observations without creating a market-data archive:
 
-This is not KIS order submission, account mutation, capital deployment, raw
-market-data persistence, GPU training, or a profitability claim.
+1. **Now:** run one bounded historical-data capability probe for `QQQ` and
+   `SPY`, limited to a single paper token, at most three daily pages and three
+   raw-`1m` pages in total.
+2. **2026-07-20 only:** retain the existing one-shot `QQQ` raw-`1m`
+   regular-session observation. It remains an `observed`/`rejected` result,
+   never a capability promotion.
 
-## Completed Foundation
+Both probes improve the data-collection and paper-readiness loops by recording
+only whether KIS can provide the declared narrow inputs. They do not build a
+training corpus, model input, cache, or trading feature.
 
-- `data.kis_capability` contains the dated `declared` / `observed` /
-  `qualified` / `unavailable` record and an in-memory completed-bar cache.
-- `execution.kis_market_data` permits only KIS paper token issuance and the
-  raw overseas `1m` endpoint. It has fake-transport coverage for a KIS-shaped
-  page and explicit continuation; it never creates a `Bar` from unqualified
-  timestamps.
-- `research.kis_paper_baseline` consumes exactly 90 completed `1m` bars and
-  deterministic local 18-`5m` / 9-`10m` resamples, then emits a target-exposure
-  proposal or abstains. Execution alone can map a ready proposal to local paper;
-  tests prove replayable `source: local_paper` fills with no network or
-  credential access.
-- The earlier sanitized probe observed successful raw `QQQ` `1m` first and
-  continuation pages at
-  `D:\thericher-v2\model-artifacts\execution\kis-paper-market-data-probe\20260719T054216611479Z\summary.json`.
-  The first client version incorrectly required market `rt_cd` on the OAuth
-  response. Its corrected HTTP/token-only handling passed fake coverage and one
-  bounded real `QQQ`/`NAS` read: 120 raw rows in descending exchange-time order
-  from `19:59` to `18:00`, with `next` present and `more=0`. It retained no raw
-  market data. Its sanitized result is
-  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-client-probe\20260719T060205390Z\summary.json`
-  (`sha256:81e80a4c7a55e90cfde73e1349e83aa504f5f86589c3c5ac8e0122e4128c6f72`).
-  Do not infer time conversion or completed-bar semantics from that one page or
-  retry in a loop.
+## Current Authority
+
+- `THERICHER_MODE=off` stays unchanged.
+- The operator authorizes `KIS_PAPER_*` only for the two named read-only
+  market-data probes. The approved symbols are `QQQ` and `SPY`; all requests
+  use `NAS`.
+- Do **not** call order, cancel, account, position, buying-power, open-order,
+  or any `KIS_LIVE_*` endpoint. Do not submit a paper or live order.
+- Do not print or persist a token, credential, account identifier, raw quote,
+  price, volume, response body, cursor, or market-data row. The external
+  summaries may contain only fixed scope, call counts, date/timestamp bounds,
+  field-presence, paging, and data-fitness facts.
+
+## Current Foundation
+
+- `execution.kis_market_data` accepts only paper OAuth, overseas daily, and
+  overseas raw-`1m` requests through a direct-only, redirect-rejecting
+  transport. It blocks account, order, cancel, and live paths before opening a
+  connection.
+- `execution.kis_historical_probe` owns the immediate fixed request sequence:
+  one token; `QQQ` daily first page plus an optional `F` continuation; `SPY`
+  daily first page; then the equivalent raw-`1m` sequence. It retains raw rows
+  only in process memory while computing typed metadata.
+- The historical probe writes one sanitized result below
+  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe`
+  and keeps an external `reserved -> network_started -> summary_written`
+  lifecycle. A reservation blocks every retry.
+- Its first authorized invocation stopped at the secret-safe configuration
+  preflight with `config_missing`; no token, KIS request, reservation, or
+  summary resulted. The two paper app values must be nonempty in the approved
+  `.env` prefix before this still-unreserved call is retried.
+- The date-limited raw-`1m` runner is separately offline-tested. Before it can
+  read config, it requires an explicit `--confirm-no-exception` flag after an
+  independent official Nasdaq calendar check. Its first result stays `observed`
+  or `rejected`.
+- `research.kis_paper_baseline` remains fail-closed: the current KIS raw-`1m`
+  capability is not qualified, so no model proposal or paper order can result.
+  Local replay remains offline with fill source `local_paper`.
 
 ## Required First Reads
 
-1. Run `.\scripts\start_next_codex_task.ps1`.
+1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
    `RUNBOOK.md`, `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-3. Ask Claude for a short falsification-first drift check before changing the
-   raw-`1m` capability from `observed` to `qualified`.
+3. Before any later promotion from `observed` to `qualified`, obtain the
+   required short Claude falsification-first review. This goal has no promotion.
 
 ## Work Packages
 
-### Data
+### Execution: Immediate Historical Capability Probe
 
-1. Define the predeclared qualification facts for this one raw-`1m` capability:
-   exchange/Korea-to-UTC interpretation, strict one-minute ordering, one known
-   overlap/deduplication rule, completed-bar exclusion, freshness budget, and
-   in-memory-only rights status.
-2. Do not store KIS market bytes. Persistent cache/data writes under
-   `D:\market_data` remain prohibited until storage rights are confirmed.
-3. Promote only this exact capability to `qualified` if every predeclared fact
-   has fresh sanitized evidence. Otherwise retain `observed` with the smallest
-   unresolved fact; do not create a proxy source or a report family.
+1. Confirm no existing reservation under the external control root, then run
+   exactly once:
 
-### Execution
+   ```powershell
+   uv run python scripts\probe_kis_paper_historical_data.py --execute
+   ```
 
-1. During the next regular US session, make at most one fresh `KIS_PAPER_*`
-   token attempt for this objective. If it fails, record only sanitized status
-   and stop KIS network work for this objective.
-2. If token issuance succeeds, issue one `QQQ`/`NAS` raw-`1m` first page and at
-   most one documented continuation. Capture only response shape, row count,
-   timestamp bounds, overlap, continuation facts, and local clock; never raw
-   prices, token, account identifier, or account endpoint data.
-3. Keep imports, tests, local paper, and web processes credential- and
-   network-free. Do not call KIS order, cancel, modify, live, or account-mutate
-   endpoints, and do not change `THERICHER_MODE`.
+2. Inspect only the sanitized terminal result, lifecycle marker, and
+   `summary.json`. Do not inspect a raw response or retry after any reservation.
+3. Record only technical support and limitations: response acceptance, daily
+   OHLCV field presence, per-page bounds, `F` daily continuation availability,
+   raw-`1m` continuation availability, timestamp bounds, overlap, and boundary
+   continuity. Do not infer retention, rate limits, adjustment semantics,
+   corporate actions, storage rights, point-in-time coverage, or model fitness.
+
+### Data: Interpretation
+
+1. Review the historical summary as metadata-only evidence. It can support or
+   reject a future KIS-compatible input investigation, but cannot be copied to
+   `D:\market_data`, a dataset manifest, a campaign, or a model queue.
+2. Keep raw-`1m` capability state `observed` after either probe. Open-versus-
+   close timestamp labels and persistent storage rights remain unresolved.
+
+### Execution: Scheduled Raw-`1m` Observation
+
+1. During the fixed 2026-07-20 Nasdaq window only, independently confirm there
+   is no official Nasdaq session exception. Then run exactly once:
+
+   ```powershell
+   uv run python scripts\probe_kis_paper_raw_minute.py --execute --confirm-no-exception
+   ```
+
+2. It may issue one paper token, one `QQQ`/`NAS` first page, and at most one
+   documented continuation. It cannot call any account/order/live endpoint or
+   promote the capability.
 
 ### Engine Research
 
-1. Keep the fixed 90-`1m` / 18-`5m` / 9-`10m` baseline unchanged. Use it only with
-   in-memory completed bars after Data qualifies the capability; otherwise it
-   must abstain.
-2. Do not introduce GPU work, learned models, ensembles, `1h`, `3h`, adjusted
-   prices, corporate actions, news, order book, external universe inputs, or
-   KIS paper submission.
+Keep the 90-`1m` / 18-`5m` / 9-`10m` baseline unchanged and abstaining. Do not
+start GPU work, learned models, ensembles, `1h`, `3h`, adjusted prices,
+corporate actions, news, order-book inputs, external universe work, or KIS
+paper submission from either capability probe.
 
 ## Boundaries
 
-- Do not read `KIS_LIVE_*`, output/log/commit credentials or account data, buy
-  data, enable live behavior, create a daemon/scheduler/report family, or write
-  KIS raw bytes to Git or `D:`.
-- No capital envelope or paper order approval is implied. Local-paper-only
-  replay remains permitted and fills must retain `source: local_paper`.
-- Do not claim a market-session fact from old weekend evidence, a page cap, an
-  error response, or documentation alone.
+- No raw KIS bytes or caches in Git, `D:\market_data`, or artifacts.
+- No broker account, position, open-order, orderable-funds, cancel, submit, or
+  live call; no capital envelope is implied.
+- No credential, token, account value, account identifier, raw price, volume,
+  cursor, response body, or raw row in console output, logs, artifacts, Git,
+  or Claude prompts.
+- A reserved, `network_started`, or completed lifecycle state is never retried.
+- Do not make a historical-data, model, retention, storage-rights, or
+  profitability claim from these bounded samples.
 
 ## Completion
 
-Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this goal. Run:
+After each permitted run, inspect only sanitized external evidence, update the
+Data and Execution stateboards plus `HANDOFF.md` and `DECISIONS.md`, then run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -100,5 +134,6 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Commit, push, and report the capability verdict, exact sanitized KIS calls,
-local-paper status, remaining account/data gaps, and next objective.
+Commit and push completed bounded work. Keep this goal active until the
+date-limited raw-`1m` observation is either recorded, rejected, or has a
+durable unrecoverable reservation state; then refresh it to one next objective.

@@ -18,10 +18,14 @@
   `5m`/`10m` resamples; `1h`/`3h`, external-universe, action, news, and
   order-book inputs remain inactive until qualified.
 - The foundation now exposes that baseline as a target-exposure proposal only.
-  It abstains on missing, stale, incomplete, duplicate, non-contiguous, future,
-  or misaligned windows, and has no broker, credential, or network import.
+  It requires a matching `qualified` `overseas_stock_intraday` KIS capability,
+  the fixed `US` `QQQ`/`NAS` scope, and exact local resamples, then abstains on
+  unqualified, missing, stale, incomplete, duplicate, non-contiguous, future,
+  or misaligned windows. It has no broker, credential, or network import.
   It remains a local-paper fixture until raw KIS time and completed-bar semantics
-  qualify the input contract.
+  qualify the input contract. A self-consistent one-shot KIS page cannot settle
+  whether timestamps label a bar's open or close minute, so Engine cannot use
+  an inferred one-minute shift as a paper-time feature assumption.
 - Execution has observed a successful raw `1m` page and one continuation, but
   not retention, cache-recovery, or adjusted-price availability. Treat raw
   `1m` as an input-contract candidate, not a trained-model or GPU permission.
@@ -88,9 +92,11 @@
 ## Current Objective
 
 - Keep the completed deterministic KIS-native baseline fixed while Data and
-  Execution qualify the raw input contract. Do not start a GPU campaign merely
-  because the historical dataset is limited. The paper-first exception does not
-  extend to learned models, ensembles, learned allocation, or learned exits.
+  Execution record the one-shot raw-input observation. It remains fail-closed
+  until a later Data objective qualifies the contract. Do not start a GPU
+  campaign merely because the historical dataset is limited. The paper-first
+  exception does not extend to learned models, ensembles, learned allocation,
+  or learned exits.
 - The fixed-ETF source-sensitivity question and the full-history exact
   raw-source alignment check are unsupported. The broad ETF wrapper supplies
   descriptive features plus explicit future-only outcomes, but neither opens

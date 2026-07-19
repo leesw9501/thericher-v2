@@ -25,6 +25,7 @@ TargetInputStatus = Literal[
     "non_contiguous",
     "misaligned",
     "future",
+    "unqualified",
 ]
 
 
@@ -222,6 +223,7 @@ class TargetExposureProposal:
             "non_contiguous",
             "misaligned",
             "future",
+            "unqualified",
         }:
             raise ValueError("target proposal input_status is invalid")
         object.__setattr__(self, "symbol", self.symbol.upper())
