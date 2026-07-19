@@ -147,6 +147,10 @@ eligibility.
   broker/strategy code. Never expose or persist the token.
 - Use paid, login-gated, manual, or license-unclear sources without operator
   approval.
+- Buy, subscribe to, renew, or upgrade a market-data product. The current
+  company direction is free sources plus the already-installed Norgate trial;
+  record a limitation rather than treating a paid source as a blocked-work
+  remedy.
 - Turn research data-quality warnings into blocking gates unless execution
   requires a hard stop.
 
@@ -172,6 +176,12 @@ all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
 short snapshot. Tiingo IEX r1 remains 5-minute descriptive evidence only. The
 pre-r1 archive attempt is closed after strict source validation failed twice;
 there is no r2 snapshot or new historical-intraday research input.
+
+The operator has ruled out new paid market-data acquisition. The existing
+Tiingo free-tier scope and Norgate trial may support bounded development and
+prospective collection within their rights, but their limitations stay explicit:
+they do not become a point-in-time historical universe or a generalizable model
+claim by substitution.
 
 The Norgate trial compatibility and semantics checks are complete. `PLTR`
 membership changed false-to-true on `2024-09-23`; for `SMCI`, the client-clipped

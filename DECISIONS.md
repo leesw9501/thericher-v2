@@ -2160,3 +2160,46 @@ entry timing, sizing, and exits while keeping model uncertainty, execution
 safety, and PnL attribution separable. It avoids a monolithic neural policy or
 unbounded MLP/Transformer search, and it makes a useful KIS paper console an
 execution-learning tool rather than a premature public trading interface.
+
+## 2026-07-19 - No-paid-data path and bounded KIS data-fit preparation
+
+Decision: the operator has ruled out new paid market-data purchases,
+subscriptions, renewals, and upgrades. The project will use lawful free sources,
+the already approved Tiingo free-tier scope, and the existing Norgate trial
+within their recorded rights. A missing historical point-in-time universe,
+delisting lineage, adjustment semantics, or broad intraday history remains a
+material limitation; it must be disclosed on any model result rather than turned
+into a purchase request or silently repaired with a static survivor universe.
+
+This limitation blocks a claim of generalizable historical model edge, not a
+future bounded KIS virtual-paper execution-learning phase. Once the current
+non-broker data objective is complete and the relevant exchange is in regular
+hours, Execution may run one separately bounded, read-only KIS paper probe. It
+will verify only connectivity and data fitness: a declared overseas daily-series
+request, a declared intraday-bar request with its continuation behavior, returned
+timestamp boundaries, response count, adjustment fields/semantics when present,
+and documented rate or retention limits. It may write only rights-permitted
+market-data evidence under `D:\market_data` and sanitized metadata under the
+artifact root. It may not print or persist credentials/account identifiers,
+change `THERICHER_MODE`, query or submit an order, allocate paper capital, or
+use `KIS_LIVE_*`.
+
+The probe must not assume that an API offering daily and intraday endpoints is a
+long-history research replacement. The observed response, retention window,
+paging behavior, corporate-action treatment, storage rights, and exchange-delay
+semantics decide that. Until then, KIS data is an unverified prospective or
+development candidate only. Norgate trial-derived rows likewise remain subject
+to the trial's retention and derived-data rights; do not promote them merely
+because they are locally present.
+
+Claude's falsification-first review returned `supported-with-limits`. It
+requires explicit as-of checks for KIS bars, a split/dividend observation when
+available, rate/paging evidence, and relative rather than absolute interpretation
+of baselines built on a non-PIT static universe. A KIS term or response that
+prohibits required retention, is materially delayed/restricted, lacks usable
+action treatment, or fails bounded paging reverses the data-fit conclusion; it
+does not authorize an automatic workaround.
+
+Reason: this keeps the project moving toward real paper-execution evidence
+without pretending that free/trial historical data proves an edge, reopening a
+paid-data path, or letting broker connectivity become order authority.

@@ -12,7 +12,10 @@ paper-trading, or profitability work.
   `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`
   (`sha256:c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`).
 - The prior fixed-ETF Tiingo snapshot ends at `2026-07-10`.
-- Paid PIT data remains an operator purchase decision. Do not buy or enroll.
+- The operator has prohibited new paid market-data purchases, subscriptions,
+  renewals, and upgrades. The already approved Tiingo free-tier scope and the
+  existing Norgate trial remain usable only within their rights; do not buy,
+  enroll, upgrade, or frame a paid source as this goal's resolution.
 - The target-position policy graph is now the durable engine direction, but this
   narrow data goal does not implement it, train its experts, or build the future
   KIS paper console. It only preserves prospective lineage needed by later
@@ -37,8 +40,10 @@ paper-trading, or profitability work.
    the prior source.
 4. Reattest offline on host and Docker where practical. Keep all data/artifacts
    external to Git and classify the result as prospective lineage only.
-5. Keep the exact paid-data need visible: private-use US daily data with
-   historical listing/delisting, as-of universe, and verified adjustment lineage.
+5. Keep the unresolved historical listing/delisting, as-of-universe, and
+   adjustment-lineage limitation visible without proposing a paid-data remedy.
+   A later KIS market-hours read-only data-fit probe is a separate goal, not an
+   exception to this objective's KIS boundary.
 
 ## Boundaries
 

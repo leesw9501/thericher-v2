@@ -73,6 +73,12 @@ closed. The eventual Docker-local paper console is read-focused and exposes
 sanitized holdings, prices, open orders, and safety state only after successful
 read-only reconciliation; it does not grant submit authority by itself.
 
+Historical-data limitations restrict what the project may claim about a model;
+they do not make bounded KIS virtual-paper execution learning wait for an
+otherwise perfect research dataset. KIS paper still needs its minimal execution
+boundaries, a fresh reconciliation path, and a separately approved capital
+envelope before any submission begins.
+
 ## Current Boundaries
 
 - KIS remains failed closed. No current task may read `.env` values or call KIS;
@@ -88,6 +94,10 @@ read-only reconciliation; it does not grant submit authority by itself.
 - Free, no-auth, lawful, license-compatible data may be acquired autonomously
   when it directly improves active work. Paid or login/manual-license sources
   require operator approval.
+- The operator's current data policy prohibits new paid market-data purchases,
+  subscriptions, renewals, and upgrades. Keep the already approved Tiingo
+  free-tier scope and local Norgate trial within their respective rights, but
+  do not present a paid source as the required next step.
 - Warn before `D:` falls below 20 percent free and stop autonomous acquisition
   before it falls below 15 percent free.
 - Do not import v1 wholesale or recreate its report, gate, coordinator, or

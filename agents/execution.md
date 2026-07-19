@@ -112,9 +112,11 @@
 
 ## Current Objective
 
-- Keep KIS failed closed while the Data lane advances. Do not read `.env`, call
-  KIS, submit, modify, cancel, or retry. A later verification requires both the
-  non-secret pairing confirmation below and separate one-time authority.
+- Keep KIS failed closed while the current Data objective advances. Do not read
+  `.env`, call KIS, submit, modify, cancel, or retry in that objective. A
+  subsequent explicitly bounded, market-hours-only verification may make one
+  read-only KIS paper data/connectivity probe after the non-secret pairing
+  confirmation below; it has no submit, cancel, capital, or live authority.
 - Do not turn the dashboard plan into a KIS integration during this objective.
   The eventual Docker paper-console is a bounded Execution goal after successful
   read-only reconciliation; it must not make the web process a credential or
