@@ -58,6 +58,10 @@ training corpus, model input, cache, or trading feature.
   also lacks the empty Data-owned contract-SHA qualification binding. No model
   proposal or paper order can result. Local replay remains offline with fill
   source `local_paper`.
+- Its pure proposal contract now records immutable evaluation `as_of`
+  separately from the completed feature-window end. Even a later relaxed
+  freshness setting cannot emit a ready proposal at or after that window's
+  next `10m` boundary; it returns an explicit expired abstention instead.
 - Data now has a pure explicit-UTC-session resampling primitive that surfaces
   skipped buckets. It infers no calendar and is not connected to this baseline,
   a KIS adapter, `1h`/`3h`, a model, or paper execution in this objective.

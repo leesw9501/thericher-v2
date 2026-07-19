@@ -5,7 +5,7 @@ import socket
 import urllib.request
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
-from decimal import Decimal
+from decimal import Decimal, localcontext
 from pathlib import Path
 
 import pytest
@@ -60,6 +60,108 @@ def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples(monkeypatch
 
     source = inspect.getsource(kis_paper_baseline)
     assert "orderintent" not in source.lower()
+
+
+def test_baseline_records_immutable_as_of_separately_from_feature_window(monkeypatch) -> None:
+    bars = _bars(92)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
+    feature_window_end = bars[89].end_ts
+    as_of = feature_window_end + timedelta(minutes=1)
+
+    result = evaluate_kis_paper_baseline(
+        bars[:90],
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=as_of,
+    )
+
+    assert result.baseline_input is not None
+    assert result.proposal.input_status == "ready"
+    assert result.proposal.decided_at == as_of
+    assert result.proposal.feature_window_end == feature_window_end
+    assert result.proposal.valid_until == feature_window_end + timedelta(minutes=10)
+    assert feature_window_end.strftime("%Y%m%dT%H%M%SZ") in result.proposal.proposal_id
+    assert ":ready:" in result.proposal.proposal_id
+
+    retry = evaluate_kis_paper_baseline(
+        bars[:90],
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=as_of + timedelta(microseconds=1),
+    )
+    revised_bars = [*bars[:90]]
+    revised_bars[-1] = replace(
+        revised_bars[-1],
+        close=revised_bars[-1].close + Decimal("0.001"),
+        high=revised_bars[-1].high + Decimal("0.001"),
+    )
+    revised = evaluate_kis_paper_baseline(
+        revised_bars,
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=as_of,
+    )
+
+    assert retry.proposal.decided_at == as_of + timedelta(microseconds=1)
+    assert retry.proposal.proposal_id == result.proposal.proposal_id
+    assert revised.proposal.proposal_id != result.proposal.proposal_id
+
+
+def test_baseline_expires_at_the_next_ten_minute_boundary_even_with_relaxed_age(
+    monkeypatch,
+) -> None:
+    bars = _bars(92)
+    capability = replace(
+        _qualified_capability(),
+        freshness_budget=timedelta(minutes=20),
+    )
+    _trust_for_test(monkeypatch, capability)
+    as_of = bars[89].end_ts + timedelta(minutes=10)
+
+    result = evaluate_kis_paper_baseline(
+        bars[:90],
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=as_of,
+        max_age=timedelta(minutes=20),
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.proposal.input_status == "stale"
+    assert result.proposal.reason == "baseline_input_expired"
+    assert result.proposal.decided_at == as_of
+    assert result.proposal.feature_window_end == bars[89].end_ts
+
+
+def test_bar_window_fingerprint_is_decimal_context_independent() -> None:
+    bar = _bars(1)[0]
+    first = replace(bar, volume=Decimal("1.00000000000000000000000000001"))
+    second = replace(bar, volume=Decimal("1.00000000000000000000000000002"))
+    signed_zero = replace(bar, volume=Decimal("-0"))
+    unsigned_zero = replace(bar, volume=Decimal("0.00"))
+
+    with localcontext() as context:
+        context.prec = 6
+        low_precision_first = kis_paper_baseline._bar_window_fingerprint((first,))
+        low_precision_second = kis_paper_baseline._bar_window_fingerprint((second,))
+        low_precision_zero = kis_paper_baseline._bar_window_fingerprint((signed_zero,))
+
+    with localcontext() as context:
+        context.prec = 80
+        high_precision_first = kis_paper_baseline._bar_window_fingerprint((first,))
+        high_precision_second = kis_paper_baseline._bar_window_fingerprint((second,))
+        high_precision_zero = kis_paper_baseline._bar_window_fingerprint((unsigned_zero,))
+
+    assert low_precision_first == high_precision_first
+    assert low_precision_second == high_precision_second
+    assert low_precision_first != low_precision_second
+    assert low_precision_zero == high_precision_zero
 
 
 def test_baseline_abstains_for_unusable_input(monkeypatch) -> None:

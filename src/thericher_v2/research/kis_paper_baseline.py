@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -138,10 +140,11 @@ def evaluate_kis_paper_baseline(
             proposal=_abstain(
                 symbol=resolved_symbol,
                 market=resolved_market,
-                decided_at=raw_bars[-1].end_ts,
+                decided_at=observed_at,
                 status="misaligned",
                 reason="baseline_input_misaligned_10m_boundary",
                 feature_window_end=raw_bars[-1].end_ts,
+                input_fingerprint=_bar_window_fingerprint(raw_bars),
             ),
             baseline_input=None,
         )
@@ -160,10 +163,25 @@ def evaluate_kis_paper_baseline(
             proposal=_abstain(
                 symbol=resolved_symbol,
                 market=resolved_market,
-                decided_at=raw_bars[-1].end_ts,
+                decided_at=observed_at,
                 status="incomplete",
                 reason="baseline_input_resample_incomplete",
                 feature_window_end=raw_bars[-1].end_ts,
+                input_fingerprint=_bar_window_fingerprint(raw_bars),
+            ),
+            baseline_input=None,
+        )
+
+    if observed_at >= baseline_input.feature_window_end + Timeframe.M10.duration:
+        return KisPaperBaselineEvaluation(
+            proposal=_abstain(
+                symbol=resolved_symbol,
+                market=resolved_market,
+                decided_at=observed_at,
+                status="stale",
+                reason="baseline_input_expired",
+                feature_window_end=baseline_input.feature_window_end,
+                input_fingerprint=_bar_window_fingerprint(baseline_input.m1_bars),
             ),
             baseline_input=None,
         )
@@ -175,8 +193,16 @@ def evaluate_kis_paper_baseline(
     action = "enter" if trend_up else "abstain"
     exposure = KIS_PAPER_BASELINE_TARGET_EXPOSURE if trend_up else Decimal("0")
     confidence = Decimal("0.55") if trend_up else Decimal("0")
+    reason = "fixed_bar_trend_baseline" if trend_up else "fixed_bar_trend_abstain"
     proposal = TargetExposureProposal(
-        proposal_id=_proposal_id(resolved_symbol, baseline_input.feature_window_end),
+        proposal_id=_proposal_id(
+            resolved_symbol,
+            resolved_market,
+            input_status="ready",
+            reason=reason,
+            feature_window_end=baseline_input.feature_window_end,
+            input_fingerprint=_bar_window_fingerprint(baseline_input.m1_bars),
+        ),
         symbol=resolved_symbol,
         market=resolved_market,
         action=action,
@@ -184,10 +210,10 @@ def evaluate_kis_paper_baseline(
         confidence=confidence,
         feature_schema_id=KIS_PAPER_BASELINE_SCHEMA_ID,
         input_status="ready",
-        decided_at=baseline_input.feature_window_end,
+        decided_at=observed_at,
         valid_until=baseline_input.feature_window_end + Timeframe.M10.duration,
         feature_window_end=baseline_input.feature_window_end,
-        reason="fixed_bar_trend_baseline" if trend_up else "fixed_bar_trend_abstain",
+        reason=reason,
     )
     return KisPaperBaselineEvaluation(proposal=proposal, baseline_input=baseline_input)
 
@@ -200,9 +226,17 @@ def _abstain(
     status: TargetInputStatus,
     reason: str,
     feature_window_end: datetime | None = None,
+    input_fingerprint: str | None = None,
 ) -> TargetExposureProposal:
     return TargetExposureProposal(
-        proposal_id=_proposal_id(symbol, decided_at),
+        proposal_id=_proposal_id(
+            symbol,
+            market,
+            input_status=status,
+            reason=reason,
+            feature_window_end=feature_window_end,
+            input_fingerprint=input_fingerprint,
+        ),
         symbol=symbol,
         market=market,
         action="abstain",
@@ -217,8 +251,66 @@ def _abstain(
     )
 
 
-def _proposal_id(symbol: str, timestamp: datetime) -> str:
-    return f"{KIS_PAPER_BASELINE_SCHEMA_ID}:{symbol}:{timestamp.strftime('%Y%m%dT%H%M%SZ')}"
+def _proposal_id(
+    symbol: str,
+    market: str,
+    *,
+    input_status: TargetInputStatus,
+    reason: str,
+    feature_window_end: datetime | None,
+    input_fingerprint: str | None,
+) -> str:
+    feature_marker = (
+        "none"
+        if feature_window_end is None
+        else feature_window_end.strftime("%Y%m%dT%H%M%SZ")
+    )
+    fingerprint_marker = input_fingerprint or "none"
+    return ":".join(
+        (
+            KIS_PAPER_BASELINE_SCHEMA_ID,
+            market,
+            symbol,
+            input_status,
+            reason,
+            feature_marker,
+            fingerprint_marker,
+        )
+    )
+
+
+def _bar_window_fingerprint(bars: Sequence[Bar]) -> str:
+    payload = [
+        {
+            "close": _decimal_marker(bar.close),
+            "complete": bar.complete,
+            "high": _decimal_marker(bar.high),
+            "low": _decimal_marker(bar.low),
+            "market": bar.market,
+            "open": _decimal_marker(bar.open),
+            "schema_version": bar.schema_version,
+            "start_ts": bar.start_ts.isoformat(),
+            "symbol": bar.symbol,
+            "timeframe": bar.timeframe.value,
+            "volume": _decimal_marker(bar.volume),
+        }
+        for bar in bars
+    ]
+    encoded = json.dumps(payload, ensure_ascii=True, separators=(",", ":"), sort_keys=True).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _decimal_marker(value: Decimal) -> str:
+    sign, digits, exponent = value.as_tuple()
+    if not any(digits):
+        return "0"
+    last_significant = len(digits)
+    while digits[last_significant - 1] == 0:
+        last_significant -= 1
+        exponent += 1
+    prefix = "-" if sign else ""
+    significand = "".join(str(digit) for digit in digits[:last_significant])
+    return f"{prefix}{significand}e{exponent}"
 
 
 def _ends_on_ten_minute_boundary(timestamp: datetime) -> bool:

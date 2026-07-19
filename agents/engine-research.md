@@ -28,6 +28,9 @@
   missing, stale, incomplete, duplicate, non-contiguous, future, or misaligned
   windows. The trusted registry is empty, so direct state construction cannot
   activate it. It has no broker, credential, or network import.
+  A decision is timestamped at its immutable `as_of`, not backdated to the
+  feature window. The feature end remains in the proposal, and its fixed
+  `10m` expiry overrides a caller's otherwise relaxed freshness value.
   It remains a local-paper fixture until raw KIS time and completed-bar semantics
   qualify the input contract. A self-consistent one-shot KIS page cannot settle
   whether timestamps label a bar's open or close minute, so Engine cannot use

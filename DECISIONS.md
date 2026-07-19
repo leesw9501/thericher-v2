@@ -2581,3 +2581,29 @@ Synthetic summer/winter caller-supplied sessions, gaps, duplicates, partial
 terminal buckets, and adjacent-session rejection provide that boundary. No
 KIS call, credential, data file, artifact, model, GPU, broker, or timeframe
 activation is added.
+
+## 2026-07-19 - Keep KIS baseline decision time distinct from feature time
+
+Decision: a ready fixed KIS baseline proposal now records `decided_at` from
+the immutable caller `as_of` rather than backdating it to the final completed
+bar. It retains `feature_window_end` separately, incorporates both timestamps
+as separate provenance fields, and uses only stable market/symbol/status,
+reason, feature-window, and content-fingerprint inputs for the deterministic
+proposal id. It abstains with
+`baseline_input_expired` when `as_of` is at or after
+`feature_window_end + 10m`. The usual capability and caller freshness limits
+still apply first; neither may extend this structural expiry.
+
+Reason: a delayed evaluation must not appear to have happened when its input
+bar closed, and a proposal must not remain executable across the next fixed
+bar boundary merely because a caller supplied a broader freshness budget. The
+separate fields preserve causal/replay lineage without adding a clock service,
+KIS adapter, model, dataset, or order path.
+
+Claude's falsification-first verdict was `supported-with-limits`: preserve the
+feature timestamp, use the immutable evaluation time for every ready and
+abstaining decision, and make the expiry boundary fail closed. Focused tests
+use a test-only twenty-minute capability freshness budget to prove that the
+independent ten-minute expiry still wins. No credential, KIS request, raw
+market-data access, model training, broker submission, or live behavior is
+added.

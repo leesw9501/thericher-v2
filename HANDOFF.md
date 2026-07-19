@@ -98,7 +98,9 @@ qualification registry is deliberately empty, so a caller-created `QUALIFIED`
 object still abstains. Focused tests cover capability, missing, stale,
 incomplete, duplicate, non-contiguous, and malformed-resample abstention plus
 replayable `source: local_paper` fills. This is not KIS order support or an
-active paper model.
+active paper model. A ready proposal records the immutable evaluation `as_of`
+separately from its completed feature-window end and expires at the next
+`10m` boundary; a relaxed caller freshness argument cannot reactivate it.
 
 ## Current Boundaries
 
@@ -146,6 +148,11 @@ active paper model.
   in the Data-owned trusted registry, which is intentionally empty today. The
   binding shape is structural provenance only; a later Data objective must
   validate its external evidence before any production registry entry exists.
+- The fixed baseline is proposal-time honest: every ready or abstaining
+  decision uses the immutable caller `as_of`, retains the completed feature
+  window separately, and emits `baseline_input_expired` at or after
+  `feature_window_end + 10m`. This remains an offline local-paper fixture; the
+  empty trusted registry prevents a production proposal.
 - The offline `kis_minute_qualification` harness v4 reserves one external,
   objective-specific attempt before a possible token, records
   `reserved -> network_started -> summary_written`, pins its artifact and Git
