@@ -2,6 +2,13 @@
 
 ## Status
 
+The local-only replacement inventory is complete at
+`D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`,
+SHA-256 `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.
+It found no fresh local daily source for a new training contract. The broad
+Yahoo snapshot is limited to a future Data-only schema preflight; it is not a
+model, GPU, ranking, paper, or profitability input.
+
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one
@@ -233,8 +240,12 @@ Norgate remains the sole price/feature/label source. No download, provider
 query, raw-bar export, or source merge was needed. Its CPU-only batch completed;
 the first CUDA MLP stopped before a prediction or checkpoint because deterministic
 CUDA workspace configuration was absent, and the second MLP was not started.
-The r4 validation slice is retired. Data's next work is a bounded local
-inventory for a genuinely fresh contract candidate, not a r4 repair or retry.
+The r4 validation slice is retired. The completed replacement inventory found
+no new local training candidate: Norgate is the closed r4 parent, Tiingo r2 has
+only 18 forward sessions and a static non-PIT union, the fixed ETF paths are
+already exhausted or unsupported, and Tiingo IEX is short descriptive evidence.
+The narrowly authorized next safe action is one prospective standard-EOD
+refresh for `SPY`/`QQQ`/`IWM`, not a r4 repair, retry, or model input.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -389,9 +400,9 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Inventory only known local daily snapshots and manifest metadata for an
-   unspent, non-overlapping replacement-contract candidate. Do not reuse r4's
-   3,420 validation rows or create a new model contract during the inventory.
+1. Capture one immutable prospective standard-Tiingo-EOD refresh for only
+   `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source boundary. Do not widen
+   symbols, provider scope, or data rights, and do not create a model contract.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort remains bounded source evidence.
 
@@ -694,6 +705,14 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Recent Evidence
 
+- `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`:
+  compact manifest-only inventory, SHA-256
+  `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.
+  It records six local source candidates, their pinned manifest lineage,
+  chronology, and limitations. Its conclusion is
+  `no_local_fresh_training_candidate`; the broad Yahoo source is
+  `data_preflight_only`, and a paid PIT source remains an operator decision.
+  The earlier r1 inventory remains external recovery evidence only.
 - `D:\market_data\us_equities\fixed_etf_daily\canonical\ohlcv_1d\snapshot=2026-07-18-r2\manifest.json`:
   raw canonical campaign subset with r2 hash
   `sha256:3deaf812461d8d2619db3657f100521c293c5d5e7b460e82959b00c6e2a9875e`;
@@ -762,12 +781,13 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 ## Next Handoff
 
 The Tiingo r2 cross-source cohort and r4 source-separated contract are complete,
-not a third shard or another download. r4 is now closed with CPU-only evidence
-and an immutable CUDA bootstrap failure; its validation rows cannot be reused.
-The next Data contribution is a bounded manifest-first inventory of known local
-daily sources for an unspent candidate period. Keep the 483 shared sessions and
-18 forward-only sessions in their current mask/lineage roles; do not widen them
-into a provider-price or model-input merge.
+not a third shard or another download. r4 is closed with CPU-only evidence and
+an immutable CUDA bootstrap failure; its validation rows cannot be reused. The
+replacement inventory now confirms no fresh local training candidate. Next,
+capture only the operator-authorized `SPY`/`QQQ`/`IWM` standard-Tiingo-EOD
+increment after `2026-07-10` as prospective lineage. Keep the 483 shared
+sessions and 18 forward-only sessions in their current mask/lineage roles; do
+not widen them into a provider-price or model-input merge.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip

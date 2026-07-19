@@ -4,6 +4,9 @@
 
 - The bounded RAW D1 development campaign is complete; no campaign or GPU job
   is running.
+- Data's replacement inventory found no fresh local training candidate. GPU
+  remains unassigned until Data freezes a new eligible contract; a prospective
+  three-ETF EOD refresh does not change that boundary.
 - Data marks the fixed `SPY`, `QQQ`, `IWM` r2 dataset development-training
   eligible and ranking/holdout ineligible.
 - The CUDA evidence is structurally valid but the factor sensitivity verdict is
@@ -137,9 +140,10 @@
 - Docker research now requires `CUBLAS_WORKSPACE_CONFIG=:4096:8`; a
   network-disabled synthetic CUDA smoke passed under commit `ae0d3ec`. It is
   infrastructure evidence only, not data or model evidence.
-- No breadth batch is ready until Data finds and freezes a fresh, unspent local
-  candidate. Do not add a tree, TCN, seed, parameter sweep, depth candidate, or
-  ensemble merely to occupy the GPU.
+- No breadth batch is ready: Data's completed inventory found no fresh local
+  training candidate. A prospective three-ETF EOD refresh is lineage only. Do
+  not add a tree, TCN, seed, parameter sweep, depth candidate, or ensemble
+  merely to occupy the GPU.
 
 ## Depth Queue
 
@@ -328,9 +332,10 @@ is also closed: it has CPU-only evidence and one immutable CUDA bootstrap
 failure, not a model observation. The Tiingo r2 cohort and metadata-only Engine
 intake remain complete.
 
-Next, wait for Data's bounded local replacement inventory. Engine may prepare
-contracts and test the corrected CUDA bootstrap only on synthetic tensors; it
-must not consume r4 rows, launch another model family, or create an ensemble.
+Data's bounded local replacement inventory is complete and found no fresh local
+training candidate. Engine may retain the corrected synthetic CUDA bootstrap
+evidence only; it must not consume r4 rows, launch another model family, or
+create an ensemble while Data records the narrow prospective EOD lineage.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1

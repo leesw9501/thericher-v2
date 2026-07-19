@@ -2059,3 +2059,30 @@ than a silent rerun.
 
 Reason: preserve a clear boundary between a reproducibility repair and a model
 result, while freeing Data to find a fresh unspent contract candidate.
+
+## 2026-07-19 - Local replacement inventory finds no fresh training candidate
+
+Decision: retain the compact external Data inventory at
+`D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`,
+SHA-256 `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.
+It reads only six known local manifests, makes no network or credential access,
+and records pinned lineage, chronology, and source limitations. Its conclusion
+is `no_local_fresh_training_candidate`.
+
+The Norgate broad panel is the closed r4 parent; Tiingo r2 has only 18 sessions
+beyond its end and retains a static non-PIT universe; fixed ETF evidence is
+exhausted or unsupported; and Tiingo IEX remains short, descriptive, and
+training-ineligible. The broad Yahoo snapshot may support only a later
+Data-owned loader/schema preflight, never a model contract, promotion,
+strategy-inference, or profitability claim.
+
+The next safe data action is one prospective standard-Tiingo-EOD refresh for
+the already authorized `SPY`/`QQQ`/`IWM` scope. It is future lineage only and
+does not open GPU work. A fresh model contract still requires private-use US
+daily data with historical listing/delisting, an as-of universe, and verifiable
+corporate-action/adjustment provenance. Norgate US Stocks Platinum or an
+equivalent vendor requires a separately approved purchase; no cost or enrollment
+is authorized here.
+
+Reason: preserve research velocity through clean forward collection while not
+spending GPU time on a known non-PIT, reused, or unsupported historical slice.

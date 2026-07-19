@@ -642,10 +642,22 @@ its validation slice. Commit `ae0d3ec` fixes the Docker research workspace and a
 network-disabled synthetic CUDA smoke passed, but that is infra-only evidence.
 Claude's recovery verdict was `supported-with-limits`.
 
-The next bounded action is Data's manifest-first, local-only inventory for a
-fresh unspent candidate period. Do not create a model contract, train, reopen
-r4, download data, or use GPU merely to avoid idle time. Any future model batch
-needs new data evidence and a new contract.
+Data's manifest-first local replacement inventory is now complete at
+`D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`,
+SHA-256 `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.
+It found no fresh local daily candidate for a new training contract: the
+Norgate window is r4's closed parent, Tiingo r2 only adds 18 forward sessions
+with a static non-PIT union, the fixed ETF paths are exhausted or unsupported,
+and the short intraday source remains descriptive. Broad Yahoo is
+`data_preflight_only`, never a model, GPU, paper, or profitability input.
+
+The next bounded action is one prospective standard-Tiingo-EOD refresh for the
+already authorized `SPY`/`QQQ`/`IWM` scope after `2026-07-10`. It starts clean
+forward data lineage only; it does not create a model contract, train, reopen
+r4, or use GPU merely to avoid idle time. A genuine new model batch needs
+point-in-time universe and adjustment provenance. Norgate US Stocks Platinum or
+an equivalent paid PIT source remains an operator purchase decision; verify its
+current official price before asking for approval or buying anything.
 
 **Current target, superseding the older historical context below:** the offline
 Tiingo r2/Norgate cross-source cohort is complete at

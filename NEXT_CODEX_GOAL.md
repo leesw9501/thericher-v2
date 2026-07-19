@@ -2,65 +2,50 @@
 
 ## Objective
 
-Run one bounded, local-only Data inventory to determine whether existing
-`D:\market_data` contains a fresh, unspent daily-source candidate for a future
-engineering contract. This is a data-decision task, not model work.
+Create one immutable, prospective Tiingo standard-EOD refresh for the already
+approved `SPY`/`QQQ`/`IWM` scope. This is forward data lineage only, not model,
+paper-trading, or profitability work.
 
 ## Context
 
-- The r4 source-separated contract and CPU-only batch are closed. Its 3,420-row
-  validation slice is spent and cannot be reused.
-- The first r4 CUDA MLP stopped before prediction/checkpoint creation because
-  deterministic CUDA workspace configuration was missing. The corrected Docker
-  setting passed a synthetic-only smoke but does not reopen r4.
-- Norgate trial daily history is limited to its known 483-session window.
-  Tiingo r2 and broad Yahoo evidence have separate non-PIT, static-universe,
-  adjustment, or source-right limitations.
+- The local replacement inventory found no fresh local training candidate:
+  `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`
+  (`sha256:c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`).
+- The prior fixed-ETF Tiingo snapshot ends at `2026-07-10`.
+- Paid PIT data remains an operator purchase decision. Do not buy or enroll.
 
-## Required First Reads
+## Start
 
-1. Run `.\scripts\start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
-   `DECISIONS.md`, `RUNBOOK.md`, `agents\README.md`, `agents\data.md`, and
-   `agents\engine-research.md`.
-3. Ask Claude for a short falsification-first drift check before relying on any
-   new source, date partition, universe, or eligibility conclusion.
+1. Run `.\scripts\start_next_codex_task.ps1` and read the required project,
+   policy, and Data/Engine stateboard files.
+2. Ask Claude for a short falsification-first check before relying on returned
+   coverage, revisions, or prospective eligibility.
 
-## Data-Owned Work
+## Data Work
 
-1. Inspect only known local snapshot manifests, directory metadata, and narrow
-   bounded samples. Do not recursively scan all of `D:\market_data` or read
-   `.env`, credentials, provider tokens, or broker data.
-2. Compare the known Norgate, Tiingo r2, broad Yahoo, and intraday candidates
-   against r4's consumed decision/validation window. Identify any candidate
-   that is both locally available and not already used as r4 validation.
-3. For every plausible candidate, record its source, symbols, date range,
-   granularity, lineage/rights, overlap with r4, point-in-time and adjustment
-   limitations, and whether it can support only future engineering preparation
-   or nothing at all.
-4. Write one compact, external-only Data evidence artifact under
-   `D:\thericher-v2\model-artifacts\data-agent`; do not put data bytes,
-   artifacts, or model output in Git.
-5. Conclude exactly one of:
-   - a named fresh candidate can proceed to a new, still non-promotional
-     contract preflight; or
-   - no local candidate is suitable, with an exact operator data request and
-     free/paid alternatives.
-6. Keep Engine Research idle on real market training. It may only retain the
-   corrected synthetic CUDA bootstrap evidence; it must not rerun r4, launch a
-   new model, compare candidates, or create an ensemble.
+1. Use the existing guarded reader to read only `TIINGO_API_TOKEN` from root
+   `.env`; never print, log, retain, or parse another value.
+2. Make at most three standard-EOD requests, exactly `SPY`, `QQQ`, and `IWM`,
+   for dates after `2026-07-10`. Do not widen symbols, endpoints, history, or
+   provider scope.
+3. Store raw bytes, normalized raw-D1 fields, hashes, rights marker, dates, and
+   gaps in a new immutable `D:\market_data` snapshot. Do not overwrite or merge
+   the prior source.
+4. Reattest offline on host and Docker where practical. Keep all data/artifacts
+   external to Git and classify the result as prospective lineage only.
+5. Keep the exact paid-data need visible: private-use US daily data with
+   historical listing/delisting, as-of universe, and verified adjustment lineage.
 
-## Hard Boundaries
+## Boundaries
 
-- No provider download, network call, KIS access, paper/local-paper execution,
-  order, live behavior, credential read, or paid action.
-- No model training, GPU market-data job, r4 retry, tree/TCN/seed sweep,
-  ranking, promotion, PnL, ensemble, holdout, or profitability claim.
-- Do not treat absence of a local candidate as a reason to weaken data policy.
+- No KIS, order, local-paper, live, or `THERICHER_MODE` change.
+- No credential access except that one approved Tiingo token line.
+- No Yahoo/IEX/Norgate/broad-universe/paid action, model training, GPU data job,
+  r4 retry, model comparison, ensemble, scheduler, daemon, or report family.
 
 ## Completion
 
-Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this next goal. Run:
+Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this goal. Run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -68,5 +53,5 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Commit, push, and report the artifact path/hash, the chosen conclusion, any
-operator data request, and the next recommended objective.
+Commit, push, and report the snapshot/hash, coverage, gaps/revisions, token
+scope used, blocked model condition, and next objective.
