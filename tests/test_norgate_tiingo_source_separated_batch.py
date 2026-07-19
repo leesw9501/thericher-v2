@@ -310,6 +310,17 @@ def test_rejects_git_artifacts_forward_rows_and_runtime_imports(tmp_path: Path) 
         assert forbidden not in text
 
 
+def test_cuda_determinism_workspace_is_explicit(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("CUBLAS_WORKSPACE_CONFIG", raising=False)
+    with pytest.raises(batch.SourceSeparatedCudaJobStopped, match="workspace_unconfigured"):
+        batch._require_cuda_determinism_workspace()
+
+    monkeypatch.setenv("CUBLAS_WORKSPACE_CONFIG", batch.CUDA_CUBLAS_WORKSPACE_CONFIG)
+    assert batch._require_cuda_determinism_workspace() == batch.CUDA_CUBLAS_WORKSPACE_CONFIG
+    compose = Path("docker-compose.yml").read_text(encoding="utf-8")
+    assert 'CUBLAS_WORKSPACE_CONFIG: ":4096:8"' in compose
+
+
 def _roots(tmp_path: Path, name: str) -> tuple[Path, Path]:
     repo = tmp_path / f"repo-{name}"
     root = tmp_path / f"artifacts-{name}"
@@ -560,6 +571,7 @@ def _trainer_evidence() -> dict[str, object]:
         "wall_clock_cap_seconds": batch.CUDA_WALL_CLOCK_CAP_SECONDS,
         "wall_clock_hard_timer_enforced": True,
         "wall_clock_enforcement": "unix_itimer_plus_monotonic_batch_checks",
+        "cublas_workspace_config": batch.CUDA_CUBLAS_WORKSPACE_CONFIG,
     }
 
 

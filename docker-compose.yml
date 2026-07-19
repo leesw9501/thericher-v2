@@ -64,6 +64,7 @@ services:
       THERICHER_RUNTIME_STATUS: /app/runtime/operator_status.json
       PYTHONPATH: /app/src
       NVIDIA_VISIBLE_DEVICES: all
+      CUBLAS_WORKSPACE_CONFIG: ":4096:8"
       THERICHER_MODEL_ARTIFACT_ROOT: ${THERICHER_MODEL_ARTIFACT_ROOT:-/app/model_artifacts}
     volumes:
       - thericher-v2-runtime:/app/runtime

@@ -50,6 +50,7 @@ CPU_LINEAR_L2 = 0.0001
 STRONG_RESULT_ACCURACY = 0.56
 CUDA_WALL_CLOCK_CAP_SECONDS = 180
 CUDA_VRAM_CAP_MIB = 4096
+CUDA_CUBLAS_WORKSPACE_CONFIG = ":4096:8"
 
 DEFAULT_CONTRACT_ARTIFACT_DIR = (
     DEFAULT_MODEL_ARTIFACT_ROOT / CONTRACT_DIRECTORY / CONTRACT_VERSION
@@ -1020,6 +1021,7 @@ def _train_torch_cuda(
     checkpoint_path: Path,
     monotonic: Callable[[], float],
 ) -> tuple[Any, Mapping[str, Any]]:
+    workspace_config = _require_cuda_determinism_workspace()
     import torch
 
     if not torch.cuda.is_available():
@@ -1101,6 +1103,7 @@ def _train_torch_cuda(
         "wall_clock_cap_seconds": CUDA_WALL_CLOCK_CAP_SECONDS,
         "wall_clock_hard_timer_enforced": hard_timer_enforced,
         "wall_clock_enforcement": "unix_itimer_plus_monotonic_batch_checks",
+        "cublas_workspace_config": workspace_config,
         "safe_weights_only_reload": True,
     }
 
@@ -1111,6 +1114,13 @@ def _build_torch_model(spec: SourceSeparatedCudaJobSpec, torch: Any) -> Any:
         torch.nn.ReLU(),
         torch.nn.Linear(spec.hidden_width, 1),
     )
+
+
+def _require_cuda_determinism_workspace() -> str:
+    configured = os.environ.get("CUBLAS_WORKSPACE_CONFIG")
+    if configured != CUDA_CUBLAS_WORKSPACE_CONFIG:
+        raise SourceSeparatedCudaJobStopped("cuda_determinism_workspace_unconfigured")
+    return configured
 
 
 def _enforce_cuda_caps(
@@ -1211,6 +1221,7 @@ def _validate_cuda_trainer_evidence(evidence: Mapping[str, Any]) -> None:
         or evidence.get("wall_clock_hard_timer_enforced") is not True
         or evidence.get("wall_clock_enforcement")
         != "unix_itimer_plus_monotonic_batch_checks"
+        or evidence.get("cublas_workspace_config") != CUDA_CUBLAS_WORKSPACE_CONFIG
     ):
         raise ValueError("source-separated CUDA trainer evidence is invalid")
 
