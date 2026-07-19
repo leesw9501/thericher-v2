@@ -90,13 +90,15 @@ sources may develop a prototype but cannot silently supply a paper-time feature.
 The broker-free foundation is now implemented: `data.kis_capability` keeps the
 dated KIS capability record and completed-bar cache in memory; the raw-minute
 KIS reader parses observed page fields without converting unqualified timestamps
-into `Bar`; `research.kis_paper_baseline` requires a matching qualified
-capability before producing a target-exposure proposal from exactly 90/18/9
-completed bar views; and Execution alone maps that proposal to a local-paper
-`OrderIntent`. Focused tests cover capability, missing, stale, incomplete,
-duplicate, non-contiguous, and malformed-resample abstention plus replayable
-`source: local_paper` fills. This is not KIS order support or an active paper
-model.
+into `Bar`; `research.kis_paper_baseline` requires both a matching qualified
+capability and a Data-owned, contract-SHA-bound qualification before producing
+a target-exposure proposal from exactly 90/18/9 completed bar views; and
+Execution alone maps that proposal to a local-paper `OrderIntent`. The trusted
+qualification registry is deliberately empty, so a caller-created `QUALIFIED`
+object still abstains. Focused tests cover capability, missing, stale,
+incomplete, duplicate, non-contiguous, and malformed-resample abstention plus
+replayable `source: local_paper` fills. This is not KIS order support or an
+active paper model.
 
 ## Current Boundaries
 
@@ -139,6 +141,11 @@ model.
   in-progress-bar completeness observation, and a repeatable overlap rule
   before the capability can become `qualified`. The KIS execution adapter is
   still code-disabled; only `local_paper` can consume the current baseline.
+- A `KisMarketDataCapability(state=QUALIFIED)` object alone cannot activate the
+  baseline. It must match a separately reviewed capability-contract SHA binding
+  in the Data-owned trusted registry, which is intentionally empty today. The
+  binding shape is structural provenance only; a later Data objective must
+  validate its external evidence before any production registry entry exists.
 - The offline `kis_minute_qualification` harness v4 reserves one external,
   objective-specific attempt before a possible token, records
   `reserved -> network_started -> summary_written`, pins its artifact and Git

@@ -54,8 +54,10 @@ training corpus, model input, cache, or trading feature.
   independent official Nasdaq calendar check. Its first result stays `observed`
   or `rejected`.
 - `research.kis_paper_baseline` remains fail-closed: the current KIS raw-`1m`
-  capability is not qualified, so no model proposal or paper order can result.
-  Local replay remains offline with fill source `local_paper`.
+  capability is not qualified, and a direct caller-created `QUALIFIED` state
+  also lacks the empty Data-owned contract-SHA qualification binding. No model
+  proposal or paper order can result. Local replay remains offline with fill
+  source `local_paper`.
 
 ## Required First Reads
 

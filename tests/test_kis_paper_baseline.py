@@ -12,6 +12,7 @@ import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_capability import (
+    KisCapabilityQualification,
     KisCapabilityState,
     KisMarketDataCapability,
     KisStorageRightsStatus,
@@ -34,12 +35,14 @@ from thericher_v2.research.kis_paper_baseline import (
 from thericher_v2.state import EventStore
 
 
-def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples() -> None:
+def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples(monkeypatch) -> None:
     bars = _bars(92)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
 
     result = evaluate_kis_paper_baseline(
         bars[:90],
-        capability=_qualified_capability(),
+        capability=capability,
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -59,9 +62,11 @@ def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples() -> None:
     assert "orderintent" not in source.lower()
 
 
-def test_baseline_abstains_for_unusable_input() -> None:
+def test_baseline_abstains_for_unusable_input(monkeypatch) -> None:
     complete = _bars(90)
     gapped = _bars(91)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
     cases = (
         (_bars(89), _bars(89)[-1].end_ts, "missing"),
         (complete, complete[-1].end_ts + timedelta(minutes=3), "stale"),
@@ -77,7 +82,7 @@ def test_baseline_abstains_for_unusable_input() -> None:
     for bars, as_of, expected_status in cases:
         result = evaluate_kis_paper_baseline(
             bars,
-            capability=_qualified_capability(),
+            capability=capability,
             symbol="QQQ",
             market="US",
             as_of=as_of,
@@ -89,9 +94,10 @@ def test_baseline_abstains_for_unusable_input() -> None:
         assert result.proposal.input_status == expected_status
 
 
-def test_baseline_abstains_until_a_matching_kis_capability_is_qualified() -> None:
+def test_baseline_abstains_until_a_matching_capability_has_a_trusted_binding() -> None:
     bars = _bars(90)
     observed_raw_minute, _ = observed_kis_paper_capabilities()
+    direct_qualified = _qualified_capability()
 
     observed_result = evaluate_kis_paper_baseline(
         bars,
@@ -107,20 +113,39 @@ def test_baseline_abstains_until_a_matching_kis_capability_is_qualified() -> Non
         market="US",
         as_of=bars[-1].end_ts,
     )
+    direct_result = evaluate_kis_paper_baseline(
+        bars,
+        capability=direct_qualified,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
 
-    for result in (observed_result, mismatched_result):
+    for result in (observed_result, mismatched_result, direct_result):
         assert result.baseline_input is None
         assert result.proposal.action == "abstain"
         assert result.proposal.input_status == "unqualified"
         assert result.proposal.reason == "baseline_input_capability_unqualified"
 
+    assert (
+        target_proposal_to_order_intent(
+            direct_result.proposal,
+            client_order_id="untrusted-qualified-capability",
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("20"),
+        )
+        is None
+    )
 
-def test_nasdaq_baseline_abstains_for_a_non_us_market_stream() -> None:
+
+def test_nasdaq_baseline_abstains_for_a_non_us_market_stream(monkeypatch) -> None:
     bars = [replace(bar, market="KR") for bar in _bars(90)]
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
 
     result = evaluate_kis_paper_baseline(
         bars,
-        capability=_qualified_capability(),
+        capability=capability,
         symbol="QQQ",
         market="KR",
         as_of=bars[-1].end_ts,
@@ -132,12 +157,14 @@ def test_nasdaq_baseline_abstains_for_a_non_us_market_stream() -> None:
     assert result.proposal.market == "KR"
 
 
-def test_baseline_stays_pinned_to_qqq_even_when_a_capability_scope_is_broader() -> None:
+def test_baseline_stays_pinned_to_qqq_even_when_a_capability_scope_is_broader(monkeypatch) -> None:
     bars = [replace(bar, symbol="SPY") for bar in _bars(90)]
+    capability = _qualified_capability(symbol_scope=("QQQ", "SPY"))
+    _trust_for_test(monkeypatch, capability)
 
     result = evaluate_kis_paper_baseline(
         bars,
-        capability=_qualified_capability(symbol_scope=("QQQ", "SPY")),
+        capability=capability,
         symbol="SPY",
         market="US",
         as_of=bars[-1].end_ts,
@@ -148,12 +175,16 @@ def test_baseline_stays_pinned_to_qqq_even_when_a_capability_scope_is_broader() 
     assert result.proposal.input_status == "unqualified"
 
 
-def test_baseline_rejects_a_qualified_capability_from_another_endpoint_category() -> None:
+def test_baseline_rejects_a_qualified_capability_from_another_endpoint_category(
+    monkeypatch,
+) -> None:
     bars = _bars(90)
+    capability = _qualified_capability(endpoint_category="overseas_stock_daily")
+    _trust_for_test(monkeypatch, capability)
 
     result = evaluate_kis_paper_baseline(
         bars,
-        capability=_qualified_capability(endpoint_category="overseas_stock_daily"),
+        capability=capability,
         symbol="QQQ",
         market="US",
         as_of=bars[-1].end_ts,
@@ -164,11 +195,13 @@ def test_baseline_rejects_a_qualified_capability_from_another_endpoint_category(
     assert result.proposal.input_status == "unqualified"
 
 
-def test_baseline_input_rejects_incomplete_direct_construction() -> None:
+def test_baseline_input_rejects_incomplete_direct_construction(monkeypatch) -> None:
     bars = _bars(90)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
     baseline_input = evaluate_kis_paper_baseline(
         bars,
-        capability=_qualified_capability(),
+        capability=capability,
         symbol="QQQ",
         market="US",
         as_of=bars[-1].end_ts,
@@ -198,11 +231,16 @@ def test_baseline_input_rejects_incomplete_direct_construction() -> None:
         )
 
 
-def test_execution_maps_ready_target_to_replayable_local_paper_fill(tmp_path: Path) -> None:
+def test_execution_maps_ready_target_to_replayable_local_paper_fill(
+    monkeypatch,
+    tmp_path: Path,
+) -> None:
     bars = _bars(92)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
     proposal = evaluate_kis_paper_baseline(
         bars[:90],
-        capability=_qualified_capability(),
+        capability=capability,
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -247,6 +285,8 @@ def test_baseline_and_local_replay_are_network_and_credential_free(
     tmp_path: Path,
 ) -> None:
     bars = _bars(92)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
 
     def fail_external(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("baseline and local paper must stay offline")
@@ -264,7 +304,7 @@ def test_baseline_and_local_replay_are_network_and_credential_free(
 
     proposal = evaluate_kis_paper_baseline(
         bars[:90],
-        capability=_qualified_capability(),
+        capability=capability,
         symbol="QQQ",
         market="US",
         as_of=bars[89].end_ts,
@@ -282,6 +322,26 @@ def test_baseline_and_local_replay_are_network_and_credential_free(
         emergency_store=EmergencyStore(tmp_path / "emergency.json"),
     )
     assert broker.submit_and_fill_next_bar(order, signal_bar=bars[89], execution_bar=bars[90]).fill
+
+
+def test_baseline_abstains_for_a_binding_of_a_changed_capability(monkeypatch) -> None:
+    bars = _bars(90)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
+    changed_capability = replace(capability, paging_facts="unit changed continuation")
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=changed_capability,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.proposal.input_status == "unqualified"
+    assert result.proposal.reason == "baseline_input_capability_unqualified"
 
 
 def _bars(count: int) -> list[Bar]:
@@ -327,4 +387,20 @@ def _qualified_capability(
         storage_rights=KisStorageRightsStatus.UNVERIFIED,
         evidence_reference="unit-capability-evidence",
         observed_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+
+def _trust_for_test(monkeypatch: pytest.MonkeyPatch, capability: KisMarketDataCapability) -> None:
+    monkeypatch.setattr(
+        kis_paper_baseline,
+        "trusted_kis_paper_baseline_qualifications",
+        lambda: (
+            KisCapabilityQualification(
+                qualification_id=f"unit.qualification.{capability.capability_id}",
+                capability_id=capability.capability_id,
+                capability_contract_sha256=capability.contract_sha256,
+                evidence_reference="unit-qualification-evidence",
+                reviewed_at=datetime(2026, 1, 2, tzinfo=UTC),
+            ),
+        ),
     )

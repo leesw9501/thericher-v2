@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
@@ -91,6 +93,70 @@ class KisMarketDataCapability:
     @property
     def persistent_cache_allowed(self) -> bool:
         return self.storage_rights == KisStorageRightsStatus.CONFIRMED
+
+    @property
+    def contract_sha256(self) -> str:
+        """Return a canonical fingerprint for a qualification binding."""
+
+        payload = {
+            "schema_version": self.schema_version,
+            "capability_id": self.capability_id,
+            "state": self.state.value,
+            "endpoint_category": self.endpoint_category,
+            "exchange_scope": list(self.exchange_scope),
+            "symbol_scope": list(self.symbol_scope),
+            "raw_fields": list(self.raw_fields),
+            "timeframe": self.timeframe.value,
+            "time_semantics": self.time_semantics,
+            "completed_bar_rule": self.completed_bar_rule,
+            "freshness_budget_microseconds": _timedelta_microseconds(self.freshness_budget),
+            "paging_facts": self.paging_facts,
+            "storage_rights": self.storage_rights.value,
+            "evidence_reference": self.evidence_reference,
+            "observed_at": None if self.observed_at is None else self.observed_at.isoformat(),
+        }
+        encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        return f"sha256:{hashlib.sha256(encoded).hexdigest()}"
+
+
+@dataclass(frozen=True)
+class KisCapabilityQualification:
+    """A reviewed binding for one exact capability contract.
+
+    This is structural provenance only. A later Data-owned reader must validate
+    evidence before an external record can enter a production trusted registry.
+    """
+
+    qualification_id: str
+    capability_id: str
+    capability_contract_sha256: str
+    evidence_reference: str
+    reviewed_at: datetime
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        for value, name in (
+            (self.qualification_id, "qualification_id"),
+            (self.capability_id, "capability_id"),
+            (self.capability_contract_sha256, "capability_contract_sha256"),
+            (self.evidence_reference, "evidence_reference"),
+        ):
+            if not value.strip():
+                raise ValueError(f"{name} must be nonempty")
+        _require_sha256(self.capability_contract_sha256, "capability_contract_sha256")
+        object.__setattr__(self, "reviewed_at", require_utc(self.reviewed_at, "reviewed_at"))
+
+    def binds(self, capability: KisMarketDataCapability) -> bool:
+        return (
+            self.capability_id == capability.capability_id
+            and self.capability_contract_sha256 == capability.contract_sha256
+        )
+
+
+def trusted_kis_paper_baseline_qualifications() -> tuple[KisCapabilityQualification, ...]:
+    """Return Data-owned production bindings; none exist until a later review."""
+
+    return ()
 
 
 @dataclass(frozen=True)
@@ -218,9 +284,24 @@ def observed_kis_paper_capabilities() -> tuple[KisMarketDataCapability, ...]:
 
 
 def _required_scope(values: Sequence[str]) -> tuple[str, ...]:
-    normalized = tuple(value.strip().upper() for value in values)
+    normalized = tuple(sorted(value.strip().upper() for value in values))
     if not normalized or any(not value for value in normalized):
         raise ValueError("capability scope must be nonempty")
     if len(set(normalized)) != len(normalized):
         raise ValueError("capability scope must not contain duplicates")
     return normalized
+
+
+def _timedelta_microseconds(value: timedelta | None) -> int | None:
+    if value is None:
+        return None
+    return value.days * 86_400_000_000 + value.seconds * 1_000_000 + value.microseconds
+
+
+def _require_sha256(value: str, name: str) -> None:
+    prefix = "sha256:"
+    digest = value.removeprefix(prefix)
+    if not value.startswith(prefix) or len(digest) != 64 or any(
+        character not in "0123456789abcdef" for character in digest.lower()
+    ):
+        raise ValueError(f"{name} must be a sha256 digest")

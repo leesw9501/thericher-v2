@@ -34,6 +34,7 @@ from .daily import (
 from .kis_capability import (
     CompletedBarCache,
     CompletedBarWindow,
+    KisCapabilityQualification,
     KisCapabilityState,
     KisMarketDataCapability,
     KisStorageRightsStatus,
@@ -77,6 +78,7 @@ __all__ = [
     "BarQualityReport",
     "BarQualityWarning",
     "LocalCsvBarProvider",
+    "KisCapabilityQualification",
     "KisCapabilityState",
     "KisMarketDataCapability",
     "KisStorageRightsStatus",

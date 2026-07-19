@@ -2526,3 +2526,33 @@ fee setting or revised bar must reject the retry. Focused tests simulate the
 interruption, prove one replayable `source: local_paper` fill, and reject both a
 revised same-time execution bar and changed fee schedule. No credential,
 network, KIS, account, order, or live behavior is involved.
+
+## 2026-07-19 - Bind KIS baseline qualification to the full capability contract
+
+Decision: a `KisMarketDataCapability` with `state=QUALIFIED` is structurally
+necessary but no longer sufficient for the fixed KIS 90-`1m` baseline. The
+baseline also requires a separately typed qualification binding whose canonical
+SHA-256 covers every capability-contract field, including scope, raw fields,
+time semantics, completed-bar rule, freshness, paging facts, storage rights,
+evidence reference, and observation time. Its Data-owned trusted registry is
+empty today, so every real caller remains fail-closed even if it constructs a
+matching `QUALIFIED` capability object.
+
+Exchange and symbol scopes are membership sets, so their normalized tuple order
+is sorted before fingerprinting; a reordered but equivalent scope cannot lose a
+valid binding.
+
+Reason: the active KIS observations are metadata-only and must not become a
+paper-time model input through caller assertion. The additional binding makes a
+changed capability fail the match rather than silently inheriting old
+qualification. It is structural provenance only, not proof that a referenced
+external artifact was reviewed; validating that evidence and populating a
+production registry is a later Data-owned objective.
+
+Claude's falsification-first verdict was `supported-with-limits`: canonical,
+total fingerprint coverage and immutable values are load-bearing, while a bare
+second boolean would be ceremony. Tests use a test-only registry binding to
+retain the pure baseline and local-paper coverage, then prove that no binding
+or a binding for a changed capability produces an `unqualified` abstention and
+no local-paper intent. No credential, KIS call, data read, artifact, model,
+broker, or execution authority changes.

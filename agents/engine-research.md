@@ -23,9 +23,11 @@
   order-book inputs remain inactive until qualified.
 - The foundation now exposes that baseline as a target-exposure proposal only.
   It requires a matching `qualified` `overseas_stock_intraday` KIS capability,
-  the fixed `US` `QQQ`/`NAS` scope, and exact local resamples, then abstains on
-  unqualified, missing, stale, incomplete, duplicate, non-contiguous, future,
-  or misaligned windows. It has no broker, credential, or network import.
+  a Data-owned trusted binding of its full contract SHA, the fixed `US`
+  `QQQ`/`NAS` scope, and exact local resamples, then abstains on unqualified,
+  missing, stale, incomplete, duplicate, non-contiguous, future, or misaligned
+  windows. The trusted registry is empty, so direct state construction cannot
+  activate it. It has no broker, credential, or network import.
   It remains a local-paper fixture until raw KIS time and completed-bar semantics
   qualify the input contract. A self-consistent one-shot KIS page cannot settle
   whether timestamps label a bar's open or close minute, so Engine cannot use
@@ -102,9 +104,10 @@
   exception does not extend to learned models, ensembles, learned allocation,
   or learned exits.
 - A caller-created `qualified` capability object is not promotion evidence.
-  A later qualification objective must bind the state to a trusted promotion
-  record before it may supply this baseline; the current metadata probes do not
-  create that record or activate a proposal.
+  The baseline now requires a matching, full-contract-SHA qualification binding
+  from its empty Data-owned registry. A later Data objective must validate the
+  binding's external evidence before adding a production entry; the current
+  metadata probes do not create one or activate a proposal.
 - The fixed-ETF source-sensitivity question and the full-history exact
   raw-source alignment check are unsupported. The broad ETF wrapper supplies
   descriptive features plus explicit future-only outcomes, but neither opens

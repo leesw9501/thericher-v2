@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+from dataclasses import fields, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_capability import (
     CompletedBarCache,
+    KisCapabilityQualification,
     KisCapabilityState,
     KisMarketDataCapability,
     KisStorageRightsStatus,
@@ -39,25 +41,72 @@ def test_observed_kis_capabilities_remain_non_deployable_until_qualified() -> No
 
 
 def test_qualified_memory_capability_does_not_imply_persistent_storage_rights() -> None:
-    capability = KisMarketDataCapability(
-        capability_id="unit.kis.raw-1m",
-        state=KisCapabilityState.QUALIFIED,
-        endpoint_category="overseas_stock_intraday",
-        exchange_scope=("NAS",),
-        symbol_scope=("QQQ",),
-        raw_fields=("open", "high", "low", "last", "evol"),
-        timeframe=Timeframe.M1,
-        time_semantics="unit UTC conversion",
-        completed_bar_rule="unit completed-bar rule",
-        freshness_budget=timedelta(minutes=2),
-        paging_facts="unit bounded page",
-        storage_rights=KisStorageRightsStatus.UNVERIFIED,
-        evidence_reference="unit-evidence",
-        observed_at=datetime(2026, 1, 2, tzinfo=UTC),
-    )
+    capability = _qualified_capability()
 
     assert capability.paper_model_eligible
     assert capability.persistent_cache_allowed is False
+
+    qualification = KisCapabilityQualification(
+        qualification_id="unit.qualification.raw-1m",
+        capability_id=capability.capability_id,
+        capability_contract_sha256=capability.contract_sha256,
+        evidence_reference="unit-evidence-review",
+        reviewed_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+    assert qualification.binds(capability)
+    assert qualification.binds(replace(capability, paging_facts="changed")) is False
+
+
+def test_capability_contract_sha256_covers_every_capability_field() -> None:
+    capability = _qualified_capability()
+    changes = {
+        "capability_id": "unit.kis.raw-1m.changed",
+        "state": KisCapabilityState.OBSERVED,
+        "endpoint_category": "overseas_stock_daily",
+        "exchange_scope": ("NYSE",),
+        "symbol_scope": ("SPY",),
+        "raw_fields": ("open", "high", "low", "last", "evol", "vwap"),
+        "timeframe": Timeframe.M5,
+        "time_semantics": "changed time semantics",
+        "completed_bar_rule": "changed completed-bar rule",
+        "freshness_budget": timedelta(minutes=3),
+        "paging_facts": "changed paging facts",
+        "storage_rights": KisStorageRightsStatus.CONFIRMED,
+        "evidence_reference": "changed-evidence",
+        "observed_at": datetime(2026, 1, 2, 0, 1, tzinfo=UTC),
+        "schema_version": 2,
+    }
+
+    assert set(changes) == {field.name for field in fields(KisMarketDataCapability)}
+    for field_name, replacement in changes.items():
+        assert replace(capability, **{field_name: replacement}).contract_sha256 != (
+            capability.contract_sha256
+        )
+
+
+def test_capability_contract_sha256_normalizes_membership_scope_order() -> None:
+    capability = replace(
+        _qualified_capability(),
+        exchange_scope=("NAS", "NYSE"),
+        symbol_scope=("QQQ", "SPY"),
+    )
+    reordered = replace(
+        capability,
+        exchange_scope=("NYSE", "NAS"),
+        symbol_scope=("SPY", "QQQ"),
+    )
+    qualification = KisCapabilityQualification(
+        qualification_id="unit.qualification.scope-order",
+        capability_id=capability.capability_id,
+        capability_contract_sha256=capability.contract_sha256,
+        evidence_reference="unit-evidence-review",
+        reviewed_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert capability.exchange_scope == ("NAS", "NYSE")
+    assert capability.symbol_scope == ("QQQ", "SPY")
+    assert reordered.contract_sha256 == capability.contract_sha256
+    assert qualification.binds(reordered)
 
 
 def test_completed_bar_cache_reports_input_problems_without_filling_them() -> None:
@@ -111,4 +160,23 @@ def _bar(index: int) -> Bar:
         close=close,
         volume=Decimal("1000"),
         complete=True,
+    )
+
+
+def _qualified_capability() -> KisMarketDataCapability:
+    return KisMarketDataCapability(
+        capability_id="unit.kis.raw-1m",
+        state=KisCapabilityState.QUALIFIED,
+        endpoint_category="overseas_stock_intraday",
+        exchange_scope=("NAS",),
+        symbol_scope=("QQQ",),
+        raw_fields=("open", "high", "low", "last", "evol"),
+        timeframe=Timeframe.M1,
+        time_semantics="unit UTC conversion",
+        completed_bar_rule="unit completed-bar rule",
+        freshness_budget=timedelta(minutes=2),
+        paging_facts="unit bounded page",
+        storage_rights=KisStorageRightsStatus.UNVERIFIED,
+        evidence_reference="unit-evidence",
+        observed_at=datetime(2026, 1, 2, tzinfo=UTC),
     )

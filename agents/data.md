@@ -24,6 +24,12 @@ remain unstored, and its external writer accepts only typed observed evidence or
 typed sanitized failures rather than caller-provided documents. No KIS call
 occurred during its preparation.
 
+The baseline also requires a separately reviewed binding of the full immutable
+capability-contract SHA. Its production trusted registry is empty; the binding
+shape alone does not validate that an external evidence reference is genuine.
+Only a later Data-owned qualification objective may validate that evidence and
+add a registry entry. The active one-shot observations cannot do so.
+
 Ready, no running job. The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one

@@ -15,7 +15,11 @@ from thericher_v2.contracts import (
     Timeframe,
     require_utc,
 )
-from thericher_v2.data.kis_capability import CompletedBarCache, KisMarketDataCapability
+from thericher_v2.data.kis_capability import (
+    CompletedBarCache,
+    KisMarketDataCapability,
+    trusted_kis_paper_baseline_qualifications,
+)
 from thericher_v2.data.resample import resample_bars
 
 KIS_PAPER_BASELINE_SCHEMA_ID = "kis-paper-baseline-1m-90-v1"
@@ -237,6 +241,7 @@ def _is_eligible_baseline_capability(
 ) -> bool:
     return (
         capability.paper_model_eligible
+        and _has_trusted_baseline_qualification(capability)
         and capability.endpoint_category == KIS_PAPER_BASELINE_ENDPOINT_CATEGORY
         and capability.timeframe == Timeframe.M1
         and "NAS" in capability.exchange_scope
@@ -245,6 +250,13 @@ def _is_eligible_baseline_capability(
         and market == KIS_PAPER_BASELINE_MARKET
         and _KIS_PAPER_BASELINE_REQUIRED_FIELDS.issubset(capability.raw_fields)
         and capability.freshness_budget is not None
+    )
+
+
+def _has_trusted_baseline_qualification(capability: KisMarketDataCapability) -> bool:
+    return any(
+        qualification.binds(capability)
+        for qualification in trusted_kis_paper_baseline_qualifications()
     )
 
 
