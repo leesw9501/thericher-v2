@@ -12,6 +12,7 @@ import hashlib
 import io
 import json
 import math
+import os
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from pathlib import Path
@@ -985,7 +986,19 @@ def _validation_output_dir(artifact_root: Path, *, run_id: str, repo_root: Path)
         raise ValueError("model artifact root must be an existing non-symlink directory")
     resolved_root = root.resolve()
     resolved_repo = Path(repo_root).resolve()
-    if resolved_root == resolved_repo or resolved_repo in resolved_root.parents:
+    docker_artifact_root = Path("/app/model_artifacts").resolve()
+    docker_mount = (
+        os.name != "nt"
+        and resolved_repo == Path("/app").resolve()
+        and (
+            resolved_root == docker_artifact_root
+            or docker_artifact_root in resolved_root.parents
+        )
+    )
+    inside_repository = (
+        resolved_root == resolved_repo or resolved_repo in resolved_root.parents
+    )
+    if inside_repository and not docker_mount:
         raise ValueError("model artifacts must stay outside the Git workspace")
     output = resolved_root / "norgate-broad-development-validation" / run_id
     if output.is_symlink() or not output.is_relative_to(resolved_root):

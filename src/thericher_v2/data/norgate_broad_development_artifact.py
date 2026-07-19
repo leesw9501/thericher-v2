@@ -15,7 +15,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal, InvalidOperation
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from types import MappingProxyType
 from typing import Any
 
@@ -26,13 +26,13 @@ from thericher_v2.data.norgate_trial_development_panel import (
 )
 
 DEFAULT_MODEL_ARTIFACT_ROOT = Path("D:/thericher-v2/model-artifacts")
-NORGATE_BROAD_DEVELOPMENT_FEATURE_ARTIFACT_VERSION = "norgate-broad-development-feature-r1"
+NORGATE_BROAD_DEVELOPMENT_FEATURE_ARTIFACT_VERSION = "norgate-broad-development-feature-r2"
 
 _ARTIFACT_DIRECTORY = "norgate-broad-development-features"
 _FEATURE_FILE = "features.npz"
 _CONTRACT_FILE = "contract.json"
 _MANIFEST_FILE = "manifest.json"
-_RETENTION_FILE = "DELETE_NORGATE_DERIVED_DATA_ON_PARENT_EXPIRY.txt"
+_RETENTION_FILE = "DELETE_ON_PARENT_EXPIRY.txt"
 _PARENT_DATA_FILE = "panel_ohlcv_1d.csv.gz"
 _PARENT_MANIFEST_FILE = "manifest.json"
 _PARENT_RETENTION_FILE = "DELETE_NORGATE_DATA_ON_EXPIRY.txt"
@@ -130,6 +130,7 @@ class _PanelSeries:
 @dataclass(frozen=True, slots=True)
 class _AttestedPanel:
     result: NorgateTrialDevelopmentPanelResult
+    snapshot_relative_to_market_data_root: PurePosixPath
     parent_retention_hash: str
     series: tuple[_PanelSeries, ...]
 
@@ -151,7 +152,8 @@ def default_norgate_broad_development_feature_artifact_dir(
     name = Path(panel_snapshot).name
     if not name.startswith("snapshot="):
         raise ValueError("Norgate broad development panel snapshot name is invalid")
-    return Path(artifact_root) / _ARTIFACT_DIRECTORY / name
+    identity = hashlib.sha256(name.encode("utf-8")).hexdigest()[:16]
+    return Path(artifact_root) / _ARTIFACT_DIRECTORY / f"r2-{identity}"
 
 
 def build_norgate_broad_development_feature_artifact(
@@ -187,7 +189,7 @@ def build_norgate_broad_development_feature_artifact(
         )
 
     payload = _build_feature_payload(parent)
-    contract = _contract(target, root=root, parent=parent, payload=payload)
+    contract = _contract(target, parent=parent, payload=payload)
     contract_bytes = _json_bytes(contract)
     feature_bytes = _npz_bytes(payload.arrays)
     retention_bytes = _retention_marker_bytes(parent)
@@ -195,7 +197,6 @@ def build_norgate_broad_development_feature_artifact(
     _validate_storage(root, required_bytes=required_bytes)
     manifest = _manifest(
         target,
-        root=root,
         parent=parent,
         contract_bytes=contract_bytes,
         feature_bytes=feature_bytes,
@@ -244,14 +245,18 @@ def verify_norgate_broad_development_feature_artifact(
         label="feature artifact contract",
     )
     contract = _json_object(contract_bytes, "feature artifact contract")
-    parent_snapshot = _contract_parent_snapshot(contract, artifact=artifact, root=root)
+    parent_snapshot = _contract_parent_snapshot(
+        contract,
+        artifact=artifact,
+        market_data_root=market_data_root,
+    )
     parent = _load_attested_panel(
         parent_snapshot,
         market_data_root=market_data_root,
         repo_root=repo_root,
     )
     payload = _build_feature_payload(parent)
-    expected_contract = _contract(artifact, root=root, parent=parent, payload=payload)
+    expected_contract = _contract(artifact, parent=parent, payload=payload)
     if contract != expected_contract:
         raise ValueError("Norgate broad development feature contract is inconsistent")
 
@@ -272,7 +277,6 @@ def verify_norgate_broad_development_feature_artifact(
 
     expected_manifest = _manifest(
         artifact,
-        root=root,
         parent=parent,
         contract_bytes=contract_bytes,
         feature_bytes=feature_bytes,
@@ -327,6 +331,10 @@ def _load_attested_panel(
         raise ValueError("Norgate broad development parent is not development-training eligible")
     if result.common_session_count != _SESSION_COUNT:
         raise ValueError("Norgate broad development parent session count is invalid")
+    snapshot_relative = _market_data_relative_path(
+        result.snapshot_dir,
+        market_data_root=market_data_root,
+    )
 
     manifest_bytes = _read_regular_file(
         result.snapshot_dir,
@@ -358,6 +366,7 @@ def _load_attested_panel(
     series = _parse_panel_series(data, result=result)
     return _AttestedPanel(
         result=result,
+        snapshot_relative_to_market_data_root=snapshot_relative,
         parent_retention_hash=_sha256(retention),
         series=series,
     )
@@ -542,7 +551,6 @@ def _split_name(decision_index: int) -> str:
 def _contract(
     artifact: Path,
     *,
-    root: Path,
     parent: _AttestedPanel,
     payload: _FeaturePayload,
 ) -> dict[str, Any]:
@@ -551,9 +559,10 @@ def _contract(
         "kind": "norgate_broad_development_feature_artifact",
         "artifact_version": NORGATE_BROAD_DEVELOPMENT_FEATURE_ARTIFACT_VERSION,
         "artifact_dir_name": artifact.name,
-        "artifact_root": str(root),
         "parent_panel": {
-            "snapshot_dir": str(parent.result.snapshot_dir),
+            "snapshot_relative_to_market_data_root": str(
+                parent.snapshot_relative_to_market_data_root
+            ),
             "dataset_hash": parent.result.dataset_hash,
             "manifest_hash": parent.result.manifest_hash,
             "selected_symbol_count": parent.result.selected_symbol_count,
@@ -647,7 +656,6 @@ def _contract(
 def _manifest(
     artifact: Path,
     *,
-    root: Path,
     parent: _AttestedPanel,
     contract_bytes: bytes,
     feature_bytes: bytes,
@@ -658,7 +666,6 @@ def _manifest(
         "kind": "norgate_broad_development_feature_artifact",
         "artifact_version": NORGATE_BROAD_DEVELOPMENT_FEATURE_ARTIFACT_VERSION,
         "artifact_dir_name": artifact.name,
-        "artifact_root": str(root),
         "immutable_artifact": True,
         "parent_dataset_hash": parent.result.dataset_hash,
         "parent_manifest_hash": parent.result.manifest_hash,
@@ -684,7 +691,8 @@ def _retention_marker_bytes(parent: _AttestedPanel) -> bytes:
         "This directory contains a derived feature artifact from Norgate-origin data.\n"
         "If the parent Norgate trial or subscription requires deletion under the EULA,\n"
         "the operator must delete this derived directory with the parent snapshot.\n"
-        f"Parent snapshot: {parent.result.snapshot_dir}\n"
+        "Parent snapshot relative to market-data root: "
+        f"{parent.snapshot_relative_to_market_data_root}\n"
         f"Parent dataset hash: {parent.result.dataset_hash}\n"
         f"Parent manifest hash: {parent.result.manifest_hash}\n"
         f"Parent retention marker hash: {parent.parent_retention_hash}\n"
@@ -806,17 +814,65 @@ def _artifact_result(
     )
 
 
-def _contract_parent_snapshot(contract: dict[str, Any], *, artifact: Path, root: Path) -> Path:
+def _market_data_relative_path(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path,
+) -> PurePosixPath:
+    root = Path(market_data_root)
+    if not root.is_dir() or root.is_symlink():
+        raise ValueError("Norgate broad development market-data root is invalid")
+    root = root.resolve()
+    snapshot = Path(snapshot_dir).resolve()
+    if snapshot == root or root not in snapshot.parents:
+        raise ValueError("Norgate broad development parent snapshot is outside market data")
+    return _portable_relative_path(
+        snapshot.relative_to(root).as_posix(),
+        "parent panel snapshot",
+    )
+
+
+def _portable_relative_path(value: object, label: str) -> PurePosixPath:
+    raw = _nonempty_text(value, label)
+    candidate = PurePosixPath(raw)
+    if (
+        candidate.is_absolute()
+        or not candidate.parts
+        or any(
+            part in {".", ".."} or any(character in part for character in ("\\", ":"))
+            for part in candidate.parts
+        )
+    ):
+        raise ValueError(f"Norgate broad development {label} is invalid")
+    return candidate
+
+
+def _contract_parent_snapshot(
+    contract: dict[str, Any],
+    *,
+    artifact: Path,
+    market_data_root: Path,
+) -> Path:
     if (
         contract.get("schema_version") != 1
         or contract.get("kind") != "norgate_broad_development_feature_artifact"
         or contract.get("artifact_version") != NORGATE_BROAD_DEVELOPMENT_FEATURE_ARTIFACT_VERSION
         or contract.get("artifact_dir_name") != artifact.name
-        or contract.get("artifact_root") != str(root)
     ):
         raise ValueError("Norgate broad development feature contract identity is invalid")
     parent = _mapping(contract.get("parent_panel"), "Norgate broad development parent panel")
-    return Path(_nonempty_text(parent.get("snapshot_dir"), "parent panel snapshot"))
+    relative = _portable_relative_path(
+        parent.get("snapshot_relative_to_market_data_root"),
+        "parent panel snapshot",
+    )
+    root = Path(market_data_root)
+    if not root.is_dir() or root.is_symlink():
+        raise ValueError("Norgate broad development market-data root is invalid")
+    root = root.resolve()
+    snapshot = (root / Path(*relative.parts)).resolve()
+    if snapshot == root or root not in snapshot.parents:
+        raise ValueError("Norgate broad development parent snapshot escapes market data")
+    return snapshot
 
 
 def _validate_artifact_root(artifact_root: Path, *, repo_root: Path | None) -> Path:
@@ -828,7 +884,13 @@ def _validate_artifact_root(artifact_root: Path, *, repo_root: Path | None) -> P
     if not repository.is_dir() or repository.is_symlink():
         raise ValueError("Norgate broad development repository root is invalid")
     repository = repository.resolve()
-    if root == repository or root.is_relative_to(repository):
+    docker_artifact_root = Path("/app/model_artifacts").resolve()
+    docker_mount = (
+        os.name != "nt"
+        and repository == Path("/app").resolve()
+        and (root == docker_artifact_root or root.is_relative_to(docker_artifact_root))
+    )
+    if (root == repository or root.is_relative_to(repository)) and not docker_mount:
         raise ValueError("Norgate broad development artifact root must stay outside Git workspace")
     return root
 

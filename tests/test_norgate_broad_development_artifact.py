@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import socket
 import subprocess
 from collections.abc import Sequence
@@ -167,6 +168,37 @@ def test_excludes_the_fixed_raw_discontinuity_window(tmp_path: Path) -> None:
     assert result.contract["inherited_boundary_limitations"] == {
         "raw_discontinuity_index_zero": "not_computable_without_prior_panel_close"
     }
+
+
+def test_reattests_from_different_market_and_artifact_mount_roots(tmp_path: Path) -> None:
+    root, repo, panel, artifact_root = _panel_fixture(tmp_path)
+    result = build_norgate_broad_development_feature_artifact(
+        panel,
+        artifact_root=artifact_root,
+        market_data_root=root,
+        repo_root=repo,
+    )
+    mounted_market_data = tmp_path / "mounted" / root.name
+    mounted_artifacts = tmp_path / "mounted-artifacts"
+    mounted_market_data.parent.mkdir()
+    shutil.copytree(root, mounted_market_data)
+    shutil.copytree(artifact_root, mounted_artifacts)
+    mounted_artifact = mounted_artifacts / result.artifact_dir.relative_to(artifact_root)
+
+    loaded = verify_norgate_broad_development_feature_artifact(
+        mounted_artifact,
+        artifact_root=mounted_artifacts,
+        market_data_root=mounted_market_data,
+        repo_root=repo,
+    )
+
+    contract = json.loads((mounted_artifact / "contract.json").read_text(encoding="utf-8"))
+    assert loaded.artifact_hash == result.artifact_hash
+    assert contract["parent_panel"]["snapshot_relative_to_market_data_root"].startswith(
+        "panel/"
+    )
+    assert str(root) not in json.dumps(contract)
+    assert str(artifact_root) not in json.dumps(contract)
 
 
 def test_rejects_feature_and_parent_scope_tampering(tmp_path: Path) -> None:

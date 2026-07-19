@@ -183,6 +183,7 @@ def build_norgate_trial_development_panel_snapshot(
             candidates=candidates,
             calendar=calendar,
             common_sessions=common_sessions,
+            market_data_root=market_data_root,
         )
         os.rename(staging, target)
     except Exception:
@@ -226,12 +227,20 @@ def verify_norgate_trial_development_panel_snapshot(
     membership_document = _mapping(manifest.get("membership_parent"), "membership parent")
     calendar_document = _mapping(manifest.get("calendar_parent"), "calendar parent")
     membership, candidates = load_verified_norgate_sp500_membership_scope(
-        Path(_nonempty_text(membership_document.get("snapshot_dir"), "membership snapshot")),
+        _rebase_market_data_snapshot(
+            membership_document.get("snapshot_dir"),
+            market_data_root=market_data_root,
+            label="membership snapshot",
+        ),
         market_data_root=market_data_root,
         repo_root=repo_root,
     )
     calendar, common_sessions = load_verified_norgate_trial_raw_d1_session_scope(
-        Path(_nonempty_text(calendar_document.get("snapshot_dir"), "calendar snapshot")),
+        _rebase_market_data_snapshot(
+            calendar_document.get("snapshot_dir"),
+            market_data_root=market_data_root,
+            label="calendar snapshot",
+        ),
         market_data_root=market_data_root,
         repo_root=repo_root,
     )
@@ -242,6 +251,7 @@ def verify_norgate_trial_development_panel_snapshot(
         candidates=candidates,
         calendar=calendar,
         common_sessions=common_sessions,
+        market_data_root=market_data_root,
     )
     return NorgateTrialDevelopmentPanelResult(
         snapshot_dir=snapshot,
@@ -501,12 +511,14 @@ def _validate_snapshot_contents(
     candidates: tuple[str, ...],
     calendar: NorgateTrialRawD1Result,
     common_sessions: tuple[date, ...],
+    market_data_root: Path,
 ) -> dict[str, Any]:
     _validate_parent_documents(
         manifest,
         membership=membership,
         calendar=calendar,
         common_sessions=common_sessions,
+        market_data_root=market_data_root,
     )
     files = _mapping(manifest.get("files"), "files")
     data_document = _mapping(files.get("panel_ohlcv"), "panel data metadata")
@@ -588,13 +600,85 @@ def _validate_parent_documents(
     membership: NorgateMembershipSnapshotResult,
     calendar: NorgateTrialRawD1Result,
     common_sessions: tuple[date, ...],
+    market_data_root: Path,
 ) -> None:
     membership_document = _mapping(manifest.get("membership_parent"), "membership parent")
     calendar_document = _mapping(manifest.get("calendar_parent"), "calendar parent")
-    if membership_document != _membership_document(membership):
+    if not _parent_document_matches(
+        membership_document,
+        _membership_document(membership),
+        market_data_root=market_data_root,
+        label="membership snapshot",
+    ):
         raise ValueError("Norgate development-panel membership parent is invalid")
-    if calendar_document != _calendar_document(calendar, common_sessions=common_sessions):
+    if not _parent_document_matches(
+        calendar_document,
+        _calendar_document(calendar, common_sessions=common_sessions),
+        market_data_root=market_data_root,
+        label="calendar snapshot",
+    ):
         raise ValueError("Norgate development-panel calendar parent is invalid")
+
+
+def _parent_document_matches(
+    declared: dict[str, Any],
+    expected: dict[str, Any],
+    *,
+    market_data_root: Path,
+    label: str,
+) -> bool:
+    declared_copy = dict(declared)
+    expected_copy = dict(expected)
+    declared_path = declared_copy.pop("snapshot_dir", None)
+    expected_path = expected_copy.pop("snapshot_dir", None)
+    if declared_copy != expected_copy or not isinstance(expected_path, str):
+        return False
+    try:
+        rebased = _rebase_market_data_snapshot(
+            declared_path,
+            market_data_root=market_data_root,
+            label=label,
+        )
+    except ValueError:
+        return False
+    return rebased == Path(expected_path).resolve()
+
+
+def _rebase_market_data_snapshot(
+    value: object,
+    *,
+    market_data_root: Path,
+    label: str,
+) -> Path:
+    raw = _nonempty_text(value, label)
+    root = Path(market_data_root)
+    if not root.is_dir() or root.is_symlink():
+        raise ValueError("Norgate development-panel market-data root is invalid")
+    root = root.resolve()
+    declared = Path(raw)
+    if declared.is_dir() and not declared.is_symlink():
+        resolved = declared.resolve()
+        if resolved != root and root in resolved.parents:
+            return resolved
+
+    parts = tuple(part for part in raw.replace("\\", "/").split("/") if part)
+    root_name = root.name.casefold()
+    anchors = [index for index, part in enumerate(parts) if part.casefold() == root_name]
+    if not anchors:
+        raise ValueError("Norgate development-panel parent snapshot root is invalid")
+    relative_parts = parts[anchors[-1] + 1 :]
+    if (
+        not relative_parts
+        or any(
+            part in {".", ".."} or any(character in part for character in ("\\", ":"))
+            for part in relative_parts
+        )
+    ):
+        raise ValueError("Norgate development-panel parent snapshot path is invalid")
+    rebased = root.joinpath(*relative_parts).resolve()
+    if rebased == root or root not in rebased.parents:
+        raise ValueError("Norgate development-panel parent snapshot escapes market data")
+    return rebased
 
 
 def _availability_counts(availability: Sequence[_CandidateAvailability]) -> dict[str, int]:

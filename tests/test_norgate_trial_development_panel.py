@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import socket
 import subprocess
 from collections.abc import Callable, Sequence
@@ -129,6 +130,35 @@ def test_retains_noneligible_source_evidence_and_rejects_tampering(tmp_path: Pat
             market_data_root=root,
         repo_root=repo,
     )
+
+
+def test_reattests_parent_lineage_from_a_different_market_data_mount(tmp_path: Path) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    result = _build(destination, root, repo, membership, calendar)
+    mounted_root = tmp_path / "mounted" / root.name
+    mounted_root.parent.mkdir()
+    shutil.copytree(root, mounted_root)
+    mounted_panel = mounted_root / destination.relative_to(root)
+    manifest_path = mounted_panel / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for parent_key in ("membership_parent", "calendar_parent"):
+        original = Path(manifest[parent_key]["snapshot_dir"])
+        relative = original.relative_to(root)
+        manifest[parent_key]["snapshot_dir"] = "D:\\market_data\\" + "\\".join(
+            relative.parts
+        )
+    _write_manifest(manifest_path, manifest)
+
+    loaded = verify_norgate_trial_development_panel_snapshot(
+        mounted_panel,
+        market_data_root=mounted_root,
+        repo_root=repo,
+    )
+
+    assert loaded.dataset_hash == result.dataset_hash
+    assert loaded.selected_symbol_count == result.selected_symbol_count
+    assert loaded.membership_snapshot_dir.is_relative_to(mounted_root)
+    assert loaded.calendar_snapshot_dir.is_relative_to(mounted_root)
 
 
 def test_rejects_manifest_dataset_hash_and_limitations_tampering(tmp_path: Path) -> None:
