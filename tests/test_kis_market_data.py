@@ -9,8 +9,12 @@ import pytest
 from thericher_v2.execution import kis_market_data
 from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_DAILY_PATH,
+    KIS_PAPER_DAILY_TR_ID,
     KIS_PAPER_MARKET_DATA_BASE_URL,
+    KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS,
+    KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS,
     KIS_PAPER_MINUTE_PATH,
+    KIS_PAPER_MINUTE_TR_ID,
     KIS_PAPER_TOKEN_PATH,
     KisMarketDataRequest,
     KisMarketDataResponse,
@@ -146,6 +150,8 @@ def test_daily_historical_query_rejects_unapproved_scope() -> None:
 def test_minute_query_requires_the_observed_us_exchange_scope_and_complete_cursor() -> None:
     with pytest.raises(ValueError, match="exchange"):
         KisPaperMinuteQuery(exchange="NASD", symbol="QQQ")
+    with pytest.raises(ValueError, match="symbol"):
+        KisPaperMinuteQuery(exchange="NAS", symbol="IWM")
     with pytest.raises(ValueError, match="continuation"):
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
 
@@ -227,6 +233,139 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
         )
 
     assert opened is False
+
+
+@pytest.mark.parametrize(
+    ("path", "headers", "query"),
+    [
+        (
+            KIS_PAPER_MINUTE_PATH,
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {
+                "AUTH": "",
+                "EXCD": "NYS",
+                "SYMB": "QQQ",
+                "NMIN": "1",
+                "PINC": "0",
+                "NREC": "120",
+                "FILL": "",
+                "KEYB": "",
+                "NEXT": "",
+                "FILL_GUBN": "0",
+            },
+        ),
+        (
+            KIS_PAPER_MINUTE_PATH,
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {
+                "AUTH": "",
+                "EXCD": "NAS",
+                "SYMB": "IWM",
+                "NMIN": "1",
+                "PINC": "0",
+                "NREC": "120",
+                "FILL": "",
+                "KEYB": "",
+                "NEXT": "",
+                "FILL_GUBN": "0",
+            },
+        ),
+        (
+            KIS_PAPER_MINUTE_PATH,
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {
+                "AUTH": "",
+                "EXCD": "NAS",
+                "SYMB": "QQQ",
+                "NMIN": "5",
+                "PINC": "0",
+                "NREC": "120",
+                "FILL": "",
+                "KEYB": "",
+                "NEXT": "",
+                "FILL_GUBN": "0",
+            },
+        ),
+        (
+            KIS_PAPER_DAILY_PATH,
+            {"tr_id": KIS_PAPER_DAILY_TR_ID, "tr_cont": ""},
+            {
+                "AUTH": "",
+                "EXCD": "NAS",
+                "SYMB": "IWM",
+                "GUBN": "0",
+                "BYMD": "20260719",
+                "MODP": "0",
+            },
+        ),
+    ],
+)
+def test_transport_rejects_out_of_scope_market_data_values_before_opening(
+    monkeypatch: pytest.MonkeyPatch,
+    path: str,
+    headers: dict[str, str],
+    query: dict[str, str],
+) -> None:
+    opened = False
+
+    class _UnusedOpener:
+        def open(self, *_args: object, **_kwargs: object) -> object:
+            nonlocal opened
+            opened = True
+            raise AssertionError("scope rejection must precede opener.open")
+
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _UnusedOpener())
+    transport = UrllibKisPaperMarketDataTransport()
+
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        transport.request(
+            KisMarketDataRequest(
+                method="GET",
+                url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{path}",
+                headers=headers,
+                query=query,
+            )
+        )
+
+    assert opened is False
+
+
+def test_market_data_client_stops_before_a_fourth_minute_page_request() -> None:
+    transport = _RecordingTransport(
+        [_token(), *[_page("195900", "180000", next_value="") for _ in range(3)]]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    for _ in range(KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS):
+        client.fetch_minute_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+
+    with pytest.raises(KisPaperMarketDataError, match="minute_page_limit_exceeded"):
+        client.fetch_minute_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+
+    assert client.call_counts.minute_page_attempts == KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS
+    assert len(transport.requests) == 1 + KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS
+
+
+def test_market_data_client_stops_before_a_fourth_daily_page_request() -> None:
+    transport = _RecordingTransport(
+        [_token(), *[_daily_page("20260717", "20260716", continuation="") for _ in range(3)]]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    for _ in range(KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS):
+        client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
+
+    with pytest.raises(KisPaperMarketDataError, match="daily_page_limit_exceeded"):
+        client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
+
+    assert client.call_counts.daily_page_attempts == KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS
+    assert len(transport.requests) == 1 + KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS
 
 
 def test_minute_client_rejects_more_than_documented_page_limit() -> None:

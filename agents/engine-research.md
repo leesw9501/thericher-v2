@@ -97,6 +97,10 @@
   campaign merely because the historical dataset is limited. The paper-first
   exception does not extend to learned models, ensembles, learned allocation,
   or learned exits.
+- A caller-created `qualified` capability object is not promotion evidence.
+  A later qualification objective must bind the state to a trusted promotion
+  record before it may supply this baseline; the current metadata probes do not
+  create that record or activate a proposal.
 - The fixed-ETF source-sensitivity question and the full-history exact
   raw-source alignment check are unsupported. The broad ETF wrapper supplies
   descriptive features plus explicit future-only outcomes, but neither opens

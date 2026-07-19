@@ -150,6 +150,73 @@ def test_successful_runner_marks_external_summary_and_never_prints_raw_values(
     }
 
 
+@pytest.mark.parametrize(
+    ("failure_point", "expected_reason"),
+    [
+        ("summary_write", "summary_write_failed"),
+        ("summary_transition", "attempt_state_unresolved"),
+    ],
+)
+def test_indeterminate_historical_lifecycle_blocks_a_following_configuration_load(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    failure_point: str,
+    expected_reason: str,
+) -> None:
+    probe = _load_probe_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "control"
+    summary_path = tmp_path / "artifacts" / "summary.json"
+    monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
+    monkeypatch.setattr(probe, "KIS_PAPER_HISTORICAL_PROBE_CONTROL_ROOT", control_root)
+    monkeypatch.setattr(probe, "KIS_PAPER_HISTORICAL_PROBE_ARTIFACT_ROOT", tmp_path / "artifacts")
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", lambda _: object())
+    monkeypatch.setattr(probe, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(probe, "UrllibKisPaperMarketDataTransport", lambda: object())
+    monkeypatch.setattr(
+        probe,
+        "run_bounded_kis_paper_historical_probe",
+        lambda *_args, **_kwargs: _evidence(),
+    )
+    if failure_point == "summary_write":
+        monkeypatch.setattr(
+            probe,
+            "write_kis_paper_historical_probe_summary",
+            lambda **_kwargs: (_ for _ in ()).throw(OSError("disk unavailable")),
+        )
+    else:
+        monkeypatch.setattr(
+            probe,
+            "write_kis_paper_historical_probe_summary",
+            lambda **_kwargs: (summary_path, "sha256:unit"),
+        )
+        monkeypatch.setattr(
+            probe,
+            "mark_external_one_shot_summary_written",
+            lambda **_kwargs: (_ for _ in ()).throw(ValueError("transition unavailable")),
+        )
+
+    probe.main(["--execute"], clock=lambda: _OBSERVED_AT, dotenv_path=tmp_path / ".env")
+
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "indeterminate",
+        "reason": expected_reason,
+    }
+
+    def fail_if_config_is_loaded(_: Path) -> object:
+        raise AssertionError("an indeterminate one-shot must block before configuration loading")
+
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", fail_if_config_is_loaded)
+    probe.main(["--execute"], clock=lambda: _OBSERVED_AT, dotenv_path=tmp_path / ".env")
+
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "not_executed",
+        "reason": "historical_attempt_already_reserved",
+    }
+
+
 def _evidence() -> KisPaperHistoricalProbeEvidence:
     continuation_newest = _OBSERVED_AT - timedelta(minutes=2)
     return KisPaperHistoricalProbeEvidence(

@@ -105,7 +105,9 @@ model.
   **market-data** probes for `QQQ`/`SPY`; account, position, buying-power,
   open-order, submit, cancel, `KIS_LIVE_*`, paper capital, mode changes, and
   live behavior remain disabled. Imports, tests, local simulation, and the web
-  process remain credential- and network-free.
+  process remain credential- and network-free. The credential-bearing client
+  and direct transport also reject every non-`QQQ`/`SPY`, non-`NAS`, altered
+  request shape, or fourth per-kind page before a connection opens.
 - The operator-approved immediate QQQ/SPY historical capability runner was
   invoked once but stopped at its secret-safe config preflight with
   `config_missing`; it made no KIS request and wrote no reservation or summary.

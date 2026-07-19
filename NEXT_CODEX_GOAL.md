@@ -34,7 +34,8 @@ training corpus, model input, cache, or trading feature.
 - `execution.kis_market_data` accepts only paper OAuth, overseas daily, and
   overseas raw-`1m` requests through a direct-only, redirect-rejecting
   transport. It blocks account, order, cancel, and live paths before opening a
-  connection.
+  connection, and enforces the current `QQQ`/`SPY`, `NAS`, fixed-query, and
+  three-pages-per-kind scope below its CLI scripts.
 - `execution.kis_historical_probe` owns the immediate fixed request sequence:
   one token; `QQQ` daily first page plus an optional `F` continuation; `SPY`
   daily first page; then the equivalent raw-`1m` sequence. It retains raw rows
@@ -43,10 +44,11 @@ training corpus, model input, cache, or trading feature.
   `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe`
   and keeps an external `reserved -> network_started -> summary_written`
   lifecycle. A reservation blocks every retry.
-- Its first authorized invocation stopped at the secret-safe configuration
-  preflight with `config_missing`; no token, KIS request, reservation, or
-  summary resulted. The two paper app values must be nonempty in the approved
-  `.env` prefix before this still-unreserved call is retried.
+- Its authorized invocation and current safe preflight stopped at the
+  secret-safe configuration preflight with `config_missing`; no token, KIS
+  request, reservation, or summary resulted. The two paper app values must be
+  nonempty and appear in the approved `.env` prefix before any Tiingo, account,
+  or live key before this still-unreserved call is retried.
 - The date-limited raw-`1m` runner is separately offline-tested. Before it can
   read config, it requires an explicit `--confirm-no-exception` flag after an
   independent official Nasdaq calendar check. Its first result stays `observed`

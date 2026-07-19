@@ -195,8 +195,10 @@ The current KIS data work is an Execution-owned, one-shot metadata-only probe:
 only `QQQ`/`SPY`, one paper token, at most three daily and three raw-`1m` pages,
 and no raw rows, credentials, account facts, cache, or `D:\market_data` write.
 Data reviews its sanitized scope, page, field-presence, continuation, and
-date/timestamp-bound facts only. It cannot use the result as a dataset,
-campaign, or training input, and it keeps the raw-`1m` capability `observed`.
+date/timestamp-bound facts only. This is metadata-only `observed`/`rejected`
+evidence: it creates no retained dataset, cache, feature, timeframe activation,
+campaign, or model eligibility, and raw `1m` remains `observed` until an
+independent qualification.
 
 The active data direction is KIS-native paper readiness. Data owns the compact
 runtime feature contract, but does not call KIS. Execution's dated read-only

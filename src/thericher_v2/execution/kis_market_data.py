@@ -22,11 +22,14 @@ KIS_PAPER_MINUTE_MAX_ROWS = 120
 KIS_PAPER_DAILY_PATH = "/uapi/overseas-price/v1/quotations/dailyprice"
 KIS_PAPER_DAILY_TR_ID = "HHDFS76240000"
 KIS_PAPER_DAILY_MAX_ROWS = 100
+KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS = 3
+KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS = 3
 KIS_PAPER_MINUTE_QUERY_KEYS = frozenset(
     {"AUTH", "EXCD", "SYMB", "NMIN", "PINC", "NREC", "FILL", "KEYB", "NEXT", "FILL_GUBN"}
 )
 KIS_PAPER_DAILY_QUERY_KEYS = frozenset({"AUTH", "EXCD", "SYMB", "GUBN", "BYMD", "MODP"})
 KIS_PAPER_PROBE_SYMBOLS = frozenset({"QQQ", "SPY"})
+KIS_PAPER_PROBE_EXCHANGE = "NAS"
 _KIS_PAPER_PROBE_REQUIRED_MODE = "off"
 _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS = frozenset(
     {
@@ -178,15 +181,10 @@ class KisPaperMinuteQuery:
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
-        if self.exchange not in {"NAS", "NYS", "AMS"}:
-            raise ValueError("exchange must be NAS, NYS, or AMS")
-        is_valid_symbol = (
-            self.symbol
-            and self.symbol.isascii()
-            and self.symbol.replace(".", "").isalnum()
-        )
-        if not is_valid_symbol:
-            raise ValueError("symbol must be a nonempty ASCII market symbol")
+        if self.exchange != KIS_PAPER_PROBE_EXCHANGE:
+            raise ValueError("minute market-data probe exchange requires NAS")
+        if self.symbol not in KIS_PAPER_PROBE_SYMBOLS:
+            raise ValueError("minute market-data probe symbol is not approved")
         if (self.continuation_next is None) != (self.continuation_key is None):
             raise ValueError("continuation next and key must be supplied together")
         if self.continuation_next is not None and (
@@ -330,6 +328,8 @@ class KisPaperMarketDataClient:
         )
 
     def fetch_minute_page(self, query: KisPaperMinuteQuery) -> KisPaperMinutePage:
+        if self._minute_page_attempts >= KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS:
+            raise KisPaperMarketDataError("minute_page_limit_exceeded")
         access_token = self._issue_access_token()
         self._minute_page_attempts += 1
         response = self._transport.request(
@@ -373,6 +373,8 @@ class KisPaperMarketDataClient:
         )
 
     def fetch_daily_page(self, query: KisPaperDailyQuery) -> KisPaperDailyPage:
+        if self._daily_page_attempts >= KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS:
+            raise KisPaperMarketDataError("daily_page_limit_exceeded")
         access_token = self._issue_access_token()
         self._daily_page_attempts += 1
         response = self._transport.request(
@@ -651,20 +653,54 @@ def _validate_request(request: KisMarketDataRequest) -> None:
         return
     if request.method != "GET" or request.json_body is not None:
         raise KisPaperMarketDataError("request_not_allowlisted")
-    if (
-        parsed.path == KIS_PAPER_MINUTE_PATH
-        and set(request.query) == KIS_PAPER_MINUTE_QUERY_KEYS
-        and request.headers.get("tr_id") == KIS_PAPER_MINUTE_TR_ID
-    ):
+    if parsed.path == KIS_PAPER_MINUTE_PATH and _is_approved_minute_request(request):
         return
-    if (
-        parsed.path == KIS_PAPER_DAILY_PATH
-        and set(request.query) == KIS_PAPER_DAILY_QUERY_KEYS
-        and request.headers.get("tr_id") == KIS_PAPER_DAILY_TR_ID
-        and request.headers.get("tr_cont", "") in {"", "F"}
-    ):
+    if parsed.path == KIS_PAPER_DAILY_PATH and _is_approved_daily_request(request):
         return
     raise KisPaperMarketDataError("request_not_allowlisted")
+
+
+def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
+    query = request.query
+    if (
+        set(query) != KIS_PAPER_MINUTE_QUERY_KEYS
+        or request.headers.get("tr_id") != KIS_PAPER_MINUTE_TR_ID
+        or query.get("AUTH") != ""
+        or query.get("EXCD") != KIS_PAPER_PROBE_EXCHANGE
+        or query.get("SYMB") not in KIS_PAPER_PROBE_SYMBOLS
+        or query.get("NMIN") != "1"
+        or query.get("NREC") != str(KIS_PAPER_MINUTE_MAX_ROWS)
+        or query.get("FILL") != ""
+        or query.get("FILL_GUBN") != "0"
+    ):
+        return False
+    if query.get("PINC") == "0":
+        return query.get("KEYB") == "" and query.get("NEXT") == ""
+    return (
+        query.get("PINC") == "1"
+        and query.get("NEXT") == "1"
+        and isinstance(query.get("KEYB"), str)
+        and len(query["KEYB"]) == 14
+        and query["KEYB"].isdigit()
+    )
+
+
+def _is_approved_daily_request(request: KisMarketDataRequest) -> bool:
+    query = request.query
+    by_date = query.get("BYMD")
+    return (
+        set(query) == KIS_PAPER_DAILY_QUERY_KEYS
+        and request.headers.get("tr_id") == KIS_PAPER_DAILY_TR_ID
+        and request.headers.get("tr_cont", "") in {"", "F"}
+        and query.get("AUTH") == ""
+        and query.get("EXCD") == KIS_PAPER_PROBE_EXCHANGE
+        and query.get("SYMB") in KIS_PAPER_PROBE_SYMBOLS
+        and query.get("GUBN") == "0"
+        and isinstance(by_date, str)
+        and len(by_date) == 8
+        and by_date.isdigit()
+        and query.get("MODP") == "0"
+    )
 
 
 def _request_url(request: KisMarketDataRequest) -> str:

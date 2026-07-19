@@ -2474,3 +2474,30 @@ non-retryable lifecycle evidence, and tests for confirmation-before-config.
 Reason: calendar confirmation is an invocation fact, not evidence that needs a
 second durable artifact. This reduces state, code, and operational steps
 without weakening the actual KIS side-effect or secret boundaries.
+
+## 2026-07-19 - Enforce the active KIS market-data scope below CLI scripts
+
+Decision: make the credential-bearing KIS market-data boundary itself enforce
+the current operator authorization. Both query construction and the direct-only
+transport now permit only `QQQ`/`SPY` on `NAS`, the exact raw-`1m` or daily
+request shape, and at most three requests of each kind per client. An
+out-of-scope route, symbol, exchange, interval, continuation shape, or fourth
+page fails before `opener.open`. Add lifecycle regression tests proving that an
+indeterminate historical summary write or transition leaves the one-shot
+reservation non-retryable before configuration loading.
+
+Reason: script-level limits were correct, but a lower public client/transport
+surface could still form a broader request. The active approval is a narrow
+technical observation, so its smallest enforceable authority belongs below the
+script call site rather than in operator discipline alone.
+
+Independent Validation found the broader request surface and the missing
+historical lifecycle regression coverage. Claude's short falsification-first
+verdict was `supported-with-limits`: use the pre-connection transport chokepoint
+and beware treating a real listing venue as interchangeable with the active KIS
+query code. The current operator authorization explicitly fixes both `QQQ` and
+`SPY` requests to `NAS`, so the boundary retains that flat scope. If KIS rejects
+`SPY` on `NAS`, record a limited/rejected capability fact; do not widen to a
+second exchange without a new authorization. This is a scope-narrowing
+correction, not a promotion or new authority; focused tests remain offline and
+no KIS request or credential read occurred while making the change.

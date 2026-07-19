@@ -152,15 +152,20 @@
   read-only market-data boundary for `QQQ`/`SPY` on `NAS`. It has no submit,
   cancel, account, position, buying-power, open-order, capital, or live
   authority.
+- The client and direct transport now enforce the active scope below CLI
+  scripts: only `QQQ`/`SPY` on `NAS`, fixed raw-`1m`/daily request shapes, and
+  no fourth daily or minute page. An out-of-scope request fails before
+  `opener.open`.
 - Run the approved historical capability probe once before the date-limited
   raw-minute observation: one token, at most three daily pages and three raw
   `1m` pages total, with only sanitized data-fitness metadata written outside
   Git. It may not create a dataset or claim retention, storage rights, or model
   suitability.
-- Its first approved invocation stopped before token issuance with
-  `config_missing`, leaving no reservation or external summary. The nonsecret
-  preflight saw `THERICHER_MODE=off` but no configured paper app key/secret in
-  the approved `.env` prefix; do not retry until that configuration is fixed.
+- Its first approved invocation and current safe preflight both stopped before
+  token issuance with `config_missing`, leaving no reservation or external
+  summary. The nonsecret check saw `THERICHER_MODE=off`, then an invalid key
+  sequence before the two paper app values; do not retry until the approved
+  `.env` prefix is fixed without moving or exposing other secret values.
 - The next probe's engine-loop purpose is to record or reject the smallest
   KIS-native input observation, not to fetch an unbounded archive. It must
   measure one intraday first/continuation sequence, timestamp order,
