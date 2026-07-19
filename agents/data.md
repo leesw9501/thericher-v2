@@ -230,7 +230,11 @@ SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
 Data supplied only reattested Tiingo/Norgate parent hashes, 29 exact rank/symbol
 links, 483 overlap and 18 forward-only sessions, and conservative marker masks.
 Norgate remains the sole price/feature/label source. No download, provider
-query, raw-bar export, or source merge was needed.
+query, raw-bar export, or source merge was needed. Its CPU-only batch completed;
+the first CUDA MLP stopped before a prediction or checkpoint because deterministic
+CUDA workspace configuration was absent, and the second MLP was not started.
+The r4 validation slice is retired. Data's next work is a bounded local
+inventory for a genuinely fresh contract candidate, not a r4 repair or retry.
 
 ## PIT Source Decision (2026-07-19)
 
@@ -385,10 +389,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Support only reattestation for the fixed r4 source-separated batch; do not
-   create a new download, raw-bar export, provider query, or price merge.
+1. Inventory only known local daily snapshots and manifest metadata for an
+   unspent, non-overlapping replacement-contract candidate. Do not reuse r4's
+   3,420 validation rows or create a new model contract during the inventory.
 2. Do not acquire a third Tiingo raw-daily shard merely to increase common
-   coverage; the existing r2 cohort is the bounded source validation input.
+   coverage; the existing r2 cohort remains bounded source evidence.
 
 ## Historical Queue Context
 
@@ -757,10 +762,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 ## Next Handoff
 
 The Tiingo r2 cross-source cohort and r4 source-separated contract are complete,
-not a third shard or another download. The only next Data contribution is
-offline reattestation while Engine runs the predeclared finite batch. Keep the
-483 shared sessions and 18 forward-only sessions in their current mask/lineage
-roles; do not widen them into a provider-price or model-input merge.
+not a third shard or another download. r4 is now closed with CPU-only evidence
+and an immutable CUDA bootstrap failure; its validation rows cannot be reused.
+The next Data contribution is a bounded manifest-first inventory of known local
+daily sources for an unspent candidate period. Keep the 483 shared sessions and
+18 forward-only sessions in their current mask/lineage roles; do not widen them
+into a provider-price or model-input merge.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip

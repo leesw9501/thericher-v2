@@ -2,72 +2,65 @@
 
 ## Objective
 
-Run one finite, offline source-separated engineering batch using only the
-verified r4 contract. Complete a CPU baseline first, then exactly two bounded
-PyTorch CUDA MLP jobs. This opens CUDA as a measured research resource, not an
-open-ended parameter sweep or an investability claim.
+Run one bounded, local-only Data inventory to determine whether existing
+`D:\market_data` contains a fresh, unspent daily-source candidate for a future
+engineering contract. This is a data-decision task, not model work.
 
-## Fixed Contract
+## Context
 
-- Contract:
-  `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`
-  with SHA-256
-  `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
-- Parents: the completed Tiingo/Norgate cohort and Norgate broad feature
-  artifact reattested by that contract. Do not reopen the static 523-symbol
-  MLP/TCN batch or use its runner as this batch's runner.
-- Norgate is the sole price, feature, and label source. Tiingo may provide only
-  contract-attested rank/session/marker lineage. The 18 Tiingo forward-only
-  sessions are forbidden.
-- Use the exact `(rank, symbol)` roster and retained source rows in the
-  contract. Fit only decision indices `20..319`; use `320..321` neither for fit
-  nor evaluation; evaluate `322..480` once with no tuning or candidate choice.
-- The Norgate raw-discontinuity filter uses `t-20..t+2`; it is static offline
-  conditioning, not point-in-time safe and not a corporate-action assertion.
+- The r4 source-separated contract and CPU-only batch are closed. Its 3,420-row
+  validation slice is spent and cannot be reused.
+- The first r4 CUDA MLP stopped before prediction/checkpoint creation because
+  deterministic CUDA workspace configuration was missing. The corrected Docker
+  setting passed a synthetic-only smoke but does not reopen r4.
+- Norgate trial daily history is limited to its known 483-session window.
+  Tiingo r2 and broad Yahoo evidence have separate non-PIT, static-universe,
+  adjustment, or source-right limitations.
 
-## Required Batch
+## Required First Reads
 
-1. Reattest the r4 contract and parents on host before any model array is made.
-   Prove the batch loader selects Norgate rows only, preserves the contract mask
-   and exact split, and does not expose Tiingo prices/labels or forward sessions.
-2. Implement the smallest dedicated batch harness. It must write only compact
-   run evidence and safe model/checkpoint artifacts under
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never Git.
-3. Run the fixed CPU baseline first: `naive_always_long` and one
-   regularized-linear classifier. Record deterministic development and one-time
-   validation metrics, but do not compare them to select a winner.
-4. If the CPU baseline and CUDA availability are sound, use the Docker
-   `research` profile with network disabled to run, exactly once each:
-   - `mlp-hidden-32-seed-71`, 12 epochs, batch size 1024;
-   - `mlp-hidden-64-seed-113`, 12 epochs, batch size 1024.
-   Run one GPU job at a time. Enforce a 180-second wall-clock and 4,096-MiB
-   per-job cap. Preserve bounded failure evidence and do not retry automatically.
-5. Keep `agents/engine-research.md` explicit: this is the breadth queue's sole
-   active finite batch; depth and ensemble queues remain blocked. Data has no
-   new download task while this batch runs.
-6. Ask Claude for a concise falsification-first review before interpreting an
-   unexpectedly strong result or changing the batch. Use temporary independent
-   Validation after the run; it must not tune a candidate.
-7. Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this next goal after
-   the batch. Continue with the smallest evidence-led objective; do not wait for
-   routine operator scheduling.
+1. Run `.\scripts\start_next_codex_task.ps1`.
+2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
+   `DECISIONS.md`, `RUNBOOK.md`, `agents\README.md`, `agents\data.md`, and
+   `agents\engine-research.md`.
+3. Ask Claude for a short falsification-first drift check before relying on any
+   new source, date partition, universe, or eligibility conclusion.
+
+## Data-Owned Work
+
+1. Inspect only known local snapshot manifests, directory metadata, and narrow
+   bounded samples. Do not recursively scan all of `D:\market_data` or read
+   `.env`, credentials, provider tokens, or broker data.
+2. Compare the known Norgate, Tiingo r2, broad Yahoo, and intraday candidates
+   against r4's consumed decision/validation window. Identify any candidate
+   that is both locally available and not already used as r4 validation.
+3. For every plausible candidate, record its source, symbols, date range,
+   granularity, lineage/rights, overlap with r4, point-in-time and adjustment
+   limitations, and whether it can support only future engineering preparation
+   or nothing at all.
+4. Write one compact, external-only Data evidence artifact under
+   `D:\thericher-v2\model-artifacts\data-agent`; do not put data bytes,
+   artifacts, or model output in Git.
+5. Conclude exactly one of:
+   - a named fresh candidate can proceed to a new, still non-promotional
+     contract preflight; or
+   - no local candidate is suitable, with an exact operator data request and
+     free/paid alternatives.
+6. Keep Engine Research idle on real market training. It may only retain the
+   corrected synthetic CUDA bootstrap evidence; it must not rerun r4, launch a
+   new model, compare candidates, or create an ensemble.
 
 ## Hard Boundaries
 
-- Do not call network providers, KIS, brokers, or local-paper execution.
-- Do not read `.env`, credentials, account data, or secret-like files.
-- Do not create PnL, paper, ranking, promotion, ensemble, sealed-holdout, or
-  profitability claims.
-- Do not add a tree, TCN, extra seed, extra parameter sweep, depth candidate,
-  or automatic retry.
-- Do not use GPU utilization by itself as a success metric.
+- No provider download, network call, KIS access, paper/local-paper execution,
+  order, live behavior, credential read, or paid action.
+- No model training, GPU market-data job, r4 retry, tree/TCN/seed sweep,
+  ranking, promotion, PnL, ensemble, holdout, or profitability claim.
+- Do not treat absence of a local candidate as a reason to weaken data policy.
 
-## Tests And Verification
+## Completion
 
-Add focused tests for contract-only loading, development-only fitting,
-purge/validation isolation, no network/credential/broker access, bounded CUDA
-configuration, external-only artifact placement, and replayable artifact
-metadata. Then run:
+Refresh stateboards, `HANDOFF.md`, `DECISIONS.md`, and this next goal. Run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -75,10 +68,5 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report the CPU/CUDA commands, GPU availability and observed resource caps,
-external artifact paths/hashes, failures if any, Claude/Validation verdicts,
-and why no broader model search was opened.
-
-## Suggested Commit Message
-
-`Run finite source-separated research batch`
+Commit, push, and report the artifact path/hash, the chosen conclusion, any
+operator data request, and the next recommended objective.

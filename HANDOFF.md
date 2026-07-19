@@ -611,8 +611,8 @@ unnecessary row-level data.
 ## Next Objective
 
 **Latest state, superseding the older target statement below:** the first
-source-separated research-contract preflight is complete. Its current immutable
-external artifact is
+source-separated research-contract preflight and its CPU-only batch are complete.
+Its immutable external contract is
 `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
 SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
 It reattests the completed Tiingo/Norgate cohort and the Norgate feature
@@ -630,12 +630,22 @@ point-in-time safe. Claude and the independent Validation Agent both returned
 `supported-with-limits`. This remains static survivor/availability-conditioned
 engineering evidence only, with raw-adjustment and action semantics unverified.
 
-The next bounded action is exactly one offline CPU baseline plus the two
-predeclared PyTorch CUDA MLP jobs, one GPU job at a time, each capped at 180
-seconds and 4,096 MiB. Fit only development rows; keep the purge untouched and
-use validation only for fixed, non-promotional engineering evaluation. Do not
-open any other model family, depth work, ensemble, ranking, paper, PnL, or live
-path from this batch.
+CPU evidence is at
+`D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cpu-baseline.json`,
+SHA-256 `a6f181b504aa9cb6c6b55af59096c3d5c7e4363dc69978b82bb5a4239a80c4ad`.
+It is inconclusive engineering evidence only. The first predeclared CUDA MLP
+stopped before prediction/checkpoint creation because deterministic CUDA mode
+lacked `CUBLAS_WORKSPACE_CONFIG`; its immutable failure is SHA-256
+`0f93bec411c74aad8980d68af524f046f47051be8230295d48c518808a47217c`.
+The second MLP was deliberately not started. Do not retry either r4 MLP or reuse
+its validation slice. Commit `ae0d3ec` fixes the Docker research workspace and a
+network-disabled synthetic CUDA smoke passed, but that is infra-only evidence.
+Claude's recovery verdict was `supported-with-limits`.
+
+The next bounded action is Data's manifest-first, local-only inventory for a
+fresh unspent candidate period. Do not create a model contract, train, reopen
+r4, download data, or use GPU merely to avoid idle time. Any future model batch
+needs new data evidence and a new contract.
 
 **Current target, superseding the older historical context below:** the offline
 Tiingo r2/Norgate cross-source cohort is complete at

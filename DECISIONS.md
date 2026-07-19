@@ -2035,3 +2035,27 @@ contract rather than inheriting this one.
 
 Reason: a small hash-attested batch can exercise the CUDA research loop without
 mistaking resource utilization or static-source performance for trading evidence.
+
+## 2026-07-19 - Close r4 after deterministic CUDA bootstrap failure
+
+Decision: close `norgate-tii-source-separated-batch-r1` as inconclusive,
+CPU-only engineering evidence. Its immutable CPU summary is
+`D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cpu-baseline.json`,
+SHA-256 `a6f181b504aa9cb6c6b55af59096c3d5c7e4363dc69978b82bb5a4239a80c4ad`.
+The first predeclared CUDA job stopped before prediction/checkpoint creation
+with the CUDA deterministic-algorithm CUBLAS workspace error; its failure JSON
+is SHA-256 `0f93bec411c74aad8980d68af524f046f47051be8230295d48c518808a47217c`.
+MLP-64 was not started after the shared fault became known. Do not retry either
+r4 MLP or reuse its validation slice, and do not turn the CPU metrics into a
+model, negative-result, ranking, or profitability claim.
+
+Commit `ae0d3ec` requires `CUBLAS_WORKSPACE_CONFIG=:4096:8` in the Docker
+research profile and fails closed when it is absent. A network-disabled,
+synthetic-only CUDA deterministic linear smoke then passed on the RTX 4090; it
+used no market data and is infrastructure evidence only. Claude's recovery
+verdict was `supported-with-limits`: the predeclared protocol has no environment
+retry clause and CPU validation was already written, so closure is more faithful
+than a silent rerun.
+
+Reason: preserve a clear boundary between a reproducibility repair and a model
+result, while freeing Data to find a fresh unspent contract candidate.

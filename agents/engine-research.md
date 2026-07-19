@@ -98,13 +98,16 @@
   `dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`).
   The Engine intake exposes only identity/count/scope metadata and keeps all
   training, model, ranking, ensemble, campaign, paper, PnL, and profitability
-  flags false. The r4 source-separated contract is now complete at
+  flags false. The r4 source-separated contract completed its CPU-only portion at
   `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
   SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
-  It permits only the next finite engineering batch: fixed CPU baselines and
-  MLP-32/seed-71 plus MLP-64/seed-113 CUDA jobs. Claude and independent
-  Validation both returned `supported-with-limits`; it opens no ranking,
-  promotion, ensemble, paper, PnL, profitability, PIT, or sealed holdout.
+  Its fixed CPU baseline is authoritative engineering evidence only. MLP-32
+  stopped before predictions or a checkpoint because CUDA deterministic mode
+  lacked `CUBLAS_WORKSPACE_CONFIG`; MLP-64 was not started under the known
+  fault. The r4 validation slice is retired, not retried or compared. Claude's
+  recovery verdict was `supported-with-limits`; this opens no model result,
+  ranking, promotion, ensemble, paper, PnL, profitability, PIT, or sealed
+  holdout.
 
 ## Explicit-Event Replay
 
@@ -128,13 +131,15 @@
 - No breadth batch is running. The static Norgate panel closed with two completed
   MLP observations near the linear baseline and two untested TCN compute
   rejections; it cannot be refilled, retried, ranked, or ensembled.
-- The r4 source-separated contract is the only ready breadth item. Run exactly
-  its naive and regularized-linear CPU baselines, then its two fixed MLP CUDA
-  jobs. Fit only development rows; purge is untouched and validation is fixed
-  engineering evaluation only. One GPU job may run at a time, with 180-second
-  and 4,096-MiB per-job caps and no automatic retry.
-- Do not add a tree, TCN, extra seed, alternative parameter, depth candidate, or
-  ensemble to this batch. GPU idle time alone never opens a new job.
+- The r4 source-separated batch is closed: CPU evidence completed once,
+  MLP-32 has immutable environment-failure evidence, and MLP-64 was not
+  started. Do not rerun either MLP or reuse the 3,420-row validation slice.
+- Docker research now requires `CUBLAS_WORKSPACE_CONFIG=:4096:8`; a
+  network-disabled synthetic CUDA smoke passed under commit `ae0d3ec`. It is
+  infrastructure evidence only, not data or model evidence.
+- No breadth batch is ready until Data finds and freezes a fresh, unspent local
+  candidate. Do not add a tree, TCN, seed, parameter sweep, depth candidate, or
+  ensemble merely to occupy the GPU.
 
 ## Depth Queue
 
@@ -242,6 +247,10 @@
 - Treat `norgate-broad-development-validation-r2` and `r3` TCN directories as
   `restart` recovery evidence: they have no checkpoint, prediction, or summary.
   The r3 compute-rejection JSON is a resource decision, not a model result.
+- Treat `norgate-tii-source-separated-batch-r1` as `complete` with an
+  inconclusive CPU-only baseline and immutable CUDA environment-failure evidence.
+  Do not delete or overwrite its CPU summary or MLP-32 failure. The corrected
+  CUDA workspace was proven only on synthetic tensors, so it does not reopen r4.
 
 ## Recent Evidence
 
@@ -300,15 +309,28 @@
   `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
   It retains 9,904 rows after the 10,053-to-9,904 Norgate-only conditioning
   reconciliation, and forbids forward-only Tiingo use, promotion, and PnL.
+- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cpu-baseline.json`
+  completed once under commit `ddbe2ab`, SHA-256
+  `a6f181b504aa9cb6c6b55af59096c3d5c7e4363dc69978b82bb5a4239a80c4ad`.
+  It is inconclusive engineering evidence only; no candidate was selected.
+- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cuda\mlp-hidden-32-seed-71\failure.json`
+  records `unexpected_RuntimeError` before prediction or checkpoint creation,
+  SHA-256 `0f93bec411c74aad8980d68af524f046f47051be8230295d48c518808a47217c`.
+  MLP-64 was deliberately not started. Commit `ae0d3ec` adds the required
+  Compose CUBLAS workspace; its synthetic-only Docker smoke is not a result.
 
 ## Next Handoff
 
-Do not reopen the static Norgate validation batch. Its valid output is two
+Do not reopen the static Norgate validation batch. Its valid output remains two
 completed MLP engineering observations and two explicitly compute-rejected,
-untested TCN jobs, not a four-model comparison. The Tiingo r2 cohort,
-metadata-only Engine intake, and r4 source-separated contract are complete.
-Next, implement and run only the contract's finite CPU and two-MLP CUDA batch;
-fit development rows only and leave purge/validation behavior fixed.
+untested TCN jobs, not a four-model comparison. The r4 source-separated batch
+is also closed: it has CPU-only evidence and one immutable CUDA bootstrap
+failure, not a model observation. The Tiingo r2 cohort and metadata-only Engine
+intake remain complete.
+
+Next, wait for Data's bounded local replacement inventory. Engine may prepare
+contracts and test the corrected CUDA bootstrap only on synthetic tensors; it
+must not consume r4 rows, launch another model family, or create an ensemble.
 
 - The frozen fixed-ETF work is exhausted for model promotion: r2 factor
   sensitivity remains unsupported, and the full-history Tiingo exact raw-D1
