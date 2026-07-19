@@ -7,6 +7,10 @@
 - Data's replacement inventory found no fresh local training candidate. GPU
   remains unassigned until Data freezes a new eligible contract; a prospective
   three-ETF EOD refresh does not change that boundary.
+- The Docker `research` profile passed offline GPU runtime and PyTorch CUDA
+  compute smokes on 2026-07-19 (RTX 4090, 24564 MiB). The small external JSON
+  artifacts confirm runtime readiness only; no data, model, campaign, or GPU
+  training queue became eligible from this check.
 - The durable destination is now a target-position policy graph: opportunity
   selection, timestamped multi-timeframe evidence, entry/exit policy,
   constrained target-weight allocation, and deterministic execution. It is a

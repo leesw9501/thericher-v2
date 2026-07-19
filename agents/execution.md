@@ -107,6 +107,12 @@
   validation accepts a later complete caller-supplied observed bar; exact +1/+2
   dataset-index adjacency is proven by the active campaign, not a calendar
   service. Fill time, open price, and `local_paper` source are unchanged.
+- A sequential restart after a local-paper fill event but before its derived
+  portfolio snapshot can reconstruct the exact recorded fill only when the
+  accepted order, signal/execution bar fingerprints, price, fee, and timestamp
+  still match. It replays the authoritative event log and adds neither another
+  fill nor a snapshot; changed bars or fee settings fail closed. Concurrent
+  local-paper fill calls are not a supported recovery mode.
 - Focused evidence: `tests/test_broker_lifecycle.py` and
   `tests/test_broker_boundary.py` pass together without network or credentials.
 - `execution.kis_readonly` is a separate, typed virtual-paper discovery
@@ -189,6 +195,10 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
+- For a local-paper post-fill interruption, retry only the same sequential
+  call with the same complete bars and immutable fee/slippage settings. The
+  recorded fill is authoritative; do not manufacture a replacement fill or a
+  derived snapshot during recovery.
 - Preserve both failure artifacts. HTTP `500` alone does not establish a TR,
   account-product, funding, or sandbox cause. The documented `tr_cont` header
   deviation is corrected but unproven as a cause. Any future probe requires a

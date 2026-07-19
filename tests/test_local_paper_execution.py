@@ -66,12 +66,17 @@ def _order(client_order_id: str = "paper-1", *, side: Side = "buy") -> OrderInte
     )
 
 
-def _broker(tmp_path, *, starting_cash: Decimal = Decimal("1000")) -> LocalPaperBroker:
+def _broker(
+    tmp_path,
+    *,
+    starting_cash: Decimal = Decimal("1000"),
+    fee_bps: Decimal = Decimal("1"),
+) -> LocalPaperBroker:
     return LocalPaperBroker(
         event_store=EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl"),
         emergency_store=EmergencyStore(tmp_path / "emergency.json"),
         starting_cash=starting_cash,
-        fee_bps=Decimal("1"),
+        fee_bps=fee_bps,
     )
 
 
@@ -162,6 +167,95 @@ def test_next_bar_fill_updates_cash_positions_and_replay(tmp_path) -> None:
         "fill",
         "local_paper_portfolio_snapshot",
     ]
+
+
+def test_interrupted_fill_retries_existing_fill_without_duplicate(monkeypatch, tmp_path) -> None:
+    broker = _broker(tmp_path, starting_cash=Decimal("1000"))
+    order = _order("interrupted-fill")
+    broker.submit_order(order)
+
+    def fail_snapshot(*_args: object, **_kwargs: object) -> None:
+        raise OSError("simulated snapshot interruption")
+
+    monkeypatch.setattr(broker, "_record_portfolio_snapshot", fail_snapshot)
+    with pytest.raises(OSError, match="snapshot interruption"):
+        broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(1),
+        )
+
+    fill_event = next(
+        event
+        for event in broker.event_store.iter_events()
+        if event.event_type == "fill"
+        and event.payload.get("client_order_id") == order.client_order_id
+    )
+    recovered_broker = _broker(tmp_path, starting_cash=Decimal("1000"))
+    recovered = recovered_broker.fill_next_bar(
+        order.client_order_id,
+        signal_bar=_bar(0),
+        execution_bar=_bar(1),
+    )
+    replayed_account = replay_local_paper_account(
+        recovered_broker.event_store,
+        starting_cash=Decimal("1000"),
+    )
+
+    assert recovered.fill is not None
+    assert recovered.fill.source == "local_paper"
+    assert recovered.order_result.event_seq == fill_event.seq
+    assert recovered.order_result.reason == "filled_at_next_bar_open"
+    assert recovered.account == replayed_account
+    assert [event.event_type for event in recovered_broker.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+        "fill",
+    ]
+    assert recovered_broker.fill_next_bar(
+        order.client_order_id,
+        signal_bar=_bar(0),
+        execution_bar=_bar(1),
+    ) == recovered
+
+
+def test_interrupted_fill_recovery_rejects_revised_execution_bar(tmp_path, monkeypatch) -> None:
+    broker = _broker(tmp_path)
+    order = _order("interrupted-revised-bar")
+    broker.submit_order(order)
+
+    def fail_snapshot(*_args: object, **_kwargs: object) -> None:
+        raise OSError("simulated snapshot interruption")
+
+    monkeypatch.setattr(broker, "_record_portfolio_snapshot", fail_snapshot)
+    with pytest.raises(OSError, match="snapshot interruption"):
+        broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(1),
+        )
+
+    recovered_broker = _broker(tmp_path)
+    with pytest.raises(ValueError, match="bar identity does not match"):
+        recovered_broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=replace(_bar(1), volume=Decimal("999")),
+        )
+    with pytest.raises(ValueError, match="does not match requested execution"):
+        _broker(tmp_path, fee_bps=Decimal("2")).fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(1),
+        )
+
+    assert len(
+        [
+            event
+            for event in recovered_broker.event_store.iter_events()
+            if event.event_type == "fill"
+            and event.payload.get("client_order_id") == order.client_order_id
+        ]
+    ) == 1
 
 
 def test_sell_requires_local_position_and_updates_account(tmp_path) -> None:

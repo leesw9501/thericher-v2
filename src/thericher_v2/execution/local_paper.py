@@ -7,6 +7,8 @@ event log so paper behavior can be replayed during research.
 
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -159,12 +161,25 @@ class LocalPaperBroker:
         signal_bar: Bar,
         execution_bar: Bar,
     ) -> LocalPaperExecutionResult:
+        recorded_fill = self._recorded_fill_event(client_order_id)
+        if recorded_fill is not None:
+            order = self._accepted_order(client_order_id)
+            if order is None:
+                raise ValueError("recorded local paper fill has no accepted local paper order")
+            self._validate_next_bar(order, signal_bar, execution_bar)
+            return self._recover_recorded_fill(
+                order,
+                recorded_fill=recorded_fill,
+                signal_bar=signal_bar,
+                execution_bar=execution_bar,
+            )
+
         order = self._pending_order(client_order_id)
         if order is None:
             raise ValueError("client_order_id has no pending accepted local paper order")
         self._validate_next_bar(order, signal_bar, execution_bar)
-        fill_price = self._execution_price(execution_bar.open, order.side)
-        if order.limit_price is not None and not self._limit_is_marketable(order, fill_price):
+        fill = self._expected_fill(order, execution_bar)
+        if order.limit_price is not None and not self._limit_is_marketable(order, fill.price):
             return self._rejected_execution(
                 order,
                 reason="limit_not_marketable_at_next_bar_open",
@@ -173,9 +188,8 @@ class LocalPaperBroker:
 
         account = self.account()
         quantity = order.quantity
-        notional = fill_price * quantity
-        fee = self._fee(notional)
-        if order.side == "buy" and account.cash < notional + fee:
+        notional = fill.notional
+        if order.side == "buy" and account.cash < notional + fill.fee:
             return self._rejected_execution(
                 order,
                 reason="insufficient_cash",
@@ -191,16 +205,6 @@ class LocalPaperBroker:
                 recorded_at=execution_bar.start_ts,
             )
 
-        fill = LocalPaperFill(
-            client_order_id=order.client_order_id,
-            symbol=order.symbol,
-            market=order.market,
-            side=order.side,
-            quantity=quantity,
-            price=fill_price,
-            fee=fee,
-            filled_at=execution_bar.start_ts,
-        )
         fill_event = self.event_store.append(
             Event(
                 event_type="fill",
@@ -214,6 +218,8 @@ class LocalPaperBroker:
                     "quantity": str(fill.quantity),
                     "price": str(fill.price),
                     "fee": str(fill.fee),
+                    "signal_bar_identity": _bar_identity(signal_bar),
+                    "execution_bar_identity": _bar_identity(execution_bar),
                 },
             )
         )
@@ -229,6 +235,77 @@ class LocalPaperBroker:
             ),
             account=account,
             fill=fill,
+        )
+
+    def _expected_fill(self, order: OrderIntent, execution_bar: Bar) -> LocalPaperFill:
+        price = self._execution_price(execution_bar.open, order.side)
+        return LocalPaperFill(
+            client_order_id=order.client_order_id,
+            symbol=order.symbol,
+            market=order.market,
+            side=order.side,
+            quantity=order.quantity,
+            price=price,
+            fee=self._fee(price * order.quantity),
+            filled_at=execution_bar.start_ts,
+        )
+
+    def _recorded_fill_event(self, client_order_id: str) -> Event | None:
+        fills = [
+            event
+            for event in self.event_store.iter_events()
+            if event.event_type == "fill"
+            and event.payload.get("source") == LOCAL_PAPER_SOURCE
+            and event.payload.get("client_order_id") == client_order_id
+        ]
+        if len(fills) > 1:
+            raise ValueError("client_order_id has multiple recorded local paper fills")
+        return fills[0] if fills else None
+
+    def _accepted_order(self, client_order_id: str) -> OrderIntent | None:
+        accepted = [
+            _order_from_payload(event.payload)
+            for event in self.event_store.iter_events()
+            if event.event_type == "local_paper_order_accepted"
+            and event.payload.get("source") == LOCAL_PAPER_SOURCE
+            and event.payload.get("client_order_id") == client_order_id
+        ]
+        if len(accepted) > 1:
+            raise ValueError("client_order_id has multiple accepted local paper orders")
+        return accepted[0] if accepted else None
+
+    def _recover_recorded_fill(
+        self,
+        order: OrderIntent,
+        *,
+        recorded_fill: Event,
+        signal_bar: Bar,
+        execution_bar: Bar,
+    ) -> LocalPaperExecutionResult:
+        expected_fill = self._expected_fill(order, execution_bar)
+        actual_fill = _fill_from_event(recorded_fill)
+        if actual_fill != expected_fill:
+            raise ValueError("recorded local paper fill does not match requested execution")
+        if (
+            recorded_fill.payload.get("signal_bar_identity") != _bar_identity(signal_bar)
+            or recorded_fill.payload.get("execution_bar_identity") != _bar_identity(execution_bar)
+        ):
+            raise ValueError(
+                "recorded local paper fill bar identity does not match requested execution"
+            )
+
+        # Fill events are authoritative; a retry must not manufacture another fill
+        # or a derived snapshot after a post-fill interruption.
+        return LocalPaperExecutionResult(
+            order_result=LocalPaperOrderResult(
+                order=order,
+                status="accepted",
+                reason="filled_at_next_bar_open",
+                recorded_at=actual_fill.filled_at,
+                event_seq=recorded_fill.seq,
+            ),
+            account=self.account(),
+            fill=actual_fill,
         )
 
     def submit_and_fill_next_bar(
@@ -462,3 +539,37 @@ def _order_from_payload(payload: dict[str, object]) -> OrderIntent:
         decision_id=str(payload["decision_id"]),
         created_at=datetime.fromisoformat(str(payload["created_at"])).astimezone(UTC),
     )
+
+
+def _fill_from_event(event: Event) -> LocalPaperFill:
+    payload = event.payload
+    return LocalPaperFill(
+        client_order_id=str(payload["client_order_id"]),
+        symbol=str(payload["symbol"]),
+        market=str(payload["market"]),
+        side=cast(Side, str(payload["side"])),
+        quantity=Decimal(str(payload["quantity"])),
+        price=Decimal(str(payload["price"])),
+        fee=Decimal(str(payload.get("fee", "0"))),
+        filled_at=event.created_at,
+        source=str(payload["source"]),
+        schema_version=event.schema_version,
+    )
+
+
+def _bar_identity(bar: Bar) -> str:
+    payload = {
+        "symbol": bar.symbol,
+        "market": bar.market,
+        "timeframe": bar.timeframe.value,
+        "start_ts": bar.start_ts.isoformat(),
+        "end_ts": bar.end_ts.isoformat(),
+        "open": str(bar.open),
+        "high": str(bar.high),
+        "low": str(bar.low),
+        "close": str(bar.close),
+        "volume": str(bar.volume),
+        "complete": bar.complete,
+    }
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()

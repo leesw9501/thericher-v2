@@ -2501,3 +2501,28 @@ query code. The current operator authorization explicitly fixes both `QQQ` and
 second exchange without a new authorization. This is a scope-narrowing
 correction, not a promotion or new authority; focused tests remain offline and
 no KIS request or credential read occurred while making the change.
+
+## 2026-07-19 - Local-paper post-fill restart recovery
+
+Decision: when a broker-free `local_paper` fill has been durably appended but
+the following derived portfolio snapshot is interrupted, a later sequential
+retry may return the original fill rather than append another one. Recovery
+requires exactly one accepted order and one recorded local fill for the client
+id, then revalidates the complete signal and execution bars plus their stable
+fingerprints, deterministic price, fee, and timestamp. Any mismatch, missing
+identity, duplicate fill, changed fee/slippage configuration, or malformed
+event fails closed. Recovery replays the authoritative event log and does not
+write another fill or snapshot.
+
+Reason: the append-only fill is the accounting authority, while the portfolio
+snapshot is a convenience projection. A post-fill interruption must not turn a
+known fill into either a duplicate trade or an unrecoverable caller error. This
+is sequential local-simulator restart behavior only; concurrent fill calls and
+KIS paper/live recovery remain outside its claim.
+
+Claude's falsification-first verdict was `supported-with-limits`: deterministic
+bar-derived economics and single-fill identity are load-bearing, and a mutable
+fee setting or revised bar must reject the retry. Focused tests simulate the
+interruption, prove one replayable `source: local_paper` fill, and reject both a
+revised same-time execution bar and changed fee schedule. No credential,
+network, KIS, account, order, or live behavior is involved.

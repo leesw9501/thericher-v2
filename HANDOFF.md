@@ -156,9 +156,18 @@ model.
   Persistent raw-byte/cache storage still requires confirmed rights; otherwise
   retain only sanitized capability evidence outside Git.
 - Existing broker-free fills keep `source: local_paper`.
+- A sequential local-paper restart after a fill event but before its derived
+  portfolio snapshot can return that one recorded fill only when the accepted
+  order, both complete-bar fingerprints, price, fee, and fill timestamp still
+  match. It does not append another fill or snapshot; changed bars or fee
+  settings fail closed. Concurrent local-paper fill calls remain unsupported.
 - Market data stays under `D:\market_data`.
 - Generated model and run artifacts stay under
   `D:\thericher-v2\model-artifacts`; Docker uses `/app/model_artifacts`.
+- The Docker `research` profile passed offline runtime and PyTorch CUDA compute
+  smokes on 2026-07-19 (RTX 4090, 24564 MiB). Their small JSON evidence is
+  external only under `gpu-runtime` and `gpu-compute`; this does not start or
+  authorize a model campaign.
 - Do not download data or model artifacts into the Git workspace.
 - Free, no-auth, lawful, license-compatible data may be acquired autonomously
   when it directly improves active work. Paid or login/manual-license sources
