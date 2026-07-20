@@ -61,6 +61,17 @@ Execution has no executable worker yet. Use temporary role workers and fake
 transports until a recurring KIS paper objective justifies one bounded
 single-shot worker.
 
+## Docker Local Runtime
+
+The Compose `engine` and `web` services share a Docker-local named runtime
+volume. The current default `engine` command only prints a daily report; it
+does not produce local-paper events, so a freshly started console correctly
+shows no local activity. A later explicitly invoked Docker-local simulation may
+write that runtime; the web monitor reads it and writes only local emergency
+state. A Windows-host runtime is deliberately separate from this volume. Do not
+run a host-side simulator against the Docker-local console runtime, and do not
+run competing Docker event-log writers at the same time.
+
 ## Data Acquisition
 
 Use `D:\market_data`. Never download market data into the repository.

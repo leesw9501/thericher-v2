@@ -2692,3 +2692,32 @@ concurrent stale precheck, a successful token whose post-OAuth clock is outside
 the raw GET window, and a request gate immediately before the transport GET. No
 real credential, KIS request, artifact, or order was used while making this
 correction.
+
+## 2026-07-20 - KIS virtual-paper read-only development authority
+
+Operator statement (verbatim): "kis 호출 전부 승인할게 호출해서 개발하는게
+좋잖아, 내가 호출 승인한것도 문서에 남겨둬 어차피 kis에 내가 실제 현금을
+넣어둔게 없어서 호출해도 괜찮아".
+
+Decision: apply that direction to `KIS_PAPER_*` only. Isolated, typed
+virtual-paper development work may use paper OAuth plus read-only account,
+position, buying-power, open-order, and market-data endpoints. It must retain
+only sanitized typed evidence, never credentials, account identifiers, or raw
+broker payloads. The dashboard remains credential-free and broker-free; it may
+consume only a separately produced sanitized snapshot.
+
+The statement does not name `KIS_LIVE_*`, a paper-order submit/cancel action,
+or a paper capital amount. Therefore live credentials remain unavailable, and
+external paper order submission/cancellation remains blocked until a fresh
+reconciliation produces a specific capital envelope that the operator approves.
+
+Reason: development benefits from evidence from the virtual broker, while
+account access, live access, and capital-moving actions have materially
+different risk surfaces. Recording both the operator's exact instruction and
+the applied interpretation prevents a later broad reading from silently adding
+live or order authority.
+
+Claude's falsification-first verdict was `supported-with-limits`: the wording
+supports KIS virtual-paper read-only development, but not a live or order
+authorization. The decision reverses only on an explicit operator statement
+naming `KIS_LIVE_*` or approving a paper capital amount and order submission.

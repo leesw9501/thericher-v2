@@ -156,49 +156,35 @@
 - Data and Review found no market-data, credential, artifact, or process-sprawl
   change in this diagnosis. Claude's `supported-with-limits` review agrees that
   no causal or recovery-success claim is justified.
-- The existing Docker-local dashboard is a monitor only. A future minimal
-  paper-console must read sanitized fresh snapshots, show `unknown` rather than
-  inferred empty KIS state, and write only local safety state until separate
-  KIS paper submit authority exists. Planned controls are pause-new-entries,
-  cancellation request, and a later pause of discretionary reductions; no
-  control may block a verified hard-risk exit or reconciliation requirement.
+- The Docker-local paper console is a monitor only. It renders the same
+  sanitized snapshot through HTML and `/state`, projects only
+  `source: local_paper` fills, and keeps KIS facts `unknown` until a fresh
+  read-only snapshot exists. Its two controls write only local emergency state;
+  neither can call a broker or suppress a verified hard-risk exit. The default
+  Docker `engine` command is a daily report and deliberately produces no
+  local-paper events, so a fresh console correctly begins empty.
 
 ## Current Objective
 
-- Keep KIS **submission** and live behavior failed closed. The active bounded
-  objective may use `KIS_PAPER_*` only through an explicitly invoked,
-  read-only market-data boundary for `QQQ`/`SPY` on `NAS`. It has no submit,
-  cancel, account, position, buying-power, open-order, capital, or live
-  authority.
-- The client and direct transport now enforce the active scope below CLI
-  scripts: only `QQQ`/`SPY` on `NAS`, fixed raw-`1m`/daily request shapes, and
-  no fourth daily or minute page. An out-of-scope request fails before
-  `opener.open`.
-- Local emergency state now uses atomic temp-file replacement and an exclusive
-  sidecar lock for read-modify-write transitions within one host or one Docker
-  runtime. Unreadable, malformed, or timezone-less state fails closed and
-  blocks new local-paper orders. This changes no KIS, credential, account,
-  broker, or order authority.
-- The approved historical capability probe completed its one allowed attempt
-  as `rejected` (`daily_response_rejected`), with one token, two daily-page
-  attempts, and zero raw-`1m` attempts. Its sanitized summary is
-  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`
-  (SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`).
-  It made no account/order/live call and retained no raw data. Its completed
-  `reserved -> network_started -> summary_written` lifecycle blocks all retry.
-- The next probe's engine-loop purpose is to record or reject the smallest
-  KIS-native input observation, not to fetch an unbounded archive. It must
-  measure one intraday first/continuation sequence, timestamp order,
-  overlap/deduping, completed-bar/freshness behavior, response counts, and
-  pagination facts. The first paper candidate requires only 90 completed `1m`
-  bars and deterministic `5m`/`10m` resamples; it abstains if the in-memory
-  cache is short. No `1h`/`3h`, learned model, or order path opens from this
-  observation. The prepared probe cannot promote a capability from field
-  self-consistency; a later Data objective must establish any label evidence.
-- Do not turn the dashboard plan into a KIS integration during this objective.
-  The eventual Docker paper-console is a bounded Execution goal after successful
-  read-only reconciliation; it must not make the web process a credential or
-  broker client.
+- The local paper console foundation is complete pending integration commit:
+  loopback-only HTML and JSON views share a strict local-paper projection,
+  degraded replay is explicitly unavailable rather than empty, and the web
+  process has no KIS client, credential, or broker dependency.
+- The next bounded Execution objective is one KIS virtual-paper read-only
+  reconciliation snapshot bridge. The 2026-07-20 authority permits isolated
+  `KIS_PAPER_*` account, position, buying-power, open-order, and market-data
+  reads. It does not permit `KIS_LIVE_*`, external order submission or
+  cancellation, or a nonzero paper capital envelope.
+- The bridge must keep credentials and raw broker payloads out of the web
+  process, Git, logs, rendered views, and external evidence. A complete typed,
+  sanitized snapshot may update the console; partial, stale, or rejected reads
+  remain explicitly unavailable rather than inferred empty.
+- Keep KIS submission and live behavior failed closed. The historical
+  `QQQ`/`SPY` raw-minute observation is terminal, independently scheduled
+  history and is not retried, widened, or used as console state.
+- Local emergency state continues to use atomic replacement and an exclusive
+  sidecar lock inside one runtime. Unreadable, malformed, or timezone-less
+  state fails closed and blocks new local-paper orders.
 
 ## Recovery
 
@@ -220,31 +206,23 @@
 
 ## Ready Queue
 
-1. Complete: hand the terminal sanitized historical `rejected` outcome to Data.
-   Do not retry or widen it; it establishes no raw-`1m` or model-input fact.
-2. During the fixed verified 2026-07-20 Nasdaq session window, independently
-   check the official calendar, pass `--confirm-no-exception`, and make at most
-   one fresh paper-token attempt for the bounded raw-`1m` observation. On token
-   failure, stop all KIS calls for that bounded objective; on success, make one
-   first page and at most one documented continuation without retaining raw rows.
-3. Do not schedule account, balance, position, orderable-funds, open-order,
-   submit, or cancel work under current authority.
-4. Keep pure risk integration and append-only execution events as later bounded
-   steps after separate account, capital, and submit authority exist.
-5. In a later, separately bounded Docker UI objective, project fresh sanitized
-   account/position/order facts and local safety controls into the existing
-   localhost-bound web service. Do not add direct broker calls to the web
-   process.
+1. Build and test one one-shot KIS virtual-paper read-only reconciliation bridge
+   that reuses the typed allowlisted client and writes only a sanitized runtime
+   snapshot for the local console.
+2. Make one bounded reconciliation attempt with the local paper credentials.
+   Do not retry automatically: a rejected, incomplete, or stale result is an
+   explicit unavailable state and durable sanitized evidence.
+3. After a complete fresh result, propose a paper capital envelope from the
+   reconciled buying power. Do not submit or cancel an external order before a
+   specific operator-approved envelope exists.
+4. Keep pure risk integration, append-only execution events, and a future paper
+   canary as later separately bounded steps.
 
 ## Operator Help
 
-- Configure the existing `.env` without sharing values: keep
-  `THERICHER_MODE=off`, then place nonempty `KIS_PAPER_APP_KEY` and
-  `KIS_PAPER_APP_SECRET` before any Tiingo, account, or live key. The optional
-  `THERICHER_*MODEL_ARTIFACT_ROOT` settings may remain before them. Once that
-  secret-safe prefix is valid, Execution can make the still-unreserved one-shot
-  historical market-data call. The paper capital envelope and any account
-  reconciliation remain later decisions.
+- None for the read-only bridge. The operator has authorized the required
+  virtual-paper development access. A specific paper capital envelope remains a
+  later decision only after fresh reconciliation evidence exists.
 
 ## Must Not
 

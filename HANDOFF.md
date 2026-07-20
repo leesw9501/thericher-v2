@@ -79,6 +79,15 @@ otherwise perfect research dataset. KIS paper still needs its minimal execution
 boundaries, a fresh reconciliation path, and a separately approved capital
 envelope before any submission begins.
 
+On 2026-07-20, the operator additionally authorized KIS virtual-paper
+read-only development calls. The durable decision records the exact statement
+and applied scope: `KIS_PAPER_*` may support isolated account, position,
+buying-power, open-order, and market-data reads, while `KIS_LIVE_*`, all paper
+order submission/cancellation, and any nonzero paper capital envelope remain
+unavailable. The completed local-console objective intentionally did not invoke
+that authority; its next read-only reconciliation bridge may do so without a
+new routine approval.
+
 The immediate product path is KIS-native paper readiness. Active model inputs
 must be reconstructible from KIS-compatible, completed market bars at decision
 time. The first candidate is deliberately small: 90 completed `1m` bars plus
@@ -658,6 +667,16 @@ retry while an outcome is unknown until authoritative resolution and clean
 reconciliation. Fake fills use `source: in_memory_broker`; broker-free simulator
 fills remain `source: local_paper`.
 
+The Docker-local paper console is now available at
+`http://127.0.0.1:8787`. It renders a compact HTML view and a sanitized `/state`
+view from the same strict `source: local_paper` projection; corrupt local replay
+is explicitly unavailable, never an inferred zero. Its web process has no KIS
+client, broker call, or KIS/Tiingo credential environment. The default Compose
+engine command only prints a report, so a new Docker-local console correctly
+starts with no local activity until an explicitly invoked local simulation
+writes its separate named runtime. Its two controls change only local emergency
+state and cannot submit or cancel a broker order.
+
 The pure pre-submit risk decision consumes a fresh matching
 `PositionSnapshot` and proves sell safety by quantity rather than notional.
 Verified long reductions may bypass entry-only emergency, loss, and order-count
@@ -706,13 +725,13 @@ reads; it now emits it for every fixed read-only GET and has fake-transport
 coverage. This removes one documented deviation; it does not explain, resolve,
 or establish a cause for the HTTP `500`, and no post-change probe was run.
 
-The remaining first discriminator is non-secret operator confirmation that the
-separate virtual app, virtual securities account, and its 8-2 account/product
-pair are active and matched. If that is confirmed, a separately authorized
-one-time read-only probe can distinguish the corrected request from an
-unavailable or unsupported virtual service. Keep only fixed endpoint/TR ID/HTTP
-status metadata on any future failure, never response text or response-derived
-codes.
+The operator's 2026-07-20 authorization now permits a new bounded
+`KIS_PAPER_*` read-only reconciliation attempt without another routine approval.
+It must use only typed, allowlisted account, position, buying-power, open-order,
+or market-data reads and retain only sanitized evidence. Any partial, stale, or
+rejected result remains unavailable rather than empty; no claim about service
+cause follows from a single response. `KIS_LIVE_*`, paper order submission or
+cancellation, and a nonzero paper capital envelope remain unavailable.
 
 KIS paper is an early execution milestone, not a reward for model profitability.
 After the approved read-only discovery reconciles buying power, Codex proposes a
@@ -766,8 +785,26 @@ unnecessary row-level data.
 
 ## Next Objective
 
-**Latest state, superseding the older target statement below:** the first
-source-separated research-contract preflight and its CPU-only batch are complete.
+The next single objective is a bounded KIS virtual-paper read-only
+reconciliation snapshot bridge for the local console. It must keep the web
+process credential-free and broker-free; an isolated one-shot execution-side
+reader may use the already authorized `KIS_PAPER_*` values to obtain fresh,
+typed account/position/buying-power/open-order facts. Persist only the mapped,
+sanitized snapshot needed by the console and an external sanitized result; do
+not retain raw payloads, credentials, or account identifiers. A complete fresh
+snapshot may replace the console's KIS `unknown` state. A rejected, partial, or
+stale run must remain visibly unavailable, not empty. Keep
+`THERICHER_MODE=off`; do not use `KIS_LIVE_*` or submit, modify, or cancel an
+external order. After reconciliation, the next possible decision is a specific
+paper-capital envelope, not an automatic order canary.
+
+### Superseded historical context
+
+The following preserved history is superseded by the current stateboards and
+`NEXT_CODEX_GOAL.md`; do not treat its old target statements as active work.
+
+The completed source-separated research-contract preflight and its CPU-only batch
+are complete.
 Its immutable external contract is
 `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
 SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.

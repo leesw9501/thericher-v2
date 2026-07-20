@@ -15,6 +15,8 @@ services:
       THERICHER_RUNTIME_STATUS: /app/runtime/operator_status.json
       PYTHONPATH: /app/src
     volumes:
+      # An explicitly invoked engine/local-simulation job may write this named runtime.
+      # The default daily-report command does not produce local-paper events.
       - thericher-v2-runtime:/app/runtime
       - ./reports:/app/reports
       - ./NEXT_CODEX_GOAL.md:/app/NEXT_CODEX_GOAL.md:ro
@@ -40,6 +42,7 @@ services:
     ports:
       - "127.0.0.1:8787:8787"
     volumes:
+      # This monitor reads Docker-local event state and writes only local emergency state.
       - thericher-v2-runtime:/app/runtime
 
   research:
