@@ -8,10 +8,14 @@ from types import ModuleType
 
 import pytest
 
-from thericher_v2.execution.kis_market_data import KisPaperMinuteCallCounts
+from thericher_v2.execution.kis_market_data import (
+    KisPaperMarketDataError,
+    KisPaperMinuteCallCounts,
+)
 from thericher_v2.execution.kis_minute_qualification import (
     KisPaperMinuteQualificationEvidence,
     KisPaperMinuteQualificationFacts,
+    KisPaperMinuteQualificationFailure,
 )
 
 
@@ -238,6 +242,50 @@ def test_runner_reserves_before_loading_credentials(
 
     assert json.loads(capsys.readouterr().out)["status"] == "observed"
     assert reservation_phase_at_config == "reserved"
+
+
+def test_config_load_failure_after_reservation_is_terminal(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    probe = _load_probe_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "control"
+    summary_path = tmp_path / "artifact" / "summary.json"
+    reservation_phase_at_config: str | None = None
+    written_results: list[object] = []
+
+    monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
+    monkeypatch.setattr(probe, "KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT", control_root)
+
+    def fail_config_after_reservation(_: Path) -> object:
+        nonlocal reservation_phase_at_config
+        marker = next((control_root / "reservations").glob("*.json"))
+        reservation_phase_at_config = json.loads(marker.read_text(encoding="utf-8"))["phase"]
+        raise KisPaperMarketDataError("simulated_config_failure")
+
+    def capture_summary(**kwargs: object) -> tuple[Path, str]:
+        written_results.append(kwargs["result"])
+        return summary_path, "sha256:unit"
+
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", fail_config_after_reservation)
+    monkeypatch.setattr(probe, "write_kis_paper_minute_qualification_summary", capture_summary)
+
+    probe.main(
+        ["--execute", "--confirm-no-exception"],
+        clock=lambda: datetime(2026, 7, 20, 17, 30, 20, tzinfo=UTC),
+        dotenv_path=tmp_path / "must-not-be-read.env",
+    )
+
+    assert json.loads(capsys.readouterr().out)["status"] == "rejected"
+    assert reservation_phase_at_config == "reserved"
+    assert len(written_results) == 1
+    assert isinstance(written_results[0], KisPaperMinuteQualificationFailure)
+    assert written_results[0].call_counts == KisPaperMinuteCallCounts(0, 0)
+    marker = next((control_root / "reservations").glob("*.json"))
+    assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "summary_written"
 
 
 def test_successful_runner_lifecycle_marks_summary_written_and_blocks_a_second_run(
