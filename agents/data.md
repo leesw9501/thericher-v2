@@ -241,9 +241,9 @@ US sell TR-ID comment conflicts with its generic prefix implementation; header
 selection remains unsupported and outside the body mapping. This creates no KIS
 call, provider, market-data record, capability, or research-data claim.
 
-The next pure Execution bridge needs no Data capability or source expansion. It
-must not turn existing order fields into a submission path, account-data claim,
-or market-data capability.
+The pure Execution bridge completed without a Data capability or source
+expansion. Its later official route/header audit is terminal `unsupported`, so
+it creates no submission path, account-data claim, or market-data capability.
 
 The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is

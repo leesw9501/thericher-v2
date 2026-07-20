@@ -2,56 +2,64 @@
 
 ## Objective
 
-Resolve or explicitly reject the virtual-paper KIS US limit-order route/header
-contract using official public source material, before any KIS order transport
-or adapter work is considered.
+Prepare one fresh, bounded KIS virtual-paper raw-`1m` market-data observation
+for `QQQ` / `NAS` during a future regular Nasdaq session, without reusing the
+terminal 2026-07-20 v4 observation or turning a market-data capability into an
+order capability.
 
-The existing pure body mappers are intentionally non-transmittable. Official
-source evidence currently conflicts on the virtual US sell TR-ID, so no route,
-header, account, or endpoint value may be guessed from a generic prefix rule.
+The operator has already authorized isolated `KIS_PAPER_*` market-data reads.
+This goal prepares the smallest executable observation boundary first; a later
+single attempt may run only after its own exact session/date guard passes.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, and
-   `agents/execution.md`.
-3. Read `src/thericher_v2/execution/kis_paper_order_fields.py`,
-   `src/thericher_v2/execution/broker.py`, and their focused tests.
-4. Ask Claude CLI for a short falsification-first drift check before recording
-   a source conclusion or adding any execution-facing contract.
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `ARCHITECTURE.md`,
+   `RUNBOOK.md`, `agents/data.md`, and `agents/execution.md`.
+3. Read the existing raw-minute client, terminal v4 runner, capability record,
+   and focused tests before editing.
+4. Ask Claude CLI for a short falsification-first drift check before adding a
+   new observation worker or changing recovery/side-effect behavior.
 
 ## Work Packages
 
+### Data Agent
+
+- Reuse existing typed client and sanitizer boundaries where possible; do not
+  duplicate or reopen the terminal v4 reservation, artifact, or date policy.
+- Add the smallest separate preparation path for one future `QQQ` / `NAS`
+  raw-`1m` observation. It must default to dry-run, require an explicit execute
+  confirmation, and reject every date/window except a caller-declared regular
+  Nasdaq session verified immediately before execution.
+- Bound a future execution to one paper token, one first page, and at most one
+  continuation page. Retain only sanitized counts, timestamp bounds, field
+  presence, and continuation facts outside Git; never raw prices, volumes,
+  cursors, credentials, account identifiers, or responses.
+- Keep the capability `observed` or `rejected`; do not qualify timestamps,
+  retention, completed bars, storage rights, `5m`/`10m`, a model input, or a
+  paper strategy under this goal.
+
 ### Execution Agent
 
-- Inspect only official KIS public documentation and the pinned official source
-  revision already cited in the repository. Build a compact evidence comparison
-  for virtual-paper US buy and sell limit routes, TR IDs, required headers, and
-  the source location for each fact.
-- Resolve the route/header contract only when the official evidence is direct,
-  mutually consistent, and distinguishes virtual paper from live. Otherwise
-  record the conclusion as `unsupported` with the exact conflict.
-- If and only if the evidence is unambiguous, add the smallest pure,
-  non-transmittable route/header contract needed for a later adapter. Reuse
-  existing request types; do not add a transport, account loader, credential
-  path, request sender, or enablement flag.
+- Review the preparation boundary for complete separation from orders,
+  balances, positions, capital, route/header contracts, and the disabled
+  adapter. Do not add an order client or transport.
 
 ### Validation
 
-- Independently check the source conclusion and any proposed pure contract for
-  paper/live separation, unsupported inference, and no accidental external
-  order path.
+- Independently check one-shot bounds, redaction, recovery, and no accidental
+  broker-order side effect.
 
 ## Hard Boundaries
 
-- No `.env`, credential, account-state, KIS API, order, cancellation, market
-  data, balance, position, or live call.
-- No paper capital envelope, `THERICHER_MODE` change, Docker profile, public
-  service, generated artifact, or model/data work.
-- Do not change the disabled broker adapter, the existing body mappers, the
-  terminal KIS read-only evidence, or local-paper behavior.
-- Do not treat a source conflict as permission to derive a virtual TR ID from a
-  real TR ID. No order transport may be created under this goal.
+- Do not submit, cancel, modify, or simulate a KIS order; do not read
+  `KIS_LIVE_*`, change `THERICHER_MODE`, set capital, or enable an adapter.
+- Do not call account, balance, position, buying-power, open-order, or live
+  endpoints. Do not read `.env` during dry-run or tests.
+- Do not run a network observation until its explicit execute/date/session
+  guard is implemented, tested, and passes. No background scheduler or daemon.
+- Do not store market data in Git or raw data in an artifact. Do not create a
+  model, GPU job, dashboard feature, or data provider from the observation.
 
 ## Verification
 
@@ -63,4 +71,4 @@ docker compose --env-file .env.example config --quiet
 
 ## Suggested Commit Message
 
-`Resolve KIS paper order route evidence`
+`Prepare bounded KIS raw minute observation`

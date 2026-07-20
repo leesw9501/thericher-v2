@@ -2991,3 +2991,28 @@ market intent look executable. The next execution question is not another
 convenience wrapper: official public evidence must first resolve or reject the
 known virtual-paper US sell route/TR-ID inconsistency before any header or
 transport contract is considered.
+
+## 2026-07-21 - Leave KIS virtual-paper US route/header contract unsupported
+
+Decision: record the virtual-paper US limit-order route/header/TR-ID tuple as
+`unsupported` and add no transport-facing contract. The pinned official KIS
+example at revision `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` and the current
+official `examples_user` order implementation both state live US sell
+`TTTT1006U` and comment virtual sell `VTTT1001U`, while their generic demo
+conversion transforms the real ID to `VTTT1006U`. The common official wrapper
+uses a configuration-derived base URL and generic headers; it does not make the
+virtual route/header/TR-ID combination explicit. The public portal landing page
+did not supply a normative endpoint contract.
+
+Claude's falsification-first verdict and independent Validation review are both
+`unsupported`. The direct kill test is an official virtual-US order
+specification or official testbed material that gives an unambiguous route,
+mandatory headers, and sell TR-ID while reconciling the conflict. Until then,
+the disabled adapter and body-only mappers remain unchanged. No credential,
+account state, KIS call, order, cancellation, artifact, capital, or live
+behavior occurred in this audit.
+
+Reason: a plausible prefix rule could send a future paper order to the wrong
+broker contract. The cost of preserving a disabled adapter is negligible next
+to that blast radius. This conclusion does not block independent KIS market-data
+capability work, which remains read-only and non-ordering.

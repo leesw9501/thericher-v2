@@ -247,9 +247,16 @@
   the existing broker request contract reject corrupted input. It has no quote,
   persistence, risk, KIS-body mapper, adapter, credential, file, network, or
   artifact path; a target-position market intent remains non-projectable.
-- Next: resolve or reject the official-source virtual-paper US order
-  route/header contract before adding any transport or header code. The known
-  sell TR-ID inconsistency must not be guessed around.
+- Complete: the official public-source audit leaves the virtual-paper US
+  route/header contract `unsupported`. Both the pinned and current official
+  order examples name `VTTT1001U` in their US sell demo comment, but their
+  generic demo conversion emits `VTTT1006U` from real `TTTT1006U`. The common
+  wrapper supplies only generic headers over a configuration-derived base URL.
+  No source resolves that tuple, so no header, route, transport, or adapter code
+  was added. Reopen only for a direct official specification or testbed that
+  consistently names all three facts.
+- Next: support Data's separately scoped future KIS raw-`1m` observation
+  preparation without treating its result as an execution or order capability.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -318,21 +325,25 @@
    generic bridge to the existing broker request contract. It preserves every
    field, rejects a missing price and contract-invalid corruption, does no I/O,
    and leaves the disabled adapter unavailable.
-3. Next ready offline task: use official public KIS sources to resolve or
-   reject the virtual-paper US route/header contract, including the conflicting
-   sell TR-ID evidence. Do not guess a resolver, read credentials, or implement
-   a transport. A source conflict remains `unsupported`.
-4. Complete: the no-network fake-transport contract pins the official virtual
+3. Complete: the official public-source audit of the virtual-paper US
+   route/header tuple is `unsupported`. The duplicate official order examples
+   retain the `VTTT1001U` sell comment versus `VTTT1006U` generic conversion
+   conflict, and the shared wrapper does not provide an explicit virtual base
+   route. Do not derive a resolver from it.
+4. Support Data's next isolated KIS raw-`1m` observation preparation only at
+   its typed client boundary. It cannot supply an order route, header, capital,
+   or submission claim.
+5. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-5. At a later, separately scoped market-session capability observation, retain
+6. At a later, separately scoped market-session capability observation, retain
    only sanitized market-data facts. It is distinct from the terminal balance
    bridge outcome and must not retry or reinterpret that account result.
-6. Wait for a separately scoped, usable KIS snapshot before requesting a
+7. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.
-7. Keep pure risk integration, append-only execution events, and a future paper
+8. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help

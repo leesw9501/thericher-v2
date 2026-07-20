@@ -145,9 +145,19 @@ separately from its completed feature-window end and expires at the next
   price and every broker-contract field from `OrderIntent` into the existing
   `BrokerOrderRequest`, while rejecting target-position market intents. It has
   no price policy, quote lookup, persistence, risk approval, KIS-body mapper,
-  adapter, credential, file, network, or artifact path. The next execution
-  question is source evidence for the unresolved virtual-paper route/header
-  contract, not a speculative transport implementation.
+  adapter, credential, file, network, or artifact path. The following source
+  audit resolved the virtual-paper route/header question as `unsupported`, not
+  as permission for a speculative transport implementation.
+- The public-source route/header audit is now terminal `unsupported`. The
+  pinned and current official KIS US-order examples both name
+  `VTTT1001U` in the virtual sell comment while their generic demo conversion
+  transforms live `TTTT1006U` into `VTTT1006U`. The shared official wrapper
+  exposes only a configuration-derived base URL plus generic headers, so it
+  cannot resolve the virtual-paper route/header/TR-ID tuple. No transport,
+  header contract, KIS call, credential read, artifact, or adapter change was
+  made. Reopen this branch only with a direct official virtual-US order
+  specification or testbed that explicitly and consistently gives the route,
+  mandatory headers, and sell TR-ID.
 - The historical `13:30` through `15:40` New York clock guard belonged only to
   the terminal 2026-07-20 raw-minute observation. It is not a KIS paper/live
   session policy, a preferred trading window, or a reusable schedule.
