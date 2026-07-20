@@ -43,6 +43,7 @@ NOW = datetime(2026, 7, 18, 12, 0, tzinfo=UTC)
 class FakeKisTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
     reject_balance: bool = False
+    paginated_balance: bool = False
     reject_open_orders: bool = False
     partial_open_orders: bool = False
     open_order_exchange: str = "NASD"
@@ -101,6 +102,18 @@ class FakeKisTransport:
             if self.reject_balance:
                 return KisHttpResponse.from_payload({"rt_cd": "1"})
             exchange = request.query["OVRS_EXCG_CD"]
+            if self.paginated_balance and exchange == "NASD":
+                if request.headers["tr_cont"] == "":
+                    return KisHttpResponse.from_payload(
+                        {
+                            "rt_cd": "0",
+                            "output1": [_position_payload()],
+                            "ctx_area_fk200": "balance-next-fk",
+                            "ctx_area_nk200": "balance-next-nk",
+                        },
+                        headers={"tr_cont": "M"},
+                    )
+                return KisHttpResponse.from_payload({"rt_cd": "0", "output1": []})
             rows = [_position_payload()] if exchange == "NASD" else []
             return KisHttpResponse.from_payload({"rt_cd": "0", "output1": rows})
         if tr_id == KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT.tr_id:
@@ -295,6 +308,71 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
         ),
     )
     assert snapshot.open_orders.orders[0].order_reference.startswith("open-")
+
+
+def test_virtual_balance_request_contract_covers_initial_and_continuation_pages(
+    monkeypatch,
+) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("injected transport must make this test network-free")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fail_network)
+    transport = FakeKisTransport(paginated_balance=True)
+
+    KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    balance_url = (
+        "https://openapivts.koreainvestment.com:29443"
+        "/uapi/overseas-stock/v1/trading/inquire-balance"
+    )
+    balance_requests = [
+        request for request in transport.requests if request.url == balance_url
+    ]
+
+    assert [request.method for request in balance_requests] == ["GET"] * 4
+    assert [request.headers["tr_id"] for request in balance_requests] == [
+        "VTTS3012R"
+    ] * 4
+    assert [request.headers["custtype"] for request in balance_requests] == ["P"] * 4
+    assert [request.query["OVRS_EXCG_CD"] for request in balance_requests] == [
+        "NASD",
+        "NASD",
+        "NYSE",
+        "AMEX",
+    ]
+    assert [request.headers["tr_cont"] for request in balance_requests] == [
+        "",
+        "N",
+        "",
+        "",
+    ]
+    assert balance_requests[0].query == {
+        "CANO": "12345678",
+        "ACNT_PRDT_CD": "01",
+        "OVRS_EXCG_CD": "NASD",
+        "TR_CRCY_CD": "USD",
+        "CTX_AREA_FK200": "",
+        "CTX_AREA_NK200": "",
+    }
+    assert balance_requests[1].query == {
+        "CANO": "12345678",
+        "ACNT_PRDT_CD": "01",
+        "OVRS_EXCG_CD": "NASD",
+        "TR_CRCY_CD": "USD",
+        "CTX_AREA_FK200": "balance-next-fk",
+        "CTX_AREA_NK200": "balance-next-nk",
+    }
+    for request, exchange in zip(
+        balance_requests[2:], ("NYSE", "AMEX"), strict=True
+    ):
+        assert request.query == {
+            "CANO": "12345678",
+            "ACNT_PRDT_CD": "01",
+            "OVRS_EXCG_CD": exchange,
+            "TR_CRCY_CD": "USD",
+            "CTX_AREA_FK200": "",
+            "CTX_AREA_NK200": "",
+        }
 
 
 def test_no_order_tr_ids_or_actions_are_reachable() -> None:

@@ -25,6 +25,15 @@
   credential-free. It may emit only `abstain` or
   `awaiting_operator_approval`; it uses no KIS, broker, environment, or order
   object and writes neither an approval nor an artifact.
+- The newly authorized schema-v2 bridge run at `2026-07-20T08:13:13.186826Z`
+  completed `unavailable` with sanitized reason `balance_rejected`. Its
+  fact-free evidence is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T081313186826Z-unavailable.json`
+  (SHA-256 `6568de911b4a2cfd9fe087e6a1892ddca05a04461fe102cc3cc130141b9c65b7`).
+  It retains no account value, identifier, symbol, credential, or raw response.
+  The bridge atomically replaced prior runtime state with `unavailable`; the
+  web remains `off` and unavailable. This is terminal for the bounded read,
+  not proof of a service, account, funding, or request-shape cause.
 - A bounded 2026-07-19 KIS paper read-only probe now proved that token issuance
   and a `NASD` balance/position response work. Its sanitized account summary is
   `D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
@@ -187,11 +196,11 @@
 
 ## Current Objective
 
-- The local paper console and its KIS snapshot bridge are complete pending
-  integration commit. The loopback-only HTML and JSON views share a strict
+- The local paper console and its KIS snapshot bridge are committed in
+  `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
   the web process free of KIS clients, credentials, and broker calls.
-- The non-submitting capital proposal is complete pending integration commit.
+- The non-submitting capital proposal is committed in `dc1b940`.
   It accepts only a fresh empty-account snapshot and an operator ceiling in the
   same currency, then uses the lesser of that ceiling and source-labelled
   orderable foreign funds. Reference orderability is a compatibility check only,
@@ -208,6 +217,11 @@
 - Keep KIS submission and live behavior failed closed. The historical
   `QQQ`/`SPY` raw-minute observation is terminal, independently scheduled
   history and is not retried, widened, or used as console state.
+- The no-network virtual-balance request contract is now pinned by injected
+  transport: the documented endpoint, `VTTS3012R`, `custtype`, initial empty
+  and continuation `tr_cont`, USD query keys, and the `NASD`/`NYSE`/`AMEX`
+  sequence. It confirms request-shape conformance only; it does not explain or
+  reverse the fact-free `balance_rejected` bridge result.
 - Local emergency state continues to use atomic replacement and an exclusive
   sidecar lock inside one runtime. Unreadable, malformed, or timezone-less
   state fails closed and blocks new local-paper orders.
@@ -233,31 +247,32 @@
   call with the same complete bars and immutable fee/slippage settings. The
   recorded fill is authoritative; do not manufacture a replacement fill or a
   derived snapshot during recovery.
-- Preserve both failure artifacts. HTTP `500` alone does not establish a TR,
+- Preserve all failure artifacts. A sanitized rejection alone does not establish a TR,
   account-product, funding, or sandbox cause. The documented `tr_cont` header
   deviation is corrected but unproven as a cause. Any future probe requires a
   separately authorized verification path, never an automatic retry.
 
 ## Ready Queue
 
-1. Run one deliberately scoped KIS virtual-paper read-only refresh under the
-   current authority, retaining only status, native currency, empty/nonempty
-   state, and expiry. Do not retry automatically.
-2. Obtain a native-currency paper-cap ceiling from the operator. Recommendation:
-   USD 500 only when that fresh snapshot is USD and empty; otherwise request an
-   explicit matching-currency cap with no FX conversion. Then print the
-   transient proposal and ask for the separate envelope approval. Do not submit
-   or cancel an external order before that distinct decision.
-3. Keep pure risk integration, append-only execution events, and a future paper
+1. Complete: the no-network fake-transport contract pins the official virtual
+   balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
+   currency, initial/continuation `tr_cont`, `custtype`, and the
+   `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
+2. At a later, separately scoped market-session capability observation, retain
+   only sanitized market-data facts. It is distinct from the terminal balance
+   bridge outcome and must not retry or reinterpret that account result.
+3. Wait for a separately scoped, usable KIS snapshot before requesting a
+   native-currency paper-cap ceiling. Until then the capital proposal remains
+   abstained.
+4. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help
 
-- Choose a native-currency ceiling for the first paper envelope. Recommendation:
-  USD 500 if the next fresh snapshot is USD; otherwise state an amount in its
-  reported currency. The eventual candidate still requires a separate
-  approve/change decision. Virtual-paper read-only development access is already
-  authorized.
+- None at present. A native-currency paper-cap ceiling becomes an operator
+  decision only after a fresh, complete KIS virtual-paper snapshot establishes
+  a usable native currency and empty-account state. Virtual-paper read-only
+  development access is already authorized.
 
 ## Must Not
 

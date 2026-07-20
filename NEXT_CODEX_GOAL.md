@@ -2,58 +2,69 @@
 
 ## Objective
 
-Use one newly authorized, deliberately bounded KIS virtual-paper read-only
-snapshot to establish the native currency and whether the account is empty,
-then obtain one operator decision for the first paper-capital ceiling. Turn the
-fresh snapshot plus that decision into a transient, non-submitting candidate
-envelope. This advances paper-trading readiness without starting an order
-canary.
+Capture one bounded KIS virtual-paper **market-data capability observation**
+for the already declared `QQQ` / `NAS` raw-`1m` path during a verified U.S.
+regular market session. This advances the data-collection and paper-trading
+readiness loops by testing whether the future 90-bar local baseline can ever
+be supplied from KIS-compatible inputs. It is not an account-bridge retry.
 
-## First Bounded Read
+## Required Reads
 
-- Run the isolated `kis-readonly` bridge once. It may use the approved
-  `KIS_PAPER_*` read-only account, position, reference-orderability, and
-  open-order calls; it must not retry automatically.
-- Record only the sanitized status, native currency, position/open-order
-  presence, and expiry outcome. Do not expose or persist account values,
-  identifiers, credentials, or raw broker payloads.
-- If the read is unavailable, report that result and keep the capital proposal
-  abstained. Do not infer an empty account or retry it in this objective.
+1. Run `.\scripts\start_next_codex_task.ps1`.
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
+   `ARCHITECTURE.md`, `agents/data.md`, and `agents/execution.md`.
+3. Read the current one-shot KIS minute capability and qualification code and
+   its focused tests before changing anything.
+4. Ask Claude for one short falsification-first drift check before the external
+   observation. Do not share credentials, account identifiers, raw response
+   bodies, or row-level price data.
 
-## Required Operator Decision After A Usable Read
+## Work Packages
 
-- If the fresh snapshot's native currency is USD, approve or change Codex's
-  recommended initial ceiling of `USD 500`.
-- If it is another currency, provide a maximum directly in that currency.
-- This is only a ceiling decision. It does not approve an external order,
-  cancellation, `KIS_LIVE_*`, a mode change, or an order canary.
+### Execution Agent: One External Observation
 
-## Boundaries
+- Confirm the U.S. regular session is currently open for the declared NASDAQ
+  window before OAuth or a market-data request. If it is not, make no KIS call;
+  record no failure as a broker/data fact and refresh this goal for the next
+  verified session.
+- Use only the operator-authorized `KIS_PAPER_*` values in the isolated typed
+  KIS capability path. Do not read `KIS_LIVE_*`.
+- Make at most the predeclared first-page plus one continuation observation for
+  `QQQ` / `NAS` raw `1m`; no symbol expansion, pagination loop, retry, or
+  historical backfill.
+- Persist only sanitized typed evidence needed to establish request outcome,
+  page counts, timestamp bounds, field-presence booleans, continuation shape,
+  and no-overlap adjacency. Do not retain or print raw bars, prices, volumes,
+  tokens, account identifiers, or broker payloads.
 
-- Keep `THERICHER_MODE=off`. Use only the approved isolated `KIS_PAPER_*`
-  read-only bridge; do not read `KIS_LIVE_*` or call a live endpoint.
-- No submit, modify, cancel, broker adapter, scheduler, daemon, public service,
-  or approval persistence.
-- Use snapshot schema v2 only. Its `orderable_foreign_funds` value is the exact
-  source `ord_psbl_frcr_amt`, not settled cash, account equity, margin capacity,
-  or general buying power.
-- The separate reference-orderability value is a compatibility check only and
-  must never size the candidate or be converted to another currency.
-- The proposal must abstain unless the snapshot is fresh (`now < expires_at`),
-  native-currency matched, positive, and empty of positions and open orders.
-- Do not retain account values, identifiers, credentials, raw broker bodies, or
-  derived candidate amounts in Git or external evidence.
+### Data Agent: Interpretation Only
 
-## Work After The Decision
+- Review the sanitized evidence for timestamp-label ambiguity, page adjacency,
+  completed-bar semantics, freshness, and persistent-storage rights.
+- Classify it only as `observed`, `rejected`, or `unavailable`. Do not create a
+  `Bar`, cache, dataset, model input, campaign input, or qualified capability.
+- State exactly which independently falsifiable fact would be needed before
+  `1m`, `5m`, `10m`, `1h`, or `3h` can enter the active paper graph.
 
-1. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and
-   `agents/execution.md`.
-2. Ask Claude for a short falsification-first check of the exact ceiling and
-   freshness boundary without sharing raw account data.
-3. Run the no-network `paper-capital-proposal` profile with the approved
-   same-currency ceiling and present its transient candidate or abstention.
-4. Ask the operator to approve or change that exact candidate. Do not start a
-   canary until the approval is explicit.
+## Hard Boundaries
+
+- Keep `THERICHER_MODE=off`.
+- No KIS account, balance, position, orderability, open-order, submit, modify,
+  cancel, or live endpoint call. This goal is intentionally different from the
+  terminal `balance_rejected` account bridge result.
+- No paper capital proposal, capital envelope, order canary, local/live broker
+  order, public service, GPU run, model training, or data promotion.
+- Do not download or persist raw market data in the Git workspace. Any external
+  evidence belongs under `D:\thericher-v2\model-artifacts`, not Git.
+- A rejected or unavailable result ends this objective. Do not retry it.
+
+## Completion Evidence
+
+- One of `observed`, `rejected`, `unavailable`, or no-call/session-closed,
+  with an external sanitized evidence path and SHA-256 when a call occurred.
+- Focused tests showing no broker/order, live credential, raw-payload, or
+  model-promotion path was added.
+- Updated Data and Execution stateboards, `HANDOFF.md`, and this next goal.
 
 ## Verification
 
@@ -63,5 +74,6 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Report focused proposal tests and any one bounded KIS read without raw account
-data or secrets.
+## Suggested Commit Message
+
+`Observe bounded KIS minute capability`

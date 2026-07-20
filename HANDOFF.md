@@ -140,6 +140,14 @@ separately from its completed feature-window end and expires at the next
   no-network `paper-capital-proposal` profile reads only that snapshot and can
   return either an abstention or an operator-review candidate. It never writes
   an approval, artifact, intent, or broker request.
+- One newly authorized schema-v2 `kis-readonly` run at
+  `2026-07-20T08:13:13.186826Z` completed fact-free as `unavailable` with the
+  sanitized reason `balance_rejected`. Its minimal external evidence is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T081313186826Z-unavailable.json`
+  (SHA-256 `6568de911b4a2cfd9fe087e6a1892ddca05a04461fe102cc3cc130141b9c65b7`).
+  It contains no account, amount, symbol, credential, or raw-response field and
+  establishes neither a native currency nor an empty account. The result is a
+  terminal outcome for that bounded read, not a retry trigger.
 - The operator-approved QQQ/SPY historical capability runner completed its
   single allowed attempt as `rejected` with `daily_response_rejected`. Its
   sanitized summary is
@@ -804,16 +812,24 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The no-order capital proposal contract is ready. The next bounded work is one
-newly authorized KIS virtual-paper read-only refresh, used only to establish a
-sanitized status, native currency, and whether positions or open orders are
-present. It is not a retry loop. A usable empty snapshot then needs one operator
-input: a maximum in that native currency. The recommended starting policy is
-`min(source-labelled orderable foreign funds, USD 500)` only when the snapshot
-is USD, complete, and unexpired. It is not an automatic setting; the operator
-may approve it, choose another USD cap, or specify a cap in another native
-currency. The subsequent no-network proposal print still does not authorize an
-order canary, submit, cancel, `KIS_LIVE_*`, or a mode change.
+The recent schema-v2 KIS bridge outcome is fact-free `unavailable`, so it does
+not license a capital question or a retry. The two immediately safe tasks are
+now complete: the prospective-only Tiingo EOD lineage snapshot for SPY/QQQ/IWM
+is external at
+`D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-07-20-tiingo-standard-eod-prospective-r1`
+with six rows, three requests, and dataset SHA-256
+`8eccfffa4d6be4ee3c9c75e274ed954a84901406bc0a92876c04c2955a50bc0b`; and a
+no-network contract test now pins the KIS virtual balance request shape to the
+official sample. The Tiingo lineage stays non-model/non-paper input, and the
+contract test does not diagnose the KIS rejection.
+
+The next company objective is a distinct, single KIS market-data capability
+observation during a verified U.S. regular session. It must collect only the
+already planned sanitised `QQQ`/`NAS` raw-`1m` page/continuation/timestamp-bound
+facts, write no raw market bytes, and neither repeat the account bridge nor
+promote a data/model/paper capability. A future usable empty KIS account
+snapshot still needs a native-currency cap before the no-network capital
+proposal can form a candidate.
 
 ### Superseded historical context
 

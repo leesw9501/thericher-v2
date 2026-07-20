@@ -36,7 +36,19 @@ shape alone does not validate that an external evidence reference is genuine.
 Only a later Data-owned qualification objective may validate that evidence and
 add a registry entry. The active one-shot observations cannot do so.
 
-Ready, no running job. The approved Tiingo standard EOD acquisition produced a
+Ready, no running job. The newly approved prospective Tiingo Standard EOD
+snapshot is complete at
+`D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-07-20-tiingo-standard-eod-prospective-r1`.
+It has six raw daily rows across `SPY`/`QQQ`/`IWM`, requested `2026-07-10`
+through conservative source-as-of `2026-07-13`, and dataset/manifest hashes
+`sha256:8eccfffa4d6be4ee3c9c75e274ed954a84901406bc0a92876c04c2955a50bc0b` /
+`sha256:7984c1f57a9213bbfd638e2aa7ea9c761f5601f7a52cfd4d68245db29ea8150a`.
+It used exactly three requests with no retry, and its strict offline loader
+re-attested the result without token or network access. Its immutable manifest
+marks it prospective-lineage-only; every model, training, campaign, paper,
+ranking, order, and PIT eligibility flag remains false.
+
+The approved Tiingo standard EOD acquisition produced a
 loader-attested retrospective corporate-action snapshot, immutable raw-D1
 comparison snapshot, strict offline raw-D1 `CatalogedBars` loader, and one
 separate full-history evidence snapshot for the three fixed instruments. The
@@ -482,9 +494,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    for the existing raw-`1m` capability. Retain it as `observed` after either
    outcome; a later independently scoped Data objective may assess promotion.
    Do not write raw bytes before rights are confirmed.
-3. Capture one immutable prospective standard-Tiingo-EOD refresh for only
-   `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source boundary. Do not widen
-   symbols, provider scope, or data rights, and do not create a model contract.
+3. Complete: one immutable prospective standard-Tiingo-EOD refresh was
+   retained for only `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source
+   boundary. Do not widen symbols, provider scope, or data rights, and do not
+   create a model contract from its six-row lineage window.
 4. Do not acquire a third Tiingo raw-daily shard merely to increase common
    coverage; the existing r2 cohort remains bounded source evidence.
 5. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
@@ -887,11 +900,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 The Tiingo r2 cross-source cohort and r4 source-separated contract are complete,
 not a third shard or another download. r4 is closed with CPU-only evidence and
 an immutable CUDA bootstrap failure; its validation rows cannot be reused. The
-replacement inventory now confirms no fresh local training candidate. Next,
-capture only the operator-authorized `SPY`/`QQQ`/`IWM` standard-Tiingo-EOD
-increment after `2026-07-10` as prospective lineage. Keep the 483 shared
+replacement inventory now confirms no fresh local training candidate. The
+operator-authorized `SPY`/`QQQ`/`IWM` standard-Tiingo-EOD increment after
+`2026-07-10` is now retained as prospective lineage only. Keep the 483 shared
 sessions and 18 forward-only sessions in their current mask/lineage roles; do
-not widen them into a provider-price or model-input merge.
+not widen either the historic evidence or the six-row prospective snapshot into
+a provider-price or model-input merge.
 
 The broad Yahoo snapshot remains usable only as the pinned, static
 development-only ETF wrapper. Its feature/outcome module re-attests the gzip
