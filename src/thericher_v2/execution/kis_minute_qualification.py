@@ -260,7 +260,10 @@ def run_bounded_kis_paper_minute_qualification(
         raise RuntimeError("first-page request gate was not called")
     continuation_page: KisPaperMinutePage | None = None
     observed_at_end: datetime
-    if first_page.next_cursor is not None:
+    if (
+        first_page.next_cursor is not None
+        and _page_descends_one_exchange_minute(first_page)
+    ):
         before_continuation: datetime | None = None
 
         def require_continuation_window() -> None:
@@ -354,9 +357,10 @@ def assess_kis_paper_minute_qualification(
     )
     facts = KisPaperMinuteQualificationFacts(
         probe_window_valid=_qualification_observation_is_valid(start, end),
-        first_page_descends_one_minute=_strict_descending_one_minute(first_exchange),
+        first_page_descends_one_minute=_page_descends_one_exchange_minute(first_page),
         continuation_page_descends_one_minute=(
-            continuation_page is not None and _strict_descending_one_minute(continuation_exchange)
+            continuation_page is not None
+            and _page_descends_one_exchange_minute(continuation_page)
         ),
         exchange_and_korea_map_to_same_utc=all(
             exchange_timestamp == korea_timestamp
@@ -807,6 +811,10 @@ def _strict_descending_one_minute(timestamps: tuple[datetime, ...]) -> bool:
         previous - current == timedelta(minutes=1)
         for previous, current in zip(timestamps, timestamps[1:], strict=False)
     )
+
+
+def _page_descends_one_exchange_minute(page: KisPaperMinutePage) -> bool:
+    return _strict_descending_one_minute(tuple(_exchange_utc(row) for row in page.bars))
 
 
 def _continuation_key_before(row: KisPaperMinuteRawBar) -> str:

@@ -234,6 +234,13 @@ separately from its completed feature-window end and expires at the next
   `urllib` tests prove the exact offline request shape only; they do not
   authorize a retry, promote `1m` or derived timeframes, or alter the immutable
   artifact.
+- The qualification runner now also withholds a continuation before using
+  `first_page.bars[-1]` for `KEYB` unless the original exchange labels are
+  strictly descending by one minute. Fake swapped, duplicate, and gapped first
+  pages each stop after the token and first GET, retain a cursor as available
+  but unrequested, and serialize only the failed ordering fact. This is local
+  control-flow evidence, not an on-wire KIS, retention, data-capability, or
+  paper/live result; the v4 artifact and empty trusted registry remain intact.
 - The immutable rejected artifact has a millisecond-scale summary timestamp
   preceding its reservation because the former runner used its initial clock on
   a caught error. Phase order and no-retry state remain authoritative. Future

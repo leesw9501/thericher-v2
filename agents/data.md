@@ -50,6 +50,14 @@ the empty trusted registry. Accepted observation, timestamp-label/completed-bar/
 freshness, retention/cache-recovery/storage-rights evidence, and a reviewed full
 contract-SHA binding remain absent.
 
+Data review complete: the offline raw-`1m` runner now withholds a continuation
+when the first page is not strictly descending by one exchange-local minute,
+before using its final row for local `KEYB` construction. Fake swapped,
+duplicate, and gapped pages stop after one token and one first-page GET. This
+establishes no on-wire KIS fact, retains no raw data, cannot qualify `1m`,
+derived `5m`/`10m`, inactive `1h`/`3h`, or change the empty trusted registry;
+the terminal v4 artifact remains untouched.
+
 The baseline also requires a separately reviewed binding of the full immutable
 capability-contract SHA. Its production trusted registry is empty; the binding
 shape alone does not validate that an external evidence reference is genuine.

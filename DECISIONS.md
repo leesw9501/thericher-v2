@@ -2854,3 +2854,26 @@ Claude's falsification-first verdict was `supported-with-limits`. This decision
 reverses only if a later authoritative KIS source contradicts the recorded
 source version or an independently scoped, separately authorized observation
 provides sanitized evidence that materially changes the request contract.
+
+## 2026-07-20 - Validate first-page order before a raw-minute continuation
+
+Decision: a raw-minute qualification runner may derive its documented
+one-minute-prior `KEYB` from the first page's final row only when the original
+exchange timestamps are strictly descending in one-minute steps. If a cursor is
+present but a first page is swapped, duplicate, or gapped, the runner keeps the
+first-page metadata observation and suppresses the continuation GET. It does
+not sort rows, infer a replacement boundary, use Korean labels, or add a new
+failure category.
+
+Fake-transport coverage proves each malformed first page uses one token and one
+raw-page request, records the cursor as available but unrequested, and exposes
+only `first_page_descends_one_minute=False` in its sanitized summary. The valid
+two-page `KEYB` path remains separately covered. No credential, KIS call,
+artifact mutation, capability change, retry authority, capital decision, or
+paper/live behavior was introduced.
+
+Reason: request-contract alignment alone cannot make an arbitrary final row a
+safe page boundary. Stopping locally before the second side effect reduces the
+blast radius of malformed input while retaining the bounded first-page evidence.
+It cannot qualify `1m`, derived `5m`/`10m`, inactive `1h`/`3h`, or change the
+empty trusted registry.

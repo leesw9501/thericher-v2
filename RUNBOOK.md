@@ -272,6 +272,12 @@ and continuation `tr_cont=N`, without `FILL_GUBN`. This local request-shape
 alignment cannot diagnose or reopen the consumed v4 rejection and does not
 authorize another network observation.
 
+The runner also skips a continuation when the first page's original exchange
+timestamps are not strictly descending by one minute. It does not sort or repair
+the page before computing `KEYB`; it returns sanitized first-page metadata with
+the cursor available but unrequested. This is a local safeguard, not an
+observation qualification or a reason to reopen v4.
+
 A one-shot response is always `observed` or `rejected`, never a promotion. Its
 external attempt marker records `reserved -> network_started -> summary_written`;
 if summary persistence fails, `network_started` remains and blocks retry. A

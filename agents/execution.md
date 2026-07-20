@@ -90,6 +90,12 @@
   tests lock the exact local headers and encoded query shape. This is not a
   v4-cause finding, retry authorization, response-pagination proof, or KIS
   capability change; those external facts remain unresolved.
+- The runner now verifies original exchange-label order before it uses a final
+  first-page row for local `KEYB` construction. Swapped, duplicate, and gapped
+  fake pages retain `continuation_available=True` but stop at one token and one
+  first GET with `continuation_requested=False`; no sort, repair, retry, or new
+  failure category exists. This is local control-flow hardening only and does
+  not change KIS, paper, live, artifact, or capability authority.
 - The original rejected artifact's summary timestamp predates its reservation
   timestamp by milliseconds because the prior runner used its initial clock in
   a caught-error path. This is an audit-metadata defect, not duplicate-request

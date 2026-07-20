@@ -451,6 +451,54 @@ def test_bounded_probe_skips_continuation_after_the_narrow_envelope_closes() -> 
     assert [request.method for request in transport.requests] == ["POST", "GET"]
 
 
+@pytest.mark.parametrize("first_page_problem", ("swapped", "duplicate", "gapped"))
+def test_bounded_probe_skips_continuation_when_first_page_cannot_define_keyb(
+    first_page_problem: str,
+) -> None:
+    newest = _PROBE_START.replace(second=0)
+    rows = _rows(newest, 120)
+    if first_page_problem == "swapped":
+        rows[0], rows[1] = rows[1], rows[0]
+    elif first_page_problem == "duplicate":
+        rows[1] = rows[0]
+    elif first_page_problem == "gapped":
+        rows = _rows(newest, 121)
+        del rows[1]
+    else:
+        raise AssertionError(f"unexpected first-page problem: {first_page_problem}")
+    transport = _RecordingTransport(
+        [
+            KisMarketDataResponse.from_payload({"access_token": "test-token"}),
+            KisMarketDataResponse.from_payload(_page_payload(rows)),
+        ]
+    )
+    client = KisPaperMinuteClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    evidence = run_bounded_kis_paper_minute_qualification(
+        client,
+        clock=_clock(
+            _PROBE_START,
+            _PROBE_START + timedelta(seconds=1),
+            _PROBE_START + timedelta(seconds=2),
+            _PROBE_START + timedelta(seconds=3),
+        ),
+    )
+
+    assert evidence.call_counts == KisPaperMinuteCallCounts(1, 1)
+    assert evidence.continuation_available is True
+    assert evidence.continuation_requested is False
+    assert evidence.continuation_page_row_count is None
+    assert evidence.facts.first_page_descends_one_minute is False
+    assert [request.method for request in transport.requests] == ["POST", "GET"]
+    summary = sanitized_kis_paper_minute_qualification_summary(evidence)
+    assert summary["observation"]["continuation_page_row_count"] is None
+    assert summary["predeclared_facts"]["first_page_descends_one_minute"] is False
+    assert "123.45" not in json.dumps(summary, sort_keys=True)
+
+
 def test_writer_rejects_git_artifact_path_and_failure_summary_stays_sanitized(
     tmp_path: Path,
 ) -> None:
