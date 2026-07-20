@@ -2905,3 +2905,38 @@ long-only limit-order field mapping. Do not add another request contract,
 transport, Compose profile, or enablement switch. If official public material
 cannot pin the relevant wire fields tightly enough for falsifiable offline
 tests, close that mapping as unsupported rather than guess or make a KIS call.
+
+## 2026-07-21 - Isolate KIS virtual-paper US buy-limit body fields
+
+Decision: accept one pure, offline mapping from the existing
+`BrokerOrderRequest` and a caller-supplied `NASD`, `NYSE`, or `AMEX` exchange
+to the seven virtual-paper US buy-limit **body** fields supported by the
+official KIS sample pinned at revision
+`885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`:
+`OVRS_EXCG_CD`, `PDNO`, `ORD_QTY`, `OVRS_ORD_UNPR`, `SLL_TYPE`,
+`ORD_SVR_DVSN_CD`, and `ORD_DVSN`. The mapper admits only a positive whole-share
+US buy limit order, never derives an exchange from generic `US` or a ticker,
+and emits no account identifiers, contact fields, endpoint, header/TR ID,
+credential, environment, idempotency, or transport context.
+
+The official source uses the virtual-paper TR ID in the request header, so that
+value intentionally remains outside this non-transmittable body fragment.
+The source example supplies blank contact and management fields but does not
+establish a universal account-independent default; those fields remain outside
+the mapper. `create_kis_broker_adapter()` remains disabled, and no adapter,
+profile, artifact, KIS call, order action, capital action, or live behavior was
+added.
+
+Independent Data review returned `supported-with-limits` for the pinned field
+provenance. Independent Validation found that the initial I/O test imported
+the module before installing its blockers; the test now imports it after the
+credential/file/network blockers and confirms mapping plus the existing disabled
+adapter stay offline. The completed raw-minute `13:30` through `15:40` New York
+window remains only historical one-shot probe context, never a future
+paper/live schedule or trading-window preference.
+
+Reason: a narrow body fragment lets future separately authorized work reuse
+known field names without silently introducing an executable KIS request or a
+second broker lifecycle. The next safe preparation is the corresponding pure
+long-only sell-limit body fragment, whose holding proof must remain in the
+existing deterministic risk boundary.

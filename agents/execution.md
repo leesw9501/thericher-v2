@@ -235,10 +235,16 @@
 
 ## Current Objective
 
-- The next bounded Execution objective is a public-source-attested, pure
-  `BrokerOrderRequest` to virtual-paper US long-only limit-order field mapper.
-  It must leave every runtime adapter disabled and add neither a transport,
-  credentials, KIS call, Docker profile, capital action, nor order path.
+- Complete: the public-source-attested pure `BrokerOrderRequest` to
+  virtual-paper US buy-limit body mapper is implemented in
+  `execution.kis_paper_order_fields`. It requires explicit `NASD`, `NYSE`, or
+  `AMEX`, returns no account/contact/header/transport context, and leaves every
+  runtime adapter disabled.
+- Next: add only the matching pure virtual-paper US sell-limit body mapper for
+  a long-only reduction. It must retain explicit exchange selection, reject
+  short/unsupported shapes, and leave holding proof to the existing deterministic
+  risk boundary. It must add no transport, credential loader, KIS call, Docker
+  profile, capital action, or order path.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -297,23 +303,26 @@
 
 ## Ready Queue
 
-1. Next ready offline task: use an official public KIS source to map the
-   existing `BrokerOrderRequest` to virtual-paper US long-only limit-order
-   fields, without adding a transport, credential loader, Compose profile, or
-   enabling path. Reject sells and market orders. If the public source cannot
-   support falsifiable field tests, close the mapper as unsupported rather than
-   guess or call KIS.
-2. Complete: the no-network fake-transport contract pins the official virtual
+1. Complete: the official KIS source pinned at
+   `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` now attests a pure US buy-limit
+   body mapper. It maps only non-account body fields, never derives exchange
+   from `US` or a ticker, performs no I/O, and leaves the adapter disabled.
+2. Next ready offline task: use official public KIS evidence to add a separate
+   pure US sell-limit body fragment for a long-only reduction. Do not infer a
+   position, add a transport, credential loader, Compose profile, or enabling
+   path. If the source cannot support falsifiable field tests, close it as
+   unsupported rather than guess or call KIS.
+3. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-3. At a later, separately scoped market-session capability observation, retain
+4. At a later, separately scoped market-session capability observation, retain
    only sanitized market-data facts. It is distinct from the terminal balance
    bridge outcome and must not retry or reinterpret that account result.
-4. Wait for a separately scoped, usable KIS snapshot before requesting a
+5. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.
-5. Keep pure risk integration, append-only execution events, and a future paper
+6. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help
