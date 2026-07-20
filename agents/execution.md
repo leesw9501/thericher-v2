@@ -241,9 +241,15 @@
   `AMEX`, return no account/contact/header/transport context, and leave every
   runtime adapter disabled. Sell maps only `SLL_TYPE="00"`; it cannot prove a
   holding, which remains the deterministic risk boundary's responsibility.
-- Next: add a pure, limit-only `OrderIntent` to existing `BrokerOrderRequest`
-  projection. It must refuse a missing limit price rather than look up, infer,
-  or synthesize one, and must neither persist nor submit the projected request.
+- Complete: `order_intent_to_broker_order_request` now projects only an
+  already-priced `OrderIntent` into the existing `BrokerOrderRequest`. It
+  copies every contract field unchanged, refuses `limit_price=None`, and lets
+  the existing broker request contract reject corrupted input. It has no quote,
+  persistence, risk, KIS-body mapper, adapter, credential, file, network, or
+  artifact path; a target-position market intent remains non-projectable.
+- Next: resolve or reject the official-source virtual-paper US order
+  route/header contract before adding any transport or header code. The known
+  sell TR-ID inconsistency must not be guessed around.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -308,22 +314,25 @@
    exchange from `US` or a ticker, perform no I/O, and leave the adapter
    disabled. The source's virtual US sell TR-ID inconsistency remains outside
    scope; do not derive a header resolver from it.
-2. Next ready offline task: add a pure, limit-only `OrderIntent` to existing
-   `BrokerOrderRequest` projection. It must preserve IDs and timestamps, reject
-   a missing limit price without looking one up, and create no persistence,
-   risk approval, transport, credential loader, Compose profile, or enabling
-   path.
-3. Complete: the no-network fake-transport contract pins the official virtual
+2. Complete: `order_intent_to_broker_order_request` is the pure, limit-only
+   generic bridge to the existing broker request contract. It preserves every
+   field, rejects a missing price and contract-invalid corruption, does no I/O,
+   and leaves the disabled adapter unavailable.
+3. Next ready offline task: use official public KIS sources to resolve or
+   reject the virtual-paper US route/header contract, including the conflicting
+   sell TR-ID evidence. Do not guess a resolver, read credentials, or implement
+   a transport. A source conflict remains `unsupported`.
+4. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-4. At a later, separately scoped market-session capability observation, retain
+5. At a later, separately scoped market-session capability observation, retain
    only sanitized market-data facts. It is distinct from the terminal balance
    bridge outcome and must not retry or reinterpret that account result.
-5. Wait for a separately scoped, usable KIS snapshot before requesting a
+6. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.
-6. Keep pure risk integration, append-only execution events, and a future paper
+7. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help

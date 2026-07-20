@@ -2,59 +2,56 @@
 
 ## Objective
 
-Add one pure offline projection from the existing `OrderIntent` to the existing
-`BrokerOrderRequest` for an explicitly supplied **limit order only**.
+Resolve or explicitly reject the virtual-paper KIS US limit-order route/header
+contract using official public source material, before any KIS order transport
+or adapter work is considered.
 
-This closes the structural gap between deterministic target-position intent and
-the broker-neutral risk/request contract. It must reject a missing limit price
-rather than read a quote, infer a price, or turn a market intent into a KIS
-order.
+The existing pure body mappers are intentionally non-transmittable. Official
+source evidence currently conflicts on the virtual US sell TR-ID, so no route,
+header, account, or endpoint value may be guessed from a generic prefix rule.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, and
    `agents/execution.md`.
-3. Read `src/thericher_v2/contracts.py`,
-   `src/thericher_v2/execution/broker.py`,
-   `src/thericher_v2/execution/target_position.py`, and their focused tests.
+3. Read `src/thericher_v2/execution/kis_paper_order_fields.py`,
+   `src/thericher_v2/execution/broker.py`, and their focused tests.
+4. Ask Claude CLI for a short falsification-first drift check before recording
+   a source conclusion or adding any execution-facing contract.
 
 ## Work Packages
 
 ### Execution Agent
 
-- Add one pure helper in the existing broker-contract ownership boundary. Reuse
-  `OrderIntent` and `BrokerOrderRequest`; do not create a new request dataclass
-  or KIS-specific object.
-- The helper may project only an intent that already contains a positive limit
-  price. It must preserve client ID, symbol, market, side, quantity, decision
-  ID, creation time, and schema version exactly.
-- It must reject a missing limit price, malformed/corrupted input, and any
-  value the existing `BrokerOrderRequest` contract rejects. It must not fetch,
-  infer, round, clamp, or alter a price or quantity.
-- It must not persist, submit, risk-approve, reconcile, call a broker, enable
-  `create_kis_broker_adapter()`, or connect to the KIS body mappers. Risk and
-  position validation remain separate later callers.
+- Inspect only official KIS public documentation and the pinned official source
+  revision already cited in the repository. Build a compact evidence comparison
+  for virtual-paper US buy and sell limit routes, TR IDs, required headers, and
+  the source location for each fact.
+- Resolve the route/header contract only when the official evidence is direct,
+  mutually consistent, and distinguishes virtual paper from live. Otherwise
+  record the conclusion as `unsupported` with the exact conflict.
+- If and only if the evidence is unambiguous, add the smallest pure,
+  non-transmittable route/header contract needed for a later adapter. Reuse
+  existing request types; do not add a transport, account loader, credential
+  path, request sender, or enablement flag.
 
 ### Validation
 
-- Prove projection is pure and import-safe: no credential, environment, file,
-  network, transport, artifact, or broker side effect is needed.
-- Prove a target-position market intent (`limit_price=None`) stays
-  non-projectable, while an explicit limit intent round-trips every contract
-  field unchanged.
-- Confirm the existing KIS adapter remains disabled and unavailable after the
-  new helper is invoked.
+- Independently check the source conclusion and any proposed pure contract for
+  paper/live separation, unsupported inference, and no accidental external
+  order path.
 
 ## Hard Boundaries
 
-- No `.env`, credential, account-state, runtime-snapshot, market-data, quote,
-  or KIS API read.
-- No KIS order/header/TR-ID work, Docker profile, external artifact, public
-  service, model, GPU, data acquisition, capability promotion, or dashboard
-  work.
-- Do not alter the terminal KIS evidence or existing buy/sell body mapper
-  behavior.
+- No `.env`, credential, account-state, KIS API, order, cancellation, market
+  data, balance, position, or live call.
+- No paper capital envelope, `THERICHER_MODE` change, Docker profile, public
+  service, generated artifact, or model/data work.
+- Do not change the disabled broker adapter, the existing body mappers, the
+  terminal KIS read-only evidence, or local-paper behavior.
+- Do not treat a source conflict as permission to derive a virtual TR ID from a
+  real TR ID. No order transport may be created under this goal.
 
 ## Verification
 
@@ -66,4 +63,4 @@ docker compose --env-file .env.example config --quiet
 
 ## Suggested Commit Message
 
-`Project limit intents into broker requests`
+`Resolve KIS paper order route evidence`

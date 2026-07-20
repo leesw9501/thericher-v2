@@ -181,6 +181,26 @@ class BrokerOrderRequest:
         object.__setattr__(self, "created_at", require_utc(self.created_at, "created_at"))
 
 
+def order_intent_to_broker_order_request(intent: OrderIntent) -> BrokerOrderRequest:
+    """Project an already-priced intent into the broker-neutral request contract."""
+
+    if not isinstance(intent, OrderIntent):
+        raise TypeError("intent must be an OrderIntent")
+    if intent.limit_price is None:
+        raise ValueError("limit_price must be explicit for broker request projection")
+    return BrokerOrderRequest(
+        client_order_id=intent.client_order_id,
+        symbol=intent.symbol,
+        market=intent.market,
+        side=intent.side,
+        quantity=intent.quantity,
+        limit_price=intent.limit_price,
+        decision_id=intent.decision_id,
+        created_at=intent.created_at,
+        schema_version=intent.schema_version,
+    )
+
+
 @dataclass(frozen=True)
 class BrokerOrderAck:
     client_order_id: str

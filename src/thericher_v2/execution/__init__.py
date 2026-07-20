@@ -21,6 +21,7 @@ from .broker import (
     OrderStatusQuery,
     ReconciliationResult,
     create_kis_broker_adapter,
+    order_intent_to_broker_order_request,
 )
 from .emergency import EmergencyStore
 from .fill_source import (
@@ -76,6 +77,7 @@ __all__ = [
     "collect_fill_source_evidence",
     "create_kis_broker_adapter",
     "evaluate_pre_submit_risk",
+    "order_intent_to_broker_order_request",
     "replay_local_paper_account",
     "target_proposal_to_order_intent",
 ]

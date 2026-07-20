@@ -140,6 +140,14 @@ separately from its completed feature-window end and expires at the next
   never a transmittable request or paper submission authority. The example's
   virtual US sell TR-ID comment and generic prefix implementation disagree, so
   no header/TR-ID resolver is derived from it.
+- `execution.order_intent_to_broker_order_request` now makes the generic
+  limit-only handoff explicit. It copies an already explicit positive limit
+  price and every broker-contract field from `OrderIntent` into the existing
+  `BrokerOrderRequest`, while rejecting target-position market intents. It has
+  no price policy, quote lookup, persistence, risk approval, KIS-body mapper,
+  adapter, credential, file, network, or artifact path. The next execution
+  question is source evidence for the unresolved virtual-paper route/header
+  contract, not a speculative transport implementation.
 - The historical `13:30` through `15:40` New York clock guard belonged only to
   the terminal 2026-07-20 raw-minute observation. It is not a KIS paper/live
   session policy, a preferred trading window, or a reusable schedule.

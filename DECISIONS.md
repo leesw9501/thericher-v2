@@ -2968,3 +2968,26 @@ non-transmittable fragment until a separately authorized and source-resolved
 transport contract exists. The next generic execution step is a limit-only
 projection from `OrderIntent` to the existing broker request contract; it must
 not select or fetch a price.
+
+## 2026-07-21 - Keep explicit-price intent projection broker-neutral
+
+Decision: add one pure `order_intent_to_broker_order_request` helper in the
+existing broker-contract module. It accepts only an `OrderIntent` whose limit
+price is already explicit, copies client ID, symbol, market, side, quantity,
+limit price, decision ID, creation time, and schema version into the existing
+`BrokerOrderRequest`, and delegates all shared-contract validation to that
+destination contract. A target-position market intent remains non-projectable.
+
+The helper does not choose, fetch, round, clamp, or timestamp a price. It also
+does not persist an intent, risk-approve it, connect to the KIS body mappers,
+create a route/header payload, enable an adapter, access a credential or file,
+or call a broker. Tests block environment, file, and network paths while also
+proving that the default KIS adapter remains unavailable. Independent
+Validation's review was `supported-with-limits`; its limitation was static
+review only, while the full local test suite passed.
+
+Reason: this closes the generic contract gap without making a target-derived
+market intent look executable. The next execution question is not another
+convenience wrapper: official public evidence must first resolve or reject the
+known virtual-paper US sell route/TR-ID inconsistency before any header or
+transport contract is considered.
