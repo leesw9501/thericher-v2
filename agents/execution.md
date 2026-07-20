@@ -39,6 +39,12 @@
   `observed` or `rejected`; a self-consistent snapshot cannot promote a
   completed-bar contract. No credential or KIS network call occurred while
   preparing this harness.
+- The active KST preflight slots map to New York `13:30` through `15:40` on the
+  fixed date. The time gate compares the minute boundary separately from the
+  required `10` through `45` safe seconds, so the final `15:40` safe interval
+  is permitted without widening any other minute or date. Sanitizer tests also
+  prove fake volume, cursor, account-identifier, and raw-row sentinels stay out
+  of external summaries.
 - KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
   read-only virtual-account discovery while `THERICHER_MODE=off`. The initial
   balance probe failed closed, then the corrected open-order-first discovery

@@ -785,6 +785,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Recent Evidence
 
+- Raw-minute qualification sanitizer coverage now injects volume, cursor, and
+  account-identifier sentinels into a fake response and proves that neither the
+  serialized summary nor its raw-row shape retain them. This is a local test
+  only; it creates no KIS artifact, provider fact, or data eligibility.
 - Synthetic regression coverage now proves that a contiguous session supplied
   as two newest-first `1m` chunks yields the same completed `5m`/`10m` bars and
   skipped-bucket facts as chronological input. This is resampling correctness

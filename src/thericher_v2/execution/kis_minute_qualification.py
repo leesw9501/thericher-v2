@@ -205,7 +205,7 @@ def is_kis_paper_minute_qualification_window(value: datetime) -> bool:
         or observed_at.second not in _SAFE_PROBE_SECONDS
     ):
         return False
-    local_time = observed_at.timetz().replace(tzinfo=None)
+    local_time = observed_at.timetz().replace(second=0, microsecond=0, tzinfo=None)
     return (
         _FIRST_SAFE_PROBE_TIME <= local_time <= _LAST_SAFE_PROBE_TIME
         and observed_at.minute % 10 == 0

@@ -170,6 +170,11 @@ separately from its completed feature-window end and expires at the next
   result is always `observed` or `rejected`; it cannot promote a capability or
   read a bar-label anchor. No credential was read and no KIS request was made
   while preparing this v4 harness.
+- Its six KST preflight slots map to the fixed New York `13:30` through `15:40`
+  intervals. The gate retains its `10` through `45` safe-second rule while
+  comparing the minute boundary separately, so the intended final `15:40`
+  interval is not excluded. Fake raw volume, cursor, account-identifier, and
+  raw-row sentinels are explicitly absent from the sanitized-summary test.
 - A `qualified` KIS capability permits an in-memory completed-bar window only.
   Persistent raw-byte/cache storage still requires confirmed rights; otherwise
   retain only sanitized capability evidence outside Git.

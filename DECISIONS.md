@@ -2424,6 +2424,14 @@ other invocation exits before credential loading. This is an external,
 objective-expiring operating aid, not repository scheduler code or a durable
 job family.
 
+The safe-time comparison now normalizes seconds before testing the fixed New
+York minute boundary, while preserving the separate `10` through `45`
+safe-second rule. This keeps the final `15:40` KST-mapped interval available
+without admitting an earlier/later second, another minute, or another date.
+Focused sanitizer coverage also injects fake volume, cursor, account-identifier,
+and raw-row values and proves that the typed external summary does not retain
+them. No credential or KIS request was used while making this correction.
+
 ## 2026-07-19 - Historical KIS support probe remains metadata-only
 
 Decision: accept the operator's narrow KIS paper authorization for one

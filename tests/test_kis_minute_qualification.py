@@ -59,11 +59,18 @@ class _RecordingTransport:
 
 def test_bounded_probe_requires_one_token_two_pages_and_produces_metadata_only() -> None:
     first_rows = _rows(_PROBE_START.replace(second=0), 120)
+    first_rows[0] = replace(first_rows[0], volume=Decimal("987654321.987"))
     second_rows = _rows(_PROBE_START.replace(second=0) - timedelta(minutes=120), 120)
     transport = _RecordingTransport(
         [
             KisMarketDataResponse.from_payload({"access_token": "test-token"}),
-            KisMarketDataResponse.from_payload(_page_payload(first_rows)),
+            KisMarketDataResponse.from_payload(
+                _page_payload(
+                    first_rows,
+                    next_cursor="cursor-sentinel-must-not-persist",
+                    account_identifier="account-id-sentinel-must-not-persist",
+                )
+            ),
             KisMarketDataResponse.from_payload(_page_payload(second_rows)),
         ]
     )
@@ -108,7 +115,12 @@ def test_bounded_probe_requires_one_token_two_pages_and_produces_metadata_only()
     )
     assert summary["storage"]["raw_market_data_retained"] is False
     assert "123.45" not in rendered
+    assert "987654321.987" not in rendered
+    assert "cursor-sentinel-must-not-persist" not in rendered
+    assert "account-id-sentinel-must-not-persist" not in rendered
     assert '"open":' not in rendered
+    assert '"evol":' not in rendered
+    assert '"output2":' not in rendered
     assert "paper-key" not in rendered
     assert "test-token" not in rendered
     assert summary["observation"]["continuation_exchange_timestamp_bounds_utc"] == {
@@ -256,6 +268,15 @@ def test_qualification_rejects_a_fabricated_continuation_query() -> None:
 
 def test_window_rejects_non_session_and_non_boundary_times() -> None:
     assert is_kis_paper_minute_qualification_window(_PROBE_START)
+    assert is_kis_paper_minute_qualification_window(
+        datetime(2026, 7, 20, 19, 40, 45, tzinfo=UTC)
+    )
+    assert not is_kis_paper_minute_qualification_window(
+        datetime(2026, 7, 20, 19, 40, 9, tzinfo=UTC)
+    )
+    assert not is_kis_paper_minute_qualification_window(
+        datetime(2026, 7, 20, 19, 40, 46, tzinfo=UTC)
+    )
     assert not is_kis_paper_minute_qualification_window(_PROBE_START + timedelta(minutes=1))
     assert not is_kis_paper_minute_qualification_window(
         datetime(2026, 7, 19, 17, 30, 20, tzinfo=UTC)
@@ -582,10 +603,18 @@ def _continuation_page(
     )
 
 
-def _page_payload(rows: list[KisPaperMinuteRawBar]) -> dict[str, object]:
+def _page_payload(
+    rows: list[KisPaperMinuteRawBar],
+    *,
+    next_cursor: str = "1",
+    account_identifier: str | None = None,
+) -> dict[str, object]:
+    output1: dict[str, object] = {"next": next_cursor, "more": "0"}
+    if account_identifier is not None:
+        output1["account_identifier"] = account_identifier
     return {
         "rt_cd": "0",
-        "output1": {"next": "1", "more": "0"},
+        "output1": output1,
         "output2": [
             {
                 "xymd": row.exchange_date,
