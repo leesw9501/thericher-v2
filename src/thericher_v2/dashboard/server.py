@@ -90,6 +90,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.event_store,
                 self.server.emergency_store,
                 self.server.mode,
+                paper_account_snapshot_path=self.server.paper_account_snapshot_path,
             )
             _html_response(
                 self,
@@ -102,6 +103,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.event_store,
                 self.server.emergency_store,
                 self.server.mode,
+                paper_account_snapshot_path=self.server.paper_account_snapshot_path,
             )
             _json_response(self, HTTPStatus.OK, snapshot.to_dict())
         elif path == "/health":
@@ -265,12 +267,14 @@ class DashboardServer(ThreadingHTTPServer):
         emergency_store: EmergencyStore,
         token: str,
         mode: str,
+        paper_account_snapshot_path: Path | None = None,
     ) -> None:
         super().__init__(address, DashboardHandler)
         self.event_store = event_store
         self.emergency_store = emergency_store
         self.token = token
         self.mode = mode
+        self.paper_account_snapshot_path = paper_account_snapshot_path
         self.form_nonce = secrets.token_urlsafe(32)
         self.session_value = _session_value(token) if token else ""
 
@@ -368,6 +372,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path("runtime/emergency_state.json"),
     )
+    parser.add_argument(
+        "--paper-account-snapshot",
+        type=Path,
+        default=Path("runtime/state/paper_account_snapshot.json"),
+    )
     parser.add_argument("--mode", default=os.environ.get("THERICHER_MODE", "off"))
     parser.add_argument("--token", default=os.environ.get("THERICHER_DASHBOARD_TOKEN", ""))
     return parser
@@ -376,7 +385,6 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> None:
     args = build_parser().parse_args()
     store = EventStore(args.state_db, args.event_log)
-    store.bootstrap()
     emergency = EmergencyStore(args.emergency_state)
     server = DashboardServer(
         (args.host, args.port),
@@ -384,6 +392,7 @@ def main() -> None:
         emergency_store=emergency,
         token=args.token,
         mode=args.mode,
+        paper_account_snapshot_path=args.paper_account_snapshot,
     )
     print(f"dashboard listening on http://{args.host}:{args.port}")
     server.serve_forever()

@@ -752,6 +752,26 @@ def load_kis_paper_config(dotenv_path: Path) -> KisPaperConfig:
     )
 
 
+def load_kis_paper_config_from_environment(
+    environment: Mapping[str, str] | None = None,
+) -> KisPaperConfig:
+    """Read exactly the four approved paper values from an injected mapping."""
+
+    source = os.environ if environment is None else environment
+    values: dict[str, str] = {}
+    for key in KIS_PAPER_ENV_KEYS:
+        value = source.get(key, "")
+        values[key] = value.strip() if isinstance(value, str) else ""
+    if any(not values[key] for key in KIS_PAPER_ENV_KEYS):
+        raise KisPaperReadOnlyError("config_missing")
+    return KisPaperConfig(
+        app_key=values["KIS_PAPER_APP_KEY"],
+        app_secret=values["KIS_PAPER_APP_SECRET"],
+        account_number=values["KIS_PAPER_ACCOUNT_NO"],
+        account_product_code=values["KIS_PAPER_ACCOUNT_PRODUCT_CODE"],
+    )
+
+
 def reconcile_kis_paper_readonly(
     snapshot: KisPaperReadOnlySnapshot,
     *,

@@ -67,10 +67,36 @@ The Compose `engine` and `web` services share a Docker-local named runtime
 volume. The current default `engine` command only prints a daily report; it
 does not produce local-paper events, so a freshly started console correctly
 shows no local activity. A later explicitly invoked Docker-local simulation may
-write that runtime; the web monitor reads it and writes only local emergency
-state. A Windows-host runtime is deliberately separate from this volume. Do not
-run a host-side simulator against the Docker-local console runtime, and do not
-run competing Docker event-log writers at the same time.
+write that runtime. The web monitor mounts runtime read-only and has a separate
+writable emergency-state volume. A Windows-host runtime is deliberately
+separate from this volume. Do not run a host-side simulator against the
+Docker-local console runtime, and do not run competing Docker event-log writers
+at the same time.
+
+The `kis-readonly` Compose profile is a deliberately invoked one-shot reader,
+not a service or retry loop. It receives only the four interpolated
+`KIS_PAPER_*` values; it neither mounts `.env` nor receives live values. It
+atomically replaces the generic console snapshot only after a complete typed
+read; the web accepts it for five minutes and otherwise renders `unknown` or
+`unavailable`. A normal approved invocation is:
+
+```powershell
+docker compose --profile kis-readonly run --rm --no-deps kis-readonly
+```
+
+If a fresh complete sanitized runtime snapshot exists but its minimal external
+evidence failed to write, use this recovery command before the five-minute
+expiry. It reads no credential or KIS endpoint:
+
+```powershell
+docker compose --profile kis-readonly run --rm --no-deps kis-readonly `
+  python -m thericher_v2.execution.kis_paper_console_bridge `
+  --recover-evidence --repository-root /app `
+  --runtime-snapshot /app/runtime/state/paper_account_snapshot.json
+```
+
+Do not use recovery to refresh stale state or to create a retry loop. A new
+read must belong to a new bounded objective.
 
 ## Data Acquisition
 

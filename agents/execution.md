@@ -4,6 +4,18 @@
 
 - Broker-neutral lifecycle readiness is implemented with an offline fake
   transport and an explicit local persistence path.
+- The Docker `kis-readonly` one-shot bridge completed one virtual-paper
+  reconciliation at `2026-07-20T07:34:11.455838Z`. It writes a strict,
+  five-minute sanitized snapshot to the Docker-local runtime for a
+  credential-free web reader and records only counts, currencies, status, and
+  a runtime-payload digest in
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T073411455838Z-complete.json`
+  (SHA-256 `9b7b12848f28ced98d674ac224d2f576e02df279cf57a581ef5500e9159614fb`).
+  No account number, amount, symbol, order reference, credential, or raw broker
+  response is retained in that evidence. The initial artifact path check failed
+  after the snapshot write because `/app/model_artifacts` is a mounted path
+  below `/app`; the mount-aware fix and `--recover-evidence` recorded the
+  existing fresh snapshot with no KIS I/O. Recovery is `complete`.
 - A bounded 2026-07-19 KIS paper read-only probe now proved that token issuance
   and a `NASD` balance/position response work. Its sanitized account summary is
   `D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
@@ -166,19 +178,18 @@
 
 ## Current Objective
 
-- The local paper console foundation is complete pending integration commit:
-  loopback-only HTML and JSON views share a strict local-paper projection,
-  degraded replay is explicitly unavailable rather than empty, and the web
-  process has no KIS client, credential, or broker dependency.
-- The next bounded Execution objective is one KIS virtual-paper read-only
-  reconciliation snapshot bridge. The 2026-07-20 authority permits isolated
-  `KIS_PAPER_*` account, position, buying-power, open-order, and market-data
-  reads. It does not permit `KIS_LIVE_*`, external order submission or
-  cancellation, or a nonzero paper capital envelope.
-- The bridge must keep credentials and raw broker payloads out of the web
-  process, Git, logs, rendered views, and external evidence. A complete typed,
-  sanitized snapshot may update the console; partial, stale, or rejected reads
-  remain explicitly unavailable rather than inferred empty.
+- The local paper console and its KIS snapshot bridge are complete pending
+  integration commit. The loopback-only HTML and JSON views share a strict
+  local-paper projection, consume only a fresh generic paper snapshot, and keep
+  the web process free of KIS clients, credentials, and broker calls.
+- Next, turn a fresh reconciliation into an operator decision-ready paper
+  capital-envelope proposal. Preserve the reconciled currency, distinguish the
+  reference orderability request from general buying power, and do not persist
+  account values to Git or external evidence.
+- The 2026-07-20 authority permits isolated `KIS_PAPER_*` account, position,
+  reference-orderability, open-order, and market-data reads. It does not permit
+  `KIS_LIVE_*`, external order submission/cancellation, or a nonzero paper
+  capital envelope before the operator approves one.
 - Keep KIS submission and live behavior failed closed. The historical
   `QQQ`/`SPY` raw-minute observation is terminal, independently scheduled
   history and is not retried, widened, or used as console state.
@@ -195,6 +206,11 @@
   new intent after restart.
 - Missing, contradictory, stale, or outcome-unknown evidence fails closed.
 - Current recovery stops at the in-memory fake or `local_paper`, never KIS.
+- A fresh complete KIS console snapshot may recover a missing minimal evidence
+  file through `kis_paper_console_bridge --recover-evidence`; this path reads
+  only the sanitized runtime file and makes no KIS request. Stale, unavailable,
+  malformed, or duplicate evidence fails closed and requires a newly scoped
+  objective, never an automatic bridge retry.
 - For a local-paper post-fill interruption, retry only the same sequential
   call with the same complete bars and immutable fee/slippage settings. The
   recorded fill is authoritative; do not manufacture a replacement fill or a
@@ -206,29 +222,26 @@
 
 ## Ready Queue
 
-1. Build and test one one-shot KIS virtual-paper read-only reconciliation bridge
-   that reuses the typed allowlisted client and writes only a sanitized runtime
-   snapshot for the local console.
-2. Make one bounded reconciliation attempt with the local paper credentials.
-   Do not retry automatically: a rejected, incomplete, or stale result is an
-   explicit unavailable state and durable sanitized evidence.
-3. After a complete fresh result, propose a paper capital envelope from the
-   reconciled buying power. Do not submit or cancel an external order before a
-   specific operator-approved envelope exists.
-4. Keep pure risk integration, append-only execution events, and a future paper
+1. Produce a no-order, operator decision-ready paper capital-envelope proposal
+   from a fresh reconciliation without treating reference orderability as
+   general buying power.
+2. Ask the operator to approve or change the specific envelope. Do not submit
+   or cancel an external order before that distinct decision.
+3. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help
 
-- None for the read-only bridge. The operator has authorized the required
-  virtual-paper development access. A specific paper capital envelope remains a
-  later decision only after fresh reconciliation evidence exists.
+- The operator must approve or change the specific paper capital envelope once
+  the next objective presents it. Virtual-paper read-only development access is
+  already authorized.
 
 ## Must Not
 
-- Read `KIS_LIVE_*`, expose paper secrets/account identifiers, or read any `.env`
-  key outside the three approved nonsecret `THERICHER_*` settings and two paper
-  app keys. Read-only KIS paper network calls are the only allowed KIS use.
+- Read `KIS_LIVE_*`, expose paper secrets/account identifiers, or give the web
+  process access to any KIS value. The isolated bridge reads exactly the four
+  approved `KIS_PAPER_*` values; its read-only KIS calls are the only KIS access
+  in this execution lane.
 - Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
   paper capital; or enable live behavior under current authority.
 - Add strategy or model-selection logic to execution.

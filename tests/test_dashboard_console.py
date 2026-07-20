@@ -15,6 +15,14 @@ from thericher_v2.contracts import Bar, OrderIntent, Timeframe
 from thericher_v2.dashboard.server import DashboardServer
 from thericher_v2.dashboard.view import build_snapshot
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
+from thericher_v2.execution.paper_account_snapshot import (
+    PAPER_ACCOUNT_SNAPSHOT_TTL,
+    PaperAccountCash,
+    PaperAccountPosition,
+    PaperAccountReferenceOrderability,
+    PaperAccountSnapshot,
+    write_paper_account_snapshot,
+)
 from thericher_v2.state import Event, EventStore
 
 
@@ -220,6 +228,67 @@ def test_dashboard_state_marks_a_corrupt_replay_unavailable(tmp_path) -> None:
     assert state["latest_decisions"] is None
 
 
+def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_path) -> None:
+    events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    events.bootstrap()
+    emergency = EmergencyStore(tmp_path / "emergency.json")
+    observed_at = datetime(2026, 7, 20, 14, 30, tzinfo=UTC)
+    paper_snapshot_path = tmp_path / "paper_account_snapshot.json"
+    write_paper_account_snapshot(
+        PaperAccountSnapshot(
+            status="complete",
+            observed_at=observed_at,
+            expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
+            cash=PaperAccountCash("USD", Decimal("1200.50")),
+            reference_orderability=PaperAccountReferenceOrderability(
+                "USD",
+                Decimal("1199.75"),
+                "NASD",
+                "SPY",
+                Decimal("1"),
+            ),
+            positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
+        ),
+        paper_snapshot_path,
+    )
+
+    snapshot = build_snapshot(
+        events,
+        emergency,
+        paper_account_snapshot_path=paper_snapshot_path,
+        now=observed_at + timedelta(minutes=1),
+    )
+
+    assert snapshot.paper_account_status == "available"
+    assert snapshot.paper_account is not None
+    assert snapshot.kis_holdings_status == "available"
+    assert snapshot.kis_prices_status == "unknown"
+    assert snapshot.kis_buying_power_status == "reference_only"
+    assert snapshot.kis_open_orders_status == "available"
+    state = snapshot.to_dict()
+    assert "12345678" not in json.dumps(state)
+    assert "order_reference" not in json.dumps(state)
+
+    from thericher_v2.dashboard.view import render_dashboard
+
+    html = render_dashboard(snapshot, form_nonce="form-nonce")
+    assert "Verified cash" in html
+    assert "Reference orderability" in html
+    assert "KIS positions" in html
+    assert "KIS price quotes" in html
+    assert "general buying power" in html
+
+    stale_snapshot = build_snapshot(
+        events,
+        emergency,
+        paper_account_snapshot_path=paper_snapshot_path,
+        now=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL + timedelta(seconds=1),
+    )
+    assert stale_snapshot.paper_account_status == "unavailable"
+    assert stale_snapshot.paper_account is None
+    assert stale_snapshot.kis_holdings_status == "unavailable"
+
+
 def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
     with _dashboard(tmp_path) as (server, events, emergency):
         _record_local_fill(events, emergency)
@@ -376,4 +445,17 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_" not in web_section
     assert "TIINGO" not in web_section
     assert "thericher-v2-runtime:/app/runtime" in engine_section
-    assert "thericher-v2-runtime:/app/runtime" in web_section
+    assert "thericher-v2-runtime:/app/runtime:ro" in web_section
+    assert "thericher-v2-web-emergency:/app/emergency" in web_section
+
+    kis_section = compose.split("\n  kis-readonly:\n", maxsplit=1)[1].split(
+        "\nvolumes:\n", maxsplit=1
+    )[0]
+    assert "profiles: [\"kis-readonly\"]" in kis_section
+    assert "KIS_PAPER_APP_KEY" in kis_section
+    assert "KIS_LIVE" not in kis_section
+    assert ".env" not in kis_section
+
+    dockerignore = (repo_root / ".dockerignore").read_text(encoding="utf-8")
+    assert ".env" in dockerignore
+    assert "!.env.example" in dockerignore

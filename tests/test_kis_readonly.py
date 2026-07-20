@@ -30,6 +30,7 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperReadOnlySnapshot,
     UrllibKisHttpTransport,
     load_kis_paper_config,
+    load_kis_paper_config_from_environment,
     reconcile_kis_paper_readonly,
     run_kis_paper_readonly_discovery,
     write_kis_paper_readonly_evidence,
@@ -204,6 +205,27 @@ def test_config_reads_only_authorized_values_and_blank_config_fails_closed(tmp_p
     evidence = evidence_path.read_text(encoding="utf-8")
     assert "must-not-be-used" not in evidence
     assert "12345678" not in evidence
+
+
+def test_environment_config_reads_only_the_four_paper_values() -> None:
+    class PaperOnlyEnvironment(dict[str, str]):
+        def get(self, key: str, default: str = "") -> str:
+            assert key.startswith("KIS_PAPER_")
+            return super().get(key, default)
+
+    config = load_kis_paper_config_from_environment(
+        PaperOnlyEnvironment(
+            {
+                "KIS_PAPER_APP_KEY": "test-app-key",
+                "KIS_PAPER_APP_SECRET": "test-app-secret",
+                "KIS_PAPER_ACCOUNT_NO": "12345678",
+                "KIS_PAPER_ACCOUNT_PRODUCT_CODE": "01",
+                "KIS_LIVE_APP_KEY": "must-not-be-read",
+            }
+        )
+    )
+
+    assert config.masked_account_identity == "****5678-**"
 
 
 def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transport(

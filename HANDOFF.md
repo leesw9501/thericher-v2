@@ -84,9 +84,12 @@ read-only development calls. The durable decision records the exact statement
 and applied scope: `KIS_PAPER_*` may support isolated account, position,
 buying-power, open-order, and market-data reads, while `KIS_LIVE_*`, all paper
 order submission/cancellation, and any nonzero paper capital envelope remain
-unavailable. The completed local-console objective intentionally did not invoke
-that authority; its next read-only reconciliation bridge may do so without a
-new routine approval.
+unavailable. The one-shot Docker `kis-readonly` bridge has now completed one
+typed reconciliation and made its console-safe snapshot available only through
+the Docker-local runtime. Its immutable minimal evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T073411455838Z-complete.json`
+(SHA-256 `9b7b12848f28ced98d674ac224d2f576e02df279cf57a581ef5500e9159614fb`).
+It records no account value, symbol, account identifier, or raw broker body.
 
 The immediate product path is KIS-native paper readiness. Active model inputs
 must be reconstructible from KIS-compatible, completed market bars at decision
@@ -113,14 +116,21 @@ separately from its completed feature-window end and expires at the next
 
 ## Current Boundaries
 
-- KIS submission/live remains failed closed. The current KIS-native objective
-  may read only `KIS_PAPER_*` through explicitly invoked, allowlisted
-  **market-data** probes for `QQQ`/`SPY`; account, position, buying-power,
-  open-order, submit, cancel, `KIS_LIVE_*`, paper capital, mode changes, and
-  live behavior remain disabled. Imports, tests, local simulation, and the web
-  process remain credential- and network-free. The credential-bearing client
-  and direct transport also reject every non-`QQQ`/`SPY`, non-`NAS`, altered
-  request shape, or fourth per-kind page before a connection opens.
+- KIS submission/live remains failed closed. The 2026-07-20 authority permits
+  explicitly invoked, isolated typed `KIS_PAPER_*` reads for account, position,
+  reference orderability, open-order, and market-data development. It does not
+  authorize `KIS_LIVE_*`, submit, cancel, paper capital, mode changes, or live
+  behavior. Imports, tests, local simulation, and the web process remain
+  credential- and broker-free. The existing market-data client retains its
+  separate `QQQ`/`SPY`, `NAS`, request-shape, and per-kind-page allowlist.
+- The Docker `kis-readonly` profile completed one bounded reconciliation at
+  `2026-07-20T07:34:11.455838Z`. The web reads a versioned, five-minute
+  sanitized runtime snapshot from a read-only mount and treats missing, stale,
+  partial, or malformed state as `unknown` or `unavailable`. The first external
+  evidence write stopped at a container path check after the sanitized runtime
+  snapshot was already complete; the mount-aware correction recovered the
+  minimal evidence without another KIS call. Recovery classification is
+  `complete`, not a retry or a broker-state claim.
 - The operator-approved QQQ/SPY historical capability runner completed its
   single allowed attempt as `rejected` with `daily_response_rejected`. Its
   sanitized summary is
@@ -785,18 +795,14 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The next single objective is a bounded KIS virtual-paper read-only
-reconciliation snapshot bridge for the local console. It must keep the web
-process credential-free and broker-free; an isolated one-shot execution-side
-reader may use the already authorized `KIS_PAPER_*` values to obtain fresh,
-typed account/position/buying-power/open-order facts. Persist only the mapped,
-sanitized snapshot needed by the console and an external sanitized result; do
-not retain raw payloads, credentials, or account identifiers. A complete fresh
-snapshot may replace the console's KIS `unknown` state. A rejected, partial, or
-stale run must remain visibly unavailable, not empty. Keep
-`THERICHER_MODE=off`; do not use `KIS_LIVE_*` or submit, modify, or cancel an
-external order. After reconciliation, the next possible decision is a specific
-paper-capital envelope, not an automatic order canary.
+The next single objective is a no-order paper-capital-envelope proposal from a
+fresh KIS virtual-paper reconciliation. It must preserve the bridge's isolated
+paper-only, credential-free-web design and make its proposed currency, ceiling,
+and non-submission limits explicit without persisting account values in Git or
+external evidence. A new KIS read is allowed only as one deliberate bounded
+refresh if the existing snapshot is stale; it is never a retry loop. The output
+is an operator decision to approve or change a specific envelope. It does not
+authorize an order canary, submit, cancel, `KIS_LIVE_*`, or a mode change.
 
 ### Superseded historical context
 

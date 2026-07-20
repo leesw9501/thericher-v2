@@ -2721,3 +2721,39 @@ Claude's falsification-first verdict was `supported-with-limits`: the wording
 supports KIS virtual-paper read-only development, but not a live or order
 authorization. The decision reverses only on an explicit operator statement
 naming `KIS_LIVE_*` or approving a paper capital amount and order submission.
+
+## 2026-07-20 - Isolate KIS paper console reconciliation from the web runtime
+
+Decision: the local console consumes a versioned generic paper-account snapshot
+from a Docker runtime mounted read-only in the web service. A separately
+invoked `kis-readonly` Compose profile receives only the four `KIS_PAPER_*`
+values, performs one typed virtual-paper reconciliation, atomically publishes a
+complete or fact-free unavailable snapshot, and writes a minimal external
+result. The snapshot expires after five minutes; missing, stale, malformed, or
+partial state is never rendered as an empty account. The web process has no KIS
+client, broker path, or credential environment.
+
+The one bounded real reconciliation completed at `2026-07-20T07:34:11.455838Z`.
+Its minimal evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T073411455838Z-complete.json`,
+SHA-256 `9b7b12848f28ced98d674ac224d2f576e02df279cf57a581ef5500e9159614fb`.
+It retains only status, timestamps, currencies, counts, and a runtime-payload
+digest. The first evidence write encountered a lexical in-container artifact
+root check after the sanitized runtime snapshot completed. The check now admits
+only the configured `/app/model_artifacts` mount below the repository path; a
+fresh complete snapshot can recover missing minimal evidence with no KIS I/O.
+This recovery classified the run as `complete`, not a broker retry.
+
+Reason: a browser-facing monitor must not be a credential or broker boundary,
+but KIS paper reconciliation is useful execution evidence. The narrow bridge
+keeps the external fact surface small, allows a failed evidence write to be
+recovered without another broker call, and does not create a daemon, scheduler,
+report family, general KIS client, submission path, capital allocation, or live
+capability.
+
+Claude's falsification-first verdict was `supported-with-limits`: atomic final
+publication, strict freshness, an isolated credential path, and a recovery path
+that never refreshes data are load-bearing. Focused fake-transport, snapshot,
+web-isolation, Compose, and Docker-local HTTP tests cover those boundaries.
+The next decision is a specific paper-capital envelope for the operator; this
+decision does not authorize one.

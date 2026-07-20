@@ -6,9 +6,14 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
 from html import escape
+from pathlib import Path
 
 from thericher_v2.execution.emergency import EmergencyStore
 from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
+from thericher_v2.execution.paper_account_snapshot import (
+    PaperAccountSnapshot,
+    read_paper_account_snapshot,
+)
 from thericher_v2.serialization import to_jsonable
 from thericher_v2.state.event_log import Event, EventStore
 
@@ -67,6 +72,9 @@ class DashboardSnapshot:
     kis_prices_status: str = "unknown"
     kis_buying_power_status: str = "unknown"
     kis_open_orders_status: str = "unknown"
+    paper_account_status: str = "unknown"
+    paper_account_observed_at: str | None = None
+    paper_account: PaperAccountSnapshot | None = None
 
     def to_dict(self) -> dict[str, object]:
         return to_jsonable(self)
@@ -86,14 +94,18 @@ def build_snapshot(
     event_store: EventStore,
     emergency_store: EmergencyStore,
     mode: str = "off",
+    *,
+    paper_account_snapshot_path: Path | None = None,
+    now: datetime | None = None,
 ) -> DashboardSnapshot:
+    current_time = now or datetime.now(UTC)
     emergency = emergency_store.read()
     try:
         events = tuple(sorted(event_store.iter_events(), key=lambda event: event.seq))
         local_paper = _project_local_paper(events)
         decisions = _project_latest_decisions(events)
         status = "local_monitor_only"
-        message = "Local paper monitor only. KIS broker facts are unavailable."
+        message = "Local paper monitor only."
     except (ArithmeticError, KeyError, OSError, TypeError, ValueError):
         local_paper = _LocalPaperProjection(
             status="local_paper_replay_unavailable",
@@ -105,11 +117,24 @@ def build_snapshot(
         )
         decisions = ()
         status = "local_monitor_degraded"
-        message = "Local replay is unavailable. KIS broker facts are unavailable."
+        message = "Local replay is unavailable."
+
+    paper_account_read = read_paper_account_snapshot(
+        paper_account_snapshot_path,
+        now=current_time,
+    )
+    paper_account = paper_account_read.snapshot
+    paper_statuses = _paper_account_statuses(paper_account_read.status)
+    if paper_account_read.status == "available":
+        message = f"{message} Fresh KIS paper facts are read-only."
+    elif paper_account_read.status == "unavailable":
+        message = f"{message} KIS paper facts are unavailable."
+    else:
+        message = f"{message} KIS paper facts are unknown."
 
     return DashboardSnapshot(
         mode=mode,
-        heartbeat_utc=datetime.now(UTC).isoformat(),
+        heartbeat_utc=current_time.isoformat(),
         status=status,
         stop_new_orders=emergency.stop_new_orders,
         cancel_open_orders_requested=emergency.cancel_open_orders_requested,
@@ -129,6 +154,15 @@ def build_snapshot(
         local_positions=None if status == "local_monitor_degraded" else local_paper.positions,
         local_paper_fills=None if status == "local_monitor_degraded" else local_paper.fills,
         latest_decisions=None if status == "local_monitor_degraded" else decisions,
+        kis_holdings_status=paper_statuses["holdings"],
+        kis_prices_status=paper_statuses["prices"],
+        kis_buying_power_status=paper_statuses["reference_orderability"],
+        kis_open_orders_status=paper_statuses["open_orders"],
+        paper_account_status=paper_account_read.status,
+        paper_account_observed_at=(
+            None if paper_account is None else paper_account.observed_at.isoformat()
+        ),
+        paper_account=paper_account,
     )
 
 
@@ -137,6 +171,11 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
 
     safety_state = "Paused" if snapshot.stop_new_orders else "Ready"
     cancellation_state = "Requested" if snapshot.cancel_open_orders_requested else "Not requested"
+    paper_account_details = _paper_account_details(
+        snapshot.paper_account,
+        status=snapshot.paper_account_status,
+        observed_at=snapshot.paper_account_observed_at,
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -378,7 +417,9 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     <section class="section" aria-labelledby="broker-heading">
       <div class="section-header">
         <h2 id="broker-heading">KIS broker state</h2>
-        <span class="tag tag-unknown">Not connected</span>
+        <span class="tag {_paper_account_tag(snapshot.paper_account_status)}">
+          {_text(snapshot.paper_account_status)}
+        </span>
       </div>
       <div class="notice">{_text(snapshot.message)}</div>
       <div class="table-wrap">
@@ -390,11 +431,11 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
               <td class="state-unknown">{_text(snapshot.kis_holdings_status)}</td>
             </tr>
             <tr>
-              <td>KIS prices</td>
+              <td>KIS price quotes</td>
               <td class="state-unknown">{_text(snapshot.kis_prices_status)}</td>
             </tr>
             <tr>
-              <td>KIS buying power</td>
+              <td>KIS reference orderability</td>
               <td class="state-unknown">{_text(snapshot.kis_buying_power_status)}</td>
             </tr>
             <tr>
@@ -404,10 +445,125 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
           </tbody>
         </table>
       </div>
+      {paper_account_details}
     </section>
   </main>
 </body>
 </html>"""
+
+
+def _paper_account_statuses(status: str) -> dict[str, str]:
+    if status == "available":
+        return {
+            "holdings": "available",
+            "prices": "unknown",
+            "reference_orderability": "reference_only",
+            "open_orders": "available",
+        }
+    if status == "unavailable":
+        return {
+            "holdings": "unavailable",
+            "prices": "unavailable",
+            "reference_orderability": "unavailable",
+            "open_orders": "unavailable",
+        }
+    return {
+        "holdings": "unknown",
+        "prices": "unknown",
+        "reference_orderability": "unknown",
+        "open_orders": "unknown",
+    }
+
+
+def _paper_account_tag(status: str) -> str:
+    return "tag-local" if status == "available" else "tag-unknown"
+
+
+def _paper_account_details(
+    account: PaperAccountSnapshot | None,
+    *,
+    status: str,
+    observed_at: str | None,
+) -> str:
+    if account is None:
+        message = (
+            "No fresh KIS paper snapshot"
+            if status == "unknown"
+            else "KIS snapshot unavailable"
+        )
+        return f'<p class="scope">{_text(message)}</p>'
+    assert account.cash is not None
+    assert account.reference_orderability is not None
+    return f"""
+      <div class="overview">
+        <div>
+          <span class="label">Verified cash</span>
+          <strong>{_text(account.cash.available_cash)} {_text(account.cash.currency)}</strong>
+        </div>
+        <div>
+          <span class="label">Reference orderability</span>
+          <strong>
+            {_text(account.reference_orderability.orderable_funds)}
+            {_text(account.reference_orderability.currency)}
+          </strong>
+        </div>
+        <div>
+          <span class="label">Verified positions</span>
+          <strong>{len(account.positions)}</strong>
+        </div>
+        <div>
+          <span class="label">Verified open orders</span>
+          <strong>{len(account.open_orders)}</strong>
+        </div>
+      </div>
+      <p class="scope">
+        Observed {_optional_text(observed_at)}. Reference orderability is for
+        {_text(account.reference_orderability.reference_exchange)}
+        {_text(account.reference_orderability.reference_symbol)} at
+        {_text(account.reference_orderability.reference_price)}; it is not general buying power.
+      </p>
+      <div class="two-column">
+        <div>
+          <div class="section-header"><h2>KIS positions</h2></div>
+          {_paper_positions_table(account)}
+        </div>
+        <div>
+          <div class="section-header"><h2>KIS open orders</h2></div>
+          {_paper_open_orders_table(account)}
+        </div>
+      </div>"""
+
+
+def _paper_positions_table(account: PaperAccountSnapshot) -> str:
+    rows = "".join(
+        f"<tr><td>{_text(item.exchange)}</td><td>{_text(item.symbol)}</td>"
+        f"<td class=\"numeric\">{_text(item.quantity)}</td><td>{_text(item.currency)}</td></tr>"
+        for item in account.positions
+    )
+    if not rows:
+        rows = _empty_row(4, "No verified KIS positions")
+    return (
+        "<div class=\"table-wrap\"><table><thead><tr><th>Exchange</th><th>Symbol</th>"
+        "<th class=\"numeric\">Quantity</th><th>Currency</th></tr></thead><tbody>"
+        f"{rows}</tbody></table></div>"
+    )
+
+
+def _paper_open_orders_table(account: PaperAccountSnapshot) -> str:
+    rows = "".join(
+        f"<tr><td>{_text(item.exchange)}</td><td>{_text(item.symbol)}</td>"
+        f"<td>{_text(item.side)}</td><td class=\"numeric\">{_text(item.remaining_quantity)}</td>"
+        f"<td class=\"numeric\">{_optional_decimal(item.limit_price)}</td></tr>"
+        for item in account.open_orders
+    )
+    if not rows:
+        rows = _empty_row(5, "No verified KIS open orders")
+    return (
+        "<div class=\"table-wrap\"><table><thead><tr><th>Exchange</th><th>Symbol</th>"
+        "<th>Side</th><th class=\"numeric\">Remaining</th>"
+        "<th class=\"numeric\">Limit</th></tr></thead><tbody>"
+        f"{rows}</tbody></table></div>"
+    )
 
 
 def _project_local_paper(events: tuple[Event, ...]) -> _LocalPaperProjection:
@@ -609,6 +765,10 @@ def _empty_row(colspan: int, message: str) -> str:
 
 def _optional_text(value: str | None) -> str:
     return _text(value if value is not None else "Unavailable")
+
+
+def _optional_decimal(value: Decimal | None) -> str:
+    return _text(value if value is not None else "No limit")
 
 
 def _optional_count(value: int | None) -> str:

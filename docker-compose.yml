@@ -35,6 +35,10 @@ services:
       - 0.0.0.0
       - --port
       - "8787"
+      - --emergency-state
+      - /app/emergency/emergency_state.json
+      - --paper-account-snapshot
+      - /app/runtime/state/paper_account_snapshot.json
     environment:
       THERICHER_MODE: off
       THERICHER_DASHBOARD_TOKEN: ${THERICHER_DASHBOARD_TOKEN:-}
@@ -42,8 +46,9 @@ services:
     ports:
       - "127.0.0.1:8787:8787"
     volumes:
-      # This monitor reads Docker-local event state and writes only local emergency state.
-      - thericher-v2-runtime:/app/runtime
+      # This monitor reads Docker-local state and writes emergency state separately.
+      - thericher-v2-runtime:/app/runtime:ro
+      - thericher-v2-web-emergency:/app/emergency
 
   research:
     build:
@@ -80,5 +85,31 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-readonly:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-readonly"]
+    command:
+      - python
+      - -m
+      - thericher_v2.execution.kis_paper_console_bridge
+      - --execute
+      - --repository-root
+      - /app
+      - --runtime-snapshot
+      - /app/runtime/state/paper_account_snapshot.json
+    environment:
+      THERICHER_MODE: off
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+      KIS_PAPER_ACCOUNT_NO: ${KIS_PAPER_ACCOUNT_NO:-}
+      KIS_PAPER_ACCOUNT_PRODUCT_CODE: ${KIS_PAPER_ACCOUNT_PRODUCT_CODE:-}
+    volumes:
+      - thericher-v2-runtime:/app/runtime
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
 volumes:
   thericher-v2-runtime:
+  thericher-v2-web-emergency:
