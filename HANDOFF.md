@@ -267,6 +267,19 @@ separately from its completed feature-window end and expires at the next
   freshness, retention, storage-rights, cache, dataset, model, or paper claim.
   The matching date-limited Codex preflight automation is `PAUSED`; do not
   reactivate it for this completed objective.
+- A separate `kis-paper-raw-minute-observation-v1` is now prepared but has not
+  been executed. It has a distinct control objective and artifact root, leaves
+  v4 untouched, hard-codes `QQQ` / `NAS`, and accepts only one token, a first
+  `1m` page, and at most one continuation. Its no-`--execute` path reads no
+  configuration, control state, or artifact. A real attempt additionally needs
+  a caller-declared date equal to the current New York weekday regular session
+  and `--confirm-regular-nasdaq-session`; that confirmation covers holidays and
+  early closes. Regular-hours validation is an operational request guard, not a
+  trading-window preference. It retains only sanitized counts, timestamp
+  bounds, field-presence, and continuation facts outside memory, and cannot
+  promote KIS data, resampling, a model input, an order capability, or a paper
+  strategy. No KIS request, credential read, reservation, or artifact occurred
+  while this new path was prepared.
 - An offline source/code comparison then aligned the raw-minute builder with
   the current official sample: it now sends `custtype=P`, uses empty
   `tr_cont` on the first page and `N` on a continuation, and omits the local

@@ -3016,3 +3016,37 @@ Reason: a plausible prefix rule could send a future paper order to the wrong
 broker contract. The cost of preserving a disabled adapter is negligible next
 to that blast radius. This conclusion does not block independent KIS market-data
 capability work, which remains read-only and non-ordering.
+
+## 2026-07-21 - Prepare a distinct bounded KIS raw-minute observation
+
+Decision: keep the terminal `kis-paper-raw-minute-qualification-v4` result
+immutable and prepare a new `kis-paper-raw-minute-observation-v1` rather than
+reuse its date, `13:30` through `15:40` time window, reservation, artifact, or
+qualification logic. The new path is literal `QQQ` / `NAS` raw `1m`, one paper
+token, one first page, and at most one continuation. It defaults to no execute;
+real execution requires `--execute`, a caller-declared date matching the current
+New York weekday regular session, and `--confirm-regular-nasdaq-session` after
+an independent holiday/early-close check.
+
+It reuses only the existing generic external one-shot durability primitives with
+its distinct objective ID. The observer retains only sanitized request counts,
+timestamp bounds, field presence, and continuation facts outside memory. It
+never writes raw rows, prices, volumes, cursors, token/account data, or response
+bodies, and no result can promote timestamp semantics, completed bars,
+retention/storage rights, derived timeframes, a model input, a strategy, an
+order route, or execution authority. After `network_started`, any recovery is
+retry-blocking. The guard is an operational request boundary, not a trading-
+window policy. The marker namespace is objective-specific; the append-only
+control ledger remains shared and malformed ledger evidence fails closed for
+every objective rather than being repaired or ignored automatically.
+
+Claude's falsification-first review and the independent Execution and Validation
+reviews were all `supported-with-limits`. Focused fake-transport tests verify the
+token and two-page bound, redaction, dry-run and invalid-session isolation,
+marker/ledger recovery, external-artifact location, and no second GET after a
+closed final page gate. No credential, KIS request, artifact, or reservation was
+used while preparing this path.
+
+Reason: this isolates a small, inspectable market-data fact while preserving
+the permanent v4 no-retry state and keeping KIS order/account capabilities
+separate from data observation.

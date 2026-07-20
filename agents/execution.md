@@ -255,8 +255,12 @@
   No source resolves that tuple, so no header, route, transport, or adapter code
   was added. Reopen only for a direct official specification or testbed that
   consistently names all three facts.
-- Next: support Data's separately scoped future KIS raw-`1m` observation
-  preparation without treating its result as an execution or order capability.
+- Complete: Data's separately scoped `kis-paper-raw-minute-observation-v1` is
+  prepared but unexecuted. It is a literal `QQQ` / `NAS` read-only boundary with
+  one token and no more than two raw-minute pages, its own one-shot objective,
+  sanitized external evidence, and no order/account/capital/adapter import or
+  path. The next actual one-shot remains Data-owned and cannot establish an
+  execution or order capability.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -330,16 +334,17 @@
    retain the `VTTT1001U` sell comment versus `VTTT1006U` generic conversion
    conflict, and the shared wrapper does not provide an explicit virtual base
    route. Do not derive a resolver from it.
-4. Support Data's next isolated KIS raw-`1m` observation preparation only at
-   its typed client boundary. It cannot supply an order route, header, capital,
-   or submission claim.
+4. Complete: the isolated raw-`1m` observation preparation uses only the typed
+   client boundary and generic durable one-shot primitives. It cannot supply an
+   order route, header, capital, account fact, or submission claim.
 5. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-6. At a later, separately scoped market-session capability observation, retain
-   only sanitized market-data facts. It is distinct from the terminal balance
-   bridge outcome and must not retry or reinterpret that account result.
+6. At a later caller-confirmed regular Nasdaq session, run at most the prepared
+   raw-`1m` observation and retain only sanitized market-data facts. It is
+   distinct from the terminal balance bridge outcome and must not retry or
+   reinterpret that account result.
 7. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.

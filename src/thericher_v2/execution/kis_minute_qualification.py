@@ -7,7 +7,7 @@ import json
 import os
 import shutil
 import uuid
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
@@ -580,6 +580,40 @@ def write_kis_paper_minute_qualification_summary(
     if target.exists() or target.is_symlink():
         raise FileExistsError("qualification artifact destination already exists")
     payload = (json.dumps(document, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    staging = resolved_root / f".stage-{uuid.uuid4().hex}"
+    try:
+        staging.mkdir()
+        _write_bytes_and_sync(staging / "summary.json", payload)
+        os.rename(staging, target)
+    finally:
+        if staging.exists():
+            shutil.rmtree(staging)
+    return target / "summary.json", "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def write_external_one_shot_summary(
+    *,
+    document: Mapping[str, object],
+    artifact_root: Path,
+    run_id: str,
+    repo_root: Path,
+) -> tuple[Path, str]:
+    """Atomically write a caller-sanitized one-shot summary outside Git.
+
+    This is intentionally a storage primitive. Each caller remains responsible
+    for constructing and validating its own sanitized document and scope.
+    """
+
+    if not isinstance(document, Mapping):
+        raise TypeError("external one-shot summary must be a mapping")
+    if not run_id or any(character not in "0123456789TZ-" for character in run_id):
+        raise ValueError("external one-shot run_id is invalid")
+    resolved_root = _external_artifact_root(artifact_root=artifact_root, repo_root=repo_root)
+    resolved_root.mkdir(parents=True, exist_ok=True)
+    target = resolved_root / run_id
+    if target.exists() or target.is_symlink():
+        raise FileExistsError("external one-shot artifact destination already exists")
+    payload = (json.dumps(dict(document), indent=2, sort_keys=True) + "\n").encode("utf-8")
     staging = resolved_root / f".stage-{uuid.uuid4().hex}"
     try:
         staging.mkdir()

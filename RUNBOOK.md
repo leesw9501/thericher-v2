@@ -284,6 +284,45 @@ if summary persistence fails, `network_started` remains and blocks retry. A
 future, independently scoped Data objective may assess timestamp-label evidence
 and ask Claude before any capability update.
 
+## Prepared KIS Raw-Minute Observation
+
+This is a separate, future one-shot observation, not a retry or modification of
+the terminal v4 qualification above. It improves the data-collection loop by
+recording only a narrow current-session response shape; it cannot create a
+dataset, feature, resample, model input, order capability, or trading rule.
+
+The default command is a no-I/O preparation check. It reads no configuration,
+control state, or artifact:
+
+```powershell
+uv run python scripts\observe_kis_paper_raw_minute.py --session-date YYYY-MM-DD
+```
+
+Only during the caller-declared current New York weekday regular session, after
+checking Nasdaq's calendar for a closure or early close, may the separately
+authorized read-only one-shot be invoked:
+
+```powershell
+uv run python scripts\observe_kis_paper_raw_minute.py `
+  --execute `
+  --confirm-regular-nasdaq-session `
+  --session-date YYYY-MM-DD
+```
+
+The process is literal `QQQ` / `NAS` raw `1m`, one paper token, one first page,
+and at most one continuation. It has its own external objective ID and artifact
+root, never reopens v4, and rejects an absent/mismatched date, weekend, regular-
+hours miss, or missing confirmation before configuration loading. The caller
+confirmation is necessary because a weekday clock cannot prove a holiday or
+early-close schedule. This guard is operational only, never a preferred trading
+window.
+
+After reservation, `network_started` is a no-retry boundary. External output is
+limited to sanitized counts, timestamp bounds, field-presence, and continuation
+facts; raw prices, volumes, cursors, credentials, account data, and responses
+remain in memory only. It never calls account, position, buying-power,
+open-order, order, cancel, or live endpoints.
+
 ## KIS Paper Authority
 
 KIS paper should begin before model profitability when execution hard stops are

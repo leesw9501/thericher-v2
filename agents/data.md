@@ -282,16 +282,28 @@ confirmed rights. The initial candidate is therefore 90 completed raw `1m`
 OHLCV bars and local `5m`/`10m` resamples; `1h`/`3h` and all unverified fields
 are inactive, not assumed.
 
-The next one-shot KIS probe must retain only timestamp bounds/counts. A
-no-overlap continuation is not sufficient: its newest timestamp must be exactly
-one minute before the first page's oldest timestamp. The v4 probe is fixed to
-the verified 2026-07-20 Nasdaq session and cannot promote from any outcome.
+Any later **qualification** objective beyond the prepared observation must retain
+only timestamp bounds/counts. A no-overlap continuation is not sufficient there:
+its newest timestamp must be exactly one minute before the first page's oldest
+timestamp. The v4 probe is fixed to the verified 2026-07-20 Nasdaq session and
+cannot promote from any outcome.
 Malformed local paper configuration now exits before a one-shot marker or
 summary; a post-OAuth clock check also stops the first raw-page GET if token
 latency consumed the narrow window. This preserves the metadata-only boundary,
 not a KIS data fact.
 Until a later independent label-evidence objective succeeds, this input remains
 `observed` and Engine receives no paper runtime bars.
+
+The separate `kis-paper-raw-minute-observation-v1` preparation is complete and
+has not made a KIS request. It is deliberately not the terminal v4
+qualification: it uses a distinct external objective ID, literal `QQQ` / `NAS`
+scope, one token, one first `1m` page, and at most one continuation. Its default
+no-`--execute` path does not read configuration, control state, or artifacts.
+A later one-shot needs a caller-declared current New York weekday regular session
+and explicit regular-Nasdaq confirmation for holidays/early closes. Its only
+external output may contain sanitized counts, timestamp bounds, field presence,
+and continuation facts. It cannot establish adjacency, completed bars, retention,
+storage rights, `5m` / `10m`, a feature, a dataset, or model eligibility.
 
 The latest account-only `kis-readonly` bridge outcome is separately terminal
 `unavailable` / `balance_rejected` at
@@ -540,11 +552,12 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    daily attempt (`daily_response_rejected`). It confers no raw-`1m`, field,
    paging, timestamp, retention, storage-rights, data-quality, campaign, or
    training claim; do not write raw bytes or retry it.
-2. At the next bounded KIS market-session probe, review sanitized timestamp,
-   continuation-key/no-overlap, completed-bar, freshness, and storage-rights evidence
-   for the existing raw-`1m` capability. Retain it as `observed` after either
-   outcome; a later independently scoped Data objective may assess promotion.
-   Do not write raw bytes before rights are confirmed.
+2. At the next caller-confirmed KIS regular Nasdaq session, make at most the
+   prepared `kis-paper-raw-minute-observation-v1` one-shot. Review only its
+   sanitized counts, timestamp bounds, field-presence, and continuation facts;
+   retain either outcome as `observed` or `rejected`. Do not infer adjacency,
+   completed bars, freshness, storage rights, `5m` / `10m`, a dataset, or model
+   eligibility, and do not write raw bytes before rights are confirmed.
 3. Complete: one immutable prospective standard-Tiingo-EOD refresh was
    retained for only `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source
    boundary. Do not widen symbols, provider scope, or data rights, and do not
