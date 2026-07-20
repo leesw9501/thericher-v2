@@ -174,6 +174,10 @@ separately from its completed feature-window end and expires at the next
   Persistent raw-byte/cache storage still requires confirmed rights; otherwise
   retain only sanitized capability evidence outside Git.
 - Existing broker-free fills keep `source: local_paper`.
+- Local emergency state uses atomic replacement plus an exclusive sidecar lock
+  for transitions within one host or Docker runtime. Unreadable, malformed, or
+  timezone-less state fails closed and blocks new local-paper orders; it does
+  not make Windows-host and Docker processes a jointly supported state runtime.
 - A sequential local-paper restart after a fill event but before its derived
   portfolio snapshot can return that one recorded fill only when the accepted
   order, both complete-bar fingerprints, price, fee, and fill timestamp still

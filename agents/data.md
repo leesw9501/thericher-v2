@@ -785,6 +785,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Recent Evidence
 
+- Synthetic regression coverage now proves that a contiguous session supplied
+  as two newest-first `1m` chunks yields the same completed `5m`/`10m` bars and
+  skipped-bucket facts as chronological input. This is resampling correctness
+  only: it adds no provider, dataset, KIS call, or model eligibility.
 - `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`:
   sanitized historical KIS metadata-only result: `rejected`
   (`daily_response_rejected`) within the declared `QQQ`/`SPY`/`NAS` scope.

@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import gzip
 import hashlib
+import json
 import socket
 import urllib.request
 from datetime import UTC, datetime, timedelta
@@ -46,14 +47,60 @@ def test_multitimeframe_baseline_replays_isolated_local_paper_cells(tmp_path: Pa
 
     for cell in result.cells:
         assert cell.work_dir is not None
-        store = EventStore(cell.work_dir / "state.sqlite", cell.work_dir / "events.jsonl")
+        events_path = cell.work_dir / "events.jsonl"
+        event_hash_path = events_path.with_name(f"{events_path.name}.sha256")
+        assert cell.event_jsonl_sha256 == "sha256:" + hashlib.sha256(
+            events_path.read_bytes()
+        ).hexdigest()
+        assert event_hash_path.read_text(encoding="utf-8").strip() == cell.event_jsonl_sha256
+        store = EventStore(cell.work_dir / "state.sqlite", events_path)
         events = list(store.iter_events())
+        assert [event.event_type for event in events] == [
+            "ensemble_decision",
+            "local_paper_order_accepted",
+            "fill",
+            "local_paper_portfolio_snapshot",
+            "local_paper_order_accepted",
+            "fill",
+            "local_paper_portfolio_snapshot",
+        ]
+        decision = events[0]
+        assert decision.payload["data_snapshot"] == {
+            "dataset_id": source.dataset_id,
+            "dataset_hash": source.dataset_hash,
+        }
+        lineage = decision.payload["bar_lineage"]
+        accepted = [
+            event for event in events if event.event_type == "local_paper_order_accepted"
+        ]
         fills = [event for event in events if event.event_type == "fill"]
+        assert [event.payload["decision_id"] for event in accepted] == [
+            cell.decision_id,
+            f"{cell.decision_id}:flatten",
+        ]
+        assert all(event.payload["source"] == LOCAL_PAPER_SOURCE for event in accepted)
         assert len(fills) == 2
         assert all(event.payload["source"] == LOCAL_PAPER_SOURCE for event in fills)
+        for fill in fills:
+            price = Decimal(fill.payload["price"])
+            assert price > 0
+            assert Decimal(fill.payload["fee"]) == (price / Decimal("10000")).quantize(
+                Decimal("0.0001")
+            )
         assert cell.decision_bar_end is not None
+        assert decision.created_at == cell.decision_bar_end
         assert fills[0].created_at == cell.decision_bar_end
         assert fills[1].created_at == cell.decision_bar_end + Timeframe.M1.duration
+        assert fills[0].payload["signal_bar_identity"] == lineage["signal_bar_identity"]
+        assert (
+            fills[0].payload["execution_bar_identity"]
+            == lineage["entry_execution_bar_identity"]
+        )
+        assert fills[1].payload["signal_bar_identity"] == lineage["entry_execution_bar_identity"]
+        assert (
+            fills[1].payload["execution_bar_identity"]
+            == lineage["exit_execution_bar_identity"]
+        )
         assert store.replay().positions[("US", "AAA")] == 0
         assert replay_local_paper_account(store).quantity(market="US", symbol="AAA") == 0
 
@@ -160,6 +207,42 @@ def test_multitimeframe_baseline_requires_cataloged_bars_and_external_work_root(
         )
 
 
+def test_multitimeframe_baseline_event_hash_exposes_tampering(
+    tmp_path: Path,
+) -> None:
+    source = _attested_source(tmp_path, minutes=390)
+    result = run_intraday_multitimeframe_local_paper_baseline(
+        source,
+        run_id="tampered-multitimeframe",
+        work_root=tmp_path / "external-evidence",
+        repo_root=Path.cwd(),
+    )
+    cell = next(cell for cell in result.cells if cell.timeframe == Timeframe.M1)
+    assert cell.work_dir is not None
+    events_path = cell.work_dir / "events.jsonl"
+    event_hash_path = events_path.with_name(f"{events_path.name}.sha256")
+    assert cell.event_jsonl_sha256 == "sha256:" + hashlib.sha256(
+        events_path.read_bytes()
+    ).hexdigest()
+    assert event_hash_path.read_text(encoding="utf-8").strip() == cell.event_jsonl_sha256
+    records = [
+        json.loads(line)
+        for line in events_path.read_text(encoding="utf-8").splitlines()
+        if line
+    ]
+    records[0]["payload"]["data_snapshot"]["dataset_hash"] = "sha256:" + "0" * 64
+    events_path.write_text(
+        "\n".join(json.dumps(record, sort_keys=True, separators=(",", ":")) for record in records)
+        + "\n",
+        encoding="utf-8",
+    )
+
+    assert cell.event_jsonl_sha256 != "sha256:" + hashlib.sha256(
+        events_path.read_bytes()
+    ).hexdigest()
+    assert event_hash_path.read_text(encoding="utf-8").strip() == cell.event_jsonl_sha256
+
+
 def _attested_source(
     tmp_path: Path,
     *,
@@ -222,6 +305,7 @@ def _cell_projection(result) -> tuple[tuple[object, ...], ...]:
             cell.all_fills_local_paper,
             cell.final_position,
             cell.replayed_final_position,
+            cell.event_jsonl_sha256,
         )
         for cell in result.cells
     )

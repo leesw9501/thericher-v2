@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import socket
 from dataclasses import replace
 from datetime import UTC, datetime
@@ -137,6 +138,45 @@ def test_emergency_stop_blocks_new_local_paper_orders(tmp_path) -> None:
     assert result.status == "rejected"
     assert result.reason == "emergency_stop_active"
     assert list(broker.event_store.iter_events())[0].event_type == "local_paper_order_rejected"
+
+
+def test_malformed_emergency_state_blocks_new_local_paper_orders(tmp_path) -> None:
+    emergency_path = tmp_path / "emergency.json"
+    emergency_path.write_text('{"stop_new_orders": false}', encoding="utf-8")
+    broker = LocalPaperBroker(
+        event_store=EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl"),
+        emergency_store=EmergencyStore(emergency_path),
+    )
+
+    result = broker.submit_order(_order())
+
+    assert result.status == "rejected"
+    assert result.reason == "emergency_stop_active"
+    assert list(broker.event_store.iter_events())[0].event_type == "local_paper_order_rejected"
+
+
+def test_timezone_less_emergency_timestamp_blocks_new_local_paper_orders(tmp_path) -> None:
+    emergency_path = tmp_path / "emergency.json"
+    emergency_path.write_text(
+        json.dumps(
+            {
+                "stop_new_orders": False,
+                "cancel_open_orders_requested": False,
+                "reason": "incorrectly_clear",
+                "updated_at": "2026-01-02T14:30:00",
+            }
+        ),
+        encoding="utf-8",
+    )
+    broker = LocalPaperBroker(
+        event_store=EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl"),
+        emergency_store=EmergencyStore(emergency_path),
+    )
+
+    result = broker.submit_order(_order())
+
+    assert result.status == "rejected"
+    assert result.reason == "emergency_stop_active"
 
 
 def test_next_bar_fill_updates_cash_positions_and_replay(tmp_path) -> None:

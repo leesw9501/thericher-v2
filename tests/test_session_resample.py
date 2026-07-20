@@ -65,6 +65,38 @@ def test_session_resampling_anchors_all_timeframes_at_declared_open(
     assert three_hour.skipped_bucket_starts == (expected_open + timedelta(hours=6),)
 
 
+def test_session_resampling_is_invariant_to_two_newest_first_chunks() -> None:
+    session = SessionWindow(
+        datetime(2026, 1, 2, 14, 30, tzinfo=UTC),
+        datetime(2026, 1, 2, 16, 0, tzinfo=UTC),
+    )
+    chronological = _bar_range(session.open_ts, 90)
+    newest_first_chunks = [
+        *reversed(chronological[47:]),
+        *reversed(chronological[:47]),
+    ]
+
+    for target_timeframe, expected_count in (
+        (Timeframe.M5, 18),
+        (Timeframe.M10, 9),
+    ):
+        chronological_result = resample_session_bars(
+            chronological,
+            target_timeframe,
+            session=session,
+        )
+        newest_first_result = resample_session_bars(
+            newest_first_chunks,
+            target_timeframe,
+            session=session,
+        )
+
+        assert len(chronological_result.bars) == expected_count
+        assert chronological_result.skipped_bucket_starts == ()
+        assert newest_first_result == chronological_result
+        assert all(bar.complete for bar in newest_first_result.bars)
+
+
 def test_session_resampling_exposes_gap_and_duplicate_buckets() -> None:
     session = SessionWindow(
         datetime(2026, 1, 2, 14, 30, tzinfo=UTC),

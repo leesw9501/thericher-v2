@@ -1,12 +1,50 @@
 from __future__ import annotations
 
 import json
+import multiprocessing
+import threading
+import time
 from datetime import UTC, datetime
+from pathlib import Path
+
+import pytest
 
 from thericher_v2.dashboard import build_snapshot
 from thericher_v2.execution import EmergencyStore
 from thericher_v2.ops.daily_report import write_bundle
 from thericher_v2.state import EventStore
+
+
+def _update_emergency_state_in_process(
+    path_value: str,
+    action_name: str,
+    first_read_ready,
+    release_first_read,
+    second_read_started,
+) -> None:
+    path = Path(path_value)
+    original_read_text = Path.read_text
+
+    def synchronized_read_text(candidate: Path, *args, **kwargs) -> str:
+        contents = original_read_text(candidate, *args, **kwargs)
+        if candidate == path:
+            if action_name == "stop":
+                first_read_ready.set()
+                if not release_first_read.wait(timeout=5):
+                    raise TimeoutError("test did not release the first state transition")
+            else:
+                second_read_started.set()
+        return contents
+
+    Path.read_text = synchronized_read_text
+    try:
+        store = EmergencyStore(path)
+        if action_name == "stop":
+            store.stop_new_orders("cross_process_stop")
+        else:
+            store.request_cancel_open_orders("cross_process_cancel")
+    finally:
+        Path.read_text = original_read_text
 
 
 def test_emergency_store_writes_local_state_only(tmp_path) -> None:
@@ -21,6 +59,113 @@ def test_emergency_store_writes_local_state_only(tmp_path) -> None:
     assert json.loads((tmp_path / "emergency.json").read_text(encoding="utf-8"))[
         "cancel_open_orders_requested"
     ]
+
+
+def test_emergency_store_preserves_existing_state_when_replace_fails(monkeypatch, tmp_path) -> None:
+    path = tmp_path / "emergency.json"
+    store = EmergencyStore(path)
+    store.stop_new_orders("unit_test_stop")
+    original_contents = path.read_bytes()
+
+    def fail_replace(_source, _destination) -> None:
+        raise OSError("replace failed")
+
+    monkeypatch.setattr("thericher_v2.execution.emergency.os.replace", fail_replace)
+
+    with pytest.raises(OSError, match="replace failed"):
+        store.request_cancel_open_orders("unit_test_cancel")
+
+    assert path.read_bytes() == original_contents
+    assert store.read().stop_new_orders
+    assert not store.read().cancel_open_orders_requested
+
+
+def test_emergency_store_merges_concurrent_stop_and_cancel_requests(monkeypatch, tmp_path) -> None:
+    path = tmp_path / "emergency.json"
+    store = EmergencyStore(path)
+    store.clear("initial_clear")
+    stop_store = EmergencyStore(path)
+    cancel_store = EmergencyStore(path)
+    original_read_text = Path.read_text
+
+    def delayed_read_text(self, *args, **kwargs) -> str:
+        contents = original_read_text(self, *args, **kwargs)
+        if self == path:
+            time.sleep(0.05)
+        return contents
+
+    monkeypatch.setattr(Path, "read_text", delayed_read_text)
+    start = threading.Barrier(3)
+    failures: list[Exception] = []
+
+    def request(action, reason: str) -> None:
+        try:
+            start.wait(timeout=2)
+            action(reason)
+        except Exception as error:  # pragma: no cover - asserted below
+            failures.append(error)
+
+    workers = (
+        threading.Thread(target=request, args=(stop_store.stop_new_orders, "concurrent_stop")),
+        threading.Thread(
+            target=request,
+            args=(cancel_store.request_cancel_open_orders, "concurrent_cancel"),
+        ),
+    )
+    for worker in workers:
+        worker.start()
+    start.wait(timeout=2)
+    for worker in workers:
+        worker.join(timeout=2)
+
+    assert not failures
+    assert all(not worker.is_alive() for worker in workers)
+    state = store.read()
+    assert state.stop_new_orders
+    assert state.cancel_open_orders_requested
+
+
+def test_emergency_store_serializes_cross_process_stop_and_cancel_requests(tmp_path) -> None:
+    path = tmp_path / "emergency.json"
+    EmergencyStore(path).clear("initial_clear")
+    context = multiprocessing.get_context("spawn")
+    first_read_ready = context.Event()
+    release_first_read = context.Event()
+    second_read_started = context.Event()
+    stop_worker = context.Process(
+        target=_update_emergency_state_in_process,
+        args=(
+            str(path),
+            "stop",
+            first_read_ready,
+            release_first_read,
+            second_read_started,
+        ),
+    )
+    cancel_worker = context.Process(
+        target=_update_emergency_state_in_process,
+        args=(
+            str(path),
+            "cancel",
+            first_read_ready,
+            release_first_read,
+            second_read_started,
+        ),
+    )
+
+    stop_worker.start()
+    assert first_read_ready.wait(timeout=5)
+    cancel_worker.start()
+    assert not second_read_started.wait(timeout=0.2)
+    release_first_read.set()
+    stop_worker.join(timeout=5)
+    cancel_worker.join(timeout=5)
+
+    assert stop_worker.exitcode == 0
+    assert cancel_worker.exitcode == 0
+    state = EmergencyStore(path).read()
+    assert state.stop_new_orders
+    assert state.cancel_open_orders_requested
 
 
 def test_dashboard_snapshot_reads_event_and_emergency_state(tmp_path) -> None:

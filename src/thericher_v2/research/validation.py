@@ -210,6 +210,7 @@ class MultiTimeframeBaselineCell:
     final_position: Decimal | None
     replayed_final_position: Decimal | None
     work_dir: Path | None
+    event_jsonl_sha256: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -231,6 +232,7 @@ class MultiTimeframeBaselineCell:
                 or self.decision_id is None
                 or self.final_position is None
                 or self.replayed_final_position is None
+                or (self.work_dir is None and self.event_jsonl_sha256 is not None)
             ):
                 raise ValueError("completed baseline cell is missing replay evidence")
         elif (
@@ -241,6 +243,7 @@ class MultiTimeframeBaselineCell:
             or self.final_position is not None
             or self.replayed_final_position is not None
             or self.work_dir is not None
+            or self.event_jsonl_sha256 is not None
         ):
             raise ValueError("skipped baseline cell must not contain execution evidence")
 
@@ -767,6 +770,7 @@ def _run_intraday_multitimeframe_baseline(
                     final_position=None,
                     replayed_final_position=None,
                     work_dir=None,
+                    event_jsonl_sha256=None,
                 )
             )
             continue
@@ -782,9 +786,13 @@ def _run_intraday_multitimeframe_baseline(
         decision_id = _multitimeframe_decision_id(run_id, timeframe, decision_bar)
         _append_multitimeframe_baseline_decision(
             event_store=event_store,
+            source=source,
             run_id=run_id,
             decision_id=decision_id,
             decision_bar=decision_bar,
+            signal_bar=signal_bar,
+            entry_bar=entry_bar,
+            exit_bar=exit_bar,
         )
         entry_order = OrderIntent(
             client_order_id=f"{run_id}-{timeframe.value}-entry",
@@ -822,11 +830,10 @@ def _run_intraday_multitimeframe_baseline(
         if exit_execution.fill is None:
             raise RuntimeError("multitimeframe baseline exit did not produce a local-paper fill")
 
-        event_path = cell_dir / "events.jsonl"
         fill_evidence = collect_fill_source_evidence(
             (
                 FillEventArtifact(
-                    path=event_path,
+                    path=event_store.jsonl_path,
                     expected_fill_count=2,
                     label=f"{run_id}:{timeframe.value}",
                 ),
@@ -846,6 +853,9 @@ def _run_intraday_multitimeframe_baseline(
             raise RuntimeError(
                 "multitimeframe baseline must finish with a replayable flat position"
             )
+        event_jsonl_sha256 = (
+            _write_event_hash_sidecar(event_store.jsonl_path) if retain_work_paths else None
+        )
         cells.append(
             MultiTimeframeBaselineCell(
                 timeframe=timeframe,
@@ -859,6 +869,7 @@ def _run_intraday_multitimeframe_baseline(
                 final_position=final_position,
                 replayed_final_position=replayed_final_position,
                 work_dir=cell_dir if retain_work_paths else None,
+                event_jsonl_sha256=event_jsonl_sha256,
             )
         )
     return MultiTimeframeBaselineResult(
@@ -891,30 +902,83 @@ def _select_multitimeframe_execution_bars(
 def _append_multitimeframe_baseline_decision(
     *,
     event_store: EventStore,
+    source: CatalogedBars,
     run_id: str,
     decision_id: str,
     decision_bar: Bar,
+    signal_bar: Bar,
+    entry_bar: Bar,
+    exit_bar: Bar,
 ) -> None:
     event_store.append(
         Event(
             event_type="ensemble_decision",
             created_at=decision_bar.end_ts,
-            payload={
-                "source": INTRADAY_MULTITIMEFRAME_BASELINE_SOURCE,
-                "run_id": run_id,
-                "decision_id": decision_id,
-                "symbol": decision_bar.symbol,
-                "market": decision_bar.market,
-                "timeframe": decision_bar.timeframe.value,
-                "action": "buy",
-                "confidence": "1",
-                "expected_edge_bps": "0",
-                "risk_score": "0",
-                "prediction_ids": [],
-                "reason": "completed_bar_local_paper_baseline",
-            },
+            payload=_multitimeframe_baseline_decision_payload(
+                source=source,
+                run_id=run_id,
+                decision_id=decision_id,
+                decision_bar=decision_bar,
+                signal_bar=signal_bar,
+                entry_bar=entry_bar,
+                exit_bar=exit_bar,
+            ),
         )
     )
+
+
+def _multitimeframe_baseline_decision_payload(
+    *,
+    source: CatalogedBars,
+    run_id: str,
+    decision_id: str,
+    decision_bar: Bar,
+    signal_bar: Bar,
+    entry_bar: Bar,
+    exit_bar: Bar,
+) -> dict[str, object]:
+    return {
+        "source": INTRADAY_MULTITIMEFRAME_BASELINE_SOURCE,
+        "run_id": run_id,
+        "decision_id": decision_id,
+        "symbol": decision_bar.symbol,
+        "market": decision_bar.market,
+        "timeframe": decision_bar.timeframe.value,
+        "action": "buy",
+        "confidence": "1",
+        "expected_edge_bps": "0",
+        "risk_score": "0",
+        "prediction_ids": [],
+        "reason": "completed_bar_local_paper_baseline",
+        "data_snapshot": {
+            "dataset_id": source.dataset_id,
+            "dataset_hash": source.dataset_hash,
+        },
+        "bar_lineage": {
+            "decision_bar_identity": _multitimeframe_bar_identity(decision_bar),
+            "signal_bar_identity": _multitimeframe_bar_identity(signal_bar),
+            "entry_execution_bar_identity": _multitimeframe_bar_identity(entry_bar),
+            "exit_execution_bar_identity": _multitimeframe_bar_identity(exit_bar),
+        },
+    }
+
+
+def _multitimeframe_bar_identity(bar: Bar) -> str:
+    payload = {
+        "symbol": bar.symbol,
+        "market": bar.market,
+        "timeframe": bar.timeframe.value,
+        "start_ts": bar.start_ts.isoformat(),
+        "end_ts": bar.end_ts.isoformat(),
+        "open": str(bar.open),
+        "high": str(bar.high),
+        "low": str(bar.low),
+        "close": str(bar.close),
+        "volume": str(bar.volume),
+        "complete": bar.complete,
+    }
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _multitimeframe_decision_id(run_id: str, timeframe: Timeframe, bar: Bar) -> str:
@@ -1390,6 +1454,15 @@ def _sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return f"sha256:{digest.hexdigest()}"
+
+
+def _write_event_hash_sidecar(event_jsonl_path: Path) -> str:
+    digest = _sha256_file(event_jsonl_path)
+    event_jsonl_path.with_name(f"{event_jsonl_path.name}.sha256").write_text(
+        f"{digest}\n",
+        encoding="utf-8",
+    )
+    return digest
 
 
 def _reject_repo_artifact_path(artifact_root: Path, repo_root: Path | None) -> None:

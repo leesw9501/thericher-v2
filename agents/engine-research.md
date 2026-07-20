@@ -319,6 +319,13 @@
 
 ## Recent Evidence
 
+- The retained intraday multi-timeframe local-paper smoke now records its
+  attested dataset id/hash, decision-bar lineage, accepted intents, two
+  `local_paper` fills, and retained `events.jsonl.sha256` sidecar; focused tests
+  cover event order/timing, fill economics, flat replay, and hash mismatch after
+  tampering.
+  It remains a short-data pipeline smoke, not a campaign, model, GPU, or
+  profitability fact.
 - CPU preflight `raw-d1-development-20260718-cpu-r2` completed 36 replay cells
   and 108 replay-state hash checks; summary SHA-256 is
   `9ee93a8bf4ecfff92bd71d7c49c613dd8fe567e5ab7f70e23feffed4c4462c95`.

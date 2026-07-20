@@ -162,6 +162,11 @@
   scripts: only `QQQ`/`SPY` on `NAS`, fixed raw-`1m`/daily request shapes, and
   no fourth daily or minute page. An out-of-scope request fails before
   `opener.open`.
+- Local emergency state now uses atomic temp-file replacement and an exclusive
+  sidecar lock for read-modify-write transitions within one host or one Docker
+  runtime. Unreadable, malformed, or timezone-less state fails closed and
+  blocks new local-paper orders. This changes no KIS, credential, account,
+  broker, or order authority.
 - The approved historical capability probe completed its one allowed attempt
   as `rejected` (`daily_response_rejected`), with one token, two daily-page
   attempts, and zero raw-`1m` attempts. Its sanitized summary is

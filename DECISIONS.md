@@ -2630,3 +2630,23 @@ Independent Data and Validation review confirmed the lifecycle, bounded scope,
 sanitization, and retry prohibition from the summary and external control
 evidence. No Claude review is needed because no promotion, data-contract
 change, capital decision, execution-risk change, or model claim is proposed.
+
+## 2026-07-20 - Fail closed local emergency-state persistence
+
+Decision: make the local emergency-state JSON transition atomic with a
+same-directory temp file, flush/fsync, and replacement. Serialize state
+transitions with a sidecar exclusive lock within one host runtime or one Docker
+runtime, so concurrent stop and cancel requests merge rather than clearing an
+already requested stop. Any unreadable or malformed JSON state, including a
+timezone-less timestamp, resolves to a stop-new-orders state.
+
+Reason: emergency controls are deterministic execution safety, so interrupted
+files or stale read-modify-write races must never make a local-paper entry look
+permitted. The Docker named runtime volume is Linux-local; a Windows host path
+is separate, so cross-runtime shared-file coordination is not claimed.
+
+Independent validation reproduced the original cross-process lost-update risk,
+then confirmed the spawned-process regression and malformed-timestamp
+fail-closed behavior. This is local-paper-only safety work: it reads no
+credential, opens no network connection, calls no KIS endpoint, and changes no
+paper/live submission authority.
