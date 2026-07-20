@@ -195,6 +195,11 @@ class KisPaperMinuteQualificationFailure:
             sanitize_kis_paper_minute_failure_reason(self.reason),
         )
 
+
+class _ContinuationRequestWindowClosed(Exception):
+    """Stop a second page without discarding the completed first-page observation."""
+
+
 def is_kis_paper_minute_qualification_window(value: datetime) -> bool:
     """Allow one regular-session observation only when two pages stay in-session."""
 
@@ -226,29 +231,55 @@ def run_bounded_kis_paper_minute_qualification(
     if not is_kis_paper_minute_qualification_window(start):
         raise ValueError("kis_paper_minute_qualification_window_closed")
 
-    # A suspended process must not use a once-valid timestamp to begin an external call.
-    before_first_page = require_utc(clock(), "before_first_page")
-    if not is_kis_paper_minute_qualification_window(before_first_page):
+    # A suspended process must not use a once-valid timestamp to obtain a token.
+    before_token = require_utc(clock(), "before_token")
+    if not is_kis_paper_minute_qualification_window(before_token):
         raise ValueError("window_recheck_closed")
-    start = before_first_page
+    client.ensure_authenticated()
 
-    first_page = client.fetch_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+    first_page_started_at: datetime | None = None
+
+    def require_first_page_window() -> None:
+        nonlocal first_page_started_at
+        value = require_utc(clock(), "before_first_page")
+        if not is_kis_paper_minute_qualification_window(value):
+            raise ValueError("window_recheck_closed")
+        first_page_started_at = value
+
+    first_page = client.fetch_page(
+        KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"),
+        before_request=require_first_page_window,
+    )
+    if first_page_started_at is None:
+        raise RuntimeError("first-page request gate was not called")
+    start = first_page_started_at
     continuation_page: KisPaperMinutePage | None = None
     observed_at_end: datetime
     if first_page.next_cursor is not None:
-        before_continuation = require_utc(clock(), "before_continuation")
-        if _qualification_observation_is_valid(start, before_continuation):
-            last = first_page.bars[-1]
+        before_continuation: datetime | None = None
+
+        def require_continuation_window() -> None:
+            nonlocal before_continuation
+            value = require_utc(clock(), "before_continuation")
+            before_continuation = value
+            if not _qualification_observation_is_valid(start, value):
+                raise _ContinuationRequestWindowClosed
+
+        last = first_page.bars[-1]
+        try:
             continuation_page = client.fetch_page(
                 KisPaperMinuteQuery(
                     exchange="NAS",
                     symbol="QQQ",
                     continuation_next=first_page.next_cursor,
                     continuation_key=_continuation_key_before(last),
-                )
+                ),
+                before_request=require_continuation_window,
             )
             observed_at_end = require_utc(clock(), "observed_at_end")
-        else:
+        except _ContinuationRequestWindowClosed:
+            if before_continuation is None:
+                raise RuntimeError("continuation request gate was not called") from None
             observed_at_end = before_continuation
     else:
         observed_at_end = require_utc(clock(), "observed_at_end")
@@ -609,7 +640,7 @@ def reserve_external_one_shot_attempt(
     objective_id: str,
     observed_at: datetime,
 ) -> Path:
-    """Record a one-shot reservation in the append-only ledger before any token."""
+    """Create an exclusive marker, then record one reservation before any token."""
 
     marker = _external_attempt_marker(
         control_root=control_root,
@@ -623,14 +654,6 @@ def reserve_external_one_shot_attempt(
     ):
         raise ValueError("qualification_attempt_already_reserved")
     reserved_at = require_utc(observed_at, "observed_at")
-    _append_external_attempt_ledger(
-        control_root=control_root,
-        repo_root=repo_root,
-        objective_id=objective_id,
-        phase="reserved",
-        reserved_at=reserved_at,
-        updated_at=reserved_at,
-    )
     payload = _attempt_marker_payload(
         objective_id=objective_id,
         phase="reserved",
@@ -651,6 +674,14 @@ def reserve_external_one_shot_attempt(
     except OSError as error:
         # Keep an incomplete marker in place: a failed durability write must not permit retry.
         raise ValueError("reservation_state_write_failed") from error
+    _append_external_attempt_ledger(
+        control_root=control_root,
+        repo_root=repo_root,
+        objective_id=objective_id,
+        phase="reserved",
+        reserved_at=reserved_at,
+        updated_at=reserved_at,
+    )
     return marker
 
 

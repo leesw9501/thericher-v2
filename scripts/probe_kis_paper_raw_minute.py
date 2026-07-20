@@ -87,6 +87,14 @@ def main(
         )
         return
 
+    try:
+        # A malformed local configuration is not an external side effect and
+        # must not consume the one-shot reservation.
+        config = load_kis_paper_market_data_config(dotenv_path)
+    except (KisPaperMarketDataError, ValueError):
+        print(json.dumps({"status": "not_executed", "reason": "configuration_preflight_failed"}))
+        return
+
     client: KisPaperMinuteClient | None = None
     result: KisPaperMinuteQualificationEvidence | KisPaperMinuteQualificationFailure
     try:
@@ -102,13 +110,29 @@ def main(
                 )
             )
             return
+        try:
+            attempt_reserved = kis_paper_minute_qualification_attempt_is_reserved(
+                control_root=KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT,
+                repo_root=_REPO_ROOT,
+            )
+        except ValueError:
+            print(json.dumps({"status": "not_executed", "reason": "reservation_marker_invalid"}))
+            return
+        if attempt_reserved:
+            print(
+                json.dumps(
+                    {
+                        "status": "not_executed",
+                        "reason": "qualification_attempt_already_reserved",
+                    }
+                )
+            )
+            return
         reserve_kis_paper_minute_qualification_attempt(
             control_root=KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT,
             repo_root=_REPO_ROOT,
             observed_at=reserved_at,
         )
-        # A terminal one-shot reservation must exist before opening local credentials.
-        config = load_kis_paper_market_data_config(dotenv_path)
         network_started_at = clock()
         if not is_kis_paper_minute_qualification_window(network_started_at):
             result = KisPaperMinuteQualificationFailure(

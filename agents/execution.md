@@ -31,8 +31,10 @@
 - The offline raw-minute qualification harness v4 reserves a single external
   objective attempt before a possible token, records
   `reserved -> network_started -> summary_written`, pins artifact/Git roots,
-  synchronizes each marker, rechecks fresh time immediately before the network
-  boundary and first page, rejects redirects and oversized pages, and permits
+  synchronizes each marker, performs initial reservation/configuration
+  preflight then rechecks reservation before atomic reservation, checks fresh
+  time before token issuance and at transport-adjacent request gates after OAuth,
+  rejects redirects and oversized pages, and permits
   one first page plus at most one continuation in the fixed verified 2026-07-20
   Nasdaq window. It writes counts, timestamp bounds, exact-boundary facts, and
   booleans only outside Git from typed sanitized inputs. Its only result is
@@ -45,6 +47,10 @@
   is permitted without widening any other minute or date. Sanitizer tests also
   prove fake volume, cursor, account-identifier, and raw-row sentinels stay out
   of external summaries.
+- The `O_EXCL` reservation marker now precedes its `reserved` ledger append.
+  A stale concurrent precheck can therefore lose at marker creation without
+  adding a duplicate ledger record; a post-marker ledger failure remains a
+  non-retryable fail-closed marker state.
 - KIS submit/live remains disabled. The operator approved `KIS_PAPER_*` for one
   read-only virtual-account discovery while `THERICHER_MODE=off`. The initial
   balance probe failed closed, then the corrected open-order-first discovery

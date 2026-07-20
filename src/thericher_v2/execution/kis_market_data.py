@@ -6,7 +6,7 @@ import json
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -38,8 +38,13 @@ _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS = frozenset(
         "THERICHER_MODEL_ARTIFACT_ROOT",
     }
 )
+_KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS = frozenset({"THERICHER_DASHBOARD_TOKEN"})
 _KIS_PAPER_PROBE_READABLE_ENV_KEYS = _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS | frozenset(
-    {"KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"}
+    {
+        "KIS_PAPER_APP_KEY",
+        "KIS_PAPER_APP_SECRET",
+        *_KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS,
+    }
 )
 
 
@@ -327,36 +332,42 @@ class KisPaperMarketDataClient:
             minute_page_attempts=self._minute_page_attempts,
         )
 
-    def fetch_minute_page(self, query: KisPaperMinuteQuery) -> KisPaperMinutePage:
+    def fetch_minute_page(
+        self,
+        query: KisPaperMinuteQuery,
+        *,
+        before_request: Callable[[], None] | None = None,
+    ) -> KisPaperMinutePage:
         if self._minute_page_attempts >= KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
         access_token = self._issue_access_token()
-        self._minute_page_attempts += 1
-        response = self._transport.request(
-            KisMarketDataRequest(
-                method="GET",
-                url=f"{self._config.base_url}{KIS_PAPER_MINUTE_PATH}",
-                headers={
-                    "authorization": f"Bearer {access_token}",
-                    "appkey": self._config.app_key,
-                    "appsecret": self._config.app_secret,
-                    "tr_id": KIS_PAPER_MINUTE_TR_ID,
-                    "accept": "application/json",
-                },
-                query={
-                    "AUTH": "",
-                    "EXCD": query.exchange,
-                    "SYMB": query.symbol,
-                    "NMIN": "1",
-                    "PINC": "1" if query.continuation_next is not None else "0",
-                    "NREC": "120",
-                    "FILL": "",
-                    "KEYB": query.continuation_key or "",
-                    "NEXT": query.continuation_next or "",
-                    "FILL_GUBN": "0",
-                },
-            )
+        request = KisMarketDataRequest(
+            method="GET",
+            url=f"{self._config.base_url}{KIS_PAPER_MINUTE_PATH}",
+            headers={
+                "authorization": f"Bearer {access_token}",
+                "appkey": self._config.app_key,
+                "appsecret": self._config.app_secret,
+                "tr_id": KIS_PAPER_MINUTE_TR_ID,
+                "accept": "application/json",
+            },
+            query={
+                "AUTH": "",
+                "EXCD": query.exchange,
+                "SYMB": query.symbol,
+                "NMIN": "1",
+                "PINC": "1" if query.continuation_next is not None else "0",
+                "NREC": "120",
+                "FILL": "",
+                "KEYB": query.continuation_key or "",
+                "NEXT": query.continuation_next or "",
+                "FILL_GUBN": "0",
+            },
         )
+        if before_request is not None:
+            before_request()
+        self._minute_page_attempts += 1
+        response = self._transport.request(request)
         payload = _successful_payload(response, "minute_response_rejected")
         output1 = payload.get("output1")
         output2 = payload.get("output2")
@@ -419,6 +430,11 @@ class KisPaperMarketDataClient:
             continuation_value=continuation,
         )
 
+    def ensure_authenticated(self) -> None:
+        """Issue the single permitted token before a caller's final GET gate."""
+
+        self._issue_access_token()
+
     def _issue_access_token(self) -> str:
         if self._access_token is not None:
             return self._access_token
@@ -460,12 +476,22 @@ class KisPaperMinuteClient:
     def call_counts(self) -> KisPaperMinuteCallCounts:
         return self._client.minute_call_counts
 
-    def fetch_page(self, query: KisPaperMinuteQuery) -> KisPaperMinutePage:
-        return self._client.fetch_minute_page(query)
+    def fetch_page(
+        self,
+        query: KisPaperMinuteQuery,
+        *,
+        before_request: Callable[[], None] | None = None,
+    ) -> KisPaperMinutePage:
+        return self._client.fetch_minute_page(query, before_request=before_request)
+
+    def ensure_authenticated(self) -> None:
+        """Obtain the token without exposing it to the qualification harness."""
+
+        self._client.ensure_authenticated()
 
 
 def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
-    """Read the two paper keys from the approved pre-paper portion of ``.env`` only."""
+    """Read only the approved paper keys from the pre-paper ``.env`` portion."""
 
     required = {"KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"}
     values: dict[str, str] = {}
@@ -486,7 +512,10 @@ def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataCo
                     if set(values) == required:
                         break
                     continue
-                if key not in _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS:
+                if key not in (
+                    _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS
+                    | _KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS
+                ):
                     raise KisPaperMarketDataError("config_missing")
     except OSError as error:
         raise KisPaperMarketDataError("config_missing") from error
@@ -505,9 +534,11 @@ def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataCo
 def _read_approved_dotenv_assignment(handle: BinaryIO) -> tuple[str, str] | None:
     """Read one allowed assignment without consuming an unapproved value.
 
-    The probe has permission for the two paper app values only. Reading the key
-    byte-by-byte lets it reject a reordered account/live entry before its value
-    is loaded into Python memory.
+    The probe has permission for its two paper app values only. A blank
+    dashboard placeholder may precede them so a normal local ``.env`` layout
+    remains usable, but a nonempty dashboard value is rejected before it is
+    retained. Reading keys byte-by-byte lets the loader reject reordered
+    account/live entries before their values enter Python memory.
     """
 
     while True:
@@ -539,6 +570,10 @@ def _read_approved_dotenv_assignment(handle: BinaryIO) -> tuple[str, str] | None
             raise KisPaperMarketDataError("config_missing") from error
         if not key or key not in _KIS_PAPER_PROBE_READABLE_ENV_KEYS:
             raise KisPaperMarketDataError("config_missing")
+        if key in _KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS:
+            if not _read_empty_dotenv_value(handle):
+                raise KisPaperMarketDataError("config_missing")
+            return key, ""
         return key, _read_dotenv_value(handle)
 
 
@@ -557,6 +592,17 @@ def _read_dotenv_value(handle: BinaryIO) -> str:
         return value_bytes.decode("utf-8").strip()
     except UnicodeDecodeError as error:
         raise KisPaperMarketDataError("config_missing") from error
+
+
+def _read_empty_dotenv_value(handle: BinaryIO) -> bool:
+    """Accept only an immediately empty optional value without retaining bytes."""
+
+    current = handle.read(1)
+    if current in {b"", b"\n"}:
+        return True
+    if current != b"\r":
+        return False
+    return handle.read(1) in {b"", b"\n"}
 
 
 def _daily_row(raw: object) -> Mapping[str, object]:

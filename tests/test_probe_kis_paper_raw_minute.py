@@ -15,7 +15,6 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_minute_qualification import (
     KisPaperMinuteQualificationEvidence,
     KisPaperMinuteQualificationFacts,
-    KisPaperMinuteQualificationFailure,
 )
 
 
@@ -199,7 +198,7 @@ def test_summary_write_failure_preserves_the_network_started_recovery_state(
     assert json.loads(markers[0].read_text(encoding="utf-8"))["phase"] == "network_started"
 
 
-def test_runner_reserves_before_loading_credentials(
+def test_runner_checks_reservation_before_loading_credentials_then_reserves(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
@@ -209,18 +208,18 @@ def test_runner_reserves_before_loading_credentials(
     repo_root.mkdir()
     control_root = tmp_path / "control"
     summary_path = tmp_path / "artifact" / "summary.json"
-    reservation_phase_at_config: str | None = None
-
     monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
     monkeypatch.setattr(probe, "KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT", control_root)
 
-    def load_config_after_reservation(_: Path) -> object:
-        nonlocal reservation_phase_at_config
-        marker = next((control_root / "reservations").glob("*.json"))
-        reservation_phase_at_config = json.loads(marker.read_text(encoding="utf-8"))["phase"]
+    def load_config_after_reservation_check(_: Path) -> object:
+        assert not list((control_root / "reservations").glob("*.json"))
         return object()
 
-    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", load_config_after_reservation)
+    monkeypatch.setattr(
+        probe,
+        "load_kis_paper_market_data_config",
+        load_config_after_reservation_check,
+    )
     monkeypatch.setattr(probe, "KisPaperMinuteClient", lambda **_kwargs: object())
     monkeypatch.setattr(probe, "UrllibKisPaperMarketDataTransport", lambda: object())
     monkeypatch.setattr(
@@ -241,10 +240,9 @@ def test_runner_reserves_before_loading_credentials(
     )
 
     assert json.loads(capsys.readouterr().out)["status"] == "observed"
-    assert reservation_phase_at_config == "reserved"
 
 
-def test_config_load_failure_after_reservation_is_terminal(
+def test_config_preflight_failure_does_not_reserve_or_write_an_artifact(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
@@ -253,25 +251,22 @@ def test_config_load_failure_after_reservation_is_terminal(
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     control_root = tmp_path / "control"
-    summary_path = tmp_path / "artifact" / "summary.json"
-    reservation_phase_at_config: str | None = None
-    written_results: list[object] = []
 
     monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
     monkeypatch.setattr(probe, "KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT", control_root)
 
-    def fail_config_after_reservation(_: Path) -> object:
-        nonlocal reservation_phase_at_config
-        marker = next((control_root / "reservations").glob("*.json"))
-        reservation_phase_at_config = json.loads(marker.read_text(encoding="utf-8"))["phase"]
+    def fail_config_preflight(_: Path) -> object:
         raise KisPaperMarketDataError("simulated_config_failure")
 
-    def capture_summary(**kwargs: object) -> tuple[Path, str]:
-        written_results.append(kwargs["result"])
-        return summary_path, "sha256:unit"
+    def fail_if_summary_is_written(**_kwargs: object) -> tuple[Path, str]:
+        raise AssertionError("configuration preflight must not write a one-shot summary")
 
-    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", fail_config_after_reservation)
-    monkeypatch.setattr(probe, "write_kis_paper_minute_qualification_summary", capture_summary)
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", fail_config_preflight)
+    monkeypatch.setattr(
+        probe,
+        "write_kis_paper_minute_qualification_summary",
+        fail_if_summary_is_written,
+    )
 
     probe.main(
         ["--execute", "--confirm-no-exception"],
@@ -279,13 +274,46 @@ def test_config_load_failure_after_reservation_is_terminal(
         dotenv_path=tmp_path / "must-not-be-read.env",
     )
 
-    assert json.loads(capsys.readouterr().out)["status"] == "rejected"
-    assert reservation_phase_at_config == "reserved"
-    assert len(written_results) == 1
-    assert isinstance(written_results[0], KisPaperMinuteQualificationFailure)
-    assert written_results[0].call_counts == KisPaperMinuteCallCounts(0, 0)
-    marker = next((control_root / "reservations").glob("*.json"))
-    assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "summary_written"
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "not_executed",
+        "reason": "configuration_preflight_failed",
+    }
+    assert not list((control_root / "reservations").glob("*.json"))
+
+
+def test_runner_rechecks_reservation_after_configuration_before_reserving(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    probe = _load_probe_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    reservation_checks = iter((False, True))
+
+    monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
+    monkeypatch.setattr(
+        probe,
+        "kis_paper_minute_qualification_attempt_is_reserved",
+        lambda **_kwargs: next(reservation_checks),
+    )
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", lambda _: object())
+
+    def fail_if_reserved(**_kwargs: object) -> None:
+        raise AssertionError("a concurrent reservation must stop before reserving again")
+
+    monkeypatch.setattr(probe, "reserve_kis_paper_minute_qualification_attempt", fail_if_reserved)
+
+    probe.main(
+        ["--execute", "--confirm-no-exception"],
+        clock=lambda: datetime(2026, 7, 20, 17, 30, 20, tzinfo=UTC),
+        dotenv_path=tmp_path / ".env",
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "not_executed",
+        "reason": "qualification_attempt_already_reserved",
+    }
 
 
 def test_successful_runner_lifecycle_marks_summary_written_and_blocks_a_second_run(
@@ -440,7 +468,7 @@ def test_runner_rechecks_the_window_after_reservation_before_any_client_is_creat
     assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "summary_written"
 
 
-def test_runner_rechecks_the_window_before_reserving_or_loading_credentials(
+def test_runner_rechecks_the_window_after_configuration_before_reserving(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
@@ -453,10 +481,14 @@ def test_runner_rechecks_the_window_before_reserving_or_loading_credentials(
     monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
     monkeypatch.setattr(probe, "KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT", control_root)
 
-    def fail_if_config_is_loaded(_: Path) -> object:
-        raise AssertionError("a closed reservation window must not load credentials")
+    configuration_loaded = False
 
-    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", fail_if_config_is_loaded)
+    def load_config(_: Path) -> object:
+        nonlocal configuration_loaded
+        configuration_loaded = True
+        return object()
+
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", load_config)
     clock_values = iter(
         (
             datetime(2026, 7, 20, 17, 30, 20, tzinfo=UTC),
@@ -472,6 +504,7 @@ def test_runner_rechecks_the_window_before_reserving_or_loading_credentials(
 
     document = json.loads(capsys.readouterr().out)
     assert document["status"] == "not_executed"
+    assert configuration_loaded is True
     assert not list((control_root / "reservations").glob("*.json"))
 
 

@@ -186,18 +186,23 @@ general exchange-calendar implementation.
 Before supplying `--confirm-no-exception`, independently check the official
 Nasdaq calendar for a new closure or early-close exception. Outside that window
 the command must return before reading `.env` or making a KIS network request.
-Inside it, the runner requires that explicit confirmation and checks an external
-one-shot reservation in the shared external control root before reading its
-pinned paper config, rechecks a fresh clock before reservation and before the
-network boundary, then checks once more immediately before its first page. It
-issues at most one token request, reads one `QQQ`/`NAS` raw `1m` page and at most one
-continuation using the documented `PINC=0` to `PINC=1` / prior-minute `KEYB`
-contract. The continuation must have no overlap and begin exactly one minute
-before the first page's oldest timestamp. The runner rejects HTTP redirects,
-accepts at most 120 rows per page, writes only sanitized metadata under the
-pinned `D:\thericher-v2\model-artifacts` root from typed evidence/failure input,
-synchronizes its reservation lifecycle before a possible side effect, and never calls account, order,
-cancel, or live endpoints or writes raw rows to `D:\market_data`.
+Inside it, the runner requires that explicit confirmation and first checks the
+external one-shot reservation in the shared control root. It then preflights
+only the approved paper-app configuration; a malformed layout exits without an
+attempt marker or summary. On success it rechecks reservation and a fresh clock
+immediately before atomic reservation, checks again immediately before token
+issuance, and once more after OAuth immediately before the first raw-page GET.
+It issues at most one token request, reads one `QQQ`/`NAS` raw `1m` page and at
+most one continuation using the documented `PINC=0` to `PINC=1` / prior-minute
+`KEYB` contract. The continuation must have no overlap and begin exactly one
+minute before the first page's oldest timestamp. The runner rejects HTTP
+redirects, accepts at most 120 rows per page, writes only sanitized metadata
+under the pinned `D:\thericher-v2\model-artifacts` root from typed
+evidence/failure input, synchronizes its reservation lifecycle before a
+possible side effect, and never calls account, order, cancel, or live endpoints
+or writes raw rows to `D:\market_data`. A blank dashboard-token placeholder may
+precede the paper app keys; a nonempty dashboard value belongs after them and
+is never loaded by this narrow reader.
 
 A one-shot response is always `observed` or `rejected`, never a promotion. Its
 external attempt marker records `reserved -> network_started -> summary_written`;

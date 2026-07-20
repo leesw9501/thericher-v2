@@ -232,6 +232,10 @@ The next one-shot KIS probe must retain only timestamp bounds/counts. A
 no-overlap continuation is not sufficient: its newest timestamp must be exactly
 one minute before the first page's oldest timestamp. The v4 probe is fixed to
 the verified 2026-07-20 Nasdaq session and cannot promote from any outcome.
+Malformed local paper configuration now exits before a one-shot marker or
+summary; a post-OAuth clock check also stops the first raw-page GET if token
+latency consumed the narrow window. This preserves the metadata-only boundary,
+not a KIS data fact.
 Until a later independent label-evidence objective succeeds, this input remains
 `observed` and Engine receives no paper runtime bars.
 
@@ -785,6 +789,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Recent Evidence
 
+- The raw-minute runner now rechecks its reservation after configuration and
+  checks time before token issuance plus at the raw client's transport-adjacent
+  first/continuation GET gates. Focused fake-transport coverage proves a delayed
+  token produces one token call and zero raw-page calls; no external KIS request
+  or artifact was made.
 - Raw-minute qualification sanitizer coverage now injects volume, cursor, and
   account-identifier sentinels into a fake response and proves that neither the
   serialized summary nor its raw-row shape retain them. This is a local test

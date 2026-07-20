@@ -82,6 +82,7 @@ def test_bounded_probe_requires_one_token_two_pages_and_produces_metadata_only()
         _PROBE_START,
         _PROBE_START + timedelta(seconds=1),
         _PROBE_START + timedelta(seconds=2),
+        _PROBE_START + timedelta(seconds=3),
         _PROBE_END,
     )
 
@@ -349,6 +350,54 @@ def test_bounded_probe_rechecks_the_window_immediately_before_the_first_request(
     assert client.call_counts == KisPaperMinuteCallCounts(0, 0)
 
 
+def test_bounded_probe_does_not_start_the_first_get_after_token_delay_closes_window() -> None:
+    transport = _RecordingTransport(
+        [KisMarketDataResponse.from_payload({"access_token": "test-token"})]
+    )
+    client = KisPaperMinuteClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(ValueError, match="window_recheck_closed"):
+        run_bounded_kis_paper_minute_qualification(
+            client,
+            clock=_clock(
+                _PROBE_START,
+                _PROBE_START + timedelta(seconds=1),
+                _PROBE_START + timedelta(minutes=1),
+            ),
+        )
+
+    assert [request.method for request in transport.requests] == ["POST"]
+    assert transport.requests[0].url.endswith(KIS_PAPER_TOKEN_PATH)
+    assert client.call_counts == KisPaperMinuteCallCounts(1, 0)
+
+
+def test_minute_request_gate_runs_immediately_before_transport_get() -> None:
+    rows = _rows(_PROBE_START.replace(second=0), 120)
+    transport = _RecordingTransport(
+        [
+            KisMarketDataResponse.from_payload({"access_token": "test-token"}),
+            KisMarketDataResponse.from_payload(_page_payload(rows)),
+        ]
+    )
+    client = KisPaperMinuteClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+    client.ensure_authenticated()
+    request_count_at_gate: list[int] = []
+
+    client.fetch_page(
+        KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"),
+        before_request=lambda: request_count_at_gate.append(len(transport.requests)),
+    )
+
+    assert request_count_at_gate == [1]
+    assert [request.method for request in transport.requests] == ["POST", "GET"]
+
+
 def test_bounded_probe_skips_continuation_after_the_narrow_envelope_closes() -> None:
     first_rows = _rows(_PROBE_START.replace(second=0), 120)
     transport = _RecordingTransport(
@@ -367,7 +416,8 @@ def test_bounded_probe_skips_continuation_after_the_narrow_envelope_closes() -> 
         clock=_clock(
             _PROBE_START,
             _PROBE_START + timedelta(seconds=1),
-            _PROBE_START + timedelta(minutes=2, seconds=2),
+            _PROBE_START + timedelta(seconds=2),
+            _PROBE_START + timedelta(minutes=2, seconds=3),
         ),
     )
 
@@ -539,6 +589,38 @@ def test_control_ledger_blocks_retry_even_if_the_marker_snapshot_disappears(tmp_
             repo_root=repo_root,
             observed_at=_PROBE_END,
         )
+
+
+def test_exclusive_marker_precedes_ledger_when_precheck_is_stale(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "external-control"
+    monkeypatch.setattr(
+        kis_minute_qualification,
+        "external_one_shot_attempt_is_reserved",
+        lambda **_kwargs: False,
+    )
+
+    reserve_kis_paper_minute_qualification_attempt(
+        control_root=control_root,
+        repo_root=repo_root,
+        observed_at=_PROBE_START,
+    )
+    with pytest.raises(ValueError, match="already_reserved"):
+        reserve_kis_paper_minute_qualification_attempt(
+            control_root=control_root,
+            repo_root=repo_root,
+            observed_at=_PROBE_END,
+        )
+
+    assert kis_minute_qualification._external_attempt_ledger_phases(
+        control_root=control_root,
+        repo_root=repo_root,
+        objective_id=kis_minute_qualification.KIS_PAPER_MINUTE_QUALIFICATION_OBJECTIVE_ID,
+    ) == ("reserved",)
 
 
 def test_summary_writer_revalidates_scope_and_call_counts_before_persisting(tmp_path: Path) -> None:

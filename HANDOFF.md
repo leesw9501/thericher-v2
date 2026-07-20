@@ -162,14 +162,27 @@ separately from its completed feature-window end and expires at the next
   `reserved -> network_started -> summary_written`, pins its artifact and Git
   roots, synchronizes each marker before a possible network side effect, rejects
   redirects and oversized pages, and requires a no-overlap **and exact
-  one-minute boundary**. It rechecks a fresh clock after configuration,
-  immediately before its network marker, and immediately before its first page.
-  It accepts only the preverified 2026-07-20 Nasdaq session window and requires
+  one-minute boundary**. After an initial no-reservation check, it preflights
+  only its approved paper configuration; a malformed layout exits with no
+  one-shot marker or summary. It then rechecks reservation and time immediately
+  before reservation, checks again before token issuance, and checks once more
+  after OAuth immediately before its first raw-page GET. It accepts only the
+  preverified 2026-07-20 Nasdaq session window and requires
   `--confirm-no-exception` after an independent official-calendar check; it
   writes sanitized metadata only from typed evidence/failure inputs. A one-shot
   result is always `observed` or `rejected`; it cannot promote a capability or
   read a bar-label anchor. No credential was read and no KIS request was made
   while preparing this v4 harness.
+- A blank `THERICHER_DASHBOARD_TOKEN` placeholder may appear before the paper
+  app keys so the normal local template remains usable; a nonempty dashboard
+  value is rejected before it is retained. The committed template instead puts
+  any nonempty dashboard value after the two paper app keys, where the narrow
+  loader has already stopped.
+- The final first/continuation page gates run inside the raw client immediately
+  before its transport GET, with no later caller-side I/O. The external
+  `O_EXCL` marker is durably created before the matching ledger append, so a
+  concurrent reservation loser writes neither a second marker nor a duplicate
+  `reserved` ledger entry; a post-marker ledger failure remains fail-closed.
 - Its six KST preflight slots map to the fixed New York `13:30` through `15:40`
   intervals. The gate retains its `10` through `45` safe-second rule while
   comparing the minute boundary separately, so the intended final `15:40`

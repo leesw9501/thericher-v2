@@ -452,6 +452,41 @@ def test_dotenv_loader_accepts_the_approved_nonsecret_prefix(tmp_path: Path) -> 
     assert config.app_secret == "paper-secret"
 
 
+def test_dotenv_loader_accepts_a_blank_dashboard_placeholder_before_paper_keys(
+    tmp_path: Path,
+) -> None:
+    dotenv_path = tmp_path / ".env"
+    dotenv_path.write_text(
+        "THERICHER_MODE=off\n"
+        "THERICHER_DASHBOARD_TOKEN=\n"
+        "THERICHER_HOST_MODEL_ARTIFACT_ROOT=\n"
+        "THERICHER_MODEL_ARTIFACT_ROOT=\n"
+        "KIS_PAPER_APP_KEY=paper-key\n"
+        "KIS_PAPER_APP_SECRET=paper-secret\n",
+        encoding="utf-8",
+    )
+
+    config = load_kis_paper_market_data_config(dotenv_path)
+
+    assert config.app_key == "paper-key"
+    assert config.app_secret == "paper-secret"
+
+
+def test_dotenv_loader_rejects_nonempty_dashboard_value_without_reading_the_line(
+    tmp_path: Path,
+) -> None:
+    dotenv_path = tmp_path / ".env"
+    dotenv_path.write_bytes(
+        b"THERICHER_MODE=off\n"
+        b"THERICHER_DASHBOARD_TOKEN=must-not-be-retained\xff\n"
+        b"KIS_PAPER_APP_KEY=paper-key\n"
+        b"KIS_PAPER_APP_SECRET=paper-secret\n"
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="config_missing"):
+        load_kis_paper_market_data_config(dotenv_path)
+
+
 def test_dotenv_loader_requires_off_mode_before_the_paper_credentials(tmp_path: Path) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_text(

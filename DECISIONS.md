@@ -2658,3 +2658,37 @@ then confirmed the spawned-process regression and malformed-timestamp
 fail-closed behavior. This is local-paper-only safety work: it reads no
 credential, opens no network connection, calls no KIS endpoint, and changes no
 paper/live submission authority.
+
+## 2026-07-20 - Preserve the raw-minute one-shot across local config and OAuth delay
+
+Decision: retain the one-shot reservation as the only atomic external-attempt
+gate, but prevent local configuration defects from consuming it. The runner
+first confirms that no reservation exists, preflights only the approved paper
+configuration, then rechecks both time and reservation immediately before
+atomic reservation. A configuration failure therefore creates no attempt marker
+or summary. A blank dashboard-token placeholder may remain before the paper
+keys, but a nonempty value is rejected before it is retained; the committed
+template places dashboard configuration after the narrow paper-app block.
+
+The raw-minute client now obtains its one permitted OAuth token before a final
+clock check immediately preceding the first raw-page GET. If OAuth latency
+crosses the fixed time boundary, no raw-page request is sent and the already
+reserved attempt records a sanitized rejected outcome. Continuation keeps its
+existing pre-request time check. This adds no endpoint, credential scope,
+market-data retention, capability promotion, broker order, capital, or live
+authority.
+
+The durable `O_EXCL` marker is created before the matching ledger append. A
+stale concurrent precheck can therefore lose at marker creation without writing
+a duplicate `reserved` ledger record. If ledger persistence then fails, the
+marker remains as a non-retryable fail-closed recovery fact rather than
+reopening the token boundary.
+
+Claude's falsification-first verdict was `supported-with-limits`: an initial
+reservation check followed by configuration is necessarily a local
+time-of-check/time-of-use window, but the final atomic reservation remains the
+only gate for a possible KIS request. Focused fake-transport tests cover a
+concurrent stale precheck, a successful token whose post-OAuth clock is outside
+the raw GET window, and a request gate immediately before the transport GET. No
+real credential, KIS request, artifact, or order was used while making this
+correction.
