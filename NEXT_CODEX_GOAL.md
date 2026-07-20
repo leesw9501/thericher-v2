@@ -2,58 +2,34 @@
 
 ## Objective
 
-Complete the remaining 2026-07-20-only, metadata-only KIS paper raw-`1m`
-regular-session observation for `QQQ`/`NAS`. Its only valid outcomes are
-`observed` or `rejected`; neither is a capability promotion or a market-data
-archive.
+Turn the existing JSON-only dashboard skeleton into a usable, Docker-local,
+optionally token-protected paper-console foundation. It must make the broker-free local
+simulation visible now, without making KIS connectivity, model profitability,
+or the pending raw-`1m` observation a prerequisite.
 
-The separate QQQ/SPY historical capability probe is terminally `rejected`
-(`daily_response_rejected`) at
-`D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`
-(SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`).
-It consumed one token and two daily attempts, never made a raw-`1m` request,
-and must not be retried.
+The result is a compact operational screen at `http://127.0.0.1:8787`, not a
+public dashboard and not a broker console.
 
 ## Current Authority
 
-- `THERICHER_MODE=off` stays unchanged.
-- The operator authorizes `KIS_PAPER_*` only for the remaining named read-only
-  raw-`1m` probe. The approved symbol is `QQQ` on `NAS`.
-- Do **not** call order, cancel, account, position, buying-power, open-order,
-  or any `KIS_LIVE_*` endpoint. Do not submit a paper or live order.
-- Do not print or persist a token, credential, account identifier, raw quote,
-  price, volume, response body, cursor, or market-data row. The external
-  summaries may contain only fixed scope, call counts, date/timestamp bounds,
-  field-presence, paging, and data-fitness facts.
+- Keep `THERICHER_MODE=off`.
+- The `web` process must never receive, read, log, or call `KIS_*`, Tiingo, or
+  any broker endpoint. An optional `THERICHER_DASHBOARD_TOKEN` remains only a
+  local dashboard-authentication secret.
+- Do not make any KIS account, position, buying-power, open-order, order,
+  cancel, market-data, or live request in this objective. Do not read the
+  actual `.env` during tests or Docker verification.
+- Do not submit, modify, or cancel an external order. Existing local fills
+  remain `source: local_paper`.
+- Keep Docker bound to `127.0.0.1`; do not expose a public or LAN service.
+- Do not add a frontend framework, a new database, a daemon, or a dashboard
+  report family. Reuse the stdlib server, existing event store, emergency
+  state, and Docker `web` service.
 
-## Current Foundation
-
-- `execution.kis_market_data` accepts only paper OAuth, overseas daily, and
-  overseas raw-`1m` requests through a direct-only, redirect-rejecting
-  transport. It blocks account, order, cancel, and live paths before opening a
-  connection, and enforces the current `QQQ`/`SPY`, `NAS`, fixed-query, and
-  three-pages-per-kind scope below its CLI scripts.
-- `execution.kis_historical_probe` completed terminally as `rejected` with
-  `daily_response_rejected`: one token, two daily attempts, zero raw-`1m`
-  attempts, no account/order/live endpoint, and no retained raw market data.
-  Its external lifecycle is `reserved -> network_started -> summary_written`,
-  so the historical objective cannot be retried or widened.
-- The date-limited raw-`1m` runner is separately offline-tested. Before it can
-  read config, it requires an explicit `--confirm-no-exception` flag after an
-  independent official Nasdaq calendar check. Its first result stays `observed`
-  or `rejected`.
-- `research.kis_paper_baseline` remains fail-closed: the current KIS raw-`1m`
-  capability is not qualified, and a direct caller-created `QUALIFIED` state
-  also lacks the empty Data-owned contract-SHA qualification binding. No model
-  proposal or paper order can result. Local replay remains offline with fill
-  source `local_paper`.
-- Its pure proposal contract now records immutable evaluation `as_of`
-  separately from the completed feature-window end. Even a later relaxed
-  freshness setting cannot emit a ready proposal at or after that window's
-  next `10m` boundary; it returns an explicit expired abstention instead.
-- Data now has a pure explicit-UTC-session resampling primitive that surfaces
-  skipped buckets. It infers no calendar and is not connected to this baseline,
-  a KIS adapter, `1h`/`3h`, a model, or paper execution in this objective.
+The separately reserved 2026-07-20 KIS raw-`1m` observation remains an
+independent, metadata-only scheduled operation. Do not run it manually,
+broaden it, display raw fields, or treat either terminal result as a dashboard
+or capability promotion.
 
 ## Required First Reads
 
@@ -61,56 +37,69 @@ and must not be retried.
 2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
    `RUNBOOK.md`, `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-3. Before any later promotion from `observed` to `qualified`, obtain the
-   required short Claude falsification-first review. This goal has no promotion.
+3. Inspect the existing dashboard server, view model, local event replay,
+   emergency state, and Docker `web` service before editing.
+4. Ask Claude for a short drift-check only if a new web dependency, a KIS
+   bridge, a new durable runtime, or a material safety-control semantic is
+   proposed. None is expected for the intended implementation.
 
 ## Work Packages
 
-### Historical Outcome
+### Execution: Local Paper Console
 
-The historical summary has been interpreted as a bounded daily rejection only.
-It does not alter raw-`1m`'s `observed` state or support a dataset, cache,
-feature activation, qualification, retention, storage-rights, timestamp,
-paging, data-quality, point-in-time, or model claim.
+1. Keep the machine-readable state endpoint and make `/` render a compact,
+   practical browser UI from the same sanitized snapshot. Use a dense summary
+   and tables rather than a landing page or decorative card layout.
+2. Show only locally reconstructable facts:
+   - configured mode and monitor status;
+   - emergency state and local-paper activity;
+   - local positions, cash, decisions, fills, and PnL only when the event
+     store can establish them;
+   - clear empty states when no local events exist.
+3. Show KIS holdings, prices, buying power, and open orders as `unknown` until
+   a future, fresh, separately authorized sanitized read-only reconciliation
+   exists. Do not substitute old probe facts, local inference, or zeroes.
+4. Expose only the existing local safety actions: pause new entries and request
+   local cancellation. They must change only local emergency state and clearly
+   remain unable to call a broker. Do not add a generic "sell stop" because it
+   could suppress a hard-risk exit; any later discretionary-reduction pause
+   needs a separately scoped execution decision.
+5. Preserve consistent token protection for the HTML, JSON, and action
+   endpoints when `THERICHER_DASHBOARD_TOKEN` is configured. With no token,
+   loopback-only binding is the minimum access boundary. Never include a token,
+   account identifier, raw broker payload, or secret in rendered HTML, logs,
+   snapshots, tests, or artifacts.
 
-### Execution: Scheduled Raw-`1m` Observation
+### Infra Capability: Local Docker Proof
 
-1. During the fixed 2026-07-20 Nasdaq window only, independently confirm there
-   is no official Nasdaq session exception. Then run exactly once:
+1. Keep the `web` container credential-free apart from the optional dashboard
+   token and confirm its mounted runtime state is sufficient for the screen.
+2. Verify the page through the Docker `web` service using `.env.example` or
+   explicit nonsecret values, then report the localhost URL. Do not use the
+   real `.env` for this proof.
 
-   ```powershell
-   uv run python scripts\probe_kis_paper_raw_minute.py --execute --confirm-no-exception
-   ```
+### Review
 
-2. It may issue one paper token, one `QQQ`/`NAS` first page, and at most one
-   documented continuation. It cannot call any account/order/live endpoint or
-   promote the capability.
+At integration, check that the change improves the paper-trading and
+live-risk-control loops without becoming a KIS adapter, account cache, generic
+agent system, or report/gate layer.
 
-### Engine Research
+## Required Tests
 
-Keep the 90-`1m` / 18-`5m` / 9-`10m` baseline unchanged and abstaining. Do not
-start GPU work, learned models, ensembles, `1h`, `3h`, adjusted prices,
-corporate actions, news, order-book inputs, external universe work, or KIS
-paper submission from either capability probe.
+Add focused tests proving that:
 
-## Boundaries
+- `/` is a usable HTML view, `/state` remains a sanitized machine-readable
+  endpoint, and configured-token access applies consistently to both;
+- local-paper replay appears correctly, including empty and nonempty states;
+- unavailable KIS facts render as `unknown`, never as zero or inferred data;
+- the two controls update only local emergency state and cannot invoke a
+  broker;
+- the dashboard process has no KIS client/config dependency and Docker keeps
+  it loopback-bound.
 
-- No raw KIS bytes or caches in Git, `D:\market_data`, or artifacts.
-- No broker account, position, open-order, orderable-funds, cancel, submit, or
-  live call; no capital envelope is implied.
-- No credential, token, account value, account identifier, raw price, volume,
-  cursor, response body, or raw row in console output, logs, artifacts, Git,
-  or Claude prompts.
-- A reserved, `network_started`, or completed lifecycle state is never retried.
-- The completed historical lifecycle blocks all retries. Do not make a
-  historical-data, model, retention, storage-rights, or profitability claim
-  from either bounded sample.
+## Verification
 
-## Completion
-
-After the remaining permitted run, inspect only sanitized external evidence,
-update the Data and Execution stateboards plus `HANDOFF.md` and `DECISIONS.md`,
-then run:
+Run:
 
 ```powershell
 uv run --extra dev pytest -q
@@ -118,6 +107,14 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 ```
 
-Commit and push completed bounded work. Keep this goal active until the
-date-limited raw-`1m` observation is either recorded, rejected, or has a
-durable unrecoverable reservation state; then refresh it to one next objective.
+Also run a focused Docker-local browser or HTTP smoke test against the `web`
+service, without the real `.env`, and report the command and result.
+
+## Completion
+
+Update `agents/execution.md` and `HANDOFF.md` only with durable console facts.
+Record the pending raw-`1m` observation's sanitized terminal state if its
+scheduled automation completes while this objective runs. Refresh this file to
+the single next objective, commit, and push. The likely next direction is a
+separately scoped fresh KIS read-only reconciliation bridge, followed later by
+an explicitly authorized paper-order canary; neither is implied by this goal.
