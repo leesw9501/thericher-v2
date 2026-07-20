@@ -90,7 +90,6 @@ def main(
     client: KisPaperMinuteClient | None = None
     result: KisPaperMinuteQualificationEvidence | KisPaperMinuteQualificationFailure
     try:
-        config = load_kis_paper_market_data_config(dotenv_path)
         reserved_at = clock()
         if not is_kis_paper_minute_qualification_window(reserved_at):
             print(
@@ -108,6 +107,8 @@ def main(
             repo_root=_REPO_ROOT,
             observed_at=reserved_at,
         )
+        # A terminal one-shot reservation must exist before opening local credentials.
+        config = load_kis_paper_market_data_config(dotenv_path)
         network_started_at = clock()
         if not is_kis_paper_minute_qualification_window(network_started_at):
             result = KisPaperMinuteQualificationFailure(
