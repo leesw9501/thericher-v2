@@ -83,6 +83,13 @@
   `reserved -> network_started -> summary_written`; do not retry, rewrite the
   immutable artifact, or infer a KIS-wide outage, paging correctness, or a
   qualified data capability.
+- Offline contract alignment now makes the raw-minute request match the
+  inspected current official sample: `custtype=P`, first-page empty `tr_cont`,
+  continuation `tr_cont=N`, and no `FILL_GUBN`. The endpoint, TR ID, and
+  `PINC`/`NEXT`/`KEYB` flow were already aligned. Fake and in-memory-`urllib`
+  tests lock the exact local headers and encoded query shape. This is not a
+  v4-cause finding, retry authorization, response-pagination proof, or KIS
+  capability change; those external facts remain unresolved.
 - The original rejected artifact's summary timestamp predates its reservation
   timestamp by milliseconds because the prior runner used its initial clock in
   a caught-error path. This is an audit-metadata defect, not duplicate-request

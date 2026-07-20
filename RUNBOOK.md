@@ -266,6 +266,12 @@ or writes raw rows to `D:\market_data`. A blank dashboard-token placeholder may
 precede the paper app keys; a nonempty dashboard value belongs after them and
 is never loaded by this narrow reader.
 
+For historical code context, the local builder is now aligned with the current
+official raw-minute sample: it emits `custtype=P`, empty first-page `tr_cont`,
+and continuation `tr_cont=N`, without `FILL_GUBN`. This local request-shape
+alignment cannot diagnose or reopen the consumed v4 rejection and does not
+authorize another network observation.
+
 A one-shot response is always `observed` or `rejected`, never a promotion. Its
 external attempt marker records `reserved -> network_started -> summary_written`;
 if summary persistence fails, `network_started` remains and blocks retry. A

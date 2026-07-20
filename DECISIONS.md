@@ -2829,3 +2829,28 @@ Claude's falsification-first verdict was `supported-with-limits`: terminal
 disposition is supported, while HTTP/KIS cause and actual on-wire request form
 remain unresolved. The decision reverses only if durable sanitized evidence is
 shown to be inconsistent with the recorded terminal lifecycle.
+
+## 2026-07-20 - Align the raw-minute request builder without diagnosing v4
+
+Decision: align the narrow local raw-minute request builder with the current
+public KIS sample without reopening the terminal v4 observation. The inspected
+sample and helper (official `open-trading-api` Git blobs
+`65709af1b9474e65373686764a0dcf5e22d83d4a` and
+`8dca2ae4031db12b7c4ce0c449758c54768e54ad`) support the existing endpoint,
+TR ID, `PINC`/`NEXT`/`KEYB` convention plus `custtype=P`, empty first-page
+`tr_cont`, and continuation `tr_cont=N`. The local client now applies those
+headers and drops `FILL_GUBN`, which is unsupported by that inspected sample.
+
+This is a source-alignment decision, not proof that `FILL_GUBN` was invalid or
+that either difference caused `minute_response_rejected`. The v4 summary retains
+no request headers/query, HTTP status, body, or response header, so the actual
+on-wire form, rejection cause, and response-driven pagination convention remain
+unresolved. Exact fake-transport and in-memory-`urllib` tests freeze only local
+construction. No credential, KIS request, account endpoint, artifact rewrite,
+capability promotion, retry authorization, or paper/live authority change was
+made.
+
+Claude's falsification-first verdict was `supported-with-limits`. This decision
+reverses only if a later authoritative KIS source contradicts the recorded
+source version or an independently scoped, separately authorized observation
+provides sanitized evidence that materially changes the request contract.

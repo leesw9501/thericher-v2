@@ -223,6 +223,17 @@ separately from its completed feature-window end and expires at the next
   freshness, retention, storage-rights, cache, dataset, model, or paper claim.
   The matching date-limited Codex preflight automation is `PAUSED`; do not
   reactivate it for this completed objective.
+- An offline source/code comparison then aligned the raw-minute builder with
+  the current official sample: it now sends `custtype=P`, uses empty
+  `tr_cont` on the first page and `N` on a continuation, and omits the local
+  `FILL_GUBN` extension. The same endpoint, TR ID, and `PINC`/`NEXT`/`KEYB`
+  flow were already aligned. These are **supported local construction facts**;
+  `FILL_GUBN` is merely unsupported by the inspected current sample, not
+  proven invalid. The terminal v4 on-wire request, response cause, and
+  response-pagination convention remain **unresolved**. Fake and in-memory
+  `urllib` tests prove the exact offline request shape only; they do not
+  authorize a retry, promote `1m` or derived timeframes, or alter the immutable
+  artifact.
 - The immutable rejected artifact has a millisecond-scale summary timestamp
   preceding its reservation because the former runner used its initial clock on
   a caught error. Phase order and no-retry state remain authoritative. Future

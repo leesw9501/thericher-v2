@@ -84,13 +84,48 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
         "content-type": "application/json",
         "accept": "application/json",
     }
-    assert transport.requests[1].query["NREC"] == "120"
-    assert transport.requests[1].query["PINC"] == "0"
-    assert transport.requests[1].query["NEXT"] == ""
-    assert transport.requests[1].query["KEYB"] == ""
-    assert transport.requests[2].query["PINC"] == "1"
-    assert transport.requests[2].query["NEXT"] == "1"
-    assert transport.requests[2].query["KEYB"] == "20260717175900"
+    assert transport.requests[1].headers == {
+        "authorization": "Bearer test-token",
+        "appkey": "paper-key",
+        "appsecret": "paper-secret",
+        "tr_id": KIS_PAPER_MINUTE_TR_ID,
+        "tr_cont": "",
+        "custtype": "P",
+        "accept": "application/json",
+    }
+    assert transport.requests[1].query == {
+        "AUTH": "",
+        "EXCD": "NAS",
+        "SYMB": "QQQ",
+        "NMIN": "1",
+        "PINC": "0",
+        "NREC": "120",
+        "FILL": "",
+        "KEYB": "",
+        "NEXT": "",
+    }
+    assert transport.requests[2].headers == {
+        "authorization": "Bearer test-token",
+        "appkey": "paper-key",
+        "appsecret": "paper-secret",
+        "tr_id": KIS_PAPER_MINUTE_TR_ID,
+        "tr_cont": "N",
+        "custtype": "P",
+        "accept": "application/json",
+    }
+    assert transport.requests[2].query == {
+        "AUTH": "",
+        "EXCD": "NAS",
+        "SYMB": "QQQ",
+        "NMIN": "1",
+        "PINC": "1",
+        "NREC": "120",
+        "FILL": "",
+        "KEYB": "20260717175900",
+        "NEXT": "1",
+    }
+    kis_market_data._validate_request(transport.requests[1])
+    kis_market_data._validate_request(transport.requests[2])
     assert all("trading" not in request.url for request in transport.requests)
 
 
@@ -203,6 +238,84 @@ def test_urllib_transport_disables_proxies_and_installs_a_redirect_rejecting_han
         handler.redirect_request()
 
 
+def test_urllib_transport_encodes_the_sample_aligned_minute_contract(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    opened: list[urllib.request.Request] = []
+    responses = [
+        _token(),
+        _page("195900", "180000", next_value="1"),
+        _page("175900", "160000", next_value=""),
+    ]
+
+    class _Response:
+        def __init__(self, response: KisMarketDataResponse) -> None:
+            self.status = response.status_code
+            self.headers = response.headers
+            self._body = response.body
+
+        def __enter__(self) -> _Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return self._body
+
+    class _RecordingOpener:
+        def open(self, request: urllib.request.Request, **_kwargs: object) -> _Response:
+            opened.append(request)
+            return _Response(responses.pop(0))
+
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _RecordingOpener())
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=UrllibKisPaperMarketDataTransport(),
+    )
+
+    first = client.fetch_minute_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+    client.fetch_minute_page(
+        KisPaperMinuteQuery(
+            exchange="NAS",
+            symbol="QQQ",
+            continuation_next=first.next_cursor,
+            continuation_key="20260717175900",
+        )
+    )
+
+    minute_url = f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_MINUTE_PATH}"
+    assert [request.get_method() for request in opened] == ["POST", "GET", "GET"]
+    assert [request.full_url for request in opened] == [
+        f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+        f"{minute_url}?AUTH=&EXCD=NAS&SYMB=QQQ&NMIN=1&PINC=0&NREC=120&FILL=&KEYB=&NEXT=",
+        f"{minute_url}?AUTH=&EXCD=NAS&SYMB=QQQ&NMIN=1&PINC=1&NREC=120&FILL=&KEYB=20260717175900&NEXT=1",
+    ]
+    assert [
+        {name.lower(): value for name, value in request.header_items()}
+        for request in opened[1:]
+    ] == [
+        {
+            "authorization": "Bearer test-token",
+            "appkey": "paper-key",
+            "appsecret": "paper-secret",
+            "tr_id": KIS_PAPER_MINUTE_TR_ID,
+            "tr_cont": "",
+            "custtype": "P",
+            "accept": "application/json",
+        },
+        {
+            "authorization": "Bearer test-token",
+            "appkey": "paper-key",
+            "appsecret": "paper-secret",
+            "tr_id": KIS_PAPER_MINUTE_TR_ID,
+            "tr_cont": "N",
+            "custtype": "P",
+            "accept": "application/json",
+        },
+    ]
+
+
 @pytest.mark.parametrize(
     "url",
     [
@@ -240,7 +353,7 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
     [
         (
             KIS_PAPER_MINUTE_PATH,
-            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": ""},
             {
                 "AUTH": "",
                 "EXCD": "NYS",
@@ -251,12 +364,11 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
                 "FILL": "",
                 "KEYB": "",
                 "NEXT": "",
-                "FILL_GUBN": "0",
             },
         ),
         (
             KIS_PAPER_MINUTE_PATH,
-            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": ""},
             {
                 "AUTH": "",
                 "EXCD": "NAS",
@@ -267,12 +379,11 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
                 "FILL": "",
                 "KEYB": "",
                 "NEXT": "",
-                "FILL_GUBN": "0",
             },
         ),
         (
             KIS_PAPER_MINUTE_PATH,
-            {"tr_id": KIS_PAPER_MINUTE_TR_ID},
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": ""},
             {
                 "AUTH": "",
                 "EXCD": "NAS",
@@ -283,7 +394,6 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
                 "FILL": "",
                 "KEYB": "",
                 "NEXT": "",
-                "FILL_GUBN": "0",
             },
         ),
         (
@@ -322,6 +432,58 @@ def test_transport_rejects_out_of_scope_market_data_values_before_opening(
             KisMarketDataRequest(
                 method="GET",
                 url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{path}",
+                headers=headers,
+                query=query,
+            )
+        )
+
+    assert opened is False
+
+
+@pytest.mark.parametrize(
+    ("headers", "continuation", "include_unsupported_fill_gubn"),
+    [
+        ({"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": ""}, False, True),
+        ({"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "I", "tr_cont": ""}, False, False),
+        ({"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": "N"}, False, False),
+        ({"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": ""}, True, False),
+    ],
+)
+def test_transport_rejects_minute_contract_drift_before_opening(
+    monkeypatch: pytest.MonkeyPatch,
+    headers: dict[str, str],
+    continuation: bool,
+    include_unsupported_fill_gubn: bool,
+) -> None:
+    opened = False
+
+    class _UnusedOpener:
+        def open(self, *_args: object, **_kwargs: object) -> object:
+            nonlocal opened
+            opened = True
+            raise AssertionError("contract rejection must precede opener.open")
+
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _UnusedOpener())
+    transport = UrllibKisPaperMarketDataTransport()
+    query = {
+        "AUTH": "",
+        "EXCD": "NAS",
+        "SYMB": "QQQ",
+        "NMIN": "1",
+        "PINC": "1" if continuation else "0",
+        "NREC": "120",
+        "FILL": "",
+        "KEYB": "20260717175900" if continuation else "",
+        "NEXT": "1" if continuation else "",
+    }
+    if include_unsupported_fill_gubn:
+        query["FILL_GUBN"] = "0"
+
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        transport.request(
+            KisMarketDataRequest(
+                method="GET",
+                url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_MINUTE_PATH}",
                 headers=headers,
                 query=query,
             )

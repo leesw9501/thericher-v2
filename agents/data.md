@@ -42,6 +42,14 @@ freshness observation, retention/cache-recovery evidence, and a reviewed
 contract-SHA binding before `1m`, resampled `5m`/`10m`, or inactive `1h`/`3h`
 may enter a paper graph.
 
+Data boundary complete: offline continuation request-shape tests validate local
+construction only and cannot claim an on-wire request or response. The source
+alignment (`custtype=P`, first/continuation `tr_cont`, and no `FILL_GUBN`) does
+not qualify `1m`, derived `5m`/`10m`, or inactive `1h`/`3h`, and cannot change
+the empty trusted registry. Accepted observation, timestamp-label/completed-bar/
+freshness, retention/cache-recovery/storage-rights evidence, and a reviewed full
+contract-SHA binding remain absent.
+
 The baseline also requires a separately reviewed binding of the full immutable
 capability-contract SHA. Its production trusted registry is empty; the binding
 shape alone does not validate that an external evidence reference is genuine.

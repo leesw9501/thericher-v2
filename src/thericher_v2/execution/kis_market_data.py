@@ -25,7 +25,7 @@ KIS_PAPER_DAILY_MAX_ROWS = 100
 KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS = 3
 KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS = 3
 KIS_PAPER_MINUTE_QUERY_KEYS = frozenset(
-    {"AUTH", "EXCD", "SYMB", "NMIN", "PINC", "NREC", "FILL", "KEYB", "NEXT", "FILL_GUBN"}
+    {"AUTH", "EXCD", "SYMB", "NMIN", "PINC", "NREC", "FILL", "KEYB", "NEXT"}
 )
 KIS_PAPER_DAILY_QUERY_KEYS = frozenset({"AUTH", "EXCD", "SYMB", "GUBN", "BYMD", "MODP"})
 KIS_PAPER_PROBE_SYMBOLS = frozenset({"QQQ", "SPY"})
@@ -349,6 +349,8 @@ class KisPaperMarketDataClient:
                 "appkey": self._config.app_key,
                 "appsecret": self._config.app_secret,
                 "tr_id": KIS_PAPER_MINUTE_TR_ID,
+                "tr_cont": "N" if query.continuation_next is not None else "",
+                "custtype": "P",
                 "accept": "application/json",
             },
             query={
@@ -361,7 +363,6 @@ class KisPaperMarketDataClient:
                 "FILL": "",
                 "KEYB": query.continuation_key or "",
                 "NEXT": query.continuation_next or "",
-                "FILL_GUBN": "0",
             },
         )
         if before_request is not None:
@@ -711,19 +712,24 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     if (
         set(query) != KIS_PAPER_MINUTE_QUERY_KEYS
         or request.headers.get("tr_id") != KIS_PAPER_MINUTE_TR_ID
+        or request.headers.get("custtype") != "P"
         or query.get("AUTH") != ""
         or query.get("EXCD") != KIS_PAPER_PROBE_EXCHANGE
         or query.get("SYMB") not in KIS_PAPER_PROBE_SYMBOLS
         or query.get("NMIN") != "1"
         or query.get("NREC") != str(KIS_PAPER_MINUTE_MAX_ROWS)
         or query.get("FILL") != ""
-        or query.get("FILL_GUBN") != "0"
     ):
         return False
     if query.get("PINC") == "0":
-        return query.get("KEYB") == "" and query.get("NEXT") == ""
+        return (
+            request.headers.get("tr_cont") == ""
+            and query.get("KEYB") == ""
+            and query.get("NEXT") == ""
+        )
     return (
         query.get("PINC") == "1"
+        and request.headers.get("tr_cont") == "N"
         and query.get("NEXT") == "1"
         and isinstance(query.get("KEYB"), str)
         and len(query["KEYB"]) == 14
