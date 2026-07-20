@@ -236,15 +236,14 @@
 ## Current Objective
 
 - Complete: the public-source-attested pure `BrokerOrderRequest` to
-  virtual-paper US buy-limit body mapper is implemented in
-  `execution.kis_paper_order_fields`. It requires explicit `NASD`, `NYSE`, or
-  `AMEX`, returns no account/contact/header/transport context, and leaves every
-  runtime adapter disabled.
-- Next: add only the matching pure virtual-paper US sell-limit body mapper for
-  a long-only reduction. It must retain explicit exchange selection, reject
-  short/unsupported shapes, and leave holding proof to the existing deterministic
-  risk boundary. It must add no transport, credential loader, KIS call, Docker
-  profile, capital action, or order path.
+  virtual-paper US buy- and sell-limit body mappers is implemented in
+  `execution.kis_paper_order_fields`. They require explicit `NASD`, `NYSE`, or
+  `AMEX`, return no account/contact/header/transport context, and leave every
+  runtime adapter disabled. Sell maps only `SLL_TYPE="00"`; it cannot prove a
+  holding, which remains the deterministic risk boundary's responsibility.
+- Next: add a pure, limit-only `OrderIntent` to existing `BrokerOrderRequest`
+  projection. It must refuse a missing limit price rather than look up, infer,
+  or synthesize one, and must neither persist nor submit the projected request.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -304,14 +303,16 @@
 ## Ready Queue
 
 1. Complete: the official KIS source pinned at
-   `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` now attests a pure US buy-limit
-   body mapper. It maps only non-account body fields, never derives exchange
-   from `US` or a ticker, performs no I/O, and leaves the adapter disabled.
-2. Next ready offline task: use official public KIS evidence to add a separate
-   pure US sell-limit body fragment for a long-only reduction. Do not infer a
-   position, add a transport, credential loader, Compose profile, or enabling
-   path. If the source cannot support falsifiable field tests, close it as
-   unsupported rather than guess or call KIS.
+   `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` now attests pure US buy- and
+   sell-limit body mappers. They map only non-account fields, never derive an
+   exchange from `US` or a ticker, perform no I/O, and leave the adapter
+   disabled. The source's virtual US sell TR-ID inconsistency remains outside
+   scope; do not derive a header resolver from it.
+2. Next ready offline task: add a pure, limit-only `OrderIntent` to existing
+   `BrokerOrderRequest` projection. It must preserve IDs and timestamps, reject
+   a missing limit price without looking one up, and create no persistence,
+   risk approval, transport, credential loader, Compose profile, or enabling
+   path.
 3. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the

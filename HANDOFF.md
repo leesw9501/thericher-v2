@@ -127,15 +127,19 @@ separately from its completed feature-window end and expires at the next
   credential- and broker-free. The existing market-data client retains its
   separate `QQQ`/`SPY`, `NAS`, request-shape, and per-kind-page allowlist.
 - `execution.kis_paper_order_fields` now maps only the public-source-attested
-  body fragment for a virtual-paper US buy limit order. It reuses
-  `BrokerOrderRequest`, requires an explicit `NASD`, `NYSE`, or `AMEX` venue,
-  returns seven non-account fields, and rejects market, sell, malformed-symbol,
-  fractional-share, and invalid-price input. It has no account, credential,
-  header/TR-ID, endpoint, transport, artifact, or adapter-enablement path.
+  body fragments for virtual-paper US buy and sell limit orders. They reuse
+  `BrokerOrderRequest`, require an explicit `NASD`, `NYSE`, or `AMEX` venue,
+  return seven non-account fields, and reject market, wrong-side,
+  malformed-symbol, fractional-share, and invalid-price input. The sell mapper
+  writes only the official sample's `SLL_TYPE="00"`; it cannot prove a holding
+  or authorize a sale. Both have no account, credential, header/TR-ID,
+  endpoint, transport, artifact, or adapter-enablement path.
   `create_kis_broker_adapter()` remains disabled. The source is the official
   KIS example pinned at revision
   `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`; this is request preparation only,
-  never a transmittable request or paper submission authority.
+  never a transmittable request or paper submission authority. The example's
+  virtual US sell TR-ID comment and generic prefix implementation disagree, so
+  no header/TR-ID resolver is derived from it.
 - The historical `13:30` through `15:40` New York clock guard belonged only to
   the terminal 2026-07-20 raw-minute observation. It is not a KIS paper/live
   session policy, a preferred trading window, or a reusable schedule.

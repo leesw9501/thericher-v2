@@ -2,72 +2,59 @@
 
 ## Objective
 
-Add one source-attested, pure offline mapping from the existing
-`BrokerOrderRequest` plus an explicit KIS US exchange to virtual-paper US
-**sell-limit body fields** for a long-only reduction.
+Add one pure offline projection from the existing `OrderIntent` to the existing
+`BrokerOrderRequest` for an explicitly supplied **limit order only**.
 
-This completes the non-transmittable exit-side counterpart to the existing
-buy-limit body mapper. It does not prove a position, enable shorting, create a
-KIS request path, or authorize paper submission.
+This closes the structural gap between deterministic target-position intent and
+the broker-neutral risk/request contract. It must reject a missing limit price
+rather than read a quote, infer a price, or turn a market intent into a KIS
+order.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, and
    `agents/execution.md`.
-3. Read `src/thericher_v2/execution/broker.py`,
-   `src/thericher_v2/execution/kis_paper_order_fields.py`, and their focused
-   tests.
-4. Obtain or reattest one public official KIS source for the virtual overseas
-   US sell-limit sample. Do not call KIS, read `.env`, credentials, account
-   state, or runtime snapshots.
+3. Read `src/thericher_v2/contracts.py`,
+   `src/thericher_v2/execution/broker.py`,
+   `src/thericher_v2/execution/target_position.py`, and their focused tests.
 
 ## Work Packages
 
 ### Execution Agent
 
-- Reuse `BrokerOrderRequest`; preserve the existing buy mapper unchanged and
-  do not introduce a KIS transport, adapter, header builder, or new request
-  dataclass.
-- Add one deterministic sell-limit **body-fragment** mapper. It must require an
-  explicit `NASD`, `NYSE`, or `AMEX` exchange; accept only `side="sell"` US
-  whole-share positive limit orders; and map only official-source-attested
-  fields.
-- It must reject buys, market orders, unsupported market/exchange, malformed
-  symbols, fractional or nonpositive quantity, and invalid limit price.
-- The mapper cannot establish a holding or authorize a sale. Existing
-  deterministic position/risk checks remain the sole long-only reduction
-  authority.
-- Preserve `create_kis_broker_adapter()` as disabled. Do not add a Docker
-  profile, `.env` reader, endpoint, HTTP sender, TR-ID/header handling,
-  scheduler, dashboard control, mode change, artifact, or order path.
+- Add one pure helper in the existing broker-contract ownership boundary. Reuse
+  `OrderIntent` and `BrokerOrderRequest`; do not create a new request dataclass
+  or KIS-specific object.
+- The helper may project only an intent that already contains a positive limit
+  price. It must preserve client ID, symbol, market, side, quantity, decision
+  ID, creation time, and schema version exactly.
+- It must reject a missing limit price, malformed/corrupted input, and any
+  value the existing `BrokerOrderRequest` contract rejects. It must not fetch,
+  infer, round, clamp, or alter a price or quantity.
+- It must not persist, submit, risk-approve, reconcile, call a broker, enable
+  `create_kis_broker_adapter()`, or connect to the KIS body mappers. Risk and
+  position validation remain separate later callers.
 
-### Data And Validation
+### Validation
 
-- Data records only the public-source provenance needed to pin the sell fields
-  and their limits. It does not create a market-data capability, provider, or
-  account-data claim.
-- Validation proves that importing and invoking the sell mapper requires no
-  credential, file, network, or broker transport access, and that the existing
-  runtime adapter remains disabled. Tests may use only pure mapping and the
-  existing fake/local-paper components.
-
-## Decision Boundary
-
-- If official public KIS material cannot pin the virtual-paper US sell-limit
-  body fields tightly enough for falsifiable offline tests, record the work as
-  unsupported. Do not guess, widen the mapper, add a request path, or call KIS.
-- This goal does not authorize a paper capital envelope, KIS order
-  submission/cancellation, `KIS_LIVE_*`, or any live behavior.
+- Prove projection is pure and import-safe: no credential, environment, file,
+  network, transport, artifact, or broker side effect is needed.
+- Prove a target-position market intent (`limit_price=None`) stays
+  non-projectable, while an explicit limit intent round-trips every contract
+  field unchanged.
+- Confirm the existing KIS adapter remains disabled and unavailable after the
+  new helper is invoked.
 
 ## Hard Boundaries
 
-- No `.env`, credential, account-state, or runtime-snapshot reads.
-- No KIS API request, order action, Docker profile, external artifact, or
-  public service.
-- No model, GPU, data acquisition, capability promotion, or dashboard work.
-- Do not alter terminal KIS probe/reconciliation evidence or the existing
-  buy-limit mapper's behavior.
+- No `.env`, credential, account-state, runtime-snapshot, market-data, quote,
+  or KIS API read.
+- No KIS order/header/TR-ID work, Docker profile, external artifact, public
+  service, model, GPU, data acquisition, capability promotion, or dashboard
+  work.
+- Do not alter the terminal KIS evidence or existing buy/sell body mapper
+  behavior.
 
 ## Verification
 
@@ -79,4 +66,4 @@ docker compose --env-file .env.example config --quiet
 
 ## Suggested Commit Message
 
-`Add offline KIS paper sell field mapper`
+`Project limit intents into broker requests`

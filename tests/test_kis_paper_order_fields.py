@@ -50,6 +50,38 @@ def test_explicit_exchange_is_never_derived_from_generic_us_market() -> None:
     assert amex_fields["OVRS_EXCG_CD"] == "AMEX"
 
 
+def test_maps_only_source_attested_paper_us_sell_limit_fields() -> None:
+    mapper = _mapper_module()
+    fields = mapper.map_kis_paper_us_sell_limit_order_fields(
+        _request(side="sell"),
+        exchange="NYSE",
+    )
+
+    assert (
+        mapper.KIS_PAPER_US_SELL_LIMIT_SOURCE_REVISION
+        in mapper.KIS_PAPER_US_SELL_LIMIT_SOURCE_URL
+    )
+    assert fields == {
+        "OVRS_EXCG_CD": "NYSE",
+        "PDNO": "AAPL",
+        "ORD_QTY": "2",
+        "OVRS_ORD_UNPR": "145.00",
+        "SLL_TYPE": "00",
+        "ORD_SVR_DVSN_CD": "0",
+        "ORD_DVSN": "00",
+    }
+    assert not {
+        "CANO",
+        "ACNT_PRDT_CD",
+        "CTAC_TLNO",
+        "MGCO_APTM_ODNO",
+        "tr_id",
+        "authorization",
+        "client_order_id",
+        "decision_id",
+    }.intersection(fields)
+
+
 @pytest.mark.parametrize(
     ("request_overrides", "exchange", "match"),
     [
@@ -77,6 +109,43 @@ def test_rejects_out_of_scope_order_shapes(
 
 
 @pytest.mark.parametrize(
+    ("request_overrides", "exchange", "match"),
+    [
+        ({"market": "KR"}, "NASD", "market US"),
+        ({"side": "buy"}, "NASD", "sell orders only"),
+        ({"limit_price": None}, "NASD", "positive limit price"),
+        ({"quantity": Decimal("1.5")}, "NASD", "whole-share"),
+        ({"symbol": "AAPL\n"}, "NASD", "ticker symbol"),
+        ({"symbol": "AAPL/US"}, "NASD", "ticker symbol"),
+        ({}, "", "exchange is unsupported"),
+        ({}, "US", "exchange is unsupported"),
+        ({}, " NASD", "exchange must be explicit"),
+        ({}, None, "exchange must be explicit"),
+    ],
+)
+def test_sell_mapper_rejects_out_of_scope_order_shapes(
+    request_overrides: dict[str, object],
+    exchange: object,
+    match: str,
+) -> None:
+    mapper = _mapper_module()
+    sell_request = _request(**({"side": "sell"} | request_overrides))
+
+    with pytest.raises(ValueError, match=match):
+        mapper.map_kis_paper_us_sell_limit_order_fields(  # type: ignore[arg-type]
+            sell_request,
+            exchange=exchange,
+        )
+
+
+def test_sell_mapper_rejects_an_invalid_request_type() -> None:
+    mapper = _mapper_module()
+
+    with pytest.raises(TypeError, match="BrokerOrderRequest"):
+        mapper.map_kis_paper_us_sell_limit_order_fields(object(), exchange="NASD")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize(
     ("field", "value", "match"),
     [
         ("quantity", Decimal("0"), "positive quantity"),
@@ -98,6 +167,28 @@ def test_rejects_invalid_values_even_if_the_immutable_request_is_corrupted(
         mapper.map_kis_paper_us_buy_limit_order_fields(request, exchange="NASD")
 
 
+@pytest.mark.parametrize(
+    ("field", "value", "match"),
+    [
+        ("quantity", Decimal("0"), "positive quantity"),
+        ("quantity", Decimal("NaN"), "positive quantity"),
+        ("limit_price", Decimal("0"), "positive limit price"),
+        ("limit_price", Decimal("NaN"), "positive limit price"),
+    ],
+)
+def test_sell_mapper_rejects_invalid_values_even_if_the_immutable_request_is_corrupted(
+    field: str,
+    value: Decimal,
+    match: str,
+) -> None:
+    request = _request(side="sell")
+    object.__setattr__(request, field, value)
+
+    mapper = _mapper_module()
+    with pytest.raises(ValueError, match=match):
+        mapper.map_kis_paper_us_sell_limit_order_fields(request, exchange="NASD")
+
+
 def test_mapper_is_credential_network_and_transport_free(monkeypatch: pytest.MonkeyPatch) -> None:
     def fail_io(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("offline mapper must not use credentials, files, or network")
@@ -115,6 +206,11 @@ def test_mapper_is_credential_network_and_transport_free(monkeypatch: pytest.Mon
     request = _request()
     fields = mapper.map_kis_paper_us_buy_limit_order_fields(request, exchange="NASD")
     assert fields["PDNO"] == "AAPL"
+    sell_fields = mapper.map_kis_paper_us_sell_limit_order_fields(
+        _request(side="sell"),
+        exchange="NASD",
+    )
+    assert sell_fields["SLL_TYPE"] == "00"
     adapter = create_kis_broker_adapter()
     assert adapter.capabilities == BrokerCapabilities()
     result = adapter.submit_order(

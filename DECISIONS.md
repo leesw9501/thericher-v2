@@ -2940,3 +2940,31 @@ known field names without silently introducing an executable KIS request or a
 second broker lifecycle. The next safe preparation is the corresponding pure
 long-only sell-limit body fragment, whose holding proof must remain in the
 existing deterministic risk boundary.
+
+## 2026-07-21 - Isolate KIS virtual-paper US sell-limit body fields
+
+Decision: extend the same pure body-only module with a separate US sell-limit
+mapper for `BrokerOrderRequest(side="sell")` plus an explicit `NASD`, `NYSE`,
+or `AMEX` exchange. It emits the same seven non-account fields as the buy
+fragment, with official-source-attested `SLL_TYPE="00"`, and preserves
+virtual-paper limit-only `ORD_DVSN="00"`. It rejects buys, market orders,
+unsupported exchanges/markets, malformed symbols, fractional or nonpositive
+quantity, invalid prices, and invalid request types.
+
+The mapper does not accept a position, query holdings, infer a short-sale
+permission, persist an intent, or authorize a sale. Existing deterministic
+target/risk code remains responsible for proving a long reduction and rejects
+an oversized sell before any later broker boundary. It retains the prior
+credential/file/network/import guard and disabled-adapter verification.
+
+The public source's US virtual sell comments name `VTTT1001U`, while its generic
+implementation derives a different virtual form by prefixing the real sell TR
+ID. This source inconsistency makes a header/TR-ID resolver unsupported here.
+No such resolver, account/contact default, endpoint, transport, Docker profile,
+KIS call, artifact, paper capital, order action, or live behavior was added.
+
+Reason: a paper engine needs a safe exit-side representation, but only as a
+non-transmittable fragment until a separately authorized and source-resolved
+transport contract exists. The next generic execution step is a limit-only
+projection from `OrderIntent` to the existing broker request contract; it must
+not select or fetch a price.

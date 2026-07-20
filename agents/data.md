@@ -231,18 +231,19 @@ eligibility.
 
 ## Current Objective
 
-Data completed the provenance check for the offline virtual-paper US buy-limit
-body mapper. The official KIS sample is pinned at revision
+Data completed the provenance check for the offline virtual-paper US buy- and
+sell-limit body mappers. The official KIS sample is pinned at revision
 `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` and supports the mapped exchange,
-symbol, quantity, limit-price, long-buy, server, and limit-order fields. It
-does not establish account/contact defaults for a generic mapper, so those
-fields remain deliberately absent. This creates no KIS call, provider,
-market-data record, capability, or research-data claim.
+symbol, quantity, limit-price, server, and limit-order fields; its US sell
+branch supports `SLL_TYPE="00"`. It does not establish account/contact defaults
+for a generic mapper, so those fields remain deliberately absent. Its virtual
+US sell TR-ID comment conflicts with its generic prefix implementation; header
+selection remains unsupported and outside the body mapping. This creates no KIS
+call, provider, market-data record, capability, or research-data claim.
 
-For the next offline Execution mapper, Data may use the same public source only
-to attest the virtual-paper US sell-limit body fields and their limits. It must
-not turn the source into a submission path, account-data claim, or market-data
-capability.
+The next pure Execution bridge needs no Data capability or source expansion. It
+must not turn existing order fields into a submission path, account-data claim,
+or market-data capability.
 
 The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
