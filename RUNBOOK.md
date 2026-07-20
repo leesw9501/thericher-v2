@@ -323,6 +323,11 @@ facts; raw prices, volumes, cursors, credentials, account data, and responses
 remain in memory only. It never calls account, position, buying-power,
 open-order, order, cancel, or live endpoints.
 
+Those v1 timestamp bounds and continuation facts are descriptive only. This
+observation does not test intra-page ordering, cross-page overlap, or one-minute
+adjacency, so it cannot establish continuity, completed bars, resampling, or
+any capability qualification.
+
 ## KIS Paper Authority
 
 KIS paper should begin before model profitability when execution hard stops are

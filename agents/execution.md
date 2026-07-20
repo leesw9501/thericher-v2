@@ -255,12 +255,13 @@
   No source resolves that tuple, so no header, route, transport, or adapter code
   was added. Reopen only for a direct official specification or testbed that
   consistently names all three facts.
-- Complete: Data's separately scoped `kis-paper-raw-minute-observation-v1` is
-  prepared but unexecuted. It is a literal `QQQ` / `NAS` read-only boundary with
-  one token and no more than two raw-minute pages, its own one-shot objective,
+- Complete: the Data-scoped `kis-paper-raw-minute-observation-v1` is prepared
+  but unexecuted. It is a literal `QQQ` / `NAS` read-only boundary with one
+  token and no more than two raw-minute pages, its own one-shot objective,
   sanitized external evidence, and no order/account/capital/adapter import or
-  path. The next actual one-shot remains Data-owned and cannot establish an
-  execution or order capability.
+  path. Data owns scope, calendar review, and sanitized-result interpretation;
+  Execution alone invokes the credential-touching script. The one-shot cannot
+  establish an execution or order capability.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
