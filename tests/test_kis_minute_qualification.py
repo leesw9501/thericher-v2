@@ -374,6 +374,29 @@ def test_bounded_probe_does_not_start_the_first_get_after_token_delay_closes_win
     assert client.call_counts == KisPaperMinuteCallCounts(1, 0)
 
 
+def test_bounded_probe_rejects_a_later_valid_slot_after_token_pause_before_any_minute_get() -> None:
+    transport = _RecordingTransport(
+        [KisMarketDataResponse.from_payload({"access_token": "test-token"})]
+    )
+    client = KisPaperMinuteClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(ValueError, match="window_recheck_closed"):
+        run_bounded_kis_paper_minute_qualification(
+            client,
+            clock=_clock(
+                _PROBE_START + timedelta(seconds=1),
+                _PROBE_START + timedelta(minutes=10),
+            ),
+            observed_at_start=_PROBE_START,
+        )
+
+    assert [request.method for request in transport.requests] == ["POST"]
+    assert client.call_counts == KisPaperMinuteCallCounts(1, 0)
+
+
 def test_minute_request_gate_runs_immediately_before_transport_get() -> None:
     rows = _rows(_PROBE_START.replace(second=0), 120)
     transport = _RecordingTransport(

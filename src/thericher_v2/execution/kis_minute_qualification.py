@@ -225,15 +225,18 @@ def run_bounded_kis_paper_minute_qualification(
 ) -> KisPaperMinuteQualificationEvidence:
     """Use one client, one token, one first page, and at most one continuation."""
 
-    start = require_utc(
+    observation_started_at = require_utc(
         observed_at_start if observed_at_start is not None else clock(), "observed_at_start"
     )
-    if not is_kis_paper_minute_qualification_window(start):
+    if not is_kis_paper_minute_qualification_window(observation_started_at):
         raise ValueError("kis_paper_minute_qualification_window_closed")
 
     # A suspended process must not use a once-valid timestamp to obtain a token.
     before_token = require_utc(clock(), "before_token")
-    if not is_kis_paper_minute_qualification_window(before_token):
+    if (
+        not is_kis_paper_minute_qualification_window(before_token)
+        or not _qualification_observation_is_valid(observation_started_at, before_token)
+    ):
         raise ValueError("window_recheck_closed")
     client.ensure_authenticated()
 
@@ -242,7 +245,10 @@ def run_bounded_kis_paper_minute_qualification(
     def require_first_page_window() -> None:
         nonlocal first_page_started_at
         value = require_utc(clock(), "before_first_page")
-        if not is_kis_paper_minute_qualification_window(value):
+        if (
+            not is_kis_paper_minute_qualification_window(value)
+            or not _qualification_observation_is_valid(observation_started_at, value)
+        ):
             raise ValueError("window_recheck_closed")
         first_page_started_at = value
 
@@ -252,7 +258,6 @@ def run_bounded_kis_paper_minute_qualification(
     )
     if first_page_started_at is None:
         raise RuntimeError("first-page request gate was not called")
-    start = first_page_started_at
     continuation_page: KisPaperMinutePage | None = None
     observed_at_end: datetime
     if first_page.next_cursor is not None:
@@ -262,7 +267,7 @@ def run_bounded_kis_paper_minute_qualification(
             nonlocal before_continuation
             value = require_utc(clock(), "before_continuation")
             before_continuation = value
-            if not _qualification_observation_is_valid(start, value):
+            if not _qualification_observation_is_valid(observation_started_at, value):
                 raise _ContinuationRequestWindowClosed
 
         last = first_page.bars[-1]
@@ -286,7 +291,7 @@ def run_bounded_kis_paper_minute_qualification(
     return assess_kis_paper_minute_qualification(
         first_page=first_page,
         continuation_page=continuation_page,
-        observed_at_start=start,
+        observed_at_start=observation_started_at,
         observed_at_end=observed_at_end,
         call_counts=client.call_counts,
     )
