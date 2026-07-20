@@ -231,6 +231,11 @@ eligibility.
 
 ## Current Objective
 
+For the next offline Execution mapper, Data may record only the provenance of a
+public official KIS virtual-paper order sample that makes its field mapping
+falsifiable. This is not a KIS call, provider, market-data record, capability,
+or research-data claim.
+
 The full-history Tiingo snapshot remains separate from the Yahoo wrapper and
 all campaign `CatalogedBars` paths; its exact raw-D1 comparison is
 `unsupported`. The CVS/FCX/KO intraday smoke is complete from a loader-attested
@@ -278,6 +283,15 @@ latency consumed the narrow window. This preserves the metadata-only boundary,
 not a KIS data fact.
 Until a later independent label-evidence objective succeeds, this input remains
 `observed` and Engine receives no paper runtime bars.
+
+The latest account-only `kis-readonly` bridge outcome is separately terminal
+`unavailable` / `balance_rejected` at
+`2026-07-20T18:35:34.353908Z`. Its sanitized evidence contains no market-data
+page, continuation, timestamp-label, completed-bar, freshness, calendar,
+retention, storage-rights, source-lineage, or reviewed contract-SHA fact.
+It cannot qualify `1m`, derived `5m`/`10m`, inactive `1h`/`3h`, or alter the
+empty trusted KIS qualification registry; its five-minute account-snapshot TTL
+is not market-data freshness evidence.
 
 The Norgate trial compatibility and semantics checks are complete. `PLTR`
 membership changed false-to-true on `2024-09-23`; for `SMCI`, the client-clipped

@@ -148,6 +148,15 @@ separately from its completed feature-window end and expires at the next
   It contains no account, amount, symbol, credential, or raw-response field and
   establishes neither a native currency nor an empty account. The result is a
   terminal outcome for that bounded read, not a retry trigger.
+- A separate bounded `kis-readonly` reconciliation at
+  `2026-07-20T18:35:34.353908Z` likewise completed fact-free as `unavailable`
+  with `balance_rejected`. Its minimal external evidence is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T183534353908Z-unavailable.json`
+  (SHA-256 `5586e223883c12104d58d31412e816fa1eae9cc308326639c28a6861e36105d2`).
+  It records only the typed unavailable status, timestamps, a runtime digest,
+  `paper_only=true`, and `submit_capability=false`; it establishes no account
+  fact, native currency, empty-account state, market-data capability, capital
+  envelope, or retry cause. It is terminal for that bounded read.
 - The operator-approved QQQ/SPY historical capability runner completed its
   single allowed attempt as `rejected` with `daily_response_rejected`. Its
   sanitized summary is

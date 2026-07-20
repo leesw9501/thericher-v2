@@ -2,61 +2,63 @@
 
 ## Objective
 
-Run one bounded, operator-authorized KIS virtual-paper **read-only**
-reconciliation through the existing Docker `kis-readonly` profile. Refresh the
-local paper-console snapshot or record one sanitized unavailable outcome so the
-next true operator decision, if any, is based on current broker evidence.
+Add one source-attested, pure offline mapping from the existing
+`BrokerOrderRequest` to KIS virtual-paper US **long-only limit-order** fields.
+It prepares a later separately authorized paper canary without creating a
+network path, credential path, order-submission capability, or second broker
+request contract.
 
 ## Required Reads
 
 1. Run `.\scripts\start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
-   `ARCHITECTURE.md`, `agents/data.md`, and `agents/execution.md`.
-3. Read the `kis-readonly` Compose profile, console bridge, snapshot schema,
-   and focused tests. Confirm that the current authority permits read-only
-   `KIS_PAPER_*` access only.
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, and
+   `agents/execution.md`.
+3. Read `src/thericher_v2/execution/broker.py`, its boundary tests, and the
+   current read-only KIS clients only to preserve their separation.
+4. Obtain and record one current public official KIS source for the virtual
+   overseas-stock paper order request shape. Do not call the KIS API, read
+   credentials, or inspect account snapshots.
 
 ## Work Packages
 
 ### Execution Agent
 
-- Perform exactly one invocation:
-
-  ```powershell
-  docker compose --profile kis-readonly run --rm --no-deps kis-readonly
-  ```
-
-- It may use only `KIS_PAPER_*` inside the isolated profile. Do not print or
-  retain token, account number, symbol, price, balance, position, or raw broker
-  response. Preserve the existing Docker-local runtime snapshot and external
-  sanitized evidence rules.
-- Do not retry a rejected/unavailable result. Use `--recover-evidence` only if
-  a fresh complete runtime snapshot exists but its evidence write failed; that
-  recovery must make no KIS call.
+- Reuse `BrokerOrderRequest`; do not introduce another order-request dataclass
+  or a KIS transport/adapter.
+- Implement one pure, deterministic field mapper for the documented virtual
+  paper US buy limit-order shape. It must reject every sell, market order,
+  unsupported market, malformed symbol, nonpositive quantity, and invalid
+  limit price.
+- Preserve `create_kis_broker_adapter()` as disabled and structurally unable to
+  submit, cancel, or query status. Do not create a `kis-order` Docker profile,
+  environment loader, request sender, scheduler, dashboard control, or mode
+  change.
 
 ### Data And Validation
 
-- Confirm that broker-account facts do not qualify market-data timeframes or
-  alter the trusted data registry.
-- Independently verify that no order, cancel, live call, capital envelope, or
-  public exposure can occur through this invocation.
+- Data records only public-source provenance needed to pin the field names and
+  enumerations; it does not create a provider, market-data claim, or data
+  capability.
+- Validation independently proves the new mapper has no credentials, network,
+  or broker transport dependency, and that the existing runtime adapter remains
+  disabled. Tests may exercise only pure mapping and existing fake/local paper
+  components.
 
 ## Decision Boundary
 
-- If the one read is complete and establishes a usable native currency plus an
-  empty reconciled account, calculate no capital proposal yet. Report the
-  source-labelled available funds and ask the operator to approve or change a
-  paper capital envelope in that same currency.
-- If it is unavailable or incomplete, record the bounded result and continue
-  with another ready offline lane; do not treat it as an account, service, or
-  authorization diagnosis.
+- If an official public KIS source cannot establish the exact virtual-paper
+  request fields well enough for falsifiable offline tests, record the mapping
+  as unsupported and do not guess, add a transport, or call KIS.
+- This goal does not authorize paper capital, KIS submission/cancellation,
+  `KIS_LIVE_*`, or any live behavior.
 
 ## Hard Boundaries
 
-- No `KIS_LIVE_*`, order submission, modification, cancellation, or mode change.
-- No nonzero paper capital envelope, model/paper promotion, GPU work, or market
-  data acquisition.
-- Do not mount or log `.env`; do not alter terminal raw-minute v4 evidence.
+- No `.env`, credential, account-state, or runtime-snapshot reads.
+- No KIS API request, order action, Docker profile, external artifact, or
+  public service.
+- No model, GPU, data-acquisition, capability-promotion, or dashboard work.
+- Do not alter terminal KIS probe or reconciliation evidence.
 
 ## Verification
 
@@ -68,4 +70,4 @@ docker compose --env-file .env.example config --quiet
 
 ## Suggested Commit Message
 
-`Refresh KIS paper read-only snapshot`
+`Add offline KIS paper order field mapper`

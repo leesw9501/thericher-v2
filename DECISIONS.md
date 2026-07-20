@@ -2877,3 +2877,31 @@ safe page boundary. Stopping locally before the second side effect reduces the
 blast radius of malformed input while retaining the bounded first-page evidence.
 It cannot qualify `1m`, derived `5m`/`10m`, inactive `1h`/`3h`, or change the
 empty trusted registry.
+
+## 2026-07-21 - Close the bounded KIS console reconciliation unavailable
+
+Decision: close the separately authorized Docker `kis-readonly` reconciliation
+at `2026-07-20T18:35:34.353908Z` as terminal `unavailable` with the typed safe
+reason `balance_rejected`. Its external-only minimal evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T183534353908Z-unavailable.json`,
+SHA-256 `5586e223883c12104d58d31412e816fa1eae9cc308326639c28a6861e36105d2`.
+It records only timestamps, unavailable state, a runtime-payload digest,
+`paper_only=true`, and `submit_capability=false`; no account, price, position,
+credential, raw response, or native-currency fact is retained in external
+evidence.
+
+Reason: the purpose was a fresh bounded reconciliation snapshot, not diagnosis
+or recovery of a prior KIS result. Independent Data review confirms that this
+account-only result cannot qualify any KIS market-data timeframe or alter the
+empty trusted registry. Independent Validation confirms the profile has no
+submit, cancel, modify, live, capital-setting, or public-listener path. Do not
+retry this run, inspect the Docker-local account snapshot, infer a broker or
+authorization cause, propose a paper capital envelope, or widen any authority.
+
+Claude's falsification-first verdict for the next offline execution lane is
+`supported-with-limits`: reuse the existing broker-neutral `BrokerOrderRequest`
+and disabled adapter, and build only a public-source-attested KIS paper
+long-only limit-order field mapping. Do not add another request contract,
+transport, Compose profile, or enablement switch. If official public material
+cannot pin the relevant wire fields tightly enough for falsifiable offline
+tests, close that mapping as unsupported rather than guess or make a KIS call.

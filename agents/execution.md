@@ -34,6 +34,15 @@
   The bridge atomically replaced prior runtime state with `unavailable`; the
   web remains `off` and unavailable. This is terminal for the bounded read,
   not proof of a service, account, funding, or request-shape cause.
+- A separate bounded bridge reconciliation at `2026-07-20T18:35:34.353908Z`
+  also completed `unavailable` with `balance_rejected`. Its fact-free evidence
+  is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T183534353908Z-unavailable.json`
+  (SHA-256 `5586e223883c12104d58d31412e816fa1eae9cc308326639c28a6861e36105d2`).
+  It records only typed unavailable status, timestamps, a runtime digest,
+  `paper_only=true`, and `submit_capability=false`. Do not inspect its
+  Docker-local runtime snapshot, retry it, infer a broker cause, propose a
+  capital envelope, or widen submission/live authority.
 - A bounded 2026-07-19 KIS paper read-only probe now proved that token issuance
   and a `NASD` balance/position response work. Its sanitized account summary is
   `D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
@@ -226,6 +235,10 @@
 
 ## Current Objective
 
+- The next bounded Execution objective is a public-source-attested, pure
+  `BrokerOrderRequest` to virtual-paper US long-only limit-order field mapper.
+  It must leave every runtime adapter disabled and add neither a transport,
+  credentials, KIS call, Docker profile, capital action, nor order path.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -284,17 +297,23 @@
 
 ## Ready Queue
 
-1. Complete: the no-network fake-transport contract pins the official virtual
+1. Next ready offline task: use an official public KIS source to map the
+   existing `BrokerOrderRequest` to virtual-paper US long-only limit-order
+   fields, without adding a transport, credential loader, Compose profile, or
+   enabling path. Reject sells and market orders. If the public source cannot
+   support falsifiable field tests, close the mapper as unsupported rather than
+   guess or call KIS.
+2. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-2. At a later, separately scoped market-session capability observation, retain
+3. At a later, separately scoped market-session capability observation, retain
    only sanitized market-data facts. It is distinct from the terminal balance
    bridge outcome and must not retry or reinterpret that account result.
-3. Wait for a separately scoped, usable KIS snapshot before requesting a
+4. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.
-4. Keep pure risk integration, append-only execution events, and a future paper
+5. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help
