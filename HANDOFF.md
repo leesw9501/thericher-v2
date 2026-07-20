@@ -126,6 +126,10 @@ separately from its completed feature-window end and expires at the next
   behavior. Imports, tests, local simulation, and the web process remain
   credential- and broker-free. The existing market-data client retains its
   separate `QQQ`/`SPY`, `NAS`, request-shape, and per-kind-page allowlist.
+- For an isolated KIS market-data observation, Execution alone invokes the
+  credential-touching script. Data owns the fixed data scope, calendar review,
+  and sanitized-result interpretation; it does not read configuration or call
+  KIS. This role split does not widen account, order, capital, or live access.
 - `execution.kis_paper_order_fields` now maps only the public-source-attested
   body fragments for virtual-paper US buy and sell limit orders. They reuse
   `BrokerOrderRequest`, require an explicit `NASD`, `NYSE`, or `AMEX` venue,

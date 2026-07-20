@@ -552,10 +552,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    daily attempt (`daily_response_rejected`). It confers no raw-`1m`, field,
    paging, timestamp, retention, storage-rights, data-quality, campaign, or
    training claim; do not write raw bytes or retry it.
-2. At the next caller-confirmed KIS regular Nasdaq session, make at most the
-   prepared `kis-paper-raw-minute-observation-v1` one-shot. Review only its
-   sanitized counts, timestamp bounds, field-presence, and continuation facts;
-   retain either outcome as `observed` or `rejected`. Do not infer adjacency,
+2. At the next caller-confirmed KIS regular Nasdaq session, freeze and review
+   at most the prepared `kis-paper-raw-minute-observation-v1` one-shot.
+   Execution, not Data, invokes the credential-touching script; review only its
+   sanitized counts, timestamp bounds, field-presence, and continuation facts.
+   Retain either outcome as `observed` or `rejected`. Do not infer adjacency,
    completed bars, freshness, storage rights, `5m` / `10m`, a dataset, or model
    eligibility, and do not write raw bytes before rights are confirmed.
 3. Complete: one immutable prospective standard-Tiingo-EOD refresh was

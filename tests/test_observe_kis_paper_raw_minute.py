@@ -259,6 +259,54 @@ def test_summary_write_failure_preserves_network_started_recovery_state(
     assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "network_started"
 
 
+def test_network_started_transition_failure_preserves_reservation_and_blocks_replay(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    observe = _load_observe_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "control"
+    monkeypatch.setattr(observe, "_REPO_ROOT", repo_root)
+    monkeypatch.setattr(observe, "KIS_PAPER_RAW_MINUTE_OBSERVATION_CONTROL_ROOT", control_root)
+    monkeypatch.setattr(observe, "load_kis_paper_market_data_config", lambda _: object())
+
+    def fail_network_started(**_kwargs: object) -> None:
+        raise ValueError("simulated network-start persistence failure")
+
+    monkeypatch.setattr(observe, "mark_external_one_shot_network_started", fail_network_started)
+    args = [
+        "--execute",
+        "--confirm-regular-nasdaq-session",
+        "--session-date",
+        _SESSION_DATE.isoformat(),
+    ]
+    clock_values = iter((_START, _START + timedelta(seconds=1), _START + timedelta(seconds=2)))
+    observe.main(
+        args,
+        clock=lambda: next(clock_values),
+        dotenv_path=tmp_path / "must-not-be-read.env",
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "indeterminate",
+        "reason": "attempt_state_unresolved",
+    }
+    marker = next((control_root / "reservations").glob("*.json"))
+    assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "reserved"
+
+    def fail_if_config_is_loaded(_: Path) -> object:
+        raise AssertionError("an unresolved reserved one-shot must block before config loading")
+
+    monkeypatch.setattr(observe, "load_kis_paper_market_data_config", fail_if_config_is_loaded)
+    observe.main(args, clock=lambda: _START, dotenv_path=tmp_path / "must-not-be-read.env")
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "not_executed",
+        "reason": "observation_attempt_already_reserved",
+    }
+
+
 def _evidence() -> KisPaperRawMinuteObservation:
     return KisPaperRawMinuteObservation(
         observed_at_start=_START,

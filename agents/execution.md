@@ -341,10 +341,11 @@
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-6. At a later caller-confirmed regular Nasdaq session, run at most the prepared
-   raw-`1m` observation and retain only sanitized market-data facts. It is
-   distinct from the terminal balance bridge outcome and must not retry or
-   reinterpret that account result.
+6. At a later caller-confirmed regular Nasdaq session, after Data fixes the
+   calendar/date scope, Execution alone runs at most the prepared raw-`1m`
+   observation and retains only sanitized market-data facts. It is distinct
+   from the terminal balance bridge outcome and must not retry or reinterpret
+   that account result.
 7. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.

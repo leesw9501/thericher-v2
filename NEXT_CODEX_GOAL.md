@@ -26,8 +26,19 @@ or schedule a background process to wait for the session.
 
 ### Data Agent
 
-- During a current New York weekday regular session only, independently check
-  the Nasdaq calendar for a closure or early close, then invoke exactly one:
+- Before an Execution invocation, independently check the Nasdaq calendar for
+  a closure or early close, then freeze the actual current New York date and
+  the literal observation scope. Do not invoke the script or read its
+  configuration: Data does not call KIS or read credentials.
+- Inspect only the sanitized summary and durable state. Record the result as
+  `observed` or `rejected`; do not store raw data in Git or under `D:\market_data`.
+- Do not qualify timestamps, completed bars, retention, storage rights,
+  `5m`/`10m`, model inputs, or a paper strategy from this one observation.
+
+### Execution Agent
+
+- During a current New York weekday regular session only, after Data's
+  calendar confirmation, invoke exactly one credential-touching observation:
 
   ```powershell
   uv run python scripts\observe_kis_paper_raw_minute.py `
@@ -36,15 +47,8 @@ or schedule a background process to wait for the session.
     --session-date YYYY-MM-DD
   ```
 
-- Use the actual current New York date. Do not alter symbol, exchange, page
-  count, artifact root, or control objective.
-- Inspect only the sanitized summary and durable state. Record the result as
-  `observed` or `rejected`; do not store raw data in Git or under `D:\market_data`.
-- Do not qualify timestamps, completed bars, retention, storage rights,
-  `5m`/`10m`, model inputs, or a paper strategy from this one observation.
-
-### Execution Agent
-
+- Use the frozen actual current New York date. Do not alter symbol, exchange,
+  page count, artifact root, or control objective.
 - Confirm the observation remained separate from orders, account/balance/
   position/buying-power/open-order reads, capital, route/header work, and the
   disabled adapter. Do not add a transport or order path.
