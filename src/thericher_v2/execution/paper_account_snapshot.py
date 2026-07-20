@@ -12,11 +12,13 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, Literal
 
-from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.contracts import require_utc
 
 PAPER_ACCOUNT_SNAPSHOT_KIND = "paper_reconciliation_snapshot"
 PAPER_ACCOUNT_SNAPSHOT_SOURCE = "kis_paper"
 PAPER_ACCOUNT_SNAPSHOT_TTL = timedelta(minutes=5)
+PAPER_ACCOUNT_SNAPSHOT_SCHEMA_VERSION = 2
+PAPER_ACCOUNT_ORDERABLE_FOREIGN_FUNDS_SOURCE_FIELD = "ord_psbl_frcr_amt"
 
 
 class PaperAccountSnapshotError(ValueError):
@@ -24,13 +26,18 @@ class PaperAccountSnapshotError(ValueError):
 
 
 @dataclass(frozen=True)
-class PaperAccountCash:
+class PaperAccountOrderableForeignFunds:
+    """Exact KIS orderable-foreign-funds field, not settled cash or account equity."""
+
     currency: str
-    available_cash: Decimal
+    amount: Decimal
+    source_field: Literal["ord_psbl_frcr_amt"] = PAPER_ACCOUNT_ORDERABLE_FOREIGN_FUNDS_SOURCE_FIELD
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "currency", _currency(self.currency))
-        object.__setattr__(self, "available_cash", _nonnegative_decimal(self.available_cash))
+        object.__setattr__(self, "amount", _nonnegative_decimal(self.amount))
+        if self.source_field != PAPER_ACCOUNT_ORDERABLE_FOREIGN_FUNDS_SOURCE_FIELD:
+            raise PaperAccountSnapshotError("orderable_foreign_funds_source_invalid")
 
 
 @dataclass(frozen=True)
@@ -98,12 +105,12 @@ class PaperAccountSnapshot:
     status: Literal["complete", "unavailable"]
     observed_at: datetime
     expires_at: datetime
-    cash: PaperAccountCash | None = None
+    orderable_foreign_funds: PaperAccountOrderableForeignFunds | None = None
     reference_orderability: PaperAccountReferenceOrderability | None = None
     positions: tuple[PaperAccountPosition, ...] = ()
     open_orders: tuple[PaperAccountOpenOrder, ...] = ()
     reason_code: str | None = None
-    schema_version: int = SCHEMA_VERSION
+    schema_version: int = PAPER_ACCOUNT_SNAPSHOT_SCHEMA_VERSION
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
@@ -115,7 +122,7 @@ class PaperAccountSnapshot:
             raise PaperAccountSnapshotError("snapshot_expiry_invalid")
         if self.status == "complete":
             if (
-                self.cash is None
+                self.orderable_foreign_funds is None
                 or self.reference_orderability is None
                 or self.reason_code is not None
             ):
@@ -125,7 +132,7 @@ class PaperAccountSnapshot:
                 raise PaperAccountSnapshotError("position_duplicate")
         elif self.status == "unavailable":
             if (
-                self.cash is not None
+                self.orderable_foreign_funds is not None
                 or self.reference_orderability is not None
                 or self.positions
                 or self.open_orders
@@ -159,12 +166,13 @@ class PaperAccountSnapshot:
         if self.status == "unavailable":
             payload["reason_code"] = self.reason_code
             return payload
-        assert self.cash is not None
+        assert self.orderable_foreign_funds is not None
         assert self.reference_orderability is not None
         payload["facts"] = {
-            "cash": {
-                "currency": self.cash.currency,
-                "available_cash": str(self.cash.available_cash),
+            "orderable_foreign_funds": {
+                "currency": self.orderable_foreign_funds.currency,
+                "amount": str(self.orderable_foreign_funds.amount),
+                "source_field": self.orderable_foreign_funds.source_field,
             },
             "reference_orderability": {
                 "currency": self.reference_orderability.currency,
@@ -245,12 +253,17 @@ class PaperAccountSnapshot:
         facts = payload["facts"]
         if not isinstance(facts, Mapping):
             raise PaperAccountSnapshotError("snapshot_facts_invalid")
-        _require_exact_keys(facts, {"cash", "reference_orderability", "positions", "open_orders"})
+        _require_exact_keys(
+            facts,
+            {"orderable_foreign_funds", "reference_orderability", "positions", "open_orders"},
+        )
         return cls(
             status="complete",
             observed_at=_utc_datetime(payload["observed_at"], "observed_at"),
             expires_at=_utc_datetime(payload["expires_at"], "expires_at"),
-            cash=_cash_from_dict(facts["cash"]),
+            orderable_foreign_funds=_orderable_foreign_funds_from_dict(
+                facts["orderable_foreign_funds"]
+            ),
             reference_orderability=_reference_orderability_from_dict(
                 facts["reference_orderability"]
             ),
@@ -315,7 +328,7 @@ def read_paper_account_snapshot(
         if (
             snapshot.status != "complete"
             or current < snapshot.observed_at
-            or current > snapshot.expires_at
+            or current >= snapshot.expires_at
         ):
             return PaperAccountSnapshotRead(status="unavailable")
         return PaperAccountSnapshotRead(status="available", snapshot=snapshot)
@@ -323,13 +336,14 @@ def read_paper_account_snapshot(
         return PaperAccountSnapshotRead(status="unavailable")
 
 
-def _cash_from_dict(value: object) -> PaperAccountCash:
+def _orderable_foreign_funds_from_dict(value: object) -> PaperAccountOrderableForeignFunds:
     if not isinstance(value, Mapping):
-        raise PaperAccountSnapshotError("cash_invalid")
-    _require_exact_keys(value, {"currency", "available_cash"})
-    return PaperAccountCash(
-        currency=_text(value["currency"], "cash_currency"),
-        available_cash=_decimal(value["available_cash"], "available_cash"),
+        raise PaperAccountSnapshotError("orderable_foreign_funds_invalid")
+    _require_exact_keys(value, {"currency", "amount", "source_field"})
+    return PaperAccountOrderableForeignFunds(
+        currency=_text(value["currency"], "orderable_foreign_funds_currency"),
+        amount=_decimal(value["amount"], "orderable_foreign_funds_amount"),
+        source_field=_text(value["source_field"], "orderable_foreign_funds_source"),
     )
 
 
@@ -411,7 +425,7 @@ def _open_orders_from_list(value: object) -> tuple[PaperAccountOpenOrder, ...]:
 
 
 def _validate_envelope(payload: Mapping[str, Any]) -> None:
-    if payload.get("schema_version") != SCHEMA_VERSION:
+    if payload.get("schema_version") != PAPER_ACCOUNT_SNAPSHOT_SCHEMA_VERSION:
         raise PaperAccountSnapshotError("snapshot_schema_invalid")
     if payload.get("kind") != PAPER_ACCOUNT_SNAPSHOT_KIND:
         raise PaperAccountSnapshotError("snapshot_kind_invalid")

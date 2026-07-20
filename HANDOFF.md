@@ -90,6 +90,9 @@ the Docker-local runtime. Its immutable minimal evidence is
 `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T073411455838Z-complete.json`
 (SHA-256 `9b7b12848f28ced98d674ac224d2f576e02df279cf57a581ef5500e9159614fb`).
 It records no account value, symbol, account identifier, or raw broker body.
+The current snapshot schema labels the exact `ord_psbl_frcr_amt` source field
+as orderable foreign funds. It is not settled cash, account equity, margin
+capacity, or general buying power.
 
 The immediate product path is KIS-native paper readiness. Active model inputs
 must be reconstructible from KIS-compatible, completed market bars at decision
@@ -131,6 +134,12 @@ separately from its completed feature-window end and expires at the next
   snapshot was already complete; the mount-aware correction recovered the
   minimal evidence without another KIS call. Recovery classification is
   `complete`, not a retry or a broker-state claim.
+- The schema-v2 console snapshot now distinguishes source-labelled orderable
+  foreign funds from both settled cash and the separate reference-orderability
+  response. It expires at `now >= expires_at`. The credential-free,
+  no-network `paper-capital-proposal` profile reads only that snapshot and can
+  return either an abstention or an operator-review candidate. It never writes
+  an approval, artifact, intent, or broker request.
 - The operator-approved QQQ/SPY historical capability runner completed its
   single allowed attempt as `rejected` with `daily_response_rejected`. Its
   sanitized summary is
@@ -744,12 +753,12 @@ cause follows from a single response. `KIS_LIVE_*`, paper order submission or
 cancellation, and a nonzero paper capital envelope remain unavailable.
 
 KIS paper is an early execution milestone, not a reward for model profitability.
-After the approved read-only discovery reconciles buying power, Codex proposes a
-paper capital envelope based on the smaller of actual orderable paper funds and
-intended shadow live capital; the current planning reference is KRW 5,000,000.
-The operator approves or changes that envelope once. Routine paper work inside
-it then continues without repeated approval. Submit/cancel and live mode remain
-separate decisions.
+The proposal contract can only form a candidate from a fresh, empty-account
+snapshot's source-labelled orderable foreign funds and an operator ceiling in
+the same currency. It never converts the KRW 5,000,000 planning reference,
+uses reference orderability to size, or treats either field as a general
+buying-power claim. The operator approves or changes the resulting envelope
+once. Submit/cancel and live mode remain separate decisions.
 
 ## Agent State
 
@@ -795,14 +804,16 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The next single objective is a no-order paper-capital-envelope proposal from a
-fresh KIS virtual-paper reconciliation. It must preserve the bridge's isolated
-paper-only, credential-free-web design and make its proposed currency, ceiling,
-and non-submission limits explicit without persisting account values in Git or
-external evidence. A new KIS read is allowed only as one deliberate bounded
-refresh if the existing snapshot is stale; it is never a retry loop. The output
-is an operator decision to approve or change a specific envelope. It does not
-authorize an order canary, submit, cancel, `KIS_LIVE_*`, or a mode change.
+The no-order capital proposal contract is ready. The next bounded work is one
+newly authorized KIS virtual-paper read-only refresh, used only to establish a
+sanitized status, native currency, and whether positions or open orders are
+present. It is not a retry loop. A usable empty snapshot then needs one operator
+input: a maximum in that native currency. The recommended starting policy is
+`min(source-labelled orderable foreign funds, USD 500)` only when the snapshot
+is USD, complete, and unexpired. It is not an automatic setting; the operator
+may approve it, choose another USD cap, or specify a cap in another native
+currency. The subsequent no-network proposal print still does not authorize an
+order canary, submit, cancel, `KIS_LIVE_*`, or a mode change.
 
 ### Superseded historical context
 

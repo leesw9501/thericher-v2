@@ -2757,3 +2757,37 @@ that never refreshes data are load-bearing. Focused fake-transport, snapshot,
 web-isolation, Compose, and Docker-local HTTP tests cover those boundaries.
 The next decision is a specific paper-capital envelope for the operator; this
 decision does not authorize one.
+
+## 2026-07-20 - Keep paper-capital candidates distinct from cash and execution
+
+Decision: snapshot schema v2 renames the generic console fact formerly called
+cash to `orderable_foreign_funds`, pins it to the exact producer field
+`ord_psbl_frcr_amt`, and expires it at `now >= expires_at`. It is explicitly
+not settled cash, account equity, margin capacity, or general buying power. The
+separate `reference_orderability` fact remains a one-reference-request
+compatibility signal and is never a sizing input.
+
+`execution.paper_capital_proposal` is a pure calculation over the sanitized
+runtime snapshot and an operator-supplied same-currency ceiling. It can return
+only `abstain` or `awaiting_operator_approval`; a candidate is the lesser of
+the source-labelled funds amount and the operator ceiling. It abstains for any
+missing, unavailable, future, exact-expiry, currency-mismatch, zero-funds,
+nonempty-position, or open-order state. It neither invokes KIS nor reads an
+environment value, creates an intent, writes an approval or artifact, changes
+mode, calls a broker, converts FX, or supplies an order path. The Docker profile
+has no network, credentials, port, or writable runtime mount.
+
+Reason: a read-only amount associated with a reference order query is useful
+operator evidence but cannot be silently promoted into total equity or
+executable buying power. Keeping the proposal transient and fail-closed gives
+the operator a bounded capital question without weakening later risk and broker
+reconciliation requirements.
+
+Independent Validation found the earlier nonzero proposal unsupported until
+currency, reference-orderability, expiry, position/open-order, producer, and
+isolation conditions were explicit. Claude's falsification-first verdict is
+`uncertain`: producer semantics and any future approval persistence remain
+separate decision surfaces. This implementation records neither a nonzero
+envelope nor an approval. The next required operator choice is a cap in the
+fresh snapshot's native currency; `USD 500` is only the Codex recommendation
+when that currency is USD.

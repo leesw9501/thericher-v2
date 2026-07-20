@@ -23,8 +23,8 @@ from thericher_v2.execution.kis_readonly import (
 )
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
-    PaperAccountCash,
     PaperAccountOpenOrder,
+    PaperAccountOrderableForeignFunds,
     PaperAccountPosition,
     PaperAccountReferenceOrderability,
     PaperAccountSnapshot,
@@ -142,10 +142,10 @@ def write_kis_paper_console_bridge_evidence(
     if snapshot.status == "unavailable":
         payload["reason_code"] = snapshot.reason_code
     else:
-        assert snapshot.cash is not None
+        assert snapshot.orderable_foreign_funds is not None
         assert snapshot.reference_orderability is not None
         payload["facts"] = {
-            "cash_currency": snapshot.cash.currency,
+            "orderable_foreign_funds_currency": snapshot.orderable_foreign_funds.currency,
             "reference_orderability_currency": snapshot.reference_orderability.currency,
             "position_count": len(snapshot.positions),
             "open_order_count": len(snapshot.open_orders),
@@ -204,9 +204,9 @@ def _complete_snapshot(
         status="complete",
         observed_at=observed_at,
         expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-        cash=PaperAccountCash(
+        orderable_foreign_funds=PaperAccountOrderableForeignFunds(
             currency=source.cash.currency,
-            available_cash=source.cash.available_cash,
+            amount=source.cash.available_cash,
         ),
         reference_orderability=PaperAccountReferenceOrderability(
             currency=source.orderable_funds.currency,

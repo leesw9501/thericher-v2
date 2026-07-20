@@ -259,6 +259,8 @@ class KisPaperAccountIdentity:
 
 @dataclass(frozen=True)
 class KisPaperCashSnapshot:
+    """Exact `ord_psbl_frcr_amt` mapping; not settled cash or account equity."""
+
     currency: str
     available_cash: Decimal
     captured_at: datetime

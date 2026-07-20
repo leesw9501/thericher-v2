@@ -77,8 +77,11 @@ The `kis-readonly` Compose profile is a deliberately invoked one-shot reader,
 not a service or retry loop. It receives only the four interpolated
 `KIS_PAPER_*` values; it neither mounts `.env` nor receives live values. It
 atomically replaces the generic console snapshot only after a complete typed
-read; the web accepts it for five minutes and otherwise renders `unknown` or
-`unavailable`. A normal approved invocation is:
+read; the web accepts it only while `now < expires_at` and otherwise renders
+`unknown` or `unavailable`. The schema labels the exact
+`ord_psbl_frcr_amt` source value as orderable foreign funds, not settled cash,
+account equity, margin capacity, or general buying power. A normal approved
+invocation is:
 
 ```powershell
 docker compose --profile kis-readonly run --rm --no-deps kis-readonly
@@ -97,6 +100,23 @@ docker compose --profile kis-readonly run --rm --no-deps kis-readonly `
 
 Do not use recovery to refresh stale state or to create a retry loop. A new
 read must belong to a new bounded objective.
+
+The separate `paper-capital-proposal` profile has no network, KIS/Tiingo
+environment, public port, writable runtime, or approval persistence. It reads
+only the generic snapshot and prints `abstain` or an operator-review candidate.
+Run it only after the operator supplies a cap in the snapshot's native currency:
+
+```powershell
+docker compose --profile paper-capital-proposal run --rm --no-deps `
+  paper-capital-proposal python -m thericher_v2.execution.paper_capital_proposal `
+  --runtime-snapshot /app/runtime/state/paper_account_snapshot.json `
+  --currency USD --operator-ceiling 500
+```
+
+The command uses `min(source-labelled orderable foreign funds, operator
+ceiling)` only when the snapshot is complete, unexpired, same-currency, and has
+no positions or open orders. It does not use the separate reference-orderability
+amount to size, convert FX, approve capital, or submit an order.
 
 ## Data Acquisition
 
@@ -256,14 +276,15 @@ Authority sequence:
 
 1. Operator authorizes read-only KIS paper credentials and account queries.
 2. Execution validates the paper endpoint and masked account identity, then
-   reconciles cash, orderable funds, positions, and open orders.
+   reconciles source-labelled orderable foreign funds, reference orderability,
+   positions, and open orders.
 3. Codex proposes a paper capital envelope based on:
 
    ```text
-   min(reconciled KIS paper funds, intended shadow live capital)
+   min(fresh orderable foreign funds, operator ceiling in the same currency)
    ```
 
-   KRW 5,000,000 is the current planning reference, not automatic authority.
+   The KRW 5,000,000 planning reference is not converted automatically.
 4. Operator approves or changes the envelope once.
 5. A one-symbol, one-share limit-order canary proves submit, status, fill or
    cancel, event persistence, restart reconciliation, and duplicate suppression.

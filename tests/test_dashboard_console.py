@@ -17,7 +17,7 @@ from thericher_v2.dashboard.view import build_snapshot
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
-    PaperAccountCash,
+    PaperAccountOrderableForeignFunds,
     PaperAccountPosition,
     PaperAccountReferenceOrderability,
     PaperAccountSnapshot,
@@ -239,7 +239,9 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
             status="complete",
             observed_at=observed_at,
             expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-            cash=PaperAccountCash("USD", Decimal("1200.50")),
+            orderable_foreign_funds=PaperAccountOrderableForeignFunds(
+                "USD", Decimal("1200.50")
+            ),
             reference_orderability=PaperAccountReferenceOrderability(
                 "USD",
                 Decimal("1199.75"),
@@ -272,7 +274,7 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     from thericher_v2.dashboard.view import render_dashboard
 
     html = render_dashboard(snapshot, form_nonce="form-nonce")
-    assert "Verified cash" in html
+    assert "KIS orderable foreign funds" in html
     assert "Reference orderability" in html
     assert "KIS positions" in html
     assert "KIS price quotes" in html
@@ -449,12 +451,24 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "thericher-v2-web-emergency:/app/emergency" in web_section
 
     kis_section = compose.split("\n  kis-readonly:\n", maxsplit=1)[1].split(
-        "\nvolumes:\n", maxsplit=1
+        "\n  paper-capital-proposal:\n", maxsplit=1
     )[0]
     assert "profiles: [\"kis-readonly\"]" in kis_section
     assert "KIS_PAPER_APP_KEY" in kis_section
     assert "KIS_LIVE" not in kis_section
     assert ".env" not in kis_section
+
+    proposal_section = compose.split("\n  paper-capital-proposal:\n", maxsplit=1)[1].split(
+        "\nvolumes:\n", maxsplit=1
+    )[0]
+    assert 'profiles: ["paper-capital-proposal"]' in proposal_section
+    assert "network_mode: none" in proposal_section
+    assert "read_only: true" in proposal_section
+    assert "thericher-v2-runtime:/app/runtime:ro" in proposal_section
+    assert "KIS_" not in proposal_section
+    assert "TIINGO" not in proposal_section
+    assert ".env" not in proposal_section
+    assert "ports:" not in proposal_section
 
     dockerignore = (repo_root / ".dockerignore").read_text(encoding="utf-8")
     assert ".env" in dockerignore

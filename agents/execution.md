@@ -16,6 +16,15 @@
   after the snapshot write because `/app/model_artifacts` is a mounted path
   below `/app`; the mount-aware fix and `--recover-evidence` recorded the
   existing fresh snapshot with no KIS I/O. Recovery is `complete`.
+- Snapshot schema v2 replaces the console's misleading generic cash label with
+  source-labelled orderable foreign funds (`ord_psbl_frcr_amt`). It is not
+  settled cash, account equity, margin capacity, or general buying power. The
+  reader now expires it at the exact `now >= expires_at` boundary.
+- `execution.paper_capital_proposal` is a pure local calculation and the
+  `paper-capital-proposal` Docker profile is no-network, read-only, and
+  credential-free. It may emit only `abstain` or
+  `awaiting_operator_approval`; it uses no KIS, broker, environment, or order
+  object and writes neither an approval nor an artifact.
 - A bounded 2026-07-19 KIS paper read-only probe now proved that token issuance
   and a `NASD` balance/position response work. Its sanitized account summary is
   `D:\thericher-v2\model-artifacts\execution\kis-paper-account-readonly-probe\20260719T053923268036Z\summary.json`.
@@ -182,10 +191,16 @@
   integration commit. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
   the web process free of KIS clients, credentials, and broker calls.
-- Next, turn a fresh reconciliation into an operator decision-ready paper
-  capital-envelope proposal. Preserve the reconciled currency, distinguish the
-  reference orderability request from general buying power, and do not persist
-  account values to Git or external evidence.
+- The non-submitting capital proposal is complete pending integration commit.
+  It accepts only a fresh empty-account snapshot and an operator ceiling in the
+  same currency, then uses the lesser of that ceiling and source-labelled
+  orderable foreign funds. Reference orderability is a compatibility check only,
+  not a sizing input; no FX, margin, settled-cash, or equity inference exists.
+- Independent Validation found the pre-contract nonzero proposal unsupported;
+  Claude's final verdict is `uncertain` until the source field, producer
+  isolation, expiry clock, and later approval persistence remain explicit. The
+  contract now pins the source field, uses the strict snapshot reader, and keeps
+  approval persistence outside scope. It is still not an executable cap.
 - The 2026-07-20 authority permits isolated `KIS_PAPER_*` account, position,
   reference-orderability, open-order, and market-data reads. It does not permit
   `KIS_LIVE_*`, external order submission/cancellation, or a nonzero paper
@@ -211,6 +226,9 @@
   only the sanitized runtime file and makes no KIS request. Stale, unavailable,
   malformed, or duplicate evidence fails closed and requires a newly scoped
   objective, never an automatic bridge retry.
+- `paper_capital_proposal` never recovers or refreshes a snapshot. At missing,
+  unavailable, future, exact-expiry, stale, currency-mismatch, zero-funds,
+  nonempty-position, or open-order state it returns `abstain`.
 - For a local-paper post-fill interruption, retry only the same sequential
   call with the same complete bars and immutable fee/slippage settings. The
   recorded fill is authoritative; do not manufacture a replacement fill or a
@@ -222,19 +240,24 @@
 
 ## Ready Queue
 
-1. Produce a no-order, operator decision-ready paper capital-envelope proposal
-   from a fresh reconciliation without treating reference orderability as
-   general buying power.
-2. Ask the operator to approve or change the specific envelope. Do not submit
+1. Run one deliberately scoped KIS virtual-paper read-only refresh under the
+   current authority, retaining only status, native currency, empty/nonempty
+   state, and expiry. Do not retry automatically.
+2. Obtain a native-currency paper-cap ceiling from the operator. Recommendation:
+   USD 500 only when that fresh snapshot is USD and empty; otherwise request an
+   explicit matching-currency cap with no FX conversion. Then print the
+   transient proposal and ask for the separate envelope approval. Do not submit
    or cancel an external order before that distinct decision.
 3. Keep pure risk integration, append-only execution events, and a future paper
    canary as later separately bounded steps.
 
 ## Operator Help
 
-- The operator must approve or change the specific paper capital envelope once
-  the next objective presents it. Virtual-paper read-only development access is
-  already authorized.
+- Choose a native-currency ceiling for the first paper envelope. Recommendation:
+  USD 500 if the next fresh snapshot is USD; otherwise state an amount in its
+  reported currency. The eventual candidate still requires a separate
+  approve/change decision. Virtual-paper read-only development access is already
+  authorized.
 
 ## Must Not
 

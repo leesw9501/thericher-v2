@@ -492,13 +492,16 @@ def _paper_account_details(
             else "KIS snapshot unavailable"
         )
         return f'<p class="scope">{_text(message)}</p>'
-    assert account.cash is not None
+    assert account.orderable_foreign_funds is not None
     assert account.reference_orderability is not None
     return f"""
       <div class="overview">
         <div>
-          <span class="label">Verified cash</span>
-          <strong>{_text(account.cash.available_cash)} {_text(account.cash.currency)}</strong>
+          <span class="label">KIS orderable foreign funds</span>
+          <strong>
+            {_text(account.orderable_foreign_funds.amount)}
+            {_text(account.orderable_foreign_funds.currency)}
+          </strong>
         </div>
         <div>
           <span class="label">Reference orderability</span>
@@ -517,7 +520,9 @@ def _paper_account_details(
         </div>
       </div>
       <p class="scope">
-        Observed {_optional_text(observed_at)}. Reference orderability is for
+        Observed {_optional_text(observed_at)}. Orderable foreign funds are not
+        settled cash, account equity, margin capacity, or general buying power.
+        Reference orderability is for
         {_text(account.reference_orderability.reference_exchange)}
         {_text(account.reference_orderability.reference_symbol)} at
         {_text(account.reference_orderability.reference_price)}; it is not general buying power.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -21,8 +22,8 @@ from thericher_v2.execution.kis_readonly import (
 )
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
-    PaperAccountCash,
     PaperAccountOpenOrder,
+    PaperAccountOrderableForeignFunds,
     PaperAccountPosition,
     PaperAccountReferenceOrderability,
     PaperAccountSnapshot,
@@ -100,6 +101,26 @@ def test_snapshot_reader_distinguishes_unknown_complete_stale_and_malformed(tmp_
     assert malformed.snapshot is None
 
 
+def test_snapshot_schema_rejects_legacy_cash_and_unpinned_funds_source(tmp_path) -> None:
+    path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    legacy = _complete_snapshot(NOW).to_dict()
+    legacy["schema_version"] = 1
+    facts = legacy["facts"]
+    assert isinstance(facts, dict)
+    funds = facts.pop("orderable_foreign_funds")
+    assert isinstance(funds, dict)
+    facts["cash"] = {
+        "currency": funds["currency"],
+        "available_cash": funds["amount"],
+    }
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(legacy), encoding="utf-8")
+
+    assert read_paper_account_snapshot(path, now=NOW).status == "unavailable"
+    with pytest.raises(ValueError, match="orderable_foreign_funds_source_invalid"):
+        PaperAccountOrderableForeignFunds("USD", Decimal("1"), "other")
+
+
 def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_path) -> None:
     runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
     transport = FakeKisTransport(runtime_snapshot_path)
@@ -136,7 +157,9 @@ def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_pa
     current = read_paper_account_snapshot(runtime_snapshot_path, now=NOW)
     assert current.status == "available"
     assert current.snapshot is not None
-    assert current.snapshot.cash == PaperAccountCash("USD", Decimal("1200.50"))
+    assert current.snapshot.orderable_foreign_funds == PaperAccountOrderableForeignFunds(
+        "USD", Decimal("1200.50")
+    )
     assert current.snapshot.reference_orderability == PaperAccountReferenceOrderability(
         "USD",
         Decimal("1199.75"),
@@ -227,7 +250,9 @@ def _complete_snapshot(observed_at: datetime) -> PaperAccountSnapshot:
         status="complete",
         observed_at=observed_at,
         expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-        cash=PaperAccountCash("USD", Decimal("1200.50")),
+        orderable_foreign_funds=PaperAccountOrderableForeignFunds(
+            "USD", Decimal("1200.50")
+        ),
         reference_orderability=PaperAccountReferenceOrderability(
             "USD",
             Decimal("1199.75"),
