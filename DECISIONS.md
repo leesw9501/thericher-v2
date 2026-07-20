@@ -2791,3 +2791,41 @@ separate decision surfaces. This implementation records neither a nonzero
 envelope nor an approval. The next required operator choice is a cap in the
 fresh snapshot's native currency; `USD 500` is only the Codex recommendation
 when that currency is USD.
+
+## 2026-07-20 - Close the bounded raw-minute v4 observation without retry
+
+Decision: close the single `QQQ` / `NAS` raw-`1m` v4 observation as terminal
+`rejected`, not `unavailable`, after its sanitized summary recorded
+`minute_response_rejected`, one OAuth token attempt, and two minute-page
+attempts. Its external-only artifact is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-qualification\20260720T174018Z\summary.json`,
+SHA-256 `2e87ef096dad2d6e06f71a0d653c8c245b40c11dc0be08f3f8c6af5532c1a23a`.
+The reservation/ledger lifecycle is `reserved -> network_started ->
+summary_written`; it blocks every retry. No raw market data, price, volume,
+token, account identifier, or broker body was retained.
+
+The two page attempts mean only that the client reached its continuation path
+after accepting enough first-page structure to obtain a cursor. The rejection
+does not establish the second response's HTTP status, KIS code/body, on-wire
+request correctness, paging semantics, timestamp labeling, completed-bar
+freshness, retention rights, or a KIS-wide outage. It neither promotes nor
+negates the pre-existing raw-minute `observed` capability, and the trusted
+qualification registry remains empty.
+
+The immutable result's failure summary timestamp precedes its reservation by a
+few milliseconds because the prior runner reused its initial clock in a caught
+error path. Do not rewrite external evidence. The runner now keeps the latest
+durable lifecycle timestamp, and the shared marker transition rejects any
+retrograde timestamp before appending a ledger state. Focused fake-client and
+state-machine tests cover both changes.
+
+Reason: one bounded failed observation must remain recoverable and falsifiable
+without becoming a generic retry loop or an unsupported causal story. A future
+offline objective may inspect the code-level continuation-request contract, but
+cannot claim what was on wire or returned; a future network observation would
+need its own scope and decision boundary.
+
+Claude's falsification-first verdict was `supported-with-limits`: terminal
+disposition is supported, while HTTP/KIS cause and actual on-wire request form
+remain unresolved. The decision reverses only if durable sanitized evidence is
+shown to be inconsistent with the recorded terminal lifecycle.

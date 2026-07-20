@@ -15,6 +15,7 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_minute_qualification import (
     KisPaperMinuteQualificationEvidence,
     KisPaperMinuteQualificationFacts,
+    KisPaperMinuteQualificationFailure,
 )
 
 
@@ -371,6 +372,71 @@ def test_successful_runner_lifecycle_marks_summary_written_and_blocks_a_second_r
         "status": "not_executed",
         "reason": "qualification_attempt_already_reserved",
     }
+
+
+def test_runner_failure_summary_uses_the_latest_durable_lifecycle_time(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    probe = _load_probe_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "control"
+    failure_result: KisPaperMinuteQualificationFailure | None = None
+    reserved_at = datetime(2026, 7, 20, 17, 30, 20, tzinfo=UTC)
+    network_started_at = reserved_at + timedelta(seconds=1)
+
+    class RejectedClient:
+        call_counts = KisPaperMinuteCallCounts(1, 2)
+
+    monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
+    monkeypatch.setattr(probe, "KIS_PAPER_MINUTE_QUALIFICATION_CONTROL_ROOT", control_root)
+    monkeypatch.setattr(probe, "load_kis_paper_market_data_config", lambda _: object())
+    monkeypatch.setattr(probe, "KisPaperMinuteClient", lambda **_kwargs: RejectedClient())
+    monkeypatch.setattr(probe, "UrllibKisPaperMarketDataTransport", lambda: object())
+
+    def reject_after_network_start(*_args: object, **_kwargs: object) -> object:
+        raise KisPaperMarketDataError("minute_response_rejected")
+
+    monkeypatch.setattr(
+        probe,
+        "run_bounded_kis_paper_minute_qualification",
+        reject_after_network_start,
+    )
+
+    def capture_failure_summary(**kwargs: object) -> tuple[Path, str]:
+        nonlocal failure_result
+        candidate = kwargs["result"]
+        assert isinstance(candidate, KisPaperMinuteQualificationFailure)
+        failure_result = candidate
+        return tmp_path / "summary.json", "sha256:unit"
+
+    monkeypatch.setattr(
+        probe,
+        "write_kis_paper_minute_qualification_summary",
+        capture_failure_summary,
+    )
+    clock_values = iter(
+        (
+            datetime(2026, 7, 20, 17, 30, 10, tzinfo=UTC),
+            reserved_at,
+            network_started_at,
+        )
+    )
+
+    probe.main(
+        ["--execute", "--confirm-no-exception"],
+        clock=lambda: next(clock_values),
+        dotenv_path=tmp_path / ".env",
+    )
+
+    assert json.loads(capsys.readouterr().out)["status"] == "rejected"
+    assert failure_result is not None
+    assert failure_result.observed_at == network_started_at
+    marker = next((control_root / "reservations").glob("*.json"))
+    marker_document = json.loads(marker.read_text(encoding="utf-8"))
+    assert marker_document["updated_at_utc"] == "2026-07-20T17:30:21Z"
 
 
 def test_summary_state_transition_failure_is_indeterminate_not_completion_like(

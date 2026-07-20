@@ -97,8 +97,10 @@ def main(
 
     client: KisPaperMinuteClient | None = None
     result: KisPaperMinuteQualificationEvidence | KisPaperMinuteQualificationFailure
+    failure_observed_at = observed_at
     try:
         reserved_at = clock()
+        failure_observed_at = reserved_at
         if not is_kis_paper_minute_qualification_window(reserved_at):
             print(
                 json.dumps(
@@ -134,6 +136,7 @@ def main(
             observed_at=reserved_at,
         )
         network_started_at = clock()
+        failure_observed_at = network_started_at
         if not is_kis_paper_minute_qualification_window(network_started_at):
             result = KisPaperMinuteQualificationFailure(
                 observed_at=network_started_at,
@@ -160,7 +163,7 @@ def main(
             print(json.dumps({"status": "not_executed", "reason": str(error)}))
             return
         result = KisPaperMinuteQualificationFailure(
-            observed_at=observed_at,
+            observed_at=failure_observed_at,
             call_counts=(
                 client.call_counts if client is not None else KisPaperMinuteCallCounts(0, 0)
             ),

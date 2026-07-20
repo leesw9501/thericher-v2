@@ -1047,18 +1047,27 @@ def _transition_external_one_shot_attempt(
     try:
         document = json.loads(marker.read_text(encoding="utf-8"))
         reserved_at = document["reserved_at_utc"]
+        updated_at = document["updated_at_utc"]
         marker_phase = document["phase"]
         if (
             not isinstance(document, dict)
             or document.get("objective_id") != objective_id
             or marker_phase not in allowed_predecessors
             or not isinstance(reserved_at, str)
+            or not isinstance(updated_at, str)
         ):
             raise ValueError("reservation_marker_invalid")
         reserved_at_value = require_utc(
             datetime.fromisoformat(reserved_at.replace("Z", "+00:00")),
             "reserved_at",
         )
+        updated_at_value = require_utc(
+            datetime.fromisoformat(updated_at.replace("Z", "+00:00")),
+            "updated_at",
+        )
+        observed_at_value = require_utc(observed_at, "observed_at")
+        if updated_at_value < reserved_at_value or observed_at_value < updated_at_value:
+            raise ValueError("reservation_marker_invalid")
     except (
         OSError,
         UnicodeDecodeError,
@@ -1083,7 +1092,7 @@ def _transition_external_one_shot_attempt(
         objective_id=objective_id,
         phase=phase,
         reserved_at=reserved_at_value,
-        updated_at=require_utc(observed_at, "observed_at"),
+        updated_at=observed_at_value,
         summary_hash=summary_hash,
         result_status=result_status,
     )
@@ -1091,7 +1100,7 @@ def _transition_external_one_shot_attempt(
         objective_id=objective_id,
         phase=phase,
         reserved_at=reserved_at_value,
-        updated_at=observed_at,
+        updated_at=observed_at_value,
         summary_hash=summary_hash,
         result_status=result_status,
     )

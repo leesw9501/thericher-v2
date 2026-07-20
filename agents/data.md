@@ -28,7 +28,19 @@ it. The v4 one-shot harness deliberately records only `observed` or `rejected`
 runtime evidence; it does not load an anchor or promote a capability. Raw bytes
 remain unstored, and its external writer accepts only typed observed evidence or
 typed sanitized failures rather than caller-provided documents. No KIS call
-occurred during its preparation.
+occurred during its preparation. Its one actual `QQQ` / `NAS` raw-`1m`
+qualification on 2026-07-20 ended terminally `rejected`
+(`minute_response_rejected`): one token and two bounded minute-page attempts,
+no retained raw market data, and summary SHA-256
+`2e87ef096dad2d6e06f71a0d653c8c245b40c11dc0be08f3f8c6af5532c1a23a` at
+`D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-qualification\20260720T174018Z\summary.json`.
+It is not an unavailable-provider or KIS-wide claim and does not change the
+empty trusted qualification registry. Do not retry or widen it. A later,
+separately scoped qualification still needs accepted 1m page/continuation
+facts, an independent timestamp-label anchor, an in-progress completed-bar and
+freshness observation, retention/cache-recovery evidence, and a reviewed
+contract-SHA binding before `1m`, resampled `5m`/`10m`, or inactive `1h`/`3h`
+may enter a paper graph.
 
 The baseline also requires a separately reviewed binding of the full immutable
 capability-contract SHA. Its production trusted registry is empty; the binding

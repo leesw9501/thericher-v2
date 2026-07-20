@@ -71,6 +71,23 @@
   `observed` or `rejected`; a self-consistent snapshot cannot promote a
   completed-bar contract. No credential or KIS network call occurred while
   preparing this harness.
+- The one permitted v4 observation then completed terminally `rejected` at
+  `2026-07-20T17:40:18.640099Z` with safe reason
+  `minute_response_rejected`, one token attempt, and two minute-page attempts.
+  Its SHA-256-attested sanitized summary is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-qualification\20260720T174018Z\summary.json`
+  (`2e87ef096dad2d6e06f71a0d653c8c245b40c11dc0be08f3f8c6af5532c1a23a`).
+  The first page was sufficiently accepted by the client to reach the
+  continuation path, but no retained fact identifies the second response's
+  HTTP or KIS cause. The marker/ledger lifecycle is terminal
+  `reserved -> network_started -> summary_written`; do not retry, rewrite the
+  immutable artifact, or infer a KIS-wide outage, paging correctness, or a
+  qualified data capability.
+- The original rejected artifact's summary timestamp predates its reservation
+  timestamp by milliseconds because the prior runner used its initial clock in
+  a caught-error path. This is an audit-metadata defect, not duplicate-request
+  evidence. Future failures now retain the latest durable lifecycle time, and
+  the shared transition rejects a timestamp earlier than the current marker.
 - The active KST preflight slots map to New York `13:30` through `15:40` on the
   fixed date. The time gate compares the minute boundary separately from the
   required `10` through `45` safe seconds, so the final `15:40` safe interval

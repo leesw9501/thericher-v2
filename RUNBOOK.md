@@ -227,6 +227,11 @@ This one-shot procedure improves the data-collection and paper-trading loops:
 it tests whether a KIS-native completed-bar input can be reconstructed without
 turning the broker into a historical-data archive.
 
+This exact v4 procedure was consumed on 2026-07-20 and completed terminally
+`rejected` as `minute_response_rejected`; its reservation now blocks every
+repeat. The command below is preserved as historical operating context only.
+Do not invoke it again or rewrite its sanitized artifact.
+
 Run only during the fixed, preverified **2026-07-20** Nasdaq session window,
 13:30 through 15:40 New York time on a ten-minute boundary and seconds 10-45:
 

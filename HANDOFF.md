@@ -209,6 +209,26 @@ separately from its completed feature-window end and expires at the next
   result is always `observed` or `rejected`; it cannot promote a capability or
   read a bar-label anchor. No credential was read and no KIS request was made
   while preparing this v4 harness.
+- That single v4 observation completed on `2026-07-20T17:40:18.640099Z` as
+  terminal `rejected` with safe reason `minute_response_rejected`, exactly one
+  token attempt, and two minute-page attempts. Its sanitized-only summary is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-qualification\20260720T174018Z\summary.json`
+  (SHA-256 `2e87ef096dad2d6e06f71a0d653c8c245b40c11dc0be08f3f8c6af5532c1a23a`).
+  The client can issue its second page only after the first parsed a
+  continuation cursor, but the retained facts do not identify the failed
+  response's HTTP status, KIS code, body, or on-wire cause. Its marker and
+  ledger show `reserved -> network_started -> summary_written`; never retry or
+  rewrite this immutable result. It is distinct from the earlier raw-minute
+  observation and establishes no fields, adjacency, timestamp, completed-bar,
+  freshness, retention, storage-rights, cache, dataset, model, or paper claim.
+  The matching date-limited Codex preflight automation is `PAUSED`; do not
+  reactivate it for this completed objective.
+- The immutable rejected artifact has a millisecond-scale summary timestamp
+  preceding its reservation because the former runner used its initial clock on
+  a caught error. Phase order and no-retry state remain authoritative. Future
+  transitions now require nondecreasing marker times and a focused fake-client
+  test covers the failure path; do not reinterpret the old timestamp as a
+  duplicate or recovery incident.
 - A blank `THERICHER_DASHBOARD_TOKEN` placeholder may appear before the paper
   app keys so the normal local template remains usable; a nonempty dashboard
   value is rejected before it is retained. The committed template instead puts

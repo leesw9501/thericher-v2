@@ -542,6 +542,40 @@ def test_one_shot_reservation_records_recoverable_lifecycle_state(tmp_path: Path
         )
 
 
+def test_lifecycle_transition_rejects_a_time_before_the_current_marker(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    control_root = tmp_path / "external-control"
+    marker = reserve_kis_paper_minute_qualification_attempt(
+        control_root=control_root,
+        repo_root=repo_root,
+        observed_at=_PROBE_START,
+    )
+    mark_kis_paper_minute_qualification_network_started(
+        control_root=control_root,
+        repo_root=repo_root,
+        observed_at=_PROBE_END,
+    )
+
+    with pytest.raises(ValueError, match="reservation_marker_invalid"):
+        mark_kis_paper_minute_qualification_summary_written(
+            control_root=control_root,
+            repo_root=repo_root,
+            observed_at=_PROBE_START,
+            summary_hash="sha256:unit",
+            result_status="rejected",
+        )
+
+    assert json.loads(marker.read_text(encoding="utf-8"))["phase"] == "network_started"
+    assert kis_minute_qualification._external_attempt_ledger_phases(
+        control_root=control_root,
+        repo_root=repo_root,
+        objective_id=kis_minute_qualification.KIS_PAPER_MINUTE_QUALIFICATION_OBJECTIVE_ID,
+    ) == ("reserved", "network_started")
+
+
 def test_reservation_and_lifecycle_transitions_sync_the_marker(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
