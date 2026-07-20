@@ -203,14 +203,16 @@ Tiingo free-tier scope and Norgate trial may support bounded development and
 prospective collection within their rights, but their limitations stay explicit:
 they do not become a point-in-time historical universe or a generalizable model
 claim by substitution.
-The current KIS data work is an Execution-owned, one-shot metadata-only probe:
-only `QQQ`/`SPY`, one paper token, at most three daily and three raw-`1m` pages,
-and no raw rows, credentials, account facts, cache, or `D:\market_data` write.
-Data reviews its sanitized scope, page, field-presence, continuation, and
-date/timestamp-bound facts only. This is metadata-only `observed`/`rejected`
-evidence: it creates no retained dataset, cache, feature, timeframe activation,
-campaign, or model eligibility, and raw `1m` remains `observed` until an
-independent qualification.
+The immediate historical `QQQ`/`SPY` one-shot is complete as a terminal
+`daily_response_rejected` result: one paper token, two daily attempts, zero
+raw-`1m` attempts, and no retained raw row, credential, account fact, cache, or
+`D:\market_data` write. It cannot be retried or widened. The only remaining
+KIS Data work is interpretation of the separate date-limited `QQQ`/`NAS`
+raw-`1m` observation. Data reviews its sanitized scope, page, field-presence,
+continuation, and date/timestamp-bound facts only. This remains metadata-only
+`observed`/`rejected` evidence: it creates no retained dataset, cache, feature,
+timeframe activation, campaign, or model eligibility, and raw `1m` remains
+`observed` until an independent qualification.
 
 The active data direction is KIS-native paper readiness. Data owns the compact
 runtime feature contract, but does not call KIS. Execution's dated read-only
@@ -467,10 +469,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Ready Queue
 
-1. Review the immediately approved QQQ/SPY historical probe only through its
-   sanitized endpoint, page-count, field-presence, continuation, and
-   date/timestamp-bound facts. It does not confer retention, storage rights,
-   data quality, campaign, or training eligibility; do not write raw bytes.
+1. Complete: the sanitized QQQ/SPY historical probe is a disjoint rejected
+   daily attempt (`daily_response_rejected`). It confers no raw-`1m`, field,
+   paging, timestamp, retention, storage-rights, data-quality, campaign, or
+   training claim; do not write raw bytes or retry it.
 2. At the next bounded KIS market-session probe, review sanitized timestamp,
    continuation-key/no-overlap, completed-bar, freshness, and storage-rights evidence
    for the existing raw-`1m` capability. Retain it as `observed` after either
@@ -783,6 +785,13 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
 
 ## Recent Evidence
 
+- `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`:
+  sanitized historical KIS metadata-only result: `rejected`
+  (`daily_response_rejected`) within the declared `QQQ`/`SPY`/`NAS` scope.
+  It records one token attempt, two daily-page attempts, zero raw-`1m` page
+  attempts, no account/order/live endpoint call, in-memory-only handling, and
+  no retained raw market data. It establishes no daily field, paging,
+  continuation, timestamp, overlap, raw-`1m`, storage-rights, or model fact.
 - `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`:
   compact manifest-only inventory, SHA-256
   `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.

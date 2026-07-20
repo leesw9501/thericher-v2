@@ -2607,3 +2607,26 @@ use a test-only twenty-minute capability freshness budget to prove that the
 independent ten-minute expiry still wins. No credential, KIS request, raw
 market-data access, model training, broker submission, or live behavior is
 added.
+
+## 2026-07-20 - Preserve the bounded historical KIS rejection
+
+Decision: accept the one allowed QQQ/SPY historical KIS market-data attempt as
+terminally `rejected` with the sanitized reason `daily_response_rejected`.
+Its immutable summary is
+`D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`,
+SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`.
+It used one paper token and two daily attempts, made zero raw-`1m` attempts,
+called no account/order/live endpoint, and retained no raw market data. The
+external lifecycle reached `reserved -> network_started -> summary_written`,
+so this objective cannot be retried.
+
+Reason: the approved probe was a narrow technical observation, not an archive
+or a capability-promotion path. A rejected daily response establishes neither
+a general endpoint failure nor daily fields, paging, continuation, timestamps,
+storage rights, data quality, point-in-time coverage, or model fitness. It
+cannot alter the independently scoped raw-`1m` `observed` state.
+
+Independent Data and Validation review confirmed the lifecycle, bounded scope,
+sanitization, and retry prohibition from the summary and external control
+evidence. No Claude review is needed because no promotion, data-contract
+change, capital decision, execution-risk change, or model claim is proposed.

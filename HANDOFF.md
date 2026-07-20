@@ -112,13 +112,17 @@ separately from its completed feature-window end and expires at the next
   process remain credential- and network-free. The credential-bearing client
   and direct transport also reject every non-`QQQ`/`SPY`, non-`NAS`, altered
   request shape, or fourth per-kind page before a connection opens.
-- The operator-approved immediate QQQ/SPY historical capability runner was
-  invoked once but stopped at its secret-safe config preflight with
-  `config_missing`; it made no KIS request and wrote no reservation or summary.
-  A nonsecret check found `THERICHER_MODE=off` but no configured paper app key
-  or secret in the reader's approved `.env` prefix. Configure those two values
-  before retrying this still-unreserved objective; never move or expose account
-  or live values to make the reader pass.
+- The operator-approved QQQ/SPY historical capability runner completed its
+  single allowed attempt as `rejected` with `daily_response_rejected`. Its
+  sanitized summary is
+  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`
+  (SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`).
+  It used one token and two daily attempts, made zero raw-`1m` attempts, called
+  no account/order/live endpoint, and retained no raw market data. Its durable
+  lifecycle is `reserved -> network_started -> summary_written`; never retry
+  this objective. It establishes only the bounded rejection, not a daily or
+  raw-minute capability, field, paging, timestamp, storage-rights, data-quality,
+  point-in-time, or model conclusion.
 - The 2026-07-19 KIS paper probes observed a `NASD` balance/position response,
   a 100-row unadjusted daily page, and two paged raw `1m` pages. Adjusted daily
   fields and several account endpoints returned `EGW00201`; those facts remain

@@ -2,26 +2,23 @@
 
 ## Objective
 
-Complete two strictly separated, metadata-only KIS paper market-data
-observations without creating a market-data archive:
+Complete the remaining 2026-07-20-only, metadata-only KIS paper raw-`1m`
+regular-session observation for `QQQ`/`NAS`. Its only valid outcomes are
+`observed` or `rejected`; neither is a capability promotion or a market-data
+archive.
 
-1. **Now:** run one bounded historical-data capability probe for `QQQ` and
-   `SPY`, limited to a single paper token, at most three daily pages and three
-   raw-`1m` pages in total.
-2. **2026-07-20 only:** retain the existing one-shot `QQQ` raw-`1m`
-   regular-session observation. It remains an `observed`/`rejected` result,
-   never a capability promotion.
-
-Both probes improve the data-collection and paper-readiness loops by recording
-only whether KIS can provide the declared narrow inputs. They do not build a
-training corpus, model input, cache, or trading feature.
+The separate QQQ/SPY historical capability probe is terminally `rejected`
+(`daily_response_rejected`) at
+`D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`
+(SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`).
+It consumed one token and two daily attempts, never made a raw-`1m` request,
+and must not be retried.
 
 ## Current Authority
 
 - `THERICHER_MODE=off` stays unchanged.
-- The operator authorizes `KIS_PAPER_*` only for the two named read-only
-  market-data probes. The approved symbols are `QQQ` and `SPY`; all requests
-  use `NAS`.
+- The operator authorizes `KIS_PAPER_*` only for the remaining named read-only
+  raw-`1m` probe. The approved symbol is `QQQ` on `NAS`.
 - Do **not** call order, cancel, account, position, buying-power, open-order,
   or any `KIS_LIVE_*` endpoint. Do not submit a paper or live order.
 - Do not print or persist a token, credential, account identifier, raw quote,
@@ -36,19 +33,11 @@ training corpus, model input, cache, or trading feature.
   transport. It blocks account, order, cancel, and live paths before opening a
   connection, and enforces the current `QQQ`/`SPY`, `NAS`, fixed-query, and
   three-pages-per-kind scope below its CLI scripts.
-- `execution.kis_historical_probe` owns the immediate fixed request sequence:
-  one token; `QQQ` daily first page plus an optional `F` continuation; `SPY`
-  daily first page; then the equivalent raw-`1m` sequence. It retains raw rows
-  only in process memory while computing typed metadata.
-- The historical probe writes one sanitized result below
-  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe`
-  and keeps an external `reserved -> network_started -> summary_written`
-  lifecycle. A reservation blocks every retry.
-- Its authorized invocation and current safe preflight stopped at the
-  secret-safe configuration preflight with `config_missing`; no token, KIS
-  request, reservation, or summary resulted. The two paper app values must be
-  nonempty and appear in the approved `.env` prefix before any Tiingo, account,
-  or live key before this still-unreserved call is retried.
+- `execution.kis_historical_probe` completed terminally as `rejected` with
+  `daily_response_rejected`: one token, two daily attempts, zero raw-`1m`
+  attempts, no account/order/live endpoint, and no retained raw market data.
+  Its external lifecycle is `reserved -> network_started -> summary_written`,
+  so the historical objective cannot be retried or widened.
 - The date-limited raw-`1m` runner is separately offline-tested. Before it can
   read config, it requires an explicit `--confirm-no-exception` flag after an
   independent official Nasdaq calendar check. Its first result stays `observed`
@@ -77,30 +66,12 @@ training corpus, model input, cache, or trading feature.
 
 ## Work Packages
 
-### Execution: Immediate Historical Capability Probe
+### Historical Outcome
 
-1. Confirm no existing reservation under the external control root, then run
-   exactly once:
-
-   ```powershell
-   uv run python scripts\probe_kis_paper_historical_data.py --execute
-   ```
-
-2. Inspect only the sanitized terminal result, lifecycle marker, and
-   `summary.json`. Do not inspect a raw response or retry after any reservation.
-3. Record only technical support and limitations: response acceptance, daily
-   OHLCV field presence, per-page bounds, `F` daily continuation availability,
-   raw-`1m` continuation availability, timestamp bounds, overlap, and boundary
-   continuity. Do not infer retention, rate limits, adjustment semantics,
-   corporate actions, storage rights, point-in-time coverage, or model fitness.
-
-### Data: Interpretation
-
-1. Review the historical summary as metadata-only evidence. It can support or
-   reject a future KIS-compatible input investigation, but cannot be copied to
-   `D:\market_data`, a dataset manifest, a campaign, or a model queue.
-2. Keep raw-`1m` capability state `observed` after either probe. Open-versus-
-   close timestamp labels and persistent storage rights remain unresolved.
+The historical summary has been interpreted as a bounded daily rejection only.
+It does not alter raw-`1m`'s `observed` state or support a dataset, cache,
+feature activation, qualification, retention, storage-rights, timestamp,
+paging, data-quality, point-in-time, or model claim.
 
 ### Execution: Scheduled Raw-`1m` Observation
 
@@ -131,13 +102,15 @@ paper submission from either capability probe.
   cursor, response body, or raw row in console output, logs, artifacts, Git,
   or Claude prompts.
 - A reserved, `network_started`, or completed lifecycle state is never retried.
-- Do not make a historical-data, model, retention, storage-rights, or
-  profitability claim from these bounded samples.
+- The completed historical lifecycle blocks all retries. Do not make a
+  historical-data, model, retention, storage-rights, or profitability claim
+  from either bounded sample.
 
 ## Completion
 
-After each permitted run, inspect only sanitized external evidence, update the
-Data and Execution stateboards plus `HANDOFF.md` and `DECISIONS.md`, then run:
+After the remaining permitted run, inspect only sanitized external evidence,
+update the Data and Execution stateboards plus `HANDOFF.md` and `DECISIONS.md`,
+then run:
 
 ```powershell
 uv run --extra dev pytest -q

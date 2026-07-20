@@ -162,16 +162,13 @@
   scripts: only `QQQ`/`SPY` on `NAS`, fixed raw-`1m`/daily request shapes, and
   no fourth daily or minute page. An out-of-scope request fails before
   `opener.open`.
-- Run the approved historical capability probe once before the date-limited
-  raw-minute observation: one token, at most three daily pages and three raw
-  `1m` pages total, with only sanitized data-fitness metadata written outside
-  Git. It may not create a dataset or claim retention, storage rights, or model
-  suitability.
-- Its first approved invocation and current safe preflight both stopped before
-  token issuance with `config_missing`, leaving no reservation or external
-  summary. The nonsecret check saw `THERICHER_MODE=off`, then an invalid key
-  sequence before the two paper app values; do not retry until the approved
-  `.env` prefix is fixed without moving or exposing other secret values.
+- The approved historical capability probe completed its one allowed attempt
+  as `rejected` (`daily_response_rejected`), with one token, two daily-page
+  attempts, and zero raw-`1m` attempts. Its sanitized summary is
+  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-historical-data-probe\20260720T001125Z\summary.json`
+  (SHA-256 `3883d32289bd06196ca28823cc041d0780172add4848661d185c24e07cde0c8f`).
+  It made no account/order/live call and retained no raw data. Its completed
+  `reserved -> network_started -> summary_written` lifecycle blocks all retry.
 - The next probe's engine-loop purpose is to record or reject the smallest
   KIS-native input observation, not to fetch an unbounded archive. It must
   measure one intraday first/continuation sequence, timestamp order,
@@ -206,8 +203,8 @@
 
 ## Ready Queue
 
-1. Run the approved QQQ/SPY historical capability probe once, then hand only
-   its sanitized metadata to Data. Do not retry after any lifecycle reservation.
+1. Complete: hand the terminal sanitized historical `rejected` outcome to Data.
+   Do not retry or widen it; it establishes no raw-`1m` or model-input fact.
 2. During the fixed verified 2026-07-20 Nasdaq session window, independently
    check the official calendar, pass `--confirm-no-exception`, and make at most
    one fresh paper-token attempt for the bounded raw-`1m` observation. On token
