@@ -182,10 +182,14 @@ rejected requests do not consume a slot, while a failed external attempt does.
 The next rebuilt bridge completed at
 `20260721T223701135634Z-complete.json` after about six seconds, with sanitized
 facts `position_count: 1`, `open_order_count: 0`, and USD currency labels. It
-sent no order. The existing canary remains `intent_recorded` with no broker
-order reference or submit evidence. Its distinct direct transport still needs
-the same source-pacing behavior before the already-authorized first bounded
-submit/cancel/reconcile cycle. This is recovery and reliable execution, not a
+sent no order. The canary's separate direct transport now uses the same
+injectable source pacing. Its first current-image virtual run,
+`canary-20260721T225034Z`, completed its initial reconciliation and then ended
+as `outcome_unknown` with `submit_transport_unknown`. The safe evidence has no
+broker order reference; that is not proof that the submit side effect did not
+reach KIS. Do not retry or replace it. The next bounded action is one recovery
+reconciliation of this exact persisted run ID, which the program must execute
+without a submit, modify, or cancel request. This is execution recovery, not a
 capital, research, or one-shot policy gate. Continue to exclude `msg1`, broker
 bodies, account identifiers, and secrets. Safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
@@ -221,11 +225,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: reuse the tested
-source pacing for the canary's separate virtual transport, then reconcile and
-run one first bounded submit/cancel/reconcile cycle. This is not a prerequisite
-approval for paper work; it is the next technical recovery fact for the existing
-canary. At each boundary, review the data contract, execution route readiness,
-research queues, GPU eligibility, disk capacity, and role ownership; make
-reversible no-cost changes autonomously and escalate only a real remaining
-operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: reconcile the
+existing `canary-20260721T225034Z` outcome exactly once using its persisted
+state. It must not generate a replacement submit, modify, or cancel request.
+This is not a prerequisite approval for paper work; it is the next technical
+recovery fact for the existing canary. At each boundary, review the data
+contract, execution route readiness, research queues, GPU eligibility, disk
+capacity, and role ownership; make reversible no-cost changes autonomously and
+escalate only a real remaining operator boundary.

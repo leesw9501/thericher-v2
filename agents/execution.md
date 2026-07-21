@@ -26,11 +26,13 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   request-limit exceedance. A rebuilt current read-only transport now applies
   one-second monotonic spacing only to valid external calls, and the next single
   bridge completed with sanitized facts: one position, zero open orders, and USD
-  currency labels. No live variable was read and no order was sent. The existing
-  canary remains `intent_recorded` with no broker order reference. Its distinct
-  virtual transport needs the same tested pacing before the first
-  submit/cancel/reconcile invocation. Treat it as integration recovery, not a
-  paper authority gate.
+  currency labels. No live variable was read and no order was sent. The
+  canary's distinct virtual transport now reuses that tested pacing. Its first
+  current-image run, `canary-20260721T225034Z`, completed initial
+  reconciliation then became `outcome_unknown` with
+  `submit_transport_unknown`. The safe evidence has no broker order reference,
+  which does not prove that no submit side effect reached KIS. Treat the next
+  exact-run reconciliation as integration recovery, not a paper authority gate.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -40,10 +42,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Reuse external-request pacing in the virtual canary transport, then
-   reconcile the persisted canary run and run one first acknowledged/cancelled
-   bounded paper canary. A failed canary records its technical recovery state
-   while Data and Research continue; it does not reopen an approval question.
+2. Reconcile persisted run `canary-20260721T225034Z` exactly once through its
+   durable state. It may issue read-only virtual requests only; it must not
+   submit, modify, cancel, replace, or create a new run ID. Record the
+   sanitized recovery result while Data and Research continue; it does not
+   reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
@@ -76,11 +79,13 @@ Use local events for local reconstruction and KIS as the authority for external
 paper state. Unknown broker state is `reconcile`; an emergency stop or cancel
 does not wait for review. A stored canary run ID reloads its durable intent and
 checks its stable identity before recovery, so a restart cannot regenerate a
-new decision timestamp into a replacement order.
+new decision timestamp into a replacement order. For a
+`submit_transport_unknown` state, recovery is read-only and never becomes a
+fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the virtual-token recovery result, canary reconciliation evidence, and any
-unresolved KIS Paper route fact to Codex. Only a live-money boundary, paid
-commitment, unclear rights, public exposure, or an external KIS credential
-reset needs operator input.
+Hand the same-run canary reconciliation evidence and any unresolved KIS Paper
+route fact to Codex. Only a live-money boundary, paid commitment, unclear
+rights, public exposure, or an external KIS credential reset needs operator
+input.

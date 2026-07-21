@@ -36,6 +36,7 @@ from .kis_readonly import (
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
     KisPaperReadOnlySnapshot,
+    KisPaperRequestPacer,
     load_kis_paper_config_from_environment,
     validate_kis_paper_readonly_request,
 )
@@ -161,10 +162,16 @@ class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
 class UrllibKisPaperCanaryTransport:
     """Direct-only virtual-paper transport for the canary request allowlist."""
 
-    def __init__(self, *, timeout_seconds: float = 15.0) -> None:
+    def __init__(
+        self,
+        *,
+        timeout_seconds: float = 15.0,
+        pacer: KisPaperRequestPacer | None = None,
+    ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
         self._timeout_seconds = timeout_seconds
+        self._pacer = pacer or KisPaperRequestPacer()
         self._opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}),
             _RejectRedirectHandler(),
@@ -172,6 +179,7 @@ class UrllibKisPaperCanaryTransport:
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         validate_kis_paper_canary_request(request)
+        self._pacer.wait_for_request_slot()
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
             if request.json_body is not None

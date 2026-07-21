@@ -120,10 +120,14 @@ requests by at least one second using an injectable monotonic policy. A rebuilt
 bridge then completed at `20260721T223701135634Z-complete.json` with only
 sanitized position/open-order counts and USD currency labels. It made no order.
 
-The separate canary transport needs the same source pacing before its first
-authorized submit/cancel/reconcile invocation. That change remains bounded to
-the virtual canary route; it is not a retry loop, a manual approval, or a live
-route.
+The separate canary transport now uses that same source pacing for valid real
+virtual requests. Its first current-image virtual run,
+`canary-20260721T225034Z`, reached initial reconciliation then ended as
+`outcome_unknown` with `submit_transport_unknown`. Its safe evidence has no
+broker order reference, which is not proof that KIS received no submit side
+effect. The next action is one same-run recovery reconciliation only; do not
+retry, replace, modify, or cancel the order from that run. This is a technical
+recovery rule, not a manual approval or live route.
 
 ## KIS Paper Order Work
 
@@ -159,9 +163,11 @@ submission. The latest read-only bridge attempt reached the account boundary
 and returned `balance_rejected`; no order was sent. Both are integration facts,
 not approval gates. Diagnose the virtual-paper route through the sanitized
 reason plus allowlisted endpoint/transaction/HTTP metadata, then rerun a
-bounded bridge job. Do not substitute live credentials or inspect/print secret
-values. The sanitized runtime and evidence never retain an API body, account
-identifier, or secret.
+bounded bridge job. The first current-image canary result is an ambiguous
+submit transport outcome, so recover its exact persisted run once rather than
+launching a fresh canary. Do not substitute live credentials or inspect/print
+secret values. The sanitized runtime and evidence never retain an API body,
+account identifier, or secret.
 
 ## Research And Artifacts
 

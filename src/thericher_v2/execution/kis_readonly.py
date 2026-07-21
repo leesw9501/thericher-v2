@@ -218,6 +218,40 @@ class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
         raise KisPaperReadOnlyError("redirect_rejected")
 
 
+class KisPaperRequestPacer:
+    """Space real KIS Paper requests without changing injected offline transports."""
+
+    def __init__(
+        self,
+        *,
+        minimum_request_interval_seconds: float = DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS,
+        monotonic_clock: Callable[[], float] = time.monotonic,
+        sleeper: Callable[[float], None] = time.sleep,
+    ) -> None:
+        if (
+            isinstance(minimum_request_interval_seconds, bool)
+            or not isinstance(minimum_request_interval_seconds, (int, float))
+            or not math.isfinite(minimum_request_interval_seconds)
+            or minimum_request_interval_seconds <= 0
+        ):
+            raise ValueError("minimum_request_interval_seconds must be positive")
+        self._minimum_request_interval_seconds = float(minimum_request_interval_seconds)
+        self._monotonic_clock = monotonic_clock
+        self._sleeper = sleeper
+        self._last_dispatch_at: float | None = None
+
+    def wait_for_request_slot(self) -> None:
+        if self._last_dispatch_at is None:
+            self._last_dispatch_at = self._monotonic_clock()
+            return
+        next_dispatch_at = self._last_dispatch_at + self._minimum_request_interval_seconds
+        current = self._monotonic_clock()
+        while current < next_dispatch_at:
+            self._sleeper(next_dispatch_at - current)
+            current = self._monotonic_clock()
+        self._last_dispatch_at = current
+
+
 class UrllibKisHttpTransport:
     """Small standard-library transport guarded by the same request allowlist."""
 
@@ -231,18 +265,12 @@ class UrllibKisHttpTransport:
     ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
-        if (
-            isinstance(minimum_request_interval_seconds, bool)
-            or not isinstance(minimum_request_interval_seconds, (int, float))
-            or not math.isfinite(minimum_request_interval_seconds)
-            or minimum_request_interval_seconds <= 0
-        ):
-            raise ValueError("minimum_request_interval_seconds must be positive")
         self._timeout_seconds = timeout_seconds
-        self._minimum_request_interval_seconds = float(minimum_request_interval_seconds)
-        self._monotonic_clock = monotonic_clock
-        self._sleeper = sleeper
-        self._last_dispatch_at: float | None = None
+        self._pacer = KisPaperRequestPacer(
+            minimum_request_interval_seconds=minimum_request_interval_seconds,
+            monotonic_clock=monotonic_clock,
+            sleeper=sleeper,
+        )
         # Credential-bearing paper requests must not inherit host proxy settings.
         self._opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}),
@@ -251,7 +279,7 @@ class UrllibKisHttpTransport:
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         validate_kis_paper_readonly_request(request)
-        self._wait_for_request_slot()
+        self._pacer.wait_for_request_slot()
         url = _request_url_with_query(request)
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
@@ -279,18 +307,6 @@ class UrllibKisHttpTransport:
             )
         except (OSError, TimeoutError, urllib.error.URLError) as error:
             raise KisPaperReadOnlyError("transport_failure") from error
-
-    def _wait_for_request_slot(self) -> None:
-        if self._last_dispatch_at is None:
-            self._last_dispatch_at = self._monotonic_clock()
-            return
-        next_dispatch_at = self._last_dispatch_at + self._minimum_request_interval_seconds
-        current = self._monotonic_clock()
-        while current < next_dispatch_at:
-            self._sleeper(next_dispatch_at - current)
-            current = self._monotonic_clock()
-        self._last_dispatch_at = current
-
 
 @dataclass(frozen=True)
 class KisPaperAccountIdentity:

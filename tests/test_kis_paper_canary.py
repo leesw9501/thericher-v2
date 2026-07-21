@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import threading
+import urllib.error
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -19,10 +20,12 @@ from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryError,
     KisPaperCanaryIntent,
     KisPaperCanaryState,
+    UrllibKisPaperCanaryTransport,
     run_kis_paper_canary,
 )
 from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_BALANCE_ENDPOINT,
+    KIS_PAPER_BASE_URL,
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
     KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
     KisHttpRequest,
@@ -30,6 +33,7 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperConfig,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
+    KisPaperRequestPacer,
 )
 from thericher_v2.execution.paper_account_snapshot import read_paper_account_snapshot
 from thericher_v2.execution.paper_canary_runtime import read_paper_canary_runtime
@@ -173,6 +177,131 @@ def _ccnl_query() -> dict[str, str]:
         "CTX_AREA_NK200": "",
         "CTX_AREA_FK200": "",
     }
+
+
+def _canary_transport_request() -> KisHttpRequest:
+    return KisHttpRequest(
+        method="POST",
+        url=f"{KIS_PAPER_BASE_URL}{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}",
+        headers=_paper_post_headers(),
+        json_body=_buy_limit_body(),
+    )
+
+
+class _PacingResponse:
+    status = 200
+    headers: dict[str, str] = {}
+
+    def __enter__(self) -> _PacingResponse:
+        return self
+
+    def __exit__(self, *_args: object) -> None:
+        return None
+
+    def read(self) -> bytes:
+        return b'{"rt_cd":"0","output":{}}'
+
+
+def test_real_canary_transport_uses_shared_monotonic_pacing(monkeypatch) -> None:
+    current_time = [200.0]
+    sleep_calls: list[float] = []
+    dispatch_times: list[float] = []
+
+    def monotonic_clock() -> float:
+        return current_time[0]
+
+    def sleeper(delay: float) -> None:
+        sleep_calls.append(delay)
+        current_time[0] += delay
+
+    class RecordingOpener:
+        def open(self, _request: object, *, timeout: float) -> _PacingResponse:
+            assert timeout == 15.0
+            dispatch_times.append(monotonic_clock())
+            return _PacingResponse()
+
+    transport = UrllibKisPaperCanaryTransport(
+        pacer=KisPaperRequestPacer(
+            monotonic_clock=monotonic_clock,
+            sleeper=sleeper,
+        )
+    )
+    monkeypatch.setattr(transport, "_opener", RecordingOpener())
+    request = _canary_transport_request()
+
+    transport.request(request)
+    transport.request(request)
+    transport.request(request)
+
+    assert dispatch_times == [200.0, 201.0, 202.0]
+    assert sleep_calls == [1.0, 1.0]
+
+
+def test_real_canary_transport_paces_after_a_failed_external_attempt(monkeypatch) -> None:
+    current_time = [75.0]
+    sleep_calls: list[float] = []
+    dispatch_times: list[float] = []
+
+    def monotonic_clock() -> float:
+        return current_time[0]
+
+    def sleeper(delay: float) -> None:
+        sleep_calls.append(delay)
+        current_time[0] += delay
+
+    class FirstAttemptFails:
+        attempts = 0
+
+        def open(self, _request: object, *, timeout: float) -> _PacingResponse:
+            assert timeout == 15.0
+            self.attempts += 1
+            dispatch_times.append(monotonic_clock())
+            if self.attempts == 1:
+                raise urllib.error.URLError("temporary-test-failure")
+            return _PacingResponse()
+
+    transport = UrllibKisPaperCanaryTransport(
+        pacer=KisPaperRequestPacer(
+            monotonic_clock=monotonic_clock,
+            sleeper=sleeper,
+        )
+    )
+    monkeypatch.setattr(transport, "_opener", FirstAttemptFails())
+    request = _canary_transport_request()
+
+    with pytest.raises(KisPaperCanaryError, match="transport_failure"):
+        transport.request(request)
+    transport.request(request)
+
+    assert dispatch_times == [75.0, 76.0]
+    assert sleep_calls == [1.0]
+
+
+def test_real_canary_transport_rejects_invalid_request_before_pacing(monkeypatch) -> None:
+    sleep_calls: list[float] = []
+    open_calls: list[object] = []
+
+    class FailingOpener:
+        def open(self, request: object, *, timeout: float) -> None:
+            open_calls.append(request)
+            raise AssertionError(f"invalid request reached opener with timeout {timeout}")
+
+    transport = UrllibKisPaperCanaryTransport(
+        pacer=KisPaperRequestPacer(sleeper=sleep_calls.append)
+    )
+    monkeypatch.setattr(transport, "_opener", FailingOpener())
+    invalid_request = KisHttpRequest(
+        method="POST",
+        url="https://openapi.koreainvestment.com:9443/uapi/overseas-stock/v1/trading/order",
+        headers=_paper_post_headers(),
+        json_body=_buy_limit_body(),
+    )
+
+    with pytest.raises(KisPaperCanaryError, match="paper_host_required"):
+        transport.request(invalid_request)
+
+    assert sleep_calls == []
+    assert open_calls == []
 
 
 def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport() -> None:

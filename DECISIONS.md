@@ -3654,3 +3654,26 @@ virtual order cycle.
 Reason: source pacing is an execution-reliability property, not an approval
 gate. It resolves the observed virtual limit without reviving one-shot
 reservations or hiding failures behind automatic retries.
+
+## 2026-07-22 - Preserve the first ambiguous paced virtual canary outcome
+
+Decision: reuse the read-only injectable monotonic request pacer in the real
+virtual-paper canary transport. A current-image run,
+`canary-20260721T225034Z`, completed its initial reconciliation and then ended
+as `outcome_unknown` with `submit_transport_unknown`. Its safe evidence has no
+broker order reference, but that absence cannot prove that KIS received no
+submit side effect. Preserve the exact durable run for one reconciliation-only
+recovery; do not retry, replace, modify, or cancel it based on this ambiguous
+result.
+
+The shared pacer affects real urllib transports only. Tests prove valid
+external canary requests are spaced, a failed external attempt consumes its
+slot, and invalid requests do not reach pacing or the network. Fake transports
+remain immediate. Claude's concise pre-run falsification verdict was
+`supported-with-limits`: the bounded virtual-only run, persisted intent, and
+reconciliation plan were appropriate, while the external outcome itself still
+needed recovery evidence.
+
+Reason: retaining ambiguity is execution correctness, not a paper-capital,
+profitability, one-shot, or manual-approval gate. It prevents duplicate orders
+without blocking other authorized private Paper, data, or research work.
