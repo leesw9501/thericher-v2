@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -40,6 +41,7 @@ KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE = "NASD"
 KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL = "SPY"
 KIS_PAPER_ORDERABLE_REFERENCE_PRICE = Decimal("1")
 MAX_KIS_PAPER_BALANCE_PAGES = 10
+_SAFE_KIS_PAPER_UPSTREAM_CODE = re.compile(r"[A-Z][A-Z0-9]{1,15}", re.ASCII)
 
 
 class KisPaperReadOnlyError(RuntimeError):
@@ -434,6 +436,7 @@ class KisPaperDiscoveryOutcome:
             "endpoint",
             "tr_id",
             "http_status",
+            "upstream_code",
         }:
             raise ValueError("read-only diagnostics must be an allowlisted string mapping")
         if any(
@@ -442,7 +445,7 @@ class KisPaperDiscoveryOutcome:
         ):
             raise ValueError("read-only diagnostics must be an allowlisted string mapping")
         if self.diagnostic:
-            _validate_read_only_diagnostic(self.diagnostic)
+            validate_kis_paper_readonly_diagnostic(self.diagnostic)
         object.__setattr__(self, "diagnostic", dict(self.diagnostic))
         object.__setattr__(self, "captured_at", require_utc(self.captured_at, "captured_at"))
 
@@ -1054,7 +1057,7 @@ def _successful_payload(
     if response.status_code != 200 or payload.get("rt_cd") != "0":
         raise KisPaperReadOnlyError(
             code,
-            diagnostic=_failure_diagnostic(response, endpoint),
+            diagnostic=_failure_diagnostic(response, endpoint, payload=payload),
         )
     return payload
 
@@ -1062,6 +1065,8 @@ def _successful_payload(
 def _failure_diagnostic(
     response: KisHttpResponse,
     endpoint: KisPaperReadOnlyEndpoint,
+    *,
+    payload: Mapping[str, Any] | None = None,
 ) -> dict[str, str]:
     """Persist only fixed request identity and safe response codes, never free text."""
 
@@ -1070,12 +1075,26 @@ def _failure_diagnostic(
         "tr_id": endpoint.tr_id,
         "http_status": str(response.status_code),
     }
+    if payload is not None:
+        upstream_code = _safe_kis_paper_upstream_code(payload.get("msg_cd"))
+        if upstream_code is not None:
+            diagnostic["upstream_code"] = upstream_code
     return diagnostic
 
 
-def _validate_read_only_diagnostic(diagnostic: Mapping[str, str]) -> None:
+def validate_kis_paper_readonly_diagnostic(diagnostic: Mapping[str, str]) -> None:
+    """Validate the minimal KIS Paper failure projection shared with the bridge."""
+
     required = {"endpoint", "tr_id", "http_status"}
-    if not required <= set(diagnostic):
+    allowed = required | {"upstream_code"}
+    if (
+        not required <= set(diagnostic)
+        or set(diagnostic) - allowed
+        or any(
+            not isinstance(key, str) or not isinstance(value, str)
+            for key, value in diagnostic.items()
+        )
+    ):
         raise ValueError("read-only diagnostics must identify the failed request")
     endpoint_by_name = {endpoint.name: endpoint.tr_id for endpoint in KIS_PAPER_READ_ONLY_ENDPOINTS}
     endpoint_name = diagnostic["endpoint"]
@@ -1084,6 +1103,25 @@ def _validate_read_only_diagnostic(diagnostic: Mapping[str, str]) -> None:
     status = diagnostic["http_status"]
     if not status.isdecimal() or not 100 <= int(status) <= 599:
         raise ValueError("read-only diagnostic status must be an HTTP status")
+    if "upstream_code" in diagnostic and (
+        _safe_kis_paper_upstream_code(diagnostic["upstream_code"])
+        != diagnostic["upstream_code"]
+    ):
+        raise ValueError("read-only diagnostic upstream code is not allowlisted")
+
+
+def _safe_kis_paper_upstream_code(value: object) -> str | None:
+    """Keep only a short KIS-style code; never normalize arbitrary response text."""
+
+    if (
+        not isinstance(value, str)
+        or _SAFE_KIS_PAPER_UPSTREAM_CODE.fullmatch(value) is None
+        or not any("0" <= character <= "9" for character in value)
+    ):
+        return None
+    return value
+
+
 def _parse_balance_positions(
     payload: Mapping[str, Any],
     expected_exchange: str,

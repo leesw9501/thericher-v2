@@ -168,19 +168,20 @@ to a dedicated volume and only sanitized account/canary state to the local web
 runtime. The dashboard cannot transmit orders or receive KIS credentials.
 
 The first virtual-token attempt on 2026-07-21 returned `auth_rejected` from
-the KIS token boundary. The latest bounded read-only console bridge reached the
-account route and returned `balance_rejected`; it sent no order. The first
-post-`2a58c87` run had used a stale image, but the rebuilt current image wrote
-`20260721T220628222486Z-unavailable.json` with the expected `read_only` output
-shape and a safe diagnostic: `balance`, `VTTS3012R`, HTTP `500`. The existing
+the KIS token boundary. The read-only console bridge later reached the account
+route and returned `balance_rejected`; it sent no order. A rebuilt current
+image wrote `20260721T222233665808Z-unavailable.json` with the expected
+`read_only` output shape and the safe diagnostic `balance`, `VTTS3012R`, HTTP
+`500`, and `EGW00201`. KIS's official sample repository identifies `EGW00201`
+as exceeding the per-second request limit, which fits the bridge's rapid token,
+open-order, three-venue balance, and orderable-funds sequence. The existing
 canary remains `intent_recorded` with no broker order reference or submit
-evidence. HTTP status does not identify the KIS virtual endpoint cause, so the
-next goal may add only a strictly validated `msg_cd` to that diagnostic; it must
-continue to exclude `msg1`, broker bodies, account identifiers, and secrets.
-This is an integration recovery fact, not a paper-capital, research, or
-one-shot policy gate. The safe evidence is under
-`D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
-recovery state into Git.
+evidence. The next small recovery is request pacing, not a capital, research,
+or one-shot policy gate: preserve virtual-only routes and one bounded bridge
+call while spacing external requests through an injectable monotonic policy.
+Continue to exclude `msg1`, broker bodies, account identifiers, and secrets.
+Safe evidence is under `D:\thericher-v2\model-artifacts\execution`; never
+inspect or copy private recovery state into Git.
 
 The canary now persists its cancellation choice with the private intent,
 serializes sibling run IDs through one state-root lock, resumes cancellation of
@@ -212,11 +213,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add an allowlisted
-KIS virtual failure-code projection, rebuild `kis-readonly`, then run one fresh
-sanitized bridge to distinguish the current HTTP-500 recovery fact without
-retaining a response body. This is not a prerequisite approval for paper work;
-it is the next technical recovery fact for the existing canary. At each
-boundary, review the data contract, execution route readiness, research queues,
-GPU eligibility, disk capacity, and role ownership; make reversible no-cost
-changes autonomously and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add the smallest
+testable pacing policy to the virtual read-only external-request path, rebuild
+`kis-readonly`, and make one fresh sanitized bridge call. This is not a
+prerequisite approval for paper work; it is the next technical recovery fact for
+the existing canary. At each boundary, review the data contract, execution route
+readiness, research queues, GPU eligibility, disk capacity, and role ownership;
+make reversible no-cost changes autonomously and escalate only a real remaining
+operator boundary.

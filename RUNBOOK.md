@@ -108,14 +108,16 @@ The bridge reports its fixed `read_only` scope and whether the account snapshot
 is complete. It is not a `safe_to_submit` approval proxy: a later paper executor
 uses a fresh account view together with its own virtual-route, intent, and
 unknown-outcome checks. An unavailable bridge artifact may retain only its
-allowlisted endpoint, transaction ID, and HTTP status for recovery; never a
-broker message body or free-form response text.
+allowlisted endpoint, transaction ID, HTTP status, and a narrow KIS `msg_cd`
+code; never a broker message body, `msg1`, account identifier, or free-form
+response text.
 
 The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
-on 2026-07-21 UTC after a successful image rebuild. It sent no order. HTTP
-status alone is insufficient to identify the virtual endpoint cause, so the
-next narrow recovery may add a strictly validated KIS `msg_cd` code while still
-excluding `msg1` and every other raw response field.
+with `EGW00201` on 2026-07-21 UTC after a successful image rebuild. It sent no
+order. KIS's official sample repository identifies that code as exceeding the
+per-second request limit. The next recovery adds small deterministic pacing to
+the virtual external-request path, then makes one fresh bridge call; it does
+not add a retry loop, a manual approval, or a live route.
 
 ## KIS Paper Order Work
 

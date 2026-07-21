@@ -2,15 +2,16 @@
 
 ## Objective
 
-Expose one strictly allowlisted KIS virtual-paper upstream failure code for the
-read-only bridge, then rebuild the image and run one fresh bridge invocation.
+Add a small testable pacing policy to KIS virtual-paper read-only requests,
+then rebuild the image and run one fresh bridge invocation.
 
-The rebuilt current image reached `balance` / `VTTS3012R`, received HTTP 500,
-and sent no order. Its endpoint/transaction/HTTP diagnostic proves the bridge
-is current but does not identify the virtual endpoint cause. The smallest useful
-next fact is KIS `msg_cd` only when it matches a narrow safe format. This is
-integration recovery, not a paper-work approval step: private KIS Paper work is
-standing-authorized and KIS Live remains forbidden.
+The latest rebuilt bridge reached `balance` / `VTTS3012R`, received HTTP 500
+with the sanitized KIS code `EGW00201`, and sent no order. KIS's official
+sample repository identifies that code as a per-second request-limit exceedance.
+The bridge presently sends one token request followed rapidly by open-order,
+three-venue balance, and orderable-funds requests. This is integration recovery,
+not a paper-work approval step: private KIS Paper work is standing-authorized
+and KIS Live remains forbidden.
 
 ## Required First Reads
 
@@ -23,19 +24,18 @@ standing-authorized and KIS Live remains forbidden.
    - `src/thericher_v2/execution/kis_paper_canary.py`
    - `tests/test_kis_readonly.py`
    - `tests/test_paper_account_snapshot.py`
-4. Use only official KIS documentation/examples to verify the public `msg_cd`
-   field semantics. Do not send KIS credentials, account data, artifacts, or raw
-   broker output to Claude or another external service.
+4. Do not send KIS credentials, account data, artifacts, or raw broker output
+   to Claude or another external service.
 
 ## Scope
 
-- Extend failure diagnostics only with `upstream_code` derived from KIS `msg_cd`
-  when it is uppercase alphanumeric and has a bounded length. Reject or omit
-  every other value.
-- Never persist `msg1`, a raw body, tokens, app keys, app secrets, account
-  identifiers, order references, or free-form exception text.
-- Keep virtual-host-only routing, read-only endpoint allowlists, and no order
-  action in this objective.
+- Pace actual virtual read-only external requests with an injectable monotonic
+  policy. The first dispatch may proceed immediately; every later dispatch must
+  respect the configured minimum interval.
+- Use a conservative `1.0` second default for the real KIS transport. Do not
+  add automatic retries, exponential backoff, a scheduler, or a new gate.
+- Preserve virtual-host-only routing, endpoint allowlists, fail-closed parsing,
+  the safe `EGW00201` projection, and no order action in this objective.
 - Do not read `KIS_LIVE_*`, construct a live route, buy anything, or expose a
   public service.
 
@@ -43,11 +43,12 @@ standing-authorized and KIS Live remains forbidden.
 
 ### Execution Agent
 
-1. Add focused tests proving a safe `msg_cd` becomes `upstream_code`, while an
-   unsafe/free-form value and `msg1` never reach runtime or external evidence.
-2. Update both the read-only and console-bridge diagnostic validators so their
-   allowlists agree.
-3. Run the focused tests, then rebuild:
+1. Add focused deterministic tests with an injected monotonic clock/sleeper
+   proving the initial request is immediate and later external requests are
+   spaced by the configured interval. Keep existing route and fail-closed tests.
+2. Keep fake/offline transports fast; production bridge traffic must use the
+   paced real transport without relying on wall-clock assertions in tests.
+3. Run focused tests, then rebuild:
 
    ```powershell
    docker compose build kis-readonly
@@ -59,11 +60,10 @@ standing-authorized and KIS Live remains forbidden.
    docker compose --profile kis-readonly run --rm --no-deps kis-readonly
    ```
 
-5. Record only the current reason, endpoint, transaction ID, HTTP status, and
-   optional safe upstream code. On `complete`, make the authorized canary
-   submit/cancel/reconcile cycle the next objective. On `unavailable`, use the
-   code to define the next narrow implementation or KIS-account recovery step;
-   do not retry in a loop.
+5. Record only the current sanitized reason/diagnostic and artifact path. On
+   `complete`, make the already-authorized canary submit/cancel/reconcile cycle
+   the next objective. On `unavailable`, define the next smallest technical
+   recovery from the observed code; do not retry in a loop.
 
 ### Data And Validation
 
@@ -73,7 +73,7 @@ standing-authorized and KIS Live remains forbidden.
 
 ## Completion Evidence
 
-- Focused regression proof of the diagnostic allowlist.
+- Focused regression proof of production pacing and unchanged offline behavior.
 - A current-image build and exactly one fresh sanitized bridge artifact outside
   Git.
 - No KIS Live access, order request, raw broker body, credential, or account
@@ -90,4 +90,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Expose KIS bridge failure code`
+`Pace KIS paper read-only requests`

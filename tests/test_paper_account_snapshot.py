@@ -38,6 +38,8 @@ NOW = datetime(2026, 7, 20, 12, 0, tzinfo=UTC)
 class FakeKisTransport:
     runtime_snapshot_path: Path
     reject_open_orders: bool = False
+    reject_open_orders_code: object = "raw-server-code-must-not-persist"
+    reject_open_orders_message: str = "raw-response-text-must-not-persist"
     requests: list[KisHttpRequest] = field(default_factory=list)
     saw_unavailable_before_token: bool = False
 
@@ -53,8 +55,8 @@ class FakeKisTransport:
                 return KisHttpResponse.from_payload(
                     {
                         "rt_cd": "1",
-                        "msg_cd": "raw-server-code-must-not-persist",
-                        "msg1": "raw-response-text-must-not-persist",
+                        "msg_cd": self.reject_open_orders_code,
+                        "msg1": self.reject_open_orders_message,
                     },
                     status_code=403,
                 )
@@ -214,6 +216,56 @@ def test_bridge_overwrites_a_prior_complete_view_when_the_read_is_rejected(tmp_p
     assert "raw-server-code-must-not-persist" not in evidence
     assert "12345678" not in evidence
     assert "SPY" not in evidence
+
+
+def test_bridge_retains_only_a_safe_upstream_code_from_a_rejected_read(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    transport = FakeKisTransport(
+        runtime_snapshot_path,
+        reject_open_orders=True,
+        reject_open_orders_code="EGW00201",
+        reject_open_orders_message="raw-message-12345678-ORD-123456789-must-not-persist",
+    )
+
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=lambda: NOW,
+    )
+
+    expected_diagnostic = {
+        "endpoint": "open_orders",
+        "tr_id": KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
+        "http_status": "403",
+        "upstream_code": "EGW00201",
+    }
+    assert outcome.diagnostic == expected_diagnostic
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert json.loads(evidence)["diagnostic"] == expected_diagnostic
+    assert "raw-message-12345678-ORD-123456789-must-not-persist" not in evidence
+    assert "12345678" not in evidence
+
+
+def test_bridge_evidence_rejects_an_untrusted_upstream_code(tmp_path) -> None:
+    with pytest.raises(ValueError, match="upstream code"):
+        write_kis_paper_console_bridge_evidence(
+            PaperAccountSnapshot.unavailable(
+                observed_at=NOW,
+                reason_code="open_orders_rejected",
+            ),
+            snapshot_digest="0" * 64,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+            diagnostic={
+                "endpoint": "open_orders",
+                "tr_id": KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id,
+                "http_status": "403",
+                "upstream_code": "raw-response-text-must-not-persist",
+            },
+        )
 
 
 def test_recovery_uses_only_a_fresh_sanitized_snapshot_and_rejects_repo_artifacts(

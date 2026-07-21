@@ -43,6 +43,8 @@ NOW = datetime(2026, 7, 18, 12, 0, tzinfo=UTC)
 class FakeKisTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
     reject_balance: bool = False
+    balance_failure_code: object | None = None
+    balance_failure_message: str = "must-not-persist-free-text"
     paginated_balance: bool = False
     reject_open_orders: bool = False
     partial_open_orders: bool = False
@@ -100,7 +102,13 @@ class FakeKisTransport:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": rows})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
             if self.reject_balance:
-                return KisHttpResponse.from_payload({"rt_cd": "1"})
+                payload: dict[str, object] = {
+                    "rt_cd": "1",
+                    "msg1": self.balance_failure_message,
+                }
+                if self.balance_failure_code is not None:
+                    payload["msg_cd"] = self.balance_failure_code
+                return KisHttpResponse.from_payload(payload, status_code=500)
             exchange = request.query["OVRS_EXCG_CD"]
             if self.paginated_balance and exchange == "NASD":
                 if request.headers["tr_cont"] == "":
@@ -467,6 +475,71 @@ def test_rejected_response_writes_only_a_non_secret_fail_closed_outcome(tmp_path
     assert "super-secret-value" not in evidence
     assert "12345678" not in evidence
     assert "snapshot" not in evidence
+
+
+def test_safe_kis_message_code_is_projected_without_response_text(tmp_path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    dotenv_path = repo_root / ".env"
+    dotenv_path.write_text(
+        "KIS_PAPER_APP_KEY=app-key-value\n"
+        "KIS_PAPER_APP_SECRET=super-secret-value\n"
+        "KIS_PAPER_ACCOUNT_NO=12345678\n"
+        "KIS_PAPER_ACCOUNT_PRODUCT_CODE=01\n",
+        encoding="utf-8",
+    )
+
+    outcome, evidence_path = run_kis_paper_readonly_discovery(
+        dotenv_path=dotenv_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=repo_root,
+        transport=FakeKisTransport(
+            reject_balance=True,
+            balance_failure_code="EGW00201",
+            balance_failure_message="raw-message-12345678-ORD-123456789-must-not-persist",
+        ),
+    )
+
+    expected_diagnostic = {
+        "endpoint": "balance",
+        "tr_id": KIS_PAPER_BALANCE_ENDPOINT.tr_id,
+        "http_status": "500",
+        "upstream_code": "EGW00201",
+    }
+    assert outcome.diagnostic == expected_diagnostic
+    evidence = evidence_path.read_text(encoding="utf-8")
+    assert json.loads(evidence)["diagnostic"] == expected_diagnostic
+    assert "raw-message-12345678-ORD-123456789-must-not-persist" not in evidence
+    assert "super-secret-value" not in evidence
+    assert "12345678" not in evidence
+
+
+@pytest.mark.parametrize(
+    "value",
+    ("", "egw00201", "EGW-00201", " EGW00201", "A" * 17, 123, None, "12345678"),
+)
+def test_untrusted_kis_message_code_is_omitted_from_runtime_diagnostic(value: object) -> None:
+    response = KisHttpResponse.from_payload(
+        {
+            "rt_cd": "1",
+            "msg_cd": value,
+            "msg1": "must-not-persist-free-text",
+        },
+        status_code=403,
+    )
+
+    with pytest.raises(KisPaperReadOnlyError) as raised:
+        kis_readonly._successful_payload(
+            response,
+            "balance_rejected",
+            endpoint=KIS_PAPER_BALANCE_ENDPOINT,
+        )
+
+    assert raised.value.diagnostic == {
+        "endpoint": "balance",
+        "tr_id": KIS_PAPER_BALANCE_ENDPOINT.tr_id,
+        "http_status": "403",
+    }
 
 
 @pytest.mark.parametrize(

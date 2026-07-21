@@ -3606,3 +3606,26 @@ Reason: the old capital proposal and read-only wording made implementation
 capabilities look like operator approvals. Removing them shortens the paper
 iteration loop while retaining the few technical controls that prevent an
 unknown or live-routed broker side effect.
+
+## 2026-07-22 - Project the KIS virtual request-limit code without raw responses
+
+Decision: extend the KIS Paper read-only failure projection with an optional
+`upstream_code` only when the in-memory `msg_cd` value is a short uppercase
+alphanumeric code beginning with a letter and containing a digit. The
+read-only discovery and console bridge share this validator; `msg1`, raw bodies,
+tokens, account identifiers, order references, and arbitrary free text remain
+excluded. The rebuilt bridge's one bounded invocation returned `EGW00201` at
+`balance` / `VTTS3012R` with HTTP 500 and no order request.
+
+KIS's official sample repository identifies `EGW00201` as a per-second request
+limit exceedance. The next implementation is therefore a small injectable
+monotonic pacing policy for real virtual read-only transport, not an automatic
+retry loop, an approval gate, or a new broker surface. Claude's
+falsification-first verdict was `supported-with-limits`: the rate diagnosis fits
+the rapid six-request bridge sequence, but one observation does not establish
+headroom or rule out every account-side cause.
+
+Reason: a code-only diagnostic makes the recovery precise while preserving
+private evidence boundaries. Source pacing targets the observed cause without
+reintroducing one-shot reservations, paper-capital approvals, or secret-bearing
+observability.

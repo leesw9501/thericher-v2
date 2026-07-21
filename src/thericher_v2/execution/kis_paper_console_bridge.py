@@ -14,13 +14,13 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_readonly import (
     DEFAULT_KIS_PAPER_ARTIFACT_ROOT,
-    KIS_PAPER_READ_ONLY_ENDPOINTS,
     KisHttpTransport,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
     KisPaperReadOnlySnapshot,
     UrllibKisHttpTransport,
     load_kis_paper_config_from_environment,
+    validate_kis_paper_readonly_diagnostic,
 )
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
@@ -55,7 +55,7 @@ class KisPaperConsoleBridgeOutcome:
         if self.status == "complete" and self.diagnostic:
             raise ValueError("complete bridge outcome cannot have a diagnostic")
         if self.diagnostic:
-            _validate_failure_diagnostic(self.diagnostic)
+            validate_kis_paper_readonly_diagnostic(self.diagnostic)
         object.__setattr__(self, "diagnostic", dict(self.diagnostic))
 
 
@@ -154,7 +154,7 @@ def write_kis_paper_console_bridge_evidence(
     if snapshot.status == "unavailable":
         payload["reason_code"] = snapshot.reason_code
         if diagnostic:
-            _validate_failure_diagnostic(diagnostic)
+            validate_kis_paper_readonly_diagnostic(diagnostic)
             payload["diagnostic"] = dict(diagnostic)
     elif diagnostic:
         raise ValueError("complete bridge evidence cannot have a diagnostic")
@@ -269,23 +269,6 @@ def _is_permitted_artifact_root(artifact_root: Path, repository_root: Path) -> b
     if not _is_within(artifact_root, repository_root):
         return True
     return artifact_root == repository_root / "model_artifacts" and artifact_root.is_mount()
-
-
-def _validate_failure_diagnostic(diagnostic: Mapping[str, str]) -> None:
-    """Allow request identity only; broker message bodies remain private."""
-
-    required = {"endpoint", "tr_id", "http_status"}
-    if set(diagnostic) != required or any(
-        not isinstance(key, str) or not isinstance(value, str)
-        for key, value in diagnostic.items()
-    ):
-        raise ValueError("bridge diagnostic is invalid")
-    endpoint_by_name = {endpoint.name: endpoint.tr_id for endpoint in KIS_PAPER_READ_ONLY_ENDPOINTS}
-    if endpoint_by_name.get(diagnostic["endpoint"]) != diagnostic["tr_id"]:
-        raise ValueError("bridge diagnostic is invalid")
-    status = diagnostic["http_status"]
-    if not status.isdecimal() or not 100 <= int(status) <= 599:
-        raise ValueError("bridge diagnostic is invalid")
 
 
 def build_parser() -> argparse.ArgumentParser:
