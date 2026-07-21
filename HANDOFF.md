@@ -126,6 +126,14 @@ separately from its completed feature-window end and expires at the next
   behavior. Imports, tests, local simulation, and the web process remain
   credential- and broker-free. The existing market-data client retains its
   separate `QQQ`/`SPY`, `NAS`, request-shape, and per-kind-page allowlist.
+- On 2026-07-21 the operator additionally lifted the scheduler prohibition for
+  owned engine work. Codex may schedule KIS-paper read-only collection,
+  research, validation, and paper-readiness jobs inside their explicit scope.
+  Each schedule needs an owner, evidence location, stop/recovery behavior, and
+  resource bound; this does not authorize an unbounded daemon, KIS live,
+  submission/cancellation, capital allocation, or a hidden retry. The active
+  `thericher-kis-raw-minute-observation-v1` automation is a one-time example,
+  not evidence that KIS supports bulk history.
 - For an isolated KIS market-data observation, Execution alone invokes the
   credential-touching script. Data owns the fixed data scope, calendar review,
   and sanitized-result interpretation; it does not read configuration or call

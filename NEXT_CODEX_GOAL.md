@@ -9,8 +9,10 @@ unqualified.
 
 This is `kis-paper-raw-minute-observation-v1`, not a retry, widening, or
 interpretation of terminal v4. The operator has already authorized isolated
-`KIS_PAPER_*` market-data reads. Do not run outside its exact date/session guard
-or schedule a background process to wait for the session.
+`KIS_PAPER_*` market-data reads and goal-owned scheduling. The active
+`thericher-kis-raw-minute-observation-v1` Codex automation is one self-expiring
+invocation only; it must not run outside its exact date/session guard or create
+a retry.
 
 ## Required Reads
 
@@ -38,7 +40,8 @@ or schedule a background process to wait for the session.
 ### Execution Agent
 
 - During a current New York weekday regular session only, after Data's
-  calendar confirmation, invoke exactly one credential-touching observation:
+  calendar confirmation, the authorized one-shot automation may invoke exactly
+  one credential-touching observation:
 
   ```powershell
   uv run python scripts\observe_kis_paper_raw_minute.py `
@@ -67,7 +70,8 @@ or schedule a background process to wait for the session.
   endpoints.
 - Do not execute before a real current-session/date guard and explicit
   calendar confirmation both pass. Outside the session, make no KIS call and
-  do not create a scheduler, daemon, or retry loop.
+  do not create a daemon, retry loop, or unscoped recurring schedule. The named
+  self-expiring automation is authorized for this one objective only.
 - Do not create a model, GPU job, dashboard feature, provider, or dataset from
   the observation.
 

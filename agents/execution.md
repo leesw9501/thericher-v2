@@ -262,6 +262,10 @@
   path. Data owns scope, calendar review, and sanitized-result interpretation;
   Execution alone invokes the credential-touching script. The one-shot cannot
   establish an execution or order capability.
+- The operator has lifted the scheduler prohibition for owned engine work. The
+  active `thericher-kis-raw-minute-observation-v1` Codex automation is a single
+  self-expiring execution of this exact objective. It cannot retry, roll into a
+  later session, widen endpoints, or create an order/account capability.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -342,8 +346,8 @@
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-6. At a later caller-confirmed regular Nasdaq session, after Data fixes the
-   calendar/date scope, Execution alone runs at most the prepared raw-`1m`
+6. At the authorized self-expiring regular-Nasdaq invocation, after Data fixes
+   the calendar/date scope, Execution alone runs at most the prepared raw-`1m`
    observation and retains only sanitized market-data facts. It is distinct
    from the terminal balance bridge outcome and must not retry or reinterpret
    that account result.
@@ -363,9 +367,8 @@
 ## Must Not
 
 - Read `KIS_LIVE_*`, expose paper secrets/account identifiers, or give the web
-  process access to any KIS value. The isolated bridge reads exactly the four
-  approved `KIS_PAPER_*` values; its read-only KIS calls are the only KIS access
-  in this execution lane.
+  process access to any KIS value. A goal-owned KIS invoker may receive only the
+  necessary `KIS_PAPER_*` values; the web process remains credential-free.
 - Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
   paper capital; or enable live behavior under current authority.
 - Add strategy or model-selection logic to execution.

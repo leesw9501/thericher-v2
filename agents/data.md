@@ -268,6 +268,16 @@ continuation, and date/timestamp-bound facts only. This remains metadata-only
 timeframe activation, campaign, or model eligibility, and raw `1m` remains
 `observed` until an independent qualification.
 
+The operator has now authorized `KIS_PAPER_*` read-only development calls and
+goal-owned schedules. The current self-expiring observation schedule is not a
+bulk-collection conclusion. If it reaches a terminal summary, Data's next
+candidate is a separately contracted KIS capacity map: bounded daily retention
+anchors plus bounded raw-`1m` continuation depth, with page counts, date bounds,
+duplicate/gap facts, response outcomes, rate-throttle stop behavior, and a
+provenance manifest. It must establish storage rights before retaining any raw
+KIS rows under `D:\market_data`; a caller's access authorization alone is not a
+source-rights assertion.
+
 The active data direction is KIS-native paper readiness. Data owns the compact
 runtime feature contract, but does not call KIS. Execution's dated read-only
 probe now observed raw unadjusted daily and 120-row `1m` pages with one working
@@ -552,8 +562,8 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    daily attempt (`daily_response_rejected`). It confers no raw-`1m`, field,
    paging, timestamp, retention, storage-rights, data-quality, campaign, or
    training claim; do not write raw bytes or retry it.
-2. At the next caller-confirmed KIS regular Nasdaq session, freeze and review
-   at most the prepared `kis-paper-raw-minute-observation-v1` one-shot.
+2. At the authorized self-expiring KIS regular-Nasdaq invocation, freeze and
+   review at most the prepared `kis-paper-raw-minute-observation-v1` one-shot.
    Execution, not Data, invokes the credential-touching script; review only its
    sanitized counts, timestamp bounds, field-presence, and continuation facts.
    Retain either outcome as `observed` or `rejected`. Do not infer adjacency,
@@ -567,6 +577,11 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    coverage; the existing r2 cohort remains bounded source evidence.
 5. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
    continuation, and cache-recovery evidence qualifies it.
+6. After v1 has a terminal summary and `NEXT_CODEX_GOAL.md` names it, run a
+   separate KIS capacity-map objective rather than an open-ended download. It
+   should stop on the first throttle/rejection, never treat a successful page as
+   archive proof, and retain raw bytes only after the source/storage question is
+   recorded in its manifest.
 
 ## Historical Queue Context
 

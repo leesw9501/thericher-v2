@@ -3050,3 +3050,40 @@ used while preparing this path.
 Reason: this isolates a small, inspectable market-data fact while preserving
 the permanent v4 no-retry state and keeping KIS order/account capabilities
 separate from data observation.
+
+## 2026-07-21 - Authorize owned KIS-paper scheduling and capacity qualification
+
+Decision: the operator authorized `KIS_PAPER_*` read-only development calls for
+active engine work and removed the prior scheduler prohibition. Codex may create
+owned schedules for collection, research, validation, and paper-readiness work
+without a fresh approval for each routine invocation, provided each job has a
+named owner, explicit input/output bounds, durable evidence path, stop and
+recovery behavior, resource/concurrency limit, and no secret output. This
+authorizes goal-scoped scheduling, not a general agent platform or an unbounded
+daemon.
+
+The current `thericher-kis-raw-minute-observation-v1` Codex automation is a
+self-expiring one-shot with current-session/date and official-calendar guards.
+It cannot retry, roll forward to a later session, widen its endpoint/symbol/page
+scope, call account/order/live endpoints, retain raw rows, or promote a KIS
+capability. Claude's pre-schedule drift check was `supported-with-limits`: the
+schedule must keep its guard in the invoked path and preserve the one-shot
+reservation after any partial outcome.
+
+Existing KIS evidence supports only the narrow claim that an unadjusted daily
+page and two raw-`1m` pages were returned once for `QQQ`/`NAS`; it does not
+support a large-history or bulk-archive claim. After v1 reaches a terminal
+summary, the next data objective is a separately bounded capacity map that
+measures daily retention anchors, raw-minute continuation depth, duplicate/gap
+behavior, response outcomes, and first throttle/rejection. It will not use an
+open-ended download or retain raw KIS bytes until source/storage rights and a
+provenance manifest are established.
+
+`KIS_LIVE_*`, paper submit/modify/cancel, nonzero paper capital, and
+`THERICHER_MODE` changes remain separate decisions. The schedule authority does
+not change them.
+
+Reason: KIS-compatible data is central to the intended paper engine, and the
+former blanket scheduler ban delayed useful evidence. Small staged capacity
+tests provide more decision value than treating a few successful pages as proof
+of an archive.

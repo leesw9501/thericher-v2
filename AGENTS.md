@@ -62,10 +62,17 @@ Codex is the product-development lead and integrator.
   listed above is actually required or evidence leaves materially different
   business/risk choices.
 
-Codex must not build a general agent platform, scheduler, daemon, coordinator,
-notification system, or auto-commit service unless a later explicit objective
-requires one. A narrowly scoped worker is allowed only for recurring engine
-work with bounded inputs, outputs, recovery, and ownership.
+Codex may create scheduled engine jobs when they have a named owner, bounded
+inputs and outputs, durable evidence, explicit stop and recovery behavior, and
+resource/concurrency limits. A schedule may advance collection, research,
+validation, or paper-readiness work without a fresh operator decision for each
+run while it remains inside existing KIS, data-rights, capital, and live
+authority.
+
+Codex must not build a general agent platform, unbounded daemon, cross-lane
+coordinator, notification system, or auto-commit service unless a later explicit
+objective requires one. A narrowly scoped worker remains the default for
+recurring deterministic engine work.
 
 ### Role Agents
 
@@ -150,8 +157,8 @@ Claude must challenge these bias-prone decisions before they are relied on:
   execution-risk limits,
 - resuming after an unexplained broker, position, data-corruption, or recovery
   incident,
-- adding a durable worker, job family, report family, scheduler, coordinator,
-  or major dependency/runtime.
+- adding a durable cross-lane scheduler/coordinator, a scheduler that widens
+  external side effects, or a major dependency/runtime.
 
 Claude is optional for early exploratory hypotheses and ordinary dependency or
 documentation cleanup. Do not call Claude for routine tests, formatting,
@@ -228,15 +235,18 @@ Keep these authorities distinct:
 
 - `local_simulation`: broker-free and offline; existing fill source remains
   `local_paper`,
-- `kis_paper`: KIS virtual account and network, enabled only after approval,
+- `kis_paper`: KIS virtual account and network; read-only development access is
+  authorized, while submit/cancel and capital remain separate boundaries,
 - `kis_live`: real account and capital, unavailable until separate approval.
 
-The operator first authorizes read-only KIS paper credential/account access.
-Execution then queries and reconciles the real paper buying power. Codex
-proposes a paper capital envelope based on the smaller of available paper funds
-and the intended shadow live capital; the current planning reference is KRW
-5,000,000. The operator approves or changes that envelope once. Routine paper
-operation inside it does not require repeated approval.
+The operator has authorized `KIS_PAPER_*` read-only development calls for
+market data and typed paper-account facts. Execution owns credential access and
+may schedule those calls inside active bounded objectives; Data owns market-data
+scope, provenance, and interpretation. Codex proposes a paper capital envelope
+based on the smaller of available paper funds and the intended shadow live
+capital; the current planning reference is KRW 5,000,000. The operator approves
+or changes that envelope once. Routine paper operation inside it does not
+require repeated approval.
 
 Paper submission needs only execution hard stops: paper/live separation,
 persisted idempotent intent, bounded exposure and loss, emergency stop, durable

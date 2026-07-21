@@ -54,8 +54,10 @@ uv run --extra dev thericher-v2-data-agent --artifact-root D:\thericher-v2\model
 ```
 
 Queue and run state stay outside Git under the role's external artifact root.
-These workers are not daemons, schedulers, or autonomous coordinators. Verify a
-stale lock against the real process/container before changing it.
+Goal-owned schedules are allowed when their owner, input/output bound, evidence
+path, recovery behavior, and resource limit are explicit. These workers are not
+unbounded daemons or autonomous cross-lane coordinators. Verify a stale lock
+against the real process/container before changing it.
 
 Execution has no executable worker yet. Use temporary role workers and fake
 transports until a recurring KIS paper objective justifies one bounded
@@ -316,6 +318,12 @@ hours miss, or missing confirmation before configuration loading. The caller
 confirmation is necessary because a weekday clock cannot prove a holiday or
 early-close schedule. This guard is operational only, never a preferred trading
 window.
+
+The current objective may use the self-expiring Codex automation
+`thericher-kis-raw-minute-observation-v1`. It performs no retry or later-session
+rollover: an absent calendar confirmation, an invalid window, or any terminal
+one-shot state ends the automation without a KIS call. It is a goal-owned
+schedule, not a general scheduler or a trading-session policy.
 
 After reservation, `network_started` is a no-retry boundary. External output is
 limited to sanitized counts, timestamp bounds, field-presence, and continuation
