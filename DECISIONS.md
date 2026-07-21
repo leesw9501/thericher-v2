@@ -3087,3 +3087,85 @@ Reason: KIS-compatible data is central to the intended paper engine, and the
 former blanket scheduler ban delayed useful evidence. Small staged capacity
 tests provide more decision value than treating a few successful pages as proof
 of an archive.
+
+## 2026-07-21 - Close v1 and use independent KIS historical-capacity maps
+
+Decision: close `kis-paper-raw-minute-observation-v1` as a terminal,
+replay-blocked result. It ran once at `2026-07-21T13:43:14Z`, completed
+`reserved -> network_started -> summary_written`, made one token attempt and
+two raw-minute page attempts, and recorded only `rejected` /
+`minute_response_rejected`. No account/order endpoint or raw market-data
+retention occurred. The prior one-shot scheduler did dispatch late rather than
+never dispatching; its exact delay cause is unproven, and the completed
+automation remains paused.
+
+Implement two fresh, independent capacity-map objective IDs instead of retrying
+v1 or the older historical probe. `kis-paper-daily-capacity-map-v1` uses one
+KIS Paper token for two fixed `QQQ` / `NAS` daily anchors and at most four
+pages. `kis-paper-raw-minute-capacity-map-v1` uses its own token and reservation
+for up to eight `QQQ` / `NAS` raw-minute pages. Each records only sanitized page
+counts, date/timestamp bounds, page ordering, continuation, and boundary
+duplicate/gap facts; a first response, throttle, or transport rejection ends
+only that track. KIS read-only calls and goal-owned scheduling are already
+authorized, so neither map has a regular-session calendar guard.
+
+Claude's falsification-first verdict is `supported-with-limits`. Its decisive
+reversal is reusing a spent objective ID/reservation or letting a track keep
+probing after its first rejection. The maps remain capacity evidence, not an
+archive or rights determination: raw KIS rows may move to `D:\market_data` only
+under the next collector contract with recorded source/storage basis and
+provenance.
+
+Reason: actual KIS data calls now provide more useful evidence than preserving
+a completed narrow observation as a standing constraint. Independent tracks
+let daily-depth and minute-continuation evidence proceed without one endpoint
+failure suppressing the other, while retaining a clear recovery boundary.
+
+## 2026-07-21 - Record terminal KIS capacity-map evidence
+
+Decision: retain the two capacity-map results as terminal `rejected` evidence
+and do not replay either objective. `kis-paper-daily-capacity-map-v1` completed
+with one token and three daily page attempts. Its first two `QQQ` / `NAS` pages
+were accepted with 100 rows each and bounded dates `2026-07-17 -> 2026-02-24`
+then `2026-02-24 -> 2025-10-01`; its third request rejected before the planned
+second anchor. `kis-paper-raw-minute-capacity-map-v1` completed with one token
+and two page attempts. Its first 120-row page was strictly descending and
+one-minute-contiguous from `12:08Z` through `14:07Z`, advertised continuation,
+and its second request rejected.
+
+Each separate reservation and ledger records `reserved -> network_started ->
+summary_written`, the summary SHA-256 matches its marker, and its artifact
+directory contains only `summary.json`. The results establish accepted first
+pages and daily two-page chronological progress only. They do not establish an
+8-page minute depth, the second daily anchor, a rate-limit cause, cross-page
+continuity, archive retention, storage rights, data/model qualification, or
+paper-execution readiness. The first minute page has no prior boundary, so its
+`boundary_contiguous_to_previous=false` is comparison-unavailable, not a gap.
+
+Reason: the KIS endpoint is demonstrably callable and returns useful bounded
+data, while the repeated continuation rejection requires a fresh paced
+collection objective rather than a claim that KIS cannot supply history or an
+unbounded retry loop.
+
+## 2026-07-21 - Permit a bounded private KIS Paper cache
+
+Decision: use the operator's stated private, personal, noncommercial, and
+nonpublic project scope to permit a small KIS Paper market-data cache under
+`D:\market_data`. The first collector remains limited to a named symbol,
+endpoint, request budget, atomic output, and provenance manifest. It may not
+publish, serve, redistribute, or imply an entitlement to a general KIS archive.
+
+The public KIS Developers documentation identifies the overseas daily and
+raw-minute endpoints and recommends managed long-lived access tokens. Its public
+partner guidance requires exchange information-use contracts for affiliate or
+corporate applications that surface market data; the review found no public
+individual-account clause that clearly permits or forbids a local cache. Claude
+returned `supported-with-limits`: the small, deletable cache is reversible at
+low blast radius, but this is not affirmative proof of storage rights. Stop the
+cache and escalate immediately if the applicable KIS API/account terms prohibit
+retention or if the project becomes externally served or redistributed.
+
+Reason: the operator explicitly requested KIS-derived learning data and has
+authorized KIS calls. A two-page private daily cache has material development
+value and can be contained, deleted, and audited without expanding to a public
+market-data product.

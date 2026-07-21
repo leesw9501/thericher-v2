@@ -129,6 +129,12 @@ license-compatible for private use, bounded, and deduplicated. Paid, logged-in,
 manual-agreement, private-API, or unclear-rights sources require operator
 approval.
 
+The operator has separately authorized a bounded local KIS Paper market-data
+cache for this private, noncommercial, nonpublic project. Keep it under
+`D:\market_data`, attach a provenance manifest and request budget, and never
+serve, publish, or redistribute it. Stop that source immediately if an
+applicable KIS or exchange term is found to prohibit retention.
+
 Warn at a projected 20 percent D-drive free-space level. Stop new large data or
 training work before crossing 15 percent. If operator action is needed, report:
 
@@ -286,55 +292,35 @@ if summary persistence fails, `network_started` remains and blocks retry. A
 future, independently scoped Data objective may assess timestamp-label evidence
 and ask Claude before any capability update.
 
-## Prepared KIS Raw-Minute Observation
+## KIS Raw-Minute v1 and Capacity Map
 
-This is a separate, future one-shot observation, not a retry or modification of
-the terminal v4 qualification above. It improves the data-collection loop by
-recording only a narrow current-session response shape; it cannot create a
-dataset, feature, resample, model input, order capability, or trading rule.
+`kis-paper-raw-minute-observation-v1` is terminal. It ran once at
+`2026-07-21T13:43:14Z`, made one token and two raw-minute page attempts, and
+finished `rejected` / `minute_response_rejected`. Its marker and ledger are
+complete, and its one-shot automation is paused. Do not run its command again.
 
-The default command is a no-I/O preparation check. It reads no configuration,
-control state, or artifact:
-
-```powershell
-uv run python scripts\observe_kis_paper_raw_minute.py --session-date YYYY-MM-DD
-```
-
-Only during the caller-declared current New York weekday regular session, after
-checking Nasdaq's calendar for a closure or early close, may the separately
-authorized read-only one-shot be invoked:
+KIS Paper read-only market-data calls and goal-owned schedules are authorized.
+The following capacity-map commands are historical context only; both objective
+IDs have reached terminal `rejected` markers and must not be rerun:
 
 ```powershell
-uv run python scripts\observe_kis_paper_raw_minute.py `
-  --execute `
-  --confirm-regular-nasdaq-session `
-  --session-date YYYY-MM-DD
+uv run python scripts\map_kis_paper_historical_capacity.py --track daily --execute
+uv run python scripts\map_kis_paper_historical_capacity.py --track minute --execute
 ```
 
-The process is literal `QQQ` / `NAS` raw `1m`, one paper token, one first page,
-and at most one continuation. It has its own external objective ID and artifact
-root, never reopens v4, and rejects an absent/mismatched date, weekend, regular-
-hours miss, or missing confirmation before configuration loading. The caller
-confirmation is necessary because a weekday clock cannot prove a holiday or
-early-close schedule. This guard is operational only, never a preferred trading
-window.
+The daily track accepted two 100-row pages before its third request rejected,
+so the planned second anchor was not reached. The raw-minute track accepted one
+120-row internally contiguous page before its second request rejected. Neither
+needs a regular-session calendar guard because neither is a trading action.
+Each has a separate objective ID and summary hash; a later attempt must use a
+new objective ID rather than replaying a terminal one.
 
-The current objective may use the self-expiring Codex automation
-`thericher-kis-raw-minute-observation-v1`. It performs no retry or later-session
-rollover: an absent calendar confirmation, an invalid window, or any terminal
-one-shot state ends the automation without a KIS call. It is a goal-owned
-schedule, not a general scheduler or a trading-session policy.
-
-After reservation, `network_started` is a no-retry boundary. External output is
-limited to sanitized counts, timestamp bounds, field-presence, and continuation
-facts; raw prices, volumes, cursors, credentials, account data, and responses
-remain in memory only. It never calls account, position, buying-power,
-open-order, order, cancel, or live endpoints.
-
-Those v1 timestamp bounds and continuation facts are descriptive only. This
-observation does not test intra-page ordering, cross-page overlap, or one-minute
-adjacency, so it cannot establish continuity, completed bars, resampling, or
-any capability qualification.
+External summaries record only page counts, date/timestamp bounds, page order,
+duplicate/gap facts, continuation availability, and sanitized outcomes. Rows,
+prices, cursors, credentials, account values, and response bodies remain in
+memory. The next fresh daily collector must pace requests, use the observed
+two-page boundary as a manifest fact, and stop safely on a rejection; it still
+does not treat the capacity maps as a model-input or order-capability contract.
 
 ## KIS Paper Authority
 

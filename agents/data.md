@@ -260,23 +260,25 @@ claim by substitution.
 The immediate historical `QQQ`/`SPY` one-shot is complete as a terminal
 `daily_response_rejected` result: one paper token, two daily attempts, zero
 raw-`1m` attempts, and no retained raw row, credential, account fact, cache, or
-`D:\market_data` write. It cannot be retried or widened. The only remaining
-KIS Data work is interpretation of the separate date-limited `QQQ`/`NAS`
-raw-`1m` observation. Data reviews its sanitized scope, page, field-presence,
-continuation, and date/timestamp-bound facts only. This remains metadata-only
-`observed`/`rejected` evidence: it creates no retained dataset, cache, feature,
-timeframe activation, campaign, or model eligibility, and raw `1m` remains
-`observed` until an independent qualification.
+`D:\market_data` write. It cannot be retried or widened. The separate
+`kis-paper-raw-minute-observation-v1` also completed on 2026-07-21 as terminal
+`minute_response_rejected` after one token and two minute-page attempts. Both
+are narrow endpoint outcomes, not a KIS-wide availability, retention, cache,
+feature, timeframe, campaign, or model claim.
 
-The operator has now authorized `KIS_PAPER_*` read-only development calls and
-goal-owned schedules. The current self-expiring observation schedule is not a
-bulk-collection conclusion. If it reaches a terminal summary, Data's next
-candidate is a separately contracted KIS capacity map: bounded daily retention
-anchors plus bounded raw-`1m` continuation depth, with page counts, date bounds,
-duplicate/gap facts, response outcomes, rate-throttle stop behavior, and a
-provenance manifest. It must establish storage rights before retaining any raw
-KIS rows under `D:\market_data`; a caller's access authorization alone is not a
-source-rights assertion.
+The operator has authorized `KIS_PAPER_*` read-only development calls and
+goal-owned schedules. Both KIS capacity-map tracks are now terminal. Daily
+observed two 100-row `QQQ` / `NAS` pages (`2026-07-17 -> 2026-02-24` and
+`2026-02-24 -> 2025-10-01`) before its third request rejected; the planned
+second anchor was not reached. Raw `1m` observed one 120-row, strictly
+descending, internally one-minute-contiguous page (`12:08Z -> 14:07Z`) before
+its continuation rejected. The first minute page has no previous-page boundary,
+so its `boundary_contiguous_to_previous=false` is comparison-unavailable, not a
+gap. Both tracks retain only sanitized metadata and are recovery `complete`. The
+operator-approved bounded private-cache policy now permits only the fresh,
+named daily collector to retain raw KIS rows under `D:\\market_data`, with a
+provenance manifest and stop-on-terms rule. Endpoint authorization alone still
+does not establish an entitlement to a general archive or external service.
 
 The active data direction is KIS-native paper readiness. Data owns the compact
 runtime feature contract, but does not call KIS. Execution's dated read-only
@@ -286,11 +288,12 @@ client also reproduced one 120-row `QQQ`/`NAS` page in descending exchange-time
 order from `19:59` to `18:00`. The observation does not yet qualify retention,
 timestamp conversion, completed-bar semantics, overlap handling, or cache
 recovery. The new compact capability record and completed-bar cache are
-in-memory only. A qualified runtime field may be used in memory even while
-storage rights are unverified; persistent market bytes under `D:` still need
-confirmed rights. The initial candidate is therefore 90 completed raw `1m`
-OHLCV bars and local `5m`/`10m` resamples; `1h`/`3h` and all unverified fields
-are inactive, not assumed.
+in-memory only. A qualified runtime field may be used in memory even while wider
+storage rights are unverified. The explicit bounded private-cache authority now
+applies only to the named daily collector; persistent market bytes beyond that
+collector still need a separate source/storage basis. The initial candidate is
+therefore 90 completed raw `1m` OHLCV bars and local `5m`/`10m` resamples;
+`1h`/`3h` and all unverified fields are inactive, not assumed.
 
 Any later **qualification** objective beyond the prepared observation must retain
 only timestamp bounds/counts. A no-overlap continuation is not sufficient there:
@@ -304,16 +307,13 @@ not a KIS data fact.
 Until a later independent label-evidence objective succeeds, this input remains
 `observed` and Engine receives no paper runtime bars.
 
-The separate `kis-paper-raw-minute-observation-v1` preparation is complete and
-has not made a KIS request. It is deliberately not the terminal v4
-qualification: it uses a distinct external objective ID, literal `QQQ` / `NAS`
-scope, one token, one first `1m` page, and at most one continuation. Its default
-no-`--execute` path does not read configuration, control state, or artifacts.
-A later one-shot needs a caller-declared current New York weekday regular session
-and explicit regular-Nasdaq confirmation for holidays/early closes. Its only
-external output may contain sanitized counts, timestamp bounds, field presence,
-and continuation facts. It cannot establish adjacency, completed bars, retention,
-storage rights, `5m` / `10m`, a feature, a dataset, or model eligibility.
+`kis-paper-raw-minute-observation-v1` is complete, not prepared: its summary
+at `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-observation\20260721T134314Z\summary.json`
+has status `rejected`, reason `minute_response_rejected`, token attempts `1`,
+and minute-page attempts `2`. The terminal marker/ledger state is recovery
+`complete`; do not rerun it. It cannot establish adjacency, completed bars,
+retention, storage rights, `5m` / `10m`, a feature, a dataset, or model
+eligibility.
 
 The latest account-only `kis-readonly` bridge outcome is separately terminal
 `unavailable` / `balance_rejected` at
@@ -562,13 +562,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    daily attempt (`daily_response_rejected`). It confers no raw-`1m`, field,
    paging, timestamp, retention, storage-rights, data-quality, campaign, or
    training claim; do not write raw bytes or retry it.
-2. At the authorized self-expiring KIS regular-Nasdaq invocation, freeze and
-   review at most the prepared `kis-paper-raw-minute-observation-v1` one-shot.
-   Execution, not Data, invokes the credential-touching script; review only its
-   sanitized counts, timestamp bounds, field-presence, and continuation facts.
-   Retain either outcome as `observed` or `rejected`. Do not infer adjacency,
-   completed bars, freshness, storage rights, `5m` / `10m`, a dataset, or model
-   eligibility, and do not write raw bytes before rights are confirmed.
+2. Complete: the daily and raw-minute KIS capacity-map tracks both reached
+   terminal `rejected` outcomes after respectively two accepted daily pages and
+   one accepted minute page. Data now writes the smallest D: collection contract
+   their evidence supports; do not reuse either reservation.
 3. Complete: one immutable prospective standard-Tiingo-EOD refresh was
    retained for only `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source
    boundary. Do not widen symbols, provider scope, or data rights, and do not
@@ -577,11 +574,10 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    coverage; the existing r2 cohort remains bounded source evidence.
 5. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
    continuation, and cache-recovery evidence qualifies it.
-6. After v1 has a terminal summary and `NEXT_CODEX_GOAL.md` names it, run a
-   separate KIS capacity-map objective rather than an open-ended download. It
-   should stop on the first throttle/rejection, never treat a successful page as
-   archive proof, and retain raw bytes only after the source/storage question is
-   recorded in its manifest.
+6. Ready: design the D: collector around one `QQQ` / `NAS` daily anchor and at
+   most two pages per run. It must record the shared `2026-02-24` page boundary,
+   pace requests, stop at a rejection, and keep raw-minute collection out until
+   its continuation is independently reproducible.
 
 ## Historical Queue Context
 

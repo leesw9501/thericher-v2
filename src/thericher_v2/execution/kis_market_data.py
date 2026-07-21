@@ -309,9 +309,17 @@ class KisPaperMarketDataClient:
         *,
         config: KisPaperMarketDataConfig,
         transport: KisMarketDataTransport,
+        max_minute_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS,
+        max_daily_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS,
     ) -> None:
+        if type(max_minute_page_attempts) is not int or max_minute_page_attempts < 1:
+            raise ValueError("max_minute_page_attempts must be a positive integer")
+        if type(max_daily_page_attempts) is not int or max_daily_page_attempts < 1:
+            raise ValueError("max_daily_page_attempts must be a positive integer")
         self._config = config
         self._transport = transport
+        self._max_minute_page_attempts = max_minute_page_attempts
+        self._max_daily_page_attempts = max_daily_page_attempts
         self._access_token: str | None = None
         self._token_attempts = 0
         self._minute_page_attempts = 0
@@ -338,7 +346,7 @@ class KisPaperMarketDataClient:
         *,
         before_request: Callable[[], None] | None = None,
     ) -> KisPaperMinutePage:
-        if self._minute_page_attempts >= KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS:
+        if self._minute_page_attempts >= self._max_minute_page_attempts:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
         access_token = self._issue_access_token()
         request = KisMarketDataRequest(
@@ -385,7 +393,7 @@ class KisPaperMarketDataClient:
         )
 
     def fetch_daily_page(self, query: KisPaperDailyQuery) -> KisPaperDailyPage:
-        if self._daily_page_attempts >= KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS:
+        if self._daily_page_attempts >= self._max_daily_page_attempts:
             raise KisPaperMarketDataError("daily_page_limit_exceeded")
         access_token = self._issue_access_token()
         self._daily_page_attempts += 1

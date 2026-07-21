@@ -248,6 +248,14 @@ capital; the current planning reference is KRW 5,000,000. The operator approves
 or changes that envelope once. Routine paper operation inside it does not
 require repeated approval.
 
+For the operator's stated private, personal, noncommercial, nonpublic project,
+Codex may retain a bounded KIS Paper market-data cache under `D:\market_data`
+when a goal names its symbol, endpoint, request budget, provenance manifest,
+and stop/recovery behavior. It must remain local and unserved: no publication,
+redistribution, or third-party API/dashboard exposure. Stop the affected cache
+and escalate if an applicable KIS or exchange term is found to prohibit storage
+or retention; do not infer a broad archive entitlement from a successful call.
+
 Paper submission needs only execution hard stops: paper/live separation,
 persisted idempotent intent, bounded exposure and loss, emergency stop, durable
 events, and broker reconciliation. Do not require profitability packets,

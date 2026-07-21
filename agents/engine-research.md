@@ -102,12 +102,12 @@
 
 ## Current Objective
 
-- Keep the completed deterministic KIS-native baseline fixed while Data and
-  Execution record the one-shot raw-input observation. It remains fail-closed
-  until a later Data objective qualifies the contract. Do not start a GPU
-  campaign merely because the historical dataset is limited. The paper-first
-  exception does not extend to learned models, ensembles, learned allocation,
-  or learned exits.
+- Keep the completed deterministic KIS-native baseline fixed. The completed
+  daily/minute capacity maps observed two daily pages and one minute page, then
+  both rejected on continuation. They do not qualify a runtime bar contract or
+  change research readiness. Do not start a GPU campaign merely because the
+  historical dataset is limited. The paper-first exception does not extend to
+  learned models, ensembles, learned allocation, or learned exits.
 - A caller-created `qualified` capability object is not promotion evidence.
   The baseline now requires a matching, full-contract-SHA qualification binding
   from its empty Data-owned registry. A later Data objective must validate the

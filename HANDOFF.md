@@ -131,9 +131,10 @@ separately from its completed feature-window end and expires at the next
   research, validation, and paper-readiness jobs inside their explicit scope.
   Each schedule needs an owner, evidence location, stop/recovery behavior, and
   resource bound; this does not authorize an unbounded daemon, KIS live,
-  submission/cancellation, capital allocation, or a hidden retry. The active
-  `thericher-kis-raw-minute-observation-v1` automation is a one-time example,
-  not evidence that KIS supports bulk history.
+  submission/cancellation, capital allocation, or a hidden retry. The prior
+  `thericher-kis-raw-minute-observation-v1` automation ran once after a delayed
+  dispatch and is now paused; its completed result is not evidence that KIS
+  supports bulk history.
 - For an isolated KIS market-data observation, Execution alone invokes the
   credential-touching script. Data owns the fixed data scope, calendar review,
   and sanitized-result interpretation; it does not read configuration or call
@@ -279,19 +280,32 @@ separately from its completed feature-window end and expires at the next
   freshness, retention, storage-rights, cache, dataset, model, or paper claim.
   The matching date-limited Codex preflight automation is `PAUSED`; do not
   reactivate it for this completed objective.
-- A separate `kis-paper-raw-minute-observation-v1` is now prepared but has not
-  been executed. It has a distinct control objective and artifact root, leaves
-  v4 untouched, hard-codes `QQQ` / `NAS`, and accepts only one token, a first
-  `1m` page, and at most one continuation. Its no-`--execute` path reads no
-  configuration, control state, or artifact. A real attempt additionally needs
-  a caller-declared date equal to the current New York weekday regular session
-  and `--confirm-regular-nasdaq-session`; that confirmation covers holidays and
-  early closes. Regular-hours validation is an operational request guard, not a
-  trading-window preference. It retains only sanitized counts, timestamp
-  bounds, field-presence, and continuation facts outside memory, and cannot
-  promote KIS data, resampling, a model input, an order capability, or a paper
-  strategy. No KIS request, credential read, reservation, or artifact occurred
-  while this new path was prepared.
+- `kis-paper-raw-minute-observation-v1` ran once at
+  `2026-07-21T13:43:14Z` and completed `reserved -> network_started ->
+  summary_written` as `rejected` / `minute_response_rejected`. It made one
+  token attempt and two raw-`1m` page attempts, called no account/order
+  endpoint, and retained no raw market row. Its summary is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-raw-minute-observation\20260721T134314Z\summary.json`
+  (SHA-256 `0a7ce3510e9f3e4aae89389c85669073f5e7520bc686b8f955c4a50c3d4d3eda`).
+  Recovery is `complete`; never replay v1. This does not establish KIS-wide
+  availability, retention, paging, timestamp semantics, a dataset, or model
+  readiness.
+- The two fresh capacity-map objectives are terminal. The daily map made one
+  token and three daily requests: two 100-row `QQQ` / `NAS` pages progressed
+  from `2026-07-17` through `2025-10-01`, with the `2026-02-24` boundary shown
+  by both pages; the third request was `daily_response_rejected`, so its second
+  anchor was not observed. Its summary is
+  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-daily-capacity-map\20260721T140543Z\summary.json`
+  (SHA-256 `5df13955b8df081edb8dcb32a8ae37fa383773f94652bb160d0112517e3f6a6f`).
+  The raw-minute map made one token and two requests: its first page contained
+  120 strictly descending, one-minute-contiguous bars from `12:08Z` through
+  `14:07Z`, advertised continuation, and its second request was
+  `minute_response_rejected`. Its summary is
+  `D:\thericher-v2\model-artifacts\data-agent\kis-paper-raw-minute-capacity-map\20260721T140710Z\summary.json`
+  (SHA-256 `44c09904ed0bf65466450d368d3a20f763a6399c19651b175b33f05bed846e8a`).
+  Both objective IDs are recovery `complete`, retained only `summary.json`, and
+  must not be replayed. Neither result proves archive depth, rate limits,
+  cross-page continuity, storage rights, a dataset, or model readiness.
 - An offline source/code comparison then aligned the raw-minute builder with
   the current official sample: it now sends `custtype=P`, uses empty
   `tr_cont` on the first page and `N` on a continuation, and omits the local
@@ -931,13 +945,15 @@ no-network contract test now pins the KIS virtual balance request shape to the
 official sample. The Tiingo lineage stays non-model/non-paper input, and the
 contract test does not diagnose the KIS rejection.
 
-The next company objective is a distinct, single KIS market-data capability
-observation during a verified U.S. regular session. It must collect only the
-already planned sanitised `QQQ`/`NAS` raw-`1m` page/continuation/timestamp-bound
-facts, write no raw market bytes, and neither repeat the account bridge nor
-promote a data/model/paper capability. A future usable empty KIS account
-snapshot still needs a native-currency cap before the no-network capital
-proposal can form a candidate.
+The next company objective is a fresh, paced, private KIS Paper **daily**
+collector for `QQQ` / `NAS`. The completed capacity maps showed two accepted
+daily pages before an immediate third request rejected, so this collector uses
+one token, at most two pages, and an internal two-second inter-page delay. It
+may retain only its bounded raw daily cache and provenance manifest under
+`D:\\market_data`; it does not authorize a historical backfill, raw-minute
+archive, model input, order capability, or paper promotion. A future usable
+empty KIS account snapshot still needs a native-currency cap before the
+no-network capital proposal can form a candidate.
 
 ### Superseded historical context
 

@@ -255,17 +255,19 @@
   No source resolves that tuple, so no header, route, transport, or adapter code
   was added. Reopen only for a direct official specification or testbed that
   consistently names all three facts.
-- Complete: the Data-scoped `kis-paper-raw-minute-observation-v1` is prepared
-  but unexecuted. It is a literal `QQQ` / `NAS` read-only boundary with one
-  token and no more than two raw-minute pages, its own one-shot objective,
-  sanitized external evidence, and no order/account/capital/adapter import or
-  path. Data owns scope, calendar review, and sanitized-result interpretation;
-  Execution alone invokes the credential-touching script. The one-shot cannot
-  establish an execution or order capability.
-- The operator has lifted the scheduler prohibition for owned engine work. The
-  active `thericher-kis-raw-minute-observation-v1` Codex automation is a single
-  self-expiring execution of this exact objective. It cannot retry, roll into a
-  later session, widen endpoints, or create an order/account capability.
+- Complete: `kis-paper-raw-minute-observation-v1` ran once at
+  `2026-07-21T13:43:14Z` after delayed scheduler dispatch, then completed
+  `reserved -> network_started -> summary_written` as `rejected` /
+  `minute_response_rejected`. It made one token and two minute-page attempts,
+  called no account/order endpoint, and retained no raw row. The scheduler is
+  paused; the recovery classification is `complete`, so v1 is not retried.
+- Complete: both independent KIS Paper capacity-map tracks ran. Daily accepted
+  two 100-row pages before request three rejected, so its second anchor was not
+  reached. Raw `1m` accepted one 120-row internally contiguous page before its
+  continuation rejected. Each has `reserved -> network_started ->
+  summary_written`, a matching summary hash, and only `summary.json` outside
+  memory. Both are terminal `rejected`; no retry, account/order path, or raw
+  retention is permitted under those IDs.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
@@ -339,18 +341,17 @@
    retain the `VTTT1001U` sell comment versus `VTTT1006U` generic conversion
    conflict, and the shared wrapper does not provide an explicit virtual base
    route. Do not derive a resolver from it.
-4. Complete: the isolated raw-`1m` observation preparation uses only the typed
-   client boundary and generic durable one-shot primitives. It cannot supply an
-   order route, header, capital, account fact, or submission claim.
+4. Complete: the terminal v1 raw-minute observation uses only the typed client
+   boundary and generic durable one-shot primitives. It supplied no order route,
+   header, capital, account fact, or submission claim.
 5. Complete: the no-network fake-transport contract pins the official virtual
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-6. At the authorized self-expiring regular-Nasdaq invocation, after Data fixes
-   the calendar/date scope, Execution alone runs at most the prepared raw-`1m`
-   observation and retains only sanitized market-data facts. It is distinct
-   from the terminal balance bridge outcome and must not retry or reinterpret
-   that account result.
+6. Ready: implement one fresh, paced daily-collection objective from the
+   accepted two-page evidence. KIS Paper calls and goal-owned scheduling remain
+   authorized; no calendar gate or account/order endpoint is needed for a
+   market-data-only implementation.
 7. Wait for a separately scoped, usable KIS snapshot before requesting a
    native-currency paper-cap ceiling. Until then the capital proposal remains
    abstained.
