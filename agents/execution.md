@@ -14,17 +14,24 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   price, open-order, and emergency state.
 - KIS Paper account/data/order access, paper submit/modify/cancel, routine
   sizing, and schedules are standing-authorized.
-- No KIS Paper order transport is complete yet. Existing KIS clients are
-  virtual-paper-host-only; a future transport must preserve that fail-closed
-  route property.
+- `kis_paper_canary` is the first executable narrow adapter: US buy-limit only,
+  whole shares and explicit limit price, fixed virtual host/TR IDs, durable
+  intent-before-submit, no duplicate retry after ambiguity, and cancellation
+  after accepted submit. Private recovery state stays in a dedicated Docker
+  volume; external evidence and dashboard projection are sanitized.
+- The first real virtual-token attempt on 2026-07-21 returned `auth_rejected`
+  before account data or submit. Four paper variables were present in the
+  container with expected non-secret lengths; no live variable was read. Treat
+  this as external KIS virtual application recovery, not a paper authority
+  gate.
 
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Turn the verified KIS Paper order contract into a minimal paper-only adapter
-   once route/header behavior is established through authorized KIS Paper work.
-3. Persist an idempotent intent before every paper side effect and reconcile an
-   unknown broker outcome before replacement.
+2. Once the KIS virtual application token succeeds, reconcile the persisted
+   canary run and run the first acknowledged/cancelled bounded paper canary.
+3. Keep the generic broker adapter disabled while this canary remains the only
+   bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
    execution processes.
 
@@ -50,10 +57,13 @@ they only describe the recovery state of their own run.
 
 Use local events for local reconstruction and KIS as the authority for external
 paper state. Unknown broker state is `reconcile`; an emergency stop or cancel
-does not wait for review.
+does not wait for review. A stored canary run ID reloads its durable intent and
+checks its stable identity before recovery, so a restart cannot regenerate a
+new decision timestamp into a replacement order.
 
 ## Next Handoff
 
-Hand the adapter's paper-host enforcement test, intent/reconciliation coverage,
-and any unresolved KIS Paper route fact to Codex. Only a live-money boundary,
-paid commitment, unclear rights, or public exposure needs operator input.
+Hand the virtual-token recovery result, canary reconciliation evidence, and any
+unresolved KIS Paper route fact to Codex. Only a live-money boundary, paid
+commitment, unclear rights, public exposure, or an external KIS credential
+reset needs operator input.

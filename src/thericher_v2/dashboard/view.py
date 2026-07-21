@@ -14,6 +14,10 @@ from thericher_v2.execution.paper_account_snapshot import (
     PaperAccountSnapshot,
     read_paper_account_snapshot,
 )
+from thericher_v2.execution.paper_canary_runtime import (
+    PaperCanaryRuntimeSnapshot,
+    read_paper_canary_runtime,
+)
 from thericher_v2.serialization import to_jsonable
 from thericher_v2.state.event_log import Event, EventStore
 
@@ -75,6 +79,11 @@ class DashboardSnapshot:
     paper_account_status: str = "unknown"
     paper_account_observed_at: str | None = None
     paper_account: PaperAccountSnapshot | None = None
+    paper_canary_status: str = "unknown"
+    paper_canary_reconciliation_status: str = "unknown"
+    paper_canary_account_status: str = "unknown"
+    paper_canary_observed_at: str | None = None
+    paper_canary: PaperCanaryRuntimeSnapshot | None = None
 
     def to_dict(self) -> dict[str, object]:
         return to_jsonable(self)
@@ -96,6 +105,7 @@ def build_snapshot(
     mode: str = "off",
     *,
     paper_account_snapshot_path: Path | None = None,
+    paper_canary_runtime_path: Path | None = None,
     now: datetime | None = None,
 ) -> DashboardSnapshot:
     current_time = now or datetime.now(UTC)
@@ -132,6 +142,16 @@ def build_snapshot(
     else:
         message = f"{message} KIS paper facts are unknown."
 
+    paper_canary_read = read_paper_canary_runtime(
+        paper_canary_runtime_path,
+        now=current_time,
+    )
+    paper_canary = paper_canary_read.snapshot
+    if paper_canary_read.status == "available":
+        message = f"{message} KIS virtual-paper canary is {paper_canary.status}."
+    elif paper_canary_read.status == "unavailable":
+        message = f"{message} KIS virtual-paper canary state is unavailable."
+
     return DashboardSnapshot(
         mode=mode,
         heartbeat_utc=current_time.isoformat(),
@@ -163,6 +183,19 @@ def build_snapshot(
             None if paper_account is None else paper_account.observed_at.isoformat()
         ),
         paper_account=paper_account,
+        paper_canary_status=(
+            paper_canary.status if paper_canary is not None else paper_canary_read.status
+        ),
+        paper_canary_reconciliation_status=(
+            "unknown" if paper_canary is None else paper_canary.reconciliation_status
+        ),
+        paper_canary_account_status=(
+            "unknown" if paper_canary is None else paper_canary.account_status
+        ),
+        paper_canary_observed_at=(
+            None if paper_canary is None else paper_canary.observed_at.isoformat()
+        ),
+        paper_canary=paper_canary,
     )
 
 
@@ -442,10 +475,19 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
               <td>KIS open orders</td>
               <td class="state-unknown">{_text(snapshot.kis_open_orders_status)}</td>
             </tr>
+            <tr>
+              <td>Virtual-paper canary</td>
+              <td class="state-unknown">{_text(snapshot.paper_canary_status)}</td>
+            </tr>
+            <tr>
+              <td>Canary reconciliation</td>
+              <td class="state-unknown">{_text(snapshot.paper_canary_reconciliation_status)}</td>
+            </tr>
           </tbody>
         </table>
       </div>
       {paper_account_details}
+      {_paper_canary_details(snapshot)}
     </section>
   </main>
 </body>
@@ -477,6 +519,18 @@ def _paper_account_statuses(status: str) -> dict[str, str]:
 
 def _paper_account_tag(status: str) -> str:
     return "tag-local" if status == "available" else "tag-unknown"
+
+
+def _paper_canary_details(snapshot: DashboardSnapshot) -> str:
+    canary = snapshot.paper_canary
+    if canary is None:
+        return ""
+    return f"""
+      <p class="scope">
+        Canary observed {_optional_text(snapshot.paper_canary_observed_at)}.
+        Account facts: {_text(snapshot.paper_canary_account_status)}.
+        Positions: {canary.position_count}. Open orders: {canary.open_order_count}.
+      </p>"""
 
 
 def _paper_account_details(

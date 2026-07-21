@@ -101,6 +101,28 @@ an unknown outcome. These are code correctness requirements, not an operator
 approval sequence. The dashboard remains credential-free and cannot submit an
 order by itself.
 
+## KIS Virtual-Paper Canary
+
+The bounded execution-learning command is a virtual-paper US buy-limit canary
+with one whole share, a fixed explicit limit, reconciliation, and cancellation
+after an accepted submission:
+
+```powershell
+docker compose --profile kis-paper-canary run --rm --no-deps kis-paper-canary
+```
+
+It receives only `KIS_PAPER_*`, stores private recovery state in its dedicated
+Docker volume, writes sanitized runtime state to the shared local dashboard,
+and writes external evidence under `/app/model_artifacts`. Re-running an
+existing run ID reconciles its persisted intent before any replacement submit.
+Do not pass secrets or account values on the command line.
+
+The first token attempt on 2026-07-21 returned `auth_rejected` before a
+submission. This is not an approval gate. When it recurs, verify or regenerate
+the **virtual-paper** application key and secret in the KIS developer account,
+update only local `.env`, and rerun the command. Do not substitute live
+credentials or inspect/print the secret values.
+
 ## Research And Artifacts
 
 Keep generated checkpoints, campaign summaries, and control evidence under:

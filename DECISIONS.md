@@ -3423,3 +3423,43 @@ corporate-action limitation and fixed three-ETF survivor universe remain visible
 Reason: a small, reproducible local-paper comparison is useful now, but an
 honest research record is more valuable than pretending an already observed
 historical suffix is fresh validation data.
+
+## 2026-07-22 - Add a narrow KIS virtual-paper buy canary without reopening live execution
+
+Decision: the first executable KIS order surface is one separate, bounded
+virtual-paper canary rather than enabling the generic broker adapter. It can
+create only an explicit US whole-share **buy limit** request on the fixed
+virtual host with `VTTT1002U`, optionally cancel that acknowledged order with
+`VTTT1004U`, and check account/positions/open orders plus `VTTS3035R` before
+replacing an ambiguous outcome. It cannot read `KIS_LIVE_*`, construct a live
+host, create a sell request, or turn the dashboard into a broker client.
+
+The canary validates host, method, path, query, headers, and body before every
+transport invocation, including injected test transports. Its direct transport
+disables inherited proxies and rejects redirects. A durable private intent is
+fsync-persisted before submission; a later run reloads that intent by run ID
+and compares stable identity fields rather than regenerating a fresh timestamp.
+It never resubmits an unknown result. Private recovery state has its own Docker
+volume; the shared runtime and external artifact contain only a fingerprint,
+redacted order reference, status, counts, and emergency/reconciliation facts.
+
+Claude's final falsification verdict was `supported-with-limits`. It found two
+test gaps: body/header/query negative coverage and a post-cancel matching open
+order path. Both were added. Its review also exposed a reference-prefix defect
+between the sanitized canary and open-order identifiers; the adapter now
+compares the common raw-ID hash under the open-order projection before it can
+declare cancellation clean.
+
+The first Docker canary recovery attempt found an artifact mount-path check
+that treated `/app/model_artifacts` as Git-local; the exact mounted path is now
+allowed while ordinary repository paths remain rejected. The first actual
+virtual token/account attempt then returned `auth_rejected` before account data
+or submit, so no KIS order was sent. The safe evidence is under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-canary` and
+`...\kis-paper-console-bridge`; no token, account identifier, raw request, or
+raw response was retained in Git or dashboard state.
+
+Reason: this advances paper-execution learning with the smallest useful broker
+surface while keeping recovery truthful. The external token rejection is a
+credential/application recovery task, not a capital, profitability, or
+one-shot approval barrier.

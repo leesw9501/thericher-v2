@@ -2,87 +2,86 @@
 
 ## Objective
 
-Build the first executable KIS **virtual-paper-only** US buy canary path and
-connect its sanitized runtime state to the existing local dashboard.
+Restore KIS **virtual-paper** token access and complete the first bounded US
+buy-limit canary reconciliation through the existing `kis-paper-canary` Docker
+service.
 
-The purpose is execution learning, not a profitability ceremony. The operator
-has standing-authorized all private `KIS_PAPER_*` work, including account and
-market reads, submit/modify/cancel, sizing, reconciliation, data retention, and
-goal-owned schedules. Do not ask for paper capital, a trade count, a dashboard
-review, a profitability result, or a per-call confirmation. `KIS_LIVE_*`, live
-hosts, and real-money behavior remain unavailable.
+The canary implementation, private recovery volume, sanitized runtime
+projection, and local dashboard are ready. On 2026-07-21, the first actual
+token/account attempt returned `auth_rejected` before an account snapshot or
+order submit. This is an external KIS virtual-application recovery fact, not a
+capital, profitability, one-shot, raw-retention, or per-call approval gate.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and
    `agents/execution.md` first; then read `agents/data.md` and
-   `agents/engine-research.md` for current data/model context.
-3. Ask Claude for a concise falsification-first review before relying on a new
-   paper submit/reconciliation route. Do not send credentials, account values,
-   raw broker payloads, or source data.
+   `agents/engine-research.md` for independent work readiness.
+3. Read the sanitized canary/dashboard runtime state and external evidence
+   metadata only. Do not print, copy, or commit private recovery state,
+   credentials, account identifiers, raw requests, or raw responses.
 
 ## Work Packages
 
 ### Execution Agent
 
-1. Close the current injected-transport allowlist gap: validate host, method,
-   path, query, and allowable headers in the KIS paper client before every
-   transport invocation, not only inside the urllib implementation.
-2. Build one narrow KIS paper adapter for US **buy limit** orders only. It must
-   pin the KIS virtual-paper host, use only documented virtual-paper TR IDs,
-   reject every live host/credential/route, and leave US sells out of scope
-   until their official TR-ID contradiction is resolved.
-3. Persist an idempotent intent before KIS submission; reconcile account,
-   positions, open orders, and `inquire-ccnl` before replacing an unknown
-   result. A recovery anomaly is a technical reconciliation task, not an
-   operator approval gate.
-4. Provide a goal-owned Docker command for a bounded paper canary. Its default
-   execution may use the actual KIS virtual account when configured. It must
-   write only sanitized runtime/event evidence outside Git and must never print
-   tokens, account identifiers, or raw broker bodies.
-5. Project the resulting sanitized account/order/emergency status to the
-   credential-free local dashboard. The web process must not receive KIS
-   credentials or call KIS itself.
+1. Verify only the presence/shape of the four `KIS_PAPER_*` values in the
+   credential-bearing canary container; do not read `KIS_LIVE_*` or print a
+   secret/account value.
+2. Re-run the existing persisted canary by run ID when it is still valid. Its
+   durable intent is authoritative: reconcile first and never submit a
+   replacement after an unknown outcome.
+3. When that intent has expired without a side effect, start one fresh default
+   bounded canary through:
+
+   ```powershell
+   docker compose --profile kis-paper-canary run --rm --no-deps kis-paper-canary
+   ```
+
+   Keep the fixed virtual host, US buy-limit-only route, whole share, explicit
+   limit, automatic accepted-order cancellation, and sanitized artifacts.
+4. If token access succeeds, verify acknowledgement/reconciliation and the
+   credential-free dashboard projection. This is execution connectivity
+   evidence only, never a return or model-quality claim.
+5. If KIS continues to return `auth_rejected`, record only the safe reason and
+   exact recovery instruction: verify or regenerate the **virtual-paper** app
+   key/secret in KIS, update local `.env`, and rerun. Do not substitute live
+   credentials, guess credentials, brute-force retries, or add a new approval
+   process.
 
 ### Data Agent
 
-- Keep KIS market-data cache and paper execution evidence separate. A canary
-  may use the existing KIS-native daily/intraday inputs but must not duplicate
-  raw broker payloads into `D:\market_data` or Git.
-- Keep the 694-session unadjusted daily panel and its `burned_precontract`
-  comparative interpretation visible; neither blocks a paper canary.
+- Keep KIS market-data cache bytes separate from canary/account evidence.
+- Continue no-cost, ready offline data-contract work only if it does not
+  interfere with the KIS recovery attempt. Do not make `auth_rejected` a data
+  collection blocker.
 
 ### Engine Research Agent
 
-- Supply only deterministic, explicit buy intent inputs for the first canary;
-  do not couple paper submission to an unvalidated learned model.
-- Continue breadth/depth queue preparation on CPU while execution work runs.
-  CUDA starts only for a distinct falsifiable candidate, never as a substitute
-  for a paper transport test.
+- Keep the deterministic canary decision independent of model/GPU work.
+- Continue CPU preparation only for a distinct falsifiable candidate; do not
+  manufacture GPU work merely because KIS token recovery is external.
 
 ### Validation
 
-- Independently verify that test adapters cannot route live, all intended KIS
-  requests are allowlisted before transport, intent persistence precedes side
-  effects, unknown outcomes reconcile without duplicate submission, and web
-  code remains credential-free.
-- Check a real virtual-paper canary only for bounded execution facts
-  (acknowledgement/reconciliation/sanitized state), not a return claim.
+- Verify no live host/credential is reachable, no duplicate submission occurs
+  after a recovered/unknown run, canary artifacts remain outside Git, and web
+  code stays credential-free.
 
 ## Operating Boundaries
 
-- `KIS_PAPER_*` access and virtual orders are standing-authorized. A historical
-  one-shot marker, a factual raw-retention field, weak research evidence, or a
-  missing profitability report cannot disable the work.
-- Keep all generated artifacts under `D:\thericher-v2\model-artifacts` or
+- All `KIS_PAPER_*` reads and virtual submit/modify/cancel/reconciliation are
+  standing-authorized. No paper-capital, profitability, dashboard, trade-count,
+  or individual-call confirmation is required.
+- `KIS_LIVE_*`, live hosts, real-money behavior, paid purchases, and public
+  exposure remain unavailable.
+- Keep generated artifacts under `D:\thericher-v2\model-artifacts` or
   `/app/model_artifacts`; raw market data stays under `D:\market_data`; neither
   belongs in Git.
-- Do not read `KIS_LIVE_*`, construct a live route, buy data/services, expose a
-  public service, or print/persist secrets or account identifiers.
-- Technical correctness remains mandatory: paper-only routing, explicit limit
-  price/whole-share validation, intent-before-side-effect, idempotence, and
-  reconciliation before replacing an unknown broker result.
+- Retain technical correctness only: virtual-only routing, secret-safe output,
+  intent-before-side-effect, no retry after unknown outcome, and reconciliation
+  before a replacement.
 
 ## Verification
 
@@ -95,4 +94,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add KIS paper buy canary adapter`
+`Recover KIS paper canary authentication`

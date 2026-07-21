@@ -55,6 +55,8 @@ that would cross the 15% floor.
   consumers away from excluded sessions.
 - A hash-attested partial chunk may advance only after a fully validated first
   page; a wholly invalid page never advances its cursor.
+- KIS execution canary evidence and KIS market-data cache bytes are separate:
+  a canary does not duplicate raw broker payloads into `D:\market_data`.
 
 ## Recovery
 

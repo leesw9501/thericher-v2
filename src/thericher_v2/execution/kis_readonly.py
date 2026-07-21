@@ -206,6 +206,13 @@ class KisHttpTransport(Protocol):
     def request(self, request: KisHttpRequest) -> KisHttpResponse: ...
 
 
+class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Keep credential-bearing requests pinned to the virtual-paper host."""
+
+    def redirect_request(self, *_args: object, **_kwargs: object) -> None:
+        raise KisPaperReadOnlyError("redirect_rejected")
+
+
 class UrllibKisHttpTransport:
     """Small standard-library transport guarded by the same request allowlist."""
 
@@ -213,9 +220,14 @@ class UrllibKisHttpTransport:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
         self._timeout_seconds = timeout_seconds
+        # Credential-bearing paper requests must not inherit host proxy settings.
+        self._opener = urllib.request.build_opener(
+            urllib.request.ProxyHandler({}),
+            _RejectRedirectHandler(),
+        )
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
-        _validate_allowlisted_request(request)
+        validate_kis_paper_readonly_request(request)
         url = _request_url_with_query(request)
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
@@ -229,7 +241,7 @@ class UrllibKisHttpTransport:
             method=request.method,
         )
         try:
-            with urllib.request.urlopen(http_request, timeout=self._timeout_seconds) as response:
+            with self._opener.open(http_request, timeout=self._timeout_seconds) as response:
                 return KisHttpResponse(
                     status_code=response.status,
                     headers=dict(response.headers.items()),
@@ -510,12 +522,27 @@ class KisPaperDiscoveryOutcome:
 class KisPaperReadOnlyClient:
     """Fetch one fixed virtual-paper discovery snapshot through an injected transport."""
 
-    def __init__(self, *, config: KisPaperConfig, transport: KisHttpTransport) -> None:
+    def __init__(
+        self,
+        *,
+        config: KisPaperConfig,
+        transport: KisHttpTransport,
+        access_token: str | None = None,
+    ) -> None:
+        if access_token is not None and (not isinstance(access_token, str) or not access_token):
+            raise KisPaperReadOnlyError("access_token_invalid")
         self._config = config
         self._transport = transport
+        self._access_token = access_token
+
+    def _dispatch(self, request: KisHttpRequest) -> KisHttpResponse:
+        """Validate before every transport, including injected test transports."""
+
+        validate_kis_paper_readonly_request(request)
+        return self._transport.request(request)
 
     def snapshot(self) -> KisPaperReadOnlySnapshot:
-        access_token = self._issue_access_token()
+        access_token = self._access_token or self._issue_access_token()
         captured_at = datetime.now(UTC)
         open_orders = self._open_orders(access_token, captured_at)
         positions: list[KisPaperPosition] = []
@@ -533,7 +560,7 @@ class KisPaperReadOnlyClient:
         )
 
     def _issue_access_token(self) -> str:
-        response = self._transport.request(
+        response = self._dispatch(
             KisHttpRequest(
                 method="POST",
                 url=f"{self._config.base_url}{KIS_PAPER_TOKEN_PATH}",
@@ -718,7 +745,7 @@ class KisPaperReadOnlyClient:
             "custtype": "P",
             "tr_cont": continuation_header,
         }
-        return self._transport.request(
+        return self._dispatch(
             KisHttpRequest(
                 method="GET",
                 url=f"{self._config.base_url}{endpoint.path}",
@@ -941,7 +968,9 @@ def _require_exact_paper_base_url(base_url: str) -> None:
         raise KisPaperReadOnlyError("paper_host_required")
 
 
-def _validate_allowlisted_request(request: KisHttpRequest) -> None:
+def validate_kis_paper_readonly_request(request: KisHttpRequest) -> None:
+    """Validate one fixed read-only virtual-paper request before transport."""
+
     _require_exact_paper_base_url(_base_url_from_endpoint(request.url))
     parsed = urllib.parse.urlparse(request.url)
     if parsed.query or parsed.fragment:
@@ -953,6 +982,11 @@ def _validate_allowlisted_request(request: KisHttpRequest) -> None:
             or request.json_body is None
             or set(request.json_body) != {"grant_type", "appkey", "appsecret"}
             or request.json_body.get("grant_type") != "client_credentials"
+            or set(request.headers) != {"content-type", "accept"}
+            or request.headers.get("content-type") != "application/json"
+            or request.headers.get("accept") != "application/json"
+            or not request.json_body.get("appkey")
+            or not request.json_body.get("appsecret")
         ):
             raise KisPaperReadOnlyError("request_not_allowlisted")
         return
@@ -966,10 +1000,21 @@ def _validate_allowlisted_request(request: KisHttpRequest) -> None:
         endpoint is None
         or request.json_body is not None
         or set(request.query) != endpoint.query_keys
+        or set(request.headers)
+        != {"authorization", "appkey", "appsecret", "tr_id", "custtype", "tr_cont"}
         or request.headers.get("tr_id") != endpoint.tr_id
         or not request.headers.get("authorization", "").startswith("Bearer ")
+        or not request.headers.get("authorization", "").removeprefix("Bearer ")
+        or not request.headers.get("appkey")
+        or not request.headers.get("appsecret")
+        or request.headers.get("custtype") != "P"
+        or request.headers.get("tr_cont") not in {"", "N"}
     ):
         raise KisPaperReadOnlyError("request_not_allowlisted")
+
+
+# Keep the private compatibility name while new clients import the public contract.
+_validate_allowlisted_request = validate_kis_paper_readonly_request
 
 
 def _base_url_from_endpoint(url: str) -> str:

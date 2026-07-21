@@ -23,6 +23,11 @@ from thericher_v2.execution.paper_account_snapshot import (
     PaperAccountSnapshot,
     write_paper_account_snapshot,
 )
+from thericher_v2.execution.paper_canary_runtime import (
+    PAPER_CANARY_RUNTIME_TTL,
+    PaperCanaryRuntimeSnapshot,
+    write_paper_canary_runtime,
+)
 from thericher_v2.state import Event, EventStore
 
 
@@ -291,6 +296,50 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     assert stale_snapshot.kis_holdings_status == "unavailable"
 
 
+def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_path: Path) -> None:
+    events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    events.bootstrap()
+    emergency = EmergencyStore(tmp_path / "emergency.json")
+    observed_at = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
+    canary_path = tmp_path / "kis_paper_canary.json"
+    write_paper_canary_runtime(
+        PaperCanaryRuntimeSnapshot(
+            run_id="canary-1",
+            status="cancelled",
+            reconciliation_status="clean",
+            account_status="available",
+            position_count=0,
+            open_order_count=0,
+            stop_new_orders=False,
+            cancel_open_orders_requested=False,
+            observed_at=observed_at,
+            expires_at=observed_at + PAPER_CANARY_RUNTIME_TTL,
+            order_reference="canary-0123456789abcdef",
+        ),
+        canary_path,
+    )
+
+    snapshot = build_snapshot(
+        events,
+        emergency,
+        paper_canary_runtime_path=canary_path,
+        now=observed_at + timedelta(minutes=1),
+    )
+
+    assert snapshot.paper_canary_status == "cancelled"
+    assert snapshot.paper_canary_reconciliation_status == "clean"
+    assert snapshot.paper_canary_account_status == "available"
+    state = json.dumps(snapshot.to_dict())
+    assert "paper-app-secret" not in state
+    assert "raw-order-12345678" not in state
+
+    from thericher_v2.dashboard.view import render_dashboard
+
+    html = render_dashboard(snapshot, form_nonce="form-nonce")
+    assert "Virtual-paper canary" in html
+    assert "Canary reconciliation" in html
+
+
 def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
     with _dashboard(tmp_path) as (server, events, emergency):
         _record_local_fill(events, emergency)
@@ -457,6 +506,16 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_PAPER_APP_KEY" in kis_section
     assert "KIS_LIVE" not in kis_section
     assert ".env" not in kis_section
+
+    canary_section = compose.split("\n  kis-paper-canary:\n", maxsplit=1)[1].split(
+        "\n  paper-capital-proposal:\n", maxsplit=1
+    )[0]
+    assert 'profiles: ["kis-paper-canary"]' in canary_section
+    assert "--execute" in canary_section
+    assert "--cancel-after-submit" in canary_section
+    assert "KIS_PAPER_APP_KEY" in canary_section
+    assert "KIS_LIVE" not in canary_section
+    assert "thericher-v2-paper-canary-private:/app/private" in canary_section
 
     proposal_section = compose.split("\n  paper-capital-proposal:\n", maxsplit=1)[1].split(
         "\nvolumes:\n", maxsplit=1

@@ -118,11 +118,19 @@ source.
 
 ### Execution
 
-Local-paper replay and attribution are available. KIS Paper submission is
-authorized but no complete paper order transport exists yet; its next
-implementation must be paper-host-only, persist intent, and reconcile broker
-outcomes. The credential-free local dashboard may display sanitized state but
-cannot transmit orders.
+Local-paper replay and attribution are available. The first narrow KIS Paper
+canary now has a virtual-host-only US whole-share buy-limit adapter, durable
+intent state, no-retry reconciliation, and an accepted-order cancellation path.
+Its goal-owned `kis-paper-canary` Docker profile writes private recovery state
+to a dedicated volume and only sanitized account/canary state to the local web
+runtime. The dashboard cannot transmit orders or receive KIS credentials.
+
+The first live virtual-token attempt on 2026-07-21 returned `auth_rejected`
+from the KIS token boundary. No account snapshot or order was submitted. This
+is an external credential/application state to reconcile, not a paper-capital,
+research, or one-shot policy gate. The safe evidence is under
+`D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
+recovery state into Git.
 
 ## Legacy Simplification
 
@@ -144,7 +152,10 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. At its boundary,
-review the data contract, execution route readiness, research queues, GPU
-eligibility, disk capacity, and role ownership; make reversible no-cost changes
-autonomously and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. First restore the
+KIS virtual-token boundary if the operator refreshes the virtual application
+credentials; then reconcile the existing canary state before any replacement
+submission. At each boundary, review the data contract, execution route
+readiness, research queues, GPU eligibility, disk capacity, and role ownership;
+make reversible no-cost changes autonomously and escalate only a real remaining
+operator boundary.

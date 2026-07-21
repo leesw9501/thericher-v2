@@ -42,7 +42,9 @@ repeated independent work.
 - Engine Research has the single-shot
   `thericher-v2-engine-research-agent` worker.
 - Data has the single-shot `thericher-v2-data-agent` worker.
-- Execution has no executable worker yet.
+- Execution has the goal-owned `kis-paper-canary` Docker worker for one narrow
+  virtual-paper buy-limit/reconciliation cycle; it is not a general scheduler
+  or broker platform.
 - Temporary Codex sub-agents can implement or review disjoint role work during
   an active Codex task.
 - No repo-owned daemon, autonomous coordinator, or permanent LLM process

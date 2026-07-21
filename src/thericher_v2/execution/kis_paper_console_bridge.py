@@ -77,7 +77,7 @@ def run_kis_paper_console_bridge(
             config=config,
             transport=transport or UrllibKisHttpTransport(),
         ).snapshot()
-        final_snapshot = _complete_snapshot(
+        final_snapshot = paper_account_snapshot_from_kis_readonly(
             source_snapshot,
             observed_at=require_utc(clock(), "clock"),
         )
@@ -195,7 +195,7 @@ def recover_kis_paper_console_bridge_evidence(
     )
 
 
-def _complete_snapshot(
+def paper_account_snapshot_from_kis_readonly(
     source: KisPaperReadOnlySnapshot,
     *,
     observed_at: datetime,

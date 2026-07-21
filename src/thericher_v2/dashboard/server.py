@@ -91,6 +91,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.emergency_store,
                 self.server.mode,
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
+                paper_canary_runtime_path=self.server.paper_canary_runtime_path,
             )
             _html_response(
                 self,
@@ -104,6 +105,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.emergency_store,
                 self.server.mode,
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
+                paper_canary_runtime_path=self.server.paper_canary_runtime_path,
             )
             _json_response(self, HTTPStatus.OK, snapshot.to_dict())
         elif path == "/health":
@@ -268,6 +270,7 @@ class DashboardServer(ThreadingHTTPServer):
         token: str,
         mode: str,
         paper_account_snapshot_path: Path | None = None,
+        paper_canary_runtime_path: Path | None = None,
     ) -> None:
         super().__init__(address, DashboardHandler)
         self.event_store = event_store
@@ -275,6 +278,7 @@ class DashboardServer(ThreadingHTTPServer):
         self.token = token
         self.mode = mode
         self.paper_account_snapshot_path = paper_account_snapshot_path
+        self.paper_canary_runtime_path = paper_canary_runtime_path
         self.form_nonce = secrets.token_urlsafe(32)
         self.session_value = _session_value(token) if token else ""
 
@@ -377,6 +381,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path("runtime/state/paper_account_snapshot.json"),
     )
+    parser.add_argument(
+        "--paper-canary-runtime",
+        type=Path,
+        default=Path("runtime/state/kis_paper_canary.json"),
+    )
     parser.add_argument("--mode", default=os.environ.get("THERICHER_MODE", "off"))
     parser.add_argument("--token", default=os.environ.get("THERICHER_DASHBOARD_TOKEN", ""))
     return parser
@@ -393,6 +402,7 @@ def main() -> None:
         token=args.token,
         mode=args.mode,
         paper_account_snapshot_path=args.paper_account_snapshot,
+        paper_canary_runtime_path=args.paper_canary_runtime,
     )
     print(f"dashboard listening on http://{args.host}:{args.port}")
     server.serve_forever()

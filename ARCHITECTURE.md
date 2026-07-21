@@ -396,6 +396,14 @@ operator has standing-authorized KIS virtual-paper credential use, account and
 market-data reads, submit/modify/cancel, reconciliation, routine sizing, and
 goal-owned scheduling. KIS live remains a separately authorized mode.
 
+The first executable broker surface is deliberately a narrow canary, not a
+generic broker switch: one explicit US whole-share buy limit on the fixed
+virtual host, optional cancellation after acknowledgement, and account/open
+order/completion reconciliation. It persists private intent/recovery state
+before a side effect, never retries an unknown submit, and publishes only a
+sanitized runtime projection. This bounded path is an execution-learning tool;
+it neither promotes a model nor enables a live route.
+
 ## Safety Minimum
 
 Paper trading should be easy to repeat. Live trading should be hard to enable.
@@ -428,9 +436,9 @@ not prerequisites for starting bounded paper evidence collection.
 
 The dashboard is authenticated, local/LAN-bound, and mostly read-only. The
 existing Docker `web` service is a local monitor only; it neither reads KIS
-credentials nor calls a broker. A future KIS-paper console is a goal-owned
-Execution objective under standing paper authority, not an implicit capability
-of the web process.
+credentials nor calls a broker. It may render a credential-free virtual-paper
+canary projection produced by the separate goal-owned Execution service, but
+that does not grant the web process submission capability.
 
 Read:
 

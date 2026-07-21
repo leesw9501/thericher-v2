@@ -50,6 +50,8 @@ and generated artifacts only under `D:\thericher-v2\model-artifacts` or
   broker request.
 - Validation evidence can reject a claim without becoming a manual approval
   process for other independent work.
+- The first KIS paper canary takes a deterministic explicit buy decision only;
+  it is deliberately independent of learned-model or GPU readiness.
 
 ## Recovery
 
