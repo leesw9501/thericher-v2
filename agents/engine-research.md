@@ -90,7 +90,9 @@
   selection, a winner, or evidence of profitability.
 - Let a learned model emit an order, jointly tune graph layers on shared
   validation predictions, or treat a model count as a research outcome.
-- Add a scheduler, queue framework, artifact-specific job kind, or dependency.
+- Add an unowned scheduler, queue framework, artifact-specific job kind, or
+  dependency. A goal-owned schedule may run only an already eligible research
+  contract with explicit compute, evidence, stop, and recovery bounds.
 
 ## Resources
 

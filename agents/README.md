@@ -45,8 +45,9 @@ repeated independent work.
 - Execution has no executable worker yet.
 - Temporary Codex sub-agents can implement or review disjoint role work during
   an active Codex task.
-- No repo-owned daemon, scheduler, autonomous coordinator, or permanent LLM
-  process currently exists.
+- No repo-owned daemon, autonomous coordinator, or permanent LLM process
+  currently exists. Codex may run an external goal-owned schedule under the
+  current `AGENTS.md` policy; a schedule is not durable lane identity.
 
 The stateboard is the durable lane identity. A runtime sub-agent or worker is a
 bounded executor, not permanent memory.

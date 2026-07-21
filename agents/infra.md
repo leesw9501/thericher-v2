@@ -21,8 +21,9 @@ CI, or runtime reproducibility work is ready.
 - GPU/model mounts belong only to the research profile unless runtime inference
   later needs an explicit contract.
 - Infra changes do not select models or change execution-risk policy.
-- No scheduler, daemon, coordinator, dashboard expansion, notification loop, or
-  auto-commit service is currently approved.
+- No daemon, coordinator, dashboard expansion, notification loop, or auto-commit
+  service is currently approved. Goal-owned schedules are allowed under the
+  current `AGENTS.md` policy when an active engine objective needs one.
 
 ## Recovery
 

@@ -767,8 +767,9 @@ predeclared breadth batch may start only from a hash-bound dataset explicitly
 eligible for development training and a contract with fixed target, costs,
 temporal split, metrics, and stop rules. It then uses CPU baselines plus two
 fixed-seed MLP/TCN candidates, followed only by sensitivity/Claude-cleared
-depth and out-of-fold-only ensemble work. No scheduler or automatic refill is
-allowed, and idle is correct when the contract is absent. No remaining dataset
+depth and out-of-fold-only ensemble work. A goal-owned schedule may launch an
+already eligible contract, but it cannot automatically refill, rank, or promote
+candidates; idle is correct when the contract is absent. No remaining dataset
 currently meets those conditions for a new model batch.
 
 The static Norgate panel has now completed its one permitted engineering-only
