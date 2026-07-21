@@ -87,9 +87,17 @@ at
 523 symbols, 483 common daily sessions, 252,609 OHLCV rows from `2024-07-18`
 through `2026-06-22`. It is survivorship/availability selected with unverified
 adjustment semantics. Its manifest permits development-training preparation
-only; it is not model, GPU, ranking, PnL, paper-trading, PIT, or promotion
-evidence. Reuse its verified snapshot rather than parsing the Norgate database
-or downloading another copy.
+only; it is not model, GPU, ranking, paper-trading, PIT, or promotion evidence,
+and it makes no PnL claim. Reuse its verified snapshot rather than parsing the
+Norgate database or downloading another copy.
+
+`data.norgate_trial_development_panel` now exposes that snapshot through
+`load_verified_norgate_trial_development_panel_catalog`. It reuses the same
+hash-attested panel bytes to construct immutable per-symbol D1 `CatalogedBars`,
+preserves the original non-sequential candidate ranks, and returns the exact
+source scope and limitations. Its local smoke verified 523 symbols, 483
+sessions, 252,609 bars, and the original rank range 1 through 541 without any
+Norgate SDK, credential, network, GPU, or artifact-root access.
 
 The worker writes a raw snapshot and manifest before atomically moving a
 cursor. Its two-minute shared retry after a token event is observed source

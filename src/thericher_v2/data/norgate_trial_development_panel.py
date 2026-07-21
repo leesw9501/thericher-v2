@@ -12,14 +12,16 @@ import shutil
 import sys
 import uuid
 import warnings
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+from types import MappingProxyType
 from typing import Any
 
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.norgate_membership import (
     NorgateMembershipSnapshotResult,
     load_verified_norgate_sp500_membership_scope,
@@ -39,6 +41,21 @@ DEFAULT_NORGATE_TRIAL_DEVELOPMENT_PANEL_ROOT = (
 )
 NORGATE_TRIAL_DEVELOPMENT_PANEL_VERSION = "norgate-trial-broad-d1-panel-r1"
 DEFAULT_MINIMUM_SELECTED_SYMBOLS = 100
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR = (
+    DEFAULT_NORGATE_TRIAL_DEVELOPMENT_PANEL_ROOT
+    / "snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1"
+)
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_ID = (
+    "us_equities.norgate_trial_broad_development_panel.1d."
+    "snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1"
+)
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_HASH = (
+    "sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d"
+)
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SELECTED_SYMBOL_COUNT = 523
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_COMMON_SESSION_COUNT = 483
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_START = date(2024, 7, 18)
+FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_END = date(2026, 6, 22)
 _SNAPSHOT_SUFFIX = "-norgate-trial-broad-d1-panel-r1"
 _DATA_FILE = "panel_ohlcv_1d.csv.gz"
 _AVAILABILITY_FILE = "candidate_availability.csv"
@@ -83,11 +100,81 @@ class NorgateTrialDevelopmentPanelResult:
 
 
 @dataclass(frozen=True, slots=True)
+class NorgateTrialDevelopmentPanelSourceIdentity:
+    """Hash-bound source and parent identities for one read-only panel."""
+
+    snapshot_dir: Path
+    dataset_id: str
+    dataset_hash: str
+    manifest_hash: str
+    membership_dataset_id: str
+    membership_dataset_hash: str
+    calendar_dataset_id: str
+    calendar_dataset_hash: str
+    provider: str
+    interval: str
+    requested_stock_price_adjustment_setting: str
+    adjustment_semantics_verified: bool
+
+
+@dataclass(frozen=True, slots=True)
+class NorgateTrialDevelopmentPanelScope:
+    """Non-promotable source scope preserved with a loaded panel."""
+
+    development_panel_attested: bool
+    development_training_eligible: bool
+    point_in_time_eligible: bool
+    ranking_eligible: bool
+    sealed_holdout_eligible: bool
+    campaign_eligible: bool
+    model_eligible: bool
+    gpu_eligible: bool
+    paper_trading_eligible: bool
+
+
+@dataclass(frozen=True, slots=True)
+class NorgateTrialDevelopmentPanelCatalog:
+    """Immutable canonical D1 bars from one fully attested static development panel."""
+
+    source: NorgateTrialDevelopmentPanelSourceIdentity
+    scope: NorgateTrialDevelopmentPanelScope
+    candidate_count: int
+    selected_symbol_count: int
+    candidate_ranks_by_symbol: Mapping[str, int]
+    bars_by_symbol: Mapping[str, CatalogedBars]
+    common_sessions: tuple[date, ...]
+    source_limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
 class _CandidateAvailability:
     candidate_rank: int
     symbol: str
     status: str
     returned_row_count: int
+
+
+@dataclass(frozen=True, slots=True)
+class _AttestedPanelContents:
+    dataset_hash: str
+    selected_symbol_count: int
+    unavailable_count: int
+    session_mismatch_count: int
+    invalid_count: int
+    development_training_eligible: bool
+    norgate_package_version: str
+    free_percent: float
+    availability: tuple[_CandidateAvailability, ...]
+    selected_rows: tuple[tuple[int, Bar], ...]
+
+
+@dataclass(frozen=True, slots=True)
+class _AttestedNorgateTrialDevelopmentPanel:
+    result: NorgateTrialDevelopmentPanelResult
+    manifest: dict[str, Any]
+    common_sessions: tuple[date, ...]
+    availability: tuple[_CandidateAvailability, ...]
+    selected_rows: tuple[tuple[int, Bar], ...]
 
 
 BarLoader = Callable[[str, date, date], Sequence[Bar]]
@@ -211,6 +298,50 @@ def verify_norgate_trial_development_panel_snapshot(
 ) -> NorgateTrialDevelopmentPanelResult:
     """Re-attest a panel snapshot without Norgate, network, or token access."""
 
+    return _attest_norgate_trial_development_panel_snapshot(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    ).result
+
+
+def load_verified_norgate_trial_development_panel_catalog(
+    snapshot_dir: Path,
+    *,
+    expected_dataset_id: str,
+    expected_dataset_hash: str,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    repo_root: Path | None = None,
+) -> NorgateTrialDevelopmentPanelCatalog:
+    """Load immutable D1 series from one hash-attested static development panel.
+
+    This reader is deliberately offline: it needs neither the Norgate SDK nor
+    credentials, network access, a model-artifact root, or a broker client. The
+    verifier and returned bars share one in-memory panel byte buffer, so a later
+    file read cannot replace the data that was attested.
+    """
+
+    requested_dataset_id = _nonempty_text(expected_dataset_id, "expected dataset id")
+    requested_dataset_hash = _required_sha256(expected_dataset_hash, "expected dataset hash")
+    attested = _attest_norgate_trial_development_panel_snapshot(
+        snapshot_dir,
+        market_data_root=market_data_root,
+        repo_root=repo_root,
+    )
+    actual_dataset_id = _nonempty_text(attested.manifest.get("dataset_id"), "dataset id")
+    if actual_dataset_id != requested_dataset_id:
+        raise ValueError("Norgate development-panel catalog dataset id mismatch")
+    if attested.result.dataset_hash != requested_dataset_hash:
+        raise ValueError("Norgate development-panel catalog dataset hash mismatch")
+    return _catalog_from_attested_panel(attested)
+
+
+def _attest_norgate_trial_development_panel_snapshot(
+    snapshot_dir: Path,
+    *,
+    market_data_root: Path,
+    repo_root: Path | None,
+) -> _AttestedNorgateTrialDevelopmentPanel:
     snapshot = _validate_existing_snapshot(
         snapshot_dir,
         market_data_root=market_data_root,
@@ -253,24 +384,130 @@ def verify_norgate_trial_development_panel_snapshot(
         common_sessions=common_sessions,
         market_data_root=market_data_root,
     )
-    return NorgateTrialDevelopmentPanelResult(
+    result = NorgateTrialDevelopmentPanelResult(
         snapshot_dir=snapshot,
         membership_snapshot_dir=membership.snapshot_dir,
         calendar_snapshot_dir=calendar.snapshot_dir,
-        dataset_hash=details["dataset_hash"],
+        dataset_hash=details.dataset_hash,
         manifest_hash=_sha256(manifest_bytes),
         candidate_count=len(candidates),
-        selected_symbol_count=details["selected_symbol_count"],
-        unavailable_count=details["unavailable_count"],
-        session_mismatch_count=details["session_mismatch_count"],
-        invalid_count=details["invalid_count"],
+        selected_symbol_count=details.selected_symbol_count,
+        unavailable_count=details.unavailable_count,
+        session_mismatch_count=details.session_mismatch_count,
+        invalid_count=details.invalid_count,
         common_session_count=len(common_sessions),
         actual_start=common_sessions[0],
         actual_end=common_sessions[-1],
-        development_training_eligible=details["development_training_eligible"],
-        norgate_package_version=details["norgate_package_version"],
-        free_percent=details["free_percent"],
+        development_training_eligible=details.development_training_eligible,
+        norgate_package_version=details.norgate_package_version,
+        free_percent=details.free_percent,
     )
+    return _AttestedNorgateTrialDevelopmentPanel(
+        result=result,
+        manifest=manifest,
+        common_sessions=common_sessions,
+        availability=details.availability,
+        selected_rows=details.selected_rows,
+    )
+
+
+def _catalog_from_attested_panel(
+    attested: _AttestedNorgateTrialDevelopmentPanel,
+) -> NorgateTrialDevelopmentPanelCatalog:
+    result = attested.result
+    manifest = attested.manifest
+    source = _catalog_source_identity(manifest, result=result)
+    scope = _catalog_scope(
+        manifest.get("scope"),
+        development_training_eligible=result.development_training_eligible,
+    )
+    source_path = result.snapshot_dir / _DATA_FILE
+    rows_by_rank: dict[int, list[Bar]] = {}
+    for rank, bar in attested.selected_rows:
+        rows_by_rank.setdefault(rank, []).append(bar)
+
+    candidate_ranks_by_symbol: dict[str, int] = {}
+    bars_by_symbol: dict[str, CatalogedBars] = {}
+    for candidate in attested.availability:
+        if candidate.status != "selected":
+            continue
+        bars = tuple(rows_by_rank.get(candidate.candidate_rank, ()))
+        if candidate.symbol in candidate_ranks_by_symbol or not bars:
+            raise ValueError("Norgate development-panel catalog series linkage is invalid")
+        candidate_ranks_by_symbol[candidate.symbol] = candidate.candidate_rank
+        bars_by_symbol[candidate.symbol] = _cataloged_bars_from_verified_loader(
+            dataset_id=source.dataset_id,
+            dataset_hash=source.dataset_hash,
+            source_path=source_path,
+            bars=bars,
+        )
+
+    if (
+        len(candidate_ranks_by_symbol) != result.selected_symbol_count
+        or len(bars_by_symbol) != result.selected_symbol_count
+        or any(
+            tuple(bar.start_ts.date() for bar in series.bars) != attested.common_sessions
+            for series in bars_by_symbol.values()
+        )
+    ):
+        raise ValueError("Norgate development-panel catalog geometry is invalid")
+    limitations = manifest.get("limitations")
+    if limitations != list(_LIMITATIONS):
+        raise ValueError("Norgate development-panel catalog limitations are invalid")
+    return NorgateTrialDevelopmentPanelCatalog(
+        source=source,
+        scope=scope,
+        candidate_count=result.candidate_count,
+        selected_symbol_count=result.selected_symbol_count,
+        candidate_ranks_by_symbol=MappingProxyType(candidate_ranks_by_symbol),
+        bars_by_symbol=MappingProxyType(bars_by_symbol),
+        common_sessions=attested.common_sessions,
+        source_limitations=tuple(limitations),
+    )
+
+
+def _catalog_source_identity(
+    manifest: dict[str, Any],
+    *,
+    result: NorgateTrialDevelopmentPanelResult,
+) -> NorgateTrialDevelopmentPanelSourceIdentity:
+    membership = _mapping(manifest.get("membership_parent"), "membership parent")
+    calendar = _mapping(manifest.get("calendar_parent"), "calendar parent")
+    source_contract = _mapping(manifest.get("norgate_source_contract"), "source contract")
+    if source_contract.get("adjustment_semantics_verified") is not False:
+        raise ValueError("Norgate development-panel catalog source contract is invalid")
+    return NorgateTrialDevelopmentPanelSourceIdentity(
+        snapshot_dir=result.snapshot_dir,
+        dataset_id=_nonempty_text(manifest.get("dataset_id"), "dataset id"),
+        dataset_hash=result.dataset_hash,
+        manifest_hash=result.manifest_hash,
+        membership_dataset_id=_nonempty_text(membership.get("dataset_id"), "membership dataset id"),
+        membership_dataset_hash=_required_sha256(
+            membership.get("dataset_hash"), "membership dataset hash"
+        ),
+        calendar_dataset_id=_nonempty_text(calendar.get("dataset_id"), "calendar dataset id"),
+        calendar_dataset_hash=_required_sha256(
+            calendar.get("dataset_hash"), "calendar dataset hash"
+        ),
+        provider=_nonempty_text(source_contract.get("provider"), "source provider"),
+        interval=_nonempty_text(source_contract.get("interval"), "source interval"),
+        requested_stock_price_adjustment_setting=_nonempty_text(
+            source_contract.get("requested_stock_price_adjustment_setting"),
+            "requested stock price adjustment setting",
+        ),
+        adjustment_semantics_verified=False,
+    )
+
+
+def _catalog_scope(
+    value: object,
+    *,
+    development_training_eligible: bool,
+) -> NorgateTrialDevelopmentPanelScope:
+    expected = _scope(development_training_eligible)
+    if value != expected:
+        raise ValueError("Norgate development-panel catalog scope is invalid")
+    return NorgateTrialDevelopmentPanelScope(**expected)
 
 
 def _collect_panel_rows(
@@ -512,7 +749,7 @@ def _validate_snapshot_contents(
     calendar: NorgateTrialRawD1Result,
     common_sessions: tuple[date, ...],
     market_data_root: Path,
-) -> dict[str, Any]:
+) -> _AttestedPanelContents:
     _validate_parent_documents(
         manifest,
         membership=membership,
@@ -582,16 +819,18 @@ def _validate_snapshot_contents(
         raise ValueError("Norgate development-panel limitations are invalid")
     package = _mapping(manifest.get("norgate_package"), "package")
     storage = _mapping(manifest.get("storage"), "storage")
-    return {
-        "dataset_hash": dataset_hash,
-        "selected_symbol_count": selected_count,
-        "unavailable_count": counts["unavailable"],
-        "session_mismatch_count": counts["session_mismatch"],
-        "invalid_count": counts["invalid"],
-        "development_training_eligible": eligible,
-        "norgate_package_version": _nonempty_text(package.get("version"), "package version"),
-        "free_percent": _nonnegative_float(storage.get("free_percent"), "free percent"),
-    }
+    return _AttestedPanelContents(
+        dataset_hash=dataset_hash,
+        selected_symbol_count=selected_count,
+        unavailable_count=counts["unavailable"],
+        session_mismatch_count=counts["session_mismatch"],
+        invalid_count=counts["invalid"],
+        development_training_eligible=eligible,
+        norgate_package_version=_nonempty_text(package.get("version"), "package version"),
+        free_percent=_nonnegative_float(storage.get("free_percent"), "free percent"),
+        availability=availability,
+        selected_rows=selected_rows,
+    )
 
 
 def _validate_parent_documents(

@@ -3551,3 +3551,31 @@ positive average without a robust lower bound is not a trading claim. Refusing
 the burned suffix at the core boundary preserves the useful historical result
 without treating it as a route to repetitive tuning or a blocker for independent
 paper and data work.
+
+## 2026-07-22 - Expose the static Norgate trial panel as read-only Bar series
+
+Decision: add one public loader in `data.norgate_trial_development_panel` for
+the existing Norgate trial broad-D1 snapshot. It reuses the current verifier and
+parses the same hash-attested panel byte buffer into immutable per-symbol D1
+`CatalogedBars`; no Norgate SDK, network, credential, database parsing, cache
+write, model artifact, KIS call, GPU job, selector, PnL path, or paper order is
+involved. The loader preserves the original candidate ranks rather than
+renumbering the 523 selected symbols, retains the exact source scope and
+limitations, and requires caller-pinned dataset ID/hash.
+
+The actual local snapshot re-attested as 523 symbols, 483 common sessions, and
+252,609 rows from `2024-07-18` through `2026-06-22`; selected ranks span 1..541
+because 18 candidate ranks are absent. The manifest's negative scope remains
+unchanged: model, GPU, paper, campaign, ranking, point-in-time, and sealed
+holdout uses are false. It makes no PnL or adjustment-semantic claim.
+
+Claude's earlier direction check was `uncertain` only because its isolated
+environment could not inspect the local D: snapshot. Direct manifest and
+hash attestation resolved that factual question. Independent review found no
+P1/P2 regression; its byte-swap and caller-identity concerns are now focused
+tests rather than a new process layer.
+
+Reason: the existing Norgate snapshot already had a verified source contract,
+but only private parser access. A small immutable series boundary makes its
+engineering data reusable without duplicating feature pipelines or laundering a
+survivorship-selected trial panel into strategy evidence.

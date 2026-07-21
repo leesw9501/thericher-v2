@@ -2,91 +2,83 @@
 
 ## Objective
 
-Expose the existing Norgate trial broad D1 panel through one reusable,
-read-only, hash-attested public `Bar`-series loader.
+Run one bounded KIS virtual-paper **read-only reconciliation** and refresh the
+sanitized account/position/open-order facts used by the existing canary.
 
-This is a Data foundation objective. It makes the already stored external panel
-usable by future engineering without duplicating its feature artifact or
-turning a static trial dataset into a trading, model, or GPU claim.
+This objective resolves the current `auth_rejected` recovery fact. It makes no
+order request and does not turn virtual-paper access into a live route. A fresh
+successful snapshot makes the following bounded canary-submit objective ready
+without a new operator approval.
 
 ## Required First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, and the
-   active stateboards under `agents/`.
-3. Read the existing implementation and tests before editing:
-   - `src/thericher_v2/data/norgate_trial_development_panel.py`
-   - `src/thericher_v2/data/norgate_broad_development_artifact.py`
-   - `tests/test_norgate_trial_development_panel.py`
-   - `tests/test_norgate_broad_development_artifact.py`
-4. Read only the manifest and required local snapshot files under the frozen
-   path below. Do not recursively scan `D:` or parse the Norgate database.
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and all active
+   stateboards under `agents/`.
+3. Read before any external call:
+   - `src/thericher_v2/execution/kis_readonly.py`
+   - `src/thericher_v2/execution/kis_paper_console_bridge.py`
+   - `src/thericher_v2/execution/kis_paper_canary.py`
+   - their focused tests.
+4. Inspect only sanitized evidence under
+   `D:\thericher-v2\model-artifacts\execution`; do not read private canary
+   state, `.env`, token values, account identifiers, or raw broker bodies.
 
-## Frozen Source Contract
+## Standing Authority And Scope
 
-- Snapshot:
-  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
-- Dataset ID:
-  `us_equities.norgate_trial_broad_development_panel.1d.snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
-- Panel SHA-256:
-  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
-- 523 symbols, 483 common sessions, 252,609 D1 OHLCV rows,
-  `2024-07-18` through `2026-06-22`.
-- `development_training_eligible=true`; `model_eligible=false`,
-  `gpu_eligible=false`, `paper_trading_eligible=false`, `pnl_eligible=false`,
-  `ranking_eligible=false`, and `point_in_time_eligible=false`.
-- The source is static/survivorship/availability selected and adjustment
-  semantics are unverified. Those are source facts, not reasons to re-download
-  or silently repair data.
+- The operator has standing-authorized `KIS_PAPER_*` virtual-paper token,
+  account, position, open-order, and reconciliation calls for this private
+  project.
+- Use only the fixed KIS virtual-paper host and allowlisted read-only endpoints
+  through the existing credential-bearing console bridge.
+- Do not read `KIS_LIVE_*`, construct a live route, print secrets/account
+  identifiers/raw responses, submit/modify/cancel an order, or invoke the
+  canary submit service in this objective.
+- Generated sanitized evidence remains under
+  `D:\thericher-v2\model-artifacts\execution`; Git receives only aggregate,
+  non-secret recovery facts.
 
 ## Required Work
 
-### Data Agent
+### Execution Agent
 
-1. Reuse the existing Norgate snapshot verifier and CSV parser to add one
-   public immutable catalog/series loader. It must return candidate rank,
-   hash-attestation identity, common sessions, source limitations, scope flags,
-   and symbol-keyed canonical `Bar` series.
-2. Keep all input bytes at `D:\market_data`; the loader writes no market data,
-   model artifact, or cache inside Git.
-3. Reject manifest, panel hash, schema, symbol/rank, duplicate, ordering, or
-   common-session drift before exposing any series.
-4. Preserve the negative source scope in the returned object. Do not modify the
-   Norgate database, download data, construct a PIT universe, infer adjustment
-   semantics, or treat dropped symbols as membership evidence.
+1. Classify the existing canary state as `reconcile`: its latest intents are
+   `intent_recorded` with no broker order reference or submit evidence, not an
+   unknown submitted order.
+2. Run exactly one existing read-only bridge invocation:
 
-### Engine Research Agent
+   ```powershell
+   docker compose --profile kis-readonly run --rm --no-deps kis-readonly
+   ```
 
-- Review the new loader only as an engineering input contract. Do not build or
-  run a selector, model, ensemble, PnL analysis, GPU job, CUDA mode, paper
-  order, KIS call, or promotion workflow from this panel.
-- Record the previous Norgate engineering-only validation as historical context
-  if useful, but do not reproduce its feature artifact or make a new result
-  claim.
+3. Inspect the resulting sanitized runtime/evidence projection only.
+   - On `complete`, record only freshness and safe aggregate facts such as
+     position/open-order counts and currencies; do not submit an order here.
+   - On `unavailable`, record only the allowlisted reason code and classify the
+     result as `reconcile`; do not retry in a loop or substitute any credential.
+4. Update the Execution stateboard and handoff with the recovery classification.
+   A successful read-only result should make one narrow virtual-paper canary
+   submit/cancel/reconcile cycle the next objective. An unavailable result must
+   not block independent Data or Research work.
 
 ### Validation
 
-- Add focused offline tests proving no credential, network, Norgate SDK, KIS,
-  GPU, or artifact-root access is required.
-- Cover the frozen external manifest/panel smoke when available and hermetic
-  fixtures for each rejection path.
-- Verify the public object cannot misreport the source as model/GPU/PnL/paper
-  eligible.
+- Preserve focused tests proving virtual-host-only routing, secret-safe
+  projection, read-only bridge behavior, and no order call from the bridge.
+- Add a focused regression only if the real bridge result exposes an actual
+  implementation gap. Do not add a report family or retry worker.
 
 ## Boundaries
 
-- No KIS call, credential read, broker action, data download, paid service,
-  Norgate database parsing, public service, model training, GPU work, or live
-  behavior is needed for this objective.
-- Do not introduce a second Norgate feature pipeline, a scheduler, report
-  family, or per-agent workflow.
-- The prior Claude check was `uncertain` because its environment could not
-  verify the local D: snapshot; local manifest attestation resolved that factual
-  question. Retain its valid limits: static-survivorship data is development
-  plumbing only, and unverified adjustment semantics prohibit strategy claims.
-- Ask Claude for a fresh short falsification check only if implementation needs
-  to widen this source contract or introduce a new reusable runtime beyond this
-  bounded read-only loader.
+- No live behavior, paid service, public service, model change, GPU work, market
+  data download, paper submit/modify/cancel, or capital decision is part of this
+  objective.
+- `auth_rejected` is an external integration fact, not an approval gate. Do not
+  invent a credential, inspect secret values, or replace virtual credentials
+  with live ones.
+- Ask Claude only if an unexpected broker/position inconsistency changes the
+  recovery interpretation or if a future objective proposes submission after an
+  ambiguous outcome. A normal read-only outcome needs no review ceremony.
 
 ## Verification
 
@@ -99,4 +91,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Expose Norgate trial broad panel loader`
+`Reconcile KIS paper account state`

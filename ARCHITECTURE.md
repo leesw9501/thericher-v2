@@ -320,6 +320,14 @@ and can be replayed before its derived SQLite view is rebuilt at the end of a
 bounded research job. A co-located external `run.json` pins the dataset,
 strategy, costs, event hash, and code revision for each bounded run.
 
+The static Norgate trial broad panel has a separate public offline consumption
+boundary in `data.norgate_trial_development_panel`. It reuses the source
+verifier's one hash-attested byte buffer to expose immutable, per-symbol D1
+`CatalogedBars`, original candidate ranks, and the exact negative source scope.
+It is reusable data plumbing only: its survivorship-selected static universe and
+unverified adjustment semantics do not become a model, ranking, PnL, GPU, or
+paper-trading input by passing through this loader.
+
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.
 

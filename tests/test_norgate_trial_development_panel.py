@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import builtins
+import gzip
+import hashlib
 import json
+import os
 import shutil
 import socket
 import subprocess
@@ -13,11 +17,21 @@ from typing import Any
 
 import pytest
 
+import thericher_v2.data.norgate_trial_development_panel as panel_module
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.local import CatalogedBars
 from thericher_v2.data.norgate_membership import build_norgate_sp500_membership_snapshot
 from thericher_v2.data.norgate_trial_development_panel import (
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_COMMON_SESSION_COUNT,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_HASH,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_ID,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_END,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SELECTED_SYMBOL_COUNT,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR,
+    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_START,
     build_norgate_trial_development_panel_snapshot,
     default_norgate_trial_development_panel_snapshot_dir,
+    load_verified_norgate_trial_development_panel_catalog,
     verify_norgate_trial_development_panel_snapshot,
 )
 from thericher_v2.data.norgate_trial_raw_d1 import (
@@ -216,6 +230,267 @@ def test_default_destination_is_external() -> None:
     )
 
 
+def test_loads_read_only_catalog_without_network_sdk_credentials_or_artifacts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    result = _build(destination, root, repo, membership, calendar)
+    artifact_root = tmp_path / "model-artifacts"
+    before = _file_bytes(root)
+
+    def fail(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("catalog loader crossed a forbidden boundary")
+
+    original_import = builtins.__import__
+    original_read_text = Path.read_text
+
+    def guard_import(name: str, *args: object, **kwargs: object) -> object:
+        if name == "norgatedata" or name.startswith("norgatedata."):
+            raise AssertionError("catalog loader must not import norgatedata")
+        return original_import(name, *args, **kwargs)
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.startswith(".env"):
+            raise AssertionError("catalog loader must not read credentials")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setenv("THERICHER_HOST_MODEL_ARTIFACT_ROOT", str(artifact_root))
+    monkeypatch.setenv("THERICHER_MODEL_ARTIFACT_ROOT", str(artifact_root))
+    monkeypatch.setattr(builtins, "__import__", guard_import)
+    monkeypatch.setattr(socket, "create_connection", fail)
+    monkeypatch.setattr(subprocess, "run", fail)
+    monkeypatch.setattr(os, "getenv", fail)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+
+    catalog = load_verified_norgate_trial_development_panel_catalog(
+        destination,
+        expected_dataset_id=_dataset_id(destination),
+        expected_dataset_hash=result.dataset_hash,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    assert catalog.source.dataset_id == _dataset_id(destination)
+    assert catalog.source.dataset_hash == result.dataset_hash
+    assert catalog.source.manifest_hash == result.manifest_hash
+    assert catalog.source.provider == "Norgate Data"
+    assert catalog.source.interval == "D"
+    assert catalog.source.adjustment_semantics_verified is False
+    assert catalog.candidate_count == 3
+    assert catalog.selected_symbol_count == 2
+    assert dict(catalog.candidate_ranks_by_symbol) == {"AAA": 1, "BBB": 2}
+    assert tuple(catalog.bars_by_symbol) == ("AAA", "BBB")
+    assert all(isinstance(series, CatalogedBars) for series in catalog.bars_by_symbol.values())
+    assert all(
+        series.dataset_hash == result.dataset_hash
+        and series.source_path == destination / "panel_ohlcv_1d.csv.gz"
+        and tuple(bar.start_ts.date() for bar in series.bars) == catalog.common_sessions
+        for series in catalog.bars_by_symbol.values()
+    )
+    assert tuple(type(catalog.scope).__dataclass_fields__) == (
+        "development_panel_attested",
+        "development_training_eligible",
+        "point_in_time_eligible",
+        "ranking_eligible",
+        "sealed_holdout_eligible",
+        "campaign_eligible",
+        "model_eligible",
+        "gpu_eligible",
+        "paper_trading_eligible",
+    )
+    assert catalog.scope.development_panel_attested is True
+    assert catalog.scope.development_training_eligible is True
+    assert catalog.scope.point_in_time_eligible is False
+    assert catalog.scope.ranking_eligible is False
+    assert catalog.scope.sealed_holdout_eligible is False
+    assert catalog.scope.campaign_eligible is False
+    assert catalog.scope.model_eligible is False
+    assert catalog.scope.gpu_eligible is False
+    assert catalog.scope.paper_trading_eligible is False
+    with pytest.raises(TypeError):
+        catalog.candidate_ranks_by_symbol["TAMPERED"] = 4  # type: ignore[index]
+    with pytest.raises(TypeError):
+        catalog.bars_by_symbol["TAMPERED"] = catalog.bars_by_symbol["AAA"]  # type: ignore[index]
+    assert _file_bytes(root) == before
+    assert not artifact_root.exists()
+
+
+def test_catalog_preserves_nonsequential_candidate_ranks(tmp_path: Path) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+
+    def load_bars(symbol: str, _start: date, _end: date) -> Sequence[Bar]:
+        if symbol == "BBB":
+            raise RuntimeError("unavailable")
+        return _bars(symbol)
+
+    result = _build(
+        destination,
+        root,
+        repo,
+        membership,
+        calendar,
+        load_bars=load_bars,
+    )
+    catalog = load_verified_norgate_trial_development_panel_catalog(
+        destination,
+        expected_dataset_id=_dataset_id(destination),
+        expected_dataset_hash=result.dataset_hash,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    assert dict(catalog.candidate_ranks_by_symbol) == {"AAA": 1, "CCC": 3}
+    assert tuple(catalog.bars_by_symbol) == ("AAA", "CCC")
+    assert catalog.bars_by_symbol["CCC"].bars == tuple(_bars("CCC"))
+
+
+def test_catalog_requires_matching_expected_identity(tmp_path: Path) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    result = _build(destination, root, repo, membership, calendar)
+
+    with pytest.raises(ValueError, match="dataset id mismatch"):
+        load_verified_norgate_trial_development_panel_catalog(
+            destination,
+            expected_dataset_id="unexpected.dataset",
+            expected_dataset_hash=result.dataset_hash,
+            market_data_root=root,
+            repo_root=repo,
+        )
+    with pytest.raises(ValueError, match="dataset hash mismatch"):
+        load_verified_norgate_trial_development_panel_catalog(
+            destination,
+            expected_dataset_id=_dataset_id(destination),
+            expected_dataset_hash="sha256:" + "0" * 64,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_catalog_uses_verified_panel_bytes_after_source_file_swap(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    result = _build(destination, root, repo, membership, calendar)
+    original_read_verified_file = panel_module._read_verified_file
+
+    def swap_after_verified_read(
+        snapshot: Path,
+        document: object,
+        *,
+        expected_name: str,
+        label: str,
+    ) -> bytes:
+        data = original_read_verified_file(
+            snapshot,
+            document,
+            expected_name=expected_name,
+            label=label,
+        )
+        if label == "panel data":
+            (destination / "panel_ohlcv_1d.csv.gz").write_bytes(b"replaced-after-attestation")
+        return data
+
+    monkeypatch.setattr(panel_module, "_read_verified_file", swap_after_verified_read)
+    catalog = load_verified_norgate_trial_development_panel_catalog(
+        destination,
+        expected_dataset_id=_dataset_id(destination),
+        expected_dataset_hash=result.dataset_hash,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    assert tuple(catalog.bars_by_symbol) == ("AAA", "BBB")
+    assert catalog.bars_by_symbol["AAA"].bars == tuple(_bars("AAA"))
+
+
+@pytest.mark.parametrize(
+    ("mutate", "message"),
+    [
+        (lambda value: value.replace("candidate_rank", "candidate_position", 1), "schema"),
+        (lambda value: value.replace("\n1,AAA,", "\n2,AAA,", 1), "ordering"),
+        (lambda value: value.replace("\n1,AAA,", "\n1,TAMPERED,", 1), "selected rows"),
+        (
+            lambda value: value.replace(
+                "\n1,AAA,2024-01-03,", "\n1,AAA,2024-01-02,", 1
+            ),
+            "ordering",
+        ),
+        (
+            lambda value: value.replace(
+                "\n1,AAA,2024-01-03,", "\n1,AAA,2024-01-04,", 1
+            ),
+            "selected rows",
+        ),
+    ],
+    ids=("schema", "rank", "symbol", "duplicate", "common-session"),
+)
+def test_catalog_rejects_self_consistent_semantic_panel_corruption(
+    tmp_path: Path,
+    mutate: Callable[[str], str],
+    message: str,
+) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    _build(destination, root, repo, membership, calendar)
+    tampered_hash = _rewrite_panel_data(destination, mutate)
+
+    with pytest.raises(ValueError, match=message):
+        load_verified_norgate_trial_development_panel_catalog(
+            destination,
+            expected_dataset_id=_dataset_id(destination),
+            expected_dataset_hash=tampered_hash,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_catalog_rejects_panel_hash_tampering(tmp_path: Path) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    result = _build(destination, root, repo, membership, calendar)
+    data_path = destination / "panel_ohlcv_1d.csv.gz"
+    data_path.write_bytes(data_path.read_bytes() + b"tampered")
+
+    with pytest.raises(ValueError, match="panel data hash mismatch"):
+        load_verified_norgate_trial_development_panel_catalog(
+            destination,
+            expected_dataset_id=_dataset_id(destination),
+            expected_dataset_hash=result.dataset_hash,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_loads_frozen_external_panel_when_available() -> None:
+    if not FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR.is_dir():
+        pytest.skip("frozen Norgate trial panel is not available on this host")
+
+    catalog = load_verified_norgate_trial_development_panel_catalog(
+        FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR,
+        expected_dataset_id=FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_ID,
+        expected_dataset_hash=FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_HASH,
+    )
+
+    assert catalog.source.snapshot_dir == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR
+    assert (
+        catalog.selected_symbol_count
+        == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SELECTED_SYMBOL_COUNT
+    )
+    assert (
+        len(catalog.bars_by_symbol)
+        == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SELECTED_SYMBOL_COUNT
+    )
+    assert (
+        len(catalog.common_sessions)
+        == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_COMMON_SESSION_COUNT
+    )
+    assert catalog.common_sessions[0] == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_START
+    assert catalog.common_sessions[-1] == FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_END
+    assert sum(len(series.bars) for series in catalog.bars_by_symbol.values()) == 252_609
+    assert catalog.scope.model_eligible is False
+    assert catalog.scope.gpu_eligible is False
+    assert catalog.scope.paper_trading_eligible is False
+
+
 def _parents(tmp_path: Path) -> tuple[Path, Path, Path, Path, Path]:
     root = tmp_path / "market_data"
     root.mkdir(parents=True)
@@ -316,3 +591,33 @@ def _write_manifest(path: Path, manifest: dict[str, Any]) -> None:
         json.dumps(manifest, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+def _dataset_id(snapshot: Path) -> str:
+    return f"us_equities.norgate_trial_broad_development_panel.1d.{snapshot.name}"
+
+
+def _file_bytes(root: Path) -> dict[Path, bytes]:
+    return {
+        path.relative_to(root): path.read_bytes()
+        for path in sorted(root.rglob("*"))
+        if path.is_file()
+    }
+
+
+def _rewrite_panel_data(snapshot: Path, mutate: Callable[[str], str]) -> str:
+    data_path = snapshot / "panel_ohlcv_1d.csv.gz"
+    source = gzip.decompress(data_path.read_bytes()).decode("utf-8")
+    rewritten = mutate(source)
+    if rewritten == source:
+        raise AssertionError("test mutation did not alter panel data")
+    data = gzip.compress(rewritten.encode("utf-8"), mtime=0)
+    data_path.write_bytes(data)
+    digest = "sha256:" + hashlib.sha256(data).hexdigest()
+    manifest_path = snapshot / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["dataset_hash"] = digest
+    manifest["files"]["panel_ohlcv"]["sha256"] = digest
+    manifest["files"]["panel_ohlcv"]["size_bytes"] = len(data)
+    _write_manifest(manifest_path, manifest)
+    return digest

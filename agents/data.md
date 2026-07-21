@@ -21,7 +21,8 @@ Own the current KIS-native daily cache and its future reusable loaders.
   It contains 523 symbols x 483 common D1 sessions from `2024-07-18` through
   `2026-06-22`, but is static/survivorship selected with unverified adjustment
   semantics. Its manifest permits development-training preparation only;
-  `model`, `gpu`, `paper_trading`, `pnl`, `ranking`, and PIT scope remain false.
+  `model`, `gpu`, `paper_trading`, `ranking`, and PIT scope remain false, and
+  the source makes no PnL claim.
 
 ## Ready Queue
 
@@ -39,10 +40,6 @@ Own the current KIS-native daily cache and its future reusable loaders.
    documented IWM row-quality issue without source mixing or hidden repair.
 5. Design the next reusable raw-minute cache lane from observed KIS behavior;
    do not resurrect terminal metadata-only probes.
-6. Expose the existing Norgate trial panel through one public read-only,
-   hash-attested immutable `Bar`-series loader by reusing its existing snapshot
-   verifier and parser. Do not duplicate its feature artifact, parse the trial
-   database, download data, or widen its negative scope flags.
 
 ## Authority And Boundaries
 
@@ -74,6 +71,12 @@ that would cross the 15% floor.
   complete row-fingerprint map, and committed row count. It merely omits later
   `Bar` construction, so a frozen consumer cannot accidentally carry a burned
   suffix into its process.
+- `load_verified_norgate_trial_development_panel_catalog` exposes the existing
+  static Norgate trial snapshot as immutable per-symbol D1 `CatalogedBars` with
+  original candidate ranks, exact source scope, lineage identity, and
+  limitations. It validates and parses the same hash-attested panel bytes; it
+  neither imports the Norgate SDK nor writes artifacts/data. Its actual local
+  smoke found 523 symbols, 483 sessions, 252,609 bars, and rank range 1..541.
 - A hash-attested partial chunk may advance only after a fully validated first
   page; a wholly invalid page never advances its cursor.
 - KIS execution canary evidence and KIS market-data cache bytes are separate:
