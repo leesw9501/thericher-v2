@@ -18,11 +18,6 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataClient,
     KisPaperMarketDataConfig,
 )
-from thericher_v2.execution.kis_minute_qualification import (
-    mark_external_one_shot_network_started,
-    mark_external_one_shot_summary_written,
-    reserve_external_one_shot_attempt,
-)
 from thericher_v2.execution.kis_private_daily_collector import (
     KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
     KisPaperPrivateDailyCollectionResult,
@@ -286,45 +281,6 @@ def test_private_daily_cache_stays_outside_git(tmp_path: Path) -> None:
             run_id="20260721T180003Z",
             repo_root=repo_root,
         )
-
-
-def test_generic_one_shot_can_record_raw_retention_without_rewriting_history(
-    tmp_path: Path,
-) -> None:
-    repo_root = tmp_path / "repo"
-    repo_root.mkdir()
-    control_root = tmp_path / "control"
-    objective_id = "raw-cache-control-test-v1"
-
-    marker = reserve_external_one_shot_attempt(
-        control_root=control_root,
-        repo_root=repo_root,
-        objective_id=objective_id,
-        observed_at=_OBSERVED_AT,
-        raw_market_data_retained=True,
-    )
-    mark_external_one_shot_network_started(
-        control_root=control_root,
-        repo_root=repo_root,
-        objective_id=objective_id,
-        observed_at=_OBSERVED_AT,
-    )
-    mark_external_one_shot_summary_written(
-        control_root=control_root,
-        repo_root=repo_root,
-        objective_id=objective_id,
-        observed_at=_OBSERVED_AT,
-        summary_hash="sha256:unit",
-        result_status="observed",
-    )
-
-    assert json.loads(marker.read_text(encoding="utf-8"))["raw_market_data_retained"] is True
-    ledger = next((control_root / "ledger").glob("*.jsonl"))
-    assert all(
-        json.loads(line)["raw_market_data_retained"] is True
-        for line in ledger.read_text(encoding="utf-8").splitlines()
-        if json.loads(line).get("objective_id") == objective_id
-    )
 
 
 def _client(transport: _RecordingTransport) -> KisPaperMarketDataClient:

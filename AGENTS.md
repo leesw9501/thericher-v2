@@ -24,7 +24,7 @@ Operator -> Codex Orchestrator -> Role Agents
 
 ### Operator
 
-The operator owns business and risk authority. Ask before:
+The operator owns the remaining business and live-risk authority. Ask only before:
 
 - reading or using `KIS_LIVE_*`, enabling real-money behavior, or allocating
   live capital,
@@ -34,12 +34,17 @@ The operator owns business and risk authority. Ask before:
 - replacing a major framework or runtime.
 
 The operator does not choose routine lane scheduling, Git actions, bounded
-experiment order, or ordinary implementation details.
+experiment order, ordinary implementation details, KIS Paper work, or private
+raw-data retention.
 
 `KIS_PAPER_*` credential use, account and market-data reads, paper order
 submit/modify/cancel, paper sizing, and goal-owned schedules are standing
 operator authorization for this private project. They do not require a new
 capital-envelope, profitability, report, or manual-approval gate.
+
+Default to action for private, no-cost work that stays inside this authority.
+Record limitations as evidence and fix technical faults, but do not turn either
+into a new approval process. Actual live-money behavior remains the hard stop.
 
 ### Codex Orchestrator
 
@@ -156,8 +161,8 @@ Claude must challenge these bias-prone decisions before they are relied on:
 - an unexpectedly strong result or a claim that materially exceeds a naive
   baseline,
 - selecting an ensemble whose members may share errors, data, or leakage,
-- introducing a new KIS Paper order transport, enabling KIS live, proposing
-  live capital, or changing material execution-risk limits,
+- changing paper-vs-live route isolation, enabling KIS live, proposing live
+  capital, or changing material execution-risk limits,
 - resuming after an unexplained broker, position, data-corruption, or recovery
   incident,
 - adding a scheduler that materially widens external side effects beyond its
@@ -215,7 +220,7 @@ The Data Agent may acquire useful data without asking when all are true:
 - acquisition is bounded, deduplicated, and stored on `D:`.
 
 The standing `KIS_PAPER_*` authorization is the explicit private-credential
-exception for named KIS Paper data work. It does not relax paid-source,
+exception for all private KIS Paper data work. It does not relax paid-source,
 unclear-rights, public-serving, or `KIS_LIVE_*` authority.
 
 Warn before projected free space falls below 20 percent. Do not start new large
@@ -262,12 +267,14 @@ must remain local and unserved: no publication, redistribution, or third-party
 API/dashboard exposure. Stop the affected cache and escalate if an applicable
 KIS or exchange term is found to prohibit storage or retention.
 
-Paper work has no profitability, report, dashboard, trade-count, or manual
-capital-approval gate. Keep only the technical invariants that make a paper
-broker event truthful and recoverable: explicit paper-vs-live routing, no secret
-output, persisted idempotent intent before a paper side effect, and
+Paper work has no profitability, report, dashboard, trade-count, raw-retention,
+or manual-capital-approval gate. Keep only the technical invariants that make a
+paper broker event truthful and recoverable: explicit paper-vs-live routing, no
+secret output, persisted idempotent intent before a paper side effect, and
 reconciliation before an unknown submission outcome is retried. These are
-implementation properties, not operator checkpoints.
+implementation properties, not operator checkpoints. A raw-retention field
+describes whether a particular result wrote raw data; it never grants or removes
+collection authority.
 
 ## Agent Memory And Recovery
 

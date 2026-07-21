@@ -649,10 +649,25 @@ def test_dotenv_loader_rejects_nonempty_dashboard_value_without_reading_the_line
         load_kis_paper_market_data_config(dotenv_path)
 
 
-def test_dotenv_loader_requires_off_mode_before_the_paper_credentials(tmp_path: Path) -> None:
+def test_dotenv_loader_accepts_kis_paper_mode_before_the_paper_credentials(tmp_path: Path) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_text(
-        "THERICHER_MODE=local_simulation\n"
+        "THERICHER_MODE=kis_paper\n"
+        "KIS_PAPER_APP_KEY=paper-key\n"
+        "KIS_PAPER_APP_SECRET=paper-secret\n",
+        encoding="utf-8",
+    )
+
+    config = load_kis_paper_market_data_config(dotenv_path)
+
+    assert config.app_key == "paper-key"
+    assert config.app_secret == "paper-secret"
+
+
+def test_dotenv_loader_rejects_live_mode_before_reading_paper_credentials(tmp_path: Path) -> None:
+    dotenv_path = tmp_path / ".env"
+    dotenv_path.write_text(
+        "THERICHER_MODE=kis_live\n"
         "KIS_PAPER_APP_KEY=paper-key\n"
         "KIS_PAPER_APP_SECRET=paper-secret\n",
         encoding="utf-8",

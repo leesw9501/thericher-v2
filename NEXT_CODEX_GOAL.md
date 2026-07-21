@@ -61,11 +61,13 @@ unavailable.
 
 ### Execution Agent
 
-- Keep the daily baseline broker-free. Translate only eligible deterministic
-  decisions to local-paper intents/fills; do not submit a KIS order in this
-  objective.
-- Preserve local-paper replay, event provenance, and PnL attribution so a later
-  KIS Paper canary can reuse deterministic execution evidence.
+- Keep the daily baseline broker-free by default and translate eligible
+  deterministic decisions to local-paper intents/fills.
+- In parallel, prepare the smallest KIS Paper order-transport contract and
+  paper-host-only route test. Paper submit/modify/cancel is authorized; do not
+  issue a KIS order solely to satisfy this data objective.
+- Preserve local-paper replay, event provenance, and PnL attribution so KIS
+  Paper execution can reuse deterministic evidence when its adapter is ready.
 
 ### Validation
 
@@ -79,6 +81,9 @@ unavailable.
 
 - There is no paper-capital, profitability, dashboard, report, trade-count, or
   per-call approval gate.
+- Private KIS raw-data retention on `D:` and goal-owned KIS Paper schedules are
+  authorized. Retention metadata must state the actual result, never act as a
+  permission switch.
 - Do not read `KIS_LIVE_*`, call a live route, expose secrets, publish KIS
   data, or store raw market data/model artifacts in Git.
 - Keep model artifacts under `D:\thericher-v2\model-artifacts` or

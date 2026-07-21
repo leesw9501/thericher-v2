@@ -21,11 +21,12 @@ state; only deterministic Execution code may create an `OrderIntent`.
 
 ## Deployability-First Input Contract
 
-The active paper-trading graph is constrained first by what KIS can provide at
-the decision timestamp, not by the broadest offline dataset that happens to be
-available. This improves the data-collection and paper-trading loops: a feature
-that cannot be recreated during a KIS paper session cannot silently become a
-runtime dependency.
+The active paper-trading graph prefers inputs that KIS can provide at the
+decision timestamp, not the broadest offline dataset that happens to be
+available. A feature that cannot yet be recreated during a KIS paper session is
+marked as provisional or offline-only; it is never silently substituted at
+runtime. That evidence grade informs interpretation, not whether a virtual-paper
+experiment may proceed.
 
 Each active input belongs to one compact, versioned KIS capability record. It
 names the non-secret endpoint/category, exchange and symbol scope, raw field,
@@ -34,29 +35,25 @@ freshness budget, history/paging cost, storage-rights status, and a dated
 observed response reference. Its state is one of `declared`, `observed`,
 `qualified`, or `unavailable`; documentation alone is never `observed`.
 
-A raw timestamp's open-versus-close label must have an independently
-falsifiable anchor before it can define completed-bar timing. Agreement among
-multiple fields of the same KIS response is useful integrity evidence but is
-not that anchor. Until it exists, the capability stays `observed` and no model
-may rely on an inferred timestamp shift.
+A raw timestamp's open-versus-close label needs an independently falsifiable
+anchor before it can support a strong completed-bar claim. Until then the input
+stays `observed`, carries its uncertainty into paper evidence, and is not used
+to make an unlabelled timing claim.
 
-Only `qualified` KIS-reconstructible fields may enter an active paper model.
-The fixed paper baseline requires that matching capability object at its public
-input boundary, accepts only its fixed `US` `QQQ`/`NAS`
-`overseas_stock_intraday` stream, and emits an explicit `unqualified`
-abstention otherwise.
-Offline Tiingo, Norgate, or other lawful development data may still support a
-prototype, but a prototype is not paper-deployable until the exact feature
-schema can be rebuilt from KIS-compatible bars and passes a predeclared
-per-feature transfer tolerance. The record is a small engine data contract, not
-a report family, gate system, scheduler, or second data catalog.
+`qualified` KIS-reconstructible fields support normal reusable paper models;
+`observed` fields may support explicitly provisional paper experiments with
+their evidence grade attached. Offline Tiingo, Norgate, or other lawful
+development data may support a prototype, but a paper decision must never
+silently mix a different provider into its runtime feature window. The record
+is a small engine data contract, not a report family, approval gate, scheduler,
+or second data catalog.
 
-`qualified` permits an in-memory runtime input only. Persistent raw-byte or
-cache storage requires separately confirmed storage rights; `unverified`
-rights keep the contract in memory and retain only sanitized capability
-evidence. `prohibited` rights cannot be qualified. This lets a bounded paper
-canary learn from a completed runtime window without silently acquiring a local
-historical archive.
+The standing private KIS Paper authority permits a local raw cache with
+provenance under `D:\market_data`. `unverified` rights remain a visible
+limitation and `prohibited` rights stop only the affected source. No cache may
+be published, redistributed, or stored in Git. This lets paper work learn from
+completed windows without turning data-rights uncertainty into a general
+development freeze.
 
 An unavailable input is removed from the active graph and recorded with its
 missing dependency. It is not replaced by an inferred value, a hidden provider,
@@ -167,19 +164,19 @@ final temporal holdout remains untouched until the entire preceding layer set is
 frozen. A failed incremental comparison removes that layer from the candidate
 graph rather than being tuned around indefinitely.
 
-The sole paper-first exception is a fixed, simple bar-only baseline with a
-small initial exposure. It may collect bounded KIS paper evidence
-when long historical validation is limited, provided the input contract is
-qualified, the strategy abstains on missing data, and the execution hard stops
-are active. This exception does not promote the baseline, prove an edge, or
-extend to learned, ensemble, allocation, or exit models without their ordinary
-evidence.
+The first paper candidate is a fixed, simple bar-only baseline with a small
+virtual exposure. It may collect KIS Paper evidence when long historical
+validation is limited, provided the input grade and missing-data behavior are
+recorded and execution hard stops are active. This does not promote the
+baseline, prove an edge, or turn a limited observation into an unqualified
+model claim.
 
 ### Timeframe Policy
 
 The full hierarchy is a candidate topology, not an automatically enabled
-production policy. A timeframe becomes active only after its KIS capability
-record is qualified; otherwise its expert is absent rather than fed a proxy.
+production policy. A timeframe may be explored with observed KIS data when its
+evidence grade, staleness, and completed-bar uncertainty are carried forward;
+an unavailable timeframe is absent rather than fed a hidden proxy.
 
 - `3h` and `1h`: market regime, direction, and opportunity context.
 - `10m`: confirmation, volatility, and trend stability.
@@ -194,8 +191,8 @@ out-of-sample value over the simpler graph.
 The Data layer has a pure `SessionWindow` resampling primitive for a caller that
 already knows one UTC session open and close. It anchors buckets at that open,
 rejects out-of-window bars, and exposes skipped partial or gapped buckets. It
-does not infer an exchange calendar or daylight-saving rule, and it does not
-activate a timeframe until the separate KIS capability evidence is qualified.
+does not infer an exchange calendar or daylight-saving rule. Callers must state
+the session source and evidence grade they use when activating a timeframe.
 
 ### Initial KIS Paper Baseline
 
@@ -210,7 +207,7 @@ model requirement:
 - `1h` and `3h` experts, order-book features, news, corporate-action fields,
   and external universe labels are inactive until separately qualified; and
 - if the rolling KIS-compatible cache lacks a complete window, the baseline
-  abstains; a matching qualified capability and exact local resamples are also
+  abstains; exact local resamples and the input's recorded evidence grade are
   required. It does not page a broker on every inference or fill the window from
   another provider.
 

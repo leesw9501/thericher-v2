@@ -1,4 +1,4 @@
-"""Narrow KIS virtual-paper market-data boundary for observed raw 1-minute pages."""
+"""KIS virtual-paper market-data boundary with an enforced paper-only route."""
 
 from __future__ import annotations
 
@@ -41,20 +41,20 @@ KIS_PAPER_DAILY_SYMBOL_EXCHANGES = {
     "SPY": frozenset({"AMS", "NAS", "NYS"}),
     "IWM": frozenset({"AMS", "NYS"}),
 }
-_KIS_PAPER_PROBE_REQUIRED_MODE = "off"
-_KIS_PAPER_PROBE_PRECEDING_ENV_KEYS = frozenset(
+_KIS_PAPER_FORBIDDEN_MODE_NAMES = frozenset({"live", "kis_live"})
+_KIS_PAPER_CONFIG_NON_SECRET_KEYS = frozenset(
     {
         "THERICHER_MODE",
         "THERICHER_HOST_MODEL_ARTIFACT_ROOT",
         "THERICHER_MODEL_ARTIFACT_ROOT",
     }
 )
-_KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS = frozenset({"THERICHER_DASHBOARD_TOKEN"})
-_KIS_PAPER_PROBE_READABLE_ENV_KEYS = _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS | frozenset(
+_KIS_PAPER_CONFIG_BLANK_KEYS = frozenset({"THERICHER_DASHBOARD_TOKEN"})
+_KIS_PAPER_CONFIG_READABLE_ENV_KEYS = _KIS_PAPER_CONFIG_NON_SECRET_KEYS | frozenset(
     {
         "KIS_PAPER_APP_KEY",
         "KIS_PAPER_APP_SECRET",
-        *_KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS,
+        *_KIS_PAPER_CONFIG_BLANK_KEYS,
     }
 )
 
@@ -576,13 +576,13 @@ class KisPaperMinuteClient:
         return self._client.fetch_minute_page(query, before_request=before_request)
 
     def ensure_authenticated(self) -> None:
-        """Obtain the token without exposing it to the qualification harness."""
+        """Obtain and retain a paper token inside the paper-only client."""
 
         self._client.ensure_authenticated()
 
 
 def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
-    """Read only the approved paper keys from the pre-paper ``.env`` portion."""
+    """Read only paper credentials and reject any live operating mode."""
 
     required = {"KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"}
     values: dict[str, str] = {}
@@ -604,14 +604,14 @@ def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataCo
                         break
                     continue
                 if key not in (
-                    _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS
-                    | _KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS
+                    _KIS_PAPER_CONFIG_NON_SECRET_KEYS | _KIS_PAPER_CONFIG_BLANK_KEYS
                 ):
                     raise KisPaperMarketDataError("config_missing")
     except OSError as error:
         raise KisPaperMarketDataError("config_missing") from error
     if (
-        mode != _KIS_PAPER_PROBE_REQUIRED_MODE
+        mode is None
+        or mode.strip().lower() in _KIS_PAPER_FORBIDDEN_MODE_NAMES
         or set(values) != required
         or any(not value for value in values.values())
     ):
@@ -625,7 +625,7 @@ def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataCo
 def _read_approved_dotenv_assignment(handle: BinaryIO) -> tuple[str, str] | None:
     """Read one allowed assignment without consuming an unapproved value.
 
-    The probe has permission for its two paper app values only. A blank
+    The loader has permission for its two paper app values only. A blank
     dashboard placeholder may precede them so a normal local ``.env`` layout
     remains usable, but a nonempty dashboard value is rejected before it is
     retained. Reading keys byte-by-byte lets the loader reject reordered
@@ -659,9 +659,9 @@ def _read_approved_dotenv_assignment(handle: BinaryIO) -> tuple[str, str] | None
             key = key_bytes.decode("ascii").strip()
         except UnicodeDecodeError as error:
             raise KisPaperMarketDataError("config_missing") from error
-        if not key or key not in _KIS_PAPER_PROBE_READABLE_ENV_KEYS:
+        if not key or key not in _KIS_PAPER_CONFIG_READABLE_ENV_KEYS:
             raise KisPaperMarketDataError("config_missing")
-        if key in _KIS_PAPER_PROBE_BLANK_PRECEDING_ENV_KEYS:
+        if key in _KIS_PAPER_CONFIG_BLANK_KEYS:
             if not _read_empty_dotenv_value(handle):
                 raise KisPaperMarketDataError("config_missing")
             return key, ""

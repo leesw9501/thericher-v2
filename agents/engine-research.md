@@ -1,439 +1,52 @@
 # Engine Research Agent
 
-## Status
+## Working Memory
 
-- A KIS-native daily cache is now growing for `QQQ/NAS`, `SPY/AMS`, and
-  `IWM/AMS`. Its first chunks establish transport/provenance evidence only:
-  199 shared completed sessions is below the 756-session admission threshold.
-- The next eligible daily research loop is CPU-only
-  `daily-three-etf-relative-strength-v0`: raw 20-session relative strength,
-  one positive ETF or cash, `t+1` entry and `t+2` exit through replayable
-  `source: local_paper` fills. It must wait for the frozen shared KIS dataset.
-- CUDA remains idle by design until that cache, chronological split, baseline,
-  cost model, and a distinct falsifiable candidate contract exist. GPU idle is
-  not a reason to manufacture training or promote an ensemble.
+Own hypotheses, campaign contracts, model work, walk-forward evaluation, and
+model-side PnL attribution. Current priority is a KIS-native daily baseline,
+not GPU occupancy.
 
-- The bounded RAW D1 development campaign is complete; no campaign or GPU job
-  is running.
-- Data's replacement inventory found no fresh local training candidate. GPU
-  remains unassigned until Data freezes a new eligible contract; a prospective
-  three-ETF EOD refresh does not change that boundary.
-- The Docker `research` profile passed offline GPU runtime and PyTorch CUDA
-  compute smokes on 2026-07-19 (RTX 4090, 24564 MiB). The small external JSON
-  artifacts confirm runtime readiness only; no data, model, campaign, or GPU
-  training queue became eligible from this check.
-- The durable destination is now a target-position policy graph: opportunity
-  selection, timestamped multi-timeframe evidence, entry/exit policy,
-  constrained target-weight allocation, and deterministic execution. It is a
-  research architecture, not a new model batch or a broker authority.
-- The active paper-first research boundary is KIS-native: a runtime feature may
-  be used only after a dated KIS capability record proves that it can be
-  reconstructed from completed bars. The initial candidate is a simple,
-  fixed-exposure bar-only baseline using 90 completed `1m` bars plus local
-  `5m`/`10m` resamples; `1h`/`3h`, external-universe, action, news, and
-  order-book inputs remain inactive until qualified.
-- The foundation now exposes that baseline as a target-exposure proposal only.
-  It requires a matching `qualified` `overseas_stock_intraday` KIS capability,
-  a Data-owned trusted binding of its full contract SHA, the fixed `US`
-  `QQQ`/`NAS` scope, and exact local resamples, then abstains on unqualified,
-  missing, stale, incomplete, duplicate, non-contiguous, future, or misaligned
-  windows. The trusted registry is empty, so direct state construction cannot
-  activate it. It has no broker, credential, or network import.
-  A decision is timestamped at its immutable `as_of`, not backdated to the
-  feature window. The feature end remains in the proposal, and its fixed
-  `10m` expiry overrides a caller's otherwise relaxed freshness value.
-  It remains a local-paper fixture until raw KIS time and completed-bar semantics
-  qualify the input contract. A self-consistent one-shot KIS page cannot settle
-  whether timestamps label a bar's open or close minute, so Engine cannot use
-  an inferred one-minute shift as a paper-time feature assumption.
-- Execution has observed a successful raw `1m` page and one continuation, but
-  not retention, cache-recovery, or adjusted-price availability. Treat raw
-  `1m` as an input-contract candidate, not a trained-model or GPU permission.
-- Data marks the fixed `SPY`, `QQQ`, `IWM` r2 dataset development-training
-  eligible and ranking/holdout ineligible.
-- The CUDA evidence is structurally valid but the factor sensitivity verdict is
-  `unsupported`; no candidate is selected or promoted.
-- Data's Tiingo EOD snapshot is loader-attested for r2, and frozen replay
-  `raw-d1-explicit-events-20260718-r3` completed its 36 cells on CPU with zero
-  training. It preserves the parent `unsupported` verdict.
-- The permitted Tiingo raw-D1 source-sensitivity replay is also complete with
-  zero training, 36 local-paper cells, and the same sticky `unsupported`
-  verdict. It is non-independent because r2 fixed the session calendar.
-- Data has pinned a separate broad-Yahoo development-only ETF wrapper. It is
-  not campaign-ready and now feeds one small, re-attested, in-memory feature
-  and future-only outcome materializer. It cannot justify model training,
-  ranking, promotion, or any profitability claim.
-- Data also froze a separate Tiingo full-history raw-EOD evidence snapshot. Its
-  bounded exact raw-source alignment check is `unsupported`; it does not open
-  feature, model, campaign, or paper work for that source.
-- Data has now retained a hash-attested Norgate broad development panel with
-  523 exact-session candidates across 483 sessions. Its static retrieval filter
-  is not membership, point-in-time, coverage, adjustment, model, or GPU
-  evidence. It opens preparation for one development-only research contract,
-  not an active training job.
-- The panel's bounded engineering loop is now closed as partial execution only:
-  r3 CPU and fixed MLP seeds 71/113 completed, neither beat the linear
-  baseline, and TCN seeds 71/113 are compute-rejected and untested. No static
-  panel candidate, seed extension, model selection, ensemble, PnL, paper, or
-  profitability claim is open.
-- Generated campaign evidence remains external under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+## Ready Queue
 
-## Engine Loop
+1. Consume the Data Agent's hash-attested common `QQQ`/`SPY`/`IWM` daily cache.
+2. At 756 shared sessions, freeze the
+   `daily-three-etf-relative-strength-v0` contract: 20-session raw return,
+   one positive ETF or cash, `t+1` entry, `t+2` exit, local-paper costs,
+   chronological 60/20/20 split, and two-session purge/embargo.
+3. Run the CPU deterministic baseline and retain replayable `local_paper`
+   attribution.
+4. Use the result to populate a diverse breadth roster: naive/linear/tree,
+   one compact sequence model, and at most one small attention or public
+   time-series benchmark. Start a depth or ensemble candidate only after a
+   concrete distinct hypothesis and proper upstream out-of-fold evidence.
 
-- Feature/model research.
-- Backtest and forward validation.
-- Model-side PnL attribution.
+## GPU Policy
 
-## Owns
-
-- Frozen research hypotheses, features, targets, costs, candidates, and seeds.
-- CPU baselines, bounded CUDA training, local-paper replay, and sensitivity.
-- Layer-specific evidence, cross-fitted prediction lineage, and attribution for
-  opportunity, entry, allocation, and exit research.
-- One external campaign recovery summary; not a report or job family.
-
-## Must Not
-
-- Modify broker submission/risk code, call KIS, read credentials, or acquire data.
-- Use adjusted diagnostics in features, targets, fills, thresholds, or metrics.
-- Treat this development dataset as ranking, promotion, sealed holdout, model
-  selection, a winner, or evidence of profitability.
-- Let a learned model emit an order, jointly tune graph layers on shared
-  validation predictions, or treat a model count as a research outcome.
-- Add an unowned scheduler, queue framework, artifact-specific job kind, or
-  dependency. A goal-owned schedule may run only an already eligible research
-  contract with explicit compute, evidence, stop, and recovery bounds.
-
-## Resources
-
-- GPU: NVIDIA GeForce RTX 4090, 24564 MiB; no active engine-owned job.
-- Host artifact root: `D:\thericher-v2\model-artifacts`.
-- Docker artifact root: `/app/model_artifacts`.
-
-## Current Objective
-
-- Keep the completed deterministic KIS-native baseline fixed. The completed
-  daily/minute capacity maps observed two daily pages and one minute page, then
-  both rejected on continuation. They do not qualify a runtime bar contract or
-  change research readiness. Do not start a GPU campaign merely because the
-  historical dataset is limited. The paper-first exception does not extend to
-  learned models, ensembles, learned allocation, or learned exits.
-- A caller-created `qualified` capability object is not promotion evidence.
-  The baseline now requires a matching, full-contract-SHA qualification binding
-  from its empty Data-owned registry. A later Data objective must validate the
-  binding's external evidence before adding a production entry; the current
-  metadata probes do not create one or activate a proposal.
-- The fixed-ETF source-sensitivity question and the full-history exact
-  raw-source alignment check are unsupported. The broad ETF wrapper supplies
-  descriptive features plus explicit future-only outcomes, but neither opens
-  CPU/GPU model work. The deterministic intraday multi-timeframe local-paper
-  baseline is complete on short CVS/FCX/KO evidence; it is pipeline evidence
-  only and cannot rank, promote, open a holdout, or claim profitability.
-  Tiingo IEX r1 is a separate 5-minute descriptive snapshot and does not alter
-  those boundaries. Norgate now has a host-only raw-D1 adapter, but it remains
-  outside `CatalogedBars`, campaign, model, and GPU inputs. Its fixed-ETF
-  source-alignment snapshot is `literal_raw_ohlcv_difference`, with only 483
-  Norgate sessions per symbol against 896 pinned Tiingo sessions; it creates no
-  GPU or breadth-queue eligibility. Tiingo raw-daily R1 has 29 available
-  responses with only 18 common sessions, while disjoint R2 has 29 available
-  responses with 501 common sessions. The hash-re-attested aggregate audit
-  reports 56 existing groups covering R2's returned window, but the combined
-  58-candidate set still has only 18 common sessions because R1 binds it. Both
-  remain source evidence for Data only, not a point-in-time common panel or
-  GPU/model input.
-  The retained Norgate trial raw-D1 r2 snapshot is likewise development-source
-  evidence only: requested `NONE` adjustment semantics and zero observed event
-  markers remain unproven, so it does not reopen breadth, depth, ensemble, or
-  CUDA work.
-  Its r3 `Dividend` sidecar has 24 source markers and 71 conservative
-  exclusions, but source-marker timing and adjustment semantics remain
-  unproven. It improves a Data exclusion record only and still does not reopen
-  breadth, depth, ensemble, or CUDA work.
-  The separate Norgate broad panel has now completed its single allowed
-  engineering loader/target/split/baseline loop. It remains static,
-  survivor/availability-conditioned evidence. Data's completed Tiingo r2
-  cohort reattests 29 linked ranks, 483 overlap sessions, 18 forward-only
-  sessions, 153 markers, and 3,316 conservative exclusions at
-  `D:\thericher-v2\model-artifacts\tiingo-norgate-cross-source-cohort\tiingo-norgate-cross-source-cohort-r1`
-  (manifest SHA-256
-  `dbc2b25ca514262355c9e4e2bf834889f16358058315b21eb24556b2ccdb1213`).
-  The Engine intake exposes only identity/count/scope metadata and keeps all
-  training, model, ranking, ensemble, campaign, paper, PnL, and profitability
-  flags false. The r4 source-separated contract completed its CPU-only portion at
-  `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`,
-  SHA-256 `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
-  Its fixed CPU baseline is authoritative engineering evidence only. MLP-32
-  stopped before predictions or a checkpoint because CUDA deterministic mode
-  lacked `CUBLAS_WORKSPACE_CONFIG`; MLP-64 was not started under the known
-  fault. The r4 validation slice is retired, not retried or compared. Claude's
-  recovery verdict was `supported-with-limits`; this opens no model result,
-  ranking, promotion, ensemble, paper, PnL, profitability, PIT, or sealed
-  holdout.
-
-## Explicit-Event Replay
-
-- `scripts/run_frozen_explicit_event_replay.py` is the sole CLI bridge. Its
-  default is preparation only; the explicit `--execute` path runs only the
-  frozen 36 local-paper cells, reads no environment or network data, probes no
-  CUDA device, and trains zero models.
-- Authoritative completed evidence is
-  `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-explicit-events-20260718-r3\summary.json`
-  with SHA-256
-  `3cac5f0b14e602c6a0043bb141fa7d6add1ca02b8ab4e214145443a1d8711609`.
-  It has 18 baseline and 18 candidate cells, 145 independently rechecked
-  artifact hashes including the source summary, `source: local_paper` fills,
-  flat final positions, `torch_cpu` inference, and zero training runs.
-- The earlier r1 interruption and r2 summary-write failure are incomplete and
-  non-authoritative external recovery evidence. Preserve them; do not reuse or
-  overwrite either run id.
-
-## Breadth Queue
-
-- No breadth batch is running. The static Norgate panel closed with two completed
-  MLP observations near the linear baseline and two untested TCN compute
-  rejections; it cannot be refilled, retried, ranked, or ensembled.
-- The r4 source-separated batch is closed: CPU evidence completed once,
-  MLP-32 has immutable environment-failure evidence, and MLP-64 was not
-  started. Do not rerun either MLP or reuse the 3,420-row validation slice.
-- Docker research now requires `CUBLAS_WORKSPACE_CONFIG=:4096:8`; a
-  network-disabled synthetic CUDA smoke passed under commit `ae0d3ec`. It is
-  infrastructure evidence only, not data or model evidence.
-- No breadth batch is ready: Data's completed inventory found no fresh local
-  training candidate. A prospective three-ETF EOD refresh is lineage only. Do
-  not add a tree, TCN, seed, parameter sweep, depth candidate, or ensemble
-  merely to occupy the GPU.
-- Once Data freezes a genuinely eligible campaign, the first breadth roster is
-  deliberately diverse rather than MLP-only: naive/linear/tree baselines, one
-  compact sequence candidate, and at most one small attention or public
-  time-series-foundation benchmark. It starts with the simple target-position
-  baseline and adds graph layers one at a time.
-
-## Depth Queue
-
-- No depth work is currently eligible. A finite breadth result may promote at
-  most two candidates to three fixed seeds only after temporal sensitivity,
-  cross-fitted upstream evidence, and a Claude falsification verdict. A sealed
-  holdout remains closed.
-
-## Ensemble Queue
-
-- No ensemble or learned fusion work is currently eligible. It requires two or
-  more candidates with independent out-of-fold predictions. Begin only with
-  equal-weight probability averaging and disagreement abstention; fit a later
-  fusion/allocation layer only on nested or cross-fitted upstream predictions,
-  never on shared validation or holdout predictions.
-
-## Running
-
-- None.
+One GPU job may run at a time. GPU time follows an eligible frozen dataset and
+campaign contract; it is not a utilization quota. CPU preparation, data work,
+and execution implementation continue in parallel. Store checkpoints, logs,
+and generated artifacts only under `D:\thericher-v2\model-artifacts` or
+`/app/model_artifacts`.
 
 ## Durable Knowledge
 
-- RAW D1 bars are loader/manifest/hash attested; factor dates come from the
-  same hash-bound Data helper. Adjusted diagnostics are unavailable as `Bar`
-  fields.
-- The executable target is completed session `t`, raw `t+1` open entry, raw
-  `t+2` open exit, 10 bps fee and 5 bps slippage per fill.
-- Daily plan checks prove exact common-session `+1/+2` timing even across
-  weekend/holiday gaps; generic intraday continuity remains strict.
-- In the target-position graph, each evidence item carries `decision_as_of`,
-  `feature_window_end`, `valid_until`, model/rule lineage, expected net edge,
-  uncertainty, and missing/stale status. Fusion may use only completed bars and
-  valid evidence; allocation consumes target-state evidence, never an order.
-- The graph must be proven incrementally: deterministic universe/signal/sizing
-  first, then one additional selection, multi-timeframe, fusion, allocation, or
-  exit layer at a time. Each added layer needs a matched after-cost comparison
-  and layer-level replay attribution before it is retained.
-- Every lane uses a shared max-lookback-20, two-observed-session cadence.
-  Durable campaign replay must finish flat and have nondecreasing event times.
-- Two observed purge sessions separate each development/validation pair; two
-  observed embargo sessions separate the folds. Development labels finish
-  before validation entry evidence starts.
-- All six optional models train once on factor-safe development samples.
-  Fold-local standardization is fit only there; primary versus sensitivity
-  changes validation decision inclusion and never triggers a second fit.
-- Candidate/baseline after-cost sign instability or any aggregate relative-order
-  change across present baselines and candidates makes the sensitivity verdict
-  `unsupported`; it does not select a model.
-- Explicit event masking excludes every signal start whose inclusive observed
-  index window `[i-20, i+2]` touches a qualified event session. Preparation
-  freezes 36 future replay cells, zero training, and the parent `unsupported`
-  verdict; it cannot rank, promote, select, open a holdout, or claim profit.
-- The fixed CUDA set is hidden 8, ReLU, standardization, learning rate 0.005,
-  weight decay 0.0001, threshold 0.5, 12 epochs, seed 71. Torch remains lazy and
-  own checkpoints load with `weights_only=True`.
-- The Norgate broad development panel is hash-attested at
-  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1` with 523
-  selected exact-session candidates, 18 mismatches, 483 sessions, data hash
-  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`,
-  and manifest hash
-  `sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
-  Claude's `supported-with-limits` verdict keeps static selection and the
-  100-symbol threshold outside any coverage, quality, membership, PIT,
-  adjustment, ranking, holdout, campaign, model, GPU, paper, or profitability
-  claim until a new limited research contract is verified.
-- The broad Yahoo wrapper pins one 1,300-symbol snapshot but returns only the
-  predeclared `SPY`/`QQQ`/`IWM` common window: 6,555 sessions from
-  `2000-05-26` to `2026-06-22`. It is explicitly inception-truncated and
-  survivor-selected; PIT membership, delistings, and raw corporate-action
-  semantics are unproven. It returns a wrapper rather than a campaign-ready
-  `CatalogedBars` tuple, so Research must not bypass that boundary.
-- Its first feature materializer emits only in-memory rows after completed
-  session close: five-session and one-session raw-close returns, same-session
-  high/low range, and one-session volume change. Data re-attests the fixed gzip
-  and manifest for each call, its raw parser is restricted to Data-module
-  callers, and no feature can read a later bar.
-- Its paired outcome materializer re-attests the same source, recomputes the
-  canonical feature result before use, and derives only
-  `raw_close(next observed session) / raw_close(t) - 1`. It records the future
-  outcome session and calendar-day gap, skips the terminal feature rows, and
-  remains in-memory, non-campaign, and non-decisional.
-- The new Tiingo snapshot records 21,862 raw-field rows through `2026-07-10`
-  and enforces a confirmed final session plus shared listed-session coverage.
-  It is a retrieval-time data record, not point-in-time universe evidence or an
-  independent validation set.
-- The intraday baseline accepts only Data-owned 1-minute `CatalogedBars`. It
-  resamples one completed bar per target timeframe, then uses exactly the next
-  two contiguous 1-minute bars for local-paper entry and flattening. Each
-  timeframe has an isolated event store, exactly two `local_paper` fills, and a
-  flat replayed position. It emits no PnL, candidate, campaign, or model result.
-- Tiingo IEX r1 is not a `CatalogedBars` stream. It has 10,000 5-minute bars
-  and 129 shared sessions per SPY/QQQ/IWM from 2026-01-13 through 2026-07-10,
-  with a hash-attested manifest. It is IEX-only and does not establish
-  consolidated volume, timestamp-boundary semantics, adjustments, corporate
-  actions, PIT membership, independence, model suitability, or a 1-minute
-  execution path.
-- The nonpersistent SPY 2024 probe returned a different 10,000-bar window,
-  from `2024-01-02T19:40:00Z` through `2024-06-28T19:55:00Z`. It establishes
-  only date-window reachability. It has no stored bytes, source hash, dataset
-  identity, training use, campaign use, or research result.
+- Daily raw-price data has an explicit corporate-action limitation.
+- The daily 756-session target improves comparative validation; it does not
+  block KIS Paper connectivity or a deterministic paper canary.
+- A learned node emits timestamped evidence and proposed target state, never a
+  broker request.
+- Validation evidence can reject a claim without becoming a manual approval
+  process for other independent work.
 
 ## Recovery
 
-- Before a production run, reject any dataset id/hash/path mismatch, unsafe
-  campaign path component, derived path outside the artifact root, split
-  mismatch, existing artifact target, or artifact path inside Git.
-- The preparation runner fails before any plan is returned when the event
-  loader is not replay eligible; source summary/checkpoint hash or structure,
-  r2 lineage, or fold-local pre-fit standardization mismatch also fails closed.
-- A completed run is recoverable from
-  `daily-campaign/<campaign_id>/summary.json`; without it, treat scattered
-  replay/checkpoint files as an incomplete run and restart with a new run id.
-- Stop if fold-local preprocessing, observed-session adjacency, flat replay, or
-  event-time monotonicity cannot be proven.
-- Treat `norgate-broad-development-validation-r2` and `r3` TCN directories as
-  `restart` recovery evidence: they have no checkpoint, prediction, or summary.
-  The r3 compute-rejection JSON is a resource decision, not a model result.
-- Treat `norgate-tii-source-separated-batch-r1` as `complete` with an
-  inconclusive CPU-only baseline and immutable CUDA environment-failure evidence.
-  Do not delete or overwrite its CPU summary or MLP-32 failure. The corrected
-  CUDA workspace was proven only on synthetic tensors, so it does not reopen r4.
-
-## Recent Evidence
-
-- The retained intraday multi-timeframe local-paper smoke now records its
-  attested dataset id/hash, decision-bar lineage, accepted intents, two
-  `local_paper` fills, and retained `events.jsonl.sha256` sidecar; focused tests
-  cover event order/timing, fill economics, flat replay, and hash mismatch after
-  tampering.
-  It remains a short-data pipeline smoke, not a campaign, model, GPU, or
-  profitability fact.
-- CPU preflight `raw-d1-development-20260718-cpu-r2` completed 36 replay cells
-  and 108 replay-state hash checks; summary SHA-256 is
-  `9ee93a8bf4ecfff92bd71d7c49c613dd8fe567e5ab7f70e23feffed4c4462c95`.
-- Docker/PyTorch CUDA run `raw-d1-development-20260718-cuda-r1` completed six
-  checkpoints, 72 replay cells, and 216 replay-state hash checks; summary
-  SHA-256 is
-  `5db680e1ba72a17b089a5c44372443289b2411c690f6372b6c6f2e3e35ac1d89`.
-- A read-only recheck matched all six current checkpoint byte hashes to that
-  source summary; every summary standardization record remains `development`
-  phase and matches its own fold. No model was loaded or trained.
-- All fills remained `source: local_paper`, every replay ended flat, and all six
-  checkpoints reloaded with `weights_only=True`.
-- `d1-pressure-lb20` changed sign for IWM/fold-1 and QQQ/fold-1 under factor
-  exclusion, and aggregate relative order changed. The final verdict is
-  `unsupported`, so no profitability, ranking, or promotion claim is allowed.
-- The interrupted `cpu-r1` attempt has no summary and is non-authoritative.
-- The Tiingo snapshot has 46 qualified cash-distribution events and zero splits
-  across the fixed ETFs. R3 completed from it with no retraining and did not
-  alter the parent `unsupported` verdict.
-- The source-sensitivity replay is
-  `D:\thericher-v2\model-artifacts\daily-campaign\raw-d1-tiingo-source-sensitivity-20260718-r1\summary.json`
-  with SHA-256
-  `2e91c133fd12e0e28a7011eb0c1d3f661fe0fffab094ab00b679d3a566a14ff3`.
-  It reused all six source checkpoints on CPU, trained zero models, completed
-  18 baseline plus 18 candidate cells with `local_paper` fills and flat final
-  positions, and recomputed neither standardization nor price adjustments.
-  Across the 36 corresponding r2 explicit-event cells, decision count, trade
-  count, and after-cost-PnL sign did not change. This is descriptive only: the
-  shared r2 session calendar makes it non-independent and it cannot select,
-  promote, or claim profitability.
-- The completed descriptive attribution is
-  `D:\thericher-v2\model-artifacts\attribution\raw-d1-explicit-events-20260718-r3-attribution-r1\summary.json`
-  with SHA-256
-  `3de06a073b50f4b3b548a14a2d6040ebcb713b78b9a69a08b4add5f129b86e70`.
-  It verifies r3 plus 144 cell evidence files, records 36 fixed cells and 300
-  `local_paper` fills, omits cross-cell PnL aggregation because cells overlap,
-  and labels its scope arithmetic-consistency-only rather than independent
-  execution-quality or profitability evidence.
-
-- `D:\thericher-v2\model-artifacts\norgate-broad-development-features\r2-3c1b21bde92e4623`
-  is the verified static-panel feature artifact: data hash
-  `sha256:3f03d6cdc669e174c7cc1c79edb0921d1781f79e364302df88a38d6a314e72e7`
-  and contract hash
-  `sha256:29fca05b61c9702967b59c66ac60a8b8a06de73b309b9e292b64a544b059779a`.
-  r3 CPU baseline plus MLP seeds 71/113 completed under commit `1b77ce0`;
-  their date-mean accuracy was `0.50269` linear, `0.49865` MLP-71, and
-  `0.50028` MLP-113. TCN-71 was stopped twice without a final artifact after
-  observed lower bounds of 904 and 1,252 seconds; TCN-113 never started.
-  `cuda/temporal-conv-compute-rejection.json` SHA-256 is
-   `7ffe6db283af7a1c5287614967342c036f29d8eb9b0ab80c08254bb3a34cb3bc`.
-- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-contract\norgate-tii-source-separated-contract-r4\contract.json`
-  is the only approved engineering-batch preflight, SHA-256
-  `ddba0d578bf5ddaefe10c0c72b63ad8873a27c2243787e504d3c4e8fac0bf76e`.
-  It retains 9,904 rows after the 10,053-to-9,904 Norgate-only conditioning
-  reconciliation, and forbids forward-only Tiingo use, promotion, and PnL.
-- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cpu-baseline.json`
-  completed once under commit `ddbe2ab`, SHA-256
-  `a6f181b504aa9cb6c6b55af59096c3d5c7e4363dc69978b82bb5a4239a80c4ad`.
-  It is inconclusive engineering evidence only; no candidate was selected.
-- `D:\thericher-v2\model-artifacts\norgate-tii-source-separated-batch\norgate-tii-source-separated-batch-r1\cuda\mlp-hidden-32-seed-71\failure.json`
-  records `unexpected_RuntimeError` before prediction or checkpoint creation,
-  SHA-256 `0f93bec411c74aad8980d68af524f046f47051be8230295d48c518808a47217c`.
-  MLP-64 was deliberately not started. Commit `ae0d3ec` adds the required
-  Compose CUBLAS workspace; its synthetic-only Docker smoke is not a result.
+Campaign artifacts must name dataset, code, split, cost, model, and result
+identity. A missing checkpoint/summary is `restart`, not a partial model result.
+Ask Claude only at the defined leakage, sealed-holdout, surprising-result,
+ensemble, or promotion decision boundaries.
 
 ## Next Handoff
 
-Do not reopen the static Norgate validation batch. Its valid output remains two
-completed MLP engineering observations and two explicitly compute-rejected,
-untested TCN jobs, not a four-model comparison. The r4 source-separated batch
-is also closed: it has CPU-only evidence and one immutable CUDA bootstrap
-failure, not a model observation. The Tiingo r2 cohort and metadata-only Engine
-intake remain complete.
-
-Data's bounded local replacement inventory is complete and found no fresh local
-training candidate. Engine may retain the corrected synthetic CUDA bootstrap
-evidence only; it must not consume r4 rows, launch another model family, or
-create an ensemble while Data records the narrow prospective EOD lineage.
-
-When a new eligible contract exists, implement the target-position graph in
-small, falsifiable increments rather than reviving the static MLP batch. Data
-must first freeze completed-bar multi-timeframe evidence. Engine then starts
-with a deterministic target-position baseline and records cross-fitted lineage
-before any learned fusion, allocator, or exit policy is considered.
-
-- The frozen fixed-ETF work is exhausted for model promotion: r2 factor
-  sensitivity remains unsupported, and the full-history Tiingo exact raw-D1
-  comparison is also unsupported. The broad-Yahoo feature/outcome substrate is
-  complete and remains descriptive. The intraday multi-timeframe local-paper
-  baseline is also complete but remains a short-data pipeline smoke. Tiingo
-  IEX r1 adds only a hash-attested 5-minute descriptive window. The bounded
-2024 probe confirms date-window access but not completeness. The pre-r1 archive
-plan is now closed after two strict source-validation failures with no snapshot.
-Data's broad Norgate panel is now complete but opens only a development-only
-preparation path. Next, Data must expose it through an offline reattesting
-loader and Engine must freeze a target, temporal split, costs, stop rules, and
-CPU baseline before any finite CUDA breadth batch. Do not rank, promote, name a
-winner, open a sealed holdout, claim profitability, or start a GPU job early.
+Report the dataset contract, naive baseline, falsification result, and exactly
+which model family is next. Keep breadth, depth, ensemble, and replication
+queues current without creating a report family.

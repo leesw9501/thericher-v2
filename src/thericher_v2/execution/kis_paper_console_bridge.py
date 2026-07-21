@@ -1,4 +1,4 @@
-"""One-shot KIS virtual-paper reader that publishes a sanitized local snapshot."""
+"""Single-run KIS virtual-paper reader that publishes a sanitized local snapshot."""
 
 from __future__ import annotations
 

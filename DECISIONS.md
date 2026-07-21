@@ -3188,12 +3188,10 @@ unknown outcome is retried. A goal-owned scheduler must preserve those same
 properties; it may not convert a transient unknown outcome into unattended
 duplicate submission.
 
-Historical metadata-only one-shot markers correctly retain
-`raw_market_data_retained: false` because those completed runs stored no raw
-rows. That field is not a current restriction. New raw-data collectors use a
-raw-aware control record with its manifest hash and actual retention fact rather
-than rewriting historical evidence or forcing new collectors through a
-metadata-only marker.
+Historical metadata-only probe artifacts remain immutable facts about those
+past runs. They do not constrain current collection. New collectors use their
+own manifests and record the actual raw-retention outcome without inheriting a
+legacy reservation policy.
 
 Claude's falsification-first verdict is `supported-with-limits`. Its reversal
 condition is any implementation change that reaches a live route, exposes a
@@ -3231,11 +3229,8 @@ with manifest SHA-256
 file SHA-256
 `13a904a2e68c0405535fd67d96bd2b630036cc76ddc3d6b9d2a016e229291c4d`.
 
-The collector's control record explicitly says
-`raw_market_data_retained: true`. Generic one-shot reservations now require an
-explicit retention fact rather than silently defaulting to `false`; old probes
-pass `false` explicitly because they were metadata-only. This is evidence
-bookkeeping, not a collection quota or approval mechanism.
+The collector's control record records the actual retained snapshot. This is
+evidence bookkeeping, not a collection quota or approval mechanism.
 
 Reason: it verifies the private D: retention path, atomic manifest/hash pairing,
 deduplication, and pacing against a real KIS response. It supports the next
@@ -3271,3 +3266,32 @@ model promotion, or corporate-action conclusion follows from these chunks.
 Reason: the first real cache proved that a small retained KIS path works; a
 minimal index/cursor lets it grow without reintroducing one-shot markers or
 per-call operator gates, while preserving enough evidence to recover honestly.
+
+## 2026-07-21 - Remove terminal one-shot KIS scaffolding and make paper authority explicit
+
+Decision: remove the terminal metadata-only KIS historical probe, capacity-map,
+and raw-minute qualification scripts, modules, and tests from the executable
+surface. Their external summaries remain historical evidence, but no active
+collector, schedule, or paper workflow inherits their one-shot reservation or
+fixed non-retention behavior. The active KIS daily backfill records whether it
+actually wrote a raw snapshot and is authorized to retain private market data on
+`D:\market_data`.
+
+The operator has confirmed standing authority for all private KIS Paper work,
+including market/account/order reads, virtual order submit/modify/cancel,
+routine sizing, reconciliation, raw data retention, and goal-owned schedules.
+There is no paper capital, profitability, report, dashboard, trade-count, or
+per-call approval gate. Existing KIS clients remain hard-coded to the virtual
+paper host; `KIS_LIVE_*` and real-money routes remain unreadable and
+unavailable. Paper idempotency, reconciliation, and secret-safe logging remain
+technical correctness requirements rather than operator checkpoints.
+
+Claude's short drift-check verdict was `supported-with-limits`: removing process
+gates is coherent for virtual paper work, provided paper clients cannot build a
+live route. The current market-data and account clients enforce an exact virtual
+host, and future order transport must preserve that property.
+
+Reason: the old one-shot controls were historical experiments, not a useful
+engine capability. Leaving them executable and prominent made a factual
+non-retention marker look like a continuing restriction and slowed the intended
+data-to-paper development loop.

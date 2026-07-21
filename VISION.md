@@ -16,8 +16,10 @@ The center of the product is a repeatable loop:
 
 KIS paper trading is an early source of live-like execution evidence, not a
 prize reserved for a profitable model. A deterministic baseline may enter a
-bounded paper loop once execution hard stops work, while model research
-continues independently.
+paper loop once its technical recovery behavior works, while model research
+continues independently. Private KIS Paper data, account, and order work is a
+default development capability; evidence limitations shape claims rather than
+creating approval queues.
 
 ## Why v2 Exists
 
