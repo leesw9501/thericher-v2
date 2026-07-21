@@ -208,6 +208,18 @@ from .jobs import (
     run_and_write_research_job,
     write_research_job_artifact,
 )
+from .kis_daily_comparative_validation import (
+    DEFAULT_KIS_DAILY_COMPARATIVE_ARTIFACT_ROOT,
+    KIS_DAILY_COMPARATIVE_VALIDATION_ID,
+    DailyComparatorResult,
+    DailySessionSegment,
+    KisDailyComparativeBaselineConfig,
+    KisDailyComparativeBaselineResult,
+    KisDailyComparativeContract,
+    PrecontractExposure,
+    freeze_kis_daily_comparative_contract,
+    run_kis_daily_comparative_cpu_baselines,
+)
 from .kis_paper_baseline import (
     KIS_PAPER_BASELINE_M1_BARS,
     KIS_PAPER_BASELINE_SCHEMA_ID,
@@ -417,6 +429,7 @@ __all__ = [
     "run_intraday_multitimeframe_local_paper_baseline",
     "run_daily_cpu_baselines",
     "run_daily_three_etf_relative_strength",
+    "run_kis_daily_comparative_cpu_baselines",
     "run_daily_cuda_breadth",
     "run_local_paper_validation",
     "run_naive_cpu_baseline",
@@ -438,4 +451,13 @@ __all__ = [
     "write_walk_forward_metrics_artifact",
     "write_validation_artifact",
     "write_daily_campaign_summary",
+    "DEFAULT_KIS_DAILY_COMPARATIVE_ARTIFACT_ROOT",
+    "KIS_DAILY_COMPARATIVE_VALIDATION_ID",
+    "DailyComparatorResult",
+    "DailySessionSegment",
+    "KisDailyComparativeBaselineConfig",
+    "KisDailyComparativeBaselineResult",
+    "KisDailyComparativeContract",
+    "PrecontractExposure",
+    "freeze_kis_daily_comparative_contract",
 ]

@@ -48,6 +48,11 @@ that would cross the 15% floor.
   approval, capital, or model gate.
 - A raw-retention field records what was actually stored for one result. It is
   not a collection permission switch.
+- A failed, empty, or unretained job is a recovery fact for that job only; it
+  must not create a one-shot latch for later correctly scoped collection.
+- `slice_kis_paper_private_daily_catalog` creates a derived, hash-bound session
+  range without reopening the source cache. Research uses it to keep phase
+  consumers away from excluded sessions.
 - A hash-attested partial chunk may advance only after a fully validated first
   page; a wholly invalid page never advances its cursor.
 

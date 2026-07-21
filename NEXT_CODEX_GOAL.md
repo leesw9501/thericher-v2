@@ -2,92 +2,87 @@
 
 ## Objective
 
-Freeze the first honest KIS-native daily comparative-validation contract from
-the available `QQQ`/`SPY`/`IWM` panel and run its CPU baseline without treating
-data quantity as a permission gate.
+Build the first executable KIS **virtual-paper-only** US buy canary path and
+connect its sanitized runtime state to the existing local dashboard.
 
-The hash-attested panel has 694 common completed `MODP=0_unadjusted` sessions.
-It is the current clean common range. KIS IWM backfill beyond its current lower
-bound is source-limited: a page with one internally inconsistent OHLC row made
-the strictly parsed page unusable. Do not coerce its other rows into the panel
-or repeatedly call the same bad page. This limits historical coverage, not KIS
-Paper, local-paper, or research authority.
-
-`KIS_PAPER_*` market/account/order calls, paper submission, and goal-owned
-scheduling are standing-authorized. `KIS_LIVE_*` and real-money routes remain
-unavailable.
+The purpose is execution learning, not a profitability ceremony. The operator
+has standing-authorized all private `KIS_PAPER_*` work, including account and
+market reads, submit/modify/cancel, sizing, reconciliation, data retention, and
+goal-owned schedules. Do not ask for paper capital, a trade count, a dashboard
+review, a profitability result, or a per-call confirmation. `KIS_LIVE_*`, live
+hosts, and real-money behavior remain unavailable.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
-   `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
-3. Load the private daily panel offline and record only hashes, session counts,
-   date bounds, and limitations; never print raw rows, credentials, or account
-   values.
-4. Ask Claude for a concise falsification-first review before freezing the
-   split or opening/interpreting a holdout. Do not send credentials, raw rows,
-   or holdout labels.
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and
+   `agents/execution.md` first; then read `agents/data.md` and
+   `agents/engine-research.md` for current data/model context.
+3. Ask Claude for a concise falsification-first review before relying on a new
+   paper submit/reconciliation route. Do not send credentials, account values,
+   raw broker payloads, or source data.
 
 ## Work Packages
 
+### Execution Agent
+
+1. Close the current injected-transport allowlist gap: validate host, method,
+   path, query, and allowable headers in the KIS paper client before every
+   transport invocation, not only inside the urllib implementation.
+2. Build one narrow KIS paper adapter for US **buy limit** orders only. It must
+   pin the KIS virtual-paper host, use only documented virtual-paper TR IDs,
+   reject every live host/credential/route, and leave US sells out of scope
+   until their official TR-ID contradiction is resolved.
+3. Persist an idempotent intent before KIS submission; reconcile account,
+   positions, open orders, and `inquire-ccnl` before replacing an unknown
+   result. A recovery anomaly is a technical reconciliation task, not an
+   operator approval gate.
+4. Provide a goal-owned Docker command for a bounded paper canary. Its default
+   execution may use the actual KIS virtual account when configured. It must
+   write only sanitized runtime/event evidence outside Git and must never print
+   tokens, account identifiers, or raw broker bodies.
+5. Project the resulting sanitized account/order/emergency status to the
+   credential-free local dashboard. The web process must not receive KIS
+   credentials or call KIS itself.
+
 ### Data Agent
 
-- Keep `data.kis_paper_daily` as the sole daily KIS consumption boundary.
-  Re-attest the index, manifests, raw hashes, cursor seams, and exact overlap
-  before exposing bars.
-- Treat 694 common sessions as the active frozen-input candidate. Retain its
-  raw-price/corporate-action limitation and the IWM historical source-quality
-  limit in the dataset contract.
-- Do not run another IWM daily backfill from the blocked lower bound until a
-  different official KIS endpoint or an evidence-backed row-quality contract
-  can retrieve it without silently excluding inconsistent OHLC data.
-- Do not substitute Tiingo, Norgate, Yahoo, or synthetic bars into this
-  KIS-native validation panel. Other sources may remain separate development
-  evidence.
+- Keep KIS market-data cache and paper execution evidence separate. A canary
+  may use the existing KIS-native daily/intraday inputs but must not duplicate
+  raw broker payloads into `D:\market_data` or Git.
+- Keep the 694-session unadjusted daily panel and its `burned_precontract`
+  comparative interpretation visible; neither blocks a paper canary.
 
 ### Engine Research Agent
 
-- After Claude's split review, freeze a chronological 60/20/20 contract with
-  a two-session purge/embargo over the available 694-session panel. The final
-  holdout stays unopened while thresholds or alternatives are selected.
-- Run the deterministic daily relative-strength reference and a naive
-  cash/always-invested comparator through replayable local paper on the
-  appropriate pre-holdout partitions. Persist each run's `run.json`, event
-  hash, data hash, costs, and code revision under `D:\thericher-v2\model-artifacts`.
-- State only comparative observations with their limitations. Do not claim
-  profitability or start CUDA simply to occupy the GPU.
-- Update breadth, depth, ensemble, and replication queues based on the frozen
-  baseline. A GPU candidate still needs a distinct falsifiable hypothesis and
-  an eligible campaign contract.
-
-### Execution Agent
-
-- Keep daily validation broker-free: decisions become `OrderIntent`s only for
-  the local-paper simulator and all fills remain `source: local_paper`.
-- Preserve the prepared next order-transport slice: KIS Paper US buy-only,
-  fixed paper host, durable idempotent intent, and `inquire-ccnl` recovery.
-  The unresolved US sell TR-ID contradiction remains out of scope until an
-  official source resolves it.
+- Supply only deterministic, explicit buy intent inputs for the first canary;
+  do not couple paper submission to an unvalidated learned model.
+- Continue breadth/depth queue preparation on CPU while execution work runs.
+  CUDA starts only for a distinct falsifiable candidate, never as a substitute
+  for a paper transport test.
 
 ### Validation
 
-- Independently check temporal split disjointness, purge/embargo, source-only
-  panel identity, local-paper replay, and the run-manifest/event-hash link.
-- Validate that the source-limited IWM boundary cannot be silently filled or
-  converted into a permission/approval gate.
+- Independently verify that test adapters cannot route live, all intended KIS
+  requests are allowlisted before transport, intent persistence precedes side
+  effects, unknown outcomes reconcile without duplicate submission, and web
+  code remains credential-free.
+- Check a real virtual-paper canary only for bounded execution facts
+  (acknowledgement/reconciliation/sanitized state), not a return claim.
 
 ## Operating Boundaries
 
-- There is no paper-capital, profitability, dashboard, report, trade-count,
-  756-session, or per-call approval gate. The former 756-session target is a
-  data-quality preference; the documented source limit permits validation now.
-- Private KIS raw-data retention on `D:` and goal-owned KIS Paper schedules are
-  authorized. Retention metadata is factual, never a permission switch.
-- Do not read `KIS_LIVE_*`, call a live route, expose secrets, publish KIS
-  data, or store raw market data/model artifacts in Git.
-- Keep model artifacts under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts` in Docker.
+- `KIS_PAPER_*` access and virtual orders are standing-authorized. A historical
+  one-shot marker, a factual raw-retention field, weak research evidence, or a
+  missing profitability report cannot disable the work.
+- Keep all generated artifacts under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`; raw market data stays under `D:\market_data`; neither
+  belongs in Git.
+- Do not read `KIS_LIVE_*`, construct a live route, buy data/services, expose a
+  public service, or print/persist secrets or account identifiers.
+- Technical correctness remains mandatory: paper-only routing, explicit limit
+  price/whole-share validation, intent-before-side-effect, idempotence, and
+  reconciliation before replacing an unknown broker result.
 
 ## Verification
 
@@ -100,4 +95,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Freeze KIS daily validation contract`
+`Add KIS paper buy canary adapter`

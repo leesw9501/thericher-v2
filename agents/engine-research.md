@@ -8,20 +8,23 @@ not GPU occupancy.
 
 ## Ready Queue
 
-1. The 595-session KIS panel completed a local-paper smoke through
-   `daily-three-etf-relative-strength-v0`: 287 decisions, 65 abstentions, 444
-   replayable `local_paper` fills, and a flat final account. Its external
-   `run.json` fixes the strategy, costs, dataset, event hash, and code revision.
-   It is execution evidence only, not a return or model-selection claim.
-2. Consume the Data Agent's current 694-session hash-attested common
-   `QQQ`/`SPY`/`IWM` cache. It is source-limited below IWM's lower boundary, so
-   freeze the available panel rather than waiting for a non-permission target.
-   After Claude's split review, freeze the
-   `daily-three-etf-relative-strength-v0` contract: 20-session raw return,
-   one positive ETF or cash, `t+1` entry, `t+2` exit, local-paper costs,
-   chronological 60/20/20 split, and two-session purge/embargo.
-3. Run the frozen CPU baseline and retain replayable `local_paper` attribution.
-4. Use its result to populate a diverse breadth roster: naive/linear/tree,
+1. The current KIS-native comparative baseline is at
+   `D:\thericher-v2\model-artifacts\kis-daily-comparative-validation-v1\kis-daily-comparative-20260722T100000Z`.
+   It fixes the 694-session panel to 414 development sessions, two purge
+   sessions, 138 validation sessions, two embargo sessions, and a 138-session
+   final region. Each development/validation consumer receives an independent
+   hash-bound Data slice; it cannot read purge, embargo, or holdout bars.
+2. The final historical region is `burned_precontract`, not sealed: the prior
+   595-session relative-strength smoke observed dates through the current panel
+   end. The new comparative output is therefore historical execution evidence
+   only, not a return, model-selection, or promotion claim. This does not block
+   paper operation or new research; fresh paper/prospective observations become
+   the next honest out-of-sample evidence.
+3. The CPU run contains fixed relative-strength, cash, and fixed-quantity
+   buy-and-hold comparators for each ETF. All fills are replayable
+   `source: local_paper`; `run.json`, event hash, data hash, costs, and code
+   revision are retained outside Git.
+4. Use the current result to populate a diverse breadth roster: naive/linear/tree,
    one compact sequence model, and at most one small attention or public
    time-series benchmark. Start a depth or ensemble candidate only after a
    concrete distinct hypothesis and proper upstream out-of-fold evidence.
@@ -40,6 +43,9 @@ and generated artifacts only under `D:\thericher-v2\model-artifacts` or
 - The former daily 756-session target improved comparative validation; it never
   blocked KIS Paper connectivity or a deterministic paper canary. The active
   694-session panel is a documented source-limited input, not a repaired one.
+- A split label must record historical exposure honestly. `burned_precontract`
+  constrains only the interpretation of that historical suffix; it is never a
+  KIS Paper, scheduler, or operator-approval gate.
 - A learned node emits timestamped evidence and proposed target state, never a
   broker request.
 - Validation evidence can reject a claim without becoming a manual approval

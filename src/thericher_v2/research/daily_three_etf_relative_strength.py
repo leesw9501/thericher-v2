@@ -45,6 +45,8 @@ class DailyThreeEtfRelativeStrengthConfig:
     quantity: Decimal = Decimal("1")
     fee_bps: Decimal = Decimal("1")
     slippage_bps: Decimal = Decimal("0")
+    comparative_contract_hash: str | None = None
+    comparative_phase: Literal["development", "validation"] | None = None
 
     def __post_init__(self) -> None:
         if not _valid_run_id(self.run_id):
@@ -57,6 +59,10 @@ class DailyThreeEtfRelativeStrengthConfig:
         object.__setattr__(self, "quantity", positive(self.quantity, "quantity"))
         object.__setattr__(self, "fee_bps", non_negative(self.fee_bps, "fee_bps"))
         object.__setattr__(self, "slippage_bps", non_negative(self.slippage_bps, "slippage_bps"))
+        if (self.comparative_contract_hash is None) != (self.comparative_phase is None):
+            raise ValueError("daily relative-strength comparative evidence is incomplete")
+        if self.comparative_contract_hash is not None:
+            _require_sha256(self.comparative_contract_hash, "comparative_contract_hash")
 
 
 @dataclass(frozen=True)
@@ -114,6 +120,8 @@ class DailyThreeEtfRelativeStrengthResult:
     event_count: int
     run_manifest_path: Path
     run_manifest_sha256: str
+    comparative_contract_hash: str | None
+    comparative_phase: Literal["development", "validation"] | None
 
     @property
     def pnl(self) -> Decimal:
@@ -309,6 +317,8 @@ def run_daily_three_etf_relative_strength(
         event_count=event_count,
         run_manifest_path=run_manifest_path,
         run_manifest_sha256=run_manifest_sha256,
+        comparative_contract_hash=config.comparative_contract_hash,
+        comparative_phase=config.comparative_phase,
     )
 
 
@@ -422,6 +432,18 @@ def _sha256(payload: bytes) -> str:
     return "sha256:" + hashlib.sha256(payload).hexdigest()
 
 
+def _require_sha256(value: str, label: str) -> None:
+    if not isinstance(value, str) or not value.startswith("sha256:"):
+        raise ValueError(f"{label} must use the sha256: prefix")
+    digest = value.removeprefix("sha256:")
+    if len(digest) != 64:
+        raise ValueError(f"{label} must contain a 64-character SHA-256 digest")
+    try:
+        int(digest, 16)
+    except ValueError as error:
+        raise ValueError(f"{label} must contain a hexadecimal SHA-256 digest") from error
+
+
 def _write_run_manifest(
     *,
     work_dir: Path,
@@ -448,6 +470,14 @@ def _write_run_manifest(
             "decision_stride_sessions": config.decision_stride_sessions,
             "panel_symbol": DAILY_THREE_ETF_RELATIVE_STRENGTH_PANEL_SYMBOL,
         },
+        "comparative_contract": (
+            None
+            if config.comparative_contract_hash is None
+            else {
+                "contract_hash": config.comparative_contract_hash,
+                "phase": config.comparative_phase,
+            }
+        ),
         "execution": {
             "broker": "local_paper",
             "starting_cash": str(config.starting_cash),

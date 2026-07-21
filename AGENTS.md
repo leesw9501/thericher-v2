@@ -276,6 +276,11 @@ implementation properties, not operator checkpoints. A raw-retention field
 describes whether a particular result wrote raw data; it never grants or removes
 collection authority.
 
+Do not create a one-shot reservation, completion latch, or fixed retention value
+as a permission mechanism. Historical run markers are evidence only. A failed,
+empty, cancelled, or unretained private-paper job affects recovery of that job;
+it never disables a later correctly scoped KIS Paper job or schedule.
+
 ## Agent Memory And Recovery
 
 Each durable lane has logical views of:

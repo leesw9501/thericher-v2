@@ -3356,3 +3356,70 @@ inconsistency, so row-level acceptance was not adopted.
 Reason: this preserves useful verified KIS history without silently treating a
 bad source row as clean data, avoids an infinite retry loop, and leaves the
 available 694-session panel free to support the next bounded CPU validation.
+
+## 2026-07-22 - Make private KIS Paper authority fully standing and markers factual
+
+Decision: the operator has standing-authorized every private `KIS_PAPER_*`
+engine action: market/account/order reads, virtual order submit/modify/cancel,
+routine sizing, reconciliation, raw market-data retention on `D:`, and
+goal-owned schedules. No paper-capital, profitability, dashboard, report,
+trade-count, per-call, or past-run approval gate applies. Historical one-shot
+records and `raw_market_data_retained` values are factual evidence for their own
+run only; they cannot reserve, disable, or require a new approval for later
+correctly scoped private-paper work.
+
+`KIS_LIVE_*`, live routes, and real-money behavior remain unavailable. The
+paper-only host boundary, secret-safe logging, intent-before-side-effect, and
+unknown-outcome reconciliation remain implementation correctness requirements,
+not operator approval checkpoints. This decision does not claim that an order
+transport already exists; it authorizes building and running one once the
+paper-only implementation is complete.
+
+Claude's short drift-check was `uncertain`: the current read-only KIS client
+has a client-side allowlist gap for injected transports, and no complete paper
+order transport exists. Resolve that code gap before treating a future submit
+adapter as paper-ready; it does not suspend data, research, local simulation, or
+other already safe KIS Paper work.
+
+Reason: earlier one-shot experiment remnants made an evidence field look like a
+continuing permission system. The project needs fast, repeatable private-paper
+iteration while preserving the few technical facts required to distinguish a
+real stored snapshot or broker action from a failed attempt.
+
+## 2026-07-22 - Freeze honest KIS daily comparative geometry and burn the exposed suffix
+
+Decision: add a Data-owned hash-bound chronological slice helper and a small
+offline comparative runner for the private KIS daily panel. The active
+694-session panel has dataset hash
+`sha256:4495dea26c5a27e6949b2b0dad05d82f4c555748191ed45cb880d7a242ced9b7`.
+After two two-session gaps, its exact usable 690 sessions divide into 414
+development (60%), 138 validation (20%), and 138 nominal holdout (20%)
+sessions. Development and validation receive separate derived dataset hashes;
+the runner never passes purge, embargo, or holdout bars to their relative-
+strength, cash, or fixed-quantity buy-and-hold references.
+
+The external contract is at
+`D:\thericher-v2\model-artifacts\kis-daily-comparative-validation-v1\kis-daily-comparative-20260722T100000Z\contract.json`
+with contract hash
+`sha256:ca11faa8341cdfab97b8f98bb64e33d7a5c779019de324595f58fd619d6c0810`.
+All comparator fills are replayable `source: local_paper`; each run retains a
+run manifest, event hash, data hash, costs, and code revision outside Git.
+
+The nominal final 138 sessions are **not sealed**. The prior 595-session
+relative-strength smoke began on `2024-04-03` and continued through the current
+panel end, which overlaps the new suffix. The contract therefore records
+`burned_precontract` and permits only historical comparison, never a claim of
+unopened holdout performance or model promotion. This is an interpretation
+limit, not a KIS Paper, scheduler, GPU, or operator-approval gate; prospective
+paper data can provide fresh out-of-sample evidence immediately.
+
+Claude's falsification verdict was `uncertain`: it confirmed the two-session
+gap covers the current `t+1` entry / `t+2` exit horizon, but correctly found
+that no split mechanism existed and that the old smoke had already crossed the
+proposed holdout. The new isolated slice contract resolves the first issue and
+records the second instead of relabeling it away. The unadjusted
+corporate-action limitation and fixed three-ETF survivor universe remain visible.
+
+Reason: a small, reproducible local-paper comparison is useful now, but an
+honest research record is more valuable than pretending an already observed
+historical suffix is fresh validation data.

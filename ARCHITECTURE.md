@@ -295,7 +295,9 @@ holds per-symbol logical date cursors, hashes, venue-attempt evidence, and the
 next shared KIS retry time. The index advances only after a snapshot's raw hash
 is verified. Its logical cursor is a date with intentional exact overlap, never
 an opaque KIS continuation header. An empty accepted venue response does not
-become research history. The current data-bearing routes are `QQQ/NAS`,
+become research history. Retention fields and past run markers describe only
+what was written by that run; they cannot become one-shot authority latches for
+later KIS Paper work. The current data-bearing routes are `QQQ/NAS`,
 `SPY/AMS`, and `IWM/AMS`, all requested with `MODP=0_unadjusted`.
 
 `data.kis_paper_daily` is the offline consumption boundary for that cache. It
@@ -304,11 +306,15 @@ conflicting overlap; verifies cursor seams; canonicalizes the fixed US ETF
 panel; and exposes only its common completed sessions as `CatalogedBars`. A
 partial chunk is usable only when its retained first page passed full validation;
 it never turns an invalid page into a silent repair. The first consumer is the
-deterministic `daily-three-etf-relative-strength-v0` local-paper baseline. Its
-JSONL event log is authoritative and can be replayed before its derived SQLite
-view is rebuilt at the end of a bounded research job. A co-located external
-`run.json` pins the dataset, strategy, costs, event hash, and code revision for
-each bounded run.
+deterministic `daily-three-etf-relative-strength-v0` local-paper baseline.
+`slice_kis_paper_private_daily_catalog` derives a separate dataset identity for
+one chronological session range without reopening source bytes; phase consumers
+therefore receive only their allowed bars. The first comparative contract uses
+those slices for development/validation local-paper references and leaves purge,
+embargo, and holdout bars out of those runs. Its JSONL event log is authoritative
+and can be replayed before its derived SQLite view is rebuilt at the end of a
+bounded research job. A co-located external `run.json` pins the dataset,
+strategy, costs, event hash, and code revision for each bounded run.
 
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.

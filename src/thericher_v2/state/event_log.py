@@ -14,7 +14,9 @@ from typing import Any
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.serialization import to_jsonable
 
-_DECISION_EVENT_TYPES = frozenset({"ensemble_decision", "daily_relative_strength_decision"})
+_DECISION_EVENT_TYPES = frozenset(
+    {"ensemble_decision", "daily_comparator_decision", "daily_relative_strength_decision"}
+)
 
 
 @dataclass(frozen=True)

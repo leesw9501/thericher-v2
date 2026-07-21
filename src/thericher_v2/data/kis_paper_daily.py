@@ -154,6 +154,63 @@ def load_kis_paper_private_daily_catalog(
     )
 
 
+def slice_kis_paper_private_daily_catalog(
+    catalog: KisPaperPrivateDailyCatalog,
+    *,
+    start_index: int,
+    stop_index: int,
+) -> KisPaperPrivateDailyCatalog:
+    """Return a hash-bound chronological slice without reopening the source cache.
+
+    Research uses this boundary to give a phase only the sessions it is allowed
+    to consume. The derived identity includes the parent hash and exact session
+    range, while the source bytes remain in the existing Data-owned cache.
+    """
+
+    if not isinstance(start_index, int) or isinstance(start_index, bool):
+        raise ValueError("KIS paper daily slice start_index must be an integer")
+    if not isinstance(stop_index, int) or isinstance(stop_index, bool):
+        raise ValueError("KIS paper daily slice stop_index must be an integer")
+    session_count = len(catalog.common_sessions)
+    if not 0 <= start_index < stop_index <= session_count:
+        raise ValueError("KIS paper daily slice range is invalid")
+
+    sessions = catalog.common_sessions[start_index:stop_index]
+    derived_hash = _slice_dataset_hash(
+        parent_dataset_id=catalog.dataset_id,
+        parent_dataset_hash=catalog.dataset_hash,
+        start_index=start_index,
+        stop_index=stop_index,
+        sessions=sessions,
+    )
+    derived_id = f"{catalog.dataset_id}:slice-{start_index}-{stop_index}"
+    bars_by_symbol: dict[str, CatalogedBars] = {}
+    for symbol, stream in catalog.bars_by_symbol.items():
+        bars = stream.bars[start_index:stop_index]
+        if len(bars) != len(sessions) or tuple(bar.start_ts.date() for bar in bars) != sessions:
+            raise ValueError("KIS paper daily catalog slice streams are incompatible")
+        bars_by_symbol[symbol] = _cataloged_bars_from_verified_loader(
+            dataset_id=derived_id,
+            dataset_hash=derived_hash,
+            source_path=catalog.index_path,
+            bars=bars,
+        )
+    return KisPaperPrivateDailyCatalog(
+        dataset_id=derived_id,
+        dataset_hash=derived_hash,
+        index_hash=catalog.index_hash,
+        index_path=catalog.index_path,
+        source_root=catalog.source_root,
+        adjustment_mode=catalog.adjustment_mode,
+        bars_by_symbol=MappingProxyType(bars_by_symbol),
+        common_sessions=sessions,
+        raw_price_limitations=(
+            *catalog.raw_price_limitations,
+            f"derived_session_slice_of:{catalog.dataset_hash}",
+        ),
+    )
+
+
 def _verified_cache_root(
     *,
     cache_root: Path | str,
@@ -491,6 +548,29 @@ def _dataset_hash(
         ],
     }
     payload = json.dumps(document, separators=(",", ":"), sort_keys=True).encode("utf-8")
+    return _sha256(payload)
+
+
+def _slice_dataset_hash(
+    *,
+    parent_dataset_id: str,
+    parent_dataset_hash: str,
+    start_index: int,
+    stop_index: int,
+    sessions: tuple[date, ...],
+) -> str:
+    payload = json.dumps(
+        {
+            "kind": "kis_paper_private_daily_catalog_slice_v1",
+            "parent_dataset_id": parent_dataset_id,
+            "parent_dataset_hash": parent_dataset_hash,
+            "start_index": start_index,
+            "stop_index": stop_index,
+            "sessions": [session.isoformat() for session in sessions],
+        },
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
     return _sha256(payload)
 
 

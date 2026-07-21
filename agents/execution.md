@@ -8,6 +8,8 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Current State
 
 - Local paper is available and all simulated fills use `source: local_paper`.
+- The daily comparative CPU run uses local paper for both relative-strength and
+  cash/fixed-quantity buy-and-hold references; each run remains replayable.
 - The local dashboard is credential-free and may display sanitized holdings,
   price, open-order, and emergency state.
 - KIS Paper account/data/order access, paper submit/modify/cancel, routine
@@ -31,7 +33,9 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 Paper submission is authorized; no capital envelope, profitability report,
 dashboard state, trade count, or per-call approval is required. Do not read
 `KIS_LIVE_*`, create a live host/configuration path, or emit secrets. Model
-output remains untrusted input to deterministic execution logic.
+output remains untrusted input to deterministic execution logic. Historical
+one-shot or retention markers cannot disable later correctly scoped paper work;
+they only describe the recovery state of their own run.
 
 ## Durable Knowledge
 

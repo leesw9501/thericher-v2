@@ -99,13 +99,22 @@ authorization.
 
 ### Engine Research
 
-The deterministic daily relative-strength baseline ran again as a 595-session
-local-paper smoke: 287 decisions, 65 abstentions, 444 `local_paper` fills, and
-a flat replayable final account. Its `run.json` now fixes the dataset, costs,
-strategy, event hash, and code revision under
-`D:\thericher-v2\model-artifacts\daily-three-etf-relative-strength-v0`.
-This proves the path, not profitability. Freeze the 694-session comparative
-split before making a return claim or allocating GPU work.
+The 694-session KIS-native comparative CPU run is under
+`D:\thericher-v2\model-artifacts\kis-daily-comparative-validation-v1\kis-daily-comparative-20260722T100000Z`.
+Its contract hash is
+`sha256:ca11faa8341cdfab97b8f98bb64e33d7a5c779019de324595f58fd619d6c0810`.
+It creates independent 414-session development and 138-session validation
+slices, separated by two-session purge and embargo ranges, and runs fixed
+relative-strength, cash, and fixed-quantity buy-and-hold references through
+replayable `local_paper` only. Run manifests record data/event hashes, costs,
+and code revision outside Git.
+
+The nominal 138-session historical holdout is marked `burned_precontract`.
+The earlier 595-session smoke observed dates overlapping that suffix, so the
+new output is honest retrospective execution evidence, not a return,
+model-selection, or promotion claim. This is not a blocker for KIS Paper or
+new research: prospective paper observations are the next clean out-of-sample
+source.
 
 ### Execution
 
@@ -121,7 +130,9 @@ Terminal historical KIS capability probes were removed from the executable
 surface. Their external summaries remain immutable historical evidence only.
 There is no reusable one-shot reservation or a fixed raw-retention marker in
 the active path: current collectors record whether raw data was actually
-written, and cache collection is allowed by default.
+written, and cache collection is allowed by default. A historical marker can
+never disable a new correctly scoped KIS Paper data, account, order, or
+scheduler job.
 
 ## Recovery
 

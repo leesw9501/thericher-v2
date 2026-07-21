@@ -68,6 +68,10 @@ Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is
 never a permission switch.
 
+Historical one-shot artifacts are non-authoritative. Their completion or
+retention value must never reserve, disable, or require approval for a later
+correctly scoped KIS Paper collection, account, order, or scheduler run.
+
 If a page is repeatedly structurally invalid, diagnose only safe structure
 (counts, field names, validation class, and session metadata), preserve the
 failure evidence, and stop that target when the source-quality limit is clear.
