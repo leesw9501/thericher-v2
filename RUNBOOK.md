@@ -115,9 +115,15 @@ response text.
 The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
 with `EGW00201` on 2026-07-21 UTC after a successful image rebuild. It sent no
 order. KIS's official sample repository identifies that code as exceeding the
-per-second request limit. The next recovery adds small deterministic pacing to
-the virtual external-request path, then makes one fresh bridge call; it does
-not add a retry loop, a manual approval, or a live route.
+per-second request limit. The real read-only transport now spaces valid external
+requests by at least one second using an injectable monotonic policy. A rebuilt
+bridge then completed at `20260721T223701135634Z-complete.json` with only
+sanitized position/open-order counts and USD currency labels. It made no order.
+
+The separate canary transport needs the same source pacing before its first
+authorized submit/cancel/reconcile invocation. That change remains bounded to
+the virtual canary route; it is not a retry loop, a manual approval, or a live
+route.
 
 ## KIS Paper Order Work
 

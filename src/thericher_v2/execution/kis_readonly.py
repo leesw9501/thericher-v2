@@ -10,12 +10,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import re
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
@@ -41,6 +43,7 @@ KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE = "NASD"
 KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL = "SPY"
 KIS_PAPER_ORDERABLE_REFERENCE_PRICE = Decimal("1")
 MAX_KIS_PAPER_BALANCE_PAGES = 10
+DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS = 1.0
 _SAFE_KIS_PAPER_UPSTREAM_CODE = re.compile(r"[A-Z][A-Z0-9]{1,15}", re.ASCII)
 
 
@@ -218,10 +221,28 @@ class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
 class UrllibKisHttpTransport:
     """Small standard-library transport guarded by the same request allowlist."""
 
-    def __init__(self, *, timeout_seconds: float = 15.0) -> None:
+    def __init__(
+        self,
+        *,
+        timeout_seconds: float = 15.0,
+        minimum_request_interval_seconds: float = DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS,
+        monotonic_clock: Callable[[], float] = time.monotonic,
+        sleeper: Callable[[float], None] = time.sleep,
+    ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
+        if (
+            isinstance(minimum_request_interval_seconds, bool)
+            or not isinstance(minimum_request_interval_seconds, (int, float))
+            or not math.isfinite(minimum_request_interval_seconds)
+            or minimum_request_interval_seconds <= 0
+        ):
+            raise ValueError("minimum_request_interval_seconds must be positive")
         self._timeout_seconds = timeout_seconds
+        self._minimum_request_interval_seconds = float(minimum_request_interval_seconds)
+        self._monotonic_clock = monotonic_clock
+        self._sleeper = sleeper
+        self._last_dispatch_at: float | None = None
         # Credential-bearing paper requests must not inherit host proxy settings.
         self._opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}),
@@ -230,6 +251,7 @@ class UrllibKisHttpTransport:
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         validate_kis_paper_readonly_request(request)
+        self._wait_for_request_slot()
         url = _request_url_with_query(request)
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
@@ -257,6 +279,17 @@ class UrllibKisHttpTransport:
             )
         except (OSError, TimeoutError, urllib.error.URLError) as error:
             raise KisPaperReadOnlyError("transport_failure") from error
+
+    def _wait_for_request_slot(self) -> None:
+        if self._last_dispatch_at is None:
+            self._last_dispatch_at = self._monotonic_clock()
+            return
+        next_dispatch_at = self._last_dispatch_at + self._minimum_request_interval_seconds
+        current = self._monotonic_clock()
+        while current < next_dispatch_at:
+            self._sleeper(next_dispatch_at - current)
+            current = self._monotonic_clock()
+        self._last_dispatch_at = current
 
 
 @dataclass(frozen=True)

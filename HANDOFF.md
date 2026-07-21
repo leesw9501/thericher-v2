@@ -174,14 +174,22 @@ image wrote `20260721T222233665808Z-unavailable.json` with the expected
 `read_only` output shape and the safe diagnostic `balance`, `VTTS3012R`, HTTP
 `500`, and `EGW00201`. KIS's official sample repository identifies `EGW00201`
 as exceeding the per-second request limit, which fits the bridge's rapid token,
-open-order, three-venue balance, and orderable-funds sequence. The existing
-canary remains `intent_recorded` with no broker order reference or submit
-evidence. The next small recovery is request pacing, not a capital, research,
-or one-shot policy gate: preserve virtual-only routes and one bounded bridge
-call while spacing external requests through an injectable monotonic policy.
-Continue to exclude `msg1`, broker bodies, account identifiers, and secrets.
-Safe evidence is under `D:\thericher-v2\model-artifacts\execution`; never
-inspect or copy private recovery state into Git.
+open-order, three-venue balance, and orderable-funds sequence.
+
+The virtual read-only transport now applies an injected monotonic `1.0`-second
+minimum gap only to valid external requests. Its first request is immediate;
+rejected requests do not consume a slot, while a failed external attempt does.
+The next rebuilt bridge completed at
+`20260721T223701135634Z-complete.json` after about six seconds, with sanitized
+facts `position_count: 1`, `open_order_count: 0`, and USD currency labels. It
+sent no order. The existing canary remains `intent_recorded` with no broker
+order reference or submit evidence. Its distinct direct transport still needs
+the same source-pacing behavior before the already-authorized first bounded
+submit/cancel/reconcile cycle. This is recovery and reliable execution, not a
+capital, research, or one-shot policy gate. Continue to exclude `msg1`, broker
+bodies, account identifiers, and secrets. Safe evidence is under
+`D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
+recovery state into Git.
 
 The canary now persists its cancellation choice with the private intent,
 serializes sibling run IDs through one state-root lock, resumes cancellation of
@@ -213,11 +221,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add the smallest
-testable pacing policy to the virtual read-only external-request path, rebuild
-`kis-readonly`, and make one fresh sanitized bridge call. This is not a
-prerequisite approval for paper work; it is the next technical recovery fact for
-the existing canary. At each boundary, review the data contract, execution route
-readiness, research queues, GPU eligibility, disk capacity, and role ownership;
-make reversible no-cost changes autonomously and escalate only a real remaining
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: reuse the tested
+source pacing for the canary's separate virtual transport, then reconcile and
+run one first bounded submit/cancel/reconcile cycle. This is not a prerequisite
+approval for paper work; it is the next technical recovery fact for the existing
+canary. At each boundary, review the data contract, execution route readiness,
+research queues, GPU eligibility, disk capacity, and role ownership; make
+reversible no-cost changes autonomously and escalate only a real remaining
 operator boundary.

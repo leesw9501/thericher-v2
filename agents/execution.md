@@ -20,19 +20,17 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   after accepted submit. Private recovery state stays in a dedicated Docker
   volume; external evidence and dashboard projection are sanitized.
 - The first real virtual-token attempt on 2026-07-21 returned `auth_rejected`
-  before account data or submit. The latest bounded console-bridge invocation
-  reached the account route and returned `balance_rejected`; it created no order
-  and the existing canary remains `intent_recorded` with no broker order
-  reference. A rebuilt current image repeated that result at `balance` /
-  `VTTS3012R` with HTTP 500 and the safe KIS code `EGW00201`. KIS's official
-  sample repository labels that code as a per-second request-limit exceedance.
-  The runtime now emits the current `read_only` / `account_snapshot_complete`
-  shape and only endpoint/transaction/HTTP/code diagnostic data; `msg1` and raw
-  bodies remain absent. Four paper variables were present in the container with
-  expected non-secret lengths; no live variable was read. The next bounded
-  recovery is a small injectable monotonic pacing policy for external read-only
-  requests, followed by one fresh bridge invocation. Treat it as integration
-  recovery, not a paper authority gate.
+  before account data or submit. The bounded console bridge later returned
+  `balance_rejected` with HTTP 500 and safe KIS code `EGW00201`; it made no
+  order. KIS's official sample repository labels that code as a per-second
+  request-limit exceedance. A rebuilt current read-only transport now applies
+  one-second monotonic spacing only to valid external calls, and the next single
+  bridge completed with sanitized facts: one position, zero open orders, and USD
+  currency labels. No live variable was read and no order was sent. The existing
+  canary remains `intent_recorded` with no broker order reference. Its distinct
+  virtual transport needs the same tested pacing before the first
+  submit/cancel/reconcile invocation. Treat it as integration recovery, not a
+  paper authority gate.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -42,11 +40,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Add external-request pacing to the read-only virtual client, rebuild
-   `kis-readonly`, and obtain one fresh account/open-order reconciliation. Then
-   reconcile the persisted canary run and run the first acknowledged/cancelled
-   bounded paper canary. A failed bridge diagnoses its own KIS route while Data
-   and Research continue; it does not reopen an approval question.
+2. Reuse external-request pacing in the virtual canary transport, then
+   reconcile the persisted canary run and run one first acknowledged/cancelled
+   bounded paper canary. A failed canary records its technical recovery state
+   while Data and Research continue; it does not reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing

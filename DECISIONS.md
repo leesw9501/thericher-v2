@@ -3629,3 +3629,28 @@ Reason: a code-only diagnostic makes the recovery precise while preserving
 private evidence boundaries. Source pacing targets the observed cause without
 reintroducing one-shot reservations, paper-capital approvals, or secret-bearing
 observability.
+
+## 2026-07-22 - Pace virtual read-only requests instead of retrying the rate limit
+
+Decision: put an instance-local, injectable monotonic pacing policy in the real
+KIS Paper read-only urllib transport. It validates a request before pacing; the
+first valid external dispatch is immediate, every later valid dispatch waits at
+least one second, and a failed external attempt still consumes its slot. Fake
+and offline injected transports remain unpaced. No retry loop, scheduler,
+credential expansion, order route, or live route was added.
+
+The rebuilt bridge completed one bounded account/open-order snapshot at
+`20260721T223701135634Z-complete.json`, after the earlier `EGW00201` rate-limit
+fact. Its sanitized artifact records only one position, zero open orders, USD
+currency labels, timing, and a runtime hash; it emitted no raw account or
+price data and sent no order.
+
+Claude's short falsification verdict was `supported-with-limits`: a temporal
+pacing fix is the smallest match for `EGW00201`, but one successful run does
+not prove broad rate headroom or exclude every future account-side failure. The
+canary's distinct transport needs the same behavior before the first authorized
+virtual order cycle.
+
+Reason: source pacing is an execution-reliability property, not an approval
+gate. It resolves the observed virtual limit without reviving one-shot
+reservations or hiding failures behind automatic retries.

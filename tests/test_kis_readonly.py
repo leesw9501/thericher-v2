@@ -12,9 +12,11 @@ import pytest
 from thericher_v2.execution import kis_readonly
 from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_BALANCE_ENDPOINT,
+    KIS_PAPER_BASE_URL,
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
     KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
     KIS_PAPER_READ_ONLY_ENDPOINTS,
+    KIS_PAPER_TOKEN_PATH,
     KisHttpRequest,
     KisHttpResponse,
     KisPaperAccountIdentity,
@@ -167,7 +169,16 @@ def test_transport_rejects_non_allowlisted_requests_before_network(monkeypatch) 
         raise AssertionError("non-allowlisted requests must not reach the network")
 
     monkeypatch.setattr(urllib.request, "urlopen", fail_network)
-    transport = UrllibKisHttpTransport()
+    sleep_calls: list[float] = []
+    transport = UrllibKisHttpTransport(sleeper=sleep_calls.append)
+    open_calls: list[object] = []
+
+    class FailingOpener:
+        def open(self, request: object, *, timeout: float) -> None:
+            open_calls.append(request)
+            raise AssertionError(f"non-allowlisted request reached opener with timeout {timeout}")
+
+    monkeypatch.setattr(transport, "_opener", FailingOpener())
     requests = (
         KisHttpRequest(
             method="GET",
@@ -193,6 +204,123 @@ def test_transport_rejects_non_allowlisted_requests_before_network(monkeypatch) 
     for request in requests:
         with pytest.raises(KisPaperReadOnlyError, match="request_not_allowlisted"):
             transport.request(request)
+    assert sleep_calls == []
+    assert open_calls == []
+
+
+def test_real_transport_paces_only_valid_external_requests(monkeypatch) -> None:
+    current_time = [100.0]
+    sleep_calls: list[float] = []
+    dispatch_times: list[float] = []
+
+    def monotonic_clock() -> float:
+        return current_time[0]
+
+    def sleeper(delay: float) -> None:
+        sleep_calls.append(delay)
+        current_time[0] += delay
+
+    class Response:
+        status = 200
+        headers: dict[str, str] = {}
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'{"access_token":"test-token"}'
+
+    class RecordingOpener:
+        def open(self, _request: object, *, timeout: float) -> Response:
+            assert timeout == 15.0
+            dispatch_times.append(monotonic_clock())
+            return Response()
+
+    transport = UrllibKisHttpTransport(
+        monotonic_clock=monotonic_clock,
+        sleeper=sleeper,
+    )
+    monkeypatch.setattr(transport, "_opener", RecordingOpener())
+    request = KisHttpRequest(
+        method="POST",
+        url=f"{KIS_PAPER_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+        headers={"content-type": "application/json", "accept": "application/json"},
+        json_body={
+            "grant_type": "client_credentials",
+            "appkey": "test-app-key",
+            "appsecret": "test-app-secret",
+        },
+    )
+
+    transport.request(request)
+    transport.request(request)
+    transport.request(request)
+
+    assert dispatch_times == [100.0, 101.0, 102.0]
+    assert sleep_calls == [1.0, 1.0]
+
+
+def test_real_transport_paces_after_a_failed_external_attempt(monkeypatch) -> None:
+    current_time = [50.0]
+    sleep_calls: list[float] = []
+    dispatch_times: list[float] = []
+
+    def monotonic_clock() -> float:
+        return current_time[0]
+
+    def sleeper(delay: float) -> None:
+        sleep_calls.append(delay)
+        current_time[0] += delay
+
+    class Response:
+        status = 200
+        headers: dict[str, str] = {}
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'{"access_token":"test-token"}'
+
+    class FirstAttemptFails:
+        attempts = 0
+
+        def open(self, _request: object, *, timeout: float) -> Response:
+            assert timeout == 15.0
+            self.attempts += 1
+            dispatch_times.append(monotonic_clock())
+            if self.attempts == 1:
+                raise urllib.error.URLError("temporary-test-failure")
+            return Response()
+
+    transport = UrllibKisHttpTransport(
+        monotonic_clock=monotonic_clock,
+        sleeper=sleeper,
+    )
+    monkeypatch.setattr(transport, "_opener", FirstAttemptFails())
+    request = KisHttpRequest(
+        method="POST",
+        url=f"{KIS_PAPER_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+        headers={"content-type": "application/json", "accept": "application/json"},
+        json_body={
+            "grant_type": "client_credentials",
+            "appkey": "test-app-key",
+            "appsecret": "test-app-secret",
+        },
+    )
+
+    with pytest.raises(KisPaperReadOnlyError, match="transport_failure"):
+        transport.request(request)
+    transport.request(request)
+
+    assert dispatch_times == [50.0, 51.0]
+    assert sleep_calls == [1.0]
 
 
 def test_config_reads_only_authorized_values_and_blank_config_fails_closed(tmp_path) -> None:

@@ -2,82 +2,86 @@
 
 ## Objective
 
-Add a small testable pacing policy to KIS virtual-paper read-only requests,
-then rebuild the image and run one fresh bridge invocation.
+Reuse the tested KIS virtual request pacing in the narrow paper-canary
+transport, then run one authorized submit/cancel/reconcile cycle.
 
-The latest rebuilt bridge reached `balance` / `VTTS3012R`, received HTTP 500
-with the sanitized KIS code `EGW00201`, and sent no order. KIS's official
-sample repository identifies that code as a per-second request-limit exceedance.
-The bridge presently sends one token request followed rapidly by open-order,
-three-venue balance, and orderable-funds requests. This is integration recovery,
-not a paper-work approval step: private KIS Paper work is standing-authorized
-and KIS Live remains forbidden.
+The read-only bridge now completes under a one-second minimum external-request
+gap. Its safe snapshot records one position and zero open orders, but no raw
+account or price data. The canary uses a separate virtual-only transport and
+can make token, read-only reconciliation, submit, cancel, and completion-query
+requests in one bounded run. It must inherit source pacing before its first
+actual Paper order attempt. Private KIS Paper work is standing-authorized; KIS
+Live remains forbidden.
 
 ## Required First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and active
    stateboards in `agents/`.
-3. Read before edits or the bridge call:
+3. Read before edits or the canary call:
    - `src/thericher_v2/execution/kis_readonly.py`
-   - `src/thericher_v2/execution/kis_paper_console_bridge.py`
    - `src/thericher_v2/execution/kis_paper_canary.py`
+   - `src/thericher_v2/execution/kis_paper_console_bridge.py`
+   - `tests/test_kis_paper_canary.py`
    - `tests/test_kis_readonly.py`
-   - `tests/test_paper_account_snapshot.py`
-4. Do not send KIS credentials, account data, artifacts, or raw broker output
-   to Claude or another external service.
+   - `docker-compose.yml`
+4. Ask Claude for a concise falsification-first drift check before the real
+   canary call. Do not send credentials, account data, raw broker output,
+   private intent state, or order identifiers.
 
 ## Scope
 
-- Pace actual virtual read-only external requests with an injectable monotonic
-  policy. The first dispatch may proceed immediately; every later dispatch must
-  respect the configured minimum interval.
-- Use a conservative `1.0` second default for the real KIS transport. Do not
-  add automatic retries, exponential backoff, a scheduler, or a new gate.
-- Preserve virtual-host-only routing, endpoint allowlists, fail-closed parsing,
-  the safe `EGW00201` projection, and no order action in this objective.
-- Do not read `KIS_LIVE_*`, construct a live route, buy anything, or expose a
-  public service.
+- Share or reuse the read-only transport's injectable monotonic one-second
+  pacing for the canary's real virtual external requests. The first valid
+  external request may proceed immediately; later ones must be spaced.
+- Keep fake/offline canary transports fast. Preserve virtual-host-only routes,
+  the fixed one-share buy-limit/cancel surface, persisted intent, no duplicate
+  submit after ambiguity, and sanitized evidence.
+- Build the current `kis-paper-canary` image, then invoke its existing Compose
+  command exactly once. It is authorized to submit and cancel one virtual order.
+- Do not add a generic broker adapter, retry loop, scheduler, sell route, live
+  route, public endpoint, paid service, or manual approval gate.
 
 ## Required Work
 
 ### Execution Agent
 
-1. Add focused deterministic tests with an injected monotonic clock/sleeper
-   proving the initial request is immediate and later external requests are
-   spaced by the configured interval. Keep existing route and fail-closed tests.
-2. Keep fake/offline transports fast; production bridge traffic must use the
-   paced real transport without relying on wall-clock assertions in tests.
-3. Run focused tests, then rebuild:
+1. Add focused deterministic pacing tests for the real canary transport,
+   including a failed external attempt consuming a slot. Keep existing order
+   lifecycle and fake-transport tests fast.
+2. Review the persisted canary recovery through the program's sanitized outcome
+   and existing state semantics; never dump private intent/order content.
+3. Run focused tests and Claude's short review. Rebuild:
 
    ```powershell
-   docker compose build kis-readonly
+   docker compose build kis-paper-canary
    ```
 
-4. Run exactly one fresh bridge call:
+4. Run exactly one existing canary command:
 
    ```powershell
-   docker compose --profile kis-readonly run --rm --no-deps kis-readonly
+   docker compose --profile kis-paper-canary run --rm --no-deps kis-paper-canary
    ```
 
-5. Record only the current sanitized reason/diagnostic and artifact path. On
-   `complete`, make the already-authorized canary submit/cancel/reconcile cycle
-   the next objective. On `unavailable`, define the next smallest technical
-   recovery from the observed code; do not retry in a loop.
+5. Record only sanitized phase/reason/counts/artifact path. If `cancelled` with
+   clean reconciliation, make prospective paper observation and PnL attribution
+   the next objective. If unresolved or unavailable, define the smallest
+   recovery objective and do not submit again in the same goal.
 
 ### Data And Validation
 
 - Keep `raw_market_data_retained: false` as provenance rather than a permission
   switch, while retaining raw-file/hash checks as data integrity.
-- Preserve virtual-only routing and no-order behavior from the bridge.
+- Preserve local-paper replay as `source: local_paper`; this objective's KIS
+  event is virtual-broker evidence, not a simulated fill.
 
 ## Completion Evidence
 
-- Focused regression proof of production pacing and unchanged offline behavior.
-- A current-image build and exactly one fresh sanitized bridge artifact outside
+- Focused pacing and canary lifecycle regression proof.
+- One current-image canary invocation and sanitized external evidence outside
   Git.
-- No KIS Live access, order request, raw broker body, credential, or account
-  identifier in Git, logs, or artifacts.
+- No KIS Live access, raw broker body, credential, account identifier, or raw
+  order identifier in Git, logs, dashboard, or artifact.
 
 ## Verification
 
@@ -90,4 +94,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Pace KIS paper read-only requests`
+`Pace KIS paper canary transport`
