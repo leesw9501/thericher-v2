@@ -3700,3 +3700,28 @@ Reason: this preserves the ambiguous intent without creating an approval,
 capital, profitability, or one-shot hold. A future separately identified
 canary remains allowed after safe submit-failure diagnostics improve; it is not
 a replacement submit for this run.
+
+## 2026-07-22 - Classify a fresh virtual canary rejection without retaining its body
+
+Decision: classify non-200 canary submit responses as closed `4xx`/`5xx` codes,
+classify an already-known rate-limit code as `submit_rate_limited`, and classify
+a non-success KIS response as `submit_kis_rejected`. The current implementation
+does not retain the KIS response code or message text. Focused tests inject a
+KIS-style code and secret-like free text, then prove that only the closed result
+reaches runtime/evidence.
+
+One independent current-image canary, `canary-20260721T232137Z`, reached clean
+initial reconciliation and produced `submit_kis_rejected`. Its safe evidence
+reports an available account, zero open orders/completion rows, no matching
+entry, and no broker order reference. The state remains `outcome_unknown` to
+avoid guessing a side effect or retrying this specific intent.
+
+Claude's pre-run falsification verdict was `supported-with-limits`. It accepted
+the virtual-only surface, raw-message omission test, and one-run blast radius,
+while noting that its conclusion depends on the reported implementation and
+cannot itself inspect the broker route.
+
+Reason: the new diagnostic narrows a real KIS rejection without creating a
+permission gate. The next independent run may project a strictly validated
+short KIS-style code when present, which can guide configuration correction
+without retaining a raw broker body or making a duplicate submission.

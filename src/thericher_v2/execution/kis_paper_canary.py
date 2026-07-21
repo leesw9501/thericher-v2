@@ -62,6 +62,7 @@ KIS_PAPER_US_CANCEL_TR_ID = "VTTT1004U"
 KIS_PAPER_US_CCNCL_PATH = "/uapi/overseas-stock/v1/trading/inquire-ccnl"
 KIS_PAPER_US_CCNCL_TR_ID = "VTTS3035R"
 KIS_PAPER_US_CCNCL_MAX_PAGES = 2
+KIS_PAPER_RATE_LIMIT_CODE = "EGW00201"
 
 _PAPER_POST_HEADERS = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "content-type", "accept"}
@@ -134,6 +135,10 @@ _SAFE_REASON_CODES = frozenset(
         "emergency_stop_new_orders",
         "matching_open_order",
         "submit_rejected",
+        "submit_http_4xx",
+        "submit_http_5xx",
+        "submit_kis_rejected",
+        "submit_rate_limited",
         "submit_transport_unknown",
         "submit_response_incomplete",
         "cancel_rejected",
@@ -600,10 +605,13 @@ class KisPaperCanaryClient:
             )
         )
         if response.status_code != 200:
-            raise KisPaperCanaryError("submit_transport_unknown")
-        payload = response.payload()
+            raise KisPaperCanaryError(_submit_http_failure_reason(response))
+        try:
+            payload = response.payload()
+        except KisPaperReadOnlyError as error:
+            raise KisPaperCanaryError("submit_response_incomplete") from error
         if payload.get("rt_cd") != "0":
-            raise KisPaperCanaryError("submit_transport_unknown")
+            raise KisPaperCanaryError("submit_kis_rejected")
         output = payload.get("output")
         if not isinstance(output, Mapping):
             raise KisPaperCanaryError("submit_response_incomplete")
@@ -839,12 +847,12 @@ def _run_kis_paper_canary(
             )
             try:
                 accepted, broker_order_id = client.submit_buy_limit(intent)
-            except (KisPaperCanaryError, KisPaperReadOnlyError):
+            except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
                 state = state_store.transition(
                     intent,
                     expected=frozenset({"submission_started"}),
                     phase="outcome_unknown",
-                    reason_code="submit_transport_unknown",
+                    reason_code=_safe_submit_failure_reason(error),
                     now=observed_at,
                 )
             else:
@@ -1143,6 +1151,37 @@ def _ensure_recovery_intent_matches(
     )
     if recorded_identity != requested_identity:
         raise KisPaperCanaryError("state_intent_mismatch")
+
+
+def _submit_http_failure_reason(response: KisHttpResponse) -> str:
+    if _submit_response_has_rate_limit_code(response):
+        return "submit_rate_limited"
+    status_code = response.status_code
+    if 400 <= status_code < 500:
+        return "submit_http_4xx"
+    if 500 <= status_code < 600:
+        return "submit_http_5xx"
+    return "submit_transport_unknown"
+
+
+def _safe_submit_failure_reason(error: Exception) -> str:
+    if isinstance(error, KisPaperCanaryError) and error.code in {
+        "submit_http_4xx",
+        "submit_http_5xx",
+        "submit_kis_rejected",
+        "submit_rate_limited",
+        "submit_response_incomplete",
+    }:
+        return error.code
+    return "submit_transport_unknown"
+
+
+def _submit_response_has_rate_limit_code(response: KisHttpResponse) -> bool:
+    try:
+        payload = response.payload()
+    except KisPaperReadOnlyError:
+        return False
+    return payload.get("msg_cd") == KIS_PAPER_RATE_LIMIT_CODE
 
 
 def _unavailable_reconciliation(*, reason_code: str | None = None) -> KisPaperCanaryReconciliation:

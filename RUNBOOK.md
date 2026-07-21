@@ -133,6 +133,14 @@ replace, modify, or cancel that run. A later independently identified canary
 may proceed after its failure diagnostics are improved. This is a technical
 recovery rule, not a manual approval or live route.
 
+The first independently identified paced canary,
+`canary-20260721T232137Z`, reached clean initial reconciliation and received
+the closed result `submit_kis_rejected`; safe evidence still has zero open
+orders, zero completion rows, no matching entry, and no broker order reference.
+Preserve it as `outcome_unknown` rather than retrying it. The next diagnostic
+may retain only a strictly validated short KIS-style code when present; it must
+not retain response text or any other response field.
+
 ## KIS Paper Order Work
 
 Paper order submission is authorized as soon as the Execution adapter exists.
@@ -170,9 +178,11 @@ reason plus allowlisted endpoint/transaction/HTTP metadata, then rerun a
 bounded bridge job. The first current-image canary result is an ambiguous
 submit transport outcome, and its exact persisted run has already received its
 one read-only recovery. Preserve that run as unresolved; improve closed safe
-submit diagnostics before a separately identified new canary. Do not substitute
-live credentials or inspect/print secret values. The sanitized runtime and
-evidence never retain an API body, account identifier, or secret.
+submit diagnostics before a separately identified new canary. The first such
+new canary is now preserved as a KIS rejection, so expose only a validated
+short KIS code on a later independent run. Do not substitute live credentials
+or inspect/print secret values. The sanitized runtime and evidence never retain
+an API body, account identifier, or secret.
 
 ## Research And Artifacts
 

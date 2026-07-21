@@ -49,6 +49,8 @@ class FakeKisPaperCanaryTransport:
     fail_submit: bool = False
     submit_status_code: int | None = None
     submit_result_code: str | None = None
+    submit_message_code: str | None = None
+    submit_message_text: str | None = None
     retain_open_order_after_cancel: bool = False
     matching_ccnl_after_cancel: bool = False
     cancellation_seen: bool = False
@@ -65,12 +67,22 @@ class FakeKisPaperCanaryTransport:
             if self.fail_submit:
                 raise KisPaperCanaryError("transport_failure")
             if self.submit_status_code is not None:
+                payload = {"error": "temporary"}
+                if self.submit_message_code is not None:
+                    payload["msg_cd"] = self.submit_message_code
+                if self.submit_message_text is not None:
+                    payload["msg1"] = self.submit_message_text
                 return KisHttpResponse.from_payload(
-                    {"error": "temporary"},
+                    payload,
                     status_code=self.submit_status_code,
                 )
             if self.submit_result_code is not None:
-                return KisHttpResponse.from_payload({"rt_cd": self.submit_result_code})
+                payload = {"rt_cd": self.submit_result_code}
+                if self.submit_message_code is not None:
+                    payload["msg_cd"] = self.submit_message_code
+                if self.submit_message_text is not None:
+                    payload["msg1"] = self.submit_message_text
+                return KisHttpResponse.from_payload(payload)
             self.order_open = True
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
@@ -606,13 +618,21 @@ def test_unknown_submission_recovery_never_uses_an_order_post_route(tmp_path: Pa
     )
 
 
-def test_non_success_submit_response_is_unknown_and_never_resubmitted(tmp_path: Path) -> None:
-    transport = FakeKisPaperCanaryTransport(submit_status_code=503)
-    state_path = tmp_path / "private" / "http-unknown-1.json"
+@pytest.mark.parametrize(
+    ("status_code", "expected_reason"),
+    [(403, "submit_http_4xx"), (503, "submit_http_5xx")],
+)
+def test_non_success_submit_response_is_unknown_and_never_resubmitted(
+    tmp_path: Path,
+    status_code: int,
+    expected_reason: str,
+) -> None:
+    transport = FakeKisPaperCanaryTransport(submit_status_code=status_code)
+    state_path = tmp_path / "private" / f"http-unknown-{status_code}.json"
     paths = _paths(tmp_path)
     first = run_kis_paper_canary(
         decision=_decision(),
-        run_id="http-unknown-1",
+        run_id=f"http-unknown-{status_code}",
         environment=_paper_environment(),
         state_path=state_path,
         execute=True,
@@ -623,13 +643,13 @@ def test_non_success_submit_response_is_unknown_and_never_resubmitted(tmp_path: 
     )
 
     assert first.phase == "outcome_unknown"
-    assert first.reason_code == "submit_transport_unknown"
+    assert first.reason_code == expected_reason
     assert _submission_count(transport) == 1
 
     transport.submit_status_code = None
     second = run_kis_paper_canary(
         decision=_decision(decision_as_of=NOW + timedelta(minutes=1)),
-        run_id="http-unknown-1",
+        run_id=f"http-unknown-{status_code}",
         environment=_paper_environment(),
         state_path=state_path,
         execute=True,
@@ -660,7 +680,7 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
     )
 
     assert first.phase == "outcome_unknown"
-    assert first.reason_code == "submit_transport_unknown"
+    assert first.reason_code == "submit_kis_rejected"
     assert _submission_count(transport) == 1
 
     transport.submit_result_code = None
@@ -678,6 +698,36 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
 
     assert second.phase == "outcome_unknown"
     assert _submission_count(transport) == 1
+
+
+def test_submit_failure_evidence_omits_raw_broker_message(tmp_path: Path) -> None:
+    raw_message_code = "EGW00201"
+    raw_message_text = "paper-app-secret account 12345678 broker detail"
+    transport = FakeKisPaperCanaryTransport(
+        submit_status_code=503,
+        submit_message_code=raw_message_code,
+        submit_message_text=raw_message_text,
+    )
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="safe-submit-diagnostic-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "safe-submit-diagnostic-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "submit_rate_limited"
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    runtime = outcome.runtime_path.read_text(encoding="utf-8")
+    for forbidden in (raw_message_code, raw_message_text, "paper-app-secret", "12345678"):
+        assert forbidden not in evidence
+        assert forbidden not in runtime
+    assert "submit_rate_limited" in evidence
 
 
 def test_recovery_resumes_durable_cancel_after_acknowledged_submit(tmp_path: Path) -> None:

@@ -199,6 +199,15 @@ account identifiers, and secrets. Safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
 recovery state into Git.
 
+The first independent paced canary, `canary-20260721T232137Z`, now reached an
+available, clean reconciliation with zero open orders and completion rows, then
+received a KIS submit rejection. Its closed result is `submit_kis_rejected` and
+it has no order reference. The program preserves the run as `outcome_unknown`
+instead of guessing a broker state; it is not retried in this objective. The
+next bounded improvement is to project only a strictly allowlisted KIS-style
+submit code when one exists, so the rejection can guide the next independent
+canary without retaining response text or opening a raw-broker artifact path.
+
 The canary now persists its cancellation choice with the private intent,
 serializes sibling run IDs through one state-root lock, resumes cancellation of
 an acknowledged matching open order after a restart, and treats any non-success
@@ -229,12 +238,12 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: make an ambiguous
-canary submit failure diagnosable through a closed, secret-safe code, then run
-one independent new virtual canary only after focused regression proof and a
-Claude drift check. It must not reuse or mutate
-`canary-20260721T225034Z`. This is not a prerequisite approval for paper work;
-it is the next technical reliability fact for the existing adapter. At each
-boundary, review the data contract, execution route readiness, research queues,
-GPU eligibility, disk capacity, and role ownership; make reversible no-cost
-changes autonomously and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: retain a strictly
+allowlisted KIS-style submit code in sanitized canary evidence when KIS rejects
+a submit, then run one new independent virtual canary after focused regression
+proof and a Claude drift check. It must not reuse or mutate either preserved
+unknown run. This is not a prerequisite approval for paper work; it is the next
+technical reliability fact for the existing adapter. At each boundary, review
+the data contract, execution route readiness, research queues, GPU eligibility,
+disk capacity, and role ownership; make reversible no-cost changes autonomously
+and escalate only a real remaining operator boundary.

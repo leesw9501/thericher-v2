@@ -36,6 +36,12 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   open-order/completion counts and no matching entry, but it remains
   `reconciliation_unresolved` because the missing reference cannot prove
   absence. Treat that run as preserved evidence, not a paper authority gate.
+- The first independent paced run, `canary-20260721T232137Z`, reached clean
+  initial reconciliation and then recorded `submit_kis_rejected`, with zero
+  open orders/completion rows and no reference. It is preserved rather than
+  retried. The current closed code does not retain KIS's rejection code, so the
+  next small improvement is a strictly validated short code only, never raw
+  response text.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -45,11 +51,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Add a closed, secret-safe diagnostic for ambiguous canary submit failures,
+2. Project a strictly allowlisted KIS-style code for a rejected canary submit,
    then run one separately identified virtual canary after focused transport,
-   recovery, and failure-diagnostic proof. It must not reuse or mutate
-   `canary-20260721T225034Z`; that run remains unresolved evidence. This does
-   not reopen an approval question.
+   recovery, and safe-projection proof. It must not reuse or mutate either
+   preserved unknown run. This does not reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
@@ -88,7 +93,7 @@ fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the safe submit diagnostic result, new-canary evidence, and any unresolved
+Hand the safe upstream-code projection, new-canary evidence, and any unresolved
 KIS Paper route fact to Codex. Only a live-money boundary, paid commitment,
 unclear rights, public exposure, or an external KIS credential reset needs
 operator input.
