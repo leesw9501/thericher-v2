@@ -204,8 +204,9 @@ eligibility.
 
 ## Must Not
 
-- Call KIS, read any `.env` value except `TIINGO_API_TOKEN`, or modify
-  broker/strategy code. Never expose or persist the token.
+- Call KIS account/order endpoints or modify broker/strategy code. KIS Paper
+  market-data collection is authorized through its owned client path; never
+  print, persist, or expose a credential.
 - Use paid, login-gated, manual, or license-unclear sources without operator
   approval.
 - Buy, subscribe to, renew, or upgrade a market-data product. The current
@@ -227,7 +228,9 @@ eligibility.
   or expand local data when doing so would breach the 15% hard floor.
 - Autonomous acquisition is allowed only when it is useful to the active goal,
   no-auth, no-cost, and license-compatible. Payment, login, manual access, or
-  unclear rights require operator approval.
+  unclear rights require operator approval, except the standing-approved
+  `KIS_PAPER_*` private collection path. KIS Paper cache rights still remain
+  local, private, and non-redistributed.
 
 ## Current Objective
 
@@ -266,8 +269,9 @@ raw-`1m` attempts, and no retained raw row, credential, account fact, cache, or
 are narrow endpoint outcomes, not a KIS-wide availability, retention, cache,
 feature, timeframe, campaign, or model claim.
 
-The operator has authorized `KIS_PAPER_*` read-only development calls and
-goal-owned schedules. Both KIS capacity-map tracks are now terminal. Daily
+The operator has authorized `KIS_PAPER_*` development work and goal-owned
+schedules; Data uses only its market-data portion. Both KIS capacity-map tracks
+are now terminal. Daily
 observed two 100-row `QQQ` / `NAS` pages (`2026-07-17 -> 2026-02-24` and
 `2026-02-24 -> 2025-10-01`) before its third request rejected; the planned
 second anchor was not reached. Raw `1m` observed one 120-row, strictly
@@ -275,25 +279,24 @@ descending, internally one-minute-contiguous page (`12:08Z -> 14:07Z`) before
 its continuation rejected. The first minute page has no previous-page boundary,
 so its `boundary_contiguous_to_previous=false` is comparison-unavailable, not a
 gap. Both tracks retain only sanitized metadata and are recovery `complete`. The
-operator-approved bounded private-cache policy now permits only the fresh,
-named daily collector to retain raw KIS rows under `D:\\market_data`, with a
-provenance manifest and stop-on-terms rule. Endpoint authorization alone still
-does not establish an entitlement to a general archive or external service.
+standing KIS Paper policy now permits progressive private daily caches under
+`D:\\market_data` for active engine work, with provenance and recovery facts.
+The first retained snapshot completed at
+`D:\\market_data\\us_equities\\kis_paper_private\\daily\\snapshot=20260721T145228Z-qqq-nas-modp0-v1`:
+two paced `QQQ` / `NAS` pages, 200 input rows, 199 unique rows, and one exact
+dedupe. Its raw-aware control record is `completed` / `complete` with
+`raw_market_data_retained=true`. Endpoint authorization still does not make the
+cache public, redistributable, or a general archive entitlement.
 
 The active data direction is KIS-native paper readiness. Data owns the compact
-runtime feature contract, but does not call KIS. Execution's dated read-only
-probe now observed raw unadjusted daily and 120-row `1m` pages with one working
-continuation, while adjusted daily returned `EGW00201`. The corrected raw-minute
-client also reproduced one 120-row `QQQ`/`NAS` page in descending exchange-time
-order from `19:59` to `18:00`. The observation does not yet qualify retention,
-timestamp conversion, completed-bar semantics, overlap handling, or cache
-recovery. The new compact capability record and completed-bar cache are
-in-memory only. A qualified runtime field may be used in memory even while wider
-storage rights are unverified. The explicit bounded private-cache authority now
-applies only to the named daily collector; persistent market bytes beyond that
-collector still need a separate source/storage basis. The initial candidate is
-therefore 90 completed raw `1m` OHLCV bars and local `5m`/`10m` resamples;
-`1h`/`3h` and all unverified fields are inactive, not assumed.
+runtime feature contract and may invoke its owned KIS market-data collector;
+Execution owns account and order endpoints. Raw unadjusted daily now has one
+retained, replayable two-page cache snapshot. The raw-minute probe separately
+observed a 120-row `QQQ`/`NAS` page in descending exchange-time order, but has
+not yet established retained minute history, timestamp conversion, completed-bar
+semantics, overlap handling, or cache recovery. The initial candidate remains 90
+completed raw `1m` OHLCV bars and local `5m`/`10m` resamples; `1h`/`3h` stay
+inactive until a paced minute-cache job establishes their input history.
 
 Any later **qualification** objective beyond the prepared observation must retain
 only timestamp bounds/counts. A no-overlap continuation is not sufficient there:
@@ -566,6 +569,9 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    terminal `rejected` outcomes after respectively two accepted daily pages and
    one accepted minute page. Data now writes the smallest D: collection contract
    their evidence supports; do not reuse either reservation.
+   The broader KIS Paper authorization now permits subsequent named data
+   collectors and schedules without another operator approval; it does not turn
+   this historical capacity evidence into a broad archive claim.
 3. Complete: one immutable prospective standard-Tiingo-EOD refresh was
    retained for only `SPY`/`QQQ`/`IWM` after the prior `2026-07-10` source
    boundary. Do not widen symbols, provider scope, or data rights, and do not
@@ -574,10 +580,15 @@ and [Nasdaq license terms](https://data.nasdaq.com/terms).
    coverage; the existing r2 cohort remains bounded source evidence.
 5. Reactivate `1h`, `3h`, or another feature only after observed KIS retention,
    continuation, and cache-recovery evidence qualifies it.
-6. Ready: design the D: collector around one `QQQ` / `NAS` daily anchor and at
-   most two pages per run. It must record the shared `2026-02-24` page boundary,
-   pace requests, stop at a rejection, and keep raw-minute collection out until
-   its continuation is independently reproducible.
+6. Complete: `kis-paper-private-daily-collector-v1` wrote the first raw daily
+   snapshot outside Git. Its manifest SHA-256 is
+   `f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10`; it
+   records one token, two pages, a two-second delay, 200 input rows, 199 unique
+   rows, one exact dedupe, and raw retention.
+7. Ready: build the next resumable daily backfill lane from this snapshot. It
+   should select the next unresolved symbol/date chunk, retain each atomic
+   snapshot and a canonical manifest index, and retry a rejected chunk later
+   with pacing rather than treating successful retention as a one-shot limit.
 
 ## Historical Queue Context
 

@@ -54,6 +54,7 @@ def test_reserved_historical_objective_stops_before_configuration_loading(
         repo_root=repo_root,
         objective_id=probe.KIS_PAPER_HISTORICAL_PROBE_OBJECTIVE_ID,
         observed_at=_OBSERVED_AT,
+        raw_market_data_retained=False,
     )
     monkeypatch.setattr(probe, "_REPO_ROOT", repo_root)
     monkeypatch.setattr(probe, "KIS_PAPER_HISTORICAL_PROBE_CONTROL_ROOT", control_root)

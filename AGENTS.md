@@ -26,9 +26,8 @@ Operator -> Codex Orchestrator -> Role Agents
 
 The operator owns business and risk authority. Ask before:
 
-- reading or using broker credentials,
-- enabling KIS account access, paper submission, or live behavior,
-- approving the KIS paper capital envelope or any live capital,
+- reading or using `KIS_LIVE_*`, enabling real-money behavior, or allocating
+  live capital,
 - buying data, models, services, or dependencies,
 - accepting unclear data or model rights,
 - exposing a public service,
@@ -36,6 +35,11 @@ The operator owns business and risk authority. Ask before:
 
 The operator does not choose routine lane scheduling, Git actions, bounded
 experiment order, or ordinary implementation details.
+
+`KIS_PAPER_*` credential use, account and market-data reads, paper order
+submit/modify/cancel, paper sizing, and goal-owned schedules are standing
+operator authorization for this private project. They do not require a new
+capital-envelope, profitability, report, or manual-approval gate.
 
 ### Codex Orchestrator
 
@@ -62,17 +66,13 @@ Codex is the product-development lead and integrator.
   listed above is actually required or evidence leaves materially different
   business/risk choices.
 
-Codex may create scheduled engine jobs when they have a named owner, bounded
-inputs and outputs, durable evidence, explicit stop and recovery behavior, and
-resource/concurrency limits. A schedule may advance collection, research,
-validation, or paper-readiness work without a fresh operator decision for each
-run while it remains inside existing KIS, data-rights, capital, and live
-authority.
-
-Codex must not build a general agent platform, unbounded daemon, cross-lane
-coordinator, notification system, or auto-commit service unless a later explicit
-objective requires one. A narrowly scoped worker remains the default for
-recurring deterministic engine work.
+Codex may create and evolve goal-owned schedulers or workers for recurring
+collection, research, validation, and KIS Paper work. Each job must remain
+owned, observable, concurrency-bounded, and recoverable, but no separate
+operator approval is needed for routine schedule creation or runs. Build only
+the scheduler capability that improves an engine loop; do not turn it into an
+unrelated agent platform. These are implementation qualities for reliable
+automation, not approval gates or a reason to hold routine paper work.
 
 ### Role Agents
 
@@ -98,8 +98,10 @@ Owns market-data correctness and useful coverage:
 - canonical storage, resampling, dataset manifests, and temporal splits,
 - quality findings and exact operator data requests.
 
-It cannot call KIS, read credentials, select strategies, or create
-research-blocking quality gates. Dataset limitations must remain visible.
+It may invoke standing-authorized KIS Paper **market-data** collection through the owned
+client path and record provenance. Execution owns account and order endpoints.
+It does not select strategies or create research-blocking quality gates.
+Dataset limitations must remain visible.
 
 ### Engine Research Agent
 
@@ -121,7 +123,8 @@ risk limits, emergency controls, and later KIS adapters.
 - Treat model output as untrusted input to deterministic sizing and risk.
 - Persist intent before broker side effects and reconcile unknown outcomes.
 - Never introduce strategy logic or load arbitrary public model code.
-- KIS and credentials remain unavailable until explicitly authorized.
+- `KIS_PAPER_*` and paper operations are already authorized. `KIS_LIVE_*`
+  remains unavailable.
 
 ## Independent And Invoked Roles
 
@@ -153,12 +156,12 @@ Claude must challenge these bias-prone decisions before they are relied on:
 - an unexpectedly strong result or a claim that materially exceeds a naive
   baseline,
 - selecting an ensemble whose members may share errors, data, or leakage,
-- enabling KIS paper submission, proposing live capital, or changing material
-  execution-risk limits,
+- introducing a new KIS Paper order transport, enabling KIS live, proposing
+  live capital, or changing material execution-risk limits,
 - resuming after an unexplained broker, position, data-corruption, or recovery
   incident,
-- adding a durable cross-lane scheduler/coordinator, a scheduler that widens
-  external side effects, or a major dependency/runtime.
+- adding a scheduler that materially widens external side effects beyond its
+  named engine loop, or a major dependency/runtime.
 
 Claude is optional for early exploratory hypotheses and ordinary dependency or
 documentation cleanup. Do not call Claude for routine tests, formatting,
@@ -211,6 +214,10 @@ The Data Agent may acquire useful data without asking when all are true:
 - the data improves an active or near-term engine loop,
 - acquisition is bounded, deduplicated, and stored on `D:`.
 
+The standing `KIS_PAPER_*` authorization is the explicit private-credential
+exception for named KIS Paper data work. It does not relax paid-source,
+unclear-rights, public-serving, or `KIS_LIVE_*` authority.
+
 Warn before projected free space falls below 20 percent. Do not start new large
 acquisition or training work that would cross the 15 percent free-space floor.
 Monitoring, cancellation, reconciliation, and safe shutdown remain allowed.
@@ -235,31 +242,32 @@ Keep these authorities distinct:
 
 - `local_simulation`: broker-free and offline; existing fill source remains
   `local_paper`,
-- `kis_paper`: KIS virtual account and network; read-only development access is
-  authorized, while submit/cancel and capital remain separate boundaries,
+- `kis_paper`: KIS virtual account and network; market/account reads and paper
+  submit/modify/cancel are authorized,
 - `kis_live`: real account and capital, unavailable until separate approval.
 
-The operator has authorized `KIS_PAPER_*` read-only development calls for
-market data and typed paper-account facts. Execution owns credential access and
-may schedule those calls inside active bounded objectives; Data owns market-data
-scope, provenance, and interpretation. Codex proposes a paper capital envelope
-based on the smaller of available paper funds and the intended shadow live
-capital; the current planning reference is KRW 5,000,000. The operator approves
-or changes that envelope once. Routine paper operation inside it does not
-require repeated approval.
+The operator has authorized `KIS_PAPER_*` for all private virtual-paper engine
+work: market data, account facts, orders, cancellation, modification, and
+reconciliation. Execution owns paper order endpoints and credential access;
+Data owns market-data scope, provenance, and interpretation. Codex may choose
+routine paper sizing and schedules without requesting a paper capital envelope.
+`KIS_LIVE_*` is not readable or callable.
 
 For the operator's stated private, personal, noncommercial, nonpublic project,
-Codex may retain a bounded KIS Paper market-data cache under `D:\market_data`
-when a goal names its symbol, endpoint, request budget, provenance manifest,
-and stop/recovery behavior. It must remain local and unserved: no publication,
-redistribution, or third-party API/dashboard exposure. Stop the affected cache
-and escalate if an applicable KIS or exchange term is found to prohibit storage
-or retention; do not infer a broad archive entitlement from a successful call.
+Codex may retain, extend, and schedule KIS Paper market-data caches under
+`D:\market_data` for active engine loops. Each collection job still records its
+scope, provenance, deduplication, and recovery state, but a successful pilot may
+lead to resumable backfill work without another operator approval. The cache
+must remain local and unserved: no publication, redistribution, or third-party
+API/dashboard exposure. Stop the affected cache and escalate if an applicable
+KIS or exchange term is found to prohibit storage or retention.
 
-Paper submission needs only execution hard stops: paper/live separation,
-persisted idempotent intent, bounded exposure and loss, emergency stop, durable
-events, and broker reconciliation. Do not require profitability packets,
-dashboards, arbitrary trade counts, or report chains before paper starts.
+Paper work has no profitability, report, dashboard, trade-count, or manual
+capital-approval gate. Keep only the technical invariants that make a paper
+broker event truthful and recoverable: explicit paper-vs-live routing, no secret
+output, persisted idempotent intent before a paper side effect, and
+reconciliation before an unknown submission outcome is retried. These are
+implementation properties, not operator checkpoints.
 
 ## Agent Memory And Recovery
 
@@ -333,9 +341,9 @@ Role agents may propose observations; Codex owns integration. Codex may update
 reversible operating policy autonomously when it stays inside existing operator
 authority and, at a bias-prone boundary, has received the required Claude
 challenge. Explicit operator approval is required for changes to business
-direction, paid commitments, unclear rights, credentials or account access,
-paper/live capital authority, material live-risk limits, public exposure, or a
-major framework/runtime replacement.
+direction, paid commitments, unclear rights, `KIS_LIVE_*` or live capital
+authority, material live-risk limits, public exposure, or a major
+framework/runtime replacement.
 
 `DECISIONS.md` records durable architecture, safety, authority, and product
 decisions, not every experiment or helper.

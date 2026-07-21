@@ -113,6 +113,7 @@ def main(
             repo_root=_REPO_ROOT,
             objective_id=KIS_PAPER_RAW_MINUTE_OBSERVATION_OBJECTIVE_ID,
             observed_at=reserved_at,
+            raw_market_data_retained=False,
         )
     except ValueError as error:
         if str(error) == "qualification_attempt_already_reserved":

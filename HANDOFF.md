@@ -67,25 +67,24 @@ chronological cross-fitting, an untouched final holdout, and layer-level PnL
 attribution. The full definition and dashboard boundary live in
 `ARCHITECTURE.md`.
 
-This replaces neither the current data requirement nor current execution
-authority. No fresh model-eligible contract exists yet, and KIS submission/live
-remains failed closed. The eventual Docker-local paper console is read-focused and exposes
-sanitized holdings, prices, open orders, and safety state only after successful
-read-only reconciliation; it does not grant submit authority by itself.
+No fresh model-eligible contract exists yet, but that does not block KIS Paper
+execution learning. The current authority is standing approval for all private
+`KIS_PAPER_*` work, including submit/modify/cancel and goal-owned schedules;
+only `KIS_LIVE_*` and real-money behavior remain failed closed. The Docker-local
+paper console is read-focused and exposes sanitized holdings, prices, open
+orders, and safety state only after reconciliation; it does not itself carry
+credentials or submit broker requests.
 
 Historical-data limitations restrict what the project may claim about a model;
-they do not make bounded KIS virtual-paper execution learning wait for an
-otherwise perfect research dataset. KIS paper still needs its minimal execution
-boundaries, a fresh reconciliation path, and a separately approved capital
-envelope before any submission begins.
+they do not create a profitability, report, capital-envelope, or approval gate
+for virtual-paper work. The remaining paper requirements are technical recovery
+facts, especially paper-only routing, durable intent, and reconciliation of an
+unknown broker outcome.
 
-On 2026-07-20, the operator additionally authorized KIS virtual-paper
-read-only development calls. The durable decision records the exact statement
-and applied scope: `KIS_PAPER_*` may support isolated account, position,
-buying-power, open-order, and market-data reads, while `KIS_LIVE_*`, all paper
-order submission/cancellation, and any nonzero paper capital envelope remain
-unavailable. The one-shot Docker `kis-readonly` bridge has now completed one
-typed reconciliation and made its console-safe snapshot available only through
+The older 2026-07-20 read-only authorization below is preserved as historical
+context and is superseded by the current authority. The one-shot Docker
+`kis-readonly` bridge completed one typed reconciliation and made its
+console-safe snapshot available only through
 the Docker-local runtime. Its immutable minimal evidence is
 `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260720T073411455838Z-complete.json`
 (SHA-256 `9b7b12848f28ced98d674ac224d2f576e02df279cf57a581ef5500e9159614fb`).
@@ -119,26 +118,20 @@ separately from its completed feature-window end and expires at the next
 
 ## Current Boundaries
 
-- KIS submission/live remains failed closed. The 2026-07-20 authority permits
-  explicitly invoked, isolated typed `KIS_PAPER_*` reads for account, position,
-  reference orderability, open-order, and market-data development. It does not
-  authorize `KIS_LIVE_*`, submit, cancel, paper capital, mode changes, or live
-  behavior. Imports, tests, local simulation, and the web process remain
-  credential- and broker-free. The existing market-data client retains its
-  separate `QQQ`/`SPY`, `NAS`, request-shape, and per-kind-page allowlist.
-- On 2026-07-21 the operator additionally lifted the scheduler prohibition for
-  owned engine work. Codex may schedule KIS-paper read-only collection,
-  research, validation, and paper-readiness jobs inside their explicit scope.
-  Each schedule needs an owner, evidence location, stop/recovery behavior, and
-  resource bound; this does not authorize an unbounded daemon, KIS live,
-  submission/cancellation, capital allocation, or a hidden retry. The prior
-  `thericher-kis-raw-minute-observation-v1` automation ran once after a delayed
-  dispatch and is now paused; its completed result is not evidence that KIS
-  supports bulk history.
-- For an isolated KIS market-data observation, Execution alone invokes the
-  credential-touching script. Data owns the fixed data scope, calendar review,
-  and sanitized-result interpretation; it does not read configuration or call
-  KIS. This role split does not widen account, order, capital, or live access.
+- KIS Paper is standing-authorized for market/account/order reads,
+  submit/modify/cancel, reconciliation, routine sizing, and goal-owned
+  scheduling. Earlier read-only, capital-envelope, and submission restrictions
+  are historical context. `KIS_LIVE_*` and real-money behavior remain failed
+  closed. The web process stays credential- and broker-free.
+- Goal-owned schedules may run collection, research, validation, and paper
+  work. They need an owner, evidence location, recovery behavior, and resource
+  bound, but no extra approval gate. A scheduler must not blindly replay an
+  unknown broker outcome. The prior `thericher-kis-raw-minute-observation-v1`
+  automation remains paused because its one-shot objective is terminal, not
+  because KIS scheduling is prohibited.
+- Data may invoke the owned KIS Paper market-data client for named collectors;
+  Execution owns account and order endpoints. This role split is ownership, not
+  an authorization barrier.
 - `execution.kis_paper_order_fields` now maps only the public-source-attested
   body fragments for virtual-paper US buy and sell limit orders. They reuse
   `BrokerOrderRequest`, require an explicit `NASD`, `NYSE`, or `AMEX` venue,
@@ -186,8 +179,9 @@ separately from its completed feature-window end and expires at the next
   foreign funds from both settled cash and the separate reference-orderability
   response. It expires at `now >= expires_at`. The credential-free,
   no-network `paper-capital-proposal` profile reads only that snapshot and can
-  return either an abstention or an operator-review candidate. It never writes
-  an approval, artifact, intent, or broker request.
+  return either an abstention or a legacy-named informational candidate. It is
+  not a current KIS Paper approval gate and never writes an approval, artifact,
+  intent, or broker request.
 - One newly authorized schema-v2 `kis-readonly` run at
   `2026-07-20T08:13:13.186826Z` completed fact-free as `unavailable` with the
   sanitized reason `balance_rejected`. Its minimal external evidence is
@@ -874,21 +868,18 @@ reads; it now emits it for every fixed read-only GET and has fake-transport
 coverage. This removes one documented deviation; it does not explain, resolve,
 or establish a cause for the HTTP `500`, and no post-change probe was run.
 
-The operator's 2026-07-20 authorization now permits a new bounded
-`KIS_PAPER_*` read-only reconciliation attempt without another routine approval.
-It must use only typed, allowlisted account, position, buying-power, open-order,
-or market-data reads and retain only sanitized evidence. Any partial, stale, or
-rejected result remains unavailable rather than empty; no claim about service
-cause follows from a single response. `KIS_LIVE_*`, paper order submission or
-cancellation, and a nonzero paper capital envelope remain unavailable.
+The following 2026-07-20 read-only reconciliation paragraph is historical. The
+current 2026-07-21 authority permits the full private `KIS_PAPER_*` surface;
+`KIS_LIVE_*` alone remains unavailable. A partial, stale, or rejected account
+result still remains unavailable rather than empty, because that is a broker
+fact-quality rule rather than an approval gate.
 
 KIS paper is an early execution milestone, not a reward for model profitability.
-The proposal contract can only form a candidate from a fresh, empty-account
-snapshot's source-labelled orderable foreign funds and an operator ceiling in
-the same currency. It never converts the KRW 5,000,000 planning reference,
-uses reference orderability to size, or treats either field as a general
-buying-power claim. The operator approves or changes the resulting envelope
-once. Submit/cancel and live mode remain separate decisions.
+The following capital-proposal behavior is historical diagnostic context: its
+legacy `operator ceiling` input is not a KIS Paper approval requirement and no
+current work waits for it. A future paper-execution path chooses its routine
+deterministic sizing policy under standing paper authority; submit/cancel are
+already authorized, while live mode remains separate.
 
 ## Agent State
 
@@ -934,26 +925,28 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The recent schema-v2 KIS bridge outcome is fact-free `unavailable`, so it does
-not license a capital question or a retry. The two immediately safe tasks are
-now complete: the prospective-only Tiingo EOD lineage snapshot for SPY/QQQ/IWM
-is external at
-`D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-07-20-tiingo-standard-eod-prospective-r1`
-with six rows, three requests, and dataset SHA-256
-`8eccfffa4d6be4ee3c9c75e274ed954a84901406bc0a92876c04c2955a50bc0b`; and a
-no-network contract test now pins the KIS virtual balance request shape to the
-official sample. The Tiingo lineage stays non-model/non-paper input, and the
-contract test does not diagnose the KIS rejection.
+The first private KIS Paper daily collector is complete. Its `QQQ` / `NAS` /
+`dailyprice` run used one token, two pages, and a measured two-second interval;
+it retained 199 unique rows from 200 inputs after one exact dedupe. The atomic
+manifest is
+`D:\market_data\us_equities\kis_paper_private\daily\snapshot=20260721T145228Z-qqq-nas-modp0-v1\manifest.json`
+with SHA-256
+`f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10`.
+The raw file remains only under `D:\market_data`; the raw-aware control record
+is `completed` / `complete` with `raw_market_data_retained: true`.
 
-The next company objective is a fresh, paced, private KIS Paper **daily**
-collector for `QQQ` / `NAS`. The completed capacity maps showed two accepted
-daily pages before an immediate third request rejected, so this collector uses
-one token, at most two pages, and an internal two-second inter-page delay. It
-may retain only its bounded raw daily cache and provenance manifest under
-`D:\\market_data`; it does not authorize a historical backfill, raw-minute
-archive, model input, order capability, or paper promotion. A future usable
-empty KIS account snapshot still needs a native-currency cap before the
-no-network capital proposal can form a candidate.
+The current company objective is a resumable KIS Paper daily backfill lane for
+the initial `QQQ` / `SPY` / `IWM` ETF universe. Data owns cache layout,
+provenance, manifest indexing, and source interpretation; Execution owns the
+paced KIS invoker and recovery behavior; independent Validation verifies actual
+cache and control evidence. A rejected chunk is recorded and retried later with
+a new paced attempt, not treated as a business-approval stop.
+
+Current authority supersedes older read-only KIS wording: `KIS_PAPER_*` market,
+account, order, submit/modify/cancel, reconciliation, routine sizing, and
+goal-owned scheduling are standing-authorized for this private project. There
+is no paper-capital, profitability, report, dashboard, or manual-call gate.
+`KIS_LIVE_*` and real-money behavior remain unavailable.
 
 ### Superseded historical context
 

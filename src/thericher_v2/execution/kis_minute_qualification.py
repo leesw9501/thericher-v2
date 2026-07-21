@@ -673,6 +673,7 @@ def reserve_kis_paper_minute_qualification_attempt(
         repo_root=repo_root,
         objective_id=KIS_PAPER_MINUTE_QUALIFICATION_OBJECTIVE_ID,
         observed_at=observed_at,
+        raw_market_data_retained=False,
     )
 
 
@@ -682,8 +683,12 @@ def reserve_external_one_shot_attempt(
     repo_root: Path,
     objective_id: str,
     observed_at: datetime,
+    raw_market_data_retained: bool,
 ) -> Path:
-    """Create an exclusive marker, then record one reservation before any token."""
+    """Create an exclusive marker with an explicit raw-data retention fact."""
+
+    if not isinstance(raw_market_data_retained, bool):
+        raise ValueError("reservation_marker_invalid")
 
     marker = _external_attempt_marker(
         control_root=control_root,
@@ -702,6 +707,7 @@ def reserve_external_one_shot_attempt(
         phase="reserved",
         reserved_at=reserved_at,
         updated_at=reserved_at,
+        raw_market_data_retained=raw_market_data_retained,
     )
     try:
         descriptor = os.open(marker, os.O_WRONLY | os.O_CREAT | os.O_EXCL)
@@ -724,6 +730,7 @@ def reserve_external_one_shot_attempt(
         phase="reserved",
         reserved_at=reserved_at,
         updated_at=reserved_at,
+        raw_market_data_retained=raw_market_data_retained,
     )
     return marker
 
@@ -750,6 +757,7 @@ def mark_external_one_shot_network_started(
     repo_root: Path,
     objective_id: str,
     observed_at: datetime,
+    raw_market_data_retained: bool | None = None,
 ) -> Path:
     """Advance a reserved one-shot to its pre-network recovery boundary."""
 
@@ -760,6 +768,7 @@ def mark_external_one_shot_network_started(
         phase="network_started",
         allowed_predecessors=frozenset({"reserved"}),
         observed_at=observed_at,
+        raw_market_data_retained=raw_market_data_retained,
     )
 
 
@@ -793,6 +802,7 @@ def mark_external_one_shot_summary_written(
     observed_at: datetime,
     summary_hash: str,
     result_status: str,
+    raw_market_data_retained: bool | None = None,
 ) -> Path:
     """Link a completed or pre-network-rejected one-shot to its sanitized summary."""
 
@@ -807,6 +817,7 @@ def mark_external_one_shot_summary_written(
         observed_at=observed_at,
         summary_hash=summary_hash,
         result_status=result_status,
+        raw_market_data_retained=raw_market_data_retained,
     )
 
 
@@ -1009,11 +1020,14 @@ def _append_external_attempt_ledger(
     phase: str,
     reserved_at: datetime,
     updated_at: datetime,
+    raw_market_data_retained: bool,
     summary_hash: str | None = None,
     result_status: str | None = None,
 ) -> None:
     _validate_external_objective_id(objective_id)
     if phase not in {"reserved", "network_started", "summary_written"}:
+        raise ValueError("control_ledger_invalid")
+    if not isinstance(raw_market_data_retained, bool):
         raise ValueError("control_ledger_invalid")
     ledger = _external_attempt_ledger_directory(control_root=control_root, repo_root=repo_root)
     timestamp = require_utc(updated_at, "updated_at")
@@ -1027,7 +1041,7 @@ def _append_external_attempt_ledger(
         "phase": phase,
         "reserved_at_utc": _format_utc(require_utc(reserved_at, "reserved_at")),
         "updated_at_utc": _format_utc(timestamp),
-        "raw_market_data_retained": False,
+        "raw_market_data_retained": raw_market_data_retained,
     }
     if summary_hash is not None:
         document["summary_hash"] = summary_hash
@@ -1049,9 +1063,12 @@ def _attempt_marker_payload(
     phase: str,
     reserved_at: datetime,
     updated_at: datetime,
+    raw_market_data_retained: bool,
     summary_hash: str | None = None,
     result_status: str | None = None,
 ) -> bytes:
+    if not isinstance(raw_market_data_retained, bool):
+        raise ValueError("reservation_marker_invalid")
     document: dict[str, object] = {
         "schema_version": SCHEMA_VERSION,
         "kind": "external_one_shot_attempt_marker",
@@ -1059,7 +1076,7 @@ def _attempt_marker_payload(
         "phase": phase,
         "reserved_at_utc": _format_utc(require_utc(reserved_at, "reserved_at")),
         "updated_at_utc": _format_utc(require_utc(updated_at, "updated_at")),
-        "raw_market_data_retained": False,
+        "raw_market_data_retained": raw_market_data_retained,
     }
     if summary_hash is not None:
         document["summary_hash"] = summary_hash
@@ -1078,6 +1095,7 @@ def _transition_external_one_shot_attempt(
     observed_at: datetime,
     summary_hash: str | None = None,
     result_status: str | None = None,
+    raw_market_data_retained: bool | None = None,
 ) -> Path:
     marker = _external_attempt_marker(
         control_root=control_root,
@@ -1091,12 +1109,14 @@ def _transition_external_one_shot_attempt(
         reserved_at = document["reserved_at_utc"]
         updated_at = document["updated_at_utc"]
         marker_phase = document["phase"]
+        prior_raw_market_data_retained = document["raw_market_data_retained"]
         if (
             not isinstance(document, dict)
             or document.get("objective_id") != objective_id
             or marker_phase not in allowed_predecessors
             or not isinstance(reserved_at, str)
             or not isinstance(updated_at, str)
+            or not isinstance(prior_raw_market_data_retained, bool)
         ):
             raise ValueError("reservation_marker_invalid")
         reserved_at_value = require_utc(
@@ -1128,6 +1148,13 @@ def _transition_external_one_shot_attempt(
     )
     if not phases or phases[-1] not in allowed_predecessors:
         raise ValueError("reservation_marker_invalid")
+    retained = (
+        prior_raw_market_data_retained
+        if raw_market_data_retained is None
+        else raw_market_data_retained
+    )
+    if not isinstance(retained, bool):
+        raise ValueError("reservation_marker_invalid")
     _append_external_attempt_ledger(
         control_root=control_root,
         repo_root=repo_root,
@@ -1137,6 +1164,7 @@ def _transition_external_one_shot_attempt(
         updated_at=observed_at_value,
         summary_hash=summary_hash,
         result_status=result_status,
+        raw_market_data_retained=retained,
     )
     payload = _attempt_marker_payload(
         objective_id=objective_id,
@@ -1145,6 +1173,7 @@ def _transition_external_one_shot_attempt(
         updated_at=observed_at_value,
         summary_hash=summary_hash,
         result_status=result_status,
+        raw_market_data_retained=retained,
     )
     staging = marker.with_name(f".{marker.name}.{uuid.uuid4().hex}.tmp")
     try:

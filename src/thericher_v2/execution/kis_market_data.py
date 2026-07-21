@@ -223,7 +223,7 @@ class KisPaperDailyQuery:
 
 @dataclass(frozen=True)
 class KisPaperDailyPage:
-    """Metadata-only daily page facts; raw daily rows never leave the client."""
+    """Metadata-only daily page facts shared by observation and cache callers."""
 
     query: KisPaperDailyQuery
     row_count: int
@@ -243,6 +243,72 @@ class KisPaperDailyPage:
             if value is not None and (len(value) != 8 or not value.isdigit()):
                 raise KisPaperMarketDataError("daily_response_invalid")
         if self.continuation_available != (self.continuation_value == "F"):
+            raise KisPaperMarketDataError("daily_response_invalid")
+
+
+@dataclass(frozen=True)
+class KisPaperDailyRawRow:
+    """One unadjusted daily OHLCV row for a narrowly authorized local cache."""
+
+    xymd: str
+    open: str
+    high: str
+    low: str
+    clos: str
+    tvol: str
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if len(self.xymd) != 8 or not self.xymd.isdigit():
+            raise KisPaperMarketDataError("daily_response_invalid")
+        for name in ("open", "high", "low", "clos", "tvol"):
+            value = getattr(self, name)
+            if not isinstance(value, str) or not value.strip():
+                raise KisPaperMarketDataError("daily_response_invalid")
+            object.__setattr__(self, name, value.strip())
+        open_value = _decimal(self.open, "daily_response_invalid")
+        high_value = _decimal(self.high, "daily_response_invalid")
+        low_value = _decimal(self.low, "daily_response_invalid")
+        close_value = _decimal(self.clos, "daily_response_invalid")
+        volume_value = _decimal(self.tvol, "daily_response_invalid")
+        if (
+            open_value <= 0
+            or high_value <= 0
+            or low_value <= 0
+            or close_value <= 0
+            or volume_value < 0
+            or high_value < max(open_value, close_value)
+            or low_value > min(open_value, close_value)
+        ):
+            raise KisPaperMarketDataError("daily_response_invalid")
+
+    def as_document(self) -> dict[str, str]:
+        """Preserve the provider's raw daily field names without response metadata."""
+
+        return {
+            "clos": self.clos,
+            "high": self.high,
+            "low": self.low,
+            "open": self.open,
+            "tvol": self.tvol,
+            "xymd": self.xymd,
+        }
+
+
+@dataclass(frozen=True)
+class KisPaperDailyRawPage:
+    """Typed daily page plus cache-eligible rows, never a full response body."""
+
+    page: KisPaperDailyPage
+    rows: tuple[KisPaperDailyRawRow, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "rows", tuple(self.rows))
+        if not isinstance(self.page, KisPaperDailyPage) or not all(
+            isinstance(row, KisPaperDailyRawRow) for row in self.rows
+        ):
+            raise KisPaperMarketDataError("daily_response_invalid")
+        if len(self.rows) != self.page.row_count:
             raise KisPaperMarketDataError("daily_response_invalid")
 
 
@@ -302,7 +368,7 @@ class KisPaperMinutePage:
 
 
 class KisPaperMarketDataClient:
-    """Read only KIS paper raw-minute pages and metadata-only daily pages."""
+    """Read-only KIS Paper minute and daily pages within fixed allowlists."""
 
     def __init__(
         self,
@@ -393,6 +459,13 @@ class KisPaperMarketDataClient:
         )
 
     def fetch_daily_page(self, query: KisPaperDailyQuery) -> KisPaperDailyPage:
+        """Return metadata-only daily facts for existing observation callers."""
+
+        return self.fetch_daily_raw_page(query).page
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        """Return typed OHLCV rows only for a bounded private-cache collector."""
+
         if self._daily_page_attempts >= self._max_daily_page_attempts:
             raise KisPaperMarketDataError("daily_page_limit_exceeded")
         access_token = self._issue_access_token()
@@ -424,20 +497,20 @@ class KisPaperMarketDataClient:
         output2 = payload.get("output2")
         if not isinstance(output1, Mapping) or not isinstance(output2, Sequence):
             raise KisPaperMarketDataError("daily_response_invalid")
-        rows = tuple(_daily_row(row) for row in output2)
-        dates = tuple(_required_daily_date(row) for row in rows)
+        rows = tuple(_parse_daily_raw_row(row) for row in output2)
+        dates = tuple(row.xymd for row in rows)
         continuation_value = _response_header(response.headers, "tr_cont")
         continuation = "F" if continuation_value == "F" else None
-        return KisPaperDailyPage(
+        page = KisPaperDailyPage(
             query=query,
             row_count=len(rows),
             newest_date=max(dates) if dates else None,
             oldest_date=min(dates) if dates else None,
-            required_ohlcv_fields_present=bool(rows)
-            and all(_daily_row_has_required_ohlcv_fields(row) for row in rows),
+            required_ohlcv_fields_present=bool(rows),
             continuation_available=continuation is not None,
             continuation_value=continuation,
         )
+        return KisPaperDailyRawPage(page=page, rows=rows)
 
     def ensure_authenticated(self) -> None:
         """Issue the single permitted token before a caller's final GET gate."""
@@ -629,6 +702,32 @@ def _required_daily_date(raw: Mapping[str, object]) -> str:
 
 def _daily_row_has_required_ohlcv_fields(raw: Mapping[str, object]) -> bool:
     return {"xymd", "open", "high", "low", "clos", "tvol"}.issubset(raw)
+
+
+def _parse_daily_raw_row(raw: object) -> KisPaperDailyRawRow:
+    row = _daily_row(raw)
+    if not _daily_row_has_required_ohlcv_fields(row):
+        raise KisPaperMarketDataError("daily_response_invalid")
+    try:
+        return KisPaperDailyRawRow(
+            xymd=_required_daily_date(row),
+            open=_required_daily_text(row, "open"),
+            high=_required_daily_text(row, "high"),
+            low=_required_daily_text(row, "low"),
+            clos=_required_daily_text(row, "clos"),
+            tvol=_required_daily_text(row, "tvol"),
+        )
+    except KisPaperMarketDataError:
+        raise
+    except (TypeError, ValueError) as error:
+        raise KisPaperMarketDataError("daily_response_invalid") from error
+
+
+def _required_daily_text(raw: Mapping[str, object], key: str) -> str:
+    value = raw.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise KisPaperMarketDataError("daily_response_invalid")
+    return value.strip()
 
 
 def _response_header(headers: Mapping[str, str], name: str) -> str | None:

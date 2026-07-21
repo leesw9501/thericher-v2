@@ -23,8 +23,9 @@
 - `execution.paper_capital_proposal` is a pure local calculation and the
   `paper-capital-proposal` Docker profile is no-network, read-only, and
   credential-free. It may emit only `abstain` or
-  `awaiting_operator_approval`; it uses no KIS, broker, environment, or order
-  object and writes neither an approval nor an artifact.
+  `awaiting_operator_approval`; that legacy status name is an informational
+  diagnostic, not a current paper-authority gate. It uses no KIS, broker,
+  environment, or order object and writes neither an approval nor an artifact.
 - The newly authorized schema-v2 bridge run at `2026-07-20T08:13:13.186826Z`
   completed `unavailable` with sanitized reason `balance_rejected`. Its
   fact-free evidence is
@@ -150,8 +151,9 @@
 
 - Deterministic intent, submit, fill, cancel, open-order, restart, and
   reconciliation behavior.
-- Cash, positions, accounting PnL, risk limits, emergency controls, and future
-  broker adapters when separately authorized.
+- Cash, positions, accounting PnL, risk limits, emergency controls, and KIS
+  Paper broker adapters under standing paper authority; KIS live adapters remain
+  separately authorized.
 - Deterministic enforcement of target-weight, concentration, exposure, loss,
   and reconciliation constraints before any target delta can become an intent.
 - Fail-closed treatment of duplicate, stale, mismatched, or unknown outcomes.
@@ -268,27 +270,37 @@
   summary_written`, a matching summary hash, and only `summary.json` outside
   memory. Both are terminal `rejected`; no retry, account/order path, or raw
   retention is permitted under those IDs.
+- Complete: the fresh private daily collector then retained its real KIS daily
+  output only under `D:\market_data`. The `QQQ` / `NAS` / `dailyprice` run used
+  one token, two pages, and a measured two-second interval, then wrote 199
+  unique rows from 200 inputs with one exact duplicate removed. Its manifest
+  SHA-256 is `f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10`.
+  The separate raw-aware control record is `completed` / `complete` and records
+  `raw_market_data_retained=true`; it made no account, position, order, or live
+  call.
 - The local paper console and its KIS snapshot bridge are committed in
   `dc1b940`. The loopback-only HTML and JSON views share a strict
   local-paper projection, consume only a fresh generic paper snapshot, and keep
   the web process free of KIS clients, credentials, and broker calls.
-- The non-submitting capital proposal is committed in `dc1b940`.
-  It accepts only a fresh empty-account snapshot and an operator ceiling in the
-  same currency, then uses the lesser of that ceiling and source-labelled
-  orderable foreign funds. Reference orderability is a compatibility check only,
-  not a sizing input; no FX, margin, settled-cash, or equity inference exists.
-- Independent Validation found the pre-contract nonzero proposal unsupported;
-  Claude's final verdict is `uncertain` until the source field, producer
-  isolation, expiry clock, and later approval persistence remain explicit. The
-  contract now pins the source field, uses the strict snapshot reader, and keeps
-  approval persistence outside scope. It is still not an executable cap.
-- The 2026-07-20 authority permits isolated `KIS_PAPER_*` account, position,
-  reference-orderability, open-order, and market-data reads. It does not permit
-  `KIS_LIVE_*`, external order submission/cancellation, or a nonzero paper
-  capital envelope before the operator approves one.
-- Keep KIS submission and live behavior failed closed. The historical
-  `QQQ`/`SPY` raw-minute observation is terminal, independently scheduled
-  history and is not retried, widened, or used as console state.
+- The non-submitting capital proposal is committed in `dc1b940`. Its historical
+  `operator ceiling` input is not a current paper-authority requirement and
+  must not block KIS Paper transport work. It remains an isolated diagnostic
+  until a paper execution path chooses a deterministic sizing policy. Reference
+  orderability is a compatibility check only, not a sizing input; no FX, margin,
+  settled-cash, or equity inference exists.
+- Independent Validation found the historical pre-contract nonzero proposal
+  unsupported; Claude's final verdict was `uncertain` about its old source-field
+  and expiry assumptions. That diagnostic is not an executable cap or a current
+  KIS Paper approval requirement.
+- Current authority override: `KIS_PAPER_*` account, position, order,
+  market-data, submit/modify/cancel, reconciliation, routine sizing, and
+  goal-owned schedules are standing operator-approved. Earlier read-only,
+  capital-envelope, and submission restrictions are historical context only.
+  `KIS_LIVE_*` remains unavailable.
+- Keep only KIS live behavior failed closed. KIS Paper submission is
+  standing-authorized and should be implemented once its endpoint transport is
+  evidenced; the historical `QQQ`/`SPY` raw-minute observation remains terminal
+  under its old objective ID and is not reused as console state.
 - The no-network virtual-balance request contract is now pinned by injected
   transport: the documented endpoint, `VTTS3012R`, `custtype`, initial empty
   and continuation `tr_cont`, USD query keys, and the `NASD`/`NYSE`/`AMEX`
@@ -348,30 +360,29 @@
    balance request shape: endpoint, `VTTS3012R`, exact query keys and USD
    currency, initial/continuation `tr_cont`, `custtype`, and the
    `NASD`/`NYSE`/`AMEX` sequence. It made no production change and no KIS retry.
-6. Ready: implement one fresh, paced daily-collection objective from the
-   accepted two-page evidence. KIS Paper calls and goal-owned scheduling remain
-   authorized; no calendar gate or account/order endpoint is needed for a
-   market-data-only implementation.
-7. Wait for a separately scoped, usable KIS snapshot before requesting a
-   native-currency paper-cap ceiling. Until then the capital proposal remains
-   abstained.
-8. Keep pure risk integration, append-only execution events, and a future paper
-   canary as later separately bounded steps.
+6. Complete: the first paced daily collector retained a private `QQQ` snapshot
+   with an atomic manifest and raw-aware recovery record. The next data package
+   may grow this through resumable scheduled chunks without another approval.
+7. Use a fresh KIS snapshot when an execution implementation needs an account
+   fact, but do not wait for an operator paper-cap decision. Implement the first
+   paper submit/reconcile path as soon as its endpoint contract is evidenced.
+8. Keep pure risk integration, append-only execution events, and a paper canary
+   as ready work rather than approval-gated work.
 
 ## Operator Help
 
-- None at present. A native-currency paper-cap ceiling becomes an operator
-  decision only after a fresh, complete KIS virtual-paper snapshot establishes
-  a usable native currency and empty-account state. Virtual-paper read-only
-  development access is already authorized.
+- None at present. KIS Paper development, including paper orders, is already
+  authorized; only `KIS_LIVE_*`, live capital, paid commitments, unclear rights,
+  public exposure, or unresolved broker-state anomalies require escalation.
 
 ## Must Not
 
 - Read `KIS_LIVE_*`, expose paper secrets/account identifiers, or give the web
   process access to any KIS value. A goal-owned KIS invoker may receive only the
   necessary `KIS_PAPER_*` values; the web process remains credential-free.
-- Submit, modify, or cancel an external order; change `THERICHER_MODE`; allocate
-  paper capital; or enable live behavior under current authority.
+- Call a live endpoint, read `KIS_LIVE_*`, or enable real-money behavior. A
+  KIS Paper runner may submit/modify/cancel and set its paper mode as part of
+  its owned execution work.
 - Add strategy or model-selection logic to execution.
 - Let a dashboard "sell pause" suppress a hard-risk exit, emergency action, or
   reconciliation requirement.

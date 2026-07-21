@@ -168,7 +168,7 @@ frozen. A failed incremental comparison removes that layer from the candidate
 graph rather than being tuned around indefinitely.
 
 The sole paper-first exception is a fixed, simple bar-only baseline with a
-small approved exposure envelope. It may collect bounded KIS paper evidence
+small initial exposure. It may collect bounded KIS paper evidence
 when long historical validation is limited, provided the input contract is
 qualified, the strategy abstains on missing data, and the execution hard stops
 are active. This exception does not promote the baseline, prove an edge, or
@@ -366,11 +366,10 @@ kis_paper         KIS virtual account, explicitly authorized
 kis_live          KIS real account, separately authorized
 ```
 
-KIS paper does not require a profitable model. The operator first authorizes
-read-only virtual-account access. After reconciliation, Codex proposes a paper
-capital envelope using the smaller of actual orderable funds and the intended
-shadow live capital; KRW 5,000,000 is the current planning reference. Submission
-starts only after that envelope is approved or changed.
+KIS paper does not require a profitable model or a paper-capital approval. The
+operator has standing-authorized KIS virtual-paper credential use, account and
+market-data reads, submit/modify/cancel, reconciliation, routine sizing, and
+goal-owned scheduling. KIS live remains a separately authorized mode.
 
 ## Safety Minimum
 
@@ -404,8 +403,9 @@ not prerequisites for starting bounded paper evidence collection.
 
 The dashboard is authenticated, local/LAN-bound, and mostly read-only. The
 existing Docker `web` service is a local monitor only; it neither reads KIS
-credentials nor calls a broker. A future KIS-paper console is a separately
-authorized Execution objective, not an implicit consequence of this design.
+credentials nor calls a broker. A future KIS-paper console is a goal-owned
+Execution objective under standing paper authority, not an implicit capability
+of the web process.
 
 Read:
 
@@ -424,8 +424,8 @@ Write:
 
 - pause new entries,
 - request cancellation of open orders,
-- later, pause discretionary strategy reductions only after a separately
-  authorized paper-execution objective;
+- later, pause discretionary strategy reductions when the goal-owned
+  paper-execution capability is implemented;
 - resume only after explicit local confirmation and fresh reconciliation.
 
 No dashboard action may suppress a hard-risk exit, emergency containment, or

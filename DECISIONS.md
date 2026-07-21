@@ -3169,3 +3169,76 @@ Reason: the operator explicitly requested KIS-derived learning data and has
 authorized KIS calls. A two-page private daily cache has material development
 value and can be contained, deleted, and audited without expanding to a public
 market-data product.
+
+## 2026-07-21 - Make KIS Paper and goal-owned scheduling standing authority
+
+Decision: the operator has explicitly authorized all private `KIS_PAPER_*`
+development work: credential use, market/account/order reads, paper
+submit/modify/cancel, reconciliation, routine paper sizing, and goal-owned
+scheduling. Remove the prior approval gates for a paper capital envelope,
+profitability packet, dashboard, report family, trade count, and individual
+paper call. Codex may now advance KIS Paper execution when its implementation is
+ready rather than waiting for an additional business decision.
+
+This does not change `KIS_LIVE_*`: live credentials and real-money routes stay
+unreadable and unavailable. The surviving paper requirements are technical,
+not approval gates: paper-vs-live route separation, no secret output, durable
+idempotent intent before a paper side effect, and reconciliation before an
+unknown outcome is retried. A goal-owned scheduler must preserve those same
+properties; it may not convert a transient unknown outcome into unattended
+duplicate submission.
+
+Historical metadata-only one-shot markers correctly retain
+`raw_market_data_retained: false` because those completed runs stored no raw
+rows. That field is not a current restriction. New raw-data collectors use a
+raw-aware control record with its manifest hash and actual retention fact rather
+than rewriting historical evidence or forcing new collectors through a
+metadata-only marker.
+
+Claude's falsification-first verdict is `supported-with-limits`. Its reversal
+condition is any implementation change that reaches a live route, exposes a
+secret, or makes an interrupted paper submission unreconciled and duplicable.
+
+Reason: the former interpretation made paper execution depend on process gates
+that did not improve the engine. The operator wants rapid virtual-paper learning
+while retaining only the minimum facts needed to keep paper behavior truthful
+and recoverable.
+
+## 2026-07-21 - Permit progressive private KIS data backfill
+
+Decision: the standing KIS Paper authority includes progressive, resumable
+private cache collection under `D:\market_data` for active engine work. A named
+collection job still records source, scope, hashes, deduplication, storage, and
+recovery facts, but a successful small pilot no longer requires a fresh operator
+approval before a later scheduled or chunked backfill expands useful coverage.
+
+The boundary is product use, not a page-count gate: keep KIS-originated data
+local, private, unserved, and unredistributed; retain the D: free-space floor;
+and stop only if applicable KIS or exchange terms prohibit retention. This does
+not authorize a public market-data product or `KIS_LIVE_*` access.
+
+Reason: learning-quality data needs to grow beyond a single two-page experiment,
+and the operator explicitly prefers forward progress over approval scaffolding.
+
+## 2026-07-21 - Record the first retained KIS Paper daily cache
+
+Decision: accept the completed `kis-paper-private-daily-collector-v1` as the
+first retained private KIS cache. It stored 199 unique `QQQ` / `NAS` daily rows
+after deduplicating one exact overlap from 200 input rows. The manifest is at
+`D:\market_data\us_equities\kis_paper_private\daily\snapshot=20260721T145228Z-qqq-nas-modp0-v1\manifest.json`,
+with manifest SHA-256
+`f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10` and raw
+file SHA-256
+`13a904a2e68c0405535fd67d96bd2b630036cc76ddc3d6b9d2a016e229291c4d`.
+
+The collector's control record explicitly says
+`raw_market_data_retained: true`. Generic one-shot reservations now require an
+explicit retention fact rather than silently defaulting to `false`; old probes
+pass `false` explicitly because they were metadata-only. This is evidence
+bookkeeping, not a collection quota or approval mechanism.
+
+Reason: it verifies the private D: retention path, atomic manifest/hash pairing,
+deduplication, and pacing against a real KIS response. It supports the next
+resumable daily backfill objective without reopening an approval question. It
+does not by itself prove broad historical coverage, intraday availability,
+model quality, or a live route.

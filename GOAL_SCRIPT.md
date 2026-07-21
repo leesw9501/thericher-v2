@@ -20,14 +20,16 @@ A lane-local block does not stop another ready lane.
 
 Do not stop for routine scheduling, ordinary implementation choices, or a
 recoverable external failure. Stop and report only an operator-authority
-decision (including approval, cost, credentials, capital, order, or live
-authority), an unapproved irreversible external action, or an unresolved
-actual account-safety risk.
+decision (paid cost, unclear rights, public exposure, `KIS_LIVE_*`, live
+capital, or live authority), an unapproved irreversible external action, or an
+unresolved actual broker-state anomaly.
 
 Keep market data under D:\market_data and generated artifacts under
 D:\thericher-v2\model-artifacts. Follow the approved free-data/public-model,
 storage, Claude challenge, KIS paper, and recovery policies in AGENTS.md.
 
-Do not read credentials, call KIS, submit broker orders, spend money, or enable
-live behavior unless the current goal contains the required operator approval.
+`KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
+and goal-owned schedules are already approved by policy. Do not read or call
+`KIS_LIVE_*`, enable real-money behavior, spend money, or expose a public
+service without separate operator approval.
 ```

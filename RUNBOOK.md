@@ -299,7 +299,7 @@ and ask Claude before any capability update.
 finished `rejected` / `minute_response_rejected`. Its marker and ledger are
 complete, and its one-shot automation is paused. Do not run its command again.
 
-KIS Paper read-only market-data calls and goal-owned schedules are authorized.
+KIS Paper market-data/account/order work and goal-owned schedules are authorized.
 The following capacity-map commands are historical context only; both objective
 IDs have reached terminal `rejected` markers and must not be rerun:
 
@@ -318,40 +318,49 @@ new objective ID rather than replaying a terminal one.
 External summaries record only page counts, date/timestamp bounds, page order,
 duplicate/gap facts, continuation availability, and sanitized outcomes. Rows,
 prices, cursors, credentials, account values, and response bodies remain in
-memory. The next fresh daily collector must pace requests, use the observed
-two-page boundary as a manifest fact, and stop safely on a rejection; it still
-does not treat the capacity maps as a model-input or order-capability contract.
+memory. The completed private daily collector used the observed two-page
+boundary as a pacing fact. The capacity maps still do not by themselves prove a
+general archive, model-input contract, or order-endpoint capability.
+
+## KIS Private Daily Collector v1
+
+`kis-paper-private-daily-collector-v1` completed at `2026-07-21T14:52:28Z`.
+It used only `dailyprice` / `QQQ` / `NAS` / `MODP=0`, one KIS Paper token, two
+daily pages, and one measured two-second inter-page delay. It retained 199
+unique daily rows from 200 input rows after removing one exact overlapping
+date. The private raw file lives only under
+`D:\market_data\us_equities\kis_paper_private\daily`; its SHA-256 is
+`13a904a2e68c0405535fd67d96bd2b630036cc76ddc3d6b9d2a016e229291c4d`.
+
+The atomic manifest is
+`D:\market_data\us_equities\kis_paper_private\daily\snapshot=20260721T145228Z-qqq-nas-modp0-v1\manifest.json`
+with SHA-256
+`f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10`.
+Its raw-aware control record reached `completed` / `complete` and records
+`raw_market_data_retained: true`. This is an actual retention fact, not a
+one-shot restriction; historical metadata-only markers remain `false` only
+because those old runs stored no raw rows.
+
+The next data job may continue this cache through paced, resumable chunks under
+the standing KIS Paper authority. Keep the cache private and local, preserve
+manifest/hash/provenance facts, and do not infer a general archive entitlement,
+model result, or order-transport support from this first snapshot.
 
 ## KIS Paper Authority
 
-KIS paper should begin before model profitability when execution hard stops are
-ready. Use a deterministic baseline for the first live-like evidence loop.
+KIS Paper is standing operator-approved development authority for this private
+project. Codex may read `KIS_PAPER_*`, query market/account/order facts, submit,
+modify, and cancel virtual-paper orders, choose routine paper sizing, and run
+goal-owned schedules without an additional capital-envelope, profitability,
+report, dashboard, or canary-approval gate.
 
-Authority sequence:
+The only live boundary is absolute: never read `KIS_LIVE_*`, call a live route,
+or enable real-money behavior. The web process remains credential-free.
 
-1. Operator authorizes read-only KIS paper credentials and account queries.
-2. Execution validates the paper endpoint and masked account identity, then
-   reconciles source-labelled orderable foreign funds, reference orderability,
-   positions, and open orders.
-3. Codex proposes a paper capital envelope based on:
-
-   ```text
-   min(fresh orderable foreign funds, operator ceiling in the same currency)
-   ```
-
-   The KRW 5,000,000 planning reference is not converted automatically.
-4. Operator approves or changes the envelope once.
-5. A one-symbol, one-share limit-order canary proves submit, status, fill or
-   cancel, event persistence, restart reconciliation, and duplicate suppression.
-6. Routine paper operation may continue inside the approved envelope and hard
-   limits without repeated approval.
-
-Never size upward merely because the virtual account has large buying power.
-Margin, shorting, leverage, unsupported order types, and live endpoints remain
-disabled until separately approved.
-
-Unknown broker outcomes stop new entries. Persist intent before submission,
-query KIS rather than retry blindly, and reconcile by broker/account facts.
+For every paper side effect, persist an idempotent intent first and reconcile an
+unknown broker outcome before sending a replacement. This is a technical
+recovery rule, not an operator-approval gate. Schedulers may run ordinary paper
+work when they preserve the same paper-only route and reconciliation behavior.
 
 ## Recovery
 

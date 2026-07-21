@@ -93,6 +93,7 @@ def main(
             repo_root=_REPO_ROOT,
             objective_id=objective_id,
             observed_at=reserved_at,
+            raw_market_data_retained=False,
         )
         network_started_at = clock()
         mark_external_one_shot_network_started(
