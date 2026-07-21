@@ -16,6 +16,12 @@ Own the current KIS-native daily cache and its future reusable loaders.
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
 - Stored data is `MODP=0_unadjusted`. Treat corporate actions and adjustment
   semantics as a visible limitation, not a reason to stop collection.
+- A separate Norgate trial snapshot is available at
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
+  It contains 523 symbols x 483 common D1 sessions from `2024-07-18` through
+  `2026-06-22`, but is static/survivorship selected with unverified adjustment
+  semantics. Its manifest permits development-training preparation only;
+  `model`, `gpu`, `paper_trading`, `pnl`, `ranking`, and PIT scope remain false.
 
 ## Ready Queue
 
@@ -25,13 +31,18 @@ Own the current KIS-native daily cache and its future reusable loaders.
 2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
    snapshot/index/raw hashes, accept only exact overlap deduplication, reject
    conflicts, verify cursor seams, and return the completed common-session
-   intersection for the next CPU trade-quality-gate candidate.
+   intersection for consumers. A bounded `end_session` may re-attest the full
+   source while materializing only the permitted prefix as `Bar` objects.
 3. Treat 694 sessions as the active daily research input. The former 756 target
    is source-limited and was never KIS Paper permission.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
 5. Design the next reusable raw-minute cache lane from observed KIS behavior;
    do not resurrect terminal metadata-only probes.
+6. Expose the existing Norgate trial panel through one public read-only,
+   hash-attested immutable `Bar`-series loader by reusing its existing snapshot
+   verifier and parser. Do not duplicate its feature artifact, parse the trial
+   database, download data, or widen its negative scope flags.
 
 ## Authority And Boundaries
 
@@ -59,6 +70,10 @@ that would cross the 15% floor.
 - `slice_kis_paper_private_daily_catalog` creates a derived, hash-bound session
   range without reopening the source cache. Research uses it to keep phase
   consumers away from excluded sessions.
+- The optional loader session ceiling still verifies every retained raw file,
+  complete row-fingerprint map, and committed row count. It merely omits later
+  `Bar` construction, so a frozen consumer cannot accidentally carry a burned
+  suffix into its process.
 - A hash-attested partial chunk may advance only after a fully validated first
   page; a wholly invalid page never advances its cursor.
 - KIS execution canary evidence and KIS market-data cache bytes are separate:

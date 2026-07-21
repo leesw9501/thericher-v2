@@ -2,85 +2,91 @@
 
 ## Objective
 
-Build and run one bounded, CPU-only **L2 logistic trade-quality gate** for the
-existing daily three-ETF relative-strength selector.
+Expose the existing Norgate trial broad D1 panel through one reusable,
+read-only, hash-attested public `Bar`-series loader.
 
-The gate must leave selection, sizing, entry timing, hold period, exit, and
-execution untouched. It may only choose `enter` or `abstain` for an otherwise
-eligible selector trade, then compare replayable `local_paper` outcomes against
-the unmodified selector and cash.
+This is a Data foundation objective. It makes the already stored external panel
+usable by future engineering without duplicating its feature artifact or
+turning a static trial dataset into a trading, model, or GPU claim.
 
-## Required Reads
+## Required First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and all active
-   stateboards under `agents/`.
-3. Inspect the active KIS daily cache index and manifest metadata only. Do not
-   need credentials, KIS, or network access for this objective.
+2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, and the
+   active stateboards under `agents/`.
+3. Read the existing implementation and tests before editing:
+   - `src/thericher_v2/data/norgate_trial_development_panel.py`
+   - `src/thericher_v2/data/norgate_broad_development_artifact.py`
+   - `tests/test_norgate_trial_development_panel.py`
+   - `tests/test_norgate_broad_development_artifact.py`
+4. Read only the manifest and required local snapshot files under the frozen
+   path below. Do not recursively scan `D:` or parse the Norgate database.
 
-## Frozen Contract
+## Frozen Source Contract
 
-- Input: `kis.paper.private.daily.backfill-v1.common-panel`, `QQQ/SPY/IWM`,
-  694 common daily sessions, `MODP=0_unadjusted`; preserve the corporate-action
-  limitation.
-- Geometry: 414 development sessions, two-session purge, 138 chronological
-  validation sessions, then two-session embargo. Do not read the final 138
-  `burned_precontract` sessions.
-- At completed session `t`, calculate only: selected ETF 20-session return,
-  its 20-session margin over runner-up, selected ETF 20-session realized
-  volatility, and fraction of the three ETFs with positive 20-session return.
-- Target: exact after-cost sign of the selector's `t+1` open to `t+2` open
-  local-paper trade under the frozen 1 bp/side fee and zero slippage model.
-- Model: one fixed L2 logistic model, development-only standardization, no
-  threshold search, `enter` only at probability `>= 0.50`.
-- Primary metric: validation mean normalized after-cost return per scheduled
-  decision, abstentions scored as zero, plus candidate-minus-selector
-  5-decision moving-block-bootstrap 95% lower bound.
-- Secondary checks: accepted-trade count, Brier score versus the development
-  prevalence predictor, maximum drawdown, and a predeclared 2 bp/side slippage
-  stress.
-- Stop and retire without retuning when development has fewer than 100 eligible
-  entries or fewer than 25 observations of either label; or validation has
-  fewer than 20 accepted trades, a non-positive primary lower bound, worse
-  Brier/drawdown, or fails slippage stress. A pass is retrospective only and
-  cannot promote an execution change.
+- Snapshot:
+  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
+- Dataset ID:
+  `us_equities.norgate_trial_broad_development_panel.1d.snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`
+- Panel SHA-256:
+  `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
+- 523 symbols, 483 common sessions, 252,609 D1 OHLCV rows,
+  `2024-07-18` through `2026-06-22`.
+- `development_training_eligible=true`; `model_eligible=false`,
+  `gpu_eligible=false`, `paper_trading_eligible=false`, `pnl_eligible=false`,
+  `ranking_eligible=false`, and `point_in_time_eligible=false`.
+- The source is static/survivorship/availability selected and adjustment
+  semantics are unverified. Those are source facts, not reasons to re-download
+  or silently repair data.
 
-## Work Packages
+## Required Work
 
 ### Data Agent
 
-- Re-attest the local index/manifests and derive isolated hash-bound development
-  and validation slices. Do not call KIS or alter the source cache.
+1. Reuse the existing Norgate snapshot verifier and CSV parser to add one
+   public immutable catalog/series loader. It must return candidate rank,
+   hash-attestation identity, common sessions, source limitations, scope flags,
+   and symbol-keyed canonical `Bar` series.
+2. Keep all input bytes at `D:\market_data`; the loader writes no market data,
+   model artifact, or cache inside Git.
+3. Reject manifest, panel hash, schema, symbol/rank, duplicate, ordering, or
+   common-session drift before exposing any series.
+4. Preserve the negative source scope in the returned object. Do not modify the
+   Norgate database, download data, construct a PIT universe, infer adjustment
+   semantics, or treat dropped symbols as membership evidence.
 
 ### Engine Research Agent
 
-- Implement the candidate and a concise external campaign artifact under
-  `D:\thericher-v2\model-artifacts`.
-- Use deterministic CPU dependencies already present or a small compatible
-  no-cost dependency if genuinely needed. Do not use GPU for this candidate.
-- Record contract, inputs, model parameters, metrics, stop-rule verdict, and
-  local-paper replay hashes outside Git.
+- Review the new loader only as an engineering input contract. Do not build or
+  run a selector, model, ensemble, PnL analysis, GPU job, CUDA mode, paper
+  order, KIS call, or promotion workflow from this panel.
+- Record the previous Norgate engineering-only validation as historical context
+  if useful, but do not reproduce its feature artifact or make a new result
+  claim.
 
 ### Validation
 
-- Independently verify no validation/holdout bars reach development fitting,
-  no KIS/network/credential path is required, all fills remain `local_paper`,
-  and a failed stop rule cannot change execution behavior.
-
-### Execution Agent
-
-- Preserve the KIS virtual-paper canary recovery state as ready independent
-  work. Do not modify broker routing for this research candidate.
+- Add focused offline tests proving no credential, network, Norgate SDK, KIS,
+  GPU, or artifact-root access is required.
+- Cover the frozen external manifest/panel smoke when available and hermetic
+  fixtures for each rejection path.
+- Verify the public object cannot misreport the source as model/GPU/PnL/paper
+  eligible.
 
 ## Boundaries
 
-- No KIS call, credential read, broker action, paid data/model/service, public
-  service, or live behavior is needed for this goal.
-- Generated artifacts belong only under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`; market-data bytes remain under `D:\market_data`; do
-  not commit either.
-- Do not create a report/gate family. The campaign artifact and existing
-  stateboards are sufficient.
+- No KIS call, credential read, broker action, data download, paid service,
+  Norgate database parsing, public service, model training, GPU work, or live
+  behavior is needed for this objective.
+- Do not introduce a second Norgate feature pipeline, a scheduler, report
+  family, or per-agent workflow.
+- The prior Claude check was `uncertain` because its environment could not
+  verify the local D: snapshot; local manifest attestation resolved that factual
+  question. Retain its valid limits: static-survivorship data is development
+  plumbing only, and unverified adjustment semantics prohibit strategy claims.
+- Ask Claude for a fresh short falsification check only if implementation needs
+  to widen this source contract or introduce a new reusable runtime beyond this
+  bounded read-only loader.
 
 ## Verification
 
@@ -93,4 +99,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add daily trade quality gate baseline`
+`Expose Norgate trial broad panel loader`

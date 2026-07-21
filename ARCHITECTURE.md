@@ -307,6 +307,10 @@ panel; and exposes only its common completed sessions as `CatalogedBars`. A
 partial chunk is usable only when its retained first page passed full validation;
 it never turns an invalid page into a silent repair. The first consumer is the
 deterministic `daily-three-etf-relative-strength-v0` local-paper baseline.
+An optional session ceiling keeps the same full raw-file, row-fingerprint, and
+committed-row-count attestation but omits later `Bar` construction. A frozen
+research consumer can therefore carry only its permitted chronological prefix
+without weakening source integrity verification.
 `slice_kis_paper_private_daily_catalog` derives a separate dataset identity for
 one chronological session range without reopening source bytes; phase consumers
 therefore receive only their allowed bars. The first comparative contract uses

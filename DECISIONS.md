@@ -3520,3 +3520,34 @@ Reason: earlier one-shot probe artifacts made a factual storage field appear
 like ongoing authority. The project should progress by default inside private
 paper authority while retaining only the technical checks needed to distinguish
 a stored snapshot from missing or corrupted data.
+
+## 2026-07-22 - Retire the first frozen daily L2 trade-quality gate
+
+Decision: run one fixed CPU L2-logistic `enter`/`abstain` gate over the existing
+daily three-ETF relative-strength selector, without changing selection, sizing,
+entry, hold, exit, or execution. The runner accepts only the hash-attested
+prefix through its post-validation embargo, not a full catalog containing the
+burned historical suffix. The Data loader still verifies complete raw-file
+hashes, row fingerprints, and committed row counts before exposing the prefix.
+
+The post-commit run at
+`D:\thericher-v2\model-artifacts\daily-three-etf-l2-trade-quality-gate-v1\kis-daily-trade-quality-20260722T170000Z`
+used commit `8a4c4a8b6309c4a2674a4abd9b7cbcc9314667c4`, 155 development
+entries (85 positive, 70 negative), and 58 validation decisions. It improved
+the observed candidate mean normalized after-cost return (`0.0001684` versus
+`-0.0004646` selector), Brier score, and maximum drawdown, but the primary
+moving-block-bootstrap lower bound and the 2 bp/side stress lower bound were
+both `0.0`. It is `retired`; there is no retune, promotion, ensemble reuse, or
+execution change. All replay fills remain `source: local_paper`.
+
+Claude's prefix-design drift-check verdict was `supported-with-limits`: a
+prefix process cannot re-derive the parent full-panel dataset hash, so integrity
+rests on the frozen index hash plus manifest/raw hash and row-fingerprint
+attestation, and on the frozen prefix segment hashes. The runner-level contract
+test and core full-catalog rejection keep that limit explicit.
+
+Reason: a compact linear baseline is useful falsification evidence, but a
+positive average without a robust lower bound is not a trading claim. Refusing
+the burned suffix at the core boundary preserves the useful historical result
+without treating it as a route to repetitive tuning or a blocker for independent
+paper and data work.

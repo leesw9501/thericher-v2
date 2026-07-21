@@ -81,6 +81,16 @@ panel is clean and usable now. Do not repeatedly query that blocked IWM page
 until a different official endpoint or a separately evidence-backed row-quality
 contract resolves it.
 
+The local Norgate trial also contains a hash-attested static development panel
+at
+`D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`:
+523 symbols, 483 common daily sessions, 252,609 OHLCV rows from `2024-07-18`
+through `2026-06-22`. It is survivorship/availability selected with unverified
+adjustment semantics. Its manifest permits development-training preparation
+only; it is not model, GPU, ranking, PnL, paper-trading, PIT, or promotion
+evidence. Reuse its verified snapshot rather than parsing the Norgate database
+or downloading another copy.
+
 The worker writes a raw snapshot and manifest before atomically moving a
 cursor. Its two-minute shared retry after a token event is observed source
 transport pacing, not a permission or model-quality gate. Inspect the live
@@ -96,6 +106,11 @@ panel. Its partial page is usable only when its first page was fully validated;
 the later IWM source-quality failure remains excluded. The former 756-session
 target is a validation preference, not a KIS Paper or smoke-execution
 authorization.
+
+An optional session ceiling re-attests the complete retained raw evidence but
+only materializes `Bar` objects through that ceiling. This keeps frozen
+development/validation consumers from carrying later historical bars in memory
+while preserving raw-cache integrity checks.
 
 ### Engine Research
 
@@ -115,6 +130,25 @@ new output is honest retrospective execution evidence, not a return,
 model-selection, or promotion claim. This is not a blocker for KIS Paper or
 new research: prospective paper observations are the next clean out-of-sample
 source.
+
+The fixed L2 logistic trade-quality gate ran after commit `8a4c4a8` at
+`D:\thericher-v2\model-artifacts\daily-three-etf-l2-trade-quality-gate-v1\kis-daily-trade-quality-20260722T170000Z`.
+It fits 155 development selector entries (85 positive, 70 negative) and only
+permits `enter` or `abstain` for the unchanged selector. The candidate improved
+the observed validation mean return (`0.0001684` versus `-0.0004646`) and
+drawdown (`0.06447` versus `0.07098`), but both its primary and 2 bp/side stress
+bootstrap lower bounds were `0.0`. It is therefore `retired` without tuning,
+promotion, or ensemble reuse. Every replay fill is `source: local_paper`.
+
+The gate's core accepts only the 556-session prefix through its post-validation
+embargo. The loader still re-attests every source raw file, fingerprint, and
+committed row count, but does not construct later `Bar` objects for this
+campaign.
+
+The Norgate static panel is not a follow-on breadth or GPU candidate under its
+current source scope. The next Data-owned task is only a reusable read-only
+`Bar`-series loader that preserves those negative scope flags; it must not add
+selector, model, PnL, KIS, or paper behavior.
 
 ### Execution
 
@@ -166,10 +200,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. KIS virtual-token
-recovery remains ready work: after the virtual app key/secret is refreshed,
-reconcile the existing canary state before any replacement submission. It does
-not block the next offline CPU research candidate. At each boundary, review the
-data contract, execution route readiness, research queues, GPU eligibility,
-disk capacity, and role ownership; make reversible no-cost changes autonomously
-and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: expose the existing
+static Norgate panel through a public, read-only, hash-attested `Bar` loader
+without widening its source scope. KIS virtual-token recovery remains ready
+independent work: after the virtual app key/secret is refreshed, reconcile the
+existing canary state before any replacement submission. At each boundary,
+review the data contract, execution route readiness, research queues, GPU
+eligibility, disk capacity, and role ownership; make reversible no-cost changes
+autonomously and escalate only a real remaining operator boundary.

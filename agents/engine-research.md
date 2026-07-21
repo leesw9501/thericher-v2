@@ -24,22 +24,22 @@ not GPU occupancy.
    buy-and-hold comparators for each ETF. All fills are replayable
    `source: local_paper`; `run.json`, event hash, data hash, costs, and code
    revision are retained outside Git.
-4. Use the current result to populate a diverse breadth roster: naive/linear/tree,
-   one compact sequence model, and at most one small attention or public
-   time-series benchmark. Start a depth or ensemble candidate only after a
-   concrete distinct hypothesis and proper upstream out-of-fold evidence.
-5. Next ready breadth candidate: a CPU-only, L2-logistic trade-quality gate for
-   `daily-three-etf-relative-strength-v0`. It leaves selector, sizing, and exit
-   untouched, learns only `enter` versus `abstain` from four completed-session
-   features (selected 20-session return, margin over runner-up, selected
-   realized volatility, and positive-universe fraction), and uses the frozen
-   development-standardized `0.50` threshold. Its target is exact after-cost
-   next-open-to-following-open trade sign. Stop without retuning if development
-   has fewer than 100 eligible entries or 25 examples of either label, or if
-   validation has fewer than 20 accepted trades, non-positive 5-decision
-   moving-block-bootstrap lower bound versus selector, worse Brier/drawdown, or
-   failure under 2 bp/side slippage stress. The result is retrospective only;
-   it never earns promotion by itself.
+4. The first fixed CPU L2-logistic trade-quality gate is complete and retired.
+   Its post-commit artifact is
+   `D:\thericher-v2\model-artifacts\daily-three-etf-l2-trade-quality-gate-v1\kis-daily-trade-quality-20260722T170000Z`.
+   It used 155 development selector entries (85 positive, 70 negative), and 58
+   validation decisions. The candidate accepted 50 trades versus the selector's
+   53, improved observed mean return (`0.0001684` versus `-0.0004646`), Brier
+   (`0.252925` versus `0.253254` prevalence), and maximum drawdown (`0.06447`
+   versus `0.07098`), but both the primary and 2 bp/side stress bootstrap lower
+   bounds were `0.0`. Do not retune, promote, or ensemble this candidate.
+5. Choose the next breadth campaign only from a data contract with a materially
+   broader eligible universe or genuinely new prospective KIS Paper evidence.
+   A later depth or ensemble candidate needs a distinct hypothesis and upstream
+   out-of-fold evidence; do not use GPU merely to revisit this retired gate.
+   The existing Norgate static 523-symbol trial panel is development-training
+   preparation only, not a candidate for selector, model, GPU, PnL, or paper
+   work under its current manifest scope.
 
 ## GPU Policy
 
@@ -67,6 +67,10 @@ and generated artifacts only under `D:\thericher-v2\model-artifacts` or
 - The L2 gate is intentionally CPU-only: this small daily panel cannot justify
   GPU training. A later GPU sequence candidate needs its own frozen prospective
   campaign rather than widening this candidate after seeing results.
+- The L2 gate core accepts only the hash-bound prefix through the post-validation
+  embargo. Its loader re-attests complete raw source files but does not
+  materialize the later burned suffix as `Bar` objects. That boundary is a
+  leakage control, not a KIS Paper or research-queue approval gate.
 
 ## Recovery
 
