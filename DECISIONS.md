@@ -3677,3 +3677,26 @@ needed recovery evidence.
 Reason: retaining ambiguity is execution correctness, not a paper-capital,
 profitability, one-shot, or manual-approval gate. It prevents duplicate orders
 without blocking other authorized private Paper, data, or research work.
+
+## 2026-07-22 - Complete one reconciliation-only recovery of the ambiguous canary
+
+Decision: execute exactly one recovery of
+`canary-20260721T225034Z` through its persisted `outcome_unknown` state. The
+current image reached virtual account reconciliation without an order submit,
+modify, or cancel route. Its sanitized evidence reports an available account,
+zero open orders, zero completion rows, and no matching open/completion entry.
+It still remains `outcome_unknown` with `reconciliation_unresolved`, because a
+run without a durable broker order reference cannot turn the absence of current
+matches into proof that its earlier submit had no side effect.
+
+The recovery-only path now has a direct deterministic transport-counter test:
+even with `cancel_after_submit=true`, an `outcome_unknown` resume may make the
+token POST required for reconciliation but cannot send a buy-limit or cancel
+POST. Claude's second falsification verdict was `supported-with-limits`; the
+test covers the adversarial durable phase but cannot independently prove KIS's
+external state beyond the bounded snapshot.
+
+Reason: this preserves the ambiguous intent without creating an approval,
+capital, profitability, or one-shot hold. A future separately identified
+canary remains allowed after safe submit-failure diagnostics improve; it is not
+a replacement submit for this run.

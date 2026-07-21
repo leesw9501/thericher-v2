@@ -31,8 +31,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   current-image run, `canary-20260721T225034Z`, completed initial
   reconciliation then became `outcome_unknown` with
   `submit_transport_unknown`. The safe evidence has no broker order reference,
-  which does not prove that no submit side effect reached KIS. Treat the next
-  exact-run reconciliation as integration recovery, not a paper authority gate.
+  which does not prove that no submit side effect reached KIS. Its one exact-run
+  recovery made no order-route request and found an available account with zero
+  open-order/completion counts and no matching entry, but it remains
+  `reconciliation_unresolved` because the missing reference cannot prove
+  absence. Treat that run as preserved evidence, not a paper authority gate.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -42,11 +45,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Reconcile persisted run `canary-20260721T225034Z` exactly once through its
-   durable state. It may issue read-only virtual requests only; it must not
-   submit, modify, cancel, replace, or create a new run ID. Record the
-   sanitized recovery result while Data and Research continue; it does not
-   reopen an approval question.
+2. Add a closed, secret-safe diagnostic for ambiguous canary submit failures,
+   then run one separately identified virtual canary after focused transport,
+   recovery, and failure-diagnostic proof. It must not reuse or mutate
+   `canary-20260721T225034Z`; that run remains unresolved evidence. This does
+   not reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
@@ -85,7 +88,7 @@ fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the same-run canary reconciliation evidence and any unresolved KIS Paper
-route fact to Codex. Only a live-money boundary, paid commitment, unclear
-rights, public exposure, or an external KIS credential reset needs operator
-input.
+Hand the safe submit diagnostic result, new-canary evidence, and any unresolved
+KIS Paper route fact to Codex. Only a live-money boundary, paid commitment,
+unclear rights, public exposure, or an external KIS credential reset needs
+operator input.

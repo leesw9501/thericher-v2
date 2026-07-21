@@ -560,6 +560,52 @@ def test_unknown_submission_reconciles_without_duplicate_submit(tmp_path: Path) 
     assert _submission_count(transport) == 1
 
 
+def test_unknown_submission_recovery_never_uses_an_order_post_route(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(fail_submit=True)
+    state_path = tmp_path / "private" / "unknown-recovery-posts-1.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="unknown-recovery-posts-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    request_count_before_recovery = len(transport.requests)
+
+    transport.fail_submit = False
+    recovered = run_kis_paper_canary(
+        decision=_decision(decision_as_of=NOW + timedelta(minutes=1)),
+        run_id="unknown-recovery-posts-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    assert recovered.phase == "outcome_unknown"
+    assert recovery_requests
+    assert all(
+        request.method != "POST" or request.url.endswith("/oauth2/tokenP")
+        for request in recovery_requests
+    )
+    assert all(
+        request.headers.get("tr_id")
+        not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_CANCEL_TR_ID}
+        for request in recovery_requests
+    )
+
+
 def test_non_success_submit_response_is_unknown_and_never_resubmitted(tmp_path: Path) -> None:
     transport = FakeKisPaperCanaryTransport(submit_status_code=503)
     state_path = tmp_path / "private" / "http-unknown-1.json"

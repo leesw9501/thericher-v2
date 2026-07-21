@@ -187,11 +187,15 @@ injectable source pacing. Its first current-image virtual run,
 `canary-20260721T225034Z`, completed its initial reconciliation and then ended
 as `outcome_unknown` with `submit_transport_unknown`. The safe evidence has no
 broker order reference; that is not proof that the submit side effect did not
-reach KIS. Do not retry or replace it. The next bounded action is one recovery
-reconciliation of this exact persisted run ID, which the program must execute
-without a submit, modify, or cancel request. This is execution recovery, not a
-capital, research, or one-shot policy gate. Continue to exclude `msg1`, broker
-bodies, account identifiers, and secrets. Safe evidence is under
+reach KIS. The one allowed exact-run recovery has now completed without an
+order-route request. Its sanitized evidence has an available account, zero open
+orders, zero completion rows, no matching open/completion entry, and still
+`outcome_unknown` / `reconciliation_unresolved`: the missing order reference
+prevents a clean absence claim. Do not retry or replace this run. A later fresh
+canary may be a separate run after safe submit-failure diagnostics are added;
+it is not a retry of this intent. This is execution recovery, not a capital,
+research, or one-shot policy gate. Continue to exclude `msg1`, broker bodies,
+account identifiers, and secrets. Safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
 recovery state into Git.
 
@@ -225,11 +229,12 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: reconcile the
-existing `canary-20260721T225034Z` outcome exactly once using its persisted
-state. It must not generate a replacement submit, modify, or cancel request.
-This is not a prerequisite approval for paper work; it is the next technical
-recovery fact for the existing canary. At each boundary, review the data
-contract, execution route readiness, research queues, GPU eligibility, disk
-capacity, and role ownership; make reversible no-cost changes autonomously and
-escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: make an ambiguous
+canary submit failure diagnosable through a closed, secret-safe code, then run
+one independent new virtual canary only after focused regression proof and a
+Claude drift check. It must not reuse or mutate
+`canary-20260721T225034Z`. This is not a prerequisite approval for paper work;
+it is the next technical reliability fact for the existing adapter. At each
+boundary, review the data contract, execution route readiness, research queues,
+GPU eligibility, disk capacity, and role ownership; make reversible no-cost
+changes autonomously and escalate only a real remaining operator boundary.

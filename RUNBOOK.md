@@ -125,8 +125,12 @@ virtual requests. Its first current-image virtual run,
 `canary-20260721T225034Z`, reached initial reconciliation then ended as
 `outcome_unknown` with `submit_transport_unknown`. Its safe evidence has no
 broker order reference, which is not proof that KIS received no submit side
-effect. The next action is one same-run recovery reconciliation only; do not
-retry, replace, modify, or cancel the order from that run. This is a technical
+effect. Its one allowed same-run recovery is complete: it made no order-route
+request and found an available account, zero open orders, zero completion rows,
+and no matching entry. Because the run has no durable broker reference, its
+state remains `outcome_unknown` / `reconciliation_unresolved`. Do not retry,
+replace, modify, or cancel that run. A later independently identified canary
+may proceed after its failure diagnostics are improved. This is a technical
 recovery rule, not a manual approval or live route.
 
 ## KIS Paper Order Work
@@ -164,10 +168,11 @@ and returned `balance_rejected`; no order was sent. Both are integration facts,
 not approval gates. Diagnose the virtual-paper route through the sanitized
 reason plus allowlisted endpoint/transaction/HTTP metadata, then rerun a
 bounded bridge job. The first current-image canary result is an ambiguous
-submit transport outcome, so recover its exact persisted run once rather than
-launching a fresh canary. Do not substitute live credentials or inspect/print
-secret values. The sanitized runtime and evidence never retain an API body,
-account identifier, or secret.
+submit transport outcome, and its exact persisted run has already received its
+one read-only recovery. Preserve that run as unresolved; improve closed safe
+submit diagnostics before a separately identified new canary. Do not substitute
+live credentials or inspect/print secret values. The sanitized runtime and
+evidence never retain an API body, account identifier, or secret.
 
 ## Research And Artifacts
 
