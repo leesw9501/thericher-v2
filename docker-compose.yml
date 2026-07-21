@@ -148,27 +148,6 @@ services:
       - thericher-v2-web-emergency:/app/emergency
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
-  paper-capital-proposal:
-    build:
-      context: .
-      target: base
-    profiles: ["paper-capital-proposal"]
-    network_mode: none
-    read_only: true
-    tmpfs:
-      - /tmp
-    command:
-      - python
-      - -m
-      - thericher_v2.execution.paper_capital_proposal
-      - --runtime-snapshot
-      - /app/runtime/state/paper_account_snapshot.json
-    environment:
-      THERICHER_MODE: off
-      PYTHONPATH: /app/src
-    volumes:
-      - thericher-v2-runtime:/app/runtime:ro
-
 volumes:
   thericher-v2-runtime:
   thericher-v2-web-emergency:

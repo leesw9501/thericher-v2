@@ -396,16 +396,17 @@ class KisPaperReadOnlySnapshot:
 
 @dataclass(frozen=True)
 class KisPaperReadOnlyReconciliation:
-    """A discovery result is intentionally never authorization to submit."""
+    """Completeness facts for an account view collected by a read-only client."""
 
     reconciled_at: datetime
-    safe_to_submit: Literal[False]
-    reasons: tuple[str, ...]
+    account_snapshot_complete: Literal[True]
+    scope: Literal["read_only"] = "read_only"
+    reasons: tuple[str, ...] = ()
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
-        if self.safe_to_submit is not False or not self.reasons:
-            raise ValueError("read-only reconciliation must fail closed")
+        if self.account_snapshot_complete is not True or self.scope != "read_only":
+            raise ValueError("read-only reconciliation scope is invalid")
         object.__setattr__(self, "reasons", tuple(sorted(set(self.reasons))))
         object.__setattr__(self, "reconciled_at", require_utc(self.reconciled_at, "reconciled_at"))
 
@@ -512,7 +513,8 @@ class KisPaperDiscoveryOutcome:
             },
         }
         payload["reconciliation"] = {
-            "safe_to_submit": self.reconciliation.safe_to_submit,
+            "account_snapshot_complete": self.reconciliation.account_snapshot_complete,
+            "scope": self.reconciliation.scope,
             "reasons": list(self.reconciliation.reasons),
             "reconciled_at": self.reconciliation.reconciled_at.isoformat(),
         }
@@ -806,9 +808,9 @@ def reconcile_kis_paper_readonly(
     *,
     reconciled_at: datetime | None = None,
 ) -> KisPaperReadOnlyReconciliation:
-    """Return a typed fail-closed result; this discovery cannot enable submission."""
+    """Return typed account-completeness facts without deciding order readiness."""
 
-    reasons = ["read_only_boundary"]
+    reasons: list[str] = []
     if snapshot.cash.currency != snapshot.orderable_funds.currency:
         reasons.append("cash_orderable_currency_mismatch")
     if len({(position.exchange, position.symbol) for position in snapshot.positions}) != len(
@@ -821,7 +823,7 @@ def reconcile_kis_paper_readonly(
         reasons.append("open_order_duplicate")
     return KisPaperReadOnlyReconciliation(
         reconciled_at=reconciled_at or datetime.now(UTC),
-        safe_to_submit=False,
+        account_snapshot_complete=True,
         reasons=tuple(reasons),
     )
 
@@ -922,7 +924,8 @@ def main(argv: list[str] | None = None) -> int:
                 "status": outcome.status,
                 "reason_code": outcome.reason_code,
                 "evidence_path": str(evidence_path),
-                "safe_to_submit": False,
+                "scope": "read_only",
+                "account_snapshot_complete": outcome.status == "collected",
             },
             sort_keys=True,
         )

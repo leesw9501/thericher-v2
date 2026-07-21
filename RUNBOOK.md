@@ -94,6 +94,13 @@ It writes a sanitized local runtime snapshot. Do not pass `.env` values on a
 command line or emit credentials, account numbers, raw response bodies, or
 tokens in logs/artifacts.
 
+The bridge reports its fixed `read_only` scope and whether the account snapshot
+is complete. It is not a `safe_to_submit` approval proxy: a later paper executor
+uses a fresh account view together with its own virtual-route, intent, and
+unknown-outcome checks. An unavailable bridge artifact may retain only its
+allowlisted endpoint, transaction ID, and HTTP status for recovery; never a
+broker message body or free-form response text.
+
 ## KIS Paper Order Work
 
 Paper order submission is authorized as soon as the Execution adapter exists.
@@ -124,12 +131,13 @@ is `outcome_unknown`, not a clean result or retry cue. Do not pass secrets or
 account values on the command line.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
-submission. This is not an approval gate. When it recurs, verify or regenerate
-the **virtual-paper** application key and secret in the KIS developer account,
-update only local `.env`, and rerun the command. Do not substitute live
-credentials or inspect/print the secret values. The sanitized runtime and
-evidence retain only an allowlisted reconciliation reason code (for example,
-`auth_rejected`), never an API body, account identifier, or secret.
+submission. The latest read-only bridge attempt reached the account boundary
+and returned `balance_rejected`; no order was sent. Both are integration facts,
+not approval gates. Diagnose the virtual-paper route through the sanitized
+reason plus allowlisted endpoint/transaction/HTTP metadata, then rerun a
+bounded bridge job. Do not substitute live credentials or inspect/print secret
+values. The sanitized runtime and evidence never retain an API body, account
+identifier, or secret.
 
 ## Research And Artifacts
 

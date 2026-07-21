@@ -403,10 +403,13 @@ kis_paper         KIS virtual account, explicitly authorized
 kis_live          KIS real account, separately authorized
 ```
 
-KIS paper does not require a profitable model or a paper-capital approval. The
-operator has standing-authorized KIS virtual-paper credential use, account and
-market-data reads, submit/modify/cancel, reconciliation, routine sizing, and
-goal-owned scheduling. KIS live remains a separately authorized mode.
+KIS paper does not require a profitable model, paper-capital approval, or a
+read-only `safe_to_submit` proxy. The operator has standing-authorized KIS
+virtual-paper credential use, account and market-data reads, submit/modify/cancel,
+reconciliation, routine sizing, and goal-owned scheduling. A read-only bridge
+reports only its scope and account-snapshot completeness; the executor applies
+technical request invariants at the request boundary. KIS live remains a
+separately authorized mode.
 
 The first executable broker surface is deliberately a narrow canary, not a
 generic broker switch: one explicit US whole-share buy limit on the fixed

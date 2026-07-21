@@ -276,6 +276,12 @@ implementation properties, not operator checkpoints. A raw-retention field
 describes whether a particular result wrote raw data; it never grants or removes
 collection authority.
 
+Do not retain a paper-capital proposal, `awaiting_operator_approval`, or a
+read-only component's `safe_to_submit` field as a proxy approval gate. A
+read-only component may state its fixed scope and whether its account snapshot
+is complete; the actual paper executor evaluates technical invariants at its
+call site.
+
 Do not create a one-shot reservation, completion latch, or fixed retention value
 as a permission mechanism. Historical run markers are evidence only. A failed,
 empty, cancelled, or unretained private-paper job affects recovery of that job;

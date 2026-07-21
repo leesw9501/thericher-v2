@@ -415,8 +415,9 @@ def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external
 
     assert outcome.status == "collected"
     assert outcome.reconciliation is not None
-    assert outcome.reconciliation.safe_to_submit is False
-    assert outcome.reconciliation.reasons == ("read_only_boundary",)
+    assert outcome.reconciliation.account_snapshot_complete is True
+    assert outcome.reconciliation.scope == "read_only"
+    assert outcome.reconciliation.reasons == ()
     assert evidence_path.is_file()
     assert evidence_path.is_relative_to(tmp_path / "artifacts")
     assert not evidence_path.is_relative_to(repo_root)
@@ -429,16 +430,14 @@ def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external
     assert json.loads(evidence)["submit_capability"] is False
 
 
-def test_reconciliation_remains_typed_and_fail_closed_on_currency_mismatch() -> None:
+def test_reconciliation_records_account_facts_on_currency_mismatch() -> None:
     snapshot = _snapshot(cash_currency="USD", orderable_currency="KRW")
 
     reconciliation = reconcile_kis_paper_readonly(snapshot, reconciled_at=NOW)
 
-    assert reconciliation.safe_to_submit is False
-    assert set(reconciliation.reasons) == {
-        "read_only_boundary",
-        "cash_orderable_currency_mismatch",
-    }
+    assert reconciliation.account_snapshot_complete is True
+    assert reconciliation.scope == "read_only"
+    assert reconciliation.reasons == ("cash_orderable_currency_mismatch",)
 
 
 def test_rejected_response_writes_only_a_non_secret_fail_closed_outcome(tmp_path) -> None:

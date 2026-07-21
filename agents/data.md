@@ -26,9 +26,11 @@ Own the current KIS-native daily cache and its future reusable loaders.
 
 ## Ready Queue
 
-1. Keep IWM daily backfill stopped at its current lower boundary: a KIS page
+1. Keep the current IWM daily scope at its verified lower boundary: a KIS page
    contains an internally inconsistent OHLC row, so the strict all-row parser
-   rejects it. Do not retry it endlessly or silently accept the remaining rows.
+   rejects it. Do not retry the identical bad page endlessly or silently accept
+   its remaining rows; a new anchor, endpoint, or evidence-backed scope may
+   proceed independently.
 2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
    snapshot/index/raw hashes, accept only exact overlap deduplication, reject
    conflicts, verify cursor seams, and return the completed common-session

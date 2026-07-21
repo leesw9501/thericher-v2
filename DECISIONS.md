@@ -3579,3 +3579,30 @@ Reason: the existing Norgate snapshot already had a verified source contract,
 but only private parser access. A small immutable series boundary makes its
 engineering data reusable without duplicating feature pipelines or laundering a
 survivorship-selected trial panel into strategy evidence.
+
+## 2026-07-22 - Remove paper-workflow approval remnants
+
+Decision: retire the unused `paper_capital_proposal` module, its Compose
+profile, and its `awaiting_operator_approval` / operator-ceiling workflow. The
+operator has standing-authorized private KIS Paper sizing and submission, so a
+separate capital proposal was process scaffolding rather than an execution
+invariant. Positions and open orders remain inputs to deterministic sizing and
+risk at the executor, not manual-approval blockers.
+
+The KIS read-only reconciliation now reports only `read_only` scope and
+`account_snapshot_complete`; it no longer emits a permanent
+`safe_to_submit=false` proxy. A fresh executor still requires the fixed virtual
+host, persisted idempotent intent, and reconciliation of an unknown broker
+outcome immediately at the request boundary. The read-only console bridge also
+persists a minimal failure diagnostic (allowlisted endpoint, transaction ID, and
+HTTP status) outside Git so `balance_rejected` can be recovered without raw
+broker bodies, account identifiers, or secrets.
+
+Claude's short drift-check was `supported-with-limits`: removing workflow
+latches is appropriate under standing paper authority, but the virtual-only
+route must remain fail-closed and independently checked at every submit call.
+
+Reason: the old capital proposal and read-only wording made implementation
+capabilities look like operator approvals. Removing them shortens the paper
+iteration loop while retaining the few technical controls that prevent an
+unknown or live-routed broker side effect.

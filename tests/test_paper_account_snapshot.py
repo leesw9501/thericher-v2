@@ -201,9 +201,17 @@ def test_bridge_overwrites_a_prior_complete_view_when_the_read_is_rejected(tmp_p
 
     assert outcome.status == "unavailable"
     assert outcome.reason_code == "open_orders_rejected"
+    assert outcome.diagnostic == {
+        "endpoint": "open_orders",
+        "tr_id": "VTTS3018R",
+        "http_status": "403",
+    }
     assert read_paper_account_snapshot(runtime_snapshot_path, now=NOW).status == "unavailable"
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    payload = json.loads(evidence)
+    assert payload["diagnostic"] == outcome.diagnostic
     assert "raw-response-text-must-not-persist" not in evidence
+    assert "raw-server-code-must-not-persist" not in evidence
     assert "12345678" not in evidence
     assert "SPY" not in evidence
 

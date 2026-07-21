@@ -6,7 +6,7 @@ import argparse
 import json
 import os
 from collections.abc import Callable, Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
@@ -14,6 +14,7 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_readonly import (
     DEFAULT_KIS_PAPER_ARTIFACT_ROOT,
+    KIS_PAPER_READ_ONLY_ENDPOINTS,
     KisHttpTransport,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
@@ -43,6 +44,7 @@ class KisPaperConsoleBridgeOutcome:
     observed_at: datetime
     snapshot_path: Path
     evidence_path: Path
+    diagnostic: Mapping[str, str] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
@@ -50,6 +52,11 @@ class KisPaperConsoleBridgeOutcome:
             raise ValueError("complete bridge outcome cannot have a reason")
         if self.status == "unavailable" and self.reason_code is None:
             raise ValueError("unavailable bridge outcome requires a reason")
+        if self.status == "complete" and self.diagnostic:
+            raise ValueError("complete bridge outcome cannot have a diagnostic")
+        if self.diagnostic:
+            _validate_failure_diagnostic(self.diagnostic)
+        object.__setattr__(self, "diagnostic", dict(self.diagnostic))
 
 
 def run_kis_paper_console_bridge(
@@ -71,6 +78,7 @@ def run_kis_paper_console_bridge(
         ),
         runtime_snapshot_path,
     )
+    diagnostic: Mapping[str, str] = {}
     try:
         config = load_kis_paper_config_from_environment(environment)
         source_snapshot = KisPaperReadOnlyClient(
@@ -82,6 +90,7 @@ def run_kis_paper_console_bridge(
             observed_at=require_utc(clock(), "clock"),
         )
     except KisPaperReadOnlyError as error:
+        diagnostic = error.diagnostic
         final_snapshot = PaperAccountSnapshot.unavailable(
             observed_at=require_utc(clock(), "clock"),
             reason_code=error.code,
@@ -98,6 +107,7 @@ def run_kis_paper_console_bridge(
         snapshot_digest=snapshot_digest,
         artifact_root=artifact_root,
         repository_root=repository_root,
+        diagnostic=diagnostic,
     )
     return KisPaperConsoleBridgeOutcome(
         status=final_snapshot.status,
@@ -105,6 +115,7 @@ def run_kis_paper_console_bridge(
         observed_at=final_snapshot.observed_at,
         snapshot_path=runtime_snapshot_path,
         evidence_path=evidence_path,
+        diagnostic=diagnostic,
     )
 
 
@@ -114,6 +125,7 @@ def write_kis_paper_console_bridge_evidence(
     snapshot_digest: str,
     artifact_root: Path,
     repository_root: Path,
+    diagnostic: Mapping[str, str] | None = None,
 ) -> Path:
     """Persist an immutable fact-minimized result outside the repository."""
 
@@ -141,6 +153,11 @@ def write_kis_paper_console_bridge_evidence(
     }
     if snapshot.status == "unavailable":
         payload["reason_code"] = snapshot.reason_code
+        if diagnostic:
+            _validate_failure_diagnostic(diagnostic)
+            payload["diagnostic"] = dict(diagnostic)
+    elif diagnostic:
+        raise ValueError("complete bridge evidence cannot have a diagnostic")
     else:
         assert snapshot.orderable_foreign_funds is not None
         assert snapshot.reference_orderability is not None
@@ -254,6 +271,23 @@ def _is_permitted_artifact_root(artifact_root: Path, repository_root: Path) -> b
     return artifact_root == repository_root / "model_artifacts" and artifact_root.is_mount()
 
 
+def _validate_failure_diagnostic(diagnostic: Mapping[str, str]) -> None:
+    """Allow request identity only; broker message bodies remain private."""
+
+    required = {"endpoint", "tr_id", "http_status"}
+    if set(diagnostic) != required or any(
+        not isinstance(key, str) or not isinstance(value, str)
+        for key, value in diagnostic.items()
+    ):
+        raise ValueError("bridge diagnostic is invalid")
+    endpoint_by_name = {endpoint.name: endpoint.tr_id for endpoint in KIS_PAPER_READ_ONLY_ENDPOINTS}
+    if endpoint_by_name.get(diagnostic["endpoint"]) != diagnostic["tr_id"]:
+        raise ValueError("bridge diagnostic is invalid")
+    status = diagnostic["http_status"]
+    if not status.isdecimal() or not 100 <= int(status) <= 599:
+        raise ValueError("bridge diagnostic is invalid")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Publish one KIS paper console snapshot")
     mode = parser.add_mutually_exclusive_group()
@@ -305,7 +339,8 @@ def main(argv: list[str] | None = None) -> int:
                 "reason_code": outcome.reason_code,
                 "observed_at": outcome.observed_at.isoformat(),
                 "evidence_path": str(outcome.evidence_path),
-                "safe_to_submit": False,
+                "scope": "read_only",
+                "account_snapshot_complete": outcome.status == "complete",
             },
             sort_keys=True,
         )

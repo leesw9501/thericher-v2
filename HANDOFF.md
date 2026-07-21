@@ -167,13 +167,13 @@ Its goal-owned `kis-paper-canary` Docker profile writes private recovery state
 to a dedicated volume and only sanitized account/canary state to the local web
 runtime. The dashboard cannot transmit orders or receive KIS credentials.
 
-The first live virtual-token attempt on 2026-07-21 returned `auth_rejected`
-from the KIS token boundary. A later fresh default canary correctly remained at
-`intent_recorded` when reconciliation was unavailable, so no account snapshot
-or order was submitted. Its sanitized evidence, runtime projection, and local
-dashboard now preserve an allowlisted reconciliation reason such as
-`auth_rejected`, without retaining broker bodies or secrets. This is an
-external credential/application state to reconcile, not a paper-capital,
+The first virtual-token attempt on 2026-07-21 returned `auth_rejected` from
+the KIS token boundary. The latest bounded read-only console bridge reached the
+account route and returned `balance_rejected`; it sent no order. The existing
+canary remains `intent_recorded` with no broker order reference or submit
+evidence. Its sanitized evidence may retain the reason and fixed endpoint,
+transaction ID, and HTTP status, but never broker bodies, account identifiers,
+or secrets. This is an external route recovery fact, not a paper-capital,
 research, or one-shot policy gate. The safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
 recovery state into Git.
@@ -208,11 +208,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: expose the existing
-static Norgate panel through a public, read-only, hash-attested `Bar` loader
-without widening its source scope. KIS virtual-token recovery remains ready
-independent work: after the virtual app key/secret is refreshed, reconcile the
-existing canary state before any replacement submission. At each boundary,
-review the data contract, execution route readiness, research queues, GPU
-eligibility, disk capacity, and role ownership; make reversible no-cost changes
-autonomously and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: run one fresh
+sanitized KIS virtual-paper read-only bridge with its endpoint/transaction/HTTP
+diagnostic projection, then classify the account route as `complete` or
+`reconcile`. This is not a prerequisite approval for paper work; it is the next
+technical recovery fact for the existing canary. At each boundary, review the
+data contract, execution route readiness, research queues, GPU eligibility,
+disk capacity, and role ownership; make reversible no-cost changes autonomously
+and escalate only a real remaining operator boundary.

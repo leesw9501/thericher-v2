@@ -20,13 +20,14 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   after accepted submit. Private recovery state stays in a dedicated Docker
   volume; external evidence and dashboard projection are sanitized.
 - The first real virtual-token attempt on 2026-07-21 returned `auth_rejected`
-  before account data or submit. A fresh default canary then remained at
-  `intent_recorded` with unavailable reconciliation and still made no submit.
-  Four paper variables were present in the container with expected non-secret
-  lengths; no live variable was read. Sanitized evidence/runtime/dashboard now
-  retain only a closed-vocabulary reconciliation reason such as
-  `auth_rejected`. Treat this as external KIS virtual application recovery, not
-  a paper authority gate.
+  before account data or submit. The latest bounded console-bridge invocation
+  reached the account route and returned `balance_rejected`; it created no order
+  and the existing canary remains `intent_recorded` with no broker order
+  reference. Four paper variables were present in the container with expected
+  non-secret lengths; no live variable was read. Sanitized evidence now retains
+  only the reason plus allowlisted endpoint/transaction/HTTP metadata for the
+  next bridge attempt. Treat this as KIS virtual integration recovery, not a
+  paper authority gate.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -36,8 +37,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Once the KIS virtual application token succeeds, reconcile the persisted
-   canary run and run the first acknowledged/cancelled bounded paper canary.
+2. Obtain one fresh complete account/open-order reconciliation, then reconcile
+   the persisted canary run and run the first acknowledged/cancelled bounded
+   paper canary. A failed bridge diagnoses its own KIS route while Data and
+   Research continue; it does not reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
@@ -46,11 +49,14 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Authority And Boundaries
 
 Paper submission is authorized; no capital envelope, profitability report,
-dashboard state, trade count, or per-call approval is required. Do not read
-`KIS_LIVE_*`, create a live host/configuration path, or emit secrets. Model
-output remains untrusted input to deterministic execution logic. Historical
-one-shot or retention markers cannot disable later correctly scoped paper work;
-they only describe the recovery state of their own run.
+dashboard state, trade count, per-call approval, or `safe_to_submit` proxy is
+required. The read-only bridge reports only scope and account-snapshot
+completeness; the executor enforces technical route/intent/reconciliation facts
+at the actual request. Do not read `KIS_LIVE_*`, create a live
+host/configuration path, or emit secrets. Model output remains untrusted input
+to deterministic execution logic. Historical one-shot or retention markers
+cannot disable later correctly scoped paper work; they only describe the
+recovery state of their own run.
 
 ## Durable Knowledge
 

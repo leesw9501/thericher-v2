@@ -503,7 +503,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "thericher-v2-web-emergency:/app/emergency" in web_section
 
     kis_section = compose.split("\n  kis-readonly:\n", maxsplit=1)[1].split(
-        "\n  paper-capital-proposal:\n", maxsplit=1
+        "\n  kis-paper-canary:\n", maxsplit=1
     )[0]
     assert "profiles: [\"kis-readonly\"]" in kis_section
     assert "KIS_PAPER_APP_KEY" in kis_section
@@ -511,7 +511,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert ".env" not in kis_section
 
     canary_section = compose.split("\n  kis-paper-canary:\n", maxsplit=1)[1].split(
-        "\n  paper-capital-proposal:\n", maxsplit=1
+        "\nvolumes:\n", maxsplit=1
     )[0]
     assert 'profiles: ["kis-paper-canary"]' in canary_section
     assert "--execute" in canary_section
@@ -520,17 +520,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_LIVE" not in canary_section
     assert "thericher-v2-paper-canary-private:/app/private" in canary_section
 
-    proposal_section = compose.split("\n  paper-capital-proposal:\n", maxsplit=1)[1].split(
-        "\nvolumes:\n", maxsplit=1
-    )[0]
-    assert 'profiles: ["paper-capital-proposal"]' in proposal_section
-    assert "network_mode: none" in proposal_section
-    assert "read_only: true" in proposal_section
-    assert "thericher-v2-runtime:/app/runtime:ro" in proposal_section
-    assert "KIS_" not in proposal_section
-    assert "TIINGO" not in proposal_section
-    assert ".env" not in proposal_section
-    assert "ports:" not in proposal_section
+    assert "\n  paper-capital-proposal:\n" not in compose
 
     dockerignore = (repo_root / ".dockerignore").read_text(encoding="utf-8")
     assert ".env" in dockerignore
