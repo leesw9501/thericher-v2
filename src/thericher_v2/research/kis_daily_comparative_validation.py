@@ -195,6 +195,38 @@ class KisDailyComparativeContract:
         ):
             raise ValueError("comparative contract does not match the KIS daily catalog")
 
+    def verify_catalog_prefix(
+        self,
+        catalog: KisPaperPrivateDailyCatalog,
+        *,
+        stop_index: int,
+    ) -> None:
+        """Verify a hash-attested prefix without materializing the holdout bars.
+
+        The immutable index hash remains the raw-cache integrity root. Segment
+        session hashes bind the accessible prefix to the frozen full-panel
+        geometry while intentionally leaving the later holdout bars absent.
+        """
+
+        if stop_index != self.embargo.stop_index:
+            raise ValueError("comparative catalog prefix stop_index is invalid")
+        if (
+            catalog.dataset_id != self.dataset_id
+            or catalog.index_hash != self.index_hash
+            or len(catalog.common_sessions) != stop_index
+        ):
+            raise ValueError("comparative contract does not match the KIS daily catalog prefix")
+        for segment in (self.development, self.purge, self.validation, self.embargo):
+            sessions = catalog.common_sessions[segment.start_index : segment.stop_index]
+            if (
+                len(sessions) != segment.session_count
+                or not sessions
+                or sessions[0] != segment.first_session
+                or sessions[-1] != segment.last_session
+                or _session_hash(sessions) != segment.session_hash
+            ):
+                raise ValueError("comparative contract KIS daily catalog prefix is invalid")
+
     def to_payload(self) -> dict[str, object]:
         return {
             "kind": KIS_DAILY_COMPARATIVE_VALIDATION_ID,

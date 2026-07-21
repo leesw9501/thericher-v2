@@ -10,6 +10,7 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.contracts import Timeframe
+from thericher_v2.data import kis_paper_daily as kis_daily_catalog
 from thericher_v2.data.kis_paper_daily import (
     KIS_PAPER_PRIVATE_DAILY_CATALOG_ID,
     load_kis_paper_private_daily_catalog,
@@ -69,6 +70,36 @@ def test_loads_hash_attested_common_panel_offline_without_credentials_or_network
     )
 
 
+def test_session_ceiling_attests_full_rows_without_materializing_later_bars(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cache_root, repo_root, _index_path = _build_cache(tmp_path)
+    cutoff = datetime(2026, 1, 2, tzinfo=UTC).date()
+    constructed_sessions = []
+    original_bar = kis_daily_catalog.Bar
+
+    def bounded_bar(**kwargs: object):
+        start_ts = kwargs["start_ts"]
+        assert isinstance(start_ts, datetime)
+        assert start_ts.date() <= cutoff
+        constructed_sessions.append(start_ts.date())
+        return original_bar(**kwargs)
+
+    monkeypatch.setattr(kis_daily_catalog, "Bar", bounded_bar)
+    catalog = load_kis_paper_private_daily_catalog(
+        cache_root,
+        repo_root=repo_root,
+        end_session=cutoff,
+    )
+
+    assert catalog.common_sessions == (
+        datetime(2026, 1, 2, tzinfo=UTC).date(),
+    )
+    assert constructed_sessions
+    assert all(session <= cutoff for session in constructed_sessions)
+
+
 def test_dataset_identity_is_stable_when_index_retry_metadata_changes(tmp_path: Path) -> None:
     cache_root, repo_root, index_path = _build_cache(tmp_path)
     first = load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)
@@ -108,6 +139,16 @@ def test_rejects_raw_hash_drift_before_exposing_any_bars(tmp_path: Path) -> None
     (manifest_path.parent / "raw" / "ohlcv_daily.csv.gz").write_bytes(b"tampered")
 
     with pytest.raises(ValueError, match="raw hash mismatch"):
+        load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)
+
+
+def test_rejects_committed_row_count_drift(tmp_path: Path) -> None:
+    cache_root, repo_root, index_path = _build_cache(tmp_path)
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    index["targets"][0]["chunks"][0]["row_count"] += 1
+    index_path.write_text(json.dumps(index, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="committed chunk drift"):
         load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)
 
 

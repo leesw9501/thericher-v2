@@ -78,13 +78,16 @@ def load_kis_paper_private_daily_catalog(
     target_keys: Sequence[str] = KIS_PAPER_PRIVATE_DAILY_TARGET_KEYS,
     market: str = "US",
     expected_index_hash: str | None = None,
+    end_session: date | None = None,
     repo_root: Path | str | None = None,
 ) -> KisPaperPrivateDailyCatalog:
     """Load verified KIS Paper daily bars without credentials, broker calls, or network.
 
     Only completed chunks that actually contain a retained raw snapshot become
     research input. A false retention field is a fact about an empty/rejected
-    collection result, not a permission or a reason to mutate the cache.
+    collection result, not a permission or a reason to mutate the cache. When
+    ``end_session`` is supplied, every raw file remains fully hash-attested but
+    later rows do not become ``Bar`` objects in the returned catalog.
     """
 
     root = _verified_cache_root(cache_root=cache_root, repo_root=repo_root)
@@ -94,6 +97,8 @@ def load_kis_paper_private_daily_catalog(
     requested_targets = _requested_target_keys(target_keys)
     if expected_index_hash is not None:
         _require_sha256(expected_index_hash, "expected_index_hash")
+    if end_session is not None and type(end_session) is not date:
+        raise ValueError("KIS paper daily catalog end_session must be a date")
 
     index_path = _safe_external_path(root / KIS_PAPER_PRIVATE_DAILY_INDEX_RELATIVE_PATH, root)
     try:
@@ -113,6 +118,7 @@ def load_kis_paper_private_daily_catalog(
             target_key=target_key,
             root=root,
             market=resolved_market,
+            end_session=end_session,
         )
 
     common_sessions = tuple(
@@ -279,6 +285,7 @@ def _load_target_rows(
     target_key: str,
     root: Path,
     market: str,
+    end_session: date | None,
 ) -> dict[date, _VerifiedDailyRow]:
     chunks = target.get("chunks")
     if not isinstance(chunks, list):
@@ -307,6 +314,7 @@ def _load_target_rows(
             exchange=exchange,
             root=root,
             market=market,
+            end_session=end_session,
         )
         for session, row in chunk_rows.items():
             prior = merged.get(session)
@@ -343,6 +351,7 @@ def _load_chunk_rows(
     exchange: str,
     root: Path,
     market: str,
+    end_session: date | None,
 ) -> dict[date, _VerifiedDailyRow]:
     manifest_path_value = chunk.get("manifest_path")
     manifest_hash = chunk.get("manifest_hash")
@@ -379,20 +388,18 @@ def _load_chunk_rows(
         raise ValueError("KIS paper daily catalog raw file is unreadable") from error
     if len(raw_bytes) != raw_document["size_bytes"] or _sha256(raw_bytes) != raw_hash:
         raise ValueError("KIS paper daily catalog raw hash mismatch")
-    rows = _parse_raw_rows(
+    rows, actual_fingerprints = _parse_raw_rows(
         raw_bytes=raw_bytes,
         symbol=symbol,
         exchange=exchange,
         market=market,
+        end_session=end_session,
     )
     expected_fingerprints = chunk.get("row_fingerprints")
     if not isinstance(expected_fingerprints, dict):
         raise ValueError("KIS paper daily catalog committed chunk is invalid")
-    actual_fingerprints = {
-        session.isoformat(): _row_fingerprint(row.record) for session, row in rows.items()
-    }
     if (
-        len(rows) != chunk["row_count"]
+        len(actual_fingerprints) != chunk["row_count"]
         or actual_fingerprints != expected_fingerprints
     ):
         raise ValueError("KIS paper daily catalog committed chunk drift")
@@ -474,13 +481,50 @@ def _parse_raw_rows(
     symbol: str,
     exchange: str,
     market: str,
-) -> dict[date, _VerifiedDailyRow]:
+    end_session: date | None,
+) -> tuple[dict[date, _VerifiedDailyRow], dict[str, str]]:
     try:
         with gzip.GzipFile(fileobj=io.BytesIO(raw_bytes), mode="rb") as handle:
-            reader = csv.DictReader(io.StringIO(handle.read().decode("utf-8"), newline=""))
-            if tuple(reader.fieldnames or ()) != _RAW_COLUMNS:
-                raise ValueError("KIS paper daily catalog raw schema is invalid")
-            documents = list(reader)
+            with io.TextIOWrapper(handle, encoding="utf-8", newline="") as text:
+                reader = csv.DictReader(text)
+                if tuple(reader.fieldnames or ()) != _RAW_COLUMNS:
+                    raise ValueError("KIS paper daily catalog raw schema is invalid")
+                rows: dict[date, _VerifiedDailyRow] = {}
+                fingerprints: dict[str, str] = {}
+                prior_session: date | None = None
+                for document in reader:
+                    if set(document) != set(_RAW_COLUMNS) or any(
+                        document.get(field) is None for field in _RAW_COLUMNS
+                    ):
+                        raise ValueError("KIS paper daily catalog raw contents are invalid")
+                    if document["symbol"] != symbol or document["exchange"] != exchange:
+                        raise ValueError("KIS paper daily catalog raw contents are invalid")
+                    session = _session_date(document["session_date"])
+                    if prior_session is not None and session <= prior_session:
+                        raise ValueError("KIS paper daily catalog raw contents are invalid")
+                    prior_session = session
+                    record = tuple(document[field] for field in _RAW_COLUMNS)
+                    fingerprints[session.isoformat()] = _row_fingerprint(record)
+                    if end_session is not None and session > end_session:
+                        continue
+                    try:
+                        bar = Bar(
+                            symbol=symbol,
+                            market=market,
+                            timeframe=Timeframe.D1,
+                            start_ts=datetime(session.year, session.month, session.day, tzinfo=UTC),
+                            open=Decimal(document["open"]),
+                            high=Decimal(document["high"]),
+                            low=Decimal(document["low"]),
+                            close=Decimal(document["close"]),
+                            volume=Decimal(document["volume"]),
+                            complete=True,
+                        )
+                    except (InvalidOperation, ValueError) as error:
+                        raise ValueError(
+                            "KIS paper daily catalog raw contents are invalid"
+                        ) from error
+                    rows[session] = _VerifiedDailyRow(bar=bar, record=record)
     except (OSError, UnicodeDecodeError, csv.Error, ValueError) as error:
         if (
             isinstance(error, ValueError)
@@ -489,39 +533,9 @@ def _parse_raw_rows(
             raise
         raise ValueError("KIS paper daily catalog raw contents are invalid") from error
 
-    rows: dict[date, _VerifiedDailyRow] = {}
-    dates: list[date] = []
-    for document in documents:
-        if set(document) != set(_RAW_COLUMNS) or any(
-            document.get(field) is None for field in _RAW_COLUMNS
-        ):
-            raise ValueError("KIS paper daily catalog raw contents are invalid")
-        if document["symbol"] != symbol or document["exchange"] != exchange:
-            raise ValueError("KIS paper daily catalog raw contents are invalid")
-        session = _session_date(document["session_date"])
-        if session in rows:
-            raise ValueError("KIS paper daily catalog raw contents are invalid")
-        record = tuple(document[field] for field in _RAW_COLUMNS)
-        try:
-            bar = Bar(
-                symbol=symbol,
-                market=market,
-                timeframe=Timeframe.D1,
-                start_ts=datetime(session.year, session.month, session.day, tzinfo=UTC),
-                open=Decimal(document["open"]),
-                high=Decimal(document["high"]),
-                low=Decimal(document["low"]),
-                close=Decimal(document["close"]),
-                volume=Decimal(document["volume"]),
-                complete=True,
-            )
-        except (InvalidOperation, ValueError) as error:
-            raise ValueError("KIS paper daily catalog raw contents are invalid") from error
-        rows[session] = _VerifiedDailyRow(bar=bar, record=record)
-        dates.append(session)
-    if not rows or dates != sorted(dates):
+    if not fingerprints or (end_session is None and not rows):
         raise ValueError("KIS paper daily catalog raw contents are invalid")
-    return rows
+    return rows, fingerprints
 
 
 def _dataset_hash(
