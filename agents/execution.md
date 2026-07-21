@@ -20,10 +20,18 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   after accepted submit. Private recovery state stays in a dedicated Docker
   volume; external evidence and dashboard projection are sanitized.
 - The first real virtual-token attempt on 2026-07-21 returned `auth_rejected`
-  before account data or submit. Four paper variables were present in the
-  container with expected non-secret lengths; no live variable was read. Treat
-  this as external KIS virtual application recovery, not a paper authority
-  gate.
+  before account data or submit. A fresh default canary then remained at
+  `intent_recorded` with unavailable reconciliation and still made no submit.
+  Four paper variables were present in the container with expected non-secret
+  lengths; no live variable was read. Sanitized evidence/runtime/dashboard now
+  retain only a closed-vocabulary reconciliation reason such as
+  `auth_rejected`. Treat this as external KIS virtual application recovery, not
+  a paper authority gate.
+- Canary cancellation policy is durable with its private state. A state-root
+  lock serializes different run IDs; a persisted acknowledged matching order
+  resumes cancellation on restart. Non-200 or non-success submit results and
+  any matching completion record after cancellation remain `outcome_unknown`,
+  never a replacement-submit or falsely clean path.
 
 ## Ready Queue
 

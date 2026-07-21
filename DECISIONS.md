@@ -3463,3 +3463,35 @@ Reason: this advances paper-execution learning with the smallest useful broker
 surface while keeping recovery truthful. The external token rejection is a
 credential/application recovery task, not a capital, profitability, or
 one-shot approval barrier.
+
+## 2026-07-22 - Preserve a safe KIS canary reconciliation cause
+
+Decision: retain a closed-vocabulary reconciliation failure code in the
+credential-free canary runtime projection, external evidence, and local
+dashboard. The code is limited to implementation-owned values such as
+`auth_rejected` and `transport_failure`; raw KIS response content, tokens,
+account identifiers, and free-form exception text remain excluded. Older
+runtime projections remain readable with no failure detail.
+
+Reason: a generic unavailable state forced recovery to rely on a separate
+console-bridge artifact. Preserving the known safe cause makes the next
+operator recovery step explicit without creating a new approval gate, retry
+loop, or secret-bearing observability path.
+
+## 2026-07-22 - Keep ambiguous virtual-paper canary outcomes unresolved
+
+Decision: persist the canary's cancellation choice with its private intent and
+serialize all run IDs in one canary-state root during reconciliation and order
+handling. A persisted submitted order resumes cancellation only when the broker
+snapshot still matches its durable order identity. Any non-200 or non-success
+submit response, cancellation ambiguity, or matching completion record after a
+cancel remains `outcome_unknown`; it cannot become a clean rejection or trigger
+a replacement submit. This is deliberately conservative about partial fills
+until a separate order-specific fill-attribution contract exists.
+
+Reason: independent execution review identified restart, response-ambiguity,
+and concurrent-run paths that could otherwise leave an accepted virtual order
+open or permit a false-clean outcome. The fixes are local to the narrow canary
+and add no scheduler, report family, paper-capital gate, or live route. Claude
+CLI was asked for a short falsification check but did not return before its
+bounded timeout, so no conclusion relies on that absent verdict.

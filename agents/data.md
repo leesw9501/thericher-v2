@@ -11,6 +11,9 @@ Own the current KIS-native daily cache and its future reusable loaders.
 - Last known clean common coverage: 694 completed sessions. QQQ has five
   committed chunks, SPY six, and IWM three plus one validated partial chunk.
   Inspect the index before acting.
+- The latest offline re-attestation matched all 15 eligible manifest digests
+  and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
+  is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
 - Stored data is `MODP=0_unadjusted`. Treat corporate actions and adjustment
   semantics as a visible limitation, not a reason to stop collection.
 
@@ -22,7 +25,7 @@ Own the current KIS-native daily cache and its future reusable loaders.
 2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
    snapshot/index/raw hashes, accept only exact overlap deduplication, reject
    conflicts, verify cursor seams, and return the completed common-session
-   intersection.
+   intersection for the next CPU trade-quality-gate candidate.
 3. Treat 694 sessions as the active daily research input. The former 756 target
    is source-limited and was never KIS Paper permission.
 4. Seek a different official KIS historical endpoint only when it can avoid the

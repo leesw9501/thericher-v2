@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+import threading
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -15,6 +17,8 @@ from thericher_v2.execution.kis_paper_canary import (
     KIS_PAPER_US_CCNCL_TR_ID,
     KisPaperCanaryClient,
     KisPaperCanaryError,
+    KisPaperCanaryIntent,
+    KisPaperCanaryState,
     run_kis_paper_canary,
 )
 from thericher_v2.execution.kis_readonly import (
@@ -37,26 +41,47 @@ NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 @dataclass
 class FakeKisPaperCanaryTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
+    fail_auth: bool = False
     fail_submit: bool = False
+    submit_status_code: int | None = None
+    submit_result_code: str | None = None
     retain_open_order_after_cancel: bool = False
+    matching_ccnl_after_cancel: bool = False
     cancellation_seen: bool = False
+    order_open: bool = False
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
         tr_id = request.headers.get("tr_id", "")
         if request.method == "POST" and request.url.endswith("/oauth2/tokenP"):
+            if self.fail_auth:
+                return KisHttpResponse.from_payload({"error": "invalid"}, status_code=403)
             return KisHttpResponse.from_payload({"access_token": "test-access-token"})
         if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
             if self.fail_submit:
                 raise KisPaperCanaryError("transport_failure")
+            if self.submit_status_code is not None:
+                return KisHttpResponse.from_payload(
+                    {"error": "temporary"},
+                    status_code=self.submit_status_code,
+                )
+            if self.submit_result_code is not None:
+                return KisHttpResponse.from_payload({"rt_cd": self.submit_result_code})
+            self.order_open = True
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
             self.cancellation_seen = True
+            if not self.retain_open_order_after_cancel:
+                self.order_open = False
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
         if tr_id == KIS_PAPER_US_CCNCL_TR_ID:
+            if self.matching_ccnl_after_cancel and self.cancellation_seen:
+                return KisHttpResponse.from_payload(
+                    {"rt_cd": "0", "output": [{"odno": "ORD-123456789"}]}
+                )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
-            if self.retain_open_order_after_cancel and self.cancellation_seen:
+            if self.order_open:
                 if request.query["OVRS_EXCG_CD"] == "NASD":
                     return KisHttpResponse.from_payload(
                         {"rt_cd": "0", "output": [_matching_open_order_payload()]}
@@ -85,6 +110,22 @@ class RecordingTransport:
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
         raise AssertionError("invalid request reached injected transport")
+
+
+class BlockingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
+    def __init__(self) -> None:
+        super().__init__()
+        self.buy_started = threading.Event()
+        self.release_buy = threading.Event()
+
+    def request(self, request: KisHttpRequest) -> KisHttpResponse:
+        if (
+            request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+            and not self.buy_started.is_set()
+        ):
+            self.buy_started.set()
+            assert self.release_buy.wait(timeout=5)
+        return super().request(request)
 
 
 def _paper_post_headers() -> dict[str, str]:
@@ -390,6 +431,185 @@ def test_unknown_submission_reconciles_without_duplicate_submit(tmp_path: Path) 
     assert _submission_count(transport) == 1
 
 
+def test_non_success_submit_response_is_unknown_and_never_resubmitted(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(submit_status_code=503)
+    state_path = tmp_path / "private" / "http-unknown-1.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="http-unknown-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    assert first.reason_code == "submit_transport_unknown"
+    assert _submission_count(transport) == 1
+
+    transport.submit_status_code = None
+    second = run_kis_paper_canary(
+        decision=_decision(decision_as_of=NOW + timedelta(minutes=1)),
+        run_id="http-unknown-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    assert second.phase == "outcome_unknown"
+    assert _submission_count(transport) == 1
+
+
+def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(submit_result_code="1")
+    state_path = tmp_path / "private" / "result-unknown-1.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="result-unknown-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    assert first.reason_code == "submit_transport_unknown"
+    assert _submission_count(transport) == 1
+
+    transport.submit_result_code = None
+    second = run_kis_paper_canary(
+        decision=_decision(decision_as_of=NOW + timedelta(minutes=1)),
+        run_id="result-unknown-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    assert second.phase == "outcome_unknown"
+    assert _submission_count(transport) == 1
+
+
+def test_recovery_resumes_durable_cancel_after_acknowledged_submit(tmp_path: Path) -> None:
+    decision = _decision()
+    run_id = "recover-cancel-1"
+    intent = KisPaperCanaryIntent.from_decision(decision, run_id=run_id)
+    state = KisPaperCanaryState(
+        intent=intent,
+        phase="submitted",
+        updated_at=NOW,
+        reason_code="reconciliation_unresolved",
+        broker_order_id="ORD-123456789",
+        cancel_after_submit=True,
+    )
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    state_path.parent.mkdir(parents=True)
+    state_path.write_text(json.dumps(state.to_dict()), encoding="utf-8")
+    transport = FakeKisPaperCanaryTransport(order_open=True)
+
+    outcome = run_kis_paper_canary(
+        decision=decision,
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "cancelled"
+    assert transport.cancellation_seen is True
+    assert _submission_count(transport) == 0
+
+
+def test_different_run_ids_cannot_submit_concurrently(tmp_path: Path) -> None:
+    transport = BlockingKisPaperCanaryTransport()
+    paths = _paths(tmp_path)
+    failures: list[BaseException] = []
+
+    def run(run_id: str) -> None:
+        try:
+            run_kis_paper_canary(
+                decision=_decision(),
+                run_id=run_id,
+                environment=_paper_environment(),
+                state_path=tmp_path / "private" / f"{run_id}.json",
+                execute=True,
+                cancel_after_submit=False,
+                transport=transport,
+                now=NOW,
+                **paths,
+            )
+        except BaseException as error:  # pragma: no cover - surfaced below.
+            failures.append(error)
+
+    first = threading.Thread(target=run, args=("concurrent-1",))
+    second = threading.Thread(target=run, args=("concurrent-2",))
+    first.start()
+    assert transport.buy_started.wait(timeout=5)
+    second.start()
+
+    assert _token_request_count(transport) == 1
+    transport.release_buy.set()
+    first.join(timeout=5)
+    second.join(timeout=5)
+
+    assert not first.is_alive()
+    assert not second.is_alive()
+    assert failures == []
+    assert _submission_count(transport) == 1
+
+
+def test_reconciliation_preserves_only_safe_auth_failure_detail(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(fail_auth=True)
+    state_path = tmp_path / "private" / "auth-failure-1.json"
+    paths = _paths(tmp_path)
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="auth-failure-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert outcome.phase == "intent_recorded"
+    assert outcome.reason_code == "reconciliation_unavailable"
+    assert outcome.reconciliation.reason_code == "auth_rejected"
+    assert outcome.safe_payload()["reconciliation_reason_code"] == "auth_rejected"
+    assert _submission_count(transport) == 0
+
+    runtime = read_paper_canary_runtime(paths["runtime_projection_path"], now=NOW)
+    assert runtime.status == "available"
+    assert runtime.snapshot is not None
+    assert runtime.snapshot.reconciliation_reason_code == "auth_rejected"
+
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"reason_code":"auth_rejected"' in evidence
+    for forbidden in ("paper-app-secret", "12345678", "test-access-token"):
+        assert forbidden not in evidence
+
+
 def test_successful_cancel_is_not_reported_clean_while_matching_order_remains(
     tmp_path: Path,
 ) -> None:
@@ -409,6 +629,25 @@ def test_successful_cancel_is_not_reported_clean_while_matching_order_remains(
     assert outcome.phase == "outcome_unknown"
     assert outcome.reason_code == "reconciliation_unresolved"
     assert outcome.reconciliation.matching_open_order is True
+
+
+def test_cancel_with_matching_completion_is_not_reported_clean(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(matching_ccnl_after_cancel=True)
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="completion-after-cancel-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "completion-after-cancel-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "reconciliation_unresolved"
+    assert outcome.reconciliation.matching_ccnl is True
 
 
 def _config() -> KisPaperConfig:
@@ -457,6 +696,10 @@ def _submission_count(transport: FakeKisPaperCanaryTransport) -> int:
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
     )
+
+
+def _token_request_count(transport: FakeKisPaperCanaryTransport) -> int:
+    return sum(request.url.endswith("/oauth2/tokenP") for request in transport.requests)
 
 
 def _matching_open_order_payload() -> dict[str, str]:

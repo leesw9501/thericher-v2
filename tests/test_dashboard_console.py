@@ -315,6 +315,7 @@ def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_pa
             observed_at=observed_at,
             expires_at=observed_at + PAPER_CANARY_RUNTIME_TTL,
             order_reference="canary-0123456789abcdef",
+            reconciliation_reason_code="auth_rejected",
         ),
         canary_path,
     )
@@ -328,6 +329,7 @@ def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_pa
 
     assert snapshot.paper_canary_status == "cancelled"
     assert snapshot.paper_canary_reconciliation_status == "clean"
+    assert snapshot.paper_canary_reconciliation_reason_code == "auth_rejected"
     assert snapshot.paper_canary_account_status == "available"
     state = json.dumps(snapshot.to_dict())
     assert "paper-app-secret" not in state
@@ -338,6 +340,7 @@ def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_pa
     html = render_dashboard(snapshot, form_nonce="form-nonce")
     assert "Virtual-paper canary" in html
     assert "Canary reconciliation" in html
+    assert "Reconciliation detail: auth_rejected." in html
 
 
 def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:

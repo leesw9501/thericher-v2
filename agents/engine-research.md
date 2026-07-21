@@ -28,6 +28,18 @@ not GPU occupancy.
    one compact sequence model, and at most one small attention or public
    time-series benchmark. Start a depth or ensemble candidate only after a
    concrete distinct hypothesis and proper upstream out-of-fold evidence.
+5. Next ready breadth candidate: a CPU-only, L2-logistic trade-quality gate for
+   `daily-three-etf-relative-strength-v0`. It leaves selector, sizing, and exit
+   untouched, learns only `enter` versus `abstain` from four completed-session
+   features (selected 20-session return, margin over runner-up, selected
+   realized volatility, and positive-universe fraction), and uses the frozen
+   development-standardized `0.50` threshold. Its target is exact after-cost
+   next-open-to-following-open trade sign. Stop without retuning if development
+   has fewer than 100 eligible entries or 25 examples of either label, or if
+   validation has fewer than 20 accepted trades, non-positive 5-decision
+   moving-block-bootstrap lower bound versus selector, worse Brier/drawdown, or
+   failure under 2 bp/side slippage stress. The result is retrospective only;
+   it never earns promotion by itself.
 
 ## GPU Policy
 
@@ -52,6 +64,9 @@ and generated artifacts only under `D:\thericher-v2\model-artifacts` or
   process for other independent work.
 - The first KIS paper canary takes a deterministic explicit buy decision only;
   it is deliberately independent of learned-model or GPU readiness.
+- The L2 gate is intentionally CPU-only: this small daily panel cannot justify
+  GPU training. A later GPU sequence candidate needs its own frozen prospective
+  campaign rather than widening this candidate after seeing results.
 
 ## Recovery
 

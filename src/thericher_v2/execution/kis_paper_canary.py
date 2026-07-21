@@ -42,6 +42,7 @@ from .kis_readonly import (
 from .paper_account_snapshot import write_paper_account_snapshot
 from .paper_canary_runtime import (
     PAPER_CANARY_RUNTIME_TTL,
+    PAPER_CANARY_SAFE_RECONCILIATION_REASON_CODES,
     PaperCanaryRuntimeSnapshot,
     redact_paper_canary_order_reference,
     write_paper_canary_runtime,
@@ -295,6 +296,7 @@ class KisPaperCanaryState:
     updated_at: datetime
     reason_code: str
     broker_order_id: str | None = None
+    cancel_after_submit: bool = False
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -304,6 +306,8 @@ class KisPaperCanaryState:
             raise ValueError("canary state reason is invalid")
         if self.broker_order_id is not None and not _raw_order_id(self.broker_order_id):
             raise ValueError("canary broker order id is invalid")
+        if not isinstance(self.cancel_after_submit, bool):
+            raise ValueError("canary cancellation policy is invalid")
         object.__setattr__(self, "updated_at", require_utc(self.updated_at, "updated_at"))
 
     def to_dict(self) -> dict[str, object]:
@@ -316,6 +320,7 @@ class KisPaperCanaryState:
             "updated_at": self.updated_at.isoformat(),
             "reason_code": self.reason_code,
             "broker_order_id": self.broker_order_id,
+            "cancel_after_submit": self.cancel_after_submit,
         }
 
     @classmethod
@@ -330,7 +335,11 @@ class KisPaperCanaryState:
             "reason_code",
             "broker_order_id",
         }
-        if not isinstance(payload, Mapping) or set(payload) != expected:
+        extended_expected = expected | {"cancel_after_submit"}
+        if (
+            not isinstance(payload, Mapping)
+            or frozenset(payload) not in {frozenset(expected), frozenset(extended_expected)}
+        ):
             raise KisPaperCanaryError("state_invalid")
         if (
             payload["schema_version"] != SCHEMA_VERSION
@@ -364,6 +373,11 @@ class KisPaperCanaryState:
                     if payload["broker_order_id"] is None
                     else _required_text(payload["broker_order_id"])
                 ),
+                cancel_after_submit=(
+                    False
+                    if "cancel_after_submit" not in payload
+                    else _required_bool(payload["cancel_after_submit"])
+                ),
             )
         except (InvalidOperation, TypeError, ValueError) as error:
             raise KisPaperCanaryError("state_invalid") from error
@@ -377,6 +391,7 @@ class KisPaperCanaryReconciliation:
     matching_open_order: bool
     matching_ccnl: bool
     status: Literal["clean", "unresolved"]
+    reason_code: str | None = None
 
     @property
     def position_count(self) -> int:
@@ -405,6 +420,7 @@ class KisPaperCanaryOutcome:
             "reason_code": self.reason_code,
             "paper_only": True,
             "reconciliation_status": self.reconciliation.status,
+            "reconciliation_reason_code": self.reconciliation.reason_code,
             "account_status": self.reconciliation.account_status,
             "position_count": self.reconciliation.position_count,
             "open_order_count": self.reconciliation.open_order_count,
@@ -421,7 +437,13 @@ class KisPaperCanaryStateStore:
         with _exclusive_state_lock(self.path):
             return self._read_unlocked()
 
-    def record_intent(self, intent: KisPaperCanaryIntent, *, now: datetime) -> KisPaperCanaryState:
+    def record_intent(
+        self,
+        intent: KisPaperCanaryIntent,
+        *,
+        cancel_after_submit: bool,
+        now: datetime,
+    ) -> KisPaperCanaryState:
         with _exclusive_state_lock(self.path):
             current = self._read_unlocked()
             if current is not None:
@@ -433,6 +455,7 @@ class KisPaperCanaryStateStore:
                 phase="intent_recorded",
                 updated_at=now,
                 reason_code="preview",
+                cancel_after_submit=cancel_after_submit,
             )
             self._write_unlocked(state)
             return state
@@ -461,6 +484,7 @@ class KisPaperCanaryStateStore:
                     if broker_order_id is None
                     else broker_order_id
                 ),
+                cancel_after_submit=current.cancel_after_submit,
             )
             self._write_unlocked(state)
             return state
@@ -517,15 +541,8 @@ class KisPaperCanaryClient:
                 access_token=access_token,
             ).snapshot()
             raw_order_ids = self._inquire_ccnl(access_token, now=now)
-        except (KisPaperCanaryError, KisPaperReadOnlyError):
-            return KisPaperCanaryReconciliation(
-                snapshot=None,
-                account_status="unavailable",
-                ccnl_row_count=0,
-                matching_open_order=False,
-                matching_ccnl=False,
-                status="unresolved",
-            )
+        except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
+            return _unavailable_reconciliation(reason_code=_safe_reconciliation_reason_code(error))
         order_reference = (
             None
             if state.broker_order_id is None
@@ -543,7 +560,7 @@ class KisPaperCanaryClient:
         status: Literal["clean", "unresolved"] = "unresolved"
         if state.phase in {"intent_recorded", "rejected"}:
             status = "clean"
-        elif state.phase == "cancelled" and not matching_open:
+        elif state.phase == "cancelled" and not matching_open and not matching_ccnl:
             status = "clean"
         elif known:
             status = "clean"
@@ -575,10 +592,10 @@ class KisPaperCanaryClient:
             )
         )
         if response.status_code != 200:
-            return False, None
+            raise KisPaperCanaryError("submit_transport_unknown")
         payload = response.payload()
         if payload.get("rt_cd") != "0":
-            return False, None
+            raise KisPaperCanaryError("submit_transport_unknown")
         output = payload.get("output")
         if not isinstance(output, Mapping):
             raise KisPaperCanaryError("submit_response_incomplete")
@@ -719,7 +736,7 @@ class KisPaperCanaryClient:
         return self._transport.request(request)
 
 
-def run_kis_paper_canary(
+def _run_kis_paper_canary(
     *,
     decision: KisPaperCanaryBuyDecision,
     run_id: str,
@@ -746,7 +763,11 @@ def run_kis_paper_canary(
         intent = existing_state.intent
     else:
         intent = requested_intent
-    state = state_store.record_intent(intent, now=observed_at)
+    state = state_store.record_intent(
+        intent,
+        cancel_after_submit=cancel_after_submit,
+        now=observed_at,
+    )
     emergency = EmergencyStore(emergency_state_path).read()
     reconciliation = _unavailable_reconciliation()
 
@@ -754,24 +775,13 @@ def run_kis_paper_canary(
         # Preview persists the intent but never reads credentials or calls KIS.
         pass
     elif state.phase != "intent_recorded":
-        reconciliation = _reconcile_existing(
+        state, reconciliation = _recover_existing_canary(
             state=state,
+            state_store=state_store,
             environment=environment,
             transport=transport,
             observed_at=observed_at,
         )
-        if state.phase in {"submission_started", "cancel_started", "outcome_unknown"}:
-            state = state_store.transition(
-                intent,
-                expected=frozenset({state.phase}),
-                phase="outcome_unknown",
-                reason_code=(
-                    "reconciliation_clean"
-                    if reconciliation.status == "clean"
-                    else "reconciliation_unresolved"
-                ),
-                now=observed_at,
-            )
     elif observed_at >= intent.valid_until:
         state = state_store.transition(
             intent,
@@ -856,7 +866,7 @@ def run_kis_paper_canary(
                         broker_order_id=broker_order_id,
                     )
                     reconciliation = client.reconcile(state, now=observed_at)
-                    if cancel_after_submit:
+                    if state.cancel_after_submit:
                         state, reconciliation = _cancel_submitted_canary(
                             client=client,
                             state_store=state_store,
@@ -898,6 +908,44 @@ def run_kis_paper_canary(
         paper_account_snapshot_path=paper_account_snapshot_path,
         reconciliation=reconciliation,
     )
+
+
+def run_kis_paper_canary(
+    *,
+    decision: KisPaperCanaryBuyDecision,
+    run_id: str,
+    environment: Mapping[str, str],
+    state_path: Path,
+    runtime_projection_path: Path,
+    paper_account_snapshot_path: Path,
+    emergency_state_path: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    execute: bool,
+    cancel_after_submit: bool,
+    transport: KisHttpTransport | None = None,
+    now: datetime | None = None,
+) -> KisPaperCanaryOutcome:
+    """Serialize one canary root from reconciliation through terminal state."""
+
+    # Different run IDs share this lock, so they cannot both observe an empty
+    # book and submit before either durable state transition is complete.
+    with _exclusive_state_lock(state_path.parent / ".canary_execution"):
+        return _run_kis_paper_canary(
+            decision=decision,
+            run_id=run_id,
+            environment=environment,
+            state_path=state_path,
+            runtime_projection_path=runtime_projection_path,
+            paper_account_snapshot_path=paper_account_snapshot_path,
+            emergency_state_path=emergency_state_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=execute,
+            cancel_after_submit=cancel_after_submit,
+            transport=transport,
+            now=now,
+        )
 
 
 def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
@@ -978,7 +1026,11 @@ def _cancel_submitted_canary(
         )
         return state, client.reconcile(state, now=observed_at)
     reconciliation = client.reconcile(state, now=observed_at)
-    if reconciliation.matching_open_order:
+    if (
+        reconciliation.account_status != "available"
+        or reconciliation.matching_open_order
+        or reconciliation.matching_ccnl
+    ):
         state = state_store.transition(
             state.intent,
             expected=frozenset({"cancel_started"}),
@@ -997,21 +1049,50 @@ def _cancel_submitted_canary(
     return state, client.reconcile(state, now=observed_at)
 
 
-def _reconcile_existing(
+def _recover_existing_canary(
     *,
     state: KisPaperCanaryState,
+    state_store: KisPaperCanaryStateStore,
     environment: Mapping[str, str],
     transport: KisHttpTransport | None,
     observed_at: datetime,
-) -> KisPaperCanaryReconciliation:
+) -> tuple[KisPaperCanaryState, KisPaperCanaryReconciliation]:
     try:
         client = KisPaperCanaryClient(
             config=load_kis_paper_config_from_environment(environment),
             transport=transport or UrllibKisPaperCanaryTransport(),
         )
-        return client.reconcile(state, now=observed_at)
-    except (KisPaperCanaryError, KisPaperReadOnlyError):
-        return _unavailable_reconciliation()
+        reconciliation = client.reconcile(state, now=observed_at)
+    except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
+        return state, _unavailable_reconciliation(
+            reason_code=_safe_reconciliation_reason_code(error)
+        )
+    if (
+        state.phase == "submitted"
+        and state.cancel_after_submit
+        and state.broker_order_id is not None
+        and reconciliation.matching_open_order
+    ):
+        return _cancel_submitted_canary(
+            client=client,
+            state_store=state_store,
+            state=state,
+            reconciliation=reconciliation,
+            observed_at=observed_at,
+        )
+    if state.phase in {"submission_started", "cancel_started", "outcome_unknown"}:
+        state = state_store.transition(
+            state.intent,
+            expected=frozenset({state.phase}),
+            phase="outcome_unknown",
+            reason_code=(
+                "reconciliation_clean"
+                if reconciliation.status == "clean"
+                else "reconciliation_unresolved"
+            ),
+            now=observed_at,
+        )
+    return state, reconciliation
 
 
 def _matches_intent_open_order(
@@ -1056,7 +1137,7 @@ def _ensure_recovery_intent_matches(
         raise KisPaperCanaryError("state_intent_mismatch")
 
 
-def _unavailable_reconciliation() -> KisPaperCanaryReconciliation:
+def _unavailable_reconciliation(*, reason_code: str | None = None) -> KisPaperCanaryReconciliation:
     return KisPaperCanaryReconciliation(
         snapshot=None,
         account_status="unavailable",
@@ -1064,7 +1145,17 @@ def _unavailable_reconciliation() -> KisPaperCanaryReconciliation:
         matching_open_order=False,
         matching_ccnl=False,
         status="unresolved",
+        reason_code=reason_code,
     )
+
+
+def _safe_reconciliation_reason_code(
+    error: KisPaperCanaryError | KisPaperReadOnlyError,
+) -> str | None:
+    code = error.code
+    if code in PAPER_CANARY_SAFE_RECONCILIATION_REASON_CODES:
+        return code
+    return None
 
 
 def _write_runtime_projection(
@@ -1085,6 +1176,7 @@ def _write_runtime_projection(
             run_id=state.intent.run_id,
             status=status,  # type: ignore[arg-type]
             reconciliation_status=reconciliation.status,
+            reconciliation_reason_code=reconciliation.reason_code,
             account_status=reconciliation.account_status,
             position_count=reconciliation.position_count,
             open_order_count=reconciliation.open_order_count,
@@ -1134,6 +1226,7 @@ def _write_evidence(
         ),
         "reconciliation": {
             "status": reconciliation.status,
+            "reason_code": reconciliation.reason_code,
             "account_status": reconciliation.account_status,
             "position_count": reconciliation.position_count,
             "open_order_count": reconciliation.open_order_count,
@@ -1343,6 +1436,12 @@ def _safe_identifier(value: object, label: str) -> None:
 def _required_text(value: object) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError("text")
+    return value
+
+
+def _required_bool(value: object) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError("bool")
     return value
 
 

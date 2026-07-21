@@ -81,6 +81,7 @@ class DashboardSnapshot:
     paper_account: PaperAccountSnapshot | None = None
     paper_canary_status: str = "unknown"
     paper_canary_reconciliation_status: str = "unknown"
+    paper_canary_reconciliation_reason_code: str | None = None
     paper_canary_account_status: str = "unknown"
     paper_canary_observed_at: str | None = None
     paper_canary: PaperCanaryRuntimeSnapshot | None = None
@@ -188,6 +189,9 @@ def build_snapshot(
         ),
         paper_canary_reconciliation_status=(
             "unknown" if paper_canary is None else paper_canary.reconciliation_status
+        ),
+        paper_canary_reconciliation_reason_code=(
+            None if paper_canary is None else paper_canary.reconciliation_reason_code
         ),
         paper_canary_account_status=(
             "unknown" if paper_canary is None else paper_canary.account_status
@@ -529,6 +533,7 @@ def _paper_canary_details(snapshot: DashboardSnapshot) -> str:
       <p class="scope">
         Canary observed {_optional_text(snapshot.paper_canary_observed_at)}.
         Account facts: {_text(snapshot.paper_canary_account_status)}.
+        Reconciliation detail: {_optional_text(snapshot.paper_canary_reconciliation_reason_code)}.
         Positions: {canary.position_count}. Open orders: {canary.open_order_count}.
       </p>"""
 

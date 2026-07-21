@@ -115,13 +115,19 @@ It receives only `KIS_PAPER_*`, stores private recovery state in its dedicated
 Docker volume, writes sanitized runtime state to the shared local dashboard,
 and writes external evidence under `/app/model_artifacts`. Re-running an
 existing run ID reconciles its persisted intent before any replacement submit.
-Do not pass secrets or account values on the command line.
+Its cancel-after-submit choice is durable, matching accepted open orders resume
+cancellation after a restart, and sibling run IDs are serialized at the private
+state root. A non-success submit response or completion evidence after a cancel
+is `outcome_unknown`, not a clean result or retry cue. Do not pass secrets or
+account values on the command line.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. This is not an approval gate. When it recurs, verify or regenerate
 the **virtual-paper** application key and secret in the KIS developer account,
 update only local `.env`, and rerun the command. Do not substitute live
-credentials or inspect/print the secret values.
+credentials or inspect/print the secret values. The sanitized runtime and
+evidence retain only an allowlisted reconciliation reason code (for example,
+`auth_rejected`), never an API body, account identifier, or secret.
 
 ## Research And Artifacts
 

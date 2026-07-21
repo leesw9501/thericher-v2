@@ -28,6 +28,33 @@ PaperCanaryRuntimeStatus = Literal[
 PaperCanaryReconciliationStatus = Literal["not_run", "clean", "unresolved"]
 PaperCanaryAccountStatus = Literal["unknown", "available", "unavailable"]
 
+# These are implementation-owned codes, never broker response text.  The
+# runtime projection is read by the dashboard, so keep the display surface
+# deliberately closed over a small known vocabulary.
+PAPER_CANARY_SAFE_RECONCILIATION_REASON_CODES = frozenset(
+    {
+        "access_token_invalid",
+        "auth_rejected",
+        "auth_response_invalid",
+        "balance_pagination_incomplete",
+        "balance_response_duplicate",
+        "balance_response_incomplete",
+        "ccnl_pagination_incomplete",
+        "ccnl_rejected",
+        "ccnl_response_incomplete",
+        "open_orders_pagination_incomplete",
+        "open_orders_response_duplicate",
+        "open_orders_response_incomplete",
+        "orderable_funds_response_incomplete",
+        "paper_host_required",
+        "query_not_allowlisted",
+        "redirect_rejected",
+        "request_not_allowlisted",
+        "response_invalid",
+        "transport_failure",
+    }
+)
+
 
 class PaperCanaryRuntimeError(ValueError):
     """The sanitized runtime projection is malformed or unsafe to render."""
@@ -48,6 +75,7 @@ class PaperCanaryRuntimeSnapshot:
     observed_at: datetime
     expires_at: datetime
     order_reference: str | None = None
+    reconciliation_reason_code: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -80,6 +108,12 @@ class PaperCanaryRuntimeSnapshot:
             raise PaperCanaryRuntimeError("runtime_expiry_invalid")
         if self.order_reference is not None:
             _order_reference(self.order_reference)
+        if (
+            self.reconciliation_reason_code is not None
+            and self.reconciliation_reason_code
+            not in PAPER_CANARY_SAFE_RECONCILIATION_REASON_CODES
+        ):
+            raise PaperCanaryRuntimeError("runtime_reconciliation_reason_invalid")
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -98,6 +132,7 @@ class PaperCanaryRuntimeSnapshot:
             "observed_at": self.observed_at.isoformat(),
             "expires_at": self.expires_at.isoformat(),
             "order_reference": self.order_reference,
+            "reconciliation_reason_code": self.reconciliation_reason_code,
         }
 
     @classmethod
@@ -121,7 +156,8 @@ class PaperCanaryRuntimeSnapshot:
             "expires_at",
             "order_reference",
         }
-        if set(payload) != expected:
+        extended_expected = expected | {"reconciliation_reason_code"}
+        if frozenset(payload) not in {frozenset(expected), frozenset(extended_expected)}:
             raise PaperCanaryRuntimeError("runtime_keys_invalid")
         if (
             payload["schema_version"] != SCHEMA_VERSION
@@ -149,6 +185,15 @@ class PaperCanaryRuntimeSnapshot:
                 None
                 if payload["order_reference"] is None
                 else _text(payload["order_reference"], "order_reference")
+            ),
+            reconciliation_reason_code=(
+                None
+                if "reconciliation_reason_code" not in payload
+                or payload["reconciliation_reason_code"] is None
+                else _text(
+                    payload["reconciliation_reason_code"],
+                    "reconciliation_reason_code",
+                )
             ),
             schema_version=SCHEMA_VERSION,
         )

@@ -126,11 +126,23 @@ to a dedicated volume and only sanitized account/canary state to the local web
 runtime. The dashboard cannot transmit orders or receive KIS credentials.
 
 The first live virtual-token attempt on 2026-07-21 returned `auth_rejected`
-from the KIS token boundary. No account snapshot or order was submitted. This
-is an external credential/application state to reconcile, not a paper-capital,
+from the KIS token boundary. A later fresh default canary correctly remained at
+`intent_recorded` when reconciliation was unavailable, so no account snapshot
+or order was submitted. Its sanitized evidence, runtime projection, and local
+dashboard now preserve an allowlisted reconciliation reason such as
+`auth_rejected`, without retaining broker bodies or secrets. This is an
+external credential/application state to reconcile, not a paper-capital,
 research, or one-shot policy gate. The safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
 recovery state into Git.
+
+The canary now persists its cancellation choice with the private intent,
+serializes sibling run IDs through one state-root lock, resumes cancellation of
+an acknowledged matching open order after a restart, and treats any non-success
+submit response as `outcome_unknown` rather than a clean rejection. A matching
+completion record after cancellation also remains unresolved until a later
+attribution contract exists. These are execution correctness properties, not
+new paper approvals or reporting gates.
 
 ## Legacy Simplification
 
@@ -152,10 +164,10 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. First restore the
-KIS virtual-token boundary if the operator refreshes the virtual application
-credentials; then reconcile the existing canary state before any replacement
-submission. At each boundary, review the data contract, execution route
-readiness, research queues, GPU eligibility, disk capacity, and role ownership;
-make reversible no-cost changes autonomously and escalate only a real remaining
-operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. KIS virtual-token
+recovery remains ready work: after the virtual app key/secret is refreshed,
+reconcile the existing canary state before any replacement submission. It does
+not block the next offline CPU research candidate. At each boundary, review the
+data contract, execution route readiness, research queues, GPU eligibility,
+disk capacity, and role ownership; make reversible no-cost changes autonomously
+and escalate only a real remaining operator boundary.
