@@ -346,6 +346,39 @@ the standing KIS Paper authority. Keep the cache private and local, preserve
 manifest/hash/provenance facts, and do not infer a general archive entitlement,
 model result, or order-transport support from this first snapshot.
 
+## Resumable KIS Private Daily Backfill v1
+
+Run one bounded chunk with:
+
+```powershell
+uv run python scripts\backfill_kis_paper_private_daily.py --execute
+```
+
+The worker is a concrete data job, not a daemon. It reattests its external
+index, recovers a matching orphan snapshot before reading credentials or making
+a new KIS call, then selects one ready symbol/date cursor. A chunk obtains one
+paper token, requests at most two `dailyprice` pages, verifies a two-second
+inter-page delay, stores an immutable raw snapshot/manifest on `D:`, verifies
+the raw hash, and atomically advances only that symbol's logical date cursor.
+Exact overlaps are retained as dedupe facts; differing overlapping values defer
+the affected symbol without cursor advancement.
+
+The index is at
+`D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`.
+Its first data-bearing routes are `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`; each
+initial chunk retained 199 unique rows from 200 inputs. The persistent index,
+not this document, records each current logical cursor. Earlier NYS attempts
+are retained as venue-attempt evidence only:
+the SPY token call rejected before a daily response and IWM returned an accepted
+empty page. They are not data-bearing mappings.
+
+After a KIS token rejection or a completed network chunk, respect the index's
+shared retry timestamp before another worker invocation. The current two-minute
+spacing is a source-adaptive transport measure based on observed token behavior,
+not a capital, approval, or model-quality gate. Do not bypass it by running a
+second copy of the script. The worker never reads `KIS_LIVE_*`, calls live,
+stores raw data in Git, prints raw rows, or publishes KIS-originated data.
+
 ## KIS Paper Authority
 
 KIS Paper is standing operator-approved development authority for this private

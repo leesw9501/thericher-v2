@@ -2,6 +2,17 @@
 
 ## Status
 
+- A KIS-native daily cache is now growing for `QQQ/NAS`, `SPY/AMS`, and
+  `IWM/AMS`. Its first chunks establish transport/provenance evidence only:
+  199 shared completed sessions is below the 756-session admission threshold.
+- The next eligible daily research loop is CPU-only
+  `daily-three-etf-relative-strength-v0`: raw 20-session relative strength,
+  one positive ETF or cash, `t+1` entry and `t+2` exit through replayable
+  `source: local_paper` fills. It must wait for the frozen shared KIS dataset.
+- CUDA remains idle by design until that cache, chronological split, baseline,
+  cost model, and a distinct falsifiable candidate contract exist. GPU idle is
+  not a reason to manufacture training or promote an ensemble.
+
 - The bounded RAW D1 development campaign is complete; no campaign or GPU job
   is running.
 - Data's replacement inventory found no fresh local training candidate. GPU

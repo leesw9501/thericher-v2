@@ -291,6 +291,16 @@ research containers. Canonical datasets carry provenance, schema, session,
 corporate-action, coverage, and overlap metadata. Overlapping snapshots are
 versions of evidence, not independent samples.
 
+The KIS private daily backfill is a small canonical-cache pattern: immutable
+`snapshot=*` directories hold raw rows and a manifest, while
+`D:\\market_data\\us_equities\\kis_paper_private\\daily\\backfill-v1\\index.json`
+holds per-symbol logical date cursors, hashes, venue-attempt evidence, and the
+next shared KIS retry time. The index advances only after a snapshot's raw hash
+is verified. Its logical cursor is a date with intentional exact overlap, never
+an opaque KIS continuation header. An empty accepted venue response does not
+become research history. The current data-bearing routes are `QQQ/NAS`,
+`SPY/AMS`, and `IWM/AMS`, all requested with `MODP=0_unadjusted`.
+
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.
 

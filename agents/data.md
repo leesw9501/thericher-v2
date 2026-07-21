@@ -2,6 +2,29 @@
 
 ## Status
 
+### Current KIS Daily Backfill
+
+- `kis-paper-private-daily-backfill-v1` is active and recoverable at
+  `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`.
+  Its immutable snapshots remain private, local, unserved, and outside Git.
+- The first retained two-page chunks verified data-bearing KIS daily routes:
+  `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`. Each retained 199 unique raw daily rows
+  from 200 input rows after one exact boundary dedupe, with a measured
+  two-second inter-page pace. The external index is the cursor authority:
+  QQQ and SPY have continued through second chunks while IWM retains its first
+  data-bearing chunk.
+- Prior `SPY/NYS` token rejection and `IWM/NYS` accepted-empty response remain
+  index venue-attempt evidence. They are not usable history or a failure of the
+  AMS routes.
+- The worker atomically writes a raw snapshot before advancing its per-symbol
+  cursor, recovers orphan snapshots without another KIS call, and uses a
+  persisted two-minute shared inter-chunk retry after a KIS token event. This
+  is transport pacing, not an approval gate.
+- The three-symbol cache currently has only 199 common sessions, below the
+  756-session daily-research admission threshold. Continue bounded chunks;
+  do not infer adjustment/corporate-action semantics from `MODP=0_unadjusted`
+  or mix this cache with another provider.
+
 The local-only replacement inventory is complete at
 `D:\thericher-v2\model-artifacts\data-agent\local-replacement-inventory\local-replacement-inventory-r2\summary.json`,
 SHA-256 `c7c1de08e33b3ea2a70688a9ec71903ba39ea00531c38bacf43bd053a5c1cf8d`.

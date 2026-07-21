@@ -2,6 +2,14 @@
 
 ## Status
 
+- The active KIS daily backfill uses market-data token and `dailyprice` calls
+  only. It made no account, position, open-order, submission, cancellation, or
+  live request; retained raw files and index state remain under `D:\market_data`.
+- The next daily research baseline stays broker-free. Execution will consume
+  only deterministic eligible decisions through the existing local-paper path,
+  preserving `source: local_paper` replay and PnL attribution until a separate
+  KIS Paper execution objective needs broker-side effects.
+
 - Broker-neutral lifecycle readiness is implemented with an offline fake
   transport and an explicit local persistence path.
 - The Docker `kis-readonly` one-shot bridge completed one virtual-paper

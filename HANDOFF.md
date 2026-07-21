@@ -925,22 +925,31 @@ unnecessary row-level data.
 
 ## Next Objective
 
-The first private KIS Paper daily collector is complete. Its `QQQ` / `NAS` /
-`dailyprice` run used one token, two pages, and a measured two-second interval;
-it retained 199 unique rows from 200 inputs after one exact dedupe. The atomic
-manifest is
-`D:\market_data\us_equities\kis_paper_private\daily\snapshot=20260721T145228Z-qqq-nas-modp0-v1\manifest.json`
-with SHA-256
-`f124f47187ee5c3f2d1d840cd56de47a79ca4a8577026c5afbccef2c07b05c10`.
-The raw file remains only under `D:\market_data`; the raw-aware control record
-is `completed` / `complete` with `raw_market_data_retained: true`.
+`kis-paper-private-daily-backfill-v1` is now running at
+`D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`.
+The first data-bearing two-page chunks retained 199 unique rows after one exact
+boundary dedupe for each of `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`. QQQ and SPY
+have since completed second chunks; the external index is authoritative for the
+moving per-symbol cursors. All raw files, manifests, and index state remain
+private under `D:\market_data` and outside Git.
 
-The current company objective is a resumable KIS Paper daily backfill lane for
-the initial `QQQ` / `SPY` / `IWM` ETF universe. Data owns cache layout,
-provenance, manifest indexing, and source interpretation; Execution owns the
-paced KIS invoker and recovery behavior; independent Validation verifies actual
-cache and control evidence. A rejected chunk is recorded and retried later with
-a new paced attempt, not treated as a business-approval stop.
+The first QQQ/SPY/IWM manifest hashes are respectively
+`d9490391425f8ce8c80a680d56b39bc520e3753453a6c1325c5bbd097b8fc2a1`,
+`0d3ae65ca011bbbc7983330cc8d73753118f810b6ae5e602483ae283366acb2a`, and
+`268affb10f20e28b6ad642efd36abc3637fc794aa29a2a663dbee653b7962aaa`.
+The initial NYS routing attempts are retained as venue evidence but are not
+data-bearing: SPY's token rejected before a daily response and IWM returned an
+accepted empty page. AMS is the verified current route for both ETFs.
+
+The worker recovers an orphan snapshot before reading credentials or making a
+new KIS call, advances a cursor only after hash verification, and records a
+two-minute shared retry after a KIS token event or completed network chunk. That
+pacing is source adaptation, not a business, capital, or approval gate.
+
+The next objective is to keep collecting until the three symbols share 756
+completed sessions, then freeze a KIS-only daily dataset and run the small CPU
+relative-strength local-paper baseline. No GPU campaign or model promotion is
+eligible from the current 199 shared sessions.
 
 Current authority supersedes older read-only KIS wording: `KIS_PAPER_*` market,
 account, order, submit/modify/cancel, reconciliation, routine sizing, and

@@ -2,84 +2,89 @@
 
 ## Objective
 
-Build and start `kis-paper-private-daily-backfill-v1`: a paced, resumable,
-private KIS Paper daily-data lane for the initial ETF universe `QQQ`, `SPY`,
-and `IWM`.
+Turn `kis-paper-private-daily-backfill-v1` into the first usable KIS-native
+daily research input for `QQQ`, `SPY`, and `IWM`.
 
-The completed `QQQ` collector proved real raw retention on `D:`: two pages,
-200 input rows, 199 unique rows, one exact dedupe, and a matching atomic
-manifest/control record. Turn that working path into repeatable backfill work,
-not another approval exercise.
+The lane has begun with retained, hash-verified two-page chunks for
+`QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`. Continue the bounded private backfill and
+build the smallest deterministic daily local-paper baseline that consumes only
+the resulting KIS cache once the three symbols share enough completed sessions.
 
-`KIS_PAPER_*` credential use, market/account/order calls, paper submission,
-routine sizing, and goal-owned scheduling are standing-authorized. Only
-`KIS_LIVE_*` and real-money routes remain unavailable.
+`KIS_PAPER_*` market/account/order calls, paper submission, and goal-owned
+scheduling are standing-authorized. `KIS_LIVE_*` and real-money routes remain
+unavailable.
 
 ## Required Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
-   `agents/data.md`, and `agents/execution.md`.
-3. Inspect the completed private daily collector, its tests, and its manifest
-   without printing raw rows, credentials, or account values.
-4. Ask Claude for a concise drift-check before widening the hard-coded KIS
-   daily query allowlist or introducing the resumable worker contract. Do not
-   send Claude credentials, raw rows, or account information.
+   `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
+3. Inspect the private daily backfill index and recent manifests without
+   printing raw rows, credentials, or account values.
+4. Ask Claude for a concise falsification-first review before freezing a daily
+   research split, opening any holdout, or claiming a result beyond the naive
+   baseline. Do not send credentials, raw rows, or holdout labels.
 
 ## Work Packages
 
 ### Data Agent
 
-- Define a canonical private daily-cache layout with immutable raw snapshots,
-  one logical manifest index, per-symbol/date cursors, source-adjustment mode,
-  hashes, dedupe facts, and recovery state under `D:\market_data`.
-- Confirm the KIS venue mapping for `QQQ`, `SPY`, and `IWM` from official
-  documentation or bounded response evidence before each symbol is collected.
-  Do not assume the existing `NAS` probe mapping applies to every ETF.
-- Preserve raw daily cache bytes only on `D:`. Keep the cache private, local,
-  unserved, and unredistributed.
-
-### Execution Agent
-
-- Generalize the current daily query boundary only to the fixed initial ETF
-  universe and verified venue mappings. Keep endpoint, paper host, response
-  parsing, secret redaction, and no-live routing explicit.
-- Implement a small goal-owned backfill worker that selects the next unresolved
-  symbol/date chunk, writes an atomic snapshot and manifest/index update, and
-  can resume after interruption. This is a concrete data worker, not a generic
+- Continue `scripts/backfill_kis_paper_private_daily.py --execute` as bounded
+  worker invocations. Each invocation owns at most one two-page chunk; obey its
+  persisted shared retry timestamp rather than bypassing a KIS token rejection.
+- Keep raw snapshots, manifests, logical index, venue-attempt evidence, and
+  cursors only under `D:\market_data`. Do not create a daemon or generic
   scheduler platform.
-- Use paced chunks: at most two daily pages per collection session, a measured
-  two-second interval within a chunk, and an adaptive deferred retry after a
-  rejection. A rejected chunk must remain visible and retryable; it is not a
-  terminal business or operator stop.
-- Start the lane with real KIS Paper calls after focused tests. Continue useful
-  chunks while storage, source terms, and recovery evidence remain healthy.
+- Reconcile orphan snapshots before new KIS calls. Preserve the established
+  `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS` mappings; an accepted empty response is
+  venue evidence only, not usable history.
+- Add a strict cache loader that re-attests hashes, merges only exact overlap
+  rows, rejects conflicting values, preserves `MODP=0_unadjusted`, and exposes
+  the common completed-session intersection without mixing Tiingo, Norgate,
+  Yahoo, or synthetic bars.
+- Continue until the three symbols have at least 756 common completed sessions
+  or the endpoint reaches a documented source exhaustion. Report a real source
+  limitation, not a guessed rate-limit cause.
 
 ### Engine Research Agent
 
-- Inspect the retained manifest/index contract and define the minimum daily
-  history and provenance needed before it becomes a research dataset. Do not
-  manufacture GPU work from an immature cache.
-- Keep a ready daily selection/feature baseline queue so it can begin as soon
-  as the Data contract reaches its stated minimum.
+- Define the daily admission contract: at least 756 shared KIS sessions,
+  explicit raw-price/corporate-action limitation, chronological 60/20/20 split,
+  two-session purge and embargo, and a sealed holdout left unopened.
+- Once the Data contract is met, implement and run the CPU-only
+  `daily-three-etf-relative-strength-v0` baseline: 20-session raw return,
+  choose one positive-strength ETF or abstain, `t+1` entry and `t+2` exit,
+  existing local-paper costs and replayable `source: local_paper` fills.
+- Maintain breadth and depth queues, but do not start CUDA training merely to
+  occupy the GPU. A GPU candidate needs the frozen dataset, baseline result,
+  campaign contract, and a distinct falsifiable hypothesis.
+
+### Execution Agent
+
+- Keep the daily baseline broker-free. Translate only eligible deterministic
+  decisions to local-paper intents/fills; do not submit a KIS order in this
+  objective.
+- Preserve local-paper replay, event provenance, and PnL attribution so a later
+  KIS Paper canary can reuse deterministic execution evidence.
 
 ### Validation
 
-- Independently check raw/manifest/index hashes, cursor progression,
-  deduplication, pacing, redaction, and recovery behavior.
-- Confirm the worker retains actual raw-data facts (`true` when stored) rather
-  than inheriting a metadata-only marker default.
+- Test cache/hash re-attestation, cursor continuation, cross-chunk exact
+  deduplication, conflict rejection, source exhaustion, shared token pacing,
+  and no Git/secret/live access.
+- Independently validate the daily research split and local-paper replay before
+  any model or GPU promotion claim.
 
 ## Operating Boundaries
 
-- There is no paper-capital, profitability, report, dashboard, trade-count, or
+- There is no paper-capital, profitability, dashboard, report, trade-count, or
   per-call approval gate.
-- Do not read `KIS_LIVE_*`, call a live route, expose secrets, or publish/serve
-  KIS-originated data.
-- Preserve the agreed D: free-space floor and stop the affected cache only if
-  applicable source terms prohibit retention.
-- Keep raw-minute acquisition as a separate ready data package; do not block
-  the daily lane on it or pretend daily data alone supplies intraday features.
+- Do not read `KIS_LIVE_*`, call a live route, expose secrets, publish KIS
+  data, or store raw market data/model artifacts in Git.
+- Keep model artifacts under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts` in Docker.
+- Keep raw-minute collection separate. Daily data may support the daily
+  baseline, but it does not validate intraday `1m`/`5m`/`10m`/`1h`/`3h` inputs.
 
 ## Verification
 
@@ -91,4 +96,4 @@ docker compose --env-file .env.example config --quiet
 
 ## Suggested Commit Message
 
-`Add resumable KIS daily backfill lane`
+`Build KIS daily research input`

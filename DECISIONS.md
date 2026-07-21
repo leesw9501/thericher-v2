@@ -3242,3 +3242,32 @@ deduplication, and pacing against a real KIS response. It supports the next
 resumable daily backfill objective without reopening an approval question. It
 does not by itself prove broad historical coverage, intraday availability,
 model quality, or a live route.
+
+## 2026-07-21 - Start resumable KIS private daily backfill
+
+Decision: keep the completed one-shot QQQ collector as immutable evidence and
+use a separate cursor/index worker for ongoing private KIS daily cache work.
+Each invocation owns at most two daily pages, verifies a two-second in-chunk
+pace, writes and hashes an immutable D: snapshot first, then atomically advances
+only the corresponding symbol/date cursor. An orphan snapshot is reconciled
+offline before a new KIS token request. Exact cross-chunk overlap is deduped;
+conflicting overlap defers that symbol without cursor movement.
+
+The first data-bearing worker chunks established `QQQ/NAS`, `SPY/AMS`, and
+`IWM/AMS`, each with 199 unique rows from 200 input rows and one exact boundary
+dedupe. Earlier NYS attempts remain in the external index as venue evidence:
+SPY's token was rejected before daily data and IWM produced an accepted empty
+response. Neither is canonical research history. The worker uses a persisted
+two-minute shared retry after a token rejection or completed network chunk,
+because a second token requested 24 seconds after a successful QQQ chunk was
+actually rejected. This is a transport adaptation, not an approval or page
+quota.
+
+The cache remains `MODP=0_unadjusted`, private, local, unserved, and outside
+Git. It is insufficient for model research until the strict common-session
+loader freezes at least 756 completed sessions for all three ETFs. No GPU work,
+model promotion, or corporate-action conclusion follows from these chunks.
+
+Reason: the first real cache proved that a small retained KIS path works; a
+minimal index/cursor lets it grow without reintroducing one-shot markers or
+per-call operator gates, while preserving enough evidence to recover honestly.

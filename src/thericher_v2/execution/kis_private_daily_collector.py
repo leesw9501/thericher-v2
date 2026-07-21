@@ -74,6 +74,35 @@ class KisPaperPrivateDailyCollectorError(RuntimeError):
 
 
 @dataclass(frozen=True)
+class KisPaperPrivateDailyCollectionTarget:
+    """One bounded daily collection target, including its logical date cursor."""
+
+    symbol: str
+    exchange: str
+    anchor_date: str
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "symbol", self.symbol.strip().upper())
+        object.__setattr__(self, "exchange", self.exchange.strip().upper())
+        object.__setattr__(self, "anchor_date", self.anchor_date.strip())
+        try:
+            KisPaperDailyQuery(
+                symbol=self.symbol,
+                exchange=self.exchange,
+                by_date=self.anchor_date,
+            )
+        except ValueError as error:
+            raise ValueError("private daily collection target is invalid") from error
+
+
+KIS_PAPER_PRIVATE_DAILY_COLLECTOR_DEFAULT_TARGET = KisPaperPrivateDailyCollectionTarget(
+    symbol=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
+    exchange=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_EXCHANGE,
+    anchor_date=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_ANCHOR_DATE,
+)
+
+
+@dataclass(frozen=True)
 class KisPaperPrivateDailyCollectorPage:
     """Safe page facts retained in a cache manifest."""
 
@@ -119,6 +148,8 @@ class KisPaperPrivateDailyCollectionResult:
     inter_page_delay_seconds: tuple[float, ...]
     status: Literal["observed", "rejected"]
     reason: str | None = None
+    symbol: str = KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL
+    exchange: str = KIS_PAPER_PRIVATE_DAILY_COLLECTOR_EXCHANGE
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -126,12 +157,18 @@ class KisPaperPrivateDailyCollectionResult:
         object.__setattr__(self, "pages", tuple(self.pages))
         object.__setattr__(self, "rows", tuple(self.rows))
         object.__setattr__(self, "inter_page_delay_seconds", tuple(self.inter_page_delay_seconds))
-        if (
-            self.requested_anchor_date != KIS_PAPER_PRIVATE_DAILY_COLLECTOR_ANCHOR_DATE
-            or not self.code_revision
-            or "\n" in self.code_revision
-            or len(self.code_revision) > 256
-        ):
+        try:
+            target = KisPaperPrivateDailyCollectionTarget(
+                symbol=self.symbol,
+                exchange=self.exchange,
+                anchor_date=self.requested_anchor_date,
+            )
+        except ValueError as error:
+            raise ValueError("private daily result provenance is invalid") from error
+        object.__setattr__(self, "symbol", target.symbol)
+        object.__setattr__(self, "exchange", target.exchange)
+        object.__setattr__(self, "requested_anchor_date", target.anchor_date)
+        if not self.code_revision or "\n" in self.code_revision or len(self.code_revision) > 256:
             raise ValueError("private daily result provenance is invalid")
         if not isinstance(self.call_counts, KisPaperMarketDataCallCounts) or not (
             self.call_counts.token_attempts == 1
@@ -188,6 +225,7 @@ def run_bounded_kis_paper_private_daily_collection(
     client: KisPaperMarketDataClient,
     *,
     code_revision: str,
+    target: KisPaperPrivateDailyCollectionTarget = KIS_PAPER_PRIVATE_DAILY_COLLECTOR_DEFAULT_TARGET,
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
@@ -200,9 +238,15 @@ def run_bounded_kis_paper_private_daily_collection(
     dedupe_count = 0
     conflicting_duplicate_rows = 0
     delays: list[float] = []
+    target = KisPaperPrivateDailyCollectionTarget(
+        symbol=target.symbol,
+        exchange=target.exchange,
+        anchor_date=target.anchor_date,
+    )
     query = KisPaperDailyQuery(
-        symbol=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
-        by_date=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_ANCHOR_DATE,
+        symbol=target.symbol,
+        exchange=target.exchange,
+        by_date=target.anchor_date,
     )
     try:
         client.ensure_authenticated()
@@ -219,7 +263,8 @@ def run_bounded_kis_paper_private_daily_collection(
             delays.append(elapsed)
             second_page = client.fetch_daily_raw_page(
                 KisPaperDailyQuery(
-                    symbol=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
+                    symbol=target.symbol,
+                    exchange=target.exchange,
                     by_date=first_page.page.oldest_date,
                     continuation="F",
                 )
@@ -232,6 +277,7 @@ def run_bounded_kis_paper_private_daily_collection(
         return _result(
             observed_at=observed,
             code_revision=code_revision,
+            target=target,
             client=client,
             pages=pages,
             rows_by_date=rows_by_date,
@@ -245,6 +291,7 @@ def run_bounded_kis_paper_private_daily_collection(
         return _result(
             observed_at=observed,
             code_revision=code_revision,
+            target=target,
             client=client,
             pages=pages,
             rows_by_date=rows_by_date,
@@ -257,6 +304,7 @@ def run_bounded_kis_paper_private_daily_collection(
     return _result(
         observed_at=observed,
         code_revision=code_revision,
+        target=target,
         client=client,
         pages=pages,
         rows_by_date=rows_by_date,
@@ -273,6 +321,7 @@ def write_kis_paper_private_daily_cache(
     cache_root: Path,
     run_id: str,
     repo_root: Path,
+    backfill_context: Mapping[str, object] | None = None,
 ) -> tuple[Path, str]:
     """Atomically publish a raw private cache and its manifest on the D: volume."""
 
@@ -281,7 +330,9 @@ def write_kis_paper_private_daily_cache(
         raise ValueError("private daily run_id is invalid")
     root = _external_cache_root(cache_root=cache_root, repo_root=repo_root)
     root.mkdir(parents=True, exist_ok=True)
-    snapshot_name = f"snapshot={run_id}-qqq-nas-modp0-v1"
+    snapshot_name = (
+        f"snapshot={run_id}-{result.symbol.lower()}-{result.exchange.lower()}-modp0-v1"
+    )
     target = root / snapshot_name
     if target.exists() or target.is_symlink():
         raise FileExistsError("private daily cache destination already exists")
@@ -290,8 +341,17 @@ def write_kis_paper_private_daily_cache(
         staging.mkdir()
         raw_document: dict[str, object] | None = None
         if result.rows:
-            raw_payload = _compressed_raw_daily_csv(result.rows)
-            _validate_compressed_raw_daily_csv(raw_payload, expected_rows=result.rows)
+            raw_payload = _compressed_raw_daily_csv(
+                result.rows,
+                symbol=result.symbol,
+                exchange=result.exchange,
+            )
+            _validate_compressed_raw_daily_csv(
+                raw_payload,
+                expected_rows=result.rows,
+                symbol=result.symbol,
+                exchange=result.exchange,
+            )
             raw_directory = staging / "raw"
             raw_directory.mkdir()
             raw_path = raw_directory / "ohlcv_daily.csv.gz"
@@ -308,6 +368,7 @@ def write_kis_paper_private_daily_cache(
             result=result,
             snapshot_name=snapshot_name,
             raw_document=raw_document,
+            backfill_context=backfill_context,
         )
         manifest_payload = (json.dumps(manifest, indent=2, sort_keys=True) + "\n").encode("utf-8")
         _write_bytes_and_sync(staging / "manifest.json", manifest_payload)
@@ -323,6 +384,7 @@ def private_daily_cache_manifest(
     result: KisPaperPrivateDailyCollectionResult,
     snapshot_name: str,
     raw_document: Mapping[str, object] | None,
+    backfill_context: Mapping[str, object] | None = None,
 ) -> dict[str, object]:
     """Render a provenance manifest that deliberately excludes requests and secrets."""
 
@@ -331,7 +393,7 @@ def private_daily_cache_manifest(
         raise ValueError("private daily snapshot name is invalid")
     newest_date = result.rows[-1].xymd if result.rows else None
     oldest_date = result.rows[0].xymd if result.rows else None
-    return {
+    manifest: dict[str, object] = {
         "schema_version": SCHEMA_VERSION,
         "kind": "kis_paper_private_daily_cache",
         "dataset_id": f"kis.paper.private.daily.{snapshot_name}",
@@ -346,8 +408,8 @@ def private_daily_cache_manifest(
         "source": {
             "provider": "KIS Open API virtual paper",
             "endpoint": "dailyprice",
-            "symbol": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
-            "exchange": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_EXCHANGE,
+            "symbol": result.symbol,
+            "exchange": result.exchange,
             "adjustment_mode": "MODP=0_unadjusted",
         },
         "requested_date_bounds": {
@@ -394,6 +456,9 @@ def private_daily_cache_manifest(
             "response_bodies_persisted": False,
         },
     }
+    if backfill_context is not None:
+        manifest["backfill"] = _validated_backfill_context(backfill_context, result=result)
+    return manifest
 
 
 def private_daily_cache_would_cross_free_space_floor(
@@ -551,6 +616,7 @@ def _result(
     *,
     observed_at: datetime,
     code_revision: str,
+    target: KisPaperPrivateDailyCollectionTarget,
     client: KisPaperMarketDataClient,
     pages: list[KisPaperPrivateDailyCollectorPage],
     rows_by_date: Mapping[str, KisPaperDailyRawRow],
@@ -562,7 +628,7 @@ def _result(
 ) -> KisPaperPrivateDailyCollectionResult:
     return KisPaperPrivateDailyCollectionResult(
         observed_at=observed_at,
-        requested_anchor_date=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_ANCHOR_DATE,
+        requested_anchor_date=target.anchor_date,
         code_revision=code_revision,
         call_counts=client.call_counts,
         pages=tuple(pages),
@@ -572,6 +638,8 @@ def _result(
         inter_page_delay_seconds=tuple(delays),
         status=status,
         reason=reason,
+        symbol=target.symbol,
+        exchange=target.exchange,
     )
 
 
@@ -623,18 +691,25 @@ def _validated_result(
         inter_page_delay_seconds=tuple(result.inter_page_delay_seconds),
         status=result.status,
         reason=result.reason,
+        symbol=result.symbol,
+        exchange=result.exchange,
     )
 
 
-def _compressed_raw_daily_csv(rows: tuple[KisPaperDailyRawRow, ...]) -> bytes:
+def _compressed_raw_daily_csv(
+    rows: tuple[KisPaperDailyRawRow, ...],
+    *,
+    symbol: str,
+    exchange: str,
+) -> bytes:
     text = io.StringIO(newline="")
     writer = csv.DictWriter(text, fieldnames=_RAW_DAILY_COLUMNS, lineterminator="\n")
     writer.writeheader()
     for row in rows:
         writer.writerow(
             {
-                "symbol": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
-                "exchange": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_EXCHANGE,
+                "symbol": symbol,
+                "exchange": exchange,
                 "session_date": _iso_date(row.xymd),
                 "open": row.open,
                 "high": row.high,
@@ -653,6 +728,8 @@ def _validate_compressed_raw_daily_csv(
     payload: bytes,
     *,
     expected_rows: tuple[KisPaperDailyRawRow, ...],
+    symbol: str,
+    exchange: str,
 ) -> None:
     with gzip.GzipFile(fileobj=io.BytesIO(payload), mode="rb") as handle:
         decoded = handle.read().decode("utf-8")
@@ -667,8 +744,8 @@ def _validate_compressed_raw_daily_csv(
         raise ValueError("private daily raw ordering is invalid")
     for document, expected in zip(rows, expected_rows, strict=True):
         if document != {
-            "symbol": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_SYMBOL,
-            "exchange": KIS_PAPER_PRIVATE_DAILY_COLLECTOR_EXCHANGE,
+            "symbol": symbol,
+            "exchange": exchange,
             "session_date": _iso_date(expected.xymd),
             "open": expected.open,
             "high": expected.high,
@@ -677,6 +754,44 @@ def _validate_compressed_raw_daily_csv(
             "volume": expected.tvol,
         }:
             raise ValueError("private daily raw contents are invalid")
+
+
+def _validated_backfill_context(
+    context: Mapping[str, object],
+    *,
+    result: KisPaperPrivateDailyCollectionResult,
+) -> dict[str, object]:
+    expected_keys = {
+        "contract_version",
+        "cursor_strategy",
+        "input_cursor_date",
+        "logical_cursor_persisted",
+        "output_cursor_date",
+        "target_key",
+    }
+    document = dict(context)
+    if set(document) != expected_keys:
+        raise ValueError("private daily backfill context is invalid")
+    if (
+        not isinstance(document["contract_version"], str)
+        or not document["contract_version"]
+        or document["target_key"] != f"{result.symbol}/{result.exchange}/MODP=0"
+        or document["cursor_strategy"] != "oldest_session_date_with_exact_overlap"
+        or document["input_cursor_date"] != result.requested_anchor_date
+        or not isinstance(document["logical_cursor_persisted"], bool)
+    ):
+        raise ValueError("private daily backfill context is invalid")
+    output_cursor = document["output_cursor_date"]
+    if output_cursor is not None and (
+        not isinstance(output_cursor, str) or len(output_cursor) != 8 or not output_cursor.isdigit()
+    ):
+        raise ValueError("private daily backfill context is invalid")
+    expected_output_cursor = (
+        result.rows[0].xymd if result.status == "observed" and result.rows else None
+    )
+    if output_cursor != expected_output_cursor:
+        raise ValueError("private daily backfill context is invalid")
+    return document
 
 
 def _page_document(page: KisPaperPrivateDailyCollectorPage) -> dict[str, object]:

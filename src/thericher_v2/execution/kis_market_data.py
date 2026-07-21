@@ -30,6 +30,17 @@ KIS_PAPER_MINUTE_QUERY_KEYS = frozenset(
 KIS_PAPER_DAILY_QUERY_KEYS = frozenset({"AUTH", "EXCD", "SYMB", "GUBN", "BYMD", "MODP"})
 KIS_PAPER_PROBE_SYMBOLS = frozenset({"QQQ", "SPY"})
 KIS_PAPER_PROBE_EXCHANGE = "NAS"
+# Daily history has a deliberately separate contract from the minute probe.
+# QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
+# for empirical ETF venue checks; the active backfill mapping records only a
+# data-bearing response as verified.
+KIS_PAPER_DAILY_SYMBOL_EXCHANGES = {
+    "QQQ": frozenset({"NAS"}),
+    # NAS remains supported for the existing historical capability probe;
+    # NYS is the backfill candidate for the primary NYSE Arca listing.
+    "SPY": frozenset({"AMS", "NAS", "NYS"}),
+    "IWM": frozenset({"AMS", "NYS"}),
+}
 _KIS_PAPER_PROBE_REQUIRED_MODE = "off"
 _KIS_PAPER_PROBE_PRECEDING_ENV_KEYS = frozenset(
     {
@@ -200,7 +211,7 @@ class KisPaperMinuteQuery:
 
 @dataclass(frozen=True)
 class KisPaperDailyQuery:
-    """Fixed raw daily-query shape for the approved historical capability probe."""
+    """Typed raw daily-query shape for the private historical cache lane."""
 
     symbol: str
     by_date: str
@@ -211,10 +222,8 @@ class KisPaperDailyQuery:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         object.__setattr__(self, "by_date", self.by_date.strip())
-        if self.exchange != "NAS":
-            raise ValueError("daily historical probe requires NAS")
-        if self.symbol not in KIS_PAPER_PROBE_SYMBOLS:
-            raise ValueError("daily historical probe symbol is not approved")
+        if self.exchange not in KIS_PAPER_DAILY_SYMBOL_EXCHANGES.get(self.symbol, frozenset()):
+            raise ValueError("daily historical symbol/exchange pair is not approved")
         if len(self.by_date) != 8 or not self.by_date.isdigit():
             raise ValueError("daily historical probe date must be YYYYMMDD")
         if self.continuation not in {None, "F"}:
@@ -852,8 +861,8 @@ def _is_approved_daily_request(request: KisMarketDataRequest) -> bool:
         and request.headers.get("tr_id") == KIS_PAPER_DAILY_TR_ID
         and request.headers.get("tr_cont", "") in {"", "F"}
         and query.get("AUTH") == ""
-        and query.get("EXCD") == KIS_PAPER_PROBE_EXCHANGE
-        and query.get("SYMB") in KIS_PAPER_PROBE_SYMBOLS
+        and query.get("EXCD")
+        in KIS_PAPER_DAILY_SYMBOL_EXCHANGES.get(str(query.get("SYMB")), frozenset())
         and query.get("GUBN") == "0"
         and isinstance(by_date, str)
         and len(by_date) == 8
