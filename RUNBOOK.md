@@ -90,6 +90,16 @@ process. Invoke it when current paper account facts are useful:
 docker compose --profile kis-readonly run --rm --no-deps kis-readonly
 ```
 
+After changing its source or Compose definition, first rebuild the local image:
+
+```powershell
+docker compose build kis-readonly
+```
+
+`docker compose run` reuses an existing image and does not prove that it contains
+the current working tree. This is runtime reproducibility, not a new KIS Paper
+approval or a reason to delay unrelated work.
+
 It writes a sanitized local runtime snapshot. Do not pass `.env` values on a
 command line or emit credentials, account numbers, raw response bodies, or
 tokens in logs/artifacts.
