@@ -68,10 +68,18 @@ implementation requirements, not approval checkpoints.
 
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
-- completed chunks: QQQ two, SPY two, IWM one at the last handoff
-- current common intersection: 199 completed sessions
+- usable chunks: QQQ five committed, SPY six committed, IWM three committed
+  plus one hash-attested partial page; deferred snapshots remain evidence only
+- current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
+
+IWM expansion stops at the current lower boundary. An actual KIS page below it
+contained one internally inconsistent OHLC row; the strict parser rejected the
+page rather than silently admitting its other rows. The 694-session common
+panel is clean and usable now. Do not repeatedly query that blocked IWM page
+until a different official endpoint or a separately evidence-backed row-quality
+contract resolves it.
 
 The worker writes a raw snapshot and manifest before atomically moving a
 cursor. Its two-minute shared retry after a token event is observed source
@@ -82,17 +90,22 @@ index before a new run because it is authoritative.
 
 ### Data
 
-Continue paced daily backfill, then implement the strict KIS cache loader:
-hash re-attestation, exact deduplication, conflict rejection, and common
-session intersection. The daily comparative research contract targets 756
-shared sessions; this is a validation-quality target, not a KIS Paper order
+`data.kis_paper_daily` re-attests index/manifest/raw hashes, cursor seams,
+path safety, and conflicting overlap before returning the same-source common
+panel. Its partial page is usable only when its first page was fully validated;
+the later IWM source-quality failure remains excluded. The former 756-session
+target is a validation preference, not a KIS Paper or smoke-execution
 authorization.
 
 ### Engine Research
 
-Once the cache is adequate, run the deterministic daily relative-strength
-baseline through local paper and maintain breadth/depth queues. Do not spend GPU
-time until a frozen dataset and falsifiable campaign make a model eligible.
+The deterministic daily relative-strength baseline ran again as a 595-session
+local-paper smoke: 287 decisions, 65 abstentions, 444 `local_paper` fills, and
+a flat replayable final account. Its `run.json` now fixes the dataset, costs,
+strategy, event hash, and code revision under
+`D:\thericher-v2\model-artifacts\daily-three-etf-relative-strength-v0`.
+This proves the path, not profitability. Freeze the 694-session comparative
+split before making a return claim or allocating GPU work.
 
 ### Execution
 

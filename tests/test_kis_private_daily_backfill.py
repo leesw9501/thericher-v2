@@ -119,6 +119,46 @@ def test_daily_backfill_collects_one_resumable_qqq_chunk_outside_git(tmp_path: P
     }
 
 
+def test_partial_continuation_commits_the_valid_first_page_and_advances_once(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data"
+    transport = _RecordingTransport(
+        [
+            _token(),
+            _daily_page([_row("20260717"), _row("20260701")], continuation="F"),
+            _rejected(),
+        ]
+    )
+    pacing = _PacingClock()
+
+    result = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(transport),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+        sleeper=pacing.sleep,
+        monotonic_clock=pacing.monotonic,
+    )
+
+    assert result.status == "collected"
+    assert result.reason == "partial_daily_response_rejected"
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    qqq = index["targets"][0]
+    assert qqq["state"] == "ready"
+    assert qqq["next_anchor_date"] == "20260701"
+    assert qqq["chunks"][0]["outcome"] == "partial"
+    assert qqq["chunks"][0]["output_cursor_date"] == "20260701"
+    assert qqq["chunks"][0]["raw_market_data_retained"] is True
+    assert index["last_shared_reason"] == "inter_chunk_pace"
+
+
 def test_deferred_target_does_not_block_spy_venue_confirmation(tmp_path: Path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
@@ -183,6 +223,19 @@ def test_empty_daily_response_is_deferred_without_marking_venue_complete(tmp_pat
     assert qqq["next_anchor_date"] == "20260717"
     assert qqq["venue_status"] == "verified_by_prior_private_snapshot"
     assert qqq["chunks"][-1]["raw_market_data_retained"] is False
+
+
+def test_backfill_prioritizes_the_target_with_the_shortest_history() -> None:
+    index = daily_backfill._initial_index()
+    targets = index["targets"]
+    targets[0]["next_anchor_date"] = "20220804"
+    targets[1]["next_anchor_date"] = "20211020"
+    targets[2]["next_anchor_date"] = "20231010"
+
+    selected = daily_backfill._select_ready_target(index=index, observed_at=_OBSERVED_AT)
+
+    assert selected is not None
+    assert selected["target_key"] == "IWM/AMS/MODP=0"
 
 
 def test_auth_rejection_applies_a_short_shared_retry_without_creating_a_new_client(

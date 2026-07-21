@@ -3295,3 +3295,64 @@ Reason: the old one-shot controls were historical experiments, not a useful
 engine capability. Leaving them executable and prominent made a factual
 non-retention marker look like a continuing restriction and slowed the intended
 data-to-paper development loop.
+
+## 2026-07-21 - Use an offline KIS daily panel and fast local-paper smoke
+
+Decision: the active private KIS daily cache is consumed through one offline,
+hash-attested common-session loader for `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`.
+It has no KIS client, credential lookup, or network dependency; it accepts only
+the fixed US panel and canonicalizes target order before deriving its dataset
+identity. A `raw_market_data_retained` value is read only as evidence that a
+chunk has bytes to load, never as a permission switch.
+
+The first deterministic consumer is
+`daily-three-etf-relative-strength-v0`: positive 20-session relative strength
+selects at most one ETF, then local paper enters at `t+1` open and exits at
+`t+2` open. It writes artifacts outside Git and all fills remain
+`source: local_paper`. The 397-session run is an execution smoke, not a claim
+of profitability. The 756-session target remains useful for a later frozen
+comparative split, but it does not authorize or block KIS Paper work.
+
+For bounded research runs, the append-only JSONL event log may defer its
+rebuildable SQLite projection until the end of the run. This preserves event
+replay while avoiding repeated full SQLite rebuilds; the default event-store
+behavior remains immediate rebuild for ordinary callers.
+
+Reason: the project needs a direct data-to-decision-to-local-paper loop now,
+without turning a historical-data target or a factual retention marker into an
+approval process. The deferred projection is a small runtime efficiency change,
+not a new worker, scheduler, or report family.
+
+## 2026-07-22 - Preserve validated daily partials and stop at the IWM source-quality limit
+
+Decision: when a bounded KIS daily collection has a fully validated first page
+but its continuation fails, commit that first page as a hash-attested `partial`
+chunk, retain the safe failure reason, advance only to its oldest validated
+date, and verify partial chunks in the same overlap and cursor-seam path as
+ordinary committed chunks. A wholly invalid first page never advances. The
+offline loader admits only these attested partial rows; it does not repair or
+invent missing rows.
+
+The live private IWM daily cache reached a 694-session common panel with QQQ
+and SPY. Further expansion hit a KIS page containing one internally
+OHLC-inconsistent row. A no-value structural diagnostic found 99 otherwise
+parseable rows, but Claude's falsification review correctly rejected accepting
+them: the inconsistency could indicate field misalignment and positional model
+windows would be biased across a price-conditioned omission. The affected page
+therefore remains excluded and IWM historical expansion stops at its current
+lower boundary. This is a source-quality limit, not a KIS Paper, local-paper,
+or model-research approval boundary.
+
+The deterministic daily local-paper artifact now writes one external `run.json`
+alongside JSONL/SQLite evidence. It records strategy parameters, local-paper
+costs, data/index hashes, event hash/count, and code revision; daily decision
+events are also projected into the rebuildable SQLite decision view.
+
+Claude's verdict was `supported-with-limits` for preserving a validated first
+page and `supported-with-limits` for a row-level exclusion only if the failed
+predicate were a benign implausibility class. The observed predicate was OHLC
+inconsistency, so row-level acceptance was not adopted.
+
+Reason: this preserves useful verified KIS history without silently treating a
+bad source row as clean data, avoids an infinite retry loop, and leaves the
+available 694-session panel free to support the next bounded CPU validation.

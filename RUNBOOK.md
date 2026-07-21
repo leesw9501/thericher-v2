@@ -68,6 +68,13 @@ Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is
 never a permission switch.
 
+If a page is repeatedly structurally invalid, diagnose only safe structure
+(counts, field names, validation class, and session metadata), preserve the
+failure evidence, and stop that target when the source-quality limit is clear.
+Do not brute-force the same page or silently accept its remaining rows. This is
+data correctness, not an approval condition for other KIS Paper or research
+work.
+
 ## KIS Account Snapshot
 
 The credential-bearing account bridge is intentionally separate from the web

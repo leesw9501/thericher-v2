@@ -14,6 +14,8 @@ from typing import Any
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.serialization import to_jsonable
 
+_DECISION_EVENT_TYPES = frozenset({"ensemble_decision", "daily_relative_strength_decision"})
+
 
 @dataclass(frozen=True)
 class Event:
@@ -70,9 +72,18 @@ class ReplayState:
 
 
 class EventStore:
-    def __init__(self, db_path: Path, jsonl_path: Path) -> None:
+    def __init__(
+        self,
+        db_path: Path,
+        jsonl_path: Path,
+        *,
+        rebuild_sqlite_on_append: bool = True,
+    ) -> None:
         self.db_path = db_path
         self.jsonl_path = jsonl_path
+        if not isinstance(rebuild_sqlite_on_append, bool):
+            raise ValueError("rebuild_sqlite_on_append must be boolean")
+        self.rebuild_sqlite_on_append = rebuild_sqlite_on_append
 
     def bootstrap(self) -> None:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -85,13 +96,17 @@ class EventStore:
             self._create_views(conn)
 
     def append(self, event: Event) -> Event:
-        self.bootstrap()
+        if self.rebuild_sqlite_on_append:
+            self.bootstrap()
+        else:
+            self.jsonl_path.parent.mkdir(parents=True, exist_ok=True)
         seq = self.next_seq()
         event = event.with_seq(seq)
         with self.jsonl_path.open("a", encoding="utf-8", newline="\n") as file:
             file.write(json.dumps(event.to_record(), sort_keys=True, separators=(",", ":")))
             file.write("\n")
-        self.rebuild_sqlite()
+        if self.rebuild_sqlite_on_append:
+            self.rebuild_sqlite()
         return event
 
     def next_seq(self) -> int:
@@ -121,9 +136,12 @@ class EventStore:
         latest_decisions: dict[tuple[str, str], dict[str, Any]] = {}
         for event in sorted(self.iter_events(), key=lambda item: item.seq):
             payload = event.payload
-            if event.event_type == "ensemble_decision":
-                key = (str(payload["market"]).upper(), str(payload["symbol"]).upper())
-                latest_decisions[key] = payload
+            if event.event_type in _DECISION_EVENT_TYPES:
+                market = payload.get("market")
+                symbol = payload.get("symbol")
+                if isinstance(market, str) and market and isinstance(symbol, str) and symbol:
+                    key = (market.upper(), symbol.upper())
+                    latest_decisions[key] = payload
             elif event.event_type == "fill":
                 key = (str(payload["market"]).upper(), str(payload["symbol"]).upper())
                 quantity = Decimal(str(payload["quantity"]))

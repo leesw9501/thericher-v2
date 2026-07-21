@@ -298,6 +298,18 @@ an opaque KIS continuation header. An empty accepted venue response does not
 become research history. The current data-bearing routes are `QQQ/NAS`,
 `SPY/AMS`, and `IWM/AMS`, all requested with `MODP=0_unadjusted`.
 
+`data.kis_paper_daily` is the offline consumption boundary for that cache. It
+re-attests the index, manifest, and raw hashes; rejects symlink/path escapes and
+conflicting overlap; verifies cursor seams; canonicalizes the fixed US ETF
+panel; and exposes only its common completed sessions as `CatalogedBars`. A
+partial chunk is usable only when its retained first page passed full validation;
+it never turns an invalid page into a silent repair. The first consumer is the
+deterministic `daily-three-etf-relative-strength-v0` local-paper baseline. Its
+JSONL event log is authoritative and can be replayed before its derived SQLite
+view is rebuilt at the end of a bounded research job. A co-located external
+`run.json` pins the dataset, strategy, costs, event hash, and code revision for
+each bounded run.
+
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.
 

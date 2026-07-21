@@ -21,10 +21,6 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_private_daily_collector import (
     KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
     KisPaperPrivateDailyCollectionResult,
-    mark_private_daily_collector_completed,
-    mark_private_daily_collector_network_started,
-    private_daily_collector_recovery_state,
-    reserve_private_daily_collector_attempt,
     run_bounded_kis_paper_private_daily_collection,
     write_kis_paper_private_daily_cache,
 )
@@ -135,7 +131,7 @@ def test_private_daily_collector_paces_deduplicates_and_writes_atomic_cache(tmp_
     assert manifest_hash.startswith("sha256:")
 
 
-def test_private_daily_collector_retains_explicit_incomplete_partial_cache_on_rejection(
+def test_private_daily_collector_retains_a_recoverable_first_page_when_continuation_fails(
     tmp_path: Path,
 ) -> None:
     transport = _RecordingTransport(
@@ -164,15 +160,15 @@ def test_private_daily_collector_retains_explicit_incomplete_partial_cache_on_re
     )
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    assert result.status == "rejected"
+    assert result.status == "partial"
     assert result.reason == "daily_response_rejected"
     assert result.call_counts == KisPaperMarketDataCallCounts(1, 0, 2)
     assert len(result.rows) == 2
     assert result.inter_page_delay_seconds == (2.0,)
     assert len(transport.requests) == 3
-    assert manifest["status"] == "rejected"
+    assert manifest["status"] == "partial"
     assert manifest["completed"] is False
-    assert manifest["stop_outcome"] == "daily_response_rejected"
+    assert manifest["stop_outcome"] == "partial_daily_response_rejected"
     assert manifest["files"]["raw_daily_rows"] is not None
 
 
@@ -199,62 +195,6 @@ def test_private_daily_collector_rejects_conflicting_date_without_silent_selecti
     assert result.conflicting_duplicate_rows == 1
     assert [row.xymd for row in result.rows] == ["20260224", "20260717"]
     assert len(transport.requests) == 3
-
-
-def test_private_daily_control_tracks_retention_and_blocks_replay(tmp_path: Path) -> None:
-    transport = _RecordingTransport([_token(), _daily_page([_row("20260717")], continuation="")])
-    result = run_bounded_kis_paper_private_daily_collection(
-        _client(transport),
-        code_revision="git:test",
-        observed_at=_OBSERVED_AT,
-    )
-    repo_root = tmp_path / "repo"
-    repo_root.mkdir()
-    control_root = tmp_path / "control"
-    cache_root = tmp_path / "market-data"
-
-    reserve_private_daily_collector_attempt(
-        control_root=control_root,
-        repo_root=repo_root,
-        observed_at=_OBSERVED_AT,
-    )
-    assert private_daily_collector_recovery_state(
-        control_root=control_root,
-        repo_root=repo_root,
-    ) == "reconcile"
-    mark_private_daily_collector_network_started(
-        control_root=control_root,
-        repo_root=repo_root,
-        observed_at=_OBSERVED_AT,
-    )
-    manifest_path, manifest_hash = write_kis_paper_private_daily_cache(
-        result=result,
-        cache_root=cache_root,
-        run_id="20260721T180002Z",
-        repo_root=repo_root,
-    )
-    marker = mark_private_daily_collector_completed(
-        control_root=control_root,
-        repo_root=repo_root,
-        observed_at=_OBSERVED_AT,
-        manifest_hash=manifest_hash,
-        manifest_path=manifest_path,
-        result=result,
-    )
-
-    marker_document = json.loads(marker.read_text(encoding="utf-8"))
-    assert private_daily_collector_recovery_state(
-        control_root=control_root,
-        repo_root=repo_root,
-    ) == "complete"
-    assert marker_document["raw_market_data_retained"] is True
-    assert marker_document["manifest_hash"] == manifest_hash
-    with pytest.raises(ValueError, match="already_reserved"):
-        reserve_private_daily_collector_attempt(
-            control_root=control_root,
-            repo_root=repo_root,
-            observed_at=_OBSERVED_AT,
-        )
 
 
 def test_private_daily_cache_stays_outside_git(tmp_path: Path) -> None:

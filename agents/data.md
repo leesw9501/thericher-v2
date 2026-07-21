@@ -8,21 +8,26 @@ Own the current KIS-native daily cache and its future reusable loaders.
 - Authoritative cursor/index:
   `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - Data-bearing KIS daily mappings: `QQQ/NAS`, `SPY/AMS`, `IWM/AMS`
-- Last known coverage: QQQ two chunks, SPY two chunks, IWM one chunk; 199
-  common completed sessions. Inspect the index before acting.
+- Last known clean common coverage: 694 completed sessions. QQQ has five
+  committed chunks, SPY six, and IWM three plus one validated partial chunk.
+  Inspect the index before acting.
 - Stored data is `MODP=0_unadjusted`. Treat corporate actions and adjustment
   semantics as a visible limitation, not a reason to stop collection.
 
 ## Ready Queue
 
-1. Continue one paced two-page daily backfill chunk per worker invocation.
-2. Build a strict cache loader that re-attests snapshot and manifest hashes,
-   accepts only exact overlap deduplication, rejects conflicts, and returns the
-   completed common-session intersection.
-3. Continue until three ETFs share 756 completed sessions or the endpoint has
-   a documented source exhaustion. This threshold is for daily research quality,
-   not KIS Paper permission.
-4. Design the next reusable raw-minute cache lane from observed KIS behavior;
+1. Keep IWM daily backfill stopped at its current lower boundary: a KIS page
+   contains an internally inconsistent OHLC row, so the strict all-row parser
+   rejects it. Do not retry it endlessly or silently accept the remaining rows.
+2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
+   snapshot/index/raw hashes, accept only exact overlap deduplication, reject
+   conflicts, verify cursor seams, and return the completed common-session
+   intersection.
+3. Treat 694 sessions as the active daily research input. The former 756 target
+   is source-limited and was never KIS Paper permission.
+4. Seek a different official KIS historical endpoint only when it can avoid the
+   documented IWM row-quality issue without source mixing or hidden repair.
+5. Design the next reusable raw-minute cache lane from observed KIS behavior;
    do not resurrect terminal metadata-only probes.
 
 ## Authority And Boundaries
@@ -43,6 +48,8 @@ that would cross the 15% floor.
   approval, capital, or model gate.
 - A raw-retention field records what was actually stored for one result. It is
   not a collection permission switch.
+- A hash-attested partial chunk may advance only after a fully validated first
+  page; a wholly invalid page never advances its cursor.
 
 ## Recovery
 

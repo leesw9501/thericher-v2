@@ -2,13 +2,16 @@
 
 ## Objective
 
-Turn `kis-paper-private-daily-backfill-v1` into the first usable KIS-native
-daily research input for `QQQ`, `SPY`, and `IWM`.
+Freeze the first honest KIS-native daily comparative-validation contract from
+the available `QQQ`/`SPY`/`IWM` panel and run its CPU baseline without treating
+data quantity as a permission gate.
 
-The lane has begun with retained, hash-verified two-page chunks for
-`QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`. Continue the bounded private backfill and
-build the smallest deterministic daily local-paper baseline that consumes only
-the resulting KIS cache once the three symbols share enough completed sessions.
+The hash-attested panel has 694 common completed `MODP=0_unadjusted` sessions.
+It is the current clean common range. KIS IWM backfill beyond its current lower
+bound is source-limited: a page with one internally inconsistent OHLC row made
+the strictly parsed page unusable. Do not coerce its other rows into the panel
+or repeatedly call the same bad page. This limits historical coverage, not KIS
+Paper, local-paper, or research authority.
 
 `KIS_PAPER_*` market/account/order calls, paper submission, and goal-owned
 scheduling are standing-authorized. `KIS_LIVE_*` and real-money routes remain
@@ -19,77 +22,72 @@ unavailable.
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`,
    `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
-3. Inspect the private daily backfill index and recent manifests without
-   printing raw rows, credentials, or account values.
-4. Ask Claude for a concise falsification-first review before freezing a daily
-   research split, opening any holdout, or claiming a result beyond the naive
-   baseline. Do not send credentials, raw rows, or holdout labels.
+3. Load the private daily panel offline and record only hashes, session counts,
+   date bounds, and limitations; never print raw rows, credentials, or account
+   values.
+4. Ask Claude for a concise falsification-first review before freezing the
+   split or opening/interpreting a holdout. Do not send credentials, raw rows,
+   or holdout labels.
 
 ## Work Packages
 
 ### Data Agent
 
-- Continue `scripts/backfill_kis_paper_private_daily.py --execute` as bounded
-  worker invocations. Each invocation owns at most one two-page chunk; obey its
-  persisted shared retry timestamp rather than bypassing a KIS token rejection.
-- Keep raw snapshots, manifests, logical index, venue-attempt evidence, and
-  cursors only under `D:\market_data`. Do not create a daemon or generic
-  scheduler platform.
-- Reconcile orphan snapshots before new KIS calls. Preserve the established
-  `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS` mappings; an accepted empty response is
-  venue evidence only, not usable history.
-- Add a strict cache loader that re-attests hashes, merges only exact overlap
-  rows, rejects conflicting values, preserves `MODP=0_unadjusted`, and exposes
-  the common completed-session intersection without mixing Tiingo, Norgate,
-  Yahoo, or synthetic bars.
-- Continue until the three symbols have at least 756 common completed sessions
-  or the endpoint reaches a documented source exhaustion. Report a real source
-  limitation, not a guessed rate-limit cause.
+- Keep `data.kis_paper_daily` as the sole daily KIS consumption boundary.
+  Re-attest the index, manifests, raw hashes, cursor seams, and exact overlap
+  before exposing bars.
+- Treat 694 common sessions as the active frozen-input candidate. Retain its
+  raw-price/corporate-action limitation and the IWM historical source-quality
+  limit in the dataset contract.
+- Do not run another IWM daily backfill from the blocked lower bound until a
+  different official KIS endpoint or an evidence-backed row-quality contract
+  can retrieve it without silently excluding inconsistent OHLC data.
+- Do not substitute Tiingo, Norgate, Yahoo, or synthetic bars into this
+  KIS-native validation panel. Other sources may remain separate development
+  evidence.
 
 ### Engine Research Agent
 
-- Define the daily admission contract: at least 756 shared KIS sessions,
-  explicit raw-price/corporate-action limitation, chronological 60/20/20 split,
-  two-session purge and embargo, and a sealed holdout left unopened.
-- Once the Data contract is met, implement and run the CPU-only
-  `daily-three-etf-relative-strength-v0` baseline: 20-session raw return,
-  choose one positive-strength ETF or abstain, `t+1` entry and `t+2` exit,
-  existing local-paper costs and replayable `source: local_paper` fills.
-- Maintain breadth and depth queues, but do not start CUDA training merely to
-  occupy the GPU. A GPU candidate needs the frozen dataset, baseline result,
-  campaign contract, and a distinct falsifiable hypothesis.
+- After Claude's split review, freeze a chronological 60/20/20 contract with
+  a two-session purge/embargo over the available 694-session panel. The final
+  holdout stays unopened while thresholds or alternatives are selected.
+- Run the deterministic daily relative-strength reference and a naive
+  cash/always-invested comparator through replayable local paper on the
+  appropriate pre-holdout partitions. Persist each run's `run.json`, event
+  hash, data hash, costs, and code revision under `D:\thericher-v2\model-artifacts`.
+- State only comparative observations with their limitations. Do not claim
+  profitability or start CUDA simply to occupy the GPU.
+- Update breadth, depth, ensemble, and replication queues based on the frozen
+  baseline. A GPU candidate still needs a distinct falsifiable hypothesis and
+  an eligible campaign contract.
 
 ### Execution Agent
 
-- Keep the daily baseline broker-free by default and translate eligible
-  deterministic decisions to local-paper intents/fills.
-- In parallel, prepare the smallest KIS Paper order-transport contract and
-  paper-host-only route test. Paper submit/modify/cancel is authorized; do not
-  issue a KIS order solely to satisfy this data objective.
-- Preserve local-paper replay, event provenance, and PnL attribution so KIS
-  Paper execution can reuse deterministic evidence when its adapter is ready.
+- Keep daily validation broker-free: decisions become `OrderIntent`s only for
+  the local-paper simulator and all fills remain `source: local_paper`.
+- Preserve the prepared next order-transport slice: KIS Paper US buy-only,
+  fixed paper host, durable idempotent intent, and `inquire-ccnl` recovery.
+  The unresolved US sell TR-ID contradiction remains out of scope until an
+  official source resolves it.
 
 ### Validation
 
-- Test cache/hash re-attestation, cursor continuation, cross-chunk exact
-  deduplication, conflict rejection, source exhaustion, shared token pacing,
-  and no Git/secret/live access.
-- Independently validate the daily research split and local-paper replay before
-  any model or GPU promotion claim.
+- Independently check temporal split disjointness, purge/embargo, source-only
+  panel identity, local-paper replay, and the run-manifest/event-hash link.
+- Validate that the source-limited IWM boundary cannot be silently filled or
+  converted into a permission/approval gate.
 
 ## Operating Boundaries
 
-- There is no paper-capital, profitability, dashboard, report, trade-count, or
-  per-call approval gate.
+- There is no paper-capital, profitability, dashboard, report, trade-count,
+  756-session, or per-call approval gate. The former 756-session target is a
+  data-quality preference; the documented source limit permits validation now.
 - Private KIS raw-data retention on `D:` and goal-owned KIS Paper schedules are
-  authorized. Retention metadata must state the actual result, never act as a
-  permission switch.
+  authorized. Retention metadata is factual, never a permission switch.
 - Do not read `KIS_LIVE_*`, call a live route, expose secrets, publish KIS
   data, or store raw market data/model artifacts in Git.
 - Keep model artifacts under `D:\thericher-v2\model-artifacts` or
   `/app/model_artifacts` in Docker.
-- Keep raw-minute collection separate. Daily data may support the daily
-  baseline, but it does not validate intraday `1m`/`5m`/`10m`/`1h`/`3h` inputs.
 
 ## Verification
 
@@ -97,8 +95,9 @@ unavailable.
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
+docker compose config --quiet
 ```
 
 ## Suggested Commit Message
 
-`Build KIS daily research input`
+`Freeze KIS daily validation contract`

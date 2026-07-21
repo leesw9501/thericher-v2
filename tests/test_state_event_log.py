@@ -59,3 +59,35 @@ def test_event_store_replays_positions_and_decisions(tmp_path) -> None:
             "select quantity from positions where market='US' and symbol='AAPL'"
         ).fetchone()[0]
     assert quantity == "1.5"
+
+
+def test_event_store_can_defer_sqlite_rebuild_for_bounded_batch_work(tmp_path) -> None:
+    store = EventStore(
+        tmp_path / "state.sqlite",
+        tmp_path / "events.jsonl",
+        rebuild_sqlite_on_append=False,
+    )
+    store.append(
+        Event(
+            event_type="fill",
+            created_at=datetime(2026, 1, 2, 14, 36, tzinfo=UTC),
+            payload={
+                "market": "US",
+                "symbol": "AAPL",
+                "side": "buy",
+                "quantity": "2",
+                "price": "100",
+            },
+        )
+    )
+
+    assert store.replay().positions[("US", "AAPL")] == Decimal("2")
+    assert not (tmp_path / "state.sqlite").exists()
+
+    store.rebuild_sqlite()
+
+    with sqlite3.connect(tmp_path / "state.sqlite") as conn:
+        quantity = conn.execute(
+            "select quantity from positions where market='US' and symbol='AAPL'"
+        ).fetchone()[0]
+    assert quantity == "2"

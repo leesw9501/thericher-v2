@@ -51,6 +51,7 @@ _TARGETS = (
     ("IWM", "AMS", "pending_bounded_kis_response"),
 )
 _TARGET_STATES = frozenset({"ready", "deferred", "complete"})
+_USABLE_CHUNK_OUTCOMES = frozenset({"committed", "partial", "complete"})
 
 
 @dataclass(frozen=True)
@@ -257,7 +258,7 @@ def inspect_kis_paper_private_daily_backfill_snapshot(
         or context.get("logical_cursor_persisted") is not True
         or not _is_date(input_cursor)
         or (output_cursor is not None and not _is_date(output_cursor))
-        or manifest.get("status") not in {"completed", "rejected"}
+        or manifest.get("status") not in {"completed", "partial", "rejected"}
     ):
         raise ValueError("private daily backfill manifest is invalid")
     row_fingerprints, raw_hash, raw_retained = _read_raw_snapshot_rows(
@@ -292,7 +293,7 @@ def _reverify_committed_snapshots(
 
     for target in _targets(index):
         for chunk in target["chunks"]:
-            if chunk["outcome"] not in {"committed", "complete"}:
+            if chunk["outcome"] not in _USABLE_CHUNK_OUTCOMES:
                 continue
             snapshot = inspect_kis_paper_private_daily_backfill_snapshot(
                 manifest_path=Path(str(chunk["manifest_path"])),
@@ -349,7 +350,7 @@ def _select_ready_target(
     index: Mapping[str, object],
     observed_at: datetime,
 ) -> dict[str, object] | None:
-    ready: list[tuple[int, int, dict[str, object]]] = []
+    ready: list[tuple[str, int, int, dict[str, object]]] = []
     for position, target in enumerate(_targets(index)):
         retry_not_before = target["retry_not_before_utc"]
         retry_is_ready = (
@@ -357,8 +358,13 @@ def _select_ready_target(
             or _parse_utc(str(retry_not_before)) <= observed_at
         )
         if target["state"] in {"ready", "deferred"} and retry_is_ready:
-            ready.append((len(target["chunks"]), position, target))
-    return min(ready, default=None, key=lambda item: (item[0], item[1]))[2] if ready else None
+            # The newest cursor has the least historical coverage and limits the shared panel.
+            ready.append((str(target["next_anchor_date"]), len(target["chunks"]), position, target))
+    return (
+        max(ready, default=None, key=lambda item: (item[0], -item[1], -item[2]))[3]
+        if ready
+        else None
+    )
 
 
 def _recover_orphan_snapshot(
@@ -418,7 +424,7 @@ def _commit_snapshot(
     prior_fingerprints = {
         date: fingerprint
         for chunk in target["chunks"]
-        if chunk["outcome"] in {"committed", "complete"}
+        if chunk["outcome"] in _USABLE_CHUNK_OUTCOMES
         for date, fingerprint in chunk["row_fingerprints"].items()
     }
     row_fingerprints = dict(snapshot["row_fingerprints"])
@@ -434,7 +440,7 @@ def _commit_snapshot(
     )
     result_status = str(snapshot["status"])
     output_cursor = snapshot["output_cursor_date"]
-    outcome: Literal["committed", "deferred", "complete", "conflict"]
+    outcome: Literal["committed", "partial", "deferred", "complete", "conflict"]
     status: Literal["collected", "recovered", "deferred", "complete"]
     reason: str | None = None
     if conflicts:
@@ -477,6 +483,15 @@ def _commit_snapshot(
         target["state"] = "deferred"
         target["retry_not_before_utc"] = _deferred_until(observed_at)
         target["last_reason"] = reason
+    elif result_status == "partial":
+        outcome = "partial"
+        status = "recovered" if recovered else "collected"
+        reason = str(snapshot["stop_outcome"])
+        target["state"] = "ready"
+        target["next_anchor_date"] = output_cursor
+        target["retry_not_before_utc"] = None
+        target["last_reason"] = reason
+        target["venue_status"] = "verified_by_kis_response"
     else:
         outcome = "committed"
         status = "recovered" if recovered else "collected"
@@ -486,7 +501,7 @@ def _commit_snapshot(
         target["last_reason"] = None
         target["venue_status"] = "verified_by_kis_response"
 
-    if result_status == "completed" and not recovered:
+    if result_status in {"completed", "partial"} and not recovered:
         index["network_retry_not_before_utc"] = _format_utc(
             observed_at + KIS_PAPER_PRIVATE_DAILY_BACKFILL_MIN_CHUNK_INTERVAL
         )
@@ -526,7 +541,7 @@ def _commit_snapshot(
 
 
 def _output_cursor_for_result(result: KisPaperPrivateDailyCollectionResult) -> str | None:
-    if result.status != "observed" or not result.rows:
+    if result.status not in {"observed", "partial"} or not result.rows:
         return None
     return result.rows[0].xymd
 
@@ -719,7 +734,8 @@ def _validate_chunk(chunk: object, *, target_key: str) -> None:
     if (
         chunk.get("chunk_key")
         != _chunk_key(target_key=target_key, input_cursor_date=str(chunk.get("input_cursor_date")))
-        or chunk.get("outcome") not in {"committed", "deferred", "complete", "conflict"}
+        or chunk.get("outcome")
+        not in _USABLE_CHUNK_OUTCOMES | {"deferred", "conflict"}
         or not _is_date(chunk.get("input_cursor_date"))
         or (
             chunk.get("output_cursor_date") is not None
@@ -752,6 +768,23 @@ def _validate_chunk(chunk: object, *, target_key: str) -> None:
             or not fingerprint.startswith("sha256:")
         ):
             raise ValueError("private daily backfill index is invalid")
+    outcome = str(chunk["outcome"])
+    output_cursor = chunk["output_cursor_date"]
+    if outcome in _USABLE_CHUNK_OUTCOMES and (
+        output_cursor is None
+        or chunk["raw_market_data_retained"] is not True
+        or chunk["row_count"] <= 0
+    ):
+        raise ValueError("private daily backfill usable chunk is invalid")
+    if outcome in {"committed", "partial"} and output_cursor >= chunk["input_cursor_date"]:
+        raise ValueError("private daily backfill usable chunk is invalid")
+    if outcome == "complete" and output_cursor > chunk["input_cursor_date"]:
+        raise ValueError("private daily backfill usable chunk is invalid")
+    if outcome == "partial" and (
+        not isinstance(chunk.get("reason"), str)
+        or not str(chunk["reason"]).startswith("partial_")
+    ):
+        raise ValueError("private daily partial chunk is invalid")
 
 
 def _targets(index: Mapping[str, object]) -> list[dict[str, object]]:

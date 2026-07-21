@@ -40,6 +40,15 @@ from .kis_capability import (
     KisStorageRightsStatus,
     observed_kis_paper_capabilities,
 )
+from .kis_paper_daily import (
+    KIS_PAPER_PRIVATE_DAILY_ADJUSTMENT_MODE,
+    KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT,
+    KIS_PAPER_PRIVATE_DAILY_CATALOG_ID,
+    KIS_PAPER_PRIVATE_DAILY_CATALOG_VERSION,
+    KIS_PAPER_PRIVATE_DAILY_TARGET_KEYS,
+    KisPaperPrivateDailyCatalog,
+    load_kis_paper_private_daily_catalog,
+)
 from .local import (
     CSV_FIELDS,
     CatalogedBars,
@@ -87,8 +96,14 @@ __all__ = [
     "KisCapabilityQualification",
     "KisCapabilityState",
     "KisMarketDataCapability",
+    "KisPaperPrivateDailyCatalog",
     "KisStorageRightsStatus",
     "MarketDataProvider",
+    "KIS_PAPER_PRIVATE_DAILY_ADJUSTMENT_MODE",
+    "KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT",
+    "KIS_PAPER_PRIVATE_DAILY_CATALOG_ID",
+    "KIS_PAPER_PRIVATE_DAILY_CATALOG_VERSION",
+    "KIS_PAPER_PRIVATE_DAILY_TARGET_KEYS",
     "NorgateRawDailyBarProvider",
     "NorgateUnavailableError",
     "SUPPORTED_RESAMPLE_TIMEFRAMES",
@@ -106,6 +121,7 @@ __all__ = [
     "inspect_ohlcv_file",
     "load_broad_daily_development_universe",
     "load_cataloged_yahoo_intraday_1m_bars",
+    "load_kis_paper_private_daily_catalog",
     "load_cataloged_yahoo_daily_1d_bars",
     "load_cataloged_corporate_actions",
     "load_fixed_etf_daily_factor_change_dates",
