@@ -31,5 +31,7 @@ storage, Claude challenge, KIS paper, and recovery policies in AGENTS.md.
 `KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
 and goal-owned schedules are already approved by policy. Do not read or call
 `KIS_LIVE_*`, enable real-money behavior, spend money, or expose a public
-service without separate operator approval.
+service without separate operator approval. A historical
+`raw_market_data_retained: false` result is evidence about that snapshot only,
+never a reason to hold a later correctly scoped KIS Paper job.
 ```

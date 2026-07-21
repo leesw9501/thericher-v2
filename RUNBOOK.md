@@ -66,7 +66,9 @@ workers concurrently against the same index.
 
 Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is
-never a permission switch.
+never a permission switch. A historical `false` is not a consent hold: once a
+fresh correctly scoped collection is due after normal recovery or pacing, run
+it rather than asking for approval or treating the old observation as a latch.
 
 Historical one-shot artifacts are non-authoritative. Their completion or
 retention value must never reserve, disable, or require approval for a later

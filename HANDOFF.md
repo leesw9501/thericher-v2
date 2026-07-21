@@ -152,7 +152,9 @@ There is no reusable one-shot reservation or a fixed raw-retention marker in
 the active path: current collectors record whether raw data was actually
 written, and cache collection is allowed by default. A historical marker can
 never disable a new correctly scoped KIS Paper data, account, order, or
-scheduler job.
+scheduler job. In particular, `raw_market_data_retained: false` means only
+that the old snapshot has no raw bytes; it is not a consent hold and a later
+due collection proceeds normally.
 
 ## Recovery
 

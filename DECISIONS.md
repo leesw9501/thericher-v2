@@ -3495,3 +3495,28 @@ open or permit a false-clean outcome. The fixes are local to the narrow canary
 and add no scheduler, report family, paper-capital gate, or live route. Claude
 CLI was asked for a short falsification check but did not return before its
 bounded timeout, so no conclusion relies on that absent verdict.
+
+## 2026-07-22 - Default-progress KIS Paper authority and retention evidence
+
+Decision: all private `KIS_PAPER_*` data, account, order, reconciliation,
+routine sizing, raw-retention, and goal-owned schedule work proceeds under
+standing authority. `KIS_LIVE_*`, live routes, and real-money behavior remain
+unavailable. A historical `raw_market_data_retained: false` result records only
+that its own snapshot did not retain raw bytes. It cannot reserve an endpoint,
+disable a later correctly scoped job, create an operator question, or turn a
+normal retry into a hold.
+
+The collector and offline loader retain their separate data-integrity checks:
+an absent raw file is not usable research input, and a hash/field mismatch is
+reconciled rather than silently accepted. Those checks describe data truth and
+broker recovery; they are not paper-development approval gates.
+
+Claude's falsification-first verdict was `supported-with-limits`: static
+inspection found no active source path that reads historical reservation files
+or uses a false retention value to suppress a new KIS Paper call. The remaining
+uses are per-snapshot provenance and data-integrity checks, which stay intact.
+
+Reason: earlier one-shot probe artifacts made a factual storage field appear
+like ongoing authority. The project should progress by default inside private
+paper authority while retaining only the technical checks needed to distinguish
+a stored snapshot from missing or corrupted data.

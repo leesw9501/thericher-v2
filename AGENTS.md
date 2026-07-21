@@ -281,6 +281,11 @@ as a permission mechanism. Historical run markers are evidence only. A failed,
 empty, cancelled, or unretained private-paper job affects recovery of that job;
 it never disables a later correctly scoped KIS Paper job or schedule.
 
+Default to the next due, correctly scoped KIS Paper action. In particular, a
+historical `raw_market_data_retained: false` result means only that its own
+snapshot has no bytes to consume. It is never a consent hold, an operator
+question, or a reason to skip a later normal collection retry.
+
 ## Agent Memory And Recovery
 
 Each durable lane has logical views of:

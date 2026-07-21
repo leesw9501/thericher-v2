@@ -225,6 +225,57 @@ def test_empty_daily_response_is_deferred_without_marking_venue_complete(tmp_pat
     assert qqq["chunks"][-1]["raw_market_data_retained"] is False
 
 
+def test_unretained_empty_snapshot_is_not_a_one_shot_latch(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data"
+    empty_transport = _RecordingTransport([_token(), _daily_page([], continuation="")])
+
+    first = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(empty_transport),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+
+    assert first.status == "deferred"
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    for target in index["targets"][1:]:
+        target["state"] = "complete"
+    daily_backfill._write_backfill_index(
+        root=daily_backfill._backfill_root(cache_root=cache_root, repo_root=repo_root),
+        index=index,
+    )
+    retry_transport = _RecordingTransport(
+        [_token(), _daily_page([_row("20260717")], continuation="")]
+    )
+    second = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(retry_transport),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT + timedelta(minutes=3),
+    )
+
+    assert second.status == "complete"
+    assert second.target_key == "QQQ/NAS/MODP=0"
+    assert [
+        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL)
+        for request in retry_transport.requests
+    ] == [KIS_PAPER_TOKEN_PATH, KIS_PAPER_DAILY_PATH]
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    qqq = index["targets"][0]
+    assert qqq["state"] == "complete"
+    assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
+
+
 def test_backfill_prioritizes_the_target_with_the_shortest_history() -> None:
     index = daily_backfill._initial_index()
     targets = index["targets"]
