@@ -111,6 +111,12 @@ unknown-outcome checks. An unavailable bridge artifact may retain only its
 allowlisted endpoint, transaction ID, and HTTP status for recovery; never a
 broker message body or free-form response text.
 
+The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
+on 2026-07-21 UTC after a successful image rebuild. It sent no order. HTTP
+status alone is insufficient to identify the virtual endpoint cause, so the
+next narrow recovery may add a strictly validated KIS `msg_cd` code while still
+excluding `msg1` and every other raw response field.
+
 ## KIS Paper Order Work
 
 Paper order submission is authorized as soon as the Execution adapter exists.

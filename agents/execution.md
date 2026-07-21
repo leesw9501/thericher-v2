@@ -23,12 +23,14 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   before account data or submit. The latest bounded console-bridge invocation
   reached the account route and returned `balance_rejected`; it created no order
   and the existing canary remains `intent_recorded` with no broker order
-  reference. Its output and artifact still used the old `safe_to_submit` shape,
-  proving that `docker compose run` used a stale pre-`2a58c87` image; it could
-  not exercise the new endpoint/transaction/HTTP diagnostic projection. Four
-  paper variables were present in the container with expected non-secret
-  lengths; no live variable was read. Rebuild `kis-readonly` before the next
-  one-call bridge objective. Treat this as KIS virtual runtime recovery, not a
+  reference. A rebuilt current image then repeated `balance_rejected` at
+  `balance` / `VTTS3012R` with HTTP 500. It emitted the current `read_only` /
+  `account_snapshot_complete` shape and the sanitized endpoint/transaction/HTTP
+  diagnostic, so the runtime is now current. Four paper variables were present
+  in the container with expected non-secret lengths; no live variable was read.
+  The next bounded recovery should allow only a strictly validated KIS `msg_cd`
+  to distinguish this opaque virtual endpoint failure; never persist `msg1` or
+  a raw response body. Treat this as KIS virtual integration recovery, not a
   paper authority gate.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
@@ -39,11 +41,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Rebuild `kis-readonly`, obtain one fresh current-image account/open-order
-   reconciliation, then reconcile the persisted canary run and run the first
-   acknowledged/cancelled bounded paper canary. A failed bridge diagnoses its
-   own KIS route while Data and Research continue; it does not reopen an
-   approval question.
+2. Add an allowlisted upstream failure-code projection, rebuild `kis-readonly`,
+   and obtain one fresh current-image account/open-order reconciliation. Then
+   reconcile the persisted canary run and run the first acknowledged/cancelled
+   bounded paper canary. A failed bridge diagnoses its own KIS route while Data
+   and Research continue; it does not reopen an approval question.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing

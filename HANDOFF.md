@@ -169,14 +169,16 @@ runtime. The dashboard cannot transmit orders or receive KIS credentials.
 
 The first virtual-token attempt on 2026-07-21 returned `auth_rejected` from
 the KIS token boundary. The latest bounded read-only console bridge reached the
-account route and returned `balance_rejected`; it sent no order. Its sanitized
-artifact at `20260721T215801376799Z-unavailable.json` still used the old
-`safe_to_submit` field, proving the Compose invocation used a stale pre-
-`2a58c87` image and could not emit the new endpoint/transaction/HTTP diagnostic.
-The existing canary remains `intent_recorded` with no broker order reference or
-submit evidence. Rebuild `kis-readonly` before the next one-call bridge run.
-This is a runtime recovery fact, not a paper-capital, research, or one-shot
-policy gate. The safe evidence is under
+account route and returned `balance_rejected`; it sent no order. The first
+post-`2a58c87` run had used a stale image, but the rebuilt current image wrote
+`20260721T220628222486Z-unavailable.json` with the expected `read_only` output
+shape and a safe diagnostic: `balance`, `VTTS3012R`, HTTP `500`. The existing
+canary remains `intent_recorded` with no broker order reference or submit
+evidence. HTTP status does not identify the KIS virtual endpoint cause, so the
+next goal may add only a strictly validated `msg_cd` to that diagnostic; it must
+continue to exclude `msg1`, broker bodies, account identifiers, and secrets.
+This is an integration recovery fact, not a paper-capital, research, or
+one-shot policy gate. The safe evidence is under
 `D:\thericher-v2\model-artifacts\execution`; never inspect or copy private
 recovery state into Git.
 
@@ -210,12 +212,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: rebuild the
-current `kis-readonly` image, then run one fresh sanitized KIS virtual-paper
-bridge with its endpoint/transaction/HTTP diagnostic projection and classify
-the account route as `complete` or `reconcile`. This is not a prerequisite
-approval for paper work; it is the next technical recovery fact for the
-existing canary. At each boundary, review the data contract, execution route
-readiness, research queues, GPU eligibility, disk capacity, and role ownership;
-make reversible no-cost changes autonomously and escalate only a real remaining
-operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add an allowlisted
+KIS virtual failure-code projection, rebuild `kis-readonly`, then run one fresh
+sanitized bridge to distinguish the current HTTP-500 recovery fact without
+retaining a response body. This is not a prerequisite approval for paper work;
+it is the next technical recovery fact for the existing canary. At each
+boundary, review the data contract, execution route readiness, research queues,
+GPU eligibility, disk capacity, and role ownership; make reversible no-cost
+changes autonomously and escalate only a real remaining operator boundary.
