@@ -2,93 +2,90 @@
 
 ## Objective
 
-Build a quote-derived KIS Paper canary and a small recurring regular-session
-execution path. Keep private virtual-paper learning moving without one-shot,
-per-call, capital-envelope, or per-goal approval latches.
+Build the first reusable KIS-native intraday cache for Paper decision inputs,
+starting with SPY and QQQ, while preserving the scheduled quote-derived KIS
+Paper session as an independent execution-learning loop.
 
-The prior durable canary intents `canary-20260721T225034Z`,
-`canary-20260721T232137Z`, and `canary-20260721T233837Z` remain immutable
-recovery evidence. Do not reuse or mutate those exact intents. That restriction
-prevents duplicate side effects for those intents only; it is never a quota or
-block on a distinct new KIS Paper intent, due Paper schedule, Data work, or
-Engine Research work.
+The intended consumer path is honest `Bar` data at 1m with deterministic 5m,
+10m, 1h, and 3h resampling. It is a data and execution-foundation objective,
+not a profitability, GPU-utilization, or strategy-promotion claim.
 
-All private `KIS_PAPER_*` credential reads, data/account/order calls,
-submit/modify/cancel, routine sizing, raw-data retention, and recurring
-goal-owned schedules are authorized. `KIS_LIVE_*`, live hosts/routes, and
-real-money behavior remain forbidden. Do not print or commit secrets, account
-identifiers, raw quote/broker bodies, private intent state, or raw order IDs.
+## Standing Authority And Boundaries
+
+- All private `KIS_PAPER_*` market-data, account, order, cancel, modify,
+  reconciliation, raw-retention, and goal-owned schedule work is authorized.
+- Store newly retained KIS market data only under `D:\market_data`; generated
+  artifacts stay under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`. Never store either in Git.
+- Do not print or commit credentials, account identifiers, raw quote/broker
+  bodies, raw order identifiers, or private intent state.
+- Do not read `KIS_LIVE_*`, call a live host/route, use real capital, buy data,
+  or expose a public service.
+- A historical `raw_market_data_retained: false` field and preserved unknown
+  canary state are evidence about their own records only. Neither restricts a
+  later correctly scoped KIS Paper data or session action.
 
 ## Required First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and active
-   stateboards in `agents/`.
-3. Read before edits or an execution schedule:
-   - `src/thericher_v2/execution/kis_paper_canary.py`
-   - `src/thericher_v2/execution/kis_readonly.py`
-   - `src/thericher_v2/execution/paper_canary_runtime.py`
-   - `tests/test_kis_paper_canary.py`
-   - `docker-compose.yml`
-4. Recheck the official KIS sample for the virtual US buy route and overseas
-   quote endpoint. Do not copy its credential/configuration layer.
-5. Ask Claude for one concise falsification-first drift check before the first
-   recurring scheduled submit path is enabled. State that quote data remains
-   transient/private, Paper-only routing and cancellation behavior are unchanged,
-   prior run IDs remain untouched, and an ambiguous intent is never resubmitted.
-   Do not send credentials, account data, raw KIS output, private state, or
-   order IDs.
+2. Read `HANDOFF.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, and
+   `RUNBOOK.md`.
+3. Read the active stateboards:
+   - `agents/data.md`
+   - `agents/engine-research.md`
+   - `agents/execution.md`
+4. Read the current KIS daily/backfill and `Bar` consumption contracts before
+   changing the intraday provider or resampling surface.
+5. Ask Claude for a concise falsification-first drift check before changing the
+   provider contract, point-in-time/timestamp semantics, or cache architecture.
+   Do not send credentials, raw broker output, or private data rows.
 
-## Required Work
+## Role-Owned Work
+
+### Data Agent
+
+1. Inventory the existing KIS Paper raw-minute code and narrow official KIS
+   minute-history surface for SPY and QQQ. Use bounded real Paper requests when
+   they answer an implementation question; record only endpoint capability,
+   timestamp/session semantics, pagination facts, counts, and closed failures.
+2. Replace terminal one-shot behavior with a small resumable cache contract:
+   provider identity, raw-byte storage, manifest/index, hashes, cursor, exact
+   deduplication, recovery, and a canonical `Bar` loader. Preserve source
+   limitations rather than repairing rows silently.
+3. Add deterministic 1m-to-5m/10m/1h/3h resampling from the canonical cache.
+   Keep the session/timezone rule explicit and avoid mixing Tiingo/Norgate data
+   into a KIS runtime window. Establish holiday and early-close semantics from
+   source evidence before calling the weekday execution time window a full
+   exchange calendar.
+4. Add focused tests for no Git writes, raw-retention outside the repo, cursor
+   recovery, duplicate/conflict behavior, timestamp ordering, and resampling.
 
 ### Execution Agent
 
-1. Add one allowlisted virtual KIS quote request for `SPY` using the official
-   overseas-price route, `HHDFS00000300`, `EXCD=NAS`, and `SYMB=SPY`. Parse only
-   positive `last` and valid `zdiv`; keep quote values out of runtime, evidence,
-   Git, and console output.
-2. Derive an explicit whole-share buy-limit price from the transient quote with
-   deterministic decimal rounding and a documented nonmarket discount. Persist
-   only the existing private intent; public projections keep the price redacted.
-   Invalid or unavailable quotes must create a safe no-submit outcome.
-3. Add a narrowly owned recurring KIS Paper session worker or local automation,
-   not a generic agent platform. It may create distinct fresh intents during
-   eligible US regular sessions without operator approval. It must retain
-   paper-only routing, source pacing, bounded concurrency, durable intent state,
-   reconciliation for an ambiguous matching intent, and sanitized external
-   evidence. Session/cadence behavior is an implementation choice, not a
-   one-shot reservation or numerical trade quota.
-4. Add focused tests for virtual-only quote validation, deterministic price
-   rounding, raw-quote suppression, repeated due-session behavior, concurrency,
-   and preservation/recovery of prior unknown intents. Keep the no-order-route
-   recovery proof.
-5. Run focused tests, Claude's check, and rebuild `kis-paper-canary`. Exercise
-   the resulting due-session path when it becomes eligible. Do not artificially
-   stop after one independent Paper run; continue within the worker's technical
-   contract while the company objective remains active.
-6. Record only phase, closed reason, optional validated KIS code, reconciliation
-   counts/status, schedule outcome, and external artifact path. An ambiguous
-   run is reconciled before replacement of that run; a later distinct intent may
-   continue without an operator question.
+1. Keep `thericher-kis-paper-quote-session` active. Read and integrate only its
+   sanitized external outcome after the next eligible due invocation; do not
+   re-run or mutate an ambiguous existing intent.
+2. Fix only a concrete virtual-route, safe-projection, pacing, or reconciliation
+   defect revealed by that outcome. A closed Paper failure is evidence, not an
+   approval hold or a reason to stop fresh distinct Paper work.
 
-### Data And Research
+### Engine Research Agent
 
-- Keep collection and eligible research work independent of the execution path.
-- `raw_market_data_retained: false` is historical provenance only. It never
-  suppresses a correctly scoped later collection. Preserve local simulation
-  fills as `source: local_paper`.
-- Replace stale "operator-approved GPU backend" diagnostics with factual
-  compatible-backend availability diagnostics; PyTorch CUDA research remains
-  authorized when an eligible campaign contract and compatible runtime exist.
+1. Define the first intraday campaign input contract from the actual cache:
+   feature windows, target timestamp, session exclusion behavior, cost model,
+   and naive baseline. Do not claim a candidate is eligible until the cache is
+   sufficiently verified.
+2. Keep breadth, depth, ensemble, and replication queues current. Start GPU
+   work only when a frozen eligible campaign contract exists; use the research
+   Docker image and external artifact root.
 
 ## Completion Evidence
 
-- Focused quote, rounding, safe-projection, recurring-session, and recovery
-  regression proof.
-- A verified recurring Paper job or automation recorded outside Git, plus its
-  first due-session outcome when the market/session is eligible.
-- No KIS Live access, raw quote/broker body, credential, account identifier, or
-  raw order identifier in Git, logs, dashboard, or artifact.
+- A verified, resume-capable KIS-native SPY/QQQ intraday cache boundary with
+  canonical 1m `Bar` consumption and deterministic higher-timeframe resampling.
+- The first scheduled due-session KIS Paper outcome, or a specific safe failure
+  that identifies the next virtual-route repair.
+- No KIS Live access and no raw/secret/private data in Git or public output.
 
 ## Verification
 
@@ -101,4 +98,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add recurring quote-derived KIS paper canary`
+`Add KIS native intraday cache foundation`

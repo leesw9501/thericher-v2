@@ -49,6 +49,11 @@ and execution implementation continue in parallel. Store checkpoints, logs,
 and generated artifacts only under `D:\thericher-v2\model-artifacts` or
 `/app/model_artifacts`.
 
+Runtime checked 2026-07-22: `thericher-v2-research:latest` exposes one RTX 4090
+to PyTorch `2.7.0+cu128` (CUDA 12.8, cuDNN 90701). The host `uv` environment has
+no `torch`, so an eligible GPU campaign uses the research container until a host
+runtime is intentionally added.
+
 ## Durable Knowledge
 
 - Daily raw-price data has an explicit corporate-action limitation.

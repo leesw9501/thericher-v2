@@ -83,6 +83,10 @@ that would cross the 15% floor.
   page; a wholly invalid page never advances its cursor.
 - KIS execution canary evidence and KIS market-data cache bytes are separate:
   a canary does not duplicate raw broker payloads into `D:\market_data`.
+- The existing Tiingo IEX 5m SPY/QQQ/IWM snapshot covers 129 sessions but is
+  descriptive replay evidence only. Its manifest prohibits training, campaign,
+  paper-trading, and ranking use, so it must not become an intraday signal
+  input; build the KIS-native minute cache for that loop instead.
 
 ## Recovery
 
@@ -92,6 +96,7 @@ as `reconcile`; do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
-Hand the loader's dataset identity, shared-session count, raw-price limitation,
-and exact date range to Engine Research. Report only a concrete missing data
-source or storage constraint that needs operator action.
+Build the KIS-native minute-cache contract from observed Paper behavior, then
+hand its provider identity, timestamps, session coverage, raw-price limitation,
+and exact date range to Engine Research. Report only a concrete source-rights or
+storage constraint that needs operator action.

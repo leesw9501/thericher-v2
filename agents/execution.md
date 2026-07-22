@@ -53,15 +53,26 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   resumes cancellation on restart. Non-200 or non-success submit results and
   any matching completion record after cancellation remain `outcome_unknown`,
   never a replacement-submit or falsely clean path.
+- `kis-paper-session` now fetches one transient virtual SPY quote, derives a
+  one-share 25 bps-below-last nonmarket limit at the reported decimal scale,
+  and invokes the canary without exposing the quote or price. It accepts only a
+  KIS-success quote and rechecks both the limit validity and the weekday ET time
+  window immediately before submit. The scoped local automation
+  `thericher-kis-paper-quote-session` invokes it on weekday KST 23:35; that time
+  is inside the worker's time window in both daylight and standard time. Its
+  2026-07-22 off-session Docker exercise produced only the safe `not_due` /
+  `outside_regular_session` outcome. Holiday and early-close semantics are not
+  yet asserted by this time-window helper; validate them from KIS-native data
+  evidence rather than treating them as a Paper authority gate.
 
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Add a narrow KIS quote-derived canary input and regular-session recurring
-   run path. Distinct virtual canaries may continue after focused transport,
-   recovery, quote, and safe-projection proof; a preserved unknown run remains
-   immutable and blocks only replacement of its own intent, never Paper cadence
-   or a separate new intent.
+2. Integrate the first due `kis-paper-session` outcome when the scoped schedule
+   reaches an eligible US session. Distinct virtual canaries may continue after
+   focused transport, recovery, quote, and safe-projection proof; a preserved
+   unknown run remains immutable and blocks only replacement of its own intent,
+   never Paper cadence or a separate new intent.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing

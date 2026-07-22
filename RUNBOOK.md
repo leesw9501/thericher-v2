@@ -161,17 +161,24 @@ order by itself.
 
 ## KIS Virtual-Paper Canary
 
-The bounded execution-learning command is a virtual-paper US buy-limit canary
-with one whole share, a quote-derived explicit nonmarket limit, reconciliation,
-and cancellation after an accepted submission:
+The quote-derived execution-learning command is a virtual-paper US buy-limit
+canary with one whole share, a transient explicit nonmarket limit,
+reconciliation, and cancellation after an accepted submission:
 
 ```powershell
-docker compose --profile kis-paper-canary run --rm --no-deps kis-paper-canary
+docker compose --profile kis-paper-session run --rm --no-deps kis-paper-session
 ```
 
-It receives only `KIS_PAPER_*`, stores private recovery state in its dedicated
-Docker volume, writes sanitized runtime state to the shared local dashboard,
-and writes external evidence under `/app/model_artifacts`. Re-running an
+It receives only `KIS_PAPER_*`, pins every route to the virtual host, stores
+private recovery state in its dedicated Docker volume, writes sanitized runtime
+state to the shared local dashboard, and writes external evidence under
+`/app/model_artifacts`. It checks the America/New_York weekday regular-session
+time window before loading Paper configuration; outside that window it produces
+a safe no-submit result. It accepts only a KIS-success quote and rechecks both
+that time window and the limit validity immediately before submit. The helper
+does not yet claim a full holiday or early-close calendar. The local
+`thericher-kis-paper-quote-session`
+automation invokes this command once per weekday at KST 23:35. Re-running an
 existing run ID reconciles its persisted intent before any replacement submit.
 Its cancel-after-submit choice is durable, matching accepted open orders resume
 cancellation after a restart, and sibling run IDs are serialized at the private

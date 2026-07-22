@@ -511,7 +511,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert ".env" not in kis_section
 
     canary_section = compose.split("\n  kis-paper-canary:\n", maxsplit=1)[1].split(
-        "\nvolumes:\n", maxsplit=1
+        "\n  kis-paper-session:\n", maxsplit=1
     )[0]
     assert 'profiles: ["kis-paper-canary"]' in canary_section
     assert "--execute" in canary_section
@@ -519,6 +519,17 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_PAPER_APP_KEY" in canary_section
     assert "KIS_LIVE" not in canary_section
     assert "thericher-v2-paper-canary-private:/app/private" in canary_section
+
+    session_section = compose.split("\n  kis-paper-session:\n", maxsplit=1)[1].split(
+        "\nvolumes:\n", maxsplit=1
+    )[0]
+    assert 'profiles: ["kis-paper-session"]' in session_section
+    assert "thericher_v2.execution.kis_paper_session" in session_section
+    assert "--execute" in session_section
+    assert "--cancel-after-submit" in session_section
+    assert "KIS_PAPER_APP_KEY" in session_section
+    assert "KIS_LIVE" not in session_section
+    assert "thericher-v2-paper-canary-private:/app/private" in session_section
 
     assert "\n  paper-capital-proposal:\n" not in compose
 

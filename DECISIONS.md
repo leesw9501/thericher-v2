@@ -3779,3 +3779,37 @@ Reason: v1-style approval scaffolding and one-shot markers were consuming more
 development time than they protected. The private Paper system should iterate by
 default, while technical controls preserve correct attribution and prevent a
 duplicate or live side effect.
+
+## 2026-07-22 - Add a quote-derived recurring virtual-paper session
+
+Decision: add one narrow `kis-paper-session` worker and Compose profile. During
+the weekday 09:30-16:00 America/New_York time window it sends only the
+allowlisted virtual SPY quote request (`HHDFS00000300`, `NAS`, `SPY`), parses
+only a KIS-success result plus positive `last` and valid `zdiv` in memory,
+derives a one-share limit 25 bps below last with downward decimal rounding, and
+passes the existing private intent to the virtual-only canary. It rechecks both
+limit expiry and the weekday ET time window immediately before submit, then
+requests cancellation after accepted submission. Quotes, prices, credentials,
+account identifiers, raw broker data, and raw order identifiers cannot enter the
+public runtime, evidence, Git, or console boundary.
+
+The scoped external local automation `thericher-kis-paper-quote-session` runs
+the worker once per weekday at KST 23:35, which remains inside the US regular
+time window across daylight-saving changes. It replaces two paused historical
+one-shot raw-minute automations that no longer matched authority. The first
+off-session Docker exercise safely returned `not_due` / `outside_regular_session`
+and wrote only sanitized external evidence; the first due result remains a
+runtime observation for the schedule, not a new approval step.
+
+Claude's falsification-first verdict was `supported-with-limits`. It would
+reverse only if a Live variable, host, or route became reachable from the submit
+path. The implementation hard-pins the virtual host, injects only
+`KIS_PAPER_*` into the service, and tests the absence of `KIS_LIVE` from Compose.
+
+Reason: a quote-derived limit makes the Paper probe a realistic execution
+learning loop instead of another fixed-price diagnostic. A single narrowly owned
+daily worker advances Paper evidence without rebuilding a broad scheduler,
+capital-approval chain, or agent platform. Its weekday time-window helper does
+not assert a complete holiday or early-close calendar; that is a source-semantics
+question for the next KIS-native intraday data objective, not a manual approval
+gate.

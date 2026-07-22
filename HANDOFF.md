@@ -171,6 +171,21 @@ Its goal-owned `kis-paper-canary` Docker profile writes private recovery state
 to a dedicated volume and only sanitized account/canary state to the local web
 runtime. The dashboard cannot transmit orders or receive KIS credentials.
 
+The new `kis-paper-session` profile first fetches an allowlisted transient SPY
+quote from the virtual host, derives a one-share nonmarket limit 25 bps below
+that quote at KIS's reported decimal precision, and passes only the private
+intent to the existing canary. It accepts only a successful KIS result and
+rechecks limit expiry plus the weekday ET time window immediately before submit.
+Quote values and derived prices stay out of runtime projections, evidence, Git,
+and console output. The scoped external automation
+`thericher-kis-paper-quote-session` runs it on weekday KST 23:35, which falls
+inside that time window in both DST states. Its first Docker exercise was safely
+off-session (`not_due`); the first due-session result will be recorded by the
+schedule. The helper is not yet a full holiday/early-close calendar claim; the
+next KIS-native intraday task must establish that semantics from source evidence.
+This is a recurring execution path, not a general scheduler or a fresh approval
+boundary.
+
 The first virtual-token attempt on 2026-07-21 returned `auth_rejected` from
 the KIS token boundary. The read-only console bridge later reached the account
 route and returned `balance_rejected`; it sent no order. A rebuilt current
@@ -252,10 +267,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add a transient
-quote-derived virtual limit and a scoped recurring regular-session Paper path.
-The three older canary intents remain immutable recovery evidence, but do not
-create a global one-shot quota or stop new distinct Paper work. At each boundary,
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: build the first
+KIS-native intraday cache and consume its first honest bars in the Paper-input
+contract while the scoped session schedule records its first due outcome. The
+three older canary intents remain immutable recovery evidence, but do not create
+a global one-shot quota or stop new distinct Paper work. At each boundary,
 review the data contract, execution route readiness, research queues, GPU
 eligibility, disk capacity, and role ownership; make reversible no-cost changes
 autonomously and escalate only a real remaining operator boundary.

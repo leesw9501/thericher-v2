@@ -11,7 +11,7 @@ import threading
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections.abc import Iterator, Mapping, Sequence
+from collections.abc import Callable, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
@@ -27,6 +27,14 @@ from .broker import BrokerOrderRequest
 from .emergency import EmergencyStore
 from .kis_paper_console_bridge import paper_account_snapshot_from_kis_readonly
 from .kis_paper_order_fields import map_kis_paper_us_buy_limit_order_fields
+from .kis_paper_quote import (
+    KIS_PAPER_US_SPY_QUOTE_PATH,
+    KisPaperQuoteError,
+    KisPaperSpyQuote,
+    build_kis_paper_spy_quote_request,
+    parse_kis_paper_spy_quote,
+    validate_kis_paper_spy_quote_request,
+)
 from .kis_readonly import (
     KIS_PAPER_TOKEN_PATH,
     KisHttpRequest,
@@ -142,6 +150,9 @@ _SAFE_REASON_CODES = frozenset(
         "submit_rate_limited",
         "submit_transport_unknown",
         "submit_response_incomplete",
+        "quote_rejected",
+        "quote_response_incomplete",
+        "session_closed",
         "cancel_rejected",
         "cancel_transport_unknown",
         "cancel_response_incomplete",
@@ -478,7 +489,7 @@ class KisPaperCanaryStateStore:
         self.path = path
 
     def read(self) -> KisPaperCanaryState | None:
-        with _exclusive_state_lock(self.path):
+        with exclusive_kis_paper_canary_state_lock(self.path):
             return self._read_unlocked()
 
     def record_intent(
@@ -488,7 +499,7 @@ class KisPaperCanaryStateStore:
         cancel_after_submit: bool,
         now: datetime,
     ) -> KisPaperCanaryState:
-        with _exclusive_state_lock(self.path):
+        with exclusive_kis_paper_canary_state_lock(self.path):
             current = self._read_unlocked()
             if current is not None:
                 if current.intent != intent:
@@ -515,7 +526,7 @@ class KisPaperCanaryStateStore:
         broker_order_id: str | None = None,
         submit_upstream_code: str | None = None,
     ) -> KisPaperCanaryState:
-        with _exclusive_state_lock(self.path):
+        with exclusive_kis_paper_canary_state_lock(self.path):
             current = self._read_unlocked()
             if current is None or current.intent != intent or current.phase not in expected:
                 raise KisPaperCanaryError("state_transition_invalid")
@@ -622,6 +633,25 @@ class KisPaperCanaryClient:
             matching_ccnl=matching_ccnl,
             status=status,
         )
+
+    def fetch_spy_quote(self) -> KisPaperSpyQuote:
+        """Fetch the one transient quote that may seed a new virtual canary intent."""
+
+        response = self._dispatch(
+            build_kis_paper_spy_quote_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        if response.status_code != 200:
+            raise KisPaperCanaryError("quote_rejected")
+        try:
+            payload = response.payload()
+            return parse_kis_paper_spy_quote(payload)
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        except KisPaperReadOnlyError as error:
+            raise KisPaperCanaryError("quote_response_incomplete") from error
 
     def submit_buy_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
         body = {
@@ -809,11 +839,14 @@ def _run_kis_paper_canary(
     execute: bool,
     cancel_after_submit: bool,
     transport: KisHttpTransport | None = None,
+    client: KisPaperCanaryClient | None = None,
     now: datetime | None = None,
+    clock: Callable[[], datetime] | None = None,
+    submit_permitted: Callable[[datetime], bool] | None = None,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
-    observed_at = require_utc(now or datetime.now(UTC), "now")
+    observed_at = _canary_now(now=now, clock=clock)
     state_store = KisPaperCanaryStateStore(state_path)
     requested_intent = KisPaperCanaryIntent.from_decision(decision, run_id=run_id)
     existing_state = state_store.read()
@@ -858,11 +891,12 @@ def _run_kis_paper_canary(
             now=observed_at,
         )
     else:
-        config = load_kis_paper_config_from_environment(environment)
-        client = KisPaperCanaryClient(
-            config=config,
-            transport=transport or UrllibKisPaperCanaryTransport(),
-        )
+        if client is None:
+            config = load_kis_paper_config_from_environment(environment)
+            client = KisPaperCanaryClient(
+                config=config,
+                transport=transport or UrllibKisPaperCanaryTransport(),
+            )
         reconciliation = client.reconcile(state, now=observed_at)
         if _matches_intent_open_order(reconciliation.snapshot, intent):
             state = state_store.transition(
@@ -881,59 +915,77 @@ def _run_kis_paper_canary(
                 now=observed_at,
             )
         else:
-            state = state_store.transition(
-                intent,
-                expected=frozenset({"intent_recorded"}),
-                phase="submission_started",
-                reason_code="preview",
-                now=observed_at,
-            )
-            try:
-                accepted, broker_order_id = client.submit_buy_limit(intent)
-            except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
+            submit_at = _canary_now(now=now, clock=clock)
+            if submit_at >= intent.valid_until:
                 state = state_store.transition(
                     intent,
-                    expected=frozenset({"submission_started"}),
-                    phase="outcome_unknown",
-                    reason_code=_safe_submit_failure_reason(error),
-                    now=observed_at,
-                    submit_upstream_code=_safe_submit_upstream_code(error),
+                    expected=frozenset({"intent_recorded"}),
+                    phase="intent_recorded",
+                    reason_code="intent_expired",
+                    now=submit_at,
+                )
+            elif submit_permitted is not None and not submit_permitted(submit_at):
+                state = state_store.transition(
+                    intent,
+                    expected=frozenset({"intent_recorded"}),
+                    phase="intent_recorded",
+                    reason_code="session_closed",
+                    now=submit_at,
                 )
             else:
-                if not accepted:
-                    state = state_store.transition(
-                        intent,
-                        expected=frozenset({"submission_started"}),
-                        phase="rejected",
-                        reason_code="submit_rejected",
-                        now=observed_at,
-                    )
-                elif broker_order_id is None:
+                state = state_store.transition(
+                    intent,
+                    expected=frozenset({"intent_recorded"}),
+                    phase="submission_started",
+                    reason_code="preview",
+                    now=submit_at,
+                )
+                try:
+                    accepted, broker_order_id = client.submit_buy_limit(intent)
+                except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
                     state = state_store.transition(
                         intent,
                         expected=frozenset({"submission_started"}),
                         phase="outcome_unknown",
-                        reason_code="submit_response_incomplete",
-                        now=observed_at,
+                        reason_code=_safe_submit_failure_reason(error),
+                        now=submit_at,
+                        submit_upstream_code=_safe_submit_upstream_code(error),
                     )
                 else:
-                    state = state_store.transition(
-                        intent,
-                        expected=frozenset({"submission_started"}),
-                        phase="submitted",
-                        reason_code="reconciliation_unresolved",
-                        now=observed_at,
-                        broker_order_id=broker_order_id,
-                    )
-                    reconciliation = client.reconcile(state, now=observed_at)
-                    if state.cancel_after_submit:
-                        state, reconciliation = _cancel_submitted_canary(
-                            client=client,
-                            state_store=state_store,
-                            state=state,
-                            reconciliation=reconciliation,
-                            observed_at=observed_at,
+                    if not accepted:
+                        state = state_store.transition(
+                            intent,
+                            expected=frozenset({"submission_started"}),
+                            phase="rejected",
+                            reason_code="submit_rejected",
+                            now=submit_at,
                         )
+                    elif broker_order_id is None:
+                        state = state_store.transition(
+                            intent,
+                            expected=frozenset({"submission_started"}),
+                            phase="outcome_unknown",
+                            reason_code="submit_response_incomplete",
+                            now=submit_at,
+                        )
+                    else:
+                        state = state_store.transition(
+                            intent,
+                            expected=frozenset({"submission_started"}),
+                            phase="submitted",
+                            reason_code="reconciliation_unresolved",
+                            now=submit_at,
+                            broker_order_id=broker_order_id,
+                        )
+                        reconciliation = client.reconcile(state, now=submit_at)
+                        if state.cancel_after_submit:
+                            state, reconciliation = _cancel_submitted_canary(
+                                client=client,
+                                state_store=state_store,
+                                state=state,
+                                reconciliation=reconciliation,
+                                observed_at=submit_at,
+                            )
 
     if reconciliation.snapshot is not None:
         write_paper_account_snapshot(
@@ -985,13 +1037,16 @@ def run_kis_paper_canary(
     execute: bool,
     cancel_after_submit: bool,
     transport: KisHttpTransport | None = None,
+    client: KisPaperCanaryClient | None = None,
     now: datetime | None = None,
+    clock: Callable[[], datetime] | None = None,
+    submit_permitted: Callable[[datetime], bool] | None = None,
 ) -> KisPaperCanaryOutcome:
     """Serialize one canary root from reconciliation through terminal state."""
 
     # Different run IDs share this lock, so they cannot both observe an empty
     # book and submit before either durable state transition is complete.
-    with _exclusive_state_lock(state_path.parent / ".canary_execution"):
+    with exclusive_kis_paper_canary_state_lock(state_path.parent / ".canary_execution"):
         return _run_kis_paper_canary(
             decision=decision,
             run_id=run_id,
@@ -1005,8 +1060,22 @@ def run_kis_paper_canary(
             execute=execute,
             cancel_after_submit=cancel_after_submit,
             transport=transport,
+            client=client,
             now=now,
+            clock=clock,
+            submit_permitted=submit_permitted,
         )
+
+
+def _canary_now(
+    *,
+    now: datetime | None,
+    clock: Callable[[], datetime] | None,
+) -> datetime:
+    if now is not None and clock is not None:
+        raise ValueError("now and clock are mutually exclusive")
+    source = now if now is not None else (clock() if clock is not None else datetime.now(UTC))
+    return require_utc(source, "now")
 
 
 def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
@@ -1030,6 +1099,12 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
         or parsed.password is not None
     ):
         raise KisPaperCanaryError("request_not_allowlisted")
+    if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_QUOTE_PATH:
+        try:
+            validate_kis_paper_spy_quote_request(request)
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        return
     if request.method == "GET" and parsed.path == KIS_PAPER_US_CCNCL_PATH:
         _validate_get_headers(request, tr_id=KIS_PAPER_US_CCNCL_TR_ID)
         if request.json_body is not None or set(request.query) != _CCNL_QUERY_KEYS:
@@ -1584,7 +1659,7 @@ _STATE_LOCKS_GUARD = threading.Lock()
 
 
 @contextmanager
-def _exclusive_state_lock(path: Path) -> Iterator[None]:
+def exclusive_kis_paper_canary_state_lock(path: Path) -> Iterator[None]:
     resolved = path.resolve()
     with _STATE_LOCKS_GUARD:
         lock = _STATE_LOCKS.setdefault(resolved, threading.RLock())

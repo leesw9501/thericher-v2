@@ -148,6 +148,42 @@ services:
       - thericher-v2-web-emergency:/app/emergency
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-session:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-session"]
+    command:
+      - python
+      - -m
+      - thericher_v2.execution.kis_paper_session
+      - --execute
+      - --cancel-after-submit
+      - --repository-root
+      - /app
+      - --state-root
+      - /app/private/canary
+      - --runtime-projection
+      - /app/runtime/state/kis_paper_canary.json
+      - --paper-account-snapshot
+      - /app/runtime/state/paper_account_snapshot.json
+      - --emergency-state
+      - /app/emergency/emergency_state.json
+      - --artifact-root
+      - /app/model_artifacts
+    environment:
+      THERICHER_MODE: kis_paper
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+      KIS_PAPER_ACCOUNT_NO: ${KIS_PAPER_ACCOUNT_NO:-}
+      KIS_PAPER_ACCOUNT_PRODUCT_CODE: ${KIS_PAPER_ACCOUNT_PRODUCT_CODE:-}
+    volumes:
+      - thericher-v2-runtime:/app/runtime
+      - thericher-v2-paper-canary-private:/app/private
+      - thericher-v2-web-emergency:/app/emergency
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
 volumes:
   thericher-v2-runtime:
   thericher-v2-web-emergency:
