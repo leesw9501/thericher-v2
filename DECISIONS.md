@@ -4328,3 +4328,39 @@ unsubmitted or corrupt state and replay without changing private state.
 Reason: this makes the first Paper lifecycle observation usable by future PnL
 attribution without turning broker ambiguity into a fabricated strategy result
 or adding another operator approval mechanism.
+
+## 2026-07-22 - Link the daily SPY Paper session to its exact observer
+
+Decision: the existing scheduled daily SPY session now invokes the read-only
+receipt observer only after its canary returns a run ID that exactly equals
+`receipt-<prepared receipt digest>`. The safe daily outcome requires that same
+identity again when it embeds the observer fact. It never scans for a latest
+run, hands the observer raw market data, price, account, or order values, or
+adds another scheduled task.
+
+Observation is post-order evidence, not an order transition. At this narrow
+boundary any ordinary observer exception becomes the safe
+`observer_unavailable` result while the original canary status, reason, and
+durable state remain intact. Process-control exceptions are not swallowed. A
+successful observation adds only its existing categorical safe payload; its
+current `pnl_status` remains `not_observed`. Missing, stale, ambiguous, or
+unavailable evidence is therefore an execution-coverage gap with
+`performance_label = None`, not a fill, loss, negative training label, retry,
+or Paper authority condition.
+
+Claude's isolated falsification-first verdict was `supported-with-limits`.
+Its constraints were structural no-POST/no-live containment despite a
+write-capable credential, exact identity pinning, no absence-to-fill inference,
+and observer failure/replay isolation. Independent Data review confirmed that
+the daily provenance contract needs only opaque receipt/run identity and that
+`raw_market_data_retained: false` remains a no-bytes fact rather than a latch.
+Independent Research review confirmed the full receipt digest as the only
+model-side join key. Independent Validation initially found two P2 gaps;
+the final code validates identity before observation and isolates an unexpected
+ordinary observer failure. Focused tests cover mismatched receipt/run rejection
+before the observer, persisted-state read-only routing, replay, redaction, and
+no fabricated PnL.
+
+Reason: this reuses the existing daily Paper schedule to produce timely,
+truthful execution evidence without building a scheduler platform, a permission
+marker, or a separate report workflow.
