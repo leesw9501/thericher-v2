@@ -49,6 +49,10 @@ as a failed collection or an authority hold.
   without advancing the historical backfill cursor. The Windows Scheduled Task
   `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35
   KST; its schedule is never evidence that a full session was stored.
+- `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
+  cache contract for the writer and prospective observer. It validates index
+  structure and retained-chunk lineage without opening raw files; the existing
+  offline loader remains responsible for raw-byte attestation.
 - `us_equity_2026_session` supplies explicit 2026 regular and early-close UTC
   windows from published Nasdaq/NYSE calendars. The first QQQ regular-session
   slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded
