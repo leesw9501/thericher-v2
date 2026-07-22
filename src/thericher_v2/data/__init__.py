@@ -60,6 +60,12 @@ from .kis_paper_intraday import (
     select_complete_kis_paper_private_intraday_sessions,
     slice_verified_kis_paper_private_intraday_catalog,
 )
+from .kis_paper_intraday_index_metadata import (
+    KisPaperPrivateIntradayV1IndexMetadata,
+    KisPaperPrivateIntradayV1RetainedChunkMetadata,
+    KisPaperPrivateIntradayV1TargetMetadata,
+    validate_kis_paper_private_intraday_v1_index_metadata,
+)
 from .local import (
     CSV_FIELDS,
     CatalogedBars,
@@ -110,6 +116,9 @@ __all__ = [
     "KisMarketDataCapability",
     "KisPaperPrivateDailyCatalog",
     "KisPaperIntradayFeatureInput",
+    "KisPaperPrivateIntradayV1IndexMetadata",
+    "KisPaperPrivateIntradayV1RetainedChunkMetadata",
+    "KisPaperPrivateIntradayV1TargetMetadata",
     "KisStorageRightsStatus",
     "MarketDataProvider",
     "KIS_PAPER_PRIVATE_DAILY_ADJUSTMENT_MODE",
@@ -144,6 +153,7 @@ __all__ = [
     "select_complete_kis_paper_private_intraday_sessions",
     "slice_verified_kis_paper_private_intraday_catalog",
     "slice_kis_paper_private_daily_catalog",
+    "validate_kis_paper_private_intraday_v1_index_metadata",
     "load_cataloged_yahoo_daily_1d_bars",
     "load_cataloged_corporate_actions",
     "load_fixed_etf_daily_factor_change_dates",

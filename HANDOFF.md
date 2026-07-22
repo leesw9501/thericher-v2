@@ -119,8 +119,10 @@ permission boundary.
 The Codex app automation `thericher-daily-operating-review` is active at 08:10
 KST. It inspects the previous scheduled outcomes through sanitized evidence,
 continues ready no-cost lane work, and publishes only the concise operator
-summary described in `AGENTS.md`; it does not create a new repo scheduler or
-grant live authority.
+summary described in `AGENTS.md`. The KIS quote-session and intraday-head
+workers are owned only by their named Windows Scheduled Tasks; duplicate Codex
+worker automations were removed so one due time cannot issue duplicate KIS
+Paper calls. The daily review does not grant live authority.
 
 ## Current Data State
 
@@ -244,9 +246,9 @@ execution cell. This is a consumption smoke, not an after-hours strategy or
 profit claim.
 
 A source-windowed follow-up baseline has now consumed a complete 390-minute QQQ
-regular session through all five configured timeframes. The active
-`thericher-kis-paper-intraday-head` automation remains a separate data-only
-path, so it does not compete with the existing quote-derived Paper session.
+regular session through all five configured timeframes. The active Windows task
+`thericher-kis-paper-intraday-head` remains a separate data-only path, so it
+does not compete with the existing quote-derived Paper session.
 
 `select_complete_kis_paper_private_intraday_sessions` is the Data-owned offline
 selection boundary for an ordered tuple of full regular sessions. It rejects
@@ -318,7 +320,7 @@ that quote at KIS's reported decimal precision, and passes only the private
 intent to the existing canary. It accepts only a successful KIS result and
 rechecks limit expiry plus the weekday ET time window immediately before submit.
 Quote values and derived prices stay out of runtime projections, evidence, Git,
-and console output. The scoped external automation
+and console output. The Windows Scheduled Task
 `thericher-kis-paper-quote-session` runs it on weekday KST 23:35, which falls
 inside that time window in both DST states. Its first Docker exercise was safely
 off-session (`not_due`); the first due-session result will be recorded by the

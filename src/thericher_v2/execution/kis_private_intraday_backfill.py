@@ -699,91 +699,56 @@ def _read_or_create_index(root: Path) -> dict[str, object]:
 
 
 def _validate_index(index: Mapping[str, object]) -> None:
-    if (
-        index.get("schema_version") != SCHEMA_VERSION
-        or index.get("kind") != "kis_paper_private_intraday_backfill"
-        or index.get("backfill_version") != KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION
-        or type(index.get("generation")) is not int
-        or int(index["generation"]) < 0
-        or not isinstance(index.get("targets"), list)
-    ):
-        raise ValueError("private intraday index is invalid")
-    targets = index["targets"]
-    expected = {
-        KisPaperPrivateIntradayTarget(*target).target_key
-        for target in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
-    }
-    observed: set[str] = set()
-    for target in targets:
-        if not isinstance(target, dict):
-            raise ValueError("private intraday index is invalid")
-        typed = KisPaperPrivateIntradayTarget(
-            symbol=str(target.get("symbol", "")), exchange=str(target.get("exchange", ""))
+    try:
+        _validate_shared_index_metadata(
+            index,
+            expected_targets=KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
         )
-        if target.get("target_key") != typed.target_key or typed.target_key in observed:
-            raise ValueError("private intraday index is invalid")
-        observed.add(typed.target_key)
-        KisPaperPrivateIntradayCursor.from_document(target.get("next_cursor"))
-        if target.get("last_reason") is not None and not isinstance(target.get("last_reason"), str):
-            raise ValueError("private intraday index is invalid")
-        if target.get("last_observed_at_utc") is not None:
-            _parse_utc(str(target["last_observed_at_utc"]))
-        chunks = target.get("chunks")
-        if not isinstance(chunks, list):
-            raise ValueError("private intraday index is invalid")
-        keys: set[str] = set()
-        for chunk in chunks:
-            # An unretained historical observation is not a cache chunk. It
-            # cannot make a later correctly scoped collection invalid or
-            # dedupe away its retained replacement.
-            if _is_unretained_marker(chunk):
-                continue
-            _validate_chunk(chunk=chunk, target=typed)
-            assert isinstance(chunk, dict)
-            chunk_key = str(chunk["chunk_key"])
-            if chunk_key in keys:
-                raise ValueError("private intraday index is invalid")
-            keys.add(chunk_key)
-    if observed != expected:
-        raise ValueError("private intraday index is invalid")
+    except ValueError as error:
+        raise ValueError("private intraday index is invalid") from error
 
 
 def _validate_chunk(*, chunk: object, target: KisPaperPrivateIntradayTarget) -> None:
-    if not isinstance(chunk, dict):
-        raise ValueError("private intraday index is invalid")
-    input_cursor = KisPaperPrivateIntradayCursor.from_document(chunk.get("input_cursor"))
-    output_cursor = KisPaperPrivateIntradayCursor.from_document(chunk.get("output_cursor"))
-    if (
-        chunk.get("outcome") not in {"committed", "partial"}
-        or not isinstance(chunk.get("manifest_path"), str)
-        or not _is_sha256(chunk.get("manifest_hash"))
-        or not _is_sha256(chunk.get("raw_sha256"))
-        or chunk.get("raw_market_data_retained") is not True
-        or not isinstance(chunk.get("row_count"), int)
-        or int(chunk["row_count"]) <= 0
-        or not isinstance(chunk.get("row_fingerprints"), dict)
-        or not isinstance(chunk.get("exact_overlap_rows"), int)
-        or not isinstance(chunk.get("conflicting_overlap_rows"), int)
-        or int(chunk["conflicting_overlap_rows"]) != 0
-        or not isinstance(chunk.get("collected_at_utc"), str)
-    ):
-        raise ValueError("private intraday index is invalid")
-    _parse_utc(str(chunk["collected_at_utc"]))
-    if len(chunk["row_fingerprints"]) != chunk["row_count"]:
-        raise ValueError("private intraday index is invalid")
-    for key, fingerprint in chunk["row_fingerprints"].items():
-        if not _is_timestamp_key(key) or not _is_sha256(fingerprint):
-            raise ValueError("private intraday index is invalid")
-    expected_key = _chunk_key(
-        target=target,
-        input_cursor=input_cursor.as_document() if input_cursor is not None else None,
-        row_fingerprints=chunk["row_fingerprints"],
+    try:
+        _validate_shared_index_metadata(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "kind": "kis_paper_private_intraday_backfill",
+                "backfill_version": KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
+                "generation": 0,
+                "targets": [
+                    {
+                        "target_key": target.target_key,
+                        "symbol": target.symbol,
+                        "exchange": target.exchange,
+                        "next_cursor": None,
+                        "last_reason": None,
+                        "last_observed_at_utc": None,
+                        "chunks": [chunk],
+                    }
+                ],
+            },
+            expected_targets=((target.symbol, target.exchange),),
+        )
+    except ValueError as error:
+        raise ValueError("private intraday index is invalid") from error
+
+
+def _validate_shared_index_metadata(
+    index: Mapping[str, object],
+    *,
+    expected_targets: tuple[tuple[str, str], ...],
+) -> None:
+    """Defer the Data import until this execution module is fully initialized."""
+
+    from thericher_v2.data.kis_paper_intraday_index_metadata import (
+        validate_kis_paper_private_intraday_v1_index_metadata,
     )
-    legacy_key = _legacy_chunk_key(target=target, input_cursor=input_cursor)
-    if chunk.get("chunk_key") not in {expected_key, legacy_key}:
-        raise ValueError("private intraday index is invalid")
-    if output_cursor == input_cursor and output_cursor is not None:
-        raise ValueError("private intraday index is invalid")
+
+    validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=expected_targets,
+    )
 
 
 def _is_unretained_marker(chunk: object) -> bool:
@@ -1192,42 +1157,12 @@ def _chunk_key(
     return "sha256:" + hashlib.sha256(payload).hexdigest()
 
 
-def _legacy_chunk_key(
-    *, target: KisPaperPrivateIntradayTarget, input_cursor: KisPaperPrivateIntradayCursor | None
-) -> str:
-    """Accept the first v1 snapshot key while later snapshots use row identity."""
-
-    payload = json.dumps(
-        {
-            "backfill_version": KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
-            "input_cursor": input_cursor.as_document() if input_cursor is not None else None,
-            "target_key": target.target_key,
-        },
-        sort_keys=True,
-        separators=(",", ":"),
-    ).encode("utf-8")
-    return "sha256:" + hashlib.sha256(payload).hexdigest()
-
-
 def _run_id(*, observed_at: datetime, generation: int) -> str:
     return f"{observed_at:%Y%m%dT%H%M%SZ}-{generation:06d}"
 
 
 def _format_utc(value: datetime) -> str:
     return require_utc(value, "timestamp").isoformat().replace("+00:00", "Z")
-
-
-def _parse_utc(value: str) -> datetime:
-    try:
-        return require_utc(datetime.fromisoformat(value.replace("Z", "+00:00")), "timestamp")
-    except ValueError as error:
-        raise ValueError("private intraday timestamp is invalid") from error
-
-
-def _is_timestamp_key(value: object) -> bool:
-    if not isinstance(value, str) or len(value) != 15 or value[8:9] != "T":
-        return False
-    return value[:8].isdigit() and value[9:].isdigit()
 
 
 def _sha256(value: bytes) -> str:

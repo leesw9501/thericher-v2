@@ -46,9 +46,9 @@ as a failed collection or an authority hold.
   spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21.
   The index is authoritative for the next cursor and current coverage.
 - The separate `intraday-head` root receives fresh source-page observations
-  without advancing the historical backfill cursor. The scoped local
-  `thericher-kis-paper-intraday-head` automation runs Tuesday through Saturday
-  at 02:35 KST; its schedule is never evidence that a full session was stored.
+  without advancing the historical backfill cursor. The Windows Scheduled Task
+  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35
+  KST; its schedule is never evidence that a full session was stored.
 - `us_equity_2026_session` supplies explicit 2026 regular and early-close UTC
   windows from published Nasdaq/NYSE calendars. The first QQQ regular-session
   slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded

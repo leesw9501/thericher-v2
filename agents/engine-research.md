@@ -134,6 +134,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    evidence is a precommit, frozen-model receipt, one receipt per head session,
    and a five-session descriptive summary. It is not selection, retuning,
    ensembling, GPU-depth, or Paper-execution authority.
+9. `prepare_kis_intraday_prospective_head_observation.py` now turns the
+   independent head index metadata into the same contract's first five-session
+   precommit and planning receipt. With fewer than five complete QQQ regular
+   sessions it returns a retriable `pending` fact and writes no artifact. It
+   reads no raw bars, credentials, network, KIS route, GPU, model, or replay;
+   it is preparation for the future observation, not a research-quality gate.
 
 ## GPU Policy
 
@@ -200,6 +206,9 @@ under the same external artifact root is the usable local-paper replay.
 ## Next Handoff
 
 Keep KIS regular-session minute coverage accumulating while execution builds a
-minimal private Paper console. Keep breadth, depth, ensemble, and replication
-queues current without creating a report family; do not turn the small current
-comparison slice into a selection or Paper-work gate.
+minimal private Paper console. After each head-cache update, run the
+metadata-only prospective preparation tool; begin the descriptive observation
+only after it has actually found its first five complete head sessions. Keep
+breadth, depth, ensemble, and replication queues current without creating a
+report family; do not turn the small current comparison slice into a selection
+or Paper-work gate.

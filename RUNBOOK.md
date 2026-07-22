@@ -129,9 +129,9 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 ```
 
 Head snapshots live below the sibling `intraday-head` cache root and never
-advance the historical backfill cursor. The local
-`thericher-kis-paper-intraday-head` automation runs Tuesday through Saturday at
-02:35 KST, which maps to the same US weekday mid-session. It is a bounded
+advance the historical backfill cursor. The Windows Scheduled Task
+`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35
+KST, which maps to the same US weekday mid-session. It is a bounded
 data-only invocation: it does not imply a complete session merely because it
 ran, and it has no account, order, or live route.
 
@@ -345,9 +345,9 @@ state to the shared local dashboard, and writes external evidence under
 time window before loading Paper configuration; outside that window it produces
 a safe no-submit result. It accepts only a KIS-success quote and rechecks both
 that time window and the limit validity immediately before submit. The helper
-uses the explicit supported 2026 holiday and early-close calendar. The local
-`thericher-kis-paper-quote-session`
-automation invokes this command once per weekday at KST 23:35. Re-running an
+uses the explicit supported 2026 holiday and early-close calendar. The Windows
+Scheduled Task `thericher-kis-paper-quote-session` invokes this command once
+per weekday at KST 23:35. Re-running an
 existing run ID reconciles its persisted intent before any replacement submit.
 Its cancel-after-submit choice is durable, matching accepted open orders resume
 cancellation after a restart, and sibling run IDs are serialized at the private
@@ -362,8 +362,10 @@ and durable-state checks. An ambiguous intent remains unrepeated until its own
 reconciliation, but never blocks a later distinct Paper intent or another lane.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
-submission. The latest read-only bridge attempt reached the account boundary
-and returned `balance_rejected`; no order was sent. Both are integration facts,
+submission. An earlier read-only bridge attempt reached the account boundary
+and returned `balance_rejected`; no order was sent. The current-image
+read-only bridge completed on 2026-07-22 and refreshed the sanitized local
+console projection without submitting an order. These are integration facts,
 not approval gates. Diagnose the virtual-paper route through the sanitized
 reason plus allowlisted endpoint/transaction/HTTP metadata, then rerun a
 bounded bridge job. The first current-image canary result is an ambiguous

@@ -68,11 +68,13 @@ named Docker profiles with `--build`.
 ### Engine Research Agent
 
 1. Keep the completed no-winner sequence screen recorded as joint evidence.
-2. Prepare `kis-intraday-prospective-head-observation-r1` from actually
-   retained fresh sessions: fixed historical QQQ development only, then the
-   first five new complete QQQ head sessions as descriptive observation. Do not
-   treat the current small comparison slice or GPU idleness as a reason to
-   select, retune, or ensemble a candidate.
+2. After each head-cache outcome, run
+   `scripts/prepare_kis_intraday_prospective_head_observation.py` against its
+   metadata only. It returns a retriable factual `pending` result until the
+   first five complete new QQQ head sessions exist, then writes the external
+   precommit and planning receipt for the fixed historical-development,
+   descriptive-observation contract. Do not treat the current small comparison
+   slice or GPU idleness as a reason to select, retune, or ensemble a candidate.
 
 ## Completion Evidence
 

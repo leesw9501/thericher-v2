@@ -5,12 +5,15 @@ import json
 import os
 import socket
 import urllib.request
+from collections.abc import Mapping
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
+import thericher_v2.data.kis_paper_intraday_index_metadata as intraday_index_metadata
+import thericher_v2.execution.kis_private_intraday_backfill as private_intraday_backfill
 from thericher_v2.contracts import Timeframe
 from thericher_v2.data.kis_paper_intraday import (
     load_verified_kis_paper_private_intraday_catalog,
@@ -47,6 +50,77 @@ class _MinuteClient:
         if isinstance(response, BaseException):
             raise response
         return response
+
+
+def test_writer_index_validation_delegates_to_shared_contract_and_accepts_legacy_chunk_key(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    _collect_one_qqq_chunk(cache_root=cache_root, repo_root=repo_root)
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    chunk = qqq["chunks"][0]
+    assert isinstance(chunk, dict)
+    chunk["chunk_key"] = _legacy_chunk_key(
+        target_key="QQQ/NAS/1m",
+        input_cursor=chunk["input_cursor"],
+    )
+
+    calls: list[tuple[tuple[str, str], ...]] = []
+    original = intraday_index_metadata.validate_kis_paper_private_intraday_v1_index_metadata
+
+    def record_shared_contract(
+        document: Mapping[str, object],
+        *,
+        expected_targets: tuple[tuple[str, str], ...],
+    ) -> object:
+        calls.append(expected_targets)
+        return original(document, expected_targets=expected_targets)
+
+    monkeypatch.setattr(
+        intraday_index_metadata,
+        "validate_kis_paper_private_intraday_v1_index_metadata",
+        record_shared_contract,
+    )
+
+    private_intraday_backfill._validate_index(index)
+
+    assert calls == [(("QQQ", "NAS"), ("SPY", "AMS"))]
+
+
+def test_writer_rejects_malformed_index_before_any_client_request(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    _collect_one_qqq_chunk(cache_root=cache_root, repo_root=repo_root)
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    chunk = qqq["chunks"][0]
+    assert isinstance(chunk, dict)
+    rows = chunk["row_fingerprints"]
+    assert isinstance(rows, dict)
+    rows[next(iter(rows))] = "not-a-sha256"
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+    client = _MinuteClient([])
+
+    with pytest.raises(ValueError, match="private intraday index is invalid"):
+        run_kis_paper_private_intraday_backfill_cycle(
+            client=client,
+            cache_root=cache_root,
+            repo_root=repo_root,
+            code_revision="git:test",
+            pages_per_target=1,
+            observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+            sleeper=lambda _seconds: None,
+            monotonic_clock=lambda: 0.0,
+        )
+
+    assert client.queries == []
 
 
 def test_cycle_writes_only_external_raw_cache_and_loader_resamples_all_timeframes(
@@ -685,6 +759,47 @@ def test_verified_loader_is_offline_and_credential_free(
     )
 
     assert len(catalog.bars) == 2
+
+
+def _collect_one_qqq_chunk(*, cache_root: Path, repo_root: Path) -> None:
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ",
+                    exchange="NAS",
+                    rows=_rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2),
+                    next_cursor=None,
+                ),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert [(result.target_key, result.status) for result in results] == [
+        ("QQQ/NAS/1m", "collected"),
+        ("SPY/AMS/1m", "rejected"),
+    ]
+
+
+def _legacy_chunk_key(*, target_key: str, input_cursor: object) -> str:
+    payload = json.dumps(
+        {
+            "backfill_version": KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
+            "input_cursor": dict(input_cursor) if isinstance(input_cursor, Mapping) else None,
+            "target_key": target_key,
+        },
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
 
 
 def _page(

@@ -67,15 +67,15 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   one-share 25 bps-below-last nonmarket limit at the reported decimal scale,
   and invokes the canary without exposing the quote or price. It accepts only a
   KIS-success quote and rechecks both the limit validity and the explicit 2026
-  Nasdaq/NYSE session window immediately before submit. The scoped local automation
-  `thericher-kis-paper-quote-session` invokes it on weekday KST 23:35; that time
+  Nasdaq/NYSE session window immediately before submit. The Windows Scheduled
+  Task `thericher-kis-paper-quote-session` invokes it on weekday KST 23:35; that time
   is inside the worker's time window in both daylight and standard time. Its
   2026-07-22 off-session Docker exercise produced only the safe `not_due` /
   `outside_regular_session` outcome. Holidays and out-of-scope dates now return
   `session_unavailable` before environment access, and early closes end at the
   declared close. This is a route/credential correctness property, never a
   Paper authority gate.
-- The independent `thericher-kis-paper-intraday-head` automation is data-only:
+- The independent Windows task `thericher-kis-paper-intraday-head` is data-only:
   it uses only Paper market-data credentials, has no account or order route,
   and writes its cache outside Git. It may run beside the quote session because
   it owns a separate cache root and does not mutate execution state.
@@ -84,6 +84,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   `thericher-kis-paper-intraday-head` at 02:35 KST, Tuesday through Saturday.
   They invoke only their named local Docker profiles. Their first due outcomes
   are runtime evidence, not another permission step.
+- The current-image `kis-readonly` bridge completed on 2026-07-22 and refreshed
+  the credential-free console projection from sanitized KIS Paper account facts.
+  It submitted no order. Its external evidence remains under
+  `D:\\thericher-v2\\model-artifacts\\execution\\kis-paper-console-bridge`.
 
 ## Ready Queue
 
