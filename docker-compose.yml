@@ -184,6 +184,26 @@ services:
       - thericher-v2-web-emergency:/app/emergency
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-intraday-cache:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-cache"]
+    command:
+      - python
+      - scripts/backfill_kis_paper_private_intraday.py
+      - --execute
+      - --pages-per-target
+      - "2"
+    environment:
+      THERICHER_MODE: off
+      THERICHER_MARKET_DATA_ROOT: /market_data
+      PYTHONPATH: /app/src
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/market_data
+
 volumes:
   thericher-v2-runtime:
   thericher-v2-web-emergency:

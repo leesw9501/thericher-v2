@@ -68,6 +68,17 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     assert first.bars[-1].exchange_time == "180000"
     assert first.bars[0].korea_time == "070000"
     assert first.bars[0].volume == Decimal("1000")
+    assert first.bars[0].as_document() == {
+        "evol": "1000",
+        "high": "102",
+        "kymd": "20260718",
+        "khms": "070000",
+        "last": "101",
+        "low": "99",
+        "open": "100",
+        "xhms": "195900",
+        "xymd": "20260717",
+    }
     assert second.bars[0].exchange_time == "175900"
 
     assert [request.method for request in transport.requests] == ["POST", "GET", "GET"]
@@ -182,13 +193,29 @@ def test_daily_historical_query_rejects_unapproved_scope() -> None:
         KisPaperDailyQuery(symbol="QQQ", by_date="20260719", continuation="M")
 
 
-def test_minute_query_requires_the_observed_us_exchange_scope_and_complete_cursor() -> None:
+def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> None:
+    assert KisPaperMinuteQuery(exchange="AMS", symbol="SPY").exchange == "AMS"
     with pytest.raises(ValueError, match="exchange"):
         KisPaperMinuteQuery(exchange="NASD", symbol="QQQ")
-    with pytest.raises(ValueError, match="symbol"):
+    with pytest.raises(ValueError, match="symbol/exchange"):
         KisPaperMinuteQuery(exchange="NAS", symbol="IWM")
     with pytest.raises(ValueError, match="continuation"):
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
+
+
+def test_minute_raw_bar_rejects_invalid_calendar_timestamps() -> None:
+    with pytest.raises(KisPaperMarketDataError, match="minute_exchange_timestamp_invalid"):
+        kis_market_data.KisPaperMinuteRawBar(
+            exchange_date="20260230",
+            exchange_time="093000",
+            korea_date="20260301",
+            korea_time="013000",
+            open="100",
+            high="101",
+            low="99",
+            last="100.5",
+            volume="100",
+        )
 
 
 def test_market_data_config_repr_does_not_expose_credentials() -> None:

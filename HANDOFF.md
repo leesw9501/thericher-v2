@@ -108,6 +108,33 @@ cursor. Its two-minute shared retry after a token event is observed source
 transport pacing, not a permission or model-quality gate. Inspect the live
 index before a new run because it is authoritative.
 
+The first reusable KIS-native intraday cache is now at
+`D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.
+It uses the Paper-only 1m endpoint and persists immutable provider-field
+snapshots, manifest/raw hashes, exact overlap fingerprints, and a resumable
+`NEXT`/`KEYB` cursor. Its first bounded run retained two pages each for
+`QQQ/NAS` and `SPY/AMS`: 239 exact-deduplicated 1m rows per stream with one
+boundary overlap per symbol. The offline loader creates canonical `Bar` values
+from KIS's explicit Korea date/time fields and reuses explicit-session 5m, 10m,
+1h, and 3h resampling. It performs no network or credential access.
+
+The first observed range is extended-session evidence only: QQQ covers 20:01
+through 23:59 UTC and SPY covers 19:58 through 23:59 UTC on 2026-07-21. The
+loader's 239 bars per stream were complete under the collection-time rule, but
+regular-session, holiday/early-close, exchange timestamp, and source
+open-versus-close semantics are still unqualified. This blocks only a claim of
+a regular-session research campaign, not continued cache collection, local
+paper smoke work, or another Paper action.
+
+A Docker-profiled follow-up cycle advanced the same cursors without a secret
+file mount. One further bounded continuation chunk now brings the current
+offline reattestation to 718 unique 1m bars for each stream: QQQ spans 12:02
+through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21. Inspect the
+external index before another run; it is authoritative. The first retained v1
+manifests use the earlier, equivalent completed-bar-rule spelling. The loader supports
+only that exact legacy form plus the explicit current form; do not rewrite the
+immutable snapshots merely to normalize metadata.
+
 ## Lane State
 
 ### Data
@@ -123,6 +150,13 @@ An optional session ceiling re-attests the complete retained raw evidence but
 only materializes `Bar` objects through that ceiling. This keeps frozen
 development/validation consumers from carrying later historical bars in memory
 while preserving raw-cache integrity checks.
+
+`data.kis_paper_intraday` now provides a network-free verified 1m loader for
+the first QQQ/NAS and SPY/AMS cache snapshots. A local-paper multitimeframe
+smoke consumed the QQQ loader with 1m, 5m, 10m, and 1h cells; all emitted only
+replayable `local_paper` fills, while the short cache correctly skipped the 3h
+execution cell. This is a consumption smoke, not an after-hours strategy or
+profit claim.
 
 ### Engine Research
 
@@ -267,11 +301,11 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: build the first
-KIS-native intraday cache and consume its first honest bars in the Paper-input
-contract while the scoped session schedule records its first due outcome. The
-three older canary intents remain immutable recovery evidence, but do not create
-a global one-shot quota or stop new distinct Paper work. At each boundary,
-review the data contract, execution route readiness, research queues, GPU
-eligibility, disk capacity, and role ownership; make reversible no-cost changes
-autonomously and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: turn the first
+KIS-native intraday cache into a recurring regular-session data loop, then run
+the first qualified CPU local-paper baseline when coverage permits. The three
+older canary intents remain immutable recovery evidence, but do not create a
+global one-shot quota or stop new distinct Paper work. At each boundary, review
+the data contract, execution route readiness, research queues, GPU eligibility,
+disk capacity, and role ownership; make reversible no-cost changes autonomously
+and escalate only a real remaining operator boundary.

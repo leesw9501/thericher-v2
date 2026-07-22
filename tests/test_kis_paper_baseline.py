@@ -198,7 +198,11 @@ def test_baseline_abstains_for_unusable_input(monkeypatch) -> None:
 
 def test_baseline_abstains_until_a_matching_capability_has_a_trusted_binding() -> None:
     bars = _bars(90)
-    observed_raw_minute, _ = observed_kis_paper_capabilities()
+    observed_raw_minute = next(
+        capability
+        for capability in observed_kis_paper_capabilities()
+        if capability.capability_id == "kis.paper.us.raw-1m.2026-07-19"
+    )
     direct_qualified = _qualified_capability()
 
     observed_result = evaluate_kis_paper_baseline(

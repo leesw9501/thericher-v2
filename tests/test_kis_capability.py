@@ -16,7 +16,28 @@ from thericher_v2.data.kis_capability import (
 
 
 def test_observed_kis_capabilities_remain_non_deployable_until_qualified() -> None:
-    raw_minute, adjusted_daily = observed_kis_paper_capabilities()
+    capabilities = observed_kis_paper_capabilities()
+    cached_raw_minute = next(
+        capability
+        for capability in capabilities
+        if capability.capability_id == "kis.paper.us.raw-1m.cache-v1.2026-07-22"
+    )
+    raw_minute = next(
+        capability
+        for capability in capabilities
+        if capability.capability_id == "kis.paper.us.raw-1m.2026-07-19"
+    )
+    adjusted_daily = next(
+        capability
+        for capability in capabilities
+        if capability.capability_id == "kis.paper.us.adjusted-daily.2026-07-19"
+    )
+
+    assert cached_raw_minute.state == KisCapabilityState.OBSERVED
+    assert cached_raw_minute.exchange_scope == ("AMS", "NAS")
+    assert cached_raw_minute.symbol_scope == ("QQQ", "SPY")
+    assert cached_raw_minute.storage_rights == KisStorageRightsStatus.UNVERIFIED
+    assert cached_raw_minute.paper_model_eligible is False
 
     assert raw_minute.state == KisCapabilityState.OBSERVED
     assert raw_minute.timeframe == Timeframe.M1

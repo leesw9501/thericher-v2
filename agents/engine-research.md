@@ -3,8 +3,40 @@
 ## Working Memory
 
 Own hypotheses, campaign contracts, model work, walk-forward evaluation, and
-model-side PnL attribution. Current priority is a KIS-native daily baseline,
-not GPU occupancy.
+model-side PnL attribution. Current priority is a KIS-native daily baseline and
+the first honest intraday input contract, not GPU occupancy.
+
+## Intraday Input Contract
+
+The first KIS-native minute cache is an observed input, not an eligible model
+campaign. It contains 239 complete 1m bars per `QQQ/NAS` and `SPY/AMS` from an
+extended-session range. It is hash-attested and KIS-reconstructible as provider
+rows, but regular-session, holiday/early-close, exchange timestamp, and enough
+chronological coverage are not yet qualified.
+
+When those source facts are established, freeze this initial contract before any
+model comparison:
+
+- decision timestamp: end of the latest completed 1m bar only;
+- feature windows: 90 x 1m, 18 x 5m, and 9 x 10m completed bars from the same
+  KIS cache, with no provider mixing or gap filling. Keep 1h and 3h inactive
+  until their required same-session contiguous coverage and session semantics
+  are available;
+- target: decide at a completed 1m close, enter at the next 1m open, and exit
+  at the following 1m open, long-only. No target may look through a session
+  boundary;
+- session behavior: abstain outside a Data-declared regular session or whenever
+  any required source/resample bucket is missing, incomplete, or stale;
+- cost model: 1 bp per-side fee plus 2 bps per-side slippage for the initial
+  screen. Use a separately recorded stress pass later; these are research
+  assumptions, not KIS fee claims;
+- naive comparators: `flat`, `always_long`, and `previous_bar_direction`, all
+  through the existing `local_paper` target contract only.
+
+The 239-bar observed cache cannot provide the 3h context window or a
+chronological validation split. It is useful for loader and inference-shape
+smokes, but not for GPU, candidate ranking, PnL, ensemble selection, or model
+promotion.
 
 ## Ready Queue
 
@@ -40,6 +72,12 @@ not GPU occupancy.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
+6. Keep the intraday queues prepared without dispatching ineligible compute:
+   breadth starts with deterministic features, regularized linear, and tree
+   baselines; depth compares TCN, GRU/LSTM, and a compact attention model only
+   after a frozen regular-session dataset exists; ensemble work requires
+   independently generated out-of-fold predictions; replication reruns the
+   selected contract unchanged.
 
 ## GPU Policy
 
@@ -76,6 +114,10 @@ runtime is intentionally added.
   embargo. Its loader re-attests complete raw source files but does not
   materialize the later burned suffix as `Bar` objects. That boundary is a
   leakage control, not a KIS Paper or research-queue approval gate.
+- The KIS intraday contract uses the provider's Korea timestamp as the UTC
+  conversion basis and keeps exchange timestamp semantics visibly unqualified.
+  This avoids silently inventing a US daylight-saving calendar from an observed
+  source field.
 
 ## Recovery
 
@@ -90,6 +132,7 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Report the dataset contract, naive baseline, falsification result, and exactly
-which model family is next. Keep breadth, depth, ensemble, and replication
-queues current without creating a report family.
+Accumulate and qualify KIS regular-session minute coverage, then freeze the
+first intraday campaign contract and run its CPU naive baselines before any GPU
+candidate. Keep breadth, depth, ensemble, and replication queues current
+without creating a report family.

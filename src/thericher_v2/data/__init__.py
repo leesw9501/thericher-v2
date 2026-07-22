@@ -50,6 +50,11 @@ from .kis_paper_daily import (
     load_kis_paper_private_daily_catalog,
     slice_kis_paper_private_daily_catalog,
 )
+from .kis_paper_intraday import (
+    load_verified_kis_paper_private_intraday_catalog,
+    raw_bar_end_is_complete,
+    resample_verified_kis_paper_private_intraday_catalog,
+)
 from .local import (
     CSV_FIELDS,
     CatalogedBars,
@@ -123,6 +128,9 @@ __all__ = [
     "load_broad_daily_development_universe",
     "load_cataloged_yahoo_intraday_1m_bars",
     "load_kis_paper_private_daily_catalog",
+    "load_verified_kis_paper_private_intraday_catalog",
+    "raw_bar_end_is_complete",
+    "resample_verified_kis_paper_private_intraday_catalog",
     "slice_kis_paper_private_daily_catalog",
     "load_cataloged_yahoo_daily_1d_bars",
     "load_cataloged_corporate_actions",

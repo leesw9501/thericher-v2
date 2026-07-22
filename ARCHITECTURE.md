@@ -223,6 +223,25 @@ target exposure fraction, confidence, `valid_until`, and input-status evidence.
 It never outputs KIS request fields or an order. Execution alone maps an
 accepted target delta to a KIS-compatible paper `OrderIntent`.
 
+### Observed KIS Minute Cache
+
+The first cache implementation is a small reusable boundary, not a new gate or
+report family. `execution.kis_private_intraday_backfill` retains one immutable
+provider-field snapshot before atomically advancing its `NEXT`/`KEYB` cursor;
+`data.kis_paper_intraday` reattests every index, manifest, and raw hash before
+constructing a homogeneous 1m `CatalogedBars` stream. Exact overlap is accepted,
+but conflicting same-minute provider rows reject cursor advance. A missing raw
+file is unusable input only; it never turns an earlier
+`raw_market_data_retained: false` fact into a later collection restriction.
+
+The cache chooses KIS's explicit Korea date/time fields as its canonical UTC
+basis and marks a bar complete only when its end is no later than the rounded
+collection minute. It does not infer a US calendar, DST rule, regular session,
+holiday, early close, or exchange open-versus-close convention from that choice.
+Those facts must be sourced separately before an intraday campaign claims a
+regular-session feature window. `SessionWindow` remains the explicit caller
+contract for 5m, 10m, 1h, and 3h resampling.
+
 ## Model Policy
 
 The research lane may explore many model families:

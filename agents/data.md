@@ -23,6 +23,22 @@ Own the current KIS-native daily cache and its future reusable loaders.
   semantics. Its manifest permits development-training preparation only;
   `model`, `gpu`, `paper_trading`, `ranking`, and PIT scope remain false, and
   the source makes no PnL claim.
+- The first KIS-native intraday cache is at
+  `D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.
+  Its initial bounded cycle retained two source pages each for `QQQ/NAS` and
+  `SPY/AMS`: 239 exact-deduplicated 1m rows per stream, with one page-boundary
+  overlap per symbol. `data.kis_paper_intraday` verifies snapshot/index hashes
+  and maps KIS's explicit Korea date/time fields to UTC without inferring an
+  exchange DST calendar.
+- The observed first ranges are extended-session evidence, not regular-session
+  qualification: QQQ spans 20:01 through 23:59 UTC and SPY spans 19:58 through
+  23:59 UTC on 2026-07-21. Both canonical loaders returned 239 complete bars
+  under the conservative collection-time rule. Holiday, early-close, exchange
+  timestamp open/close, and regular-session classification remain unqualified.
+- A Docker-profiled continuation cycle and one further bounded chunk now give
+  718 unique 1m bars per stream under the latest offline reattestation: QQQ
+  spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21.
+  The index is authoritative for the next cursor and current coverage.
 
 ## Ready Queue
 
@@ -40,8 +56,13 @@ Own the current KIS-native daily cache and its future reusable loaders.
    is source-limited and was never KIS Paper permission.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
-5. Design the next reusable raw-minute cache lane from observed KIS behavior;
-   do not resurrect terminal metadata-only probes.
+5. Continue the KIS-native minute cache from its persisted cursor at useful
+   regular-session observations. Collect fresh data rather than reviving
+   terminal metadata-only probes; an old failed or unretained result cannot
+   disable this work.
+6. Establish a minimal source-backed regular-session/early-close interpretation
+   for cache consumers. Preserve raw provider rows and label unknown behavior;
+   do not repair, fill, or relabel a session from another provider.
 
 ## Authority And Boundaries
 
@@ -87,6 +108,17 @@ that would cross the 15% floor.
   descriptive replay evidence only. Its manifest prohibits training, campaign,
   paper-trading, and ranking use, so it must not become an intraday signal
   input; build the KIS-native minute cache for that loop instead.
+- KIS minute pagination resumes with `NEXT=1` plus a 14-digit `KEYB` derived
+  from the oldest retained exchange timestamp. The first actual QQQ and SPY
+  page pairs each had one exact boundary overlap; conflicts reject cursor
+  advance rather than silently replacing a cached minute.
+- The intraday loader uses the explicit KIS Korea fields (`kymd`/`khms`) as its
+  UTC basis. It labels a bar incomplete when its end is later than the rounded
+  collection minute, so an in-flight minute cannot become a completed feature.
+- The first immutable v1 snapshots predate the explicit
+  `canonical_start_policy` field. `data.kis_paper_intraday` accepts only their
+  exact equivalent completed-bar-rule spelling; it never rewrites source bytes
+  or relaxes the timestamp contract for another form.
 
 ## Recovery
 
@@ -96,7 +128,7 @@ as `reconcile`; do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
-Build the KIS-native minute-cache contract from observed Paper behavior, then
-hand its provider identity, timestamps, session coverage, raw-price limitation,
-and exact date range to Engine Research. Report only a concrete source-rights or
-storage constraint that needs operator action.
+Continue KIS-native minute accumulation and hand Engine Research the exact
+provider identity, timestamp basis, session classification, cache coverage, and
+data limitations. Report only a concrete source-rights or storage constraint
+that needs operator action.

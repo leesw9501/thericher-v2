@@ -8,6 +8,7 @@ import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
+from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, BinaryIO, Literal, Protocol
@@ -28,8 +29,12 @@ KIS_PAPER_MINUTE_QUERY_KEYS = frozenset(
     {"AUTH", "EXCD", "SYMB", "NMIN", "PINC", "NREC", "FILL", "KEYB", "NEXT"}
 )
 KIS_PAPER_DAILY_QUERY_KEYS = frozenset({"AUTH", "EXCD", "SYMB", "GUBN", "BYMD", "MODP"})
-KIS_PAPER_PROBE_SYMBOLS = frozenset({"QQQ", "SPY"})
-KIS_PAPER_PROBE_EXCHANGE = "NAS"
+KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
+    "QQQ": frozenset({"NAS"}),
+    # The active daily cache observes SPY through NYSE Arca (AMS). Keep NAS
+    # available as an observed empty capability rather than forcing one venue.
+    "SPY": frozenset({"NAS", "AMS"}),
+}
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
 # for empirical ETF venue checks; the active backfill mapping records only a
@@ -197,10 +202,10 @@ class KisPaperMinuteQuery:
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
-        if self.exchange != KIS_PAPER_PROBE_EXCHANGE:
-            raise ValueError("minute market-data probe exchange requires NAS")
-        if self.symbol not in KIS_PAPER_PROBE_SYMBOLS:
-            raise ValueError("minute market-data probe symbol is not approved")
+        if self.exchange not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(
+            self.symbol, frozenset()
+        ):
+            raise ValueError("minute market-data symbol/exchange pair is not supported")
         if (self.continuation_next is None) != (self.continuation_key is None):
             raise ValueError("continuation next and key must be supplied together")
         if self.continuation_next is not None and (
@@ -345,6 +350,14 @@ class KisPaperMinuteRawBar:
         ):
             if len(value) != length or not value.isdigit():
                 raise KisPaperMarketDataError(f"minute_{name}_invalid")
+        for date, time, name in (
+            (self.exchange_date, self.exchange_time, "exchange"),
+            (self.korea_date, self.korea_time, "korea"),
+        ):
+            try:
+                datetime.strptime(f"{date}{time}", "%Y%m%d%H%M%S")
+            except ValueError as error:
+                raise KisPaperMarketDataError(f"minute_{name}_timestamp_invalid") from error
         for value, name in (
             (self.open, "open"),
             (self.high, "high"),
@@ -358,6 +371,21 @@ class KisPaperMinuteRawBar:
             object.__setattr__(self, name, decimal)
         if self.high < max(self.open, self.last) or self.low > min(self.open, self.last):
             raise KisPaperMarketDataError("minute_ohlc_invalid")
+
+    def as_document(self) -> dict[str, str]:
+        """Keep the provider's minute-field names for private cache persistence."""
+
+        return {
+            "evol": str(self.volume),
+            "high": str(self.high),
+            "kymd": self.korea_date,
+            "khms": self.korea_time,
+            "last": str(self.last),
+            "low": str(self.low),
+            "open": str(self.open),
+            "xhms": self.exchange_time,
+            "xymd": self.exchange_date,
+        }
 
 
 @dataclass(frozen=True)
@@ -830,8 +858,10 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         or request.headers.get("tr_id") != KIS_PAPER_MINUTE_TR_ID
         or request.headers.get("custtype") != "P"
         or query.get("AUTH") != ""
-        or query.get("EXCD") != KIS_PAPER_PROBE_EXCHANGE
-        or query.get("SYMB") not in KIS_PAPER_PROBE_SYMBOLS
+        or query.get("EXCD")
+        not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(
+            str(query.get("SYMB")), frozenset()
+        )
         or query.get("NMIN") != "1"
         or query.get("NREC") != str(KIS_PAPER_MINUTE_MAX_ROWS)
         or query.get("FILL") != ""

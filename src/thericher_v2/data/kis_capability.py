@@ -228,7 +228,7 @@ class CompletedBarCache:
 
 
 def observed_kis_paper_capabilities() -> tuple[KisMarketDataCapability, ...]:
-    """The dated 2026-07-19 observations, deliberately short of qualification."""
+    """Dated Paper observations, deliberately short of research qualification."""
 
     observed_at = datetime(2026, 7, 19, 5, 42, 16, tzinfo=UTC)
     evidence = (
@@ -236,6 +236,43 @@ def observed_kis_paper_capabilities() -> tuple[KisMarketDataCapability, ...]:
         r"\20260719T054216611479Z\summary.json"
     )
     return (
+        KisMarketDataCapability(
+            capability_id="kis.paper.us.raw-1m.cache-v1.2026-07-22",
+            state=KisCapabilityState.OBSERVED,
+            endpoint_category="overseas_stock_intraday",
+            exchange_scope=("NAS", "AMS"),
+            symbol_scope=("QQQ", "SPY"),
+            raw_fields=(
+                "xymd",
+                "xhms",
+                "kymd",
+                "khms",
+                "open",
+                "high",
+                "low",
+                "last",
+                "evol",
+            ),
+            timeframe=Timeframe.M1,
+            time_semantics=(
+                "Korea timestamp fields map to UTC; exchange/session/open-close semantics "
+                "observed_unqualified"
+            ),
+            completed_bar_rule=(
+                "bar end at or before the rounded collection minute; source completion "
+                "semantics unqualified"
+            ),
+            freshness_budget=None,
+            paging_facts=(
+                "two 120-row pages per target with one exact boundary overlap; "
+                "NEXT/KEYB cursor persisted"
+            ),
+            storage_rights=KisStorageRightsStatus.UNVERIFIED,
+            evidence_reference=(
+                r"D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json"
+            ),
+            observed_at=datetime(2026, 7, 22, 1, 10, 4, 69369, tzinfo=UTC),
+        ),
         KisMarketDataCapability(
             capability_id="kis.paper.us.raw-1m.2026-07-19",
             state=KisCapabilityState.OBSERVED,

@@ -82,6 +82,39 @@ Do not brute-force the same page or silently accept its remaining rows. This is
 data correctness, not an approval condition for other KIS Paper or research
 work.
 
+## KIS Intraday Backfill
+
+The active private 1m cache is at:
+
+```text
+D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json
+```
+
+Run a bounded cursor-resuming cycle whenever fresh intraday coverage is useful:
+
+```powershell
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --pages-per-target 2
+```
+
+The Docker-equivalent path injects only the two Paper app values and mounts the
+external market-data root outside `/app`:
+
+```powershell
+docker compose --profile kis-paper-intraday-cache run --rm --no-deps kis-paper-intraday-cache
+```
+
+It uses only the Paper-only market-data client for `QQQ/NAS` and `SPY/AMS`,
+writes immutable raw provider-field rows and manifests under `D:`, then moves a
+cursor atomically. It never reads account or live values, places an order, or
+writes market data into Git. A failed or empty call records no data-bearing
+chunk and does not reserve or disable its next correctly scoped collection.
+
+`data.kis_paper_intraday` is the offline consumer: it verifies every index,
+manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
+5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first
+observed pages include extended-session data, so do not treat the cache as a
+regular-session strategy dataset until Data records that source semantics.
+
 ## KIS Account Snapshot
 
 The credential-bearing account bridge is intentionally separate from the web

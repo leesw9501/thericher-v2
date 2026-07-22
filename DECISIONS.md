@@ -3813,3 +3813,41 @@ capital-approval chain, or agent platform. Its weekday time-window helper does
 not assert a complete holiday or early-close calendar; that is a source-semantics
 question for the next KIS-native intraday data objective, not a manual approval
 gate.
+
+## 2026-07-22 - Add resumable KIS-native intraday cache under standing Paper authority
+
+Decision: replace the historical minute-probe shape with a reusable private
+cache for `QQQ/NAS` and `SPY/AMS`. The Paper-only 1m client retains immutable
+provider-field gzip rows, a manifest/raw hash, exact-overlap fingerprints, and
+an atomic per-target `NEXT`/`KEYB` cursor below
+`D:\market_data\us_equities\kis_paper_private\intraday`. A failed or empty
+attempt writes no data-bearing chunk; it cannot create a fixed
+`raw_market_data_retained: false` latch. An exact overlap is deduplicated;
+different fields for the same KIS Korea timestamp reject cursor advance.
+
+The offline loader uses KIS's explicit Korea timestamp fields as the canonical
+UTC basis and marks a bar incomplete if its end follows the rounded collection
+minute. It reuses the existing explicit-session resampler for 5m, 10m, 1h, and
+3h output. This is intentionally not a US regular-session or source
+open-versus-close claim: holiday, early-close, exchange timestamp, and session
+semantics remain `observed_unqualified` until source evidence says otherwise.
+
+The first actual bounded cycle stored 239 deduplicated 1m rows for each target,
+with one exact page-boundary overlap per symbol. QQQ covered 20:01-23:59 UTC
+and SPY 19:58-23:59 UTC on 2026-07-21, so both are extended-session evidence.
+A local-paper multitimeframe smoke consumed QQQ's cache with 1m/5m/10m/1h
+cells only; its short history correctly left 3h execution unready. No price,
+credential, account, order, or raw response body entered Git, console output,
+or generated model artifacts.
+
+Claude's falsification-first verdict was `supported-with-limits`. It would
+reverse if a live/order route became reachable from the collector or if KIS
+minute fields could not yield an honest UTC conversion. The current allowlist
+has no order/live route, and the explicit Korea fields provide the selected
+fixed-offset basis. Source session interpretation remains a separate data fact,
+not an approval boundary.
+
+Reason: the engine needs reusable KIS-reconstructible input bytes more than
+another terminal observation. The narrow cache keeps moving under the operator's
+full Paper authority while preserving only the technical checks needed to make
+later model and paper evidence reproducible.
