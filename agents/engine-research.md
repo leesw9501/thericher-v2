@@ -15,7 +15,7 @@ parallel with Paper operation.
 The daily SPY lane now owns a deliberately transparent two-close momentum
 baseline. It consumes only one hash-attested `SPY/AMS` D1 source that was first
 locally available before the next execution session, emits a deterministic
-`enter` or `abstain` receipt, and replays eligible synthetic decisions through
+`enter`, `exit`, or `abstain` receipt, and replays eligible synthetic decisions through
 `source: local_paper`. It is an execution-learning reference, not a return,
 selection, ensemble, or GPU-promotion claim.
 
@@ -220,7 +220,7 @@ into a Research-owned immutable receipt through
 `thericher_v2.research.decision_receipt`. The receipt is deliberately narrower
 than its source: it holds only opaque campaign/model/proposal references, an
 exact `sha256:` input-manifest reference, deterministic decision identity,
-`enter` or `abstain`, input status, UTC decision validity, and a closed reason
+`enter`, `exit`, or `abstain`, input status, UTC decision validity, and a closed reason
 class. It does not carry source bars, features, scores, prices, quantities,
 symbols, account facts, source/provider payloads, or the proposal reason.
 
@@ -229,9 +229,9 @@ Its complete digest, never a shortened display reference, is the authoritative
 join key. A changed capability/provider contract must remain an
 `unqualified` proposal and therefore becomes an explicit
 `abstain`/`input_unavailable` receipt. `future`, missing, stale, incomplete,
-or other unready input behaves the same way. Ready `hold`, `reduce`, and `exit`
-proposals are narrowed to a no-entry abstention; only a ready `enter` remains
-eligible for the later Execution-owned adapter.
+or other unready input behaves the same way. Ready `hold` and `reduce`
+proposals remain abstentions; ready `enter` and `exit` proposals carry explicit
+eligible receipt classes for the Execution-owned target-position adapter.
 
 References are supplied by the durable campaign/input registry as opaque,
 high-entropy identities. The receipt module must not derive them from raw data
@@ -250,7 +250,8 @@ baseline qualification, the actual result is `abstain` / `unqualified` /
 `input_unavailable`; its local-paper preparation is therefore a scoped
 no-intent. This is useful input-status evidence, not a Paper restriction or a
 claim about model quality. Focused synthetic replay proves the same immutable
-receipt shape can carry an eligible `enter` through `source: local_paper`.
+receipt shape can carry eligible `enter` and `exit` transitions through
+`source: local_paper`.
 
 ## Sanitized Paper Lifecycle Consumer Contract
 
@@ -303,10 +304,9 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Keep KIS regular-session minute coverage accumulating while execution builds a
-minimal private Paper console. After each head-cache update, run the
-metadata-only prospective preparation tool; begin the descriptive observation
-only after it has actually found its first five complete head sessions. Keep
-breadth, depth, ensemble, and replication queues current without creating a
-report family; do not turn the small current comparison slice into a selection
-or Paper-work gate.
+Keep KIS regular-session minute coverage accumulating and maintain the
+breadth, depth, ensemble, and replication queues without creating a report
+family. For the next Paper observer, consume only an authoritative sanitized
+Execution lifecycle fact and leave `pnl_status: not_observed` unchanged until
+KIS completion evidence supports more. Do not turn a small current comparison
+slice or one Paper observation into selection or Paper-work authority.

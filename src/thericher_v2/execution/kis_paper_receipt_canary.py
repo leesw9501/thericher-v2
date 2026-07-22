@@ -13,6 +13,7 @@ from collections.abc import Callable, Mapping
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
+from typing import Literal
 
 from thericher_v2.contracts import require_utc
 from thericher_v2.research.decision_receipt import ResearchDecisionReceipt
@@ -64,6 +65,7 @@ def prepare_kis_paper_spy_receipt_decision(
             limit_input=limit_input,
             limit_price=limit_price,
             discount_bps=discount_bps,
+            side="buy" if receipt.decision_class == "enter" else "sell",
         ),
         symbol="SPY",
         exchange=KIS_PAPER_US_SPY_ORDER_EXCHANGE,
@@ -163,6 +165,7 @@ def _price_contract_ref(
     limit_input: KisPaperSpyLimitInput,
     limit_price: Decimal,
     discount_bps: Decimal,
+    side: Literal["buy", "sell"],
 ) -> str:
     """Bind transient AMS quote facts to the final AMEX limit without exposing them."""
 
@@ -171,6 +174,7 @@ def _price_contract_ref(
         "symbol": "SPY",
         "quote_venue": KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
         "execution_venue": KIS_PAPER_US_SPY_ORDER_EXCHANGE,
+        "side": side,
         "quoted_at": limit_input.quoted_at.isoformat(),
         "last": _decimal_marker(limit_input.last),
         "decimal_places": limit_input.decimal_places,

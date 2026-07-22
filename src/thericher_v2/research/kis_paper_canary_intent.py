@@ -15,6 +15,7 @@ from typing import Final, Literal
 from thericher_v2.contracts import SCHEMA_VERSION, positive, require_utc
 
 KIS_PAPER_CANARY_BUY_DECISION_SCHEMA_ID: Final = "kis-paper-canary-buy-decision-v1"
+KIS_PAPER_CANARY_SELL_DECISION_SCHEMA_ID: Final = "kis-paper-canary-sell-decision-v1"
 KIS_PAPER_CANARY_US_EXCHANGES: Final = frozenset({"NASD", "NYSE", "AMEX"})
 
 _US_SYMBOL = re.compile(r"[A-Z0-9]+(?:[.-][A-Z0-9]+)*")
@@ -75,3 +76,47 @@ def _require_uppercase_symbol(value: str) -> None:
 def _require_explicit_us_exchange(value: str) -> None:
     if not isinstance(value, str) or value not in KIS_PAPER_CANARY_US_EXCHANGES:
         raise ValueError("canary decision exchange must be an uppercase supported US exchange")
+
+
+@dataclass(frozen=True)
+class KisPaperCanarySellDecision:
+    """A fixed-shape US limit-sell decision for a verified long-only reduction."""
+
+    decision_id: str
+    symbol: str
+    exchange: str
+    quantity: Decimal
+    limit_price: Decimal
+    decision_as_of: datetime
+    valid_until: datetime
+    schema_id: str = KIS_PAPER_CANARY_SELL_DECISION_SCHEMA_ID
+    market: Literal["US"] = "US"
+    side: Literal["sell"] = "sell"
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.decision_id, str) or not self.decision_id.strip():
+            raise ValueError("decision_id must be nonempty")
+        if self.schema_id != KIS_PAPER_CANARY_SELL_DECISION_SCHEMA_ID:
+            raise ValueError("canary sell decision schema is invalid")
+        if self.market != "US":
+            raise ValueError("canary decision market must be US")
+        if self.side != "sell":
+            raise ValueError("canary decision side must be sell")
+        _require_uppercase_symbol(self.symbol)
+        _require_explicit_us_exchange(self.exchange)
+        object.__setattr__(self, "quantity", positive(self.quantity, "quantity"))
+        object.__setattr__(self, "limit_price", positive(self.limit_price, "limit_price"))
+        if self.quantity != self.quantity.to_integral_value():
+            raise ValueError("canary decision quantity must be whole shares")
+        object.__setattr__(
+            self,
+            "decision_as_of",
+            require_utc(self.decision_as_of, "decision_as_of"),
+        )
+        object.__setattr__(self, "valid_until", require_utc(self.valid_until, "valid_until"))
+        if self.valid_until <= self.decision_as_of:
+            raise ValueError("valid_until must follow decision_as_of")
+
+
+KisPaperCanaryOrderDecision = KisPaperCanaryBuyDecision | KisPaperCanarySellDecision

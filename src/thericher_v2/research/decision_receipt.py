@@ -16,9 +16,10 @@ from thericher_v2.contracts import (
     require_utc,
 )
 
-DecisionClass = Literal["enter", "abstain"]
+DecisionClass = Literal["enter", "exit", "abstain"]
 DecisionReasonClass = Literal[
     "eligible_enter",
+    "eligible_exit",
     "input_unavailable",
     "model_abstain",
     "non_entry_proposal",
@@ -65,7 +66,7 @@ class DecisionReceiptReferences:
 
 @dataclass(frozen=True)
 class ResearchDecisionReceipt:
-    """Replayable, narrowed evidence for an enter-or-abstain research decision."""
+    """Replayable, narrowed evidence for an entry, exit, or abstain decision."""
 
     campaign_ref: str
     model_ref: str
@@ -86,12 +87,13 @@ class ResearchDecisionReceipt:
             input_manifest_ref=self.input_manifest_ref,
             proposal_ref=self.proposal_ref,
         )
-        if self.decision_class not in {"enter", "abstain"}:
-            raise ValueError("decision_class must be enter or abstain")
+        if self.decision_class not in {"enter", "exit", "abstain"}:
+            raise ValueError("decision_class must be enter, exit, or abstain")
         if self.input_status not in _INPUT_STATUSES:
             raise ValueError("input_status is invalid")
         if self.reason_class not in {
             "eligible_enter",
+            "eligible_exit",
             "input_unavailable",
             "model_abstain",
             "non_entry_proposal",
@@ -193,6 +195,8 @@ def _classify_proposal(
         return "abstain", "input_unavailable"
     if proposal.action == "enter":
         return "enter", "eligible_enter"
+    if proposal.action == "exit":
+        return "exit", "eligible_exit"
     if proposal.action == "abstain":
         return "abstain", "model_abstain"
     return "abstain", "non_entry_proposal"
@@ -219,6 +223,8 @@ def _require_decision_shape(
             raise ValueError("unavailable inputs must produce an unavailable abstain receipt")
         return
     if decision_class == "enter" and reason_class == "eligible_enter":
+        return
+    if decision_class == "exit" and reason_class == "eligible_exit":
         return
     if decision_class == "abstain" and reason_class in {
         "model_abstain",

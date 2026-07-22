@@ -25,8 +25,11 @@ as a failed collection or an authority hold.
   Its first verified generation holds 99 `SPY/AMS` prior completed sessions
   through 2026-07-21 and never retains the current US exchange date. The head
   is a distinct immutable source, not a row-level patch over the historical
-  cache. `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST on
-  Tuesday through Saturday.
+  cache. The later Paper entry/exit lifecycle consumes only its hash-attested
+  bars and first-local-availability semantics; it cannot turn this data source
+  into a price, account, position, fill, or PnL assertion.
+  `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
+  Saturday.
 - Last known clean common coverage: 694 completed sessions. QQQ has five
   committed chunks, SPY six, and IWM three plus one validated partial chunk.
   Inspect the index before acting.
@@ -244,12 +247,10 @@ orphan snapshot without KIS access. Classify a bad snapshot or index as
 
 ## Next Handoff
 
-Engine Research may produce one fixed baseline receipt from the existing
-QQQ/NAS 1m KIS-only 20-session input and must preserve its exact identity. Do
-not mix it with the daily cache, prospective head cache, SPY, IWM, or another
-provider. Continue KIS-native minute accumulation and preserve the provider
-identity, timestamp basis, session classification, coverage, and limitations
-for a later current-input handoff. Re-run the metadata-only prospective
-preparer after future head collections; hand off only when it reports five
-complete sessions. Report only a concrete source-rights or storage constraint
-that needs operator action.
+For the next exact-order observer, verify the narrow KIS Paper completion and
+position source semantics without mixing a bar provider or treating a daily bar
+as a fill. Continue KIS-native minute accumulation and preserve provider
+identity, timestamp basis, session classification, coverage, and limitations.
+Re-run the metadata-only prospective preparer after future head collections;
+report only a concrete source-rights or storage constraint that needs operator
+action.

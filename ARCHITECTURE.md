@@ -74,8 +74,15 @@ source, never a per-row blend.
 The receipt digest crosses the Research/Execution boundary unchanged. It
 becomes the virtual-paper durable intent identity, so a retry can reconcile the
 same request but cannot replace it with a new quote or submit a duplicate order.
-This current slice supports `enter` and `abstain` only; the later position
-lifecycle adds its own explicit exit and reconciliation contract.
+The current slice supports `enter`, `exit`, and `abstain`. Execution reads one
+fresh, complete KIS Paper account/open-order snapshot before a broker side
+effect, recognizes only `flat` or exactly one `SPY` / `AMEX` share, and maps the
+result to at most one whole-share target delta. Any existing SPY open order,
+stale account fact, or out-of-scope position is a scoped no-intent result for
+that run. The virtual buy and sell routes have distinct KIS Paper TR IDs, but
+the same receipt cannot change its persisted side. Acknowledgement, open-order
+state, and later reconciliation are execution facts; neither a receipt nor an
+acknowledgement is a fill or realized-PnL claim.
 
 ## Modules
 

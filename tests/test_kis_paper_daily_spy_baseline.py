@@ -166,6 +166,22 @@ def test_expired_daily_execution_window_is_a_scoped_abstain(tmp_path: Path) -> N
     assert result.receipt.reason_class == "input_unavailable"
 
 
+def test_downward_two_close_baseline_emits_an_explicit_exit_receipt(tmp_path: Path) -> None:
+    input = _input(
+        tmp_path,
+        closes=(Decimal("101"), Decimal("100")),
+    )
+
+    result = evaluate_kis_paper_daily_spy_baseline(
+        input,
+        as_of=_FIRST_AVAILABLE_AT + timedelta(minutes=1),
+    )
+
+    assert result.proposal.action == "exit"
+    assert result.receipt.decision_class == "exit"
+    assert result.receipt.reason_class == "eligible_exit"
+
+
 def test_attestation_is_offline_and_rejects_a_git_artifact_root(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -190,20 +206,28 @@ def test_attestation_is_offline_and_rejects_a_git_artifact_root(
         assert forbidden not in source
 
 
-def _input(tmp_path: Path):
+def _input(
+    tmp_path: Path,
+    *,
+    closes: tuple[Decimal, Decimal] = (Decimal("100"), Decimal("101")),
+):
     repo_root = tmp_path / "repo"
     repo_root.mkdir(exist_ok=True)
     return attest_kis_paper_daily_spy_input(
-        _catalog(tmp_path),
+        _catalog(tmp_path, closes=closes),
         availability_root=tmp_path / "availability",
         repository_root=repo_root,
         attested_at=_FIRST_AVAILABLE_AT,
     )
 
 
-def _catalog(tmp_path: Path) -> KisPaperPrivateDailyCatalog:
+def _catalog(
+    tmp_path: Path,
+    *,
+    closes: tuple[Decimal, Decimal] = (Decimal("100"), Decimal("101")),
+) -> KisPaperPrivateDailyCatalog:
     sessions = (date(2026, 7, 20), date(2026, 7, 21))
-    bars = (_bar(sessions[0], Decimal("100")), _bar(sessions[1], Decimal("101")))
+    bars = (_bar(sessions[0], closes[0]), _bar(sessions[1], closes[1]))
     dataset_hash = "sha256:" + "a" * 64
     stream = _cataloged_bars_from_verified_loader(
         dataset_id="kis.paper.private.daily.backfill-v1.common-panel",

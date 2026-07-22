@@ -222,7 +222,6 @@ services:
       - -m
       - thericher_v2.execution.kis_paper_daily_spy_session
       - --execute
-      - --cancel-after-submit
       - --repository-root
       - /app
       - --cache-root

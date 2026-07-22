@@ -10,7 +10,11 @@ from typing import Final, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, OrderIntent, positive, require_utc
 from thericher_v2.research.decision_receipt import ResearchDecisionReceipt
-from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
+from thericher_v2.research.kis_paper_canary_intent import (
+    KisPaperCanaryBuyDecision,
+    KisPaperCanaryOrderDecision,
+    KisPaperCanarySellDecision,
+)
 
 _OPAQUE_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}")
 _SHA256_REFERENCE: Final = re.compile(r"sha256:[0-9a-f]{64}")
@@ -93,7 +97,7 @@ class PaperDecisionBridgeResult:
     status: BridgeStatus
     reason: BridgeReason
     local_paper_intent: OrderIntent | None = None
-    kis_paper_decision: KisPaperCanaryBuyDecision | None = None
+    kis_paper_decision: KisPaperCanaryOrderDecision | None = None
     price_contract_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
@@ -153,7 +157,7 @@ def prepare_local_paper_intent(
     binding: PaperDecisionExecutionBinding,
     as_of: datetime,
 ) -> PaperDecisionBridgeResult:
-    """Prepare a deterministic local-paper buy intent without external access."""
+    """Prepare a deterministic local-paper entry or exit without external access."""
 
     now = require_utc(as_of, "as_of")
     reason = _eligibility_reason(receipt=receipt, binding=binding, as_of=now)
@@ -170,7 +174,7 @@ def prepare_local_paper_intent(
             client_order_id=f"local-receipt-{digest}",
             symbol=binding.symbol,
             market=binding.market,
-            side="buy",
+            side="buy" if receipt.decision_class == "enter" else "sell",
             quantity=binding.quantity,
             limit_price=None,
             decision_id=receipt.decision_id,
@@ -186,7 +190,7 @@ def prepare_kis_paper_decision(
     limit_proof: KisPaperLimitProof,
     as_of: datetime,
 ) -> PaperDecisionBridgeResult:
-    """Prepare an existing virtual-paper canary decision without submitting it."""
+    """Prepare an existing virtual-paper entry or exit decision without submitting it."""
 
     now = require_utc(as_of, "as_of")
     receipt_ref = receipt_attribution_ref(receipt)
@@ -221,12 +225,9 @@ def prepare_kis_paper_decision(
             reason="price_proof_tick_invalid",
         )
     digest = _receipt_digest(receipt.decision_id)
-    return PaperDecisionBridgeResult(
-        route="kis_paper",
-        receipt_ref=receipt_ref,
-        status="ready",
-        reason="eligible",
-        kis_paper_decision=KisPaperCanaryBuyDecision(
+    decision: KisPaperCanaryOrderDecision
+    if receipt.decision_class == "enter":
+        decision = KisPaperCanaryBuyDecision(
             decision_id=f"receipt-{digest}",
             symbol=binding.symbol,
             exchange=binding.exchange,
@@ -234,7 +235,23 @@ def prepare_kis_paper_decision(
             limit_price=limit_proof.limit_price,
             decision_as_of=now,
             valid_until=min(receipt.valid_until, limit_proof.valid_until),
-        ),
+        )
+    else:
+        decision = KisPaperCanarySellDecision(
+            decision_id=f"receipt-{digest}",
+            symbol=binding.symbol,
+            exchange=binding.exchange,
+            quantity=binding.quantity,
+            limit_price=limit_proof.limit_price,
+            decision_as_of=now,
+            valid_until=min(receipt.valid_until, limit_proof.valid_until),
+        )
+    return PaperDecisionBridgeResult(
+        route="kis_paper",
+        receipt_ref=receipt_ref,
+        status="ready",
+        reason="eligible",
+        kis_paper_decision=decision,
         price_contract_ref=limit_proof.price_contract_ref,
     )
 
@@ -253,11 +270,11 @@ def _eligibility_reason(
 ) -> BridgeReason | None:
     if binding.proposal_ref != receipt.proposal_ref:
         return "binding_mismatch"
-    if (
-        receipt.decision_class != "enter"
-        or receipt.reason_class != "eligible_enter"
-        or receipt.input_status != "ready"
-    ):
+    eligible_shape = (
+        (receipt.decision_class == "enter" and receipt.reason_class == "eligible_enter")
+        or (receipt.decision_class == "exit" and receipt.reason_class == "eligible_exit")
+    )
+    if not eligible_shape or receipt.input_status != "ready":
         return "receipt_not_eligible"
     if as_of < receipt.decided_at or as_of > receipt.valid_until:
         return "receipt_not_current"

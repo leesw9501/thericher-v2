@@ -17,6 +17,7 @@ from thericher_v2.execution.kis_paper_canary import (
     KIS_PAPER_US_CANCEL_TR_ID,
     KIS_PAPER_US_CCNCL_PATH,
     KIS_PAPER_US_CCNCL_TR_ID,
+    KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
     KisPaperCanaryClient,
     KisPaperCanaryError,
     KisPaperCanaryIntent,
@@ -47,7 +48,10 @@ from thericher_v2.execution.paper_canary_runtime import (
     PaperCanaryRuntimeSnapshot,
     read_paper_canary_runtime,
 )
-from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
+from thericher_v2.research.kis_paper_canary_intent import (
+    KisPaperCanaryBuyDecision,
+    KisPaperCanarySellDecision,
+)
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 
@@ -65,6 +69,7 @@ class FakeKisPaperCanaryTransport:
     matching_ccnl_after_cancel: bool = False
     cancellation_seen: bool = False
     order_open: bool = False
+    order_side: str = "buy"
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -73,7 +78,7 @@ class FakeKisPaperCanaryTransport:
             if self.fail_auth:
                 return KisHttpResponse.from_payload({"error": "invalid"}, status_code=403)
             return KisHttpResponse.from_payload({"access_token": "test-access-token"})
-        if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+        if tr_id in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID}:
             if self.fail_submit:
                 raise KisPaperCanaryError("transport_failure")
             if self.submit_status_code is not None:
@@ -94,6 +99,9 @@ class FakeKisPaperCanaryTransport:
                     payload["msg1"] = self.submit_message_text
                 return KisHttpResponse.from_payload(payload)
             self.order_open = True
+            self.order_side = (
+                "buy" if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID else "sell"
+            )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
             self.cancellation_seen = True
@@ -110,7 +118,10 @@ class FakeKisPaperCanaryTransport:
             if self.order_open:
                 if request.query["OVRS_EXCG_CD"] == "NASD":
                     return KisHttpResponse.from_payload(
-                        {"rt_cd": "0", "output": [_matching_open_order_payload()]}
+                        {
+                            "rt_cd": "0",
+                            "output": [_matching_open_order_payload(side=self.order_side)],
+                        }
                     )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
@@ -365,6 +376,18 @@ def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport()
                 "https://openapivts.koreainvestment.com:29443"
                 f"{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
             ),
+            headers={
+                **_paper_post_headers(),
+                "tr_id": KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+            },
+            json_body=_buy_limit_body(),
+        ),
+        KisHttpRequest(
+            method="POST",
+            url=(
+                "https://openapivts.koreainvestment.com:29443"
+                f"{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
+            ),
             headers=_paper_post_headers(),
             json_body={**_buy_limit_body(), "ORD_DVSN": "01"},
         ),
@@ -385,7 +408,7 @@ def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport()
             query={**_ccnl_query(), "SLL_BUY_DVSN": "02"},
         ),
     ],
-    ids=("wrong_tr_id", "wrong_buy_body", "wrong_ccnl_query"),
+    ids=("wrong_tr_id", "wrong_buy_body", "wrong_sell_body", "wrong_ccnl_query"),
 )
 def test_canary_allowlist_rejects_bad_header_body_or_query_before_transport(
     candidate_request: KisHttpRequest,
@@ -1279,6 +1302,45 @@ def test_cancel_with_matching_completion_is_not_reported_clean(tmp_path: Path) -
     assert outcome.reconciliation.matching_ccnl is True
 
 
+def test_sell_canary_uses_only_the_virtual_sell_limit_route(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport()
+
+    outcome = run_kis_paper_canary(
+        decision=_sell_decision(),
+        run_id="sell-canary-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "sell-canary-1.json",
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "submitted"
+    assert _submission_count(transport) == 0
+    assert _sell_submission_count(transport) == 1
+    sell_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID
+    )
+    assert sell_request.json_body is not None
+    assert sell_request.json_body["SLL_TYPE"] == "00"
+    state = KisPaperCanaryStateStore(
+        tmp_path / "private" / "sell-canary-1.json"
+    ).read()
+    assert state is not None
+    assert state.intent.side == "sell"
+    lifecycle = read_paper_canary_lifecycle_fact(outcome.evidence_path)
+    assert lifecycle.decision_class == "exit"
+    assert lifecycle.attribution_eligibility == "open"
+    safe_evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"order_side":"sell"' in safe_evidence
+    for forbidden in ("paper-app-secret", "12345678", "500.25", "KIS_LIVE"):
+        assert forbidden not in safe_evidence
+
+
 def _config() -> KisPaperConfig:
     return KisPaperConfig(
         app_key="paper-app-key",
@@ -1314,6 +1376,22 @@ def _decision(
     )
 
 
+def _sell_decision(
+    *,
+    decision_as_of: datetime = NOW,
+    decision_id: str = "canary-qqq-sell-20260722T143000Z",
+) -> KisPaperCanarySellDecision:
+    return KisPaperCanarySellDecision(
+        decision_id=decision_id,
+        symbol="QQQ",
+        exchange="NASD",
+        quantity=Decimal("1"),
+        limit_price=Decimal("500.25"),
+        decision_as_of=decision_as_of,
+        valid_until=decision_as_of + timedelta(minutes=5),
+    )
+
+
 def _paths(tmp_path: Path) -> dict[str, Path]:
     return {
         "runtime_projection_path": tmp_path / "runtime" / "canary.json",
@@ -1331,17 +1409,24 @@ def _submission_count(transport: FakeKisPaperCanaryTransport) -> int:
     )
 
 
+def _sell_submission_count(transport: FakeKisPaperCanaryTransport) -> int:
+    return sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+
+
 def _token_request_count(transport: FakeKisPaperCanaryTransport) -> int:
     return sum(request.url.endswith("/oauth2/tokenP") for request in transport.requests)
 
 
-def _matching_open_order_payload() -> dict[str, str]:
+def _matching_open_order_payload(*, side: str = "buy") -> dict[str, str]:
     return {
         "odno": "ORD-123456789",
         "pdno": "QQQ",
         "ovrs_excg_cd": "NASD",
         "tr_crcy_cd": "USD",
-        "sll_buy_dvsn_cd": "02",
+        "sll_buy_dvsn_cd": "02" if side == "buy" else "01",
         "ft_ord_qty": "1",
         "ft_ccld_qty": "0",
         "nccs_qty": "1",

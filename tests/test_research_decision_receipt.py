@@ -114,6 +114,16 @@ def test_ready_non_enter_proposals_remain_abstentions() -> None:
     assert receipt.reason_class == "non_entry_proposal"
 
 
+def test_ready_exit_proposal_projects_to_an_explicit_exit_receipt() -> None:
+    receipt = receipt_from_target_exposure_proposal(
+        _proposal(action="exit", input_status="ready", reason="target-flat"),
+        references=_references(),
+    )
+
+    assert receipt.decision_class == "exit"
+    assert receipt.reason_class == "eligible_exit"
+
+
 def test_exact_input_manifest_reference_and_derived_identity_are_required() -> None:
     proposal = _proposal(action="enter", input_status="ready", reason="not-exported")
 

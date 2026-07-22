@@ -4257,3 +4257,42 @@ current-session exclusion, whole-source selection, immutable source hashes,
 virtual-route isolation, redaction, and exact-intent recovery. The next change
 may add an explicit receipt-linked Paper position/exit lifecycle, but must not
 create a live route or reinterpret a cancellation as PnL.
+
+## 2026-07-22 - Add receipt-linked KIS Paper SPY position lifecycle
+
+Decision: extend the daily SPY slice from a buy-only cancellation diagnostic to
+a receipt-linked one-share target-position loop. A ready `enter` receipt may
+produce only `flat -> buy one SPY/AMEX share`; a ready `exit` receipt may
+produce only `one SPY/AMEX share -> flat`. Execution gets that state from one
+fresh complete KIS Paper account/open-order snapshot, not from a prior intent,
+acknowledgement, local cache, or inferred fill. An existing SPY open order,
+stale snapshot, unsupported inventory, or target already met yields a scoped
+no-intent result for that invocation.
+
+The virtual sell adapter uses the same fixed Paper host and order endpoint as
+the buy adapter, with the official KIS Paper sell TR ID `VTTT1001U` and
+`SLL_TYPE="00"`; the existing Paper buy route remains `VTTT1002U`. The pure
+field mapping is cross-checked against the pinned official KIS sample revision
+`885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`. Durable intent state carries an
+explicit sell side while preserving legacy buy fingerprints. The stable
+receipt-derived run identity remains shared, so a replay with a changed quote
+reuses the first price proof and a replay with an opposite side fails its exact
+identity check before a request can be sent.
+
+Sanitized execution evidence may expose categorical `order_side`, lifecycle
+state, target-resolution state, and `pnl_status: not_observed`. It must not
+claim a fill, cost basis, account value, cash value, or realized PnL until a
+later authoritative KIS completion/reconciliation contract exists. The daily
+compose service no longer passes `--cancel-after-submit`, allowing a valid
+Paper limit order to participate in a position lifecycle; the standalone
+canary retains its immediate-cancel diagnostic behavior.
+
+Claude's pre-implementation falsification-first verdict was
+`supported-with-limits`. The implemented kill tests cover virtual-only sell
+routing, changed-quote idempotency, same-receipt directional exclusion, stale
+account facts, open-order conflicts, redaction, and no fabricated PnL. A
+credential-free direct Docker exercise of the daily service produced only a
+safe stale-receipt no-intent; it sent no account, quote, or order request.
+
+Reason: this creates a truthful first Paper position loop without adding a
+live route, a quota, a model-promotion gate, or a report system.

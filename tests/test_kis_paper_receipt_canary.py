@@ -1,16 +1,20 @@
 from __future__ import annotations
 
 from collections.abc import Iterator, Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
+
+import pytest
 
 from thericher_v2.contracts import TargetExposureProposal
 from thericher_v2.execution.kis_paper_canary import (
     KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
     KIS_PAPER_US_CCNCL_TR_ID,
+    KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
     KisPaperCanaryClient,
+    KisPaperCanaryError,
     KisPaperCanaryStateStore,
 )
 from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
@@ -33,6 +37,7 @@ from thericher_v2.research.decision_receipt import (
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
+from thericher_v2.research.kis_paper_canary_intent import KisPaperCanarySellDecision
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 
@@ -41,14 +46,18 @@ NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 class FakePaperTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
     order_open: bool = False
+    order_side: str = "buy"
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
         tr_id = request.headers.get("tr_id", "")
         if request.method == "POST" and request.url.endswith("/oauth2/tokenP"):
             return KisHttpResponse.from_payload({"access_token": "test-access-token"})
-        if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+        if tr_id in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID}:
             self.order_open = True
+            self.order_side = (
+                "buy" if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID else "sell"
+            )
             return KisHttpResponse.from_payload(
                 {"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}}
             )
@@ -57,7 +66,7 @@ class FakePaperTransport:
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
             if self.order_open and request.query.get("OVRS_EXCG_CD") == "AMEX":
                 return KisHttpResponse.from_payload(
-                    {"rt_cd": "0", "output": [_matching_spy_open_order()]}
+                    {"rt_cd": "0", "output": [_matching_spy_open_order(side=self.order_side)]}
                 )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
@@ -175,6 +184,92 @@ def test_receipt_preparation_is_pure_and_rejects_an_ineligible_receipt() -> None
     assert rejected.kis_paper_decision is None
 
 
+def test_exit_receipt_uses_only_the_virtual_sell_route(tmp_path: Path) -> None:
+    transport = FakePaperTransport()
+    client = KisPaperCanaryClient(config=_config(), transport=transport)
+    prepared = _prepared(
+        _eligible_receipt(action="exit"),
+        last=Decimal("500.25"),
+        quoted_at=NOW,
+    )
+
+    outcome = run_kis_paper_receipt_canary(
+        prepared,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private",
+        execute=True,
+        cancel_after_submit=False,
+        client=client,
+        now=NOW,
+        submit_permitted=lambda _now: True,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "submitted"
+    assert _submission_count(transport) == 0
+    assert _sell_submission_count(transport) == 1
+    sell_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID
+    )
+    assert sell_request.json_body is not None
+    assert sell_request.json_body["SLL_TYPE"] == "00"
+    safe_evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"order_side":"sell"' in safe_evidence
+    for forbidden in ("paper-app-secret", "12345678", "500.25", "KIS_LIVE"):
+        assert forbidden not in safe_evidence
+
+
+def test_receipt_cannot_change_direction_after_its_first_durable_intent(tmp_path: Path) -> None:
+    transport = FakePaperTransport()
+    client = KisPaperCanaryClient(config=_config(), transport=transport)
+    prepared = _prepared(_eligible_receipt(), last=Decimal("500.25"), quoted_at=NOW)
+    paths = _paths(tmp_path)
+
+    run_kis_paper_receipt_canary(
+        prepared,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private",
+        execute=True,
+        cancel_after_submit=False,
+        client=client,
+        now=NOW,
+        submit_permitted=lambda _now: True,
+        **paths,
+    )
+    first_decision = prepared.kis_paper_decision
+    assert first_decision is not None
+    conflicting = replace(
+        prepared,
+        kis_paper_decision=KisPaperCanarySellDecision(
+            decision_id=first_decision.decision_id,
+            symbol=first_decision.symbol,
+            exchange=first_decision.exchange,
+            quantity=first_decision.quantity,
+            limit_price=first_decision.limit_price,
+            decision_as_of=first_decision.decision_as_of,
+            valid_until=first_decision.valid_until,
+        ),
+    )
+
+    with pytest.raises(KisPaperCanaryError, match="state_intent_mismatch"):
+        run_kis_paper_receipt_canary(
+            conflicting,
+            environment=NoCredentialEnvironment(),
+            state_root=tmp_path / "private",
+            execute=True,
+            cancel_after_submit=False,
+            client=client,
+            now=NOW + timedelta(seconds=10),
+            submit_permitted=lambda _now: True,
+            **paths,
+        )
+
+    assert _submission_count(transport) == 1
+    assert _sell_submission_count(transport) == 0
+
+
 def _prepared(
     receipt: ResearchDecisionReceipt,
     *,
@@ -193,20 +288,21 @@ def _prepared(
     )
 
 
-def _eligible_receipt() -> ResearchDecisionReceipt:
+def _eligible_receipt(*, action: str = "enter") -> ResearchDecisionReceipt:
+    target_exposure = Decimal("0.05") if action == "enter" else Decimal("0")
     proposal = TargetExposureProposal(
-        proposal_id="daily-spy-enter",
+        proposal_id=f"daily-spy-{action}",
         symbol="SPY",
         market="US",
-        action="enter",
-        target_exposure=Decimal("0.05"),
+        action=action,
+        target_exposure=target_exposure,
         confidence=Decimal("0.55"),
         feature_schema_id="test.daily.spy",
         input_status="ready",
         decided_at=NOW - timedelta(minutes=1),
         valid_until=NOW + timedelta(minutes=5),
         feature_window_end=NOW - timedelta(minutes=1),
-        reason="two_close_momentum_enter",
+        reason=f"two_close_momentum_{action}",
     )
     return receipt_from_target_exposure_proposal(proposal, references=_references("a"))
 
@@ -241,13 +337,13 @@ def _paths(tmp_path: Path) -> dict[str, Path]:
     }
 
 
-def _matching_spy_open_order() -> dict[str, str]:
+def _matching_spy_open_order(*, side: str = "buy") -> dict[str, str]:
     return {
         "odno": "ORD-123456789",
         "pdno": "SPY",
         "ovrs_excg_cd": "AMEX",
         "tr_crcy_cd": "USD",
-        "sll_buy_dvsn_cd": "02",
+        "sll_buy_dvsn_cd": "02" if side == "buy" else "01",
         "ft_ord_qty": "1",
         "ft_ccld_qty": "0",
         "nccs_qty": "1",
@@ -258,5 +354,12 @@ def _matching_spy_open_order() -> dict[str, str]:
 def _submission_count(transport: FakePaperTransport) -> int:
     return sum(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+
+
+def _sell_submission_count(transport: FakePaperTransport) -> int:
+    return sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID
         for request in transport.requests
     )

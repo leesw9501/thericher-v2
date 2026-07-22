@@ -22,7 +22,11 @@ from typing import Any, Literal
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
-from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
+from thericher_v2.research.kis_paper_canary_intent import (
+    KisPaperCanaryBuyDecision,
+    KisPaperCanaryOrderDecision,
+    KisPaperCanarySellDecision,
+)
 
 from .broker import BrokerOrderRequest
 from .emergency import (
@@ -31,7 +35,10 @@ from .emergency import (
     PaperExecutionControlStore,
 )
 from .kis_paper_console_bridge import paper_account_snapshot_from_kis_readonly
-from .kis_paper_order_fields import map_kis_paper_us_buy_limit_order_fields
+from .kis_paper_order_fields import (
+    map_kis_paper_us_buy_limit_order_fields,
+    map_kis_paper_us_sell_limit_order_fields,
+)
 from .kis_paper_quote import (
     KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
     KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
@@ -84,6 +91,7 @@ DEFAULT_KIS_PAPER_CANARY_STATE_ROOT = Path("runtime/private/kis_paper_canary")
 
 KIS_PAPER_US_BUY_LIMIT_ORDER_PATH = "/uapi/overseas-stock/v1/trading/order"
 KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID = "VTTT1002U"
+KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID = "VTTT1001U"
 KIS_PAPER_US_CANCEL_PATH = "/uapi/overseas-stock/v1/trading/order-rvsecncl"
 KIS_PAPER_US_CANCEL_TR_ID = "VTTT1004U"
 KIS_PAPER_US_CCNCL_PATH = "/uapi/overseas-stock/v1/trading/inquire-ccnl"
@@ -180,6 +188,7 @@ _SAFE_REASON_CODES = frozenset(
         "intent_expired",
         "emergency_stop_new_orders",
         "pause_buys_active",
+        "pause_sells_active",
         "matching_open_order",
         "submit_rejected",
         "submit_http_4xx",
@@ -317,6 +326,7 @@ class KisPaperCanaryIntent:
     limit_price: Decimal
     created_at: datetime
     valid_until: datetime
+    side: Literal["buy", "sell"] = "buy"
     price_contract_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
@@ -332,6 +342,8 @@ class KisPaperCanaryIntent:
             raise ValueError("canary exchange is invalid")
         if not self.symbol or self.symbol != self.symbol.upper():
             raise ValueError("canary symbol is invalid")
+        if self.side not in {"buy", "sell"}:
+            raise ValueError("canary side is invalid")
         if self.quantity <= 0 or self.quantity != self.quantity.to_integral_value():
             raise ValueError("canary quantity must be whole shares")
         if self.limit_price <= 0:
@@ -365,12 +377,15 @@ class KisPaperCanaryIntent:
         }
         if self.price_contract_ref is not None:
             payload["price_contract_ref"] = self.price_contract_ref
+        # Keep pre-existing buy-only private state fingerprints replayable.
+        if self.side == "sell":
+            payload["side"] = self.side
         return payload
 
     @classmethod
     def from_decision(
         cls,
-        decision: KisPaperCanaryBuyDecision,
+        decision: KisPaperCanaryOrderDecision,
         *,
         run_id: str,
         price_contract_ref: str | None = None,
@@ -386,6 +401,7 @@ class KisPaperCanaryIntent:
             limit_price=decision.limit_price,
             created_at=decision.decision_as_of,
             valid_until=decision.valid_until,
+            side=decision.side,
             price_contract_ref=price_contract_ref,
         )
 
@@ -394,7 +410,7 @@ class KisPaperCanaryIntent:
             client_order_id=self.client_order_id,
             symbol=self.symbol,
             market="US",
-            side="buy",
+            side=self.side,
             quantity=self.quantity,
             limit_price=self.limit_price,
             decision_id=self.decision_id,
@@ -492,6 +508,11 @@ class KisPaperCanaryState:
                 limit_price=_positive_decimal(raw_intent.get("limit_price")),
                 created_at=_utc_datetime(raw_intent.get("created_at")),
                 valid_until=_utc_datetime(raw_intent.get("valid_until")),
+                side=(
+                    "buy"
+                    if "side" not in raw_intent
+                    else _required_text(raw_intent["side"])
+                ),
                 price_contract_ref=(
                     None
                     if "price_contract_ref" not in raw_intent
@@ -693,6 +714,15 @@ class KisPaperCanaryClient:
         self._transport = transport
         self._access_token: str | None = None
 
+    def snapshot(self) -> KisPaperReadOnlySnapshot:
+        """Read one complete virtual-paper account fact using this client's token."""
+
+        return KisPaperReadOnlyClient(
+            config=self._config,
+            transport=self._transport,
+            access_token=self._issue_access_token(),
+        ).snapshot()
+
     def reconcile(
         self,
         state: KisPaperCanaryState,
@@ -817,13 +847,23 @@ class KisPaperCanaryClient:
         except KisPaperReadOnlyError as error:
             raise KisPaperCanaryError("quote_response_incomplete") from error
 
-    def submit_buy_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
+    def submit_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
+        """Submit the intent's explicit virtual-paper limit-order side only."""
+
+        if intent.side == "buy":
+            fields = map_kis_paper_us_buy_limit_order_fields(
+                intent.broker_request(), exchange=intent.exchange
+            )
+            tr_id = KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        else:
+            fields = map_kis_paper_us_sell_limit_order_fields(
+                intent.broker_request(), exchange=intent.exchange
+            )
+            tr_id = KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID
         body = {
             "CANO": self._config.account_number,
             "ACNT_PRDT_CD": self._config.account_product_code,
-            **map_kis_paper_us_buy_limit_order_fields(
-                intent.broker_request(), exchange=intent.exchange
-            ),
+            **fields,
             "CTAC_TLNO": "",
             "MGCO_APTM_ODNO": "",
         }
@@ -831,7 +871,7 @@ class KisPaperCanaryClient:
             KisHttpRequest(
                 method="POST",
                 url=f"{self._config.base_url}{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}",
-                headers=self._post_headers(KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID),
+                headers=self._post_headers(tr_id),
                 json_body=body,
             )
         )
@@ -884,7 +924,26 @@ class KisPaperCanaryClient:
             )
         return True, order_id
 
+    def submit_buy_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
+        """Compatibility wrapper for the original buy-only canary entry point."""
+
+        if intent.side != "buy":
+            raise KisPaperCanaryError("request_not_allowlisted")
+        return self.submit_limit(intent)
+
+    def cancel_order(self, intent: KisPaperCanaryIntent, *, broker_order_id: str) -> bool:
+        """Cancel an acknowledged virtual-paper order without changing its side."""
+
+        return self._cancel_limit_order(intent, broker_order_id=broker_order_id)
+
     def cancel_buy_order(self, intent: KisPaperCanaryIntent, *, broker_order_id: str) -> bool:
+        """Compatibility wrapper for the original buy-only cancellation entry point."""
+
+        if intent.side != "buy":
+            raise KisPaperCanaryError("request_not_allowlisted")
+        return self._cancel_limit_order(intent, broker_order_id=broker_order_id)
+
+    def _cancel_limit_order(self, intent: KisPaperCanaryIntent, *, broker_order_id: str) -> bool:
         if not _raw_order_id(broker_order_id):
             raise KisPaperCanaryError("cancel_response_incomplete")
         body = {
@@ -1018,7 +1077,7 @@ class KisPaperCanaryClient:
 
 def _run_kis_paper_canary(
     *,
-    decision: KisPaperCanaryBuyDecision,
+    decision: KisPaperCanaryOrderDecision,
     run_id: str,
     environment: Mapping[str, str],
     state_path: Path,
@@ -1096,12 +1155,16 @@ def _run_kis_paper_canary(
             reason_code="emergency_stop_new_orders",
             now=observed_at,
         )
-    elif execution_control.pause_buys:
+    elif (
+        execution_control.pause_buys
+        if intent.side == "buy"
+        else execution_control.pause_sells
+    ):
         state = state_store.transition(
             intent,
             expected=frozenset({"intent_recorded"}),
             phase="intent_recorded",
-            reason_code="pause_buys_active",
+            reason_code=("pause_buys_active" if intent.side == "buy" else "pause_sells_active"),
             now=observed_at,
         )
     else:
@@ -1155,7 +1218,7 @@ def _run_kis_paper_canary(
                     now=submit_at,
                 )
                 try:
-                    accepted, broker_order_id = client.submit_buy_limit(intent)
+                    accepted, broker_order_id = client.submit_limit(intent)
                 except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
                     state = state_store.transition(
                         intent,
@@ -1244,7 +1307,7 @@ def _run_kis_paper_canary(
 
 def run_kis_paper_canary(
     *,
-    decision: KisPaperCanaryBuyDecision,
+    decision: KisPaperCanaryOrderDecision,
     run_id: str,
     environment: Mapping[str, str],
     state_path: Path,
@@ -1324,7 +1387,11 @@ def reconcile_kis_paper_canary_unknown_run(
         if state.phase not in _READ_ONLY_RECOVERY_PHASES:
             raise KisPaperCanaryError("recovery_phase_not_reconcilable")
         intent = state.intent
-        decision = KisPaperCanaryBuyDecision(
+        decision: KisPaperCanaryOrderDecision
+        decision_type = (
+            KisPaperCanaryBuyDecision if intent.side == "buy" else KisPaperCanarySellDecision
+        )
+        decision = decision_type(
             decision_id=intent.decision_id,
             symbol=intent.symbol,
             exchange=intent.exchange,
@@ -1410,10 +1477,17 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
         _validate_ccnl_query(request.query)
         return
     if request.method == "POST" and parsed.path == KIS_PAPER_US_BUY_LIMIT_ORDER_PATH:
-        _validate_post_headers(request, tr_id=KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID)
-        _validate_order_body(request.json_body, _BUY_LIMIT_BODY_KEYS)
-        _validate_buy_limit_body(request.json_body)
-        return
+        if request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
+            _validate_post_headers(request, tr_id=KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID)
+            _validate_order_body(request.json_body, _BUY_LIMIT_BODY_KEYS)
+            _validate_buy_limit_body(request.json_body)
+            return
+        if request.headers.get("tr_id") == KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID:
+            _validate_post_headers(request, tr_id=KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID)
+            _validate_order_body(request.json_body, _BUY_LIMIT_BODY_KEYS)
+            _validate_sell_limit_body(request.json_body)
+            return
+        raise KisPaperCanaryError("request_not_allowlisted")
     if request.method == "POST" and parsed.path == KIS_PAPER_US_CANCEL_PATH:
         _validate_post_headers(request, tr_id=KIS_PAPER_US_CANCEL_TR_ID)
         _validate_order_body(request.json_body, _CANCEL_BODY_KEYS)
@@ -1440,7 +1514,7 @@ def _cancel_submitted_canary(
         now=observed_at,
     )
     try:
-        cancelled = client.cancel_buy_order(state.intent, broker_order_id=state.broker_order_id)
+        cancelled = client.cancel_order(state.intent, broker_order_id=state.broker_order_id)
     except (KisPaperCanaryError, KisPaperReadOnlyError):
         state = state_store.transition(
             state.intent,
@@ -1540,7 +1614,7 @@ def _matches_intent_open_order(
     return any(
         order.symbol == intent.symbol
         and order.exchange == intent.exchange
-        and order.side == "buy"
+        and order.side == intent.side
         and order.remaining_quantity == intent.quantity
         and order.limit_price == intent.limit_price
         for order in snapshot.open_orders.orders
@@ -1557,6 +1631,7 @@ def _ensure_recovery_intent_matches(
         recorded.decision_id,
         recorded.symbol,
         recorded.exchange,
+        recorded.side,
         recorded.quantity,
         recorded.limit_price,
     )
@@ -1566,6 +1641,7 @@ def _ensure_recovery_intent_matches(
         requested.decision_id,
         requested.symbol,
         requested.exchange,
+        requested.side,
         requested.quantity,
         requested.limit_price,
     )
@@ -1585,6 +1661,7 @@ def _ensure_reusable_receipt_intent_matches(
         recorded.decision_id,
         recorded.symbol,
         recorded.exchange,
+        recorded.side,
         recorded.quantity,
     )
     requested_identity = (
@@ -1593,6 +1670,7 @@ def _ensure_reusable_receipt_intent_matches(
         requested.decision_id,
         requested.symbol,
         requested.exchange,
+        requested.side,
         requested.quantity,
     )
     if recorded_identity != requested_identity or recorded.price_contract_ref is None:
@@ -1807,6 +1885,7 @@ def _write_evidence(
         "kind": "kis_paper_canary_evidence",
         "paper_only": True,
         "run_id": state.intent.run_id,
+        "order_side": state.intent.side,
         "intent_fingerprint": state.intent.fingerprint,
         "decision_ref": _redacted_decision_reference(state.intent.decision_id),
         "attribution_ref": _receipt_attribution_reference(state.intent.decision_id),
@@ -1922,6 +2001,24 @@ def _validate_buy_limit_body(body: Mapping[str, str] | None) -> None:
         or body["CTAC_TLNO"] != ""
         or body["MGCO_APTM_ODNO"] != ""
         or body["SLL_TYPE"] != ""
+        or body["ORD_SVR_DVSN_CD"] != "0"
+        or body["ORD_DVSN"] != "00"
+    ):
+        raise KisPaperCanaryError("request_not_allowlisted")
+
+
+def _validate_sell_limit_body(body: Mapping[str, str] | None) -> None:
+    assert body is not None
+    if (
+        not _account_number(body["CANO"])
+        or not _account_product_code(body["ACNT_PRDT_CD"])
+        or body["OVRS_EXCG_CD"] not in {"NASD", "NYSE", "AMEX"}
+        or not _symbol(body["PDNO"])
+        or not _whole_positive(body["ORD_QTY"])
+        or not _positive_price(body["OVRS_ORD_UNPR"])
+        or body["CTAC_TLNO"] != ""
+        or body["MGCO_APTM_ODNO"] != ""
+        or body["SLL_TYPE"] != "00"
         or body["ORD_SVR_DVSN_CD"] != "0"
         or body["ORD_DVSN"] != "00"
     ):

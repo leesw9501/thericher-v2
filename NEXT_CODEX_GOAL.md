@@ -2,30 +2,24 @@
 
 ## Objective
 
-Build the first receipt-linked KIS Paper SPY position lifecycle: a bounded
-daily entry/exit path with deterministic sizing, reconciliation, and sanitized
-PnL attribution.
+Add the first authoritative observation loop for receipt-linked KIS Paper SPY
+orders.
 
-The completed daily SPY head/receipt path remains the only decision source for
-this objective. Turn its current cancellation-oriented canary into a minimal
-replayable Paper position loop without adding a universe, report system, live
-route, or model-selection program.
+The completed daily entry/exit path may create a one-share virtual limit order.
+This objective must observe the exact durable intent through KIS Paper facts and
+produce truthful lifecycle attribution without fabricating a fill, realized
+PnL, or a permission gate.
 
 ## Standing Authority
 
-- All private `KIS_PAPER_*` market/account reads, virtual submit/modify/cancel,
-  reconciliation, sizing, data retention on `D:`, and goal-owned schedules are
-  authorized. Default to the next correctly scoped action.
-- Do not read `KIS_LIVE_*`, create a live route, use real capital, buy data,
-  accept unclear rights, expose a public service, or commit secrets, raw
-  market/broker data, or generated artifacts.
-- A stale receipt, missing head, blank quote, cancellation, unfilled order, or
-  prior unknown intent is scoped evidence only. It must not block a distinct
-  correctly scoped Paper action or another ready lane.
-- Preserve technical truth only: virtual-host routing, durable identity before
-  every side effect, exact-intent reconciliation, position/account facts from
-  KIS rather than local inference, and safe redaction. These are not manual
-  approval gates.
+- All private `KIS_PAPER_*` market/account reads, virtual order submit/modify/
+  cancel, reconciliation, sizing, local `D:` retention, and schedules are
+  authorized. Continue ready Paper work by default.
+- Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
+  unclear rights, public exposure, Git-hosted raw data/artifacts, or secrets.
+- A stale daily receipt, blank quote, missing fill, unfilled order, historical
+  marker, or unknown exact intent is evidence about that scope only. It must
+  not block a distinct correct Paper action or another lane.
 
 ## Required First Reads
 
@@ -34,64 +28,64 @@ route, or model-selection program.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect only sanitized schedule, cache, artifact, runtime, and account
-   metadata before selecting the first position action.
-5. Ask Claude for a concise falsification-first check before relying on a new
-   sell-side Paper route, position reconstruction rule, or realized-PnL claim.
+4. Inspect only sanitized daily-session, lifecycle, runtime, and scheduled-task
+   metadata before choosing a recovery or observation action.
+5. Ask Claude for a concise falsification-first check before relying on a KIS
+   completion/position field as fill, terminal lifecycle, or PnL evidence.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Keep the daily SPY head collection resumable and separate from historical
-   cache work. Reattest only one complete source per receipt and retain its
-   point-in-time availability semantics.
-2. Publish only safe freshness/coverage facts needed by the position session;
-   never expose raw prices or provider rows to the dashboard or Git.
+1. Verify the narrow KIS Paper completion/position source contract needed for
+   exact SPY intent observation: endpoint scope, exchange mapping, pagination,
+   timestamp meaning, and safe provenance. Do not mix a provider or infer a
+   fill from a daily bar.
+2. Keep the daily head resumable and publish only the safe freshness facts that
+   the active session needs.
 
 ### Engine Research Agent
 
-1. Extend the fixed daily baseline into an explicit target-position proposal:
-   `enter`, `hold`, `reduce`, `exit`, or `abstain` must have deterministic
-   input/status semantics. Do not tune parameters against the burned historical
-   suffix or claim a return result.
-2. Keep local-paper replay and receipt identity exact for each target-state
-   transition. Define the evidence needed to distinguish model, timing, sizing,
-   and execution causes in later PnL attribution.
+1. Define a compact attribution schema joining immutable receipt, target
+   resolution, intended side, observed lifecycle, and `pnl_status`. Treat a
+   missing or incomplete KIS completion fact as `not_observed` or pending, not
+   as a negative return or a model result.
+2. Preserve local-paper replay separately from KIS Paper evidence; do not tune
+   the two-close baseline or start model selection from one Paper observation.
 
 ### Execution Agent
 
-1. Add a narrow virtual-paper sell-side adapter for the fixed `SPY` / `AMEX`
-   route only after an eligible receipt and fresh independent price proof. It
-   must persist a separate durable identity and reconcile its exact outcome.
-2. Implement a minimal bounded position session that reads sanitized KIS Paper
-   account/open-order facts, applies deterministic one-share target deltas, and
-   does not submit a duplicate entry or exit for the same receipt.
-3. Publish a replayable sanitized lifecycle/PnL attribution fact. It may state
-   `pending`, `cancelled`, `unfilled`, or `unavailable`; it must not invent a
-   fill, cash value, realized PnL, or local-paper source for KIS evidence.
-4. Update the scheduled daily session only after the offline tests and direct
-   Docker exercise show that entry and exit routes remain virtual-only and
-   idempotent.
+1. Add a read/reconcile path for one exact receipt-linked SPY Paper intent.
+   It must make no new submit, modify, or cancel call while observing an order.
+2. Publish a safe immutable observation fact that can distinguish at least
+   `not_submitted`, `open`, `cancelled`, `filled`, `outcome_unknown`, and
+   `unavailable` only when KIS facts support that distinction. Keep raw order
+   IDs, prices, quantities, account values, fills, and broker payloads private.
+3. Derive realized PnL only if an official KIS Paper fact supplies enough
+   authoritative information; otherwise retain `pnl_status: not_observed`.
+   Do not estimate it from daily bars, quotes, intent, or acknowledgement.
+4. Add a bounded goal-owned observer schedule only after offline and Docker
+   tests prove it is Paper-only, idempotent, and cannot create a broker side
+   effect. Do not turn scheduling into a quota or approval latch.
 
 ### Validation Agent
 
-1. Independently prove that a receipt cannot cause both an entry and an exit,
-   a changed quote cannot replace a durable order, and a stale account snapshot
-   cannot fabricate a position/PnL conclusion.
-2. Prove offline tests need no broker, network, credential, or live access,
-   while synthetic lifecycle facts remain replayable and safely redacted.
+1. Independently test that observation never emits an order request, cannot
+   turn an acknowledgement into a fill, and cannot create a PnL claim from
+   incomplete/stale facts.
+2. Test exact receipt linkage, restart/replay behavior, Paper/live isolation,
+   and artifact redaction with no network, credential, or KIS dependency.
 
 ## Completion Evidence
 
-- A complete daily receipt can deterministically express a target state and
-  replay it through `local_paper`.
-- Each virtual SPY entry/exit action is receipt-linked, idempotent, and
-  reconciled from KIS Paper facts.
-- A safe lifecycle attribution record distinguishes no-intent, open, cancelled,
-  unfilled, unknown, and reconciled states without leaking data or secrets.
-- The scheduled session remains private KIS Paper only; no live code/path,
-  public dashboard action, raw data, or generated artifact enters Git.
+- One receipt-linked Paper intent can be observed/reconciled independently of
+  new daily decisions.
+- Lifecycle/PnL attribution remains truthful under missing, stale, open,
+  cancelled, and ambiguous KIS facts.
+- Any observer schedule is private, Paper-only, idempotent, and has no broker
+  side-effect capability.
+- Data, models, secrets, raw broker facts, and generated artifacts remain off
+  Git; no live path is added.
 
 ## Verification
 
@@ -104,4 +98,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add receipt-linked paper position lifecycle`
+`Add paper lifecycle observation loop`

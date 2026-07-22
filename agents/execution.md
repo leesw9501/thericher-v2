@@ -20,9 +20,9 @@ same request. Live routing remains unavailable.
   price, open-order, and emergency state.
 - The local console now persists `pause_buys` and `pause_sells` on a separate
   shared volume. They are operator-operational state, not paper approval gates:
-  the buy pause is checked before the quote session/canary reads configuration
-  or calls KIS; the sell pause is retained for the later sell executor. Missing
-  state defaults to both directions ready. The web process cannot call KIS,
+  the matching directional pause is checked before the daily session reads
+  configuration or calls KIS. Missing state defaults to both directions ready.
+  The web process cannot call KIS,
   read credentials, access private intent state, or mount `D:\\market_data`.
 - A due session that stops before a canary intent exists, including a buy pause
   or quote failure, now refreshes the sanitized canary runtime as
@@ -139,10 +139,11 @@ same request. Live routing remains unavailable.
 
 The receipt bridge is now execution-owned at
 `execution.paper_decision_bridge`. It maps an eligible immutable receipt to a
-deterministic `local_paper` buy intent whose `decision_id` is the full receipt
-identity. Its KIS branch prepares, but does not submit, the existing canary
-decision only after a matching execution binding and final tick-valid price
-proof. It reads no environment, credential, KIS client, or network path. A
+deterministic `local_paper` entry or exit intent whose `decision_id` is the full
+receipt identity. Its KIS branch prepares, but does not submit, a matching
+virtual buy or sell decision only after an execution binding and final
+tick-valid price proof. It reads no environment, credential, KIS client, or
+network path. A
 new receipt-shaped canary decision carries an exact opaque receipt digest as
 `attribution_ref` in sanitized lifecycle evidence; historical canaries retain
 their existing short `decision_ref` only.
@@ -150,28 +151,30 @@ their existing short `decision_ref` only.
 The daily SPY session now evaluates its cache and Research receipt before it
 loads KIS Paper configuration or requests a quote. It prefers one complete
 forward `SPY/AMS` head source over older history, never mixes their rows, and
-uses an independent fresh `AMS` quote only after an eligible entry receipt.
-The stable receipt digest names the durable canary state file, so a changed
-quote cannot create a second virtual order for the same receipt. The session
-currently uses cancellation after an acknowledged entry as an execution canary;
-the next lifecycle objective adds receipt-linked position and exit handling.
-The `thericher-kis-paper-daily-spy-session` task is scheduled at 23:50 KST on
-Tuesday through Saturday; its first manual post-window run recorded a safe
-daily no-intent without a KIS price or order call.
+reads one current complete KIS Paper snapshot before an eligible receipt can
+obtain an independent fresh `AMS` quote. The pure target resolver permits only
+`flat -> buy one share` or `one SPY/AMEX share -> sell one share`; any SPY open
+order, stale account fact, or other inventory is a scoped no-intent result.
+The stable receipt digest names the durable canary state file, and the durable
+intent includes its side, so a changed quote cannot replace the first price and
+the same receipt cannot become the opposite order. Sanitized lifecycle facts
+may expose categorical order side and `pnl_status: not_observed`, never a fill,
+account value, cost basis, or realized PnL. The scheduled daily service no
+longer auto-cancels an accepted valid lifecycle order; the standalone canary
+remains cancellation-oriented. The `thericher-kis-paper-daily-spy-session`
+task runs at 23:50 KST Tuesday through Saturday.
 
 ## Ready Queue
 
-1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Keep scheduled independent KIS Paper canaries using the proven transient
-   `AMS`/`AMEX` price-input mapping and category-only lifecycle facts. Connect a
-   later research-originated decision receipt only through the deterministic
-   intent boundary; keep every ambiguous intent's recovery separate from the
-   next distinct Paper intent.
-3. Add a sell path only when it has its own deterministic sizing, exit, and
-   reconciliation contract; consume the existing sell pause then. Do not add a
-   live route implicitly.
+1. Reconcile observed daily Paper orders/positions without attributing a fill or
+   PnL until an authoritative KIS completion fact exists.
+2. Keep scheduled KIS Paper sessions on the proven `AMS`/`AMEX` price mapping,
+   receipt-linked identities, and one-share target resolver. An ambiguous exact
+   intent remains separate from every later distinct Paper intent.
+3. Add bounded automatic stale-order reconciliation only when it preserves the
+   same exact order identity and does not become a new approval or quota system.
 4. Keep account snapshots and dashboard state separate from credential-bearing
-   execution processes.
+   execution processes; do not add a live route implicitly.
 
 ## Authority And Boundaries
 
@@ -219,7 +222,9 @@ pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the sanitized lifecycle projection, current-canary evidence, and any
-unresolved KIS Paper route fact to Codex. Only a live-money boundary, paid
-commitment, unclear rights, public exposure, or an external KIS credential reset
-needs operator input.
+Hand the receipt-linked daily lifecycle evidence and exact durable intent state
+to Codex for the next read-only KIS Paper observation loop. Do not interpret an
+acknowledgement or current position as a fill/PnL fact, and do not create a
+submit/modify/cancel side effect in that observer. Only a live-money boundary,
+paid commitment, unclear rights, public exposure, or an external KIS credential
+reset needs operator input.

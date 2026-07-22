@@ -10,6 +10,14 @@ from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_paper_daily_spy_input import KisPaperDailySpyInput
 from thericher_v2.execution import kis_paper_daily_spy_session as session_module
 from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
+from thericher_v2.execution.kis_readonly import (
+    KisPaperAccountIdentity,
+    KisPaperCashSnapshot,
+    KisPaperOpenOrdersSnapshot,
+    KisPaperOrderableFundsSnapshot,
+    KisPaperPosition,
+    KisPaperReadOnlySnapshot,
+)
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 
@@ -29,6 +37,10 @@ class NoCredentialEnvironment(Mapping[str, str]):
 class FakePaperClient:
     limit_input: KisPaperSpyLimitInput
     observed_at: datetime | None = None
+    account_snapshot: KisPaperReadOnlySnapshot | None = None
+
+    def snapshot(self) -> KisPaperReadOnlySnapshot:
+        return self.account_snapshot or _account_snapshot()
 
     def fetch_spy_limit_input(
         self, *, observed_at: datetime | None = None
@@ -126,6 +138,94 @@ def test_eligible_daily_receipt_reaches_only_the_receipt_canary_boundary(
         assert forbidden not in evidence
 
 
+def test_exit_receipt_with_one_current_spy_share_reaches_only_the_sell_boundary(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    daily_input = _input(
+        last_session=date(2026, 7, 21),
+        closes=(Decimal("101"), Decimal("100")),
+    )
+    client = FakePaperClient(
+        limit_input=KisPaperSpyLimitInput(
+            last=Decimal("500.25"),
+            decimal_places=2,
+            tick_size=Decimal("0.01"),
+            quoted_at=NOW,
+        ),
+        account_snapshot=_account_snapshot(positions=(_spy_position(),)),
+    )
+    captured: dict[str, object] = {}
+    monkeypatch.setattr(
+        session_module,
+        "load_kis_paper_daily_spy_input",
+        lambda **_kwargs: daily_input,
+    )
+    monkeypatch.setattr(
+        session_module,
+        "run_kis_paper_receipt_canary",
+        lambda prepared, **kwargs: captured.update(prepared=prepared, kwargs=kwargs)
+        or FakeCanaryOutcome(),
+    )
+
+    outcome = session_module.run_kis_paper_daily_spy_session(
+        environment=NoCredentialEnvironment(),
+        execute=True,
+        cancel_after_submit=False,
+        client=client,  # type: ignore[arg-type]
+        now=NOW,
+        session_id="eligible-daily-exit",
+        **_paths(tmp_path),
+    )
+
+    prepared = captured["prepared"]
+    assert outcome.status == "canary_completed"
+    assert prepared.kis_paper_decision is not None
+    assert prepared.kis_paper_decision.side == "sell"
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"action": "sell"' in evidence
+    assert '"pnl_status": "not_observed"' in evidence
+    for forbidden in ("500.25", "D:/external/input.json", "KIS_LIVE", "****5678-**"):
+        assert forbidden not in evidence
+
+
+def test_stale_account_snapshot_does_not_fetch_a_quote_or_submit(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    client = FakePaperClient(
+        limit_input=KisPaperSpyLimitInput(
+            last=Decimal("500.25"),
+            decimal_places=2,
+            tick_size=Decimal("0.01"),
+            quoted_at=NOW,
+        ),
+        account_snapshot=_account_snapshot(
+            positions=(_spy_position(),),
+            captured_at=NOW.replace(minute=27),
+        ),
+    )
+    monkeypatch.setattr(
+        session_module,
+        "load_kis_paper_daily_spy_input",
+        lambda **_kwargs: _input(last_session=date(2026, 7, 21)),
+    )
+
+    outcome = session_module.run_kis_paper_daily_spy_session(
+        environment=NoCredentialEnvironment(),
+        execute=True,
+        cancel_after_submit=False,
+        client=client,  # type: ignore[arg-type]
+        now=NOW,
+        session_id="stale-account-fact",
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "account_snapshot_not_current"
+    assert client.observed_at is None
+
+
 def test_preview_is_offline_even_for_an_eligible_daily_receipt(
     tmp_path: Path,
     monkeypatch,
@@ -193,12 +293,16 @@ def test_preferred_input_chooses_one_newer_head_source_without_row_mixing(
     assert selected.last_consumed_session != history_input.last_consumed_session
 
 
-def _input(*, last_session: date) -> KisPaperDailySpyInput:
+def _input(
+    *,
+    last_session: date,
+    closes: tuple[Decimal, Decimal] = (Decimal("100"), Decimal("101")),
+) -> KisPaperDailySpyInput:
     previous_session = date(2026, 7, 20) if last_session == date(2026, 7, 21) else date(2026, 7, 16)
     return KisPaperDailySpyInput(
         bars=(
-            _bar(previous_session, Decimal("100")),
-            _bar(last_session, Decimal("101")),
+            _bar(previous_session, closes[0]),
+            _bar(last_session, closes[1]),
         ),
         catalog_dataset_id="kis.paper.private.daily.backfill-v1.common-panel",
         catalog_dataset_hash="sha256:" + "a" * 64,
@@ -221,6 +325,40 @@ def _bar(session: date, close: Decimal) -> Bar:
         close=close,
         volume=Decimal("1000"),
         complete=True,
+    )
+
+
+def _account_snapshot(
+    *,
+    positions: tuple[KisPaperPosition, ...] = (),
+    captured_at: datetime = NOW,
+) -> KisPaperReadOnlySnapshot:
+    return KisPaperReadOnlySnapshot(
+        identity=KisPaperAccountIdentity("****5678-**", captured_at),
+        cash=KisPaperCashSnapshot("USD", Decimal("1000"), captured_at),
+        orderable_funds=KisPaperOrderableFundsSnapshot(
+            "USD",
+            Decimal("1000"),
+            "NASD",
+            "SPY",
+            Decimal("1"),
+            captured_at,
+        ),
+        positions=positions,
+        open_orders=KisPaperOpenOrdersSnapshot((), captured_at),
+        captured_at=captured_at,
+    )
+
+
+def _spy_position() -> KisPaperPosition:
+    return KisPaperPosition(
+        symbol="SPY",
+        exchange="AMEX",
+        currency="USD",
+        quantity=Decimal("1"),
+        average_price=Decimal("500.25"),
+        market_price=Decimal("500.50"),
+        captured_at=NOW,
     )
 
 

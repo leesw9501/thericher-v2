@@ -62,21 +62,22 @@ def evaluate_kis_paper_daily_spy_baseline(
     else:
         assert execution_session is not None
         trend_up = input.bars[-1].close > input.bars[-2].close
+        action = "enter" if trend_up else "exit"
         proposal = TargetExposureProposal(
             proposal_id=_proposal_ref(input, suffix="trend"),
             symbol="SPY",
             market="US",
-            action="enter" if trend_up else "abstain",
+            action=action,
             target_exposure=(
                 KIS_PAPER_DAILY_SPY_BASELINE_TARGET_EXPOSURE if trend_up else Decimal("0")
             ),
-            confidence=Decimal("0.55") if trend_up else Decimal("0"),
+            confidence=Decimal("0.55"),
             feature_schema_id=KIS_PAPER_DAILY_SPY_BASELINE_SCHEMA_ID,
             input_status="ready",
             decided_at=input.first_available_at,
             valid_until=execution_session.window.close_ts,
             feature_window_end=input.first_available_at,
-            reason="two_close_momentum_enter" if trend_up else "two_close_momentum_abstain",
+            reason="two_close_momentum_enter" if trend_up else "two_close_momentum_exit",
         )
     receipt = receipt_from_target_exposure_proposal(
         proposal,

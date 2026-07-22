@@ -146,6 +146,25 @@ def test_eligible_receipt_can_prepare_but_not_submit_a_tick_valid_kis_paper_deci
     assert blocked.kis_paper_decision is None
 
 
+def test_eligible_exit_receipt_keeps_sell_identity_on_both_paper_routes() -> None:
+    receipt = _receipt(action="exit")
+    binding = _binding(receipt)
+
+    local = prepare_local_paper_intent(receipt, binding=binding, as_of=NOW)
+    paper = prepare_kis_paper_decision(
+        receipt,
+        binding=binding,
+        limit_proof=_limit_proof(receipt),
+        as_of=NOW,
+    )
+
+    assert local.status == paper.status == "ready"
+    assert local.local_paper_intent is not None
+    assert local.local_paper_intent.side == "sell"
+    assert paper.kis_paper_decision is not None
+    assert paper.kis_paper_decision.side == "sell"
+
+
 def test_bridge_is_offline_and_does_not_read_network_or_credentials(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

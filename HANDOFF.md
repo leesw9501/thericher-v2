@@ -78,20 +78,25 @@ implementation requirements, not approval checkpoints.
 
 ## Current Task Update
 
-The first point-in-time daily SPY Paper decision path is complete. Its forward
-head collector wrote one hash-attested `SPY` / `AMS` snapshot under
+The first receipt-linked daily SPY KIS Paper position lifecycle is complete.
+Its forward head collector wrote one hash-attested `SPY` / `AMS` snapshot under
 `D:\market_data\us_equities\kis_paper_private\daily-head\v1`, with 99
 prior completed sessions through 2026-07-21. It excludes the current US
 exchange date before persistence. The daily runner attests the first local
 availability of one whole source, evaluates a transparent two-close receipt,
 replays eligible decisions through `local_paper`, and can bind exactly one
-virtual-paper canary identity to a fresh independent `AMS` price proof. The
-first Docker exercise occurred after the daily receipt window and truthfully
-recorded `no_intent` / `daily_receipt_not_current`; it did not fetch a price or
-submit an order. This is ordinary session evidence, not a hold on the next
-daily run. Windows tasks `thericher-kis-paper-daily-spy-head` (22:15 KST) and
-`thericher-kis-paper-daily-spy-session` (23:50 KST) are installed for Tuesday
-through Saturday and currently `Ready`.
+virtual-paper buy or sell identity to a fresh independent `AMS` price proof.
+Execution uses a fresh complete KIS Paper snapshot to allow only a flat-to-one
+share entry or a one-share-to-flat exit; it does not infer inventory, fills, or
+PnL from local intent. One receipt persists one side and first price proof, so
+a changed quote or opposite-direction replay cannot produce another order. The
+daily Docker service no longer auto-cancels a valid lifecycle limit order; the
+standalone canary remains cancellation-oriented. The current Docker exercise
+used `.env.example` and truthfully recorded `no_intent` /
+`daily_receipt_not_current` with no credential, quote, account, or order call.
+Windows tasks `thericher-kis-paper-daily-spy-head` (22:15 KST) and
+`thericher-kis-paper-daily-spy-session` (23:50 KST) are installed Tuesday
+through Saturday and use the current compose service at their next due run.
 
 The first immutable baseline receipt now has external evidence at
 `D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
@@ -134,8 +139,8 @@ The first local KIS Paper operations console is now implemented. It is bound to
 persists reversible `pause_buys`/`pause_sells` instructions in a separate local
 control file. The web process has no KIS credentials, broker client, private
 intent state, or market-data mount. The active canary/session consumes
-`pause_buys` before configuration/network access; `pause_sells` is retained for
-the later sell executor and cannot suppress a hard-risk exit. These are local
+the matching directional pause before configuration/network access; a
+`pause_sells` instruction cannot suppress a hard-risk exit. These are local
 operations controls, not Paper authority or research-promotion gates.
 When a due session ends before it creates an intent (for example a buy pause or
 quote failure), it also refreshes the sanitized canary runtime as `unavailable`.

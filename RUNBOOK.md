@@ -323,7 +323,7 @@ Open `http://127.0.0.1:8787`. The console reads only sanitized runtime
 projections and writes local directional state. `Pause buys` prevents a new
 buy canary/session from loading Paper configuration or calling KIS; `Resume
 buys` clears that local instruction immediately. `Pause sells` is preserved for
-the future sell executor and does not suppress a hard-risk exit. None of these
+the daily sell executor and does not suppress a hard-risk exit. None of these
 buttons submits, modifies, cancels, or reconciles a broker order by itself, and
 none is a Paper approval, capital, profitability, trade-count, or report gate.
 
@@ -362,8 +362,14 @@ The daily SPY path first refreshes its small forward `SPY/AMS` head and then
 evaluates one whole hash-attested source. The collector drops the current US
 exchange date before storing bytes, so a same-session daily close never reaches
 the receipt. The runner uses the first local availability of that source, a
-transparent two-close baseline, and a separate fresh `AMS` price proof before
-the existing Paper canary boundary.
+transparent two-close baseline, one fresh complete KIS Paper account/open-order
+snapshot, and a separate fresh `AMS` price proof before the Paper boundary. A
+ready entry is eligible only from a flat account and a ready exit only from one
+`SPY` / `AMEX` share. Any SPY open order, stale account fact, or out-of-scope
+position produces a scoped no-intent result rather than an inferred position or
+replacement order. The service uses the virtual buy/sell routes only and leaves
+a valid daily lifecycle limit order open for normal virtual reconciliation; the
+standalone canary remains the immediate-cancel diagnostic.
 
 Run the two stages manually only when needed; both are authorized KIS Paper
 work and emit safe metadata rather than secrets, raw market rows, prices, or
@@ -379,10 +385,13 @@ docker compose --profile kis-paper-daily-spy-session run --rm --no-deps --build 
 
 The installed Windows tasks run the head at 22:15 KST and the receipt session
 at 23:50 KST, Tuesday through Saturday. The session may honestly record a
-no-intent when a receipt is stale, abstains, the market is closed, a buy pause
-is active, or its transient price proof is unavailable. That result applies
-only to that invocation and does not block the next due collection, a separate
-Paper intent, or another lane.
+no-intent when a receipt is stale or abstains, the market is closed, its
+directional pause is active, its account fact is stale or out of scope, an SPY
+order is already open, or its transient price proof is unavailable. That result
+applies only to that invocation and does not block the next due collection, a
+separate Paper intent, or another lane. Sanitized evidence can state
+`pnl_status: not_observed`; it never turns an acknowledgement or local intent
+into a fill, cash, cost-basis, or realized-PnL claim.
 
 ## KIS Virtual-Paper Canary
 

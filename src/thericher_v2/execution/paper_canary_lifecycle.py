@@ -46,6 +46,7 @@ class PaperCanaryLifecycleFact:
     decision_ref: str | None
     observed_at: datetime
     lifecycle_state: str
+    decision_class: Literal["enter", "exit"]
     reconciliation_status: Literal["not_run", "clean", "unresolved"]
     submit_response_category: str
     attribution_eligibility: str
@@ -64,6 +65,8 @@ class PaperCanaryLifecycleFact:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
         if self.lifecycle_state not in _LIFECYCLE_STATES:
             raise PaperCanaryLifecycleError("lifecycle_state_invalid")
+        if self.decision_class not in {"enter", "exit"}:
+            raise PaperCanaryLifecycleError("decision_class_invalid")
         if self.reconciliation_status not in {"not_run", "clean", "unresolved"}:
             raise PaperCanaryLifecycleError("reconciliation_status_invalid")
         if self.submit_response_category not in _SUBMIT_RESPONSE_CATEGORIES:
@@ -84,7 +87,7 @@ class PaperCanaryLifecycleFact:
             "intent_ref": self.intent_ref,
             "decision_ref": self.decision_ref,
             "attribution_ref": self.attribution_ref,
-            "decision_class": "enter",
+            "decision_class": self.decision_class,
             "model_ref": "deterministic_canary",
             "observed_at": self.observed_at.isoformat(),
             "lifecycle_state": self.lifecycle_state,
@@ -147,6 +150,7 @@ def paper_canary_lifecycle_fact_from_evidence(
         ),
         observed_at=_utc(payload.get("observed_at"), "observed_at"),
         lifecycle_state=lifecycle_state,
+        decision_class=_decision_class(payload.get("order_side")),
         reconciliation_status=reconciliation_status,
         submit_response_category=category,
         attribution_eligibility=_attribution_eligibility(
@@ -177,6 +181,16 @@ def _lifecycle_state(phase: str) -> str:
     if phase in {"submission_started", "cancel_started", "outcome_unknown"}:
         return "outcome_unknown"
     raise PaperCanaryLifecycleError("lifecycle_phase_invalid")
+
+
+def _decision_class(order_side: object) -> Literal["enter", "exit"]:
+    """Map the durable order side without inventing a fill or PnL fact."""
+
+    if order_side in {None, "buy"}:
+        return "enter"
+    if order_side == "sell":
+        return "exit"
+    raise PaperCanaryLifecycleError("lifecycle_order_side_invalid")
 
 
 def _submit_response_category(value: object, reason_code: object) -> str:

@@ -54,6 +54,10 @@ from .kis_paper_receipt_canary import (
     run_kis_paper_receipt_canary,
 )
 from .kis_paper_session import is_us_equity_regular_session_window
+from .kis_paper_spy_position import (
+    KisPaperSpyPositionResolution,
+    resolve_kis_paper_spy_position_target,
+)
 from .kis_readonly import (
     KisHttpTransport,
     KisPaperReadOnlyError,
@@ -73,6 +77,13 @@ _SESSION_REASONS = frozenset(
         "daily_receipt_not_current",
         "session_closed",
         "pause_buys_active",
+        "pause_sells_active",
+        "account_unavailable",
+        "account_snapshot_not_current",
+        "position_out_of_scope",
+        "open_order_conflict",
+        "target_already_satisfied",
+        "target_bridge_mismatch",
         "quote_unavailable",
         "receipt_preparation_unavailable",
     }
@@ -198,7 +209,7 @@ def run_kis_paper_daily_spy_session(
             input=input,
             evaluation=evaluation,
         )
-    if receipt.decision_class != "enter":
+    if receipt.decision_class not in {"enter", "exit"}:
         return _record_session(
             session_id=resolved_session_id,
             status="no_intent",
@@ -224,11 +235,19 @@ def run_kis_paper_daily_spy_session(
             input=input,
             evaluation=evaluation,
         )
-    if PaperExecutionControlStore(execution_control_path).read().pause_buys:
+    execution_control = PaperExecutionControlStore(execution_control_path).read()
+    paused = (
+        execution_control.pause_buys
+        if receipt.decision_class == "enter"
+        else execution_control.pause_sells
+    )
+    if paused:
         return _record_session(
             session_id=resolved_session_id,
             status="no_intent",
-            reason_code="pause_buys_active",
+            reason_code=(
+                "pause_buys_active" if receipt.decision_class == "enter" else "pause_sells_active"
+            ),
             observed_at=decision_at,
             artifact_root=artifact_root,
             repository_root=repository_root,
@@ -243,6 +262,37 @@ def run_kis_paper_daily_spy_session(
                 config=load_kis_paper_config_from_environment(environment),
                 transport=transport or UrllibKisPaperCanaryTransport(),
             )
+        snapshot = resolved_client.snapshot()
+        position_resolution = resolve_kis_paper_spy_position_target(
+            receipt,
+            snapshot=snapshot,
+            as_of=_session_now(now=now, clock=clock),
+        )
+    except (KisPaperCanaryError, KisPaperReadOnlyError, ValueError):
+        return _record_session(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="account_unavailable",
+            observed_at=decision_at,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            input=input,
+            evaluation=evaluation,
+        )
+    if position_resolution.action == "none":
+        return _record_session(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code=position_resolution.reason_code,
+            observed_at=decision_at,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            input=input,
+            evaluation=evaluation,
+            position_resolution=position_resolution,
+        )
+
+    try:
         limit_input = resolved_client.fetch_spy_limit_input(observed_at=decision_at)
         prepared = prepare_kis_paper_spy_receipt_decision(
             receipt,
@@ -259,6 +309,7 @@ def run_kis_paper_daily_spy_session(
             repository_root=repository_root,
             input=input,
             evaluation=evaluation,
+            position_resolution=position_resolution,
         )
     if prepared.status != "ready":
         return _record_session(
@@ -271,6 +322,23 @@ def run_kis_paper_daily_spy_session(
             input=input,
             evaluation=evaluation,
             prepared=prepared,
+            position_resolution=position_resolution,
+        )
+    if (
+        prepared.kis_paper_decision is None
+        or prepared.kis_paper_decision.side != position_resolution.action
+    ):
+        return _record_session(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="target_bridge_mismatch",
+            observed_at=decision_at,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            input=input,
+            evaluation=evaluation,
+            prepared=prepared,
+            position_resolution=position_resolution,
         )
 
     canary = run_kis_paper_receipt_canary(
@@ -302,6 +370,7 @@ def run_kis_paper_daily_spy_session(
         evaluation=evaluation,
         prepared=prepared,
         canary=canary,
+        position_resolution=position_resolution,
     )
 
 
@@ -317,6 +386,7 @@ def _record_session(
     evaluation: KisPaperDailySpyBaselineEvaluation | None = None,
     prepared: PaperDecisionBridgeResult | None = None,
     canary: KisPaperCanaryOutcome | None = None,
+    position_resolution: KisPaperSpyPositionResolution | None = None,
 ) -> KisPaperDailySpySessionOutcome:
     destination = _session_evidence_path(artifact_root=artifact_root, session_id=session_id)
     receipt = None if evaluation is None else evaluation.receipt
@@ -343,6 +413,8 @@ def _record_session(
         payload["receipt"] = receipt.to_payload()
     if prepared is not None:
         payload["paper_preparation"] = prepared.safe_payload()
+    if position_resolution is not None:
+        payload["position_resolution"] = position_resolution.safe_payload()
     if canary is not None:
         payload["canary"] = canary.safe_payload()
     _write_or_verify(destination, payload, repository_root=repository_root)
