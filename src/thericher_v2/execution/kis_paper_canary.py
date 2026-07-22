@@ -32,11 +32,23 @@ from .emergency import (
 from .kis_paper_console_bridge import paper_account_snapshot_from_kis_readonly
 from .kis_paper_order_fields import map_kis_paper_us_buy_limit_order_fields
 from .kis_paper_quote import (
+    KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
+    KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
     KIS_PAPER_US_SPY_QUOTE_PATH,
     KisPaperQuoteError,
+    KisPaperSpyAskingPriceProbe,
+    KisPaperSpyLimitInput,
+    KisPaperSpyPriceDetailProbe,
     KisPaperSpyQuote,
+    build_kis_paper_spy_asking_price_request,
+    build_kis_paper_spy_price_detail_request,
     build_kis_paper_spy_quote_request,
+    inspect_kis_paper_spy_asking_price_response,
+    inspect_kis_paper_spy_price_detail_response,
+    parse_kis_paper_spy_limit_input,
     parse_kis_paper_spy_quote,
+    validate_kis_paper_spy_asking_price_request,
+    validate_kis_paper_spy_price_detail_request,
     validate_kis_paper_spy_quote_request,
 )
 from .kis_readonly import (
@@ -141,6 +153,9 @@ _STATE_PHASES = frozenset(
         "cancel_started",
         "cancelled",
     }
+)
+_READ_ONLY_RECOVERY_PHASES = frozenset(
+    {"submission_started", "outcome_unknown", "cancel_started"}
 )
 _SAFE_REASON_CODES = frozenset(
     {
@@ -660,6 +675,65 @@ class KisPaperCanaryClient:
         except KisPaperReadOnlyError as error:
             raise KisPaperCanaryError("quote_response_incomplete") from error
 
+    def probe_spy_price_detail(self) -> KisPaperSpyPriceDetailProbe:
+        """Read one exact price-detail route without creating an intent or order."""
+
+        response = self._dispatch(
+            build_kis_paper_spy_price_detail_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        return inspect_kis_paper_spy_price_detail_response(response)
+
+    def probe_spy_asking_price(
+        self,
+        *,
+        observed_at: datetime | None = None,
+    ) -> KisPaperSpyAskingPriceProbe:
+        """Read one exact best-price route without creating an intent or order."""
+
+        response = self._dispatch(
+            build_kis_paper_spy_asking_price_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        return inspect_kis_paper_spy_asking_price_response(response, observed_at=observed_at)
+
+    def fetch_spy_limit_input(
+        self,
+        *,
+        observed_at: datetime | None = None,
+    ) -> KisPaperSpyLimitInput:
+        """Read the exact fresh AMS/SPY fields used by the Paper limit contract."""
+
+        access_token = self._issue_access_token()
+        asking_response = self._dispatch(
+            build_kis_paper_spy_asking_price_request(
+                config=self._config,
+                access_token=access_token,
+            )
+        )
+        price_detail_response = self._dispatch(
+            build_kis_paper_spy_price_detail_request(
+                config=self._config,
+                access_token=access_token,
+            )
+        )
+        if asking_response.status_code != 200 or price_detail_response.status_code != 200:
+            raise KisPaperCanaryError("quote_rejected")
+        try:
+            return parse_kis_paper_spy_limit_input(
+                asking_price_payload=asking_response.payload(),
+                price_detail_payload=price_detail_response.payload(),
+                observed_at=observed_at or datetime.now(UTC),
+            )
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        except KisPaperReadOnlyError as error:
+            raise KisPaperCanaryError("quote_response_incomplete") from error
+
     def submit_buy_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
         body = {
             "CANO": self._config.account_number,
@@ -851,6 +925,7 @@ def _run_kis_paper_canary(
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
     execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
+    require_existing_state: bool = False,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -861,6 +936,8 @@ def _run_kis_paper_canary(
     if existing_state is not None:
         _ensure_recovery_intent_matches(existing_state.intent, requested_intent)
         intent = existing_state.intent
+    elif require_existing_state:
+        raise KisPaperCanaryError("recovery_state_missing")
     else:
         intent = requested_intent
     state = state_store.record_intent(
@@ -1086,6 +1163,67 @@ def run_kis_paper_canary(
         )
 
 
+def reconcile_kis_paper_canary_unknown_run(
+    *,
+    run_id: str,
+    environment: Mapping[str, str],
+    state_path: Path,
+    runtime_projection_path: Path,
+    paper_account_snapshot_path: Path,
+    emergency_state_path: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    transport: KisHttpTransport | None = None,
+    now: datetime | None = None,
+    clock: Callable[[], datetime] | None = None,
+    execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
+) -> KisPaperCanaryOutcome:
+    """Reconcile one ambiguous persisted run without creating or cancelling an order.
+
+    The decision is reconstructed only from the private durable intent. Restricting
+    this entry point to nonterminal ambiguity phases guarantees that it can enter
+    the existing recovery branch but never the submit or cancellation branches.
+    """
+
+    _safe_identifier(run_id, "run_id")
+    with exclusive_kis_paper_canary_state_lock(state_path.parent / ".canary_execution"):
+        state = KisPaperCanaryStateStore(state_path).read()
+        if state is None:
+            raise KisPaperCanaryError("recovery_state_missing")
+        if state.intent.run_id != run_id:
+            raise KisPaperCanaryError("recovery_run_id_mismatch")
+        if state.phase not in _READ_ONLY_RECOVERY_PHASES:
+            raise KisPaperCanaryError("recovery_phase_not_reconcilable")
+        intent = state.intent
+        decision = KisPaperCanaryBuyDecision(
+            decision_id=intent.decision_id,
+            symbol=intent.symbol,
+            exchange=intent.exchange,
+            quantity=intent.quantity,
+            limit_price=intent.limit_price,
+            decision_as_of=intent.created_at,
+            valid_until=intent.valid_until,
+        )
+        return _run_kis_paper_canary(
+            decision=decision,
+            run_id=run_id,
+            environment=environment,
+            state_path=state_path,
+            runtime_projection_path=runtime_projection_path,
+            paper_account_snapshot_path=paper_account_snapshot_path,
+            emergency_state_path=emergency_state_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=True,
+            cancel_after_submit=state.cancel_after_submit,
+            transport=transport,
+            now=now,
+            clock=clock,
+            execution_control_path=execution_control_path,
+            require_existing_state=True,
+        )
+
+
 def _canary_now(
     *,
     now: datetime | None,
@@ -1121,6 +1259,18 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
     if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_QUOTE_PATH:
         try:
             validate_kis_paper_spy_quote_request(request)
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        return
+    if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_PRICE_DETAIL_PATH:
+        try:
+            validate_kis_paper_spy_price_detail_request(request)
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        return
+    if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_ASKING_PRICE_PATH:
+        try:
+            validate_kis_paper_spy_asking_price_request(request)
         except KisPaperQuoteError as error:
             raise KisPaperCanaryError(error.code) from error
         return

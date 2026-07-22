@@ -4048,3 +4048,58 @@ exposing the quote/error body; detailed safe reason remains external evidence.
 Reason: this gives the operator immediate, local operational control and useful
 current data visibility without adding a broker-capable dashboard, a report
 chain, a capital gate, or another approval mechanism.
+
+## 2026-07-22 - Reject blank KIS Paper price-detail fields as a canary input
+
+Decision: add one exact, Paper-host-pinned SPY `price-detail` structural probe
+using the official route `HHDFS76200200`, `AUTH=""`, `EXCD=NAS`, and `SYMB=SPY`.
+It classifies only HTTP status, mapping/result shape, and the validity states of
+`last`, decimal scale, and tick fields. It cannot produce a price, create an
+intent, submit an order, retain a raw response, or widen the canary route.
+
+The live 2026-07-22 Paper probe received a success-shaped mapping but all three
+required fields were blank. Therefore `price-detail` is rejected as the current
+explicit-limit conversion candidate. This is an input-evidence conclusion, not
+a permission, capital, retention, scheduler, or one-shot condition: another
+correctly scoped Paper action or candidate proceeds normally.
+
+Claude's falsification-first verdict was `supported-with-limits`: the route is
+acceptable only as the exact tuple above, with category-only output and no path
+from its response into an intent or order. The implementation follows those
+limits.
+
+Reason: it resolves a concrete KIS compatibility question without inventing a
+price or turning a blank provider field into another Paper approval process.
+
+## 2026-07-22 - Establish the AMEX SPY Paper price input and read-only recovery
+
+Decision: retain the earlier `NAS/SPY` blank-field probe as a rejected historical
+candidate, then use the checked official KIS sample source revision
+`885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc` for the actual mapping: `AMS` on
+the SPY asking-price and price-detail endpoints, and `AMEX` on the virtual
+order. The in-memory limit adapter accepts a KIS-success asking-price last only
+when its Korea timestamp is at most 120 seconds old, its decimal scale matches
+price detail, and price detail's positive `e_hogau` tick divides the price. The
+limit is rounded to that tick. Quote values and payloads remain transient.
+
+The first independent canary using that contract reached its persisted
+`outcome_unknown` / `reconciliation_unresolved` path. A same-run read-only
+reconciliation later found only sanitized aggregate account facts and made no
+buy or cancel request. Add `reconcile_kis_paper_canary_unknown_run` for this
+exact recovery class: it reconstructs all decision fields, including original
+timestamps, solely from durable state; accepts only `submission_started`,
+`outcome_unknown`, or `cancel_started`; and rejects missing, mismatched,
+submitted, terminal, or intent-recorded state before network access. If state
+disappears between the initial check and the recovery branch, the branch raises
+`recovery_state_missing` rather than creating a fresh intent.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its strongest
+kill tests were a reachable buy/cancel route, a recreated intent, identity
+change, or private-value output. Focused tests cover all of those library-level
+routes, including the deleted-state race; the small CLI delegates only to that
+covered helper.
+
+Reason: the engine can now use a truthful, KIS-compatible transient price input
+and recover an ambiguous Paper result without turning a historical blank field,
+unknown intent, or one-shot marker into an approval hold for later distinct
+Paper work.

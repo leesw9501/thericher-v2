@@ -21,7 +21,9 @@ from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryError,
     KisPaperCanaryIntent,
     KisPaperCanaryState,
+    KisPaperCanaryStateStore,
     UrllibKisPaperCanaryTransport,
+    reconcile_kis_paper_canary_unknown_run,
     run_kis_paper_canary,
 )
 from thericher_v2.execution.kis_readonly import (
@@ -648,6 +650,156 @@ def test_unknown_submission_recovery_never_uses_an_order_post_route(tmp_path: Pa
         not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_CANCEL_TR_ID}
         for request in recovery_requests
     )
+
+
+def test_read_only_unknown_run_recovery_rebuilds_the_persisted_decision(
+    tmp_path: Path,
+) -> None:
+    transport = FakeKisPaperCanaryTransport(fail_submit=True)
+    run_id = "unknown-read-only-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    request_count_before_recovery = len(transport.requests)
+
+    transport.fail_submit = False
+    recovered = reconcile_kis_paper_canary_unknown_run(
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    assert recovered.phase == "outcome_unknown"
+    assert recovery_requests
+    assert all(
+        request.method != "POST" or request.url.endswith("/oauth2/tokenP")
+        for request in recovery_requests
+    )
+    assert all(
+        request.headers.get("tr_id")
+        not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_CANCEL_TR_ID}
+        for request in recovery_requests
+    )
+
+
+def test_read_only_unknown_run_recovery_rejects_nonambiguous_state(tmp_path: Path) -> None:
+    run_id = "submitted-read-only-recovery-1"
+    decision = _decision()
+    intent = KisPaperCanaryIntent.from_decision(decision, run_id=run_id)
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    state_path.parent.mkdir(parents=True)
+    state_path.write_text(
+        json.dumps(
+            KisPaperCanaryState(
+                intent=intent,
+                phase="submitted",
+                updated_at=NOW,
+                reason_code="reconciliation_unresolved",
+                broker_order_id="ORD-123456789",
+                cancel_after_submit=True,
+            ).to_dict()
+        ),
+        encoding="utf-8",
+    )
+    transport = FakeKisPaperCanaryTransport(order_open=True)
+
+    with pytest.raises(KisPaperCanaryError, match="recovery_phase_not_reconcilable"):
+        reconcile_kis_paper_canary_unknown_run(
+            run_id=run_id,
+            environment=_paper_environment(),
+            state_path=state_path,
+            transport=transport,
+            now=NOW,
+            **_paths(tmp_path),
+        )
+
+    assert transport.requests == []
+
+
+def test_read_only_unknown_run_recovery_requires_matching_persisted_run_id(tmp_path: Path) -> None:
+    state_path = tmp_path / "private" / "recovery-name-1.json"
+    paths = _paths(tmp_path)
+    run_kis_paper_canary(
+        decision=_decision(),
+        run_id="stored-run-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=False,
+        cancel_after_submit=False,
+        now=NOW,
+        **paths,
+    )
+
+    with pytest.raises(KisPaperCanaryError, match="recovery_run_id_mismatch"):
+        reconcile_kis_paper_canary_unknown_run(
+            run_id="recovery-name-1",
+            environment=_paper_environment(),
+            state_path=state_path,
+            now=NOW,
+            **paths,
+        )
+
+
+def test_read_only_unknown_run_recovery_never_recreates_a_deleted_state(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run_id = "deleted-read-only-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    paths = _paths(tmp_path)
+    initial_transport = FakeKisPaperCanaryTransport(fail_submit=True)
+    initial = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=initial_transport,
+        now=NOW,
+        **paths,
+    )
+    assert initial.phase == "outcome_unknown"
+    original_read = KisPaperCanaryStateStore.read
+    reads = 0
+
+    def read_then_disappear(store: KisPaperCanaryStateStore) -> KisPaperCanaryState | None:
+        nonlocal reads
+        reads += 1
+        if reads == 1:
+            return original_read(store)
+        return None
+
+    monkeypatch.setattr(KisPaperCanaryStateStore, "read", read_then_disappear)
+    transport = RecordingTransport()
+
+    with pytest.raises(KisPaperCanaryError, match="recovery_state_missing"):
+        reconcile_kis_paper_canary_unknown_run(
+            run_id=run_id,
+            environment=_paper_environment(),
+            state_path=state_path,
+            transport=transport,
+            now=NOW,
+            **paths,
+        )
+
+    assert transport.requests == []
 
 
 @pytest.mark.parametrize(

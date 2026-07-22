@@ -330,7 +330,7 @@ Windows tasks remain the only recurring KIS-facing execution/data jobs.
 
 ## KIS Virtual-Paper Canary
 
-The quote-derived execution-learning command is a virtual-paper US buy-limit
+The price-input execution-learning command is a virtual-paper US buy-limit
 canary with one whole share, a transient explicit nonmarket limit,
 reconciliation, and cancellation after an accepted submission:
 
@@ -343,23 +343,60 @@ private recovery state in its dedicated Docker volume, writes sanitized runtime
 state to the shared local dashboard, and writes external evidence under
 `/app/model_artifacts`. It checks the America/New_York weekday regular-session
 time window before loading Paper configuration; outside that window it produces
-a safe no-submit result. It accepts only a KIS-success quote and rechecks both
-that time window and the limit validity immediately before submit. The helper
-uses the explicit supported 2026 holiday and early-close calendar. The Windows
-Scheduled Task `thericher-kis-paper-quote-session` invokes this command once
-per weekday at KST 23:35. Re-running an
-existing run ID reconciles its persisted intent before any replacement submit.
-Its cancel-after-submit choice is durable, matching accepted open orders resume
-cancellation after a restart, and sibling run IDs are serialized at the private
-state root. A non-success submit response or completion evidence after a cancel
-is `outcome_unknown`, not a clean result or retry cue. Do not pass secrets or
-account values on the command line.
+a safe no-submit result. Its price input combines the exact `AMS/SPY`
+asking-price route (`HHDFS76200100`) with `AMS/SPY` price detail
+(`HHDFS76200200`), then sends an `AMEX` order only when the Korea timestamp is
+fresh, decimal scales agree, and `e_hogau` proves the limit tick. The input
+never reaches an artifact, dashboard, or log. The helper uses the explicit
+supported 2026 holiday and early-close calendar. The Windows Scheduled Task
+`thericher-kis-paper-quote-session` invokes this command once per weekday at
+KST 23:35. Its cancel-after-submit choice is durable, matching accepted open
+orders resume cancellation after a restart, and sibling run IDs are serialized
+at the private state root. A non-success submit response or completion evidence
+after a cancel is `outcome_unknown`, not a clean result or retry cue. Do not
+pass secrets or account values on the command line.
+
+The original `NAS/SPY` quote and price-detail diagnostics returned
+success-shaped mappings with blank required price fields. They are historical
+rejected candidates, not the current input. The current `AMS/SPY` structural
+probes proved the route shape, fresh timestamp category, scale, and tick input
+without retaining a value. The diagnostic command below emits only HTTP,
+mapping, result, and field-state categories; it never writes a price, raw
+response, account value, intent, or order:
+
+```powershell
+docker compose --profile kis-paper-session run --rm --no-deps --build `
+  kis-paper-session python scripts/probe_kis_paper_spy_price_detail.py
+```
+
+Use it only to classify the documented candidate. A blank or invalid result
+rejects that conversion and does not create an approval hold, one-shot quota,
+or a pause on later correctly scoped Paper work.
 
 The canary may be invoked by a scoped recurring Paper schedule during eligible
 sessions. There is no one-shot or per-goal execution quota: a distinct new
 intent can proceed after the scheduler's technical session, pacing, concurrency,
 and durable-state checks. An ambiguous intent remains unrepeated until its own
 reconciliation, but never blocks a later distinct Paper intent or another lane.
+
+For a persisted ambiguous run, use the read-only recovery command. It rebuilds
+the decision only from private durable state and rejects every phase that could
+create a new order or cancel an acknowledged order:
+
+```powershell
+docker compose --profile kis-paper-session run --rm --no-deps --build `
+  kis-paper-session python scripts/reconcile_kis_paper_canary_unknown_run.py `
+  --run-id <existing-run-id> --state-root /app/private/canary `
+  --runtime-projection /app/runtime/state/kis_paper_canary.json `
+  --paper-account-snapshot /app/runtime/state/paper_account_snapshot.json `
+  --emergency-state /app/emergency/emergency_state.json `
+  --execution-control /app/emergency/paper_execution_control.json `
+  --artifact-root /app/model_artifacts --repository-root /app
+```
+
+It may obtain a virtual token and read reconciliation endpoints, but never uses
+the buy-limit or cancellation route. A missing or malformed private state ends
+with a safe failure; it is not recreated from command-line values.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary

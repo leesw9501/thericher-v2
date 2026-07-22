@@ -16,11 +16,20 @@ from thericher_v2.execution.kis_paper_canary import (
     validate_kis_paper_canary_request,
 )
 from thericher_v2.execution.kis_paper_quote import (
+    KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID,
+    KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID,
     KIS_PAPER_US_SPY_QUOTE_TR_ID,
     KisPaperQuoteError,
+    build_kis_paper_spy_asking_price_request,
+    build_kis_paper_spy_price_detail_request,
     build_kis_paper_spy_quote_request,
     derive_kis_paper_nonmarket_limit,
+    inspect_kis_paper_spy_asking_price_response,
+    inspect_kis_paper_spy_price_detail_response,
+    parse_kis_paper_spy_limit_input,
     parse_kis_paper_spy_quote,
+    validate_kis_paper_spy_asking_price_request,
+    validate_kis_paper_spy_price_detail_request,
     validate_kis_paper_spy_quote_request,
 )
 from thericher_v2.execution.kis_paper_session import (
@@ -47,6 +56,27 @@ class FakeKisPaperQuoteTransport:
     quote_payload: dict[str, object] = field(
         default_factory=lambda: {"rt_cd": "0", "output": {"last": "600.12", "zdiv": "2"}}
     )
+    price_detail_status_code: int = 200
+    price_detail_payload: dict[str, object] = field(
+        default_factory=lambda: {
+            "rt_cd": "0",
+            "output": {"last": "600.12", "zdiv": "2", "e_hogau": "0.01"},
+        }
+    )
+    asking_price_status_code: int = 200
+    asking_price_payload: dict[str, object] = field(
+        default_factory=lambda: {
+            "rt_cd": "0",
+            "output1": {
+                "last": "600.12",
+                "zdiv": "2",
+                "pbid1": "600.11",
+                "pask1": "600.13",
+                "dymd": "20260722",
+                "dhms": "233000",
+            },
+        }
+    )
     order_open: bool = False
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
@@ -58,6 +88,16 @@ class FakeKisPaperQuoteTransport:
             return KisHttpResponse.from_payload(
                 self.quote_payload,
                 status_code=self.quote_status_code,
+            )
+        if tr_id == KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID:
+            return KisHttpResponse.from_payload(
+                self.price_detail_payload,
+                status_code=self.price_detail_status_code,
+            )
+        if tr_id == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID:
+            return KisHttpResponse.from_payload(
+                self.asking_price_payload,
+                status_code=self.asking_price_status_code,
             )
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
@@ -104,6 +144,49 @@ def test_quote_request_is_virtual_only_and_limit_rounds_down() -> None:
         validate_kis_paper_canary_request(replace(request, query={**request.query, "EXCD": "NYS"}))
 
 
+def test_price_detail_probe_request_is_an_exact_paper_only_tuple() -> None:
+    request = build_kis_paper_spy_price_detail_request(
+        config=_config(),
+        access_token="test-access-token",
+    )
+
+    validate_kis_paper_spy_price_detail_request(request)
+    validate_kis_paper_canary_request(request)
+    with pytest.raises(KisPaperQuoteError, match="price_detail_request_not_allowlisted"):
+        validate_kis_paper_spy_price_detail_request(
+            replace(request, query={**request.query, "EXCD": "NAS"})
+        )
+    with pytest.raises(KisPaperQuoteError, match="price_detail_request_not_allowlisted"):
+        validate_kis_paper_spy_price_detail_request(
+            replace(request, query={**request.query, "SYMB": "QQQ"})
+        )
+    with pytest.raises(KisPaperCanaryError, match="price_detail_request_not_allowlisted"):
+        validate_kis_paper_canary_request(
+            replace(request, headers={**request.headers, "tr_id": KIS_PAPER_US_SPY_QUOTE_TR_ID})
+        )
+
+
+def test_asking_price_probe_request_is_an_exact_paper_only_tuple() -> None:
+    request = build_kis_paper_spy_asking_price_request(
+        config=_config(),
+        access_token="test-access-token",
+    )
+
+    validate_kis_paper_spy_asking_price_request(request)
+    validate_kis_paper_canary_request(request)
+    with pytest.raises(KisPaperQuoteError, match="asking_price_request_not_allowlisted"):
+        validate_kis_paper_spy_asking_price_request(
+            replace(request, query={**request.query, "EXCD": "NAS"})
+        )
+    with pytest.raises(KisPaperCanaryError, match="asking_price_request_not_allowlisted"):
+        validate_kis_paper_canary_request(
+            replace(
+                request,
+                headers={**request.headers, "tr_id": KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID},
+            )
+        )
+
+
 @pytest.mark.parametrize(
     "payload",
     (
@@ -127,6 +210,177 @@ def test_quote_parser_rejects_a_success_http_response_with_kis_error_code() -> N
     with pytest.raises(KisPaperQuoteError, match="quote_rejected"):
         parse_kis_paper_spy_quote(
             {"rt_cd": "1", "output": {"last": "600.12", "zdiv": "2"}}
+        )
+
+
+def test_price_detail_probe_keeps_price_fields_transient_and_category_only() -> None:
+    raw_price_text = "600.12"
+    transport = FakeKisPaperQuoteTransport(
+        price_detail_payload={
+            "rt_cd": "0",
+            "output": {"last": raw_price_text, "zdiv": "2", "e_hogau": "0.01"},
+        }
+    )
+
+    from thericher_v2.execution.kis_paper_canary import KisPaperCanaryClient
+
+    probe = KisPaperCanaryClient(config=_config(), transport=transport).probe_spy_price_detail()
+
+    assert probe.safe_payload() == {
+        "http_status_class": "2xx",
+        "payload_mapping": "mapping",
+        "result": "success",
+        "last_state": "positive_decimal",
+        "decimal_scale_state": "valid_scale",
+        "tick_state": "positive_decimal",
+        "paper_only": True,
+    }
+    assert raw_price_text not in repr(probe)
+    assert raw_price_text not in str(probe.safe_payload())
+    assert all(
+        request.headers.get("tr_id") != KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+
+
+def test_price_detail_probe_classifies_blank_required_fields_as_unusable() -> None:
+    probe = inspect_kis_paper_spy_price_detail_response(
+        KisHttpResponse.from_payload(
+            {"rt_cd": "0", "output": {"last": "", "zdiv": "", "e_hogau": ""}}
+        )
+    )
+
+    assert probe.last_state == "blank"
+    assert probe.decimal_scale_state == "blank"
+    assert probe.tick_state == "blank"
+
+
+def test_asking_price_probe_keeps_best_price_fields_transient_and_category_only() -> None:
+    raw_price_text = "600.12"
+    transport = FakeKisPaperQuoteTransport(
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {
+                "last": raw_price_text,
+                "zdiv": "2",
+                "pbid1": "600.11",
+                "pask1": "600.13",
+                "dymd": "20260722",
+                "dhms": "233000",
+            },
+        }
+    )
+
+    from thericher_v2.execution.kis_paper_canary import KisPaperCanaryClient
+
+    probe = KisPaperCanaryClient(
+        config=_config(),
+        transport=transport,
+    ).probe_spy_asking_price(observed_at=NOW)
+
+    assert probe.safe_payload() == {
+        "http_status_class": "2xx",
+        "payload_mapping": "mapping",
+        "result": "success",
+        "last_state": "positive_decimal",
+        "decimal_scale_state": "valid_scale",
+        "best_bid_state": "positive_decimal",
+        "best_ask_state": "positive_decimal",
+        "bid_ask_state": "non_crossed",
+        "quote_timestamp_state": "valid_date_and_time",
+        "quote_timestamp_age_state": "age_within_120s_under_korea_interpretation",
+        "paper_only": True,
+    }
+    assert raw_price_text not in repr(probe)
+    assert raw_price_text not in str(probe.safe_payload())
+    assert all(
+        request.headers.get("tr_id") != KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+
+
+def test_asking_price_probe_classifies_blank_fields_as_unusable() -> None:
+    probe = inspect_kis_paper_spy_asking_price_response(
+        KisHttpResponse.from_payload(
+            {
+                "rt_cd": "0",
+                "output1": {
+                    "last": "",
+                    "zdiv": "",
+                    "pbid1": "",
+                    "pask1": "",
+                    "dymd": "",
+                    "dhms": "",
+                },
+            }
+        )
+    )
+
+    assert probe.last_state == "blank"
+    assert probe.decimal_scale_state == "blank"
+    assert probe.best_bid_state == "blank"
+    assert probe.best_ask_state == "blank"
+    assert probe.bid_ask_state == "not_checked"
+    assert probe.quote_timestamp_state == "blank"
+
+
+def test_limit_input_requires_fresh_korea_timestamp_scale_and_tick_alignment() -> None:
+    raw_price_text = "600.12"
+    limit_input = parse_kis_paper_spy_limit_input(
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {
+                "last": raw_price_text,
+                "zdiv": "2",
+                "dymd": "20260722",
+                "dhms": "233000",
+            },
+        },
+        price_detail_payload={
+            "rt_cd": "0",
+            "output": {"last": raw_price_text, "zdiv": "2", "e_hogau": "0.01"},
+        },
+        observed_at=NOW,
+    )
+
+    assert derive_kis_paper_nonmarket_limit(
+        limit_input.as_quote(),
+        tick_size=limit_input.tick_size,
+    ) == Decimal("598.61")
+    assert raw_price_text not in repr(limit_input)
+    with pytest.raises(KisPaperQuoteError, match="quote_timestamp_stale"):
+        parse_kis_paper_spy_limit_input(
+            asking_price_payload={
+                "rt_cd": "0",
+                "output1": {
+                    "last": raw_price_text,
+                    "zdiv": "2",
+                    "dymd": "20260722",
+                    "dhms": "230000",
+                },
+            },
+            price_detail_payload={
+                "rt_cd": "0",
+                "output": {"last": raw_price_text, "zdiv": "2", "e_hogau": "0.01"},
+            },
+            observed_at=NOW,
+        )
+    with pytest.raises(KisPaperQuoteError, match="quote_price_off_tick"):
+        parse_kis_paper_spy_limit_input(
+            asking_price_payload={
+                "rt_cd": "0",
+                "output1": {
+                    "last": "600.121",
+                    "zdiv": "3",
+                    "dymd": "20260722",
+                    "dhms": "233000",
+                },
+            },
+            price_detail_payload={
+                "rt_cd": "0",
+                "output": {"last": raw_price_text, "zdiv": "3", "e_hogau": "0.01"},
+            },
+            observed_at=NOW,
         )
 
 
@@ -261,12 +515,19 @@ def test_due_session_uses_transient_quote_and_sanitizes_all_public_outputs(tmp_p
     )
     assert buy_request.json_body is not None
     assert buy_request.json_body["OVRS_ORD_UNPR"] == derived_limit_text
-    quote_request = next(
+    assert buy_request.json_body["OVRS_EXCG_CD"] == "AMEX"
+    asking_price_request = next(
         request
         for request in transport.requests
-        if request.headers.get("tr_id") == KIS_PAPER_US_SPY_QUOTE_TR_ID
+        if request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
     )
-    assert quote_request.query == {"AUTH": "", "EXCD": "NAS", "SYMB": "SPY"}
+    assert asking_price_request.query == {"AUTH": "", "EXCD": "AMS", "SYMB": "SPY"}
+    price_detail_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID
+    )
+    assert price_detail_request.query == {"AUTH": "", "EXCD": "AMS", "SYMB": "SPY"}
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     safe_output = str(outcome.safe_payload())
     for forbidden in (raw_quote_text, derived_limit_text, "paper-app-secret", "12345678"):
@@ -287,6 +548,17 @@ def test_repeated_due_sessions_create_distinct_intents_without_a_one_shot_latch(
         cancel_after_submit=True,
         **_paths(tmp_path),
     )
+    transport.asking_price_payload = {
+        "rt_cd": "0",
+        "output1": {
+            "last": "600.12",
+            "zdiv": "2",
+            "pbid1": "600.11",
+            "pask1": "600.13",
+            "dymd": "20260722",
+            "dhms": "234500",
+        },
+    }
     second = run_kis_paper_quote_session(
         environment=_paper_environment(),
         transport=transport,
@@ -308,8 +580,8 @@ def test_repeated_due_sessions_create_distinct_intents_without_a_one_shot_latch(
 def test_quote_failure_writes_safe_no_submit_evidence(tmp_path: Path) -> None:
     raw_broker_text = "paper-app-secret account 12345678 broker detail"
     transport = FakeKisPaperQuoteTransport(
-        quote_status_code=503,
-        quote_payload={"msg1": raw_broker_text},
+        asking_price_status_code=503,
+        asking_price_payload={"msg1": raw_broker_text},
     )
     outcome = run_kis_paper_quote_session(
         environment=_paper_environment(),
@@ -341,7 +613,7 @@ def test_quote_failure_writes_safe_no_submit_evidence(tmp_path: Path) -> None:
 
 def test_kis_quote_error_code_writes_safe_no_submit_evidence(tmp_path: Path) -> None:
     transport = FakeKisPaperQuoteTransport(
-        quote_payload={"rt_cd": "1", "output": {"last": "600.12", "zdiv": "2"}}
+        asking_price_payload={"rt_cd": "1", "output1": {"last": "600.12", "zdiv": "2"}}
     )
     outcome = run_kis_paper_quote_session(
         environment=_paper_environment(),
@@ -363,7 +635,10 @@ def test_kis_quote_error_code_writes_safe_no_submit_evidence(tmp_path: Path) -> 
 
 def test_blank_kis_quote_fields_write_safe_no_submit_evidence(tmp_path: Path) -> None:
     transport = FakeKisPaperQuoteTransport(
-        quote_payload={"rt_cd": "0", "output": {"last": "", "zdiv": " "}}
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {"last": "", "zdiv": " ", "dymd": "", "dhms": ""},
+        }
     )
     outcome = run_kis_paper_quote_session(
         environment=_paper_environment(),
@@ -407,7 +682,19 @@ def test_session_rechecks_the_regular_window_immediately_before_submit(tmp_path:
             before_close + timedelta(seconds=1),
         ]
     )
-    transport = FakeKisPaperQuoteTransport()
+    transport = FakeKisPaperQuoteTransport(
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {
+                "last": "600.12",
+                "zdiv": "2",
+                "pbid1": "600.11",
+                "pask1": "600.13",
+                "dymd": "20260723",
+                "dhms": "045959",
+            },
+        }
+    )
 
     outcome = run_kis_paper_quote_session(
         environment=_paper_environment(),

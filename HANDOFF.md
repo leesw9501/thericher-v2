@@ -122,6 +122,27 @@ backfill evidence remains 14 retained chunks per stream (QQQ: 3 partial; SPY:
 and never blocks fresh collection, KIS Paper work, or a schedule. Both Windows
 tasks remain `Ready` and invoke their named Docker profiles with `--build`.
 
+An exact, Paper-host-pinned SPY `price-detail` structural diagnostic
+(`HHDFS76200200`) then received another success-shaped mapping, but the required
+last-price, decimal-scale, and tick fields were blank. The temporary diagnostic
+emits only field-state categories and cannot create an intent or order. This
+rejects that candidate as an execution price conversion; it does not pause
+Paper orders, collection, schedules, or a later independently evidenced price
+candidate.
+
+The later official KIS sample cross-check established that SPY's AMEX contract
+uses `AMS` for the price endpoints and `AMEX` for the order venue. The exact
+`AMS/SPY` asking-price and price-detail calls then satisfied the in-memory
+price-input contract: a fresh Korea-timestamped last price, matching decimal
+scales, and a positive tick that aligned with the price. No quote value or raw
+response was written. The resulting independent virtual canary reached its
+persisted outcome path but remains `outcome_unknown` /
+`reconciliation_unresolved`. Its same-run read-only reconciliation reported an
+available account with zero open orders in the sanitized aggregate; it created
+no buy or cancel order. This affects only that intent. The new recovery helper
+will refuse a terminal or acknowledged-submitted state rather than widening a
+read-only recovery into a cancellation or new submission.
+
 The Codex app automation `thericher-daily-operating-review` is active at 08:10
 KST. It inspects the previous scheduled outcomes through sanitized evidence,
 continues ready no-cost lane work, and publishes only the concise operator

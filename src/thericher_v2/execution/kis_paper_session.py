@@ -38,6 +38,7 @@ from .kis_paper_canary import (
 )
 from .kis_paper_quote import (
     DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
+    KIS_PAPER_US_SPY_ORDER_EXCHANGE,
     KisPaperQuoteError,
     derive_kis_paper_nonmarket_limit,
 )
@@ -66,6 +67,11 @@ _SESSION_REASONS = frozenset(
         "quote_rejected",
         "quote_response_blank",
         "quote_response_incomplete",
+        "quote_price_off_tick",
+        "quote_scale_mismatch",
+        "quote_tick_invalid",
+        "quote_timestamp_invalid",
+        "quote_timestamp_stale",
         "pause_buys_active",
         "session_unavailable",
     }
@@ -211,7 +217,7 @@ def run_kis_paper_quote_session(
                 config=config,
                 transport=transport or UrllibKisPaperCanaryTransport(),
             )
-            quote = client.fetch_spy_quote()
+            limit_input = client.fetch_spy_limit_input(observed_at=observed_at)
             decision_at = _session_now(now=now, clock=clock)
             if (session_reason := _session_due_reason(decision_at)) is not None:
                 return _record_session_outcome(
@@ -228,11 +234,12 @@ def run_kis_paper_quote_session(
             decision = KisPaperCanaryBuyDecision(
                 decision_id=f"decision-{run_id}",
                 symbol="SPY",
-                exchange="NASD",
+                exchange=KIS_PAPER_US_SPY_ORDER_EXCHANGE,
                 quantity=Decimal("1"),
                 limit_price=derive_kis_paper_nonmarket_limit(
-                    quote,
+                    limit_input.as_quote(),
                     discount_bps=DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
+                    tick_size=limit_input.tick_size,
                 ),
                 decision_as_of=decision_at,
                 valid_until=decision_at + timedelta(seconds=valid_seconds),
@@ -395,6 +402,11 @@ def _safe_quote_reason(error: Exception) -> str:
         "quote_rejected",
         "quote_response_blank",
         "quote_response_incomplete",
+        "quote_price_off_tick",
+        "quote_scale_mismatch",
+        "quote_tick_invalid",
+        "quote_timestamp_invalid",
+        "quote_timestamp_stale",
     }:
         return error.code
     return "quote_unavailable"

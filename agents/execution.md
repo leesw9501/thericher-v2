@@ -94,6 +94,29 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   fact, not a Paper authority, scheduling, or retry latch. The current image
   classifies the same two blank required fields as `quote_response_blank` for
   future safe evidence; the historical result remains unchanged.
+- The exact Paper-host-pinned SPY `price-detail` structural probe
+  (`HHDFS76200200`) also returned a successful mapping on 2026-07-22, but its
+  `last`, decimal-scale, and tick fields were all blank. The probe retains and
+  emits categories only, creates no intent, and cannot submit an order. It
+  rejects this candidate as a price conversion, not as a Paper permission,
+  scheduling, or retry condition; a later correctly scoped candidate or
+  virtual canary remains allowed.
+- A later official KIS sample cross-check established the SPY AMEX mapping:
+  `AMS` for the exact asking-price (`HHDFS76200100`) and price-detail
+  (`HHDFS76200200`) endpoints, and `AMEX` for the virtual order. The current
+  input adapter accepts only a fresh Korea-timestamped asking-price last, an
+  equal decimal scale from price detail, and a positive price-aligned
+  `e_hogau` tick. Values and bodies stay transient. Its first independent
+  virtual canary reached `outcome_unknown` / `reconciliation_unresolved`; a
+  same-run read-only recovery reported an available account and zero open
+  orders in sanitized aggregates, with no buy or cancel request. This is that
+  one run's evidence, never a Paper authority or scheduler hold.
+- `reconcile_kis_paper_canary_unknown_run.py` reconstructs only an ambiguous
+  persisted intent and permits only `submission_started`, `outcome_unknown`,
+  or `cancel_started`. It rejects an `intent_recorded`, `submitted`, rejected,
+  or terminal state before network access, so it cannot create a new order or
+  turn a recovery into cancellation. If the private state disappears during
+  recovery, it exits with `recovery_state_missing` instead of recreating it.
 - The current-image `kis-readonly` bridge completed on 2026-07-22 and refreshed
   the credential-free console projection from sanitized KIS Paper account facts.
   It submitted no order. Its external evidence remains under
@@ -102,11 +125,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Resolve the KIS Paper price-input compatibility fact from the first due
-   `kis-paper-session`: blank quote fields must not be guessed or silently
-   normalized. A distinct virtual canary may use an independently proven input
-   without a new operator approval; an unqualified head bar excludes only that
-   price conversion, never Paper cadence, data work, or another candidate.
+2. Keep scheduled independent KIS Paper canaries using the proven transient
+   `AMS`/`AMEX` price-input mapping. Diagnose the actual submit-response shape
+   with safe structural metadata, not raw broker payloads, and keep every
+   ambiguous intent's recovery separate from the next distinct Paper intent.
 3. Add a sell path only when it has its own deterministic sizing, exit, and
    reconciliation contract; consume the existing sell pause then. Do not add a
    live route implicitly.
@@ -146,11 +168,10 @@ operator clears it locally; it is not a request for approval or a global stop.
 
 Use local events for local reconstruction and KIS as the authority for external
 paper state. Unknown broker state is `reconcile`; an emergency stop or cancel
-does not wait for review. A stored canary run ID reloads its durable intent and
-checks its stable identity before recovery, so a restart cannot regenerate a
-new decision timestamp into a replacement order. For a
-`submit_transport_unknown` state, recovery is read-only and never becomes a
-fresh submit, modify, or cancel action.
+does not wait for review. The read-only unknown-run helper reloads its durable
+intent and checks its stable identity before recovery, so it cannot regenerate
+a new decision timestamp into a replacement order. It only accepts ambiguous
+pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
