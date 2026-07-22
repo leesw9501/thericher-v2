@@ -103,11 +103,19 @@ as a failed collection or an authority hold.
    session before handing it to Engine Research.
 7. Preserve raw provider rows and label unknown KIS field semantics; do not
    repair, fill, or relabel a session from another provider.
-8. The prospective `intraday-head` root is currently not created. Its installed
-   Tuesday-Saturday task is `Ready` for 02:35 KST and uses `--build`. After its
-   first run, reattest each QQQ/SPY stream's retained count, observed time, safe
-   outcome, and complete-session coverage before handing any head bars to
-   Research. The current backfill partial metadata is not a hold on that work.
+8. The first due `intraday-head` task completed at 2026-07-23 02:35 KST. Its
+   independent v1 index is generation 2 with one committed retained chunk for
+   each QQQ/NAS and SPY/AMS stream, and the console freshness projection is
+   current. The metadata-only prospective preparation remains `pending` with
+   zero complete QQQ sessions and five still required; it wrote no artifact.
+   The next task remains `Ready` and this factual pending result is not a hold
+   on collection, Paper work, or another data candidate.
+9. The current head-bar contract is not yet an execution-price contract: it
+   has no verified tick/decimal-scale field, no proven `NAS` to `NASD` order
+   mapping, unqualified provider timestamp edge semantics, and no latest-bar
+   freshness predicate. Keep those gaps visible while continuing Data work;
+   they do not disable the head cache, KIS Paper, or an independently verified
+   price source.
 
 ## Authority And Boundaries
 

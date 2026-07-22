@@ -107,14 +107,20 @@ The console therefore reports a current no-intent state rather than preserving a
 stale prior canary result; the exact safe reason remains only in external
 session evidence.
 
-The current safe freshness projection reports QQQ/NAS and SPY/AMS separately
-for the backfill and prospective-head caches. Existing backfill evidence has 14
-retained chunks per stream (QQQ: 3 partial; SPY: 2 partial); the head cache is
-not yet created. `raw_market_data_retained: false` remains an historical fact
-only and never blocks fresh collection, KIS Paper work, or a schedule.
-The two installed Windows schedules now invoke their named Docker profiles with
-`--build`; their next due times remain the first runtime evidence, not a
-permission boundary.
+The first autonomous Windows-scheduled cycle is now evidenced. The due
+quote-session completed with a KIS-success-shaped response whose `last` and
+`zdiv` fields were blank, so it recorded the safe no-intent
+`quote_unavailable` / `quote_response_incomplete` outcome and submitted no
+order. The current image will classify the same shape as
+`quote_response_blank` without storing values or a response body. The due
+intraday-head task then completed with one committed retained chunk each for
+QQQ/NAS and SPY/AMS under its independent cache root; prospective preparation
+correctly remains `pending` because zero complete QQQ sessions exist so far.
+The console freshness projection is current and metadata-only. Existing
+backfill evidence remains 14 retained chunks per stream (QQQ: 3 partial; SPY:
+2 partial). `raw_market_data_retained: false` remains an historical fact only
+and never blocks fresh collection, KIS Paper work, or a schedule. Both Windows
+tasks remain `Ready` and invoke their named Docker profiles with `--build`.
 
 The Codex app automation `thericher-daily-operating-review` is active at 08:10
 KST. It inspects the previous scheduled outcomes through sanitized evidence,

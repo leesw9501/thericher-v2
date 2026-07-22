@@ -2,33 +2,36 @@
 
 ## Objective
 
-Complete the first autonomous KIS Paper operating cycle: let the installed
-quote-session and intraday-head schedules run on their next eligible US-session
-windows, integrate their sanitized outcomes, and keep the local operations
-console truthful and current.
+Resolve the first KIS Paper canary price-input compatibility issue and, when a
+bounded KIS Paper price input is actually proven during an eligible US session,
+run the next independently identified virtual canary through the existing
+paper-only executor.
 
-This is execution and data learning, not a profitability, model-promotion, or
-manual-approval milestone. The schedules are already installed and invoke their
-named Docker profiles with `--build`.
+The first scheduled quote session received a success-shaped KIS response but
+both required quote fields were blank, so it created no intent or order. This
+goal makes that input contract truthful; it is not a profitability, model,
+capital, report, or manual-approval milestone.
 
 ## Standing Authority And Boundaries
 
 - All private `KIS_PAPER_*` market/account reads, positions, open orders,
   virtual-order submit/modify/cancel, reconciliation, raw data retention on
-  `D:`, and goal-owned schedules are authorized. Do not add a capital,
-  trade-count, report, profitability, or confirmation gate.
-- A distinct new virtual intent may proceed after the executor's technical
-  paper-only routing, persisted identity, pacing, and exact-intent recovery
-  behavior. An ambiguous old intent never becomes a global pause or one-shot
-  quota.
-- `raw_market_data_retained: false` describes only its own historical missing
-  bytes. It never blocks a fresh KIS Paper call, head collection, account read,
-  virtual order, or schedule.
+  `D:`, and goal-owned schedules are authorized. A distinct paper intent does
+  not need a new capital, trade-count, profitability, or confirmation gate.
 - Never read `KIS_LIVE_*`, build a live route, use real capital, buy data,
-  accept unclear rights, expose a public service, or commit secrets/raw data/
-  generated artifacts.
+  accept unclear rights, expose a public service, or commit secrets, raw data,
+  or generated artifacts.
 - Keep raw data under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- `raw_market_data_retained: false`, an old unknown intent, a missing price
+  candidate, or a failed probe affects only that concrete recovery or price
+  conversion. None disables a later correctly scoped KIS Paper call, schedule,
+  data collection, or distinct virtual intent.
+- Do not guess, synthesize, or silently normalize a KIS price. A price source
+  may be used only when its unit/tick scale, venue mapping, completed-bar time,
+  freshness, and explicit-limit behavior are evidenced by code/tests and
+  official or retained KIS evidence. This is input correctness, not an operator
+  gate; unqualified candidates simply remain out of that conversion.
 
 ## Required First Reads
 
@@ -37,56 +40,55 @@ named Docker profiles with `--build`.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect the current Windows task status, Docker image/build state, safe
-   runtime projections, and external evidence before reacting to a scheduled
-   outcome. Do not inspect secrets, account identifiers, raw broker bodies, or
-   private intent files.
+4. Inspect only safe scheduled-task state, console projections, external
+   evidence metadata, and cache metadata before reacting. Do not output
+   credentials, account identifiers, raw broker bodies, or raw quote values.
+5. Ask Claude for a short falsification-first drift-check before relying on a
+   new Paper price source or changing the canary price-input route.
 
 ## Role-Owned Work
 
-### Execution Agent
-
-1. Reattest the two named Windows tasks and their next/last run status. The
-   quote-session may make its already-authorized virtual canary during its
-   eligible session without a new operator confirmation.
-2. Integrate its safe session/canary/reconciliation result into the runtime
-   projection and local console. Diagnose only allowlisted reason/HTTP/upstream
-   metadata when a route fails; never log broker bodies, identifiers, or
-   credentials.
-3. Preserve exact ambiguous intents for their own read-only recovery only, but
-   continue other ready virtual Paper work independently. Directional pause
-   state is local operator intent, never a research or data latch.
-
 ### Data Agent
 
-1. Integrate the next due intraday-head outcome under its independent D: cache
-   root and refresh the metadata-only freshness projection.
-2. Reattest QQQ/SPY cache coverage and retain source limitations visibly. A
-   failed/partial/unretained historical result is a recovery fact for itself,
-   never a reason to stop fresh collection.
+1. Examine the existing KIS Paper head/cache and official KIS schema evidence
+   to establish or reject one specific price candidate's scale, normalized
+   exchange, timestamp completion, and freshness contract.
+2. Keep the prospective head cache collecting on its existing schedule and run
+   the metadata-only observation preparer after every outcome. A `pending`
+   research result does not block this execution work.
+3. If the head cache cannot prove the contract, record the exact missing fact
+   and move to the next KIS Paper-compatible candidate without rewriting raw
+   bytes or inventing a generic data platform.
+
+### Execution Agent
+
+1. Keep the current blank-field quote classification and Paper-only route
+   isolation intact. Diagnose new candidates with allowlisted structural
+   metadata only: HTTP class, mapping shape, field validity, scale, venue, and
+   freshness categories; never retain quote values or response bodies.
+2. Implement the smallest price-input adapter only after Data's contract is
+   explicit. Persist the source provenance with the exact intent, retain the
+   existing explicit-limit, identity, pacing, and reconciliation behavior, and
+   make no live change.
+3. During an eligible US session, execute a newly identified virtual canary
+   automatically when the technical input contract holds. If it cannot hold,
+   continue other KIS Paper data/account diagnostics and preserve the narrow
+   reason; do not create an approval, quota, or global pause.
 
 ### Engine Research Agent
 
-1. Keep the completed no-winner sequence screen recorded as joint evidence.
-2. After each head-cache outcome, run
-   `scripts/prepare_kis_intraday_prospective_head_observation.py` against its
-   metadata only. It returns a retriable factual `pending` result until the
-   first five complete new QQQ head sessions exist, then writes the external
-   precommit and planning receipt for the fixed historical-development,
-   descriptive-observation contract. Do not treat the current small comparison
-   slice or GPU idleness as a reason to select, retune, or ensemble a candidate.
+1. Keep the completed no-winner screen and prospective observation contract
+   unchanged. Do not turn this execution price-input repair into a model
+   selection, retuning, ensemble, or GPU-training decision.
 
 ## Completion Evidence
 
-- Both installed task definitions remain `Ready` and use their current Docker
-  profiles with `--build`.
-- At least one newly due scheduled outcome is preserved as sanitized external
-  evidence and reflected as current/unknown in the console. If no eligible
-  window has occurred yet, leave the tasks armed and continue other ready work;
-  do not manufacture an out-of-session order or treat time as an operator
-  blocker.
-- Freshness retains only metadata in web/runtime state, while raw provider data
-  remains under `D:`.
+- A price-input candidate is either proven with a focused executable contract
+  or rejected with a safe, exact missing-fact record; no raw quote values are
+  retained.
+- If proven during a due session, a new KIS virtual canary is attempted through
+  the existing paper-only executor and its sanitized outcome is reconciled.
+- Data head scheduling and research preparation remain independent and current.
 - No KIS live behavior, secret output, raw broker payload, public dashboard,
   or generated artifact enters Git.
 
@@ -101,4 +103,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Operate first autonomous KIS paper cycle`
+`Resolve KIS paper price input`

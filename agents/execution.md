@@ -102,11 +102,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Integrate the first due `kis-paper-session` outcome when the scoped schedule
-   reaches an eligible US session. Distinct virtual canaries may continue after
-   focused transport, recovery, quote, and safe-projection proof; a preserved
-   unknown run remains immutable and blocks only replacement of its own intent,
-   never Paper cadence or a separate new intent.
+2. Resolve the KIS Paper price-input compatibility fact from the first due
+   `kis-paper-session`: blank quote fields must not be guessed or silently
+   normalized. A distinct virtual canary may use an independently proven input
+   without a new operator approval; an unqualified head bar excludes only that
+   price conversion, never Paper cadence, data work, or another candidate.
 3. Add a sell path only when it has its own deterministic sizing, exit, and
    reconciliation contract; consume the existing sell pause then. Do not add a
    live route implicitly.
