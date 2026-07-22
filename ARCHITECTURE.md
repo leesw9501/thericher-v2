@@ -468,6 +468,13 @@ reports only its scope and account-snapshot completeness; the executor applies
 technical request invariants at the request boundary. KIS live remains a
 separately authorized mode.
 
+No historical availability, raw-retention, one-shot, model, or schedule field
+is an execution-mode switch. A false or unavailable field produces evidence for
+its own input or a scoped no-intent only; it cannot move the engine into an
+approval-wait state, suppress another distinct virtual Paper intent, or fall
+back to a live route. The request boundary checks virtual-host pinning and the
+exact durable-intent/reconciliation contract on every action.
+
 The first executable broker surface is deliberately a narrow canary, not a
 generic broker switch: one explicit US whole-share buy limit on the fixed
 virtual host, optional cancellation after acknowledgement, and account/open

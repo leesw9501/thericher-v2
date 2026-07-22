@@ -5,6 +5,12 @@
 Own deterministic intents, paper fills, position/cash state, reconciliation,
 PnL accounting, emergency controls, and future KIS Paper transport.
 
+All virtual Paper data/account/order work and recurring schedules are
+standing-authorized. Historical one-shot, raw-retention, quote, model, or
+`safe_to_submit` values cannot create a manual Paper hold; only paper-host
+isolation and reconciliation of an unknown exact durable intent can stop that
+same request. Live routing remains unavailable.
+
 ## Current State
 
 - Local paper is available and all simulated fills use `source: local_paper`.

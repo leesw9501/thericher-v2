@@ -54,6 +54,11 @@ claims; it is not an approval chain for virtual-paper work.
   historical run marker, unavailable input, model result, raw-retention value,
   or schedule outcome. Preserve the fact, scope its recovery/no-intent result,
   and continue every independent correctly scoped action.
+- This is standing approval for all non-live private work, including recurring
+  KIS Paper data jobs and virtual submit/modify/cancel. Never represent a
+  historical `raw_market_data_retained: false`, one-shot completion, blank
+  response, or `safe_to_submit` value as a new operator decision or a global
+  execution hold.
 - Paper cadence, the number of distinct virtual intents, and recurring
   goal-owned schedules are routine engineering choices, not approval gates or
   one-shot quotas. An unresolved intent blocks only a replacement of that exact

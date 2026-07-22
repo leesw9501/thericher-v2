@@ -78,6 +78,13 @@ Historical one-shot artifacts are non-authoritative. Their completion or
 retention value must never reserve, disable, or require approval for a later
 correctly scoped KIS Paper collection, account, order, or scheduler run.
 
+Do not add an `awaiting_operator_approval` state, a capital/profitability
+threshold, a `safe_to_submit` approval proxy, or a global halt derived from a
+historical marker. KIS Paper actions are standing-authorized by default. A
+runner may stop only its own exact request for paper-host isolation, durable
+identity conflict, or unknown-outcome reconciliation; that technical result
+does not suppress another distinct Paper action or another lane.
+
 Default to the next due, correctly scoped private Paper action. Do not add a
 capital, profitability, trade-count, report, input-quality, or historical-run
 checkpoint as an approval proxy. A factual unavailable input produces only its

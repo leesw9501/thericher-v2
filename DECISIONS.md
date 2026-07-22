@@ -4195,3 +4195,33 @@ rehydrate an `abstain`, expired, future, or mismatched receipt into an order.
 Reason: this advances the data-to-decision-to-paper attribution loop without
 mistaking a current data limitation for a permission gate or fabricating a
 model-driven virtual order.
+
+## 2026-07-22 - Remove all non-live Paper permission latches
+
+Decision: reaffirm that every private, non-live Data, Research, and KIS Paper
+action is standing-authorized, including virtual account/market reads, paper
+submit/modify/cancel, reconciliation, data retention on `D:`, and recurring
+goal-owned schedules. Do not create an `awaiting_operator_approval` state,
+capital envelope, profitability threshold, trade-count quota, one-shot
+reservation, raw-retention switch, report, model-result gate, or
+`safe_to_submit` proxy for this work.
+
+`raw_market_data_retained: false` and a completed/failed/blank one-shot result
+are immutable facts about their own evidence only. They neither grant nor
+withdraw authority for later data collection, virtual Paper orders, or a
+schedule. A call may reject only its own technical request when the route is
+not pinned to the KIS virtual host, its durable identity conflicts, or its own
+previous submission is unknown and must be reconciled. That result never
+pauses a distinct intent or another ready lane. `KIS_LIVE_*`, real-money
+behavior, and live routes remain prohibited even if no funds are currently
+present.
+
+Claude's falsification-first verdict was `supported-with-limits`: retain
+call-time virtual-host isolation, secret safety, paper-scoped durable identity,
+and exact-intent reconciliation; retain source-rights and disk constraints only
+for the affected cache. These are technical truth and containment properties,
+not operator approval checkpoints.
+
+Reason: the operator explicitly prioritizes rapid autonomous development and
+virtual-paper learning over process scaffolding, while preserving the hard
+non-live boundary and truthful recoverable evidence.

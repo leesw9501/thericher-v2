@@ -5,6 +5,11 @@
 Own the current KIS-native daily cache, prospective intraday-head observations,
 and their future reusable loaders.
 
+All private non-live data collection and retention under the current source and
+disk policy is standing-authorized. A `raw_market_data_retained: false` or
+historical one-shot observation remains a no-bytes fact for that observation,
+not a cache, schedule, or KIS Paper permission latch.
+
 The local console receives only a sanitized intraday freshness projection. It
 does not receive paths, raw rows, manifests, quote values, hashes, credentials,
 or account data. The projection reads the historical and prospective-head

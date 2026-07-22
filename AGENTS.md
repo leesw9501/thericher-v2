@@ -47,15 +47,23 @@ Record limitations as evidence and fix technical faults, but do not turn either
 into a new approval process. Actual live-money behavior remains the hard stop.
 
 For private Data, Research, and KIS Paper work, forward progress is the
-default. Do not introduce a state field, marker, quota, report, model result,
-or checklist that blocks a different correctly scoped job as a proxy for
-operator approval. A missing cache, `raw_market_data_retained: false`, blank
+default. This standing approval includes recurring collection, virtual order
+submit/modify/cancel, reconciliation, and goal-owned schedules. Do not
+introduce a state field, marker, quota, report, model result, checklist,
+`awaiting_operator_approval`, or `safe_to_submit` proxy that blocks a different
+correctly scoped job. A missing cache, `raw_market_data_retained: false`, blank
 source field, unqualified input, or failed run is evidence about its own input
 or recovery path only. It may yield a scoped no-intent or a fresh collection;
 it never becomes a general permission hold. Preserve the factual record rather
-than rewriting it. The only cross-run technical exception is an exact durable
-Paper intent with an unknown outcome, which must reconcile before its own
-replacement is attempted.
+than rewriting it.
+
+The executor may reject one exact Paper request only for a call-time technical
+fact: it is not pinned to the virtual host, its persisted identity conflicts,
+or its own prior submission outcome is unknown and needs reconciliation. Those
+checks cannot create a global pause, a per-goal quota, or a request for
+operator approval; a distinct correctly scoped Paper action and every
+independent lane continue. `KIS_LIVE_*` remains the sole hard authorization
+boundary and must never be read or routed.
 
 ### Codex Orchestrator
 

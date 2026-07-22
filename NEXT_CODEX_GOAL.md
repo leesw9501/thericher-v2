@@ -23,6 +23,10 @@ new universe, model registry, report system, or live-trading feature.
 - An unavailable input, failed collection, historical marker, prior canary,
   or unqualified result is scoped evidence only. It may produce a no-intent
   result or fresh collection; it must not freeze another ready lane.
+- `raw_market_data_retained: false`, a one-shot completion, a blank response,
+  or a `safe_to_submit` value is never an approval state. All non-live private
+  KIS Paper data and virtual-order work remains authorized; preserve only the
+  exact-intent reconciliation and paper-host technical boundaries.
 - Retain technical truth only: point-in-time availability, paper-host routing,
   durable intent before a side effect, exact-intent reconciliation, final
   tick-valid price proof, and idempotent submit identity. These are not manual

@@ -16,8 +16,12 @@ blocked lane does not stop another ready lane. Codex integrates shared contracts
 verification, Git, recovery, and the next objective.
 
 For private KIS Paper work, role agents record unavailable inputs and failed
-runs as scoped evidence, not permission latches. A historical marker, model
-result, or schedule outcome cannot stop another correctly scoped ready lane.
+runs as scoped evidence, not permission latches. All non-live private work,
+including virtual orders and recurring schedules, is standing-authorized. A
+historical marker, `raw_market_data_retained: false`, model result, or schedule
+outcome cannot stop another correctly scoped ready lane or create an approval
+wait. Only the exact unknown Paper intent is reconciled before its own
+replacement; `KIS_LIVE_*` remains unavailable.
 
 ## Active Durable Stateboards
 
