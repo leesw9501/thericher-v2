@@ -3,8 +3,9 @@
 ## Working Memory
 
 Own hypotheses, campaign contracts, model work, walk-forward evaluation, and
-model-side PnL attribution. Current priority is a KIS-native daily baseline and
-the first honest intraday input contract, not GPU occupancy.
+model-side PnL attribution. Current priority is useful KIS-native evidence and
+bounded intraday research; GPU time follows a frozen eligible job rather than
+becoming a goal by itself.
 
 ## Intraday Input Contract
 
@@ -22,6 +23,22 @@ It ran `flat`, `always_long`, and `previous_bar_direction` through replayable
 `D:\\thericher-v2\\model-artifacts\\kis-intraday-cpu-campaign\\qqq-20260623-20260721-r1\\summary.json`.
 All costed non-flat references were negative in both phases. This establishes a
 baseline to beat, not an edge, model score, GPU qualification, or promotion.
+
+The first feature-breadth continuation is complete at
+`D:\thericher-v2\model-artifacts\kis-intraday-feature-breadth\qqq-20260623-20260721-feature-breadth-r1\summary.json`.
+It uses the same source and target with 90 completed 1m bars, 18 completed 5m
+bars, and 9 completed 10m bars. The regularized linear candidate trained only
+on the 10 development sessions; `flat`, `fixed_momentum`, and
+`regularized_linear` replayed only the next 5 comparison sessions through
+`source: local_paper`. Their after-cost PnL was respectively `0`, `-231.5545`,
+and `-131.3063`. The last 4 source sessions were not materialized or used for
+selection. This evidence split limits a claim; it never pauses Paper work.
+
+The fixed Docker PyTorch GRU smoke is complete at
+`D:\thericher-v2\model-artifacts\kis-intraday-cuda-sequence-smoke\qqq-20260623-20260721-gru-smoke-r1\summary.json`.
+It trained 2,990 development-only 90x3 sequences for 8 epochs on the RTX 4090
+with PyTorch CUDA 12.8, moving loss from `0.69341975` to `0.69316453`. It wrote
+no checkpoint, comparison/confirmation sample, prediction, or promotion claim.
 
 When those source facts are established, freeze this initial contract before any
 model comparison:
@@ -81,12 +98,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
-6. Prepare the next KIS-only intraday candidate from the frozen 20-session
-   contract: breadth starts with deterministic features, regularized linear,
-   and tree baselines; depth compares TCN, GRU/LSTM, and a compact attention
-   model only after the feature/target artifact and CPU comparator are frozen;
-   ensemble work requires independently generated out-of-fold predictions;
-   replication reruns the selected contract unchanged.
+6. The first fixed KIS-only intraday breadth comparison is complete and no
+   candidate is selected. The ready depth queue is a separately fixed
+   development-only LSTM, TCN, and compact-attention pipeline comparison; do
+   not select an architecture from the five comparison sessions. The breadth
+   queue expands only with new KIS-compatible source coverage, while ensemble
+   work still requires independently generated out-of-fold predictions.
 7. The first source-windowed CPU baseline is complete at
    `D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
    It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
@@ -105,6 +122,10 @@ Runtime checked 2026-07-22: `thericher-v2-research:latest` exposes one RTX 4090
 to PyTorch `2.7.0+cu128` (CUDA 12.8, cuDNN 90701). The host `uv` environment has
 no `torch`, so an eligible GPU campaign uses the research container until a host
 runtime is intentionally added.
+
+The first actual CUDA job also proved that the read-only `/app/market_data`
+mount and writable `/app/model_artifacts` mount work together. Keep one GPU job
+at a time and leave the next fixed job ready whenever its contract is sound.
 
 ## Durable Knowledge
 
@@ -153,8 +174,8 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Keep KIS regular-session minute coverage accumulating while building the first
-bounded KIS-only intraday feature/target artifact and CPU breadth comparison.
-Keep breadth, depth, ensemble, and replication queues current without creating a
-report family; treat any next CUDA work as descriptive until the tiny validation
-region is replicated or expanded.
+Keep KIS regular-session minute coverage accumulating while the first fixed
+intraday LSTM, TCN, and compact-attention development-only comparison is
+prepared. Keep breadth, depth, ensemble, and replication queues current without
+creating a report family; do not turn the small current comparison slice into a
+selection or Paper-work gate.

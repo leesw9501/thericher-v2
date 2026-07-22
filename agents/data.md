@@ -57,6 +57,10 @@ Own the current KIS-native daily cache and its future reusable loaders.
   KIS-only `CatalogedBars` identity from an explicit ordered tuple of complete
   regular sessions. It is offline/credential-free and rejects duplicate,
   unordered, closed, early-close, incomplete, or non-KIS inputs.
+- `prepare_kis_paper_intraday_feature_input` binds that selected source to one
+  hash, ordered dates, and explicit session windows for Research. The Docker
+  research mount at `/app/market_data` is the same external D: cache, not Git
+  storage, and is accepted only in that named container path.
 
 ## Ready Queue
 

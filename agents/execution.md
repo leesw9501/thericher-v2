@@ -69,6 +69,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   it uses only Paper market-data credentials, has no account or order route,
   and writes its cache outside Git. It may run beside the quote session because
   it owns a separate cache root and does not mutate execution state.
+- The current-user Windows tasks are installed and `Ready`:
+  `thericher-kis-paper-quote-session` at 23:35 KST and
+  `thericher-kis-paper-intraday-head` at 02:35 KST, Tuesday through Saturday.
+  They invoke only their named local Docker profiles. Their first due outcomes
+  are runtime evidence, not another permission step.
 
 ## Ready Queue
 

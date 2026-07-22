@@ -3971,3 +3971,29 @@ transport access in those cases.
 Reason: the same narrow calendar source now governs research session selection
 and quote-session timing. This removes a weekday-only mismatch without changing
 Paper authority, widening a route, or creating a schedule approval condition.
+
+## 2026-07-22 - Record the first KIS intraday breadth and CUDA pipeline evidence
+
+Decision: retain the frozen QQQ 20-session contract as 10 development sessions,
+one unused purge session, 5 descriptive candidate-comparison sessions, and 4
+unmaterialized later sessions. The latter split is only a small research
+interpretation control after Claude's `supported-with-limits` warning about
+choosing from nine PnL observations; it does not gate KIS Paper data, schedules,
+account work, orders, or operator action.
+
+The CPU candidate replay wrote external local-paper evidence for `flat`,
+`fixed_momentum`, and `regularized_linear`; all were non-positive after costs on
+the comparison slice, so no candidate is selected. The fixed development-only
+PyTorch GRU smoke then ran in the network-disabled Docker research profile on
+the RTX 4090. It uses 2,990 90x3 sequences, writes only a sanitized JSON summary
+under `D:\thericher-v2\model-artifacts`, and writes no checkpoint or promoted
+model. The cache path check explicitly recognizes `/app/market_data` only as the
+named external D: mount when the repository root is `/app`.
+
+The follow-up Claude CLI request for the fixed smoke timed out without a
+verdict; it did not determine this decision because the architecture and
+no-selection scope were fixed before the CPU result.
+
+Reason: this adds actual KIS-compatible CPU and CUDA research evidence without
+reintroducing one-shot latches, artificial Paper approvals, or a GPU-driven
+model-promotion claim.

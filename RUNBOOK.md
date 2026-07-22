@@ -168,6 +168,44 @@ Use a new safe `--run-label` after an interrupted attempt. Existing external
 evidence is immutable and never overwritten. This is recovery separation, not a
 one-shot quota or an approval step.
 
+### Intraday Feature Breadth And CUDA Smoke
+
+The first QQQ feature breadth run used the same 20-session source with 90
+completed 1m bars plus completed 5m and 10m resamples. It trained only on the
+first 10 sessions, left the purge session unused, compared fixed candidates on
+the next 5 sessions, and did not materialize the last 4 sessions. This is a
+small anti-overfit evidence boundary, not a KIS Paper approval or a reason to
+pause collection, scheduling, or virtual orders.
+
+Run the offline CPU comparison with a new external label:
+
+```powershell
+uv run python scripts\run_kis_intraday_feature_breadth.py `
+  --run-label qqq-YYYYMMDD-YYYYMMDD-feature-breadth-r1 `
+  --session-date YYYY-MM-DD
+  # repeat --session-date until exactly 20 ordered full regular sessions are supplied
+```
+
+Run the fixed development-only CUDA GRU smoke in the network-disabled research
+container. It consumes the external D: cache through `/app/market_data` and
+writes only the sanitized summary under `/app/model_artifacts`:
+
+```powershell
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_intraday_cuda_sequence_smoke.py `
+  --run-label qqq-YYYYMMDD-YYYYMMDD-gru-smoke-r1 `
+  --artifact-root /app/model_artifacts `
+  --cache-root /app/market_data/us_equities/kis_paper_private/intraday `
+  --session-date YYYY-MM-DD
+  # repeat --session-date until exactly 20 ordered full regular sessions are supplied
+```
+
+The smoke writes no checkpoint and does not choose, promote, or submit a model.
+The completed first artifacts are under
+`D:\thericher-v2\model-artifacts\kis-intraday-feature-breadth\qqq-20260623-20260721-feature-breadth-r1`
+and
+`D:\thericher-v2\model-artifacts\kis-intraday-cuda-sequence-smoke\qqq-20260623-20260721-gru-smoke-r1`.
+
 ## KIS Account Snapshot
 
 The credential-bearing account bridge is intentionally separate from the web
@@ -262,7 +300,7 @@ state to the shared local dashboard, and writes external evidence under
 time window before loading Paper configuration; outside that window it produces
 a safe no-submit result. It accepts only a KIS-success quote and rechecks both
 that time window and the limit validity immediately before submit. The helper
-does not yet claim a full holiday or early-close calendar. The local
+uses the explicit supported 2026 holiday and early-close calendar. The local
 `thericher-kis-paper-quote-session`
 automation invokes this command once per weekday at KST 23:35. Re-running an
 existing run ID reconciles its persisted intent before any replacement submit.

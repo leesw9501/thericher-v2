@@ -51,7 +51,9 @@ from .kis_paper_daily import (
     slice_kis_paper_private_daily_catalog,
 )
 from .kis_paper_intraday import (
+    KisPaperIntradayFeatureInput,
     load_verified_kis_paper_private_intraday_catalog,
+    prepare_kis_paper_intraday_feature_input,
     raw_bar_end_is_complete,
     require_complete_kis_paper_private_intraday_session,
     resample_verified_kis_paper_private_intraday_catalog,
@@ -107,6 +109,7 @@ __all__ = [
     "KisCapabilityState",
     "KisMarketDataCapability",
     "KisPaperPrivateDailyCatalog",
+    "KisPaperIntradayFeatureInput",
     "KisStorageRightsStatus",
     "MarketDataProvider",
     "KIS_PAPER_PRIVATE_DAILY_ADJUSTMENT_MODE",
@@ -134,6 +137,7 @@ __all__ = [
     "load_cataloged_yahoo_intraday_1m_bars",
     "load_kis_paper_private_daily_catalog",
     "load_verified_kis_paper_private_intraday_catalog",
+    "prepare_kis_paper_intraday_feature_input",
     "raw_bar_end_is_complete",
     "require_complete_kis_paper_private_intraday_session",
     "resample_verified_kis_paper_private_intraday_catalog",

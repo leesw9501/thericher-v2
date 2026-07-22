@@ -8,6 +8,7 @@ import hashlib
 import io
 import json
 from collections.abc import Mapping
+from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -29,6 +30,17 @@ _KOREA_TZ = ZoneInfo("Asia/Seoul")
 _RAW_MINUTE_COLUMNS = frozenset(
     {"xymd", "xhms", "kymd", "khms", "open", "high", "low", "last", "evol"}
 )
+
+
+@dataclass(frozen=True)
+class KisPaperIntradayFeatureInput:
+    """One hash-bound, KIS-only input for an offline feature pipeline."""
+
+    catalog: CatalogedBars
+    session_dates: tuple[date, ...]
+    session_windows: tuple[SessionWindow, ...]
+    input_id: str
+    input_hash: str
 
 
 def load_verified_kis_paper_private_intraday_catalog(
@@ -199,6 +211,33 @@ def select_complete_kis_paper_private_intraday_sessions(
     )
 
 
+def prepare_kis_paper_intraday_feature_input(
+    catalog: CatalogedBars,
+    *,
+    session_dates: tuple[date, ...],
+) -> KisPaperIntradayFeatureInput:
+    """Bind complete regular KIS sessions to one deterministic feature input."""
+
+    selected_catalog = select_complete_kis_paper_private_intraday_sessions(
+        catalog,
+        session_dates=session_dates,
+    )
+    selected_sessions = _validate_regular_2026_session_dates(session_dates)
+    dates = tuple(session_date for session_date, _ in selected_sessions)
+    windows = tuple(session.window for _, session in selected_sessions)
+    return KisPaperIntradayFeatureInput(
+        catalog=selected_catalog,
+        session_dates=dates,
+        session_windows=windows,
+        input_id=_feature_input_id(catalog=selected_catalog, session_dates=dates),
+        input_hash=_feature_input_hash(
+            catalog=selected_catalog,
+            session_dates=dates,
+            session_windows=windows,
+        ),
+    )
+
+
 def resample_verified_kis_paper_private_intraday_catalog(
     catalog: CatalogedBars,
     *,
@@ -255,7 +294,12 @@ def raw_bar_end_is_complete(*, start_ts: datetime, collected_at: datetime) -> bo
 
 def _external_backfill_root(*, cache_root: Path, repo_root: Path) -> Path:
     root = Path(cache_root).resolve()
-    if root.is_relative_to(Path(repo_root).resolve()):
+    repository = Path(repo_root).resolve()
+    docker_repository = Path("/app").resolve()
+    docker_market_data = (docker_repository / "market_data").resolve()
+    if root.is_relative_to(repository) and (
+        repository != docker_repository or not root.is_relative_to(docker_market_data)
+    ):
         raise ValueError("private intraday cache root must stay outside Git")
     backfill = root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION
     if backfill.is_symlink():
@@ -509,6 +553,37 @@ def _selected_sessions_dataset_hash(
             "parent_dataset_id": catalog.dataset_id,
             "parent_dataset_hash": catalog.dataset_hash,
             "session_dates": [session_date.isoformat() for session_date in session_dates],
+        },
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return _sha256(payload)
+
+
+def _feature_input_id(*, catalog: CatalogedBars, session_dates: tuple[date, ...]) -> str:
+    selected = "-".join(session_date.strftime("%Y%m%d") for session_date in session_dates)
+    return f"{catalog.dataset_id}:feature-input-{selected}"
+
+
+def _feature_input_hash(
+    *,
+    catalog: CatalogedBars,
+    session_dates: tuple[date, ...],
+    session_windows: tuple[SessionWindow, ...],
+) -> str:
+    payload = json.dumps(
+        {
+            "kind": "kis_paper_private_intraday_feature_input_v1",
+            "selected_catalog_id": catalog.dataset_id,
+            "selected_catalog_hash": catalog.dataset_hash,
+            "session_dates": [session_date.isoformat() for session_date in session_dates],
+            "session_windows": [
+                {
+                    "open_ts": session.open_ts.isoformat(),
+                    "close_ts": session.close_ts.isoformat(),
+                }
+                for session in session_windows
+            ],
         },
         separators=(",", ":"),
         sort_keys=True,

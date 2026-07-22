@@ -66,6 +66,23 @@ paper-only route selection, no secret output, idempotent intent before a broker
 side effect, and reconciliation before retrying an unknown outcome. They are
 implementation requirements, not approval checkpoints.
 
+## Current Task Update
+
+The first KIS-native intraday feature breadth loop is complete on the frozen
+QQQ 20-session source. Its external CPU artifact is
+`D:\thericher-v2\model-artifacts\kis-intraday-feature-breadth\qqq-20260623-20260721-feature-breadth-r1\summary.json`;
+all three fixed candidates stayed non-positive after costs on the 5-session
+comparison slice, so none was selected or promoted. Four later source sessions
+remain unused for later research interpretation, not as a Paper or operator
+approval barrier.
+
+The fixed PyTorch CUDA GRU smoke completed on the RTX 4090 with 2,990
+development-only sequences and a sanitized external summary at
+`D:\thericher-v2\model-artifacts\kis-intraday-cuda-sequence-smoke\qqq-20260623-20260721-gru-smoke-r1\summary.json`.
+It verified the mounted D: cache/artifact path and wrote no checkpoint or model
+promotion result. The two local Docker schedules are installed and ready for
+their next due sessions; all KIS Paper work remains standing-authorized.
+
 ## Current Data State
 
 `kis-paper-private-daily-backfill-v1` is the active KIS-native daily cache:
