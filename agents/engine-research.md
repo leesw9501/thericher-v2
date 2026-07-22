@@ -124,6 +124,16 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
    replayable local-paper fills. Treat it as interface evidence, not a score or
    model result; accumulate prospective sessions before freezing a campaign.
+8. The prepared next prospective contract is
+   `kis-intraday-prospective-head-observation-r1`: train only the already fixed
+   QQQ 10-session historical development prefix, then observe the first five
+   new complete 390-minute QQQ head sessions. Keep the KIS-compatible
+   `90x1m`/`18x5m`/`9x10m` features, next-open/following-open long-only target,
+   1 bp plus 2 bps costs, and fixed `flat`, `always_long`,
+   `previous_bar_direction`, and `regularized_linear` controls. External-only
+   evidence is a precommit, frozen-model receipt, one receipt per head session,
+   and a five-session descriptive summary. It is not selection, retuning,
+   ensembling, GPU-depth, or Paper-execution authority.
 
 ## GPU Policy
 

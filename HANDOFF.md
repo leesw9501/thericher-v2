@@ -101,6 +101,11 @@ intent state, or market-data mount. The active canary/session consumes
 `pause_buys` before configuration/network access; `pause_sells` is retained for
 the later sell executor and cannot suppress a hard-risk exit. These are local
 operations controls, not Paper authority or research-promotion gates.
+When a due session ends before it creates an intent (for example a buy pause or
+quote failure), it also refreshes the sanitized canary runtime as `unavailable`.
+The console therefore reports a current no-intent state rather than preserving a
+stale prior canary result; the exact safe reason remains only in external
+session evidence.
 
 The current safe freshness projection reports QQQ/NAS and SPY/AMS separately
 for the backfill and prospective-head caches. Existing backfill evidence has 14

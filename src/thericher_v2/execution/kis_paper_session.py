@@ -18,7 +18,11 @@ from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
 from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
 
-from .emergency import DEFAULT_PAPER_EXECUTION_CONTROL_STATE, PaperExecutionControlStore
+from .emergency import (
+    DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
+    EmergencyStore,
+    PaperExecutionControlStore,
+)
 from .kis_paper_canary import (
     DEFAULT_KIS_PAPER_CANARY_ACCOUNT_SNAPSHOT,
     DEFAULT_KIS_PAPER_CANARY_ARTIFACT_ROOT,
@@ -41,6 +45,11 @@ from .kis_readonly import (
     KisHttpTransport,
     KisPaperReadOnlyError,
     load_kis_paper_config_from_environment,
+)
+from .paper_canary_runtime import (
+    PAPER_CANARY_RUNTIME_TTL,
+    PaperCanaryRuntimeSnapshot,
+    write_paper_canary_runtime,
 )
 
 DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS = 300
@@ -179,6 +188,9 @@ def run_kis_paper_quote_session(
                 observed_at=observed_at,
                 artifact_root=artifact_root,
                 repository_root=repository_root,
+                runtime_projection_path=runtime_projection_path,
+                emergency_state_path=emergency_state_path,
+                runtime_run_id=resolved_session_id,
             )
         if PaperExecutionControlStore(execution_control_path).read().pause_buys:
             return _record_session_outcome(
@@ -188,6 +200,9 @@ def run_kis_paper_quote_session(
                 observed_at=observed_at,
                 artifact_root=artifact_root,
                 repository_root=repository_root,
+                runtime_projection_path=runtime_projection_path,
+                emergency_state_path=emergency_state_path,
+                runtime_run_id=resolved_session_id,
             )
         try:
             config = load_kis_paper_config_from_environment(environment)
@@ -205,6 +220,9 @@ def run_kis_paper_quote_session(
                     observed_at=decision_at,
                     artifact_root=artifact_root,
                     repository_root=repository_root,
+                    runtime_projection_path=runtime_projection_path,
+                    emergency_state_path=emergency_state_path,
+                    runtime_run_id=resolved_session_id,
                 )
             decision = KisPaperCanaryBuyDecision(
                 decision_id=f"decision-{run_id}",
@@ -231,6 +249,9 @@ def run_kis_paper_quote_session(
                 observed_at=observed_at,
                 artifact_root=artifact_root,
                 repository_root=repository_root,
+                runtime_projection_path=runtime_projection_path,
+                emergency_state_path=emergency_state_path,
+                runtime_run_id=resolved_session_id,
             )
 
         outcome = run_kis_paper_canary(
@@ -310,6 +331,9 @@ def _record_session_outcome(
     submit_upstream_code: str | None = None,
     reconciliation_status: str | None = None,
     reconciliation_reason_code: str | None = None,
+    runtime_projection_path: Path | None = None,
+    emergency_state_path: Path | None = None,
+    runtime_run_id: str | None = None,
 ) -> KisPaperCanarySessionOutcome:
     destination = _session_evidence_path(artifact_root=artifact_root, session_id=session_id)
     outcome = KisPaperCanarySessionOutcome(
@@ -326,7 +350,43 @@ def _record_session_outcome(
         reconciliation_reason_code=reconciliation_reason_code,
     )
     _write_session_evidence(outcome, artifact_root=artifact_root, repository_root=repository_root)
+    if runtime_projection_path is not None:
+        if emergency_state_path is None or runtime_run_id is None:
+            raise ValueError("precanary runtime projection paths are incomplete")
+        _write_precanary_runtime_projection(
+            run_id=runtime_run_id,
+            emergency_state_path=emergency_state_path,
+            runtime_projection_path=runtime_projection_path,
+            observed_at=observed_at,
+        )
     return outcome
+
+
+def _write_precanary_runtime_projection(
+    *,
+    run_id: str,
+    emergency_state_path: Path,
+    runtime_projection_path: Path,
+    observed_at: datetime,
+) -> None:
+    """Publish a current safe state when a scheduled session produced no intent."""
+
+    emergency = EmergencyStore(emergency_state_path).read()
+    write_paper_canary_runtime(
+        PaperCanaryRuntimeSnapshot(
+            run_id=run_id,
+            status="unavailable",
+            reconciliation_status="not_run",
+            account_status="unknown",
+            position_count=0,
+            open_order_count=0,
+            stop_new_orders=emergency.stop_new_orders,
+            cancel_open_orders_requested=emergency.cancel_open_orders_requested,
+            observed_at=observed_at,
+            expires_at=observed_at + PAPER_CANARY_RUNTIME_TTL,
+        ),
+        runtime_projection_path,
+    )
 
 
 def _safe_quote_reason(error: Exception) -> str:

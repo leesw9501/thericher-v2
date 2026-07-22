@@ -18,6 +18,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   or calls KIS; the sell pause is retained for the later sell executor. Missing
   state defaults to both directions ready. The web process cannot call KIS,
   read credentials, access private intent state, or mount `D:\\market_data`.
+- A due session that stops before a canary intent exists, including a buy pause
+  or quote failure, now refreshes the sanitized canary runtime as
+  `unavailable`. This avoids a stale prior canary display while keeping the safe
+  detailed reason in external session evidence only.
 - KIS Paper account/data/order access, paper submit/modify/cancel, routine
   sizing, and schedules are standing-authorized.
 - `kis_paper_canary` is the first executable narrow adapter: US buy-limit only,

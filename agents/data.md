@@ -99,6 +99,11 @@ as a failed collection or an authority hold.
    session before handing it to Engine Research.
 7. Preserve raw provider rows and label unknown KIS field semantics; do not
    repair, fill, or relabel a session from another provider.
+8. The prospective `intraday-head` root is currently not created. Its installed
+   Tuesday-Saturday task is `Ready` for 02:35 KST and uses `--build`. After its
+   first run, reattest each QQQ/SPY stream's retained count, observed time, safe
+   outcome, and complete-session coverage before handing any head bars to
+   Research. The current backfill partial metadata is not a hold on that work.
 
 ## Authority And Boundaries
 

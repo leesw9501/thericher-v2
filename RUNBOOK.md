@@ -313,6 +313,12 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps --build `
 a later collection, a KIS Paper call, an order, or a schedule. It records only
 the absence of bytes for its own historical result.
 
+When a due session ends before a canary intent exists, such as a directional
+buy pause or quote failure, it refreshes the sanitized canary runtime to
+`unavailable` with no account, order, quote, or broker-body data. The detailed
+safe reason remains in the external session evidence; the console never keeps a
+stale prior canary result as if it were current.
+
 The installed Windows Paper schedules invoke their named Docker profile with
 `--build`, so a due session uses the current committed image rather than a stale
 service image. This is runtime reproducibility, not a new scheduling or Paper

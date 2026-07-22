@@ -4040,6 +4040,11 @@ An old `raw_market_data_retained: false` marker remains a factual absence of
 bytes for that historical result and is ignored for later collection and for the
 freshness count; it is never a Paper or schedule latch.
 
+A due quote-session outcome that ends before a canary intent exists publishes a
+fresh sanitized canary runtime with status `unavailable`. This records that the
+current session produced no intent without overloading a prior canary result or
+exposing the quote/error body; detailed safe reason remains external evidence.
+
 Reason: this gives the operator immediate, local operational control and useful
 current data visibility without adding a broker-capable dashboard, a report
 chain, a capital gate, or another approval mechanism.

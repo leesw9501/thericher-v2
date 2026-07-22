@@ -35,6 +35,7 @@ from thericher_v2.execution.kis_readonly import (
     KisHttpResponse,
     KisPaperConfig,
 )
+from thericher_v2.execution.paper_canary_runtime import read_paper_canary_runtime
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 
@@ -172,6 +173,13 @@ def test_buy_pause_prevents_a_due_session_before_credentials_or_network(tmp_path
     assert outcome.reason_code == "pause_buys_active"
     assert transport.requests == []
     assert "paper-app-secret" not in outcome.evidence_path.read_text(encoding="utf-8")
+    runtime = read_paper_canary_runtime(_paths(tmp_path)["runtime_projection_path"], now=NOW)
+    assert runtime.status == "available"
+    assert runtime.snapshot is not None
+    assert runtime.snapshot.run_id == "buy-paused-1"
+    assert runtime.snapshot.status == "unavailable"
+    assert runtime.snapshot.reconciliation_status == "not_run"
+    assert runtime.snapshot.account_status == "unknown"
 
 
 @pytest.mark.parametrize(
@@ -318,6 +326,12 @@ def test_quote_failure_writes_safe_no_submit_evidence(tmp_path: Path) -> None:
     assert raw_broker_text not in evidence
     assert "paper-app-secret" not in evidence
     assert "12345678" not in evidence
+    runtime = read_paper_canary_runtime(_paths(tmp_path)["runtime_projection_path"], now=NOW)
+    assert runtime.status == "available"
+    assert runtime.snapshot is not None
+    assert runtime.snapshot.run_id == "quote-failure-1"
+    assert runtime.snapshot.status == "unavailable"
+    assert runtime.snapshot.reconciliation_status == "not_run"
 
 
 def test_kis_quote_error_code_writes_safe_no_submit_evidence(tmp_path: Path) -> None:
