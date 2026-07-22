@@ -118,6 +118,11 @@ def test_quote_parser_rejects_incomplete_or_invalid_values(payload: dict[str, ob
         parse_kis_paper_spy_quote(payload)
 
 
+def test_quote_parser_classifies_both_blank_required_fields_without_retaining_values() -> None:
+    with pytest.raises(KisPaperQuoteError, match="quote_response_blank"):
+        parse_kis_paper_spy_quote({"rt_cd": "0", "output": {"last": " ", "zdiv": ""}})
+
+
 def test_quote_parser_rejects_a_success_http_response_with_kis_error_code() -> None:
     with pytest.raises(KisPaperQuoteError, match="quote_rejected"):
         parse_kis_paper_spy_quote(
@@ -354,6 +359,32 @@ def test_kis_quote_error_code_writes_safe_no_submit_evidence(tmp_path: Path) -> 
         request.headers.get("tr_id") != KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
     )
+
+
+def test_blank_kis_quote_fields_write_safe_no_submit_evidence(tmp_path: Path) -> None:
+    transport = FakeKisPaperQuoteTransport(
+        quote_payload={"rt_cd": "0", "output": {"last": "", "zdiv": " "}}
+    )
+    outcome = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW,
+        session_id="quote-blank-1",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "quote_unavailable"
+    assert outcome.reason_code == "quote_response_blank"
+    assert all(
+        request.headers.get("tr_id") != KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"quote_response_blank"' in evidence
+    assert '"last"' not in evidence
+    assert '"zdiv"' not in evidence
 
 
 @dataclass

@@ -64,6 +64,7 @@ _SESSION_REASONS = frozenset(
         "outside_regular_session",
         "quote_unavailable",
         "quote_rejected",
+        "quote_response_blank",
         "quote_response_incomplete",
         "pause_buys_active",
         "session_unavailable",
@@ -392,6 +393,7 @@ def _write_precanary_runtime_projection(
 def _safe_quote_reason(error: Exception) -> str:
     if isinstance(error, KisPaperCanaryError) and error.code in {
         "quote_rejected",
+        "quote_response_blank",
         "quote_response_incomplete",
     }:
         return error.code

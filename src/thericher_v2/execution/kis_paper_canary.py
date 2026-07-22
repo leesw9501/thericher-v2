@@ -157,6 +157,7 @@ _SAFE_REASON_CODES = frozenset(
         "submit_transport_unknown",
         "submit_response_incomplete",
         "quote_rejected",
+        "quote_response_blank",
         "quote_response_incomplete",
         "session_closed",
         "cancel_rejected",

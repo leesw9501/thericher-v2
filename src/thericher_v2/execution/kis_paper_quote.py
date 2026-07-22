@@ -118,6 +118,8 @@ def parse_kis_paper_spy_quote(payload: Mapping[str, Any]) -> KisPaperSpyQuote:
     output = payload.get("output")
     if not isinstance(output, Mapping):
         raise KisPaperQuoteError("quote_response_incomplete")
+    if _blank_text(output.get("last")) and _blank_text(output.get("zdiv")):
+        raise KisPaperQuoteError("quote_response_blank")
     return KisPaperSpyQuote(
         last=_positive_decimal(output.get("last")),
         decimal_places=_decimal_places(output.get("zdiv")),
@@ -169,3 +171,7 @@ def _decimal_places(value: object) -> int:
     if _DECIMAL_PLACES.fullmatch(text) is None:
         raise KisPaperQuoteError("quote_response_incomplete")
     return int(text)
+
+
+def _blank_text(value: object) -> bool:
+    return isinstance(value, str) and not value.strip()

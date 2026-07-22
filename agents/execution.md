@@ -84,6 +84,16 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   `thericher-kis-paper-intraday-head` at 02:35 KST, Tuesday through Saturday.
   They invoke only their named local Docker profiles. Their first due outcomes
   are runtime evidence, not another permission step.
+- The first due quote session on 2026-07-22 completed successfully as a task
+  but ended before intent creation with `quote_unavailable` /
+  `quote_response_incomplete`. Its safe evidence is external at
+  `D:\\thericher-v2\\model-artifacts\\execution\\kis-paper-canary-session\\paper-session-20260722T143508395909Z\\evidence.json`.
+  A one-time Paper-only shape probe found a successful HTTP/JSON response with
+  a mapping output but blank `last` and `zdiv` fields. No order, account value,
+  raw response, or credential was retained. This is a quote-field compatibility
+  fact, not a Paper authority, scheduling, or retry latch. The current image
+  classifies the same two blank required fields as `quote_response_blank` for
+  future safe evidence; the historical result remains unchanged.
 - The current-image `kis-readonly` bridge completed on 2026-07-22 and refreshed
   the credential-free console projection from sanitized KIS Paper account facts.
   It submitted no order. Its external evidence remains under
