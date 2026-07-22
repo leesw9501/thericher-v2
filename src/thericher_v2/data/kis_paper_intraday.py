@@ -8,7 +8,7 @@ import hashlib
 import io
 import json
 from collections.abc import Mapping
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from decimal import Decimal
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -22,6 +22,8 @@ from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME,
     KisPaperPrivateIntradayTarget,
 )
+
+from .us_equity_session import UsEquity2026Session, us_equity_2026_session
 
 _KOREA_TZ = ZoneInfo("Asia/Seoul")
 _RAW_MINUTE_COLUMNS = frozenset(
@@ -170,6 +172,33 @@ def require_complete_kis_paper_private_intraday_session(
     return sliced
 
 
+def select_complete_kis_paper_private_intraday_sessions(
+    catalog: CatalogedBars,
+    *,
+    session_dates: tuple[date, ...],
+) -> CatalogedBars:
+    """Select complete regular 2026 sessions without joining overnight gaps."""
+
+    _require_verified_kis_paper_private_intraday_catalog(catalog)
+    selected_dates = _validate_regular_2026_session_dates(session_dates)
+    selected_bars: list[Bar] = []
+    for _, session in selected_dates:
+        selected_bars.extend(
+            require_complete_kis_paper_private_intraday_session(
+                catalog,
+                session=session.window,
+            ).bars
+        )
+
+    dates = tuple(session_date for session_date, _ in selected_dates)
+    return _cataloged_bars_from_verified_loader(
+        dataset_id=_selected_sessions_dataset_id(catalog=catalog, session_dates=dates),
+        dataset_hash=_selected_sessions_dataset_hash(catalog=catalog, session_dates=dates),
+        source_path=catalog.source_path,
+        bars=tuple(selected_bars),
+    )
+
+
 def resample_verified_kis_paper_private_intraday_catalog(
     catalog: CatalogedBars,
     *,
@@ -180,6 +209,40 @@ def resample_verified_kis_paper_private_intraday_catalog(
 
     sliced = slice_verified_kis_paper_private_intraday_catalog(catalog, session=session)
     return resample_session_bars(sliced.bars, timeframe, session=session)
+
+
+def _require_verified_kis_paper_private_intraday_catalog(catalog: CatalogedBars) -> None:
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("private intraday session selection requires CatalogedBars")
+    if not catalog.dataset_id.startswith("kis.paper.private.intraday."):
+        raise ValueError("private intraday session selection requires a verified KIS catalog")
+    if any(bar.timeframe != Timeframe.M1 for bar in catalog.bars):
+        raise ValueError("private intraday cache must contain 1m bars")
+
+
+def _validate_regular_2026_session_dates(
+    session_dates: tuple[date, ...],
+) -> tuple[tuple[date, UsEquity2026Session], ...]:
+    if not isinstance(session_dates, tuple):
+        raise TypeError("private intraday session_dates must be a tuple")
+    if not session_dates:
+        raise ValueError("private intraday session_dates must be nonempty")
+    if any(type(session_date) is not date for session_date in session_dates):
+        raise ValueError("private intraday session dates must be date values")
+    if len(set(session_dates)) != len(session_dates):
+        raise ValueError("private intraday session dates must be unique")
+    if tuple(sorted(session_dates)) != session_dates:
+        raise ValueError("private intraday session dates must be chronological")
+
+    selected: list[tuple[date, UsEquity2026Session]] = []
+    for session_date in session_dates:
+        session = us_equity_2026_session(session_date)
+        if session is None:
+            raise ValueError("private intraday session date is closed")
+        if session.kind != "regular":
+            raise ValueError("private intraday session selection excludes early-close dates")
+        selected.append((session_date, session))
+    return tuple(selected)
 
 
 def raw_bar_end_is_complete(*, start_ts: datetime, collected_at: datetime) -> bool:
@@ -419,6 +482,33 @@ def _session_dataset_hash(*, catalog: CatalogedBars, session: SessionWindow) -> 
             "parent_dataset_hash": catalog.dataset_hash,
             "session_open_utc": session.open_ts.isoformat(),
             "session_close_utc": session.close_ts.isoformat(),
+        },
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return _sha256(payload)
+
+
+def _selected_sessions_dataset_id(
+    *,
+    catalog: CatalogedBars,
+    session_dates: tuple[date, ...],
+) -> str:
+    selected = "-".join(session_date.strftime("%Y%m%d") for session_date in session_dates)
+    return f"{catalog.dataset_id}:complete-sessions-{selected}"
+
+
+def _selected_sessions_dataset_hash(
+    *,
+    catalog: CatalogedBars,
+    session_dates: tuple[date, ...],
+) -> str:
+    payload = json.dumps(
+        {
+            "kind": "kis_paper_private_intraday_complete_session_selection_v1",
+            "parent_dataset_id": catalog.dataset_id,
+            "parent_dataset_hash": catalog.dataset_hash,
+            "session_dates": [session_date.isoformat() for session_date in session_dates],
         },
         separators=(",", ":"),
         sort_keys=True,

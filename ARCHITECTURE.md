@@ -254,6 +254,16 @@ cursor. A retained complete session may feed an offline local-paper baseline,
 but it is still only one chronological observation and cannot qualify model
 selection, promotion, or GPU training by itself.
 
+The first multi-session intraday consumer selects an explicit ordered tuple of
+complete regular sessions through the Data boundary, producing a derived
+hash-bound `CatalogedBars` identity rather than joining arbitrary cache rows.
+Research may allow an overnight discontinuity only when it exactly equals the
+close/open pair of consecutive declared `SessionWindow` values. Missing minutes
+inside a declared session and any target whose entry or exit crosses a session
+boundary fail. Campaign attempt labels create separate immutable external
+evidence after interruption; they are not a scheduler, a one-shot reservation,
+or an approval mechanism.
+
 ## Model Policy
 
 The research lane may explore many model families:

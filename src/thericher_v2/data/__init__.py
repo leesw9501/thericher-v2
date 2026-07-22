@@ -55,6 +55,7 @@ from .kis_paper_intraday import (
     raw_bar_end_is_complete,
     require_complete_kis_paper_private_intraday_session,
     resample_verified_kis_paper_private_intraday_catalog,
+    select_complete_kis_paper_private_intraday_sessions,
     slice_verified_kis_paper_private_intraday_catalog,
 )
 from .local import (
@@ -136,6 +137,7 @@ __all__ = [
     "raw_bar_end_is_complete",
     "require_complete_kis_paper_private_intraday_session",
     "resample_verified_kis_paper_private_intraday_catalog",
+    "select_complete_kis_paper_private_intraday_sessions",
     "slice_verified_kis_paper_private_intraday_catalog",
     "slice_kis_paper_private_daily_catalog",
     "load_cataloged_yahoo_daily_1d_bars",

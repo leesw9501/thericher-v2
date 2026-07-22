@@ -10,6 +10,7 @@ import json
 import os
 import subprocess
 import tempfile
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -41,8 +42,10 @@ from thericher_v2.execution import (
     LOCAL_PAPER_SOURCE,
     EmergencyStore,
     FillEventArtifact,
+    LocalPaperAccount,
     LocalPaperBroker,
     LocalPaperFill,
+    LocalPaperPosition,
     collect_fill_source_evidence,
     replay_local_paper_account,
 )
@@ -66,6 +69,116 @@ class PredictionModel(Protocol):
     lookback: int
 
     def predict(self, bars: list[Bar]) -> ModelPrediction: ...
+
+
+class _CampaignEventStore(EventStore):
+    """Fresh campaign event store that defers SQLite rebuild until replay completion."""
+
+    def __init__(self, db_path: Path, jsonl_path: Path) -> None:
+        super().__init__(db_path, jsonl_path, rebuild_sqlite_on_append=False)
+        self._next_sequence = 1
+        self._append_observer: Callable[[Event], None] | None = None
+
+    def next_seq(self) -> int:
+        sequence = self._next_sequence
+        self._next_sequence += 1
+        return sequence
+
+    def append(self, event: Event) -> Event:
+        recorded = super().append(event)
+        if self._append_observer is not None:
+            self._append_observer(recorded)
+        return recorded
+
+    def observe_appends(self, observer: Callable[[Event], None]) -> None:
+        self._append_observer = observer
+
+
+class _CampaignLocalPaperBroker(LocalPaperBroker):
+    """Use the normal local-paper event format without replaying every prior event per fill."""
+
+    def __init__(
+        self,
+        *,
+        event_store: _CampaignEventStore,
+        emergency_store: EmergencyStore,
+        starting_cash: Decimal,
+        fee_bps: Decimal,
+        slippage_bps: Decimal,
+    ) -> None:
+        super().__init__(
+            event_store=event_store,
+            emergency_store=emergency_store,
+            starting_cash=starting_cash,
+            fee_bps=fee_bps,
+            slippage_bps=slippage_bps,
+        )
+        self._cash = self.starting_cash
+        self._positions: dict[tuple[str, str], Decimal] = {}
+        self._seen_client_order_ids: set[str] = set()
+        self._accepted_orders: dict[str, OrderIntent] = {}
+        self._closed_order_ids: set[str] = set()
+        self._fill_events: dict[str, Event] = {}
+        event_store.observe_appends(self._observe_event)
+
+    def account(self) -> LocalPaperAccount:
+        positions = tuple(
+            LocalPaperPosition(market=market, symbol=symbol, quantity=quantity)
+            for (market, symbol), quantity in sorted(self._positions.items())
+            if quantity != 0
+        )
+        return LocalPaperAccount(cash=self._cash, positions=positions)
+
+    def submit_order(
+        self,
+        order: OrderIntent,
+        *,
+        submitted_at: datetime | None = None,
+    ):
+        result = super().submit_order(order, submitted_at=submitted_at)
+        self._seen_client_order_ids.add(order.client_order_id)
+        if result.status == "accepted":
+            self._accepted_orders[order.client_order_id] = order
+        return result
+
+    def _client_order_id_seen(self, client_order_id: str) -> bool:
+        return client_order_id in self._seen_client_order_ids
+
+    def _recorded_fill_event(self, client_order_id: str) -> Event | None:
+        return self._fill_events.get(client_order_id)
+
+    def _accepted_order(self, client_order_id: str) -> OrderIntent | None:
+        return self._accepted_orders.get(client_order_id)
+
+    def _pending_order(self, client_order_id: str) -> OrderIntent | None:
+        if client_order_id in self._closed_order_ids:
+            return None
+        return self._accepted_orders.get(client_order_id)
+
+    def _observe_event(self, event: Event) -> None:
+        client_order_id = event.payload.get("client_order_id")
+        if not isinstance(client_order_id, str):
+            return
+        if event.event_type == "fill":
+            self._fill_events[client_order_id] = event
+            self._closed_order_ids.add(client_order_id)
+            quantity = Decimal(str(event.payload["quantity"]))
+            price = Decimal(str(event.payload["price"]))
+            fee = Decimal(str(event.payload.get("fee", "0")))
+            market = str(event.payload["market"]).upper()
+            symbol = str(event.payload["symbol"]).upper()
+            key = (market, symbol)
+            if event.payload["side"] == "buy":
+                self._cash -= price * quantity + fee
+                self._positions[key] = self._positions.get(key, Decimal("0")) + quantity
+            else:
+                self._cash += price * quantity - fee
+                self._positions[key] = self._positions.get(key, Decimal("0")) - quantity
+        elif event.event_type in {
+            "local_paper_order_canceled",
+            "local_paper_order_rejected",
+        }:
+            self._closed_order_ids.add(client_order_id)
 
 
 @dataclass(frozen=True)
@@ -412,6 +525,7 @@ def run_local_paper_validation(
     tuning: bool = False,
     baseline_id: NaiveBaselineId | None = None,
     eligible_signal_starts: frozenset[datetime] | None = None,
+    allowed_session_windows: tuple[SessionWindow, ...] | None = None,
 ) -> ValidationResult:
     model = model or MomentumModel()
     cataloged_data: CatalogedBars | None = None
@@ -467,14 +581,25 @@ def run_local_paper_validation(
     _validate_bars(
         ordered,
         min_bars=max(config.min_bars, model.lookback + required_tail),
+        allowed_session_windows=allowed_session_windows,
     )
 
-    broker = LocalPaperBroker(
-        event_store=event_store,
-        emergency_store=emergency_store,
-        starting_cash=config.starting_cash,
-        fee_bps=config.fee_bps,
-        slippage_bps=config.slippage_bps,
+    broker = (
+        _CampaignLocalPaperBroker(
+            event_store=event_store,
+            emergency_store=emergency_store,
+            starting_cash=config.starting_cash,
+            fee_bps=config.fee_bps,
+            slippage_bps=config.slippage_bps,
+        )
+        if isinstance(event_store, _CampaignEventStore)
+        else LocalPaperBroker(
+            event_store=event_store,
+            emergency_store=emergency_store,
+            starting_cash=config.starting_cash,
+            fee_bps=config.fee_bps,
+            slippage_bps=config.slippage_bps,
+        )
     )
     trades: list[ValidationTrade] = []
     decisions_seen = 0
@@ -532,6 +657,11 @@ def run_local_paper_validation(
                 raise RuntimeError("campaign target requires a flat account before entry")
             entry_bar = ordered[index + campaign.target.entry_bar_offset]
             exit_bar = ordered[index + campaign.target.exit_bar_offset]
+            if signal_bar.timeframe != Timeframe.D1 and (
+                entry_bar.start_ts != signal_bar.end_ts
+                or exit_bar.start_ts != entry_bar.end_ts
+            ):
+                raise ValueError("campaign target cannot cross a declared session boundary")
             entry_order = OrderIntent(
                 client_order_id=f"{config.run_id}-{len(trades) + 1:04d}",
                 symbol=signal_bar.symbol,
@@ -1050,6 +1180,7 @@ def run_naive_cpu_baseline(
     quantity: Decimal = Decimal("1"),
     run_label: str | None = None,
     eligible_signal_starts: frozenset[datetime] | None = None,
+    allowed_session_windows: tuple[SessionWindow, ...] | None = None,
 ) -> NaiveBaselineRun:
     """Run one deterministic CPU baseline through the campaign validation path."""
 
@@ -1079,6 +1210,7 @@ def run_naive_cpu_baseline(
         starting_cash=starting_cash,
         quantity=quantity,
         eligible_signal_starts=eligible_signal_starts,
+        allowed_session_windows=allowed_session_windows,
         emergency_reason="campaign_baseline_initial_state",
     )
     return NaiveBaselineRun(
@@ -1104,6 +1236,7 @@ def run_campaign_model_replay(
     starting_cash: Decimal = Decimal("10000"),
     quantity: Decimal = Decimal("1"),
     eligible_signal_starts: frozenset[datetime] | None = None,
+    allowed_session_windows: tuple[SessionWindow, ...] | None = None,
     emergency_reason: str = "campaign_model_initial_state",
 ) -> CampaignReplayRun:
     """Persist one model replay through the existing local-paper evidence path."""
@@ -1144,7 +1277,7 @@ def run_campaign_model_replay(
             updated_at=selected_window.start_utc,
         )
     )
-    event_store = EventStore(state_sqlite_path, event_jsonl_path)
+    event_store = _CampaignEventStore(state_sqlite_path, event_jsonl_path)
     result = run_local_paper_validation(
         cataloged_bars,
         event_store=event_store,
@@ -1156,7 +1289,9 @@ def run_campaign_model_replay(
         fold_id=fold_id,
         baseline_id=baseline_id,
         eligible_signal_starts=eligible_signal_starts,
+        allowed_session_windows=allowed_session_windows,
     )
+    event_store.rebuild_sqlite()
     _assert_campaign_replay_invariants(result, event_store)
     replay_evidence = ReplayEvidence(
         work_dir=resolved_work_dir,
@@ -1342,7 +1477,12 @@ def main() -> None:
     )
 
 
-def _validate_bars(bars: list[Bar], *, min_bars: int) -> None:
+def _validate_bars(
+    bars: list[Bar],
+    *,
+    min_bars: int,
+    allowed_session_windows: tuple[SessionWindow, ...] | None = None,
+) -> None:
     if len(bars) < min_bars:
         raise ValueError(f"at least {min_bars} bars are required")
     first = bars[0]
@@ -1354,12 +1494,35 @@ def _validate_bars(bars: list[Bar], *, min_bars: int) -> None:
         for bar in bars
     ):
         raise ValueError("validation bars must be complete and share symbol, market, timeframe")
+    permitted_boundaries = _declared_session_gap_boundaries(allowed_session_windows)
     for prior, current in zip(bars, bars[1:], strict=False):
         if first.timeframe == Timeframe.D1:
             if current.start_ts <= prior.start_ts:
                 raise ValueError("daily validation bars must be strictly chronological")
-        elif current.start_ts != prior.end_ts:
+        elif current.start_ts == prior.end_ts:
+            continue
+        elif (prior.end_ts, current.start_ts) in permitted_boundaries:
+            continue
+        else:
             raise ValueError("validation bars must be contiguous")
+
+
+def _declared_session_gap_boundaries(
+    session_windows: tuple[SessionWindow, ...] | None,
+) -> frozenset[tuple[datetime, datetime]]:
+    if session_windows is None:
+        return frozenset()
+    if not isinstance(session_windows, tuple):
+        raise TypeError("allowed_session_windows must be a tuple")
+    if any(not isinstance(window, SessionWindow) for window in session_windows):
+        raise TypeError("allowed_session_windows must contain SessionWindow values")
+    for prior, current in zip(session_windows, session_windows[1:], strict=False):
+        if prior.close_ts >= current.open_ts:
+            raise ValueError("allowed_session_windows must be strictly chronological")
+    return frozenset(
+        (prior.close_ts, current.open_ts)
+        for prior, current in zip(session_windows, session_windows[1:], strict=False)
+    )
 
 
 def _assert_campaign_replay_invariants(

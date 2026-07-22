@@ -9,13 +9,13 @@ import re
 import tempfile
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
-from datetime import UTC, datetime, time, timedelta
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from typing import Literal
-from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
 from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
 
 from .kis_paper_canary import (
@@ -43,9 +43,6 @@ from .kis_readonly import (
 )
 
 DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS = 300
-KIS_PAPER_SESSION_EASTERN = ZoneInfo("America/New_York")
-KIS_PAPER_REGULAR_OPEN = time(9, 30)
-KIS_PAPER_REGULAR_CLOSE = time(16, 0)
 KIS_PAPER_SESSION_EVIDENCE_KIND = "kis_paper_canary_session_evidence"
 _SAFE_SESSION_IDS = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
 _SESSION_STATUSES = frozenset({"preview", "not_due", "quote_unavailable", "canary_completed"})
@@ -107,11 +104,27 @@ class KisPaperCanarySessionOutcome:
 
 
 def is_us_equity_regular_session_window(now: datetime) -> bool:
-    """Return the weekday US regular-session time-window check for a scheduler."""
+    """Return whether ``now`` is inside the explicit supported US core session."""
 
-    eastern = require_utc(now, "now").astimezone(KIS_PAPER_SESSION_EASTERN)
-    local_time = eastern.timetz().replace(tzinfo=None)
-    return eastern.weekday() < 5 and KIS_PAPER_REGULAR_OPEN <= local_time < KIS_PAPER_REGULAR_CLOSE
+    return _session_due_reason(now) is None
+
+
+def _session_due_reason(
+    now: datetime,
+) -> Literal["outside_regular_session", "session_unavailable"] | None:
+    """Classify one UTC timestamp without reaching credentials or a KIS route."""
+
+    observed_at = require_utc(now, "now")
+    eastern_date = observed_at.astimezone(US_EQUITY_EASTERN).date()
+    try:
+        session = us_equity_2026_session(eastern_date)
+    except ValueError:
+        return "session_unavailable"
+    if session is None:
+        return "session_unavailable"
+    if session.window.open_ts <= observed_at < session.window.close_ts:
+        return None
+    return "outside_regular_session"
 
 
 def run_kis_paper_quote_session(
@@ -153,11 +166,11 @@ def run_kis_paper_quote_session(
                 artifact_root=artifact_root,
                 repository_root=repository_root,
             )
-        if not is_us_equity_regular_session_window(observed_at):
+        if (session_reason := _session_due_reason(observed_at)) is not None:
             return _record_session_outcome(
                 session_id=resolved_session_id,
                 status="not_due",
-                reason_code="outside_regular_session",
+                reason_code=session_reason,
                 observed_at=observed_at,
                 artifact_root=artifact_root,
                 repository_root=repository_root,
@@ -170,11 +183,11 @@ def run_kis_paper_quote_session(
             )
             quote = client.fetch_spy_quote()
             decision_at = _session_now(now=now, clock=clock)
-            if not is_us_equity_regular_session_window(decision_at):
+            if (session_reason := _session_due_reason(decision_at)) is not None:
                 return _record_session_outcome(
                     session_id=resolved_session_id,
                     status="not_due",
-                    reason_code="outside_regular_session",
+                    reason_code=session_reason,
                     observed_at=decision_at,
                     artifact_root=artifact_root,
                     repository_root=repository_root,

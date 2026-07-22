@@ -144,6 +144,30 @@ uv run python scripts\run_kis_paper_intraday_local_paper_baseline.py --session-d
 The command makes no network or credential access. It writes only a sanitized
 local-paper summary under the external model-artifact root.
 
+### Frozen Chronological CPU Campaign
+
+When Data has reattested exactly 20 complete regular 1m sessions for one KIS
+symbol, run the first chronological naive comparison from the retained cache:
+
+```powershell
+uv run python scripts\run_kis_intraday_cpu_campaign.py `
+  --symbol QQQ `
+  --run-label qqq-YYYYMMDD-YYYYMMDD-r1 `
+  --session-date YYYY-MM-DD `
+  # repeat --session-date until exactly 20 ordered full regular sessions are supplied
+```
+
+The command remains offline after the cache load: it does not read credentials
+or call KIS. It freezes a 10-development / 1-unused-session purge / 9-validation
+split and runs `flat`, `always_long`, and `previous_bar_direction` through
+`local_paper`. The external summary records only dataset/contract identities,
+session dates, costed aggregate results, and replay hashes; raw bars, quotes,
+account data, order identifiers, and secrets remain absent.
+
+Use a new safe `--run-label` after an interrupted attempt. Existing external
+evidence is immutable and never overwritten. This is recovery separation, not a
+one-shot quota or an approval step.
+
 ## KIS Account Snapshot
 
 The credential-bearing account bridge is intentionally separate from the web

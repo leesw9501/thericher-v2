@@ -147,6 +147,18 @@ Its CPU local-paper baseline completed all 1m/5m/10m/1h/3h cells with replayable
 It proves cache-to-replay plumbing, not profit, source open/close semantics, or
 an eligible chronological model campaign.
 
+The reattested historical cursor cache now has 21 complete regular 2026 sessions
+for each `QQQ/NAS` and `SPY/AMS`, spanning 2026-06-22 through 2026-07-21.
+The first frozen QQQ chronological CPU campaign selected the latest 20 sessions
+(2026-06-23 through 2026-07-21), with 10 development sessions, the unused
+2026-07-08 purge session, and 9 validation sessions. Its external sanitized
+manifest is
+`D:\\thericher-v2\\model-artifacts\\kis-intraday-cpu-campaign\\qqq-20260623-20260721-r1\\summary.json`.
+All six naive replay cells were `local_paper` and reconstruct from matching JSONL
+and SQLite evidence. The costed `always_long` and `previous_bar_direction`
+references were negative in both phases; this is an underpowered descriptive
+baseline, not a model result, promotion, or profitability conclusion.
+
 ## Lane State
 
 ### Data
@@ -174,6 +186,12 @@ A source-windowed follow-up baseline has now consumed a complete 390-minute QQQ
 regular session through all five configured timeframes. The active
 `thericher-kis-paper-intraday-head` automation remains a separate data-only
 path, so it does not compete with the existing quote-derived Paper session.
+
+`select_complete_kis_paper_private_intraday_sessions` is the Data-owned offline
+selection boundary for an ordered tuple of full regular sessions. It rejects
+closed/early-close sessions, duplicates, unordered dates, missing intraday
+minutes, and non-KIS catalogs before deriving a new hash-bound `CatalogedBars`
+identity. It does not read credentials or make a network call.
 
 ### Engine Research
 
@@ -208,6 +226,17 @@ embargo. The loader still re-attests every source raw file, fingerprint, and
 committed row count, but does not construct later `Bar` objects for this
 campaign.
 
+The first intraday chronological CPU campaign is complete. Its contract fixes
+90 completed in-session 1m context slots, signals only at offsets 89-387,
+next-bar-open entry/following-bar-open exit, 1 bp per-side fee, 2 bps per-side
+slippage, and `flat`/`always_long`/`previous_bar_direction` local-paper
+references. Overnight gaps are allowed only at exact consecutive declared
+`SessionWindow` boundaries; a missing in-session minute or a target crossing a
+session boundary fails. Attempt labels separate immutable external evidence if
+a run needs restarting. The 9-session validation region is too small for model
+ranking, ensemble selection, or a profitability claim, but is sufficient to
+begin the next bounded feature/candidate preparation work.
+
 The Norgate static panel is not a follow-on breadth or GPU candidate under its
 current source scope. The next Data-owned task is only a reusable read-only
 `Bar`-series loader that preserves those negative scope flags; it must not add
@@ -232,8 +261,10 @@ and console output. The scoped external automation
 `thericher-kis-paper-quote-session` runs it on weekday KST 23:35, which falls
 inside that time window in both DST states. Its first Docker exercise was safely
 off-session (`not_due`); the first due-session result will be recorded by the
-schedule. The helper is not yet a full holiday/early-close calendar claim; the
-next KIS-native intraday task must establish that semantics from source evidence.
+schedule. Its eligibility now delegates to the explicit 2026 Nasdaq/NYSE session
+adapter: holidays and out-of-scope dates return `session_unavailable` before
+credential access, and early closes stop at their declared close. This is a
+technical route guard, not a Paper authority gate.
 This is a recurring execution path, not a general scheduler or a fresh approval
 boundary.
 
@@ -320,9 +351,9 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: turn the first
-KIS-native intraday cache into a recurring regular-session data loop, then run
-the first qualified CPU local-paper baseline when coverage permits. The three
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: keep the KIS-native
+minute cache accumulating while turning the frozen QQQ CPU baseline into a
+bounded feature/candidate preparation loop. The three
 older canary intents remain immutable recovery evidence, but do not create a
 global one-shot quota or stop new distinct Paper work. At each boundary, review
 the data contract, execution route readiness, research queues, GPU eligibility,

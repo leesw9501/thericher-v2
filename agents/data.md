@@ -48,6 +48,15 @@ Own the current KIS-native daily cache and its future reusable loaders.
   slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded
   cache/replay baseline only; it does not settle KIS field open/close semantics
   or create a multi-session research dataset.
+- The cursor cache now reattests 21 complete regular sessions for both QQQ/NAS
+  and SPY/AMS, from 2026-06-22 through 2026-07-21. The first Engine input used
+  the latest 20 QQQ sessions, 2026-06-23 through 2026-07-21, with 2026-07-08
+  retained as an unused purge session. This is a hash-bound descriptive input,
+  not a source-semantic or model-quality conclusion.
+- `select_complete_kis_paper_private_intraday_sessions` derives a new immutable
+  KIS-only `CatalogedBars` identity from an explicit ordered tuple of complete
+  regular sessions. It is offline/credential-free and rejects duplicate,
+  unordered, closed, early-close, incomplete, or non-KIS inputs.
 
 ## Ready Queue
 
@@ -135,6 +144,9 @@ that would cross the 15% floor.
   `canonical_start_policy` field. `data.kis_paper_intraday` accepts only their
   exact equivalent completed-bar-rule spelling; it never rewrites source bytes
   or relaxes the timestamp contract for another form.
+- Session selection does not join overnight gaps. It preserves them as explicit
+  ordered session boundaries for a Research consumer to validate, while any
+  missing minute inside a selected session remains invalid input.
 
 ## Recovery
 
@@ -144,7 +156,7 @@ as `reconcile`; do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
-Continue KIS-native minute accumulation and hand Engine Research the exact
-provider identity, timestamp basis, session classification, cache coverage, and
-data limitations. Report only a concrete source-rights or storage constraint
-that needs operator action.
+Continue KIS-native minute accumulation and preserve the exact provider identity,
+timestamp basis, session classification, coverage, and limitations for the next
+feature/candidate input. Report only a concrete source-rights or storage
+constraint that needs operator action.

@@ -22,7 +22,10 @@ from thericher_v2.execution.kis_paper_quote import (
     parse_kis_paper_spy_quote,
     validate_kis_paper_spy_quote_request,
 )
-from thericher_v2.execution.kis_paper_session import run_kis_paper_quote_session
+from thericher_v2.execution.kis_paper_session import (
+    is_us_equity_regular_session_window,
+    run_kis_paper_quote_session,
+)
 from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_BALANCE_ENDPOINT,
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
@@ -142,6 +145,56 @@ def test_session_outside_regular_window_never_reads_credentials_or_dispatches(
     assert outcome.reason_code == "outside_regular_session"
     assert transport.requests == []
     assert outcome.evidence_path.exists()
+
+
+@pytest.mark.parametrize(
+    ("observed_at", "expected"),
+    (
+        (datetime(2026, 7, 22, 13, 29, 59, tzinfo=UTC), False),
+        (datetime(2026, 7, 22, 13, 30, tzinfo=UTC), True),
+        (datetime(2026, 7, 22, 19, 59, 59, tzinfo=UTC), True),
+        (datetime(2026, 7, 22, 20, 0, tzinfo=UTC), False),
+        (datetime(2026, 11, 27, 17, 59, 59, tzinfo=UTC), True),
+        (datetime(2026, 11, 27, 18, 0, tzinfo=UTC), False),
+    ),
+)
+def test_session_eligibility_uses_explicit_2026_exchange_windows(
+    observed_at: datetime,
+    expected: bool,
+) -> None:
+    assert is_us_equity_regular_session_window(observed_at) is expected
+
+
+@pytest.mark.parametrize(
+    ("observed_at", "session_id"),
+    (
+        (datetime(2026, 7, 3, 14, 30, tzinfo=UTC), "holiday-session-1"),
+        (datetime(2027, 1, 4, 14, 30, tzinfo=UTC), "out-of-scope-session-1"),
+    ),
+)
+def test_closed_or_out_of_scope_session_never_reads_credentials_or_dispatches(
+    tmp_path: Path,
+    observed_at: datetime,
+    session_id: str,
+) -> None:
+    class UnusedEnvironment(dict[str, str]):
+        def get(self, key: str, default: str = "") -> str:
+            raise AssertionError(f"unavailable-session runner must not read environment: {key}")
+
+    transport = FakeKisPaperQuoteTransport()
+    outcome = run_kis_paper_quote_session(
+        environment=UnusedEnvironment(),
+        transport=transport,
+        now=observed_at,
+        session_id=session_id,
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "not_due"
+    assert outcome.reason_code == "session_unavailable"
+    assert transport.requests == []
 
 
 def test_due_session_uses_transient_quote_and_sanitizes_all_public_outputs(tmp_path: Path) -> None:

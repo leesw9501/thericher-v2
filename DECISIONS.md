@@ -3916,3 +3916,58 @@ or broker output in Git.
 Reason: prospective KIS-compatible cache accumulation can proceed continuously
 without corrupting historical recovery state, while a complete session proves
 the local replay interface before multi-session research begins.
+
+## 2026-07-22 - Freeze the first KIS-native chronological intraday CPU baseline
+
+Decision: use the reattested QQQ/NAS cache to freeze the latest 20 complete
+regular 2026 sessions, 2026-06-23 through 2026-07-21, as 10 development
+sessions, one unused 2026-07-08 purge session, and 9 validation sessions. The
+first contract fixes completed 1m decisions at offsets 89 through 387, next-bar
+open entry/following-bar-open exit, 1 bp per-side fee, 2 bps per-side slippage,
+and `flat`, `always_long`, and `previous_bar_direction` local-paper references.
+The external manifest is
+`D:\\thericher-v2\\model-artifacts\\kis-intraday-cpu-campaign\\qqq-20260623-20260721-r1\\summary.json`.
+
+All six actual replay cells retained only `source: local_paper` fills and their
+JSONL event counts match both the summary and reconstructed SQLite state. Both
+non-flat references were negative after the stated costs in development and
+validation. This is a descriptive baseline to beat, not a profitability,
+promotion, ensemble, or model-selection conclusion.
+
+Claude's falsification-first verdict was `supported-with-limits`: the split,
+in-session signal geometry, and target timing avoid the named leakage and
+cross-session failures, but nine validation sessions have very low statistical
+power. That limit constrains interpretation, not data collection, Paper work,
+or independent feature preparation.
+
+Reason: an explicit KIS-only baseline is more useful than extending isolated
+single-session smoke work. It gives the next candidate a fixed costed comparator
+without importing v1-style report or approval scaffolding.
+
+## 2026-07-22 - Make intraday discontinuities and retries explicit evidence facts
+
+Decision: a multi-session local-paper validation may permit only the exact
+close/open boundary between consecutive declared `SessionWindow` values. A bare
+timestamp cannot nominate an arbitrary intraday gap, and a target may not cross
+that boundary. Completed campaign replay uses a JSONL-authoritative event log
+and rebuilds SQLite before evidence is emitted.
+
+An optional safe attempt label propagates from the intraday campaign runner into
+each baseline run ID. A restart uses a new label and separate external work and
+artifact paths; completed evidence is never overwritten or silently reused.
+
+Reason: the controls preserve input meaning and recoverability after an
+interruption. They are data/execution correctness properties, not a new approval
+gate, one-shot quota, or scheduler platform.
+
+## 2026-07-22 - Share explicit exchange calendar eligibility with the Paper quote session
+
+Decision: the virtual-paper quote session delegates its pre-credential session
+check to `us_equity_2026_session`. It accepts only an explicit published regular
+or early-close window, returns `session_unavailable` for holidays and dates
+outside the supported 2026 source scope, and performs no environment or KIS
+transport access in those cases.
+
+Reason: the same narrow calendar source now governs research session selection
+and quote-session timing. This removes a weekday-only mismatch without changing
+Paper authority, widening a route, or creating a schedule approval condition.

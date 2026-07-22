@@ -2,13 +2,14 @@
 
 ## Objective
 
-Accumulate prospective KIS-native SPY/QQQ regular-session minute coverage, then
-freeze and run the first multi-session chronological intraday CPU validation
-campaign with naive baselines. Keep the existing KIS Paper execution-learning
-loop and the intraday head collector independent and active.
+Build the first KIS-native intraday feature and candidate-breadth foundation
+from the frozen QQQ 20-session source, while KIS regular-session minute coverage
+continues independently for QQQ and SPY.
 
-This advances data-to-model evidence. It is not a profitability claim and does
-not require a GPU job until the campaign contract is genuinely ready.
+Produce a reproducible CPU feature/target contract and simple chronological
+candidate comparisons. Once that contract exists, run one bounded Docker
+PyTorch CUDA sequence-model smoke using only the same frozen source. This is
+descriptive research, not a model promotion or profitability claim.
 
 ## Standing Authority And Boundaries
 
@@ -31,55 +32,61 @@ not require a GPU job until the campaign contract is genuinely ready.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect current intraday backfill/head indexes and active external artifacts
-   before any network call or campaign decision.
-5. Ask Claude for a concise falsification-first check before freezing the first
-   chronological intraday campaign, interpreting an unexpectedly strong result,
-   or changing the KIS execution surface. Never send secrets, raw rows, or
-   broker output.
+4. Inspect the current KIS intraday indexes and the completed QQQ campaign
+   manifest before selecting any new input or writing an artifact.
+5. Ask Claude for a concise falsification-first check before using a CPU result
+   to choose the CUDA candidate or interpreting a material outperformance.
+   Never send secrets, raw rows, or broker output.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Maintain the cursor-resuming cache and separate head cache for `QQQ/NAS` and
-   `SPY/AMS`. Continue bounded Paper-only collection during useful US sessions;
-   record safe session coverage and gaps without provider mixing or gap filling.
-2. Reattest candidate complete sessions using the explicit 2026 exchange
-   calendar window. Preserve that KIS bar open/close semantics remain an input
-   limitation unless source evidence resolves them.
-3. Once the cache has enough distinct complete regular sessions for the first
-   fixed chronological split, produce a compact dataset manifest and exact
-   input identity for Engine Research. If it does not yet, keep collection
-   running and state the exact count/coverage still missing.
+1. Continue bounded cursor/head collection for `QQQ/NAS` and `SPY/AMS`, with
+   reattested regular-session coverage and explicit gap facts. Do not mix
+   providers or fill missing KIS minutes.
+2. Expose one exact, hash-bound KIS-only selection for the initial QQQ feature
+   contract: 20 ordered full regular sessions and their explicit `SessionWindow`
+   values. Preserve the current timestamp/open-close semantics limitation.
+3. Report safe coverage growth and any concrete data/source/storage issue; do
+   not create a new data-quality approval gate.
 
 ### Engine Research Agent
 
-1. Draft the first frozen intraday campaign contract from only the supplied
-   KIS cache: sessions, split, target timing, fees/slippage, naive comparators,
-   metrics, stop rules, and external artifact root.
-2. Run CPU `flat`, `always_long`, and `previous_bar_direction` local-paper
-   baselines when the contract's multi-session input is ready. Preserve
-   replayable fills and PnL attribution outside Git.
-3. Keep breadth, depth, ensemble, and replication queues current. Do not launch
-   CUDA training until the frozen multi-session CPU campaign has completed and
-   the evidence supports an eligible next hypothesis.
+1. Build a small feature/target contract using only completed KIS bars from the
+   fixed QQQ source. Start with 90 completed 1m bars plus deterministic 5m/10m
+   resamples, declared session boundaries, next-bar executable targets, and the
+   existing 10 / 1 / 9 chronology. Keep 1h/3h inactive unless their full
+   completed context is explicitly supported.
+2. Run a CPU breadth comparison with simple deterministic/regularized candidates
+   against the completed naive references. Record dataset, feature schema,
+   split, costs, metrics, and replay evidence outside Git. Do not tune against
+   the 9-session validation region or claim selection/profitability.
+3. Once the CPU feature contract is frozen, run one bounded Docker PyTorch CUDA
+   GRU/TCN-or-smaller sequence smoke with a fixed compute budget and artifacts
+   under `/app/model_artifacts`. It may validate the research runtime and
+   pipeline only; it cannot promote a model or consume a sealed holdout.
+4. Refresh breadth, depth, ensemble, and replication queues from the evidence.
+   Ensemble work requires independently generated out-of-fold predictions.
 
 ### Execution Agent
 
-1. Keep the quote-derived KIS Paper session active, reconcile each durable
-   intent on its own identity, and integrate the next sanitized outcome.
-2. Fix only concrete virtual-route, safe-projection, pacing, or reconciliation
-   defects. A distinct Paper action remains routine and need not wait for an
-   unrelated older intent.
+1. Keep the explicit-calendar quote-derived KIS Paper session and the data-only
+   intraday head collector independent and active. Reconcile each durable
+   virtual intent on its own identity.
+2. Fix only concrete virtual-route, safe-projection, pacing, calendar, or
+   reconciliation defects. Do not make strategy decisions or add a live route.
 
 ## Completion Evidence
 
-- Safe coverage and recovery evidence for independent backfill/head caches.
-- A frozen multi-session KIS intraday campaign contract, or a precise remaining
-  coverage count while collection continues.
-- CPU naive local-paper validation and replayable external artifacts when the
-  data is ready; otherwise no fabricated labels or performance claims.
+- A hash-bound KIS-only feature/target contract with explicit session and
+  timestamp limitations.
+- CPU candidate outputs versus the fixed local-paper naive references, with no
+  validation-tuning or model-promotion claim.
+- One bounded Docker CUDA smoke artifact when the frozen CPU contract and GPU
+  runtime are available; otherwise a precise technical cause, not a fabricated
+  result.
+- Continued independent KIS cache/head and Paper-session recovery facts.
 - No live route, secrets, raw data, or generated artifact committed to Git.
 
 ## Verification
@@ -93,4 +100,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add prospective KIS intraday validation loop`
+`Add intraday feature breadth foundation`

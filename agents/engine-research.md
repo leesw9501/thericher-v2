@@ -8,12 +8,20 @@ the first honest intraday input contract, not GPU occupancy.
 
 ## Intraday Input Contract
 
-The KIS-native minute cache remains an observed input, not an eligible model
-campaign. Its original 239-bar extended-session pages are hash-attested and
-KIS-reconstructible, and a source-windowed QQQ slice now contains one complete
-390-minute regular session. The 2026 calendar window is explicit, but KIS bar
-open/close semantics and multi-session chronological coverage remain
-unqualified for model selection.
+The KIS-native minute cache now supports one bounded chronological CPU baseline,
+not an eligible model-promotion campaign. Its original 239-bar extended-session
+pages remain hash-attested and KIS-reconstructible, and the reattested cache now
+has 21 complete regular sessions each for QQQ/NAS and SPY/AMS. The 2026 calendar
+window is explicit, but KIS bar open/close semantics remain unqualified and the
+first nine-session validation region is too small for model selection.
+
+The first QQQ run fixed the latest 20 complete sessions (2026-06-23 through
+2026-07-21) into a 10 development / 1 unused-session purge / 9 validation split.
+It ran `flat`, `always_long`, and `previous_bar_direction` through replayable
+`local_paper` only. The external manifest is
+`D:\\thericher-v2\\model-artifacts\\kis-intraday-cpu-campaign\\qqq-20260623-20260721-r1\\summary.json`.
+All costed non-flat references were negative in both phases. This establishes a
+baseline to beat, not an edge, model score, GPU qualification, or promotion.
 
 When those source facts are established, freeze this initial contract before any
 model comparison:
@@ -73,12 +81,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
-6. Keep the intraday queues prepared without dispatching ineligible compute:
-   breadth starts with deterministic features, regularized linear, and tree
-   baselines; depth compares TCN, GRU/LSTM, and a compact attention model only
-   after a frozen regular-session dataset exists; ensemble work requires
-   independently generated out-of-fold predictions; replication reruns the
-   selected contract unchanged.
+6. Prepare the next KIS-only intraday candidate from the frozen 20-session
+   contract: breadth starts with deterministic features, regularized linear,
+   and tree baselines; depth compares TCN, GRU/LSTM, and a compact attention
+   model only after the feature/target artifact and CPU comparator are frozen;
+   ensemble work requires independently generated out-of-fold predictions;
+   replication reruns the selected contract unchanged.
 7. The first source-windowed CPU baseline is complete at
    `D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
    It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
@@ -124,6 +132,13 @@ runtime is intentionally added.
   conversion basis and keeps exchange timestamp semantics visibly unqualified.
   This avoids silently inventing a US daylight-saving calendar from an observed
   source field.
+- Multi-session validation accepts overnight gaps only at the exact close/open
+  pair of consecutive declared `SessionWindow` values. A caller cannot nominate
+  a bare timestamp to hide a missing intraday minute, and no target may cross a
+  declared boundary.
+- Campaign attempt labels create separate immutable work/artifact paths after an
+  interrupted run. They are recovery identities, not a scheduler, approval, or
+  model-selection mechanism.
 
 ## Recovery
 
@@ -138,7 +153,8 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Accumulate and qualify KIS regular-session minute coverage, then freeze the
-first intraday campaign contract and run its CPU naive baselines before any GPU
-candidate. Keep breadth, depth, ensemble, and replication queues current
-without creating a report family.
+Keep KIS regular-session minute coverage accumulating while building the first
+bounded KIS-only intraday feature/target artifact and CPU breadth comparison.
+Keep breadth, depth, ensemble, and replication queues current without creating a
+report family; treat any next CUDA work as descriptive until the tiny validation
+region is replicated or expanded.
