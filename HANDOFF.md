@@ -83,6 +83,16 @@ It verified the mounted D: cache/artifact path and wrote no checkpoint or model
 promotion result. The two local Docker schedules are installed and ready for
 their next due sessions; all KIS Paper work remains standing-authorized.
 
+The fixed LSTM, causal-TCN, and compact-attention CUDA screen completed under
+the network-disabled `research` Docker profile on the same frozen 20-session
+QQQ source. The immutable external precommit was written before comparison data
+materialized; all three replays produced only `source: local_paper` fills.
+After-cost PnL on the five descriptive comparison sessions was LSTM
+`-639.3858`, causal TCN `-5.9777`, and compact attention `0.0000`. The summary
+is at
+`D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\qqq-20260623-20260721-sequence-architecture-r1\summary.json`.
+There is no winner, model promotion, ensemble, or Paper-work implication.
+
 ## Current Data State
 
 `kis-paper-private-daily-backfill-v1` is the active KIS-native daily cache:
@@ -101,6 +111,11 @@ page rather than silently admitting its other rows. The 694-session common
 panel is clean and usable now. Do not repeatedly query that blocked IWM page
 until a different official endpoint or a separately evidence-backed row-quality
 contract resolves it.
+
+The latest authorized bounded IWM retry on 2026-07-22 again returned the safe
+`daily_response_invalid` result with no retained rows. This is a source-quality
+fact for that IWM page, never a KIS Paper permission, scheduler, or retention
+latch for QQQ, SPY, new intraday work, account calls, or Paper orders.
 
 The local Norgate trial also contains a hash-attested static development panel
 at

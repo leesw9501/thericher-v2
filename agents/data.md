@@ -53,6 +53,11 @@ Own the current KIS-native daily cache and its future reusable loaders.
   the latest 20 QQQ sessions, 2026-06-23 through 2026-07-21, with 2026-07-08
   retained as an unused purge session. This is a hash-bound descriptive input,
   not a source-semantic or model-quality conclusion.
+- A local credential-free verifier reselected those exact 20 QQQ sessions on
+  2026-07-22: 7,800 complete 1m bars with dataset hash
+  `sha256:38ccc55e1ade26a11562ebedcb482ace718ccbdb7d4d0cdc78a7d11f874a1c0a`.
+  This reattests the frozen research input; it does not alter the cache or make
+  a regular-session semantic claim.
 - `select_complete_kis_paper_private_intraday_sessions` derives a new immutable
   KIS-only `CatalogedBars` identity from an explicit ordered tuple of complete
   regular sessions. It is offline/credential-free and rejects duplicate,
@@ -64,11 +69,12 @@ Own the current KIS-native daily cache and its future reusable loaders.
 
 ## Ready Queue
 
-1. Keep the current IWM daily scope at its verified lower boundary: a KIS page
-   contains an internally inconsistent OHLC row, so the strict all-row parser
-   rejects it. Do not retry the identical bad page endlessly or silently accept
-   its remaining rows; a new anchor, endpoint, or evidence-backed scope may
-   proceed independently.
+1. Keep the current IWM daily scope at its verified lower boundary: the latest
+   authorized bounded retry on 2026-07-22 again returned `daily_response_invalid`
+   with zero retained rows. A KIS page contains an internally inconsistent OHLC
+   row, so the strict all-row parser rejects it. Do not retry the identical bad
+   page endlessly or silently accept its remaining rows; a new anchor, endpoint,
+   or evidence-backed scope may proceed independently.
 2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
    snapshot/index/raw hashes, accept only exact overlap deduplication, reject
    conflicts, verify cursor seams, and return the completed common-session

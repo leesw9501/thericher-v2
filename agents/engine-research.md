@@ -40,6 +40,16 @@ It trained 2,990 development-only 90x3 sequences for 8 epochs on the RTX 4090
 with PyTorch CUDA 12.8, moving loss from `0.69341975` to `0.69316453`. It wrote
 no checkpoint, comparison/confirmation sample, prediction, or promotion claim.
 
+The fixed three-architecture CUDA screen is complete at
+`D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\qqq-20260623-20260721-sequence-architecture-r1\summary.json`.
+Its immutable `precommit.json` recorded all three configurations and the
+development-only input hash before comparison materialized. LSTM, causal TCN,
+and compact attention each trained 2,990 90x3 development-only sequences for
+8 epochs on the RTX 4090, then replayed the same five comparison sessions with
+`source: local_paper`. After-cost PnL was `-639.3858`, `-5.9777`, and `0.0000`;
+the joint result names no winner, selected architecture, ensemble, or promotion.
+The four later sessions remain unmaterialized.
+
 When those source facts are established, freeze this initial contract before any
 model comparison:
 
@@ -98,12 +108,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
-6. The first fixed KIS-only intraday breadth comparison is complete and no
-   candidate is selected. The ready depth queue is a separately fixed
-   development-only LSTM, TCN, and compact-attention pipeline comparison; do
-   not select an architecture from the five comparison sessions. The breadth
-   queue expands only with new KIS-compatible source coverage, while ensemble
-   work still requires independently generated out-of-fold predictions.
+6. The first fixed KIS-only intraday breadth and three-architecture CUDA screen
+   are complete and no architecture is selected. Do not retune, choose, or
+   ensemble from the five comparison sessions. The next depth candidate needs
+   a separately frozen prospective KIS source contract; breadth expands only
+   with new KIS-compatible coverage, while ensembles require independently
+   generated out-of-fold predictions.
 7. The first source-windowed CPU baseline is complete at
    `D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
    It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
@@ -174,8 +184,7 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Keep KIS regular-session minute coverage accumulating while the first fixed
-intraday LSTM, TCN, and compact-attention development-only comparison is
-prepared. Keep breadth, depth, ensemble, and replication queues current without
-creating a report family; do not turn the small current comparison slice into a
-selection or Paper-work gate.
+Keep KIS regular-session minute coverage accumulating while execution builds a
+minimal private Paper console. Keep breadth, depth, ensemble, and replication
+queues current without creating a report family; do not turn the small current
+comparison slice into a selection or Paper-work gate.

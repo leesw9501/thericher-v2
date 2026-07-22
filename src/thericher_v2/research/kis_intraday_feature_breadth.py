@@ -436,13 +436,8 @@ def build_kis_intraday_feature_dataset(
 ) -> KisIntradayFeatureDataset:
     """Build only development and comparison samples from completed same-session bars."""
 
-    plan = contract.campaign_plan
     development = build_kis_intraday_feature_development_samples(contract)
-    validation = _samples_for_windows(
-        plan.cataloged_bars,
-        session_dates=contract.candidate_comparison_session_dates,
-        session_windows=contract.candidate_comparison_session_windows,
-    )
+    validation = build_kis_intraday_feature_candidate_comparison_samples(contract)
     sample_hash = _sha256_payload(
         {
             "contract_hash": contract.contract_hash,
@@ -468,6 +463,19 @@ def build_kis_intraday_feature_development_samples(
         plan.cataloged_bars,
         session_dates=contract.development_session_dates,
         session_windows=plan.phase_session_windows("development"),
+    )
+
+
+def build_kis_intraday_feature_candidate_comparison_samples(
+    contract: KisIntradayFeatureContract,
+) -> tuple[KisIntradayFeatureSample, ...]:
+    """Materialize only the fixed comparison slice after a screen is precommitted."""
+
+    plan = contract.campaign_plan
+    return _samples_for_windows(
+        plan.cataloged_bars,
+        session_dates=contract.candidate_comparison_session_dates,
+        session_windows=contract.candidate_comparison_session_windows,
     )
 
 

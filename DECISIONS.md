@@ -3997,3 +3997,28 @@ no-selection scope were fixed before the CPU result.
 Reason: this adds actual KIS-compatible CPU and CUDA research evidence without
 reintroducing one-shot latches, artificial Paper approvals, or a GPU-driven
 model-promotion claim.
+
+## 2026-07-22 - Precommit the first fixed KIS intraday sequence architecture screen
+
+Decision: run exactly LSTM, causal TCN, and compact attention on the frozen
+QQQ 20-session KIS input with fixed seeds, 16 hidden dimensions, 8 epochs, and
+a `0.5` decision threshold. Before comparison samples materialize, write a
+sanitized immutable external precommit containing all configurations, the
+development-only input hash, the fixed five-session replay scope, and the
+explicit joint-report/no-winner policy.
+
+The actual network-disabled Docker run used PyTorch CUDA 12.8 on the RTX 4090
+and trained each architecture on 2,990 development-only 90x3 sequences. Local
+paper replays on the five comparison sessions produced after-cost PnL of LSTM
+`-639.3858`, causal TCN `-5.9777`, and compact attention `0.0000`. The external
+summary is
+`D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\qqq-20260623-20260721-sequence-architecture-r1\summary.json`.
+
+Claude's falsification-first verdict was `supported-with-limits`: a fixed joint
+screen is acceptable only when settings and replay eligibility are committed
+before comparison data is used. The implementation follows that correction.
+The outcome has no winner, promotion, ensemble, profitability, or KIS Paper
+authority effect; later confirmation sessions remain unmaterialized.
+
+Reason: this broadens architecture evidence without silently selecting from a
+small comparison slice or turning research evidence into a Paper-work gate.
