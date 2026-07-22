@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pytest
 
+from thericher_v2.execution.emergency import PaperExecutionControlStore
 from thericher_v2.execution.kis_paper_canary import (
     KIS_PAPER_US_BUY_LIMIT_ORDER_PATH,
     KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
@@ -448,6 +449,33 @@ def test_expired_intent_never_reads_credentials_or_submits(tmp_path: Path) -> No
 
     assert outcome.phase == "intent_recorded"
     assert outcome.reason_code == "intent_expired"
+    assert transport.requests == []
+
+
+def test_buy_pause_blocks_direct_canary_before_credentials_or_network(tmp_path: Path) -> None:
+    class UnusedEnvironment(dict[str, str]):
+        def get(self, key: str, default: str = "") -> str:
+            raise AssertionError(f"paused canary must not read environment: {key}")
+
+    control_path = tmp_path / "emergency" / "paper_execution_control.json"
+    PaperExecutionControlStore(control_path).set_pause_buys(True)
+    transport = RecordingTransport()
+
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="paused-1",
+        environment=UnusedEnvironment(),
+        state_path=tmp_path / "private" / "paused-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        execution_control_path=control_path,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "intent_recorded"
+    assert outcome.reason_code == "pause_buys_active"
     assert transport.requests == []
 
 

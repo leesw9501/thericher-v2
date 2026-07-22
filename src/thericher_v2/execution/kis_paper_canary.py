@@ -24,7 +24,11 @@ from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
 
 from .broker import BrokerOrderRequest
-from .emergency import EmergencyStore
+from .emergency import (
+    DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
+    EmergencyStore,
+    PaperExecutionControlStore,
+)
 from .kis_paper_console_bridge import paper_account_snapshot_from_kis_readonly
 from .kis_paper_order_fields import map_kis_paper_us_buy_limit_order_fields
 from .kis_paper_quote import (
@@ -62,6 +66,7 @@ DEFAULT_KIS_PAPER_CANARY_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts"
 DEFAULT_KIS_PAPER_CANARY_RUNTIME_PROJECTION = Path("runtime/state/kis_paper_canary.json")
 DEFAULT_KIS_PAPER_CANARY_ACCOUNT_SNAPSHOT = Path("runtime/state/paper_account_snapshot.json")
 DEFAULT_KIS_PAPER_CANARY_EMERGENCY_STATE = Path("runtime/emergency_state.json")
+DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL = DEFAULT_PAPER_EXECUTION_CONTROL_STATE
 DEFAULT_KIS_PAPER_CANARY_STATE_ROOT = Path("runtime/private/kis_paper_canary")
 
 KIS_PAPER_US_BUY_LIMIT_ORDER_PATH = "/uapi/overseas-stock/v1/trading/order"
@@ -142,6 +147,7 @@ _SAFE_REASON_CODES = frozenset(
         "preview",
         "intent_expired",
         "emergency_stop_new_orders",
+        "pause_buys_active",
         "matching_open_order",
         "submit_rejected",
         "submit_http_4xx",
@@ -843,6 +849,7 @@ def _run_kis_paper_canary(
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
+    execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -861,6 +868,7 @@ def _run_kis_paper_canary(
         now=observed_at,
     )
     emergency = EmergencyStore(emergency_state_path).read()
+    execution_control = PaperExecutionControlStore(execution_control_path).read()
     reconciliation = _unavailable_reconciliation()
 
     if not execute:
@@ -888,6 +896,14 @@ def _run_kis_paper_canary(
             expected=frozenset({"intent_recorded"}),
             phase="intent_recorded",
             reason_code="emergency_stop_new_orders",
+            now=observed_at,
+        )
+    elif execution_control.pause_buys:
+        state = state_store.transition(
+            intent,
+            expected=frozenset({"intent_recorded"}),
+            phase="intent_recorded",
+            reason_code="pause_buys_active",
             now=observed_at,
         )
     else:
@@ -1041,6 +1057,7 @@ def run_kis_paper_canary(
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
+    execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
 ) -> KisPaperCanaryOutcome:
     """Serialize one canary root from reconciliation through terminal state."""
 
@@ -1064,6 +1081,7 @@ def run_kis_paper_canary(
             now=now,
             clock=clock,
             submit_permitted=submit_permitted,
+            execution_control_path=execution_control_path,
         )
 
 
@@ -1722,6 +1740,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_KIS_PAPER_CANARY_EMERGENCY_STATE,
     )
     parser.add_argument(
+        "--execution-control",
+        type=Path,
+        default=DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
+    )
+    parser.add_argument(
         "--artifact-root",
         type=Path,
         default=Path(
@@ -1764,6 +1787,7 @@ def main(argv: list[str] | None = None) -> int:
             execute=arguments.execute,
             cancel_after_submit=arguments.cancel_after_submit,
             now=observed_at,
+            execution_control_path=arguments.execution_control,
         )
     except (KisPaperCanaryError, KisPaperReadOnlyError, ValueError) as error:
         print(json.dumps({"status": "failed", "reason_code": str(error), "paper_only": True}))

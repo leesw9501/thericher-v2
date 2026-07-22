@@ -12,6 +12,12 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   cash/fixed-quantity buy-and-hold references; each run remains replayable.
 - The local dashboard is credential-free and may display sanitized holdings,
   price, open-order, and emergency state.
+- The local console now persists `pause_buys` and `pause_sells` on a separate
+  shared volume. They are operator-operational state, not paper approval gates:
+  the buy pause is checked before the quote session/canary reads configuration
+  or calls KIS; the sell pause is retained for the later sell executor. Missing
+  state defaults to both directions ready. The web process cannot call KIS,
+  read credentials, access private intent state, or mount `D:\\market_data`.
 - KIS Paper account/data/order access, paper submit/modify/cancel, routine
   sizing, and schedules are standing-authorized.
 - `kis_paper_canary` is the first executable narrow adapter: US buy-limit only,
@@ -83,8 +89,9 @@ PnL accounting, emergency controls, and future KIS Paper transport.
    focused transport, recovery, quote, and safe-projection proof; a preserved
    unknown run remains immutable and blocks only replacement of its own intent,
    never Paper cadence or a separate new intent.
-3. Keep the generic broker adapter disabled while this canary remains the only
-   bounded KIS order surface; do not add sell or live routes implicitly.
+3. Add a sell path only when it has its own deterministic sizing, exit, and
+   reconciliation contract; consume the existing sell pause then. Do not add a
+   live route implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
    execution processes.
 
@@ -100,6 +107,12 @@ to deterministic execution logic. Historical one-shot or retention markers
 cannot disable later correctly scoped paper work; they only describe the
 recovery state of their own run. There is no per-goal or one-shot quota on
 distinct virtual-paper intents or goal-owned Paper schedules.
+
+The directional console controls are reversible local operating instructions,
+not policy latches. `pause_buys` stops a newly created buy intent before KIS
+configuration or network access. `pause_sells` will never suppress a hard-risk
+exit. A malformed control file preserves the requested-pause posture until the
+operator clears it locally; it is not a request for approval or a global stop.
 
 ## Durable Knowledge
 

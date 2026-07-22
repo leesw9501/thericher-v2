@@ -37,10 +37,14 @@ services:
       - "8787"
       - --emergency-state
       - /app/emergency/emergency_state.json
+      - --execution-control
+      - /app/emergency/paper_execution_control.json
       - --paper-account-snapshot
       - /app/runtime/state/paper_account_snapshot.json
       - --paper-canary-runtime
       - /app/runtime/state/kis_paper_canary.json
+      - --market-data-freshness
+      - /app/runtime/state/kis_paper_intraday_freshness.json
     environment:
       THERICHER_MODE: off
       THERICHER_DASHBOARD_TOKEN: ${THERICHER_DASHBOARD_TOKEN:-}
@@ -133,6 +137,8 @@ services:
       - /app/runtime/state/paper_account_snapshot.json
       - --emergency-state
       - /app/emergency/emergency_state.json
+      - --execution-control
+      - /app/emergency/paper_execution_control.json
       - --artifact-root
       - /app/model_artifacts
     environment:
@@ -169,6 +175,8 @@ services:
       - /app/runtime/state/paper_account_snapshot.json
       - --emergency-state
       - /app/emergency/emergency_state.json
+      - --execution-control
+      - /app/emergency/paper_execution_control.json
       - --artifact-root
       - /app/model_artifacts
     environment:
@@ -195,6 +203,8 @@ services:
       - --execute
       - --pages-per-target
       - "2"
+      - --runtime-projection
+      - /app/runtime/state/kis_paper_intraday_freshness.json
     environment:
       THERICHER_MODE: off
       THERICHER_MARKET_DATA_ROOT: /market_data
@@ -203,6 +213,7 @@ services:
       KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
     volumes:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/market_data
+      - thericher-v2-runtime:/app/runtime
 
   kis-paper-intraday-head:
     build:
@@ -217,6 +228,8 @@ services:
       - head
       - --pages-per-target
       - "2"
+      - --runtime-projection
+      - /app/runtime/state/kis_paper_intraday_freshness.json
     environment:
       THERICHER_MODE: off
       THERICHER_MARKET_DATA_ROOT: /market_data
@@ -225,6 +238,7 @@ services:
       KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
     volumes:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/market_data
+      - thericher-v2-runtime:/app/runtime
 
 volumes:
   thericher-v2-runtime:

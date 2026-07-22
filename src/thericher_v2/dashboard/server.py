@@ -15,7 +15,7 @@ from typing import Any
 from urllib.parse import parse_qs, urlsplit
 
 from thericher_v2.dashboard.view import build_snapshot, render_dashboard
-from thericher_v2.execution.emergency import EmergencyStore
+from thericher_v2.execution.emergency import EmergencyStore, PaperExecutionControlStore
 from thericher_v2.serialization import to_jsonable
 from thericher_v2.state.event_log import EventStore
 
@@ -90,8 +90,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.event_store,
                 self.server.emergency_store,
                 self.server.mode,
+                execution_control_store=self.server.execution_control_store,
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
                 paper_canary_runtime_path=self.server.paper_canary_runtime_path,
+                market_data_freshness_path=self.server.market_data_freshness_path,
             )
             _html_response(
                 self,
@@ -104,8 +106,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.server.event_store,
                 self.server.emergency_store,
                 self.server.mode,
+                execution_control_store=self.server.execution_control_store,
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
                 paper_canary_runtime_path=self.server.paper_canary_runtime_path,
+                market_data_freshness_path=self.server.market_data_freshness_path,
             )
             _json_response(self, HTTPStatus.OK, snapshot.to_dict())
         elif path == "/health":
@@ -138,6 +142,18 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 "dashboard_cancel_open_orders"
             )
             self._action_response("cancel_open_orders_requested", state)
+        elif path == "/controls/pause-buys":
+            state = self.server.execution_control_store.set_pause_buys(True)
+            self._action_response("pause_buys_set", state)
+        elif path == "/controls/resume-buys":
+            state = self.server.execution_control_store.set_pause_buys(False)
+            self._action_response("pause_buys_cleared", state)
+        elif path == "/controls/pause-sells":
+            state = self.server.execution_control_store.set_pause_sells(True)
+            self._action_response("pause_sells_set", state)
+        elif path == "/controls/resume-sells":
+            state = self.server.execution_control_store.set_pause_sells(False)
+            self._action_response("pause_sells_cleared", state)
         else:
             _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found"})
 
@@ -269,16 +285,22 @@ class DashboardServer(ThreadingHTTPServer):
         emergency_store: EmergencyStore,
         token: str,
         mode: str,
+        execution_control_store: PaperExecutionControlStore | None = None,
         paper_account_snapshot_path: Path | None = None,
         paper_canary_runtime_path: Path | None = None,
+        market_data_freshness_path: Path | None = None,
     ) -> None:
         super().__init__(address, DashboardHandler)
         self.event_store = event_store
         self.emergency_store = emergency_store
+        self.execution_control_store = execution_control_store or PaperExecutionControlStore(
+            emergency_store.path.with_name("paper_execution_control.json")
+        )
         self.token = token
         self.mode = mode
         self.paper_account_snapshot_path = paper_account_snapshot_path
         self.paper_canary_runtime_path = paper_canary_runtime_path
+        self.market_data_freshness_path = market_data_freshness_path
         self.form_nonce = secrets.token_urlsafe(32)
         self.session_value = _session_value(token) if token else ""
 
@@ -377,6 +399,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("runtime/emergency_state.json"),
     )
     parser.add_argument(
+        "--execution-control",
+        type=Path,
+        default=Path("runtime/paper_execution_control.json"),
+    )
+    parser.add_argument(
         "--paper-account-snapshot",
         type=Path,
         default=Path("runtime/state/paper_account_snapshot.json"),
@@ -385,6 +412,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--paper-canary-runtime",
         type=Path,
         default=Path("runtime/state/kis_paper_canary.json"),
+    )
+    parser.add_argument(
+        "--market-data-freshness",
+        type=Path,
+        default=Path("runtime/state/kis_paper_intraday_freshness.json"),
     )
     parser.add_argument("--mode", default=os.environ.get("THERICHER_MODE", "off"))
     parser.add_argument("--token", default=os.environ.get("THERICHER_DASHBOARD_TOKEN", ""))
@@ -395,14 +427,17 @@ def main() -> None:
     args = build_parser().parse_args()
     store = EventStore(args.state_db, args.event_log)
     emergency = EmergencyStore(args.emergency_state)
+    execution_control = PaperExecutionControlStore(args.execution_control)
     server = DashboardServer(
         (args.host, args.port),
         event_store=store,
         emergency_store=emergency,
+        execution_control_store=execution_control,
         token=args.token,
         mode=args.mode,
         paper_account_snapshot_path=args.paper_account_snapshot,
         paper_canary_runtime_path=args.paper_canary_runtime,
+        market_data_freshness_path=args.market_data_freshness,
     )
     print(f"dashboard listening on http://{args.host}:{args.port}")
     server.serve_forever()

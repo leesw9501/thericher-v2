@@ -30,6 +30,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '[string]$ProjectRoot = (Join-Path $PSScriptRoot "..")' in source
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
+    assert "run --rm --no-deps --build $($schedule.Service)" in source
     assert (
         "New-ScheduledTaskTrigger -Weekly "
         "-DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday"

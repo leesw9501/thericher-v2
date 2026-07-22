@@ -511,11 +511,15 @@ Read:
 
 Write:
 
-- pause new entries,
+- pause model-directed buys,
+- pause model-directed discretionary sells when a sell executor exists,
 - request cancellation of open orders,
-- later, pause discretionary strategy reductions when the goal-owned
-  paper-execution capability is implemented;
-- resume only after explicit local confirmation and fresh reconciliation.
+- clear either directional pause locally.
+
+The current canary consumes the buy pause; the sell pause is durable operator
+intent for the later sell executor. Clearing a directional pause is not a new
+research, report, capital, or operator-approval boundary. A pause never blocks
+a verified hard-risk exit, emergency containment, or reconciliation requirement.
 
 No dashboard action may suppress a hard-risk exit, emergency containment, or
 reconciliation requirement. A requested "sell stop" therefore means pausing

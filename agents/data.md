@@ -4,6 +4,12 @@
 
 Own the current KIS-native daily cache and its future reusable loaders.
 
+The local console receives only a sanitized intraday freshness projection. It
+does not receive paths, raw rows, manifests, quote values, hashes, credentials,
+or account data. The projection reads the historical and prospective-head
+indexes independently, so a missing head cache is visible as `not_created`, not
+as a failed collection or an authority hold.
+
 - Active job: `kis-paper-private-daily-backfill-v1`
 - Authoritative cursor/index:
   `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`

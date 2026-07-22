@@ -7,6 +7,11 @@ model-side PnL attribution. Current priority is useful KIS-native evidence and
 bounded intraday research; GPU time follows a frozen eligible job rather than
 becoming a goal by itself.
 
+The local KIS Paper operations console is Execution-owned. Its runtime state and
+directional pauses do not qualify, disqualify, or promote any research model;
+research may keep preparing eligible breadth/depth/ensemble/replication work in
+parallel with Paper operation.
+
 ## Intraday Input Contract
 
 The KIS-native minute cache now supports one bounded chronological CPU baseline,

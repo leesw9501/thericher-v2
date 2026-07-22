@@ -353,6 +353,8 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         assert ("Content-Type", "text/html; charset=utf-8") in headers
         assert "Local paper console" in html
         assert "KIS broker state" in html
+        assert "Pause buys" in html
+        assert "Pause sells" in html
         cookie_header = _cookies(headers)
         nonce = _nonce(html)
 
@@ -361,17 +363,63 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         state = json.loads(state_body)
         assert state["local_paper_fill_count"] == 1
         assert state["kis_prices_status"] == "unknown"
+        assert state["pause_buys"] is False
+        assert state["pause_sells"] is False
 
-        status, _, _ = _request(server, "POST", "/emergency/stop-new-orders")
+        status, _, _ = _request(server, "POST", "/controls/pause-buys")
         assert status == 403
         assert events.jsonl_path.read_bytes() == event_bytes
-        assert not emergency.read().stop_new_orders
+        assert not server.execution_control_store.read().pause_buys
 
         form = urlencode({"csrf": nonce})
         form_headers = {
             "Content-Type": "application/x-www-form-urlencoded",
             "Cookie": cookie_header,
         }
+        status, _, action_body = _request(
+            server,
+            "POST",
+            "/controls/pause-buys",
+            body=form,
+            headers=form_headers,
+        )
+        assert status == 200
+        assert json.loads(action_body)["status"] == "pause_buys_set"
+        assert server.execution_control_store.read().pause_buys
+        assert events.jsonl_path.read_bytes() == event_bytes
+
+        status, _, action_body = _request(
+            server,
+            "POST",
+            "/controls/pause-sells",
+            body=form,
+            headers=form_headers,
+        )
+        assert status == 200
+        assert json.loads(action_body)["status"] == "pause_sells_set"
+        controls = server.execution_control_store.read()
+        assert controls.pause_buys and controls.pause_sells
+        assert events.jsonl_path.read_bytes() == event_bytes
+
+        status, _, action_body = _request(
+            server,
+            "POST",
+            "/controls/resume-buys",
+            body=form,
+            headers=form_headers,
+        )
+        assert status == 200
+        assert json.loads(action_body)["status"] == "pause_buys_cleared"
+        controls = server.execution_control_store.read()
+        assert not controls.pause_buys and controls.pause_sells
+        assert events.jsonl_path.read_bytes() == event_bytes
+
+        status, _, state_body = _request(server, "GET", "/state")
+        assert status == 200
+        state = json.loads(state_body)
+        assert state["pause_buys"] is False
+        assert state["pause_sells"] is True
+
         status, _, action_body = _request(
             server,
             "POST",
@@ -488,6 +536,23 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     ]
     assert not any("kis" in module_name.lower() for module_name in imports)
 
+    view_source = (repo_root / "src" / "thericher_v2" / "dashboard" / "view.py").read_text(
+        encoding="utf-8"
+    )
+    view_module = ast.parse(view_source)
+    view_imports = [
+        alias.name
+        for node in ast.walk(view_module)
+        if isinstance(node, ast.Import)
+        for alias in node.names
+    ] + [
+        node.module or ""
+        for node in ast.walk(view_module)
+        if isinstance(node, ast.ImportFrom)
+    ]
+    assert not any("kis_paper_intraday" in module_name for module_name in view_imports)
+    assert not any("kis_market_data" in module_name for module_name in view_imports)
+
     compose = (repo_root / "docker-compose.yml").read_text(encoding="utf-8")
     engine_section = compose.split("\n  engine:\n", maxsplit=1)[1].split(
         "\n  web:\n", maxsplit=1
@@ -498,9 +563,12 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert '"127.0.0.1:8787:8787"' in web_section
     assert "KIS_" not in web_section
     assert "TIINGO" not in web_section
+    assert "market_data" not in web_section
     assert "thericher-v2-runtime:/app/runtime" in engine_section
     assert "thericher-v2-runtime:/app/runtime:ro" in web_section
     assert "thericher-v2-web-emergency:/app/emergency" in web_section
+    assert "paper_execution_control.json" in web_section
+    assert "kis_paper_intraday_freshness.json" in web_section
 
     kis_section = compose.split("\n  kis-readonly:\n", maxsplit=1)[1].split(
         "\n  kis-paper-canary:\n", maxsplit=1
@@ -540,6 +608,8 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_PAPER_ACCOUNT" not in intraday_section
     assert "KIS_LIVE" not in intraday_section
     assert ".env" not in intraday_section
+    assert "kis_paper_intraday_freshness.json" in intraday_section
+    assert "thericher-v2-runtime:/app/runtime" in intraday_section
 
     intraday_head_section = compose.split("\n  kis-paper-intraday-head:\n", maxsplit=1)[1].split(
         "\nvolumes:\n", maxsplit=1
@@ -552,6 +622,8 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_PAPER_ACCOUNT" not in intraday_head_section
     assert "KIS_LIVE" not in intraday_head_section
     assert ".env" not in intraday_head_section
+    assert "kis_paper_intraday_freshness.json" in intraday_head_section
+    assert "thericher-v2-runtime:/app/runtime" in intraday_head_section
 
     assert "\n  paper-capital-proposal:\n" not in compose
 

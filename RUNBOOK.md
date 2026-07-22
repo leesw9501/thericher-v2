@@ -283,6 +283,41 @@ an unknown outcome. These are code correctness requirements, not an operator
 approval sequence. The dashboard remains credential-free and cannot submit an
 order by itself.
 
+## Local KIS Paper Operations Console
+
+Start or rebuild the local-only console with:
+
+```powershell
+docker compose up -d --build web
+```
+
+Open `http://127.0.0.1:8787`. The console reads only sanitized runtime
+projections and writes local directional state. `Pause buys` prevents a new
+buy canary/session from loading Paper configuration or calling KIS; `Resume
+buys` clears that local instruction immediately. `Pause sells` is preserved for
+the future sell executor and does not suppress a hard-risk exit. None of these
+buttons submits, modifies, cancels, or reconciles a broker order by itself, and
+none is a Paper approval, capital, profitability, trade-count, or report gate.
+
+The web service has no KIS credentials, private canary state, or `D:` market
+data mount. It can show a metadata-only cache-freshness projection. To refresh
+that projection without reading credentials or calling KIS:
+
+```powershell
+docker compose --profile kis-paper-intraday-head run --rm --no-deps --build `
+  kis-paper-intraday-head python scripts/backfill_kis_paper_private_intraday.py `
+  --project-only --runtime-projection /app/runtime/state/kis_paper_intraday_freshness.json
+```
+
+`raw_market_data_retained: false` is never a control condition for the console,
+a later collection, a KIS Paper call, an order, or a schedule. It records only
+the absence of bytes for its own historical result.
+
+The installed Windows Paper schedules invoke their named Docker profile with
+`--build`, so a due session uses the current committed image rather than a stale
+service image. This is runtime reproducibility, not a new scheduling or Paper
+approval condition.
+
 ## KIS Virtual-Paper Canary
 
 The quote-derived execution-learning command is a virtual-paper US buy-limit

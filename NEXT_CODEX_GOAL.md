@@ -2,29 +2,33 @@
 
 ## Objective
 
-Build the first minimal local KIS Paper operations console while KIS Paper data
-collection, the quote-session canary, and Engine Research continue independently.
+Complete the first autonomous KIS Paper operating cycle: let the installed
+quote-session and intraday-head schedules run on their next eligible US-session
+windows, integrate their sanitized outcomes, and keep the local operations
+console truthful and current.
 
-The console gives the operator a local view of the current paper account/runtime
-state and durable buy/sell pause controls. It is an execution-learning tool, not
-a public dashboard, research gate, or substitute for broker reconciliation.
+This is execution and data learning, not a profitability, model-promotion, or
+manual-approval milestone. The schedules are already installed and invoke their
+named Docker profiles with `--build`.
 
 ## Standing Authority And Boundaries
 
-- All private `KIS_PAPER_*` market, account, position, open-order, order,
-  modify, cancel, reconciliation, raw-retention, and goal-owned schedule work
-  is authorized. Do not add a capital, trade-count, report, profitability, or
-  manual-confirmation gate.
-- `raw_market_data_retained: false` is a factual result for its own missing
-  bytes. It never blocks a fresh KIS Paper collection, account call, distinct
-  virtual intent, or schedule.
-- The console may expose only sanitized local paper facts and must never read,
-  receive, render, log, or persist credentials, account identifiers, raw quote
-  values, broker bodies, or private intent state.
+- All private `KIS_PAPER_*` market/account reads, positions, open orders,
+  virtual-order submit/modify/cancel, reconciliation, raw data retention on
+  `D:`, and goal-owned schedules are authorized. Do not add a capital,
+  trade-count, report, profitability, or confirmation gate.
+- A distinct new virtual intent may proceed after the executor's technical
+  paper-only routing, persisted identity, pacing, and exact-intent recovery
+  behavior. An ambiguous old intent never becomes a global pause or one-shot
+  quota.
+- `raw_market_data_retained: false` describes only its own historical missing
+  bytes. It never blocks a fresh KIS Paper call, head collection, account read,
+  virtual order, or schedule.
+- Never read `KIS_LIVE_*`, build a live route, use real capital, buy data,
+  accept unclear rights, expose a public service, or commit secrets/raw data/
+  generated artifacts.
 - Keep raw data under `D:\market_data` and generated artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`, never Git.
-- Do not read `KIS_LIVE_*`, construct a live route, use real capital, buy data,
-  accept unclear rights, or expose a public service.
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
 ## Required First Reads
 
@@ -33,58 +37,54 @@ a public dashboard, research gate, or substitute for broker reconciliation.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect the current web/runtime, Paper canary, emergency-control, and
-   sanitized account-snapshot contracts before changing them.
-5. Ask Claude for one concise falsification-first drift review before adding
-   console control paths. Do not send secrets, account identifiers, raw broker
-   responses, or private recovery state.
+4. Inspect the current Windows task status, Docker image/build state, safe
+   runtime projections, and external evidence before reacting to a scheduled
+   outcome. Do not inspect secrets, account identifiers, raw broker bodies, or
+   private intent files.
 
 ## Role-Owned Work
 
 ### Execution Agent
 
-1. Reuse the existing local web/runtime patterns where possible to show the
-   current paper mode, snapshot freshness, position/open-order counts, buying
-   power availability, latest canary/recovery status, and latest local-paper
-   attribution facts. Missing or stale runtime evidence must display as
-   `unknown`, never as zero.
-2. Add durable local controls for `pause_buys` and `pause_sells`, plus the
-   existing emergency stop/cancel semantics when already supported. Controls
-   write a narrow local control state consumed by the executor; they do not
-   directly call KIS or submit an order from the web process.
-3. Bind the console to local/private use only. Keep KIS credentials and private
-   recovery state out of the web container and response payloads. A due
-   `kis-paper-session` may continue its authorized virtual canary independently;
-   reconcile an exact ambiguous intent before its own replacement only.
+1. Reattest the two named Windows tasks and their next/last run status. The
+   quote-session may make its already-authorized virtual canary during its
+   eligible session without a new operator confirmation.
+2. Integrate its safe session/canary/reconciliation result into the runtime
+   projection and local console. Diagnose only allowlisted reason/HTTP/upstream
+   metadata when a route fails; never log broker bodies, identifiers, or
+   credentials.
+3. Preserve exact ambiguous intents for their own read-only recovery only, but
+   continue other ready virtual Paper work independently. Directional pause
+   state is local operator intent, never a research or data latch.
 
 ### Data Agent
 
-1. Reattest QQQ/SPY intraday cache and inspect the first due head outcome when
-   available. Continue bounded authorized collection; an old unretained marker
-   is not a stop condition.
-2. Record current cache/snapshot freshness through a sanitized projection that
-   does not expose raw bars or quote values.
+1. Integrate the next due intraday-head outcome under its independent D: cache
+   root and refresh the metadata-only freshness projection.
+2. Reattest QQQ/SPY cache coverage and retain source limitations visibly. A
+   failed/partial/unretained historical result is a recovery fact for itself,
+   never a reason to stop fresh collection.
 
 ### Engine Research Agent
 
-1. Record the completed fixed LSTM/TCN/attention screen as jointly reported,
-   no-winner evidence. Do not retune, select, or ensemble from its five
-   comparison sessions.
-2. Keep breadth, depth, ensemble, and replication queues current while the GPU
-   stays idle until a new frozen prospective KIS data contract makes another
-   experiment eligible.
+1. Keep the completed no-winner sequence screen recorded as joint evidence.
+2. Prepare the next prospective KIS-compatible campaign contract from actually
+   retained fresh sessions. Do not treat the current small comparison slice or
+   GPU idleness as a reason to select, retune, or ensemble a candidate.
 
 ## Completion Evidence
 
-- A local-only Docker-operable console with sanitized current/unknown states and
-  durable pause controls.
-- Focused tests proving the web process has no KIS credential, broker-submit,
-  live-route, raw-data, or private-intent access.
-- Browser or HTTP evidence that controls persist and are reflected without
-  performing a broker side effect.
-- Current scheduler/cache facts integrated when due; not-yet-due work is not a
+- Both installed task definitions remain `Ready` and use their current Docker
+  profiles with `--build`.
+- At least one newly due scheduled outcome is preserved as sanitized external
+  evidence and reflected as current/unknown in the console. If no eligible
+  window has occurred yet, leave the tasks armed and continue other ready work;
+  do not manufacture an out-of-session order or treat time as an operator
   blocker.
-- No secrets, raw data, generated artifacts, or live behavior in Git.
+- Freshness retains only metadata in web/runtime state, while raw provider data
+  remains under `D:`.
+- No KIS live behavior, secret output, raw broker payload, public dashboard,
+  or generated artifact enters Git.
 
 ## Verification
 
@@ -97,4 +97,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add local KIS paper operations console`
+`Operate first autonomous KIS paper cycle`

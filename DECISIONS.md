@@ -4022,3 +4022,24 @@ authority effect; later confirmation sessions remain unmaterialized.
 
 Reason: this broadens architecture evidence without silently selecting from a
 small comparison slice or turning research evidence into a Paper-work gate.
+
+## 2026-07-22 - Add a local KIS Paper operations projection and directional controls
+
+Decision: keep the emergency stop/cancel state separate from reversible
+`pause_buys` and `pause_sells` state. The local web process may change only that
+small local state; it has no KIS credentials, broker client, private intent
+state, or `D:` market-data mount. The active buy canary/session checks
+`pause_buys` before loading configuration or making a KIS call. `pause_sells` is
+persisted now and will be consumed only by a later deterministic sell executor;
+it can never block a hard-risk exit.
+
+The same console reads a metadata-only intraday freshness projection. It shows
+cache mode, safe stream identity, age, outcome class, and chunk counts, but not
+raw rows, values, paths, hashes, manifests, account identifiers, or secrets.
+An old `raw_market_data_retained: false` marker remains a factual absence of
+bytes for that historical result and is ignored for later collection and for the
+freshness count; it is never a Paper or schedule latch.
+
+Reason: this gives the operator immediate, local operational control and useful
+current data visibility without adding a broker-capable dashboard, a report
+chain, a capital gate, or another approval mechanism.

@@ -18,6 +18,7 @@ from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
 from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
 
+from .emergency import DEFAULT_PAPER_EXECUTION_CONTROL_STATE, PaperExecutionControlStore
 from .kis_paper_canary import (
     DEFAULT_KIS_PAPER_CANARY_ACCOUNT_SNAPSHOT,
     DEFAULT_KIS_PAPER_CANARY_ARTIFACT_ROOT,
@@ -45,7 +46,9 @@ from .kis_readonly import (
 DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS = 300
 KIS_PAPER_SESSION_EVIDENCE_KIND = "kis_paper_canary_session_evidence"
 _SAFE_SESSION_IDS = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
-_SESSION_STATUSES = frozenset({"preview", "not_due", "quote_unavailable", "canary_completed"})
+_SESSION_STATUSES = frozenset(
+    {"preview", "not_due", "paused", "quote_unavailable", "canary_completed"}
+)
 _SESSION_REASONS = frozenset(
     {
         "preview",
@@ -53,6 +56,7 @@ _SESSION_REASONS = frozenset(
         "quote_unavailable",
         "quote_rejected",
         "quote_response_incomplete",
+        "pause_buys_active",
         "session_unavailable",
     }
 )
@@ -63,7 +67,7 @@ class KisPaperCanarySessionOutcome:
     """Credential-free result of one scheduled virtual-paper session attempt."""
 
     session_id: str
-    status: Literal["preview", "not_due", "quote_unavailable", "canary_completed"]
+    status: Literal["preview", "not_due", "paused", "quote_unavailable", "canary_completed"]
     reason_code: str
     observed_at: datetime
     evidence_path: Path
@@ -143,6 +147,7 @@ def run_kis_paper_quote_session(
     clock: Callable[[], datetime] | None = None,
     session_id: str | None = None,
     valid_seconds: int = DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS,
+    execution_control_path: Path = DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
 ) -> KisPaperCanarySessionOutcome:
     """Run one due virtual session without recording the source quote anywhere."""
 
@@ -171,6 +176,15 @@ def run_kis_paper_quote_session(
                 session_id=resolved_session_id,
                 status="not_due",
                 reason_code=session_reason,
+                observed_at=observed_at,
+                artifact_root=artifact_root,
+                repository_root=repository_root,
+            )
+        if PaperExecutionControlStore(execution_control_path).read().pause_buys:
+            return _record_session_outcome(
+                session_id=resolved_session_id,
+                status="paused",
+                reason_code="pause_buys_active",
                 observed_at=observed_at,
                 artifact_root=artifact_root,
                 repository_root=repository_root,
@@ -236,6 +250,7 @@ def run_kis_paper_quote_session(
             now=now,
             clock=clock,
             submit_permitted=is_us_equity_regular_session_window,
+            execution_control_path=execution_control_path,
         )
         return _record_canary_outcome(
             session_id=resolved_session_id,
@@ -284,7 +299,7 @@ def _record_canary_outcome(
 def _record_session_outcome(
     *,
     session_id: str,
-    status: Literal["preview", "not_due", "quote_unavailable", "canary_completed"],
+    status: Literal["preview", "not_due", "paused", "quote_unavailable", "canary_completed"],
     reason_code: str,
     observed_at: datetime,
     artifact_root: Path,
@@ -403,6 +418,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_KIS_PAPER_CANARY_EMERGENCY_STATE,
     )
     parser.add_argument(
+        "--execution-control",
+        type=Path,
+        default=DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
+    )
+    parser.add_argument(
         "--artifact-root",
         type=Path,
         default=Path(
@@ -431,6 +451,7 @@ def main(argv: list[str] | None = None) -> int:
             cancel_after_submit=arguments.cancel_after_submit,
             session_id=arguments.session_id,
             valid_seconds=arguments.valid_seconds,
+            execution_control_path=arguments.execution_control,
         )
     except (KisPaperCanaryError, KisPaperReadOnlyError, KisPaperQuoteError, ValueError) as error:
         print(

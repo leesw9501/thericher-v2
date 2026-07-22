@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal
 from pathlib import Path
+from typing import Literal
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import Bar, Timeframe, require_utc
@@ -21,9 +22,16 @@ from thericher_v2.execution.kis_market_data import KisPaperMinuteRawBar
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
     KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME,
+    KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
     KisPaperPrivateIntradayTarget,
+    sanitize_kis_paper_private_intraday_failure_reason,
 )
 
+from .market_data_freshness_runtime import (
+    MARKET_DATA_FRESHNESS_RUNTIME_TTL,
+    MarketDataFreshnessRuntimeSnapshot,
+    MarketDataFreshnessStream,
+)
 from .us_equity_session import UsEquity2026Session, us_equity_2026_session
 
 _KOREA_TZ = ZoneInfo("Asia/Seoul")
@@ -41,6 +49,144 @@ class KisPaperIntradayFeatureInput:
     session_windows: tuple[SessionWindow, ...]
     input_id: str
     input_hash: str
+
+
+def build_kis_paper_private_intraday_freshness_snapshot(
+    *,
+    cache_root: Path,
+    repo_root: Path,
+    observed_at: datetime | None = None,
+) -> MarketDataFreshnessRuntimeSnapshot:
+    """Project index metadata only; this never opens a manifest or a raw-bar file."""
+
+    observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
+    streams = tuple(
+        stream
+        for collection_mode, root in (
+            ("backfill", cache_root),
+            ("head", cache_root.with_name(f"{cache_root.name}-head")),
+        )
+        for stream in _freshness_streams(
+            collection_mode=collection_mode,
+            cache_root=root,
+            repo_root=repo_root,
+        )
+    )
+    return MarketDataFreshnessRuntimeSnapshot(
+        observed_at=observed,
+        expires_at=observed + MARKET_DATA_FRESHNESS_RUNTIME_TTL,
+        streams=streams,
+    )
+
+
+def _freshness_streams(
+    *,
+    collection_mode: Literal["backfill", "head"],
+    cache_root: Path,
+    repo_root: Path,
+) -> tuple[MarketDataFreshnessStream, ...]:
+    targets = tuple(
+        KisPaperPrivateIntradayTarget(*target) for target in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+    )
+    try:
+        root = _external_backfill_root(cache_root=cache_root, repo_root=repo_root)
+    except ValueError:
+        return tuple(
+            _invalid_freshness_stream(collection_mode=collection_mode, target=target)
+            for target in targets
+        )
+    index_path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
+    if not index_path.exists():
+        return tuple(
+            MarketDataFreshnessStream(
+                collection_mode=collection_mode,
+                stream=target.target_key,
+                cache_status="not_created",
+                last_observed_at_utc=None,
+                latest_collection_outcome="unknown",
+                retained_chunk_count=0,
+                partial_chunk_count=0,
+            )
+            for target in targets
+        )
+    try:
+        index_bytes = _read_bytes(index_path, "private intraday index is invalid")
+        index = _decode_json(index_bytes, "invalid")
+        return tuple(
+            _freshness_stream_from_index(
+                collection_mode=collection_mode,
+                index=index,
+                target=target,
+            )
+            for target in targets
+        )
+    except (OSError, TypeError, ValueError):
+        return tuple(
+            _invalid_freshness_stream(collection_mode=collection_mode, target=target)
+            for target in targets
+        )
+
+
+def _freshness_stream_from_index(
+    *,
+    collection_mode: Literal["backfill", "head"],
+    index: Mapping[str, object],
+    target: KisPaperPrivateIntradayTarget,
+) -> MarketDataFreshnessStream:
+    state = _target_state(index=index, target=target)
+    chunks = state.get("chunks")
+    if not isinstance(chunks, list):
+        raise ValueError("private intraday index is invalid")
+    if any(not isinstance(chunk, Mapping) for chunk in chunks):
+        raise ValueError("private intraday index is invalid")
+    retained = [chunk for chunk in chunks if chunk.get("raw_market_data_retained") is True]
+    outcomes = [chunk.get("outcome") for chunk in retained]
+    if any(outcome not in {"committed", "partial"} for outcome in outcomes):
+        raise ValueError("private intraday index is invalid")
+    observed_value = state.get("last_observed_at_utc")
+    if observed_value is not None and not isinstance(observed_value, str):
+        raise ValueError("private intraday index is invalid")
+    last_observed_at = None if observed_value is None else require_utc(
+        datetime.fromisoformat(observed_value), "last_observed_at_utc"
+    )
+    latest = "unknown" if not outcomes else outcomes[-1]
+    return MarketDataFreshnessStream(
+        collection_mode=collection_mode,
+        stream=target.target_key,
+        cache_status="present",
+        last_observed_at_utc=last_observed_at,
+        latest_collection_outcome=latest,  # type: ignore[arg-type]
+        retained_chunk_count=len(retained),
+        partial_chunk_count=sum(outcome == "partial" for outcome in outcomes),
+        detail_code=_freshness_detail_code(state.get("last_reason")),
+    )
+
+
+def _invalid_freshness_stream(
+    *,
+    collection_mode: Literal["backfill", "head"],
+    target: KisPaperPrivateIntradayTarget,
+) -> MarketDataFreshnessStream:
+    return MarketDataFreshnessStream(
+        collection_mode=collection_mode,
+        stream=target.target_key,
+        cache_status="invalid",
+        last_observed_at_utc=None,
+        latest_collection_outcome="unknown",
+        retained_chunk_count=0,
+        partial_chunk_count=0,
+        detail_code="metadata_invalid",
+    )
+
+
+def _freshness_detail_code(value: object) -> str | None:
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        raise ValueError("private intraday index is invalid")
+    if value == "already_cached":
+        return value
+    return sanitize_kis_paper_private_intraday_failure_reason(value)
 
 
 def load_verified_kis_paper_private_intraday_catalog(

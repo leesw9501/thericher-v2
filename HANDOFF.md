@@ -93,6 +93,24 @@ is at
 `D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\qqq-20260623-20260721-sequence-architecture-r1\summary.json`.
 There is no winner, model promotion, ensemble, or Paper-work implication.
 
+The first local KIS Paper operations console is now implemented. It is bound to
+`127.0.0.1:8787`, reads only sanitized account/canary/freshness projections, and
+persists reversible `pause_buys`/`pause_sells` instructions in a separate local
+control file. The web process has no KIS credentials, broker client, private
+intent state, or market-data mount. The active canary/session consumes
+`pause_buys` before configuration/network access; `pause_sells` is retained for
+the later sell executor and cannot suppress a hard-risk exit. These are local
+operations controls, not Paper authority or research-promotion gates.
+
+The current safe freshness projection reports QQQ/NAS and SPY/AMS separately
+for the backfill and prospective-head caches. Existing backfill evidence has 14
+retained chunks per stream (QQQ: 3 partial; SPY: 2 partial); the head cache is
+not yet created. `raw_market_data_retained: false` remains an historical fact
+only and never blocks fresh collection, KIS Paper work, or a schedule.
+The two installed Windows schedules now invoke their named Docker profiles with
+`--build`; their next due times remain the first runtime evidence, not a
+permission boundary.
+
 ## Current Data State
 
 `kis-paper-private-daily-backfill-v1` is the active KIS-native daily cache:
@@ -383,11 +401,9 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: keep the KIS-native
-minute cache accumulating while turning the frozen QQQ CPU baseline into a
-bounded feature/candidate preparation loop. The three
-older canary intents remain immutable recovery evidence, but do not create a
-global one-shot quota or stop new distinct Paper work. At each boundary, review
-the data contract, execution route readiness, research queues, GPU eligibility,
-disk capacity, and role ownership; make reversible no-cost changes autonomously
-and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`. The older canary
+intents remain immutable recovery evidence, but do not create a global one-shot
+quota or stop new distinct Paper work. At each boundary, review the data
+contract, execution route readiness, research queues, GPU eligibility, disk
+capacity, and role ownership; make reversible no-cost changes autonomously and
+escalate only a real remaining operator boundary.

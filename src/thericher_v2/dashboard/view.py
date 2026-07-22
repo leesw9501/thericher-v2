@@ -8,7 +8,11 @@ from decimal import Decimal, InvalidOperation
 from html import escape
 from pathlib import Path
 
-from thericher_v2.execution.emergency import EmergencyStore
+from thericher_v2.data.market_data_freshness_runtime import (
+    MarketDataFreshnessRuntimeSnapshot,
+    read_market_data_freshness_runtime,
+)
+from thericher_v2.execution.emergency import EmergencyStore, PaperExecutionControlStore
 from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
 from thericher_v2.execution.paper_account_snapshot import (
     PaperAccountSnapshot,
@@ -60,6 +64,10 @@ class DashboardSnapshot:
     cancel_open_orders_requested: bool
     emergency_reason: str
     emergency_updated_at: str
+    pause_buys: bool
+    pause_sells: bool
+    execution_control_reason: str
+    execution_control_updated_at: str
     position_count: int | None
     latest_decision_count: int | None
     cash_by_currency: dict[str, str]
@@ -85,6 +93,8 @@ class DashboardSnapshot:
     paper_canary_account_status: str = "unknown"
     paper_canary_observed_at: str | None = None
     paper_canary: PaperCanaryRuntimeSnapshot | None = None
+    market_data_freshness_status: str = "unknown"
+    market_data_freshness: MarketDataFreshnessRuntimeSnapshot | None = None
 
     def to_dict(self) -> dict[str, object]:
         return to_jsonable(self)
@@ -105,12 +115,21 @@ def build_snapshot(
     emergency_store: EmergencyStore,
     mode: str = "off",
     *,
+    execution_control_store: PaperExecutionControlStore | None = None,
     paper_account_snapshot_path: Path | None = None,
     paper_canary_runtime_path: Path | None = None,
+    market_data_freshness_path: Path | None = None,
     now: datetime | None = None,
 ) -> DashboardSnapshot:
     current_time = now or datetime.now(UTC)
     emergency = emergency_store.read()
+    execution_control = (
+        execution_control_store
+        if execution_control_store is not None
+        else PaperExecutionControlStore(
+            emergency_store.path.with_name("paper_execution_control.json")
+        )
+    ).read()
     try:
         events = tuple(sorted(event_store.iter_events(), key=lambda event: event.seq))
         local_paper = _project_local_paper(events)
@@ -153,6 +172,11 @@ def build_snapshot(
     elif paper_canary_read.status == "unavailable":
         message = f"{message} KIS virtual-paper canary state is unavailable."
 
+    market_data_freshness_read = read_market_data_freshness_runtime(
+        market_data_freshness_path,
+        now=current_time,
+    )
+
     return DashboardSnapshot(
         mode=mode,
         heartbeat_utc=current_time.isoformat(),
@@ -161,6 +185,10 @@ def build_snapshot(
         cancel_open_orders_requested=emergency.cancel_open_orders_requested,
         emergency_reason=emergency.reason,
         emergency_updated_at=emergency.updated_at.isoformat(),
+        pause_buys=execution_control.pause_buys,
+        pause_sells=execution_control.pause_sells,
+        execution_control_reason=execution_control.reason,
+        execution_control_updated_at=execution_control.updated_at.isoformat(),
         position_count=None if status == "local_monitor_degraded" else len(local_paper.positions),
         latest_decision_count=None if status == "local_monitor_degraded" else len(decisions),
         cash_by_currency={},
@@ -200,13 +228,22 @@ def build_snapshot(
             None if paper_canary is None else paper_canary.observed_at.isoformat()
         ),
         paper_canary=paper_canary,
+        market_data_freshness_status=market_data_freshness_read.status,
+        market_data_freshness=market_data_freshness_read.snapshot,
     )
 
 
 def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> str:
     """Render a compact, local-only operational view from a sanitized snapshot."""
 
-    safety_state = "Paused" if snapshot.stop_new_orders else "Ready"
+    buy_state = "Paused" if snapshot.pause_buys else "Ready"
+    sell_state = "Paused" if snapshot.pause_sells else "Ready"
+    buy_action = "resume-buys" if snapshot.pause_buys else "pause-buys"
+    buy_label = "Resume buys" if snapshot.pause_buys else "Pause buys"
+    buy_class = "" if snapshot.pause_buys else "danger"
+    sell_action = "resume-sells" if snapshot.pause_sells else "pause-sells"
+    sell_label = "Resume sells" if snapshot.pause_sells else "Pause sells"
+    sell_class = "" if snapshot.pause_sells else "danger"
     cancellation_state = "Requested" if snapshot.cancel_open_orders_requested else "Not requested"
     paper_account_details = _paper_account_details(
         snapshot.paper_account,
@@ -368,21 +405,29 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
         <span class="metric-value">{_text(snapshot.status)}</span>
       </div>
       <div class="metric">
-        <span class="metric-label">New entries</span>
-        <span class="metric-value {_state_class(snapshot.stop_new_orders)}">{safety_state}</span>
+        <span class="metric-label">Model buys</span>
+        <span class="metric-value {_state_class(snapshot.pause_buys)}">{buy_state}</span>
       </div>
       <div class="metric">
-        <span class="metric-label">Cancellation</span>
-        <span class="metric-value">{cancellation_state}</span>
+        <span class="metric-label">Model sells</span>
+        <span class="metric-value {_state_class(snapshot.pause_sells)}">{sell_state}</span>
       </div>
     </section>
 
     <section class="section" aria-labelledby="safety-heading">
       <div class="section-header">
-        <h2 id="safety-heading">Local safety state</h2>
+        <h2 id="safety-heading">Execution controls</h2>
         <span class="scope">Local state only</span>
       </div>
       <div class="actions">
+        <form method="post" action="/controls/{buy_action}">
+          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
+          <button class="{buy_class}" type="submit">{buy_label}</button>
+        </form>
+        <form method="post" action="/controls/{sell_action}">
+          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
+          <button class="{sell_class}" type="submit">{sell_label}</button>
+        </form>
         <form method="post" action="/emergency/stop-new-orders">
           <input type="hidden" name="csrf" value="{_text(form_nonce)}">
           <button class="danger" type="submit">Pause new entries</button>
@@ -393,7 +438,10 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
         </form>
       </div>
       <p class="scope">
-        Reason: {_text(snapshot.emergency_reason)}. Updated {_text(snapshot.emergency_updated_at)}.
+        Directional state: {_text(snapshot.execution_control_reason)}. Updated
+        {_text(snapshot.execution_control_updated_at)}.
+        Emergency: {_text(snapshot.emergency_reason)}.
+        Cancellation: {cancellation_state}.
       </p>
     </section>
 
@@ -493,6 +541,18 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
       {paper_account_details}
       {_paper_canary_details(snapshot)}
     </section>
+
+    <section class="section" aria-labelledby="data-heading">
+      <div class="section-header">
+        <h2 id="data-heading">Market data freshness</h2>
+        <span class="tag {_paper_account_tag(snapshot.market_data_freshness_status)}">
+          {_text(snapshot.market_data_freshness_status)}
+        </span>
+      </div>
+      <div class="table-wrap">
+        {_market_data_freshness_table(snapshot.market_data_freshness)}
+      </div>
+    </section>
   </main>
 </body>
 </html>"""
@@ -536,6 +596,34 @@ def _paper_canary_details(snapshot: DashboardSnapshot) -> str:
         Reconciliation detail: {_optional_text(snapshot.paper_canary_reconciliation_reason_code)}.
         Positions: {canary.position_count}. Open orders: {canary.open_order_count}.
       </p>"""
+
+
+def _market_data_freshness_table(snapshot: MarketDataFreshnessRuntimeSnapshot | None) -> str:
+    if snapshot is None:
+        return "<p class=\"empty\">unknown</p>"
+    rows = "".join(
+        f"<tr><td>{_text(item.collection_mode)}</td><td>{_text(item.stream)}</td>"
+        f"<td>{_text(item.cache_status)}</td>"
+        f"<td>{_text(item.latest_collection_outcome)}</td>"
+        f"<td>{_optional_text(_datetime_text(item.last_observed_at_utc))}</td>"
+        f"<td class=\"numeric\">{item.retained_chunk_count}</td>"
+        f"<td class=\"numeric\">{item.partial_chunk_count}</td>"
+        f"<td>{_optional_text(item.detail_code)}</td></tr>"
+        for item in snapshot.streams
+    )
+    return f"""
+      <table>
+        <thead>
+          <tr><th>Mode</th><th>Stream</th><th>Cache</th><th>Latest</th>
+          <th>Observed</th><th class="numeric">Retained</th>
+          <th class="numeric">Partial</th><th>Detail</th></tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>"""
+
+
+def _datetime_text(value: datetime | None) -> str | None:
+    return None if value is None else value.isoformat()
 
 
 def _paper_account_details(

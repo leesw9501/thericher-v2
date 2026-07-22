@@ -45,7 +45,7 @@ $schedules = @(
 Write-Host "Installing local Docker schedules for: $resolvedProjectRoot"
 
 foreach ($schedule in $schedules) {
-    $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps $($schedule.Service)"
+    $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --build $($schedule.Service)"
     $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
     $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday -At $schedule.At
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile

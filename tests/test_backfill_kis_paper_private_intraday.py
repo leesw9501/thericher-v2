@@ -30,6 +30,48 @@ def test_intraday_backfill_script_requires_explicit_execution_without_credential
     }
 
 
+def test_intraday_project_only_writes_metadata_without_reading_credentials(
+    monkeypatch,
+    capsys,
+    tmp_path: Path,
+) -> None:
+    script = _load_script()
+    projected: dict[str, object] = {}
+    monkeypatch.setenv("THERICHER_MARKET_DATA_ROOT", str(tmp_path / "market-data"))
+    monkeypatch.setattr(
+        script,
+        "_load_paper_config",
+        lambda _: (_ for _ in ()).throw(AssertionError("credentials must stay unread")),
+    )
+    monkeypatch.setattr(
+        script,
+        "build_kis_paper_private_intraday_freshness_snapshot",
+        lambda **kwargs: projected.setdefault("build", kwargs) or object(),
+    )
+    monkeypatch.setattr(
+        script,
+        "write_market_data_freshness_runtime",
+        lambda snapshot, path: projected.update({"snapshot": snapshot, "path": path}),
+    )
+
+    projection_path = tmp_path / "runtime" / "freshness.json"
+    script.main(
+        ["--project-only", "--runtime-projection", str(projection_path)],
+        clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "scope": "backfill_and_head",
+        "status": "freshness_projected",
+    }
+    assert projected["build"] == {
+        "cache_root": tmp_path / "market-data" / "us_equities" / "kis_paper_private" / "intraday",
+        "repo_root": script._REPO_ROOT,
+        "observed_at": datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+    }
+    assert projected["path"] == projection_path
+
+
 def test_intraday_backfill_script_uses_only_injected_paper_values(
     monkeypatch,
     capsys,
