@@ -12,14 +12,13 @@ import threading
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections.abc import Callable, Iterator, Mapping, Sequence
+from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, Literal
-from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.research.kis_paper_canary_intent import (
@@ -60,6 +59,8 @@ from .kis_paper_quote import (
     validate_kis_paper_spy_quote_request,
 )
 from .kis_readonly import (
+    KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
+    KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES,
     KIS_PAPER_TOKEN_PATH,
     KisHttpRequest,
     KisHttpResponse,
@@ -94,9 +95,10 @@ KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID = "VTTT1002U"
 KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID = "VTTT1001U"
 KIS_PAPER_US_CANCEL_PATH = "/uapi/overseas-stock/v1/trading/order-rvsecncl"
 KIS_PAPER_US_CANCEL_TR_ID = "VTTT1004U"
-KIS_PAPER_US_CCNCL_PATH = "/uapi/overseas-stock/v1/trading/inquire-ccnl"
-KIS_PAPER_US_CCNCL_TR_ID = "VTTS3035R"
-KIS_PAPER_US_CCNCL_MAX_PAGES = 2
+# Backward-compatible names for the now shared read-only history endpoint.
+KIS_PAPER_US_CCNCL_PATH = KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.path
+KIS_PAPER_US_CCNCL_TR_ID = KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
+KIS_PAPER_US_CCNCL_MAX_PAGES = KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES
 KIS_PAPER_RATE_LIMIT_CODE = "EGW00201"
 
 _RECEIPT_DECISION_ID = re.compile(r"receipt-([0-9a-f]{64})")
@@ -107,24 +109,6 @@ _PAPER_POST_HEADERS = frozenset(
 )
 _PAPER_GET_HEADERS = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "tr_cont"}
-)
-_CCNL_QUERY_KEYS = frozenset(
-    {
-        "CANO",
-        "ACNT_PRDT_CD",
-        "PDNO",
-        "ORD_STRT_DT",
-        "ORD_END_DT",
-        "SLL_BUY_DVSN",
-        "CCLD_NCCS_DVSN",
-        "OVRS_EXCG_CD",
-        "SORT_SQN",
-        "ORD_DT",
-        "ORD_GNO_BRNO",
-        "ODNO",
-        "CTX_AREA_NK200",
-        "CTX_AREA_FK200",
-    }
 )
 _BUY_LIMIT_BODY_KEYS = frozenset(
     {
@@ -731,12 +715,20 @@ class KisPaperCanaryClient:
     ) -> KisPaperCanaryReconciliation:
         try:
             access_token = self._issue_access_token()
-            snapshot = KisPaperReadOnlyClient(
+            read_only_client = KisPaperReadOnlyClient(
                 config=self._config,
                 transport=self._transport,
                 access_token=access_token,
-            ).snapshot()
-            raw_order_ids = self._inquire_ccnl(access_token, now=now)
+            )
+            snapshot = read_only_client.snapshot()
+            same_day_order = (
+                None
+                if state.broker_order_id is None
+                else read_only_client.observe_same_day_order_id(
+                    state.broker_order_id,
+                    as_of=now,
+                )
+            )
         except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
             return _unavailable_reconciliation(reason_code=_safe_reconciliation_reason_code(error))
         order_reference = (
@@ -751,7 +743,7 @@ class KisPaperCanaryClient:
                 for order in snapshot.open_orders.orders
             )
         )
-        matching_ccnl = bool(state.broker_order_id and state.broker_order_id in raw_order_ids)
+        matching_ccnl = bool(same_day_order and same_day_order.same_day_order_id_seen)
         known = matching_open or matching_ccnl
         status: Literal["clean", "unresolved"] = "unresolved"
         if state.phase in {"intent_recorded", "rejected"}:
@@ -763,7 +755,7 @@ class KisPaperCanaryClient:
         return KisPaperCanaryReconciliation(
             snapshot=snapshot,
             account_status="available",
-            ccnl_row_count=len(raw_order_ids),
+            ccnl_row_count=0 if same_day_order is None else same_day_order.row_count,
             matching_open_order=matching_open,
             matching_ccnl=matching_ccnl,
             status=status,
@@ -991,63 +983,6 @@ class KisPaperCanaryClient:
             raise KisPaperCanaryError("auth_response_invalid")
         self._access_token = token
         return token
-
-    def _inquire_ccnl(self, access_token: str, *, now: datetime) -> tuple[str, ...]:
-        eastern_date = now.astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
-        query = {
-            "CANO": self._config.account_number,
-            "ACNT_PRDT_CD": self._config.account_product_code,
-            "PDNO": "",
-            "ORD_STRT_DT": eastern_date,
-            "ORD_END_DT": eastern_date,
-            "SLL_BUY_DVSN": "00",
-            "CCLD_NCCS_DVSN": "00",
-            "OVRS_EXCG_CD": "",
-            "SORT_SQN": "DS",
-            "ORD_DT": "",
-            "ORD_GNO_BRNO": "",
-            "ODNO": "",
-            "CTX_AREA_NK200": "",
-            "CTX_AREA_FK200": "",
-        }
-        order_ids: list[str] = []
-        continuation = ""
-        for _page in range(KIS_PAPER_US_CCNCL_MAX_PAGES):
-            response = self._dispatch(
-                KisHttpRequest(
-                    method="GET",
-                    url=f"{self._config.base_url}{KIS_PAPER_US_CCNCL_PATH}",
-                    headers=self._get_headers(
-                        access_token,
-                        KIS_PAPER_US_CCNCL_TR_ID,
-                        continuation,
-                    ),
-                    query=query,
-                )
-            )
-            if response.status_code != 200:
-                raise KisPaperCanaryError("ccnl_rejected")
-            payload = response.payload()
-            if payload.get("rt_cd") != "0":
-                raise KisPaperCanaryError("ccnl_rejected")
-            output = payload.get("output")
-            if not isinstance(output, Sequence) or isinstance(output, (str, bytes, bytearray)):
-                raise KisPaperCanaryError("ccnl_response_incomplete")
-            for row in output:
-                if isinstance(row, Mapping):
-                    candidate = row.get("odno")
-                    if isinstance(candidate, str) and _raw_order_id(candidate):
-                        order_ids.append(candidate)
-            next_header = _header(response.headers, "tr_cont").upper()
-            if next_header not in {"M", "F"}:
-                return tuple(sorted(set(order_ids)))
-            next_nk = _mapping_text(payload, "ctx_area_nk200")
-            next_fk = _mapping_text(payload, "ctx_area_fk200")
-            if not next_nk or not next_fk:
-                raise KisPaperCanaryError("ccnl_response_incomplete")
-            query = {**query, "CTX_AREA_NK200": next_nk, "CTX_AREA_FK200": next_fk}
-            continuation = "N"
-        raise KisPaperCanaryError("ccnl_pagination_incomplete")
 
     def _post_headers(self, tr_id: str) -> dict[str, str]:
         return {
@@ -1469,12 +1404,6 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
             validate_kis_paper_spy_asking_price_request(request)
         except KisPaperQuoteError as error:
             raise KisPaperCanaryError(error.code) from error
-        return
-    if request.method == "GET" and parsed.path == KIS_PAPER_US_CCNCL_PATH:
-        _validate_get_headers(request, tr_id=KIS_PAPER_US_CCNCL_TR_ID)
-        if request.json_body is not None or set(request.query) != _CCNL_QUERY_KEYS:
-            raise KisPaperCanaryError("request_not_allowlisted")
-        _validate_ccnl_query(request.query)
         return
     if request.method == "POST" and parsed.path == KIS_PAPER_US_BUY_LIMIT_ORDER_PATH:
         if request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
@@ -1971,24 +1900,6 @@ def _validate_order_body(body: Mapping[str, str] | None, expected: frozenset[str
         raise KisPaperCanaryError("request_not_allowlisted")
 
 
-def _validate_ccnl_query(query: Mapping[str, str]) -> None:
-    if (
-        not _account_number(query["CANO"])
-        or not _account_product_code(query["ACNT_PRDT_CD"])
-        or query["PDNO"] != ""
-        or not _yyyymmdd(query["ORD_STRT_DT"])
-        or query["ORD_END_DT"] != query["ORD_STRT_DT"]
-        or query["SLL_BUY_DVSN"] != "00"
-        or query["CCLD_NCCS_DVSN"] != "00"
-        or query["OVRS_EXCG_CD"] != ""
-        or query["SORT_SQN"] != "DS"
-        or any(query[key] != "" for key in ("ORD_DT", "ORD_GNO_BRNO", "ODNO"))
-        or not _continuation_value(query["CTX_AREA_NK200"])
-        or not _continuation_value(query["CTX_AREA_FK200"])
-    ):
-        raise KisPaperCanaryError("request_not_allowlisted")
-
-
 def _validate_buy_limit_body(body: Mapping[str, str] | None) -> None:
     assert body is not None
     if (
@@ -2050,14 +1961,6 @@ def _account_product_code(value: str) -> bool:
     return len(value) == 2 and value.isdigit()
 
 
-def _yyyymmdd(value: str) -> bool:
-    return len(value) == 8 and value.isdigit()
-
-
-def _continuation_value(value: str) -> bool:
-    return isinstance(value, str) and len(value) <= 256
-
-
 def _symbol(value: str) -> bool:
     if not value or len(value) > 24 or value != value.upper():
         return False
@@ -2084,21 +1987,6 @@ def _request_url_with_query(request: KisHttpRequest) -> str:
     if not request.query:
         return request.url
     return f"{request.url}?{urllib.parse.urlencode(sorted(request.query.items()))}"
-
-
-def _header(headers: Mapping[str, str], name: str) -> str:
-    lowered = name.lower()
-    for key, value in headers.items():
-        if key.lower() == lowered:
-            return value
-    return ""
-
-
-def _mapping_text(payload: Mapping[str, Any], key: str) -> str:
-    value = payload.get(key)
-    if not isinstance(value, str):
-        raise KisPaperCanaryError("ccnl_response_incomplete")
-    return value
 
 
 def _raw_order_id(value: str) -> bool:

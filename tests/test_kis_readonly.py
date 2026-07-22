@@ -16,6 +16,7 @@ from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
     KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
     KIS_PAPER_READ_ONLY_ENDPOINTS,
+    KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
     KIS_PAPER_TOKEN_PATH,
     KisHttpRequest,
     KisHttpResponse,
@@ -520,6 +521,7 @@ def test_no_order_tr_ids_or_actions_are_reachable() -> None:
         "VTTS3012R",
         "VTTS3007R",
         "VTTS3018R",
+        "VTTS3035R",
     }
     assert all(
         endpoint.path.startswith("/uapi/overseas-stock/v1/trading/inquire-")
@@ -528,6 +530,40 @@ def test_no_order_tr_ids_or_actions_are_reachable() -> None:
     assert "VTTT" not in source
     assert "order-rvsecncl" not in source
     assert '"/uapi/overseas-stock/v1/trading/order"' not in source
+
+
+def test_same_day_order_id_observation_is_read_only_and_never_retains_the_raw_id() -> None:
+    @dataclass
+    class SameDayTransport:
+        requests: list[KisHttpRequest] = field(default_factory=list)
+
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            self.requests.append(request)
+            if request.method == "POST":
+                return KisHttpResponse.from_payload({"access_token": "temporary-access-token"})
+            if request.headers["tr_id"] == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id:
+                return KisHttpResponse.from_payload(
+                    {"rt_cd": "0", "output": [{"odno": "ORD-123456789"}]}
+                )
+            raise AssertionError(f"unexpected read-only request: {request!r}")
+
+    transport = SameDayTransport()
+    observation = KisPaperReadOnlyClient(
+        config=_config(),
+        transport=transport,
+    ).observe_same_day_order_id("ORD-123456789", as_of=NOW)
+
+    assert observation.same_day_order_id_seen is True
+    assert observation.row_count == 1
+    assert "ORD-123456789" not in repr(observation)
+    assert [request.headers.get("tr_id") for request in transport.requests] == [
+        None,
+        KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id,
+    ]
+    assert all(
+        request.method == "GET" or request.url.endswith(KIS_PAPER_TOKEN_PATH)
+        for request in transport.requests
+    )
 
 
 def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external(tmp_path) -> None:

@@ -17,12 +17,13 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, Literal, Protocol
+from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 
@@ -43,8 +44,10 @@ KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE = "NASD"
 KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL = "SPY"
 KIS_PAPER_ORDERABLE_REFERENCE_PRICE = Decimal("1")
 MAX_KIS_PAPER_BALANCE_PAGES = 10
+KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES = 2
 DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS = 1.0
 _SAFE_KIS_PAPER_UPSTREAM_CODE = re.compile(r"[A-Z][A-Z0-9]{1,15}", re.ASCII)
+_RAW_KIS_PAPER_ORDER_ID = re.compile(r"[A-Za-z0-9_-]{1,64}", re.ASCII)
 
 
 class KisPaperReadOnlyError(RuntimeError):
@@ -60,7 +63,7 @@ class KisPaperReadOnlyError(RuntimeError):
 class KisPaperReadOnlyEndpoint:
     """One documented virtual-paper GET endpoint and its fixed query shape."""
 
-    name: Literal["balance", "orderable_funds", "open_orders"]
+    name: Literal["balance", "orderable_funds", "open_orders", "same_day_order_id"]
     path: str
     tr_id: str
     query_keys: frozenset[str]
@@ -114,10 +117,34 @@ KIS_PAPER_OPEN_ORDERS_ENDPOINT = KisPaperReadOnlyEndpoint(
         }
     ),
 )
+KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT = KisPaperReadOnlyEndpoint(
+    name="same_day_order_id",
+    path="/uapi/overseas-stock/v1/trading/inquire-ccnl",
+    tr_id="VTTS3035R",
+    query_keys=frozenset(
+        {
+            "CANO",
+            "ACNT_PRDT_CD",
+            "PDNO",
+            "ORD_STRT_DT",
+            "ORD_END_DT",
+            "SLL_BUY_DVSN",
+            "CCLD_NCCS_DVSN",
+            "OVRS_EXCG_CD",
+            "SORT_SQN",
+            "ORD_DT",
+            "ORD_GNO_BRNO",
+            "ODNO",
+            "CTX_AREA_NK200",
+            "CTX_AREA_FK200",
+        }
+    ),
+)
 KIS_PAPER_READ_ONLY_ENDPOINTS = (
     KIS_PAPER_BALANCE_ENDPOINT,
     KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
+    KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
 )
 
 
@@ -429,6 +456,28 @@ class KisPaperOpenOrdersSnapshot:
 
 
 @dataclass(frozen=True)
+class KisPaperSameDayOrderIdObservation:
+    """One exact order-ID sighting in KIS's current-day history query.
+
+    This is deliberately not a fill, cancellation, position, or PnL fact. The
+    endpoint response is parsed only in memory and the raw order ID never
+    becomes part of this typed result.
+    """
+
+    observed_at: datetime
+    same_day_order_id_seen: bool
+    row_count: int
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
+        if type(self.same_day_order_id_seen) is not bool:
+            raise ValueError("same-day order observation flag is invalid")
+        if type(self.row_count) is not int or self.row_count < 0:
+            raise ValueError("same-day order observation count is invalid")
+
+
+@dataclass(frozen=True)
 class KisPaperReadOnlySnapshot:
     identity: KisPaperAccountIdentity
     cash: KisPaperCashSnapshot
@@ -613,6 +662,93 @@ class KisPaperReadOnlyClient:
             captured_at=captured_at,
         )
 
+    def observe_same_day_order_id(
+        self,
+        raw_order_id: str,
+        *,
+        as_of: datetime,
+    ) -> KisPaperSameDayOrderIdObservation:
+        """Check whether one raw ID appears in the current ET history query.
+
+        KIS's ``inquire-ccnl`` response may establish only that the exact order
+        ID appeared in that query. It must not be treated as a fill, cancel, or
+        realized-PnL claim by callers.
+        """
+
+        if (
+            not isinstance(raw_order_id, str)
+            or _RAW_KIS_PAPER_ORDER_ID.fullmatch(raw_order_id) is None
+        ):
+            raise KisPaperReadOnlyError("order_id_invalid")
+        observed_at = require_utc(as_of, "as_of")
+        access_token = self._access_token or self._issue_access_token()
+        eastern_date = observed_at.astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+        query = {
+            "CANO": self._config.account_number,
+            "ACNT_PRDT_CD": self._config.account_product_code,
+            "PDNO": "",
+            "ORD_STRT_DT": eastern_date,
+            "ORD_END_DT": eastern_date,
+            "SLL_BUY_DVSN": "00",
+            "CCLD_NCCS_DVSN": "00",
+            "OVRS_EXCG_CD": "",
+            "SORT_SQN": "DS",
+            "ORD_DT": "",
+            "ORD_GNO_BRNO": "",
+            "ODNO": "",
+            "CTX_AREA_NK200": "",
+            "CTX_AREA_FK200": "",
+        }
+        continuation_header = ""
+        row_count = 0
+        same_day_order_id_seen = False
+        for _page in range(KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES):
+            response = self._read_only_get(
+                KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
+                access_token=access_token,
+                query=query,
+                continuation_header=continuation_header,
+            )
+            payload = _successful_payload(
+                response,
+                "ccnl_rejected",
+                endpoint=KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
+            )
+            output = payload.get("output")
+            if not isinstance(output, Sequence) or isinstance(output, (str, bytes, bytearray)):
+                raise KisPaperReadOnlyError("ccnl_response_incomplete")
+            for row in output:
+                if not isinstance(row, Mapping):
+                    raise KisPaperReadOnlyError("ccnl_response_incomplete")
+                candidate = row.get("odno")
+                if (
+                    not isinstance(candidate, str)
+                    or _RAW_KIS_PAPER_ORDER_ID.fullmatch(candidate) is None
+                ):
+                    raise KisPaperReadOnlyError("ccnl_response_incomplete")
+                row_count += 1
+                same_day_order_id_seen = same_day_order_id_seen or candidate == raw_order_id
+            continuation = response.header("tr_cont").strip().upper()
+            if continuation not in {"M", "F"}:
+                return KisPaperSameDayOrderIdObservation(
+                    observed_at=observed_at,
+                    same_day_order_id_seen=same_day_order_id_seen,
+                    row_count=row_count,
+                )
+            query = {
+                **query,
+                "CTX_AREA_FK200": _response_text(
+                    payload, "ctx_area_fk200", "ccnl_response_incomplete"
+                ),
+                "CTX_AREA_NK200": _response_text(
+                    payload, "ctx_area_nk200", "ccnl_response_incomplete"
+                ),
+            }
+            if not query["CTX_AREA_FK200"] or not query["CTX_AREA_NK200"]:
+                raise KisPaperReadOnlyError("ccnl_response_incomplete")
+            continuation_header = "N"
+        raise KisPaperReadOnlyError("ccnl_pagination_incomplete")
+
     def _issue_access_token(self) -> str:
         response = self._dispatch(
             KisHttpRequest(
@@ -634,6 +770,7 @@ class KisPaperReadOnlyClient:
         token = payload.get("access_token")
         if not isinstance(token, str) or not token:
             raise KisPaperReadOnlyError("auth_response_invalid")
+        self._access_token = token
         return token
 
     def _balance_positions(
@@ -1064,12 +1201,47 @@ def validate_kis_paper_readonly_request(request: KisHttpRequest) -> None:
         or not request.headers.get("appsecret")
         or request.headers.get("custtype") != "P"
         or request.headers.get("tr_cont") not in {"", "N"}
+        or (
+            endpoint is KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT
+            and not _valid_same_day_order_id_query(request.query)
+        )
     ):
         raise KisPaperReadOnlyError("request_not_allowlisted")
 
 
 # Keep the private compatibility name while new clients import the public contract.
 _validate_allowlisted_request = validate_kis_paper_readonly_request
+
+
+def _valid_same_day_order_id_query(query: Mapping[str, str]) -> bool:
+    """Keep the history lookup broad but fixed to one ET calendar day."""
+
+    account_number = query.get("CANO")
+    product_code = query.get("ACNT_PRDT_CD")
+    start_date = query.get("ORD_STRT_DT")
+    end_date = query.get("ORD_END_DT")
+    return (
+        isinstance(account_number, str)
+        and len(account_number) == 8
+        and account_number.isdigit()
+        and isinstance(product_code, str)
+        and len(product_code) == 2
+        and product_code.isdigit()
+        and isinstance(start_date, str)
+        and len(start_date) == 8
+        and start_date.isdigit()
+        and end_date == start_date
+        and query.get("PDNO") == ""
+        and query.get("SLL_BUY_DVSN") == "00"
+        and query.get("CCLD_NCCS_DVSN") == "00"
+        and query.get("OVRS_EXCG_CD") == ""
+        and query.get("SORT_SQN") == "DS"
+        and all(query.get(key) == "" for key in ("ORD_DT", "ORD_GNO_BRNO", "ODNO"))
+        and all(
+            isinstance(query.get(key), str) and len(query[key]) <= 256
+            for key in ("CTX_AREA_NK200", "CTX_AREA_FK200")
+        )
+    )
 
 
 def _base_url_from_endpoint(url: str) -> str:

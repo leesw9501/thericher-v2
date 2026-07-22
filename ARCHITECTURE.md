@@ -256,6 +256,25 @@ final-limit proof; it prepares an existing canary decision but never submits it
 itself. A current unavailable receipt remains a scoped no-intent fact, never a
 global Paper authority control.
 
+### Receipt-Linked Paper Observation
+
+`execution.kis_paper_receipt_observer` is a separate read-only path for one
+durable receipt-derived SPY/AMEX Paper intent. It reads only the matching
+private state file, the virtual account/open-order snapshot, and the fixed
+same-day `inquire-ccnl` history query. Its transport allowlist contains the
+Paper token request plus fixed `GET` endpoints only; it has no order
+submit/modify/cancel capability or live route.
+
+The observer writes one immutable, categorical external fact with receipt,
+intent, decision, side, lifecycle, aggregate position state, and
+`pnl_status: not_observed`. An exact current open-order reference can establish
+`open`. A same-day order-ID sighting establishes only that sighting, not a
+fill, cancellation, position attribution, or realized PnL. Current account
+positions are aggregate and remain non-attributed. Missing, stale, malformed,
+or ambiguous facts become only that receipt's `not_submitted`,
+`outcome_unknown`, or `unavailable` observation; they never create an
+authorization latch for another Paper action.
+
 ### Observed KIS Minute Cache
 
 The first cache implementation is a small reusable boundary, not a new gate or

@@ -176,6 +176,13 @@ task runs at 23:50 KST Tuesday through Saturday.
 4. Keep account snapshots and dashboard state separate from credential-bearing
    execution processes; do not add a live route implicitly.
 
+The new `kis_paper_receipt_observer` is the first exact-intent read-only path.
+It can establish `open` only through a matching redacted current open-order
+reference. Its same-day history ID sighting and aggregate position categories
+remain `outcome_unknown`, and its artifact always carries
+`pnl_status: not_observed`. The observer module contains no submit, modify, or
+cancel capability; its Docker profile mounts private state read-only.
+
 ## Authority And Boundaries
 
 Paper submission is authorized; no capital envelope, profitability report,
@@ -222,9 +229,10 @@ pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the receipt-linked daily lifecycle evidence and exact durable intent state
-to Codex for the next read-only KIS Paper observation loop. Do not interpret an
-acknowledgement or current position as a fill/PnL fact, and do not create a
-submit/modify/cancel side effect in that observer. Only a live-money boundary,
-paid commitment, unclear rights, public exposure, or an external KIS credential
-reset needs operator input.
+Continue the observer only for exact durable receipt identities and retain
+ambiguous observations as evidence, never as a Paper halt. The next execution
+extension may add an explicit per-order terminal KIS contract or connect the
+daily session to an exact observer target; it must retain Paper-only routing,
+secret redaction, state replay, and no fabricated PnL. Only a live-money
+boundary, paid commitment, unclear rights, public exposure, or an external KIS
+credential reset needs operator input.

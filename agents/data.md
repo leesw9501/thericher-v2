@@ -232,6 +232,11 @@ that would cross the 15% floor.
 - Session selection does not join overnight gaps. It preserves them as explicit
   ordered session boundaries for a Research consumer to validate, while any
   missing minute inside a selected session remains invalid input.
+- KIS Paper's current same-day `inquire-ccnl` use is a narrow order-ID history
+  fact only. It can say that one raw ID was seen in its current ET query, but
+  its present parser does not establish a fill, cancellation, price, quantity,
+  realized PnL, or receipt-attributed aggregate position. Those raw facts stay
+  private and out of `D:\market_data`.
 
 ## Recovery
 
@@ -247,10 +252,11 @@ orphan snapshot without KIS access. Classify a bad snapshot or index as
 
 ## Next Handoff
 
-For the next exact-order observer, verify the narrow KIS Paper completion and
-position source semantics without mixing a bar provider or treating a daily bar
-as a fill. Continue KIS-native minute accumulation and preserve provider
-identity, timestamp basis, session classification, coverage, and limitations.
-Re-run the metadata-only prospective preparer after future head collections;
-report only a concrete source-rights or storage constraint that needs operator
-action.
+The first exact-order observer now consumes only the documented same-day ID
+sighting and aggregate position facts. Next, seek a separately official KIS
+terminal per-order field only if it can distinguish fills/cancellations without
+mixing a bar provider or persisting raw broker facts. Continue KIS-native minute
+accumulation and preserve provider identity, timestamp basis, session
+classification, coverage, and limitations. Re-run the metadata-only prospective
+preparer after future head collections; report only a concrete source-rights or
+storage constraint that needs operator action.

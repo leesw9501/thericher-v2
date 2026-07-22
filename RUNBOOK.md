@@ -477,6 +477,26 @@ The host command uses `THERICHER_HOST_MODEL_ARTIFACT_ROOT` rather than the
 Docker-only `/app/model_artifacts` path. It emits only opaque references,
 lifecycle/reconciliation categories, and attribution eligibility.
 
+### Receipt-Linked Observation
+
+Observe one existing receipt-derived SPY Paper intent through the read-only
+observer profile:
+
+```powershell
+docker compose --profile kis-paper-receipt-observer run --rm `
+  -e KIS_PAPER_RECEIPT_RUN_ID=<receipt-run-id> `
+  kis-paper-receipt-observer
+```
+
+The observer reads the matching private durable state, then may call only the
+virtual Paper token, account/open-order, and same-day history endpoints. It
+cannot submit, modify, or cancel an order. `same_day_id_seen` is only an order
+ID sighting; it is never a fill, cancellation, receipt-attributed position, or
+realized PnL result. Artifacts remain external under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-receipt-observation`.
+If the exact state is absent, corrupt, stale, or ambiguous, retain the scoped
+categorical result and continue distinct authorized Paper work normally.
+
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary
 and returned `balance_rejected`; no order was sent. The current-image

@@ -4296,3 +4296,35 @@ safe stale-receipt no-intent; it sent no account, quote, or order request.
 
 Reason: this creates a truthful first Paper position loop without adding a
 live route, a quota, a model-promotion gate, or a report system.
+
+## 2026-07-22 - Add receipt-linked KIS Paper observation without terminal inference
+
+Decision: move the fixed virtual `VTTS3035R` same-day history query into the
+structurally read-only KIS client and add a separate receipt observer for one
+durable `receipt-<sha256>` SPY/AMEX intent. The observer can acquire only a
+Paper token plus fixed read-only `GET` endpoints; its module contains no
+submit, modify, cancel, or live-route capability. It reads private state only
+to compare a raw KIS order ID in memory, then writes a categorical immutable
+artifact outside Git.
+
+An exact current open-order match is sufficient for `open`. The current
+`inquire-ccnl` contract is sufficient only for `same_day_id_seen` or absent;
+it is not an explicit fill, cancellation, price, quantity, or realized-PnL
+fact. The account snapshot is aggregate and cannot assign an inventory change
+to this receipt. Accordingly this first observer emits `not_submitted`,
+`open`, `outcome_unknown`, or `unavailable` as supported and always emits
+`pnl_status: not_observed`; `filled` and `cancelled` remain unavailable until
+an official per-order terminal field is independently qualified. A missing,
+stale, corrupt, or ambiguous observation affects only that receipt and never
+acts as a Paper authorization, quota, schedule, or recovery latch.
+
+Claude's pre-implementation falsification-first verdict was
+`supported-with-limits`: read-only isolation must be structural; an ID sighting
+is not a fill; aggregate positions are not receipt attribution; unavailable
+facts must remain unavailable; and replay/redaction must be tested. The focused
+tests cover these kill conditions, including no credential/network path for an
+unsubmitted or corrupt state and replay without changing private state.
+
+Reason: this makes the first Paper lifecycle observation usable by future PnL
+attribution without turning broker ambiguity into a fabricated strategy result
+or adding another operator approval mechanism.

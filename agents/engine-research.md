@@ -298,6 +298,13 @@ does not block another independent campaign or Paper intent. Contract changes
 need an Execution-owned fixture plus a focused Research consumer test; until
 then this section is the queue specification, not an implementation request.
 
+The first receipt observer now contributes an immutable categorical join keyed
+by the full opaque receipt digest. `open` is usable only as execution-state
+coverage; `same_day_id_seen`, an aggregate position, or an absent record stays
+`outcome_unknown`, and every current observation retains
+`pnl_status: not_observed`. It must not tune the two-close baseline, promote a
+candidate, or alter breadth/depth/ensemble queues.
+
 The pre-batch SQLite smoke artifact that stopped at a host timeout is
 `restart` evidence only and must not be interpreted. The later completed smoke
 under the same external artifact root is the usable local-paper replay.

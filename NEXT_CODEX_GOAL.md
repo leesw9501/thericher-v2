@@ -2,24 +2,26 @@
 
 ## Objective
 
-Add the first authoritative observation loop for receipt-linked KIS Paper SPY
-orders.
+Connect the scheduled KIS Paper daily SPY session to the receipt-linked
+read-only observer it already needs.
 
-The completed daily entry/exit path may create a one-share virtual limit order.
-This objective must observe the exact durable intent through KIS Paper facts and
-produce truthful lifecycle attribution without fabricating a fill, realized
-PnL, or a permission gate.
+When the existing daily session creates or recovers one exact durable receipt
+identity, it should trigger observation of that exact identity through the
+Paper-only read path. This adds timely execution evidence without turning
+observation, a missing receipt, a stale fact, or a historical marker into a
+permission latch, one-shot quota, or new order workflow.
 
 ## Standing Authority
 
 - All private `KIS_PAPER_*` market/account reads, virtual order submit/modify/
-  cancel, reconciliation, sizing, local `D:` retention, and schedules are
-  authorized. Continue ready Paper work by default.
+  cancel, reconciliation, sizing, local `D:` retention, and goal-owned
+  schedules are authorized. Continue ready Paper work by default.
 - Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
   unclear rights, public exposure, Git-hosted raw data/artifacts, or secrets.
-- A stale daily receipt, blank quote, missing fill, unfilled order, historical
-  marker, or unknown exact intent is evidence about that scope only. It must
-  not block a distinct correct Paper action or another lane.
+- A no-intent daily session, failed observer, unavailable quote, stale receipt,
+  missing completion, `raw_market_data_retained: false`, or unknown exact
+  outcome is scoped evidence only. It cannot disable a later distinct correct
+  Paper action, cache retry, schedule run, or another lane.
 
 ## Required First Reads
 
@@ -28,64 +30,65 @@ PnL, or a permission gate.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect only sanitized daily-session, lifecycle, runtime, and scheduled-task
-   metadata before choosing a recovery or observation action.
-5. Ask Claude for a concise falsification-first check before relying on a KIS
-   completion/position field as fill, terminal lifecycle, or PnL evidence.
+4. Inspect the sanitized daily-session, receipt lifecycle, observer, and
+   scheduled-task metadata before changing their handoff.
+5. Ask Claude for a concise falsification-first drift check before changing the
+   scheduled session's external KIS call graph or receipt-observation contract.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Verify the narrow KIS Paper completion/position source contract needed for
-   exact SPY intent observation: endpoint scope, exchange mapping, pagination,
-   timestamp meaning, and safe provenance. Do not mix a provider or infer a
-   fill from a daily bar.
-2. Keep the daily head resumable and publish only the safe freshness facts that
-   the active session needs.
+1. Confirm that daily-input freshness remains a data-quality fact, not a Paper
+   permission condition. Keep the current KIS-native SPY source and safe
+   provenance contract intact.
+2. Identify only the timestamp/identity facts needed to associate a session
+   outcome with its exact receipt; do not expose rows, prices, hashes, or raw
+   broker data to the session projection.
 
 ### Engine Research Agent
 
-1. Define a compact attribution schema joining immutable receipt, target
-   resolution, intended side, observed lifecycle, and `pnl_status`. Treat a
-   missing or incomplete KIS completion fact as `not_observed` or pending, not
-   as a negative return or a model result.
-2. Preserve local-paper replay separately from KIS Paper evidence; do not tune
-   the two-close baseline or start model selection from one Paper observation.
+1. Define the minimal model-side consumption rule for linked Paper evidence:
+   receipt, intended side, observation reference, lifecycle category, and
+   `pnl_status`. Missing/ambiguous observation remains excluded from model
+   performance claims rather than a negative label.
+2. Keep local-paper replay and KIS Paper evidence separate. Do not tune the
+   baseline or promote a candidate from a single Paper observation.
 
 ### Execution Agent
 
-1. Add a read/reconcile path for one exact receipt-linked SPY Paper intent.
-   It must make no new submit, modify, or cancel call while observing an order.
-2. Publish a safe immutable observation fact that can distinguish at least
-   `not_submitted`, `open`, `cancelled`, `filled`, `outcome_unknown`, and
-   `unavailable` only when KIS facts support that distinction. Keep raw order
-   IDs, prices, quantities, account values, fills, and broker payloads private.
-3. Derive realized PnL only if an official KIS Paper fact supplies enough
-   authoritative information; otherwise retain `pnl_status: not_observed`.
-   Do not estimate it from daily bars, quotes, intent, or acknowledgement.
-4. Add a bounded goal-owned observer schedule only after offline and Docker
-   tests prove it is Paper-only, idempotent, and cannot create a broker side
-   effect. Do not turn scheduling into a quota or approval latch.
+1. Carry the exact opaque receipt-run identity from a daily session outcome to
+   the observer without scanning unrelated state or selecting a "latest" run.
+2. Make the existing scheduled daily SPY session invoke or queue only that
+   same-run read-only observation after its own durable outcome is known. A
+   no-intent, rejected, unavailable, or already-observed result must remain
+   replayable and must not change an order result or block a later run.
+3. Preserve structural route isolation: the observer has no submit, modify, or
+   cancel capability; the handoff must not make a read-only failure retry or
+   replace an order.
+4. Use the existing daily schedule when possible. Any task/config change must
+   be private, idempotent, recoverable, and free of a manual approval, capital,
+   profitability, or trade-count gate.
 
 ### Validation Agent
 
-1. Independently test that observation never emits an order request, cannot
-   turn an acknowledgement into a fill, and cannot create a PnL claim from
-   incomplete/stale facts.
-2. Test exact receipt linkage, restart/replay behavior, Paper/live isolation,
-   and artifact redaction with no network, credential, or KIS dependency.
+1. Independently test exact same-run linkage, session replay, observer failure,
+   no-intent behavior, and stale/ambiguous facts with no live KIS dependency.
+2. Prove the linked path cannot emit an extra order request or turn a completion
+   ID sighting, position category, or daily bar into a fill or PnL assertion.
+3. Verify all safe artifacts remain outside Git and do not contain credentials,
+   account identifiers, raw order IDs, prices, quantities, or broker payloads.
 
 ## Completion Evidence
 
-- One receipt-linked Paper intent can be observed/reconciled independently of
-  new daily decisions.
-- Lifecycle/PnL attribution remains truthful under missing, stale, open,
-  cancelled, and ambiguous KIS facts.
-- Any observer schedule is private, Paper-only, idempotent, and has no broker
-  side-effect capability.
-- Data, models, secrets, raw broker facts, and generated artifacts remain off
-  Git; no live path is added.
+- A scheduled daily SPY session can cause observation of only its exact durable
+  receipt identity, with no global/latest-run scan or side-effectful observer.
+- A linked observation is safe under replay, no-intent, stale, missing, and
+  ambiguous inputs, and never changes the original Paper order result.
+- The current Paper-only schedule remains usable without a new one-shot marker,
+  quota, report, or operator checkpoint.
+- KIS Paper / local-paper attribution stays truthful and `pnl_status` remains
+  `not_observed` unless an official authoritative fact supports more.
 
 ## Verification
 
@@ -98,4 +101,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add paper lifecycle observation loop`
+`Link daily Paper sessions to receipt observation`
