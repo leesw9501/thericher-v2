@@ -237,6 +237,9 @@ that would cross the 15% floor.
   its present parser does not establish a fill, cancellation, price, quantity,
   realized PnL, or receipt-attributed aggregate position. Those raw facts stay
   private and out of `D:\market_data`.
+- The daily session-to-observer handoff needs only the opaque receipt digest,
+  its matching `receipt-<digest>` run ID, and safe timestamps/provenance. Raw
+  daily bars, prices, account values, and order IDs never cross that boundary.
 
 ## Recovery
 

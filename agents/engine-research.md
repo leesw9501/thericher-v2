@@ -305,6 +305,12 @@ coverage; `same_day_id_seen`, an aggregate position, or an absent record stays
 `pnl_status: not_observed`. It must not tune the two-close baseline, promote a
 candidate, or alter breadth/depth/ensemble queues.
 
+The scheduled daily-session handoff requires the receipt digest, canary run ID,
+and observer receipt reference to be identical. `no_intent`, unavailable,
+stale, missing, or ambiguous observations have `performance_label = None`:
+they are excluded execution coverage facts, not negative labels, extra samples,
+or a reason to pause another campaign or Paper session.
+
 The pre-batch SQLite smoke artifact that stopped at a host timeout is
 `restart` evidence only and must not be interpreted. The later completed smoke
 under the same external artifact root is the usable local-paper replay.

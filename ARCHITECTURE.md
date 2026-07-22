@@ -275,6 +275,14 @@ or ambiguous facts become only that receipt's `not_submitted`,
 `outcome_unknown`, or `unavailable` observation; they never create an
 authorization latch for another Paper action.
 
+The existing scheduled daily SPY session invokes this observer only after its
+own canary result has durably named a receipt-derived `run_id`. The session
+requires `run_id == receipt-<receipt digest>` and records the returned safe
+observation inline with its own safe outcome. It never scans for a latest run
+or passes raw price, order ID, account, or data values. An observer failure is
+only `observer_unavailable` evidence: it cannot mutate, retry, replace, or
+change the already completed order result or a later distinct session.
+
 ### Observed KIS Minute Cache
 
 The first cache implementation is a small reusable boundary, not a new gate or

@@ -182,6 +182,12 @@ reference. Its same-day history ID sighting and aggregate position categories
 remain `outcome_unknown`, and its artifact always carries
 `pnl_status: not_observed`. The observer module contains no submit, modify, or
 cancel capability; its Docker profile mounts private state read-only.
+The scheduled daily SPY service now invokes it only after the canary returns
+the same receipt-derived `run_id`; the session verifies the receipt/run digest
+mapping and embeds the safe observation in its own evidence. There is no
+latest-run scan or second order path. A read-only error records
+`observer_unavailable` without changing the canary result, retrying an order,
+or blocking a later distinct session.
 
 ## Authority And Boundaries
 
@@ -231,8 +237,7 @@ pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 Continue the observer only for exact durable receipt identities and retain
 ambiguous observations as evidence, never as a Paper halt. The next execution
-extension may add an explicit per-order terminal KIS contract or connect the
-daily session to an exact observer target; it must retain Paper-only routing,
-secret redaction, state replay, and no fabricated PnL. Only a live-money
-boundary, paid commitment, unclear rights, public exposure, or an external KIS
-credential reset needs operator input.
+extension may add an explicit per-order terminal KIS contract; it must retain
+Paper-only routing, secret redaction, state replay, and no fabricated PnL.
+Only a live-money boundary, paid commitment, unclear rights, public exposure,
+or an external KIS credential reset needs operator input.

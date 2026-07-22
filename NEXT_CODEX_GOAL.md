@@ -2,93 +2,91 @@
 
 ## Objective
 
-Connect the scheduled KIS Paper daily SPY session to the receipt-linked
-read-only observer it already needs.
+Qualify the first exact KIS Paper terminal-fact contract for receipt-linked SPY
+orders.
 
-When the existing daily session creates or recovers one exact durable receipt
-identity, it should trigger observation of that exact identity through the
-Paper-only read path. This adds timely execution evidence without turning
-observation, a missing receipt, a stale fact, or a historical marker into a
-permission latch, one-shot quota, or new order workflow.
+The daily SPY session already creates a Paper-only order path and automatically
+records a same-receipt read-only observation. This objective determines whether
+official KIS Paper facts can truthfully distinguish a terminal fill or cancel
+and, only if enough exact facts exist, support receipt-attributed realized PnL.
+An insufficient response is a useful `not_observed` finding, never a Paper
+permission latch or a reason to stop other work.
 
 ## Standing Authority
 
-- All private `KIS_PAPER_*` market/account reads, virtual order submit/modify/
-  cancel, reconciliation, sizing, local `D:` retention, and goal-owned
+- All private `KIS_PAPER_*` market/account/order reads, virtual order submit/
+  modify/cancel, reconciliation, sizing, local `D:` retention, and goal-owned
   schedules are authorized. Continue ready Paper work by default.
 - Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
   unclear rights, public exposure, Git-hosted raw data/artifacts, or secrets.
-- A no-intent daily session, failed observer, unavailable quote, stale receipt,
-  missing completion, `raw_market_data_retained: false`, or unknown exact
-  outcome is scoped evidence only. It cannot disable a later distinct correct
-  Paper action, cache retry, schedule run, or another lane.
+- Missing, blank, stale, ambiguous, or unretained facts describe only that
+  invocation or receipt. They cannot block a distinct Paper intent, another
+  due session, cache collection, research campaign, or schedule run.
 
 ## Required First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`, and
-   `RUNBOOK.md`.
-3. Read `agents/data.md`, `agents/engine-research.md`, and
-   `agents/execution.md`.
-4. Inspect the sanitized daily-session, receipt lifecycle, observer, and
-   scheduled-task metadata before changing their handoff.
-5. Ask Claude for a concise falsification-first drift check before changing the
-   scheduled session's external KIS call graph or receipt-observation contract.
+2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
+   `DECISIONS.md`, and `RUNBOOK.md`.
+3. Read `agents/README.md`, `agents/data.md`, `agents/engine-research.md`,
+   and `agents/execution.md`.
+4. Inspect only sanitized daily-session, canary, observer, runtime, and task
+   metadata before choosing a recovery or probe action.
+5. Ask Claude for a concise falsification-first check before relying on any KIS
+   completion/position field as a terminal lifecycle or PnL fact.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Confirm that daily-input freshness remains a data-quality fact, not a Paper
-   permission condition. Keep the current KIS-native SPY source and safe
-   provenance contract intact.
-2. Identify only the timestamp/identity facts needed to associate a session
-   outcome with its exact receipt; do not expose rows, prices, hashes, or raw
-   broker data to the session projection.
+1. Inventory the official KIS Paper completion/history field contract for the
+   exact SPY/AMEX scope: endpoint, transaction ID, pagination, field presence,
+   timestamp semantics, and provenance. Use bounded private reads only; retain
+   no raw response, order ID, price, quantity, account value, or credential.
+2. Publish only categorical field-support and freshness evidence. Keep the
+   current daily source/provenance and `raw_market_data_retained` semantics
+   separate from order-terminal interpretation.
 
 ### Engine Research Agent
 
-1. Define the minimal model-side consumption rule for linked Paper evidence:
-   receipt, intended side, observation reference, lifecycle category, and
-   `pnl_status`. Missing/ambiguous observation remains excluded from model
-   performance claims rather than a negative label.
-2. Keep local-paper replay and KIS Paper evidence separate. Do not tune the
-   baseline or promote a candidate from a single Paper observation.
+1. Define the exact receipt-attribution threshold: full digest identity,
+   categorical terminal state, authoritative realized amount/cost basis if
+   available, and `performance_label = None` for every incomplete fact.
+2. Keep `open`, same-day ID sighting, aggregate position, and daily bars out of
+   model scoring, labels, selection, and PnL claims. Preserve local-paper replay
+   as separate evidence.
 
 ### Execution Agent
 
-1. Carry the exact opaque receipt-run identity from a daily session outcome to
-   the observer without scanning unrelated state or selecting a "latest" run.
-2. Make the existing scheduled daily SPY session invoke or queue only that
-   same-run read-only observation after its own durable outcome is known. A
-   no-intent, rejected, unavailable, or already-observed result must remain
-   replayable and must not change an order result or block a later run.
-3. Preserve structural route isolation: the observer has no submit, modify, or
-   cancel capability; the handoff must not make a read-only failure retry or
-   replace an order.
-4. Use the existing daily schedule when possible. Any task/config change must
-   be private, idempotent, recoverable, and free of a manual approval, capital,
-   profitability, or trade-count gate.
+1. Add or verify only the smallest read-only KIS Paper parser/probe needed to
+   determine whether exact terminal facts are present. It must have no submit,
+   modify, cancel, latest-run scan, or live-route capability.
+2. Promote `filled`, `cancelled`, or realized PnL only when an official exact
+   per-order fact supplies the required fields and identity. Otherwise preserve
+   `outcome_unknown` / `unavailable` and `pnl_status: not_observed`.
+3. Integrate a supported terminal fact into the existing exact receipt observer
+   and scheduled daily session only after offline, fake-transport, redaction,
+   replay, and route-isolation tests pass. Do not add a second approval system
+   or schedule unless it directly improves this engine loop.
 
 ### Validation Agent
 
-1. Independently test exact same-run linkage, session replay, observer failure,
-   no-intent behavior, and stale/ambiguous facts with no live KIS dependency.
-2. Prove the linked path cannot emit an extra order request or turn a completion
-   ID sighting, position category, or daily bar into a fill or PnL assertion.
-3. Verify all safe artifacts remain outside Git and do not contain credentials,
-   account identifiers, raw order IDs, prices, quantities, or broker payloads.
+1. Independently test that ambiguous, absent, stale, cross-receipt, and
+   aggregate facts cannot become a terminal state, realized PnL, model label,
+   or order side effect.
+2. Test exact identity, redaction, pagination bounds, Paper/live isolation,
+   replay, and artifact placement without network, credentials, or KIS.
 
 ## Completion Evidence
 
-- A scheduled daily SPY session can cause observation of only its exact durable
-  receipt identity, with no global/latest-run scan or side-effectful observer.
-- A linked observation is safe under replay, no-intent, stale, missing, and
-  ambiguous inputs, and never changes the original Paper order result.
-- The current Paper-only schedule remains usable without a new one-shot marker,
-  quota, report, or operator checkpoint.
-- KIS Paper / local-paper attribution stays truthful and `pnl_status` remains
-  `not_observed` unless an official authoritative fact supports more.
+- The project has an evidence-backed exact terminal-field contract or an
+  explicit bounded result that the current KIS Paper source is insufficient.
+- Any newly supported terminal state or PnL is tied to the full receipt digest
+  and official exact facts, never to an absence, daily bar, position aggregate,
+  acknowledgement, or local estimate.
+- Current daily Paper and observer paths stay private, Paper-only, replayable,
+  and free of new approval latches, quotas, or report sprawl.
+- Raw broker facts, secrets, data, and generated artifacts remain outside Git.
 
 ## Verification
 

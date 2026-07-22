@@ -393,6 +393,13 @@ separate Paper intent, or another lane. Sanitized evidence can state
 `pnl_status: not_observed`; it never turns an acknowledgement or local intent
 into a fill, cash, cost-basis, or realized-PnL claim.
 
+After a daily session reaches a durable receipt-derived canary result, the same
+scheduled service automatically invokes the read-only observer for that exact
+`receipt-<sha256>` run. No latest-run scan, extra Windows task, or manual
+permission is involved. The safe session outcome embeds the categorical
+observation; an observer failure is recorded as `observer_unavailable` without
+changing, retrying, cancelling, or replacing the original order outcome.
+
 ## KIS Virtual-Paper Canary
 
 The price-input execution-learning command is a virtual-paper US buy-limit
@@ -496,6 +503,8 @@ realized PnL result. Artifacts remain external under
 `D:\thericher-v2\model-artifacts\execution\kis-paper-receipt-observation`.
 If the exact state is absent, corrupt, stale, or ambiguous, retain the scoped
 categorical result and continue distinct authorized Paper work normally.
+The standalone profile remains useful for an exact manual replay or diagnosis;
+the normal daily schedule already performs the same exact-run handoff.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary

@@ -98,17 +98,21 @@ Windows tasks `thericher-kis-paper-daily-spy-head` (22:15 KST) and
 `thericher-kis-paper-daily-spy-session` (23:50 KST) are installed Tuesday
 through Saturday and use the current compose service at their next due run.
 
-The first receipt-linked Paper observer is now available as the separate
-`kis-paper-receipt-observer` Docker profile. It accepts one exact receipt run
-ID, reads only its private durable state plus virtual account/open-order and
-same-day-history facts, and writes a redacted immutable observation under
+The first receipt-linked Paper observer is now invoked automatically by the
+scheduled daily SPY session after that same session has produced its exact
+receipt-derived run ID; the separate `kis-paper-receipt-observer` Docker
+profile remains available for exact manual replay. The session verifies the
+receipt/run digest mapping, never scans for a latest run, and records only the
+safe categorical observation under
 `D:\thericher-v2\model-artifacts\execution\kis-paper-receipt-observation`.
 It has no order submit/modify/cancel capability. An exact current open order
 can establish `open`; a same-day ID sighting or aggregate position cannot
 establish fill, cancellation, receipt attribution, or realized PnL, so the
 first schema always retains `pnl_status: not_observed`. Missing, stale,
 corrupt, and ambiguous facts are scoped to the receipt and never pause another
-authorized Paper action.
+authorized Paper action. A read-only observer error becomes only a safe
+`observer_unavailable` session fact and cannot change the original order
+result.
 
 The first immutable baseline receipt now has external evidence at
 `D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.

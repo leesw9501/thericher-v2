@@ -51,7 +51,12 @@ from .kis_paper_daily_spy_head import (
 )
 from .kis_paper_receipt_canary import (
     prepare_kis_paper_spy_receipt_decision,
+    receipt_canary_run_id,
     run_kis_paper_receipt_canary,
+)
+from .kis_paper_receipt_observer import (
+    KisPaperReceiptObservation,
+    observe_kis_paper_receipt,
 )
 from .kis_paper_session import is_us_equity_regular_session_window
 from .kis_paper_spy_position import (
@@ -69,6 +74,8 @@ KIS_PAPER_DAILY_SPY_SESSION_EVIDENCE_KIND = "kis_paper_daily_spy_session_evidenc
 _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
 _SAFE_REASON = re.compile(r"[a-z0-9_]{1,100}", re.ASCII)
 _SESSION_STATUSES = frozenset({"preview", "no_intent", "canary_completed"})
+_OBSERVER_STATUSES = frozenset({"not_attempted", "completed", "unavailable"})
+_OBSERVER_UNAVAILABLE_REASON = "observer_unavailable"
 _SESSION_REASONS = frozenset(
     {
         "preview",
@@ -104,6 +111,9 @@ class KisPaperDailySpySessionOutcome:
     run_id: str | None = None
     canary_phase: str | None = None
     canary_reason_code: str | None = None
+    observer_status: Literal["not_attempted", "completed", "unavailable"] = "not_attempted"
+    observer_reason_code: str | None = None
+    observation: KisPaperReceiptObservation | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -124,12 +134,38 @@ class KisPaperDailySpySessionOutcome:
             raise ValueError("daily SPY input manifest reference is invalid")
         if self.run_id is not None and _SAFE_ID.fullmatch(self.run_id) is None:
             raise ValueError("daily SPY run id is invalid")
+        if self.receipt_ref is not None and self.run_id is not None:
+            expected_run_id = "receipt-" + self.receipt_ref.removeprefix("sha256:")
+            if self.run_id != expected_run_id:
+                raise ValueError("daily SPY receipt and run identity are inconsistent")
         if self.canary_phase is not None and _SAFE_REASON.fullmatch(self.canary_phase) is None:
             raise ValueError("daily SPY canary phase is invalid")
         if self.canary_reason_code is not None and _SAFE_REASON.fullmatch(
             self.canary_reason_code
         ) is None:
             raise ValueError("daily SPY canary reason is invalid")
+        if self.observer_status not in _OBSERVER_STATUSES:
+            raise ValueError("daily SPY observer status is invalid")
+        if self.observer_reason_code is not None and _SAFE_REASON.fullmatch(
+            self.observer_reason_code
+        ) is None:
+            raise ValueError("daily SPY observer reason is invalid")
+        if self.observation is not None:
+            if self.observer_status != "completed":
+                raise ValueError("daily SPY observer outcome is inconsistent")
+            if self.run_id is None or self.observation.run_id != self.run_id:
+                raise ValueError("daily SPY observer run identity is inconsistent")
+            if self.receipt_ref != self.observation.receipt_ref:
+                raise ValueError("daily SPY observer receipt identity is inconsistent")
+        elif self.observer_status == "completed":
+            raise ValueError("daily SPY observer outcome is missing")
+        if (
+            self.observer_status == "unavailable"
+            and self.observer_reason_code != _OBSERVER_UNAVAILABLE_REASON
+        ):
+            raise ValueError("daily SPY observer unavailable reason is invalid")
+        if self.observer_status != "unavailable" and self.observer_reason_code is not None:
+            raise ValueError("daily SPY observer reason is inconsistent")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
     def safe_payload(self) -> dict[str, object]:
@@ -145,6 +181,9 @@ class KisPaperDailySpySessionOutcome:
             "run_id": self.run_id,
             "canary_phase": self.canary_phase,
             "canary_reason_code": self.canary_reason_code,
+            "observer_status": self.observer_status,
+            "observer_reason_code": self.observer_reason_code,
+            "observation": None if self.observation is None else self.observation.safe_payload(),
             "paper_only": True,
         }
 
@@ -359,6 +398,18 @@ def run_kis_paper_daily_spy_session(
         submit_permitted=is_us_equity_regular_session_window,
         execution_control_path=execution_control_path,
     )
+    if canary.run_id != receipt_canary_run_id(prepared.receipt_ref):
+        raise ValueError("daily SPY canary run identity is inconsistent")
+    observation, observer_reason_code = _observe_completed_canary(
+        run_id=canary.run_id,
+        environment=environment,
+        state_root=state_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        transport=transport,
+        now=now,
+        clock=clock,
+    )
     return _record_session(
         session_id=resolved_session_id,
         status="canary_completed",
@@ -371,6 +422,8 @@ def run_kis_paper_daily_spy_session(
         prepared=prepared,
         canary=canary,
         position_resolution=position_resolution,
+        observation=observation,
+        observer_reason_code=observer_reason_code,
     )
 
 
@@ -387,6 +440,8 @@ def _record_session(
     prepared: PaperDecisionBridgeResult | None = None,
     canary: KisPaperCanaryOutcome | None = None,
     position_resolution: KisPaperSpyPositionResolution | None = None,
+    observation: KisPaperReceiptObservation | None = None,
+    observer_reason_code: str | None = None,
 ) -> KisPaperDailySpySessionOutcome:
     destination = _session_evidence_path(artifact_root=artifact_root, session_id=session_id)
     receipt = None if evaluation is None else evaluation.receipt
@@ -401,6 +456,15 @@ def _record_session(
         run_id=None if canary is None else canary.run_id,
         canary_phase=None if canary is None else canary.phase,
         canary_reason_code=None if canary is None else canary.reason_code,
+        observer_status=(
+            "completed"
+            if observation is not None
+            else "unavailable"
+            if observer_reason_code is not None
+            else "not_attempted"
+        ),
+        observer_reason_code=observer_reason_code,
+        observation=observation,
     )
     payload: dict[str, object] = {
         "schema_version": SCHEMA_VERSION,
@@ -419,6 +483,37 @@ def _record_session(
         payload["canary"] = canary.safe_payload()
     _write_or_verify(destination, payload, repository_root=repository_root)
     return outcome
+
+
+def _observe_completed_canary(
+    *,
+    run_id: str,
+    environment: Mapping[str, str],
+    state_root: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    transport: KisHttpTransport | None,
+    now: datetime | None,
+    clock: Callable[[], datetime] | None,
+) -> tuple[KisPaperReceiptObservation | None, str | None]:
+    """Append safe same-run evidence without changing the completed order outcome."""
+
+    try:
+        outcome = observe_kis_paper_receipt(
+            run_id=run_id,
+            environment=environment,
+            state_root=state_root,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=True,
+            transport=transport,
+            now=now,
+            clock=clock,
+        )
+    # This is post-order evidence only; do not let it erase the canary outcome.
+    except Exception:
+        return None, _OBSERVER_UNAVAILABLE_REASON
+    return outcome.observation, None
 
 
 def _load_preferred_daily_spy_input(
