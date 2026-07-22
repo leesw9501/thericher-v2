@@ -94,6 +94,7 @@ class PaperDecisionBridgeResult:
     reason: BridgeReason
     local_paper_intent: OrderIntent | None = None
     kis_paper_decision: KisPaperCanaryBuyDecision | None = None
+    price_contract_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -127,6 +128,10 @@ class PaperDecisionBridgeResult:
             self.local_paper_intent is not None or self.kis_paper_decision is not None
         ):
             raise ValueError("no-intent bridge result cannot contain an execution object")
+        if ready_kis:
+            _require_sha256_reference(self.price_contract_ref, "price_contract_ref")
+        elif self.price_contract_ref is not None:
+            raise ValueError("only a ready KIS result can carry a price contract reference")
 
     def safe_payload(self) -> dict[str, object]:
         """Expose only route, receipt identity, and categorical preparation state."""
@@ -138,6 +143,7 @@ class PaperDecisionBridgeResult:
             "receipt_ref": self.receipt_ref,
             "status": self.status,
             "reason": self.reason,
+            "price_contract_ref": self.price_contract_ref,
         }
 
 
@@ -229,6 +235,7 @@ def prepare_kis_paper_decision(
             decision_as_of=now,
             valid_until=min(receipt.valid_until, limit_proof.valid_until),
         ),
+        price_contract_ref=limit_proof.price_contract_ref,
     )
 
 
@@ -278,8 +285,8 @@ def _receipt_digest(value: str) -> str:
     return match.group(1)
 
 
-def _require_sha256_reference(value: str, field_name: str) -> None:
-    if _SHA256_REFERENCE.fullmatch(value) is None:
+def _require_sha256_reference(value: object, field_name: str) -> None:
+    if not isinstance(value, str) or _SHA256_REFERENCE.fullmatch(value) is None:
         raise ValueError(f"{field_name} must be an exact sha256 reference")
 
 

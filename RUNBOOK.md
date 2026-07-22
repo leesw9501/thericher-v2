@@ -356,6 +356,34 @@ The Codex app daily operating review runs at 08:10 KST. It is the concise
 operator-summary and integration pass for prior scheduled outcomes; the named
 Windows tasks remain the only recurring KIS-facing execution/data jobs.
 
+## Daily SPY Point-In-Time Paper Session
+
+The daily SPY path first refreshes its small forward `SPY/AMS` head and then
+evaluates one whole hash-attested source. The collector drops the current US
+exchange date before storing bytes, so a same-session daily close never reaches
+the receipt. The runner uses the first local availability of that source, a
+transparent two-close baseline, and a separate fresh `AMS` price proof before
+the existing Paper canary boundary.
+
+Run the two stages manually only when needed; both are authorized KIS Paper
+work and emit safe metadata rather than secrets, raw market rows, prices, or
+broker bodies:
+
+```powershell
+docker compose --profile kis-paper-daily-spy-head run --rm --no-deps --build `
+  kis-paper-daily-spy-head
+
+docker compose --profile kis-paper-daily-spy-session run --rm --no-deps --build `
+  kis-paper-daily-spy-session
+```
+
+The installed Windows tasks run the head at 22:15 KST and the receipt session
+at 23:50 KST, Tuesday through Saturday. The session may honestly record a
+no-intent when a receipt is stale, abstains, the market is closed, a buy pause
+is active, or its transient price proof is unavailable. That result applies
+only to that invocation and does not block the next due collection, a separate
+Paper intent, or another lane.
+
 ## KIS Virtual-Paper Canary
 
 The price-input execution-learning command is a virtual-paper US buy-limit

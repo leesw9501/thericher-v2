@@ -60,6 +60,23 @@ missing dependency. It is not replaced by an inferred value, a hidden provider,
 or a paper-trading blocker. A later observed KIS capability can reactivate that
 branch through a new bounded contract.
 
+### Current Daily Paper Slice
+
+The first deployable daily slice is deliberately narrow: a forward KIS Paper
+`SPY/AMS` D1 head is collected as one immutable source, with the current US
+exchange date removed before persistence. Its first local availability attests
+when the two latest completed closes became usable. Research evaluates a fixed
+two-close baseline only for the next eligible session; Execution separately
+obtains a fresh `AMS` quote and derives the final `AMEX` limit. The daily close
+is never an execution price and a history/head consumer selects one whole
+source, never a per-row blend.
+
+The receipt digest crosses the Research/Execution boundary unchanged. It
+becomes the virtual-paper durable intent identity, so a retry can reconcile the
+same request but cannot replace it with a new quote or submit a duplicate order.
+This current slice supports `enter` and `abstain` only; the later position
+lifecycle adds its own explicit exit and reconciliation contract.
+
 ## Modules
 
 ```text

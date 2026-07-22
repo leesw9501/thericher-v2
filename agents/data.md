@@ -20,6 +20,13 @@ as a failed collection or an authority hold.
 - Authoritative cursor/index:
   `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - Data-bearing KIS daily mappings: `QQQ/NAS`, `SPY/AMS`, `IWM/AMS`
+- The forward-only daily SPY head is at
+  `D:\market_data\us_equities\kis_paper_private\daily-head\v1\index.json`.
+  Its first verified generation holds 99 `SPY/AMS` prior completed sessions
+  through 2026-07-21 and never retains the current US exchange date. The head
+  is a distinct immutable source, not a row-level patch over the historical
+  cache. `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST on
+  Tuesday through Saturday.
 - Last known clean common coverage: 694 completed sessions. QQQ has five
   committed chunks, SPY six, and IWM three plus one validated partial chunk.
   Inspect the index before acting.

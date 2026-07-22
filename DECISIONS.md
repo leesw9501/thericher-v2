@@ -4225,3 +4225,35 @@ not operator approval checkpoints.
 Reason: the operator explicitly prioritizes rapid autonomous development and
 virtual-paper learning over process scaffolding, while preserving the hard
 non-live boundary and truthful recoverable evidence.
+
+## 2026-07-22 - Add a point-in-time daily SPY receipt path
+
+Decision: add a compact forward `SPY/AMS` D1 head cache and connect it to a
+transparent two-close daily receipt, local-paper replay, and receipt-aware KIS
+Paper canary preparation. The collector retains only prior completed US
+exchange sessions and atomically hashes one immutable source. A session runner
+selects either that head or the older daily source as a whole, records first
+local availability, and requires the resulting receipt to be current for the
+next eligible session. It never combines rows across the sources, uses a daily
+close as an order price, or accepts the current exchange date as a completed
+bar.
+
+Execution binds an eligible receipt only to `SPY` / `AMEX`, one whole share,
+and an independently observed fresh `AMS` final-limit proof. Its durable
+run/client identity derives from the full receipt digest. A repeat can recover
+the exact intent but cannot submit it again with a changed price. The initial
+scheduled runner uses the existing cancellation canary, so its output is
+execution lifecycle evidence rather than a realized-PnL or model-quality claim.
+
+The first private head snapshot was collected outside Git with 99 prior
+completed sessions through 2026-07-21. A manual Docker run after the valid
+daily window produced a safe no-intent and made no quote/order call. New
+Windows tasks collect the head at 22:15 KST and run the session at 23:50 KST on
+Tuesday through Saturday. These are recurring private Paper jobs, not one-shot
+approval latches.
+
+Claude's falsification-first verdict was `supported-with-limits`: preserve the
+current-session exclusion, whole-source selection, immutable source hashes,
+virtual-route isolation, redaction, and exact-intent recovery. The next change
+may add an explicit receipt-linked Paper position/exit lifecycle, but must not
+create a live route or reinterpret a cancellation as PnL.

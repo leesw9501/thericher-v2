@@ -35,6 +35,18 @@ $schedules = @(
         At = "23:35"
     },
     @{
+        Name = "thericher-kis-paper-daily-spy-head"
+        Profile = "kis-paper-daily-spy-head"
+        Service = "kis-paper-daily-spy-head"
+        At = "22:15"
+    },
+    @{
+        Name = "thericher-kis-paper-daily-spy-session"
+        Profile = "kis-paper-daily-spy-session"
+        Service = "kis-paper-daily-spy-session"
+        At = "23:50"
+    },
+    @{
         Name = "thericher-kis-paper-intraday-head"
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"

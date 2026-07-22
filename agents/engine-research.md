@@ -12,6 +12,13 @@ directional pauses do not qualify, disqualify, or promote any research model;
 research may keep preparing eligible breadth/depth/ensemble/replication work in
 parallel with Paper operation.
 
+The daily SPY lane now owns a deliberately transparent two-close momentum
+baseline. It consumes only one hash-attested `SPY/AMS` D1 source that was first
+locally available before the next execution session, emits a deterministic
+`enter` or `abstain` receipt, and replays eligible synthetic decisions through
+`source: local_paper`. It is an execution-learning reference, not a return,
+selection, ensemble, or GPU-promotion claim.
+
 ## Intraday Input Contract
 
 The KIS-native minute cache now supports one bounded chronological CPU baseline,

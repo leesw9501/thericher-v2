@@ -92,6 +92,7 @@ KIS_PAPER_US_CCNCL_MAX_PAGES = 2
 KIS_PAPER_RATE_LIMIT_CODE = "EGW00201"
 
 _RECEIPT_DECISION_ID = re.compile(r"receipt-([0-9a-f]{64})")
+_SHA256_REFERENCE = re.compile(r"sha256:[0-9a-f]{64}")
 
 _PAPER_POST_HEADERS = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "content-type", "accept"}
@@ -316,6 +317,7 @@ class KisPaperCanaryIntent:
     limit_price: Decimal
     created_at: datetime
     valid_until: datetime
+    price_contract_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -338,6 +340,10 @@ class KisPaperCanaryIntent:
         object.__setattr__(self, "valid_until", require_utc(self.valid_until, "valid_until"))
         if self.valid_until <= self.created_at:
             raise ValueError("canary validity is invalid")
+        if self.price_contract_ref is not None and _SHA256_REFERENCE.fullmatch(
+            self.price_contract_ref
+        ) is None:
+            raise ValueError("canary price contract reference is invalid")
 
     @property
     def fingerprint(self) -> str:
@@ -346,7 +352,7 @@ class KisPaperCanaryIntent:
         ).hexdigest()
 
     def to_dict(self) -> dict[str, str]:
-        return {
+        payload = {
             "run_id": self.run_id,
             "client_order_id": self.client_order_id,
             "decision_id": self.decision_id,
@@ -357,6 +363,9 @@ class KisPaperCanaryIntent:
             "created_at": self.created_at.isoformat(),
             "valid_until": self.valid_until.isoformat(),
         }
+        if self.price_contract_ref is not None:
+            payload["price_contract_ref"] = self.price_contract_ref
+        return payload
 
     @classmethod
     def from_decision(
@@ -364,6 +373,7 @@ class KisPaperCanaryIntent:
         decision: KisPaperCanaryBuyDecision,
         *,
         run_id: str,
+        price_contract_ref: str | None = None,
     ) -> KisPaperCanaryIntent:
         _safe_identifier(run_id, "run_id")
         return cls(
@@ -376,6 +386,7 @@ class KisPaperCanaryIntent:
             limit_price=decision.limit_price,
             created_at=decision.decision_as_of,
             valid_until=decision.valid_until,
+            price_contract_ref=price_contract_ref,
         )
 
     def broker_request(self) -> BrokerOrderRequest:
@@ -481,6 +492,12 @@ class KisPaperCanaryState:
                 limit_price=_positive_decimal(raw_intent.get("limit_price")),
                 created_at=_utc_datetime(raw_intent.get("created_at")),
                 valid_until=_utc_datetime(raw_intent.get("valid_until")),
+                price_contract_ref=(
+                    None
+                    if "price_contract_ref" not in raw_intent
+                    or raw_intent["price_contract_ref"] is None
+                    else _required_sha256_reference(raw_intent["price_contract_ref"])
+                ),
             )
             if payload["intent_fingerprint"] != intent.fingerprint:
                 raise ValueError("fingerprint")
@@ -1019,15 +1036,24 @@ def _run_kis_paper_canary(
     submit_permitted: Callable[[datetime], bool] | None = None,
     execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
     require_existing_state: bool = False,
+    price_contract_ref: str | None = None,
+    reuse_existing_intent_if_same_decision: bool = False,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
     observed_at = _canary_now(now=now, clock=clock)
     state_store = KisPaperCanaryStateStore(state_path)
-    requested_intent = KisPaperCanaryIntent.from_decision(decision, run_id=run_id)
+    requested_intent = KisPaperCanaryIntent.from_decision(
+        decision,
+        run_id=run_id,
+        price_contract_ref=price_contract_ref,
+    )
     existing_state = state_store.read()
     if existing_state is not None:
-        _ensure_recovery_intent_matches(existing_state.intent, requested_intent)
+        if reuse_existing_intent_if_same_decision:
+            _ensure_reusable_receipt_intent_matches(existing_state.intent, requested_intent)
+        else:
+            _ensure_recovery_intent_matches(existing_state.intent, requested_intent)
         intent = existing_state.intent
     elif require_existing_state:
         raise KisPaperCanaryError("recovery_state_missing")
@@ -1051,6 +1077,7 @@ def _run_kis_paper_canary(
             state_store=state_store,
             environment=environment,
             transport=transport,
+            client=client,
             observed_at=observed_at,
         )
     elif observed_at >= intent.valid_until:
@@ -1234,6 +1261,8 @@ def run_kis_paper_canary(
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
     execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
+    price_contract_ref: str | None = None,
+    reuse_existing_intent_if_same_decision: bool = False,
 ) -> KisPaperCanaryOutcome:
     """Serialize one canary root from reconciliation through terminal state."""
 
@@ -1258,6 +1287,8 @@ def run_kis_paper_canary(
             clock=clock,
             submit_permitted=submit_permitted,
             execution_control_path=execution_control_path,
+            price_contract_ref=price_contract_ref,
+            reuse_existing_intent_if_same_decision=reuse_existing_intent_if_same_decision,
         )
 
 
@@ -1458,13 +1489,15 @@ def _recover_existing_canary(
     state_store: KisPaperCanaryStateStore,
     environment: Mapping[str, str],
     transport: KisHttpTransport | None,
+    client: KisPaperCanaryClient | None,
     observed_at: datetime,
 ) -> tuple[KisPaperCanaryState, KisPaperCanaryReconciliation]:
     try:
-        client = KisPaperCanaryClient(
-            config=load_kis_paper_config_from_environment(environment),
-            transport=transport or UrllibKisPaperCanaryTransport(),
-        )
+        if client is None:
+            client = KisPaperCanaryClient(
+                config=load_kis_paper_config_from_environment(environment),
+                transport=transport or UrllibKisPaperCanaryTransport(),
+            )
         reconciliation = client.reconcile(state, now=observed_at)
     except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
         return state, _unavailable_reconciliation(
@@ -1537,6 +1570,32 @@ def _ensure_recovery_intent_matches(
         requested.limit_price,
     )
     if recorded_identity != requested_identity:
+        raise KisPaperCanaryError("state_intent_mismatch")
+
+
+def _ensure_reusable_receipt_intent_matches(
+    recorded: KisPaperCanaryIntent,
+    requested: KisPaperCanaryIntent,
+) -> None:
+    """Permit a receipt retry to recover its first persisted price, never replace it."""
+
+    recorded_identity = (
+        recorded.run_id,
+        recorded.client_order_id,
+        recorded.decision_id,
+        recorded.symbol,
+        recorded.exchange,
+        recorded.quantity,
+    )
+    requested_identity = (
+        requested.run_id,
+        requested.client_order_id,
+        requested.decision_id,
+        requested.symbol,
+        requested.exchange,
+        requested.quantity,
+    )
+    if recorded_identity != requested_identity or recorded.price_contract_ref is None:
         raise KisPaperCanaryError("state_intent_mismatch")
 
 
@@ -1751,6 +1810,7 @@ def _write_evidence(
         "intent_fingerprint": state.intent.fingerprint,
         "decision_ref": _redacted_decision_reference(state.intent.decision_id),
         "attribution_ref": _receipt_attribution_reference(state.intent.decision_id),
+        "price_contract_ref": state.intent.price_contract_ref,
         "phase": state.phase,
         "reason_code": state.reason_code,
         "submit_upstream_code": state.submit_upstream_code,
@@ -1986,6 +2046,12 @@ def _safe_identifier(value: object, label: str) -> None:
 def _required_text(value: object) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError("text")
+    return value
+
+
+def _required_sha256_reference(value: object) -> str:
+    if not isinstance(value, str) or _SHA256_REFERENCE.fullmatch(value) is None:
+        raise ValueError("sha256 reference")
     return value
 
 

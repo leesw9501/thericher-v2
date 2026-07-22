@@ -71,7 +71,16 @@ def test_eligible_receipt_replays_through_local_paper_with_its_exact_identity(
     assert replay.fill == execution.fill
     assert len([event for event in store.iter_events() if event.event_type == "fill"]) == 1
     safe = prepared.safe_payload()
-    assert set(safe) == {"schema_version", "kind", "route", "receipt_ref", "status", "reason"}
+    assert set(safe) == {
+        "schema_version",
+        "kind",
+        "route",
+        "receipt_ref",
+        "status",
+        "reason",
+        "price_contract_ref",
+    }
+    assert safe["price_contract_ref"] is None
     assert not {"symbol", "exchange", "quantity", "limit_price"}.intersection(safe)
 
 
@@ -122,6 +131,7 @@ def test_eligible_receipt_can_prepare_but_not_submit_a_tick_valid_kis_paper_deci
         "receipt_ref": receipt_attribution_ref(receipt),
         "status": "ready",
         "reason": "eligible",
+        "price_contract_ref": f"sha256:{'e' * 64}",
     }
 
     mismatched_proof = _limit_proof(receipt, receipt_id=f"decision:sha256:{'f' * 64}")

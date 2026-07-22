@@ -229,8 +229,12 @@ def _verified_cache_root(
         root = candidate.resolve()
     except OSError as error:
         raise ValueError("KIS paper daily catalog cache root is invalid") from error
-    if repo_root is not None and root.is_relative_to(Path(repo_root).resolve()):
-        raise ValueError("KIS paper daily catalog cache root must stay outside Git")
+    if repo_root is not None:
+        repository = Path(repo_root).resolve()
+        mounted_root = repository / "market_data"
+        mounted_market_data = mounted_root.is_mount() and root.is_relative_to(mounted_root)
+        if root.is_relative_to(repository) and not mounted_market_data:
+            raise ValueError("KIS paper daily catalog cache root must stay outside Git")
     return root
 
 

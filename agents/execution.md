@@ -147,6 +147,18 @@ new receipt-shaped canary decision carries an exact opaque receipt digest as
 `attribution_ref` in sanitized lifecycle evidence; historical canaries retain
 their existing short `decision_ref` only.
 
+The daily SPY session now evaluates its cache and Research receipt before it
+loads KIS Paper configuration or requests a quote. It prefers one complete
+forward `SPY/AMS` head source over older history, never mixes their rows, and
+uses an independent fresh `AMS` quote only after an eligible entry receipt.
+The stable receipt digest names the durable canary state file, so a changed
+quote cannot create a second virtual order for the same receipt. The session
+currently uses cancellation after an acknowledged entry as an execution canary;
+the next lifecycle objective adds receipt-linked position and exit handling.
+The `thericher-kis-paper-daily-spy-session` task is scheduled at 23:50 KST on
+Tuesday through Saturday; its first manual post-window run recorded a safe
+daily no-intent without a KIS price or order call.
+
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
