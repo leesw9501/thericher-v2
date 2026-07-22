@@ -324,6 +324,10 @@ The installed Windows Paper schedules invoke their named Docker profile with
 service image. This is runtime reproducibility, not a new scheduling or Paper
 approval condition.
 
+The Codex app daily operating review runs at 08:10 KST. It is the concise
+operator-summary and integration pass for prior scheduled outcomes; the named
+Windows tasks remain the only recurring KIS-facing execution/data jobs.
+
 ## KIS Virtual-Paper Canary
 
 The quote-derived execution-learning command is a virtual-paper US buy-limit

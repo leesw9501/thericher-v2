@@ -116,6 +116,12 @@ The two installed Windows schedules now invoke their named Docker profiles with
 `--build`; their next due times remain the first runtime evidence, not a
 permission boundary.
 
+The Codex app automation `thericher-daily-operating-review` is active at 08:10
+KST. It inspects the previous scheduled outcomes through sanitized evidence,
+continues ready no-cost lane work, and publishes only the concise operator
+summary described in `AGENTS.md`; it does not create a new repo scheduler or
+grant live authority.
+
 ## Current Data State
 
 `kis-paper-private-daily-backfill-v1` is the active KIS-native daily cache:

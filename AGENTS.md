@@ -359,7 +359,8 @@ Before ending a long task, Codex refreshes the next goal. When a long Codex goal
 still has capacity and no true approval blocker, continue with the refreshed
 goal rather than waiting for routine operator direction.
 
-When 08:00 KST automation is enabled, publish one concise operator summary. It
+When the daily KST operating-review automation is enabled, publish one concise
+operator summary. It
 may link to machine-readable metrics and the canonical next goal but must not
 copy or compete with them. Show outcomes, current paper/live mode, key PnL/data
 metrics, running work, recovery anomalies, exact data help, and every decision
