@@ -53,7 +53,9 @@ from .kis_paper_daily import (
 from .kis_paper_intraday import (
     load_verified_kis_paper_private_intraday_catalog,
     raw_bar_end_is_complete,
+    require_complete_kis_paper_private_intraday_session,
     resample_verified_kis_paper_private_intraday_catalog,
+    slice_verified_kis_paper_private_intraday_catalog,
 )
 from .local import (
     CSV_FIELDS,
@@ -75,6 +77,7 @@ from .resample import (
     resample_session_bars,
 )
 from .synthetic import generate_trending_bars
+from .us_equity_session import UsEquity2026Session, us_equity_2026_session
 
 __all__ = [
     "CSV_FIELDS",
@@ -116,6 +119,7 @@ __all__ = [
     "SampleBarProvider",
     "SessionResampleResult",
     "SessionWindow",
+    "UsEquity2026Session",
     "assess_bar_quality",
     "bar_from_record",
     "bar_to_record",
@@ -130,7 +134,9 @@ __all__ = [
     "load_kis_paper_private_daily_catalog",
     "load_verified_kis_paper_private_intraday_catalog",
     "raw_bar_end_is_complete",
+    "require_complete_kis_paper_private_intraday_session",
     "resample_verified_kis_paper_private_intraday_catalog",
+    "slice_verified_kis_paper_private_intraday_catalog",
     "slice_kis_paper_private_daily_catalog",
     "load_cataloged_yahoo_daily_1d_bars",
     "load_cataloged_corporate_actions",
@@ -140,4 +146,5 @@ __all__ = [
     "resample_session_bars",
     "select_catalog_dataset",
     "write_training_readiness_catalog",
+    "us_equity_2026_session",
 ]

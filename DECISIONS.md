@@ -2,6 +2,14 @@
 
 This is append-only. New decisions go at the bottom.
 
+## Current KIS Paper Authority
+
+For current private KIS Paper authority, `AGENTS.md` controls. Historical
+entries that mention read-only-only access, capital-envelope approval, one-shot
+reservations, or a `raw_market_data_retained` latch are superseded by the
+standing-authority decisions on 2026-07-21 and 2026-07-22. They remain evidence
+of their original runs, not current operating restrictions.
+
 ## 2026-07-14 - Start v2 as a new private repository
 
 Decision: create `thericher-v2` as a new private GitHub repository.
@@ -3851,3 +3859,60 @@ Reason: the engine needs reusable KIS-reconstructible input bytes more than
 another terminal observation. The narrow cache keeps moving under the operator's
 full Paper authority while preserving only the technical checks needed to make
 later model and paper evidence reproducible.
+
+## 2026-07-22 - Remove residual KIS Paper permission latches from current paths
+
+Decision: the operator has standing-authorized all private `KIS_PAPER_*` work:
+credential use, market/account/order reads, virtual submit/modify/cancel,
+reconciliation, routine paper sizing, raw local market-data retention, and
+goal-owned schedules. No one-shot, per-call, capital-envelope, trade-count,
+profitability, report, or historical-retention marker may pause a fresh
+correctly scoped KIS Paper action.
+
+An old `raw_market_data_retained: false` record is now ignored by the active
+intraday collector and offline loader before cache validation, deduplication,
+cursor handling, or bar consumption when it is a legacy marker without a cache
+snapshot. A real deferred snapshot remains historical recovery evidence only.
+Malformed retained data and conflicting retained rows remain data-integrity
+faults, not permission checks.
+
+The remaining technical invariants are deliberately narrow: virtual-paper host
+and route isolation, no secret/raw broker output, persisted idempotent intent
+before a Paper side effect, and reconciliation before reusing that exact
+ambiguous intent. They never block distinct Paper work. `KIS_LIVE_*`, live
+hosts/routes, real-money behavior, paid commitments, unclear rights, and public
+exposure remain outside this authority.
+
+Claude's falsification-first verdict was `supported-with-limits`: the current
+virtual host pin, allowlists, Paper-only variables, and per-intent recovery
+semantics support removing permission latches; those technical invariants need
+ongoing tests rather than a new approval workflow.
+
+Reason: historical experiment metadata had an accidental path to look like a
+global stop condition. The private Paper system should iterate by default and
+record technical evidence without recreating v1-style process controls.
+
+## 2026-07-22 - Separate prospective intraday head cache and first complete-session replay
+
+Decision: retain the cursor-resuming intraday cache for historical continuation,
+and add a sibling `intraday-head` cache for fresh KIS source pages. Head mode
+does not move the backfill cursor and is invoked by one bounded local data-only
+automation. It receives only Paper market-data credentials and exposes no
+account, order, or live route.
+
+`us_equity_2026_session` maps the published Nasdaq/NYSE 2026 holiday and early
+close calendar into explicit UTC session windows. It is a calendar source, not
+a claim about KIS bar timestamp or open/close semantics. A 390-minute QQQ slice
+for 2026-07-21 completed the CPU cache-to-local-paper baseline across
+1m/5m/10m/1h/3h. Its external sanitized artifact records replayability only;
+it is not profitability, model-selection, or GPU-training evidence.
+
+Claude's falsification-first verdict was `supported-with-limits`: separate
+roots/cursors, Paper-only routing, and an explicit calendar support the design;
+schedule time alone cannot prove source coverage. The implementation preserves
+that distinction and retains no raw quotes, credentials, account identifiers,
+or broker output in Git.
+
+Reason: prospective KIS-compatible cache accumulation can proceed continuously
+without corrupting historical recovery state, while a complete session proves
+the local replay interface before multi-session research begins.

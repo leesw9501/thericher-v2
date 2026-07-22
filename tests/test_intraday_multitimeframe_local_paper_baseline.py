@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.contracts import Timeframe
-from thericher_v2.data import CatalogedBars, load_cataloged_yahoo_intraday_1m_bars
+from thericher_v2.data import CatalogedBars, SessionWindow, load_cataloged_yahoo_intraday_1m_bars
 from thericher_v2.execution import LOCAL_PAPER_SOURCE, replay_local_paper_account
 from thericher_v2.research.validation import (
     run_intraday_multitimeframe_local_paper_baseline,
@@ -156,6 +156,26 @@ def test_multitimeframe_baseline_skips_unexecutable_partial_timeframes(tmp_path:
     assert cells[Timeframe.H1].work_dir is None
     assert cells[Timeframe.H3].status == "skipped"
     assert cells[Timeframe.H3].skip_reason == "no_complete_resampled_bars"
+
+
+def test_multitimeframe_baseline_uses_an_explicit_session_for_resampling(tmp_path: Path) -> None:
+    source = _attested_source(tmp_path, minutes=400)
+    session = SessionWindow(
+        open_ts=datetime(2026, 1, 2, 13, 30, tzinfo=UTC),
+        close_ts=datetime(2026, 1, 2, 20, 0, tzinfo=UTC),
+    )
+
+    result = run_intraday_multitimeframe_local_paper_baseline(
+        source,
+        run_id="session-anchored-multitimeframe",
+        work_root=tmp_path / "external-evidence",
+        repo_root=Path.cwd(),
+        session=session,
+    )
+
+    cells = {cell.timeframe: cell for cell in result.cells}
+    assert cells[Timeframe.M1].resampled_bar_count == 390
+    assert all(cell.all_fills_local_paper for cell in result.cells if cell.status == "completed")
 
 
 def test_multitimeframe_baseline_is_offline_and_credential_free(

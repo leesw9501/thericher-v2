@@ -293,6 +293,8 @@ def _reverify_committed_snapshots(
 
     for target in _targets(index):
         for chunk in target["chunks"]:
+            if _is_unretained_marker(chunk):
+                continue
             if chunk["outcome"] not in _USABLE_CHUNK_OUTCOMES:
                 continue
             snapshot = inspect_kis_paper_private_daily_backfill_snapshot(
@@ -359,7 +361,10 @@ def _select_ready_target(
         )
         if target["state"] in {"ready", "deferred"} and retry_is_ready:
             # The newest cursor has the least historical coverage and limits the shared panel.
-            ready.append((str(target["next_anchor_date"]), len(target["chunks"]), position, target))
+            retained_chunk_count = sum(
+                not _is_unretained_marker(chunk) for chunk in target["chunks"]
+            )
+            ready.append((str(target["next_anchor_date"]), retained_chunk_count, position, target))
     return (
         max(ready, default=None, key=lambda item: (item[0], -item[1], -item[2]))[3]
         if ready
@@ -379,6 +384,7 @@ def _recover_orphan_snapshot(
         chunk["manifest_hash"]
         for target in _targets(index)
         for chunk in target["chunks"]
+        if not _is_unretained_marker(chunk)
     }
     for target in _targets(index):
         symbol = str(target["symbol"]).lower()
@@ -424,6 +430,7 @@ def _commit_snapshot(
     prior_fingerprints = {
         date: fingerprint
         for chunk in target["chunks"]
+        if not _is_unretained_marker(chunk)
         if chunk["outcome"] in _USABLE_CHUNK_OUTCOMES
         for date, fingerprint in chunk["row_fingerprints"].items()
     }
@@ -664,6 +671,8 @@ def _validate_index(index: Mapping[str, object]) -> None:
         if retry_not_before is not None:
             _parse_utc(str(retry_not_before))
         for chunk in target["chunks"]:
+            if _is_unretained_marker(chunk):
+                continue
             _validate_chunk(chunk, target_key=_target_key(symbol, exchange))
 
 
@@ -785,6 +794,16 @@ def _validate_chunk(chunk: object, *, target_key: str) -> None:
         or not str(chunk["reason"]).startswith("partial_")
     ):
         raise ValueError("private daily partial chunk is invalid")
+
+
+def _is_unretained_marker(chunk: object) -> bool:
+    """Ignore legacy non-data markers while preserving real deferred snapshots."""
+
+    return (
+        isinstance(chunk, Mapping)
+        and chunk.get("raw_market_data_retained") is False
+        and not isinstance(chunk.get("manifest_path"), str)
+    )
 
 
 def _targets(index: Mapping[str, object]) -> list[dict[str, object]]:

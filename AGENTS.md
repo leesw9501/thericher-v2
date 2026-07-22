@@ -291,7 +291,10 @@ it never disables a later correctly scoped KIS Paper job or schedule.
 Default to the next due, correctly scoped KIS Paper action. In particular, a
 historical `raw_market_data_retained: false` result means only that its own
 snapshot has no bytes to consume. It is never a consent hold, an operator
-question, or a reason to skip a later normal collection retry.
+question, index-level halt, or a reason to skip a later normal collection retry.
+A legacy `false` marker without a cache snapshot is ignored before cache
+validation, deduplication, cursor, or input-consumption logic. A real deferred
+snapshot remains recovery evidence, never a permission latch.
 
 A paper run has no per-goal or one-shot quota. A preserved unknown outcome
 pauses replacement of **that exact durable intent** until it is reconciled; it

@@ -31,8 +31,10 @@ from thericher_v2.data import (
     BarQuery,
     CatalogedBars,
     SampleBarProvider,
+    SessionWindow,
     assess_bar_quality,
     resample_bars,
+    resample_session_bars,
 )
 from thericher_v2.ensemble import decide
 from thericher_v2.execution import (
@@ -677,6 +679,7 @@ def run_intraday_multitimeframe_local_paper_baseline(
     run_id: str = "intraday-multitimeframe-local-paper-baseline",
     work_root: Path | None = None,
     repo_root: Path | None = None,
+    session: SessionWindow | None = None,
 ) -> MultiTimeframeBaselineResult:
     """Replay one completed bar per timeframe through isolated local-paper stores.
 
@@ -695,6 +698,7 @@ def run_intraday_multitimeframe_local_paper_baseline(
                 run_id=run_id,
                 work_root=Path(temp_dir),
                 retain_work_paths=False,
+                session=session,
             )
 
     resolved_root = Path(work_root)
@@ -708,6 +712,7 @@ def run_intraday_multitimeframe_local_paper_baseline(
         run_id=run_id,
         work_root=run_root,
         retain_work_paths=True,
+        session=session,
     )
 
 
@@ -745,11 +750,26 @@ def _run_intraday_multitimeframe_baseline(
     run_id: str,
     work_root: Path,
     retain_work_paths: bool,
+    session: SessionWindow | None,
 ) -> MultiTimeframeBaselineResult:
-    m1_by_start = {bar.start_ts: bar for bar in bars}
+    source_bars = (
+        bars
+        if session is None
+        else tuple(
+            bar
+            for bar in bars
+            if bar.start_ts >= session.open_ts and bar.end_ts <= session.close_ts
+        )
+    )
+    m1_by_start = {bar.start_ts: bar for bar in source_bars}
     cells: list[MultiTimeframeBaselineCell] = []
     for timeframe in SUPPORTED_RESAMPLE_TIMEFRAMES:
-        resampled = tuple(resample_bars(bars, timeframe))
+        resampled = (
+            resample_bars(source_bars, timeframe)
+            if session is None
+            else list(resample_session_bars(source_bars, timeframe, session=session).bars)
+        )
+        resampled = tuple(resampled)
         selected = _select_multitimeframe_execution_bars(resampled, m1_by_start)
         if selected is None:
             skip_reason = (

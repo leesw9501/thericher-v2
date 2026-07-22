@@ -39,6 +39,15 @@ Own the current KIS-native daily cache and its future reusable loaders.
   718 unique 1m bars per stream under the latest offline reattestation: QQQ
   spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21.
   The index is authoritative for the next cursor and current coverage.
+- The separate `intraday-head` root receives fresh source-page observations
+  without advancing the historical backfill cursor. The scoped local
+  `thericher-kis-paper-intraday-head` automation runs Tuesday through Saturday
+  at 02:35 KST; its schedule is never evidence that a full session was stored.
+- `us_equity_2026_session` supplies explicit 2026 regular and early-close UTC
+  windows from published Nasdaq/NYSE calendars. The first QQQ regular-session
+  slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded
+  cache/replay baseline only; it does not settle KIS field open/close semantics
+  or create a multi-session research dataset.
 
 ## Ready Queue
 
@@ -60,9 +69,11 @@ Own the current KIS-native daily cache and its future reusable loaders.
    regular-session observations. Collect fresh data rather than reviving
    terminal metadata-only probes; an old failed or unretained result cannot
    disable this work.
-6. Establish a minimal source-backed regular-session/early-close interpretation
-   for cache consumers. Preserve raw provider rows and label unknown behavior;
-   do not repair, fill, or relabel a session from another provider.
+6. Keep the head cache accumulating prospective sessions while preserving its
+   independent root and safe coverage evidence. Reattest any candidate complete
+   session before handing it to Engine Research.
+7. Preserve raw provider rows and label unknown KIS field semantics; do not
+   repair, fill, or relabel a session from another provider.
 
 ## Authority And Boundaries
 
@@ -84,6 +95,9 @@ that would cross the 15% floor.
   not a collection permission switch.
 - A failed, empty, or unretained job is a recovery fact for that job only; it
   must not create a one-shot latch for later correctly scoped collection.
+- The intraday collector and offline loader ignore an unretained historical
+  marker without a cache snapshot before validation, deduplication, cursor
+  handling, or bar consumption.
 - When ordinary retry pacing has elapsed, the next correctly scoped collection
   proceeds without an operator question even if an older result retained no
   raw bytes.
@@ -115,6 +129,8 @@ that would cross the 15% floor.
 - The intraday loader uses the explicit KIS Korea fields (`kymd`/`khms`) as its
   UTC basis. It labels a bar incomplete when its end is later than the rounded
   collection minute, so an in-flight minute cannot become a completed feature.
+- The 2026 session adapter gives only the exchange calendar window. It does not
+  assert whether a KIS minute's timestamp is its open, close, or vendor stamp.
 - The first immutable v1 snapshots predate the explicit
   `canonical_start_policy` field. `data.kis_paper_intraday` accepts only their
   exact equivalent completed-bar-rule spelling; it never rewrites source bytes

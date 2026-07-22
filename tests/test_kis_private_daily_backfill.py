@@ -244,6 +244,13 @@ def test_unretained_empty_snapshot_is_not_a_one_shot_latch(tmp_path: Path) -> No
         cache_root=cache_root,
         repo_root=repo_root,
     )
+    index["targets"][0]["chunks"].append(
+        {
+            "outcome": "committed",
+            "raw_market_data_retained": False,
+            "historical_note": "one-shot observation only",
+        }
+    )
     for target in index["targets"][1:]:
         target["state"] = "complete"
     daily_backfill._write_backfill_index(
@@ -273,7 +280,7 @@ def test_unretained_empty_snapshot_is_not_a_one_shot_latch(tmp_path: Path) -> No
     )
     qqq = index["targets"][0]
     assert qqq["state"] == "complete"
-    assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
+    assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, False, True]
 
 
 def test_backfill_prioritizes_the_target_with_the_shortest_history() -> None:

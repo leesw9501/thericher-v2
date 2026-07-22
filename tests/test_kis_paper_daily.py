@@ -117,6 +117,27 @@ def test_dataset_identity_is_stable_when_index_retry_metadata_changes(tmp_path: 
     assert second.common_sessions == first.common_sessions
 
 
+def test_ignores_a_historical_unretained_marker_before_cursor_validation(tmp_path: Path) -> None:
+    cache_root, repo_root, index_path = _build_cache(tmp_path)
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    index["targets"][0]["chunks"].append(
+        {
+            "outcome": "committed",
+            "raw_market_data_retained": False,
+            "historical_note": "one-shot observation only",
+        }
+    )
+    index_path.write_text(json.dumps(index, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    catalog = load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)
+
+    assert catalog.common_sessions == (
+        datetime(2026, 1, 2, tzinfo=UTC).date(),
+        datetime(2026, 1, 5, tzinfo=UTC).date(),
+        datetime(2026, 1, 6, tzinfo=UTC).date(),
+    )
+
+
 def test_canonicalizes_target_order_and_refuses_non_us_market(tmp_path: Path) -> None:
     cache_root, repo_root, _index_path = _build_cache(tmp_path)
     default_catalog = load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)

@@ -24,9 +24,10 @@ sealed holdout access, unexpectedly strong results, ensembles, KIS paper/live
 authority or material risk changes, incident recovery, and major architecture
 or worker growth. It does not review routine implementation or tests.
 
-Claude is advisory. Emergency containment never waits for review. The operator
-retains business, credential, paper/live, capital, and risk authority; Codex
-integrates technical resolutions.
+Claude is advisory. Emergency containment never waits for review. `KIS_PAPER_*`
+standing authority is defined in `AGENTS.md`; the operator retains live
+credential/live-capital, paid, rights, public-exposure, and business authority.
+Codex integrates technical resolutions.
 
 ## Recovery
 

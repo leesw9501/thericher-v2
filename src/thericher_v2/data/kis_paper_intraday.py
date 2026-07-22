@@ -51,12 +51,14 @@ def load_verified_kis_paper_private_intraday_catalog(
     bars_by_start: dict[datetime, tuple[Bar, str]] = {}
     lineage: list[dict[str, str]] = []
     for chunk in chunks:
-        if not isinstance(chunk, Mapping) or chunk.get("outcome") not in {"committed", "partial"}:
+        if not isinstance(chunk, Mapping):
             raise ValueError("private intraday index is invalid")
         # A false value means this particular chunk has no usable file. It is
         # not a collection permission switch and cannot block later work.
         if chunk.get("raw_market_data_retained") is not True:
             continue
+        if chunk.get("outcome") not in {"committed", "partial"}:
+            raise ValueError("private intraday index is invalid")
         manifest_path, manifest_hash, raw_hash = _chunk_paths(root=root, chunk=chunk)
         manifest_bytes = _read_bytes(manifest_path, "private intraday manifest is invalid")
         if _sha256(manifest_bytes) != manifest_hash:
@@ -115,6 +117,59 @@ def load_verified_kis_paper_private_intraday_catalog(
     )
 
 
+def slice_verified_kis_paper_private_intraday_catalog(
+    catalog: CatalogedBars,
+    *,
+    session: SessionWindow,
+) -> CatalogedBars:
+    """Derive one hash-bound session slice without reopening the KIS cache."""
+
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("private intraday session requires CatalogedBars")
+    if any(bar.timeframe != Timeframe.M1 for bar in catalog.bars):
+        raise ValueError("private intraday cache must contain 1m bars")
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.open_ts and bar.end_ts <= session.close_ts
+    )
+    if not bars:
+        raise ValueError("private intraday session has no source bars")
+    return _cataloged_bars_from_verified_loader(
+        dataset_id=(
+            f"{catalog.dataset_id}:session-"
+            f"{session.open_ts.strftime('%Y%m%dT%H%MZ')}-"
+            f"{session.close_ts.strftime('%Y%m%dT%H%MZ')}"
+        ),
+        dataset_hash=_session_dataset_hash(catalog=catalog, session=session),
+        source_path=catalog.source_path,
+        bars=bars,
+    )
+
+
+def require_complete_kis_paper_private_intraday_session(
+    catalog: CatalogedBars,
+    *,
+    session: SessionWindow,
+) -> CatalogedBars:
+    """Return a session slice only when every expected 1m source bar is present."""
+
+    sliced = slice_verified_kis_paper_private_intraday_catalog(catalog, session=session)
+    if session.duration % Timeframe.M1.duration:
+        raise ValueError("private intraday session must align to one-minute bars")
+    expected_starts = tuple(
+        session.open_ts + Timeframe.M1.duration * index
+        for index in range(session.duration // Timeframe.M1.duration)
+    )
+    if (
+        len(sliced.bars) != len(expected_starts)
+        or not all(bar.complete for bar in sliced.bars)
+        or tuple(bar.start_ts for bar in sliced.bars) != expected_starts
+    ):
+        raise ValueError("private intraday session is incomplete")
+    return sliced
+
+
 def resample_verified_kis_paper_private_intraday_catalog(
     catalog: CatalogedBars,
     *,
@@ -123,9 +178,8 @@ def resample_verified_kis_paper_private_intraday_catalog(
 ) -> SessionResampleResult:
     """Resample a verified 1m stream within a caller-declared session."""
 
-    if any(bar.timeframe != Timeframe.M1 for bar in catalog.bars):
-        raise ValueError("private intraday cache must contain 1m bars")
-    return resample_session_bars(catalog.bars, timeframe, session=session)
+    sliced = slice_verified_kis_paper_private_intraday_catalog(catalog, session=session)
+    return resample_session_bars(sliced.bars, timeframe, session=session)
 
 
 def raw_bar_end_is_complete(*, start_ts: datetime, collected_at: datetime) -> bool:
@@ -350,6 +404,21 @@ def _dataset_hash(*, index_bytes: bytes, lineage: list[dict[str, str]]) -> str:
                 lineage,
                 key=lambda item: (item["manifest_hash"], item["raw_sha256"]),
             ),
+        },
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return _sha256(payload)
+
+
+def _session_dataset_hash(*, catalog: CatalogedBars, session: SessionWindow) -> str:
+    payload = json.dumps(
+        {
+            "kind": "kis_paper_private_intraday_session_slice_v1",
+            "parent_dataset_id": catalog.dataset_id,
+            "parent_dataset_hash": catalog.dataset_hash,
+            "session_open_utc": session.open_ts.isoformat(),
+            "session_close_utc": session.close_ts.isoformat(),
         },
         separators=(",", ":"),
         sort_keys=True,

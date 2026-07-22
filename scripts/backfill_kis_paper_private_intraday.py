@@ -37,6 +37,7 @@ def main(
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--pages-per-target", type=int, default=2)
+    parser.add_argument("--mode", choices=("backfill", "head"), default="backfill")
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
@@ -54,10 +55,11 @@ def main(
         )
         results = run_kis_paper_private_intraday_backfill_cycle(
             client=client,
-            cache_root=_cache_root(),
+            cache_root=_cache_root(args.mode),
             repo_root=_REPO_ROOT,
             code_revision=(code_revision or _current_code_revision)(_REPO_ROOT),
             pages_per_target=args.pages_per_target,
+            resume_cursor=args.mode == "backfill",
             observed_at=clock(),
         )
     except KisPaperMarketDataError as error:
@@ -78,6 +80,7 @@ def main(
         json.dumps(
             {
                 "status": "complete",
+                "mode": args.mode,
                 "targets": [
                     {
                         "target_key": result.target_key,
@@ -129,11 +132,15 @@ def _load_paper_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
     return KisPaperMarketDataConfig(app_key=app_key, app_secret=app_secret)
 
 
-def _cache_root() -> Path:
+def _cache_root(mode: str = "backfill") -> Path:
+    if mode not in {"backfill", "head"}:
+        raise ValueError("private intraday mode is invalid")
     market_data_root = os.environ.get("THERICHER_MARKET_DATA_ROOT")
     if not market_data_root:
-        return KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT
-    return Path(market_data_root) / "us_equities" / "kis_paper_private" / "intraday"
+        base = KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT
+    else:
+        base = Path(market_data_root) / "us_equities" / "kis_paper_private" / "intraday"
+    return base if mode == "backfill" else base.with_name(f"{base.name}-head")
 
 
 if __name__ == "__main__":

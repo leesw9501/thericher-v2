@@ -295,15 +295,19 @@ def _load_target_rows(
     usable_chunks = [
         chunk
         for chunk in chunks
-        if isinstance(chunk, dict) and chunk.get("outcome") in _USABLE_CHUNK_OUTCOMES
+        if (
+            isinstance(chunk, dict)
+            and chunk.get("raw_market_data_retained") is True
+            and chunk.get("outcome") in _USABLE_CHUNK_OUTCOMES
+        )
     ]
     _verify_chunk_cursor_seams(usable_chunks)
     for chunk in chunks:
         if not isinstance(chunk, dict):
             raise ValueError("KIS paper daily catalog target is invalid")
-        if chunk.get("outcome") not in _USABLE_CHUNK_OUTCOMES:
-            continue
         if chunk.get("raw_market_data_retained") is not True:
+            continue
+        if chunk.get("outcome") not in _USABLE_CHUNK_OUTCOMES:
             continue
         if not isinstance(chunk.get("row_count"), int) or int(chunk["row_count"]) <= 0:
             raise ValueError("KIS paper daily catalog committed chunk is invalid")

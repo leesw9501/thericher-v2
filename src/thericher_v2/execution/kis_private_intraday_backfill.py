@@ -182,18 +182,23 @@ def run_kis_paper_private_intraday_backfill_cycle(
     repo_root: Path,
     code_revision: str,
     pages_per_target: int = 2,
+    resume_cursor: bool = True,
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
-    """Collect a bounded page count per source target and atomically move cursors.
+    """Collect bounded source pages with optional historical-cursor resumption.
 
+    A head observation sets ``resume_cursor`` false: it starts from the latest
+    source page and retains its snapshot without changing any persisted cursor.
     A failed attempt creates no data-bearing chunk, so it is recovery evidence
     for that call only and never a later collection latch.
     """
 
     if type(pages_per_target) is not int or pages_per_target <= 0:
         raise ValueError("pages_per_target must be a positive integer")
+    if type(resume_cursor) is not bool:
+        raise ValueError("resume_cursor must be a boolean")
     if not code_revision.strip() or "\n" in code_revision:
         raise ValueError("private intraday code revision is invalid")
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
@@ -238,8 +243,10 @@ def run_kis_paper_private_intraday_backfill_cycle(
         for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS:
             target = KisPaperPrivateIntradayTarget(symbol=symbol, exchange=exchange)
             target_state = _index_target(index=index, target=target)
-            input_cursor = KisPaperPrivateIntradayCursor.from_document(
-                target_state.get("next_cursor")
+            input_cursor = (
+                KisPaperPrivateIntradayCursor.from_document(target_state.get("next_cursor"))
+                if resume_cursor
+                else None
             )
             collected = _collect_target(
                 client=client,
@@ -248,6 +255,17 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 pages_per_target=pages_per_target,
                 before_request=pacer.wait_before_request,
             )
+            if not resume_cursor:
+                collected = _CollectedTarget(
+                    target=collected.target,
+                    input_cursor=None,
+                    output_cursor=None,
+                    rows=collected.rows,
+                    page_documents=collected.page_documents,
+                    exact_duplicate_rows=collected.exact_duplicate_rows,
+                    status=collected.status,
+                    reason=collected.reason,
+                )
             if collected.status == "rejected":
                 target_state["last_reason"] = collected.reason
                 target_state["last_observed_at_utc"] = _format_utc(observed)
@@ -295,11 +313,12 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 prior_exact_overlap=prior_exact_overlap,
             )
             if _has_chunk(target_state=target_state, candidate=chunk):
-                target_state["next_cursor"] = (
-                    collected.output_cursor.as_document()
-                    if collected.output_cursor is not None
-                    else None
-                )
+                if resume_cursor:
+                    target_state["next_cursor"] = (
+                        collected.output_cursor.as_document()
+                        if collected.output_cursor is not None
+                        else None
+                    )
                 target_state["last_reason"] = "already_cached"
                 target_state["last_observed_at_utc"] = _format_utc(observed)
                 _write_index(root=root, index=index)
@@ -327,11 +346,12 @@ def run_kis_paper_private_intraday_backfill_cycle(
             chunk["manifest_path"] = str(manifest_path.relative_to(root)).replace("\\", "/")
             chunk["manifest_hash"] = manifest_hash
             target_state["chunks"].append(chunk)
-            target_state["next_cursor"] = (
-                collected.output_cursor.as_document()
-                if collected.output_cursor is not None
-                else None
-            )
+            if resume_cursor:
+                target_state["next_cursor"] = (
+                    collected.output_cursor.as_document()
+                    if collected.output_cursor is not None
+                    else None
+                )
             target_state["last_reason"] = collected.reason
             target_state["last_observed_at_utc"] = _format_utc(observed)
             index["generation"] = int(index["generation"]) + 1
@@ -713,6 +733,11 @@ def _validate_index(index: Mapping[str, object]) -> None:
             raise ValueError("private intraday index is invalid")
         keys: set[str] = set()
         for chunk in chunks:
+            # An unretained historical observation is not a cache chunk. It
+            # cannot make a later correctly scoped collection invalid or
+            # dedupe away its retained replacement.
+            if _is_unretained_marker(chunk):
+                continue
             _validate_chunk(chunk=chunk, target=typed)
             assert isinstance(chunk, dict)
             chunk_key = str(chunk["chunk_key"])
@@ -761,6 +786,16 @@ def _validate_chunk(*, chunk: object, target: KisPaperPrivateIntradayTarget) -> 
         raise ValueError("private intraday index is invalid")
 
 
+def _is_unretained_marker(chunk: object) -> bool:
+    """Keep old non-data observations out of cache semantics."""
+
+    return (
+        isinstance(chunk, Mapping)
+        and chunk.get("raw_market_data_retained") is False
+        and not isinstance(chunk.get("manifest_path"), str)
+    )
+
+
 def _index_target(
     *, index: Mapping[str, object], target: KisPaperPrivateIntradayTarget
 ) -> dict[str, object]:
@@ -778,6 +813,8 @@ def _target_fingerprints(target_state: Mapping[str, object]) -> dict[str, str]:
     if not isinstance(chunks, list):
         raise ValueError("private intraday index is invalid")
     for chunk in chunks:
+        if _is_unretained_marker(chunk):
+            continue
         if not isinstance(chunk, Mapping):
             raise ValueError("private intraday index is invalid")
         fingerprints = chunk.get("row_fingerprints")
@@ -801,6 +838,7 @@ def _has_chunk(*, target_state: Mapping[str, object], candidate: Mapping[str, ob
     candidate_rows = candidate.get("row_fingerprints")
     return any(
         isinstance(chunk, Mapping)
+        and not _is_unretained_marker(chunk)
         and (
             chunk.get("chunk_key") == candidate_key
             or (
@@ -847,7 +885,9 @@ def _recover_orphan_snapshots(
         chunks = state["chunks"]
         assert isinstance(chunks, list)
         if any(
-            isinstance(existing, dict) and existing.get("chunk_key") == chunk["chunk_key"]
+            isinstance(existing, dict)
+            and not _is_unretained_marker(existing)
+            and existing.get("chunk_key") == chunk["chunk_key"]
             for existing in chunks
         ):
             continue
@@ -898,6 +938,8 @@ def _attest_committed_snapshots(*, root: Path, index: Mapping[str, object]) -> N
         if not isinstance(chunks, list):
             raise ValueError("private intraday index is invalid")
         for chunk in chunks:
+            if _is_unretained_marker(chunk):
+                continue
             _attest_snapshot_chunk(root=root, target=target, chunk=chunk)
 
 

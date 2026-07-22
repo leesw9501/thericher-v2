@@ -70,6 +70,9 @@ written, while a failed or empty response can truthfully remain `false`. It is
 never a permission switch. A historical `false` is not a consent hold: once a
 fresh correctly scoped collection is due after normal recovery or pacing, run
 it rather than asking for approval or treating the old observation as a latch.
+The current intraday collector and offline loader ignore an unretained legacy
+marker without a cache snapshot before cache validation, deduplication, cursor
+progress, or bar loading.
 
 Historical one-shot artifacts are non-authoritative. Their completion or
 retention value must never reserve, disable, or require approval for a later
@@ -114,6 +117,32 @@ manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
 5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first
 observed pages include extended-session data, so do not treat the cache as a
 regular-session strategy dataset until Data records that source semantics.
+
+### Prospective Head Collection
+
+Use the separate head cache when the goal is fresh in-session observations
+rather than historical cursor continuation:
+
+```powershell
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode head --pages-per-target 2
+docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-intraday-head
+```
+
+Head snapshots live below the sibling `intraday-head` cache root and never
+advance the historical backfill cursor. The local
+`thericher-kis-paper-intraday-head` automation runs Tuesday through Saturday at
+02:35 KST, which maps to the same US weekday mid-session. It is a bounded
+data-only invocation: it does not imply a complete session merely because it
+ran, and it has no account, order, or live route.
+
+For an offline KIS-cache replay after a complete session has been retained:
+
+```powershell
+uv run python scripts\run_kis_paper_intraday_local_paper_baseline.py --session-date 2026-07-21 --symbol QQQ
+```
+
+The command makes no network or credential access. It writes only a sanitized
+local-paper summary under the external model-artifact root.
 
 ## KIS Account Snapshot
 

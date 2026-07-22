@@ -232,7 +232,9 @@ provider-field snapshot before atomically advancing its `NEXT`/`KEYB` cursor;
 constructing a homogeneous 1m `CatalogedBars` stream. Exact overlap is accepted,
 but conflicting same-minute provider rows reject cursor advance. A missing raw
 file is unusable input only; it never turns an earlier
-`raw_market_data_retained: false` fact into a later collection restriction.
+`raw_market_data_retained: false` fact into a later collection restriction. The
+collector and offline reader ignore a legacy unretained marker without a cache
+snapshot before cache attestation, deduplication, and bar consumption.
 
 The cache chooses KIS's explicit Korea date/time fields as its canonical UTC
 basis and marks a bar complete only when its end is no later than the rounded
@@ -241,6 +243,16 @@ holiday, early close, or exchange open-versus-close convention from that choice.
 Those facts must be sourced separately before an intraday campaign claims a
 regular-session feature window. `SessionWindow` remains the explicit caller
 contract for 5m, 10m, 1h, and 3h resampling.
+
+`us_equity_2026_session` is the small current source-backed session adapter. It
+uses the published Nasdaq and NYSE 2026 holiday and early-close calendars to
+produce an explicit UTC `SessionWindow`; it does not infer a session from the
+collection schedule or KIS bar values. The separate head collector starts from
+a fresh source page and writes under the sibling `intraday-head` root, so its
+prospective observations cannot move or reinterpret the historical backfill
+cursor. A retained complete session may feed an offline local-paper baseline,
+but it is still only one chronological observation and cannot qualify model
+selection, promotion, or GPU training by itself.
 
 ## Model Policy
 

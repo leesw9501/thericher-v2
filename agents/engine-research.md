@@ -8,11 +8,12 @@ the first honest intraday input contract, not GPU occupancy.
 
 ## Intraday Input Contract
 
-The first KIS-native minute cache is an observed input, not an eligible model
-campaign. It contains 239 complete 1m bars per `QQQ/NAS` and `SPY/AMS` from an
-extended-session range. It is hash-attested and KIS-reconstructible as provider
-rows, but regular-session, holiday/early-close, exchange timestamp, and enough
-chronological coverage are not yet qualified.
+The KIS-native minute cache remains an observed input, not an eligible model
+campaign. Its original 239-bar extended-session pages are hash-attested and
+KIS-reconstructible, and a source-windowed QQQ slice now contains one complete
+390-minute regular session. The 2026 calendar window is explicit, but KIS bar
+open/close semantics and multi-session chronological coverage remain
+unqualified for model selection.
 
 When those source facts are established, freeze this initial contract before any
 model comparison:
@@ -33,10 +34,10 @@ model comparison:
 - naive comparators: `flat`, `always_long`, and `previous_bar_direction`, all
   through the existing `local_paper` target contract only.
 
-The 239-bar observed cache cannot provide the 3h context window or a
-chronological validation split. It is useful for loader and inference-shape
-smokes, but not for GPU, candidate ranking, PnL, ensemble selection, or model
-promotion.
+The original 239-bar observed cache cannot provide the 3h context window or a
+chronological validation split. One complete 390-minute session can exercise
+all resampling and local-paper replay cells, but it is still not sufficient for
+GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
 
 ## Ready Queue
 
@@ -78,6 +79,11 @@ promotion.
    after a frozen regular-session dataset exists; ensemble work requires
    independently generated out-of-fold predictions; replication reruns the
    selected contract unchanged.
+7. The first source-windowed CPU baseline is complete at
+   `D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
+   It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
+   replayable local-paper fills. Treat it as interface evidence, not a score or
+   model result; accumulate prospective sessions before freezing a campaign.
 
 ## GPU Policy
 

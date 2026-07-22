@@ -193,6 +193,75 @@ def test_failed_unretained_attempt_does_not_latch_later_collection(tmp_path: Pat
     assert qqq["chunks"][0]["raw_market_data_retained"] is True
 
 
+def test_historical_unretained_marker_never_blocks_a_fresh_intraday_collection(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    failed = _MinuteClient(
+        [
+            KisPaperMarketDataError("minute_response_empty"),
+            KisPaperMarketDataError("minute_response_empty"),
+        ]
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=failed,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    qqq["chunks"].append(
+        {
+            "raw_market_data_retained": False,
+            "historical_note": "one-shot observation only",
+        }
+    )
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    fresh = _MinuteClient(
+        [
+            _page(
+                symbol="QQQ",
+                exchange="NAS",
+                rows=_rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2),
+                next_cursor=None,
+            ),
+            KisPaperMarketDataError("minute_response_empty"),
+        ]
+    )
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=fresh,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert results[0].status == "collected"
+    assert fresh.queries[0].continuation_next is None
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        symbol="QQQ",
+        exchange="NAS",
+    )
+    assert len(catalog.bars) == 2
+
+
 def test_invalid_second_page_does_not_leak_rows_into_a_partial_snapshot(tmp_path: Path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
@@ -411,7 +480,14 @@ def test_orphan_snapshot_recovers_cursor_before_the_next_page(tmp_path: Path) ->
     index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
-    qqq["chunks"] = []
+    orphan_chunk = qqq["chunks"][0]
+    qqq["chunks"] = [
+        {
+            "chunk_key": orphan_chunk["chunk_key"],
+            "raw_market_data_retained": False,
+            "historical_note": "one-shot observation only",
+        }
+    ]
     qqq["next_cursor"] = None
     index_path.write_text(json.dumps(index), encoding="utf-8")
 
@@ -434,6 +510,7 @@ def test_orphan_snapshot_recovers_cursor_before_the_next_page(tmp_path: Path) ->
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert qqq["next_cursor"] == {"keyb": "20260722092900", "next": "1"}
+    assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
 
     resumed = _MinuteClient(
         [
@@ -461,7 +538,7 @@ def test_orphan_snapshot_recovers_cursor_before_the_next_page(tmp_path: Path) ->
     assert resumed.queries[0].continuation_key == "20260722092900"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
-    assert len(qqq["chunks"]) == 2
+    assert len(qqq["chunks"]) == 3
 
 
 def test_loader_rejects_tampered_external_raw_data_and_never_uses_repo_root(tmp_path: Path) -> None:

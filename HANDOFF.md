@@ -135,6 +135,18 @@ manifests use the earlier, equivalent completed-bar-rule spelling. The loader su
 only that exact legacy form plus the explicit current form; do not rewrite the
 immutable snapshots merely to normalize metadata.
 
+The separate prospective head path now writes under the sibling
+`D:\\market_data\\us_equities\\kis_paper_private\\intraday-head` root and does
+not mutate the historical cursor. `us_equity_2026_session` provides explicit
+2026 regular and early-close windows from the published Nasdaq/NYSE calendars;
+it does not infer a session from a schedule or KIS field semantics. The first
+complete QQQ regular-session replay used 390 retained 1m bars on 2026-07-21.
+Its CPU local-paper baseline completed all 1m/5m/10m/1h/3h cells with replayable
+`source: local_paper` fills only. The sanitized summary is external at
+`D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
+It proves cache-to-replay plumbing, not profit, source open/close semantics, or
+an eligible chronological model campaign.
+
 ## Lane State
 
 ### Data
@@ -157,6 +169,11 @@ smoke consumed the QQQ loader with 1m, 5m, 10m, and 1h cells; all emitted only
 replayable `local_paper` fills, while the short cache correctly skipped the 3h
 execution cell. This is a consumption smoke, not an after-hours strategy or
 profit claim.
+
+A source-windowed follow-up baseline has now consumed a complete 390-minute QQQ
+regular session through all five configured timeframes. The active
+`thericher-kis-paper-intraday-head` automation remains a separate data-only
+path, so it does not compete with the existing quote-derived Paper session.
 
 ### Engine Research
 
@@ -289,7 +306,9 @@ written, and cache collection is allowed by default. A historical marker can
 never disable a new correctly scoped KIS Paper data, account, order, or
 scheduler job. In particular, `raw_market_data_retained: false` means only
 that the old snapshot has no raw bytes; it is not a consent hold and a later
-due collection proceeds normally.
+due collection proceeds normally. The active intraday collector and offline
+reader ignore such a legacy marker without a cache snapshot before attestation,
+deduplication, cursor handling, or bar consumption.
 
 ## Recovery
 

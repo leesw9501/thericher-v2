@@ -64,6 +64,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   `outside_regular_session` outcome. Holiday and early-close semantics are not
   yet asserted by this time-window helper; validate them from KIS-native data
   evidence rather than treating them as a Paper authority gate.
+- The independent `thericher-kis-paper-intraday-head` automation is data-only:
+  it uses only Paper market-data credentials, has no account or order route,
+  and writes its cache outside Git. It may run beside the quote session because
+  it owns a separate cache root and does not mutate execution state.
 
 ## Ready Queue
 
