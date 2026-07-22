@@ -2,7 +2,8 @@
 
 ## Working Memory
 
-Own the current KIS-native daily cache and its future reusable loaders.
+Own the current KIS-native daily cache, prospective intraday-head observations,
+and their future reusable loaders.
 
 The local console receives only a sanitized intraday freshness projection. It
 does not receive paths, raw rows, manifests, quote values, hashes, credentials,
@@ -76,6 +77,18 @@ as a failed collection or an authority hold.
   hash, ordered dates, and explicit session windows for Research. The Docker
   research mount at `/app/market_data` is the same external D: cache, not Git
   storage, and is accepted only in that named container path.
+- The 2026-07-23 Data Agent metadata-only inspection found the prospective
+  `intraday-head/v1` index available and structurally readable. The local
+  preparer returned `pending`, with zero complete QQQ regular sessions out of
+  five required and no artifact writes. Its metadata hash was
+  `sha256:a9d8361b96dd92cae918c69202fdb1dc1ed2861a4050b5964041be407ff00f43`.
+  This inspection did not read credentials, raw rows, account data, canary
+  state, or broker evidence, and made no network call.
+- Windows task metadata on 2026-07-23 showed
+  `thericher-kis-paper-intraday-head` as `Ready`, with its 02:35 KST run
+  returning task result `0` and the next run at 2026-07-24 02:35 KST. The
+  separate `thericher-kis-paper-quote-session` task was also `Ready`, with
+  task result `0`; its execution semantics belong to Execution, not Data.
 
 ## Ready Queue
 
@@ -116,6 +129,10 @@ as a failed collection or an authority hold.
    freshness predicate. Keep those gaps visible while continuing Data work;
    they do not disable the head cache, KIS Paper, or an independently verified
    price source.
+10. Resume the independent prospective-head accumulation on its normal
+    scheduler cadence. The current metadata-only preparation has zero of five
+    required complete QQQ sessions, so it has no research handoff yet; this is
+    ordinary evidence accumulation, not a permission or scheduling latch.
 
 ## Authority And Boundaries
 
@@ -183,13 +200,18 @@ that would cross the 15% floor.
 
 ## Recovery
 
-Reattest the index and committed snapshots before a new network call. Recover a
-matching orphan snapshot without KIS access. Classify a bad snapshot or index
-as `reconcile`; do not overwrite evidence or invent a cursor.
+Current recovery class: `resume`. The prospective-head index is readable and
+the metadata-only preparer is pending solely because no complete QQQ sessions
+are present. Resume the next scheduled collection normally. Reattest the index
+and committed snapshots before a new network call. Recover a matching orphan
+snapshot without KIS access. Classify a bad snapshot or index as `reconcile`;
+do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
 Continue KIS-native minute accumulation and preserve the exact provider identity,
 timestamp basis, session classification, coverage, and limitations for the next
-feature/candidate input. Report only a concrete source-rights or storage
-constraint that needs operator action.
+feature/candidate input. Re-run the metadata-only prospective preparer after
+future head collections; hand off only when it reports five complete sessions.
+Report only a concrete source-rights or storage constraint that needs operator
+action.

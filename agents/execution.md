@@ -105,8 +105,10 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   `AMS` for the exact asking-price (`HHDFS76200100`) and price-detail
   (`HHDFS76200200`) endpoints, and `AMEX` for the virtual order. The current
   input adapter accepts only a fresh Korea-timestamped asking-price last, an
-  equal decimal scale from price detail, and a positive price-aligned
-  `e_hogau` tick. Values and bodies stay transient. Its first independent
+  equal decimal scale from price detail, and a positive `e_hogau` tick that is
+  representable at that scale. The raw last need not itself be a tick multiple:
+  the derived submit limit is rounded down and then validated against the tick.
+  Values and bodies stay transient. Its first independent
   virtual canary reached `outcome_unknown` / `reconciliation_unresolved`; a
   same-run read-only recovery reported an available account and zero open
   orders in sanitized aggregates, with no buy or cancel request. This is that
@@ -121,14 +123,22 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   the credential-free console projection from sanitized KIS Paper account facts.
   It submitted no order. Its external evidence remains under
   `D:\\thericher-v2\\model-artifacts\\execution\\kis-paper-console-bridge`.
+- On 2026-07-22 at 15:27 ET, an independent current-image quote session reached
+  category-only `acknowledged_order_reference`, then its requested cancellation
+  and reconciliation completed cleanly. The read-only lifecycle projector turns
+  that external evidence into a replayable `kis_paper` / `paper_only` fact with
+  `cancelled` lifecycle state and `not_eligible` attribution status. It makes no
+  KIS call and reads no credential. This proves the virtual execution lifecycle,
+  not a model edge, realized PnL, or a new approval condition.
 
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
 2. Keep scheduled independent KIS Paper canaries using the proven transient
-   `AMS`/`AMEX` price-input mapping. Diagnose the actual submit-response shape
-   with safe structural metadata, not raw broker payloads, and keep every
-   ambiguous intent's recovery separate from the next distinct Paper intent.
+   `AMS`/`AMEX` price-input mapping and category-only lifecycle facts. Connect a
+   later research-originated decision receipt only through the deterministic
+   intent boundary; keep every ambiguous intent's recovery separate from the
+   next distinct Paper intent.
 3. Add a sell path only when it has its own deterministic sizing, exit, and
    reconciliation contract; consume the existing sell pause then. Do not add a
    live route implicitly.
@@ -175,7 +185,7 @@ pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 ## Next Handoff
 
-Hand the safe upstream-code projection, new-canary evidence, and any unresolved
-KIS Paper route fact to Codex. Only a live-money boundary, paid commitment,
-unclear rights, public exposure, or an external KIS credential reset needs
-operator input.
+Hand the sanitized lifecycle projection, current-canary evidence, and any
+unresolved KIS Paper route fact to Codex. Only a live-money boundary, paid
+commitment, unclear rights, public exposure, or an external KIS credential reset
+needs operator input.

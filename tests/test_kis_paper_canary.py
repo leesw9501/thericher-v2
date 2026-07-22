@@ -22,7 +22,9 @@ from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryIntent,
     KisPaperCanaryState,
     KisPaperCanaryStateStore,
+    KisPaperSubmitResponseProbe,
     UrllibKisPaperCanaryTransport,
+    inspect_kis_paper_buy_limit_response,
     reconcile_kis_paper_canary_unknown_run,
     run_kis_paper_canary,
 )
@@ -39,6 +41,7 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperRequestPacer,
 )
 from thericher_v2.execution.paper_account_snapshot import read_paper_account_snapshot
+from thericher_v2.execution.paper_canary_lifecycle import read_paper_canary_lifecycle_fact
 from thericher_v2.execution.paper_canary_runtime import (
     PAPER_CANARY_RUNTIME_TTL,
     PaperCanaryRuntimeSnapshot,
@@ -884,6 +887,92 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
     assert _submission_count(transport) == 1
 
 
+@pytest.mark.parametrize(
+    ("response", "category"),
+    [
+        (
+            KisHttpResponse.from_payload(
+                {"rt_cd": "1", "msg_cd": "KIS1001", "msg1": "secret body"}
+            ),
+            "provider_rejected",
+        ),
+        (
+            KisHttpResponse.from_payload({"rt_cd": "0", "output": {}}),
+            "success_order_reference_missing",
+        ),
+        (
+            KisHttpResponse.from_payload({"rt_cd": "0", "output": "invalid"}),
+            "success_output_missing",
+        ),
+        (
+            KisHttpResponse.from_payload(
+                {"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}}
+            ),
+            "acknowledged_order_reference",
+        ),
+        (KisHttpResponse(status_code=503, headers={}, body=b"broker secret"), "http_non_200"),
+        (KisHttpResponse(status_code=200, headers={}, body=b"{"), "payload_invalid"),
+    ],
+)
+def test_submit_response_probe_is_category_only(
+    response: KisHttpResponse,
+    category: str,
+) -> None:
+    probe = inspect_kis_paper_buy_limit_response(response)
+
+    assert isinstance(probe, KisPaperSubmitResponseProbe)
+    assert probe.category == category
+    rendered = str(probe.safe_payload())
+    for forbidden in ("secret body", "ORD-123456789", "KIS1001"):
+        assert forbidden not in rendered
+
+
+def test_canary_evidence_projects_a_sanitized_open_lifecycle_fact(tmp_path: Path) -> None:
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="lifecycle-open-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "lifecycle-open-1.json",
+        execute=True,
+        cancel_after_submit=False,
+        transport=FakeKisPaperCanaryTransport(),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    fact = read_paper_canary_lifecycle_fact(outcome.evidence_path)
+
+    assert outcome.submit_response_category == "acknowledged_order_reference"
+    assert fact.lifecycle_state == "acknowledged"
+    assert fact.attribution_eligibility == "open"
+    assert fact.sizing_status == "fixed_canary"
+    safe_output = str(fact.safe_payload())
+    for forbidden in ("QQQ", "500.25", "ORD-123456789", "12345678", "paper-app-secret"):
+        assert forbidden not in safe_output
+
+
+def test_canary_evidence_projects_unknown_as_pending_reconciliation(tmp_path: Path) -> None:
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="lifecycle-unknown-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "lifecycle-unknown-1.json",
+        execute=True,
+        cancel_after_submit=False,
+        transport=FakeKisPaperCanaryTransport(fail_submit=True),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    fact = read_paper_canary_lifecycle_fact(outcome.evidence_path)
+
+    assert outcome.submit_response_category == "transport_unavailable"
+    assert fact.lifecycle_state == "outcome_unknown"
+    assert fact.attribution_eligibility == "pending_reconciliation"
+    assert "filled" not in str(fact.safe_payload())
+    assert "realized" not in str(fact.safe_payload())
+
+
 def test_submit_failure_evidence_projects_valid_code_without_raw_message(tmp_path: Path) -> None:
     safe_message_code = "EGW00201"
     raw_message_text = "paper-app-secret account 12345678 broker detail"
@@ -999,10 +1088,12 @@ def test_state_and_runtime_accept_payloads_before_submit_upstream_code() -> None
         cancel_after_submit=True,
     ).to_dict()
     legacy_state.pop("submit_upstream_code")
+    legacy_state.pop("submit_response_category")
 
     restored_state = KisPaperCanaryState.from_dict(legacy_state)
 
     assert restored_state.submit_upstream_code is None
+    assert restored_state.submit_response_category is None
 
     legacy_runtime = PaperCanaryRuntimeSnapshot(
         run_id="legacy-code-payload-1",

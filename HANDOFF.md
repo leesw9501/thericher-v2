@@ -417,6 +417,18 @@ completion record after cancellation also remains unresolved until a later
 attribution contract exists. These are execution correctness properties, not
 new paper approvals or reporting gates.
 
+On 2026-07-22 at 15:27 ET, a new independent virtual canary reached a safe
+`acknowledged_order_reference` submit category, completed its requested
+cancellation, and reconciled cleanly. The category-only lifecycle projection
+now exposes that result as a replayable `kis_paper` / `paper_only` fact with a
+`cancelled` lifecycle state and `not_eligible` attribution status. It contains
+no broker body, order identifier, account value, quote, or credential, and the
+host-only projector does not call KIS. This proves one virtual execution
+lifecycle, not a model result, realized PnL, or a new gate. The source `last`
+may be sub-tick; only the final rounded-down submit limit must satisfy the KIS
+tick. This keeps transient provider precision from becoming an artificial
+execution pause.
+
 ## Legacy Simplification
 
 Terminal historical KIS capability probes were removed from the executable
@@ -429,7 +441,9 @@ scheduler job. In particular, `raw_market_data_retained: false` means only
 that the old snapshot has no raw bytes; it is not a consent hold and a later
 due collection proceeds normally. The active intraday collector and offline
 reader ignore such a legacy marker without a cache snapshot before attestation,
-deduplication, cursor handling, or bar consumption.
+deduplication, cursor handling, or bar consumption. This remains the default
+under standing Paper authority, rather than an exception requiring a new
+operator confirmation.
 
 ## Recovery
 

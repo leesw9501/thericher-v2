@@ -4103,3 +4103,31 @@ Reason: the engine can now use a truthful, KIS-compatible transient price input
 and recover an ambiguous Paper result without turning a historical blank field,
 unknown intent, or one-shot marker into an approval hold for later distinct
 Paper work.
+
+## 2026-07-23 - Use final-limit tick validity, not raw-last tick validity
+
+Decision: the transient KIS asking-price `last` may have finer precision than
+the KIS-reported `e_hogau` increment. Do not reject a fresh otherwise valid
+source last merely because it is not itself a multiple of the submit tick.
+Require the tick to be positive and representable at the declared decimal scale;
+derive the private limit with downward rounding, then require that final limit
+to be tick-aligned before it can reach the virtual Paper route.
+
+The 2026-07-22 15:27 ET current-image virtual session then reached the safe
+submit category `acknowledged_order_reference`, completed requested cancellation,
+and reconciled cleanly. Its new host-only lifecycle projector emits opaque
+identity references plus `cancelled`, `clean`, and `not_eligible`; it reads an
+existing evidence file only and makes no KIS call or credential read. It does
+not claim a fill, realized PnL, model edge, or a reason to throttle later
+distinct authorized Paper work.
+
+Claude's falsification-first verdict was `supported-with-limits`: preserving a
+tick-aligned final order remains necessary, but treating the raw provider last
+as a required tick multiple was an unjustified availability gate. The focused
+tests cover a sub-tick source last that yields a valid rounded final limit, the
+category-only response parser, and the host-vs-container artifact-root split.
+
+Reason: this removes a false negative observed in an authorized Paper session
+while retaining the actual execution invariant. It reinforces that historical
+`raw_market_data_retained: false` markers and old one-shot evidence remain
+provenance/recovery facts only, never Paper permissions or general work stops.

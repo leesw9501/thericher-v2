@@ -202,6 +202,50 @@ identity. A missing checkpoint/summary is `restart`, not a partial model result.
 Ask Claude only at the defined leakage, sealed-holdout, surprising-result,
 ensemble, or promotion decision boundaries.
 
+## Sanitized Paper Lifecycle Consumer Contract
+
+Future Paper PnL attribution consumes one immutable, sanitized fact per
+research-originated intent. It is an Execution-produced public contract, not a
+broker client, order command, account snapshot, or replacement for the
+authoritative private reconciliation record. Its engine-loop value is to keep
+four causes separate when a Paper observation is later linked to a research
+campaign:
+
+- `model`: opaque `campaign_id`, `model_revision`, `decision_id`, and
+  `decision_class` (`enter`, `exit`, or `abstain`) identify what proposed the
+  action without exporting features, scores, weights, or predictions;
+- `timing`: UTC `decision_at`, `valid_until`, and categorical lifecycle timing
+  (`not_submitted`, `submitted`, `open`, `filled`, `cancelled`, `rejected`, or
+  `outcome_unknown`) distinguish a stale/late/unresolved observation from a
+  model outcome. Optional latency is a bounded bucket, never a broker timestamp
+  or raw response;
+- `sizing`: `sizing_status`, requested-versus-accepted notional ratio bucket,
+  and closed deterministic reason codes distinguish a risk/sizing reduction
+  from a model decision. Raw quantity, price, cash, buying power, and account
+  values are excluded;
+- `execution`: fixed `route: kis_paper`, `paper_only: true`, reconciliation
+  status, fill/realization status, and an opaque external evidence reference
+  distinguish broker/execution uncertainty from realized evidence. It must
+  never claim `source: local_paper` and must not contain broker order IDs,
+  account identifiers, tokens, raw KIS payloads, or raw fill values.
+
+Required common fields are `schema_version`, an opaque deterministic
+`intent_ref`, `observed_at`, the four groups above, and a closed
+`attribution_eligibility` value: `not_eligible`, `pending_reconciliation`,
+`open`, `realized`, or `unavailable`. `realized` means only that Execution has
+privately reconciled a closed lifecycle and published a sanitized attribution
+receipt; it is not a profitability, promotion, or Paper-permission gate.
+Research joins this fact to its own immutable decision receipt by
+`campaign_id` plus `decision_id` (or `intent_ref`), retains it outside Git, and
+reports incomplete facts as execution coverage rather than imputing PnL.
+
+The initial consumer is read-only and descriptive: no broker import, network,
+credential read, retry, cancel, sizing change, or model retune is permitted.
+`outcome_unknown` remains attributable as an execution/reconciliation gap and
+does not block another independent campaign or Paper intent. Contract changes
+need an Execution-owned fixture plus a focused Research consumer test; until
+then this section is the queue specification, not an implementation request.
+
 The pre-batch SQLite smoke artifact that stopped at a host timeout is
 `restart` evidence only and must not be interpreted. The later completed smoke
 under the same external artifact root is the usable local-paper replay.

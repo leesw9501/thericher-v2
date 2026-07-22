@@ -157,6 +157,19 @@ _STATE_PHASES = frozenset(
 _READ_ONLY_RECOVERY_PHASES = frozenset(
     {"submission_started", "outcome_unknown", "cancel_started"}
 )
+_SAFE_SUBMIT_RESPONSE_CATEGORIES = frozenset(
+    {
+        "acknowledged_order_reference",
+        "http_non_200",
+        "legacy_response_incomplete",
+        "not_observed",
+        "payload_invalid",
+        "provider_rejected",
+        "success_order_reference_missing",
+        "success_output_missing",
+        "transport_unavailable",
+    }
+)
 _SAFE_REASON_CODES = frozenset(
     {
         "preview",
@@ -188,15 +201,48 @@ _SAFE_REASON_CODES = frozenset(
 class KisPaperCanaryError(RuntimeError):
     """A non-secret failure reason for the bounded virtual-paper canary."""
 
-    def __init__(self, code: str, *, upstream_code: str | None = None) -> None:
+    def __init__(
+        self,
+        code: str,
+        *,
+        upstream_code: str | None = None,
+        submit_response_category: str | None = None,
+    ) -> None:
         self.code = code
         self.upstream_code = upstream_code
+        self.submit_response_category = submit_response_category
         if (
             upstream_code is not None
             and safe_kis_paper_upstream_code(upstream_code) != upstream_code
         ):
             raise ValueError("canary upstream code is invalid")
+        if (
+            submit_response_category is not None
+            and submit_response_category not in _SAFE_SUBMIT_RESPONSE_CATEGORIES
+        ):
+            raise ValueError("canary submit response category is invalid")
         super().__init__(code)
+
+
+@dataclass(frozen=True, repr=False)
+class KisPaperSubmitResponseProbe:
+    """Category-only view of one virtual buy-limit response."""
+
+    http_status_class: Literal["1xx", "2xx", "3xx", "4xx", "5xx", "other"]
+    category: str
+    upstream_code_state: Literal["not_checked", "valid", "absent_or_invalid"]
+
+    def __post_init__(self) -> None:
+        if self.category not in _SAFE_SUBMIT_RESPONSE_CATEGORIES:
+            raise ValueError("submit response category is invalid")
+
+    def safe_payload(self) -> dict[str, str | bool]:
+        return {
+            "http_status_class": self.http_status_class,
+            "category": self.category,
+            "upstream_code_state": self.upstream_code_state,
+            "paper_only": True,
+        }
 
 
 class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -351,6 +397,7 @@ class KisPaperCanaryState:
     broker_order_id: str | None = None
     cancel_after_submit: bool = False
     submit_upstream_code: str | None = None
+    submit_response_category: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -368,6 +415,11 @@ class KisPaperCanaryState:
             != self.submit_upstream_code
         ):
             raise ValueError("canary submit upstream code is invalid")
+        if (
+            self.submit_response_category is not None
+            and self.submit_response_category not in _SAFE_SUBMIT_RESPONSE_CATEGORIES
+        ):
+            raise ValueError("canary submit response category is invalid")
         object.__setattr__(self, "updated_at", require_utc(self.updated_at, "updated_at"))
 
     def to_dict(self) -> dict[str, object]:
@@ -382,6 +434,7 @@ class KisPaperCanaryState:
             "broker_order_id": self.broker_order_id,
             "cancel_after_submit": self.cancel_after_submit,
             "submit_upstream_code": self.submit_upstream_code,
+            "submit_response_category": self.submit_response_category,
         }
 
     @classmethod
@@ -396,18 +449,14 @@ class KisPaperCanaryState:
             "reason_code",
             "broker_order_id",
         }
-        cancellation_expected = expected | {"cancel_after_submit"}
-        upstream_code_expected = expected | {"submit_upstream_code"}
-        fully_extended_expected = cancellation_expected | {"submit_upstream_code"}
+        optional = {
+            "cancel_after_submit",
+            "submit_upstream_code",
+            "submit_response_category",
+        }
         if (
             not isinstance(payload, Mapping)
-            or frozenset(payload)
-            not in {
-                frozenset(expected),
-                frozenset(cancellation_expected),
-                frozenset(upstream_code_expected),
-                frozenset(fully_extended_expected),
-            }
+            or not expected <= set(payload) <= expected | optional
         ):
             raise KisPaperCanaryError("state_invalid")
         if (
@@ -453,6 +502,12 @@ class KisPaperCanaryState:
                     or payload["submit_upstream_code"] is None
                     else _required_text(payload["submit_upstream_code"])
                 ),
+                submit_response_category=(
+                    None
+                    if "submit_response_category" not in payload
+                    or payload["submit_response_category"] is None
+                    else _required_text(payload["submit_response_category"])
+                ),
             )
         except (InvalidOperation, TypeError, ValueError) as error:
             raise KisPaperCanaryError("state_invalid") from error
@@ -487,6 +542,7 @@ class KisPaperCanaryOutcome:
     paper_account_snapshot_path: Path
     reconciliation: KisPaperCanaryReconciliation
     submit_upstream_code: str | None = None
+    submit_response_category: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def safe_payload(self) -> dict[str, object]:
@@ -495,6 +551,7 @@ class KisPaperCanaryOutcome:
             "phase": self.phase,
             "reason_code": self.reason_code,
             "submit_upstream_code": self.submit_upstream_code,
+            "submit_response_category": self.submit_response_category,
             "paper_only": True,
             "reconciliation_status": self.reconciliation.status,
             "reconciliation_reason_code": self.reconciliation.reason_code,
@@ -547,6 +604,7 @@ class KisPaperCanaryStateStore:
         now: datetime,
         broker_order_id: str | None = None,
         submit_upstream_code: str | None = None,
+        submit_response_category: str | None = None,
     ) -> KisPaperCanaryState:
         with exclusive_kis_paper_canary_state_lock(self.path):
             current = self._read_unlocked()
@@ -567,6 +625,11 @@ class KisPaperCanaryStateStore:
                     current.submit_upstream_code
                     if submit_upstream_code is None
                     else submit_upstream_code
+                ),
+                submit_response_category=(
+                    current.submit_response_category
+                    if submit_response_category is None
+                    else submit_response_category
                 ),
             )
             self._write_unlocked(state)
@@ -752,26 +815,53 @@ class KisPaperCanaryClient:
                 json_body=body,
             )
         )
-        if response.status_code != 200:
+        probe = inspect_kis_paper_buy_limit_response(response)
+        if probe.category == "http_non_200":
             raise KisPaperCanaryError(
                 _submit_http_failure_reason(response),
                 upstream_code=_submit_response_upstream_code(response),
+                submit_response_category=probe.category,
             )
-        try:
+        if probe.category == "payload_invalid":
+            raise KisPaperCanaryError(
+                "submit_response_incomplete",
+                submit_response_category=probe.category,
+            )
+        if probe.category == "provider_rejected":
             payload = response.payload()
-        except KisPaperReadOnlyError as error:
-            raise KisPaperCanaryError("submit_response_incomplete") from error
-        if payload.get("rt_cd") != "0":
             raise KisPaperCanaryError(
                 "submit_kis_rejected",
                 upstream_code=safe_kis_paper_upstream_code(payload.get("msg_cd")),
+                submit_response_category=probe.category,
             )
+        if probe.category == "success_output_missing":
+            raise KisPaperCanaryError(
+                "submit_response_incomplete",
+                submit_response_category=probe.category,
+            )
+        if probe.category == "success_order_reference_missing":
+            raise KisPaperCanaryError(
+                "submit_response_incomplete",
+                submit_response_category=probe.category,
+            )
+        if probe.category != "acknowledged_order_reference":
+            raise KisPaperCanaryError(
+                "submit_transport_unknown",
+                submit_response_category="transport_unavailable",
+            )
+        payload = response.payload()
         output = payload.get("output")
-        if not isinstance(output, Mapping):
-            raise KisPaperCanaryError("submit_response_incomplete")
+        if not isinstance(output, Mapping):  # Defensive: probe already checked this shape.
+            raise KisPaperCanaryError(
+                "submit_response_incomplete",
+                submit_response_category="success_output_missing",
+            )
         order_id = output.get("ODNO")
-        if not isinstance(order_id, str) or not _raw_order_id(order_id):
-            raise KisPaperCanaryError("submit_response_incomplete")
+        if not isinstance(order_id, str) or not _raw_order_id(order_id):  # Defensive shape check.
+            raise KisPaperCanaryError(
+                "submit_response_incomplete",
+                submit_response_category="success_order_reference_missing",
+            )
         return True, order_id
 
     def cancel_buy_order(self, intent: KisPaperCanaryIntent, *, broker_order_id: str) -> bool:
@@ -1044,6 +1134,7 @@ def _run_kis_paper_canary(
                         reason_code=_safe_submit_failure_reason(error),
                         now=submit_at,
                         submit_upstream_code=_safe_submit_upstream_code(error),
+                        submit_response_category=_safe_submit_response_category(error),
                     )
                 else:
                     if not accepted:
@@ -1053,6 +1144,7 @@ def _run_kis_paper_canary(
                             phase="rejected",
                             reason_code="submit_rejected",
                             now=submit_at,
+                            submit_response_category="provider_rejected",
                         )
                     elif broker_order_id is None:
                         state = state_store.transition(
@@ -1061,6 +1153,7 @@ def _run_kis_paper_canary(
                             phase="outcome_unknown",
                             reason_code="submit_response_incomplete",
                             now=submit_at,
+                            submit_response_category="success_order_reference_missing",
                         )
                     else:
                         state = state_store.transition(
@@ -1070,6 +1163,7 @@ def _run_kis_paper_canary(
                             reason_code="reconciliation_unresolved",
                             now=submit_at,
                             broker_order_id=broker_order_id,
+                            submit_response_category="acknowledged_order_reference",
                         )
                         reconciliation = client.reconcile(state, now=submit_at)
                         if state.cancel_after_submit:
@@ -1114,6 +1208,7 @@ def _run_kis_paper_canary(
         paper_account_snapshot_path=paper_account_snapshot_path,
         reconciliation=reconciliation,
         submit_upstream_code=state.submit_upstream_code,
+        submit_response_category=state.submit_response_category,
     )
 
 
@@ -1442,6 +1537,54 @@ def _ensure_recovery_intent_matches(
         raise KisPaperCanaryError("state_intent_mismatch")
 
 
+def inspect_kis_paper_buy_limit_response(
+    response: KisHttpResponse,
+) -> KisPaperSubmitResponseProbe:
+    """Classify a virtual buy-limit acknowledgement without exposing its body."""
+
+    http_status_class = _http_status_class(response.status_code)
+    if response.status_code != 200:
+        return KisPaperSubmitResponseProbe(
+            http_status_class=http_status_class,
+            category="http_non_200",
+            upstream_code_state=_submit_upstream_code_state(response),
+        )
+    try:
+        payload = response.payload()
+    except KisPaperReadOnlyError:
+        return KisPaperSubmitResponseProbe(
+            http_status_class=http_status_class,
+            category="payload_invalid",
+            upstream_code_state="not_checked",
+        )
+    upstream_code_state = _payload_upstream_code_state(payload)
+    if payload.get("rt_cd") != "0":
+        return KisPaperSubmitResponseProbe(
+            http_status_class=http_status_class,
+            category="provider_rejected",
+            upstream_code_state=upstream_code_state,
+        )
+    output = payload.get("output")
+    if not isinstance(output, Mapping):
+        return KisPaperSubmitResponseProbe(
+            http_status_class=http_status_class,
+            category="success_output_missing",
+            upstream_code_state=upstream_code_state,
+        )
+    order_id = output.get("ODNO")
+    if not isinstance(order_id, str) or not _raw_order_id(order_id):
+        return KisPaperSubmitResponseProbe(
+            http_status_class=http_status_class,
+            category="success_order_reference_missing",
+            upstream_code_state=upstream_code_state,
+        )
+    return KisPaperSubmitResponseProbe(
+        http_status_class=http_status_class,
+        category="acknowledged_order_reference",
+        upstream_code_state=upstream_code_state,
+    )
+
+
 def _submit_http_failure_reason(response: KisHttpResponse) -> str:
     if _submit_response_has_rate_limit_code(response):
         return "submit_rate_limited"
@@ -1471,6 +1614,12 @@ def _safe_submit_upstream_code(error: Exception) -> str | None:
     return None
 
 
+def _safe_submit_response_category(error: Exception) -> str:
+    if isinstance(error, KisPaperCanaryError) and error.submit_response_category is not None:
+        return error.submit_response_category
+    return "transport_unavailable"
+
+
 def _submit_response_has_rate_limit_code(response: KisHttpResponse) -> bool:
     return _submit_response_upstream_code(response) == KIS_PAPER_RATE_LIMIT_CODE
 
@@ -1481,6 +1630,40 @@ def _submit_response_upstream_code(response: KisHttpResponse) -> str | None:
     except KisPaperReadOnlyError:
         return None
     return safe_kis_paper_upstream_code(payload.get("msg_cd"))
+
+
+def _submit_upstream_code_state(
+    response: KisHttpResponse,
+) -> Literal["not_checked", "valid", "absent_or_invalid"]:
+    try:
+        payload = response.payload()
+    except KisPaperReadOnlyError:
+        return "not_checked"
+    return _payload_upstream_code_state(payload)
+
+
+def _payload_upstream_code_state(
+    payload: Mapping[str, object],
+) -> Literal["not_checked", "valid", "absent_or_invalid"]:
+    return (
+        "valid"
+        if safe_kis_paper_upstream_code(payload.get("msg_cd")) is not None
+        else "absent_or_invalid"
+    )
+
+
+def _http_status_class(status_code: int) -> Literal["1xx", "2xx", "3xx", "4xx", "5xx", "other"]:
+    if 100 <= status_code < 200:
+        return "1xx"
+    if 200 <= status_code < 300:
+        return "2xx"
+    if 300 <= status_code < 400:
+        return "3xx"
+    if 400 <= status_code < 500:
+        return "4xx"
+    if 500 <= status_code < 600:
+        return "5xx"
+    return "other"
 
 
 def _unavailable_reconciliation(*, reason_code: str | None = None) -> KisPaperCanaryReconciliation:
@@ -1563,9 +1746,11 @@ def _write_evidence(
         "paper_only": True,
         "run_id": state.intent.run_id,
         "intent_fingerprint": state.intent.fingerprint,
+        "decision_ref": _redacted_decision_reference(state.intent.decision_id),
         "phase": state.phase,
         "reason_code": state.reason_code,
         "submit_upstream_code": state.submit_upstream_code,
+        "submit_response_category": state.submit_response_category,
         "observed_at": observed_at.isoformat(),
         "order_reference": (
             None
@@ -1766,6 +1951,12 @@ def _raw_order_id(value: str) -> bool:
 def _redacted_open_order_reference(raw_order_id: str) -> str:
     digest = hashlib.sha256(raw_order_id.encode("utf-8")).hexdigest()[:16]
     return f"open-{digest}"
+
+
+def _redacted_decision_reference(raw_decision_id: str) -> str:
+    _safe_identifier(raw_decision_id, "decision_id")
+    digest = hashlib.sha256(raw_decision_id.encode("utf-8")).hexdigest()[:16]
+    return f"decision-{digest}"
 
 
 def _safe_identifier(value: object, label: str) -> None:

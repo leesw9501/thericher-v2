@@ -346,8 +346,10 @@ time window before loading Paper configuration; outside that window it produces
 a safe no-submit result. Its price input combines the exact `AMS/SPY`
 asking-price route (`HHDFS76200100`) with `AMS/SPY` price detail
 (`HHDFS76200200`), then sends an `AMEX` order only when the Korea timestamp is
-fresh, decimal scales agree, and `e_hogau` proves the limit tick. The input
-never reaches an artifact, dashboard, or log. The helper uses the explicit
+fresh, decimal scales agree, and `e_hogau` supplies a valid limit tick. The
+source last may be sub-tick; the helper rounds the derived limit down and
+validates that final submitted value against the tick. The input never reaches
+an artifact, dashboard, or log. The helper uses the explicit
 supported 2026 holiday and early-close calendar. The Windows Scheduled Task
 `thericher-kis-paper-quote-session` invokes this command once per weekday at
 KST 23:35. Its cancel-after-submit choice is durable, matching accepted open
@@ -397,6 +399,18 @@ docker compose --profile kis-paper-session run --rm --no-deps --build `
 It may obtain a virtual token and read reconciliation endpoints, but never uses
 the buy-limit or cancellation route. A missing or malformed private state ends
 with a safe failure; it is not recreated from command-line values.
+
+To inspect one completed canary without a KIS call or credential read, project
+only its sanitized lifecycle fact from the host artifact root:
+
+```powershell
+uv run python scripts/project_kis_paper_canary_lifecycle.py `
+  --run-id <existing-run-id>
+```
+
+The host command uses `THERICHER_HOST_MODEL_ARTIFACT_ROOT` rather than the
+Docker-only `/app/model_artifacts` path. It emits only opaque references,
+lifecycle/reconciliation categories, and attribution eligibility.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary

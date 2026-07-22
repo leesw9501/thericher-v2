@@ -324,7 +324,7 @@ def test_asking_price_probe_classifies_blank_fields_as_unusable() -> None:
     assert probe.quote_timestamp_state == "blank"
 
 
-def test_limit_input_requires_fresh_korea_timestamp_scale_and_tick_alignment() -> None:
+def test_limit_input_requires_fresh_korea_timestamp_scale_and_valid_limit_tick() -> None:
     raw_price_text = "600.12"
     limit_input = parse_kis_paper_spy_limit_input(
         asking_price_payload={
@@ -365,23 +365,26 @@ def test_limit_input_requires_fresh_korea_timestamp_scale_and_tick_alignment() -
             },
             observed_at=NOW,
         )
-    with pytest.raises(KisPaperQuoteError, match="quote_price_off_tick"):
-        parse_kis_paper_spy_limit_input(
-            asking_price_payload={
-                "rt_cd": "0",
-                "output1": {
-                    "last": "600.121",
-                    "zdiv": "3",
-                    "dymd": "20260722",
-                    "dhms": "233000",
-                },
+    sub_tick_last_input = parse_kis_paper_spy_limit_input(
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {
+                "last": "600.121",
+                "zdiv": "3",
+                "dymd": "20260722",
+                "dhms": "233000",
             },
-            price_detail_payload={
-                "rt_cd": "0",
-                "output": {"last": raw_price_text, "zdiv": "3", "e_hogau": "0.01"},
-            },
-            observed_at=NOW,
-        )
+        },
+        price_detail_payload={
+            "rt_cd": "0",
+            "output": {"last": raw_price_text, "zdiv": "3", "e_hogau": "0.01"},
+        },
+        observed_at=NOW,
+    )
+    assert derive_kis_paper_nonmarket_limit(
+        sub_tick_last_input.as_quote(),
+        tick_size=sub_tick_last_input.tick_size,
+    ) == Decimal("598.62")
 
 
 def test_session_outside_regular_window_never_reads_credentials_or_dispatches(

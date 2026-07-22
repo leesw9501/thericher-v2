@@ -91,8 +91,6 @@ class KisPaperSpyLimitInput:
         scale_tick = Decimal(1).scaleb(-quote.decimal_places)
         if not _is_tick_multiple(self.tick_size, scale_tick):
             raise ValueError("quote tick_size is invalid")
-        if not _is_tick_multiple(quote.last, self.tick_size):
-            raise ValueError("quote last is off tick")
         if self.quoted_at.tzinfo is None or self.quoted_at.utcoffset() is None:
             raise ValueError("quote timestamp is invalid")
         object.__setattr__(self, "quoted_at", self.quoted_at.astimezone(UTC))
@@ -314,8 +312,7 @@ def parse_kis_paper_spy_limit_input(
             quoted_at=quoted_at,
         )
     except ValueError as error:
-        code = "quote_price_off_tick" if "off tick" in str(error) else "quote_tick_invalid"
-        raise KisPaperQuoteError(code) from error
+        raise KisPaperQuoteError("quote_tick_invalid") from error
 
 
 def inspect_kis_paper_spy_price_detail_response(
