@@ -308,7 +308,7 @@ def _run_candidate_training_result(
             available_backends=available_backends,
             selected_backend=None,
             metrics_artifact=metrics_artifact,
-            reason="no operator-approved research GPU training backend installed",
+            reason="no compatible research GPU training backend installed",
         )
     feature_normalization = build_feature_normalization(
         dataset,

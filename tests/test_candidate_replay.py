@@ -144,7 +144,7 @@ def test_candidate_replay_missing_backend_is_prepared_not_replayed(monkeypatch, 
 
     payload = json.loads(result.replay_artifact.read_text(encoding="utf-8"))
     assert result.status == "prepared_not_replayed"
-    assert "no operator-approved research GPU replay backend" in payload["reason"]
+    assert "no compatible research GPU replay backend" in payload["reason"]
 
 
 def test_candidate_replay_probability_path_uses_artifact_feature_normalization(

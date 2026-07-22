@@ -42,6 +42,12 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   retried. The current closed code does not retain KIS's rejection code, so the
   next small improvement is a strictly validated short code only, never raw
   response text.
+- The next independent run, `canary-20260721T233837Z`, confirmed the code
+  projection but returned no valid KIS-style code (`submit_upstream_code: null`)
+  after another clean `submit_kis_rejected`. Official KIS samples match the
+  existing order mapping. The ready execution improvement is a quote-derived
+  private limit in a known US regular-session window, not another fixed `$1`
+  submission or a mapping guess.
 - Canary cancellation policy is durable with its private state. A state-root
   lock serializes different run IDs; a persisted acknowledged matching order
   resumes cancellation on restart. Non-200 or non-success submit results and
@@ -51,10 +57,11 @@ PnL accounting, emergency controls, and future KIS Paper transport.
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
-2. Project a strictly allowlisted KIS-style code for a rejected canary submit,
-   then run one separately identified virtual canary after focused transport,
-   recovery, and safe-projection proof. It must not reuse or mutate either
-   preserved unknown run. This does not reopen an approval question.
+2. Add a narrow KIS quote-derived canary input and regular-session recurring
+   run path. Distinct virtual canaries may continue after focused transport,
+   recovery, quote, and safe-projection proof; a preserved unknown run remains
+   immutable and blocks only replacement of its own intent, never Paper cadence
+   or a separate new intent.
 3. Keep the generic broker adapter disabled while this canary remains the only
    bounded KIS order surface; do not add sell or live routes implicitly.
 4. Keep account snapshots and dashboard state separate from credential-bearing
@@ -70,7 +77,8 @@ at the actual request. Do not read `KIS_LIVE_*`, create a live
 host/configuration path, or emit secrets. Model output remains untrusted input
 to deterministic execution logic. Historical one-shot or retention markers
 cannot disable later correctly scoped paper work; they only describe the
-recovery state of their own run.
+recovery state of their own run. There is no per-goal or one-shot quota on
+distinct virtual-paper intents or goal-owned Paper schedules.
 
 ## Durable Knowledge
 
@@ -78,8 +86,9 @@ recovery state of their own run.
   operator gates.
 - Data/model limitations should be recorded in evidence and attribution rather
   than silently changing execution state.
-- A scheduler may run paper work when it retains paper-only routing, idempotent
-  intents, bounded concurrency, and reconciliation behavior.
+- A scheduler may run paper work repeatedly when it retains paper-only routing,
+  idempotent intents, bounded concurrency, and reconciliation behavior. Those
+  technical properties do not create a manual or numerical Paper-work gate.
 
 ## Recovery
 

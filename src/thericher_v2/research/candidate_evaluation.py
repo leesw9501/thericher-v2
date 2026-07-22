@@ -298,7 +298,7 @@ def _run_candidate_evaluation_result(
             available_backends=available_backends,
             selected_backend=None,
             evaluation_artifact=evaluation_artifact,
-            reason="no operator-approved research GPU evaluation backend installed",
+            reason="no compatible research GPU evaluation backend installed",
         )
     runner = evaluation_runner or _run_torch_cuda_candidate_evaluation
     try:

@@ -364,7 +364,7 @@ def _run_candidate_replay_result(
             available_backends=available_backends,
             selected_backend=None,
             replay_artifact=replay_artifact,
-            reason="no operator-approved research GPU replay backend installed",
+            reason="no compatible research GPU replay backend installed",
         )
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities

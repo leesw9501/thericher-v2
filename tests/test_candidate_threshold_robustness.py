@@ -275,7 +275,7 @@ def test_candidate_threshold_robustness_missing_backend_is_prepared(
     )
 
     assert result.status == "prepared_not_robustness_replayed"
-    assert "no operator-approved research GPU probability backend" in result.slices[0].reason
+    assert "no compatible research GPU probability backend" in result.slices[0].reason
 
 
 def test_candidate_threshold_robustness_is_offline_and_does_not_read_credentials(

@@ -38,6 +38,7 @@ from .kis_readonly import (
     KisPaperReadOnlySnapshot,
     KisPaperRequestPacer,
     load_kis_paper_config_from_environment,
+    safe_kis_paper_upstream_code,
     validate_kis_paper_readonly_request,
 )
 from .paper_account_snapshot import write_paper_account_snapshot
@@ -154,8 +155,14 @@ _SAFE_REASON_CODES = frozenset(
 class KisPaperCanaryError(RuntimeError):
     """A non-secret failure reason for the bounded virtual-paper canary."""
 
-    def __init__(self, code: str) -> None:
+    def __init__(self, code: str, *, upstream_code: str | None = None) -> None:
         self.code = code
+        self.upstream_code = upstream_code
+        if (
+            upstream_code is not None
+            and safe_kis_paper_upstream_code(upstream_code) != upstream_code
+        ):
+            raise ValueError("canary upstream code is invalid")
         super().__init__(code)
 
 
@@ -310,6 +317,7 @@ class KisPaperCanaryState:
     reason_code: str
     broker_order_id: str | None = None
     cancel_after_submit: bool = False
+    submit_upstream_code: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -321,6 +329,12 @@ class KisPaperCanaryState:
             raise ValueError("canary broker order id is invalid")
         if not isinstance(self.cancel_after_submit, bool):
             raise ValueError("canary cancellation policy is invalid")
+        if (
+            self.submit_upstream_code is not None
+            and safe_kis_paper_upstream_code(self.submit_upstream_code)
+            != self.submit_upstream_code
+        ):
+            raise ValueError("canary submit upstream code is invalid")
         object.__setattr__(self, "updated_at", require_utc(self.updated_at, "updated_at"))
 
     def to_dict(self) -> dict[str, object]:
@@ -334,6 +348,7 @@ class KisPaperCanaryState:
             "reason_code": self.reason_code,
             "broker_order_id": self.broker_order_id,
             "cancel_after_submit": self.cancel_after_submit,
+            "submit_upstream_code": self.submit_upstream_code,
         }
 
     @classmethod
@@ -348,10 +363,18 @@ class KisPaperCanaryState:
             "reason_code",
             "broker_order_id",
         }
-        extended_expected = expected | {"cancel_after_submit"}
+        cancellation_expected = expected | {"cancel_after_submit"}
+        upstream_code_expected = expected | {"submit_upstream_code"}
+        fully_extended_expected = cancellation_expected | {"submit_upstream_code"}
         if (
             not isinstance(payload, Mapping)
-            or frozenset(payload) not in {frozenset(expected), frozenset(extended_expected)}
+            or frozenset(payload)
+            not in {
+                frozenset(expected),
+                frozenset(cancellation_expected),
+                frozenset(upstream_code_expected),
+                frozenset(fully_extended_expected),
+            }
         ):
             raise KisPaperCanaryError("state_invalid")
         if (
@@ -391,6 +414,12 @@ class KisPaperCanaryState:
                     if "cancel_after_submit" not in payload
                     else _required_bool(payload["cancel_after_submit"])
                 ),
+                submit_upstream_code=(
+                    None
+                    if "submit_upstream_code" not in payload
+                    or payload["submit_upstream_code"] is None
+                    else _required_text(payload["submit_upstream_code"])
+                ),
             )
         except (InvalidOperation, TypeError, ValueError) as error:
             raise KisPaperCanaryError("state_invalid") from error
@@ -424,6 +453,7 @@ class KisPaperCanaryOutcome:
     runtime_path: Path
     paper_account_snapshot_path: Path
     reconciliation: KisPaperCanaryReconciliation
+    submit_upstream_code: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def safe_payload(self) -> dict[str, object]:
@@ -431,6 +461,7 @@ class KisPaperCanaryOutcome:
             "run_id": self.run_id,
             "phase": self.phase,
             "reason_code": self.reason_code,
+            "submit_upstream_code": self.submit_upstream_code,
             "paper_only": True,
             "reconciliation_status": self.reconciliation.status,
             "reconciliation_reason_code": self.reconciliation.reason_code,
@@ -482,6 +513,7 @@ class KisPaperCanaryStateStore:
         reason_code: str,
         now: datetime,
         broker_order_id: str | None = None,
+        submit_upstream_code: str | None = None,
     ) -> KisPaperCanaryState:
         with _exclusive_state_lock(self.path):
             current = self._read_unlocked()
@@ -498,6 +530,11 @@ class KisPaperCanaryStateStore:
                     else broker_order_id
                 ),
                 cancel_after_submit=current.cancel_after_submit,
+                submit_upstream_code=(
+                    current.submit_upstream_code
+                    if submit_upstream_code is None
+                    else submit_upstream_code
+                ),
             )
             self._write_unlocked(state)
             return state
@@ -605,13 +642,19 @@ class KisPaperCanaryClient:
             )
         )
         if response.status_code != 200:
-            raise KisPaperCanaryError(_submit_http_failure_reason(response))
+            raise KisPaperCanaryError(
+                _submit_http_failure_reason(response),
+                upstream_code=_submit_response_upstream_code(response),
+            )
         try:
             payload = response.payload()
         except KisPaperReadOnlyError as error:
             raise KisPaperCanaryError("submit_response_incomplete") from error
         if payload.get("rt_cd") != "0":
-            raise KisPaperCanaryError("submit_kis_rejected")
+            raise KisPaperCanaryError(
+                "submit_kis_rejected",
+                upstream_code=safe_kis_paper_upstream_code(payload.get("msg_cd")),
+            )
         output = payload.get("output")
         if not isinstance(output, Mapping):
             raise KisPaperCanaryError("submit_response_incomplete")
@@ -854,6 +897,7 @@ def _run_kis_paper_canary(
                     phase="outcome_unknown",
                     reason_code=_safe_submit_failure_reason(error),
                     now=observed_at,
+                    submit_upstream_code=_safe_submit_upstream_code(error),
                 )
             else:
                 if not accepted:
@@ -923,6 +967,7 @@ def _run_kis_paper_canary(
         runtime_path=runtime_projection_path,
         paper_account_snapshot_path=paper_account_snapshot_path,
         reconciliation=reconciliation,
+        submit_upstream_code=state.submit_upstream_code,
     )
 
 
@@ -1176,12 +1221,22 @@ def _safe_submit_failure_reason(error: Exception) -> str:
     return "submit_transport_unknown"
 
 
+def _safe_submit_upstream_code(error: Exception) -> str | None:
+    if isinstance(error, KisPaperCanaryError):
+        return error.upstream_code
+    return None
+
+
 def _submit_response_has_rate_limit_code(response: KisHttpResponse) -> bool:
+    return _submit_response_upstream_code(response) == KIS_PAPER_RATE_LIMIT_CODE
+
+
+def _submit_response_upstream_code(response: KisHttpResponse) -> str | None:
     try:
         payload = response.payload()
     except KisPaperReadOnlyError:
-        return False
-    return payload.get("msg_cd") == KIS_PAPER_RATE_LIMIT_CODE
+        return None
+    return safe_kis_paper_upstream_code(payload.get("msg_cd"))
 
 
 def _unavailable_reconciliation(*, reason_code: str | None = None) -> KisPaperCanaryReconciliation:
@@ -1224,6 +1279,7 @@ def _write_runtime_projection(
             status=status,  # type: ignore[arg-type]
             reconciliation_status=reconciliation.status,
             reconciliation_reason_code=reconciliation.reason_code,
+            submit_upstream_code=state.submit_upstream_code,
             account_status=reconciliation.account_status,
             position_count=reconciliation.position_count,
             open_order_count=reconciliation.open_order_count,
@@ -1265,6 +1321,7 @@ def _write_evidence(
         "intent_fingerprint": state.intent.fingerprint,
         "phase": state.phase,
         "reason_code": state.reason_code,
+        "submit_upstream_code": state.submit_upstream_code,
         "observed_at": observed_at.isoformat(),
         "order_reference": (
             None

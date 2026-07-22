@@ -3725,3 +3725,57 @@ Reason: the new diagnostic narrows a real KIS rejection without creating a
 permission gate. The next independent run may project a strictly validated
 short KIS-style code when present, which can guide configuration correction
 without retaining a raw broker body or making a duplicate submission.
+
+## 2026-07-22 - Preserve a missing safe KIS rejection code and avoid mapping guesses
+
+Decision: retain a strict shared validator for a short KIS-style upstream code
+and project it only when `msg_cd` matches. The state, runtime, evidence, and
+console projection accept the optional safe field while remaining compatible
+with prior files that lack it. Tests prove a valid code is retained and invalid
+code or free-form `msg1` is absent everywhere outside the transient response.
+
+The independent virtual canary `canary-20260721T233837Z` reached clean initial
+reconciliation and again returned `submit_kis_rejected`, but no valid safe code
+was available. It is preserved and not retried. Official KIS sample code
+confirms the existing virtual US buy endpoint, `VTTT1002U`, and field set; its
+price endpoint documents `last` and `zdiv`. The direct evidence therefore does
+not justify changing the documented order mapping.
+
+Reason: a fixed `$1` limit submitted outside a known US session is a weak
+execution probe. The next independent canary should derive a private limit from
+an allowed KIS quote and use a regular-session run window. This is an execution
+quality improvement, not an operator approval, capital, or one-shot gate.
+
+## 2026-07-22 - Remove artificial KIS Paper quotas and approval latches
+
+Decision: the operator's standing private `KIS_PAPER_*` authority covers
+repeated market/account/order calls, submit/modify/cancel, routine sizing,
+raw-market-data retention, and recurring goal-owned Paper schedules. There is
+no capital-envelope, per-call, per-goal, one-shot, report, profitability, or
+trade-count approval requirement. Paper cadence and the number of distinct
+virtual intents are ordinary Execution choices.
+
+An ambiguous broker result still pauses only replacement of its exact durable
+intent until reconciliation. It does not freeze a distinct later Paper intent,
+another due schedule, Data collection, Engine Research, or the company goal.
+`raw_market_data_retained: false` is only provenance for the old snapshot; it
+cannot suppress later collection or broker work. A missing raw file remains
+unusable input, and a hash/field conflict remains a data-integrity fault, but
+neither is a permission boundary.
+
+The retained technical invariants are intentionally narrow: virtual-paper host
+isolation, no secret/raw broker output, persisted idempotent intent before a
+Paper side effect, reconciliation before resubmitting that same ambiguous
+intent, source pacing, and data-integrity/provenance checks. `KIS_LIVE_*`, live
+hosts/routes, and real-money behavior remain unavailable. Research diagnostics
+must describe compatible GPU-backend availability rather than imply a missing
+operator approval.
+
+Claude's falsification-first verdict was `supported-with-limits`: removing
+artificial Paper latches is compatible with standing authority provided the
+virtual-host pin and no-resubmit-until-reconciliation rule remain non-negotiable.
+
+Reason: v1-style approval scaffolding and one-shot markers were consuming more
+development time than they protected. The private Paper system should iterate by
+default, while technical controls preserve correct attribution and prevent a
+duplicate or live side effect.

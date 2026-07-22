@@ -518,7 +518,7 @@ def _run_trace_result(
             available_backends=available_backends,
             selected_backend=None,
             trace_artifact=trace_artifact,
-            reason="no operator-approved research GPU probability backend installed",
+            reason="no compatible research GPU probability backend installed",
         )
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities

@@ -268,7 +268,7 @@ def test_candidate_threshold_holdout_missing_model_gpu_and_backend_are_prepared(
         gpu=_unit_gpu(),
     )
     assert missing_backend_result.status == "prepared_not_holdout_replayed"
-    assert "no operator-approved research GPU probability backend" in (
+    assert "no compatible research GPU probability backend" in (
         missing_backend_result.robustness.slices[0].reason
     )
 

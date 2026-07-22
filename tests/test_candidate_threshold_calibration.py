@@ -272,7 +272,7 @@ def test_candidate_threshold_calibration_missing_backend_is_prepared(
     )
 
     assert result.status == "prepared_not_calibrated"
-    assert "no operator-approved research GPU probability backend" in result.trace_summaries[
+    assert "no compatible research GPU probability backend" in result.trace_summaries[
         0
     ].reason
 

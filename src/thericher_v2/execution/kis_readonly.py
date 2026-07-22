@@ -1125,7 +1125,7 @@ def _failure_diagnostic(
         "http_status": str(response.status_code),
     }
     if payload is not None:
-        upstream_code = _safe_kis_paper_upstream_code(payload.get("msg_cd"))
+        upstream_code = safe_kis_paper_upstream_code(payload.get("msg_cd"))
         if upstream_code is not None:
             diagnostic["upstream_code"] = upstream_code
     return diagnostic
@@ -1153,13 +1153,13 @@ def validate_kis_paper_readonly_diagnostic(diagnostic: Mapping[str, str]) -> Non
     if not status.isdecimal() or not 100 <= int(status) <= 599:
         raise ValueError("read-only diagnostic status must be an HTTP status")
     if "upstream_code" in diagnostic and (
-        _safe_kis_paper_upstream_code(diagnostic["upstream_code"])
+        safe_kis_paper_upstream_code(diagnostic["upstream_code"])
         != diagnostic["upstream_code"]
     ):
         raise ValueError("read-only diagnostic upstream code is not allowlisted")
 
 
-def _safe_kis_paper_upstream_code(value: object) -> str | None:
+def safe_kis_paper_upstream_code(value: object) -> str | None:
     """Keep only a short KIS-style code; never normalize arbitrary response text."""
 
     if (

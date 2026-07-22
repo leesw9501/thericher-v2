@@ -36,7 +36,11 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperRequestPacer,
 )
 from thericher_v2.execution.paper_account_snapshot import read_paper_account_snapshot
-from thericher_v2.execution.paper_canary_runtime import read_paper_canary_runtime
+from thericher_v2.execution.paper_canary_runtime import (
+    PAPER_CANARY_RUNTIME_TTL,
+    PaperCanaryRuntimeSnapshot,
+    read_paper_canary_runtime,
+)
 from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryBuyDecision
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
@@ -700,19 +704,20 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
     assert _submission_count(transport) == 1
 
 
-def test_submit_failure_evidence_omits_raw_broker_message(tmp_path: Path) -> None:
-    raw_message_code = "EGW00201"
+def test_submit_failure_evidence_projects_valid_code_without_raw_message(tmp_path: Path) -> None:
+    safe_message_code = "EGW00201"
     raw_message_text = "paper-app-secret account 12345678 broker detail"
     transport = FakeKisPaperCanaryTransport(
         submit_status_code=503,
-        submit_message_code=raw_message_code,
+        submit_message_code=safe_message_code,
         submit_message_text=raw_message_text,
     )
+    state_path = tmp_path / "private" / "safe-submit-diagnostic-1.json"
     outcome = run_kis_paper_canary(
         decision=_decision(),
         run_id="safe-submit-diagnostic-1",
         environment=_paper_environment(),
-        state_path=tmp_path / "private" / "safe-submit-diagnostic-1.json",
+        state_path=state_path,
         execute=True,
         cancel_after_submit=True,
         transport=transport,
@@ -722,12 +727,120 @@ def test_submit_failure_evidence_omits_raw_broker_message(tmp_path: Path) -> Non
 
     assert outcome.phase == "outcome_unknown"
     assert outcome.reason_code == "submit_rate_limited"
+    assert outcome.submit_upstream_code == safe_message_code
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     runtime = outcome.runtime_path.read_text(encoding="utf-8")
-    for forbidden in (raw_message_code, raw_message_text, "paper-app-secret", "12345678"):
+    state = state_path.read_text(encoding="utf-8")
+    assert safe_message_code in evidence
+    assert safe_message_code in runtime
+    assert safe_message_code in state
+    for forbidden in (raw_message_text, "paper-app-secret", "12345678"):
         assert forbidden not in evidence
         assert forbidden not in runtime
+        assert forbidden not in state
     assert "submit_rate_limited" in evidence
+
+
+def test_submit_rejection_projects_valid_upstream_code(tmp_path: Path) -> None:
+    safe_message_code = "KIS1001"
+    raw_message_text = "paper-app-secret account 12345678 broker detail"
+    transport = FakeKisPaperCanaryTransport(
+        submit_result_code="1",
+        submit_message_code=safe_message_code,
+        submit_message_text=raw_message_text,
+    )
+    state_path = tmp_path / "private" / "valid-submit-code-1.json"
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="valid-submit-code-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "submit_kis_rejected"
+    assert outcome.submit_upstream_code == safe_message_code
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    runtime = outcome.runtime_path.read_text(encoding="utf-8")
+    state = state_path.read_text(encoding="utf-8")
+    assert safe_message_code in evidence
+    assert safe_message_code in runtime
+    assert safe_message_code in state
+    assert raw_message_text not in evidence
+    assert raw_message_text not in runtime
+    assert raw_message_text not in state
+
+
+def test_submit_failure_evidence_omits_invalid_upstream_code(tmp_path: Path) -> None:
+    invalid_message_code = "not-a-kis-code"
+    raw_message_text = "paper-app-secret account 12345678 broker detail"
+    transport = FakeKisPaperCanaryTransport(
+        submit_result_code="1",
+        submit_message_code=invalid_message_code,
+        submit_message_text=raw_message_text,
+    )
+    state_path = tmp_path / "private" / "invalid-submit-code-1.json"
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="invalid-submit-code-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "submit_kis_rejected"
+    assert outcome.submit_upstream_code is None
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    runtime = outcome.runtime_path.read_text(encoding="utf-8")
+    state = state_path.read_text(encoding="utf-8")
+    for forbidden in (invalid_message_code, raw_message_text, "paper-app-secret", "12345678"):
+        assert forbidden not in evidence
+        assert forbidden not in runtime
+        assert forbidden not in state
+
+
+def test_state_and_runtime_accept_payloads_before_submit_upstream_code() -> None:
+    intent = KisPaperCanaryIntent.from_decision(_decision(), run_id="legacy-code-payload-1")
+    legacy_state = KisPaperCanaryState(
+        intent=intent,
+        phase="outcome_unknown",
+        updated_at=NOW,
+        reason_code="submit_kis_rejected",
+        cancel_after_submit=True,
+    ).to_dict()
+    legacy_state.pop("submit_upstream_code")
+
+    restored_state = KisPaperCanaryState.from_dict(legacy_state)
+
+    assert restored_state.submit_upstream_code is None
+
+    legacy_runtime = PaperCanaryRuntimeSnapshot(
+        run_id="legacy-code-payload-1",
+        status="outcome_unknown",
+        reconciliation_status="clean",
+        account_status="available",
+        position_count=0,
+        open_order_count=0,
+        stop_new_orders=False,
+        cancel_open_orders_requested=False,
+        observed_at=NOW,
+        expires_at=NOW + PAPER_CANARY_RUNTIME_TTL,
+    ).to_dict()
+    legacy_runtime.pop("submit_upstream_code")
+
+    restored_runtime = PaperCanaryRuntimeSnapshot.from_dict(legacy_runtime)
+
+    assert restored_runtime.submit_upstream_code is None
 
 
 def test_recovery_resumes_durable_cancel_after_acknowledged_submit(tmp_path: Path) -> None:

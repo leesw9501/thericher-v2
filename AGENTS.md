@@ -255,8 +255,9 @@ The operator has authorized `KIS_PAPER_*` for all private virtual-paper engine
 work: market data, account facts, orders, cancellation, modification, and
 reconciliation. Execution owns paper order endpoints and credential access;
 Data owns market-data scope, provenance, and interpretation. Codex may choose
-routine paper sizing and schedules without requesting a paper capital envelope.
-`KIS_LIVE_*` is not readable or callable.
+routine paper sizing, cadence, independent-intent count, and recurring schedules
+without requesting a paper capital envelope. `KIS_LIVE_*` is not readable or
+callable.
 
 For the operator's stated private, personal, noncommercial, nonpublic project,
 Codex may retain, extend, and schedule KIS Paper market-data caches under
@@ -291,6 +292,12 @@ Default to the next due, correctly scoped KIS Paper action. In particular, a
 historical `raw_market_data_retained: false` result means only that its own
 snapshot has no bytes to consume. It is never a consent hold, an operator
 question, or a reason to skip a later normal collection retry.
+
+A paper run has no per-goal or one-shot quota. A preserved unknown outcome
+pauses replacement of **that exact durable intent** until it is reconciled; it
+does not pause a distinct correctly scoped Paper intent, another due schedule,
+or independent Data and Research work. Do not recreate a one-shot wrapper or
+manual checkpoint merely to limit authorized Paper iteration.
 
 ## Agent Memory And Recovery
 

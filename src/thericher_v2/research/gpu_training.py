@@ -77,7 +77,7 @@ def run_gpu_training_smoke(
             gpu=gpu,
             available_backends=available_backends,
             selected_backend=None,
-            reason="no operator-approved research GPU training backend installed",
+            reason="no compatible research GPU training backend installed",
         )
     runner = trainer_runner or _run_torch_cuda_training_smoke
     try:

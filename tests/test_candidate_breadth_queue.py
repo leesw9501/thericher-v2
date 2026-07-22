@@ -232,7 +232,10 @@ def test_candidate_breadth_queue_missing_data_model_gpu_and_backend_are_prepared
         gpu=_unit_gpu(),
     )
     assert missing_backend.status == "prepared_not_breadth_queued"
-    assert "no operator-approved" in missing_backend.variants[0].training.reason
+    assert (
+        "no compatible research GPU training backend"
+        in missing_backend.variants[0].training.reason
+    )
 
 
 def test_candidate_breadth_queue_is_offline_and_does_not_read_credentials(

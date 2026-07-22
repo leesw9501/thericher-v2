@@ -13,6 +13,8 @@ from typing import Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 
+from .kis_readonly import safe_kis_paper_upstream_code
+
 PAPER_CANARY_RUNTIME_KIND = "kis_paper_canary_runtime"
 PAPER_CANARY_RUNTIME_TTL = timedelta(minutes=15)
 
@@ -76,6 +78,7 @@ class PaperCanaryRuntimeSnapshot:
     expires_at: datetime
     order_reference: str | None = None
     reconciliation_reason_code: str | None = None
+    submit_upstream_code: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -114,6 +117,12 @@ class PaperCanaryRuntimeSnapshot:
             not in PAPER_CANARY_SAFE_RECONCILIATION_REASON_CODES
         ):
             raise PaperCanaryRuntimeError("runtime_reconciliation_reason_invalid")
+        if (
+            self.submit_upstream_code is not None
+            and safe_kis_paper_upstream_code(self.submit_upstream_code)
+            != self.submit_upstream_code
+        ):
+            raise PaperCanaryRuntimeError("runtime_submit_upstream_code_invalid")
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -133,6 +142,7 @@ class PaperCanaryRuntimeSnapshot:
             "expires_at": self.expires_at.isoformat(),
             "order_reference": self.order_reference,
             "reconciliation_reason_code": self.reconciliation_reason_code,
+            "submit_upstream_code": self.submit_upstream_code,
         }
 
     @classmethod
@@ -156,8 +166,15 @@ class PaperCanaryRuntimeSnapshot:
             "expires_at",
             "order_reference",
         }
-        extended_expected = expected | {"reconciliation_reason_code"}
-        if frozenset(payload) not in {frozenset(expected), frozenset(extended_expected)}:
+        reconciliation_expected = expected | {"reconciliation_reason_code"}
+        upstream_code_expected = expected | {"submit_upstream_code"}
+        fully_extended_expected = reconciliation_expected | {"submit_upstream_code"}
+        if frozenset(payload) not in {
+            frozenset(expected),
+            frozenset(reconciliation_expected),
+            frozenset(upstream_code_expected),
+            frozenset(fully_extended_expected),
+        }:
             raise PaperCanaryRuntimeError("runtime_keys_invalid")
         if (
             payload["schema_version"] != SCHEMA_VERSION
@@ -194,6 +211,12 @@ class PaperCanaryRuntimeSnapshot:
                     payload["reconciliation_reason_code"],
                     "reconciliation_reason_code",
                 )
+            ),
+            submit_upstream_code=(
+                None
+                if "submit_upstream_code" not in payload
+                or payload["submit_upstream_code"] is None
+                else _text(payload["submit_upstream_code"], "submit_upstream_code")
             ),
             schema_version=SCHEMA_VERSION,
         )

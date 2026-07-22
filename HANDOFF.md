@@ -49,6 +49,10 @@ claims; it is not an approval chain for virtual-paper work.
   sizing, raw market-data retention on `D:`, and goal-owned schedules.
 - Do not ask the operator again for paper capital, a report, dashboard state,
   a trade count, profitability, or an individual KIS Paper call.
+- Paper cadence, the number of distinct virtual intents, and recurring
+  goal-owned schedules are routine engineering choices, not approval gates or
+  one-shot quotas. An unresolved intent blocks only a replacement of that exact
+  intent until reconciliation; it does not stop new distinct Paper work.
 - `KIS_LIVE_*` must never be read. Existing and future KIS clients must be
   hard-wired to the virtual-paper host and reject a live route.
 - Data and models stay local and private: raw market data in `D:\market_data`,
@@ -208,6 +212,16 @@ next bounded improvement is to project only a strictly allowlisted KIS-style
 submit code when one exists, so the rejection can guide the next independent
 canary without retaining response text or opening a raw-broker artifact path.
 
+The next independent run, `canary-20260721T233837Z`, exercised the strict
+upstream-code projection. KIS again returned `submit_kis_rejected` after clean
+initial reconciliation, but supplied no valid short `msg_cd`, so
+`submit_upstream_code` is `null`. The official KIS sample confirms the current
+US-paper buy route, `VTTT1002U`, and submitted field set; do not guess a mapping
+change. Its price sample exposes `last` and `zdiv`, so the next canary should
+derive a valid private limit from a current virtual quote and execute during a
+known US regular-session window. That is a runtime condition, not an approval
+gate; preserved runs remain untouched.
+
 The canary now persists its cancellation choice with the private intent,
 serializes sibling run IDs through one state-root lock, resumes cancellation of
 an acknowledged matching open order after a restart, and treats any non-success
@@ -238,12 +252,10 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: retain a strictly
-allowlisted KIS-style submit code in sanitized canary evidence when KIS rejects
-a submit, then run one new independent virtual canary after focused regression
-proof and a Claude drift check. It must not reuse or mutate either preserved
-unknown run. This is not a prerequisite approval for paper work; it is the next
-technical reliability fact for the existing adapter. At each boundary, review
-the data contract, execution route readiness, research queues, GPU eligibility,
-disk capacity, and role ownership; make reversible no-cost changes autonomously
-and escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: add a transient
+quote-derived virtual limit and a scoped recurring regular-session Paper path.
+The three older canary intents remain immutable recovery evidence, but do not
+create a global one-shot quota or stop new distinct Paper work. At each boundary,
+review the data contract, execution route readiness, research queues, GPU
+eligibility, disk capacity, and role ownership; make reversible no-cost changes
+autonomously and escalate only a real remaining operator boundary.

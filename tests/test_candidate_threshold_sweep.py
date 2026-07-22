@@ -222,7 +222,7 @@ def test_candidate_threshold_sweep_missing_backend_is_prepared(
 
     payload = json.loads(result.sweep_artifact.read_text(encoding="utf-8"))
     assert result.status == "prepared_not_swept"
-    assert "no operator-approved research GPU probability backend" in payload["reason"]
+    assert "no compatible research GPU probability backend" in payload["reason"]
 
 
 def test_candidate_threshold_sweep_is_offline_and_does_not_read_credentials(

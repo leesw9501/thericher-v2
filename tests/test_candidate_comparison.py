@@ -180,7 +180,7 @@ def test_candidate_replay_comparison_missing_backend_is_prepared(
 
     payload = json.loads(result.comparison_artifact.read_text(encoding="utf-8"))
     assert result.status == "prepared_not_compared"
-    assert "no operator-approved research GPU replay backend" in payload["reason"]
+    assert "no compatible research GPU replay backend" in payload["reason"]
 
 
 def test_candidate_replay_comparison_is_offline_and_does_not_read_credentials(

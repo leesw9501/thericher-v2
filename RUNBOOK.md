@@ -36,7 +36,8 @@ Do not require a capital envelope, profitability result, dashboard, report,
 trade count, or a per-call confirmation. Keep only technical properties that
 preserve truthful paper evidence: paper-only routing, secret-safe output,
 idempotent intent before a broker side effect, and reconciliation before an
-unknown outcome is retried.
+unknown outcome is retried. There is no one-shot or per-objective quota for
+distinct Paper intents or due Paper schedules.
 
 Market data stays private, local, and unserved. Stop only the affected cache if
 applicable source terms prohibit retention or if disk policy would be crossed.
@@ -51,7 +52,7 @@ The active raw daily cache is at:
 D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json
 ```
 
-Run one bounded worker chunk:
+Run a bounded worker chunk whenever the authoritative index says it is due:
 
 ```powershell
 uv run python scripts\backfill_kis_paper_private_daily.py --execute
@@ -141,6 +142,14 @@ Preserve it as `outcome_unknown` rather than retrying it. The next diagnostic
 may retain only a strictly validated short KIS-style code when present; it must
 not retain response text or any other response field.
 
+The next independent run, `canary-20260721T233837Z`, verified that projection:
+KIS again returned `submit_kis_rejected` after clean reconciliation but supplied
+no valid code, so the safe field is `null`. Official KIS sample code confirms
+the current US-paper buy route/fields and documents `last` plus `zdiv` on its
+quote endpoint. The next execution task should derive a private limit from that
+quote and run inside a known US regular-session window, rather than changing the
+documented order mapping or repeatedly submitting a fixed `$1` order.
+
 ## KIS Paper Order Work
 
 Paper order submission is authorized as soon as the Execution adapter exists.
@@ -153,8 +162,8 @@ order by itself.
 ## KIS Virtual-Paper Canary
 
 The bounded execution-learning command is a virtual-paper US buy-limit canary
-with one whole share, a fixed explicit limit, reconciliation, and cancellation
-after an accepted submission:
+with one whole share, a quote-derived explicit nonmarket limit, reconciliation,
+and cancellation after an accepted submission:
 
 ```powershell
 docker compose --profile kis-paper-canary run --rm --no-deps kis-paper-canary
@@ -169,6 +178,12 @@ cancellation after a restart, and sibling run IDs are serialized at the private
 state root. A non-success submit response or completion evidence after a cancel
 is `outcome_unknown`, not a clean result or retry cue. Do not pass secrets or
 account values on the command line.
+
+The canary may be invoked by a scoped recurring Paper schedule during eligible
+sessions. There is no one-shot or per-goal execution quota: a distinct new
+intent can proceed after the scheduler's technical session, pacing, concurrency,
+and durable-state checks. An ambiguous intent remains unrepeated until its own
+reconciliation, but never blocks a later distinct Paper intent or another lane.
 
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. The latest read-only bridge attempt reached the account boundary
