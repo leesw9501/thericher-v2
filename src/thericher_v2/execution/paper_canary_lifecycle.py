@@ -51,6 +51,7 @@ class PaperCanaryLifecycleFact:
     attribution_eligibility: str
     sizing_status: Literal["fixed_canary", "not_submitted"]
     evidence_sha256: str
+    attribution_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -58,6 +59,8 @@ class PaperCanaryLifecycleFact:
         _sha256_ref(self.intent_ref, "intent_ref")
         if self.decision_ref is not None:
             _decision_ref(self.decision_ref)
+        if self.attribution_ref is not None:
+            _sha256_ref(self.attribution_ref, "attribution_ref")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
         if self.lifecycle_state not in _LIFECYCLE_STATES:
             raise PaperCanaryLifecycleError("lifecycle_state_invalid")
@@ -80,6 +83,7 @@ class PaperCanaryLifecycleFact:
             "run_id": self.run_id,
             "intent_ref": self.intent_ref,
             "decision_ref": self.decision_ref,
+            "attribution_ref": self.attribution_ref,
             "decision_class": "enter",
             "model_ref": "deterministic_canary",
             "observed_at": self.observed_at.isoformat(),
@@ -153,6 +157,11 @@ def paper_canary_lifecycle_fact_from_evidence(
         ),
         sizing_status=("not_submitted" if lifecycle_state == "not_submitted" else "fixed_canary"),
         evidence_sha256=evidence_sha256,
+        attribution_ref=(
+            None
+            if payload.get("attribution_ref") is None
+            else _text(payload.get("attribution_ref"), "attribution_ref")
+        ),
     )
 
 

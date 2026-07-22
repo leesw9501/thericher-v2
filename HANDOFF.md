@@ -49,6 +49,11 @@ claims; it is not an approval chain for virtual-paper work.
   sizing, raw market-data retention on `D:`, and goal-owned schedules.
 - Do not ask the operator again for paper capital, a report, dashboard state,
   a trade count, profitability, or an individual KIS Paper call.
+- The operator explicitly prefers autonomous forward progress over Paper
+  process scaffolding. Do not create or revive a permission latch from a
+  historical run marker, unavailable input, model result, raw-retention value,
+  or schedule outcome. Preserve the fact, scope its recovery/no-intent result,
+  and continue every independent correctly scoped action.
 - Paper cadence, the number of distinct virtual intents, and recurring
   goal-owned schedules are routine engineering choices, not approval gates or
   one-shot quotas. An unresolved intent blocks only a replacement of that exact
@@ -67,6 +72,17 @@ side effect, and reconciliation before retrying an unknown outcome. They are
 implementation requirements, not approval checkpoints.
 
 ## Current Task Update
+
+The first immutable baseline receipt now has external evidence at
+`D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
+It binds the frozen QQQ/NAS KIS-only 20-session input plus the current observed
+capability contract and truthfully reports `abstain` / `unqualified` /
+`input_unavailable`. Its local-paper preparation is a sanitized no-intent, not
+a Paper permission hold. The pure bridge separately proves that an eligible
+receipt preserves its exact decision identity through a replayable
+`source: local_paper` fill and can prepare an existing KIS Paper canary decision
+only when Execution supplies matching venue, sizing, and final-limit proof.
+No KIS call, credential read, raw price, or artifact-in-Git behavior occurred.
 
 The first KIS-native intraday feature breadth loop is complete on the frozen
 QQQ 20-session source. Its external CPU artifact is

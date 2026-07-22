@@ -6,6 +6,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import tempfile
 import threading
 import urllib.error
@@ -89,6 +90,8 @@ KIS_PAPER_US_CCNCL_PATH = "/uapi/overseas-stock/v1/trading/inquire-ccnl"
 KIS_PAPER_US_CCNCL_TR_ID = "VTTS3035R"
 KIS_PAPER_US_CCNCL_MAX_PAGES = 2
 KIS_PAPER_RATE_LIMIT_CODE = "EGW00201"
+
+_RECEIPT_DECISION_ID = re.compile(r"receipt-([0-9a-f]{64})")
 
 _PAPER_POST_HEADERS = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "content-type", "accept"}
@@ -1747,6 +1750,7 @@ def _write_evidence(
         "run_id": state.intent.run_id,
         "intent_fingerprint": state.intent.fingerprint,
         "decision_ref": _redacted_decision_reference(state.intent.decision_id),
+        "attribution_ref": _receipt_attribution_reference(state.intent.decision_id),
         "phase": state.phase,
         "reason_code": state.reason_code,
         "submit_upstream_code": state.submit_upstream_code,
@@ -1957,6 +1961,13 @@ def _redacted_decision_reference(raw_decision_id: str) -> str:
     _safe_identifier(raw_decision_id, "decision_id")
     digest = hashlib.sha256(raw_decision_id.encode("utf-8")).hexdigest()[:16]
     return f"decision-{digest}"
+
+
+def _receipt_attribution_reference(raw_decision_id: str) -> str | None:
+    """Expose the exact opaque receipt digest only for the dedicated bridge form."""
+
+    match = _RECEIPT_DECISION_ID.fullmatch(raw_decision_id)
+    return None if match is None else f"sha256:{match.group(1)}"
 
 
 def _safe_identifier(value: object, label: str) -> None:

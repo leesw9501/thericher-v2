@@ -46,6 +46,17 @@ Default to action for private, no-cost work that stays inside this authority.
 Record limitations as evidence and fix technical faults, but do not turn either
 into a new approval process. Actual live-money behavior remains the hard stop.
 
+For private Data, Research, and KIS Paper work, forward progress is the
+default. Do not introduce a state field, marker, quota, report, model result,
+or checklist that blocks a different correctly scoped job as a proxy for
+operator approval. A missing cache, `raw_market_data_retained: false`, blank
+source field, unqualified input, or failed run is evidence about its own input
+or recovery path only. It may yield a scoped no-intent or a fresh collection;
+it never becomes a general permission hold. Preserve the factual record rather
+than rewriting it. The only cross-run technical exception is an exact durable
+Paper intent with an unknown outcome, which must reconcile before its own
+replacement is attempted.
+
 ### Codex Orchestrator
 
 Codex is the product-development lead and integrator.

@@ -170,6 +170,10 @@ at a time and leave the next fixed job ready whenever its contract is sound.
 - A split label must record historical exposure honestly. `burned_precontract`
   constrains only the interpretation of that historical suffix; it is never a
   KIS Paper, scheduler, or operator-approval gate.
+- An unavailable dataset, negative result, or `abstain` receipt constrains only
+  that research claim or exact decision. It cannot become a KIS Paper
+  permission latch or pause independent data, execution, breadth, or depth
+  work.
 - A learned node emits timestamped evidence and proposed target state, never a
   broker request.
 - Validation evidence can reject a claim without becoming a manual approval
@@ -201,6 +205,45 @@ Campaign artifacts must name dataset, code, split, cost, model, and result
 identity. A missing checkpoint/summary is `restart`, not a partial model result.
 Ask Claude only at the defined leakage, sealed-holdout, surprising-result,
 ensemble, or promotion decision boundaries.
+
+## Immutable Decision Receipt
+
+The active fixed baseline can now project its existing `TargetExposureProposal`
+into a Research-owned immutable receipt through
+`thericher_v2.research.decision_receipt`. The receipt is deliberately narrower
+than its source: it holds only opaque campaign/model/proposal references, an
+exact `sha256:` input-manifest reference, deterministic decision identity,
+`enter` or `abstain`, input status, UTC decision validity, and a closed reason
+class. It does not carry source bars, features, scores, prices, quantities,
+symbols, account facts, source/provider payloads, or the proposal reason.
+
+The Data-side input manifest must bind the provider and capability contract.
+Its complete digest, never a shortened display reference, is the authoritative
+join key. A changed capability/provider contract must remain an
+`unqualified` proposal and therefore becomes an explicit
+`abstain`/`input_unavailable` receipt. `future`, missing, stale, incomplete,
+or other unready input behaves the same way. Ready `hold`, `reduce`, and `exit`
+proposals are narrowed to a no-entry abstention; only a ready `enter` remains
+eligible for the later Execution-owned adapter.
+
+References are supplied by the durable campaign/input registry as opaque,
+high-entropy identities. The receipt module must not derive them from raw data
+or a low-cardinality identifier. Its deterministic `decision_id` hashes only
+these opaque references plus its safe categorical/timestamp fields, so replay
+never reads a clock, credential, cache, or external service. The current
+research package initializer still imports legacy modules; that import-layout
+fact is outside this narrow receipt module and must be addressed separately if
+process-level import isolation becomes an execution requirement.
+
+The first external receipt is
+`D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
+It is reproducible from the frozen QQQ/NAS 20-session KIS-only input and its
+observed capability contract. Because that contract has no trusted production
+baseline qualification, the actual result is `abstain` / `unqualified` /
+`input_unavailable`; its local-paper preparation is therefore a scoped
+no-intent. This is useful input-status evidence, not a Paper restriction or a
+claim about model quality. Focused synthetic replay proves the same immutable
+receipt shape can carry an eligible `enter` through `source: local_paper`.
 
 ## Sanitized Paper Lifecycle Consumer Contract
 
@@ -235,9 +278,10 @@ Required common fields are `schema_version`, an opaque deterministic
 `open`, `realized`, or `unavailable`. `realized` means only that Execution has
 privately reconciled a closed lifecycle and published a sanitized attribution
 receipt; it is not a profitability, promotion, or Paper-permission gate.
-Research joins this fact to its own immutable decision receipt by
-`campaign_id` plus `decision_id` (or `intent_ref`), retains it outside Git, and
-reports incomplete facts as execution coverage rather than imputing PnL.
+Research joins this fact to its own immutable decision receipt by the full
+opaque receipt digest when `attribution_ref` is present, otherwise by the
+existing canary references. It retains those facts outside Git and reports
+incomplete facts as execution coverage rather than imputing PnL.
 
 The initial consumer is read-only and descriptive: no broker import, network,
 credential read, retry, cancel, sizing change, or model retune is permitted.

@@ -223,6 +223,15 @@ target exposure fraction, confidence, `valid_until`, and input-status evidence.
 It never outputs KIS request fields or an order. Execution alone maps an
 accepted target delta to a KIS-compatible paper `OrderIntent`.
 
+The receipt bridge narrows a proposal still further to opaque campaign/model/
+input/proposal references, an exact receipt digest, decision class, validity,
+and reason class. An eligible receipt becomes a deterministic `local_paper`
+intent with that exact digest as its decision identity. A KIS Paper preparation
+additionally requires Execution-owned symbol/venue/sizing binding and a fresh
+final-limit proof; it prepares an existing canary decision but never submits it
+itself. A current unavailable receipt remains a scoped no-intent fact, never a
+global Paper authority control.
+
 ### Observed KIS Minute Cache
 
 The first cache implementation is a small reusable boundary, not a new gate or
@@ -235,6 +244,13 @@ file is unusable input only; it never turns an earlier
 `raw_market_data_retained: false` fact into a later collection restriction. The
 collector and offline reader ignore a legacy unretained marker without a cache
 snapshot before cache attestation, deduplication, and bar consumption.
+
+This is the general Paper autonomy rule, not a special case for cache files.
+An unavailable input, blank provider field, unqualified research receipt, or
+prior scheduler outcome may make that exact decision a truthful no-intent, but
+cannot freeze an independent correctly scoped collection, Paper order, or
+schedule. Facts and durable intent identities remain immutable; permission
+latches, quotas, and manual Paper checkpoints do not.
 
 The cache chooses KIS's explicit Korea date/time fields as its canonical UTC
 basis and marks a bar complete only when its end is no later than the rounded

@@ -131,6 +131,16 @@ PnL accounting, emergency controls, and future KIS Paper transport.
   KIS call and reads no credential. This proves the virtual execution lifecycle,
   not a model edge, realized PnL, or a new approval condition.
 
+The receipt bridge is now execution-owned at
+`execution.paper_decision_bridge`. It maps an eligible immutable receipt to a
+deterministic `local_paper` buy intent whose `decision_id` is the full receipt
+identity. Its KIS branch prepares, but does not submit, the existing canary
+decision only after a matching execution binding and final tick-valid price
+proof. It reads no environment, credential, KIS client, or network path. A
+new receipt-shaped canary decision carries an exact opaque receipt digest as
+`attribution_ref` in sanitized lifecycle evidence; historical canaries retain
+their existing short `decision_ref` only.
+
 ## Ready Queue
 
 1. Preserve local-paper replay and PnL attribution for the daily baseline.
@@ -157,6 +167,12 @@ to deterministic execution logic. Historical one-shot or retention markers
 cannot disable later correctly scoped paper work; they only describe the
 recovery state of their own run. There is no per-goal or one-shot quota on
 distinct virtual-paper intents or goal-owned Paper schedules.
+
+The operator's default-progress direction also forbids a new Paper permission
+proxy based on a report, input quality, model result, historical run, or
+schedule state. A failed price/input contract produces a no-intent fact for
+that exact attempt; it does not halt a distinct correctly scoped action. Keep
+only the exact-intent reconciliation rule and the paper-only technical route.
 
 The directional console controls are reversible local operating instructions,
 not policy latches. `pause_buys` stops a newly created buy intent before KIS

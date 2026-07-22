@@ -2,37 +2,31 @@
 
 ## Objective
 
-Build the first narrow model-decision bridge from existing KIS-native `Bar`
-research into a paper-ready decision receipt.
+Build the first point-in-time KIS-native daily SPY decision source for virtual
+paper operation.
 
-The goal is not to claim a profitable model or wait for a larger GPU dataset.
-Use one fixed, transparent baseline to produce an explicit `enter` or `abstain`
-receipt, replay that same receipt through `local_paper`, and make an eligible
-receipt consumable by the existing virtual-paper intent boundary. The already
-working independent KIS Paper canary and scheduled data collection continue in
-parallel.
+Use the existing private KIS daily cache and the proven SPY `AMS` quote / `AMEX`
+order mapping. The outcome is a daily `enter` or `abstain` receipt whose input
+availability, symbol/venue, and one-submit identity can be checked before it
+reaches the existing virtual-paper canary. This is a narrow SPY lane, not a
+new universe, model registry, report system, or live-trading feature.
 
-## Standing Authority And Boundaries
+## Standing Authority
 
-- All private `KIS_PAPER_*` market/account reads, positions, open orders,
-  virtual-order submit/modify/cancel, reconciliation, raw data retention on
-  `D:`, and goal-owned schedules are authorized. A correctly scoped Paper
-  action does not need a capital, trade-count, profitability, or per-call
-  confirmation.
+- All private `KIS_PAPER_*` data/account reads, virtual submit/modify/cancel,
+  reconciliation, sizing, retention on `D:`, and goal-owned schedules are
+  authorized. Default to the next correctly scoped action; do not ask for a
+  paper capital, profitability, trade-count, report, or per-call approval.
 - Never read `KIS_LIVE_*`, create a live route, use real capital, buy data,
-  accept unclear rights, expose a public service, or commit secrets, raw data,
-  broker bodies, or generated artifacts.
-- Keep raw data under `D:\market_data` and generated artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- An old `raw_market_data_retained: false`, prior canary result, blank source
-  field, failed collection, or unresolved intent applies only to its own
-  evidence/recovery path. It never freezes a distinct KIS Paper action,
-  scheduler, collection, or research lane.
-- Preserve only technical truth: virtual-paper route isolation, durable intent
-  before a side effect, no replacement of the exact unknown intent before
-  reconciliation, point-in-time input identity, and final limit-tick validity.
-  These are implementation properties, not operator approvals or numeric
-  quotas.
+  accept unclear rights, expose a public service, or commit secrets, raw
+  market/broker data, or generated artifacts.
+- An unavailable input, failed collection, historical marker, prior canary,
+  or unqualified result is scoped evidence only. It may produce a no-intent
+  result or fresh collection; it must not freeze another ready lane.
+- Retain technical truth only: point-in-time availability, paper-host routing,
+  durable intent before a side effect, exact-intent reconciliation, final
+  tick-valid price proof, and idempotent submit identity. These are not manual
+  approval gates.
 
 ## Required First Reads
 
@@ -41,73 +35,71 @@ parallel.
    `RUNBOOK.md`.
 3. Read `agents/data.md`, `agents/engine-research.md`, and
    `agents/execution.md`.
-4. Inspect only sanitized schedule/runtime state plus cache/artifact metadata
-   before choosing an active input. Do not output credentials, account
-   identifiers, raw prices, raw broker bodies, or raw order IDs.
-5. Ask Claude for a concise falsification-first drift-check before relying on a
-   new point-in-time model-to-Paper mapping or treating a result as more than a
-   baseline/replay fact.
+4. Inspect only sanitized cache, schedule, runtime, and artifact metadata
+   before choosing the daily source. Do not output secrets, account identifiers,
+   raw prices, raw broker bodies, or raw order IDs.
+5. Ask Claude for a concise falsification-first check before relying on the
+   daily point-in-time contract or an eligible daily receipt.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Inventory the latest usable KIS-native daily and intraday cache coverage for
-   `QQQ`, `SPY`, and `IWM` with metadata-first inspection. Identify which
-   existing stream can support one current fixed baseline receipt without
-   source mixing.
-2. Keep prospective intraday-head collection and the daily cache independent.
-   A missing/stale window yields a visible input status for that receipt, not a
-   global collection, Paper, or research hold.
+1. Reattest the usable SPY KIS daily cache and define a minimal daily input
+   manifest that binds provider, symbol, KIS data venue, cadence, source
+   adjustment semantics, last consumed session, and the first instant that bar
+   was available to a decision.
+2. Keep collection independent: stale/missing daily data should request the
+   next due KIS cache action or yield a scoped unavailable receipt, never a
+   Paper or scheduler hold.
 
 ### Engine Research Agent
 
-1. Select one already-defined fixed baseline whose source, timing, and limits
-   are explicit. Do not reuse the retired L2 gate, tune against the burned
-   historical suffix, select an architecture, form an ensemble, or start GPU
-   depth work from the small historical comparison slice.
-2. Define a small immutable decision receipt with opaque campaign/model/input
-   references, `enter`/`abstain`, validity, and reason class. It must not carry
-   raw feature vectors, scores, prices, quantities, account values, or broker
-   fields.
-3. Replay it through the existing local-paper harness and link its decision ID
-   to the corresponding local-paper attribution without confusing
-   `source: local_paper` with `kis_paper`.
+1. Add one transparent SPY daily baseline that consumes only sessions available
+   before its declared decision time. It may emit `enter` or `abstain`; do not
+   reuse the retired L2 gate, tune against a later suffix, select a model, or
+   claim profitability.
+2. Produce an immutable receipt whose input manifest is verified against the
+   daily decision's symbol, venue, cadence, availability time, and source hash.
+   A same-session close at or before its availability instant must not yield an
+   eligible `enter`.
+3. Replay eligible synthetic/retained daily decisions through `local_paper`
+   with the full receipt identity, preserving `source: local_paper`.
 
 ### Execution Agent
 
-1. Add the smallest adapter from an eligible research receipt to the existing
-   KIS Paper decision/intent contract. Execution retains final price, tick,
-   sizing, persistence, route, reconciliation, and cancellation ownership.
-2. A receipt with `abstain`, stale/unavailable input, unsupported symbol/venue,
-   or no current price contract must emit a safe no-intent result for that
-   receipt. It must not pause the independent canary or force an entry.
-3. If a distinct eligible receipt reaches the existing Paper executor during an
-   eligible session, virtual submission/cancellation is authorized. Otherwise
-   validate the adapter offline with fake transport and local-paper replay; do
-   not create a new approval step.
-4. Extend the sanitized lifecycle fact only if needed to distinguish model,
-   timing, sizing, and execution causes without exposing raw broker data.
+1. Bind only an eligible SPY daily receipt to `SPY` / `AMEX`, a one-share
+   execution binding, and an independently observed fresh `AMS` final-limit
+   proof. Never use a daily close as the execution price proof.
+2. Add durable one-submit-per-receipt behavior at the virtual-paper boundary.
+   A repeat may reconstruct/reconcile the exact intent but must not submit a
+   second virtual order.
+3. When an eligible receipt, fresh independent price proof, and an eligible
+   paper session coincide, virtual submit/cancel/reconciliation is authorized.
+   Otherwise emit only a safe no-intent result and continue independent canary
+   and data work.
 
 ### Validation Agent
 
-1. Independently verify that the selected receipt has no future-bar or
-   cross-provider dependency, that the local replay remains deterministic, and
-   that a Paper adapter cannot reach live/network/credential code in offline
-   tests.
+1. Independently kill-test point-in-time leakage: a receipt using session T's
+   close with a decision time no later than T's availability instant must not
+   become eligible.
+2. Prove a wrong symbol/venue/manifest, expired price proof, or repeated
+   receipt cannot reach a second KIS Paper submission. Keep offline tests free
+   of KIS transport, network, credential, and live access.
 
 ## Completion Evidence
 
-- One immutable baseline receipt is reproducible from an identified KIS-native
-  input or honestly reports its current unavailable/stale status.
-- The same receipt is replayable through `local_paper`, preserving
-  `source: local_paper` and an attribution link.
-- The execution adapter accepts only eligible `enter` receipts and produces
-  only a sanitized no-intent fact for every other state.
-- Existing independent KIS Paper canary, data schedules, and broad/depth
-  research queues continue without a new approval, quota, or global pause.
-- No KIS live behavior, secret output, raw data/broker payload, public
-  dashboard, or generated artifact enters Git.
+- A hash-bound SPY daily input manifest has explicit availability semantics.
+- A daily receipt is reproducible and either eligible from prior available data
+  or honestly no-intent; no same-close lookahead is possible.
+- An eligible receipt replays locally and has one durable virtual-paper submit
+  identity tied to an independent price proof.
+- A real virtual-paper submit/cancel/reconciliation is performed when its
+  bounded inputs are eligible; otherwise its safe no-intent evidence explains
+  why without pausing future authorized work.
+- No live behavior, secrets, raw market/broker payload, public dashboard, or
+  generated artifact enters Git.
 
 ## Verification
 
@@ -120,4 +112,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Bridge baseline decisions to paper intents`
+`Add point-in-time daily SPY paper decision`

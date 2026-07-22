@@ -78,6 +78,13 @@ Historical one-shot artifacts are non-authoritative. Their completion or
 retention value must never reserve, disable, or require approval for a later
 correctly scoped KIS Paper collection, account, order, or scheduler run.
 
+Default to the next due, correctly scoped private Paper action. Do not add a
+capital, profitability, trade-count, report, input-quality, or historical-run
+checkpoint as an approval proxy. A factual unavailable input produces only its
+own recovery or no-intent result; it does not stop independent work. Preserve
+the record and retain the exact-intent reconciliation rule instead of deleting
+or rewriting evidence.
+
 If a page is repeatedly structurally invalid, diagnose only safe structure
 (counts, field names, validation class, and session metadata), preserve the
 failure evidence, and stop that target when the source-quality limit is clear.
@@ -143,6 +150,20 @@ uv run python scripts\run_kis_paper_intraday_local_paper_baseline.py --session-d
 
 The command makes no network or credential access. It writes only a sanitized
 local-paper summary under the external model-artifact root.
+
+### Baseline Decision Receipt
+
+Write or reattest the immutable receipt for the frozen KIS-native QQQ input:
+
+```powershell
+uv run python scripts\write_kis_paper_baseline_receipt.py
+```
+
+It reads the external cache offline, writes only safe receipt/no-intent evidence
+under `D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt`, and never
+reads a credential, calls KIS, or emits raw bars/prices. An `unqualified` or
+otherwise unavailable result is scoped to that receipt; retain the artifact and
+continue independent KIS Paper, Data, and Research work.
 
 ### Frozen Chronological CPU Campaign
 

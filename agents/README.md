@@ -15,6 +15,10 @@ them to ready roles. Data, Research, and Execution may progress in parallel. A
 blocked lane does not stop another ready lane. Codex integrates shared contracts,
 verification, Git, recovery, and the next objective.
 
+For private KIS Paper work, role agents record unavailable inputs and failed
+runs as scoped evidence, not permission latches. A historical marker, model
+result, or schedule outcome cannot stop another correctly scoped ready lane.
+
 ## Active Durable Stateboards
 
 - `data.md`: acquisition, canonical data, provenance, calendars, dataset

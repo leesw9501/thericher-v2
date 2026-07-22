@@ -69,6 +69,11 @@ as a failed collection or an authority hold.
   `sha256:38ccc55e1ade26a11562ebedcb482ace718ccbdb7d4d0cdc78a7d11f874a1c0a`.
   This reattests the frozen research input; it does not alter the cache or make
   a regular-session semantic claim.
+- The receipt writer reattested that same frozen input on 2026-07-22 and wrote
+  only its safe hash-bound receipt outside Git. The current observed capability
+  remains unqualified for the fixed 90-bar baseline, so no raw row was exposed
+  and no KIS/order action followed. This data fact does not pause the cache,
+  scheduler, canary, or another candidate input.
 - `select_complete_kis_paper_private_intraday_sessions` derives a new immutable
   KIS-only `CatalogedBars` identity from an explicit ordered tuple of complete
   regular sessions. It is offline/credential-free and rejects duplicate,
@@ -89,6 +94,18 @@ as a failed collection or an authority hold.
   returning task result `0` and the next run at 2026-07-24 02:35 KST. The
   separate `thericher-kis-paper-quote-session` task was also `Ready`, with
   task result `0`; its execution semantics belong to Execution, not Data.
+- A bounded metadata-only inventory on 2026-07-23 reattested the active
+  source choices without opening any raw rows. The KIS daily index has QQQ/NAS
+  and SPY/AMS `ready` through 2026-07-17; IWM/AMS remains `deferred` with
+  `daily_response_invalid`. The last verified common D1 panel remains 694
+  sessions from 2023-10-10 through 2026-07-17. The historical KIS 1m index
+  has QQQ/NAS and SPY/AMS only, each with 21 complete regular sessions from
+  2026-06-22 through 2026-07-21; IWM has no KIS 1m stream. The independent
+  head index has one QQQ and one SPY chunk but zero of five complete QQQ
+  regular sessions, so it is unavailable as a current input. For the active
+  fixed baseline receipt, use the existing frozen QQQ/NAS 1m KIS-only 20
+  session tuple (2026-06-23 through 2026-07-21), not a daily/head/SPY/IWM
+  join. It supports offline replay only, not a current-market claim.
 
 ## Ready Queue
 
@@ -154,6 +171,9 @@ that would cross the 15% floor.
   not a collection permission switch.
 - A failed, empty, or unretained job is a recovery fact for that job only; it
   must not create a one-shot latch for later correctly scoped collection.
+- The standing forward-progress directive applies equally to cache evidence:
+  a missing or unqualified input may request fresh data or yield a scoped
+  unavailable result, but cannot act as Paper, scheduler, or research authority.
 - The intraday collector and offline loader ignore an unretained historical
   marker without a cache snapshot before validation, deduplication, cursor
   handling, or bar consumption.
@@ -200,18 +220,24 @@ that would cross the 15% floor.
 
 ## Recovery
 
-Current recovery class: `resume`. The prospective-head index is readable and
-the metadata-only preparer is pending solely because no complete QQQ sessions
-are present. Resume the next scheduled collection normally. Reattest the index
-and committed snapshots before a new network call. Recover a matching orphan
-snapshot without KIS access. Classify a bad snapshot or index as `reconcile`;
-do not overwrite evidence or invent a cursor.
+Current recovery class: `resume`. The historical QQQ/NAS 1m baseline input is
+intact. The prospective-head index is readable but has zero of five required
+complete QQQ sessions, so it is pending only as a future current-input source.
+The historical QQQ cursor's `minute_cursor_invalid` is scoped to its next
+collection recovery and does not invalidate already verified sessions or pause
+the fixed receipt. Resume the next scheduled collection normally. Reattest the
+index and committed snapshots before a new network call. Recover a matching
+orphan snapshot without KIS access. Classify a bad snapshot or index as
+`reconcile`; do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
-Continue KIS-native minute accumulation and preserve the exact provider identity,
-timestamp basis, session classification, coverage, and limitations for the next
-feature/candidate input. Re-run the metadata-only prospective preparer after
-future head collections; hand off only when it reports five complete sessions.
-Report only a concrete source-rights or storage constraint that needs operator
-action.
+Engine Research may produce one fixed baseline receipt from the existing
+QQQ/NAS 1m KIS-only 20-session input and must preserve its exact identity. Do
+not mix it with the daily cache, prospective head cache, SPY, IWM, or another
+provider. Continue KIS-native minute accumulation and preserve the provider
+identity, timestamp basis, session classification, coverage, and limitations
+for a later current-input handoff. Re-run the metadata-only prospective
+preparer after future head collections; hand off only when it reports five
+complete sessions. Report only a concrete source-rights or storage constraint
+that needs operator action.

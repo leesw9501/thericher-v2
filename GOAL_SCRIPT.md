@@ -35,5 +35,8 @@ and goal-owned schedules are already approved by policy. Do not read or call
 service without separate operator approval. A historical
 `raw_market_data_retained: false` result is evidence about that snapshot only,
 never a reason to hold a later correctly scoped KIS Paper job. Do not impose a
-one-shot or per-goal quota on distinct virtual-paper intents.
+one-shot or per-goal quota on distinct virtual-paper intents. Do not create a
+new Paper permission latch from an unavailable input, model result, report, or
+past scheduler outcome; record its scoped no-intent/recovery fact and continue
+independent ready work.
 ```

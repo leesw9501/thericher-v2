@@ -10,6 +10,14 @@ reservations, or a `raw_market_data_retained` latch are superseded by the
 standing-authority decisions on 2026-07-21 and 2026-07-22. They remain evidence
 of their original runs, not current operating restrictions.
 
+The operator's current directive is default forward progress for all private
+Data, Research, and KIS Paper work. Do not reinterpret an unavailable input,
+failed run, model result, raw-retention value, report, or schedule outcome as a
+permission condition for a different correctly scoped action. Preserve the
+factual record and scope its recovery/no-intent result. `KIS_LIVE_*`, real
+capital, paid commitments, unclear rights, and public exposure remain separate
+operator boundaries.
+
 ## 2026-07-14 - Start v2 as a new private repository
 
 Decision: create `thericher-v2` as a new private GitHub repository.
@@ -4131,3 +4139,59 @@ Reason: this removes a false negative observed in an authorized Paper session
 while retaining the actual execution invariant. It reinforces that historical
 `raw_market_data_retained: false` markers and old one-shot evidence remain
 provenance/recovery facts only, never Paper permissions or general work stops.
+
+## 2026-07-22 - Reaffirm default-progress private Paper authority
+
+Decision: treat every private `KIS_PAPER_*` data, account, order,
+modify/cancel, reconciliation, sizing, retention, and goal-owned scheduling
+action as standing-authorized. Do not create or revive a capital envelope,
+profitability threshold, report, trade-count limit, one-shot marker,
+raw-retention value, input-quality result, model outcome, or manual Paper
+checkpoint that blocks a different correctly scoped action.
+
+`raw_market_data_retained: false` remains an immutable fact that the named
+snapshot has no raw bytes to consume. It does not authorize invented data, but
+it also cannot reserve, freeze, or disable a later collection, Paper order, or
+schedule. Likewise, an unavailable input or blank price contract yields a
+scoped no-intent for that exact decision, and an unknown broker outcome delays
+only replacement of that exact durable intent until reconciliation. Existing
+facts and identity records are preserved rather than deleted or rewritten.
+
+Claude's falsification-first verdict was `supported-with-limits`: retain
+Paper-host pinning, secret redaction, durable intent-before-side-effect, and
+exact-intent reconciliation. Keep `KIS_LIVE_*`, real-money behavior, paid
+commitments, unclear rights, and public exposure outside this standing scope.
+
+Reason: the operator explicitly prefers development and virtual-paper learning
+to proceed by default. The remaining technical controls preserve truthful
+evidence; they are not approval gates or a source of process scaffolding.
+
+## 2026-07-22 - Bridge immutable research receipts to paper-ready decisions
+
+Decision: introduce a small pure execution bridge with three distinct outcomes:
+an eligible receipt can create a deterministic broker-free `local_paper` buy
+intent using its full immutable decision identity; the same receipt can prepare
+the existing KIS Paper canary decision only when Execution provides matching
+symbol/venue/whole-share binding and a fresh final-limit proof; every other
+case produces a sanitized no-intent fact. The bridge has no credential,
+environment, network, KIS-client, or live-route dependency.
+
+The first external receipt uses the frozen QQQ/NAS 20-session KIS-native input
+and the current observed capability contract. It is stored only at
+`D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
+The contract is currently unqualified, so that exact receipt is an honest
+`abstain` / `input_unavailable` / local no-intent result. It does not freeze
+independent collection, scheduled canaries, or another Paper decision.
+
+For future receipt-shaped canaries, sanitized lifecycle evidence includes the
+full opaque receipt digest as `attribution_ref`; old canaries remain compatible
+without it. This makes model-to-execution joins exact without exposing a symbol,
+price, quantity, account value, raw broker payload, or credential.
+
+Claude's prior `supported-with-limits` bridge review applies: treat the full
+input digest as authoritative, prove offline isolation in tests, and do not
+rehydrate an `abstain`, expired, future, or mismatched receipt into an order.
+
+Reason: this advances the data-to-decision-to-paper attribution loop without
+mistaking a current data limitation for a permission gate or fabricating a
+model-driven virtual order.

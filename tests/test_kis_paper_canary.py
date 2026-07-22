@@ -973,6 +973,26 @@ def test_canary_evidence_projects_unknown_as_pending_reconciliation(tmp_path: Pa
     assert "realized" not in str(fact.safe_payload())
 
 
+def test_canary_evidence_preserves_an_exact_receipt_attribution_reference(tmp_path: Path) -> None:
+    receipt_digest = "a" * 64
+    outcome = run_kis_paper_canary(
+        decision=_decision(decision_id=f"receipt-{receipt_digest}"),
+        run_id="lifecycle-receipt-attribution-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "lifecycle-receipt-attribution-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=FakeKisPaperCanaryTransport(),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    fact = read_paper_canary_lifecycle_fact(outcome.evidence_path)
+
+    assert fact.attribution_ref == f"sha256:{receipt_digest}"
+    assert fact.safe_payload()["attribution_ref"] == f"sha256:{receipt_digest}"
+
+
 def test_submit_failure_evidence_projects_valid_code_without_raw_message(tmp_path: Path) -> None:
     safe_message_code = "EGW00201"
     raw_message_text = "paper-app-secret account 12345678 broker detail"
@@ -1278,9 +1298,13 @@ def _paper_environment() -> dict[str, str]:
     }
 
 
-def _decision(*, decision_as_of: datetime = NOW) -> KisPaperCanaryBuyDecision:
+def _decision(
+    *,
+    decision_as_of: datetime = NOW,
+    decision_id: str = "canary-qqq-20260722T143000Z",
+) -> KisPaperCanaryBuyDecision:
     return KisPaperCanaryBuyDecision(
-        decision_id="canary-qqq-20260722T143000Z",
+        decision_id=decision_id,
         symbol="QQQ",
         exchange="NASD",
         quantity=Decimal("1"),
