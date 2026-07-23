@@ -119,10 +119,10 @@ as a failed collection or an authority hold.
   `0`; its execution semantics belong to Execution, not Data.
 - A bounded metadata-only inventory on 2026-07-23 reattested the active
   source choices without opening any raw rows. The KIS daily index has QQQ/NAS
-  and SPY/AMS `ready` through 2026-07-17; IWM/AMS remains `deferred` with
-  `daily_response_invalid`. The last verified common D1 panel remains 694
-  sessions from 2023-10-10 through 2026-07-17. The historical KIS 1m index
-  has QQQ/NAS and SPY/AMS only, each with 21 complete regular sessions from
+  and SPY/AMS `ready` through 2026-07-17; IWM/AMS is `source_limited` at its
+  unchanged `daily_response_invalid` cursor. The last verified common D1 panel
+  remains 694 sessions from 2023-10-10 through 2026-07-17. The historical KIS
+  1m index has QQQ/NAS and SPY/AMS only, each with 21 complete regular sessions from
   2026-06-22 through 2026-07-21; IWM has no KIS 1m stream. The independent
   head index has one QQQ and one SPY chunk but zero of five complete QQQ
   regular sessions, so it is unavailable as a current input. For the active
