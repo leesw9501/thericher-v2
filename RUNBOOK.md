@@ -138,16 +138,21 @@ Use the separate head cache when the goal is fresh in-session observations
 rather than historical cursor continuation:
 
 ```powershell
-uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode head --pages-per-target 2
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode head --pages-per-target 4
 docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-intraday-head
 ```
 
 Head snapshots live below the sibling `intraday-head` cache root and never
 advance the historical backfill cursor. The Windows Scheduled Task
-`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35
-KST, which maps to the same US weekday mid-session. It is a bounded
-data-only invocation: it does not imply a complete session merely because it
-ran, and it has no account, order, or live route.
+`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 06:20
+KST, after the corresponding US regular-session close in both US daylight and
+standard time. It requests four pages per target: the summer envelope is 80
+post-close minutes plus 390 regular-session minutes, so four 120-row pages
+provide the minimum 480-minute coverage with a small margin. This remains a
+bounded data-only invocation (at most eight minute-page calls): it does not
+imply a complete session merely because it ran, and it has no account, order,
+or live route. The next metadata-only inspection must still find one exact
+390-minute regular session before Research may consume it.
 
 For an offline KIS-cache replay after a complete session has been retained:
 

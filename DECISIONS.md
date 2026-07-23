@@ -4440,3 +4440,30 @@ existing `terminal_state_support: unqualified` and
 Reason: this captures the next useful KIS-native execution fact automatically
 without turning source uncertainty, a completed one-shot marker, or a missing
 timestamp into a Paper permission or research gate.
+
+## 2026-07-23 - Align prospective intraday-head collection with a complete US session
+
+Decision: move the existing `thericher-kis-paper-intraday-head` task from
+02:35 KST to 06:20 KST and increase its unchanged `QQQ/NAS` and `SPY/AMS`
+head collection from two to four minute pages per target. The prior run at
+02:35 KST observed exactly 240 consecutive KIS minute rows from US 09:36 to
+13:35, which cannot contain a complete 390-minute regular session. At 06:20
+KST the summer post-close offset is 80 minutes; four 120-row pages cover 480
+minutes, enough to span 80 post-close minutes plus the 390-minute session with
+a small boundary margin. The run remains a bounded KIS Paper market-data call
+only, with at most eight page requests, no new route, symbols, account access,
+order operation, or retention location.
+
+The next due run is the falsification check: its metadata-only prospective
+inspection must find exactly one complete 390-minute QQQ regular session under
+the existing explicit 2026 session calendar. A short, delayed, duplicate, or
+otherwise incomplete result remains a source/schedule finding and is not
+research evidence or an authority latch. The source loader continues to clip
+to the explicit regular-session window; four pages improve coverage but do not
+claim that extended-hours rows are strategy inputs.
+
+Claude's focused falsification-first verdict was `supported-with-limits`.
+It agreed that four pages are the minimum defensible post-close envelope and
+flagged extended-hours clipping and the next exact-390-minute inspection as
+the decisive kill test. The change does not add a scheduler or a new approval
+process; it corrects the cadence of the already authorized task.

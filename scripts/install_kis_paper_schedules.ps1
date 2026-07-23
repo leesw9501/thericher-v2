@@ -50,7 +50,7 @@ $schedules = @(
         Name = "thericher-kis-paper-intraday-head"
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"
-        At = "02:35"
+        At = "06:20"
     }
 )
 

@@ -43,6 +43,11 @@ session, data run, or research task.
 1. Reattest the next daily-head input and report only source freshness,
    provenance, and categorical cache availability for the SPY/AMS session.
 2. Keep raw retention and any source gap separate from Paper order authority.
+3. The existing intraday-head task now runs at 06:20 KST with four pages per
+   target so it can cover a post-close 390-minute US regular session. After its
+   first due run, perform only the existing metadata-only complete-session
+   inspection. A short, duplicate, delayed, or otherwise incomplete result is
+   a scoped data finding, never a Paper or Research permission latch.
 
 ### Engine Research Agent
 
@@ -75,6 +80,9 @@ session, data run, or research task.
   manual approval request.
 - Any automatic terminal-field observation remains categorical,
   `unqualified`, and outside Research labels/PnL.
+- The first post-change intraday-head outcome is classified from metadata: an
+  exact 390-minute QQQ regular session is eligible for future preparation;
+  every other outcome stays a source-coverage fact.
 - Artifacts and raw data remain on `D:` and outside Git.
 
 ## Verification

@@ -339,7 +339,7 @@ services:
       - --mode
       - head
       - --pages-per-target
-      - "2"
+      - "4"
       - --runtime-projection
       - /app/runtime/state/kis_paper_intraday_freshness.json
     environment:

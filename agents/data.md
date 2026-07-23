@@ -165,6 +165,11 @@ as a failed collection or an authority hold.
     scheduler cadence. The current metadata-only preparation has zero of five
     required complete QQQ sessions, so it has no research handoff yet; this is
     ordinary evidence accumulation, not a permission or scheduling latch.
+    The first 02:35 KST head proved that two pages ended at US mid-session, so
+    the installed task now runs at 06:20 KST with four pages per target. Its
+    next run must be reattested for one exact 390-minute QQQ regular session;
+    a short, duplicate, or source-delayed result is a scoped source fact, not
+    a Paper or Research hold.
 
 ## Authority And Boundaries
 
