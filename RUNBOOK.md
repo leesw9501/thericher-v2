@@ -358,8 +358,10 @@ service image. This is runtime reproducibility, not a new scheduling or Paper
 approval condition.
 
 The Codex app daily operating review runs at 08:10 KST. It is the concise
-operator-summary and integration pass for prior scheduled outcomes; the named
-Windows tasks remain the only recurring KIS-facing execution/data jobs.
+operator-summary and integration pass for the prior daily-SPY head/session,
+quote-session, and intraday-head sanitized outcomes. It performs no KIS call
+itself; the named Windows tasks remain the only recurring KIS-facing
+execution/data jobs.
 
 ## Daily SPY Point-In-Time Paper Session
 

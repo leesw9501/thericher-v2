@@ -221,10 +221,10 @@ read-only recovery into a cancellation or new submission.
 The Codex app automation `thericher-daily-operating-review` is active at 08:10
 KST. It inspects the previous scheduled outcomes through sanitized evidence,
 continues ready no-cost lane work, and publishes only the concise operator
-summary described in `AGENTS.md`. The KIS quote-session and intraday-head
-workers are owned only by their named Windows Scheduled Tasks; duplicate Codex
-worker automations were removed so one due time cannot issue duplicate KIS
-Paper calls. The daily review does not grant live authority.
+summary described in `AGENTS.md`. The KIS daily-SPY head/session, quote-session,
+and intraday-head workers are owned only by their named Windows Scheduled Tasks;
+duplicate Codex worker automations were removed so one due time cannot issue
+duplicate KIS Paper calls. The daily review does not grant live authority.
 
 ## Current Data State
 
