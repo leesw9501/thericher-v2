@@ -2,88 +2,63 @@
 
 ## Objective
 
-Determine why the first post-close KIS Paper intraday-head run did not produce
-one complete 390-minute QQQ regular session, then make the smallest proven
-data-only correction.
+Classify the first complete three-window KIS Paper intraday-head collection
+cycle after the 02:35, 04:35, and 06:20 KST schedule installation, without
+changing the proven KIS minute request semantics.
 
-The 2026-07-24 06:20 KST task succeeded and committed one new 120-row chunk per
-QQQ/NAS and SPY/AMS, but the metadata-only preparer still found zero complete
-QQQ regular sessions. This is a bounded source-coverage problem, not a Paper,
-GPU, or human-approval hold.
+The completed diagnosis established that the 2026-07-24 06:20 KST QQQ/NAS and
+SPY/AMS observations each ended at the KIS source after one 120-row page. The
+collector's four-page ceiling did not truncate them: the response did not offer
+an `M`/`F` continuation. The prior in-session observation reached two pages and
+was likewise handled by the existing official continuation contract. This is a
+bounded provider-availability and anchor-timing fact, not a pagination,
+execution, GPU, or operator-approval hold.
 
 ## Standing Authority
 
-- All private `KIS_PAPER_*` market-data/account/order work, virtual Paper
-  submit/modify/cancel, `D:` retention, and goal-owned schedules are already
-  authorized. For this goal, use only the data-only KIS market-data path.
-- Do not read `KIS_LIVE_*`, use a live route, real capital, paid data,
-  unclear-rights assets, public exposure, Git-hosted raw data/artifacts, or
-  secrets.
-- Keep raw source rows under `D:\market_data` and generated artifacts under
-  `D:\thericher-v2\model-artifacts`, never Git.
-- A short, duplicate, delayed, or unavailable source result limits only that
-  exact data claim. It never pauses another Paper, Data, or Research action.
-
-## Required First Reads
-
-1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
-   `DECISIONS.md`, and `RUNBOOK.md`.
-3. Read `agents/README.md`, `agents/data.md`, `agents/engine-research.md`,
-   and `agents/execution.md`.
-4. Inspect only sanitized task/index/chunk metadata before looking at raw
-   source bytes.
-5. Ask Claude for a short falsification-first drift-check before changing the
-   KIS minute pagination, source anchors, page count, or task schedule.
+- Private `KIS_PAPER_*` market-data collection and local retention on `D:` are
+  authorized. This goal is data-only; it must not access account or order
+  endpoints.
+- Do not read `KIS_LIVE_*`, use a live route or real capital, buy data, accept
+  unclear rights, publish anything, expose raw rows, or put data/artifacts in
+  Git.
+- The existing named `thericher-kis-paper-intraday-head` task owns the three
+  triggers and its four-page cap. Do not add another task or manually duplicate
+  a due/running invocation.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Compare the current KIS minute request/continuation implementation with the
-   official KIS sample and deterministic fake transports. Establish whether the
-   short result is caused by continuation semantics, request anchors, provider
-   availability, or another concrete source fact.
-2. Change only the demonstrated fault. Keep the writer's exact-overlap,
-   conflict, raw-retention, and D: storage contracts intact.
-3. Run one bounded data-only KIS verification collection only when it improves
-   that diagnosis or validates a correction. It may retain source rows on D:
-   but must not access account/order routes or output raw rows.
-4. Re-run the metadata-only prospective preparer and classify the result. An
-   exact 390-minute QQQ session is future input eligibility; any other result
-   remains a source-coverage fact.
-5. The existing named head task now has 02:35, 04:35, and 06:20 KST triggers
-   with the unchanged four-page cap. Do not add a duplicate task or manually
-   duplicate a due/running trigger.
+1. After each scheduled run, inspect only sanitized task, index, and chunk
+   metadata. Record page/continuation categories, exact-overlap/conflict
+   counts, and source coverage; do not inspect or output raw market rows.
+2. Re-run the metadata-only prospective preparer after the full cycle. Accept
+   a future input only for an exact, contiguous 390-minute QQQ regular session;
+   otherwise retain `pending` as a source-coverage fact.
+3. Do not change initial anchors, continuation semantics, pagination cap, or
+   schedule unless a new concrete contradiction appears. Any such change needs
+   the required Claude falsification-first review before implementation.
 
 ### Engine Research Agent
 
-1. Keep the existing historical baselines, breadth/depth/ensemble queues, and
-   frozen prospective contract unchanged. Do not treat a partial head slice as
-   a model sample, selection result, or GPU qualification.
-2. Continue only CPU preparation that does not consume the partial head input.
+Keep the frozen historical baselines and prospective contract unchanged. A
+partial head slice remains neither a model sample nor a selection/GPU input.
 
 ### Execution Agent
 
-1. Keep virtual-host-only routing and the existing Paper schedule unchanged
-   unless Data proves a data-only task configuration fault.
-2. Do not infer terminal state, PnL, or execution performance from the daily
-   `target_already_satisfied` no-intent outcome.
-
-### Validation Agent
-
-1. Verify any correction preserves secret redaction, data-only isolation,
-   exact-overlap handling, replayability, and no broker/account/order access.
+Keep paper-only routing and existing daily/quote schedules unchanged. Do not
+infer a fill, terminal state, or PnL from task success or daily no-intent
+evidence.
 
 ## Completion Evidence
 
-- A concrete source diagnosis is recorded, with a focused regression test if
-  implementation changes.
-- A bounded data-only verification result is classified from safe evidence.
-- The metadata-only preparer has been rerun; its outcome is recorded without
-  turning it into an approval gate.
-- Raw data and artifacts remain outside Git, and Paper/live route isolation is
-  unchanged.
+- Sanitized evidence covers all three scheduled windows, or accurately records
+  a scoped task/recovery anomaly.
+- The metadata-only preparer classifies the resulting QQQ coverage without
+  reading raw rows or becoming an approval gate.
+- Research and Execution boundaries remain unchanged; no duplicate scheduler,
+  broker route, or raw artifact is introduced.
 
 ## Verification
 
@@ -96,4 +71,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Classify intraday head coverage`
+`Classify intraday head coverage cycle`
