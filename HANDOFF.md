@@ -237,7 +237,7 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
 - usable chunks: QQQ six retained usable chunks plus one historical no-bytes
-  observation, SPY six committed, and IWM three committed plus one
+  observation, SPY seven committed, and IWM three committed plus one
   hash-attested partial page; deferred snapshots remain evidence only
 - current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
@@ -246,6 +246,11 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
   through Saturday. It runs one bounded Docker data-only chunk after the
   intraday head and before the local operating review; it has no account or
   order route.
+- The Docker profile completed an actual 199-row `SPY/AMS` chunk on 2026-07-23
+  using only its injected Paper app-key/app-secret pair. Its image does not
+  mount `.env`; the shared market-data loader accepts only a complete named
+  Paper pair, rejects a partial pair or live mode, and leaves host `.env`
+  parsing as its strict fallback.
 
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the

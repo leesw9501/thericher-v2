@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -609,8 +610,43 @@ class KisPaperMinuteClient:
         self._client.ensure_authenticated()
 
 
-def load_kis_paper_market_data_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
-    """Read only paper credentials and reject any live operating mode."""
+def load_kis_paper_market_data_config(
+    dotenv_path: Path,
+    *,
+    environment: Mapping[str, str] | None = None,
+) -> KisPaperMarketDataConfig:
+    """Read complete Paper app credentials from named env vars or a strict dotenv file."""
+
+    configured = _load_kis_paper_market_data_environment_config(
+        os.environ if environment is None else environment
+    )
+    if configured is not None:
+        return configured
+    return _load_kis_paper_market_data_dotenv_config(dotenv_path)
+
+
+def _load_kis_paper_market_data_environment_config(
+    environment: Mapping[str, str],
+) -> KisPaperMarketDataConfig | None:
+    """Use only a complete named Paper pair; never combine environment and dotenv values."""
+
+    mode = environment.get("THERICHER_MODE", "off")
+    if not isinstance(mode, str) or mode.strip().lower() in _KIS_PAPER_FORBIDDEN_MODE_NAMES:
+        raise KisPaperMarketDataError("config_missing")
+    required = ("KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET")
+    supplied = {key: environment.get(key) for key in required}
+    if not any(value is not None for value in supplied.values()):
+        return None
+    if any(not isinstance(value, str) or not value.strip() for value in supplied.values()):
+        raise KisPaperMarketDataError("config_missing")
+    return KisPaperMarketDataConfig(
+        app_key=str(supplied["KIS_PAPER_APP_KEY"]).strip(),
+        app_secret=str(supplied["KIS_PAPER_APP_SECRET"]).strip(),
+    )
+
+
+def _load_kis_paper_market_data_dotenv_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
+    """Read only Paper credentials from the local approved dotenv layout."""
 
     required = {"KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"}
     values: dict[str, str] = {}

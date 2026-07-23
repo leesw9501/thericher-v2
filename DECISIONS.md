@@ -4544,3 +4544,27 @@ that path, and re-review any future account/order route or second token.
 Reason: QQQ/SPY daily coverage can now advance automatically without repeated
 IWM failures consuming the worker. The schedule improves collection cadence
 while remaining independent of Paper orders and model promotion.
+
+## 2026-07-23 - Support injected Paper market-data configuration in Docker
+
+Decision: the shared KIS Paper market-data loader accepts a complete explicit
+environment pair of `KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET` for the
+data-only Docker profiles. It reads only those two names plus
+`THERICHER_MODE`, rejects a partial pair or a live mode without a dotenv
+fallback, and never reads account or `KIS_LIVE_*` names. If neither Paper app
+value is injected, the existing strict local `.env` parser remains the host
+fallback.
+
+The first end-to-end Docker backfill verified this path by collecting one
+199-row `SPY/AMS` daily chunk under `D:\market_data`; it had no account/order
+route, live route, or `.env` mount. The worker emitted only a sanitized
+manifest identity, row count, target, and status.
+
+Claude's short drift-check was `supported-with-limits`. The implemented limits
+are complete-pair-only configuration, no environment/dotenv value mixing, a
+live-mode rejection, and tests proving no live credential name is read.
+
+Reason: Docker Compose already injects exactly the two authorized Paper
+market-data values while the container image deliberately excludes `.env`.
+Using the explicit pair fixes a runtime portability defect without widening
+broker authority or changing the Paper-only client route.

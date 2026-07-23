@@ -81,6 +81,13 @@ container mounts only `D:\market_data` at `/app/market_data` and receives only
 the two KIS Paper market-data variables; it has no account, order, live, or
 model-artifact surface.
 
+The data-only Docker image deliberately does not mount `.env`. Its shared
+market-data loader may consume only a complete injected
+`KIS_PAPER_APP_KEY`/`KIS_PAPER_APP_SECRET` pair with non-live
+`THERICHER_MODE`; a partial pair or live mode fails closed. When neither Paper
+app value is injected, host tools retain the strict local `.env` parser. Never
+add account or `KIS_LIVE_*` variables to this service.
+
 Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is
 never a permission switch. A historical `false` is not a consent hold: once a

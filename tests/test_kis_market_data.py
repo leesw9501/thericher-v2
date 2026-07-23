@@ -704,6 +704,80 @@ def test_dotenv_loader_rejects_live_mode_before_reading_paper_credentials(tmp_pa
         load_kis_paper_market_data_config(dotenv_path)
 
 
+def test_market_data_loader_accepts_complete_paper_environment_without_dotenv(
+    tmp_path: Path,
+) -> None:
+    config = load_kis_paper_market_data_config(
+        tmp_path / "missing.env",
+        environment={
+            "THERICHER_MODE": "off",
+            "KIS_PAPER_APP_KEY": "paper-key",
+            "KIS_PAPER_APP_SECRET": "paper-secret",
+        },
+    )
+
+    assert config.app_key == "paper-key"
+    assert config.app_secret == "paper-secret"
+
+
+def test_market_data_loader_rejects_partial_environment_without_dotenv_fallback(
+    tmp_path: Path,
+) -> None:
+    dotenv_path = tmp_path / ".env"
+    dotenv_path.write_text(
+        "THERICHER_MODE=off\n"
+        "KIS_PAPER_APP_KEY=dotenv-key\n"
+        "KIS_PAPER_APP_SECRET=dotenv-secret\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="config_missing"):
+        load_kis_paper_market_data_config(
+            dotenv_path,
+            environment={"KIS_PAPER_APP_KEY": "environment-key"},
+        )
+
+
+def test_market_data_loader_rejects_live_environment_before_dotenv_fallback(
+    tmp_path: Path,
+) -> None:
+    dotenv_path = tmp_path / ".env"
+    dotenv_path.write_text(
+        "THERICHER_MODE=off\n"
+        "KIS_PAPER_APP_KEY=dotenv-key\n"
+        "KIS_PAPER_APP_SECRET=dotenv-secret\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="config_missing"):
+        load_kis_paper_market_data_config(
+            dotenv_path,
+            environment={"THERICHER_MODE": "kis_live"},
+        )
+
+
+def test_market_data_loader_environment_never_reads_live_values(tmp_path: Path) -> None:
+    class PaperOnlyEnvironment(dict[str, str]):
+        def get(self, key: str, default: str | None = None) -> str | None:
+            if key.startswith("KIS_LIVE_"):
+                raise AssertionError("live credential names must stay unread")
+            return super().get(key, default)
+
+    config = load_kis_paper_market_data_config(
+        tmp_path / "missing.env",
+        environment=PaperOnlyEnvironment(
+            {
+                "THERICHER_MODE": "off",
+                "KIS_PAPER_APP_KEY": "paper-key",
+                "KIS_PAPER_APP_SECRET": "paper-secret",
+                "KIS_LIVE_APP_KEY": "must-not-be-read",
+            }
+        ),
+    )
+
+    assert config.app_key == "paper-key"
+
+
 def _token() -> KisMarketDataResponse:
     return KisMarketDataResponse.from_payload({"access_token": "test-token"})
 
