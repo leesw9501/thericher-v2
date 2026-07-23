@@ -87,9 +87,11 @@ same request. Live routing remains unavailable.
   it owns a separate cache root and does not mutate execution state.
 - The current-user Windows tasks are installed and `Ready`:
   `thericher-kis-paper-quote-session` at 23:35 KST and
-  `thericher-kis-paper-intraday-head` at 02:35 KST, Tuesday through Saturday.
-  They invoke only their named local Docker profiles. Their first due outcomes
-  are runtime evidence, not another permission step.
+  `thericher-kis-paper-intraday-head` at 06:20 KST with four pages per target,
+  Tuesday through Saturday. The historical first 02:35 KST run remains evidence
+  of the earlier mid-session configuration; current due runs invoke only their
+  named local Docker profiles. Their outcomes are runtime evidence, not another
+  permission step.
 - The first due quote session on 2026-07-22 completed successfully as a task
   but ended before intent creation with `quote_unavailable` /
   `quote_response_incomplete`. Its safe evidence is external at
