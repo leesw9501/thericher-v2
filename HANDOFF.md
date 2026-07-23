@@ -242,6 +242,10 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 - current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
+- `thericher-kis-paper-daily-backfill` is installed for 07:00 KST Tuesday
+  through Saturday. It runs one bounded Docker data-only chunk after the
+  intraday head and before the local operating review; it has no account or
+  order route.
 
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the

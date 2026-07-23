@@ -17,7 +17,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal, InvalidOperation
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from types import MappingProxyType
 
 from thericher_v2.contracts import Bar, Timeframe
@@ -49,6 +49,12 @@ _RAW_COLUMNS = (
     "volume",
 )
 _USABLE_CHUNK_OUTCOMES = frozenset({"committed", "partial", "complete"})
+_LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS = (
+    "market_data",
+    "us_equities",
+    "kis_paper_private",
+    "daily",
+)
 
 
 @dataclass(frozen=True)
@@ -600,7 +606,7 @@ def _safe_external_path(path: Path, root: Path) -> Path:
     """Reject path escapes and symlinked cache components before reading bytes."""
 
     resolved_root = root.resolve()
-    candidate = Path(os.path.abspath(path))
+    candidate = _external_path_candidate(path=path, root=resolved_root)
     current = candidate
     while current != resolved_root:
         if not current.is_relative_to(resolved_root) or current.is_symlink():
@@ -618,6 +624,32 @@ def _safe_external_path(path: Path, root: Path) -> Path:
     if not resolved.is_relative_to(resolved_root):
         raise ValueError("KIS paper daily catalog path is invalid")
     return resolved
+
+
+def _external_path_candidate(*, path: Path, root: Path) -> Path:
+    raw_path = str(path)
+    native_path = Path(raw_path)
+    if native_path.is_absolute():
+        return Path(os.path.abspath(native_path))
+    windows_path = PureWindowsPath(raw_path)
+    if windows_path.is_absolute():
+        return root.joinpath(*_legacy_windows_daily_cache_relative_parts(windows_path))
+    return root / native_path
+
+
+def _legacy_windows_daily_cache_relative_parts(path: PureWindowsPath) -> tuple[str, ...]:
+    parts = path.parts[1:]
+    prefix_length = len(_LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS)
+    if (
+        len(parts) <= prefix_length
+        or tuple(part.casefold() for part in parts[:prefix_length])
+        != _LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS
+    ):
+        raise ValueError("KIS paper daily catalog path is invalid")
+    relative = tuple(parts[prefix_length:])
+    if any(part in {"", ".", ".."} for part in relative):
+        raise ValueError("KIS paper daily catalog path is invalid")
+    return relative
 
 
 def _json_document(payload: bytes, label: str) -> dict[str, object]:

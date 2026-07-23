@@ -62,6 +62,9 @@ Run a bounded worker chunk whenever the authoritative index says it is due:
 
 ```powershell
 uv run python scripts\backfill_kis_paper_private_daily.py --execute
+
+docker compose --profile kis-paper-daily-backfill run --rm --no-deps --build `
+  kis-paper-daily-backfill
 ```
 
 The worker reattests committed snapshots, recovers a matching orphan before a
@@ -70,6 +73,13 @@ writes a raw snapshot plus manifest to `D:`, then atomically advances one
 cursor. Read the index's shared retry time after a token event; that pacing is
 observed source behavior, not an approval or quality gate. Do not run two
 workers concurrently against the same index.
+
+The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
+through Saturday at 07:00 KST. It invokes only the Docker profile above after
+the 06:20 intraday-head task and before the 08:10 operating review. Its
+container mounts only `D:\market_data` at `/app/market_data` and receives only
+the two KIS Paper market-data variables; it has no account, order, live, or
+model-artifact surface.
 
 Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is

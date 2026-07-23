@@ -48,6 +48,9 @@ session, data run, or research task.
 2. Keep raw retention and any source gap separate from Paper order authority.
    A repeated invalid IWM daily cursor is source-limited only and must not
    starve ready QQQ/SPY cache work.
+   The independent daily-backfill task runs one data-only Docker chunk at
+   07:00 KST Tuesday through Saturday; do not duplicate it manually while it
+   is due or running.
 3. The existing intraday-head task now runs at 06:20 KST with four pages per
    target so it can cover a post-close 390-minute US regular session. After its
    first due run, perform only the existing metadata-only complete-session

@@ -12,7 +12,7 @@ import uuid
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import BinaryIO, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
@@ -54,6 +54,12 @@ _TARGET_STATES = frozenset({"ready", "deferred", "source_limited", "complete"})
 _USABLE_CHUNK_OUTCOMES = frozenset({"committed", "partial", "complete"})
 _SOURCE_LIMITED_INVALID_CURSOR_REPEATS = 2
 _SOURCE_LIMITED_INVALID_CURSOR_REASON = "daily_response_invalid"
+_LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS = (
+    "market_data",
+    "us_equities",
+    "kis_paper_private",
+    "daily",
+)
 
 
 @dataclass(frozen=True)
@@ -516,6 +522,10 @@ def _commit_snapshot(
         )
         index["last_shared_reason"] = "inter_chunk_pace"
 
+    manifest_path = _relative_index_path(
+        path=Path(str(snapshot["manifest_path"])),
+        root=root.parent,
+    )
     target["chunks"].append(
         {
             "chunk_key": _chunk_key(
@@ -525,7 +535,7 @@ def _commit_snapshot(
             "outcome": outcome,
             "input_cursor_date": snapshot["input_cursor_date"],
             "output_cursor_date": output_cursor,
-            "manifest_path": snapshot["manifest_path"],
+            "manifest_path": manifest_path,
             "manifest_hash": snapshot["manifest_hash"],
             "raw_sha256": snapshot["raw_sha256"],
             "raw_market_data_retained": snapshot["raw_market_data_retained"],
@@ -632,6 +642,7 @@ def _read_backfill_index(
     if not isinstance(document, dict):
         raise ValueError("private daily backfill index is invalid")
     upgraded = _upgrade_index(document)
+    upgraded = _normalize_index_manifest_paths(index=document, root=root.parent) or upgraded
     _validate_index(document)
     if upgraded:
         _write_backfill_index(root=root, index=document)
@@ -742,6 +753,29 @@ def _upgrade_index(index: dict[str, object]) -> bool:
         target["state"] = "source_limited"
         target["retry_not_before_utc"] = None
         changed = True
+    return changed
+
+
+def _normalize_index_manifest_paths(*, index: dict[str, object], root: Path) -> bool:
+    """Store local cache references relative to the shared daily cache root."""
+
+    targets = index.get("targets")
+    if not isinstance(targets, list):
+        return False
+    changed = False
+    for target in targets:
+        if not isinstance(target, dict) or not isinstance(target.get("chunks"), list):
+            continue
+        for chunk in target["chunks"]:
+            if not isinstance(chunk, dict):
+                continue
+            manifest_path = chunk.get("manifest_path")
+            if not isinstance(manifest_path, str):
+                continue
+            normalized = _relative_index_path(path=Path(manifest_path), root=root)
+            if manifest_path != normalized:
+                chunk["manifest_path"] = normalized
+                changed = True
     return changed
 
 
@@ -864,7 +898,10 @@ def _write_backfill_index(*, root: Path, index: Mapping[str, object]) -> None:
 
 def _daily_cache_root(*, cache_root: Path, repo_root: Path) -> Path:
     root = Path(cache_root).resolve()
-    if root.is_relative_to(Path(repo_root).resolve()):
+    repository = Path(repo_root).resolve()
+    mounted_root = repository / "market_data"
+    mounted_market_data = mounted_root.is_mount() and root.is_relative_to(mounted_root)
+    if root.is_relative_to(repository) and not mounted_market_data:
         raise ValueError("private daily backfill cache root must stay outside Git")
     root.mkdir(parents=True, exist_ok=True)
     return root
@@ -874,7 +911,7 @@ def _resolve_external_child(*, path: Path, root: Path) -> Path:
     """Reject symlinked files/directories before resolving their target path."""
 
     resolved_root = Path(root).resolve()
-    candidate = Path(os.path.abspath(path))
+    candidate = _external_path_candidate(path=path, root=resolved_root)
     current = candidate
     while current != resolved_root:
         if not current.is_relative_to(resolved_root) or current.is_symlink():
@@ -889,6 +926,38 @@ def _resolve_external_child(*, path: Path, root: Path) -> Path:
     if not resolved.is_relative_to(resolved_root):
         raise ValueError("private daily backfill path is invalid")
     return resolved
+
+
+def _relative_index_path(*, path: Path, root: Path) -> str:
+    resolved_root = Path(root).resolve()
+    resolved = _resolve_external_child(path=path, root=resolved_root)
+    return resolved.relative_to(resolved_root).as_posix()
+
+
+def _external_path_candidate(*, path: Path, root: Path) -> Path:
+    raw_path = str(path)
+    native_path = Path(raw_path)
+    if native_path.is_absolute():
+        return Path(os.path.abspath(native_path))
+    windows_path = PureWindowsPath(raw_path)
+    if windows_path.is_absolute():
+        return root.joinpath(*_legacy_windows_daily_cache_relative_parts(windows_path))
+    return root / native_path
+
+
+def _legacy_windows_daily_cache_relative_parts(path: PureWindowsPath) -> tuple[str, ...]:
+    parts = path.parts[1:]
+    prefix_length = len(_LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS)
+    if (
+        len(parts) <= prefix_length
+        or tuple(part.casefold() for part in parts[:prefix_length])
+        != _LEGACY_WINDOWS_DAILY_CACHE_COMPONENTS
+    ):
+        raise ValueError("private daily backfill path is invalid")
+    relative = tuple(parts[prefix_length:])
+    if any(part in {"", ".", ".."} for part in relative):
+        raise ValueError("private daily backfill path is invalid")
+    return relative
 
 
 def _backfill_root(*, cache_root: Path, repo_root: Path) -> Path:

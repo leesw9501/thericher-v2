@@ -5,7 +5,7 @@ import json
 import os
 import socket
 from datetime import UTC, datetime
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pytest
 
@@ -136,6 +136,21 @@ def test_ignores_a_historical_unretained_marker_before_cursor_validation(tmp_pat
         datetime(2026, 1, 5, tzinfo=UTC).date(),
         datetime(2026, 1, 6, tzinfo=UTC).date(),
     )
+
+
+def test_catalog_parses_only_the_expected_legacy_windows_daily_cache_prefix() -> None:
+    legacy = PureWindowsPath(
+        r"D:\market_data\us_equities\kis_paper_private\daily\snapshot=unit\manifest.json"
+    )
+
+    assert kis_daily_catalog._legacy_windows_daily_cache_relative_parts(legacy) == (
+        "snapshot=unit",
+        "manifest.json",
+    )
+    with pytest.raises(ValueError, match="path is invalid"):
+        kis_daily_catalog._legacy_windows_daily_cache_relative_parts(
+            PureWindowsPath(r"D:\other\snapshot=unit\manifest.json")
+        )
 
 
 def test_canonicalizes_target_order_and_refuses_non_us_market(tmp_path: Path) -> None:

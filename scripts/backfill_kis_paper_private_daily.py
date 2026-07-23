@@ -37,10 +37,14 @@ def main(
 ) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT)
+    parser.add_argument("--repository-root", type=Path, default=_REPO_ROOT)
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
         return
+    cache_root = Path(args.cache_root)
+    repository_root = Path(args.repository_root)
 
     def client_factory() -> KisPaperMarketDataClient:
         config = load_kis_paper_market_data_config(dotenv_path)
@@ -49,9 +53,9 @@ def main(
     try:
         result = run_kis_paper_private_daily_backfill_once(
             client_factory=client_factory,
-            cache_root=KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT,
-            repo_root=_REPO_ROOT,
-            code_revision=(code_revision or _current_code_revision)(_REPO_ROOT),
+            cache_root=cache_root,
+            repo_root=repository_root,
+            code_revision=(code_revision or _current_code_revision)(repository_root),
             observed_at=clock(),
         )
     except KisPaperMarketDataError as error:

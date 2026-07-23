@@ -717,7 +717,10 @@ def _page_document(page: KisPaperPrivateDailyCollectorPage) -> dict[str, object]
 
 def _external_cache_root(*, cache_root: Path, repo_root: Path) -> Path:
     root = Path(cache_root).resolve()
-    if root.is_relative_to(Path(repo_root).resolve()):
+    repository = Path(repo_root).resolve()
+    mounted_root = repository / "market_data"
+    mounted_market_data = mounted_root.is_mount() and root.is_relative_to(mounted_root)
+    if root.is_relative_to(repository) and not mounted_market_data:
         raise ValueError("private daily cache root must stay outside Git")
     return root
 

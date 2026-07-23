@@ -28,9 +28,13 @@ as a failed collection or an authority hold.
   is a distinct immutable source, not a row-level patch over the historical
   cache. The later Paper entry/exit lifecycle consumes only its hash-attested
   bars and first-local-availability semantics; it cannot turn this data source
-  into a price, account, position, fill, or PnL assertion.
-  `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
-  Saturday.
+   into a price, account, position, fill, or PnL assertion.
+   `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
+   Saturday.
+- `thericher-kis-paper-daily-backfill` runs one data-only Docker chunk at
+  07:00 KST Tuesday through Saturday. It mounts only `D:\market_data` and
+  carries only KIS Paper market-data credentials, so it cannot access an
+  account, submit an order, or read model artifacts.
 - Last known clean common coverage: 694 completed sessions. QQQ now has six
   retained usable chunks plus one historical no-bytes observation, SPY six,
   and IWM three plus one validated partial chunk. IWM's unchanged 2023-10-10

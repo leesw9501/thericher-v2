@@ -192,6 +192,26 @@ services:
       - thericher-v2-web-emergency:/app/emergency
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-daily-backfill:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-daily-backfill"]
+    command:
+      - python
+      - scripts/backfill_kis_paper_private_daily.py
+      - --execute
+      - --cache-root
+      - /app/market_data/us_equities/kis_paper_private/daily
+      - --repository-root
+      - /app
+    environment:
+      THERICHER_MODE: off
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data
+
   kis-paper-daily-spy-head:
     build:
       context: .

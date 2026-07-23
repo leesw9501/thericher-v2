@@ -12,10 +12,13 @@ SCRIPT = (
 def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
+    assert source.count("thericher-kis-paper-daily-backfill") == 1
     assert source.count("thericher-kis-paper-quote-session") == 1
     assert source.count("thericher-kis-paper-intraday-head") == 1
+    assert source.count('Profile = "kis-paper-daily-backfill"') == 1
     assert source.count('Profile = "kis-paper-session"') == 1
     assert source.count('Profile = "kis-paper-intraday-head"') == 1
+    assert source.count('Service = "kis-paper-daily-backfill"') == 1
     assert source.count('Service = "kis-paper-session"') == 1
     assert source.count('Service = "kis-paper-intraday-head"') == 1
 
@@ -37,6 +40,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     ) in source
     assert 'At = "23:35"' in source
     assert 'At = "06:20"' in source
+    assert 'At = "07:00"' in source
     assert (
         "New-ScheduledTaskPrincipal -UserId $currentUser "
         "-LogonType Interactive -RunLevel Limited"

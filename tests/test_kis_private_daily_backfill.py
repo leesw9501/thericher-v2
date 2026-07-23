@@ -3,11 +3,12 @@ from __future__ import annotations
 import json
 import os
 from datetime import UTC, datetime, timedelta
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pytest
 
 from thericher_v2.execution import kis_private_daily_backfill as daily_backfill
+from thericher_v2.execution import kis_private_daily_collector as daily_collector
 from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_DAILY_PATH,
     KIS_PAPER_MARKET_DATA_BASE_URL,
@@ -103,6 +104,8 @@ def test_daily_backfill_collects_one_resumable_qqq_chunk_outside_git(tmp_path: P
     assert qqq["state"] == "ready"
     assert qqq["venue_status"] == "verified_by_kis_response"
     assert qqq["chunks"][0]["raw_market_data_retained"] is True
+    assert qqq["chunks"][0]["manifest_path"].startswith("snapshot=")
+    assert not Path(qqq["chunks"][0]["manifest_path"]).is_absolute()
     assert qqq["chunks"][0]["exact_overlap_rows"] == 0
     rendered_index = json.dumps(index, sort_keys=True)
     assert "paper-key" not in rendered_index
@@ -651,6 +654,82 @@ def test_daily_backfill_refuses_a_cache_root_inside_git(tmp_path: Path) -> None:
             repo_root=repo_root,
             code_revision="git:test",
             observed_at=_OBSERVED_AT,
+        )
+
+
+def test_daily_backfill_allows_only_a_repo_nested_market_data_mount(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    mount_root = repo_root / "market_data"
+    cache_root = mount_root / "us_equities" / "kis_paper_private" / "daily"
+    cache_root.mkdir(parents=True)
+    original_is_mount = Path.is_mount
+
+    def is_mount(path: Path) -> bool:
+        return path.resolve() == mount_root.resolve() or original_is_mount(path)
+
+    monkeypatch.setattr(Path, "is_mount", is_mount)
+
+    assert daily_backfill._daily_cache_root(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    ) == cache_root.resolve()
+    assert daily_collector._external_cache_root(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    ) == cache_root.resolve()
+
+
+def test_backfill_index_normalizes_legacy_absolute_manifest_paths(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data"
+    transport = _RecordingTransport(
+        [
+            _token(),
+            _daily_page([_row("20260717"), _row("20260101")], continuation="F"),
+            _daily_page([_row("20260101")], continuation="F"),
+        ]
+    )
+    run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(transport),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+    index_path = cache_root / "backfill-v1" / "index.json"
+    document = json.loads(index_path.read_text(encoding="utf-8"))
+    chunk = document["targets"][0]["chunks"][0]
+    relative_path = chunk["manifest_path"]
+    chunk["manifest_path"] = str((cache_root / relative_path).resolve())
+    index_path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    loaded = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert loaded["targets"][0]["chunks"][0]["manifest_path"] == relative_path
+    persisted = json.loads(index_path.read_text(encoding="utf-8"))
+    assert persisted["targets"][0]["chunks"][0]["manifest_path"] == relative_path
+
+
+def test_backfill_parses_only_the_expected_legacy_windows_daily_cache_prefix() -> None:
+    legacy = PureWindowsPath(
+        r"D:\market_data\us_equities\kis_paper_private\daily\snapshot=unit\manifest.json"
+    )
+
+    assert daily_backfill._legacy_windows_daily_cache_relative_parts(legacy) == (
+        "snapshot=unit",
+        "manifest.json",
+    )
+    with pytest.raises(ValueError, match="path is invalid"):
+        daily_backfill._legacy_windows_daily_cache_relative_parts(
+            PureWindowsPath(r"D:\other\snapshot=unit\manifest.json")
         )
 
 

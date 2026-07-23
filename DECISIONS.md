@@ -4521,3 +4521,26 @@ Reason: the IWM cursor at 2023-10-10 repeated the same zero-row strict-parser
 failure four times. Continuing to call it consumed KIS capacity without
 improving data coverage, while excluding only that broken source cursor lets
 the active engine loop progress.
+
+## 2026-07-23 - Schedule bounded daily historical backfill
+
+Decision: install one `thericher-kis-paper-daily-backfill` Windows task for
+Tuesday through Saturday at 07:00 KST. It invokes the new
+`kis-paper-daily-backfill` Docker profile, which runs the existing cache worker
+with one KIS Paper token and at most two daily pages. It runs after the 06:20
+intraday-head task and before the 08:10 local operating review.
+
+The service mounts only `D:\market_data` at `/app/market_data`, receives only
+`KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET`, and uses `THERICHER_MODE=off`.
+It has no account, position, order, live, dashboard, or artifact mount. The
+existing root lock, source-specific `source_limited` status, and 15% free-space
+floor bound its data effect. It is an owned recurring Data job, not a new
+approval mechanism or a general scheduler platform.
+
+Claude's focused scheduler drift-check was `supported-with-limits`: retain the
+one-token/two-page limit, verify the single data mount is read/write scoped to
+that path, and re-review any future account/order route or second token.
+
+Reason: QQQ/SPY daily coverage can now advance automatically without repeated
+IWM failures consuming the worker. The schedule improves collection cadence
+while remaining independent of Paper orders and model promotion.
