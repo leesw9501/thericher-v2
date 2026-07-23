@@ -506,6 +506,28 @@ categorical result and continue distinct authorized Paper work normally.
 The standalone profile remains useful for an exact manual replay or diagnosis;
 the normal daily schedule already performs the same exact-run handoff.
 
+### Terminal Field Contract Probe
+
+Use this only to inspect the documented field shape for one existing SPY/AMEX
+Paper canary state. It reads the state volume read-only, derives the KIS query
+day from the persisted acknowledged-submission timestamp, and calls only the virtual token plus
+`VTTS3035R` history GET path:
+
+```powershell
+docker compose --profile kis-paper-terminal-field-probe run --rm --no-deps `
+  -e KIS_PAPER_TERMINAL_PROBE_RUN_ID=<existing-run-id> `
+  kis-paper-terminal-field-probe
+```
+
+Its artifact is under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-terminal-field-probe`
+and contains only opaque references, identity/pagination categories, and field
+presence. It never writes a broker identifier, value, account fact, status
+code, payload, terminal lifecycle, or PnL. A missing or ambiguous exact row is
+a scoped source-contract result, not a reason to stop Paper sessions,
+collection, or research. A legacy state without that durable submission time
+returns `submission_time_missing` without reading credentials or calling KIS.
+
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary
 and returned `balance_rejected`; no order was sent. The current-image

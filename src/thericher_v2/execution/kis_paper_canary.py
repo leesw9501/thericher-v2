@@ -409,6 +409,7 @@ class KisPaperCanaryState:
     updated_at: datetime
     reason_code: str
     broker_order_id: str | None = None
+    submitted_at: datetime | None = None
     cancel_after_submit: bool = False
     submit_upstream_code: str | None = None
     submit_response_category: str | None = None
@@ -421,6 +422,13 @@ class KisPaperCanaryState:
             raise ValueError("canary state reason is invalid")
         if self.broker_order_id is not None and not _raw_order_id(self.broker_order_id):
             raise ValueError("canary broker order id is invalid")
+        if self.submitted_at is not None:
+            if self.broker_order_id is None:
+                raise ValueError("canary submitted time requires broker order id")
+            submitted_at = require_utc(self.submitted_at, "submitted_at")
+            if submitted_at < self.intent.created_at:
+                raise ValueError("canary submitted time precedes intent")
+            object.__setattr__(self, "submitted_at", submitted_at)
         if not isinstance(self.cancel_after_submit, bool):
             raise ValueError("canary cancellation policy is invalid")
         if (
@@ -446,6 +454,9 @@ class KisPaperCanaryState:
             "updated_at": self.updated_at.isoformat(),
             "reason_code": self.reason_code,
             "broker_order_id": self.broker_order_id,
+            "submitted_at": (
+                None if self.submitted_at is None else self.submitted_at.isoformat()
+            ),
             "cancel_after_submit": self.cancel_after_submit,
             "submit_upstream_code": self.submit_upstream_code,
             "submit_response_category": self.submit_response_category,
@@ -464,6 +475,7 @@ class KisPaperCanaryState:
             "broker_order_id",
         }
         optional = {
+            "submitted_at",
             "cancel_after_submit",
             "submit_upstream_code",
             "submit_response_category",
@@ -515,6 +527,11 @@ class KisPaperCanaryState:
                     None
                     if payload["broker_order_id"] is None
                     else _required_text(payload["broker_order_id"])
+                ),
+                submitted_at=(
+                    None
+                    if "submitted_at" not in payload or payload["submitted_at"] is None
+                    else _utc_datetime(payload["submitted_at"])
                 ),
                 cancel_after_submit=(
                     False
@@ -628,6 +645,7 @@ class KisPaperCanaryStateStore:
         reason_code: str,
         now: datetime,
         broker_order_id: str | None = None,
+        submitted_at: datetime | None = None,
         submit_upstream_code: str | None = None,
         submit_response_category: str | None = None,
     ) -> KisPaperCanaryState:
@@ -635,6 +653,12 @@ class KisPaperCanaryStateStore:
             current = self._read_unlocked()
             if current is None or current.intent != intent or current.phase not in expected:
                 raise KisPaperCanaryError("state_transition_invalid")
+            if (
+                current.submitted_at is not None
+                and submitted_at is not None
+                and submitted_at != current.submitted_at
+            ):
+                raise KisPaperCanaryError("state_submission_time_invalid")
             state = KisPaperCanaryState(
                 intent=intent,
                 phase=phase,
@@ -644,6 +668,9 @@ class KisPaperCanaryStateStore:
                     current.broker_order_id
                     if broker_order_id is None
                     else broker_order_id
+                ),
+                submitted_at=(
+                    current.submitted_at if submitted_at is None else submitted_at
                 ),
                 cancel_after_submit=current.cancel_after_submit,
                 submit_upstream_code=(
@@ -1191,6 +1218,7 @@ def _run_kis_paper_canary(
                             reason_code="reconciliation_unresolved",
                             now=submit_at,
                             broker_order_id=broker_order_id,
+                            submitted_at=submit_at,
                             submit_response_category="acknowledged_order_reference",
                         )
                         reconciliation = client.reconcile(state, now=submit_at)

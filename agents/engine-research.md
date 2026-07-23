@@ -311,6 +311,14 @@ stale, missing, or ambiguous observations have `performance_label = None`:
 they are excluded execution coverage facts, not negative labels, extra samples,
 or a reason to pause another campaign or Paper session.
 
+The new terminal-field probe preserves the same boundary. An exact history
+identity plus structural field presence is not a model label. Promotion needs
+official terminal enum and amendment semantics, completed order-date
+pagination, quantity consistency, a documented terminal timestamp, and a
+closed entry-to-exit cost/fee/currency basis for any realized PnL claim. Until
+then its `unqualified`, absent, or ambiguous result keeps
+`performance_label = None` and cannot change model selection or Paper cadence.
+
 The pre-batch SQLite smoke artifact that stopped at a host timeout is
 `restart` evidence only and must not be interpreted. The later completed smoke
 under the same external artifact root is the usable local-paper replay.
@@ -319,7 +327,7 @@ under the same external artifact root is the usable local-paper replay.
 
 Keep KIS regular-session minute coverage accumulating and maintain the
 breadth, depth, ensemble, and replication queues without creating a report
-family. For the next Paper observer, consume only an authoritative sanitized
-Execution lifecycle fact and leave `pnl_status: not_observed` unchanged until
+family. Consume only an authoritative sanitized Execution lifecycle fact and
+leave `pnl_status: not_observed` / `performance_label = None` unchanged until
 KIS completion evidence supports more. Do not turn a small current comparison
 slice or one Paper observation into selection or Paper-work authority.

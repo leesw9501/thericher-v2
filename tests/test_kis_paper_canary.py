@@ -594,6 +594,44 @@ def test_virtual_buy_canary_submits_once_cancels_and_publishes_only_sanitized_st
     for forbidden in ("paper-app-secret", "12345678", "ORD-123456789", "QQQ", "500.25"):
         assert forbidden not in evidence
     assert "ORD-123456789" in state_path.read_text(encoding="utf-8")
+    persisted_state = KisPaperCanaryStateStore(state_path).read()
+    assert persisted_state is not None
+    assert persisted_state.submitted_at == NOW
+
+
+def test_submission_time_is_write_once_across_later_state_transitions(tmp_path: Path) -> None:
+    intent = KisPaperCanaryIntent.from_decision(_decision(), run_id="submission-time-1")
+    state_store = KisPaperCanaryStateStore(tmp_path / "private" / "submission-time-1.json")
+    state_store.record_intent(intent, cancel_after_submit=True, now=NOW)
+    acknowledged_at = NOW + timedelta(minutes=1)
+    submitted = state_store.transition(
+        intent,
+        expected=frozenset({"intent_recorded"}),
+        phase="submitted",
+        reason_code="reconciliation_unresolved",
+        now=acknowledged_at,
+        broker_order_id="ORD-123456789",
+        submitted_at=acknowledged_at,
+    )
+    later = state_store.transition(
+        intent,
+        expected=frozenset({"submitted"}),
+        phase="cancel_started",
+        reason_code="reconciliation_unresolved",
+        now=acknowledged_at + timedelta(days=1),
+    )
+
+    assert submitted.submitted_at == acknowledged_at
+    assert later.submitted_at == acknowledged_at
+    with pytest.raises(KisPaperCanaryError, match="state_submission_time_invalid"):
+        state_store.transition(
+            intent,
+            expected=frozenset({"cancel_started"}),
+            phase="outcome_unknown",
+            reason_code="reconciliation_unresolved",
+            now=acknowledged_at + timedelta(days=1, minutes=1),
+            submitted_at=acknowledged_at + timedelta(minutes=1),
+        )
 
 
 def test_unknown_submission_reconciles_without_duplicate_submit(tmp_path: Path) -> None:
@@ -1130,6 +1168,7 @@ def test_state_and_runtime_accept_payloads_before_submit_upstream_code() -> None
         reason_code="submit_kis_rejected",
         cancel_after_submit=True,
     ).to_dict()
+    legacy_state.pop("submitted_at")
     legacy_state.pop("submit_upstream_code")
     legacy_state.pop("submit_response_category")
 

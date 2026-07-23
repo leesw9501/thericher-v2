@@ -280,6 +280,30 @@ services:
       - thericher-v2-paper-canary-private:/app/private:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-terminal-field-probe:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-terminal-field-probe"]
+    command:
+      - /bin/sh
+      - -ec
+      - >-
+        exec python -m thericher_v2.execution.kis_paper_terminal_field_probe
+        --execute --run-id "$${KIS_PAPER_TERMINAL_PROBE_RUN_ID}"
+        --state-root /app/private/canary --artifact-root /app/model_artifacts
+        --repository-root /app
+    environment:
+      THERICHER_MODE: kis_paper
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+      KIS_PAPER_ACCOUNT_NO: ${KIS_PAPER_ACCOUNT_NO:-}
+      KIS_PAPER_ACCOUNT_PRODUCT_CODE: ${KIS_PAPER_ACCOUNT_PRODUCT_CODE:-}
+    volumes:
+      - thericher-v2-paper-canary-private:/app/private:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-intraday-cache:
     build:
       context: .

@@ -566,6 +566,159 @@ def test_same_day_order_id_observation_is_read_only_and_never_retains_the_raw_id
     )
 
 
+def test_terminal_field_probe_uses_persisted_order_day_and_redacts_raw_fields() -> None:
+    @dataclass
+    class TerminalFieldTransport:
+        requests: list[KisHttpRequest] = field(default_factory=list)
+
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            self.requests.append(request)
+            if request.method == "POST":
+                return KisHttpResponse.from_payload({"access_token": "temporary-access-token"})
+            if request.headers["tr_id"] == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id:
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output": [
+                            {
+                                "odno": "ORD-123456789",
+                                "orgn_odno": "",
+                                "ft_ord_qty": "1",
+                                "ft_ccld_qty": "0",
+                                "nccs_qty": "1",
+                                "ft_ccld_unpr3": "0",
+                                "ft_ccld_amt3": "0",
+                                "prcs_stat_name": "private-status-text",
+                                "rvse_cncl_dvsn": "00",
+                                "ord_tmd": "101010",
+                            }
+                        ],
+                    }
+                )
+            raise AssertionError(f"unexpected read-only request: {request!r}")
+
+    transport = TerminalFieldTransport()
+    observation = KisPaperReadOnlyClient(
+        config=_config(),
+        transport=transport,
+    ).inspect_order_history_terminal_fields(
+        "ORD-123456789",
+        order_at=datetime(2026, 7, 22, 1, 0, tzinfo=UTC),
+    )
+
+    assert observation.identity_match == "exact_order"
+    assert set(observation.field_states.values()) == {"present"}
+    assert observation.pagination_status == "complete"
+    assert observation.terminal_state_support == "unqualified"
+    assert observation.pnl_status == "not_observed"
+    safe_payload = observation.safe_payload()
+    assert "ORD-123456789" not in repr(observation)
+    assert "ORD-123456789" not in str(safe_payload)
+    assert "private-status-text" not in str(safe_payload)
+    history_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
+    )
+    assert history_request.query["ORD_STRT_DT"] == "20260721"
+    assert history_request.query["ORD_END_DT"] == "20260721"
+    assert all(
+        request.method == "GET" or request.url.endswith(KIS_PAPER_TOKEN_PATH)
+        for request in transport.requests
+    )
+    assert all(
+        not request.headers.get("tr_id", "").startswith("VTTT")
+        for request in transport.requests
+    )
+
+
+def test_terminal_field_probe_requires_completed_pagination_before_field_support() -> None:
+    @dataclass
+    class PaginatedTerminalFieldTransport:
+        requests: list[KisHttpRequest] = field(default_factory=list)
+
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            self.requests.append(request)
+            if request.method == "POST":
+                return KisHttpResponse.from_payload({"access_token": "temporary-access-token"})
+            if request.headers["tr_id"] != KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id:
+                raise AssertionError(f"unexpected read-only request: {request!r}")
+            if request.headers["tr_cont"] == "":
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output": [],
+                        "ctx_area_fk200": "next-fk",
+                        "ctx_area_nk200": "next-nk",
+                    },
+                    headers={"tr_cont": "M"},
+                )
+            return KisHttpResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output": [
+                        {
+                            "odno": "ORD-123456789",
+                            "orgn_odno": "",
+                            "ft_ord_qty": "1",
+                            "ft_ccld_qty": "0",
+                            "nccs_qty": "1",
+                            "ft_ccld_unpr3": "0",
+                            "ft_ccld_amt3": "0",
+                            "prcs_stat_name": "private-status-text",
+                            "rvse_cncl_dvsn": "00",
+                            "ord_tmd": "101010",
+                        }
+                    ],
+                }
+            )
+
+    transport = PaginatedTerminalFieldTransport()
+    observation = KisPaperReadOnlyClient(
+        config=_config(),
+        transport=transport,
+    ).inspect_order_history_terminal_fields("ORD-123456789", order_at=NOW)
+
+    assert observation.identity_match == "exact_order"
+    history_requests = [
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
+    ]
+    assert [request.headers["tr_cont"] for request in history_requests] == ["", "N"]
+    assert history_requests[1].query["CTX_AREA_FK200"] == "next-fk"
+    assert history_requests[1].query["CTX_AREA_NK200"] == "next-nk"
+
+
+def test_terminal_field_probe_rejects_ambiguous_order_lineage_without_terminal_inference() -> None:
+    @dataclass
+    class AmbiguousTerminalFieldTransport:
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            if request.method == "POST":
+                return KisHttpResponse.from_payload({"access_token": "temporary-access-token"})
+            if request.headers["tr_id"] == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id:
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output": [
+                            {"odno": "ORD-123456789"},
+                            {"odno": "ORD-987654321", "orgn_odno": "ORD-123456789"},
+                        ],
+                    }
+                )
+            raise AssertionError(f"unexpected read-only request: {request!r}")
+
+    observation = KisPaperReadOnlyClient(
+        config=_config(),
+        transport=AmbiguousTerminalFieldTransport(),
+    ).inspect_order_history_terminal_fields("ORD-123456789", order_at=NOW)
+
+    assert observation.identity_match == "ambiguous"
+    assert set(observation.field_states.values()) == {"not_observed"}
+    assert observation.terminal_state_support == "unqualified"
+    assert observation.pnl_status == "not_observed"
+
+
 def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external(tmp_path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()

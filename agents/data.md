@@ -237,6 +237,14 @@ that would cross the 15% floor.
   its present parser does not establish a fill, cancellation, price, quantity,
   realized PnL, or receipt-attributed aggregate position. Those raw facts stay
   private and out of `D:\market_data`.
+- The official virtual `VTTS3035R` sample documents per-row quantity, fill
+  price/amount, processing-status, revision/cancel, and order-time field names,
+  but not terminal enum, amendment ordering, or net-PnL semantics. The first
+  post-validation probe found that the legacy cancelled SPY/AMEX state lacked a
+  durable acknowledged submission time, so it emitted
+  `submission_time_missing` without a KIS call. New states persist that time
+  write-once. This is source-contract evidence only; it does not change
+  collection, retention, scheduling, or Paper authority.
 - The daily session-to-observer handoff needs only the opaque receipt digest,
   its matching `receipt-<digest>` run ID, and safe timestamps/provenance. Raw
   daily bars, prices, account values, and order IDs never cross that boundary.
@@ -255,11 +263,9 @@ orphan snapshot without KIS access. Classify a bad snapshot or index as
 
 ## Next Handoff
 
-The first exact-order observer now consumes only the documented same-day ID
-sighting and aggregate position facts. Next, seek a separately official KIS
-terminal per-order field only if it can distinguish fills/cancellations without
-mixing a bar provider or persisting raw broker facts. Continue KIS-native minute
-accumulation and preserve provider identity, timestamp basis, session
-classification, coverage, and limitations. Re-run the metadata-only prospective
-preparer after future head collections; report only a concrete source-rights or
-storage constraint that needs operator action.
+The exact-order source probe now confirms that the present documented KIS
+history contract remains insufficient for terminal/PnL interpretation. Continue
+KIS-native minute accumulation and preserve provider identity, timestamp basis,
+session classification, coverage, and limitations. Re-run the metadata-only
+prospective preparer after future head collections; report only a concrete
+source-rights or storage constraint that needs operator action.

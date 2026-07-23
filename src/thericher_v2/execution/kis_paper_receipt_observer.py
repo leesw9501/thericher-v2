@@ -391,7 +391,12 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
         "reason_code",
         "broker_order_id",
     }
-    optional = {"cancel_after_submit", "submit_upstream_code", "submit_response_category"}
+    optional = {
+        "submitted_at",
+        "cancel_after_submit",
+        "submit_upstream_code",
+        "submit_response_category",
+    }
     if not expected <= set(payload) <= expected | optional:
         raise KisPaperReceiptObservationError("private state is invalid")
     if (
@@ -411,6 +416,8 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
         created_at = _utc_datetime(raw_intent.get("created_at"))
         valid_until = _utc_datetime(raw_intent.get("valid_until"))
         updated_at = _utc_datetime(payload.get("updated_at"))
+        if "submitted_at" in payload and payload["submitted_at"] is not None:
+            _utc_datetime(payload["submitted_at"])
         receipt_digest = _receipt_digest(run_id)
         client_order_id = _required_text(raw_intent.get("client_order_id"))
         decision_id = _required_text(raw_intent.get("decision_id"))

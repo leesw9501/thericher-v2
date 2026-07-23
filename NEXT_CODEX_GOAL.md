@@ -2,26 +2,29 @@
 
 ## Objective
 
-Qualify the first exact KIS Paper terminal-fact contract for receipt-linked SPY
-orders.
+Attach the existing KIS Paper terminal-field observation to an exact
+acknowledged daily SPY receipt, without turning its incomplete source semantics
+into a Paper-trading gate or a terminal/PnL claim.
 
-The daily SPY session already creates a Paper-only order path and automatically
-records a same-receipt read-only observation. This objective determines whether
-official KIS Paper facts can truthfully distinguish a terminal fill or cancel
-and, only if enough exact facts exist, support receipt-attributed realized PnL.
-An insufficient response is a useful `not_observed` finding, never a Paper
-permission latch or a reason to stop other work.
+The current standalone probe has established that KIS's documented
+`VTTS3035R` fields are useful structural evidence but insufficient to call a
+fill, cancellation, or realized PnL. Future acknowledged receipt states now
+carry a write-once submission timestamp; use that state only to collect the
+same safe field-presence evidence automatically after the existing daily
+receipt observer. A legacy state without the timestamp remains a scoped
+`submission_time_missing` fact, not a reason to pause another Paper action.
 
 ## Standing Authority
 
-- All private `KIS_PAPER_*` market/account/order reads, virtual order submit/
-  modify/cancel, reconciliation, sizing, local `D:` retention, and goal-owned
-  schedules are authorized. Continue ready Paper work by default.
+- All private `KIS_PAPER_*` reads, virtual submit/modify/cancel,
+  reconciliation, routine sizing, `D:` retention, and goal-owned schedules
+  are authorized. Continue ready Paper work by default.
 - Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
-  unclear rights, public exposure, Git-hosted raw data/artifacts, or secrets.
-- Missing, blank, stale, ambiguous, or unretained facts describe only that
-  invocation or receipt. They cannot block a distinct Paper intent, another
-  due session, cache collection, research campaign, or schedule run.
+  unclear-rights assets, public exposure, Git-hosted raw data/artifacts, or
+  secrets.
+- A missing, blank, stale, ambiguous, or unretained fact applies only to that
+  receipt or invocation. It cannot block a distinct Paper intent, another due
+  session, cache collection, research campaign, or schedule run.
 
 ## Required First Reads
 
@@ -30,63 +33,61 @@ permission latch or a reason to stop other work.
    `DECISIONS.md`, and `RUNBOOK.md`.
 3. Read `agents/README.md`, `agents/data.md`, `agents/engine-research.md`,
    and `agents/execution.md`.
-4. Inspect only sanitized daily-session, canary, observer, runtime, and task
-   metadata before choosing a recovery or probe action.
-5. Ask Claude for a concise falsification-first check before relying on any KIS
-   completion/position field as a terminal lifecycle or PnL fact.
+4. Inspect only sanitized daily-session, receipt-observer, terminal-probe,
+   runtime, and task metadata before choosing a recovery action.
+5. Ask Claude for a concise falsification-first check before wiring the
+   terminal-field result into the scheduled daily receipt path.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Inventory the official KIS Paper completion/history field contract for the
-   exact SPY/AMEX scope: endpoint, transaction ID, pagination, field presence,
-   timestamp semantics, and provenance. Use bounded private reads only; retain
-   no raw response, order ID, price, quantity, account value, or credential.
-2. Publish only categorical field-support and freshness evidence. Keep the
-   current daily source/provenance and `raw_market_data_retained` semantics
-   separate from order-terminal interpretation.
+1. Reconfirm the narrow virtual `VTTS3035R` source contract for SPY/AMEX:
+   acknowledged-submission ET date, bounded pagination, direct/original order
+   identity, and field-presence-only provenance.
+2. Ensure this observation does not consume raw market data, alter cache
+   cursors, or reinterpret `raw_market_data_retained` as execution authority.
 
 ### Engine Research Agent
 
-1. Define the exact receipt-attribution threshold: full digest identity,
-   categorical terminal state, authoritative realized amount/cost basis if
-   available, and `performance_label = None` for every incomplete fact.
-2. Keep `open`, same-day ID sighting, aggregate position, and daily bars out of
-   model scoring, labels, selection, and PnL claims. Preserve local-paper replay
-   as separate evidence.
+1. Preserve `performance_label = None` and `pnl_status: not_observed` for all
+   terminal-field observations under the current source contract.
+2. Add no model feature, candidate ranking, ensemble input, or PnL attribution
+   from field presence, acknowledgement, aggregate positions, or an absent
+   history row.
 
 ### Execution Agent
 
-1. Add or verify only the smallest read-only KIS Paper parser/probe needed to
-   determine whether exact terminal facts are present. It must have no submit,
-   modify, cancel, latest-run scan, or live-route capability.
-2. Promote `filled`, `cancelled`, or realized PnL only when an official exact
-   per-order fact supplies the required fields and identity. Otherwise preserve
-   `outcome_unknown` / `unavailable` and `pnl_status: not_observed`.
-3. Integrate a supported terminal fact into the existing exact receipt observer
-   and scheduled daily session only after offline, fake-transport, redaction,
-   replay, and route-isolation tests pass. Do not add a second approval system
-   or schedule unless it directly improves this engine loop.
+1. After an existing daily session has verified its exact receipt/run mapping,
+   invoke the existing terminal-field probe only for that same durable state.
+   Do not create a second scheduler, latest-run scan, submit/modify/cancel
+   path, or a new credential-bearing service.
+2. Embed only the probe's existing categorical safe payload and opaque artifact
+   reference in the daily outcome. Preserve the canary and receipt-observer
+   outcomes even when the probe is unavailable.
+3. Keep terminal state unqualified and PnL not observed. A probe result may
+   improve source coverage but cannot alter the order lifecycle, cause a retry,
+   or suppress later distinct Paper work.
 
 ### Validation Agent
 
-1. Independently test that ambiguous, absent, stale, cross-receipt, and
-   aggregate facts cannot become a terminal state, realized PnL, model label,
-   or order side effect.
-2. Test exact identity, redaction, pagination bounds, Paper/live isolation,
-   replay, and artifact placement without network, credentials, or KIS.
+1. Independently test exact receipt/run binding, acknowledged-submission date
+   use, legacy/missing timestamp behavior, redaction, replay, and artifact
+   placement.
+2. Test that no extra order action, live route, raw response persistence,
+   terminal lifecycle promotion, or model/PnL label can result from the
+   integration.
 
 ## Completion Evidence
 
-- The project has an evidence-backed exact terminal-field contract or an
-  explicit bounded result that the current KIS Paper source is insufficient.
-- Any newly supported terminal state or PnL is tied to the full receipt digest
-  and official exact facts, never to an absence, daily bar, position aggregate,
-  acknowledgement, or local estimate.
-- Current daily Paper and observer paths stay private, Paper-only, replayable,
-  and free of new approval latches, quotas, or report sprawl.
-- Raw broker facts, secrets, data, and generated artifacts remain outside Git.
+- A future acknowledged daily receipt can automatically emit only the existing
+  categorical terminal-field observation; legacy or unavailable states remain
+  scoped no-observation facts.
+- The daily path remains Paper-only, replayable, secret-free, and does not add
+  a scheduler, a quota, a permission latch, or a second order path.
+- Field presence does not become a fill/cancel result, realized PnL, model
+  label, or Paper-work decision.
+- Raw broker facts and generated artifacts remain outside Git.
 
 ## Verification
 
@@ -99,4 +100,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Link daily Paper sessions to receipt observation`
+`Attach Paper terminal observation to daily receipt`

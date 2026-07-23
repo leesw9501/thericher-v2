@@ -4364,3 +4364,45 @@ no fabricated PnL.
 Reason: this reuses the existing daily Paper schedule to produce timely,
 truthful execution evidence without building a scheduler platform, a permission
 marker, or a separate report workflow.
+
+## 2026-07-22 - Qualify the KIS Paper terminal-field source without fabricating terminal facts
+
+Decision: add a structurally read-only terminal-field probe for one existing
+SPY/AMEX virtual Paper intent. It reads the persisted state from a read-only
+volume without creating a lock file, binds the requested run ID to the internal
+state, derives the KIS query date only from a durable acknowledged submission
+time, completes the fixed `VTTS3035R` history pagination, and compares `odno`
+and `orgn_odno` only in memory. Its external evidence keeps only an opaque run
+reference, identity-match category, pagination completion, and documented
+field-presence categories. It has no submit, modify, cancel, or live route.
+
+KIS's official sample names `ft_ord_qty`, `ft_ccld_qty`, `nccs_qty`, fill
+price/amount, `prcs_stat_name`, `rvse_cncl_dvsn`, and `ord_tmd`, but does not
+qualify the terminal enum, original-order lineage resolution, row ordering, or
+net-PnL/cost basis. An independent validation review found that intent creation
+time could cross ET midnight before submission and that a valid state could be
+misfiled under another run ID. The final contract therefore writes
+`submitted_at` exactly once when a broker order ID is acknowledged, preserves
+it through later transitions, and refuses a mismatched or legacy timestamp-free
+state before configuration or network access. The existing cancelled canary
+predates that field and now truthfully reports `submission_time_missing`.
+The outcome remains `terminal_state_support: unqualified`,
+`pnl_status: not_observed`, and `performance_label: None`; it is not a
+cancellation inference, a negative label, a retry cue, or an
+authorization/schedule hold.
+
+Claude's falsification-first verdict was `supported-with-limits`: promotion
+would require exact durable identity, fully completed order-date pagination,
+official terminal semantics, amendment resolution, quantity consistency, and
+official realized-PnL economics. Independent Data review confirmed the source
+field/Mock-query constraints. Independent Research review confirmed that an
+entry fill is not realized PnL and all incomplete facts retain a null
+performance label. The follow-up Claude check was also `supported-with-limits`:
+the acknowledged time must be write-once, exact run binding must be enforced,
+and legacy state stays scoped unavailable to this probe only. Focused
+fake-transport tests cover acknowledgement-time ET-date selection, write-once
+preservation, run mismatch, pagination, ambiguity, route isolation, redaction,
+external artifacts, and read-only state behavior.
+
+Reason: this advances KIS-native execution evidence while keeping the current
+source limitation truthful and without reviving a Paper permission latch.

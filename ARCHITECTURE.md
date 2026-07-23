@@ -283,6 +283,29 @@ or passes raw price, order ID, account, or data values. An observer failure is
 only `observer_unavailable` evidence: it cannot mutate, retry, replace, or
 change the already completed order result or a later distinct session.
 
+### KIS Terminal Field Contract Probe
+
+`execution.kis_paper_terminal_field_probe` is a separate read-only diagnostic
+for one existing SPY/AMEX Paper intent. It derives the query day from the
+persisted acknowledged submission's ET order date, completes the bounded official
+`VTTS3035R` history pagination, and compares `odno` / `orgn_odno` only in
+memory. Its external artifact retains an opaque run reference, identity-match
+category, pagination completion, and documented-field presence only.
+
+The current official sample documents order/fill/remaining quantities, fill
+price/amount, processing status, revision/cancel indicator, and order time,
+but does not qualify their terminal enum, amendment, ordering, or net-PnL
+semantics. The probe therefore always emits
+`terminal_state_support: unqualified` and `pnl_status: not_observed`; it has no
+submit, modify, cancel, live-route, or model-label capability. An absent or
+ambiguous history match is evidence for that exact state only, never a Paper
+authority, schedule, or research hold.
+
+Legacy states without a durable acknowledged submission time emit only
+`submission_time_missing` and make no KIS call. This preserves their ordinary
+Paper recovery behavior while preventing a created-at timestamp from producing
+a false history absence.
+
 ### Observed KIS Minute Cache
 
 The first cache implementation is a small reusable boundary, not a new gate or

@@ -48,6 +48,18 @@ KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES = 2
 DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS = 1.0
 _SAFE_KIS_PAPER_UPSTREAM_CODE = re.compile(r"[A-Z][A-Z0-9]{1,15}", re.ASCII)
 _RAW_KIS_PAPER_ORDER_ID = re.compile(r"[A-Za-z0-9_-]{1,64}", re.ASCII)
+_KIS_PAPER_TERMINAL_FIELD_NAMES = frozenset(
+    {
+        "order_quantity",
+        "filled_quantity",
+        "remaining_quantity",
+        "filled_price",
+        "filled_amount",
+        "processing_status",
+        "revision_cancel_indicator",
+        "order_time",
+    }
+)
 
 
 class KisPaperReadOnlyError(RuntimeError):
@@ -478,6 +490,71 @@ class KisPaperSameDayOrderIdObservation:
 
 
 @dataclass(frozen=True)
+class KisPaperTerminalFieldObservation:
+    """Safe structural evidence from one completed Paper order-history query.
+
+    This deliberately reports only whether the documented response fields were
+    present and structurally usable for one in-memory order identity. The
+    currently qualified KIS source does not define sufficient terminal enum,
+    amendment, or PnL semantics, so this type cannot claim a fill, cancellation,
+    or realized amount.
+    """
+
+    identity_match: Literal["exact_order", "original_order_lineage", "absent", "ambiguous"]
+    field_states: Mapping[
+        str, Literal["not_observed", "present", "missing_or_invalid"]
+    ]
+    pagination_status: Literal["complete"] = "complete"
+    terminal_state_support: Literal["unqualified"] = "unqualified"
+    pnl_status: Literal["not_observed"] = "not_observed"
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if self.identity_match not in {
+            "exact_order",
+            "original_order_lineage",
+            "absent",
+            "ambiguous",
+        }:
+            raise ValueError("terminal field identity match is invalid")
+        if self.pagination_status != "complete":
+            raise ValueError("terminal field pagination must be complete")
+        if self.terminal_state_support != "unqualified" or self.pnl_status != "not_observed":
+            raise ValueError("terminal field observation cannot promote lifecycle or pnl")
+        normalized_states = dict(self.field_states)
+        if set(normalized_states) != _KIS_PAPER_TERMINAL_FIELD_NAMES:
+            raise ValueError("terminal field states must have the documented keys")
+        if any(
+            state not in {"not_observed", "present", "missing_or_invalid"}
+            for state in normalized_states.values()
+        ):
+            raise ValueError("terminal field state is invalid")
+        if self.identity_match in {"absent", "ambiguous"} and any(
+            state != "not_observed" for state in normalized_states.values()
+        ):
+            raise ValueError("unmatched terminal rows cannot expose field support")
+        object.__setattr__(self, "field_states", normalized_states)
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "identity_match": self.identity_match,
+            "pagination_status": self.pagination_status,
+            "field_support": dict(self.field_states),
+            "terminal_state_support": self.terminal_state_support,
+            "pnl_status": self.pnl_status,
+        }
+
+
+@dataclass(frozen=True, repr=False)
+class _KisPaperOrderHistoryRows:
+    """Raw response rows held only while deriving safe history observations."""
+
+    row_count: int
+    direct_matches: tuple[Mapping[str, Any], ...]
+    lineage_matches: tuple[Mapping[str, Any], ...]
+
+
+@dataclass(frozen=True)
 class KisPaperReadOnlySnapshot:
     identity: KisPaperAccountIdentity
     cash: KisPaperCashSnapshot
@@ -675,14 +752,74 @@ class KisPaperReadOnlyClient:
         realized-PnL claim by callers.
         """
 
+        observed_at = require_utc(as_of, "as_of")
+        history = self._read_same_day_order_history(raw_order_id, order_at=observed_at)
+        return KisPaperSameDayOrderIdObservation(
+            observed_at=observed_at,
+            same_day_order_id_seen=bool(history.direct_matches),
+            row_count=history.row_count,
+        )
+
+    def inspect_order_history_terminal_fields(
+        self,
+        raw_order_id: str,
+        *,
+        order_at: datetime,
+    ) -> KisPaperTerminalFieldObservation:
+        """Inspect documented history-field presence without inferring a terminal state.
+
+        ``inquire-ccnl`` cannot filter a virtual Paper request by order number.
+        The returned pages are therefore completed before one raw order identity
+        is compared in memory. The result never preserves an order identifier,
+        values, status code, or broker timestamp.
+        """
+
+        history = self._read_same_day_order_history(raw_order_id, order_at=order_at)
+        direct_matches = history.direct_matches
+        direct_row_ids = {id(row) for row in direct_matches}
+        lineage_matches = tuple(
+            row for row in history.lineage_matches if id(row) not in direct_row_ids
+        )
+        matches: tuple[
+            tuple[Literal["exact_order", "original_order_lineage"], Mapping[str, Any]], ...
+        ] = (
+            tuple(("exact_order", row) for row in direct_matches)
+            + tuple(("original_order_lineage", row) for row in lineage_matches)
+        )
+        if not matches:
+            return KisPaperTerminalFieldObservation(
+                identity_match="absent",
+                field_states=_unobserved_terminal_field_states(),
+            )
+        if len(matches) != 1:
+            return KisPaperTerminalFieldObservation(
+                identity_match="ambiguous",
+                field_states=_unobserved_terminal_field_states(),
+            )
+        identity_match, row = matches[0]
+        return KisPaperTerminalFieldObservation(
+            identity_match=identity_match,
+            field_states=_terminal_field_states(row),
+        )
+
+    def _read_same_day_order_history(
+        self,
+        raw_order_id: str,
+        *,
+        order_at: datetime,
+    ) -> _KisPaperOrderHistoryRows:
+        """Read the fixed Paper history query and retain matched rows in memory only."""
+
         if (
             not isinstance(raw_order_id, str)
             or _RAW_KIS_PAPER_ORDER_ID.fullmatch(raw_order_id) is None
         ):
             raise KisPaperReadOnlyError("order_id_invalid")
-        observed_at = require_utc(as_of, "as_of")
+        normalized_order_at = require_utc(order_at, "order_at")
         access_token = self._access_token or self._issue_access_token()
-        eastern_date = observed_at.astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+        eastern_date = normalized_order_at.astimezone(ZoneInfo("America/New_York")).strftime(
+            "%Y%m%d"
+        )
         query = {
             "CANO": self._config.account_number,
             "ACNT_PRDT_CD": self._config.account_product_code,
@@ -701,7 +838,8 @@ class KisPaperReadOnlyClient:
         }
         continuation_header = ""
         row_count = 0
-        same_day_order_id_seen = False
+        direct_matches: list[Mapping[str, Any]] = []
+        lineage_matches: list[Mapping[str, Any]] = []
         for _page in range(KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES):
             response = self._read_only_get(
                 KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
@@ -727,13 +865,17 @@ class KisPaperReadOnlyClient:
                 ):
                     raise KisPaperReadOnlyError("ccnl_response_incomplete")
                 row_count += 1
-                same_day_order_id_seen = same_day_order_id_seen or candidate == raw_order_id
+                if candidate == raw_order_id:
+                    direct_matches.append(row)
+                original_order_id = row.get("orgn_odno")
+                if original_order_id == raw_order_id:
+                    lineage_matches.append(row)
             continuation = response.header("tr_cont").strip().upper()
             if continuation not in {"M", "F"}:
-                return KisPaperSameDayOrderIdObservation(
-                    observed_at=observed_at,
-                    same_day_order_id_seen=same_day_order_id_seen,
+                return _KisPaperOrderHistoryRows(
                     row_count=row_count,
+                    direct_matches=tuple(direct_matches),
+                    lineage_matches=tuple(lineage_matches),
                 )
             query = {
                 **query,
@@ -1242,6 +1384,47 @@ def _valid_same_day_order_id_query(query: Mapping[str, str]) -> bool:
             for key in ("CTX_AREA_NK200", "CTX_AREA_FK200")
         )
     )
+
+
+def _unobserved_terminal_field_states() -> dict[str, Literal["not_observed"]]:
+    return {field_name: "not_observed" for field_name in _KIS_PAPER_TERMINAL_FIELD_NAMES}
+
+
+def _terminal_field_states(
+    row: Mapping[str, Any],
+) -> dict[str, Literal["present", "missing_or_invalid"]]:
+    """Classify field shape only; raw history values never leave this function."""
+
+    return {
+        "order_quantity": _terminal_decimal_field_state(row.get("ft_ord_qty"), positive=True),
+        "filled_quantity": _terminal_decimal_field_state(row.get("ft_ccld_qty")),
+        "remaining_quantity": _terminal_decimal_field_state(row.get("nccs_qty")),
+        "filled_price": _terminal_decimal_field_state(row.get("ft_ccld_unpr3")),
+        "filled_amount": _terminal_decimal_field_state(row.get("ft_ccld_amt3")),
+        "processing_status": _terminal_text_field_state(row.get("prcs_stat_name")),
+        "revision_cancel_indicator": _terminal_text_field_state(row.get("rvse_cncl_dvsn")),
+        "order_time": _terminal_text_field_state(row.get("ord_tmd")),
+    }
+
+
+def _terminal_decimal_field_state(
+    value: object,
+    *,
+    positive: bool = False,
+) -> Literal["present", "missing_or_invalid"]:
+    if not isinstance(value, str) or not value.strip():
+        return "missing_or_invalid"
+    try:
+        decimal_value = Decimal(value)
+    except (InvalidOperation, ValueError):
+        return "missing_or_invalid"
+    if not decimal_value.is_finite() or (decimal_value <= 0 if positive else decimal_value < 0):
+        return "missing_or_invalid"
+    return "present"
+
+
+def _terminal_text_field_state(value: object) -> Literal["present", "missing_or_invalid"]:
+    return "present" if isinstance(value, str) and value.strip() else "missing_or_invalid"
 
 
 def _base_url_from_endpoint(url: str) -> str:
