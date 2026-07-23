@@ -39,6 +39,12 @@ idempotent intent before a broker side effect, and reconciliation before an
 unknown outcome is retried. There is no one-shot or per-objective quota for
 distinct Paper intents or due Paper schedules.
 
+The operator has additionally confirmed that ordinary private Paper trades are
+included in this authority. `raw_market_data_retained: false` is a no-bytes
+fact about its own historical attempt, not a fixed state to clear, a manual
+approval request, or a reason to hold another due collection, Paper action, or
+ready lane.
+
 Market data stays private, local, and unserved. Stop only the affected cache if
 applicable source terms prohibit retention or if disk policy would be crossed.
 Warn before projected free space falls below 20%; do not begin new large work

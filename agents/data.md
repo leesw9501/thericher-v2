@@ -8,7 +8,8 @@ and their future reusable loaders.
 All private non-live data collection and retention under the current source and
 disk policy is standing-authorized. A `raw_market_data_retained: false` or
 historical one-shot observation remains a no-bytes fact for that observation,
-not a cache, schedule, or KIS Paper permission latch.
+not a cache, schedule, or KIS Paper permission latch. It is never a fixed
+state that needs clearing before a fresh collection or another ready lane.
 
 The local console receives only a sanitized intraday freshness projection. It
 does not receive paths, raw rows, manifests, quote values, hashes, credentials,

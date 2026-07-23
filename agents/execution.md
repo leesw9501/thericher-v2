@@ -9,7 +9,9 @@ All virtual Paper data/account/order work and recurring schedules are
 standing-authorized. Historical one-shot, raw-retention, quote, model, or
 `safe_to_submit` values cannot create a manual Paper hold; only paper-host
 isolation and reconciliation of an unknown exact durable intent can stop that
-same request. Live routing remains unavailable.
+same request. In particular, `raw_market_data_retained: false` is a no-bytes
+fact about an old observation, not a fixed execution state. Live routing
+remains unavailable.
 
 ## Current State
 

@@ -4467,3 +4467,33 @@ It agreed that four pages are the minimum defensible post-close envelope and
 flagged extended-hours clipping and the next exact-390-minute inspection as
 the decisive kill test. The change does not add a scheduler or a new approval
 process; it corrects the cadence of the already authorized task.
+
+## 2026-07-23 - Treat all private non-live work as default action
+
+Decision: reaffirm the operator's explicit standing authorization for every
+private non-live action, including ordinary KIS Paper virtual trades,
+modification, cancellation, retention on `D:`, and goal-owned schedules. No
+past one-shot record, raw-retention value, account/result shape, report, or
+model outcome may become a fixed permission state or a reason to request a
+human release.
+
+`raw_market_data_retained: false` remains precise evidence that the named
+attempt has no raw bytes available for data consumption. It is not an active
+control flag: it neither blocks a fresh collection nor suppresses a distinct
+Paper intent, schedule, or ready lane. A request can still truthfully decline
+its own execution for virtual-host isolation, secret safety, missing data for
+that exact computation, durable-idempotency conflict, or reconciliation of
+that exact unknown intent. Those are technical execution facts, not approval
+gates, and must not be generalized into same-symbol, same-session, or global
+stops. `KIS_LIVE_*`, a live route, real-money behavior, paid commitments,
+unclear rights, and public exposure remain outside this authority.
+
+Claude's 2026-07-23 falsification-first drift check was
+`supported-with-limits`: a no-bytes fact must not make nonexistent bytes usable
+as data, and exact-intent reconciliation must remain limited to retrying that
+one unknown intent.
+
+Reason: non-live process latches were consuming development time without
+improving the engine loop. The project should execute eligible private work by
+default and preserve only facts needed for truthful data handling and
+recoverable virtual execution.

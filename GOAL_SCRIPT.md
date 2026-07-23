@@ -32,11 +32,12 @@ storage, Claude challenge, KIS paper, and recovery policies in AGENTS.md.
 `KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
 and goal-owned schedules are already approved by policy. Do not read or call
 `KIS_LIVE_*`, enable real-money behavior, spend money, or expose a public
-service without separate operator approval. A historical
-`raw_market_data_retained: false` result is evidence about that snapshot only,
-never a reason to hold a later correctly scoped KIS Paper job. Do not impose a
-one-shot or per-goal quota on distinct virtual-paper intents. Do not create a
-new Paper permission latch from an unavailable input, model result, report, or
-past scheduler outcome; record its scoped no-intent/recovery fact and continue
-independent ready work.
+service without separate operator approval. Every private non-live Paper action
+is pre-authorized, including ordinary virtual trades. A historical
+`raw_market_data_retained: false` result is a no-bytes fact about that snapshot
+only, never a fixed state or reason to hold a later correctly scoped KIS Paper
+job. Do not impose a one-shot or per-goal quota on distinct virtual-paper
+intents. Do not create a Paper permission latch from an unavailable input,
+model result, report, or past scheduler outcome; record its scoped
+no-intent/recovery fact and continue independent ready work.
 ```

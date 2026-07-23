@@ -46,6 +46,14 @@ Default to action for private, no-cost work that stays inside this authority.
 Record limitations as evidence and fix technical faults, but do not turn either
 into a new approval process. Actual live-money behavior remains the hard stop.
 
+The operator's explicit 2026-07-23 directive is that every private, non-live
+action is pre-authorized, including KIS Paper order submission, modification,
+cancellation, and recurring schedules. A `raw_market_data_retained: false`
+record means only that its own attempt has no raw bytes to read; it cannot
+become a fixed execution state, permission check, scheduler barrier, or hold
+on another correctly scoped action. Preserve technical truth for that one
+record, then continue the next eligible work without inventing a human gate.
+
 For private Data, Research, and KIS Paper work, forward progress is the
 default. This standing approval includes recurring collection, virtual order
 submit/modify/cancel, reconciliation, and goal-owned schedules. Do not

@@ -20,8 +20,10 @@ runs as scoped evidence, not permission latches. All non-live private work,
 including virtual orders and recurring schedules, is standing-authorized. A
 historical marker, `raw_market_data_retained: false`, model result, or schedule
 outcome cannot stop another correctly scoped ready lane or create an approval
-wait. Only the exact unknown Paper intent is reconciled before its own
-replacement; `KIS_LIVE_*` remains unavailable.
+wait. A false retention value is only a no-bytes fact for that historical
+attempt; it is never a fixed state to clear. Only the exact unknown Paper
+intent is reconciled before its own replacement; `KIS_LIVE_*` remains
+unavailable.
 
 ## Active Durable Stateboards
 

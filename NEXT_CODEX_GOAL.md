@@ -16,13 +16,16 @@ session, data run, or research task.
 
 - All private `KIS_PAPER_*` reads, virtual submit/modify/cancel,
   reconciliation, routine sizing, `D:` retention, and goal-owned schedules
-  are authorized. Continue due Paper work by default.
+  are authorized. Ordinary private Paper trades are included; continue due
+  Paper work by default.
 - Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
   unclear-rights assets, public exposure, Git-hosted raw data/artifacts, or
   secrets.
 - Historical `raw_market_data_retained: false`, one-shot completion, missing
   receipt, ambiguous result, or a failed probe is evidence only. It cannot
-  block a distinct correctly scoped Paper action.
+  block a distinct correctly scoped Paper action. In particular, a false
+  retention value is a no-bytes fact for its own record, never a fixed state
+  that needs operator clearance before fresh work continues.
 
 ## Required First Reads
 

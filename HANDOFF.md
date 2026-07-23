@@ -59,6 +59,10 @@ claims; it is not an approval chain for virtual-paper work.
   historical `raw_market_data_retained: false`, one-shot completion, blank
   response, or `safe_to_submit` value as a new operator decision or a global
   execution hold.
+- The 2026-07-23 operator directive explicitly covers every private non-live
+  action, including ordinary Paper trades. A no-bytes retention value is
+  metadata for its own historical attempt only, never a fixed permission state
+  or a reason to wait for a human before a fresh correctly scoped action.
 - Paper cadence, the number of distinct virtual intents, and recurring
   goal-owned schedules are routine engineering choices, not approval gates or
   one-shot quotas. An unresolved intent blocks only a replacement of that exact
