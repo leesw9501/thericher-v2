@@ -285,12 +285,21 @@ change the already completed order result or a later distinct session.
 
 ### KIS Terminal Field Contract Probe
 
-`execution.kis_paper_terminal_field_probe` is a separate read-only diagnostic
-for one existing SPY/AMEX Paper intent. It derives the query day from the
-persisted acknowledged submission's ET order date, completes the bounded official
+`execution.kis_paper_terminal_field_probe` is a read-only diagnostic for one
+existing SPY/AMEX Paper intent. It derives the query day from the persisted
+acknowledged submission's ET order date, completes the bounded official
 `VTTS3035R` history pagination, and compares `odno` / `orgn_odno` only in
 memory. Its external artifact retains an opaque run reference, identity-match
 category, pagination completion, and documented-field presence only.
+
+After the daily SPY session has already verified its exact receipt/run mapping
+and completed the ordinary receipt observer, it invokes this same probe for
+that durable state. The daily evidence embeds only the probe's existing safe
+payload and a content-hash artifact reference. It never adds a scheduler,
+latest-run scan, submit/modify/cancel route, lifecycle transition, retry, or
+model/PnL input. A probe exception becomes scoped
+`terminal_field_probe_unavailable` evidence without changing the canary or
+receipt-observer result.
 
 The current official sample documents order/fill/remaining quantities, fill
 price/amount, processing status, revision/cancel indicator, and order time,

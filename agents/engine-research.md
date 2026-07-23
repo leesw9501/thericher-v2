@@ -319,6 +319,11 @@ closed entry-to-exit cost/fee/currency basis for any realized PnL claim. Until
 then its `unqualified`, absent, or ambiguous result keeps
 `performance_label = None` and cannot change model selection or Paper cadence.
 
+The daily session may now attach that same categorical payload and its opaque
+artifact reference after exact receipt/run verification. This expands execution
+coverage only: it is not a feature, selector input, candidate score, ensemble
+member, PnL attribution record, or reason to alter breadth/depth scheduling.
+
 The pre-batch SQLite smoke artifact that stopped at a host timeout is
 `restart` evidence only and must not be interpreted. The later completed smoke
 under the same external artifact root is the usable local-paper replay.

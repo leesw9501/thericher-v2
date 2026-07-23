@@ -245,9 +245,11 @@ that would cross the 15% floor.
   `submission_time_missing` without a KIS call. New states persist that time
   write-once. This is source-contract evidence only; it does not change
   collection, retention, scheduling, or Paper authority.
-- The daily session-to-observer handoff needs only the opaque receipt digest,
-  its matching `receipt-<digest>` run ID, and safe timestamps/provenance. Raw
-  daily bars, prices, account values, and order IDs never cross that boundary.
+- The daily session handoff needs only the opaque receipt digest, its matching
+  `receipt-<digest>` run ID, and safe timestamps/provenance. After that exact
+  check, the same state may contribute the terminal probe's categorical
+  field-presence payload and an opaque artifact-content hash. Raw daily bars,
+  prices, account values, and order IDs never cross either boundary.
 
 ## Recovery
 

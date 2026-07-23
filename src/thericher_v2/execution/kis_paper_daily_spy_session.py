@@ -9,6 +9,7 @@ another Paper action.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -63,6 +64,10 @@ from .kis_paper_spy_position import (
     KisPaperSpyPositionResolution,
     resolve_kis_paper_spy_position_target,
 )
+from .kis_paper_terminal_field_probe import (
+    KisPaperTerminalFieldProbeOutcome,
+    probe_kis_paper_terminal_fields,
+)
 from .kis_readonly import (
     KisHttpTransport,
     KisPaperReadOnlyError,
@@ -76,6 +81,8 @@ _SAFE_REASON = re.compile(r"[a-z0-9_]{1,100}", re.ASCII)
 _SESSION_STATUSES = frozenset({"preview", "no_intent", "canary_completed"})
 _OBSERVER_STATUSES = frozenset({"not_attempted", "completed", "unavailable"})
 _OBSERVER_UNAVAILABLE_REASON = "observer_unavailable"
+_TERMINAL_FIELD_PROBE_STATUSES = frozenset({"not_attempted", "completed", "unavailable"})
+_TERMINAL_FIELD_PROBE_UNAVAILABLE_REASON = "terminal_field_probe_unavailable"
 _SESSION_REASONS = frozenset(
     {
         "preview",
@@ -114,6 +121,12 @@ class KisPaperDailySpySessionOutcome:
     observer_status: Literal["not_attempted", "completed", "unavailable"] = "not_attempted"
     observer_reason_code: str | None = None
     observation: KisPaperReceiptObservation | None = None
+    terminal_field_probe_status: Literal["not_attempted", "completed", "unavailable"] = (
+        "not_attempted"
+    )
+    terminal_field_probe_reason_code: str | None = None
+    terminal_field_probe: KisPaperTerminalFieldProbeOutcome | None = None
+    terminal_field_probe_artifact_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -166,6 +179,40 @@ class KisPaperDailySpySessionOutcome:
             raise ValueError("daily SPY observer unavailable reason is invalid")
         if self.observer_status != "unavailable" and self.observer_reason_code is not None:
             raise ValueError("daily SPY observer reason is inconsistent")
+        if self.terminal_field_probe_status not in _TERMINAL_FIELD_PROBE_STATUSES:
+            raise ValueError("daily SPY terminal field probe status is invalid")
+        if (
+            self.terminal_field_probe_reason_code is not None
+            and _SAFE_REASON.fullmatch(self.terminal_field_probe_reason_code) is None
+        ):
+            raise ValueError("daily SPY terminal field probe reason is invalid")
+        if self.terminal_field_probe is not None:
+            if self.terminal_field_probe_status != "completed":
+                raise ValueError("daily SPY terminal field probe outcome is inconsistent")
+            if self.run_id is None or self.terminal_field_probe.run_ref != _terminal_probe_run_ref(
+                self.run_id
+            ):
+                raise ValueError("daily SPY terminal field probe run identity is inconsistent")
+            if (
+                self.terminal_field_probe_artifact_ref is None
+                or not _is_sha256_reference(self.terminal_field_probe_artifact_ref)
+            ):
+                raise ValueError("daily SPY terminal field probe artifact reference is invalid")
+        else:
+            if self.terminal_field_probe_status == "completed":
+                raise ValueError("daily SPY terminal field probe outcome is missing")
+            if self.terminal_field_probe_artifact_ref is not None:
+                raise ValueError("daily SPY terminal field probe artifact is inconsistent")
+        if (
+            self.terminal_field_probe_status == "unavailable"
+            and self.terminal_field_probe_reason_code != _TERMINAL_FIELD_PROBE_UNAVAILABLE_REASON
+        ):
+            raise ValueError("daily SPY terminal field probe unavailable reason is invalid")
+        if (
+            self.terminal_field_probe_status != "unavailable"
+            and self.terminal_field_probe_reason_code is not None
+        ):
+            raise ValueError("daily SPY terminal field probe reason is inconsistent")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
     def safe_payload(self) -> dict[str, object]:
@@ -184,6 +231,14 @@ class KisPaperDailySpySessionOutcome:
             "observer_status": self.observer_status,
             "observer_reason_code": self.observer_reason_code,
             "observation": None if self.observation is None else self.observation.safe_payload(),
+            "terminal_field_probe_status": self.terminal_field_probe_status,
+            "terminal_field_probe_reason_code": self.terminal_field_probe_reason_code,
+            "terminal_field_probe": (
+                None
+                if self.terminal_field_probe is None
+                else self.terminal_field_probe.safe_payload()
+            ),
+            "terminal_field_probe_artifact_ref": self.terminal_field_probe_artifact_ref,
             "paper_only": True,
         }
 
@@ -410,6 +465,20 @@ def run_kis_paper_daily_spy_session(
         now=now,
         clock=clock,
     )
+    (
+        terminal_field_probe,
+        terminal_field_probe_artifact_ref,
+        terminal_field_probe_reason_code,
+    ) = _probe_completed_canary_terminal_fields(
+        run_id=canary.run_id,
+        environment=environment,
+        state_root=state_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        transport=transport,
+        now=now,
+        clock=clock,
+    )
     return _record_session(
         session_id=resolved_session_id,
         status="canary_completed",
@@ -424,6 +493,9 @@ def run_kis_paper_daily_spy_session(
         position_resolution=position_resolution,
         observation=observation,
         observer_reason_code=observer_reason_code,
+        terminal_field_probe=terminal_field_probe,
+        terminal_field_probe_artifact_ref=terminal_field_probe_artifact_ref,
+        terminal_field_probe_reason_code=terminal_field_probe_reason_code,
     )
 
 
@@ -442,6 +514,9 @@ def _record_session(
     position_resolution: KisPaperSpyPositionResolution | None = None,
     observation: KisPaperReceiptObservation | None = None,
     observer_reason_code: str | None = None,
+    terminal_field_probe: KisPaperTerminalFieldProbeOutcome | None = None,
+    terminal_field_probe_artifact_ref: str | None = None,
+    terminal_field_probe_reason_code: str | None = None,
 ) -> KisPaperDailySpySessionOutcome:
     destination = _session_evidence_path(artifact_root=artifact_root, session_id=session_id)
     receipt = None if evaluation is None else evaluation.receipt
@@ -465,6 +540,16 @@ def _record_session(
         ),
         observer_reason_code=observer_reason_code,
         observation=observation,
+        terminal_field_probe_status=(
+            "completed"
+            if terminal_field_probe is not None
+            else "unavailable"
+            if terminal_field_probe_reason_code is not None
+            else "not_attempted"
+        ),
+        terminal_field_probe_reason_code=terminal_field_probe_reason_code,
+        terminal_field_probe=terminal_field_probe,
+        terminal_field_probe_artifact_ref=terminal_field_probe_artifact_ref,
     )
     payload: dict[str, object] = {
         "schema_version": SCHEMA_VERSION,
@@ -514,6 +599,40 @@ def _observe_completed_canary(
     except Exception:
         return None, _OBSERVER_UNAVAILABLE_REASON
     return outcome.observation, None
+
+
+def _probe_completed_canary_terminal_fields(
+    *,
+    run_id: str,
+    environment: Mapping[str, str],
+    state_root: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    transport: KisHttpTransport | None,
+    now: datetime | None,
+    clock: Callable[[], datetime] | None,
+) -> tuple[KisPaperTerminalFieldProbeOutcome | None, str | None, str | None]:
+    """Append same-run field-shape evidence without changing order execution."""
+
+    try:
+        result = probe_kis_paper_terminal_fields(
+            run_id=run_id,
+            environment=environment,
+            state_root=state_root,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=True,
+            transport=transport,
+            now=now,
+            clock=clock,
+        )
+        if result.outcome.run_ref != _terminal_probe_run_ref(run_id):
+            raise ValueError("terminal field probe run identity is inconsistent")
+        artifact_ref = _artifact_content_ref(result.evidence_path)
+    # The source probe is post-order evidence only; preserve all prior outcomes.
+    except Exception:
+        return None, None, _TERMINAL_FIELD_PROBE_UNAVAILABLE_REASON
+    return result.outcome, artifact_ref, None
 
 
 def _load_preferred_daily_spy_input(
@@ -612,6 +731,14 @@ def _is_permitted_artifact_root(artifact_root: Path, repository_root: Path) -> b
 
 def _receipt_ref(receipt: ResearchDecisionReceipt) -> str:
     return "sha256:" + receipt.decision_id.removeprefix("decision:sha256:")
+
+
+def _terminal_probe_run_ref(run_id: str) -> str:
+    return "sha256:" + hashlib.sha256(run_id.encode("utf-8")).hexdigest()
+
+
+def _artifact_content_ref(path: Path) -> str:
+    return "sha256:" + hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def _is_sha256_reference(value: str) -> bool:

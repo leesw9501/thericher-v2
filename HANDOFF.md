@@ -114,13 +114,15 @@ authorized Paper action. A read-only observer error becomes only a safe
 `observer_unavailable` session fact and cannot change the original order
 result.
 
-The terminal-field capability is now separately exercised through the
-read-only `kis-paper-terminal-field-probe` Docker profile. It reads one
-persisted SPY/AMEX Paper intent from the private volume without creating a lock
-or mutating state, and queries only an acknowledged submission's ET order date
-through the fixed
-`VTTS3035R` endpoint, and writes only categorical field-support evidence. The
-official sample names order/fill/remaining quantity, fill price/amount,
+The read-only `kis-paper-terminal-field-probe` Docker profile reads one
+persisted SPY/AMEX Paper intent without creating a lock or mutating state, and
+queries only an acknowledged submission's ET order date through fixed
+`VTTS3035R`. The daily SPY session now invokes it automatically only after the
+canary's exact receipt/run mapping and the ordinary receipt observer. Session
+evidence embeds the existing categorical safe payload and a content-hash
+artifact reference; a probe error is scoped
+`terminal_field_probe_unavailable` and preserves the canary/observer outcomes.
+The official sample names order/fill/remaining quantity, fill price/amount,
 processing-status, revision/cancel, and order-time fields, but does not
 qualify terminal enum, lineage resolution, or net-PnL semantics. The first
 legacy cancelled-canary state predates the durable submission timestamp, so its
@@ -528,12 +530,10 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: connect the
-existing terminal-field probe to an exact acknowledged daily receipt only as a
-read-only observation, with no second scheduler, order route, terminal-state
-promotion, or PnL inference. The older canary intents remain immutable recovery
-evidence, but do not create a global one-shot quota or stop new distinct Paper
-work. At each boundary, review the data contract, execution route readiness,
-research queues, GPU eligibility, disk capacity, and role ownership; make
-reversible no-cost changes autonomously and escalate only a real remaining
-operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: observe and
+classify the next due autonomous daily SPY Paper session. The older canary
+intents remain immutable recovery evidence, but do not create a global one-shot
+quota or stop new distinct Paper work. At each boundary, review the data
+contract, execution route readiness, research queues, GPU eligibility, disk
+capacity, and role ownership; make reversible no-cost changes autonomously and
+escalate only a real remaining operator boundary.

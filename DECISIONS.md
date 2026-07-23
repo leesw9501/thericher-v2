@@ -4406,3 +4406,37 @@ external artifacts, and read-only state behavior.
 
 Reason: this advances KIS-native execution evidence while keeping the current
 source limitation truthful and without reviving a Paper permission latch.
+
+## 2026-07-23 - Attach terminal-field evidence to the exact daily Paper receipt
+
+Decision: after the daily SPY Paper session verifies that its canary run ID is
+the receipt-derived `receipt-<digest>` value and completes the existing receipt
+observer, invoke the existing read-only terminal-field probe for that same
+durable state. Embed only the probe's categorical safe payload plus a SHA-256
+content reference to its external artifact in the daily outcome. The probe's
+result is post-order evidence: it cannot change the canary result, create an
+order, modify/cancel/retry an order, add a scheduler, scan latest runs, or
+affect another distinct Paper session.
+
+The daily outcome validates the probe run hash against its own run ID. A
+mismatched result or ordinary probe failure is contained as
+`terminal_field_probe_unavailable`; the canary and receipt-observer facts are
+preserved. A legacy state with no write-once acknowledged `submitted_at` still
+records only `submission_time_missing` before configuration or network access.
+The date used for a new query remains the acknowledged timestamp's ET date,
+not the intent creation date.
+
+Independent Data review confirmed the bounded `VTTS3035R` direct/lineage,
+pagination, and field-presence contract. Independent Validation review drove
+tests for receipt/run mismatch, legacy state, ET-midnight selection, replay,
+exception isolation, virtual-only GET/token routing, and artifact redaction.
+Independent Engine Research review confirmed no consumer path from this payload
+to `performance_label`, candidate selection, ensemble inputs, Paper cadence,
+or PnL attribution. The high-level Claude drift verdict was
+`supported-with-limits`; no field-presence result is promoted beyond the
+existing `terminal_state_support: unqualified` and
+`pnl_status: not_observed` limits.
+
+Reason: this captures the next useful KIS-native execution fact automatically
+without turning source uncertainty, a completed one-shot marker, or a missing
+timestamp into a Paper permission or research gate.

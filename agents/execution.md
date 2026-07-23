@@ -194,13 +194,13 @@ or network access. New acknowledged states preserve the time through later
 cancellation/reconciliation. It retains `terminal_state_support: unqualified`
 and `pnl_status: not_observed`; no terminal transition, PnL, retry, or Paper
 halt was created.
-The scheduled daily SPY service automatically invokes the receipt observer only
-after the canary returns the same receipt-derived `run_id`. The separate
-terminal-field probe remains an exact manual or goal-owned read-only diagnostic
-until a later bounded integration uses the same acknowledged receipt state.
-There is no latest-run scan or second order path. A read-only observer error
-records `observer_unavailable` without changing the canary result, retrying an
-order, or blocking a later distinct session.
+The scheduled daily SPY service automatically invokes the receipt observer and,
+after the same exact receipt-derived `run_id` check, this terminal-field probe.
+The session retains only the probe's categorical safe payload and a
+content-hash artifact reference. There is no latest-run scan, second scheduler,
+or second order path. A read-only observer or terminal-probe error records only
+its respective scoped unavailable result without changing the canary outcome,
+retrying an order, or blocking a later distinct session.
 
 ## Authority And Boundaries
 
@@ -250,9 +250,9 @@ pre-cancel phases and never becomes a fresh submit, modify, or cancel action.
 
 Continue the observer only for exact durable receipt identities and retain
 ambiguous observations as evidence, never as a Paper halt. The next execution
-objective may connect the existing terminal-field probe to a matching
-acknowledged receipt state without adding a task, a second order route, or a
-terminal/PnL inference. It must retain Paper-only routing, secret redaction,
-state replay, and no fabricated PnL. Only a live-money boundary, paid
-commitment, unclear rights, public exposure, or an external KIS credential
+handoff is to consume the next scheduled daily outcome, including the automatic
+terminal-field fact when a new acknowledged state exists, without interpreting
+field presence as a terminal/PnL result. Retain Paper-only routing, secret
+redaction, state replay, and no fabricated PnL. Only a live-money boundary,
+paid commitment, unclear rights, public exposure, or an external KIS credential
 reset needs operator input.

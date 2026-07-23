@@ -2,29 +2,27 @@
 
 ## Objective
 
-Attach the existing KIS Paper terminal-field observation to an exact
-acknowledged daily SPY receipt, without turning its incomplete source semantics
-into a Paper-trading gate or a terminal/PnL claim.
+Observe and classify the next due autonomous KIS Paper daily SPY session.
 
-The current standalone probe has established that KIS's documented
-`VTTS3035R` fields are useful structural evidence but insufficient to call a
-fill, cancellation, or realized PnL. Future acknowledged receipt states now
-carry a write-once submission timestamp; use that state only to collect the
-same safe field-presence evidence automatically after the existing daily
-receipt observer. A legacy state without the timestamp remains a scoped
-`submission_time_missing` fact, not a reason to pause another Paper action.
+The installed daily head task runs at 22:15 KST and the daily session runs at
+23:50 KST, Tuesday through Saturday. They are already authorized private
+Paper work. Let the next due run produce its normal safe evidence, then inspect
+only the sanitized output and fix a demonstrated deterministic fault if one
+exists. A valid `no_intent`, unavailable source fact, or an acknowledged Paper
+receipt are all useful outcomes; none is a permission latch for another due
+session, data run, or research task.
 
 ## Standing Authority
 
 - All private `KIS_PAPER_*` reads, virtual submit/modify/cancel,
   reconciliation, routine sizing, `D:` retention, and goal-owned schedules
-  are authorized. Continue ready Paper work by default.
+  are authorized. Continue due Paper work by default.
 - Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
   unclear-rights assets, public exposure, Git-hosted raw data/artifacts, or
   secrets.
-- A missing, blank, stale, ambiguous, or unretained fact applies only to that
-  receipt or invocation. It cannot block a distinct Paper intent, another due
-  session, cache collection, research campaign, or schedule run.
+- Historical `raw_market_data_retained: false`, one-shot completion, missing
+  receipt, ambiguous result, or a failed probe is evidence only. It cannot
+  block a distinct correctly scoped Paper action.
 
 ## Required First Reads
 
@@ -33,61 +31,51 @@ receipt observer. A legacy state without the timestamp remains a scoped
    `DECISIONS.md`, and `RUNBOOK.md`.
 3. Read `agents/README.md`, `agents/data.md`, `agents/engine-research.md`,
    and `agents/execution.md`.
-4. Inspect only sanitized daily-session, receipt-observer, terminal-probe,
-   runtime, and task metadata before choosing a recovery action.
-5. Ask Claude for a concise falsification-first check before wiring the
-   terminal-field result into the scheduled daily receipt path.
+4. Inspect only sanitized scheduled-task, head-index, daily-session,
+   receipt-observer, terminal-probe, runtime, and task metadata.
+5. Ask Claude only if an actual outcome would change terminal/PnL semantics,
+   route isolation, a major runtime, or recovery policy.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Reconfirm the narrow virtual `VTTS3035R` source contract for SPY/AMEX:
-   acknowledged-submission ET date, bounded pagination, direct/original order
-   identity, and field-presence-only provenance.
-2. Ensure this observation does not consume raw market data, alter cache
-   cursors, or reinterpret `raw_market_data_retained` as execution authority.
+1. Reattest the next daily-head input and report only source freshness,
+   provenance, and categorical cache availability for the SPY/AMS session.
+2. Keep raw retention and any source gap separate from Paper order authority.
 
 ### Engine Research Agent
 
-1. Preserve `performance_label = None` and `pnl_status: not_observed` for all
-   terminal-field observations under the current source contract.
-2. Add no model feature, candidate ranking, ensemble input, or PnL attribution
-   from field presence, acknowledgement, aggregate positions, or an absent
-   history row.
+1. Treat daily receipt, receipt-observer, and terminal-field facts as
+   execution coverage only. Keep `performance_label = None`,
+   `pnl_status: not_observed`, and no candidate/ensemble update.
+2. Continue ready CPU data/feature preparation that does not depend on this
+   session; GPU work remains limited to an eligible frozen campaign.
 
 ### Execution Agent
 
-1. After an existing daily session has verified its exact receipt/run mapping,
-   invoke the existing terminal-field probe only for that same durable state.
-   Do not create a second scheduler, latest-run scan, submit/modify/cancel
-   path, or a new credential-bearing service.
-2. Embed only the probe's existing categorical safe payload and opaque artifact
-   reference in the daily outcome. Preserve the canary and receipt-observer
-   outcomes even when the probe is unavailable.
-3. Keep terminal state unqualified and PnL not observed. A probe result may
-   improve source coverage but cannot alter the order lifecycle, cause a retry,
-   or suppress later distinct Paper work.
+1. Let the installed head and daily-session tasks execute at their normal due
+   times. Do not add a duplicate task, manual capital gate, or alternate route.
+2. Inspect the one safe daily outcome. If it has an acknowledged receipt,
+   verify the receipt observer and terminal-field payload share its exact run
+   identity and remain Paper-only. If it is no-intent or unavailable, preserve
+   the factual reason and fix only an evidenced technical defect.
 
 ### Validation Agent
 
-1. Independently test exact receipt/run binding, acknowledged-submission date
-   use, legacy/missing timestamp behavior, redaction, replay, and artifact
-   placement.
-2. Test that no extra order action, live route, raw response persistence,
-   terminal lifecycle promotion, or model/PnL label can result from the
-   integration.
+1. Verify any fix retains virtual-host-only routing, secret redaction,
+   replayability, no fabricated terminal/PnL conclusion, and no extra order
+   side effect.
 
 ## Completion Evidence
 
-- A future acknowledged daily receipt can automatically emit only the existing
-  categorical terminal-field observation; legacy or unavailable states remain
-  scoped no-observation facts.
-- The daily path remains Paper-only, replayable, secret-free, and does not add
-  a scheduler, a quota, a permission latch, or a second order path.
-- Field presence does not become a fill/cancel result, realized PnL, model
-  label, or Paper-work decision.
-- Raw broker facts and generated artifacts remain outside Git.
+- One next due head/session outcome is available as sanitized external
+  evidence, or a concrete host/scheduler fault is fixed and verified.
+- The result is correctly classified without a report gate, paper quota, or
+  manual approval request.
+- Any automatic terminal-field observation remains categorical,
+  `unqualified`, and outside Research labels/PnL.
+- Artifacts and raw data remain on `D:` and outside Git.
 
 ## Verification
 
@@ -100,4 +88,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Attach Paper terminal observation to daily receipt`
+`Record autonomous daily Paper session`

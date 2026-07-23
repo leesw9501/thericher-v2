@@ -528,6 +528,15 @@ a scoped source-contract result, not a reason to stop Paper sessions,
 collection, or research. A legacy state without that durable submission time
 returns `submission_time_missing` without reading credentials or calling KIS.
 
+For a daily SPY session, the existing session process invokes the same probe
+only after it has checked the receipt-derived run identity and completed the
+receipt observer. Its safe session evidence contains only the probe payload and
+an opaque content-hash artifact reference; a probe failure records
+`terminal_field_probe_unavailable` while preserving the prior canary and
+observer outcomes. This is not another schedule, order route, quota, or
+terminal/PnL promotion. The standalone profile remains useful for an exact
+manual replay or diagnosis.
+
 The first token attempt on 2026-07-21 returned `auth_rejected` before a
 submission. An earlier read-only bridge attempt reached the account boundary
 and returned `balance_rejected`; no order was sent. The current-image
