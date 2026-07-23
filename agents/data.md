@@ -31,9 +31,10 @@ as a failed collection or an authority hold.
   into a price, account, position, fill, or PnL assertion.
   `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
   Saturday.
-- Last known clean common coverage: 694 completed sessions. QQQ has five
-  committed chunks, SPY six, and IWM three plus one validated partial chunk.
-  Inspect the index before acting.
+- Last known clean common coverage: 694 completed sessions. QQQ now has six
+  retained usable chunks plus one historical no-bytes observation, SPY six,
+  and IWM three plus one validated partial chunk. IWM's unchanged 2023-10-10
+  cursor is `source_limited`; inspect the index before acting.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
@@ -127,9 +128,11 @@ as a failed collection or an authority hold.
 
 ## Ready Queue
 
-1. Keep the current IWM daily scope at its verified lower boundary: the latest
-   authorized bounded retry on 2026-07-22 again returned `daily_response_invalid`
-   with zero retained rows. A KIS page contains an internally inconsistent OHLC
+1. Keep the current IWM daily scope at its verified lower boundary. The
+   2026-07-23 bounded retry confirmed the fourth exact zero-row
+   `daily_response_invalid` result at its unchanged cursor, and the index now
+   marks only that target `source_limited`; QQQ immediately continued with a
+   committed 199-row chunk. A KIS page contains an internally inconsistent OHLC
    row, so the strict all-row parser rejects it. Do not retry the identical bad
    page endlessly or silently accept its remaining rows; a new anchor, endpoint,
    or evidence-backed scope may proceed independently.

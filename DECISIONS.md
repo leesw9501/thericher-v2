@@ -4497,3 +4497,27 @@ Reason: non-live process latches were consuming development time without
 improving the engine loop. The project should execute eligible private work by
 default and preserve only facts needed for truthful data handling and
 recoverable virtual execution.
+
+## 2026-07-23 - Keep a repeated invalid daily cursor from starving useful data
+
+Decision: when one private daily-cache target records at least two consecutive
+`daily_response_invalid` outcomes with zero rows at the exact unchanged cursor,
+upgrade only that target to `source_limited` and exclude it from ordinary target
+selection. QQQ/SPY or another ready target continues without an operator
+decision, Paper-order hold, or global data stop.
+
+The predicate is deliberately exact: it requires the same cursor, zero rows,
+the same strict-parser reason, no retained raw bytes, and no cursor progress.
+A partial result, changed cursor, different reason, or usable data never
+qualifies. A later official endpoint, changed source scope, or separately
+evidence-backed parser contract can establish a new target; this status does
+not convert missing rows into data or become a permanent product restriction.
+
+Claude's falsification-first verdict was `supported-with-limits`: the
+implementation must prove both that the invalid target no longer starves the
+worker and that a ready QQQ/SPY target remains collectible.
+
+Reason: the IWM cursor at 2023-10-10 repeated the same zero-row strict-parser
+failure four times. Continuing to call it consumed KIS capacity without
+improving data coverage, while excluding only that broken source cursor lets
+the active engine loop progress.

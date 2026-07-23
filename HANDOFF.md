@@ -236,8 +236,9 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
-- usable chunks: QQQ five committed, SPY six committed, IWM three committed
-  plus one hash-attested partial page; deferred snapshots remain evidence only
+- usable chunks: QQQ six retained usable chunks plus one historical no-bytes
+  observation, SPY six committed, and IWM three committed plus one
+  hash-attested partial page; deferred snapshots remain evidence only
 - current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
@@ -245,14 +246,19 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the
 page rather than silently admitting its other rows. The 694-session common
-panel is clean and usable now. Do not repeatedly query that blocked IWM page
-until a different official endpoint or a separately evidence-backed row-quality
+panel is clean and usable now. After two consecutive zero-row
+`daily_response_invalid` results at the same cursor, the active daily cache
+marks only that IWM source cursor `source_limited` and continues selecting
+ready QQQ/SPY work. Do not repeatedly query the source-limited IWM page until
+a different official endpoint or a separately evidence-backed row-quality
 contract resolves it.
 
-The latest authorized bounded IWM retry on 2026-07-22 again returned the safe
-`daily_response_invalid` result with no retained rows. This is a source-quality
-fact for that IWM page, never a KIS Paper permission, scheduler, or retention
-latch for QQQ, SPY, new intraday work, account calls, or Paper orders.
+The 2026-07-23 bounded IWM retry confirmed a fourth exact zero-row
+`daily_response_invalid` result at the unchanged cursor, so the index now
+marks only that source cursor `source_limited`. The same worker immediately
+continued QQQ and committed 199 rows. This is a source-quality fact for IWM,
+never a KIS Paper permission, scheduler, or retention latch for QQQ, SPY, new
+intraday work, account calls, or Paper orders.
 
 The local Norgate trial also contains a hash-attested static development panel
 at

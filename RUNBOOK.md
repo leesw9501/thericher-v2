@@ -105,6 +105,12 @@ Do not brute-force the same page or silently accept its remaining rows. This is
 data correctness, not an approval condition for other KIS Paper or research
 work.
 
+For the private daily cache, two consecutive `daily_response_invalid` outcomes
+with zero rows at the unchanged cursor mark only that target `source_limited`.
+The worker then continues another ready target; this is neither a Paper-order
+hold nor a global collection stop. A different endpoint, cursor, or
+evidence-backed parser contract starts a new bounded source scope.
+
 ## KIS Intraday Backfill
 
 The active private 1m cache is at:

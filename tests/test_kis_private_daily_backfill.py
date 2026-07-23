@@ -225,6 +225,63 @@ def test_empty_daily_response_is_deferred_without_marking_venue_complete(tmp_pat
     assert qqq["chunks"][-1]["raw_market_data_retained"] is False
 
 
+def test_repeated_invalid_cursor_becomes_source_limited_without_starving_ready_targets(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data"
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    iwm = index["targets"][2]
+    iwm["next_anchor_date"] = "20260718"
+    daily_backfill._write_backfill_index(
+        root=daily_backfill._backfill_root(cache_root=cache_root, repo_root=repo_root),
+        index=index,
+    )
+
+    first = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(_RecordingTransport([_token(), _invalid_daily_page()])),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+    second = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(_RecordingTransport([_token(), _invalid_daily_page()])),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT + timedelta(minutes=3),
+    )
+
+    assert first.target_key == second.target_key == "IWM/AMS/MODP=0"
+    assert first.reason == second.reason == "daily_response_invalid"
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert index["targets"][2]["state"] == "source_limited"
+    assert index["targets"][2]["retry_not_before_utc"] is None
+
+    qqq_transport = _RecordingTransport(
+        [_token(), _daily_page([_row("20260717")], continuation="")]
+    )
+    continued = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(qqq_transport),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT + timedelta(minutes=4),
+    )
+
+    assert continued.target_key == "QQQ/NAS/MODP=0"
+    assert continued.status == "complete"
+    assert qqq_transport.requests[1].query["EXCD"] == "NAS"
+
+
 def test_unretained_empty_snapshot_is_not_a_one_shot_latch(tmp_path: Path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
@@ -629,6 +686,10 @@ def _daily_page(rows: list[dict[str, str]], *, continuation: str) -> KisMarketDa
         {"rt_cd": "0", "output1": {"nrec": str(len(rows))}, "output2": rows},
         headers={"tr_cont": continuation},
     )
+
+
+def _invalid_daily_page() -> KisMarketDataResponse:
+    return _daily_page([_row("20260718", close="103")], continuation="")
 
 
 def _row(date: str, *, close: str = "101") -> dict[str, str]:

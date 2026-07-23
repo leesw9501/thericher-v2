@@ -50,8 +50,10 @@ _TARGETS = (
     ("SPY", "AMS", "pending_bounded_kis_response"),
     ("IWM", "AMS", "pending_bounded_kis_response"),
 )
-_TARGET_STATES = frozenset({"ready", "deferred", "complete"})
+_TARGET_STATES = frozenset({"ready", "deferred", "source_limited", "complete"})
 _USABLE_CHUNK_OUTCOMES = frozenset({"committed", "partial", "complete"})
+_SOURCE_LIMITED_INVALID_CURSOR_REPEATS = 2
+_SOURCE_LIMITED_INVALID_CURSOR_REASON = "daily_response_invalid"
 
 
 @dataclass(frozen=True)
@@ -734,6 +736,12 @@ def _upgrade_index(index: dict[str, object]) -> bool:
             }
         )
         changed = True
+    for target in targets:
+        if not isinstance(target, dict) or not _has_persistently_invalid_source_cursor(target):
+            continue
+        target["state"] = "source_limited"
+        target["retry_not_before_utc"] = None
+        changed = True
     return changed
 
 
@@ -804,6 +812,35 @@ def _is_unretained_marker(chunk: object) -> bool:
         and chunk.get("raw_market_data_retained") is False
         and not isinstance(chunk.get("manifest_path"), str)
     )
+
+
+def _has_persistently_invalid_source_cursor(target: Mapping[str, object]) -> bool:
+    """Recognize a repeated, zero-row provider defect without starving other targets."""
+
+    if target.get("state") != "deferred":
+        return False
+    cursor = target.get("next_anchor_date")
+    chunks = target.get("chunks")
+    if not isinstance(cursor, str) or not isinstance(chunks, list):
+        return False
+    invalid_count = 0
+    for chunk in reversed(chunks):
+        if _is_unretained_marker(chunk):
+            continue
+        if not isinstance(chunk, Mapping):
+            return False
+        if chunk.get("input_cursor_date") != cursor:
+            break
+        if (
+            chunk.get("outcome") != "deferred"
+            or chunk.get("reason") != _SOURCE_LIMITED_INVALID_CURSOR_REASON
+            or chunk.get("row_count") != 0
+            or chunk.get("raw_market_data_retained") is not False
+            or chunk.get("output_cursor_date") is not None
+        ):
+            return False
+        invalid_count += 1
+    return invalid_count >= _SOURCE_LIMITED_INVALID_CURSOR_REPEATS
 
 
 def _targets(index: Mapping[str, object]) -> list[dict[str, object]]:
