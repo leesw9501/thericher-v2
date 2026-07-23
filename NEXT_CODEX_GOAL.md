@@ -2,30 +2,27 @@
 
 ## Objective
 
-Observe and classify the next due autonomous KIS Paper daily SPY session.
+Determine why the first post-close KIS Paper intraday-head run did not produce
+one complete 390-minute QQQ regular session, then make the smallest proven
+data-only correction.
 
-The installed daily head task runs at 22:15 KST and the daily session runs at
-23:50 KST, Tuesday through Saturday. They are already authorized private
-Paper work. Let the next due run produce its normal safe evidence, then inspect
-only the sanitized output and fix a demonstrated deterministic fault if one
-exists. A valid `no_intent`, unavailable source fact, or an acknowledged Paper
-receipt are all useful outcomes; none is a permission latch for another due
-session, data run, or research task.
+The 2026-07-24 06:20 KST task succeeded and committed one new 240-row chunk per
+QQQ/NAS and SPY/AMS, but the metadata-only preparer still found zero complete
+QQQ regular sessions. This is a bounded source-coverage problem, not a Paper,
+GPU, or human-approval hold.
 
 ## Standing Authority
 
-- All private `KIS_PAPER_*` reads, virtual submit/modify/cancel,
-  reconciliation, routine sizing, `D:` retention, and goal-owned schedules
-  are authorized. Ordinary private Paper trades are included; continue due
-  Paper work by default.
-- Do not read `KIS_LIVE_*`, use a live host/route, real capital, paid data,
+- All private `KIS_PAPER_*` market-data/account/order work, virtual Paper
+  submit/modify/cancel, `D:` retention, and goal-owned schedules are already
+  authorized. For this goal, use only the data-only KIS market-data path.
+- Do not read `KIS_LIVE_*`, use a live route, real capital, paid data,
   unclear-rights assets, public exposure, Git-hosted raw data/artifacts, or
   secrets.
-- Historical `raw_market_data_retained: false`, one-shot completion, missing
-  receipt, ambiguous result, or a failed probe is evidence only. It cannot
-  block a distinct correctly scoped Paper action. In particular, a false
-  retention value is a no-bytes fact for its own record, never a fixed state
-  that needs operator clearance before fresh work continues.
+- Keep raw source rows under `D:\market_data` and generated artifacts under
+  `D:\thericher-v2\model-artifacts`, never Git.
+- A short, duplicate, delayed, or unavailable source result limits only that
+  exact data claim. It never pauses another Paper, Data, or Research action.
 
 ## Required First Reads
 
@@ -34,64 +31,56 @@ session, data run, or research task.
    `DECISIONS.md`, and `RUNBOOK.md`.
 3. Read `agents/README.md`, `agents/data.md`, `agents/engine-research.md`,
    and `agents/execution.md`.
-4. Inspect only sanitized scheduled-task, head-index, daily-session,
-   receipt-observer, terminal-probe, runtime, and task metadata.
-5. Ask Claude only if an actual outcome would change terminal/PnL semantics,
-   route isolation, a major runtime, or recovery policy.
+4. Inspect only sanitized task/index/chunk metadata before looking at raw
+   source bytes.
+5. Ask Claude for a short falsification-first drift-check before changing the
+   KIS minute pagination, source anchors, page count, or task schedule.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Reattest the next daily-head input and report only source freshness,
-   provenance, and categorical cache availability for the SPY/AMS session.
-2. Keep raw retention and any source gap separate from Paper order authority.
-   A repeated invalid IWM daily cursor is source-limited only and must not
-   starve ready QQQ/SPY cache work.
-   The independent daily-backfill task runs one data-only Docker chunk at
-   07:00 KST Tuesday through Saturday; do not duplicate it manually while it
-   is due or running.
-3. The existing intraday-head task now runs at 06:20 KST with four pages per
-   target so it can cover a post-close 390-minute US regular session. After its
-   first due run, perform only the existing metadata-only complete-session
-   inspection. A short, duplicate, delayed, or otherwise incomplete result is
-   a scoped data finding, never a Paper or Research permission latch.
+1. Compare the current KIS minute request/continuation implementation with the
+   official KIS sample and deterministic fake transports. Establish whether the
+   short result is caused by continuation semantics, request anchors, provider
+   availability, or another concrete source fact.
+2. Change only the demonstrated fault. Keep the writer's exact-overlap,
+   conflict, raw-retention, and D: storage contracts intact.
+3. Run one bounded data-only KIS verification collection only when it improves
+   that diagnosis or validates a correction. It may retain source rows on D:
+   but must not access account/order routes or output raw rows.
+4. Re-run the metadata-only prospective preparer and classify the result. An
+   exact 390-minute QQQ session is future input eligibility; any other result
+   remains a source-coverage fact.
 
 ### Engine Research Agent
 
-1. Treat daily receipt, receipt-observer, and terminal-field facts as
-   execution coverage only. Keep `performance_label = None`,
-   `pnl_status: not_observed`, and no candidate/ensemble update.
-2. Continue ready CPU data/feature preparation that does not depend on this
-   session; GPU work remains limited to an eligible frozen campaign.
+1. Keep the existing historical baselines, breadth/depth/ensemble queues, and
+   frozen prospective contract unchanged. Do not treat a partial head slice as
+   a model sample, selection result, or GPU qualification.
+2. Continue only CPU preparation that does not consume the partial head input.
 
 ### Execution Agent
 
-1. Let the installed head and daily-session tasks execute at their normal due
-   times. Do not add a duplicate task, manual capital gate, or alternate route.
-2. Inspect the one safe daily outcome. If it has an acknowledged receipt,
-   verify the receipt observer and terminal-field payload share its exact run
-   identity and remain Paper-only. If it is no-intent or unavailable, preserve
-   the factual reason and fix only an evidenced technical defect.
+1. Keep virtual-host-only routing and the existing Paper schedule unchanged
+   unless Data proves a data-only task configuration fault.
+2. Do not infer terminal state, PnL, or execution performance from the daily
+   `target_already_satisfied` no-intent outcome.
 
 ### Validation Agent
 
-1. Verify any fix retains virtual-host-only routing, secret redaction,
-   replayability, no fabricated terminal/PnL conclusion, and no extra order
-   side effect.
+1. Verify any correction preserves secret redaction, data-only isolation,
+   exact-overlap handling, replayability, and no broker/account/order access.
 
 ## Completion Evidence
 
-- One next due head/session outcome is available as sanitized external
-  evidence, or a concrete host/scheduler fault is fixed and verified.
-- The result is correctly classified without a report gate, paper quota, or
-  manual approval request.
-- Any automatic terminal-field observation remains categorical,
-  `unqualified`, and outside Research labels/PnL.
-- The first post-change intraday-head outcome is classified from metadata: an
-  exact 390-minute QQQ regular session is eligible for future preparation;
-  every other outcome stays a source-coverage fact.
-- Artifacts and raw data remain on `D:` and outside Git.
+- A concrete source diagnosis is recorded, with a focused regression test if
+  implementation changes.
+- A bounded data-only verification result is classified from safe evidence.
+- The metadata-only preparer has been rerun; its outcome is recorded without
+  turning it into an approval gate.
+- Raw data and artifacts remain outside Git, and Paper/live route isolation is
+  unchanged.
 
 ## Verification
 
@@ -104,4 +93,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Record autonomous daily Paper session`
+`Classify intraday head coverage`

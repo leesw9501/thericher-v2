@@ -126,6 +126,13 @@ as a failed collection or an authority hold.
   its next run is 2026-07-24 06:20 KST with four pages per target. The separate
   `thericher-kis-paper-quote-session` task was also `Ready`, with task result
   `0`; its execution semantics belong to Execution, not Data.
+- The first post-change `intraday-head` task completed at 2026-07-24 06:20 KST
+  with task result `0`. Its independent index advanced to generation 4 and
+  recorded one further committed chunk per `QQQ/NAS` and `SPY/AMS`, each with
+  240 retained 1m rows and no conflict. The metadata-only preparer still found
+  zero complete 390-minute QQQ regular sessions, so the combined head evidence
+  remains a source-coverage fact rather than a Research handoff. It read no
+  credential, raw row, account, or broker evidence and wrote no artifact.
 - A bounded metadata-only inventory on 2026-07-23 reattested the active
   source choices without opening any raw rows. The KIS daily index has QQQ/NAS
   and SPY/AMS `ready` through 2026-07-17; IWM/AMS is `source_limited` at its
@@ -168,28 +175,24 @@ as a failed collection or an authority hold.
    session before handing it to Engine Research.
 7. Preserve raw provider rows and label unknown KIS field semantics; do not
    repair, fill, or relabel a session from another provider.
-8. The first due `intraday-head` task completed at 2026-07-23 02:35 KST. Its
-   independent v1 index is generation 2 with one committed retained chunk for
-   each QQQ/NAS and SPY/AMS stream, and the console freshness projection is
-   current. The metadata-only prospective preparation remains `pending` with
-   zero complete QQQ sessions and five still required; it wrote no artifact.
-   The next task remains `Ready` and this factual pending result is not a hold
-   on collection, Paper work, or another data candidate.
+8. The post-change 06:20 KST `intraday-head` run completed on 2026-07-24 with
+   task result `0`. Its generation-4 index has two committed chunks per QQQ/NAS
+   and SPY/AMS, but metadata-only preparation still has zero complete QQQ
+   regular sessions and five required. Treat the short coverage as a bounded
+   source/pagination finding; it is not a hold on collection, Paper work, or
+   another data candidate.
 9. The current head-bar contract is not yet an execution-price contract: it
    has no verified tick/decimal-scale field, no proven `NAS` to `NASD` order
    mapping, unqualified provider timestamp edge semantics, and no latest-bar
    freshness predicate. Keep those gaps visible while continuing Data work;
    they do not disable the head cache, KIS Paper, or an independently verified
    price source.
-10. Resume the independent prospective-head accumulation on its normal
-    scheduler cadence. The current metadata-only preparation has zero of five
-    required complete QQQ sessions, so it has no research handoff yet; this is
-    ordinary evidence accumulation, not a permission or scheduling latch.
-    The first 02:35 KST head proved that two pages ended at US mid-session, so
-    the installed task now runs at 06:20 KST with four pages per target. Its
-    next run must be reattested for one exact 390-minute QQQ regular session;
-    a short, duplicate, or source-delayed result is a scoped source fact, not
-    a Paper or Research hold.
+10. Inspect the demonstrated post-close coverage shortfall against the
+    official KIS continuation contract and deterministic fake transport before
+    changing page count, request anchors, or the installed schedule. A bounded
+    data-only verification run may follow a proven correction. Continue the
+    normal cadence independently; the current zero-of-five preparation is
+    ordinary source evidence, not a permission or scheduling latch.
 
 ## Authority And Boundaries
 
@@ -283,8 +286,9 @@ that would cross the 15% floor.
 Current recovery class: `resume`. The historical QQQ/NAS 1m baseline input is
 intact, and the 2026-07-23 header-contract recovery cleared both historical
 minute cursors after committing one final bounded page per target. The
-prospective-head index is readable but has zero of five required complete QQQ
-sessions, so it is pending only as a future current-input source. The former
+generation-4 prospective-head index is readable but still has zero of five
+required complete QQQ sessions after its first post-close run, so it is pending
+only as a future current-input source. The former
 `minute_cursor_invalid` evidence is resolved and never paused the fixed
 receipt, Paper work, or another data lane. Reattest the index and committed
 snapshots before a new network call. Recover a matching orphan snapshot without

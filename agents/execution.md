@@ -94,6 +94,11 @@ remains unavailable.
   of the earlier mid-session configuration; current due runs invoke only their
   named local Docker profiles. Their outcomes are runtime evidence, not another
   permission step.
+- The 2026-07-23 KST due daily SPY head and session tasks both completed with
+  task result `0`. The scheduled session was `paper_only` and returned
+  `no_intent` / `target_already_satisfied`; it created no canary run or broker
+  order. Preserve this as safe execution coverage only: it is neither a fill
+  nor a PnL/model conclusion, and it does not affect the next due Paper action.
 - The first due quote session on 2026-07-22 completed successfully as a task
   but ended before intent creation with `quote_unavailable` /
   `quote_response_incomplete`. Its safe evidence is external at

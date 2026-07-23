@@ -7,6 +7,7 @@ from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from types import SimpleNamespace
+from zoneinfo import ZoneInfo
 
 import pytest
 
@@ -894,8 +895,17 @@ def test_daily_session_linked_observer_uses_only_read_only_routes(
         if request.headers.get("tr_id") == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
     ]
     assert len(history_requests) == 2
-    assert all(request.query["ORD_STRT_DT"] == "20260722" for request in history_requests)
-    assert all(request.query["ORD_END_DT"] == "20260722" for request in history_requests)
+    expected_order_date = outcome.observation.observed_at.astimezone(
+        ZoneInfo("America/New_York")
+    ).strftime("%Y%m%d")
+    assert all(
+        request.query["ORD_STRT_DT"] == request.query["ORD_END_DT"]
+        for request in history_requests
+    )
+    assert {request.query["ORD_STRT_DT"] for request in history_requests} == {
+        expected_order_date,
+        "20260722",
+    }
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     for forbidden in (
         raw_order_id,

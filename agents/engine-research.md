@@ -147,9 +147,9 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    sessions it returns a retriable `pending` fact and writes no artifact. It
    reads no raw bars, credentials, network, KIS route, GPU, model, or replay;
    it is preparation for the future observation, not a research-quality gate.
-   Its first post-schedule run on 2026-07-23 found zero complete sessions and
-   five still required; that does not alter breadth, depth, ensemble, or
-   replication queues.
+   Its first post-change post-close run on 2026-07-24 still found zero complete
+   sessions and five still required; that source-coverage finding does not
+   alter breadth, depth, ensemble, or replication queues.
 
 ## GPU Policy
 

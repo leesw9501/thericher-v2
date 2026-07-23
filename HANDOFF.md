@@ -107,6 +107,13 @@ Windows tasks `thericher-kis-paper-daily-spy-head` (22:15 KST) and
 `thericher-kis-paper-daily-spy-session` (23:50 KST) are installed Tuesday
 through Saturday and use the current compose service at their next due run.
 
+Their 2026-07-23 KST due run completed successfully. The head reattested one
+prior-complete `SPY/AMS` source through 2026-07-22 without retaining the
+current US exchange date. The session recorded the safe Paper-only
+`no_intent` / `target_already_satisfied` outcome: it evaluated its receipt but
+created no canary run or broker order. This is execution-coverage evidence
+only; it does not claim a fill, PnL, or a model result.
+
 The first receipt-linked Paper observer is now invoked automatically by the
 scheduled daily SPY session after that same session has produced its exact
 receipt-derived run ID; the separate `kis-paper-receipt-observer` Docker

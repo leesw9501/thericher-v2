@@ -4614,3 +4614,21 @@ at revision `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`,
 `examples_llm/overseas_stock/inquire_time_itemchartprice`. Claude CLI
 drift-check requests timed out without a verdict, so this decision relies only
 on the official source, isolated fake tests, and the bounded Paper-data result.
+
+## 2026-07-24 - Classify the first post-close intraday-head result as short coverage
+
+Decision: retain the first 06:20 KST post-close head result as a source-coverage
+finding, not as an input qualification, Paper permission, or Research result.
+The authorized data-only task completed successfully and added one 240-row
+minute chunk per QQQ/NAS and SPY/AMS to its independent cache, but the
+metadata-only prospective preparer found zero exact 390-minute QQQ regular
+sessions. It therefore wrote no research artifact and made no model, GPU,
+broker, account, or order call.
+
+Reason: the actual KIS source result falsifies the prior operational assumption
+that four configured pages would necessarily yield a full post-close regular
+session. The next bounded Data objective is to inspect the official request /
+continuation contract and deterministic tests before changing page count,
+anchors, or schedule behavior. A short source slice limits only the exact
+prospective input claim; it cannot halt another authorized Paper, data, or
+research lane.
