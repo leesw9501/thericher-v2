@@ -160,6 +160,12 @@ cursor atomically. It never reads account or live values, places an order, or
 writes market data into Git. A failed or empty call records no data-bearing
 chunk and does not reserve or disable its next correctly scoped collection.
 
+For this KIS minute endpoint, response header `tr_cont` is the pagination
+authority: `M` or `F` continues with `NEXT=1` and a `KEYB` derived from the
+oldest validated bar. Treat `output1.next` and `more` as provider metadata, not
+as cursor control. This keeps a terminal page from becoming a repeated
+`minute_cursor_invalid` recovery loop.
+
 `data.kis_paper_intraday` is the offline consumer: it verifies every index,
 manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
 5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first

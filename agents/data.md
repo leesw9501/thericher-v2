@@ -66,10 +66,16 @@ as a failed collection or an authority hold.
   23:59 UTC on 2026-07-21. Both canonical loaders returned 239 complete bars
   under the conservative collection-time rule. Holiday, early-close, exchange
   timestamp open/close, and regular-session classification remain unqualified.
-- A Docker-profiled continuation cycle and one further bounded chunk now give
-  718 unique 1m bars per stream under the latest offline reattestation: QQQ
+- An earlier Docker-profiled continuation reattestation found
+  718 unique 1m bars per stream: QQQ
   spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21.
-  The index is authoritative for the next cursor and current coverage.
+  The index is authoritative for current coverage and cursor state.
+- On 2026-07-23, KIS's official sample clarified that response header
+  `tr_cont` controls minute pagination, while `output1.next` is metadata. The
+  corrected data-only Docker worker committed 100 `QQQ/NAS` and 69 `SPY/AMS`
+  rows and cleared both historical cursors. This resolves the former
+  `minute_cursor_invalid` recovery fact without changing Paper authority,
+  source retention, or the separate prospective-head cadence.
 - The separate `intraday-head` root receives fresh source-page observations
   without advancing the historical backfill cursor. The Windows Scheduled Task
   `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 06:20
@@ -152,10 +158,11 @@ as a failed collection or an authority hold.
    is source-limited and was never KIS Paper permission.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
-5. Continue the KIS-native minute cache from its persisted cursor at useful
-   regular-session observations. Collect fresh data rather than reviving
-   terminal metadata-only probes; an old failed or unretained result cannot
-   disable this work.
+5. The historical minute cursors are currently exhausted after the
+   header-contract recovery. Continue fresh-session accumulation through the
+   prospective head cache; a future independently scoped historical refresh may
+   still run without approval if it has a useful source reason. An old failed
+   or unretained result cannot disable either path.
 6. Keep the head cache accumulating prospective sessions while preserving its
    independent root and safe coverage evidence. Reattest any candidate complete
    session before handing it to Engine Research.
@@ -234,10 +241,12 @@ that would cross the 15% floor.
   descriptive replay evidence only. Its manifest prohibits training, campaign,
   paper-trading, and ranking use, so it must not become an intraday signal
   input; build the KIS-native minute cache for that loop instead.
-- KIS minute pagination resumes with `NEXT=1` plus a 14-digit `KEYB` derived
-  from the oldest retained exchange timestamp. The first actual QQQ and SPY
-  page pairs each had one exact boundary overlap; conflicts reject cursor
-  advance rather than silently replacing a cached minute.
+- KIS minute pagination uses response header `tr_cont`: `M`/`F` resumes with
+  `NEXT=1` plus a 14-digit `KEYB` derived from the oldest validated exchange
+  timestamp. `output1.next` is provider metadata, not cursor authority. The
+  first actual QQQ and SPY page pairs each had one exact boundary overlap;
+  conflicts reject cursor advance rather than silently replacing a cached
+  minute.
 - The intraday loader uses the explicit KIS Korea fields (`kymd`/`khms`) as its
   UTC basis. It labels a bar incomplete when its end is later than the rounded
   collection minute, so an in-flight minute cannot become a completed feature.
@@ -272,14 +281,15 @@ that would cross the 15% floor.
 ## Recovery
 
 Current recovery class: `resume`. The historical QQQ/NAS 1m baseline input is
-intact. The prospective-head index is readable but has zero of five required
-complete QQQ sessions, so it is pending only as a future current-input source.
-The historical QQQ cursor's `minute_cursor_invalid` is scoped to its next
-collection recovery and does not invalidate already verified sessions or pause
-the fixed receipt. Resume the next scheduled collection normally. Reattest the
-index and committed snapshots before a new network call. Recover a matching
-orphan snapshot without KIS access. Classify a bad snapshot or index as
-`reconcile`; do not overwrite evidence or invent a cursor.
+intact, and the 2026-07-23 header-contract recovery cleared both historical
+minute cursors after committing one final bounded page per target. The
+prospective-head index is readable but has zero of five required complete QQQ
+sessions, so it is pending only as a future current-input source. The former
+`minute_cursor_invalid` evidence is resolved and never paused the fixed
+receipt, Paper work, or another data lane. Reattest the index and committed
+snapshots before a new network call. Recover a matching orphan snapshot without
+KIS access. Classify a bad snapshot or index as `reconcile`; do not overwrite
+evidence or invent a cursor.
 
 ## Next Handoff
 

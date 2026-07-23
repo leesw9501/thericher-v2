@@ -316,13 +316,21 @@ a regular-session research campaign, not continued cache collection, local
 paper smoke work, or another Paper action.
 
 A Docker-profiled follow-up cycle advanced the same cursors without a secret
-file mount. One further bounded continuation chunk now brings the current
-offline reattestation to 718 unique 1m bars for each stream: QQQ spans 12:02
-through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21. Inspect the
-external index before another run; it is authoritative. The first retained v1
+file mount. That offline reattestation found 718 unique 1m bars for each
+stream: QQQ spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on
+2026-07-21. Inspect the external index before another run; it is authoritative.
+The first retained v1
 manifests use the earlier, equivalent completed-bar-rule spelling. The loader supports
 only that exact legacy form plus the explicit current form; do not rewrite the
 immutable snapshots merely to normalize metadata.
+
+On 2026-07-23, the current official KIS sample's response-header continuation
+contract corrected the historical minute cursor parser: `tr_cont` `M`/`F`
+means continue with `NEXT=1`, while `output1.next` remains metadata. A bounded
+Paper data-only Docker cycle then committed 100 `QQQ/NAS` and 69 `SPY/AMS` rows
+and cleared both historical cursors. This is a source-contract recovery, not a
+Paper authority condition; the separate prospective head cache remains the
+normal source for new sessions.
 
 The separate prospective head path now writes under the sibling
 `D:\\market_data\\us_equities\\kis_paper_private\\intraday-head` root and does

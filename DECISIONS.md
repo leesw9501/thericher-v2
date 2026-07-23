@@ -4592,3 +4592,25 @@ data, and never bypass reconciliation for the exact unknown intent.
 Reason: renaming a historical condition as a status or report would recreate
 the same process obstruction the operator has explicitly removed, without
 improving data quality, Paper learning, or recovery truth.
+
+## 2026-07-23 - Use the KIS response header for minute pagination
+
+Decision: use the official KIS overseas-minute response header `tr_cont` as
+the sole continuation authority. `M` or `F` produces the fixed next request
+value `NEXT=1`; every other header state completes the bounded page sequence.
+The collector continues to derive `KEYB` from the oldest validated exchange
+timestamp. `output1.next` and `more` remain recorded provider metadata and do
+not control cursor advancement.
+
+Reason: the prior body-`next == "1"` interpretation turned a terminal
+historical page into `minute_cursor_invalid` despite valid rows. Fake transport
+tests now prove header/body disagreement, both documented continuation states,
+and the unchanged Paper-only request contract. A data-only Docker re-run then
+committed 100 QQQ/NAS and 69 SPY/AMS rows under `D:\market_data` and cleared
+both historical cursors without an account, order, or live call.
+
+The source reference is the official `koreainvestment/open-trading-api` sample
+at revision `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`,
+`examples_llm/overseas_stock/inquire_time_itemchartprice`. Claude CLI
+drift-check requests timed out without a verdict, so this decision relies only
+on the official source, isolated fake tests, and the bounded Paper-data result.
