@@ -45,6 +45,11 @@ fact about its own historical attempt, not a fixed state to clear, a manual
 approval request, or a reason to hold another due collection, Paper action, or
 ready lane.
 
+Do not add a future human-release mechanism for private non-live work by
+renaming it as a status, safety score, report, model metric, or recovery step.
+Those facts may reject only the exact computation with unavailable evidence or
+the exact unknown Paper intent awaiting reconciliation.
+
 Market data stays private, local, and unserved. Stop only the affected cache if
 applicable source terms prohibit retention or if disk policy would be crossed.
 Warn before projected free space falls below 20%; do not begin new large work

@@ -80,6 +80,11 @@ paper-only route selection, no secret output, idempotent intent before a broker
 side effect, and reconciliation before retrying an unknown outcome. They are
 implementation requirements, not approval checkpoints.
 
+This default-action policy also applies when a prior run has no retained bytes,
+an unavailable input, or a failed recovery note. Preserve and scope that fact;
+do not translate it into a new human release, global halt, or another lane's
+permission condition.
+
 ## Current Task Update
 
 The first receipt-linked daily SPY KIS Paper position lifecycle is complete.

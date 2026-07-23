@@ -4568,3 +4568,27 @@ Reason: Docker Compose already injects exactly the two authorized Paper
 market-data values while the container image deliberately excludes `.env`.
 Using the explicit pair fixes a runtime portability defect without widening
 broker authority or changing the Paper-only client route.
+
+## 2026-07-23 - Keep non-live authority free of renamed approval latches
+
+Decision: reaffirm that a status, safety score, report, model metric, recovery
+note, historical marker, or unavailable input cannot be repurposed into a
+human-release requirement for private non-live work. This includes ordinary
+KIS Paper virtual trades, reads, modify/cancel, data retention, research work,
+and goal-owned schedules. A factual condition may reject only the computation
+whose required bytes are absent or the exact unknown durable intent that must
+be reconciled; it cannot suppress a distinct correctly scoped action.
+
+The only authority boundaries remain `KIS_LIVE_*`, live routing or real-money
+behavior, paid commitments, unclear rights, and public exposure. Technical
+truth remains mandatory: virtual-host pinning, secret redaction, immutable
+intent-before-side-effect, and exact-intent reconciliation. These are not
+operator approval steps.
+
+Claude's falsification-first verdict was `supported-with-limits`: scope every
+historical marker to its named evidence, never treat missing bytes as usable
+data, and never bypass reconciliation for the exact unknown intent.
+
+Reason: renaming a historical condition as a status or report would recreate
+the same process obstruction the operator has explicitly removed, without
+improving data quality, Paper learning, or recovery truth.
