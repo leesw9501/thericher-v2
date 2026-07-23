@@ -487,12 +487,14 @@ class KisPaperMarketDataClient:
         if not isinstance(output1, Mapping) or not isinstance(output2, Sequence):
             raise KisPaperMarketDataError("minute_response_invalid")
         rows = tuple(_parse_minute_bar(row) for row in output2)
-        next_value = output1.get("next")
-        next_cursor = str(next_value).strip() if next_value is not None else ""
+        # KIS documents minute pagination through the response ``tr_cont``
+        # header. ``output1.next`` is provider metadata, not a stable cursor.
+        continuation = (_response_header(response.headers, "tr_cont") or "").upper()
+        next_cursor = "1" if continuation in {"M", "F"} else None
         return KisPaperMinutePage(
             query=query,
             bars=rows,
-            next_cursor=next_cursor or None,
+            next_cursor=next_cursor,
             more=str(output1.get("more", "")).strip(),
         )
 

@@ -43,8 +43,8 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     transport = _RecordingTransport(
         [
             _token(),
-            _page("195900", "180000", next_value="1"),
-            _page("175900", "160000", next_value="1"),
+            _page("195900", "180000", next_value="0", continuation="M"),
+            _page("175900", "160000", next_value="1", continuation=""),
         ]
     )
     client = KisPaperMinuteClient(
@@ -63,6 +63,7 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     )
 
     assert first.next_cursor == "1"
+    assert second.next_cursor is None
     assert first.more == "0"
     assert first.bars[0].exchange_time == "195900"
     assert first.bars[-1].exchange_time == "180000"
@@ -138,6 +139,20 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     kis_market_data._validate_request(transport.requests[1])
     kis_market_data._validate_request(transport.requests[2])
     assert all("trading" not in request.url for request in transport.requests)
+
+
+def test_minute_client_accepts_f_continuation_header() -> None:
+    transport = _RecordingTransport(
+        [_token(), _page("195900", "180000", next_value="", continuation="F")]
+    )
+    client = KisPaperMinuteClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    page = client.fetch_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+
+    assert page.next_cursor == "1"
 
 
 def test_historical_session_reuses_one_token_for_daily_and_minute_metadata_reads() -> None:
@@ -271,8 +286,8 @@ def test_urllib_transport_encodes_the_sample_aligned_minute_contract(
     opened: list[urllib.request.Request] = []
     responses = [
         _token(),
-        _page("195900", "180000", next_value="1"),
-        _page("175900", "160000", next_value=""),
+        _page("195900", "180000", next_value="0", continuation="M"),
+        _page("175900", "160000", next_value="1", continuation=""),
     ]
 
     class _Response:
@@ -782,13 +797,20 @@ def _token() -> KisMarketDataResponse:
     return KisMarketDataResponse.from_payload({"access_token": "test-token"})
 
 
-def _page(first_time: str, second_time: str, *, next_value: str) -> KisMarketDataResponse:
+def _page(
+    first_time: str,
+    second_time: str,
+    *,
+    next_value: str,
+    continuation: str = "",
+) -> KisMarketDataResponse:
     return KisMarketDataResponse.from_payload(
         {
             "rt_cd": "0",
             "output1": {"next": next_value, "more": "0"},
             "output2": [_row(first_time), _row(second_time)],
-        }
+        },
+        headers={"tr_cont": continuation},
     )
 
 
