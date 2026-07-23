@@ -403,9 +403,9 @@ ranking, ensemble selection, or a profitability claim, but is sufficient to
 begin the next bounded feature/candidate preparation work.
 
 The Norgate static panel is not a follow-on breadth or GPU candidate under its
-current source scope. The next Data-owned task is only a reusable read-only
-`Bar`-series loader that preserves those negative scope flags; it must not add
-selector, model, PnL, KIS, or paper behavior.
+current source scope. Its reusable read-only `Bar`-series loader is complete
+and preserves those negative scope flags; it adds no selector, model, PnL,
+KIS, or Paper behavior.
 
 ### Execution
 

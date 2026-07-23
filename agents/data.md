@@ -63,8 +63,9 @@ as a failed collection or an authority hold.
   The index is authoritative for the next cursor and current coverage.
 - The separate `intraday-head` root receives fresh source-page observations
   without advancing the historical backfill cursor. The Windows Scheduled Task
-  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35
-  KST; its schedule is never evidence that a full session was stored.
+  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 06:20
+  KST with four pages per target; its schedule is never evidence that a full
+  session was stored.
 - `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing
@@ -105,10 +106,11 @@ as a failed collection or an authority hold.
   This inspection did not read credentials, raw rows, account data, canary
   state, or broker evidence, and made no network call.
 - Windows task metadata on 2026-07-23 showed
-  `thericher-kis-paper-intraday-head` as `Ready`, with its 02:35 KST run
-  returning task result `0` and the next run at 2026-07-24 02:35 KST. The
-  separate `thericher-kis-paper-quote-session` task was also `Ready`, with
-  task result `0`; its execution semantics belong to Execution, not Data.
+  `thericher-kis-paper-intraday-head` as `Ready`, with its historical 02:35
+  KST run returning task result `0`. After the post-close coverage correction,
+  its next run is 2026-07-24 06:20 KST with four pages per target. The separate
+  `thericher-kis-paper-quote-session` task was also `Ready`, with task result
+  `0`; its execution semantics belong to Execution, not Data.
 - A bounded metadata-only inventory on 2026-07-23 reattested the active
   source choices without opening any raw rows. The KIS daily index has QQQ/NAS
   and SPY/AMS `ready` through 2026-07-17; IWM/AMS remains `deferred` with
