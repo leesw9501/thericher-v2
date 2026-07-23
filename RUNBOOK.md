@@ -81,7 +81,7 @@ workers concurrently against the same index.
 
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after
-the 06:20 intraday-head task and before the 08:10 operating review. Its
+the final 06:20 intraday-head trigger and before the 08:10 operating review. Its
 container mounts only `D:\market_data` at `/app/market_data` and receives only
 the two KIS Paper market-data variables; it has no account, order, live, or
 model-artifact surface.
@@ -184,15 +184,16 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 
 Head snapshots live below the sibling `intraday-head` cache root and never
 advance the historical backfill cursor. The Windows Scheduled Task
-`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 06:20
-KST, after the corresponding US regular-session close in both US daylight and
-standard time. It requests four pages per target: the summer envelope is 80
-post-close minutes plus 390 regular-session minutes, so four 120-row pages
-provide the minimum 480-minute coverage with a small margin. This remains a
-bounded data-only invocation (at most eight minute-page calls): it does not
-imply a complete session merely because it ran, and it has no account, order,
-or live route. The next metadata-only inspection must still find one exact
-390-minute regular session before Research may consume it.
+`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35,
+04:35, and 06:20 KST. It keeps the same four-page-per-target maximum on each
+data-only invocation. The earlier in-session windows can expose the provider
+server-authorized continuation depth needed to test the regular open, while the
+final post-close window can cover the session tail. The cache selector, not the
+schedule, determines completeness: it accepts only an exact 390-minute declared
+QQQ session and rejects any partial or gapped union. This remains a bounded
+data-only invocation (at most eight minute-page calls per invocation): it has
+no account, order, or live route. The first three-trigger session is the next
+metadata-only reattestation before Research may consume a session.
 
 For an offline KIS-cache replay after a complete session has been retained:
 

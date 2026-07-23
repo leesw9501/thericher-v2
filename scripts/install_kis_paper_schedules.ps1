@@ -50,7 +50,7 @@ $schedules = @(
         Name = "thericher-kis-paper-intraday-head"
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"
-        At = "06:20"
+        At = @("02:35", "04:35", "06:20")
     },
     @{
         Name = "thericher-kis-paper-daily-backfill"
@@ -65,19 +65,24 @@ Write-Host "Installing local Docker schedules for: $resolvedProjectRoot"
 foreach ($schedule in $schedules) {
     $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --build $($schedule.Service)"
     $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
-    $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday -At $schedule.At
+    $times = @($schedule.At)
+    $triggers = @(
+        $times | ForEach-Object {
+            New-ScheduledTaskTrigger -Weekly -DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday -At $_
+        }
+    )
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile
 
     if ($PSCmdlet.ShouldProcess($schedule.Name, "create or update local Docker scheduled task")) {
         Register-ScheduledTask `
             -TaskName $schedule.Name `
             -Action $action `
-            -Trigger $trigger `
+            -Trigger $triggers `
             -Principal $principal `
             -Description $description `
             -Force | Out-Null
-        Write-Host "Installed $($schedule.Name) at $($schedule.At) KST."
+        Write-Host "Installed $($schedule.Name) at $($times -join ', ') KST."
     } else {
-        Write-Host "WhatIf: would install $($schedule.Name) at $($schedule.At) KST."
+        Write-Host "WhatIf: would install $($schedule.Name) at $($times -join ', ') KST."
     }
 }

@@ -4619,7 +4619,7 @@ on the official source, isolated fake tests, and the bounded Paper-data result.
 
 Decision: retain the first 06:20 KST post-close head result as a source-coverage
 finding, not as an input qualification, Paper permission, or Research result.
-The authorized data-only task completed successfully and added one 240-row
+The authorized data-only task completed successfully and added one terminal 120-row
 minute chunk per QQQ/NAS and SPY/AMS to its independent cache, but the
 metadata-only prospective preparer found zero exact 390-minute QQQ regular
 sessions. It therefore wrote no research artifact and made no model, GPU,
@@ -4632,3 +4632,26 @@ continuation contract and deterministic tests before changing page count,
 anchors, or schedule behavior. A short source slice limits only the exact
 prospective input claim; it cannot halt another authorized Paper, data, or
 research lane.
+
+## 2026-07-24 - Sample prospective head windows during the source session
+
+Decision: retain the existing `thericher-kis-paper-intraday-head` task and
+Docker profile, preserve its four-page-per-target cap, and give that one task
+three Tuesday-through-Saturday KST triggers: 02:35, 04:35, and 06:20. The task
+remains data-only and keeps its independent head cache, exact-overlap handling,
+and D: retention contract. It adds no account, order, live, dashboard, or new
+task/service route.
+
+Reason: the terminal 06:20 result showed that post-close page count cannot
+manufacture server continuation. Safe metadata from the prior 02:35 KST run
+shows two full 120-row pages spanning 09:36 through 13:35 with continuation
+still available after the second page. Earlier in-session samples can therefore
+ask the server for the opening range through its documented continuation path,
+while later samples cover the session tail. The Data selector remains the
+decisive kill test: only an exact 390-minute declared QQQ session becomes a
+future candidate input; any incomplete union stays source evidence.
+
+Claude's focused follow-up verdict was `supported-with-limits`. Its reversal
+condition is an incomplete or gapped union being accepted as complete. Existing
+metadata-selection tests reject that shape, and the first three-trigger session
+will reattest it against the actual source.

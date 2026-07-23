@@ -6,7 +6,7 @@ Determine why the first post-close KIS Paper intraday-head run did not produce
 one complete 390-minute QQQ regular session, then make the smallest proven
 data-only correction.
 
-The 2026-07-24 06:20 KST task succeeded and committed one new 240-row chunk per
+The 2026-07-24 06:20 KST task succeeded and committed one new 120-row chunk per
 QQQ/NAS and SPY/AMS, but the metadata-only preparer still found zero complete
 QQQ regular sessions. This is a bounded source-coverage problem, not a Paper,
 GPU, or human-approval hold.
@@ -52,6 +52,9 @@ GPU, or human-approval hold.
 4. Re-run the metadata-only prospective preparer and classify the result. An
    exact 390-minute QQQ session is future input eligibility; any other result
    remains a source-coverage fact.
+5. The existing named head task now has 02:35, 04:35, and 06:20 KST triggers
+   with the unchanged four-page cap. Do not add a duplicate task or manually
+   duplicate a due/running trigger.
 
 ### Engine Research Agent
 

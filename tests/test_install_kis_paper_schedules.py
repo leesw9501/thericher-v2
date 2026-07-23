@@ -39,8 +39,11 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         "-DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday"
     ) in source
     assert 'At = "23:35"' in source
-    assert 'At = "06:20"' in source
+    assert 'At = @("02:35", "04:35", "06:20")' in source
     assert 'At = "07:00"' in source
+    assert "$times = @($schedule.At)" in source
+    assert "$times | ForEach-Object" in source
+    assert "-Trigger $triggers" in source
     assert (
         "New-ScheduledTaskPrincipal -UserId $currentUser "
         "-LogonType Interactive -RunLevel Limited"

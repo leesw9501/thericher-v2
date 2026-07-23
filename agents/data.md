@@ -78,9 +78,9 @@ as a failed collection or an authority hold.
   source retention, or the separate prospective-head cadence.
 - The separate `intraday-head` root receives fresh source-page observations
   without advancing the historical backfill cursor. The Windows Scheduled Task
-  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 06:20
-  KST with four pages per target; its schedule is never evidence that a full
-  session was stored.
+  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35,
+  04:35, and 06:20 KST with up to four pages per target. Its schedule is never
+  evidence that a full session was stored.
 - `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing
@@ -129,10 +129,14 @@ as a failed collection or an authority hold.
 - The first post-change `intraday-head` task completed at 2026-07-24 06:20 KST
   with task result `0`. Its independent index advanced to generation 4 and
   recorded one further committed chunk per `QQQ/NAS` and `SPY/AMS`, each with
-  240 retained 1m rows and no conflict. The metadata-only preparer still found
+  120 retained 1m rows and no conflict. The metadata-only preparer still found
   zero complete 390-minute QQQ regular sessions, so the combined head evidence
   remains a source-coverage fact rather than a Research handoff. It read no
   credential, raw row, account, or broker evidence and wrote no artifact.
+- On 2026-07-24 the same named head task was reinstalled with three weekly KST
+  triggers at 02:35, 04:35, and 06:20. Windows task metadata confirmed `Ready`,
+  all three triggers, and the next run at 2026-07-25 02:35 KST. It remains one
+  bounded data-only service; no account, order, or live route was added.
 - A bounded metadata-only inventory on 2026-07-23 reattested the active
   source choices without opening any raw rows. The KIS daily index has QQQ/NAS
   and SPY/AMS `ready` through 2026-07-17; IWM/AMS is `source_limited` at its
@@ -187,12 +191,13 @@ as a failed collection or an authority hold.
    freshness predicate. Keep those gaps visible while continuing Data work;
    they do not disable the head cache, KIS Paper, or an independently verified
    price source.
-10. Inspect the demonstrated post-close coverage shortfall against the
-    official KIS continuation contract and deterministic fake transport before
-    changing page count, request anchors, or the installed schedule. A bounded
-    data-only verification run may follow a proven correction. Continue the
-    normal cadence independently; the current zero-of-five preparation is
-    ordinary source evidence, not a permission or scheduling latch.
+10. Reattest the first session observed through the three in-session/post-close
+    triggers. The 02:35 source evidence had continuation available after two
+    120-row pages through 09:36, so the unchanged four-page cap may reach the
+    declared 09:30 regular open; the selector must still reject any short or
+    gapped union. Continue the cadence independently; the current zero-of-five
+    preparation is ordinary source evidence, not a permission or scheduling
+    latch.
 
 ## Authority And Boundaries
 
