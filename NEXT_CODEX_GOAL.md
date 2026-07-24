@@ -2,63 +2,66 @@
 
 ## Objective
 
-Classify the first complete three-window KIS Paper intraday-head collection
-cycle after the 02:35, 04:35, and 06:20 KST schedule installation, without
-changing the proven KIS minute request semantics.
+Verify the first finite, rate-safe KIS Paper daily catch-up while continuing the
+installed three-window intraday-head collection.
 
-The completed diagnosis established that the 2026-07-24 06:20 KST QQQ/NAS and
-SPY/AMS observations each ended at the KIS source after one 120-row page. The
-collector's four-page ceiling did not truncate them: the response did not offer
-an `M`/`F` continuation. The prior in-session observation reached two pages and
-was likewise handled by the existing official continuation contract. This is a
-bounded provider-availability and anchor-timing fact, not a pagination,
-execution, GPU, or operator-approval hold.
+The daily worker now drains ready `QQQ/NAS` and `SPY/AMS` historical cursors
+for at most 48 chunks or six hours. It is deliberately finite rather than an
+unbounded parallel loop: all KIS Paper market-data requests share one external
+1.25-second request-start gate, and an observed rate-limit response creates a
+60-second shared cooldown. No verified daily KIS quota is assumed.
+
+The active daily index currently has `QQQ/NAS` and `SPY/AMS` `ready` at
+`20210107`; `IWM/AMS` remains scoped `source_limited` at its known invalid
+cursor. The historical 1m QQQ/SPY cursors are terminal and must not be
+re-downloaded by the historical worker; the independent head cache remains the
+fresh-session path.
 
 ## Standing Authority
 
-- Private `KIS_PAPER_*` market-data collection and local retention on `D:` are
-  authorized. This goal is data-only; it must not access account or order
+- Private `KIS_PAPER_*` market-data calls and local retention on `D:` are
+  authorized. This goal is data-only and must not call account or order
   endpoints.
 - Do not read `KIS_LIVE_*`, use a live route or real capital, buy data, accept
   unclear rights, publish anything, expose raw rows, or put data/artifacts in
   Git.
-- The existing named `thericher-kis-paper-intraday-head` task owns the three
-  triggers and its four-page cap. Do not add another task or manually duplicate
-  a due/running invocation.
+- Existing named Windows tasks own routine KIS-facing runs. Do not overlap a
+  manually launched catch-up with a due or already-running copy of the same
+  worker.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. After each scheduled run, inspect only sanitized task, index, and chunk
-   metadata. Record page/continuation categories, exact-overlap/conflict
-   counts, and source coverage; do not inspect or output raw market rows.
-2. Re-run the metadata-only prospective preparer after the full cycle. Accept
-   a future input only for an exact, contiguous 390-minute QQQ regular session;
-   otherwise retain `pending` as a source-coverage fact.
-3. Do not change initial anchors, continuation semantics, pagination cap, or
-   schedule unless a new concrete contradiction appears. Any such change needs
-   the required Claude falsification-first review before implementation.
+1. Inspect only sanitized daily-index, gate, task, and chunk metadata before
+   and after the first catch-up. Record whether QQQ/SPY drain, reach a scoped
+   source limit, hit storage protection, or hit the shared rate cooldown.
+2. Let the existing `02:35`, `04:35`, and `06:20` KST intraday-head schedule
+   continue. After a complete cycle, classify coverage metadata; only an exact
+   contiguous 390-minute QQQ regular session becomes a future Research input.
+3. Do not repeatedly query IWM's unchanged invalid cursor or terminal
+   historical 1m cursor. A different useful source scope may proceed
+   independently.
 
 ### Engine Research Agent
 
-Keep the frozen historical baselines and prospective contract unchanged. A
-partial head slice remains neither a model sample nor a selection/GPU input.
+Keep frozen historical baselines unchanged. Partial prospective head coverage
+is not a model sample, candidate selection input, or GPU job trigger.
 
 ### Execution Agent
 
-Keep paper-only routing and existing daily/quote schedules unchanged. Do not
-infer a fill, terminal state, or PnL from task success or daily no-intent
-evidence.
+Keep Paper routing and account/order schedules unchanged. Do not infer an
+order, fill, terminal state, or PnL from data-worker success.
 
 ## Completion Evidence
 
-- Sanitized evidence covers all three scheduled windows, or accurately records
-  a scoped task/recovery anomaly.
-- The metadata-only preparer classifies the resulting QQQ coverage without
-  reading raw rows or becoming an approval gate.
-- Research and Execution boundaries remain unchanged; no duplicate scheduler,
-  broker route, or raw artifact is introduced.
+- Sanitized catch-up output and index metadata explain the QQQ/SPY cursor
+  result without raw rows, secrets, account calls, or order calls.
+- The common request gate prevents overlapping data workers from exceeding the
+  configured pace, and a terminal historical minute cursor avoids redundant
+  pages.
+- Intraday-head coverage is classified independently; no duplicate scheduler,
+  broker route, or artifact-in-Git behavior is introduced.
 
 ## Verification
 
@@ -71,4 +74,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Classify intraday head coverage cycle`
+`Accelerate rate-safe KIS data catchup`

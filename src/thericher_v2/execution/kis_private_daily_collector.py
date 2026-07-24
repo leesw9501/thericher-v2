@@ -60,6 +60,7 @@ _SAFE_FAILURE_REASONS = frozenset(
         "daily_response_rejected",
         "pacing_delay_not_met",
         "paper_host_required",
+        "rate_limited",
         "redirect_rejected",
         "request_not_allowlisted",
         "response_invalid",

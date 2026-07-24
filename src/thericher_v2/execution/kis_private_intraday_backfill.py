@@ -66,6 +66,7 @@ _SAFE_FAILURE_REASONS = frozenset(
         "minute_response_invalid",
         "minute_response_rejected",
         "paper_host_required",
+        "rate_limited",
         "redirect_rejected",
         "request_not_allowlisted",
         "response_invalid",
@@ -129,7 +130,14 @@ class KisPaperPrivateIntradayCursor:
 
 @dataclass(frozen=True)
 class KisPaperPrivateIntradayBackfillRun:
-    status: Literal["collected", "partial", "rejected", "locked", "recovered"]
+    status: Literal[
+        "collected",
+        "partial",
+        "rejected",
+        "locked",
+        "recovered",
+        "source_exhausted",
+    ]
     target_key: str
     row_count: int
     exact_overlap_rows: int
@@ -139,7 +147,14 @@ class KisPaperPrivateIntradayBackfillRun:
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
-        if self.status not in {"collected", "partial", "rejected", "locked", "recovered"}:
+        if self.status not in {
+            "collected",
+            "partial",
+            "rejected",
+            "locked",
+            "recovered",
+            "source_exhausted",
+        }:
             raise ValueError("private intraday backfill status is invalid")
         if not self.target_key.strip() or self.row_count < 0 or self.exact_overlap_rows < 0:
             raise ValueError("private intraday backfill result is invalid")
@@ -216,7 +231,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
             for target in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
         )
     try:
-        index = _read_or_create_index(root)
+        index = _read_or_create_index(root, hydrate_source_exhaustion=resume_cursor)
         _attest_committed_snapshots(root=root, index=index)
         recovered = _recover_orphan_snapshots(root=root, index=index)
         if recovered:
@@ -248,6 +263,17 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 if resume_cursor
                 else None
             )
+            if resume_cursor and _target_source_is_exhausted(target_state):
+                results.append(
+                    KisPaperPrivateIntradayBackfillRun(
+                        status="source_exhausted",
+                        target_key=target.target_key,
+                        row_count=0,
+                        exact_overlap_rows=0,
+                        reason="source_exhausted",
+                    )
+                )
+                continue
             collected = _collect_target(
                 client=client,
                 target=target,
@@ -319,7 +345,14 @@ def run_kis_paper_private_intraday_backfill_cycle(
                         if collected.output_cursor is not None
                         else None
                     )
-                target_state["last_reason"] = "already_cached"
+                target_state["last_reason"] = (
+                    "source_exhausted"
+                    if _collected_target_source_is_exhausted(
+                        collected=collected,
+                        resume_cursor=resume_cursor,
+                    )
+                    else "already_cached"
+                )
                 target_state["last_observed_at_utc"] = _format_utc(observed)
                 _write_index(root=root, index=index)
                 results.append(
@@ -352,7 +385,14 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     if collected.output_cursor is not None
                     else None
                 )
-            target_state["last_reason"] = collected.reason
+            target_state["last_reason"] = (
+                "source_exhausted"
+                if _collected_target_source_is_exhausted(
+                    collected=collected,
+                    resume_cursor=resume_cursor,
+                )
+                else collected.reason
+            )
             target_state["last_observed_at_utc"] = _format_utc(observed)
             index["generation"] = int(index["generation"]) + 1
             _write_index(root=root, index=index)
@@ -665,7 +705,11 @@ def _compressed_raw_minute_csv(rows: tuple[KisPaperMinuteRawBar, ...]) -> bytes:
     return buffer.getvalue()
 
 
-def _read_or_create_index(root: Path) -> dict[str, object]:
+def _read_or_create_index(
+    root: Path,
+    *,
+    hydrate_source_exhaustion: bool,
+) -> dict[str, object]:
     path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
     if not path.exists():
         index: dict[str, object] = {
@@ -695,6 +739,8 @@ def _read_or_create_index(root: Path) -> dict[str, object]:
     if not isinstance(loaded, dict):
         raise ValueError("private intraday index is invalid")
     _validate_index(loaded)
+    if hydrate_source_exhaustion and _hydrate_source_exhaustion_state(loaded):
+        _write_index(root=root, index=loaded)
     return loaded
 
 
@@ -770,6 +816,54 @@ def _index_target(
         if isinstance(state, dict) and state.get("target_key") == target.target_key:
             return state
     raise ValueError("private intraday index target is missing")
+
+
+def _target_source_is_exhausted(target_state: Mapping[str, object]) -> bool:
+    return (
+        target_state.get("next_cursor") is None
+        and target_state.get("last_reason") == "source_exhausted"
+    )
+
+
+def _collected_target_source_is_exhausted(
+    *,
+    collected: _CollectedTarget,
+    resume_cursor: bool,
+) -> bool:
+    return (
+        resume_cursor
+        and collected.status == "collected"
+        and collected.output_cursor is None
+    )
+
+
+def _hydrate_source_exhaustion_state(index: dict[str, object]) -> bool:
+    """Upgrade old terminal cursor facts without issuing another source request."""
+
+    changed = False
+    targets = index.get("targets")
+    if not isinstance(targets, list):
+        raise ValueError("private intraday index is invalid")
+    for target_state in targets:
+        if not isinstance(target_state, dict) or target_state.get("next_cursor") is not None:
+            continue
+        if target_state.get("last_reason") is not None:
+            continue
+        chunks = target_state.get("chunks")
+        if not isinstance(chunks, list):
+            raise ValueError("private intraday index is invalid")
+        retained_chunks = [chunk for chunk in chunks if not _is_unretained_marker(chunk)]
+        if not retained_chunks:
+            continue
+        last_chunk = retained_chunks[-1]
+        if (
+            isinstance(last_chunk, Mapping)
+            and last_chunk.get("outcome") == "committed"
+            and last_chunk.get("output_cursor") is None
+        ):
+            target_state["last_reason"] = "source_exhausted"
+            changed = True
+    return changed
 
 
 def _target_fingerprints(target_state: Mapping[str, object]) -> dict[str, str]:

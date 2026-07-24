@@ -110,14 +110,17 @@ def test_backfill_script_forwards_container_safe_cache_and_repository_paths(
     }
 
 
-def test_daily_backfill_docker_profile_is_data_only() -> None:
+def test_daily_catchup_docker_profile_is_data_only() -> None:
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
     section = compose.split("\n  kis-paper-daily-backfill:\n", maxsplit=1)[1].split(
         "\n  kis-paper-daily-spy-head:\n", maxsplit=1
     )[0]
 
     assert 'profiles: ["kis-paper-daily-backfill"]' in section
-    assert "backfill_kis_paper_private_daily.py" in section
+    assert "backfill_kis_paper_market_data_catchup.py" in section
+    assert "--max-chunks" in section
+    assert '"48"' in section
+    assert "--max-runtime-seconds" in section
     assert "/app/market_data/us_equities/kis_paper_private/daily" in section
     assert "KIS_PAPER_APP_KEY" in section
     assert "KIS_PAPER_APP_SECRET" in section

@@ -14,6 +14,10 @@ from thericher_v2.execution.kis_market_data import (
     UrllibKisPaperMarketDataTransport,
     load_kis_paper_market_data_config,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
+    KisPaperMarketDataRateGate,
+)
 from thericher_v2.execution.kis_paper_daily_spy_head import (
     KIS_PAPER_DAILY_SPY_HEAD_ROOT,
     KisPaperDailySpyHeadError,
@@ -39,8 +43,14 @@ def main(
         return
     try:
         config = load_kis_paper_market_data_config(dotenv_path)
+        request_gate = KisPaperMarketDataRateGate(
+            control_root=_shared_control_root(Path(args.cache_root))
+        )
         result = collect_kis_paper_daily_spy_head_once(
-            KisPaperMarketDataClient(config=config, transport=UrllibKisPaperMarketDataTransport()),
+            KisPaperMarketDataClient(
+                config=config,
+                transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
+            ),
             cache_root=args.cache_root,
             repository_root=args.repository_root,
             observed_at=clock(),
@@ -57,6 +67,14 @@ def main(
         print(json.dumps({"status": "unavailable", "reason": "daily_head_unavailable"}))
         return
     print(json.dumps(result.safe_payload(), sort_keys=True))
+
+
+def _shared_control_root(cache_root: Path) -> Path:
+    """Locate the common gate beside every private KIS Paper cache lane."""
+
+    if cache_root.name == "v1" and cache_root.parent.name == "daily-head":
+        return cache_root.parent.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
+    return cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
 
 
 if __name__ == "__main__":

@@ -257,16 +257,22 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
-- usable chunks: QQQ six retained usable chunks plus one historical no-bytes
-  observation, SPY seven committed, and IWM three committed plus one
-  hash-attested partial page; deferred snapshots remain evidence only
+- current logical cursor state: QQQ/NAS is `ready` at `20210107` with eight
+  chunks, SPY/AMS is `ready` at `20210107` with seven chunks, and IWM/AMS is
+  `source_limited` at `20231010` with ten chunks
 - current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
 - `thericher-kis-paper-daily-backfill` is installed for 07:00 KST Tuesday
-  through Saturday. It runs one bounded Docker data-only chunk after the
-  intraday head and before the local operating review; it has no account or
-  order route.
+  through Saturday. It runs a finite data-only catch-up of up to 48 daily
+  chunks or six hours after the intraday head and before the local operating
+  review; it has no account or order route.
+- Every KIS Paper market-data worker shares the external
+  `D:\market_data\us_equities\kis_paper_private\collection-control-v1`
+  request gate. It starts requests at least 1.25 seconds apart and records only
+  timing facts; a categorical KIS rate limit imposes a shared 60-second
+  cooldown. It stores no credentials, response bodies, account facts, or raw
+  rows.
 - The Docker profile completed an actual 199-row `SPY/AMS` chunk on 2026-07-23
   using only its injected Paper app-key/app-secret pair. Its image does not
   mount `.env`; the shared market-data loader accepts only a complete named
@@ -309,9 +315,11 @@ sessions, 252,609 bars, and the original rank range 1 through 541 without any
 Norgate SDK, credential, network, GPU, or artifact-root access.
 
 The worker writes a raw snapshot and manifest before atomically moving a
-cursor. Its two-minute shared retry after a token event is observed source
-transport pacing, not a permission or model-quality gate. Inspect the live
-index before a new run because it is authoritative.
+cursor. The scheduled catch-up reuses one Paper client for its finite run and
+relies on the shared request gate rather than a daily quota assumption. A
+terminal historical minute cursor is recorded as `source_exhausted` without a
+new request; the separate head cache remains the normal path for fresh minutes.
+Inspect the live index before a new run because it is authoritative.
 
 The first reusable KIS-native intraday cache is now at
 `D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.

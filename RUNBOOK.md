@@ -63,21 +63,32 @@ The active raw daily cache is at:
 D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json
 ```
 
-Run a bounded worker chunk whenever the authoritative index says it is due:
+Run the finite catch-up whenever the authoritative index has ready daily
+cursors:
 
 ```powershell
-uv run python scripts\backfill_kis_paper_private_daily.py --execute
+uv run python scripts\backfill_kis_paper_market_data_catchup.py --execute `
+  --max-chunks 48 --max-runtime-seconds 21600
 
 docker compose --profile kis-paper-daily-backfill run --rm --no-deps --build `
   kis-paper-daily-backfill
 ```
 
 The worker reattests committed snapshots, recovers a matching orphan before a
-new network call, obtains one paper token, requests up to two daily pages,
-writes a raw snapshot plus manifest to `D:`, then atomically advances one
-cursor. Read the index's shared retry time after a token event; that pacing is
-observed source behavior, not an approval or quality gate. Do not run two
-workers concurrently against the same index.
+new network call, obtains one Paper token for the finite run, requests up to
+two daily pages per chunk, writes each raw snapshot plus manifest to `D:`, then
+atomically advances the cursor. It stops when no ready target remains, the
+chunk/runtime budget is spent, storage protection applies, recovery needs work,
+or the shared rate cooldown is active.
+
+All KIS Paper market-data workers use the same external request gate below
+`D:\market_data\us_equities\kis_paper_private\collection-control-v1`. Request
+starts are serialized at least 1.25 seconds apart. HTTP `429` or KIS
+`EGW00201` records a 60-second categorical cooldown. The control file stores
+only timing state, never response bodies, raw rows, credentials, account facts,
+or authority state. There is no verified daily quota: do not add an unbounded
+daemon or parallel flood. Do not run a second daily worker while the first owns
+the index.
 
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after

@@ -107,9 +107,12 @@ def run_kis_paper_private_daily_backfill_once(
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] | None = None,
     monotonic_clock: Callable[[], float] | None = None,
+    inter_chunk_interval: timedelta = KIS_PAPER_PRIVATE_DAILY_BACKFILL_MIN_CHUNK_INTERVAL,
 ) -> KisPaperPrivateDailyBackfillRun:
     """Commit or recover one small chunk without a daemon or a one-shot marker."""
 
+    if not isinstance(inter_chunk_interval, timedelta) or inter_chunk_interval < timedelta(0):
+        raise ValueError("private daily inter-chunk interval is invalid")
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     root = _backfill_root(cache_root=cache_root, repo_root=repo_root)
     lock = _acquire_worker_lock(root=root, observed_at=observed)
@@ -136,6 +139,7 @@ def run_kis_paper_private_daily_backfill_once(
             cache_root=cache_root,
             repo_root=repo_root,
             observed_at=observed,
+            inter_chunk_interval=inter_chunk_interval,
         )
         if recovered is not None:
             _write_backfill_index(root=root, index=index)
@@ -207,6 +211,7 @@ def run_kis_paper_private_daily_backfill_once(
             target=target,
             snapshot=snapshot,
             observed_at=observed,
+            inter_chunk_interval=inter_chunk_interval,
             recovered=False,
         )
     finally:
@@ -386,6 +391,7 @@ def _recover_orphan_snapshot(
     cache_root: Path,
     repo_root: Path,
     observed_at: datetime,
+    inter_chunk_interval: timedelta,
 ) -> KisPaperPrivateDailyBackfillRun | None:
     root = _daily_cache_root(cache_root=cache_root, repo_root=repo_root)
     committed_hashes = {
@@ -419,6 +425,7 @@ def _recover_orphan_snapshot(
                 target=target,
                 snapshot=snapshot,
                 observed_at=observed_at,
+                inter_chunk_interval=inter_chunk_interval,
                 recovered=True,
             )
     return None
@@ -431,6 +438,7 @@ def _commit_snapshot(
     target: dict[str, object],
     snapshot: Mapping[str, object],
     observed_at: datetime,
+    inter_chunk_interval: timedelta,
     recovered: bool,
 ) -> KisPaperPrivateDailyBackfillRun:
     if snapshot["input_cursor_date"] != target["next_anchor_date"]:
@@ -518,7 +526,7 @@ def _commit_snapshot(
 
     if result_status in {"completed", "partial"} and not recovered:
         index["network_retry_not_before_utc"] = _format_utc(
-            observed_at + KIS_PAPER_PRIVATE_DAILY_BACKFILL_MIN_CHUNK_INTERVAL
+            observed_at + inter_chunk_interval
         )
         index["last_shared_reason"] = "inter_chunk_pace"
 

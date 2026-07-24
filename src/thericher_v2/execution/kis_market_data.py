@@ -16,6 +16,8 @@ from typing import Any, BinaryIO, Literal, Protocol
 
 from thericher_v2.contracts import SCHEMA_VERSION
 
+from .kis_market_data_rate_gate import KisPaperMarketDataRateGate
+
 KIS_PAPER_MARKET_DATA_BASE_URL = "https://openapivts.koreainvestment.com:29443"
 KIS_PAPER_TOKEN_PATH = "/oauth2/tokenP"
 KIS_PAPER_MINUTE_PATH = "/uapi/overseas-price/v1/quotations/inquire-time-itemchartprice"
@@ -152,10 +154,16 @@ class KisMarketDataTransport(Protocol):
 class UrllibKisPaperMarketDataTransport:
     """Direct-only transport for the bounded paper market-data allowlist."""
 
-    def __init__(self, *, timeout_seconds: float = 15.0) -> None:
+    def __init__(
+        self,
+        *,
+        timeout_seconds: float = 15.0,
+        request_gate: KisPaperMarketDataRateGate | None = None,
+    ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
         self._timeout_seconds = timeout_seconds
+        self._request_gate = request_gate
         # Never inherit HTTPS_PROXY for credential-bearing paper requests.
         self._opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}),
@@ -164,6 +172,8 @@ class UrllibKisPaperMarketDataTransport:
 
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
         _validate_request(request)
+        if self._request_gate is not None:
+            self._request_gate.wait_for_request_slot()
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
             if request.json_body is not None
@@ -178,19 +188,22 @@ class UrllibKisPaperMarketDataTransport:
         )
         try:
             with self._opener.open(http_request, timeout=self._timeout_seconds) as response:
-                return KisMarketDataResponse(
+                result = KisMarketDataResponse(
                     status_code=response.status,
                     headers=dict(response.headers.items()),
                     body=response.read(),
                 )
         except urllib.error.HTTPError as error:
-            return KisMarketDataResponse(
+            result = KisMarketDataResponse(
                 status_code=error.code,
                 headers=dict(error.headers.items()) if error.headers is not None else {},
                 body=error.read(),
             )
         except (OSError, TimeoutError, urllib.error.URLError) as error:
             raise KisPaperMarketDataError("transport_failure") from error
+        if self._request_gate is not None and _response_is_rate_limited(result):
+            self._request_gate.record_rate_limit()
+        return result
 
 
 @dataclass(frozen=True)
@@ -854,12 +867,24 @@ def _successful_payload(
     response: KisMarketDataResponse,
     code: str,
 ) -> Mapping[str, Any]:
+    if _response_is_rate_limited(response):
+        raise KisPaperMarketDataError("rate_limited")
     if response.status_code != 200:
         raise KisPaperMarketDataError(code)
     payload = response.payload()
     if str(payload.get("rt_cd", "")) != "0":
         raise KisPaperMarketDataError(code)
     return payload
+
+
+def _response_is_rate_limited(response: KisMarketDataResponse) -> bool:
+    if response.status_code == 429:
+        return True
+    try:
+        payload = response.payload()
+    except KisPaperMarketDataError:
+        return False
+    return str(payload.get("msg_cd", "")).strip().upper() == "EGW00201"
 
 
 def _validate_request(request: KisMarketDataRequest) -> None:

@@ -1,4 +1,4 @@
-"""Run one resumable private KIS Paper daily-cache backfill chunk."""
+"""Drain finite private KIS Paper daily-history cursors at the shared safe pace."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import argparse
 import json
 import subprocess
 from collections.abc import Callable, Sequence
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from thericher_v2.execution.kis_market_data import (
@@ -20,7 +20,13 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
     KisPaperMarketDataRateGate,
 )
+from thericher_v2.execution.kis_paper_market_data_catchup import (
+    KIS_PAPER_MARKET_DATA_CATCHUP_MAX_CHUNKS,
+    KIS_PAPER_MARKET_DATA_CATCHUP_MAX_RUNTIME,
+    run_kis_paper_market_data_catchup,
+)
 from thericher_v2.execution.kis_private_daily_backfill import (
+    KisPaperPrivateDailyBackfillRun,
     run_kis_paper_private_daily_backfill_once,
 )
 from thericher_v2.execution.kis_private_daily_collector import (
@@ -43,27 +49,55 @@ def main(
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT)
     parser.add_argument("--repository-root", type=Path, default=_REPO_ROOT)
+    parser.add_argument("--max-chunks", type=int, default=KIS_PAPER_MARKET_DATA_CATCHUP_MAX_CHUNKS)
+    parser.add_argument(
+        "--max-runtime-seconds",
+        type=float,
+        default=KIS_PAPER_MARKET_DATA_CATCHUP_MAX_RUNTIME.total_seconds(),
+    )
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
         return
+    if args.max_runtime_seconds <= 0:
+        parser.error("--max-runtime-seconds must be positive")
+
     cache_root = Path(args.cache_root)
     repository_root = Path(args.repository_root)
     request_gate = KisPaperMarketDataRateGate(
         control_root=cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
     )
+    revision = (code_revision or _current_code_revision)(repository_root)
+    client: KisPaperMarketDataClient | None = None
 
     def client_factory() -> KisPaperMarketDataClient:
-        config = load_kis_paper_market_data_config(dotenv_path)
-        return _client(config, request_gate=request_gate)
+        nonlocal client
+        if client is None:
+            client = _client(
+                load_kis_paper_market_data_config(dotenv_path),
+                request_gate=request_gate,
+                max_daily_page_attempts=(
+                    args.max_chunks * KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS
+                ),
+            )
+        return client
 
-    try:
-        result = run_kis_paper_private_daily_backfill_once(
+    def run_daily_chunk() -> KisPaperPrivateDailyBackfillRun:
+        return run_kis_paper_private_daily_backfill_once(
             client_factory=client_factory,
             cache_root=cache_root,
             repo_root=repository_root,
-            code_revision=(code_revision or _current_code_revision)(repository_root),
+            code_revision=revision,
             observed_at=clock(),
+            inter_chunk_interval=timedelta(0),
+        )
+
+    try:
+        result = run_kis_paper_market_data_catchup(
+            run_daily_chunk=run_daily_chunk,
+            max_chunks=args.max_chunks,
+            max_runtime=timedelta(seconds=args.max_runtime_seconds),
+            clock=clock,
         )
     except KisPaperMarketDataError as error:
         print(
@@ -77,17 +111,17 @@ def main(
         )
         return
     except (OSError, ValueError):
-        print(json.dumps({"status": "indeterminate", "reason": "backfill_worker_unavailable"}))
+        print(json.dumps({"status": "indeterminate", "reason": "catchup_worker_unavailable"}))
         return
+
     print(
         json.dumps(
             {
                 "status": result.status,
-                "target_key": result.target_key,
-                "manifest_path": str(result.manifest_path) if result.manifest_path else None,
-                "manifest_hash": result.manifest_hash,
-                "row_count": result.row_count,
-                "reason": result.reason,
+                "chunk_attempt_count": result.chunk_attempt_count,
+                "retained_chunk_count": result.retained_chunk_count,
+                "completed_target_count": result.completed_target_count,
+                "reason": result.last_reason,
             },
             sort_keys=True,
         )
@@ -97,12 +131,13 @@ def main(
 def _client(
     config: KisPaperMarketDataConfig,
     *,
-    request_gate: KisPaperMarketDataRateGate | None = None,
+    request_gate: KisPaperMarketDataRateGate,
+    max_daily_page_attempts: int = KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
 ) -> KisPaperMarketDataClient:
     return KisPaperMarketDataClient(
         config=config,
         transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
-        max_daily_page_attempts=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
+        max_daily_page_attempts=max_daily_page_attempts,
     )
 
 

@@ -255,6 +255,64 @@ def test_auth_failure_stops_before_any_market_data_get() -> None:
     assert [request.method for request in transport.requests] == ["POST"]
 
 
+def test_market_data_client_classifies_the_safe_kis_rate_limit_code() -> None:
+    transport = _RecordingTransport(
+        [
+            _token(),
+            KisMarketDataResponse.from_payload({"rt_cd": "1", "msg_cd": "EGW00201"}),
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="rate_limited"):
+        client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
+
+
+def test_urllib_transport_gates_each_allowed_request_and_records_rate_limit(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class _Gate:
+        def __init__(self) -> None:
+            self.slot_count = 0
+            self.rate_limit_count = 0
+
+        def wait_for_request_slot(self) -> None:
+            self.slot_count += 1
+
+        def record_rate_limit(self) -> None:
+            self.rate_limit_count += 1
+
+    class _HttpErrorOpener:
+        def open(self, *_args: object, **_kwargs: object) -> object:
+            raise urllib.error.HTTPError(
+                url="https://example.test",
+                code=429,
+                msg="rate limited",
+                hdrs=None,
+                fp=None,
+            )
+
+    gate = _Gate()
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _HttpErrorOpener())
+    transport = UrllibKisPaperMarketDataTransport(request_gate=gate)  # type: ignore[arg-type]
+
+    response = transport.request(
+        KisMarketDataRequest(
+            method="POST",
+            url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+            headers={"content-type": "application/json", "accept": "application/json"},
+            json_body={"grant_type": "client_credentials", "appkey": "key", "appsecret": "secret"},
+        )
+    )
+
+    assert response.status_code == 429
+    assert gate.slot_count == 1
+    assert gate.rate_limit_count == 1
+
+
 def test_urllib_transport_disables_proxies_and_installs_a_redirect_rejecting_handler(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

@@ -123,6 +123,62 @@ def test_writer_rejects_malformed_index_before_any_client_request(tmp_path: Path
     assert client.queries == []
 
 
+def test_hydrates_terminal_cursor_without_another_minute_request(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    first = _MinuteClient(
+        [
+            _page(
+                symbol="QQQ",
+                exchange="NAS",
+                rows=_rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2),
+                next_cursor=None,
+            ),
+            _page(
+                symbol="SPY",
+                exchange="AMS",
+                rows=_rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2),
+                next_cursor=None,
+            ),
+        ]
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=first,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    for target in index["targets"]:
+        target["last_reason"] = None
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+    second = _MinuteClient([])
+
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=second,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert second.queries == []
+    assert [(result.target_key, result.status, result.reason) for result in results] == [
+        ("QQQ/NAS/1m", "source_exhausted", "source_exhausted"),
+        ("SPY/AMS/1m", "source_exhausted", "source_exhausted"),
+    ]
+
+
 def test_cycle_writes_only_external_raw_cache_and_loader_resamples_all_timeframes(
     tmp_path: Path,
 ) -> None:
@@ -438,7 +494,7 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
     first_rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
     initial = _MinuteClient(
         [
-            _page(symbol="QQQ", exchange="NAS", rows=first_rows, next_cursor=None),
+            _page(symbol="QQQ", exchange="NAS", rows=first_rows, next_cursor="1"),
             KisPaperMarketDataError("minute_response_empty"),
         ]
     )
@@ -489,33 +545,39 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
     assert len(qqq["chunks"]) == 1
 
 
-def test_repeated_identical_initial_page_reuses_cache_without_another_snapshot(
+def test_terminal_initial_page_is_not_requested_again_after_source_exhaustion(
     tmp_path: Path,
 ) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     cache_root = tmp_path / "market-data" / "intraday"
     rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
-    for observed_at in (
-        datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
-        datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
-    ):
-        results = run_kis_paper_private_intraday_backfill_cycle(
-            client=_MinuteClient(
-                [
-                    _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor=None),
-                    KisPaperMarketDataError("minute_response_empty"),
-                ]
-            ),
-            cache_root=cache_root,
-            repo_root=repo_root,
-            code_revision="git:test",
-            pages_per_target=1,
-            observed_at=observed_at,
-            sleeper=lambda _seconds: None,
-            monotonic_clock=lambda: 0.0,
-        )
-    assert results[0].status == "recovered"
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor=None),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient([KisPaperMarketDataError("minute_response_empty")]),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    assert results[0].status == "source_exhausted"
     index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")

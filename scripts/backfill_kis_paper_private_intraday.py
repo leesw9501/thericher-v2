@@ -21,6 +21,10 @@ from thericher_v2.execution.kis_market_data import (
     UrllibKisPaperMarketDataTransport,
     load_kis_paper_market_data_config,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
+    KisPaperMarketDataRateGate,
+)
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT,
     KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
@@ -69,9 +73,12 @@ def main(
 
     try:
         config = _load_paper_config(dotenv_path)
+        request_gate = KisPaperMarketDataRateGate(
+            control_root=_base_cache_root().parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
+        )
         client = KisPaperMarketDataClient(
             config=config,
-            transport=UrllibKisPaperMarketDataTransport(),
+            transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
             max_minute_page_attempts=len(KIS_PAPER_PRIVATE_INTRADAY_TARGETS)
             * args.pages_per_target,
         )

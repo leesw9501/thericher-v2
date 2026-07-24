@@ -199,12 +199,16 @@ services:
     profiles: ["kis-paper-daily-backfill"]
     command:
       - python
-      - scripts/backfill_kis_paper_private_daily.py
+      - scripts/backfill_kis_paper_market_data_catchup.py
       - --execute
       - --cache-root
       - /app/market_data/us_equities/kis_paper_private/daily
       - --repository-root
       - /app
+      - --max-chunks
+      - "48"
+      - --max-runtime-seconds
+      - "21600"
     environment:
       THERICHER_MODE: off
       KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}

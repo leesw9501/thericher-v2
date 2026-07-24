@@ -4655,3 +4655,29 @@ Claude's focused follow-up verdict was `supported-with-limits`. Its reversal
 condition is an incomplete or gapped union being accepted as complete. Existing
 metadata-selection tests reject that shape, and the first three-trigger session
 will reattest it against the actual source.
+
+## 2026-07-24 - Use finite rate-safe KIS Paper market-data catch-up
+
+Decision: treat the current KIS Paper market-data constraint as a shared
+request-rate concern, not an assumed daily quota. All Paper market-data
+workers now share an external 1.25-second request-start gate and record a
+60-second cooldown after HTTP `429` or KIS `EGW00201`. The 07:00 KST daily
+worker uses one Paper client to drain at most 48 ready daily chunks or six
+hours, then stops with a categorical result. It retains the existing IWM
+source-limit behavior and never reads account, order, or live credentials.
+
+The historical QQQ/SPY minute cursor is hydrated as `source_exhausted` after a
+verified terminal page rather than downloading that terminal range repeatedly.
+The independent intraday-head cache remains the only scheduled fresh-minute
+path.
+
+Reason: official KIS materials establish a per-second request constraint, but
+no verified daily total was found. A finite shared gate reaches ready history
+quickly without a parallel request flood, duplicate token issuance, or an
+unbounded daemon. The gate persists timing facts only under `D:`, never raw
+responses, credentials, account facts, or a permission state.
+
+Claude's falsification-first verdict was `supported-with-limits`: do not call
+this high-throughput, keep the run finite, prevent a long worker from starving
+fresh-head collection, and preserve the source/terms boundary. The daily
+worker's hard time/chunk bounds and shared request gate satisfy those limits.

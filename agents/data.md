@@ -31,17 +31,25 @@ as a failed collection or an authority hold.
   into a price, account, position, fill, or PnL assertion.
   `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
   Saturday.
-- `thericher-kis-paper-daily-backfill` runs one data-only Docker chunk at
-  07:00 KST Tuesday through Saturday. It mounts only `D:\market_data` and
-  carries only KIS Paper market-data credentials, so it cannot access an
-  account, submit an order, or read model artifacts.
+- `thericher-kis-paper-daily-backfill` runs a finite data-only catch-up at
+  07:00 KST Tuesday through Saturday: at most 48 daily chunks or six hours.
+  It mounts only `D:\market_data` and carries only KIS Paper market-data
+  credentials, so it cannot access an account, submit an order, or read model
+  artifacts. One client is reused within each run to avoid unnecessary token
+  calls.
+- Daily, intraday, and daily-head market-data workers share
+  `D:\market_data\us_equities\kis_paper_private\collection-control-v1`.
+  The gate serializes request starts at 1.25 seconds or more and records a
+  categorical 60-second cooldown after a KIS rate-limit response. Its state
+  contains timing facts only, never credentials, raw rows, account data, or a
+  permission latch.
 - The Docker data-only profile completed an end-to-end Paper market-data chunk
   on 2026-07-23 with its injected two-key Paper environment, committing 199
   `SPY/AMS` rows. It has no account/order mount or route.
-- Last known clean common coverage: 694 completed sessions. QQQ has six
-  retained usable chunks plus one historical no-bytes observation, SPY seven,
-  and IWM three plus one validated partial chunk. IWM's unchanged 2023-10-10
-  cursor is `source_limited`; inspect the index before acting.
+- Last known clean common coverage: 694 completed sessions. The current daily
+  index has QQQ/NAS and SPY/AMS `ready` at `20210107` with eight and seven
+  chunks respectively; IWM's unchanged 2023-10-10 cursor is `source_limited`
+  with ten chunks. Inspect the index before acting.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
@@ -170,10 +178,12 @@ as a failed collection or an authority hold.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
 5. The historical minute cursors are currently exhausted after the
-   header-contract recovery. Continue fresh-session accumulation through the
-   prospective head cache; a future independently scoped historical refresh may
-   still run without approval if it has a useful source reason. An old failed
-   or unretained result cannot disable either path.
+   header-contract recovery. Their next metadata hydration marks terminal
+   QQQ/SPY cursors `source_exhausted` without another page request. Continue
+   fresh-session accumulation through the prospective head cache; a future
+   independently scoped historical refresh may still run without approval if it
+   has a useful source reason. An old failed or unretained result cannot disable
+   either path.
 6. Keep the head cache accumulating prospective sessions while preserving its
    independent root and safe coverage evidence. Reattest any candidate complete
    session before handing it to Engine Research.
