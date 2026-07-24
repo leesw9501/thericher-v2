@@ -271,6 +271,21 @@ def test_market_data_client_classifies_the_safe_kis_rate_limit_code() -> None:
         client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
 
 
+def test_market_data_client_classifies_rate_limit_before_token_auth_rejection() -> None:
+    transport = _RecordingTransport(
+        [KisMarketDataResponse.from_payload({"rt_cd": "1", "msg_cd": "EGW00201"})]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="rate_limited"):
+        client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
+
+    assert [request.method for request in transport.requests] == ["POST"]
+
+
 def test_urllib_transport_gates_each_allowed_request_and_records_rate_limit(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

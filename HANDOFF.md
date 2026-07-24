@@ -258,8 +258,9 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
 - current logical cursor state: QQQ/NAS is `ready` at `20210107` with eight
-  chunks, SPY/AMS is `ready` at `20210107` with seven chunks, and IWM/AMS is
-  `source_limited` at `20231010` with ten chunks
+  chunks, SPY/AMS is retry-ready after its scoped `auth_rejected` record at
+  `20210107` with eight chunks, and IWM/AMS is `source_limited` at `20231010`
+  with ten chunks
 - current common intersection: 694 completed sessions
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
@@ -278,6 +279,13 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
   mount `.env`; the shared market-data loader accepts only a complete named
   Paper pair, rejects a partial pair or live mode, and leaves host `.env`
   parsing as its strict fallback.
+- The first accelerated catch-up invocation on 2026-07-24 reached only the
+  Paper token endpoint and returned the safe `auth_rejected` result before any
+  row was retained. The shared gate recorded no rate-limit event. The affected
+  SPY cursor has only its normal short retry state; this is an exact external
+  credential/provider fact, not a global collection, Paper, or scheduler hold.
+  Confirm the active KIS Paper App Key/App Secret locally before retrying; do
+  not expose values or brute-force the token endpoint.
 
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the

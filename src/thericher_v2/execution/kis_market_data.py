@@ -586,6 +586,8 @@ class KisPaperMarketDataClient:
                 },
             )
         )
+        if _response_is_rate_limited(response):
+            raise KisPaperMarketDataError("rate_limited")
         if response.status_code != 200:
             raise KisPaperMarketDataError("auth_rejected")
         payload = response.payload()

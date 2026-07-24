@@ -90,6 +90,13 @@ or authority state. There is no verified daily quota: do not add an unbounded
 daemon or parallel flood. Do not run a second daily worker while the first owns
 the index.
 
+If the safe worker output is `auth_rejected` while the request gate has no
+`last_rate_limit_at_utc`, stop repeated token attempts and verify the active
+KIS **Paper** App Key/App Secret in local `.env` or the KIS Developer Portal.
+The data-only container does not mount `.env`; it receives the pair through
+Compose. Never print or copy either value, and do not reinterpret this scoped
+credential/provider fact as a pause on another Data, Research, or Paper job.
+
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after
 the final 06:20 intraday-head trigger and before the 08:10 operating review. Its

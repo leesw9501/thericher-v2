@@ -46,10 +46,18 @@ as a failed collection or an authority hold.
 - The Docker data-only profile completed an end-to-end Paper market-data chunk
   on 2026-07-23 with its injected two-key Paper environment, committing 199
   `SPY/AMS` rows. It has no account/order mount or route.
+- The first accelerated catch-up invocation on 2026-07-24 reached only the
+  Paper token endpoint and returned `auth_rejected` before retaining a row.
+  The shared gate recorded no rate-limit event. Treat this as a scoped Paper
+  credential/provider recovery fact: ask for local KIS Paper App Key/App Secret
+  confirmation or replacement without exposing a value, then resume the finite
+  QQQ/SPY worker. Do not brute-force token retries or turn it into a hold on
+  intraday head, Research, Execution, or another ready Data lane.
 - Last known clean common coverage: 694 completed sessions. The current daily
-  index has QQQ/NAS and SPY/AMS `ready` at `20210107` with eight and seven
-  chunks respectively; IWM's unchanged 2023-10-10 cursor is `source_limited`
-  with ten chunks. Inspect the index before acting.
+  index has QQQ/NAS `ready` at `20210107` with eight chunks and SPY/AMS
+  retry-ready after its scoped `auth_rejected` record at the same cursor with
+  eight chunks; IWM's unchanged 2023-10-10 cursor is `source_limited` with ten
+  chunks. Inspect the index before acting.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
