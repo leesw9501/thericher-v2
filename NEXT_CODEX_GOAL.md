@@ -2,15 +2,17 @@
 
 ## Objective
 
-Restore KIS Paper **market-data** authentication and then finish the finite,
-rate-safe daily catch-up for `QQQ/NAS` and `SPY/AMS`.
+Establish KIS Paper **market-data** token reuse and throughput behavior, then
+finish the finite daily catch-up for `QQQ/NAS` and `SPY/AMS` while mapping the
+actual historical 1m capability.
 
-The first committed catch-up invocation on 2026-07-24 reached the Paper token
-endpoint and returned only the safe `auth_rejected` category before it retained
-a row. The shared request gate recorded no rate-limit event, so this is not a
-daily or per-second quota conclusion. The local Paper credential pair was
-present to the data-only container but KIS did not issue a token. `IWM/AMS`
-remains independently `source_limited` at its known bad cursor.
+On 2026-07-24, a data-only token check returned `token_issued`. An immediately
+following catch-up ran in a separate short-lived process and returned the safe
+`auth_rejected` category before retaining a row. KIS documents a one-day token
+lifetime and at-most-once-per-minute reissuance, so this sequence is
+inconclusive for credential health, not evidence that the local Paper key pair
+must be replaced. `IWM/AMS` remains independently `source_limited` at its
+known bad cursor.
 
 ## Standing Authority
 
@@ -25,18 +27,35 @@ remains independently `source_limited` at its known bad cursor.
 
 ## Role-Owned Work
 
+### Codex Orchestrator
+
+Keep `agents/orchestration.md` as a cross-lane-only projection. A KIS or other
+provider cooldown belongs to its named worker and must yield to ready
+independent work rather than hold the foreground orchestrator in a long sleep.
+Do not duplicate Data, Research, or Execution queues there, and do not turn
+resource observations into a second goal or an approval gate.
+
 ### Data Agent
 
 1. Verify only non-secret configuration facts: complete Paper key pair present,
    non-live mode, fixed virtual market-data host, and sanitized token outcome.
-2. If KIS continues to return `auth_rejected`, ask the operator to confirm or
-   replace the active KIS **Paper** App Key/App Secret in local `.env`; give no
-   value in the report. Do not brute-force token retries.
-3. As soon as a token succeeds, run the existing finite catch-up worker. It
-   reuses one Paper client, starts all requests through the shared 1.25-second
-   gate, and stops after drain, 48 chunks, six hours, a source limit, storage
-   protection, recovery need, or categorical rate cooldown.
-4. Continue the independent three-window intraday-head schedule. Its partial
+2. Add a shared non-secret five-minute token-request-start spacing guard across
+   short-lived data workers. Reuse one in-memory Paper client per finite run;
+   never persist a bearer token. This guard is separate from market-page
+   throughput and must not slow pages after token issuance.
+3. Run one spaced, data-only QQQ/SPY catch-up/capability invocation. Record
+   only request categories, counts, continuation outcome, and retained-cache
+   metadata. It must not call account, order, or live endpoints.
+4. Treat a further sanitized token failure as credential evidence only when it
+   occurs after the shared spacing guard in a single-client run. Do not
+   brute-force retries or ask the operator to replace values before that kill
+   test.
+5. After normal token behavior is established, test the overseas-minute
+   endpoint's actual historical seek capability in a separately labeled,
+   bounded QQQ/SPY probe. Keep an undocumented `KEYB` seed out of the normal
+   collector unless the source result proves its semantics; record only the
+   supported range/outcome and preserve valid raw data on `D:`.
+6. Continue the independent three-window intraday-head schedule. Its partial
    coverage remains Data evidence until an exact contiguous 390-minute QQQ
    regular session exists.
 
@@ -52,12 +71,14 @@ order, fill, terminal state, or PnL from a data-worker token outcome.
 
 ## Completion Evidence
 
-- A sanitized token outcome identifies either restored Paper market-data access
-  or the exact operator credential action still needed.
-- On restored access, the daily index metadata and catch-up result explain the
-  QQQ/SPY cursor progress without raw rows, secrets, account calls, or orders.
-- The shared rate gate and terminal historical-minute handling remain intact;
-  no duplicate scheduler, broker route, or artifact-in-Git behavior is added.
+- A sanitized, spaced single-client result distinguishes token issuance from
+  data-endpoint access without claiming a credential fault prematurely.
+- The daily index metadata and catch-up result explain QQQ/SPY cursor progress,
+  while the minute probe explains only the observed historical capability, with
+  no raw rows, secrets, account calls, or orders in the report.
+- The collection path yields external waits to its worker/scheduler and leaves
+  independent ready work available; no duplicate scheduler, broker route, or
+  artifact-in-Git behavior is added.
 
 ## Verification
 
@@ -70,4 +91,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Record KIS market-data authentication recovery`
+`Improve KIS market-data recovery`

@@ -15,6 +15,12 @@ them to ready roles. Data, Research, and Execution may progress in parallel. A
 blocked lane does not stop another ready lane. Codex integrates shared contracts,
 verification, Git, recovery, and the next objective.
 
+`orchestration.md` is owned by Codex, not a subordinate role. It holds only the
+cross-lane view that no one role owns: resource conflicts, external waits, the
+current bottleneck, and one reversible operating improvement. It links to lane
+stateboards instead of copying their queues or history, and it cannot create a
+second objective, approval step, or execution decision.
+
 For private KIS Paper work, role agents record unavailable inputs and failed
 runs as scoped evidence, not permission latches. All non-live private work,
 including virtual orders and recurring schedules, is standing-authorized. A
@@ -33,6 +39,8 @@ unavailable.
   backtests, walk-forward validation, and analytical attribution.
 - `execution.md`: local simulation, account/order/fill/position contracts,
   reconciliation, accounting PnL, risk, emergency behavior, and later KIS.
+- `orchestration.md`: Codex-owned cross-lane resource and throughput view; not
+  a Role Agent, implementation queue, or historical ledger.
 
 ## Independent And Invoked Roles
 
@@ -64,6 +72,10 @@ repeated independent work.
 
 The stateboard is the durable lane identity. A runtime sub-agent or worker is a
 bounded executor, not permanent memory.
+
+For a quota, cooldown, or timer wait, the owned worker yields or is scheduled
+for its next due time. Codex does not remain in a long foreground sleep while
+another lane has ready work.
 
 ## Stateboard Shape
 

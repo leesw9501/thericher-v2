@@ -4681,3 +4681,50 @@ Claude's falsification-first verdict was `supported-with-limits`: do not call
 this high-throughput, keep the run finite, prevent a long worker from starving
 fresh-head collection, and preserve the source/terms boundary. The daily
 worker's hard time/chunk bounds and shared request gate satisfy those limits.
+
+## 2026-07-24 - Keep cross-lane throughput in a Codex-owned stateboard
+
+Decision: add `agents/orchestration.md` as a concise Codex-owned cross-lane
+projection. It may hold only resource conflicts, external waits, the current
+bottleneck, and one current reversible operating improvement. Data, Engine
+Research, and Execution remain the only durable role lanes; this file is not a
+Role Agent, second objective, implementation queue, approval mechanism, or
+history ledger.
+
+An external quota, retry time, or timer wait belongs to its named worker or
+existing scheduler. Codex records the next due fact and advances independent
+ready work instead of holding the foreground orchestrator in a long sleep.
+This improves data collection and research/execution throughput without
+changing broker authority, strategy authority, or live-risk controls.
+
+Claude's falsification-first verdict was `supported-with-limits`: do not copy
+lane queues or historical evidence, replace the current bottleneck/improvement
+rather than appending a log, and make the no-foreground-wait behavior real in
+orchestration rather than treating the file as a report.
+
+Reason: provider quotas and scheduled collection are normal parts of the data
+loop, but they must not idle the entire development team when independent Data,
+Research, or Execution work is ready.
+
+## 2026-07-24 - Treat immediate KIS Paper token reissue failure as inconclusive
+
+Decision: a data-only `token_issued` result followed immediately by an
+`auth_rejected` result from a separate short-lived worker is not evidence that
+the Paper App Key/App Secret must be replaced. KIS documents a one-day token
+lifetime and at-most-once-per-minute reissuance, while the sanitized category
+does not distinguish rate limiting from credential rejection. The Data path
+will use one in-memory client per finite run and a shared non-secret
+five-minute token-request-start spacing guard; bearer tokens remain memory-only.
+
+Only a spaced single-client issuance failure, or a valid token refused by the
+allowlisted market-data endpoint, reopens the local credential/provider
+hypothesis. This changes no account, order, live, or capital authority.
+
+Claude's falsification-first verdict was `supported-with-limits`: the separate
+process assumption and token-versus-data endpoint must remain visible, the
+spacing timestamp must be genuinely shared, and a sanitized failure cannot be
+overinterpreted before the kill test.
+
+Reason: the immediate two-process sequence likely collided with KIS token
+reissuance handling. Reusing a valid token and spacing restart issuance avoids
+unnecessary token calls while preserving secret isolation and fast data pages.

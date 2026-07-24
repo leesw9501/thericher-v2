@@ -48,11 +48,14 @@ as a failed collection or an authority hold.
   `SPY/AMS` rows. It has no account/order mount or route.
 - The first accelerated catch-up invocation on 2026-07-24 reached only the
   Paper token endpoint and returned `auth_rejected` before retaining a row.
-  The shared gate recorded no rate-limit event. Treat this as a scoped Paper
-  credential/provider recovery fact: ask for local KIS Paper App Key/App Secret
-  confirmation or replacement without exposing a value, then resume the finite
-  QQQ/SPY worker. Do not brute-force token retries or turn it into a hold on
-  intraday head, Research, Execution, or another ready Data lane.
+  A later data-only token check returned `token_issued`, then an immediately
+  separate short-lived catch-up again returned `auth_rejected`. KIS documents a
+  one-day token lifetime and a once-per-minute reissue limit, so this sequence
+  is inconclusive for credential health. Add a shared non-secret five-minute
+  token-start spacing guard and reuse one in-memory client per finite worker
+  before treating a later spaced failure as a credential/provider fact. Do not
+  brute-force retries or turn it into a hold on intraday head, Research,
+  Execution, or another ready Data lane.
 - Last known clean common coverage: 694 completed sessions. The current daily
   index has QQQ/NAS `ready` at `20210107` with eight chunks and SPY/AMS
   retry-ready after its scoped `auth_rejected` record at the same cursor with

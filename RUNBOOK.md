@@ -91,11 +91,16 @@ daemon or parallel flood. Do not run a second daily worker while the first owns
 the index.
 
 If the safe worker output is `auth_rejected` while the request gate has no
-`last_rate_limit_at_utc`, stop repeated token attempts and verify the active
-KIS **Paper** App Key/App Secret in local `.env` or the KIS Developer Portal.
-The data-only container does not mount `.env`; it receives the pair through
-Compose. Never print or copy either value, and do not reinterpret this scoped
-credential/provider fact as a pause on another Data, Research, or Paper job.
+`last_rate_limit_at_utc`, first determine whether a separate worker issued a
+token within the prior five minutes. A token-only success followed immediately
+by another short-lived worker's rejection is inconclusive because KIS limits
+token reissuance; reuse one in-memory client and apply the shared non-secret
+token-start spacing before interpreting credentials. Only a spaced,
+single-client token failure is a reason to verify the active KIS **Paper** App
+Key/App Secret in local `.env` or the KIS Developer Portal. The data-only
+container does not mount `.env`; it receives the pair through Compose. Never
+print or copy either value, and do not reinterpret this scoped recovery fact as
+a pause on another Data, Research, or Paper job.
 
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after

@@ -23,6 +23,13 @@ Codex assigns disjoint Data, Engine Research, and Execution work, integrates
 the results, verifies, commits, pushes, refreshes the next single objective,
 and continues without waiting for routine direction.
 
+`agents/orchestration.md` is Codex's cross-lane-only stateboard. It tracks
+shared resource conflicts, external waits, the current bottleneck, and one
+reversible operating improvement; it never copies lane queues, becomes a
+second goal, or creates an approval step. A quota or timer wait belongs to its
+owned worker or scheduler, so Codex continues other ready work instead of
+remaining in a long foreground sleep.
+
 ## Product Direction
 
 The product is a private engine that can learn toward repeatable US-equity
@@ -281,11 +288,14 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
   parsing as its strict fallback.
 - The first accelerated catch-up invocation on 2026-07-24 reached only the
   Paper token endpoint and returned the safe `auth_rejected` result before any
-  row was retained. The shared gate recorded no rate-limit event. The affected
-  SPY cursor has only its normal short retry state; this is an exact external
-  credential/provider fact, not a global collection, Paper, or scheduler hold.
-  Confirm the active KIS Paper App Key/App Secret locally before retrying; do
-  not expose values or brute-force the token endpoint.
+  row was retained. A later data-only token check returned `token_issued`, but
+  an immediately separate short-lived catch-up returned `auth_rejected` again.
+  KIS documents a one-day token lifetime and a once-per-minute reissue limit,
+  so this sequence is not credential-failure evidence. The affected SPY cursor
+  has only its normal short retry state; add shared non-secret five-minute
+  token-start spacing and reuse one in-memory client per finite run before
+  interpreting a later spaced failure. This remains an exact Data recovery
+  fact, not a global collection, Paper, or scheduler hold.
 
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the

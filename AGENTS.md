@@ -84,6 +84,11 @@ Codex is the product-development lead and integrator.
   sub-agents for bounded implementation or independent review.
 - Integrate outputs, resolve shared-contract conflicts, verify, commit, push,
   refresh the next goal, and continue while no true operator decision blocks.
+- Maintain `agents/orchestration.md` as the concise cross-lane projection. It
+  records only shared resource conflicts, external waits, the current
+  bottleneck, and the current reversible operating improvement. It must not
+  duplicate a lane's queue/history, become a second goal, create an approval
+  step, or make strategy or execution decisions.
 - Choose branches and commits without routine operator approval.
 - Ask Claude for a short drift-check before architecture, agent governance,
   promotion, broker authority, recovery, or major runtime changes.
@@ -105,6 +110,13 @@ operator approval is needed for routine schedule creation or runs. Build only
 the scheduler capability that improves an engine loop; do not turn it into an
 unrelated agent platform. These are implementation qualities for reliable
 automation, not approval gates or a reason to hold routine paper work.
+
+An external quota, retry-not-before timestamp, or timer wait belongs to its
+owned worker or scheduler. It must not hold the foreground orchestrator in a
+long sleep while another lane has ready work. Preserve the retry fact, yield or
+schedule the owned job, and continue independent Data, Research, or Execution
+work. This is a throughput and recoverability practice, not a new approval
+boundary.
 
 ### Role Agents
 
@@ -360,11 +372,17 @@ durable evidence.
 
 ## Stateboards
 
-Active stateboards:
+Active lane stateboards:
 
 - `agents/data.md`
 - `agents/engine-research.md`
 - `agents/execution.md`
+
+Codex also owns `agents/orchestration.md`. It is a cross-lane projection, not
+a Role Agent or a second objective owner. It may show only unowned shared
+resource facts, external waits, the current bottleneck, and one current
+operating improvement. It must link to rather than repeat lane queues,
+histories, or evidence ledgers.
 
 `agents/infra.md` and `agents/review.md` are retired historical stateboards;
 their capabilities are invoked when needed.
