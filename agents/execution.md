@@ -89,10 +89,10 @@ remains unavailable.
   it owns a separate cache root and does not mutate execution state.
 - The current-user Windows tasks are installed and `Ready`:
   `thericher-kis-paper-quote-session` at 23:35 KST and
-  `thericher-kis-paper-intraday-head` at 02:35, 04:35, and 06:20 KST with up
-  to four pages per target, Tuesday through Saturday. It remains one named
-  data-only task and Docker profile; current due runs invoke only their named
-  local Docker profiles. Their outcomes are runtime evidence, not another
+  `thericher-kis-paper-intraday-head` at 00:35, 02:35, 04:35, and 06:20 KST
+  with up to four pages per target, Tuesday through Saturday. It remains one
+  named data-only task and Docker profile; current due runs invoke only their
+  named local Docker profiles. Their outcomes are runtime evidence, not another
   permission step.
 - The 2026-07-23 KST due daily SPY head and session tasks both completed with
   task result `0`. The scheduled session was `paper_only` and returned
