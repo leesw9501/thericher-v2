@@ -367,6 +367,21 @@ source scope and limitations. Its local smoke verified 523 symbols, 483
 sessions, 252,609 bars, and the original rank range 1 through 541 without any
 Norgate SDK, credential, network, GPU, or artifact-root access.
 
+`data.norgate_development_qualification` now re-attests that exact frozen
+snapshot and writes only the single sanitized receipt
+`D:\thericher-v2\model-artifacts\norgate-development-qualification\r1-3d0841b90ddfd8d8\qualification.json`
+(`sha256:1f5ddec5cd1bc94fddbfde9de22e6480480f3daa28e0a03913a0d8d5d299a9d4`).
+It records source hashes, aggregate counts, scope, limitations, reversal facts,
+and one declarative `20`-return D1 interface (`t-20..t`, decision at `t`,
+next-open to following-open outcome timing). It persists no source rows,
+symbols, dates, OHLCV values, feature vectors, labels, prices, PnL, or broker
+data. The qualified result is development-only; model, GPU, campaign, ranking,
+PIT, Paper, PnL, and live flags remain false. A source hash/scope/receipt
+schema change rejects reuse, and an unqualified source receives no usable
+interface. Claude's `supported-with-limits` review confirms containment only:
+static-survivorship selection, unverified adjustments, trial retention, and the
+absence of a sanctioned promotion route remain material limits.
+
 The worker writes a raw snapshot and manifest before atomically moving a
 cursor. The scheduled catch-up reuses one Paper client for its finite run and
 relies on the shared request gate rather than a daily quota assumption. A
@@ -666,3 +681,8 @@ boundary while advancing a separate ready engine loop. At each boundary, review
 data contract, execution route readiness, research queues, GPU eligibility,
 disk capacity, role ownership, and the latest reversible throughput improvement;
 escalate only a real operator boundary.
+
+The static Norgate receipt is also closed as development-only evidence. It can
+provide no candidate rows, model/GPU queue item, Paper intent, or historical
+universe assertion. Do not reopen its legacy raw-derived feature artifact; a
+future model-ready lane needs a separately eligible prospective KIS contract.

@@ -119,7 +119,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    out-of-fold evidence; do not use GPU merely to revisit this retired gate.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
-   work under its current manifest scope.
+   work under its current manifest scope. Its new sanitized qualification
+   receipt fixes a declarative 20-return D1 window ending at `t` with a
+   next-open/following-open outcome timing, but emits no values or rows and is
+   explicitly not a campaign/model/GPU/Paper interface. Do not reopen the
+   legacy raw-derived Norgate artifact or treat this declaration as a breadth
+   candidate.
    The completed KIS QQQ/SPY D1 pair is materially longer and remains
    `MODP=0_unadjusted`. Its exact Tiingo event-only sidecar maps all 4,756
    common sessions (78 QQQ and 76 SPY events), and the external buffered audit
@@ -360,3 +365,5 @@ creating a report family. Consume only an authoritative sanitized Execution
 lifecycle fact and leave `pnl_status: not_observed` / `performance_label = None`
 unchanged until KIS completion evidence supports more. Do not turn the D1
 comparison or one Paper observation into selection or Paper-work authority.
+The static Norgate qualification is also closed: use its limits to reject
+accidental promotion, not to add an alternate historical model lane.

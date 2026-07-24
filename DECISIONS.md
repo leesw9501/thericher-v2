@@ -4886,3 +4886,43 @@ Reason: the run proves the constrained offline-to-local-paper path and its
 recovery/privacy behavior, not a tradable effect. Restricting the conclusion
 keeps future engine work focused on new prospective or properly qualified data
 instead of turning an unadjusted retrospective control into model search.
+
+## 2026-07-25 - Retain the static Norgate panel as a sanitized development-only receipt
+
+Decision: accept one deterministic external qualification receipt for the
+already retained static Norgate trial panel at
+`D:\thericher-v2\model-artifacts\norgate-development-qualification\r1-3d0841b90ddfd8d8\qualification.json`,
+with content hash
+`sha256:1f5ddec5cd1bc94fddbfde9de22e6480480f3daa28e0a03913a0d8d5d299a9d4`.
+It re-attests the pinned panel data hash
+`sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
+and manifest hash
+`sha256:a7ff3e700e3f53f48851982e1431b8a6647dda0bbfab8129faf32962604cfb2e`.
+The receipt stores only source identity hashes, aggregate geometry, scope,
+limitations, reversal facts, and one declarative daily interface: 20
+close-to-close returns sourced through `t`, a decision at the completed `t`
+close, and a next-open/following-open outcome timing. It stores no OHLCV rows,
+symbols, dates, feature values, labels, prices, PnL, broker facts, credentials,
+or network output.
+
+The source remains static-survivorship/availability selected with unverified
+adjustment semantics, a trial retention obligation, and no point-in-time or
+publication-time proof. Its receipt is `qualified_for_development_only` and
+keeps model, GPU, campaign, ranking, sealed-holdout, Paper, PnL, and live scope
+false. An unqualified source receives no usable feature timing contract; a
+source hash, scope, future-boundary, raw-field, or receipt-schema change rejects
+reuse. Do not use the existing legacy raw-derived Norgate artifact as a bypass.
+
+Claude's falsification-first verdict was `supported-with-limits`: the strongest
+kill test is a sanctioned consumer path that lets this source or receipt reach a
+prohibited model/GPU/Paper/live/PnL route. The current helper has no such route,
+but its static-universe limitation remains permanent and it cannot support a
+naive-baseline or profitability claim. A separately eligible prospective KIS
+contract, not a widened Norgate interpretation, is the reversal path for future
+model work.
+
+Reason: the receipt resolves a concrete cross-lane ambiguity without duplicating
+the loader, preserving raw data, creating a model queue, or adding a Paper gate.
+It gives development preparation an explicit causal vocabulary while making
+misuse mechanically rejectable and keeping the next engine loop focused on
+KIS-compatible prospective evidence.

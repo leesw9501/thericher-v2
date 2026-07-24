@@ -29,6 +29,10 @@ ready lane.
   raw-event retention. The inconsistent control result is closed plumbing
   evidence, not a model direction. This does not hold prospective intraday
   collection, Paper execution, or the existing frozen baselines.
+- Shared fact: the existing Norgate static panel now has a one-file,
+  development-only qualification receipt. It closes an ambiguity rather than
+  opening a new model lane: the receipt has no rows/values and its negative
+  model, GPU, Paper, PnL, PIT, and live scope is re-attested on every reuse.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -71,4 +75,5 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 At the next integration, verify that the completed D1 receipt is not reused as
 a model-selection input, and verify that no provider cooldown, schedule, or
 timer sleep holds Codex while a ready Data, Engine Research, or Execution
-package can proceed.
+package can proceed. Also verify that the static Norgate receipt is not being
+mistaken for a source of model-ready feature rows.

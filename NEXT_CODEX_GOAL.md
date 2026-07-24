@@ -2,10 +2,12 @@
 
 ## Objective
 
-Qualify the existing local Norgate US Stocks trial snapshot for one bounded,
-development-only broad daily feature contract. The outcome is either an
-evidence-backed development input or a scoped rejection; it is not a model,
-paper-trading, or historical-universe promotion.
+Audit the existing KIS Paper daily-SPY exact-intent recovery path before adding
+any stale-order automation. Prove whether the current session, receipt observer,
+and terminal-field probe already preserve a safe outcome when an acknowledged
+durable intent is absent from a current open-order snapshot. Add code only for a
+concrete uncovered invariant; otherwise close the audit as no-change and leave
+prospective KIS data readiness as the next path.
 
 ## First Reads
 
@@ -23,68 +25,61 @@ paper-trading, or historical-universe promotion.
    - `DECISIONS.md`
    - `RUNBOOK.md`
    - `agents/orchestration.md`
+   - `agents/execution.md`
    - `agents/data.md`
-   - `agents/engine-research.md`
    - `agents/review.md`
 
-3. Ask Claude for a short falsification-first drift-check before accepting or
-   widening any Norgate-derived contract. Do not send raw rows, personal data,
-   credentials, or trial keys.
+3. Ask Claude for a short falsification-first drift-check before relying on an
+   audit conclusion or adding any recovery behavior. Do not send credentials,
+   account/order identifiers, raw KIS payloads, or source rows.
 
 ## Hard Boundaries
 
-- Use only already retained local Norgate trial data under `D:\market_data`.
-  Do not download, refresh, buy, enroll, or accept a new license.
-- Do not read `.env`, credentials, secret-like files, or `KIS_LIVE_*`.
-- Do not call Tiingo, KIS, a broker, or any network endpoint.
-- Do not train, score, tune, select, ensemble, or run GPU work.
-- Do not call the snapshot a point-in-time universe, listing/delisting source,
-  corporate-action truth, executable price source, Paper input, or live input.
-- Keep raw data and generated artifacts outside Git. Write only one small,
-  sanitized external receipt when it improves the data/research loop.
-- Do not create a new report, gate, or agent stateboard unless it removes a
-  concrete engine-loop ambiguity.
+- Keep the audit read-only and paper-only. Do not submit, modify, cancel, or
+  retry an order; do not call or read `KIS_LIVE_*`.
+- Prefer pure fixtures and existing sanitized local evidence. Do not read `.env`,
+  credentials, secret-like files, or raw private state for the audit.
+- Do not create a second observer, terminal probe, scheduler, timer, quota,
+  stale threshold, approval gate, dashboard, or report family.
+- An absent exact order remains categorically ambiguous until existing source
+  evidence proves otherwise. Never infer fill, cancellation, terminal lifecycle,
+  PnL, or model performance from absence or aggregate positions.
+- Keep generated evidence outside Git and preserve the existing `kis_paper` vs
+  `local_paper` route distinction.
 
 ## Role-Owned Work
 
-### Data Agent
+### Execution Agent
 
-1. Inspect the useful local Norgate snapshot and existing loader/manifest code
-   without an expensive full-drive scan. Re-attest its immutable file and
-   manifest identities, field coverage, symbol/session geometry, and known
-   trial limitations.
-2. Prefer extending an existing narrow development-universe contract over
-   adding another loader. Preserve static-universe, survivorship, adjustment,
-   rights, and point-in-time limitations as machine-readable scope.
-3. Write one sanitized external qualification or rejection receipt with hashes,
-   counts, scope, and reversal facts only. Never persist raw rows or prices.
-
-### Engine Research Agent
-
-1. If and only if Data qualifies the local input for development preparation,
-   define one fixed causal daily feature-window and outcome-timing interface.
-   It must be explicitly development-only and cannot enter a campaign, model,
-   paper intent, or GPU queue yet.
-2. If the input is rejected, record the exact missing fact and leave the
-   prospective KIS intraday contract as the next model-ready path. Do not
-   invent a repair, derived universe, or substitute source.
+1. Trace the exact durable run identity through the daily session, receipt
+   observer, and terminal-field probe using only code and synthetic fixtures.
+2. Define the existing safe result for an acknowledged intent that is absent
+   from a current open-order snapshot and lacks qualified terminal semantics.
+3. Add a narrowly scoped implementation only if a reproducible fixture proves
+   the existing path violates that safe result. It must preserve the same intent
+   identity and remain read-only.
 
 ### Validation Agent
 
-Independently try to break the proposed scope: static-universe leakage,
-future-row access, session misalignment, raw-field persistence, and accidental
-model/Paper routing. It evaluates the contract without tuning it.
+1. Try to break the conclusion with a clean lifecycle fixture whose exact intent
+   becomes absent from the open-order snapshot.
+2. Verify that the result is neither a false terminal/PnL claim nor a global
+   paper hold, and that another distinct correctly scoped intent is unaffected.
+
+### Data Agent
+
+Confirm whether qualified terminal enum, amendment-ordering, and completion
+facts already exist locally. Report only the source fact; do not invent a new
+provider or collection job for this audit.
 
 ## Completion Evidence
 
-- Local-only source identity and geometry are re-attested before a consumer sees
-  candidate feature rows.
-- The outcome explicitly states `qualified_for_development_only` or
-  `unqualified`, with the evidence that would reverse it.
-- Tests prove offline/credential-free behavior, source-drift rejection,
-  static-universe/PIT limitations, future-data isolation, no raw artifact
-  persistence, and no model/GPU/KIS/Paper route.
-- Claude's concise verdict is recorded only if it changes the durable decision.
+- One exact state-to-outcome map exists for the acknowledged-but-absent case.
+- Focused tests demonstrate bounded ambiguity, route isolation, and no new
+  order side effect.
+- The outcome is either `existing path sufficient`, `minimal invariant fix`, or
+  `terminal source semantics unavailable`; it is never a model/PnL conclusion.
+- Claude's concise verdict is recorded only if it changes a durable decision.
 
 ## Verification
 
@@ -97,4 +92,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Qualify Norgate development input`
+`Audit paper exact-intent recovery`

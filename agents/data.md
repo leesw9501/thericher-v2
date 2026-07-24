@@ -88,6 +88,15 @@ as a failed collection or an authority hold.
   semantics. Its manifest permits development-training preparation only;
   `model`, `gpu`, `paper_trading`, `ranking`, and PIT scope remain false, and
   the source makes no PnL claim.
+- The snapshot now has one sanitized qualification receipt at
+  `D:\thericher-v2\model-artifacts\norgate-development-qualification\r1-3d0841b90ddfd8d8\qualification.json`
+  with content hash
+  `sha256:1f5ddec5cd1bc94fddbfde9de22e6480480f3daa28e0a03913a0d8d5d299a9d4`.
+  It re-attests the frozen panel before returning only aggregate identity,
+  geometry, scope, limitations, reversal facts, and a declarative D1 interface.
+  It stores no source rows, symbols, dates, OHLCV, vectors, labels, prices, or
+  broker facts. Its `qualified_for_development_only` result is not model, GPU,
+  campaign, PnL, Paper, live, ranking, PIT, or historical-universe authority.
 - The first KIS-native intraday cache is at
   `D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.
   Its initial bounded cycle retained two source pages each for `QQQ/NAS` and
@@ -295,6 +304,12 @@ that would cross the 15% floor.
   limitations. It validates and parses the same hash-attested panel bytes; it
   neither imports the Norgate SDK nor writes artifacts/data. Its actual local
   smoke found 523 symbols, 483 sessions, 252,609 bars, and rank range 1..541.
+- `qualify_frozen_norgate_trial_development_panel` is the only new external
+  output surface for that static panel. It re-attests the caller-pinned source,
+  accepts no KIS/network/credential/broker route, and writes a deterministic
+  one-file receipt outside Git. If its scope or source identity changes, reuse
+  fails; if its geometry cannot support the declared `t-20..t` interface, the
+  receipt is `unqualified` and contains no usable timing contract.
 - A hash-attested partial chunk may advance only after a fully validated first
   page; a wholly invalid page never advances its cursor.
 - KIS execution canary evidence and KIS market-data cache bytes are separate:

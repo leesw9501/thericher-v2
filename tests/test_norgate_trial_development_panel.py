@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import ast
 import builtins
 import gzip
 import hashlib
+import importlib.util
+import inspect
 import json
 import os
 import shutil
@@ -17,9 +20,14 @@ from typing import Any
 
 import pytest
 
+import thericher_v2.data.norgate_development_qualification as qualification_module
 import thericher_v2.data.norgate_trial_development_panel as panel_module
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.local import CatalogedBars
+from thericher_v2.data.norgate_development_qualification import (
+    default_norgate_development_qualification_receipt_path,
+    qualify_norgate_trial_development_panel,
+)
 from thericher_v2.data.norgate_membership import build_norgate_sp500_membership_snapshot
 from thericher_v2.data.norgate_trial_development_panel import (
     FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_COMMON_SESSION_COUNT,
@@ -491,6 +499,230 @@ def test_loads_frozen_external_panel_when_available() -> None:
     assert catalog.scope.paper_trading_eligible is False
 
 
+def test_qualifies_only_a_sanitized_offline_development_receipt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    panel = _build(destination, root, repo, membership, calendar)
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    monkeypatch.setattr(qualification_module, "_MINIMUM_COMMON_SESSIONS", 2)
+
+    def fail(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("qualification crossed a forbidden boundary")
+
+    original_import = builtins.__import__
+    original_read_text = Path.read_text
+
+    def guard_import(name: str, *args: object, **kwargs: object) -> object:
+        if name == "norgatedata" or name.startswith("norgatedata."):
+            raise AssertionError("qualification must not import norgatedata")
+        return original_import(name, *args, **kwargs)
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.startswith(".env"):
+            raise AssertionError("qualification must not read credentials")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", guard_import)
+    monkeypatch.setattr(socket, "create_connection", fail)
+    monkeypatch.setattr(subprocess, "run", fail)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+    result = qualify_norgate_trial_development_panel(
+        panel.snapshot_dir,
+        expected_dataset_id=_dataset_id(panel.snapshot_dir),
+        expected_dataset_hash=panel.dataset_hash,
+        artifact_root=artifact_root,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    receipt = json.loads(result.receipt_path.read_text(encoding="utf-8"))
+    assert result.receipt_path.is_relative_to(artifact_root)
+    assert result.status == "qualified_for_development_only"
+    assert result.source_dataset_hash == panel.dataset_hash
+    assert result.selected_symbol_count == 2
+    assert result.common_session_count == 2
+    assert result.scope["model_eligible"] is False
+    assert result.scope["gpu_eligible"] is False
+    assert result.scope["paper_trading_eligible"] is False
+    assert result.scope["pnl_eligible"] is False
+    assert result.scope["live_eligible"] is False
+    assert result.development_interface["source_index_range"] == "t-20..t"
+    assert result.development_interface["as_of_boundary"] == "inputs_end_at_t"
+    assert receipt["receipt_constraints"] == {
+        "raw_ohlcv_persisted": False,
+        "row_level_data_persisted": False,
+        "feature_vectors_persisted": False,
+        "outcome_labels_persisted": False,
+        "broker_or_network_used": False,
+        "credential_access_used": False,
+    }
+    assert not hasattr(result, "bars_by_symbol")
+    assert _forbidden_receipt_keys(receipt) == set()
+    assert [path.name for path in artifact_root.rglob("*") if path.is_file()] == [
+        "qualification.json"
+    ]
+
+
+def test_qualification_rejects_source_and_receipt_drift(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    panel = _build(destination, root, repo, membership, calendar)
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    monkeypatch.setattr(qualification_module, "_MINIMUM_COMMON_SESSIONS", 2)
+    result = qualify_norgate_trial_development_panel(
+        panel.snapshot_dir,
+        expected_dataset_id=_dataset_id(panel.snapshot_dir),
+        expected_dataset_hash=panel.dataset_hash,
+        artifact_root=artifact_root,
+        market_data_root=root,
+        repo_root=repo,
+    )
+    data_path = panel.snapshot_dir / "panel_ohlcv_1d.csv.gz"
+    data_path.write_bytes(data_path.read_bytes() + b"source-drift")
+
+    with pytest.raises(ValueError, match="hash mismatch"):
+        qualify_norgate_trial_development_panel(
+            panel.snapshot_dir,
+            expected_dataset_id=_dataset_id(panel.snapshot_dir),
+            expected_dataset_hash=panel.dataset_hash,
+            artifact_root=artifact_root,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+    data_path.write_bytes(data_path.read_bytes()[:-12])
+    receipt = json.loads(result.receipt_path.read_text(encoding="utf-8"))
+    receipt["development_interface"]["source_index_range"] = "t-20..t+1"
+    result.receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
+    with pytest.raises(ValueError, match="receipt content is invalid"):
+        qualify_norgate_trial_development_panel(
+            panel.snapshot_dir,
+            expected_dataset_id=_dataset_id(panel.snapshot_dir),
+            expected_dataset_hash=panel.dataset_hash,
+            artifact_root=artifact_root,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_qualification_rejects_raw_row_persistence_and_scopes_short_panels(tmp_path: Path) -> None:
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    panel = _build(destination, root, repo, membership, calendar)
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    result = qualify_norgate_trial_development_panel(
+        panel.snapshot_dir,
+        expected_dataset_id=_dataset_id(panel.snapshot_dir),
+        expected_dataset_hash=panel.dataset_hash,
+        artifact_root=artifact_root,
+        market_data_root=root,
+        repo_root=repo,
+    )
+
+    assert result.status == "unqualified"
+    assert result.development_interface == {"defined": False, "materialization": "not_defined"}
+    receipt = json.loads(result.receipt_path.read_text(encoding="utf-8"))
+    assert receipt["qualification_reasons"] == [
+        "insufficient_common_sessions_for_declared_interface"
+    ]
+    receipt["geometry"]["symbols"] = ["AAA"]
+    result.receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
+    with pytest.raises(ValueError, match="receipt content is invalid"):
+        qualify_norgate_trial_development_panel(
+            panel.snapshot_dir,
+            expected_dataset_id=_dataset_id(panel.snapshot_dir),
+            expected_dataset_hash=panel.dataset_hash,
+            artifact_root=artifact_root,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
+def test_qualification_has_no_execution_route_or_unsafe_artifact_path(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    tree = ast.parse(inspect.getsource(qualification_module))
+    imported_modules = {
+        alias.name
+        for node in ast.walk(tree)
+        if isinstance(node, ast.Import)
+        for alias in node.names
+    } | {
+        node.module
+        for node in ast.walk(tree)
+        if isinstance(node, ast.ImportFrom) and node.module is not None
+    }
+    assert not any(
+        name.startswith("thericher_v2.execution")
+        or name.startswith("thericher_v2.dashboard")
+        or name.startswith("thericher_v2.research")
+        for name in imported_modules
+    )
+
+    root, repo, membership, calendar, destination = _parents(tmp_path)
+    panel = _build(destination, root, repo, membership, calendar)
+    with pytest.raises(ValueError, match="outside Git workspace"):
+        qualify_norgate_trial_development_panel(
+            panel.snapshot_dir,
+            expected_dataset_id=_dataset_id(panel.snapshot_dir),
+            expected_dataset_hash=panel.dataset_hash,
+            artifact_root=repo,
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    linked_parent = artifact_root / "norgate-development-qualification"
+    try:
+        linked_parent.symlink_to(repo, target_is_directory=True)
+    except OSError:
+        linked_parent.mkdir()
+        monkeypatch.setattr(
+            qualification_module,
+            "_is_link_like",
+            lambda path: path == linked_parent,
+        )
+    with pytest.raises(ValueError, match="receipt directory"):
+        qualify_norgate_trial_development_panel(
+            panel.snapshot_dir,
+            expected_dataset_id=_dataset_id(panel.snapshot_dir),
+            expected_dataset_hash=panel.dataset_hash,
+            artifact_root=artifact_root,
+            market_data_root=root,
+            repo_root=repo,
+        )
+    assert not list(repo.rglob("qualification.json"))
+
+
+def test_qualification_path_version_and_script_repository_root_are_derived(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(
+        qualification_module,
+        "NORGATE_DEVELOPMENT_QUALIFICATION_VERSION",
+        "norgate-development-qualification-r2",
+    )
+    path = default_norgate_development_qualification_receipt_path(
+        "sha256:" + "a" * 64,
+        artifact_root=tmp_path,
+    )
+    assert path.parent.name.startswith("r2-")
+
+    script_path = (
+        Path(__file__).resolve().parents[1] / "scripts" / "qualify_norgate_development_input.py"
+    )
+    spec = importlib.util.spec_from_file_location("qualification_script", script_path)
+    assert spec is not None and spec.loader is not None
+    script_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(script_module)
+    assert script_module._REPOSITORY_ROOT == Path(__file__).resolve().parents[1]
+
+
 def _parents(tmp_path: Path) -> tuple[Path, Path, Path, Path, Path]:
     root = tmp_path / "market_data"
     root.mkdir(parents=True)
@@ -621,3 +853,38 @@ def _rewrite_panel_data(snapshot: Path, mutate: Callable[[str], str]) -> str:
     manifest["files"]["panel_ohlcv"]["size_bytes"] = len(data)
     _write_manifest(manifest_path, manifest)
     return digest
+
+
+def _forbidden_receipt_keys(value: object) -> set[str]:
+    forbidden = {
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "symbol",
+        "symbols",
+        "date",
+        "dates",
+        "row",
+        "rows",
+        "bar",
+        "bars",
+        "vector",
+        "vectors",
+        "label",
+        "labels",
+        "price",
+        "prices",
+        "pnl",
+        "returns",
+    }
+    if isinstance(value, dict):
+        return {
+            key
+            for key, nested in value.items()
+            if key in forbidden
+        } | set().union(*(_forbidden_receipt_keys(nested) for nested in value.values()))
+    if isinstance(value, list):
+        return set().union(*(_forbidden_receipt_keys(item) for item in value))
+    return set()

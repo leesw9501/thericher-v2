@@ -753,6 +753,23 @@ Run a CPU baseline before an eligible GPU campaign. GPU work needs a frozen
 dataset and falsifiable hypothesis; do not launch models solely to keep the GPU
 busy. One GPU job runs at a time while other lanes continue.
 
+### Static Norgate Development Receipt
+
+To re-attest the already retained static Norgate trial panel and write or verify
+its sole sanitized development-only receipt, run:
+
+```powershell
+uv run --extra dev python scripts/qualify_norgate_development_input.py
+```
+
+It is offline and credential-free. It reads only the local panel under
+`D:\market_data` and writes the one deterministic JSON receipt under
+`D:\thericher-v2\model-artifacts\norgate-development-qualification`. The
+output contains aggregate identities/counts/scope and a declarative interface,
+never source rows, symbols, dates, OHLCV, feature values, labels, prices, PnL,
+or broker data. A qualified result is development-only, not model, GPU,
+campaign, Paper, or live authority.
+
 ## Legacy Evidence
 
 Terminal metadata-only KIS probe/capacity-map scripts have been removed from
