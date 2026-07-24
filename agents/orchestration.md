@@ -58,6 +58,13 @@ without opening raw minute files or creating a second worker. While it waits,
 Codex dispatches another ready, non-conflicting lane package; a scheduled
 collection is not an orchestrator wait.
 
+For fast local feedback, use the validated
+`scripts/run_parallel_tests.ps1 -Workers 4` path only when no other `pytest`
+process owns the workspace. It gives each run an isolated short temp root and
+uses file-level distribution. Direct `pytest -n` invocations and concurrent
+full suites are not an equivalent substitute; serial `uv run --extra dev
+pytest -q` remains the authoritative goal-boundary verification.
+
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
 has a clear engine-loop benefit, integrate it before the next company-goal
