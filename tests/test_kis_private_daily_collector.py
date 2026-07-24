@@ -17,10 +17,15 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataCallCounts,
     KisPaperMarketDataClient,
     KisPaperMarketDataConfig,
+    KisPaperMarketDataError,
+)
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
 )
 from thericher_v2.execution.kis_private_daily_collector import (
     KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
     KisPaperPrivateDailyCollectionResult,
+    KisPaperPrivateDailyCollectionTarget,
     run_bounded_kis_paper_private_daily_collection,
     write_kis_paper_private_daily_cache,
 )
@@ -49,6 +54,15 @@ class _PacingClock:
     def sleep(self, seconds: float) -> None:
         self.delays.append(seconds)
         self.value += seconds
+
+
+class _TokenSpacingTransport:
+    def __init__(self) -> None:
+        self.requests: list[KisMarketDataRequest] = []
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        self.requests.append(request)
+        raise KisPaperMarketDataError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
 
 
 def test_private_daily_collector_paces_deduplicates_and_writes_atomic_cache(tmp_path: Path) -> None:
@@ -131,6 +145,61 @@ def test_private_daily_collector_paces_deduplicates_and_writes_atomic_cache(tmp_
     assert manifest_hash.startswith("sha256:")
 
 
+def test_private_daily_collector_reports_per_chunk_counts_when_reusing_one_client() -> None:
+    transport = _RecordingTransport(
+        [
+            _token(),
+            _daily_page([_row("20260717"), _row("20260701")], continuation="F"),
+            _daily_page([_row("20260701"), _row("20260101")], continuation=""),
+            _daily_page([_row("20260101"), _row("20251201")], continuation="F"),
+            _daily_page([_row("20251201"), _row("20251001")], continuation=""),
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+        max_daily_page_attempts=4,
+    )
+    pacing = _PacingClock()
+
+    first = run_bounded_kis_paper_private_daily_collection(
+        client,
+        code_revision="git:test",
+        target=KisPaperPrivateDailyCollectionTarget(
+            symbol="QQQ",
+            exchange="NAS",
+            anchor_date="20260717",
+        ),
+        observed_at=_OBSERVED_AT,
+        sleeper=pacing.sleep,
+        monotonic_clock=pacing.monotonic,
+    )
+    second = run_bounded_kis_paper_private_daily_collection(
+        client,
+        code_revision="git:test",
+        target=KisPaperPrivateDailyCollectionTarget(
+            symbol="QQQ",
+            exchange="NAS",
+            anchor_date="20260101",
+        ),
+        observed_at=_OBSERVED_AT,
+        sleeper=pacing.sleep,
+        monotonic_clock=pacing.monotonic,
+    )
+
+    assert first.call_counts == KisPaperMarketDataCallCounts(1, 0, 2)
+    assert second.call_counts == KisPaperMarketDataCallCounts(0, 0, 2)
+    assert [
+        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL) for request in transport.requests
+    ] == [
+        KIS_PAPER_TOKEN_PATH,
+        KIS_PAPER_DAILY_PATH,
+        KIS_PAPER_DAILY_PATH,
+        KIS_PAPER_DAILY_PATH,
+        KIS_PAPER_DAILY_PATH,
+    ]
+
+
 def test_private_daily_collector_retains_a_recoverable_first_page_when_continuation_fails(
     tmp_path: Path,
 ) -> None:
@@ -195,6 +264,22 @@ def test_private_daily_collector_rejects_conflicting_date_without_silent_selecti
     assert result.conflicting_duplicate_rows == 1
     assert [row.xymd for row in result.rows] == ["20260224", "20260717"]
     assert len(transport.requests) == 3
+
+
+def test_private_daily_collector_yields_when_shared_token_start_is_not_due() -> None:
+    transport = _TokenSpacingTransport()
+
+    result = run_bounded_kis_paper_private_daily_collection(
+        _client(transport),  # type: ignore[arg-type]
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+
+    assert result.status == "rejected"
+    assert result.reason == KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
+    assert result.call_counts == KisPaperMarketDataCallCounts(0, 0, 0)
+    assert [request.method for request in transport.requests] == ["POST"]
+    assert all(KIS_PAPER_DAILY_PATH not in request.url for request in transport.requests)
 
 
 def test_private_daily_cache_stays_outside_git(tmp_path: Path) -> None:

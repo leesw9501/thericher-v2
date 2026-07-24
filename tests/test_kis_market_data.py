@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import urllib.request
+from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
@@ -27,6 +28,7 @@ from thericher_v2.execution.kis_market_data import (
     UrllibKisPaperMarketDataTransport,
     load_kis_paper_market_data_config,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import KisPaperMarketDataTokenStartGate
 
 
 class _RecordingTransport:
@@ -326,6 +328,53 @@ def test_urllib_transport_gates_each_allowed_request_and_records_rate_limit(
     assert response.status_code == 429
     assert gate.slot_count == 1
     assert gate.rate_limit_count == 1
+
+
+def test_urllib_transport_yields_before_request_pacing_when_token_is_not_due(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    class _RequestGate:
+        def __init__(self) -> None:
+            self.slot_count = 0
+
+        def wait_for_request_slot(self) -> None:
+            self.slot_count += 1
+
+        def record_rate_limit(self) -> None:
+            raise AssertionError("a deferred token must not record a rate limit")
+
+    class _FailingOpener:
+        def open(self, *_args: object, **_kwargs: object) -> object:
+            raise AssertionError("a deferred token must not make an HTTP request")
+
+    def clock() -> datetime:
+        return datetime(2026, 7, 24, 12, 0, tzinfo=UTC)
+
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=tmp_path / "control", clock=clock)
+    assert token_gate.claim_token_request_start() is True
+    request_gate = _RequestGate()
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _FailingOpener())
+    transport = UrllibKisPaperMarketDataTransport(
+        request_gate=request_gate,  # type: ignore[arg-type]
+        token_start_gate=token_gate,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="token_request_not_due"):
+        transport.request(
+            KisMarketDataRequest(
+                method="POST",
+                url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+                headers={"content-type": "application/json", "accept": "application/json"},
+                json_body={
+                    "grant_type": "client_credentials",
+                    "appkey": "key",
+                    "appsecret": "secret",
+                },
+            )
+        )
+
+    assert request_gate.slot_count == 0
 
 
 def test_urllib_transport_disables_proxies_and_installs_a_redirect_rejecting_handler(

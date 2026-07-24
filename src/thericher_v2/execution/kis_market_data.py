@@ -16,7 +16,11 @@ from typing import Any, BinaryIO, Literal, Protocol
 
 from thericher_v2.contracts import SCHEMA_VERSION
 
-from .kis_market_data_rate_gate import KisPaperMarketDataRateGate
+from .kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+    KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
+)
 
 KIS_PAPER_MARKET_DATA_BASE_URL = "https://openapivts.koreainvestment.com:29443"
 KIS_PAPER_TOKEN_PATH = "/oauth2/tokenP"
@@ -159,11 +163,13 @@ class UrllibKisPaperMarketDataTransport:
         *,
         timeout_seconds: float = 15.0,
         request_gate: KisPaperMarketDataRateGate | None = None,
+        token_start_gate: KisPaperMarketDataTokenStartGate | None = None,
     ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout_seconds must be positive")
         self._timeout_seconds = timeout_seconds
         self._request_gate = request_gate
+        self._token_start_gate = token_start_gate
         # Never inherit HTTPS_PROXY for credential-bearing paper requests.
         self._opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}),
@@ -172,8 +178,18 @@ class UrllibKisPaperMarketDataTransport:
 
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
         _validate_request(request)
+        is_token_request = _is_token_request(request)
+        if (
+            is_token_request
+            and self._token_start_gate is not None
+            and not self._token_start_gate.token_request_is_due()
+        ):
+            raise KisPaperMarketDataError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
         if self._request_gate is not None:
             self._request_gate.wait_for_request_slot()
+        if self._token_start_gate is not None and is_token_request:
+            if not self._token_start_gate.claim_token_request_start():
+                raise KisPaperMarketDataError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
         data = (
             json.dumps(request.json_body, separators=(",", ":")).encode("utf-8")
             if request.json_body is not None
@@ -574,18 +590,23 @@ class KisPaperMarketDataClient:
         if self._access_token is not None:
             return self._access_token
         self._token_attempts += 1
-        response = self._transport.request(
-            KisMarketDataRequest(
-                method="POST",
-                url=f"{self._config.base_url}{KIS_PAPER_TOKEN_PATH}",
-                headers={"content-type": "application/json", "accept": "application/json"},
-                json_body={
-                    "grant_type": "client_credentials",
-                    "appkey": self._config.app_key,
-                    "appsecret": self._config.app_secret,
-                },
+        try:
+            response = self._transport.request(
+                KisMarketDataRequest(
+                    method="POST",
+                    url=f"{self._config.base_url}{KIS_PAPER_TOKEN_PATH}",
+                    headers={"content-type": "application/json", "accept": "application/json"},
+                    json_body={
+                        "grant_type": "client_credentials",
+                        "appkey": self._config.app_key,
+                        "appsecret": self._config.app_secret,
+                    },
+                )
             )
-        )
+        except KisPaperMarketDataError as error:
+            if str(error) == KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON:
+                self._token_attempts -= 1
+            raise
         if _response_is_rate_limited(response):
             raise KisPaperMarketDataError("rate_limited")
         if response.status_code != 200:
@@ -914,6 +935,13 @@ def _validate_request(request: KisMarketDataRequest) -> None:
     if parsed.path == KIS_PAPER_DAILY_PATH and _is_approved_daily_request(request):
         return
     raise KisPaperMarketDataError("request_not_allowlisted")
+
+
+def _is_token_request(request: KisMarketDataRequest) -> bool:
+    return (
+        request.method == "POST"
+        and urllib.parse.urlsplit(request.url).path == KIS_PAPER_TOKEN_PATH
+    )
 
 
 def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:

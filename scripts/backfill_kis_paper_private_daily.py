@@ -19,6 +19,7 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
     KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
 )
 from thericher_v2.execution.kis_private_daily_backfill import (
     run_kis_paper_private_daily_backfill_once,
@@ -52,10 +53,17 @@ def main(
     request_gate = KisPaperMarketDataRateGate(
         control_root=cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
     )
+    token_start_gate = KisPaperMarketDataTokenStartGate(
+        control_root=cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
+    )
 
     def client_factory() -> KisPaperMarketDataClient:
         config = load_kis_paper_market_data_config(dotenv_path)
-        return _client(config, request_gate=request_gate)
+        return _client(
+            config,
+            request_gate=request_gate,
+            token_start_gate=token_start_gate,
+        )
 
     try:
         result = run_kis_paper_private_daily_backfill_once(
@@ -98,10 +106,14 @@ def _client(
     config: KisPaperMarketDataConfig,
     *,
     request_gate: KisPaperMarketDataRateGate | None = None,
+    token_start_gate: KisPaperMarketDataTokenStartGate | None = None,
 ) -> KisPaperMarketDataClient:
     return KisPaperMarketDataClient(
         config=config,
-        transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
+        transport=UrllibKisPaperMarketDataTransport(
+            request_gate=request_gate,
+            token_start_gate=token_start_gate,
+        ),
         max_daily_page_attempts=KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
     )
 

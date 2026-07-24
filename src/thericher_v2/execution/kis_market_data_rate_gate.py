@@ -24,7 +24,12 @@ KIS_PAPER_MARKET_DATA_RATE_STATE_FILENAME = "request-rate.json"
 KIS_PAPER_MARKET_DATA_RATE_LOCK_FILENAME = "request-rate.lock"
 KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS = 1.25
 KIS_PAPER_MARKET_DATA_RATE_LIMIT_BACKOFF_SECONDS = 60.0
+KIS_PAPER_MARKET_DATA_TOKEN_STATE_FILENAME = "token-request.json"
+KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME = "token-request.lock"
+KIS_PAPER_MARKET_DATA_TOKEN_MIN_REQUEST_INTERVAL_SECONDS = 300.0
+KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON = "token_request_not_due"
 _SCHEMA_VERSION = 1
+_TOKEN_SCHEMA_VERSION = 1
 
 
 @dataclass(frozen=True)
@@ -34,6 +39,14 @@ class KisPaperMarketDataRateGateSnapshot:
     last_request_started_at_utc: datetime | None
     retry_not_before_utc: datetime | None
     last_rate_limit_at_utc: datetime | None
+
+
+@dataclass(frozen=True)
+class KisPaperMarketDataTokenStartGateSnapshot:
+    """Sanitized token-request timing facts shared by short-lived workers."""
+
+    last_token_request_started_at_utc: datetime | None
+    next_token_request_not_before_utc: datetime | None
 
 
 class KisPaperMarketDataRateGate:
@@ -119,6 +132,91 @@ class KisPaperMarketDataRateGate:
         return path
 
 
+class KisPaperMarketDataTokenStartGate:
+    """Atomically reserve a spaced KIS Paper token request without sleeping."""
+
+    def __init__(
+        self,
+        *,
+        control_root: Path,
+        minimum_request_interval_seconds: float = (
+            KIS_PAPER_MARKET_DATA_TOKEN_MIN_REQUEST_INTERVAL_SECONDS
+        ),
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> None:
+        if not _is_positive_finite(minimum_request_interval_seconds):
+            raise ValueError("market-data token interval must be positive")
+        self._control_root = Path(control_root)
+        self._minimum_request_interval = timedelta(
+            seconds=float(minimum_request_interval_seconds)
+        )
+        self._clock = clock
+
+    def claim_token_request_start(self) -> bool:
+        """Return whether this worker may start a token POST now.
+
+        A false result has no network side effect. The owner should yield to
+        another lane or its next schedule rather than sleeping for the interval.
+        """
+
+        with self._locked_state() as state:
+            now = _require_utc(self._clock())
+            due = _next_token_request_due(
+                state=state,
+                minimum_interval=self._minimum_request_interval,
+            )
+            if due is not None and now < due:
+                return False
+            state["last_token_request_started_at_utc"] = _format_utc(now)
+            _write_state(self._state_path(), state)
+            return True
+
+    def token_request_is_due(self) -> bool:
+        """Return whether a token POST could start now without reserving it.
+
+        Callers use this inexpensive pre-check to avoid entering the ordinary
+        request pacing wait when another short-lived worker has already claimed
+        the five-minute token window.  ``claim_token_request_start`` remains
+        the atomic decision immediately before the actual request.
+        """
+
+        with self._locked_state() as state:
+            due = _next_token_request_due(
+                state=state,
+                minimum_interval=self._minimum_request_interval,
+            )
+            return due is None or _require_utc(self._clock()) >= due
+
+    def snapshot(self) -> KisPaperMarketDataTokenStartGateSnapshot:
+        with self._locked_state() as state:
+            last_started = _parse_optional_utc(state.get("last_token_request_started_at_utc"))
+            return KisPaperMarketDataTokenStartGateSnapshot(
+                last_token_request_started_at_utc=last_started,
+                next_token_request_not_before_utc=(
+                    None
+                    if last_started is None
+                    else last_started + self._minimum_request_interval
+                ),
+            )
+
+    @contextmanager
+    def _locked_state(self) -> Iterator[dict[str, object]]:
+        root = self._control_root
+        if root.is_symlink():
+            raise ValueError("market-data token control root is invalid")
+        root.mkdir(parents=True, exist_ok=True)
+        if not root.is_dir() or root.is_symlink():
+            raise ValueError("market-data token control root is invalid")
+        with _exclusive_lock(root / KIS_PAPER_MARKET_DATA_TOKEN_LOCK_FILENAME):
+            yield _read_token_state(self._state_path())
+
+    def _state_path(self) -> Path:
+        path = self._control_root / KIS_PAPER_MARKET_DATA_TOKEN_STATE_FILENAME
+        if path.is_symlink():
+            raise ValueError("market-data token state is invalid")
+        return path
+
+
 def _is_positive_finite(value: object) -> bool:
     return (
         not isinstance(value, bool)
@@ -168,12 +266,28 @@ def _next_request_due(
     return max(candidates) if candidates else None
 
 
+def _next_token_request_due(
+    *,
+    state: dict[str, object],
+    minimum_interval: timedelta,
+) -> datetime | None:
+    last_started = _parse_optional_utc(state.get("last_token_request_started_at_utc"))
+    return None if last_started is None else last_started + minimum_interval
+
+
 def _initial_state() -> dict[str, object]:
     return {
         "schema_version": _SCHEMA_VERSION,
         "last_request_started_at_utc": None,
         "retry_not_before_utc": None,
         "last_rate_limit_at_utc": None,
+    }
+
+
+def _initial_token_state() -> dict[str, object]:
+    return {
+        "schema_version": _TOKEN_SCHEMA_VERSION,
+        "last_token_request_started_at_utc": None,
     }
 
 
@@ -195,6 +309,21 @@ def _read_state(path: Path) -> dict[str, object]:
         "last_rate_limit_at_utc",
     ):
         _parse_optional_utc(decoded.get(key))
+    return dict(decoded)
+
+
+def _read_token_state(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return _initial_token_state()
+    try:
+        decoded = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("market-data token state is invalid") from error
+    if not isinstance(decoded, dict) or decoded.get("schema_version") != _TOKEN_SCHEMA_VERSION:
+        raise ValueError("market-data token state is invalid")
+    if set(decoded) != set(_initial_token_state()):
+        raise ValueError("market-data token state is invalid")
+    _parse_optional_utc(decoded.get("last_token_request_started_at_utc"))
     return dict(decoded)
 
 

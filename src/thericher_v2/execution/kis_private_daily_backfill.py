@@ -18,6 +18,7 @@ from typing import BinaryIO, Literal
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 
 from .kis_market_data import KisPaperMarketDataClient
+from .kis_market_data_rate_gate import KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
 from .kis_private_daily_collector import (
     KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT,
     KisPaperPrivateDailyCollectionResult,
@@ -185,6 +186,15 @@ def run_kis_paper_private_daily_backfill_once(
             client_factory(),
             **collect_kwargs,  # type: ignore[arg-type]
         )
+        if (
+            result.status == "rejected"
+            and result.reason == KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
+        ):
+            return KisPaperPrivateDailyBackfillRun(
+                status="deferred",
+                target_key=target_key,
+                reason=KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+            )
         output_cursor = _output_cursor_for_result(result)
         manifest_path, manifest_hash = write_kis_paper_private_daily_cache(
             result=result,

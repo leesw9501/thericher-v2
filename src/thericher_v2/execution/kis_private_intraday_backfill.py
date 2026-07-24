@@ -29,6 +29,9 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinuteQuery,
     KisPaperMinuteRawBar,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+)
 
 KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT = Path(
     r"D:\market_data\us_equities\kis_paper_private\intraday"
@@ -71,6 +74,7 @@ _SAFE_FAILURE_REASONS = frozenset(
         "request_not_allowlisted",
         "response_invalid",
         "transport_failure",
+        KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
     }
 )
 

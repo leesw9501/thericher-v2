@@ -197,6 +197,23 @@ oldest validated bar. Treat `output1.next` and `more` as provider metadata, not
 as cursor control. This keeps a terminal page from becoming a repeated
 `minute_cursor_invalid` recovery loop.
 
+### Historical Capability Probe
+
+Use this only to remeasure the documented normal-start behavior, not to seed an
+undocumented historical cursor:
+
+```powershell
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode historical-probe --pages-per-target 2
+```
+
+The probe starts with a blank `KEYB`, derives a continuation only from a valid
+response, and writes to the sibling
+`D:\market_data\us_equities\kis_paper_private\intraday-historical-probe\v1`
+root. It never advances the ordinary historical or prospective-head cursor and
+never calls an account, order, or live endpoint. A terminal first page is a
+bounded capability observation, not authority to invent a timestamp seed or a
+claim about other KIS endpoints.
+
 `data.kis_paper_intraday` is the offline consumer: it verifies every index,
 manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
 5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first

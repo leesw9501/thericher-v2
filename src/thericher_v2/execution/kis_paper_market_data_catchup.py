@@ -20,6 +20,7 @@ CatchupStatus = Literal[
     "storage_floor",
     "recovery_required",
     "busy",
+    "token_spacing_pending",
 ]
 
 
@@ -98,6 +99,14 @@ def run_kis_paper_market_data_catchup(
                 reason=result.reason,
             )
         if result.status == "deferred":
+            if result.reason == "token_request_not_due":
+                return _result(
+                    status="token_spacing_pending",
+                    attempted=attempted,
+                    retained=retained,
+                    completed=completed,
+                    reason=result.reason,
+                )
             return _result(
                 status=(
                     "rate_limited_cooldown"

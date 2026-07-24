@@ -24,6 +24,7 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
     KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
 )
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT,
@@ -46,7 +47,11 @@ def main(
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--project-only", action="store_true")
     parser.add_argument("--pages-per-target", type=int, default=2)
-    parser.add_argument("--mode", choices=("backfill", "head"), default="backfill")
+    parser.add_argument(
+        "--mode",
+        choices=("backfill", "head", "historical-probe"),
+        default="backfill",
+    )
     parser.add_argument("--runtime-projection", type=Path)
     args = parser.parse_args(argv)
     observed_at = clock()
@@ -76,9 +81,15 @@ def main(
         request_gate = KisPaperMarketDataRateGate(
             control_root=_base_cache_root().parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
         )
+        token_start_gate = KisPaperMarketDataTokenStartGate(
+            control_root=_base_cache_root().parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
+        )
         client = KisPaperMarketDataClient(
             config=config,
-            transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
+            transport=UrllibKisPaperMarketDataTransport(
+                request_gate=request_gate,
+                token_start_gate=token_start_gate,
+            ),
             max_minute_page_attempts=len(KIS_PAPER_PRIVATE_INTRADAY_TARGETS)
             * args.pages_per_target,
         )
@@ -171,10 +182,13 @@ def _load_paper_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
 
 
 def _cache_root(mode: str = "backfill") -> Path:
-    if mode not in {"backfill", "head"}:
+    if mode not in {"backfill", "head", "historical-probe"}:
         raise ValueError("private intraday mode is invalid")
     base = _base_cache_root()
-    return base if mode == "backfill" else base.with_name(f"{base.name}-head")
+    if mode == "backfill":
+        return base
+    suffix = "head" if mode == "head" else "historical-probe"
+    return base.with_name(f"{base.name}-{suffix}")
 
 
 def _base_cache_root() -> Path:

@@ -20,6 +20,10 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataCallCounts,
     KisPaperMarketDataClient,
     KisPaperMarketDataConfig,
+    KisPaperMarketDataError,
+)
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
 )
 from thericher_v2.execution.kis_private_daily_backfill import (
     KIS_PAPER_PRIVATE_DAILY_BACKFILL_VERSION,
@@ -54,6 +58,11 @@ class _PacingClock:
 
     def sleep(self, seconds: float) -> None:
         self.value += seconds
+
+
+class _TokenSpacingTransport:
+    def request(self, _request: KisMarketDataRequest) -> KisMarketDataResponse:
+        raise KisPaperMarketDataError(KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON)
 
 
 def test_daily_backfill_collects_one_resumable_qqq_chunk_outside_git(tmp_path: Path) -> None:
@@ -199,6 +208,34 @@ def test_deferred_target_does_not_block_spy_venue_confirmation(tmp_path: Path) -
     assert index["targets"][0]["state"] == "deferred"
     assert index["targets"][1]["state"] == "complete"
     assert index["targets"][1]["venue_status"] == "verified_by_kis_response"
+
+
+def test_token_spacing_defer_does_not_write_a_snapshot_or_change_backfill_state(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data"
+
+    result = run_kis_paper_private_daily_backfill_once(
+        client_factory=lambda: _client(_TokenSpacingTransport()),  # type: ignore[arg-type]
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+    )
+
+    assert result.status == "deferred"
+    assert result.target_key == "QQQ/NAS/MODP=0"
+    assert result.reason == KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
+    assert not list(cache_root.glob("snapshot=*"))
+    index = load_or_initialize_kis_paper_private_daily_backfill_index(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert index["generation"] == 0
+    assert index["targets"][0]["state"] == "ready"
+    assert index["targets"][0]["chunks"] == []
 
 
 def test_empty_daily_response_is_deferred_without_marking_venue_complete(tmp_path: Path) -> None:

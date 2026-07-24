@@ -1,9 +1,13 @@
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from thericher_v2.execution.kis_market_data_rate_gate import KisPaperMarketDataRateGate
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
+)
 
 
 class _Clock:
@@ -77,3 +81,44 @@ def test_rate_limit_cooldown_is_shared_without_storing_response_data(tmp_path: P
     state = (tmp_path / "control" / "request-rate.json").read_text(encoding="utf-8")
     assert "credential" not in state
     assert "response" not in state
+
+
+def test_shared_token_start_gate_yields_without_sleep_or_secret_state(tmp_path: Path) -> None:
+    clock = _Clock()
+    first = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control",
+        minimum_request_interval_seconds=300,
+        clock=clock,
+    )
+    second = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control",
+        minimum_request_interval_seconds=300,
+        clock=clock,
+    )
+
+    assert first.token_request_is_due() is True
+    assert first.claim_token_request_start() is True
+    assert second.token_request_is_due() is False
+    assert second.claim_token_request_start() is False
+    assert clock.sleep_calls == []
+
+    snapshot = second.snapshot()
+    assert snapshot.last_token_request_started_at_utc == datetime(2026, 7, 24, 12, 0, tzinfo=UTC)
+    assert snapshot.next_token_request_not_before_utc == datetime(
+        2026,
+        7,
+        24,
+        12,
+        5,
+        tzinfo=UTC,
+    )
+    state_path = tmp_path / "control" / "token-request.json"
+    assert json.loads(state_path.read_text(encoding="utf-8")) == {
+        "last_token_request_started_at_utc": "2026-07-24T12:00:00Z",
+        "schema_version": 1,
+    }
+
+    clock.now += timedelta(minutes=5)
+
+    assert second.token_request_is_due() is True
+    assert second.claim_token_request_start() is True

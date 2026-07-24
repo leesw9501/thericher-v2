@@ -23,11 +23,12 @@ ready lane.
 ## Current Cross-Lane View
 
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
-- Shared bottleneck: Data is calibrating durable KIS Paper token reuse/pacing
-  and actual historical-minute capability through bounded measurements so
-  collection can use observed throughput without removing existing
-  source/evidence-backed controls prematurely. This is Data-owned; its exact
-  queue remains in `data.md` and independent collection may continue.
+- Shared bottleneck: Data has drained QQQ/SPY daily history and measured the
+  documented-normal-start minute capability. The material next evidence gap is
+  whether a separate corporate-action event contract can qualify the new
+  unadjusted QQQ/SPY daily source for any return-labelled research. That scoped
+  Data/Research handoff does not hold prospective intraday collection, Paper
+  execution, or the existing frozen baselines.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -42,6 +43,11 @@ with a recorded next-due worker state plus bounded, result-driven calibration.
 While that worker waits, Codex dispatches another ready, non-conflicting lane
 package. A long-running test or active collection may continue in its own
 worker; it is not an orchestrator wait.
+
+At each active checkpoint, compare observed latency, idle resources, repeated
+failure modes, and evidence quality. When one scoped, reversible improvement
+has a clear engine-loop benefit, integrate it before the next company-goal
+boundary; otherwise retain the simpler path.
 
 ## Review Triggers
 

@@ -185,6 +185,62 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
     }
 
 
+def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
+    monkeypatch,
+    capsys,
+    tmp_path: Path,
+) -> None:
+    script = _load_script()
+    monkeypatch.setenv("KIS_PAPER_APP_KEY", "paper-key")
+    monkeypatch.setenv("KIS_PAPER_APP_SECRET", "paper-secret")
+    monkeypatch.setenv("THERICHER_MARKET_DATA_ROOT", str(tmp_path / "market-data"))
+
+    def paper_client(**_kwargs: object) -> object:
+        return object()
+
+    def run_cycle(**kwargs: object) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
+        assert kwargs["cache_root"] == (
+            tmp_path
+            / "market-data"
+            / "us_equities"
+            / "kis_paper_private"
+            / "intraday-historical-probe"
+        )
+        assert kwargs["pages_per_target"] == 1
+        assert kwargs["resume_cursor"] is False
+        return (
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="QQQ/NAS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
+        )
+
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
+    monkeypatch.setattr(script, "run_kis_paper_private_intraday_backfill_cycle", run_cycle)
+
+    script.main(
+        ["--execute", "--mode", "historical-probe", "--pages-per-target", "1"],
+        clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        code_revision=lambda _: "git:test",
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "mode": "historical-probe",
+        "status": "complete",
+        "targets": [
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "QQQ/NAS/1m",
+            }
+        ],
+    }
+
+
 def test_intraday_backfill_script_rejects_live_mode_before_reading_config(
     monkeypatch,
     capsys,

@@ -19,6 +19,7 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
     KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
 )
 from thericher_v2.execution.kis_paper_market_data_catchup import (
     KIS_PAPER_MARKET_DATA_CATCHUP_MAX_CHUNKS,
@@ -67,6 +68,9 @@ def main(
     request_gate = KisPaperMarketDataRateGate(
         control_root=cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
     )
+    token_start_gate = KisPaperMarketDataTokenStartGate(
+        control_root=cache_root.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
+    )
     revision = (code_revision or _current_code_revision)(repository_root)
     client: KisPaperMarketDataClient | None = None
 
@@ -76,6 +80,7 @@ def main(
             client = _client(
                 load_kis_paper_market_data_config(dotenv_path),
                 request_gate=request_gate,
+                token_start_gate=token_start_gate,
                 max_daily_page_attempts=(
                     args.max_chunks * KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS
                 ),
@@ -132,11 +137,15 @@ def _client(
     config: KisPaperMarketDataConfig,
     *,
     request_gate: KisPaperMarketDataRateGate,
+    token_start_gate: KisPaperMarketDataTokenStartGate,
     max_daily_page_attempts: int = KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
 ) -> KisPaperMarketDataClient:
     return KisPaperMarketDataClient(
         config=config,
-        transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
+        transport=UrllibKisPaperMarketDataTransport(
+            request_gate=request_gate,
+            token_start_gate=token_start_gate,
+        ),
         max_daily_page_attempts=max_daily_page_attempts,
     )
 

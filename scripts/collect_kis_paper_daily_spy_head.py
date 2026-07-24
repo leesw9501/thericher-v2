@@ -17,6 +17,7 @@ from thericher_v2.execution.kis_market_data import (
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
     KisPaperMarketDataRateGate,
+    KisPaperMarketDataTokenStartGate,
 )
 from thericher_v2.execution.kis_paper_daily_spy_head import (
     KIS_PAPER_DAILY_SPY_HEAD_ROOT,
@@ -46,10 +47,16 @@ def main(
         request_gate = KisPaperMarketDataRateGate(
             control_root=_shared_control_root(Path(args.cache_root))
         )
+        token_start_gate = KisPaperMarketDataTokenStartGate(
+            control_root=_shared_control_root(Path(args.cache_root))
+        )
         result = collect_kis_paper_daily_spy_head_once(
             KisPaperMarketDataClient(
                 config=config,
-                transport=UrllibKisPaperMarketDataTransport(request_gate=request_gate),
+                transport=UrllibKisPaperMarketDataTransport(
+                    request_gate=request_gate,
+                    token_start_gate=token_start_gate,
+                ),
             ),
             cache_root=args.cache_root,
             repository_root=args.repository_root,

@@ -120,6 +120,12 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    The existing Norgate static 523-symbol trial panel is development-training
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
+   The completed KIS QQQ/SPY D1 pair is materially longer but still
+   `MODP=0_unadjusted`; Claude's 2026-07-25 falsification verdict is
+   `unsupported` for return-labelled research until a separately attested
+   corporate-action event contract masks or otherwise qualifies affected
+   feature/target pairs. This limits only that new source scope, not Data,
+   prospective intraday collection, or Paper execution.
 6. The first fixed KIS-only intraday breadth and three-architecture CUDA screen
    are complete and no architecture is selected. Do not retune, choose, or
    ensemble from the five comparison sessions. The next depth candidate needs
@@ -171,6 +177,12 @@ at a time and leave the next fixed job ready whenever its contract is sound.
 ## Durable Knowledge
 
 - Daily raw-price data has an explicit corporate-action limitation.
+- A long unadjusted QQQ/SPY price history cannot be treated as a label-ready
+  daily return panel merely because its raw snapshots and dates are verified.
+  Before it supplies a chronological return/target contract, Data must provide
+  a source-attested dividend/split event mapping and the contract must preserve
+  point-in-time availability and exclude affected pairs. Until then it is
+  collection evidence only, never a GPU, model, ensemble, or PnL input.
 - The former daily 756-session target improved comparative validation; it never
   blocked KIS Paper connectivity or a deterministic paper canary. The active
   694-session panel is a documented source-limited input, not a repaired one.

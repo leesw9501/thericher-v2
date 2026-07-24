@@ -2,92 +2,81 @@
 
 ## Objective
 
-Establish KIS Paper **market-data** token reuse and throughput behavior, then
-finish the finite daily catch-up for `QQQ/NAS` and `SPY/AMS` while mapping the
-actual historical 1m capability.
+Qualify or reject a **corporate-action event sidecar** for the completed KIS
+Paper `QQQ/SPY` daily cache, so a future chronological Research contract can
+know which unadjusted price pairs are comparable.
 
-On 2026-07-24, a data-only token check returned `token_issued`. An immediately
-following catch-up ran in a separate short-lived process and returned the safe
-`auth_rejected` category before retaining a row. KIS documents a one-day token
-lifetime and at-most-once-per-minute reissuance, so this sequence is
-inconclusive for credential health, not evidence that the local Paper key pair
-must be replaced. `IWM/AMS` remains independently `source_limited` at its
-known bad cursor.
+The KIS-only pair is now hash-attested for 4,756 common sessions from
+2007-08-21 through 2026-07-17, but its `MODP=0_unadjusted` series cannot supply
+daily return labels yet. Claude's 2026-07-25 falsification verdict was
+`unsupported`: dividend/split event dates must be source-attested and handled
+before a return target, naive return baseline, model, GPU run, ensemble, or
+Paper decision is considered.
 
 ## Standing Authority
 
-- Private `KIS_PAPER_*` market-data calls and local retention on `D:` are
-  authorized. This goal is data-only and must not call account or order
-  endpoints.
-- Read local Paper configuration only through the existing strict loader. Never
-  print, log, hash into an artifact, commit, or send an App Key, App Secret,
-  token, account value, raw response, or `KIS_LIVE_*` value to Claude.
-- Do not read `KIS_LIVE_*`, use a live route or real capital, buy data, accept
-  unclear rights, publish anything, or put data/artifacts in Git.
+- The operator has authorized private use of `TIINGO_API_TOKEN` for no-cost
+  Tiingo standard-EOD data work on `QQQ` and `SPY`. Read it only through a
+  strict local loader; never print, log, hash into artifacts, commit, or send
+  it to Claude.
+- Store event-sidecar bytes only under `D:\market_data`; generated summaries
+  remain under `D:\thericher-v2\model-artifacts`. Never store either in Git.
+- Do not call KIS, account, position, order, or live endpoints for this goal.
+  Do not read `KIS_LIVE_*`, submit broker orders, buy anything, publish
+  data/services, or use a GPU.
+- The existing 2022-11-22 through 2026-06-22 Tiingo event snapshot is evidence
+  to inventory, not proof of the full 2007-2026 coverage required here.
 
 ## Role-Owned Work
 
 ### Codex Orchestrator
 
-Keep `agents/orchestration.md` as a cross-lane-only projection. A KIS or other
-provider cooldown belongs to its named worker and must yield to ready
-independent work rather than hold the foreground orchestrator in a long sleep.
-Do not duplicate Data, Research, or Execution queues there, and do not turn
-resource observations into a second goal or an approval gate. At integration,
-identify the current material bottleneck or idle resource and retain or make
-one reversible evidence-backed improvement.
+Keep the work limited to one source-contract question. Continue independent
+scheduled KIS Data and Paper Execution work, but do not let an event-sidecar
+result alter their authority or cadence. Record the Claude `unsupported`
+resolution in the relevant stateboards without creating a new approval gate.
 
 ### Data Agent
 
-1. Verify only non-secret configuration facts: complete Paper key pair present,
-   non-live mode, fixed virtual market-data host, and sanitized token outcome.
-2. Add a shared non-secret five-minute token-request-start spacing guard across
-   short-lived data workers. Reuse one in-memory Paper client per finite run;
-   never persist a bearer token. This guard is separate from market-page
-   throughput and must not slow pages after token issuance.
-3. Run one spaced, data-only QQQ/SPY catch-up/capability invocation using the
-   existing finite page/cooldown controls. Record only request categories,
-   counts, continuation outcome, retained-cache metadata, and enough timing
-   categories to decide whether a future rate setting should be retained or
-   recalibrated. Do not remove an existing documented or evidence-backed
-   control, add a permanent unmeasured throttle, or call account, order, or
-   live endpoints.
-4. Treat a further sanitized token failure as credential evidence only when it
-   occurs after the shared spacing guard in a single-client run. Do not
-   brute-force retries or ask the operator to replace values before that kill
-   test.
-5. After normal token behavior is established, test the overseas-minute
-   endpoint's actual historical seek capability in a separately labeled,
-   bounded QQQ/SPY probe. Keep an undocumented `KEYB` seed out of the normal
-   collector unless the source result proves its semantics; record only the
-   supported range/outcome and preserve valid raw data on `D:`.
-6. Continue the independent three-window intraday-head schedule. Its partial
-   coverage remains Data evidence until an exact contiguous 390-minute QQQ
-   regular session exists.
+1. Re-attest the completed KIS QQQ/SPY cache offline and inventory the existing
+   Tiingo event snapshot's actual coverage before downloading anything.
+2. If it lacks the required date range, use the authorized Tiingo standard-EOD
+   endpoint in bounded, deduplicated QQQ/SPY requests. Retain only normalized
+   event facts needed for the contract: symbol, source date, event kind, and
+   event value/factor where present, plus coverage/provenance/hash metadata.
+   Do not persist or report Tiingo quote rows/prices.
+3. Build a small immutable external event-sidecar snapshot with strict schema,
+   source coverage, event-date semantics, KIS-session mapping, and hash
+   attestation. Preserve unknown semantics as `unqualified`; do not guess an
+   event date, synthesize an adjustment, or silently drop an unmatched event.
+4. Produce a metadata-only result that states whether affected daily
+   feature/target pairs can be masked deterministically. It must never create
+   training labels, a dataset for a model, or a broker input.
 
 ### Engine Research Agent
 
-Keep frozen historical baselines unchanged. The credential incident and partial
-head coverage are not model inputs or GPU triggers.
+Define only a prospective QQQ/SPY source-contract receipt: chronological
+availability, target timing, and the exact event-pair exclusion rule it would
+require. It may consume Data's metadata/hash result, but must not train, score,
+select, retune, ensemble, run CUDA, or replay a return strategy. If the
+sidecar is unqualified, record that scoped outcome and keep the cache
+collection-only.
 
 ### Execution Agent
 
-Keep Paper routing and account/order schedules unchanged. Do not infer an
-order, fill, terminal state, or PnL from a data-worker token outcome.
+Keep Paper routing, scheduled sessions, and reconciliation unchanged. The event
+sidecar is not an order, price, sizing, fill, or PnL input.
 
 ## Completion Evidence
 
-- A sanitized, spaced single-client result distinguishes token issuance from
-  data-endpoint access without claiming a credential fault prematurely.
-- The daily index metadata and catch-up result explain QQQ/SPY cursor progress,
-  while the minute probe explains only the observed historical capability, with
-  no raw rows, secrets, account calls, or orders in the report.
-- The collection path yields external waits to its worker/scheduler and leaves
-  independent ready work available; no duplicate scheduler, broker route, or
-  artifact-in-Git behavior is added.
-- Any newly retained pacing/retry control cites the relevant source or bounded
-  measurement and the fact that will recalibrate it; an inconclusive probe is
-  scoped to that input rather than becoming a global pause.
+- The external sidecar is either hash-attested with exact QQQ/SPY coverage and
+  deterministic KIS-session mapping, or the precise missing semantic/coverage
+  fact is recorded as `unqualified` without retry loops.
+- Tests prove token redaction, no KIS/broker/network access in the offline
+  matcher, no raw Tiingo quote persistence, no artifact-in-Git behavior, and
+  no label/model/Paper path from this objective.
+- The current three-ETF baseline stays frozen, and the next Research decision
+  remains separate from any event-sidecar result until its own Claude challenge.
 
 ## Verification
 
@@ -100,4 +89,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Improve KIS market-data recovery`
+`Qualify daily corporate-action inputs`

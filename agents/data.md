@@ -40,30 +40,30 @@ as a failed collection or an authority hold.
 - Daily, intraday, and daily-head market-data workers share
   `D:\market_data\us_equities\kis_paper_private\collection-control-v1`.
   The gate serializes request starts at 1.25 seconds or more and records a
-  categorical 60-second cooldown after a KIS rate-limit response. Its state
-  contains timing facts only, never credentials, raw rows, account data, or a
-  permission latch.
+  categorical 60-second cooldown after a KIS rate-limit response. A separate
+  atomic token-start gate permits one token POST every five minutes across
+  short-lived workers; an unavailable window returns without an HTTP request
+  or worker sleep. Its state contains timing facts only, never credentials,
+  raw rows, account data, or a permission latch.
 - The Docker data-only profile completed an end-to-end Paper market-data chunk
   on 2026-07-23 with its injected two-key Paper environment, committing 199
   `SPY/AMS` rows. It has no account/order mount or route.
-- The first accelerated catch-up invocation on 2026-07-24 reached only the
-  Paper token endpoint and returned `auth_rejected` before retaining a row.
-  A later data-only token check returned `token_issued`, then an immediately
-  separate short-lived catch-up again returned `auth_rejected`. KIS documents a
-  one-day token lifetime and a once-per-minute reissue limit, so this sequence
-  is inconclusive for credential health. Add a shared non-secret five-minute
-  token-start spacing guard and reuse one in-memory client per finite worker
-  before treating a later spaced failure as a credential/provider fact. Do not
-  brute-force retries or turn it into a hold on intraday head, Research,
-  Execution, or another ready Data lane.
-  Existing page/cooldown controls remain active until the bounded single-client
-  capability measurement records a source or observed reason to recalibrate
-  one; an inconclusive result remains scoped to its target.
-- Last known clean common coverage: 694 completed sessions. The current daily
-  index has QQQ/NAS `ready` at `20210107` with eight chunks and SPY/AMS
-  retry-ready after its scoped `auth_rejected` record at the same cursor with
-  eight chunks; IWM's unchanged 2023-10-10 cursor is `source_limited` with ten
-  chunks. Inspect the index before acting.
+- The 2026-07-25 shared-token measurement first validated a one-token,
+  two-page QQQ/NAS chunk. After per-chunk call-count accounting was fixed, one
+  reused-client Docker run drained 33 further daily chunks with two completed
+  targets and no rate-limit cooldown. QQQ/NAS is now `complete` at `20070820`
+  with 27 chunks and SPY/AMS is `complete` at `20070821` with 26 chunks. This
+  demonstrates actual in-memory token reuse and bounded page throughput; it
+  never called an account, order, or live endpoint. IWM's unchanged 2023-10-10
+  cursor remains independently `source_limited` with ten chunks.
+- The three-target common panel remains 694 completed sessions because IWM is
+  source-limited. The separately verified QQQ/SPY-only intersection is now
+  4,756 sessions from 2007-08-21 through 2026-07-17, with index hash
+  `sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660`
+  and dataset hash
+  `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
+  It retains the explicit `MODP=0_unadjusted` and unqualified corporate-action
+  limitations, so it is collection evidence rather than a return-label input.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
@@ -187,17 +187,22 @@ as a failed collection or an authority hold.
    conflicts, verify cursor seams, and return the completed common-session
    intersection for consumers. A bounded `end_session` may re-attest the full
    source while materializing only the permitted prefix as `Bar` objects.
-3. Treat 694 sessions as the active daily research input. The former 756 target
-   is source-limited and was never KIS Paper permission.
+3. Treat the existing three-target 694-session panel as the only current daily
+   research input. The new QQQ/SPY 4,756-session intersection is a distinct,
+   unadjusted source scope. It may be used only after a separately verified
+   corporate-action event contract defines which feature/target pairs are
+   comparable; it must not retune the retired three-ETF work in the meantime.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
-5. The historical minute cursors are currently exhausted after the
-   header-contract recovery. Their next metadata hydration marks terminal
-   QQQ/SPY cursors `source_exhausted` without another page request. Continue
-   fresh-session accumulation through the prospective head cache; a future
-   independently scoped historical refresh may still run without approval if it
-   has a useful source reason. An old failed or unretained result cannot disable
-   either path.
+5. The 2026-07-25 separately labeled `historical-probe` used the documented
+   blank first `KEYB` contract in an independent sibling root. Both QQQ/NAS and
+   SPY/AMS returned one retained 120-row 1m page, observed from
+   `20260724T100800` through `20260724T120700`, with terminal continuation and
+   no output cursor. This establishes only the current normal-start capability;
+   do not invent an arbitrary historical `KEYB` seed or generalize it into a
+   claim about every KIS historical endpoint. Continue fresh-session
+   accumulation through the prospective head cache. An old failed or unretained
+   result cannot disable either path.
 6. Keep the head cache accumulating prospective sessions while preserving its
    independent root and safe coverage evidence. Reattest any candidate complete
    session before handing it to Engine Research.
@@ -278,7 +283,14 @@ that would cross the 15% floor.
   timestamp. `output1.next` is provider metadata, not cursor authority. The
   first actual QQQ and SPY page pairs each had one exact boundary overlap;
   conflicts reject cursor advance rather than silently replacing a cached
-  minute.
+   minute.
+- The separately labeled historical-minute probe starts with the documented
+  blank `KEYB`, never with an inferred or arbitrary time seed. Its first
+  2026-07-25 QQQ/NAS and SPY/AMS pages each contained 120 retained rows from
+  observed `20260724T100800` through `20260724T120700` with terminal
+  continuation. It is a bounded endpoint observation stored under the sibling
+  `intraday-historical-probe` root, not a source-semantics, price, or broad
+  history claim.
 - The intraday loader uses the explicit KIS Korea fields (`kymd`/`khms`) as its
   UTC basis. It labels a bar incomplete when its end is later than the rounded
   collection minute, so an in-flight minute cannot become a completed feature.
@@ -315,20 +327,22 @@ that would cross the 15% floor.
 Current recovery class: `resume`. The historical QQQ/NAS 1m baseline input is
 intact, and the 2026-07-23 header-contract recovery cleared both historical
 minute cursors after committing one final bounded page per target. The
-generation-4 prospective-head index is readable but still has zero of five
-required complete QQQ sessions after its first post-close run, so it is pending
-only as a future current-input source. The former
-`minute_cursor_invalid` evidence is resolved and never paused the fixed
-receipt, Paper work, or another data lane. Reattest the index and committed
-snapshots before a new network call. Recover a matching orphan snapshot without
-KIS access. Classify a bad snapshot or index as `reconcile`; do not overwrite
-evidence or invent a cursor.
+2026-07-25 normal-start historical probe then found only one terminal 120-row
+page per QQQ/NAS and SPY/AMS stream; its separate root prevents that observation
+from mutating the historical cursor cache. The generation-4 prospective-head
+index is readable but still has zero of five required complete QQQ sessions
+after its first post-close run, so it is pending only as a future current-input
+source. The former `minute_cursor_invalid` evidence is resolved and never
+paused the fixed receipt, Paper work, or another data lane. Reattest the index
+and committed snapshots before a new network call. Recover a matching orphan
+snapshot without KIS access. Classify a bad snapshot or index as `reconcile`;
+do not overwrite evidence or invent a cursor.
 
 ## Next Handoff
 
-The exact-order source probe now confirms that the present documented KIS
-history contract remains insufficient for terminal/PnL interpretation. Continue
-KIS-native minute accumulation and preserve provider identity, timestamp basis,
-session classification, coverage, and limitations. Re-run the metadata-only
-prospective preparer after future head collections; report only a concrete
-source-rights or storage constraint that needs operator action.
+The documented normal-start historical-minute probe is now bounded: it returns
+one terminal page rather than a seekable archive. Continue KIS-native minute
+accumulation and preserve provider identity, timestamp basis, session
+classification, coverage, and limitations. Re-run the metadata-only prospective
+preparer after future head collections; report only a concrete source-rights or
+storage constraint that needs operator action.

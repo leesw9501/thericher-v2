@@ -4757,3 +4757,30 @@ Reason: a scoped probe yields faster, recoverable evidence without inventing a
 human approval wait or leaving the foreground orchestrator idle. It improves
 data collection and research/execution throughput while keeping rate, data
 correctness, recovery, and live-authority boundaries intact.
+
+## 2026-07-25 - Keep unadjusted QQQ/SPY daily history out of return labels pending event qualification
+
+Decision: the completed KIS Paper QQQ/SPY-only D1 cache is valid collection
+evidence but is not yet a return-labelled Research input. Its 4,756 common
+sessions (2007-08-21 through 2026-07-17) remain explicitly
+`MODP=0_unadjusted` with unqualified corporate-action semantics. Do not run a
+daily return baseline, model, GPU candidate, ensemble, promotion, or Paper
+decision from that source until a separate, source-attested dividend/split event
+contract defines comparable feature/target pairs and preserves point-in-time
+availability. The existing 694-session three-ETF work remains frozen and is not
+retuned.
+
+This is a source-contract limitation, not an operator approval, Paper, data
+collection, schedule, or global Research halt. Data may use the already
+authorized no-cost Tiingo standard-EOD access to build a bounded external
+event-only sidecar and either qualify a masked contract or record an
+unqualified result. The operator's existing `TIINGO_API_TOKEN` authorization
+for private `QQQ`/`SPY` standard-EOD work applies to that bounded sidecar only;
+the token itself remains local and unreported.
+
+Reason: Claude's falsification-first verdict was `unsupported` as framed.
+Raw unadjusted close-to-close labels can be mechanically distorted on dividend
+or split event dates, and the current KIS cache alone cannot identify those
+dates. The verdict's reversal fact is a source-attested event mapping plus
+chronological availability/target timing validation; until then, a disclaimer
+would not make the labels comparable.

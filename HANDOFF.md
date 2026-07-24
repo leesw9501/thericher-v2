@@ -270,11 +270,12 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
 
 - cache/index: `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
 - data-bearing mappings: `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS`
-- current logical cursor state: QQQ/NAS is `ready` at `20210107` with eight
-  chunks, SPY/AMS is retry-ready after its scoped `auth_rejected` record at
-  `20210107` with eight chunks, and IWM/AMS is `source_limited` at `20231010`
-  with ten chunks
-- current common intersection: 694 completed sessions
+- current logical cursor state: QQQ/NAS is `complete` at `20070820` with 27
+  chunks, SPY/AMS is `complete` at `20070821` with 26 chunks, and IWM/AMS is
+  `source_limited` at `20231010` with ten chunks
+- current three-target common intersection: 694 completed sessions; the
+  separately verified QQQ/SPY-only intersection has 4,756 sessions from
+  2007-08-21 through 2026-07-17
 - stored fields: `MODP=0_unadjusted`; corporate-action semantics remain an
   explicit data limitation.
 - `thericher-kis-paper-daily-backfill` is installed for 07:00 KST Tuesday
@@ -283,25 +284,27 @@ duplicate KIS Paper calls. The daily review does not grant live authority.
   review; it has no account or order route.
 - Every KIS Paper market-data worker shares the external
   `D:\market_data\us_equities\kis_paper_private\collection-control-v1`
-  request gate. It starts requests at least 1.25 seconds apart and records only
-  timing facts; a categorical KIS rate limit imposes a shared 60-second
-  cooldown. It stores no credentials, response bodies, account facts, or raw
-  rows.
+  request gate. It starts ordinary requests at least 1.25 seconds apart and
+  records only timing facts; a categorical KIS rate limit imposes a shared
+  60-second cooldown. A separate atomic token-start gate permits one token POST
+  every five minutes across short-lived workers. An unavailable token window
+  exits without an HTTP request or worker sleep. Neither state stores
+  credentials, response bodies, account facts, or raw rows.
 - The Docker profile completed an actual 199-row `SPY/AMS` chunk on 2026-07-23
   using only its injected Paper app-key/app-secret pair. Its image does not
   mount `.env`; the shared market-data loader accepts only a complete named
   Paper pair, rejects a partial pair or live mode, and leaves host `.env`
   parsing as its strict fallback.
-- The first accelerated catch-up invocation on 2026-07-24 reached only the
-  Paper token endpoint and returned the safe `auth_rejected` result before any
-  row was retained. A later data-only token check returned `token_issued`, but
-  an immediately separate short-lived catch-up returned `auth_rejected` again.
-  KIS documents a one-day token lifetime and a once-per-minute reissue limit,
-  so this sequence is not credential-failure evidence. The affected SPY cursor
-  has only its normal short retry state; add shared non-secret five-minute
-  token-start spacing and reuse one in-memory client per finite run before
-  interpreting a later spaced failure. This remains an exact Data recovery
-  fact, not a global collection, Paper, or scheduler hold.
+- The 2026-07-25 shared-token measurement completed a single-client Docker
+  QQQ/NAS chunk with one token attempt, two daily pages, and 199 retained rows
+  from `20210107` through `20200326`; a preceding bounded run committed the
+  matching SPY/AMS chunk. A catch-up attempted before its five-minute token
+  window returned `token_spacing_pending` without an HTTP request or sleep.
+  After per-chunk request accounting was corrected, the next reused-client run
+  drained 33 chunks, completed QQQ and SPY, and recorded no rate-limit cooldown.
+  This confirms token coordination and throughput rather than a credential
+  fault, and remains an exact Data recovery fact, not a global collection,
+  Paper, or scheduler hold.
 
 IWM expansion stops at the current lower boundary. An actual KIS page below it
 contained one internally inconsistent OHLC row; the strict parser rejected the
@@ -312,6 +315,18 @@ marks only that IWM source cursor `source_limited` and continues selecting
 ready QQQ/SPY work. Do not repeatedly query the source-limited IWM page until
 a different official endpoint or a separately evidence-backed row-quality
 contract resolves it.
+
+The newly complete QQQ/SPY-only D1 intersection was re-attested offline at
+4,756 common sessions from 2007-08-21 through 2026-07-17. Its index hash is
+`sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660`
+and its dataset hash is
+`sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
+It remains `MODP=0_unadjusted` with corporate-action semantics unqualified.
+Claude's 2026-07-25 falsification verdict was `unsupported` for constructing
+daily return labels from this source before a separate dividend/split event
+contract is verified. That restriction applies only to this prospective
+research-input decision; it does not halt collection, prospective minute work,
+local paper replay, or KIS Paper operation.
 
 The 2026-07-23 bounded IWM retry confirmed a fourth exact zero-row
 `daily_response_invalid` result at the unchanged cursor, so the index now
@@ -344,6 +359,15 @@ relies on the shared request gate rather than a daily quota assumption. A
 terminal historical minute cursor is recorded as `source_exhausted` without a
 new request; the separate head cache remains the normal path for fresh minutes.
 Inspect the live index before a new run because it is authoritative.
+
+On 2026-07-25, the separately rooted
+`intraday-historical-probe\v1` performed the documented blank-`KEYB` first
+request for QQQ/NAS and SPY/AMS. Each retained one 120-row 1m page whose
+observed KIS timestamp range was `20260724T100800` through `20260724T120700`,
+with terminal continuation and no next cursor. It demonstrates only the current
+normal-start endpoint capability. Do not invent an arbitrary historical `KEYB`
+seed, mutate the ordinary historical cursor cache, or generalize this result to
+another endpoint. The raw snapshots remain local beneath the probe root.
 
 The first reusable KIS-native intraday cache is now at
 `D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.

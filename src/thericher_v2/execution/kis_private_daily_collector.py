@@ -28,6 +28,7 @@ from .kis_market_data import (
     KisPaperMarketDataClient,
     KisPaperMarketDataError,
 )
+from .kis_market_data_rate_gate import KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
 
 KIS_PAPER_PRIVATE_DAILY_COLLECTOR_VERSION = "kis-paper-private-daily-collector-v1"
 KIS_PAPER_PRIVATE_DAILY_COLLECTOR_OBJECTIVE_ID = "kis-paper-private-daily-collector-v1"
@@ -65,6 +66,7 @@ _SAFE_FAILURE_REASONS = frozenset(
         "request_not_allowlisted",
         "response_invalid",
         "transport_failure",
+        KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
     }
 )
 
@@ -171,7 +173,7 @@ class KisPaperPrivateDailyCollectionResult:
         if not self.code_revision or "\n" in self.code_revision or len(self.code_revision) > 256:
             raise ValueError("private daily result provenance is invalid")
         if not isinstance(self.call_counts, KisPaperMarketDataCallCounts) or not (
-            self.call_counts.token_attempts == 1
+            self.call_counts.token_attempts in {0, 1}
             and self.call_counts.minute_page_attempts == 0
             and 0 <= self.call_counts.daily_page_attempts
             <= KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS
@@ -206,6 +208,15 @@ class KisPaperPrivateDailyCollectionResult:
             "unexpected_private_daily_collector_error"
         }:
             raise ValueError("private daily failure reason is invalid")
+        if (
+            self.call_counts.token_attempts == 0
+            and self.call_counts.daily_page_attempts == 0
+            and (
+                self.status != "rejected"
+                or self.reason != KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
+            )
+        ):
+            raise ValueError("private daily token spacing result is invalid")
         if self.status == "partial" and not _is_recoverable_partial_page(
             pages=self.pages,
             rows=self.rows,
@@ -241,6 +252,7 @@ def run_bounded_kis_paper_private_daily_collection(
     """Collect at most two raw daily pages, with a verified internal pace."""
 
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
+    initial_call_counts = client.call_counts
     pages: list[KisPaperPrivateDailyCollectorPage] = []
     rows_by_date: dict[str, KisPaperDailyRawRow] = {}
     dedupe_count = 0
@@ -287,6 +299,7 @@ def run_bounded_kis_paper_private_daily_collection(
             code_revision=code_revision,
             target=target,
             client=client,
+            initial_call_counts=initial_call_counts,
             pages=pages,
             rows_by_date=rows_by_date,
             dedupe_count=dedupe_count,
@@ -305,6 +318,7 @@ def run_bounded_kis_paper_private_daily_collection(
             code_revision=code_revision,
             target=target,
             client=client,
+            initial_call_counts=initial_call_counts,
             pages=pages,
             rows_by_date=rows_by_date,
             dedupe_count=dedupe_count,
@@ -322,6 +336,7 @@ def run_bounded_kis_paper_private_daily_collection(
         code_revision=code_revision,
         target=target,
         client=client,
+        initial_call_counts=initial_call_counts,
         pages=pages,
         rows_by_date=rows_by_date,
         dedupe_count=dedupe_count,
@@ -514,6 +529,7 @@ def _result(
     code_revision: str,
     target: KisPaperPrivateDailyCollectionTarget,
     client: KisPaperMarketDataClient,
+    initial_call_counts: KisPaperMarketDataCallCounts,
     pages: list[KisPaperPrivateDailyCollectorPage],
     rows_by_date: Mapping[str, KisPaperDailyRawRow],
     dedupe_count: int,
@@ -526,7 +542,10 @@ def _result(
         observed_at=observed_at,
         requested_anchor_date=target.anchor_date,
         code_revision=code_revision,
-        call_counts=client.call_counts,
+        call_counts=_call_count_delta(
+            initial=initial_call_counts,
+            final=client.call_counts,
+        ),
         pages=tuple(pages),
         rows=tuple(rows_by_date[key] for key in sorted(rows_by_date)),
         dedupe_count=dedupe_count,
@@ -536,6 +555,25 @@ def _result(
         reason=reason,
         symbol=target.symbol,
         exchange=target.exchange,
+    )
+
+
+def _call_count_delta(
+    *,
+    initial: KisPaperMarketDataCallCounts,
+    final: KisPaperMarketDataCallCounts,
+) -> KisPaperMarketDataCallCounts:
+    """Describe only calls made by this bounded collection on a reused client."""
+
+    token_attempts = final.token_attempts - initial.token_attempts
+    minute_page_attempts = final.minute_page_attempts - initial.minute_page_attempts
+    daily_page_attempts = final.daily_page_attempts - initial.daily_page_attempts
+    if min(token_attempts, minute_page_attempts, daily_page_attempts) < 0:
+        raise ValueError("private daily client call counts regressed")
+    return KisPaperMarketDataCallCounts(
+        token_attempts=token_attempts,
+        minute_page_attempts=minute_page_attempts,
+        daily_page_attempts=daily_page_attempts,
     )
 
 

@@ -53,6 +53,27 @@ def test_catchup_stops_at_the_shared_rate_cooldown_without_another_chunk() -> No
     assert calls == 1
 
 
+def test_catchup_yields_to_the_next_schedule_when_token_spacing_is_pending() -> None:
+    calls = 0
+
+    def run_daily_chunk() -> KisPaperPrivateDailyBackfillRun:
+        nonlocal calls
+        calls += 1
+        return _daily_result("deferred", reason="token_request_not_due")
+
+    result = run_kis_paper_market_data_catchup(
+        run_daily_chunk=run_daily_chunk,
+        max_chunks=4,
+        max_runtime=timedelta(minutes=5),
+        clock=lambda: datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+    )
+
+    assert result.status == "token_spacing_pending"
+    assert result.chunk_attempt_count == 0
+    assert result.last_reason == "token_request_not_due"
+    assert calls == 1
+
+
 def test_catchup_has_a_finite_chunk_budget() -> None:
     result = run_kis_paper_market_data_catchup(
         run_daily_chunk=lambda: _daily_result("collected", manifest=True),
