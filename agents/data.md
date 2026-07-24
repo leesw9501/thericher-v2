@@ -121,9 +121,14 @@ as a failed collection or an authority hold.
   source retention, or the separate prospective-head cadence.
 - The separate `intraday-head` root receives fresh source-page observations
   without advancing the historical backfill cursor. The Windows Scheduled Task
-  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35,
-  04:35, and 06:20 KST with up to four pages per target. Its schedule is never
-  evidence that a full session was stored.
+  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
+  02:35, 04:35, and 06:20 KST with up to four pages per target. A 2026-07-25
+  metadata-only inventory found zero complete QQQ sessions out of five: the
+  retained candidate dates had 240, 39, and 240 complete minutes of 390, with
+  no duplicate timestamp or later same-fingerprint completion to promote. The
+  last rejected source attempt was `minute_duplicate_conflict`; its fact is
+  scoped. The added 00:35 window improves the missing early-session coverage
+  without relaxing cache conflict or complete-session rules.
 - `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing
@@ -245,13 +250,12 @@ as a failed collection or an authority hold.
    freshness predicate. Keep those gaps visible while continuing Data work;
    they do not disable the head cache, KIS Paper, or an independently verified
    price source.
-10. Reattest the first session observed through the three in-session/post-close
-    triggers. The 02:35 source evidence had continuation available after two
-    120-row pages through 09:36, so the unchanged four-page cap may reach the
-    declared 09:30 regular open; the selector must still reject any short or
-    gapped union. Continue the cadence independently; the current zero-of-five
-    preparation is ordinary source evidence, not a permission or scheduling
-    latch.
+10. Reattest the first session observed through the four in-session/post-close
+    triggers. The new 00:35 window targets the missing early coverage; the
+    unchanged four-page cap may still expose source-authorized continuation.
+    The selector must reject any short or gapped union. Continue the cadence
+    independently; the current zero-of-five preparation is ordinary source
+    evidence, not a permission or scheduling latch.
 
 ## Authority And Boundaries
 

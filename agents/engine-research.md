@@ -168,7 +168,10 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    pair despite later index growth. It reads no raw bars, credentials, network,
    KIS route, GPU, model, or replay; it is preparation for the future
    observation, not a research-quality gate. This source-coverage finding does
-   not alter breadth, depth, ensemble, or replication queues.
+   not alter breadth, depth, ensemble, or replication queues. The Data lane has
+   added one 00:35 KST collection window after metadata showed the prior cadence
+   missed early-session coverage; no GPU or prospective candidate work starts
+   until an exact five-session preparation pair exists.
 
 ## GPU Policy
 

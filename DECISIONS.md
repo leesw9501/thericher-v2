@@ -5009,3 +5009,24 @@ execution decision.
 Reason: a small sealed handoff makes the first fresh KIS-compatible observation
 reproducible without turning raw data, retrospective model outputs, or local
 paper mechanics into a broker or model-selection path.
+
+## 2026-07-25 - Add an early prospective-head coverage window
+
+Decision: keep the one existing `thericher-kis-paper-intraday-head` task,
+Docker profile, four-page-per-target cap, strict duplicate-conflict rule, and
+390-minute selector. Add only its 00:35 KST trigger, alongside 02:35, 04:35,
+and 06:20, so the same data-only worker can sample the previously absent early
+US-session range. No account, order, live, model, or new scheduler route is
+introduced.
+
+A metadata-only index inventory found zero complete QQQ sessions out of five.
+The current candidate dates had 240, 39, and 240 of 390 required minutes; no
+duplicate retained timestamp, conflicting retained fingerprint, or later
+same-fingerprint completion could explain the gap. A later rejected source
+attempt recorded `minute_duplicate_conflict`, which remains scoped evidence for
+that snapshot rather than a cache or schedule hold.
+
+Reason: source metadata falsifies a selector relaxation or completion-promotion
+change as the current recovery. The missing early window is the smallest
+reversible coverage change; the next scheduled result, not the new schedule
+itself, will determine whether collection coverage improves.

@@ -2,12 +2,10 @@
 
 ## Objective
 
-Close the first-five-session prospective-data gap by establishing, with
-bounded evidence, why the existing KIS Paper intraday-head worker has not yet
-produced a complete 390-minute QQQ regular session, then make the smallest
-recoverable Data-side change that can improve collection coverage. The outcome
-is a truthful coverage/recovery result, not a strategy, model, GPU, PnL, or
-execution result.
+Reconcile the first expanded-cadence prospective QQQ intraday-head collection
+and use its metadata-only result to make, at most, one further evidence-backed
+Data recovery change. The new 00:35 KST window is owned by the existing single
+head task; do not wait in the foreground for it or create a duplicate scheduler.
 
 ## First Reads
 
@@ -29,54 +27,53 @@ execution result.
    - `agents/engine-research.md`
 
 3. Attempt a concise falsification-first Claude drift-check before changing
-   collector behavior. Do not send credentials, raw rows, cache paths, or
-   artifact contents. A local Claude authentication/tool failure is recorded as
-   a scoped tooling fact and does not hold safe Data work.
+   collector, duplicate, timestamp, or page-size behavior. Do not send
+   credentials, raw rows, cache paths, or artifact contents. A local Claude
+   authentication/tool failure is a scoped tooling fact, not a Data hold.
 
 ## Hard Boundaries
 
-- `KIS_PAPER_*` may be used only by the existing private Data client for
-  market-data collection. Do not call account, position, order, modify, cancel,
-  or live endpoints, and never read `KIS_LIVE_*`.
-- Keep raw source data under `D:\market_data`; keep generated evidence under
-  `D:\thericher-v2\model-artifacts`; never print or commit raw rows,
-  credentials, account facts, or response bodies.
-- Use the existing head worker, shared request control, and scheduled path when
-  possible. Do not create a second scheduler, a polling platform, a permanent
-  foreground sleep, or an approval gate.
-- A QQQ session becomes usable only after exact contiguous 390-minute regular
-  coverage and existing cache/index validation. Short, duplicate, conflicting,
-  extended-hours, or timestamp-ambiguous coverage stays a scoped Data fact.
-- Do not alter the frozen prospective Research contract, run a model/GPU job,
-  select a candidate, construct a broker intent, or submit a Paper order.
+- `KIS_PAPER_*` may be used only by the private Data client for market-data
+  collection. Do not call account, position, order, modify, cancel, or live
+  endpoints, and never read `KIS_LIVE_*`.
+- Keep raw data under `D:\market_data` and generated evidence under
+  `D:\thericher-v2\model-artifacts`; do not print or commit raw rows, prices,
+  credentials, account facts, response bodies, or private cache paths.
+- Preserve one existing `thericher-kis-paper-intraday-head` task, one Docker
+  profile, the four-page-per-target cap, source pacing, strict conflicting-row
+  rejection, and exact 390-minute session selection unless new evidence directly
+  falsifies one of those rules.
+- Do not rerun a known out-of-session duplicate-conflict shape merely to create
+  activity. The scheduler owns its due time; other ready lanes continue.
+- Do not run a model/GPU job, select a candidate, create an intent, or submit a
+  Paper order. The frozen offline consumer remains input-pending until a valid
+  first-five preparation pair exists.
 
 ## Required Work
 
-1. Inventory the current head index, recent collector evidence, and any
-   relevant historical probe metadata without dumping raw rows. State the exact
-   coverage gap and the strongest falsifiable cause.
-2. Trace the canonical KIS intraday request, continuation, page, timestamp,
-   and session-selection path. Prefer source evidence and focused synthetic
-   tests over guesses.
-3. If evidence supports a correction, implement the smallest bounded,
-   idempotent collector or recovery change. Preserve source pacing/retry facts
-   inside the owned worker and let other lanes continue while it waits.
-4. Exercise a bounded private data-only run when useful under the standing KIS
-   Paper authority. Reconcile its index/manifest outcome, then invoke the
-   existing preparation handoff only after durable collection.
-5. Add focused tests for the observed failure/recovery shape and for rejection
-   of any incomplete session. Refresh the Data, Research, and orchestration
-   stateboards with evidence and next recovery action.
+1. Reattest the installed four-trigger task and current head-index metadata
+   without opening raw bars. Record the coverage baseline and recovery class.
+2. After the first due expanded-cadence result, compare only source-safe
+   metadata: QQQ regular-session minute count, continuation category,
+   exact/conflicting overlap categories, and preparation status.
+3. If exact 390-minute QQQ coverage exists, invoke the existing metadata-only
+   preparation handoff and then run the already-built offline consumer. Do not
+   use KIS, credentials, or broker routes in the consumer.
+4. If coverage remains short, identify the exact missing interval/category and
+   make only one smallest source-backed recovery change. The official KIS sample
+   documents `NREC` as configurable up to 120, but do not introduce page-size or
+   duplicate-policy behavior without a bounded source/test case that requires it.
+5. Refresh Data, Research, and orchestration stateboards with current evidence,
+   next recovery, and no invented wait or approval state.
 
 ## Completion Evidence
 
-- A metadata-only coverage statement identifies the current QQQ session state
-  and either a concrete source limitation or a tested recovery change.
-- Any changed worker remains private, idempotent, source-paced, and recoverable
-  without blocking unrelated lanes.
-- If five complete sessions now exist, the existing pair is prepared and the
-  offline consumer may run; otherwise it remains a normal pending input with a
-  precise next collection/recovery path.
+- A metadata-only before/after coverage comparison names the QQQ session state,
+  source continuation/conflict category, and recovery classification.
+- Any change remains private, idempotent, source-paced, recoverable, and inside
+  the existing single-worker/single-task boundary.
+- A valid five-session pair either drives the offline local-paper observation or
+  remains an explicit normal pending input with the precise next Data action.
 
 ## Verification
 
@@ -89,4 +86,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Improve prospective intraday collection coverage`
+`Reconcile expanded intraday head coverage`

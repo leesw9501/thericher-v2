@@ -323,15 +323,15 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 
 Head snapshots live below the sibling `intraday-head` cache root and never
 advance the historical backfill cursor. The Windows Scheduled Task
-`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 02:35,
-04:35, and 06:20 KST. It keeps the same four-page-per-target maximum on each
-data-only invocation. The earlier in-session windows can expose the provider
-server-authorized continuation depth needed to test the regular open, while the
-final post-close window can cover the session tail. The cache selector, not the
+`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
+02:35, 04:35, and 06:20 KST. It keeps the same four-page-per-target maximum on
+each data-only invocation. The added 00:35 window samples the missing early
+regular-session range identified by metadata-only coverage evidence; it does
+not relax conflict handling or completeness. The cache selector, not the
 schedule, determines completeness: it accepts only an exact 390-minute declared
 QQQ session and rejects any partial or gapped union. This remains a bounded
 data-only invocation (at most eight minute-page calls per invocation): it has
-no account, order, or live route. The first three-trigger session is the next
+no account, order, or live route. The first four-trigger session is the next
 metadata-only reattestation before Research may consume a session.
 
 After a durable head collection in which every target result is `collected` or

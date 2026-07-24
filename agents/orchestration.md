@@ -25,9 +25,11 @@ ready lane.
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
 - Current bottleneck: no verified first-five prospective QQQ preparation pair
   exists yet because fresh complete head-session coverage has not accumulated.
-  The existing head task owns that external wait. The offline consumer is now
-  implemented and synthetically verified, so a verified pair is the only input
-  still needed for its first real offline observation.
+  Metadata found 240, 39, and 240 retained regular minutes on the candidate
+  dates, not a selector or completion-promotion defect. The existing head task
+  owns that external wait; its single task now includes a 00:35 KST early window.
+  The offline consumer is implemented and synthetically verified, so a verified
+  pair is the only input still needed for its first real offline observation.
 - Shared fact: the existing intraday-head collector now performs one isolated,
   post-durable metadata preparation attempt. It remains the only scheduler and
   collection authority; pending or failed preparation cannot revise its cache,
@@ -44,14 +46,12 @@ ready lane.
 
 ## Current Operating Improvement
 
-Keep the prospective replay's raw local-paper event stream in memory and write
-only a minimal, hash-bound external receipt. This preserves replayability while
-preventing raw price, order-identifier, source-path, PnL, or selection data
-from leaking into a general artifact. Safe partial artifacts restart; changed
-complete evidence requires reconciliation. While a worker waits, Codex
-dispatches another ready, non-conflicting lane package. A long-running test or
-active collection may continue in its own worker; it is not an orchestrator
-wait.
+Use metadata-only coverage counts to change the existing head cadence before
+adding collector recovery logic. The 00:35 KST trigger is a reversible early-
+session sample that preserves one task, one Docker service, the four-page cap,
+and strict conflict/session selection. While it waits, Codex dispatches another
+ready, non-conflicting lane package; a scheduled collection is not an
+orchestrator wait.
 
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
@@ -77,9 +77,10 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 
 ## Next Handoff
 
-At the next integration, verify that the completed D1 receipt is not reused as
-a model-selection input, and verify that no provider cooldown, schedule, or
-timer sleep holds Codex while a ready Data, Engine Research, or Execution
-package can proceed. Consume the frozen prospective observation consumer only
-from a verified first-five preparation pair; do not create a foreground wait or
-duplicate the existing collector schedule.
+At the next integration, reattest the first expanded-cadence head outcome and
+record exact coverage before considering another collector change. Verify that
+no provider cooldown, schedule, or timer sleep holds Codex while a ready Data,
+Engine Research, or Execution package can proceed. Consume the frozen
+prospective observation consumer only from a verified first-five preparation
+pair; do not create a foreground wait or duplicate the existing collector
+schedule.

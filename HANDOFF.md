@@ -127,14 +127,16 @@ current US exchange date. The session recorded the safe Paper-only
 created no canary run or broker order. This is execution-coverage evidence
 only; it does not claim a fill, PnL, or a model result.
 
-The separate data-only `thericher-kis-paper-intraday-head` task was reinstalled
-on 2026-07-24 with three weekly KST triggers at 02:35, 04:35, and 06:20, while
-retaining its existing four-page-per-target cap and one Docker service. This
-follows the safe evidence that a post-close unanchored source response was
-terminal after one page, while an earlier in-session response still offered
-continuation after two pages. The first three-trigger session is the bounded
-kill test: only an exact 390-minute QQQ union may become a future Research
-input; any short union remains Data evidence only.
+The separate data-only `thericher-kis-paper-intraday-head` task now has four
+weekly KST triggers at 00:35, 02:35, 04:35, and 06:20, while retaining its
+existing four-page-per-target cap and one Docker service. A metadata-only
+2026-07-25 inventory found zero complete QQQ sessions out of five: the retained
+candidate sessions held 240, 39, and 240 of 390 required minutes, and no later
+same-fingerprint completion could repair that gap. The first early in-session
+window had been missing, so the 00:35 trigger is the smallest coverage change.
+The later post-close duplicate-conflict fact remains scoped to that one source
+attempt. Only an exact 390-minute QQQ union may become a future Research input;
+any short or gapped union remains Data evidence only.
 
 The first receipt-linked Paper observer is now invoked automatically by the
 scheduled daily SPY session after that same session has produced its exact
