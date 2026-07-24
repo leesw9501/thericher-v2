@@ -164,6 +164,39 @@ The worker then continues another ready target; this is neither a Paper-order
 hold nor a global collection stop. A different endpoint, cursor, or
 evidence-backed parser contract starts a new bounded source scope.
 
+## KIS Daily Event Sidecar
+
+The qualified QQQ/SPY event-only snapshot is external and immutable:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1
+```
+
+It contains normalized event date/kind/value records plus source and coverage
+hashes, not Tiingo quote rows or response bytes. Its paired price-free
+research receipt is at:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-mask.json
+```
+
+To inspect only the pinned local KIS QQQ/SPY range, with no credential or
+network access:
+
+```powershell
+uv run python scripts\collect_kis_daily_corporate_action_sidecar.py
+```
+
+`--execute` is the narrow Tiingo collection path. It reads only the approved
+`TIINGO_API_TOKEN` through the strict local loader, makes one standard-EOD
+request each for QQQ and SPY, and refuses incomplete session coverage. Use it
+only for a new explicit immutable `snapshot=` destination; do not overwrite or
+re-fetch the pinned snapshot merely to re-run Research. The event sidecar is
+retrospective price-return plumbing only. Before a daily baseline, the next
+offline audit must bind the source hashes, audit every event boundary, and use
+a conservative `+-1` KIS-session mask. It never enables a model, GPU run,
+total-return claim, KIS Paper action, or live behavior.
+
 ## KIS Intraday Backfill
 
 The active private 1m cache is at:

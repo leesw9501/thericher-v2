@@ -23,12 +23,12 @@ ready lane.
 ## Current Cross-Lane View
 
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
-- Shared bottleneck: Data has drained QQQ/SPY daily history and measured the
-  documented-normal-start minute capability. The material next evidence gap is
-  whether a separate corporate-action event contract can qualify the new
-  unadjusted QQQ/SPY daily source for any return-labelled research. That scoped
-  Data/Research handoff does not hold prospective intraday collection, Paper
-  execution, or the existing frozen baselines.
+- Shared bottleneck: Data has drained QQQ/SPY daily history and the price-free
+  Tiingo event sidecar now exact-maps all 4,756 common sessions. The next
+  material evidence gap is a conservative offline event-boundary audit of the
+  provider-declared unadjusted KIS series before any daily return baseline.
+  That scoped Data/Research handoff does not hold prospective intraday
+  collection, Paper execution, or the existing frozen baselines.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.

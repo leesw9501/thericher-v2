@@ -321,12 +321,26 @@ The newly complete QQQ/SPY-only D1 intersection was re-attested offline at
 `sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660`
 and its dataset hash is
 `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
-It remains `MODP=0_unadjusted` with corporate-action semantics unqualified.
-Claude's 2026-07-25 falsification verdict was `unsupported` for constructing
-daily return labels from this source before a separate dividend/split event
-contract is verified. That restriction applies only to this prospective
-research-input decision; it does not halt collection, prospective minute work,
-local paper replay, or KIS Paper operation.
+
+The price-free Tiingo Standard EOD sidecar is now immutable at
+`D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1`.
+It exact-matches those KIS sessions, carries 78 QQQ and 76 SPY normalized
+dividend/split event facts, and has dataset hash
+`sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`
+and manifest hash
+`sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
+Neither the sidecar nor its paired
+`D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-mask.json`
+receipt retains raw Tiingo responses or prices. This is only retrospective
+price-return plumbing: it is not total return, point-in-time evidence, a model,
+GPU input, strategy result, or Paper decision.
+
+Claude's first 2026-07-25 verdict was `unsupported` before source-attested
+event dates. Its follow-up was `supported-with-limits`: before any daily naive
+baseline, re-attest both hashes, audit every event boundary against the KIS
+series, and freeze or reject a conservative `+-1`-session buffered mask. That
+source-contract work does not halt collection, prospective minute work, local
+paper replay, or KIS Paper operation.
 
 The 2026-07-23 bounded IWM retry confirmed a fourth exact zero-row
 `daily_response_invalid` result at the unchanged cursor, so the index now

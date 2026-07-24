@@ -62,8 +62,17 @@ as a failed collection or an authority hold.
   `sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660`
   and dataset hash
   `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
-  It retains the explicit `MODP=0_unadjusted` and unqualified corporate-action
-  limitations, so it is collection evidence rather than a return-label input.
+  It retains the explicit `MODP=0_unadjusted` limitation. A separate immutable
+  event-only Tiingo Standard EOD sidecar now exact-matches those sessions at
+  `D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1`
+  with dataset hash
+  `sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`
+  and manifest hash
+  `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
+  It has 78 QQQ and 76 SPY normalized event records, no raw Tiingo response or
+  quote persistence, and exact KIS-session mapping for every retained event.
+  It is still only a retrospective event-date source; a separate
+  buffered-boundary audit must qualify its use for return labels.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
@@ -189,9 +198,10 @@ as a failed collection or an authority hold.
    source while materializing only the permitted prefix as `Bar` objects.
 3. Treat the existing three-target 694-session panel as the only current daily
    research input. The new QQQ/SPY 4,756-session intersection is a distinct,
-   unadjusted source scope. It may be used only after a separately verified
-   corporate-action event contract defines which feature/target pairs are
-   comparable; it must not retune the retired three-ETF work in the meantime.
+   unadjusted source scope. Its exact Tiingo event mapping is available, but
+   it may be used only after the next offline `+-1`-session boundary audit
+   freezes or rejects comparable pair geometry; it must not retune the retired
+   three-ETF work in the meantime.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
 5. The 2026-07-25 separately labeled `historical-probe` used the documented
@@ -240,6 +250,13 @@ that would cross the 15% floor.
 
 - A successful data-bearing snapshot is written and hashed before its index
   cursor advances.
+- The QQQ/SPY event sidecar's 78/76 event records qualify only provider date
+  mapping. It never supplies Tiingo prices, adjustments, total-return values,
+  or point-in-time event availability. Its immutable response hashes expose a
+  later source revision but cannot prove that a first response omitted an
+  event. The following boundary audit must use a pre-registered threshold and
+  a `+-1` KIS-session buffer rather than silently treating the endpoint mask as
+  a final label contract.
 - Exact boundary overlap is normal; different values for the same date are a
   conflict and must defer that target for reconciliation.
 - Source-adaptive pacing is a transport fact. It must not be described as an

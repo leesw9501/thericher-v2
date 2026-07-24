@@ -4784,3 +4784,40 @@ or split event dates, and the current KIS cache alone cannot identify those
 dates. The verdict's reversal fact is a source-attested event mapping plus
 chronological availability/target timing validation; until then, a disclaimer
 would not make the labels comparable.
+
+## 2026-07-25 - Qualify only a price-free QQQ/SPY event-sidecar, not a return strategy
+
+Decision: accept the immutable external Tiingo Standard EOD event-only sidecar
+for the completed KIS Paper QQQ/SPY daily panel. The sidecar covers the exact
+4,756 common KIS sessions from 2007-08-21 through 2026-07-17, records 78 QQQ
+and 76 SPY dividend/split events, and binds the source to the KIS panel through
+the catalog hash
+`sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
+Its snapshot dataset hash is
+`sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`,
+with manifest hash
+`sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
+It retains only normalized event dates/kinds/values plus coverage and response
+hash metadata; it retains no Tiingo price rows or raw response bytes.
+
+This qualifies deterministic event-date mapping for retrospective plumbing,
+not KIS adjustment semantics, total-return research, point-in-time feature
+availability, alpha, model training, GPU work, ensemble selection, or Paper
+decisions. The paired Research receipt currently excludes `t -> t+1` when
+either endpoint is an event date, but it remains explicitly non-model and
+non-Paper eligible.
+
+Claude's follow-up falsification-first verdict was `supported-with-limits` for
+a later naive price-return baseline. Before that baseline, freeze or reject a
+separate buffered `+-1`-session event-boundary contract, inspect all event
+neighborhoods against the retained KIS series using a pre-registered residual
+test, and bind every comparator to the same pair set and split boundaries. A
+result from that audit remains a scoped data/research fact, never an operator
+approval, KIS Paper, scheduling, or global-engine hold.
+
+Reason: exact Tiingo session coverage and event mapping resolve the original
+unknown event-date input, but a provider-declared unadjusted KIS mode and a
+single source cannot by themselves rule out a date shift, partial adjustment,
+or missing/revised event. A conservative local audit is low-cost and supplies
+the reversal fact without mixing providers, exposing prices, or delaying
+independent Paper work.

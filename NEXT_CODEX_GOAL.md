@@ -2,81 +2,82 @@
 
 ## Objective
 
-Qualify or reject a **corporate-action event sidecar** for the completed KIS
-Paper `QQQ/SPY` daily cache, so a future chronological Research contract can
-know which unadjusted price pairs are comparable.
+Audit the newly qualified `QQQ/SPY` KIS daily corporate-action mapping against
+the retained unadjusted KIS series, then freeze or reject a **conservative
+event-boundary return-label contract**.
 
-The KIS-only pair is now hash-attested for 4,756 common sessions from
-2007-08-21 through 2026-07-17, but its `MODP=0_unadjusted` series cannot supply
-daily return labels yet. Claude's 2026-07-25 falsification verdict was
-`unsupported`: dividend/split event dates must be source-attested and handled
-before a return target, naive return baseline, model, GPU run, ensemble, or
-Paper decision is considered.
+The immutable source inputs already exist and must be re-attested offline:
 
-## Standing Authority
+- KIS QQQ/SPY common daily panel: 4,756 sessions from 2007-08-21 through
+  2026-07-17, dataset
+  `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
+- Tiingo event-only sidecar:
+  `D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1`,
+  dataset
+  `sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`,
+  manifest
+  `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
 
-- The operator has authorized private use of `TIINGO_API_TOKEN` for no-cost
-  Tiingo standard-EOD data work on `QQQ` and `SPY`. Read it only through a
-  strict local loader; never print, log, hash into artifacts, commit, or send
-  it to Claude.
-- Store event-sidecar bytes only under `D:\market_data`; generated summaries
-  remain under `D:\thericher-v2\model-artifacts`. Never store either in Git.
-- Do not call KIS, account, position, order, or live endpoints for this goal.
-  Do not read `KIS_LIVE_*`, submit broker orders, buy anything, publish
-  data/services, or use a GPU.
-- The existing 2022-11-22 through 2026-06-22 Tiingo event snapshot is evidence
-  to inventory, not proof of the full 2007-2026 coverage required here.
+This goal is a data/research integrity step only. It must not create a model,
+baseline result, GPU run, ensemble, Paper order, or new provider acquisition.
+
+## Hard Boundaries
+
+- Do not read `.env`, credentials, or secret-like files.
+- Do not call Tiingo, KIS, account, position, order, or live endpoints.
+- Do not submit, modify, or cancel broker orders.
+- Do not download or persist raw Tiingo responses, quote values, or KIS prices
+  outside the existing raw KIS cache.
+- Do not use a GPU, train, score, select, tune, ensemble, replay a strategy,
+  or alter the frozen three-ETF work.
+- Write any new audit/contract artifact only under
+  `D:\thericher-v2\model-artifacts`; never Git.
+- Treat the result as retrospective price-return plumbing only, never total
+  return, point-in-time availability, alpha, or live/Paper evidence.
 
 ## Role-Owned Work
 
-### Codex Orchestrator
-
-Keep the work limited to one source-contract question. Continue independent
-scheduled KIS Data and Paper Execution work, but do not let an event-sidecar
-result alter their authority or cadence. Record the Claude `unsupported`
-resolution in the relevant stateboards without creating a new approval gate.
-
 ### Data Agent
 
-1. Re-attest the completed KIS QQQ/SPY cache offline and inventory the existing
-   Tiingo event snapshot's actual coverage before downloading anything.
-2. If it lacks the required date range, use the authorized Tiingo standard-EOD
-   endpoint in bounded, deduplicated QQQ/SPY requests. Retain only normalized
-   event facts needed for the contract: symbol, source date, event kind, and
-   event value/factor where present, plus coverage/provenance/hash metadata.
-   Do not persist or report Tiingo quote rows/prices.
-3. Build a small immutable external event-sidecar snapshot with strict schema,
-   source coverage, event-date semantics, KIS-session mapping, and hash
-   attestation. Preserve unknown semantics as `unqualified`; do not guess an
-   event date, synthesize an adjustment, or silently drop an unmatched event.
-4. Produce a metadata-only result that states whether affected daily
-   feature/target pairs can be masked deterministically. It must never create
-   training labels, a dataset for a model, or a broker input.
+1. Re-attest the pinned QQQ/SPY KIS catalog and event-only sidecar entirely
+   offline. Fail closed on either hash, session, mapping, or lineage drift.
+2. For every mapped event, inspect the retained KIS close-to-close geometry in
+   memory only. Record categorical counts, fixed thresholds, and mapping
+   results; never emit a price, return, raw row, or source response.
+3. Build a deterministic candidate mask that excludes every daily `t -> t+1`
+   pair whose endpoint is the event session or either adjacent KIS session.
+   It must prove all event dates map to common sessions and preserve exact
+   cross-split boundaries.
+4. If any event lacks its required neighboring session or any fixed residual
+   check fails, record a precise `unqualified` result. Do not guess, shift,
+   repair, or refetch data.
 
 ### Engine Research Agent
 
-Define only a prospective QQQ/SPY source-contract receipt: chronological
-availability, target timing, and the exact event-pair exclusion rule it would
-require. It may consume Data's metadata/hash result, but must not train, score,
-select, retune, ensemble, run CUDA, or replay a return strategy. If the
-sidecar is unqualified, record that scoped outcome and keep the cache
-collection-only.
+1. Define a frozen, offline-only contract receipt that binds both source
+   hashes, the buffered pair set, pre-registered residual threshold, and a
+   chronological availability statement.
+2. Assert that every future comparator would receive the same mask identity
+   and split boundaries. The receipt must state `price_return`, not total
+   return; `retrospective`, not point-in-time; and no model/Paper eligibility.
+3. Do not calculate a baseline or materialize returns in an artifact during
+   this objective.
 
 ### Execution Agent
 
-Keep Paper routing, scheduled sessions, and reconciliation unchanged. The event
-sidecar is not an order, price, sizing, fill, or PnL input.
+Keep KIS Paper routes, schedules, and reconciliation unchanged. The audit is
+not a price, sizing, intent, fill, or PnL input.
 
 ## Completion Evidence
 
-- The external sidecar is either hash-attested with exact QQQ/SPY coverage and
-  deterministic KIS-session mapping, or the precise missing semantic/coverage
-  fact is recorded as `unqualified` without retry loops.
-- Tests prove token redaction, no KIS/broker/network access in the offline
-  matcher, no raw Tiingo quote persistence, no artifact-in-Git behavior, and
-  no label/model/Paper path from this objective.
-- The current three-ETF baseline stays frozen, and the next Research decision
-  remains separate from any event-sidecar result until its own Claude challenge.
+- A hash-attested external audit/contract either proves the strict buffered
+  event-boundary rules for this exact input or records its scoped rejection.
+- Tests prove offline operation, no credential/network/broker access, no raw
+  price persistence, source-hash drift rejection, deterministic `+-1` mask
+  geometry, and no model/Paper path.
+- The next objective is chosen only after reviewing this result and Claude's
+  `supported-with-limits` challenge: no naive baseline may silently weaken the
+  buffered contract.
 
 ## Verification
 
@@ -89,4 +90,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Qualify daily corporate-action inputs`
+`Audit daily event-boundary contract`
