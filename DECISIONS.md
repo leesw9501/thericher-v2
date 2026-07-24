@@ -4926,3 +4926,24 @@ the loader, preserving raw data, creating a model queue, or adding a Paper gate.
 It gives development preparation an explicit causal vocabulary while making
 misuse mechanically rejectable and keeping the next engine loop focused on
 KIS-compatible prospective evidence.
+
+## 2026-07-25 - Retain bounded ambiguity for absent KIS Paper exact intents
+
+Decision: keep the existing daily-session, receipt-observer, and terminal-field
+probe behavior rather than adding stale-order automation. A synthetic,
+acknowledged durable intent that is absent from both current open orders and the
+same-day order-ID lookup produces only `outcome_unknown`, `exact_absent`,
+`same_day_id_absent`, `ambiguous`, and `terminal_state_not_supported`, with
+`pnl_status: not_observed`. The observer leaves the durable state unchanged and
+uses no submit, modify, cancel, or retry route.
+
+Claude's falsification-first verdict was `supported-with-limits`: this result is
+safe only as a scoped uncertainty outcome. The current `VTTS3035R` source still
+does not qualify terminal enum, amendment ordering, completed-history, or
+net-PnL semantics. Revisit automation only if those source semantics become
+qualified and an exact-identity fixture demonstrates a concrete missing
+invariant.
+
+Reason: a timer or absence-based transition would add machinery without new
+truth and could fabricate lifecycle or PnL facts. The existing exact-identity
+path advances execution evidence while preserving independent Paper work.

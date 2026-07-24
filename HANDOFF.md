@@ -170,6 +170,15 @@ later cancellation/reconciliation. The capability remains
 `terminal_state_support: unqualified` / `pnl_status: not_observed`; it does not
 pause future Paper work.
 
+The 2026-07-25 exact-intent recovery audit confirmed that the existing observer
+already handles an acknowledged durable intent absent from both the current
+open-order snapshot and same-day ID lookup as `outcome_unknown` /
+`reconciliation_status: ambiguous` /
+`terminal_state_not_supported`. It neither alters the durable intent nor issues
+an order request, and a synthetic replay proves the same result remains scoped.
+Do not add a stale-order timer or terminal transition while the KIS source lacks
+qualified terminal enum, amendment-ordering, and completion semantics.
+
 The first immutable baseline receipt now has external evidence at
 `D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
 It binds the frozen QQQ/NAS KIS-only 20-session input plus the current observed
@@ -686,3 +695,6 @@ The static Norgate receipt is also closed as development-only evidence. It can
 provide no candidate rows, model/GPU queue item, Paper intent, or historical
 universe assertion. Do not reopen its legacy raw-derived feature artifact; a
 future model-ready lane needs a separately eligible prospective KIS contract.
+The exact-intent Paper recovery audit is likewise closed: retain the existing
+read-only observer's bounded ambiguity rather than adding stale-order automation
+until qualified terminal source semantics exist.

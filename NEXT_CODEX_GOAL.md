@@ -2,12 +2,15 @@
 
 ## Objective
 
-Audit the existing KIS Paper daily-SPY exact-intent recovery path before adding
-any stale-order automation. Prove whether the current session, receipt observer,
-and terminal-field probe already preserve a safe outcome when an acknowledged
-durable intent is absent from a current open-order snapshot. Add code only for a
-concrete uncovered invariant; otherwise close the audit as no-change and leave
-prospective KIS data readiness as the next path.
+Close the bounded handoff from the existing scheduled KIS Paper intraday-head
+collector to the already precommitted prospective QQQ research-readiness
+preparer. Reuse the one existing `thericher-kis-paper-intraday-head` task and
+its Docker service: after a completed head collection, run one sequential,
+metadata-only preparation attempt. Before five complete QQQ regular sessions it
+must record only a retriable pending fact; when the first five are available it
+must use the existing preparation contract to create its external precommit and
+planning receipt exactly once, then verify and reuse that same identity on a
+later unchanged scheduled replay.
 
 ## First Reads
 
@@ -25,61 +28,73 @@ prospective KIS data readiness as the next path.
    - `DECISIONS.md`
    - `RUNBOOK.md`
    - `agents/orchestration.md`
-   - `agents/execution.md`
    - `agents/data.md`
+   - `agents/engine-research.md`
    - `agents/review.md`
 
-3. Ask Claude for a short falsification-first drift-check before relying on an
-   audit conclusion or adding any recovery behavior. Do not send credentials,
-   account/order identifiers, raw KIS payloads, or source rows.
+3. Ask Claude for a short falsification-first drift-check before coupling the
+   collector to the preparation call. Do not send credentials, raw bars, cache
+   paths, or artifact contents.
 
 ## Hard Boundaries
 
-- Keep the audit read-only and paper-only. Do not submit, modify, cancel, or
-  retry an order; do not call or read `KIS_LIVE_*`.
-- Prefer pure fixtures and existing sanitized local evidence. Do not read `.env`,
-  credentials, secret-like files, or raw private state for the audit.
-- Do not create a second observer, terminal probe, scheduler, timer, quota,
-  stale threshold, approval gate, dashboard, or report family.
-- An absent exact order remains categorically ambiguous until existing source
-  evidence proves otherwise. Never infer fill, cancellation, terminal lifecycle,
-  PnL, or model performance from absence or aggregate positions.
-- Keep generated evidence outside Git and preserve the existing `kis_paper` vs
-  `local_paper` route distinction.
+- Reuse the existing head task and Docker profile. Do not add a second Windows
+  task, scheduler, polling loop, timer, service, queue, dashboard, or report
+  family.
+- The preparation call is metadata-only and must not make an extra KIS request,
+  read a credential, open raw bar files, train a model, use GPU, emit a decision,
+  or submit/modify/cancel a Paper order.
+- Preserve the collector's own outcome: a preparation failure or pending result
+  cannot invalidate a committed chunk, mutate its cursor, or turn a completed
+  collection into a failure.
+- Use the existing first-five chronological-session contract unchanged. Do not
+  retune features, alter splits, add a model, inspect a sealed or burned region,
+  or promote an ensemble.
+- Generated receipts and any runtime evidence stay under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`, never Git. Do
+  not expose raw rows, prices, secrets, account facts, or order identifiers.
+- Mount only the existing external artifact root needed for the preparation
+  receipt. A repeated unchanged head run must validate/reuse its existing
+  receipt instead of failing on its presence or creating a duplicate.
+- `KIS_LIVE_*` remains unavailable. Any KIS call may occur only through the
+  existing Paper market-data collector under its standing authorization.
 
 ## Role-Owned Work
 
-### Execution Agent
+### Data Agent
 
-1. Trace the exact durable run identity through the daily session, receipt
-   observer, and terminal-field probe using only code and synthetic fixtures.
-2. Define the existing safe result for an acknowledged intent that is absent
-   from a current open-order snapshot and lacks qualified terminal semantics.
-3. Add a narrowly scoped implementation only if a reproducible fixture proves
-   the existing path violates that safe result. It must preserve the same intent
-   identity and remain read-only.
+1. Trace the current collector, Compose mounts, and metadata-preparer boundary.
+2. Add the smallest sequential handoff that carries a deterministic safe run
+   identity, reuses a verified unchanged preparation receipt, and preserves
+   independent collection recovery.
+3. Keep fewer-than-five-session readiness as a nonblocking pending fact and
+   retain the existing cache/index semantics.
+
+### Engine Research Agent
+
+1. Verify that the handoff consumes only the existing first-five QQQ
+   prospective contract and creates no model/GPU/candidate result.
+2. Confirm the existing preparer's first-five and external-artifact invariants
+   remain the only research side effect.
 
 ### Validation Agent
 
-1. Try to break the conclusion with a clean lifecycle fixture whose exact intent
-   becomes absent from the open-order snapshot.
-2. Verify that the result is neither a false terminal/PnL claim nor a global
-   paper hold, and that another distinct correctly scoped intent is unaffected.
-
-### Data Agent
-
-Confirm whether qualified terminal enum, amendment-ordering, and completion
-facts already exist locally. Report only the source fact; do not invent a new
-provider or collection job for this audit.
+1. Use synthetic index/cache fixtures to prove pending, first-ready, verified
+   unchanged replay, and preparation-failure behavior.
+2. Prove no duplicate scheduler or KIS/order route is introduced and that a
+   preparer failure leaves the collection result recoverable.
 
 ## Completion Evidence
 
-- One exact state-to-outcome map exists for the acknowledged-but-absent case.
-- Focused tests demonstrate bounded ambiguity, route isolation, and no new
-  order side effect.
-- The outcome is either `existing path sufficient`, `minimal invariant fix`, or
-  `terminal source semantics unavailable`; it is never a model/PnL conclusion.
-- Claude's concise verdict is recorded only if it changes a durable decision.
+- One existing scheduled head execution can perform the handoff without a
+  second scheduled worker.
+- Synthetic tests prove zero artifact before five complete sessions, exactly one
+  external precommit/plan receipt for the first ready set, verified reuse on an
+  unchanged replay, and no duplicate artifact.
+- The collector result and cache/cursor remain authoritative when preparation is
+  pending or unavailable.
+- A focused offline/container smoke uses no credential or KIS call beyond any
+  already-owned collector invocation.
 
 ## Verification
 
@@ -92,4 +107,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Audit paper exact-intent recovery`
+`Connect prospective intraday readiness handoff`

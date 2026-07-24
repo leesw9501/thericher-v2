@@ -180,8 +180,10 @@ task runs at 23:50 KST Tuesday through Saturday.
 2. Keep scheduled KIS Paper sessions on the proven `AMS`/`AMEX` price mapping,
    receipt-linked identities, and one-share target resolver. An ambiguous exact
    intent remains separate from every later distinct Paper intent.
-3. Add bounded automatic stale-order reconciliation only when it preserves the
-   same exact order identity and does not become a new approval or quota system.
+3. Keep stale-order automation closed while terminal source semantics remain
+   unqualified. Reconsider only with qualified terminal enum, amendment-ordering,
+   completion facts, and a concrete exact-identity invariant failure; absence
+   alone remains a scoped ambiguous observation.
 4. Keep account snapshots and dashboard state separate from credential-bearing
    execution processes; do not add a live route implicitly.
 
@@ -191,6 +193,13 @@ reference. Its same-day history ID sighting and aggregate position categories
 remain `outcome_unknown`, and its artifact always carries
 `pnl_status: not_observed`. The observer module contains no submit, modify, or
 cancel capability; its Docker profile mounts private state read-only.
+
+The 2026-07-25 synthetic exact-absence audit confirmed the no-open-order and
+no-same-day-ID branch as `outcome_unknown` / `exact_absent` /
+`same_day_id_absent` / `ambiguous` / `terminal_state_not_supported`. Replay is
+stable, does not mutate the durable intent, and does not issue an order route.
+This closes the proposed stale-order automation as unsupported by the current
+source, rather than turning an absence into a terminal or PnL claim.
 
 `kis_paper_terminal_field_probe` now exercises the same fixed `VTTS3035R`
 history source for one existing SPY/AMEX state without using a writer lock on
@@ -262,6 +271,7 @@ ambiguous observations as evidence, never as a Paper halt. The next execution
 handoff is to consume the next scheduled daily outcome, including the automatic
 terminal-field fact when a new acknowledged state exists, without interpreting
 field presence as a terminal/PnL result. Retain Paper-only routing, secret
-redaction, state replay, and no fabricated PnL. Only a live-money boundary,
+redaction, state replay, and no fabricated PnL; do not add absence-triggered
+stale-order automation. Only a live-money boundary,
 paid commitment, unclear rights, public exposure, or an external KIS credential
 reset needs operator input.

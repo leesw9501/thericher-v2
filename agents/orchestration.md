@@ -29,10 +29,11 @@ ready lane.
   raw-event retention. The inconsistent control result is closed plumbing
   evidence, not a model direction. This does not hold prospective intraday
   collection, Paper execution, or the existing frozen baselines.
-- Shared fact: the existing Norgate static panel now has a one-file,
-  development-only qualification receipt. It closes an ambiguity rather than
-  opening a new model lane: the receipt has no rows/values and its negative
-  model, GPU, Paper, PnL, PIT, and live scope is re-attested on every reuse.
+- Shared fact: the exact-intent Paper recovery audit is complete. An
+  acknowledged intent absent from current open orders and same-day ID history
+  remains `outcome_unknown` with scoped ambiguity; existing observer behavior
+  is sufficient and terminal-source semantics remain unqualified. No stale-order
+  automation, global hold, or PnL conclusion was added.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -53,7 +54,9 @@ collection may continue in its own worker; it is not an orchestrator wait.
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
 has a clear engine-loop benefit, integrate it before the next company-goal
-boundary; otherwise retain the simpler path.
+boundary; otherwise retain the simpler path. Before adding recovery machinery,
+first try the smallest synthetic counterexample against the current exact-
+identity path and keep the existing behavior when it already preserves truth.
 
 ## Review Triggers
 
@@ -75,5 +78,6 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 At the next integration, verify that the completed D1 receipt is not reused as
 a model-selection input, and verify that no provider cooldown, schedule, or
 timer sleep holds Codex while a ready Data, Engine Research, or Execution
-package can proceed. Also verify that the static Norgate receipt is not being
-mistaken for a source of model-ready feature rows.
+package can proceed. Advance the prospective KIS intraday-head handoff only
+through its existing bounded collector and metadata contract; do not create a
+foreground wait or a duplicate scheduler.

@@ -134,6 +134,36 @@ def test_same_day_order_id_sighting_never_becomes_a_fill_or_realized_pnl(tmp_pat
     assert "realized" not in str(safe_payload)
 
 
+def test_exact_absence_without_terminal_evidence_remains_scoped_and_ambiguous(
+    tmp_path: Path,
+) -> None:
+    state_path = _write_state(tmp_path, phase="submitted", broker_order_id=RAW_ORDER_ID)
+    before = state_path.read_bytes()
+    transport = FakeObserverTransport()
+
+    outcome = _observe(tmp_path, transport=transport)
+    replay = _observe(tmp_path, transport=transport)
+
+    observation = outcome.observation
+    assert observation.lifecycle_state == "outcome_unknown"
+    assert observation.account_fact_status == "current"
+    assert observation.open_order_observation == "exact_absent"
+    assert observation.same_day_order_id_observation == "same_day_id_absent"
+    assert observation.reconciliation_status == "ambiguous"
+    assert observation.reason_code == "terminal_state_not_supported"
+    assert observation.pnl_status == "not_observed"
+    assert replay.observation.safe_payload() == observation.safe_payload()
+    assert state_path.read_bytes() == before
+    assert all(
+        request.method == "GET" or request.url.endswith(KIS_PAPER_TOKEN_PATH)
+        for request in transport.requests
+    )
+    assert all(
+        not request.headers.get("tr_id", "").startswith("VTTT")
+        for request in transport.requests
+    )
+
+
 def test_intent_only_and_missing_state_need_no_credentials_network_or_order_request(
     tmp_path: Path,
 ) -> None:
