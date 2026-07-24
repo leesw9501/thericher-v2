@@ -52,10 +52,13 @@ head task; do not wait in the foreground for it or create a duplicate scheduler.
 ## Required Work
 
 1. Reattest the installed four-trigger task and current head-index metadata
-   without opening raw bars. Record the coverage baseline and recovery class.
-2. After the first due expanded-cadence result, compare only source-safe
-   metadata: QQQ regular-session minute count, continuation category,
-   exact/conflicting overlap categories, and preparation status.
+   without opening raw bars. Run
+   `uv run python scripts\inspect_kis_intraday_head_coverage.py` to record the
+   QQQ coverage baseline and recovery class.
+2. After the first due expanded-cadence result, run the same inspector and
+   compare only its source-safe metadata: QQQ regular-session minute count and
+   offset-based missing ranges, continuation category, exact/conflicting
+   overlap categories, and preparation-input status.
 3. If exact 390-minute QQQ coverage exists, invoke the existing metadata-only
    preparation handoff and then run the already-built offline consumer. Do not
    use KIS, credentials, or broker routes in the consumer.

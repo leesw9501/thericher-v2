@@ -123,9 +123,10 @@ as a failed collection or an authority hold.
   without advancing the historical backfill cursor. The Windows Scheduled Task
   `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
   02:35, 04:35, and 06:20 KST with up to four pages per target. A 2026-07-25
-  metadata-only inventory found zero complete QQQ sessions out of five: the
-  retained candidate dates had 240, 39, and 240 complete minutes of 390, with
-  no duplicate timestamp or later same-fingerprint completion to promote. The
+  metadata-only coverage inspection found zero complete QQQ sessions out of
+  five: the candidate dates had 239, 39, and 238 completed minutes of 390.
+  Their offset-only missing ranges and mixed source-continuation category show
+  a source-coverage gap, while exact/conflicting retained overlap is zero. The
   last rejected source attempt was `minute_duplicate_conflict`; its fact is
   scoped. The added 00:35 window improves the missing early-session coverage
   without relaxing cache conflict or complete-session rules.
@@ -253,9 +254,12 @@ as a failed collection or an authority hold.
 10. Reattest the first session observed through the four in-session/post-close
     triggers. The new 00:35 window targets the missing early coverage; the
     unchanged four-page cap may still expose source-authorized continuation.
-    The selector must reject any short or gapped union. Continue the cadence
-    independently; the current zero-of-five preparation is ordinary source
-    evidence, not a permission or scheduling latch.
+    Use `scripts\inspect_kis_intraday_head_coverage.py` before and after the
+    due result so the selector sees only safe minute counts, offset ranges, and
+    overlap/continuation categories. It opens no raw minute data and writes no
+    artifact. The selector must reject any short or gapped union. Continue the
+    cadence independently; the current zero-of-five preparation is ordinary
+    source evidence, not a permission or scheduling latch.
 
 ## Authority And Boundaries
 

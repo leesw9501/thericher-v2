@@ -334,6 +334,18 @@ data-only invocation (at most eight minute-page calls per invocation): it has
 no account, order, or live route. The first four-trigger session is the next
 metadata-only reattestation before Research may consume a session.
 
+To compare head coverage without opening raw minute CSV files, prices, or
+credentials, run:
+
+```powershell
+uv run python scripts\inspect_kis_intraday_head_coverage.py
+```
+
+It emits only QQQ regular-session minute counts, offset-based missing ranges,
+continuation and overlap categories, index identity, and the scoped
+preparation-input status. It does not write an artifact, call KIS, or create a
+cache.
+
 After a durable head collection in which every target result is `collected` or
 `recovered`, the same service makes one sequential metadata-only preparation
 attempt. It uses the fixed `scheduled-head-v1` identity and the external model

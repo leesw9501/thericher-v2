@@ -25,11 +25,12 @@ ready lane.
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
 - Current bottleneck: no verified first-five prospective QQQ preparation pair
   exists yet because fresh complete head-session coverage has not accumulated.
-  Metadata found 240, 39, and 240 retained regular minutes on the candidate
-  dates, not a selector or completion-promotion defect. The existing head task
-  owns that external wait; its single task now includes a 00:35 KST early window.
-  The offline consumer is implemented and synthetically verified, so a verified
-  pair is the only input still needed for its first real offline observation.
+  Metadata-only coverage found 239, 39, and 238 completed regular minutes on
+  the candidate dates, with no retained overlap conflict and no selector or
+  completion-promotion defect. The existing head task owns that external wait;
+  its single task now includes a 00:35 KST early window. The offline consumer is
+  implemented and synthetically verified, so a verified pair is the only input
+  still needed for its first real offline observation.
 - Shared fact: the existing intraday-head collector now performs one isolated,
   post-durable metadata preparation attempt. It remains the only scheduler and
   collection authority; pending or failed preparation cannot revise its cache,
@@ -49,9 +50,11 @@ ready lane.
 Use metadata-only coverage counts to change the existing head cadence before
 adding collector recovery logic. The 00:35 KST trigger is a reversible early-
 session sample that preserves one task, one Docker service, the four-page cap,
-and strict conflict/session selection. While it waits, Codex dispatches another
-ready, non-conflicting lane package; a scheduled collection is not an
-orchestrator wait.
+and strict conflict/session selection. The read-only head-coverage inspector
+now records the same offset-based gaps and continuation/overlap categories
+without opening raw minute files or creating a second worker. While it waits,
+Codex dispatches another ready, non-conflicting lane package; a scheduled
+collection is not an orchestrator wait.
 
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement

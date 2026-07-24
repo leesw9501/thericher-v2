@@ -374,10 +374,12 @@ regular-session minute coverage accumulating; the existing head service now
 prepares the already precommitted prospective observation when its first five
 complete sessions exist. The next bounded Research implementation may consume
 only a verified preparation pair and its fixed historical development prefix;
-it must remain offline until that pair exists. Maintain breadth, depth,
-ensemble, and replication queues without creating a report family. Consume
-only an authoritative sanitized Execution lifecycle fact and leave
-`pnl_status: not_observed` / `performance_label = None` unchanged until KIS
+it must remain offline until that pair exists. The credential-free runner was
+reattested to return `preparation_pair_missing` before opening either cache, so
+that pending input is a scoped source fact, not a Data or Paper hold. Maintain
+breadth, depth, ensemble, and replication queues without creating a report
+family. Consume only an authoritative sanitized Execution lifecycle fact and
+leave `pnl_status: not_observed` / `performance_label = None` unchanged until KIS
 completion evidence supports more. Do not turn the D1 comparison or one Paper
 observation into selection or Paper-work authority. The static Norgate
 qualification is also closed: use its limits to reject accidental promotion,

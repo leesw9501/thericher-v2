@@ -130,13 +130,14 @@ only; it does not claim a fill, PnL, or a model result.
 The separate data-only `thericher-kis-paper-intraday-head` task now has four
 weekly KST triggers at 00:35, 02:35, 04:35, and 06:20, while retaining its
 existing four-page-per-target cap and one Docker service. A metadata-only
-2026-07-25 inventory found zero complete QQQ sessions out of five: the retained
-candidate sessions held 240, 39, and 240 of 390 required minutes, and no later
-same-fingerprint completion could repair that gap. The first early in-session
-window had been missing, so the 00:35 trigger is the smallest coverage change.
-The later post-close duplicate-conflict fact remains scoped to that one source
-attempt. Only an exact 390-minute QQQ union may become a future Research input;
-any short or gapped union remains Data evidence only.
+2026-07-25 coverage inspection found zero complete QQQ sessions out of five:
+the candidate sessions held 239, 39, and 238 completed minutes of 390. Its
+offset-only missing ranges, mixed source-continuation category, zero exact or
+conflicting retained overlap, and scoped `minute_duplicate_conflict` reason
+all remain metadata facts; no raw minute file or price was opened. The first
+early in-session window had been missing, so the 00:35 trigger is the smallest
+coverage change. Only an exact 390-minute QQQ union may become a future Research
+input; any short or gapped union remains Data evidence only.
 
 The first receipt-linked Paper observer is now invoked automatically by the
 scheduled daily SPY session after that same session has produced its exact
