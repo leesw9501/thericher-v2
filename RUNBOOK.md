@@ -197,6 +197,38 @@ offline audit must bind the source hashes, audit every event boundary, and use
 a conservative `+-1` KIS-session mask. It never enables a model, GPU run,
 total-return claim, KIS Paper action, or live behavior.
 
+### Qualified Event-Boundary Audit
+
+The resulting offline audit is immutable and external:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json
+```
+
+Its content hash is
+`sha256:3d97b26b5e8e422cb2b4bcf262fbd1be887e44d7e43afdd9e2b5d689f805a46c`.
+It binds the `+-1` KIS-session mask
+`sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`
+and the fixed chronological partitions
+`sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
+The audit qualified QQQ (78 events, 316 masked pairs) and SPY (76 events, 307
+masked pairs) with zero unmasked residuals at the fixed 20% screen. It contains
+no raw prices or per-pair returns.
+
+Verify the immutable artifact without a credential, network, KIS, or Tiingo
+call:
+
+```powershell
+Get-FileHash -Algorithm SHA256 `
+  D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json
+```
+
+Do not rerun the default audit destination: immutable output intentionally
+refuses overwrites. A later changed source scope requires a fresh explicit
+destination and remains a new research contract. This audit is retrospective
+price-return integrity evidence only; it does not make a model, total-return
+claim, point-in-time input, KIS Paper action, or live behavior eligible.
+
 ## KIS Intraday Backfill
 
 The active private 1m cache is at:

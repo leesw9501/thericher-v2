@@ -121,13 +121,14 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    preparation only, not a candidate for selector, model, GPU, PnL, or paper
    work under its current manifest scope.
    The completed KIS QQQ/SPY D1 pair is materially longer and remains
-   `MODP=0_unadjusted`. Its exact Tiingo event-only sidecar now maps all 4,756
-   common sessions (78 QQQ and 76 SPY events), but it is retrospective and
-   non-model/non-Paper eligible. Claude's 2026-07-25 follow-up verdict was
-   `supported-with-limits`: first freeze or reject a pre-registered,
-   `+-1`-session buffered event-boundary audit that binds every future
-   comparator to the same pair set. This limits only that new source scope,
-   not Data, prospective intraday collection, or Paper execution.
+   `MODP=0_unadjusted`. Its exact Tiingo event-only sidecar maps all 4,756
+   common sessions (78 QQQ and 76 SPY events), and the external buffered audit
+   is qualified with a fixed 20% residual threshold, `+-1` session mask, and
+   fixed chronological partitions. Claude's 2026-07-25 verdict remains
+   `supported-with-limits`: use it only for one pre-registered CPU-only
+   descriptive naive baseline, preserve the exact mask/partition identities,
+   and leave the untouched tail unopened. It remains non-model/non-Paper and
+   does not hold Data, prospective intraday collection, or Paper execution.
 6. The first fixed KIS-only intraday breadth and three-architecture CUDA screen
    are complete and no architecture is selected. Do not retune, choose, or
    ensemble from the five comparison sessions. The next depth candidate needs
@@ -180,13 +181,14 @@ at a time and leave the next fixed job ready whenever its contract is sound.
 
 - Daily raw-price data has an explicit corporate-action limitation.
 - A long unadjusted QQQ/SPY price history now has a hash-attested price-free
-  event-date sidecar, but it is not yet a label-ready daily return panel.
-  Before it supplies a chronological return/target contract, the next audit
-  must conservatively buffer each event by one KIS session, check all
-  event-boundary residual categories under a pre-registered threshold, preserve
-  point-in-time limitations, and bind one mask identity across comparators.
-  Until then it is collection evidence only, never a GPU, model, ensemble, or
-  PnL input.
+  event-date sidecar and a qualified buffered boundary audit. The audit uses a
+  `+-1` KIS-session buffer, a fixed 20% residual screen, mask identity
+  `sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`,
+  and partition identity
+  `sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
+  It permits only one fixed, retrospective, CPU-only naive price-return
+  description with the tail unopened; it remains ineligible for GPU, model,
+  ensemble, total-return, point-in-time, PnL, or Paper use.
 - The former daily 756-session target improved comparative validation; it never
   blocked KIS Paper connectivity or a deterministic paper canary. The active
   694-session panel is a documented source-limited input, not a repaired one.
@@ -346,9 +348,12 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Keep KIS regular-session minute coverage accumulating and maintain the
-breadth, depth, ensemble, and replication queues without creating a report
-family. Consume only an authoritative sanitized Execution lifecycle fact and
-leave `pnl_status: not_observed` / `performance_label = None` unchanged until
-KIS completion evidence supports more. Do not turn a small current comparison
-slice or one Paper observation into selection or Paper-work authority.
+Run one fixed CPU-only QQQ/SPY daily naive comparator package only after it
+re-attests the qualified boundary audit and restricts materialized bars to the
+development/validation prefix. Keep KIS regular-session minute coverage
+accumulating and maintain the breadth, depth, ensemble, and replication queues
+without creating a report family. Consume only an authoritative sanitized
+Execution lifecycle fact and leave `pnl_status: not_observed` /
+`performance_label = None` unchanged until KIS completion evidence supports
+more. Do not turn a small current comparison slice or one Paper observation
+into selection or Paper-work authority.

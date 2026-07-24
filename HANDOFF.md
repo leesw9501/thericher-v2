@@ -648,10 +648,22 @@ submission state requires reconciliation before a replacement paper order.
 
 ## Next Handoff
 
-Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: observe and
-classify the next due autonomous daily SPY Paper session. The older canary
-intents remain immutable recovery evidence, but do not create a global one-shot
-quota or stop new distinct Paper work. At each boundary, review the data
-contract, execution route readiness, research queues, GPU eligibility, disk
-capacity, and role ownership; make reversible no-cost changes autonomously and
-escalate only a real remaining operator boundary.
+Advance the authoritative objective in `NEXT_CODEX_GOAL.md`: re-attest the
+qualified QQQ/SPY daily event-boundary audit, then run one fixed CPU-only
+descriptive naive baseline without opening its untouched tail. The audit receipt
+is `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json`,
+with content hash
+`sha256:3d97b26b5e8e422cb2b4bcf262fbd1be887e44d7e43afdd9e2b5d689f805a46c`,
+mask identity
+`sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`,
+and partition identity
+`sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
+It is `qualified`: QQQ has 78 events/316 masked pairs and SPY has 76 events/307
+masked pairs; both have zero unmasked residuals at the fixed 20% screen. It
+remains retrospective, price-return only, non-model, non-Paper, non-total-return,
+and non-point-in-time evidence. The older canary intents remain immutable
+recovery evidence, but do not create a global one-shot quota or stop new
+distinct Paper work. At each boundary, review the data contract, execution route
+readiness, research queues, GPU eligibility, disk capacity, and role ownership;
+make reversible no-cost changes autonomously and escalate only a real remaining
+operator boundary.

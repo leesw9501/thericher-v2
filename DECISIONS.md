@@ -4821,3 +4821,41 @@ single source cannot by themselves rule out a date shift, partial adjustment,
 or missing/revised event. A conservative local audit is low-cost and supplies
 the reversal fact without mixing providers, exposing prices, or delaying
 independent Paper work.
+
+## 2026-07-25 - Qualify a buffered QQQ/SPY daily price-return boundary audit
+
+Decision: accept one immutable external, retrospective event-boundary audit for
+the exact 4,756-session `QQQ/SPY` KIS D1 panel. Its artifact is
+`D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json`,
+with content hash
+`sha256:3d97b26b5e8e422cb2b4bcf262fbd1be887e44d7e43afdd9e2b5d689f805a46c`.
+It re-attests the KIS catalog hash
+`sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`
+and the qualified Tiingo event-only sidecar hashes. It freezes mask identity
+`sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`
+and partition identity
+`sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
+
+The audit excludes every `t -> t+1` pair whose endpoint is an event session or
+either adjacent KIS session, and fixes development/purge/validation/embargo/tail
+regions at 2,853/1/951/1/950 sessions. It masks 316 QQQ and 307 SPY pairs and
+finds zero remaining absolute close-to-close residuals at the fixed 20%
+threshold. It retains categorical counts and dates only; no raw price or return
+is persisted. This permits exactly one later fixed CPU-only, descriptive naive
+price-return comparison that re-attests the full artifact, uses the exact mask
+and partitions, and leaves the untouched tail unopened. It does not permit a
+model, GPU work, tuning, ensemble, total-return or point-in-time claim, PnL
+claim, KIS Paper decision, or live behavior.
+
+Claude's follow-up falsification verdict is `supported-with-limits`: the audit
+cannot prove small distributions, special corporate actions, event completeness,
+or KIS/Tiingo timestamp equivalence; its whole-panel residual audit is mild
+historical snooping; and calendar masking may lift observed average price return.
+Those limitations are permanent scope labels for the next baseline, not a new
+operator gate or a hold on independent Data, Research, or Paper work.
+
+Reason: the bounded audit supplies a reproducible, conservative price-return
+comparison surface without pretending that unadjusted history becomes an
+executable, total-return, or point-in-time source. A fixed naive baseline can
+now test the plumbing while preserving a genuinely unused tail and avoiding
+model-search selection bias.

@@ -197,11 +197,13 @@ as a failed collection or an authority hold.
    intersection for consumers. A bounded `end_session` may re-attest the full
    source while materializing only the permitted prefix as `Bar` objects.
 3. Treat the existing three-target 694-session panel as the only current daily
-   research input. The new QQQ/SPY 4,756-session intersection is a distinct,
-   unadjusted source scope. Its exact Tiingo event mapping is available, but
-   it may be used only after the next offline `+-1`-session boundary audit
-   freezes or rejects comparable pair geometry; it must not retune the retired
-   three-ETF work in the meantime.
+   research input apart from one separately scoped descriptive baseline. The
+   QQQ/SPY 4,756-session unadjusted intersection now has a qualified external
+   `+-1`-session boundary audit at
+   `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json`.
+   Its exact source, mask, and partition identities must be re-attested by that
+   one consumer; it must not retune the retired three-ETF work or widen into
+   model, GPU, ensemble, total-return, point-in-time, or Paper use.
 4. Seek a different official KIS historical endpoint only when it can avoid the
    documented IWM row-quality issue without source mixing or hidden repair.
 5. The 2026-07-25 separately labeled `historical-probe` used the documented
@@ -251,12 +253,15 @@ that would cross the 15% floor.
 - A successful data-bearing snapshot is written and hashed before its index
   cursor advances.
 - The QQQ/SPY event sidecar's 78/76 event records qualify only provider date
-  mapping. It never supplies Tiingo prices, adjustments, total-return values,
-  or point-in-time event availability. Its immutable response hashes expose a
-  later source revision but cannot prove that a first response omitted an
-  event. The following boundary audit must use a pre-registered threshold and
-  a `+-1` KIS-session buffer rather than silently treating the endpoint mask as
-  a final label contract.
+  mapping. The qualified boundary audit binds their `+-1` KIS-session buffer to
+  mask identity
+  `sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`
+  and chronological partition identity
+  `sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
+  It found zero unmasked absolute close-to-close residuals at the fixed 20%
+  threshold, but it never supplies Tiingo prices, adjustments, total-return
+  values, or point-in-time event availability. It is a bounded retrospective
+  input for one fixed descriptive baseline, not a final label contract.
 - Exact boundary overlap is normal; different values for the same date are a
   conflict and must defer that target for reconciliation.
 - Source-adaptive pacing is a transport fact. It must not be described as an
@@ -358,8 +363,11 @@ do not overwrite evidence or invent a cursor.
 ## Next Handoff
 
 The documented normal-start historical-minute probe is now bounded: it returns
-one terminal page rather than a seekable archive. Continue KIS-native minute
-accumulation and preserve provider identity, timestamp basis, session
-classification, coverage, and limitations. Re-run the metadata-only prospective
-preparer after future head collections; report only a concrete source-rights or
-storage constraint that needs operator action.
+one terminal page rather than a seekable archive. For the separate daily
+baseline, provide only the pinned source and audit metadata needed to re-attest
+the qualified boundary receipt; do not reopen its untouched tail or change its
+source scope. Continue KIS-native minute accumulation and preserve provider
+identity, timestamp basis, session classification, coverage, and limitations.
+Re-run the metadata-only prospective preparer after future head collections;
+report only a concrete source-rights or storage constraint that needs operator
+action.

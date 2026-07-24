@@ -2,82 +2,97 @@
 
 ## Objective
 
-Audit the newly qualified `QQQ/SPY` KIS daily corporate-action mapping against
-the retained unadjusted KIS series, then freeze or reject a **conservative
-event-boundary return-label contract**.
+Build and run the first bounded `QQQ/SPY` D1 naive price-return validation from
+the qualified offline event-boundary audit. This is a CPU-only retrospective
+plumbing check, not a model experiment or a trading claim.
 
-The immutable source inputs already exist and must be re-attested offline:
+Before a consumer materializes any bar, re-attest these immutable inputs:
 
-- KIS QQQ/SPY common daily panel: 4,756 sessions from 2007-08-21 through
-  2026-07-17, dataset
+- KIS panel: 4,756 common sessions, 2007-08-21 through 2026-07-17, dataset
   `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
 - Tiingo event-only sidecar:
   `D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1`,
   dataset
   `sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`,
   manifest
-  `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
+  `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46c171d`.
+- Qualified audit:
+  `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json`,
+  content hash
+  `sha256:3d97b26b5e8e422cb2b4bcf262fbd1be887e44d7e43afdd9e2b5d689f805a46c`,
+  mask identity
+  `sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`,
+  partition identity
+  `sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
 
-This goal is a data/research integrity step only. It must not create a model,
-baseline result, GPU run, ensemble, Paper order, or new provider acquisition.
+Claude's verdict is `supported-with-limits`: this source remains unadjusted,
+retrospective, event-calendar-conditioned, and not a total-return or
+point-in-time input. Preserve those limitations in every output.
 
 ## Hard Boundaries
 
 - Do not read `.env`, credentials, or secret-like files.
 - Do not call Tiingo, KIS, account, position, order, or live endpoints.
 - Do not submit, modify, or cancel broker orders.
-- Do not download or persist raw Tiingo responses, quote values, or KIS prices
-  outside the existing raw KIS cache.
-- Do not use a GPU, train, score, select, tune, ensemble, replay a strategy,
-  or alter the frozen three-ETF work.
-- Write any new audit/contract artifact only under
-  `D:\thericher-v2\model-artifacts`; never Git.
-- Treat the result as retrospective price-return plumbing only, never total
-  return, point-in-time availability, alpha, or live/Paper evidence.
+- Do not use a GPU, train or score a learned model, tune, select, ensemble, or
+  alter the frozen three-ETF work.
+- Reject scoped use on any audit/source/mask/partition/tail mismatch. Do not
+  recompute or weaken the qualified mask.
+- Do not materialize bars, calculate returns, or emit metrics for the
+  950-session untouched tail. Do not use purge or embargo sessions as a
+  decision/return pair.
+- Use only fixed `flat`, `always_long`, and previous-session-direction controls
+  with a declared non-lookahead D1 horizon and the existing local simulator.
+  Every simulated fill remains `source: local_paper`.
+- Write only aggregate, sanitized validation evidence under
+  `D:\thericher-v2\model-artifacts`; never Git. Do not persist raw prices,
+  per-bar returns, Tiingo responses, quote values, or broker data.
+- Treat results as retrospective price-return plumbing only, never total return,
+  point-in-time availability, alpha, profitability, or live/Paper evidence.
 
 ## Role-Owned Work
 
 ### Data Agent
 
-1. Re-attest the pinned QQQ/SPY KIS catalog and event-only sidecar entirely
-   offline. Fail closed on either hash, session, mapping, or lineage drift.
-2. For every mapped event, inspect the retained KIS close-to-close geometry in
-   memory only. Record categorical counts, fixed thresholds, and mapping
-   results; never emit a price, return, raw row, or source response.
-3. Build a deterministic candidate mask that excludes every daily `t -> t+1`
-   pair whose endpoint is the event session or either adjacent KIS session.
-   It must prove all event dates map to common sessions and preserve exact
-   cross-split boundaries.
-4. If any event lacks its required neighboring session or any fixed residual
-   check fails, record a precise `unqualified` result. Do not guess, shift,
-   repair, or refetch data.
+1. Add or extend a narrow offline audit loader that checks content hash,
+   schema/kind, status, source lineage, mask, partition, and tail geometry.
+2. Materialize only the permitted development/validation source prefix through
+   the verified KIS catalog path. Source-byte re-attestation is allowed, but do
+   not construct tail `Bar` objects or expose raw rows to artifacts.
+3. Preserve exact audited exclusion pairs and boundaries for every comparator.
+   Do not join another provider or repair source history.
 
 ### Engine Research Agent
 
-1. Define a frozen, offline-only contract receipt that binds both source
-   hashes, the buffered pair set, pre-registered residual threshold, and a
-   chronological availability statement.
-2. Assert that every future comparator would receive the same mask identity
-   and split boundaries. The receipt must state `price_return`, not total
-   return; `retrospective`, not point-in-time; and no model/Paper eligibility.
-3. Do not calculate a baseline or materialize returns in an artifact during
-   this objective.
+1. Pre-register exactly `flat`, `always_long`, and previous-session-direction.
+   Use identical audited eligibility, fixed chronological boundaries, and
+   existing cost/local-paper semantics. Do not tune a threshold, horizon, or
+   symbol treatment.
+2. Run on CPU and write one aggregate sanitized artifact containing input
+   identities, pair/fill counts, fixed controls, aggregate metrics, limitations,
+   and `source: local_paper` provenance. It contains no raw prices, per-bar
+   returns, scores, or predictions.
+3. Do not promote, compare against a model, use the tail, select an
+   architecture, or open a GPU campaign. Ask Claude only for an unexpectedly
+   strong result or a proposed interpretation beyond this scope.
 
 ### Execution Agent
 
-Keep KIS Paper routes, schedules, and reconciliation unchanged. The audit is
-not a price, sizing, intent, fill, or PnL input.
+Keep KIS Paper routes, schedules, and reconciliation unchanged. The local
+simulator is the only execution surface; the baseline is not a KIS price,
+sizing, intent, fill, or PnL input.
 
 ## Completion Evidence
 
-- A hash-attested external audit/contract either proves the strict buffered
-  event-boundary rules for this exact input or records its scoped rejection.
+- A hash-attested loader rejects any audit/source/mask/partition/tail mismatch
+  before a consumer receives eligible bars.
+- One CPU-only aggregate validation artifact proves identical audited eligibility
+  across all fixed controls and replayable `source: local_paper` fills.
 - Tests prove offline operation, no credential/network/broker access, no raw
-  price persistence, source-hash drift rejection, deterministic `+-1` mask
-  geometry, and no model/Paper path.
-- The next objective is chosen only after reviewing this result and Claude's
-  `supported-with-limits` challenge: no naive baseline may silently weaken the
-  buffered contract.
+  price or per-bar-return persistence, source/audit drift rejection, tail
+  non-consumption, deterministic pair geometry, and no model/Paper path.
+- Output carries Claude's `supported-with-limits` boundaries and does not widen
+  the daily source into a model or trading result.
 
 ## Verification
 
@@ -90,4 +105,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Audit daily event-boundary contract`
+`Run masked daily naive validation`
