@@ -94,13 +94,36 @@ class _CampaignEventStore(EventStore):
         self._append_observer = observer
 
 
+class InMemoryCampaignEventStore:
+    """Ephemeral campaign store for bounded private replay sanitization."""
+
+    def __init__(self) -> None:
+        self._events: list[Event] = []
+        self._next_sequence = 1
+        self._append_observer: Callable[[Event], None] | None = None
+
+    def append(self, event: Event) -> Event:
+        recorded = event.with_seq(self._next_sequence)
+        self._next_sequence += 1
+        self._events.append(recorded)
+        if self._append_observer is not None:
+            self._append_observer(recorded)
+        return recorded
+
+    def iter_events(self) -> tuple[Event, ...]:
+        return tuple(self._events)
+
+    def observe_appends(self, observer: Callable[[Event], None]) -> None:
+        self._append_observer = observer
+
+
 class _CampaignLocalPaperBroker(LocalPaperBroker):
     """Use the normal local-paper event format without replaying every prior event per fill."""
 
     def __init__(
         self,
         *,
-        event_store: _CampaignEventStore,
+        event_store: _CampaignEventStore | InMemoryCampaignEventStore,
         emergency_store: EmergencyStore,
         starting_cash: Decimal,
         fee_bps: Decimal,
@@ -514,7 +537,7 @@ def load_yahoo_intraday_1m_bars(
 def run_local_paper_validation(
     bars: list[Bar] | CatalogedBars,
     *,
-    event_store: EventStore,
+    event_store: EventStore | InMemoryCampaignEventStore,
     emergency_store: EmergencyStore,
     model: PredictionModel | None = None,
     config: ValidationConfig | None = None,
@@ -592,7 +615,7 @@ def run_local_paper_validation(
             fee_bps=config.fee_bps,
             slippage_bps=config.slippage_bps,
         )
-        if isinstance(event_store, _CampaignEventStore)
+        if isinstance(event_store, (_CampaignEventStore, InMemoryCampaignEventStore))
         else LocalPaperBroker(
             event_store=event_store,
             emergency_store=emergency_store,

@@ -233,6 +233,14 @@ at a time and leave the next fixed job ready whenever its contract is sound.
 - Campaign attempt labels create separate immutable work/artifact paths after an
   interrupted run. They are recovery identities, not a scheduler, approval, or
   model-selection mechanism.
+- The pair-bound prospective consumer is implemented but has no real run until
+  Data supplies the verified first-five pair. It fits only the frozen ten-session
+  historical prefix and evaluates `flat`, `always_long`,
+  `previous_bar_direction`, and `regularized_linear` locally. Its frozen receipt
+  includes the head-index identity. Full replay events remain in memory; only
+  sanitized local-paper decision/fill hashes and counts may leave the process.
+  This is neither candidate selection nor a PnL, GPU, ensemble, broker, or
+  promotion result.
 
 ## Recovery
 

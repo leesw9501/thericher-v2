@@ -765,6 +765,31 @@ Run a CPU baseline before an eligible GPU campaign. GPU work needs a frozen
 dataset and falsifiable hypothesis; do not launch models solely to keep the GPU
 busy. One GPU job runs at a time while other lanes continue.
 
+### Prospective Intraday Offline Observation
+
+To consume an already verified first-five QQQ preparation pair, run:
+
+```powershell
+uv run python scripts/run_kis_intraday_prospective_observation.py
+```
+
+The command is local-only. It does not read `.env`, credentials, or KIS state,
+and it does not call a network or submit a broker order. Before the pair exists,
+the expected safe result is `preparation_pair_missing`. After the pair exists,
+it verifies the pair and current head-index identity around local cache reads,
+then writes the frozen receipt and sanitized local-paper evidence only under
+`D:\thericher-v2\model-artifacts`.
+
+To exercise the same boundary in the isolated research container:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps `
+  research python scripts/run_kis_intraday_prospective_observation.py
+```
+
+The container has network disabled. Its external receipts omit raw prices,
+order identifiers, source paths, PnL, and candidate-selection conclusions.
+
 ### Static Norgate Development Receipt
 
 To re-attest the already retained static Norgate trial panel and write or verify

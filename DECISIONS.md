@@ -4979,3 +4979,33 @@ and recovery behavior, not source completeness or model readiness.
 Reason: this removes a manual research-preparation gap at the exact boundary
 where the data is known durable, while preserving the one existing collector,
 isolating credentials, and avoiding a new scheduler or approval surface.
+
+## 2026-07-25 - Seal the first pair-bound prospective offline observation
+
+Decision: the first `kis-intraday-prospective-head-observation-r1` consumer is
+an offline-only boundary. It accepts only a Data-loader-created input after the
+external precommit/planning pair matches the current head-index metadata hash
+both before and after the separate local cache reads. The sealed input binds
+the selected rows, pair, and index identity; the frozen model receipt carries
+that same head-index identity.
+
+The consumer fits the regularized-linear control only on the fixed ten-session
+historical prefix, runs `flat`, `always_long`, `previous_bar_direction`, and
+that control through the local-paper simulator in memory, and persists only
+sanitized decision/fill evidence. Receipts bind the verified input, frozen
+model, exact replay plan, and sanitized event-log hashes. They exclude
+raw bars, prices, order identifiers, source paths, PnL, selection, promotion,
+broker submission, network, credentials, and GPU artifacts. A known-safe
+partial candidate artifact may restart; a completed but changed receipt fails
+without overwrite or silent replacement.
+
+The host and network-disabled research-container smoke both returned
+`preparation_pair_missing`, so no real consumer receipt exists yet. Claude CLI
+could not provide a fresh verdict because its local OAuth session had expired.
+This is a tooling limitation, not an authority or data gate: retry the required
+falsification check before relying on a material result, promotion, holdout, or
+execution decision.
+
+Reason: a small sealed handoff makes the first fresh KIS-compatible observation
+reproducible without turning raw data, retrospective model outputs, or local
+paper mechanics into a broker or model-selection path.

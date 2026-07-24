@@ -344,6 +344,13 @@ that would cross the 15% floor.
 - Session selection does not join overnight gaps. It preserves them as explicit
   ordered session boundaries for a Research consumer to validate, while any
   missing minute inside a selected session remains invalid input.
+- The prospective observation reader accepts only the exact external
+  precommit/planning pair and head-index metadata hash. It verifies that
+  identity before and after opening the separate historical/head caches, then
+  returns a capability-bound in-memory input with no serialization surface for
+  paths, raw bars, prices, preparation files, or credentials. A changed index
+  during read is a scoped unavailable input, never a cache rewrite or hold on
+  another lane.
 - KIS Paper's current same-day `inquire-ccnl` use is a narrow order-ID history
   fact only. It can say that one raw ID was seen in its current ET query, but
   its present parser does not establish a fill, cancellation, price, quantity,

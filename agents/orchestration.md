@@ -25,8 +25,9 @@ ready lane.
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
 - Current bottleneck: no verified first-five prospective QQQ preparation pair
   exists yet because fresh complete head-session coverage has not accumulated.
-  The existing head task owns that external wait; the next offline consumer can
-  be implemented and synthetically verified without waiting for it.
+  The existing head task owns that external wait. The offline consumer is now
+  implemented and synthetically verified, so a verified pair is the only input
+  still needed for its first real offline observation.
 - Shared fact: the existing intraday-head collector now performs one isolated,
   post-durable metadata preparation attempt. It remains the only scheduler and
   collection authority; pending or failed preparation cannot revise its cache,
@@ -37,17 +38,20 @@ ready lane.
   for a timer or another lane's unavailable input.
 - External waits: provider quota, retry, and scheduled-session waits are owned
   by their named worker or existing scheduler. They do not occupy the
-  foreground orchestrator.
+  foreground orchestrator. Claude CLI OAuth was expired at this integration;
+  retry it only at the next required decision boundary, without holding a ready
+  private lane.
 
 ## Current Operating Improvement
 
-Keep external preparation after, rather than inside, the data-commit boundary:
-the existing collection process may launch one time-bounded child with a
-minimized environment, then report only a categorical result. This removes a
-manual handoff without adding a second scheduler or allowing a hung research
-preparer to hold collection recovery. While a worker waits, Codex dispatches
-another ready, non-conflicting lane package. A long-running test or active
-collection may continue in its own worker; it is not an orchestrator wait.
+Keep the prospective replay's raw local-paper event stream in memory and write
+only a minimal, hash-bound external receipt. This preserves replayability while
+preventing raw price, order-identifier, source-path, PnL, or selection data
+from leaking into a general artifact. Safe partial artifacts restart; changed
+complete evidence requires reconciliation. While a worker waits, Codex
+dispatches another ready, non-conflicting lane package. A long-running test or
+active collection may continue in its own worker; it is not an orchestrator
+wait.
 
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
@@ -76,6 +80,6 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 At the next integration, verify that the completed D1 receipt is not reused as
 a model-selection input, and verify that no provider cooldown, schedule, or
 timer sleep holds Codex while a ready Data, Engine Research, or Execution
-package can proceed. Advance the frozen prospective observation consumer only
+package can proceed. Consume the frozen prospective observation consumer only
 from a verified first-five preparation pair; do not create a foreground wait or
 duplicate the existing collector schedule.

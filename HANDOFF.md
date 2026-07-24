@@ -711,3 +711,17 @@ preparer writes and later validates/reuses exactly one external precommit and
 planning-receipt pair bound to the first five selected session dates and their
 row-fingerprint digest. It has not created a model, GPU job, Paper order, or
 profitability conclusion.
+
+The pair-bound offline consumer is now implemented and synthetically verified.
+It accepts only a Data-loader-sealed first-five pair whose head-index identity
+matches both before and after local cache reads, fits the fixed regularized
+linear control only on the ten historical sessions, and evaluates the four
+fixed local-paper candidates in memory. External evidence contains only
+identity-bound, sanitized decisions/fills and hashes: no raw bars, prices,
+order identifiers, source paths, PnL, credentials, network call, KIS call, GPU
+work, selection, promotion, or broker action. A safe partial replay may restart;
+a tampered complete receipt fails without overwrite. The real pair is still
+absent, so the host and network-disabled research-container commands both
+truthfully return `preparation_pair_missing`. A Claude drift-check retry is due
+at the next material decision boundary because the local Claude OAuth session
+expired; that external tooling fact does not block this bounded implementation.

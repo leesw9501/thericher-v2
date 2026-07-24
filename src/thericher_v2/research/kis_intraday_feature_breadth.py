@@ -484,11 +484,27 @@ def fit_kis_intraday_regularized_linear(
 ) -> KisIntradayRegularizedLinearModel:
     """Fit a deterministic small logistic candidate from development samples only."""
 
-    samples = dataset.development_samples
+    return fit_kis_intraday_regularized_linear_samples(
+        dataset.development_samples,
+        development_session_dates=dataset.contract.development_session_dates,
+    )
+
+
+def fit_kis_intraday_regularized_linear_samples(
+    samples: tuple[KisIntradayFeatureSample, ...],
+    *,
+    development_session_dates: tuple[date, ...],
+) -> KisIntradayRegularizedLinearModel:
+    """Fit the fixed model from an explicitly bounded development-only sample set."""
+
+    if not isinstance(samples, tuple):
+        raise TypeError("KIS intraday regularized linear samples must be a tuple")
+    if not isinstance(development_session_dates, tuple):
+        raise TypeError("KIS intraday development session dates must be a tuple")
     if not samples:
         raise ValueError("KIS intraday regularized linear candidate requires development samples")
     if any(
-        sample.session_date not in dataset.contract.development_session_dates
+        sample.session_date not in development_session_dates
         for sample in samples
     ):
         raise ValueError("KIS intraday regularized linear candidate may train only on development")
@@ -553,6 +569,21 @@ def fit_kis_intraday_regularized_linear(
         scales=scales,
         weights=tuple(weights),
         intercept=intercept,
+    )
+
+
+def build_kis_intraday_feature_samples(
+    catalog: CatalogedBars,
+    *,
+    session_dates: tuple[date, ...],
+    session_windows: tuple[SessionWindow, ...],
+) -> tuple[KisIntradayFeatureSample, ...]:
+    """Build fixed multi-timeframe samples from caller-bounded complete sessions."""
+
+    return _samples_for_windows(
+        catalog,
+        session_dates=session_dates,
+        session_windows=session_windows,
     )
 
 
