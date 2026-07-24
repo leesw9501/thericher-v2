@@ -11,13 +11,23 @@ external data, compute, or execution resource waits. Link to role stateboards
 instead of copying their queues, evidence, or recovery narratives. Never make
 strategy, model-promotion, broker, capital, or live-risk decisions here.
 
+## Throughput Rule In Effect
+
+Treat a genuinely unknown private non-live capability as a bounded probe with a
+defined scope and reversal fact, not an approval wait. Keep an existing
+documented or measured rate/retry control until source evidence or the probe
+supports a change. A quota or cooldown remains the named worker's `next_due`,
+and a failed probe is evidence only for that input, never a pause on another
+ready lane.
+
 ## Current Cross-Lane View
 
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
 - Shared bottleneck: Data is calibrating durable KIS Paper token reuse/pacing
-  and actual historical-minute capability so collection can use the observed
-  throughput rather than a fixed conservative assumption. This is Data-owned;
-  its exact queue remains in `data.md` and independent collection may continue.
+  and actual historical-minute capability through bounded measurements so
+  collection can use observed throughput without removing existing
+  source/evidence-backed controls prematurely. This is Data-owned; its exact
+  queue remains in `data.md` and independent collection may continue.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -27,17 +37,20 @@ strategy, model-promotion, broker, capital, or live-risk decisions here.
 
 ## Current Operating Improvement
 
-Replace foreground quota/timer sleeping with a recorded next-due worker state
-or an existing goal-owned schedule. While that worker waits, Codex dispatches
-another ready, non-conflicting lane package. A long-running test or active
-collection may continue in its own worker; it is not an orchestrator wait.
+Replace foreground quota/timer sleeping and unmeasured permanent throttles
+with a recorded next-due worker state plus bounded, result-driven calibration.
+While that worker waits, Codex dispatches another ready, non-conflicting lane
+package. A long-running test or active collection may continue in its own
+worker; it is not an orchestrator wait.
 
 ## Review Triggers
 
 Review this projection at task start, after interruption, and at each company
 goal boundary. Check only cross-lane facts: active work, resource conflict or
-idle capacity, external waits, and the one improvement above. Replace stale
-facts instead of appending history.
+idle capacity, external waits, and the one improvement above. At a goal
+boundary, identify the largest material bottleneck or idle resource and retain
+or make one reversible evidence-backed improvement. Replace stale facts instead
+of appending history.
 
 ## Recovery
 

@@ -33,7 +33,9 @@ Keep `agents/orchestration.md` as a cross-lane-only projection. A KIS or other
 provider cooldown belongs to its named worker and must yield to ready
 independent work rather than hold the foreground orchestrator in a long sleep.
 Do not duplicate Data, Research, or Execution queues there, and do not turn
-resource observations into a second goal or an approval gate.
+resource observations into a second goal or an approval gate. At integration,
+identify the current material bottleneck or idle resource and retain or make
+one reversible evidence-backed improvement.
 
 ### Data Agent
 
@@ -43,9 +45,13 @@ resource observations into a second goal or an approval gate.
    short-lived data workers. Reuse one in-memory Paper client per finite run;
    never persist a bearer token. This guard is separate from market-page
    throughput and must not slow pages after token issuance.
-3. Run one spaced, data-only QQQ/SPY catch-up/capability invocation. Record
-   only request categories, counts, continuation outcome, and retained-cache
-   metadata. It must not call account, order, or live endpoints.
+3. Run one spaced, data-only QQQ/SPY catch-up/capability invocation using the
+   existing finite page/cooldown controls. Record only request categories,
+   counts, continuation outcome, retained-cache metadata, and enough timing
+   categories to decide whether a future rate setting should be retained or
+   recalibrated. Do not remove an existing documented or evidence-backed
+   control, add a permanent unmeasured throttle, or call account, order, or
+   live endpoints.
 4. Treat a further sanitized token failure as credential evidence only when it
    occurs after the shared spacing guard in a single-client run. Do not
    brute-force retries or ask the operator to replace values before that kill
@@ -79,6 +85,9 @@ order, fill, terminal state, or PnL from a data-worker token outcome.
 - The collection path yields external waits to its worker/scheduler and leaves
   independent ready work available; no duplicate scheduler, broker route, or
   artifact-in-Git behavior is added.
+- Any newly retained pacing/retry control cites the relevant source or bounded
+  measurement and the fact that will recalibrate it; an inconclusive probe is
+  scoped to that input rather than becoming a global pause.
 
 ## Verification
 

@@ -7,37 +7,44 @@ Paste this short launcher into Codex. Repository policy and
 /goal
 Working directory: C:\Users\Public\Documents\thericher-v2
 
-Run .\scripts\start_next_codex_task.ps1. Then follow `NEXT_CODEX_GOAL.md`,
-`HANDOFF.md`, `AGENTS.md`, and the active role stateboards.
+Run .\scripts\start_next_codex_task.ps1. Then read and follow
+`NEXT_CODEX_GOAL.md`, `HANDOFF.md`, `AGENTS.md`, and the active stateboards:
+`agents/data.md`, `agents/engine-research.md`, `agents/execution.md`, and
+`agents/orchestration.md`.
 
-Act as the Codex Orchestrator. Assign ready, non-conflicting work to the
-Data, Engine Research, Execution, and temporary Validation roles in parallel.
-Integrate their evidence and shared contracts.
+Act as the Codex Orchestrator. Decompose the single company objective into
+disjoint, ready work packages. Run non-conflicting Data, Engine Research, and
+Execution work in parallel; invoke temporary Validation only when a frozen
+candidate and independent evaluation input are ready. Integrate evidence and
+shared contracts before dependent work relies on them.
 
-Only after a bounded objective has completion evidence, verify, commit, push,
-replace `NEXT_CODEX_GOAL.md` with exactly one next objective, and continue.
-A lane-local block does not stop another ready lane.
+Treat a genuinely unknown private non-live provider, runtime, data-capability,
+or throughput behavior as a bounded capability probe. Do not turn it into an
+approval wait, foreground sleep, or durable rate/retry limit without official
+source evidence or measured results. Keep existing documented or
+evidence-backed controls until the source or measurement that recalibrates
+them changes. External quota/cooldown waits belong to the named worker or
+scheduler as `next_due`; continue another ready lane rather than waiting in
+the foreground.
 
-Do not stop for routine scheduling, ordinary implementation choices, or a
-recoverable external failure. Stop and report only an operator-authority
-decision (paid cost, unclear rights, public exposure, `KIS_LIVE_*`, live
-capital, or live authority), or an unapproved irreversible external action.
-Reconcile a KIS Paper anomaly automatically and continue every independent
-ready lane; an unresolved Paper intent blocks only its own replacement submit.
+After each bounded objective has completion evidence, run the required
+verification, commit, push, replace `NEXT_CODEX_GOAL.md` with exactly one next
+company objective, refresh the stateboards, and continue. A lane-local block
+does not stop another ready lane. Do not create per-agent next-goal files.
+
+Stop and report only for an actual operator-authority decision: reading or
+using `KIS_LIVE_*`, enabling live or real-money behavior, allocating live
+capital, paid commitments, unclear data/model rights, public exposure, a major
+framework or runtime replacement, an unapproved irreversible external action,
+or an unresolved actual account-safety risk.
+
+`KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
+and goal-owned schedules are already approved by `AGENTS.md`. Use them only
+through the named owned paths and scope of the current objective; never print
+or persist secrets. Never read or route `KIS_LIVE_*`.
 
 Keep market data under D:\market_data and generated artifacts under
 D:\thericher-v2\model-artifacts. Follow the approved free-data/public-model,
-storage, Claude challenge, KIS paper, and recovery policies in AGENTS.md.
-
-`KIS_PAPER_*` credential reads, data/account calls, paper submit/modify/cancel,
-and goal-owned schedules are already approved by policy. Do not read or call
-`KIS_LIVE_*`, enable real-money behavior, spend money, or expose a public
-service without separate operator approval. Every private non-live Paper action
-is pre-authorized, including ordinary virtual trades. A historical
-`raw_market_data_retained: false` result is a no-bytes fact about that snapshot
-only, never a fixed state or reason to hold a later correctly scoped KIS Paper
-job. Do not impose a one-shot or per-goal quota on distinct virtual-paper
-intents. Do not create a Paper permission latch from an unavailable input,
-model result, report, or past scheduler outcome; record its scoped
-no-intent/recovery fact and continue independent ready work.
+storage, Claude challenge, KIS Paper, recovery, and orchestration policies in
+`AGENTS.md`.
 ```

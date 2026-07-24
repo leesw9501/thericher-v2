@@ -56,6 +56,9 @@ as a failed collection or an authority hold.
   before treating a later spaced failure as a credential/provider fact. Do not
   brute-force retries or turn it into a hold on intraday head, Research,
   Execution, or another ready Data lane.
+  Existing page/cooldown controls remain active until the bounded single-client
+  capability measurement records a source or observed reason to recalibrate
+  one; an inconclusive result remains scoped to its target.
 - Last known clean common coverage: 694 completed sessions. The current daily
   index has QQQ/NAS `ready` at `20210107` with eight chunks and SPY/AMS
   retry-ready after its scoped `auth_rejected` record at the same cursor with

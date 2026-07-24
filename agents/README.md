@@ -77,6 +77,12 @@ For a quota, cooldown, or timer wait, the owned worker yields or is scheduled
 for its next due time. Codex does not remain in a long foreground sleep while
 another lane has ready work.
 
+A genuinely unknown private non-live capability becomes a bounded
+Data/Infra-capability probe, not an approval wait. A durable rate, retry, or
+timer limit needs a source or measured result and a recalibration fact; an
+existing evidence-backed control stays active until that fact changes. A failed
+probe is scoped evidence, never a global lane pause.
+
 ## Stateboard Shape
 
 Keep only current, high-signal sections:

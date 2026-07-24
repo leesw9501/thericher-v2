@@ -4728,3 +4728,32 @@ overinterpreted before the kill test.
 Reason: the immediate two-process sequence likely collided with KIS token
 reissuance handling. Reusing a valid token and spacing restart issuance avoids
 unnecessary token calls while preserving secret isolation and fast data pages.
+
+## 2026-07-24 - Calibrate throughput with bounded probes
+
+Decision: for a genuinely unknown private non-live provider, runtime,
+data-capability, or throughput behavior, use a finite scoped capability probe
+before adding an approval hold or a new durable throttle. A persistent sleep,
+rate cap, retry cap, or scheduler throttle must have official-source or
+measured evidence and name the fact that will retain, recalibrate, or remove
+it. An external wait remains the owning worker's `next_due`; its failure is
+scoped evidence and cannot pause another ready lane.
+
+Existing documented or evidence-backed controls remain in force until their
+named source or measurement changes. This decision does not permit unbounded
+retry, a parallel flood, removal of established recovery controls after one
+inconclusive run, a new role/report/gate, or any broker/live authority change.
+At each company-goal boundary, Codex identifies the most material cross-lane
+bottleneck or idle resource and retains or makes one reversible,
+evidence-backed improvement when it advances an engine loop.
+
+Claude's falsification-first verdict was `supported-with-limits`: preserve
+official or measured controls such as the current request gate, rate-limit
+cooldown, token-start spacing, and scoped source-quality stop until their
+specific calibration fact changes. The rule applies only to a genuinely
+unknown capability and must not become a brute-force retry justification.
+
+Reason: a scoped probe yields faster, recoverable evidence without inventing a
+human approval wait or leaving the foreground orchestrator idle. It improves
+data collection and research/execution throughput while keeping rate, data
+correctness, recovery, and live-authority boundaries intact.

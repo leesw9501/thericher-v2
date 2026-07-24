@@ -30,6 +30,12 @@ second goal, or creates an approval step. A quota or timer wait belongs to its
 owned worker or scheduler, so Codex continues other ready work instead of
 remaining in a long foreground sleep.
 
+For a genuinely unknown private non-live provider or throughput capability,
+Codex uses a bounded probe before adding a durable throttle or operator hold.
+Existing documented or measured controls remain active until source evidence or
+the probe gives a recalibration fact. A failed probe affects only its input and
+cannot pause an independent ready lane.
+
 ## Product Direction
 
 The product is a private engine that can learn toward repeatable US-equity

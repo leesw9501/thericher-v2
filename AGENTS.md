@@ -95,7 +95,9 @@ Codex is the product-development lead and integrator.
 - At every company-goal boundary, review the next product direction, lane
   readiness, resource conflicts, evidence gaps, policy effectiveness, and
   whether roles should be created, merged, invoked, placed on standby, or
-  retired.
+  retired. Identify the most material cross-lane bottleneck or idle resource
+  and retain or enact one evidence-backed, reversible improvement when it
+  advances a named engine loop.
 - Enact reversible, no-cost operating and role-lifecycle decisions
   autonomously when they stay inside existing business, credential, capital,
   safety, rights, and public-exposure authority.
@@ -117,6 +119,14 @@ long sleep while another lane has ready work. Preserve the retry fact, yield or
 schedule the owned job, and continue independent Data, Research, or Execution
 work. This is a throughput and recoverability practice, not a new approval
 boundary.
+
+For a genuinely unknown private non-live provider, runtime, data-capability, or
+throughput behavior, prefer a bounded capability probe over an approval hold or
+new durable throttle. A persistent sleep, rate cap, retry cap, or scheduler
+throttle must cite official source material or measured results and name the
+fact that will recalibrate or remove it. This does not authorize removal of an
+existing documented or evidence-backed control, unbounded retries, or a probe
+whose failed input pauses another ready lane.
 
 ### Role Agents
 
@@ -244,6 +254,9 @@ Do not use fixed lane percentages or forced lane rotation.
 7. A blocked lane does not stop another ready lane.
 8. Shared contracts are integrated by Codex before dependent work relies on
    them.
+9. A genuinely unknown capability is resolved by a scoped probe; its result
+   cannot create an authority hold or override a documented or evidence-backed
+   rate, correctness, or recovery control.
 
 ## Data And Public Assets
 

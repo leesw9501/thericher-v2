@@ -90,6 +90,14 @@ or authority state. There is no verified daily quota: do not add an unbounded
 daemon or parallel flood. Do not run a second daily worker while the first owns
 the index.
 
+These are the current finite recovery controls. Keep them active through an
+isolated failure; any future lower/higher page pace, retry rule, or scheduler
+throttle needs official-source or bounded-measurement evidence and a stated
+recalibration fact. A quota or cooldown becomes the owning worker's next due
+time, not a foreground Codex sleep. A failed capability probe remains scoped to
+its target and never justifies an unbounded retry loop or a pause on another
+ready lane.
+
 If the safe worker output is `auth_rejected` while the request gate has no
 `last_rate_limit_at_utc`, first determine whether a separate worker issued a
 token within the prior five minutes. A token-only success followed immediately
@@ -667,3 +675,18 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
 ```
+
+### Faster Local Test Feedback
+
+For repeatable Windows feedback between goal boundaries, use:
+
+```powershell
+.\scripts\run_parallel_tests.ps1
+```
+
+It runs the same suite with four `pytest-xdist` workers and file-level
+distribution. The helper gives each run a short, unique base temp path beneath
+`C:\trpy`; this avoids Windows worker-path length failures without deleting a
+shared temp root. It has no KIS, credential, Docker, market-data, or artifact
+access. The command above is a faster feedback path, not a replacement for the
+authoritative serial verification at a bounded-goal boundary.
