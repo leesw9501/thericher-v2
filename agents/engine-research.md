@@ -159,15 +159,16 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    evidence is a precommit, frozen-model receipt, one receipt per head session,
    and a five-session descriptive summary. It is not selection, retuning,
    ensembling, GPU-depth, or Paper-execution authority.
-9. `prepare_kis_intraday_prospective_head_observation.py` now turns the
-   independent head index metadata into the same contract's first five-session
-   precommit and planning receipt. With fewer than five complete QQQ regular
-   sessions it returns a retriable `pending` fact and writes no artifact. It
-   reads no raw bars, credentials, network, KIS route, GPU, model, or replay;
-   it is preparation for the future observation, not a research-quality gate.
-   Its first post-change post-close run on 2026-07-24 still found zero complete
-   sessions and five still required; that source-coverage finding does not
-   alter breadth, depth, ensemble, or replication queues.
+9. The existing `intraday-head` collector now invokes
+   `prepare_kis_intraday_prospective_head_observation.py` only after a durable
+   collection, using a fixed scheduled identity and an isolated metadata-only
+   child. With fewer than five complete QQQ regular sessions it emits only a
+   retriable `pending` fact and writes no artifact. At readiness, it writes one
+   external first-five-bound precommit/planning pair and validates/reuses that
+   pair despite later index growth. It reads no raw bars, credentials, network,
+   KIS route, GPU, model, or replay; it is preparation for the future
+   observation, not a research-quality gate. This source-coverage finding does
+   not alter breadth, depth, ensemble, or replication queues.
 
 ## GPU Policy
 
@@ -358,12 +359,15 @@ under the same external artifact root is the usable local-paper replay.
 ## Next Handoff
 
 Treat the completed D1 run as a closed plumbing receipt. Keep KIS
-regular-session minute coverage accumulating and prepare only the already
-precommitted prospective-head observation when its five complete sessions are
-available. Maintain breadth, depth, ensemble, and replication queues without
-creating a report family. Consume only an authoritative sanitized Execution
-lifecycle fact and leave `pnl_status: not_observed` / `performance_label = None`
-unchanged until KIS completion evidence supports more. Do not turn the D1
-comparison or one Paper observation into selection or Paper-work authority.
-The static Norgate qualification is also closed: use its limits to reject
-accidental promotion, not to add an alternate historical model lane.
+regular-session minute coverage accumulating; the existing head service now
+prepares the already precommitted prospective observation when its first five
+complete sessions exist. The next bounded Research implementation may consume
+only a verified preparation pair and its fixed historical development prefix;
+it must remain offline until that pair exists. Maintain breadth, depth,
+ensemble, and replication queues without creating a report family. Consume
+only an authoritative sanitized Execution lifecycle fact and leave
+`pnl_status: not_observed` / `performance_label = None` unchanged until KIS
+completion evidence supports more. Do not turn the D1 comparison or one Paper
+observation into selection or Paper-work authority. The static Norgate
+qualification is also closed: use its limits to reject accidental promotion,
+not to add an alternate historical model lane.

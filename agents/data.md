@@ -232,12 +232,13 @@ as a failed collection or an authority hold.
    session before handing it to Engine Research.
 7. Preserve raw provider rows and label unknown KIS field semantics; do not
    repair, fill, or relabel a session from another provider.
-8. The post-change 06:20 KST `intraday-head` run completed on 2026-07-24 with
-   task result `0`. Its generation-4 index has two committed chunks per QQQ/NAS
-   and SPY/AMS, but metadata-only preparation still has zero complete QQQ
-   regular sessions and five required. Treat the short coverage as a bounded
-   source/pagination finding; it is not a hold on collection, Paper work, or
-   another data candidate.
+8. The existing `intraday-head` service now starts one isolated metadata-only
+   prospective-preparation child only after its own QQQ/SPY collection is
+   durable. The child has no credential or KIS route and cannot alter the
+   collector result, cursor, or freshness projection. Fewer than five complete
+   QQQ sessions remain an ordinary nonblocking `pending` fact; five sessions
+   cause one externally stored, first-five-bound preparation pair that later
+   unchanged collections validate and reuse.
 9. The current head-bar contract is not yet an execution-price contract: it
    has no verified tick/decimal-scale field, no proven `NAS` to `NASD` order
    mapping, unqualified provider timestamp edge semantics, and no latest-bar
@@ -369,11 +370,12 @@ intact, and the 2026-07-23 header-contract recovery cleared both historical
 minute cursors after committing one final bounded page per target. The
 2026-07-25 normal-start historical probe then found only one terminal 120-row
 page per QQQ/NAS and SPY/AMS stream; its separate root prevents that observation
-from mutating the historical cursor cache. The generation-4 prospective-head
-index is readable but still has zero of five required complete QQQ sessions
-after its first post-close run, so it is pending only as a future current-input
-source. The former `minute_cursor_invalid` evidence is resolved and never
-paused the fixed receipt, Paper work, or another data lane. Reattest the index
+from mutating the historical cursor cache. The prospective-head index remains a
+future current-input source until its selector identifies five complete QQQ
+sessions; its automatic preparer is `resume`-safe and reports pending without
+changing collection recovery. The former `minute_cursor_invalid` evidence is
+resolved and never paused the fixed receipt, Paper work, or another data lane.
+Reattest the index
 and committed snapshots before a new network call. Recover a matching orphan
 snapshot without KIS access. Classify a bad snapshot or index as `reconcile`;
 do not overwrite evidence or invent a cursor.
@@ -385,6 +387,7 @@ one terminal page rather than a seekable archive. The separate daily baseline
 is complete; preserve its pinned source/audit metadata and do not reopen the
 untouched tail or change source scope. Continue KIS-native minute accumulation
 and preserve provider identity, timestamp basis, session classification,
-coverage, and limitations. Re-run the metadata-only prospective preparer after
-future head collections; report only a concrete source-rights or storage
-constraint that needs operator action.
+coverage, and limitations. The existing head service now performs the
+metadata-only preparation automatically after a completed collection; do not
+add a second scheduler or foreground wait. Report only a concrete source-rights
+or storage constraint that needs operator action.

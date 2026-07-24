@@ -23,17 +23,15 @@ ready lane.
 ## Current Cross-Lane View
 
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
-- Shared fact: the QQQ/SPY daily event-boundary consumer is complete. Its
-  aggregate external receipt re-attested the 4,756-session source and used only
-  the 3,806-session prefix, with replayable local-paper fills and no tail or
-  raw-event retention. The inconsistent control result is closed plumbing
-  evidence, not a model direction. This does not hold prospective intraday
-  collection, Paper execution, or the existing frozen baselines.
-- Shared fact: the exact-intent Paper recovery audit is complete. An
-  acknowledged intent absent from current open orders and same-day ID history
-  remains `outcome_unknown` with scoped ambiguity; existing observer behavior
-  is sufficient and terminal-source semantics remain unqualified. No stale-order
-  automation, global hold, or PnL conclusion was added.
+- Current bottleneck: no verified first-five prospective QQQ preparation pair
+  exists yet because fresh complete head-session coverage has not accumulated.
+  The existing head task owns that external wait; the next offline consumer can
+  be implemented and synthetically verified without waiting for it.
+- Shared fact: the existing intraday-head collector now performs one isolated,
+  post-durable metadata preparation attempt. It remains the only scheduler and
+  collection authority; pending or failed preparation cannot revise its cache,
+  cursor, or freshness fact. The first-five preparation pair is externally
+  atomic, replay-validated, and intentionally contains no model or Paper result.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -43,11 +41,11 @@ ready lane.
 
 ## Current Operating Improvement
 
-Replace foreground quota/timer sleeping and unmeasured permanent throttles
-with a recorded next-due worker state plus bounded, result-driven calibration.
-For local replay work, keep existing simulator semantics but use bounded
-in-memory temporary batches, flush them only for replay verification, and
-delete them before artifact persistence. While a worker waits, Codex dispatches
+Keep external preparation after, rather than inside, the data-commit boundary:
+the existing collection process may launch one time-bounded child with a
+minimized environment, then report only a categorical result. This removes a
+manual handoff without adding a second scheduler or allowing a hung research
+preparer to hold collection recovery. While a worker waits, Codex dispatches
 another ready, non-conflicting lane package. A long-running test or active
 collection may continue in its own worker; it is not an orchestrator wait.
 
@@ -78,6 +76,6 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 At the next integration, verify that the completed D1 receipt is not reused as
 a model-selection input, and verify that no provider cooldown, schedule, or
 timer sleep holds Codex while a ready Data, Engine Research, or Execution
-package can proceed. Advance the prospective KIS intraday-head handoff only
-through its existing bounded collector and metadata contract; do not create a
-foreground wait or a duplicate scheduler.
+package can proceed. Advance the frozen prospective observation consumer only
+from a verified first-five preparation pair; do not create a foreground wait or
+duplicate the existing collector schedule.

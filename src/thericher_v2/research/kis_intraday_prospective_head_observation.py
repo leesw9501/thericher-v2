@@ -212,6 +212,16 @@ class KisIntradayProspectiveHeadObservationPreparation:
         }
 
 
+@dataclass(frozen=True)
+class _HeadIndexInspection:
+    """Validated head-index facts retained only while preparing the receipt."""
+
+    status: Literal["not_created", "available"]
+    metadata_sha256: str | None
+    complete_session_dates: tuple[date, ...]
+    first_seen_row_fingerprints: tuple[tuple[str, str], ...]
+
+
 def prepare_kis_intraday_prospective_head_observation(
     *,
     head_cache_root: Path,
@@ -224,10 +234,13 @@ def prepare_kis_intraday_prospective_head_observation(
 
     _validate_run_label(run_label)
     contract = KisIntradayProspectiveHeadObservationContract()
-    index_status, index_sha256, available_dates = _inspect_head_index_metadata(
+    inspection = _inspect_head_index_metadata(
         head_cache_root=Path(head_cache_root),
         repo_root=Path(repo_root or Path.cwd()),
     )
+    index_status = inspection.status
+    index_sha256 = inspection.metadata_sha256
+    available_dates = inspection.complete_session_dates
     selected_dates = available_dates[:KIS_INTRADAY_PROSPECTIVE_HEAD_REQUIRED_SESSION_COUNT]
     if len(selected_dates) < KIS_INTRADAY_PROSPECTIVE_HEAD_REQUIRED_SESSION_COUNT:
         return KisIntradayProspectiveHeadObservationPreparation(
@@ -240,11 +253,21 @@ def prepare_kis_intraday_prospective_head_observation(
         )
 
     observed_at = require_utc(prepared_at or datetime.now(UTC), "prepared_at")
+    artifact_slot_id = _artifact_slot_id(
+        contract=contract,
+        selected_session_dates=selected_dates,
+    )
+    selected_rows_fingerprint_sha256 = _selected_rows_fingerprint_sha256(
+        first_seen_row_fingerprints=dict(inspection.first_seen_row_fingerprints),
+        selected_session_dates=selected_dates,
+    )
     precommit_payload = _precommit_payload(
         contract=contract,
         head_index_status=index_status,
         head_index_sha256=index_sha256,
         selected_session_dates=selected_dates,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
         prepared_at=observed_at,
     )
     precommit_hash = _sha256_payload(precommit_payload)
@@ -253,6 +276,8 @@ def prepare_kis_intraday_prospective_head_observation(
         contract=contract,
         precommit_hash=precommit_hash,
         selected_session_dates=selected_dates,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
         prepared_at=observed_at,
     )
     artifact_dir = _publish_artifact_pair(
@@ -261,6 +286,10 @@ def prepare_kis_intraday_prospective_head_observation(
         run_label=run_label,
         precommit_payload=precommit_payload,
         receipt_payload=receipt_payload,
+        contract=contract,
+        selected_session_dates=selected_dates,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
     )
     return KisIntradayProspectiveHeadObservationPreparation(
         contract=contract,
@@ -278,10 +307,15 @@ def _inspect_head_index_metadata(
     *,
     head_cache_root: Path,
     repo_root: Path,
-) -> tuple[Literal["not_created", "available"], str | None, tuple[date, ...]]:
+) -> _HeadIndexInspection:
     index_path = _head_index_path(head_cache_root=head_cache_root, repo_root=repo_root)
     if not index_path.exists():
-        return "not_created", None, ()
+        return _HeadIndexInspection(
+            status="not_created",
+            metadata_sha256=None,
+            complete_session_dates=(),
+            first_seen_row_fingerprints=(),
+        )
     if index_path.is_symlink():
         raise ValueError("prospective head index path is invalid")
     try:
@@ -301,8 +335,15 @@ def _inspect_head_index_metadata(
     qqq_target = next(
         target for target in metadata.targets if target.target_key == _HEAD_TARGET_KEY
     )
-    complete_dates = _complete_regular_session_dates(qqq_target.retained_chunks)
-    return "available", _sha256_text(index_text), complete_dates
+    complete_dates, first_seen_row_fingerprints = _complete_regular_session_metadata(
+        qqq_target.retained_chunks
+    )
+    return _HeadIndexInspection(
+        status="available",
+        metadata_sha256=_sha256_text(index_text),
+        complete_session_dates=complete_dates,
+        first_seen_row_fingerprints=first_seen_row_fingerprints,
+    )
 
 
 def _head_index_path(*, head_cache_root: Path, repo_root: Path) -> Path:
@@ -319,9 +360,9 @@ def _head_index_path(*, head_cache_root: Path, repo_root: Path) -> Path:
     return version_root / _HEAD_INDEX_FILENAME
 
 
-def _complete_regular_session_dates(
+def _complete_regular_session_metadata(
     chunks: tuple[KisPaperPrivateIntradayV1RetainedChunkMetadata, ...],
-) -> tuple[date, ...]:
+) -> tuple[tuple[date, ...], tuple[tuple[str, str], ...]]:
     first_seen_completion: dict[str, bool] = {}
     first_seen_fingerprints: dict[str, str] = {}
     for chunk in chunks:
@@ -359,7 +400,48 @@ def _complete_regular_session_dates(
         )
         if expected_keys.issubset(completed_row_keys):
             complete.append(session_date)
-    return tuple(complete)
+    return tuple(complete), tuple(sorted(first_seen_fingerprints.items()))
+
+
+def _artifact_slot_id(
+    *,
+    contract: KisIntradayProspectiveHeadObservationContract,
+    selected_session_dates: tuple[date, ...],
+) -> str:
+    """Bind the reusable caller-owned run label to its immutable first-five selection."""
+
+    return _sha256_payload(
+        {
+            "contract_hash": contract.contract_hash,
+            "selected_session_dates": [
+                session_date.isoformat() for session_date in selected_session_dates
+            ],
+            "target_key": _HEAD_TARGET_KEY,
+        }
+    )
+
+
+def _selected_rows_fingerprint_sha256(
+    *,
+    first_seen_row_fingerprints: Mapping[str, str],
+    selected_session_dates: tuple[date, ...],
+) -> str:
+    """Hash only expected regular-session metadata; never serialize it into artifacts."""
+
+    selected_rows: dict[str, str] = {}
+    for session_date in selected_session_dates:
+        session = us_equity_2026_session(session_date)
+        if session is None or session.kind != "regular":
+            raise ValueError("prospective head selected session is invalid")
+        for minute_offset in range(KIS_INTRADAY_PROSPECTIVE_HEAD_REGULAR_SESSION_MINUTES):
+            row_key = _korea_timestamp_key(
+                session.window.open_ts + Timeframe.M1.duration * minute_offset
+            )
+            try:
+                selected_rows[row_key] = first_seen_row_fingerprints[row_key]
+            except KeyError as error:
+                raise ValueError("prospective head selected rows are incomplete") from error
+    return _sha256_payload({"selected_rows": selected_rows})
 
 
 def _korea_timestamp_to_utc(row_key: str) -> datetime:
@@ -381,6 +463,10 @@ def _publish_artifact_pair(
     run_label: str,
     precommit_payload: Mapping[str, object],
     receipt_payload: Mapping[str, object],
+    contract: KisIntradayProspectiveHeadObservationContract,
+    selected_session_dates: tuple[date, ...],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
 ) -> Path:
     root = Path(artifact_root)
     if root.is_symlink():
@@ -389,23 +475,236 @@ def _publish_artifact_pair(
     _reject_repo_artifact_root(resolved_root, repo_root=Path(repo_root).resolve())
     output_parent = resolved_root / "kis-intraday-prospective-head-observation"
     output_dir = output_parent / run_label
+    _validate_artifact_component(output_parent, artifact_root=resolved_root, require_directory=True)
+    _validate_artifact_component(output_dir, artifact_root=resolved_root, require_directory=False)
     if output_dir.exists() or output_dir.is_symlink():
-        raise FileExistsError(f"prospective head artifact already exists: {output_dir}")
+        return _reuse_artifact_pair(
+            output_dir=output_dir,
+            artifact_root=resolved_root,
+            contract=contract,
+            selected_session_dates=selected_session_dates,
+            artifact_slot_id=artifact_slot_id,
+            selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+        )
     output_parent.mkdir(parents=True, exist_ok=True)
-    if output_parent.is_symlink():
-        raise ValueError("prospective head artifact directory is invalid")
+    _validate_artifact_component(output_parent, artifact_root=resolved_root, require_directory=True)
     staging_dir = resolved_root / f".prospective-head-{uuid.uuid4().hex[:8]}.stage"
     staging_dir.mkdir()
     try:
         _write_json_atomic_new(staging_dir / "precommit.json", precommit_payload)
         _write_json_atomic_new(staging_dir / "planning-receipt.json", receipt_payload)
         if output_dir.exists() or output_dir.is_symlink():
-            raise FileExistsError(f"prospective head artifact already exists: {output_dir}")
-        os.replace(staging_dir, output_dir)
-    except BaseException:
+            return _reuse_artifact_pair(
+                output_dir=output_dir,
+                artifact_root=resolved_root,
+                contract=contract,
+                selected_session_dates=selected_session_dates,
+                artifact_slot_id=artifact_slot_id,
+                selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+            )
+        try:
+            os.replace(staging_dir, output_dir)
+        except OSError:
+            if output_dir.exists() or output_dir.is_symlink():
+                return _reuse_artifact_pair(
+                    output_dir=output_dir,
+                    artifact_root=resolved_root,
+                    contract=contract,
+                    selected_session_dates=selected_session_dates,
+                    artifact_slot_id=artifact_slot_id,
+                    selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+                )
+            raise
+    finally:
         shutil.rmtree(staging_dir, ignore_errors=True)
-        raise
     return output_dir
+
+
+def _reuse_artifact_pair(
+    *,
+    output_dir: Path,
+    artifact_root: Path,
+    contract: KisIntradayProspectiveHeadObservationContract,
+    selected_session_dates: tuple[date, ...],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
+) -> Path:
+    """Validate an immutable pair before reusing the caller-owned run-label slot."""
+
+    _validate_artifact_component(output_dir, artifact_root=artifact_root, require_directory=True)
+    if output_dir.is_symlink() or not output_dir.is_dir():
+        raise ValueError("prospective head artifact pair is invalid")
+    expected_names = frozenset({"precommit.json", "planning-receipt.json"})
+    try:
+        entries = tuple(output_dir.iterdir())
+    except OSError as error:
+        raise ValueError("prospective head artifact pair is invalid") from error
+    if (
+        frozenset(entry.name for entry in entries) != expected_names
+        or len(entries) != len(expected_names)
+        or any(entry.is_symlink() or not entry.is_file() for entry in entries)
+    ):
+        raise ValueError("prospective head artifact pair is invalid")
+
+    precommit = _read_artifact_json(output_dir / "precommit.json")
+    receipt = _read_artifact_json(output_dir / "planning-receipt.json")
+    _validate_reusable_artifact_pair(
+        precommit=precommit,
+        receipt=receipt,
+        contract=contract,
+        selected_session_dates=selected_session_dates,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+    )
+    return output_dir
+
+
+def _validate_artifact_component(
+    path: Path,
+    *,
+    artifact_root: Path,
+    require_directory: bool,
+) -> None:
+    if path.is_symlink():
+        raise ValueError("prospective head artifact path is invalid")
+    try:
+        resolved = path.resolve(strict=False)
+    except OSError as error:
+        raise ValueError("prospective head artifact path is invalid") from error
+    if not resolved.is_relative_to(artifact_root):
+        raise ValueError("prospective head artifact path is invalid")
+    if path.exists() and require_directory and not path.is_dir():
+        raise ValueError("prospective head artifact path is invalid")
+
+
+def _read_artifact_json(path: Path) -> Mapping[str, object]:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("prospective head artifact pair is invalid") from error
+    if not isinstance(payload, Mapping):
+        raise ValueError("prospective head artifact pair is invalid")
+    return payload
+
+
+def _validate_reusable_artifact_pair(
+    *,
+    precommit: Mapping[str, object],
+    receipt: Mapping[str, object],
+    contract: KisIntradayProspectiveHeadObservationContract,
+    selected_session_dates: tuple[date, ...],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
+) -> None:
+    expected_dates = [session_date.isoformat() for session_date in selected_session_dates]
+    expected_precommit_keys = {
+        "schema_version",
+        "kind",
+        "status",
+        "prepared_at_utc",
+        "contract",
+        "contract_hash",
+        "head_index",
+        "selected_session_dates",
+        "artifact_slot_id",
+        "selected_rows_fingerprint_sha256",
+        "precommit_hash",
+    }
+    expected_receipt_keys = {
+        "schema_version",
+        "kind",
+        "status",
+        "prepared_at_utc",
+        "contract_hash",
+        "artifact_slot_id",
+        "selected_session_dates",
+        "selected_rows_fingerprint_sha256",
+        "precommit_hash",
+        "next_consumer_contract",
+    }
+    if set(precommit) != expected_precommit_keys or set(receipt) != expected_receipt_keys:
+        raise ValueError("prospective head artifact pair is invalid")
+
+    declared_precommit_hash = precommit.get("precommit_hash")
+    precommit_without_hash = dict(precommit)
+    precommit_without_hash.pop("precommit_hash", None)
+    if (
+        not isinstance(declared_precommit_hash, str)
+        or declared_precommit_hash != _sha256_payload(precommit_without_hash)
+    ):
+        raise ValueError("prospective head artifact pair is invalid")
+
+    expected_contract_payload = contract.to_payload()
+    if (
+        precommit.get("schema_version") != SCHEMA_VERSION
+        or precommit.get("kind") != "kis_intraday_prospective_head_observation_precommit"
+        or precommit.get("status") != "prepared"
+        or precommit.get("contract") != expected_contract_payload
+        or precommit.get("contract_hash") != contract.contract_hash
+        or precommit.get("selected_session_dates") != expected_dates
+    ):
+        raise ValueError("prospective head artifact pair is invalid")
+    _validate_head_index_binding(precommit.get("head_index"))
+    _validate_utc_timestamp(precommit.get("prepared_at_utc"))
+
+    _validate_immutable_artifact_identity(
+        payload=precommit,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+    )
+
+    if (
+        receipt.get("schema_version") != SCHEMA_VERSION
+        or receipt.get("kind") != "kis_intraday_prospective_head_observation_planning_receipt"
+        or receipt.get("status") != "prepared"
+        or receipt.get("prepared_at_utc") != precommit.get("prepared_at_utc")
+        or receipt.get("contract_hash") != contract.contract_hash
+        or receipt.get("selected_session_dates") != expected_dates
+        or receipt.get("precommit_hash") != declared_precommit_hash
+        or receipt.get("next_consumer_contract") != _next_consumer_contract_payload()
+    ):
+        raise ValueError("prospective head artifact pair is invalid")
+    _validate_immutable_artifact_identity(
+        payload=receipt,
+        artifact_slot_id=artifact_slot_id,
+        selected_rows_fingerprint_sha256=selected_rows_fingerprint_sha256,
+    )
+
+
+def _validate_head_index_binding(value: object) -> None:
+    if not isinstance(value, Mapping) or set(value) != {
+        "status",
+        "metadata_sha256",
+        "target_key",
+    }:
+        raise ValueError("prospective head artifact pair is invalid")
+    if (
+        value.get("status") != "available"
+        or value.get("target_key") != _HEAD_TARGET_KEY
+        or not isinstance(value.get("metadata_sha256"), str)
+    ):
+        raise ValueError("prospective head artifact pair is invalid")
+
+
+def _validate_utc_timestamp(value: object) -> None:
+    if not isinstance(value, str):
+        raise ValueError("prospective head artifact pair is invalid")
+    try:
+        require_utc(datetime.fromisoformat(value), "prepared_at_utc")
+    except ValueError as error:
+        raise ValueError("prospective head artifact pair is invalid") from error
+
+
+def _validate_immutable_artifact_identity(
+    *,
+    payload: Mapping[str, object],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
+) -> None:
+    if payload.get("artifact_slot_id") != artifact_slot_id:
+        raise ValueError("prospective head artifact slot does not match selected sessions")
+    if payload.get("selected_rows_fingerprint_sha256") != selected_rows_fingerprint_sha256:
+        raise ValueError("prospective head selected-row fingerprints do not match")
 
 
 def _reject_repo_artifact_root(artifact_root: Path, *, repo_root: Path) -> None:
@@ -425,6 +724,8 @@ def _precommit_payload(
     head_index_status: str,
     head_index_sha256: str | None,
     selected_session_dates: tuple[date, ...],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
     prepared_at: datetime,
 ) -> dict[str, object]:
     return {
@@ -442,6 +743,8 @@ def _precommit_payload(
         "selected_session_dates": [
             session_date.isoformat() for session_date in selected_session_dates
         ],
+        "artifact_slot_id": artifact_slot_id,
+        "selected_rows_fingerprint_sha256": selected_rows_fingerprint_sha256,
     }
 
 
@@ -450,6 +753,8 @@ def _planning_receipt_payload(
     contract: KisIntradayProspectiveHeadObservationContract,
     precommit_hash: str,
     selected_session_dates: tuple[date, ...],
+    artifact_slot_id: str,
+    selected_rows_fingerprint_sha256: str,
     prepared_at: datetime,
 ) -> dict[str, object]:
     return {
@@ -462,14 +767,20 @@ def _planning_receipt_payload(
         "selected_session_dates": [
             session_date.isoformat() for session_date in selected_session_dates
         ],
-        "next_consumer_contract": {
-            "historical_development_prefix_session_count": len(
-                KIS_INTRADAY_PROSPECTIVE_HEAD_HISTORICAL_DEVELOPMENT_SESSION_DATES
-            ),
-            "prospective_session_receipts_required": (
-                KIS_INTRADAY_PROSPECTIVE_HEAD_REQUIRED_SESSION_COUNT
-            ),
-        },
+        "artifact_slot_id": artifact_slot_id,
+        "selected_rows_fingerprint_sha256": selected_rows_fingerprint_sha256,
+        "next_consumer_contract": _next_consumer_contract_payload(),
+    }
+
+
+def _next_consumer_contract_payload() -> dict[str, int]:
+    return {
+        "historical_development_prefix_session_count": len(
+            KIS_INTRADAY_PROSPECTIVE_HEAD_HISTORICAL_DEVELOPMENT_SESSION_DATES
+        ),
+        "prospective_session_receipts_required": (
+            KIS_INTRADAY_PROSPECTIVE_HEAD_REQUIRED_SESSION_COUNT
+        ),
     }
 
 

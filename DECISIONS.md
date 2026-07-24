@@ -4947,3 +4947,35 @@ invariant.
 Reason: a timer or absence-based transition would add machinery without new
 truth and could fabricate lifecycle or PnL facts. The existing exact-identity
 path advances execution evidence while preserving independent Paper work.
+
+## 2026-07-25 - Couple completed intraday-head collection to one isolated readiness preparation
+
+Decision: reuse the existing `thericher-kis-paper-intraday-head` Windows task
+and Docker service for one sequential, metadata-only preparation attempt after
+its own QQQ/SPY target collection is durable and every target result is
+`collected` or `recovered`. Do not add a second task, service, polling loop, or
+queue. The preparer runs with the deterministic `scheduled-head-v1` label,
+only `PYTHONPATH` plus necessary process bootstrap variables, and a ten-second
+containment timeout. Its categorical `pending`, `prepared`, or scoped
+unavailable result is additive output only: it cannot revise a completed
+collector result, cache cursor, or freshness projection.
+
+When five complete QQQ regular sessions become available, the existing first-
+five contract writes an external precommit/planning-receipt pair once. Replays
+validate the pair rather than using current index metadata or preparation time
+as identity: the immutable binding is the contract hash, first-five dates, and
+the selected rows' fingerprint digest. A malformed, changed, escaped, or
+concurrently published pair fails closed or reuses a verified winner without
+overwriting evidence. No raw bars, credentials, model checkpoint, GPU work,
+order, or PnL result crosses this handoff.
+
+Claude's falsification-first verdict was `supported-with-limits`. The relevant
+kill case is a slow, failing, or malformed child after a successful collection;
+tests show that the collection remains complete and its freshness output stays
+authoritative. The remaining limit is operational: real first-five coverage
+still depends on future KIS head sessions, so this decision proves the handoff
+and recovery behavior, not source completeness or model readiness.
+
+Reason: this removes a manual research-preparation gap at the exact boundary
+where the data is known durable, while preserving the one existing collector,
+isolating credentials, and avoiding a new scheduler or approval surface.

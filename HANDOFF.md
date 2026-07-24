@@ -698,3 +698,16 @@ future model-ready lane needs a separately eligible prospective KIS contract.
 The exact-intent Paper recovery audit is likewise closed: retain the existing
 read-only observer's bounded ambiguity rather than adding stale-order automation
 until qualified terminal source semantics exist.
+
+The existing scheduled `thericher-kis-paper-intraday-head` task now has one
+post-durable, sequential metadata-only handoff. Only after all of its own target
+results are `collected` or `recovered`, it starts the prospective QQQ preparer
+with a fixed `scheduled-head-v1` identity. The child receives no KIS, account,
+order, dashboard, or live environment values and has a ten-second containment
+timeout. `pending` or `preparation_unavailable` is an observation about that
+preparation attempt only; it cannot alter the already completed collection,
+cache cursor, or freshness projection. At five complete QQQ sessions, the
+preparer writes and later validates/reuses exactly one external precommit and
+planning-receipt pair bound to the first five selected session dates and their
+row-fingerprint digest. It has not created a model, GPU job, Paper order, or
+profitability conclusion.

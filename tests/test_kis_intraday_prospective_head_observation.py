@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import socket
 import urllib.request
 from datetime import UTC, date, datetime
@@ -276,6 +277,226 @@ def test_pair_publication_failure_leaves_no_run_directory_and_retries_cleanly(
     assert retry.planning_receipt_path is not None and retry.planning_receipt_path.exists()
 
 
+def test_preparation_reuses_first_five_slot_after_a_sixth_session_arrives(
+    tmp_path: Path,
+) -> None:
+    repo_root = _repo_root(tmp_path)
+    head_cache_root = tmp_path / "market-data" / "intraday-head"
+    artifact_root = tmp_path / "model-artifacts"
+    _write_head_index(head_cache_root, _SESSION_DATES[:5])
+
+    first = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="reuse-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+    assert first.precommit_path is not None
+    assert first.planning_receipt_path is not None
+    precommit_bytes = first.precommit_path.read_bytes()
+    receipt_bytes = first.planning_receipt_path.read_bytes()
+
+    _write_head_index(head_cache_root, _SESSION_DATES)
+    replay = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="reuse-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 23, tzinfo=UTC),
+    )
+
+    assert replay.status == "prepared"
+    assert replay.available_complete_session_dates == _SESSION_DATES
+    assert replay.selected_session_dates == _SESSION_DATES[:5]
+    assert replay.head_index_sha256 != first.head_index_sha256
+    assert replay.precommit_path == first.precommit_path
+    assert replay.planning_receipt_path == first.planning_receipt_path
+    assert replay.precommit_path.read_bytes() == precommit_bytes
+    assert replay.planning_receipt_path.read_bytes() == receipt_bytes
+    precommit = json.loads(precommit_bytes)
+    receipt = json.loads(receipt_bytes)
+    assert precommit["artifact_slot_id"] == receipt["artifact_slot_id"]
+    assert (
+        precommit["selected_rows_fingerprint_sha256"]
+        == receipt["selected_rows_fingerprint_sha256"]
+    )
+    assert "selected_rows" not in precommit
+    assert "selected_rows" not in receipt
+
+
+def test_preparation_rejects_changed_selected_fingerprint_and_preserves_existing_pair(
+    tmp_path: Path,
+) -> None:
+    repo_root = _repo_root(tmp_path)
+    head_cache_root = tmp_path / "market-data" / "intraday-head"
+    artifact_root = tmp_path / "model-artifacts"
+    _write_head_index(head_cache_root, _SESSION_DATES[:5])
+    first = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="selected-fingerprint-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+    assert first.precommit_path is not None
+    assert first.planning_receipt_path is not None
+    precommit_bytes = first.precommit_path.read_bytes()
+    receipt_bytes = first.planning_receipt_path.read_bytes()
+    first_session = us_equity_2026_session(_SESSION_DATES[0])
+    assert first_session is not None
+    _write_head_index(
+        head_cache_root,
+        _SESSION_DATES[:5],
+        row_fingerprint_overrides={
+            _row_key(first_session.window.open_ts): "sha256:" + "b" * 64
+        },
+    )
+
+    with pytest.raises(ValueError, match="selected-row fingerprints do not match"):
+        prepare_kis_intraday_prospective_head_observation(
+            head_cache_root=head_cache_root,
+            artifact_root=artifact_root,
+            run_label="selected-fingerprint-r1",
+            repo_root=repo_root,
+            prepared_at=datetime(2026, 7, 23, tzinfo=UTC),
+        )
+
+    assert first.precommit_path.read_bytes() == precommit_bytes
+    assert first.planning_receipt_path.read_bytes() == receipt_bytes
+    assert sorted(path.name for path in first.precommit_path.parent.iterdir()) == [
+        "planning-receipt.json",
+        "precommit.json",
+    ]
+    assert not list(artifact_root.glob(".prospective-head-*.stage"))
+
+
+@pytest.mark.parametrize("malformation", ("receipt_binding", "extra_file"))
+def test_preparation_rejects_malformed_existing_pair_without_overwriting(
+    tmp_path: Path,
+    malformation: str,
+) -> None:
+    repo_root = _repo_root(tmp_path)
+    head_cache_root = tmp_path / "market-data" / "intraday-head"
+    artifact_root = tmp_path / "model-artifacts"
+    _write_head_index(head_cache_root, _SESSION_DATES[:5])
+    first = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label=f"malformed-{malformation}-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+    assert first.precommit_path is not None
+    assert first.planning_receipt_path is not None
+    artifact_dir = first.precommit_path.parent
+    if malformation == "receipt_binding":
+        receipt = json.loads(first.planning_receipt_path.read_text(encoding="utf-8"))
+        receipt["precommit_hash"] = "sha256:" + "0" * 64
+        first.planning_receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
+    else:
+        (artifact_dir / "unexpected.json").write_text("{}", encoding="utf-8")
+    before = {path.name: path.read_bytes() for path in artifact_dir.iterdir()}
+
+    with pytest.raises(ValueError, match="artifact pair is invalid"):
+        prepare_kis_intraday_prospective_head_observation(
+            head_cache_root=head_cache_root,
+            artifact_root=artifact_root,
+            run_label=f"malformed-{malformation}-r1",
+            repo_root=repo_root,
+            prepared_at=datetime(2026, 7, 23, tzinfo=UTC),
+        )
+
+    assert {path.name: path.read_bytes() for path in artifact_dir.iterdir()} == before
+    assert not list(artifact_root.glob(".prospective-head-*.stage"))
+
+
+def test_preparation_rejects_artifact_parent_link_that_escapes_root(tmp_path: Path) -> None:
+    repo_root = _repo_root(tmp_path)
+    head_cache_root = tmp_path / "market-data" / "intraday-head"
+    artifact_root = tmp_path / "model-artifacts"
+    _write_head_index(head_cache_root, _SESSION_DATES[:5])
+    source = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="source-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+    assert source.precommit_path is not None
+    output_parent = source.precommit_path.parent.parent
+    escaped_parent = repo_root / "escaped-artifacts"
+    shutil.copytree(source.precommit_path.parent, escaped_parent / "escape-r1")
+    shutil.rmtree(output_parent)
+    try:
+        os.symlink(escaped_parent, output_parent, target_is_directory=True)
+    except OSError:
+        pytest.skip("this Windows test host does not permit directory symlinks")
+
+    with pytest.raises(ValueError, match="artifact path is invalid"):
+        prepare_kis_intraday_prospective_head_observation(
+            head_cache_root=head_cache_root,
+            artifact_root=artifact_root,
+            run_label="escape-r1",
+            repo_root=repo_root,
+            prepared_at=datetime(2026, 7, 23, tzinfo=UTC),
+        )
+
+
+def test_preparation_reuses_pair_published_by_concurrent_writer(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repo_root = _repo_root(tmp_path)
+    head_cache_root = tmp_path / "market-data" / "intraday-head"
+    artifact_root = tmp_path / "model-artifacts"
+    _write_head_index(head_cache_root, _SESSION_DATES[:5])
+    winner = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="winner-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+    assert winner.precommit_path is not None
+    assert winner.planning_receipt_path is not None
+    winner_dir = winner.precommit_path.parent
+    winner_bytes = {
+        path.name: path.read_bytes()
+        for path in (winner.precommit_path, winner.planning_receipt_path)
+    }
+    original_replace = prospective_head.os.replace
+
+    def publish_winner_then_fail(
+        source: str | os.PathLike[str],
+        destination: str | os.PathLike[str],
+    ) -> None:
+        source_path = Path(source)
+        destination_path = Path(destination)
+        if source_path.name.startswith(".prospective-head-") and destination_path.name == "race-r1":
+            shutil.copytree(winner_dir, destination_path)
+            raise PermissionError("published concurrently")
+        original_replace(source, destination)
+
+    monkeypatch.setattr(prospective_head.os, "replace", publish_winner_then_fail)
+    replay = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=head_cache_root,
+        artifact_root=artifact_root,
+        run_label="race-r1",
+        repo_root=repo_root,
+        prepared_at=datetime(2026, 7, 23, tzinfo=UTC),
+    )
+
+    assert replay.precommit_path is not None
+    assert replay.planning_receipt_path is not None
+    assert replay.precommit_path.parent.name == "race-r1"
+    assert {
+        path.name: path.read_bytes()
+        for path in (replay.precommit_path, replay.planning_receipt_path)
+    } == winner_bytes
+    assert not list(artifact_root.glob(".prospective-head-*.stage"))
+
+
 def _deny_external_access(monkeypatch: pytest.MonkeyPatch) -> None:
     def fail_external(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("prospective head preparation must stay offline")
@@ -300,6 +521,7 @@ def _write_head_index(
     *,
     incomplete_dates: set[date] | None = None,
     collected_at: datetime | None = None,
+    row_fingerprint_overrides: dict[str, str] | None = None,
 ) -> Path:
     row_fingerprints: dict[str, str] = {}
     for session_date in session_dates:
@@ -314,7 +536,10 @@ def _write_head_index(
                 continue
             timestamp = session.window.open_ts + Timeframe.M1.duration * minute_offset
             row_key = timestamp.astimezone(_KOREA_TZ).strftime("%Y%m%dT%H%M%S")
-            row_fingerprints[row_key] = "sha256:" + "a" * 64
+            row_fingerprints[row_key] = (row_fingerprint_overrides or {}).get(
+                row_key,
+                "sha256:" + "a" * 64,
+            )
     latest_session = us_equity_2026_session(max(session_dates))
     assert latest_session is not None
     chunk_collected_at = collected_at or (
@@ -350,7 +575,7 @@ def _write_head_index(
         ],
     }
     index_path = head_cache_root / "v1" / "index.json"
-    index_path.parent.mkdir(parents=True)
+    index_path.parent.mkdir(parents=True, exist_ok=True)
     index_path.write_text(json.dumps(index), encoding="utf-8")
     return index_path
 

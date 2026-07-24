@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
@@ -29,11 +30,19 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT,
     KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+    KisPaperPrivateIntradayBackfillRun,
     run_kis_paper_private_intraday_backfill_cycle,
     sanitize_kis_paper_private_intraday_failure_reason,
 )
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
+_HEAD_PREPARATION_SCRIPT = (
+    _REPO_ROOT / "scripts" / "prepare_kis_intraday_prospective_head_observation.py"
+)
+_HEAD_PREPARATION_RUN_LABEL = "scheduled-head-v1"
+_HEAD_PREPARATION_TIMEOUT_SECONDS = 10.0
+_HEAD_PREPARATION_STATUSES = frozenset({"pending", "prepared"})
+_DEFAULT_PREPARATION_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 
 
 def main(
@@ -51,6 +60,11 @@ def main(
         "--mode",
         choices=("backfill", "head", "historical-probe"),
         default="backfill",
+    )
+    parser.add_argument(
+        "--preparation-artifact-root",
+        type=Path,
+        default=_preparation_artifact_root_from_environment(),
     )
     parser.add_argument("--runtime-projection", type=Path)
     args = parser.parse_args(argv)
@@ -135,6 +149,11 @@ def main(
             for result in results
         ],
     }
+    if args.mode == "head" and _head_collection_succeeded(results):
+        payload["preparation"] = _prepare_head_observation(
+            head_cache_root=_cache_root("head"),
+            artifact_root=Path(args.preparation_artifact_root),
+        )
     if args.runtime_projection is not None:
         _print_with_optional_freshness(
             payload,
@@ -179,6 +198,77 @@ def _load_paper_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
     if not app_key or not app_secret:
         raise KisPaperMarketDataError("config_missing")
     return KisPaperMarketDataConfig(app_key=app_key, app_secret=app_secret)
+
+
+def _preparation_artifact_root_from_environment() -> Path:
+    configured = os.environ.get("THERICHER_MODEL_ARTIFACT_ROOT")
+    return Path(configured) if configured else _DEFAULT_PREPARATION_ARTIFACT_ROOT
+
+
+def _head_collection_succeeded(
+    results: Sequence[KisPaperPrivateIntradayBackfillRun],
+) -> bool:
+    return bool(results) and all(result.status in {"collected", "recovered"} for result in results)
+
+
+def _prepare_head_observation(*, head_cache_root: Path, artifact_root: Path) -> dict[str, str]:
+    command = [
+        sys.executable,
+        str(_HEAD_PREPARATION_SCRIPT),
+        "--run-label",
+        _HEAD_PREPARATION_RUN_LABEL,
+        "--head-cache-root",
+        str(head_cache_root),
+        "--artifact-root",
+        str(artifact_root),
+    ]
+    try:
+        completed = subprocess.run(
+            command,
+            check=False,
+            cwd=_REPO_ROOT,
+            env=_head_preparation_environment(),
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=_HEAD_PREPARATION_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        return _preparation_unavailable("child_timeout")
+    except UnicodeError:
+        return _preparation_unavailable("child_output_invalid")
+    except OSError:
+        return _preparation_unavailable("child_unavailable")
+    if completed.returncode != 0:
+        return _preparation_unavailable("child_exit_nonzero")
+    return _categorize_preparation_output(completed.stdout)
+
+
+def _head_preparation_environment() -> dict[str, str]:
+    environment = {"PYTHONPATH": str(_REPO_ROOT / "src")}
+    for name in ("PATH", "SYSTEMROOT"):
+        value = os.environ.get(name)
+        if value:
+            environment[name] = value
+    return environment
+
+
+def _categorize_preparation_output(stdout: object) -> dict[str, str]:
+    try:
+        payload = json.loads(stdout)
+    except (TypeError, json.JSONDecodeError):
+        return _preparation_unavailable("child_output_invalid")
+    if not isinstance(payload, dict):
+        return _preparation_unavailable("child_output_invalid")
+    status = payload.get("status")
+    if status not in _HEAD_PREPARATION_STATUSES:
+        return _preparation_unavailable("child_output_invalid")
+    return {"status": status}
+
+
+def _preparation_unavailable(reason: str) -> dict[str, str]:
+    return {"status": "preparation_unavailable", "reason": reason}
 
 
 def _cache_root(mode: str = "backfill") -> Path:
