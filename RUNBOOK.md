@@ -177,7 +177,7 @@ hashes, not Tiingo quote rows or response bytes. Its paired price-free
 research receipt is at:
 
 ```text
-D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-mask.json
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json
 ```
 
 To inspect only the pinned local KIS QQQ/SPY range, with no credential or
@@ -228,6 +228,32 @@ refuses overwrites. A later changed source scope requires a fresh explicit
 destination and remains a new research contract. This audit is retrospective
 price-return integrity evidence only; it does not make a model, total-return
 claim, point-in-time input, KIS Paper action, or live behavior eligible.
+
+### Masked D1 Naive Validation
+
+Run the completed fixed control package only against the pinned audit and KIS
+cache; it has no credential, Tiingo, KIS, broker, GPU, or model path:
+
+```powershell
+uv run python scripts\run_kis_daily_masked_naive_validation.py
+```
+
+The immutable aggregate output is:
+
+```text
+D:\thericher-v2\model-artifacts\kis-daily-masked-naive-validation\kis-daily-masked-naive-validation-v1.json
+```
+
+Its current content hash is
+`sha256:e2ad842d852fe647f7de6367955f7a48f27f08508e32816f98f3c473ffcffbf6`.
+The command fully attests source bytes before it materializes only the prefix
+through embargo, runs `flat`, `always_long`, and
+`previous_session_direction` through `source: local_paper`, replay-checks the
+temporary fills, then deletes raw event logs. The untouched tail remains
+unmaterialized. This is an unadjusted retrospective plumbing result, never a
+model, alpha, profitability, total-return, point-in-time, KIS Paper, or live
+claim. A changed input must use a new explicit artifact identity rather than
+overwriting this receipt.
 
 ## KIS Intraday Backfill
 

@@ -23,13 +23,12 @@ ready lane.
 ## Current Cross-Lane View
 
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
-- Shared bottleneck: the QQQ/SPY daily event-boundary audit is now qualified
-  for the exact 4,756-session unadjusted KIS panel. Its external receipt pins
-  the source hashes, `+-1` KIS-session mask, and chronological partitions; the
-  next material evidence is one CPU-only descriptive naive baseline that
-  re-attests those exact identities and leaves the untouched tail unused. That
-  scoped Data/Research handoff does not hold prospective intraday collection,
-  Paper execution, or the existing frozen baselines.
+- Shared fact: the QQQ/SPY daily event-boundary consumer is complete. Its
+  aggregate external receipt re-attested the 4,756-session source and used only
+  the 3,806-session prefix, with replayable local-paper fills and no tail or
+  raw-event retention. The inconsistent control result is closed plumbing
+  evidence, not a model direction. This does not hold prospective intraday
+  collection, Paper execution, or the existing frozen baselines.
 - Resource posture: Data collection may proceed independently of frozen model
   campaigns. GPU work waits only for an eligible frozen Research contract, not
   for a timer or another lane's unavailable input.
@@ -41,9 +40,11 @@ ready lane.
 
 Replace foreground quota/timer sleeping and unmeasured permanent throttles
 with a recorded next-due worker state plus bounded, result-driven calibration.
-While that worker waits, Codex dispatches another ready, non-conflicting lane
-package. A long-running test or active collection may continue in its own
-worker; it is not an orchestrator wait.
+For local replay work, keep existing simulator semantics but use bounded
+in-memory temporary batches, flush them only for replay verification, and
+delete them before artifact persistence. While a worker waits, Codex dispatches
+another ready, non-conflicting lane package. A long-running test or active
+collection may continue in its own worker; it is not an orchestrator wait.
 
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
@@ -67,6 +68,7 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 
 ## Next Handoff
 
-At the next integration, verify the pinned audit receipt before its first
-consumer runs, and verify that no provider cooldown or timer sleep holds Codex
-while a ready Data, Engine Research, or Execution package can proceed.
+At the next integration, verify that the completed D1 receipt is not reused as
+a model-selection input, and verify that no provider cooldown, schedule, or
+timer sleep holds Codex while a ready Data, Engine Research, or Execution
+package can proceed.

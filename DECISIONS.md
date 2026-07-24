@@ -4859,3 +4859,30 @@ comparison surface without pretending that unadjusted history becomes an
 executable, total-return, or point-in-time source. A fixed naive baseline can
 now test the plumbing while preserving a genuinely unused tail and avoiding
 model-search selection bias.
+
+## 2026-07-25 - Keep the masked QQQ/SPY D1 naive run as local-paper plumbing only
+
+Decision: record the first completed fixed D1 control artifact at
+`D:\thericher-v2\model-artifacts\kis-daily-masked-naive-validation\kis-daily-masked-naive-validation-v1.json`,
+with content hash
+`sha256:e2ad842d852fe647f7de6367955f7a48f27f08508e32816f98f3c473ffcffbf6`.
+The run re-attested the immutable full KIS source, audit, event-sidecar lineage,
+mask, and partitions before constructing only the 3,806-session prefix through
+the embargo. It ran only `flat`, `always_long`, and
+`previous_session_direction`, with identical audited eligibility per
+symbol/phase. All 21,294 fills were `source: local_paper`, replay-checked, and
+deleted with their temporary event logs; the external artifact is aggregate and
+contains no raw price, per-bar return, or broker value.
+
+Do not treat any control cell as alpha, profitability, a model hypothesis,
+total-return evidence, point-in-time evidence, KIS Paper input, or a reason to
+open the untouched tail. Claude independently returned `supported-with-limits`:
+the one SPY validation cell where prior direction exceeded always-long reverses
+sign in SPY development and is dominated in the other three cells. It is
+multiple-comparison noise until independently sourced, adjusted,
+point-in-time, multi-period evidence reverses that conclusion.
+
+Reason: the run proves the constrained offline-to-local-paper path and its
+recovery/privacy behavior, not a tradable effect. Restricting the conclusion
+keeps future engine work focused on new prospective or properly qualified data
+instead of turning an unadjusted retrospective control into model search.

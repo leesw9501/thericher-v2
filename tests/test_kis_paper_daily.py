@@ -75,6 +75,7 @@ def test_session_ceiling_attests_full_rows_without_materializing_later_bars(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     cache_root, repo_root, _index_path = _build_cache(tmp_path)
+    full_catalog = load_kis_paper_private_daily_catalog(cache_root, repo_root=repo_root)
     cutoff = datetime(2026, 1, 2, tzinfo=UTC).date()
     constructed_sessions = []
     original_bar = kis_daily_catalog.Bar
@@ -90,6 +91,7 @@ def test_session_ceiling_attests_full_rows_without_materializing_later_bars(
     catalog = load_kis_paper_private_daily_catalog(
         cache_root,
         repo_root=repo_root,
+        expected_full_dataset_hash=full_catalog.dataset_hash,
         end_session=cutoff,
     )
 
@@ -98,6 +100,33 @@ def test_session_ceiling_attests_full_rows_without_materializing_later_bars(
     )
     assert constructed_sessions
     assert all(session <= cutoff for session in constructed_sessions)
+
+
+def test_full_dataset_hash_rejects_before_constructing_prefix_bars(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cache_root, repo_root, _index_path = _build_cache(tmp_path)
+    cutoff = datetime(2026, 1, 2, tzinfo=UTC).date()
+    original_bar = kis_daily_catalog.Bar
+    constructed = False
+
+    def no_bar(**kwargs: object):
+        nonlocal constructed
+        constructed = True
+        return original_bar(**kwargs)
+
+    monkeypatch.setattr(kis_daily_catalog, "Bar", no_bar)
+
+    with pytest.raises(ValueError, match="full dataset hash mismatch"):
+        load_kis_paper_private_daily_catalog(
+            cache_root,
+            repo_root=repo_root,
+            expected_full_dataset_hash="sha256:" + "0" * 64,
+            end_session=cutoff,
+        )
+
+    assert constructed is False
 
 
 def test_dataset_identity_is_stable_when_index_retry_metadata_changes(tmp_path: Path) -> None:

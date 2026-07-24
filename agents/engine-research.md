@@ -124,11 +124,15 @@ GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
    `MODP=0_unadjusted`. Its exact Tiingo event-only sidecar maps all 4,756
    common sessions (78 QQQ and 76 SPY events), and the external buffered audit
    is qualified with a fixed 20% residual threshold, `+-1` session mask, and
-   fixed chronological partitions. Claude's 2026-07-25 verdict remains
-   `supported-with-limits`: use it only for one pre-registered CPU-only
-   descriptive naive baseline, preserve the exact mask/partition identities,
-   and leave the untouched tail unopened. It remains non-model/non-Paper and
-   does not hold Data, prospective intraday collection, or Paper execution.
+   fixed chronological partitions. The one pre-registered CPU-only descriptive
+   run is complete at
+   `D:\thericher-v2\model-artifacts\kis-daily-masked-naive-validation\kis-daily-masked-naive-validation-v1.json`.
+   It used 12 fixed cells and replay-checked 21,294 `local_paper` fills without
+   materializing the tail. Claude's `supported-with-limits` review rejects the
+   isolated favorable SPY validation cell as a signal seed because it reverses
+   in SPY development and is not stable across cells. This evidence stays
+   non-model/non-Paper and does not hold Data, prospective intraday collection,
+   or Paper execution.
 6. The first fixed KIS-only intraday breadth and three-architecture CUDA screen
    are complete and no architecture is selected. Do not retune, choose, or
    ensemble from the five comparison sessions. The next depth candidate needs
@@ -348,12 +352,11 @@ under the same external artifact root is the usable local-paper replay.
 
 ## Next Handoff
 
-Run one fixed CPU-only QQQ/SPY daily naive comparator package only after it
-re-attests the qualified boundary audit and restricts materialized bars to the
-development/validation prefix. Keep KIS regular-session minute coverage
-accumulating and maintain the breadth, depth, ensemble, and replication queues
-without creating a report family. Consume only an authoritative sanitized
-Execution lifecycle fact and leave `pnl_status: not_observed` /
-`performance_label = None` unchanged until KIS completion evidence supports
-more. Do not turn a small current comparison slice or one Paper observation
-into selection or Paper-work authority.
+Treat the completed D1 run as a closed plumbing receipt. Keep KIS
+regular-session minute coverage accumulating and prepare only the already
+precommitted prospective-head observation when its five complete sessions are
+available. Maintain breadth, depth, ensemble, and replication queues without
+creating a report family. Consume only an authoritative sanitized Execution
+lifecycle fact and leave `pnl_status: not_observed` / `performance_label = None`
+unchanged until KIS completion evidence supports more. Do not turn the D1
+comparison or one Paper observation into selection or Paper-work authority.

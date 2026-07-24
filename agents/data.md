@@ -71,8 +71,11 @@ as a failed collection or an authority hold.
   `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
   It has 78 QQQ and 76 SPY normalized event records, no raw Tiingo response or
   quote persistence, and exact KIS-session mapping for every retained event.
-  It is still only a retrospective event-date source; a separate
-  buffered-boundary audit must qualify its use for return labels.
+  Its qualified buffered-boundary audit has now been consumed once through the
+  full-source hash-attested daily loader. The loader verifies every source byte
+  before it constructs only the prefix through embargo; tail rows never become
+  `Bar` objects. This remains retrospective event-date plumbing, not a model,
+  Paper, total-return, or point-in-time source.
 - The latest offline re-attestation matched all 15 eligible manifest digests
   and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
   is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
@@ -363,11 +366,10 @@ do not overwrite evidence or invent a cursor.
 ## Next Handoff
 
 The documented normal-start historical-minute probe is now bounded: it returns
-one terminal page rather than a seekable archive. For the separate daily
-baseline, provide only the pinned source and audit metadata needed to re-attest
-the qualified boundary receipt; do not reopen its untouched tail or change its
-source scope. Continue KIS-native minute accumulation and preserve provider
-identity, timestamp basis, session classification, coverage, and limitations.
-Re-run the metadata-only prospective preparer after future head collections;
-report only a concrete source-rights or storage constraint that needs operator
-action.
+one terminal page rather than a seekable archive. The separate daily baseline
+is complete; preserve its pinned source/audit metadata and do not reopen the
+untouched tail or change source scope. Continue KIS-native minute accumulation
+and preserve provider identity, timestamp basis, session classification,
+coverage, and limitations. Re-run the metadata-only prospective preparer after
+future head collections; report only a concrete source-rights or storage
+constraint that needs operator action.
