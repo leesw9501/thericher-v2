@@ -82,9 +82,12 @@ model comparison:
   through the existing `local_paper` target contract only.
 
 The original 239-bar observed cache cannot provide the 3h context window or a
-chronological validation split. One complete 390-minute session can exercise
-all resampling and local-paper replay cells, but it is still not sufficient for
-GPU, candidate ranking, PnL claims, ensemble selection, or model promotion.
+chronological validation split. The first expanded-cadence head reattestation
+still has zero of five complete QQQ sessions, so its preparation input remains
+`pending_complete_sessions` and the offline consumer was not run. One complete
+390-minute session can exercise all resampling and local-paper replay cells,
+but it is still not sufficient for GPU, candidate ranking, PnL claims,
+ensemble selection, or model promotion.
 
 ## Ready Queue
 

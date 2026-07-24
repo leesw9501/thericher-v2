@@ -127,17 +127,19 @@ current US exchange date. The session recorded the safe Paper-only
 created no canary run or broker order. This is execution-coverage evidence
 only; it does not claim a fill, PnL, or a model result.
 
-The separate data-only `thericher-kis-paper-intraday-head` task now has four
-weekly KST triggers at 00:35, 02:35, 04:35, and 06:20, while retaining its
-existing four-page-per-target cap and one Docker service. A metadata-only
-2026-07-25 coverage inspection found zero complete QQQ sessions out of five:
-the candidate sessions held 239, 39, and 238 completed minutes of 390. Its
-offset-only missing ranges, mixed source-continuation category, zero exact or
-conflicting retained overlap, and scoped `minute_duplicate_conflict` reason
-all remain metadata facts; no raw minute file or price was opened. The first
-early in-session window had been missing, so the 00:35 trigger is the smallest
-coverage change. Only an exact 390-minute QQQ union may become a future Research
-input; any short or gapped union remains Data evidence only.
+The separate data-only `thericher-kis-paper-intraday-head` task has four weekly
+KST triggers at 00:35, 02:35, 04:35, and 06:20, while retaining its existing
+four-page-per-target cap and one Docker service. Its first expanded-cadence
+cycle completed successfully. A metadata-only generation-8 inspection still
+found zero complete QQQ sessions out of five: the 2026-07-22, -23, and -24
+candidates held 239, 39, and 238 minutes of 390, with missing offsets
+`0-5,245-389`, `0-350`, and `0-125,245,365-389`. Continuation is `mixed`, exact
+and conflicting retained overlap are `none`, and the scoped last reason is
+`minute_duplicate_conflict`; no raw minute file or price was opened. Those
+varying gaps do not identify a source-backed page-size, duplicate, timestamp,
+or cap recovery, so the cadence and strict selector remain unchanged. Only an
+exact 390-minute QQQ union may become a future Research input; any short or
+gapped union remains Data evidence only.
 
 The first receipt-linked Paper observer is now invoked automatically by the
 scheduled daily SPY session after that same session has produced its exact

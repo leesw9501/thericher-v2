@@ -25,12 +25,14 @@ ready lane.
 - Company objective: follow `NEXT_CODEX_GOAL.md`; do not restate or replace it.
 - Current bottleneck: no verified first-five prospective QQQ preparation pair
   exists yet because fresh complete head-session coverage has not accumulated.
-  Metadata-only coverage found 239, 39, and 238 completed regular minutes on
-  the candidate dates, with no retained overlap conflict and no selector or
-  completion-promotion defect. The existing head task owns that external wait;
-  its single task now includes a 00:35 KST early window. The offline consumer is
-  implemented and synthetically verified, so a verified pair is the only input
-  still needed for its first real offline observation.
+  The first expanded-cadence cycle reattested 239, 39, and 238 completed
+  regular minutes on the candidate dates, `mixed` continuation, and no exact
+  or conflicting retained overlap. Its varied missing offsets do not isolate a
+  page-size, duplicate, timestamp, or cap defect, so no further collector
+  change is evidence-backed. The existing head task owns the next due
+  collection; its single task retains the 00:35 KST early window. The offline
+  consumer is implemented and synthetically verified, so a verified pair is
+  the only input still needed for its first real offline observation.
 - Shared fact: the existing intraday-head collector now performs one isolated,
   post-durable metadata preparation attempt. It remains the only scheduler and
   collection authority; pending or failed preparation cannot revise its cache,
@@ -80,10 +82,10 @@ Use Git and external artifacts for detailed history; this file keeps no run log.
 
 ## Next Handoff
 
-At the next integration, reattest the first expanded-cadence head outcome and
-record exact coverage before considering another collector change. Verify that
-no provider cooldown, schedule, or timer sleep holds Codex while a ready Data,
-Engine Research, or Execution package can proceed. Consume the frozen
-prospective observation consumer only from a verified first-five preparation
-pair; do not create a foreground wait or duplicate the existing collector
-schedule.
+At the next integration, reattest the next due head outcome and compare its
+safe coverage metadata against generation 8 before considering another
+collector change. Verify that no provider cooldown, schedule, or timer sleep
+holds Codex while a ready Data, Engine Research, or Execution package can
+proceed. Consume the frozen prospective observation consumer only from a
+verified first-five preparation pair; do not create a foreground wait or
+duplicate the existing collector schedule.

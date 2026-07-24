@@ -122,14 +122,17 @@ as a failed collection or an authority hold.
 - The separate `intraday-head` root receives fresh source-page observations
   without advancing the historical backfill cursor. The Windows Scheduled Task
   `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
-  02:35, 04:35, and 06:20 KST with up to four pages per target. A 2026-07-25
-  metadata-only coverage inspection found zero complete QQQ sessions out of
-  five: the candidate dates had 239, 39, and 238 completed minutes of 390.
-  Their offset-only missing ranges and mixed source-continuation category show
-  a source-coverage gap, while exact/conflicting retained overlap is zero. The
-  last rejected source attempt was `minute_duplicate_conflict`; its fact is
-  scoped. The added 00:35 window improves the missing early-session coverage
-  without relaxing cache conflict or complete-session rules.
+  02:35, 04:35, and 06:20 KST with up to four pages per target. Its first
+  expanded-cadence cycle completed with task result `0`; the metadata-only
+  inspector reattested generation 8 with zero complete QQQ sessions out of
+  five. The 2026-07-22, -23, and -24 candidates held 239, 39, and 238 of 390
+  minutes, respectively; their missing offset ranges were `0-5,245-389`,
+  `0-350`, and `0-125,245,365-389`. Continuation remains `mixed`, exact and
+  conflicting overlap remain `none`, and the scoped last reason is
+  `minute_duplicate_conflict`. This varied short-session shape does not
+  establish that page size, duplicate handling, timestamps, or the four-page
+  cap is the cause, so the smallest recovery is to retain the installed
+  cadence and strict selector unchanged for the next due collection.
 - `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing

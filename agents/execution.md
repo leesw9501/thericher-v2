@@ -99,6 +99,13 @@ remains unavailable.
   `no_intent` / `target_already_satisfied`; it created no canary run or broker
   order. Preserve this as safe execution coverage only: it is neither a fill
   nor a PnL/model conclusion, and it does not affect the next due Paper action.
+- The latest scheduled daily SPY head/session and quote-session tasks are
+  `Ready` with successful prior task results. The daily session again ended
+  `paper_only` / `no_intent` / `target_already_satisfied`; no receipt-derived
+  run identity existed, so its receipt observer and terminal-field probe were
+  both `not_attempted`. This is not evidence of a fill, cancellation, or PnL;
+  the next distinct scheduled Paper action remains eligible under the existing
+  paper-only route and exact-intent recovery rules.
 - The first due quote session on 2026-07-22 completed successfully as a task
   but ended before intent creation with `quote_unavailable` /
   `quote_response_incomplete`. Its safe evidence is external at

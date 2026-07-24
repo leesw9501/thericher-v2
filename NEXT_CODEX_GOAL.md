@@ -2,10 +2,10 @@
 
 ## Objective
 
-Reconcile the first expanded-cadence prospective QQQ intraday-head collection
-and use its metadata-only result to make, at most, one further evidence-backed
-Data recovery change. The new 00:35 KST window is owned by the existing single
-head task; do not wait in the foreground for it or create a duplicate scheduler.
+Continue the single prospective QQQ intraday-head collection through its next
+due result and decide, from metadata only, whether its first-five-session
+preparation input has become valid. Do not wait in the foreground or create a
+second scheduler: the existing four-trigger Data task owns collection.
 
 ## First Reads
 
@@ -15,68 +15,57 @@ head task; do not wait in the foreground for it or create a duplicate scheduler.
    .\scripts\start_next_codex_task.ps1
    ```
 
-2. Read:
-   - `HANDOFF.md`
-   - `VISION.md`
-   - `ARCHITECTURE.md`
-   - `AGENTS.md`
-   - `DECISIONS.md`
-   - `RUNBOOK.md`
-   - `agents/orchestration.md`
-   - `agents/data.md`
-   - `agents/engine-research.md`
+2. Read `HANDOFF.md`, `AGENTS.md`, `RUNBOOK.md`, `agents/orchestration.md`,
+   `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
+3. Reattest the current metadata baseline with:
 
-3. Attempt a concise falsification-first Claude drift-check before changing
-   collector, duplicate, timestamp, or page-size behavior. Do not send
-   credentials, raw rows, cache paths, or artifact contents. A local Claude
-   authentication/tool failure is a scoped tooling fact, not a Data hold.
+   ```powershell
+   uv run python scripts\inspect_kis_intraday_head_coverage.py
+   ```
 
 ## Hard Boundaries
 
-- `KIS_PAPER_*` may be used only by the private Data client for market-data
-  collection. Do not call account, position, order, modify, cancel, or live
-  endpoints, and never read `KIS_LIVE_*`.
-- Keep raw data under `D:\market_data` and generated evidence under
-  `D:\thericher-v2\model-artifacts`; do not print or commit raw rows, prices,
-  credentials, account facts, response bodies, or private cache paths.
-- Preserve one existing `thericher-kis-paper-intraday-head` task, one Docker
-  profile, the four-page-per-target cap, source pacing, strict conflicting-row
-  rejection, and exact 390-minute session selection unless new evidence directly
-  falsifies one of those rules.
-- Do not rerun a known out-of-session duplicate-conflict shape merely to create
-  activity. The scheduler owns its due time; other ready lanes continue.
-- Do not run a model/GPU job, select a candidate, create an intent, or submit a
-  Paper order. The frozen offline consumer remains input-pending until a valid
+- Use only source-safe runtime and metadata evidence: never print or commit
+  raw market/broker data, prices, credentials, account identifiers, private
+  intents, or KIS response bodies.
+- Keep one `thericher-kis-paper-intraday-head` task, one Docker profile, the
+  four-page-per-target cap, source pacing, strict conflicting-row rejection,
+  and exact 390-minute session selection. Do not read `KIS_LIVE_*` or use a
+  live route.
+- Do not run a model/GPU job, select a candidate, create an intent, or submit
+  a Paper order. The offline consumer remains input-pending until a valid
   first-five preparation pair exists.
+- A scheduled wait, a short head union, a missing preparation pair, or a
+  Claude tooling failure is scoped evidence, never an approval or Paper hold.
 
 ## Required Work
 
-1. Reattest the installed four-trigger task and current head-index metadata
-   without opening raw bars. Run
-   `uv run python scripts\inspect_kis_intraday_head_coverage.py` to record the
-   QQQ coverage baseline and recovery class.
-2. After the first due expanded-cadence result, run the same inspector and
-   compare only its source-safe metadata: QQQ regular-session minute count and
-   offset-based missing ranges, continuation category, exact/conflicting
-   overlap categories, and preparation-input status.
-3. If exact 390-minute QQQ coverage exists, invoke the existing metadata-only
-   preparation handoff and then run the already-built offline consumer. Do not
-   use KIS, credentials, or broker routes in the consumer.
-4. If coverage remains short, identify the exact missing interval/category and
-   make only one smallest source-backed recovery change. The official KIS sample
-   documents `NREC` as configurable up to 120, but do not introduce page-size or
-   duplicate-policy behavior without a bounded source/test case that requires it.
-5. Refresh Data, Research, and orchestration stateboards with current evidence,
-   next recovery, and no invented wait or approval state.
+1. Reattest that the installed head task remains `Ready`, has the four KST
+   triggers, and has no missed-run anomaly. Record only sanitized task facts.
+2. After the next due result, compare its coverage to the current generation-8
+   baseline: complete-minute counts, offset-based missing ranges,
+   continuation/overlap categories, last reason category, and preparation
+   status. Continue independent ready work instead of waiting for that time.
+3. If five exact 390-minute QQQ sessions exist, invoke the existing
+   metadata-only preparation handoff and then the credential-free offline
+   consumer. Otherwise, retain the established collector rules unless a bounded
+   source/test case identifies one exact recovery change.
+4. Consume the next daily SPY scheduled result only through its exact
+   receipt-derived run identity and categorical observer/terminal facts; do
+   not infer fills or PnL from a no-intent, missing, or ambiguous observation.
+5. Refresh the Data, Research, Execution, and orchestration stateboards with
+   the current recovery class and next action, then verify, commit, and push
+   any bounded implementation or stateboard change.
 
 ## Completion Evidence
 
-- A metadata-only before/after coverage comparison names the QQQ session state,
-  source continuation/conflict category, and recovery classification.
-- Any change remains private, idempotent, source-paced, recoverable, and inside
-  the existing single-worker/single-task boundary.
-- A valid five-session pair either drives the offline local-paper observation or
-  remains an explicit normal pending input with the precise next Data action.
+- A source-safe before/after QQQ coverage comparison names session completeness,
+  continuation/conflict categories, and `resume`/preparation status.
+- A valid first-five pair drives only the existing offline local-paper
+  observation; otherwise the precise next Data collection remains the normal
+  recovery action.
+- Daily SPY evidence, if present, remains categorical and makes no fill or PnL
+  claim without authoritative completion facts.
 
 ## Verification
 
@@ -86,7 +75,3 @@ uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
 ```
-
-## Suggested Commit Message
-
-`Reconcile expanded intraday head coverage`
