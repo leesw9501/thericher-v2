@@ -20,8 +20,9 @@ selection, ensembles, Paper intents, and broker actions before that pair exists.
 ## Current Readiness
 
 - The prospective head index has `0 / 5` exact regular sessions. Its preparation
-  state is `pending_complete_sessions`; no real pair, candidate, or prospective
-  observation receipt exists.
+  state is `pending_complete_sessions`; the 2026-07-26 metadata reattestation
+  left it unchanged, so no real pair, candidate, or prospective observation
+  receipt exists.
 - The latest Data recovery hardening and data-scheduler missed-run recovery
   only improve collection availability; they do not create a pair or change
   Research eligibility.

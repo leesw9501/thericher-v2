@@ -7,14 +7,18 @@ second goal, or a historical ledger.
 ## Current Cross-Lane View
 
 - Data is in `resume`: the prospective QQQ head cache is generation `8` with
-  `0 / 5` complete sessions. The existing head task is `Ready`, has four KST
+  `0 / 5` complete sessions. The 2026-07-26 metadata reattestation is unchanged
+  (mixed continuation, no retained exact/conflicting overlap, scoped
+  `minute_duplicate_conflict`). The existing head task is `Ready`, has four KST
   triggers, no missed run, and owns the next 2026-07-28 00:35 KST collection.
 - Engine Research is input-pending: no verified first-five preparation pair
   exists, so no model, GPU, candidate, or ensemble job is eligible under the
   current objective.
-- Execution is in `resume`: daily SPY tasks are `Ready`; the latest safe
-  result was categorical `paper_only` / `no_intent` with no receipt-derived
-  observer work and no fill/PnL claim.
+- Execution is in `resume`: all four named scheduled tasks are `Ready`, with
+  successful prior results and no missed runs. The 2026-07-25 daily SPY session
+  was categorical `paper_only` / `no_intent` / `session_closed`; it had no
+  receipt-derived run identity, and its observer and terminal probe were both
+  `not_attempted`. This makes no fill or PnL claim.
 - D: has 40.45 percent free space and no related Docker/KIS process is active.
   The lanes have no current resource conflict.
 

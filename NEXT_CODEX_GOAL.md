@@ -3,9 +3,10 @@
 ## Objective
 
 Continue the single prospective QQQ intraday-head collection through its next
-due result and decide, from metadata only, whether its first-five-session
-preparation input has become valid. Do not wait in the foreground or create a
-second scheduler: the existing four-trigger Data task owns collection.
+2026-07-28 00:35 KST due result and decide, from metadata only, whether its
+first-five-session preparation input has become valid. Do not wait in the
+foreground or create a second scheduler: the existing four-trigger Data task
+owns collection.
 
 ## First Reads
 
@@ -42,7 +43,7 @@ second scheduler: the existing four-trigger Data task owns collection.
 
 1. Reattest that the installed head task remains `Ready`, has the four KST
    triggers, and has no missed-run anomaly. Record only sanitized task facts.
-2. After the next due result, compare its coverage to the current generation-8
+2. After the next due result, compare its coverage to the reattested generation-8
    baseline: complete-minute counts, offset-based missing ranges,
    continuation/overlap categories, last reason category, and preparation
    status. Continue independent ready work instead of waiting for that time.
@@ -50,9 +51,12 @@ second scheduler: the existing four-trigger Data task owns collection.
    metadata-only preparation handoff and then the credential-free offline
    consumer. Otherwise, retain the established collector rules unless a bounded
    source/test case identifies one exact recovery change.
-4. Consume the next daily SPY scheduled result only through its exact
-   receipt-derived run identity and categorical observer/terminal facts; do
-   not infer fills or PnL from a no-intent, missing, or ambiguous observation.
+4. The 2026-07-25 daily SPY session was categorical `paper_only` / `no_intent`
+   / `session_closed`; its receipt reference had no exact receipt-derived run
+   identity and observer/terminal fields were `not_attempted`. Consume the next
+   daily result only through its exact receipt-derived run identity and
+   categorical observer/terminal facts; do not infer fills or PnL from a
+   no-intent, missing, or ambiguous observation.
 5. Refresh the Data, Research, Execution, and orchestration stateboards with
    the current recovery class and next action, then verify, commit, and push
    any bounded implementation or stateboard change.

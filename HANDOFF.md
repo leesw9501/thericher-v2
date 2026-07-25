@@ -100,6 +100,18 @@ permission condition.
 
 ## Current Task Update
 
+The 2026-07-26 KST operating review reattested only sanitized scheduler and
+external metadata evidence. The four named scheduled tasks are `Ready`, their
+2026-07-25 prior results are `0`, and none has a missed run. The prospective
+QQQ inspector remains generation 8 with zero of five complete sessions: the
+three short-session counts, missing-offset ranges, `mixed` continuation, no
+retained overlap, and scoped `minute_duplicate_conflict` are unchanged. The
+2026-07-25 daily SPY session is `paper_only` / `no_intent` / `session_closed`;
+its receipt reference has no exact receipt-derived run identity, so the
+observer and terminal probe are `not_attempted`. No fill or PnL is inferred.
+Recovery remains `resume` at the existing 2026-07-28 00:35 KST intraday-head
+run; no duplicate worker or recovery rule is warranted.
+
 The first receipt-linked daily SPY KIS Paper position lifecycle is complete.
 Its forward head collector wrote one hash-attested `SPY` / `AMS` snapshot under
 `D:\market_data\us_equities\kis_paper_private\daily-head\v1`, with 99

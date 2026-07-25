@@ -32,6 +32,10 @@ a second scheduler or manually duplicate a due collection.
   `02:35`, `04:35`, and `06:20`, has no missed run, and next runs at
   2026-07-28 00:35 KST. It retains one Docker service, the four-page-per-target
   cap, source pacing, strict conflict rejection, and exact session selection.
+- The 2026-07-26 metadata-only reattestation left that generation-8 baseline
+  unchanged: the three candidate sessions remain short, preparation remains
+  `pending_complete_sessions`, and no source-backed recovery change is
+  identified before the next due collection.
 - Data-only scheduled tasks now recover a missed available run, allow battery
   start/continuation, retain `IgnoreNew`, and use bounded execution limits.
   The head task has 90 minutes, below its shortest 105-minute trigger gap; the

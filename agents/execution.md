@@ -19,13 +19,15 @@ or PnL from incomplete evidence.
 
 ## Current Runtime Facts
 
-- The daily SPY head, quote-session, and daily-session tasks are installed and
-  `Ready`. They own their normal 22:15, 23:35, and 23:50 KST runs. The latest
-  completed daily session is `paper_only` / `no_intent` /
-  `target_already_satisfied`.
-- That no-intent result created no receipt-derived run identity, so its receipt
-  observer and terminal-field probe were `not_attempted`. It is not evidence
-  of a broker fill, cancellation, position change, or PnL.
+- The daily SPY head, quote-session, daily-session, and intraday-head tasks are
+  installed and `Ready`; their 2026-07-25 prior runs have result `0` and no
+  missed-run anomaly. The daily tasks own their normal 22:15, 23:35, and 23:50
+  KST runs; intraday-head owns 00:35, 02:35, 04:35, and 06:20 KST.
+- The latest completed daily session (2026-07-25) is `paper_only` /
+  `no_intent` / `session_closed`. Its receipt reference did not yield an exact
+  receipt-derived run identity, so its receipt observer and terminal-field probe
+  were `not_attempted`. It is not evidence of a broker fill, cancellation,
+  position change, or PnL.
 - The current price route uses `AMS` for price endpoints and `AMEX` for the
   virtual order venue. The scheduled daily lifecycle does not auto-cancel a
   valid order; the standalone canary remains cancellation-oriented.
