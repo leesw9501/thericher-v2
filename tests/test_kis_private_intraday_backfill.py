@@ -651,6 +651,154 @@ def test_candidate_batch_conflict_after_an_accepted_page_never_retains_a_prefix(
     assert qqq["chunks"] == []
 
 
+def test_legacy_candidate_batch_conflict_does_not_block_fresh_conflicting_rows(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    original_rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ", exchange="NAS", rows=original_rows, next_cursor=None
+                ),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    _mark_qqq_chunk_as_legacy_candidate_batch_conflict(index_path)
+    changed_first = KisPaperMinuteRawBar(
+        exchange_date=original_rows[0].exchange_date,
+        exchange_time=original_rows[0].exchange_time,
+        korea_date=original_rows[0].korea_date,
+        korea_time=original_rows[0].korea_time,
+        open=original_rows[0].open,
+        high=original_rows[0].high + Decimal("1"),
+        low=original_rows[0].low,
+        last=original_rows[0].last + Decimal("1"),
+        volume=original_rows[0].volume,
+    )
+    replacement_rows = (changed_first, original_rows[1])
+
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ", exchange="NAS", rows=replacement_rows, next_cursor=None
+                ),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert results[0].status == "collected"
+    assert results[0].exact_overlap_rows == 0
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert len(qqq["chunks"]) == 1
+
+
+def test_legacy_candidate_batch_conflict_is_not_treated_as_cached_chunk(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor=None),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    _mark_qqq_chunk_as_legacy_candidate_batch_conflict(index_path)
+
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor=None),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert results[0].status == "collected"
+    assert results[0].exact_overlap_rows == 0
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert len(qqq["chunks"]) == 1
+
+
+def test_removing_legacy_candidate_batch_conflict_preserves_a_head_cursor() -> None:
+    persisted_cursor = {"keyb": "20260722092900", "next": "1"}
+    target: dict[str, object] = {
+        "next_cursor": dict(persisted_cursor),
+        "chunks": [_legacy_candidate_batch_conflict_chunk()],
+    }
+
+    changed = private_intraday_backfill._remove_candidate_batch_conflicted_chunks(
+        {"targets": [target]}, resume_cursor=False
+    )
+
+    assert changed is True
+    assert target["chunks"] == []
+    assert target["next_cursor"] == persisted_cursor
+
+
+def test_removing_legacy_candidate_batch_conflict_derives_backfill_cursor_from_valid_chunk(
+) -> None:
+    valid_cursor = {"keyb": "20260722092900", "next": "1"}
+    target: dict[str, object] = {
+        "next_cursor": {"keyb": "20260722092500", "next": "1"},
+        "chunks": [
+            {"output_cursor": dict(valid_cursor)},
+            _legacy_candidate_batch_conflict_chunk(),
+        ],
+    }
+
+    changed = private_intraday_backfill._remove_candidate_batch_conflicted_chunks(
+        {"targets": [target]}, resume_cursor=True
+    )
+
+    assert changed is True
+    assert target["chunks"] == [{"output_cursor": valid_cursor}]
+    assert target["next_cursor"] == valid_cursor
+
+
 def test_legacy_duplicate_conflict_recovery_keeps_origin_unrecorded() -> None:
     target_state: dict[str, object] = {"last_conflict_origin": None}
 
@@ -747,7 +895,16 @@ def test_orphan_snapshot_recovers_cursor_before_the_next_page(tmp_path: Path) ->
     qqq["next_cursor"] = None
     index_path.write_text(json.dumps(index), encoding="utf-8")
 
-    recovery = _MinuteClient([])
+    recovery = _MinuteClient(
+        [
+            _page(
+                symbol="SPY",
+                exchange="AMS",
+                rows=_rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2),
+                next_cursor=None,
+            )
+        ]
+    )
     recovered = run_kis_paper_private_intraday_backfill_cycle(
         client=recovery,
         cache_root=cache_root,
@@ -760,9 +917,10 @@ def test_orphan_snapshot_recovers_cursor_before_the_next_page(tmp_path: Path) ->
     )
 
     assert [(result.target_key, result.status) for result in recovered] == [
-        ("QQQ/NAS/1m", "recovered")
+        ("QQQ/NAS/1m", "recovered"),
+        ("SPY/AMS/1m", "collected"),
     ]
-    assert recovery.queries == []
+    assert [(query.symbol, query.exchange) for query in recovery.queries] == [("SPY", "AMS")]
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert qqq["next_cursor"] == {"keyb": "20260722092900", "next": "1"}
@@ -969,6 +1127,33 @@ def _collect_one_qqq_chunk(*, cache_root: Path, repo_root: Path) -> None:
         ("QQQ/NAS/1m", "collected"),
         ("SPY/AMS/1m", "rejected"),
     ]
+
+
+def _mark_qqq_chunk_as_legacy_candidate_batch_conflict(index_path: Path) -> None:
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    chunk = qqq["chunks"][0]
+    conflict_fields = {
+        "outcome": "partial",
+        "reason": "minute_duplicate_conflict",
+        "conflict_origin": "candidate_batch",
+    }
+    chunk.update(conflict_fields)
+    manifest_path = index_path.parent / chunk["manifest_path"]
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["backfill"]["index_chunk"].update(conflict_fields)
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    qqq["last_reason"] = None
+    qqq["last_conflict_origin"] = None
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+
+def _legacy_candidate_batch_conflict_chunk() -> dict[str, object]:
+    return {
+        "outcome": "partial",
+        "reason": "minute_duplicate_conflict",
+        "conflict_origin": "candidate_batch",
+    }
 
 
 def _legacy_chunk_key(*, target_key: str, input_cursor: object) -> str:

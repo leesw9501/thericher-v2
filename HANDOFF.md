@@ -144,11 +144,14 @@ gapped union remains Data evidence only.
 A bounded recovery hardening now rejects an entire candidate batch if its own
 minute rows conflict, so an earlier page from that batch cannot become a
 retained prefix or move a cursor. Explicitly marked legacy candidate-batch
-conflict chunks remain audit evidence but are excluded from cache/session
-consumption. The outer collector is complete only when it returns both expected
-QQQ and SPY outcomes; a QQQ recovery may still run the existing QQQ-only
-preparation child while the outer result truthfully remains incomplete. The
-future offline observation accepts only canonical planned local-paper event
+conflict chunks remain audit evidence but are removed from active collector
+state without deleting their immutable artifacts. They therefore cannot affect
+the cursor, collision/dedup checks, cache consumption, or orphan recovery. An
+orphan recovery now skips only its recovered target and continues the other
+target in the same cycle. The outer collector is complete only when it returns
+both expected QQQ and SPY outcomes; a QQQ recovery may still run the existing
+QQQ-only preparation child while the outer result truthfully remains incomplete.
+The future offline observation accepts only canonical planned local-paper event
 streams, and missing/mismatched Paper state stays categorical unavailable
 evidence rather than a false submission or terminal claim.
 

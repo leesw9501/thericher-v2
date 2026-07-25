@@ -860,6 +860,13 @@ For local simulation, the event log is authoritative. For KIS Paper, reconcile
 against broker facts before replacing an unknown submission. A recovery fact is
 not a reason to introduce a new report or approval gate.
 
+The intraday collector automatically removes an explicitly marked legacy
+`candidate_batch` conflict from active index state while preserving its
+immutable artifact. Do not edit the index, revive that artifact through orphan
+recovery, or create a replacement scheduler: the next owned collection retries
+from its normal cursor scope and continues independent targets in the same
+cycle.
+
 ## Verification
 
 Run at every bounded goal boundary:

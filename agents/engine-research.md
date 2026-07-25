@@ -22,6 +22,9 @@ selection, ensembles, Paper intents, and broker actions before that pair exists.
 - The prospective head index has `0 / 5` exact regular sessions. Its preparation
   state is `pending_complete_sessions`; no real pair, candidate, or prospective
   observation receipt exists.
+- The latest Data recovery hardening only removes invalid legacy candidate
+  chunks from active collection state; it does not create a pair or change
+  Research eligibility.
 - The credential-free offline consumer is implemented and synthetically
   verified. It validates the frozen pair's first-five QQQ dates and selected
   row fingerprints before and after local cache inputs, retaining the full

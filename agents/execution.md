@@ -32,6 +32,8 @@ or PnL from incomplete evidence.
 - The local operations console is credential-free and sees only sanitized
   projections. Its directional pauses are reversible operating controls, not
   approval or model-promotion gates.
+- The intraday collector's legacy-candidate and orphan-recovery hardening is
+  Data-only. It creates no Paper intent, account call, order, or lifecycle fact.
 
 ## Binding Contracts
 

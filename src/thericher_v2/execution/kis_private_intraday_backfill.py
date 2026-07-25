@@ -242,31 +242,27 @@ def run_kis_paper_private_intraday_backfill_cycle(
         )
     try:
         index = _read_or_create_index(root, hydrate_source_exhaustion=resume_cursor)
+        removed_candidate_chunks = _remove_candidate_batch_conflicted_chunks(
+            index, resume_cursor=resume_cursor
+        )
         _attest_committed_snapshots(root=root, index=index)
         recovered = _recover_orphan_snapshots(root=root, index=index)
-        if recovered:
+        recovered_by_target: dict[str, list[_RecoveredSnapshot]] = {}
+        for item in recovered:
+            recovered_by_target.setdefault(item.target.target_key, []).append(item)
+        if removed_candidate_chunks or recovered:
             _attest_committed_snapshots(root=root, index=index)
             _write_index(root=root, index=index)
-            return tuple(
-                KisPaperPrivateIntradayBackfillRun(
-                    status="recovered",
-                    target_key=item.target.target_key,
-                    row_count=int(item.chunk["row_count"]),
-                    exact_overlap_rows=int(item.chunk["exact_overlap_rows"]),
-                    manifest_path=item.manifest_path,
-                    manifest_hash=item.manifest_hash,
-                    reason=(
-                        str(item.chunk["reason"])
-                        if item.chunk["reason"] is not None
-                        else None
-                    ),
-                )
-                for item in recovered
-            )
         results: list[KisPaperPrivateIntradayBackfillRun] = []
         pacer = _RequestPacer(sleeper=sleeper, monotonic_clock=monotonic_clock)
         for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS:
             target = KisPaperPrivateIntradayTarget(symbol=symbol, exchange=exchange)
+            recovered_snapshots = recovered_by_target.get(target.target_key)
+            if recovered_snapshots:
+                results.append(
+                    _recovered_target_run(target=target, snapshots=recovered_snapshots)
+                )
+                continue
             target_state = _index_target(index=index, target=target)
             input_cursor = (
                 KisPaperPrivateIntradayCursor.from_document(target_state.get("next_cursor"))
@@ -442,6 +438,27 @@ def run_kis_paper_private_intraday_backfill_cycle(
         return tuple(results)
     finally:
         _release_worker_lock(lock)
+
+
+def _recovered_target_run(
+    *,
+    target: KisPaperPrivateIntradayTarget,
+    snapshots: list[_RecoveredSnapshot],
+) -> KisPaperPrivateIntradayBackfillRun:
+    latest = snapshots[-1]
+    return KisPaperPrivateIntradayBackfillRun(
+        status="recovered",
+        target_key=target.target_key,
+        row_count=sum(int(item.chunk["row_count"]) for item in snapshots),
+        exact_overlap_rows=sum(int(item.chunk["exact_overlap_rows"]) for item in snapshots),
+        manifest_path=latest.manifest_path,
+        manifest_hash=latest.manifest_hash,
+        reason=(
+            str(latest.chunk["reason"])
+            if latest.chunk["reason"] is not None
+            else None
+        ),
+    )
 
 
 def _collect_target(
@@ -874,6 +891,59 @@ def _is_unretained_marker(chunk: object) -> bool:
     )
 
 
+def _is_candidate_batch_conflicted_chunk(chunk: object) -> bool:
+    """Keep historical rows from a rejected candidate batch out of collection state."""
+
+    return (
+        isinstance(chunk, Mapping)
+        and chunk.get("outcome") == "partial"
+        and chunk.get("reason") == "minute_duplicate_conflict"
+        and chunk.get("conflict_origin") == "candidate_batch"
+    )
+
+
+def _is_ignored_collection_chunk(chunk: object) -> bool:
+    return _is_unretained_marker(chunk) or _is_candidate_batch_conflicted_chunk(chunk)
+
+
+def _remove_candidate_batch_conflicted_chunks(
+    index: dict[str, object], *, resume_cursor: bool
+) -> bool:
+    """Remove invalid legacy candidates from active state without deleting evidence files."""
+
+    changed = False
+    targets = index.get("targets")
+    if not isinstance(targets, list):
+        raise ValueError("private intraday index is invalid")
+    for target_state in targets:
+        if not isinstance(target_state, dict):
+            raise ValueError("private intraday index is invalid")
+        chunks = target_state.get("chunks")
+        if not isinstance(chunks, list):
+            raise ValueError("private intraday index is invalid")
+        active_chunks = [
+            chunk for chunk in chunks if not _is_candidate_batch_conflicted_chunk(chunk)
+        ]
+        if len(active_chunks) == len(chunks):
+            continue
+        target_state["chunks"] = active_chunks
+        if resume_cursor:
+            target_state["next_cursor"] = _last_active_output_cursor(active_chunks)
+        changed = True
+    return changed
+
+
+def _last_active_output_cursor(chunks: list[object]) -> dict[str, str] | None:
+    for chunk in reversed(chunks):
+        if _is_unretained_marker(chunk):
+            continue
+        if not isinstance(chunk, Mapping):
+            raise ValueError("private intraday index is invalid")
+        cursor = KisPaperPrivateIntradayCursor.from_document(chunk.get("output_cursor"))
+        return cursor.as_document() if cursor is not None else None
+    return None
+
+
 def _index_target(
     *, index: Mapping[str, object], target: KisPaperPrivateIntradayTarget
 ) -> dict[str, object]:
@@ -919,7 +989,9 @@ def _hydrate_source_exhaustion_state(index: dict[str, object]) -> bool:
         chunks = target_state.get("chunks")
         if not isinstance(chunks, list):
             raise ValueError("private intraday index is invalid")
-        retained_chunks = [chunk for chunk in chunks if not _is_unretained_marker(chunk)]
+        retained_chunks = [
+            chunk for chunk in chunks if not _is_ignored_collection_chunk(chunk)
+        ]
         if not retained_chunks:
             continue
         last_chunk = retained_chunks[-1]
@@ -940,7 +1012,7 @@ def _target_fingerprints(target_state: Mapping[str, object]) -> dict[str, str]:
     if not isinstance(chunks, list):
         raise ValueError("private intraday index is invalid")
     for chunk in chunks:
-        if _is_unretained_marker(chunk):
+        if _is_ignored_collection_chunk(chunk):
             continue
         if not isinstance(chunk, Mapping):
             raise ValueError("private intraday index is invalid")
@@ -965,7 +1037,7 @@ def _has_chunk(*, target_state: Mapping[str, object], candidate: Mapping[str, ob
     candidate_rows = candidate.get("row_fingerprints")
     return any(
         isinstance(chunk, Mapping)
-        and not _is_unretained_marker(chunk)
+        and not _is_ignored_collection_chunk(chunk)
         and (
             chunk.get("chunk_key") == candidate_key
             or (
@@ -1008,12 +1080,14 @@ def _recover_orphan_snapshots(
         chunk = backfill.get("index_chunk")
         if not isinstance(chunk, dict):
             raise ValueError("private intraday snapshot is invalid")
+        if _is_candidate_batch_conflicted_chunk(chunk):
+            continue
         state = _index_target(index=index, target=target)
         chunks = state["chunks"]
         assert isinstance(chunks, list)
         if any(
             isinstance(existing, dict)
-            and not _is_unretained_marker(existing)
+            and not _is_ignored_collection_chunk(existing)
             and existing.get("chunk_key") == chunk["chunk_key"]
             for existing in chunks
         ):
@@ -1074,7 +1148,7 @@ def _attest_committed_snapshots(*, root: Path, index: Mapping[str, object]) -> N
         if not isinstance(chunks, list):
             raise ValueError("private intraday index is invalid")
         for chunk in chunks:
-            if _is_unretained_marker(chunk):
+            if _is_ignored_collection_chunk(chunk):
                 continue
             _attest_snapshot_chunk(root=root, target=target, chunk=chunk)
 

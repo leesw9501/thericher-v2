@@ -5060,3 +5060,25 @@ Reason: these are narrow provenance and recovery properties. They prevent an
 invalid cached prefix, malformed replay, or mismatched private state from
 becoming a false data, execution, or PnL claim without adding a scheduler,
 approval step, broker side effect, or model-selection path.
+
+## 2026-07-25 - Quarantine invalid legacy intraday candidates from active recovery
+
+Decision: an explicitly marked legacy `candidate_batch` conflict is invalid
+collection input. Preserve its immutable snapshot artifact, but remove the
+chunk from the active intraday index, derive a backfill continuation only from
+remaining valid chunks, preserve a head collector's stored cursor, and exclude
+it from collision, duplicate, source-exhaustion, snapshot attestation, and
+orphan-recovery logic. If orphan reconciliation succeeds for one target, emit
+one aggregate recovered result for that target and continue the other target in
+the same bounded cycle.
+
+The kill cases are a legacy invalid chunk blocking a new conflicting row, being
+mistaken for an already cached exact row, or a QQQ/SPY recovery suppressing the
+independent target's collection. Synthetic tests cover all three. Claude CLI
+was asked for the required short recovery drift-check but its OAuth session was
+expired; this tooling failure does not hold independent private work.
+
+Reason: invalid evidence must never become an operational latch, but deleting
+the artifact would erase provenance. This keeps recovery narrow, preserves
+evidence, and maintains the one existing scheduler, data boundary, and Paper
+authority separation.

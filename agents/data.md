@@ -39,8 +39,11 @@ a second scheduler or manually duplicate a due collection.
   collector contract until a new source or test fact identifies one exact change.
 - A candidate-batch conflict now rejects the whole candidate, including any
   earlier accepted page, with no snapshot or cursor advance. An explicitly
-  marked legacy candidate-batch partial remains audit evidence only and is
-  excluded from completion selection and offline cache consumption.
+  marked legacy candidate-batch partial remains audit evidence only. The writer
+  removes it from active index state without deleting its immutable artifact.
+  Backfill derives any continuation only from remaining valid chunks, while a
+  head collection preserves its stored cursor. It is excluded from completion,
+  collision/dedup, offline consumption, and orphan recovery.
 - Daily KIS caches remain source-separated. `QQQ/NAS` and `SPY/AMS` are complete
   at their established historical boundaries; `IWM/AMS` remains `source_limited`
   at its qualified bad-row boundary. Do not repair, mix, or silently extend a
@@ -64,8 +67,10 @@ a second scheduler or manually duplicate a due collection.
 - A future `minute_duplicate_conflict` records only the closed safe origin
   `candidate_batch` or `retained_cache`; a legacy missing field is
   `not_recorded`. A candidate-batch conflict rejects its full candidate, while
-  a legacy explicitly marked candidate-batch chunk is not a usable cache input.
-  Neither fact changes pacing, schedule ownership, or another lane's authority.
+  a legacy explicitly marked candidate-batch chunk is removed only from active
+  collection state and never revived by orphan recovery. Its immutable artifact
+  remains untouched. Neither fact changes pacing, schedule ownership, or
+  another lane's authority.
 - The head-index SHA-256 is exact persisted-byte preparation provenance; do not
   hash decoded text because newline translation can change a valid record.
   Offline verification instead binds the frozen first-five QQQ dates and their
@@ -107,8 +112,9 @@ restriction, or a storage-floor conflict that changes the approved data scope.
 Current class: `resume`. Reattest index and committed snapshots before a new
 network call. Recover a matching orphan snapshot without KIS access; classify a
 bad snapshot or index as `reconcile` without overwriting evidence or inventing a
-cursor. A pending preparation pair is ordinary source evidence, not a scheduler,
-Research, or Paper permission hold.
+cursor. Skip only a target recovered in the current cycle; continue independent
+targets. A pending preparation pair is ordinary source evidence, not a
+scheduler, Research, or Paper permission hold.
 
 ## Evidence
 
