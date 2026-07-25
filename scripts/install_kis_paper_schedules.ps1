@@ -14,6 +14,26 @@ function New-LocalDockerTaskDescription {
     return "Invokes only the local Docker profile '$Profile' for TheRicher KIS Paper automation."
 }
 
+function New-LocalDockerTaskSettings {
+    param(
+        [Parameter(Mandatory = $true)]
+        [int]$ExecutionLimitMinutes,
+        [Parameter(Mandatory = $true)]
+        [bool]$RecoverMissedRun
+    )
+
+    $settingsArguments = @{
+        AllowStartIfOnBatteries = $true
+        DontStopIfGoingOnBatteries = $true
+        ExecutionTimeLimit = (New-TimeSpan -Minutes $ExecutionLimitMinutes)
+        MultipleInstances = "IgnoreNew"
+    }
+    if ($RecoverMissedRun) {
+        $settingsArguments["StartWhenAvailable"] = $true
+    }
+    return New-ScheduledTaskSettingsSet @settingsArguments
+}
+
 if (-not (Get-Command docker.exe -ErrorAction SilentlyContinue)) {
     throw "docker.exe is required to install these local scheduled tasks."
 }
@@ -33,30 +53,40 @@ $schedules = @(
         Profile = "kis-paper-session"
         Service = "kis-paper-session"
         At = "23:35"
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 90
     },
     @{
         Name = "thericher-kis-paper-daily-spy-head"
         Profile = "kis-paper-daily-spy-head"
         Service = "kis-paper-daily-spy-head"
         At = "22:15"
+        RecoverMissedRun = $true
+        ExecutionLimitMinutes = 90
     },
     @{
         Name = "thericher-kis-paper-daily-spy-session"
         Profile = "kis-paper-daily-spy-session"
         Service = "kis-paper-daily-spy-session"
         At = "23:50"
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 90
     },
     @{
         Name = "thericher-kis-paper-intraday-head"
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"
         At = @("00:35", "02:35", "04:35", "06:20")
+        RecoverMissedRun = $true
+        ExecutionLimitMinutes = 90
     },
     @{
         Name = "thericher-kis-paper-daily-backfill"
         Profile = "kis-paper-daily-backfill"
         Service = "kis-paper-daily-backfill"
         At = "07:00"
+        RecoverMissedRun = $true
+        ExecutionLimitMinutes = 390
     }
 )
 
@@ -72,6 +102,9 @@ foreach ($schedule in $schedules) {
         }
     )
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile
+    $settings = New-LocalDockerTaskSettings `
+        -ExecutionLimitMinutes $schedule.ExecutionLimitMinutes `
+        -RecoverMissedRun $schedule.RecoverMissedRun
 
     if ($PSCmdlet.ShouldProcess($schedule.Name, "create or update local Docker scheduled task")) {
         Register-ScheduledTask `
@@ -79,6 +112,7 @@ foreach ($schedule in $schedules) {
             -Action $action `
             -Trigger $triggers `
             -Principal $principal `
+            -Settings $settings `
             -Description $description `
             -Force | Out-Null
         Write-Host "Installed $($schedule.Name) at $($times -join ', ') KST."

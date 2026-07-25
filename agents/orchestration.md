@@ -34,6 +34,10 @@ to scheduling or preparation control.
 The schedule-installation contract also locks the daily SPY head and session
 task names, Docker profiles/services, and their 22:15/23:50 KST times so a
 routine scheduler edit cannot silently break the exact-receipt handoff.
+Data-only tasks resume after availability, while Paper execution tasks retain
+their exact cadence without late catch-up. All named tasks now allow battery
+continuation, retain `IgnoreNew`, and have bounded execution limits; the head
+limit remains below the shortest same-task trigger gap.
 
 The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
 preparation independently of a scoped SPY failure, while retaining the overall

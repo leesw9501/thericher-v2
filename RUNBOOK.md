@@ -334,6 +334,13 @@ data-only invocation (at most eight minute-page calls per invocation): it has
 no account, order, or live route. The first four-trigger session is the next
 metadata-only reattestation before Research may consume a session.
 
+The installer sets `StartWhenAvailable` only on data-only tasks, so a missed
+head collection can resume after the interactive user becomes available without
+creating another task. The head task allows battery start/continuation, keeps
+`IgnoreNew`, and has a 90-minute task limit, below its shortest 105-minute
+trigger gap. Do not manually start a duplicate run to compensate for a missed
+window; inspect the task result and use the existing owned recovery path.
+
 A duplicate minute inside one candidate batch rejects that whole candidate,
 including any earlier page from the same invocation: no snapshot is retained
 and no cursor advances. An explicitly marked legacy candidate-batch partial is
@@ -570,6 +577,13 @@ The installed Windows Paper schedules invoke their named Docker profile with
 `--build`, so a due session uses the current committed image rather than a stale
 service image. This is runtime reproducibility, not a new scheduling or Paper
 approval condition.
+
+All named tasks allow battery start/continuation and have explicit execution
+limits. The Paper quote and daily-session tasks retain `IgnoreNew` and a
+90-minute limit but deliberately omit `StartWhenAvailable`: a late wake or
+login must not create an off-cadence Paper session. The daily-backfill task is
+data-only and has a 390-minute task limit around its declared six-hour inner
+budget.
 
 The Codex app daily operating review runs at 08:10 KST. It is the concise
 operator-summary and integration pass for the prior daily-SPY head/session,

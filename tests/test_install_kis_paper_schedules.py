@@ -51,6 +51,18 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert 'At = "23:50"' in source
     assert 'At = @("00:35", "02:35", "04:35", "06:20")' in source
     assert 'At = "07:00"' in source
+    for task_name, recover_missed_run, execution_limit_minutes in (
+        ("thericher-kis-paper-quote-session", False, 90),
+        ("thericher-kis-paper-daily-spy-head", True, 90),
+        ("thericher-kis-paper-daily-spy-session", False, 90),
+        ("thericher-kis-paper-intraday-head", True, 90),
+        ("thericher-kis-paper-daily-backfill", True, 390),
+    ):
+        entry = source.split(f'Name = "{task_name}"', maxsplit=1)[1].split(
+            "    },", maxsplit=1
+        )[0]
+        assert f"RecoverMissedRun = ${str(recover_missed_run).lower()}" in entry
+        assert f"ExecutionLimitMinutes = {execution_limit_minutes}" in entry
     assert "$times = @($schedule.At)" in source
     assert "$times | ForEach-Object" in source
     assert "-Trigger $triggers" in source
@@ -58,6 +70,13 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         "New-ScheduledTaskPrincipal -UserId $currentUser "
         "-LogonType Interactive -RunLevel Limited"
     ) in source
+    assert "New-LocalDockerTaskSettings" in source
+    assert "AllowStartIfOnBatteries = $true" in source
+    assert "DontStopIfGoingOnBatteries = $true" in source
+    assert "New-TimeSpan -Minutes $ExecutionLimitMinutes" in source
+    assert 'MultipleInstances = "IgnoreNew"' in source
+    assert '$settingsArguments["StartWhenAvailable"] = $true' in source
+    assert "-Settings $settings" in source
     assert "Register-ScheduledTask" in source
     assert "-Force" in source
     assert "Invokes only the local Docker profile" in source

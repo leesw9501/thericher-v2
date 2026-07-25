@@ -141,6 +141,17 @@ or cap recovery, so the cadence and strict selector remain unchanged. Only an
 exact 390-minute QQQ union may become a future Research input; any short or
 gapped union remains Data evidence only.
 
+The installed Windows task definitions now explicitly allow battery starts and
+continuation, keep `IgnoreNew`, and have bounded execution limits. Data-only
+daily-head, intraday-head, and daily-backfill tasks use `StartWhenAvailable`;
+the Paper quote and daily-session tasks deliberately do not perform a late
+catch-up run that could alter their scheduled execution cadence. The normal
+head/session tasks use a 90-minute limit, below the 105-minute shortest
+intraday-head gap; daily backfill has 390 minutes to cover its internal
+six-hour budget. The interactive principal still requires a user sign-in after
+a full logout or reboot. Re-registering these definitions does not start Docker
+or issue a KIS request.
+
 A bounded recovery hardening now rejects an entire candidate batch if its own
 minute rows conflict, so an earlier page from that batch cannot become a
 retained prefix or move a cursor. Explicitly marked legacy candidate-batch

@@ -32,6 +32,10 @@ a second scheduler or manually duplicate a due collection.
   `02:35`, `04:35`, and `06:20`, has no missed run, and next runs at
   2026-07-28 00:35 KST. It retains one Docker service, the four-page-per-target
   cap, source pacing, strict conflict rejection, and exact session selection.
+- Data-only scheduled tasks now recover a missed available run, allow battery
+  start/continuation, retain `IgnoreNew`, and use bounded execution limits.
+  The head task has 90 minutes, below its shortest 105-minute trigger gap; the
+  daily backfill task has 390 minutes for its declared six-hour inner budget.
 - A source-safe static and synthetic review confirms that
   `minute_duplicate_conflict` can describe a rejected candidate page as well as
   a retained-row collision. The current short-session metadata therefore does
@@ -113,8 +117,10 @@ Current class: `resume`. Reattest index and committed snapshots before a new
 network call. Recover a matching orphan snapshot without KIS access; classify a
 bad snapshot or index as `reconcile` without overwriting evidence or inventing a
 cursor. Skip only a target recovered in the current cycle; continue independent
-targets. A pending preparation pair is ordinary source evidence, not a
-scheduler, Research, or Paper permission hold.
+targets. A scheduler may resume a missed data-only run after availability, but
+it remains the same named worker and must retain its bounded service contract.
+A pending preparation pair is ordinary source evidence, not a scheduler,
+Research, or Paper permission hold.
 
 ## Evidence
 

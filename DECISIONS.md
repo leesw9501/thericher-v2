@@ -5082,3 +5082,25 @@ Reason: invalid evidence must never become an operational latch, but deleting
 the artifact would erase provenance. This keeps recovery narrow, preserves
 evidence, and maintains the one existing scheduler, data boundary, and Paper
 authority separation.
+
+## 2026-07-25 - Bound named scheduler recovery without late Paper catch-up
+
+Decision: retain the existing five named Windows tasks, profiles, services,
+and triggers, but register explicit task settings. All tasks allow battery
+start/continuation, use `IgnoreNew`, and have an execution limit. Data-only
+daily-head, intraday-head, and daily-backfill tasks use `StartWhenAvailable`;
+the Paper quote and daily-session tasks do not, so a late availability event
+cannot create an off-cadence Paper session. The normal head/session limit is
+90 minutes, below the intraday head's shortest 105-minute gap. Daily backfill
+has 390 minutes around its declared six-hour inner runtime.
+
+The kill cases are a sleep/battery transition silently dropping a prospective
+data window, a stalled Docker process suppressing later head triggers, or a
+late catch-up creating a Paper execution outside its intended cadence. Static
+tests pin every task's recovery and limit assignment; the installed definitions
+were re-read after registration. Claude CLI was asked for the short scheduler
+drift-check but its OAuth session was expired, which is tooling evidence only.
+
+Reason: this makes data collection recoverable and cadence-bounded without
+adding a scheduler, widening a broker route, changing Paper intent semantics,
+or creating an operator gate.
