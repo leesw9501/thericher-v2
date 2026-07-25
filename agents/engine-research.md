@@ -1,389 +1,91 @@
-# Engine Research Agent
+# Engine Research Agent Stateboard
 
-## Working Memory
+`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
+This is the current Research projection, not a campaign ledger. Historical
+claims, results, and artifacts remain in Git and
+`D:\thericher-v2\model-artifacts`.
 
-Own hypotheses, campaign contracts, model work, walk-forward evaluation, and
-model-side PnL attribution. Current priority is useful KIS-native evidence and
-bounded intraday research; GPU time follows a frozen eligible job rather than
-becoming a goal by itself.
+## Ownership
 
-The local KIS Paper operations console is Execution-owned. Its runtime state and
-directional pauses do not qualify, disqualify, or promote any research model;
-research may keep preparing eligible breadth/depth/ensemble/replication work in
-parallel with Paper operation.
+Own hypotheses, features, model campaigns, analytical backtests, walk-forward
+evaluation, and model-side PnL attribution. Never modify broker submission or
+deterministic execution-risk behavior.
 
-The daily SPY lane now owns a deliberately transparent two-close momentum
-baseline. It consumes only one hash-attested `SPY/AMS` D1 source that was first
-locally available before the next execution session, emits a deterministic
-`enter`, `exit`, or `abstain` receipt, and replays eligible synthetic decisions through
-`source: local_paper`. It is an execution-learning reference, not a return,
-selection, ensemble, or GPU-promotion claim.
+## Current Objective
 
-## Intraday Input Contract
+Remain input-pending until Data supplies a verified prospective QQQ first-five
+preparation pair. The current objective prohibits model/GPU jobs, candidate
+selection, ensembles, Paper intents, and broker actions before that pair exists.
 
-The KIS-native minute cache now supports one bounded chronological CPU baseline,
-not an eligible model-promotion campaign. Its original 239-bar extended-session
-pages remain hash-attested and KIS-reconstructible, and the reattested cache now
-has 21 complete regular sessions each for QQQ/NAS and SPY/AMS. The 2026 calendar
-window is explicit, but KIS bar open/close semantics remain unqualified and the
-first nine-session validation region is too small for model selection.
+## Current Readiness
 
-The first QQQ run fixed the latest 20 complete sessions (2026-06-23 through
-2026-07-21) into a 10 development / 1 unused-session purge / 9 validation split.
-It ran `flat`, `always_long`, and `previous_bar_direction` through replayable
-`local_paper` only. The external manifest is
-`D:\\thericher-v2\\model-artifacts\\kis-intraday-cpu-campaign\\qqq-20260623-20260721-r1\\summary.json`.
-All costed non-flat references were negative in both phases. This establishes a
-baseline to beat, not an edge, model score, GPU qualification, or promotion.
+- The prospective head index has `0 / 5` exact regular sessions. Its preparation
+  state is `pending_complete_sessions`; no real pair, candidate, or prospective
+  observation receipt exists.
+- The credential-free offline consumer is implemented and synthetically
+  verified. It validates the frozen pair and head-index identity before reading
+  local cache inputs, then emits only sanitized `source: local_paper` evidence.
+- No GPU work is running. One GPU job may run only after a frozen campaign
+  contract exists; utilization is not a reason to start an ineligible job.
+- Earlier daily and short historical screens are closed plumbing evidence only.
+  They created no selected model, ensemble, promotion, or Paper input. The
+  Norgate trial remains development-only and cannot become a model/Paper lane.
 
-The first feature-breadth continuation is complete at
-`D:\thericher-v2\model-artifacts\kis-intraday-feature-breadth\qqq-20260623-20260721-feature-breadth-r1\summary.json`.
-It uses the same source and target with 90 completed 1m bars, 18 completed 5m
-bars, and 9 completed 10m bars. The regularized linear candidate trained only
-on the 10 development sessions; `flat`, `fixed_momentum`, and
-`regularized_linear` replayed only the next 5 comparison sessions through
-`source: local_paper`. Their after-cost PnL was respectively `0`, `-231.5545`,
-and `-131.3063`. The last 4 source sessions were not materialized or used for
-selection. This evidence split limits a claim; it never pauses Paper work.
+## Frozen Prospective Contract
 
-The fixed Docker PyTorch GRU smoke is complete at
-`D:\thericher-v2\model-artifacts\kis-intraday-cuda-sequence-smoke\qqq-20260623-20260721-gru-smoke-r1\summary.json`.
-It trained 2,990 development-only 90x3 sequences for 8 epochs on the RTX 4090
-with PyTorch CUDA 12.8, moving loss from `0.69341975` to `0.69316453`. It wrote
-no checkpoint, comparison/confirmation sample, prediction, or promotion claim.
-
-The fixed three-architecture CUDA screen is complete at
-`D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\qqq-20260623-20260721-sequence-architecture-r1\summary.json`.
-Its immutable `precommit.json` recorded all three configurations and the
-development-only input hash before comparison materialized. LSTM, causal TCN,
-and compact attention each trained 2,990 90x3 development-only sequences for
-8 epochs on the RTX 4090, then replayed the same five comparison sessions with
-`source: local_paper`. After-cost PnL was `-639.3858`, `-5.9777`, and `0.0000`;
-the joint result names no winner, selected architecture, ensemble, or promotion.
-The four later sessions remain unmaterialized.
-
-When those source facts are established, freeze this initial contract before any
-model comparison:
-
-- decision timestamp: end of the latest completed 1m bar only;
-- feature windows: 90 x 1m, 18 x 5m, and 9 x 10m completed bars from the same
-  KIS cache, with no provider mixing or gap filling. Keep 1h and 3h inactive
-  until their required same-session contiguous coverage and session semantics
-  are available;
-- target: decide at a completed 1m close, enter at the next 1m open, and exit
-  at the following 1m open, long-only. No target may look through a session
-  boundary;
-- session behavior: abstain outside a Data-declared regular session or whenever
-  any required source/resample bucket is missing, incomplete, or stale;
-- cost model: 1 bp per-side fee plus 2 bps per-side slippage for the initial
-  screen. Use a separately recorded stress pass later; these are research
-  assumptions, not KIS fee claims;
-- naive comparators: `flat`, `always_long`, and `previous_bar_direction`, all
-  through the existing `local_paper` target contract only.
-
-The original 239-bar observed cache cannot provide the 3h context window or a
-chronological validation split. The first expanded-cadence head reattestation
-still has zero of five complete QQQ sessions, so its preparation input remains
-`pending_complete_sessions` and the offline consumer was not run. One complete
-390-minute session can exercise all resampling and local-paper replay cells,
-but it is still not sufficient for GPU, candidate ranking, PnL claims,
-ensemble selection, or model promotion.
+- Input: KIS-only QQQ data with completed `90 x 1m`, `18 x 5m`, and
+  `9 x 10m` context from the same cache. Keep 1h and 3h inactive until their
+  required contiguous coverage and timestamp semantics are qualified.
+- Timing: decide at a completed 1m close, enter at the next 1m open, and exit at
+  the following 1m open. No target may cross a declared session boundary.
+- Validation: train only on the frozen development prefix, use the declared
+  cost model and fixed local-paper controls, and keep any holdout sealed.
+- Outputs: a learned node proposes target state and timestamped evidence, never
+  a broker request. No result selects, retunes, promotes, or ensembles a model
+  without a separate eligible campaign contract and its required review.
 
 ## Ready Queue
 
-1. The current KIS-native comparative baseline is at
-   `D:\thericher-v2\model-artifacts\kis-daily-comparative-validation-v1\kis-daily-comparative-20260722T100000Z`.
-   It fixes the 694-session panel to 414 development sessions, two purge
-   sessions, 138 validation sessions, two embargo sessions, and a 138-session
-   final region. Each development/validation consumer receives an independent
-   hash-bound Data slice; it cannot read purge, embargo, or holdout bars.
-2. The final historical region is `burned_precontract`, not sealed: the prior
-   595-session relative-strength smoke observed dates through the current panel
-   end. The new comparative output is therefore historical execution evidence
-   only, not a return, model-selection, or promotion claim. This does not block
-   paper operation or new research; fresh paper/prospective observations become
-   the next honest out-of-sample evidence.
-3. The CPU run contains fixed relative-strength, cash, and fixed-quantity
-   buy-and-hold comparators for each ETF. All fills are replayable
-   `source: local_paper`; `run.json`, event hash, data hash, costs, and code
-   revision are retained outside Git.
-4. The first fixed CPU L2-logistic trade-quality gate is complete and retired.
-   Its post-commit artifact is
-   `D:\thericher-v2\model-artifacts\daily-three-etf-l2-trade-quality-gate-v1\kis-daily-trade-quality-20260722T170000Z`.
-   It used 155 development selector entries (85 positive, 70 negative), and 58
-   validation decisions. The candidate accepted 50 trades versus the selector's
-   53, improved observed mean return (`0.0001684` versus `-0.0004646`), Brier
-   (`0.252925` versus `0.253254` prevalence), and maximum drawdown (`0.06447`
-   versus `0.07098`), but both the primary and 2 bp/side stress bootstrap lower
-   bounds were `0.0`. Do not retune, promote, or ensemble this candidate.
-5. Choose the next breadth campaign only from a data contract with a materially
-   broader eligible universe or genuinely new prospective KIS Paper evidence.
-   A later depth or ensemble candidate needs a distinct hypothesis and upstream
-   out-of-fold evidence; do not use GPU merely to revisit this retired gate.
-   The existing Norgate static 523-symbol trial panel is development-training
-   preparation only, not a candidate for selector, model, GPU, PnL, or paper
-   work under its current manifest scope. Its new sanitized qualification
-   receipt fixes a declarative 20-return D1 window ending at `t` with a
-   next-open/following-open outcome timing, but emits no values or rows and is
-   explicitly not a campaign/model/GPU/Paper interface. Do not reopen the
-   legacy raw-derived Norgate artifact or treat this declaration as a breadth
-   candidate.
-   The completed KIS QQQ/SPY D1 pair is materially longer and remains
-   `MODP=0_unadjusted`. Its exact Tiingo event-only sidecar maps all 4,756
-   common sessions (78 QQQ and 76 SPY events), and the external buffered audit
-   is qualified with a fixed 20% residual threshold, `+-1` session mask, and
-   fixed chronological partitions. The one pre-registered CPU-only descriptive
-   run is complete at
-   `D:\thericher-v2\model-artifacts\kis-daily-masked-naive-validation\kis-daily-masked-naive-validation-v1.json`.
-   It used 12 fixed cells and replay-checked 21,294 `local_paper` fills without
-   materializing the tail. Claude's `supported-with-limits` review rejects the
-   isolated favorable SPY validation cell as a signal seed because it reverses
-   in SPY development and is not stable across cells. This evidence stays
-   non-model/non-Paper and does not hold Data, prospective intraday collection,
-   or Paper execution.
-6. The first fixed KIS-only intraday breadth and three-architecture CUDA screen
-   are complete and no architecture is selected. Do not retune, choose, or
-   ensemble from the five comparison sessions. The next depth candidate needs
-   a separately frozen prospective KIS source contract; breadth expands only
-   with new KIS-compatible coverage, while ensembles require independently
-   generated out-of-fold predictions.
-7. The first source-windowed CPU baseline is complete at
-   `D:\\thericher-v2\\model-artifacts\\intraday-multitimeframe-baseline\\kis-private-intraday-2026-07-21-qqq-r1\\summary.json`.
-   It exercised 390/78/39/6/2 bars at 1m/5m/10m/1h/3h and emitted only
-   replayable local-paper fills. Treat it as interface evidence, not a score or
-   model result; accumulate prospective sessions before freezing a campaign.
-8. The prepared next prospective contract is
-   `kis-intraday-prospective-head-observation-r1`: train only the already fixed
-   QQQ 10-session historical development prefix, then observe the first five
-   new complete 390-minute QQQ head sessions. Keep the KIS-compatible
-   `90x1m`/`18x5m`/`9x10m` features, next-open/following-open long-only target,
-   1 bp plus 2 bps costs, and fixed `flat`, `always_long`,
-   `previous_bar_direction`, and `regularized_linear` controls. External-only
-   evidence is a precommit, frozen-model receipt, one receipt per head session,
-   and a five-session descriptive summary. It is not selection, retuning,
-   ensembling, GPU-depth, or Paper-execution authority.
-9. The existing `intraday-head` collector now invokes
-   `prepare_kis_intraday_prospective_head_observation.py` only after a durable
-   collection, using a fixed scheduled identity and an isolated metadata-only
-   child. With fewer than five complete QQQ regular sessions it emits only a
-   retriable `pending` fact and writes no artifact. At readiness, it writes one
-   external first-five-bound precommit/planning pair and validates/reuses that
-   pair despite later index growth. It reads no raw bars, credentials, network,
-   KIS route, GPU, model, or replay; it is preparation for the future
-   observation, not a research-quality gate. This source-coverage finding does
-   not alter breadth, depth, ensemble, or replication queues. The Data lane has
-   added one 00:35 KST collection window after metadata showed the prior cadence
-   missed early-session coverage; no GPU or prospective candidate work starts
-   until an exact five-session preparation pair exists.
+1. When Data supplies the first verified pair, run the existing credential-free
+   offline prospective observation through its immutable input contract and
+   inspect its categorical local-paper receipt.
+2. Only after that receipt establishes a bounded claim, define a separate
+   campaign contract before breadth, depth, ensemble, replication, or GPU work.
+3. Consume only authoritative sanitized Execution lifecycle facts through opaque
+   receipt identity. Until qualified completion evidence exists,
+   `pnl_status: not_observed` and `performance_label = None` remain unchanged.
 
-## GPU Policy
+## Operator Help
 
-One GPU job may run at a time. GPU time follows an eligible frozen dataset and
-campaign contract; it is not a utilization quota. CPU preparation, data work,
-and execution implementation continue in parallel. Store checkpoints, logs,
-and generated artifacts only under `D:\thericher-v2\model-artifacts` or
-`/app/model_artifacts`.
+None. Escalate only a paid or unclear-rights asset, a major runtime/framework
+replacement, public exposure, or a live-money boundary.
 
-Runtime checked 2026-07-22: `thericher-v2-research:latest` exposes one RTX 4090
-to PyTorch `2.7.0+cu128` (CUDA 12.8, cuDNN 90701). The host `uv` environment has
-no `torch`, so an eligible GPU campaign uses the research container until a host
-runtime is intentionally added.
+## Durable Constraints
 
-The first actual CUDA job also proved that the read-only `/app/market_data`
-mount and writable `/app/model_artifacts` mount work together. Keep one GPU job
-at a time and leave the next fixed job ready whenever its contract is sound.
-
-## Durable Knowledge
-
-- Daily raw-price data has an explicit corporate-action limitation.
-- A long unadjusted QQQ/SPY price history now has a hash-attested price-free
-  event-date sidecar and a qualified buffered boundary audit. The audit uses a
-  `+-1` KIS-session buffer, a fixed 20% residual screen, mask identity
-  `sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`,
-  and partition identity
-  `sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
-  It permits only one fixed, retrospective, CPU-only naive price-return
-  description with the tail unopened; it remains ineligible for GPU, model,
-  ensemble, total-return, point-in-time, PnL, or Paper use.
-- The former daily 756-session target improved comparative validation; it never
-  blocked KIS Paper connectivity or a deterministic paper canary. The active
-  694-session panel is a documented source-limited input, not a repaired one.
-- A split label must record historical exposure honestly. `burned_precontract`
-  constrains only the interpretation of that historical suffix; it is never a
-  KIS Paper, scheduler, or operator-approval gate.
-- An unavailable dataset, negative result, or `abstain` receipt constrains only
-  that research claim or exact decision. It cannot become a KIS Paper
-  permission latch or pause independent data, execution, breadth, or depth
-  work.
-- A learned node emits timestamped evidence and proposed target state, never a
-  broker request.
-- Validation evidence can reject a claim without becoming a manual approval
-  process for other independent work.
-- The first KIS paper canary takes a deterministic explicit buy decision only;
-  it is deliberately independent of learned-model or GPU readiness.
-- The L2 gate is intentionally CPU-only: this small daily panel cannot justify
-  GPU training. A later GPU sequence candidate needs its own frozen prospective
-  campaign rather than widening this candidate after seeing results.
-- The L2 gate core accepts only the hash-bound prefix through the post-validation
-  embargo. Its loader re-attests complete raw source files but does not
-  materialize the later burned suffix as `Bar` objects. That boundary is a
-  leakage control, not a KIS Paper or research-queue approval gate.
-- The KIS intraday contract uses the provider's Korea timestamp as the UTC
-  conversion basis and keeps exchange timestamp semantics visibly unqualified.
-  This avoids silently inventing a US daylight-saving calendar from an observed
-  source field.
-- Multi-session validation accepts overnight gaps only at the exact close/open
-  pair of consecutive declared `SessionWindow` values. A caller cannot nominate
-  a bare timestamp to hide a missing intraday minute, and no target may cross a
-  declared boundary.
-- Campaign attempt labels create separate immutable work/artifact paths after an
-  interrupted run. They are recovery identities, not a scheduler, approval, or
-  model-selection mechanism.
-- The pair-bound prospective consumer is implemented but has no real run until
-  Data supplies the verified first-five pair. It fits only the frozen ten-session
-  historical prefix and evaluates `flat`, `always_long`,
-  `previous_bar_direction`, and `regularized_linear` locally. Its frozen receipt
-  includes the head-index identity. Full replay events remain in memory; only
-  sanitized local-paper decision/fill hashes and counts may leave the process.
-  This is neither candidate selection nor a PnL, GPU, ensemble, broker, or
-  promotion result.
+- Keep generated artifacts and checkpoints outside Git under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- A negative, unavailable, or abstaining result constrains only its claim. It
+  cannot become a Data, Paper, scheduler, or operator permission latch.
+- Preserve chronological session boundaries, source identity, leakage controls,
+  and immutable campaign attempt identities. Do not reinterpret old metrics as
+  a current signal.
 
 ## Recovery
 
-Campaign artifacts must name dataset, code, split, cost, model, and result
-identity. A missing checkpoint/summary is `restart`, not a partial model result.
-Ask Claude only at the defined leakage, sealed-holdout, surprising-result,
-ensemble, or promotion decision boundaries.
+Current class: `resume`. A missing, changed, or tampered preparation pair is
+`input_unavailable` or `restart`, never a partial model result. There is no
+active campaign checkpoint to recover. A future interrupted campaign must use a
+new immutable attempt path and never overwrite a completed receipt.
 
-## Immutable Decision Receipt
+## Evidence
 
-The active fixed baseline can now project its existing `TargetExposureProposal`
-into a Research-owned immutable receipt through
-`thericher_v2.research.decision_receipt`. The receipt is deliberately narrower
-than its source: it holds only opaque campaign/model/proposal references, an
-exact `sha256:` input-manifest reference, deterministic decision identity,
-`enter`, `exit`, or `abstain`, input status, UTC decision validity, and a closed reason
-class. It does not carry source bars, features, scores, prices, quantities,
-symbols, account facts, source/provider payloads, or the proposal reason.
-
-The Data-side input manifest must bind the provider and capability contract.
-Its complete digest, never a shortened display reference, is the authoritative
-join key. A changed capability/provider contract must remain an
-`unqualified` proposal and therefore becomes an explicit
-`abstain`/`input_unavailable` receipt. `future`, missing, stale, incomplete,
-or other unready input behaves the same way. Ready `hold` and `reduce`
-proposals remain abstentions; ready `enter` and `exit` proposals carry explicit
-eligible receipt classes for the Execution-owned target-position adapter.
-
-References are supplied by the durable campaign/input registry as opaque,
-high-entropy identities. The receipt module must not derive them from raw data
-or a low-cardinality identifier. Its deterministic `decision_id` hashes only
-these opaque references plus its safe categorical/timestamp fields, so replay
-never reads a clock, credential, cache, or external service. The current
-research package initializer still imports legacy modules; that import-layout
-fact is outside this narrow receipt module and must be addressed separately if
-process-level import isolation becomes an execution requirement.
-
-The first external receipt is
-`D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt\qqq-20260623-20260721-receipt-r1\receipt.json`.
-It is reproducible from the frozen QQQ/NAS 20-session KIS-only input and its
-observed capability contract. Because that contract has no trusted production
-baseline qualification, the actual result is `abstain` / `unqualified` /
-`input_unavailable`; its local-paper preparation is therefore a scoped
-no-intent. This is useful input-status evidence, not a Paper restriction or a
-claim about model quality. Focused synthetic replay proves the same immutable
-receipt shape can carry eligible `enter` and `exit` transitions through
-`source: local_paper`.
-
-## Sanitized Paper Lifecycle Consumer Contract
-
-Future Paper PnL attribution consumes one immutable, sanitized fact per
-research-originated intent. It is an Execution-produced public contract, not a
-broker client, order command, account snapshot, or replacement for the
-authoritative private reconciliation record. Its engine-loop value is to keep
-four causes separate when a Paper observation is later linked to a research
-campaign:
-
-- `model`: opaque `campaign_id`, `model_revision`, `decision_id`, and
-  `decision_class` (`enter`, `exit`, or `abstain`) identify what proposed the
-  action without exporting features, scores, weights, or predictions;
-- `timing`: UTC `decision_at`, `valid_until`, and categorical lifecycle timing
-  (`not_submitted`, `submitted`, `open`, `filled`, `cancelled`, `rejected`, or
-  `outcome_unknown`) distinguish a stale/late/unresolved observation from a
-  model outcome. Optional latency is a bounded bucket, never a broker timestamp
-  or raw response;
-- `sizing`: `sizing_status`, requested-versus-accepted notional ratio bucket,
-  and closed deterministic reason codes distinguish a risk/sizing reduction
-  from a model decision. Raw quantity, price, cash, buying power, and account
-  values are excluded;
-- `execution`: fixed `route: kis_paper`, `paper_only: true`, reconciliation
-  status, fill/realization status, and an opaque external evidence reference
-  distinguish broker/execution uncertainty from realized evidence. It must
-  never claim `source: local_paper` and must not contain broker order IDs,
-  account identifiers, tokens, raw KIS payloads, or raw fill values.
-
-Required common fields are `schema_version`, an opaque deterministic
-`intent_ref`, `observed_at`, the four groups above, and a closed
-`attribution_eligibility` value: `not_eligible`, `pending_reconciliation`,
-`open`, `realized`, or `unavailable`. `realized` means only that Execution has
-privately reconciled a closed lifecycle and published a sanitized attribution
-receipt; it is not a profitability, promotion, or Paper-permission gate.
-Research joins this fact to its own immutable decision receipt by the full
-opaque receipt digest when `attribution_ref` is present, otherwise by the
-existing canary references. It retains those facts outside Git and reports
-incomplete facts as execution coverage rather than imputing PnL.
-
-The initial consumer is read-only and descriptive: no broker import, network,
-credential read, retry, cancel, sizing change, or model retune is permitted.
-`outcome_unknown` remains attributable as an execution/reconciliation gap and
-does not block another independent campaign or Paper intent. Contract changes
-need an Execution-owned fixture plus a focused Research consumer test; until
-then this section is the queue specification, not an implementation request.
-
-The first receipt observer now contributes an immutable categorical join keyed
-by the full opaque receipt digest. `open` is usable only as execution-state
-coverage; `same_day_id_seen`, an aggregate position, or an absent record stays
-`outcome_unknown`, and every current observation retains
-`pnl_status: not_observed`. It must not tune the two-close baseline, promote a
-candidate, or alter breadth/depth/ensemble queues.
-
-The scheduled daily-session handoff requires the receipt digest, canary run ID,
-and observer receipt reference to be identical. `no_intent`, unavailable,
-stale, missing, or ambiguous observations have `performance_label = None`:
-they are excluded execution coverage facts, not negative labels, extra samples,
-or a reason to pause another campaign or Paper session.
-
-The new terminal-field probe preserves the same boundary. An exact history
-identity plus structural field presence is not a model label. Promotion needs
-official terminal enum and amendment semantics, completed order-date
-pagination, quantity consistency, a documented terminal timestamp, and a
-closed entry-to-exit cost/fee/currency basis for any realized PnL claim. Until
-then its `unqualified`, absent, or ambiguous result keeps
-`performance_label = None` and cannot change model selection or Paper cadence.
-
-The daily session may now attach that same categorical payload and its opaque
-artifact reference after exact receipt/run verification. This expands execution
-coverage only: it is not a feature, selector input, candidate score, ensemble
-member, PnL attribution record, or reason to alter breadth/depth scheduling.
-
-The pre-batch SQLite smoke artifact that stopped at a host timeout is
-`restart` evidence only and must not be interpreted. The later completed smoke
-under the same external artifact root is the usable local-paper replay.
+- `scripts\run_kis_intraday_prospective_observation.py` is the local-only
+  consumer for a verified pair.
+- The `research` Docker profile is network-disabled for that consumer and uses
+  only the external market-data and artifact mounts.
 
 ## Next Handoff
 
-Treat the completed D1 run as a closed plumbing receipt. Keep KIS
-regular-session minute coverage accumulating; the existing head service now
-prepares the already precommitted prospective observation when its first five
-complete sessions exist. The next bounded Research implementation may consume
-only a verified preparation pair and its fixed historical development prefix;
-it must remain offline until that pair exists. The credential-free runner was
-reattested to return `preparation_pair_missing` before opening either cache, so
-that pending input is a scoped source fact, not a Data or Paper hold. Maintain
-breadth, depth, ensemble, and replication queues without creating a report
-family. Consume only an authoritative sanitized Execution lifecycle fact and
-leave `pnl_status: not_observed` / `performance_label = None` unchanged until KIS
-completion evidence supports more. Do not turn the D1 comparison or one Paper
-observation into selection or Paper-work authority. The static Norgate
-qualification is also closed: use its limits to reject accidental promotion,
-not to add an alternate historical model lane.
+Wait for the Data-owned pair without foreground polling. At readiness, verify
+the pair's exact identity, run the existing offline consumer, and keep its
+result separate from selection, promotion, execution, and Paper authority.

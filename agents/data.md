@@ -1,420 +1,101 @@
-# Data Agent
+# Data Agent Stateboard
 
-## Working Memory
+`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
+This is the Data lane's current projection, not a historical ledger. Git,
+`HANDOFF.md`, `DECISIONS.md`, `D:\market_data`, and the external artifact ledger
+retain detailed history and raw evidence.
 
-Own the current KIS-native daily cache, prospective intraday-head observations,
-and their future reusable loaders.
+## Ownership
 
-All private non-live data collection and retention under the current source and
-disk policy is standing-authorized. A `raw_market_data_retained: false` or
-historical one-shot observation remains a no-bytes fact for that observation,
-not a cache, schedule, or KIS Paper permission latch. It is never a fixed
-state that needs clearing before a fresh collection or another ready lane.
+Own market-data correctness, provider behavior, provenance, canonical storage,
+calendar/session selection, resampling, dataset manifests, and temporal input
+boundaries. Do not select strategies, promote models, or make execution
+decisions.
 
-The local console receives only a sanitized intraday freshness projection. It
-does not receive paths, raw rows, manifests, quote values, hashes, credentials,
-or account data. The projection reads the historical and prospective-head
-indexes independently, so a missing head cache is visible as `not_created`, not
-as a failed collection or an authority hold.
+## Current Objective
 
-- Active job: `kis-paper-private-daily-backfill-v1`
-- Authoritative cursor/index:
-  `D:\market_data\us_equities\kis_paper_private\daily\backfill-v1\index.json`
-- Data-bearing KIS daily mappings: `QQQ/NAS`, `SPY/AMS`, `IWM/AMS`
-- The forward-only daily SPY head is at
-  `D:\market_data\us_equities\kis_paper_private\daily-head\v1\index.json`.
-  Its first verified generation holds 99 `SPY/AMS` prior completed sessions
-  through 2026-07-21 and never retains the current US exchange date. The head
-  is a distinct immutable source, not a row-level patch over the historical
-  cache. The later Paper entry/exit lifecycle consumes only its hash-attested
-  bars and first-local-availability semantics; it cannot turn this data source
-  into a price, account, position, fill, or PnL assertion.
-  `thericher-kis-paper-daily-spy-head` collects it at 22:15 KST Tuesday through
-  Saturday.
-- `thericher-kis-paper-daily-backfill` runs a finite data-only catch-up at
-  07:00 KST Tuesday through Saturday: at most 48 daily chunks or six hours.
-  It mounts only `D:\market_data` and carries only KIS Paper market-data
-  credentials, so it cannot access an account, submit an order, or read model
-  artifacts. One client is reused within each run to avoid unnecessary token
-  calls.
-- Daily, intraday, and daily-head market-data workers share
-  `D:\market_data\us_equities\kis_paper_private\collection-control-v1`.
-  The gate serializes request starts at 1.25 seconds or more and records a
-  categorical 60-second cooldown after a KIS rate-limit response. A separate
-  atomic token-start gate permits one token POST every five minutes across
-  short-lived workers; an unavailable window returns without an HTTP request
-  or worker sleep. Its state contains timing facts only, never credentials,
-  raw rows, account data, or a permission latch.
-- The Docker data-only profile completed an end-to-end Paper market-data chunk
-  on 2026-07-23 with its injected two-key Paper environment, committing 199
-  `SPY/AMS` rows. It has no account/order mount or route.
-- The 2026-07-25 shared-token measurement first validated a one-token,
-  two-page QQQ/NAS chunk. After per-chunk call-count accounting was fixed, one
-  reused-client Docker run drained 33 further daily chunks with two completed
-  targets and no rate-limit cooldown. QQQ/NAS is now `complete` at `20070820`
-  with 27 chunks and SPY/AMS is `complete` at `20070821` with 26 chunks. This
-  demonstrates actual in-memory token reuse and bounded page throughput; it
-  never called an account, order, or live endpoint. IWM's unchanged 2023-10-10
-  cursor remains independently `source_limited` with ten chunks.
-- The three-target common panel remains 694 completed sessions because IWM is
-  source-limited. The separately verified QQQ/SPY-only intersection is now
-  4,756 sessions from 2007-08-21 through 2026-07-17, with index hash
-  `sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660`
-  and dataset hash
-  `sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718`.
-  It retains the explicit `MODP=0_unadjusted` limitation. A separate immutable
-  event-only Tiingo Standard EOD sidecar now exact-matches those sessions at
-  `D:\market_data\us_equities\kis_paper_private\daily-corporate-actions\snapshot=2026-07-24-qqq-spy-tiingo-events-v1`
-  with dataset hash
-  `sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3`
-  and manifest hash
-  `sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d`.
-  It has 78 QQQ and 76 SPY normalized event records, no raw Tiingo response or
-  quote persistence, and exact KIS-session mapping for every retained event.
-  Its qualified buffered-boundary audit has now been consumed once through the
-  full-source hash-attested daily loader. The loader verifies every source byte
-  before it constructs only the prefix through embargo; tail rows never become
-  `Bar` objects. This remains retrospective event-date plumbing, not a model,
-  Paper, total-return, or point-in-time source.
-- The latest offline re-attestation matched all 15 eligible manifest digests
-  and fixed the common panel to 2023-10-10 through 2026-07-17. Its index hash
-  is `sha256:343691f6ff814b0d1d0c046782fd5af26d9225f4bada021e2a7820c205ed5408`.
-- Stored data is `MODP=0_unadjusted`. Treat corporate actions and adjustment
-  semantics as a visible limitation, not a reason to stop collection.
-- A separate Norgate trial snapshot is available at
-  `D:\market_data\us_equities\norgate_trial_broad_development_panel\canonical\ohlcv_1d\snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1`.
-  It contains 523 symbols x 483 common D1 sessions from `2024-07-18` through
-  `2026-06-22`, but is static/survivorship selected with unverified adjustment
-  semantics. Its manifest permits development-training preparation only;
-  `model`, `gpu`, `paper_trading`, `ranking`, and PIT scope remain false, and
-  the source makes no PnL claim.
-- The snapshot now has one sanitized qualification receipt at
-  `D:\thericher-v2\model-artifacts\norgate-development-qualification\r1-3d0841b90ddfd8d8\qualification.json`
-  with content hash
-  `sha256:1f5ddec5cd1bc94fddbfde9de22e6480480f3daa28e0a03913a0d8d5d299a9d4`.
-  It re-attests the frozen panel before returning only aggregate identity,
-  geometry, scope, limitations, reversal facts, and a declarative D1 interface.
-  It stores no source rows, symbols, dates, OHLCV, vectors, labels, prices, or
-  broker facts. Its `qualified_for_development_only` result is not model, GPU,
-  campaign, PnL, Paper, live, ranking, PIT, or historical-universe authority.
-- The first KIS-native intraday cache is at
-  `D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`.
-  Its initial bounded cycle retained two source pages each for `QQQ/NAS` and
-  `SPY/AMS`: 239 exact-deduplicated 1m rows per stream, with one page-boundary
-  overlap per symbol. `data.kis_paper_intraday` verifies snapshot/index hashes
-  and maps KIS's explicit Korea date/time fields to UTC without inferring an
-  exchange DST calendar.
-- The observed first ranges are extended-session evidence, not regular-session
-  qualification: QQQ spans 20:01 through 23:59 UTC and SPY spans 19:58 through
-  23:59 UTC on 2026-07-21. Both canonical loaders returned 239 complete bars
-  under the conservative collection-time rule. Holiday, early-close, exchange
-  timestamp open/close, and regular-session classification remain unqualified.
-- An earlier Docker-profiled continuation reattestation found
-  718 unique 1m bars per stream: QQQ
-  spans 12:02 through 23:59 UTC and SPY 11:59 through 23:59 UTC on 2026-07-21.
-  The index is authoritative for current coverage and cursor state.
-- On 2026-07-23, KIS's official sample clarified that response header
-  `tr_cont` controls minute pagination, while `output1.next` is metadata. The
-  corrected data-only Docker worker committed 100 `QQQ/NAS` and 69 `SPY/AMS`
-  rows and cleared both historical cursors. This resolves the former
-  `minute_cursor_invalid` recovery fact without changing Paper authority,
-  source retention, or the separate prospective-head cadence.
-- The separate `intraday-head` root receives fresh source-page observations
-  without advancing the historical backfill cursor. The Windows Scheduled Task
-  `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
-  02:35, 04:35, and 06:20 KST with up to four pages per target. Its first
-  expanded-cadence cycle completed with task result `0`; the metadata-only
-  inspector reattested generation 8 with zero complete QQQ sessions out of
-  five. The 2026-07-22, -23, and -24 candidates held 239, 39, and 238 of 390
-  minutes, respectively; their missing offset ranges were `0-5,245-389`,
-  `0-350`, and `0-125,245,365-389`. Continuation remains `mixed`, exact and
-  conflicting overlap remain `none`, and the scoped last reason is
-  `minute_duplicate_conflict`. This varied short-session shape does not
-  establish that page size, duplicate handling, timestamps, or the four-page
-  cap is the cause, so the smallest recovery is to retain the installed
-  cadence and strict selector unchanged for the next due collection.
-- The collector now preserves its safe JSON/freshness behavior while returning
-  a nonzero process result for outer worker failures and `locked`, `partial`,
-  or `rejected` collection outcomes. The next Docker `--build` run therefore
-  makes a failed head cycle visible through the existing Windows task result;
-  no second worker, report, or retry latch is introduced.
-- `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
-  cache contract for the writer and prospective observer. It validates index
-  structure and retained-chunk lineage without opening raw files; the existing
-  offline loader remains responsible for raw-byte attestation.
-- The head index identity is the SHA-256 of its exact persisted metadata bytes
-  across the coverage inspector, preparation path, and offline verifier. Do not
-  hash decoded text: Windows newline translation must not change a valid pair
-  binding.
-- `us_equity_2026_session` supplies explicit 2026 regular and early-close UTC
-  windows from published Nasdaq/NYSE calendars. The first QQQ regular-session
-  slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded
-  cache/replay baseline only; it does not settle KIS field open/close semantics
-  or create a multi-session research dataset.
-- The cursor cache now reattests 21 complete regular sessions for both QQQ/NAS
-  and SPY/AMS, from 2026-06-22 through 2026-07-21. The first Engine input used
-  the latest 20 QQQ sessions, 2026-06-23 through 2026-07-21, with 2026-07-08
-  retained as an unused purge session. This is a hash-bound descriptive input,
-  not a source-semantic or model-quality conclusion.
-- A local credential-free verifier reselected those exact 20 QQQ sessions on
-  2026-07-22: 7,800 complete 1m bars with dataset hash
-  `sha256:38ccc55e1ade26a11562ebedcb482ace718ccbdb7d4d0cdc78a7d11f874a1c0a`.
-  This reattests the frozen research input; it does not alter the cache or make
-  a regular-session semantic claim.
-- The receipt writer reattested that same frozen input on 2026-07-22 and wrote
-  only its safe hash-bound receipt outside Git. The current observed capability
-  remains unqualified for the fixed 90-bar baseline, so no raw row was exposed
-  and no KIS/order action followed. This data fact does not pause the cache,
-  scheduler, canary, or another candidate input.
-- `select_complete_kis_paper_private_intraday_sessions` derives a new immutable
-  KIS-only `CatalogedBars` identity from an explicit ordered tuple of complete
-  regular sessions. It is offline/credential-free and rejects duplicate,
-  unordered, closed, early-close, incomplete, or non-KIS inputs.
-- `prepare_kis_paper_intraday_feature_input` binds that selected source to one
-  hash, ordered dates, and explicit session windows for Research. The Docker
-  research mount at `/app/market_data` is the same external D: cache, not Git
-  storage, and is accepted only in that named container path.
-- The 2026-07-23 Data Agent metadata-only inspection found the prospective
-  `intraday-head/v1` index available and structurally readable. The local
-  preparer returned `pending`, with zero complete QQQ regular sessions out of
-  five required and no artifact writes. Its metadata hash was
-  `sha256:a9d8361b96dd92cae918c69202fdb1dc1ed2861a4050b5964041be407ff00f43`.
-  This inspection did not read credentials, raw rows, account data, canary
-  state, or broker evidence, and made no network call.
-- Windows task metadata on 2026-07-23 showed
-  `thericher-kis-paper-intraday-head` as `Ready`, with its historical 02:35
-  KST run returning task result `0`. After the post-close coverage correction,
-  its next run is 2026-07-24 06:20 KST with four pages per target. The separate
-  `thericher-kis-paper-quote-session` task was also `Ready`, with task result
-  `0`; its execution semantics belong to Execution, not Data.
-- The first post-change `intraday-head` task completed at 2026-07-24 06:20 KST
-  with task result `0`. Its independent index advanced to generation 4 and
-  recorded one further committed chunk per `QQQ/NAS` and `SPY/AMS`, each with
-  120 retained 1m rows and no conflict. The metadata-only preparer still found
-  zero complete 390-minute QQQ regular sessions, so the combined head evidence
-  remains a source-coverage fact rather than a Research handoff. It read no
-  credential, raw row, account, or broker evidence and wrote no artifact.
-- On 2026-07-24 the same named head task was reinstalled with three weekly KST
-  triggers at 02:35, 04:35, and 06:20. Windows task metadata confirmed `Ready`,
-  all three triggers, and the next run at 2026-07-25 02:35 KST. It remains one
-  bounded data-only service; no account, order, or live route was added.
-- A bounded metadata-only inventory on 2026-07-23 reattested the active
-  source choices without opening any raw rows. The KIS daily index has QQQ/NAS
-  and SPY/AMS `ready` through 2026-07-17; IWM/AMS is `source_limited` at its
-  unchanged `daily_response_invalid` cursor. The last verified common D1 panel
-  remains 694 sessions from 2023-10-10 through 2026-07-17. The historical KIS
-  1m index has QQQ/NAS and SPY/AMS only, each with 21 complete regular sessions from
-  2026-06-22 through 2026-07-21; IWM has no KIS 1m stream. The independent
-  head index has one QQQ and one SPY chunk but zero of five complete QQQ
-  regular sessions, so it is unavailable as a current input. For the active
-  fixed baseline receipt, use the existing frozen QQQ/NAS 1m KIS-only 20
-  session tuple (2026-06-23 through 2026-07-21), not a daily/head/SPY/IWM
-  join. It supports offline replay only, not a current-market claim.
+Accumulate the prospective `QQQ/NAS/1m` head cache through the existing single
+scheduled collector until five exact 390-minute regular sessions exist. The
+collector owns the post-durable metadata-only preparation attempt; do not create
+a second scheduler or manually duplicate a due collection.
+
+## Current Facts
+
+- The safe head baseline is index generation `8`, metadata identity
+  `sha256:9d8e88209293f3aeabd48311d705c4e1a7e9a325b8726ea0d878a01ec8d1949c`,
+  four retained chunks, and `0 / 5` complete QQQ regular sessions.
+- Candidate completeness is `239 / 390` on 2026-07-22, `39 / 390` on
+  2026-07-23, and `238 / 390` on 2026-07-24. Continuation is `mixed`; exact
+  and conflicting overlap are both `none`; the scoped last reason is
+  `minute_duplicate_conflict`.
+- `thericher-kis-paper-intraday-head` is `Ready`, has KST triggers at `00:35`,
+  `02:35`, `04:35`, and `06:20`, has no missed run, and next runs at
+  2026-07-28 00:35 KST. It retains one Docker service, the four-page-per-target
+  cap, source pacing, strict conflict rejection, and exact session selection.
+- Daily KIS caches remain source-separated. `QQQ/NAS` and `SPY/AMS` are complete
+  at their established historical boundaries; `IWM/AMS` remains `source_limited`
+  at its qualified bad-row boundary. Do not repair, mix, or silently extend a
+  source-limited target.
+- All KIS market-data workers share the measured request-start and token-start
+  controls under `D:\market_data`. These controls are transport facts, not
+  permission or scheduler latches.
+
+## Binding Contracts
+
+- A usable prospective session is exactly one declared regular US session with
+  all 390 completed minutes. Short, gapped, conflicting, or unqualified
+  timestamp data never reaches Research.
+- Write and hash a data-bearing snapshot before advancing its cursor. Accept
+  only exact overlap deduplication and reject conflicting prior rows.
+- Preserve provider identity and unknown source semantics. Do not fill,
+  relabel, or repair minute rows from another source.
+- The head-index identity is SHA-256 of exact persisted index bytes across
+  coverage inspection, preparation, and offline verification. Do not hash
+  decoded text because newline translation can change a valid binding.
+- The automatic preparer is metadata-only and isolated after durable collection.
+  It cannot alter cache bytes, cursors, or collector freshness facts. Its first
+  usable pair binds exactly the first five selected session dates and row
+  fingerprints.
+- The collector preserves safe JSON/freshness behavior while returning a
+  nonzero process result for outer worker failures and `locked`, `partial`, or
+  `rejected` collection outcomes. Existing Task Scheduler state therefore
+  exposes that exact failed run without a second worker or retry latch.
 
 ## Ready Queue
 
-1. Keep the current IWM daily scope at its verified lower boundary. The
-   2026-07-23 bounded retry confirmed the fourth exact zero-row
-   `daily_response_invalid` result at its unchanged cursor, and the index now
-   marks only that target `source_limited`; QQQ immediately continued with a
-   committed 199-row chunk. A KIS page contains an internally inconsistent OHLC
-   row, so the strict all-row parser rejects it. Do not retry the identical bad
-   page endlessly or silently accept its remaining rows; a new anchor, endpoint,
-   or evidence-backed scope may proceed independently.
-2. Keep `data.kis_paper_daily` aligned with the cache contract: re-attest
-   snapshot/index/raw hashes, accept only exact overlap deduplication, reject
-   conflicts, verify cursor seams, and return the completed common-session
-   intersection for consumers. A bounded `end_session` may re-attest the full
-   source while materializing only the permitted prefix as `Bar` objects.
-3. Treat the existing three-target 694-session panel as the only current daily
-   research input apart from one separately scoped descriptive baseline. The
-   QQQ/SPY 4,756-session unadjusted intersection now has a qualified external
-   `+-1`-session boundary audit at
-   `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json`.
-   Its exact source, mask, and partition identities must be re-attested by that
-   one consumer; it must not retune the retired three-ETF work or widen into
-   model, GPU, ensemble, total-return, point-in-time, or Paper use.
-4. Seek a different official KIS historical endpoint only when it can avoid the
-   documented IWM row-quality issue without source mixing or hidden repair.
-5. The 2026-07-25 separately labeled `historical-probe` used the documented
-   blank first `KEYB` contract in an independent sibling root. Both QQQ/NAS and
-   SPY/AMS returned one retained 120-row 1m page, observed from
-   `20260724T100800` through `20260724T120700`, with terminal continuation and
-   no output cursor. This establishes only the current normal-start capability;
-   do not invent an arbitrary historical `KEYB` seed or generalize it into a
-   claim about every KIS historical endpoint. Continue fresh-session
-   accumulation through the prospective head cache. An old failed or unretained
-   result cannot disable either path.
-6. Keep the head cache accumulating prospective sessions while preserving its
-   independent root and safe coverage evidence. Reattest any candidate complete
-   session before handing it to Engine Research.
-7. Preserve raw provider rows and label unknown KIS field semantics; do not
-   repair, fill, or relabel a session from another provider.
-8. The existing `intraday-head` service now starts one isolated metadata-only
-   prospective-preparation child only after its own QQQ/SPY collection is
-   durable. The child has no credential or KIS route and cannot alter the
-   collector result, cursor, or freshness projection. Fewer than five complete
-   QQQ sessions remain an ordinary nonblocking `pending` fact; five sessions
-   cause one externally stored, first-five-bound preparation pair that later
-   unchanged collections validate and reuse.
-9. The current head-bar contract is not yet an execution-price contract: it
-   has no verified tick/decimal-scale field, no proven `NAS` to `NASD` order
-   mapping, unqualified provider timestamp edge semantics, and no latest-bar
-   freshness predicate. Keep those gaps visible while continuing Data work;
-   they do not disable the head cache, KIS Paper, or an independently verified
-   price source.
-10. Reattest the first session observed through the four in-session/post-close
-    triggers. The new 00:35 window targets the missing early coverage; the
-    unchanged four-page cap may still expose source-authorized continuation.
-    Use `scripts\inspect_kis_intraday_head_coverage.py` before and after the
-    due result so the selector sees only safe minute counts, offset ranges, and
-    overlap/continuation categories. It opens no raw minute data and writes no
-    artifact. The selector must reject any short or gapped union. Continue the
-    cadence independently; the current zero-of-five preparation is ordinary
-    source evidence, not a permission or scheduling latch.
+1. After the next scheduled result, compare metadata-only coverage with the
+   generation-8 baseline: complete counts, missing offset ranges,
+   continuation/overlap/conflict categories, last reason, and preparation state.
+2. If exactly five complete sessions first exist, let the existing collector
+   produce its first-five-bound preparation pair and hand only that verified
+   pair to Engine Research.
+3. If coverage remains short, retain the collector contract unless one bounded
+   source observation or synthetic test identifies an exact recovery change.
+   Do not infer a page, timestamp, cap, or duplicate defect from varied gaps.
 
-## Authority And Boundaries
+## Operator Help
 
-KIS Paper market-data access, private raw retention, and goal-owned scheduling
-are standing-authorized. Retain raw snapshots under `D:\market_data`, never
-Git. Do not read `KIS_LIVE_*`, publish or redistribute source data, buy data,
-or accept unclear rights. Warn at 20% free disk and do not begin new large work
-that would cross the 15% floor.
-
-## Durable Knowledge
-
-- A successful data-bearing snapshot is written and hashed before its index
-  cursor advances.
-- The QQQ/SPY event sidecar's 78/76 event records qualify only provider date
-  mapping. The qualified boundary audit binds their `+-1` KIS-session buffer to
-  mask identity
-  `sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429`
-  and chronological partition identity
-  `sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb`.
-  It found zero unmasked absolute close-to-close residuals at the fixed 20%
-  threshold, but it never supplies Tiingo prices, adjustments, total-return
-  values, or point-in-time event availability. It is a bounded retrospective
-  input for one fixed descriptive baseline, not a final label contract.
-- Exact boundary overlap is normal; different values for the same date are a
-  conflict and must defer that target for reconciliation.
-- Source-adaptive pacing is a transport fact. It must not be described as an
-  approval, capital, or model gate.
-- A raw-retention field records what was actually stored for one result. It is
-  not a collection permission switch.
-- A failed, empty, or unretained job is a recovery fact for that job only; it
-  must not create a one-shot latch for later correctly scoped collection.
-- The standing forward-progress directive applies equally to cache evidence:
-  a missing or unqualified input may request fresh data or yield a scoped
-  unavailable result, but cannot act as Paper, scheduler, or research authority.
-- The intraday collector and offline loader ignore an unretained historical
-  marker without a cache snapshot before validation, deduplication, cursor
-  handling, or bar consumption.
-- When ordinary retry pacing has elapsed, the next correctly scoped collection
-  proceeds without an operator question even if an older result retained no
-  raw bytes.
-- `slice_kis_paper_private_daily_catalog` creates a derived, hash-bound session
-  range without reopening the source cache. Research uses it to keep phase
-  consumers away from excluded sessions.
-- The optional loader session ceiling still verifies every retained raw file,
-  complete row-fingerprint map, and committed row count. It merely omits later
-  `Bar` construction, so a frozen consumer cannot accidentally carry a burned
-  suffix into its process.
-- `load_verified_norgate_trial_development_panel_catalog` exposes the existing
-  static Norgate trial snapshot as immutable per-symbol D1 `CatalogedBars` with
-  original candidate ranks, exact source scope, lineage identity, and
-  limitations. It validates and parses the same hash-attested panel bytes; it
-  neither imports the Norgate SDK nor writes artifacts/data. Its actual local
-  smoke found 523 symbols, 483 sessions, 252,609 bars, and rank range 1..541.
-- `qualify_frozen_norgate_trial_development_panel` is the only new external
-  output surface for that static panel. It re-attests the caller-pinned source,
-  accepts no KIS/network/credential/broker route, and writes a deterministic
-  one-file receipt outside Git. If its scope or source identity changes, reuse
-  fails; if its geometry cannot support the declared `t-20..t` interface, the
-  receipt is `unqualified` and contains no usable timing contract.
-- A hash-attested partial chunk may advance only after a fully validated first
-  page; a wholly invalid page never advances its cursor.
-- KIS execution canary evidence and KIS market-data cache bytes are separate:
-  a canary does not duplicate raw broker payloads into `D:\market_data`.
-- The existing Tiingo IEX 5m SPY/QQQ/IWM snapshot covers 129 sessions but is
-  descriptive replay evidence only. Its manifest prohibits training, campaign,
-  paper-trading, and ranking use, so it must not become an intraday signal
-  input; build the KIS-native minute cache for that loop instead.
-- KIS minute pagination uses response header `tr_cont`: `M`/`F` resumes with
-  `NEXT=1` plus a 14-digit `KEYB` derived from the oldest validated exchange
-  timestamp. `output1.next` is provider metadata, not cursor authority. The
-  first actual QQQ and SPY page pairs each had one exact boundary overlap;
-  conflicts reject cursor advance rather than silently replacing a cached
-   minute.
-- The separately labeled historical-minute probe starts with the documented
-  blank `KEYB`, never with an inferred or arbitrary time seed. Its first
-  2026-07-25 QQQ/NAS and SPY/AMS pages each contained 120 retained rows from
-  observed `20260724T100800` through `20260724T120700` with terminal
-  continuation. It is a bounded endpoint observation stored under the sibling
-  `intraday-historical-probe` root, not a source-semantics, price, or broad
-  history claim.
-- The intraday loader uses the explicit KIS Korea fields (`kymd`/`khms`) as its
-  UTC basis. It labels a bar incomplete when its end is later than the rounded
-  collection minute, so an in-flight minute cannot become a completed feature.
-- The 2026 session adapter gives only the exchange calendar window. It does not
-  assert whether a KIS minute's timestamp is its open, close, or vendor stamp.
-- The first immutable v1 snapshots predate the explicit
-  `canonical_start_policy` field. `data.kis_paper_intraday` accepts only their
-  exact equivalent completed-bar-rule spelling; it never rewrites source bytes
-  or relaxes the timestamp contract for another form.
-- Session selection does not join overnight gaps. It preserves them as explicit
-  ordered session boundaries for a Research consumer to validate, while any
-  missing minute inside a selected session remains invalid input.
-- The prospective observation reader accepts only the exact external
-  precommit/planning pair and head-index metadata hash. It verifies that
-  identity before and after opening the separate historical/head caches, then
-  returns a capability-bound in-memory input with no serialization surface for
-  paths, raw bars, prices, preparation files, or credentials. A changed index
-  during read is a scoped unavailable input, never a cache rewrite or hold on
-  another lane.
-- KIS Paper's current same-day `inquire-ccnl` use is a narrow order-ID history
-  fact only. It can say that one raw ID was seen in its current ET query, but
-  its present parser does not establish a fill, cancellation, price, quantity,
-  realized PnL, or receipt-attributed aggregate position. Those raw facts stay
-  private and out of `D:\market_data`.
-- The official virtual `VTTS3035R` sample documents per-row quantity, fill
-  price/amount, processing-status, revision/cancel, and order-time field names,
-  but not terminal enum, amendment ordering, or net-PnL semantics. The first
-  post-validation probe found that the legacy cancelled SPY/AMEX state lacked a
-  durable acknowledged submission time, so it emitted
-  `submission_time_missing` without a KIS call. New states persist that time
-  write-once. This is source-contract evidence only; it does not change
-  collection, retention, scheduling, or Paper authority.
-- The daily session handoff needs only the opaque receipt digest, its matching
-  `receipt-<digest>` run ID, and safe timestamps/provenance. After that exact
-  check, the same state may contribute the terminal probe's categorical
-  field-presence payload and an opaque artifact-content hash. Raw daily bars,
-  prices, account values, and order IDs never cross either boundary.
+None. Escalate only a paid source, unclear rights, an applicable retention
+restriction, or a storage-floor conflict that changes the approved data scope.
 
 ## Recovery
 
-Current recovery class: `resume`. The historical QQQ/NAS 1m baseline input is
-intact, and the 2026-07-23 header-contract recovery cleared both historical
-minute cursors after committing one final bounded page per target. The
-2026-07-25 normal-start historical probe then found only one terminal 120-row
-page per QQQ/NAS and SPY/AMS stream; its separate root prevents that observation
-from mutating the historical cursor cache. The prospective-head index remains a
-future current-input source until its selector identifies five complete QQQ
-sessions; its automatic preparer is `resume`-safe and reports pending without
-changing collection recovery. The former `minute_cursor_invalid` evidence is
-resolved and never paused the fixed receipt, Paper work, or another data lane.
-Reattest the index
-and committed snapshots before a new network call. Recover a matching orphan
-snapshot without KIS access. Classify a bad snapshot or index as `reconcile`;
-do not overwrite evidence or invent a cursor.
+Current class: `resume`. Reattest index and committed snapshots before a new
+network call. Recover a matching orphan snapshot without KIS access; classify a
+bad snapshot or index as `reconcile` without overwriting evidence or inventing a
+cursor. A pending preparation pair is ordinary source evidence, not a scheduler,
+Research, or Paper permission hold.
+
+## Evidence
+
+- `scripts\inspect_kis_intraday_head_coverage.py` is the safe read-only
+  coverage inspector.
+- The scheduled worker owns the prospective head cache under `D:\market_data`.
+  The external artifact root holds only its preparation pair and sanitized
+  downstream receipts.
 
 ## Next Handoff
 
-The documented normal-start historical-minute probe is now bounded: it returns
-one terminal page rather than a seekable archive. The separate daily baseline
-is complete; preserve its pinned source/audit metadata and do not reopen the
-untouched tail or change source scope. Continue KIS-native minute accumulation
-and preserve provider identity, timestamp basis, session classification,
-coverage, and limitations. The existing head service now performs the
-metadata-only preparation automatically after a completed collection; do not
-add a second scheduler or foreground wait. Report only a concrete source-rights
-or storage constraint that needs operator action.
+Consume the next due head outcome through the safe inspector. Hand off only a
+verified first-five pair; otherwise keep this lane in `resume` and continue the
+installed cadence without a foreground wait or duplicate worker.
