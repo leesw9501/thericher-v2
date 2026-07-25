@@ -61,10 +61,10 @@ create duplicate schedulers, or issue manual duplicate KIS calls. Claude CLI
 OAuth is expired; retry it only at a decision boundary that requires a
 drift-check, without holding a ready private lane.
 
-The one-time local `thericher-intraday-head-result-monitor` runs Tuesday at
-01:20 KST after the next head window. It owns only metadata reattestation and
-the existing offline handoff condition; it has no KIS, Docker collection, or
-order route and cannot create a second data scheduler.
+No separate intraday result-monitor is installed. At the next Codex integration
+after the due head result, reattest the existing collector through the
+metadata-only coverage inspector and apply its existing offline handoff
+condition. The head task remains the sole recurring intraday-data scheduler.
 
 ## Operator Help
 
