@@ -23,6 +23,7 @@ __all__ = [
     "KisPaperPrivateIntradayV1IndexMetadata",
     "KisPaperPrivateIntradayV1RetainedChunkMetadata",
     "KisPaperPrivateIntradayV1TargetMetadata",
+    "sha256_kis_paper_private_intraday_v1_index_bytes",
     "validate_kis_paper_private_intraday_v1_index_metadata",
 ]
 
@@ -55,6 +56,14 @@ class KisPaperPrivateIntradayV1IndexMetadata:
 
     generation: int
     targets: tuple[KisPaperPrivateIntradayV1TargetMetadata, ...]
+
+
+def sha256_kis_paper_private_intraday_v1_index_bytes(value: bytes) -> str:
+    """Return the exact persisted-byte identity for a private intraday index."""
+
+    if not isinstance(value, bytes):
+        raise TypeError("KIS private intraday index identity requires bytes")
+    return "sha256:" + hashlib.sha256(value).hexdigest()
 
 
 def validate_kis_paper_private_intraday_v1_index_metadata(

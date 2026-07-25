@@ -16,6 +16,7 @@ from .kis_paper_intraday import raw_bar_end_is_complete
 from .kis_paper_intraday_index_metadata import (
     KisPaperPrivateIntradayV1RetainedChunkMetadata,
     KisPaperPrivateIntradayV1TargetMetadata,
+    sha256_kis_paper_private_intraday_v1_index_bytes,
     validate_kis_paper_private_intraday_v1_index_metadata,
 )
 from .us_equity_session import us_equity_2026_session
@@ -265,7 +266,7 @@ def inspect_kis_paper_private_intraday_head_coverage(
         target_key=target.target_key,
         required_complete_session_count=required_complete_session_count,
         index_generation=metadata.generation,
-        index_metadata_sha256=_sha256(index_bytes),
+        index_metadata_sha256=sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes),
         retained_chunk_count=len(target.retained_chunks),
         last_reason_category=last_reason_category,
         continuation_category=continuation_category,

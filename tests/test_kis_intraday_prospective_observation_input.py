@@ -93,6 +93,21 @@ def test_public_preparation_verifier_is_read_only_and_returns_safe_identity(
     assert _pair_bytes(inputs["preparation_dir"]) == before_pair
 
 
+def test_public_preparation_verifier_preserves_crlf_index_byte_identity(tmp_path: Path) -> None:
+    inputs = _inputs(tmp_path, index_line_ending="\r\n")
+
+    preparation = prospective_input.verify_kis_intraday_prospective_observation_preparation(
+        head_cache_root=inputs["head_cache_root"],
+        preparation_dir=inputs["preparation_dir"],
+        repo_root=inputs["repo_root"],
+    )
+
+    index_bytes = (inputs["head_cache_root"] / "v1" / "index.json").read_bytes()
+    assert preparation.head_index_metadata_sha256 == (
+        "sha256:" + hashlib.sha256(index_bytes).hexdigest()
+    )
+
+
 def test_loads_exact_separate_pair_bound_streams_offline(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -271,13 +286,16 @@ def test_incomplete_selected_source_session_is_rejected_without_artifact_write(
     assert _pair_bytes(inputs["preparation_dir"]) == before_pair
 
 
-def _inputs(tmp_path: Path) -> dict[str, Path]:
+def _inputs(tmp_path: Path, *, index_line_ending: str = "\n") -> dict[str, Path]:
     repo_root = tmp_path / "repo"
     repo_root.mkdir(parents=True)
     historical_cache_root = tmp_path / "market-data" / "intraday"
     head_cache_root = tmp_path / "market-data" / "intraday-head"
     preparation_dir = tmp_path / "model-artifacts" / "prepared-head"
-    row_fingerprints, head_index_metadata_sha256 = _write_head_index(head_cache_root)
+    row_fingerprints, head_index_metadata_sha256 = _write_head_index(
+        head_cache_root,
+        line_ending=index_line_ending,
+    )
     _write_preparation_pair(
         preparation_dir,
         row_fingerprints=row_fingerprints,
@@ -291,7 +309,11 @@ def _inputs(tmp_path: Path) -> dict[str, Path]:
     }
 
 
-def _write_head_index(head_cache_root: Path) -> tuple[dict[str, str], str]:
+def _write_head_index(
+    head_cache_root: Path,
+    *,
+    line_ending: str = "\n",
+) -> tuple[dict[str, str], str]:
     row_fingerprints: dict[str, str] = {}
     for session_date in _PROSPECTIVE_DATES:
         session = us_equity_2026_session(session_date)
@@ -348,7 +370,13 @@ def _write_head_index(head_cache_root: Path) -> tuple[dict[str, str], str]:
     }
     index_path = head_cache_root / "v1" / "index.json"
     index_path.parent.mkdir(parents=True)
-    contents = json.dumps(index).encode("utf-8")
+    if line_ending == "\n":
+        contents = json.dumps(index).encode("utf-8")
+    else:
+        contents = (
+            json.dumps(index, indent=2, sort_keys=True).replace("\n", line_ending)
+            + line_ending
+        ).encode("utf-8")
     index_path.write_bytes(contents)
     return row_fingerprints, "sha256:" + hashlib.sha256(contents).hexdigest()
 

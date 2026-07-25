@@ -19,6 +19,7 @@ from thericher_v2.data.kis_paper_intraday import (
 )
 from thericher_v2.data.kis_paper_intraday_index_metadata import (
     KisPaperPrivateIntradayV1RetainedChunkMetadata,
+    sha256_kis_paper_private_intraday_v1_index_bytes,
     validate_kis_paper_private_intraday_v1_index_metadata,
 )
 from thericher_v2.data.local import CatalogedBars
@@ -605,13 +606,13 @@ def _read_json_file_with_sha256(path: Path) -> tuple[Mapping[str, object], str]:
     if path.is_symlink() or not path.is_file():
         raise ValueError("prospective observation preparation pair is invalid")
     try:
-        text = path.read_text(encoding="utf-8")
-        value = json.loads(text)
+        payload = path.read_bytes()
+        value = json.loads(payload)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
         raise ValueError("prospective observation preparation pair is invalid") from error
     if not isinstance(value, Mapping):
         raise ValueError("prospective observation preparation pair is invalid")
-    return value, _sha256_text(text)
+    return value, sha256_kis_paper_private_intraday_v1_index_bytes(payload)
 
 
 def _selected_session_dates(value: object) -> tuple[date, ...]:
@@ -793,7 +794,3 @@ def _require_sha256(value: object, field_name: str) -> None:
 def _sha256_payload(payload: Mapping[str, object]) -> str:
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
-
-
-def _sha256_text(value: str) -> str:
-    return "sha256:" + hashlib.sha256(value.encode("utf-8")).hexdigest()

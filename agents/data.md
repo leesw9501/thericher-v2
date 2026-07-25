@@ -137,6 +137,10 @@ as a failed collection or an authority hold.
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing
   offline loader remains responsible for raw-byte attestation.
+- The head index identity is the SHA-256 of its exact persisted metadata bytes
+  across the coverage inspector, preparation path, and offline verifier. Do not
+  hash decoded text: Windows newline translation must not change a valid pair
+  binding.
 - `us_equity_2026_session` supplies explicit 2026 regular and early-close UTC
   windows from published Nasdaq/NYSE calendars. The first QQQ regular-session
   slice for 2026-07-21 contained 390 complete 1m bars. This qualifies a bounded

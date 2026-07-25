@@ -44,19 +44,19 @@ def test_pending_preparation_uses_only_index_metadata_without_network_credential
     raw_path.write_bytes(b"raw bars must stay unread")
     _deny_external_access(monkeypatch)
 
-    original_read_text = Path.read_text
+    original_read_bytes = Path.read_bytes
 
-    def read_index_only(path: Path, *args: object, **kwargs: object) -> str:
+    def read_index_only(path: Path, *args: object, **kwargs: object) -> bytes:
         if path.resolve() != index_path.resolve():
             raise AssertionError("preparation may read only the head index metadata")
-        return original_read_text(path, *args, **kwargs)
+        return original_read_bytes(path, *args, **kwargs)
 
-    monkeypatch.setattr(Path, "read_text", read_index_only)
+    monkeypatch.setattr(Path, "read_bytes", read_index_only)
     monkeypatch.setattr(
         Path,
-        "read_bytes",
+        "read_text",
         lambda *_args, **_kwargs: (_ for _ in ()).throw(
-            AssertionError("preparation must not read raw market-bar bytes")
+            AssertionError("preparation must not decode metadata through text I/O")
         ),
     )
 

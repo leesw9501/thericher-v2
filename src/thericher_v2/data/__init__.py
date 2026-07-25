@@ -74,6 +74,7 @@ from .kis_paper_intraday_index_metadata import (
     KisPaperPrivateIntradayV1IndexMetadata,
     KisPaperPrivateIntradayV1RetainedChunkMetadata,
     KisPaperPrivateIntradayV1TargetMetadata,
+    sha256_kis_paper_private_intraday_v1_index_bytes,
     validate_kis_paper_private_intraday_v1_index_metadata,
 )
 from .local import (
@@ -178,6 +179,7 @@ __all__ = [
     "observed_kis_paper_capabilities",
     "resample_bars",
     "resample_session_bars",
+    "sha256_kis_paper_private_intraday_v1_index_bytes",
     "select_catalog_dataset",
     "write_training_readiness_catalog",
     "us_equity_2026_session",

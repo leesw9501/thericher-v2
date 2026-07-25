@@ -19,6 +19,7 @@ from thericher_v2.contracts import SCHEMA_VERSION, Timeframe, require_utc
 from thericher_v2.data import (
     KisPaperPrivateIntradayV1RetainedChunkMetadata,
     raw_bar_end_is_complete,
+    sha256_kis_paper_private_intraday_v1_index_bytes,
     us_equity_2026_session,
     validate_kis_paper_private_intraday_v1_index_metadata,
 )
@@ -319,8 +320,8 @@ def _inspect_head_index_metadata(
     if index_path.is_symlink():
         raise ValueError("prospective head index path is invalid")
     try:
-        index_text = index_path.read_text(encoding="utf-8")
-        index = json.loads(index_text)
+        index_bytes = index_path.read_bytes()
+        index = json.loads(index_bytes)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
         raise ValueError("prospective head index metadata is invalid") from error
     if not isinstance(index, Mapping):
@@ -340,7 +341,7 @@ def _inspect_head_index_metadata(
     )
     return _HeadIndexInspection(
         status="available",
-        metadata_sha256=_sha256_text(index_text),
+        metadata_sha256=sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes),
         complete_session_dates=complete_dates,
         first_seen_row_fingerprints=first_seen_row_fingerprints,
     )
@@ -800,10 +801,6 @@ def _write_json_atomic_new(path: Path, payload: Mapping[str, object]) -> None:
 def _validate_run_label(run_label: str) -> None:
     if _SAFE_RUN_LABEL.fullmatch(run_label) is None:
         raise ValueError("prospective head run_label must use 1-80 safe ASCII characters")
-
-
-def _sha256_text(value: str) -> str:
-    return "sha256:" + hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
 def _sha256_payload(payload: Mapping[str, object]) -> str:

@@ -13,6 +13,9 @@ from thericher_v2.data.kis_intraday_head_coverage import (
     inspect_kis_paper_private_intraday_head_coverage,
 )
 from thericher_v2.data.us_equity_session import us_equity_2026_session
+from thericher_v2.research.kis_intraday_prospective_head_observation import (
+    prepare_kis_intraday_prospective_head_observation,
+)
 
 _KOREA = ZoneInfo("Asia/Seoul")
 _QQQ_TARGET_KEY = "QQQ/NAS/1m"
@@ -106,6 +109,52 @@ def test_head_coverage_surfaces_retained_fingerprint_conflicts_without_raw_data(
     assert result.session_coverage[0].complete_minute_count == 1
     assert not list(cache_root.rglob("*.csv"))
     assert not list(cache_root.rglob("*.gz"))
+
+
+def test_head_coverage_and_preparer_share_exact_crlf_index_identity(tmp_path: Path) -> None:
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session_dates = (
+        date(2026, 7, 8),
+        date(2026, 7, 9),
+        date(2026, 7, 10),
+        date(2026, 7, 13),
+        date(2026, 7, 14),
+    )
+    chunks = tuple(
+        {
+            "rows": _session_rows(_regular_session(session_date), range(390), "complete"),
+            "continuation_available": False,
+            "exact_overlap_rows": 0,
+            "collected_at": _regular_session(session_date).window.close_ts
+            + timedelta(minutes=1),
+        }
+        for session_date in session_dates
+    )
+    _write_head_index(cache_root, chunks=chunks)
+    index_path = cache_root / "v1" / "index.json"
+    index = json.loads(index_path.read_bytes())
+    index_bytes = (
+        json.dumps(index, indent=2, sort_keys=True).replace("\n", "\r\n") + "\r\n"
+    ).encode("utf-8")
+    index_path.write_bytes(index_bytes)
+
+    coverage = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=tmp_path / "repo",
+        after_session_date=date(2026, 7, 7),
+        required_complete_session_count=5,
+    )
+    preparation = prepare_kis_intraday_prospective_head_observation(
+        head_cache_root=cache_root,
+        artifact_root=tmp_path / "model-artifacts",
+        run_label="crlf-index-r1",
+        repo_root=tmp_path / "repo",
+        prepared_at=datetime(2026, 7, 22, tzinfo=UTC),
+    )
+
+    assert preparation.status == "prepared"
+    assert coverage.index_metadata_sha256 == _sha256(index_bytes)
+    assert preparation.head_index_sha256 == coverage.index_metadata_sha256
 
 
 def test_head_coverage_reports_not_created_without_creating_a_cache(tmp_path: Path) -> None:
