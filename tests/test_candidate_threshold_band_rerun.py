@@ -156,8 +156,10 @@ def test_candidate_threshold_band_rerun_is_offline_and_does_not_read_credentials
     assert result.status == "candidate_threshold_band_rerun_replayed_only"
 
 
-def test_candidate_threshold_band_rerun_import_keeps_torch_lazy_and_no_broker_paths() -> None:
-    sys.modules.pop("torch", None)
+def test_candidate_threshold_band_rerun_import_keeps_torch_lazy_and_no_broker_paths(
+    monkeypatch,
+) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.candidate_threshold_band_rerun as band_rerun
 
     source = Path(band_rerun.__file__).read_text(encoding="utf-8").lower()

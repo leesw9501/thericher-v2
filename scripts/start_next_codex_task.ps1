@@ -85,6 +85,7 @@ Write-Host "== Verification commands =="
 Write-Host "uv run --extra dev pytest -q"
 Write-Host "uv run --extra dev ruff check ."
 Write-Host "docker compose config --quiet"
+Write-Host "Fast local feedback: .\scripts\run_parallel_tests.ps1"
 Write-Host ""
 
 Write-Host "== Completion handoff rule =="

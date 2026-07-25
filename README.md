@@ -47,6 +47,15 @@ uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 ```
 
+For faster repeat feedback on Windows, use the bounded parallel helper:
+
+```powershell
+.\scripts\run_parallel_tests.ps1
+```
+
+It uses up to eight workers with isolated short temp paths. Keep the serial
+command above for bounded-goal verification.
+
 Fallback when using an existing Python environment:
 
 ```powershell

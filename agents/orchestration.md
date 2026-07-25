@@ -39,6 +39,12 @@ their exact cadence without late catch-up. All named tasks now allow battery
 continuation, retain `IgnoreNew`, and have bounded execution limits; the head
 limit remains below the shortest same-task trigger gap.
 
+For fast local feedback, `scripts\run_parallel_tests.ps1` uses file-level
+`pytest-xdist` distribution with up to eight CPU workers and a short unique
+`C:\trpy` base temp path. It preserves failed-run temp evidence, reports a
+successful-run cleanup failure, and is supplemental to the serial bounded-goal
+verification command.
+
 The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
 preparation independently of a scoped SPY failure, while retaining the overall
 collection failure signal and full-index validation contract. Candidate-batch

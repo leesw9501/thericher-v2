@@ -21,3 +21,4 @@ def test_start_preflight_requires_and_reports_only_active_stateboards() -> None:
     assert 'Write-Host "== Active agent stateboards =="' in source
     assert "$required += $activeStateboards" in source
     assert 'Get-ChildItem -LiteralPath "agents" -Filter "*.md"' not in source
+    assert 'Write-Host "Fast local feedback: .\\scripts\\run_parallel_tests.ps1"' in source

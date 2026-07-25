@@ -221,8 +221,8 @@ def test_candidate_replay_comparison_is_offline_and_does_not_read_credentials(
     assert result.comparison_artifact.exists()
 
 
-def test_candidate_replay_comparison_import_keeps_torch_lazy_and_no_kis_paths() -> None:
-    sys.modules.pop("torch", None)
+def test_candidate_replay_comparison_import_keeps_torch_lazy_and_no_kis_paths(monkeypatch) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.candidate_comparison as candidate_comparison
 
     source = Path(candidate_comparison.__file__).read_text(encoding="utf-8").lower()

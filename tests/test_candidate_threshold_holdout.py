@@ -312,8 +312,8 @@ def test_candidate_threshold_holdout_is_offline_and_does_not_read_credentials(
     assert result.holdout_artifact.exists()
 
 
-def test_candidate_threshold_holdout_import_keeps_torch_lazy_and_no_kis_paths() -> None:
-    sys.modules.pop("torch", None)
+def test_candidate_threshold_holdout_import_keeps_torch_lazy_and_no_kis_paths(monkeypatch) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.candidate_threshold_holdout as holdout
 
     source = Path(holdout.__file__).read_text(encoding="utf-8").lower()

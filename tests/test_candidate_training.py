@@ -501,8 +501,8 @@ def test_candidate_training_is_offline_and_does_not_read_credentials(
     assert payload["source_slices"][0]["data_quality"]["blocks_research"] is False
 
 
-def test_candidate_training_import_keeps_torch_lazy() -> None:
-    sys.modules.pop("torch", None)
+def test_candidate_training_import_keeps_torch_lazy(monkeypatch) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.candidate_training as candidate_training
 
     source = Path(candidate_training.__file__).read_text(encoding="utf-8").lower()

@@ -1073,8 +1073,8 @@ def test_research_job_is_offline_and_does_not_read_credentials(
     assert run.job_artifact.exists()
 
 
-def test_research_job_does_not_import_broker_or_torch_on_base_path() -> None:
-    sys.modules.pop("torch", None)
+def test_research_job_does_not_import_broker_or_torch_on_base_path(monkeypatch) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.jobs as jobs
 
     source = Path(jobs.__file__).read_text(encoding="utf-8").lower()

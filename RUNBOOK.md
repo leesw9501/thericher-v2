@@ -900,9 +900,16 @@ For repeatable Windows feedback between goal boundaries, use:
 .\scripts\run_parallel_tests.ps1
 ```
 
-It runs the same suite with four `pytest-xdist` workers and file-level
-distribution. The helper gives each run a short, unique base temp path beneath
-`C:\trpy`; this avoids Windows worker-path length failures without deleting a
-shared temp root. It has no KIS, credential, Docker, market-data, or artifact
-access. The command above is a faster feedback path, not a replacement for the
-authoritative serial verification at a bounded-goal boundary.
+It runs the same suite with up to eight `pytest-xdist` workers (bounded by the
+host CPU count) and file-level distribution. The helper gives each run a short,
+unique base temp path beneath `C:\trpy`; this avoids Windows worker-path length
+failures, cleans a successful run's private temp path, and leaves a failed run
+available for diagnosis. Override the worker count when needed:
+
+```powershell
+.\scripts\run_parallel_tests.ps1 -Workers 4
+```
+
+It has no KIS, credential, Docker, market-data, or artifact access. The command
+above is a faster feedback path, not a replacement for the authoritative serial
+verification at a bounded-goal boundary.

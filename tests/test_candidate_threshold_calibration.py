@@ -310,8 +310,10 @@ def test_candidate_threshold_calibration_is_offline_and_does_not_read_credential
     assert result.calibration_artifact.exists()
 
 
-def test_candidate_threshold_calibration_import_keeps_torch_lazy_and_no_kis_paths() -> None:
-    sys.modules.pop("torch", None)
+def test_candidate_threshold_calibration_import_keeps_torch_lazy_and_no_kis_paths(
+    monkeypatch,
+) -> None:
+    monkeypatch.delitem(sys.modules, "torch", raising=False)
     import thericher_v2.research.candidate_threshold_calibration as calibration
 
     source = Path(calibration.__file__).read_text(encoding="utf-8").lower()
