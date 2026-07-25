@@ -24,7 +24,10 @@ Use the existing metadata-only head-coverage inspector and Task Scheduler result
 as the single recoverability signal for each due collection. The collector now
 returns nonzero for a failed or incomplete target result while preserving safe
 freshness output. This makes the next Docker `--build` run observable without
-adding a scheduler, retry loop, report, or approval gate.
+adding a scheduler, retry loop, report, or approval gate. The current
+`minute_duplicate_conflict` metadata remains source/recovery evidence rather
+than a change cue until a bounded source or synthetic test identifies one exact
+collector defect.
 
 ## External Waits
 

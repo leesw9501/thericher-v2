@@ -32,6 +32,11 @@ a second scheduler or manually duplicate a due collection.
   `02:35`, `04:35`, and `06:20`, has no missed run, and next runs at
   2026-07-28 00:35 KST. It retains one Docker service, the four-page-per-target
   cap, source pacing, strict conflict rejection, and exact session selection.
+- A source-safe static and synthetic review confirms that
+  `minute_duplicate_conflict` can describe a rejected candidate page as well as
+  a retained-row collision. The current short-session metadata therefore does
+  not identify a local cursor, cap, or conflict-rule defect; retain the current
+  collector contract until a new source or test fact identifies one exact change.
 - Daily KIS caches remain source-separated. `QQQ/NAS` and `SPY/AMS` are complete
   at their established historical boundaries; `IWM/AMS` remains `source_limited`
   at its qualified bad-row boundary. Do not repair, mix, or silently extend a
