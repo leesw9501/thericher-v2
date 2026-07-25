@@ -36,6 +36,9 @@ a second scheduler or manually duplicate a due collection.
   at their established historical boundaries; `IWM/AMS` remains `source_limited`
   at its qualified bad-row boundary. Do not repair, mix, or silently extend a
   source-limited target.
+- The data-only daily backfill task completed at 07:00 KST on 2026-07-25 with
+  task result `0`. Its current index is generation `65`; QQQ and SPY remain
+  complete while IWM retains the same scoped `daily_response_invalid` limit.
 - All KIS market-data workers share the measured request-start and token-start
   controls under `D:\market_data`. These controls are transport facts, not
   permission or scheduler latches.
