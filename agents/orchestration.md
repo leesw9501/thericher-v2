@@ -65,6 +65,13 @@ uses file-level distribution. Direct `pytest -n` invocations and concurrent
 full suites are not an equivalent substitute; serial `uv run --extra dev
 pytest -q` remains the authoritative goal-boundary verification.
 
+The intraday-head process now exits nonzero for a collector failure or
+incomplete target result while preserving its existing safe freshness output.
+The next scheduled Docker build will therefore expose that exact run as a
+nonzero existing Task Scheduler result rather than a false success. This is a
+recoverability signal only; it does not add a scheduler, retry loop, or approval
+gate.
+
 At each active checkpoint, compare observed latency, idle resources, repeated
 failure modes, and evidence quality. When one scoped, reversible improvement
 has a clear engine-loop benefit, integrate it before the next company-goal

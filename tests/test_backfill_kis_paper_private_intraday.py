@@ -25,7 +25,7 @@ def test_intraday_backfill_script_requires_explicit_execution_without_credential
         lambda _: (_ for _ in ()).throw(AssertionError("credentials must stay unread")),
     )
 
-    script.main([])
+    assert script.main([]) == 0
 
     assert json.loads(capsys.readouterr().out) == {
         "status": "not_executed",
@@ -115,11 +115,11 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
     monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
     monkeypatch.setattr(script, "run_kis_paper_private_intraday_backfill_cycle", run_cycle)
 
-    script.main(
+    assert script.main(
         ["--execute", "--pages-per-target", "1"],
         clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
         code_revision=lambda _: "git:test",
-    )
+    ) == 0
 
     assert json.loads(capsys.readouterr().out) == {
         "mode": "backfill",
@@ -186,7 +186,7 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
 
     monkeypatch.setattr(script.subprocess, "run", prepare_child)
 
-    script.main(
+    assert script.main(
         [
             "--execute",
             "--mode",
@@ -198,7 +198,7 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
         ],
         clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
         code_revision=lambda _: "git:test",
-    )
+    ) == 0
 
     output = capsys.readouterr().out
     assert "must-not-appear-in-parent-output" not in output
@@ -294,7 +294,7 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
     monkeypatch.setattr(script.subprocess, "run", prepare_child)
     runtime_projection = tmp_path / "runtime" / "freshness.json"
 
-    script.main(
+    assert script.main(
         [
             "--execute",
             "--mode",
@@ -306,7 +306,7 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
         ],
         clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
         code_revision=lambda _: "git:test",
-    )
+    ) == 0
 
     assert json.loads(capsys.readouterr().out) == {
         "freshness_projection": "written",
@@ -370,16 +370,74 @@ def test_intraday_head_does_not_prepare_after_collector_failure(
             ),
         )
 
-    script.main(
+    assert script.main(
         ["--execute", "--mode", "head"],
         code_revision=lambda _: "git:test",
-    )
+    ) == 1
 
     assert json.loads(capsys.readouterr().out) == {
         "reason": "config_missing" if failure_stage == "config" else "auth_rejected",
         "status": "not_executed",
     }
     assert child_calls == []
+
+
+@pytest.mark.parametrize("status", ("locked", "partial", "rejected"))
+def test_intraday_head_returns_nonzero_for_incomplete_collector_results(
+    monkeypatch,
+    capsys,
+    status: str,
+) -> None:
+    script = _load_script()
+    child_calls: list[object] = []
+    monkeypatch.setattr(script, "_load_paper_config", lambda _: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "run_kis_paper_private_intraday_backfill_cycle",
+        lambda **_kwargs: (
+            KisPaperPrivateIntradayBackfillRun(
+                status=status,
+                target_key="QQQ/NAS/1m",
+                row_count=0,
+                exact_overlap_rows=0,
+                reason="collector_incomplete",
+            ),
+        ),
+    )
+    monkeypatch.setattr(
+        script.subprocess,
+        "run",
+        lambda *args, **kwargs: child_calls.append((args, kwargs)),
+    )
+
+    assert script.main(
+        ["--execute", "--mode", "head"],
+        code_revision=lambda _: "git:test",
+    ) == 1
+
+    assert json.loads(capsys.readouterr().out) == {
+        "mode": "head",
+        "status": "incomplete",
+        "targets": [
+            {
+                "exact_overlap_rows": 0,
+                "reason": "collector_incomplete",
+                "row_count": 0,
+                "status": status,
+                "target_key": "QQQ/NAS/1m",
+            }
+        ],
+    }
+    assert child_calls == []
+
+
+def test_intraday_script_module_entrypoint_forwards_main_exit_code() -> None:
+    source = (
+        Path(__file__).parents[1] / "scripts" / "backfill_kis_paper_private_intraday.py"
+    ).read_text(encoding="utf-8")
+
+    assert 'if __name__ == "__main__":\n    raise SystemExit(main())' in source
 
 
 def test_intraday_head_docker_profile_mounts_only_the_explicit_preparation_artifact_root() -> None:

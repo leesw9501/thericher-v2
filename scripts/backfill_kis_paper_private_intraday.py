@@ -51,7 +51,7 @@ def main(
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     dotenv_path: Path = _REPO_ROOT / ".env",
     code_revision: Callable[[Path], str] | None = None,
-) -> None:
+) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--project-only", action="store_true")
@@ -83,10 +83,10 @@ def main(
                 sort_keys=True,
             )
         )
-        return
+        return 0
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
-        return
+        return 0
     if args.pages_per_target <= 0:
         parser.error("--pages-per-target must be positive")
 
@@ -126,7 +126,7 @@ def main(
             runtime_projection=args.runtime_projection,
             observed_at=observed_at,
         )
-        return
+        return 1
     except (OSError, ValueError):
         _print_with_optional_freshness(
             {"status": "indeterminate", "reason": "backfill_worker_unavailable"},
@@ -134,9 +134,10 @@ def main(
             runtime_projection=args.runtime_projection,
             observed_at=observed_at,
         )
-        return
+        return 1
+    collection_succeeded = _collection_succeeded(results)
     payload: dict[str, object] = {
-        "status": "complete",
+        "status": "complete" if collection_succeeded else "incomplete",
         "mode": args.mode,
         "targets": [
             {
@@ -161,8 +162,9 @@ def main(
             runtime_projection=args.runtime_projection,
             observed_at=observed_at,
         )
-        return
+        return 0 if collection_succeeded else 1
     print(json.dumps(payload, sort_keys=True))
+    return 0 if collection_succeeded else 1
 
 
 def _current_code_revision(repo_root: Path) -> str:
@@ -203,6 +205,13 @@ def _load_paper_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
 def _preparation_artifact_root_from_environment() -> Path:
     configured = os.environ.get("THERICHER_MODEL_ARTIFACT_ROOT")
     return Path(configured) if configured else _DEFAULT_PREPARATION_ARTIFACT_ROOT
+
+
+def _collection_succeeded(results: Sequence[KisPaperPrivateIntradayBackfillRun]) -> bool:
+    return bool(results) and all(
+        result.status in {"collected", "recovered", "source_exhausted"}
+        for result in results
+    )
 
 
 def _head_collection_succeeded(
@@ -324,4 +333,4 @@ def _print_with_optional_freshness(
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

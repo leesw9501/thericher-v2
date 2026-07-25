@@ -133,6 +133,11 @@ as a failed collection or an authority hold.
   establish that page size, duplicate handling, timestamps, or the four-page
   cap is the cause, so the smallest recovery is to retain the installed
   cadence and strict selector unchanged for the next due collection.
+- The collector now preserves its safe JSON/freshness behavior while returning
+  a nonzero process result for outer worker failures and `locked`, `partial`,
+  or `rejected` collection outcomes. The next Docker `--build` run therefore
+  makes a failed head cycle visible through the existing Windows task result;
+  no second worker, report, or retry latch is introduced.
 - `data.kis_paper_intraday_index_metadata` is the shared, metadata-only v1
   cache contract for the writer and prospective observer. It validates index
   structure and retained-chunk lineage without opening raw files; the existing
