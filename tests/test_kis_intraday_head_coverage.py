@@ -56,6 +56,7 @@ def test_head_coverage_reports_short_ranges_and_manifest_continuation_without_ra
     assert result.continuation_category == "mixed"
     assert result.exact_overlap_category == "exact_overlap"
     assert result.exact_overlap_row_count == 2
+    assert result.last_reason_category == "minute_duplicate_conflict"
     assert result.conflicting_overlap_category == "none"
     assert [item.session_date for item in result.session_coverage] == [
         date(2026, 7, 21),
