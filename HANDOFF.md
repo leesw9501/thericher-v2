@@ -141,6 +141,17 @@ or cap recovery, so the cadence and strict selector remain unchanged. Only an
 exact 390-minute QQQ union may become a future Research input; any short or
 gapped union remains Data evidence only.
 
+A bounded recovery hardening now rejects an entire candidate batch if its own
+minute rows conflict, so an earlier page from that batch cannot become a
+retained prefix or move a cursor. Explicitly marked legacy candidate-batch
+conflict chunks remain audit evidence but are excluded from cache/session
+consumption. The outer collector is complete only when it returns both expected
+QQQ and SPY outcomes; a QQQ recovery may still run the existing QQQ-only
+preparation child while the outer result truthfully remains incomplete. The
+future offline observation accepts only canonical planned local-paper event
+streams, and missing/mismatched Paper state stays categorical unavailable
+evidence rather than a false submission or terminal claim.
+
 The first receipt-linked Paper observer is now invoked automatically by the
 scheduled daily SPY session after that same session has produced its exact
 receipt-derived run ID; the separate `kis-paper-receipt-observer` Docker

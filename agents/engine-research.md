@@ -71,6 +71,10 @@ replacement, public exposure, or a live-money boundary.
 - Preserve chronological session boundaries, source identity, leakage controls,
   and immutable campaign attempt identities. Do not reinterpret old metrics as
   a current signal.
+- Reconstruct a prospective local-paper receipt only from canonical current
+  schema events that exactly match its frozen decision/fill plan. Extra,
+  malformed, unplanned, or non-local-paper events fail the receipt rather than
+  being normalized into a result.
 
 ## Recovery
 

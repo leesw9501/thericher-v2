@@ -219,6 +219,14 @@ def load_verified_kis_paper_private_intraday_catalog(
             continue
         if chunk.get("outcome") not in {"committed", "partial"}:
             raise ValueError("private intraday index is invalid")
+        # Preserve the original bytes for audit, but never consume a legacy
+        # partial chunk whose own candidate batch contained conflicting rows.
+        if (
+            chunk.get("outcome") == "partial"
+            and chunk.get("reason") == "minute_duplicate_conflict"
+            and chunk.get("conflict_origin") == "candidate_batch"
+        ):
+            continue
         manifest_path, manifest_hash, raw_hash = _chunk_paths(root=root, chunk=chunk)
         manifest_bytes = _read_bytes(manifest_path, "private intraday manifest is invalid")
         if _sha256(manifest_bytes) != manifest_hash:

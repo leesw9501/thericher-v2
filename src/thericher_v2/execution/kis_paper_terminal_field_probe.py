@@ -183,6 +183,17 @@ def _probe_state(
             status="unavailable",
             reason_code="state_run_mismatch",
         )
+    if (
+        state.intent.client_order_id != f"canary-{requested_run_id}"
+        or state.intent.decision_id != requested_run_id
+    ):
+        return KisPaperTerminalFieldProbeOutcome(
+            run_ref=run_ref,
+            state_phase=None,
+            observed_at=observed_at,
+            status="unavailable",
+            reason_code="state_receipt_identity_mismatch",
+        )
     # This endpoint contract is intentionally scoped to the current SPY/AMEX Paper lane.
     if state.intent.symbol != "SPY" or state.intent.exchange != "AMEX":
         return KisPaperTerminalFieldProbeOutcome(

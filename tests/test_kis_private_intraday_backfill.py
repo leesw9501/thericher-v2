@@ -596,7 +596,7 @@ def test_candidate_batch_conflict_is_recorded_without_a_snapshot_or_cursor_advan
     assert qqq["chunks"] == []
 
 
-def test_candidate_batch_partial_snapshot_preserves_origin_on_orphan_recovery(
+def test_candidate_batch_conflict_after_an_accepted_page_never_retains_a_prefix(
     tmp_path: Path,
 ) -> None:
     repo_root = tmp_path / "repo"
@@ -614,7 +614,7 @@ def test_candidate_batch_partial_snapshot_preserves_origin_on_orphan_recovery(
         last=first_rows[0].last + Decimal("1"),
         volume=first_rows[0].volume,
     )
-    run_kis_paper_private_intraday_backfill_cycle(
+    results = run_kis_paper_private_intraday_backfill_cycle(
         client=_MinuteClient(
             [
                 _page(
@@ -643,41 +643,12 @@ def test_candidate_batch_partial_snapshot_preserves_origin_on_orphan_recovery(
     index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
-    orphan_chunk = qqq["chunks"][0]
-    assert orphan_chunk["outcome"] == "partial"
-    assert orphan_chunk["conflict_origin"] == "candidate_batch"
-    qqq["chunks"] = [
-        {
-            "chunk_key": orphan_chunk["chunk_key"],
-            "raw_market_data_retained": False,
-            "historical_note": "recovery marker",
-        }
-    ]
-    qqq["next_cursor"] = None
-    qqq["last_reason"] = None
-    qqq["last_conflict_origin"] = None
-    index_path.write_text(json.dumps(index), encoding="utf-8")
-
-    recovery = _MinuteClient([])
-    recovered = run_kis_paper_private_intraday_backfill_cycle(
-        client=recovery,
-        cache_root=cache_root,
-        repo_root=repo_root,
-        code_revision="git:test",
-        pages_per_target=2,
-        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
-        sleeper=lambda _seconds: None,
-        monotonic_clock=lambda: 0.0,
-    )
-
-    assert [(result.target_key, result.status) for result in recovered] == [
-        ("QQQ/NAS/1m", "recovered")
-    ]
-    assert recovery.queries == []
-    index = json.loads(index_path.read_text(encoding="utf-8"))
-    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert results[0].status == "rejected"
+    assert results[0].reason == "minute_duplicate_conflict"
     assert qqq["last_reason"] == "minute_duplicate_conflict"
     assert qqq["last_conflict_origin"] == "candidate_batch"
+    assert qqq["next_cursor"] is None
+    assert qqq["chunks"] == []
 
 
 def test_legacy_duplicate_conflict_recovery_keeps_origin_unrecorded() -> None:

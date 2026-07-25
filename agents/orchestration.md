@@ -37,12 +37,16 @@ routine scheduler edit cannot silently break the exact-receipt handoff.
 
 The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
 preparation independently of a scoped SPY failure, while retaining the overall
-collection failure signal and full-index validation contract.
+collection failure signal and full-index validation contract. Candidate-batch
+conflicts now discard the whole candidate prefix, and legacy explicitly marked
+conflict chunks are audit-only rather than a valid completion input.
 
 At each bounded integration, inspect whether an integrity check binds unrelated
 future progress or whether recovery accepts duplicate evidence. Keep selected
 input identity fail-closed, but allow append-only, non-selected metadata to
-advance; reject duplicate decision events during reconstruction.
+advance; reject duplicate decision or fill evidence during reconstruction. A
+missing or identity-mismatched Paper state is unavailable evidence, not a
+submission/terminal inference.
 
 ## External Waits
 

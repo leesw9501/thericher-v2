@@ -37,6 +37,10 @@ a second scheduler or manually duplicate a due collection.
   a retained-row collision. The current short-session metadata therefore does
   not identify a local cursor, cap, or conflict-rule defect; retain the current
   collector contract until a new source or test fact identifies one exact change.
+- A candidate-batch conflict now rejects the whole candidate, including any
+  earlier accepted page, with no snapshot or cursor advance. An explicitly
+  marked legacy candidate-batch partial remains audit evidence only and is
+  excluded from completion selection and offline cache consumption.
 - Daily KIS caches remain source-separated. `QQQ/NAS` and `SPY/AMS` are complete
   at their established historical boundaries; `IWM/AMS` remains `source_limited`
   at its qualified bad-row boundary. Do not repair, mix, or silently extend a
@@ -59,8 +63,9 @@ a second scheduler or manually duplicate a due collection.
   relabel, or repair minute rows from another source.
 - A future `minute_duplicate_conflict` records only the closed safe origin
   `candidate_batch` or `retained_cache`; a legacy missing field is
-  `not_recorded`. This is recovery diagnosis only and never changes session
-  selection, preparation status, pacing, or scheduler behavior.
+  `not_recorded`. A candidate-batch conflict rejects its full candidate, while
+  a legacy explicitly marked candidate-batch chunk is not a usable cache input.
+  Neither fact changes pacing, schedule ownership, or another lane's authority.
 - The head-index SHA-256 is exact persisted-byte preparation provenance; do not
   hash decoded text because newline translation can change a valid record.
   Offline verification instead binds the frozen first-five QQQ dates and their
@@ -76,7 +81,8 @@ a second scheduler or manually duplicate a due collection.
   `incomplete`. The preparer still validates the full expected index shape.
 - The collector preserves safe JSON/freshness behavior while returning a
   nonzero process result for outer worker failures and `locked`, `partial`, or
-  `rejected` collection outcomes. Existing Task Scheduler state therefore
+  `rejected` collection outcomes. A complete outer result requires exactly the
+  expected QQQ and SPY target outcomes. Existing Task Scheduler state therefore
   exposes that exact failed run without a second worker or retry latch.
 
 ## Ready Queue

@@ -38,6 +38,19 @@ class KisPaperPrivateIntradayV1RetainedChunkMetadata:
     output_cursor: Mapping[str, str] | None
     rows: tuple[tuple[str, str], ...]
     collected_at: datetime
+    outcome: str
+    reason: str | None
+    conflict_origin: str | None
+
+    @property
+    def candidate_batch_conflicted(self) -> bool:
+        """Whether this retained historical chunk came from an invalid candidate batch."""
+
+        return (
+            self.outcome == "partial"
+            and self.reason == "minute_duplicate_conflict"
+            and self.conflict_origin == "candidate_batch"
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -182,8 +195,9 @@ def _parse_retained_chunk(
     output_cursor = _cursor_document(document.get("output_cursor"))
     fingerprints_document = document.get("row_fingerprints")
     collected_at_document = document.get("collected_at_utc")
+    outcome = document.get("outcome")
     if (
-        document.get("outcome") not in {"committed", "partial"}
+        outcome not in {"committed", "partial"}
         or not isinstance(document.get("manifest_path"), str)
         or not _is_sha256(document.get("manifest_hash"))
         or not _is_sha256(document.get("raw_sha256"))
@@ -206,6 +220,7 @@ def _parse_retained_chunk(
         reason=reason,
         field="conflict_origin",
     )
+    conflict_origin = document.get("conflict_origin")
 
     rows = tuple(fingerprints_document.items())
     if len(rows) != document["row_count"]:
@@ -232,6 +247,9 @@ def _parse_retained_chunk(
         output_cursor=output_cursor,
         rows=rows,
         collected_at=collected_at,
+        outcome=outcome,
+        reason=reason,
+        conflict_origin=conflict_origin if isinstance(conflict_origin, str) else None,
     )
 
 

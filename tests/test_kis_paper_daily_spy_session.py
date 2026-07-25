@@ -380,7 +380,7 @@ def test_daily_session_observer_receives_only_the_completed_canary_run(
     assert captured["run_id"] == outcome.run_id
     assert outcome.observation.run_id == outcome.run_id
     assert outcome.observation.receipt_ref == outcome.receipt_ref
-    assert outcome.observation.lifecycle_state == "not_submitted"
+    assert outcome.observation.lifecycle_state == "unavailable"
     assert outcome.observation.reason_code == "state_missing"
     assert captured["execute"] is True
 

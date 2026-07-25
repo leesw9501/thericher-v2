@@ -221,6 +221,57 @@ def test_runner_recovery_rejects_duplicate_decision_event(tmp_path: Path) -> Non
         )
 
 
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        lambda records: records[0].update({"unexpected": "field"}),
+        lambda records: records[0].update({"schema_version": 0}),
+        lambda records: next(
+            record for record in records if record["event_type"] == "fill"
+        )["payload"].update({"quantity": "not-a-decimal"}),
+        lambda records: records.append(
+            {
+                **next(record for record in records if record["event_type"] == "fill"),
+                "seq": len(records) + 1,
+            }
+        ),
+        lambda records: next(
+            record for record in records if record["event_type"] == "fill"
+        )["payload"].update({"symbol": "unexpected"}),
+    ],
+    ids=["extra-envelope-field", "wrong-schema", "invalid-quantity", "extra-fill", "wrong-symbol"],
+)
+def test_runner_recovery_rejects_noncanonical_or_unplanned_event_evidence(
+    tmp_path: Path,
+    mutate,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    first = run_kis_intraday_prospective_observation(
+        _observation_input(),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+    )
+    event_path = (
+        _run_directory(artifact_root, first.consumer.frozen_model_receipt.receipt_hash)
+        / "events"
+        / "always_long.jsonl"
+    )
+    records = [json.loads(line) for line in event_path.read_text(encoding="utf-8").splitlines()]
+    mutate(records)
+    event_path.write_text(
+        "\n".join(json.dumps(record, sort_keys=True) for record in records) + "\n",
+        encoding="utf-8",
+    )
+    first.summary_path.unlink()
+
+    with pytest.raises(ValueError, match="event evidence"):
+        run_kis_intraday_prospective_observation(
+            _observation_input(),
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+        )
+
+
 def test_runner_rebuilds_only_missing_safe_candidate_stream(tmp_path: Path) -> None:
     artifact_root = tmp_path / "model-artifacts"
     first = run_kis_intraday_prospective_observation(

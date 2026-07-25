@@ -8,7 +8,8 @@ import os
 import uuid
 from collections.abc import Mapping
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 from thericher_v2.contracts import SCHEMA_VERSION, EmergencyState
@@ -17,7 +18,7 @@ from thericher_v2.data.kis_intraday_prospective_observation import (
 )
 from thericher_v2.data.resample import SessionWindow
 from thericher_v2.execution import LOCAL_PAPER_SOURCE
-from thericher_v2.state import Event, EventStore
+from thericher_v2.state import Event
 
 from .kis_intraday_prospective_observation_consumer import (
     KIS_INTRADAY_PROSPECTIVE_OBSERVATION_CANDIDATES,
@@ -36,6 +37,10 @@ _RUN_DIRECTORY_NAME = "kis-intraday-prospective-observation"
 _EVENTS_DIRECTORY_NAME = "events"
 _FROZEN_MODEL_RECEIPT_NAME = "frozen-model-receipt.json"
 _SUMMARY_NAME = "summary.json"
+_EVENT_RECORD_KEYS = frozenset(
+    {"schema_version", "seq", "event_type", "created_at", "payload"}
+)
+_LOCAL_PAPER_QUANTITY = Decimal("1")
 
 
 @dataclass(frozen=True)
@@ -181,12 +186,18 @@ def _candidate_payloads(
 ) -> tuple[tuple[dict[str, object], ...], bool]:
     events_directory = _events_directory(run_directory)
     _prepare_events_directory(events_directory)
+    expected_market, expected_symbol = _planned_instrument(consumer)
     payloads: list[dict[str, object]] = []
     any_replayed = False
     for plan in consumer.candidate_replay_plans:
         event_path = events_directory / f"{plan.candidate_id}.jsonl"
         if event_path.exists() or event_path.is_symlink():
-            events = _read_sanitized_events(event_path, plan=plan)
+            events = _read_sanitized_events(
+                event_path,
+                plan=plan,
+                expected_market=expected_market,
+                expected_symbol=expected_symbol,
+            )
         else:
             events = _run_ephemeral_candidate_replay(consumer=consumer, plan=plan)
             _write_events_new(event_path, events)
@@ -338,6 +349,7 @@ def _session_payloads(
     candidate_payloads: tuple[dict[str, object], ...],
 ) -> list[dict[str, object]]:
     events_directory = _events_directory(run_directory)
+    expected_market, expected_symbol = _planned_instrument(consumer)
     payload_by_id = {str(item["candidate_id"]): item for item in candidate_payloads}
     plans = {plan.candidate_id: plan for plan in consumer.candidate_replay_plans}
     sessions: list[dict[str, object]] = []
@@ -352,6 +364,8 @@ def _session_payloads(
             events = _read_sanitized_events(
                 events_directory / f"{candidate_id}.jsonl",
                 plan=plan,
+                expected_market=expected_market,
+                expected_symbol=expected_symbol,
             )
             session_events = tuple(
                 event
@@ -396,49 +410,148 @@ def _read_sanitized_events(
     event_path: Path,
     *,
     plan: KisIntradayProspectiveCandidateReplayPlan,
+    expected_market: str,
+    expected_symbol: str,
 ) -> tuple[Event, ...]:
     if event_path.is_symlink() or not event_path.is_file():
         raise ValueError("prospective observation event evidence is invalid")
     try:
-        events = tuple(EventStore(event_path.with_suffix(".sqlite"), event_path).iter_events())
-    except (OSError, ValueError) as error:
+        events = tuple(
+            _event_from_strict_record(record)
+            for record in _strict_event_records(event_path)
+        )
+    except (OSError, UnicodeDecodeError, ValueError, json.JSONDecodeError, TypeError) as error:
         raise ValueError("prospective observation event evidence is invalid") from error
-    expected_times = frozenset(plan.model.samples_by_decision_end)
-    decision_times: list[datetime] = []
-    for expected_sequence, event in enumerate(events, start=1):
-        if event.seq != expected_sequence:
-            raise ValueError("prospective observation event evidence is invalid")
-        if event.event_type == "ensemble_decision":
-            if (
-                event.created_at not in expected_times
-                or set(event.payload) != {"source", "candidate_id", "action"}
-                or event.payload.get("source") != LOCAL_PAPER_SOURCE
-                or event.payload.get("candidate_id") != plan.candidate_id
-                or event.payload.get("action") not in {"buy", "hold", "sell"}
-            ):
-                raise ValueError("prospective observation event evidence is invalid")
-            decision_times.append(event.created_at)
-        elif event.event_type == "fill":
-            if (
-                set(event.payload)
-                != {"source", "candidate_id", "market", "symbol", "side", "quantity"}
-                or event.payload.get("source") != LOCAL_PAPER_SOURCE
-                or event.payload.get("candidate_id") != plan.candidate_id
-                or event.payload.get("side") not in {"buy", "sell"}
-                or not isinstance(event.payload.get("market"), str)
-                or not isinstance(event.payload.get("symbol"), str)
-                or not isinstance(event.payload.get("quantity"), str)
-            ):
-                raise ValueError("prospective observation event evidence is invalid")
-        else:
-            raise ValueError("prospective observation event evidence is invalid")
-    if (
-        not events
-        or frozenset(decision_times) != expected_times
-        or len(decision_times) != len(expected_times)
-    ):
+    cursor = 0
+    for expected_time, sample in sorted(plan.model.samples_by_decision_end.items()):
+        decision = _next_replayed_event(events, cursor)
+        action = _validate_replayed_decision(
+            decision,
+            expected_time=expected_time,
+            candidate_id=plan.candidate_id,
+        )
+        cursor += 1
+        if action == "buy":
+            _validate_replayed_fill(
+                _next_replayed_event(events, cursor),
+                expected_time=sample.entry_start,
+                expected_side="buy",
+                candidate_id=plan.candidate_id,
+                expected_market=expected_market,
+                expected_symbol=expected_symbol,
+            )
+            cursor += 1
+            _validate_replayed_fill(
+                _next_replayed_event(events, cursor),
+                expected_time=sample.exit_start,
+                expected_side="sell",
+                candidate_id=plan.candidate_id,
+                expected_market=expected_market,
+                expected_symbol=expected_symbol,
+            )
+            cursor += 1
+    if not events or cursor != len(events):
         raise ValueError("prospective observation event evidence is invalid")
     return events
+
+
+def _strict_event_records(event_path: Path) -> tuple[dict[str, object], ...]:
+    records: list[dict[str, object]] = []
+    for line in event_path.read_text(encoding="utf-8").splitlines():
+        if not line:
+            raise ValueError("event record is invalid")
+        record = json.loads(line)
+        if not isinstance(record, dict) or set(record) != _EVENT_RECORD_KEYS:
+            raise ValueError("event record is invalid")
+        if (
+            type(record["schema_version"]) is not int
+            or record["schema_version"] != SCHEMA_VERSION
+            or type(record["seq"]) is not int
+            or not isinstance(record["event_type"], str)
+            or not record["event_type"]
+            or not isinstance(record["created_at"], str)
+            or not isinstance(record["payload"], dict)
+        ):
+            raise ValueError("event record is invalid")
+        parsed = datetime.fromisoformat(record["created_at"])
+        if parsed.tzinfo is None or parsed.utcoffset() != timedelta(0):
+            raise ValueError("event record is invalid")
+        records.append(record)
+    return tuple(records)
+
+
+def _event_from_strict_record(record: dict[str, object]) -> Event:
+    return Event.from_record(record)
+
+
+def _next_replayed_event(events: tuple[Event, ...], cursor: int) -> Event:
+    if cursor >= len(events):
+        raise ValueError("prospective observation event evidence is invalid")
+    event = events[cursor]
+    if event.seq != cursor + 1:
+        raise ValueError("prospective observation event evidence is invalid")
+    return event
+
+
+def _validate_replayed_decision(
+    event: Event,
+    *,
+    expected_time: datetime,
+    candidate_id: str,
+) -> str:
+    action = event.payload.get("action")
+    if (
+        event.event_type != "ensemble_decision"
+        or event.created_at != expected_time
+        or set(event.payload) != {"source", "candidate_id", "action"}
+        or event.payload.get("source") != LOCAL_PAPER_SOURCE
+        or event.payload.get("candidate_id") != candidate_id
+        or action not in {"buy", "hold", "sell"}
+    ):
+        raise ValueError("prospective observation event evidence is invalid")
+    return str(action)
+
+
+def _validate_replayed_fill(
+    event: Event,
+    *,
+    expected_time: datetime,
+    expected_side: str,
+    candidate_id: str,
+    expected_market: str,
+    expected_symbol: str,
+) -> None:
+    quantity = event.payload.get("quantity")
+    if (
+        event.event_type != "fill"
+        or event.created_at != expected_time
+        or set(event.payload)
+        != {"source", "candidate_id", "market", "symbol", "side", "quantity"}
+        or event.payload.get("source") != LOCAL_PAPER_SOURCE
+        or event.payload.get("candidate_id") != candidate_id
+        or event.payload.get("market") != expected_market
+        or event.payload.get("symbol") != expected_symbol
+        or event.payload.get("side") != expected_side
+        or not isinstance(quantity, str)
+    ):
+        raise ValueError("prospective observation event evidence is invalid")
+    try:
+        parsed_quantity = Decimal(quantity)
+    except InvalidOperation as error:
+        raise ValueError("prospective observation event evidence is invalid") from error
+    if not parsed_quantity.is_finite() or parsed_quantity != _LOCAL_PAPER_QUANTITY:
+        raise ValueError("prospective observation event evidence is invalid")
+
+
+def _planned_instrument(
+    consumer: KisIntradayProspectiveObservationConsumer,
+) -> tuple[str, str]:
+    instruments = {
+        (bar.market, bar.symbol) for bar in consumer.prospective_cataloged_bars.bars
+    }
+    if len(instruments) != 1:
+        raise ValueError("prospective observation instrument is invalid")
+    return next(iter(instruments))
 
 
 def _prepare_events_directory(events_directory: Path) -> None:

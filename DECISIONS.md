@@ -5034,3 +5034,29 @@ Reason: source metadata falsifies a selector relaxation or completion-promotion
 change as the current recovery. The missing early window is the smallest
 reversible coverage change; the next scheduled result, not the new schedule
 itself, will determine whether collection coverage improves.
+
+## 2026-07-25 - Fail closed on prospective evidence that cannot be replayed exactly
+
+Decision: a minute duplicate discovered inside one candidate batch rejects the
+entire candidate, including any earlier accepted page from that invocation. It
+writes no retained snapshot and does not advance the cursor. Explicitly marked
+legacy `candidate_batch` conflict chunks remain immutable audit evidence, but
+the metadata selectors and offline loader exclude them from session completion
+and feature inputs. The outer collector reports `complete` only when it returns
+exactly one successful outcome for both expected QQQ and SPY targets; a scoped
+QQQ recovery may still drive the existing QQQ-only preparation child while the
+outer result remains `incomplete`.
+
+The prospective local-paper receipt recovery now accepts only canonical current
+schema event envelopes, contiguous sequence numbers, and the frozen plan's
+chronological decision stream. Each buy decision must carry exactly its planned
+local-paper buy and sell fills at the planned timestamps, instrument, and one
+share quantity; non-buy decisions carry no fill. Extra, malformed, or
+unplanned events fail the receipt reconstruction. A missing Paper receipt state
+is `unavailable`, not proof of `not_submitted`, and the terminal-field probe
+checks run, client-order, and decision identity before any history read.
+
+Reason: these are narrow provenance and recovery properties. They prevent an
+invalid cached prefix, malformed replay, or mismatched private state from
+becoming a false data, execution, or PnL claim without adding a scheduler,
+approval step, broker side effect, or model-selection path.

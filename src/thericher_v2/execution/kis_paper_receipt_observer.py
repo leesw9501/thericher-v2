@@ -256,7 +256,7 @@ def _observe_private_state(
     max_account_fact_age: timedelta,
 ) -> KisPaperReceiptObservation:
     if private_state is None:
-        return _not_submitted_observation(run_id, observed_at, reason_code="state_missing")
+        return _unavailable_observation(run_id, observed_at, reason_code="state_missing")
     if private_state.phase == "intent_recorded":
         return _not_submitted_observation(
             run_id,
@@ -484,7 +484,7 @@ def _not_submitted_observation(
     observed_at: datetime,
     *,
     private_state: _PrivateReceiptIntentState | None = None,
-    reason_code: Literal["state_missing", "intent_not_submitted", "provider_rejected"],
+    reason_code: Literal["intent_not_submitted", "provider_rejected"],
 ) -> KisPaperReceiptObservation:
     return KisPaperReceiptObservation(
         run_id=run_id,
@@ -508,7 +508,7 @@ def _unavailable_observation(
     run_id: str,
     observed_at: datetime,
     *,
-    reason_code: Literal["state_invalid"],
+    reason_code: Literal["state_missing", "state_invalid"],
 ) -> KisPaperReceiptObservation:
     return KisPaperReceiptObservation(
         run_id=run_id,

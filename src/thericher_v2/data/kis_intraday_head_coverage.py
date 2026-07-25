@@ -357,6 +357,8 @@ def _first_seen_completion(
     fingerprints: dict[str, str] = {}
     retained_fingerprint_conflict = False
     for chunk in chunks:
+        if chunk.candidate_batch_conflicted:
+            continue
         for row_key, fingerprint in chunk.rows:
             prior = fingerprints.get(row_key)
             if prior is not None:

@@ -7,6 +7,8 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryIntent,
     KisPaperCanaryState,
@@ -195,18 +197,53 @@ def test_state_run_mismatch_needs_no_credential_or_network_access(tmp_path: Path
     assert result.outcome.field_observation is None
 
 
+@pytest.mark.parametrize(
+    ("client_order_id", "decision_id"),
+    [
+        ("canary-other-run", RUN_ID),
+        (f"canary-{RUN_ID}", "other-decision"),
+    ],
+)
+def test_state_receipt_identity_mismatch_needs_no_credential_or_network_access(
+    tmp_path: Path,
+    client_order_id: str,
+    decision_id: str,
+) -> None:
+    _write_state(
+        tmp_path,
+        client_order_id=client_order_id,
+        decision_id=decision_id,
+    )
+
+    result = probe_kis_paper_terminal_fields(
+        run_id=RUN_ID,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private" / "canary",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        now=NOW,
+    )
+
+    assert result.outcome.status == "unavailable"
+    assert result.outcome.reason_code == "state_receipt_identity_mismatch"
+    assert result.outcome.field_observation is None
+
+
 def _write_state(
     tmp_path: Path,
     *,
     state_run_id: str = RUN_ID,
     submitted_at: datetime | None = SUBMITTED_AT,
+    client_order_id: str | None = None,
+    decision_id: str | None = None,
 ) -> Path:
     state_path = tmp_path / "private" / "canary" / f"{RUN_ID}.json"
     state_path.parent.mkdir(parents=True)
     intent = KisPaperCanaryIntent(
         run_id=state_run_id,
-        client_order_id=f"canary-{state_run_id}",
-        decision_id=state_run_id,
+        client_order_id=client_order_id or f"canary-{state_run_id}",
+        decision_id=decision_id or state_run_id,
         symbol="SPY",
         exchange="AMEX",
         quantity=Decimal("1"),

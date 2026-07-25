@@ -493,6 +493,8 @@ def _complete_regular_sessions(
     first_seen_fingerprints: dict[str, str] = {}
     try:
         for chunk in chunks:
+            if chunk.candidate_batch_conflicted:
+                continue
             for row_key, fingerprint in chunk.rows:
                 if row_key in first_seen_completion:
                     if first_seen_fingerprints[row_key] != fingerprint:

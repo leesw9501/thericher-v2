@@ -497,7 +497,9 @@ def _collect_target(
             if isinstance(error, _CandidateBatchDuplicateConflict)
             else None
         )
-        if not rows_by_key:
+        # A conflicting candidate batch has no trustworthy prefix. Keeping an
+        # earlier page would let an invalid batch later complete a session.
+        if not rows_by_key or conflict_origin == "candidate_batch":
             return _CollectedTarget(
                 target=target,
                 input_cursor=input_cursor,

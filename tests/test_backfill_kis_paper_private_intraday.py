@@ -110,6 +110,13 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
                 row_count=120,
                 exact_overlap_rows=0,
             ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="source_exhausted",
+                target_key="SPY/AMS/1m",
+                row_count=0,
+                exact_overlap_rows=0,
+                reason="source_exhausted",
+            ),
         )
 
     monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
@@ -131,6 +138,13 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
                 "row_count": 120,
                 "status": "recovered",
                 "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": "source_exhausted",
+                "row_count": 0,
+                "status": "source_exhausted",
+                "target_key": "SPY/AMS/1m",
             }
         ],
     }
@@ -164,6 +178,12 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
             KisPaperPrivateIntradayBackfillRun(
                 status="collected",
                 target_key="QQQ/NAS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="SPY/AMS/1m",
                 row_count=120,
                 exact_overlap_rows=0,
             ),
@@ -213,6 +233,13 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "SPY/AMS/1m",
             }
         ],
     }
@@ -277,6 +304,12 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
                 row_count=120,
                 exact_overlap_rows=0,
             ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="SPY/AMS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
         ),
     )
     monkeypatch.setattr(
@@ -323,6 +356,13 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "SPY/AMS/1m",
             }
         ],
     }
@@ -551,6 +591,12 @@ def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
                 row_count=120,
                 exact_overlap_rows=0,
             ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="SPY/AMS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
         )
 
     monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
@@ -572,6 +618,13 @@ def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "SPY/AMS/1m",
             }
         ],
     }

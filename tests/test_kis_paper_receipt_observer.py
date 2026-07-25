@@ -189,7 +189,7 @@ def test_intent_only_and_missing_state_need_no_credentials_network_or_order_requ
 
     assert intent_only.observation.lifecycle_state == "not_submitted"
     assert intent_only.observation.reason_code == "intent_not_submitted"
-    assert missing.observation.lifecycle_state == "not_submitted"
+    assert missing.observation.lifecycle_state == "unavailable"
     assert missing.observation.reason_code == "state_missing"
     assert intent_only.observation.pnl_status == missing.observation.pnl_status == "not_observed"
 

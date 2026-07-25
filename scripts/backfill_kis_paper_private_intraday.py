@@ -210,9 +210,16 @@ def _preparation_artifact_root_from_environment() -> Path:
 
 
 def _collection_succeeded(results: Sequence[KisPaperPrivateIntradayBackfillRun]) -> bool:
-    return bool(results) and all(
-        result.status in {"collected", "recovered", "source_exhausted"}
-        for result in results
+    expected_targets = {
+        f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+    }
+    return (
+        len(results) == len(expected_targets)
+        and {result.target_key for result in results} == expected_targets
+        and all(
+            result.status in {"collected", "recovered", "source_exhausted"}
+            for result in results
+        )
     )
 
 

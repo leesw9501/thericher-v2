@@ -47,6 +47,9 @@ or PnL from incomplete evidence.
 - Observer and terminal-probe outputs are categorical. Without authoritative
   completion evidence, terminal support remains unqualified and
   `pnl_status: not_observed`.
+- A missing receipt state is `unavailable`, never proof that no submission
+  occurred. The terminal probe must match the requested run, client-order, and
+  decision identity before it makes its read-only history request.
 - Keep credentials, account identifiers, private intents, raw broker payloads,
   and price values out of Git, logs, and public surfaces.
 

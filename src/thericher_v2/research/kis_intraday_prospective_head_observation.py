@@ -367,6 +367,8 @@ def _complete_regular_session_metadata(
     first_seen_completion: dict[str, bool] = {}
     first_seen_fingerprints: dict[str, str] = {}
     for chunk in chunks:
+        if chunk.candidate_batch_conflicted:
+            continue
         for row_key, fingerprint in chunk.rows:
             if row_key in first_seen_completion:
                 if first_seen_fingerprints[row_key] != fingerprint:

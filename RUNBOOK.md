@@ -334,6 +334,14 @@ data-only invocation (at most eight minute-page calls per invocation): it has
 no account, order, or live route. The first four-trigger session is the next
 metadata-only reattestation before Research may consume a session.
 
+A duplicate minute inside one candidate batch rejects that whole candidate,
+including any earlier page from the same invocation: no snapshot is retained
+and no cursor advances. An explicitly marked legacy candidate-batch partial is
+kept only as audit evidence and is excluded from cache/session consumption. The
+outer worker is `complete` only when it returns one eligible result for both
+expected QQQ and SPY targets; the existing QQQ-only preparation child may still
+run after its exact QQQ result while the outer worker remains `incomplete`.
+
 To compare head coverage without opening raw minute CSV files, prices, or
 credentials, run:
 
@@ -740,6 +748,10 @@ code, payload, terminal lifecycle, or PnL. A missing or ambiguous exact row is
 a scoped source-contract result, not a reason to stop Paper sessions,
 collection, or research. A legacy state without that durable submission time
 returns `submission_time_missing` without reading credentials or calling KIS.
+Before any history request, the probe requires the persisted run, client-order,
+and decision identifiers to agree with the requested receipt identity. A
+missing state or identity mismatch is categorical unavailable evidence, never
+proof that an order was not submitted.
 
 For a daily SPY session, the existing session process invokes the same probe
 only after it has checked the receipt-derived run identity and completed the
@@ -806,6 +818,10 @@ docker compose --env-file .env.example --profile research run --rm --no-deps `
 
 The container has network disabled. Its external receipts omit raw prices,
 order identifiers, source paths, PnL, and candidate-selection conclusions.
+On recovery, the receipt accepts only current-schema canonical event envelopes
+and the frozen chronological decision/fill plan. A buy must have exactly its
+planned local-paper entry and exit fills; malformed, extra, or unplanned events
+invalidate the receipt rather than being repaired.
 
 ### Static Norgate Development Receipt
 

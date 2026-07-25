@@ -53,6 +53,27 @@ def test_kis_paper_intraday_index_metadata_matches_writer_for_valid_retained_for
         qqq.next_cursor["next"] = "2"  # type: ignore[index]
 
 
+def test_kis_paper_intraday_index_metadata_marks_legacy_candidate_conflict_chunks() -> None:
+    index = _valid_index(key_kind="current")
+    chunk = index["targets"][0]["chunks"][0]
+    assert isinstance(chunk, dict)
+    chunk.update(
+        {
+            "outcome": "partial",
+            "reason": "minute_duplicate_conflict",
+            "conflict_origin": "candidate_batch",
+        }
+    )
+
+    projection = validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=_EXPECTED_TARGETS,
+    )
+
+    retained = projection.targets[0].retained_chunks[0]
+    assert retained.candidate_batch_conflicted is True
+
+
 def test_kis_paper_intraday_index_metadata_ignores_unretained_marker() -> None:
     index = _valid_index(key_kind="current")
     marker = index["targets"][0]["chunks"][1]

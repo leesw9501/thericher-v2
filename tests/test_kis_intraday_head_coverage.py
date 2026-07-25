@@ -149,6 +149,37 @@ def test_head_coverage_surfaces_retained_fingerprint_conflicts_without_raw_data(
     assert not list(cache_root.rglob("*.gz"))
 
 
+def test_head_coverage_ignores_a_legacy_candidate_batch_conflict_chunk(tmp_path: Path) -> None:
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session = _regular_session(date(2026, 7, 21))
+    _write_head_index(
+        cache_root,
+        chunks=(
+            {
+                "rows": _session_rows(session, range(390), "conflicted"),
+                "continuation_available": False,
+                "exact_overlap_rows": 0,
+                "collected_at": session.window.close_ts + timedelta(minutes=1),
+                "outcome": "partial",
+                "reason": "minute_duplicate_conflict",
+                "conflict_origin": "candidate_batch",
+            },
+        ),
+    )
+
+    result = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=tmp_path / "repo",
+        after_session_date=date(2026, 7, 7),
+        required_complete_session_count=1,
+    )
+
+    assert result.retained_chunk_count == 1
+    assert result.complete_sessions == ()
+    assert result.session_coverage == ()
+    assert result.preparation_input_status == "pending_complete_sessions"
+
+
 def test_head_coverage_and_preparer_share_exact_crlf_index_identity(tmp_path: Path) -> None:
     cache_root = tmp_path / "market-data" / "intraday-head"
     session_dates = (
@@ -239,6 +270,9 @@ def _write_head_index(
         collected_at = specification["collected_at"]
         continuation_available = specification["continuation_available"]
         exact_overlap_rows = specification["exact_overlap_rows"]
+        outcome = specification.get("outcome", "committed")
+        reason = specification.get("reason")
+        conflict_origin = specification.get("conflict_origin")
         assert isinstance(rows, dict)
         assert isinstance(collected_at, datetime)
         assert isinstance(continuation_available, bool)
@@ -258,7 +292,7 @@ def _write_head_index(
         documents.append(
             {
                 "chunk_key": _chunk_key(row_fingerprints),
-                "outcome": "committed",
+                "outcome": outcome,
                 "input_cursor": None,
                 "output_cursor": None,
                 "manifest_path": manifest_relative,
@@ -270,6 +304,8 @@ def _write_head_index(
                 "exact_overlap_rows": exact_overlap_rows,
                 "conflicting_overlap_rows": 0,
                 "collected_at_utc": collected_at.astimezone(UTC).isoformat().replace("+00:00", "Z"),
+                "reason": reason,
+                **({"conflict_origin": conflict_origin} if conflict_origin is not None else {}),
             }
         )
     qqq_target: dict[str, object] = {
