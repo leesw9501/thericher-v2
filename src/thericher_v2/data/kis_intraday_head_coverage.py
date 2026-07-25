@@ -102,6 +102,9 @@ class KisIntradayHeadCoverage:
     index_metadata_sha256: str | None
     retained_chunk_count: int
     last_reason_category: str
+    last_conflict_origin: Literal[
+        "none", "not_recorded", "candidate_batch", "retained_cache"
+    ]
     continuation_category: Literal["not_observed", "available", "terminal", "mixed"]
     exact_overlap_row_count: int
     exact_overlap_category: Literal["none", "exact_overlap"]
@@ -120,17 +123,25 @@ class KisIntradayHeadCoverage:
             or self.continuation_category not in {"not_observed", "available", "terminal", "mixed"}
             or self.exact_overlap_category not in {"none", "exact_overlap"}
             or self.conflicting_overlap_category not in {"none", "retained_fingerprint_conflict"}
+            or self.last_conflict_origin
+            not in {"none", "not_recorded", "candidate_batch", "retained_cache"}
             or type(self.exact_overlap_row_count) is not int
             or self.exact_overlap_row_count < 0
             or not _SAFE_REASON.fullmatch(self.last_reason_category)
         ):
             raise ValueError("head coverage counts are invalid")
+        if self.last_reason_category == "minute_duplicate_conflict":
+            if self.last_conflict_origin == "none":
+                raise ValueError("head coverage conflict origin is invalid")
+        elif self.last_conflict_origin != "none":
+            raise ValueError("head coverage conflict origin is invalid")
         if self.status == "not_created":
             if (
                 self.index_generation is not None
                 or self.index_metadata_sha256 is not None
                 or self.retained_chunk_count != 0
                 or self.session_coverage
+                or self.last_conflict_origin != "none"
             ):
                 raise ValueError("missing head coverage is invalid")
         elif (
@@ -171,6 +182,7 @@ class KisIntradayHeadCoverage:
             },
             "retained_chunk_count": self.retained_chunk_count,
             "last_reason_category": self.last_reason_category,
+            "last_conflict_origin": self.last_conflict_origin,
             "continuation_category": self.continuation_category,
             "exact_overlap": {
                 "category": self.exact_overlap_category,
@@ -214,6 +226,7 @@ def inspect_kis_paper_private_intraday_head_coverage(
             index_metadata_sha256=None,
             retained_chunk_count=0,
             last_reason_category="none",
+            last_conflict_origin="none",
             continuation_category="not_observed",
             exact_overlap_row_count=0,
             exact_overlap_category="none",
@@ -260,7 +273,8 @@ def inspect_kis_paper_private_intraday_head_coverage(
         target=target,
         chunks=retained_documents,
     )
-    last_reason_category = _last_reason_category(target_document.get("last_reason"))
+    last_reason = target_document.get("last_reason")
+    last_reason_category = _last_reason_category(last_reason)
     return KisIntradayHeadCoverage(
         status="available",
         target_key=target.target_key,
@@ -269,6 +283,10 @@ def inspect_kis_paper_private_intraday_head_coverage(
         index_metadata_sha256=sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes),
         retained_chunk_count=len(target.retained_chunks),
         last_reason_category=last_reason_category,
+        last_conflict_origin=_last_conflict_origin(
+            target_document=target_document,
+            last_reason=last_reason,
+        ),
         continuation_category=continuation_category,
         exact_overlap_row_count=exact_overlap_row_count,
         exact_overlap_category=("exact_overlap" if exact_overlap_row_count else "none"),
@@ -458,6 +476,21 @@ def _last_reason_category(value: object) -> str:
     if not isinstance(value, str):
         raise ValueError("head coverage target reason is invalid")
     return value if _SAFE_REASON.fullmatch(value) else "unclassified"
+
+
+def _last_conflict_origin(
+    *,
+    target_document: Mapping[str, object],
+    last_reason: object,
+) -> Literal["none", "not_recorded", "candidate_batch", "retained_cache"]:
+    if last_reason != "minute_duplicate_conflict":
+        return "none"
+    if "last_conflict_origin" not in target_document:
+        return "not_recorded"
+    value = target_document.get("last_conflict_origin")
+    if value in {"candidate_batch", "retained_cache"}:
+        return value
+    raise ValueError("head coverage target conflict origin is invalid")
 
 
 def _required_nonnegative_int(value: object) -> int:

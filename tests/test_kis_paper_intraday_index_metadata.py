@@ -69,6 +69,62 @@ def test_kis_paper_intraday_index_metadata_ignores_unretained_marker() -> None:
     assert len(projection.targets[0].retained_chunks) == 1
 
 
+@pytest.mark.parametrize("origin", ["candidate_batch", "retained_cache"])
+def test_kis_paper_intraday_index_metadata_accepts_safe_duplicate_conflict_origin(
+    origin: str,
+) -> None:
+    index = _valid_index(key_kind="current")
+    target = index["targets"][0]
+    assert isinstance(target, dict)
+    target["last_reason"] = "minute_duplicate_conflict"
+    target["last_conflict_origin"] = origin
+
+    validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=_EXPECTED_TARGETS,
+    )
+
+
+@pytest.mark.parametrize(
+    ("reason", "origin"),
+    [
+        ("minute_duplicate_conflict", None),
+        ("minute_response_empty", "candidate_batch"),
+        (None, "retained_cache"),
+        ("minute_duplicate_conflict", "unexpected"),
+        ("minute_duplicate_conflict", ["candidate_batch"]),
+        ("minute_duplicate_conflict", {"origin": "candidate_batch"}),
+    ],
+)
+def test_kis_paper_intraday_index_metadata_rejects_invalid_duplicate_conflict_origin(
+    reason: str | None,
+    origin: object,
+) -> None:
+    index = _valid_index(key_kind="current")
+    target = index["targets"][0]
+    assert isinstance(target, dict)
+    target["last_reason"] = reason
+    target["last_conflict_origin"] = origin
+
+    with pytest.raises(ValueError, match=_VALIDATION_MESSAGE):
+        validate_kis_paper_private_intraday_v1_index_metadata(
+            index,
+            expected_targets=_EXPECTED_TARGETS,
+        )
+
+
+def test_kis_paper_intraday_index_metadata_accepts_legacy_duplicate_reason_without_origin() -> None:
+    index = _valid_index(key_kind="current")
+    target = index["targets"][0]
+    assert isinstance(target, dict)
+    target["last_reason"] = "minute_duplicate_conflict"
+
+    validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=_EXPECTED_TARGETS,
+    )
+
+
 @pytest.mark.parametrize(
     "mutate",
     [

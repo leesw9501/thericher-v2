@@ -57,6 +57,10 @@ a second scheduler or manually duplicate a due collection.
   only exact overlap deduplication and reject conflicting prior rows.
 - Preserve provider identity and unknown source semantics. Do not fill,
   relabel, or repair minute rows from another source.
+- A future `minute_duplicate_conflict` records only the closed safe origin
+  `candidate_batch` or `retained_cache`; a legacy missing field is
+  `not_recorded`. This is recovery diagnosis only and never changes session
+  selection, preparation status, pacing, or scheduler behavior.
 - The head-index identity is SHA-256 of exact persisted index bytes across
   coverage inspection, preparation, and offline verification. Do not hash
   decoded text because newline translation can change a valid binding.

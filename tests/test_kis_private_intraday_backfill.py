@@ -543,6 +543,155 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert len(qqq["chunks"]) == 1
+    assert qqq["last_conflict_origin"] == "retained_cache"
+
+
+def test_candidate_batch_conflict_is_recorded_without_a_snapshot_or_cursor_advance(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    first = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=1)[0]
+    conflicting = KisPaperMinuteRawBar(
+        exchange_date=first.exchange_date,
+        exchange_time=first.exchange_time,
+        korea_date=first.korea_date,
+        korea_time=first.korea_time,
+        open=first.open,
+        high=first.high + Decimal("1"),
+        low=first.low,
+        last=first.last + Decimal("1"),
+        volume=first.volume,
+    )
+
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ",
+                    exchange="NAS",
+                    rows=(first, conflicting),
+                    next_cursor=None,
+                ),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert results[0].status == "rejected"
+    assert results[0].reason == "minute_duplicate_conflict"
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert qqq["last_conflict_origin"] == "candidate_batch"
+    assert qqq["next_cursor"] is None
+    assert qqq["chunks"] == []
+
+
+def test_candidate_batch_partial_snapshot_preserves_origin_on_orphan_recovery(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    first_rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
+    conflicting = KisPaperMinuteRawBar(
+        exchange_date=first_rows[0].exchange_date,
+        exchange_time=first_rows[0].exchange_time,
+        korea_date=first_rows[0].korea_date,
+        korea_time=first_rows[0].korea_time,
+        open=first_rows[0].open,
+        high=first_rows[0].high + Decimal("1"),
+        low=first_rows[0].low,
+        last=first_rows[0].last + Decimal("1"),
+        volume=first_rows[0].volume,
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ",
+                    exchange="NAS",
+                    rows=first_rows,
+                    next_cursor="1",
+                ),
+                _page(
+                    symbol="QQQ",
+                    exchange="NAS",
+                    rows=(conflicting,),
+                    next_cursor=None,
+                ),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=2,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    orphan_chunk = qqq["chunks"][0]
+    assert orphan_chunk["outcome"] == "partial"
+    assert orphan_chunk["conflict_origin"] == "candidate_batch"
+    qqq["chunks"] = [
+        {
+            "chunk_key": orphan_chunk["chunk_key"],
+            "raw_market_data_retained": False,
+            "historical_note": "recovery marker",
+        }
+    ]
+    qqq["next_cursor"] = None
+    qqq["last_reason"] = None
+    qqq["last_conflict_origin"] = None
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    recovery = _MinuteClient([])
+    recovered = run_kis_paper_private_intraday_backfill_cycle(
+        client=recovery,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=2,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert [(result.target_key, result.status) for result in recovered] == [
+        ("QQQ/NAS/1m", "recovered")
+    ]
+    assert recovery.queries == []
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert qqq["last_reason"] == "minute_duplicate_conflict"
+    assert qqq["last_conflict_origin"] == "candidate_batch"
+
+
+def test_legacy_duplicate_conflict_recovery_keeps_origin_unrecorded() -> None:
+    target_state: dict[str, object] = {"last_conflict_origin": None}
+
+    private_intraday_backfill._record_target_last_observation(
+        target_state=target_state,
+        reason="minute_duplicate_conflict",
+        observed_at_utc="2026-07-22T05:00:00Z",
+        origin_recorded=False,
+    )
+
+    assert target_state["last_reason"] == "minute_duplicate_conflict"
+    assert "last_conflict_origin" not in target_state
 
 
 def test_terminal_initial_page_is_not_requested_again_after_source_exhaustion(

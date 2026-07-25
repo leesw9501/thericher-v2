@@ -77,6 +77,11 @@ _SAFE_FAILURE_REASONS = frozenset(
         KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
     }
 )
+_ConflictOrigin = Literal["candidate_batch", "retained_cache"]
+
+
+class _CandidateBatchDuplicateConflict(KisPaperMarketDataError):
+    """Marks a conflicting minute fingerprint within the current candidate batch."""
 
 
 class KisPaperPrivateIntradayClient(Protocol):
@@ -178,6 +183,7 @@ class _CollectedTarget:
     exact_duplicate_rows: int
     status: Literal["collected", "partial", "rejected"]
     reason: str | None
+    conflict_origin: _ConflictOrigin | None = None
 
 
 @dataclass
@@ -295,10 +301,15 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     exact_duplicate_rows=collected.exact_duplicate_rows,
                     status=collected.status,
                     reason=collected.reason,
+                    conflict_origin=collected.conflict_origin,
                 )
             if collected.status == "rejected":
-                target_state["last_reason"] = collected.reason
-                target_state["last_observed_at_utc"] = _format_utc(observed)
+                _record_target_last_observation(
+                    target_state=target_state,
+                    reason=collected.reason,
+                    conflict_origin=collected.conflict_origin,
+                    observed_at_utc=_format_utc(observed),
+                )
                 _write_index(root=root, index=index)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
@@ -317,8 +328,12 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 prior=existing_fingerprints,
             )
             if conflict is not None:
-                target_state["last_reason"] = "minute_duplicate_conflict"
-                target_state["last_observed_at_utc"] = _format_utc(observed)
+                _record_target_last_observation(
+                    target_state=target_state,
+                    reason="minute_duplicate_conflict",
+                    conflict_origin="retained_cache",
+                    observed_at_utc=_format_utc(observed),
+                )
                 _write_index(root=root, index=index)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
@@ -349,7 +364,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                         if collected.output_cursor is not None
                         else None
                     )
-                target_state["last_reason"] = (
+                last_reason = (
                     "source_exhausted"
                     if _collected_target_source_is_exhausted(
                         collected=collected,
@@ -357,7 +372,11 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     )
                     else "already_cached"
                 )
-                target_state["last_observed_at_utc"] = _format_utc(observed)
+                _record_target_last_observation(
+                    target_state=target_state,
+                    reason=last_reason,
+                    observed_at_utc=_format_utc(observed),
+                )
                 _write_index(root=root, index=index)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
@@ -389,7 +408,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     if collected.output_cursor is not None
                     else None
                 )
-            target_state["last_reason"] = (
+            last_reason = (
                 "source_exhausted"
                 if _collected_target_source_is_exhausted(
                     collected=collected,
@@ -397,7 +416,14 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 )
                 else collected.reason
             )
-            target_state["last_observed_at_utc"] = _format_utc(observed)
+            _record_target_last_observation(
+                target_state=target_state,
+                reason=last_reason,
+                conflict_origin=(
+                    collected.conflict_origin if last_reason == collected.reason else None
+                ),
+                observed_at_utc=_format_utc(observed),
+            )
             index["generation"] = int(index["generation"]) + 1
             _write_index(root=root, index=index)
             results.append(
@@ -451,7 +477,7 @@ def _collect_target(
                 elif _row_fingerprint(prior) == _row_fingerprint(row):
                     prospective_duplicates += 1
                 else:
-                    raise KisPaperMarketDataError("minute_duplicate_conflict")
+                    raise _CandidateBatchDuplicateConflict("minute_duplicate_conflict")
             next_cursor = _cursor_from_page(page)
             if next_cursor is not None and next_cursor == cursor:
                 raise KisPaperMarketDataError("minute_cursor_stalled")
@@ -466,6 +492,11 @@ def _collect_target(
             cursor = next_cursor
     except KisPaperMarketDataError as error:
         reason = sanitize_kis_paper_private_intraday_failure_reason(error)
+        conflict_origin: _ConflictOrigin | None = (
+            "candidate_batch"
+            if isinstance(error, _CandidateBatchDuplicateConflict)
+            else None
+        )
         if not rows_by_key:
             return _CollectedTarget(
                 target=target,
@@ -476,6 +507,7 @@ def _collect_target(
                 exact_duplicate_rows=duplicate_rows,
                 status="rejected",
                 reason=reason,
+                conflict_origin=conflict_origin,
             )
         return _CollectedTarget(
             target=target,
@@ -486,6 +518,7 @@ def _collect_target(
             exact_duplicate_rows=duplicate_rows,
             status="partial",
             reason=reason,
+            conflict_origin=conflict_origin,
         )
     return _CollectedTarget(
         target=target,
@@ -502,6 +535,31 @@ def _collect_target(
 def sanitize_kis_paper_private_intraday_failure_reason(value: BaseException | str) -> str:
     reason = str(value)
     return reason if reason in _SAFE_FAILURE_REASONS else "private_intraday_collector_error"
+
+
+def _record_target_last_observation(
+    *,
+    target_state: dict[str, object],
+    reason: str | None,
+    observed_at_utc: str,
+    conflict_origin: _ConflictOrigin | None = None,
+    origin_recorded: bool = True,
+) -> None:
+    if reason == "minute_duplicate_conflict":
+        if not origin_recorded:
+            if conflict_origin is not None:
+                raise ValueError("private intraday conflict origin is invalid")
+            target_state.pop("last_conflict_origin", None)
+        elif conflict_origin not in {"candidate_batch", "retained_cache"}:
+            raise ValueError("private intraday conflict origin is invalid")
+        else:
+            target_state["last_conflict_origin"] = conflict_origin
+    elif conflict_origin is not None:
+        raise ValueError("private intraday conflict origin is invalid")
+    else:
+        target_state["last_conflict_origin"] = None
+    target_state["last_reason"] = reason
+    target_state["last_observed_at_utc"] = observed_at_utc
 
 
 def _cursor_from_page(page: KisPaperMinutePage) -> KisPaperPrivateIntradayCursor | None:
@@ -578,6 +636,7 @@ def _chunk_document(
         "conflicting_overlap_rows": 0,
         "collected_at_utc": _format_utc(observed_at),
         "reason": collected.reason,
+        "conflict_origin": collected.conflict_origin,
     }
 
 
@@ -728,6 +787,7 @@ def _read_or_create_index(
                     "exchange": target[1],
                     "next_cursor": None,
                     "last_reason": None,
+                    "last_conflict_origin": None,
                     "last_observed_at_utc": None,
                     "chunks": [],
                 }
@@ -773,6 +833,7 @@ def _validate_chunk(*, chunk: object, target: KisPaperPrivateIntradayTarget) -> 
                         "exchange": target.exchange,
                         "next_cursor": None,
                         "last_reason": None,
+                        "last_conflict_origin": None,
                         "last_observed_at_utc": None,
                         "chunks": [chunk],
                     }
@@ -866,6 +927,7 @@ def _hydrate_source_exhaustion_state(index: dict[str, object]) -> bool:
             and last_chunk.get("output_cursor") is None
         ):
             target_state["last_reason"] = "source_exhausted"
+            target_state["last_conflict_origin"] = None
             changed = True
     return changed
 
@@ -972,8 +1034,17 @@ def _recover_orphan_snapshots(
             recovered_chunk["output_cursor"]
         )
         state["next_cursor"] = output_cursor.as_document() if output_cursor is not None else None
-        state["last_reason"] = recovered_chunk["reason"]
-        state["last_observed_at_utc"] = recovered_chunk["collected_at_utc"]
+        recovered_reason = recovered_chunk["reason"]
+        if recovered_reason is not None and not isinstance(recovered_reason, str):
+            raise ValueError("private intraday snapshot is invalid")
+        recovered_origin = recovered_chunk.get("conflict_origin")
+        _record_target_last_observation(
+            target_state=state,
+            reason=recovered_reason,
+            conflict_origin=recovered_origin if isinstance(recovered_origin, str) else None,
+            origin_recorded="conflict_origin" in recovered_chunk,
+            observed_at_utc=str(recovered_chunk["collected_at_utc"]),
+        )
         index["generation"] = int(index["generation"]) + 1
         recovered_snapshots.append(
             _RecoveredSnapshot(

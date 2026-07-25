@@ -27,7 +27,9 @@ freshness output. This makes the next Docker `--build` run observable without
 adding a scheduler, retry loop, report, or approval gate. The current
 `minute_duplicate_conflict` metadata remains source/recovery evidence rather
 than a change cue until a bounded source or synthetic test identifies one exact
-collector defect.
+collector defect. Future collector metadata distinguishes `candidate_batch`
+from `retained_cache`; legacy evidence remains `not_recorded`, with no change
+to scheduling or preparation control.
 
 ## External Waits
 

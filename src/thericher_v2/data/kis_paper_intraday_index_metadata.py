@@ -18,6 +18,7 @@ from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 _BACKFILL_VERSION = "v1"
 _INDEX_KIND = "kis_paper_private_intraday_backfill"
 _INVALID_INDEX_MESSAGE = "KIS private intraday v1 index metadata is invalid"
+_CONFLICT_ORIGINS = frozenset({"candidate_batch", "retained_cache"})
 
 __all__ = [
     "KisPaperPrivateIntradayV1IndexMetadata",
@@ -138,6 +139,11 @@ def _parse_target(document: object) -> KisPaperPrivateIntradayV1TargetMetadata:
     last_reason = document.get("last_reason")
     if last_reason is not None and not isinstance(last_reason, str):
         _invalid()
+    _validate_conflict_origin_field(
+        document=document,
+        reason=last_reason,
+        field="last_conflict_origin",
+    )
     last_observed_document = document.get("last_observed_at_utc")
     if last_observed_document is not None:
         _parse_utc_timestamp(last_observed_document)
@@ -192,6 +198,15 @@ def _parse_retained_chunk(
     ):
         _invalid()
 
+    reason = document.get("reason")
+    if reason is not None and not isinstance(reason, str):
+        _invalid()
+    _validate_conflict_origin_field(
+        document=document,
+        reason=reason,
+        field="conflict_origin",
+    )
+
     rows = tuple(fingerprints_document.items())
     if len(rows) != document["row_count"]:
         _invalid()
@@ -218,6 +233,22 @@ def _parse_retained_chunk(
         rows=rows,
         collected_at=collected_at,
     )
+
+
+def _validate_conflict_origin_field(
+    *,
+    document: Mapping[str, object],
+    reason: str | None,
+    field: str,
+) -> None:
+    if field not in document:
+        return
+    origin = document.get(field)
+    if reason == "minute_duplicate_conflict":
+        if not isinstance(origin, str) or origin not in _CONFLICT_ORIGINS:
+            _invalid()
+    elif origin is not None:
+        _invalid()
 
 
 def _target_key(*, symbol: object, exchange: object) -> str:

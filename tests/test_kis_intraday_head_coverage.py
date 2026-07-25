@@ -8,6 +8,8 @@ from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from zoneinfo import ZoneInfo
 
+import pytest
+
 from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.data.kis_intraday_head_coverage import (
     inspect_kis_paper_private_intraday_head_coverage,
@@ -19,6 +21,7 @@ from thericher_v2.research.kis_intraday_prospective_head_observation import (
 
 _KOREA = ZoneInfo("Asia/Seoul")
 _QQQ_TARGET_KEY = "QQQ/NAS/1m"
+_MISSING = object()
 
 
 def test_head_coverage_reports_short_ranges_and_manifest_continuation_without_raw_reads(
@@ -57,6 +60,7 @@ def test_head_coverage_reports_short_ranges_and_manifest_continuation_without_ra
     assert result.exact_overlap_category == "exact_overlap"
     assert result.exact_overlap_row_count == 2
     assert result.last_reason_category == "minute_duplicate_conflict"
+    assert result.last_conflict_origin == "not_recorded"
     assert result.conflicting_overlap_category == "none"
     assert [item.session_date for item in result.session_coverage] == [
         date(2026, 7, 21),
@@ -72,6 +76,39 @@ def test_head_coverage_reports_short_ranges_and_manifest_continuation_without_ra
     assert "row_fingerprints" not in payload
     assert not list(cache_root.rglob("*.csv"))
     assert not list(cache_root.rglob("*.gz"))
+
+
+@pytest.mark.parametrize("origin", ["candidate_batch", "retained_cache"])
+def test_head_coverage_exposes_safe_duplicate_conflict_origin_without_changing_preparation(
+    origin: str,
+    tmp_path: Path,
+) -> None:
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session = _regular_session(date(2026, 7, 21))
+    _write_head_index(
+        cache_root,
+        chunks=(
+            {
+                "rows": _session_rows(session, range(1), "short"),
+                "continuation_available": False,
+                "exact_overlap_rows": 0,
+                "collected_at": session.window.close_ts + timedelta(minutes=1),
+            },
+        ),
+        last_conflict_origin=origin,
+    )
+
+    result = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=tmp_path / "repo",
+        after_session_date=date(2026, 7, 7),
+        required_complete_session_count=5,
+    )
+
+    assert result.last_reason_category == "minute_duplicate_conflict"
+    assert result.last_conflict_origin == origin
+    assert result.conflicting_overlap_category == "none"
+    assert result.preparation_input_status == "pending_complete_sessions"
 
 
 def test_head_coverage_surfaces_retained_fingerprint_conflicts_without_raw_data(
@@ -188,7 +225,12 @@ def test_coverage_script_prints_only_the_safe_summary(monkeypatch, capsys, tmp_p
     assert json.loads(capsys.readouterr().out) == expected
 
 
-def _write_head_index(cache_root: Path, *, chunks: tuple[dict[str, object], ...]) -> None:
+def _write_head_index(
+    cache_root: Path,
+    *,
+    chunks: tuple[dict[str, object], ...],
+    last_conflict_origin: str | None | object = _MISSING,
+) -> None:
     version_root = cache_root / "v1"
     version_root.mkdir(parents=True)
     documents = []
@@ -230,21 +272,24 @@ def _write_head_index(cache_root: Path, *, chunks: tuple[dict[str, object], ...]
                 "collected_at_utc": collected_at.astimezone(UTC).isoformat().replace("+00:00", "Z"),
             }
         )
+    qqq_target: dict[str, object] = {
+        "target_key": _QQQ_TARGET_KEY,
+        "symbol": "QQQ",
+        "exchange": "NAS",
+        "next_cursor": None,
+        "last_reason": "minute_duplicate_conflict",
+        "last_observed_at_utc": "2026-07-22T00:00:00Z",
+        "chunks": documents,
+    }
+    if last_conflict_origin is not _MISSING:
+        qqq_target["last_conflict_origin"] = last_conflict_origin
     index = {
         "schema_version": SCHEMA_VERSION,
         "kind": "kis_paper_private_intraday_backfill",
         "backfill_version": "v1",
         "generation": 7,
         "targets": [
-            {
-                "target_key": _QQQ_TARGET_KEY,
-                "symbol": "QQQ",
-                "exchange": "NAS",
-                "next_cursor": None,
-                "last_reason": "minute_duplicate_conflict",
-                "last_observed_at_utc": "2026-07-22T00:00:00Z",
-                "chunks": documents,
-            },
+            qqq_target,
             {
                 "target_key": "SPY/AMS/1m",
                 "symbol": "SPY",
