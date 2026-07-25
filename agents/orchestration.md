@@ -31,6 +31,10 @@ collector defect. Future collector metadata distinguishes `candidate_batch`
 from `retained_cache`; legacy evidence remains `not_recorded`, with no change
 to scheduling or preparation control.
 
+The schedule-installation contract also locks the daily SPY head and session
+task names, Docker profiles/services, and their 22:15/23:50 KST times so a
+routine scheduler edit cannot silently break the exact-receipt handoff.
+
 ## External Waits
 
 The existing head and daily schedules own their due times. Do not foreground-sleep,
