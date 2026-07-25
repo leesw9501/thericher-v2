@@ -35,6 +35,10 @@ The schedule-installation contract also locks the daily SPY head and session
 task names, Docker profiles/services, and their 22:15/23:50 KST times so a
 routine scheduler edit cannot silently break the exact-receipt handoff.
 
+The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
+preparation independently of a scoped SPY failure, while retaining the overall
+collection failure signal and full-index validation contract.
+
 ## External Waits
 
 The existing head and daily schedules own their due times. Do not foreground-sleep,

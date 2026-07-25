@@ -382,6 +382,69 @@ def test_intraday_head_does_not_prepare_after_collector_failure(
     assert child_calls == []
 
 
+def test_intraday_head_prepares_for_collected_qqq_despite_other_target_failure(
+    monkeypatch,
+    capsys,
+) -> None:
+    script = _load_script()
+    child_calls: list[object] = []
+    monkeypatch.setattr(script, "_load_paper_config", lambda _: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "run_kis_paper_private_intraday_backfill_cycle",
+        lambda **_kwargs: (
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="QQQ/NAS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="rejected",
+                target_key="SPY/AMS/1m",
+                row_count=0,
+                exact_overlap_rows=0,
+                reason="collector_incomplete",
+            ),
+        ),
+    )
+
+    def prepare_child(*args: object, **kwargs: object) -> SimpleNamespace:
+        child_calls.append((args, kwargs))
+        return SimpleNamespace(returncode=0, stdout=json.dumps({"status": "pending"}))
+
+    monkeypatch.setattr(script.subprocess, "run", prepare_child)
+
+    assert script.main(
+        ["--execute", "--mode", "head"],
+        code_revision=lambda _: "git:test",
+    ) == 1
+
+    assert json.loads(capsys.readouterr().out) == {
+        "mode": "head",
+        "preparation": {"status": "pending"},
+        "status": "incomplete",
+        "targets": [
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": "collector_incomplete",
+                "row_count": 0,
+                "status": "rejected",
+                "target_key": "SPY/AMS/1m",
+            },
+        ],
+    }
+    assert len(child_calls) == 1
+
+
 @pytest.mark.parametrize("status", ("locked", "partial", "rejected"))
 def test_intraday_head_returns_nonzero_for_incomplete_collector_results(
     monkeypatch,

@@ -705,17 +705,19 @@ read-only observer's bounded ambiguity rather than adding stale-order automation
 until qualified terminal source semantics exist.
 
 The existing scheduled `thericher-kis-paper-intraday-head` task now has one
-post-durable, sequential metadata-only handoff. Only after all of its own target
-results are `collected` or `recovered`, it starts the prospective QQQ preparer
-with a fixed `scheduled-head-v1` identity. The child receives no KIS, account,
-order, dashboard, or live environment values and has a ten-second containment
-timeout. `pending` or `preparation_unavailable` is an observation about that
-preparation attempt only; it cannot alter the already completed collection,
-cache cursor, or freshness projection. At five complete QQQ sessions, the
-preparer writes and later validates/reuses exactly one external precommit and
-planning-receipt pair bound to the first five selected session dates and their
-row-fingerprint digest. It has not created a model, GPU job, Paper order, or
-profitability conclusion.
+post-durable, sequential metadata-only handoff. When its exact QQQ target result
+is `collected` or `recovered`, it starts the prospective QQQ preparer with a
+fixed `scheduled-head-v1` identity even when the independent SPY target has a
+scoped collection failure. That SPY failure keeps the overall collection result
+`incomplete`, so collection health and the QQQ preparation input remain
+separate. The child receives no KIS, account, order, dashboard, or live
+environment values and has a ten-second containment timeout. `pending` or
+`preparation_unavailable` is an observation about that preparation attempt only;
+it cannot alter the already completed collection, cache cursor, or freshness
+projection. At five complete QQQ sessions, the preparer writes and later
+validates/reuses exactly one external precommit and planning-receipt pair bound
+to the first five selected session dates and their row-fingerprint digest. It
+has not created a model, GPU job, Paper order, or profitability conclusion.
 
 The pair-bound offline consumer is now implemented and synthetically verified.
 It accepts only a Data-loader-sealed first-five pair whose head-index identity

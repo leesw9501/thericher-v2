@@ -68,6 +68,10 @@ a second scheduler or manually duplicate a due collection.
   It cannot alter cache bytes, cursors, or collector freshness facts. Its first
   usable pair binds exactly the first five selected session dates and row
   fingerprints.
+- Preparation depends on the exact QQQ target result, not the independent SPY
+  outcome: one QQQ `collected` or `recovered` result may run the QQQ-only
+  preparer while a scoped SPY failure keeps the overall collection result
+  `incomplete`. The preparer still validates the full expected index shape.
 - The collector preserves safe JSON/freshness behavior while returning a
   nonzero process result for outer worker failures and `locked`, `partial`, or
   `rejected` collection outcomes. Existing Task Scheduler state therefore

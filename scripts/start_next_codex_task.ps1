@@ -25,6 +25,13 @@ git log -1 --oneline --decorate
 Write-Host ""
 
 Write-Host "== Required first-read files =="
+$activeStateboards = @(
+    "agents/data.md",
+    "agents/engine-research.md",
+    "agents/execution.md",
+    "agents/orchestration.md"
+)
+
 $required = @(
     "HANDOFF.md",
     "NEXT_CODEX_GOAL.md",
@@ -33,12 +40,10 @@ $required = @(
     "AGENTS.md",
     "DECISIONS.md",
     "RUNBOOK.md",
-    "agents/README.md",
-    "agents/data.md",
-    "agents/engine-research.md",
-    "agents/execution.md",
-    "GOAL_SCRIPT.md"
+    "agents/README.md"
 )
+$required += $activeStateboards
+$required += "GOAL_SCRIPT.md"
 
 foreach ($file in $required) {
     if (-not (Test-Path -LiteralPath $file)) {
@@ -86,10 +91,8 @@ Write-Host "== Completion handoff rule =="
 Write-Host "Before ending a long task, refresh NEXT_CODEX_GOAL.md with the next single objective."
 Write-Host ""
 
-Write-Host "== Agent stateboards =="
-Get-ChildItem -LiteralPath "agents" -Filter "*.md" |
-    Sort-Object Name |
-    ForEach-Object { Write-Host ("ok agents/{0}" -f $_.Name) }
+Write-Host "== Active agent stateboards =="
+$activeStateboards | ForEach-Object { Write-Host "ok $_" }
 Write-Host ""
 
 Write-Host "== Active next Codex objective =="

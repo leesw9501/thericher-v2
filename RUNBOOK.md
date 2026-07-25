@@ -346,17 +346,19 @@ continuation and overlap categories, index identity, and the scoped
 preparation-input status. It does not write an artifact, call KIS, or create a
 cache.
 
-After a durable head collection in which every target result is `collected` or
-`recovered`, the same service makes one sequential metadata-only preparation
-attempt. It uses the fixed `scheduled-head-v1` identity and the external model
-artifact mount only. The child has no KIS/account/order/live environment and a
-ten-second containment timeout. Its parent output exposes only `pending`,
-`prepared`, or a scoped `preparation_unavailable` reason; it never exposes a
-path, raw row, price, or credential. A pending or unavailable preparation does
-not change the completed collection, cursor, or freshness projection. Once the
-first five complete QQQ sessions exist, the preparation pair is external and
-reused only after validation of the immutable first-five session/date and
-fingerprint identity. This creates no model, GPU job, or Paper order.
+After a durable head collection whose exact `QQQ/NAS/1m` result is `collected`
+or `recovered`, the same service makes one sequential metadata-only preparation
+attempt. An independent SPY target failure keeps the overall worker
+`incomplete`, but cannot delay the QQQ-only preparation input. It uses the fixed
+`scheduled-head-v1` identity and the external model artifact mount only. The
+child has no KIS/account/order/live environment and a ten-second containment
+timeout. Its parent output exposes only `pending`, `prepared`, or a scoped
+`preparation_unavailable` reason; it never exposes a path, raw row, price, or
+credential. A pending or unavailable preparation does not change the completed
+collection, cursor, or freshness projection. Once the first five complete QQQ
+sessions exist, the preparation pair is external and reused only after
+validation of the immutable first-five session/date and fingerprint identity.
+This creates no model, GPU job, or Paper order.
 
 For an offline KIS-cache replay after a complete session has been retained:
 

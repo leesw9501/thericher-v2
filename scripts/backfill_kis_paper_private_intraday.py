@@ -42,6 +42,8 @@ _HEAD_PREPARATION_SCRIPT = (
 _HEAD_PREPARATION_RUN_LABEL = "scheduled-head-v1"
 _HEAD_PREPARATION_TIMEOUT_SECONDS = 10.0
 _HEAD_PREPARATION_STATUSES = frozenset({"pending", "prepared"})
+_HEAD_PREPARATION_TARGET_KEY = "QQQ/NAS/1m"
+_HEAD_PREPARATION_INPUT_STATUSES = frozenset({"collected", "recovered"})
 _DEFAULT_PREPARATION_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 
 
@@ -150,7 +152,7 @@ def main(
             for result in results
         ],
     }
-    if args.mode == "head" and _head_collection_succeeded(results):
+    if args.mode == "head" and _head_preparation_input_succeeded(results):
         payload["preparation"] = _prepare_head_observation(
             head_cache_root=_cache_root("head"),
             artifact_root=Path(args.preparation_artifact_root),
@@ -214,10 +216,13 @@ def _collection_succeeded(results: Sequence[KisPaperPrivateIntradayBackfillRun])
     )
 
 
-def _head_collection_succeeded(
+def _head_preparation_input_succeeded(
     results: Sequence[KisPaperPrivateIntradayBackfillRun],
 ) -> bool:
-    return bool(results) and all(result.status in {"collected", "recovered"} for result in results)
+    qqq_results = [
+        result for result in results if result.target_key == _HEAD_PREPARATION_TARGET_KEY
+    ]
+    return len(qqq_results) == 1 and qqq_results[0].status in _HEAD_PREPARATION_INPUT_STATUSES
 
 
 def _prepare_head_observation(*, head_cache_root: Path, artifact_root: Path) -> dict[str, str]:

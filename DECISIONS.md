@@ -4952,10 +4952,12 @@ path advances execution evidence while preserving independent Paper work.
 
 Decision: reuse the existing `thericher-kis-paper-intraday-head` Windows task
 and Docker service for one sequential, metadata-only preparation attempt after
-its own QQQ/SPY target collection is durable and every target result is
-`collected` or `recovered`. Do not add a second task, service, polling loop, or
-queue. The preparer runs with the deterministic `scheduled-head-v1` label,
-only `PYTHONPATH` plus necessary process bootstrap variables, and a ten-second
+its exact QQQ target result is `collected` or `recovered`. A scoped SPY target
+failure still makes the overall collection result `incomplete`, but cannot delay
+the QQQ-only preparation input; the preparer validates the complete index shape
+before selecting QQQ. Do not add a second task, service, polling loop, or queue.
+The preparer runs with the deterministic `scheduled-head-v1` label, only
+`PYTHONPATH` plus necessary process bootstrap variables, and a ten-second
 containment timeout. Its categorical `pending`, `prepared`, or scoped
 unavailable result is additive output only: it cannot revise a completed
 collector result, cache cursor, or freshness projection.
