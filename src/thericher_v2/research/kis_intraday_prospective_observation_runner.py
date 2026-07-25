@@ -432,7 +432,11 @@ def _read_sanitized_events(
                 raise ValueError("prospective observation event evidence is invalid")
         else:
             raise ValueError("prospective observation event evidence is invalid")
-    if not events or frozenset(decision_times) != expected_times:
+    if (
+        not events
+        or frozenset(decision_times) != expected_times
+        or len(decision_times) != len(expected_times)
+    ):
         raise ValueError("prospective observation event evidence is invalid")
     return events
 

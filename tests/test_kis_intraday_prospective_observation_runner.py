@@ -189,6 +189,38 @@ def test_runner_rejects_tampered_completed_summary_or_event(tmp_path: Path) -> N
     assert event_path.read_bytes() != original_events
 
 
+def test_runner_recovery_rejects_duplicate_decision_event(tmp_path: Path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    first = run_kis_intraday_prospective_observation(
+        _observation_input(),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+    )
+    event_path = (
+        _run_directory(artifact_root, first.consumer.frozen_model_receipt.receipt_hash)
+        / "events"
+        / "always_long.jsonl"
+    )
+    records = [json.loads(line) for line in event_path.read_text(encoding="utf-8").splitlines()]
+    duplicate = dict(
+        next(record for record in records if record["event_type"] == "ensemble_decision")
+    )
+    duplicate["seq"] = len(records) + 1
+    records.append(duplicate)
+    event_path.write_text(
+        "\n".join(json.dumps(record, sort_keys=True) for record in records) + "\n",
+        encoding="utf-8",
+    )
+    first.summary_path.unlink()
+
+    with pytest.raises(ValueError, match="event evidence"):
+        run_kis_intraday_prospective_observation(
+            _observation_input(),
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+        )
+
+
 def test_runner_rebuilds_only_missing_safe_candidate_stream(tmp_path: Path) -> None:
     artifact_root = tmp_path / "model-artifacts"
     first = run_kis_intraday_prospective_observation(

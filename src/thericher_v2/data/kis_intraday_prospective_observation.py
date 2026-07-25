@@ -189,7 +189,6 @@ class KisIntradayProspectiveObservationPreparation:
 class _HeadSelection:
     session_dates: tuple[date, ...]
     selected_rows_fingerprint_sha256: str
-    head_index_metadata_sha256: str
 
 
 def _verified_observation_input(**kwargs: object) -> KisIntradayProspectiveObservationInput:
@@ -318,11 +317,12 @@ def verify_kis_intraday_prospective_observation_preparation(
         head_cache_root=head_root,
         repo_root=repository,
     )
+    # The pair retains its full-index hash as preparation-time provenance. Only
+    # the frozen first-five QQQ selection must remain stable across later appends.
     if (
         preparation.selected_session_dates != head_selection.session_dates
         or preparation.selected_rows_fingerprint_sha256
         != head_selection.selected_rows_fingerprint_sha256
-        or preparation.head_index_metadata_sha256 != head_selection.head_index_metadata_sha256
     ):
         raise ValueError("prospective observation preparation does not match source metadata")
     return preparation
@@ -453,9 +453,7 @@ def _inspect_head_selection(*, head_cache_root: Path, repo_root: Path) -> _HeadS
         or version_root.is_symlink()
     ):
         raise ValueError("prospective observation source metadata is invalid")
-    index, head_index_metadata_sha256 = _read_json_file_with_sha256(
-        version_root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
-    )
+    index = _read_json_file(version_root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME)
     try:
         metadata = validate_kis_paper_private_intraday_v1_index_metadata(
             index,
@@ -485,7 +483,6 @@ def _inspect_head_selection(*, head_cache_root: Path, repo_root: Path) -> _HeadS
             first_seen_fingerprints=first_seen_fingerprints,
             selected_session_dates=selected_dates,
         ),
-        head_index_metadata_sha256=head_index_metadata_sha256,
     )
 
 

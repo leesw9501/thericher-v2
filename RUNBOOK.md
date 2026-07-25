@@ -790,8 +790,11 @@ uv run python scripts/run_kis_intraday_prospective_observation.py
 The command is local-only. It does not read `.env`, credentials, or KIS state,
 and it does not call a network or submit a broker order. Before the pair exists,
 the expected safe result is `preparation_pair_missing`. After the pair exists,
-it verifies the pair and current head-index identity around local cache reads,
-then writes the frozen receipt and sanitized local-paper evidence only under
+it verifies the pair and frozen first-five QQQ dates plus row-fingerprint
+digest around local cache reads. The full head-index SHA-256 remains
+preparation-time provenance, so append-only or independent-SPY metadata updates
+do not invalidate the pair; a selected-row change is rejected. It then writes
+the frozen receipt and sanitized local-paper evidence only under
 `D:\thericher-v2\model-artifacts`.
 
 To exercise the same boundary in the isolated research container:

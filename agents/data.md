@@ -61,9 +61,11 @@ a second scheduler or manually duplicate a due collection.
   `candidate_batch` or `retained_cache`; a legacy missing field is
   `not_recorded`. This is recovery diagnosis only and never changes session
   selection, preparation status, pacing, or scheduler behavior.
-- The head-index identity is SHA-256 of exact persisted index bytes across
-  coverage inspection, preparation, and offline verification. Do not hash
-  decoded text because newline translation can change a valid binding.
+- The head-index SHA-256 is exact persisted-byte preparation provenance; do not
+  hash decoded text because newline translation can change a valid record.
+  Offline verification instead binds the frozen first-five QQQ dates and their
+  selected-row fingerprint digest, so later append-only or independent-SPY
+  metadata updates do not invalidate the usable pair.
 - The automatic preparer is metadata-only and isolated after durable collection.
   It cannot alter cache bytes, cursors, or collector freshness facts. Its first
   usable pair binds exactly the first five selected session dates and row

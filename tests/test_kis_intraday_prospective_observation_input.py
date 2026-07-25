@@ -108,6 +108,30 @@ def test_public_preparation_verifier_preserves_crlf_index_byte_identity(tmp_path
     )
 
 
+@pytest.mark.parametrize("mutation", ("append_qqq_session", "update_spy_metadata"))
+def test_public_preparation_verifier_accepts_unselected_head_updates(
+    tmp_path: Path,
+    mutation: str,
+) -> None:
+    inputs = _inputs(tmp_path)
+    original = prospective_input.verify_kis_intraday_prospective_observation_preparation(
+        head_cache_root=inputs["head_cache_root"],
+        preparation_dir=inputs["preparation_dir"],
+        repo_root=inputs["repo_root"],
+    )
+
+    _mutate_head_index_without_changing_selected_qqq(
+        inputs["head_cache_root"],
+        mutation=mutation,
+    )
+
+    assert prospective_input.verify_kis_intraday_prospective_observation_preparation(
+        head_cache_root=inputs["head_cache_root"],
+        preparation_dir=inputs["preparation_dir"],
+        repo_root=inputs["repo_root"],
+    ) == original
+
+
 def test_loads_exact_separate_pair_bound_streams_offline(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -214,7 +238,7 @@ def test_loads_exact_separate_pair_bound_streams_offline(
         )
 
 
-def test_loader_rejects_head_index_mutation_during_cache_read(
+def test_loader_rejects_selected_head_index_mutation_during_cache_read(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
@@ -229,8 +253,7 @@ def test_loader_rejects_head_index_mutation_during_cache_read(
         if cache_root == inputs["historical_cache_root"].resolve():
             return historical_catalog
         if cache_root == inputs["head_cache_root"].resolve():
-            index_path = inputs["head_cache_root"] / "v1" / "index.json"
-            index_path.write_bytes(index_path.read_bytes() + b"\n")
+            _mutate_selected_qqq_fingerprint(inputs["head_cache_root"])
             return prospective_catalog
         raise AssertionError("unexpected cache root")
 
@@ -249,6 +272,48 @@ def test_loader_rejects_head_index_mutation_during_cache_read(
         )
 
     assert calls == 2
+
+
+@pytest.mark.parametrize("mutation", ("append_qqq_session", "update_spy_metadata"))
+def test_loader_accepts_unselected_head_index_update_during_cache_read(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    mutation: str,
+) -> None:
+    inputs = _inputs(tmp_path)
+    historical_catalog = _catalog(_HISTORICAL_DATES, dataset_hash="sha256:" + "1" * 64)
+    prospective_catalog = _catalog(_PROSPECTIVE_DATES, dataset_hash="sha256:" + "2" * 64)
+    calls = 0
+
+    def load_verified(*, cache_root: Path, **_kwargs: object) -> CatalogedBars:
+        nonlocal calls
+        calls += 1
+        if cache_root == inputs["historical_cache_root"].resolve():
+            return historical_catalog
+        if cache_root == inputs["head_cache_root"].resolve():
+            _mutate_head_index_without_changing_selected_qqq(
+                inputs["head_cache_root"],
+                mutation=mutation,
+            )
+            return prospective_catalog
+        raise AssertionError("unexpected cache root")
+
+    _deny_external_access(monkeypatch)
+    monkeypatch.setattr(
+        prospective_input,
+        "load_verified_kis_paper_private_intraday_catalog",
+        load_verified,
+    )
+
+    result = prospective_input.load_kis_intraday_prospective_observation_input(
+        historical_cache_root=inputs["historical_cache_root"],
+        head_cache_root=inputs["head_cache_root"],
+        preparation_dir=inputs["preparation_dir"],
+        repo_root=inputs["repo_root"],
+    )
+
+    assert calls == 2
+    assert result.prospective_session_dates == _PROSPECTIVE_DATES
 
 
 def test_incomplete_selected_source_session_is_rejected_without_artifact_write(
@@ -379,6 +444,52 @@ def _write_head_index(
         ).encode("utf-8")
     index_path.write_bytes(contents)
     return row_fingerprints, "sha256:" + hashlib.sha256(contents).hexdigest()
+
+
+def _mutate_head_index_without_changing_selected_qqq(
+    head_cache_root: Path,
+    *,
+    mutation: str,
+) -> None:
+    index_path = head_cache_root / "v1" / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq_target = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    if mutation == "append_qqq_session":
+        rows = qqq_target["chunks"][0]["row_fingerprints"]
+        session = us_equity_2026_session(date(2026, 7, 15))
+        assert session is not None
+        for offset in range(390):
+            timestamp = session.window.open_ts + Timeframe.M1.duration * offset
+            rows[timestamp.astimezone(prospective_input._KOREA_TZ).strftime("%Y%m%dT%H%M%S")] = (
+                "sha256:" + "a" * 64
+            )
+        qqq_target["chunks"][0]["row_count"] = len(rows)
+        qqq_target["chunks"][0]["chunk_key"] = _chunk_key(rows)
+        qqq_target["chunks"][0]["collected_at_utc"] = (
+            session.window.close_ts + Timeframe.M1.duration
+        ).isoformat()
+    elif mutation == "update_spy_metadata":
+        spy_target = next(
+            target for target in index["targets"] if target["target_key"] == "SPY/AMS/1m"
+        )
+        spy_target["last_reason"] = "collector_incomplete"
+    else:
+        raise AssertionError(f"unexpected mutation: {mutation}")
+    index["generation"] += 1
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+
+def _mutate_selected_qqq_fingerprint(head_cache_root: Path) -> None:
+    index_path = head_cache_root / "v1" / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq_target = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    chunk = qqq_target["chunks"][0]
+    rows = chunk["row_fingerprints"]
+    first_row_key = next(iter(rows))
+    rows[first_row_key] = "sha256:" + "d" * 64
+    chunk["chunk_key"] = _chunk_key(rows)
+    index["generation"] += 1
+    index_path.write_text(json.dumps(index), encoding="utf-8")
 
 
 def _write_preparation_pair(

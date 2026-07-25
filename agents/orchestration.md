@@ -39,6 +39,11 @@ The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
 preparation independently of a scoped SPY failure, while retaining the overall
 collection failure signal and full-index validation contract.
 
+At each bounded integration, inspect whether an integrity check binds unrelated
+future progress or whether recovery accepts duplicate evidence. Keep selected
+input identity fail-closed, but allow append-only, non-selected metadata to
+advance; reject duplicate decision events during reconstruction.
+
 ## External Waits
 
 The existing head and daily schedules own their due times. Do not foreground-sleep,

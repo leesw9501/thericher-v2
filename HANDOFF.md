@@ -720,8 +720,11 @@ to the first five selected session dates and their row-fingerprint digest. It
 has not created a model, GPU job, Paper order, or profitability conclusion.
 
 The pair-bound offline consumer is now implemented and synthetically verified.
-It accepts only a Data-loader-sealed first-five pair whose head-index identity
-matches both before and after local cache reads, fits the fixed regularized
+It accepts only a Data-loader-sealed first-five pair whose selected QQQ dates
+and row-fingerprint digest match both before and after local cache reads. The
+pair's full head-index hash remains preparation-time provenance, so a later
+append or independent SPY metadata update does not invalidate the frozen
+selection; a selected-row change fails closed. It fits the fixed regularized
 linear control only on the ten historical sessions, and evaluates the four
 fixed local-paper candidates in memory. External evidence contains only
 identity-bound, sanitized decisions/fills and hashes: no raw bars, prices,

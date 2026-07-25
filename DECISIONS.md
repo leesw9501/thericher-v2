@@ -4986,10 +4986,12 @@ isolating credentials, and avoiding a new scheduler or approval surface.
 
 Decision: the first `kis-intraday-prospective-head-observation-r1` consumer is
 an offline-only boundary. It accepts only a Data-loader-created input after the
-external precommit/planning pair matches the current head-index metadata hash
-both before and after the separate local cache reads. The sealed input binds
-the selected rows, pair, and index identity; the frozen model receipt carries
-that same head-index identity.
+external precommit/planning pair's frozen first-five QQQ dates and selected-row
+fingerprint digest match both before and after the separate local cache reads.
+The full head-index metadata hash is preparation-time provenance, not a mutable
+input lock: append-only coverage or independent SPY metadata updates remain
+eligible, while a selected-row change fails closed. The sealed input binds the
+selected rows and pair; the frozen model receipt retains that provenance.
 
 The consumer fits the regularized-linear control only on the fixed ten-session
 historical prefix, runs `flat`, `always_long`, `previous_bar_direction`, and

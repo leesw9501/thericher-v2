@@ -23,8 +23,10 @@ selection, ensembles, Paper intents, and broker actions before that pair exists.
   state is `pending_complete_sessions`; no real pair, candidate, or prospective
   observation receipt exists.
 - The credential-free offline consumer is implemented and synthetically
-  verified. It validates the frozen pair and head-index identity before reading
-  local cache inputs, then emits only sanitized `source: local_paper` evidence.
+  verified. It validates the frozen pair's first-five QQQ dates and selected
+  row fingerprints before and after local cache inputs, retaining the full
+  head-index hash as preparation-time provenance, then emits only sanitized
+  `source: local_paper` evidence.
 - No GPU work is running. One GPU job may run only after a frozen campaign
   contract exists; utilization is not a reason to start an ineligible job.
 - Earlier daily and short historical screens are closed plumbing evidence only.
