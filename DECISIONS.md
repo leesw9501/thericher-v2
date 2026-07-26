@@ -5636,3 +5636,39 @@ promotion. Temporary Validation independently passed the artifact hash,
 Claude's concise falsification-first materializer check was attempted, but its
 OAuth session remained expired and no private content was sent; this is a
 scoped reviewer-tool limitation, not a block on the non-executable adapter.
+
+## 2026-07-27 - Freeze deterministic QQQ D1 target/cost semantics before a model screen
+
+Decision: bind one candidate-only QQQ long-versus-flat target to the reattested
+`expanding-1` materializer. It uses only QQQ's observed `t+1` entry open and
+`t+2` exit open, while SPY remains a completed-feature reference. The fixed
+two-fill convention is one basis point fee and two basis points slippage per
+fill, with `0.0001` price/fee quantization. A target is `1` only when net exit
+credit strictly exceeds entry debit; equality is `0`. This is a deterministic
+label convention, not cost calibration, PnL evidence, a model decision, or a
+trade instruction.
+
+The active v2 external receipt is
+`D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-1-validation-first-v2.json`,
+with hash
+`sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486`
+and target-cost identity
+`sha256:2c0ecbb889b8f1660929e87458e4a90d01f2390e41b25ed47e7201ab8a94b842`.
+It records only lineage, fixed formula parameters, index/timestamp geometry,
+and non-executable scope. It persists no opens, returns, labels, predictions,
+checkpoints, credentials, accounts, orders, or PnL.
+
+Independent Validation found that the first immutable v1 target receipt allowed
+ambient Decimal precision to affect intermediate arithmetic. Preserve it as
+historical evidence, but do not use it. v2 fixes the complete calculation inside
+a local Decimal context with precision 34 and `ROUND_HALF_EVEN`; its independent
+reproducer, source-safety, geometry, and pure-import checks passed. The target
+adapter reconstructs its own sparse materializer window instead of making a
+one-window receipt an approval or input gate.
+
+Reason: the target must be reproducible before model comparison can be trusted.
+Freezing the entire Decimal context avoids a hidden host-dependent training
+label while retaining the exact local-paper-style two-fill economics. Claude's
+concise target-semantics check was attempted but OAuth remained expired; no
+private content was sent. That tooling fault prevents no candidate-only screen,
+promotion, replay, Paper, or live action.

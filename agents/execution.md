@@ -58,13 +58,18 @@ remains unavailable.
   future open references after verified reattestation. Its source-safe receipt
   is `sha256:247142...6b2f748`; it has no label value, intent, account, order,
   local-paper replay, KIS, or live effect.
+- Its v2 target/cost adapter uses only transient QQQ `t+1/t+2` opens with fixed
+  local-paper-style two-fill economics. Its receipt is `sha256:90be...d7486`;
+  it persists no label, price, PnL, intent, account, order, replay, KIS, or
+  live effect. A later candidate-only model screen remains equally outside the
+  Execution route.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research define target/cost semantics for the
-   reattested offline D1 materializer. Its replay and route-isolation tests are
-   the current integration evidence.
+   stable while Data and Research run a candidate-only D1 sequence screen from
+   the reattested offline materializer/target contract. Its replay and
+   route-isolation tests are the current integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -91,5 +96,6 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next fold-local target/cost adapter is
-offline; do not let it acquire an account, order, KIS, Tiingo, or replay path.
+binding and route boundaries intact. The next fold-local model screen is
+candidate-only; do not let it acquire an account, order, KIS, Tiingo, or replay
+path.

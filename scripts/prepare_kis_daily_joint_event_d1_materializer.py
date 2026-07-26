@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from thericher_v2.kis_daily_joint_event_d1_materializer import (
+    KisDailyJointEventD1Materializer,
     build_kis_daily_joint_event_d1_materializer,
     write_kis_daily_joint_event_d1_materializer_receipt,
 )
@@ -62,17 +63,15 @@ _AUDIT_PARTITION_IDENTITY = (
 )
 
 
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--artifact-root", type=Path, default=DEFAULT_MODEL_ARTIFACT_ROOT)
-    parser.add_argument("--parent-artifact", type=Path, default=_PARENT_ARTIFACT)
-    parser.add_argument("--fold-artifact", type=Path, default=_FOLD_ARTIFACT)
-    parser.add_argument("--phase", choices=("development", "validation"), default="validation")
-    parser.add_argument("--decision-index", type=int)
-    parser.add_argument("--destination", type=Path)
-    args = parser.parse_args(argv)
+def load_pinned_kis_daily_joint_event_d1_materializer(
+    *,
+    artifact_root: Path,
+    parent_artifact: Path = _PARENT_ARTIFACT,
+    fold_artifact: Path = _FOLD_ARTIFACT,
+) -> KisDailyJointEventD1Materializer:
+    """Reattest the one pinned local QQQ/SPY materializer without a network call."""
 
-    # Keep --help and the materializer import path free of Data-package side effects.
+    # Keep import/help paths free of Data-package side effects.
     from thericher_v2.data.kis_daily_corporate_actions import (
         load_kis_daily_corporate_action_snapshot,
     )
@@ -81,7 +80,6 @@ def main(argv: list[str] | None = None) -> None:
     )
     from thericher_v2.data.kis_paper_daily import load_kis_paper_private_daily_catalog
 
-    artifact_root = Path(args.artifact_root)
     catalog = load_kis_paper_private_daily_catalog(
         target_keys=("QQQ/NAS/MODP=0", "SPY/AMS/MODP=0"),
         expected_index_hash=_CATALOG_INDEX_HASH,
@@ -115,7 +113,7 @@ def main(argv: list[str] | None = None) -> None:
         model_execution_review=KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
     )
     verified_parent = load_verified_kis_daily_joint_event_window_contract(
-        path=Path(args.parent_artifact),
+        path=Path(parent_artifact),
         expected_artifact_sha256=_PARENT_ARTIFACT_HASH,
         expected_contract_identity=_PARENT_CONTRACT_IDENTITY,
         rebuilt_contract=rebuilt_parent,
@@ -127,16 +125,34 @@ def main(argv: list[str] | None = None) -> None:
         fold_id="expanding-1",
     )
     verified_fold = load_verified_kis_daily_joint_event_fold_input(
-        path=Path(args.fold_artifact),
+        path=Path(fold_artifact),
         expected_artifact_sha256=_FOLD_ARTIFACT_HASH,
         expected_fold_input_identity=_FOLD_INPUT_IDENTITY,
         expected_fold_input=runtime_fold,
         artifact_root=artifact_root,
         repo_root=_REPO_ROOT,
     )
-    materializer = build_kis_daily_joint_event_d1_materializer(
+    return build_kis_daily_joint_event_d1_materializer(
         fold_input_artifact=verified_fold,
         catalog=catalog,
+    )
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--artifact-root", type=Path, default=DEFAULT_MODEL_ARTIFACT_ROOT)
+    parser.add_argument("--parent-artifact", type=Path, default=_PARENT_ARTIFACT)
+    parser.add_argument("--fold-artifact", type=Path, default=_FOLD_ARTIFACT)
+    parser.add_argument("--phase", choices=("development", "validation"), default="validation")
+    parser.add_argument("--decision-index", type=int)
+    parser.add_argument("--destination", type=Path)
+    args = parser.parse_args(argv)
+
+    artifact_root = Path(args.artifact_root)
+    materializer = load_pinned_kis_daily_joint_event_d1_materializer(
+        artifact_root=artifact_root,
+        parent_artifact=Path(args.parent_artifact),
+        fold_artifact=Path(args.fold_artifact),
     )
     phase = args.phase
     eligible = materializer.eligible_decision_indices(phase)
@@ -162,8 +178,8 @@ def main(argv: list[str] | None = None) -> None:
         json.dumps(
             {
                 "status": "candidate",
-                "fold_artifact_sha256": verified_fold.content_hash,
-                "fold_input_identity": verified_fold.fold_input.fold_input_identity,
+                "fold_artifact_sha256": materializer.fold_artifact_sha256,
+                "fold_input_identity": materializer.fold_input.fold_input_identity,
                 "materializer_identity": materializer.materializer_identity,
                 "receipt_sha256": receipt.content_hash,
                 "phase": phase,
@@ -172,7 +188,7 @@ def main(argv: list[str] | None = None) -> None:
                 "predecessor_index": window.predecessor_index,
                 "entry_index": window.target_references.entry_index,
                 "exit_index": window.target_references.exit_index,
-                "model_execution_review": verified_fold.fold_input.model_execution_review,
+                "model_execution_review": materializer.fold_input.model_execution_review,
             },
             sort_keys=True,
         )

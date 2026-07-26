@@ -11,7 +11,7 @@ import sys
 import urllib.request
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
-from decimal import Decimal
+from decimal import ROUND_UP, Decimal, localcontext
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
@@ -26,6 +26,18 @@ from thericher_v2.kis_daily_joint_event_d1_materializer import (
     _assert_source_safe,
     build_kis_daily_joint_event_d1_materializer,
     write_kis_daily_joint_event_d1_materializer_receipt,
+)
+from thericher_v2.kis_daily_joint_event_d1_target_cost import (
+    KIS_DAILY_JOINT_EVENT_D1_TARGET_COST_KIND,
+    KIS_DAILY_JOINT_EVENT_D1_TARGET_DECIMAL_PRECISION,
+    KIS_DAILY_JOINT_EVENT_D1_TARGET_FEE_BPS_PER_FILL,
+    KIS_DAILY_JOINT_EVENT_D1_TARGET_SLIPPAGE_BPS_PER_FILL,
+    build_kis_daily_joint_event_d1_target_cost_adapter,
+    calculate_kis_daily_joint_event_d1_target_label,
+    write_kis_daily_joint_event_d1_target_cost_receipt,
+)
+from thericher_v2.kis_daily_joint_event_d1_target_cost import (
+    _assert_source_safe as _assert_target_receipt_source_safe,
 )
 from thericher_v2.kis_daily_joint_event_window_contract import (
     DEFAULT_KIS_DAILY_JOINT_EVENT_WINDOW_SPEC,
@@ -51,7 +63,7 @@ def _session_dates_hash(sessions: tuple[date, ...]) -> str:
 
 def _contract(tmp_path: Path):
     repo_root = tmp_path / "repo"
-    repo_root.mkdir()
+    repo_root.mkdir(parents=True)
     external_root = tmp_path / "external"
     sessions = tuple(date(2000, 1, 1) + timedelta(days=index) for index in range(4756))
     catalog_dataset_hash = _sha256("catalog-dataset")
@@ -196,6 +208,30 @@ def _catalog(
         bars_by_symbol=MappingProxyType(bars_by_symbol),
         common_sessions=contract.sessions,
         raw_price_limitations=("unit-only",),
+    )
+
+
+def _target_adapter(
+    tmp_path: Path,
+    *,
+    qqq_close_overrides: dict[int, Decimal] | None = None,
+    qqq_open_overrides: dict[int, Decimal] | None = None,
+):
+    contract, artifact_root, verified_fold = _verified_fold_artifact(tmp_path)
+    source = _catalog(
+        contract,
+        tmp_path,
+        qqq_close_overrides=qqq_close_overrides,
+        qqq_open_overrides=qqq_open_overrides,
+    )
+    materializer = build_kis_daily_joint_event_d1_materializer(
+        fold_input_artifact=verified_fold,
+        catalog=source,
+    )
+    return (
+        artifact_root,
+        materializer,
+        build_kis_daily_joint_event_d1_target_cost_adapter(materializer=materializer),
     )
 
 
@@ -428,3 +464,219 @@ assert not [name for name in sys.modules if name.startswith('thericher_v2.execut
         cwd=Path(__file__).resolve().parents[1],
     )
     assert result.returncode == 0, result.stderr
+
+
+def test_target_cost_adapter_reconstructs_one_sparse_causal_target(tmp_path: Path) -> None:
+    _artifact_root, materializer, adapter = _target_adapter(tmp_path)
+    decision_index = materializer.eligible_decision_indices("validation")[0]
+
+    target = adapter.derive(phase="validation", decision_index=decision_index)
+
+    assert target.decision_index == decision_index
+    assert target.predecessor_index == decision_index - 20
+    assert target.feature_start_index == decision_index - 19
+    assert target.feature_end_index == decision_index
+    assert target.entry_index == decision_index + 1
+    assert target.exit_index == decision_index + 2
+    assert target.label in {0, 1}
+    assert target.target_cost_identity == adapter.target_cost_identity
+    assert adapter.target_cost_identity.startswith("sha256:")
+
+
+def test_target_cost_adapter_uses_only_future_qqq_opens(tmp_path: Path) -> None:
+    _artifact_root, baseline_materializer, baseline_adapter = _target_adapter(tmp_path)
+    decision_index = baseline_materializer.eligible_decision_indices("validation")[0]
+    _artifact_root, future_materializer, future_adapter = _target_adapter(
+        tmp_path / "future",
+        qqq_open_overrides={decision_index + 2: Decimal("9999")},
+    )
+    _artifact_root, feature_materializer, feature_adapter = _target_adapter(
+        tmp_path / "feature",
+        qqq_close_overrides={decision_index: Decimal("9999")},
+    )
+
+    baseline_window = baseline_materializer.materialize(
+        phase="validation",
+        decision_index=decision_index,
+    )
+    future_window = future_materializer.materialize(
+        phase="validation",
+        decision_index=decision_index,
+    )
+    feature_window = feature_materializer.materialize(
+        phase="validation",
+        decision_index=decision_index,
+    )
+    baseline_target = baseline_adapter.derive(phase="validation", decision_index=decision_index)
+    future_target = future_adapter.derive(phase="validation", decision_index=decision_index)
+    feature_target = feature_adapter.derive(phase="validation", decision_index=decision_index)
+
+    assert baseline_window.feature_rows == future_window.feature_rows
+    assert baseline_target.label == 0
+    assert future_target.label == 1
+    assert baseline_target.label != future_target.label
+    assert baseline_window.feature_rows != feature_window.feature_rows
+    assert baseline_target.label == feature_target.label
+
+
+def test_target_cost_formula_is_fixed_and_context_independent() -> None:
+    assert KIS_DAILY_JOINT_EVENT_D1_TARGET_FEE_BPS_PER_FILL == Decimal("1")
+    assert KIS_DAILY_JOINT_EVENT_D1_TARGET_SLIPPAGE_BPS_PER_FILL == Decimal("2")
+    assert KIS_DAILY_JOINT_EVENT_D1_TARGET_DECIMAL_PRECISION == 34
+    assert calculate_kis_daily_joint_event_d1_target_label(
+        entry_open=Decimal("100"),
+        exit_open=Decimal("100.0600"),
+    ) == 0
+    assert calculate_kis_daily_joint_event_d1_target_label(
+        entry_open=Decimal("100"),
+        exit_open=Decimal("100.0610"),
+    ) == 1
+    baseline = calculate_kis_daily_joint_event_d1_target_label(
+        entry_open=Decimal("100.00065"),
+        exit_open=Decimal("100.06067"),
+    )
+    with localcontext() as context:
+        context.rounding = ROUND_UP
+        context.prec = 8
+        assert (
+            calculate_kis_daily_joint_event_d1_target_label(
+                entry_open=Decimal("100.00065"),
+                exit_open=Decimal("100.06067"),
+            )
+            == baseline
+        )
+    with pytest.raises(ValueError, match="entry open"):
+        calculate_kis_daily_joint_event_d1_target_label(
+            entry_open=Decimal("0"),
+            exit_open=Decimal("100"),
+        )
+
+
+def test_target_cost_adapter_rejects_sparse_holes_and_bad_materializers(tmp_path: Path) -> None:
+    _artifact_root, materializer, adapter = _target_adapter(tmp_path)
+    fold = materializer.fold_input
+    sparse_hole = next(
+        index
+        for index in range(fold.validation_start_index + 20, fold.validation_end_index - 2)
+        if index not in fold.validation_eligible_decision_indices
+    )
+
+    with pytest.raises(ValueError, match="not sparse-eligible"):
+        adapter.derive(phase="validation", decision_index=sparse_hole)
+    with pytest.raises(ValueError, match="materializer"):
+        build_kis_daily_joint_event_d1_target_cost_adapter(materializer="not-a-materializer")  # type: ignore[arg-type]
+
+
+def test_target_cost_receipt_is_external_source_safe_and_offline(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    artifact_root, materializer, adapter = _target_adapter(tmp_path)
+    decision_index = materializer.eligible_decision_indices("validation")[0]
+
+    def fail(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("network or credential access is not allowed")
+
+    with monkeypatch.context() as blocked:
+        blocked.setattr(socket, "socket", fail)
+        blocked.setattr(socket, "create_connection", fail)
+        blocked.setattr(urllib.request, "urlopen", fail)
+        blocked.setattr(os, "getenv", fail)
+        receipt = write_kis_daily_joint_event_d1_target_cost_receipt(
+            destination=artifact_root / "receipts" / "target-cost.json",
+            adapter=adapter,
+            phase="validation",
+            decision_index=decision_index,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    serialized = receipt.path.read_text(encoding="utf-8").lower()
+    assert receipt.content_hash == "sha256:" + hashlib.sha256(receipt.path.read_bytes()).hexdigest()
+    assert KIS_DAILY_JOINT_EVENT_D1_TARGET_COST_KIND in serialized
+    assert '"open"' not in serialized
+    assert '"return"' not in serialized
+    assert '"label"' not in serialized
+    assert '"prediction"' not in serialized
+    assert '"pnl"' not in serialized
+    assert '"credential"' not in serialized
+    assert '"order"' not in serialized
+    with pytest.raises(ValueError, match="not source-safe"):
+        _assert_target_receipt_source_safe({"entry_open": "not-allowed"})
+    with pytest.raises(FileExistsError):
+        write_kis_daily_joint_event_d1_target_cost_receipt(
+            destination=receipt.path,
+            adapter=adapter,
+            phase="validation",
+            decision_index=decision_index,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+
+def test_target_cost_module_and_script_help_stay_on_the_pure_import_path() -> None:
+    module_code = """\
+import importlib
+import sys
+importlib.import_module('thericher_v2.kis_daily_joint_event_d1_target_cost')
+assert not [name for name in sys.modules if name.startswith('thericher_v2.data')]
+assert not [name for name in sys.modules if name.startswith('thericher_v2.execution')]
+"""
+    module_result = subprocess.run(
+        [sys.executable, "-c", module_code],
+        check=False,
+        capture_output=True,
+        text=True,
+        cwd=Path(__file__).resolve().parents[1],
+    )
+    assert module_result.returncode == 0, module_result.stderr
+
+    module_path = (
+        Path(__file__).resolve().parents[1]
+        / "src"
+        / "thericher_v2"
+        / "kis_daily_joint_event_d1_target_cost.py"
+    )
+    tree = ast.parse(module_path.read_text(encoding="utf-8"))
+    imports = [
+        alias.name
+        for node in ast.walk(tree)
+        if isinstance(node, ast.Import)
+        for alias in node.names
+    ] + [
+        node.module or ""
+        for node in ast.walk(tree)
+        if isinstance(node, ast.ImportFrom)
+    ]
+    assert not any(
+        term in imported
+        for imported in imports
+        for term in (
+            "execution",
+            "broker",
+            "socket",
+            "urllib",
+            "http",
+            "requests",
+            "dotenv",
+            "tiingo",
+            "campaign",
+            "replay",
+            "backtest",
+            "order",
+        )
+    )
+
+    script_path = (
+        Path(__file__).resolve().parents[1]
+        / "scripts"
+        / "prepare_kis_daily_joint_event_d1_target_cost.py"
+    )
+    script_result = subprocess.run(
+        [sys.executable, str(script_path), "--help"],
+        check=False,
+        capture_output=True,
+        text=True,
+        cwd=Path(__file__).resolve().parents[1],
+    )
+    assert script_result.returncode == 0, script_result.stderr

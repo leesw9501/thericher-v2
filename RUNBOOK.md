@@ -360,6 +360,37 @@ The command reads only pinned local market data and immutable contract inputs.
 It does not read `.env`, call KIS or Tiingo, invoke a broker, train, replay, or
 create a model/Paper decision.
 
+### Reattested D1 Target/Cost Semantics
+
+The active source-safe target/cost receipt is external at:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-1-validation-first-v2.json
+```
+
+Its content hash is
+`sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486`.
+It binds the verified materializer to QQQ `t+1/t+2` long-versus-flat semantics,
+one basis point fee and two basis points slippage per fill, `0.0001`
+`ROUND_HALF_EVEN` quantization, and Decimal precision 34. It persists only
+identities, formula parameters, timestamps, and index geometry, never opens,
+returns, labels, predictions, checkpoints, credentials, orders, or PnL.
+
+The earlier v1 receipt remains immutable evidence but is not active: independent
+Validation found its intermediate Decimal arithmetic could vary with the ambient
+precision. Use only v2 for any later candidate-only consumer.
+
+To write another source-safe semantic receipt, use a new external destination:
+
+```powershell
+uv run python scripts\prepare_kis_daily_joint_event_d1_target_cost.py `
+  --phase validation `
+  --destination D:\thericher-v2\model-artifacts\research-contracts\<new-target-cost-receipt>.json
+```
+
+The command reattests only local pinned inputs. It does not read `.env`, call
+KIS or Tiingo, invoke a broker, train, replay, or create a Paper decision.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS

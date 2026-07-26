@@ -14,11 +14,12 @@ Do not select strategies or make execution decisions.
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
 evidence. The active v2 QQQ/SPY joint-event contract has already reattested one
-fold-local input and materialized one source-safe D1 window. Serve the same
-catalog only to its next fold-local target/cost semantic adapter. Its full
-sequence dependency mask is `t-20..t+2`, not merely the 20 visible feature rows
-`t-19..t`. The prospective QQQ 1m first-five pair is one Data product for a
-named future observer; it is not the only Data output or a company hold.
+fold-local input, materialized one source-safe D1 window, and fixed v2 target
+cost semantics. Serve the same catalog only to one bounded candidate-only D1
+sequence screen. Its full sequence dependency mask is `t-20..t+2`, not merely
+the 20 visible feature rows `t-19..t`. The prospective QQQ 1m first-five pair
+is one Data product for a named future observer; it is not the only Data output
+or a company hold.
 
 ## Current Facts
 
@@ -123,13 +124,20 @@ named future observer; it is not the only Data output or a company hold.
   binds lineage, sparse eligibility, timestamps, counts, and index bounds. The
   in-memory window used predecessor `t-20`, 20 feature sessions `t-19..t`, and
   future references `t+1/t+2`; no raw values or provider bytes were persisted.
+- The materializer now feeds a pure QQQ long-versus-flat target/cost adapter.
+  Its active v2 receipt is `sha256:90be...d7486`, bound to target-cost identity
+  `sha256:2c0e...4b842`. It fixes `t+1/t+2` QQQ opens, 1/2 basis-point
+  fee/slippage per fill, `0.0001` half-even quantization, and Decimal precision
+  34 without persisting a target value. The prior immutable v1 receipt is
+  superseded because its intermediate Decimal arithmetic was context-sensitive.
 
 ## Ready Queue
 
-1. Serve the same verified QQQ/SPY catalog and reattested `expanding-1`
-   materializer to one offline target/cost semantic adapter. Preserve its
-   `t-20..t+2` joint mask and exact sparse indices; use values in memory only
-   and do not fetch, blend, or persist provider rows.
+1. Serve the same verified QQQ/SPY catalog, reattested `expanding-1`
+   materializer, and v2 target/cost semantics to one candidate-only D1
+   sequence screen. Preserve its `t-20..t+2` joint mask and exact sparse
+   indices; use values in memory only and do not fetch, blend, or persist
+   provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -164,17 +172,17 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-`expanding-1` input, and its first D1 materializer receipt; resume for a
-fold-local target/cost semantic adapter. Reattest existing metadata and
+`expanding-1` input, first D1 materializer receipt, and v2 target/cost receipt;
+resume for a candidate-only sequence screen. Reattest existing metadata and
 committed snapshots before a new consumer or future network call. A bad cache
 is reconcile/restart evidence for that cache; an empty or limited endpoint
 result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the reattested `expanding-1` input, D1 materializer identity, and
-hash-bound catalog lineage to one target/cost semantic adapter. Preserve the
-frozen six-symbol source separately. Do not infer PIT membership,
-corporate-action completeness, a ranking claim, or Paper-trading eligibility
-from either cache, and do not wait for a prospective pair before advancing
-other ready Data work.
+Return the reattested `expanding-1` input, D1 materializer/target-cost
+identities, and hash-bound catalog lineage to one candidate-only sequence
+screen. Preserve the frozen six-symbol source separately. Do not infer PIT
+membership, corporate-action completeness, a ranking claim, or Paper-trading
+eligibility from either cache, and do not wait for a prospective pair before
+advancing other ready Data work.

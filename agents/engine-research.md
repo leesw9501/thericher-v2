@@ -13,11 +13,12 @@ modify broker submission or deterministic execution-risk behavior.
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
 development-only falsification evidence. The reattested fold-local QQQ/SPY
-input now has one D1 materializer; next define only its target/cost semantics
-without fitting, replaying, or selecting a model. The prospective QQQ first-five
-pair is required only for its isolated prospective observation, pair-dependent
-campaign, and later pair-dependent promotion decisions; it does not make
-historical research input-pending.
+input now has one D1 materializer and fixed v2 target/cost semantics; next run
+one bounded candidate-only CPU/CUDA sequence screen without replaying,
+selecting, or promoting a model. The prospective QQQ first-five pair is
+required only for its isolated prospective observation, pair-dependent campaign,
+and later pair-dependent promotion decisions; it does not make historical
+research input-pending.
 
 ## Current Readiness
 
@@ -106,18 +107,27 @@ historical research input-pending.
   the receipt has no prices, returns, labels, predictions, checkpoints, or
   broker data. Temporary Validation passed independently. It remains
   `review_unavailable`, non-executable, and not a campaign/model/replay input.
+- The D1 target/cost adapter derives only an in-memory QQQ long-versus-flat
+  binary target from its `t+1/t+2` references. Its active v2 receipt is
+  `sha256:90be...d7486` with target-cost identity `sha256:2c0e...4b842`.
+  Its 1-bps fee and 2-bps slippage per fill match the existing fixed sequence
+  economics, but it freezes all intermediate Decimal arithmetic at precision 34
+  and `ROUND_HALF_EVEN`. Validation rejected its v1 receipt for ambient
+  precision sensitivity; v2 is the only eligible source for a candidate-only
+  screen. It stores no labels or price-derived value externally.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Define one pure fold-local D1 target/cost semantic adapter for the
-   reattested `expanding-1` materializer. It must use only `t+1/t+2` target
-   references, retain sparse eligibility, keep target values in memory, and
-   remain non-executable under `review_unavailable`. Retry the named Claude
-   leakage review at the material decision boundary, but do not treat its OAuth
-   fault as a block on this data-only adapter.
+2. Run one fixed candidate-only D1 sequence screen from the reattested
+   `expanding-1` materializer and v2 target/cost adapter. Keep its sparse
+   development/validation split, 20-by-3 feature geometry, and untouched tail.
+   A CPU smoke precedes at most one CUDA candidate run; artifacts remain
+   external and no replay, winner selection, ensemble, Paper action, or model
+   promotion follows. Retry Claude at the material decision boundary, but do
+   not turn its OAuth fault into a GPU-idle approval hold.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -134,16 +144,16 @@ historical research input-pending.
 
 ## Recovery
 
-Current class: complete for the joint contract, `expanding-1` input, and its
-first D1 materializer receipt; resume for its target/cost semantic adapter. A
-failed consumer attempt creates new immutable evidence rather than overwriting
-either parent artifact. A missing prospective pair is input_unavailable only
-for its pair-bound observation.
+Current class: complete for the joint contract, `expanding-1` input, first D1
+materializer receipt, and v2 target/cost receipt; resume for its candidate-only
+sequence screen. A failed consumer attempt creates new immutable evidence
+rather than overwriting either parent artifact. A missing prospective pair is
+input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask, reattested `expanding-1` materializer, and source
-catalog lineage to one D1 target/cost semantic adapter without a
-candidate-selection claim. Do not treat it as stock selection, a trained model,
-replay, or a Paper input, and do not wait for prospective collection to keep
-other ready roles moving.
+Return the joint event-mask, reattested `expanding-1` materializer, v2
+target/cost adapter, and source catalog lineage to one candidate-only D1
+sequence screen. Do not treat it as stock selection, a selected model, replay,
+or a Paper input, and do not wait for prospective collection to keep other
+ready roles moving.

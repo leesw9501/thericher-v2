@@ -212,6 +212,19 @@ authorized private KIS Paper work.
   decision; its receipt has no price, return, label, prediction, checkpoint,
   credential, order, or PnL values. Independent Validation passed its hash,
   geometry, source-safety, and pure-import checks.
+- The fold-local QQQ target/cost adapter is now complete with deterministic
+  two-fill semantics: entry at `t+1`, exit at `t+2`, one basis point fee and
+  two basis points slippage per fill, `0.0001` quantization, and an explicit
+  Decimal precision of 34 with `ROUND_HALF_EVEN`. Its active source-safe v2
+  receipt is
+  `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-1-validation-first-v2.json`
+  with hash `sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486`
+  and target-cost identity `sha256:2c0ecbb889b8f1660929e87458e4a90d01f2390e41b25ed47e7201ab8a94b842`.
+  It writes no opens, returns, labels, predictions, checkpoints, credentials,
+  orders, or PnL. The immutable v1 receipt remains historical evidence only:
+  Validation found that its intermediate Decimal arithmetic depended on ambient
+  precision, so no v1 target result may be used. v2 independently passed the
+  reproducer, source-safety, geometry, and pure-import checks.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -292,9 +305,9 @@ Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
-six-symbol-control, joint-event leakage, fold-local adapter, and D1
-materializer checks; no private material was sent. This is a scoped tooling
-fault, not a hold on ready private work.
+six-symbol-control, joint-event leakage, fold-local adapter, D1 materializer,
+and target-semantics checks; no private material was sent. This is a scoped
+tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -307,8 +320,8 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
-freeze one fold-local D1 target and cost semantic adapter for the reattested
-`expanding-1` materializer. Keep target values in memory, preserve the sparse
-indices and `t+1/t+2` boundary, and do not make the candidate model-executable,
-run GPU training or replay, or derive a Paper intent. Refresh this file only
-with resulting cross-lane facts after that bounded objective completes.
+run one bounded candidate-only CPU/CUDA D1 sequence screen from the reattested
+`expanding-1` materializer and v2 target/cost adapter. Keep data and labels in
+memory, preserve sparse indices and the untouched tail, and do not replay,
+select, promote, or derive a Paper intent. Refresh this file only with
+resulting cross-lane facts after that bounded objective completes.
