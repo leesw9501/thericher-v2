@@ -5473,3 +5473,37 @@ source without pretending it solves survivorship or historical universe
 construction. The separate cache and route avoid weakening the established ETF
 catalog while preserving a small, replayable foundation for the next panel
 contract.
+
+## 2026-07-27 - Freeze the six-symbol KIS Paper daily panel contract
+
+Decision: reattest only the completed NAS-only KIS Paper daily-universe probe
+cache and its linked source-safe evidence before exposing a panel. The loader
+pins the exact cache manifest
+`sha256:ffe91642bb024e7a9191c2abb774c97d529ec4b074d719b387da6dc460fd0eac`,
+probe evidence
+`sha256:02ce0b1004808644b0c69af6a546423508e13609aa658175f8ee09c3293e6bad`,
+registry, official directory hashes, ordered NAS scope, raw-file hashes,
+`MODP=0_unadjusted`, chronological rows, and common-session alignment. It
+produced six immutable `CatalogedBars` streams with 199 shared sessions from
+2025-10-08 through 2026-07-24 and panel dataset hash
+`sha256:fdd24d53ee9f7f5fd876f1f51561fc3fe7c8aea6d79d87bce83355dc4c07ed66`.
+The separate D: panel manifest hash is
+`sha256:99ba614688e199e6c40d9c20d5d22bebbe586e4e479deeee0c40a9a40417e6f4`;
+the raw-row-free external panel evidence hash is
+`sha256:55bfaaa68d29e8040dc08fa0c5459a7c7123fc242389b4da3f30394ae9250978`.
+
+The completed-bar adapter exposes one homogeneous D1 `CatalogedBars` stream
+only to offline/local-paper validation. It does not invoke a model, ranking,
+decision, `OrderIntent`, KIS, credential, account, or broker path, and marks
+the panel as not paper-trading eligible. The D1 session label means only an
+observed completed replay bar; it does not establish a provider close timestamp
+or runtime availability claim. The panel remains a current fixed basket, not a
+historical PIT universe, corporate-action-qualified dataset, stock-selection
+input, ensemble input, or profitability result. Claude's concise
+falsification-first check was attempted before this contract change, but local
+OAuth remained expired and no private material was sent.
+
+Reason: a fully attested narrow panel makes the next per-symbol local-paper
+baseline repeatable without weakening source separation or inventing live-like
+availability claims. It creates a real engine input while leaving historical
+universe, corporate-action, and execution eligibility work explicitly open.

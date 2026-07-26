@@ -22,6 +22,10 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   fixed current-listing registry, cache, and transport are isolated from the
   ETF catalog; this is not a PIT universe, stock-selection input, or Paper
   action.
+- Data then reattested that exact cache and its source-safe evidence into a
+  hash-bound 199-session common panel. The new completed-bar adapter exposes
+  one `CatalogedBars` stream at a time to offline/local-paper validation only;
+  it cannot read credentials, call KIS, create a decision, or reach a broker.
 - Engine Research completed the fixed QQQ/SPY daily sequence breadth screen:
   one CPU smoke and one Docker CUDA screen over LSTM, causal TCN, and compact
   attention. Both produced only external checkpoints and six `local_paper`
@@ -39,20 +43,20 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is a qualified fixed-basket daily panel: the newly
-accepted KIS cache is still raw provider data without a common-session loader
-or decision-time contract. The fixed two-ETF controls are weak after realistic
-local costs, so repeated threshold tuning would not advance the engine. The
-current listing cannot substitute for a PIT universe in a stock-selection
-claim.
+The material bottleneck is the first empirical per-symbol baseline on the
+qualified fixed-basket panel. The new panel has only 199 current-basket
+sessions and cannot support a PIT stock-selection claim or a depth GPU campaign.
+The fixed two-ETF controls are weak after realistic local costs, so repeated
+threshold tuning would not advance the engine.
 
 ## Current Operating Improvement
 
-The current reversible improvement is the hash-pinned six-target Data contract:
-it separates a small KIS-compatible basket from the ETF cache and records
-raw-row-free evidence outside Git. The frozen research precommit and shared
-1.0-second pacing alignment remain active. A worker owns its own backoff and
-recovery, and Codex does not sleep while another lane is ready.
+The current reversible improvement is the hash-pinned six-target panel
+contract: it reattests raw cache hashes and source-safe evidence before
+exposing a common-session `CatalogedBars` stream, while keeping panel evidence
+outside Git. The frozen research precommit and shared 1.0-second pacing
+alignment remain active. A worker owns its own backoff and recovery, and Codex
+does not sleep while another lane is ready.
 
 ## External Waits
 
@@ -69,8 +73,8 @@ lanes.
 
 ## Next Handoff
 
-Keep the KIS data worker independent at its next due cursor and build the next
-fixed-basket panel contract from the completed capability cache. Do not treat
-the rate control, current-listing registry, or weak daily controls as selected
-models. Record only an actual shared resource conflict, new external wait,
-bottleneck, or reversible operating improvement here.
+Keep the KIS data worker independent at its next due cursor and run one frozen
+per-symbol CPU local-paper baseline from the completed panel. Do not treat the
+rate control, current-listing registry, panel, or weak daily controls as
+selected models. Record only an actual shared resource conflict, new external
+wait, bottleneck, or reversible operating improvement here.

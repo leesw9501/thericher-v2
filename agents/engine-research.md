@@ -60,20 +60,22 @@ not make historical research input-pending.
 - The latest capture-scoped QQQ terminal page contained no qualified regular
   session minute under the exact 390-minute contract. It is Data evidence only
   and cannot become a feature, label, candidate result, or GPU input.
-- Data has now verified a fixed six-symbol KIS Paper daily capability basket
-  through 2025-10-08. It has no qualified panel loader, PIT universe meaning,
-  corporate-action qualification, ranking claim, or Research campaign yet; do
-  not train, select, ensemble, or allocate GPU work from the raw probe cache.
+- Data has now exposed a hash-bound six-symbol KIS Paper daily panel with 199
+  common sessions through 2026-07-24. It can supply one immutable D1
+  `CatalogedBars` stream per fixed symbol to offline `local_paper` validation.
+  It has no PIT universe meaning, corporate-action qualification, ranking
+  claim, or Research result yet; do not train an ensemble, select a model, or
+  allocate GPU work from the small current-basket panel.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth and L2 control results descriptive only.
    Do not retune a threshold, select a winner, create an ensemble, promote a
    checkpoint, or create a KIS Paper action from their validation results.
-2. Expand the future breadth queue through a separately qualified KIS-native
-   daily universe for stock-selection research. A fresh campaign must freeze
-   its own source, chronology, cost model, and decision contract before model
-   fitting; the two-ETF result cannot be silently repurposed.
+2. Build one bounded per-symbol CPU local-paper baseline from the new frozen
+   six-symbol panel. Freeze source identity, chronology, costs, and a naive
+   comparator before replay. Do not rank across symbols, tune thresholds,
+   select a winner, create an ensemble, or make a Paper action from it.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -97,6 +99,6 @@ its pair-bound observation.
 ## Next Handoff
 
 Return the corrected daily L2 control evidence without a candidate-selection
-claim, then obtain a bounded KIS-native daily-universe capability fact before
-opening another stock-selection campaign. Do not wait for prospective
+claim, then establish the first six-symbol per-symbol CPU baseline from the
+frozen panel. Do not treat it as stock selection or wait for prospective
 collection to keep other ready roles moving.

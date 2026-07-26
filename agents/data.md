@@ -11,11 +11,12 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Preserve the completed six-symbol NAS-only KIS Paper daily capability fact and
-prepare only its next qualified fixed-basket panel contract. Keep the
-reattested QQQ/SPY daily catalog available to frozen offline Research contracts.
-The prospective QQQ 1m first-five pair is one Data product for a named future
-observer; it is not the only Data output or a company hold.
+Preserve the completed six-symbol NAS-only KIS Paper daily panel and provide
+only its hash-bound, source-separated per-symbol streams to the next offline
+local-paper validation contract. Keep the reattested QQQ/SPY daily catalog
+available to frozen offline Research contracts. The prospective QQQ 1m
+first-five pair is one Data product for a named future observer; it is not the
+only Data output or a company hold.
 
 ## Current Facts
 
@@ -33,6 +34,15 @@ observer; it is not the only Data output or a company hold.
   stock-ranking input, or a Paper-trading prerequisite. The separate
   `daily-universe-probe/v1` cache and transport do not modify the QQQ/SPY/IWM
   daily catalog.
+- The frozen probe cache now reattests through a dedicated offline panel loader
+  into six immutable `CatalogedBars` streams with 199 common sessions from
+  2025-10-08 through 2026-07-24. Its panel dataset hash is
+  `sha256:fdd2...7ed66`; the D:-resident panel manifest hash is
+  `sha256:99ba...7e6f4` and its raw-row-free external evidence hash is
+  `sha256:55bf...50978`. All six streams had zero rows excluded by alignment.
+  The adapter exposes a per-symbol completed-bar input for offline
+  `local_paper` validation only. It has no credential, network, KIS, order,
+  ranking, or paper-trading capability.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
@@ -83,10 +93,10 @@ observer; it is not the only Data output or a company hold.
 
 ## Ready Queue
 
-1. Build the next fixed-basket daily panel only from the isolated probe cache,
-   with source identity, common-session facts, and temporal limitations kept
-   explicit. Do not silently blend it with ETF, Norgate, Tiingo, or legacy
-   caches.
+1. Keep the frozen panel source-separated while Engine Research consumes one
+   per-symbol stream for a bounded offline local-paper baseline. Do not blend
+   ETF, Norgate, Tiingo, or legacy rows into it or treat its current listing as
+   historical membership.
 2. Let the existing finite catch-up or `session-capture` worker advance its
    next ready cursor at the installed 1.0-second pace. Keep partial or
    extended-session capture rows out of Research.
@@ -114,8 +124,8 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the immutable six-symbol daily panel contract or its scoped limitation,
-then preserve the pair-only ETF and fixed-basket source boundaries for frozen
-Research. Do not infer PIT membership, corporate-action completeness, or a
-ranking claim from the new probe, and do not wait for a prospective pair before
-advancing other ready Data work.
+Return any panel-integrity limitation or preserve the frozen six-symbol source
+for its next per-symbol offline validation. Do not infer PIT membership,
+corporate-action completeness, a ranking claim, or Paper-trading eligibility
+from the panel, and do not wait for a prospective pair before advancing other
+ready Data work.

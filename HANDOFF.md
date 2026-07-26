@@ -78,6 +78,14 @@ authorized private KIS Paper work.
   its raw-row-free evidence is under the external artifact root. This is a
   current fixed-basket capability fact, not a PIT universe, ranking input, or
   paper-trading result.
+- That exact cache now has a dedicated offline, hash-bound daily panel: all six
+  streams share 199 sessions from 2025-10-08 through 2026-07-24. The panel
+  dataset hash is `sha256:fdd24d53ee9f7f5fd876f1f51561fc3fe7c8aea6d79d87bce83355dc4c07ed66`;
+  its D: manifest and source-safe evidence hashes are
+  `sha256:99ba614688e199e6c40d9c20d5d22bebbe586e4e479deeee0c40a9a40417e6f4`
+  and `sha256:55bfaaa68d29e8040dc08fa0c5459a7c7123fc242389b4da3f30394ae9250978`.
+  It exposes per-symbol `CatalogedBars` only to offline/local-paper validation.
+  It has no network, credential, KIS, order, ranking, or Paper-trading path.
 - The KIS private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions. The three-target QQQ/SPY/IWM intersection has 694 sessions;
   IWM remains source-limited at its qualified boundary.
@@ -231,9 +239,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the six-symbol
-KIS probe as descriptive Data evidence, then build only the next qualified
-fixed-basket panel contract. Do not turn the current-listing source into a PIT
-stock-selection claim or make a Paper intent from it. Refresh this file only
-with the resulting current cross-lane facts after that bounded objective
+Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the frozen
+six-symbol panel as descriptive Data evidence, then run one per-symbol CPU
+local-paper baseline only. Do not turn the current-listing source into a PIT
+stock-selection claim, a GPU-depth result, or a Paper intent. Refresh this file
+only with the resulting current cross-lane facts after that bounded objective
 completes.
