@@ -18,6 +18,11 @@ Execution work in parallel; invoke temporary Validation only when a frozen
 candidate and independent evaluation input are ready. Integrate evidence and
 shared contracts before dependent work relies on them.
 
+A prospective data condition gates only its named consumer, campaign, or
+promotion. It must not make historical Research, independent Data work, local
+simulation, or deterministic Paper preparation input-pending. When an external
+due time exists, keep every other ready bounded package moving.
+
 Treat a genuinely unknown private non-live provider, runtime, data-capability,
 or throughput behavior as a bounded capability probe. Do not turn it into an
 approval wait, foreground sleep, or durable rate/retry limit without official

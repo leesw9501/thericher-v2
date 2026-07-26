@@ -1,106 +1,52 @@
 # Codex Orchestration Stateboard
 
-`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
-This is Codex's concise cross-lane projection, not a fourth Role Agent, a
-second goal, or a historical ledger.
+AGENTS.md owns policy and NEXT_CODEX_GOAL.md owns the company objective. This
+is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Cross-Lane View
 
-- Data is in `resume`: the prospective QQQ head cache is generation `8` with
-  `0 / 5` complete sessions. The 2026-07-26 metadata reattestation is unchanged
-  (mixed continuation, no retained exact/conflicting overlap, scoped
-  `minute_duplicate_conflict`). The existing head task is `Ready`, has four KST
-  triggers, no missed run, and owns the next 2026-07-28 00:35 KST collection.
-  Its re-registered dispatcher preserves that one task/profile and follows the
-  collector with a CPU-only, network-disabled observer; its base smoke was
-  categorical `preparation_pair_missing`.
-- Engine Research is input-pending: no verified first-five preparation pair
-  exists, so no model, GPU, candidate, or ensemble job is eligible under the
-  current objective.
-- Execution is in `resume`: all four named scheduled tasks are `Ready`, with
-  successful prior results and no missed runs. The 2026-07-25 daily SPY session
-  was categorical `paper_only` / `no_intent` / `session_closed`; it had no
-  receipt-derived run identity, and its observer and terminal probe were both
-  `not_attempted`. This makes no fill or PnL claim.
-- D: has 40.45 percent free space and no related Docker/KIS process is active.
-  The lanes have no current resource conflict.
+- Data is ready for a bounded KIS Paper market-data capability probe. The
+  existing intraday-head collector remains a source-local fallback/current
+  sampler, not a company-wide dependency.
+- Engine Research is ready for historical KIS daily and complete-intraday
+  campaign work. The prospective first-five pair gates only its own future
+  observer/promotion path.
+- Execution is ready to simplify and reattest the deterministic
+  decision-to-target-weight-to-intent integration without changing live
+  isolation.
+- The only shared resources are KIS Paper market-data throughput and one GPU.
+  Data owns the first; Research owns the second. There is no current storage
+  conflict.
+
+## Current Bottleneck
+
+The material unknown is KIS intraday endpoint continuity and route-specific
+throughput, not an absence of all usable data. Historical daily and complete
+intraday evidence must continue to advance Research while Data measures that
+unknown.
 
 ## Current Operating Improvement
 
-Use the existing metadata-only head-coverage inspector and Task Scheduler result
-as the single recoverability signal for each due collection. The collector now
-returns nonzero for a failed or incomplete target result while preserving safe
-freshness output. This makes the next Docker `--build` run observable without
-adding a scheduler, retry loop, report, or approval gate. The current
-`minute_duplicate_conflict` metadata remains source/recovery evidence rather
-than a change cue until a bounded source or synthetic test identifies one exact
-collector defect. Future collector metadata distinguishes `candidate_batch`
-from `retained_cache`; legacy evidence remains `not_recorded`, with no change
-to scheduling or preparation control.
-
-The schedule-installation contract also locks the daily SPY head and session
-task names, Docker profiles/services, and their 22:15/23:50 KST times so a
-routine scheduler edit cannot silently break the exact-receipt handoff.
-Data-only tasks resume after availability, while Paper execution tasks retain
-their exact cadence without late catch-up. All named tasks now allow battery
-continuation, retain `IgnoreNew`, and have bounded execution limits; the head
-limit remains below the shortest same-task trigger gap.
-
-For fast local feedback, `scripts\run_parallel_tests.ps1` uses file-level
-`pytest-xdist` distribution with up to eight CPU workers and a short unique
-`C:\trpy` base temp path. It preserves failed-run temp evidence, reports a
-successful-run cleanup failure, and is supplemental to the serial bounded-goal
-verification command.
-
-The intraday wrapper lets a durable QQQ result trigger its QQQ-only metadata
-preparation independently of a scoped SPY failure, while retaining the overall
-collection failure signal and full-index validation contract. Candidate-batch
-conflicts now discard the whole candidate prefix. A legacy explicitly marked
-conflict keeps its immutable artifact but is removed from active index state,
-and an orphan recovery skips only its own target while the independent target
-continues in the same cycle.
-
-The same head task now invokes the isolated observer after every collection.
-The dispatcher captures no child output beyond an allowlisted observer status,
-preserves the collector exit code, and uses the base image rather than the
-11GB CUDA research image. This removes a foreground handoff wait without a
-second schedule, KIS call, GPU request, or Data-state coupling.
-
-At each bounded integration, inspect whether an integrity check binds unrelated
-future progress or whether recovery accepts duplicate evidence. Keep selected
-input identity fail-closed, but allow append-only, non-selected metadata to
-advance; reject duplicate decision or fill evidence during reconstruction. A
-missing or identity-mismatched Paper state is unavailable evidence, not a
-submission/terminal inference.
+Keep prospective readiness local to its consumer. The company goal must include
+all ready, non-conflicting role packages and may not be reduced to the next
+external scheduler due time. A worker owns its own backoff and recovery; Codex
+does not sleep while another lane is ready.
 
 ## External Waits
 
-The existing head and daily schedules own their due times. Do not foreground-sleep,
-create duplicate schedulers, or issue manual duplicate KIS calls. Claude CLI
-OAuth is expired; retry it only at a decision boundary that requires a
-drift-check, without holding a ready private lane.
-
-No separate intraday result-monitor is installed. At the next Codex integration
-after the due head result, reattest the existing collector through the
-metadata-only coverage inspector and consume the installed dispatcher's
-categorical observer outcome. The head task remains the sole recurring
-intraday-data scheduler.
-
-## Operator Help
-
-None. Escalate only a real operator-authority decision under `AGENTS.md`, never
-a routine scheduling, data-quality, model-result, or private Paper-work fact.
+- The scheduled intraday head has a due time, but it does not hold Data probes,
+  historical Research, or Execution preparation.
+- Claude CLI OAuth is expired. Retry it at the next material decision boundary;
+  do not block ordinary private work.
 
 ## Recovery
 
-Current class: `resume`. A scheduled wait, pending preparation pair, no-intent
-session, or scoped Claude tooling failure is evidence only for that input. It
-never becomes a cross-lane approval hold. Reattest durable metadata and exact
-identities before trusting a checkpoint.
+Current class: resume. Reattest an individual cache, campaign, or exact Paper
+intent before relying on it. Scope failure to that item and continue independent
+lanes.
 
 ## Next Handoff
 
-After the next due head result, compare safe QQQ coverage metadata with the
-generation-8 baseline. If five exact sessions first exist, let the installed
-dispatcher hand the pair to the frozen offline Research consumer.
-After daily SPY results, consume only exact receipt-linked categorical evidence.
+Integrate the Data probe, frozen historical campaign, and Execution contract.
+Record only an actual shared resource conflict, new external wait, bottleneck,
+or reversible operating improvement here.

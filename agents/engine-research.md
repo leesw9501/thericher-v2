@@ -1,106 +1,66 @@
 # Engine Research Agent Stateboard
 
-`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
-This is the current Research projection, not a campaign ledger. Historical
-claims, results, and artifacts remain in Git and
-`D:\thericher-v2\model-artifacts`.
+AGENTS.md owns policy and NEXT_CODEX_GOAL.md owns the company objective. This
+is the current Research projection, not a campaign ledger.
 
 ## Ownership
 
-Own hypotheses, features, model campaigns, analytical backtests, walk-forward
-evaluation, and model-side PnL attribution. Never modify broker submission or
-deterministic execution-risk behavior.
+Own hypotheses, features, models, campaigns, analytical backtests,
+walk-forward evaluation, GPU work, and model-side PnL attribution. Never
+modify broker submission or deterministic execution-risk behavior.
 
 ## Current Objective
 
-Remain input-pending until Data supplies a verified prospective QQQ first-five
-preparation pair. The current objective prohibits model/GPU jobs, candidate
-selection, ensembles, Paper intents, and broker actions before that pair exists.
+Resume bounded historical KIS research now. The prospective QQQ first-five pair
+is required only for its isolated prospective observation, pair-dependent
+prospective campaign, and later pair-dependent promotion decisions; it does not
+make historical campaigns input-pending.
 
 ## Current Readiness
 
-- The prospective head index has `0 / 5` exact regular sessions. Its preparation
-  state is `pending_complete_sessions`; the 2026-07-26 metadata reattestation
-  left it unchanged, so no real pair, candidate, or prospective observation
-  receipt exists.
-- The latest Data recovery hardening and data-scheduler missed-run recovery
-  only improve collection availability; they do not create a pair or change
-  Research eligibility.
-- The credential-free offline consumer is implemented and synthetically
-  verified. It validates the frozen pair's first-five QQQ dates and selected
-  row fingerprints before and after local cache inputs, retaining the full
-  head-index hash as preparation-time provenance, then emits only sanitized
-  `source: local_paper` evidence.
-- The existing head task now dispatches that consumer in a base-image,
-  CPU-only, network-disabled service only after its own collection service.
-  Its pre-pair smoke returned `preparation_pair_missing`; it has no KIS
-  environment values and no GPU request.
-- No GPU work is running. One GPU job may run only after a frozen campaign
-  contract exists; utilization is not a reason to start an ineligible job.
-- Earlier daily and short historical screens are closed plumbing evidence only.
-  They created no selected model, ensemble, promotion, or Paper input. The
-  Norgate trial remains development-only and cannot become a model/Paper lane.
-
-## Frozen Prospective Contract
-
-- Input: KIS-only QQQ data with completed `90 x 1m`, `18 x 5m`, and
-  `9 x 10m` context from the same cache. Keep 1h and 3h inactive until their
-  required contiguous coverage and timestamp semantics are qualified.
-- Timing: decide at a completed 1m close, enter at the next 1m open, and exit at
-  the following 1m open. No target may cross a declared session boundary.
-- Validation: train only on the frozen development prefix, use the declared
-  cost model and fixed local-paper controls, and keep any holdout sealed.
-- Outputs: a learned node proposes target state and timestamped evidence, never
-  a broker request. No result selects, retunes, promotes, or ensembles a model
-  without a separate eligible campaign contract and its required review.
+- Eligible source-separated KIS historical input exists: QQQ/SPY daily common
+  history and a bounded complete QQQ/SPY intraday scope.
+- Earlier CPU/GPU sequence screens include GRU, LSTM, causal TCN, and compact
+  attention. They are descriptive and do not select a model, ensemble, Paper
+  action, or profitability claim.
+- No GPU job is active. One job may start only after a frozen campaign contract
+  names its input, target, split, costs, baseline, metrics, compute budget, and
+  stop rules.
+- The pair-bound prospective observer is implemented, local-paper-only, and
+  network-disabled. It remains inactive until Data supplies its immutable pair.
 
 ## Ready Queue
 
-1. When Data supplies the first verified pair, the existing task dispatches the
-   credential-free offline prospective observation through its immutable input
-   contract; inspect its categorical local-paper receipt.
-2. Only after that receipt establishes a bounded claim, define a separate
-   campaign contract before breadth, depth, ensemble, replication, or GPU work.
-3. Consume only authoritative sanitized Execution lifecycle facts through opaque
-   receipt identity. Until qualified completion evidence exists,
-   `pnl_status: not_observed` and `performance_label = None` remain unchanged.
-
-## Operator Help
-
-None. Escalate only a paid or unclear-rights asset, a major runtime/framework
-replacement, public exposure, or a live-money boundary.
+1. Freeze one historical KIS campaign contract with point-in-time feature
+   availability, chronological development/holdout boundaries, a naive
+   baseline, costs, metrics, and kill criteria.
+2. Run a CPU baseline and one bounded comparison/replication from that
+   contract. Record artifacts outside Git and make only scoped conclusions.
+3. Run at most one GPU hypothesis or replication after its contract is frozen.
+   Do not open a sealed holdout or use GPU occupancy as a success metric.
+4. Maintain breadth, depth, ensemble, and replication queues, but promote none
+   without independent validation and the required Claude challenge.
+5. Consume a verified prospective pair as an additional observation/campaign
+   input when Data provides it. It never rewrites historical results or becomes
+   a global queue gate.
 
 ## Durable Constraints
 
-- Keep generated artifacts and checkpoints outside Git under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
-- A negative, unavailable, or abstaining result constrains only its claim. It
-  cannot become a Data, Paper, scheduler, or operator permission latch.
-- Preserve chronological session boundaries, source identity, leakage controls,
-  and immutable campaign attempt identities. Do not reinterpret old metrics as
-  a current signal.
-- Reconstruct a prospective local-paper receipt only from canonical current
-  schema events that exactly match its frozen decision/fill plan. Extra,
-  malformed, unplanned, or non-local-paper events fail the receipt rather than
-  being normalized into a result.
+- All artifacts and checkpoints belong under
+  D:\thericher-v2\model-artifacts or /app/model_artifacts.
+- Preserve provider identity, feature timestamps, chronological splits, and
+  holdout isolation.
+- A result can propose target state/evidence only. Execution owns sizing,
+  route selection, persistence, and broker effects.
 
 ## Recovery
 
-Current class: `resume`. A missing, changed, or tampered preparation pair is
-`input_unavailable` or `restart`, never a partial model result. There is no
-active campaign checkpoint to recover. A future interrupted campaign must use a
-new immutable attempt path and never overwrite a completed receipt.
-
-## Evidence
-
-- `scripts\run_kis_intraday_prospective_observation.py` is the local-only
-  consumer for a verified pair.
-- `kis-paper-intraday-observation` shares the head profile but is base-image,
-  network-disabled, CPU-only, and uses only external market-data and artifact
-  mounts.
+Current class: resume. A failed run creates a new immutable attempt rather than
+overwriting evidence. A missing prospective pair is input_unavailable only for
+its pair-bound observation.
 
 ## Next Handoff
 
-Wait for the Data-owned pair without foreground polling. At readiness, verify
-the pair's exact identity through the isolated consumer's receipt, and keep its
-result separate from selection, promotion, execution, and Paper authority.
+Return the frozen campaign identity, baseline/comparison result, GPU status,
+artifact path class, and the next falsifiable hypothesis. Do not wait for
+prospective collection to start historical work.

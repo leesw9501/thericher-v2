@@ -2,75 +2,142 @@
 
 ## Objective
 
-Integrate the first due outcome from the installed prospective QQQ intraday-head
-dispatcher after 2026-07-28 00:35 KST. Establish, from source-safe metadata,
-whether the generation-8 head has progressed toward a verified first-five pair
-and whether its isolated offline observer remained correctly scoped.
+Restore readiness-driven throughput for the first KIS-compatible Paper trading
+loop. Advance Data, Engine Research, and Execution in parallel from existing
+KIS evidence while measuring the exact KIS intraday capability needed for
+continuous collection.
 
-Do not foreground-wait, install another scheduler, or manually invoke the KIS
-collector. Continue any ready independent bounded work while the named task
-owns its due time.
+The prospective first-five QQQ 1m pair remains a prerequisite only for its
+pair-bound prospective observation, prospective campaign, and any later
+promotion that explicitly depends on it. It is not a global hold on historical
+Research, Data collection, local simulation, or Paper execution preparation.
 
 ## First Reads
 
 1. Run:
 
-   ```powershell
+~~~powershell
    .\scripts\start_next_codex_task.ps1
-   ```
+~~~
 
-2. Read `HANDOFF.md`, `AGENTS.md`, `RUNBOOK.md`, `agents/orchestration.md`,
-   `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
-3. Reattest the pre-run coverage baseline with:
+2. Read HANDOFF.md, AGENTS.md, RUNBOOK.md, DECISIONS.md,
+   agents/orchestration.md, agents/data.md, agents/engine-research.md, and
+   agents/execution.md.
+3. Reattest the current source-safe intraday baseline:
 
-   ```powershell
+~~~powershell
    uv run python scripts\inspect_kis_intraday_head_coverage.py
-   ```
+~~~
+
+## Parallel Work Packages
+
+### Data
+
+1. Run a bounded KIS Paper market-data capability probe through the owned
+   market-data client. It may use KIS_PAPER_* only for market-data token and
+   price endpoints; it must not call account, position, order, or live
+   endpoints.
+2. Record only source-safe evidence: route class, accepted-page count,
+   continuation category, page-size/coverage category, response/error class,
+   token reuse behavior, elapsed time, and the resulting calibration fact.
+   Never print raw bars, prices, request headers, tokens, account identifiers,
+   or response bodies.
+3. Determine whether the existing 1m endpoint can produce contiguous
+   regular-session capture, its usable historical range, and a measured
+   request-start ceiling. Keep the existing cache source-separated and retain
+   strict conflict rejection.
+4. Propose one owned, single-client adaptive capture path after the probe
+   establishes its route-specific facts. An implementation in this objective
+   may preserve or strengthen the current rate/cooldown controls, but may not
+   loosen or remove them. A later replacement needs its own evidence-backed
+   decision. The path must reuse an in-memory Paper token for the worker
+   lifetime, remain concurrency-bounded, and never become a parallel flood.
+   The existing scheduled head remains a Data-local source while this work
+   proceeds.
+
+### Engine Research
+
+1. Create a frozen historical KIS campaign contract using only an eligible
+   source-separated dataset. State the target, feature availability time,
+   chronological development/holdout split, cost model, naive baseline,
+   metrics, stop rules, and artifact root.
+2. Resume a CPU baseline and one bounded replication/comparison from the
+   existing historical KIS daily or complete intraday input. Treat the prior
+   GRU, LSTM, TCN, and compact-attention screens as descriptive evidence, not
+   selected candidates.
+3. Queue at most one GPU job after its campaign contract and data qualification
+   are frozen. The job may test a defined hypothesis or replicate a candidate;
+   it may not open a sealed holdout, create a Paper order, or claim a promoted
+   model. Store every generated artifact under D:\thericher-v2\model-artifacts.
+4. Keep the prospective first-five consumer/campaign path isolated. It becomes
+   an additional observation input only when Data supplies its immutable pair;
+   it does not replace historical validation.
+
+### Execution
+
+1. Keep local_paper, kis_paper, and kis_live routes separate. Do not read
+   KIS_LIVE_* or create a live route.
+2. Reattest and simplify the deterministic decision-to-target-weight-to-intent
+   contract needed by a later eligible Research candidate. Model output remains
+   untrusted input; sizing, route selection, persistence, and reconciliation
+   remain Execution-owned.
+3. Use existing authorized KIS Paper scheduled evidence and read-only
+   reconciliation facts where useful. Do not create a Paper intent solely to
+   manufacture activity or infer a fill/PnL from an absent or ambiguous record.
+
+## Throughput Rules
+
+- A Data rate/backoff wait belongs only to its worker. Codex advances the other
+  two packages instead of foreground-waiting.
+- No package may turn an unavailable source, incomplete prospective session,
+  scheduled due time, no-intent result, or model result into a company-wide
+  approval or progress latch.
+- One GPU job runs at a time. Active Paper inference/execution reliability
+  preempts training that could interfere with it.
+- Commit only a bounded change backed by a behavior, contract, test, or
+  measurement result. Do not commit a scheduler reattestation or document-only
+  restatement as a substitute for engine progress.
 
 ## Hard Boundaries
 
-- Use only source-safe runtime and metadata evidence: never print or commit raw
-  market/broker data, prices, credentials, account identifiers, private intents,
-  or KIS response bodies.
-- Keep one `thericher-kis-paper-intraday-head` task and one
-  `kis-paper-intraday-head` profile. The collector retains its four-page cap,
-  source pacing, strict conflict rejection, and exact 390-minute selector.
-- Do not read `KIS_LIVE_*`, use a live route, create an intent, submit a Paper
-  order, select a candidate, or launch GPU work.
-- The base-image observer may only produce its existing credential-free,
-  local-paper observation after a verified pair. Its `pending`, `unavailable`,
-  or `complete` result never revises collector state or freshness.
+- Keep raw market data in D:\market_data and generated artifacts in
+  D:\thericher-v2\model-artifacts or /app/model_artifacts. Never commit either.
+- Do not print, log, commit, or send credentials, tokens, account identifiers,
+  raw broker payloads, raw prices, or sealed holdout labels to Claude.
+- No paid data, paid service, unclear-rights asset, public service, or major
+  runtime/framework replacement.
+- KIS Paper is authorized for private work. KIS Live remains unavailable.
+- Preserve source separation, point-in-time feature timestamps, chronological
+  splits, and exact local_paper fill labeling.
 
-## Required Work
+## Claude Check
 
-1. Reattest the installed task action, four KST triggers, `Ready` state, no
-   missed-run anomaly, `IgnoreNew`, `StartWhenAvailable`, and `PT1H30M` limit.
-2. After its next due result, compare QQQ coverage to the generation-8 baseline:
-   complete-minute counts, offset-based missing ranges, continuation/overlap
-   categories, last reason category, and preparation state.
-3. Consume the dispatcher's sanitized observer status only. If it is `complete`,
-   inspect the existing local-paper receipt without inferring a selected model,
-   broker event, fill, or PnL. If it is `pending` or `unavailable`, retain the
-   exact Data recovery path without inventing a retry scheduler.
-4. Consume the next daily SPY result only through an exact receipt-derived run
-   identity and categorical observer/terminal facts. Do not infer fills or PnL
-   from a no-intent, missing, or ambiguous observation.
-5. Refresh stateboards, verify, commit, push, and replace this file with one
-   next objective after bounded completion evidence exists.
+The required short drift-check for this governance change was attempted on
+2026-07-26 KST. Claude CLI OAuth was expired, so no credentials, raw data, or
+holdout material was sent. This is a scoped tooling failure, not a hold. Before
+relying on a material scheduler widening, model promotion, ensemble selection,
+holdout interpretation, or execution-risk change, retry the required
+falsification-first check.
 
 ## Completion Evidence
 
-- Source-safe before/after QQQ coverage metadata and current recovery class.
-- Task evidence proves the one-task/one-profile dispatcher contract remains
-  installed and bounded.
-- Any observer result remains credential-free and local-paper-only; otherwise
-  its categorical unavailability is scoped to the input.
+- Source-safe KIS capability-probe result and an evidence-backed capture
+  recommendation or implemented bounded path.
+- A frozen historical campaign contract plus CPU baseline result; if a GPU job
+  runs, its immutable artifact and scoped conclusion.
+- A simplified, test-backed Execution integration contract with route isolation
+  intact.
+- Stateboards/HANDOFF reflect actual lane readiness rather than an external
+  wait.
 
 ## Verification
 
-```powershell
+~~~powershell
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
-```
+~~~
+
+Before ending, integrate the three packages, commit and push their bounded
+evidence, and replace this file with exactly one next company objective.

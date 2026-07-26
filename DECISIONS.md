@@ -5133,3 +5133,43 @@ drift-check but its OAuth session was expired, which is tooling evidence only.
 Reason: this makes data collection recoverable and cadence-bounded without
 adding a scheduler, widening a broker route, changing Paper intent semantics,
 or creating an operator gate.
+
+## 2026-07-26 - Localize prospective readiness and restore parallel throughput
+
+Decision: a prospective-data requirement now names only the exact
+pair-dependent consumer, campaign, or promotion it governs. The existing
+first-five QQQ 1m condition remains required for its isolated prospective
+observation, but it cannot make historical KIS Research, Data capability
+measurement, local simulation, or deterministic Paper preparation
+input-pending. Company goals must include all ready, non-conflicting,
+role-owned work packages rather than waiting on the next external due time.
+
+The immediate company objective has three parallel packages: a finite KIS
+Paper market-data capability probe and adaptive-capture design; a frozen
+historical KIS Research campaign with CPU baseline and at most one bounded GPU
+replication/comparison; and an Execution contract simplification that preserves
+local_paper, kis_paper, and kis_live route isolation. The probe is not an
+unbounded request flood, and no package changes live authority, opens a sealed
+holdout, selects a model, or creates a Paper order merely to manufacture
+activity.
+
+Evidence: the prospective head currently has zero complete QQQ sessions out of
+five, while source-separated KIS history already includes a QQQ/SPY daily
+common intersection and bounded complete intraday sessions. The former is a
+local source limitation, not evidence that every engine loop lacks input.
+KIS documents per-second request constraints and the project has an EGW00201
+fact, so throughput remains an empirical Data concern rather than a presumed
+daily-unlimited permission.
+
+Claude CLI was invoked for the required governance drift-check, but its OAuth
+session was expired. No credentials, raw data, or holdout material was sent.
+The failure is recorded only as a scoped tool limitation; it does not hold
+ready private work. Retry the falsification-first check before relying on a
+material scheduler widening, model promotion, ensemble selection, sealed
+holdout interpretation, or execution-risk change.
+
+Reason: the prior objective turned one future source condition into a company
+bottleneck and caused scheduler/recovery reattestation to displace Data,
+Research, and Execution progress. Localizing the condition restores the
+approved readiness-driven operating model while retaining source correctness,
+rate, recovery, and live-route safeguards.

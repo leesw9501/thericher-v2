@@ -258,6 +258,14 @@ Do not use fixed lane percentages or forced lane rotation.
    cannot create an authority hold or override a documented or evidence-backed
    rate, correctness, or recovery control.
 
+A readiness condition must name the exact consumer or promotion it controls.
+For example, a prospective-data pair may block only its pair-dependent
+observation, campaign, or promotion. It must not empty a durable lane's
+historical/preparation queue, turn a company goal into an external-time wait,
+or block independent Data or Execution work. When a company goal includes an
+external due time, Codex includes every already-ready, non-conflicting bounded
+package rather than treating that due time as the company bottleneck.
+
 ## Data And Public Assets
 
 Market data belongs under `D:\market_data`, never in Git. Model and generated

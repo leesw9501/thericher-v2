@@ -82,13 +82,22 @@ chunk/runtime budget is spent, storage protection applies, recovery needs work,
 or the shared rate cooldown is active.
 
 All KIS Paper market-data workers use the same external request gate below
-`D:\market_data\us_equities\kis_paper_private\collection-control-v1`. Request
-starts are serialized at least 1.25 seconds apart. HTTP `429` or KIS
-`EGW00201` records a 60-second categorical cooldown. The control file stores
-only timing state, never response bodies, raw rows, credentials, account facts,
-or authority state. There is no verified daily quota: do not add an unbounded
-daemon or parallel flood. Do not run a second daily worker while the first owns
-the index.
+`D:\market_data\us_equities\kis_paper_private\collection-control-v1`. The
+current measured default serializes request starts at least 1.25 seconds apart.
+HTTP `429` or KIS `EGW00201` records a 60-second categorical cooldown. The
+control file stores only timing state, never response bodies, raw rows,
+credentials, account facts, or authority state.
+
+There is no verified daily quota or general route ceiling. Do not add an
+unbounded daemon or parallel flood, and do not run a second worker against the
+same cache while its owner is active. A finite, goal-owned capability probe may
+measure the interval, cooldown, page budget, or capture cadence and recommend a
+replacement from official-source or measured evidence. The probe itself cannot
+loosen or remove the current evidence-backed request gate or cooldown. A later
+bounded change may do so only after recording its calibration fact. A resulting
+long-lived single-client capture worker may retain one in-memory token for its
+own lifetime; it remains owned, observable, concurrency-bounded, and
+recoverable.
 
 These are the current finite recovery controls. Keep them active through an
 isolated failure; any future lower/higher page pace, retry rule, or scheduler
@@ -100,15 +109,16 @@ ready lane.
 
 If the safe worker output is `auth_rejected` while the request gate has no
 `last_rate_limit_at_utc`, first determine whether a separate worker issued a
-token within the prior five minutes. A token-only success followed immediately
-by another short-lived worker's rejection is inconclusive because KIS limits
-token reissuance; reuse one in-memory client and apply the shared non-secret
-token-start spacing before interpreting credentials. Only a spaced,
-single-client token failure is a reason to verify the active KIS **Paper** App
-Key/App Secret in local `.env` or the KIS Developer Portal. The data-only
-container does not mount `.env`; it receives the pair through Compose. Never
-print or copy either value, and do not reinterpret this scoped recovery fact as
-a pause on another Data, Research, or Paper job.
+token within the prior five minutes. The five-minute cross-process token-start
+guard prevents short-lived workers from colliding; it is not the token lifetime.
+KIS documents a 24-hour access token and a six-hour renewal behavior. Reuse one
+in-memory client and its token for the finite/long-lived worker lifetime before
+interpreting credentials. Only a spaced, single-client token failure is a
+reason to verify the active KIS **Paper** App Key/App Secret in local `.env` or
+the KIS Developer Portal. The data-only container does not mount `.env`; it
+receives the pair through Compose. Never print or copy either value, and do not
+reinterpret this scoped recovery fact as a pause on another Data, Research, or
+Paper job.
 
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after
@@ -305,6 +315,11 @@ never calls an account, order, or live endpoint. A terminal first page is a
 bounded capability observation, not authority to invent a timestamp seed or a
 claim about other KIS endpoints.
 
+This existing probe qualifies normal-start/continuation behavior, not the
+general request ceiling. A throughput probe must also bound its request count
+and elapsed time, preserve the same source-safe output rules, and report the
+specific fact that retains or recalibrates a future capture worker.
+
 `data.kis_paper_intraday` is the offline consumer: it verifies every index,
 manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
 5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first
@@ -322,7 +337,8 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 ```
 
 Head snapshots live below the sibling `intraday-head` cache root and never
-advance the historical backfill cursor. The Windows Scheduled Task
+advance the historical backfill cursor. It is a Data-local source sampler, not
+a company-wide wait. The Windows Scheduled Task
 `thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
 02:35, 04:35, and 06:20 KST. It keeps the same four-page-per-target maximum on
 each data-only invocation. The added 00:35 window samples the missing early
@@ -332,7 +348,9 @@ schedule, determines completeness: it accepts only an exact 390-minute declared
 QQQ session and rejects any partial or gapped union. This remains a bounded
 data-only invocation (at most eight minute-page calls per invocation): it has
 no account, order, or live route. The first four-trigger session is the next
-metadata-only reattestation before Research may consume a session.
+metadata-only reattestation before the pair-bound prospective observer may
+consume a session. Historical Research uses separately qualified inputs and
+does not wait for this task.
 
 The installer sets `StartWhenAvailable` only on data-only tasks, so a missed
 head collection can resume after the interactive user becomes available without
