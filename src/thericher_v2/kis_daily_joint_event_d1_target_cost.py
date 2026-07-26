@@ -11,6 +11,7 @@ from decimal import ROUND_HALF_EVEN, Decimal, localcontext
 from pathlib import Path
 
 from thericher_v2.kis_daily_joint_event_d1_materializer import (
+    KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS,
     KIS_DAILY_JOINT_EVENT_D1_SYMBOLS,
     KisDailyJointEventD1Materializer,
     KisDailyJointEventD1Window,
@@ -19,6 +20,7 @@ from thericher_v2.kis_daily_joint_event_d1_materializer import (
 from thericher_v2.kis_daily_joint_event_window_contract import (
     DEFAULT_MODEL_ARTIFACT_ROOT,
     KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
+    is_container_external_mount,
 )
 
 KIS_DAILY_JOINT_EVENT_D1_TARGET_COST_SCHEMA_VERSION = 2
@@ -139,7 +141,7 @@ class KisDailyJointEventD1TargetCostAdapter:
             raise ValueError("joint D1 target materializer is invalid")
         fold_input = self.materializer.fold_input
         if (
-            fold_input.fold_id != "expanding-1"
+            fold_input.fold_id not in KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS
             or not fold_input.reattested_against_parent
             or fold_input.model_execution_review
             != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE
@@ -412,7 +414,9 @@ def _external_artifact_destination(
 ) -> Path:
     resolved_repo = Path(repo_root).resolve()
     resolved_root = Path(artifact_root).resolve()
-    if resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo):
+    if (
+        resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
+    ) and not is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint D1 target artifacts must stay outside the Git workspace")
     destination_path = Path(destination)
     if destination_path.is_symlink():

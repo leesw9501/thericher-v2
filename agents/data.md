@@ -136,13 +136,19 @@ or a company hold.
   rows, labels, or cache bytes were persisted by the screen. The final
   151-session tail is after `expanding-2` and `expanding-3`, so the screen's
   exact fold list also excludes those later folds.
+- The same source catalog and parent now also reattest `expanding-2` as external
+  fold input `sha256:79723...c9305` / `sha256:650757...99f4e`, with exact
+  `2511 / 128` sparse decisions. Its source-safe materializer and target/cost
+  receipts are `sha256:e489f...9709f` and `sha256:4de77...941da`; they persist
+  no provider rows or price-derived values and retain only this fold's lineage
+  and `t-20..t+2` geometry.
 
 ## Ready Queue
 
-1. Reattest only `expanding-2` from the same verified parent and serve it to a
-   new single-fold D1 materializer/target consumer. Preserve its exact sparse
-   index tuple and the final 151-session tail; use values in memory only and
-   do not fetch, blend, or persist provider rows.
+1. Serve the completed `expanding-2` verified lineage to one fixed-specification
+   candidate-only Research screen. Preserve its exact sparse index tuple and
+   final 151-session tail; use values in memory only and do not fetch, blend,
+   or persist provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -177,16 +183,16 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-`expanding-1` input, D1 materializer/target-cost receipt, and first candidate
-screen; resume for `expanding-2` reattestation. Reattest existing metadata and
+both fold inputs/materializer/target-cost receipts, and first candidate screen;
+resume for the independent `expanding-2` candidate-only screen. Reattest existing metadata and
 committed snapshots before a new consumer or future network call. A bad cache
 is reconcile/restart evidence for that cache; an empty or limited endpoint
 result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the same parent/catalog lineage to one reattested `expanding-2` input
-and its D1 materializer/target semantics. Preserve the frozen six-symbol source
+Return the same verified `expanding-2` lineage to one candidate-only screen.
+Preserve the frozen six-symbol source
 separately. Do not infer PIT membership, corporate-action completeness, a
 ranking claim, or Paper-trading eligibility from either cache, and do not wait
 for a prospective pair before advancing other ready Data work.

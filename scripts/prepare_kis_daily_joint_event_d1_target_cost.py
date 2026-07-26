@@ -10,16 +10,29 @@ from prepare_kis_daily_joint_event_d1_materializer import (
     load_pinned_kis_daily_joint_event_d1_materializer,
 )
 
+from thericher_v2.kis_daily_joint_event_d1_materializer import (
+    KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS,
+)
 from thericher_v2.kis_daily_joint_event_d1_target_cost import (
     build_kis_daily_joint_event_d1_target_cost_adapter,
     write_kis_daily_joint_event_d1_target_cost_receipt,
 )
 from thericher_v2.kis_daily_joint_event_window_contract import DEFAULT_MODEL_ARTIFACT_ROOT
 
+_DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
+
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact-root", type=Path, default=DEFAULT_MODEL_ARTIFACT_ROOT)
+    parser.add_argument("--market-data-root", type=Path, default=_DEFAULT_MARKET_DATA_ROOT)
+    parser.add_argument(
+        "--fold-id",
+        choices=KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS,
+        default="expanding-1",
+    )
+    parser.add_argument("--parent-artifact", type=Path)
+    parser.add_argument("--fold-artifact", type=Path)
     parser.add_argument("--phase", choices=("development", "validation"), default="validation")
     parser.add_argument("--decision-index", type=int)
     parser.add_argument("--destination", type=Path)
@@ -28,6 +41,10 @@ def main(argv: list[str] | None = None) -> None:
     artifact_root = Path(args.artifact_root)
     materializer = load_pinned_kis_daily_joint_event_d1_materializer(
         artifact_root=artifact_root,
+        fold_id=args.fold_id,
+        parent_artifact=Path(args.parent_artifact) if args.parent_artifact else None,
+        fold_artifact=Path(args.fold_artifact) if args.fold_artifact else None,
+        market_data_root=Path(args.market_data_root),
     )
     adapter = build_kis_daily_joint_event_d1_target_cost_adapter(materializer=materializer)
     phase = args.phase
@@ -38,7 +55,7 @@ def main(argv: list[str] | None = None) -> None:
         / "research-contracts"
         / (
             "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
-            f"d1-target-cost-expanding-1-{phase}-first-v2.json"
+            f"d1-target-cost-{args.fold_id}-{phase}-first-v2.json"
         )
     )
     receipt = write_kis_daily_joint_event_d1_target_cost_receipt(

@@ -18,6 +18,7 @@ from thericher_v2.kis_daily_joint_event_window_contract import (
     KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
     KisDailyJointEventFoldInput,
     KisDailyJointEventFoldInputArtifact,
+    is_container_external_mount,
 )
 
 KIS_DAILY_JOINT_EVENT_D1_MATERIALIZER_SCHEMA_VERSION = 1
@@ -25,6 +26,7 @@ KIS_DAILY_JOINT_EVENT_D1_MATERIALIZER_KIND = "kis_daily_joint_event_d1_materiali
 KIS_DAILY_JOINT_EVENT_D1_SYMBOLS = ("QQQ", "SPY")
 KIS_DAILY_JOINT_EVENT_D1_CATALOG_ID = "kis.paper.private.daily.backfill-v1.common-panel"
 KIS_DAILY_JOINT_EVENT_D1_ADJUSTMENT_MODE = "MODP=0_unadjusted"
+KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS = ("expanding-1", "expanding-2")
 
 MaterializationPhase = Literal["development", "validation"]
 
@@ -198,7 +200,7 @@ class KisDailyJointEventD1Materializer:
             raise ValueError("joint D1 fold input is invalid")
         if (
             not self.fold_input.reattested_against_parent
-            or self.fold_input.fold_id != "expanding-1"
+            or self.fold_input.fold_id not in KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS
             or self.fold_input.model_execution_review
             != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE
             or self.catalog_dataset_hash != self.fold_input.catalog_dataset_hash
@@ -598,7 +600,9 @@ def _external_artifact_destination(
 ) -> Path:
     resolved_repo = Path(repo_root).resolve()
     resolved_root = Path(artifact_root).resolve()
-    if resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo):
+    if (
+        resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
+    ) and not is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint D1 artifacts must stay outside the Git workspace")
     destination_path = Path(destination)
     if destination_path.is_symlink():

@@ -1153,7 +1153,7 @@ def _external_artifact_destination(
     resolved_root = Path(artifact_root).resolve()
     if (
         resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
-    ) and not _is_container_external_mount(resolved_root, resolved_repo):
+    ) and not is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint event-window artifacts must stay outside the Git workspace")
     destination_path = Path(destination)
     if destination_path.is_symlink():
@@ -1177,7 +1177,7 @@ def _external_artifact_input_path(
     resolved_root = Path(artifact_root).resolve()
     if (
         resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
-    ) and not _is_container_external_mount(resolved_root, resolved_repo):
+    ) and not is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint event-window artifacts must stay outside the Git workspace")
     artifact_path = Path(path)
     if artifact_path.is_symlink():
@@ -1332,11 +1332,11 @@ def _require_external_input_path(path: Path, *, repo_root: Path, label: str) -> 
     resolved_repo = Path(repo_root).resolve()
     if (
         resolved_path == resolved_repo or resolved_path.is_relative_to(resolved_repo)
-    ) and not _is_container_external_mount(resolved_path, resolved_repo):
+    ) and not is_container_external_mount(resolved_path, resolved_repo):
         raise ValueError(f"joint event-window {label} input must stay outside the Git workspace")
 
 
-def _is_container_external_mount(path: Path, repo_root: Path) -> bool:
+def is_container_external_mount(path: Path, repo_root: Path) -> bool:
     """Recognize the two Docker bind-mount destinations as external storage."""
 
     container_repo = Path("/app").resolve()

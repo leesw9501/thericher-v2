@@ -12,9 +12,9 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence. The reattested fold-local QQQ/SPY
-input now has one D1 materializer and fixed v2 target/cost semantics; next run
-one bounded candidate-only CPU/CUDA sequence screen without replaying,
+development-only falsification evidence. `expanding-2` is now reattested with
+its own pure D1 materializer and fixed v2 target/cost semantics; next run one
+bounded fixed-specification candidate-only CPU/CUDA screen without replaying,
 selecting, or promoting a model. The prospective QQQ first-five pair is
 required only for its isolated prospective observation, pair-dependent campaign,
 and later pair-dependent promotion decisions; it does not make historical
@@ -123,18 +123,24 @@ research input-pending.
   not a threshold-tuning, winner, ensemble, promotion, replay, or Paper input.
   Temporary Validation independently passed scope, tail, split, and artifact
   checks. Claude OAuth remained unavailable, so no result is promotable.
+- The second independent fold is complete as contract evidence only:
+  `expanding-2` fold input `sha256:79723...c9305` / `sha256:650757...99f4e`
+  carries exact `2511 / 128` sparse decisions and remains before the final
+  151-session tail. Its materializer and target/cost receipts are
+  `sha256:e489f...9709f` / `sha256:4de77...941da`; both retain only lineage,
+  geometry, formula, and non-executable scope. Temporary Validation passed
+  isolated sparse/tail, source-safety, mount, and pure-route checks. Claude
+  OAuth retry was unavailable, so it remains candidate-only.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Prepare one reattested `expanding-2` D1 materializer and fixed target/cost
-   contract from the same parent without changing candidate specifications from
-   the completed first screen. It must retain its own sparse split and final
-   tail boundary; no replay, winner selection, ensemble, Paper action, or model
-   promotion follows. Retry Claude at the material decision boundary, but do
-   not turn its OAuth fault into a GPU-idle approval hold.
+2. Run one fixed-specification candidate-only `expanding-2` CPU/CUDA screen
+   from its exact sparse split without consuming first-fold summaries for
+   tuning. It produces aggregate classification evidence only; no replay,
+   winner selection, ensemble, Paper action, or promotion follows.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -151,15 +157,14 @@ research input-pending.
 
 ## Recovery
 
-Current class: complete for the joint contract, `expanding-1` input, D1
-materializer/target receipts, and candidate-only CPU/CUDA screen; resume for
-`expanding-2` reattestation. A failed consumer attempt creates new immutable
+Current class: complete for the joint contract, both fold inputs/materializer/
+target receipts, and the first candidate-only CPU/CUDA screen; resume for the
+second fixed-specification candidate screen. A failed consumer attempt creates new immutable
 evidence rather than overwriting either parent artifact. A missing prospective
 pair is input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask and source catalog lineage to one reattested
-`expanding-2` materializer/target contract. Do not treat the completed first
-screen as stock selection, a selected model, replay, or a Paper input, and do
-not wait for prospective collection to keep other ready roles moving.
+Return the reattested `expanding-2` materializer/target lineage to a single
+fixed-specification candidate-only screen. Do not treat either fold's screen
+as stock selection, a selected model, replay, or a Paper input.

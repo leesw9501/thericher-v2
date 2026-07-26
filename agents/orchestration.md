@@ -90,18 +90,19 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now a single-fold `expanding-2` reattestation path.
-The parent already supplies exact `2511 / 128` sparse development/validation
-counts, but the current materializer/target helpers intentionally bind only
-`expanding-1`. Generalize them only enough to preserve one named verified fold;
-do not blend folds, tune from the completed first screen, or turn a
-classification score into a selected model, replay result, or Paper input. The
-fixed six-symbol panel remains too short and non-PIT for a depth campaign.
+The material bottleneck is now the independent, fixed-specification
+`expanding-2` candidate-only screen. Its source-safe receipts are
+`sha256:e489f...9709f` (materializer) and `sha256:4de77...941da` (target/cost),
+bound to exact `2511 / 128` sparse development/validation decisions. Do not
+tune from or combine it with the first screen; no classification score becomes
+a selected model, replay result, or Paper input. The fixed six-symbol panel
+remains too short and non-PIT for a depth campaign.
 
-The GPU is free, but no additional frozen candidate campaign is ready until the
-second fold has its own materializer/target contract. The Claude OAuth outage is
-scoped to reliance, promotion, and execution boundaries; it does not require
-another ready private lane to wait.
+The GPU is free and the one ready consumer is the bounded `expanding-2` screen:
+run its CPU smoke first, then one network-disabled CUDA attempt if the CPU
+contract succeeds. No other depth or ensemble campaign is ready. The Claude
+OAuth outage is scoped to reliance, promotion, and execution boundaries; it does
+not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -129,16 +130,16 @@ parallel flood.
 
 ## Recovery
 
-Current class: complete for the daily catch-up, event-window contract,
-`expanding-1` input/materializer/target receipts, and its candidate-only CPU/
-CUDA screen; resume for `expanding-2` reattestation. Reattest an individual
+Current class: complete for the daily catch-up, event-window contract, both
+fold inputs/materializer/target receipts, and the first candidate-only CPU/
+CUDA screen; resume for the `expanding-2` candidate-only screen. Reattest an individual
 cache, contract, campaign, or exact Paper intent before relying on it. Scope
 failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Create one reattested `expanding-2` D1 materializer and deterministic target/
-cost contract from the same parent while keeping Execution independent. Do not
-treat the completed first screen, historical catalog, or any daily control as a
-selected model or replay result. Record only an actual shared resource conflict,
-new external wait, bottleneck, or reversible operating improvement here.
+Run one fixed-specification `expanding-2` candidate-only screen while keeping
+Execution independent. Do not treat either screen, the historical catalog, or
+any daily control as a selected model or replay result. Record only an actual
+shared resource conflict, new external wait, bottleneck, or reversible
+operating improvement here.
