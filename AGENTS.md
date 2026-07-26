@@ -189,6 +189,9 @@ backtests, walk-forward evaluation, and model-side PnL attribution.
   baselines, compute budget, and stop rules.
 - Maintain breadth, depth, ensemble, and replication queues when useful.
 - Treat GPU utilization as a consequence of eligible research, not a KPI.
+- When the exclusive GPU is idle, dispatch the first ready frozen campaign or
+  record the exact data, contract, or resource fact that leaves no campaign
+  eligible. Do not invent training merely to increase utilization.
 - Keep generated artifacts outside Git.
 - Never modify broker submission or deterministic execution-risk behavior.
 
@@ -465,9 +468,10 @@ still has capacity and no true approval blocker, continue with the refreshed
 goal rather than waiting for routine operator direction.
 
 Use isolated parallel tests for fast local feedback only when their fixtures,
-artifact roots, and external workers do not conflict. The required goal-boundary
-verification remains the authoritative serial suite unless its command is
-explicitly changed by the project contract.
+artifact roots, and external workers do not conflict; `pytest -n auto` is an
+available focused-feedback option. The required goal-boundary verification
+remains the authoritative serial suite unless its command is explicitly changed
+by the project contract.
 
 When the daily KST operating-review automation is enabled, publish one concise
 operator summary. It

@@ -23,6 +23,10 @@ promotion. It must not make historical Research, independent Data work, local
 simulation, or deterministic Paper preparation input-pending. When an external
 due time exists, keep every other ready bounded package moving.
 
+When the exclusive GPU is free, have Engine Research start its first ready,
+frozen campaign or record the exact data, contract, or resource fact that makes
+none eligible. Do not manufacture training merely to maximize utilization.
+
 Treat a genuinely unknown private non-live provider, runtime, data-capability,
 or throughput behavior as a bounded capability probe. Do not turn it into an
 approval wait, foreground sleep, or durable rate/retry limit without official
@@ -41,8 +45,9 @@ At task resume or after an observed unexplained foreground idle period, perform
 one bounded Throughput Review from the stateboards and active-job facts. Keep
 only one measured, reversible improvement in `agents/orchestration.md`; do not
 create a standing process lane or an approval gate. Use isolated parallel tests
-only for faster feedback. The required goal-boundary verification remains the
-authoritative serial suite.
+only for faster feedback, including `pytest -n auto` when fixtures, artifact
+roots, and external workers are process-isolated. The required goal-boundary
+verification remains the authoritative serial suite.
 
 Stop and report only for an actual operator-authority decision: reading or
 using `KIS_LIVE_*`, enabling live or real-money behavior, allocating live

@@ -5507,3 +5507,20 @@ Reason: a fully attested narrow panel makes the next per-symbol local-paper
 baseline repeatable without weakening source separation or inventing live-like
 availability claims. It creates a real engine input while leaving historical
 universe, corporate-action, and execution eligibility work explicitly open.
+
+## 2026-07-27 - Keep research utilization readiness-first
+
+Decision: Engine Research keeps breadth, depth, ensemble, and replication work
+in a ready queue. When the single GPU is free, it starts the first frozen,
+eligible campaign or records the exact data, contract, or resource fact that
+leaves none eligible. It does not create arbitrary training merely to maximize
+GPU occupancy. Focused tests may use `pytest -n auto` only when their fixtures,
+artifact roots, and external workers are process-isolated; the required
+goal-boundary suite remains the serial project command.
+
+Reason: this keeps the expensive shared resource productive without converting
+utilization into a model-quality target or weakening campaign contracts,
+holdout isolation, source limits, and reproducible test evidence. A concise
+Claude drift-check was attempted for this agent-governance change, but the
+local CLI OAuth session was expired; no private material was sent and the
+scoped reviewer fault does not block this reversible policy clarification.

@@ -95,6 +95,8 @@ Keep only current, high-signal sections:
 - status and engine loop,
 - ownership and prohibitions,
 - resources,
+- constrained-resource state and the exact idle reason when it changes the
+  next action,
 - current objective and ready queue,
 - running work,
 - operator help,

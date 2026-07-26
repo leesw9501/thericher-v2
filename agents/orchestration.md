@@ -49,6 +49,11 @@ sessions and cannot support a PIT stock-selection claim or a depth GPU campaign.
 The fixed two-ETF controls are weak after realistic local costs, so repeated
 threshold tuning would not advance the engine.
 
+The GPU is deliberately idle for this objective because its only new panel is
+not depth-training eligible. At the next objective boundary, Research must
+either dispatch the first frozen eligible GPU campaign or record the exact
+missing input, contract, or resource fact.
+
 ## Current Operating Improvement
 
 The current reversible improvement is the hash-pinned six-target panel

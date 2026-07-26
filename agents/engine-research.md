@@ -52,9 +52,11 @@ not make historical research input-pending.
   is not a qualifying campaign result: its precommit omitted replay sizing.
   It must not be compared, selected, or used to support PnL claims. The r2
   run is the sole corrected result for this fixed configuration.
-- No GPU job is active. The qualified QQQ/SPY daily intersection supports a
-  small development-only sequence breadth screen, so its GPU use can be tied
-  to a falsifiable campaign rather than occupancy alone.
+- No GPU job is active. The current objective explicitly excludes GPU work from
+  the 199-session current-basket panel. When another frozen campaign is ready,
+  Research starts it as the next exclusive GPU job; otherwise the stateboard
+  records the exact missing data, contract, or resource fact rather than
+  manufacturing training for occupancy.
 - The pair-bound prospective observer is implemented, local-paper-only, and
   network-disabled. It remains inactive until Data supplies its immutable pair.
 - The latest capture-scoped QQQ terminal page contained no qualified regular

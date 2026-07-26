@@ -63,6 +63,10 @@ authorized private KIS Paper work.
 - For KIS Data, distinguish token issuance, page pacing, and worker schedule
   facts. A token-start guard or an owned `next_due` is not a foreground delay;
   it is a reason to run another ready package while the owning worker yields.
+- GPU scheduling is work-conserving only for frozen eligible research: when the
+  GPU is free, Research starts its next ready campaign or records the exact
+  missing data, contract, or resource fact. It does not manufacture training to
+  keep utilization high.
 
 ## Current State
 
