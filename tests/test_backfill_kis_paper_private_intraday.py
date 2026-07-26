@@ -561,6 +561,24 @@ def test_intraday_head_docker_profile_mounts_only_the_explicit_preparation_artif
     assert "KIS_LIVE" not in section
 
 
+def test_intraday_head_profile_has_a_cpu_only_offline_observation_service() -> None:
+    compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
+    section = compose.split("\n  kis-paper-intraday-observation:\n", maxsplit=1)[1].split(
+        "\n  kis-readonly:\n", maxsplit=1
+    )[0]
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "target: base" in section
+    assert "network_mode: none" in section
+    assert "read_only: true" in section
+    assert "scripts/run_kis_intraday_prospective_observation.py" in section
+    assert "gpus:" not in section
+    assert "KIS_PAPER" not in section
+    assert "KIS_LIVE" not in section
+    assert ":/app/market_data:ro" in section
+    assert ":/app/model_artifacts" in section
+
+
 def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
     monkeypatch,
     capsys,

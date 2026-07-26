@@ -36,6 +36,9 @@ or PnL from incomplete evidence.
   approval or model-promotion gates.
 - The intraday collector's legacy-candidate and orphan-recovery hardening is
   Data-only. It creates no Paper intent, account call, order, or lifecycle fact.
+- The task's follow-on intraday observer is network-disabled and carries no KIS
+  environment values, broker client, account mount, or GPU request. Its output
+  is local-paper Research evidence only and cannot create an execution fact.
 - Paper quote and daily-session tasks now have explicit battery and 90-minute
   non-overlap settings, but intentionally keep missed-run catch-up disabled.
   A late restored machine therefore cannot create an off-cadence Paper session.

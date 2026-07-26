@@ -112,6 +112,16 @@ observer and terminal probe are `not_attempted`. No fill or PnL is inferred.
 Recovery remains `resume` at the existing 2026-07-28 00:35 KST intraday-head
 run; no duplicate worker or recovery rule is warranted.
 
+The same named intraday-head task was re-registered to a local dispatcher that
+keeps the one scheduled task and one Docker profile. It runs the existing KIS
+collector once, then invokes a CPU-only, network-disabled observer with no KIS
+environment values or GPU request. The dispatcher preserves the collector exit
+code and emits only the observer's categorical `pending`, `unavailable`, or
+`complete` status. Its task XML remains `Ready`, has the four expected triggers,
+uses `IgnoreNew`, `StartWhenAvailable`, and `PT1H30M`. The observer's base-image
+smoke returned `preparation_pair_missing`; it made no KIS, account, order, GPU,
+or local-paper replay call.
+
 The first receipt-linked daily SPY KIS Paper position lifecycle is complete.
 Its forward head collector wrote one hash-attested `SPY` / `AMS` snapshot under
 `D:\market_data\us_equities\kis_paper_private\daily-head\v1`, with 99
@@ -141,7 +151,7 @@ only; it does not claim a fill, PnL, or a model result.
 
 The separate data-only `thericher-kis-paper-intraday-head` task has four weekly
 KST triggers at 00:35, 02:35, 04:35, and 06:20, while retaining its existing
-four-page-per-target cap and one Docker service. Its first expanded-cadence
+four-page-per-target cap and one dispatcher profile. Its first expanded-cadence
 cycle completed successfully. A metadata-only generation-8 inspection still
 found zero complete QQQ sessions out of five: the 2026-07-22, -23, and -24
 candidates held 239, 39, and 238 minutes of 390, with missing offsets
@@ -768,7 +778,7 @@ identity-bound, sanitized decisions/fills and hashes: no raw bars, prices,
 order identifiers, source paths, PnL, credentials, network call, KIS call, GPU
 work, selection, promotion, or broker action. A safe partial replay may restart;
 a tampered complete receipt fails without overwrite. The real pair is still
-absent, so the host and network-disabled research-container commands both
-truthfully return `preparation_pair_missing`. A Claude drift-check retry is due
-at the next material decision boundary because the local Claude OAuth session
-expired; that external tooling fact does not block this bounded implementation.
+absent, so the installed base-image, network-disabled observer truthfully
+returns `preparation_pair_missing`. A Claude drift-check retry is due at the
+next material decision boundary because the local Claude OAuth session expired;
+that external tooling fact does not block this bounded implementation.

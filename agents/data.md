@@ -16,7 +16,8 @@ decisions.
 
 Accumulate the prospective `QQQ/NAS/1m` head cache through the existing single
 scheduled collector until five exact 390-minute regular sessions exist. The
-collector owns the post-durable metadata-only preparation attempt; do not create
+collector owns the post-durable metadata-only preparation attempt. The same
+task's isolated observer consumes only an already verified pair; do not create
 a second scheduler or manually duplicate a due collection.
 
 ## Current Facts
@@ -30,8 +31,12 @@ a second scheduler or manually duplicate a due collection.
   `minute_duplicate_conflict`.
 - `thericher-kis-paper-intraday-head` is `Ready`, has KST triggers at `00:35`,
   `02:35`, `04:35`, and `06:20`, has no missed run, and next runs at
-  2026-07-28 00:35 KST. It retains one Docker service, the four-page-per-target
+  2026-07-28 00:35 KST. It retains one Windows task and one Docker profile, the four-page-per-target
   cap, source pacing, strict conflict rejection, and exact session selection.
+- Its re-registered dispatcher runs the collector once and then a base-image,
+  CPU-only, network-disabled observer. The observer has no KIS environment
+  values, cannot revise Data state, and its local smoke was categorical
+  `preparation_pair_missing`.
 - The 2026-07-26 metadata-only reattestation left that generation-8 baseline
   unchanged: the three candidate sessions remain short, preparation remains
   `pending_complete_sessions`, and no source-backed recovery change is
@@ -104,8 +109,8 @@ a second scheduler or manually duplicate a due collection.
    generation-8 baseline: complete counts, missing offset ranges,
    continuation/overlap/conflict categories, last reason, and preparation state.
 2. If exactly five complete sessions first exist, let the existing collector
-   produce its first-five-bound preparation pair and hand only that verified
-   pair to Engine Research.
+   produce its first-five-bound preparation pair. The same task dispatches only
+   that verified pair to Engine Research's isolated observer.
 3. If coverage remains short, retain the collector contract unless one bounded
    source observation or synthetic test identifies an exact recovery change.
    Do not infer a page, timestamp, cap, or duplicate defect from varied gaps.
@@ -132,7 +137,8 @@ Research, or Paper permission hold.
   coverage inspector.
 - The scheduled worker owns the prospective head cache under `D:\market_data`.
   The external artifact root holds only its preparation pair and sanitized
-  downstream receipts.
+  downstream receipts; the observer's categorical task status is not Data
+  provenance.
 
 ## Next Handoff
 

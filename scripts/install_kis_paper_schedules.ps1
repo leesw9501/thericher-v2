@@ -76,6 +76,7 @@ $schedules = @(
         Name = "thericher-kis-paper-intraday-head"
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"
+        Runner = "run_kis_paper_intraday_head_schedule.ps1"
         At = @("00:35", "02:35", "04:35", "06:20")
         RecoverMissedRun = $true
         ExecutionLimitMinutes = 90
@@ -93,8 +94,17 @@ $schedules = @(
 Write-Host "Installing local Docker schedules for: $resolvedProjectRoot"
 
 foreach ($schedule in $schedules) {
-    $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --build $($schedule.Service)"
-    $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
+    if ($schedule.ContainsKey("Runner")) {
+        $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.Runner)"
+        if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
+            throw "Scheduled task runner is missing: $runnerPath"
+        }
+        $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$runnerPath`" -ProjectRoot `"$resolvedProjectRoot`""
+        $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
+    } else {
+        $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --build $($schedule.Service)"
+        $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
+    }
     $times = @($schedule.At)
     $triggers = @(
         $times | ForEach-Object {

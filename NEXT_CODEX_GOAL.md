@@ -2,11 +2,14 @@
 
 ## Objective
 
-Continue the single prospective QQQ intraday-head collection through its next
-2026-07-28 00:35 KST due result and decide, from metadata only, whether its
-first-five-session preparation input has become valid. Do not wait in the
-foreground or create a second scheduler: the existing four-trigger Data task
-owns collection.
+Integrate the first due outcome from the installed prospective QQQ intraday-head
+dispatcher after 2026-07-28 00:35 KST. Establish, from source-safe metadata,
+whether the generation-8 head has progressed toward a verified first-five pair
+and whether its isolated offline observer remained correctly scoped.
+
+Do not foreground-wait, install another scheduler, or manually invoke the KIS
+collector. Continue any ready independent bounded work while the named task
+owns its due time.
 
 ## First Reads
 
@@ -18,7 +21,7 @@ owns collection.
 
 2. Read `HANDOFF.md`, `AGENTS.md`, `RUNBOOK.md`, `agents/orchestration.md`,
    `agents/data.md`, `agents/engine-research.md`, and `agents/execution.md`.
-3. Reattest the current metadata baseline with:
+3. Reattest the pre-run coverage baseline with:
 
    ```powershell
    uv run python scripts\inspect_kis_intraday_head_coverage.py
@@ -26,50 +29,42 @@ owns collection.
 
 ## Hard Boundaries
 
-- Use only source-safe runtime and metadata evidence: never print or commit
-  raw market/broker data, prices, credentials, account identifiers, private
-  intents, or KIS response bodies.
-- Keep one `thericher-kis-paper-intraday-head` task, one Docker profile, the
-  four-page-per-target cap, source pacing, strict conflicting-row rejection,
-  and exact 390-minute session selection. Do not read `KIS_LIVE_*` or use a
-  live route.
-- Do not run a model/GPU job, select a candidate, create an intent, or submit
-  a Paper order. The offline consumer remains input-pending until a valid
-  first-five preparation pair exists.
-- A scheduled wait, a short head union, a missing preparation pair, or a
-  Claude tooling failure is scoped evidence, never an approval or Paper hold.
+- Use only source-safe runtime and metadata evidence: never print or commit raw
+  market/broker data, prices, credentials, account identifiers, private intents,
+  or KIS response bodies.
+- Keep one `thericher-kis-paper-intraday-head` task and one
+  `kis-paper-intraday-head` profile. The collector retains its four-page cap,
+  source pacing, strict conflict rejection, and exact 390-minute selector.
+- Do not read `KIS_LIVE_*`, use a live route, create an intent, submit a Paper
+  order, select a candidate, or launch GPU work.
+- The base-image observer may only produce its existing credential-free,
+  local-paper observation after a verified pair. Its `pending`, `unavailable`,
+  or `complete` result never revises collector state or freshness.
 
 ## Required Work
 
-1. Reattest that the installed head task remains `Ready`, has the four KST
-   triggers, and has no missed-run anomaly. Record only sanitized task facts.
-2. After the next due result, compare its coverage to the reattested generation-8
-   baseline: complete-minute counts, offset-based missing ranges,
-   continuation/overlap categories, last reason category, and preparation
-   status. Continue independent ready work instead of waiting for that time.
-3. If five exact 390-minute QQQ sessions exist, invoke the existing
-   metadata-only preparation handoff and then the credential-free offline
-   consumer. Otherwise, retain the established collector rules unless a bounded
-   source/test case identifies one exact recovery change.
-4. The 2026-07-25 daily SPY session was categorical `paper_only` / `no_intent`
-   / `session_closed`; its receipt reference had no exact receipt-derived run
-   identity and observer/terminal fields were `not_attempted`. Consume the next
-   daily result only through its exact receipt-derived run identity and
-   categorical observer/terminal facts; do not infer fills or PnL from a
-   no-intent, missing, or ambiguous observation.
-5. Refresh the Data, Research, Execution, and orchestration stateboards with
-   the current recovery class and next action, then verify, commit, and push
-   any bounded implementation or stateboard change.
+1. Reattest the installed task action, four KST triggers, `Ready` state, no
+   missed-run anomaly, `IgnoreNew`, `StartWhenAvailable`, and `PT1H30M` limit.
+2. After its next due result, compare QQQ coverage to the generation-8 baseline:
+   complete-minute counts, offset-based missing ranges, continuation/overlap
+   categories, last reason category, and preparation state.
+3. Consume the dispatcher's sanitized observer status only. If it is `complete`,
+   inspect the existing local-paper receipt without inferring a selected model,
+   broker event, fill, or PnL. If it is `pending` or `unavailable`, retain the
+   exact Data recovery path without inventing a retry scheduler.
+4. Consume the next daily SPY result only through an exact receipt-derived run
+   identity and categorical observer/terminal facts. Do not infer fills or PnL
+   from a no-intent, missing, or ambiguous observation.
+5. Refresh stateboards, verify, commit, push, and replace this file with one
+   next objective after bounded completion evidence exists.
 
 ## Completion Evidence
 
-- A source-safe before/after QQQ coverage comparison names session completeness,
-  continuation/conflict categories, and `resume`/preparation status.
-- A valid first-five pair drives only the existing offline local-paper
-  observation; otherwise the precise next Data collection remains the normal
-  recovery action.
-- Daily SPY evidence, if present, remains categorical and makes no fill or PnL
-  claim without authoritative completion facts.
+- Source-safe before/after QQQ coverage metadata and current recovery class.
+- Task evidence proves the one-task/one-profile dispatcher contract remains
+  installed and bounded.
+- Any observer result remains credential-free and local-paper-only; otherwise
+  its categorical unavailability is scoped to the input.
 
 ## Verification
 

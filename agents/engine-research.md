@@ -31,6 +31,10 @@ selection, ensembles, Paper intents, and broker actions before that pair exists.
   row fingerprints before and after local cache inputs, retaining the full
   head-index hash as preparation-time provenance, then emits only sanitized
   `source: local_paper` evidence.
+- The existing head task now dispatches that consumer in a base-image,
+  CPU-only, network-disabled service only after its own collection service.
+  Its pre-pair smoke returned `preparation_pair_missing`; it has no KIS
+  environment values and no GPU request.
 - No GPU work is running. One GPU job may run only after a frozen campaign
   contract exists; utilization is not a reason to start an ineligible job.
 - Earlier daily and short historical screens are closed plumbing evidence only.
@@ -52,9 +56,9 @@ selection, ensembles, Paper intents, and broker actions before that pair exists.
 
 ## Ready Queue
 
-1. When Data supplies the first verified pair, run the existing credential-free
-   offline prospective observation through its immutable input contract and
-   inspect its categorical local-paper receipt.
+1. When Data supplies the first verified pair, the existing task dispatches the
+   credential-free offline prospective observation through its immutable input
+   contract; inspect its categorical local-paper receipt.
 2. Only after that receipt establishes a bounded claim, define a separate
    campaign contract before breadth, depth, ensemble, replication, or GPU work.
 3. Consume only authoritative sanitized Execution lifecycle facts through opaque
@@ -91,11 +95,12 @@ new immutable attempt path and never overwrite a completed receipt.
 
 - `scripts\run_kis_intraday_prospective_observation.py` is the local-only
   consumer for a verified pair.
-- The `research` Docker profile is network-disabled for that consumer and uses
-  only the external market-data and artifact mounts.
+- `kis-paper-intraday-observation` shares the head profile but is base-image,
+  network-disabled, CPU-only, and uses only external market-data and artifact
+  mounts.
 
 ## Next Handoff
 
 Wait for the Data-owned pair without foreground polling. At readiness, verify
-the pair's exact identity, run the existing offline consumer, and keep its
+the pair's exact identity through the isolated consumer's receipt, and keep its
 result separate from selection, promotion, execution, and Paper authority.

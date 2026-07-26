@@ -341,6 +341,17 @@ creating another task. The head task allows battery start/continuation, keeps
 trigger gap. Do not manually start a duplicate run to compensate for a missed
 window; inspect the task result and use the existing owned recovery path.
 
+The same named task now dispatches two sequential services in the same
+`kis-paper-intraday-head` Docker profile: the existing credential-bearing data
+collector followed by `kis-paper-intraday-observation`. The latter is a
+CPU-only, `network_mode: none`, read-only Research surface with no KIS
+environment values or GPU request. It is safe to invoke after every head run:
+until a verified first-five pair exists it exits through the existing pending
+path without opening a cache. Once a pair exists, it revalidates the pair and
+selected-row fingerprints before its bounded local-paper observation. The
+dispatcher preserves the collector exit code, so an offline-observation fault
+cannot rewrite Data freshness or hide an incomplete target result.
+
 A duplicate minute inside one candidate batch rejects that whole candidate,
 including any earlier page from the same invocation: no snapshot is retained
 and no cursor advances. An explicitly marked legacy candidate-batch partial is

@@ -4955,7 +4955,7 @@ and Docker service for one sequential, metadata-only preparation attempt after
 its exact QQQ target result is `collected` or `recovered`. A scoped SPY target
 failure still makes the overall collection result `incomplete`, but cannot delay
 the QQQ-only preparation input; the preparer validates the complete index shape
-before selecting QQQ. Do not add a second task, service, polling loop, or queue.
+before selecting QQQ. Do not add a second Windows task, polling loop, or queue.
 The preparer runs with the deterministic `scheduled-head-v1` label, only
 `PYTHONPATH` plus necessary process bootstrap variables, and a ten-second
 containment timeout. Its categorical `pending`, `prepared`, or scoped
@@ -4981,6 +4981,35 @@ and recovery behavior, not source completeness or model readiness.
 Reason: this removes a manual research-preparation gap at the exact boundary
 where the data is known durable, while preserving the one existing collector,
 isolating credentials, and avoiding a new scheduler or approval surface.
+
+## 2026-07-26 - Dispatch a prepared prospective pair through an isolated CPU observer
+
+Decision: retain one `thericher-kis-paper-intraday-head` Windows task and one
+`kis-paper-intraday-head` Docker profile, but let that profile contain a
+second, sequential service solely for the existing offline observation. The
+host dispatcher runs the credential-bearing collector once and then invokes
+`kis-paper-intraday-observation` regardless of the collector exit code. The
+observer is `network_mode: none`, read-only except for the external artifact
+mount, has no KIS environment values or GPU request, and uses the existing
+pair-verifying consumer. Before a pair exists it is a no-op pending check;
+afterward it is the bounded local-paper observation only.
+
+The dispatcher returns the collector's exit code, not the observer's. A QQQ
+pair may therefore reach the observer even when the independent SPY result
+makes the Data result incomplete, while observer failure cannot rewrite Data
+freshness, cache state, or scheduler recovery. `IgnoreNew` still serializes
+the single named task; the consumer's immutable receipt/replay checks remain
+the boundary against duplicate or changed evidence.
+
+Claude CLI was asked for the required falsification-first drift check, but its
+OAuth session was expired. Data and Engine Research advised against executing
+the observer inside the KIS container; Execution identified the isolation,
+independent-exit, and cadence invariants implemented here. The next due run is
+the operational proof, not a new authority gate.
+
+Reason: this removes the foreground wait between a valid Data pair and its
+first repeatable local-paper observation without widening broker authority,
+creating a second scheduler, or borrowing the GPU for a CPU-sized check.
 
 ## 2026-07-25 - Seal the first pair-bound prospective offline observation
 

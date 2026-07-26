@@ -91,6 +91,30 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-intraday-observation:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-head"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_intraday_prospective_observation.py
+    environment:
+      THERICHER_MODE: off
+      THERICHER_REPO_ROOT: /app
+      THERICHER_MARKET_DATA_ROOT: /app/market_data
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-readonly:
     build:
       context: .

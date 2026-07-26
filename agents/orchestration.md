@@ -11,6 +11,9 @@ second goal, or a historical ledger.
   (mixed continuation, no retained exact/conflicting overlap, scoped
   `minute_duplicate_conflict`). The existing head task is `Ready`, has four KST
   triggers, no missed run, and owns the next 2026-07-28 00:35 KST collection.
+  Its re-registered dispatcher preserves that one task/profile and follows the
+  collector with a CPU-only, network-disabled observer; its base smoke was
+  categorical `preparation_pair_missing`.
 - Engine Research is input-pending: no verified first-five preparation pair
   exists, so no model, GPU, candidate, or ensemble job is eligible under the
   current objective.
@@ -57,6 +60,12 @@ conflict keeps its immutable artifact but is removed from active index state,
 and an orphan recovery skips only its own target while the independent target
 continues in the same cycle.
 
+The same head task now invokes the isolated observer after every collection.
+The dispatcher captures no child output beyond an allowlisted observer status,
+preserves the collector exit code, and uses the base image rather than the
+11GB CUDA research image. This removes a foreground handoff wait without a
+second schedule, KIS call, GPU request, or Data-state coupling.
+
 At each bounded integration, inspect whether an integrity check binds unrelated
 future progress or whether recovery accepts duplicate evidence. Keep selected
 input identity fail-closed, but allow append-only, non-selected metadata to
@@ -73,8 +82,9 @@ drift-check, without holding a ready private lane.
 
 No separate intraday result-monitor is installed. At the next Codex integration
 after the due head result, reattest the existing collector through the
-metadata-only coverage inspector and apply its existing offline handoff
-condition. The head task remains the sole recurring intraday-data scheduler.
+metadata-only coverage inspector and consume the installed dispatcher's
+categorical observer outcome. The head task remains the sole recurring
+intraday-data scheduler.
 
 ## Operator Help
 
@@ -91,6 +101,6 @@ identities before trusting a checkpoint.
 ## Next Handoff
 
 After the next due head result, compare safe QQQ coverage metadata with the
-generation-8 baseline. If five exact sessions first exist, let Data's existing
-preparer create the pair and hand it to the frozen offline Research consumer.
+generation-8 baseline. If five exact sessions first exist, let the installed
+dispatcher hand the pair to the frozen offline Research consumer.
 After daily SPY results, consume only exact receipt-linked categorical evidence.

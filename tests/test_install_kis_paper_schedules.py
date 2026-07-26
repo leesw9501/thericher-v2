@@ -29,6 +29,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Service = "kis-paper-daily-spy-head"') == 1
     assert source.count('Service = "kis-paper-daily-spy-session"') == 1
     assert source.count('Service = "kis-paper-intraday-head"') == 1
+    assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
 
 
 def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() -> None:
@@ -42,6 +43,9 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
     assert "run --rm --no-deps --build $($schedule.Service)" in source
+    assert 'New-ScheduledTaskAction -Execute "powershell.exe"' in source
+    assert "-NoProfile -ExecutionPolicy Bypass -File" in source
+    assert '$schedule.ContainsKey("Runner")' in source
     assert (
         "New-ScheduledTaskTrigger -Weekly "
         "-DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday"
@@ -112,6 +116,8 @@ def test_kis_paper_schedule_installer_has_no_secret_or_unapproved_route_surface(
     source = SCRIPT.read_text(encoding="ascii").lower()
 
     assert ".env" not in source
-    assert "kis_paper_" not in source
+    assert "kis_paper_app_key" not in source
+    assert "kis_paper_app_secret" not in source
+    assert "kis_paper_account" not in source
     assert "live" not in source
     assert "password" not in source
