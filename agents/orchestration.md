@@ -5,10 +5,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Cross-Lane View
 
-- Data has measured the KIS Paper terminal-head path and is ready to implement
-  the single-client, concurrency-one session-capture worker. The existing
-  intraday-head collector remains a source-local current sampler, not a
-  company-wide dependency.
+- Data has implemented and smoke-tested the KIS Paper single-client,
+  concurrency-one session-capture worker. Its capture-scoped QQQ coverage is
+  zero of 390 regular-session minutes because the measured terminal page is
+  extended-session evidence; that is correctly excluded from Research. The
+  existing intraday-head collector remains a source-local current sampler, not
+  a company-wide dependency.
 - Engine Research completed its frozen daily CPU baseline and one intraday CUDA
   replication. Neither selected a model; its next campaign depends on newly
   qualified Data coverage rather than a GPU occupancy target.
@@ -21,15 +23,16 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 ## Current Bottleneck
 
 The material unknown is continuous, source-qualified KIS 1m session coverage.
-The terminal-head probe proved bounded client/token reuse only; it did not
-prove historical pagination or a complete regular session.
+The capture worker now proves a recoverable current-head attempt and detects
+non-regular-session evidence, but it does not prove historical pagination or a
+complete regular session.
 
 ## Current Operating Improvement
 
-Turn measured endpoint behavior into the smallest owned Data worker before
-starting another architecture sweep. Keep prospective readiness local to its
-consumer; a worker owns its own backoff and recovery, and Codex does not sleep
-while another lane is ready.
+Integrate the tested capture mode into the existing head task without creating
+a new scheduler or widening its KIS route. Keep prospective readiness local to
+its consumer; a worker owns its own backoff and recovery, and Codex does not
+sleep while another lane is ready.
 
 ## External Waits
 
@@ -46,6 +49,6 @@ lanes.
 
 ## Next Handoff
 
-Integrate the tested Data capture worker and its source-safe smoke evidence.
-Record only an actual shared resource conflict, new external wait, bottleneck,
-or reversible operating improvement here.
+Integrate the tested Data capture worker with the existing head task. Record
+only an actual shared resource conflict, new external wait, bottleneck, or
+reversible operating improvement here.

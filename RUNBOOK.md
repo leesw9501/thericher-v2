@@ -388,13 +388,46 @@ selected-row fingerprints before its bounded local-paper observation. The
 dispatcher preserves the collector exit code, so an offline-observation fault
 cannot rewrite Data freshness or hide an incomplete target result.
 
+### Bounded Session Capture
+
+Use the measured capture path when one current head invocation needs an
+immutable, source-safe 390-minute coverage receipt:
+
+```powershell
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode session-capture --pages-per-target 4
+```
+
+It uses the existing `intraday-head` cache, one in-memory KIS Paper
+market-data client/token, the same worker lock, request-start gate, cooldown,
+strict conflict rule, and `tr_cont` continuation behavior. It writes raw
+provider rows and cache state only under `D:\market_data`, then writes an
+allowlisted capture receipt under that external head cache. Its console result
+contains no receipt path, provider row, price, credential, account, or order
+data.
+
+The receipt's QQQ capture status says whether its bounded transport attempt
+completed; it is not a regular-session qualification. Only coverage of exactly
+390 regular-session minutes qualifies a session. A terminal or extended-session
+page can therefore report a completed capture attempt and zero qualified
+minutes, which must remain Data evidence rather than a Research input. SPY is
+recorded as a companion target, but an independent SPY failure cannot erase the
+scoped QQQ capture result.
+
+This command currently does not change a scheduler, create a task, submit an
+order, call account/position endpoints, start a model, or invoke the isolated
+observer. The next bounded integration objective may wire it into the existing
+head task only after its profile/dispatcher contract is verified.
+
 A duplicate minute inside one candidate batch rejects that whole candidate,
 including any earlier page from the same invocation: no snapshot is retained
 and no cursor advances. An explicitly marked legacy candidate-batch partial is
-kept only as audit evidence and is excluded from cache/session consumption. The
-outer worker is `complete` only when it returns one eligible result for both
-expected QQQ and SPY targets; the existing QQQ-only preparation child may still
-run after its exact QQQ result while the outer worker remains `incomplete`.
+kept only as audit evidence and is excluded from cache/session consumption. In
+the generic `head` mode, the outer worker is `complete` only when it returns
+one eligible result for both expected QQQ and SPY targets. In `session-capture`
+mode, the source-safe QQQ capture status is deliberately separate from the
+process exit, which still reflects whether the full collector cycle succeeded.
+The existing QQQ-only preparation child may still run after its exact QQQ
+result while the generic outer worker remains `incomplete`.
 
 To compare head coverage without opening raw minute CSV files, prices, or
 credentials, run:

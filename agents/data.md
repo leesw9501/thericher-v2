@@ -11,10 +11,11 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Implement the first measured KIS Paper intraday session-capture path while
-preserving source separation and cache correctness. The prospective QQQ 1m
-first-five pair is one Data product for a named future observer; it is not the
-only Data output or a company hold.
+Integrate the tested KIS Paper intraday session-capture path with the one
+existing intraday-head task while preserving source separation, cache
+correctness, and the isolated prospective-observer handoff. The prospective
+QQQ 1m first-five pair is one Data product for a named future observer; it is
+not the only Data output or a company hold.
 
 ## Current Facts
 
@@ -23,9 +24,9 @@ only Data output or a company hold.
   source-limited at its qualified bad-row boundary.
 - The bounded historical intraday cache has 21 complete QQQ and SPY
   regular-session inputs. It remains source-scoped historical evidence.
-- The prospective QQQ head is generation 8 with zero complete sessions out of
-  five. Short/gapped records and minute_duplicate_conflict are source facts,
-  not a Research or Execution hold.
+- The prospective QQQ head is generation 10 with zero complete sessions out
+  of five. Short/gapped records and minute_duplicate_conflict are source
+  facts, not a Research or Execution hold.
 - The existing intraday-head task has four KST triggers and owns its current
   cache. It may continue independently while the capability package runs.
 - The 2026-07-26 source-safe QQQ probe accepted two full terminal-head pages,
@@ -35,27 +36,32 @@ only Data output or a company hold.
   bars were not retained by the probe. Evidence:
   `20260726T123512436025Z-f1575006a7319021.json` under the external artifact
   root.
+- The first `session-capture` worker reuses the existing collector, one
+  in-memory Paper market-data client/token, lock, request gate, and head cache.
+  Its capture receipt is D:-resident, source-safe, and scoped only to the QQQ
+  manifest from that invocation, so a legacy completed chunk cannot make a new
+  attempt appear complete. The bounded smoke wrote
+  `20260726T131355216487Z-cb15a58ccd594f44.json`; its terminal extended-session
+  data qualified zero of 390 regular-session minutes. The QQQ capture transport
+  result was complete while its coverage correctly remained input-pending.
 - D: free space is about 40.45 percent. Data acquisition remains within the
   existing 20 percent warning and 15 percent floor policy.
 
 ## Ready Queue
 
-1. Implement one owned, concurrency-one session-capture worker around one
-   in-memory KIS Paper market-data client/token per bounded invocation. Keep
-   the existing request gate and cooldown unchanged.
-2. Treat `tr_cont` as the only continuation authority. Continue only when it
-   is present; on a terminal page collect current-head evidence only and never
-   synthesize a historical `KEYB` cursor.
-3. Persist raw provider rows, manifests, provenance, deduplication, and
-   recovery state only under D:. Write source-safe coverage facts including
-   complete/partial/gapped regular-session status and the 390-minute contract.
-4. Add fake-transport tests for token/client lifetime, continuation versus
-   terminal-head behavior, strict conflict handling, coverage classification,
-   bounded recovery, and no account/order/live route.
-5. Run one bounded Data-only KIS Paper smoke after the worker is implemented.
-   A market-time wait, a partial session, or a rate retry remains owned by that
-   worker and cannot block another lane.
-6. Continue normal daily/intraday cache work when its owned cursor is ready.
+1. Rewire only the existing `thericher-kis-paper-intraday-head` task/profile to
+   invoke the tested `session-capture` mode. Do not create a task, trigger, or
+   independent scheduler.
+2. Preserve the one-client, concurrency-one collector, existing request gate,
+   cooldown, lock, strict conflict handling, and `tr_cont` continuation
+   contract. A terminal page remains current-head evidence only.
+3. Preserve the existing isolated preparation and observation handoff: a
+   qualified QQQ result may prepare its immutable pair, while a partial or
+   extended-session capture remains source evidence and cannot enter Research.
+4. Add profile/dispatcher tests proving that the collector outcome stays
+   authoritative, the observer remains network-disabled, and no account,
+   order, or live route is introduced.
+5. Continue normal daily/intraday cache work when its owned cursor is ready.
    Hand an immutable first-five pair to the isolated prospective observer only
    when the exact 390-minute Data contract is satisfied.
 
@@ -76,7 +82,7 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the tested worker, a source-safe smoke result, and the exact effect on
-Data coverage. Do not infer historical reach or prospective completeness from
-a terminal-head page, and do not wait for a prospective pair before advancing
+Return the integrated profile/dispatcher evidence and the exact effect on Data
+coverage. Do not infer historical reach or prospective completeness from a
+terminal-head page, and do not wait for a prospective pair before advancing
 other ready Data work.

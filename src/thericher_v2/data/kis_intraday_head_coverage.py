@@ -207,8 +207,14 @@ def inspect_kis_paper_private_intraday_head_coverage(
     repo_root: Path | str,
     after_session_date: date,
     required_complete_session_count: int,
+    manifest_hashes: frozenset[str] | None = None,
 ) -> KisIntradayHeadCoverage:
-    """Inspect QQQ head coverage without opening raw minute files or network access."""
+    """Inspect QQQ head coverage without opening raw minute files or network access.
+
+    ``manifest_hashes`` narrows the result to one bounded capture attempt. An
+    empty set deliberately selects no retained rows, so a legacy head chunk
+    cannot satisfy a fresh capture receipt by accident.
+    """
 
     if (
         type(after_session_date) is not date
@@ -216,6 +222,11 @@ def inspect_kis_paper_private_intraday_head_coverage(
         or required_complete_session_count <= 0
     ):
         raise ValueError("head coverage inspection scope is invalid")
+    if manifest_hashes is not None and (
+        not isinstance(manifest_hashes, frozenset)
+        or any(not _is_sha256(value) for value in manifest_hashes)
+    ):
+        raise ValueError("head coverage manifest scope is invalid")
     version_root, index_path = _head_index_paths(cache_root=cache_root, repo_root=repo_root)
     if not index_path.exists():
         return KisIntradayHeadCoverage(
@@ -251,12 +262,17 @@ def inspect_kis_paper_private_intraday_head_coverage(
         raise ValueError("head coverage index is invalid") from error
     target = _target_metadata(metadata.targets)
     target_document = _target_document(index)
-    retained_documents = _retained_chunk_documents(target_document)
-    if len(retained_documents) != len(target.retained_chunks):
+    all_retained_documents = _retained_chunk_documents(target_document)
+    if len(all_retained_documents) != len(target.retained_chunks):
         raise ValueError("head coverage index is invalid")
+    retained_documents, retained_chunks = _select_retained_chunks(
+        documents=all_retained_documents,
+        chunks=target.retained_chunks,
+        manifest_hashes=manifest_hashes,
+    )
 
     first_seen_complete, retained_fingerprint_conflict = _first_seen_completion(
-        chunks=target.retained_chunks
+        chunks=retained_chunks
     )
     session_coverage = _session_coverage(
         completed_row_keys=frozenset(
@@ -273,7 +289,11 @@ def inspect_kis_paper_private_intraday_head_coverage(
         target=target,
         chunks=retained_documents,
     )
-    last_reason = target_document.get("last_reason")
+    last_reason = (
+        target_document.get("last_reason")
+        if manifest_hashes is None
+        else (retained_documents[-1].get("reason") if retained_documents else None)
+    )
     last_reason_category = _last_reason_category(last_reason)
     return KisIntradayHeadCoverage(
         status="available",
@@ -281,11 +301,15 @@ def inspect_kis_paper_private_intraday_head_coverage(
         required_complete_session_count=required_complete_session_count,
         index_generation=metadata.generation,
         index_metadata_sha256=sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes),
-        retained_chunk_count=len(target.retained_chunks),
+        retained_chunk_count=len(retained_chunks),
         last_reason_category=last_reason_category,
-        last_conflict_origin=_last_conflict_origin(
-            target_document=target_document,
-            last_reason=last_reason,
+        last_conflict_origin=(
+            _last_conflict_origin(
+                target_document=target_document,
+                last_reason=last_reason,
+            )
+            if manifest_hashes is None
+            else "none"
         ),
         continuation_category=continuation_category,
         exact_overlap_row_count=exact_overlap_row_count,
@@ -347,6 +371,26 @@ def _retained_chunk_documents(target: Mapping[str, object]) -> tuple[Mapping[str
         if chunk.get("raw_market_data_retained") is True:
             retained.append(chunk)
     return tuple(retained)
+
+
+def _select_retained_chunks(
+    *,
+    documents: Sequence[Mapping[str, object]],
+    chunks: Sequence[KisPaperPrivateIntradayV1RetainedChunkMetadata],
+    manifest_hashes: frozenset[str] | None,
+) -> tuple[
+    tuple[Mapping[str, object], ...], tuple[KisPaperPrivateIntradayV1RetainedChunkMetadata, ...]
+]:
+    if len(documents) != len(chunks):
+        raise ValueError("head coverage index is invalid")
+    pairs = tuple(zip(documents, chunks, strict=True))
+    if manifest_hashes is not None:
+        pairs = tuple(
+            (document, chunk)
+            for document, chunk in pairs
+            if document.get("manifest_hash") in manifest_hashes
+        )
+    return tuple(document for document, _ in pairs), tuple(chunk for _, chunk in pairs)
 
 
 def _first_seen_completion(

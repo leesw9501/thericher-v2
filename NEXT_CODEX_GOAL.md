@@ -2,12 +2,13 @@
 
 ## Objective
 
-Implement the first measured KIS Paper intraday session-capture worker.
+Integrate the tested KIS Paper intraday session-capture worker with the one
+existing intraday-head task.
 
-The worker turns the observed terminal-head behavior into a Data-owned,
-recoverable source path. It is not a claim that KIS supports historical
-pagination or continuous sessions yet, and it must not make a model, order, or
-live behavior decision.
+This is a bounded Data/Infra integration: make the existing scheduled head
+collector use the tested capture mode while preserving source provenance,
+recovery, and the isolated offline-observer handoff. It is not a new scheduler,
+historical-pagination claim, model decision, order, or live behavior change.
 
 ## First Reads
 
@@ -28,30 +29,32 @@ uv run python scripts\inspect_kis_intraday_head_coverage.py
 
 ## Required Work
 
-1. Build the Data-owned worker on the existing KIS Paper market-data client.
-   Each bounded invocation creates exactly one in-memory client/token and has
-   concurrency one. Keep the current request-start gate and cooldown intact.
-2. Use `tr_cont` as the only pagination authority. When continuation is
-   present, use the validated cursor path. When a response is terminal, collect
-   only current-head data and never invent a historical `KEYB` cursor.
-3. Keep raw rows, manifests, provenance, deduplication, cursor/recovery state,
-   and coverage data only under `D:\market_data`. Retain strict source conflict
-   rejection. Report only source-safe status, coverage, and recovery facts.
-4. Classify each attempted regular session against the exact 390-minute
-   contract. A partial or gapped terminal-head result must remain partial; do
-   not fill it from another provider or turn it into a prospective input.
-5. Add focused fake-transport tests for client/token lifetime, continuation and
-   terminal behavior, bounded recovery, strict conflict handling, coverage
-   classification, no broker/account/order/live route, and external-only data
-   storage. Use a temporary external root in tests where appropriate.
-6. Run one bounded KIS Paper Data-only smoke after tests pass. It may use only
-   the Paper token and market-data endpoints. Do not call account, position,
-   order, or live endpoints, print raw rows/prices, or wait for a market
-   session. A retry/due time belongs to the worker and cannot block another
-   ready lane.
-7. Do not create a duplicate scheduler. The existing head task may consume the
-   worker only when its tested source/provenance/recovery contract remains
-   intact; otherwise leave installation for a later bounded goal.
+1. Ask Claude CLI for a concise falsification-first drift-check before changing
+   the profile/dispatcher. State the claim, kill case, source/provenance risk,
+   current task/profile, observer isolation, blast radius, and reversal fact.
+   An expired CLI session is scoped tooling evidence, not a hold on this
+   authorized private change.
+2. Change only the existing `thericher-kis-paper-intraday-head` profile/task
+   path to use `--mode session-capture`. Keep its existing triggers, named
+   task, concurrency behavior, execution limit, maximum page count, one-client
+   collector, lock, request gate, cooldown, strict conflict rule, and `tr_cont`
+   continuation contract. Do not create a scheduler or task.
+3. Preserve the current Data-to-Research handoff: after an eligible QQQ
+   collection, its isolated metadata-only preparation and network-disabled
+   observer remain available; partial or extended-session capture data remains
+   Data-only evidence. The collector exit remains authoritative, and observer
+   failure must not rewrite collection freshness or recovery.
+4. Keep raw rows, manifests, provenance, deduplication, cursor/recovery state,
+   and capture receipts only under `D:\market_data`. Keep generated artifacts
+   outside Git. Do not print paths, rows, prices, credentials, account data, or
+   sealed holdout labels.
+5. Add focused profile/dispatcher tests proving the one existing task invokes
+   the capture mode, no duplicate schedule or widened KIS route exists, the
+   collector is still one-client/concurrency-one, and the offline observer is
+   isolated from KIS credentials and network access.
+6. Reattest the Docker profile and source-safe metadata without a market-time
+   wait. A later scheduled run is operational evidence; it is not a reason to
+   delay this bounded integration.
 
 ## Hard Boundaries
 
@@ -69,19 +72,18 @@ uv run python scripts\inspect_kis_intraday_head_coverage.py
 
 ## Claude Check
 
-A falsification-first drift-check for this worker was attempted on 2026-07-26
-KST, but the Claude CLI OAuth session was expired and no private material was
-sent. This scoped tooling failure does not block the Data-only objective. Retry
-Claude before a material scheduler widening, model promotion, ensemble
-selection, holdout interpretation, or execution-risk change.
+The prior worker drift-check and retry on 2026-07-26 KST found the local Claude
+CLI OAuth session expired; no private material was sent. Retry for this
+profile/dispatcher change before relying on it. A repeat OAuth failure is
+scoped tooling evidence, not an approval gate for this private non-live work.
 
 ## Completion Evidence
 
-- Test-backed, source-correct single-client worker with a bounded recovery
-  contract and no widened broker route.
-- One source-safe Data-only smoke result or a scoped, recoverable provider
-  failure record.
-- Stateboards, RUNBOOK.md, HANDOFF.md, and DECISIONS.md reflect actual coverage
+- Test-backed existing profile/dispatcher integration with no duplicate
+  scheduler, widened broker route, or observer-to-collector feedback path.
+- Reattested Docker/source-safe metadata evidence and an explicit statement of
+  what a later scheduled run must prove.
+- Stateboards, RUNBOOK.md, HANDOFF.md, and DECISIONS.md reflect the integration
   and the next falsifiable data question.
 
 ## Verification

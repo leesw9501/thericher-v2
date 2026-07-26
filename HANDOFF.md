@@ -65,18 +65,25 @@ authorized private KIS Paper work.
 - The private intraday cache has 21 complete QQQ and SPY regular sessions from
   the prior bounded historical scope. It is eligible only for scoped
   historical work, not a broad profitability claim.
-- The prospective QQQ head has zero complete sessions out of five. The retained
-  short-session evidence is a Data-local source fact. It is not a company
-  hold.
+- The prospective QQQ head is generation 10 with zero complete sessions out
+  of five. The retained short-session evidence is a Data-local source fact. It
+  is not a company hold.
 - The 2026-07-26 bounded QQQ KIS Paper minute probe accepted two full terminal
   head pages through one in-memory client/token under the existing request
   gate. It observed a gap within one exchange date; it did not establish
   historical continuation or a complete 390-minute session. The probe retained
   no raw bars. Its source-safe external evidence is
   `20260726T123512436025Z-f1575006a7319021.json`.
+- The first single-client `session-capture` worker is implemented and its
+  bounded Paper Data-only smoke wrote a source-safe D: receipt:
+  `20260726T131355216487Z-cb15a58ccd594f44.json`. The scoped QQQ capture
+  collected a terminal extended-session page, so its exact regular-session
+  coverage is zero of 390 minutes. This is valid source evidence, not a
+  strategy input or a collector failure.
 - The existing intraday-head task remains a source-local collector. The next
-  Data objective is a single-client session-capture worker that preserves its
-  provenance and conflict handling without fabricating a historical cursor.
+  Data objective is to integrate the tested capture mode into that one named
+  task while preserving its current provenance, recovery, and isolated
+  observer behavior.
 
 ### Engine Research
 
@@ -122,9 +129,10 @@ authorized private KIS Paper work.
   ceiling, historical continuation, or continuous-session collection. The
   current evidence-backed rate/cooldown controls remain active; do not use a
   parallel request flood.
-- The next Data goal implements the measured single-client capture path and
-  records actual coverage. A terminal page remains current-head evidence, not
-  permission to invent a historical cursor.
+- The measured single-client capture path now records capture-scoped coverage.
+  A terminal page remains current-head evidence, not permission to invent a
+  historical cursor. The next bounded change is integration with the existing
+  head task, not a new scheduler or a rate-control change.
 
 ## Active Lanes
 
@@ -168,6 +176,6 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Implement and verify the Data-owned single-client
-intraday session-capture worker, then refresh this file only with current
-cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Integrate and verify the tested Data-owned
+session-capture mode in the existing intraday-head task, then refresh this
+file only with current cross-lane facts after that bounded objective completes.

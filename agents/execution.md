@@ -31,6 +31,8 @@ remains unavailable.
   local-paper intent, rejects a pre-decision `as_of`, and emits scoped
   no-intent for an already-satisfied or mismatched target. It does not widen a
   KIS route or make a network call.
+- The new Data session-capture receipt uses only the KIS Paper market-data
+  route and has no Execution account, position, intent, order, or live effect.
 
 ## Ready Queue
 

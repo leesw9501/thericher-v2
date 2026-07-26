@@ -14,6 +14,9 @@ from pathlib import Path
 from thericher_v2.data.kis_paper_intraday import (
     build_kis_paper_private_intraday_freshness_snapshot,
 )
+from thericher_v2.data.kis_paper_intraday_session_capture import (
+    build_and_write_kis_paper_intraday_session_capture,
+)
 from thericher_v2.data.market_data_freshness_runtime import write_market_data_freshness_runtime
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataClient,
@@ -60,7 +63,7 @@ def main(
     parser.add_argument("--pages-per-target", type=int, default=2)
     parser.add_argument(
         "--mode",
-        choices=("backfill", "head", "historical-probe"),
+        choices=("backfill", "head", "historical-probe", "session-capture"),
         default="backfill",
     )
     parser.add_argument(
@@ -109,14 +112,25 @@ def main(
             max_minute_page_attempts=len(KIS_PAPER_PRIVATE_INTRADAY_TARGETS)
             * args.pages_per_target,
         )
+        collection_root = _cache_root(args.mode)
         results = run_kis_paper_private_intraday_backfill_cycle(
             client=client,
-            cache_root=_cache_root(args.mode),
+            cache_root=collection_root,
             repo_root=_REPO_ROOT,
             code_revision=(code_revision or _current_code_revision)(_REPO_ROOT),
             pages_per_target=args.pages_per_target,
             resume_cursor=args.mode == "backfill",
             observed_at=observed_at,
+        )
+        session_capture = (
+            build_and_write_kis_paper_intraday_session_capture(
+                runs=results,
+                cache_root=collection_root,
+                repository_root=_REPO_ROOT,
+                observed_at=observed_at,
+            )
+            if args.mode == "session-capture"
+            else None
         )
     except KisPaperMarketDataError as error:
         _print_with_optional_freshness(
@@ -138,20 +152,24 @@ def main(
         )
         return 1
     collection_succeeded = _collection_succeeded(results)
-    payload: dict[str, object] = {
-        "status": "complete" if collection_succeeded else "incomplete",
-        "mode": args.mode,
-        "targets": [
-            {
-                "target_key": result.target_key,
-                "status": result.status,
-                "row_count": result.row_count,
-                "exact_overlap_rows": result.exact_overlap_rows,
-                "reason": result.reason,
-            }
-            for result in results
-        ],
-    }
+    payload: dict[str, object]
+    if session_capture is not None:
+        payload = {"mode": args.mode, **session_capture.outcome.safe_payload()}
+    else:
+        payload = {
+            "status": "complete" if collection_succeeded else "incomplete",
+            "mode": args.mode,
+            "targets": [
+                {
+                    "target_key": result.target_key,
+                    "status": result.status,
+                    "row_count": result.row_count,
+                    "exact_overlap_rows": result.exact_overlap_rows,
+                    "reason": result.reason,
+                }
+                for result in results
+            ],
+        }
     if args.mode == "head" and _head_preparation_input_succeeded(results):
         payload["preparation"] = _prepare_head_observation(
             head_cache_root=_cache_root("head"),
@@ -293,12 +311,12 @@ def _preparation_unavailable(reason: str) -> dict[str, str]:
 
 
 def _cache_root(mode: str = "backfill") -> Path:
-    if mode not in {"backfill", "head", "historical-probe"}:
+    if mode not in {"backfill", "head", "historical-probe", "session-capture"}:
         raise ValueError("private intraday mode is invalid")
     base = _base_cache_root()
     if mode == "backfill":
         return base
-    suffix = "head" if mode == "head" else "historical-probe"
+    suffix = "head" if mode in {"head", "session-capture"} else "historical-probe"
     return base.with_name(f"{base.name}-{suffix}")
 
 

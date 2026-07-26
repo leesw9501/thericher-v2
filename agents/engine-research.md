@@ -33,6 +33,9 @@ input-pending.
   architecture screen should run solely to occupy it.
 - The pair-bound prospective observer is implemented, local-paper-only, and
   network-disabled. It remains inactive until Data supplies its immutable pair.
+- The latest capture-scoped QQQ terminal page contained no qualified regular
+  session minute under the exact 390-minute contract. It is Data evidence only
+  and cannot become a feature, label, candidate result, or GPU input.
 
 ## Ready Queue
 
@@ -52,7 +55,8 @@ input-pending.
    challenge before promotion, ensemble selection, or material interpretation.
 5. Consume a verified prospective pair as an additional observation/campaign
    input when Data provides it. It never rewrites historical results or becomes
-   a global queue gate.
+   a global queue gate. The next Data task changes collection integration only;
+   it does not authorize a new Research campaign.
 
 ## Durable Constraints
 

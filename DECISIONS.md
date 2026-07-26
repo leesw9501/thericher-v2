@@ -5209,3 +5209,34 @@ Reason: the smallest useful next step is to turn an observed route behavior
 into a recoverable source-correct collector. Further blind model sweeps cannot
 resolve the missing continuous-session evidence and would not advance a model
 promotion claim.
+
+## 2026-07-26 - Scope KIS intraday capture evidence to its own QQQ manifests
+
+Decision: implement `session-capture` as a thin, Data-owned projection over
+the existing private intraday collector. One invocation retains the existing
+one-client/token, lock, request gate, cooldown, strict conflict handling, and
+`tr_cont` behavior; the new projection makes no KIS call. It writes only an
+allowlisted receipt under the external head cache and inspects coverage using
+only QQQ manifest hashes produced or recovered by that invocation. An empty
+manifest scope intentionally selects no legacy rows, so a prior complete chunk
+cannot make a fresh partial capture appear complete. QQQ is the capture
+target; SPY remains visible companion evidence without changing QQQ's scoped
+transport outcome.
+
+The bounded Paper Data-only smoke wrote a source-safe receipt below
+`D:\market_data` and found zero of 390 qualified regular-session minutes in its
+terminal capture. The source page was extended-session evidence, so it remains
+excluded from feature, label, promotion, ensemble, GPU, Paper-order, and PnL
+claims. No account, position, order, cancel, modify, live, scheduler, or model
+route ran or changed.
+
+Claude's required capture drift-check was retried before this implementation,
+but its local OAuth session remained expired; no credentials, account data, raw
+provider data, or holdout material was sent. This is a scoped review-tool
+limitation, not a hold on the completed private Data work. Retry before the
+next material scheduler/profile integration.
+
+Reason: a transport-success label without capture-scoped coverage could let
+legacy data or extended-session rows masquerade as a new regular-session
+input. This keeps provenance exact while retaining the smallest reusable
+collector path.
