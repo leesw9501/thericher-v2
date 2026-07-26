@@ -303,6 +303,36 @@ its contract identity, then handle one fold and its exact eligibility identity
 at a time; it must not treat the three expanding folds as one generic
 `CampaignContract`, train, replay, select a model, or produce a Paper decision.
 
+#### Reattested Expanding-1 Input
+
+The first and only active fold-local input is external and immutable:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-1-v1.json
+```
+
+Its artifact hash is
+`sha256:a15c26b6ce8f9c8c1e204cd8300b46241e2e7d894548666c73d32d030f790f0b`
+and its fold-input identity is
+`sha256:b019c7e9a10eb2add48bbaa815c046a9b216ca9069c4ca8e4f836bc91085a1db`.
+It binds the active parent hash and contract identity plus exact sparse
+`expanding-1` eligibility counts of 2,345 development and 146 validation
+decisions. It retains no price or return values and remains
+`model_execution_eligible: false` with `review_unavailable`.
+
+To rebuild the parent locally and write this one index-only fold input when its
+destination does not already exist, run:
+
+```powershell
+uv run python scripts\prepare_kis_daily_joint_event_window_fold_input.py `
+  --fold-id expanding-1
+```
+
+The command reads only the pinned local catalog, sidecar, audit, and parent
+artifact. It does not read `.env`, call KIS or Tiingo, invoke a broker, train,
+replay, or create a Paper decision. A later D1 materializer must consume these
+exact sparse indices, not infer a continuous eligible range.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS

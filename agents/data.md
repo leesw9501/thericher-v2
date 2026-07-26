@@ -14,7 +14,8 @@ Do not select strategies or make execution decisions.
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
 evidence. Serve the active v2 QQQ/SPY joint-event contract to one later
-fold-local offline adapter through reattestation only. Its full sequence
+fold-local offline input through reattestation only, then serve the same
+catalog to one source-safe D1 sequence materializer. Its full sequence
 dependency mask is `t-20..t+2`, not merely the 20 visible feature rows
 `t-19..t`. The prospective QQQ 1m first-five pair is one Data product for a
 named future observer; it is not the only Data output or a company hold.
@@ -110,12 +111,20 @@ named future observer; it is not the only Data output or a company hold.
   and audit identities; its 114 joint event sessions yield validation counts
   `146 / 128 / 145` across the fixed three folds. It retains no prices or raw
   provider rows and made no credential, KIS, Tiingo, or broker call.
+- The active parent was rebuilt from that exact local catalog and reattested
+  into one external `expanding-1` fold input: artifact
+  `sha256:a15c...90f0b`, input identity `sha256:b019...5a1db`, and exact
+  development/validation eligibility counts `2345 / 146`. It stores only
+  lineage, dates, segment bounds, and sparse decision indices; it does not
+  duplicate catalog values. It is the sole active fold input, not a continuous
+  date-range substitute or a generic multi-fold campaign.
 
 ## Ready Queue
 
-1. Reattest the active v2 QQQ/SPY contract inputs for the next fold-local
-   adapter. Preserve its `t-20..t+2` joint mask and fixed geometry; this is
-   offline, uses no token, and does not fetch or blend provider price rows.
+1. Serve the reattested `expanding-1` input to one later offline D1 sequence
+   materializer. Preserve its `t-20..t+2` joint mask and exact sparse indices;
+   use the existing QQQ/SPY catalog in memory only and do not fetch or blend
+   provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -149,16 +158,17 @@ or cursor scope, never another collector or lane.
 
 ## Recovery
 
-Current class: complete for the daily catch-up and joint event-window contract.
-Reattest existing metadata and committed snapshots before a fold-local adapter
-or future network call. A bad cache is reconcile/restart evidence for that
-cache; an empty or limited endpoint result is source evidence for that route
-only.
+Current class: complete for the daily catch-up, joint event-window contract,
+and `expanding-1` input; resume for its D1 materializer. Reattest existing
+metadata and committed snapshots before a new materializer or future network
+call. A bad cache is reconcile/restart evidence for that cache; an empty or
+limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the active source-safe v2 joint-event contract and its hash-bound input
-lineage to the fold-local adapter. Preserve the frozen six-symbol source
-separately. Do not infer PIT membership, corporate-action completeness, a
-ranking claim, or Paper-trading eligibility from either cache, and do not wait
-for a prospective pair before advancing other ready Data work.
+Return the reattested `expanding-1` input, active v2 parent identity, and
+hash-bound catalog lineage to one D1 sequence materializer. Preserve the
+frozen six-symbol source separately. Do not infer PIT membership,
+corporate-action completeness, a ranking claim, or Paper-trading eligibility
+from either cache, and do not wait for a prospective pair before advancing
+other ready Data work.

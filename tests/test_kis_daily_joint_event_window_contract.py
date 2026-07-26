@@ -22,6 +22,9 @@ from thericher_v2.kis_daily_joint_event_window_contract import (
     KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
     KisDailyJointEventWindowSpec,
     build_kis_daily_joint_event_window_contract,
+    load_verified_kis_daily_joint_event_window_contract,
+    select_kis_daily_joint_event_fold_input,
+    write_kis_daily_joint_event_fold_input,
     write_kis_daily_joint_event_window_contract,
 )
 
@@ -393,7 +396,18 @@ assert not [name for name in sys.modules if name.startswith('thericher_v2.data')
     assert not any(
         term in imported
         for imported in imports
-        for term in ("execution", "broker", "kis_market_data", "tiingo", "order")
+        for term in (
+            "execution",
+            "broker",
+            "kis_market_data",
+            "tiingo",
+            "order",
+            "socket",
+            "urllib",
+            "http",
+            "requests",
+            "dotenv",
+        )
     )
 
 
@@ -407,6 +421,248 @@ def test_script_help_stays_on_the_pure_import_path() -> None:
 import runpy
 import sys
 namespace = runpy.run_path({str(script_path)!r}, run_name='joint_event_contract_help_test')
+try:
+    namespace['main'](['--help'])
+except SystemExit as error:
+    assert error.code == 0
+else:
+    raise AssertionError('expected --help to exit')
+assert not [name for name in sys.modules if name.startswith('thericher_v2.data')]
+assert not [name for name in sys.modules if name.startswith('thericher_v2.execution')]
+"""
+    result = subprocess.run(
+        [sys.executable, "-c", code],
+        check=False,
+        capture_output=True,
+        text=True,
+        cwd=Path(__file__).resolve().parents[1],
+    )
+    assert result.returncode == 0, result.stderr
+
+
+def _verified_parent_artifact(
+    tmp_path: Path,
+    *,
+    event_specs: tuple[tuple[str, int], ...] = (("QQQ", 34),),
+    spec: KisDailyJointEventWindowSpec | None = None,
+    session_count: int = 100,
+):
+    contract = _contract(
+        tmp_path,
+        event_specs=event_specs,
+        spec=spec or replace(_spec(), validation_session_count=20),
+        session_count=session_count,
+        model_execution_review=KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
+    )
+    artifact_root = tmp_path / "artifacts"
+    parent = write_kis_daily_joint_event_window_contract(
+        destination=artifact_root / "contracts" / "parent.json",
+        contract=contract,
+        artifact_root=artifact_root,
+        repo_root=tmp_path / "repo",
+    )
+    verified = load_verified_kis_daily_joint_event_window_contract(
+        path=parent.path,
+        expected_artifact_sha256=parent.content_hash,
+        expected_contract_identity=contract.contract_identity,
+        rebuilt_contract=contract,
+        artifact_root=artifact_root,
+        repo_root=tmp_path / "repo",
+    )
+    return contract, artifact_root, verified
+
+
+def test_verified_parent_rebuild_exposes_one_exact_sparse_fold_input(tmp_path: Path) -> None:
+    contract, _artifact_root, verified = _verified_parent_artifact(tmp_path)
+
+    with pytest.raises(ValueError, match="must be reattested"):
+        select_kis_daily_joint_event_fold_input(
+            replace(verified, reattested_against_rebuild=False),
+            fold_id="expanding-1",
+        )
+
+    fold_input = select_kis_daily_joint_event_fold_input(verified, fold_id="expanding-1")
+    expected_fold = contract.folds[0]
+
+    assert fold_input.source_artifact_sha256 == verified.content_hash
+    assert fold_input.source_contract_identity == contract.contract_identity
+    assert fold_input.fold_id == expected_fold.fold_id
+    assert fold_input.development_eligible_decision_indices == (
+        expected_fold.development_eligible_decision_indices
+    )
+    assert fold_input.validation_eligible_decision_indices == (
+        expected_fold.validation_eligible_decision_indices
+    )
+    assert 31 in fold_input.validation_eligible_decision_indices
+    assert 32 not in fold_input.validation_eligible_decision_indices
+    assert 38 in fold_input.validation_eligible_decision_indices
+    assert fold_input.joint_event_identity == contract.joint_event_identity
+    assert fold_input.event_boundary_mask_identity == contract.event_boundary_mask_identity
+    assert fold_input.model_execution_review == "review_unavailable"
+
+    document = fold_input.document()
+    assert document["scope"] == {
+        "offline_only": True,
+        "model_execution_eligible": False,
+        "model_execution_review": "review_unavailable",
+        "candidate_selection_eligible": False,
+        "ensemble_eligible": False,
+        "paper_decision_eligible": False,
+        "generic_multi_fold_campaign_contract_eligible": False,
+        "raw_market_data_persisted": False,
+        "provider_response_persisted": False,
+        "credentials_persisted": False,
+    }
+    assert document["fold"]["validation_eligible_decision_indices"] == list(
+        expected_fold.validation_eligible_decision_indices
+    )
+
+    with pytest.raises(ValueError, match="exactly one fold id"):
+        select_kis_daily_joint_event_fold_input(
+            verified,
+            fold_id=("expanding-1", "expanding-2"),  # type: ignore[arg-type]
+        )
+
+
+def test_verified_loader_rejects_tampering_stale_schema_review_and_parent_drift(
+    tmp_path: Path,
+) -> None:
+    contract, artifact_root, verified = _verified_parent_artifact(tmp_path)
+    parent_path = verified.path
+
+    parent_path.write_bytes(b"{}\n")
+    with pytest.raises(ValueError, match="hash does not match"):
+        load_verified_kis_daily_joint_event_window_contract(
+            path=parent_path,
+            expected_artifact_sha256=verified.content_hash,
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    stale_document = contract.document()
+    stale_document["schema_version"] = 1
+    stale_bytes = (json.dumps(stale_document, sort_keys=True, separators=(",", ":")) + "\n").encode(
+        "utf-8"
+    )
+    parent_path.write_bytes(stale_bytes)
+    with pytest.raises(ValueError, match="does not match rebuilt contract"):
+        load_verified_kis_daily_joint_event_window_contract(
+            path=parent_path,
+            expected_artifact_sha256="sha256:" + hashlib.sha256(stale_bytes).hexdigest(),
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    review_document = contract.document()
+    review_document["scope"]["model_execution_review"] = "pending_claude_falsification_review"
+    review_bytes = (
+        json.dumps(review_document, sort_keys=True, separators=(",", ":")) + "\n"
+    ).encode("utf-8")
+    parent_path.write_bytes(review_bytes)
+    with pytest.raises(ValueError, match="does not match rebuilt contract"):
+        load_verified_kis_daily_joint_event_window_contract(
+            path=parent_path,
+            expected_artifact_sha256="sha256:" + hashlib.sha256(review_bytes).hexdigest(),
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    geometry_document = contract.document()
+    geometry_document["folds"][0]["validation"]["session_count"] -= 1
+    geometry_bytes = (
+        json.dumps(geometry_document, sort_keys=True, separators=(",", ":")) + "\n"
+    ).encode("utf-8")
+    parent_path.write_bytes(geometry_bytes)
+    with pytest.raises(ValueError, match="does not match rebuilt contract"):
+        load_verified_kis_daily_joint_event_window_contract(
+            path=parent_path,
+            expected_artifact_sha256="sha256:" + hashlib.sha256(geometry_bytes).hexdigest(),
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    drifted_contract = replace(contract, event_boundary_mask_identity=_sha256("drifted-mask"))
+    with pytest.raises(ValueError, match="rebuilt contract identity"):
+        load_verified_kis_daily_joint_event_window_contract(
+            path=parent_path,
+            expected_artifact_sha256="sha256:" + hashlib.sha256(stale_bytes).hexdigest(),
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=drifted_contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+
+def test_fold_input_writer_is_external_source_safe_and_offline(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    contract, artifact_root, verified = _verified_parent_artifact(tmp_path)
+
+    def fail(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("network or credential access is not allowed")
+
+    with monkeypatch.context() as blocked:
+        blocked.setattr(socket, "create_connection", fail)
+        blocked.setattr(urllib.request, "urlopen", fail)
+        blocked.setattr(os, "getenv", fail)
+        reattested = load_verified_kis_daily_joint_event_window_contract(
+            path=verified.path,
+            expected_artifact_sha256=verified.content_hash,
+            expected_contract_identity=contract.contract_identity,
+            rebuilt_contract=contract,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+        fold_input = select_kis_daily_joint_event_fold_input(reattested, fold_id="expanding-1")
+        artifact = write_kis_daily_joint_event_fold_input(
+            destination=artifact_root / "contracts" / "fold-input.json",
+            fold_input=fold_input,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    serialized = artifact.path.read_text(encoding="utf-8").lower()
+    actual_hash = "sha256:" + hashlib.sha256(artifact.path.read_bytes()).hexdigest()
+    assert artifact.content_hash == actual_hash
+    assert '"close"' not in serialized
+    assert '"return"' not in serialized
+    assert '"credential"' not in serialized
+    assert '"order"' not in serialized
+    with pytest.raises(FileExistsError):
+        write_kis_daily_joint_event_fold_input(
+            destination=artifact.path,
+            fold_input=fold_input,
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        write_kis_daily_joint_event_fold_input(
+            destination=tmp_path / "repo" / "fold-input.json",
+            fold_input=fold_input,
+            artifact_root=tmp_path / "repo" / "artifacts",
+            repo_root=tmp_path / "repo",
+        )
+
+
+def test_fold_input_script_help_stays_on_the_pure_import_path() -> None:
+    script_path = (
+        Path(__file__).resolve().parents[1]
+        / "scripts"
+        / "prepare_kis_daily_joint_event_window_fold_input.py"
+    )
+    code = f"""\
+import runpy
+import sys
+namespace = runpy.run_path({str(script_path)!r}, run_name='joint_event_fold_input_help_test')
 try:
     namespace['main'](['--help'])
 except SystemExit as error:

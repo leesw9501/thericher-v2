@@ -5579,3 +5579,30 @@ Reason: the existing event audit was useful provenance but could not protect a
 pooled QQQ/SPY sequence's full dependency window. The contract makes that
 leakage boundary deterministic without promoting a model, interpreting PnL,
 loading a credential, or changing a Paper/live route.
+
+## 2026-07-27 - Reattest one fold-local QQQ/SPY input before data consumption
+
+Decision: require a locally rebuilt schema-v2 parent contract to match the
+active immutable artifact before exposing a fold. The first resulting input is
+only `expanding-1`, written outside Git with artifact hash
+`sha256:a15c26b6ce8f9c8c1e204cd8300b46241e2e7d894548666c73d32d030f790f0b`
+and identity
+`sha256:b019c7e9a10eb2add48bbaa815c046a9b216ca9069c4ca8e4f836bc91085a1db`.
+It binds parent artifact `sha256:f908...bb814`, contract identity
+`sha256:d8c1...7c2a6`, joint-event/audit identities, exact segment bounds, and
+the sparse index tuples containing 2,345 development and 146 validation
+decisions. It persists no prices, returns, provider payloads, credentials, or
+execution data.
+
+The consumer API rejects an artifact object unless that parent-rebuild
+comparison has completed. It exposes exactly one named fold and does not import
+or construct `CampaignContract`; a future generic campaign, if warranted, must
+be independently bound to one fold rather than merge overlapping expanding
+folds. The input remains offline, candidate-only, and
+`model_execution_eligible: false` under `review_unavailable`.
+
+Reason: the parent artifact intentionally keeps only safe aggregate eligibility
+identities, while a downstream materializer needs the exact index tuples.
+Reattestation preserves the event mask and temporal boundary without retaining
+raw values or making an accidental transition into model execution or Paper
+trading.

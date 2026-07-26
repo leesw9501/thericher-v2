@@ -189,6 +189,20 @@ authorized private KIS Paper work.
   `146 / 128 / 145`. It is explicitly candidate-only with
   `model_execution_review: review_unavailable`; no model, GPU, replay, or
   Paper action follows from it.
+- That parent was then locally rebuilt and reattested into exactly one
+  source-safe `expanding-1` input at
+  `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-1-v1.json`.
+  Its artifact hash is
+  `sha256:a15c26b6ce8f9c8c1e204cd8300b46241e2e7d894548666c73d32d030f790f0b`
+  and its input identity is
+  `sha256:b019c7e9a10eb2add48bbaa815c046a9b216ca9069c4ca8e4f836bc91085a1db`.
+  It binds parent lineage and joint-mask identity plus exact sparse indices:
+  2,345 development and 146 validation decisions. It persists no prices or
+  returns and remains non-executable; the local catalog remains the sole
+  source of in-memory values for a later fold-local materializer.
+- Temporary Validation independently recomputed the fold-input identity and
+  confirmed the parent linkage, non-executable scope, required reattestation
+  flag, and pure import boundary without any credential or network access.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -269,7 +283,7 @@ Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
-six-symbol-control, and joint-event leakage checks; no private material was
+six-symbol-control, joint-event leakage, and fold-local adapter checks; no private material was
 sent. This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
@@ -283,8 +297,9 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
-build a per-fold, source-safe adapter that reattests the active v2 contract and
-preserves its sparse joint eligibility. Do not make the candidate
+build one offline D1 sequence materializer that binds the reattested
+`expanding-1` input to the same catalog sessions, timestamps, and sparse
+indices without persisting raw values. Do not make the candidate
 model-executable, run GPU training or replay, or derive a Paper intent until a
 separate campaign objective and its named review are complete. Refresh this
 file only with resulting cross-lane facts after that bounded objective completes.

@@ -49,13 +49,18 @@ remains unavailable.
   Execution modules and its metadata-only script path is equally pure. Its
   artifact is candidate-only with `review_unavailable`; it has no credential,
   account, order, intent, local-paper replay, or live effect.
+- Its reattested `expanding-1` fold input is equally offline and non-executable.
+  It exposes only catalog lineage, segment bounds, and exact sparse indices
+  after the parent hash/rebuild comparison; it cannot be selected from an
+  unverified artifact object and has no KIS, Tiingo, account, intent, replay,
+  or live path.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research build the fold-local consumer for the active
-   offline event-window contract. Its replay and route-isolation tests are the
-   current integration evidence.
+   stable while Data and Research build the D1 materializer for the reattested
+   offline fold input. Its replay and route-isolation tests are the current
+   integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -82,5 +87,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next fold-local adapter is offline;
-do not let it acquire an account, order, KIS, Tiingo, or replay path.
+binding and route boundaries intact. The next fold-local materializer is
+offline; do not let it acquire an account, order, KIS, Tiingo, or replay path.

@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 DEFAULT_MODEL_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 KIS_DAILY_JOINT_EVENT_WINDOW_CONTRACT_SCHEMA_VERSION = 2
 KIS_DAILY_JOINT_EVENT_WINDOW_CONTRACT_KIND = "kis_daily_joint_event_window_contract"
+KIS_DAILY_JOINT_EVENT_FOLD_INPUT_SCHEMA_VERSION = 1
+KIS_DAILY_JOINT_EVENT_FOLD_INPUT_KIND = "kis_daily_joint_event_window_fold_input"
 KIS_DAILY_JOINT_EVENT_FEATURE_SESSIONS = 20
 KIS_DAILY_JOINT_EVENT_LABEL_HORIZON_SESSIONS = 2
 KIS_DAILY_JOINT_EVENT_PRE_VALIDATION_GAP_SESSIONS = 22
@@ -514,6 +516,181 @@ class KisDailyJointEventWindowContractArtifact:
     path: Path
     content_hash: str
     contract: KisDailyJointEventWindowContract
+    reattested_against_rebuild: bool = False
+
+
+@dataclass(frozen=True, slots=True)
+class KisDailyJointEventFoldInput:
+    """One non-executable fold with its exact sparse joint eligibility."""
+
+    source_artifact_sha256: str
+    source_contract_identity: str
+    catalog_dataset_hash: str
+    catalog_index_hash: str
+    sidecar_dataset_hash: str
+    sidecar_manifest_hash: str
+    event_boundary_audit_sha256: str
+    event_boundary_mask_identity: str
+    event_boundary_partition_identity: str
+    joint_event_identity: str
+    fold_id: str
+    development_start_index: int
+    development_end_index: int
+    pre_validation_gap_start_index: int
+    pre_validation_gap_end_index: int
+    validation_start_index: int
+    validation_end_index: int
+    development_start_session: date
+    development_end_session: date
+    pre_validation_gap_start_session: date
+    pre_validation_gap_end_session: date
+    validation_start_session: date
+    validation_end_session: date
+    development_eligible_decision_indices: tuple[int, ...]
+    validation_eligible_decision_indices: tuple[int, ...]
+    development_eligible_decision_identity: str
+    validation_eligible_decision_identity: str
+    spec: KisDailyJointEventWindowSpec
+    model_execution_review: str
+
+    def __post_init__(self) -> None:
+        for field_name in (
+            "source_artifact_sha256",
+            "source_contract_identity",
+            "catalog_dataset_hash",
+            "catalog_index_hash",
+            "sidecar_dataset_hash",
+            "sidecar_manifest_hash",
+            "event_boundary_audit_sha256",
+            "event_boundary_mask_identity",
+            "event_boundary_partition_identity",
+            "joint_event_identity",
+            "development_eligible_decision_identity",
+            "validation_eligible_decision_identity",
+        ):
+            _require_sha256(
+                getattr(self, field_name),
+                f"joint event-window fold input {field_name}",
+            )
+        if not isinstance(self.fold_id, str) or not self.fold_id:
+            raise ValueError("joint event-window fold input requires exactly one fold id")
+        if not isinstance(self.spec, KisDailyJointEventWindowSpec):
+            raise ValueError("joint event-window fold input spec is invalid")
+        if self.model_execution_review != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE:
+            raise ValueError("joint event-window fold input must remain review_unavailable")
+        _validate_fold_input_geometry(self)
+
+    @property
+    def fold_input_identity(self) -> str:
+        return _sha256_json(self._identity_document())
+
+    def document(self) -> dict[str, object]:
+        document = {
+            "schema_version": KIS_DAILY_JOINT_EVENT_FOLD_INPUT_SCHEMA_VERSION,
+            "kind": KIS_DAILY_JOINT_EVENT_FOLD_INPUT_KIND,
+            "status": "candidate",
+            "source_contract": {
+                "artifact_sha256": self.source_artifact_sha256,
+                "contract_identity": self.source_contract_identity,
+            },
+            "lineage": {
+                "catalog_dataset_hash": self.catalog_dataset_hash,
+                "catalog_index_hash": self.catalog_index_hash,
+                "sidecar_dataset_hash": self.sidecar_dataset_hash,
+                "sidecar_manifest_hash": self.sidecar_manifest_hash,
+            },
+            "event_boundary_audit": {
+                "artifact_sha256": self.event_boundary_audit_sha256,
+                "mask_identity": self.event_boundary_mask_identity,
+                "partition_identity": self.event_boundary_partition_identity,
+            },
+            "joint_event_identity": self.joint_event_identity,
+            "spec": self.spec.document(),
+            "fold": self._fold_document(),
+            "scope": {
+                "offline_only": True,
+                "model_execution_eligible": False,
+                "model_execution_review": self.model_execution_review,
+                "candidate_selection_eligible": False,
+                "ensemble_eligible": False,
+                "paper_decision_eligible": False,
+                "generic_multi_fold_campaign_contract_eligible": False,
+                "raw_market_data_persisted": False,
+                "provider_response_persisted": False,
+                "credentials_persisted": False,
+            },
+        }
+        document["fold_input_identity"] = self.fold_input_identity
+        _assert_source_safe(document)
+        return document
+
+    def _identity_document(self) -> dict[str, object]:
+        return {
+            "schema_version": KIS_DAILY_JOINT_EVENT_FOLD_INPUT_SCHEMA_VERSION,
+            "kind": KIS_DAILY_JOINT_EVENT_FOLD_INPUT_KIND,
+            "source_contract": {
+                "artifact_sha256": self.source_artifact_sha256,
+                "contract_identity": self.source_contract_identity,
+            },
+            "lineage": {
+                "catalog_dataset_hash": self.catalog_dataset_hash,
+                "catalog_index_hash": self.catalog_index_hash,
+                "sidecar_dataset_hash": self.sidecar_dataset_hash,
+                "sidecar_manifest_hash": self.sidecar_manifest_hash,
+            },
+            "event_boundary_audit": {
+                "artifact_sha256": self.event_boundary_audit_sha256,
+                "mask_identity": self.event_boundary_mask_identity,
+                "partition_identity": self.event_boundary_partition_identity,
+            },
+            "joint_event_identity": self.joint_event_identity,
+            "spec": self.spec.document(),
+            "fold": self._fold_document(),
+        }
+
+    def _fold_document(self) -> dict[str, object]:
+        return {
+            "fold_id": self.fold_id,
+            "development": _fold_input_segment_document(
+                self.development_start_index,
+                self.development_end_index,
+                self.development_start_session,
+                self.development_end_session,
+            ),
+            "pre_validation_gap": _fold_input_segment_document(
+                self.pre_validation_gap_start_index,
+                self.pre_validation_gap_end_index,
+                self.pre_validation_gap_start_session,
+                self.pre_validation_gap_end_session,
+            ),
+            "validation": _fold_input_segment_document(
+                self.validation_start_index,
+                self.validation_end_index,
+                self.validation_start_session,
+                self.validation_end_session,
+            ),
+            "development_eligible_decision_indices": list(
+                self.development_eligible_decision_indices
+            ),
+            "development_eligible_decision_count": len(
+                self.development_eligible_decision_indices
+            ),
+            "development_eligible_decision_identity": self.development_eligible_decision_identity,
+            "validation_eligible_decision_indices": list(
+                self.validation_eligible_decision_indices
+            ),
+            "validation_eligible_decision_count": len(
+                self.validation_eligible_decision_indices
+            ),
+            "validation_eligible_decision_identity": self.validation_eligible_decision_identity,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisDailyJointEventFoldInputArtifact:
+    path: Path
+    content_hash: str
+    fold_input: KisDailyJointEventFoldInput
 
 
 def build_kis_daily_joint_event_window_contract(
@@ -589,6 +766,147 @@ def write_kis_daily_joint_event_window_contract(
         path=path,
         content_hash=content_hash,
         contract=contract,
+    )
+
+
+def load_verified_kis_daily_joint_event_window_contract(
+    *,
+    path: Path,
+    expected_artifact_sha256: str,
+    expected_contract_identity: str,
+    rebuilt_contract: KisDailyJointEventWindowContract,
+    artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
+    repo_root: Path,
+) -> KisDailyJointEventWindowContractArtifact:
+    """Reattest a source-safe artifact against a locally rebuilt contract.
+
+    The immutable parent artifact deliberately omits raw rows and sparse index
+    lists. A caller must therefore rebuild the pinned local contract first;
+    this function proves that rebuild is exactly the hash-bound parent before a
+    single fold can be exposed.
+    """
+
+    _require_sha256(expected_artifact_sha256, "joint event-window expected artifact hash")
+    _require_sha256(expected_contract_identity, "joint event-window expected contract identity")
+    if not isinstance(rebuilt_contract, KisDailyJointEventWindowContract):
+        raise ValueError("joint event-window rebuilt contract is invalid")
+    if (
+        rebuilt_contract.model_execution_review
+        != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE
+    ):
+        raise ValueError("joint event-window rebuilt contract must remain review_unavailable")
+    if rebuilt_contract.contract_identity != expected_contract_identity:
+        raise ValueError("joint event-window rebuilt contract identity does not match expected")
+
+    artifact_path = _external_artifact_input_path(
+        path=path,
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+    )
+    encoded = artifact_path.read_bytes()
+    content_hash = _sha256(encoded)
+    if content_hash != expected_artifact_sha256:
+        raise ValueError("joint event-window artifact hash does not match expected")
+    document = _load_canonical_source_safe_document(encoded)
+    expected_document = rebuilt_contract.document()
+    if set(document) != set(expected_document):
+        raise ValueError("joint event-window artifact schema is incompatible")
+    _validate_artifact_created_at(document.get("created_at_utc"))
+    for key, expected_value in expected_document.items():
+        if key == "created_at_utc":
+            continue
+        if document.get(key) != expected_value:
+            raise ValueError("joint event-window artifact does not match rebuilt contract")
+    return KisDailyJointEventWindowContractArtifact(
+        path=artifact_path,
+        content_hash=content_hash,
+        contract=rebuilt_contract,
+        reattested_against_rebuild=True,
+    )
+
+
+def select_kis_daily_joint_event_fold_input(
+    artifact: KisDailyJointEventWindowContractArtifact,
+    *,
+    fold_id: str,
+) -> KisDailyJointEventFoldInput:
+    """Expose one exact expanding fold without creating a generic campaign."""
+
+    if not isinstance(artifact, KisDailyJointEventWindowContractArtifact):
+        raise ValueError("joint event-window artifact is invalid")
+    if not artifact.reattested_against_rebuild:
+        raise ValueError("joint event-window artifact must be reattested before fold selection")
+    if not isinstance(fold_id, str) or not fold_id:
+        raise ValueError("joint event-window fold input requires exactly one fold id")
+    contract = artifact.contract
+    if contract.model_execution_review != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE:
+        raise ValueError("joint event-window fold input must remain review_unavailable")
+    try:
+        fold = next(candidate for candidate in contract.folds if candidate.fold_id == fold_id)
+    except StopIteration as error:
+        raise ValueError("joint event-window fold id is unknown") from error
+    return KisDailyJointEventFoldInput(
+        source_artifact_sha256=artifact.content_hash,
+        source_contract_identity=contract.contract_identity,
+        catalog_dataset_hash=contract.catalog_dataset_hash,
+        catalog_index_hash=contract.catalog_index_hash,
+        sidecar_dataset_hash=contract.sidecar_dataset_hash,
+        sidecar_manifest_hash=contract.sidecar_manifest_hash,
+        event_boundary_audit_sha256=contract.event_boundary_audit_sha256,
+        event_boundary_mask_identity=contract.event_boundary_mask_identity,
+        event_boundary_partition_identity=contract.event_boundary_partition_identity,
+        joint_event_identity=contract.joint_event_identity,
+        fold_id=fold.fold_id,
+        development_start_index=fold.development_start_index,
+        development_end_index=fold.development_end_index,
+        pre_validation_gap_start_index=fold.pre_validation_gap_start_index,
+        pre_validation_gap_end_index=fold.pre_validation_gap_end_index,
+        validation_start_index=fold.validation_start_index,
+        validation_end_index=fold.validation_end_index,
+        development_start_session=contract.sessions[fold.development_start_index],
+        development_end_session=contract.sessions[fold.development_end_index - 1],
+        pre_validation_gap_start_session=contract.sessions[fold.pre_validation_gap_start_index],
+        pre_validation_gap_end_session=contract.sessions[fold.pre_validation_gap_end_index - 1],
+        validation_start_session=contract.sessions[fold.validation_start_index],
+        validation_end_session=contract.sessions[fold.validation_end_index - 1],
+        development_eligible_decision_indices=fold.development_eligible_decision_indices,
+        validation_eligible_decision_indices=fold.validation_eligible_decision_indices,
+        development_eligible_decision_identity=contract._decision_identity(
+            fold.development_eligible_decision_indices
+        ),
+        validation_eligible_decision_identity=contract._decision_identity(
+            fold.validation_eligible_decision_indices
+        ),
+        spec=contract.spec,
+        model_execution_review=contract.model_execution_review,
+    )
+
+
+def write_kis_daily_joint_event_fold_input(
+    *,
+    destination: Path,
+    fold_input: KisDailyJointEventFoldInput,
+    artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
+    repo_root: Path,
+) -> KisDailyJointEventFoldInputArtifact:
+    """Write one immutable, index-only fold input outside Git."""
+
+    if not isinstance(fold_input, KisDailyJointEventFoldInput):
+        raise ValueError("joint event-window fold input is invalid")
+    path = _external_artifact_destination(
+        destination=destination,
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+    )
+    document = json.dumps(fold_input.document(), sort_keys=True, separators=(",", ":")) + "\n"
+    encoded = document.encode("utf-8")
+    content_hash = _sha256(encoded)
+    with path.open("xb") as handle:
+        handle.write(encoded)
+    return KisDailyJointEventFoldInputArtifact(
+        path=path,
+        content_hash=content_hash,
+        fold_input=fold_input,
     )
 
 
@@ -794,6 +1112,164 @@ def _external_artifact_destination(
     if not resolved_destination.parent.resolve().is_relative_to(resolved_root):
         raise ValueError("joint event-window artifact destination is invalid")
     return resolved_destination
+
+
+def _external_artifact_input_path(
+    *,
+    path: Path,
+    artifact_root: Path,
+    repo_root: Path,
+) -> Path:
+    resolved_repo = Path(repo_root).resolve()
+    resolved_root = Path(artifact_root).resolve()
+    if resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo):
+        raise ValueError("joint event-window artifacts must stay outside the Git workspace")
+    artifact_path = Path(path)
+    if artifact_path.is_symlink():
+        raise ValueError("joint event-window artifact input is invalid")
+    try:
+        resolved_path = artifact_path.resolve(strict=True)
+    except OSError as error:
+        raise ValueError("joint event-window artifact input is unavailable") from error
+    if not resolved_path.is_file() or not resolved_path.is_relative_to(resolved_root):
+        raise ValueError("joint event-window artifact input must stay under the artifact root")
+    return resolved_path
+
+
+def _load_canonical_source_safe_document(encoded: bytes) -> dict[str, object]:
+    try:
+        decoded = encoded.decode("utf-8")
+        value = json.loads(decoded, object_pairs_hook=_reject_duplicate_json_keys)
+    except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
+        raise ValueError("joint event-window artifact document is invalid") from error
+    if not isinstance(value, dict):
+        raise ValueError("joint event-window artifact document is invalid")
+    canonical = json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n"
+    if encoded != canonical.encode("utf-8"):
+        raise ValueError("joint event-window artifact document is not canonical")
+    _assert_source_safe(value)
+    return value
+
+
+def _reject_duplicate_json_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    value: dict[str, object] = {}
+    for key, nested in pairs:
+        if key in value:
+            raise ValueError("duplicate JSON key")
+        value[key] = nested
+    return value
+
+
+def _validate_artifact_created_at(value: object) -> None:
+    if not isinstance(value, str):
+        raise ValueError("joint event-window artifact created_at_utc is invalid")
+    try:
+        created_at_utc = datetime.fromisoformat(value)
+    except ValueError as error:
+        raise ValueError("joint event-window artifact created_at_utc is invalid") from error
+    _require_utc(created_at_utc)
+
+
+def _validate_fold_input_geometry(fold_input: KisDailyJointEventFoldInput) -> None:
+    indices = (
+        fold_input.development_start_index,
+        fold_input.development_end_index,
+        fold_input.pre_validation_gap_start_index,
+        fold_input.pre_validation_gap_end_index,
+        fold_input.validation_start_index,
+        fold_input.validation_end_index,
+    )
+    if any(type(index) is not int or index < 0 for index in indices):
+        raise ValueError("joint event-window fold input indices are invalid")
+    if (
+        fold_input.development_start_index != 0
+        or fold_input.development_end_index != fold_input.pre_validation_gap_start_index
+        or fold_input.pre_validation_gap_end_index != fold_input.validation_start_index
+        or fold_input.validation_end_index <= fold_input.validation_start_index
+    ):
+        raise ValueError("joint event-window fold input geometry is invalid")
+    if (
+        fold_input.pre_validation_gap_end_index - fold_input.pre_validation_gap_start_index
+        != fold_input.spec.pre_validation_gap_session_count
+    ):
+        raise ValueError("joint event-window fold input gap is invalid")
+    if (
+        fold_input.validation_end_index - fold_input.validation_start_index
+        != fold_input.spec.validation_session_count
+    ):
+        raise ValueError("joint event-window fold input validation size is invalid")
+    sessions = (
+        fold_input.development_start_session,
+        fold_input.development_end_session,
+        fold_input.pre_validation_gap_start_session,
+        fold_input.pre_validation_gap_end_session,
+        fold_input.validation_start_session,
+        fold_input.validation_end_session,
+    )
+    if (
+        any(type(session) is not date for session in sessions)
+        or tuple(sorted(sessions)) != sessions
+    ):
+        raise ValueError("joint event-window fold input sessions are invalid")
+    object.__setattr__(
+        fold_input,
+        "development_eligible_decision_indices",
+        tuple(fold_input.development_eligible_decision_indices),
+    )
+    object.__setattr__(
+        fold_input,
+        "validation_eligible_decision_indices",
+        tuple(fold_input.validation_eligible_decision_indices),
+    )
+    _validate_fold_input_eligible_indices(
+        fold_input.development_eligible_decision_indices,
+        phase_start=fold_input.development_start_index,
+        phase_end=fold_input.development_end_index,
+        spec=fold_input.spec,
+    )
+    _validate_fold_input_eligible_indices(
+        fold_input.validation_eligible_decision_indices,
+        phase_start=fold_input.validation_start_index,
+        phase_end=fold_input.validation_end_index,
+        spec=fold_input.spec,
+    )
+
+
+def _validate_fold_input_eligible_indices(
+    indices: tuple[int, ...],
+    *,
+    phase_start: int,
+    phase_end: int,
+    spec: KisDailyJointEventWindowSpec,
+) -> None:
+    if tuple(sorted(indices)) != indices or len(set(indices)) != len(indices):
+        raise ValueError("joint event-window fold input eligibility is invalid")
+    if len(indices) < spec.minimum_eligible_decision_count:
+        raise ValueError("joint event-window fold input leaves too few eligible decisions")
+    first_decision = (
+        phase_start + spec.feature_session_count + spec.feature_return_prior_session_count - 1
+    )
+    final_decision = phase_end - spec.label_horizon_session_count - 1
+    if any(
+        type(index) is not int or index < first_decision or index > final_decision
+        for index in indices
+    ):
+        raise ValueError("joint event-window fold input eligibility crosses its phase")
+
+
+def _fold_input_segment_document(
+    start_index: int,
+    end_index: int,
+    start_session: date,
+    end_session: date,
+) -> dict[str, object]:
+    return {
+        "start_index": start_index,
+        "end_index_exclusive": end_index,
+        "start_session": start_session.isoformat(),
+        "end_session": end_session.isoformat(),
+        "session_count": end_index - start_index,
+    }
 
 
 def _require_external_input_path(path: Path, *, repo_root: Path, label: str) -> None:

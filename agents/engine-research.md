@@ -12,12 +12,12 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence. Prepare a fold-local consumer for the
-active joint-event-masked, expanding-fold QQQ/SPY candidate without fitting,
-replaying, or selecting a model. The prospective QQQ first-five pair is
-required only for its isolated prospective observation, pair-dependent campaign,
-and later pair-dependent promotion decisions; it does not make historical
-research input-pending.
+development-only falsification evidence. Prepare one D1 sequence materializer
+for the reattested fold-local QQQ/SPY input without fitting, replaying, or
+selecting a model. The prospective QQQ first-five pair is required only for its
+isolated prospective observation, pair-dependent campaign, and later
+pair-dependent promotion decisions; it does not make historical research
+input-pending.
 
 ## Current Readiness
 
@@ -92,17 +92,25 @@ research input-pending.
   consumer must rebuild and compare the contract identity, then preserve the
   sparse eligibility list for one fold at a time rather than give all expanding
   folds to one generic `CampaignContract`.
+- The first source-safe consumer is now frozen: `expanding-1` reattests the
+  active parent into external artifact `sha256:a15c...90f0b` with fold-input
+  identity `sha256:b019...5a1db`. It carries exact sparse development and
+  validation indices `2345 / 146`, the joint-event/audit identities, and no
+  prices, returns, model, replay, or broker capability. It may only be exposed
+  after a rebuilt parent contract matches the active hash; a normal writer
+  result cannot be selected directly.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Build only the source-safe, per-fold consumer for the active joint contract.
-   It must reattest its identity, pin the 3,783-session initial development
-   region, three 22/252 purge/validation folds, 151-session unused tail, and
-   each sparse joint eligibility identity. Keep it non-executable until the
-   named Claude leakage review returns or is explicitly retried.
+2. Build only one source-safe D1 sequence materializer for the reattested
+   `expanding-1` input. It must bind its exact catalog session/index mapping,
+   `t-20..t+2` dependency, and sparse eligibility without persisting raw values
+   or turning a masked index set into a continuous date range. Keep it
+   non-executable until the named Claude leakage review returns or is explicitly
+   retried.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -119,14 +127,14 @@ research input-pending.
 
 ## Recovery
 
-Current class: complete for the joint contract and resume for its fold-local
-consumer. A failed consumer attempt creates new immutable evidence rather than
-overwriting the contract. A missing prospective pair is input_unavailable only
-for its pair-bound observation.
+Current class: complete for the joint contract and `expanding-1` input; resume
+for its D1 materializer. A failed materializer attempt creates new immutable
+evidence rather than overwriting either parent artifact. A missing prospective
+pair is input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask and fold-contract candidate to one fold-local
-consumer without a candidate-selection claim. Do not treat it as stock
-selection, a trained model, replay, or a Paper input, and do not wait for
-prospective collection to keep other ready roles moving.
+Return the joint event-mask, reattested `expanding-1` input, and source catalog
+lineage to one D1 sequence materializer without a candidate-selection claim.
+Do not treat it as stock selection, a trained model, replay, or a Paper input,
+and do not wait for prospective collection to keep other ready roles moving.

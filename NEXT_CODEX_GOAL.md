@@ -2,61 +2,69 @@
 
 ## Objective
 
-Build a fold-local, offline consumer for the active schema-v2 QQQ/SPY joint
-event-window contract so a later bounded research campaign can use its exact
-eligibility without collapsing overlapping expanding folds into one generic
-`CampaignContract`.
+Build one offline D1 sequence materializer for the reattested `expanding-1`
+QQQ/SPY fold input. It must turn the existing local catalog into exact
+in-memory feature/target windows for that one fold while preserving the frozen
+`t-20..t+2` dependency and its sparse joint eligibility.
 
-This objective prepares a safe input adapter only. It does not train, replay,
-select, ensemble, promote, or submit a Paper decision.
+This is data plumbing only. It does not fit, score, replay, select, ensemble,
+or route a model decision.
 
 ## First Reads
 
 1. Run:
 
-~~~powershell
-.\scripts\start_next_codex_task.ps1
-~~~
+   ```powershell
+   .\scripts\start_next_codex_task.ps1
+   ```
 
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Reattest only the active external v2 artifact:
+3. Reattest only these external immutable artifacts:
 
    ```text
+   Parent:
    D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json
+
+   Fold input:
+   D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-1-v1.json
    ```
 
-   Its expected artifact hash is
-   `sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814`
-   and its expected contract identity is
+   Expected parent hash/identity:
+   `sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814` /
    `sha256:d8c1a382ca8a16b87288ede8f31df22797574940e50f0c208d4e28dc2677c2a6`.
-   Do not use the historical v1 artifact as the active input.
+
+   Expected fold hash/identity:
+   `sha256:a15c26b6ce8f9c8c1e204cd8300b46241e2e7d894548666c73d32d030f790f0b` /
+   `sha256:b019c7e9a10eb2add48bbaa815c046a9b216ca9069c4ca8e4f836bc91085a1db`.
 
 ## Required Work
 
-1. Add a pure offline loader/rebuilder that verifies the active artifact's
-   schema, hash, lineage, joint-event identity, fixed fold geometry, and
-   `review_unavailable` status before exposing a fold-local input.
-2. Make one fold-local input at a time. It must bind the exact development,
-   purge, validation, target-policy, and sparse joint-eligibility identity for
-   that fold. It must never silently replace sparse eligibility with a
-   continuous date range.
-3. Keep the existing generic `CampaignContract` unchanged. If an adapter is
-   useful, it may prepare one independent generic campaign per fold later, but
-   it must reject an attempt to encode all expanding folds as one generic
-   campaign.
-4. Add focused tests for artifact/hash tampering, stale v1 rejection,
-   fold-local identity preservation, event-mask identity preservation, no raw
-   value persistence, and offline/no-credential/no-KIS/no-Tiingo/no-broker
-   behavior.
-5. Ask Claude CLI for a concise falsification-first architecture check before
-   relying on the adapter for model work. If OAuth remains unavailable, retain
-   `review_unavailable` and keep the adapter non-executable; continue other
+1. Add a small offline materializer that accepts only the verified
+   `expanding-1` input plus the matching local QQQ/SPY catalog. It must reject
+   a hash, lineage, session-index, joint-mask, or review-state mismatch before
+   exposing windows.
+2. Materialize one decision index at a time in memory. Bind its 20 completed
+   feature sessions, predecessor return dependency at `t-20`, decision at `t`,
+   and label/open references at `t+1` and `t+2`. Never replace the sparse
+   eligibility tuple with a continuous range.
+3. Keep feature/target values in memory only. A source-safe external receipt
+   may contain identities, schema, counts, timestamps, and index bounds, but
+   no raw bars, prices, returns, labels, predictions, or checkpoints.
+4. Do not modify generic `CampaignContract` and do not build a model-facing
+   generic campaign yet. The output must stay offline, candidate-only, and
+   `model_execution_eligible: false` under `review_unavailable`.
+5. Add focused tests for exact `t-20..t+2` alignment, sparse hole preservation,
+   stale/tampered input rejection, no raw-value persistence, and no
+   credential/KIS/Tiingo/broker/network behavior.
+6. Ask Claude CLI for a concise falsification-first leakage check before
+   relying on the materializer for later model work. If OAuth remains
+   unavailable, preserve the non-executable boundary and continue independent
    ready work.
-6. Have temporary Validation independently test the active artifact and one
-   fold-local consumer after it is frozen. Update active stateboards with only
-   resulting cross-lane facts.
+7. Have temporary Validation independently inspect one frozen materialized
+   input and its source-safe receipt. Refresh active stateboards with resulting
+   cross-lane facts only.
 
 ## Hard Boundaries
 
@@ -66,30 +74,30 @@ select, ensemble, promote, or submit a Paper decision.
 - Do not train CPU/GPU models, run a replay, tune a parameter, open/reuse a
   sealed holdout, select an ensemble, claim profitability, or produce a Paper
   decision.
-- Keep all market bytes under `D:\market_data` and generated evidence under
+- Keep market bytes under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
   either.
-- `review_unavailable` is a model-execution boundary only. It must not become
-  an approval hold for the adapter or another ready private lane.
+- `review_unavailable` is a model-execution boundary only. It cannot become an
+  approval hold for this materializer or another ready private lane.
 
 ## Completion Evidence
 
-- One reattested, source-safe fold-local input contract or immutable adapter
-  evidence bound to the active v2 artifact.
-- Focused tests that prove exact one-fold eligibility preservation and route
-  isolation.
-- Stateboards that keep the adapter non-executable and identify its next
-  consumer without treating it as a model or Paper input.
+- One reattested, source-safe `expanding-1` D1 sequence input contract or
+  receipt bound to both active artifact identities.
+- Focused tests proving exact sequence alignment, sparse-mask preservation,
+  no raw persistence, and route isolation.
+- Stateboards that identify the next non-executable campaign-preparation step
+  without treating the materializer as a model or Paper input.
 
 ## Verification
 
-~~~powershell
+```powershell
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
-~~~
+```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A Claude tooling fault or a fold-local input rejection
-does not stop independent ready work.
+next company objective. A Claude tooling fault or one materializer-input
+rejection does not stop independent ready work.
