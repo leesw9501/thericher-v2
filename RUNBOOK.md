@@ -272,6 +272,37 @@ destination and remains a new research contract. This audit is retrospective
 price-return integrity evidence only; it does not make a model, total-return
 claim, point-in-time input, KIS Paper action, or live behavior eligible.
 
+### Joint QQQ/SPY Event Window
+
+The active schema-v2 joint event-window contract is external and immutable:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json
+```
+
+It binds the price-free event sidecar to the exact QQQ/SPY catalog, excludes
+either-symbol events over each real `t-20..t+2` dependency span, and freezes
+three expanding `3783 / 22 / 252` folds with a 151-session untouched tail. The
+active artifact hash is
+`sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814`.
+It is `candidate` only: `model_execution_eligible` is false and its review
+status is `review_unavailable` because the required Claude CLI OAuth session
+was expired.
+
+To create a new immutable candidate only after its pinned input scope changes,
+run the offline local reattestation command. It reads no `.env`, credentials,
+KIS, Tiingo, or broker route:
+
+```powershell
+uv run python scripts\prepare_kis_daily_joint_event_window_contract.py `
+  --model-execution-review review_unavailable
+```
+
+Do not overwrite the v2 artifact. The next consumer must rebuild and compare
+its contract identity, then handle one fold and its exact eligibility identity
+at a time; it must not treat the three expanding folds as one generic
+`CampaignContract`, train, replay, select a model, or produce a Paper decision.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS

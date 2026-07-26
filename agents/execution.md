@@ -45,12 +45,17 @@ remains unavailable.
   receipt with `client_constructed: false`; it had no account, position, intent,
   order, cancellation, modification, or live effect. Its next offline event
   window remains an input contract only, not an Execution route change.
+- The active v2 joint event-window contract fresh-imports without Data or
+  Execution modules and its metadata-only script path is equally pure. Its
+  artifact is candidate-only with `review_unavailable`; it has no credential,
+  account, order, intent, local-paper replay, or live effect.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research build the offline event-window contract. Its
-   replay and route-isolation tests are the current integration evidence.
+   stable while Data and Research build the fold-local consumer for the active
+   offline event-window contract. Its replay and route-isolation tests are the
+   current integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -77,5 +82,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next event-window worker is offline;
-do not let it acquire an account, order, KIS, or Tiingo path.
+binding and route boundaries intact. The next fold-local adapter is offline;
+do not let it acquire an account, order, KIS, Tiingo, or replay path.

@@ -13,12 +13,11 @@ Do not select strategies or make execution decisions.
 
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
-evidence. Bind the already-attested QQQ/SPY catalog and price-free event
-sidecar into a joint event-window candidate for a future offline Research
-contract. Its full sequence dependency mask is `t-20..t+2`, not merely the 20
-visible feature rows `t-19..t`. The prospective QQQ 1m first-five pair is one
-Data product for a named future observer; it is not the only Data output or a
-company hold.
+evidence. Serve the active v2 QQQ/SPY joint-event contract to one later
+fold-local offline adapter through reattestation only. Its full sequence
+dependency mask is `t-20..t+2`, not merely the 20 visible feature rows
+`t-19..t`. The prospective QQQ 1m first-five pair is one Data product for a
+named future observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
@@ -105,14 +104,18 @@ company hold.
   registry, or source limitation. Its result remains a Research-owned
   descriptive observation, not a Data quality qualification or a reason to
   blend this current basket into the QQQ/SPY/IWM catalog.
+- The active joint event-window artifact is schema v2 under the external
+  research-contract root with artifact hash `sha256:f908...bb814` and contract
+  identity `sha256:d8c1...7c2a6`. It binds the existing catalog, event sidecar,
+  and audit identities; its 114 joint event sessions yield validation counts
+  `146 / 128 / 145` across the fixed three folds. It retains no prices or raw
+  provider rows and made no credential, KIS, Tiingo, or broker call.
 
 ## Ready Queue
 
-1. Reattest the exact QQQ/SPY catalog, event-only Tiingo sidecar, and existing
-   boundary-audit identities for a joint event-window candidate. Use a joint
-   `t-20..t+2` event mask and fixed expanding folds rooted at 3,783 development
-   sessions; this is offline, uses no token, and does not fetch or blend
-   provider price rows.
+1. Reattest the active v2 QQQ/SPY contract inputs for the next fold-local
+   adapter. Preserve its `t-20..t+2` joint mask and fixed geometry; this is
+   offline, uses no token, and does not fetch or blend provider price rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -146,15 +149,16 @@ or cursor scope, never another collector or lane.
 
 ## Recovery
 
-Current class: complete for the daily catch-up; resume for the offline event
-window. Validate existing metadata and committed snapshots before any future
-network call. A bad cache is reconcile/restart evidence for that cache; an
-empty or limited endpoint result is source evidence for that route only.
+Current class: complete for the daily catch-up and joint event-window contract.
+Reattest existing metadata and committed snapshots before a fold-local adapter
+or future network call. A bad cache is reconcile/restart evidence for that
+cache; an empty or limited endpoint result is source evidence for that route
+only.
 
 ## Next Handoff
 
-Return the source-safe joint event-window candidate and its hash-bound input
-lineage. Preserve the frozen six-symbol source separately. Do not infer PIT
-membership, corporate-action completeness, a ranking claim, or Paper-trading
-eligibility from either cache, and do not wait for a prospective pair before
-advancing other ready Data work.
+Return the active source-safe v2 joint-event contract and its hash-bound input
+lineage to the fold-local adapter. Preserve the frozen six-symbol source
+separately. Do not infer PIT membership, corporate-action completeness, a
+ranking claim, or Paper-trading eligibility from either cache, and do not wait
+for a prospective pair before advancing other ready Data work.

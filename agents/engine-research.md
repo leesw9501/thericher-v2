@@ -12,11 +12,12 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence. Prepare a joint-event-masked,
-expanding-fold QQQ/SPY campaign candidate without fitting or selecting a model.
-The prospective QQQ first-five pair is required only for its isolated
-prospective observation, pair-dependent campaign, and later pair-dependent
-promotion decisions; it does not make historical research input-pending.
+development-only falsification evidence. Prepare a fold-local consumer for the
+active joint-event-masked, expanding-fold QQQ/SPY candidate without fitting,
+replaying, or selecting a model. The prospective QQQ first-five pair is
+required only for its isolated prospective observation, pair-dependent campaign,
+and later pair-dependent promotion decisions; it does not make historical
+research input-pending.
 
 ## Current Readiness
 
@@ -84,17 +85,24 @@ promotion decisions; it does not make historical research input-pending.
   are `t-19..t`, their first return reads `t-20`, and replay labels use `t+1`
   and `t+2`. A joint candidate mask must cover both symbols before any new
   sequence campaign is executable.
+- The active schema-v2 joint contract is hash-bound at `sha256:d8c1...7c2a6`.
+  It has 114 joint event sessions and validation eligible counts `146 / 128 /
+  145`; its v2 artifact records `review_unavailable` after the required Claude
+  attempt. The candidate remains `model_execution_eligible: false`. A later
+  consumer must rebuild and compare the contract identity, then preserve the
+  sparse eligibility list for one fold at a time rather than give all expanding
+  folds to one generic `CampaignContract`.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Build only the source-safe joint event mask and three-fold expanding campaign
-   candidate for the exact QQQ/SPY data lineage. Pin the 3,783-session initial
-   development region, three 22/252 purge/validation folds, and 151-session
-   unused tail. Keep it non-executable until the named Claude leakage review
-   returns or is explicitly retried.
+2. Build only the source-safe, per-fold consumer for the active joint contract.
+   It must reattest its identity, pin the 3,783-session initial development
+   region, three 22/252 purge/validation folds, 151-session unused tail, and
+   each sparse joint eligibility identity. Keep it non-executable until the
+   named Claude leakage review returns or is explicitly retried.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -111,13 +119,14 @@ promotion decisions; it does not make historical research input-pending.
 
 ## Recovery
 
-Current class: resume. A failed contract attempt creates a new immutable
-candidate rather than overwriting evidence. A missing prospective pair is
-input_unavailable only for its pair-bound observation.
+Current class: complete for the joint contract and resume for its fold-local
+consumer. A failed consumer attempt creates new immutable evidence rather than
+overwriting the contract. A missing prospective pair is input_unavailable only
+for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask and fold-contract candidate without a
-candidate-selection claim. Do not treat it as stock selection, a trained model,
-or a Paper input, and do not wait for prospective collection to keep other
-ready roles moving.
+Return the joint event-mask and fold-contract candidate to one fold-local
+consumer without a candidate-selection claim. Do not treat it as stock
+selection, a trained model, replay, or a Paper input, and do not wait for
+prospective collection to keep other ready roles moving.

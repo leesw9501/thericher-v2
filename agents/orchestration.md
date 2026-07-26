@@ -46,6 +46,11 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   descriptive per-symbol deltas exceeded the comparator and two did not; this
   is a falsification trigger, not a winner, profitability, ranking, ensemble,
   GPU, or Paper-order result.
+- Data and Engine Research completed the schema-v2 QQQ/SPY joint event-window
+  contract from the reattested local catalog, price-free sidecar, and legacy
+  audit provenance. It jointly masks `t-20..t+2`, freezes `3783 / 22 / 252 x
+  3 / 151`, and binds validation eligibility `146 / 128 / 145`. Its active
+  external artifact records `review_unavailable` and remains non-executable.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -54,18 +59,17 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is no longer a ready daily cursor. QQQ/SPY already has
-long KIS-compatible history, but its current `+-1` event audit is not sufficient
-for the actual joint sequence dependency `t-20..t+2`: its first visible
-feature return reads the predecessor close at `t-20`, then replay labels use
-`t+1` and `t+2`. The next contract must make that leakage boundary and its
-fixed 3,783/22/252/151 expanding-fold geometry explicit before new daily model
-work can use the data. The fixed six-symbol panel remains too short and non-PIT
-for a depth campaign.
+The material bottleneck is now consuming the frozen joint contract without
+losing its sparse eligibility. QQQ/SPY has sufficient historical input and the
+`t-20..t+2` / `3783 / 22 / 252 x 3 / 151` boundary is frozen, but one generic
+`CampaignContract` cannot represent overlapping expanding folds. The next
+fold-local adapter must reattest the v2 identity and preserve each fold's joint
+eligibility before any daily model work can use the data. The fixed six-symbol
+panel remains too short and non-PIT for a depth campaign.
 
-The GPU is deliberately idle because no frozen depth-eligible campaign exists.
-Research must start the first such campaign when the joint event-window contract
-and its named review are ready, or keep that exact missing fact visible.
+The GPU is deliberately idle because no frozen model-executable campaign exists.
+The current Claude OAuth outage is scoped to that execution boundary; it does
+not delay the fold-local adapter or independent Data and Execution work.
 
 ## Current Operating Improvement
 
@@ -73,11 +77,12 @@ The current reversible improvement is observable data throughput: the daily
 catch-up profile now writes an immutable source-safe external receipt even when
 the cache is already drained, and focused tests prove second-page pacing is not
 doubled. A worker-local rate or recovery outcome still yields while Codex
-advances independent lanes. A completed cursor is now explicitly scoped to its
-own cache; any future coverage gap starts with one endpoint-reach/page-yield
-probe, then a reused-client serial collector rather than a foreground sleep or
-parallel flood. The hash-pinned six-target panel and frozen research precommit
-remain active.
+advances independent lanes. The new pure joint contract also makes its
+evidence boundary explicit: no Data/Execution import on fresh load, no raw
+values in its immutable external artifact, and no generic multi-fold campaign
+promotion. A completed cursor is scoped to its own cache; any future coverage
+gap starts with one endpoint-reach/page-yield probe, then a reused-client serial
+collector rather than a foreground sleep or parallel flood.
 
 ## External Waits
 
@@ -88,14 +93,15 @@ remain active.
 
 ## Recovery
 
-Current class: complete for the daily catch-up and resume for the event-window
-contract. Reattest an individual cache, campaign, or exact Paper intent before
-relying on it. Scope failure to that item and continue independent lanes.
+Current class: complete for the daily catch-up and event-window contract; resume
+for the fold-local adapter. Reattest an individual cache, contract, campaign,
+or exact Paper intent before relying on it. Scope failure to that item and
+continue independent lanes.
 
 ## Next Handoff
 
-Create the hash-bound joint QQQ/SPY event-window and expanding-fold contract
+Create a per-fold consumer for the active hash-bound QQQ/SPY joint contract
 while keeping Execution independent. Do not treat its mask, historical catalog,
-or any daily control as a selected model. Record only an actual shared resource
-conflict, new external wait, bottleneck, or reversible operating improvement
-here.
+or any daily control as a selected model or replay result. Record only an actual
+shared resource conflict, new external wait, bottleneck, or reversible operating
+improvement here.

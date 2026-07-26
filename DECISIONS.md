@@ -5551,3 +5551,31 @@ short sample into a trading decision. The required concise Claude challenge was
 attempted for the unexpectedly positive relative cells, but local OAuth was
 expired and no private material was sent; the scoped reviewer-tool failure does
 not block independent data collection.
+
+## 2026-07-27 - Freeze the QQQ/SPY joint event-window contract
+
+Decision: bind the exact QQQ/SPY KIS-private daily catalog, price-free
+corporate-action sidecar, and existing event-boundary audit provenance into a
+schema-v2 external contract. The contract joins qualified QQQ/SPY event dates
+and excludes every decision whose actual feature/target dependency intersects
+an event across `t-20..t+2`. It freezes three expanding folds rooted at 3,783
+development sessions, each with 22 purge and 252 validation sessions, and a
+151-session untouched tail. Its active artifact is
+`sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814`;
+validation eligibility is `146 / 128 / 145` and the effective joint mask is
+separate from the legacy `+-1` audit mask.
+
+The artifact preserves only hashes, event date/kind metadata, segment bounds,
+and eligibility identities. It is offline, candidate-only, and records
+`model_execution_review: review_unavailable` with
+`model_execution_eligible: false` after the required concise Claude leakage
+challenge could not authenticate. The earlier v1 artifact remains immutable
+historical evidence and is not the active contract. A future generic campaign
+adapter must consume one fold at a time together with its sparse joint
+eligibility; it cannot place all overlapping expanding folds in one
+`CampaignContract`.
+
+Reason: the existing event audit was useful provenance but could not protect a
+pooled QQQ/SPY sequence's full dependency window. The contract makes that
+leakage boundary deterministic without promoting a model, interpreting PnL,
+loading a credential, or changing a Paper/live route.

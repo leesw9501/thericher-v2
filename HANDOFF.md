@@ -180,8 +180,15 @@ authorized private KIS Paper work.
 - No GPU job is active. The completed daily evidence must not be promoted or
   used to choose a Paper order. The current six-symbol panel is too small for
   depth training. QQQ/SPY has sufficient historical count for a future bounded
-  breadth campaign, but a joint corporate-action event window and expanding-fold
-  contract must be frozen before its sequence inputs can be used.
+  breadth campaign. The active v2 joint-event contract is external at
+  `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json`:
+  artifact `sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814`,
+  contract `sha256:d8c1a382ca8a16b87288ede8f31df22797574940e50f0c208d4e28dc2677c2a6`.
+  It joins 114 QQQ/SPY event sessions across `t-20..t+2`, preserves the
+  `3783 / 22 / 252 x 3 / 151` geometry, and has validation eligibility
+  `146 / 128 / 145`. It is explicitly candidate-only with
+  `model_execution_review: review_unavailable`; no model, GPU, replay, or
+  Paper action follows from it.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -261,9 +268,9 @@ authorized private KIS Paper work.
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
-throughput-governance, capture/profile integration, daily-campaign, and
-six-symbol-control falsification checks; no private material was sent. This is
-a scoped tooling fault, not a hold on ready private work.
+throughput-governance, capture/profile integration, daily-campaign,
+six-symbol-control, and joint-event leakage checks; no private material was
+sent. This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -276,8 +283,8 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
-create the joint QQQ/SPY event-window and expanding-fold contract from the
-already-attested offline inputs. Do not make the candidate model-executable,
-run GPU training, or derive a Paper intent until the named leakage review and a
-separate campaign objective are complete. Refresh this file only with resulting
-cross-lane facts after that bounded objective completes.
+build a per-fold, source-safe adapter that reattests the active v2 contract and
+preserves its sparse joint eligibility. Do not make the candidate
+model-executable, run GPU training or replay, or derive a Paper intent until a
+separate campaign objective and its named review are complete. Refresh this
+file only with resulting cross-lane facts after that bounded objective completes.
