@@ -98,6 +98,12 @@ Codex is the product-development lead and integrator.
   retired. Identify the most material cross-lane bottleneck or idle resource
   and retain or enact one evidence-backed, reversible improvement when it
   advances a named engine loop.
+- At task resume, and after an observed unexplained foreground idle period,
+  run the same small throughput review before waiting: inspect ready work,
+  active jobs, and owned `next_due` facts; then dispatch, recover, or close one
+  bounded package. Record only the resulting shared fact or improvement in
+  `agents/orchestration.md`. This is a scheduling discipline, not a new gate,
+  report, or durable approval role.
 - Enact reversible, no-cost operating and role-lifecycle decisions
   autonomously when they stay inside existing business, credential, capital,
   safety, rights, and public-exposure authority.
@@ -193,6 +199,16 @@ shared history and then exits.
 
 Infra is invoked for Docker, CUDA, dependencies, mounts, CI, storage, and
 runtime reproducibility. It has no standing queue or separate authority.
+
+### Throughput Review
+
+Throughput Review is an invoked, bounded operating check, not a durable role
+or stateboard. It may inspect lane readiness, active-process ownership,
+resource use, test feedback latency, and worker wait behavior to identify one
+measured bottleneck and one reversible improvement for a named engine loop. It
+cannot create an approval gate, second goal, strategy decision, execution
+decision, or standing worker. Codex integrates the result into the existing
+orchestration projection.
 
 ### Review And Claude
 
@@ -414,6 +430,12 @@ recovery, recent evidence pointers, and next handoff. History belongs in Git and
 external artifacts. Create a new stateboard only after a distinct lane has
 recurring work across multiple Codex tasks or owns an independent resource.
 
+At every bounded role handoff, refresh only the changed current objective,
+ready or running work, one evidence pointer, recovery class, and next action.
+Do not append work diaries or copy another lane's queue. A stateboard records
+what a later executor must know to resume safely; the artifact ledger and Git
+remain the searchable history.
+
 ## Goals And Daily Review
 
 `NEXT_CODEX_GOAL.md` is the only authoritative next objective. Do not create
@@ -424,6 +446,11 @@ completion evidence.
 Before ending a long task, Codex refreshes the next goal. When a long Codex goal
 still has capacity and no true approval blocker, continue with the refreshed
 goal rather than waiting for routine operator direction.
+
+Use isolated parallel tests for fast local feedback only when their fixtures,
+artifact roots, and external workers do not conflict. The required goal-boundary
+verification remains the authoritative serial suite unless its command is
+explicitly changed by the project contract.
 
 When the daily KST operating-review automation is enabled, publish one concise
 operator summary. It

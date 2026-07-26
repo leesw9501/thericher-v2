@@ -34,7 +34,10 @@ session.
 Use the qualified daily KIS catalog for a bounded Research screen while the
 existing intraday task accumulates its own coverage. Keep prospective readiness
 local to its consumer; a worker owns its own backoff and recovery, and Codex
-does not sleep while another lane is ready.
+does not sleep while another lane is ready. At task resume or an observed
+unexplained foreground idle period, invoke one bounded Throughput Review from
+the existing stateboards and active-job facts; retain only one measured,
+reversible improvement here rather than creating a standing process lane.
 
 ## External Waits
 

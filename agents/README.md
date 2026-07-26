@@ -48,6 +48,11 @@ unavailable.
   linked evidence, and exits; it has no durable stateboard yet.
 - Infra is invoked for Docker, GPU, dependencies, mounts, storage, CI, and
   runtime reproducibility.
+- Throughput Review is an invoked, bounded operating check. It can inspect
+  ready work, active-job ownership, resource contention, test feedback latency,
+  and worker waits to propose one measured, reversible improvement for a named
+  engine loop. It has no stateboard, independent queue, approval authority, or
+  strategy/execution authority.
 - Review is a lightweight integration checkpoint. Claude challenges the
   bias-prone decision boundaries listed in `AGENTS.md`.
 
@@ -100,6 +105,11 @@ Keep only current, high-signal sections:
 
 Replace stale status instead of appending history. Details remain in Git at the
 pre-compaction commit `8f416f8` and in external artifacts.
+
+At a bounded handoff, update only the changed objective, ready/running item,
+one evidence pointer, recovery class, and next action. This is the durable
+handoff needed by the next temporary executor; it is not a per-agent work log.
+Searchable run history remains in Git and the external evidence substrate.
 
 ## Shared Memory
 

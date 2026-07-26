@@ -37,6 +37,13 @@ verification, commit, push, replace `NEXT_CODEX_GOAL.md` with exactly one next
 company objective, refresh the stateboards, and continue. A lane-local block
 does not stop another ready lane. Do not create per-agent next-goal files.
 
+At task resume or after an observed unexplained foreground idle period, perform
+one bounded Throughput Review from the stateboards and active-job facts. Keep
+only one measured, reversible improvement in `agents/orchestration.md`; do not
+create a standing process lane or an approval gate. Use isolated parallel tests
+only for faster feedback. The required goal-boundary verification remains the
+authoritative serial suite.
+
 Stop and report only for an actual operator-authority decision: reading or
 using `KIS_LIVE_*`, enabling live or real-money behavior, allocating live
 capital, paid commitments, unclear data/model rights, public exposure, a major

@@ -49,6 +49,14 @@ authorized private KIS Paper work.
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The
   stateboards describe lane readiness; they do not create a second goal.
+- At each bounded role handoff, update only its changed objective, ready or
+  running item, one evidence pointer, recovery class, and next action. This
+  preserves recoverability for the next temporary executor without creating
+  role-specific work diaries.
+- At task resume or after an observed unexplained foreground idle period,
+  Codex runs a bounded Throughput Review from ready work, active-job ownership,
+  and worker waits. It keeps one measured reversible improvement in the
+  orchestration board; it does not create a new approval gate or standing lane.
 - Commit work that changes behavior, a contract, a test, or a measured fact.
   Do not substitute schedule reattestation or document repetition for engine
   progress.

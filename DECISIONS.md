@@ -5268,3 +5268,29 @@ review-tool fault is scoped evidence only.
 Reason: this operationalizes the tested source contract through the one
 existing collector rather than creating parallel workers or silently dropping
 the immutable Data-to-Research handoff.
+
+## 2026-07-26 - Keep operating-efficiency review invoked and evidence-bound
+
+Decision: add an invoked, bounded Throughput Review to the Codex orchestration
+contract rather than create a fourth durable management lane. At company-goal
+boundaries, task resumes, and an observed unexplained foreground idle period,
+Codex may inspect ready work, active-job ownership, worker `next_due` facts,
+resource contention, and test-feedback latency. It records one measured
+bottleneck or idle resource and one reversible improvement in the existing
+orchestration stateboard.
+
+Every role handoff updates only its current objective, ready/running item, one
+evidence pointer, recovery class, and next action. Git and the external
+evidence substrate remain the searchable history. Parallel pytest runs are
+allowed as isolated feedback, while the repository's required serial
+goal-boundary verification remains authoritative.
+
+The local Claude CLI drift-check was attempted before this governance change
+but its OAuth session was expired; no private material was sent. The change is
+reversible, private, no-cost, and does not alter authority, broker routing,
+capital, model promotion, or external side effects.
+
+Reason: long foreground sleeps and unowned wait interpretation waste available
+Data, Research, and Execution capacity. A small, concrete review makes that
+failure observable without adding a process-only agent, duplicate goal, or
+approval checkpoint.
