@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import time
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime
@@ -11,6 +12,7 @@ from pathlib import Path
 
 from thericher_v2.data.kis_paper_minute_capability_probe import (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS,
     probe_and_write_kis_paper_minute_capability,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -21,6 +23,7 @@ from thericher_v2.execution.kis_market_data import (
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
+    KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     KisPaperMarketDataRateGate,
     KisPaperMarketDataTokenStartGate,
 )
@@ -46,12 +49,26 @@ def main(
         type=int,
         default=KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     )
+    parser.add_argument(
+        "--minimum-request-interval-seconds",
+        type=float,
+        default=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
+    )
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
         return 0
     if not 1 <= args.max_pages <= KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES:
         parser.error("--max-pages must be between 1 and 3")
+    if not (
+        math.isfinite(args.minimum_request_interval_seconds)
+        and KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS
+        <= args.minimum_request_interval_seconds
+        <= KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    ):
+        parser.error(
+            "--minimum-request-interval-seconds must be between 1.0 and the current gate"
+        )
 
     request_start_times: list[datetime] = []
     try:
@@ -63,6 +80,7 @@ def main(
             transport=UrllibKisPaperMarketDataTransport(
                 request_gate=KisPaperMarketDataRateGate(
                     control_root=control_root,
+                    minimum_request_interval_seconds=args.minimum_request_interval_seconds,
                     on_request_started=request_start_times.append,
                 ),
                 token_start_gate=KisPaperMarketDataTokenStartGate(
@@ -78,6 +96,7 @@ def main(
             repository_root=_REPOSITORY_ROOT,
             observed_at=clock(),
             max_pages=args.max_pages,
+            tested_request_interval_seconds=args.minimum_request_interval_seconds,
             monotonic_clock=monotonic_clock,
         )
     except (KisPaperMarketDataError, OSError, ValueError):

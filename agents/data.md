@@ -11,12 +11,11 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Align the accepted private KIS Paper data-ingress candidate through the owned
-end-to-end request path, then use the resulting setting to advance the daily or
-intraday collector that has a ready cursor. Keep the reattested QQQ/SPY daily
-catalog available to frozen offline Research contracts. The prospective QQQ 1m
-first-five pair is one Data product for a named future observer; it is not the
-only Data output or a company hold.
+Maintain the verified private KIS Paper data-ingress path and advance only its
+next ready cursor. Keep the reattested QQQ/SPY daily catalog available to
+frozen offline Research contracts. The prospective QQQ 1m first-five pair is
+one Data product for a named future observer; it is not the only Data output or
+a company hold.
 
 ## Current Facts
 
@@ -58,24 +57,23 @@ only Data output or a company hold.
   scheduled run under this configuration has been claimed yet.
 - D: free space is about 40.45 percent. Data acquisition remains within the
   existing 20 percent warning and 15 percent floor policy.
-- The installed 1.25-second request-start gate and 60-second categorical
-  cooldown are temporary, measured controls after an `EGW00201` observation;
-  they are not a verified daily quota. The clean 1.0-second candidate must be
-  aligned through every effective gate/client/collector delay before it replaces
-  the installed default. The five-minute token-start guard applies only to a
-  new token request and never asks a worker to sleep for five minutes.
+- The installed request-start interval is 1.0 seconds. The shared gate, daily
+  collector delay, and intraday collector delay use the same constant; focused
+  tests pin that alignment. The 60-second categorical cooldown remains the
+  measured response to `EGW00201`, not a daily quota, and the five-minute
+  token-start guard applies only to a new token request. Neither creates a
+  foreground five-minute wait.
+- A finite 2026-07-26 `session-capture` run completed through the owned Paper
+  market-data path and recovered current QQQ/SPY cache state. It produced no
+  new qualified regular session, so Research inputs remain unchanged.
 
 ## Ready Queue
 
-1. Align the clean 1.0-second candidate through the shared gate and every
-   collector-local pacing layer, with focused tests. Retain the 60-second
-   cooldown and five-minute token-start guard; do not create a second collector
-   against the same cache or a parallel request flood.
-2. Use the resulting setting to run the existing finite catch-up or
-   session-capture worker when its cursor is ready. Preserve the one-client,
+1. Let the one existing finite catch-up or `session-capture` worker advance its
+   next ready cursor at the installed 1.0-second pace. Preserve the one-client,
    concurrency-one collector, lock, strict conflict handling, and `tr_cont`
    contract.
-3. Keep partial or extended-session capture rows out of Research. Hand an
+2. Keep partial or extended-session capture rows out of Research. Hand an
    immutable first-five pair to the isolated prospective observer only when the
    exact 390-minute Data contract is satisfied.
 
@@ -99,8 +97,8 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the effective end-to-end KIS pace and any resulting finite collection
-evidence, then preserve the pair-only daily source contract for a future
-explicitly frozen campaign. Do not infer historical reach or prospective
-completeness from a terminal-head page, and do not wait for a prospective pair
-before advancing other ready Data work.
+Return any newly observed source limitation, cooldown, or qualified complete
+session, then preserve the pair-only daily source contract for frozen Research
+campaigns. Do not infer historical reach or prospective completeness from a
+terminal-head page, and do not wait for a prospective pair before advancing
+other ready Data work.

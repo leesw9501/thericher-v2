@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import uuid
 from collections.abc import Callable, Sequence
@@ -32,6 +33,7 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET = ("QQQ", "NAS")
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES = 3
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_ARTIFACT_DIRECTORY = "data/kis-paper-minute-capability-probe"
+KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS = 1.0
 
 _SAFE_FAILURE_REASONS = frozenset(
     {
@@ -113,12 +115,19 @@ class KisPaperMinuteCapabilityProbeOutcome:
         "faster_than_existing_gate",
         "timestamps_incomplete",
     ]
+    tested_request_interval_seconds: float
+    token_request_count: int
+    minute_page_request_count: int
+    daily_page_request_count: int
+    request_attempt_count: int
+    categorical_limit_or_error_count: int
     elapsed_time_category: Literal[
         "under_5_seconds",
         "under_30_seconds",
         "30_seconds_or_more",
     ]
     calibration_fact: str
+    pacing_recalibration_fact: str
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -127,7 +136,27 @@ class KisPaperMinuteCapabilityProbeOutcome:
             raise ValueError("capability probe accepted page count is invalid")
         if self.status == "unavailable" and self.accepted_page_count:
             raise ValueError("unavailable capability probe cannot accept pages")
-        if not self.response_class or not self.calibration_fact:
+        if (
+            not _is_positive_finite(self.tested_request_interval_seconds)
+            or min(
+                self.token_request_count,
+                self.minute_page_request_count,
+                self.daily_page_request_count,
+                self.request_attempt_count,
+            )
+            < 0
+            or self.request_attempt_count
+            != (
+                self.token_request_count
+                + self.minute_page_request_count
+                + self.daily_page_request_count
+            )
+            or self.request_attempt_count < self.accepted_page_count
+            or self.categorical_limit_or_error_count not in {0, 1}
+            or not self.response_class
+            or not self.calibration_fact
+            or not self.pacing_recalibration_fact
+        ):
             raise ValueError("capability probe observation is invalid")
 
     def safe_payload(self) -> dict[str, object]:
@@ -150,10 +179,17 @@ class KisPaperMinuteCapabilityProbeOutcome:
             "response_class": self.response_class,
             "token_reuse_category": self.token_reuse_category,
             "request_start_category": self.request_start_category,
+            "tested_request_interval_seconds": self.tested_request_interval_seconds,
+            "token_request_count": self.token_request_count,
+            "minute_page_request_count": self.minute_page_request_count,
+            "daily_page_request_count": self.daily_page_request_count,
+            "request_attempt_count": self.request_attempt_count,
+            "categorical_limit_or_error_count": self.categorical_limit_or_error_count,
             "elapsed_time_category": self.elapsed_time_category,
-            "provider_request_start_ceiling": "not_tested_above_existing_gate",
+            "provider_request_start_ceiling": "bounded_candidate_only",
             "raw_market_data_retained": False,
             "calibration_fact": self.calibration_fact,
+            "pacing_recalibration_fact": self.pacing_recalibration_fact,
         }
 
 
@@ -179,6 +215,7 @@ def run_kis_paper_minute_capability_probe(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeOutcome:
     """Read at most three QQQ minute pages and discard their raw contents."""
@@ -189,6 +226,8 @@ def run_kis_paper_minute_capability_probe(
         raise ValueError("capability probe page cap is invalid")
     if type(repeat_terminal_head_once) is not bool:
         raise TypeError("capability probe terminal head repeat must be a boolean")
+    if not _is_supported_tested_interval(tested_request_interval_seconds):
+        raise ValueError("capability probe tested request interval is invalid")
     captured_at = require_utc(observed_at or datetime.now(UTC), "observed_at")
     started = monotonic_clock()
     pages: list[_PageFacts] = []
@@ -256,6 +295,15 @@ def run_kis_paper_minute_capability_probe(
         call_counts=call_counts,
         accepted_page_count=accepted_pages,
     )
+    request_start_category = _request_start_category(
+        request_start_times=request_start_times,
+        call_counts=call_counts,
+    )
+    tested_interval_observed = _request_starts_meet_tested_interval(
+        request_start_times=request_start_times,
+        call_counts=call_counts,
+        tested_request_interval_seconds=float(tested_request_interval_seconds),
+    )
 
     return KisPaperMinuteCapabilityProbeOutcome(
         status=status,
@@ -268,16 +316,31 @@ def run_kis_paper_minute_capability_probe(
         minute_spacing_category=_minute_spacing_category(pages),
         response_class=response_class,
         token_reuse_category=token_reuse_category,
-        request_start_category=_request_start_category(
-            request_start_times=request_start_times,
-            call_counts=call_counts,
+        request_start_category=request_start_category,
+        tested_request_interval_seconds=float(tested_request_interval_seconds),
+        token_request_count=call_counts.token_attempts,
+        minute_page_request_count=call_counts.minute_page_attempts,
+        daily_page_request_count=call_counts.daily_page_attempts,
+        request_attempt_count=(
+            call_counts.token_attempts
+            + call_counts.minute_page_attempts
+            + call_counts.daily_page_attempts
         ),
+        categorical_limit_or_error_count=int(failure is not None),
         elapsed_time_category=_elapsed_time_category(elapsed_seconds),
         calibration_fact=_calibration_fact(
             status=status,
             accepted_page_count=accepted_pages,
             probe_pattern_category=probe_pattern_category,
             token_reuse_category=token_reuse_category,
+        ),
+        pacing_recalibration_fact=_pacing_recalibration_fact(
+            status=status,
+            response_class=response_class,
+            accepted_page_count=accepted_pages,
+            request_start_category=request_start_category,
+            tested_request_interval_seconds=float(tested_request_interval_seconds),
+            tested_interval_observed=tested_interval_observed,
         ),
     )
 
@@ -327,6 +390,7 @@ def probe_and_write_kis_paper_minute_capability(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeResult:
     outcome = run_kis_paper_minute_capability_probe(
@@ -335,6 +399,7 @@ def probe_and_write_kis_paper_minute_capability(
         observed_at=observed_at,
         max_pages=max_pages,
         repeat_terminal_head_once=repeat_terminal_head_once,
+        tested_request_interval_seconds=tested_request_interval_seconds,
         monotonic_clock=monotonic_clock,
     )
     return KisPaperMinuteCapabilityProbeResult(
@@ -474,6 +539,50 @@ def _token_reuse_category(
     return "multiple_token_attempts"
 
 
+def _is_positive_finite(value: object) -> bool:
+    return (
+        not isinstance(value, bool)
+        and isinstance(value, (int, float))
+        and math.isfinite(value)
+        and value > 0
+    )
+
+
+def _is_supported_tested_interval(value: object) -> bool:
+    return _is_positive_finite(value) and (
+        KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS
+        <= float(value)
+        <= KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    )
+
+
+def _pacing_recalibration_fact(
+    *,
+    status: Literal["complete", "partial", "unavailable"],
+    response_class: str,
+    accepted_page_count: int,
+    request_start_category: str,
+    tested_request_interval_seconds: float,
+    tested_interval_observed: bool | None,
+) -> str:
+    if response_class == "rate_limited":
+        return "rate_limit_observed_at_tested_interval"
+    if tested_interval_observed is False:
+        return "request_starts_faster_than_tested_interval"
+    if (
+        status == "complete"
+        and accepted_page_count >= 2
+        and request_start_category == "faster_than_existing_gate"
+        and tested_interval_observed is True
+    ):
+        return "multi_page_single_client_candidate_interval_accepted"
+    if request_start_category == "timestamps_incomplete":
+        return "request_start_timestamps_incomplete"
+    if tested_request_interval_seconds >= KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS:
+        return "existing_gate_measurement_only"
+    return "insufficient_accepted_pages_for_candidate_interval"
+
+
 def _request_start_category(
     *,
     request_start_times: Sequence[datetime],
@@ -485,24 +594,58 @@ def _request_start_category(
     "faster_than_existing_gate",
     "timestamps_incomplete",
 ]:
-    minute_requests = call_counts.minute_page_attempts
-    if minute_requests == 0:
+    minute_starts = _minute_request_start_times(
+        request_start_times=request_start_times,
+        call_counts=call_counts,
+    )
+    if minute_starts == ():
         return "not_observed"
-    expected = call_counts.token_attempts + minute_requests + call_counts.daily_page_attempts
-    starts = tuple(require_utc(value, "request_start_time") for value in request_start_times)
-    if len(starts) != expected:
+    if minute_starts is None:
         return "timestamps_incomplete"
-    minute_starts = starts[-minute_requests:]
     if len(minute_starts) == 1:
         return "single_get"
-    minimum_gap = min(
-        (current - prior).total_seconds()
-        for prior, current in zip(minute_starts, minute_starts[1:], strict=False)
-    )
+    minimum_gap = _minimum_request_start_gap(minute_starts)
     return (
         "at_or_below_existing_gate"
         if minimum_gap >= KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
         else "faster_than_existing_gate"
+    )
+
+
+def _request_starts_meet_tested_interval(
+    *,
+    request_start_times: Sequence[datetime],
+    call_counts: KisPaperMarketDataCallCounts,
+    tested_request_interval_seconds: float,
+) -> bool | None:
+    minute_starts = _minute_request_start_times(
+        request_start_times=request_start_times,
+        call_counts=call_counts,
+    )
+    if minute_starts is None or len(minute_starts) < 2:
+        return None
+    return _minimum_request_start_gap(minute_starts) >= tested_request_interval_seconds
+
+
+def _minute_request_start_times(
+    *,
+    request_start_times: Sequence[datetime],
+    call_counts: KisPaperMarketDataCallCounts,
+) -> tuple[datetime, ...] | None:
+    minute_requests = call_counts.minute_page_attempts
+    if minute_requests == 0:
+        return ()
+    expected = call_counts.token_attempts + minute_requests + call_counts.daily_page_attempts
+    starts = tuple(require_utc(value, "request_start_time") for value in request_start_times)
+    if len(starts) != expected:
+        return None
+    return starts[-minute_requests:]
+
+
+def _minimum_request_start_gap(starts: Sequence[datetime]) -> float:
+    return min(
+        (current - prior).total_seconds()
+        for prior, current in zip(starts, starts[1:], strict=False)
     )
 
 

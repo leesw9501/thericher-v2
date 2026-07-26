@@ -5384,3 +5384,32 @@ Reason: a lower number in one rate-gate constant does not increase collection
 throughput if another active layer still sleeps longer. This preserves the
 measured speed opportunity while preventing hidden local throttles from being
 misread as a provider constraint or an orchestrator idle period.
+
+## 2026-07-26 - Install the measured KIS Paper one-second ingress setting
+
+Decision: install the source-safe 1.0-second KIS Paper request-start setting
+through the complete owned ingestion path. The shared market-data gate is now
+1.0 seconds, and the daily and intraday collector-local pacing constants alias
+that same setting. The 60-second `429`/`EGW00201` cooldown and five-minute
+cross-process token-start guard remain unchanged and retain their separate
+recovery purposes.
+
+The minute capability probe now bounds a programmatic test interval to the
+supported range and records a non-success fact when observed minute-page start
+times are faster than the claimed interval. Focused tests pin both the pacing
+alignment and that evidence invariant. A finite `session-capture` invocation
+then completed through the authorized Paper market-data path; it recovered
+existing QQQ/SPY cache state and added no qualified 390-minute regular-session
+Research input. No account, position, order, cancel, modify, live route, raw
+row output, or secret output was used.
+
+The required concise Claude falsification check was attempted before this
+persistent pace change, but the local CLI OAuth session was expired. No private
+material was sent. This scoped reviewer-tool fault does not alter the bounded
+measurement evidence or block independent work.
+
+Reason: the previous 1.0-second calibration was clean enough for one
+end-to-end installation only after the complete owned path was aligned. Sharing
+one setting removes an accidental local throughput loss while preserving the
+existing measured recovery controls and avoiding a claim of unlimited provider
+capacity.

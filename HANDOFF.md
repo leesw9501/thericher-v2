@@ -85,9 +85,10 @@ authorized private KIS Paper work.
   (three attempts including token issuance). It did not establish a route-wide
   ceiling, historical continuation, or a complete 390-minute session, and it
   retained no raw bars. Its source-safe external evidence is
-  `20260726T150223752216Z-d52c06ef917b80e5.json`. The installed shared default
-  remains 1.25 seconds until the active objective aligns every effective pacing
-  layer and verifies the resulting change.
+  `20260726T150223752216Z-d52c06ef917b80e5.json`. The installed shared
+  request-start interval is now 1.0 seconds, and the daily and intraday local
+  pacing constants alias that same setting. The 60-second categorical cooldown
+  and five-minute token-start guard are unchanged.
 - The first single-client `session-capture` worker is implemented and its
   bounded Paper Data-only smoke wrote a source-safe D: receipt:
   `20260726T131355216487Z-cb15a58ccd594f44.json`. The scoped QQQ capture
@@ -101,6 +102,10 @@ authorized private KIS Paper work.
   preparation handoff also runs for eligible capture results. No scheduled
   capture has yet run under this new profile configuration; that future result
   is Data evidence, not a company hold.
+- A finite 2026-07-26 `session-capture` invocation completed through the owned
+  Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
+  it did not add a qualified 390-minute regular session or a Research input.
+  No account, position, order, cancel, modify, or live route was called.
 
 ### Engine Research
 
@@ -143,8 +148,9 @@ authorized private KIS Paper work.
 - There is no verified daily call allowance for this route. KIS documents
   per-second request limits and lower REST capacity for Paper accounts.
 - The project observed EGW00201 after a rapid virtual request sequence. The
-  installed 1.25-second shared request-start gate and 60-second cooldown are
-  evidence-backed temporary controls, not approval gates.
+  installed 1.0-second shared request-start gate and 60-second cooldown are
+  evidence-backed temporary controls, not approval gates. The daily and
+  intraday collector-local delays now alias the same shared interval.
 - KIS documents a 24-hour access token and a six-hour renewal behavior. The
   current five-minute cross-process token-start guard prevents short-lived
   workers from colliding; it is not a token lifetime or a reason to idle a
@@ -152,8 +158,10 @@ authorized private KIS Paper work.
 - The bounded calibration accepted a 1.0-second QQQ terminal-head candidate
   with one in-memory token, two full pages, and zero categorical errors. It is
   evidence for one end-to-end setting change, not a universal throughput claim;
-  do not use a parallel request flood.
-- Before the shared default changes, Data must inventory the gate, client,
+  do not use a parallel request flood. The probe rejects unsupported intervals
+  and cannot record success when its observed page-request starts are faster
+  than the claimed tested interval.
+- Before any future shared-default change, Data must inventory the gate, client,
   collector, and scheduler delays. A lower gate alone is not an acceleration if
   a longer local collector delay remains effective. The cooldown and the
   five-minute token-start guard remain, and the token guard never means a

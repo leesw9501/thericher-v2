@@ -20,10 +20,12 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataError,
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
 )
 from thericher_v2.execution.kis_private_daily_collector import (
     KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MAX_PAGE_ATTEMPTS,
+    KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS,
     KisPaperPrivateDailyCollectionResult,
     KisPaperPrivateDailyCollectionTarget,
     run_bounded_kis_paper_private_daily_collection,
@@ -99,8 +101,13 @@ def test_private_daily_collector_paces_deduplicates_and_writes_atomic_cache(tmp_
     assert result.dedupe_count == 1
     assert result.conflicting_duplicate_rows == 0
     assert [row.xymd for row in result.rows] == ["20251001", "20260224", "20260717"]
-    assert result.inter_page_delay_seconds == (2.0,)
-    assert pacing.delays == [2.0]
+    assert KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS == (
+        KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    )
+    assert result.inter_page_delay_seconds == (
+        KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS,
+    )
+    assert pacing.delays == [KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS]
     assert [
         request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL) for request in transport.requests
     ] == [KIS_PAPER_TOKEN_PATH, KIS_PAPER_DAILY_PATH, KIS_PAPER_DAILY_PATH]
@@ -133,7 +140,7 @@ def test_private_daily_collector_paces_deduplicates_and_writes_atomic_cache(tmp_
         "oldest_session_date": "2025-10-01",
     }
     assert manifest["deduplication"]["exact_duplicate_rows_removed"] == 1
-    assert manifest["requests"]["observed_inter_page_delay_ms"] == [2000]
+    assert manifest["requests"]["observed_inter_page_delay_ms"] == [1000]
     assert raw_document["sha256"] == "sha256:" + hashlib.sha256(raw_payload).hexdigest()
     assert rows[0] == "symbol,exchange,session_date,open,high,low,close,volume"
     assert rows[1].startswith("QQQ,NAS,2025-10-01,")
@@ -233,7 +240,9 @@ def test_private_daily_collector_retains_a_recoverable_first_page_when_continuat
     assert result.reason == "daily_response_rejected"
     assert result.call_counts == KisPaperMarketDataCallCounts(1, 0, 2)
     assert len(result.rows) == 2
-    assert result.inter_page_delay_seconds == (2.0,)
+    assert result.inter_page_delay_seconds == (
+        KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS,
+    )
     assert len(transport.requests) == 3
     assert manifest["status"] == "partial"
     assert manifest["completed"] is False

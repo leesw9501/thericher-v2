@@ -13,8 +13,9 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   future result is Data-local evidence, not a company-wide dependency.
 - Data's latest source-safe QQQ calibration accepted two terminal-head pages at
   a 1.0-second candidate interval through one in-memory client/token with zero
-  categorical errors. The installed 1.25-second default remains until the
-  complete request path is aligned and verified.
+  categorical errors. The shared gate and both owned collector-local delays
+  are now aligned at 1.0 seconds; the retained cooldown and token-start guard
+  remain scoped to their separate recovery roles.
 - Engine Research completed the fixed QQQ/SPY daily sequence breadth screen:
   one CPU smoke and one Docker CUDA screen over LSTM, causal TCN, and compact
   attention. Both produced only external checkpoints and six `local_paper`
@@ -27,24 +28,23 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material Data bottleneck is making the accepted 1.0-second candidate
-effective through the complete request path rather than lowering only one gate
-while a longer client or collector delay remains. The candidate is not a daily
-allowance, calibrated ceiling, historical-pagination proof, or complete
-regular-session input. The completed daily screen remains development-only
-evidence with unqualified corporate-action semantics, so it cannot become a
-model-selection or execution input.
+The material bottleneck is now research interpretation rather than request
+pacing. The installed 1.0-second setting is not a daily allowance, calibrated
+ceiling, historical-pagination proof, or complete regular-session input. The
+completed daily screen remains development-only evidence with unqualified
+corporate-action semantics, so it cannot become a model-selection or execution
+input.
 
 ## Current Operating Improvement
 
-For the active Data objective, inventory all end-to-end pacing layers before
-changing the installed default: shared gate, client, collector, and scheduler.
-Retain a second delay only when it has an explicit protection role that the
-shared gate cannot provide. A worker owns its own backoff and recovery, and
-Codex does not sleep while another lane is ready. At task resume or an observed
-unexplained foreground idle period, invoke one bounded Throughput Review from
-the existing stateboards and active-job facts; retain only one measured,
-reversible improvement here rather than creating a standing process lane.
+The current reversible improvement is one shared 1.0-second pacing constant
+for the gate and both collector-local delays, protected by a direct alignment
+test and a probe that will not accept an observed faster-than-claimed interval.
+A worker owns its own backoff and recovery, and Codex does not sleep while
+another lane is ready. At task resume or an observed unexplained foreground
+idle period, invoke one bounded Throughput Review from the existing stateboards
+and active-job facts; retain only one measured, reversible improvement here
+rather than creating a standing process lane.
 
 ## External Waits
 
@@ -61,8 +61,8 @@ lanes.
 
 ## Next Handoff
 
-Advance the KIS data-ingress objective by making the measured candidate
-effective end-to-end and running one finite collector when ready. Do not treat
-the rate control as a daily quota or the completed daily screen as a selected
-model. Record only an actual shared resource conflict, new external wait,
-bottleneck, or reversible operating improvement here.
+Keep the KIS data worker independent at its next due cursor and integrate the
+frozen daily control campaign without treating either rate control or an early
+daily result as a selected model. Record only an actual shared resource
+conflict, new external wait, bottleneck, or reversible operating improvement
+here.

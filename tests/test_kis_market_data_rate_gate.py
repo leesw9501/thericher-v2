@@ -5,8 +5,15 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     KisPaperMarketDataRateGate,
     KisPaperMarketDataTokenStartGate,
+)
+from thericher_v2.execution.kis_private_daily_collector import (
+    KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS,
+)
+from thericher_v2.execution.kis_private_intraday_backfill import (
+    KIS_PAPER_PRIVATE_INTRADAY_MIN_REQUEST_INTERVAL_SECONDS,
 )
 
 
@@ -29,13 +36,11 @@ def test_shared_gate_serializes_two_worker_instances_through_one_external_state(
     clock = _Clock()
     first = KisPaperMarketDataRateGate(
         control_root=tmp_path / "control",
-        minimum_request_interval_seconds=1.25,
         clock=clock,
         sleeper=clock.sleep,
     )
     second = KisPaperMarketDataRateGate(
         control_root=tmp_path / "control",
-        minimum_request_interval_seconds=1.25,
         clock=clock,
         sleeper=clock.sleep,
     )
@@ -43,7 +48,7 @@ def test_shared_gate_serializes_two_worker_instances_through_one_external_state(
     first.wait_for_request_slot()
     second.wait_for_request_slot()
 
-    assert clock.sleep_calls == [1.25]
+    assert clock.sleep_calls == [KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS]
     snapshot = first.snapshot()
     assert snapshot.last_request_started_at_utc == datetime(
         2026,
@@ -52,7 +57,7 @@ def test_shared_gate_serializes_two_worker_instances_through_one_external_state(
         12,
         0,
         1,
-        250000,
+        0,
         tzinfo=UTC,
     )
     assert snapshot.retry_not_before_utc is None
@@ -63,7 +68,7 @@ def test_rate_limit_cooldown_is_shared_without_storing_response_data(tmp_path: P
     clock = _Clock()
     gate = KisPaperMarketDataRateGate(
         control_root=tmp_path / "control",
-        minimum_request_interval_seconds=1.25,
+        minimum_request_interval_seconds=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
         rate_limit_backoff_seconds=60,
         clock=clock,
         sleeper=clock.sleep,
@@ -81,6 +86,18 @@ def test_rate_limit_cooldown_is_shared_without_storing_response_data(tmp_path: P
     state = (tmp_path / "control" / "request-rate.json").read_text(encoding="utf-8")
     assert "credential" not in state
     assert "response" not in state
+
+
+def test_private_kis_market_data_pacing_layers_share_the_installed_interval() -> None:
+    assert KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS == 1.0
+    assert (
+        KIS_PAPER_PRIVATE_DAILY_COLLECTOR_MIN_PAGE_INTERVAL_SECONDS
+        == KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    )
+    assert (
+        KIS_PAPER_PRIVATE_INTRADAY_MIN_REQUEST_INTERVAL_SECONDS
+        == KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    )
 
 
 def test_request_start_callback_receives_only_the_reserved_safe_timestamp(tmp_path: Path) -> None:

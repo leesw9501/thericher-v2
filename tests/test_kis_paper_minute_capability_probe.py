@@ -16,6 +16,9 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinuteQuery,
     KisPaperMinuteRawBar,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import (
+    KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
+)
 
 
 class _MinuteClient:
@@ -59,7 +62,8 @@ def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> Non
         ]
     )
     request_starts = tuple(
-        datetime(2026, 7, 24, 12, 0, tzinfo=UTC) + timedelta(seconds=1.25 * index)
+        datetime(2026, 7, 24, 12, 0, tzinfo=UTC)
+        + timedelta(seconds=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS * index)
         for index in range(4)
     )
 
@@ -78,7 +82,16 @@ def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> Non
     assert outcome.minute_spacing_category == "contiguous_after_deduplication"
     assert outcome.token_reuse_category == "single_token_reused"
     assert outcome.request_start_category == "at_or_below_existing_gate"
+    assert outcome.tested_request_interval_seconds == (
+        KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
+    )
+    assert outcome.token_request_count == 1
+    assert outcome.minute_page_request_count == 3
+    assert outcome.daily_page_request_count == 0
+    assert outcome.request_attempt_count == 4
+    assert outcome.categorical_limit_or_error_count == 0
     assert outcome.calibration_fact == "single_client_cursor_chain_under_existing_gate"
+    assert outcome.pacing_recalibration_fact == "existing_gate_measurement_only"
     assert client.queries[1].continuation_next == "1"
     assert client.queries[1].continuation_key == "20260724093000"
     assert client.queries[2].continuation_key == "20260724092900"
@@ -98,7 +111,8 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
         ]
     )
     request_starts = tuple(
-        datetime(2026, 7, 24, 12, 0, tzinfo=UTC) + timedelta(seconds=1.25 * index)
+        datetime(2026, 7, 24, 12, 0, tzinfo=UTC)
+        + timedelta(seconds=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS * index)
         for index in range(3)
     )
 
@@ -115,6 +129,10 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
     assert outcome.probe_pattern_category == "terminal_head_repeat"
     assert outcome.token_reuse_category == "single_token_reused"
     assert outcome.request_start_category == "at_or_below_existing_gate"
+    assert outcome.token_request_count == 1
+    assert outcome.minute_page_request_count == 2
+    assert outcome.request_attempt_count == 3
+    assert outcome.categorical_limit_or_error_count == 0
     assert outcome.calibration_fact == "single_client_terminal_head_reuse_under_existing_gate"
     assert all(query.continuation_next is None for query in client.queries)
 
@@ -139,7 +157,94 @@ def test_probe_records_partial_continuation_failure_without_retaining_rows() -> 
     assert outcome.response_class == "rate_limited"
     assert outcome.continuation_category == "continuation_failed"
     assert outcome.request_start_category == "timestamps_incomplete"
+    assert outcome.token_request_count == 1
+    assert outcome.minute_page_request_count == 2
+    assert outcome.request_attempt_count == 3
+    assert outcome.categorical_limit_or_error_count == 1
+    assert outcome.pacing_recalibration_fact == "rate_limit_observed_at_tested_interval"
     assert outcome.safe_payload()["raw_market_data_retained"] is False
+
+
+def test_probe_records_the_installed_one_second_pace_without_retaining_rows() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient(
+        [
+            _page((start + timedelta(minutes=1), start), None),
+            _page((start + timedelta(minutes=1), start), None),
+        ]
+    )
+    request_starts = tuple(
+        datetime(2026, 7, 24, 12, 0, tzinfo=UTC) + timedelta(seconds=index)
+        for index in range(3)
+    )
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=request_starts,
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        tested_request_interval_seconds=1.0,
+        monotonic_clock=_monotonic(0.0, 2.5),
+    )
+
+    assert outcome.status == "complete"
+    assert outcome.request_start_category == "at_or_below_existing_gate"
+    assert outcome.tested_request_interval_seconds == 1.0
+    assert outcome.token_request_count == 1
+    assert outcome.minute_page_request_count == 2
+    assert outcome.request_attempt_count == 3
+    assert outcome.accepted_page_count == 2
+    assert outcome.categorical_limit_or_error_count == 0
+    assert outcome.pacing_recalibration_fact == "existing_gate_measurement_only"
+    payload = outcome.safe_payload()
+    assert payload["provider_request_start_ceiling"] == "bounded_candidate_only"
+    assert "12345.67" not in json.dumps(payload, sort_keys=True)
+
+
+def test_probe_rejects_an_invalid_tested_interval() -> None:
+    client = _MinuteClient([])
+
+    for tested_interval_seconds in (
+        0.0,
+        0.5,
+        KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS + 0.25,
+    ):
+        try:
+            run_kis_paper_minute_capability_probe(
+                client=client,
+                request_start_times=(),
+                tested_request_interval_seconds=tested_interval_seconds,
+                monotonic_clock=_monotonic(0.0),
+            )
+        except ValueError as error:
+            assert str(error) == "capability probe tested request interval is invalid"
+        else:
+            raise AssertionError("unsupported tested interval must be rejected")
+
+
+def test_probe_does_not_accept_starts_faster_than_the_tested_interval() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient(
+        [
+            _page((start + timedelta(minutes=1), start), None),
+            _page((start + timedelta(minutes=1), start), None),
+        ]
+    )
+    request_starts = (
+        datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        datetime(2026, 7, 24, 12, 0, 0, 500000, tzinfo=UTC),
+        datetime(2026, 7, 24, 12, 0, 1, tzinfo=UTC),
+    )
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=request_starts,
+        tested_request_interval_seconds=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
+        monotonic_clock=_monotonic(0.0, 1.5),
+    )
+
+    assert outcome.status == "complete"
+    assert outcome.request_start_category == "faster_than_existing_gate"
+    assert outcome.pacing_recalibration_fact == "request_starts_faster_than_tested_interval"
 
 
 def test_probe_evidence_stays_outside_repository_and_is_source_safe(tmp_path: Path) -> None:
