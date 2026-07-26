@@ -11,14 +11,28 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Maintain the verified private KIS Paper data-ingress path and advance only its
-next ready cursor. Keep the reattested QQQ/SPY daily catalog available to
-frozen offline Research contracts. The prospective QQQ 1m first-five pair is
-one Data product for a named future observer; it is not the only Data output or
-a company hold.
+Preserve the completed six-symbol NAS-only KIS Paper daily capability fact and
+prepare only its next qualified fixed-basket panel contract. Keep the
+reattested QQQ/SPY daily catalog available to frozen offline Research contracts.
+The prospective QQQ 1m first-five pair is one Data product for a named future
+observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
+- The isolated KIS Paper daily-universe probe pinned the official current
+  directory manifest `sha256:129e...aecea4`, the NAS listing file
+  `sha256:cf9f...3f6bb`, and the immutable registry
+  `sha256:58c8...a27935`. It used exactly `AAPL`, `AMZN`, `GOOGL`, `META`,
+  `MSFT`, and `NVDA` on `NAS`, one client/token, and twelve daily requests.
+  All six targets accepted two pages with strict continuation progress; the
+  source-safe range is 2026-07-24 through 2025-10-08. The cache manifest hash
+  is `sha256:ffe9...fd0eac` and raw-row-free evidence hash is
+  `sha256:02ce...3e6bad`.
+- This source is a current fixed basket only. It is not a historical PIT
+  universe, a corporate-action qualification, a broad-backfill permit, a
+  stock-ranking input, or a Paper-trading prerequisite. The separate
+  `daily-universe-probe/v1` cache and transport do not modify the QQQ/SPY/IWM
+  daily catalog.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
@@ -69,13 +83,13 @@ a company hold.
 
 ## Ready Queue
 
-1. Let the one existing finite catch-up or `session-capture` worker advance its
-   next ready cursor at the installed 1.0-second pace. Preserve the one-client,
-   concurrency-one collector, lock, strict conflict handling, and `tr_cont`
-   contract.
-2. Keep partial or extended-session capture rows out of Research. Hand an
-   immutable first-five pair to the isolated prospective observer only when the
-   exact 390-minute Data contract is satisfied.
+1. Build the next fixed-basket daily panel only from the isolated probe cache,
+   with source identity, common-session facts, and temporal limitations kept
+   explicit. Do not silently blend it with ETF, Norgate, Tiingo, or legacy
+   caches.
+2. Let the existing finite catch-up or `session-capture` worker advance its
+   next ready cursor at the installed 1.0-second pace. Keep partial or
+   extended-session capture rows out of Research.
 
 ## Durable Constraints
 
@@ -85,6 +99,9 @@ a company hold.
   become a prospective regular-session Research input.
 - A capability probe is finite and calibrated. It is not permission for an
   unbounded retry loop or parallel request flood.
+- A current-listing registry controls one prospective fixed basket; it cannot
+  establish historical membership, survivorship repair, or a historical
+  stock-selection universe.
 - Treat token issuance, page pacing, and worker scheduling as separate facts.
   A `token_request_not_due` result yields this worker; it does not impose a
   five-minute foreground wait or block another ready collector/lane.
@@ -97,8 +114,8 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return any newly observed source limitation, cooldown, or qualified complete
-session, then preserve the pair-only daily source contract for frozen Research
-campaigns. Do not infer historical reach or prospective completeness from a
-terminal-head page, and do not wait for a prospective pair before advancing
-other ready Data work.
+Return the immutable six-symbol daily panel contract or its scoped limitation,
+then preserve the pair-only ETF and fixed-basket source boundaries for frozen
+Research. Do not infer PIT membership, corporate-action completeness, or a
+ranking claim from the new probe, and do not wait for a prospective pair before
+advancing other ready Data work.

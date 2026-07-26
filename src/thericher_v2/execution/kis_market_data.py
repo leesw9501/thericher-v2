@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+from types import MappingProxyType
 from typing import Any, BinaryIO, Literal, Protocol
 
 from thericher_v2.contracts import SCHEMA_VERSION
@@ -177,7 +178,18 @@ class UrllibKisPaperMarketDataTransport:
         )
 
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
-        _validate_request(request)
+        return self._request_with_daily_symbol_exchanges(
+            request,
+            daily_symbol_exchanges=KIS_PAPER_DAILY_SYMBOL_EXCHANGES,
+        )
+
+    def _request_with_daily_symbol_exchanges(
+        self,
+        request: KisMarketDataRequest,
+        *,
+        daily_symbol_exchanges: Mapping[str, frozenset[str]],
+    ) -> KisMarketDataResponse:
+        _validate_request(request, daily_symbol_exchanges=daily_symbol_exchanges)
         is_token_request = _is_token_request(request)
         if (
             is_token_request
@@ -252,12 +264,22 @@ class KisPaperDailyQuery:
     by_date: str
     continuation: str | None = None
     exchange: str = "NAS"
+    approved_symbol_exchanges: Mapping[str, frozenset[str]] = field(
+        default_factory=lambda: KIS_PAPER_DAILY_SYMBOL_EXCHANGES,
+        repr=False,
+        compare=False,
+        hash=False,
+    )
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         object.__setattr__(self, "by_date", self.by_date.strip())
-        if self.exchange not in KIS_PAPER_DAILY_SYMBOL_EXCHANGES.get(self.symbol, frozenset()):
+        approved_symbol_exchanges = _freeze_daily_symbol_exchanges(
+            self.approved_symbol_exchanges
+        )
+        object.__setattr__(self, "approved_symbol_exchanges", approved_symbol_exchanges)
+        if self.exchange not in approved_symbol_exchanges.get(self.symbol, frozenset()):
             raise ValueError("daily historical symbol/exchange pair is not approved")
         if len(self.by_date) != 8 or not self.by_date.isdigit():
             raise ValueError("daily historical probe date must be YYYYMMDD")
@@ -910,7 +932,11 @@ def _response_is_rate_limited(response: KisMarketDataResponse) -> bool:
     return str(payload.get("msg_cd", "")).strip().upper() == "EGW00201"
 
 
-def _validate_request(request: KisMarketDataRequest) -> None:
+def _validate_request(
+    request: KisMarketDataRequest,
+    *,
+    daily_symbol_exchanges: Mapping[str, frozenset[str]] = KIS_PAPER_DAILY_SYMBOL_EXCHANGES,
+) -> None:
     parsed = urllib.parse.urlparse(request.url)
     if (
         parsed.scheme != "https"
@@ -932,7 +958,10 @@ def _validate_request(request: KisMarketDataRequest) -> None:
         raise KisPaperMarketDataError("request_not_allowlisted")
     if parsed.path == KIS_PAPER_MINUTE_PATH and _is_approved_minute_request(request):
         return
-    if parsed.path == KIS_PAPER_DAILY_PATH and _is_approved_daily_request(request):
+    if parsed.path == KIS_PAPER_DAILY_PATH and _is_approved_daily_request(
+        request,
+        daily_symbol_exchanges=daily_symbol_exchanges,
+    ):
         return
     raise KisPaperMarketDataError("request_not_allowlisted")
 
@@ -976,7 +1005,11 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     )
 
 
-def _is_approved_daily_request(request: KisMarketDataRequest) -> bool:
+def _is_approved_daily_request(
+    request: KisMarketDataRequest,
+    *,
+    daily_symbol_exchanges: Mapping[str, frozenset[str]],
+) -> bool:
     query = request.query
     by_date = query.get("BYMD")
     return (
@@ -985,7 +1018,7 @@ def _is_approved_daily_request(request: KisMarketDataRequest) -> bool:
         and request.headers.get("tr_cont", "") in {"", "F"}
         and query.get("AUTH") == ""
         and query.get("EXCD")
-        in KIS_PAPER_DAILY_SYMBOL_EXCHANGES.get(str(query.get("SYMB")), frozenset())
+        in daily_symbol_exchanges.get(str(query.get("SYMB")), frozenset())
         and query.get("GUBN") == "0"
         and isinstance(by_date, str)
         and len(by_date) == 8
@@ -998,3 +1031,27 @@ def _request_url(request: KisMarketDataRequest) -> str:
     if not request.query:
         return request.url
     return f"{request.url}?{urllib.parse.urlencode(dict(request.query))}"
+
+
+def _freeze_daily_symbol_exchanges(
+    value: Mapping[str, frozenset[str]],
+) -> Mapping[str, frozenset[str]]:
+    if not isinstance(value, Mapping) or not value:
+        raise ValueError("daily historical symbol/exchange scope is invalid")
+    normalized: dict[str, frozenset[str]] = {}
+    for symbol, exchanges in value.items():
+        normalized_symbol = str(symbol).strip().upper()
+        normalized_exchanges = frozenset(str(exchange).strip().upper() for exchange in exchanges)
+        if (
+            not normalized_symbol
+            or not normalized_symbol.isascii()
+            or not normalized_symbol.isalnum()
+            or not normalized_exchanges
+            or any(
+                not exchange.isascii() or not exchange.isalpha() or len(exchange) != 3
+                for exchange in normalized_exchanges
+            )
+        ):
+            raise ValueError("daily historical symbol/exchange scope is invalid")
+        normalized[normalized_symbol] = normalized_exchanges
+    return MappingProxyType(normalized)

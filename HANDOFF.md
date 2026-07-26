@@ -70,6 +70,14 @@ authorized private KIS Paper work.
 
 - D: is about 40.45 percent free. Keep data under D:\market_data and stop new
   large work before the 15 percent floor.
+- The bounded NAS-only KIS Paper daily-universe probe completed on 2026-07-27
+  with one token request and twelve daily pages: `AAPL`, `AMZN`, `GOOGL`,
+  `META`, `MSFT`, and `NVDA` on `NAS` were all accepted through two pages with
+  strict continuation progress. Its source-safe span reaches 2025-10-08 from
+  the 2026-07-24 head. Raw rows remain only in the isolated D: probe cache;
+  its raw-row-free evidence is under the external artifact root. This is a
+  current fixed-basket capability fact, not a PIT universe, ranking input, or
+  paper-trading result.
 - The KIS private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions. The three-target QQQ/SPY/IWM intersection has 694 sessions;
   IWM remains source-limited at its qualified boundary.
@@ -223,7 +231,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls as descriptive
-evidence and establish whether a bounded KIS-native daily universe can support
-the next stock-selection research contract. Refresh this file only with the
-resulting current cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the six-symbol
+KIS probe as descriptive Data evidence, then build only the next qualified
+fixed-basket panel contract. Do not turn the current-listing source into a PIT
+stock-selection claim or make a Paper intent from it. Refresh this file only
+with the resulting current cross-lane facts after that bounded objective
+completes.

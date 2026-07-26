@@ -210,6 +210,61 @@ def test_daily_historical_query_rejects_unapproved_scope() -> None:
         KisPaperDailyQuery(symbol="QQQ", by_date="20260719", continuation="M")
 
 
+def test_daily_query_can_bind_a_separate_immutable_probe_scope_without_widening_default() -> None:
+    probe_scope = {"AAPL": frozenset({"NAS"})}
+    query = KisPaperDailyQuery(
+        symbol="AAPL",
+        exchange="NAS",
+        by_date="20260719",
+        approved_symbol_exchanges=probe_scope,
+    )
+    request = KisMarketDataRequest(
+        method="GET",
+        url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_DAILY_PATH}",
+        headers={"tr_id": KIS_PAPER_DAILY_TR_ID, "tr_cont": ""},
+        query={
+            "AUTH": "",
+            "EXCD": "NAS",
+            "SYMB": "AAPL",
+            "GUBN": "0",
+            "BYMD": "20260719",
+            "MODP": "0",
+        },
+    )
+
+    assert "AAPL" not in kis_market_data.KIS_PAPER_DAILY_SYMBOL_EXCHANGES
+    assert query.approved_symbol_exchanges == probe_scope
+    with pytest.raises(TypeError):
+        query.approved_symbol_exchanges["MSFT"] = frozenset({"NAS"})  # type: ignore[index]
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        kis_market_data._validate_request(request)
+    kis_market_data._validate_request(
+        request,
+        daily_symbol_exchanges=query.approved_symbol_exchanges,
+    )
+
+
+@pytest.mark.parametrize(
+    "scope",
+    [
+        {},
+        {"AAPL": frozenset()},
+        {"AAPL-": frozenset({"NAS"})},
+        {"AAPL": frozenset({"NASDAQ"})},
+    ],
+)
+def test_daily_query_rejects_invalid_separate_scope(
+    scope: dict[str, frozenset[str]],
+) -> None:
+    with pytest.raises(ValueError, match="scope"):
+        KisPaperDailyQuery(
+            symbol="AAPL",
+            exchange="NAS",
+            by_date="20260719",
+            approved_symbol_exchanges=scope,
+        )
+
+
 def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> None:
     assert KisPaperMinuteQuery(exchange="AMS", symbol="SPY").exchange == "AMS"
     with pytest.raises(ValueError, match="exchange"):

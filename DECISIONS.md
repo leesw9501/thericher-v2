@@ -5435,3 +5435,41 @@ Reason: a replay's PnL cannot be reproducible evidence if a caller can alter
 its economic envelope after the model precommit. Root containment and negative
 completed-bar timing tests keep a bounded research control from writing outside
 its evidence boundary or accepting a cross-phase decision window.
+
+## 2026-07-27 - Isolate a six-symbol KIS Paper daily-universe capability fact
+
+Decision: keep the existing QQQ/SPY/IWM daily route unchanged and bind a
+separate NAS-only KIS Paper capability probe to one exact official current
+listing snapshot. The registry pins the source manifest hash
+`sha256:129e6aa02a27e8760139a901f13e2ee4e3fc9b5d4a3e615f9dcd431154aecea4`
+and the fixed ordered targets `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and
+`NVDA`, all on `NAS`. Its dedicated transport accepts only that registry's
+daily endpoint plus the inherited Paper token endpoint; it rejects account,
+order, minute, live, and out-of-registry daily requests. The public registry
+builder rejects any replacement current-listing snapshot rather than silently
+following a newer file.
+
+One finite single-client run made one token request and twelve daily-page
+requests, two pages per target. All six targets were accepted with strict
+`tr_cont` progress; the source-safe page facts reach from 2026-07-24 to
+2025-10-08. Raw daily bytes reside only below
+`D:\market_data\us_equities\kis_paper_private\daily-universe-probe\v1`.
+The raw-row-free evidence is below
+`D:\thericher-v2\model-artifacts\kis-paper-daily-universe-probe-v1`, with
+cache manifest hash
+`sha256:ffe91642bb024e7a9191c2abb774c97d529ec4b074d719b387da6dc460fd0eac`
+and evidence hash
+`sha256:02ce0b1004808644b0c69af6a546423508e13609aa658175f8ee09c3293e6bad`.
+
+This proves only a current, fixed six-symbol KIS Paper daily capability. It is
+not a historical point-in-time universe, corporate-action qualification,
+stock-selection result, training dataset, paper order, account call, or live
+route. The local Claude CLI falsification check was attempted before the
+architecture change, but OAuth remained expired; no private material was
+sent. That reviewer-tool limitation does not change the bounded Data fact.
+
+Reason: a fixed current basket gives the engine an execution-compatible daily
+source without pretending it solves survivorship or historical universe
+construction. The separate cache and route avoid weakening the established ETF
+catalog while preserving a small, replayable foundation for the next panel
+contract.

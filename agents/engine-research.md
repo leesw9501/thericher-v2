@@ -60,6 +60,10 @@ not make historical research input-pending.
 - The latest capture-scoped QQQ terminal page contained no qualified regular
   session minute under the exact 390-minute contract. It is Data evidence only
   and cannot become a feature, label, candidate result, or GPU input.
+- Data has now verified a fixed six-symbol KIS Paper daily capability basket
+  through 2025-10-08. It has no qualified panel loader, PIT universe meaning,
+  corporate-action qualification, ranking claim, or Research campaign yet; do
+  not train, select, ensemble, or allocate GPU work from the raw probe cache.
 
 ## Ready Queue
 

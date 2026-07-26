@@ -2,14 +2,13 @@
 
 ## Objective
 
-Establish a six-symbol NAS-only KIS Paper daily-universe capability cache.
+Build a frozen, source-separated six-symbol KIS Paper daily panel contract from
+the completed NAS-only capability cache.
 
-Use one existing official current-listing directory snapshot only to choose a
-small, deterministic prospective NASDAQ common-stock probe set, then test the
-existing KIS Paper daily collector against that set. This advances the data
-foundation for future stock-selection research. It does not construct a
-historical point-in-time universe, train a model, select a strategy, submit an
-order, or enable live behavior.
+This turns the accepted current fixed basket into a typed chronological daily
+panel that future local-paper Research can consume. It does not claim a
+historical point-in-time universe, corporate-action completeness, a stock
+ranking result, model performance, a Paper order, or live behavior.
 
 ## First Reads
 
@@ -22,73 +21,59 @@ order, or enable live behavior.
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Inspect only source-safe metadata for the official symbol-directory snapshot
-   and existing KIS daily cache/control state. Do not scan or print raw price
-   rows, credentials, or account facts.
+3. Inspect only the source-safe manifest and evidence for the completed
+   `daily-universe-probe/v1` run. Do not print raw rows, credentials, account
+   facts, or prices.
 
 ## Required Work
 
-1. Ask Claude CLI for a concise falsification-first review before adding the
-   new immutable symbol registry and probe cache. State that the official
-   directory is current-listing evidence only, the fixed six-symbol NAS-only
-   scope, KIS's unproven general-symbol historical reach, source separation,
-   stop rule, and the fact that would prevent broader collection. An expired
-   CLI session is scoped reviewer-tool evidence, not a hold on private
-   non-live Data work.
-2. Implement a deterministic parser for the existing official directory
-   snapshot and a probe-owned immutable NASDAQ common-stock symbol/exchange
-   registry. Pin the exact source manifest/hash. Exclude nonstandard/test/ETF
-   entries by explicit documented rules. Do not widen the existing global KIS
-   daily allowlist or reuse the QQQ/SPY research catalog as a universe.
-3. Add a separate cache and manifest contract below
-   `D:\market_data\us_equities\kis_paper_private\daily-universe-probe\v1`.
-   It must preserve source identity, registry hash, target identity, request
-   counts, strict `tr_cont` cursor progress, accepted/source-limited/
-   unsupported/invalid classification, and recovery state without printing raw
-   rows.
-4. Run one finite capability worker: exactly six NAS targets, one Paper client,
-   concurrency one, the installed 1.0-second request gate, and at most two
-   daily pages per target (twelve page requests maximum). Store raw daily bytes
-   only in the probe cache under `D:`; write only source-safe evidence under
-   the external artifact root.
-5. Keep current-listing and price-provider facts separate. A successful probe
-   is not a historical PIT universe, a corporate-action qualification, a
-   training dataset, a model result, or a paper-trading prerequisite. A weak or
-   partial source result completes this objective with a scoped classification;
-   do not silently substitute another provider or expand the target set.
-6. Add focused tests for deterministic registry selection, manifest/hash
-   binding, six-target/page caps, cursor and classification behavior, external
-   storage, no account/order/live route, and unchanged local-paper isolation.
-7. Keep Engine Research and Execution independent. Update Data and
-   orchestration stateboards with only the new source contract, finite result,
-   limitations, recovery fact, and next ready action.
+1. Ask Claude CLI for a concise falsification-first check before introducing
+   the new panel contract. State the fixed current six-symbol registry, exact
+   cache/evidence hashes, current-listing/PIT limitation, alignment rule,
+   intended local-paper-only consumer, and the fact that would prevent a
+   Research handoff. Expired OAuth is scoped reviewer-tool evidence, not a
+   hold on private offline Data work.
+2. Implement a typed read-only loader that accepts only the exact completed
+   six-symbol KIS Paper probe cache and its hash-pinned registry. It must
+   verify raw-file hashes, cache/evidence linkage, `MODP=0_unadjusted`, the
+   ordered `AAPL/AMZN/GOOGL/META/MSFT/NVDA` NAS scope, chronological rows, and
+   no duplicate or conflicting sessions.
+3. Derive one immutable D:-resident common-session panel manifest with explicit
+   source hashes, six-symbol identity, shared session count, chronological
+   bounds, rows excluded by alignment, and the current-listing/corporate-action
+   limitations. Keep raw data under `D:\market_data`; write only source-safe
+   panel evidence under `D:\thericher-v2\model-artifacts`.
+4. Add a narrow adapter that exposes completed-bar daily inputs to the existing
+   offline/local-paper validation boundary. It may expose typed data and timing
+   metadata only; it must not train a model, rank stocks, create a decision,
+   invoke KIS, read credentials, submit an intent, or change broker routing.
+5. Add focused tests for source/hash binding, raw-file integrity, alignment,
+   cache/evidence containment, no source blending, local-paper route isolation,
+   and rejection of noncanonical or corrupted inputs.
+6. Update the Data, Engine Research, and orchestration stateboards with the
+   exact panel fact or limitation. Keep the Norgate and ETF datasets separate;
+   do not use their memberships or rows to repair this KIS panel.
 
 ## Hard Boundaries
 
-- Use `KIS_PAPER_*` only through the owned Paper **daily market-data** route.
-  Do not call account, position, order, cancel, modify, or any `KIS_LIVE_*`
-  endpoint.
-- Do not read `.env` beyond the owned Paper market-data configuration path, and
-  never print, log, commit, or send credentials, account identifiers, raw
-  provider payloads, or raw prices to Claude.
-- NAS only: do not add NYS/AMS exchange mapping, a scheduler, a broad backfill,
-  a parallel request flood, or more than the six fixed targets in this goal.
-- Keep market-data bytes under `D:\market_data` and generated artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
-  either.
-- Do not create a stock-selection model, ranking, PnL result, dashboard,
-  ensemble, paper intent, or live behavior from this capability probe.
+- Offline only: do not call KIS, read `.env`, access account/order endpoints,
+  create a schedule, or use any `KIS_LIVE_*` value.
+- Do not expand the six symbols, KIS exchange scope, page range, cache, or
+  official-directory snapshot in this goal.
+- Do not relabel the current registry as historical PIT, survivorship-free,
+  corporate-action-qualified, ranking-eligible, or paper-trading-eligible.
+- Do not blend KIS rows with Norgate, Tiingo, Yahoo, ETFs, or any other source.
+- Keep data and artifacts outside Git; do not create a model, dashboard,
+  ensemble, Paper intent, order, or live behavior.
 
 ## Completion Evidence
 
-- A hash-pinned current-listing source contract and deterministic six-target
-  NAS-only registry, explicitly marked prospective-only.
-- A separate, recoverable KIS daily probe cache with one final classification
-  for each target and no modification of the QQQ/SPY research catalog.
-- One finite single-client collection result or a precise source-limited fact,
-  with no account/order/live route and no raw data in Git or artifacts.
-- Updated Data and orchestration stateboards that name the exact limitation
-  preventing or permitting a future stock-selection campaign.
+- One immutable, hash-bound six-symbol common-session panel manifest under D:,
+  plus linked source-safe external evidence.
+- A typed completed-bar adapter with no credential/network/broker capability.
+- Tests showing corrupted or noncanonical data cannot become the panel or a
+  local-paper validation input.
+- Stateboards that name the panel's exact limits before any Research campaign.
 
 ## Verification
 
@@ -100,5 +85,5 @@ docker compose config --quiet
 ~~~
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A rate cooldown, unsupported symbol, incomplete page,
-weak source coverage, or lane-local failure does not stop another ready lane.
+next company objective. A source-local cache issue or Claude OAuth fault does
+not stop independent ready work.
