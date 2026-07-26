@@ -6,7 +6,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType
 
+import pytest
+
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
+from thericher_v2.execution.kis_paper_market_data_catchup import (
+    KisPaperMarketDataCatchupResult,
+)
 from thericher_v2.execution.kis_private_daily_backfill import KisPaperPrivateDailyBackfillRun
 
 
@@ -65,6 +70,86 @@ def test_catchup_does_not_read_credentials_after_the_daily_cursor_is_drained(
         "retained_chunk_count": 0,
         "status": "drained",
     }
+
+
+def test_catchup_writes_an_external_source_safe_receipt_for_a_drained_run(
+    monkeypatch,
+    capsys,
+    tmp_path: Path,
+) -> None:
+    script = _load_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_config",
+        lambda _: (_ for _ in ()).throw(AssertionError("drained cursor must stay offline")),
+    )
+    monkeypatch.setattr(
+        script,
+        "run_kis_paper_private_daily_backfill_once",
+        lambda **_: KisPaperPrivateDailyBackfillRun(status="no_ready_target"),
+    )
+
+    script.main(
+        [
+            "--execute",
+            "--cache-root",
+            str(tmp_path / "market-data"),
+            "--repository-root",
+            str(repo_root),
+            "--receipt-root",
+            str(artifact_root),
+        ],
+        clock=lambda: datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        code_revision=lambda _: "git:test",
+    )
+
+    output = json.loads(capsys.readouterr().out)
+    assert output["status"] == "drained"
+    assert output["receipt_sha256"].startswith("sha256:")
+    receipts = list(artifact_root.glob("catchup-*.json"))
+    assert len(receipts) == 1
+    payload = json.loads(receipts[0].read_text(encoding="utf-8"))
+    assert payload["kind"] == "kis_paper_market_data_catchup_receipt"
+    assert payload["outcome"] == {
+        "chunk_attempt_count": 0,
+        "completed_target_count": 0,
+        "reason": None,
+        "retained_chunk_count": 0,
+        "status": "drained",
+    }
+    assert payload["execution"]["client_constructed"] is False
+    assert payload["artifact_policy"]["raw_market_data_in_receipt"] is False
+    rendered = json.dumps(payload, sort_keys=True)
+    assert "paper-key" not in rendered
+    assert "paper-secret" not in rendered
+    assert "market-data" not in rendered
+    assert str(repo_root) not in rendered
+
+
+def test_catchup_receipt_rejects_a_root_inside_git(tmp_path: Path) -> None:
+    script = _load_script()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        script._write_source_safe_receipt(
+            receipt_root=repo_root / "artifacts",
+            repo_root=repo_root,
+            code_revision="git:test",
+            observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+            result=KisPaperMarketDataCatchupResult(
+                status="drained",
+                chunk_attempt_count=0,
+                retained_chunk_count=0,
+                completed_target_count=0,
+            ),
+            client_constructed=False,
+            max_chunks=48,
+            max_runtime_seconds=21600,
+        )
 
 
 def test_catchup_reuses_one_paper_client_within_its_finite_budget(

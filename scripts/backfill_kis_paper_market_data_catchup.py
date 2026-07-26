@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
+import uuid
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -24,6 +26,7 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 from thericher_v2.execution.kis_paper_market_data_catchup import (
     KIS_PAPER_MARKET_DATA_CATCHUP_MAX_CHUNKS,
     KIS_PAPER_MARKET_DATA_CATCHUP_MAX_RUNTIME,
+    KisPaperMarketDataCatchupResult,
     run_kis_paper_market_data_catchup,
 )
 from thericher_v2.execution.kis_private_daily_backfill import (
@@ -37,6 +40,8 @@ from thericher_v2.execution.kis_private_daily_collector import (
 )
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
+_CATCHUP_RECEIPT_KIND = "kis_paper_market_data_catchup_receipt"
+_CATCHUP_RECEIPT_SCHEMA_VERSION = 1
 
 
 def main(
@@ -50,6 +55,7 @@ def main(
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT)
     parser.add_argument("--repository-root", type=Path, default=_REPO_ROOT)
+    parser.add_argument("--receipt-root", type=Path)
     parser.add_argument("--max-chunks", type=int, default=KIS_PAPER_MARKET_DATA_CATCHUP_MAX_CHUNKS)
     parser.add_argument(
         "--max-runtime-seconds",
@@ -119,18 +125,93 @@ def main(
         print(json.dumps({"status": "indeterminate", "reason": "catchup_worker_unavailable"}))
         return
 
-    print(
-        json.dumps(
-            {
-                "status": result.status,
-                "chunk_attempt_count": result.chunk_attempt_count,
-                "retained_chunk_count": result.retained_chunk_count,
-                "completed_target_count": result.completed_target_count,
-                "reason": result.last_reason,
-            },
-            sort_keys=True,
+    payload = _safe_result_payload(result)
+    if args.receipt_root is not None:
+        payload["receipt_sha256"] = _write_source_safe_receipt(
+            receipt_root=Path(args.receipt_root),
+            repo_root=repository_root,
+            code_revision=revision,
+            observed_at=clock(),
+            result=result,
+            client_constructed=client is not None,
+            max_chunks=args.max_chunks,
+            max_runtime_seconds=args.max_runtime_seconds,
         )
-    )
+    print(json.dumps(payload, sort_keys=True))
+
+
+def _safe_result_payload(result: KisPaperMarketDataCatchupResult) -> dict[str, object]:
+    return {
+        "status": result.status,
+        "chunk_attempt_count": result.chunk_attempt_count,
+        "retained_chunk_count": result.retained_chunk_count,
+        "completed_target_count": result.completed_target_count,
+        "reason": result.last_reason,
+    }
+
+
+def _write_source_safe_receipt(
+    *,
+    receipt_root: Path,
+    repo_root: Path,
+    code_revision: str,
+    observed_at: datetime,
+    result: KisPaperMarketDataCatchupResult,
+    client_constructed: bool,
+    max_chunks: int,
+    max_runtime_seconds: float,
+) -> str:
+    """Persist one immutable outcome receipt without paths, rows, or credentials."""
+
+    if receipt_root.is_symlink():
+        raise ValueError("catch-up receipt root is invalid")
+    receipt_root.mkdir(parents=True, exist_ok=True)
+    resolved_root = receipt_root.resolve(strict=True)
+    resolved_repo = repo_root.resolve()
+    if resolved_root.is_relative_to(resolved_repo) and not _is_external_mount_path(
+        resolved_root,
+        repo_root=resolved_repo,
+    ):
+        raise ValueError("catch-up receipts must stay outside the Git workspace")
+    payload = {
+        "schema_version": _CATCHUP_RECEIPT_SCHEMA_VERSION,
+        "kind": _CATCHUP_RECEIPT_KIND,
+        "observed_at_utc": observed_at.astimezone(UTC).isoformat(),
+        "code_revision": code_revision,
+        "worker_bounds": {
+            "max_chunks": max_chunks,
+            "max_runtime_seconds": max_runtime_seconds,
+        },
+        "outcome": _safe_result_payload(result),
+        "execution": {
+            "client_constructed": client_constructed,
+            "mode": "off",
+            "route": "kis_paper_market_data_only",
+        },
+        "artifact_policy": {
+            "raw_market_data_in_receipt": False,
+            "credentials_in_receipt": False,
+            "account_data_in_receipt": False,
+            "broker_order_data_in_receipt": False,
+            "repo_storage_allowed": False,
+        },
+    }
+    encoded = (json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+    content_hash = "sha256:" + hashlib.sha256(encoded).hexdigest()
+    stamp = observed_at.astimezone(UTC).strftime("%Y%m%dT%H%M%S%fZ")
+    destination = resolved_root / f"catchup-{stamp}-{uuid.uuid4().hex[:12]}.json"
+    with destination.open("xb") as handle:
+        handle.write(encoded)
+    return content_hash
+
+
+def _is_external_mount_path(path: Path, *, repo_root: Path) -> bool:
+    current = path
+    while current != repo_root:
+        if current.is_mount():
+            return True
+        current = current.parent
+    return False
 
 
 def _client(

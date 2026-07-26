@@ -2,14 +2,14 @@
 
 ## Objective
 
-Advance the existing KIS-compatible QQQ/SPY/IWM daily cache through one bounded
-data-only catch-up run, and record its actual throughput and recovery state.
+Create a hash-bound, joint QQQ/SPY daily event-window and three-fold expanding
+campaign contract that is ready for a later bounded model-breadth run.
 
-This is the next data foundation step after the frozen six-symbol CPU control.
-It uses the existing resumable worker, one KIS Paper market-data client, and the
-measured shared request-start gate to create longer source-separated history on
-`D:`. It is not a stock-selection run, model campaign, account query, order,
-or live action.
+The purpose is to make the existing long KIS-compatible daily history safe to
+consume as a sequence input without treating its unadjusted prices as a
+selection result. This objective advances the data-to-validation loop through
+leakage control. It does not train a model, use the GPU, select a candidate, or
+submit a Paper order.
 
 ## First Reads
 
@@ -22,59 +22,61 @@ or live action.
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Inspect the existing private daily backfill index, source-safe manifests,
-   Docker profile, request gate, and recovery path. Do not print raw rows,
-   prices, credentials, account facts, or broker payloads.
+3. Reattest the existing QQQ/SPY KIS daily catalog, price-free Tiingo event
+   sidecar, and event-boundary audit from their external manifests. Do not print
+   rows, prices, credentials, provider responses, account facts, or broker data.
 
 ## Required Work
 
-1. Reconcile the existing `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS` daily backfill
-   cursor state from durable external evidence. Record only source-safe counts,
-   cursor/date coverage, manifest identities, storage state, and recovery
-   classification.
-2. Confirm the catch-up path reuses one client/token per bounded invocation and
-   applies the measured 1.0-second shared request-start gate. Keep the existing
-   finite limit of at most 48 chunks or six hours. Do not introduce an arbitrary
-   inter-chunk sleep, parallel request flood, or foreground wait while another
-   lane is ready.
-3. Run the existing data-only Docker catch-up profile once with
-   `KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET` available only inside its
-   private container environment. Retain raw market bytes only under
-   `D:\market_data`; retain source-safe run evidence under
-   `D:\thericher-v2\model-artifacts` when needed.
-4. If the run reaches a documented rate, auth, storage, cursor, or source
-   boundary, preserve the exact scoped recovery fact and continue independent
-   Research and Execution preparation. Change pacing only after measured output
-   or official KIS evidence supports the change.
-5. Keep the completed six-symbol CPU control descriptive. Do not retune it,
-   rank symbols, train GPU depth models, create an ensemble, or derive a Paper
-   decision from new cache rows in this objective.
-6. Have temporary Validation verify that the catch-up client cannot reach
-   account/order/live endpoints and that all retained data/artifacts stay
-   outside Git. Update the Data, Engine Research, Execution, and orchestration
-   stateboards with the new bounded facts only.
+1. Build a pure offline joint event-window contract for the exact QQQ/SPY
+   lineage. A candidate decision must be excluded for both symbols when either
+   symbol has a qualified event in its 20 completed-session feature window or
+   anywhere from decision `t` through the replay/label horizon `t+2`.
+2. Freeze three expanding chronological validation folds over the reattested
+   daily catalog: each fold has a 252-session validation region, a 22-session
+   pre-validation purge/warmup, and an expanding development region. Preserve
+   the final unused tail for a later objective. Reject a contract that lacks
+   enough eligible samples after joint masking rather than shrinking the
+   boundary ad hoc.
+3. Keep the contract source-safe and external: it may retain hashes, event
+   dates/kinds, aggregate counts, fold boundaries, and eligibility identities,
+   but not raw prices, returns, feature values, provider response bytes,
+   credentials, or Git-resident artifacts.
+4. Add focused tests for joint-symbol masking, 20-session feature containment,
+   `t -> t+1 -> t+2` exclusion, deterministic fold geometry, immutable external
+   artifact writing, and offline/no-credential/no-KIS/no-Tiingo behavior.
+5. Ask Claude CLI for the required concise falsification-first leakage
+   challenge before calling the contract model-executable. If its OAuth session
+   remains unavailable, record only `review_unavailable` for that later
+   model-execution boundary; preserve the contract as non-executable and keep
+   independent lanes moving.
+6. Have temporary Validation independently confirm the contract cannot expose a
+   masked event window to a fold, access a network/credential/broker route, or
+   write an artifact inside Git. Update the active stateboards with only the
+   resulting cross-lane facts.
 
 ## Hard Boundaries
 
-- KIS Paper market-data credentials and endpoint calls are authorized for this
-  objective. Do not call account, position, order, cancel, modify, or any
-  `KIS_LIVE_*` route or value.
-- Do not output or persist secrets, account identifiers, raw response payloads,
-  raw prices, or broker bodies outside their private D: cache.
-- Keep the established single-client, shared-gate ownership. A rate/recovery
-  fact constrains only its worker; it never becomes a global hold.
-- Do not buy data, install a major runtime, expose a public service, or change
-  a model/paper-trading decision from this collection result.
+- This objective is offline. Do not read `.env`, call KIS or Tiingo, invoke a
+  broker endpoint, inspect an account, submit/modify/cancel an order, or read
+  any `KIS_LIVE_*` value.
+- Do not train CPU/GPU models, run an architecture screen, tune a parameter,
+  open/reuse a sealed holdout, select an ensemble, claim profitability, or
+  produce a Paper decision.
+- Keep all market bytes under `D:\market_data` and generated contract evidence
+  under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never
+  commit either.
+- A Claude review failure is scoped to model-executability of this contract. It
+  is not a hold on its deterministic construction, testing, or other ready work.
 
 ## Completion Evidence
 
-- One bounded source-safe catch-up outcome with chunk counts, target states,
-  cursor progress or an exact scoped recovery reason, and storage classification.
-- Tests or focused probes proving client reuse, endpoint isolation, external
-  artifact/cache containment, and correct no-wait recovery behavior.
-- Stateboards that distinguish the extended-cache fact from the frozen
-  six-symbol panel and name the next eligible research input without a model or
-  profitability claim.
+- One immutable external contract with exact source lineage, joint-mask identity,
+  fold geometry, eligible aggregate counts, and a source-safe content hash.
+- Focused tests proving temporal/event masking, external artifact containment,
+  and route isolation.
+- Stateboards that name the candidate as non-executable until the named review
+  boundary is satisfied, without treating it as a model result or Paper input.
 
 ## Verification
 
@@ -86,5 +88,5 @@ docker compose config --quiet
 ~~~
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A bounded provider failure, local artifact issue, or
-Claude OAuth fault does not stop independent ready work.
+next company objective. A model-review tooling fault or an ineligible contract
+does not stop independent ready work.

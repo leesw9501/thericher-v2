@@ -122,11 +122,14 @@ def test_daily_catchup_docker_profile_is_data_only() -> None:
     assert '"48"' in section
     assert "--max-runtime-seconds" in section
     assert "/app/market_data/us_equities/kis_paper_private/daily" in section
+    assert "--receipt-root" in section
+    assert "/app/model_artifacts/data/kis-paper-daily-catchup-v1" in section
     assert "KIS_PAPER_APP_KEY" in section
     assert "KIS_PAPER_APP_SECRET" in section
     assert "KIS_PAPER_ACCOUNT" not in section
     assert "KIS_LIVE" not in section
     assert ":/app/market_data" in section
+    assert ":/app/model_artifacts" in section
 
 
 def _load_script() -> ModuleType:

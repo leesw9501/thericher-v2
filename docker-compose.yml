@@ -229,16 +229,20 @@ services:
       - /app/market_data/us_equities/kis_paper_private/daily
       - --repository-root
       - /app
+      - --receipt-root
+      - /app/model_artifacts/data/kis-paper-daily-catchup-v1
       - --max-chunks
       - "48"
       - --max-runtime-seconds
       - "21600"
     environment:
       THERICHER_MODE: off
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
       KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
       KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
     volumes:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-daily-spy-head:
     build:

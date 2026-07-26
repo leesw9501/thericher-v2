@@ -12,11 +12,11 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence while Data extends the historical
-cache. Prepare only a future frozen, non-promotion research package. The
-prospective QQQ first-five pair is required only for its isolated prospective
-observation, pair-dependent campaign, and later pair-dependent promotion
-decisions; it does not make historical research input-pending.
+development-only falsification evidence. Prepare a joint-event-masked,
+expanding-fold QQQ/SPY campaign candidate without fitting or selecting a model.
+The prospective QQQ first-five pair is required only for its isolated
+prospective observation, pair-dependent campaign, and later pair-dependent
+promotion decisions; it does not make historical research input-pending.
 
 ## Current Readiness
 
@@ -73,20 +73,25 @@ decisions; it does not make historical research input-pending.
   fixed after-cost economics, and an `always_long` comparator. Its external
   source-safe summary records positive momentum-minus-comparator deltas for
   AAPL, AMZN, META, and MSFT and negative deltas for GOOGL and NVDA. This
-  triggers independent falsification work before any model claim; it does not
-  identify winners, support ranking or profitability, select an ensemble, or
-  provide a Paper input. Claude's required concise challenge was attempted but
-  the local OAuth session was expired.
+   triggers independent falsification work before any model claim; it does not
+   identify winners, support ranking or profitability, select an ensemble, or
+   provide a Paper input. Claude's required concise challenge was attempted but
+   the local OAuth session was expired.
+- The daily catch-up worker is now terminal and added no QQQ/SPY rows. The
+  existing QQQ/SPY history is therefore the candidate input, not a reason to
+  wait for more collection. Its existing `+-1` event-boundary audit does not by
+  itself protect a 20-session sequence feature window and `t -> t+1 -> t+2`
+  replay label; a joint candidate mask must cover both symbols before any new
+  sequence campaign is executable.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. During Data catch-up, prepare a source-separated campaign contract only
-   when extended cache evidence makes its geometry eligible. Do not reuse the
-   current 199-session panel for GPU depth work or tune its fixed momentum rule
-   after results are known.
+2. Build only the source-safe joint event mask and three-fold expanding campaign
+   candidate for the exact QQQ/SPY data lineage. Keep it non-executable until
+   the named Claude leakage review returns or is explicitly retried.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -103,13 +108,13 @@ decisions; it does not make historical research input-pending.
 
 ## Recovery
 
-Current class: resume. A failed run creates a new immutable attempt rather than
-overwriting evidence. A missing prospective pair is input_unavailable only for
-its pair-bound observation.
+Current class: resume. A failed contract attempt creates a new immutable
+candidate rather than overwriting evidence. A missing prospective pair is
+input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the descriptive six-symbol control evidence without a candidate-selection
-claim while Data records its bounded catch-up result. Do not treat either as
-stock selection or wait for prospective collection to keep other ready roles
-moving.
+Return the joint event-mask and fold-contract candidate without a
+candidate-selection claim. Do not treat it as stock selection, a trained model,
+or a Paper input, and do not wait for prospective collection to keep other
+ready roles moving.

@@ -12,11 +12,11 @@ Do not select strategies or make execution decisions.
 ## Current Objective
 
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
-source-separated control input, then advance the existing QQQ/SPY/IWM daily
-cache through its bounded single-client catch-up worker. Keep the reattested
-QQQ/SPY daily catalog available to frozen offline Research contracts. The
-prospective QQQ 1m first-five pair is one Data product for a named future
-observer; it is not the only Data output or a company hold.
+source-separated control input and the terminal QQQ/SPY/IWM cache as collection
+evidence. Bind the already-attested QQQ/SPY catalog and price-free event
+sidecar into a joint event-window candidate for a future offline Research
+contract. The prospective QQQ 1m first-five pair is one Data product for a
+named future observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
@@ -46,6 +46,14 @@ observer; it is not the only Data output or a company hold.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
+- The one bounded daily catch-up invocation is terminal: `QQQ/NAS` is complete
+  at 27 chunks/cursor `20070820`, `SPY/AMS` is complete at 26 chunks/cursor
+  `20070821`, and `IWM/AMS` is `source_limited` at 10 chunks/cursor
+  `20231010`. The Docker worker returned `drained` with zero chunk activity,
+  constructed no client, and therefore made no KIS request. Its external
+  source-safe receipt hash is
+  `sha256:a5a2f5bbcc8a75c72995a9e5b8e58bbda5af19e1339c09abcc55f989a17fd561`.
+  This is a complete recovery fact, not permission to invent another cursor.
 - On 2026-07-26, the existing offline daily loader reattested the exact QQQ/SPY
   pair with index hash `sha256:e0bb...01ac660` and full dataset hash
   `sha256:78b0...397718`. It exposed only the pair's common panel with
@@ -98,10 +106,9 @@ observer; it is not the only Data output or a company hold.
 
 ## Ready Queue
 
-1. Reconcile and run the existing daily QQQ/SPY/IWM catch-up worker for one
-   finite invocation. It reuses one client/token and the installed 1.0-second
-   shared request-start gate, with at most 48 chunks or six hours. Preserve a
-   rate, cursor, storage, or source result as worker-local recovery evidence.
+1. Reattest the exact QQQ/SPY catalog, event-only Tiingo sidecar, and existing
+   boundary-audit identities for a joint event-window candidate. This is
+   offline, uses no token, and does not fetch or blend provider price rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -123,14 +130,15 @@ observer; it is not the only Data output or a company hold.
 
 ## Recovery
 
-Current class: resume. Validate existing metadata and committed snapshots before
-a network call. A bad cache is reconcile/restart evidence for that cache; an
+Current class: complete for the daily catch-up; resume for the offline event
+window. Validate existing metadata and committed snapshots before any future
+network call. A bad cache is reconcile/restart evidence for that cache; an
 empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the bounded daily catch-up outcome with cursor progress or its scoped
-recovery fact. Preserve the frozen six-symbol source separately. Do not infer
-PIT membership, corporate-action completeness, a ranking claim, or
-Paper-trading eligibility from either cache, and do not wait for a prospective
-pair before advancing other ready Data work.
+Return the source-safe joint event-window candidate and its hash-bound input
+lineage. Preserve the frozen six-symbol source separately. Do not infer PIT
+membership, corporate-action completeness, a ranking claim, or Paper-trading
+eligibility from either cache, and do not wait for a prospective pair before
+advancing other ready Data work.

@@ -68,6 +68,7 @@ cursors:
 
 ```powershell
 uv run python scripts\backfill_kis_paper_market_data_catchup.py --execute `
+  --receipt-root D:\thericher-v2\model-artifacts\data\kis-paper-daily-catchup-v1 `
   --max-chunks 48 --max-runtime-seconds 21600
 
 docker compose --profile kis-paper-daily-backfill run --rm --no-deps --build `
@@ -80,6 +81,13 @@ two daily pages per chunk, writes each raw snapshot plus manifest to `D:`, then
 atomically advances the cursor. It stops when no ready target remains, the
 chunk/runtime budget is spent, storage protection applies, recovery needs work,
 or the shared rate cooldown is active.
+
+When `--receipt-root` is supplied, the worker also writes one immutable
+source-safe outcome receipt beneath that external root. It contains only worker
+bounds, safe counts/status, a `client_constructed` fact, and containment flags;
+it contains no raw rows, response bodies, prices, credentials, account data,
+order data, or repository path. A drained cache can therefore leave durable
+proof without constructing a client or requesting a token.
 
 All KIS Paper market-data workers use the same external request gate below
 `D:\market_data\us_equities\kis_paper_private\collection-control-v1`. The
@@ -147,9 +155,10 @@ Paper job.
 The installed `thericher-kis-paper-daily-backfill` Windows task runs Tuesday
 through Saturday at 07:00 KST. It invokes only the Docker profile above after
 the final 06:20 intraday-head trigger and before the 08:10 operating review. Its
-container mounts only `D:\market_data` at `/app/market_data` and receives only
-the two KIS Paper market-data variables; it has no account, order, live, or
-model-artifact surface.
+container mounts `D:\market_data` at `/app/market_data` plus the external
+artifact root at `/app/model_artifacts` solely for source-safe catch-up
+receipts. It receives only the two KIS Paper market-data variables; it has no
+account, order, live, model, or GPU surface.
 
 The data-only Docker image deliberately does not mount `.env`. Its shared
 market-data loader may consume only a complete injected

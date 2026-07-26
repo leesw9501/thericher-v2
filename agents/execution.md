@@ -41,12 +41,16 @@ remains unavailable.
   replay only. Its twelve fixed replay cells were independently reconstructible
   and flat after replay; no KIS credential, account/order endpoint, intent, or
   Paper action was involved.
+- The completed daily catch-up emitted an external source-safe `drained`
+  receipt with `client_constructed: false`; it had no account, position, intent,
+  order, cancellation, modification, or live effect. Its next offline event
+  window remains an input contract only, not an Execution route change.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data runs its bounded daily catch-up worker. Its replay and
-   route-isolation tests are the current integration evidence.
+   stable while Data and Research build the offline event-window contract. Its
+   replay and route-isolation tests are the current integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -73,5 +77,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next data-only worker may read only
-the KIS Paper market-data route; do not let it acquire an account or order path.
+binding and route boundaries intact. The next event-window worker is offline;
+do not let it acquire an account, order, KIS, or Tiingo path.

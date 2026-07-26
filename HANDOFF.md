@@ -93,6 +93,17 @@ authorized private KIS Paper work.
 - The KIS private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions. The three-target QQQ/SPY/IWM intersection has 694 sessions;
   IWM remains source-limited at its qualified boundary.
+- The bounded daily catch-up reconciliation completed with a terminal cache:
+  `QQQ/NAS` is complete at 27 chunks and cursor `20070820`, `SPY/AMS` is
+  complete at 26 chunks and cursor `20070821`, and `IWM/AMS` is
+  `source_limited` at 10 chunks and cursor `20231010`. The one Docker catch-up
+  invocation returned `drained` with zero attempted, retained, or completed
+  chunks because no target was ready. It constructed no client and made no KIS
+  token or market-data request. Its immutable source-safe receipt is external
+  under `D:\thericher-v2\model-artifacts\data\kis-paper-daily-catchup-v1`
+  with hash
+  `sha256:a5a2f5bbcc8a75c72995a9e5b8e58bbda5af19e1339c09abcc55f989a17fd561`.
+  This proves terminal recovery state, not new history or a research result.
 - The private intraday cache has 21 complete QQQ and SPY regular sessions from
   the prior bounded historical scope. It is eligible only for scoped
   historical work, not a broad profitability claim.
@@ -162,8 +173,9 @@ authorized private KIS Paper work.
   PIT or corporate-action qualified.
 - No GPU job is active. The completed daily evidence must not be promoted or
   used to choose a Paper order. The current six-symbol panel is too small for
-  depth training, and longer cache coverage plus a frozen campaign contract are
-  the next data prerequisites.
+  depth training. QQQ/SPY has sufficient historical count for a future bounded
+  breadth campaign, but a joint corporate-action event window and expanding-fold
+  contract must be frozen before its sequence inputs can be used.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -199,6 +211,10 @@ authorized private KIS Paper work.
   do not use a parallel request flood. The probe rejects unsupported intervals
   and cannot record success when its observed page-request starts are faster
   than the claimed tested interval.
+- A focused end-to-end daily test now proves one shared-gate wait between token
+  and the first page plus one collector-owned wait before a second page; it
+  proves the second page is not delayed twice. The drained production path
+  constructs no client, so it has no token-start or page pacing activity.
 - Before any future shared-default change, Data must inventory the gate, client,
   collector, and scheduler delays. A lower gate alone is not an acceleration if
   a longer local collector delay remains effective. The cooldown and the
@@ -253,9 +269,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the completed
-six-symbol control descriptive, then run the existing bounded KIS Paper daily
-catch-up worker through its single-client shared gate. Do not turn any expanded
-cache into a PIT stock-selection claim, GPU-depth result, or Paper intent until
-a separate frozen campaign is ready. Refresh this file only with resulting
+Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
+create the joint QQQ/SPY event-window and expanding-fold contract from the
+already-attested offline inputs. Do not make the candidate model-executable,
+run GPU training, or derive a Paper intent until the named leakage review and a
+separate campaign objective are complete. Refresh this file only with resulting
 cross-lane facts after that bounded objective completes.

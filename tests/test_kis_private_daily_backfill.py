@@ -15,6 +15,7 @@ from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_TOKEN_PATH,
     KisMarketDataRequest,
     KisMarketDataResponse,
+    KisMarketDataTransport,
     KisPaperDailyQuery,
     KisPaperDailyRawRow,
     KisPaperMarketDataCallCounts,
@@ -24,6 +25,7 @@ from thericher_v2.execution.kis_market_data import (
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+    KisPaperMarketDataRateGate,
 )
 from thericher_v2.execution.kis_private_daily_backfill import (
     KIS_PAPER_PRIVATE_DAILY_BACKFILL_VERSION,
@@ -58,6 +60,50 @@ class _PacingClock:
 
     def sleep(self, seconds: float) -> None:
         self.value += seconds
+
+
+class _SharedPacingClock:
+    """One deterministic clock separating gate and collector waits."""
+
+    def __init__(self) -> None:
+        self.now = datetime(2026, 7, 24, 12, 0, tzinfo=UTC)
+        self.monotonic_value = 0.0
+        self.gate_sleeps: list[float] = []
+        self.collector_sleeps: list[float] = []
+
+    def utc_now(self) -> datetime:
+        return self.now
+
+    def monotonic(self) -> float:
+        return self.monotonic_value
+
+    def gate_sleep(self, seconds: float) -> None:
+        self.gate_sleeps.append(seconds)
+        self._advance(seconds)
+
+    def collector_sleep(self, seconds: float) -> None:
+        self.collector_sleeps.append(seconds)
+        self._advance(seconds)
+
+    def _advance(self, seconds: float) -> None:
+        self.now += timedelta(seconds=seconds)
+        self.monotonic_value += seconds
+
+
+class _GatedRecordingTransport:
+    """Test transport that applies the real shared request-start gate."""
+
+    def __init__(self, delegate: _RecordingTransport, gate: KisPaperMarketDataRateGate) -> None:
+        self._delegate = delegate
+        self._gate = gate
+
+    @property
+    def requests(self) -> list[KisMarketDataRequest]:
+        return self._delegate.requests
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        self._gate.wait_for_request_slot()
+        return self._delegate.request(request)
 
 
 class _TokenSpacingTransport:
@@ -129,6 +175,46 @@ def test_daily_backfill_collects_one_resumable_qqq_chunk_outside_git(tmp_path: P
         "output_cursor_date": "20260101",
         "target_key": "QQQ/NAS/MODP=0",
     }
+
+
+def test_daily_collector_uses_the_shared_gate_without_double_pacing_a_second_page(
+    tmp_path: Path,
+) -> None:
+    clock = _SharedPacingClock()
+    recorded = _RecordingTransport(
+        [
+            _token(),
+            _daily_page([_row("20260717"), _row("20260701")], continuation="F"),
+            _daily_page([_row("20260701"), _row("20260101")], continuation="F"),
+        ]
+    )
+    gate = KisPaperMarketDataRateGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+        sleeper=clock.gate_sleep,
+    )
+    result = daily_collector.run_bounded_kis_paper_private_daily_collection(
+        _client(_GatedRecordingTransport(recorded, gate)),
+        code_revision="git:test",
+        observed_at=_OBSERVED_AT,
+        sleeper=clock.collector_sleep,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert result.status == "observed"
+    assert result.inter_page_delay_seconds == (1.0,)
+    assert clock.gate_sleeps == [1.0]
+    assert clock.collector_sleeps == [1.0]
+    assert [
+        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL)
+        for request in recorded.requests
+    ] == [KIS_PAPER_TOKEN_PATH, KIS_PAPER_DAILY_PATH, KIS_PAPER_DAILY_PATH]
+    assert all(
+        "order" not in request.url
+        and "balance" not in request.url
+        and "minute" not in request.url
+        for request in recorded.requests
+    )
 
 
 def test_partial_continuation_commits_the_valid_first_page_and_advances_once(
@@ -777,7 +863,7 @@ def test_daily_query_accepts_ams_backfill_targets_but_not_nas_iwm() -> None:
         KisPaperDailyQuery(symbol="IWM", exchange="NAS", by_date="20260717")
 
 
-def _client(transport: _RecordingTransport) -> KisPaperMarketDataClient:
+def _client(transport: KisMarketDataTransport) -> KisPaperMarketDataClient:
     return KisPaperMarketDataClient(
         config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
         transport=transport,

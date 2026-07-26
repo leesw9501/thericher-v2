@@ -26,6 +26,11 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   hash-bound 199-session common panel. The new completed-bar adapter exposes
   one `CatalogedBars` stream at a time to offline/local-paper validation only;
   it cannot read credentials, call KIS, create a decision, or reach a broker.
+- Data completed the bounded QQQ/SPY/IWM daily catch-up reconciliation. QQQ and
+  SPY were already complete, IWM remains source-limited, and the Docker worker
+  returned `drained` with zero chunks and no constructed client. Its external
+  receipt is hash-bound and source-safe; it is evidence that the current cache
+  is terminal, not a new data or KIS-throughput result.
 - Engine Research completed the fixed QQQ/SPY daily sequence breadth screen:
   one CPU smoke and one Docker CUDA screen over LSTM, causal TCN, and compact
   attention. Both produced only external checkpoints and six `local_paper`
@@ -49,23 +54,25 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is longer, source-separated daily history for the
-existing KIS-compatible cache. The first fixed-basket control is complete but
-has only 199 current-listing sessions and cannot support a PIT stock-selection
-claim or a depth GPU campaign. The existing catch-up worker is ready to close
-the data-coverage gap; repeated momentum threshold tuning would not.
+The material bottleneck is no longer a ready daily cursor. QQQ/SPY already has
+long KIS-compatible history, but its current `+-1` event audit is not sufficient
+for a 20-session joint sequence window and `t -> t+1 -> t+2` replay label. The
+next contract must make that leakage boundary explicit before new daily model
+work can use the data. The fixed six-symbol panel remains too short and
+non-PIT for a depth campaign.
 
 The GPU is deliberately idle because no frozen depth-eligible campaign exists.
-Research must start the first such campaign when extended-data evidence and its
-contract are ready, or keep the exact missing data/contract fact visible.
+Research must start the first such campaign when the joint event-window contract
+and its named review are ready, or keep that exact missing fact visible.
 
 ## Current Operating Improvement
 
-The current reversible improvement is readiness-first data throughput: the
-existing daily catch-up worker reuses one client/token, owns its 1.0-second
-request-start gate, and has a finite 48-chunk/six-hour budget. Its rate or
-recovery outcome stays in that worker while Codex advances independent lanes.
-The hash-pinned six-target panel and frozen research precommit remain active.
+The current reversible improvement is observable data throughput: the daily
+catch-up profile now writes an immutable source-safe external receipt even when
+the cache is already drained, and focused tests prove second-page pacing is not
+doubled. A worker-local rate or recovery outcome still yields while Codex
+advances independent lanes. The hash-pinned six-target panel and frozen
+research precommit remain active.
 
 ## External Waits
 
@@ -76,14 +83,14 @@ The hash-pinned six-target panel and frozen research precommit remain active.
 
 ## Recovery
 
-Current class: resume. Reattest an individual cache, campaign, or exact Paper
-intent before relying on it. Scope failure to that item and continue independent
-lanes.
+Current class: complete for the daily catch-up and resume for the event-window
+contract. Reattest an individual cache, campaign, or exact Paper intent before
+relying on it. Scope failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Run one bounded KIS Paper daily catch-up through the existing worker while
-keeping Research and Execution independent. Do not treat the rate control,
-current-listing registry, panel, or any daily control as a selected model.
-Record only an actual shared resource conflict, new external wait, bottleneck,
-or reversible operating improvement here.
+Create the hash-bound joint QQQ/SPY event-window and expanding-fold contract
+while keeping Execution independent. Do not treat its mask, historical catalog,
+or any daily control as a selected model. Record only an actual shared resource
+conflict, new external wait, bottleneck, or reversible operating improvement
+here.
