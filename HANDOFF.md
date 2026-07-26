@@ -60,6 +60,9 @@ authorized private KIS Paper work.
 - Commit work that changes behavior, a contract, a test, or a measured fact.
   Do not substitute schedule reattestation or document repetition for engine
   progress.
+- For KIS Data, distinguish token issuance, page pacing, and worker schedule
+  facts. A token-start guard or an owned `next_due` is not a foreground delay;
+  it is a reason to run another ready package while the owning worker yields.
 
 ## Current State
 
@@ -148,11 +151,16 @@ authorized private KIS Paper work.
   ceiling, historical continuation, or continuous-session collection. The
   current evidence-backed rate/cooldown controls remain active; do not use a
   parallel request flood.
+- The next Data objective first inventories ready cursors, then calibrates pace
+  with a bounded one-client probe. It records safe request/page/limit/elapsed
+  facts and changes at most one pacing variable at a time. A 5-minute
+  token-start guard spaces only token issuance attempts; it never means a
+  five-minute worker or foreground wait.
 - The measured single-client capture path now records capture-scoped coverage
   and is the existing head task's configured collection mode. A terminal page
   remains current-head evidence, not permission to invent a historical cursor.
-  The next bounded Research screen uses the qualified daily cache; it does not
-  change KIS pacing or wait for an intraday schedule.
+  Data collection may continue while Research and Execution advance independent
+  ready work.
 
 ## Active Lanes
 
@@ -197,7 +205,7 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Build and run the first bounded KIS-native daily
-sequence-model breadth screen from the already qualified QQQ/SPY daily cache,
-then refresh this file only with current cross-lane facts after that bounded
-objective completes.
+Follow NEXT_CODEX_GOAL.md. Calibrate the private KIS Paper data-ingress pace,
+then use the existing finite collector to make evidence-backed progress on a
+ready cursor. Refresh this file only with the resulting current cross-lane
+facts after that bounded objective completes.

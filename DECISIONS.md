@@ -5328,3 +5328,33 @@ invalidate the frozen non-promotion result.
 Reason: this creates a real KIS-compatible multi-architecture research loop
 without mistaking a small historical comparison for a production model or
 letting a missing prospective intraday pair idle the GPU.
+
+## 2026-07-26 - Calibrate KIS data-ingress pace instead of inferring a quota
+
+Decision: make the next bounded company objective a Data-owned KIS Paper
+market-data pace calibration followed, when a ready cursor exists, by the
+existing finite collector. The calibration keeps one client and one collector
+per cache, distinguishes token-request starts from page-request starts and
+worker scheduling, changes one pacing variable at a time, and records only
+source-safe request/page/limit/elapsed facts. It may make an evidence-backed
+change to the shared pace only after a test-backed implementation and a
+calibration fact identify the setting and its revision condition.
+
+The present 1.25-second request-start gate and 60-second `429`/`EGW00201`
+cooldown stay active until such evidence exists. The five-minute token-start
+guard spaces only token issuance attempts; it is not a token lifetime, a
+five-minute page delay, or a foreground-orchestrator wait. A token or cooldown
+deferral yields the owning worker while other ready lanes continue. This does
+not authorize a parallel request flood, unbounded retries, a second collector
+against the same cache, account/order calls, or any live route.
+
+The required concise Claude governance drift-check was attempted before this
+policy clarification, but the local CLI OAuth session was expired. No
+credentials, account facts, raw rows, or holdout material were sent. That
+scoped tool fault does not hold this private, non-live measurement work.
+
+Reason: the project has an `EGW00201` observation and no verified daily quota.
+Treating either a token guard or an arbitrary sleep as a general throughput
+ceiling wastes collection time; blindly removing the measured controls risks
+repeated rate limiting. A bounded calibration supplies the missing operational
+evidence without adding an approval gate or slowing independent lanes.

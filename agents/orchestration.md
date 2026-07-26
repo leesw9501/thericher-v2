@@ -23,23 +23,26 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material Data unknown is continuous, source-qualified KIS 1m session
-coverage. The completed daily screen remains development-only evidence with
+The material Data unknown is the maximum reliable KIS Paper data-ingress pace
+and its usable historical/session reach. The current 1.25-second request gate
+is a measured temporary control, not a daily allowance or a calibrated ceiling.
+The capture worker does not prove historical pagination or a complete regular
+session. The completed daily screen remains development-only evidence with
 unqualified corporate-action semantics, so it cannot become a model-selection
-or execution input. The capture worker does not prove historical pagination or
-a complete regular session.
+or execution input.
 
 ## Current Operating Improvement
 
 The first PyTorch CUDA image build was slow, while the source and scripts are
 already read-only mounted into the research container. Reuse that image for
 code-only bounded research runs and rebuild only when the Dockerfile or runtime
-dependency contract changes. Keep prospective readiness local to its consumer;
-a worker owns its own backoff and recovery, and Codex does not sleep while
-another lane is ready. At task resume or an observed unexplained foreground idle
-period, invoke one bounded Throughput Review from the existing stateboards and
-active-job facts; retain only one measured, reversible improvement here rather
-than creating a standing process lane.
+dependency contract changes. The next Data package separates token-start,
+request-start, and scheduler clocks and measures one single-client pacing change
+at a time. A worker owns its own backoff and recovery, and Codex does not sleep
+while another lane is ready. At task resume or an observed unexplained
+foreground idle period, invoke one bounded Throughput Review from the existing
+stateboards and active-job facts; retain only one measured, reversible
+improvement here rather than creating a standing process lane.
 
 ## External Waits
 
@@ -56,7 +59,7 @@ lanes.
 
 ## Next Handoff
 
-Integrate the completed daily breadth evidence, then advance the next single
-company objective without treating a descriptive screen as a selected model.
+Advance the KIS data-ingress calibration objective without treating the current
+rate control as a daily quota or the completed daily screen as a selected model.
 Record only an actual shared resource conflict, new external wait, bottleneck,
 or reversible operating improvement here.

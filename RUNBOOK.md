@@ -107,6 +107,16 @@ time, not a foreground Codex sleep. A failed capability probe remains scoped to
 its target and never justifies an unbounded retry loop or a pause on another
 ready lane.
 
+Do not conflate the three timing mechanisms. The five-minute token-start guard
+spaces only separate token POST attempts; it does not delay an existing
+in-memory client or force a five-minute worker sleep. The actual catch-up
+script passes a zero inter-chunk interval, so it proceeds page-by-page under
+the shared request-start gate until its finite chunk/runtime budget, a real
+cooldown, or another owned recovery fact stops it. A future faster pace must be
+measured with one client and one changed pacing variable at a time, reporting
+only safe counts for requests, accepted pages, categorical limits, elapsed
+time, and the fact that would retain or replace the setting.
+
 If the safe worker output is `auth_rejected` while the request gate has no
 `last_rate_limit_at_utc`, first determine whether a separate worker issued a
 token within the prior five minutes. The five-minute cross-process token-start

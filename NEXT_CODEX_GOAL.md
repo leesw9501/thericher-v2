@@ -2,13 +2,13 @@
 
 ## Objective
 
-Build the first bounded KIS-native daily sequence-model breadth screen.
+Calibrate and accelerate private KIS Paper market-data ingress.
 
-Use the already qualified QQQ/SPY KIS-private-daily history to screen compact,
-materially different sequence families through offline local-paper replay. This
-advances model research while prospective intraday collection continues on its
-own schedule; it is not a model promotion, ensemble selection, broker order,
-or live behavior change.
+Establish the maximum reliable, source-correct pace for the existing KIS Paper
+daily and intraday collectors, then use the resulting evidence to make finite
+progress on a ready cursor. This advances data collection for the trading
+engine. It is not a broker-order, account-management, model-promotion, or live
+behavior objective.
 
 ## First Reads
 
@@ -21,70 +21,68 @@ or live behavior change.
 2. Read HANDOFF.md, AGENTS.md, RUNBOOK.md, DECISIONS.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Reattest the existing KIS daily catalog without a KIS call. Locate and use
-   the smallest existing offline loader/attestation path; do not scan raw files
-   ad hoc or make a network request. The expected starting point is
-   `load_kis_paper_private_daily_catalog`, not the intraday coverage inspector.
+3. Inspect current daily and intraday catalog/index metadata and the shared
+   timing state. Do not scan raw market files ad hoc or print raw rows.
 
 ## Required Work
 
-1. Ask Claude CLI for a concise falsification-first review of the campaign
-   contract before interpreting any result. State the dataset scope, target,
-   chronological split, leakage/survivorship checks, naive baseline, GPU
-   budget, kill case, and the fact that would rule out a candidate. An expired
-   CLI session is scoped tooling evidence, not a hold on this private
-   development-only screen.
-2. Freeze one QQQ/SPY-only KIS-native daily contract from the already qualified
-   common history. It must name source identities, causal completed-bar feature
-   windows, next-open execution timing, chronological development/validation
-   split, purge, cost model, local-paper replay contract, fixed compute budget,
-   and stop rule. Do not use IWM or another provider to fill gaps.
-3. Implement the smallest reusable offline runner for a deterministic CPU smoke
-   and one bounded Docker CUDA screen of compact LSTM, causal TCN, and compact
-   attention-style candidates, or document a code-backed reason an existing
-   architecture cannot support the daily contract. Reuse approved PyTorch CUDA;
-   do not download weights or change the major runtime.
-4. Keep all checkpoints, work state, and safe summaries under
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`. The runner
-   must remain offline after the cache load and never read credentials, call
-   KIS, submit an order, use a broker account route, or emit raw rows/prices.
-5. Add focused tests for causal feature/label timing, Data provenance, CPU
-   smoke determinism, CUDA artifact location/mocking, local-paper-only fills,
-   chronological validation, and no model/ensemble/promotion claim. Keep the
-   validation role independent of tuning.
-6. Run the CPU smoke first. If CUDA is available and the contract passes,
-   execute one bounded Docker GPU screen and record only source-safe external
-   evidence. A failed/no-CUDA result is a scoped recoverable fact; it does not
-   block Data collection or Paper execution preparation.
+1. Ask Claude CLI for a concise falsification-first review before changing a
+   persistent KIS request pace, collector concurrency, or schedule. State the
+   present `EGW00201` evidence, current request/cooldown/token controls, the
+   one-client measurement plan, stop condition, and the fact that would retain
+   or replace a setting. An expired CLI session is scoped tooling evidence, not
+   a hold on private non-live Data work.
+2. Inventory the ready KIS Paper daily and intraday cursors from their
+   manifests/indexes and identify the active backlog in source-safe terms. Keep
+   raw data under `D:\market_data`; do not output rows, credentials, or account
+   facts.
+3. Implement the smallest test-backed, data-only bounded pace-calibration path.
+   It must use one in-memory Paper client/token, one active collector per cache,
+   a finite request and elapsed-time budget, and one pacing-variable change per
+   probe. Record only request count, accepted-page count, categorical
+   limit/error count, elapsed-time category, tested interval, and the fact that
+   recalibrates the chosen setting.
+4. Preserve the current 1.25-second shared request-start gate and 60-second
+   `429`/`EGW00201` cooldown until measurement supports a different setting.
+   The five-minute cross-process token-start guard applies only to a new token
+   request: it must not turn into a five-minute foreground sleep or block an
+   existing in-memory client.
+5. If the bounded calibration is clean and a cursor is ready, run the existing
+   finite daily catch-up or intraday session-capture worker using the proven
+   setting. Retain collected raw market data, manifests, provenance, and
+   recovery state only under `D:\market_data`. A rate limit, invalid page, or
+   source limit stops only that worker and produces a recoverable scoped fact.
+6. Keep Engine Research and Execution moving on their independent ready queues.
+   Do not turn the data calibration into a model-selection, ensemble,
+   profitability, KIS-order, or account-read prerequisite.
+7. Add focused tests for calibration bounds, single-client/single-collector
+   behavior, token-start versus request-start timing, sanitized evidence,
+   rate-limit recovery, and unchanged local/kis/live route separation.
 
 ## Hard Boundaries
 
-- Keep raw market data under `D:\market_data` and generated artifacts under
+- Use `KIS_PAPER_*` only through the owned Paper market-data path. Do not call
+  account, position, order, cancel, or modify endpoints in this goal.
+- Never read or route `KIS_LIVE_*`; do not enable live behavior.
+- Do not print, log, commit, or send credentials, account identifiers, raw
+  provider payloads, raw prices, or sealed holdout labels to Claude.
+- Keep data under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
   either.
-- Do not read credentials, call KIS, enable live behavior, or call account,
-  position, order, cancel, or modify endpoints in this goal.
-- Do not print, log, commit, or send secrets, account identifiers, raw broker
-  payloads, raw prices, or sealed holdout labels to Claude.
-- Do not open a sealed holdout, tune against validation results, select a model,
-  create an ensemble, make a profitability/Paper-order claim, or treat GPU
-  utilization as the goal.
-
-## Claude Check
-
-The 2026-07-26 KST worker and profile-review attempts found the local Claude
-CLI OAuth session expired; no private material was sent. Retry for the campaign
-contract before interpreting results. A repeat OAuth failure is scoped tooling
-evidence, not an approval gate for this private non-live work.
+- Do not use an unbounded retry loop, a parallel request flood, a second active
+  collector against the same cache, or a scheduler that outruns a measured
+  source constraint.
 
 ## Completion Evidence
 
-- Test-backed, source-separated QQQ/SPY daily campaign contract and offline
-  runner with no credentials, network, broker, or repository artifacts.
-- A deterministic CPU smoke and, when CUDA is operational, one bounded Docker
-  GPU architecture screen with checkpoints and summaries outside Git.
-- Development-only local-paper validation evidence with no selection,
-  ensemble, promotion, holdout, or Paper-order claim.
+- A test-backed bounded calibration path with only source-safe evidence and no
+  secret, account, order, or live surface.
+- A recorded measured pace or a precise recoverable reason it cannot yet be
+  changed, including the fact that will recalibrate it.
+- When a ready cursor exists, one finite collector run that preserves the
+  existing cache/provenance/recovery contract under `D:`.
+- Updated role stateboards showing current Data evidence and independent lane
+  readiness without a global wait.
 
 ## Verification
 
@@ -96,5 +94,5 @@ docker compose config --quiet
 ~~~
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A Data-local schedule wait, GPU fault, or failed
-candidate does not stop another ready lane.
+next company objective. A KIS cooldown, token deferral, source limit, GPU
+fault, or lane-local test failure does not stop another ready lane.

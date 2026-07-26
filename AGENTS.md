@@ -134,6 +134,16 @@ fact that will recalibrate or remove it. This does not authorize removal of an
 existing documented or evidence-backed control, unbounded retries, or a probe
 whose failed input pauses another ready lane.
 
+For KIS Paper market data, keep three clocks distinct: token-request starts,
+market-data request starts, and a worker's next scheduled invocation. A
+token-start guard never implies that a valid in-memory client must idle, and a
+worker's retry fact never implies that Codex or another lane must idle. The
+Data Agent records a source-safe calibration fact for a changed pace: the
+single-client request count, accepted-page count, categorical limit/error
+count, elapsed-time bucket, tested interval, and the fact that would revise the
+setting. It changes one pacing variable at a time, preserves one active
+collector per cache, and does not substitute a parallel flood for measurement.
+
 ### Role Agents
 
 A role agent is a durable lane with a stateboard. It may be executed by a
