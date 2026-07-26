@@ -115,17 +115,24 @@ research input-pending.
   and `ROUND_HALF_EVEN`. Validation rejected its v1 receipt for ambient
   precision sensitivity; v2 is the only eligible source for a candidate-only
   screen. It stores no labels or price-derived value externally.
+- The first `expanding-1` candidate-only D1 screen completed one Docker CPU
+  smoke and one Docker CUDA run on the fixed linear and compact-GRU candidates.
+  Both artifacts contain only source identities, counts, normalization hashes,
+  candidate specifications, and aggregate classification metrics. The CUDA
+  result's positive-biased aggregate behavior is an observation to falsify,
+  not a threshold-tuning, winner, ensemble, promotion, replay, or Paper input.
+  Temporary Validation independently passed scope, tail, split, and artifact
+  checks. Claude OAuth remained unavailable, so no result is promotable.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Run one fixed candidate-only D1 sequence screen from the reattested
-   `expanding-1` materializer and v2 target/cost adapter. Keep its sparse
-   development/validation split, 20-by-3 feature geometry, and untouched tail.
-   A CPU smoke precedes at most one CUDA candidate run; artifacts remain
-   external and no replay, winner selection, ensemble, Paper action, or model
+2. Prepare one reattested `expanding-2` D1 materializer and fixed target/cost
+   contract from the same parent without changing candidate specifications from
+   the completed first screen. It must retain its own sparse split and final
+   tail boundary; no replay, winner selection, ensemble, Paper action, or model
    promotion follows. Retry Claude at the material decision boundary, but do
    not turn its OAuth fault into a GPU-idle approval hold.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
@@ -144,16 +151,15 @@ research input-pending.
 
 ## Recovery
 
-Current class: complete for the joint contract, `expanding-1` input, first D1
-materializer receipt, and v2 target/cost receipt; resume for its candidate-only
-sequence screen. A failed consumer attempt creates new immutable evidence
-rather than overwriting either parent artifact. A missing prospective pair is
-input_unavailable only for its pair-bound observation.
+Current class: complete for the joint contract, `expanding-1` input, D1
+materializer/target receipts, and candidate-only CPU/CUDA screen; resume for
+`expanding-2` reattestation. A failed consumer attempt creates new immutable
+evidence rather than overwriting either parent artifact. A missing prospective
+pair is input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask, reattested `expanding-1` materializer, v2
-target/cost adapter, and source catalog lineage to one candidate-only D1
-sequence screen. Do not treat it as stock selection, a selected model, replay,
-or a Paper input, and do not wait for prospective collection to keep other
-ready roles moving.
+Return the joint event-mask and source catalog lineage to one reattested
+`expanding-2` materializer/target contract. Do not treat the completed first
+screen as stock selection, a selected model, replay, or a Paper input, and do
+not wait for prospective collection to keep other ready roles moving.

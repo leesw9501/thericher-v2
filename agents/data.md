@@ -130,14 +130,19 @@ or a company hold.
   fee/slippage per fill, `0.0001` half-even quantization, and Decimal precision
   34 without persisting a target value. The prior immutable v1 receipt is
   superseded because its intermediate Decimal arithmetic was context-sensitive.
+- The same reattested `expanding-1` input completed one candidate-only CPU and
+  one CUDA screen through the external artifact root. Both used only the exact
+  `2345 / 146` sparse lists and development-only normalization; no provider
+  rows, labels, or cache bytes were persisted by the screen. The final
+  151-session tail is after `expanding-2` and `expanding-3`, so the screen's
+  exact fold list also excludes those later folds.
 
 ## Ready Queue
 
-1. Serve the same verified QQQ/SPY catalog, reattested `expanding-1`
-   materializer, and v2 target/cost semantics to one candidate-only D1
-   sequence screen. Preserve its `t-20..t+2` joint mask and exact sparse
-   indices; use values in memory only and do not fetch, blend, or persist
-   provider rows.
+1. Reattest only `expanding-2` from the same verified parent and serve it to a
+   new single-fold D1 materializer/target consumer. Preserve its exact sparse
+   index tuple and the final 151-session tail; use values in memory only and
+   do not fetch, blend, or persist provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -172,17 +177,16 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-`expanding-1` input, first D1 materializer receipt, and v2 target/cost receipt;
-resume for a candidate-only sequence screen. Reattest existing metadata and
+`expanding-1` input, D1 materializer/target-cost receipt, and first candidate
+screen; resume for `expanding-2` reattestation. Reattest existing metadata and
 committed snapshots before a new consumer or future network call. A bad cache
 is reconcile/restart evidence for that cache; an empty or limited endpoint
 result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the reattested `expanding-1` input, D1 materializer/target-cost
-identities, and hash-bound catalog lineage to one candidate-only sequence
-screen. Preserve the frozen six-symbol source separately. Do not infer PIT
-membership, corporate-action completeness, a ranking claim, or Paper-trading
-eligibility from either cache, and do not wait for a prospective pair before
-advancing other ready Data work.
+Return the same parent/catalog lineage to one reattested `expanding-2` input
+and its D1 materializer/target semantics. Preserve the frozen six-symbol source
+separately. Do not infer PIT membership, corporate-action completeness, a
+ranking claim, or Paper-trading eligibility from either cache, and do not wait
+for a prospective pair before advancing other ready Data work.

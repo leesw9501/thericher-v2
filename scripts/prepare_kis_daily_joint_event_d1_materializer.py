@@ -43,24 +43,35 @@ _FOLD_ARTIFACT_HASH = (
 _FOLD_INPUT_IDENTITY = (
     "sha256:b019c7e9a10eb2add48bbaa815c046a9b216ca9069c4ca8e4f836bc91085a1db"
 )
-_SIDECAR_DIR = Path(
-    "D:/market_data/us_equities/kis_paper_private/daily-corporate-actions/"
-    "snapshot=2026-07-24-qqq-spy-tiingo-events-v1"
-)
 _SIDECAR_DATASET_HASH = "sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3"
 _SIDECAR_MANIFEST_HASH = "sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d"
 _CATALOG_DATASET_HASH = "sha256:78b00556ddbc8bcfb0c4d1bb67e004e4a4c4ff035a8c348b2516b842fa397718"
 _CATALOG_INDEX_HASH = "sha256:e0bb847994a97b1df1181b0013fabcb784d979c7c366f686940e563cb01ac660"
 _SESSION_DATES_HASH = "sha256:a8743b8af3b9df84f9a68d51cd6b74a882809995d142b82602746af5329044cd"
-_AUDIT_PATH = Path(
-    "D:/thericher-v2/model-artifacts/research-contracts/"
-    "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json"
-)
 _AUDIT_HASH = "sha256:3d97b26b5e8e422cb2b4bcf262fbd1be887e44d7e43afdd9e2b5d689f805a46c"
 _AUDIT_MASK_IDENTITY = "sha256:921c61b8abf822b0aee71b66b43c37875cb581e95bf7a1563b053880c087d429"
 _AUDIT_PARTITION_IDENTITY = (
     "sha256:b82ed4022237929febde187651cb31e74740b311faa85c850967c617ac8dcfdb"
 )
+_DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
+
+
+def _sidecar_directory(market_data_root: Path) -> Path:
+    return (
+        market_data_root
+        / "us_equities"
+        / "kis_paper_private"
+        / "daily-corporate-actions"
+        / "snapshot=2026-07-24-qqq-spy-tiingo-events-v1"
+    )
+
+
+def _audit_artifact(artifact_root: Path) -> Path:
+    return (
+        artifact_root
+        / "research-contracts"
+        / "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-event-boundary-audit.json"
+    )
 
 
 def load_pinned_kis_daily_joint_event_d1_materializer(
@@ -68,6 +79,7 @@ def load_pinned_kis_daily_joint_event_d1_materializer(
     artifact_root: Path,
     parent_artifact: Path = _PARENT_ARTIFACT,
     fold_artifact: Path = _FOLD_ARTIFACT,
+    market_data_root: Path = _DEFAULT_MARKET_DATA_ROOT,
 ) -> KisDailyJointEventD1Materializer:
     """Reattest the one pinned local QQQ/SPY materializer without a network call."""
 
@@ -80,21 +92,23 @@ def load_pinned_kis_daily_joint_event_d1_materializer(
     )
     from thericher_v2.data.kis_paper_daily import load_kis_paper_private_daily_catalog
 
+    resolved_market_data_root = Path(market_data_root)
     catalog = load_kis_paper_private_daily_catalog(
+        cache_root=resolved_market_data_root / "us_equities" / "kis_paper_private" / "daily",
         target_keys=("QQQ/NAS/MODP=0", "SPY/AMS/MODP=0"),
         expected_index_hash=_CATALOG_INDEX_HASH,
         expected_full_dataset_hash=_CATALOG_DATASET_HASH,
         repo_root=_REPO_ROOT,
     )
     sidecar = load_kis_daily_corporate_action_snapshot(
-        _SIDECAR_DIR,
+        _sidecar_directory(resolved_market_data_root),
         catalog=catalog,
         expected_dataset_hash=_SIDECAR_DATASET_HASH,
         expected_manifest_hash=_SIDECAR_MANIFEST_HASH,
         repo_root=_REPO_ROOT,
     )
     audit = load_kis_daily_event_boundary_audit(
-        _AUDIT_PATH,
+        _audit_artifact(Path(artifact_root)),
         expected_artifact_sha256=_AUDIT_HASH,
         expected_catalog_dataset_hash=_CATALOG_DATASET_HASH,
         expected_catalog_index_hash=_CATALOG_INDEX_HASH,
@@ -141,6 +155,7 @@ def load_pinned_kis_daily_joint_event_d1_materializer(
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact-root", type=Path, default=DEFAULT_MODEL_ARTIFACT_ROOT)
+    parser.add_argument("--market-data-root", type=Path, default=_DEFAULT_MARKET_DATA_ROOT)
     parser.add_argument("--parent-artifact", type=Path, default=_PARENT_ARTIFACT)
     parser.add_argument("--fold-artifact", type=Path, default=_FOLD_ARTIFACT)
     parser.add_argument("--phase", choices=("development", "validation"), default="validation")
@@ -153,6 +168,7 @@ def main(argv: list[str] | None = None) -> None:
         artifact_root=artifact_root,
         parent_artifact=Path(args.parent_artifact),
         fold_artifact=Path(args.fold_artifact),
+        market_data_root=Path(args.market_data_root),
     )
     phase = args.phase
     eligible = materializer.eligible_decision_indices(phase)

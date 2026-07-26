@@ -2,11 +2,10 @@
 
 ## Objective
 
-Run the first bounded, candidate-only QQQ/SPY D1 sequence model screen for the
-reattested `expanding-1` fold. It must consume only the local in-memory 20-by-3
-completed-return windows and v2 in-memory QQQ target/cost labels, train on the
-fixed sparse development indices, and report validation classification evidence
-without a replay, model selection, or Paper decision.
+Prepare the second independent QQQ/SPY D1 validation fold without using the
+first-fold model results to tune anything. Reattest only `expanding-2` from the
+active v2 parent, then build its pure fold-local materializer and deterministic
+v2 target/cost semantics as source-safe external evidence.
 
 ## First Reads
 
@@ -19,78 +18,63 @@ without a replay, model selection, or Paper decision.
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Reattest only these external immutable inputs:
+3. Reattest the existing external parent only:
 
    ```text
-   Parent:
    D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json
-
-   Fold input:
-   D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-1-v1.json
-
-   Materializer receipt:
-   D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-1-validation-first-v1.json
-
-   Active target/cost receipt:
-   D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-1-validation-first-v2.json
    ```
 
-   Expected target/cost receipt hash/identity:
-   `sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486` /
-   `sha256:2c0ecbb889b8f1660929e87458e4a90d01f2390e41b25ed47e7201ab8a94b842`.
+   Its expected artifact hash/identity remain
+   `sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814` /
+   `sha256:d8c1a382ca8a16b87288ede8f31df22797574940e50f0c208d4e28dc2677c2a6`.
 
 ## Required Work
 
-1. Build one narrow, fold-local sample iterator that reconstructs only sparse
-   `expanding-1` windows from the verified materializer and v2 target adapter.
-   It must expose exactly 20 rows of QQQ return, SPY return, and QQQ-minus-SPY
-   return per sample, with labels kept in memory. Do not persist rows or labels.
-2. Freeze one candidate screen contract: 2,345 development and 146 validation
-   eligible decisions, no use of the 151-session untouched tail, fixed seed,
-   fixed normalization fit only on development data, binary classification
-   metrics, and no return/PnL/replay metric.
-3. Run a deterministic CPU smoke first. If Docker CUDA is available, run at
-   most one bounded CUDA candidate screen after the smoke using the same frozen
-   sample contract. Compare only a fixed linear baseline and one compact
-   sequence candidate; do not tune, choose a winner, ensemble, promote a
-   checkpoint, or claim profitability.
-4. Keep all summaries/checkpoints under
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; do not store
-   raw data or labels in artifacts or Git. Prefer safe serialization and do not
-   load untrusted checkpoint formats in any execution process.
-5. Add focused tests for sample causality, sparse split preservation,
-   development-only normalization, untouched-tail exclusion, no raw-label
-   persistence, candidate-only scope, and no credential/KIS/Tiingo/broker/
-   network behavior on pure paths.
-6. Ask Claude CLI for a concise falsification-first screen review before
-   relying on any result. If OAuth remains unavailable, record
-   `review_unavailable`; candidate-only CPU/CUDA evidence may continue, but no
-   selection, replay, Paper, or promotion follows.
-7. Have temporary Validation independently inspect the frozen screen contract,
-   one external source-safe result, and the CPU/CUDA scope. Refresh active
-   stateboards with resulting cross-lane facts only.
+1. Produce one immutable, source-safe `expanding-2` fold input under the
+   external artifact root. It must be locally reattested against the rebuilt
+   parent, retain its exact `2,511` development and `128` validation sparse
+   decisions, and not copy raw market values into the artifact.
+2. Generalize only the pure D1 materializer and target/cost adapter boundary
+   necessary to bind one verified named fold at a time. Do not merge folds,
+   create a generic multi-fold campaign, or change `expanding-1` identities or
+   receipts. Preserve `t-20..t+2`, QQQ `t+1/t+2` target semantics, 1/2-bps
+   costs, `0.0001` half-even quantization, and Decimal precision 34.
+3. Write one new immutable source-safe materializer receipt and one new
+   source-safe target/cost receipt for `expanding-2`. They may contain lineage,
+   count, timestamp/index geometry, formula, and scope metadata only; no rows,
+   prices, returns, labels, predictions, model weights, PnL, credentials,
+   accounts, orders, or broker payloads.
+4. Add focused tests for named-fold isolation, exact sparse counts, final
+   151-session tail exclusion, `expanding-1` regression protection, target
+   context independence, Docker `/app/market_data` and `/app/model_artifacts`
+   mount handling, and no Data/Execution/broker/network path on pure imports.
+5. Ask Claude CLI for one concise falsification-first drift-check before
+   relying on the generalized fold boundary. If OAuth remains unavailable,
+   record `review_unavailable`; reattestation and non-executable evidence may
+   continue, but no selection, replay, Paper, or promotion follows.
+6. Have temporary Validation independently inspect the `expanding-2` input and
+   one materializer/target receipt. Refresh stateboards with only changed facts.
 
 ## Hard Boundaries
 
 - Do not read `.env`, call KIS or Tiingo, invoke a broker endpoint, inspect an
   account, submit/modify/cancel an order, or read any `KIS_LIVE_*` value.
-- Do not run a replay, select an ensemble, claim profitability, derive a Paper
-  decision, or enable live behavior.
+- Do not train, replay, select a model, tune from the first-fold summaries,
+  form an ensemble, claim profitability, derive a Paper decision, or enable
+  live behavior.
 - Keep market bytes under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
   either.
-- `review_unavailable` is a promotion/execution boundary only. It cannot become
-  an approval hold for candidate-only research or another ready private lane.
+- `review_unavailable` limits promotion/execution only. It cannot become a hold
+  for this candidate-only contract work or another ready private lane.
 
 ## Completion Evidence
 
-- One source-safe, hash-bound candidate screen contract/result that names the
-  active materializer and v2 target/cost identities but contains no raw rows,
-  labels, predictions, or PnL.
-- CPU smoke evidence and, when CUDA is available, one bounded CUDA result under
-  the external artifact root.
-- Focused tests for causal sample construction, split isolation, scope, and
-  route isolation.
+- External immutable `expanding-2` fold input plus materializer and target/cost
+  receipts with verified hashes and source-safe scope.
+- Focused fold-isolation, causal-geometry, target-determinism, mount, and pure
+  route-isolation tests.
+- Independent Validation result; no model/replay/Paper artifact.
 
 ## Verification
 
@@ -102,5 +86,5 @@ docker compose config --quiet
 ```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A Claude tooling fault or one candidate failure does
+next company objective. A Claude tooling fault or one fold-local failure does
 not stop independent ready work.

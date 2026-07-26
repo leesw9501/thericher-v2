@@ -74,6 +74,14 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   Validation caught a v1 ambient-precision defect, preserved that immutable
   artifact as historical evidence, and passed v2. No target label, model,
   replay, decision, or broker effect is persisted.
+- Engine Research completed the first `expanding-1` candidate-only D1 CPU and
+  CUDA screens under the external artifact root. They used the exact
+  `2345 / 146` sparse split, development-only normalization, and fixed linear/
+  compact-GRU candidates, while retaining only aggregate classification metrics.
+  Temporary Validation passed the source-safe artifacts and route/scope checks.
+  No checkpoint, selection, ensemble, replay, PnL, order, or Paper decision was
+  created. The final 151-session tail begins after later expanding folds, so the
+  exact first-fold list excludes those folds and the tail alike.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -82,19 +90,18 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now one bounded candidate-only sequence screen that
-consumes the fixed `expanding-1` materializer/target contract without losing its
-sparse split, untouched tail, or candidate-only scope. QQQ/SPY has sufficient
-historical input and the fold/materializer/target identities are hash-bound, but
-a generic `CampaignContract` cannot represent the overlapping expanding folds.
-The screen must preserve exact `t+1/t+2` semantics and must not turn a
+The material bottleneck is now a single-fold `expanding-2` reattestation path.
+The parent already supplies exact `2511 / 128` sparse development/validation
+counts, but the current materializer/target helpers intentionally bind only
+`expanding-1`. Generalize them only enough to preserve one named verified fold;
+do not blend folds, tune from the completed first screen, or turn a
 classification score into a selected model, replay result, or Paper input. The
 fixed six-symbol panel remains too short and non-PIT for a depth campaign.
 
-The GPU is ready for one bounded candidate-only run after its CPU smoke. The
-Claude OAuth outage is scoped to reliance, promotion, and execution boundaries;
-it does not require the GPU to stay idle while Research produces non-promoted
-external evidence.
+The GPU is free, but no additional frozen candidate campaign is ready until the
+second fold has its own materializer/target contract. The Claude OAuth outage is
+scoped to reliance, promotion, and execution boundaries; it does not require
+another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -123,16 +130,15 @@ parallel flood.
 ## Recovery
 
 Current class: complete for the daily catch-up, event-window contract,
-`expanding-1` input, first D1 materializer receipt, and v2 target/cost receipt;
-resume for a candidate-only sequence screen. Reattest an individual cache,
-contract, campaign, or exact Paper intent before relying on it. Scope failure
-to that item and continue independent lanes.
+`expanding-1` input/materializer/target receipts, and its candidate-only CPU/
+CUDA screen; resume for `expanding-2` reattestation. Reattest an individual
+cache, contract, campaign, or exact Paper intent before relying on it. Scope
+failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Create one bounded candidate-only D1 sequence screen for the reattested
-`expanding-1` materializer and v2 target/cost adapter while keeping Execution
-independent. Do not treat its mask, historical catalog, or any daily control as
-a selected model or replay result. Record only an actual shared resource
-conflict, new external wait, bottleneck, or reversible operating improvement
-here.
+Create one reattested `expanding-2` D1 materializer and deterministic target/
+cost contract from the same parent while keeping Execution independent. Do not
+treat the completed first screen, historical catalog, or any daily control as a
+selected model or replay result. Record only an actual shared resource conflict,
+new external wait, bottleneck, or reversible operating improvement here.

@@ -5672,3 +5672,33 @@ label while retaining the exact local-paper-style two-fill economics. Claude's
 concise target-semantics check was attempted but OAuth remained expired; no
 private content was sent. That tooling fault prevents no candidate-only screen,
 promotion, replay, Paper, or live action.
+
+## 2026-07-27 - Run a first candidate-only D1 classification screen without replay
+
+Decision: run exactly one CPU smoke and one CUDA screen for the reattested
+`expanding-1` QQQ/SPY D1 fold. Both use the immutable v2 target/cost semantics,
+the exact sparse `2345 / 146` development/validation lists, 20-by-3 completed
+return windows, development-only normalization, and two precommitted candidates:
+a linear classifier and a compact GRU. The external evidence is under
+`D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1`
+with source-safe result identities `sha256:81e486...247f5` for CPU and
+`sha256:8c4e49...32068` for CUDA.
+
+The screen writes only lineage identities, split counts, normalization identity,
+fixed specifications, and aggregate classification metrics. It writes no raw
+rows, targets, predictions, model weights, replay, PnL, broker event, account,
+order, or Paper decision. It creates no selection, ensemble, promotion, or
+profitability claim. The CUDA job ran in Docker's network-disabled research
+profile on the available RTX 4090. Temporary Validation independently passed
+the frozen split, final 151-session tail exclusion, source-safety, and route
+isolation. A script-level injected isolation test denies network/environment
+access; the actual D: loader remains static-local and is additionally contained
+by Docker network isolation.
+
+Reason: a first fold is sufficient to prove the narrow model-input and CUDA
+execution path, but not to choose a model. The parent contract's later folds
+and its final tail remain untouched; `expanding-1` ends before `expanding-2`
+and `expanding-3`, so exact sparse lists rather than a simple end-of-dataset
+calculation define the exclusion boundary. Claude's required concise review was
+attempted but OAuth remained expired. That is a promotion/reliance limitation,
+not a hold on candidate-only evidence.

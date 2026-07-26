@@ -391,6 +391,40 @@ uv run python scripts\prepare_kis_daily_joint_event_d1_target_cost.py `
 The command reattests only local pinned inputs. It does not read `.env`, call
 KIS or Tiingo, invoke a broker, train, replay, or create a Paper decision.
 
+### Candidate-Only D1 Sequence Screen
+
+The completed first-fold CPU and CUDA evidence is external only:
+
+```text
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-20260727-r1
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-20260727-r1
+```
+
+Their source-safe result identities are `sha256:81e486...247f5` and
+`sha256:8c4e49...32068`. Each uses the reattested `expanding-1` materializer,
+the v2 target/cost identity, exactly 2,345 development and 146 validation
+decisions, a development-only normalizer, one fixed linear classifier, and one
+fixed compact GRU. It stores only lineage hashes, counts, fixed specifications,
+and aggregate classification metrics. It stores no rows, targets, predictions,
+model weights, replay events, PnL, credentials, accounts, orders, or fills.
+
+Use Docker's network-disabled research profile for any new immutable attempt:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps `
+  research python scripts/run_kis_daily_joint_event_d1_sequence_screen.py `
+  --mode cpu-smoke --run-label <new-label> `
+  --artifact-root /app/model_artifacts --market-data-root /app/market_data
+```
+
+Only after a completed CPU smoke, a bounded CUDA attempt may replace
+`--mode cpu-smoke` with `--mode cuda-screen` and use a distinct label. This is
+classification evidence only. Do not use either summary to tune, select,
+ensemble, replay, promote, or derive a Paper decision. In Docker, only the
+explicit `/app/market_data` and `/app/model_artifacts` bind mounts count as
+external storage; the host paths remain `D:\market_data` and
+`D:\thericher-v2\model-artifacts`.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS

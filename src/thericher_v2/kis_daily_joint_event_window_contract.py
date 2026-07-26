@@ -1151,7 +1151,9 @@ def _external_artifact_destination(
 ) -> Path:
     resolved_repo = Path(repo_root).resolve()
     resolved_root = Path(artifact_root).resolve()
-    if resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo):
+    if (
+        resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
+    ) and not _is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint event-window artifacts must stay outside the Git workspace")
     destination_path = Path(destination)
     if destination_path.is_symlink():
@@ -1173,7 +1175,9 @@ def _external_artifact_input_path(
 ) -> Path:
     resolved_repo = Path(repo_root).resolve()
     resolved_root = Path(artifact_root).resolve()
-    if resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo):
+    if (
+        resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo)
+    ) and not _is_container_external_mount(resolved_root, resolved_repo):
         raise ValueError("joint event-window artifacts must stay outside the Git workspace")
     artifact_path = Path(path)
     if artifact_path.is_symlink():
@@ -1326,8 +1330,22 @@ def _fold_input_segment_document(
 def _require_external_input_path(path: Path, *, repo_root: Path, label: str) -> None:
     resolved_path = Path(path).resolve()
     resolved_repo = Path(repo_root).resolve()
-    if resolved_path == resolved_repo or resolved_path.is_relative_to(resolved_repo):
+    if (
+        resolved_path == resolved_repo or resolved_path.is_relative_to(resolved_repo)
+    ) and not _is_container_external_mount(resolved_path, resolved_repo):
         raise ValueError(f"joint event-window {label} input must stay outside the Git workspace")
+
+
+def _is_container_external_mount(path: Path, repo_root: Path) -> bool:
+    """Recognize the two Docker bind-mount destinations as external storage."""
+
+    container_repo = Path("/app").resolve()
+    if repo_root != container_repo:
+        return False
+    return any(
+        path == container_repo / name or path.is_relative_to(container_repo / name)
+        for name in ("market_data", "model_artifacts")
+    )
 
 
 def _required_attribute(source: object, attribute: str, label: str) -> object:

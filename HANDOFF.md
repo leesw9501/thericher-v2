@@ -225,6 +225,26 @@ authorized private KIS Paper work.
   Validation found that its intermediate Decimal arithmetic depended on ambient
   precision, so no v1 target result may be used. v2 independently passed the
   reproducer, source-safety, geometry, and pure-import checks.
+- The first `expanding-1` candidate-only D1 screen completed in the
+  network-disabled Docker research container. Its immutable CPU and CUDA
+  summaries are under
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-20260727-r1`
+  and
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-20260727-r1`.
+  Their source-safe result identities are `sha256:81e486...247f5` and
+  `sha256:8c4e49...32068`. Both consumed exactly `2345 / 146` sparse
+  development/validation decisions, fit normalization only on development,
+  and recorded aggregate classification metrics only. They wrote no rows,
+  targets, predictions, model parameters, replay, PnL, broker event, or Paper
+  decision. CUDA used the RTX 4090 once; no candidate was selected.
+- `expanding-1` ends before the parent contract's later `expanding-2` and
+  `expanding-3` folds. The final 151-session unused tail begins after those
+  folds, not immediately after `expanding-1`; exact sparse input lists prevent
+  this screen from consuming either later fold or the final tail.
+- The offline reattestation helper now accepts an explicit market-data root,
+  and the joint contract recognizes only Docker's `/app/market_data` and
+  `/app/model_artifacts` bind mounts as external storage. Host storage remains
+  `D:\market_data` and `D:\thericher-v2\model-artifacts`.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -306,8 +326,8 @@ ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
 six-symbol-control, joint-event leakage, fold-local adapter, D1 materializer,
-and target-semantics checks; no private material was sent. This is a scoped
-tooling fault, not a hold on ready private work.
+target-semantics, and candidate-only screen checks; no private material was
+sent. This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -319,9 +339,10 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
-run one bounded candidate-only CPU/CUDA D1 sequence screen from the reattested
-`expanding-1` materializer and v2 target/cost adapter. Keep data and labels in
-memory, preserve sparse indices and the untouched tail, and do not replay,
-select, promote, or derive a Paper intent. Refresh this file only with
-resulting cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Reattest only `expanding-2` from the same parent and
+prepare its single-fold D1 materializer and deterministic target/cost semantics
+without copying `expanding-1` result values into the new fold. Keep rows and
+targets in memory, preserve the second fold's exact sparse lists and final
+tail, and do not replay, select, promote, or derive a Paper intent. Refresh
+this file only with resulting cross-lane facts after that bounded objective
+completes.

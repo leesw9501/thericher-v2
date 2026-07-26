@@ -63,13 +63,17 @@ remains unavailable.
   it persists no label, price, PnL, intent, account, order, replay, KIS, or
   live effect. A later candidate-only model screen remains equally outside the
   Execution route.
+- The completed `expanding-1` candidate-only CPU/CUDA screen imported neither
+  Execution nor `local_paper`, created no replay, intent, fill, position, cash,
+  or PnL object, and wrote only external aggregate classification evidence.
+  The next fold contract remains outside every Execution route.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research run a candidate-only D1 sequence screen from
-   the reattested offline materializer/target contract. Its replay and
-   route-isolation tests are the current integration evidence.
+   stable while Data and Research prepare the reattested `expanding-2` offline
+   D1 materializer/target contract. It must remain separate from every replay,
+   account, intent, and broker route.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -96,6 +100,6 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next fold-local model screen is
+binding and route boundaries intact. The next `expanding-2` fold contract is
 candidate-only; do not let it acquire an account, order, KIS, Tiingo, or replay
 path.
