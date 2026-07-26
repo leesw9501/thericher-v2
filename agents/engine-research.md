@@ -11,12 +11,12 @@ modify broker submission or deterministic execution-risk behavior.
 
 ## Current Objective
 
-Keep the completed KIS-native QQQ/SPY daily sequence breadth screen as
-development-only falsification evidence while preparing only the next frozen,
-non-promotion research package. The prospective QQQ first-five pair is required
-only for its isolated prospective observation, pair-dependent campaign, and
-later pair-dependent promotion decisions; it does not make historical research
-input-pending.
+Keep the completed KIS-native QQQ/SPY daily sequence breadth screen and the
+frozen L2 logistic control as development-only falsification evidence while
+preparing only the next frozen, non-promotion research package. The prospective
+QQQ first-five pair is required only for its isolated prospective observation,
+pair-dependent campaign, and later pair-dependent promotion decisions; it does
+not make historical research input-pending.
 
 ## Current Readiness
 
@@ -40,6 +40,18 @@ input-pending.
   Each attempt wrote three checkpoints and six replay cells solely beneath the
   external artifact root. No candidate, result, ensemble, promotion, holdout,
   broker route, or Paper action was selected or created.
+- The immutable `cpu-control-20260726T154600Z-r2` L2 logistic run completed
+  against the exact QQQ/SPY daily hashes. Its precommit binds the fixed
+  `10000` starting cash and one-share quantity before fitting and validation;
+  it produced two model and six naive `local_paper` replay cells. The model was
+  after-cost negative for both symbols and weaker than the previous-bar
+  direction comparator, so it is a falsified control, not a candidate,
+  selection, ensemble member, or Paper input. The external summary is under
+  `D:\thericher-v2\model-artifacts\kis-daily-l2-logistic-control-v1`.
+- The preceding `cpu-control-20260726T154042Z` artifact remains immutable but
+  is not a qualifying campaign result: its precommit omitted replay sizing.
+  It must not be compared, selected, or used to support PnL claims. The r2
+  run is the sole corrected result for this fixed configuration.
 - No GPU job is active. The qualified QQQ/SPY daily intersection supports a
   small development-only sequence breadth screen, so its GPU use can be tied
   to a falsifiable campaign rather than occupancy alone.
@@ -51,15 +63,17 @@ input-pending.
 
 ## Ready Queue
 
-1. Keep the completed daily breadth result descriptive only. Do not select a
-   winner, create an ensemble, promote a checkpoint, or create a KIS Paper
-   action from it.
-2. Maintain breadth, depth, ensemble, and replication queues: the completed
-   daily breadth item is evidence; intraday breadth/depth remain input-pending;
-   ensemble is empty until independently useful, error-diverse candidates exist.
-3. Consume a verified prospective pair as an additional observation/campaign
-   input when Data provides it. It never rewrites historical results or becomes
-   a global queue gate.
+1. Keep the completed daily breadth and L2 control results descriptive only.
+   Do not retune a threshold, select a winner, create an ensemble, promote a
+   checkpoint, or create a KIS Paper action from their validation results.
+2. Expand the future breadth queue through a separately qualified KIS-native
+   daily universe for stock-selection research. A fresh campaign must freeze
+   its own source, chronology, cost model, and decision contract before model
+   fitting; the two-ETF result cannot be silently repurposed.
+3. Keep depth input-pending and ensemble empty until independent, error-diverse
+   candidates exist. Consume a verified prospective pair as an additional
+   observation/campaign input when Data provides it; it never rewrites
+   historical results or becomes a global queue gate.
 
 ## Durable Constraints
 
@@ -78,5 +92,7 @@ its pair-bound observation.
 
 ## Next Handoff
 
-Return the completed daily campaign evidence without a candidate-selection
-claim. Do not wait for prospective collection to keep other ready roles moving.
+Return the corrected daily L2 control evidence without a candidate-selection
+claim, then obtain a bounded KIS-native daily-universe capability fact before
+opening another stock-selection campaign. Do not wait for prospective
+collection to keep other ready roles moving.

@@ -5413,3 +5413,25 @@ end-to-end installation only after the complete owned path was aligned. Sharing
 one setting removes an accidental local throughput loss while preserving the
 existing measured recovery controls and avoiding a claim of unlimited provider
 capacity.
+
+## 2026-07-26 - Bind frozen replay economics and artifact containment
+
+Decision: every immutable local-paper research control must bind its replay
+cash and quantity in the precommit before fitting and validation replay. The
+L2 logistic control fixes `10000` starting cash and one-share quantity in both
+its precommit and source-safe summary; callers cannot override either value.
+Its core artifact API now accepts only ASCII-safe labels and resolves the
+output beneath its named external artifact root, while rejecting both a
+caller-supplied repository root and the actual module repository root.
+
+The completed first artifact remains immutable but is unqualified because its
+precommit did not contain the replay sizing. The corrected r2 run used the same
+fixed model and data configuration, produced only external artifacts, and was
+after-cost negative for both QQQ and SPY. It is descriptive falsification
+evidence only: no threshold tuning, model selection, ensemble, promotion,
+broker route, or Paper intent follows from either artifact.
+
+Reason: a replay's PnL cannot be reproducible evidence if a caller can alter
+its economic envelope after the model precommit. Root containment and negative
+completed-bar timing tests keep a bounded research control from writing outside
+its evidence boundary or accepting a cross-phase decision window.

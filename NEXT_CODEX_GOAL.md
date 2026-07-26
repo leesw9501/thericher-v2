@@ -2,13 +2,14 @@
 
 ## Objective
 
-Run one frozen QQQ/SPY KIS-private-daily CPU L2 logistic control campaign.
+Establish a six-symbol NAS-only KIS Paper daily-universe capability cache.
 
-Use the existing hash-attested, completed-bar daily pair to produce one
-reproducible descriptive validation result and its matched local-paper naive
-comparators. This advances feature/model research, backtest validation, and
-PnL attribution. It does not select a model, tune a result, create an
-ensemble, submit a broker order, or enable live behavior.
+Use one existing official current-listing directory snapshot only to choose a
+small, deterministic prospective NASDAQ common-stock probe set, then test the
+existing KIS Paper daily collector against that set. This advances the data
+foundation for future stock-selection research. It does not construct a
+historical point-in-time universe, train a model, select a strategy, submit an
+order, or enable live behavior.
 
 ## First Reads
 
@@ -21,60 +22,73 @@ ensemble, submit a broker order, or enable live behavior.
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Read the frozen daily sequence campaign contract and the L2 control module
-   and tests before executing the campaign. Inspect only source-safe catalog
-   metadata and hashes; do not print raw rows.
+3. Inspect only source-safe metadata for the official symbol-directory snapshot
+   and existing KIS daily cache/control state. Do not scan or print raw price
+   rows, credentials, or account facts.
 
 ## Required Work
 
-1. Review and integrate the fixed CPU L2 logistic control implementation. It
-   must use the exact QQQ/SPY daily catalog hashes, 20 completed-bar features,
-   the chronological `3,783 / 22 / 951` geometry, development-only fitting,
-   fixed threshold and hyperparameters, and a unique immutable run label.
-2. Run the one offline CPU campaign against the attested local cache using
-   `D:\thericher-v2\model-artifacts` as the artifact root. Write precommit,
-   model parameters, replay evidence, and summary only outside Git. Do not
-   write raw market data to the artifact root.
-3. Replay the frozen validation exactly once for the L2 control and the fixed
-   `flat`, `always_long`, and `previous_bar_direction` comparators. Every fill
-   must stay `source: local_paper`.
-4. Inspect only the source-safe summary, hashes, replay counts, costs, and PnL
-   attribution. Do not tune, rerun with a changed parameter, choose a winner,
-   build an ensemble, or materialize a sealed holdout. If the result is
-   unexpectedly stronger than the naive comparators, ask Claude for the
-   required falsification-first challenge before relying on that interpretation;
-   an expired CLI session is a scoped reviewer-tool fault, not a promotion.
-5. Keep the Data worker and Execution lane independent. Do not make a future
-   data capture, KIS API response, GPU job, or local-paper result a prerequisite
-   for this bounded CPU control.
-6. Update the Engine Research and orchestration stateboards with only the
-   campaign contract, external evidence pointer, result scope, and next
-   falsification action. Preserve the existing corporate-action limitation.
+1. Ask Claude CLI for a concise falsification-first review before adding the
+   new immutable symbol registry and probe cache. State that the official
+   directory is current-listing evidence only, the fixed six-symbol NAS-only
+   scope, KIS's unproven general-symbol historical reach, source separation,
+   stop rule, and the fact that would prevent broader collection. An expired
+   CLI session is scoped reviewer-tool evidence, not a hold on private
+   non-live Data work.
+2. Implement a deterministic parser for the existing official directory
+   snapshot and a probe-owned immutable NASDAQ common-stock symbol/exchange
+   registry. Pin the exact source manifest/hash. Exclude nonstandard/test/ETF
+   entries by explicit documented rules. Do not widen the existing global KIS
+   daily allowlist or reuse the QQQ/SPY research catalog as a universe.
+3. Add a separate cache and manifest contract below
+   `D:\market_data\us_equities\kis_paper_private\daily-universe-probe\v1`.
+   It must preserve source identity, registry hash, target identity, request
+   counts, strict `tr_cont` cursor progress, accepted/source-limited/
+   unsupported/invalid classification, and recovery state without printing raw
+   rows.
+4. Run one finite capability worker: exactly six NAS targets, one Paper client,
+   concurrency one, the installed 1.0-second request gate, and at most two
+   daily pages per target (twelve page requests maximum). Store raw daily bytes
+   only in the probe cache under `D:`; write only source-safe evidence under
+   the external artifact root.
+5. Keep current-listing and price-provider facts separate. A successful probe
+   is not a historical PIT universe, a corporate-action qualification, a
+   training dataset, a model result, or a paper-trading prerequisite. A weak or
+   partial source result completes this objective with a scoped classification;
+   do not silently substitute another provider or expand the target set.
+6. Add focused tests for deterministic registry selection, manifest/hash
+   binding, six-target/page caps, cursor and classification behavior, external
+   storage, no account/order/live route, and unchanged local-paper isolation.
+7. Keep Engine Research and Execution independent. Update Data and
+   orchestration stateboards with only the new source contract, finite result,
+   limitations, recovery fact, and next ready action.
 
 ## Hard Boundaries
 
-- This is offline research: do not read `.env`, credentials, account facts, or
-  `KIS_LIVE_*`, and do not make KIS, broker, or public-network calls.
-- Do not submit, modify, cancel, or reconcile a broker order. Do not create a
-  KIS Paper intent from this campaign.
+- Use `KIS_PAPER_*` only through the owned Paper **daily market-data** route.
+  Do not call account, position, order, cancel, modify, or any `KIS_LIVE_*`
+  endpoint.
+- Do not read `.env` beyond the owned Paper market-data configuration path, and
+  never print, log, commit, or send credentials, account identifiers, raw
+  provider payloads, or raw prices to Claude.
+- NAS only: do not add NYS/AMS exchange mapping, a scheduler, a broad backfill,
+  a parallel request flood, or more than the six fixed targets in this goal.
 - Keep market-data bytes under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
   either.
-- No GPU training, parameter sweep, retraining, ensemble, selection,
-  promotion, dashboard change, or scheduler is in scope.
-- Do not print or send raw bars, credentials, account identifiers, model
-  weights, or sealed labels to Claude.
+- Do not create a stock-selection model, ranking, PnL result, dashboard,
+  ensemble, paper intent, or live behavior from this capability probe.
 
 ## Completion Evidence
 
-- A test-backed deterministic control implementation that rejects repository
-  artifact paths and requires the frozen pair contract.
-- One external immutable CPU run with a precommit written before fitting and
-  validation replay.
-- Two model replay cells and six naive replay cells, all `local_paper`, with
-  source-safe after-cost PnL attribution.
-- Updated stateboards that state plainly that the result is descriptive only
-  and name its next falsification step.
+- A hash-pinned current-listing source contract and deterministic six-target
+  NAS-only registry, explicitly marked prospective-only.
+- A separate, recoverable KIS daily probe cache with one final classification
+  for each target and no modification of the QQQ/SPY research catalog.
+- One finite single-client collection result or a precise source-limited fact,
+  with no account/order/live route and no raw data in Git or artifacts.
+- Updated Data and orchestration stateboards that name the exact limitation
+  preventing or permitting a future stock-selection campaign.
 
 ## Verification
 
@@ -86,5 +100,5 @@ docker compose config --quiet
 ~~~
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A weak/negative result, existing data limitation, GPU
-idle period, or lane-local failure does not stop another ready lane.
+next company objective. A rate cooldown, unsupported symbol, incomplete page,
+weak source coverage, or lane-local failure does not stop another ready lane.

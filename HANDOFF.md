@@ -123,6 +123,14 @@ authorized private KIS Paper work.
   cells retained `local_paper`. Three checkpoints per attempt are external
   only. No model, ensemble, promotion, holdout, KIS route, or Paper action was
   selected.
+- The corrected immutable CPU L2 logistic control run
+  `cpu-control-20260726T154600Z-r2` used the same hash-attested QQQ/SPY daily
+  panel, 20 completed-bar features, and `3,783 / 22 / 951` split. Its
+  precommit fixes `10000` local-paper cash and one-share sizing before fit and
+  replay. Both model replay cells were after-cost negative and weaker than the
+  previous-bar direction comparator; no model, ensemble, promotion, Paper
+  intent, or profitability claim was selected. The earlier r1 artifact remains
+  immutable but is unqualified because its precommit omitted replay sizing.
 - No GPU job is active. The completed daily evidence must not be promoted or
   used to choose a Paper order; prospective intraday coverage remains an
   independent Data concern.
@@ -215,7 +223,7 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Align the accepted 1.0-second KIS Paper candidate
-through the complete owned request path, then use the existing finite collector
-to make evidence-backed progress on a ready cursor. Refresh this file only with
-the resulting current cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls as descriptive
+evidence and establish whether a bounded KIS-native daily universe can support
+the next stock-selection research contract. Refresh this file only with the
+resulting current cross-lane facts after that bounded objective completes.

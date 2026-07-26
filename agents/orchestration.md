@@ -20,6 +20,11 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   one CPU smoke and one Docker CUDA screen over LSTM, causal TCN, and compact
   attention. Both produced only external checkpoints and six `local_paper`
   replay cells; neither selected a model, ensemble, promotion, or Paper action.
+- Engine Research's corrected immutable QQQ/SPY L2 logistic control is
+  after-cost negative for both symbols and weaker than its previous-bar
+  direction comparator. Its two model and six naive replay cells are all
+  `local_paper`; it is a falsified control, not an execution or selection
+  result.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -28,23 +33,23 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now research interpretation rather than request
-pacing. The installed 1.0-second setting is not a daily allowance, calibrated
-ceiling, historical-pagination proof, or complete regular-session input. The
-completed daily screen remains development-only evidence with unqualified
-corporate-action semantics, so it cannot become a model-selection or execution
-input.
+The material bottleneck is research breadth: the fixed two-ETF daily controls
+are weak after realistic local costs, so repeated threshold tuning would not
+advance the engine. The installed 1.0-second Data setting is not a daily
+allowance, calibrated ceiling, historical-pagination proof, or complete
+regular-session input. A bounded KIS-native daily-universe capability fact is
+needed before a stock-selection campaign can be meaningful.
 
 ## Current Operating Improvement
 
-The current reversible improvement is one shared 1.0-second pacing constant
-for the gate and both collector-local delays, protected by a direct alignment
-test and a probe that will not accept an observed faster-than-claimed interval.
-A worker owns its own backoff and recovery, and Codex does not sleep while
-another lane is ready. At task resume or an observed unexplained foreground
-idle period, invoke one bounded Throughput Review from the existing stateboards
-and active-job facts; retain only one measured, reversible improvement here
-rather than creating a standing process lane.
+The current reversible improvement is a frozen research precommit that binds
+both fixed replay sizing and artifact containment before a validation replay.
+The shared 1.0-second pacing alignment remains the Data worker's active
+control. A worker owns its own backoff and recovery, and Codex does not sleep
+while another lane is ready. At task resume or an observed unexplained
+foreground idle period, invoke one bounded Throughput Review from the existing
+stateboards and active-job facts; retain only one measured, reversible
+improvement here rather than creating a standing process lane.
 
 ## External Waits
 
@@ -61,8 +66,8 @@ lanes.
 
 ## Next Handoff
 
-Keep the KIS data worker independent at its next due cursor and integrate the
-frozen daily control campaign without treating either rate control or an early
-daily result as a selected model. Record only an actual shared resource
-conflict, new external wait, bottleneck, or reversible operating improvement
-here.
+Keep the KIS data worker independent at its next due cursor and establish a
+bounded daily-universe capability fact for stock-selection research. Do not
+treat either the rate control or the weak daily controls as selected models.
+Record only an actual shared resource conflict, new external wait, bottleneck,
+or reversible operating improvement here.
