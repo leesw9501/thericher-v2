@@ -237,6 +237,25 @@ authorized private KIS Paper work.
   and recorded aggregate classification metrics only. They wrote no rows,
   targets, predictions, model parameters, replay, PnL, broker event, or Paper
   decision. CUDA used the RTX 4090 once; no candidate was selected.
+- The independent `expanding-2` lineage is now reattested without consuming
+  any first-screen result. Its immutable fold input is
+  `sha256:79723a4713b5a4751b6a62ddcd700b67542012bf3ff17a44958b7bd3d67c9305`
+  with input identity
+  `sha256:6507570e49022133ff1055d49d610a6c32e80b92c0f881115f67d9e68e899f4e`.
+  It binds exactly `2511 / 128` sparse development/validation decisions. Its
+  source-safe materializer and target/cost receipts are respectively
+  `sha256:e489f1bfadf0c685acaa0ff030d184fdc94b191aa4684b4cad7db3c69099709f`
+  and `sha256:4de77ac80db46b1378c5728473e2f31c04b5c5343ffde8ddf507b9afb16941da`.
+  Both reattest byte-for-byte from the local catalog, retain only lineage and
+  `t-20..t+2` geometry for validation decision `4099`, and persist no market
+  values, labels, predictions, weights, replay, PnL, broker, account, or
+  credential data. The pure adapters accept only explicit `expanding-1` or
+  `expanding-2` pins; they do not form a multi-fold campaign.
+- Temporary Validation independently passed the second-fold parent lineage,
+  `2511 / 128` counts, final 151-session-tail exclusion, source-safety, pure
+  import/route isolation, and the narrowly scoped Docker external-mount rule.
+  A Docker recovery invocation reached the external mount and correctly refused
+  to overwrite the existing immutable receipts.
 - `expanding-1` ends before the parent contract's later `expanding-2` and
   `expanding-3` folds. The final 151-session unused tail begins after those
   folds, not immediately after `expanding-1`; exact sparse input lists prevent
@@ -325,7 +344,7 @@ Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
-six-symbol-control, joint-event leakage, fold-local adapter, D1 materializer,
+six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
 target-semantics, and candidate-only screen checks; no private material was
 sent. This is a scoped tooling fault, not a hold on ready private work.
 
@@ -339,10 +358,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Reattest only `expanding-2` from the same parent and
-prepare its single-fold D1 materializer and deterministic target/cost semantics
-without copying `expanding-1` result values into the new fold. Keep rows and
-targets in memory, preserve the second fold's exact sparse lists and final
-tail, and do not replay, select, promote, or derive a Paper intent. Refresh
-this file only with resulting cross-lane facts after that bounded objective
-completes.
+Follow NEXT_CODEX_GOAL.md. Run the fixed `expanding-2` candidate-only CPU smoke
+then one network-disabled Docker CUDA screen with the existing linear and
+compact-GRU specifications. Preserve the exact sparse lists, development-only
+normalization, and final tail; do not tune from `expanding-1`, replay, select,
+promote, or derive a Paper intent. Refresh this file only with resulting
+cross-lane facts after that bounded objective completes.

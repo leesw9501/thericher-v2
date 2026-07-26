@@ -391,6 +391,29 @@ uv run python scripts\prepare_kis_daily_joint_event_d1_target_cost.py `
 The command reattests only local pinned inputs. It does not read `.env`, call
 KIS or Tiingo, invoke a broker, train, replay, or create a Paper decision.
 
+### Independent Expanding-2 Contract
+
+The completed second-fold artifacts remain external and immutable:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-2-v1.json
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-2-validation-first-v1.json
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-2-validation-first-v2.json
+```
+
+Their hashes are `sha256:79723a...c9305`, `sha256:e489f...9709f`, and
+`sha256:4de77...941da`. The fold input is `2511 / 128` sparse
+development/validation decisions and the validation receipt proves only
+`4079 -> 4080..4099 -> 4100/4101` (`t-20..t+2`) geometry. The fixed target
+semantics remain v2 with Decimal precision 34.
+
+For a first immutable write to a different verified single-fold destination,
+explicitly pass `--fold-id expanding-2` to each preceding materializer and
+target/cost command. The default artifact names above intentionally refuse a
+second write with `FileExistsError`; preserve that file and reattest its hash
+and lineage instead of overwriting it. In Docker, use the same
+`/app/model_artifacts` and `/app/market_data` arguments shown below.
+
 ### Candidate-Only D1 Sequence Screen
 
 The completed first-fold CPU and CUDA evidence is external only:

@@ -5702,3 +5702,31 @@ and `expanding-3`, so exact sparse lists rather than a simple end-of-dataset
 calculation define the exclusion boundary. Claude's required concise review was
 attempted but OAuth remained expired. That is a promotion/reliance limitation,
 not a hold on candidate-only evidence.
+
+## 2026-07-27 - Reattest the independent expanding-2 D1 contract without merging folds
+
+Decision: expose only the separately reattested `expanding-2` input to the
+existing pure D1 materializer and deterministic v2 target/cost adapter. Its
+external fold artifact is
+`sha256:79723a4713b5a4751b6a62ddcd700b67542012bf3ff17a44958b7bd3d67c9305`
+with fold identity
+`sha256:6507570e49022133ff1055d49d610a6c32e80b92c0f881115f67d9e68e899f4e`.
+It pins exactly `2511 / 128` sparse development/validation decisions. The
+external source-safe materializer and target/cost receipts are
+`sha256:e489f1bfadf0c685acaa0ff030d184fdc94b191aa4684b4cad7db3c69099709f`
+and `sha256:4de77ac80db46b1378c5728473e2f31c04b5c5343ffde8ddf507b9afb16941da`.
+
+The adapter accepts only one explicit verified fold at a time and currently
+allows the pinned `expanding-1` and `expanding-2` contracts. It does not expose
+`expanding-3`, form a multi-fold campaign, change first-fold identities, retain
+market values or labels, train, replay, select, ensemble, create a Paper
+decision, or call any provider or broker. Its Docker exception recognizes only
+the explicit `/app/market_data` and `/app/model_artifacts` bind mounts when the
+repository root is `/app`; host artifact roots still must remain outside Git.
+
+Reason: an independently fixed second fold is the next necessary validation
+input, while one-fold-at-a-time lineage prevents the overlapping expanding
+windows from becoming an accidental pooled selection dataset. Claude's
+falsification-first review was attempted and OAuth remained expired; Temporary
+Validation independently passed the parent lineage, sparse counts, `t-20..t+2`
+geometry, final 151-session-tail exclusion, source-safety, and route isolation.
