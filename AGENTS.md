@@ -151,6 +151,16 @@ gate; name its owner, reason, and observed effect. Do not mistake a local sleep
 for a provider limit or lower one pacing layer while an older, longer layer
 remains unexamined.
 
+A collector reaching `complete`, `drained`, or `source_limited` closes only its
+exact cache/cursor contract. It is not a claim that KIS has no older history or
+that market-data work is globally finished. When an active engine loop needs
+more coverage, the next Data-owned package first probes the exact endpoint's
+temporal reach, page yield, and continuation semantics with one reusable
+client. It then resumes bounded serial collection from a durable cursor when
+the probe establishes a useful scope. The probe and collector record only
+source-safe coverage and pacing facts; neither becomes a foreground wait or a
+reason to stop independent lanes.
+
 ### Role Agents
 
 A role agent is a durable lane with a stateboard. It may be executed by a

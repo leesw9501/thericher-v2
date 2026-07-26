@@ -63,6 +63,12 @@ authorized private KIS Paper work.
 - For KIS Data, distinguish token issuance, page pacing, and worker schedule
   facts. A token-start guard or an owned `next_due` is not a foreground delay;
   it is a reason to run another ready package while the owning worker yields.
+- A completed, drained, or source-limited KIS cache is a fact about its exact
+  cursor contract, not a claim that all historical coverage is exhausted. A
+  future coverage need begins with a bounded endpoint-reach/page-yield probe,
+  then uses one reused client and durable serial cursor progress at the measured
+  request pace. It never turns a five-minute token-start guard into a worker
+  sleep or replaces measured collection with a parallel request flood.
 - GPU scheduling is work-conserving only for frozen eligible research: when the
   GPU is free, Research starts its next ready campaign or records the exact
   missing data, contract, or resource fact. It does not manufacture training to

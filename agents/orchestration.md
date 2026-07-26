@@ -56,10 +56,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 The material bottleneck is no longer a ready daily cursor. QQQ/SPY already has
 long KIS-compatible history, but its current `+-1` event audit is not sufficient
-for a 20-session joint sequence window and `t -> t+1 -> t+2` replay label. The
-next contract must make that leakage boundary explicit before new daily model
-work can use the data. The fixed six-symbol panel remains too short and
-non-PIT for a depth campaign.
+for the actual joint sequence dependency `t-20..t+2`: its first visible
+feature return reads the predecessor close at `t-20`, then replay labels use
+`t+1` and `t+2`. The next contract must make that leakage boundary and its
+fixed 3,783/22/252/151 expanding-fold geometry explicit before new daily model
+work can use the data. The fixed six-symbol panel remains too short and non-PIT
+for a depth campaign.
 
 The GPU is deliberately idle because no frozen depth-eligible campaign exists.
 Research must start the first such campaign when the joint event-window contract
@@ -71,8 +73,11 @@ The current reversible improvement is observable data throughput: the daily
 catch-up profile now writes an immutable source-safe external receipt even when
 the cache is already drained, and focused tests prove second-page pacing is not
 doubled. A worker-local rate or recovery outcome still yields while Codex
-advances independent lanes. The hash-pinned six-target panel and frozen
-research precommit remain active.
+advances independent lanes. A completed cursor is now explicitly scoped to its
+own cache; any future coverage gap starts with one endpoint-reach/page-yield
+probe, then a reused-client serial collector rather than a foreground sleep or
+parallel flood. The hash-pinned six-target panel and frozen research precommit
+remain active.
 
 ## External Waits
 

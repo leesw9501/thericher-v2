@@ -15,8 +15,10 @@ Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
 evidence. Bind the already-attested QQQ/SPY catalog and price-free event
 sidecar into a joint event-window candidate for a future offline Research
-contract. The prospective QQQ 1m first-five pair is one Data product for a
-named future observer; it is not the only Data output or a company hold.
+contract. Its full sequence dependency mask is `t-20..t+2`, not merely the 20
+visible feature rows `t-19..t`. The prospective QQQ 1m first-five pair is one
+Data product for a named future observer; it is not the only Data output or a
+company hold.
 
 ## Current Facts
 
@@ -107,11 +109,25 @@ named future observer; it is not the only Data output or a company hold.
 ## Ready Queue
 
 1. Reattest the exact QQQ/SPY catalog, event-only Tiingo sidecar, and existing
-   boundary-audit identities for a joint event-window candidate. This is
-   offline, uses no token, and does not fetch or blend provider price rows.
+   boundary-audit identities for a joint event-window candidate. Use a joint
+   `t-20..t+2` event mask and fixed expanding folds rooted at 3,783 development
+   sessions; this is offline, uses no token, and does not fetch or blend
+   provider price rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
+
+## Future KIS Coverage Procedure
+
+When a later objective needs KIS coverage beyond a completed cache contract,
+first run a bounded source-safe reach probe for the named symbol, exchange,
+endpoint, and granularity. It records the oldest reached date bucket, page
+yield, continuation behavior, and categorical limits without printing rows.
+If that probe establishes useful reach, resume one durable serial collector
+with one reused client/token and its own cursor under the shared measured gate.
+The current five-minute token-start guard spaces token POST attempts only; it
+does not delay an existing collector. A terminal result closes only that probe
+or cursor scope, never another collector or lane.
 
 ## Durable Constraints
 

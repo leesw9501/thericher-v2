@@ -80,8 +80,9 @@ promotion decisions; it does not make historical research input-pending.
 - The daily catch-up worker is now terminal and added no QQQ/SPY rows. The
   existing QQQ/SPY history is therefore the candidate input, not a reason to
   wait for more collection. Its existing `+-1` event-boundary audit does not by
-  itself protect a 20-session sequence feature window and `t -> t+1 -> t+2`
-  replay label; a joint candidate mask must cover both symbols before any new
+  itself protect the true `t-20..t+2` sequence dependency: visible feature rows
+  are `t-19..t`, their first return reads `t-20`, and replay labels use `t+1`
+  and `t+2`. A joint candidate mask must cover both symbols before any new
   sequence campaign is executable.
 
 ## Ready Queue
@@ -90,8 +91,10 @@ promotion decisions; it does not make historical research input-pending.
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
 2. Build only the source-safe joint event mask and three-fold expanding campaign
-   candidate for the exact QQQ/SPY data lineage. Keep it non-executable until
-   the named Claude leakage review returns or is explicitly retried.
+   candidate for the exact QQQ/SPY data lineage. Pin the 3,783-session initial
+   development region, three 22/252 purge/validation folds, and 151-session
+   unused tail. Keep it non-executable until the named Claude leakage review
+   returns or is explicitly retried.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites

@@ -30,14 +30,17 @@ submit a Paper order.
 
 1. Build a pure offline joint event-window contract for the exact QQQ/SPY
    lineage. A candidate decision must be excluded for both symbols when either
-   symbol has a qualified event in its 20 completed-session feature window or
-   anywhere from decision `t` through the replay/label horizon `t+2`.
+   symbol has a qualified event anywhere in its actual feature/label dependency
+   span `t-20..t+2`: the 20 completed-session feature rows are `t-19..t`, but
+   the first return reads the predecessor close at `t-20`.
 2. Freeze three expanding chronological validation folds over the reattested
-   daily catalog: each fold has a 252-session validation region, a 22-session
-   pre-validation purge/warmup, and an expanding development region. Preserve
-   the final unused tail for a later objective. Reject a contract that lacks
-   enough eligible samples after joint masking rather than shrinking the
-   boundary ad hoc.
+   4,756-session daily catalog with initial development `[0, 3783)`. Each fold
+   has a 252-session validation region and a 22-session pre-validation
+   purge/warmup: `[3783, 3805) -> [3805, 4057)`, `[4057, 4079) -> [4079,
+   4331)`, and `[4331, 4353) -> [4353, 4605)`. Preserve `[4605, 4756)` as the
+   151-session unused tail for a later objective. Reject a contract that lacks
+   enough eligible samples after joint masking rather than shrinking or moving
+   these boundaries ad hoc.
 3. Keep the contract source-safe and external: it may retain hashes, event
    dates/kinds, aggregate counts, fold boundaries, and eligibility identities,
    but not raw prices, returns, feature values, provider response bytes,
@@ -59,7 +62,8 @@ submit a Paper order.
 
 - This objective is offline. Do not read `.env`, call KIS or Tiingo, invoke a
   broker endpoint, inspect an account, submit/modify/cancel an order, or read
-  any `KIS_LIVE_*` value.
+  any `KIS_LIVE_*` value. This restriction applies to this contract worker; it
+  does not suspend an independently due, correctly scoped KIS Data worker.
 - Do not train CPU/GPU models, run an architecture screen, tune a parameter,
   open/reuse a sealed holdout, select an ensemble, claim profitability, or
   produce a Paper decision.
