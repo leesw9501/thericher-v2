@@ -35,6 +35,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   direction comparator. Its two model and six naive replay cells are all
   `local_paper`; it is a falsified control, not an execution or selection
   result.
+- Engine Research completed the frozen six-symbol daily CPU control through
+  twelve broker-free `local_paper` replays. The exact 199-session current-basket
+  source, split, costs, and naive comparator are hash-bound externally. Four
+  descriptive per-symbol deltas exceeded the comparator and two did not; this
+  is a falsification trigger, not a winner, profitability, ranking, ensemble,
+  GPU, or Paper-order result.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -43,25 +49,23 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is the first empirical per-symbol baseline on the
-qualified fixed-basket panel. The new panel has only 199 current-basket
-sessions and cannot support a PIT stock-selection claim or a depth GPU campaign.
-The fixed two-ETF controls are weak after realistic local costs, so repeated
-threshold tuning would not advance the engine.
+The material bottleneck is longer, source-separated daily history for the
+existing KIS-compatible cache. The first fixed-basket control is complete but
+has only 199 current-listing sessions and cannot support a PIT stock-selection
+claim or a depth GPU campaign. The existing catch-up worker is ready to close
+the data-coverage gap; repeated momentum threshold tuning would not.
 
-The GPU is deliberately idle for this objective because its only new panel is
-not depth-training eligible. At the next objective boundary, Research must
-either dispatch the first frozen eligible GPU campaign or record the exact
-missing input, contract, or resource fact.
+The GPU is deliberately idle because no frozen depth-eligible campaign exists.
+Research must start the first such campaign when extended-data evidence and its
+contract are ready, or keep the exact missing data/contract fact visible.
 
 ## Current Operating Improvement
 
-The current reversible improvement is the hash-pinned six-target panel
-contract: it reattests raw cache hashes and source-safe evidence before
-exposing a common-session `CatalogedBars` stream, while keeping panel evidence
-outside Git. The frozen research precommit and shared 1.0-second pacing
-alignment remain active. A worker owns its own backoff and recovery, and Codex
-does not sleep while another lane is ready.
+The current reversible improvement is readiness-first data throughput: the
+existing daily catch-up worker reuses one client/token, owns its 1.0-second
+request-start gate, and has a finite 48-chunk/six-hour budget. Its rate or
+recovery outcome stays in that worker while Codex advances independent lanes.
+The hash-pinned six-target panel and frozen research precommit remain active.
 
 ## External Waits
 
@@ -78,8 +82,8 @@ lanes.
 
 ## Next Handoff
 
-Keep the KIS data worker independent at its next due cursor and run one frozen
-per-symbol CPU local-paper baseline from the completed panel. Do not treat the
-rate control, current-listing registry, panel, or weak daily controls as
-selected models. Record only an actual shared resource conflict, new external
-wait, bottleneck, or reversible operating improvement here.
+Run one bounded KIS Paper daily catch-up through the existing worker while
+keeping Research and Execution independent. Do not treat the rate control,
+current-listing registry, panel, or any daily control as a selected model.
+Record only an actual shared resource conflict, new external wait, bottleneck,
+or reversible operating improvement here.

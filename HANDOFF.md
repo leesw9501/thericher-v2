@@ -151,9 +151,19 @@ authorized private KIS Paper work.
   previous-bar direction comparator; no model, ensemble, promotion, Paper
   intent, or profitability claim was selected. The earlier r1 artifact remains
   immutable but is unqualified because its precommit omitted replay sizing.
+- The frozen six-symbol daily CPU local-paper control completed on 2026-07-27
+  from the exact 199-session current-basket panel. Its fixed 159/1/39
+  development/purge/validation geometry, three-bar momentum rule,
+  `always_long` comparator, one-share sizing, and after-cost replay economics
+  are hash-bound in external evidence. Four descriptive per-symbol deltas were
+  positive versus the comparator and two were negative. This is a
+  falsification-triggering observation only, not a winner, profitability,
+  ranking, promotion, ensemble, GPU, or Paper-order result; the source is not
+  PIT or corporate-action qualified.
 - No GPU job is active. The completed daily evidence must not be promoted or
-  used to choose a Paper order; prospective intraday coverage remains an
-  independent Data concern.
+  used to choose a Paper order. The current six-symbol panel is too small for
+  depth training, and longer cache coverage plus a frozen campaign contract are
+  the next data prerequisites.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -227,11 +237,11 @@ authorized private KIS Paper work.
 ## Claude
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
-ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 KST
-the CLI OAuth session remained expired during throughput-governance,
-single-client-capture, profile-integration, and daily-campaign falsification
-checks; no private material was sent. This is a scoped tooling fault, not a
-hold on ready private work.
+ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
+2026-07-27 KST the CLI OAuth session remained expired during
+throughput-governance, capture/profile integration, daily-campaign, and
+six-symbol-control falsification checks; no private material was sent. This is
+a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -243,9 +253,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the frozen
-six-symbol panel as descriptive Data evidence, then run one per-symbol CPU
-local-paper baseline only. Do not turn the current-listing source into a PIT
-stock-selection claim, a GPU-depth result, or a Paper intent. Refresh this file
-only with the resulting current cross-lane facts after that bounded objective
-completes.
+Follow NEXT_CODEX_GOAL.md. Keep the weak QQQ/SPY controls and the completed
+six-symbol control descriptive, then run the existing bounded KIS Paper daily
+catch-up worker through its single-client shared gate. Do not turn any expanded
+cache into a PIT stock-selection claim, GPU-depth result, or Paper intent until
+a separate frozen campaign is ready. Refresh this file only with resulting
+cross-lane facts after that bounded objective completes.

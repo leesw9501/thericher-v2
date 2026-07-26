@@ -2,14 +2,14 @@
 
 ## Objective
 
-Establish the first frozen six-symbol daily CPU local-paper baseline from the
-qualified KIS Paper current-basket panel.
+Advance the existing KIS-compatible QQQ/SPY/IWM daily cache through one bounded
+data-only catch-up run, and record its actual throughput and recovery state.
 
-This connects each immutable `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and
-`NVDA` D1 stream to broker-free local-paper replay with an explicit naive
-comparator. It proves an offline validation loop only. It does not rank stocks,
-select a strategy, train a depth model, create an ensemble, submit a Paper
-order, or enable live behavior.
+This is the next data foundation step after the frozen six-symbol CPU control.
+It uses the existing resumable worker, one KIS Paper market-data client, and the
+measured shared request-start gate to create longer source-separated history on
+`D:`. It is not a stock-selection run, model campaign, account query, order,
+or live action.
 
 ## First Reads
 
@@ -22,56 +22,59 @@ order, or enable live behavior.
 2. Read HANDOFF.md, AGENTS.md, ARCHITECTURE.md, DECISIONS.md, RUNBOOK.md,
    agents/orchestration.md, agents/data.md, agents/engine-research.md, and
    agents/execution.md.
-3. Inspect only source-safe panel manifest/evidence and existing local-paper
-   validation interfaces. Do not print raw rows, prices, credentials, account
-   facts, or sealed labels.
+3. Inspect the existing private daily backfill index, source-safe manifests,
+   Docker profile, request gate, and recovery path. Do not print raw rows,
+   prices, credentials, account facts, or broker payloads.
 
 ## Required Work
 
-1. Load only the frozen six-symbol panel through its dedicated hash-bound
-   offline loader. Preserve the ordered NAS scope, 199 common sessions,
-   `MODP=0_unadjusted`, current-listing limitation, and source separation.
-2. Freeze one small CPU replay contract before execution: per-symbol replay,
-   chronological completed-bar timing, fixed local-paper costs and sizing, one
-   transparent momentum baseline, and one explicit naive comparator. Do not
-   pool symbols into a cross-sectional ranking or tune after seeing results.
-3. Run the six independent broker-free local-paper replays through the existing
-   validation boundary. Persist only source-safe results and replay evidence
-   under `D:\thericher-v2\model-artifacts`; every fill must remain
-   `source: local_paper`.
-4. Invoke temporary Validation after the contract is frozen. It must check
-   source binding, completed-bar timing, all-local-paper fills, replayability,
-   and that no result materially exceeds its naive comparator without a
-   falsification note.
-5. Do not allocate GPU work from this 199-session current-basket panel. Record
-   whether the CPU baseline supports a future breadth hypothesis, but make no
-   winner, promotion, ensemble, PnL-profitability, or Paper-order claim.
-6. Update the Data, Engine Research, and orchestration stateboards with only
-   the frozen contract/result, limitations, recovery fact, and next ready
-   action.
+1. Reconcile the existing `QQQ/NAS`, `SPY/AMS`, and `IWM/AMS` daily backfill
+   cursor state from durable external evidence. Record only source-safe counts,
+   cursor/date coverage, manifest identities, storage state, and recovery
+   classification.
+2. Confirm the catch-up path reuses one client/token per bounded invocation and
+   applies the measured 1.0-second shared request-start gate. Keep the existing
+   finite limit of at most 48 chunks or six hours. Do not introduce an arbitrary
+   inter-chunk sleep, parallel request flood, or foreground wait while another
+   lane is ready.
+3. Run the existing data-only Docker catch-up profile once with
+   `KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET` available only inside its
+   private container environment. Retain raw market bytes only under
+   `D:\market_data`; retain source-safe run evidence under
+   `D:\thericher-v2\model-artifacts` when needed.
+4. If the run reaches a documented rate, auth, storage, cursor, or source
+   boundary, preserve the exact scoped recovery fact and continue independent
+   Research and Execution preparation. Change pacing only after measured output
+   or official KIS evidence supports the change.
+5. Keep the completed six-symbol CPU control descriptive. Do not retune it,
+   rank symbols, train GPU depth models, create an ensemble, or derive a Paper
+   decision from new cache rows in this objective.
+6. Have temporary Validation verify that the catch-up client cannot reach
+   account/order/live endpoints and that all retained data/artifacts stay
+   outside Git. Update the Data, Engine Research, Execution, and orchestration
+   stateboards with the new bounded facts only.
 
 ## Hard Boundaries
 
-- Offline only: do not call KIS, read `.env`, access account/order endpoints,
-  create a schedule, or use any `KIS_LIVE_*` value.
-- Use only the frozen six-symbol panel. Do not blend Norgate, Tiingo, Yahoo,
-  ETF, or other KIS cache rows, and do not expand the symbols or date range.
-- Do not use the result for historical PIT claims, stock ranking, corporate
-  action claims, GPU depth training, an ensemble, a dashboard, an intent, or a
-  broker action.
-- Keep raw data and generated artifacts outside Git. Do not print or persist
-  raw rows, credentials, account facts, or broker payloads.
+- KIS Paper market-data credentials and endpoint calls are authorized for this
+  objective. Do not call account, position, order, cancel, modify, or any
+  `KIS_LIVE_*` route or value.
+- Do not output or persist secrets, account identifiers, raw response payloads,
+  raw prices, or broker bodies outside their private D: cache.
+- Keep the established single-client, shared-gate ownership. A rate/recovery
+  fact constrains only its worker; it never becomes a global hold.
+- Do not buy data, install a major runtime, expose a public service, or change
+  a model/paper-trading decision from this collection result.
 
 ## Completion Evidence
 
-- One immutable source-safe CPU baseline result for each fixed symbol with a
-  linked panel identity and fixed replay economics.
-- An explicit naive comparator and per-symbol outcome table that does not make
-  a selection or profitability claim.
-- Focused tests proving offline/source binding, completed-bar timing,
-  local-paper-only fills, replayability, and artifact containment.
-- Stateboards that state whether this small panel supports only another bounded
-  hypothesis or needs more Data before depth work.
+- One bounded source-safe catch-up outcome with chunk counts, target states,
+  cursor progress or an exact scoped recovery reason, and storage classification.
+- Tests or focused probes proving client reuse, endpoint isolation, external
+  artifact/cache containment, and correct no-wait recovery behavior.
+- Stateboards that distinguish the extended-cache fact from the frozen
+  six-symbol panel and name the next eligible research input without a model or
+  profitability claim.
 
 ## Verification
 
@@ -83,5 +86,5 @@ docker compose config --quiet
 ~~~
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A weak baseline result, local artifact issue, or Claude
-OAuth fault does not stop independent ready work.
+next company objective. A bounded provider failure, local artifact issue, or
+Claude OAuth fault does not stop independent ready work.

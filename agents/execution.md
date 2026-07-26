@@ -37,12 +37,16 @@ remains unavailable.
   `local_paper` replay path only. Its six replay cells did not read a KIS
   credential, call a broker/account endpoint, create an intent, or widen an
   Execution route.
+- The completed six-symbol CPU control likewise used broker-free `local_paper`
+  replay only. Its twelve fixed replay cells were independently reconstructible
+  and flat after replay; no KIS credential, account/order endpoint, intent, or
+  Paper action was involved.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data implements the next capture worker. Its replay and route
-   isolation tests are the current integration evidence.
+   stable while Data runs its bounded daily catch-up worker. Its replay and
+   route-isolation tests are the current integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -69,5 +73,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. Do not wait for prospective data or model
-promotion to prepare deterministic execution.
+binding and route boundaries intact. The next data-only worker may read only
+the KIS Paper market-data route; do not let it acquire an account or order path.

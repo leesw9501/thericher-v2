@@ -5524,3 +5524,30 @@ holdout isolation, source limits, and reproducible test evidence. A concise
 Claude drift-check was attempted for this agent-governance change, but the
 local CLI OAuth session was expired; no private material was sent and the
 scoped reviewer fault does not block this reversible policy clarification.
+
+## 2026-07-27 - Freeze a six-symbol CPU local-paper descriptive control
+
+Decision: evaluate the hash-attested six-symbol current-basket panel only by a
+fixed per-symbol D1 CPU local-paper control. The immutable contract pins the
+ordered `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` panel hash, 159
+development sessions, one purge session, 39 validation sessions, a three-bar
+momentum rule, an `always_long` naive comparator, one-share sizing, five basis
+point entry/exit costs, and a stride of two. The public runner always reloads
+the canonical panel and rejects caller-supplied panel substitution.
+
+Every replay is broker-free and uses only `source: local_paper`. Its temporary
+event history is replayed to a flat final account and then removed; only
+source-safe `precommit.json` and `summary.json` stay beneath
+`D:\thericher-v2\model-artifacts\kis-paper-daily-universe-cpu-baseline-v1`.
+The completed run `cpu-baseline-20260726T183947Z` has four positive and two
+negative after-cost momentum-minus-comparator deltas. That observation is a
+mandatory falsification prompt, not evidence of a winning stock, profitability,
+promotion, ranking, ensemble, GPU campaign, or Paper order. The current panel
+remains neither point-in-time nor corporate-action qualified.
+
+Reason: a small transparent control proves the source-to-local-paper validation
+loop and makes its limitations concrete without converting a current listing or
+short sample into a trading decision. The required concise Claude challenge was
+attempted for the unexpectedly positive relative cells, but local OAuth was
+expired and no private material was sent; the scoped reviewer-tool failure does
+not block independent data collection.

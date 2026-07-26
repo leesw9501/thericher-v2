@@ -11,12 +11,12 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Preserve the completed six-symbol NAS-only KIS Paper daily panel and provide
-only its hash-bound, source-separated per-symbol streams to the next offline
-local-paper validation contract. Keep the reattested QQQ/SPY daily catalog
-available to frozen offline Research contracts. The prospective QQQ 1m
-first-five pair is one Data product for a named future observer; it is not the
-only Data output or a company hold.
+Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
+source-separated control input, then advance the existing QQQ/SPY/IWM daily
+cache through its bounded single-client catch-up worker. Keep the reattested
+QQQ/SPY daily catalog available to frozen offline Research contracts. The
+prospective QQQ 1m first-five pair is one Data product for a named future
+observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
@@ -90,16 +90,21 @@ only Data output or a company hold.
 - A finite 2026-07-26 `session-capture` run completed through the owned Paper
   market-data path and recovered current QQQ/SPY cache state. It produced no
   new qualified regular session, so Research inputs remain unchanged.
+- The frozen six-symbol panel was consumed once by an offline CPU local-paper
+  control. That replay made no KIS call and did not modify its cache, manifest,
+  registry, or source limitation. Its result remains a Research-owned
+  descriptive observation, not a Data quality qualification or a reason to
+  blend this current basket into the QQQ/SPY/IWM catalog.
 
 ## Ready Queue
 
-1. Keep the frozen panel source-separated while Engine Research consumes one
-   per-symbol stream for a bounded offline local-paper baseline. Do not blend
-   ETF, Norgate, Tiingo, or legacy rows into it or treat its current listing as
-   historical membership.
-2. Let the existing finite catch-up or `session-capture` worker advance its
-   next ready cursor at the installed 1.0-second pace. Keep partial or
-   extended-session capture rows out of Research.
+1. Reconcile and run the existing daily QQQ/SPY/IWM catch-up worker for one
+   finite invocation. It reuses one client/token and the installed 1.0-second
+   shared request-start gate, with at most 48 chunks or six hours. Preserve a
+   rate, cursor, storage, or source result as worker-local recovery evidence.
+2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
+   or legacy rows into it or treat its current listing as historical membership.
+   Keep partial or extended-session capture rows out of Research.
 
 ## Durable Constraints
 
@@ -124,8 +129,8 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return any panel-integrity limitation or preserve the frozen six-symbol source
-for its next per-symbol offline validation. Do not infer PIT membership,
-corporate-action completeness, a ranking claim, or Paper-trading eligibility
-from the panel, and do not wait for a prospective pair before advancing other
-ready Data work.
+Return the bounded daily catch-up outcome with cursor progress or its scoped
+recovery fact. Preserve the frozen six-symbol source separately. Do not infer
+PIT membership, corporate-action completeness, a ranking claim, or
+Paper-trading eligibility from either cache, and do not wait for a prospective
+pair before advancing other ready Data work.

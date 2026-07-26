@@ -11,12 +11,12 @@ modify broker submission or deterministic execution-risk behavior.
 
 ## Current Objective
 
-Keep the completed KIS-native QQQ/SPY daily sequence breadth screen and the
-frozen L2 logistic control as development-only falsification evidence while
-preparing only the next frozen, non-promotion research package. The prospective
-QQQ first-five pair is required only for its isolated prospective observation,
-pair-dependent campaign, and later pair-dependent promotion decisions; it does
-not make historical research input-pending.
+Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
+development-only falsification evidence while Data extends the historical
+cache. Prepare only a future frozen, non-promotion research package. The
+prospective QQQ first-five pair is required only for its isolated prospective
+observation, pair-dependent campaign, and later pair-dependent promotion
+decisions; it does not make historical research input-pending.
 
 ## Current Readiness
 
@@ -68,16 +68,25 @@ not make historical research input-pending.
   It has no PIT universe meaning, corporate-action qualification, ranking
   claim, or Research result yet; do not train an ensemble, select a model, or
   allocate GPU work from the small current-basket panel.
+- The first frozen six-symbol CPU local-paper control completed with an exact
+  159/1/39 chronological split, three-bar fixed momentum, one-share replay,
+  fixed after-cost economics, and an `always_long` comparator. Its external
+  source-safe summary records positive momentum-minus-comparator deltas for
+  AAPL, AMZN, META, and MSFT and negative deltas for GOOGL and NVDA. This
+  triggers independent falsification work before any model claim; it does not
+  identify winners, support ranking or profitability, select an ensemble, or
+  provide a Paper input. Claude's required concise challenge was attempted but
+  the local OAuth session was expired.
 
 ## Ready Queue
 
-1. Keep the completed daily breadth and L2 control results descriptive only.
-   Do not retune a threshold, select a winner, create an ensemble, promote a
-   checkpoint, or create a KIS Paper action from their validation results.
-2. Build one bounded per-symbol CPU local-paper baseline from the new frozen
-   six-symbol panel. Freeze source identity, chronology, costs, and a naive
-   comparator before replay. Do not rank across symbols, tune thresholds,
-   select a winner, create an ensemble, or make a Paper action from it.
+1. Keep the completed daily breadth, L2 control, and six-symbol control
+   descriptive only. Do not retune a threshold, select a winner, create an
+   ensemble, promote a checkpoint, or create a KIS Paper action from them.
+2. During Data catch-up, prepare a source-separated campaign contract only
+   when extended cache evidence makes its geometry eligible. Do not reuse the
+   current 199-session panel for GPU depth work or tune its fixed momentum rule
+   after results are known.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -100,7 +109,7 @@ its pair-bound observation.
 
 ## Next Handoff
 
-Return the corrected daily L2 control evidence without a candidate-selection
-claim, then establish the first six-symbol per-symbol CPU baseline from the
-frozen panel. Do not treat it as stock selection or wait for prospective
-collection to keep other ready roles moving.
+Return the descriptive six-symbol control evidence without a candidate-selection
+claim while Data records its bounded catch-up result. Do not treat either as
+stock selection or wait for prospective collection to keep other ready roles
+moving.
