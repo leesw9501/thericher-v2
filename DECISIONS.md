@@ -5294,3 +5294,37 @@ Reason: long foreground sleeps and unowned wait interpretation waste available
 Data, Research, and Execution capacity. A small, concrete review makes that
 failure observable without adding a process-only agent, duplicate goal, or
 approval checkpoint.
+
+## 2026-07-26 - Freeze the first QQQ/SPY KIS daily sequence breadth screen
+
+Decision: use the existing hash-attested QQQ/SPY KIS Paper private daily common
+panel for one development-only sequence breadth screen. The runner requires the
+exact pair, no IWM or source mixing, the qualified daily loader, `MODP=0`
+unadjusted limitation, and the current unqualified corporate-action semantics.
+It freezes a 20 completed-bar QQQ/SPY return window, pooled development-only
+standardization, next observed daily-open entry, following observed daily-open
+exit, 1 bps fee, 2 bps slippage, 3,783 development sessions, a 22-session
+purge, and 951 validation sessions. Every validation feature window starts
+inside validation after its own warmup; validation labels are not materialized
+for fitting or tuning.
+
+The precommit fixes compact LSTM, causal TCN, and compact attention before any
+validation comparison materializes. The CPU wiring smoke uses one epoch; the
+Docker CUDA screen uses eight. Both use the existing network-disabled Research
+profile and write checkpoints, work state, precommit, summary, and replay
+evidence only under `D:\thericher-v2\model-artifacts` or
+`/app/model_artifacts`. Each candidate/symbol replay must use `local_paper`.
+The screen has no winner, selection, ensemble, model promotion, sealed holdout,
+broker route, Paper intent, or profitability claim.
+
+The 2026-07-26 CPU smoke and one RTX 4090 CUDA screen completed with all three
+fixed architectures and both symbols. They produced three external checkpoints
+and six replay cells per attempt; no raw market data or repository artifact was
+written. Their results remain descriptive evidence only. The local Claude CLI
+falsification check was attempted before result interpretation but OAuth was
+expired; no private material was sent. That tooling fault does not promote or
+invalidate the frozen non-promotion result.
+
+Reason: this creates a real KIS-compatible multi-architecture research loop
+without mistaking a small historical comparison for a production model or
+letting a missing prospective intraday pair idle the GPU.

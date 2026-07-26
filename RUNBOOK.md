@@ -912,6 +912,43 @@ Run a CPU baseline before an eligible GPU campaign. GPU work needs a frozen
 dataset and falsifiable hypothesis; do not launch models solely to keep the GPU
 busy. One GPU job runs at a time while other lanes continue.
 
+### KIS Daily Sequence Breadth Screen
+
+The daily sequence screen is a fixed QQQ/SPY-only, development-only comparison
+of compact LSTM, causal TCN, and compact attention. It reattests the pinned
+private daily catalog offline, uses 20 completed-bar windows, keeps a 22-session
+purge between development and validation, fits standardization only on pooled
+development rows, and replays only `local_paper` next-open/following-open
+targets. It does not select a winner, form an ensemble, promote a checkpoint,
+or call KIS.
+
+Run the CPU wiring smoke first with a unique label:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps `
+  research python scripts/run_kis_daily_sequence_architecture_screen.py `
+  --mode cpu-smoke --run-label <unique-label> `
+  --cache-root /app/market_data/us_equities/kis_paper_private/daily `
+  --artifact-root /app/model_artifacts
+```
+
+Only after that contract succeeds, run the fixed CUDA attempt with another
+unique label:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps `
+  research python scripts/run_kis_daily_sequence_architecture_screen.py `
+  --mode cuda-screen --run-label <unique-label> `
+  --cache-root /app/market_data/us_equities/kis_paper_private/daily `
+  --artifact-root /app/model_artifacts
+```
+
+The research profile has no network and mounts market data read-only. It writes
+precommit, summary, checkpoint, and replay evidence only under the external
+artifact root. A code-only rerun may reuse the existing research image because
+the source and scripts are mounted read-only; rebuild only after a Dockerfile or
+runtime dependency change.
+
 ### Prospective Intraday Offline Observation
 
 To consume an already verified first-five QQQ preparation pair, run:

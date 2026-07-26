@@ -11,16 +11,22 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Maintain the KIS Paper intraday capture path while supplying the frozen,
-qualified QQQ/SPY daily catalog for the next offline sequence-model breadth
-screen. The prospective QQQ 1m first-five pair is one Data product for a named
-future observer; it is not the only Data output or a company hold.
+Maintain the KIS Paper intraday capture path while keeping the reattested,
+qualified QQQ/SPY daily catalog available to frozen offline Research contracts.
+The prospective QQQ 1m first-five pair is one Data product for a named future
+observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
+- On 2026-07-26, the existing offline daily loader reattested the exact QQQ/SPY
+  pair with index hash `sha256:e0bb...01ac660` and full dataset hash
+  `sha256:78b0...397718`. It exposed only the pair's common panel with
+  `MODP=0_unadjusted` and the existing corporate-action limitation; it made no
+  KIS call, raw scan, source blend, or IWM read. Research consumed only its
+  derived chronological phase slices.
 - The bounded historical intraday cache has 21 complete QQQ and SPY
   regular-session inputs. It remains source-scoped historical evidence.
 - The prospective QQQ head is generation 10 with zero complete sessions out
@@ -53,9 +59,9 @@ future observer; it is not the only Data output or a company hold.
 
 ## Ready Queue
 
-1. Reattest the QQQ/SPY daily common catalog and expose only its existing
-   source identity, chronological bounds, and split-safe availability to the
-   bounded Research screen. Do not collect, blend, or repair data for it.
+1. Keep the attested QQQ/SPY daily common panel available only through the
+   existing loader and phase slices. Do not recollect, blend, repair, or extend
+   it merely to reproduce the completed breadth screen.
 2. Continue the configured intraday session-capture task as its owned schedule
    becomes due. Preserve the one-client, concurrency-one collector, request
    gate, cooldown, lock, strict conflict handling, and `tr_cont` contract.
@@ -80,7 +86,7 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the daily catalog attestation for the bounded Research screen and any
-new scheduled intraday capture fact. Do not infer historical reach or
-prospective completeness from a terminal-head page, and do not wait for a
-prospective pair before advancing other ready Data work.
+Return any new scheduled intraday capture fact and preserve the pair-only daily
+source contract for a future explicitly frozen campaign. Do not infer
+historical reach or prospective completeness from a terminal-head page, and do
+not wait for a prospective pair before advancing other ready Data work.

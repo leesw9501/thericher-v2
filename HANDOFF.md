@@ -105,10 +105,16 @@ authorized private KIS Paper work.
 - A Docker CUDA replication compared LSTM, causal TCN, and compact attention on
   the existing 20-session intraday scope. It wrote no checkpoint or raw data;
   it made no winner, ensemble, profitability, or Paper-authorization claim.
-- No GPU job is active. The next bounded breadth screen uses the already
-  qualified 4,756-session QQQ/SPY KIS-private-daily intersection instead of
-  waiting for prospective intraday coverage. It remains development-only and
-  local-paper-only.
+- The first daily QQQ/SPY sequence breadth screen completed a CPU smoke and a
+  network-disabled Docker CUDA attempt. It froze 20 completed-bar features,
+  3,783 development sessions, a 22-session purge, and 951 validation sessions;
+  every validation feature window stayed within validation and all six replay
+  cells retained `local_paper`. Three checkpoints per attempt are external
+  only. No model, ensemble, promotion, holdout, KIS route, or Paper action was
+  selected.
+- No GPU job is active. The completed daily evidence must not be promoted or
+  used to choose a Paper order; prospective intraday coverage remains an
+  independent Data concern.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -176,10 +182,10 @@ authorized private KIS Paper work.
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 KST
-the CLI OAuth session remained expired during the throughput-governance,
-single-client-capture, and profile-integration drift-check attempts; no private
-material was sent. This is a scoped tooling fault, not a hold on ready private
-work.
+the CLI OAuth session remained expired during throughput-governance,
+single-client-capture, profile-integration, and daily-campaign falsification
+checks; no private material was sent. This is a scoped tooling fault, not a
+hold on ready private work.
 
 ## Recovery
 

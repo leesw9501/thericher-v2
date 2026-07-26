@@ -11,11 +11,12 @@ modify broker submission or deterministic execution-risk behavior.
 
 ## Current Objective
 
-Build the first bounded KIS-native daily sequence-model breadth screen from
-the qualified QQQ/SPY daily catalog. The prospective QQQ first-five pair is
-required only for its isolated prospective observation, pair-dependent
-campaign, and later pair-dependent promotion decisions; it does not make the
-daily historical screen input-pending.
+Keep the completed KIS-native QQQ/SPY daily sequence breadth screen as
+development-only falsification evidence while preparing only the next frozen,
+non-promotion research package. The prospective QQQ first-five pair is required
+only for its isolated prospective observation, pair-dependent campaign, and
+later pair-dependent promotion decisions; it does not make historical research
+input-pending.
 
 ## Current Readiness
 
@@ -29,6 +30,16 @@ daily historical screen input-pending.
 - The Docker CUDA replication compared LSTM, causal TCN, and compact attention
   on the fixed 20-session intraday scope. Its artifact wrote no checkpoint or
   raw market data and selected no winner, ensemble, or Paper action.
+- The new daily screen reattested the QQQ/SPY-only 4,756-session KIS panel,
+  froze 3,783 development sessions, 22 purge sessions, and 951 validation
+  sessions, and used only 20 completed-bar QQQ/SPY return windows. Validation
+  windows began after their own 20-session warmup, the pooled scaler fit only
+  development data, and every eligible replay fill was `local_paper`.
+- A deterministic one-epoch CPU smoke and one network-disabled Docker CUDA
+  screen of LSTM, causal TCN, and compact attention completed on 2026-07-26.
+  Each attempt wrote three checkpoints and six replay cells solely beneath the
+  external artifact root. No candidate, result, ensemble, promotion, holdout,
+  broker route, or Paper action was selected or created.
 - No GPU job is active. The qualified QQQ/SPY daily intersection supports a
   small development-only sequence breadth screen, so its GPU use can be tied
   to a falsifiable campaign rather than occupancy alone.
@@ -40,19 +51,13 @@ daily historical screen input-pending.
 
 ## Ready Queue
 
-1. Freeze a daily QQQ/SPY-only contract: KIS-native catalog identity, causal
-   completed-bar features, chronological development/validation split, purge,
-   costs, local-paper replay, fixed model families, compute budget, and stop
-   rules. Do not open or tune against a sealed holdout.
-2. Run a deterministic CPU smoke before one bounded Docker CUDA screen of
-   materially different compact sequence families. Store checkpoints and safe
-   evidence only under the external artifact root.
-3. Treat results as development-only falsification evidence. Do not select a
-   winner, create an ensemble, promote a model, or create a KIS Paper action.
-4. Maintain breadth, depth, ensemble, and replication queues: daily breadth is
-   active; intraday breadth/depth remain input-pending; ensemble is empty until
-   independently useful, error-diverse candidates exist.
-5. Consume a verified prospective pair as an additional observation/campaign
+1. Keep the completed daily breadth result descriptive only. Do not select a
+   winner, create an ensemble, promote a checkpoint, or create a KIS Paper
+   action from it.
+2. Maintain breadth, depth, ensemble, and replication queues: the completed
+   daily breadth item is evidence; intraday breadth/depth remain input-pending;
+   ensemble is empty until independently useful, error-diverse candidates exist.
+3. Consume a verified prospective pair as an additional observation/campaign
    input when Data provides it. It never rewrites historical results or becomes
    a global queue gate.
 
@@ -73,6 +78,5 @@ its pair-bound observation.
 
 ## Next Handoff
 
-Return the frozen daily campaign contract, CPU smoke, and bounded CUDA evidence
-without a candidate-selection claim. Do not wait for prospective collection to
-keep other ready roles moving.
+Return the completed daily campaign evidence without a candidate-selection
+claim. Do not wait for prospective collection to keep other ready roles moving.

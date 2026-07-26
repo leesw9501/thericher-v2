@@ -31,6 +31,7 @@ from .kis_intraday_feature_breadth import (
     build_kis_intraday_feature_candidate_comparison_samples,
     build_kis_intraday_feature_contract,
 )
+from .sequence_architecture_models import build_torch_sequence_model
 from .validation import CampaignReplayRun, run_campaign_model_replay
 
 KIS_INTRADAY_SEQUENCE_ARCHITECTURE_SCREEN_ID = "kis-intraday-sequence-architecture-screen-v1"
@@ -648,89 +649,14 @@ def _train_torch_cuda_architecture(
 
 
 def _torch_model(*, torch: object, spec: KisIntradaySequenceArchitectureSpec) -> object:
-    nn = torch.nn
-
-    if spec.architecture_id == "lstm":
-
-        class LstmModel(nn.Module):
-            def __init__(self) -> None:
-                super().__init__()
-                self.encoder = nn.LSTM(
-                    input_size=len(KIS_INTRADAY_CUDA_SEQUENCE_FEATURE_NAMES),
-                    hidden_size=spec.hidden_size,
-                    batch_first=True,
-                )
-                self.head = nn.Linear(spec.hidden_size, 1)
-
-            def forward(self, values: object) -> object:
-                encoded, _ = self.encoder(values)
-                return self.head(encoded[:, -1, :])
-
-        return LstmModel()
-
-    if spec.architecture_id == "causal_tcn":
-
-        class CausalTcnModel(nn.Module):
-            def __init__(self) -> None:
-                super().__init__()
-                self.convolution = nn.Conv1d(
-                    len(KIS_INTRADAY_CUDA_SEQUENCE_FEATURE_NAMES),
-                    spec.hidden_size,
-                    kernel_size=spec.tcn_kernel_size,
-                    padding=spec.tcn_kernel_size - 1,
-                )
-                self.head = nn.Linear(spec.hidden_size, 1)
-
-            def forward(self, values: object) -> object:
-                length = values.shape[1]
-                encoded = self.convolution(values.transpose(1, 2))[:, :, :length]
-                encoded = torch.relu(encoded)
-                return self.head(encoded[:, :, -1])
-
-        return CausalTcnModel()
-
-    class CompactAttentionModel(nn.Module):
-        def __init__(self) -> None:
-            super().__init__()
-            self.input_projection = nn.Linear(
-                len(KIS_INTRADAY_CUDA_SEQUENCE_FEATURE_NAMES),
-                spec.hidden_size,
-            )
-            layer = nn.TransformerEncoderLayer(
-                d_model=spec.hidden_size,
-                nhead=spec.attention_heads,
-                dim_feedforward=spec.hidden_size * 2,
-                dropout=0.0,
-                batch_first=True,
-            )
-            self.encoder = nn.TransformerEncoder(layer, num_layers=1)
-            self.head = nn.Linear(spec.hidden_size, 1)
-
-        def forward(self, values: object) -> object:
-            length = values.shape[1]
-            positions = torch.arange(length, dtype=values.dtype, device=values.device).unsqueeze(1)
-            divisors = torch.exp(
-                torch.arange(0, spec.hidden_size, 2, dtype=values.dtype, device=values.device)
-                * (-math.log(10000.0) / spec.hidden_size)
-            )
-            positional = torch.zeros(
-                (length, spec.hidden_size), dtype=values.dtype, device=values.device
-            )
-            positional[:, 0::2] = torch.sin(positions * divisors)
-            positional[:, 1::2] = torch.cos(positions * divisors)
-            causal_mask = torch.triu(
-                torch.full(
-                    (length, length), float("-inf"), dtype=values.dtype, device=values.device
-                ),
-                diagonal=1,
-            )
-            encoded = self.encoder(
-                self.input_projection(values) + positional.unsqueeze(0),
-                mask=causal_mask,
-            )
-            return self.head(encoded[:, -1, :])
-
-    return CompactAttentionModel()
+    return build_torch_sequence_model(
+        torch=torch,
+        architecture_id=spec.architecture_id,
+        feature_count=len(KIS_INTRADAY_CUDA_SEQUENCE_FEATURE_NAMES),
+        hidden_size=spec.hidden_size,
+        attention_heads=spec.attention_heads,
+        tcn_kernel_size=spec.tcn_kernel_size,
+    )
 
 
 def _summary_payload(

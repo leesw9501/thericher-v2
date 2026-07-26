@@ -33,6 +33,10 @@ remains unavailable.
   KIS route or make a network call.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
+- The completed QQQ/SPY daily sequence screen used the existing offline
+  `local_paper` replay path only. Its six replay cells did not read a KIS
+  credential, call a broker/account endpoint, create an intent, or widen an
+  Execution route.
 
 ## Ready Queue
 
