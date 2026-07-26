@@ -25,7 +25,11 @@ def target_proposal_to_order_intent(
     if current < 0 or maximum <= 0:
         raise ValueError("current_quantity must be non-negative and maximum_quantity positive")
     created_at = proposal.decided_at if as_of is None else require_utc(as_of, "as_of")
-    if created_at > proposal.valid_until or proposal.input_status != "ready":
+    if (
+        created_at < proposal.decided_at
+        or created_at > proposal.valid_until
+        or proposal.input_status != "ready"
+    ):
         return None
     if proposal.action in {"abstain", "hold"}:
         return None

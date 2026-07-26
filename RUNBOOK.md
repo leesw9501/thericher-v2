@@ -320,6 +320,24 @@ general request ceiling. A throughput probe must also bound its request count
 and elapsed time, preserve the same source-safe output rules, and report the
 specific fact that retains or recalibrates a future capture worker.
 
+### Bounded QQQ Minute Capability Probe
+
+Use the dedicated source-safe probe when the question is the current terminal
+head behavior and in-memory Paper-token reuse, rather than cache backfill:
+
+```powershell
+uv run python scripts\probe_kis_paper_minute_capability.py --execute --max-pages 3
+```
+
+It uses only the KIS Paper market-data token and `QQQ/NAS` minute route. It
+does not call account, position, order, or live endpoints. It retains no raw
+rows; instead it atomically writes an allowlisted result below
+`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe`.
+The current probe can repeat a terminal head with the same in-memory client to
+measure token reuse, but it cannot establish historical reach, a faster request
+ceiling, or a complete 390-minute session. Preserve the existing request gate
+and cooldown while interpreting its result.
+
 `data.kis_paper_intraday` is the offline consumer: it verifies every index,
 manifest, and raw hash; maps KIS Korea timestamp fields to UTC; and delegates
 5m, 10m, 1h, and 3h aggregation to an explicit `SessionWindow`. The first
@@ -426,6 +444,29 @@ under `D:\thericher-v2\model-artifacts\kis-paper-baseline-receipt`, and never
 reads a credential, calls KIS, or emits raw bars/prices. An `unqualified` or
 otherwise unavailable result is scoped to that receipt; retain the artifact and
 continue independent KIS Paper, Data, and Research work.
+
+### Frozen Historical KIS Daily CPU Baseline
+
+Use the private daily cache for a bounded offline KIS-native replay:
+
+```powershell
+uv run python scripts\run_historical_kis_cpu_baseline.py `
+  --symbol QQQ `
+  --run-label qqq-daily-YYYYMMDD-r1
+```
+
+The runner loads only the qualified QQQ/SPY KIS-private-daily catalog, freezes
+an 80/20 chronological development/descriptive-holdout split with one purge
+session, and evaluates `always_long` and `previous_bar_direction`. A decision
+uses a completed daily close, enters at the next daily open, exits at the
+following daily open, and charges 1 bps fees plus 2 bps slippage. All replay
+fills must remain `local_paper`. It writes its contract, work evidence, and
+sanitized summary under
+`D:\thericher-v2\model-artifacts\historical-kis-daily-cpu-baseline`.
+
+Choose a new label after an interrupted run. The chronological holdout is
+descriptive and unsealed: this command cannot select a model, claim
+profitability, submit a Paper order, or read credentials/network data.
 
 ### Frozen Chronological CPU Campaign
 

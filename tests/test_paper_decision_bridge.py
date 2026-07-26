@@ -13,6 +13,7 @@ from thericher_v2.contracts import Bar, TargetExposureProposal, Timeframe
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker, paper_decision_bridge
 from thericher_v2.execution.paper_decision_bridge import (
     KisPaperLimitProof,
+    LocalPaperTargetBinding,
     PaperDecisionExecutionBinding,
     prepare_kis_paper_decision,
     prepare_local_paper_intent,
@@ -34,7 +35,12 @@ def test_eligible_receipt_replays_through_local_paper_with_its_exact_identity(
     receipt = _receipt()
     prepared = prepare_local_paper_intent(
         receipt,
-        binding=_binding(receipt),
+        binding=_local_target_binding(
+            receipt,
+            target_exposure=Decimal("0.5"),
+            current_quantity=Decimal("1"),
+            maximum_quantity=Decimal("10"),
+        ),
         as_of=NOW,
     )
 
@@ -45,6 +51,7 @@ def test_eligible_receipt_replays_through_local_paper_with_its_exact_identity(
     assert order.decision_id == receipt.decision_id
     assert prepared.receipt_ref == receipt_attribution_ref(receipt)
     assert order.client_order_id == f"local-receipt-{receipt_attribution_ref(receipt)[7:]}"
+    assert order.quantity == Decimal("4")
 
     store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
     broker = LocalPaperBroker(
@@ -150,7 +157,16 @@ def test_eligible_exit_receipt_keeps_sell_identity_on_both_paper_routes() -> Non
     receipt = _receipt(action="exit")
     binding = _binding(receipt)
 
-    local = prepare_local_paper_intent(receipt, binding=binding, as_of=NOW)
+    local = prepare_local_paper_intent(
+        receipt,
+        binding=_local_target_binding(
+            receipt,
+            target_exposure=Decimal("0"),
+            current_quantity=Decimal("5"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW,
+    )
     paper = prepare_kis_paper_decision(
         receipt,
         binding=binding,
@@ -161,8 +177,64 @@ def test_eligible_exit_receipt_keeps_sell_identity_on_both_paper_routes() -> Non
     assert local.status == paper.status == "ready"
     assert local.local_paper_intent is not None
     assert local.local_paper_intent.side == "sell"
+    assert local.local_paper_intent.quantity == Decimal("5")
     assert paper.kis_paper_decision is not None
     assert paper.kis_paper_decision.side == "sell"
+
+
+def test_local_target_already_satisfied_remains_a_scoped_no_intent() -> None:
+    receipt = _receipt()
+
+    prepared = prepare_local_paper_intent(
+        receipt,
+        binding=_local_target_binding(
+            receipt,
+            target_exposure=Decimal("0.5"),
+            current_quantity=Decimal("5"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW,
+    )
+
+    assert prepared.status == "no_intent"
+    assert prepared.reason == "target_already_satisfied"
+    assert prepared.local_paper_intent is None
+
+
+def test_entry_receipt_rejects_a_nonpositive_execution_target() -> None:
+    receipt = _receipt()
+
+    prepared = prepare_local_paper_intent(
+        receipt,
+        binding=_local_target_binding(
+            receipt,
+            target_exposure=Decimal("0"),
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW,
+    )
+
+    assert prepared.status == "no_intent"
+    assert prepared.reason == "target_binding_mismatch"
+    assert prepared.local_paper_intent is None
+
+
+def test_local_target_binding_cannot_prepare_a_kis_paper_decision() -> None:
+    receipt = _receipt()
+
+    with pytest.raises(TypeError, match="paper execution binding"):
+        prepare_kis_paper_decision(
+            receipt,
+            binding=_local_target_binding(
+                receipt,
+                target_exposure=Decimal("0.5"),
+                current_quantity=Decimal("1"),
+                maximum_quantity=Decimal("10"),
+            ),  # type: ignore[arg-type]
+            limit_proof=_limit_proof(receipt),
+            as_of=NOW,
+        )
 
 
 def test_bridge_is_offline_and_does_not_read_network_or_credentials(
@@ -174,12 +246,17 @@ def test_bridge_is_offline_and_does_not_read_network_or_credentials(
     monkeypatch.setattr(socket, "create_connection", fail_external)
     monkeypatch.setattr(urllib.request, "urlopen", fail_external)
     receipt = _receipt()
-    binding = _binding(receipt)
+    local_binding = _local_target_binding(
+        receipt,
+        target_exposure=Decimal("0.5"),
+        current_quantity=Decimal("1"),
+        maximum_quantity=Decimal("10"),
+    )
 
-    local = prepare_local_paper_intent(receipt, binding=binding, as_of=NOW)
+    local = prepare_local_paper_intent(receipt, binding=local_binding, as_of=NOW)
     paper = prepare_kis_paper_decision(
         receipt,
-        binding=binding,
+        binding=_binding(receipt),
         limit_proof=_limit_proof(receipt),
         as_of=NOW,
     )
@@ -235,6 +312,22 @@ def _binding(receipt: ResearchDecisionReceipt) -> PaperDecisionExecutionBinding:
         symbol="QQQ",
         exchange="NASD",
         quantity=Decimal("2"),
+    )
+
+
+def _local_target_binding(
+    receipt: ResearchDecisionReceipt,
+    *,
+    target_exposure: Decimal,
+    current_quantity: Decimal,
+    maximum_quantity: Decimal,
+) -> LocalPaperTargetBinding:
+    return LocalPaperTargetBinding(
+        proposal_ref=receipt.proposal_ref,
+        symbol="QQQ",
+        target_exposure=target_exposure,
+        current_quantity=current_quantity,
+        maximum_quantity=maximum_quantity,
     )
 
 

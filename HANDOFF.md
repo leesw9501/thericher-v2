@@ -68,21 +68,27 @@ authorized private KIS Paper work.
 - The prospective QQQ head has zero complete sessions out of five. The retained
   short-session evidence is a Data-local source fact. It is not a company
   hold.
-- The existing intraday-head task is a current source-local collector. Preserve
-  its cache provenance and conflict handling while a bounded capability probe
-  determines the usable historical range, continuity, token reuse, and
-  route-specific throughput of the KIS 1m endpoint.
+- The 2026-07-26 bounded QQQ KIS Paper minute probe accepted two full terminal
+  head pages through one in-memory client/token under the existing request
+  gate. It observed a gap within one exchange date; it did not establish
+  historical continuation or a complete 390-minute session. The probe retained
+  no raw bars. Its source-safe external evidence is
+  `20260726T123512436025Z-f1575006a7319021.json`.
+- The existing intraday-head task remains a source-local collector. The next
+  Data objective is a single-client session-capture worker that preserves its
+  provenance and conflict handling without fabricating a historical cursor.
 
 ### Engine Research
 
-- Historical KIS daily and complete intraday data are ready for a new frozen
-  campaign contract.
-- Earlier CPU/GPU screens, including GRU, LSTM, causal TCN, and compact
-  attention, are descriptive plumbing/replication evidence only. No model,
-  ensemble, or profitability claim is selected.
-- One GPU job may run after its dataset, target, split, costs, baseline, and
-  stop rules are frozen. Store artifacts only under
-  D:\thericher-v2\model-artifacts.
+- The frozen QQQ KIS-private-daily CPU baseline completed with 4,756 sessions,
+  an 80/20 chronological split and one-session purge. Both fixed naive
+  candidates were after-cost negative in development and the descriptive
+  holdout; all fills were `local_paper`. No candidate was selected.
+- A Docker CUDA replication compared LSTM, causal TCN, and compact attention on
+  the existing 20-session intraday scope. It wrote no checkpoint or raw data;
+  it made no winner, ensemble, profitability, or Paper-authorization claim.
+- No GPU job is active. The next eligible intraday campaign depends on
+  Data-owned complete-session coverage, not on keeping the GPU busy.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -96,6 +102,9 @@ authorized private KIS Paper work.
   projections only.
 - Existing scheduled Paper facts are categorical. No current receipt proves a
   selected model, external fill, or realized PnL.
+- A target-position binding now derives a deterministic local-paper delta
+  intent or a scoped no-intent for an already-satisfied/mismatched target. It
+  preserves route isolation and makes no KIS call.
 
 ## KIS Throughput Facts
 
@@ -108,10 +117,14 @@ authorized private KIS Paper work.
   current five-minute cross-process token-start guard prevents short-lived
   workers from colliding; it is not a token lifetime or a reason to idle a
   ready lane.
-- The next Data goal measures the endpoint with a finite, source-safe probe
-  before proposing any durable pacing or capture replacement. The current
-  evidence-backed rate/cooldown controls remain active during that work. Do not
-  use a parallel request flood.
+- The source-safe probe verified reuse of one in-memory token across two
+  terminal-head requests under the current gate. It did not test a faster
+  ceiling, historical continuation, or continuous-session collection. The
+  current evidence-backed rate/cooldown controls remain active; do not use a
+  parallel request flood.
+- The next Data goal implements the measured single-client capture path and
+  records actual coverage. A terminal page remains current-head evidence, not
+  permission to invent a historical cursor.
 
 ## Active Lanes
 
@@ -141,9 +154,9 @@ authorized private KIS Paper work.
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 KST
-the CLI OAuth session was expired during the throughput-governance check; no
-private material was sent. This is a scoped tooling fault, not a hold on the
-ready Data, Research, or Execution packages.
+the CLI OAuth session was expired both during the throughput-governance check
+and the single-client-capture drift-check retry; no private material was sent.
+This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -155,6 +168,6 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Integrate the Data capability evidence, historical
-Research campaign result, and Execution contract evidence. Refresh this file
-only with current cross-lane facts after a bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Implement and verify the Data-owned single-client
+intraday session-capture worker, then refresh this file only with current
+cross-lane facts after that bounded objective completes.

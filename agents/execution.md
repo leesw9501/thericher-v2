@@ -27,15 +27,19 @@ remains unavailable.
 - A missing or ambiguous exact broker outcome constrains replacement of that
   exact intent until reconciliation, never a distinct authorized Paper action
   or an independent lane.
+- The target-position binding is now test-backed: it derives only the delta
+  local-paper intent, rejects a pre-decision `as_of`, and emits scoped
+  no-intent for an already-satisfied or mismatched target. It does not widen a
+  KIS route or make a network call.
 
 ## Ready Queue
 
-1. Reattest and simplify the deterministic target-weight, sizing, intent,
-   route, persistence, and reconciliation contract for a later eligible Research
-   candidate.
-2. Use existing authorized KIS Paper scheduled/read-only evidence where it
-   improves integration. Preserve exact intent identity and do not infer a
-   fill, cancellation, or PnL from incomplete evidence.
+1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
+   stable while Data implements the next capture worker. Its replay and route
+   isolation tests are the current integration evidence.
+2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
+   improves a named integration. Preserve exact intent identity and do not infer
+   a fill, cancellation, or PnL from incomplete evidence.
 3. Keep the local console and local-paper replay aligned with the same
    deterministic intent/fill vocabulary.
 4. Do not create an intent solely to manufacture activity. A goal-owned Paper
@@ -58,6 +62,6 @@ independent Data, Research, and authorized Paper work.
 
 ## Next Handoff
 
-Return the simplified integration contract and any exact categorical
-reconciliation fact. Do not wait for prospective data or model promotion to
-prepare deterministic execution.
+Return any future Data/Research integration request with the existing target
+binding and route boundaries intact. Do not wait for prospective data or model
+promotion to prepare deterministic execution.

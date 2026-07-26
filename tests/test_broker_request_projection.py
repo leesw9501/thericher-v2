@@ -61,6 +61,16 @@ def test_target_position_market_intent_stays_non_projectable() -> None:
 
     assert intent is not None
     assert intent.limit_price is None
+    assert (
+        target_proposal_to_order_intent(
+            proposal,
+            client_order_id="target-intent-before-decision",
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("4"),
+            as_of=decided_at - timedelta(microseconds=1),
+        )
+        is None
+    )
     with pytest.raises(ValueError, match="limit_price must be explicit"):
         order_intent_to_broker_order_request(intent)
 

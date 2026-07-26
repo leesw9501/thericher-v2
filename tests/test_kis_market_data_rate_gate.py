@@ -83,6 +83,22 @@ def test_rate_limit_cooldown_is_shared_without_storing_response_data(tmp_path: P
     assert "response" not in state
 
 
+def test_request_start_callback_receives_only_the_reserved_safe_timestamp(tmp_path: Path) -> None:
+    clock = _Clock()
+    observed: list[datetime] = []
+    gate = KisPaperMarketDataRateGate(
+        control_root=tmp_path / "control",
+        clock=clock,
+        sleeper=clock.sleep,
+        on_request_started=observed.append,
+    )
+
+    gate.wait_for_request_slot()
+
+    assert observed == [datetime(2026, 7, 24, 12, 0, tzinfo=UTC)]
+    assert clock.sleep_calls == []
+
+
 def test_shared_token_start_gate_yields_without_sleep_or_secret_state(tmp_path: Path) -> None:
     clock = _Clock()
     first = KisPaperMarketDataTokenStartGate(

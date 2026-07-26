@@ -5,37 +5,36 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Cross-Lane View
 
-- Data is ready for a bounded KIS Paper market-data capability probe. The
-  existing intraday-head collector remains a source-local fallback/current
-  sampler, not a company-wide dependency.
-- Engine Research is ready for historical KIS daily and complete-intraday
-  campaign work. The prospective first-five pair gates only its own future
-  observer/promotion path.
-- Execution is ready to simplify and reattest the deterministic
-  decision-to-target-weight-to-intent integration without changing live
-  isolation.
+- Data has measured the KIS Paper terminal-head path and is ready to implement
+  the single-client, concurrency-one session-capture worker. The existing
+  intraday-head collector remains a source-local current sampler, not a
+  company-wide dependency.
+- Engine Research completed its frozen daily CPU baseline and one intraday CUDA
+  replication. Neither selected a model; its next campaign depends on newly
+  qualified Data coverage rather than a GPU occupancy target.
+- Execution completed the deterministic target-weight-to-local-paper-intent
+  binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
   Data owns the first; Research owns the second. There is no current storage
   conflict.
 
 ## Current Bottleneck
 
-The material unknown is KIS intraday endpoint continuity and route-specific
-throughput, not an absence of all usable data. Historical daily and complete
-intraday evidence must continue to advance Research while Data measures that
-unknown.
+The material unknown is continuous, source-qualified KIS 1m session coverage.
+The terminal-head probe proved bounded client/token reuse only; it did not
+prove historical pagination or a complete regular session.
 
 ## Current Operating Improvement
 
-Keep prospective readiness local to its consumer. The company goal must include
-all ready, non-conflicting role packages and may not be reduced to the next
-external scheduler due time. A worker owns its own backoff and recovery; Codex
-does not sleep while another lane is ready.
+Turn measured endpoint behavior into the smallest owned Data worker before
+starting another architecture sweep. Keep prospective readiness local to its
+consumer; a worker owns its own backoff and recovery, and Codex does not sleep
+while another lane is ready.
 
 ## External Waits
 
-- The scheduled intraday head has a due time, but it does not hold Data probes,
-  historical Research, or Execution preparation.
+- The scheduled intraday head has a due time, but it does not hold the capture
+  worker implementation, historical evidence preservation, or Execution.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
 
@@ -47,6 +46,6 @@ lanes.
 
 ## Next Handoff
 
-Integrate the Data probe, frozen historical campaign, and Execution contract.
+Integrate the tested Data capture worker and its source-safe smoke evidence.
 Record only an actual shared resource conflict, new external wait, bottleneck,
 or reversible operating improvement here.

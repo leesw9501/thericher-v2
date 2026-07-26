@@ -62,6 +62,7 @@ class KisPaperMarketDataRateGate:
         rate_limit_backoff_seconds: float = KIS_PAPER_MARKET_DATA_RATE_LIMIT_BACKOFF_SECONDS,
         clock: Callable[[], datetime] = lambda: datetime.now(UTC),
         sleeper: Callable[[float], None] = time.sleep,
+        on_request_started: Callable[[datetime], None] | None = None,
     ) -> None:
         if not _is_positive_finite(minimum_request_interval_seconds):
             raise ValueError("market-data request interval must be positive")
@@ -72,6 +73,7 @@ class KisPaperMarketDataRateGate:
         self._rate_limit_backoff = timedelta(seconds=float(rate_limit_backoff_seconds))
         self._clock = clock
         self._sleeper = sleeper
+        self._on_request_started = on_request_started
 
     def wait_for_request_slot(self) -> None:
         """Block only until this one external request may start safely."""
@@ -86,6 +88,8 @@ class KisPaperMarketDataRateGate:
                 if due is None or now >= due:
                     state["last_request_started_at_utc"] = _format_utc(now)
                     _write_state(self._state_path(), state)
+                    if self._on_request_started is not None:
+                        self._on_request_started(now)
                     return
                 delay = (due - now).total_seconds()
             self._sleeper(max(delay, 0.001))
@@ -109,9 +113,7 @@ class KisPaperMarketDataRateGate:
                     state.get("last_request_started_at_utc")
                 ),
                 retry_not_before_utc=_parse_optional_utc(state.get("retry_not_before_utc")),
-                last_rate_limit_at_utc=_parse_optional_utc(
-                    state.get("last_rate_limit_at_utc")
-                ),
+                last_rate_limit_at_utc=_parse_optional_utc(state.get("last_rate_limit_at_utc")),
             )
 
     @contextmanager
@@ -147,9 +149,7 @@ class KisPaperMarketDataTokenStartGate:
         if not _is_positive_finite(minimum_request_interval_seconds):
             raise ValueError("market-data token interval must be positive")
         self._control_root = Path(control_root)
-        self._minimum_request_interval = timedelta(
-            seconds=float(minimum_request_interval_seconds)
-        )
+        self._minimum_request_interval = timedelta(seconds=float(minimum_request_interval_seconds))
         self._clock = clock
 
     def claim_token_request_start(self) -> bool:
@@ -193,9 +193,7 @@ class KisPaperMarketDataTokenStartGate:
             return KisPaperMarketDataTokenStartGateSnapshot(
                 last_token_request_started_at_utc=last_started,
                 next_token_request_not_before_utc=(
-                    None
-                    if last_started is None
-                    else last_started + self._minimum_request_interval
+                    None if last_started is None else last_started + self._minimum_request_interval
                 ),
             )
 

@@ -8,13 +8,22 @@ from datetime import datetime
 from decimal import Decimal
 from typing import Final, Literal
 
-from thericher_v2.contracts import SCHEMA_VERSION, OrderIntent, positive, require_utc
+from thericher_v2.contracts import (
+    SCHEMA_VERSION,
+    OrderIntent,
+    TargetExposureProposal,
+    decimal_value,
+    positive,
+    require_utc,
+)
 from thericher_v2.research.decision_receipt import ResearchDecisionReceipt
 from thericher_v2.research.kis_paper_canary_intent import (
     KisPaperCanaryBuyDecision,
     KisPaperCanaryOrderDecision,
     KisPaperCanarySellDecision,
 )
+
+from .target_position import target_proposal_to_order_intent
 
 _OPAQUE_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}")
 _SHA256_REFERENCE: Final = re.compile(r"sha256:[0-9a-f]{64}")
@@ -29,6 +38,8 @@ BridgeReason = Literal[
     "receipt_not_eligible",
     "receipt_not_current",
     "binding_mismatch",
+    "target_binding_mismatch",
+    "target_already_satisfied",
     "price_proof_receipt_mismatch",
     "price_proof_binding_mismatch",
     "price_proof_not_current",
@@ -55,6 +66,37 @@ class PaperDecisionExecutionBinding:
         object.__setattr__(self, "quantity", positive(self.quantity, "quantity"))
         if self.quantity != self.quantity.to_integral_value():
             raise ValueError("quantity must be whole shares")
+        if self.market != "US":
+            raise ValueError("market must be US")
+
+
+@dataclass(frozen=True)
+class LocalPaperTargetBinding:
+    """Execution-owned target weight and position snapshot for one local receipt."""
+
+    proposal_ref: str
+    symbol: str
+    target_exposure: Decimal
+    current_quantity: Decimal
+    maximum_quantity: Decimal
+    market: Literal["US"] = "US"
+
+    def __post_init__(self) -> None:
+        if _OPAQUE_REFERENCE.fullmatch(self.proposal_ref) is None:
+            raise ValueError("proposal_ref must be an opaque reference")
+        _require_us_symbol(self.symbol)
+        target_exposure = decimal_value(self.target_exposure, "target_exposure")
+        current_quantity = decimal_value(self.current_quantity, "current_quantity")
+        maximum_quantity = decimal_value(self.maximum_quantity, "maximum_quantity")
+        if target_exposure < 0 or target_exposure > Decimal("1"):
+            raise ValueError("target_exposure must be between 0 and 1")
+        if current_quantity < 0:
+            raise ValueError("current_quantity must be non-negative")
+        if maximum_quantity <= 0:
+            raise ValueError("maximum_quantity must be positive")
+        object.__setattr__(self, "target_exposure", target_exposure)
+        object.__setattr__(self, "current_quantity", current_quantity)
+        object.__setattr__(self, "maximum_quantity", maximum_quantity)
         if self.market != "US":
             raise ValueError("market must be US")
 
@@ -112,6 +154,8 @@ class PaperDecisionBridgeResult:
             "receipt_not_eligible",
             "receipt_not_current",
             "binding_mismatch",
+            "target_binding_mismatch",
+            "target_already_satisfied",
             "price_proof_receipt_mismatch",
             "price_proof_binding_mismatch",
             "price_proof_not_current",
@@ -154,32 +198,50 @@ class PaperDecisionBridgeResult:
 def prepare_local_paper_intent(
     receipt: ResearchDecisionReceipt,
     *,
-    binding: PaperDecisionExecutionBinding,
+    binding: PaperDecisionExecutionBinding | LocalPaperTargetBinding,
     as_of: datetime,
 ) -> PaperDecisionBridgeResult:
-    """Prepare a deterministic local-paper entry or exit without external access."""
+    """Prepare a deterministic local-paper target delta without external access."""
 
+    if not isinstance(binding, (PaperDecisionExecutionBinding, LocalPaperTargetBinding)):
+        raise TypeError("local paper requires a supported execution binding")
     now = require_utc(as_of, "as_of")
     reason = _eligibility_reason(receipt=receipt, binding=binding, as_of=now)
     receipt_ref = receipt_attribution_ref(receipt)
     if reason is not None:
         return _no_intent(route="local_paper", receipt_ref=receipt_ref, reason=reason)
     digest = _receipt_digest(receipt.decision_id)
+    target_binding = (
+        binding
+        if isinstance(binding, LocalPaperTargetBinding)
+        else _legacy_local_target_binding(receipt=receipt, binding=binding)
+    )
+    proposal = _local_target_proposal(receipt=receipt, binding=target_binding)
+    if proposal is None:
+        return _no_intent(
+            route="local_paper",
+            receipt_ref=receipt_ref,
+            reason="target_binding_mismatch",
+        )
+    intent = target_proposal_to_order_intent(
+        proposal,
+        client_order_id=f"local-receipt-{digest}",
+        current_quantity=target_binding.current_quantity,
+        maximum_quantity=target_binding.maximum_quantity,
+        as_of=now,
+    )
+    if intent is None:
+        return _no_intent(
+            route="local_paper",
+            receipt_ref=receipt_ref,
+            reason="target_already_satisfied",
+        )
     return PaperDecisionBridgeResult(
         route="local_paper",
         receipt_ref=receipt_ref,
         status="ready",
         reason="eligible",
-        local_paper_intent=OrderIntent(
-            client_order_id=f"local-receipt-{digest}",
-            symbol=binding.symbol,
-            market=binding.market,
-            side="buy" if receipt.decision_class == "enter" else "sell",
-            quantity=binding.quantity,
-            limit_price=None,
-            decision_id=receipt.decision_id,
-            created_at=now,
-        ),
+        local_paper_intent=intent,
     )
 
 
@@ -192,6 +254,8 @@ def prepare_kis_paper_decision(
 ) -> PaperDecisionBridgeResult:
     """Prepare an existing virtual-paper entry or exit decision without submitting it."""
 
+    if not isinstance(binding, PaperDecisionExecutionBinding):
+        raise TypeError("KIS paper requires a paper execution binding")
     now = require_utc(as_of, "as_of")
     receipt_ref = receipt_attribution_ref(receipt)
     reason = _eligibility_reason(receipt=receipt, binding=binding, as_of=now)
@@ -203,10 +267,7 @@ def prepare_kis_paper_decision(
             receipt_ref=receipt_ref,
             reason="price_proof_receipt_mismatch",
         )
-    if (
-        limit_proof.symbol != binding.symbol
-        or limit_proof.exchange != binding.exchange
-    ):
+    if limit_proof.symbol != binding.symbol or limit_proof.exchange != binding.exchange:
         return _no_intent(
             route="kis_paper",
             receipt_ref=receipt_ref,
@@ -265,20 +326,75 @@ def receipt_attribution_ref(receipt: ResearchDecisionReceipt) -> str:
 def _eligibility_reason(
     *,
     receipt: ResearchDecisionReceipt,
-    binding: PaperDecisionExecutionBinding,
+    binding: PaperDecisionExecutionBinding | LocalPaperTargetBinding,
     as_of: datetime,
 ) -> BridgeReason | None:
     if binding.proposal_ref != receipt.proposal_ref:
         return "binding_mismatch"
     eligible_shape = (
-        (receipt.decision_class == "enter" and receipt.reason_class == "eligible_enter")
-        or (receipt.decision_class == "exit" and receipt.reason_class == "eligible_exit")
-    )
+        receipt.decision_class == "enter" and receipt.reason_class == "eligible_enter"
+    ) or (receipt.decision_class == "exit" and receipt.reason_class == "eligible_exit")
     if not eligible_shape or receipt.input_status != "ready":
         return "receipt_not_eligible"
     if as_of < receipt.decided_at or as_of > receipt.valid_until:
         return "receipt_not_current"
     return None
+
+
+def _legacy_local_target_binding(
+    *,
+    receipt: ResearchDecisionReceipt,
+    binding: PaperDecisionExecutionBinding,
+) -> LocalPaperTargetBinding:
+    """Preserve fixed-lot local callers while routing them through target sizing."""
+
+    if receipt.decision_class == "enter":
+        target_exposure = Decimal("1")
+        current_quantity = Decimal("0")
+    elif receipt.decision_class == "exit":
+        target_exposure = Decimal("0")
+        current_quantity = binding.quantity
+    else:  # pragma: no cover - eligibility filters non-actionable receipts.
+        raise ValueError("eligible local receipt must be enter or exit")
+    return LocalPaperTargetBinding(
+        proposal_ref=binding.proposal_ref,
+        symbol=binding.symbol,
+        market=binding.market,
+        target_exposure=target_exposure,
+        current_quantity=current_quantity,
+        maximum_quantity=binding.quantity,
+    )
+
+
+def _local_target_proposal(
+    *,
+    receipt: ResearchDecisionReceipt,
+    binding: LocalPaperTargetBinding,
+) -> TargetExposureProposal | None:
+    if receipt.decision_class == "enter":
+        if binding.target_exposure <= 0:
+            return None
+        action: Literal["enter", "exit"] = "enter"
+    elif receipt.decision_class == "exit":
+        if binding.target_exposure != 0:
+            return None
+        action = "exit"
+    else:  # pragma: no cover - eligibility filters non-actionable receipts.
+        raise ValueError("eligible local receipt must be enter or exit")
+    return TargetExposureProposal(
+        proposal_id=receipt.decision_id,
+        symbol=binding.symbol,
+        market=binding.market,
+        action=action,
+        target_exposure=binding.target_exposure,
+        confidence=Decimal("1"),
+        feature_schema_id="execution-target-bridge-v1",
+        input_status="ready",
+        decided_at=receipt.decided_at,
+        valid_until=receipt.valid_until,
+        feature_window_end=receipt.decided_at,
+        reason="receipt_bound_execution_target",
+    )
 
 
 def _no_intent(

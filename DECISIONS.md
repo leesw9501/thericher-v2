@@ -5173,3 +5173,39 @@ bottleneck and caused scheduler/recovery reattestation to displace Data,
 Research, and Execution progress. Localizing the condition restores the
 approved readiness-driven operating model while retaining source correctness,
 rate, recovery, and live-route safeguards.
+
+## 2026-07-26 - Build KIS intraday capture from measured terminal-head behavior
+
+Decision: the next Data objective is one owned, bounded KIS Paper intraday
+session-capture worker. It creates one in-memory market-data client/token for
+one worker invocation, keeps concurrency at one, preserves the existing shared
+request gate and cooldown, and treats `tr_cont` as the sole continuation
+authority. A terminal page may contribute only current-head evidence; it may
+not synthesize a historical cursor or support a historical-range claim. The
+worker must retain provider rows, manifests, provenance, deduplication, and
+recovery state only under `D:\market_data`, then report source-safe coverage
+facts including the exact 390-minute regular-session contract. It has no
+account, position, order, or live route and does not require a new scheduler.
+
+Evidence: the bounded QQQ Paper-minute probe accepted two full terminal-head
+pages under the current gate, reused one in-memory Paper token, and observed a
+gap within one exchange date. Its source-safe artifact is
+`20260726T123512436025Z-f1575006a7319021.json` beneath the external model
+artifact root; the probe retained no raw bars. This establishes client-lifetime
+token reuse only. It does not establish continuous-session capture, historical
+pagination, a provider request ceiling above the current gate, or a reason to
+loosen the existing pacing controls.
+
+The frozen QQQ KIS-private-daily CPU baseline and fixed 20-session CUDA
+architecture replication are recorded as descriptive local-paper evidence.
+They selected no model, ensemble, or Paper action and do not change this Data
+decision. A fresh Claude falsification-first capture check was attempted, but
+the local CLI OAuth session was expired; no private material was sent. This
+tooling limitation does not hold the Data-only worker, but Claude must be
+retried before a material scheduler widening, promotion, ensemble selection,
+holdout interpretation, or execution-risk change.
+
+Reason: the smallest useful next step is to turn an observed route behavior
+into a recoverable source-correct collector. Further blind model sweeps cannot
+resolve the missing continuous-session evidence and would not advance a model
+promotion claim.
