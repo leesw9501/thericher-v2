@@ -11,11 +11,10 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Integrate the tested KIS Paper intraday session-capture path with the one
-existing intraday-head task while preserving source separation, cache
-correctness, and the isolated prospective-observer handoff. The prospective
-QQQ 1m first-five pair is one Data product for a named future observer; it is
-not the only Data output or a company hold.
+Maintain the KIS Paper intraday capture path while supplying the frozen,
+qualified QQQ/SPY daily catalog for the next offline sequence-model breadth
+screen. The prospective QQQ 1m first-five pair is one Data product for a named
+future observer; it is not the only Data output or a company hold.
 
 ## Current Facts
 
@@ -44,26 +43,25 @@ not the only Data output or a company hold.
   `20260726T131355216487Z-cb15a58ccd594f44.json`; its terminal extended-session
   data qualified zero of 390 regular-session minutes. The QQQ capture transport
   result was complete while its coverage correctly remained input-pending.
+- The one existing intraday-head Docker profile now invokes `session-capture`.
+  Its four KST triggers, task identity, lock, request controls, page cap,
+  observer isolation, and collector-exit authority are unchanged. An eligible
+  QQQ result also retains the existing metadata-only preparation handoff. No
+  scheduled run under this configuration has been claimed yet.
 - D: free space is about 40.45 percent. Data acquisition remains within the
   existing 20 percent warning and 15 percent floor policy.
 
 ## Ready Queue
 
-1. Rewire only the existing `thericher-kis-paper-intraday-head` task/profile to
-   invoke the tested `session-capture` mode. Do not create a task, trigger, or
-   independent scheduler.
-2. Preserve the one-client, concurrency-one collector, existing request gate,
-   cooldown, lock, strict conflict handling, and `tr_cont` continuation
-   contract. A terminal page remains current-head evidence only.
-3. Preserve the existing isolated preparation and observation handoff: a
-   qualified QQQ result may prepare its immutable pair, while a partial or
-   extended-session capture remains source evidence and cannot enter Research.
-4. Add profile/dispatcher tests proving that the collector outcome stays
-   authoritative, the observer remains network-disabled, and no account,
-   order, or live route is introduced.
-5. Continue normal daily/intraday cache work when its owned cursor is ready.
-   Hand an immutable first-five pair to the isolated prospective observer only
-   when the exact 390-minute Data contract is satisfied.
+1. Reattest the QQQ/SPY daily common catalog and expose only its existing
+   source identity, chronological bounds, and split-safe availability to the
+   bounded Research screen. Do not collect, blend, or repair data for it.
+2. Continue the configured intraday session-capture task as its owned schedule
+   becomes due. Preserve the one-client, concurrency-one collector, request
+   gate, cooldown, lock, strict conflict handling, and `tr_cont` contract.
+3. Keep partial or extended-session capture rows out of Research. Hand an
+   immutable first-five pair to the isolated prospective observer only when the
+   exact 390-minute Data contract is satisfied.
 
 ## Durable Constraints
 
@@ -82,7 +80,7 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the integrated profile/dispatcher evidence and the exact effect on Data
-coverage. Do not infer historical reach or prospective completeness from a
-terminal-head page, and do not wait for a prospective pair before advancing
-other ready Data work.
+Return the daily catalog attestation for the bounded Research screen and any
+new scheduled intraday capture fact. Do not infer historical reach or
+prospective completeness from a terminal-head page, and do not wait for a
+prospective pair before advancing other ready Data work.

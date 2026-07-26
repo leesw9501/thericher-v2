@@ -616,8 +616,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     )[0]
     assert 'profiles: ["kis-paper-intraday-head"]' in intraday_head_section
     assert "backfill_kis_paper_private_intraday.py" in intraday_head_section
-    assert "--mode" in intraday_head_section
-    assert "head" in intraday_head_section
+    assert "- --mode\n      - session-capture" in intraday_head_section
     assert "--pages-per-target" in intraday_head_section
     assert '"4"' in intraday_head_section
     assert "KIS_PAPER_APP_KEY" in intraday_head_section

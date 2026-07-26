@@ -385,7 +385,7 @@ services:
       - scripts/backfill_kis_paper_private_intraday.py
       - --execute
       - --mode
-      - head
+      - session-capture
       - --pages-per-target
       - "4"
       - --preparation-artifact-root

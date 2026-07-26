@@ -80,10 +80,13 @@ authorized private KIS Paper work.
   collected a terminal extended-session page, so its exact regular-session
   coverage is zero of 390 minutes. This is valid source evidence, not a
   strategy input or a collector failure.
-- The existing intraday-head task remains a source-local collector. The next
-  Data objective is to integrate the tested capture mode into that one named
-  task while preserving its current provenance, recovery, and isolated
-  observer behavior.
+- The existing `thericher-kis-paper-intraday-head` task now uses the tested
+  `session-capture` mode in its one existing Docker profile. Its triggers,
+  page cap, worker lock, request gate, cooldown, collector exit authority, and
+  network-disabled observer remain unchanged. The QQQ-only metadata
+  preparation handoff also runs for eligible capture results. No scheduled
+  capture has yet run under this new profile configuration; that future result
+  is Data evidence, not a company hold.
 
 ### Engine Research
 
@@ -94,8 +97,10 @@ authorized private KIS Paper work.
 - A Docker CUDA replication compared LSTM, causal TCN, and compact attention on
   the existing 20-session intraday scope. It wrote no checkpoint or raw data;
   it made no winner, ensemble, profitability, or Paper-authorization claim.
-- No GPU job is active. The next eligible intraday campaign depends on
-  Data-owned complete-session coverage, not on keeping the GPU busy.
+- No GPU job is active. The next bounded breadth screen uses the already
+  qualified 4,756-session QQQ/SPY KIS-private-daily intersection instead of
+  waiting for prospective intraday coverage. It remains development-only and
+  local-paper-only.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -129,10 +134,11 @@ authorized private KIS Paper work.
   ceiling, historical continuation, or continuous-session collection. The
   current evidence-backed rate/cooldown controls remain active; do not use a
   parallel request flood.
-- The measured single-client capture path now records capture-scoped coverage.
-  A terminal page remains current-head evidence, not permission to invent a
-  historical cursor. The next bounded change is integration with the existing
-  head task, not a new scheduler or a rate-control change.
+- The measured single-client capture path now records capture-scoped coverage
+  and is the existing head task's configured collection mode. A terminal page
+  remains current-head evidence, not permission to invent a historical cursor.
+  The next bounded Research screen uses the qualified daily cache; it does not
+  change KIS pacing or wait for an intraday schedule.
 
 ## Active Lanes
 
@@ -162,9 +168,10 @@ authorized private KIS Paper work.
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 KST
-the CLI OAuth session was expired both during the throughput-governance check
-and the single-client-capture drift-check retry; no private material was sent.
-This is a scoped tooling fault, not a hold on ready private work.
+the CLI OAuth session remained expired during the throughput-governance,
+single-client-capture, and profile-integration drift-check attempts; no private
+material was sent. This is a scoped tooling fault, not a hold on ready private
+work.
 
 ## Recovery
 
@@ -176,6 +183,7 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Integrate and verify the tested Data-owned
-session-capture mode in the existing intraday-head task, then refresh this
-file only with current cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Build and run the first bounded KIS-native daily
+sequence-model breadth screen from the already qualified QQQ/SPY daily cache,
+then refresh this file only with current cross-lane facts after that bounded
+objective completes.

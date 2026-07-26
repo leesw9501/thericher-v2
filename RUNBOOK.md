@@ -350,7 +350,7 @@ Use the separate head cache when the goal is fresh in-session observations
 rather than historical cursor continuation:
 
 ```powershell
-uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode head --pages-per-target 4
+uv run python scripts\backfill_kis_paper_private_intraday.py --execute --mode session-capture --pages-per-target 4
 docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-intraday-head
 ```
 
@@ -413,10 +413,14 @@ minutes, which must remain Data evidence rather than a Research input. SPY is
 recorded as a companion target, but an independent SPY failure cannot erase the
 scoped QQQ capture result.
 
-This command currently does not change a scheduler, create a task, submit an
-order, call account/position endpoints, start a model, or invoke the isolated
-observer. The next bounded integration objective may wire it into the existing
-head task only after its profile/dispatcher contract is verified.
+The one existing `thericher-kis-paper-intraday-head` task now invokes this
+same capture mode. It does not add a scheduler, task, order, account/position
+endpoint, model, or observer route; its prior triggers, page cap, concurrency,
+collector exit authority, and sequential network-disabled observer remain
+unchanged. An eligible QQQ result still runs the existing metadata-only
+preparation child before the isolated observer consumes a verified pair. The
+first scheduled capture under this configuration must be interpreted as source
+coverage evidence only, never as a model or PnL result.
 
 A duplicate minute inside one candidate batch rejects that whole candidate,
 including any earlier page from the same invocation: no snapshot is retained

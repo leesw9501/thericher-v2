@@ -5240,3 +5240,31 @@ Reason: a transport-success label without capture-scoped coverage could let
 legacy data or extended-session rows masquerade as a new regular-session
 input. This keeps provenance exact while retaining the smallest reusable
 collector path.
+
+## 2026-07-26 - Integrate measured capture mode with the existing intraday task
+
+Decision: update only the existing `kis-paper-intraday-head` Docker service to
+run `--mode session-capture`. Its named Windows task, four triggers, execution
+limit, `IgnoreNew` behavior, page cap, one-client collector, lock, transport
+gates, strict conflict rule, and `tr_cont` continuation contract are unchanged.
+No task, scheduler, account, position, order, cancel, modify, live, model, or
+new observer route is created.
+
+The command now applies the pre-existing QQQ-only metadata preparation handoff
+to eligible `head` and `session-capture` results. The capture receipt remains
+Data evidence; preparation stays isolated from KIS credentials, and the
+network-disabled observer remains a second sequential service. A successful
+QQQ result may prepare even if independent SPY collection makes the collector
+cycle incomplete, but the collector's full target result remains the sole
+process exit and freshness authority. A preparation fault cannot change a
+successful collector exit.
+
+Focused tests pin the exact Compose mode, unchanged task surface, one-client
+capture semantics, QQQ/SPY partial behavior, fatal-path no-preparation rule,
+and observer/route isolation. Claude's required profile drift-check was
+attempted, but OAuth was still expired; no private material was sent. This
+review-tool fault is scoped evidence only.
+
+Reason: this operationalizes the tested source contract through the one
+existing collector rather than creating parallel workers or silently dropping
+the immutable Data-to-Research handoff.

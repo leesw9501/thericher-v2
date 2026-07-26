@@ -170,7 +170,7 @@ def main(
                 for result in results
             ],
         }
-    if args.mode == "head" and _head_preparation_input_succeeded(results):
+    if args.mode in {"head", "session-capture"} and _head_preparation_input_succeeded(results):
         payload["preparation"] = _prepare_head_observation(
             head_cache_root=_cache_root("head"),
             artifact_root=Path(args.preparation_artifact_root),

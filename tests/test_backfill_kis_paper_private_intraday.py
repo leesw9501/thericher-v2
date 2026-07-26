@@ -379,11 +379,13 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
     ]
 
 
+@pytest.mark.parametrize("mode", ("head", "session-capture"))
 @pytest.mark.parametrize("failure_stage", ("config", "collector"))
-def test_intraday_head_does_not_prepare_after_collector_failure(
+def test_intraday_head_or_session_capture_does_not_prepare_after_collector_failure(
     monkeypatch,
     capsys,
     failure_stage: str,
+    mode: str,
 ) -> None:
     script = _load_script()
     child_calls: list[object] = []
@@ -411,7 +413,7 @@ def test_intraday_head_does_not_prepare_after_collector_failure(
         )
 
     assert script.main(
-        ["--execute", "--mode", "head"],
+        ["--execute", "--mode", mode],
         code_revision=lambda _: "git:test",
     ) == 1
 
@@ -550,6 +552,8 @@ def test_intraday_head_docker_profile_mounts_only_the_explicit_preparation_artif
     )[0]
 
     assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "- --mode\n      - session-capture" in section
+    assert "- --mode\n      - head" not in section
     assert "--preparation-artifact-root" in section
     assert "/app/model_artifacts" in section
     assert (

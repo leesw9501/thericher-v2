@@ -11,11 +11,11 @@ modify broker submission or deterministic execution-risk behavior.
 
 ## Current Objective
 
-Preserve completed historical KIS evidence and keep the next campaign queue
-falsifiable. The prospective QQQ first-five pair is required only for its
-isolated prospective observation, pair-dependent campaign, and later
-pair-dependent promotion decisions; it does not make historical evidence
-input-pending.
+Build the first bounded KIS-native daily sequence-model breadth screen from
+the qualified QQQ/SPY daily catalog. The prospective QQQ first-five pair is
+required only for its isolated prospective observation, pair-dependent
+campaign, and later pair-dependent promotion decisions; it does not make the
+daily historical screen input-pending.
 
 ## Current Readiness
 
@@ -29,8 +29,9 @@ input-pending.
 - The Docker CUDA replication compared LSTM, causal TCN, and compact attention
   on the fixed 20-session intraday scope. Its artifact wrote no checkpoint or
   raw market data and selected no winner, ensemble, or Paper action.
-- No GPU job is active. GPU capacity is available, but no additional eligible
-  architecture screen should run solely to occupy it.
+- No GPU job is active. The qualified QQQ/SPY daily intersection supports a
+  small development-only sequence breadth screen, so its GPU use can be tied
+  to a falsifiable campaign rather than occupancy alone.
 - The pair-bound prospective observer is implemented, local-paper-only, and
   network-disabled. It remains inactive until Data supplies its immutable pair.
 - The latest capture-scoped QQQ terminal page contained no qualified regular
@@ -39,24 +40,21 @@ input-pending.
 
 ## Ready Queue
 
-1. Keep the completed daily CPU and intraday CUDA artifacts as replication
-   evidence only. The negative/near-flat costed results are a falsification
-   signal, not a reason to relabel a candidate or tune against the holdout.
-2. Prepare the next intraday campaign contract only when Data supplies a
-   qualified complete-session scope beyond the already-fixed 20-session input.
-   Freeze feature availability, target, split, costs, baselines, compute
-   budget, and stop rules before a new CPU or GPU job.
-3. Maintain breadth, depth, ensemble, and replication queues: breadth and
-   depth are input-pending; ensemble is empty until independently useful,
-   error-diverse candidates exist; replication is complete for the current
-   fixed architecture screen.
-4. Do not open a sealed holdout, claim a promoted model, or use GPU occupancy
-   as a success metric. A qualified future candidate requires the Claude
-   challenge before promotion, ensemble selection, or material interpretation.
+1. Freeze a daily QQQ/SPY-only contract: KIS-native catalog identity, causal
+   completed-bar features, chronological development/validation split, purge,
+   costs, local-paper replay, fixed model families, compute budget, and stop
+   rules. Do not open or tune against a sealed holdout.
+2. Run a deterministic CPU smoke before one bounded Docker CUDA screen of
+   materially different compact sequence families. Store checkpoints and safe
+   evidence only under the external artifact root.
+3. Treat results as development-only falsification evidence. Do not select a
+   winner, create an ensemble, promote a model, or create a KIS Paper action.
+4. Maintain breadth, depth, ensemble, and replication queues: daily breadth is
+   active; intraday breadth/depth remain input-pending; ensemble is empty until
+   independently useful, error-diverse candidates exist.
 5. Consume a verified prospective pair as an additional observation/campaign
    input when Data provides it. It never rewrites historical results or becomes
-   a global queue gate. The next Data task changes collection integration only;
-   it does not authorize a new Research campaign.
+   a global queue gate.
 
 ## Durable Constraints
 
@@ -75,6 +73,6 @@ its pair-bound observation.
 
 ## Next Handoff
 
-Return the next frozen campaign only after its Data input is qualified. Until
-then, preserve the completed evidence and make no new candidate-selection
-claim. Do not wait for prospective collection to keep other ready roles moving.
+Return the frozen daily campaign contract, CPU smoke, and bounded CUDA evidence
+without a candidate-selection claim. Do not wait for prospective collection to
+keep other ready roles moving.
