@@ -36,18 +36,19 @@ behavior objective.
    manifests/indexes and identify the active backlog in source-safe terms. Keep
    raw data under `D:\market_data`; do not output rows, credentials, or account
    facts.
-3. Implement the smallest test-backed, data-only bounded pace-calibration path.
-   It must use one in-memory Paper client/token, one active collector per cache,
-   a finite request and elapsed-time budget, and one pacing-variable change per
-   probe. Record only request count, accepted-page count, categorical
-   limit/error count, elapsed-time category, tested interval, and the fact that
-   recalibrates the chosen setting.
-4. Preserve the current 1.25-second shared request-start gate and 60-second
-   `429`/`EGW00201` cooldown until measurement supports a different setting.
-   The five-minute cross-process token-start guard applies only to a new token
-   request: it must not turn into a five-minute foreground sleep or block an
-   existing in-memory client.
-5. If the bounded calibration is clean and a cursor is ready, run the existing
+3. Review the existing test-backed, data-only bounded calibration path and its
+   latest source-safe result before adding another probe. The QQQ 1.0-second
+   candidate accepted two full terminal-head pages through one in-memory client
+   and token with zero categorical errors. It is not a route-wide ceiling or a
+   historical-continuation claim.
+4. Before adopting the clean 1.0-second candidate, inventory and align every
+   effective pacing layer: shared gate, client, collector, and scheduler. Change
+   only the supported end-to-end setting and add focused tests that prove a
+   longer local delay cannot silently defeat it. Retain the 60-second
+   `429`/`EGW00201` cooldown. The five-minute cross-process token-start guard
+   applies only to a new token request: it must not turn into a five-minute
+   foreground sleep or block an existing in-memory client.
+5. If the aligned bounded setting is clean and a cursor is ready, run the existing
    finite daily catch-up or intraday session-capture worker using the proven
    setting. Retain collected raw market data, manifests, provenance, and
    recovery state only under `D:\market_data`. A rate limit, invalid page, or
@@ -77,8 +78,9 @@ behavior objective.
 
 - A test-backed bounded calibration path with only source-safe evidence and no
   secret, account, order, or live surface.
-- A recorded measured pace or a precise recoverable reason it cannot yet be
-  changed, including the fact that will recalibrate it.
+- An effective, recorded measured pace or a precise recoverable reason it cannot
+  yet be changed, including the fact that will recalibrate it. A lower shared
+  gate alone is insufficient when another pacing layer remains longer.
 - When a ready cursor exists, one finite collector run that preserves the
   existing cache/provenance/recovery contract under `D:`.
 - Updated role stateboards showing current Data evidence and independent lane

@@ -144,6 +144,13 @@ count, elapsed-time bucket, tested interval, and the fact that would revise the
 setting. It changes one pacing variable at a time, preserves one active
 collector per cache, and does not substitute a parallel flood for measurement.
 
+Before declaring a measured pace effective, inventory every delay on the actual
+end-to-end path: the shared gate, client, collector, and scheduler. Retain a
+second pacing delay only when it protects a path that cannot rely on the shared
+gate; name its owner, reason, and observed effect. Do not mistake a local sleep
+for a provider limit or lower one pacing layer while an older, longer layer
+remains unexamined.
+
 ### Role Agents
 
 A role agent is a durable lane with a stateboard. It may be executed by a

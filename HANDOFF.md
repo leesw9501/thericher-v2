@@ -79,12 +79,15 @@ authorized private KIS Paper work.
 - The prospective QQQ head is generation 10 with zero complete sessions out
   of five. The retained short-session evidence is a Data-local source fact. It
   is not a company hold.
-- The 2026-07-26 bounded QQQ KIS Paper minute probe accepted two full terminal
-  head pages through one in-memory client/token under the existing request
-  gate. It observed a gap within one exchange date; it did not establish
-  historical continuation or a complete 390-minute session. The probe retained
-  no raw bars. Its source-safe external evidence is
-  `20260726T123512436025Z-f1575006a7319021.json`.
+- The latest 2026-07-26 source-safe QQQ KIS Paper minute calibration used one
+  in-memory client/token and a 1.0-second candidate request-start interval. It
+  accepted two full terminal-head pages with zero categorical limits or errors
+  (three attempts including token issuance). It did not establish a route-wide
+  ceiling, historical continuation, or a complete 390-minute session, and it
+  retained no raw bars. Its source-safe external evidence is
+  `20260726T150223752216Z-d52c06ef917b80e5.json`. The installed shared default
+  remains 1.25 seconds until the active objective aligns every effective pacing
+  layer and verifies the resulting change.
 - The first single-client `session-capture` worker is implemented and its
   bounded Paper Data-only smoke wrote a source-safe D: receipt:
   `20260726T131355216487Z-cb15a58ccd594f44.json`. The scoped QQQ capture
@@ -140,21 +143,20 @@ authorized private KIS Paper work.
 - There is no verified daily call allowance for this route. KIS documents
   per-second request limits and lower REST capacity for Paper accounts.
 - The project observed EGW00201 after a rapid virtual request sequence. The
-  current shared request-start gate and cooldown are evidence-backed temporary
-  controls, not approval gates.
+  installed 1.25-second shared request-start gate and 60-second cooldown are
+  evidence-backed temporary controls, not approval gates.
 - KIS documents a 24-hour access token and a six-hour renewal behavior. The
   current five-minute cross-process token-start guard prevents short-lived
   workers from colliding; it is not a token lifetime or a reason to idle a
   ready lane.
-- The source-safe probe verified reuse of one in-memory token across two
-  terminal-head requests under the current gate. It did not test a faster
-  ceiling, historical continuation, or continuous-session collection. The
-  current evidence-backed rate/cooldown controls remain active; do not use a
-  parallel request flood.
-- The next Data objective first inventories ready cursors, then calibrates pace
-  with a bounded one-client probe. It records safe request/page/limit/elapsed
-  facts and changes at most one pacing variable at a time. A 5-minute
-  token-start guard spaces only token issuance attempts; it never means a
+- The bounded calibration accepted a 1.0-second QQQ terminal-head candidate
+  with one in-memory token, two full pages, and zero categorical errors. It is
+  evidence for one end-to-end setting change, not a universal throughput claim;
+  do not use a parallel request flood.
+- Before the shared default changes, Data must inventory the gate, client,
+  collector, and scheduler delays. A lower gate alone is not an acceleration if
+  a longer local collector delay remains effective. The cooldown and the
+  five-minute token-start guard remain, and the token guard never means a
   five-minute worker or foreground wait.
 - The measured single-client capture path now records capture-scoped coverage
   and is the existing head task's configured collection mode. A terminal page
@@ -205,7 +207,7 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Calibrate the private KIS Paper data-ingress pace,
-then use the existing finite collector to make evidence-backed progress on a
-ready cursor. Refresh this file only with the resulting current cross-lane
-facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Align the accepted 1.0-second KIS Paper candidate
+through the complete owned request path, then use the existing finite collector
+to make evidence-backed progress on a ready cursor. Refresh this file only with
+the resulting current cross-lane facts after that bounded objective completes.

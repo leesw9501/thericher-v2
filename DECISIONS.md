@@ -5358,3 +5358,29 @@ Treating either a token guard or an arbitrary sleep as a general throughput
 ceiling wastes collection time; blindly removing the measured controls risks
 repeated rate limiting. A bounded calibration supplies the missing operational
 evidence without adding an approval gate or slowing independent lanes.
+
+## 2026-07-26 - Treat the clean one-second KIS result as an end-to-end candidate
+
+Decision: retain the latest QQQ KIS Paper calibration as evidence for a
+candidate 1.0-second request-start interval, but do not call it an effective
+default until the complete owned path is aligned and tested. Before changing
+the installed pace, Data must inventory the shared gate, client, collector, and
+scheduler delays. A second delay remains only when it protects a path that
+cannot depend on the shared gate, with its owner, reason, and observed effect
+recorded. The 60-second `429`/`EGW00201` cooldown and five-minute token-start
+guard remain unchanged; neither is a foreground wait or an approval boundary.
+
+The source-safe external artifact
+`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20260726T150223752216Z-d52c06ef917b80e5.json`
+records one token request, two accepted full terminal-head minute pages, a
+1.0-second tested interval, and zero categorical limits or errors. It does not
+establish a daily quota, universal route ceiling, historical pagination, or a
+complete regular session. No raw bars, credentials, account facts, orders, or
+live route were retained or used. The required Claude falsification-first check
+was attempted before the pace change work, but local OAuth was expired; no
+private material was sent.
+
+Reason: a lower number in one rate-gate constant does not increase collection
+throughput if another active layer still sleeps longer. This preserves the
+measured speed opportunity while preventing hidden local throttles from being
+misread as a provider constraint or an orchestrator idle period.

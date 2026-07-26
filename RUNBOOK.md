@@ -83,10 +83,20 @@ or the shared rate cooldown is active.
 
 All KIS Paper market-data workers use the same external request gate below
 `D:\market_data\us_equities\kis_paper_private\collection-control-v1`. The
-current measured default serializes request starts at least 1.25 seconds apart.
-HTTP `429` or KIS `EGW00201` records a 60-second categorical cooldown. The
-control file stores only timing state, never response bodies, raw rows,
-credentials, account facts, or authority state.
+installed default serializes request starts at least 1.25 seconds apart. HTTP
+`429` or KIS `EGW00201` records a 60-second categorical cooldown. The control
+file stores only timing state, never response bodies, raw rows, credentials,
+account facts, or authority state.
+
+On 2026-07-26, a bounded source-safe QQQ terminal-head calibration accepted two
+full minute pages through one in-memory client/token at a 1.0-second candidate
+interval with zero categorical limits or errors. That is a candidate for one
+end-to-end change, not a general source ceiling or historical-pagination claim.
+Before adopting it, inventory every effective pacing layer, including any
+client- or collector-local inter-page delay. Lowering the shared gate while a
+longer local delay remains active is not a throughput improvement. Retain a
+second delay only when it protects a path that cannot use the shared gate, and
+record its owner, reason, and observed effect.
 
 There is no verified daily quota or general route ceiling. Do not add an
 unbounded daemon or parallel flood, and do not run a second worker against the

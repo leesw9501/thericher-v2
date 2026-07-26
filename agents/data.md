@@ -11,11 +11,12 @@ Do not select strategies or make execution decisions.
 
 ## Current Objective
 
-Calibrate the private KIS Paper data-ingress pace, then use the resulting
-evidence to advance the owned daily or intraday collector that has a ready
-cursor. Keep the reattested QQQ/SPY daily catalog available to frozen offline
-Research contracts. The prospective QQQ 1m first-five pair is one Data product
-for a named future observer; it is not the only Data output or a company hold.
+Align the accepted private KIS Paper data-ingress candidate through the owned
+end-to-end request path, then use the resulting setting to advance the daily or
+intraday collector that has a ready cursor. Keep the reattested QQQ/SPY daily
+catalog available to frozen offline Research contracts. The prospective QQQ 1m
+first-five pair is one Data product for a named future observer; it is not the
+only Data output or a company hold.
 
 ## Current Facts
 
@@ -35,12 +36,12 @@ for a named future observer; it is not the only Data output or a company hold.
   facts, not a Research or Execution hold.
 - The existing intraday-head task has four KST triggers and owns its current
   cache. It may continue independently while the capability package runs.
-- The 2026-07-26 source-safe QQQ probe accepted two full terminal-head pages,
-  reused one in-memory Paper token, and stayed within the current request gate.
-  It observed a gap within one exchange date. It did not prove historical
-  pagination, a higher request ceiling, or a complete 390-minute session; raw
-  bars were not retained by the probe. Evidence:
-  `20260726T123512436025Z-f1575006a7319021.json` under the external artifact
+- The latest 2026-07-26 source-safe QQQ calibration accepted two full
+  terminal-head pages through one in-memory Paper client/token at a 1.0-second
+  candidate interval. It recorded zero categorical limits or errors and only
+  source-safe counts; raw bars were not retained. It did not prove historical
+  pagination, a route-wide ceiling, or a complete 390-minute session. Evidence:
+  `20260726T150223752216Z-d52c06ef917b80e5.json` under the external artifact
   root.
 - The first `session-capture` worker reuses the existing collector, one
   in-memory Paper market-data client/token, lock, request gate, and head cache.
@@ -57,24 +58,24 @@ for a named future observer; it is not the only Data output or a company hold.
   scheduled run under this configuration has been claimed yet.
 - D: free space is about 40.45 percent. Data acquisition remains within the
   existing 20 percent warning and 15 percent floor policy.
-- The current 1.25-second request-start gate and 60-second categorical cooldown
-  are temporary, measured controls after an `EGW00201` observation; they are
-  not a verified daily quota. The five-minute token-start guard applies only to
-  a new token request and never asks a worker to sleep for five minutes.
+- The installed 1.25-second request-start gate and 60-second categorical
+  cooldown are temporary, measured controls after an `EGW00201` observation;
+  they are not a verified daily quota. The clean 1.0-second candidate must be
+  aligned through every effective gate/client/collector delay before it replaces
+  the installed default. The five-minute token-start guard applies only to a
+  new token request and never asks a worker to sleep for five minutes.
 
 ## Ready Queue
 
-1. Inventory ready daily and intraday cursors from their metadata, then run one
-   bounded single-client pace calibration. Record only source-safe request,
-   accepted-page, categorical-limit, elapsed-time, and tested-interval facts.
-2. Keep the current gate and cooldown until a calibration fact supports a
-   change. Test one pacing variable at a time; do not create a second collector
+1. Align the clean 1.0-second candidate through the shared gate and every
+   collector-local pacing layer, with focused tests. Retain the 60-second
+   cooldown and five-minute token-start guard; do not create a second collector
    against the same cache or a parallel request flood.
-3. Use the resulting evidence to run the existing finite catch-up or
+2. Use the resulting setting to run the existing finite catch-up or
    session-capture worker when its cursor is ready. Preserve the one-client,
    concurrency-one collector, lock, strict conflict handling, and `tr_cont`
    contract.
-4. Keep partial or extended-session capture rows out of Research. Hand an
+3. Keep partial or extended-session capture rows out of Research. Hand an
    immutable first-five pair to the isolated prospective observer only when the
    exact 390-minute Data contract is satisfied.
 
@@ -98,8 +99,8 @@ empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the KIS pace calibration and any resulting finite collection evidence,
-then preserve the pair-only daily source contract for a future explicitly
-frozen campaign. Do not infer historical reach or prospective completeness from
-a terminal-head page, and do not wait for a prospective pair before advancing
-other ready Data work.
+Return the effective end-to-end KIS pace and any resulting finite collection
+evidence, then preserve the pair-only daily source contract for a future
+explicitly frozen campaign. Do not infer historical reach or prospective
+completeness from a terminal-head page, and do not wait for a prospective pair
+before advancing other ready Data work.
