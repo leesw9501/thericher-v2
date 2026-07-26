@@ -552,6 +552,7 @@ class KisDailyJointEventFoldInput:
     validation_eligible_decision_identity: str
     spec: KisDailyJointEventWindowSpec
     model_execution_review: str
+    reattested_against_parent: bool = False
 
     def __post_init__(self) -> None:
         for field_name in (
@@ -578,6 +579,8 @@ class KisDailyJointEventFoldInput:
             raise ValueError("joint event-window fold input spec is invalid")
         if self.model_execution_review != KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE:
             raise ValueError("joint event-window fold input must remain review_unavailable")
+        if type(self.reattested_against_parent) is not bool:
+            raise ValueError("joint event-window fold input reattestation is invalid")
         _validate_fold_input_geometry(self)
 
     @property
@@ -691,6 +694,7 @@ class KisDailyJointEventFoldInputArtifact:
     path: Path
     content_hash: str
     fold_input: KisDailyJointEventFoldInput
+    reattested_against_parent: bool = False
 
 
 def build_kis_daily_joint_event_window_contract(
@@ -879,6 +883,7 @@ def select_kis_daily_joint_event_fold_input(
         ),
         spec=contract.spec,
         model_execution_review=contract.model_execution_review,
+        reattested_against_parent=True,
     )
 
 
@@ -893,6 +898,8 @@ def write_kis_daily_joint_event_fold_input(
 
     if not isinstance(fold_input, KisDailyJointEventFoldInput):
         raise ValueError("joint event-window fold input is invalid")
+    if not fold_input.reattested_against_parent:
+        raise ValueError("joint event-window fold input must be reattested before writing")
     path = _external_artifact_destination(
         destination=destination,
         artifact_root=artifact_root,
@@ -907,6 +914,50 @@ def write_kis_daily_joint_event_fold_input(
         path=path,
         content_hash=content_hash,
         fold_input=fold_input,
+    )
+
+
+def load_verified_kis_daily_joint_event_fold_input(
+    *,
+    path: Path,
+    expected_artifact_sha256: str,
+    expected_fold_input_identity: str,
+    expected_fold_input: KisDailyJointEventFoldInput,
+    artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
+    repo_root: Path,
+) -> KisDailyJointEventFoldInputArtifact:
+    """Reattest an index-only fold artifact against its verified parent input."""
+
+    _require_sha256(expected_artifact_sha256, "joint event-window expected fold artifact hash")
+    _require_sha256(
+        expected_fold_input_identity,
+        "joint event-window expected fold input identity",
+    )
+    if not isinstance(expected_fold_input, KisDailyJointEventFoldInput):
+        raise ValueError("joint event-window expected fold input is invalid")
+    if not expected_fold_input.reattested_against_parent:
+        raise ValueError("joint event-window expected fold input must be reattested")
+    if expected_fold_input.fold_input_identity != expected_fold_input_identity:
+        raise ValueError("joint event-window expected fold input identity does not match")
+
+    artifact_path = _external_artifact_input_path(
+        path=path,
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+    )
+    encoded = artifact_path.read_bytes()
+    content_hash = _sha256(encoded)
+    if content_hash != expected_artifact_sha256:
+        raise ValueError("joint event-window fold artifact hash does not match expected")
+    document = _load_canonical_source_safe_document(encoded)
+    expected_document = expected_fold_input.document()
+    if set(document) != set(expected_document) or document != expected_document:
+        raise ValueError("joint event-window fold artifact does not match verified input")
+    return KisDailyJointEventFoldInputArtifact(
+        path=artifact_path,
+        content_hash=content_hash,
+        fold_input=expected_fold_input,
+        reattested_against_parent=True,
     )
 
 

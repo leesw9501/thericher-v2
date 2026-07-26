@@ -199,10 +199,19 @@ authorized private KIS Paper work.
   It binds parent lineage and joint-mask identity plus exact sparse indices:
   2,345 development and 146 validation decisions. It persists no prices or
   returns and remains non-executable; the local catalog remains the sole
-  source of in-memory values for a later fold-local materializer.
+  source of in-memory values for its fold-local consumers.
 - Temporary Validation independently recomputed the fold-input identity and
   confirmed the parent linkage, non-executable scope, required reattestation
   flag, and pure import boundary without any credential or network access.
+- The first reattested `expanding-1` D1 materializer is complete. Its immutable
+  source-safe validation receipt is
+  `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-1-validation-first-v1.json`
+  with hash `sha256:247142b6f84f7e0ce88e538ea6832c083be2d1b29b66b079c99a2ad6d6b2f748`
+  and materializer identity `sha256:d8b096b6bb9e38aad7976cebff61ffb628a913da0e05be4a345dec4f8e41d772`.
+  It proves only the in-memory `t-20..t+2` geometry for one sparse validation
+  decision; its receipt has no price, return, label, prediction, checkpoint,
+  credential, order, or PnL values. Independent Validation passed its hash,
+  geometry, source-safety, and pure-import checks.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
 
@@ -283,8 +292,9 @@ Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
-six-symbol-control, joint-event leakage, and fold-local adapter checks; no private material was
-sent. This is a scoped tooling fault, not a hold on ready private work.
+six-symbol-control, joint-event leakage, fold-local adapter, and D1
+materializer checks; no private material was sent. This is a scoped tooling
+fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -297,9 +307,8 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Keep every existing daily control descriptive, then
-build one offline D1 sequence materializer that binds the reattested
-`expanding-1` input to the same catalog sessions, timestamps, and sparse
-indices without persisting raw values. Do not make the candidate
-model-executable, run GPU training or replay, or derive a Paper intent until a
-separate campaign objective and its named review are complete. Refresh this
-file only with resulting cross-lane facts after that bounded objective completes.
+freeze one fold-local D1 target and cost semantic adapter for the reattested
+`expanding-1` materializer. Keep target values in memory, preserve the sparse
+indices and `t+1/t+2` boundary, and do not make the candidate model-executable,
+run GPU training or replay, or derive a Paper intent. Refresh this file only
+with resulting cross-lane facts after that bounded objective completes.

@@ -12,12 +12,12 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence. Prepare one D1 sequence materializer
-for the reattested fold-local QQQ/SPY input without fitting, replaying, or
-selecting a model. The prospective QQQ first-five pair is required only for its
-isolated prospective observation, pair-dependent campaign, and later
-pair-dependent promotion decisions; it does not make historical research
-input-pending.
+development-only falsification evidence. The reattested fold-local QQQ/SPY
+input now has one D1 materializer; next define only its target/cost semantics
+without fitting, replaying, or selecting a model. The prospective QQQ first-five
+pair is required only for its isolated prospective observation, pair-dependent
+campaign, and later pair-dependent promotion decisions; it does not make
+historical research input-pending.
 
 ## Current Readiness
 
@@ -99,18 +99,25 @@ input-pending.
   prices, returns, model, replay, or broker capability. It may only be exposed
   after a rebuilt parent contract matches the active hash; a normal writer
   result cannot be selected directly.
+- The D1 materializer now reattests that fold artifact before binding the same
+  catalog. Its validation receipt is `sha256:247142...6b2f748`; it materialized
+  one sparse `t=3825` window with predecessor `3805`, 20 feature rows
+  `3806..3825`, and future references `3826/3827`. Values stay in memory and
+  the receipt has no prices, returns, labels, predictions, checkpoints, or
+  broker data. Temporary Validation passed independently. It remains
+  `review_unavailable`, non-executable, and not a campaign/model/replay input.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Build only one source-safe D1 sequence materializer for the reattested
-   `expanding-1` input. It must bind its exact catalog session/index mapping,
-   `t-20..t+2` dependency, and sparse eligibility without persisting raw values
-   or turning a masked index set into a continuous date range. Keep it
-   non-executable until the named Claude leakage review returns or is explicitly
-   retried.
+2. Define one pure fold-local D1 target/cost semantic adapter for the
+   reattested `expanding-1` materializer. It must use only `t+1/t+2` target
+   references, retain sparse eligibility, keep target values in memory, and
+   remain non-executable under `review_unavailable`. Retry the named Claude
+   leakage review at the material decision boundary, but do not treat its OAuth
+   fault as a block on this data-only adapter.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -127,14 +134,16 @@ input-pending.
 
 ## Recovery
 
-Current class: complete for the joint contract and `expanding-1` input; resume
-for its D1 materializer. A failed materializer attempt creates new immutable
-evidence rather than overwriting either parent artifact. A missing prospective
-pair is input_unavailable only for its pair-bound observation.
+Current class: complete for the joint contract, `expanding-1` input, and its
+first D1 materializer receipt; resume for its target/cost semantic adapter. A
+failed consumer attempt creates new immutable evidence rather than overwriting
+either parent artifact. A missing prospective pair is input_unavailable only
+for its pair-bound observation.
 
 ## Next Handoff
 
-Return the joint event-mask, reattested `expanding-1` input, and source catalog
-lineage to one D1 sequence materializer without a candidate-selection claim.
-Do not treat it as stock selection, a trained model, replay, or a Paper input,
-and do not wait for prospective collection to keep other ready roles moving.
+Return the joint event-mask, reattested `expanding-1` materializer, and source
+catalog lineage to one D1 target/cost semantic adapter without a
+candidate-selection claim. Do not treat it as stock selection, a trained model,
+replay, or a Paper input, and do not wait for prospective collection to keep
+other ready roles moving.

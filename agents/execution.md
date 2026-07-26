@@ -54,13 +54,17 @@ remains unavailable.
   after the parent hash/rebuild comparison; it cannot be selected from an
   unverified artifact object and has no KIS, Tiingo, account, intent, replay,
   or live path.
+- The first fold-local D1 materializer only exposes transient feature rows and
+  future open references after verified reattestation. Its source-safe receipt
+  is `sha256:247142...6b2f748`; it has no label value, intent, account, order,
+  local-paper replay, KIS, or live effect.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research build the D1 materializer for the reattested
-   offline fold input. Its replay and route-isolation tests are the current
-   integration evidence.
+   stable while Data and Research define target/cost semantics for the
+   reattested offline D1 materializer. Its replay and route-isolation tests are
+   the current integration evidence.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -87,5 +91,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next fold-local materializer is
+binding and route boundaries intact. The next fold-local target/cost adapter is
 offline; do not let it acquire an account, order, KIS, Tiingo, or replay path.

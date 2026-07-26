@@ -333,6 +333,33 @@ artifact. It does not read `.env`, call KIS or Tiingo, invoke a broker, train,
 replay, or create a Paper decision. A later D1 materializer must consume these
 exact sparse indices, not infer a continuous eligible range.
 
+### Reattested D1 Materializer
+
+The first source-safe `expanding-1` validation receipt is external at:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-1-validation-first-v1.json
+```
+
+Its content hash is
+`sha256:247142b6f84f7e0ce88e538ea6832c083be2d1b29b66b079c99a2ad6d6b2f748`.
+It records only verified lineage, sparse-count/identity, timestamp and index
+geometry, and non-executable scope. It never stores bars, prices, returns,
+labels, predictions, checkpoints, credentials, or orders.
+
+To materialize another already verified sparse window, give the offline command
+a new external destination; immutable receipts are never overwritten:
+
+```powershell
+uv run python scripts\prepare_kis_daily_joint_event_d1_materializer.py `
+  --phase validation `
+  --destination D:\thericher-v2\model-artifacts\research-contracts\<new-receipt>.json
+```
+
+The command reads only pinned local market data and immutable contract inputs.
+It does not read `.env`, call KIS or Tiingo, invoke a broker, train, replay, or
+create a model/Paper decision.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS

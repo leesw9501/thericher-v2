@@ -61,6 +61,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   verified its source hash, non-executable scope, reattestation requirement,
   and fresh import boundary. It passed without credentials, network, KIS,
   broker, model, or replay activity.
+- Data and Engine Research then completed one offline D1 materializer for that
+  same reattested fold. Its source-safe validation receipt is
+  `sha256:247142...6b2f748` with materializer identity `sha256:d8b096...1d772`.
+  Temporary Validation independently passed its hash, `t-20..t+2` geometry,
+  sparse eligibility, receipt safety, and import/help route isolation. It
+  creates no model, label persistence, replay, decision, or broker effect.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -69,13 +75,14 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now materializing one frozen fold into exact D1
-sequence rows without losing sparse eligibility or its `t-20..t+2` dependency.
-QQQ/SPY has sufficient historical input and `expanding-1` is hash-bound, but a
-generic `CampaignContract` cannot represent the overlapping expanding folds.
-The next materializer must preserve the catalog index mapping and exact sparse
-mask before any daily model work can use the data. The fixed six-symbol panel
-remains too short and non-PIT for a depth campaign.
+The material bottleneck is now fixing one causal target/cost semantic adapter
+for the materialized `expanding-1` fold without losing sparse eligibility or
+turning unadjusted price references into an unqualified performance claim.
+QQQ/SPY has sufficient historical input and the fold/materializer are
+hash-bound, but a generic `CampaignContract` cannot represent the overlapping
+expanding folds. The next adapter must retain the exact `t+1/t+2` mapping and
+stay candidate-only before any daily model work can use the data. The fixed
+six-symbol panel remains too short and non-PIT for a depth campaign.
 
 The GPU is deliberately idle because no frozen model-executable campaign exists.
 The current Claude OAuth outage is scoped to that execution boundary; it does
@@ -90,11 +97,12 @@ doubled. A worker-local rate or recovery outcome still yields while Codex
 advances independent lanes. The new pure joint contract also makes its
 evidence boundary explicit: no Data/Execution import on fresh load, no raw
 values in its immutable external artifact, and no generic multi-fold campaign
-promotion. The successor fold input now also requires a parent hash/rebuild
-comparison before exposing indices. A completed cursor is scoped to its own
-cache; any future coverage gap starts with one endpoint-reach/page-yield probe,
-then a reused-client serial collector rather than a foreground sleep or
-parallel flood.
+promotion. The successor fold input now requires a parent hash/rebuild
+comparison before exposing indices, and the materializer makes one window at a
+time while persisting only source-safe geometry. A completed cursor is scoped
+to its own cache; any future coverage gap starts with one endpoint-reach/page-
+yield probe, then a reused-client serial collector rather than a foreground
+sleep or parallel flood.
 
 ## External Waits
 
@@ -105,15 +113,16 @@ parallel flood.
 
 ## Recovery
 
-Current class: complete for the daily catch-up, event-window contract, and
-`expanding-1` input; resume for the D1 materializer. Reattest an individual
-cache, contract, campaign, or exact Paper intent before relying on it. Scope
-failure to that item and continue independent lanes.
+Current class: complete for the daily catch-up, event-window contract,
+`expanding-1` input, and first D1 materializer receipt; resume for a
+fold-local target/cost semantic adapter. Reattest an individual cache,
+contract, campaign, or exact Paper intent before relying on it. Scope failure
+to that item and continue independent lanes.
 
 ## Next Handoff
 
-Create one D1 materializer for the reattested `expanding-1` QQQ/SPY input while
-keeping Execution independent. Do not treat its mask, historical catalog, or
-any daily control as a selected model or replay result. Record only an actual
-shared resource conflict, new external wait, bottleneck, or reversible operating
-improvement here.
+Create one fold-local D1 target/cost semantic adapter for the reattested
+`expanding-1` materializer while keeping Execution independent. Do not treat
+its mask, historical catalog, or any daily control as a selected model or replay
+result. Record only an actual shared resource conflict, new external wait,
+bottleneck, or reversible operating improvement here.

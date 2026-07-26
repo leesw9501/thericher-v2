@@ -13,10 +13,10 @@ Do not select strategies or make execution decisions.
 
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
-evidence. Serve the active v2 QQQ/SPY joint-event contract to one later
-fold-local offline input through reattestation only, then serve the same
-catalog to one source-safe D1 sequence materializer. Its full sequence
-dependency mask is `t-20..t+2`, not merely the 20 visible feature rows
+evidence. The active v2 QQQ/SPY joint-event contract has already reattested one
+fold-local input and materialized one source-safe D1 window. Serve the same
+catalog only to its next fold-local target/cost semantic adapter. Its full
+sequence dependency mask is `t-20..t+2`, not merely the 20 visible feature rows
 `t-19..t`. The prospective QQQ 1m first-five pair is one Data product for a
 named future observer; it is not the only Data output or a company hold.
 
@@ -118,13 +118,18 @@ named future observer; it is not the only Data output or a company hold.
   lineage, dates, segment bounds, and sparse decision indices; it does not
   duplicate catalog values. It is the sole active fold input, not a continuous
   date-range substitute or a generic multi-fold campaign.
+- The same verified catalog now feeds one pure `expanding-1` D1 materializer.
+  Its external validation receipt has hash `sha256:247142...6b2f748` and only
+  binds lineage, sparse eligibility, timestamps, counts, and index bounds. The
+  in-memory window used predecessor `t-20`, 20 feature sessions `t-19..t`, and
+  future references `t+1/t+2`; no raw values or provider bytes were persisted.
 
 ## Ready Queue
 
-1. Serve the reattested `expanding-1` input to one later offline D1 sequence
-   materializer. Preserve its `t-20..t+2` joint mask and exact sparse indices;
-   use the existing QQQ/SPY catalog in memory only and do not fetch or blend
-   provider rows.
+1. Serve the same verified QQQ/SPY catalog and reattested `expanding-1`
+   materializer to one offline target/cost semantic adapter. Preserve its
+   `t-20..t+2` joint mask and exact sparse indices; use values in memory only
+   and do not fetch, blend, or persist provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -159,15 +164,16 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-and `expanding-1` input; resume for its D1 materializer. Reattest existing
-metadata and committed snapshots before a new materializer or future network
-call. A bad cache is reconcile/restart evidence for that cache; an empty or
-limited endpoint result is source evidence for that route only.
+`expanding-1` input, and its first D1 materializer receipt; resume for a
+fold-local target/cost semantic adapter. Reattest existing metadata and
+committed snapshots before a new consumer or future network call. A bad cache
+is reconcile/restart evidence for that cache; an empty or limited endpoint
+result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the reattested `expanding-1` input, active v2 parent identity, and
-hash-bound catalog lineage to one D1 sequence materializer. Preserve the
+Return the reattested `expanding-1` input, D1 materializer identity, and
+hash-bound catalog lineage to one target/cost semantic adapter. Preserve the
 frozen six-symbol source separately. Do not infer PIT membership,
 corporate-action completeness, a ranking claim, or Paper-trading eligibility
 from either cache, and do not wait for a prospective pair before advancing

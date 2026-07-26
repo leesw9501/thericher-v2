@@ -22,6 +22,7 @@ from thericher_v2.kis_daily_joint_event_window_contract import (
     KIS_DAILY_JOINT_EVENT_MODEL_EXECUTION_REVIEW_UNAVAILABLE,
     KisDailyJointEventWindowSpec,
     build_kis_daily_joint_event_window_contract,
+    load_verified_kis_daily_joint_event_fold_input,
     load_verified_kis_daily_joint_event_window_contract,
     select_kis_daily_joint_event_fold_input,
     write_kis_daily_joint_event_fold_input,
@@ -649,6 +650,47 @@ def test_fold_input_writer_is_external_source_safe_and_offline(
             destination=tmp_path / "repo" / "fold-input.json",
             fold_input=fold_input,
             artifact_root=tmp_path / "repo" / "artifacts",
+            repo_root=tmp_path / "repo",
+        )
+
+
+def test_fold_input_loader_requires_the_verified_parent_input(tmp_path: Path) -> None:
+    contract, artifact_root, verified_parent = _verified_parent_artifact(tmp_path)
+    fold_input = select_kis_daily_joint_event_fold_input(verified_parent, fold_id="expanding-1")
+
+    with pytest.raises(ValueError, match="must be reattested before writing"):
+        write_kis_daily_joint_event_fold_input(
+            destination=artifact_root / "contracts" / "unverified-fold.json",
+            fold_input=replace(fold_input, reattested_against_parent=False),
+            artifact_root=artifact_root,
+            repo_root=tmp_path / "repo",
+        )
+
+    written = write_kis_daily_joint_event_fold_input(
+        destination=artifact_root / "contracts" / "verified-fold.json",
+        fold_input=fold_input,
+        artifact_root=artifact_root,
+        repo_root=tmp_path / "repo",
+    )
+    verified = load_verified_kis_daily_joint_event_fold_input(
+        path=written.path,
+        expected_artifact_sha256=written.content_hash,
+        expected_fold_input_identity=fold_input.fold_input_identity,
+        expected_fold_input=fold_input,
+        artifact_root=artifact_root,
+        repo_root=tmp_path / "repo",
+    )
+    assert verified.reattested_against_parent is True
+    assert verified.fold_input.source_contract_identity == contract.contract_identity
+
+    written.path.write_bytes(b"{}\n")
+    with pytest.raises(ValueError, match="fold artifact hash does not match"):
+        load_verified_kis_daily_joint_event_fold_input(
+            path=written.path,
+            expected_artifact_sha256=written.content_hash,
+            expected_fold_input_identity=fold_input.fold_input_identity,
+            expected_fold_input=fold_input,
+            artifact_root=artifact_root,
             repo_root=tmp_path / "repo",
         )
 

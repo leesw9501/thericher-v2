@@ -5606,3 +5606,33 @@ identities, while a downstream materializer needs the exact index tuples.
 Reattestation preserves the event mask and temporal boundary without retaining
 raw values or making an accidental transition into model execution or Paper
 trading.
+
+## 2026-07-27 - Materialize one reattested fold before defining a model target
+
+Decision: bind only the reattested `expanding-1` fold input to the matching
+QQQ/SPY D1 catalog through a pure, offline materializer. It preserves the
+joint sparse eligibility tuple and produces one in-memory window at a time:
+the predecessor at `t-20`, 20 completed-return feature rows `t-19..t`, and
+future open references at `t+1/t+2`. The first external validation receipt is
+`D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-1-validation-first-v1.json`,
+with hash
+`sha256:247142b6f84f7e0ce88e538ea6832c083be2d1b29b66b079c99a2ad6d6b2f748`
+and materializer identity
+`sha256:d8b096b6bb9e38aad7976cebff61ffb628a913da0e05be4a345dec4f8e41d772`.
+
+The receipt stores only identities, scope, counts, timestamps, and index
+bounds. It contains no raw bars, prices, returns, labels, predictions,
+checkpoints, credentials, accounts, orders, or PnL. The materializer rejects
+unreattested, stale, mismatched, or non-sparse input before exposing a window,
+does not import Data/Execution on its pure path, and remains
+`model_execution_eligible: false` under `review_unavailable`. It is not a
+`CampaignContract`, model, replay, decision, ensemble, or Paper input.
+
+Reason: the exact causal window must be demonstrated before a label or model
+can be defined. One-window in-memory materialization keeps the event mask and
+lineage intact while avoiding raw-value artifact leakage or accidental
+promotion. Temporary Validation independently passed the artifact hash,
+`t-20..t+2` geometry, sparse-mask, source-safe receipt, and import isolation.
+Claude's concise falsification-first materializer check was attempted, but its
+OAuth session remained expired and no private content was sent; this is a
+scoped reviewer-tool limitation, not a block on the non-executable adapter.
