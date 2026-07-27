@@ -753,30 +753,27 @@ limit, below its shortest 109-minute trigger gap. Do not manually start a
 duplicate run to compensate for a missed window; inspect the task result and
 use the existing owned recovery path.
 
-The same named task dispatches six sequential services in the same
-`kis-paper-intraday-head` Docker profile: the credential-bearing data
-collector, the offline `kis-paper-prospective-loop`, the virtual-only
-`kis-paper-prospective-qqq-session`, the offline
-`kis-paper-prospective-qqq-validation`, and the older pair-bound
-`kis-paper-intraday-observation`, followed by a network-disabled terminal
-schedule receipt writer. The prospective loop is CPU-only,
-`network_mode: none`, read-only, and receives no KIS environment values. It
-creates only a source-safe baseline/receipt and `local_paper` replay. The QQQ
-session recomputes that verified cache input and reads KIS Paper credentials,
-account facts, or a QQQ quote only after a current `enter` or `exit` receipt;
-otherwise it exits as no-intent. The older observer remains independently
-offline and pending until its verified pair exists. The Validation service
-receives the exact QQQ execution-session ID, re-loads the local cache at the
-recorded timestamp, and writes an external source-safe validation artifact. It
-has no network or KIS environment values and cannot modify replay or broker
-state. The terminal writer receives only allowlisted stage exit/status values
-and safe session IDs; it persists one external source-safe dispatch receipt.
-The dispatcher preserves a nonzero collector code. Once collection succeeds,
-an unavailable or nonzero required loop/session/validator stage exits `20`, and
-an unavailable receipt writer exits `21`; a fully validated `no_intent` still
-exits `0`. The older observer remains optional for this QQQ cycle. These are
-technical recovery signals, never a Paper authority, data-quality, or manual
-approval gate.
+The same named task dispatches the credential-bearing data collector, one
+virtual-only `kis-paper-prospective-qqq-session`, the offline
+`kis-paper-prospective-qqq-validation`, an optional older pair-bound
+`kis-paper-intraday-observation`, and a network-disabled terminal receipt
+writer. The QQQ session owns the only local prospective recomputation and
+`local_paper` replay; the terminal receipt records that stage as `embedded`.
+It reads KIS Paper credentials, account facts, or a QQQ quote only after a
+current `enter` or `exit` receipt; otherwise it exits as no-intent. The older
+observer is independently offline and starts only after Data writes both
+required pair-evidence files. The Validation service receives the exact QQQ
+execution-session ID, re-loads the local cache at the recorded timestamp, and
+writes an external source-safe validation artifact. It has no network or KIS
+environment values and cannot modify replay or broker state. The terminal
+writer receives only allowlisted stage exit/status values and safe session IDs;
+it persists one external source-safe dispatch receipt. The dispatcher preserves
+a nonzero collector code. Once collection succeeds, an unavailable or nonzero
+required embedded/session/validator stage exits `20`, and an unavailable
+receipt writer exits `21`; a fully validated `no_intent` still exits `0`. The
+older observer remains optional for this QQQ cycle. These are technical
+recovery signals, never a Paper authority, data-quality, or manual approval
+gate.
 
 ### Bounded Session Capture
 
@@ -1084,10 +1081,12 @@ buy pause or quote failure, it refreshes the sanitized canary runtime to
 safe reason remains in the external session evidence; the console never keeps a
 stale prior canary result as if it were current.
 
-The installed Windows Paper schedules invoke their named Docker profile with
-`--build`, so a due session uses the current committed image rather than a stale
-service image. This is runtime reproducibility, not a new scheduling or Paper
-approval condition.
+Schedule installation or an explicit task update builds each named service image
+before registering its Windows task. Due tasks then run with `--pull never` and
+never build in the market-time decision path. A missing image is a truthful,
+recoverable task failure; run `scripts\install_kis_paper_schedules.ps1` after a
+code or dependency update to rebuild images and refresh task commands. This is
+runtime reproducibility, not a new scheduling or Paper approval condition.
 
 All named tasks allow battery start/continuation and have explicit execution
 limits. The Paper quote and daily-session tasks retain `IgnoreNew` and a

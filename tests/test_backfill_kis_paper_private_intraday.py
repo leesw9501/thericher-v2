@@ -585,21 +585,10 @@ def test_intraday_head_profile_has_a_cpu_only_offline_observation_service() -> N
 
 def test_intraday_head_profile_separates_offline_replay_from_qqq_paper_execution() -> None:
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
-    offline = compose.split("\n  kis-paper-prospective-loop:\n", maxsplit=1)[1].split(
-        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
-    )[0]
+    assert "\n  kis-paper-prospective-loop:\n" not in compose
     execution = compose.split(
         "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
     )[1].split("\n  kis-paper-receipt-observer:\n", maxsplit=1)[0]
-
-    assert 'profiles: ["kis-paper-intraday-head"]' in offline
-    assert "network_mode: none" in offline
-    assert "read_only: true" in offline
-    assert "THERICHER_MODE: off" in offline
-    assert "--execute" not in offline
-    assert "KIS_PAPER" not in offline
-    assert "KIS_LIVE" not in offline
-    assert "/app/model_artifacts/_control/local-paper" in offline
 
     assert 'profiles: ["kis-paper-intraday-head"]' in execution
     assert "thericher_v2.execution.kis_paper_prospective_qqq_session" in execution

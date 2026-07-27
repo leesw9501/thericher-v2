@@ -46,11 +46,13 @@ authorized private KIS Paper work.
   or promotion. The first-five QQQ 1m pair does not block historical Research,
   Data collection, local simulation, or Paper execution preparation.
 - A material company-goal block gets one compact alternatives record in the
-  existing orchestration board: exact stop fact, original plan, ready packages,
-  strongest kill test, and recovery action. Claude reviews that record when
-  available; an expired CLI session is `review_unavailable`, not a new wait.
-  Codex immediately advances every non-conflicting package inside standing
-  authority.
+  existing orchestration board: exact stop fact, original plan, and ready
+  packages with owner, resource, engineering approach, completion evidence,
+  strongest kill test, and recovery action. An apparent operator decision also
+  records options, Codex's recommendation, and its exact authority boundary.
+  Claude reviews that record when available; an expired CLI session is
+  `review_unavailable`, not a new wait. Codex immediately advances every
+  non-conflicting package inside standing authority.
 - A timer, cooldown, or scheduled due time belongs to its owning worker. Codex
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The
@@ -169,19 +171,18 @@ authorized private KIS Paper work.
   strategy input or a collector failure.
 - The existing `thericher-kis-paper-intraday-head` task now uses the tested
   `session-capture` mode and runs at 00:31, 02:31, 04:31, and 06:20 KST. After
-  collection it runs a network-disabled prospective QQQ loop, an exact
-  virtual-only QQQ session when a receipt is eligible, an offline exact-session
-  validator, the older isolated observer, and a source-safe terminal dispatch
-  receipt. The receipt records only stage categories and safe session IDs under
-  the external artifact root. It preserves a collection failure code and exposes
-  a required downstream fault as task recovery (`20`) rather than a false task
-  success; the older observer remains optional. The 90-minute runtime selector
-  is distinct from the 390-minute coverage observer. Its first prior-session
-  smoke was correctly `stale` and did not construct account, quote, or order
-  clients. The first fresh scheduled result instead produced the ready 90-minute
-  window and a terminal source-safe schedule receipt; its separate virtual
-  account-read no-intent is Execution evidence. The next fresh result remains a
-  Data observation, not a company hold.
+  collection it runs one virtual-only QQQ session that owns its embedded
+  `local_paper` recomputation, then an offline exact-session validator, a
+  conditional older observer, and a source-safe terminal dispatch receipt. The
+  scheduled path never builds images: task installation/update prebuilds them,
+  then runtime uses `--pull never` and truthfully fails if an image is missing.
+  The receipt records only stage categories and safe session IDs under the
+  external artifact root. It preserves a collection failure code and exposes a
+  required downstream fault as task recovery (`20`) rather than a false task
+  success; the older observer is invoked only after its pair evidence exists.
+  The 90-minute runtime selector is distinct from the 390-minute coverage
+  observer, and a fresh receipt remains a Data/Execution fact rather than a
+  company hold.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -423,21 +424,9 @@ authorized private KIS Paper work.
   durable receipt canary with cancellation/reconciliation. `hold`, `reduce`,
   `abstain`, stale, missing, or out-of-scope-position results are target-local
   no-intent facts. No KIS_LIVE_* path is readable or callable.
-- The first fresh scheduled QQQ runtime receipt on 2026-07-28 KST was a ready
-  `eligible_exit` with matching offline local-paper no-intent evidence. Its
-  virtual session returned `account_unavailable`, created no canary or broker
-  side effect, and the offline validator independently reproduced the exact
-  no-intent. The source-safe terminal schedule receipt is `complete` with
-  scheduler exit zero. This closes that exact execution-learning cycle; a later
-  account read or fresh receipt is a new scoped observation, not a retry of it.
-- A separate fresh virtual-only account bridge completed at 2026-07-28 00:58
-  KST. Its source-safe external evidence is
-  `execution/kis-paper-console-bridge/20260727T155823938788Z-complete.json`.
-  It attests only a complete read-only Paper view, USD currency categories, one
-  position, zero open orders, and no submission capability. It made no broker
-  order-side effect and does not change the earlier QQQ no-intent, prove model
-  quality, or authorize reuse of a stale account snapshot. The next fresh QQQ
-  session must read its account and quote again at its own call site.
+- Current and historical QQQ receipt pointers live in the Execution stateboard
+  and external evidence. They do not prove model quality, external fill, or
+  realized PnL, and no prior account view is an input to a later QQQ session.
 
 ## KIS Throughput Facts
 
@@ -519,15 +508,11 @@ authorized private KIS Paper work.
 ## Claude
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
-ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26,
-2026-07-27, and 2026-07-28 KST the CLI OAuth session remained expired during
-throughput-governance, capture/profile integration, prospective-QQQ route,
-daily-campaign,
-six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
-target-semantics, all candidate-only screen checks, the E3 input-contract, the
-fixed cross-fold falsification check, and terminal scheduled recovery; no
-private material was sent. This is
-a scoped tooling fault, not a hold on ready private work.
+ensemble, scheduler-widening, execution-risk, blocked-goal, and operator-option
+decisions. On 2026-07-26, 2026-07-27, and 2026-07-28 KST the CLI OAuth session
+remained expired during the relevant checks, including route simplification and
+blocked-goal governance; no private material was sent. This is a scoped tooling
+fault, not a hold on ready private work or a substitute for reserved authority.
 
 ## Recovery
 
@@ -539,10 +524,10 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. The fixed NAS daily-history collector is terminal
-for its exact current-listing scope; do not reopen a terminal target, blend a
-provider, or reinterpret it as a PIT universe. The next company objective
-reattaches one genuinely new scheduled prospective QQQ receipt and lets the
-existing virtual-only canary lifecycle decide only from its own fresh inputs.
-Keep Data, Research, and Execution evidence distinct, and let the scheduler
-own its session due time rather than the foreground.
+Follow NEXT_CODEX_GOAL.md. The next company objective builds a small,
+source-scoped liquid-universe manifest from existing local evidence. The fixed
+NAS daily-history collector remains terminal for its exact current-listing
+scope; do not reopen a terminal target, blend a provider, or reinterpret the
+manifest as a PIT universe. Keep Data, Research, and Execution evidence
+distinct, and let the scheduler own its session due time rather than the
+foreground.

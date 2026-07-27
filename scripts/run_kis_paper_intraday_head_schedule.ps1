@@ -20,12 +20,12 @@ function Invoke-HeadProfileService {
         if ($CommandOverride.Count -eq 0) {
             $output = @(
                 & docker.exe compose --project-directory $ProjectRoot --profile kis-paper-intraday-head `
-                    run --rm --no-deps --build $Service 2>&1
+                    run --rm --no-deps --pull never $Service 2>&1
             )
         } else {
             $output = @(
                 & docker.exe compose --project-directory $ProjectRoot --profile kis-paper-intraday-head `
-                    run --rm --no-deps --build $Service @CommandOverride 2>&1
+                    run --rm --no-deps --pull never $Service @CommandOverride 2>&1
             )
         }
         $exitCode = [int]$LASTEXITCODE
@@ -110,6 +110,23 @@ function New-ScheduleRunId {
     return "intraday-head-$stamp"
 }
 
+function Test-ProspectiveObservationPairReady {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ModelArtifactRoot
+    )
+
+    $preparationRoot = Join-Path `
+        $ModelArtifactRoot `
+        "kis-intraday-prospective-head-observation\scheduled-head-v1"
+    $requiredFiles = @("precommit.json", "planning-receipt.json")
+    return @(
+        $requiredFiles | ForEach-Object {
+            Test-Path -LiteralPath (Join-Path $preparationRoot $_) -PathType Leaf
+        }
+    ) -notcontains $false
+}
+
 function Get-DispatchTerminalExitCode {
     param(
         [Parameter(Mandatory = $true)]
@@ -169,19 +186,11 @@ $collection = Invoke-HeadProfileService `
     -Service "kis-paper-intraday-head"
 $collectionExitCode = [int]$collection.ExitCode
 
-# The loop has no network or credentials. It records the exact local-paper
-# replay before the separately owned Paper session decides whether KIS is needed.
-$prospectiveLoop = Invoke-HeadProfileService `
-    -ProjectRoot $resolvedProjectRoot `
-    -Service "kis-paper-prospective-loop"
-$prospectiveLoopExitCode = [int]$prospectiveLoop.ExitCode
-$prospectiveLoopStatus = Get-ProfileStatus `
-    -Output $prospectiveLoop.Output `
-    -Kind "kis_paper_prospective_qqq_session" `
-    -AllowedStatuses @("preview", "no_intent")
-
 # This service opens the virtual-only execution route only for its own current
-# eligible receipt. Its no-intent result never changes collection recovery.
+# eligible receipt. It performs its own embedded local-paper replay before the
+# virtual route and its no-intent result never changes collection recovery.
+$prospectiveLoopExitCode = 0
+$prospectiveLoopStatus = "embedded"
 $prospectiveSession = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-prospective-qqq-session"
@@ -238,16 +247,20 @@ if (
 }
 $prospectiveValidationSessionId = Get-SafeProfileSessionId -Payload $prospectiveValidationPayload
 
-# The observer is an isolated no-op until a verified pair exists. Its result
-# must never overwrite the collection task's independent recovery signal.
-$observation = Invoke-HeadProfileService `
-    -ProjectRoot $resolvedProjectRoot `
-    -Service "kis-paper-intraday-observation"
-$observationExitCode = [int]$observation.ExitCode
-$observationStatus = Get-ProfileStatus `
-    -Output $observation.Output `
-    -Kind "kis_intraday_prospective_observation" `
-    -AllowedStatuses @("pending", "unavailable", "complete")
+# The older observer remains optional for the QQQ lifecycle. Do not create its
+# container until Data has written both preparation evidence files.
+$observationExitCode = 0
+$observationStatus = "pending"
+if (Test-ProspectiveObservationPairReady -ModelArtifactRoot "D:\thericher-v2\model-artifacts") {
+    $observation = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "kis-paper-intraday-observation"
+    $observationExitCode = [int]$observation.ExitCode
+    $observationStatus = Get-ProfileStatus `
+        -Output $observation.Output `
+        -Kind "kis_intraday_prospective_observation" `
+        -AllowedStatuses @("pending", "unavailable", "complete")
+}
 
 $scheduleObservedAt = (Get-Date).ToUniversalTime()
 $scheduleRunId = New-ScheduleRunId -ObservedAt $scheduleObservedAt

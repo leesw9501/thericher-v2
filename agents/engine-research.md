@@ -33,6 +33,11 @@ only after an eligible campaign's dataset, target, split, costs, and naive
 baseline are frozen. The 21-session intraday cache remains a pipeline control,
 not a depth-training corpus or a reason to manufacture GPU work.
 
+The fixed CACC-D1 closing-auction co-confirmation screen is also complete and
+falsified across all three sparse validation folds. It used no training, GPU,
+network, credentials, KIS, or broker route. Do not retune its threshold, add it
+to an ensemble, or turn its result into a Paper input.
+
 ## Current Readiness
 
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
@@ -78,6 +83,13 @@ not a depth-training corpus or a reason to manufacture GPU work.
   is not a qualifying campaign result: its precommit omitted replay sizing.
   It must not be compared, selected, or used to support PnL claims. The r2
   run is the sole corrected result for this fixed configuration.
+- The fixed CACC-D1 CPU-only screen completed against the existing three
+  hash-attested QQQ/SPY D1 folds. Its source-safe external summary is
+  `D:\thericher-v2\model-artifacts\kis-daily-cacc-d1-v1\cpu-20260728t0208-cacc-d1-r2\summary.json`
+  with precommit `sha256:76eb55...e960a9`. Every fold triggered the immutable
+  kill rule: the first was nonpositive after costs and all three failed to beat
+  their time-matched always-long comparator. The candidate is closed with no
+  tuning, GPU, ensemble, promotion, or Paper consequence.
 - No GPU job is active. The current objective explicitly excludes GPU work from
   the 199-session current-basket panel. When another frozen campaign is ready,
   Research starts it as the next exclusive GPU job; otherwise the stateboard
@@ -195,20 +207,22 @@ not a depth-training corpus or a reason to manufacture GPU work.
 
 ## Ready Queue
 
-1. Treat the fixed linear/compact-GRU D1 pair as falsified under its stated
+1. Keep CACC-D1 closed. Its OHLC co-confirmation rule, threshold, folds, and
+   costs are immutable falsification evidence, not a parameter-search seed.
+2. Treat the fixed linear/compact-GRU D1 pair as falsified under its stated
    fold-local rule. Do not retune parameters, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from it.
-2. Keep the completed fixed histogram-gradient tree breadth candidate closed.
+3. Keep the completed fixed histogram-gradient tree breadth candidate closed.
    The next daily breadth proposal must change the causal hypothesis or input
    contract, not repeat its 20-bar return window with parameter changes. Freeze
    its costs, split, naive baselines, and strongest kill test before dispatch.
-3. Keep the completed daily breadth, L2 control, and six-symbol control
+4. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune the failed pair under a new label.
-4. Keep depth input-pending and ensemble empty until independently replicated,
+5. Keep depth input-pending and ensemble empty until independently replicated,
    error-diverse breadth candidates exist. A verified prospective pair is an
    additional observation only; it never rewrites historical results or becomes
    a global queue gate.
-5. Observe the first fresh runtime window as a fixed control only. Do not tune
+6. Observe the first fresh runtime window as a fixed control only. Do not tune
    the decision table from that session or turn an individual Paper outcome into
    a model, ensemble, GPU, or PnL claim.
 
@@ -225,7 +239,7 @@ not a depth-training corpus or a reason to manufacture GPU work.
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
-artifact, and the fixed daily tree breadth candidate. The completed
+artifact, the fixed daily tree breadth candidate, and CACC-D1. The completed
 daily-history continuation is transport and coverage evidence only: it creates
 no frozen Research input, replay, campaign, or GPU job. A new campaign requires
 its own contract; target-local daily-history recovery has no automatic Research
@@ -237,7 +251,7 @@ work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair and tree falsification evidence. The next Research
+Preserve the fixed-pair, tree, and CACC-D1 falsification evidence. The next Research
 package must first freeze a causal hypothesis distinct from the completed
 20-bar-return candidates, then run only its eligible CPU/GPU work without
 treating the result as stock selection, a selected model, replay, or Paper

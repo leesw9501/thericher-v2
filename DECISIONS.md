@@ -6224,3 +6224,79 @@ route-local account-read fault from an execution or model claim without
 creating a broker retry. Claude received a source-safe falsification request
 for this interpretation, but local OAuth remained expired; the recorded
 outcome is `review_unavailable`, not a hold on the next private Paper cycle.
+
+## 2026-07-28 - Redirect material company blocks into executable alternatives
+
+Decision: a materially blocked company objective writes one compact
+`blocked-goal alternatives` record in the orchestration stateboard rather than
+creating a separate report family or foreground wait. The record names the
+blocking fact, original plan, two to four role-owned packages, each package's
+resource, engineering approach, completion evidence, kill test, and recovery.
+An apparent operator decision adds concrete options, Codex's recommendation,
+and the authority boundary. Codex requests Claude's falsification-first view,
+then dispatches every independent package already inside standing authority.
+
+Codex and Claude agreement may resolve only a reversible, no-cost choice that
+is already delegated. Paid commitments, unclear rights, public exposure, major
+runtime replacement, `KIS_LIVE_*`, live capital, and material live-risk changes
+remain operator decisions. A Claude authentication fault is recorded as
+`review_unavailable`; it cannot manufacture authority or turn an external timer
+into a company-wide stop.
+
+Reason: the prior QQQ objective made a future scheduled receipt its completion
+condition even though ready Execution and Research work existed. This change
+keeps the operator's genuine decisions visible while making routine blocked-goal
+recovery concrete, bounded, and throughput-oriented. Claude's credential-free
+challenge request could not authenticate because local OAuth was expired.
+
+## 2026-07-28 - Make prospective QQQ Paper dispatch single-pass and prebuilt
+
+Decision: remove the separate `kis-paper-prospective-loop` scheduled container.
+The executed virtual-only QQQ session remains the sole owner of its embedded
+local-paper recomputation, followed by the existing offline validator. Terminal
+receipt compatibility is preserved, but new receipts record the retained loop
+stage as `embedded` rather than pretending a separate preview ran. The legacy
+pair-bound observer starts only when both Data-owned evidence files exist.
+
+Scheduled paths no longer use Docker `--build`. Installing or updating local
+Paper schedules explicitly prebuilds every named image, then each due task uses
+`--pull never`; a missing image is a truthful, recoverable task failure. The
+existing Windows tasks were updated after the image build, with no KIS call,
+credential output, or scheduled run.
+
+Reason: the prior route recomputed the same decision in two containers and
+could spend the current receipt window building images. Focused scheduler,
+receipt, Compose, QQQ session, and validator tests passed after the change.
+Claude's route/governance challenge was credential-free but unavailable because
+local OAuth was expired; the change remains private, reversible, and inside
+standing authority.
+
+## 2026-07-28 - Falsify the fixed CACC-D1 closing-auction candidate
+
+Decision: close the fixed QQQ/SPY daily closing-auction co-confirmation rule.
+It required both completed bars to be green and to close in their top range,
+then replayed a one-share QQQ next-open/following-open local-paper position with
+the existing pinned costs. The CPU-only run used the three existing hash-attested
+sparse validation folds, persisted only source-safe aggregate evidence at
+`D:\thericher-v2\model-artifacts\kis-daily-cacc-d1-v1\cpu-20260728t0208-cacc-d1-r2\summary.json`,
+and created no network, KIS, credential, GPU, checkpoint, ensemble, or Paper
+route surface.
+
+Every fold triggered the precommitted kill rule: the first was nonpositive after
+costs and all three failed to beat the time-matched always-long comparator. Do
+not retune the threshold, rerun it on GPU, add it to an ensemble, promote it, or
+route it to KIS Paper. No Claude result challenge is needed for this ordinary
+negative result.
+
+Independent Validation challenged the handling of adjacent qualified days. The
+target contract uses half-open windows, so an exit at one next-open timestamp
+precedes an adjacent re-entry at that same timestamp for this stateless,
+fixed-one-share control. The active r2 precommit and focused test prove the
+exit-first order, a maximum one-share position, and PnL reconciliation. The
+earlier immutable r1 artifact remains historical evidence only; r2 is the
+active result identity.
+
+Reason: this was a causal rule distinct from the rejected return-window models,
+with fixed folds, cost semantics, baselines, and a clear falsification rule.
+Closing it preserves breadth evidence without turning GPU occupancy or
+parameter-search into progress.

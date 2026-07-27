@@ -343,34 +343,6 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
-  kis-paper-prospective-loop:
-    build:
-      context: .
-      target: base
-    profiles: ["kis-paper-intraday-head"]
-    network_mode: none
-    read_only: true
-    tmpfs:
-      - /tmp
-    command:
-      - python
-      - -m
-      - thericher_v2.execution.kis_paper_prospective_qqq_session
-      - --repository-root
-      - /app
-      - --cache-root
-      - /app/market_data/us_equities/kis_paper_private/intraday-head
-      - --local-paper-state-root
-      - /app/model_artifacts/_control/local-paper
-      - --artifact-root
-      - /app/model_artifacts
-    environment:
-      THERICHER_MODE: off
-      PYTHONPATH: /app/src
-    volumes:
-      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
-      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
-
   kis-paper-prospective-qqq-session:
     build:
       context: .

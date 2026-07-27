@@ -12,15 +12,13 @@ output as untrusted input.
 ## Current Objective
 
 The current read-only account diagnostic and target-local Data recovery are
-complete. The first fresh prospective QQQ cycle is also complete: a ready
-runtime receipt classified an exit, then the virtual route returned the exact
-`account_unavailable` no-intent without constructing a canary. A later fresh
-virtual-only bridge restored current account-read health without replaying that
-receipt. Preserve the local dashboard boundary and existing Paper recovery
-invariants. The next Execution package reattaches one genuinely new scheduled
-QQQ receipt; a recurring fixed Paper baseline follows only from reliable
-execution evidence and remains independent of model promotion. KIS Live remains
-unavailable.
+complete. The prospective QQQ scheduler has been simplified and reinstalled:
+the executed virtual-only session owns its embedded `local_paper` replay, images
+are built during task update rather than at due time, and the older observer is
+conditional on its Data pair. Preserve the local dashboard boundary and existing
+Paper recovery invariants. A later fresh QQQ receipt remains lane-owned evidence;
+a recurring fixed Paper baseline follows only from reliable execution evidence
+and remains independent of model promotion. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -49,24 +47,23 @@ unavailable.
   local-paper intent, rejects a pre-decision `as_of`, and emits scoped
   no-intent for an already-satisfied or mismatched target. It does not widen a
   KIS route or make a network call.
-- The prospective QQQ loop preserves its original target proposal in external
-  `local_paper` state, including replay recovery and `source: local_paper`.
-  Its separate virtual session uses the same verified cache evidence only for a
-  current `enter` or `exit` receipt.
-- The existing intraday-head dispatcher now writes one source-safe terminal
-  receipt after its loop/session/validator chain. It contains only stage
-  categories and safe session IDs. A required technical fault is task recovery,
-  not a new broker retry, approval gate, or replacement-intent path.
+- The prospective QQQ session preserves its original target proposal in external
+  `local_paper` state, including replay recovery and `source: local_paper`. It
+  is the only scheduled decision computation and uses verified cache evidence
+  only for a current `enter` or `exit` receipt.
+- The installed intraday-head task prebuilds its images on task update, then runs
+  without a market-time Docker build. Its terminal receipt records the embedded
+  prospective computation, session, validator, and optional observer as
+  source-safe stage facts. A required technical fault is task recovery, not a
+  new broker retry, approval gate, or replacement-intent path.
 - QQQ/NASD one-share position resolution is now explicit: a fresh flat account
   permits only a buy, a fresh one-share QQQ/NASD account permits only a sell,
   and an incompatible position or QQQ open order is a target-local no-intent.
   It never reads a live credential or treats an old account view as a target.
-- The installed prospective-session container has KIS Paper credentials only;
-  the preceding offline loop has no network or KIS environment. Current stale
-  cache smoke exited before client construction, account, quote, intent, or
-  order work. The trailing offline validator independently recomputed the
-  retained cache/session lineage and has no credential, network, local-paper
-  mutation, account, or order surface.
+- The installed prospective-session container has KIS Paper credentials only.
+  Its embedded local replay precedes every virtual route use, while the trailing
+  offline validator independently recomputes retained cache/session lineage and
+  has no credential, network, local-paper mutation, account, or order surface.
 - The first fresh scheduled QQQ cycle on 2026-07-28 KST had a current ready
   90-minute runtime window and a fixed `eligible_exit` receipt. Its virtual
   session read returned `account_unavailable`, emitted `no_intent`, and created

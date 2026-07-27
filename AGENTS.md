@@ -109,19 +109,24 @@ Codex is the product-development lead and integrator.
 - When a **company objective** is materially blocked rather than merely one
   lane being deferred, write one compact `blocked-goal alternatives` entry in
   `agents/orchestration.md`, not a new report or goal file. It states the exact
-  blocking fact, original plan, two to four ready alternative packages with
-  owners/resources, strongest kill test, and the next recovery action. Ask
-  Claude for a concise falsification-first challenge of that record, then
-  immediately dispatch every non-conflicting package that remains inside
-  standing authority. `review_unavailable` is evidence about Claude only; it
-  never recreates the blocked state or turns an external wait into foreground
-  idle.
-- For a reversible, no-cost decision already inside the operator's standing
-  authority, Codex may act when its conclusion and Claude's
-  `supported-with-limits` conclusion agree. Claude can narrow a recommendation
-  but cannot grant a reserved authority. Paid commitments, unclear rights,
-  public exposure, major runtime replacement, `KIS_LIVE_*`, live capital, and
-  material live-risk changes still require explicit operator authority.
+  blocking fact, original plan, and two to four ready alternative packages.
+  Each package names its owner, resource, intended engineering approach,
+  bounded completion evidence, strongest kill test, and next recovery action.
+  For an apparent operator decision, the same compact record also states the
+  options, Codex recommendation, and exact authority boundary. Ask Claude for
+  a concise falsification-first challenge of that record, then immediately
+  dispatch every non-conflicting package that remains inside standing
+  authority. `review_unavailable` is evidence about Claude only; it never
+  recreates the blocked state or turns an external wait into foreground idle.
+- Before escalating an apparent operator decision, Codex checks whether the
+  action is already delegated and asks Claude when the decision is material.
+  Codex may proceed when its conclusion and Claude's
+  `supported-with-limits` conclusion agree **and** the chosen action is
+  reversible, no-cost, and already inside standing authority. Claude can
+  narrow a recommendation but cannot grant a reserved authority. Paid
+  commitments, unclear rights, public exposure, major runtime replacement,
+  `KIS_LIVE_*`, live capital, and material live-risk changes still require an
+  explicit operator decision with the compact options and recommendation.
 - Separate fast feedback from authoritative verification. Focused, independent
   test groups may run concurrently only after their test artifacts, control
   roots, Docker services, and mutable environment are known not to conflict.

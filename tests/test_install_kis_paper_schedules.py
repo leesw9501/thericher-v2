@@ -42,7 +42,14 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '[string]$ProjectRoot = (Join-Path $PSScriptRoot "..")' in source
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
-    assert "run --rm --no-deps --build $($schedule.Service)" in source
+    assert "run --rm --no-deps --pull never $($schedule.Service)" in source
+    assert "Build-LocalDockerScheduleImages" in source
+    assert "build @services" in source
+    assert "Docker image build failed for scheduled task" in source
+    assert "build scheduled Docker service images" in source
+    assert "kis-paper-prospective-qqq-session" in source
+    assert "kis-paper-prospective-qqq-validation" in source
+    assert "kis-paper-intraday-head-receipt" in source
     assert 'New-ScheduledTaskAction -Execute "powershell.exe"' in source
     assert "-NoProfile -ExecutionPolicy Bypass -File" in source
     assert '$schedule.ContainsKey("Runner")' in source

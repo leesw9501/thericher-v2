@@ -24,7 +24,7 @@ SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE = 20
 _DEFAULT_REPOSITORY_ROOT = Path.cwd()
 
 _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
-_LOOP_STATUSES = frozenset({"preview", "no_intent", "unavailable"})
+_LOOP_STATUSES = frozenset({"embedded", "preview", "no_intent", "unavailable"})
 _SESSION_STATUSES = frozenset({"no_intent", "canary_completed", "unavailable"})
 _VALIDATION_STATUSES = frozenset({"validated", "not_run", "unavailable"})
 _OBSERVATION_STATUSES = frozenset({"pending", "unavailable", "complete"})
@@ -124,10 +124,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
     """Write a terminal receipt without retaining provider, account, or order data.
 
     The collection process remains the authority for its own exit code. Once
-    collection succeeds, the prospective loop, execution session, and exact
-    offline validation are all required to publish an allowlisted terminal
+    collection succeeds, the execution session's embedded prospective loop, and
+    exact offline validation are all required to publish an allowlisted terminal
     outcome. The older observation remains explicitly optional for this QQQ
-    cycle.
+    cycle. `preview` remains accepted only for immutable historical receipts.
     """
 
     _require_safe_id(run_id, "run id")
@@ -228,7 +228,7 @@ def _first_downstream_recovery_class(
 ) -> str | None:
     if prospective_loop_exit_code != 0:
         return "prospective_loop_exit_nonzero"
-    if prospective_loop_status not in {"preview", "no_intent"}:
+    if prospective_loop_status not in {"embedded", "preview", "no_intent"}:
         return "prospective_loop_payload_unavailable"
     if prospective_session_exit_code != 0:
         return "prospective_session_exit_nonzero"

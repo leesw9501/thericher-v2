@@ -2,71 +2,67 @@
 
 ## Objective
 
-Close one genuinely new scheduled prospective QQQ KIS Paper lifecycle with
-truthful evidence. The installed scheduler, not a manual replay, must supply a
-new completed-bar receipt. That receipt may end in scoped no-intent or in the
-existing virtual-only persisted-intent/canary lifecycle; neither outcome is a
-model promotion, profitability claim, capital allocation, or live enablement.
+Build the first source-scoped liquid-universe manifest for TheRicher's
+opportunity-selection foundation. It must state exactly which current local
+instruments can be exposed to an offline engine, their data provenance, and
+their limitations without claiming point-in-time membership, stock ranking,
+model selection, Paper eligibility, or profitability.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`,
    and all active stateboards.
-3. Reattach the completed QQQ no-intent, matching offline validator, and later
-   successful virtual-only account-read record as historical scope evidence.
-   Do not print account data, identifiers, secrets, request bodies, or raw
-   market rows.
-4. Retry Claude only before relying on a material execution-route/recovery
-   change or interpreting an unexpected canary outcome. An OAuth failure is
-   `review_unavailable`, not a hold on safe private work.
+3. Inventory the useful existing local QQQ/SPY/IWM and fixed NAS-panel inputs
+   without a broad raw-data scan. Reattach their existing manifests, catalog
+   identities, and source-safe qualification evidence before reading bars.
+4. Ask Claude for a short falsification-first universe-construction challenge.
+   Do not send raw rows, credentials, account data, or sealed labels. An OAuth
+   failure is `review_unavailable`, not a hold on unranked private work.
 
 ## Work
 
-1. **Data:** let the installed prospective intraday scheduler own its due time
-   and current-head collection. Reattach one later terminal receipt only after
-   it exists; do not manually invoke the task or replay the completed
-   `account_unavailable` receipt.
-2. **Execution:** for a new `eligible_enter` or `eligible_exit` receipt, let
-   the existing QQQ virtual-only session re-read its current account and quote,
-   then own any new exact persisted intent and its canary lifecycle. Do not use
-   the earlier bridge snapshot as an order input. A non-eligible decision,
-   account mismatch, quote failure, or missing input remains target-local
-   no-intent with no broker action.
-3. **Execution:** if a canary outcome is unknown, use only the existing
-   reconciliation for that exact durable intent before replacement. Do not
-   create a duplicate intent, manual retry, or live route.
-4. **Validation:** reattach the complete chain of new collection, offline
-   receipt, virtual session/canary result, validator, and terminal schedule
-   evidence. Keep local-paper replay distinct from every KIS Paper action and
-   keep any local fill labeled `source: local_paper`.
-5. **Engine Research:** keep the falsified daily linear/sequence/tree evidence
-   closed. Do not occupy the GPU without a separately frozen causal hypothesis
-   and a valid input contract.
+1. **Data:** define a small deterministic liquid-universe manifest from only
+   existing locally attested inputs. It must include a stable instrument identity,
+   source/dataset identity, supported timeframes, current availability scope,
+   and explicit non-PIT/non-ranking limitations. Store generated manifest data
+   outside Git under `D:\market_data` or the external artifact root as appropriate.
+2. **Data:** provide a narrow pure loader that rejects an unverified source,
+   duplicate instrument identity, mismatched catalog provenance, missing
+   timeframe, or an attempt to reinterpret the manifest as historical membership.
+3. **Engine Research:** add one offline consumer contract that receives the
+   manifest's eligible instruments as an unranked opportunity-selection input.
+   It must not score, rank, choose a trade, fit a model, read credentials, use
+   the GPU, call a provider, or reach a broker.
+4. **Validation:** add focused tests for deterministic construction, provenance
+   binding, source-safe external artifacts, pure import/loading, no network or
+   credential access, and rejection of PIT/ranking/Paper misuse.
+5. **Execution:** leave the installed prospective QQQ scheduler lane-owned.
+   Reattach any naturally arriving terminal receipt, but do not manually invoke
+   it and do not make it a completion condition.
 
 ## Boundaries
 
-- `KIS_PAPER_*` virtual activity is authorized. Never read or route
-  `KIS_LIVE_*`, enable live behavior, or expose a public service.
-- Do not manually construct or replay an order. Only the installed,
-  receipt-linked virtual session may submit, modify, cancel, or reconcile its
-  own new exact persisted intent under its existing tested lifecycle.
-- Keep market data under `D:\market_data` and generated evidence under
-  `D:\thericher-v2\model-artifacts`; never commit either.
-- A provider/account failure closes only its exact path. It does not create an
-  approval gate or stop independent Data and Research work.
+- Do not call KIS, read `.env` or credentials, submit/modify/cancel an order,
+  enable live behavior, expose a public service, or download data for this goal.
+- `KIS_LIVE_*` remains unreadable and unavailable.
+- Keep market data under `D:\market_data`, generated artifacts under
+  `D:\thericher-v2\model-artifacts`, and never commit either.
+- The universe is current-source scoped only. It is not a point-in-time
+  historical universe, a corporate-action qualification, a stock ranking, a
+  model/Paper input, or a future data-acquisition authorization.
+- Do not retune, revive, ensemble, or route the falsified CACC-D1, tree,
+  linear, or sequence candidates.
 
 ## Completion
 
-- One new terminal scheduled QQQ receipt is reattached outside Git with its
-  source-safe chain of collection, session/canary, validation, and scheduler
-  categories.
-- The completed first QQQ no-intent and separate account-health bridge remain
-  historical evidence and are not replayed into a broker action.
-- Any no-intent or unknown outcome has the exact local recovery class; any
-  submitted virtual action remains host-pinned, persisted, and reconcilable.
-- Stateboards, handoff, and decisions distinguish account-read health, model
-  quality, virtual order evidence, and live behavior.
+- One deterministic source-scoped manifest and pure loader are test-backed,
+  externally stored, and reattestable from existing local evidence.
+- An offline unranked consumer contract proves the manifest can feed the future
+  opportunity-selection layer without crossing into strategy or execution.
+- Every limitation remains explicit and source-safe; no raw rows, credentials,
+  account data, order data, weights, or model artifacts are persisted.
+- Any scheduled QQQ evidence remains lane-owned and does not delay this goal.
 
 ## Verification
 
@@ -82,4 +78,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Observe fresh QQQ Paper canary lifecycle`
+`Simplify QQQ Paper route and falsify CACC`

@@ -6,61 +6,57 @@ second goal.
 
 ## Current Cross-Lane View
 
-- **Data:** the first fresh scheduled QQQ head completed. It produced a ready
-  90-minute runtime window while full-session coverage remains a separate
-  incomplete source fact. QQQ/NAS and SPY/AMS `PINC=1` probes are terminal with
-  no continuation cursor, so no unsupported historical dispatcher was created.
-- **Engine Research:** the fixed D1 pair and independent histogram-gradient
-  tree are falsified. The GPU is free, but no new frozen depth hypothesis is
-  eligible; the 21-session intraday cache remains a pipeline control, not a
-  depth-training input.
-- **Execution:** the fresh receipt classified an exit but its virtual account
-  read returned `account_unavailable`; no canary was created, and the offline
-  validator reproduced the target-local no-intent. A separate new virtual-only
-  bridge then completed a current account read without replaying that receipt.
-  A recurring fixed Paper baseline remains subsequent execution-learning work,
-  not model promotion.
+- **Data:** the installed prospective scheduler owns its next due time and its
+  own current-head collection. Its receipt is asynchronously reattached when it
+  exists; no foreground task waits for it.
+- **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
+  screen are closed as falsified evidence. CACC-D1 ran CPU-only against existing
+  folds and did not consume GPU, KIS, credentials, or a broker resource.
+- **Execution:** route simplification is complete and installed: the QQQ session
+  owns one embedded recomputation, due-time dispatch does not build images, and
+  the legacy observer is conditional. Historical receipt facts remain in the
+  Execution stateboard and external evidence, not this projection.
 - **Shared resources:** KIS Paper market-data throughput is one measured
   per-account dispatcher; fresh observations preempt backfill. Research owns
   the exclusive GPU. D: has about 40 percent free space, above the 20/15
   percent warning/floor policy.
 
-## Material Goal Block Review
+## Blocked-Goal Alternatives
 
-- **Classification:** `resolved`.
-- **Original plan:** wait for the next fresh prospective QQQ runtime receipt,
-  then close its local-paper and virtual-paper lifecycle.
-- **Ready alternatives:** Research may formulate a distinct causal daily
-  hypothesis; Data may prepare an explicitly different source contract when an
-  active consumer needs it; Execution may prepare its recurring baseline after
-  the exact canary lifecycle. These packages do not consume the scheduled
-  head's cache ownership or a broker outcome.
-- **Strongest kill tests:** a repeated terminal `PINC=1` reach result closes
-  only its exact source route; a breadth hypothesis that reuses a failed input
-  without a new contract is not dispatched; a canary with an ambiguous outcome
-  is reconciled before replacing only that exact intent.
-- **Claude challenge:** attempted again on 2026-07-28 for the fresh no-intent
-  interpretation with a credential-free prompt; local OAuth was expired, so the
-  result is `review_unavailable`. This does not hold the listed private work.
-- **Recovery:** the terminal receipt and separate account diagnostic are
-  complete. Treat a later fresh receipt as a new canary opportunity only from
-  its own current account, quote, and persisted intent facts.
+- **Classification:** `redirected`; the prior company objective depended on a
+  future scheduler receipt, an external clock rather than an active company
+  package.
+- **Original plan:** wait for a later fresh prospective QQQ receipt and attach
+  it before closing the company objective.
+- **Execution package:** complete. The schedule script, Compose contract, task
+  installation, and focused tests now prove a single session/validator/terminal
+  chain with prebuilt images and conditional observation.
+- **Research package:** complete. CACC-D1 produced a reproducible offline CPU
+  result and was falsified by its fixed fold-local kill rule, not promoted.
+- **Data package:** let the installed scheduler collect when due and reattach
+  only its natural receipt. It owns the cache and source-safe receipt chain;
+  completion evidence is a new terminal receipt or its target-local recovery,
+  neither of which gates the other packages.
+- **Strongest kill tests:** any accidental second decision computation, runtime
+  image build, pair-less observer launch, KIS/credential access from CACC, or
+  changed CACC fold/cost/baseline contract rejects its named package.
+- **Claude challenge:** requested on 2026-07-28 with route and governance facts
+  only; local OAuth was expired, so it is `review_unavailable`. This cannot
+  authorize a reserved action and does not hold the dispatched private work.
+- **Recovery:** an unavailable scheduled receipt is lane-local; resume its own
+  task when due while the route and research packages continue.
 
 ## Current Bottleneck
 
-The material bottleneck is the next fresh QQQ Paper lifecycle, alongside
-insufficient qualified prospective intraday history and no replicated
-error-diverse daily candidate. The current account-read health check is
-complete; the next reversible improvement is to reattach the next scheduled
-receipt without replaying or pre-authorizing an order from the prior one.
+The route bottleneck is resolved. The next material evidence gap is a small,
+versioned liquid-universe contract that can support opportunity-selection work
+without claiming point-in-time membership or stock ranking.
 
 ## External Waits
 
 - The scheduled intraday head owns its next fresh QQQ observation.
-- Claude CLI OAuth is expired; the current source-safe account-health review
-  also returned `review_unavailable`. Retry at the next material decision
-  boundary.
-- No other lane is entitled to foreground-wait on either fact.
+- Claude CLI OAuth is expired. Retry only at the next material decision
+  boundary; no lane foreground-waits on it.
 
 ## Recovery
 
@@ -71,6 +67,6 @@ to that item and keep independent packages moving.
 
 ## Next Handoff
 
-Do not make the prospective QQQ schedule a company bottleneck. Preserve the
-completed fresh no-intent and current account-health evidence; reattach only a
-genuinely new scheduled receipt while the scheduler owns its next due time.
+Advance a bounded Data-owned liquid-universe contract next. Preserve the
+prospective QQQ schedule as lane-owned asynchronous work; reattach only a
+genuinely new receipt while its scheduler owns the next due time.

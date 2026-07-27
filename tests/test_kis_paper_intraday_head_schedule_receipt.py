@@ -42,6 +42,10 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
         "scheduler_exit_code": 0,
         "status": "complete",
     }
+    assert payload["stages"]["prospective_loop"] == {
+        "exit_code": 0,
+        "status": "embedded",
+    }
     assert payload["stages"]["prospective_session"] == {
         "exit_code": 0,
         "session_id": "prospective-qqq-unit",
@@ -193,7 +197,7 @@ def _complete_kwargs() -> dict[str, object]:
         "run_id": "intraday-head-unit",
         "collection_exit_code": 0,
         "prospective_loop_exit_code": 0,
-        "prospective_loop_status": "preview",
+        "prospective_loop_status": "embedded",
         "prospective_session_exit_code": 0,
         "prospective_session_status": "no_intent",
         "prospective_session_id": "prospective-qqq-unit",
