@@ -105,8 +105,9 @@ The cross-fold falsification artifact and the read-only account projection are
 complete. The material bottleneck is now useful daily coverage for the fixed
 six-symbol NAS registry: its existing probe demonstrates only two accepted
 pages per symbol and must not be mistaken for a historical universe or training
-panel. The next Data package needs a distinct resumable cache and measured
-reach/throughput evidence.
+panel. The distinct resumable-cache implementation is locally focused-tested;
+its isolated Compose-profile review and first real collection cycle are the
+remaining evidence before this Data package can close.
 
 The GPU is free, but no new GPU job is eligible from the falsified pair. A new
 Research campaign needs its own frozen hypothesis and input contract. The
@@ -115,14 +116,15 @@ it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
-The current reversible improvement is an explicit source-safe KIS collection
-progress projection. When Data receives a coverage objective, it must publish
-the cursor, accepted/categorical page counts, measured pace, remaining-work and
-ETA categories, and only that collector's `next_due`; `unknown` is valid until
-the reach probe can support an estimate. This makes a real collector delay
-visible without inventing a daily quota, foreground sleep, or second goal. The
-existing isolated parallel test helper remains the standard in-goal feedback
-path; the serial suite remains the authoritative goal-boundary check.
+The current reversible improvement is an explicit `ready / owned / due`
+throughput handoff before any foreground wait. Data publishes the cursor,
+accepted/categorical page counts, measured pace, remaining-work and ETA
+categories, and only that collector's `next_due`; `unknown` is valid until the
+reach probe can support an estimate. A non-conflicting ready package starts or
+attaches before an owned wait is reported. Focused tests may run in parallel
+only with isolated mutable state; the serial suite remains the authoritative
+goal-boundary check. This makes a real collector delay visible without
+inventing a daily quota, foreground sleep, or second goal.
 
 ## External Waits
 

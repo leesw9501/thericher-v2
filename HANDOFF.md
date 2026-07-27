@@ -55,8 +55,18 @@ authorized private KIS Paper work.
   role-specific work diaries.
 - At task resume or after an observed unexplained foreground idle period,
   Codex runs a bounded Throughput Review from ready work, active-job ownership,
-  and worker waits. It keeps one measured reversible improvement in the
-  orchestration board; it does not create a new approval gate or standing lane.
+  owned resources, and worker waits. It records a compact `ready / owned / due`
+  dispatch fact, starts or attaches to one ready non-conflicting package, and
+  keeps one measured reversible improvement in the orchestration board; it
+  does not create a new approval gate or standing lane.
+- Role progress is recoverable from a short stateboard plus a source-safe
+  handoff event: role, bounded objective, run or Git reference, phase, owned
+  resource, recovery class, next action, and evidence pointer. Until the shared
+  ledger exists, use the matching Git commit and immutable external receipt;
+  do not create role diaries or per-role next-goal files.
+- Use parallel focused tests only when their mutable artifacts, control roots,
+  Docker services, and environment are isolated. They accelerate feedback but
+  do not replace the required serial goal-boundary `pytest -q`.
 - Commit work that changes behavior, a contract, a test, or a measured fact.
   Do not substitute schedule reattestation or document repetition for engine
   progress.

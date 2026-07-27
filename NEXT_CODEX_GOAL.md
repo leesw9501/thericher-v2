@@ -39,7 +39,10 @@ model selection, replay, Paper order input, or live behavior.
    cursor pages while eligible; it yields only itself for a categorical limit,
    shared retry time, storage floor, source terminal, or bounded worker runtime.
    Never foreground-sleep, infer an unlimited daily quota, or issue a parallel
-   request flood.
+   request flood. If an eligible cursor remains after a bounded run, its owner
+   launches or schedules the next bounded cycle without treating that owned
+   `next_due` as a company-wide wait; claim a throughput or completion estimate
+   only from the accepted-page measurements actually recorded.
 4. Make each active collector emit the Data stateboard projection required by
    AGENTS.md: scope, cursor, accepted/categorical page counts, measured pace,
    remaining-work estimate or `unknown`, ETA bucket or `unknown`, `next_due`,

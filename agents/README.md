@@ -52,7 +52,9 @@ unavailable.
   ready work, active-job ownership, resource contention, test feedback latency,
   and worker waits to propose one measured, reversible improvement for a named
   engine loop. It has no stateboard, independent queue, approval authority, or
-  strategy/execution authority.
+  strategy/execution authority. At resume or after unexplained foreground idle,
+  it records one `ready / owned / due` dispatch fact in `orchestration.md` and
+  then exits.
 - Review is a lightweight integration checkpoint. Claude challenges the
   bias-prone decision boundaries listed in `AGENTS.md`.
 
@@ -113,6 +115,21 @@ one evidence pointer, recovery class, and next action. This is the durable
 handoff needed by the next temporary executor; it is not a per-agent work log.
 Searchable run history remains in Git and the external evidence substrate.
 
+## Role Records
+
+Each durable role has a short current stateboard and a shared, searchable work
+history. The stateboard answers what can run now and how to recover it. A
+source-safe handoff event answers what bounded work happened: role, objective,
+run or Git reference, phase, owned resource, recovery class, next action, and
+evidence pointer. It must never contain raw data, secrets, account identifiers,
+or broker bodies.
+
+Until the shared ledger is implemented, a matching Git commit plus immutable
+external receipt is the handoff event's durable evidence. Do not replace it
+with per-agent journals, per-agent next-goal files, or a `throughput.md`
+stateboard. The invoked Throughput Review writes its one current improvement to
+`orchestration.md` and remains deliberately short-lived.
+
 ## Shared Memory
 
 Each active role receives logical working-memory, permanent-knowledge, history,
@@ -126,6 +143,11 @@ D:\thericher-v2\model-artifacts\_control\catalog.sqlite
 Until that substrate is implemented, stateboards and exact artifact pointers
 are the recovery bridge. Do not create per-agent databases, vector stores,
 history documents, daily goal files, or recovery reports.
+
+Focused test feedback may use independent parallel processes or `pytest-xdist`
+after the affected tests have no shared mutable artifact, control root, Docker
+service, or environment dependency. The required serial `pytest -q` remains
+the authoritative goal-boundary verification.
 
 ## Lifecycle
 

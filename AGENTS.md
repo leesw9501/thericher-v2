@@ -100,10 +100,19 @@ Codex is the product-development lead and integrator.
   advances a named engine loop.
 - At task resume, and after an observed unexplained foreground idle period,
   run the same small throughput review before waiting: inspect ready work,
-  active jobs, and owned `next_due` facts; then dispatch, recover, or close one
-  bounded package. Record only the resulting shared fact or improvement in
+  active jobs, owned resources, and owned `next_due` facts; then dispatch,
+  recover, or close one bounded package. Start or attach to a ready,
+  non-conflicting package before treating an external wait as foreground idle.
+  Record only the resulting shared fact or improvement in
   `agents/orchestration.md`. This is a scheduling discipline, not a new gate,
   report, or durable approval role.
+- Separate fast feedback from authoritative verification. Focused, independent
+  test groups may run concurrently only after their test artifacts, control
+  roots, Docker services, and mutable environment are known not to conflict.
+  `pytest-xdist` or separate test processes are a feedback optimization, not
+  evidence that the suite is isolation-safe. The required serial `pytest -q`
+  remains the goal-boundary authority unless a future objective explicitly
+  proves and adopts an equivalent deterministic replacement.
 - Enact reversible, no-cost operating and role-lifecycle decisions
   autonomously when they stay inside existing business, credential, capital,
   safety, rights, and public-exposure authority.
@@ -254,11 +263,13 @@ runtime reproducibility. It has no standing queue or separate authority.
 
 Throughput Review is an invoked, bounded operating check, not a durable role
 or stateboard. It may inspect lane readiness, active-process ownership,
-resource use, test feedback latency, and worker wait behavior to identify one
-measured bottleneck and one reversible improvement for a named engine loop. It
-cannot create an approval gate, second goal, strategy decision, execution
-decision, or standing worker. Codex integrates the result into the existing
-orchestration projection.
+resource use, test feedback latency, worker wait behavior, and the next eligible
+action for an idle constrained resource. It identifies one measured bottleneck
+and one reversible improvement for a named engine loop. Its output is a compact
+`ready / owned / due` dispatch fact plus the improvement, recorded only in the
+existing orchestration projection. It cannot create an approval gate, second
+goal, strategy decision, execution decision, standing worker, or a separate
+Markdown history.
 
 ### Review And Claude
 
@@ -451,6 +462,14 @@ Git owns code, policy, decisions, and the current goal. `D:\market_data` owns
 dataset bytes. Execution event history remains authoritative for local
 reconstruction; KIS is authoritative for external paper/live broker state.
 
+The durable handoff record is a source-safe shared event, not a role diary. Its
+minimum shape is role, bounded objective, run or Git reference, durable phase,
+owned resource, recovery class, next action, and evidence pointer. It never
+contains credentials, account identifiers, raw provider rows, model weights, or
+broker bodies. Until the external ledger is implemented, the matching Git
+commit and immutable external receipt are the temporary searchable history;
+stateboards link to them rather than duplicate them.
+
 At task start, after interruption, and before trusting a checkpoint, Codex
 checks active runs and reports anomalies only. Classify recovery as `resume`,
 `restart`, `reconcile`, `complete`, `unrecoverable`, or `operator`. Never create
@@ -488,10 +507,10 @@ interrupted collector recoverable without fabricating precision or adding a
 second data-goal file.
 
 At every bounded role handoff, refresh only the changed current objective,
-ready or running work, one evidence pointer, recovery class, and next action.
-Do not append work diaries or copy another lane's queue. A stateboard records
-what a later executor must know to resume safely; the artifact ledger and Git
-remain the searchable history.
+ready or running work, one source-safe evidence pointer, recovery class, and
+next action. Do not append work diaries or copy another lane's queue. A
+stateboard records what a later executor must know to resume safely; the
+artifact ledger and Git remain the searchable history.
 
 ## Goals And Daily Review
 
