@@ -238,6 +238,24 @@ valid orphan snapshots are recovered before a new request. The worker's shared
 retry/token due belongs to the worker or a goal-owned continuation, never to a
 foreground Codex sleep or a different lane.
 
+The profile's normal bounded continuation has a global cap of 288 chunks and
+1,800 seconds. It retains one in-memory client/token only for its own process;
+when an actual future `next_due` occurs, only that worker may wait and then
+reuse the client. Each internal collection cycle keeps its immutable source-safe
+receipt and the worker also writes one `continuation=*/summary.json` aggregate
+under the external artifact root. The aggregate records counts, elapsed bucket,
+cursor projection, retry-wait count, reuse outcome, stop reason, recovery, and
+route/artifact isolation categories only. It never contains raw rows, request
+headers, credentials, account data, or broker bodies.
+
+Do not start a second worker against this cache. A summary whose reuse outcome
+is `not_observed_no_future_retry_due_observed` means there was no eligible
+future retry within that bounded run; it is not a token failure, a permission
+hold, or a reason to delay another lane. `complete`, `source_limited`, and
+`deferred` remain target-local facts. Recover a deferred target only through a
+new bounded target-local objective; do not edit the durable index by hand or
+blend another provider into its rows.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

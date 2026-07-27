@@ -5921,3 +5921,33 @@ or treating a rate response as an authority hold. Claude's required concise
 collector/profile challenge was attempted without private material but OAuth was
 unavailable; independent Execution and Validation passed route, mount,
 redaction, terminal, cursor, orphan, and root-containment checks.
+
+## 2026-07-27 - Bound daily-history token reuse to one owned continuation worker
+
+Decision: the fixed NAS daily-history collector may retain a single in-memory
+KIS Paper client/token across its own verified future retry due. The CLI now
+has one total runtime and one global chunk budget, writes its normal immutable
+per-cycle receipts, and writes one immutable source-safe continuation summary
+outside Git. The worker alone may wait for a future owned `next_due`; Codex and
+independent lanes do not foreground-sleep for it. An elapsed historical retry
+timestamp is normalized away before scheduling, so a non-retryable target
+failure cannot make the collector appear to have a pending global retry.
+
+The real bounded runs added 92 accepted pages. At index generation 117,
+`AAPL/NAS` and `AMZN/NAS` are complete, `GOOGL/NAS` and `META/NAS` are
+target-local source-limited results, and only `MSFT/NAS` and `NVDA/NAS` remain
+target-local deferred recovery items. The real source did not produce an
+eligible future retry after the continuation change, so the final summary
+records `not_observed_no_future_retry_due_observed`; focused tests establish
+the same-process reuse path. The frozen probe, panel, and QQQ/SPY/IWM catalog
+hashes were rechecked unchanged. No account, position, open-order, quote,
+order, live, Tiingo, model, replay, PnL, or Paper decision path was added.
+
+Reason: this removes short-lived-process token loss without claiming an
+unmeasured provider quota or allowing a retry wait to stall other ready work.
+It keeps the data boundary recoverable and makes the next work item precise:
+recover the two deferred targets independently rather than restarting a
+completed or source-limited cursor. Claude's concise recovery/architecture
+challenge was attempted without private material but could not authenticate;
+that reviewer outage limits reliance on a material promotion decision, not this
+bounded private Data implementation.

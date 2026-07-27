@@ -134,6 +134,44 @@ class _StalledHistoryClient(_HistoryClient):
         )
 
 
+class _RateLimitedOnceHistoryClient(_HistoryClient):
+    def __init__(self, clock: _Clock, request_gate: KisPaperMarketDataRateGate) -> None:
+        super().__init__(clock)
+        self._request_gate = request_gate
+        self._rate_limited = False
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        if not self._rate_limited:
+            self._rate_limited = True
+            self._clock.advance(1)
+            self._request_gate.record_rate_limit()
+            raise KisPaperMarketDataError("rate_limited")
+        return super().fetch_daily_raw_page(query)
+
+
+class _InvalidHistoryClient(_HistoryClient):
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        self.queries.append(query)
+        self._daily_attempts += 1
+        self._clock.advance(1)
+        raise KisPaperMarketDataError("daily_response_invalid")
+
+
+class _InvalidThenHistoryClient(_HistoryClient):
+    def __init__(self, clock: _Clock) -> None:
+        super().__init__(clock)
+        self._invalid_once = False
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        if not self._invalid_once:
+            self._invalid_once = True
+            self.queries.append(query)
+            self._daily_attempts += 1
+            self._clock.advance(1)
+            raise KisPaperMarketDataError("daily_response_invalid")
+        return super().fetch_daily_raw_page(query)
+
+
 class _HttpResponse:
     status = 200
     headers: dict[str, str] = {}
@@ -247,6 +285,135 @@ def test_history_collection_reuses_one_client_and_persists_resumable_safe_progre
     assert second.target_states[0].cursor_date == "20260101"
     assert second_client.queries[0].symbol == "GOOGL"
     assert second.evidence_sha256 is not None
+
+
+def test_history_collection_reuses_passed_client_after_owned_rate_due(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    client = _RateLimitedOnceHistoryClient(clock, request_gate)
+
+    def factory_must_not_run() -> _HistoryClient:
+        raise AssertionError("a passed in-memory client must bypass a fresh token factory")
+
+    first = run_kis_paper_daily_history_collection(
+        client_factory=factory_must_not_run,  # type: ignore[arg-type]
+        client=client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        max_chunks=2,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert first.status == "deferred"
+    assert first.accepted_page_count == 0
+    assert first.categorical_failure_count == 1
+    assert first.next_due == datetime(2026, 7, 27, 1, 1, 1, tzinfo=UTC)
+    assert client._token_attempts == 1
+
+    clock.advance(60)
+    second = run_kis_paper_daily_history_collection(
+        client_factory=factory_must_not_run,  # type: ignore[arg-type]
+        client=client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        max_chunks=1,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert second.status == "collected"
+    assert second.accepted_page_count == 2
+    assert client._token_attempts == 1
+    assert client.auth_calls == 2
+
+
+def test_history_collection_marks_a_nonretryable_target_as_reconcile(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: _InvalidHistoryClient(clock),  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        max_chunks=1,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert result.status == "deferred"
+    assert result.recovery == "reconcile"
+    assert result.next_due is None
+    assert result.target_states[0].state == "deferred"
+    assert result.target_states[0].last_reason == "daily_response_invalid"
+
+
+def test_history_collection_ignores_an_elapsed_retry_due_after_a_target_failure(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    request_gate.record_rate_limit()
+    clock.advance(60)
+
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: _InvalidThenHistoryClient(clock),  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        max_chunks=2,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert result.status == "collected"
+    assert result.chunk_attempt_count == 2
+    assert result.accepted_page_count == 2
+    assert result.next_due is None
+    assert result.recovery == "reconcile"
+    assert result.target_states[0].state == "deferred"
+    assert result.target_states[1].cursor_date == "20260101"
 
 
 def test_history_cache_rejects_a_git_workspace_destination(tmp_path: Path) -> None:

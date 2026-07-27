@@ -2,78 +2,81 @@
 
 ## Objective
 
-Add and run one bounded token-reusing continuation worker for the existing
-fixed six-symbol KIS Paper daily-history cache.
+Resolve the two target-local deferred states in the fixed six-symbol KIS Paper
+daily-history cache without widening its source scope or restarting completed
+targets.
 
-The first three real collection cycles proved that the isolated cache can
-advance at roughly 28--33 accepted pages per minute, but a short-lived Compose
-process cannot retain its already-valid in-memory token across a categorical
-cooldown. The worker must improve sustained historical coverage without an
-orchestrator foreground wait, request flood, new dataset meaning, broker route,
-or public service.
+The bounded continuation worker is complete. The current cache has four
+terminal target states and exactly two deferred cursors: `MSFT/NAS` with
+`daily_response_invalid` at its observed `2017-Q4` boundary, and `NVDA/NAS`
+with `transport_failure` at its observed `2010-Q1` boundary. This objective
+turns each into a truthful target-local recovery result or resumed cursor; it
+does not recreate the whole historical collection.
 
 ## First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and all active
    stateboards.
-3. Reattach the fixed NAS daily-history index and latest source-safe receipts
-   under `D:\market_data` and `D:\thericher-v2\model-artifacts`; do not print
-   raw rows, credentials, or broker bodies.
-4. Ask Claude for a concise falsification-first drift-check before widening the
-   collector into a token-reusing continuation worker. Do not send secrets,
-   account facts, raw rows, or source values. `review_unavailable` is not a hold
-   on this authorized private Data work.
+3. Reattach the daily-history index and latest source-safe continuation/cycle
+   receipts under `D:\market_data` and
+   `D:\thericher-v2\model-artifacts`; do not print raw rows, credentials,
+   request headers, account facts, or broker bodies.
+4. Ask Claude for a concise falsification-first recovery drift-check. State the
+   two failure classes, the exact target-local scope, cache/index evidence,
+   route isolation, and the fact that would reject the recovery. Do not send
+   secrets, raw rows, account facts, or source values. `review_unavailable` is
+   not a hold on this authorized private Data work.
 
 ## Required Work
 
-1. Extend the dedicated daily-history CLI/profile so one bounded worker retains
-   one in-memory Paper client/token through its own verified retry due times and
-   resumes the same durable cache cursor without a new token POST per cycle.
-2. Bound the worker by a named total runtime and global page/chunk budget. It
-   may wait only inside its owned process for a source-safe `next_due`; it must
-   exit truthfully on completion, source limit, storage floor, unknown recovery,
-   or its bounded runtime/budget. Codex must not foreground-sleep for it.
-3. Preserve the existing 1.0-second shared request-start gate and measured
-   categorical cooldown. Do not infer a daily quota, lower the gate, create
-   parallel workers for the same cache, or issue a request flood.
-4. Emit one source-safe receipt per internal cycle plus a final aggregate
-   continuation summary: cumulative accepted/categorical counts, elapsed bucket,
-   client/token reuse fact, cursor projection, `next_due`, stop reason, and
-   recovery class. Keep raw rows only in the existing D: cache.
-5. Add focused tests proving client/token reuse after a retry wait, global
-   bounds, no foreground-orchestrator sleep seam, durable resume/orphan safety,
-   exact daily-only route isolation, canonical Compose roots, and no
-   account/order/quote/live path.
-6. Run one real bounded continuation through the dedicated Compose profile.
-   Recheck that the frozen probe, panel, and QQQ/SPY/IWM catalog hashes remain
-   unchanged. Update the Data stateboard with actual pace, coverage, estimate
-   or `unknown`, ETA bucket or `unknown`, `next_due`, and recovery.
+1. Prove the exact deferred state from the durable index and source-safe
+   receipts. Recheck that the frozen universe probe, six-symbol panel, and
+   QQQ/SPY/IWM catalog hashes remain unchanged before and after the work.
+2. Add or extend one bounded target-local recovery path for only `MSFT/NAS` and
+   `NVDA/NAS`. It must preserve the durable cursor, immutable snapshots,
+   existing 1.0-second shared request gate, 60-second categorical cooldown,
+   five-minute cross-process token-start guard, and one-worker ownership.
+3. Classify a recovery attempt truthfully. A valid resumed page may advance
+   only its own cursor. A repeated structural invalid response, a transport
+   failure, an empty terminal page, or non-advancing cursor must remain scoped
+   to that target with a durable recovery/source-limit fact. Do not edit the
+   index by hand, reset a target opportunistically, or use another provider to
+   fill or relabel KIS rows.
+4. Add focused tests for exact target allow-listing, preservation of terminal
+   targets, recovery classification, stale-due handling, client/token and
+   route containment, immutable external evidence, and no foreground
+   orchestrator sleep.
+5. Run one bounded recovery through the dedicated Data-only Compose profile.
+   Record only source-safe aggregate outcome, cursor/coverage buckets,
+   accepted/categorical counts, `next_due`, recovery, and route/artifact
+   isolation. Continue independent ready work while its worker owns any retry
+   due.
+6. Refresh the Data, Execution, Research, and orchestration stateboards with
+   actual recovery evidence, current bottleneck, and next handoff.
 
 ## Hard Boundaries
 
 - Use `KIS_PAPER_*` only in the dedicated Data-only collector/profile. Never
   read or route `KIS_LIVE_*`.
 - Preserve `THERICHER_MODE=off`; do not call account, position, open-order,
-  order submit, modify, cancel, reconciliation, quote, or live endpoints.
-- Do not call Tiingo, use paid data, change the fixed registry, or acquire a
-  public historical universe.
+  quote, order submit, modify, cancel, reconciliation, or live endpoints.
+- Do not call Tiingo, buy data, change the six-symbol fixed registry, acquire a
+  public historical universe, or blend another source into this cache.
 - Do not create a model, GPU campaign, replay, PnL claim, or Paper decision
   from this current-listing cache.
 - Do not store raw market data, credentials, or generated artifacts in Git.
-- A source delay or failed page applies only to the owned worker. Persist it
-  truthfully and continue every independent ready lane.
+- A target-local delay, error, or source limit is evidence for that target only
+  and never a global pause or approval hold.
 
 ## Completion Evidence
 
-- The continuation worker/profile reuses one in-memory client/token across at
-  least one eligible retry cycle or records why that source condition was not
-  encountered within its bound.
-- Source-safe final summary and Data stateboard show cumulative progress,
-  current cursor, pacing, remaining estimate/ETA category, `next_due`, and
-  recovery state.
-- Independent Validation confirms Data-only route/mount containment, redaction,
-  bounds, and resumability.
+- Tests prove only the two deferred targets can enter the bounded recovery
+  path, while complete/source-limited targets remain unchanged.
+- One source-safe bounded recovery result records a truthful outcome for both
+  targets and preserves cache/index recoverability.
+- Independent Validation confirms Data-only mount/route containment, bounded
+  recovery behavior, redaction, and frozen-artifact stability.
 - No account, order, position, quote, Tiingo, or live broker call occurred.
 
 ## Verification
@@ -86,9 +89,9 @@ docker compose config --quiet
 ```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A source-limited or recoverable partial worker is
-evidence for that worker, not a reason to halt a different ready lane.
+next company objective. A target that remains deferred or becomes source-limited
+is valid evidence for that target, not a reason to stop another ready lane.
 
 ## Suggested Commit Message
 
-`Reuse token for bounded daily history continuation`
+`Recover deferred daily history targets`

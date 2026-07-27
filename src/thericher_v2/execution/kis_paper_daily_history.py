@@ -315,6 +315,7 @@ class _Snapshot:
 def run_kis_paper_daily_history_collection(
     *,
     client_factory: Callable[[], KisPaperMarketDataClient],
+    client: KisPaperMarketDataClient | None = None,
     request_gate: KisPaperMarketDataRateGate,
     token_start_gate: KisPaperMarketDataTokenStartGate,
     cache_root: Path = KIS_PAPER_DAILY_HISTORY_CACHE_ROOT,
@@ -324,7 +325,6 @@ def run_kis_paper_daily_history_collection(
     max_chunks: int = KIS_PAPER_DAILY_HISTORY_DEFAULT_MAX_CHUNKS,
     max_runtime: timedelta = KIS_PAPER_DAILY_HISTORY_DEFAULT_MAX_RUNTIME,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
-    sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
 ) -> KisPaperDailyHistoryRun:
     """Advance independent fixed-symbol cursors without a foreground scheduler wait."""
@@ -354,14 +354,17 @@ def run_kis_paper_daily_history_collection(
         recovered = _recover_orphan_snapshot(index=index, root=root)
         if recovered:
             _write_index(root=root, index=index)
-        client: KisPaperMarketDataClient | None = None
+        active_client = client
         accepted_pages = 0
         categorical_failures = 0
         chunk_attempts = 0
-        next_due: datetime | None = _next_due(
-            request_gate,
-            token_start_gate,
-            token_required=True,
+        next_due: datetime | None = _future_due(
+            _next_due(
+                request_gate,
+                token_start_gate,
+                token_required=active_client is None,
+            ),
+            now=started_at,
         )
         status: Literal["collected", "complete", "deferred", "storage_floor_would_be_crossed"] = (
             "deferred"
@@ -372,12 +375,16 @@ def run_kis_paper_daily_history_collection(
             if monotonic_clock() - start_monotonic >= max_runtime.total_seconds():
                 status = "collected" if accepted_pages else "deferred"
                 break
-            next_due = _next_due(
-                request_gate,
-                token_start_gate,
-                token_required=client is None,
+            now = require_utc(clock(), "clock")
+            next_due = _future_due(
+                _next_due(
+                    request_gate,
+                    token_start_gate,
+                    token_required=active_client is None,
+                ),
+                now=now,
             )
-            if next_due is not None and next_due > require_utc(clock(), "clock"):
+            if next_due is not None:
                 status = "collected" if accepted_pages else "deferred"
                 break
             target = _select_ready_target(index)
@@ -390,10 +397,10 @@ def run_kis_paper_daily_history_collection(
             ):
                 status = "storage_floor_would_be_crossed"
                 break
-            if client is None:
-                client = client_factory()
+            if active_client is None:
+                active_client = client_factory()
             collection = _collect_two_pages_without_extra_delay(
-                client=client,
+                client=active_client,
                 target=KisPaperPrivateDailyCollectionTarget(
                     symbol=str(target["symbol"]),
                     exchange=str(target["exchange"]),
@@ -412,10 +419,13 @@ def run_kis_paper_daily_history_collection(
                     reason=collection.reason or "unexpected_private_daily_collector_error",
                 )
                 _write_index(root=root, index=index)
-                next_due = _next_due(
-                    request_gate,
-                    token_start_gate,
-                    token_required=collection.reason == "token_request_not_due",
+                next_due = _future_due(
+                    _next_due(
+                        request_gate,
+                        token_start_gate,
+                        token_required=collection.reason == "token_request_not_due",
+                    ),
+                    now=require_utc(clock(), "clock"),
                 )
                 if next_due is not None or collection.reason == "token_request_not_due":
                     status = "collected" if accepted_pages else "deferred"
@@ -429,10 +439,13 @@ def run_kis_paper_daily_history_collection(
                     categorical_failure=False,
                 )
                 _write_index(root=root, index=index)
-                next_due = _next_due(
-                    request_gate,
-                    token_start_gate,
-                    token_required=False,
+                next_due = _future_due(
+                    _next_due(
+                        request_gate,
+                        token_start_gate,
+                        token_required=False,
+                    ),
+                    now=require_utc(clock(), "clock"),
                 )
                 if _all_targets_terminal(index):
                     status = "complete"
@@ -447,10 +460,13 @@ def run_kis_paper_daily_history_collection(
                     categorical_failure=True,
                 )
                 _write_index(root=root, index=index)
-                next_due = _next_due(
-                    request_gate,
-                    token_start_gate,
-                    token_required=False,
+                next_due = _future_due(
+                    _next_due(
+                        request_gate,
+                        token_start_gate,
+                        token_required=False,
+                    ),
+                    now=require_utc(clock(), "clock"),
                 )
                 if _all_targets_terminal(index):
                     status = "complete"
@@ -473,11 +489,14 @@ def run_kis_paper_daily_history_collection(
             )
             categorical_failures += commit_failures
             _write_index(root=root, index=index)
-            next_due = commit_next_due
+            next_due = _future_due(
+                commit_next_due,
+                now=require_utc(clock(), "clock"),
+            )
             if commit_status == "storage_floor_would_be_crossed":
                 status = commit_status
                 break
-            if next_due is not None and next_due > require_utc(clock(), "clock"):
+            if next_due is not None:
                 status = "collected" if accepted_pages else "deferred"
                 break
             if _all_targets_terminal(index):
@@ -497,8 +516,14 @@ def run_kis_paper_daily_history_collection(
             categorical_failure_count=categorical_failures,
             chunk_attempt_count=chunk_attempts,
             elapsed_seconds=max(0.0, monotonic_clock() - start_monotonic),
-            next_due=next_due,
-            recovery="complete" if status == "complete" else "resume",
+            next_due=_future_due(next_due, now=completed_at),
+            recovery=(
+                "complete"
+                if status == "complete"
+                else "reconcile"
+                if any(target["state"] == "deferred" for target in _targets(index))
+                else "resume"
+            ),
         )
         evidence_hash = _write_source_safe_receipt(
             evidence_root=artifacts,
@@ -930,6 +955,13 @@ def _next_due(
         candidates.append(token_start_gate.snapshot().next_token_request_not_before_utc)
     due_values = [value for value in candidates if value is not None]
     return max(due_values, default=None)
+
+
+def _future_due(value: datetime | None, *, now: datetime) -> datetime | None:
+    """Expose a retry only while it remains an owned future wait."""
+
+    current = require_utc(now, "clock")
+    return value if value is not None and value > current else None
 
 
 def _partial_reason(stop_outcome: str) -> str:

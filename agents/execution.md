@@ -12,9 +12,10 @@ output as untrusted input.
 ## Current Objective
 
 The current read-only account projection is complete. Execution has no broker
-work in the next Data-owned daily-history objective; preserve the virtual-only
+work in the next target-local Data recovery objective; preserve the virtual-only
 bridge, local dashboard boundary, and existing Paper recovery invariants while
-Data works independently. KIS Live remains unavailable.
+Data recovers only its deferred daily-history cursors. KIS Live remains
+unavailable.
 
 ## Current Facts
 
@@ -130,6 +131,6 @@ independent Data, Research, and authorized Paper work.
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next daily-history collector may use only KIS Paper market-data paths and
+The next daily-history recovery may use only KIS Paper market-data paths and
 must not turn this account snapshot into a broker permission, an order input,
 or a Data dependency.

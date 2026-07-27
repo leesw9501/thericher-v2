@@ -413,18 +413,21 @@ authorized private KIS Paper work.
   `D:\\market_data\\us_equities\\kis_paper_private\\daily-nas-history\\v1`,
   with source-safe receipts under
   `D:\\thericher-v2\\model-artifacts\\data\\kis-paper-daily-nas-history-v1`.
-  Its first four real cycles accepted 13, 50, 69, and 8 pages at observed pace
-  27.158, 32.664, 27.962, and 51.169 pages/minute. The latest completed index
-  projection is generation 71 with 140 accepted pages and four categorical rate
-  limits. `AAPL`, `AMZN`, `GOOGL`, and `META` have reached `20170208`; `NVDA`
-  remains ready at `20171120`; and only `MSFT` is deferred at that cursor after
-  one `daily_response_invalid` source fact. Each cycle wrote a separate
-  source-safe receipt. The cache has durable per-symbol cursors and retains raw
-  rows only on D:. Empty-terminal, non-progress, orphan-recovery, exact route,
-  and canonical-root regressions passed independent Validation before the first
-  call. The next bounded objective replaces chained short-lived resumes with
-  one token-reusing continuation worker; the deferred `MSFT` target is a
-  target-local recovery fact, not a collection or lane hold.
+  Its bounded token-reusing continuation worker is implemented and real-run
+  verified. Two continuation runs added 82 and 10 accepted pages; the index is
+  now generation 117 with 232 accepted pages and seven categorical results.
+  `AAPL/NAS` and `AMZN/NAS` are complete at the observed `2007-Q3` boundary;
+  `GOOGL/NAS` and `META/NAS` are source-limited after non-advancing cursors;
+  `MSFT/NAS` is deferred after `daily_response_invalid`, and `NVDA/NAS` is
+  deferred after `transport_failure`. Both deferred states are target-local
+  recovery evidence, never a collection or lane hold. The final no-ready-work
+  run truthfully recorded `not_observed_no_future_retry_due_observed`: client
+  reuse is covered by focused tests, but its real retry condition did not occur
+  within this bounded source run. Every internal cycle and continuation writes
+  source-safe external evidence; raw rows remain only in the D: cache. The
+  frozen probe, six-symbol panel, and QQQ/SPY/IWM catalog hashes remain
+  unchanged at `sha256:ffe916...fd0eac`, `sha256:99ba614...17e6f4`, and
+  `sha256:e0bb847...1ac660`.
 
 ## Active Lanes
 
@@ -472,10 +475,11 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. The first resumable six-symbol KIS Paper
-daily-history collector, profile, P1/P2 corrections, focused tests,
-independent Validation, and four bounded cycles are complete. Build and run the
-next bounded token-reusing continuation worker from the reattached index and
-latest receipt; do not turn an owned retry due into a foreground wait. Preserve
-the completed two-page probe and frozen panel as separate sources. This is
-market-data work only: do not call account/order/live routes, turn the current
-listing into a PIT universe, or promote a model from the new cache.
+  daily-history collector, token-reusing continuation worker, focused tests,
+  independent Validation, and bounded source runs are complete. Reattach the
+  index and latest source-safe receipt, then recover only the deferred `MSFT`
+  and `NVDA` targets under the next bounded objective. Do not turn an owned
+  retry due into a foreground wait. Preserve the completed two-page probe and
+  frozen panel as separate sources. This is market-data work only: do not call
+  account/order/live routes, turn the current listing into a PIT universe, or
+  promote a model from the new cache.

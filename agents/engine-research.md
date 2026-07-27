@@ -189,12 +189,13 @@ promotion decisions; it does not make historical research input-pending.
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, and the fixed
-cross-fold artifact. Await a separately contracted research campaign; the next
-six-symbol daily-history collection establishes endpoint coverage only and has
-no automatic Research input or GPU consequence. A failed consumer attempt
-creates new immutable evidence rather than overwriting a parent artifact. A
-missing prospective pair is input_unavailable only for its pair-bound
-observation.
+cross-fold artifact. The completed daily-history continuation is transport and
+coverage evidence only: it creates no frozen Research input, replay, campaign,
+or GPU job. Await a separately contracted research campaign; target-local
+daily-history recovery has no automatic Research input or GPU consequence. A
+failed consumer attempt creates new immutable evidence rather than overwriting
+a parent artifact. A missing prospective pair is input_unavailable only for its
+pair-bound observation.
 
 ## Next Handoff
 

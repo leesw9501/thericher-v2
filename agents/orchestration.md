@@ -102,17 +102,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 ## Current Bottleneck
 
 The cross-fold falsification artifact and the read-only account projection are
-complete. The material bottleneck is now useful daily coverage for the fixed
-six-symbol NAS registry: its existing probe demonstrates only two accepted
-pages per symbol and must not be mistaken for a historical universe or training
-panel. The distinct resumable-cache implementation is locally focused-tested;
-the empty-terminal, non-advancing-cursor, orphan-recovery, route-proof, and
-canonical-root corrections passed independent Validation. Four completed bounded
-cycles advanced the dedicated cursors without touching the legacy probe, panel,
-or ETF catalog. The measured bottleneck is now token loss between short-lived
-processes: the next Data-owned package is one bounded continuation worker that
-keeps its client only in memory through its own due times. One deferred MSFT
-response is target-local recovery evidence, not a cross-lane hold.
+complete. The daily-history continuation removed the measured short-lived
+token-loss bottleneck without touching the legacy probe, panel, or ETF catalog.
+Its fixed cache is now terminal for four targets: AAPL/AMZN are complete and
+GOOGL/META are source-limited. The material bottleneck is narrow source
+recovery for `MSFT/NAS` (`daily_response_invalid`) and `NVDA/NAS`
+(`transport_failure`), neither of which is a cross-lane hold.
 
 The GPU is free, but no new GPU job is eligible from the falsified pair. A new
 Research campaign needs its own frozen hypothesis and input contract. The
@@ -128,10 +123,10 @@ categories, and only that collector's `next_due`; `unknown` is valid until the
 reach probe can support an estimate. A non-conflicting ready package starts or
 attaches before an owned wait is reported. Focused tests may run in parallel
 only with isolated mutable state; the serial suite remains the authoritative
-goal-boundary check. The next reversible improvement keeps a valid token inside
+goal-boundary check. The implemented continuation keeps a valid token inside
 one bounded owned Data process across its source-safe retry due, rather than
-creating a new process and token-start delay. This makes a real collector delay
-visible without inventing a daily quota, foreground sleep, or second goal.
+creating a new process and token-start delay. Its elapsed-retry normalization
+also prevents a past due time from masquerading as an active global wait.
 
 ## External Waits
 
@@ -139,9 +134,9 @@ visible without inventing a daily quota, foreground sleep, or second goal.
   worker implementation, historical evidence preservation, or Execution.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
-- No short-lived daily-history resume is active. The next continuation worker
-  will own its retry due and token reuse; this does not hold Research,
-  Execution, verification, or another ready package.
+- No daily-history worker is active and its `next_due` is empty. The next Data
+  package is a bounded recovery for two exact deferred targets; it does not
+  hold Research, Execution, verification, or another ready package.
 
 ## Recovery
 
@@ -154,10 +149,9 @@ independent lanes.
 
 ## Next Handoff
 
-Reattach the completed daily-history index and latest receipt before the next
-bounded continuation worker. Keep its eligible cursor work owned by its
-`next_due` rather than foreground waiting; defer only the exact invalid MSFT
-target until its recovery path is known. Do not treat the current listing or raw
-cache as a PIT universe, selected model, replay result, or Paper order input.
-Record only an actual shared resource conflict, new external wait, bottleneck,
-or reversible operating improvement here.
+Reattach the completed daily-history index and latest receipt before bounded
+target-local recovery for `MSFT/NAS` and `NVDA/NAS`. Keep any eligible retry
+owned by its worker rather than foreground waiting. Do not treat the current
+listing or raw cache as a PIT universe, selected model, replay result, or Paper
+order input. Record only an actual shared resource conflict, new external wait,
+bottleneck, or reversible operating improvement here.

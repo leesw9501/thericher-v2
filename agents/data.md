@@ -25,10 +25,12 @@ output or a company hold. The first Data-owned objective extended the fixed NAS
 six-symbol capability result into a separate resumable historical cache without
 changing the frozen two-page probe or any existing QQQ/SPY/IWM catalog. That
 collector is implemented, independently validated, and has completed four
-bounded cycles. The next Data-owned objective is one bounded token-reusing
-continuation worker; it must retain an in-memory client only for its own
-process, preserve the existing cache meaning, and keep a target-local invalid
-response from halting other ready work.
+bounded cycles. Its bounded token-reusing continuation worker is now complete:
+it retains an in-memory client only for its own process, keeps retries owned by
+that worker, and preserves the exact cache meaning. The next Data-owned
+objective is target-local recovery for only the deferred `MSFT/NAS` and
+`NVDA/NAS` cursors; it must not restart complete/source-limited targets or
+change the fixed registry.
 
 ## Current Facts
 
@@ -177,14 +179,12 @@ response from halting other ready work.
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. Build and run the next bounded token-reusing continuation for the existing
-   six-symbol NAS daily-history cache. Keep the durable cursors separate from
-   the two-page probe; reuse one in-memory client only within its owned process,
-   record measured reach and pace, and preserve `unknown` where a terminal
-   estimate has not yet been observed. The corrected empty-terminal,
-   non-advancing-cursor, orphan-recovery, and canonical-root paths remain
-   required. A target-local invalid response and a falsified fixed model pair
-   are not data-collection holds or requests to mutate a source.
+2. Reattach and recover only deferred `MSFT/NAS` (`daily_response_invalid`) and
+   `NVDA/NAS` (`transport_failure`) through one bounded target-local Data
+   package. Preserve complete/source-limited targets, the fixed registry,
+   existing raw rows, request gate, cooldown, and canonical roots. A recovery
+   failure stays scoped to its target and does not request a source mutation or
+   stop an independent lane.
 
 ## Collection Progress Projection
 
@@ -194,22 +194,23 @@ daily-history cache outside the existing two-page probe.
 
 - independent Validation passed the P1/P2 correction and exact token-plus-fixed
   NAS-daily route proof; the profile remains account/order/quote/live-free.
-- the first three real cycles have source-safe receipt hashes
-  `sha256:5f3a46...098238`, `sha256:18ba7a...7e45eb`, and
-  `sha256:60d7eb...bec3ad`. They accepted 13, 50, and 69 pages respectively;
-  observed cycle pace was 27.158, 32.664, and 27.962 pages/minute.
-- the fourth bounded resume accepted eight pages at 51.169 pages/minute and
-  wrote source-safe receipt `sha256:50a4f0...911fb`. The latest completed
-  projection is index generation 71: 140 accepted pages and four categorical
-  rate limits. `AAPL`, `AMZN`, `GOOGL`, and `META` are ready at `20170208`;
-  `NVDA` is ready at `20171120`; `MSFT` alone is deferred at `20171120` with
-  `daily_response_invalid`. That source fact is scoped to `MSFT`; it neither
-  closes the endpoint nor pauses the other ready cursors.
+- the first four real cycles accepted 13, 50, 69, and 8 pages. The bounded
+  continuation then accepted 82 and 10 pages in two internal-cycle runs. Its
+  source-safe aggregates are external under
+  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-history-v1`;
+  the final no-ready-work summary has
+  `client_reuse_outcome: not_observed_no_future_retry_due_observed`.
+- the current projection is index generation 117: 232 accepted pages and seven
+  categorical results. `AAPL/NAS` and `AMZN/NAS` are `complete` at `2007-Q3`;
+  `GOOGL/NAS` and `META/NAS` are `source_limited` after
+  `no_cursor_progress`; `MSFT/NAS` is `deferred` at `2017-Q4` with
+  `daily_response_invalid`; and `NVDA/NAS` is `deferred` at `2010-Q1` with
+  `transport_failure`. These are separate exact-target facts.
 - remaining-page estimate and ETA bucket: `unknown`; no source terminal or
   total-page yield has been observed.
-- `next_due`: no active short-lived resume remains. The next bounded
-  continuation worker owns its source-safe due time; recovery is `resume` for
-  the five ready cursors and target-local `reconcile` for deferred `MSFT`.
+- `next_due`: none. No continuation worker is active. Recovery is `reconcile`
+  for exactly `MSFT/NAS` and `NVDA/NAS`; the other four target states are
+  terminal for this cache scope.
 - raw rows remain only in the dedicated D: cache. The index retains no raw rows
   or credentials. The frozen probe, panel, and QQQ/SPY/IWM catalog hashes were
   rechecked unchanged after the real cycles.
@@ -251,20 +252,20 @@ another collector or lane.
 
 Current class: complete for the daily catch-up, joint event-window contract,
 all three fold inputs/materializer/target-cost receipts, all candidate screens,
-the fixed source-safe cross-fold artifact, and the first daily-history
-collector. Reattach the daily-history index and its latest source-safe receipt
-before the continuation worker. Five ready cursors are `resume`; deferred
-`MSFT` is target-local `reconcile`. A bad cache is reconcile/restart evidence
-for that cache; an empty or limited endpoint result is source evidence for that
-route only.
+the fixed source-safe cross-fold artifact, the daily-history collector, and its
+bounded continuation worker. Reattach the daily-history index and latest
+source-safe receipt before target-local recovery. `MSFT/NAS` and `NVDA/NAS`
+are `reconcile`; complete/source-limited targets are not recovery candidates.
+A bad cache is reconcile/restart evidence for that cache; an empty or limited
+endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Reattach the current
-daily-history index/receipt, then use the bounded token-reusing worker rather
-than chaining new token-start processes after each cooldown. Do not infer PIT
-membership, corporate-action completeness, a ranking claim, or Paper-trading
-eligibility from either cache or the fixed-pair falsification result. The new
-daily-history cache may establish endpoint coverage only; do not use it as a
-historical universe, a model selection result, or a Paper-trading input without
-a separate qualified contract.
+daily-history index/receipt, then perform the bounded target-local recovery for
+`MSFT/NAS` and `NVDA/NAS`. Do not infer PIT membership, corporate-action
+completeness, a ranking claim, or Paper-trading eligibility from either cache
+or the fixed-pair falsification result. The daily-history cache may establish
+endpoint coverage only; do not use it as a historical universe, a model
+selection result, or a Paper-trading input without a separate qualified
+contract.
