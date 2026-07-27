@@ -8,10 +8,12 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
+from typing import Literal
 
 from thericher_v2.contracts import (
     SCHEMA_VERSION,
     Bar,
+    TargetAction,
     TargetExposureProposal,
     TargetInputStatus,
     Timeframe,
@@ -19,6 +21,7 @@ from thericher_v2.contracts import (
 )
 from thericher_v2.data.kis_capability import (
     CompletedBarCache,
+    KisCapabilityState,
     KisMarketDataCapability,
     trusted_kis_paper_baseline_qualifications,
 )
@@ -28,10 +31,100 @@ KIS_PAPER_BASELINE_SCHEMA_ID = "kis-paper-baseline-1m-90-v1"
 KIS_PAPER_BASELINE_M1_BARS = 90
 KIS_PAPER_BASELINE_MAX_AGE = timedelta(minutes=2)
 KIS_PAPER_BASELINE_TARGET_EXPOSURE = Decimal("0.05")
+KIS_PAPER_BASELINE_REDUCED_EXPOSURE = Decimal("0.025")
 KIS_PAPER_BASELINE_MARKET = "US"
 KIS_PAPER_BASELINE_SYMBOL = "QQQ"
 KIS_PAPER_BASELINE_ENDPOINT_CATEGORY = "overseas_stock_intraday"
+KIS_PAPER_BASELINE_PROVISIONAL_SCOPE_ID = "prospective-qqq-nas-1m-paper-v1"
 _KIS_PAPER_BASELINE_REQUIRED_FIELDS = frozenset({"open", "high", "low", "last", "evol"})
+BaselineCapabilityAuthorization = Literal["qualified", "provisional", "unqualified"]
+_FIXED_TARGET_DECISION_TABLE: dict[
+    tuple[int, int],
+    tuple[TargetAction, Decimal, Decimal, str],
+] = {
+    (1, 1): (
+        "enter",
+        KIS_PAPER_BASELINE_TARGET_EXPOSURE,
+        Decimal("0.55"),
+        "fixed_10m_trend_up_5m_momentum_up_enter",
+    ),
+    (1, 0): (
+        "hold",
+        KIS_PAPER_BASELINE_TARGET_EXPOSURE,
+        Decimal("0.55"),
+        "fixed_10m_trend_up_5m_momentum_flat_hold",
+    ),
+    (1, -1): (
+        "reduce",
+        KIS_PAPER_BASELINE_REDUCED_EXPOSURE,
+        Decimal("0.45"),
+        "fixed_10m_trend_up_5m_momentum_down_reduce",
+    ),
+    (0, 1): (
+        "hold",
+        KIS_PAPER_BASELINE_TARGET_EXPOSURE,
+        Decimal("0.55"),
+        "fixed_10m_trend_flat_5m_momentum_up_hold",
+    ),
+    (0, 0): (
+        "abstain",
+        Decimal("0"),
+        Decimal("0"),
+        "fixed_10m_trend_flat_5m_momentum_flat_abstain",
+    ),
+    (0, -1): (
+        "reduce",
+        KIS_PAPER_BASELINE_REDUCED_EXPOSURE,
+        Decimal("0.45"),
+        "fixed_10m_trend_flat_5m_momentum_down_reduce",
+    ),
+    (-1, 1): (
+        "reduce",
+        KIS_PAPER_BASELINE_REDUCED_EXPOSURE,
+        Decimal("0.45"),
+        "fixed_10m_trend_down_5m_momentum_up_reduce",
+    ),
+    (-1, 0): (
+        "exit",
+        Decimal("0"),
+        Decimal("0.45"),
+        "fixed_10m_trend_down_5m_momentum_flat_exit",
+    ),
+    (-1, -1): (
+        "exit",
+        Decimal("0"),
+        Decimal("0.55"),
+        "fixed_10m_trend_down_5m_momentum_down_exit",
+    ),
+}
+
+
+@dataclass(frozen=True)
+class KisPaperBaselineAuthorization:
+    """Hash-bound, single-scope permission for one observed QQQ Paper input."""
+
+    capability_id: str
+    capability_contract_sha256: str
+    evidence_reference: str
+    scope_id: str = KIS_PAPER_BASELINE_PROVISIONAL_SCOPE_ID
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.capability_id.strip():
+            raise ValueError("provisional capability_id is required")
+        if not _is_exact_sha256_reference(self.capability_contract_sha256):
+            raise ValueError("provisional capability_contract_sha256 must be an exact sha256")
+        if not _is_exact_sha256_reference(self.evidence_reference):
+            raise ValueError("provisional evidence_reference must be an exact sha256")
+        if self.scope_id != KIS_PAPER_BASELINE_PROVISIONAL_SCOPE_ID:
+            raise ValueError("provisional authorization scope is not this Paper experiment")
+
+    def binds(self, capability: KisMarketDataCapability) -> bool:
+        return (
+            self.capability_id == capability.capability_id
+            and self.capability_contract_sha256 == capability.contract_sha256
+            and self.evidence_reference == capability.evidence_reference
+        )
 
 
 @dataclass(frozen=True)
@@ -81,7 +174,12 @@ class KisPaperBaselineInput:
 class KisPaperBaselineEvaluation:
     proposal: TargetExposureProposal
     baseline_input: KisPaperBaselineInput | None
+    capability_authorization: BaselineCapabilityAuthorization = "unqualified"
     schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if self.capability_authorization not in {"qualified", "provisional", "unqualified"}:
+            raise ValueError("baseline capability authorization is invalid")
 
 
 def evaluate_kis_paper_baseline(
@@ -92,6 +190,7 @@ def evaluate_kis_paper_baseline(
     market: str,
     as_of: datetime,
     max_age: timedelta = KIS_PAPER_BASELINE_MAX_AGE,
+    provisional_authorization: KisPaperBaselineAuthorization | None = None,
 ) -> KisPaperBaselineEvaluation:
     """Return a target-state proposal; this module never creates an order."""
 
@@ -100,11 +199,13 @@ def evaluate_kis_paper_baseline(
     if not resolved_symbol or not resolved_market:
         raise ValueError("symbol and market are required")
     observed_at = require_utc(as_of, "as_of")
-    if not _is_eligible_baseline_capability(
+    capability_authorization = _resolve_baseline_capability_authorization(
         capability,
         symbol=resolved_symbol,
         market=resolved_market,
-    ):
+        provisional_authorization=provisional_authorization,
+    )
+    if capability_authorization == "unqualified":
         return KisPaperBaselineEvaluation(
             proposal=_abstain(
                 symbol=resolved_symbol,
@@ -114,6 +215,7 @@ def evaluate_kis_paper_baseline(
                 reason="baseline_input_capability_unqualified",
             ),
             baseline_input=None,
+            capability_authorization=capability_authorization,
         )
     assert capability.freshness_budget is not None
     window = CompletedBarCache(tuple(bars)).latest_window(
@@ -131,6 +233,7 @@ def evaluate_kis_paper_baseline(
                 reason=f"baseline_input_{window.status}",
             ),
             baseline_input=None,
+            capability_authorization=capability_authorization,
         )
 
     raw_bars = window.bars
@@ -147,6 +250,7 @@ def evaluate_kis_paper_baseline(
                 input_fingerprint=_bar_window_fingerprint(raw_bars),
             ),
             baseline_input=None,
+            capability_authorization=capability_authorization,
         )
 
     m5_bars = tuple(resample_bars(raw_bars, Timeframe.M5))
@@ -170,6 +274,7 @@ def evaluate_kis_paper_baseline(
                 input_fingerprint=_bar_window_fingerprint(raw_bars),
             ),
             baseline_input=None,
+            capability_authorization=capability_authorization,
         )
 
     if observed_at >= baseline_input.feature_window_end + Timeframe.M10.duration:
@@ -184,16 +289,20 @@ def evaluate_kis_paper_baseline(
                 input_fingerprint=_bar_window_fingerprint(baseline_input.m1_bars),
             ),
             baseline_input=None,
+            capability_authorization=capability_authorization,
         )
 
-    trend_up = (
-        baseline_input.m10_bars[-1].close > baseline_input.m10_bars[0].close
-        and baseline_input.m5_bars[-1].close > baseline_input.m5_bars[-2].close
+    trend_sign = _price_change_sign(
+        baseline_input.m10_bars[-1].close,
+        baseline_input.m10_bars[0].close,
     )
-    action = "enter" if trend_up else "abstain"
-    exposure = KIS_PAPER_BASELINE_TARGET_EXPOSURE if trend_up else Decimal("0")
-    confidence = Decimal("0.55") if trend_up else Decimal("0")
-    reason = "fixed_bar_trend_baseline" if trend_up else "fixed_bar_trend_abstain"
+    momentum_sign = _price_change_sign(
+        baseline_input.m5_bars[-1].close,
+        baseline_input.m5_bars[-2].close,
+    )
+    action, exposure, confidence, reason = _FIXED_TARGET_DECISION_TABLE[
+        (trend_sign, momentum_sign)
+    ]
     proposal = TargetExposureProposal(
         proposal_id=_proposal_id(
             resolved_symbol,
@@ -215,7 +324,11 @@ def evaluate_kis_paper_baseline(
         feature_window_end=baseline_input.feature_window_end,
         reason=reason,
     )
-    return KisPaperBaselineEvaluation(proposal=proposal, baseline_input=baseline_input)
+    return KisPaperBaselineEvaluation(
+        proposal=proposal,
+        baseline_input=baseline_input,
+        capability_authorization=capability_authorization,
+    )
 
 
 def _abstain(
@@ -334,7 +447,61 @@ def _is_eligible_baseline_capability(
     return (
         capability.paper_model_eligible
         and _has_trusted_baseline_qualification(capability)
-        and capability.endpoint_category == KIS_PAPER_BASELINE_ENDPOINT_CATEGORY
+        and _has_required_baseline_capability_scope(
+            capability,
+            symbol=symbol,
+            market=market,
+        )
+    )
+
+
+def _resolve_baseline_capability_authorization(
+    capability: KisMarketDataCapability,
+    *,
+    symbol: str,
+    market: str,
+    provisional_authorization: KisPaperBaselineAuthorization | None,
+) -> BaselineCapabilityAuthorization:
+    if _is_eligible_baseline_capability(capability, symbol=symbol, market=market):
+        return "qualified"
+    if _is_eligible_provisional_baseline_capability(
+        capability,
+        symbol=symbol,
+        market=market,
+        provisional_authorization=provisional_authorization,
+    ):
+        return "provisional"
+    return "unqualified"
+
+
+def _is_eligible_provisional_baseline_capability(
+    capability: KisMarketDataCapability,
+    *,
+    symbol: str,
+    market: str,
+    provisional_authorization: KisPaperBaselineAuthorization | None,
+) -> bool:
+    return (
+        provisional_authorization is not None
+        and capability.state == KisCapabilityState.OBSERVED
+        and _is_exact_sha256_reference(capability.evidence_reference)
+        and provisional_authorization.binds(capability)
+        and _has_required_baseline_capability_scope(
+            capability,
+            symbol=symbol,
+            market=market,
+        )
+    )
+
+
+def _has_required_baseline_capability_scope(
+    capability: KisMarketDataCapability,
+    *,
+    symbol: str,
+    market: str,
+) -> bool:
+    return (
+        capability.endpoint_category == KIS_PAPER_BASELINE_ENDPOINT_CATEGORY
         and capability.timeframe == Timeframe.M1
         and "NAS" in capability.exchange_scope
         and symbol == KIS_PAPER_BASELINE_SYMBOL
@@ -342,6 +509,7 @@ def _is_eligible_baseline_capability(
         and market == KIS_PAPER_BASELINE_MARKET
         and _KIS_PAPER_BASELINE_REQUIRED_FIELDS.issubset(capability.raw_fields)
         and capability.freshness_budget is not None
+        and capability.freshness_budget > timedelta(0)
     )
 
 
@@ -350,6 +518,21 @@ def _has_trusted_baseline_qualification(capability: KisMarketDataCapability) -> 
         qualification.binds(capability)
         for qualification in trusted_kis_paper_baseline_qualifications()
     )
+
+
+def _price_change_sign(current: Decimal, previous: Decimal) -> int:
+    if current > previous:
+        return 1
+    if current < previous:
+        return -1
+    return 0
+
+
+def _is_exact_sha256_reference(value: object) -> bool:
+    if not isinstance(value, str) or not value.startswith("sha256:"):
+        return False
+    digest = value.removeprefix("sha256:")
+    return len(digest) == 64 and all(character in "0123456789abcdefABCDEF" for character in digest)
 
 
 def _require_complete_contiguous_stream(bars: tuple[Bar, ...], label: str) -> None:

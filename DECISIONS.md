@@ -5977,3 +5977,42 @@ turning a resumed cursor into an unbounded continuation, reviving terminal
 peers, or creating a cross-lane approval hold. The completed cache remains
 prospective current-listing coverage evidence, not a PIT universe, model input,
 ranking claim, or Paper-order input.
+
+## 2026-07-27 - Establish the bounded prospective QQQ runtime-to-Paper loop
+
+Decision: use one verified `QQQ/NAS` same-session runtime input of exactly 90
+contiguous completed `1m` bars ending on a 10-minute boundary, with a fixed
+two-minute freshness budget. Derive 18 `5m` and 9 `10m` bars locally, evaluate
+the frozen five-action target-state baseline, bind its provisional capability
+authorization to the exact cache/input hashes, and replay the original proposal
+through external `local_paper` state. A whole 390-minute session remains a
+coverage and first-five-observer rule only; it is not a prerequisite for this
+runtime decision.
+
+Split the Docker route into an offline `kis-paper-prospective-loop` and a
+separate `kis-paper-prospective-qqq-session`. The former is read-only,
+network-disabled, carries no KIS environment values, and writes only
+source-safe loop evidence plus private local-paper state outside Git. The latter
+recomputes the verified cache input and opens KIS Paper only for a current
+receipt with `enter` or `exit`. It resolves the current QQQ/NASD one-share
+target from a fresh Paper account snapshot, rejects an out-of-scope inventory
+or a conflicting QQQ order, obtains the fixed NAS quote proof, and delegates to
+the existing persisted receipt-canary lifecycle. The bounded scheduled canary
+uses cancellation after submission; an unknown result remains scoped to that
+exact durable intent.
+
+The existing intraday-head task now starts at 00:31, 02:31, 04:31, and 06:20
+KST. The first three timings are evidence-backed alignment with the fresh
+10-minute runtime boundary; the later capture remains coverage-only. The
+dispatcher runs collection, offline loop, QQQ session, and the separate older
+observer without foreground sleeps. Current prior-session cache smoke evidence
+was correctly `stale` and no-intent: it did not construct the QQQ account,
+quote, or order route.
+
+Reason: this creates a small, reproducible decision-to-execution learning loop
+from the data KIS can actually supply, without confusing partial-session
+coverage with runtime input eligibility or promoting a deterministic baseline.
+The required concise Claude falsification-first drift check was attempted before
+this route change, but the local OAuth session was expired; no private data was
+sent. That reviewer outage limits reliance or promotion claims, not this
+authorized, reversible virtual-paper implementation.

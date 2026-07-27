@@ -90,6 +90,11 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   is neither a replacement-model selection nor an execution input.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
+- Data, Engine Research, and Execution now share one bounded prospective QQQ
+  handoff: a verified same-session 90-minute QQQ/NAS window, frozen five-action
+  receipt, external `local_paper` replay, and a separate QQQ/NASD virtual-only
+  canary session. The offline smoke correctly produced `stale` no-intent and
+  did not construct an account, quote, or order client.
 - Execution completed one virtual-only KIS Paper account projection through the
   existing read-only bridge. Its evidence is external and source-safe; direct
   reader and loopback dashboard checks confirmed the Paper/read-only/no-submit
@@ -108,7 +113,8 @@ GOOGL/META/MSFT are source-limited. The recovery did not touch the legacy
 probe, panel, or ETF catalog.
 
 The next material bottleneck is a fresh, KIS-compatible prospective QQQ
-completed-bar window and its exact baseline decision contract. The GPU is free
+completed-bar window. Its baseline contract, local replay, QQQ/NASD position
+resolution, and receipt-canary route are already integrated. The GPU is free
 but no new GPU job is eligible from the falsified pair. The Claude OAuth outage
 is scoped to reliance, promotion, and execution boundaries; it does not require
 another ready private lane to wait.
@@ -125,12 +131,16 @@ only with isolated mutable state; the serial suite remains the authoritative
 goal-boundary check. The implemented continuation keeps a valid token inside
 one bounded owned Data process across its source-safe retry due, rather than
 creating a new process and token-start delay. Its elapsed-retry normalization
-also prevents a past due time from masquerading as an active global wait.
+also prevents a past due time from masquerading as an active global wait. For
+this loop, the next reversible improvement is the installed 00:31/02:31/04:31
+KST timing alignment after 10-minute bar boundaries; the later 06:20 capture
+remains coverage-only and cannot delay another lane.
 
 ## External Waits
 
-- The scheduled intraday head has a due time, but it does not hold the capture
-  worker implementation, historical evidence preservation, or Execution.
+- The scheduled intraday head owns the next fresh QQQ window. Its chained
+  offline loop and target-local Paper session do not hold Data, Research, or
+  Execution while it is not due.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
 - No daily-history worker is active and its terminal cache has no next due. The
@@ -143,14 +153,15 @@ also prevents a past due time from masquerading as an active global wait.
 Current class: complete for the daily catch-up, event-window contract, all
 three fold inputs/materializer/target receipts, all candidate-only CPU/CUDA
 screens, the source-safe cross-fold artifact, and one read-only KIS Paper
-account projection. Reattest an individual cache, contract, campaign, or exact
-Paper intent before relying on it. Scope failure to that item and continue
-independent lanes.
+account projection, and the prospective QQQ implementation/smoke. Reattest an
+individual cache, contract, campaign, or exact Paper intent before relying on
+it. Scope failure to that item and continue independent lanes.
 
 ## Next Handoff
 
 Keep the completed daily-history cache out of the prospective baseline's model
 or Paper-order input. Dispatch the next Data, Research, and Execution packages
-from their named prospective evidence, retaining only actual shared resource
-conflicts, external waits, bottlenecks, and the current reversible operating
-improvement here.
+from their named prospective evidence. The next fresh runtime receipt either
+closes its exact QQQ Paper lifecycle or produces a target-local no-intent fact;
+retain only actual shared resource conflicts, external waits, bottlenecks, and
+the current reversible operating improvement here.

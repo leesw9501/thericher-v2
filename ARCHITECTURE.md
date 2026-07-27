@@ -235,6 +235,15 @@ model requirement:
   required. It does not page a broker on every inference or fill the window from
   another provider.
 
+The first runtime selector is intentionally narrower than the full-session
+coverage observer. It accepts only a verified `QQQ/NAS` 2026 regular-session
+stream containing one contiguous, complete, same-session 90-minute window
+whose end is on a 10-minute boundary and no older than the fixed two-minute
+freshness budget. It can optionally carry the immediate next completed minute
+for broker-free replay. A 390-minute cache remains useful for coverage and
+first-five observation, but it is not a prerequisite for this bounded runtime
+decision.
+
 The `90`-bar value is an initial bounded hypothesis, not a permanent setting.
 A `120`, `300`, multi-session, or higher-timeframe window may be introduced
 only after observed KIS retention, continuation, rate, and cache-recovery
@@ -255,6 +264,19 @@ additionally requires Execution-owned symbol/venue/sizing binding and a fresh
 final-limit proof; it prepares an existing canary decision but never submits it
 itself. A current unavailable receipt remains a scoped no-intent fact, never a
 global Paper authority control.
+
+The prospective QQQ route preserves that separation in Docker. The offline
+`kis-paper-prospective-loop` service has no network or KIS environment values;
+it selects the window, produces the five-action baseline/receipt, and replays
+the original target proposal through external `local_paper` state. The separate
+`kis-paper-prospective-qqq-session` service recomputes the same verified cache
+input and opens the virtual route only for a current `enter` or `exit` receipt.
+It requires a fresh QQQ/NASD account-position fact, no conflicting QQQ open
+order, a fresh NAS QQQ limit proof, a persisted receipt-derived intent, and the
+existing exact-intent recovery lifecycle. `hold`, `reduce`, `abstain`, stale,
+or unavailable inputs remain no-intent results. The first service deliberately
+uses cancellation after a submitted virtual canary so the bounded observation
+does not leave an unintended open Paper order.
 
 ### Receipt-Linked Paper Observation
 

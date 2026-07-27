@@ -30,10 +30,14 @@ function Invoke-HeadProfileService {
     }
 }
 
-function Get-ObservationStatus {
+function Get-ProfileStatus {
     param(
         [Parameter(Mandatory = $true)]
-        [object[]]$Output
+        [object[]]$Output,
+        [Parameter(Mandatory = $true)]
+        [string]$Kind,
+        [Parameter(Mandatory = $true)]
+        [string[]]$AllowedStatuses
     )
 
     $jsonLines = @(
@@ -49,8 +53,8 @@ function Get-ObservationStatus {
             continue
         }
         if (
-            $payload.kind -eq "kis_intraday_prospective_observation" -and
-            $payload.status -in @("pending", "unavailable", "complete")
+            $payload.kind -eq $Kind -and
+            $payload.status -in $AllowedStatuses
         ) {
             return [string]$payload.status
         }
@@ -73,17 +77,46 @@ $collection = Invoke-HeadProfileService `
     -Service "kis-paper-intraday-head"
 $collectionExitCode = [int]$collection.ExitCode
 
+# The loop has no network or credentials. It records the exact local-paper
+# replay before the separately owned Paper session decides whether KIS is needed.
+$prospectiveLoop = Invoke-HeadProfileService `
+    -ProjectRoot $resolvedProjectRoot `
+    -Service "kis-paper-prospective-loop"
+$prospectiveLoopExitCode = [int]$prospectiveLoop.ExitCode
+$prospectiveLoopStatus = Get-ProfileStatus `
+    -Output $prospectiveLoop.Output `
+    -Kind "kis_paper_prospective_qqq_session" `
+    -AllowedStatuses @("preview", "no_intent")
+
+# This service opens the virtual-only execution route only for its own current
+# eligible receipt. Its no-intent result never changes collection recovery.
+$prospectiveSession = Invoke-HeadProfileService `
+    -ProjectRoot $resolvedProjectRoot `
+    -Service "kis-paper-prospective-qqq-session"
+$prospectiveSessionExitCode = [int]$prospectiveSession.ExitCode
+$prospectiveSessionStatus = Get-ProfileStatus `
+    -Output $prospectiveSession.Output `
+    -Kind "kis_paper_prospective_qqq_session" `
+    -AllowedStatuses @("preview", "no_intent", "canary_completed")
+
 # The observer is an isolated no-op until a verified pair exists. Its result
 # must never overwrite the collection task's independent recovery signal.
 $observation = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-intraday-observation"
 $observationExitCode = [int]$observation.ExitCode
-$observationStatus = Get-ObservationStatus -Output $observation.Output
+$observationStatus = Get-ProfileStatus `
+    -Output $observation.Output `
+    -Kind "kis_intraday_prospective_observation" `
+    -AllowedStatuses @("pending", "unavailable", "complete")
 
 [ordered]@{
     kind = "kis_paper_intraday_head_schedule"
     collection_exit_code = $collectionExitCode
+    prospective_loop_exit_code = $prospectiveLoopExitCode
+    prospective_loop_status = $prospectiveLoopStatus
+    prospective_session_exit_code = $prospectiveSessionExitCode
+    prospective_session_status = $prospectiveSessionStatus
     observation_exit_code = $observationExitCode
     observation_status = $observationStatus
 } | ConvertTo-Json -Compress

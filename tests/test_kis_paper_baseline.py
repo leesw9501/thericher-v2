@@ -29,6 +29,7 @@ from thericher_v2.execution.fill_source import FillEventArtifact
 from thericher_v2.research import kis_paper_baseline
 from thericher_v2.research.kis_paper_baseline import (
     KIS_PAPER_BASELINE_SCHEMA_ID,
+    KisPaperBaselineAuthorization,
     KisPaperBaselineInput,
     evaluate_kis_paper_baseline,
 )
@@ -57,6 +58,7 @@ def test_fixed_baseline_builds_exact_90_1m_input_and_local_resamples(monkeypatch
     assert result.proposal.feature_schema_id == KIS_PAPER_BASELINE_SCHEMA_ID
     assert result.proposal.input_status == "ready"
     assert result.proposal.valid_until == bars[89].end_ts + timedelta(minutes=10)
+    assert result.capability_authorization == "qualified"
 
     source = inspect.getsource(kis_paper_baseline)
     assert "orderintent" not in source.lower()
@@ -242,6 +244,143 @@ def test_baseline_abstains_until_a_matching_capability_has_a_trusted_binding() -
         )
         is None
     )
+
+
+def test_provisional_observed_capability_requires_an_explicit_hash_bound_authorization() -> None:
+    bars = _bars(90)
+    capability = _observed_provisional_capability()
+
+    without_authorization = evaluate_kis_paper_baseline(
+        bars,
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+        provisional_authorization=_provisional_authorization(capability),
+    )
+
+    assert capability.state == KisCapabilityState.OBSERVED
+    assert without_authorization.baseline_input is None
+    assert without_authorization.proposal.action == "abstain"
+    assert without_authorization.capability_authorization == "unqualified"
+    assert result.baseline_input is not None
+    assert result.proposal.action == "enter"
+    assert result.capability_authorization == "provisional"
+
+
+def test_provisional_authorization_fails_closed_for_invalid_or_mismatched_capabilities() -> None:
+    bars = _bars(90)
+    capability = _observed_provisional_capability()
+    missing_freshness = replace(capability, freshness_budget=None)
+    changed_capability = replace(capability, paging_facts="unit changed continuation")
+    invalid_evidence_capability = replace(capability, evidence_reference="unit-evidence")
+
+    cases = (
+        (missing_freshness, _provisional_authorization(missing_freshness)),
+        (changed_capability, _provisional_authorization(capability)),
+        (invalid_evidence_capability, _provisional_authorization(capability)),
+    )
+    for candidate, authorization in cases:
+        result = evaluate_kis_paper_baseline(
+            bars,
+            capability=candidate,
+            symbol="QQQ",
+            market="US",
+            as_of=bars[-1].end_ts,
+            provisional_authorization=authorization,
+        )
+
+        assert result.baseline_input is None
+        assert result.proposal.action == "abstain"
+        assert result.proposal.input_status == "unqualified"
+        assert result.capability_authorization == "unqualified"
+
+    with pytest.raises(ValueError, match="evidence_reference"):
+        KisPaperBaselineAuthorization(
+            capability_id=capability.capability_id,
+            capability_contract_sha256=capability.contract_sha256,
+            evidence_reference="not-a-sha256-reference",
+        )
+    with pytest.raises(ValueError, match="scope"):
+        KisPaperBaselineAuthorization(
+            capability_id=capability.capability_id,
+            capability_contract_sha256=capability.contract_sha256,
+            evidence_reference=capability.evidence_reference,
+            scope_id="another-paper-experiment",
+        )
+
+
+def test_static_observed_capability_cannot_bypass_its_missing_freshness_budget() -> None:
+    bars = _bars(90)
+    static_observed = next(
+        capability
+        for capability in observed_kis_paper_capabilities()
+        if capability.capability_id == "kis.paper.us.raw-1m.2026-07-19"
+    )
+    hash_attested_without_freshness = replace(
+        static_observed,
+        evidence_reference="sha256:" + "d" * 64,
+    )
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=hash_attested_without_freshness,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+        provisional_authorization=_provisional_authorization(hash_attested_without_freshness),
+    )
+
+    assert result.baseline_input is None
+    assert result.proposal.action == "abstain"
+    assert result.capability_authorization == "unqualified"
+
+
+@pytest.mark.parametrize(
+    ("trend_sign", "momentum_sign", "expected_action", "expected_exposure"),
+    (
+        (1, 1, "enter", Decimal("0.05")),
+        (1, 0, "hold", Decimal("0.05")),
+        (1, -1, "reduce", Decimal("0.025")),
+        (0, 1, "hold", Decimal("0.05")),
+        (0, 0, "abstain", Decimal("0")),
+        (0, -1, "reduce", Decimal("0.025")),
+        (-1, 1, "reduce", Decimal("0.025")),
+        (-1, 0, "exit", Decimal("0")),
+        (-1, -1, "exit", Decimal("0")),
+    ),
+)
+def test_fixed_trend_and_momentum_table_emits_all_target_actions(
+    monkeypatch: pytest.MonkeyPatch,
+    trend_sign: int,
+    momentum_sign: int,
+    expected_action: str,
+    expected_exposure: Decimal,
+) -> None:
+    bars = _bars_with_trend_and_momentum_signs(trend_sign, momentum_sign)
+    capability = _qualified_capability()
+    _trust_for_test(monkeypatch, capability)
+
+    result = evaluate_kis_paper_baseline(
+        bars,
+        capability=capability,
+        symbol="QQQ",
+        market="US",
+        as_of=bars[-1].end_ts,
+    )
+
+    assert result.baseline_input is not None
+    assert result.capability_authorization == "qualified"
+    assert result.proposal.input_status == "ready"
+    assert result.proposal.action == expected_action
+    assert result.proposal.target_exposure == expected_exposure
 
 
 def test_nasdaq_baseline_abstains_for_a_non_us_market_stream(monkeypatch) -> None:
@@ -471,6 +610,64 @@ def _bars(count: int) -> list[Bar]:
             )
         )
     return result
+
+
+def _bars_with_trend_and_momentum_signs(
+    trend_sign: int,
+    momentum_sign: int,
+) -> list[Bar]:
+    bars = _bars(90)
+    latest_close = Decimal("100")
+    reference_close = {
+        1: Decimal("99"),
+        0: latest_close,
+        -1: Decimal("101"),
+    }
+    if trend_sign not in reference_close or momentum_sign not in reference_close:
+        raise ValueError("trend and momentum signs must be -1, 0, or 1")
+    bars[9] = _with_close(bars[9], reference_close[trend_sign])
+    bars[84] = _with_close(bars[84], reference_close[momentum_sign])
+    bars[89] = _with_close(bars[89], latest_close)
+    return bars
+
+
+def _with_close(bar: Bar, close: Decimal) -> Bar:
+    return replace(
+        bar,
+        open=close,
+        high=close + Decimal("0.01"),
+        low=close - Decimal("0.01"),
+        close=close,
+    )
+
+
+def _observed_provisional_capability() -> KisMarketDataCapability:
+    return KisMarketDataCapability(
+        capability_id="unit.kis.paper.observed-raw-1m",
+        state=KisCapabilityState.OBSERVED,
+        endpoint_category="overseas_stock_intraday",
+        exchange_scope=("NAS",),
+        symbol_scope=("QQQ",),
+        raw_fields=("open", "high", "low", "last", "evol"),
+        timeframe=Timeframe.M1,
+        time_semantics="unit observed bar-open timestamp evidence",
+        completed_bar_rule="unit observed current-minute exclusion",
+        freshness_budget=timedelta(minutes=2),
+        paging_facts="unit observed contiguous continuation",
+        storage_rights=KisStorageRightsStatus.UNVERIFIED,
+        evidence_reference="sha256:" + "c" * 64,
+        observed_at=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+
+def _provisional_authorization(
+    capability: KisMarketDataCapability,
+) -> KisPaperBaselineAuthorization:
+    return KisPaperBaselineAuthorization(
+        capability_id=capability.capability_id,
+        capability_contract_sha256=capability.contract_sha256,
+        evidence_reference=capability.evidence_reference,
+    )
 
 
 def _qualified_capability(

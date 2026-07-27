@@ -38,8 +38,20 @@ KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE: Final = "AMS"
 KIS_PAPER_US_SPY_QUOTE_SYMBOL: Final = "SPY"
 # KIS's official sample labels both quote ``AMS`` and order ``AMEX`` as AMEX.
 KIS_PAPER_US_SPY_ORDER_EXCHANGE: Final = "AMEX"
+KIS_PAPER_US_QQQ_QUOTE_PATH: Final = KIS_PAPER_US_SPY_QUOTE_PATH
+KIS_PAPER_US_QQQ_QUOTE_TR_ID: Final = KIS_PAPER_US_SPY_QUOTE_TR_ID
+KIS_PAPER_US_QQQ_PRICE_DETAIL_PATH: Final = KIS_PAPER_US_SPY_PRICE_DETAIL_PATH
+KIS_PAPER_US_QQQ_PRICE_DETAIL_TR_ID: Final = KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID
+KIS_PAPER_US_QQQ_ASKING_PRICE_PATH: Final = KIS_PAPER_US_SPY_ASKING_PRICE_PATH
+KIS_PAPER_US_QQQ_ASKING_PRICE_TR_ID: Final = KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+KIS_PAPER_US_QQQ_QUOTE_EXCHANGE: Final = "NAS"
+KIS_PAPER_US_QQQ_PRICE_DETAIL_EXCHANGE: Final = "NAS"
+KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE: Final = "NAS"
+KIS_PAPER_US_QQQ_QUOTE_SYMBOL: Final = "QQQ"
+KIS_PAPER_US_QQQ_ORDER_EXCHANGE: Final = "NASD"
 DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS: Final = Decimal("25")
 KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE: Final = timedelta(seconds=120)
+KIS_PAPER_QQQ_ASKING_PRICE_MAX_AGE: Final = KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE
 _KOREA_TZ = ZoneInfo("Asia/Seoul")
 _QUOTE_HEADERS: Final = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "tr_cont"}
@@ -153,6 +165,14 @@ class KisPaperSpyAskingPriceProbe:
         }
 
 
+# QQQ uses the same transient shape as SPY. The fixed request builders below
+# are the only route difference; no caller can supply a symbol or exchange.
+KisPaperQqqQuote = KisPaperSpyQuote
+KisPaperQqqLimitInput = KisPaperSpyLimitInput
+KisPaperQqqPriceDetailProbe = KisPaperSpyPriceDetailProbe
+KisPaperQqqAskingPriceProbe = KisPaperSpyAskingPriceProbe
+
+
 def build_kis_paper_spy_quote_request(
     *,
     config: KisPaperConfig,
@@ -160,24 +180,13 @@ def build_kis_paper_spy_quote_request(
 ) -> KisHttpRequest:
     """Build the one documented virtual-paper quote request without dispatching it."""
 
-    if not isinstance(access_token, str) or not access_token:
-        raise KisPaperQuoteError("quote_access_token_invalid")
-    return KisHttpRequest(
-        method="GET",
-        url=f"{config.base_url}{KIS_PAPER_US_SPY_QUOTE_PATH}",
-        headers={
-            "authorization": f"Bearer {access_token}",
-            "appkey": config.app_key,
-            "appsecret": config.app_secret,
-            "tr_id": KIS_PAPER_US_SPY_QUOTE_TR_ID,
-            "custtype": "P",
-            "tr_cont": "",
-        },
-        query={
-            "AUTH": "",
-            "EXCD": KIS_PAPER_US_SPY_QUOTE_EXCHANGE,
-            "SYMB": KIS_PAPER_US_SPY_QUOTE_SYMBOL,
-        },
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_SPY_QUOTE_PATH,
+        tr_id=KIS_PAPER_US_SPY_QUOTE_TR_ID,
+        exchange=KIS_PAPER_US_SPY_QUOTE_EXCHANGE,
+        symbol=KIS_PAPER_US_SPY_QUOTE_SYMBOL,
     )
 
 
@@ -188,24 +197,13 @@ def build_kis_paper_spy_price_detail_request(
 ) -> KisHttpRequest:
     """Build the exact Paper-host-pinned SPY price-detail probe request."""
 
-    if not isinstance(access_token, str) or not access_token:
-        raise KisPaperQuoteError("quote_access_token_invalid")
-    return KisHttpRequest(
-        method="GET",
-        url=f"{config.base_url}{KIS_PAPER_US_SPY_PRICE_DETAIL_PATH}",
-        headers={
-            "authorization": f"Bearer {access_token}",
-            "appkey": config.app_key,
-            "appsecret": config.app_secret,
-            "tr_id": KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID,
-            "custtype": "P",
-            "tr_cont": "",
-        },
-        query={
-            "AUTH": "",
-            "EXCD": KIS_PAPER_US_SPY_PRICE_DETAIL_EXCHANGE,
-            "SYMB": KIS_PAPER_US_SPY_QUOTE_SYMBOL,
-        },
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
+        tr_id=KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID,
+        exchange=KIS_PAPER_US_SPY_PRICE_DETAIL_EXCHANGE,
+        symbol=KIS_PAPER_US_SPY_QUOTE_SYMBOL,
     )
 
 
@@ -216,24 +214,90 @@ def build_kis_paper_spy_asking_price_request(
 ) -> KisHttpRequest:
     """Build the exact Paper-host-pinned AMEX SPY best-price probe request."""
 
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
+        tr_id=KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID,
+        exchange=KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
+        symbol=KIS_PAPER_US_SPY_QUOTE_SYMBOL,
+    )
+
+
+def build_kis_paper_qqq_quote_request(
+    *,
+    config: KisPaperConfig,
+    access_token: str,
+) -> KisHttpRequest:
+    """Build the fixed virtual-paper NAS/QQQ quote request without dispatching it."""
+
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_QQQ_QUOTE_PATH,
+        tr_id=KIS_PAPER_US_QQQ_QUOTE_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_QUOTE_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    )
+
+
+def build_kis_paper_qqq_price_detail_request(
+    *,
+    config: KisPaperConfig,
+    access_token: str,
+) -> KisHttpRequest:
+    """Build the fixed virtual-paper NAS/QQQ price-detail probe request."""
+
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_QQQ_PRICE_DETAIL_PATH,
+        tr_id=KIS_PAPER_US_QQQ_PRICE_DETAIL_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_PRICE_DETAIL_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    )
+
+
+def build_kis_paper_qqq_asking_price_request(
+    *,
+    config: KisPaperConfig,
+    access_token: str,
+) -> KisHttpRequest:
+    """Build the fixed virtual-paper NAS/QQQ asking-price probe request."""
+
+    return _build_kis_paper_price_request(
+        config=config,
+        access_token=access_token,
+        path=KIS_PAPER_US_QQQ_ASKING_PRICE_PATH,
+        tr_id=KIS_PAPER_US_QQQ_ASKING_PRICE_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    )
+
+
+def _build_kis_paper_price_request(
+    *,
+    config: KisPaperConfig,
+    access_token: str,
+    path: str,
+    tr_id: str,
+    exchange: str,
+    symbol: str,
+) -> KisHttpRequest:
     if not isinstance(access_token, str) or not access_token:
         raise KisPaperQuoteError("quote_access_token_invalid")
     return KisHttpRequest(
         method="GET",
-        url=f"{config.base_url}{KIS_PAPER_US_SPY_ASKING_PRICE_PATH}",
+        url=f"{config.base_url}{path}",
         headers={
             "authorization": f"Bearer {access_token}",
             "appkey": config.app_key,
             "appsecret": config.app_secret,
-            "tr_id": KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID,
+            "tr_id": tr_id,
             "custtype": "P",
             "tr_cont": "",
         },
-        query={
-            "AUTH": "",
-            "EXCD": KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
-            "SYMB": KIS_PAPER_US_SPY_QUOTE_SYMBOL,
-        },
+        query={"AUTH": "", "EXCD": exchange, "SYMB": symbol},
     )
 
 
@@ -273,8 +337,53 @@ def validate_kis_paper_spy_asking_price_request(request: KisHttpRequest) -> None
         raise KisPaperQuoteError("asking_price_request_not_allowlisted")
 
 
+def validate_kis_paper_qqq_quote_request(request: KisHttpRequest) -> None:
+    """Reject every quote request except the documented virtual NAS/QQQ shape."""
+
+    if not _is_exact_kis_paper_price_request(
+        request,
+        path=KIS_PAPER_US_QQQ_QUOTE_PATH,
+        tr_id=KIS_PAPER_US_QQQ_QUOTE_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_QUOTE_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    ):
+        raise KisPaperQuoteError("quote_request_not_allowlisted")
+
+
+def validate_kis_paper_qqq_price_detail_request(request: KisHttpRequest) -> None:
+    """Reject every price-detail request except the exact Paper NAS/QQQ tuple."""
+
+    if not _is_exact_kis_paper_price_request(
+        request,
+        path=KIS_PAPER_US_QQQ_PRICE_DETAIL_PATH,
+        tr_id=KIS_PAPER_US_QQQ_PRICE_DETAIL_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_PRICE_DETAIL_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    ):
+        raise KisPaperQuoteError("price_detail_request_not_allowlisted")
+
+
+def validate_kis_paper_qqq_asking_price_request(request: KisHttpRequest) -> None:
+    """Reject every asking-price request except the exact Paper NAS/QQQ tuple."""
+
+    if not _is_exact_kis_paper_price_request(
+        request,
+        path=KIS_PAPER_US_QQQ_ASKING_PRICE_PATH,
+        tr_id=KIS_PAPER_US_QQQ_ASKING_PRICE_TR_ID,
+        exchange=KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+        symbol=KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+    ):
+        raise KisPaperQuoteError("asking_price_request_not_allowlisted")
+
+
 def parse_kis_paper_spy_quote(payload: Mapping[str, Any]) -> KisPaperSpyQuote:
     """Parse only ``last`` and ``zdiv`` from a successful KIS quote payload."""
+
+    return _parse_kis_paper_spy_quote_fields(_successful_output(payload, output_key="output"))
+
+
+def parse_kis_paper_qqq_quote(payload: Mapping[str, Any]) -> KisPaperQqqQuote:
+    """Parse only ``last`` and ``zdiv`` from a successful fixed NAS/QQQ payload."""
 
     return _parse_kis_paper_spy_quote_fields(_successful_output(payload, output_key="output"))
 
@@ -287,6 +396,34 @@ def parse_kis_paper_spy_limit_input(
 ) -> KisPaperSpyLimitInput:
     """Combine exact AMS/SPY KIS fields without exposing a provider value."""
 
+    return _parse_kis_paper_limit_input(
+        asking_price_payload=asking_price_payload,
+        price_detail_payload=price_detail_payload,
+        observed_at=observed_at,
+    )
+
+
+def parse_kis_paper_qqq_limit_input(
+    *,
+    asking_price_payload: Mapping[str, Any],
+    price_detail_payload: Mapping[str, Any],
+    observed_at: datetime,
+) -> KisPaperQqqLimitInput:
+    """Combine fixed NAS/QQQ fields without exposing a provider value."""
+
+    return _parse_kis_paper_limit_input(
+        asking_price_payload=asking_price_payload,
+        price_detail_payload=price_detail_payload,
+        observed_at=observed_at,
+    )
+
+
+def _parse_kis_paper_limit_input(
+    *,
+    asking_price_payload: Mapping[str, Any],
+    price_detail_payload: Mapping[str, Any],
+    observed_at: datetime,
+) -> KisPaperSpyLimitInput:
     asking_output = _successful_output(asking_price_payload, output_key="output1")
     quote = _parse_kis_paper_spy_quote_fields(asking_output)
     timestamp_state, quoted_at = _quote_timestamp_details(asking_output)
@@ -431,6 +568,24 @@ def inspect_kis_paper_spy_asking_price_response(
     )
 
 
+def inspect_kis_paper_qqq_price_detail_response(
+    response: KisHttpResponse,
+) -> KisPaperQqqPriceDetailProbe:
+    """Classify fixed NAS/QQQ detail shapes without retaining provider values."""
+
+    return inspect_kis_paper_spy_price_detail_response(response)
+
+
+def inspect_kis_paper_qqq_asking_price_response(
+    response: KisHttpResponse,
+    *,
+    observed_at: datetime | None = None,
+) -> KisPaperQqqAskingPriceProbe:
+    """Classify fixed NAS/QQQ asking-price shapes without retaining values."""
+
+    return inspect_kis_paper_spy_asking_price_response(response, observed_at=observed_at)
+
+
 def derive_kis_paper_nonmarket_limit(
     quote: KisPaperSpyQuote,
     *,
@@ -512,6 +667,23 @@ def _is_exact_kis_paper_spy_price_request(
     tr_id: str,
     exchange: str,
 ) -> bool:
+    return _is_exact_kis_paper_price_request(
+        request,
+        path=path,
+        tr_id=tr_id,
+        exchange=exchange,
+        symbol=KIS_PAPER_US_SPY_QUOTE_SYMBOL,
+    )
+
+
+def _is_exact_kis_paper_price_request(
+    request: KisHttpRequest,
+    *,
+    path: str,
+    tr_id: str,
+    exchange: str,
+    symbol: str,
+) -> bool:
     parsed = urllib.parse.urlparse(request.url)
     return not (
         parsed.scheme != "https"
@@ -527,7 +699,7 @@ def _is_exact_kis_paper_spy_price_request(
         or set(request.query) != {"AUTH", "EXCD", "SYMB"}
         or request.query.get("AUTH") != ""
         or request.query.get("EXCD") != exchange
-        or request.query.get("SYMB") != KIS_PAPER_US_SPY_QUOTE_SYMBOL
+        or request.query.get("SYMB") != symbol
         or set(request.headers) != _QUOTE_HEADERS
         or request.headers.get("tr_id") != tr_id
         or not request.headers.get("authorization", "").startswith("Bearer ")

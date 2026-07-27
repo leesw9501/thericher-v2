@@ -5,6 +5,7 @@ from decimal import Decimal
 
 from thericher_v2.contracts import TargetExposureProposal
 from thericher_v2.execution.kis_paper_spy_position import (
+    resolve_kis_paper_qqq_position_target,
     resolve_kis_paper_spy_position_target,
 )
 from thericher_v2.execution.kis_readonly import (
@@ -88,11 +89,45 @@ def test_open_spy_order_and_out_of_scope_inventory_do_not_create_a_second_order(
     )
 
 
-def _receipt(*, action: str) -> ResearchDecisionReceipt:
+def test_current_flat_qqq_account_allows_only_a_qqq_entry_buy() -> None:
+    resolution = resolve_kis_paper_qqq_position_target(
+        _receipt(action="enter", symbol="QQQ"),
+        snapshot=_snapshot(),
+        as_of=NOW,
+    )
+
+    assert resolution.instrument == "QQQ"
+    assert resolution.action == "buy"
+    assert resolution.safe_payload()["kind"] == "kis_paper_qqq_position_resolution"
+
+
+def test_qqq_open_order_or_wrong_exchange_never_creates_a_second_order() -> None:
+    open_order_resolution = resolve_kis_paper_qqq_position_target(
+        _receipt(action="enter", symbol="QQQ"),
+        snapshot=_snapshot(open_orders=(_open_order(symbol="QQQ", exchange="NASD"),)),
+        as_of=NOW,
+    )
+    inventory_resolution = resolve_kis_paper_qqq_position_target(
+        _receipt(action="exit", symbol="QQQ"),
+        snapshot=_snapshot(positions=(_position(symbol="QQQ", exchange="NAS"),)),
+        as_of=NOW,
+    )
+
+    assert (open_order_resolution.action, open_order_resolution.reason_code) == (
+        "none",
+        "open_order_conflict",
+    )
+    assert (inventory_resolution.action, inventory_resolution.reason_code) == (
+        "none",
+        "position_out_of_scope",
+    )
+
+
+def _receipt(*, action: str, symbol: str = "SPY") -> ResearchDecisionReceipt:
     return receipt_from_target_exposure_proposal(
         TargetExposureProposal(
-            proposal_id=f"test-spy-{action}",
-            symbol="SPY",
+            proposal_id=f"test-{symbol.lower()}-{action}",
+            symbol=symbol,
             market="US",
             action=action,
             target_exposure=Decimal("0.05") if action == "enter" else Decimal("0"),
@@ -136,10 +171,15 @@ def _snapshot(
     )
 
 
-def _position(*, quantity: Decimal = Decimal("1")) -> KisPaperPosition:
+def _position(
+    *,
+    quantity: Decimal = Decimal("1"),
+    symbol: str = "SPY",
+    exchange: str = "AMEX",
+) -> KisPaperPosition:
     return KisPaperPosition(
-        symbol="SPY",
-        exchange="AMEX",
+        symbol=symbol,
+        exchange=exchange,
         currency="USD",
         quantity=quantity,
         average_price=Decimal("500.25"),
@@ -148,11 +188,11 @@ def _position(*, quantity: Decimal = Decimal("1")) -> KisPaperPosition:
     )
 
 
-def _open_order() -> KisPaperOpenOrder:
+def _open_order(*, symbol: str = "SPY", exchange: str = "AMEX") -> KisPaperOpenOrder:
     return KisPaperOpenOrder(
         order_reference="open-" + "a" * 16,
-        symbol="SPY",
-        exchange="AMEX",
+        symbol=symbol,
+        exchange=exchange,
         currency="USD",
         side="buy",
         requested_quantity=Decimal("1"),

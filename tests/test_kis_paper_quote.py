@@ -16,18 +16,29 @@ from thericher_v2.execution.kis_paper_canary import (
     validate_kis_paper_canary_request,
 )
 from thericher_v2.execution.kis_paper_quote import (
+    KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+    KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
     KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID,
     KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID,
     KIS_PAPER_US_SPY_QUOTE_TR_ID,
+    KisPaperQqqLimitInput,
     KisPaperQuoteError,
+    build_kis_paper_qqq_asking_price_request,
+    build_kis_paper_qqq_price_detail_request,
+    build_kis_paper_qqq_quote_request,
     build_kis_paper_spy_asking_price_request,
     build_kis_paper_spy_price_detail_request,
     build_kis_paper_spy_quote_request,
     derive_kis_paper_nonmarket_limit,
     inspect_kis_paper_spy_asking_price_response,
     inspect_kis_paper_spy_price_detail_response,
+    parse_kis_paper_qqq_limit_input,
+    parse_kis_paper_qqq_quote,
     parse_kis_paper_spy_limit_input,
     parse_kis_paper_spy_quote,
+    validate_kis_paper_qqq_asking_price_request,
+    validate_kis_paper_qqq_price_detail_request,
+    validate_kis_paper_qqq_quote_request,
     validate_kis_paper_spy_asking_price_request,
     validate_kis_paper_spy_price_detail_request,
     validate_kis_paper_spy_quote_request,
@@ -38,6 +49,7 @@ from thericher_v2.execution.kis_paper_session import (
 )
 from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_BALANCE_ENDPOINT,
+    KIS_PAPER_BASE_URL,
     KIS_PAPER_OPEN_ORDERS_ENDPOINT,
     KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
     KisHttpRequest,
@@ -185,6 +197,118 @@ def test_asking_price_probe_request_is_an_exact_paper_only_tuple() -> None:
                 headers={**request.headers, "tr_id": KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID},
             )
         )
+
+
+def test_qqq_price_routes_are_fixed_nas_tuples_on_the_virtual_host() -> None:
+    routes = (
+        (
+            build_kis_paper_qqq_quote_request,
+            validate_kis_paper_qqq_quote_request,
+        ),
+        (
+            build_kis_paper_qqq_price_detail_request,
+            validate_kis_paper_qqq_price_detail_request,
+        ),
+        (
+            build_kis_paper_qqq_asking_price_request,
+            validate_kis_paper_qqq_asking_price_request,
+        ),
+    )
+
+    for builder, validator in routes:
+        request = builder(config=_config(), access_token="test-access-token")
+
+        validator(request)
+        validate_kis_paper_canary_request(request)
+        assert request.url.startswith(KIS_PAPER_BASE_URL)
+        assert request.query == {
+            "AUTH": "",
+            "EXCD": KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+            "SYMB": KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
+        }
+        with pytest.raises(KisPaperCanaryError, match="request_not_allowlisted"):
+            validate_kis_paper_canary_request(
+                replace(request, query={**request.query, "SYMB": "AAPL"})
+            )
+        with pytest.raises(KisPaperCanaryError, match="paper_host_required"):
+            validate_kis_paper_canary_request(
+                replace(
+                    request,
+                    url=request.url.replace(
+                        KIS_PAPER_BASE_URL,
+                        "https://openapi.koreainvestment.com:9443",
+                    ),
+                )
+            )
+
+
+def test_qqq_limit_input_and_probes_keep_provider_prices_transient() -> None:
+    raw_price_text = "500.25"
+    transport = FakeKisPaperQuoteTransport(
+        quote_payload={"rt_cd": "0", "output": {"last": raw_price_text, "zdiv": "2"}},
+        price_detail_payload={
+            "rt_cd": "0",
+            "output": {"last": raw_price_text, "zdiv": "2", "e_hogau": "0.01"},
+        },
+        asking_price_payload={
+            "rt_cd": "0",
+            "output1": {
+                "last": raw_price_text,
+                "zdiv": "2",
+                "pbid1": "500.24",
+                "pask1": "500.26",
+                "dymd": "20260722",
+                "dhms": "233000",
+            },
+        },
+    )
+
+    from thericher_v2.execution.kis_paper_canary import KisPaperCanaryClient
+
+    client = KisPaperCanaryClient(config=_config(), transport=transport)
+    quote = client.fetch_qqq_quote()
+    detail_probe = client.probe_qqq_price_detail()
+    asking_probe = client.probe_qqq_asking_price(observed_at=NOW)
+    limit_input = client.fetch_qqq_limit_input(observed_at=NOW)
+    parsed_quote = parse_kis_paper_qqq_quote(transport.quote_payload)
+    parsed_limit_input = parse_kis_paper_qqq_limit_input(
+        asking_price_payload=transport.asking_price_payload,
+        price_detail_payload=transport.price_detail_payload,
+        observed_at=NOW,
+    )
+
+    assert isinstance(limit_input, KisPaperQqqLimitInput)
+    assert quote.last == Decimal(raw_price_text)
+    assert parsed_quote == quote
+    assert parsed_limit_input == limit_input
+    assert detail_probe.safe_payload()["tick_state"] == "positive_decimal"
+    assert asking_probe.safe_payload()["bid_ask_state"] == "non_crossed"
+    assert raw_price_text not in repr(quote)
+    assert raw_price_text not in repr(limit_input)
+    assert raw_price_text not in str(detail_probe.safe_payload())
+    assert raw_price_text not in str(asking_probe.safe_payload())
+    qqq_requests = [
+        request
+        for request in transport.requests
+        if request.query.get("SYMB") == KIS_PAPER_US_QQQ_QUOTE_SYMBOL
+    ]
+    assert len(qqq_requests) == 5
+    assert all(
+        request.query == {"AUTH": "", "EXCD": "NAS", "SYMB": "QQQ"}
+        and request.url.startswith(KIS_PAPER_BASE_URL)
+        for request in qqq_requests
+    )
+
+
+def test_spy_price_tuple_remains_unchanged_after_qqq_sibling_route() -> None:
+    request = build_kis_paper_spy_asking_price_request(
+        config=_config(),
+        access_token="test-access-token",
+    )
+
+    validate_kis_paper_spy_asking_price_request(request)
+    validate_kis_paper_canary_request(request)
+    assert request.query == {"AUTH": "", "EXCD": "AMS", "SYMB": "SPY"}
 
 
 @pytest.mark.parametrize(

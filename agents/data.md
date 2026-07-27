@@ -30,6 +30,11 @@ it retains an in-memory client only for its own process, keeps retries owned by
 that worker, and preserves the exact cache meaning. Its fixed two-target
 recovery is now complete: the six-symbol cache is terminal for this exact
 current-listing scope and no target is queued for another historical retry.
+The bounded prospective QQQ runtime selector is now ready: it consumes only a
+verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
+minute window or a precise source-status fact. It does not require a 390-minute
+coverage session, open a provider, read credentials, or make an execution
+decision.
 
 ## Current Facts
 
@@ -78,8 +83,14 @@ current-listing scope and no target is queued for another historical retry.
 - The prospective QQQ head is generation 10 with zero complete sessions out
   of five. Short/gapped records and minute_duplicate_conflict are source
   facts, not a Research or Execution hold.
-- The existing intraday-head task has four KST triggers and owns its current
-  cache. It may continue independently while the capability package runs.
+- The verified runtime selector now distinguishes a fresh 90-minute QQQ/NAS
+  decision window from the separate full-session coverage rule. Its current
+  Docker smoke read only the prior head cache and reported `stale`; it made no
+  KIS credential, account, quote, or order call. The result is input evidence,
+  not a collection failure.
+- The existing intraday-head task has four KST triggers at 00:31, 02:31,
+  04:31, and 06:20. It owns its current cache and may continue independently
+  while the capability package runs.
 - The latest 2026-07-26 source-safe QQQ calibration accepted two full
   terminal-head pages through one in-memory Paper client/token at a 1.0-second
   candidate interval. It recorded zero categorical limits or errors and only
@@ -178,10 +189,10 @@ current-listing scope and no target is queued for another historical retry.
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. For the next prospective QQQ intraday baseline, operate only the named
-   session-capture scope and publish its completed-bar coverage, freshness, and
-   recovery facts. A missing window yields its own no-decision evidence; it
-   does not revive the terminal daily-history cache or hold another lane.
+2. At the next due head run, retain the Data-owned capture scope and publish
+   the exact fresh 90-minute QQQ/NAS window or its source-status fact. A missing
+   window yields its own no-decision evidence; it does not revive the terminal
+   daily-history cache or hold another lane.
 
 ## Collection Progress Projection
 
@@ -256,10 +267,14 @@ recovery candidates. A bad new cache is reconcile/restart evidence for that
 cache; an empty or limited endpoint result is source evidence for that route
 only.
 
+The prospective runtime selector is complete and currently has only a stale
+prior-session cache fact. The next session-capture result is a new Data
+observation, not recovery of the daily-history cache or a permission boundary.
+
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. The next Data package is a
-prospective QQQ intraday completed-bar window for the named baseline, not more
-daily-history backfill. Do not infer PIT membership, corporate-action
+fresh prospective QQQ intraday completed-bar window for the named baseline, not
+more daily-history backfill. Do not infer PIT membership, corporate-action
 completeness, a ranking claim, or Paper-trading eligibility from either cache
 or the fixed-pair falsification result.

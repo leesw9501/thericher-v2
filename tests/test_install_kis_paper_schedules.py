@@ -53,7 +53,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert 'At = "23:35"' in source
     assert 'At = "22:15"' in source
     assert 'At = "23:50"' in source
-    assert 'At = @("00:35", "02:35", "04:35", "06:20")' in source
+    assert 'At = @("00:31", "02:31", "04:31", "06:20")' in source
     assert 'At = "07:00"' in source
     for task_name, recover_missed_run, execution_limit_minutes in (
         ("thericher-kis-paper-quote-session", False, 90),
@@ -87,10 +87,10 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
 
 
 def test_intraday_head_kst_days_map_to_prior_eastern_weekdays() -> None:
-    head_times = ("00:35", "02:35", "04:35", "06:20")
+    head_times = ("00:31", "02:31", "04:31", "06:20")
     cases = (
-        (date(2026, 1, 6), ("10:35", "12:35", "14:35", "16:20")),
-        (date(2026, 7, 7), ("11:35", "13:35", "15:35", "17:20")),
+        (date(2026, 1, 6), ("10:31", "12:31", "14:31", "16:20")),
+        (date(2026, 7, 7), ("11:31", "13:31", "15:31", "17:20")),
     )
 
     for first_tuesday, expected_eastern_times in cases:

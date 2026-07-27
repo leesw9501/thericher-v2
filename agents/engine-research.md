@@ -21,6 +21,11 @@ GPU campaign.
 The prospective QQQ first-five pair is required only for its isolated
 prospective observation, pair-dependent campaign, and later pair-dependent
 promotion decisions; it does not make historical research input-pending.
+The new prospective QQQ runtime baseline is deliberately separate from that
+first-five pair: it freezes one 90/18/9 completed-bar, five-action target-state
+decision and records provisional cache-bound evidence. It is an execution
+learning control, not a trained model, GPU campaign, ranking, or profitability
+claim.
 
 ## Current Readiness
 
@@ -61,6 +66,11 @@ promotion decisions; it does not make historical research input-pending.
   Research starts it as the next exclusive GPU job; otherwise the stateboard
   records the exact missing data, contract, or resource fact rather than
   manufacturing training for occupancy.
+- The prospective loop now deterministically derives its 5m/10m views from one
+  same-session 90 completed-minute QQQ/NAS window and replays the original
+  proposal through `local_paper`. The current prior-session smoke is `stale`
+  and therefore an abstaining no-intent receipt; no parameter changed and no
+  KIS route was opened.
 - The pair-bound prospective observer is implemented, local-paper-only, and
   network-disabled. It remains inactive until Data supplies its immutable pair.
 - The latest capture-scoped QQQ terminal page contained no qualified regular
@@ -178,6 +188,9 @@ promotion decisions; it does not make historical research input-pending.
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
    historical results or becomes a global queue gate.
+4. Observe the first fresh runtime window as a fixed control only. Do not tune
+   the decision table from that session or turn an individual Paper outcome into
+   a model, ensemble, GPU, or PnL claim.
 
 ## Durable Constraints
 
@@ -198,10 +211,13 @@ or GPU job. Await a separately contracted research campaign; target-local
 daily-history recovery has no automatic Research input or GPU consequence. A
 failed consumer attempt creates new immutable evidence rather than overwriting
 a parent artifact. A missing prospective pair is input_unavailable only for its
-pair-bound observation.
+pair-bound observation. A stale prospective runtime window is likewise only its
+own no-intent fact and does not create GPU work or a promotion hold.
 
 ## Next Handoff
 
 Preserve the fixed-pair falsification evidence. The next Research objective
 must not treat it as stock selection, a selected model, replay, or a Paper
 input, and must introduce new eligible evidence before another GPU campaign.
+The fresh prospective baseline remains frozen while its first Paper outcome is
+observed.

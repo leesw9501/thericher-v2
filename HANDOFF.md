@@ -148,12 +148,13 @@ authorized private KIS Paper work.
   coverage is zero of 390 minutes. This is valid source evidence, not a
   strategy input or a collector failure.
 - The existing `thericher-kis-paper-intraday-head` task now uses the tested
-  `session-capture` mode in its one existing Docker profile. Its triggers,
-  page cap, worker lock, request gate, cooldown, collector exit authority, and
-  network-disabled observer remain unchanged. The QQQ-only metadata
-  preparation handoff also runs for eligible capture results. No scheduled
-  capture has yet run under this new profile configuration; that future result
-  is Data evidence, not a company hold.
+  `session-capture` mode and runs at 00:31, 02:31, 04:31, and 06:20 KST. After
+  collection it runs a network-disabled prospective QQQ loop, an exact
+  virtual-only QQQ session when a receipt is eligible, and the older isolated
+  observer. The 90-minute runtime selector is distinct from the 390-minute
+  coverage observer. Its first prior-session smoke was correctly `stale` and
+  did not construct account, quote, or order clients; the next fresh result is
+  Data evidence, not a company hold.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -344,6 +345,10 @@ authorized private KIS Paper work.
   `D:\market_data` and `D:\thericher-v2\model-artifacts`.
 - The prospective pair-bound observer remains isolated and local-paper-only.
   It becomes an additional observation input when its Data pair exists.
+- The new prospective QQQ runtime control freezes a same-session 90/18/9
+  completed-bar baseline and a hash-bound provisional receipt. It replays the
+  original proposal only through external `local_paper`; the current stale
+  smoke creates no model, GPU, selection, or profitability claim.
 
 ### Execution
 
@@ -373,6 +378,12 @@ authorized private KIS Paper work.
 - A target-position binding now derives a deterministic local-paper delta
   intent or a scoped no-intent for an already-satisfied/mismatched target. It
   preserves route isolation and makes no KIS call.
+- The QQQ/NASD virtual canary route is now test-backed and isolated from the
+  offline loop. It consults a fresh QQQ Paper account fact and conflicting-order
+  state only after a current `enter` or `exit` receipt, then uses the existing
+  durable receipt canary with cancellation/reconciliation. `hold`, `reduce`,
+  `abstain`, stale, missing, or out-of-scope-position results are target-local
+  no-intent facts. No KIS_LIVE_* path is readable or callable.
 
 ## KIS Throughput Facts
 
@@ -456,7 +467,8 @@ authorized private KIS Paper work.
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
-throughput-governance, capture/profile integration, daily-campaign,
+throughput-governance, capture/profile integration, prospective-QQQ route,
+daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
 target-semantics, all candidate-only screen checks, the E3 input-contract, and
 the fixed cross-fold falsification check; no private material was sent. This is
@@ -475,6 +487,7 @@ global permission or progress latch.
 Follow NEXT_CODEX_GOAL.md. The fixed NAS daily-history collector is terminal
 for its exact current-listing scope; do not reopen a terminal target, blend a
 provider, or reinterpret it as a PIT universe. The next company objective is
-the first bounded prospective QQQ intraday baseline and KIS Paper execution
-canary. Keep its Data, Research, and Execution evidence distinct, and let a
-session wait remain owned by its scheduler rather than the foreground.
+to observe the first fresh scheduled prospective QQQ runtime receipt and close
+its exact KIS Paper lifecycle or record its target-local no-intent fact. Keep
+Data, Research, and Execution evidence distinct, and let a session wait remain
+owned by its scheduler rather than the foreground.

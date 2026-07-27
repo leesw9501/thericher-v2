@@ -710,36 +710,42 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 Head snapshots live below the sibling `intraday-head` cache root and never
 advance the historical backfill cursor. It is a Data-local source sampler, not
 a company-wide wait. The Windows Scheduled Task
-`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:35,
-02:35, 04:35, and 06:20 KST. It keeps the same four-page-per-target maximum on
-each data-only invocation. The added 00:35 window samples the missing early
-regular-session range identified by metadata-only coverage evidence; it does
-not relax conflict handling or completeness. The cache selector, not the
-schedule, determines completeness: it accepts only an exact 390-minute declared
-QQQ session and rejects any partial or gapped union. This remains a bounded
-data-only invocation (at most eight minute-page calls per invocation): it has
-no account, order, or live route. The first four-trigger session is the next
-metadata-only reattestation before the pair-bound prospective observer may
-consume a session. Historical Research uses separately qualified inputs and
-does not wait for this task.
+`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:31,
+02:31, 04:31, and 06:20 KST. The first three starts align one minute after a
+10-minute US bar boundary; the final start remains a coverage collection after
+the regular session. Each data collector invocation keeps the four-page-per-
+target maximum. The capture coverage selector, not the schedule, still requires
+an exact 390-minute declared QQQ session before it can call a whole-session
+observation complete. That rule does not apply to the bounded runtime selector:
+it accepts one verified, same-session, contiguous 90 completed-minute QQQ/NAS
+window ending on a 10-minute boundary and emits a precise stale/missing/gapped
+fact otherwise. Historical Research uses separately qualified inputs and does
+not wait for this task.
 
-The installer sets `StartWhenAvailable` only on data-only tasks, so a missed
-head collection can resume after the interactive user becomes available without
-creating another task. The head task allows battery start/continuation, keeps
-`IgnoreNew`, and has a 90-minute task limit, below its shortest 105-minute
-trigger gap. Do not manually start a duplicate run to compensate for a missed
-window; inspect the task result and use the existing owned recovery path.
+The intraday-head task retains `StartWhenAvailable` from its Data recovery
+ownership, so a missed collection can resume after the interactive user becomes
+available without creating another task. Its chained prospective consumers still
+require their own current 90-minute window, regular-session time, receipt, and
+fresh account/quote facts; a late resume therefore becomes a source-safe
+no-intent unless those exact call-time conditions remain true. The head task
+allows battery start/continuation, keeps `IgnoreNew`, and has a 90-minute task
+limit, below its shortest 109-minute trigger gap. Do not manually start a
+duplicate run to compensate for a missed window; inspect the task result and
+use the existing owned recovery path.
 
-The same named task now dispatches two sequential services in the same
-`kis-paper-intraday-head` Docker profile: the existing credential-bearing data
-collector followed by `kis-paper-intraday-observation`. The latter is a
-CPU-only, `network_mode: none`, read-only Research surface with no KIS
-environment values or GPU request. It is safe to invoke after every head run:
-until a verified first-five pair exists it exits through the existing pending
-path without opening a cache. Once a pair exists, it revalidates the pair and
-selected-row fingerprints before its bounded local-paper observation. The
-dispatcher preserves the collector exit code, so an offline-observation fault
-cannot rewrite Data freshness or hide an incomplete target result.
+The same named task dispatches four sequential services in the same
+`kis-paper-intraday-head` Docker profile: the credential-bearing data
+collector, the offline `kis-paper-prospective-loop`, the virtual-only
+`kis-paper-prospective-qqq-session`, and the older pair-bound
+`kis-paper-intraday-observation`. The prospective loop is CPU-only,
+`network_mode: none`, read-only, and receives no KIS environment values. It
+creates only a source-safe baseline/receipt and `local_paper` replay. The QQQ
+session recomputes that verified cache input and reads KIS Paper credentials,
+account facts, or a QQQ quote only after a current `enter` or `exit` receipt;
+otherwise it exits as no-intent. The older observer remains independently
+offline and pending until its verified pair exists. The dispatcher preserves
+the collector exit code, so a downstream no-intent or fault cannot rewrite Data
+freshness or hide an incomplete target result.
 
 ### Bounded Session Capture
 
@@ -766,14 +772,15 @@ minutes, which must remain Data evidence rather than a Research input. SPY is
 recorded as a companion target, but an independent SPY failure cannot erase the
 scoped QQQ capture result.
 
-The one existing `thericher-kis-paper-intraday-head` task now invokes this
-same capture mode. It does not add a scheduler, task, order, account/position
-endpoint, model, or observer route; its prior triggers, page cap, concurrency,
-collector exit authority, and sequential network-disabled observer remain
-unchanged. An eligible QQQ result still runs the existing metadata-only
-preparation child before the isolated observer consumes a verified pair. The
-first scheduled capture under this configuration must be interpreted as source
-coverage evidence only, never as a model or PnL result.
+The one existing `thericher-kis-paper-intraday-head` task invokes this same
+capture mode before its bounded local and QQQ Paper consumers. It adds no new
+Windows task, and its page cap, concurrency, and collector exit authority stay
+unchanged. An eligible 90-minute runtime window may now produce a provisional
+five-action receipt and a `local_paper` replay without waiting for a
+whole-session observer. Only a separately current `enter` or `exit` receipt
+can reach the existing virtual QQQ/NASD canary lifecycle; this is execution
+learning, never a model or PnL claim. The older metadata-only preparation child
+and pair-bound observer retain their original first-five scope.
 
 A duplicate minute inside one candidate batch rejects that whole candidate,
 including any earlier page from the same invocation: no snapshot is retained

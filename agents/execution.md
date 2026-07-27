@@ -15,7 +15,8 @@ The current read-only account projection and target-local Data recovery are
 complete. Preserve the virtual-only bridge, local dashboard boundary, and
 existing Paper recovery invariants while the next objective establishes a
 prospective QQQ baseline and, if its exact durable intent is valid, one bounded
-KIS Paper canary. KIS Live remains unavailable.
+KIS Paper canary. The QQQ route is now implemented and awaits only a fresh,
+eligible runtime receipt. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -44,6 +45,18 @@ KIS Paper canary. KIS Live remains unavailable.
   local-paper intent, rejects a pre-decision `as_of`, and emits scoped
   no-intent for an already-satisfied or mismatched target. It does not widen a
   KIS route or make a network call.
+- The prospective QQQ loop preserves its original target proposal in external
+  `local_paper` state, including replay recovery and `source: local_paper`.
+  Its separate virtual session uses the same verified cache evidence only for a
+  current `enter` or `exit` receipt.
+- QQQ/NASD one-share position resolution is now explicit: a fresh flat account
+  permits only a buy, a fresh one-share QQQ/NASD account permits only a sell,
+  and an incompatible position or QQQ open order is a target-local no-intent.
+  It never reads a live credential or treats an old account view as a target.
+- The installed prospective-session container has KIS Paper credentials only;
+  the preceding offline loop has no network or KIS environment. Current stale
+  cache smoke exited before client construction, account, quote, intent, or
+  order work.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
 - Temporary Execution and independent Validation both passed the new
@@ -113,6 +126,10 @@ KIS Paper canary. KIS Live remains unavailable.
 3. Preserve exact ambiguous Paper evidence without replacing that exact intent.
    A read-only snapshot neither reconciles it nor blocks another correctly
    scoped authorized Paper action.
+4. At the next fresh QQQ runtime receipt, let the existing receipt canary own
+   its exact persisted intent and cancellation/reconciliation lifecycle. A
+   no-intent outcome remains scoped to that target and does not require an
+   operator release.
 
 ## Durable Constraints
 
@@ -128,7 +145,9 @@ Current class: complete for the fresh read-only account bridge and the
 cross-fold verifier. The account runtime expires normally after its TTL; a
 later refresh is a new read-only observation, not recovery of an order. Preserve
 exact ambiguous Paper evidence for the owned reconciliation route and continue
-independent Data, Research, and authorized Paper work.
+independent Data, Research, and authorized Paper work. The new QQQ route has a
+complete offline and unit-tested recovery path; its current stale smoke is not
+an execution incident.
 
 ## Next Handoff
 
@@ -138,3 +157,5 @@ acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
 The next bounded canary must use a new exact durable Paper intent and the
 existing virtual-only route; no stale account snapshot or historical Data
 receipt may act as its permission or order input.
+The next fresh QQQ receipt must still re-read the current Paper account and
+fresh quote at its own call site before a canary is prepared.

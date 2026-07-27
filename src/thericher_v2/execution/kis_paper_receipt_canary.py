@@ -1,7 +1,8 @@
 """Receipt-aware KIS Paper canary preparation and deterministic recovery.
 
-This owns the narrow SPY/AMS-to-AMEX price mapping for receipt-backed virtual
-orders.  It neither evaluates a model nor accepts a price supplied by research.
+This owns the narrow SPY/AMS-to-AMEX and QQQ/NAS-to-NASD price mappings for
+receipt-backed virtual orders. It neither evaluates a model nor accepts a
+price supplied by research.
 """
 
 from __future__ import annotations
@@ -26,9 +27,13 @@ from .kis_paper_canary import (
 )
 from .kis_paper_quote import (
     DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
+    KIS_PAPER_QQQ_ASKING_PRICE_MAX_AGE,
     KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
+    KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+    KIS_PAPER_US_QQQ_ORDER_EXCHANGE,
     KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
     KIS_PAPER_US_SPY_ORDER_EXCHANGE,
+    KisPaperQqqLimitInput,
     KisPaperSpyLimitInput,
     derive_kis_paper_nonmarket_limit,
 )
@@ -80,6 +85,49 @@ def prepare_kis_paper_spy_receipt_decision(
             proposal_ref=receipt.proposal_ref,
             symbol="SPY",
             exchange=KIS_PAPER_US_SPY_ORDER_EXCHANGE,
+            quantity=Decimal("1"),
+        ),
+        limit_proof=proof,
+        as_of=observed_at,
+    )
+
+
+def prepare_kis_paper_qqq_receipt_decision(
+    receipt: ResearchDecisionReceipt,
+    *,
+    limit_input: KisPaperQqqLimitInput,
+    as_of: datetime,
+    discount_bps: Decimal = DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
+) -> PaperDecisionBridgeResult:
+    """Bind an eligible receipt to the only approved transient NAS/QQQ price path."""
+
+    observed_at = require_utc(as_of, "as_of")
+    limit_price = derive_kis_paper_nonmarket_limit(
+        limit_input.as_quote(),
+        discount_bps=discount_bps,
+        tick_size=limit_input.tick_size,
+    )
+    proof = KisPaperLimitProof(
+        receipt_id=receipt.decision_id,
+        price_contract_ref=_qqq_price_contract_ref(
+            limit_input=limit_input,
+            limit_price=limit_price,
+            discount_bps=discount_bps,
+            side="buy" if receipt.decision_class == "enter" else "sell",
+        ),
+        symbol="QQQ",
+        exchange=KIS_PAPER_US_QQQ_ORDER_EXCHANGE,
+        limit_price=limit_price,
+        observed_at=limit_input.quoted_at,
+        valid_until=limit_input.quoted_at + KIS_PAPER_QQQ_ASKING_PRICE_MAX_AGE,
+        final_limit_tick_valid=True,
+    )
+    return prepare_kis_paper_decision(
+        receipt,
+        binding=PaperDecisionExecutionBinding(
+            proposal_ref=receipt.proposal_ref,
+            symbol="QQQ",
+            exchange=KIS_PAPER_US_QQQ_ORDER_EXCHANGE,
             quantity=Decimal("1"),
         ),
         limit_proof=proof,
@@ -169,11 +217,55 @@ def _price_contract_ref(
 ) -> str:
     """Bind transient AMS quote facts to the final AMEX limit without exposing them."""
 
+    return _fixed_price_contract_ref(
+        kind="kis_paper_spy_ams_limit_contract_v1",
+        symbol="SPY",
+        quote_venue=KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
+        execution_venue=KIS_PAPER_US_SPY_ORDER_EXCHANGE,
+        limit_input=limit_input,
+        limit_price=limit_price,
+        discount_bps=discount_bps,
+        side=side,
+    )
+
+
+def _qqq_price_contract_ref(
+    *,
+    limit_input: KisPaperQqqLimitInput,
+    limit_price: Decimal,
+    discount_bps: Decimal,
+    side: Literal["buy", "sell"],
+) -> str:
+    """Bind transient NAS quote facts to the final NASD limit without exposing them."""
+
+    return _fixed_price_contract_ref(
+        kind="kis_paper_qqq_nas_limit_contract_v1",
+        symbol="QQQ",
+        quote_venue=KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE,
+        execution_venue=KIS_PAPER_US_QQQ_ORDER_EXCHANGE,
+        limit_input=limit_input,
+        limit_price=limit_price,
+        discount_bps=discount_bps,
+        side=side,
+    )
+
+
+def _fixed_price_contract_ref(
+    *,
+    kind: str,
+    symbol: str,
+    quote_venue: str,
+    execution_venue: str,
+    limit_input: KisPaperSpyLimitInput,
+    limit_price: Decimal,
+    discount_bps: Decimal,
+    side: Literal["buy", "sell"],
+) -> str:
     payload = {
-        "kind": "kis_paper_spy_ams_limit_contract_v1",
-        "symbol": "SPY",
-        "quote_venue": KIS_PAPER_US_SPY_ASKING_PRICE_EXCHANGE,
-        "execution_venue": KIS_PAPER_US_SPY_ORDER_EXCHANGE,
+        "kind": kind,
+        "symbol": symbol,
+        "quote_venue": quote_venue,
+        "execution_venue": execution_venue,
         "side": side,
         "quoted_at": limit_input.quoted_at.isoformat(),
         "last": _decimal_marker(limit_input.last),

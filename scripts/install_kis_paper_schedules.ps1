@@ -77,7 +77,7 @@ $schedules = @(
         Profile = "kis-paper-intraday-head"
         Service = "kis-paper-intraday-head"
         Runner = "run_kis_paper_intraday_head_schedule.ps1"
-        At = @("00:35", "02:35", "04:35", "06:20")
+        At = @("00:31", "02:31", "04:31", "06:20")
         RecoverMissedRun = $true
         ExecutionLimitMinutes = 90
     },

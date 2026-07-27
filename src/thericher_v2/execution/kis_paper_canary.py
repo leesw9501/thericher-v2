@@ -39,21 +39,36 @@ from .kis_paper_order_fields import (
     map_kis_paper_us_sell_limit_order_fields,
 )
 from .kis_paper_quote import (
+    KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
     KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
     KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
     KIS_PAPER_US_SPY_QUOTE_PATH,
+    KisPaperQqqAskingPriceProbe,
+    KisPaperQqqLimitInput,
+    KisPaperQqqPriceDetailProbe,
+    KisPaperQqqQuote,
     KisPaperQuoteError,
     KisPaperSpyAskingPriceProbe,
     KisPaperSpyLimitInput,
     KisPaperSpyPriceDetailProbe,
     KisPaperSpyQuote,
+    build_kis_paper_qqq_asking_price_request,
+    build_kis_paper_qqq_price_detail_request,
+    build_kis_paper_qqq_quote_request,
     build_kis_paper_spy_asking_price_request,
     build_kis_paper_spy_price_detail_request,
     build_kis_paper_spy_quote_request,
+    inspect_kis_paper_qqq_asking_price_response,
+    inspect_kis_paper_qqq_price_detail_response,
     inspect_kis_paper_spy_asking_price_response,
     inspect_kis_paper_spy_price_detail_response,
+    parse_kis_paper_qqq_limit_input,
+    parse_kis_paper_qqq_quote,
     parse_kis_paper_spy_limit_input,
     parse_kis_paper_spy_quote,
+    validate_kis_paper_qqq_asking_price_request,
+    validate_kis_paper_qqq_price_detail_request,
+    validate_kis_paper_qqq_quote_request,
     validate_kis_paper_spy_asking_price_request,
     validate_kis_paper_spy_price_detail_request,
     validate_kis_paper_spy_quote_request,
@@ -866,6 +881,84 @@ class KisPaperCanaryClient:
         except KisPaperReadOnlyError as error:
             raise KisPaperCanaryError("quote_response_incomplete") from error
 
+    def fetch_qqq_quote(self) -> KisPaperQqqQuote:
+        """Fetch the one transient NAS/QQQ quote that may seed a QQQ canary."""
+
+        response = self._dispatch(
+            build_kis_paper_qqq_quote_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        if response.status_code != 200:
+            raise KisPaperCanaryError("quote_rejected")
+        try:
+            payload = response.payload()
+            return parse_kis_paper_qqq_quote(payload)
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        except KisPaperReadOnlyError as error:
+            raise KisPaperCanaryError("quote_response_incomplete") from error
+
+    def probe_qqq_price_detail(self) -> KisPaperQqqPriceDetailProbe:
+        """Read the fixed NAS/QQQ detail route without creating an intent or order."""
+
+        response = self._dispatch(
+            build_kis_paper_qqq_price_detail_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        return inspect_kis_paper_qqq_price_detail_response(response)
+
+    def probe_qqq_asking_price(
+        self,
+        *,
+        observed_at: datetime | None = None,
+    ) -> KisPaperQqqAskingPriceProbe:
+        """Read the fixed NAS/QQQ asking route without creating an intent or order."""
+
+        response = self._dispatch(
+            build_kis_paper_qqq_asking_price_request(
+                config=self._config,
+                access_token=self._issue_access_token(),
+            )
+        )
+        return inspect_kis_paper_qqq_asking_price_response(response, observed_at=observed_at)
+
+    def fetch_qqq_limit_input(
+        self,
+        *,
+        observed_at: datetime | None = None,
+    ) -> KisPaperQqqLimitInput:
+        """Read the exact fresh NAS/QQQ fields used by the Paper limit contract."""
+
+        access_token = self._issue_access_token()
+        asking_response = self._dispatch(
+            build_kis_paper_qqq_asking_price_request(
+                config=self._config,
+                access_token=access_token,
+            )
+        )
+        price_detail_response = self._dispatch(
+            build_kis_paper_qqq_price_detail_request(
+                config=self._config,
+                access_token=access_token,
+            )
+        )
+        if asking_response.status_code != 200 or price_detail_response.status_code != 200:
+            raise KisPaperCanaryError("quote_rejected")
+        try:
+            return parse_kis_paper_qqq_limit_input(
+                asking_price_payload=asking_response.payload(),
+                price_detail_payload=price_detail_response.payload(),
+                observed_at=observed_at or datetime.now(UTC),
+            )
+        except KisPaperQuoteError as error:
+            raise KisPaperCanaryError(error.code) from error
+        except KisPaperReadOnlyError as error:
+            raise KisPaperCanaryError("quote_response_incomplete") from error
+
     def submit_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
         """Submit the intent's explicit virtual-paper limit-order side only."""
 
@@ -1416,22 +1509,25 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
     ):
         raise KisPaperCanaryError("request_not_allowlisted")
     if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_QUOTE_PATH:
-        try:
-            validate_kis_paper_spy_quote_request(request)
-        except KisPaperQuoteError as error:
-            raise KisPaperCanaryError(error.code) from error
+        _validate_allowlisted_price_request(
+            request,
+            spy_validator=validate_kis_paper_spy_quote_request,
+            qqq_validator=validate_kis_paper_qqq_quote_request,
+        )
         return
     if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_PRICE_DETAIL_PATH:
-        try:
-            validate_kis_paper_spy_price_detail_request(request)
-        except KisPaperQuoteError as error:
-            raise KisPaperCanaryError(error.code) from error
+        _validate_allowlisted_price_request(
+            request,
+            spy_validator=validate_kis_paper_spy_price_detail_request,
+            qqq_validator=validate_kis_paper_qqq_price_detail_request,
+        )
         return
     if request.method == "GET" and parsed.path == KIS_PAPER_US_SPY_ASKING_PRICE_PATH:
-        try:
-            validate_kis_paper_spy_asking_price_request(request)
-        except KisPaperQuoteError as error:
-            raise KisPaperCanaryError(error.code) from error
+        _validate_allowlisted_price_request(
+            request,
+            spy_validator=validate_kis_paper_spy_asking_price_request,
+            qqq_validator=validate_kis_paper_qqq_asking_price_request,
+        )
         return
     if request.method == "POST" and parsed.path == KIS_PAPER_US_BUY_LIMIT_ORDER_PATH:
         if request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
@@ -1451,6 +1547,23 @@ def validate_kis_paper_canary_request(request: KisHttpRequest) -> None:
         _validate_cancel_body(request.json_body)
         return
     raise KisPaperCanaryError("request_not_allowlisted")
+
+
+def _validate_allowlisted_price_request(
+    request: KisHttpRequest,
+    *,
+    spy_validator: Callable[[KisHttpRequest], None],
+    qqq_validator: Callable[[KisHttpRequest], None],
+) -> None:
+    validator = (
+        qqq_validator
+        if request.query.get("SYMB") == KIS_PAPER_US_QQQ_QUOTE_SYMBOL
+        else spy_validator
+    )
+    try:
+        validator(request)
+    except KisPaperQuoteError as error:
+        raise KisPaperCanaryError(error.code) from error
 
 
 def _cancel_submitted_canary(

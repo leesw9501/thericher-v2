@@ -2,71 +2,71 @@
 
 ## Objective
 
-Establish the first bounded prospective QQQ intraday decision-to-KIS-Paper
-loop: capture a completed-bar window, make one deterministic baseline decision,
-replay it through `local_paper`, and exercise the existing virtual-only Paper
-canary when its exact durable intent is technically valid.
+Observe the first fresh scheduled prospective QQQ runtime cycle and close its
+exact virtual-paper outcome: a source-safe fresh 90-minute window, frozen
+baseline receipt, `local_paper` replay, and either a reconciled QQQ/NASD KIS
+Paper canary result or a precise target-local no-intent/recovery fact.
 
-This is execution learning, not a profitability or promotion gate. A missing
-window or `abstain` is a scoped result, never a hold on another ready lane.
+This is execution learning, not model promotion, profitability validation, or a
+reason to tune the fixed baseline from the observed session.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`,
    `RUNBOOK.md`, and all active stateboards.
-3. Reattach the intraday-head index/receipt, current Paper account projection
-   if available, and existing canary state. Do not print private data.
-4. Ask Claude for one concise falsification-first check of the completed-bar,
-   baseline, and virtual-only canary boundary. `review_unavailable` is not a
-   hold on authorized private work.
+3. Reattach the intraday-head schedule, its latest source-safe outputs, the
+   prospective local-paper evidence, and any exact QQQ canary state. Do not
+   print private data.
+4. Retry Claude only for the required concise falsification-first review of a
+   fresh-result interpretation or an exact canary recovery boundary. An OAuth
+   failure is `review_unavailable`, not a hold on routine authorized work.
 
 ## Work
 
-1. **Data:** use the existing QQQ/NAS session-capture path during the next US
-   regular session. Produce either a KIS-compatible 90 completed 1m-bar window
-   or an exact no-window/source-quality fact. Derive 5m and 10m only through
-   existing resampling; leave 1h and 3h inactive unless completed evidence
-   exists.
-2. **Engine Research:** freeze one small deterministic
-   `enter`/`hold`/`reduce`/`exit`/`abstain` baseline before consuming the
-   window. Emit source-safe timestamped evidence, validity, and the explicit
-   no-decision path. Do not tune it from the same session, select a model, or
-   claim profitability.
-3. **Execution:** replay the exact decision through `local_paper`. When an
-   exact durable virtual intent is technically valid, use the existing KIS
-   Paper canary/executor lifecycle to submit, observe, and reconcile it. An
-   unknown outcome pauses only that exact intent.
-4. Keep market-session waiting owned by its scheduler. While it is not due,
-   advance ready preparation, local simulation, execution verification, and
-   independent Validation; never foreground-sleep.
-5. Add focused tests for completed-bar input, resampling, baseline/abstain,
-   replayability, virtual-paper route confinement, durable intent recovery, and
-   no live or secret leakage. Refresh all stateboards with actual evidence.
+1. **Data:** let the installed 00:31, 02:31, 04:31, and 06:20 KST task own
+   market-session timing. Confirm that a first-three-window collection produces
+   either a verified current QQQ/NAS 90 completed `1m` window or a precise
+   cache/source status. Do not mix another provider or require a 390-minute
+   session for this runtime loop.
+2. **Engine Research:** retain the fixed 90/18/9 five-action baseline. Verify
+   the exact source-safe receipt and original `local_paper` replay; do not tune,
+   select a model, schedule GPU training, or claim PnL from one session.
+3. **Execution:** only for a current `enter` or `exit` receipt, re-read the
+   fresh QQQ Paper account/position/open-order facts and fixed NAS QQQ limit
+   proof, then use the existing receipt canary lifecycle. Preserve exact-intent
+   reconciliation and cancellation behavior. A stale receipt, `hold`,
+   `reduce`, `abstain`, position mismatch, quote failure, or unknown outcome is
+   scoped to that target/intent and does not stop another lane.
+4. **Validation:** independently confirm current-window completeness, local
+   replay source, virtual-only route confinement, evidence redaction, and any
+   exact durable intent recovery result.
+5. Do not foreground-sleep for a session. While the schedule owns its due
+   time, advance other ready bounded Data, Research, Execution, or Validation
+   work and preserve the scheduler's safe status.
 
 ## Boundaries
 
-- KIS Paper market, account, and virtual order calls are authorized through the
-  existing named paths. Never read or route `KIS_LIVE_*` or expose a public
+- KIS Paper market, account, and virtual order calls are authorized through
+  the existing named paths. Never read or route `KIS_LIVE_*` or expose a public
   service.
 - Keep data under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts`; never commit either.
-- Do not use another provider in this QQQ runtime window or turn the terminal
-  fixed NAS daily-history cache into a model, universe, or Paper-order input.
+- The offline prospective loop has no network or KIS environment values. The
+  separate QQQ session may read KIS Paper values only after its own current
+  receipt is eligible.
 - Do not add a capital, profitability, report, trade-count, or manual approval
-  gate. Preserve route isolation, intent persistence, technical validation, and
-  unknown-outcome reconciliation.
+  gate. Preserve only paper-route isolation, intent persistence, technical
+  validation, and exact unknown-outcome reconciliation.
 
 ## Completion
 
-- A source-safe capture shows either a verified 90-bar window or a precise
-  source-quality/no-window fact.
-- The baseline decision and matching `local_paper` replay are reproducible from
-  the same evidence; `abstain` is valid.
-- A technically valid virtual intent has a durable, reconciled Paper outcome,
-  or a target-local no-intent/recovery fact.
-- Independent Validation confirms input completeness, replayability, route
-  isolation, source safety, and no live access.
+- A fresh cycle has a source-safe runtime-window result and reproducible
+  matching local-paper evidence.
+- An eligible exact receipt has a reconciled virtual-only QQQ Paper result, or
+  its target-local technical no-intent/recovery fact is durable and safe.
+- Stateboards, handoff, and the next objective accurately distinguish the
+  current result from a model or PnL claim.
 
 ## Verification
 
@@ -82,4 +82,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Close daily history recovery`
+`Observe prospective QQQ paper cycle`

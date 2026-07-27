@@ -17,8 +17,12 @@ from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryError,
     KisPaperCanaryStateStore,
 )
-from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
+from thericher_v2.execution.kis_paper_quote import (
+    KisPaperQqqLimitInput,
+    KisPaperSpyLimitInput,
+)
 from thericher_v2.execution.kis_paper_receipt_canary import (
+    prepare_kis_paper_qqq_receipt_decision,
     prepare_kis_paper_spy_receipt_decision,
     receipt_canary_run_id,
     run_kis_paper_receipt_canary,
@@ -47,6 +51,8 @@ class FakePaperTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
     order_open: bool = False
     order_side: str = "buy"
+    order_symbol: str = "SPY"
+    order_exchange: str = "AMEX"
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -58,15 +64,27 @@ class FakePaperTransport:
             self.order_side = (
                 "buy" if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID else "sell"
             )
+            assert request.json_body is not None
+            self.order_symbol = request.json_body["PDNO"]
+            self.order_exchange = request.json_body["OVRS_EXCG_CD"]
             return KisHttpResponse.from_payload(
                 {"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}}
             )
         if tr_id == KIS_PAPER_US_CCNCL_TR_ID:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
-            if self.order_open and request.query.get("OVRS_EXCG_CD") == "AMEX":
+            if self.order_open and request.query.get("OVRS_EXCG_CD") == self.order_exchange:
                 return KisHttpResponse.from_payload(
-                    {"rt_cd": "0", "output": [_matching_spy_open_order(side=self.order_side)]}
+                    {
+                        "rt_cd": "0",
+                        "output": [
+                            _matching_open_order(
+                                symbol=self.order_symbol,
+                                exchange=self.order_exchange,
+                                side=self.order_side,
+                            )
+                        ],
+                    }
                 )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
@@ -143,6 +161,75 @@ def test_receipt_reuses_first_paper_intent_without_credential_read_or_resubmit(
     assert state is not None
     assert state.intent.price_contract_ref == first.price_contract_ref
     assert state.intent.price_contract_ref != changed_price.price_contract_ref
+    assert all(request.url.startswith(KIS_PAPER_BASE_URL) for request in transport.requests)
+
+    safe_evidence = first_outcome.evidence_path.read_text(encoding="utf-8")
+    for forbidden in ("paper-app-secret", "12345678", "500.25", "600.25"):
+        assert forbidden not in safe_evidence
+
+
+def test_qqq_receipt_binds_nasd_and_reuses_its_first_durable_price_proof(
+    tmp_path: Path,
+) -> None:
+    transport = FakePaperTransport()
+    client = KisPaperCanaryClient(config=_config(), transport=transport)
+    receipt = _eligible_receipt(symbol="QQQ")
+    first = _prepared_qqq(receipt, last=Decimal("500.25"), quoted_at=NOW)
+    paths = _paths(tmp_path)
+
+    assert first.status == "ready"
+    assert first.route == "kis_paper"
+    assert first.price_contract_ref is not None
+    assert first.kis_paper_decision is not None
+    assert first.kis_paper_decision.symbol == "QQQ"
+    assert first.kis_paper_decision.exchange == "NASD"
+
+    first_outcome = run_kis_paper_receipt_canary(
+        first,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private",
+        execute=True,
+        cancel_after_submit=False,
+        client=client,
+        now=NOW,
+        submit_permitted=lambda _now: True,
+        **paths,
+    )
+    changed_price = _prepared_qqq(
+        receipt,
+        last=Decimal("600.25"),
+        quoted_at=NOW + timedelta(seconds=30),
+    )
+    second_outcome = run_kis_paper_receipt_canary(
+        changed_price,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private",
+        execute=True,
+        cancel_after_submit=False,
+        client=client,
+        now=NOW + timedelta(seconds=30),
+        submit_permitted=lambda _now: True,
+        **paths,
+    )
+
+    assert _submission_count(transport) == 1
+    assert first_outcome.run_id == second_outcome.run_id == receipt_canary_run_id(first.receipt_ref)
+    state = KisPaperCanaryStateStore(
+        tmp_path / "private" / f"{first_outcome.run_id}.json"
+    ).read()
+    assert state is not None
+    assert state.intent.symbol == "QQQ"
+    assert state.intent.exchange == "NASD"
+    assert state.intent.price_contract_ref == first.price_contract_ref
+    assert state.intent.price_contract_ref != changed_price.price_contract_ref
+    submit_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+    )
+    assert submit_request.json_body is not None
+    assert submit_request.json_body["PDNO"] == "QQQ"
+    assert submit_request.json_body["OVRS_EXCG_CD"] == "NASD"
     assert all(request.url.startswith(KIS_PAPER_BASE_URL) for request in transport.requests)
 
     safe_evidence = first_outcome.evidence_path.read_text(encoding="utf-8")
@@ -288,16 +375,38 @@ def _prepared(
     )
 
 
-def _eligible_receipt(*, action: str = "enter") -> ResearchDecisionReceipt:
+def _prepared_qqq(
+    receipt: ResearchDecisionReceipt,
+    *,
+    last: Decimal,
+    quoted_at: datetime,
+):
+    return prepare_kis_paper_qqq_receipt_decision(
+        receipt,
+        limit_input=KisPaperQqqLimitInput(
+            last=last,
+            decimal_places=2,
+            tick_size=Decimal("0.01"),
+            quoted_at=quoted_at,
+        ),
+        as_of=quoted_at,
+    )
+
+
+def _eligible_receipt(
+    *,
+    action: str = "enter",
+    symbol: str = "SPY",
+) -> ResearchDecisionReceipt:
     target_exposure = Decimal("0.05") if action == "enter" else Decimal("0")
     proposal = TargetExposureProposal(
-        proposal_id=f"daily-spy-{action}",
-        symbol="SPY",
+        proposal_id=f"daily-{symbol.lower()}-{action}",
+        symbol=symbol,
         market="US",
         action=action,
         target_exposure=target_exposure,
         confidence=Decimal("0.55"),
-        feature_schema_id="test.daily.spy",
+        feature_schema_id=f"test.daily.{symbol.lower()}",
         input_status="ready",
         decided_at=NOW - timedelta(minutes=1),
         valid_until=NOW + timedelta(minutes=5),
@@ -337,11 +446,16 @@ def _paths(tmp_path: Path) -> dict[str, Path]:
     }
 
 
-def _matching_spy_open_order(*, side: str = "buy") -> dict[str, str]:
+def _matching_open_order(
+    *,
+    symbol: str,
+    exchange: str,
+    side: str = "buy",
+) -> dict[str, str]:
     return {
         "odno": "ORD-123456789",
-        "pdno": "SPY",
-        "ovrs_excg_cd": "AMEX",
+        "pdno": symbol,
+        "ovrs_excg_cd": exchange,
         "tr_crcy_cd": "USD",
         "sll_buy_dvsn_cd": "02" if side == "buy" else "01",
         "ft_ord_qty": "1",

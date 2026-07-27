@@ -583,6 +583,36 @@ def test_intraday_head_profile_has_a_cpu_only_offline_observation_service() -> N
     assert ":/app/model_artifacts" in section
 
 
+def test_intraday_head_profile_separates_offline_replay_from_qqq_paper_execution() -> None:
+    compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
+    offline = compose.split("\n  kis-paper-prospective-loop:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+    )[0]
+    execution = compose.split(
+        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+    )[1].split("\n  kis-paper-receipt-observer:\n", maxsplit=1)[0]
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in offline
+    assert "network_mode: none" in offline
+    assert "read_only: true" in offline
+    assert "THERICHER_MODE: off" in offline
+    assert "--execute" not in offline
+    assert "KIS_PAPER" not in offline
+    assert "KIS_LIVE" not in offline
+    assert "/app/model_artifacts/_control/local-paper" in offline
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in execution
+    assert "thericher_v2.execution.kis_paper_prospective_qqq_session" in execution
+    assert "--execute" in execution
+    assert "--cancel-after-submit" in execution
+    assert "THERICHER_MODE: kis_paper" in execution
+    assert "KIS_PAPER_APP_KEY" in execution
+    assert "KIS_PAPER_ACCOUNT_NO" in execution
+    assert "KIS_LIVE" not in execution
+    assert "gpus:" not in execution
+    assert "thericher-v2-paper-canary-private:/app/private" in execution
+
+
 def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
     monkeypatch,
     capsys,

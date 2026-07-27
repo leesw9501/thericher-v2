@@ -1,4 +1,4 @@
-"""Pure current-account target resolution for the bounded KIS Paper SPY loop.
+"""Pure current-account target resolution for bounded one-share KIS Paper loops.
 
 This module consumes an already-complete KIS Paper read-only snapshot. It does
 not create requests, persist raw account facts, infer fills, or calculate PnL.
@@ -17,6 +17,8 @@ from .kis_readonly import KisPaperReadOnlySnapshot
 
 KIS_PAPER_SPY_POSITION_SYMBOL = "SPY"
 KIS_PAPER_SPY_POSITION_EXCHANGE = "AMEX"
+KIS_PAPER_QQQ_POSITION_SYMBOL = "QQQ"
+KIS_PAPER_QQQ_POSITION_EXCHANGE = "NASD"
 KIS_PAPER_SPY_ACCOUNT_FACT_MAX_AGE = timedelta(seconds=120)
 
 PositionAction = Literal["buy", "sell", "none"]
@@ -45,6 +47,7 @@ class KisPaperSpyPositionResolution:
     position_state: PositionState
     open_order_state: Literal["clear", "conflict", "not_observed"]
     observed_at: datetime
+    instrument: Literal["SPY", "QQQ"] = "SPY"
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -70,6 +73,8 @@ class KisPaperSpyPositionResolution:
             raise ValueError("SPY position state is invalid")
         if self.open_order_state not in {"clear", "conflict", "not_observed"}:
             raise ValueError("SPY open-order state is invalid")
+        if self.instrument not in {"SPY", "QQQ"}:
+            raise ValueError("Paper position instrument is invalid")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
         _validate_resolution_shape(self)
 
@@ -78,8 +83,9 @@ class KisPaperSpyPositionResolution:
 
         return {
             "schema_version": self.schema_version,
-            "kind": "kis_paper_spy_position_resolution",
+            "kind": f"kis_paper_{self.instrument.lower()}_position_resolution",
             "paper_only": True,
+            "instrument": self.instrument,
             "decision_class": self.decision_class,
             "action": self.action,
             "reason_code": self.reason_code,
@@ -104,6 +110,50 @@ def resolve_kis_paper_spy_position_target(
     KIS Paper snapshot may establish the flat/one-share state used here.
     """
 
+    return _resolve_kis_paper_one_share_position_target(
+        receipt,
+        snapshot=snapshot,
+        as_of=as_of,
+        symbol=KIS_PAPER_SPY_POSITION_SYMBOL,
+        exchange=KIS_PAPER_SPY_POSITION_EXCHANGE,
+        instrument="SPY",
+        max_account_fact_age=max_account_fact_age,
+    )
+
+
+KisPaperQqqPositionResolution = KisPaperSpyPositionResolution
+
+
+def resolve_kis_paper_qqq_position_target(
+    receipt: ResearchDecisionReceipt,
+    *,
+    snapshot: KisPaperReadOnlySnapshot | None,
+    as_of: datetime,
+    max_account_fact_age: timedelta = KIS_PAPER_SPY_ACCOUNT_FACT_MAX_AGE,
+) -> KisPaperQqqPositionResolution:
+    """Resolve the bounded QQQ/NASD one-share target from a fresh Paper snapshot."""
+
+    return _resolve_kis_paper_one_share_position_target(
+        receipt,
+        snapshot=snapshot,
+        as_of=as_of,
+        symbol=KIS_PAPER_QQQ_POSITION_SYMBOL,
+        exchange=KIS_PAPER_QQQ_POSITION_EXCHANGE,
+        instrument="QQQ",
+        max_account_fact_age=max_account_fact_age,
+    )
+
+
+def _resolve_kis_paper_one_share_position_target(
+    receipt: ResearchDecisionReceipt,
+    *,
+    snapshot: KisPaperReadOnlySnapshot | None,
+    as_of: datetime,
+    symbol: str,
+    exchange: str,
+    instrument: Literal["SPY", "QQQ"],
+    max_account_fact_age: timedelta,
+) -> KisPaperSpyPositionResolution:
     observed_at = require_utc(as_of, "as_of")
     if max_account_fact_age <= timedelta(0):
         raise ValueError("maximum account fact age must be positive")
@@ -121,6 +171,7 @@ def resolve_kis_paper_spy_position_target(
             position_state="not_observed",
             open_order_state="not_observed",
             observed_at=observed_at,
+            instrument=instrument,
         )
     if snapshot is None:
         return _resolution(
@@ -131,6 +182,7 @@ def resolve_kis_paper_spy_position_target(
             position_state="not_observed",
             open_order_state="not_observed",
             observed_at=observed_at,
+            instrument=instrument,
         )
     if not _snapshot_is_current(snapshot, observed_at=observed_at, max_age=max_account_fact_age):
         return _resolution(
@@ -141,13 +193,14 @@ def resolve_kis_paper_spy_position_target(
             position_state="not_observed",
             open_order_state="not_observed",
             observed_at=observed_at,
+            instrument=instrument,
         )
 
-    position_state = _spy_position_state(snapshot)
+    position_state = _one_share_position_state(snapshot, symbol=symbol, exchange=exchange)
     open_order_state: Literal["clear", "conflict"] = (
         "conflict"
         if any(
-            order.symbol == KIS_PAPER_SPY_POSITION_SYMBOL
+            order.symbol == symbol
             for order in snapshot.open_orders.orders
         )
         else "clear"
@@ -161,6 +214,7 @@ def resolve_kis_paper_spy_position_target(
             position_state=position_state,
             open_order_state=open_order_state,
             observed_at=observed_at,
+            instrument=instrument,
         )
     if open_order_state == "conflict":
         return _resolution(
@@ -171,6 +225,7 @@ def resolve_kis_paper_spy_position_target(
             position_state=position_state,
             open_order_state=open_order_state,
             observed_at=observed_at,
+            instrument=instrument,
         )
     if receipt.decision_class == "enter" and position_state == "flat":
         return _resolution(
@@ -181,6 +236,7 @@ def resolve_kis_paper_spy_position_target(
             position_state=position_state,
             open_order_state=open_order_state,
             observed_at=observed_at,
+            instrument=instrument,
         )
     if receipt.decision_class == "exit" and position_state == "one_share":
         return _resolution(
@@ -191,6 +247,7 @@ def resolve_kis_paper_spy_position_target(
             position_state=position_state,
             open_order_state=open_order_state,
             observed_at=observed_at,
+            instrument=instrument,
         )
     return _resolution(
         receipt,
@@ -200,6 +257,7 @@ def resolve_kis_paper_spy_position_target(
         position_state=position_state,
         open_order_state=open_order_state,
         observed_at=observed_at,
+        instrument=instrument,
     )
 
 
@@ -225,18 +283,23 @@ def _snapshot_is_current(
     return captured_at <= observed_at and observed_at - captured_at <= max_age
 
 
-def _spy_position_state(snapshot: KisPaperReadOnlySnapshot) -> PositionState:
-    spy_positions = [
+def _one_share_position_state(
+    snapshot: KisPaperReadOnlySnapshot,
+    *,
+    symbol: str,
+    exchange: str,
+) -> PositionState:
+    positions = [
         position
         for position in snapshot.positions
-        if position.symbol == KIS_PAPER_SPY_POSITION_SYMBOL
+        if position.symbol == symbol
     ]
-    if not spy_positions:
+    if not positions:
         return "flat"
     if (
-        len(spy_positions) == 1
-        and spy_positions[0].exchange == KIS_PAPER_SPY_POSITION_EXCHANGE
-        and spy_positions[0].quantity == 1
+        len(positions) == 1
+        and positions[0].exchange == exchange
+        and positions[0].quantity == 1
     ):
         return "one_share"
     return "out_of_scope"
@@ -251,6 +314,7 @@ def _resolution(
     position_state: PositionState,
     open_order_state: Literal["clear", "conflict", "not_observed"],
     observed_at: datetime,
+    instrument: Literal["SPY", "QQQ"],
 ) -> KisPaperSpyPositionResolution:
     return KisPaperSpyPositionResolution(
         decision_class=receipt.decision_class,
@@ -260,6 +324,7 @@ def _resolution(
         position_state=position_state,
         open_order_state=open_order_state,
         observed_at=observed_at,
+        instrument=instrument,
     )
 
 
