@@ -95,6 +95,14 @@ to an ensemble, or turn its result into a Paper input.
   Research starts it as the next exclusive GPU job; otherwise the stateboard
   records the exact missing data, contract, or resource fact rather than
   manufacturing training for occupancy.
+- The 2026-07-28 throughput review found no frozen campaign eligible for GPU
+  work: the existing D1 candidates are closed/falsified, and the natural QQQ
+  runtime receipt is execution evidence only. The next proposed breadth package
+  is a QQQ/SPY D1 relative-regime control using a fixed 63-session completed
+  return comparison, `local_paper` only, fixed costs, and a predeclared
+  always-long/flat kill test. It remains a proposal until its exact campaign
+  contract and tests are frozen; it is not a model, ensemble, GPU dispatch,
+  promotion, or Paper input.
 - The prospective loop now deterministically derives its 5m/10m views from one
   same-session 90 completed-minute QQQ/NAS window and replays the original
   proposal through `local_paper`. The current prior-session smoke is `stale`
@@ -252,6 +260,10 @@ to an ensemble, or turn its result into a Paper input.
 7. Keep the completed ETF trend-regime control descriptive. Do not tune its SMA
    windows, select SPY, add an ensemble member, allocate GPU work, or turn its
    one non-falsified validation slice into a Paper input.
+8. Prepare exactly one QQQ/SPY D1 relative-regime CPU falsification contract.
+   Freeze its 63-session causal feature, target cadence, cost model, split,
+   naive baselines, and strict kill rule before running it. Do not parameter
+   sweep, promote it, use its output in Paper work, or dispatch GPU depth work.
 
 ## Durable Constraints
 

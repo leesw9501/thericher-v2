@@ -90,6 +90,12 @@ strict-reject-only rather than being inferred as head observations.
   `Ready`, last run 04:31 KST, and next due 06:20 KST: deployment did not run a
   container, call KIS, or alter the cache. That next due time belongs to the
   installed Data worker, not the foreground.
+- The first natural post-deployment 06:20 KST run advanced the head index to
+  generation 23 while retaining nine chunks per QQQ/NAS and SPY/AMS target. Its
+  terminal receipt is `recovery/collection_exit_nonzero`; QQQ retains the
+  factual prior conflict marker and SPY records a scoped rate-limit result. The
+  worker's next due is 2026-07-29 00:31 KST. This is collection recovery
+  evidence, not a reason to reopen, manually trigger, or reinterpret raw rows.
 
 - The isolated KIS Paper daily-universe probe pinned the official current
   directory manifest `sha256:129e...aecea4`, the NAS listing file
@@ -385,25 +391,27 @@ boundary. The exact QQQ/NAS and SPY/AMS historical reach probes are complete
 and source-limited for serial continuation; they are not blocked by the
 scheduled head and do not block it.
 
-Current class: `complete` for the recovered current QQQ/SPY head cache and the
-first source-safe freshness reattachment. Do not edit the index, inspect raw
-rows for a manual repair, or infer a provider revision policy from observation
-time alone. The fixed two-minute runtime budget remains unchanged until future
-regular-session evidence supports a separately reviewed adjustment.
+Current class: `recovery` for the exact 2026-07-28 06:20 KST collection worker
+because its terminal is `collection_exit_nonzero`; `complete` remains accurate
+for the recovered current QQQ/SPY head cache and first source-safe freshness
+reattachment. Do not edit the index, inspect raw rows for a manual repair, or
+infer a provider revision policy from observation time alone. The fixed
+two-minute runtime budget remains unchanged until future regular-session evidence
+supports a separately reviewed adjustment.
 
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Continue the fresh prospective
 QQQ intraday completed-bar schedule for the named baseline and let its next
 regular-session observation emit the current freshness field through the
-installed image. At this handoff the worker-owned `next_due` is 2026-07-28
-06:20 KST; do not manually trigger a duplicate run. The completed QQQ/NAS and
+installed image. At this handoff the worker-owned `next_due` is 2026-07-29
+00:31 KST; do not manually trigger a duplicate run. The completed QQQ/NAS and
 SPY/AMS prior-day probes do not
 support cursor collection; any later historical-minute attempt needs a separate
 endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact
-source-local evidence; preserve IWM's source-limited limitation. The next QQQ
-Paper package calibrates the current-head freshness contract and does not
-consume these historical Research inputs.
+source-local evidence; preserve IWM's source-limited limitation. The next
+QQQ/SPY D1 relative-regime package uses only its independently reattested daily
+catalog contract and does not consume the intraday-head recovery result.

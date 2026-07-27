@@ -58,6 +58,13 @@ Live remains unavailable.
   run remained 04:31 KST and its next due remained 06:20 KST. The deployment
   itself did not start a container, create an account/quote/order call, or alter
   a Paper intent.
+- The first natural post-deployment 06:20 KST run produced one new QQQ session
+  with `paper_only: true` and `no_intent/runtime_window_stale`. Its verified
+  window was over the two-minute budget, so it created no account snapshot,
+  quote, prepared decision, canary, order, modification, cancellation, or live
+  route. The normal network-disabled validator reattached the exact session as
+  `runtime-freshness-v2/runtime_recomputed`; the parent terminal is
+  `recovery/collection_exit_nonzero`, not a retry cue for this session.
 
 - local_paper, kis_paper, and kis_live remain separate routes. Local simulated
   fills retain source: local_paper.
@@ -209,11 +216,13 @@ Live remains unavailable.
 
 ## Recovery
 
-Current class: complete for the fresh read-only account bridge, cross-fold
-verifier, account diagnostic, recovered QQQ/SPY head cache, and first
-contract-v2 QQQ terminal reattachment. The account runtime expires normally
-after its TTL; a later refresh is a new read-only observation, not recovery of
-an order.
+Current class: `recovery` only for the exact 2026-07-28 06:20 KST parent
+collection worker; its matched QQQ `no_intent` session and v2 validator are
+complete for their own stale-input scope. The fresh read-only account bridge,
+cross-fold verifier, account diagnostic, recovered QQQ/SPY head cache, and
+first contract-v2 QQQ terminal reattachment remain complete. The account runtime
+expires normally after its TTL; a later refresh is a new read-only observation,
+not recovery of an order.
 Preserve exact ambiguous Paper evidence for the owned reconciliation route and
 continue independent Data, Research, and authorized Paper work. The new QQQ
 route has a complete offline and unit-tested recovery path;

@@ -232,6 +232,13 @@ authorized private KIS Paper work.
   last-run and next-due facts remained 04:31 and 06:20 KST. The deployment built
   local images only and did not invoke KIS, a container, a Paper account, or a
   broker action.
+- The first natural post-deployment 06:20 KST run produced terminal
+  `recovery/collection_exit_nonzero` and advanced the current head index to
+  generation 23 with nine retained chunks per target. Its QQQ session was
+  `paper_only` `no_intent/runtime_window_stale`; the normal offline
+  `runtime-freshness-v2` validator matched that exact session. No account,
+  quote, prepared decision, canary, order, cancellation, live route, or duplicate
+  task resulted. The named worker owns its next 00:31 KST recovery attempt.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -584,11 +591,12 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. The next company objective advances one fresh,
-virtual-only QQQ Paper canary through the installed deterministic route. It is
-execution-learning evidence, not a consequence of the ETF control or any model
-result. The fixed NAS daily-history collector remains terminal for its exact
-current-listing scope; do not reopen a terminal target, blend a provider, or
-reinterpret the eligibility receipt as a PIT universe, rank, or Paper input.
-Keep Data, Research, and Execution evidence distinct, and let the scheduler own
-its session due time rather than the foreground.
+Follow NEXT_CODEX_GOAL.md. The next company objective is an offline, CPU-only
+QQQ/SPY D1 relative-regime falsification control. It uses the existing daily
+catalog only and must not consume the intraday-head recovery result, select a
+model, dispatch GPU work, or create a Paper action. The fixed NAS daily-history
+collector remains terminal for its exact current-listing scope; do not reopen a
+terminal target, blend a provider, or reinterpret the eligibility receipt as a
+PIT universe, rank, or Paper input. Keep Data, Research, and Execution evidence
+distinct, and let the scheduler own its next 00:31 KST recovery attempt rather
+than the foreground.

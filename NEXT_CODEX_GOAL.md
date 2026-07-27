@@ -2,59 +2,80 @@
 
 ## Objective
 
-Reconcile the first natural QQQ runtime-freshness cycle after the scoped
-intraday-head schedule deployment, using only source-safe task, terminal,
-session, and validation facts.
+Build and run one frozen, CPU-only QQQ/SPY D1 relative-regime falsification
+control against the existing hash-attested private daily catalog.
+
+This is breadth research only. It must produce local-paper evidence, not a
+selected model, ensemble member, GPU campaign, KIS Paper input, or profitability
+claim.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `RUNBOOK.md`, and the active stateboards.
-2. Inspect the one existing `thericher-kis-paper-intraday-head` task before
-   interpreting its output. Its natural next due time is worker-owned; do not
-   manually invoke, duplicate, disable, or reschedule it.
-3. Treat the prior `runtime-freshness-v2` reattachment as historical evidence,
-   not a fresh market input.
+   `DECISIONS.md`, and the active Data, Engine Research, Execution, and
+   orchestration stateboards.
+2. Reattest the existing QQQ/SPY daily catalog and preserve its existing
+   retrospective/source limitations. Do not fetch data or use the current
+   intraday-head recovery result as a research input.
+3. Ask Claude for a short falsification-first drift check only if the frozen
+   contract would open a sealed holdout, promote a result, or change an existing
+   strategy/execution authority. A normal candidate-only CPU control does not
+   wait on the expired local Claude OAuth session.
+
+## Frozen Candidate
+
+- On completed daily session `t`, calculate each asset's 63-session close return
+  from QQQ and SPY only.
+- Enter one QQQ `local_paper` long position at `t+1` open only when QQQ's return
+  is strictly greater than SPY's; otherwise remain flat.
+- Flatten at `t+2` open. Use one share, the existing fixed after-cost economics,
+  and no overlapping positions.
+- Use the existing chronological 3,783 development / 22 purge / 951 validation
+  session contract. A validation decision is eligible only when its full
+  63-session causal feature window and both execution bars are inside its own
+  split.
+- Compare only fixed time-matched `always_long` and `flat` baselines. The
+  candidate is falsified if validation has zero trades or does not strictly beat
+  both comparators after costs. Do not tune the lookback, threshold, cadence,
+  costs, or comparator after seeing results.
 
 ## Work
 
-1. **Data:** after one natural post-deployment task reaches a terminal state,
-   read only the allowlisted head-index and terminal receipt metadata needed to
-   establish the scheduled run identity, categorical collection status, cache
-   generation/counts, and conflict state. Do not print or copy raw rows.
-2. **Execution:** read only the paired source-safe QQQ session and validator
-   outcome fields needed to establish whether the fresh runtime deadline yielded
-   a truthful no-intent, local replay, or virtual-Paper lifecycle. Never force a
-   new account, quote, order, cancellation, or reconciliation request to make a
-   result appear.
-3. **Validation:** prove that the observed terminal receipt is newer than the
-   scoped deployment, links only to the named worker chain, and did not create a
-   second scheduled task or unknown duplicate intent. Reattest the validator
-   only if its own normal worker path produced an exact session identity.
-4. If the worker is still running or has a scoped technical failure, preserve
-   its source-safe task state and classify only that worker's recovery path. Do
-   not foreground-wait, manually retry it, widen the two-minute deadline, or
-   turn its outcome into a model result.
+1. **Data:** add a narrow, source-safe loader/contract binding that reattests
+   QQQ/SPY catalog identity before it exposes the exact causal slices. Preserve
+   completed-bar, source, point-in-time, and corporate-action limitations.
+2. **Engine Research:** implement the fixed deterministic control and its
+   content-addressed external artifact under
+   `D:\thericher-v2\model-artifacts`. Persist only provenance, configuration,
+   aggregate metrics, categorical outcome, and replay identity; never raw bars,
+   derived returns, per-decision values, model weights, or checkpoints.
+3. **Execution:** use the existing broker-free local paper simulator only. Every
+   fill must remain `source: local_paper`; do not create a KIS client, account
+   read, quote, order, or schedule.
+4. **Validation:** add focused tests for causal 63-session boundaries, split and
+   purge isolation, fixed baseline alignment, costs, no-overlap replay, result
+   immutability, no-network/credential/broker access, and the strict kill rule.
+5. Run a deterministic CPU smoke first, then one full CPU control only if the
+   smoke passes. Keep GPU idle for this control; a non-falsified result still
+   requires an independent frozen replication before any GPU or ensemble work.
 
 ## Boundaries
 
-- `KIS_PAPER_*` remains standing-authorized only through the installed worker.
-  Do not read or route `KIS_LIVE_*`.
-- No manual KIS/broker call, no new scheduler, no duplicate task, no paid work,
-  no raw-row/account/broker-body disclosure, and no live behavior.
-- A scheduler due time, stale input, no-intent, or scoped recovery result is not
-  an operator approval hold or a stop for other ready lanes.
-- Keep market data under `D:\market_data` and artifacts under
-  `D:\thericher-v2\model-artifacts`.
+- No KIS calls, credentials, live route, paid data/model, public service, or
+  raw-data disclosure.
+- No parameter sweep, model training, checkpoint, ensemble, threshold tuning,
+  Paper order, or promotion.
+- Keep market data under `D:\market_data` and generated artifacts under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
 ## Completion
 
-- One source-safe post-deployment terminal state is classified as `complete`,
-  `recovery`, or still-running with an exact owner and next recovery action.
-- The named task's runner, trigger count, `IgnoreNew`, and virtual-only route
-  remain intact; no duplicate task or manually manufactured call exists.
-- Stateboards identify the actual evidence and the next ready independent work,
-  not a foreground wait.
+- The exact fixed contract, CPU smoke, and full control each have source-safe
+  external evidence and deterministic replay tests.
+- The result is categorically `falsified` or `candidate_only`; either outcome
+  leaves model selection, GPU depth, ensemble, and KIS Paper routes unchanged.
+- Stateboards record the exact research result and the independent intraday
+  worker's recovery status without making either a global hold.
 
 ## Verification
 
@@ -70,4 +91,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Reconcile scheduled QQQ freshness cycle`
+`Add QQQ SPY relative regime control`
