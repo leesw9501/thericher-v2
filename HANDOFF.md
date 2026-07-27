@@ -300,6 +300,25 @@ authorized private KIS Paper work.
   Validation passed lineage, tail, source-safety, immutability, and route
   isolation. No result selected a model, changed a threshold, created an
   ensemble, replay, PnL, Paper decision, account, order, or broker artifact.
+- The fixed D1 cross-fold falsification check has written immutable source-safe
+  external evidence under
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-crossfold-falsification-v1\crossfold-falsification-20260727-r1`.
+  Its precommit and result identities are
+  `sha256:991a344522cdd9a51af370e8a8ec9e9b1335cf8f301b8bb9af4f490c325b2330`
+  and
+  `sha256:1bbbc7ea47ceb6ce4d2b75409d020a1486bb4a6a6ea071ce4246852cca18bc5d`.
+  It pins exactly the six E1/E2/E3 CPU/CUDA summary/precommit pairs, preserves
+  mode and fold separation, and never pools their overlapping windows. All
+  twelve fixed candidate/mode/fold observations are `falsified`: neither fixed
+  candidate strictly exceeds its own fold-local class-majority count. This is
+  a failure result for the fixed pair only, not model selection, a claim about
+  all future architectures, replay, PnL, KIS, or Paper evidence. Temporary
+  Data, Execution, and Validation checks passed; the Claude CLI OAuth failure
+  remains `review_unavailable`. The verifier also rejects Windows reparse-point
+  destinations before creation and statically excludes environment/subprocess
+  route expansion. Full goal-boundary verification passed: focused tests were
+  `9 passed`, the parallel full suite was `1365 passed, 13 skipped` in 102.86
+  seconds, and the authoritative serial suite matched it in 510.80 seconds.
 - `expanding-1` ends before the parent contract's later `expanding-2` and
   `expanding-3` folds. The final 151-session unused tail begins after those
   folds, not immediately after `expanding-1`; exact sparse input lists prevent
@@ -389,9 +408,9 @@ ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
-target-semantics, both candidate-only screen checks, and the E3 input-contract
-check; no private material was
-sent. This is a scoped tooling fault, not a hold on ready private work.
+target-semantics, all candidate-only screen checks, the E3 input-contract, and
+the fixed cross-fold falsification check; no private material was sent. This is
+a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
 
@@ -403,8 +422,8 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Run one fixed-specification `expanding-3`
-candidate-only CPU smoke and one network-disabled CUDA screen. Do not pool any
-fold result, tune, select, replay, promote, or derive a Paper intent. Refresh
-this file only with resulting cross-lane facts after that bounded objective
-completes.
+Follow NEXT_CODEX_GOAL.md. Refresh one current KIS Paper read-only account
+projection through the existing virtual-only bridge and verify its local
+dashboard-facing sanitization. This is not an order, canary, live route, or
+model consequence. Do not reinterpret the fixed-pair failure as a ranking,
+selection, replay, PnL, or Paper input.

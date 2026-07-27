@@ -5809,3 +5809,41 @@ without letting earlier folds steer the E3 parameters or choice. The next
 research step may inspect source-safe aggregate failures across fixed folds, but
 must not pool their overlapping windows or turn that inspection into a ranking,
 selection, replay, PnL, Paper, or live decision.
+
+## 2026-07-27 - Falsify the fixed D1 candidate pair without pooling expanding folds
+
+Decision: consume exactly the six immutable E1/E2/E3 CPU/CUDA D1
+summary/precommit pairs through one fixed, offline falsification verifier. The
+verifier pins canonical bytes, external containment, SHA-256, fold lineage,
+source identity, split shape, development-only normalization, candidate
+specification, runtime mode, and source-safe scope before it reads aggregate
+classification counts. E1's older summary shape is accepted only through its
+two exact pins; missing fold data is never inferred from counts or a later
+artifact.
+
+The immutable external run is
+`D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-crossfold-falsification-v1\crossfold-falsification-20260727-r1`.
+Its precommit identity is
+`sha256:991a344522cdd9a51af370e8a8ec9e9b1335cf8f301b8bb9af4f490c325b2330`,
+and its result identity is
+`sha256:1bbbc7ea47ceb6ce4d2b75409d020a1486bb4a6a6ea071ce4246852cca18bc5d`.
+Each candidate is compared only with the class-majority count from the same
+fold and mode; the three expanding folds are never pooled, averaged, ranked, or
+weighted. All twelve fixed candidate/mode/fold observations are `falsified`:
+neither the fixed linear classifier nor the fixed compact GRU strictly exceeds
+that fold-local majority count.
+
+This rejects the fixed pair under the stated rule only. It does not select a
+replacement, make an all-architecture claim, form an ensemble, reopen a
+holdout, retune a parameter, replay, create PnL, produce a Paper input, call
+KIS/Tiingo, read credentials, or affect a broker route. Temporary Data,
+Execution, and Validation checks passed the input lineage, no-pooling,
+source-safety, and route-isolation boundaries. Claude's required concise
+falsification check could not authenticate because its OAuth session was
+expired; no private content was sent, and that reviewer limitation does not
+alter this bounded failure result.
+
+Reason: overlapping expanding folds can otherwise turn a useful falsification
+check into a disguised candidate-selection campaign. A strict fold-local
+comparison preserves the failure signal while keeping the next architecture or
+execution decision independent.

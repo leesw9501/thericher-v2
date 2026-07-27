@@ -13,12 +13,11 @@ modify broker submission or deterministic execution-risk behavior.
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
 development-only falsification evidence. All three independent E1/E2/E3
-candidate-only screens are complete. Next verify the six existing source-safe
-summaries in a fixed cross-fold falsification step without pooling, ranking,
-selecting, replaying, or promoting a model. The prospective QQQ first-five pair
-is required only for its isolated prospective observation, pair-dependent
-campaign, and later pair-dependent promotion decisions; it does not make
-historical research input-pending.
+candidate-only screens and their fixed cross-fold falsification consumer are
+complete. Its result rejects the fixed pair but does not select a replacement.
+The prospective QQQ first-five pair is required only for its isolated
+prospective observation, pair-dependent campaign, and later pair-dependent
+promotion decisions; it does not make historical research input-pending.
 
 ## Current Readiness
 
@@ -155,15 +154,23 @@ historical research input-pending.
   development-only normalization, no persisted weights, and no selection,
   replay, PnL, or Paper consequence. Independent Validation passed. Claude
   OAuth remains unavailable, so no result is promotable.
+- The fixed six-input cross-fold verifier completed under
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-crossfold-falsification-v1\crossfold-falsification-20260727-r1`.
+  Its result identity is `sha256:1bbbc7...18bc5d`. It keeps E1/E2/E3 and
+  CPU/CUDA separate, reads no raw market values or labels, and classifies every
+  fixed candidate/mode/fold observation as `falsified` against that fold's
+  class-majority count. It creates no winner, aggregate score, selection,
+  replay, PnL, Paper input, checkpoint, or future-model prohibition.
 
 ## Ready Queue
 
-1. Keep the completed daily breadth, L2 control, and six-symbol control
-   descriptive only. Do not retune a threshold, select a winner, create an
-   ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Build one fixed source-safe cross-fold falsification verifier over the six
-   completed E1/E2/E3 CPU/CUDA summaries. Keep folds mode-separated and do not
-   pool, rank, tune, select, ensemble, replay, or create a Paper action.
+1. Treat the fixed linear/compact-GRU D1 pair as falsified under its stated
+   fold-local rule. Do not retune parameters, select a winner, create an
+   ensemble, promote a checkpoint, or create a KIS Paper action from it.
+2. Keep the completed daily breadth, L2 control, and six-symbol control
+   descriptive only. A next research candidate needs a separately frozen
+   hypothesis, input contract, and falsification criterion rather than a retry
+   of the failed fixed pair.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -181,12 +188,15 @@ historical research input-pending.
 ## Recovery
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
-target receipts, and all three candidate-only CPU/CUDA screens; resume for the
-fixed cross-fold falsification verifier. A failed consumer attempt creates new
-immutable evidence rather than overwriting a parent artifact. A missing
-prospective pair is input_unavailable only for its pair-bound observation.
+target receipts, all three candidate-only CPU/CUDA screens, and the fixed
+cross-fold artifact. Await a separately contracted research campaign; the next
+read-only KIS Paper account projection has no Research input or GPU consequence.
+A failed consumer attempt creates new immutable evidence rather than overwriting
+a parent artifact. A missing prospective pair is input_unavailable only for its
+pair-bound observation.
 
 ## Next Handoff
 
-Verify the six immutable fold summaries without pooling or ranking them. Do not
-treat any screen as stock selection, a selected model, replay, or a Paper input.
+Preserve the fixed-pair falsification evidence. The next Research objective
+must not treat it as stock selection, a selected model, replay, or a Paper
+input, and must introduce new eligible evidence before another GPU campaign.

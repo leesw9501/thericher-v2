@@ -82,6 +82,12 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   No checkpoint, selection, ensemble, replay, PnL, order, or Paper decision was
   created. The final 151-session tail begins after later expanding folds, so the
   exact first-fold list excludes those folds and the tail alike.
+- The fixed cross-fold verifier has now consumed exactly the six E1/E2/E3
+  CPU/CUDA summaries under its immutable external pin map. Its result identity
+  is `sha256:1bbbc7...18bc5d`; it keeps every fold/mode separate and falsifies
+  the fixed linear/compact-GRU pair on all twelve fold-local majority
+  comparisons. Temporary Data, Execution, and Validation checks passed. This
+  is neither a replacement-model selection nor an execution input.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
@@ -90,34 +96,26 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is a small cross-fold falsification check over the six
-completed E1/E2/E3 aggregate summaries. All three independent input contracts
-and CPU/CUDA screens are complete, but no fold result may be pooled, ranked,
-selected, replayed, or promoted. The fixed six-symbol panel remains too short
-and non-PIT for a depth campaign.
+The cross-fold falsification artifact is complete: it kept the six E1/E2/E3
+CPU/CUDA sources separate and falsified the fixed linear/compact-GRU pair on
+every fold-local majority comparison. The next material outcome is one current
+KIS Paper read-only account projection through the existing bridge. It is a
+bounded Execution fact, not a model-selection, order, canary, or live decision.
+The fixed six-symbol panel remains too short and non-PIT for a depth campaign.
 
-The GPU is free; no new GPU job is eligible until the frozen-summary check has
-either falsified a fixed candidate or preserved its limitations without creating
-a selection result. The Claude OAuth outage is scoped to reliance, promotion,
-and execution boundaries; it does not require another ready private lane to
-wait.
+The GPU is free, but no new GPU job is eligible from the falsified pair. A new
+Research campaign needs its own frozen hypothesis and input contract. The
+Claude OAuth outage is scoped to reliance, promotion, and execution boundaries;
+it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
-The current reversible improvement is observable data throughput: the daily
-catch-up profile now writes an immutable source-safe external receipt even when
-the cache is already drained, and focused tests prove second-page pacing is not
-doubled. A worker-local rate or recovery outcome still yields while Codex
-advances independent lanes. The new pure joint contract also makes its
-evidence boundary explicit: no Data/Execution import on fresh load, no raw
-values in its immutable external artifact, and no generic multi-fold campaign
-promotion. The successor fold input now requires a parent hash/rebuild
-comparison before exposing indices, the materializer makes one window at a time
-while persisting only source-safe geometry, and target v2 fixes its full Decimal
-context rather than only final rounding. A completed cursor is scoped to its
-own cache; any future coverage gap starts with one endpoint-reach/page-yield
-probe, then a reused-client serial collector rather than a foreground sleep or
-parallel flood.
+The current reversible improvement is measured test-feedback throughput. The
+same `1365 passed, 13 skipped` suite completed in 102.86 seconds through the
+isolated eight-worker helper and in 510.80 seconds serially. Use the parallel
+helper for in-goal diagnostics and reserve the serial suite for the required
+goal boundary. This frees the foreground to integrate Data, Research, and
+Execution work without weakening the authoritative final check.
 
 ## External Waits
 
@@ -129,15 +127,16 @@ parallel flood.
 ## Recovery
 
 Current class: complete for the daily catch-up, event-window contract, all
-three fold inputs/materializer/target receipts, and all candidate-only CPU/CUDA
-screens; resume for the source-safe cross-fold falsification check. Reattest an
-individual cache, contract, campaign, or exact Paper intent before relying on it.
-Scope failure to that item and continue independent lanes.
+three fold inputs/materializer/target receipts, all candidate-only CPU/CUDA
+screens, and the source-safe cross-fold artifact; resume for one read-only KIS
+Paper account projection. Reattest an individual cache, contract, campaign, or
+exact Paper intent before relying on it. Scope failure to that item and continue
+independent lanes.
 
 ## Next Handoff
 
-Run one fixed source-safe cross-fold falsification check while keeping Execution
-independent. Do not treat any completed screen, the historical catalog, or any
-daily control as a selected model or replay result. Record only an actual shared
-resource conflict, new external wait, bottleneck, or reversible operating
-improvement here.
+Run one current KIS Paper read-only account projection and verify its sanitized
+local dashboard boundary. Do not treat the failed fixed pair, the historical
+catalog, or any daily control as a selected model or replay result. Record only
+an actual shared resource conflict, new external wait, bottleneck, or reversible
+operating improvement here.

@@ -497,6 +497,40 @@ external storage; the host paths remain `D:\market_data` and
 `expanding-1`, `expanding-2`, and `expanding-3` pin profiles; pass the fold
 explicitly even though the historical E1 default remains available.
 
+### Fixed D1 Cross-Fold Falsification
+
+The fixed cross-fold verifier is an offline, aggregate-only consumer of the
+six exact E1/E2/E3 CPU/CUDA summary/precommit pairs. It checks each input's
+canonical bytes, external containment, hash, fold lineage, split geometry,
+development-only normalizer, candidate specification, and source-safe scope
+before comparing anything. E1's legacy summary shape is accepted only through
+its exact pinned pair. It never infers a fold from counts or missing fields.
+
+Run it with an unused external artifact label:
+
+```powershell
+uv run --extra dev python scripts\run_kis_daily_joint_event_d1_crossfold_falsification.py `
+  --run-label <unique-label> `
+  --artifact-root D:\thericher-v2\model-artifacts
+```
+
+It writes exactly `precommit.json` and `summary.json` beneath
+`D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-crossfold-falsification-v1\<unique-label>`.
+It keeps every mode and expanding fold separate and compares a frozen candidate
+only with the named fold's class-majority count. The only conclusions are
+`falsified` and `inconclusive`; it never pools overlapping folds, emits a
+winner/ranking/score, or writes rows, labels, predictions, weights, replay,
+PnL, credential, KIS, broker, account, order, or Paper data.
+
+The completed `crossfold-falsification-20260727-r1` run has precommit identity
+`sha256:991a344522cdd9a51af370e8a8ec9e9b1335cf8f301b8bb9af4f490c325b2330`
+and result identity
+`sha256:1bbbc7ea47ceb6ce4d2b75409d020a1486bb4a6a6ea071ce4246852cca18bc5d`.
+All twelve fixed candidate/mode/fold observations are falsified under this one
+strict fold-local rule. That fact rejects only the fixed pair; it is not a
+general architecture conclusion, selection, profitability result, or Paper
+trading input.
+
 ### Masked D1 Naive Validation
 
 Run the completed fixed control package only against the pinned audit and KIS
@@ -1314,4 +1348,7 @@ available for diagnosis. Override the worker count when needed:
 
 It has no KIS, credential, Docker, market-data, or artifact access. The command
 above is a faster feedback path, not a replacement for the authoritative serial
-verification at a bounded-goal boundary.
+verification at a bounded-goal boundary. On 2026-07-27, the same full suite
+completed with `1365 passed, 13 skipped` in 102.86 seconds using eight workers
+and in 510.80 seconds serially. Use the parallel helper during implementation;
+retain the serial run only for the final goal-boundary proof.

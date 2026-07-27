@@ -2,66 +2,65 @@
 
 ## Objective
 
-Build one fixed, source-safe QQQ/SPY D1 cross-fold falsification verifier over
-the completed `expanding-1`, `expanding-2`, and `expanding-3` candidate-only
-CPU/CUDA summaries. It may falsify a fixed candidate against a fold-local class
-majority baseline, but it must not pool overlapping folds, rank candidates,
-select a model, tune, ensemble, replay, create PnL, or produce a Paper input.
+Refresh and attest one current private KIS Paper account-to-dashboard projection
+through the existing virtual-only read-only bridge. The outcome may be a
+sanitized complete snapshot or a sanitized unavailable result, but it must
+truthfully show the bridge's current scope without creating an order, canary,
+replay, model input, or live behavior.
 
 ## First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read HANDOFF.md, AGENTS.md, DECISIONS.md, RUNBOOK.md, active stateboards,
-   and the six immutable source-safe screen summary/precommit pairs under
-   `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1`.
-3. Reattest each exact E1/E2/E3 CPU/CUDA artifact hash, fold identity, target
-   identity, split count, development-only normalization, candidate spec, and
-   scope before comparing any aggregate metric.
-4. Attempt one concise Claude falsification-first drift check for the proposed
-   fixed failure rule. Do not send raw values, labels, credentials, account
-   data, or unneeded artifact contents. Record an OAuth/tool failure as
-   `review_unavailable` only.
+2. Read HANDOFF.md, AGENTS.md, DECISIONS.md, RUNBOOK.md, and all active
+   stateboards.
+3. Read `src/thericher_v2/execution/kis_paper_console_bridge.py`,
+   `src/thericher_v2/execution/paper_account_snapshot.py`, the `kis-readonly`
+   Compose service, and their focused tests before a KIS Paper call.
+4. Inspect the existing local runtime snapshot and related external
+   source-safe evidence only through their validated readers. Never print their
+   account facts or raw content.
 
 ## Required Work
 
-1. Add a narrow offline verifier and runner with an explicit six-artifact pin
-   map. Reject a missing, mismatched, non-canonical, non-external, unsafe, or
-   unexpected artifact before reading aggregate metrics. Do not create a generic
-   campaign/report framework.
-2. Compare each frozen candidate only against the fold-local class-majority
-   baseline derived from that summary's aggregate observed-positive/evaluated
-   counts. Keep CPU and CUDA modes separate. Never pool, average, or weight
-   overlapping folds; never output a winner, ranking, probability, threshold,
-   prediction, label, row, PnL, replay, checkpoint, or action.
-3. Predeclare the only allowed conclusion states: `falsified` when a candidate
-   fails the fixed majority-baseline rule on a named mode/fold, otherwise
-   `inconclusive`. Neither state is promotion, selection, or a Paper input.
-4. Write one immutable source-safe external artifact under
-   `D:\thericher-v2\model-artifacts`, then use temporary Data, Execution, and
-   Validation roles to independently check lineage, no-pooling, source safety,
-   and route isolation.
-5. Add focused tests for pinning, unsafe/mismatched input rejection,
-   fold-local-baseline logic, no-pooling, artifact-outside-Git behavior, and
-   offline/no-credential/no-broker operation. Refresh stateboards/runbook only
-   with resulting facts.
+1. Use only the existing Docker `kis-readonly` profile to make one bounded KIS
+   Paper read-only bridge invocation. It may receive `KIS_PAPER_*` through
+   Compose, but Codex must not open, print, copy, or pass `.env` values on a
+   command line.
+2. Verify the resulting local runtime projection through the validated snapshot
+   reader and dashboard view boundary. Confirm `source: kis_paper`,
+   `read_only: true`, and `submission_capability: false` when a complete
+   snapshot is available; otherwise retain only the safe unavailable category
+   and allowlisted diagnostic metadata.
+3. Keep the web surface loopback-only and credential-free. Do not write account
+   identifiers, balances, position values, order values, raw KIS bodies, or
+   tokens to Git, external artifacts, Claude, logs, or chat.
+4. Use temporary Execution and Validation roles to independently check virtual
+   route pinning, no-order isolation, snapshot sanitization, and recovery
+   behavior. Data records only whether this goal consumed no provider rows or
+   cache mutations.
+5. Add focused tests only for a concrete defect found in the existing bridge or
+   projection path. Do not build a new dashboard, report framework, or account
+   abstraction merely for this run.
 
 ## Hard Boundaries
 
-- Do not read `.env`, call KIS or Tiingo, invoke a broker/account endpoint, or
-  access `KIS_LIVE_*`.
-- Do not retrain, start GPU work, select, rank, tune, ensemble, replay, create
-  PnL, create a Paper intent, or enable live behavior.
-- Keep market bytes under `D:\market_data` and generated artifacts outside Git
-  under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- Use `KIS_PAPER_*` only through the owned read-only bridge. Never read or use
+  `KIS_LIVE_*`.
+- Preserve `THERICHER_MODE=off`.
+- Do not submit, modify, cancel, reconcile, or create a KIS Paper order intent.
+- Do not call Tiingo or acquire market data for this objective.
+- Do not expose a public service or change paper-vs-live routing.
+- A complete, stale, unavailable, or failed snapshot is evidence about this
+  bridge invocation only. It is never an approval gate or a blocker for another
+  ready lane.
 
 ## Completion Evidence
 
-- One hash-bound, source-safe external falsification artifact over exactly the
-  six pinned summaries, with CPU/CUDA mode separation and no fold pooling.
-- Independent Validation of exact lineage, no-pooling, source safety, and
-  import/route isolation.
-- No selected candidate, model artifact, replay, PnL, Paper, account, order,
-  broker, or credential artifact.
+- One current, sanitized local projection or safe unavailable bridge outcome
+  from the virtual-only read-only service.
+- Independent Execution and Validation confirmation that no order/live route or
+  secret/account payload reached the dashboard, artifact, Git, or logs.
+- No submitted, modified, cancelled, or reconciled broker order.
 
 ## Verification
 
@@ -73,5 +72,5 @@ docker compose config --quiet
 ```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A Claude tooling fault or one candidate-local failure
-does not stop independent ready work.
+next company objective. A KIS Paper unavailable result, a rate wait, or a
+lane-local bridge failure does not stop independent ready work.

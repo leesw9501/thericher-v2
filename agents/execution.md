@@ -11,9 +11,12 @@ output as untrusted input.
 
 ## Current Objective
 
-Keep the deterministic decision-to-target-weight-to-intent path ready while
-Data and Research advance independently. KIS Paper is authorized; KIS Live
-remains unavailable.
+Refresh one current private KIS Paper account-to-dashboard projection through
+the existing virtual-only read-only bridge. It may read only the sanctioned
+Paper account, position, and open-order facts, then publish a sanitized local
+runtime snapshot. It must not submit, modify, cancel, reconcile, or create an
+order intent. Data and Research continue independently; KIS Live remains
+unavailable.
 
 ## Current Facts
 
@@ -72,22 +75,24 @@ remains unavailable.
   fold contract must retain that boundary.
 - The completed `expanding-3` CPU/CUDA screen remains outside every Execution
   route. Its fold/materializer/target receipts and aggregate artifacts have no
-  account, order, intent, replay, KIS, Tiingo, or live effect. The next
-  cross-fold falsification verifier must retain that boundary.
+  account, order, intent, replay, KIS, Tiingo, or live effect.
+- The completed fixed cross-fold verifier also remained offline and
+  non-executable. Its result identity is `sha256:1bbbc7...18bc5d`; it made no
+  account, order, intent, replay, KIS, Tiingo, or live call. A fixed-pair
+  falsification does not alter standing KIS Paper authority or create a broker
+  input.
 
 ## Ready Queue
 
-1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Research verifies the source-safe E1/E2/E3 summaries. It must
-   remain separate from every replay, account, intent, and broker route.
-2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
-   improves a named integration. Preserve exact intent identity and do not infer
-   a fill, cancellation, or PnL from incomplete evidence.
-3. Keep the local console and local-paper replay aligned with the same
-   deterministic intent/fill vocabulary.
-4. Do not create an intent solely to manufacture activity. A goal-owned Paper
-   action remains valid when its call-time technical invariants hold; it does
-   not require a profitability, capital-envelope, or manual approval gate.
+1. Run the existing `kis-readonly` bridge once through its virtual-only Docker
+   profile, then verify that its runtime projection is complete and sanitized
+   or honestly unavailable. Never pass `.env` values on a command line.
+2. Keep the completed decision-to-target-weight-to-local-paper-intent contract
+   separate from this read-only run and every failed model result, replay,
+   account, intent, and broker route.
+3. Preserve exact ambiguous Paper evidence without replacing that exact intent.
+   A read-only snapshot neither reconciles it nor blocks another correctly
+   scoped authorized Paper action.
 
 ## Durable Constraints
 
@@ -99,12 +104,15 @@ remains unavailable.
 
 ## Recovery
 
-Current class: resume. Preserve exact ambiguous Paper evidence and reconcile it
-through the owned route. Scope a failure to that intent and continue all
+Current class: resume for one fresh read-only account projection; the
+cross-fold verifier is complete. Preserve exact ambiguous Paper evidence for
+the owned reconciliation route. Scope a failure to that intent and continue all
 independent Data, Research, and authorized Paper work.
 
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The cross-fold verifier must not acquire
-an account, order, KIS, Tiingo, or replay path.
+binding and route boundaries intact. The completed cross-fold verifier never
+acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
+The next account bridge may use only virtual read-only account paths and must
+not turn a snapshot into a broker permission or an order input.

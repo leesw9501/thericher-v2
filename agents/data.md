@@ -15,13 +15,14 @@ Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
 evidence. The active v2 QQQ/SPY joint-event contract has reattested all three
 fixed fold-local inputs, materialized source-safe D1 windows, and fixed v2
-target cost semantics. All three bounded E1/E2/E3 candidate-only screens are
-complete. Next serve only their existing source-safe lineage summaries to one
-fixed cross-fold falsification verifier; do not fetch, blend, or persist
-provider rows. The full sequence dependency mask remains `t-20..t+2`, not
+target cost semantics. All three bounded E1/E2/E3 candidate-only screens and
+their fixed cross-fold falsification consumer are complete. Do not fetch, blend,
+or persist provider rows in response to the fixed-pair result. The full sequence
+dependency mask remains `t-20..t+2`, not
 merely the 20 visible feature rows `t-19..t`. The prospective QQQ 1m first-five
 pair is one Data product for a named future observer; it is not the only Data
-output or a company hold.
+output or a company hold. The next KIS Paper account projection is Execution
+owned and does not require a Data fetch or provider-row mutation.
 
 ## Current Facts
 
@@ -156,15 +157,20 @@ output or a company hold.
   aggregate-only source-safe results are `sha256:438b...c20e87` and
   `sha256:f3ad...03922a`, preserve `2671 / 145` and development-only
   normalization, and did not read or alter catalog bytes.
+- The completed fixed cross-fold verifier consumed only the six existing
+  source-safe screen summary/precommit pairs. Its external result identity is
+  `sha256:1bbbc7...18bc5d`; it added no provider bytes, cache mutation,
+  credential, KIS call, source blend, or data-quality conclusion. Its
+  fold-local falsification result applies only to the fixed candidates.
 
 ## Ready Queue
 
-1. Serve the completed E1/E2/E3 source-safe lineage summaries to one fixed
-   cross-fold falsification verifier. Preserve each sparse split and final
-   151-session tail; do not fetch, blend, or persist provider rows.
-2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
+1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
+2. When a later engine loop names a new coverage need, use the bounded reach
+   probe and durable serial collector procedure below. A falsified fixed model
+   pair is not itself a data-collection hold or a request to mutate a source.
 
 ## Future KIS Coverage Procedure
 
@@ -196,16 +202,16 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-all three fold inputs/materializer/target-cost receipts, and all completed
-candidate screens; resume for the fixed source-safe cross-fold verifier.
-Reattest existing metadata and committed summaries before a new consumer or
-future network call. A bad cache is reconcile/restart evidence for that cache;
-an empty or limited endpoint result is source evidence for that route only.
+all three fold inputs/materializer/target-cost receipts, all candidate screens,
+and the fixed source-safe cross-fold artifact. Await a newly named Data package;
+the next read-only KIS Paper account projection is not a Data consumer. Reattest
+existing metadata and committed summaries before a new consumer or future
+network call. A bad cache is reconcile/restart evidence for that cache; an
+empty or limited endpoint result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the six verified source-safe fold summaries to the fixed cross-fold
-verifier. Preserve the frozen six-symbol source separately. Do not infer PIT
-membership, corporate-action completeness, a ranking claim, or Paper-trading
-eligibility from either cache, and do not wait for a prospective pair before
-advancing other ready Data work.
+Preserve the frozen six-symbol source separately. Do not infer PIT membership,
+corporate-action completeness, a ranking claim, or Paper-trading eligibility
+from either cache or the fixed-pair falsification result, and do not wait for a
+prospective pair before advancing other ready Data work.
