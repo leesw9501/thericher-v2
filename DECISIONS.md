@@ -6076,3 +6076,56 @@ Reason: Task Scheduler is an operational recovery signal only when it cannot
 silently hide a required stage failure. This improves reattachment of the
 active QQQ execution-learning loop without widening KIS, Paper, live, cadence,
 capital, or authorization behavior.
+
+## 2026-07-27 - Resolve material company-goal blocks through alternatives
+
+Decision: when the company objective itself has no ready route because of an
+external wait, unmeasured capability, or unresolved technical contradiction,
+Codex writes one compact `blocked-goal alternatives` record in the existing
+orchestration projection. It contains the exact stopping fact, original plan,
+two to four ready role-owned packages, owned resources, strongest kill test,
+and recovery action. Codex asks Claude for one concise falsification-first
+challenge, records `review_unavailable` when the CLI cannot authenticate, and
+dispatches every non-conflicting package inside standing authority.
+
+This mechanism does not apply to a lane-local cooldown, stale input, or
+source-limited target when another package is ready. It creates neither a new
+report family nor a second goal. A Claude conclusion may support a reversible,
+no-cost choice already delegated to Codex, but cannot replace explicit operator
+authority for paid commitments, unclear rights, public exposure, major runtime
+replacement, `KIS_LIVE_*`, live capital, or material live-risk changes.
+
+Reason: the QQQ prospective scheduler exposed that an external session due time
+can look like a company stop even while Data, Research, and Execution have
+independent work. The original plan over-weighted the scheduled observation.
+The new record makes the alternate route explicit without recreating the
+report/gate sprawl that v2 rejects. Claude review was attempted with no private
+material during this decision and failed because local OAuth was expired.
+
+## 2026-07-27 - Move KIS intraday coverage to continuous snapshot production
+
+Decision: treat the existing 21 complete QQQ/SPY `1m` sessions as a pipeline
+control only. Data first runs one source-safe QQQ/SPY historical
+reach-and-continuation probe. If useful serial continuation is established,
+Data promotes that exact route into one durable per-account cursor dispatcher
+at the documented/measured Paper request pace. Fresh market-session collection
+preempts historical backfill; otherwise-unused capacity advances independent
+targets from atomic checkpoints. A repeated malformed non-advancing cursor
+closes only that exact target as `source_limited`.
+
+Qualified `1m` bytes remain canonical under `D:\market_data`; `5m`, `10m`,
+`1h`, and `3h` views are local derivations, while direct daily history remains
+a separate source contract. Research consumes immutable snapshots as they
+arrive: breadth evaluates distinct fixed candidate families and naive baselines;
+only replicated, error-diverse candidates may enter depth or ensemble work.
+The existing virtual-only QQQ canary remains the first execution observation;
+a low-frequency fixed Paper baseline follows its exact lifecycle and remains
+independent of model promotion.
+
+Reason: continuous data production, snapshot-driven research, and bounded Paper
+execution can run concurrently. Multiple parallel loops against one Paper
+account would not increase the documented per-account REST throughput and would
+make cursor/retry recovery less reliable. The required Claude architecture
+challenge was attempted without credentials, raw rows, or account data; local
+OAuth was expired, so the durable record is `review_unavailable` rather than a
+claim of external support.

@@ -37,6 +37,11 @@ coverage session, open a provider, read credentials, or make an execution
 decision. Its existing scheduled chain now finishes with an external
 source-safe dispatch receipt, so a collection success cannot conceal a required
 downstream runtime/validation fault from the task result.
+The 21-session historical intraday cache is a completed pipeline seed, not a
+provider-history ceiling or adequate multi-timeframe training corpus. While the
+fresh head scheduler owns its market-session clock, Data's next independent
+package is a QQQ/SPY historical reach-and-continuation probe that promotes a
+useful exact route into durable serial collection.
 
 ## Current Facts
 
@@ -81,7 +86,8 @@ downstream runtime/validation fault from the task result.
   KIS call, raw scan, source blend, or IWM read. Research consumed only its
   derived chronological phase slices.
 - The bounded historical intraday cache has 21 complete QQQ and SPY
-  regular-session inputs. It remains source-scoped historical evidence.
+  regular-session inputs. It is a source-scoped pipeline control, not evidence
+  of KIS's maximum historical reach or a sufficient model corpus.
 - The prospective QQQ head is generation 10 with zero complete sessions out
   of five. Short/gapped records and minute_duplicate_conflict are source
   facts, not a Research or Execution hold.
@@ -198,6 +204,19 @@ downstream runtime/validation fault from the task result.
    window yields its own no-decision evidence; it does not revive the terminal
    daily-history cache or hold another lane. Reattach its terminal dispatch
    receipt before treating a Task Scheduler result as complete.
+3. In parallel, run one source-safe QQQ/SPY `1m` historical
+   reach-and-continuation probe with one reusable Paper client. Record oldest
+   reached date bucket, page yield, continuation behavior, categorical errors,
+   and the fact that would invalidate the result, without printing rows.
+4. If the probe establishes useful serial continuation, implement and start one
+   durable per-account cursor dispatcher. Prioritize fresh market-session work,
+   let historical backfill consume otherwise-unused measured capacity, checkpoint
+   each target atomically, and close only a repeated same-cursor malformed target
+   as `source_limited`. Keep canonical qualified `1m` bytes once and derive
+   `5m`, `10m`, `1h`, and `3h` locally.
+5. Build a versioned liquid-universe manifest from already available
+   source-safe symbol evidence before widening beyond QQQ/SPY. It is a
+   collection schedule, not a point-in-time universe or stock-ranking claim.
 
 ## Collection Progress Projection
 
@@ -275,12 +294,14 @@ only.
 The prospective runtime selector and its exact-session cache reattestation are
 complete and currently have only a stale prior-session cache fact. The next
 session-capture result is a new Data observation, not recovery of the
-daily-history cache or a permission boundary.
+daily-history cache or a permission boundary. The independent historical reach
+probe is `ready`, not blocked by the scheduled head or that stale result.
 
 ## Next Handoff
 
-Preserve the frozen six-symbol source separately. The next Data package is a
-fresh prospective QQQ intraday completed-bar window for the named baseline, not
-more daily-history backfill. Do not infer PIT membership, corporate-action
-completeness, a ranking claim, or Paper-trading eligibility from either cache
-or the fixed-pair falsification result.
+Preserve the frozen six-symbol source separately. The next Data packages are a
+fresh prospective QQQ intraday completed-bar window for the named baseline and
+a separate QQQ/SPY historical `1m` reach probe that can become durable cursor
+collection. Do not infer PIT membership, corporate-action completeness, a
+ranking claim, or Paper-trading eligibility from either cache or the fixed-pair
+falsification result.

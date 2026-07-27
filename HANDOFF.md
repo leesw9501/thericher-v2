@@ -45,6 +45,12 @@ authorized private KIS Paper work.
 - A prospective input requirement controls only its named consumer, campaign,
   or promotion. The first-five QQQ 1m pair does not block historical Research,
   Data collection, local simulation, or Paper execution preparation.
+- A material company-goal block gets one compact alternatives record in the
+  existing orchestration board: exact stop fact, original plan, ready packages,
+  strongest kill test, and recovery action. Claude reviews that record when
+  available; an expired CLI session is `review_unavailable`, not a new wait.
+  Codex immediately advances every non-conflicting package inside standing
+  authority.
 - A timer, cooldown, or scheduled due time belongs to its owning worker. Codex
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The
@@ -88,6 +94,10 @@ authorized private KIS Paper work.
   GPU is free, Research starts its next ready campaign or records the exact
   missing data, contract, or resource fact. It does not manufacture training to
   keep utilization high.
+- After a useful KIS intraday reach/continuation probe, collection becomes a
+  durable per-target cursor queue. Fresh market-session work has priority; the
+  queue uses otherwise-unused measured capacity for historical backfill, and
+  Research consumes immutable snapshots without waiting for collection to end.
 
 ## Current State
 
@@ -126,8 +136,11 @@ authorized private KIS Paper work.
   `sha256:a5a2f5bbcc8a75c72995a9e5b8e58bbda5af19e1339c09abcc55f989a17fd561`.
   This proves terminal recovery state, not new history or a research result.
 - The private intraday cache has 21 complete QQQ and SPY regular sessions from
-  the prior bounded historical scope. It is eligible only for scoped
-  historical work, not a broad profitability claim.
+  the prior bounded historical scope. This is a pipeline control, not a KIS
+  history ceiling or sufficient model corpus. The next Data package probes
+  QQQ/SPY historical reach and continuation, then starts a durable measured
+  cursor queue when useful. It remains eligible only for scoped historical
+  work, not a broad profitability claim.
 - The prospective QQQ head is generation 10 with zero complete sessions out
   of five. The retained short-session evidence is a Data-local source fact. It
   is not a company hold.
@@ -201,8 +214,10 @@ authorized private KIS Paper work.
   PIT or corporate-action qualified.
 - No GPU job is active. The completed daily evidence must not be promoted or
   used to choose a Paper order. The current six-symbol panel is too small for
-  depth training. QQQ/SPY has sufficient historical count for a future bounded
-  breadth campaign. The active v2 joint-event contract is external at
+  depth training. QQQ/SPY has sufficient historical count for the next newly
+  frozen bounded breadth campaign; it must use a new hypothesis and
+  falsification contract rather than retune the rejected fixed pair. The active
+  v2 joint-event contract is external at
   `D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json`:
   artifact `sha256:f908dd5570c795e94e92f54b3a9e243ee0c6cef641a557561bfc4db4983bb814`,
   contract `sha256:d8c1a382ca8a16b87288ede8f31df22797574940e50f0c208d4e28dc2677c2a6`.
@@ -494,8 +509,9 @@ global permission or progress latch.
 
 Follow NEXT_CODEX_GOAL.md. The fixed NAS daily-history collector is terminal
 for its exact current-listing scope; do not reopen a terminal target, blend a
-provider, or reinterpret it as a PIT universe. The next company objective is
-to observe the first fresh scheduled prospective QQQ runtime receipt and close
-its exact KIS Paper lifecycle or record its target-local no-intent fact. Keep
-Data, Research, and Execution evidence distinct, and let a session wait remain
-owned by its scheduler rather than the foreground.
+provider, or reinterpret it as a PIT universe. The current company objective
+observes the first fresh scheduled prospective QQQ runtime receipt while Data
+probes and, when useful, starts durable QQQ/SPY `1m` historical collection and
+Research freezes a separate daily breadth campaign. Keep Data, Research, and
+Execution evidence distinct, and let a session wait remain owned by its
+scheduler rather than the foreground.

@@ -15,6 +15,21 @@ them to ready roles. Data, Research, and Execution may progress in parallel. A
 blocked lane does not stop another ready lane. Codex integrates shared contracts,
 verification, Git, recovery, and the next objective.
 
+## Material Goal Blocks
+
+When the company objective, rather than one lane, lacks a ready path because of
+an external wait, unmeasured capability, or unresolved technical contradiction,
+Codex records one compact `blocked-goal alternatives` entry in
+`orchestration.md`. It gives the exact blocking fact, original plan, ready
+alternatives, owners/resources, strongest kill test, and recovery action. Claude
+reviews that one record from a falsification-first perspective; unavailable
+Claude authentication is `review_unavailable`, not a hold. Codex then advances
+every non-conflicting package inside standing authority.
+
+This is not a report family, per-agent goal file, or substitute for explicit
+operator authority over live capital, paid commitments, unclear rights, public
+exposure, or a major runtime change.
+
 `orchestration.md` is owned by Codex, not a subordinate role. It holds only the
 cross-lane view that no one role owns: resource conflicts, external waits, the
 current bottleneck, and one reversible operating improvement. It links to lane

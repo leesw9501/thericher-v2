@@ -405,6 +405,25 @@ boundary fail. Campaign attempt labels create separate immutable external
 evidence after interruption; they are not a scheduler, a one-shot reservation,
 or an approval mechanism.
 
+### Continuous KIS Data Operation
+
+The initial 21-session intraday cache is a pipeline control, not a provider
+history ceiling or a sufficient training corpus. The next KIS intraday step is
+one source-safe QQQ/SPY reach and continuation probe. If it establishes useful
+serial history, Data promotes that exact route into a durable cursor queue:
+one per-account request dispatcher at the measured provider pace, atomic
+per-target checkpoints, bounded transient retry, and target-local
+`source_limited` closure after repeated non-advancing malformed output.
+
+Fresh in-session observation has priority over historical backfill. The same
+dispatcher consumes otherwise-unused capacity for the versioned liquid-universe
+manifest, while CPU cache verification and resampling may run independently.
+Canonical qualified `1m` data is retained once under `D:\market_data`; `5m`,
+`10m`, `1h`, and `3h` are derived from it. Long direct daily data remains a
+separate contract, rather than a synthetic claim from incomplete intraday
+coverage. This is a persistent data-engine loop, not multiple competing loops
+that try to bypass the KIS Paper account rate.
+
 ## Model Policy
 
 The research lane may explore many model families:
@@ -429,6 +448,17 @@ splits, costs, baselines, metrics, compute budget, and stop rules. Breadth work
 screens diverse hypotheses; depth work trains only selected candidates;
 ensemble work uses independently generated predictions; replication checks
 reproducibility and simple falsification controls.
+
+### Snapshot-Driven Research Dispatch
+
+Data publishes immutable, source-separated snapshots; Research turns each
+eligible snapshot into a bounded breadth queue without reopening its bytes.
+The first pass compares genuinely different families and fixed naive baselines,
+then sends only independently replicated candidates to depth or ensemble work.
+One GPU job owns the device at a time, while CPU feature preparation,
+validation, and Data collection continue. A small control corpus can validate
+the path but cannot keep the GPU busy through parameter churn or qualify a
+model for paper use.
 
 For a future eligible contract, breadth should contain materially different
 families rather than repeated MLP variants: linear and tree baselines, compact

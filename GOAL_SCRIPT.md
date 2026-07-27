@@ -23,6 +23,17 @@ promotion. It must not make historical Research, independent Data work, local
 simulation, or deterministic Paper preparation input-pending. When an external
 due time exists, keep every other ready bounded package moving.
 
+When the company objective itself is materially blocked, write one compact
+`blocked-goal alternatives` entry in `agents/orchestration.md`: exact blocking
+fact, original plan, two to four ready alternative packages, owners/resources,
+strongest kill test, and recovery action. Ask Claude for a concise
+falsification-first challenge, record `review_unavailable` if its CLI cannot
+authenticate, and immediately run all non-conflicting packages inside standing
+authority. Do not create a separate report, second goal, or approval gate.
+Claude agreement can resolve only a reversible, no-cost choice already inside
+standing authority; it cannot replace explicit approval for live capital, paid
+commitments, unclear rights, public exposure, or a major runtime change.
+
 When the exclusive GPU is free, have Engine Research start its first ready,
 frozen campaign or record the exact data, contract, or resource fact that makes
 none eligible. Do not manufacture training merely to maximize utilization.

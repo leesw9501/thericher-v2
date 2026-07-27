@@ -26,6 +26,12 @@ first-five pair: it freezes one 90/18/9 completed-bar, five-action target-state
 decision and records provisional cache-bound evidence. It is an execution
 learning control, not a trained model, GPU campaign, ranking, or profitability
 claim.
+The next independent Research package is snapshot-driven breadth on an already
+qualified immutable daily input. It must introduce a new hypothesis and
+falsification rule rather than retune the rejected pair, and it may use the GPU
+only after its dataset, target, split, costs, and naive baseline are frozen.
+The 21-session intraday cache remains a pipeline control, not a depth-training
+corpus or a reason to leave all other eligible daily work idle.
 
 ## Current Readiness
 
@@ -181,15 +187,18 @@ claim.
 1. Treat the fixed linear/compact-GRU D1 pair as falsified under its stated
    fold-local rule. Do not retune parameters, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from it.
-2. Keep the completed daily breadth, L2 control, and six-symbol control
-   descriptive only. A next research candidate needs a separately frozen
-   hypothesis, input contract, and falsification criterion rather than a retry
-   of the failed fixed pair.
-3. Keep depth input-pending and ensemble empty until independent, error-diverse
-   candidates exist. Consume a verified prospective pair as an additional
-   observation/campaign input when Data provides it; it never rewrites
-   historical results or becomes a global queue gate.
-4. Observe the first fresh runtime window as a fixed control only. Do not tune
+2. Build one snapshot-triggered daily breadth campaign from the existing
+   4,756-session QQQ/SPY input. Freeze a new directional hypothesis, exact
+   costs/splits, a naive baseline, and distinct linear/tree/sequence candidate
+   families before dispatch. It is a signal-research package only, never a
+   stock-selection, allocation, ensemble, or Paper input.
+3. Keep the completed daily breadth, L2 control, and six-symbol control
+   descriptive only. Do not retune the failed pair under a new label.
+4. Keep depth input-pending and ensemble empty until independently replicated,
+   error-diverse breadth candidates exist. A verified prospective pair is an
+   additional observation only; it never rewrites historical results or becomes
+   a global queue gate.
+5. Observe the first fresh runtime window as a fixed control only. Do not tune
    the decision table from that session or turn an individual Paper outcome into
    a model, ensemble, GPU, or PnL claim.
 
@@ -217,8 +226,10 @@ own no-intent fact and does not create GPU work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair falsification evidence. The next Research objective
-must not treat it as stock selection, a selected model, replay, or a Paper
-input, and must introduce new eligible evidence before another GPU campaign.
-The fresh prospective baseline remains frozen while its first Paper outcome is
-observed.
+Preserve the fixed-pair falsification evidence. The next Research package first
+freezes a daily snapshot-triggered breadth contract and then runs its eligible
+CPU/GPU candidates without treating the result as stock selection, a selected
+model, replay, or a Paper input. The fresh prospective baseline remains frozen
+while its first Paper outcome is observed. When Data publishes longer qualified
+intraday coverage, it becomes a separate campaign input rather than a rewrite
+of the daily evidence.

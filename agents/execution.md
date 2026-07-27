@@ -16,7 +16,10 @@ complete. Preserve the virtual-only bridge, local dashboard boundary, and
 existing Paper recovery invariants while the next objective establishes a
 prospective QQQ baseline and, if its exact durable intent is valid, one bounded
 KIS Paper canary. The QQQ route is now implemented and awaits only a fresh,
-eligible runtime receipt. KIS Live remains unavailable.
+eligible runtime receipt. After that exact lifecycle closes, the next Execution
+package is a low-frequency fixed KIS Paper baseline for execution,
+reconciliation, and PnL-attribution learning; it remains independent of model
+promotion. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -137,6 +140,10 @@ eligible runtime receipt. KIS Live remains unavailable.
    no-intent outcome remains scoped to that target and does not require an
    operator release. Reattach the matching terminal dispatch receipt before
    interpreting the scheduled session as complete.
+5. After the exact canary lifecycle has durable evidence, prepare a recurring
+   low-frequency fixed Paper baseline using the existing intent, route, risk,
+   and reconciliation boundaries. It must collect execution evidence, not
+   promote a model or infer profitability from one outcome.
 
 ## Durable Constraints
 
@@ -166,3 +173,5 @@ existing virtual-only route; no stale account snapshot or historical Data
 receipt may act as its permission or order input.
 The next fresh QQQ receipt must still re-read the current Paper account and
 fresh quote at its own call site before a canary is prepared.
+The later recurring baseline must use the same call-time technical checks and
+never reuse a stale account projection or an unknown exact intent.

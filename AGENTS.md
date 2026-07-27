@@ -106,6 +106,22 @@ Codex is the product-development lead and integrator.
   Record only the resulting shared fact or improvement in
   `agents/orchestration.md`. This is a scheduling discipline, not a new gate,
   report, or durable approval role.
+- When a **company objective** is materially blocked rather than merely one
+  lane being deferred, write one compact `blocked-goal alternatives` entry in
+  `agents/orchestration.md`, not a new report or goal file. It states the exact
+  blocking fact, original plan, two to four ready alternative packages with
+  owners/resources, strongest kill test, and the next recovery action. Ask
+  Claude for a concise falsification-first challenge of that record, then
+  immediately dispatch every non-conflicting package that remains inside
+  standing authority. `review_unavailable` is evidence about Claude only; it
+  never recreates the blocked state or turns an external wait into foreground
+  idle.
+- For a reversible, no-cost decision already inside the operator's standing
+  authority, Codex may act when its conclusion and Claude's
+  `supported-with-limits` conclusion agree. Claude can narrow a recommendation
+  but cannot grant a reserved authority. Paid commitments, unclear rights,
+  public exposure, major runtime replacement, `KIS_LIVE_*`, live capital, and
+  material live-risk changes still require explicit operator authority.
 - Separate fast feedback from authoritative verification. Focused, independent
   test groups may run concurrently only after their test artifacts, control
   roots, Docker services, and mutable environment are known not to conflict.
@@ -271,6 +287,16 @@ existing orchestration projection. It cannot create an approval gate, second
 goal, strategy decision, execution decision, standing worker, or a separate
 Markdown history.
 
+### Blocked-Goal Alternatives
+
+A material goal block is the absence of a ready package that can advance the
+named company outcome because of an external wait, unmeasured capability, or
+unresolved technical contradiction. A lane-local cooldown, stale input, or
+source-limited cursor is not a company block when another package is ready.
+The compact alternative record lives only in the existing orchestration
+projection. It is a dispatch/recovery aid, not a recurring report, approval
+gate, second goal, or strategy selection mechanism.
+
 ### Review And Claude
 
 Review is a lightweight checkpoint, not a durable queue. At goal integration,
@@ -334,6 +360,11 @@ Do not use fixed lane percentages or forced lane rotation.
 9. A genuinely unknown capability is resolved by a scoped probe; its result
    cannot create an authority hold or override a documented or evidence-backed
    rate, correctness, or recovery control.
+10. Once a useful data-capability probe establishes continuation semantics,
+    Data converts that exact scope into a durable cursor queue when the active
+    engine loop needs more coverage. Do not repeat small probes in place of
+    sustained collection, and do not use an uncontrolled parallel flood to
+    bypass a measured per-account provider pace.
 
 A readiness condition must name the exact consumer or promotion it controls.
 For example, a prospective-data pair may block only its pair-dependent
@@ -404,6 +435,15 @@ lead to resumable backfill work without another operator approval. The cache
 must remain local and unserved: no publication, redistribution, or third-party
 API/dashboard exposure. Stop the affected cache and escalate if an applicable
 KIS or exchange term is found to prohibit storage or retention.
+
+For an active KIS intraday coverage loop, keep canonical `1m` provider data in
+the external cache and derive `5m`, `10m`, `1h`, and `3h` views locally from
+the same qualified session input. Direct daily history remains a separate
+source contract. After a useful reach/continuation probe, use one durable
+per-account dispatcher with fresh market-session work ahead of historical
+backfill; otherwise-unused measured request capacity advances durable cursors.
+The dispatcher is a Data resource, not a general scheduler platform or a
+reason for Research or Execution to wait.
 
 Paper work has no profitability, report, dashboard, trade-count, raw-retention,
 or manual-capital-approval gate. Keep only the technical invariants that make a
