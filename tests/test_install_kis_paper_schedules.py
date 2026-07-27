@@ -41,6 +41,12 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "docker-compose.yml" in source
     assert '[string]$ProjectRoot = (Join-Path $PSScriptRoot "..")' in source
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
+    assert "[string[]]$ScheduleName = @()" in source
+    assert "$requestedNames = @($ScheduleName | Select-Object -Unique)" in source
+    assert "Unknown local Docker schedule name(s)" in source
+    assert "$selectedSchedules = @(\n        $schedules | Where-Object" in source
+    assert "-Schedules $selectedSchedules" in source
+    assert "foreach ($schedule in $selectedSchedules)" in source
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
     assert "run --rm --no-deps --pull never $($schedule.Service)" in source
     assert "Build-LocalDockerScheduleImages" in source

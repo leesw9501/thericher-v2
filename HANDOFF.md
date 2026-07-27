@@ -226,6 +226,12 @@ authorized private KIS Paper work.
   The 90-minute runtime selector is distinct from the 390-minute coverage
   observer, and a fresh receipt remains a Data/Execution fact rather than a
   company hold.
+- At 05:45 KST on 2026-07-28, only that existing task was rebuilt and updated
+  through the scoped installer. Its action still targets the local runner with
+  four triggers, `IgnoreNew`, `StartWhenAvailable`, and a 90-minute limit; its
+  last-run and next-due facts remained 04:31 and 06:20 KST. The deployment built
+  local images only and did not invoke KIS, a container, a Paper account, or a
+  broker action.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.

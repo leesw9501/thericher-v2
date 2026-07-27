@@ -7,7 +7,9 @@ second goal.
 ## Current Cross-Lane View
 
 - **Data:** the installed prospective scheduler owns its next due time and its
-  own current-head collection. The rebuilt route recovered a clean 19:48Z
+  own current-head collection. At 05:45 KST on 2026-07-28 its five local chain
+  images were rebuilt and its one existing task was updated in place, with no
+  container or KIS call. The rebuilt route recovered a clean 19:48Z
   QQQ/SPY head capture after the earlier exact conflict: generation 22 has
   nine retained `head` chunk records per target and no current conflict origin
   or reason. The QQQ route
@@ -32,17 +34,18 @@ second goal.
 
 ## Current Bottleneck
 
-The source-safe current-freshness contract and deterministic boundaries are
-complete. The next evidence gap is deployment of that already-tested image to
-the existing lane-owned schedule plus another regular-session observation. The
-completed 19:22:46Z and 19:48:57Z QQQ routes were both correctly stale under
-the fixed two-minute budget; that is not evidence to widen it, and it remains
+The source-safe current-freshness contract, deterministic boundaries, and
+in-place schedule deployment are complete. The next evidence gap is one natural
+regular-session observation from the worker-owned 06:20 KST trigger. The
+completed 19:22:46Z and 19:48:57Z QQQ routes were both correctly stale under the
+fixed two-minute budget; that is not evidence to widen it, and it remains
 independent of every model claim or Paper-order target.
 
 ## External Waits
 
-- The scheduled intraday head owns its next fresh QQQ observation. It is normal
-  lane-owned collection, not a foreground company wait.
+- The scheduled intraday head owns its 2026-07-28 06:20 KST next fresh QQQ
+  observation. It is normal lane-owned collection, not a foreground company
+  wait.
 - Claude CLI OAuth is expired. Retry only at the next material decision
   boundary; no lane foreground-waits on it.
 
@@ -59,7 +62,6 @@ failure to that item and keep independent packages moving.
 
 ## Next Handoff
 
-Install the rebuilt image into the existing lane-owned schedule, then let it
-add regular-session evidence. Preserve the prospective scheduler as asynchronous
-work; do not turn a stale or conflicted classification into an approval, order,
-or global wait.
+Let the already-deployed lane-owned schedule add regular-session evidence.
+Preserve the prospective scheduler as asynchronous work; do not turn a stale or
+conflicted classification into an approval, order, or global wait.

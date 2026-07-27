@@ -51,6 +51,13 @@ Live remains unavailable.
   account/quote path at the first boundary or submit at the final boundary.
   The two-minute limit applies only to this current QQQ runtime/Paper route;
   offline Research campaigns retain their explicit campaign-owned age inputs.
+- At 05:45 KST on 2026-07-28, the selection-scoped scheduler installer rebuilt
+  the five intraday-head chain images and updated only the existing named task.
+  Its task action still points to the local runner, retains four triggers,
+  `IgnoreNew`, `StartWhenAvailable`, and the 90-minute limit; its pre/post last
+  run remained 04:31 KST and its next due remained 06:20 KST. The deployment
+  itself did not start a container, create an account/quote/order call, or alter
+  a Paper intent.
 
 - local_paper, kis_paper, and kis_live remain separate routes. Local simulated
   fills retain source: local_paper.
@@ -223,9 +230,9 @@ construct a replacement intent merely because a collection retry is scheduled.
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next bounded package deploys this verified contract to the existing
-lane-owned schedule and observes a future regular-session result without
-forcing an intent. When a fresh QQQ receipt is eligible, its canary must use a
+The verified contract is deployed to the existing lane-owned schedule; observe
+its future regular-session result without forcing an intent. When a fresh QQQ
+receipt is eligible, its canary must use a
 new exact durable Paper intent and re-read the current Paper account and fresh
 quote at its own call site; no stale account snapshot or historical Data receipt
 may act as permission or order input.

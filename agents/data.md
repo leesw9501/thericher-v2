@@ -84,6 +84,12 @@ strict-reject-only rather than being inferred as head observations.
   account, or broker body. It proves that legacy session evidence can be
   revalidated under the new contract; it does not retroactively edit that
   immutable session receipt.
+- At 05:45 KST on 2026-07-28, the scoped installer rebuilt the five local
+  intraday-head chain images and updated only the existing
+  `thericher-kis-paper-intraday-head` task. The pre/post task facts stayed
+  `Ready`, last run 04:31 KST, and next due 06:20 KST: deployment did not run a
+  container, call KIS, or alter the cache. That next due time belongs to the
+  installed Data worker, not the foreground.
 
 - The isolated KIS Paper daily-universe probe pinned the official current
   directory manifest `sha256:129e...aecea4`, the NAS listing file
@@ -390,7 +396,9 @@ regular-session evidence supports a separately reviewed adjustment.
 Preserve the frozen six-symbol source separately. Continue the fresh prospective
 QQQ intraday completed-bar schedule for the named baseline and let its next
 regular-session observation emit the current freshness field through the
-installed image. The completed QQQ/NAS and SPY/AMS prior-day probes do not
+installed image. At this handoff the worker-owned `next_due` is 2026-07-28
+06:20 KST; do not manually trigger a duplicate run. The completed QQQ/NAS and
+SPY/AMS prior-day probes do not
 support cursor collection; any later historical-minute attempt needs a separate
 endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or

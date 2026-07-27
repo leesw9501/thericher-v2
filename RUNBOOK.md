@@ -767,6 +767,19 @@ limit, below its shortest 109-minute trigger gap. Do not manually start a
 duplicate run to compensate for a missed window; inspect the task result and
 use the existing owned recovery path.
 
+To rebuild and update only an already installed named task after a local code
+change, use the scoped installer selector:
+
+```powershell
+.\scripts\install_kis_paper_schedules.ps1 `
+  -ScheduleName thericher-kis-paper-intraday-head
+```
+
+It validates the name before invoking Docker, rebuilds only the selected task's
+local services, and updates only that task definition; it does not run the
+service. Confirm the task exists first and use `-WhatIf` when reviewing the
+scope. Leaving out `-ScheduleName` retains the installer's all-task behavior.
+
 The same named task dispatches the credential-bearing data collector, one
 virtual-only `kis-paper-prospective-qqq-session`, the offline
 `kis-paper-prospective-qqq-validation`, an optional older pair-bound

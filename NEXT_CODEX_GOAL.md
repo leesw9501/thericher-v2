@@ -2,59 +2,59 @@
 
 ## Objective
 
-Deploy the verified QQQ runtime-freshness contract to the one existing private
-KIS Paper intraday-head schedule, then prove its scheduled action uses the
-rebuilt local image without creating a duplicate task, KIS call, or broker
-action.
+Reconcile the first natural QQQ runtime-freshness cycle after the scoped
+intraday-head schedule deployment, using only source-safe task, terminal,
+session, and validation facts.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `RUNBOOK.md`, and the active stateboards.
-2. Inspect only the named schedule, its runner, its Docker profile, and
-   source-safe task metadata. Do not inspect raw market rows, account data, or
-   credentials.
-3. Treat the existing `runtime-freshness-v2` validation artifact as completion
-   evidence for the prior objective, not as a current-market input.
+2. Inspect the one existing `thericher-kis-paper-intraday-head` task before
+   interpreting its output. Its natural next due time is worker-owned; do not
+   manually invoke, duplicate, disable, or reschedule it.
+3. Treat the prior `runtime-freshness-v2` reattachment as historical evidence,
+   not a fresh market input.
 
 ## Work
 
-1. **Infra/Execution:** use the existing schedule installer to rebuild its
-   named local Docker services and update only the existing
-   `thericher-kis-paper-intraday-head` task definition. Keep its runner,
-   trigger cadence, ownership, `IgnoreNew`, and recovery behavior intact. Do
-   not create a second task, manually trigger a duplicate run, or change a
-   route authority.
-2. **Validation:** inspect the installed task action and the relevant Compose
-   service definition to prove that a due run uses the rebuilt local image and
-   the same virtual-only/session/validator chain. This is a configuration proof,
-   not a market-session observation.
-3. **Data:** record only source-safe deployment evidence and the named worker's
-   next due fact. A future regular-session observation belongs to the installed
-   worker; do not foreground-wait for it.
-4. **Execution:** retain the current two-minute QQQ runtime/Paper deadline.
-   Do not invoke a standalone account, quote, order, cancel, or reconciliation
-   call just to manufacture a result. The next due worker may naturally produce
-   its existing truthful no-intent or Paper lifecycle.
+1. **Data:** after one natural post-deployment task reaches a terminal state,
+   read only the allowlisted head-index and terminal receipt metadata needed to
+   establish the scheduled run identity, categorical collection status, cache
+   generation/counts, and conflict state. Do not print or copy raw rows.
+2. **Execution:** read only the paired source-safe QQQ session and validator
+   outcome fields needed to establish whether the fresh runtime deadline yielded
+   a truthful no-intent, local replay, or virtual-Paper lifecycle. Never force a
+   new account, quote, order, cancellation, or reconciliation request to make a
+   result appear.
+3. **Validation:** prove that the observed terminal receipt is newer than the
+   scoped deployment, links only to the named worker chain, and did not create a
+   second scheduled task or unknown duplicate intent. Reattest the validator
+   only if its own normal worker path produced an exact session identity.
+4. If the worker is still running or has a scoped technical failure, preserve
+   its source-safe task state and classify only that worker's recovery path. Do
+   not foreground-wait, manually retry it, widen the two-minute deadline, or
+   turn its outcome into a model result.
 
 ## Boundaries
 
-- `KIS_PAPER_*` remains standing-authorized only through the named scheduled
-  paths. Do not read or route `KIS_LIVE_*`.
-- No live behavior, cost, public service, raw-row disclosure, model promotion,
-  or threshold widening.
-- No new Windows scheduler, cron, polling loop, or foreground wait.
+- `KIS_PAPER_*` remains standing-authorized only through the installed worker.
+  Do not read or route `KIS_LIVE_*`.
+- No manual KIS/broker call, no new scheduler, no duplicate task, no paid work,
+  no raw-row/account/broker-body disclosure, and no live behavior.
+- A scheduler due time, stale input, no-intent, or scoped recovery result is not
+  an operator approval hold or a stop for other ready lanes.
 - Keep market data under `D:\market_data` and artifacts under
   `D:\thericher-v2\model-artifacts`.
 
 ## Completion
 
-- The existing task is updated in place and its source-safe action/profile
-  proof shows the rebuilt virtual-only route.
-- The deployment creates no KIS/broker invocation, new task, secret output, or
-  raw-market artifact.
-- Stateboards identify the future observation as worker-owned `next_due`, not a
-  company hold.
+- One source-safe post-deployment terminal state is classified as `complete`,
+  `recovery`, or still-running with an exact owner and next recovery action.
+- The named task's runner, trigger count, `IgnoreNew`, and virtual-only route
+  remain intact; no duplicate task or manually manufactured call exists.
+- Stateboards identify the actual evidence and the next ready independent work,
+  not a foreground wait.
 
 ## Verification
 
@@ -70,4 +70,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Deploy QQQ runtime freshness schedule`
+`Reconcile scheduled QQQ freshness cycle`

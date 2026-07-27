@@ -1,6 +1,7 @@
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "Medium")]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [string[]]$ScheduleName = @()
 )
 
 $ErrorActionPreference = "Stop"
@@ -124,13 +125,26 @@ $schedules = @(
     }
 )
 
-Write-Host "Installing local Docker schedules for: $resolvedProjectRoot"
-
-if ($PSCmdlet.ShouldProcess($resolvedProjectRoot, "build scheduled Docker service images")) {
-    Build-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot -Schedules $schedules
+$selectedSchedules = @($schedules)
+if ($ScheduleName.Count -gt 0) {
+    $requestedNames = @($ScheduleName | Select-Object -Unique)
+    $knownNames = @($schedules | ForEach-Object { [string]$_.Name })
+    $unknownNames = @($requestedNames | Where-Object { $_ -notin $knownNames })
+    if ($unknownNames.Count -gt 0) {
+        throw "Unknown local Docker schedule name(s): $($unknownNames -join ', ')"
+    }
+    $selectedSchedules = @(
+        $schedules | Where-Object { $_.Name -in $requestedNames }
+    )
 }
 
-foreach ($schedule in $schedules) {
+Write-Host "Installing local Docker schedules for: $($selectedSchedules.Name -join ', ')"
+
+if ($PSCmdlet.ShouldProcess($resolvedProjectRoot, "build scheduled Docker service images")) {
+    Build-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot -Schedules $selectedSchedules
+}
+
+foreach ($schedule in $selectedSchedules) {
     if ($schedule.ContainsKey("Runner")) {
         $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.Runner)"
         if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
