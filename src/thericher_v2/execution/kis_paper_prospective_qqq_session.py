@@ -21,9 +21,10 @@ from typing import Literal
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.kis_paper_intraday import load_verified_kis_paper_private_intraday_catalog
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    KisPaperIntradayRuntimeFreshness,
     select_kis_paper_intraday_runtime_window,
 )
-from thericher_v2.research.kis_paper_baseline import KIS_PAPER_BASELINE_MAX_AGE
 from thericher_v2.research.kis_paper_prospective_loop import (
     KisPaperProspectiveLoopResult,
     run_kis_paper_prospective_loop,
@@ -82,6 +83,8 @@ class KisPaperProspectiveQqqSessionOutcome:
     loop: KisPaperProspectiveLoopResult | None
     position_resolution: object | None = None
     prepared: PaperDecisionBridgeResult | None = None
+    pre_account_freshness: KisPaperIntradayRuntimeFreshness | None = None
+    pre_submit_freshness: KisPaperIntradayRuntimeFreshness | None = None
     canary: KisPaperCanaryOutcome | None = None
     schema_version: int = SCHEMA_VERSION
 
@@ -101,6 +104,31 @@ class KisPaperProspectiveQqqSessionOutcome:
             raise ValueError("completed canary session requires a canary outcome")
         if self.status != "canary_completed" and self.canary is not None:
             raise ValueError("no-intent session cannot carry a canary outcome")
+        if (
+            self.pre_account_freshness is not None or self.pre_submit_freshness is not None
+        ) and self.loop is None:
+            raise ValueError("execution freshness requires a runtime loop")
+        if self.reason_code == "runtime_window_expired_before_account":
+            if (
+                self.status != "no_intent"
+                or self.pre_account_freshness is None
+                or self.pre_account_freshness.category != "over_budget"
+            ):
+                raise ValueError("pre-account expiry evidence is invalid")
+        elif self.pre_account_freshness is not None:
+            raise ValueError("pre-account freshness is only valid for account-boundary expiry")
+        if self.reason_code == "runtime_window_expired_during_preparation":
+            if (
+                self.status != "no_intent"
+                or self.pre_submit_freshness is None
+                or self.pre_submit_freshness.category != "over_budget"
+            ):
+                raise ValueError("pre-submit expiry evidence is invalid")
+        elif self.pre_submit_freshness is not None:
+            if self.status != "canary_completed" or not self.pre_submit_freshness.current:
+                raise ValueError("pre-submit freshness is invalid")
+        elif self.status == "canary_completed":
+            raise ValueError("completed canary requires pre-submit freshness")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
     def safe_payload(self) -> dict[str, object]:
@@ -117,6 +145,16 @@ class KisPaperProspectiveQqqSessionOutcome:
             "loop": None if self.loop is None else self.loop.safe_payload(),
             "position_resolution": _safe_payload_or_none(self.position_resolution),
             "prepared": None if self.prepared is None else self.prepared.safe_payload(),
+            "pre_account_freshness": (
+                None
+                if self.pre_account_freshness is None
+                else self.pre_account_freshness.safe_payload()
+            ),
+            "pre_submit_freshness": (
+                None
+                if self.pre_submit_freshness is None
+                else self.pre_submit_freshness.safe_payload()
+            ),
             "canary": None if self.canary is None else self.canary.safe_payload(),
         }
 
@@ -165,7 +203,7 @@ def run_kis_paper_prospective_qqq_session(
         window = select_kis_paper_intraday_runtime_window(
             catalog,
             as_of=observed_at,
-            max_age=KIS_PAPER_BASELINE_MAX_AGE,
+            max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
         )
         loop = run_kis_paper_prospective_loop(
             window,
@@ -247,6 +285,20 @@ def run_kis_paper_prospective_qqq_session(
             loop=loop,
         )
 
+    pre_account_freshness = loop.window.freshness_at(
+        as_of=_session_now(now=now, clock=clock)
+    )
+    if not pre_account_freshness.current:
+        return _record(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="runtime_window_expired_before_account",
+            observed_at=observed_at,
+            evidence_path=evidence_path,
+            loop=loop,
+            pre_account_freshness=pre_account_freshness,
+        )
+
     try:
         resolved_client = client
         if resolved_client is None:
@@ -322,6 +374,22 @@ def run_kis_paper_prospective_qqq_session(
             prepared=prepared,
         )
 
+    pre_submit_freshness = loop.window.freshness_at(
+        as_of=_session_now(now=now, clock=clock)
+    )
+    if not pre_submit_freshness.current:
+        return _record(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="runtime_window_expired_during_preparation",
+            observed_at=observed_at,
+            evidence_path=evidence_path,
+            loop=loop,
+            position_resolution=position_resolution,
+            prepared=prepared,
+            pre_submit_freshness=pre_submit_freshness,
+        )
+
     canary = run_kis_paper_receipt_canary(
         prepared,
         environment=environment,
@@ -337,7 +405,10 @@ def run_kis_paper_prospective_qqq_session(
         client=resolved_client,
         now=now,
         clock=clock,
-        submit_permitted=is_us_equity_regular_session_window,
+        submit_permitted=lambda submit_at: (
+            is_us_equity_regular_session_window(submit_at)
+            and loop.window.freshness_at(as_of=submit_at).current
+        ),
         execution_control_path=execution_control_path,
     )
     if canary.run_id != receipt_canary_run_id(prepared.receipt_ref):
@@ -351,6 +422,7 @@ def run_kis_paper_prospective_qqq_session(
         loop=loop,
         position_resolution=position_resolution,
         prepared=prepared,
+        pre_submit_freshness=pre_submit_freshness,
         canary=canary,
     )
 
@@ -365,6 +437,8 @@ def _record(
     loop: KisPaperProspectiveLoopResult | None = None,
     position_resolution: object | None = None,
     prepared: PaperDecisionBridgeResult | None = None,
+    pre_account_freshness: KisPaperIntradayRuntimeFreshness | None = None,
+    pre_submit_freshness: KisPaperIntradayRuntimeFreshness | None = None,
     canary: KisPaperCanaryOutcome | None = None,
 ) -> KisPaperProspectiveQqqSessionOutcome:
     outcome = KisPaperProspectiveQqqSessionOutcome(
@@ -376,6 +450,8 @@ def _record(
         loop=loop,
         position_resolution=position_resolution,
         prepared=prepared,
+        pre_account_freshness=pre_account_freshness,
+        pre_submit_freshness=pre_submit_freshness,
         canary=canary,
     )
     _write_json_atomically(outcome.evidence_path, outcome.safe_payload())

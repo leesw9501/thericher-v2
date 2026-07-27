@@ -25,11 +25,15 @@ from thericher_v2.data.kis_capability import (
     KisMarketDataCapability,
     trusted_kis_paper_baseline_qualifications,
 )
+from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+)
 from thericher_v2.data.resample import resample_bars
 
 KIS_PAPER_BASELINE_SCHEMA_ID = "kis-paper-baseline-1m-90-v1"
 KIS_PAPER_BASELINE_M1_BARS = 90
-KIS_PAPER_BASELINE_MAX_AGE = timedelta(minutes=2)
+# Compatibility alias for runtime callers; offline campaigns pass their own age.
+KIS_PAPER_BASELINE_MAX_AGE = KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE
 KIS_PAPER_BASELINE_TARGET_EXPOSURE = Decimal("0.05")
 KIS_PAPER_BASELINE_REDUCED_EXPOSURE = Decimal("0.025")
 KIS_PAPER_BASELINE_MARKET = "US"

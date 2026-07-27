@@ -22,6 +22,7 @@ from thericher_v2.execution.kis_paper_prospective_qqq_session import (
 )
 from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY,
+    KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
     validate_kis_paper_prospective_qqq_session,
 )
 from thericher_v2.research.kis_paper_prospective_loop import run_kis_paper_prospective_loop
@@ -70,6 +71,10 @@ def test_recomputes_ready_window_and_local_paper_replay_without_external_access(
     rendered = result.evidence_path.read_text(encoding="ascii")
     assert result.evidence_path.is_relative_to(
         artifact_root / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
+    )
+    assert result.evidence_path.parent.name == KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
+    assert result.safe_payload()["validation_contract"] == (
+        KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
     )
     assert "100.000" not in rendered
     assert '"price"' not in rendered
@@ -156,6 +161,278 @@ def test_stale_window_is_a_valid_target_local_no_intent_fact(
     assert result.runtime_window["status"] == "stale"
     assert result.local_paper_replay is None
     assert result.canary_present is False
+
+
+def test_accepts_legacy_runtime_window_payload_without_freshness(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    legacy_loop = loop.safe_payload()
+    legacy_window = legacy_loop["window"]
+    assert isinstance(legacy_window, dict)
+    legacy_window.pop("freshness")
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-legacy-freshness",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=legacy_loop,
+        status="no_intent",
+        reason_code="account_unavailable",
+        include_freshness_fields=False,
+    )
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id="prospective-qqq-validation-legacy-freshness",
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert result.runtime_window is not None
+    assert result.runtime_window["freshness"]["lag_category"] == "within_budget"
+
+
+def test_validates_pre_account_expiry_against_the_recomputed_window(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    pre_account_freshness = loop.window.freshness_at(
+        as_of=catalog.bars[-1].end_ts + timedelta(minutes=2, microseconds=1)
+    ).safe_payload()
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-pre-account-freshness",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="runtime_window_expired_before_account",
+        pre_account_freshness=pre_account_freshness,
+    )
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id="prospective-qqq-validation-pre-account-freshness",
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert result.session_status == "no_intent"
+    assert result.canary_present is False
+
+
+def test_revalidation_keeps_legacy_validation_evidence_immutable(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    session_id = "prospective-qqq-validation-contract-revision"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    _write_session(
+        artifact_root,
+        session_id=session_id,
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="account_unavailable",
+    )
+    legacy_path = (
+        artifact_root
+        / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
+        / f"{session_id}.json"
+    )
+    legacy_path.parent.mkdir(parents=True, exist_ok=True)
+    legacy_rendered = '{"legacy_validation_contract":true}\n'
+    legacy_path.write_text(legacy_rendered, encoding="ascii")
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id=session_id,
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    repeated = validate_kis_paper_prospective_qqq_session(
+        session_id=session_id,
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert legacy_path.read_text(encoding="ascii") == legacy_rendered
+    assert result.evidence_path != legacy_path
+    assert result.evidence_path.parent.name == KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
+    assert repeated.evidence_path == result.evidence_path
+    assert repeated.validation_identity == result.validation_identity
+
+
+def test_validates_pre_submit_freshness_against_the_recomputed_window(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    pre_submit_freshness = loop.window.freshness_at(
+        as_of=catalog.bars[-1].end_ts + timedelta(minutes=2, microseconds=1)
+    ).safe_payload()
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-pre-submit-freshness",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="runtime_window_expired_during_preparation",
+        position_resolution={"paper_only": True},
+        prepared={"route": "kis_paper", "status": "ready"},
+        pre_submit_freshness=pre_submit_freshness,
+    )
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id="prospective-qqq-validation-pre-submit-freshness",
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert result.session_status == "no_intent"
+    assert result.canary_present is False
+
+
+def test_rejects_no_intent_with_a_non_paper_prepared_route(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-no-intent-non-paper",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="receipt_preparation_unavailable",
+        prepared={"route": "live", "status": "no_intent"},
+    )
+
+    with pytest.raises(ValueError, match="prepared route is invalid"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-no-intent-non-paper",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_no_intent_with_a_non_paper_position_route(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-no-intent-non-paper-position",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="target_bridge_mismatch",
+        position_resolution={"paper_only": False},
+        prepared={"route": "kis_paper", "status": "ready"},
+    )
+
+    with pytest.raises(ValueError, match="position route is invalid"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-no-intent-non-paper-position",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_expiry_reason_with_current_pre_submit_freshness(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    pre_submit_freshness = loop.window.freshness_at(
+        as_of=catalog.bars[-1].end_ts
+    ).safe_payload()
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-current-expiry",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="runtime_window_expired_during_preparation",
+        position_resolution={"paper_only": True},
+        prepared={"route": "kis_paper", "status": "ready"},
+        pre_submit_freshness=pre_submit_freshness,
+    )
+
+    with pytest.raises(ValueError, match="pre-submit expiry freshness is inconsistent"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-current-expiry",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_pre_submit_freshness_before_the_session_observation(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    pre_submit_freshness = loop.window.freshness_at(
+        as_of=catalog.bars[-1].end_ts - timedelta(microseconds=1)
+    ).safe_payload()
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-pre-submit-before-observation",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="runtime_window_expired_during_preparation",
+        position_resolution={"paper_only": True},
+        prepared={"route": "kis_paper", "status": "ready"},
+        pre_submit_freshness=pre_submit_freshness,
+    )
+
+    with pytest.raises(ValueError, match="pre-submit freshness precedes"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-pre-submit-before-observation",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
 
 
 def test_rejects_a_completed_canary_with_a_non_paper_prepared_route(
@@ -303,7 +580,10 @@ def _write_session(
     reason_code: str,
     position_resolution: dict[str, object] | None = None,
     prepared: dict[str, object] | None = None,
+    pre_account_freshness: dict[str, object] | None = None,
+    pre_submit_freshness: dict[str, object] | None = None,
     canary: dict[str, object] | None = None,
+    include_freshness_fields: bool = True,
 ) -> Path:
     payload = {
         "schema_version": 1,
@@ -318,6 +598,9 @@ def _write_session(
         "prepared": prepared,
         "canary": canary,
     }
+    if include_freshness_fields:
+        payload["pre_account_freshness"] = pre_account_freshness
+        payload["pre_submit_freshness"] = pre_submit_freshness
     path = (
         artifact_root
         / KIS_PAPER_PROSPECTIVE_QQQ_SESSION_ARTIFACT_DIRECTORY

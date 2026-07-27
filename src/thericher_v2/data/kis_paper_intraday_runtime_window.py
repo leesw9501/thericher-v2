@@ -17,6 +17,8 @@ KIS_PAPER_INTRADAY_RUNTIME_WINDOW_SCHEMA_ID = "kis-paper-intraday-runtime-window
 KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M1_BARS = 90
 KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M5_BARS = 18
 KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M10_BARS = 9
+# This deadline governs only the current QQQ runtime/Paper route.
+KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE = timedelta(minutes=2)
 
 _KIS_PAPER_QQQ_NAS_M1_CATALOG_PREFIX = "kis.paper.private.intraday.qqq.nas.m1."
 _RUNTIME_WINDOW_STATUSES = frozenset(
@@ -39,6 +41,64 @@ _RuntimeWindowStatus = Literal[
     "future",
     "misaligned",
 ]
+_FreshnessCategory = Literal[
+    "candidate_unavailable",
+    "future",
+    "within_budget",
+    "at_budget",
+    "over_budget",
+]
+
+
+@dataclass(frozen=True, slots=True)
+class KisPaperIntradayRuntimeFreshness:
+    """Source-safe freshness fact for one completed runtime-window candidate."""
+
+    completed_window_end: datetime | None
+    observed_at: datetime
+    max_age: timedelta = field(repr=False)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "observed_at", _utc_datetime(self.observed_at, "observed_at"))
+        if self.completed_window_end is not None:
+            object.__setattr__(
+                self,
+                "completed_window_end",
+                _utc_datetime(self.completed_window_end, "completed_window_end"),
+            )
+        _require_positive_age(self.max_age)
+
+    @property
+    def lag(self) -> timedelta | None:
+        if self.completed_window_end is None or self.completed_window_end > self.observed_at:
+            return None
+        return self.observed_at - self.completed_window_end
+
+    @property
+    def category(self) -> _FreshnessCategory:
+        if self.completed_window_end is None:
+            return "candidate_unavailable"
+        if self.completed_window_end > self.observed_at:
+            return "future"
+        assert self.lag is not None
+        if self.lag < self.max_age:
+            return "within_budget"
+        if self.lag == self.max_age:
+            return "at_budget"
+        return "over_budget"
+
+    @property
+    def current(self) -> bool:
+        return self.category in {"within_budget", "at_budget"}
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "completed_window_end": _optional_utc_marker(self.completed_window_end),
+            "route_observed_at": _utc_marker(self.observed_at),
+            "lag_microseconds": None if self.lag is None else _timedelta_microseconds(self.lag),
+            "lag_category": self.category,
+            "selected_budget_microseconds": _timedelta_microseconds(self.max_age),
+        }
 
 
 @dataclass(frozen=True, slots=True)
@@ -115,8 +175,9 @@ class KisPaperIntradayRuntimeWindow:
             _validate_ready_window(self)
         elif self.decision_bars or self.replay_bar is not None:
             raise ValueError("unready runtime window must not expose bars")
-        elif self.status == "stale" and not has_window:
-            raise ValueError("stale runtime window requires candidate timing")
+        elif self.status == "stale":
+            if not has_window or self.freshness.category != "over_budget":
+                raise ValueError("stale runtime window requires an over-budget candidate")
         elif self.status != "stale" and has_window:
             raise ValueError("only ready or stale runtime windows may retain candidate timing")
 
@@ -158,9 +219,21 @@ class KisPaperIntradayRuntimeWindow:
             "replay_bar_end": (
                 None if self.replay_bar is None else _utc_marker(self.replay_bar.end_ts)
             ),
+            "freshness": self.freshness.safe_payload(),
             "source_catalog_hash": self.source_catalog_hash,
             "input_manifest_ref": self.input_manifest_ref,
         }
+
+    @property
+    def freshness(self) -> KisPaperIntradayRuntimeFreshness:
+        return self.freshness_at(as_of=self.as_of)
+
+    def freshness_at(self, *, as_of: datetime) -> KisPaperIntradayRuntimeFreshness:
+        return KisPaperIntradayRuntimeFreshness(
+            completed_window_end=self.window_end,
+            observed_at=as_of,
+            max_age=self.max_age,
+        )
 
 
 def select_kis_paper_intraday_runtime_window(
@@ -206,7 +279,12 @@ def select_kis_paper_intraday_runtime_window(
     candidate = _newest_candidate(regular_by_session)
     if candidate is not None:
         candidate_bars, session = candidate
-        if observed_at - candidate_bars[-1].end_ts > max_age:
+        freshness = KisPaperIntradayRuntimeFreshness(
+            completed_window_end=candidate_bars[-1].end_ts,
+            observed_at=observed_at,
+            max_age=max_age,
+        )
+        if not freshness.current:
             return _result(
                 status="stale",
                 catalog=catalog,
@@ -437,7 +515,7 @@ def _validate_ready_window(window: KisPaperIntradayRuntimeWindow) -> None:
     session = _regular_session_for(bars[0])
     if session is None or not _is_qualified_candidate(bars, session=session):
         raise ValueError("ready runtime window decision bars are invalid")
-    if window.window_end > window.as_of or window.as_of - window.window_end > window.max_age:
+    if not window.freshness.current:
         raise ValueError("ready runtime window freshness is invalid")
     if window.replay_bar is not None:
         replay = window.replay_bar

@@ -6445,3 +6445,36 @@ that genuinely change business, external, or live-risk authority. This keeps
 alternative work product-oriented rather than growing a separate report or
 approval system. Claude received the source-safe challenge for this refinement,
 but the local CLI OAuth session was expired, so no verdict was available.
+
+## 2026-07-28 - Bind QQQ Paper execution to a source-safe runtime deadline
+
+Decision: make the existing two-minute QQQ completed-bar freshness budget a
+Data-owned runtime/Paper contract, with an inclusive exact-boundary rule. The
+runtime-window projection now records only completed-window end, route
+observation time, lag category, and selected budget. A stale projection must
+contain an over-budget candidate; a ready projection must be within or exactly
+at the budget. This policy governs only the current QQQ runtime/Paper path;
+offline Research continues to own any explicitly supplied campaign age.
+
+The prospective QQQ session rechecks that contract before it constructs the
+Paper account client. It rechecks again after quote preparation, and the same
+freshness predicate is evaluated inside the existing canary lock immediately
+before a broker submission. The route therefore emits a source-safe no-intent
+when it expires before account access or during preparation, and stale data
+cannot pass the final submission predicate. No limit was widened, no model was
+selected, and no live route was added.
+
+The offline QQQ validator accepts a legacy session that lacks the new field,
+then writes a separate immutable `runtime-freshness-v2` result rather than
+overwriting a prior validation artifact. It validates every recorded freshness
+fact against the verified cache and its session reason. The 19:48Z QQQ stale
+session reattached under this contract with no network, credential, account,
+order, or replay mutation.
+
+Reason: one checked freshness timestamp was insufficient to prove that a
+current input stayed current across an account/quote/canary lifecycle. The
+contract makes the exact data deadline explicit while preserving local replay,
+Paper-only routing, legacy evidence, and the external artifact immutability
+model. A source-safe falsification-first Claude request was attempted before
+reliance on this execution-risk change, but the local OAuth session remained
+expired; its status is `review_unavailable`, not a private-work hold.

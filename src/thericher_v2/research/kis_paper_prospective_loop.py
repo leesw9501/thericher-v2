@@ -15,14 +15,16 @@ from thericher_v2.data.kis_capability import (
     KisMarketDataCapability,
     KisStorageRightsStatus,
 )
-from thericher_v2.data.kis_paper_intraday_runtime_window import KisPaperIntradayRuntimeWindow
+from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    KisPaperIntradayRuntimeWindow,
+)
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.kis_paper_baseline import (
-    KIS_PAPER_BASELINE_MAX_AGE,
     KIS_PAPER_BASELINE_SCHEMA_ID,
     KisPaperBaselineAuthorization,
     evaluate_kis_paper_baseline,
@@ -145,7 +147,7 @@ def run_kis_paper_prospective_loop(
         symbol="QQQ",
         market="US",
         as_of=window.as_of,
-        max_age=KIS_PAPER_BASELINE_MAX_AGE,
+        max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
         provisional_authorization=authorization,
     )
     receipt = _receipt_for(window=window, proposal=evaluation.proposal)
@@ -170,7 +172,7 @@ def _runtime_observed_capability(
 ) -> KisMarketDataCapability:
     if window.status != "ready":
         raise ValueError("runtime capability requires a ready window")
-    if window.max_age > KIS_PAPER_BASELINE_MAX_AGE:
+    if window.max_age > KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE:
         raise ValueError("runtime window exceeds the fixed baseline freshness budget")
     return KisMarketDataCapability(
         capability_id=(

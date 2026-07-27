@@ -9,6 +9,9 @@ from types import SimpleNamespace
 import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+)
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.execution.kis_paper_prospective_qqq_session import (
@@ -78,10 +81,19 @@ def test_flat_qqq_entry_reaches_only_the_receipt_canary_boundary(
         )
 
     def run_canary(prepared, **kwargs):
+        submit_permitted = kwargs["submit_permitted"]
         calls["canary"] = {
             "prepared": prepared,
             "execute": kwargs["execute"],
             "cancel_after_submit": kwargs["cancel_after_submit"],
+            "submission_permitted": (
+                submit_permitted(catalog.bars[-1].end_ts),
+                submit_permitted(
+                    catalog.bars[-1].end_ts
+                    + KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE
+                    + timedelta(microseconds=1)
+                ),
+            ),
         }
         return SimpleNamespace(
             run_id="receipt-" + prepared.receipt_ref.removeprefix("sha256:"),
@@ -123,6 +135,7 @@ def test_flat_qqq_entry_reaches_only_the_receipt_canary_boundary(
     assert calls["canary"] is not None
     assert calls["canary"]["execute"] is True
     assert calls["canary"]["cancel_after_submit"] is True
+    assert calls["canary"]["submission_permitted"] == (True, False)
     assert outcome.position_resolution is not None
     assert outcome.position_resolution.action == "buy"
     rendered = outcome.evidence_path.read_text(encoding="ascii")
@@ -158,6 +171,151 @@ def test_missing_runtime_window_never_reads_account_or_prepares_an_order(
     assert client.calls == []
     payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
     assert payload["loop"]["local_paper_replay"] is None
+    assert payload["canary"] is None
+
+
+def test_stale_runtime_window_never_reads_account_or_prepares_an_order(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(90)
+    _install_catalog(monkeypatch, catalog)
+    client = _FailClient()
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={"KIS_PAPER_APP_KEY": "not-used"},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        client=client,
+        now=catalog.bars[-1].end_ts + timedelta(minutes=2, microseconds=1),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "runtime_window_stale"
+    assert outcome.loop is not None
+    assert outcome.loop.window.freshness.category == "over_budget"
+    assert outcome.pre_account_freshness is None
+    assert outcome.pre_submit_freshness is None
+    assert client.calls == []
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["loop"]["window"]["freshness"]["lag_category"] == "over_budget"
+    assert payload["pre_account_freshness"] is None
+    assert payload["pre_submit_freshness"] is None
+    assert payload["canary"] is None
+
+
+def test_runtime_window_expiring_during_preparation_never_reaches_canary(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_catalog(monkeypatch, catalog)
+    client = _FlatQqqClient(captured_at=catalog.bars[-1].end_ts)
+    calls: list[datetime] = [
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts + timedelta(minutes=2, microseconds=1),
+    ]
+
+    def clock() -> datetime:
+        return calls.pop(0)
+
+    def prepare(receipt, *, limit_input, as_of):
+        assert receipt.decision_class == "enter"
+        assert limit_input is client.limit_input
+        assert as_of == catalog.bars[-1].end_ts
+        return SimpleNamespace(
+            status="ready",
+            receipt_ref=receipt_attribution_ref(receipt),
+            kis_paper_decision=SimpleNamespace(side="buy"),
+            safe_payload=lambda: {
+                "kind": "paper_decision_bridge_result",
+                "route": "kis_paper",
+                "status": "ready",
+            },
+        )
+
+    def fail_canary(*_args, **_kwargs):
+        raise AssertionError("expired runtime window must not reach the canary")
+
+    module = __import__(
+        "thericher_v2.execution.kis_paper_prospective_qqq_session",
+        fromlist=["placeholder"],
+    )
+    monkeypatch.setattr(module, "prepare_kis_paper_qqq_receipt_decision", prepare)
+    monkeypatch.setattr(module, "run_kis_paper_receipt_canary", fail_canary)
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={"KIS_PAPER_APP_KEY": "not-used"},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        client=client,
+        clock=clock,
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "runtime_window_expired_during_preparation"
+    assert outcome.pre_submit_freshness is not None
+    assert outcome.pre_submit_freshness.category == "over_budget"
+    assert client.calls == ["snapshot", "limit_input"]
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["pre_submit_freshness"]["lag_category"] == "over_budget"
+    assert payload["canary"] is None
+
+
+def test_runtime_window_expiring_before_account_never_constructs_a_kis_client(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_catalog(monkeypatch, catalog)
+    calls = [
+        catalog.bars[-1].end_ts,
+        catalog.bars[-1].end_ts + KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE + timedelta(microseconds=1),
+    ]
+
+    def clock() -> datetime:
+        return calls.pop(0)
+
+    def fail_client_construction(**_kwargs: object) -> None:
+        raise AssertionError("expired runtime input must not construct a KIS client")
+
+    module = __import__(
+        "thericher_v2.execution.kis_paper_prospective_qqq_session",
+        fromlist=["placeholder"],
+    )
+    monkeypatch.setattr(module, "KisPaperCanaryClient", fail_client_construction)
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        clock=clock,
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "runtime_window_expired_before_account"
+    assert outcome.pre_account_freshness is not None
+    assert outcome.pre_account_freshness.category == "over_budget"
+    assert outcome.pre_submit_freshness is None
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["pre_account_freshness"]["lag_category"] == "over_budget"
+    assert payload["prepared"] is None
     assert payload["canary"] is None
 
 

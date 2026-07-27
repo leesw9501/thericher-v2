@@ -15,18 +15,20 @@ from pathlib import Path
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.kis_paper_intraday import load_verified_kis_paper_private_intraday_catalog
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    KisPaperIntradayRuntimeWindow,
     select_kis_paper_intraday_runtime_window,
 )
 from thericher_v2.execution.kis_paper_prospective_qqq_session import (
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_ARTIFACT_DIRECTORY,
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_KIND,
 )
-from thericher_v2.research.kis_paper_baseline import KIS_PAPER_BASELINE_MAX_AGE
 
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND = "kis_paper_prospective_qqq_validation"
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY = (
     "validation/kis-paper-prospective-qqq-cycle"
 )
+KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID = "runtime-freshness-v2"
 KIS_PAPER_PROSPECTIVE_QQQ_HEAD_CACHE_ROOT = Path(
     r"D:\market_data\us_equities\kis_paper_private\intraday-head"
 )
@@ -50,6 +52,7 @@ class KisPaperProspectiveQqqValidation:
     local_paper_replay: dict[str, object] | None
     canary_present: bool
     evidence_path: Path
+    validation_contract: str
     validation_identity: str
 
     def safe_payload(self) -> dict[str, object]:
@@ -63,6 +66,7 @@ class KisPaperProspectiveQqqValidation:
             "runtime_window": self.runtime_window,
             "local_paper_replay": self.local_paper_replay,
             "canary_present": self.canary_present,
+            "validation_contract": self.validation_contract,
             "validation_identity": self.validation_identity,
             "claim": (
                 "offline cache-and-evidence validation; not a model promotion, "
@@ -93,7 +97,17 @@ def validate_kis_paper_prospective_qqq_session(
     session_bytes = session_path.read_bytes()
     _reject_unsafe_surface(session_bytes)
     payload = _json_object(session_bytes, "prospective QQQ session evidence")
-    observed_at, status, loop = _validate_session_envelope(payload, session_id=session_id)
+    (
+        observed_at,
+        status,
+        reason_code,
+        loop,
+        pre_account_freshness,
+        pre_submit_freshness,
+    ) = _validate_session_envelope(
+        payload,
+        session_id=session_id,
+    )
 
     runtime_window: dict[str, object] | None = None
     replay: dict[str, object] | None = None
@@ -104,12 +118,17 @@ def validate_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             cache_root=cache_root,
             repository_root=repository_root,
+            status=status,
+            reason_code=reason_code,
+            pre_account_freshness=pre_account_freshness,
+            pre_submit_freshness=pre_submit_freshness,
         )
         scope = "runtime_recomputed"
 
     identity_payload = {
         "schema_version": SCHEMA_VERSION,
         "kind": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND,
+        "validation_contract": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
         "session_id": session_id,
         "session_evidence_sha256": _sha256_bytes(session_bytes),
         "session_status": status,
@@ -126,9 +145,8 @@ def validate_kis_paper_prospective_qqq_session(
         runtime_window=runtime_window,
         local_paper_replay=replay,
         canary_present=payload["canary"] is not None,
-        evidence_path=(
-            root / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY / f"{session_id}.json"
-        ),
+        evidence_path=_validation_evidence_path(root=root, session_id=session_id),
+        validation_contract=KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
         validation_identity=_sha256_json(identity_payload),
     )
     _write_json_atomically(result.evidence_path, result.safe_payload())
@@ -151,7 +169,14 @@ def latest_kis_paper_prospective_qqq_session_id(*, artifact_root: Path) -> str:
 
 def _validate_session_envelope(
     payload: Mapping[str, object], *, session_id: str
-) -> tuple[datetime, str, Mapping[str, object] | None]:
+) -> tuple[
+    datetime,
+    str,
+    str,
+    Mapping[str, object] | None,
+    Mapping[str, object] | None,
+    Mapping[str, object] | None,
+]:
     if (
         payload.get("kind") != KIS_PAPER_PROSPECTIVE_QQQ_SESSION_KIND
         or payload.get("schema_version") != SCHEMA_VERSION
@@ -162,29 +187,57 @@ def _validate_session_envelope(
     status = payload.get("status")
     if status not in {"no_intent", "canary_completed"}:
         raise ValueError("prospective validator requires an execution-session outcome")
+    reason_code = payload.get("reason_code")
+    if not isinstance(reason_code, str):
+        raise ValueError("prospective QQQ session reason is invalid")
     observed_at = _parse_utc(payload.get("observed_at"), "prospective QQQ observed_at")
     loop = _object_or_none(payload.get("loop"), "prospective QQQ loop")
     canary = _object_or_none(payload.get("canary"), "prospective QQQ canary")
     prepared = _object_or_none(payload.get("prepared"), "prospective QQQ prepared decision")
     position = _object_or_none(payload.get("position_resolution"), "prospective QQQ position")
+    pre_account_freshness = _object_or_none(
+        payload.get("pre_account_freshness"),
+        "prospective QQQ pre-account freshness",
+    )
+    pre_submit_freshness = _object_or_none(
+        payload.get("pre_submit_freshness"),
+        "prospective QQQ pre-submit freshness",
+    )
+    if (pre_account_freshness is not None or pre_submit_freshness is not None) and loop is None:
+        raise ValueError("execution freshness requires a prospective QQQ loop")
+    if prepared is not None and prepared.get("route") != "kis_paper":
+        raise ValueError("prospective QQQ prepared route is invalid")
+    if position is not None and position.get("paper_only") is not True:
+        raise ValueError("prospective QQQ position route is invalid")
     if status == "no_intent":
         if canary is not None:
             raise ValueError("no-intent prospective QQQ session cannot carry a canary")
         if loop is None and (prepared is not None or position is not None):
             raise ValueError("catalog-recovery session evidence is inconsistent")
+        if reason_code == "runtime_window_expired_before_account" and (
+            pre_account_freshness is None or prepared is not None or position is not None
+        ):
+            raise ValueError("pre-account expiry session evidence is inconsistent")
+        if reason_code == "runtime_window_expired_during_preparation" and (
+            pre_submit_freshness is None or prepared is None or position is None
+        ):
+            raise ValueError("pre-submit expiry session evidence is inconsistent")
     else:
         if loop is None or canary is None or prepared is None or position is None:
             raise ValueError("completed prospective QQQ canary evidence is incomplete")
-        if (
-            prepared.get("route") != "kis_paper"
-            or position.get("paper_only") is not True
-            or canary.get("paper_only") is not True
-        ):
+        if canary.get("paper_only") is not True:
             raise ValueError("prospective QQQ prepared route is invalid")
         baseline = _object(loop.get("baseline"), "prospective QQQ baseline")
         if baseline.get("action") not in {"enter", "exit"}:
             raise ValueError("prospective QQQ canary has no eligible baseline action")
-    return observed_at, status, loop
+    return (
+        observed_at,
+        status,
+        reason_code,
+        loop,
+        pre_account_freshness,
+        pre_submit_freshness,
+    )
 
 
 def _recompute_loop(
@@ -193,6 +246,10 @@ def _recompute_loop(
     observed_at: datetime,
     cache_root: Path,
     repository_root: Path,
+    status: str,
+    reason_code: str,
+    pre_account_freshness: Mapping[str, object] | None,
+    pre_submit_freshness: Mapping[str, object] | None,
 ) -> tuple[dict[str, object], dict[str, object] | None]:
     if (
         loop.get("kind") != "kis_paper_prospective_loop"
@@ -211,11 +268,40 @@ def _recompute_loop(
     recomputed = select_kis_paper_intraday_runtime_window(
         catalog,
         as_of=observed_at,
-        max_age=KIS_PAPER_BASELINE_MAX_AGE,
+        max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
     )
     expected_window = recomputed.safe_payload()
-    if dict(stored_window) != expected_window:
+    legacy_expected_window = dict(expected_window)
+    legacy_expected_window.pop("freshness")
+    if (
+        dict(stored_window) != expected_window
+        and dict(stored_window) != legacy_expected_window
+    ):
         raise ValueError("stored prospective QQQ runtime window does not match verified cache")
+    pre_account_current = _validate_recorded_freshness(
+        pre_account_freshness,
+        field_name="pre-account",
+        recomputed=recomputed,
+        session_observed_at=observed_at,
+    )
+    pre_submit_current = _validate_recorded_freshness(
+        pre_submit_freshness,
+        field_name="pre-submit",
+        recomputed=recomputed,
+        session_observed_at=observed_at,
+    )
+    if reason_code == "runtime_window_expired_before_account":
+        if pre_account_current is not False or pre_submit_current is not None:
+            raise ValueError("pre-account expiry freshness is inconsistent")
+    elif pre_account_current is not None:
+        raise ValueError("pre-account freshness has an inconsistent session reason")
+    if reason_code == "runtime_window_expired_during_preparation":
+        if pre_submit_current is not False:
+            raise ValueError("pre-submit expiry freshness is inconsistent")
+    elif pre_submit_current is not None and not pre_submit_current:
+        raise ValueError("pre-submit freshness is stale for this session outcome")
+    if status == "canary_completed" and pre_submit_current is False:
+        raise ValueError("completed canary cannot retain stale pre-submit freshness")
     observed_marker = observed_at.isoformat().replace("+00:00", "Z")
     if (
         baseline.get("input_status") != recomputed.status
@@ -244,6 +330,27 @@ def _recompute_loop(
         "fill_source": replay.get("fill_source"),
         "event_log_sha256": replay.get("event_log_sha256"),
     }
+
+
+def _validate_recorded_freshness(
+    recorded: Mapping[str, object] | None,
+    *,
+    field_name: str,
+    recomputed: KisPaperIntradayRuntimeWindow,
+    session_observed_at: datetime,
+) -> bool | None:
+    if recorded is None:
+        return None
+    checked_at = _parse_utc(
+        recorded.get("route_observed_at"),
+        f"prospective QQQ {field_name} freshness observed_at",
+    )
+    if checked_at < session_observed_at:
+        raise ValueError(f"{field_name} freshness precedes the session observation")
+    expected = recomputed.freshness_at(as_of=checked_at)
+    if dict(recorded) != expected.safe_payload():
+        raise ValueError(f"{field_name} freshness does not match verified cache")
+    return expected.current
 
 
 def _reject_unsafe_surface(payload: bytes) -> None:
@@ -293,6 +400,17 @@ def _external_artifact_root(*, artifact_root: Path, repository_root: Path) -> Pa
         raise ValueError("prospective QQQ validation root must stay outside Git")
     root.mkdir(parents=True, exist_ok=True)
     return root
+
+
+def _validation_evidence_path(*, root: Path, session_id: str) -> Path:
+    """Namespace immutable validation outputs by their checked contract."""
+
+    return (
+        root
+        / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
+        / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
+        / f"{session_id}.json"
+    )
 
 
 def _write_json_atomically(path: Path, payload: Mapping[str, object]) -> None:

@@ -789,6 +789,18 @@ older observer remains optional for this QQQ cycle. These are technical
 recovery signals, never a Paper authority, data-quality, or manual approval
 gate.
 
+The current QQQ runtime/Paper route uses one Data-owned two-minute completed-bar
+deadline with an inclusive exact-boundary rule. It records the completed-window
+end, route observation time, lag category, and selected budget in a source-safe
+runtime projection. Before creating the KIS Paper account client it rechecks
+that deadline; immediately before `submit_limit`, the existing canary lock
+evaluates the same deadline together with the regular-session predicate. This
+deadline does not constrain offline Research campaigns that deliberately pass a
+separate campaign-local age. The offline validator writes new results under the
+immutable `runtime-freshness-v2` validation namespace, so it can reattach an
+older receipt without overwriting it; legacy receipts without these new fields
+remain replayable under their original scope.
+
 ### Bounded Session Capture
 
 Use the measured capture path when one current head invocation needs an

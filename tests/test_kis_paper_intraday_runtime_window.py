@@ -13,6 +13,7 @@ import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
     KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M1_BARS,
     KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M5_BARS,
     KIS_PAPER_INTRADAY_RUNTIME_WINDOW_M10_BARS,
@@ -97,6 +98,63 @@ def test_returns_stale_without_exposing_candidate_bars() -> None:
     assert result.candidate_bar_count == 90
     assert result.window_start == source.bars[0].start_ts
     assert result.window_end == source.bars[-1].end_ts
+    assert result.freshness.category == "over_budget"
+    assert result.freshness.lag == timedelta(minutes=6)
+
+
+def test_rejects_stale_metadata_that_has_become_current() -> None:
+    source = _catalog(count=90)
+    stale = select_kis_paper_intraday_runtime_window(
+        source,
+        as_of=(
+            source.bars[-1].end_ts
+            + KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE
+            + timedelta(microseconds=1)
+        ),
+        max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    )
+
+    with pytest.raises(ValueError, match="over-budget candidate"):
+        replace(
+            stale,
+            as_of=source.bars[-1].end_ts + KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+        )
+
+
+@pytest.mark.parametrize(
+    ("offset", "status", "category"),
+    [
+        (KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE - timedelta(microseconds=1), "ready", "within_budget"),
+        (KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE, "ready", "at_budget"),
+        (KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE + timedelta(microseconds=1), "stale", "over_budget"),
+    ],
+)
+def test_freshness_contract_has_an_inclusive_budget_boundary(
+    offset: timedelta,
+    status: str,
+    category: str,
+) -> None:
+    source = _catalog(count=90)
+    observed_at = source.bars[-1].end_ts + offset
+
+    result = select_kis_paper_intraday_runtime_window(
+        source,
+        as_of=observed_at,
+        max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    )
+
+    assert result.status == status
+    assert result.freshness.category == category
+    assert result.freshness.lag == offset
+    assert result.safe_payload()["freshness"] == {
+        "completed_window_end": source.bars[-1].end_ts.isoformat().replace("+00:00", "Z"),
+        "route_observed_at": observed_at.isoformat().replace("+00:00", "Z"),
+        "lag_microseconds": offset // timedelta(microseconds=1),
+        "lag_category": category,
+        "selected_budget_microseconds": (
+            KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE // timedelta(microseconds=1)
+        ),
+    }
 
 
 def test_rejects_a_gap_as_non_contiguous() -> None:
@@ -204,8 +262,16 @@ def test_safe_repr_and_payload_never_include_prices_or_source_path() -> None:
         "window_end",
         "replay_bar_start",
         "replay_bar_end",
+        "freshness",
         "source_catalog_hash",
         "input_manifest_ref",
+    }
+    assert set(payload["freshness"]) == {
+        "completed_window_end",
+        "route_observed_at",
+        "lag_microseconds",
+        "lag_category",
+        "selected_budget_microseconds",
     }
     assert "open" not in payload
     assert "close" not in payload

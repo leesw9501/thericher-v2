@@ -44,13 +44,12 @@ route accepted terminal same-exchange-date pages without a continuation cursor.
 This closes only those two request contracts; it does not claim that KIS lacks
 another historical-minute endpoint. No unsupported serial dispatcher is built.
 The fresh head scheduler continues to own prospective session collection. The
-first bounded head reconciliation produced a clean page, but a later scheduled
-page again conflicted with retained cache input. The current head cache is
-therefore `reconcile`: old immutable snapshots remain on D:, conflict responses
-are not adopted, and only a later clean page may restore current input. New
-retained pages record persisted `head` or `historical` collection scope; legacy
-unscoped pages remain strict-reject-only rather than being inferred as head
-observations.
+first bounded head reconciliation produced a clean page, and the later rebuilt
+route recovered the current cache without adopting a conflicting response. The
+current source-safe index is generation 22 with nine retained `head` chunk
+records per target and no current conflict origin or reason. Old immutable
+snapshots and exact quarantine markers remain on D:; legacy unscoped pages stay
+strict-reject-only rather than being inferred as head observations.
 
 ## Current Facts
 
@@ -60,14 +59,14 @@ observations.
   `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260727T192241664204Z-dedf1901dd505c58.json`
   retained one clean 120-row page each for QQQ/NAS and SPY/AMS with zero exact
   overlap. It remains completed evidence for that exact terminal route.
-- The later lane-owned 19:31Z schedule returned
+- The historical lane-owned 19:31Z schedule returned
   `recovery/collection_exit_nonzero` after another
-  `minute_duplicate_conflict/retained_cache`. Its QQQ session remained a
-  validated `no_intent/runtime_window_stale`, with an active window ending at
-  15:30Z. The current source-safe index is generation 20 with six active chunks
-  and two exact quarantine markers per target. This affects only the current
-  head cache, not the prior completed receipt, KIS authority, historical cursor
-  coverage, or Research inputs.
+  `minute_duplicate_conflict/retained_cache`. A later rebuilt 19:48Z route
+  recovered QQQ/NAS and SPY/AMS current head input: its terminal receipt is
+  complete, QQQ remains a truthful `no_intent/runtime_window_stale`, and the
+  current source-safe index is generation 22 with nine retained `head` chunk
+  records per target and no current conflict origin or reason. This changes no
+  historical cursor coverage or Research input.
 - A head-conflict quarantine marker contains the old `chunk_key`, manifest
   hash, and raw hash; malformed markers fail closed before orphan recovery.
   The current candidate remains rejected in its conflict run, and only a later
@@ -78,6 +77,13 @@ observations.
   it at 19:22:46Z. Its current fixed two-minute freshness budget therefore
   yielded a truthful stale runtime fact. This is a Data latency calibration
   input, not a data-quality, permission, or strategy conclusion.
+- The network-disabled `runtime-freshness-v2` validator independently reattached
+  the latest 19:48Z QQQ session against the recovered cache. Its pure external
+  projection records completed-window end, route observation time, lag category,
+  and selected two-minute budget without retaining a row, price, credential,
+  account, or broker body. It proves that legacy session evidence can be
+  revalidated under the new contract; it does not retroactively edit that
+  immutable session receipt.
 
 - The isolated KIS Paper daily-universe probe pinned the official current
   directory manifest `sha256:129e...aecea4`, the NAS listing file
@@ -373,18 +379,20 @@ boundary. The exact QQQ/NAS and SPY/AMS historical reach probes are complete
 and source-limited for serial continuation; they are not blocked by the
 scheduled head and do not block it.
 
-Current class: `reconcile` for the current QQQ/SPY head cache. Do not edit the
-index, inspect raw rows for a manual repair, or infer a provider revision policy
-from observation time alone. The next owned package obtains a clean current page
-and calibrates freshness from source-safe timing categories before changing a
-runtime budget.
+Current class: `complete` for the recovered current QQQ/SPY head cache and the
+first source-safe freshness reattachment. Do not edit the index, inspect raw
+rows for a manual repair, or infer a provider revision policy from observation
+time alone. The fixed two-minute runtime budget remains unchanged until future
+regular-session evidence supports a separately reviewed adjustment.
 
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Continue the fresh prospective
-QQQ intraday completed-bar schedule for the named baseline. The completed
-QQQ/NAS and SPY/AMS prior-day probes do not support cursor collection; any
-later historical-minute attempt needs a separate endpoint or provider contract.
+QQQ intraday completed-bar schedule for the named baseline and let its next
+regular-session observation emit the current freshness field through the
+installed image. The completed QQQ/NAS and SPY/AMS prior-day probes do not
+support cursor collection; any later historical-minute attempt needs a separate
+endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact

@@ -189,10 +189,13 @@ authorized private KIS Paper work.
   before this rebuilt image was available, again found a retained-cache conflict
   and wrote a truthful `recovery/collection_exit_nonzero`; its embedded session
   remained validated `no_intent/runtime_window_stale` with a 15:30Z active
-  window. The current head cache is `reconcile` (generation 20, six active
-  chunks and two exact markers per target), while the earlier complete terminal
-  receipt remains immutable evidence. This is a next clean-capture and
-  freshness-calibration input, not a KIS Paper permission or company stop.
+  window. A later rebuilt 19:48Z route recovered the current cache: generation
+  22 has nine retained `head` chunk records per target with no current conflict
+  origin or reason. The exact 19:48Z session remains a truthful stale no-intent,
+  while its network-disabled `runtime-freshness-v2` reattachment records the
+  completed-window end, route observation time, lag category, and fixed
+  two-minute budget in a new immutable validation namespace. It does not alter
+  the old receipt, force a Paper intent, or justify changing the budget.
 - The latest 2026-07-26 source-safe QQQ KIS Paper minute calibration used one
   in-memory client/token and a 1.0-second candidate request-start interval. It
   accepted two full terminal-head pages with zero categorical limits or errors

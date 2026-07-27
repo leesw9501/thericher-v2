@@ -11,6 +11,7 @@ import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
     select_kis_paper_intraday_runtime_window,
 )
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
@@ -47,6 +48,7 @@ def test_ready_window_becomes_provisional_receipt_and_local_paper_replay(
     rendered = json.dumps(payload, sort_keys=True)
     assert payload["mode"] == "offline_local_paper"
     assert payload["baseline"]["capability_authorization"] == "provisional"
+    assert payload["window"]["freshness"]["lag_category"] == "within_budget"
     assert "101.00" not in rendered
     assert "price" not in rendered
     assert "credential" not in rendered
@@ -74,6 +76,26 @@ def test_missing_window_creates_a_replayable_unavailable_receipt_without_local_o
     assert result.receipt.decision_class == "abstain"
     assert result.receipt.reason_class == "input_unavailable"
     assert result.local_paper_replay is None
+    assert not (tmp_path / "runtime" / "qqq-prospective-local-paper-v1.jsonl").exists()
+
+
+def test_runtime_loop_rejects_a_ready_window_with_a_wider_than_runtime_budget(
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    window = select_kis_paper_intraday_runtime_window(
+        catalog,
+        as_of=catalog.bars[-1].end_ts,
+        max_age=KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE + timedelta(microseconds=1),
+    )
+
+    assert window.status == "ready"
+    with pytest.raises(ValueError, match="exceeds the fixed baseline freshness budget"):
+        run_kis_paper_prospective_loop(
+            window,
+            local_paper_state_root=tmp_path / "runtime",
+            repo_root=tmp_path / "repo",
+        )
     assert not (tmp_path / "runtime" / "qqq-prospective-local-paper-v1.jsonl").exists()
 
 
