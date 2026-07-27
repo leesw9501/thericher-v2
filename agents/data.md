@@ -27,10 +27,9 @@ changing the frozen two-page probe or any existing QQQ/SPY/IWM catalog. That
 collector is implemented, independently validated, and has completed four
 bounded cycles. Its bounded token-reusing continuation worker is now complete:
 it retains an in-memory client only for its own process, keeps retries owned by
-that worker, and preserves the exact cache meaning. The next Data-owned
-objective is target-local recovery for only the deferred `MSFT/NAS` and
-`NVDA/NAS` cursors; it must not restart complete/source-limited targets or
-change the fixed registry.
+that worker, and preserves the exact cache meaning. Its fixed two-target
+recovery is now complete: the six-symbol cache is terminal for this exact
+current-listing scope and no target is queued for another historical retry.
 
 ## Current Facts
 
@@ -179,12 +178,10 @@ change the fixed registry.
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. Reattach and recover only deferred `MSFT/NAS` (`daily_response_invalid`) and
-   `NVDA/NAS` (`transport_failure`) through one bounded target-local Data
-   package. Preserve complete/source-limited targets, the fixed registry,
-   existing raw rows, request gate, cooldown, and canonical roots. A recovery
-   failure stays scoped to its target and does not request a source mutation or
-   stop an independent lane.
+2. For the next prospective QQQ intraday baseline, operate only the named
+   session-capture scope and publish its completed-bar coverage, freshness, and
+   recovery facts. A missing window yields its own no-decision evidence; it
+   does not revive the terminal daily-history cache or hold another lane.
 
 ## Collection Progress Projection
 
@@ -200,17 +197,17 @@ daily-history cache outside the existing two-page probe.
   `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-history-v1`;
   the final no-ready-work summary has
   `client_reuse_outcome: not_observed_no_future_retry_due_observed`.
-- the current projection is index generation 117: 232 accepted pages and seven
-  categorical results. `AAPL/NAS` and `AMZN/NAS` are `complete` at `2007-Q3`;
-  `GOOGL/NAS` and `META/NAS` are `source_limited` after
-  `no_cursor_progress`; `MSFT/NAS` is `deferred` at `2017-Q4` with
-  `daily_response_invalid`; and `NVDA/NAS` is `deferred` at `2010-Q1` with
-  `transport_failure`. These are separate exact-target facts.
-- remaining-page estimate and ETA bucket: `unknown`; no source terminal or
-  total-page yield has been observed.
-- `next_due`: none. No continuation worker is active. Recovery is `reconcile`
-  for exactly `MSFT/NAS` and `NVDA/NAS`; the other four target states are
-  terminal for this cache scope.
+- the recovery profile admitted exactly `MSFT/NAS` and `NVDA/NAS`, then
+  completed with seven accepted pages, one categorical result, five chunks,
+  and no next due. `MSFT/NAS` reached its second unchanged-cursor
+  `daily_response_invalid` and is `source_limited` at `2017-Q4`; `NVDA/NAS`
+  completed at `2007-Q3`. The current projection is index generation 121:
+  239 accepted pages and eight categorical results. `AAPL`, `AMZN`, and NVDA
+  are complete; `GOOGL`, `META`, and `MSFT` are source-limited. No target is
+  ready or deferred in this exact cache.
+- the recovery receipt confirms daily market-data only, with no account,
+  position, open-order, quote, order, Tiingo, or live route. Recovery changes
+  no frozen panel, probe, or QQQ/SPY/IWM catalog bytes.
 - raw rows remain only in the dedicated D: cache. The index retains no raw rows
   or credentials. The frozen probe, panel, and QQQ/SPY/IWM catalog hashes were
   rechecked unchanged after the real cycles.
@@ -253,19 +250,16 @@ another collector or lane.
 Current class: complete for the daily catch-up, joint event-window contract,
 all three fold inputs/materializer/target-cost receipts, all candidate screens,
 the fixed source-safe cross-fold artifact, the daily-history collector, and its
-bounded continuation worker. Reattach the daily-history index and latest
-source-safe receipt before target-local recovery. `MSFT/NAS` and `NVDA/NAS`
-are `reconcile`; complete/source-limited targets are not recovery candidates.
-A bad cache is reconcile/restart evidence for that cache; an empty or limited
-endpoint result is source evidence for that route only.
+bounded continuation and recovery workers. The generation-121 daily-history
+cache is complete for its exact fixed registry; terminal targets are not
+recovery candidates. A bad new cache is reconcile/restart evidence for that
+cache; an empty or limited endpoint result is source evidence for that route
+only.
 
 ## Next Handoff
 
-Preserve the frozen six-symbol source separately. Reattach the current
-daily-history index/receipt, then perform the bounded target-local recovery for
-`MSFT/NAS` and `NVDA/NAS`. Do not infer PIT membership, corporate-action
+Preserve the frozen six-symbol source separately. The next Data package is a
+prospective QQQ intraday completed-bar window for the named baseline, not more
+daily-history backfill. Do not infer PIT membership, corporate-action
 completeness, a ranking claim, or Paper-trading eligibility from either cache
-or the fixed-pair falsification result. The daily-history cache may establish
-endpoint coverage only; do not use it as a historical universe, a model
-selection result, or a Paper-trading input without a separate qualified
-contract.
+or the fixed-pair falsification result.

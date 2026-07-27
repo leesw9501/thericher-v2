@@ -5951,3 +5951,29 @@ completed or source-limited cursor. Claude's concise recovery/architecture
 challenge was attempted without private material but could not authenticate;
 that reviewer outage limits reliance on a material promotion decision, not this
 bounded private Data implementation.
+
+## 2026-07-27 - Close the fixed NAS daily-history recovery without widening scope
+
+Decision: make recovery an explicit fixed contract for only `MSFT/NAS` and
+`NVDA/NAS`, with expected prior failure reasons, an orphan-recovery fence, and
+one collection chunk per admitted target in one core run. A valid partial
+cursor is preserved as `ready` for a later bounded run; a repeated unchanged
+cursor `daily_response_invalid` follows the existing target-local
+`source_limited` rule. The route class remains KIS Paper token plus fixed NAS
+daily price only.
+
+The authorized bounded run accepted seven pages in five chunks and recorded one
+categorical result. `MSFT/NAS` reached its target-local source limit at its
+observed 2017-Q4 boundary and `NVDA/NAS` completed to 2007-Q3. The resulting
+generation-121 cache is terminal for all six fixed current-listing targets:
+three complete and three source-limited. It made no account, position,
+open-order, quote, order, Tiingo, or live call; raw rows remain in D: only.
+The independent validation and focused containment checks passed. Claude OAuth
+was unavailable, so no private material was sent; that does not change this
+non-promotional Data recovery fact.
+
+Reason: a target-local recovery must resolve only its exact evidence without
+turning a resumed cursor into an unbounded continuation, reviving terminal
+peers, or creating a cross-lane approval hold. The completed cache remains
+prospective current-listing coverage evidence, not a PIT universe, model input,
+ranking claim, or Paper-order input.

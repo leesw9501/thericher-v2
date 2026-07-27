@@ -264,6 +264,7 @@ services:
       - /app/model_artifacts
       - --repository-root
       - /app
+      - --recover-deferred-targets
       - --max-chunks
       - "288"
       - --max-runtime-seconds

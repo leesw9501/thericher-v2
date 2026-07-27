@@ -59,6 +59,7 @@ def main(
         type=float,
         default=KIS_PAPER_DAILY_HISTORY_DEFAULT_MAX_RUNTIME.total_seconds(),
     )
+    parser.add_argument("--recover-deferred-targets", action="store_true")
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
@@ -134,6 +135,7 @@ def main(
                 "evidence_root": artifact_root,
                 "repo_root": repository_root,
                 "code_revision": revision,
+                "recover_deferred_targets": args.recover_deferred_targets,
                 "max_chunks": remaining_chunks,
                 "max_runtime": timedelta(seconds=remaining_runtime_seconds),
                 "clock": clock,
@@ -201,6 +203,9 @@ def main(
         runs=runs,
         max_chunks=args.max_chunks,
         max_total_runtime_seconds=args.max_runtime_seconds,
+        recovery_target_keys=(
+            ("MSFT/NAS", "NVDA/NAS") if args.recover_deferred_targets else ()
+        ),
         accepted_page_count=accepted_page_count,
         categorical_failure_count=categorical_failure_count,
         chunk_attempt_count=chunk_attempt_count,
@@ -284,6 +289,7 @@ def _source_safe_continuation_summary(
     runs: Sequence[KisPaperDailyHistoryRun],
     max_chunks: int,
     max_total_runtime_seconds: float,
+    recovery_target_keys: tuple[str, ...],
     accepted_page_count: int,
     categorical_failure_count: int,
     chunk_attempt_count: int,
@@ -301,6 +307,7 @@ def _source_safe_continuation_summary(
             "endpoint": "dailyprice",
             "mode": "off",
             "fixed_registry_only": True,
+            "recovery_target_keys": list(recovery_target_keys),
         },
         "started_at_utc": _format_utc(started_at),
         "completed_at_utc": _format_utc(completed_at),

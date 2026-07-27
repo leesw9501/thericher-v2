@@ -101,18 +101,17 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The cross-fold falsification artifact and the read-only account projection are
-complete. The daily-history continuation removed the measured short-lived
-token-loss bottleneck without touching the legacy probe, panel, or ETF catalog.
-Its fixed cache is now terminal for four targets: AAPL/AMZN are complete and
-GOOGL/META are source-limited. The material bottleneck is narrow source
-recovery for `MSFT/NAS` (`daily_response_invalid`) and `NVDA/NAS`
-(`transport_failure`), neither of which is a cross-lane hold.
+The cross-fold falsification artifact, read-only account projection, and
+daily-history recovery are complete. The fixed cache is now terminal for its
+six exact current-listing targets: AAPL/AMZN/NVDA are complete and
+GOOGL/META/MSFT are source-limited. The recovery did not touch the legacy
+probe, panel, or ETF catalog.
 
-The GPU is free, but no new GPU job is eligible from the falsified pair. A new
-Research campaign needs its own frozen hypothesis and input contract. The
-Claude OAuth outage is scoped to reliance, promotion, and execution boundaries;
-it does not require another ready private lane to wait.
+The next material bottleneck is a fresh, KIS-compatible prospective QQQ
+completed-bar window and its exact baseline decision contract. The GPU is free
+but no new GPU job is eligible from the falsified pair. The Claude OAuth outage
+is scoped to reliance, promotion, and execution boundaries; it does not require
+another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -134,9 +133,10 @@ also prevents a past due time from masquerading as an active global wait.
   worker implementation, historical evidence preservation, or Execution.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
-- No daily-history worker is active and its `next_due` is empty. The next Data
-  package is a bounded recovery for two exact deferred targets; it does not
-  hold Research, Execution, verification, or another ready package.
+- No daily-history worker is active and its terminal cache has no next due. The
+  prospective session scheduler owns any future market-session wait; it does
+  not hold Research preparation, Execution verification, or another ready
+  package.
 
 ## Recovery
 
@@ -149,9 +149,8 @@ independent lanes.
 
 ## Next Handoff
 
-Reattach the completed daily-history index and latest receipt before bounded
-target-local recovery for `MSFT/NAS` and `NVDA/NAS`. Keep any eligible retry
-owned by its worker rather than foreground waiting. Do not treat the current
-listing or raw cache as a PIT universe, selected model, replay result, or Paper
-order input. Record only an actual shared resource conflict, new external wait,
-bottleneck, or reversible operating improvement here.
+Keep the completed daily-history cache out of the prospective baseline's model
+or Paper-order input. Dispatch the next Data, Research, and Execution packages
+from their named prospective evidence, retaining only actual shared resource
+conflicts, external waits, bottlenecks, and the current reversible operating
+improvement here.

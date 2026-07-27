@@ -181,10 +181,59 @@ def test_history_script_uses_environment_only_configuration_and_safe_output(
     assert observed["cache_root"] == cache_root
     assert observed["evidence_root"] == artifact_root
     assert observed["max_chunks"] == 6
+    assert observed["recover_deferred_targets"] is False
     assert gate_roots == [control_root, control_root]
     assert payload["continuation_summary_sha256"] == "sha256:" + "b" * 64
     assert summaries[0]["outcome"]["internal_cycle_count"] == 1
+    assert summaries[0]["scope"]["recovery_target_keys"] == []
     assert "dotenv" not in script.__dict__
+
+
+def test_history_script_passes_fixed_deferred_recovery_scope(
+    monkeypatch,
+    capsys,
+) -> None:
+    script = _load_script()
+    observed_at = datetime(2026, 7, 27, 2, 40, tzinfo=UTC)
+    observed: dict[str, object] = {}
+    summaries: list[dict[str, object]] = []
+
+    class FakeGate:
+        def __init__(self, **_: object) -> None:
+            pass
+
+    monkeypatch.setattr(script, "KisPaperMarketDataRateGate", FakeGate)
+    monkeypatch.setattr(script, "KisPaperMarketDataTokenStartGate", FakeGate)
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_continuation_summary",
+        lambda **kwargs: summaries.append(kwargs["summary"]) or "sha256:" + "a" * 64,
+    )
+
+    def run_collection(**kwargs: object) -> KisPaperDailyHistoryRun:
+        observed.update(kwargs)
+        return _run(
+            observed_at=observed_at,
+            status="deferred",
+            recovery="reconcile",
+        )
+
+    monkeypatch.setattr(script, "run_kis_paper_daily_history_collection", run_collection)
+    script.main(
+        _canonical_execute_args(
+            max_chunks=2,
+            max_runtime_seconds=30,
+            recover_deferred_targets=True,
+        ),
+        clock=lambda: observed_at,
+        monotonic_clock=lambda: 0.0,
+        code_revision=lambda _: "git:test",
+    )
+
+    payload = json.loads(capsys.readouterr().out)
+    assert observed["recover_deferred_targets"] is True
+    assert summaries[0]["scope"]["recovery_target_keys"] == ["MSFT/NAS", "NVDA/NAS"]
+    assert payload["continuation"]["stop_reason"] == "no_future_retry_due_observed"
 
 
 def test_history_script_reuses_closure_client_after_retry_due(
@@ -440,6 +489,7 @@ def test_continuation_summary_is_immutable_and_redacted(tmp_path: Path) -> None:
         runs=[_run(observed_at=observed_at, status="complete", recovery="complete")],
         max_chunks=4,
         max_total_runtime_seconds=120,
+        recovery_target_keys=(),
         accepted_page_count=2,
         categorical_failure_count=0,
         chunk_attempt_count=1,
@@ -479,6 +529,7 @@ def test_continuation_summary_is_immutable_and_redacted(tmp_path: Path) -> None:
         "max_global_chunks": 4,
         "max_daily_page_attempts": 8,
     }
+    assert document["scope"]["recovery_target_keys"] == []
     assert document["artifact_policy"]["raw_market_data_in_summary"] is False
     assert document["artifact_policy"]["credentials_in_summary"] is False
     assert document["route_isolation"]["live_endpoints_used"] is False
@@ -513,6 +564,7 @@ def test_daily_history_docker_profile_is_data_only_and_dedicated() -> None:
     assert "      - --control-root\n      - /app/collection_control" in section
     assert "      - --artifact-root\n      - /app/model_artifacts" in section
     assert "      - --repository-root\n      - /app" in section
+    assert "      - --recover-deferred-targets" in section
     assert '      - --max-chunks\n      - "288"' in section
     assert '      - --max-runtime-seconds\n      - "1800"' in section
     assert "THERICHER_MODE: off" in section
@@ -522,6 +574,8 @@ def test_daily_history_docker_profile_is_data_only_and_dedicated() -> None:
     assert "KIS_PAPER_APP_SECRET" in section
     assert "KIS_PAPER_ACCOUNT" not in section
     assert "KIS_LIVE" not in section
+    assert "env_file:" not in section
+    assert "ports:" not in section
     assert "kis-readonly" not in section
     assert "canary" not in section
     assert "session" not in section
@@ -546,8 +600,13 @@ def _load_script() -> ModuleType:
     return module
 
 
-def _canonical_execute_args(*, max_chunks: int, max_runtime_seconds: int) -> list[str]:
-    return [
+def _canonical_execute_args(
+    *,
+    max_chunks: int,
+    max_runtime_seconds: int,
+    recover_deferred_targets: bool = False,
+) -> list[str]:
+    arguments = [
         "--execute",
         "--cache-root",
         "/app/market_data",
@@ -562,6 +621,9 @@ def _canonical_execute_args(*, max_chunks: int, max_runtime_seconds: int) -> lis
         "--max-runtime-seconds",
         str(max_runtime_seconds),
     ]
+    if recover_deferred_targets:
+        arguments.append("--recover-deferred-targets")
+    return arguments
 
 
 def _run(

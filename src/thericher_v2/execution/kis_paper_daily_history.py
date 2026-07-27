@@ -85,6 +85,11 @@ KIS_PAPER_DAILY_HISTORY_SOURCE_FILE_SHA256 = (
 )
 
 _TARGET_KEYS = tuple(f"{symbol}/{NAS_EXCHANGE}" for symbol in NAS_COMMON_STOCK_PROBE_SYMBOLS)
+_DEFERRED_RECOVERY_TARGET_REASONS = {
+    "MSFT/NAS": "daily_response_invalid",
+    "NVDA/NAS": "transport_failure",
+}
+_DEFERRED_RECOVERY_TARGET_KEYS = tuple(_DEFERRED_RECOVERY_TARGET_REASONS)
 KIS_PAPER_DAILY_HISTORY_SYMBOL_EXCHANGES = {
     symbol: frozenset({NAS_EXCHANGE}) for symbol in NAS_COMMON_STOCK_PROBE_SYMBOLS
 }
@@ -213,12 +218,14 @@ class KisPaperDailyHistoryRun:
     recovery: Literal["resume", "complete", "restart", "reconcile"]
     registry_sha256: str = KIS_PAPER_DAILY_HISTORY_REGISTRY_SHA256
     evidence_sha256: str | None = None
+    recovery_target_keys: tuple[str, ...] = ()
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
         object.__setattr__(self, "completed_at", require_utc(self.completed_at, "completed_at"))
         object.__setattr__(self, "target_states", tuple(self.target_states))
+        object.__setattr__(self, "recovery_target_keys", tuple(self.recovery_target_keys))
         if (
             self.status
             not in {
@@ -236,6 +243,7 @@ class KisPaperDailyHistoryRun:
             or self.eta_bucket != "unknown"
             or self.recovery not in {"resume", "complete", "restart", "reconcile"}
             or self.registry_sha256 != KIS_PAPER_DAILY_HISTORY_REGISTRY_SHA256
+            or self.recovery_target_keys not in ((), _DEFERRED_RECOVERY_TARGET_KEYS)
         ):
             raise ValueError("daily history run is invalid")
         if self.measured_accepted_pages_per_minute is not None and (
@@ -256,6 +264,7 @@ class KisPaperDailyHistoryRun:
                 "endpoint": "dailyprice",
                 "mode": "off",
                 "target_keys": list(_TARGET_KEYS),
+                "recovery_target_keys": list(self.recovery_target_keys),
                 "registry_version": KIS_PAPER_DAILY_HISTORY_REGISTRY_VERSION,
                 "registry_sha256": self.registry_sha256,
                 "source_manifest_sha256": KIS_PAPER_DAILY_HISTORY_SOURCE_MANIFEST_SHA256,
@@ -322,6 +331,7 @@ def run_kis_paper_daily_history_collection(
     evidence_root: Path = KIS_PAPER_DAILY_HISTORY_EVIDENCE_ROOT,
     repo_root: Path,
     code_revision: str,
+    recover_deferred_targets: bool = False,
     max_chunks: int = KIS_PAPER_DAILY_HISTORY_DEFAULT_MAX_CHUNKS,
     max_runtime: timedelta = KIS_PAPER_DAILY_HISTORY_DEFAULT_MAX_RUNTIME,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
@@ -329,8 +339,14 @@ def run_kis_paper_daily_history_collection(
 ) -> KisPaperDailyHistoryRun:
     """Advance independent fixed-symbol cursors without a foreground scheduler wait."""
 
-    if max_chunks <= 0 or not isinstance(max_runtime, timedelta) or max_runtime <= timedelta(0):
+    if (
+        not isinstance(recover_deferred_targets, bool)
+        or max_chunks <= 0
+        or not isinstance(max_runtime, timedelta)
+        or max_runtime <= timedelta(0)
+    ):
         raise ValueError("daily history worker bounds are invalid")
+    recovery_target_keys = _DEFERRED_RECOVERY_TARGET_KEYS if recover_deferred_targets else ()
     started_at = require_utc(clock(), "clock")
     root = _history_root(cache_root=cache_root, repo_root=repo_root)
     artifacts = _artifact_root(evidence_root=evidence_root, repo_root=repo_root)
@@ -347,13 +363,22 @@ def run_kis_paper_daily_history_collection(
             elapsed_seconds=0.0,
             next_due=None,
             recovery="resume",
+            recovery_target_keys=recovery_target_keys,
         )
     try:
         index = _load_or_initialize_index(root=root)
         _reverify_index(index=index, root=root)
-        recovered = _recover_orphan_snapshot(index=index, root=root)
+        recovered = _recover_orphan_snapshot(
+            index=index,
+            root=root,
+            eligible_target_keys=recovery_target_keys or _TARGET_KEYS,
+        )
         if recovered:
             _write_index(root=root, index=index)
+        _validate_deferred_recovery_targets(
+            index=index,
+            recovery_target_keys=recovery_target_keys,
+        )
         active_client = client
         accepted_pages = 0
         categorical_failures = 0
@@ -370,6 +395,7 @@ def run_kis_paper_daily_history_collection(
             "deferred"
         )
         start_monotonic = monotonic_clock()
+        attempted_deferred_recovery_targets: set[str] = set()
 
         while chunk_attempts < max_chunks:
             if monotonic_clock() - start_monotonic >= max_runtime.total_seconds():
@@ -387,10 +413,16 @@ def run_kis_paper_daily_history_collection(
             if next_due is not None:
                 status = "collected" if accepted_pages else "deferred"
                 break
-            target = _select_ready_target(index)
+            target = _select_collectable_target(
+                index=index,
+                recovery_target_keys=recovery_target_keys,
+                attempted_deferred_recovery_targets=attempted_deferred_recovery_targets,
+            )
             if target is None:
                 status = "complete" if _all_targets_terminal(index) else "deferred"
                 break
+            if str(target["target_key"]) in recovery_target_keys:
+                attempted_deferred_recovery_targets.add(str(target["target_key"]))
             if private_daily_cache_would_cross_free_space_floor(
                 cache_root=root,
                 repo_root=repo_root,
@@ -524,6 +556,7 @@ def run_kis_paper_daily_history_collection(
                 if any(target["state"] == "deferred" for target in _targets(index))
                 else "resume"
             ),
+            recovery_target_keys=recovery_target_keys,
         )
         evidence_hash = _write_source_safe_receipt(
             evidence_root=artifacts,
@@ -855,9 +888,20 @@ def _append_chunk(
 def _record_unretained_failure(*, target: dict[str, object], reason: str) -> None:
     if reason not in _SAFE_FAILURE_REASONS:
         reason = "unexpected_private_daily_collector_error"
+    repeated_structural_failure = (
+        reason == "daily_response_invalid"
+        and target["state"] == "deferred"
+        and target["last_reason"] == "daily_response_invalid"
+    )
     target["categorical_failure_count"] = int(target["categorical_failure_count"]) + 1
     target["last_reason"] = reason
-    target["state"] = "ready" if reason in {"rate_limited", "token_request_not_due"} else "deferred"
+    target["state"] = (
+        "source_limited"
+        if repeated_structural_failure
+        else "ready"
+        if reason in {"rate_limited", "token_request_not_due"}
+        else "deferred"
+    )
 
 
 def _record_source_limited(
@@ -879,8 +923,51 @@ def _record_source_limited(
     return 1 if categorical_failure else 0
 
 
-def _select_ready_target(index: Mapping[str, object]) -> dict[str, object] | None:
-    candidates = [target for target in _targets(index) if target["state"] == "ready"]
+def _validate_deferred_recovery_targets(
+    *,
+    index: Mapping[str, object],
+    recovery_target_keys: tuple[str, ...],
+) -> None:
+    """Allow the explicit recovery mode to touch only its two known failures."""
+
+    if not recovery_target_keys:
+        return
+    if recovery_target_keys != _DEFERRED_RECOVERY_TARGET_KEYS:
+        raise KisPaperDailyHistoryError("daily history recovery targets are invalid")
+    for target in _targets(index):
+        target_key = str(target["target_key"])
+        if target_key not in recovery_target_keys:
+            continue
+        state = str(target["state"])
+        if state in {"complete", "source_limited"}:
+            continue
+        expected_reason = _DEFERRED_RECOVERY_TARGET_REASONS[target_key]
+        last_reason = str(target.get("last_reason", ""))
+        if state == "ready":
+            continue
+        if state != "deferred" or last_reason != expected_reason:
+            raise KisPaperDailyHistoryError("daily history recovery target state mismatch")
+
+
+def _select_collectable_target(
+    *,
+    index: Mapping[str, object],
+    recovery_target_keys: tuple[str, ...],
+    attempted_deferred_recovery_targets: set[str],
+) -> dict[str, object] | None:
+    if recovery_target_keys:
+        candidates = [
+            target
+            for target in _targets(index)
+            if target["target_key"] in recovery_target_keys
+            and target["target_key"] not in attempted_deferred_recovery_targets
+            and (
+                target["state"] == "ready"
+                or target["state"] == "deferred"
+            )
+        ]
+    else:
+        candidates = [target for target in _targets(index) if target["state"] == "ready"]
     if not candidates:
         return None
     positions = {target["target_key"]: position for position, target in enumerate(_targets(index))}
@@ -910,6 +997,7 @@ def _build_run(
     elapsed_seconds: float,
     next_due: datetime | None,
     recovery: Literal["resume", "complete", "restart", "reconcile"],
+    recovery_target_keys: tuple[str, ...] = (),
 ) -> KisPaperDailyHistoryRun:
     target_states = tuple(
         KisPaperDailyHistoryTargetState(
@@ -941,6 +1029,7 @@ def _build_run(
         eta_bucket="unknown",
         next_due=next_due,
         recovery=recovery,
+        recovery_target_keys=recovery_target_keys,
     )
 
 
@@ -1144,7 +1233,12 @@ def _reverify_index(*, index: Mapping[str, object], root: Path) -> None:
                 raise KisPaperDailyHistoryError("daily history committed snapshot drift")
 
 
-def _recover_orphan_snapshot(*, index: dict[str, object], root: Path) -> bool:
+def _recover_orphan_snapshot(
+    *,
+    index: dict[str, object],
+    root: Path,
+    eligible_target_keys: tuple[str, ...],
+) -> bool:
     known_hashes = {
         chunk["manifest_sha256"] for target in _targets(index) for chunk in target["chunks"]
     }
@@ -1156,6 +1250,8 @@ def _recover_orphan_snapshot(*, index: dict[str, object], root: Path) -> bool:
         except KisPaperDailyHistoryError:
             continue
         if snapshot.manifest_hash in known_hashes:
+            continue
+        if snapshot.target_key not in eligible_target_keys:
             continue
         target = next(
             (

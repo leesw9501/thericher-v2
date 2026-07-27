@@ -11,11 +11,11 @@ output as untrusted input.
 
 ## Current Objective
 
-The current read-only account projection is complete. Execution has no broker
-work in the next target-local Data recovery objective; preserve the virtual-only
-bridge, local dashboard boundary, and existing Paper recovery invariants while
-Data recovers only its deferred daily-history cursors. KIS Live remains
-unavailable.
+The current read-only account projection and target-local Data recovery are
+complete. Preserve the virtual-only bridge, local dashboard boundary, and
+existing Paper recovery invariants while the next objective establishes a
+prospective QQQ baseline and, if its exact durable intent is valid, one bounded
+KIS Paper canary. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -52,6 +52,10 @@ unavailable.
   uses a read-only root with three dedicated mounts, and has no account,
   position, open-order, quote, intent, submit, cancel, modify, reconciliation,
   dashboard, or live route. The first real cycles remain Data-owned facts only.
+- The final fixed-target recovery admitted only `MSFT/NAS` and `NVDA/NAS` and
+  completed without account, position, open-order, quote, intent, submit,
+  cancel, modify, reconciliation, or live activity. It cannot become a broker
+  permission, order input, or execution dependency.
 - The completed QQQ/SPY daily sequence screen used the existing offline
   `local_paper` replay path only. Its six replay cells did not read a KIS
   credential, call a broker/account endpoint, create an intent, or widen an
@@ -131,6 +135,6 @@ independent Data, Research, and authorized Paper work.
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next daily-history recovery may use only KIS Paper market-data paths and
-must not turn this account snapshot into a broker permission, an order input,
-or a Data dependency.
+The next bounded canary must use a new exact durable Paper intent and the
+existing virtual-only route; no stale account snapshot or historical Data
+receipt may act as its permission or order input.

@@ -256,6 +256,18 @@ hold, or a reason to delay another lane. `complete`, `source_limited`, and
 new bounded target-local objective; do not edit the durable index by hand or
 blend another provider into its rows.
 
+The recovery profile's `--recover-deferred-targets` mode is deliberately an
+exact historical repair contract, not a general backfill switch. It admits only
+the named deferred keys and their expected failure classes, fences orphan
+recovery to those keys, and preserves every terminal peer byte-for-byte. Within
+one core invocation, each admitted target receives at most one collection
+chunk; a valid partial advancement becomes `ready` and is eligible only in a
+later bounded invocation from its persisted cursor. A second unchanged-cursor
+`daily_response_invalid` follows the target-local source-limit rule above;
+transport failure remains deferred for only that target. Once all targets are
+terminal, the profile exits without constructing a KIS client or making a
+market-data request.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

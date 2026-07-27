@@ -15,6 +15,9 @@ Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
 development-only falsification evidence. All three independent E1/E2/E3
 candidate-only screens and their fixed cross-fold falsification consumer are
 complete. Its result rejects the fixed pair but does not select a replacement.
+The fixed NAS daily-history recovery is complete and remains prospective,
+current-listing coverage evidence only; it supplies no new Research input or
+GPU campaign.
 The prospective QQQ first-five pair is required only for its isolated
 prospective observation, pair-dependent campaign, and later pair-dependent
 promotion decisions; it does not make historical research input-pending.

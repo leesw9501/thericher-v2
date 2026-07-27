@@ -172,6 +172,86 @@ class _InvalidThenHistoryClient(_HistoryClient):
         return super().fetch_daily_raw_page(query)
 
 
+class _TargetFailureHistoryClient(_HistoryClient):
+    def __init__(self, clock: _Clock, reasons: dict[str, str]) -> None:
+        super().__init__(clock)
+        self._reasons = reasons
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        self.queries.append(query)
+        self._daily_attempts += 1
+        self._clock.advance(1)
+        raise KisPaperMarketDataError(self._reasons[query.symbol])
+
+
+class _RecoverySuccessHistoryClient(_HistoryClient):
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        self.queries.append(query)
+        self._daily_attempts += 1
+        self._clock.advance(1)
+        anchor = datetime.strptime(query.by_date, "%Y%m%d")
+        older_date = (anchor - timedelta(days=1)).strftime("%Y%m%d")
+        rows = (_row(older_date, close="987654.321"),)
+        return KisPaperDailyRawPage(
+            page=KisPaperDailyPage(
+                query=query,
+                row_count=1,
+                newest_date=older_date,
+                oldest_date=older_date,
+                required_ohlcv_fields_present=True,
+                continuation_available=False,
+                continuation_value=None,
+            ),
+            rows=rows,
+        )
+
+
+class _RecoveryProgressHistoryClient(_HistoryClient):
+    """Return two advancing pages so a recovered target remains ready."""
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        self.queries.append(query)
+        self._daily_attempts += 1
+        self._clock.advance(1)
+        anchor = datetime.strptime(query.by_date, "%Y%m%d")
+        older_date = (anchor - timedelta(days=1)).strftime("%Y%m%d")
+        continuation_available = query.continuation is None
+        return KisPaperDailyRawPage(
+            page=KisPaperDailyPage(
+                query=query,
+                row_count=1,
+                newest_date=older_date,
+                oldest_date=older_date,
+                required_ohlcv_fields_present=True,
+                continuation_available=continuation_available,
+                continuation_value="F" if continuation_available else None,
+            ),
+            rows=(_row(older_date, close="987654.321"),),
+        )
+
+
+class _PartialRecoveryHistoryClient(_RecoverySuccessHistoryClient):
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        if query.continuation is not None:
+            self.queries.append(query)
+            self._daily_attempts += 1
+            self._clock.advance(1)
+            raise KisPaperMarketDataError("daily_response_invalid")
+        result = super().fetch_daily_raw_page(query)
+        return KisPaperDailyRawPage(
+            page=KisPaperDailyPage(
+                query=query,
+                row_count=result.page.row_count,
+                newest_date=result.page.newest_date,
+                oldest_date=result.page.oldest_date,
+                required_ohlcv_fields_present=True,
+                continuation_available=True,
+                continuation_value="F",
+            ),
+            rows=result.rows,
+        )
+
+
 class _HttpResponse:
     status = 200
     headers: dict[str, str] = {}
@@ -414,6 +494,258 @@ def test_history_collection_ignores_an_elapsed_retry_due_after_a_target_failure(
     assert result.recovery == "reconcile"
     assert result.target_states[0].state == "deferred"
     assert result.target_states[1].cursor_date == "20260101"
+
+
+def test_deferred_recovery_only_collects_fixed_targets_and_preserves_terminal_targets(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    _write_deferred_recovery_index(cache_root)
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    client = _EmptyTerminalHistoryClient(clock)
+
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        recover_deferred_targets=True,
+        max_chunks=2,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert result.status == "complete"
+    assert result.recovery_target_keys == ("MSFT/NAS", "NVDA/NAS")
+    assert [query.symbol for query in client.queries] == ["MSFT", "NVDA"]
+    states = {state.target_key: state for state in result.target_states}
+    assert states["AAPL/NAS"].state == "complete"
+    assert states["AAPL/NAS"].cursor_date == "20070820"
+    assert states["AMZN/NAS"].state == "complete"
+    assert states["GOOGL/NAS"].state == "source_limited"
+    assert states["META/NAS"].state == "source_limited"
+    assert states["MSFT/NAS"].state == "source_limited"
+    assert states["MSFT/NAS"].last_reason == "empty_daily_response"
+    assert states["NVDA/NAS"].state == "source_limited"
+    assert states["NVDA/NAS"].last_reason == "empty_daily_response"
+
+    receipt = json.loads(
+        next(evidence_root.glob("run=*/receipt.json")).read_text(encoding="utf-8")
+    )
+    assert receipt["scope"]["recovery_target_keys"] == ["MSFT/NAS", "NVDA/NAS"]
+    assert "987654.321" not in json.dumps(receipt)
+
+
+def test_deferred_recovery_does_not_reconcile_an_orphan_for_a_terminal_peer(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    index = _write_deferred_recovery_index(cache_root)
+    manifest_path = cache_root / "snapshot=orphan-aapl" / "manifest.json"
+    manifest_path.parent.mkdir()
+    manifest_path.write_text("{}", encoding="utf-8")
+    snapshot = daily_history._Snapshot(
+        target_key="AAPL/NAS",
+        input_cursor_date="20070820",
+        output_cursor_date="20060101",
+        status="observed",
+        stop_outcome="source_exhausted",
+        manifest_path=manifest_path,
+        manifest_relative_path=str(manifest_path.relative_to(cache_root)),
+        manifest_hash="sha256:" + "a" * 64,
+        raw_hash="sha256:" + "b" * 64,
+        accepted_page_count=1,
+        row_fingerprints={"20060101": "sha256:" + "c" * 64},
+    )
+    monkeypatch.setattr(daily_history, "_inspect_snapshot", lambda **_: snapshot)
+
+    recovered = daily_history._recover_orphan_snapshot(
+        index=index,
+        root=cache_root,
+        eligible_target_keys=("MSFT/NAS", "NVDA/NAS"),
+    )
+
+    assert recovered is False
+    assert index["targets"][0]["state"] == "complete"
+    assert index["targets"][0]["chunks"] == []
+
+
+def test_deferred_recovery_attempts_each_target_once_per_bounded_run(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    _write_deferred_recovery_index(cache_root)
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    client = _RecoveryProgressHistoryClient(clock)
+
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        recover_deferred_targets=True,
+        max_chunks=8,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert result.status == "deferred"
+    assert result.accepted_page_count == 4
+    assert result.chunk_attempt_count == 2
+    assert [query.symbol for query in client.queries] == ["MSFT", "MSFT", "NVDA", "NVDA"]
+    states = {state.target_key: state for state in result.target_states}
+    assert states["MSFT/NAS"].state == "ready"
+    assert states["MSFT/NAS"].cursor_date == "20171118"
+    assert states["NVDA/NAS"].state == "ready"
+    assert states["NVDA/NAS"].cursor_date == "20100113"
+
+
+def test_deferred_recovery_accepts_a_partial_cursor_on_its_next_bounded_run(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    _write_deferred_recovery_index(cache_root)
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    partial_client = _PartialRecoveryHistoryClient(clock)
+
+    first = run_kis_paper_daily_history_collection(
+        client_factory=lambda: partial_client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        recover_deferred_targets=True,
+        max_chunks=1,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    first_states = {state.target_key: state for state in first.target_states}
+    assert first_states["MSFT/NAS"].state == "ready"
+    assert first_states["MSFT/NAS"].last_reason == "daily_response_invalid"
+    resumed_client = _RecoverySuccessHistoryClient(clock)
+    resumed = run_kis_paper_daily_history_collection(
+        client_factory=lambda: resumed_client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        recover_deferred_targets=True,
+        max_chunks=1,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert resumed.chunk_attempt_count == 1
+    assert [query.symbol for query in resumed_client.queries] == ["MSFT"]
+
+
+def test_deferred_recovery_closes_only_second_structural_invalid_and_attempts_each_target_once(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    _write_deferred_recovery_index(cache_root)
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+    client = _TargetFailureHistoryClient(
+        clock,
+        {"MSFT": "daily_response_invalid", "NVDA": "transport_failure"},
+    )
+
+    result = run_kis_paper_daily_history_collection(
+        client_factory=lambda: client,  # type: ignore[arg-type]
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=cache_root,
+        evidence_root=evidence_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        recover_deferred_targets=True,
+        max_chunks=2,
+        max_runtime=timedelta(minutes=1),
+        clock=clock,
+        monotonic_clock=clock.monotonic,
+    )
+
+    states = {state.target_key: state for state in result.target_states}
+    assert result.status == "deferred"
+    assert [query.symbol for query in client.queries] == ["MSFT", "NVDA"]
+    assert states["MSFT/NAS"].state == "source_limited"
+    assert states["MSFT/NAS"].last_reason == "daily_response_invalid"
+    assert states["MSFT/NAS"].categorical_failure_count == 2
+    assert states["NVDA/NAS"].state == "deferred"
+    assert states["NVDA/NAS"].last_reason == "transport_failure"
+    assert states["NVDA/NAS"].categorical_failure_count == 2
+
+
+def test_deferred_recovery_rejects_a_changed_target_failure_before_client_construction(
+    tmp_path: Path,
+) -> None:
+    clock = _Clock()
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "daily-nas-history" / "v1"
+    evidence_root = tmp_path / "artifacts" / "data" / "daily-nas-history"
+    control_root = tmp_path / "market-data" / "collection-control-v1"
+    index = _write_deferred_recovery_index(cache_root)
+    index["targets"][4]["last_reason"] = "transport_failure"
+    (cache_root / "index.json").write_text(json.dumps(index, sort_keys=True), encoding="utf-8")
+    request_gate = KisPaperMarketDataRateGate(control_root=control_root, clock=clock)
+    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root, clock=clock)
+
+    with pytest.raises(KisPaperDailyHistoryError, match="recovery target state mismatch"):
+        run_kis_paper_daily_history_collection(
+            client_factory=lambda: (_ for _ in ()).throw(AssertionError("client must stay unused")),
+            request_gate=request_gate,
+            token_start_gate=token_gate,
+            cache_root=cache_root,
+            evidence_root=evidence_root,
+            repo_root=repo_root,
+            code_revision="git:test",
+            recover_deferred_targets=True,
+            max_chunks=1,
+            max_runtime=timedelta(minutes=1),
+            clock=clock,
+            monotonic_clock=clock.monotonic,
+        )
 
 
 def test_history_cache_rejects_a_git_workspace_destination(tmp_path: Path) -> None:
@@ -702,6 +1034,83 @@ def test_history_transport_only_opens_token_and_fixed_daily_routes() -> None:
             )
         )
     assert len(opener.requests) == 2
+
+
+@pytest.mark.parametrize(
+    ("method", "url"),
+    (
+        (
+            "GET",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-stock/v1/trading/inquire-balance",
+        ),
+        (
+            "GET",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-stock/v1/trading/inquire-psamount",
+        ),
+        (
+            "GET",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-stock/v1/trading/inquire-ccnl",
+        ),
+        (
+            "POST",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-stock/v1/trading/order",
+        ),
+        (
+            "POST",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-stock/v1/trading/order-rvsecncl",
+        ),
+        (
+            "GET",
+            f"{KIS_PAPER_MARKET_DATA_BASE_URL}/uapi/overseas-price/v1/quotations/price",
+        ),
+        ("GET", "https://openapi.koreainvestment.com:9443/oauth2/tokenP"),
+    ),
+)
+def test_history_transport_rejects_execution_quote_and_live_routes_before_opening(
+    method: str,
+    url: str,
+) -> None:
+    transport = UrllibKisPaperDailyHistoryTransport()
+    opener = _RecordingOpener()
+    transport._opener = opener  # type: ignore[assignment]
+
+    with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+        transport.request(
+            KisMarketDataRequest(
+                method=method,
+                url=url,
+                headers={},
+                query={},
+                json_body={} if method == "POST" else None,
+            )
+        )
+
+    assert opener.requests == []
+
+
+def _write_deferred_recovery_index(cache_root: Path) -> dict[str, object]:
+    cache_root.mkdir(parents=True)
+    index = daily_history._initial_index()
+    target_facts = {
+        "AAPL/NAS": ("complete", "20070820", 49, 2, None),
+        "AMZN/NAS": ("complete", "20070820", 49, 0, None),
+        "GOOGL/NAS": ("source_limited", "20140403", 33, 2, "no_cursor_progress"),
+        "META/NAS": ("source_limited", "20120518", 37, 1, "no_cursor_progress"),
+        "MSFT/NAS": ("deferred", "20171120", 22, 1, "daily_response_invalid"),
+        "NVDA/NAS": ("deferred", "20100115", 42, 1, "transport_failure"),
+    }
+    for target in index["targets"]:
+        state, cursor, accepted, categorical, reason = target_facts[target["target_key"]]
+        target["state"] = state
+        target["next_anchor_date"] = cursor
+        target["accepted_page_count"] = accepted
+        target["categorical_failure_count"] = categorical
+        target["last_reason"] = reason
+    (cache_root / "index.json").write_text(
+        json.dumps(index, sort_keys=True),
+        encoding="utf-8",
+    )
+    return index
 
 
 def _row(date: str, *, close: str) -> KisPaperDailyRawRow:
