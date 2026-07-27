@@ -48,14 +48,23 @@ model selection, replay, Paper order input, or live behavior.
    remaining-work estimate or `unknown`, ETA bucket or `unknown`, `next_due`,
    and recovery class. A runtime-bound partial collection must be `resume`, not
    a failure or a human approval hold.
-5. Run the first real collection cycle through the new Compose profile only.
+5. Resolve the independent Validation findings before the first real cycle:
+   an empty but valid terminal page must persist a source-safe terminal outcome
+   without creating an invalid empty raw snapshot; a page that does not advance
+   its durable cursor must not write a duplicate snapshot or remain endlessly
+   ready; and `--execute` must reject non-canonical cache, shared-control, or
+   artifact roots before any credential read or network request. Add direct
+   regression coverage for all three cases, including orphan recovery.
+6. Run the first real collection cycle through the new Compose profile only.
    Compose may inject `KIS_PAPER_*`; do not open, print, copy, or pass `.env`
    values on a command line. Record only source-safe output categories in chat
    and Git.
-6. Add focused tests for fixed-registry route isolation, durable cursor resume,
-   source-safe progress/ETA projection, external storage containment, and no
-   account/order/live path. Use temporary Execution and Validation roles for
-   independent route and resume/sanitization checks.
+7. Add focused tests for the actual fixed-registry token-plus-daily transport
+   sequence, durable cursor resume, source-safe progress/ETA projection,
+   external storage containment, terminal and non-progress recovery, canonical
+   execution roots, and no account/order/live path. Do not monkeypatch below
+   the route validator when proving route isolation. Use temporary Execution
+   and Validation roles for independent route and resume/sanitization checks.
 
 ## Hard Boundaries
 
@@ -80,7 +89,8 @@ model selection, replay, Paper order input, or live behavior.
 - Data stateboard contains the required current progress projection; `unknown`
   is acceptable only where the first run cannot yet measure it.
 - Independent Execution/Validation confirms no account/order/live route,
-  no secret/raw value output, and correct resume behavior.
+  no secret/raw value output, terminal/non-progress correctness, canonical
+  execution containment, and correct resume behavior.
 - No order, account, position, quote, Tiingo, or live broker call occurred.
 
 ## Verification

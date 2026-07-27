@@ -176,8 +176,13 @@ QQQ/SPY/IWM catalog.
 2. Implement and run the named six-symbol NAS daily-history coverage package.
    Its new cache and durable cursors must remain separate from the two-page
    probe; record first-run reach, pace, remaining-work, and ETA categories
-   before claiming broader coverage. A falsified fixed model pair is not itself
-   a data-collection hold or a request to mutate a source.
+   before claiming broader coverage. Before its first real call, correct the
+   independent Validation findings: a valid empty terminal page must become a
+   source-safe terminal state without an invalid empty snapshot; a non-advancing
+   cursor must not create duplicate snapshots or an endless ready loop; and
+   `--execute` must accept only the canonical isolated Compose roots. A
+   falsified fixed model pair is not itself a data-collection hold or a request
+   to mutate a source.
 
 ## Collection Progress Projection
 
@@ -190,6 +195,10 @@ daily-history cache outside the existing two-page probe.
 - remaining-page estimate and ETA bucket: `unknown` until the first reach
   observation; and
 - `next_due`: none before the first owned worker run.
+- temporary Validation found the three preflight correctness defects above in
+  the local uncommitted implementation. No KIS call, raw snapshot, or new cache
+  was created; these are Data-local implementation fixes, not an authority hold
+  or a reason to stop another ready lane.
 
 The collector advances serially whenever its shared measured gate permits. A
 token-start or cooldown deferral yields only this worker; it is never a

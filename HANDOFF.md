@@ -456,8 +456,13 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Build the first resumable six-symbol KIS Paper
-daily-history collector from the existing fixed NAS registry, then run its
-first source-safe reach/collection cycle. Preserve the completed two-page probe
-and frozen panel as separate sources. This is market-data work only: do not
-call account/order/live routes, turn the current listing into a PIT universe,
-or promote a model from the new cache.
+daily-history collector from the existing fixed NAS registry. Temporary
+Validation found three source-safe preflight corrections in the local
+implementation: handle a valid empty terminal page without an invalid raw
+snapshot, stop a non-advancing cursor without an endless duplicate loop, and
+bind `--execute` to the canonical isolated Compose roots before credential or
+network access. Fix and test those first, then run the first source-safe
+reach/collection cycle. Preserve the completed two-page probe and frozen panel
+as separate sources. This is market-data work only: do not call
+account/order/live routes, turn the current listing into a PIT universe, or
+promote a model from the new cache.
