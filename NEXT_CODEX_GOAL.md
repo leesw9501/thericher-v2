@@ -2,70 +2,71 @@
 
 ## Objective
 
-Turn the first fresh QQQ Paper cycle's exact `account_unavailable` no-intent
-into a recoverable, source-safe virtual-account diagnostic. Establish whether
-the existing KIS Paper read-only path is currently available, configuration-
-limited, or route-limited without reusing the completed QQQ receipt, submitting
-an order, or reading any live credential.
-
-This is execution observability, not a broker retry, model promotion,
-profitability validation, capital allocation, or live enablement.
+Close one genuinely new scheduled prospective QQQ KIS Paper lifecycle with
+truthful evidence. The installed scheduler, not a manual replay, must supply a
+new completed-bar receipt. That receipt may end in scoped no-intent or in the
+existing virtual-only persisted-intent/canary lifecycle; neither outcome is a
+model promotion, profitability claim, capital allocation, or live enablement.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`,
-   `RUNBOOK.md`, and all active stateboards.
-3. Reattach the completed fresh QQQ schedule receipt, virtual session
-   no-intent, and matching offline validator. Do not print account data,
-   identifiers, secrets, request bodies, or raw market rows.
+2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`,
+   and all active stateboards.
+3. Reattach the completed QQQ no-intent, matching offline validator, and later
+   successful virtual-only account-read record as historical scope evidence.
+   Do not print account data, identifiers, secrets, request bodies, or raw
+   market rows.
 4. Retry Claude only before relying on a material execution-route/recovery
-   change or interpreting an unexpected account result. An OAuth failure is
+   change or interpreting an unexpected canary outcome. An OAuth failure is
    `review_unavailable`, not a hold on safe private work.
 
 ## Work
 
-1. **Execution:** run the existing virtual-only read-only bridge once through
-   its named Docker path. Record only the allowlisted source-safe availability
-   category and redacted recovery evidence. Do not submit, modify, cancel, or
-   reconcile an order.
-2. **Execution:** if the read-only bridge remains unavailable, trace the exact
-   no-order code path with fakes and a source-safe diagnostic. Distinguish
-   malformed local configuration, virtual-host/routing rejection, missing
-   required account fields, and transient provider response without logging any
-   secret or account identifier. Make the smallest reversible fix that improves
-   the named virtual read loop.
-3. **Validation:** add focused tests proving the diagnostic remains KIS Paper
-   host-pinned, read-only, credential-redacting, order-free, and external-
-   artifact-only. A diagnostic must never be consumed as a model result, sizing
-   input, paper-intent permission, or live route.
-4. **Data:** let the installed prospective intraday scheduler continue to own
-   its due times. Reattach any later terminal receipt as a new observation, but
-   do not wait for it, reuse the completed `account_unavailable` receipt, or
-   restart its absent canary.
+1. **Data:** let the installed prospective intraday scheduler own its due time
+   and current-head collection. Reattach one later terminal receipt only after
+   it exists; do not manually invoke the task or replay the completed
+   `account_unavailable` receipt.
+2. **Execution:** for a new `eligible_enter` or `eligible_exit` receipt, let
+   the existing QQQ virtual-only session re-read its current account and quote,
+   then own any new exact persisted intent and its canary lifecycle. Do not use
+   the earlier bridge snapshot as an order input. A non-eligible decision,
+   account mismatch, quote failure, or missing input remains target-local
+   no-intent with no broker action.
+3. **Execution:** if a canary outcome is unknown, use only the existing
+   reconciliation for that exact durable intent before replacement. Do not
+   create a duplicate intent, manual retry, or live route.
+4. **Validation:** reattach the complete chain of new collection, offline
+   receipt, virtual session/canary result, validator, and terminal schedule
+   evidence. Keep local-paper replay distinct from every KIS Paper action and
+   keep any local fill labeled `source: local_paper`.
 5. **Engine Research:** keep the falsified daily linear/sequence/tree evidence
    closed. Do not occupy the GPU without a separately frozen causal hypothesis
    and a valid input contract.
 
 ## Boundaries
 
-- `KIS_PAPER_*` account reads are authorized. Never read or route
+- `KIS_PAPER_*` virtual activity is authorized. Never read or route
   `KIS_LIVE_*`, enable live behavior, or expose a public service.
-- Do not place, modify, cancel, or reconcile a broker order in this objective.
-- Keep market data under `D:\market_data` and generated diagnostics under
+- Do not manually construct or replay an order. Only the installed,
+  receipt-linked virtual session may submit, modify, cancel, or reconcile its
+  own new exact persisted intent under its existing tested lifecycle.
+- Keep market data under `D:\market_data` and generated evidence under
   `D:\thericher-v2\model-artifacts`; never commit either.
-- A provider/account failure closes only the diagnosed read path. It does not
-  create an approval gate or stop independent Data and Research work.
+- A provider/account failure closes only its exact path. It does not create an
+  approval gate or stop independent Data and Research work.
 
 ## Completion
 
-- One fresh source-safe read-only bridge outcome is persisted outside Git.
-- The first fresh QQQ no-intent is linked as historical evidence and is not
-  replayed into a broker action.
-- Any unavailable outcome has a precise recovery class and focused no-order
-  test coverage; any available outcome remains read-only evidence.
-- Stateboards, handoff, and decisions distinguish account-read health from
-  model quality, order authority, and live behavior.
+- One new terminal scheduled QQQ receipt is reattached outside Git with its
+  source-safe chain of collection, session/canary, validation, and scheduler
+  categories.
+- The completed first QQQ no-intent and separate account-health bridge remain
+  historical evidence and are not replayed into a broker action.
+- Any no-intent or unknown outcome has the exact local recovery class; any
+  submitted virtual action remains host-pinned, persisted, and reconcilable.
+- Stateboards, handoff, and decisions distinguish account-read health, model
+  quality, virtual order evidence, and live behavior.
 
 ## Verification
 
@@ -81,4 +82,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Diagnose KIS Paper account availability`
+`Observe fresh QQQ Paper canary lifecycle`

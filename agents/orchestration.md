@@ -16,8 +16,10 @@ second goal.
   depth-training input.
 - **Execution:** the fresh receipt classified an exit but its virtual account
   read returned `account_unavailable`; no canary was created, and the offline
-  validator reproduced the target-local no-intent. A recurring fixed Paper
-  baseline remains subsequent execution-learning work, not model promotion.
+  validator reproduced the target-local no-intent. A separate new virtual-only
+  bridge then completed a current account read without replaying that receipt.
+  A recurring fixed Paper baseline remains subsequent execution-learning work,
+  not model promotion.
 - **Shared resources:** KIS Paper market-data throughput is one measured
   per-account dispatcher; fresh observations preempt backfill. Research owns
   the exclusive GPU. D: has about 40 percent free space, above the 20/15
@@ -40,23 +42,24 @@ second goal.
 - **Claude challenge:** attempted again on 2026-07-28 for the fresh no-intent
   interpretation with a credential-free prompt; local OAuth was expired, so the
   result is `review_unavailable`. This does not hold the listed private work.
-- **Recovery:** the terminal receipt is complete. Diagnose only the exact
-  virtual account-read availability before treating a later fresh receipt as a
-  new canary opportunity.
+- **Recovery:** the terminal receipt and separate account diagnostic are
+  complete. Treat a later fresh receipt as a new canary opportunity only from
+  its own current account, quote, and persisted intent facts.
 
 ## Current Bottleneck
 
-The material bottleneck is the exact virtual Paper account-read availability
-for an otherwise eligible fresh exit, alongside insufficient qualified
-prospective intraday history and no replicated error-diverse daily candidate.
-The next reversible improvement is a bounded secret-safe account-path diagnosis
-while fresh capture continues; it does not retry or replace the completed
-no-intent.
+The material bottleneck is the next fresh QQQ Paper lifecycle, alongside
+insufficient qualified prospective intraday history and no replicated
+error-diverse daily candidate. The current account-read health check is
+complete; the next reversible improvement is to reattach the next scheduled
+receipt without replaying or pre-authorizing an order from the prior one.
 
 ## External Waits
 
 - The scheduled intraday head owns its next fresh QQQ observation.
-- Claude CLI OAuth is expired; retry at the next material decision boundary.
+- Claude CLI OAuth is expired; the current source-safe account-health review
+  also returned `review_unavailable`. Retry at the next material decision
+  boundary.
 - No other lane is entitled to foreground-wait on either fact.
 
 ## Recovery
@@ -69,6 +72,5 @@ to that item and keep independent packages moving.
 ## Next Handoff
 
 Do not make the prospective QQQ schedule a company bottleneck. Preserve the
-completed fresh no-intent, Data, and Research evidence; diagnose the exact
-account-read path and prepare only genuinely distinct next packages while the
-scheduler owns its next due time.
+completed fresh no-intent and current account-health evidence; reattach only a
+genuinely new scheduled receipt while the scheduler owns its next due time.

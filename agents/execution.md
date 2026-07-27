@@ -11,15 +11,16 @@ output as untrusted input.
 
 ## Current Objective
 
-The current read-only account projection and target-local Data recovery are
+The current read-only account diagnostic and target-local Data recovery are
 complete. The first fresh prospective QQQ cycle is also complete: a ready
 runtime receipt classified an exit, then the virtual route returned the exact
-`account_unavailable` no-intent without constructing a canary. Preserve the
-virtual-only bridge, local dashboard boundary, and existing Paper recovery
-invariants. The next Execution package is a bounded diagnosis of that exact
-account-read availability followed by a separate fresh receipt; a recurring
-fixed Paper baseline follows only from reliable execution evidence and remains
-independent of model promotion. KIS Live remains unavailable.
+`account_unavailable` no-intent without constructing a canary. A later fresh
+virtual-only bridge restored current account-read health without replaying that
+receipt. Preserve the local dashboard boundary and existing Paper recovery
+invariants. The next Execution package reattaches one genuinely new scheduled
+QQQ receipt; a recurring fixed Paper baseline follows only from reliable
+execution evidence and remains independent of model promotion. KIS Live remains
+unavailable.
 
 ## Current Facts
 
@@ -74,6 +75,13 @@ independent of model promotion. KIS Live remains unavailable.
   terminal schedule receipt closed `complete` with scheduler exit zero. This is
   an exact account-read availability fact, not a model result, route promotion,
   or a permission hold on a later fresh intent.
+- A separate Docker `kis-readonly` bridge completed at 2026-07-28 00:58 KST.
+  Its external source-safe record is
+  `execution/kis-paper-console-bridge/20260727T155823938788Z-complete.json`.
+  It proves only current virtual Paper read health, USD currency categories,
+  one position, zero open orders, and `submit_capability: false`. It had no
+  intent, order, modification, cancellation, or reconciliation effect and does
+  not repair, replay, or supply authority for the prior QQQ receipt.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
 - Temporary Execution and independent Validation both passed the new
@@ -143,14 +151,11 @@ independent of model promotion. KIS Live remains unavailable.
 3. Preserve exact ambiguous Paper evidence without replacing that exact intent.
    A read-only snapshot neither reconciles it nor blocks another correctly
    scoped authorized Paper action.
-4. Diagnose the exact `account_unavailable` read path with the existing
-   virtual-only, secret-safe account bridge. A scoped failure remains no-intent;
-   it does not justify a retry loop, live route, or operator-release gate.
-5. At a later fresh QQQ runtime receipt, let the existing receipt canary own
+4. At a later fresh QQQ runtime receipt, let the existing receipt canary own
    only its new exact persisted intent and cancellation/reconciliation lifecycle.
    Reattach the matching terminal dispatch receipt before interpreting that
    scheduled session as complete.
-6. After the exact canary lifecycle has durable evidence, prepare a recurring
+5. After the exact canary lifecycle has durable evidence, prepare a recurring
    low-frequency fixed Paper baseline using the existing intent, route, risk,
    and reconciliation boundaries. It must collect execution evidence, not
    promote a model or infer profitability from one outcome.
@@ -166,21 +171,20 @@ independent of model promotion. KIS Live remains unavailable.
 ## Recovery
 
 Current class: complete for the fresh read-only account bridge, cross-fold
-verifier, and first fresh QQQ scheduled no-intent. The account runtime expires
-normally after its TTL; a later refresh is a new read-only observation, not
-recovery of an order. Preserve exact ambiguous Paper evidence for the owned
-reconciliation route and continue independent Data, Research, and authorized
-Paper work. The new QQQ route has a complete offline and unit-tested recovery
-path; `account_unavailable` constrains only that completed receipt.
+verifier, account diagnostic, and first fresh QQQ scheduled no-intent. The
+account runtime expires normally after its TTL; a later refresh is a new
+read-only observation, not recovery of an order. Preserve exact ambiguous Paper
+evidence for the owned reconciliation route and continue independent Data,
+Research, and authorized Paper work. The new QQQ route has a complete offline
+and unit-tested recovery path; `account_unavailable` constrains only the
+completed receipt that recorded it.
 
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-Diagnose the completed `account_unavailable` fact through the existing
-virtual-only read path without inventing a retry schedule or reading live
-configuration. The next bounded canary must use a new exact durable Paper intent
+The next bounded canary must use a new exact durable Paper intent
 and the existing virtual-only route; no stale account snapshot or historical
 Data receipt may act as its permission or order input. The next fresh QQQ
 receipt must still re-read the current Paper account and fresh quote at its own

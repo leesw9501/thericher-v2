@@ -430,6 +430,14 @@ authorized private KIS Paper work.
   no-intent. The source-safe terminal schedule receipt is `complete` with
   scheduler exit zero. This closes that exact execution-learning cycle; a later
   account read or fresh receipt is a new scoped observation, not a retry of it.
+- A separate fresh virtual-only account bridge completed at 2026-07-28 00:58
+  KST. Its source-safe external evidence is
+  `execution/kis-paper-console-bridge/20260727T155823938788Z-complete.json`.
+  It attests only a complete read-only Paper view, USD currency categories, one
+  position, zero open orders, and no submission capability. It made no broker
+  order-side effect and does not change the earlier QQQ no-intent, prove model
+  quality, or authorize reuse of a stale account snapshot. The next fresh QQQ
+  session must read its account and quote again at its own call site.
 
 ## KIS Throughput Facts
 
@@ -511,8 +519,8 @@ authorized private KIS Paper work.
 ## Claude
 
 Claude is a concise drift brake for material architecture, promotion, holdout,
-ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
-2026-07-27 KST the CLI OAuth session remained expired during
+ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26,
+2026-07-27, and 2026-07-28 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, prospective-QQQ route,
 daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
@@ -533,9 +541,8 @@ global permission or progress latch.
 
 Follow NEXT_CODEX_GOAL.md. The fixed NAS daily-history collector is terminal
 for its exact current-listing scope; do not reopen a terminal target, blend a
-provider, or reinterpret it as a PIT universe. The current company objective
-observes the first fresh scheduled prospective QQQ runtime receipt while Data
-probes and, when useful, starts durable QQQ/SPY `1m` historical collection and
-Research freezes a separate daily breadth campaign. Keep Data, Research, and
-Execution evidence distinct, and let a session wait remain owned by its
-scheduler rather than the foreground.
+provider, or reinterpret it as a PIT universe. The next company objective
+reattaches one genuinely new scheduled prospective QQQ receipt and lets the
+existing virtual-only canary lifecycle decide only from its own fresh inputs.
+Keep Data, Research, and Execution evidence distinct, and let the scheduler
+own its session due time rather than the foreground.

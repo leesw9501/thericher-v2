@@ -1061,6 +1061,19 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps --build `
   --project-only --runtime-projection /app/runtime/state/kis_paper_intraday_freshness.json
 ```
 
+To make one separate, virtual-only account-read observation, use the named
+bridge rather than a session or canary command:
+
+```powershell
+docker compose --profile kis-readonly run --rm --no-deps kis-readonly
+```
+
+It publishes only a sanitized external availability record and a short-lived
+local runtime snapshot. It cannot submit, modify, cancel, or reconcile an
+order. A successful bridge is current read-health evidence only; it never
+replays a prior receipt or substitutes for the fresh account and quote reads
+required by a later scheduled Paper session.
+
 `raw_market_data_retained: false` is never a control condition for the console,
 a later collection, a KIS Paper call, an order, or a schedule. It records only
 the absence of bytes for its own historical result.

@@ -6200,3 +6200,27 @@ truth when the account read cannot support the eligible exit. Claude's required
 falsification-first interpretation request used only source-safe categories but
 could not authenticate because local OAuth was expired. That
 `review_unavailable` result limits no private routine work.
+
+## 2026-07-28 - Re-establish current virtual account-read health without replaying QQQ
+
+Decision: run the existing Docker `kis-readonly` bridge once as a separate,
+virtual-host-pinned, read-only observation. It completed at
+`2026-07-27T15:58:23Z`; its immutable source-safe evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260727T155823938788Z-complete.json`.
+The record attests only `paper_only: true`, `submit_capability: false`, USD
+currency categories, one position, and zero open orders. It contains no
+balance, account identifier, raw broker body, intent, order submission,
+modification, cancellation, or reconciliation result.
+
+The successful refresh establishes current account-read health only. It does
+not amend the earlier completed QQQ `account_unavailable` receipt, establish
+model quality or order readiness, or make a stale account projection an input
+to a later canary. A later scheduled QQQ receipt must independently read its
+own current account and quote before the existing persisted-intent lifecycle
+can act.
+
+Reason: an isolated availability result distinguishes a transient or
+route-local account-read fault from an execution or model claim without
+creating a broker retry. Claude received a source-safe falsification request
+for this interpretation, but local OAuth remained expired; the recorded
+outcome is `review_unavailable`, not a hold on the next private Paper cycle.
