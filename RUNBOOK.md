@@ -431,12 +431,24 @@ fixed compact GRU. It stores only lineage hashes, counts, fixed specifications,
 and aggregate classification metrics. It stores no rows, targets, predictions,
 model weights, replay events, PnL, credentials, accounts, orders, or fills.
 
+The completed independent `expanding-2` CPU and CUDA evidence is at:
+
+```text
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-expanding-2-20260727-r1
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-expanding-2-20260727-r1
+```
+
+Its result identities are `sha256:96a29b18...a7106e` and
+`sha256:233629de...2826e`. Each is an aggregate-only candidate screen over the
+explicit `2511 / 128` E2 split with development-only normalization. Neither
+result selects a model or permits replay, PnL, Paper, or live behavior.
+
 Use Docker's network-disabled research profile for any new immutable attempt:
 
 ```powershell
 docker compose --env-file .env.example --profile research run --rm --no-deps `
   research python scripts/run_kis_daily_joint_event_d1_sequence_screen.py `
-  --mode cpu-smoke --run-label <new-label> `
+  --mode cpu-smoke --fold-id <explicit-fold-id> --run-label <new-label> `
   --artifact-root /app/model_artifacts --market-data-root /app/market_data
 ```
 
@@ -446,7 +458,9 @@ classification evidence only. Do not use either summary to tune, select,
 ensemble, replay, promote, or derive a Paper decision. In Docker, only the
 explicit `/app/market_data` and `/app/model_artifacts` bind mounts count as
 external storage; the host paths remain `D:\market_data` and
-`D:\thericher-v2\model-artifacts`.
+`D:\thericher-v2\model-artifacts`. The runner currently recognizes only the
+explicit `expanding-1` and `expanding-2` pin profiles; pass the fold explicitly
+even though the historical E1 default remains available.
 
 ### Masked D1 Naive Validation
 

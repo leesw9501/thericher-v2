@@ -5730,3 +5730,28 @@ windows from becoming an accidental pooled selection dataset. Claude's
 falsification-first review was attempted and OAuth remained expired; Temporary
 Validation independently passed the parent lineage, sparse counts, `t-20..t+2`
 geometry, final 151-session-tail exclusion, source-safety, and route isolation.
+
+## 2026-07-27 - Complete the independent expanding-2 candidate-only D1 screen
+
+Decision: run one CPU smoke and one network-disabled Docker CUDA screen for
+the already reattested `expanding-2` QQQ/SPY D1 fold. Both retain the existing
+linear and compact-GRU specifications, score threshold, development-only
+normalization policy, and v2 target/cost semantics. The immutable external
+result identities are
+`sha256:96a29b18e95e495a8ccfb0146b8654dadde37118ca99c672ef48c55b20a7106e`
+for CPU and
+`sha256:233629de1a3fc1a4c0a1ab2a1d86f7a0d0c4c387c3a6a26a169442f380b2826e`
+for CUDA. They bind only the exact `2511 / 128` sparse split, fixed candidate
+specifications, normalizer identity, and aggregate classification metrics.
+
+Neither artifact retains rows, labels, predictions, model weights, replay,
+PnL, broker, account, order, or credential data. Neither changes a threshold,
+selects a model, forms an ensemble, creates a Paper decision, or supports a
+profitability claim. Temporary Validation independently passed lineage, split,
+tail, source-safety, and route isolation. Claude's concise E2 pin/screen
+challenge again could not authenticate; the fault remains a promotion/reliance
+limit, not a block on this candidate-only evidence.
+
+Reason: the second independently fixed fold confirms the narrow CPU/CUDA input
+and artifact path without letting the earlier fold steer parameters or choice.
+The remaining third expanding fold and final unused tail remain untouched.

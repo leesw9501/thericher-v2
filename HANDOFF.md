@@ -256,6 +256,21 @@ authorized private KIS Paper work.
   import/route isolation, and the narrowly scoped Docker external-mount rule.
   A Docker recovery invocation reached the external mount and correctly refused
   to overwrite the existing immutable receipts.
+- The fixed `expanding-2` candidate-only D1 screen is now complete. Its
+  immutable CPU and CUDA evidence is under
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-expanding-2-20260727-r1`
+  and
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-expanding-2-20260727-r1`,
+  with source-safe result identities
+  `sha256:96a29b18e95e495a8ccfb0146b8654dadde37118ca99c672ef48c55b20a7106e`
+  and `sha256:233629de1a3fc1a4c0a1ab2a1d86f7a0d0c4c387c3a6a26a169442f380b2826e`.
+  Both use only the fixed linear and compact-GRU candidates, exact `2511 / 128`
+  sparse decisions, and development-only normalization. They retain aggregate
+  classification evidence only; no model, threshold, ensemble, replay, PnL,
+  broker event, Paper intent, or account artifact was selected or created.
+  Temporary Validation passed lineage, counts, tail, source-safety, and route
+  isolation. The CUDA attempt used the research container's network-disabled
+  GPU path once.
 - `expanding-1` ends before the parent contract's later `expanding-2` and
   `expanding-3` folds. The final 151-session unused tail begins after those
   folds, not immediately after `expanding-1`; exact sparse input lists prevent
@@ -345,7 +360,7 @@ ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
-target-semantics, and candidate-only screen checks; no private material was
+target-semantics, and both candidate-only screen checks; no private material was
 sent. This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
@@ -358,9 +373,8 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Run the fixed `expanding-2` candidate-only CPU smoke
-then one network-disabled Docker CUDA screen with the existing linear and
-compact-GRU specifications. Preserve the exact sparse lists, development-only
-normalization, and final tail; do not tune from `expanding-1`, replay, select,
-promote, or derive a Paper intent. Refresh this file only with resulting
-cross-lane facts after that bounded objective completes.
+Follow NEXT_CODEX_GOAL.md. Reattest only the independent `expanding-3` D1
+input and its source-safe materializer/target receipts. Do not pool the first
+two screen results, tune, select, replay, promote, or derive a Paper intent.
+Refresh this file only with resulting cross-lane facts after that bounded
+objective completes.

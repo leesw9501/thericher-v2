@@ -9,23 +9,28 @@ import urllib.request
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
+import pytest
 
+
+@pytest.mark.parametrize("fold_id", ("expanding-1", "expanding-2"))
 def test_runner_stays_offline_when_its_external_inputs_are_injected(
     monkeypatch,
     capsys,
     tmp_path: Path,
+    fold_id: str,
 ) -> None:
     script = _load_script()
     artifact_root = tmp_path / "model-artifacts"
+    fold_pin = script._SCREEN_FOLD_PINS[fold_id]
     materializer = SimpleNamespace(
         materializer_identity="sha256:" + "a" * 64,
         fold_input=SimpleNamespace(fold_input_identity="sha256:" + "b" * 64),
     )
-    target_adapter = SimpleNamespace(target_cost_identity=script._EXPECTED_TARGET_COST_IDENTITY)
+    target_adapter = SimpleNamespace(target_cost_identity=fold_pin.target_cost_identity)
     summary_path = (
         artifact_root
         / script.KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_ID
-        / "unit-r1"
+        / f"unit-{fold_id}"
         / "summary.json"
     )
 
@@ -35,8 +40,9 @@ def test_runner_stays_offline_when_its_external_inputs_are_injected(
     def load_materializer(**kwargs: object) -> object:
         assert kwargs == {
             "artifact_root": artifact_root,
+            "fold_id": fold_id,
             "parent_artifact": artifact_root / "research-contracts" / script._PARENT_ARTIFACT_NAME,
-            "fold_artifact": artifact_root / "research-contracts" / script._FOLD_ARTIFACT_NAME,
+            "fold_artifact": artifact_root / "research-contracts" / fold_pin.fold_artifact_name,
             "market_data_root": tmp_path / "market-data",
         }
         return materializer
@@ -47,11 +53,13 @@ def test_runner_stays_offline_when_its_external_inputs_are_injected(
 
     def attest(**kwargs: object) -> None:
         assert kwargs == {
-            "path": artifact_root / "research-contracts" / script._TARGET_COST_ARTIFACT_NAME,
+            "path": artifact_root / "research-contracts" / fold_pin.target_cost_artifact_name,
             "artifact_root": artifact_root,
             "materializer_identity": materializer.materializer_identity,
             "fold_input_identity": materializer.fold_input.fold_input_identity,
             "target_cost_identity": target_adapter.target_cost_identity,
+            "expected_target_cost_receipt_sha256": fold_pin.target_cost_receipt_sha256,
+            "expected_target_cost_identity": fold_pin.target_cost_identity,
         }
 
     def run_screen(**kwargs: object) -> object:
@@ -59,7 +67,7 @@ def test_runner_stays_offline_when_its_external_inputs_are_injected(
             "materializer": materializer,
             "target_adapter": target_adapter,
             "artifact_root": artifact_root,
-            "run_label": "unit-r1",
+            "run_label": f"unit-{fold_id}",
             "mode": "cpu-smoke",
             "repo_root": script._REPO_ROOT,
         }
@@ -97,7 +105,9 @@ def test_runner_stays_offline_when_its_external_inputs_are_injected(
             "--mode",
             "cpu-smoke",
             "--run-label",
-            "unit-r1",
+            f"unit-{fold_id}",
+            "--fold-id",
+            fold_id,
             "--artifact-root",
             str(artifact_root),
             "--market-data-root",
@@ -145,7 +155,11 @@ def _load_script() -> ModuleType:
         )
         assert spec is not None and spec.loader is not None
         module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
-        return module
+        sys.modules[spec.name] = module
+        try:
+            spec.loader.exec_module(module)
+            return module
+        finally:
+            sys.modules.pop(spec.name, None)
     finally:
         sys.path.remove(str(scripts_path))

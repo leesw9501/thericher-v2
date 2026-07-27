@@ -21,7 +21,10 @@ from thericher_v2.kis_daily_joint_event_d1_materializer import KisDailyJointEven
 from thericher_v2.kis_daily_joint_event_d1_target_cost import (
     KisDailyJointEventD1TargetCostAdapter,
 )
-from thericher_v2.kis_daily_joint_event_window_contract import DEFAULT_MODEL_ARTIFACT_ROOT
+from thericher_v2.kis_daily_joint_event_window_contract import (
+    DEFAULT_MODEL_ARTIFACT_ROOT,
+    is_container_external_mount,
+)
 
 KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_SCHEMA_VERSION = 1
 KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_ID = "kis-daily-joint-event-d1-sequence-screen-v1"
@@ -33,8 +36,6 @@ KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_FEATURE_NAMES = (
 )
 KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_LENGTH = 20
 KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_COLUMN_COUNT = 3
-KIS_DAILY_JOINT_EVENT_D1_DEVELOPMENT_DECISION_COUNT = 2345
-KIS_DAILY_JOINT_EVENT_D1_VALIDATION_DECISION_COUNT = 146
 KIS_DAILY_JOINT_EVENT_D1_TOTAL_SESSION_COUNT = 4756
 KIS_DAILY_JOINT_EVENT_D1_UNTOUCHED_TAIL_SESSION_COUNT = 151
 KIS_DAILY_JOINT_EVENT_D1_SCORE_THRESHOLD = 0.5
@@ -46,8 +47,47 @@ KIS_DAILY_JOINT_EVENT_D1_CUDA_MAX_SECONDS = 180
 CandidateScreenMode = Literal["cpu-smoke", "cuda-screen"]
 CandidateModelId = Literal["linear", "compact_gru"]
 MaterializationPhase = Literal["development", "validation"]
+ScreenFoldId = Literal["expanding-1", "expanding-2"]
 SequenceRow = tuple[float, float, float]
 SequenceFeatures = tuple[SequenceRow, ...]
+
+KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_IDS: tuple[ScreenFoldId, ...] = (
+    "expanding-1",
+    "expanding-2",
+)
+
+
+@dataclass(frozen=True, slots=True)
+class KisDailyJointEventD1SequenceScreenFoldSpec:
+    """One explicit, independent sparse-fold contract for this screen."""
+
+    fold_id: ScreenFoldId
+    development_decision_count: int
+    validation_decision_count: int
+
+    def __post_init__(self) -> None:
+        if (
+            self.fold_id not in KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_IDS
+            or type(self.development_decision_count) is not int
+            or type(self.validation_decision_count) is not int
+            or self.development_decision_count <= 0
+            or self.validation_decision_count <= 0
+        ):
+            raise ValueError("joint D1 sequence screen fold spec is invalid")
+
+
+KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_SPECS = {
+    "expanding-1": KisDailyJointEventD1SequenceScreenFoldSpec(
+        fold_id="expanding-1",
+        development_decision_count=2345,
+        validation_decision_count=146,
+    ),
+    "expanding-2": KisDailyJointEventD1SequenceScreenFoldSpec(
+        fold_id="expanding-2",
+        development_decision_count=2511,
+        validation_decision_count=128,
+    ),
+}
 
 _ALLOWED_ARTIFACT_KEYS = frozenset(
     {
@@ -73,6 +113,7 @@ _ALLOWED_ARTIFACT_KEYS = frozenset(
         "feature_values_persisted",
         "failure_class",
         "fit_scope",
+        "fold_id",
         "fold_input_identity",
         "f1",
         "hidden_size",
@@ -285,9 +326,12 @@ class KisDailyJointEventD1ScreenInput:
             or not isinstance(self.target_adapter, KisDailyJointEventD1TargetCostAdapter)
             or self.target_adapter.materializer.materializer_identity
             != self.materializer.materializer_identity
-            or self.materializer.fold_input.fold_id != "expanding-1"
-            or len(self.development_samples) != KIS_DAILY_JOINT_EVENT_D1_DEVELOPMENT_DECISION_COUNT
-            or len(self.validation_samples) != KIS_DAILY_JOINT_EVENT_D1_VALIDATION_DECISION_COUNT
+        ):
+            raise ValueError("joint D1 sequence screen input is invalid")
+        fold_spec = _screen_fold_spec(self.materializer.fold_input.fold_id)
+        if (
+            len(self.development_samples) != fold_spec.development_decision_count
+            or len(self.validation_samples) != fold_spec.validation_decision_count
             or self.untouched_tail_session_count
             != KIS_DAILY_JOINT_EVENT_D1_UNTOUCHED_TAIL_SESSION_COUNT
         ):
@@ -308,6 +352,7 @@ class KisDailyJointEventD1ScreenInput:
     def source_identity(self) -> str:
         return _sha256_json(
             {
+                "fold_id": self.materializer.fold_input.fold_id,
                 "fold_input_identity": self.materializer.fold_input.fold_input_identity,
                 "materializer_identity": self.materializer.materializer_identity,
                 "target_cost_identity": self.target_adapter.target_cost_identity,
@@ -393,7 +438,6 @@ class KisDailyJointEventD1CandidateResult:
             or self.mode not in {"cpu-smoke", "cuda-screen"}
             or self.backend not in {expected_backend, "unit"}
             or not isinstance(self.metrics, KisDailyJointEventD1ClassificationMetrics)
-            or self.metrics.evaluated_count != KIS_DAILY_JOINT_EVENT_D1_VALIDATION_DECISION_COUNT
         ):
             raise ValueError("joint D1 candidate result is invalid")
 
@@ -451,9 +495,9 @@ def build_kis_daily_joint_event_d1_sequence_screen_input(
         not isinstance(materializer, KisDailyJointEventD1Materializer)
         or not isinstance(target_adapter, KisDailyJointEventD1TargetCostAdapter)
         or target_adapter.materializer.materializer_identity != materializer.materializer_identity
-        or materializer.fold_input.fold_id != "expanding-1"
     ):
         raise ValueError("joint D1 sequence screen source is invalid")
+    fold_spec = _screen_fold_spec(materializer.fold_input.fold_id)
     development_indices = materializer.eligible_decision_indices("development")
     validation_indices = materializer.eligible_decision_indices("validation")
     untouched_tail_start_index = (
@@ -461,8 +505,8 @@ def build_kis_daily_joint_event_d1_sequence_screen_input(
         - KIS_DAILY_JOINT_EVENT_D1_UNTOUCHED_TAIL_SESSION_COUNT
     )
     if (
-        len(development_indices) != KIS_DAILY_JOINT_EVENT_D1_DEVELOPMENT_DECISION_COUNT
-        or len(validation_indices) != KIS_DAILY_JOINT_EVENT_D1_VALIDATION_DECISION_COUNT
+        len(development_indices) != fold_spec.development_decision_count
+        or len(validation_indices) != fold_spec.validation_decision_count
         or len(materializer.common_sessions) != KIS_DAILY_JOINT_EVENT_D1_TOTAL_SESSION_COUNT
         or set(development_indices).intersection(validation_indices)
         or any(
@@ -539,7 +583,11 @@ def run_kis_daily_joint_event_d1_sequence_screen(
             selected_trainer(screen_input, spec, mode)
             for spec in KIS_DAILY_JOINT_EVENT_D1_CANDIDATE_SPECS
         )
-        _validate_candidate_results(candidate_results, mode=mode)
+        _validate_candidate_results(
+            candidate_results,
+            mode=mode,
+            validation_decision_count=len(screen_input.validation_samples),
+        )
     except Exception as error:
         _write_source_safe_json_new(
             output_dir / "incomplete.json",
@@ -623,7 +671,7 @@ def _materialize_sample(
 def _fit_development_standardizer(
     samples: Sequence[KisDailyJointEventD1SequenceSample],
 ) -> KisDailyJointEventD1Standardizer:
-    if len(samples) != KIS_DAILY_JOINT_EVENT_D1_DEVELOPMENT_DECISION_COUNT:
+    if not samples:
         raise ValueError("joint D1 sequence development standardizer input is invalid")
     flattened = tuple(row for sample in samples for row in sample.features)
     row_count = len(flattened)
@@ -734,6 +782,7 @@ def _summary_document(
 
 def _source_document(screen_input: KisDailyJointEventD1ScreenInput) -> dict[str, object]:
     return {
+        "fold_id": screen_input.materializer.fold_input.fold_id,
         "fold_input_identity": screen_input.materializer.fold_input.fold_input_identity,
         "materializer_identity": screen_input.materializer.materializer_identity,
         "target_cost_identity": screen_input.target_adapter.target_cost_identity,
@@ -759,11 +808,15 @@ def _scope_document() -> dict[str, bool]:
 
 
 def _validate_candidate_results(
-    results: tuple[KisDailyJointEventD1CandidateResult, ...], *, mode: CandidateScreenMode
+    results: tuple[KisDailyJointEventD1CandidateResult, ...],
+    *,
+    mode: CandidateScreenMode,
+    validation_decision_count: int,
 ) -> None:
     if (
         tuple(result.spec for result in results) != KIS_DAILY_JOINT_EVENT_D1_CANDIDATE_SPECS
         or any(result.mode != mode for result in results)
+        or any(result.metrics.evaluated_count != validation_decision_count for result in results)
     ):
         raise ValueError("joint D1 sequence screen candidates changed the frozen contract")
 
@@ -927,14 +980,10 @@ def _ratio(numerator: float, denominator: float) -> float:
 def _create_external_output_dir(*, artifact_root: Path, repo_root: Path, run_label: str) -> Path:
     resolved_repo = repo_root.resolve()
     resolved_root = artifact_root.resolve()
-    docker_mount_exception = (
-        resolved_repo == Path("/app").resolve()
-        and resolved_root == (resolved_repo / "model_artifacts").resolve()
-    )
     if (
         artifact_root.is_symlink()
         or (resolved_root == resolved_repo or resolved_root.is_relative_to(resolved_repo))
-        and not docker_mount_exception
+        and not is_container_external_mount(resolved_root, resolved_repo)
     ):
         raise ValueError("joint D1 sequence artifacts must stay outside the Git workspace")
     resolved_root.mkdir(parents=True, exist_ok=True)
@@ -986,6 +1035,15 @@ def _validate_run_label(run_label: str) -> None:
         )
     ):
         raise ValueError("joint D1 sequence run label is invalid")
+
+
+def _screen_fold_spec(fold_id: str) -> KisDailyJointEventD1SequenceScreenFoldSpec:
+    if not isinstance(fold_id, str):
+        raise ValueError("joint D1 sequence screen fold is invalid")
+    try:
+        return KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_SPECS[fold_id]
+    except KeyError as error:
+        raise ValueError("joint D1 sequence screen fold is invalid") from error
 
 
 def _sha256_json(value: object) -> str:

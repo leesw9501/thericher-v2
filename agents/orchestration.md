@@ -90,19 +90,16 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now the independent, fixed-specification
-`expanding-2` candidate-only screen. Its source-safe receipts are
-`sha256:e489f...9709f` (materializer) and `sha256:4de77...941da` (target/cost),
-bound to exact `2511 / 128` sparse development/validation decisions. Do not
-tune from or combine it with the first screen; no classification score becomes
-a selected model, replay result, or Paper input. The fixed six-symbol panel
-remains too short and non-PIT for a depth campaign.
+The material bottleneck is now the independent `expanding-3` input contract.
+The first two candidate-only screens are complete but cannot be pooled,
+selected, replayed, or promoted. Reattest E3's exact sparse split and
+source-safe materializer/target receipts before another screen becomes ready.
+The fixed six-symbol panel remains too short and non-PIT for a depth campaign.
 
-The GPU is free and the one ready consumer is the bounded `expanding-2` screen:
-run its CPU smoke first, then one network-disabled CUDA attempt if the CPU
-contract succeeds. No other depth or ensemble campaign is ready. The Claude
-OAuth outage is scoped to reliance, promotion, and execution boundaries; it does
-not require another ready private lane to wait.
+The GPU is free. There is no eligible training or screen job until the E3 input
+contract exists, so Research prepares that contract rather than manufacturing
+work. The Claude OAuth outage is scoped to reliance, promotion, and execution
+boundaries; it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -131,15 +128,15 @@ parallel flood.
 ## Recovery
 
 Current class: complete for the daily catch-up, event-window contract, both
-fold inputs/materializer/target receipts, and the first candidate-only CPU/
-CUDA screen; resume for the `expanding-2` candidate-only screen. Reattest an individual
-cache, contract, campaign, or exact Paper intent before relying on it. Scope
+completed fold inputs/materializer/target receipts, and both candidate-only
+CPU/CUDA screens; resume for the `expanding-3` input contract. Reattest an
+individual cache, contract, campaign, or exact Paper intent before relying on it. Scope
 failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Run one fixed-specification `expanding-2` candidate-only screen while keeping
-Execution independent. Do not treat either screen, the historical catalog, or
+Reattest the single `expanding-3` input contract while keeping Execution
+independent. Do not treat either completed screen, the historical catalog, or
 any daily control as a selected model or replay result. Record only an actual
 shared resource conflict, new external wait, bottleneck, or reversible
 operating improvement here.

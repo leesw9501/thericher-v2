@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from pathlib import Path
 
 from prepare_kis_daily_joint_event_d1_materializer import (
@@ -14,6 +15,7 @@ from prepare_kis_daily_joint_event_d1_materializer import (
 )
 
 from thericher_v2.kis_daily_joint_event_d1_sequence_screen import (
+    KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_IDS,
     KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_ID,
     run_kis_daily_joint_event_d1_sequence_screen,
 )
@@ -27,27 +29,59 @@ _SAFE_RUN_LABEL = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
 _PARENT_ARTIFACT_NAME = (
     "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-contract-v2.json"
 )
-_FOLD_ARTIFACT_NAME = (
-    "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
-    "joint-event-window-fold-input-expanding-1-v1.json"
-)
-_TARGET_COST_ARTIFACT_NAME = (
-    "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
-    "d1-target-cost-expanding-1-validation-first-v2.json"
-)
-_EXPECTED_TARGET_COST_RECEIPT_SHA256 = (
-    "sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486"
-)
-_EXPECTED_TARGET_COST_IDENTITY = (
-    "sha256:2c0ecbb889b8f1660929e87458e4a90d01f2390e41b25ed47e7201ab8a94b842"
-)
 _DEFAULT_MARKET_DATA_ROOT = Path("D:/market_data")
+
+
+@dataclass(frozen=True, slots=True)
+class _ScreenFoldPin:
+    fold_artifact_name: str
+    target_cost_artifact_name: str
+    target_cost_receipt_sha256: str
+    target_cost_identity: str
+
+
+_SCREEN_FOLD_PINS = {
+    "expanding-1": _ScreenFoldPin(
+        fold_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "joint-event-window-fold-input-expanding-1-v1.json"
+        ),
+        target_cost_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "d1-target-cost-expanding-1-validation-first-v2.json"
+        ),
+        target_cost_receipt_sha256=(
+            "sha256:90beea4c501a946dd5502a2b0eb4a06b10a0ef36ed5f70f29c595a17dd6d7486"
+        ),
+        target_cost_identity=(
+            "sha256:2c0ecbb889b8f1660929e87458e4a90d01f2390e41b25ed47e7201ab8a94b842"
+        ),
+    ),
+    "expanding-2": _ScreenFoldPin(
+        fold_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "joint-event-window-fold-input-expanding-2-v1.json"
+        ),
+        target_cost_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "d1-target-cost-expanding-2-validation-first-v2.json"
+        ),
+        target_cost_receipt_sha256=(
+            "sha256:4de77ac80db46b1378c5728473e2f31c04b5c5343ffde8ddf507b9afb16941da"
+        ),
+        target_cost_identity=(
+            "sha256:cd58b52816a7d0a744f8fce42a384091ce8ea9290c73316b699579a1a16291a0"
+        ),
+    ),
+}
 
 
 def main(argv: Sequence[str] | None = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=("cpu-smoke", "cuda-screen"), required=True)
     parser.add_argument("--run-label", required=True)
+    parser.add_argument("--fold-id", choices=KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_IDS,
+                        default="expanding-1")
     parser.add_argument("--artifact-root", type=Path, default=DEFAULT_MODEL_ARTIFACT_ROOT)
     parser.add_argument("--market-data-root", type=Path, default=_DEFAULT_MARKET_DATA_ROOT)
     parser.add_argument("--parent-artifact", type=Path)
@@ -59,6 +93,8 @@ def main(argv: Sequence[str] | None = None) -> None:
     if _SAFE_RUN_LABEL.fullmatch(run_label) is None:
         parser.error("--run-label must use 1-80 ASCII letters, digits, '.', '_' or '-'")
     artifact_root = Path(args.artifact_root)
+    fold_id = str(args.fold_id)
+    fold_pin = _screen_fold_pin(fold_id)
     contract_root = artifact_root / "research-contracts"
     parent_artifact = (
         Path(args.parent_artifact)
@@ -68,12 +104,12 @@ def main(argv: Sequence[str] | None = None) -> None:
     fold_artifact = (
         Path(args.fold_artifact)
         if args.fold_artifact
-        else contract_root / _FOLD_ARTIFACT_NAME
+        else contract_root / fold_pin.fold_artifact_name
     )
     target_cost_receipt = (
         Path(args.target_cost_receipt)
         if args.target_cost_receipt
-        else contract_root / _TARGET_COST_ARTIFACT_NAME
+        else contract_root / fold_pin.target_cost_artifact_name
     )
     output_dir = artifact_root / KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_ID / run_label
     if output_dir.exists():
@@ -81,6 +117,7 @@ def main(argv: Sequence[str] | None = None) -> None:
 
     materializer = load_pinned_kis_daily_joint_event_d1_materializer(
         artifact_root=artifact_root,
+        fold_id=fold_id,
         parent_artifact=parent_artifact,
         fold_artifact=fold_artifact,
         market_data_root=Path(args.market_data_root),
@@ -94,6 +131,8 @@ def main(argv: Sequence[str] | None = None) -> None:
         materializer_identity=materializer.materializer_identity,
         fold_input_identity=materializer.fold_input.fold_input_identity,
         target_cost_identity=target_adapter.target_cost_identity,
+        expected_target_cost_receipt_sha256=fold_pin.target_cost_receipt_sha256,
+        expected_target_cost_identity=fold_pin.target_cost_identity,
     )
     run = run_kis_daily_joint_event_d1_sequence_screen(
         materializer=materializer,
@@ -113,6 +152,8 @@ def _attest_target_cost_receipt(
     materializer_identity: str,
     fold_input_identity: str,
     target_cost_identity: str,
+    expected_target_cost_receipt_sha256: str,
+    expected_target_cost_identity: str,
 ) -> None:
     """Verify the fixed v2 source-safe receipt without exposing its contents."""
 
@@ -125,7 +166,10 @@ def _attest_target_cost_receipt(
     ):
         raise ValueError("target/cost receipt must stay under the external artifact root")
     encoded = resolved_path.read_bytes()
-    if "sha256:" + hashlib.sha256(encoded).hexdigest() != _EXPECTED_TARGET_COST_RECEIPT_SHA256:
+    if (
+        "sha256:" + hashlib.sha256(encoded).hexdigest()
+        != expected_target_cost_receipt_sha256
+    ):
         raise ValueError("target/cost receipt hash does not match the pinned v2 artifact")
     try:
         document = json.loads(encoded.decode("utf-8"))
@@ -138,8 +182,8 @@ def _attest_target_cost_receipt(
     source_materializer = document.get("source_materializer")
     scope = document.get("scope")
     if (
-        document.get("target_cost_identity") != _EXPECTED_TARGET_COST_IDENTITY
-        or target_cost_identity != _EXPECTED_TARGET_COST_IDENTITY
+        document.get("target_cost_identity") != expected_target_cost_identity
+        or target_cost_identity != expected_target_cost_identity
         or not isinstance(source_fold, Mapping)
         or source_fold.get("fold_input_identity") != fold_input_identity
         or not isinstance(source_materializer, Mapping)
@@ -150,6 +194,15 @@ def _attest_target_cost_receipt(
         or scope.get("paper_decision_eligible") is not False
     ):
         raise ValueError("target/cost receipt lineage or scope is incompatible")
+
+
+def _screen_fold_pin(fold_id: str) -> _ScreenFoldPin:
+    if not isinstance(fold_id, str):
+        raise ValueError("joint D1 sequence screen fold id is invalid")
+    try:
+        return _SCREEN_FOLD_PINS[fold_id]
+    except KeyError as error:
+        raise ValueError("joint D1 sequence screen fold id is invalid") from error
 
 
 if __name__ == "__main__":

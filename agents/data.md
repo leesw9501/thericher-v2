@@ -141,12 +141,14 @@ or a company hold.
   `2511 / 128` sparse decisions. Its source-safe materializer and target/cost
   receipts are `sha256:e489f...9709f` and `sha256:4de77...941da`; they persist
   no provider rows or price-derived values and retain only this fold's lineage
-  and `t-20..t+2` geometry.
+  and `t-20..t+2` geometry. Research consumed it once for a completed
+  aggregate-only CPU/CUDA screen without modifying the catalog or persisting
+  provider values.
 
 ## Ready Queue
 
-1. Serve the completed `expanding-2` verified lineage to one fixed-specification
-   candidate-only Research screen. Preserve its exact sparse index tuple and
+1. Reattest the parent into one exact `expanding-3` fold input for a future
+   candidate-only consumer. Preserve its `2671 / 145` sparse index tuple and
    final 151-session tail; use values in memory only and do not fetch, blend,
    or persist provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
@@ -183,16 +185,17 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-both fold inputs/materializer/target-cost receipts, and first candidate screen;
-resume for the independent `expanding-2` candidate-only screen. Reattest existing metadata and
-committed snapshots before a new consumer or future network call. A bad cache
+both completed fold inputs/materializer/target-cost receipts, and both completed
+candidate screens; resume for the independent `expanding-3` input contract.
+Reattest existing metadata and committed snapshots before a new consumer or
+future network call. A bad cache
 is reconcile/restart evidence for that cache; an empty or limited endpoint
 result is source evidence for that route only.
 
 ## Next Handoff
 
-Return the same verified `expanding-2` lineage to one candidate-only screen.
-Preserve the frozen six-symbol source
-separately. Do not infer PIT membership, corporate-action completeness, a
-ranking claim, or Paper-trading eligibility from either cache, and do not wait
-for a prospective pair before advancing other ready Data work.
+Return one verified `expanding-3` lineage to a source-safe materializer/target
+consumer. Preserve the frozen six-symbol source separately. Do not infer PIT
+membership, corporate-action completeness, a ranking claim, or Paper-trading
+eligibility from either cache, and do not wait for a prospective pair before
+advancing other ready Data work.

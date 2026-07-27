@@ -31,8 +31,16 @@ from thericher_v2.kis_daily_joint_event_window_contract import (
 )
 
 
-def test_sequence_input_preserves_causal_geometry_sparse_splits_and_tail() -> None:
-    materializer, adapter = _materializer_and_adapter()
+@pytest.mark.parametrize(
+    ("fold_id", "expected_development_count", "expected_validation_count"),
+    (("expanding-1", 2345, 146), ("expanding-2", 2511, 128)),
+)
+def test_sequence_input_preserves_causal_geometry_sparse_splits_and_tail(
+    fold_id: str,
+    expected_development_count: int,
+    expected_validation_count: int,
+) -> None:
+    materializer, adapter = _materializer_and_adapter(fold_id=fold_id)
 
     prepared = screen.build_kis_daily_joint_event_d1_sequence_screen_input(
         materializer=materializer,
@@ -41,8 +49,9 @@ def test_sequence_input_preserves_causal_geometry_sparse_splits_and_tail() -> No
 
     development_indices = materializer.eligible_decision_indices("development")
     validation_indices = materializer.eligible_decision_indices("validation")
-    assert len(prepared.development_samples) == 2345
-    assert len(prepared.validation_samples) == 146
+    assert len(prepared.development_samples) == expected_development_count
+    assert len(prepared.validation_samples) == expected_validation_count
+    assert prepared.materializer.fold_input.fold_id == fold_id
     assert (
         tuple(sample.decision_index for sample in prepared.development_samples)
         == development_indices
@@ -134,7 +143,7 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
     tmp_path: Path,
 ) -> None:
     _deny_external_access(monkeypatch)
-    materializer, adapter = _materializer_and_adapter()
+    materializer, adapter = _materializer_and_adapter(fold_id="expanding-2")
     artifact_root = tmp_path / "model-artifacts"
 
     first = screen.run_kis_daily_joint_event_d1_sequence_screen(
@@ -164,11 +173,12 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
         "linear",
         "compact_gru",
     ]
+    assert summary["source"]["fold_id"] == "expanding-2"
     assert summary["split"] == {
-        "development_decision_count": 2345,
+        "development_decision_count": 2511,
         "pre_validation_gap_consumed": False,
         "untouched_tail_session_count": 151,
-        "validation_decision_count": 146,
+        "validation_decision_count": 128,
     }
     assert summary["scope"] == {
         "candidate_only": True,
@@ -184,7 +194,7 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
         "replay_materialized": False,
         "target_values_persisted": False,
     }
-    assert all(result.metrics.evaluated_count == 146 for result in first.candidate_results)
+    assert all(result.metrics.evaluated_count == 128 for result in first.candidate_results)
     assert all(term not in serialized for term in ('"open"', '"close"', '"return"'))
     assert all(
         term not in serialized
@@ -194,6 +204,8 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
     assert first.precommit_path.is_relative_to(artifact_root)
     with pytest.raises(ValueError, match="not source-safe"):
         screen._assert_source_safe({"label": 1})  # noqa: SLF001
+    with pytest.raises(ValueError, match="not source-safe"):
+        screen._assert_source_safe({"metrics": {"open": 1}})  # noqa: SLF001
     with pytest.raises(ValueError, match="outside the Git workspace"):
         screen.run_kis_daily_joint_event_d1_sequence_screen(
             materializer=materializer,
@@ -274,11 +286,12 @@ assert not [name for name in sys.modules if name.startswith('thericher_v2.execut
 
 def _materializer_and_adapter(
     *,
+    fold_id: str = "expanding-1",
     qqq_open_overrides: Mapping[int, Decimal] | None = None,
     qqq_close_overrides: Mapping[int, Decimal] | None = None,
 ) -> tuple[KisDailyJointEventD1Materializer, object]:
     sessions = _sessions()
-    fold_input = _fold_input(sessions)
+    fold_input = _fold_input(sessions, fold_id=fold_id)
     opens = qqq_open_overrides or {}
     closes = qqq_close_overrides or {}
     materializer = KisDailyJointEventD1Materializer(
@@ -308,12 +321,15 @@ def _sessions() -> tuple[date, ...]:
     return tuple(start + timedelta(days=index) for index in range(4756))
 
 
-def _fold_input(sessions: tuple[date, ...]) -> KisDailyJointEventFoldInput:
-    development_end = 2367
+def _fold_input(sessions: tuple[date, ...], *, fold_id: str) -> KisDailyJointEventFoldInput:
+    fold_spec = screen.KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_SPECS[fold_id]
+    development_end = 3783 if fold_id == "expanding-1" else 4057
     gap_end = development_end + 22
     validation_end = gap_end + 252
-    development_indices = tuple(range(20, 2365))
-    validation_indices = tuple(range(gap_end + 20, gap_end + 20 + 146))
+    development_indices = tuple(range(20, 20 + fold_spec.development_decision_count))
+    validation_indices = tuple(
+        range(gap_end + 20, gap_end + 20 + fold_spec.validation_decision_count)
+    )
     return KisDailyJointEventFoldInput(
         source_artifact_sha256=_sha256("parent-artifact"),
         source_contract_identity=_sha256("parent-contract"),
@@ -325,7 +341,7 @@ def _fold_input(sessions: tuple[date, ...]) -> KisDailyJointEventFoldInput:
         event_boundary_mask_identity=_sha256("mask"),
         event_boundary_partition_identity=_sha256("partition"),
         joint_event_identity=_sha256("joint"),
-        fold_id="expanding-1",
+        fold_id=fold_id,
         development_start_index=0,
         development_end_index=development_end,
         pre_validation_gap_start_index=development_end,

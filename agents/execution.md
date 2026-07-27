@@ -66,16 +66,16 @@ remains unavailable.
 - The completed `expanding-1` candidate-only CPU/CUDA screen imported neither
   Execution nor `local_paper`, created no replay, intent, fill, position, cash,
   or PnL object, and wrote only external aggregate classification evidence.
-- The reattested `expanding-2` fold input and its source-safe materializer and
-  target/cost receipts remain outside every Execution route. They have no
-  account, order, intent, replay, KIS, Tiingo, or live effect; the next
-  candidate-only screen must retain that boundary.
+- The completed `expanding-2` candidate-only CPU/CUDA screen remained outside
+  every Execution route. Its source-safe aggregate artifacts have no account,
+  order, intent, replay, KIS, Tiingo, or live effect. The next independent
+  fold contract must retain that boundary.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research run the reattested `expanding-2` candidate-
-   only D1 screen. It must remain separate from every replay,
+   stable while Data and Research reattest the independent `expanding-3` D1
+   input. It must remain separate from every replay,
    account, intent, and broker route.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
@@ -103,5 +103,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next `expanding-2` candidate-only
-screen must not acquire an account, order, KIS, Tiingo, or replay path.
+binding and route boundaries intact. The next `expanding-3` input consumer
+must not acquire an account, order, KIS, Tiingo, or replay path.

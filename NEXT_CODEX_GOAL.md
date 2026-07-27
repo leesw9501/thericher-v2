@@ -2,52 +2,58 @@
 
 ## Objective
 
-Run one fixed-specification, candidate-only QQQ/SPY D1 sequence screen on the
-independent reattested `expanding-2` fold. It must neither tune from nor select
-against `expanding-1`; it produces aggregate classification evidence only.
+Reattest the third independent QQQ/SPY D1 `expanding-3` fold as a source-safe,
+candidate-only input. Produce only its fold input, one materializer geometry
+receipt, and one deterministic v2 target/cost receipt. Do not pool, compare,
+select, or replay the completed `expanding-1` and `expanding-2` screens.
 
 ## First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read HANDOFF.md, AGENTS.md, RUNBOOK.md, the active stateboards, and the
-   three source-safe `expanding-2` external artifacts.
-3. Reattest the pinned parent/fold/materializer/target lineage before loading
-   any in-memory values. Expected fold input artifact/identity are
-   `sha256:79723a4713b5a4751b6a62ddcd700b67542012bf3ff17a44958b7bd3d67c9305` /
-   `sha256:6507570e49022133ff1055d49d610a6c32e80b92c0f881115f67d9e68e899f4e`.
+   parent plus completed E1/E2 source-safe contracts under the external
+   artifact root.
+3. Attempt one concise Claude falsification-first drift-check before extending
+   an explicit fold pin. Do not send raw market values, labels, credentials, or
+   account data. Record an OAuth/tool failure as `review_unavailable` only.
 
 ## Required Work
 
-1. Reuse the completed `expanding-1` screen's fixed linear and compact-GRU
-   candidate specifications without changing hyperparameters, thresholds,
-   normalization policy, or cost semantics from its summaries.
-2. Use only `expanding-2` exact sparse indices: 2,511 development and 128
-   validation decisions. Development-only normalization is required; retain
-   `t-20..t+2` geometry and exclude the final 151-session tail.
-3. Run one bounded CPU smoke and one network-disabled Docker CUDA screen,
-   each writing only source-safe, aggregate classification evidence under the
-   external artifact root. Do not persist rows, labels, predictions, model
-   weights, replay, PnL, broker data, or credentials.
-4. Temporary Validation must independently check lineage, counts, split/tail
-   isolation, source safety, and import/route isolation.
-5. Keep Claude's current OAuth failure as `review_unavailable`: it prevents
-   selection, replay, promotion, and Paper use, but not this candidate-only
-   evidence run.
+1. Rebuild and hash-verify the existing parent locally, then create exactly one
+   external `expanding-3` fold-input artifact. It must bind the same parent
+   lineage, exact `2671 / 145` sparse development/validation counts,
+   `t-20..t+2` dependency, and final 151-session tail exclusion.
+2. Extend the pure materializer and v2 target/cost adapter with only one
+   explicit `expanding-3` pin. Do not introduce a generic multi-fold campaign
+   or alter E1/E2 identities, candidate specifications, thresholds, or result
+   artifacts.
+3. Write one immutable, source-safe E3 validation materializer receipt and one
+   immutable, source-safe E3 target/cost receipt under
+   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+4. Use temporary Data, Execution, and Validation roles for independent lineage,
+   source-safety, and route-isolation checks. Keep their work parallel where
+   ownership does not conflict.
+5. Add focused tests for E3 pin/count/geometry and Docker external-mount
+   handling. Refresh the stateboards and runbook with only changed facts.
 
 ## Hard Boundaries
 
-- Do not read `.env`, call KIS or Tiingo, invoke broker/account endpoints, or
+- Do not read `.env`, call KIS or Tiingo, invoke a broker/account endpoint, or
   access `KIS_LIVE_*`.
-- Do not select a model, tune an input, form an ensemble, claim profitability,
-  replay, create a Paper intent, or enable live behavior.
-- Keep generated artifacts outside Git under `D:\thericher-v2\model-artifacts`
-  or `/app/model_artifacts`; keep market bytes under `D:\market_data`.
+- Do not train a model, run a CUDA screen, select a model, tune an input, form
+  an ensemble, claim profitability, replay, create an intent, or enable live
+  behavior.
+- Keep market bytes under `D:\market_data` and generated artifacts outside Git
+  under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- Persist no rows, prices, labels, predictions, weights, PnL, broker data,
+  account data, or credentials in the new receipts.
 
 ## Completion Evidence
 
-- Hash-bound CPU and CUDA aggregate summaries for `expanding-2` only.
-- Independent Validation result and focused isolation tests.
-- No selection, replay, PnL, Paper, account, order, or broker artifact.
+- Hash-bound E3 fold input and source-safe materializer/target-cost receipts.
+- Independent Validation of parent lineage, `2671 / 145` counts, tail
+  isolation, source safety, and import/route isolation.
+- Focused tests and no training, replay, Paper, account, or broker artifact.
 
 ## Verification
 
