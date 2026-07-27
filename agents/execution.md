@@ -11,16 +11,37 @@ output as untrusted input.
 
 ## Current Objective
 
-The current read-only account diagnostic and target-local Data recovery are
-complete. The prospective QQQ scheduler has been simplified and reinstalled:
+The current read-only account diagnostic and first target-local Data recovery
+receipt are complete; the current head cache remains Data-owned `reconcile`.
+The prospective QQQ scheduler has been simplified and reinstalled:
 the executed virtual-only session owns its embedded `local_paper` replay, images
 are built during task update rather than at due time, and the older observer is
 conditional on its Data pair. Preserve the local dashboard boundary and existing
-Paper recovery invariants. A later fresh QQQ receipt remains lane-owned evidence;
-a recurring fixed Paper baseline follows only from reliable execution evidence
-and remains independent of model promotion. KIS Live remains unavailable.
+Paper recovery invariants. The latest fresh QQQ receipt is a validated scoped
+no-intent; next work calibrates its runtime freshness classification rather
+than forcing a canary. A recurring fixed Paper baseline follows only from
+reliable execution evidence and remains independent of model promotion. KIS
+Live remains unavailable.
 
 ## Current Facts
+
+- The 19:22Z manually invoked intraday-head route returned terminal `complete`;
+  its prospective QQQ session returned `no_intent/runtime_window_stale` and its
+  validator was `validated`. Its source window ended at 19:20Z and the session
+  observed it at 19:22:46Z, beyond the fixed two-minute limit. The runtime
+  check therefore stopped before any account, position, quote, intent, submit,
+  modify, cancel, or live call. This is a truthful terminal outcome, not an
+  execution hold or order retry condition.
+- The later 19:31Z scheduled route returned terminal
+  `recovery/collection_exit_nonzero` from a retained-cache conflict. Its
+  embedded session and offline validation still completed as
+  `no_intent/runtime_window_stale` and `validated`; the active QQQ window ended
+  at 15:30Z. It also made no account, position, quote, intent, submit, modify,
+  cancel, or live call. This current Data-local recovery state does not alter
+  the immutable earlier terminal receipt.
+- A later network-disabled Compose reattachment independently recomputed that
+  19:31Z receipt against the current cache as `stale/no_intent`, with no canary
+  present. It opened no network, account, credential, or broker route.
 
 - local_paper, kis_paper, and kis_live remain separate routes. Local simulated
   fills retain source: local_paper.
@@ -173,23 +194,29 @@ and remains independent of model promotion. KIS Live remains unavailable.
 ## Recovery
 
 Current class: complete for the fresh read-only account bridge, cross-fold
-verifier, account diagnostic, and first fresh QQQ scheduled no-intent. The
-account runtime expires normally after its TTL; a later refresh is a new
-read-only observation, not recovery of an order. Preserve exact ambiguous Paper
-evidence for the owned reconciliation route and continue independent Data,
-Research, and authorized Paper work. The new QQQ route has a complete offline
-and unit-tested recovery path; `account_unavailable` constrains only the
-completed receipt that recorded it.
+verifier, account diagnostic, and first fresh QQQ terminal no-intent; current
+head input is `reconcile`. The account runtime expires normally after its TTL;
+a later refresh is a new read-only observation, not recovery of an order.
+Preserve exact ambiguous Paper evidence for the owned reconciliation route and
+continue independent Data, Research, and authorized Paper work. The new QQQ
+route has a complete offline and unit-tested recovery path;
+`account_unavailable` constrains only the completed receipt that recorded it.
+
+The retained-cache conflict remains owned by the current head cache. The
+rebuilt image fails closed for a legacy unscoped page and a later clean capture
+may restore a scoped head input. Keep the virtual route attached only to a
+fresh eligible receipt; do not read an account or construct a replacement
+intent merely because a freshness calibration or collection retry is scheduled.
 
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next bounded canary must use a new exact durable Paper intent
-and the existing virtual-only route; no stale account snapshot or historical
-Data receipt may act as its permission or order input. The next fresh QQQ
-receipt must still re-read the current Paper account and fresh quote at its own
-call site before a canary is prepared.
+The next bounded package calibrates freshness without constructing an intent.
+When a future fresh QQQ receipt is eligible, its canary must use a new exact
+durable Paper intent and re-read the current Paper account and fresh quote at
+its own call site; no stale account snapshot or historical Data receipt may act
+as permission or order input.
 The later recurring baseline must use the same call-time technical checks and
 never reuse a stale account projection or an unknown exact intent.

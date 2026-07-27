@@ -81,6 +81,7 @@ _SAFE_FAILURE_REASONS = frozenset(
     }
 )
 _ConflictOrigin = Literal["candidate_batch", "retained_cache"]
+_CollectionScope = Literal["head", "historical"]
 
 
 class _CandidateBatchDuplicateConflict(KisPaperMarketDataError):
@@ -211,6 +212,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
     code_revision: str,
     pages_per_target: int = 2,
     resume_cursor: bool = True,
+    quarantine_retained_head_conflicts: bool = False,
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
@@ -227,6 +229,10 @@ def run_kis_paper_private_intraday_backfill_cycle(
         raise ValueError("pages_per_target must be a positive integer")
     if type(resume_cursor) is not bool:
         raise ValueError("resume_cursor must be a boolean")
+    if type(quarantine_retained_head_conflicts) is not bool:
+        raise ValueError("head conflict quarantine must be a boolean")
+    if quarantine_retained_head_conflicts and resume_cursor:
+        raise ValueError("head conflict quarantine requires head mode")
     if not code_revision.strip() or "\n" in code_revision:
         raise ValueError("private intraday code revision is invalid")
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
@@ -322,17 +328,31 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 continue
 
             existing_fingerprints = _target_fingerprints(target_state)
-            conflict = _first_conflicting_prior_row(
+            conflicting_chunk_keys = _conflicting_retained_chunk_keys(
                 rows=collected.rows,
-                prior=existing_fingerprints,
+                target_state=target_state,
             )
-            if conflict is not None:
+            quarantined_retained_head_chunks = False
+            if conflicting_chunk_keys and _can_quarantine_retained_head_conflicts(
+                collected=collected,
+                target_state=target_state,
+                conflicting_chunk_keys=conflicting_chunk_keys,
+                quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+            ):
+                _quarantine_retained_head_chunks(
+                    target_state=target_state,
+                    conflicting_chunk_keys=conflicting_chunk_keys,
+                )
+                quarantined_retained_head_chunks = True
+            if conflicting_chunk_keys:
                 _record_target_last_observation(
                     target_state=target_state,
                     reason="minute_duplicate_conflict",
                     conflict_origin="retained_cache",
                     observed_at_utc=_format_utc(observed),
                 )
+                if quarantined_retained_head_chunks:
+                    index["generation"] = int(index["generation"]) + 1
                 _write_index(root=root, index=index)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
@@ -355,6 +375,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 collected=collected,
                 observed_at=observed,
                 prior_exact_overlap=prior_exact_overlap,
+                collection_scope="historical" if resume_cursor else "head",
             )
             if _has_chunk(target_state=target_state, candidate=chunk):
                 if resume_cursor:
@@ -630,6 +651,7 @@ def _chunk_document(
     collected: _CollectedTarget,
     observed_at: datetime,
     prior_exact_overlap: int,
+    collection_scope: _CollectionScope,
 ) -> dict[str, object]:
     input_cursor = (
         collected.input_cursor.as_document() if collected.input_cursor is not None else None
@@ -659,6 +681,7 @@ def _chunk_document(
         "collected_at_utc": _format_utc(observed_at),
         "reason": collected.reason,
         "conflict_origin": collected.conflict_origin,
+        "collection_scope": collection_scope,
     }
 
 
@@ -887,11 +910,11 @@ def _validate_shared_index_metadata(
 def _is_unretained_marker(chunk: object) -> bool:
     """Keep old non-data observations out of cache semantics."""
 
-    return (
-        isinstance(chunk, Mapping)
-        and chunk.get("raw_market_data_retained") is False
-        and not isinstance(chunk.get("manifest_path"), str)
+    from thericher_v2.data.kis_paper_intraday_index_metadata import (
+        is_kis_paper_private_intraday_v1_unretained_marker,
     )
+
+    return is_kis_paper_private_intraday_v1_unretained_marker(chunk)
 
 
 def _is_candidate_batch_conflicted_chunk(chunk: object) -> bool:
@@ -1052,14 +1075,146 @@ def _has_chunk(*, target_state: Mapping[str, object], candidate: Mapping[str, ob
     )
 
 
-def _first_conflicting_prior_row(
-    *, rows: tuple[KisPaperMinuteRawBar, ...], prior: Mapping[str, str]
-) -> KisPaperMinuteRawBar | None:
-    for row in rows:
-        previous = prior.get(_row_key(row))
-        if previous is not None and previous != _row_fingerprint(row):
-            return row
-    return None
+def _conflicting_retained_chunk_keys(
+    *,
+    rows: tuple[KisPaperMinuteRawBar, ...],
+    target_state: Mapping[str, object],
+) -> tuple[str, ...]:
+    """Return active snapshots whose retained rows disagree with a candidate page."""
+
+    candidate_fingerprints = {_row_key(row): _row_fingerprint(row) for row in rows}
+    chunks = target_state.get("chunks")
+    if not isinstance(chunks, list):
+        raise ValueError("private intraday index is invalid")
+    conflicts: list[str] = []
+    for chunk in chunks:
+        if _is_ignored_collection_chunk(chunk):
+            continue
+        if not isinstance(chunk, Mapping):
+            raise ValueError("private intraday index is invalid")
+        chunk_key = chunk.get("chunk_key")
+        fingerprints = chunk.get("row_fingerprints")
+        if not isinstance(chunk_key, str) or not isinstance(fingerprints, Mapping):
+            raise ValueError("private intraday index is invalid")
+        if any(
+            candidate != fingerprints.get(row_key)
+            for row_key, candidate in candidate_fingerprints.items()
+            if row_key in fingerprints
+        ):
+            conflicts.append(chunk_key)
+    return tuple(conflicts)
+
+
+def _can_quarantine_retained_head_conflicts(
+    *,
+    collected: _CollectedTarget,
+    target_state: Mapping[str, object],
+    conflicting_chunk_keys: tuple[str, ...],
+    quarantine_retained_head_conflicts: bool,
+) -> bool:
+    """Quarantine only complete fresh head pages, never cursor-backed history."""
+
+    if (
+        not quarantine_retained_head_conflicts
+        or collected.status != "collected"
+        or not conflicting_chunk_keys
+    ):
+        return False
+    chunks = target_state.get("chunks")
+    if not isinstance(chunks, list):
+        raise ValueError("private intraday index is invalid")
+    conflicts = set(conflicting_chunk_keys)
+    matching_chunks = [
+        chunk
+        for chunk in chunks
+        if (
+            isinstance(chunk, Mapping)
+            and not _is_ignored_collection_chunk(chunk)
+            and chunk.get("chunk_key") in conflicts
+        )
+    ]
+    if len(matching_chunks) != len(conflicts):
+        raise ValueError("private intraday index is invalid")
+    return all(_is_quarantinable_head_snapshot(chunk) for chunk in matching_chunks)
+
+
+def _is_quarantinable_head_snapshot(chunk: Mapping[str, object]) -> bool:
+    return (
+        chunk.get("raw_market_data_retained") is True
+        and chunk.get("collection_scope") == "head"
+        and chunk.get("input_cursor") is None
+        and chunk.get("output_cursor") is None
+        and chunk.get("outcome") in {"committed", "partial"}
+        and isinstance(chunk.get("chunk_key"), str)
+        and _is_sha256(chunk.get("manifest_hash"))
+        and _is_sha256(chunk.get("raw_sha256"))
+    )
+
+
+def _quarantine_retained_head_chunks(
+    *, target_state: dict[str, object], conflicting_chunk_keys: tuple[str, ...]
+) -> None:
+    """Exclude conflicted head snapshots without deleting their immutable evidence."""
+
+    from thericher_v2.data.kis_paper_intraday_index_metadata import (
+        KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE,
+    )
+
+    chunks = target_state.get("chunks")
+    if not isinstance(chunks, list):
+        raise ValueError("private intraday index is invalid")
+    conflicts = set(conflicting_chunk_keys)
+    quarantined: list[object] = []
+    for chunk in chunks:
+        if (
+            not isinstance(chunk, Mapping)
+            or _is_ignored_collection_chunk(chunk)
+            or chunk.get("chunk_key") not in conflicts
+        ):
+            quarantined.append(chunk)
+            continue
+        chunk_key = chunk.get("chunk_key")
+        manifest_hash = chunk.get("manifest_hash")
+        raw_hash = chunk.get("raw_sha256")
+        if (
+            not isinstance(chunk_key, str)
+            or not _is_sha256(manifest_hash)
+            or not _is_sha256(raw_hash)
+        ):
+            raise ValueError("private intraday index is invalid")
+        quarantined.append(
+            {
+                "raw_market_data_retained": False,
+                "historical_note": KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE,
+                "quarantined_chunk_key": chunk_key,
+                "quarantined_manifest_hash": manifest_hash,
+                "quarantined_raw_sha256": raw_hash,
+            }
+        )
+    target_state["chunks"] = quarantined
+
+
+def _is_quarantined_head_snapshot_marker_for(
+    marker: object,
+    *,
+    chunk_key: object,
+    manifest_hash: str,
+    raw_hash: object,
+) -> bool:
+    from thericher_v2.data.kis_paper_intraday_index_metadata import (
+        KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE,
+        is_kis_paper_private_intraday_v1_unretained_marker,
+    )
+
+    return (
+        is_kis_paper_private_intraday_v1_unretained_marker(marker)
+        and isinstance(marker, Mapping)
+        and marker.get("historical_note")
+        == KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE
+        and marker.get("quarantined_chunk_key") == chunk_key
+        and marker.get("quarantined_manifest_hash") == manifest_hash
+        and marker.get("quarantined_raw_sha256") == raw_hash
+    )
 
 
 def _recover_orphan_snapshots(
@@ -1070,6 +1225,7 @@ def _recover_orphan_snapshots(
     for manifest_path in sorted(snapshots_root.glob("snapshot=*/manifest.json")):
         if manifest_path.is_symlink():
             raise ValueError("private intraday snapshot path is invalid")
+        manifest_hash = _sha256(manifest_path.read_bytes())
         manifest = _read_manifest(manifest_path)
         if manifest.get("kind") != "kis_paper_private_intraday_cache":
             continue
@@ -1089,6 +1245,16 @@ def _recover_orphan_snapshots(
         chunks = state["chunks"]
         assert isinstance(chunks, list)
         if any(
+            _is_quarantined_head_snapshot_marker_for(
+                existing,
+                chunk_key=chunk.get("chunk_key"),
+                manifest_hash=manifest_hash,
+                raw_hash=chunk.get("raw_sha256"),
+            )
+            for existing in chunks
+        ):
+            continue
+        if any(
             isinstance(existing, dict)
             and not _is_ignored_collection_chunk(existing)
             and existing.get("chunk_key") == chunk["chunk_key"]
@@ -1106,7 +1272,7 @@ def _recover_orphan_snapshots(
         recovered_chunk["manifest_path"] = str(manifest_path.relative_to(root)).replace(
             "\\", "/"
         )
-        recovered_chunk["manifest_hash"] = _sha256(manifest_path.read_bytes())
+        recovered_chunk["manifest_hash"] = manifest_hash
         _validate_chunk(chunk=recovered_chunk, target=target)
         chunks.append(recovered_chunk)
         output_cursor = KisPaperPrivateIntradayCursor.from_document(

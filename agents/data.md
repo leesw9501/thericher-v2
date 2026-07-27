@@ -43,9 +43,41 @@ QQQ/NAS and SPY/AMS prior-day `1m` reach probes are now complete: each exact
 route accepted terminal same-exchange-date pages without a continuation cursor.
 This closes only those two request contracts; it does not claim that KIS lacks
 another historical-minute endpoint. No unsupported serial dispatcher is built.
-The fresh head scheduler continues to own prospective session collection.
+The fresh head scheduler continues to own prospective session collection. The
+first bounded head reconciliation produced a clean page, but a later scheduled
+page again conflicted with retained cache input. The current head cache is
+therefore `reconcile`: old immutable snapshots remain on D:, conflict responses
+are not adopted, and only a later clean page may restore current input. New
+retained pages record persisted `head` or `historical` collection scope; legacy
+unscoped pages remain strict-reject-only rather than being inferred as head
+observations.
 
 ## Current Facts
+
+- The source-safe terminal receipt
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20260727T1922500308577Z.json`
+  is `complete`. Its paired session capture
+  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260727T192241664204Z-dedf1901dd505c58.json`
+  retained one clean 120-row page each for QQQ/NAS and SPY/AMS with zero exact
+  overlap. It remains completed evidence for that exact terminal route.
+- The later lane-owned 19:31Z schedule returned
+  `recovery/collection_exit_nonzero` after another
+  `minute_duplicate_conflict/retained_cache`. Its QQQ session remained a
+  validated `no_intent/runtime_window_stale`, with an active window ending at
+  15:30Z. The current source-safe index is generation 20 with six active chunks
+  and two exact quarantine markers per target. This affects only the current
+  head cache, not the prior completed receipt, KIS authority, historical cursor
+  coverage, or Research inputs.
+- A head-conflict quarantine marker contains the old `chunk_key`, manifest
+  hash, and raw hash; malformed markers fail closed before orphan recovery.
+  The current candidate remains rejected in its conflict run, and only a later
+  independently fetched page may become active. The rebuilt scheduled image
+  records scope for new snapshots and treats existing unscoped or persisted
+  `historical` snapshots as strict-reject-only.
+- The completed QQQ capture's last bar ended at 19:20Z while the route observed
+  it at 19:22:46Z. Its current fixed two-minute freshness budget therefore
+  yielded a truthful stale runtime fact. This is a Data latency calibration
+  input, not a data-quality, permission, or strategy conclusion.
 
 - The isolated KIS Paper daily-universe probe pinned the official current
   directory manifest `sha256:129e...aecea4`, the NAS listing file
@@ -341,6 +373,12 @@ boundary. The exact QQQ/NAS and SPY/AMS historical reach probes are complete
 and source-limited for serial continuation; they are not blocked by the
 scheduled head and do not block it.
 
+Current class: `reconcile` for the current QQQ/SPY head cache. Do not edit the
+index, inspect raw rows for a manual repair, or infer a provider revision policy
+from observation time alone. The next owned package obtains a clean current page
+and calibrates freshness from source-safe timing categories before changing a
+runtime budget.
+
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Continue the fresh prospective
@@ -351,4 +389,5 @@ Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact
 source-local evidence; preserve IWM's source-limited limitation. The next QQQ
-Paper canary obtains a new call-time Data receipt and does not consume them.
+Paper package calibrates the current-head freshness contract and does not
+consume these historical Research inputs.

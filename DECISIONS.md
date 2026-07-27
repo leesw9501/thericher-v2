@@ -6373,3 +6373,47 @@ cross-sectional universe, actual liquidity, or broker readiness. Claude's
 credential-free interpretation request again could not authenticate because the
 local OAuth session was expired; that `review_unavailable` result does not hold
 the completed private offline work.
+
+## 2026-07-28 - Quarantine conflicting fresh-head cache entries before retry
+
+Decision: when a complete candidate page from the isolated KIS Paper
+`intraday-head` cache disagrees with an active retained head snapshot, the
+installed `head` and `session-capture` paths write an index-only quarantine
+marker for the exact old `chunk_key`, manifest hash, and raw hash. The old
+manifest and raw bytes remain immutable under `D:\market_data`; the marker
+excludes only that entry from active cache/coverage consumption and prevents
+only that exact orphan snapshot from being reactivated. The current conflicting
+candidate remains rejected. A later independently fetched page must be clean
+before it becomes an active cache snapshot.
+
+Cursor-backed historical collection keeps the strict conflict rejection and
+cannot use this behavior. The change is confined to explicit fresh-head mode,
+does not alter a broker, credential, account, Paper order, model, or research
+input, and cannot establish a general latest-wins provider-revision rule.
+
+Implementation is fail closed: the shared index validator requires the exact
+quarantined chunk, manifest, and raw identities before it excludes an orphan
+from recovery. New retained snapshots persist `collection_scope` as `head` or
+`historical`; only an explicit persisted `head` snapshot can be quarantined.
+Legacy snapshots without this scope and all historical terminal snapshots keep
+strict rejection, even if a future caller passes a head option.
+
+The first later fresh capture completed with one clean 120-row page each for
+QQQ/NAS and SPY/AMS. Its chained QQQ route truthfully returned
+`no_intent/runtime_window_stale`: the latest completed bar ended at 19:20Z and
+the route observed it at 19:22:46Z, beyond the fixed two-minute budget. A later
+19:31Z scheduled run, started before the rebuilt scoped image was available,
+again encountered a retained-cache conflict and left the current head cache in
+`reconcile`. The immutable earlier terminal receipt remains valid only for its
+exact route; a later clean page must restore current cache input. This exposes
+a bounded freshness-calibration question and does not justify forcing a Paper
+intent or changing a model conclusion.
+
+Reason: the latest QQQ/SPY head capture reported
+`minute_duplicate_conflict/retained_cache`. No provider revision ID or finality
+evidence proves that a newer observation corrects a completed bar, so same-run
+adoption would silently change prospective Paper input. A temporary independent
+review challenged that risk; its focused tests passed. Claude's source-safe
+recovery challenge could not authenticate because the local OAuth session is
+expired, so its verdict is `review_unavailable`, not a stop on this reversible
+private recovery.

@@ -30,6 +30,11 @@ This is not a report family, per-agent goal file, or substitute for explicit
 operator authority over live capital, paid commitments, unclear rights, public
 exposure, or a major runtime change.
 
+For a material apparent operator decision, Claude and Codex may converge on a
+recommendation and Codex may act only when that exact category is already
+delegated, reversible, and no-cost. Agreement never creates authority for a
+reserved live, paid, unclear-rights, public, or major-runtime action.
+
 `orchestration.md` is owned by Codex, not a subordinate role. It holds only the
 cross-lane view that no one role owns: resource conflicts, external waits, the
 current bottleneck, and one reversible operating improvement. It links to lane

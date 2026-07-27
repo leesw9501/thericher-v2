@@ -742,6 +742,20 @@ window ending on a 10-minute boundary and emits a precise stale/missing/gapped
 fact otherwise. Historical Research uses separately qualified inputs and does
 not wait for this task.
 
+If a complete fresh head page disagrees with an active retained head snapshot,
+the installed `head` and `session-capture` modes may write an index-only
+quarantine marker for the exact old `chunk_key`, manifest hash, and raw hash.
+The marker leaves the immutable D: snapshot bytes untouched, excludes that
+entry from active loader/coverage input, and prevents only that exact orphan
+from being reactivated. The conflicting fresh response remains rejected in
+that run; a later independently fetched head page must be clean before it is
+admitted. This is deliberately unavailable to cursor-backed historical
+backfill: a retained snapshot must carry persisted `collection_scope: head`.
+New historical snapshots carry `historical`; legacy snapshots without a scope
+remain strict-reject-only. A quarantine marker with a missing or invalid exact
+chunk, manifest, or raw hash makes the index invalid before orphan recovery.
+No manual index edit or latest-wins rule is permitted.
+
 The intraday-head task retains `StartWhenAvailable` from its Data recovery
 ownership, so a missed collection can resume after the interactive user becomes
 available without creating another task. Its chained prospective consumers still
@@ -1503,6 +1517,14 @@ immutable artifact. Do not edit the index, revive that artifact through orphan
 recovery, or create a replacement scheduler: the next owned collection retries
 from its normal cursor scope and continues independent targets in the same
 cycle.
+
+A retained-cache conflict in the fresh head cache is different: use only the
+installed head/session-capture quarantine path above. It keeps the old raw
+artifact immutable, rejects the conflicting response, and waits for the next
+fresh provider page rather than silently treating a newer observation as a
+revision of a completed bar. The shared index contract fails closed for a
+malformed quarantine identity, and persisted collection scope prevents a
+historical terminal page from becoming a quarantine target.
 
 ## Verification
 

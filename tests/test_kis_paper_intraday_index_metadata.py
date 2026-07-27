@@ -90,6 +90,58 @@ def test_kis_paper_intraday_index_metadata_ignores_unretained_marker() -> None:
     assert len(projection.targets[0].retained_chunks) == 1
 
 
+def test_kis_paper_intraday_index_metadata_accepts_verified_head_quarantine_marker() -> None:
+    index = _valid_index(key_kind="current")
+    chunks = index["targets"][0]["chunks"]
+    assert isinstance(chunks, list)
+    chunks[1] = {
+        "raw_market_data_retained": False,
+        "historical_note": "quarantined_head_retained_cache_conflict",
+        "quarantined_chunk_key": _digest("chunk"),
+        "quarantined_manifest_hash": _digest("manifest"),
+        "quarantined_raw_sha256": _digest("raw"),
+    }
+
+    projection = validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=_EXPECTED_TARGETS,
+    )
+
+    assert len(projection.targets[0].retained_chunks) == 1
+
+
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        lambda marker: marker.pop("quarantined_chunk_key"),
+        lambda marker: marker.update(quarantined_manifest_hash="sha256:" + "A" * 64),
+        lambda marker: marker.update(historical_note="one-shot observation only"),
+    ],
+    ids=["missing_chunk_identity", "invalid_manifest_hash", "altered_note"],
+)
+def test_kis_paper_intraday_index_metadata_rejects_malformed_head_quarantine_marker(
+    mutate: Callable[[dict[str, object]], object],
+) -> None:
+    index = _valid_index(key_kind="current")
+    chunks = index["targets"][0]["chunks"]
+    assert isinstance(chunks, list)
+    marker: dict[str, object] = {
+        "raw_market_data_retained": False,
+        "historical_note": "quarantined_head_retained_cache_conflict",
+        "quarantined_chunk_key": _digest("chunk"),
+        "quarantined_manifest_hash": _digest("manifest"),
+        "quarantined_raw_sha256": _digest("raw"),
+    }
+    mutate(marker)
+    chunks[1] = marker
+
+    with pytest.raises(ValueError, match=_VALIDATION_MESSAGE):
+        validate_kis_paper_private_intraday_v1_index_metadata(
+            index,
+            expected_targets=_EXPECTED_TARGETS,
+        )
+
+
 @pytest.mark.parametrize("origin", ["candidate_batch", "retained_cache"])
 def test_kis_paper_intraday_index_metadata_accepts_safe_duplicate_conflict_origin(
     origin: str,

@@ -52,7 +52,9 @@ authorized private KIS Paper work.
   records options, Codex's recommendation, and its exact authority boundary.
   Claude reviews that record when available; an expired CLI session is
   `review_unavailable`, not a new wait. Codex immediately advances every
-  non-conflicting package inside standing authority.
+  non-conflicting package inside standing authority. Claude/Codex agreement
+  resolves only an already-delegated reversible no-cost choice; it never grants
+  reserved live, paid, unclear-rights, public, or major-runtime authority.
 - A timer, cooldown, or scheduled due time belongs to its owning worker. Codex
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The
@@ -168,6 +170,25 @@ authorized private KIS Paper work.
   distinct full-session coverage remains incomplete. QQQ/NAS and SPY/AMS each
   retained one current terminal page in the canonical D: cache; no raw rows are
   repeated here. This is a Data-local source fact, not a model or company hold.
+- A later manual head invocation at 2026-07-27T18:58Z rejected QQQ/NAS and
+  SPY/AMS with source-safe `minute_duplicate_conflict/retained_cache` results.
+  Its exact head-only quarantine kept old immutable D: snapshots, rejected the
+  conflicting response, and a later `session-capture` completed with a clean
+  120-row page per target and zero exact overlap. The terminal receipt
+  `intraday-head-20260727T1922500308577Z.json` is `complete`; the chained QQQ
+  session is a validated `no_intent/runtime_window_stale`, because its 19:20Z
+  latest completed bar was observed at 19:22:46Z under a fixed two-minute
+  budget. No account, intent, order, or live call occurred. Quarantine markers
+  now validate their exact chunk/manifest/raw identities and new snapshots
+  persist `head` or `historical` scope, so historical terminal pages cannot be
+  quarantined by caller convention. A subsequent 19:31Z lane-owned run, made
+  before this rebuilt image was available, again found a retained-cache conflict
+  and wrote a truthful `recovery/collection_exit_nonzero`; its embedded session
+  remained validated `no_intent/runtime_window_stale` with a 15:30Z active
+  window. The current head cache is `reconcile` (generation 20, six active
+  chunks and two exact markers per target), while the earlier complete terminal
+  receipt remains immutable evidence. This is a next clean-capture and
+  freshness-calibration input, not a KIS Paper permission or company stop.
 - The latest 2026-07-26 source-safe QQQ KIS Paper minute calibration used one
   in-memory client/token and a 1.0-second candidate request-start interval. It
   accepted two full terminal-head pages with zero categorical limits or errors

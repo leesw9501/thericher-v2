@@ -19,11 +19,24 @@ _BACKFILL_VERSION = "v1"
 _INDEX_KIND = "kis_paper_private_intraday_backfill"
 _INVALID_INDEX_MESSAGE = "KIS private intraday v1 index metadata is invalid"
 _CONFLICT_ORIGINS = frozenset({"candidate_batch", "retained_cache"})
+_COLLECTION_SCOPES = frozenset({"head", "historical"})
+KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE = (
+    "quarantined_head_retained_cache_conflict"
+)
+_QUARANTINE_MARKER_IDENTITY_FIELDS = frozenset(
+    {
+        "quarantined_chunk_key",
+        "quarantined_manifest_hash",
+        "quarantined_raw_sha256",
+    }
+)
 
 __all__ = [
+    "KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE",
     "KisPaperPrivateIntradayV1IndexMetadata",
     "KisPaperPrivateIntradayV1RetainedChunkMetadata",
     "KisPaperPrivateIntradayV1TargetMetadata",
+    "is_kis_paper_private_intraday_v1_unretained_marker",
     "sha256_kis_paper_private_intraday_v1_index_bytes",
     "validate_kis_paper_private_intraday_v1_index_metadata",
 ]
@@ -41,6 +54,7 @@ class KisPaperPrivateIntradayV1RetainedChunkMetadata:
     outcome: str
     reason: str | None
     conflict_origin: str | None
+    collection_scope: str | None
 
     @property
     def candidate_batch_conflicted(self) -> bool:
@@ -221,6 +235,9 @@ def _parse_retained_chunk(
         field="conflict_origin",
     )
     conflict_origin = document.get("conflict_origin")
+    collection_scope = document.get("collection_scope")
+    if collection_scope is not None and collection_scope not in _COLLECTION_SCOPES:
+        _invalid()
 
     rows = tuple(fingerprints_document.items())
     if len(rows) != document["row_count"]:
@@ -250,6 +267,7 @@ def _parse_retained_chunk(
         outcome=outcome,
         reason=reason,
         conflict_origin=conflict_origin if isinstance(conflict_origin, str) else None,
+        collection_scope=collection_scope if isinstance(collection_scope, str) else None,
     )
 
 
@@ -302,10 +320,36 @@ def _cursor_document(value: object) -> Mapping[str, str] | None:
 
 
 def _is_unretained_marker(document: object) -> bool:
+    return is_kis_paper_private_intraday_v1_unretained_marker(document)
+
+
+def is_kis_paper_private_intraday_v1_unretained_marker(document: object) -> bool:
+    """Return whether a non-data marker has a valid v1 cache-exclusion shape.
+
+    Generic historical markers remain compatible. A head-conflict quarantine is
+    different: it suppresses orphan recovery for one immutable snapshot, so its
+    exact snapshot identity must validate or the whole index is rejected.
+    """
+
+    if (
+        not isinstance(document, Mapping)
+        or document.get("raw_market_data_retained") is not False
+        or isinstance(document.get("manifest_path"), str)
+    ):
+        return False
+    has_quarantine_shape = (
+        document.get("historical_note")
+        == KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE
+        or any(field in document for field in _QUARANTINE_MARKER_IDENTITY_FIELDS)
+    )
+    if not has_quarantine_shape:
+        return True
     return (
-        isinstance(document, Mapping)
-        and document.get("raw_market_data_retained") is False
-        and not isinstance(document.get("manifest_path"), str)
+        document.get("historical_note")
+        == KIS_PAPER_PRIVATE_INTRADAY_QUARANTINED_HEAD_SNAPSHOT_NOTE
+        and _is_sha256(document.get("quarantined_chunk_key"))
+        and _is_sha256(document.get("quarantined_manifest_hash"))
+        and _is_sha256(document.get("quarantined_raw_sha256"))
     )
 
 

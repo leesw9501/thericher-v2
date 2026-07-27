@@ -120,6 +120,7 @@ def main(
             code_revision=(code_revision or _current_code_revision)(_REPO_ROOT),
             pages_per_target=args.pages_per_target,
             resume_cursor=args.mode == "backfill",
+            quarantine_retained_head_conflicts=args.mode in {"head", "session-capture"},
             observed_at=observed_at,
         )
         session_capture = (
