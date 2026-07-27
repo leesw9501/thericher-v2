@@ -16,8 +16,8 @@ reason to tune the fixed baseline from the observed session.
 2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`,
    `RUNBOOK.md`, and all active stateboards.
 3. Reattach the intraday-head schedule, its latest source-safe outputs, the
-   prospective local-paper evidence, and any exact QQQ canary state. Do not
-   print private data.
+   exact prospective-validation artifact, prospective local-paper evidence,
+   and any exact QQQ canary state. Do not print private data.
 4. Retry Claude only for the required concise falsification-first review of a
    fresh-result interpretation or an exact canary recovery boundary. An OAuth
    failure is `review_unavailable`, not a hold on routine authorized work.
@@ -38,9 +38,12 @@ reason to tune the fixed baseline from the observed session.
    reconciliation and cancellation behavior. A stale receipt, `hold`,
    `reduce`, `abstain`, position mismatch, quote failure, or unknown outcome is
    scoped to that target/intent and does not stop another lane.
-4. **Validation:** independently confirm current-window completeness, local
-   replay source, virtual-only route confinement, evidence redaction, and any
-   exact durable intent recovery result.
+4. **Validation:** use the chained offline exact-session validator to
+   independently recompute current-window completeness and confirm local replay
+   source, virtual-only route confinement, evidence redaction, and any exact
+   durable intent recovery result. Inspect a missing or invalid validator
+   artifact as a target-local recovery fact, never as permission to rerun a
+   broker action.
 5. Do not foreground-sleep for a session. While the schedule owns its due
    time, advance other ready bounded Data, Research, Execution, or Validation
    work and preserve the scheduler's safe status.
@@ -65,6 +68,8 @@ reason to tune the fixed baseline from the observed session.
   matching local-paper evidence.
 - An eligible exact receipt has a reconciled virtual-only QQQ Paper result, or
   its target-local technical no-intent/recovery fact is durable and safe.
+- The matching external validator artifact independently reattests the exact
+  session cache/window lineage and safe local-paper/canary envelope.
 - Stateboards, handoff, and the next objective accurately distinguish the
   current result from a model or PnL claim.
 

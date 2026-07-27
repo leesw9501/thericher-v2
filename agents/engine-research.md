@@ -69,8 +69,9 @@ claim.
 - The prospective loop now deterministically derives its 5m/10m views from one
   same-session 90 completed-minute QQQ/NAS window and replays the original
   proposal through `local_paper`. The current prior-session smoke is `stale`
-  and therefore an abstaining no-intent receipt; no parameter changed and no
-  KIS route was opened.
+  and therefore an abstaining no-intent receipt; its separate offline validator
+  independently matched that cache evidence. No parameter changed and no KIS
+  route was opened.
 - The pair-bound prospective observer is implemented, local-paper-only, and
   network-disabled. It remains inactive until Data supplies its immutable pair.
 - The latest capture-scoped QQQ terminal page contained no qualified regular

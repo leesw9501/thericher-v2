@@ -13,21 +13,26 @@ def test_head_schedule_dispatcher_preserves_one_profile_and_collection_result() 
     collection_call = ' -Service "kis-paper-intraday-head"'
     prospective_loop_call = ' -Service "kis-paper-prospective-loop"'
     prospective_session_call = ' -Service "kis-paper-prospective-qqq-session"'
+    prospective_validation_call = ' -Service "kis-paper-prospective-qqq-validation"'
     observation_call = ' -Service "kis-paper-intraday-observation"'
     assert "--profile kis-paper-intraday-head" in source
     assert "run --rm --no-deps --build $Service" in source
     assert collection_call in source
     assert prospective_loop_call in source
     assert prospective_session_call in source
+    assert prospective_validation_call in source
     assert observation_call in source
     assert source.index(collection_call) < source.index(prospective_loop_call)
     assert source.index(prospective_loop_call) < source.index(prospective_session_call)
-    assert source.index(prospective_session_call) < source.index(observation_call)
+    assert source.index(prospective_session_call) < source.index(prospective_validation_call)
+    assert source.index(prospective_validation_call) < source.index(observation_call)
     assert "exit $collectionExitCode" in source
     assert "prospective_loop_exit_code" in source
     assert "prospective_loop_status" in source
     assert "prospective_session_exit_code" in source
     assert "prospective_session_status" in source
+    assert "prospective_validation_exit_code" in source
+    assert "prospective_validation_status" in source
     assert "observation_exit_code" in source
     assert "observation_status" in source
     assert "Get-ProfileStatus" in source
@@ -35,6 +40,8 @@ def test_head_schedule_dispatcher_preserves_one_profile_and_collection_result() 
     assert '$ErrorActionPreference = "Continue"' in source
     assert "preview\", \"no_intent" in source
     assert "canary_completed" in source
+    assert "kis_paper_prospective_qqq_validation" in source
+    assert "CommandOverride" in source
     assert "pending\", \"unavailable\", \"complete" in source
 
 

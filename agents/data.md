@@ -86,8 +86,10 @@ decision.
 - The verified runtime selector now distinguishes a fresh 90-minute QQQ/NAS
   decision window from the separate full-session coverage rule. Its current
   Docker smoke read only the prior head cache and reported `stale`; it made no
-  KIS credential, account, quote, or order call. The result is input evidence,
-  not a collection failure.
+  KIS credential, account, quote, or order call. The chained offline validator
+  independently reloaded that same cache at the recorded timestamp and matched
+  the stale source-status artifact. The result is input evidence, not a
+  collection failure.
 - The existing intraday-head task has four KST triggers at 00:31, 02:31,
   04:31, and 06:20. It owns its current cache and may continue independently
   while the capability package runs.
@@ -267,9 +269,10 @@ recovery candidates. A bad new cache is reconcile/restart evidence for that
 cache; an empty or limited endpoint result is source evidence for that route
 only.
 
-The prospective runtime selector is complete and currently has only a stale
-prior-session cache fact. The next session-capture result is a new Data
-observation, not recovery of the daily-history cache or a permission boundary.
+The prospective runtime selector and its exact-session cache reattestation are
+complete and currently have only a stale prior-session cache fact. The next
+session-capture result is a new Data observation, not recovery of the
+daily-history cache or a permission boundary.
 
 ## Next Handoff
 

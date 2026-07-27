@@ -10,16 +10,24 @@ function Invoke-HeadProfileService {
         [Parameter(Mandatory = $true)]
         [string]$ProjectRoot,
         [Parameter(Mandatory = $true)]
-        [string]$Service
+        [string]$Service,
+        [string[]]$CommandOverride = @()
     )
 
     $priorErrorActionPreference = $ErrorActionPreference
     try {
         $ErrorActionPreference = "Continue"
-        $output = @(
-            & docker.exe compose --project-directory $ProjectRoot --profile kis-paper-intraday-head `
-                run --rm --no-deps --build $Service 2>&1
-        )
+        if ($CommandOverride.Count -eq 0) {
+            $output = @(
+                & docker.exe compose --project-directory $ProjectRoot --profile kis-paper-intraday-head `
+                    run --rm --no-deps --build $Service 2>&1
+            )
+        } else {
+            $output = @(
+                & docker.exe compose --project-directory $ProjectRoot --profile kis-paper-intraday-head `
+                    run --rm --no-deps --build $Service @CommandOverride 2>&1
+            )
+        }
         $exitCode = [int]$LASTEXITCODE
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
@@ -30,14 +38,12 @@ function Invoke-HeadProfileService {
     }
 }
 
-function Get-ProfileStatus {
+function Get-ProfilePayload {
     param(
         [Parameter(Mandatory = $true)]
         [object[]]$Output,
         [Parameter(Mandatory = $true)]
-        [string]$Kind,
-        [Parameter(Mandatory = $true)]
-        [string[]]$AllowedStatuses
+        [string]$Kind
     )
 
     $jsonLines = @(
@@ -52,12 +58,26 @@ function Get-ProfileStatus {
         } catch {
             continue
         }
-        if (
-            $payload.kind -eq $Kind -and
-            $payload.status -in $AllowedStatuses
-        ) {
-            return [string]$payload.status
+        if ($payload.kind -eq $Kind) {
+            return $payload
         }
+    }
+    return $null
+}
+
+function Get-ProfileStatus {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output,
+        [Parameter(Mandatory = $true)]
+        [string]$Kind,
+        [Parameter(Mandatory = $true)]
+        [string[]]$AllowedStatuses
+    )
+
+    $payload = Get-ProfilePayload -Output $Output -Kind $Kind
+    if ($null -ne $payload -and $payload.status -in $AllowedStatuses) {
+        return [string]$payload.status
     }
     return "unavailable"
 }
@@ -94,10 +114,46 @@ $prospectiveSession = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-prospective-qqq-session"
 $prospectiveSessionExitCode = [int]$prospectiveSession.ExitCode
+$prospectiveSessionPayload = Get-ProfilePayload `
+    -Output $prospectiveSession.Output `
+    -Kind "kis_paper_prospective_qqq_session"
 $prospectiveSessionStatus = Get-ProfileStatus `
     -Output $prospectiveSession.Output `
     -Kind "kis_paper_prospective_qqq_session" `
     -AllowedStatuses @("preview", "no_intent", "canary_completed")
+
+# Validation re-loads the exact retained cache for the execution session. It has
+# no network or KIS environment values and cannot create a Paper side effect.
+$prospectiveValidationExitCode = 0
+$prospectiveValidationStatus = "not_run"
+if ($prospectiveSessionExitCode -eq 0 -and $null -ne $prospectiveSessionPayload) {
+    $sessionId = [string]$prospectiveSessionPayload.session_id
+    if ($sessionId -match '^[A-Za-z0-9._-]{1,160}$') {
+        $prospectiveValidation = Invoke-HeadProfileService `
+            -ProjectRoot $resolvedProjectRoot `
+            -Service "kis-paper-prospective-qqq-validation" `
+            -CommandOverride @(
+                "python",
+                "-m",
+                "thericher_v2.ops.kis_paper_prospective_qqq_validation",
+                "--session-id",
+                $sessionId,
+                "--cache-root",
+                "/app/market_data/us_equities/kis_paper_private/intraday-head",
+                "--artifact-root",
+                "/app/model_artifacts",
+                "--repository-root",
+                "/app"
+            )
+        $prospectiveValidationExitCode = [int]$prospectiveValidation.ExitCode
+        $prospectiveValidationStatus = Get-ProfileStatus `
+            -Output $prospectiveValidation.Output `
+            -Kind "kis_paper_prospective_qqq_validation" `
+            -AllowedStatuses @("validated")
+    } else {
+        $prospectiveValidationStatus = "unavailable"
+    }
+}
 
 # The observer is an isolated no-op until a verified pair exists. Its result
 # must never overwrite the collection task's independent recovery signal.
@@ -117,6 +173,8 @@ $observationStatus = Get-ProfileStatus `
     prospective_loop_status = $prospectiveLoopStatus
     prospective_session_exit_code = $prospectiveSessionExitCode
     prospective_session_status = $prospectiveSessionStatus
+    prospective_validation_exit_code = $prospectiveValidationExitCode
+    prospective_validation_status = $prospectiveValidationStatus
     observation_exit_code = $observationExitCode
     observation_status = $observationStatus
 } | ConvertTo-Json -Compress

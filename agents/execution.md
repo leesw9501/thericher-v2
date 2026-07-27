@@ -56,7 +56,9 @@ eligible runtime receipt. KIS Live remains unavailable.
 - The installed prospective-session container has KIS Paper credentials only;
   the preceding offline loop has no network or KIS environment. Current stale
   cache smoke exited before client construction, account, quote, intent, or
-  order work.
+  order work. The trailing offline validator independently recomputed the
+  retained cache/session lineage and has no credential, network, local-paper
+  mutation, account, or order surface.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
 - Temporary Execution and independent Validation both passed the new

@@ -278,6 +278,15 @@ or unavailable inputs remain no-intent results. The first service deliberately
 uses cancellation after a submitted virtual canary so the bounded observation
 does not leave an unintended open Paper order.
 
+The trailing `kis-paper-prospective-qqq-validation` service is an independent,
+network-disabled temporary Validation consumer. The dispatcher gives it the
+exact execution-session ID only after that session exits. It reloads the same
+verified local cache at the recorded timestamp, recomputes the 90-minute
+window, verifies the receipt/local-paper lineage and virtual-only envelope, and
+writes one source-safe external artifact. It cannot construct a KIS client,
+read a credential, mutate local-paper state, or turn a stale/no-intent fact
+into a Paper action.
+
 ### Receipt-Linked Paper Observation
 
 `execution.kis_paper_receipt_observer` is a separate read-only path for one

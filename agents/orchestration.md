@@ -93,8 +93,10 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 - Data, Engine Research, and Execution now share one bounded prospective QQQ
   handoff: a verified same-session 90-minute QQQ/NAS window, frozen five-action
   receipt, external `local_paper` replay, and a separate QQQ/NASD virtual-only
-  canary session. The offline smoke correctly produced `stale` no-intent and
-  did not construct an account, quote, or order client.
+  canary session. A trailing offline Validation service reattests the exact
+  execution-session cache/window lineage and source-safe envelope. The first
+  stale smoke and reattestation did not construct an account, quote, or order
+  client.
 - Execution completed one virtual-only KIS Paper account projection through the
   existing read-only bridge. Its evidence is external and source-safe; direct
   reader and loopback dashboard checks confirmed the Paper/read-only/no-submit
@@ -114,10 +116,10 @@ probe, panel, or ETF catalog.
 
 The next material bottleneck is a fresh, KIS-compatible prospective QQQ
 completed-bar window. Its baseline contract, local replay, QQQ/NASD position
-resolution, and receipt-canary route are already integrated. The GPU is free
-but no new GPU job is eligible from the falsified pair. The Claude OAuth outage
-is scoped to reliance, promotion, and execution boundaries; it does not require
-another ready private lane to wait.
+resolution, receipt-canary route, and independent exact-session validator are
+already integrated. The GPU is free but no new GPU job is eligible from the
+falsified pair. The Claude OAuth outage is scoped to reliance, promotion, and
+execution boundaries; it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 

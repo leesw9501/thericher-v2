@@ -150,11 +150,13 @@ authorized private KIS Paper work.
 - The existing `thericher-kis-paper-intraday-head` task now uses the tested
   `session-capture` mode and runs at 00:31, 02:31, 04:31, and 06:20 KST. After
   collection it runs a network-disabled prospective QQQ loop, an exact
-  virtual-only QQQ session when a receipt is eligible, and the older isolated
-  observer. The 90-minute runtime selector is distinct from the 390-minute
-  coverage observer. Its first prior-session smoke was correctly `stale` and
-  did not construct account, quote, or order clients; the next fresh result is
-  Data evidence, not a company hold.
+  virtual-only QQQ session when a receipt is eligible, an offline exact-session
+  validator, and the older isolated observer. The 90-minute runtime selector
+  is distinct from the 390-minute coverage observer. Its first prior-session
+  smoke was correctly `stale` and did not construct account, quote, or order
+  clients; the new Docker validator independently recomputed that same stale
+  fact and wrote a source-safe external artifact. The next fresh result is Data
+  evidence, not a company hold.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -348,7 +350,8 @@ authorized private KIS Paper work.
 - The new prospective QQQ runtime control freezes a same-session 90/18/9
   completed-bar baseline and a hash-bound provisional receipt. It replays the
   original proposal only through external `local_paper`; the current stale
-  smoke creates no model, GPU, selection, or profitability claim.
+  smoke and its independent cache reattestation create no model, GPU,
+  selection, or profitability claim.
 
 ### Execution
 

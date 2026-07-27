@@ -733,19 +733,24 @@ limit, below its shortest 109-minute trigger gap. Do not manually start a
 duplicate run to compensate for a missed window; inspect the task result and
 use the existing owned recovery path.
 
-The same named task dispatches four sequential services in the same
+The same named task dispatches five sequential services in the same
 `kis-paper-intraday-head` Docker profile: the credential-bearing data
 collector, the offline `kis-paper-prospective-loop`, the virtual-only
-`kis-paper-prospective-qqq-session`, and the older pair-bound
+`kis-paper-prospective-qqq-session`, the offline
+`kis-paper-prospective-qqq-validation`, and the older pair-bound
 `kis-paper-intraday-observation`. The prospective loop is CPU-only,
 `network_mode: none`, read-only, and receives no KIS environment values. It
 creates only a source-safe baseline/receipt and `local_paper` replay. The QQQ
 session recomputes that verified cache input and reads KIS Paper credentials,
 account facts, or a QQQ quote only after a current `enter` or `exit` receipt;
 otherwise it exits as no-intent. The older observer remains independently
-offline and pending until its verified pair exists. The dispatcher preserves
-the collector exit code, so a downstream no-intent or fault cannot rewrite Data
-freshness or hide an incomplete target result.
+offline and pending until its verified pair exists. The Validation service
+receives the exact QQQ execution-session ID, re-loads the local cache at the
+recorded timestamp, and writes an external source-safe validation artifact. It
+has no network or KIS environment values and cannot modify replay or broker
+state. The dispatcher preserves the collector exit code, so a downstream
+no-intent or fault cannot rewrite Data freshness or hide an incomplete target
+result.
 
 ### Bounded Session Capture
 

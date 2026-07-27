@@ -6016,3 +6016,34 @@ The required concise Claude falsification-first drift check was attempted before
 this route change, but the local OAuth session was expired; no private data was
 sent. That reviewer outage limits reliance or promotion claims, not this
 authorized, reversible virtual-paper implementation.
+
+## 2026-07-27 - Recompute exact prospective QQQ evidence offline after each session
+
+Decision: append one `kis-paper-prospective-qqq-validation` service to the
+existing intraday-head chain after the virtual-only QQQ session. The dispatcher
+passes the exact safe session ID; the service has `network_mode: none`, no KIS
+environment values, read-only source/cache mounts, and only the external model
+artifact mount writable. It reloads the verified QQQ/NAS cache at the recorded
+session timestamp, recomputes the 90-minute selector, verifies the
+baseline/receipt/local-paper lineage and the virtual-only canary envelope, then
+writes an immutable source-safe validation artifact.
+
+The validator accepts a durable target-local no-intent/recovery record when no
+loop exists, but it cannot invent a runtime window or action. A ready window
+requires matching re-computation and local-paper replay structure. A completed
+canary requires its session's existing prepared and position evidence; the
+validator neither reads a KIS credential nor reaches a broker, replay store, or
+private canary state. The collection exit remains the task's Data recovery
+authority; validation output is independent evidence, not a new approval or
+retry gate.
+
+The existing stale-session Docker smoke validated the retained cache as the
+same stale no-intent fact and wrote only an external artifact with hash
+`sha256:0c0836476f49f11a8f34b387f087c8344cc1ac83bd30e29ba45fb60a50dee827`.
+Claude's required scheduler/recovery drift-check was attempted before this
+change and returned OAuth expiry. That `review_unavailable` outcome does not
+block this offline, non-authority-changing improvement.
+
+Reason: automatic independent re-computation closes the evidence gap between a
+scheduled session and later operator/Codex reattachment without widening KIS,
+Paper, or live behavior.
