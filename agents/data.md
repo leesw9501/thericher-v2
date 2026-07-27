@@ -28,8 +28,12 @@ collector is implemented, independently validated, and has completed four
 bounded cycles. Its bounded token-reusing continuation worker is now complete:
 it retains an in-memory client only for its own process, keeps retries owned by
 that worker, and preserves the exact cache meaning. Its fixed two-target
-recovery is now complete: the six-symbol cache is terminal for this exact
-current-listing scope and no target is queued for another historical retry.
+  recovery is now complete: the six-symbol cache is terminal for this exact
+  current-listing scope and no target is queued for another historical retry.
+  The next bounded Data package materializes that existing cache into a
+  hash-attested, source-local historical D1 Research input. It is a local
+  verification and provenance task, not a new provider request, universe claim,
+  model input, ranking, or Paper route.
 The bounded prospective QQQ runtime selector is now ready: it consumes only a
 verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
 minute window or a precise source-status fact. It does not require a 390-minute
@@ -412,6 +416,8 @@ endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact
-source-local evidence; preserve IWM's source-limited limitation. The next
-QQQ/SPY D1 relative-regime package uses only its independently reattested daily
-catalog contract and does not consume the intraday-head recovery result.
+source-local evidence; preserve IWM's source-limited limitation. Materialize
+the terminal six-symbol NAS daily-history cache into a separately named,
+hash-attested source-local D1 input without fetching, blending, or exposing raw
+rows. It must retain per-symbol coverage limitations and may create a common
+intersection only when its exact aligned-session contract verifies.

@@ -106,6 +106,13 @@ to an ensemble, or turn its result into a Paper input.
   time-matched always-long baseline, so the strict rule classifies it
   `falsified`. It is closed: no retune, model, ensemble, GPU dispatch,
   promotion, or Paper input follows.
+- The separate QQQ/SPY D1 relative-allocation control is also complete. Its
+  smoke and full receipts are under
+  `D:\thericher-v2\model-artifacts\kis-daily-relative-allocation-control-v1`.
+  The full 443-slot rule selected QQQ 312 times and SPY 131 times through one
+  in-memory local-paper account, but its `172.3873` after-cost PnL was below
+  time-matched always-QQQ `210.2283`; the fixed three-comparator outcome is
+  `falsified`. It remains no model, ensemble, GPU, promotion, or Paper input.
 - The prospective loop now deterministically derives its 5m/10m views from one
   same-session 90 completed-minute QQQ/NAS window and replays the original
   proposal through `local_paper`. The current prior-session smoke is `stale`
@@ -263,11 +270,14 @@ to an ensemble, or turn its result into a Paper input.
 7. Keep the completed ETF trend-regime control descriptive. Do not tune its SMA
    windows, select SPY, add an ensemble member, allocate GPU work, or turn its
    one non-falsified validation slice into a Paper input.
-8. Prepare exactly one QQQ/SPY D1 relative-allocation CPU falsification
-   contract. It must use an independently frozen two-ETF selection target and
-   time-matched QQQ, SPY, and flat comparators rather than retuning the closed
-   QQQ-versus-flat relative-regime rule. Do not parameter sweep, promote it,
-   use its output in Paper work, or dispatch GPU depth work.
+8. Keep the QQQ/SPY D1 relative-allocation control closed. Its phase-local
+   63-session rule selected QQQ 312 times and SPY 131 times across 443 slots,
+   but its after-cost result was below the time-matched always-QQQ comparator.
+   Do not retune the lookback, tie rule, cadence, costs, or comparators; do not
+   promote it, use it in Paper work, or dispatch GPU depth work.
+9. Wait for the Data-owned source-local NAS historical D1 panel before freezing
+   the next distinct breadth campaign. The terminal cache is not itself a
+   Research input, and materialization is not a model, ranking, or GPU claim.
 
 ## Durable Constraints
 
@@ -283,7 +293,7 @@ to an ensemble, or turn its result into a Paper input.
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
 artifact, the fixed daily tree breadth candidate, CACC-D1, and the QQQ/SPY
-relative-regime CPU smoke/full receipts. The completed
+relative-regime and relative-allocation CPU smoke/full receipts. The completed
 daily-history continuation is transport and coverage evidence only: it creates
 no frozen Research input, replay, campaign, or GPU job. A new campaign requires
 its own contract; target-local daily-history recovery has no automatic Research
@@ -295,10 +305,10 @@ work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and closed QQQ/SPY
-relative-regime evidence. The next ready breadth package is a separate
-two-ETF allocation target, not a parameter change to the closed rule. The
-fresh prospective baseline remains frozen while its first Paper outcome is
-observed; that outcome is execution evidence and cannot select or promote a
-research result. A future ETF replication requires a new precommitted contract
-and an independent review boundary, not a retune of the completed 20/50 control.
+Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and both closed
+QQQ/SPY controls. The next upstream package is Data-owned historical NAS D1
+materialization from its existing terminal cache. After a hash-attested
+source-local input exists, freeze one distinct causal breadth hypothesis rather
+than retuning a closed rule. The fresh prospective baseline remains frozen while
+its first Paper outcome is observed; that outcome is execution evidence and
+cannot select or promote a research result.

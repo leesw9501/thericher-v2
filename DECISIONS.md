@@ -6504,3 +6504,32 @@ authority change, so no Claude result challenge was required. The separate
 source-safe governance challenge was reattempted on 2026-07-28 and the local
 Claude CLI OAuth session remained expired; that tooling fact did not hold this
 private offline control.
+
+## 2026-07-28 - Close the QQQ/SPY relative-allocation control
+
+Decision: complete one separate CPU-only QQQ/SPY D1 opportunity-selection
+control against the same hash-attested 4,756-session private catalog. The
+fixed rule compares phase-local 63-session QQQ and SPY close changes at `t`,
+selects one QQQ share only on a strict QQQ win (otherwise one SPY share), enters
+at `t+1` open, and flattens at `t+2` open. The fixed `3,783 / 22 / 951`
+geometry, two-session cadence, one-share costs, and time-matched
+`always_qqq`, `always_spy`, and `flat` comparators were precommitted. Every
+role used one sequential in-memory `local_paper` account and retained only
+aggregate source-safe receipts beneath
+`D:\thericher-v2\model-artifacts\kis-daily-relative-allocation-control-v1`.
+
+The CPU smoke completed, then the full 443-slot validation selected QQQ 312
+times and SPY 131 times. Its candidate after-cost PnL was `172.3873`, below
+the matched always-QQQ `210.2283` baseline (though above always-SPY and flat),
+so the strict three-comparator rule classifies it `falsified`. All candidate
+and comparator fills remained replayable `local_paper` fills and every account
+was flat between slots.
+
+No parameter change, model selection, ensemble, GPU job, KIS call, Paper
+order, or live route follows. This is an ordinary negative control result, so
+it does not require a Claude promotion or holdout challenge.
+
+Reason: opportunity selection needs a distinct, time-matched allocation target
+rather than another label for the closed QQQ-versus-flat rule. Closing the
+candidate at its fixed comparator boundary preserves useful attribution without
+letting a partial relative win become a strategy claim.

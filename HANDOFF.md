@@ -591,19 +591,18 @@ global permission or progress latch.
 
 ## Next Handoff
 
-The QQQ/SPY D1 relative-regime CPU smoke and full control are complete. The
-phase-local 63-session rule used the existing 4,756-session hash-attested
-catalog and fixed `3,783 / 22 / 951` geometry, then classified `falsified`
-because its 312 local-paper validation trades were after-cost weaker than the
-time-matched always-long baseline. The external summaries retain only aggregate
-evidence; this does not select a model or change GPU, KIS Paper, or live routes.
+The QQQ/SPY D1 relative-regime and separate relative-allocation CPU controls
+are complete and falsified. The allocation control reused the hash-attested
+4,756-session catalog and fixed `3,783 / 22 / 951` geometry, selected QQQ 312
+times and SPY 131 times across 443 local-paper slots, but was after-cost weaker
+than the time-matched always-QQQ comparator. Its smoke/full receipts retain
+only aggregate external evidence; neither result selects a model or changes
+GPU, KIS Paper, or live routes.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is an offline, CPU-only
-QQQ/SPY D1 relative-allocation falsification control. It uses the existing daily
-catalog only and must not consume the intraday-head recovery result, select a
-model, dispatch GPU work, or create a Paper action. The fixed NAS daily-history
-collector remains terminal for its exact current-listing scope; do not reopen a
-terminal target, blend a provider, or reinterpret the eligibility receipt as a
-PIT universe, rank, or Paper input. Keep Data, Research, and Execution evidence
-distinct, and let the scheduler own its next 00:31 KST recovery attempt rather
-than the foreground.
+Follow NEXT_CODEX_GOAL.md. The next company objective is to materialize and
+attest a reusable source-local historical NAS D1 panel from the already terminal
+private KIS cache. It must not fetch data, read credentials, blend providers,
+infer point-in-time membership, rank symbols, dispatch GPU work, or create a
+Paper action. Keep Data, Research, and Execution evidence distinct, and let the
+independent intraday scheduler own its next due recovery attempt rather than
+the foreground.

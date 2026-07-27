@@ -2,84 +2,86 @@
 
 ## Objective
 
-Build and run one frozen, CPU-only QQQ/SPY D1 relative-allocation falsification
-control against the existing hash-attested private daily catalog.
+Materialize and attest one reusable, source-local historical NAS D1 Research
+input from the already terminal private KIS Paper daily-history cache.
 
-This is a separate opportunity-selection test, not a retune of the closed
-QQQ-versus-flat relative-regime rule. It must produce local-paper evidence, not
-a selected model, ensemble member, GPU campaign, KIS Paper input, or
-profitability claim.
+The goal is a data-contract improvement: turn verified local cache bytes into
+an immutable, hash-attested D1 input with honest per-symbol coverage and
+provenance. It is not a new collection job, point-in-time universe, ranking,
+strategy, model campaign, GPU job, KIS Paper action, or profitability claim.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `DECISIONS.md`, and the active Data, Engine Research, Execution, and
    orchestration stateboards.
-2. Reattest the existing QQQ/SPY daily catalog and preserve its existing
-   retrospective/source limitations. Do not fetch data or use the current
-   intraday-head recovery result as a research input.
-3. Ask Claude for a short falsification-first drift check only if the frozen
-   contract would open a sealed holdout, promote a result, or change an existing
-   strategy/execution authority. A normal candidate-only CPU control does not
-   wait on the expired local Claude OAuth session.
+2. Inspect the existing terminal
+   `D:\market_data\us_equities\kis_paper_private\daily-nas-history\v1`
+   index and its immutable chunks before designing a consumer. Do not print raw
+   rows or manually repair source bytes.
+3. Ask Claude for a short falsification-first drift check only if the work
+   changes source authority, blends providers, establishes a point-in-time
+   universe/ranking claim, opens a sealed holdout, widens a broker route, or
+   changes a major runtime. Normal offline materialization does not wait on the
+   expired local Claude OAuth session.
 
-## Frozen Candidate
+## Frozen Scope
 
-- On completed daily session `t`, calculate each asset's 63-session close
-  change from QQQ and SPY only.
-- At `t+1` open, hold exactly one local-paper share of QQQ when QQQ's change is
-  strictly greater than SPY's; otherwise hold exactly one local-paper share of
-  SPY. Flatten at `t+2` open.
-- Use fixed two-session non-overlapping slots, one share, and the existing
-  fixed after-cost economics.
-- Use the existing chronological `3,783 / 22 / 951` session contract. A
-  validation decision is eligible only when its full 63-session causal feature
-  window and both execution bars are inside its own phase.
-- Compare the same decision slots with `always_qqq`, `always_spy`, and `flat`.
-  The candidate is falsified if its validation after-cost PnL does not strictly
-  exceed all three comparators. Do not tune the lookback, tie rule, cadence,
-  costs, or comparators after seeing results.
+- Use only the terminal KIS Paper NAS daily-history cache and its fixed current
+  registry: `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` on `NAS`.
+- Reuse the existing canonical daily-bar parser and preserve its
+  `MODP=0_unadjusted` and corporate-action limitations.
+- Retain each symbol's verified coverage and source-limited/complete status.
+  Form a common multi-symbol intersection only when the exact aligned-session
+  contract verifies; otherwise expose source-local streams without fabricating
+  alignment.
+- Store canonical data/manifests only under `D:\market_data`; store source-safe
+  provenance receipts only under `D:\thericher-v2\model-artifacts`.
 
 ## Work
 
-1. **Data:** reuse or extend the narrow QQQ/SPY phase-local loader only as
-   needed for a two-asset target. Preserve reattestation, complete-bar,
-   point-in-time, source, and corporate-action limitations.
-2. **Engine Research:** implement the fixed deterministic allocation control
-   and its content-addressed external artifact under
-   `D:\thericher-v2\model-artifacts`. Persist only provenance, configuration,
-   aggregate metrics, categorical outcome, and replay identity; never raw bars,
-   derived values, per-decision values, model weights, or checkpoints.
-3. **Execution:** use the existing broker-free local-paper simulator only.
-   Maintain one sequential account across QQQ/SPY selection so every fill stays
-   `source: local_paper`, positions remain flat between slots, and replay is
-   verified in memory. Do not create a KIS client, account read, quote, order,
-   or schedule.
-4. **Validation:** add focused tests for phase-local 63-session boundaries,
-   tie selection, baseline slot alignment, single-account no-overlap behavior,
-   fixed costs, immutable aggregate artifacts, no network/credential/broker
-   access, and the strict three-comparator kill rule.
-5. Run a deterministic CPU smoke first, then one full CPU control only if the
-   smoke passes. Keep GPU idle; a non-falsified result still requires an
-   independent frozen replication before any GPU or ensemble work.
+1. **Data:** implement a narrow loader/materializer that reattests the terminal
+   index, validates chunk and bar lineage, deduplicates only through the
+   existing canonical rules, and returns immutable `CatalogedBars`-style D1
+   streams plus a content hash. Make malformed, conflicting, missing, or
+   unverified source evidence fail closed for the affected symbol.
+2. **Data:** write a compact D:-resident panel manifest and an external
+   source-safe completion receipt. The receipt may contain source/cache/index
+   hashes, symbol identifiers, categorical status, counts, date buckets, and
+   limitations; it must not contain raw bars, prices, volumes, provider rows,
+   credentials, account facts, orders, or model outputs.
+3. **Validation:** add focused offline tests for lineage reattestation,
+   complete/source-limited propagation, cross-symbol alignment rejection,
+   immutable output paths, raw-field exclusion, and no network/credential/KIS
+   access. Add one CLI or small script only when it makes the bounded materializer
+   reproducible.
+4. **Engine Research:** consume no strategy output in this goal. Record only
+   whether the resulting input is eligible for a future source-local frozen
+   campaign; do not run a model, replay, parameter sweep, GPU job, ensemble, or
+   Paper action.
 
 ## Boundaries
 
-- No KIS calls, credentials, live route, paid data/model, public service, or
-  raw-data disclosure.
-- No parameter sweep, model training, checkpoint, ensemble, threshold tuning,
-  Paper order, or promotion.
-- Keep market data under `D:\market_data` and generated artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+- No KIS calls, credentials, `.env` reads, paid data/model, provider download,
+  public service, order, account, quote, or live route.
+- No provider blending, historical membership inference, liquidity/ranking
+  claim, corporate-action repair, or raw-data disclosure.
+- No model training/checkpoint, strategy selection, backtest/PnL result, GPU
+  dispatch, or KIS Paper order.
+- Keep data under `D:\market_data` and artifacts under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
+  either.
 
 ## Completion
 
-- The exact fixed contract, CPU smoke, and full control each have source-safe
-  external evidence and deterministic replay tests.
-- The result is categorically `falsified` or `candidate_only`; either outcome
-  leaves model selection, GPU depth, ensemble, and KIS Paper routes unchanged.
-- Stateboards record the exact research result and the independent intraday
-  worker's recovery status without making either a global hold.
+- A reattestable, source-local historical NAS D1 input exists with immutable
+  local manifest and source-safe external receipt.
+- Each symbol's coverage and limitations are explicit, and any common
+  intersection is proven rather than assumed.
+- Tests prove the materializer is offline, credential-free, immutable, and
+  cannot become a ranking/model/Paper surface.
+- Refresh the stateboards and replace this file with exactly one next company
+  objective before ending.
 
 ## Verification
 
@@ -90,9 +92,6 @@ docker compose --env-file .env.example config --quiet
 docker compose config --quiet
 ```
 
-Before ending, verify, commit, push, and replace this file with exactly one
-next company objective.
-
 ## Suggested Commit Message
 
-`Add QQQ SPY relative regime control`
+`Materialize NAS daily history panel`

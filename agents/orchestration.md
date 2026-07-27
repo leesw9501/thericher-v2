@@ -20,13 +20,12 @@ second goal.
   source-partitioned D1 eligibility receipt are complete and externally
   reattestable.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, CACC-D1,
-  and QQQ/SPY relative-regime controls are closed as falsified evidence. The
-  latter reattested the 4,756-session QQQ/SPY panel, used phase-local 63-session
-  warmup with fixed `3,783 / 22 / 951` geometry, and failed its strict
-  after-cost always-long comparison across 443 validation slots. The ETF D1
-  trend-regime control remains descriptive only. The next ready preparation is
-  a separate two-ETF allocation target; GPU remains ineligible until its
-  campaign is frozen.
+  QQQ/SPY relative-regime, and QQQ/SPY relative-allocation controls are closed
+  as falsified evidence. The allocation control used 443 phase-local slots and
+  lost to its time-matched always-QQQ comparator, so it cannot feed a model,
+  ensemble, GPU, or Paper route. The ETF D1 trend-regime control remains
+  descriptive only. GPU remains ineligible until a distinct frozen campaign has
+  a suitable source-local input.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -39,12 +38,12 @@ second goal.
 ## Current Bottleneck
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
-schedule deployment, first natural post-deployment result, and the independent
-relative-regime control are complete. The current Data-local bottleneck is the
-scoped collection recovery behind its generation-23 `collection_exit_nonzero`;
-it does not block the next D1 allocation contract. The stale QQQ input remains
-evidence not to widen the fixed two-minute deadline, and it remains independent
-of every model claim or Paper-order target.
+schedule deployment, and both independent QQQ/SPY controls are complete. The
+current product bottleneck is turning the already terminal NAS D1 history cache
+into a reusable, hash-attested source-local Research input. This is a local
+materialization task, not a provider or scheduler wait. The stale QQQ input
+remains evidence not to widen the fixed two-minute deadline, and it remains
+independent of every model claim or Paper-order target.
 
 ## External Waits
 
@@ -68,6 +67,7 @@ relying on it; scope a failure to that item and keep independent packages moving
 
 ## Next Handoff
 
-Prepare the separate frozen QQQ/SPY D1 relative-allocation CPU control while the
-already-deployed schedule owns its next collection attempt. Do not turn a stale
-or conflicted classification into an approval, order, or global wait.
+Materialize and attest the terminal NAS D1 history cache while the
+already-deployed intraday schedule owns its next collection attempt. Do not turn
+a source-local historical input into a point-in-time universe, ranking, model,
+order, or global wait.
