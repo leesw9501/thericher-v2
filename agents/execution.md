@@ -12,14 +12,14 @@ output as untrusted input.
 ## Current Objective
 
 The current read-only account projection and target-local Data recovery are
-complete. Preserve the virtual-only bridge, local dashboard boundary, and
-existing Paper recovery invariants while the next objective establishes a
-prospective QQQ baseline and, if its exact durable intent is valid, one bounded
-KIS Paper canary. The QQQ route is now implemented and awaits only a fresh,
-eligible runtime receipt. After that exact lifecycle closes, the next Execution
-package is a low-frequency fixed KIS Paper baseline for execution,
-reconciliation, and PnL-attribution learning; it remains independent of model
-promotion. KIS Live remains unavailable.
+complete. The first fresh prospective QQQ cycle is also complete: a ready
+runtime receipt classified an exit, then the virtual route returned the exact
+`account_unavailable` no-intent without constructing a canary. Preserve the
+virtual-only bridge, local dashboard boundary, and existing Paper recovery
+invariants. The next Execution package is a bounded diagnosis of that exact
+account-read availability followed by a separate fresh receipt; a recurring
+fixed Paper baseline follows only from reliable execution evidence and remains
+independent of model promotion. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -66,6 +66,14 @@ promotion. KIS Live remains unavailable.
   order work. The trailing offline validator independently recomputed the
   retained cache/session lineage and has no credential, network, local-paper
   mutation, account, or order surface.
+- The first fresh scheduled QQQ cycle on 2026-07-28 KST had a current ready
+  90-minute runtime window and a fixed `eligible_exit` receipt. Its virtual
+  session read returned `account_unavailable`, emitted `no_intent`, and created
+  no canary, order, modification, cancellation, or reconciliation side effect.
+  The isolated validator independently reattested the same no-intent and the
+  terminal schedule receipt closed `complete` with scheduler exit zero. This is
+  an exact account-read availability fact, not a model result, route promotion,
+  or a permission hold on a later fresh intent.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
 - Temporary Execution and independent Validation both passed the new
@@ -135,12 +143,14 @@ promotion. KIS Live remains unavailable.
 3. Preserve exact ambiguous Paper evidence without replacing that exact intent.
    A read-only snapshot neither reconciles it nor blocks another correctly
    scoped authorized Paper action.
-4. At the next fresh QQQ runtime receipt, let the existing receipt canary own
-   its exact persisted intent and cancellation/reconciliation lifecycle. A
-   no-intent outcome remains scoped to that target and does not require an
-   operator release. Reattach the matching terminal dispatch receipt before
-   interpreting the scheduled session as complete.
-5. After the exact canary lifecycle has durable evidence, prepare a recurring
+4. Diagnose the exact `account_unavailable` read path with the existing
+   virtual-only, secret-safe account bridge. A scoped failure remains no-intent;
+   it does not justify a retry loop, live route, or operator-release gate.
+5. At a later fresh QQQ runtime receipt, let the existing receipt canary own
+   only its new exact persisted intent and cancellation/reconciliation lifecycle.
+   Reattach the matching terminal dispatch receipt before interpreting that
+   scheduled session as complete.
+6. After the exact canary lifecycle has durable evidence, prepare a recurring
    low-frequency fixed Paper baseline using the existing intent, route, risk,
    and reconciliation boundaries. It must collect execution evidence, not
    promote a model or infer profitability from one outcome.
@@ -155,23 +165,25 @@ promotion. KIS Live remains unavailable.
 
 ## Recovery
 
-Current class: complete for the fresh read-only account bridge and the
-cross-fold verifier. The account runtime expires normally after its TTL; a
-later refresh is a new read-only observation, not recovery of an order. Preserve
-exact ambiguous Paper evidence for the owned reconciliation route and continue
-independent Data, Research, and authorized Paper work. The new QQQ route has a
-complete offline and unit-tested recovery path; its current stale smoke is not
-an execution incident.
+Current class: complete for the fresh read-only account bridge, cross-fold
+verifier, and first fresh QQQ scheduled no-intent. The account runtime expires
+normally after its TTL; a later refresh is a new read-only observation, not
+recovery of an order. Preserve exact ambiguous Paper evidence for the owned
+reconciliation route and continue independent Data, Research, and authorized
+Paper work. The new QQQ route has a complete offline and unit-tested recovery
+path; `account_unavailable` constrains only that completed receipt.
 
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next bounded canary must use a new exact durable Paper intent and the
-existing virtual-only route; no stale account snapshot or historical Data
-receipt may act as its permission or order input.
-The next fresh QQQ receipt must still re-read the current Paper account and
-fresh quote at its own call site before a canary is prepared.
+Diagnose the completed `account_unavailable` fact through the existing
+virtual-only read path without inventing a retry schedule or reading live
+configuration. The next bounded canary must use a new exact durable Paper intent
+and the existing virtual-only route; no stale account snapshot or historical
+Data receipt may act as its permission or order input. The next fresh QQQ
+receipt must still re-read the current Paper account and fresh quote at its own
+call site before a canary is prepared.
 The later recurring baseline must use the same call-time technical checks and
 never reuse a stale account projection or an unknown exact intent.

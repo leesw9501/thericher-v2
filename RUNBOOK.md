@@ -167,6 +167,26 @@ market-data loader may consume only a complete injected
 app value is injected, host tools retain the strict local `.env` parser. Never
 add account or `KIS_LIVE_*` variables to this service.
 
+## KIS 1m Historical Capability
+
+The current-head collector keeps its documented `PINC=0` first request. A
+source-safe historical-reach probe may set `PINC=1` only to test the exact
+prior-day route; it writes no raw minute rows, credentials, or account data.
+
+```powershell
+uv run python scripts\probe_kis_paper_minute_capability.py --execute `
+  --include-previous-day --target QQQ/NAS --max-pages 3 `
+  --artifact-root D:\thericher-v2\model-artifacts
+```
+
+On 2026-07-27, QQQ/NAS and SPY/AMS each returned accepted terminal
+same-exchange-date pages with no continuation cursor under this scope. Do not
+start a serial historical dispatcher or retry flood for either exact route. The
+result is limited to those endpoint/request contracts; a future historical
+attempt needs an explicitly named alternate endpoint, exchange route, or
+compatible source and a fresh capability contract. Fresh scheduled head capture
+continues independently.
+
 Raw retention metadata is an actual outcome: `true` means a snapshot was
 written, while a failed or empty response can truthfully remain `false`. It is
 never a permission switch. A historical `false` is not a consent hold: once a
@@ -1319,6 +1339,27 @@ precommit, summary, checkpoint, and replay evidence only under the external
 artifact root. A code-only rerun may reuse the existing research image because
 the source and scripts are mounted read-only; rebuild only after a Dockerfile or
 runtime dependency change.
+
+### KIS Daily Regime-Tree Breadth
+
+The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY
+daily input and local-paper target as the established daily screen, but trains
+one shallow histogram-gradient tree on development labels only. It writes no
+pickle, joblib file, raw row, or model checkpoint; only source-safe precommit,
+summary, and local-paper replay evidence live under the external artifact root.
+
+```powershell
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_daily_regime_tree_breadth.py `
+  --run-label <unique-label> `
+  --cache-root /app/market_data/us_equities/kis_paper_private/daily `
+  --artifact-root /app/model_artifacts
+```
+
+The first fixed `20260728-cpu-smoke` is falsified for both QQQ and SPY after
+costs. Do not reuse it for parameter tuning, an ensemble, a GPU rerun, model
+promotion, or a Paper decision. A later campaign must make a distinct causal
+hypothesis and write a separate immutable contract.
 
 ### Prospective Intraday Offline Observation
 

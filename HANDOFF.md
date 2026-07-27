@@ -137,13 +137,20 @@ authorized private KIS Paper work.
   This proves terminal recovery state, not new history or a research result.
 - The private intraday cache has 21 complete QQQ and SPY regular sessions from
   the prior bounded historical scope. This is a pipeline control, not a KIS
-  history ceiling or sufficient model corpus. The next Data package probes
-  QQQ/SPY historical reach and continuation, then starts a durable measured
-  cursor queue when useful. It remains eligible only for scoped historical
-  work, not a broad profitability claim.
-- The prospective QQQ head is generation 10 with zero complete sessions out
-  of five. The retained short-session evidence is a Data-local source fact. It
-  is not a company hold.
+  history ceiling or sufficient model corpus. On 2026-07-27, source-safe
+  QQQ/NAS and SPY/AMS `PINC=1` probes each accepted terminal same-exchange-date
+  pages without a continuation cursor. Their external evidence is
+  `20260727T145537118121Z-09f1f5872ad57830.json` and
+  `20260727T150227658709Z-6d826de2f017e316.json` under the minute-capability
+  artifact root. The result closes only these exact routes as
+  `source_limited` for serial continuation; it does not claim that all KIS
+  historical minute paths are unavailable, and no unsupported cursor queue was
+  started.
+- The first fresh 2026-07-28 KST prospective QQQ head capture completed. It
+  produced a ready same-session 90-minute QQQ/NAS runtime window while its
+  distinct full-session coverage remains incomplete. QQQ/NAS and SPY/AMS each
+  retained one current terminal page in the canonical D: cache; no raw rows are
+  repeated here. This is a Data-local source fact, not a model or company hold.
 - The latest 2026-07-26 source-safe QQQ KIS Paper minute calibration used one
   in-memory client/token and a 1.0-second candidate request-start interval. It
   accepted two full terminal-head pages with zero categorical limits or errors
@@ -171,9 +178,10 @@ authorized private KIS Paper work.
   success; the older observer remains optional. The 90-minute runtime selector
   is distinct from the 390-minute coverage observer. Its first prior-session
   smoke was correctly `stale` and did not construct account, quote, or order
-  clients; the new Docker validator independently recomputed that same stale
-  fact and wrote a source-safe external artifact. The next fresh result is Data
-  evidence, not a company hold.
+  clients. The first fresh scheduled result instead produced the ready 90-minute
+  window and a terminal source-safe schedule receipt; its separate virtual
+  account-read no-intent is Execution evidence. The next fresh result remains a
+  Data observation, not a company hold.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -203,6 +211,15 @@ authorized private KIS Paper work.
   previous-bar direction comparator; no model, ensemble, promotion, Paper
   intent, or profitability claim was selected. The earlier r1 artifact remains
   immutable but is unqualified because its precommit omitted replay sizing.
+- The independent fixed histogram-gradient tree breadth smoke completed in the
+  network-disabled Docker research profile on 2026-07-28. It used the same
+  QQQ/SPY `3,783 / 22 / 951` daily split and existing local-paper replay costs,
+  but no serialized estimator or raw rows. Its after-cost QQQ/SPY result was
+  `-45.8296 / -73.7783`, below `previous_bar_direction` at
+  `-1.7914 / -44.1851` and below flat. The candidate is falsified without
+  tuning, ensembling, promotion, GPU rerun, or Paper consequence. Its external
+  summary is under
+  `D:\thericher-v2\model-artifacts\kis-daily-regime-tree-breadth-v1\20260728-cpu-smoke`.
 - The frozen six-symbol daily CPU local-paper control completed on 2026-07-27
   from the exact 199-session current-basket panel. Its fixed 159/1/39
   development/purge/validation geometry, three-bar momentum rule,
@@ -406,6 +423,13 @@ authorized private KIS Paper work.
   durable receipt canary with cancellation/reconciliation. `hold`, `reduce`,
   `abstain`, stale, missing, or out-of-scope-position results are target-local
   no-intent facts. No KIS_LIVE_* path is readable or callable.
+- The first fresh scheduled QQQ runtime receipt on 2026-07-28 KST was a ready
+  `eligible_exit` with matching offline local-paper no-intent evidence. Its
+  virtual session returned `account_unavailable`, created no canary or broker
+  side effect, and the offline validator independently reproduced the exact
+  no-intent. The source-safe terminal schedule receipt is `complete` with
+  scheduler exit zero. This closes that exact execution-learning cycle; a later
+  account read or fresh receipt is a new scoped observation, not a retry of it.
 
 ## KIS Throughput Facts
 

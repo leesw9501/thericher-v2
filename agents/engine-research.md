@@ -26,12 +26,12 @@ first-five pair: it freezes one 90/18/9 completed-bar, five-action target-state
 decision and records provisional cache-bound evidence. It is an execution
 learning control, not a trained model, GPU campaign, ranking, or profitability
 claim.
-The next independent Research package is snapshot-driven breadth on an already
-qualified immutable daily input. It must introduce a new hypothesis and
-falsification rule rather than retune the rejected pair, and it may use the GPU
-only after its dataset, target, split, costs, and naive baseline are frozen.
-The 21-session intraday cache remains a pipeline control, not a depth-training
-corpus or a reason to leave all other eligible daily work idle.
+The fixed nonlinear daily tree breadth package is complete and falsified. A
+future breadth package must introduce a new hypothesis and falsification rule,
+not retune the rejected linear, sequence, or tree candidates. GPU work starts
+only after an eligible campaign's dataset, target, split, costs, and naive
+baseline are frozen. The 21-session intraday cache remains a pipeline control,
+not a depth-training corpus or a reason to manufacture GPU work.
 
 ## Current Readiness
 
@@ -63,6 +63,17 @@ corpus or a reason to leave all other eligible daily work idle.
   direction comparator, so it is a falsified control, not a candidate,
   selection, ensemble member, or Paper input. The external summary is under
   `D:\thericher-v2\model-artifacts\kis-daily-l2-logistic-control-v1`.
+- The first independent daily nonlinear breadth candidate completed on
+  2026-07-28 in Docker CPU mode. It used fixed 20-session QQQ/SPY completed
+  return windows, 3,783 development sessions, 22 purge sessions, 951 validation
+  sessions, the existing after-cost local-paper target, and a fixed shallow
+  histogram-gradient tree without early stopping. It wrote no serialized model
+  or raw rows. The external summary is under
+  `D:\thericher-v2\model-artifacts\kis-daily-regime-tree-breadth-v1\20260728-cpu-smoke`.
+  Its QQQ/SPY after-cost PnL was `-45.8296 / -73.7783`, below the corresponding
+  previous-bar-direction controls `-1.7914 / -44.1851` and below flat. This
+  falsifies the fixed candidate; it is not retuned, selected, ensembled,
+  promoted, or routed to Paper work.
 - The preceding `cpu-control-20260726T154042Z` artifact remains immutable but
   is not a qualifying campaign result: its precommit omitted replay sizing.
   It must not be compared, selected, or used to support PnL claims. The r2
@@ -187,11 +198,10 @@ corpus or a reason to leave all other eligible daily work idle.
 1. Treat the fixed linear/compact-GRU D1 pair as falsified under its stated
    fold-local rule. Do not retune parameters, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from it.
-2. Build one snapshot-triggered daily breadth campaign from the existing
-   4,756-session QQQ/SPY input. Freeze a new directional hypothesis, exact
-   costs/splits, a naive baseline, and distinct linear/tree/sequence candidate
-   families before dispatch. It is a signal-research package only, never a
-   stock-selection, allocation, ensemble, or Paper input.
+2. Keep the completed fixed histogram-gradient tree breadth candidate closed.
+   The next daily breadth proposal must change the causal hypothesis or input
+   contract, not repeat its 20-bar return window with parameter changes. Freeze
+   its costs, split, naive baselines, and strongest kill test before dispatch.
 3. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune the failed pair under a new label.
 4. Keep depth input-pending and ensemble empty until independently replicated,
@@ -214,22 +224,23 @@ corpus or a reason to leave all other eligible daily work idle.
 ## Recovery
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
-target receipts, all three candidate-only CPU/CUDA screens, and the fixed
-cross-fold artifact. The completed daily-history continuation is transport and
-coverage evidence only: it creates no frozen Research input, replay, campaign,
-or GPU job. Await a separately contracted research campaign; target-local
-daily-history recovery has no automatic Research input or GPU consequence. A
-failed consumer attempt creates new immutable evidence rather than overwriting
-a parent artifact. A missing prospective pair is input_unavailable only for its
-pair-bound observation. A stale prospective runtime window is likewise only its
-own no-intent fact and does not create GPU work or a promotion hold.
+target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
+artifact, and the fixed daily tree breadth candidate. The completed
+daily-history continuation is transport and coverage evidence only: it creates
+no frozen Research input, replay, campaign, or GPU job. A new campaign requires
+its own contract; target-local daily-history recovery has no automatic Research
+or GPU consequence. A failed consumer attempt creates new immutable evidence
+rather than overwriting a parent artifact. A missing prospective pair is
+input_unavailable only for its pair-bound observation. A stale prospective
+runtime window is likewise only its own no-intent fact and does not create GPU
+work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair falsification evidence. The next Research package first
-freezes a daily snapshot-triggered breadth contract and then runs its eligible
-CPU/GPU candidates without treating the result as stock selection, a selected
-model, replay, or a Paper input. The fresh prospective baseline remains frozen
-while its first Paper outcome is observed. When Data publishes longer qualified
-intraday coverage, it becomes a separate campaign input rather than a rewrite
-of the daily evidence.
+Preserve the fixed-pair and tree falsification evidence. The next Research
+package must first freeze a causal hypothesis distinct from the completed
+20-bar-return candidates, then run only its eligible CPU/GPU work without
+treating the result as stock selection, a selected model, replay, or Paper
+input. The fresh prospective baseline remains frozen while its first Paper
+outcome is observed. Longer qualified intraday coverage becomes a separate
+campaign input rather than a rewrite of the daily evidence.

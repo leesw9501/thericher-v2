@@ -16,10 +16,12 @@ dev = [
   "pytest>=8.0",
   "pytest-xdist>=3.6",
   "ruff>=0.5",
+  "scikit-learn>=1.7,<2",
 ]
 research = [
   "numpy>=2.0",
   "pandas>=2.2",
+  "scikit-learn>=1.7,<2",
 ]
 
 [project.scripts]

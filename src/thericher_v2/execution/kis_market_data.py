@@ -238,6 +238,7 @@ class UrllibKisPaperMarketDataTransport:
 class KisPaperMinuteQuery:
     exchange: str
     symbol: str
+    include_previous_day: bool = False
     continuation_next: str | None = None
     continuation_key: str | None = None
 
@@ -246,6 +247,8 @@ class KisPaperMinuteQuery:
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         if self.exchange not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(self.symbol, frozenset()):
             raise ValueError("minute market-data symbol/exchange pair is not supported")
+        if type(self.include_previous_day) is not bool:
+            raise ValueError("minute previous-day inclusion must be a boolean")
         if (self.continuation_next is None) != (self.continuation_key is None):
             raise ValueError("continuation next and key must be supplied together")
         if self.continuation_next is not None and (
@@ -515,7 +518,11 @@ class KisPaperMarketDataClient:
                 "EXCD": query.exchange,
                 "SYMB": query.symbol,
                 "NMIN": "1",
-                "PINC": "1" if query.continuation_next is not None else "0",
+                "PINC": (
+                    "1"
+                    if query.include_previous_day or query.continuation_next is not None
+                    else "0"
+                ),
                 "NREC": "120",
                 "FILL": "",
                 "KEYB": query.continuation_key or "",
@@ -998,6 +1005,8 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
             and query.get("KEYB") == ""
             and query.get("NEXT") == ""
         )
+    if query.get("PINC") == "1" and query.get("KEYB") == "" and query.get("NEXT") == "":
+        return request.headers.get("tr_cont") == ""
     return (
         query.get("PINC") == "1"
         and request.headers.get("tr_cont") == "N"

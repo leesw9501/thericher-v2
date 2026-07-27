@@ -6129,3 +6129,74 @@ make cursor/retry recovery less reliable. The required Claude architecture
 challenge was attempted without credentials, raw rows, or account data; local
 OAuth was expired, so the durable record is `review_unavailable` rather than a
 claim of external support.
+
+## 2026-07-28 - Close the exact KIS prior-day minute routes without a false backfill
+
+Decision: keep current-head capture on its existing `PINC=0` request shape and
+use `PINC=1` only in the new bounded source-safe historical-reach probe. The
+official KIS sample distinguishes that prior-day request scope from the normal
+head path. QQQ/NAS and SPY/AMS each accepted two full terminal-head pages with
+one client/token, no categorical error, no continuation cursor, and no second
+exchange-date category. The external evidence paths are
+`20260727T145537118121Z-09f1f5872ad57830.json` and
+`20260727T150227658709Z-6d826de2f017e316.json` under
+`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe`.
+
+No serial cursor dispatcher is created for those exact routes. Their
+`source_limited` status is a fact about observed continuation semantics, not a
+claim that every KIS minute endpoint lacks history, a reason to remove fresh
+capture, or a hold on another lane. A future attempt must name an alternative
+endpoint, exchange route, or compatible source and run a distinct bounded
+probe.
+
+Reason: a worker without a continuation cursor cannot safely claim a durable
+history boundary or manufacture progress through repeated terminal requests.
+The required concise Claude falsification request was attempted with no secrets
+or raw rows, but the local OAuth session remained expired. That
+`review_unavailable` fact does not hold the private Data or Research work.
+
+## 2026-07-28 - Falsify the fixed nonlinear daily regime-tree breadth candidate
+
+Decision: add one fixed CPU histogram-gradient tree candidate as an independent
+nonlinear breadth test over the existing immutable QQQ/SPY daily input. Its
+precommit freezes 20 completed-bar return features, the `3,783 / 22 / 951`
+chronological split, after-cost next-open/following-open local-paper target,
+three naive comparators, fixed tree parameters, and a two-symbol kill test. The
+Docker research profile reads only `/app/market_data`, writes artifacts only to
+`/app/model_artifacts`, has no runtime network, and persists no pickle, joblib,
+checkpoint, raw row, credential, account, or broker artifact.
+
+The `20260728-cpu-smoke` result was after-cost negative for QQQ (`-45.8296`)
+and SPY (`-73.7783`), weaker than their fixed previous-bar-direction comparators
+(`-1.7914` and `-44.1851`) and flat. The candidate is therefore falsified. It
+is not retuned, selected, ensembled, promoted, GPU-repeated, or connected to a
+Paper order.
+
+Reason: a tree supplies a genuinely different nonlinear inductive bias without
+relabeling or retuning the failed linear/sequence candidates. A clear two-symbol
+failure is useful breadth evidence, and closing it prevents GPU work from being
+used as an activity metric rather than an eligible research resource.
+
+## 2026-07-28 - Close the first fresh prospective QQQ Paper cycle as no-intent
+
+Decision: accept the first fresh scheduled QQQ cycle as complete execution
+learning evidence. The collection stage exited zero, the offline runtime loop
+found a ready same-session 90-minute window and classified an `eligible_exit`,
+and the virtual-only session returned `account_unavailable`. It created no
+canary, order, modification, cancellation, or reconciliation side effect. The
+separate offline validator reattested the same no-intent and the terminal
+schedule receipt recorded `complete` with scheduler exit zero.
+
+This closes only the exact fresh receipt. `account_unavailable` is a target-local
+account-read availability fact, not a model result, capital gate, KIS-wide
+outage claim, reason to retry a broker action, or permission hold on a later
+fresh intent. The next bounded Execution package may diagnose that secret-safe
+virtual read path, then a later fresh receipt must construct a new exact intent
+at its own call site before a canary can exist.
+
+Reason: the scheduled chain now proves its complete fresh runtime/window/loop/
+virtual-session/validator/terminal-receipt path while preserving no-side-effect
+truth when the account read cannot support the eligible exit. Claude's required
+falsification-first interpretation request used only source-safe categories but
+could not authenticate because local OAuth was expired. That
+`review_unavailable` result limits no private routine work.

@@ -137,6 +137,28 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
     assert all(query.continuation_next is None for query in client.queries)
 
 
+def test_probe_uses_prior_day_scope_from_its_first_request() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient([_page((start + timedelta(minutes=1), start), None)])
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(datetime(2026, 7, 24, 12, 0, tzinfo=UTC),) * 2,
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        include_previous_day=True,
+        target=("SPY", "AMS"),
+        repeat_terminal_head_once=False,
+        monotonic_clock=_monotonic(0.0, 0.1),
+    )
+
+    assert outcome.include_previous_day is True
+    assert outcome.safe_payload()["request_scope"] == "current_and_previous_day"
+    assert outcome.safe_payload()["target_key"] == "SPY/AMS/1m"
+    assert client.queries[0].include_previous_day is True
+    assert client.queries[0].symbol == "SPY"
+    assert client.queries[0].exchange == "AMS"
+
+
 def test_probe_records_partial_continuation_failure_without_retaining_rows() -> None:
     start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
     client = _MinuteClient(

@@ -43,6 +43,8 @@ def main(
 ) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--include-previous-day", action="store_true")
+    parser.add_argument("--target", choices=("QQQ/NAS", "SPY/AMS"), default="QQQ/NAS")
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument(
         "--max-pages",
@@ -71,6 +73,7 @@ def main(
         )
 
     request_start_times: list[datetime] = []
+    symbol, exchange = str(args.target).split("/", maxsplit=1)
     try:
         control_root = (
             KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT.parent / KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY
@@ -96,6 +99,8 @@ def main(
             repository_root=_REPOSITORY_ROOT,
             observed_at=clock(),
             max_pages=args.max_pages,
+            include_previous_day=args.include_previous_day,
+            target=(symbol, exchange),
             tested_request_interval_seconds=args.minimum_request_interval_seconds,
             monotonic_clock=monotonic_clock,
         )

@@ -54,7 +54,9 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
         transport=transport,
     )
 
-    first = client.fetch_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+    first = client.fetch_page(
+        KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", include_previous_day=True)
+    )
     second = client.fetch_page(
         KisPaperMinuteQuery(
             exchange="NAS",
@@ -66,6 +68,8 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
 
     assert first.next_cursor == "1"
     assert second.next_cursor is None
+    assert transport.requests[1].query["PINC"] == "1"
+    assert transport.requests[1].query["NEXT"] == ""
     assert first.more == "0"
     assert first.bars[0].exchange_time == "195900"
     assert first.bars[-1].exchange_time == "180000"
@@ -109,11 +113,11 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     }
     assert transport.requests[1].query == {
         "AUTH": "",
-        "EXCD": "NAS",
-        "SYMB": "QQQ",
-        "NMIN": "1",
-        "PINC": "0",
-        "NREC": "120",
+            "EXCD": "NAS",
+            "SYMB": "QQQ",
+            "NMIN": "1",
+            "PINC": "1",
+            "NREC": "120",
         "FILL": "",
         "KEYB": "",
         "NEXT": "",

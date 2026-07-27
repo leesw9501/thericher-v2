@@ -31,6 +31,9 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 )
 
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET = ("QQQ", "NAS")
+KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS = frozenset(
+    {"QQQ/NAS/1m", "SPY/AMS/1m", "SPY/NAS/1m"}
+)
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES = 3
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_ARTIFACT_DIRECTORY = "data/kis-paper-minute-capability-probe"
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS = 1.0
@@ -128,6 +131,8 @@ class KisPaperMinuteCapabilityProbeOutcome:
     ]
     calibration_fact: str
     pacing_recalibration_fact: str
+    include_previous_day: bool = False
+    target_key: str = "QQQ/NAS/1m"
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -156,6 +161,8 @@ class KisPaperMinuteCapabilityProbeOutcome:
             or not self.response_class
             or not self.calibration_fact
             or not self.pacing_recalibration_fact
+            or type(self.include_previous_day) is not bool
+            or self.target_key not in KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS
         ):
             raise ValueError("capability probe observation is invalid")
 
@@ -168,7 +175,10 @@ class KisPaperMinuteCapabilityProbeOutcome:
             "status": self.status,
             "paper_only": True,
             "route_class": "kis_paper_market_data",
-            "target_key": "QQQ/NAS/1m",
+            "target_key": self.target_key,
+            "request_scope": (
+                "current_and_previous_day" if self.include_previous_day else "current_day_only"
+            ),
             "observed_at": self.observed_at.isoformat(),
             "accepted_page_count": self.accepted_page_count,
             "accepted_page_size_category": self.accepted_page_size_category,
@@ -215,6 +225,8 @@ def run_kis_paper_minute_capability_probe(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    include_previous_day: bool = False,
+    target: tuple[str, str] = KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET,
     tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeOutcome:
@@ -226,8 +238,11 @@ def run_kis_paper_minute_capability_probe(
         raise ValueError("capability probe page cap is invalid")
     if type(repeat_terminal_head_once) is not bool:
         raise TypeError("capability probe terminal head repeat must be a boolean")
+    if type(include_previous_day) is not bool:
+        raise TypeError("capability probe previous-day inclusion must be a boolean")
     if not _is_supported_tested_interval(tested_request_interval_seconds):
         raise ValueError("capability probe tested request interval is invalid")
+    symbol, exchange = _normalize_probe_target(target)
     captured_at = require_utc(observed_at or datetime.now(UTC), "observed_at")
     started = monotonic_clock()
     pages: list[_PageFacts] = []
@@ -240,8 +255,9 @@ def run_kis_paper_minute_capability_probe(
     try:
         for _page_number in range(max_pages):
             query = KisPaperMinuteQuery(
-                exchange=KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET[1],
-                symbol=KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET[0],
+                exchange=exchange,
+                symbol=symbol,
+                include_previous_day=include_previous_day,
                 continuation_next="1" if cursor_key is not None else None,
                 continuation_key=cursor_key,
             )
@@ -342,6 +358,8 @@ def run_kis_paper_minute_capability_probe(
             tested_request_interval_seconds=float(tested_request_interval_seconds),
             tested_interval_observed=tested_interval_observed,
         ),
+        include_previous_day=include_previous_day,
+        target_key=f"{symbol}/{exchange}/1m",
     )
 
 
@@ -390,6 +408,8 @@ def probe_and_write_kis_paper_minute_capability(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    include_previous_day: bool = False,
+    target: tuple[str, str] = KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET,
     tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeResult:
@@ -399,6 +419,8 @@ def probe_and_write_kis_paper_minute_capability(
         observed_at=observed_at,
         max_pages=max_pages,
         repeat_terminal_head_once=repeat_terminal_head_once,
+        include_previous_day=include_previous_day,
+        target=target,
         tested_request_interval_seconds=tested_request_interval_seconds,
         monotonic_clock=monotonic_clock,
     )
@@ -423,6 +445,19 @@ def _page_facts(page: KisPaperMinutePage) -> _PageFacts:
         continuation_available=page.next_cursor is not None,
         row_count=len(page.bars),
     )
+
+
+def _normalize_probe_target(target: object) -> tuple[str, str]:
+    if not isinstance(target, tuple) or len(target) != 2:
+        raise ValueError("capability probe target is invalid")
+    try:
+        query = KisPaperMinuteQuery(exchange=str(target[1]), symbol=str(target[0]))
+    except ValueError as error:
+        raise ValueError("capability probe target is invalid") from error
+    target_key = f"{query.symbol}/{query.exchange}/1m"
+    if target_key not in KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS:
+        raise ValueError("capability probe target is invalid")
+    return query.symbol, query.exchange
 
 
 def _cursor_key_for_next_page(page: KisPaperMinutePage) -> str:

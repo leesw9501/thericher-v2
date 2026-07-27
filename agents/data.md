@@ -38,10 +38,12 @@ decision. Its existing scheduled chain now finishes with an external
 source-safe dispatch receipt, so a collection success cannot conceal a required
 downstream runtime/validation fault from the task result.
 The 21-session historical intraday cache is a completed pipeline seed, not a
-provider-history ceiling or adequate multi-timeframe training corpus. While the
-fresh head scheduler owns its market-session clock, Data's next independent
-package is a QQQ/SPY historical reach-and-continuation probe that promotes a
-useful exact route into durable serial collection.
+provider-history ceiling or adequate multi-timeframe training corpus. The
+QQQ/NAS and SPY/AMS prior-day `1m` reach probes are now complete: each exact
+route accepted terminal same-exchange-date pages without a continuation cursor.
+This closes only those two request contracts; it does not claim that KIS lacks
+another historical-minute endpoint. No unsupported serial dispatcher is built.
+The fresh head scheduler continues to own prospective session collection.
 
 ## Current Facts
 
@@ -88,16 +90,18 @@ useful exact route into durable serial collection.
 - The bounded historical intraday cache has 21 complete QQQ and SPY
   regular-session inputs. It is a source-scoped pipeline control, not evidence
   of KIS's maximum historical reach or a sufficient model corpus.
-- The prospective QQQ head is generation 10 with zero complete sessions out
-  of five. Short/gapped records and minute_duplicate_conflict are source
-  facts, not a Research or Execution hold.
-- The verified runtime selector now distinguishes a fresh 90-minute QQQ/NAS
-  decision window from the separate full-session coverage rule. Its current
-  Docker smoke read only the prior head cache and reported `stale`; it made no
-  KIS credential, account, quote, or order call. The chained offline validator
-  independently reloaded that same cache at the recorded timestamp and matched
-  the stale source-status artifact. The result is input evidence, not a
-  collection failure.
+- The first fresh 2026-07-28 KST scheduled capture wrote a source-safe Data
+  receipt. It collected one current terminal page for each QQQ/NAS and SPY/AMS
+  target, retained no complete 390-minute regular session, and preserved the
+  full-session status as its own Data fact. The 90-minute QQQ/NAS runtime
+  selector was nevertheless ready from its separate same-session criterion;
+  this does not convert the incomplete full-session coverage into a Research
+  training corpus.
+- The matching terminal schedule receipt completed with the collection stage
+  at exit zero. The offline runtime loop and later validator consumed the
+  same cache lineage without reopening a market-data provider. The resulting
+  exact virtual-paper no-intent is Execution evidence, not a collection failure
+  or a reason to mutate the cache.
 - The existing intraday-head task has four KST triggers at 00:31, 02:31,
   04:31, and 06:20. It owns its current cache and may continue independently
   while the capability package runs.
@@ -108,6 +112,18 @@ useful exact route into durable serial collection.
   pagination, a route-wide ceiling, or a complete 390-minute session. Evidence:
   `20260726T150223752216Z-d52c06ef917b80e5.json` under the external artifact
   root.
+- The exact 2026-07-27 prior-day reach probes set the official sample's
+  `PINC=1` scope without changing current-head `PINC=0` capture behavior.
+  `QQQ/NAS` and `SPY/AMS` each reused one Paper client/token, accepted two
+  full terminal-head pages at the 1.0-second gate, and emitted no continuation
+  cursor, categorical error, or second exchange date. Their source-safe
+  evidence is `20260727T145537118121Z-09f1f5872ad57830.json` and
+  `20260727T150227658709Z-6d826de2f017e316.json` under
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe`.
+  The deliberate terminal-head repeat is capability evidence, not retained
+  historical rows or a provider-wide no-history claim. The exact routes are
+  `source_limited` for serial historical continuation, so no cursor dispatcher
+  was started.
 - The first `session-capture` worker reuses the existing collector, one
   in-memory Paper market-data client/token, lock, request gate, and head cache.
   Its capture receipt is D:-resident, source-safe, and scoped only to the QQQ
@@ -199,21 +215,20 @@ useful exact route into durable serial collection.
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. At the next due head run, retain the Data-owned capture scope and publish
-   the exact fresh 90-minute QQQ/NAS window or its source-status fact. A missing
+2. At each due head run, retain the Data-owned capture scope and publish the
+   exact fresh 90-minute QQQ/NAS window or its source-status fact. A missing
    window yields its own no-decision evidence; it does not revive the terminal
    daily-history cache or hold another lane. Reattach its terminal dispatch
    receipt before treating a Task Scheduler result as complete.
-3. In parallel, run one source-safe QQQ/SPY `1m` historical
-   reach-and-continuation probe with one reusable Paper client. Record oldest
-   reached date bucket, page yield, continuation behavior, categorical errors,
-   and the fact that would invalidate the result, without printing rows.
-4. If the probe establishes useful serial continuation, implement and start one
-   durable per-account cursor dispatcher. Prioritize fresh market-session work,
-   let historical backfill consume otherwise-unused measured capacity, checkpoint
-   each target atomically, and close only a repeated same-cursor malformed target
-   as `source_limited`. Keep canonical qualified `1m` bytes once and derive
-   `5m`, `10m`, `1h`, and `3h` locally.
+3. Do not create a cursor dispatcher for the completed QQQ/NAS or SPY/AMS
+   `PINC=1` routes. They supplied no useful continuation cursor. Continue the
+   independent fresh-head schedule without treating this source fact as a
+   general KIS-history conclusion.
+4. A later Data package may probe one explicitly named alternate KIS endpoint,
+   exchange route, or compatible free source only when an active consumer needs
+   it. It must be a new source contract, not a retry flood against the terminal
+   routes. Keep canonical qualified `1m` bytes once and derive `5m`, `10m`,
+   `1h`, and `3h` locally when a valid source exists.
 5. Build a versioned liquid-universe manifest from already available
    source-safe symbol evidence before widening beyond QQQ/SPY. It is a
    collection schedule, not a point-in-time universe or stock-ranking claim.
@@ -292,16 +307,19 @@ cache; an empty or limited endpoint result is source evidence for that route
 only.
 
 The prospective runtime selector and its exact-session cache reattestation are
-complete and currently have only a stale prior-session cache fact. The next
-session-capture result is a new Data observation, not recovery of the
-daily-history cache or a permission boundary. The independent historical reach
-probe is `ready`, not blocked by the scheduled head or that stale result.
+complete. Its first fresh scheduled result was a ready 90-minute runtime window
+with separately incomplete full-session coverage; the next capture is a new
+Data observation, not recovery of the daily-history cache or a permission
+boundary. The exact QQQ/NAS and SPY/AMS historical reach probes are complete
+and source-limited for serial continuation; they are not blocked by the
+scheduled head and do not block it.
 
 ## Next Handoff
 
-Preserve the frozen six-symbol source separately. The next Data packages are a
-fresh prospective QQQ intraday completed-bar window for the named baseline and
-a separate QQQ/SPY historical `1m` reach probe that can become durable cursor
-collection. Do not infer PIT membership, corporate-action completeness, a
-ranking claim, or Paper-trading eligibility from either cache or the fixed-pair
-falsification result.
+Preserve the frozen six-symbol source separately. Continue the fresh prospective
+QQQ intraday completed-bar schedule for the named baseline. The completed
+QQQ/NAS and SPY/AMS prior-day probes do not support cursor collection; any
+later historical-minute attempt needs a separate endpoint or provider contract.
+Do not infer PIT membership, corporate-action completeness, a ranking claim, or
+Paper-trading eligibility from either cache or the fixed-pair falsification
+result.
