@@ -15,9 +15,11 @@ Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
 development-only falsification evidence. All three independent E1/E2/E3
 candidate-only screens and their fixed cross-fold falsification consumer are
 complete. Its result rejects the fixed pair but does not select a replacement.
-The fixed NAS daily-history recovery is complete and remains prospective,
-current-listing coverage evidence only; it supplies no new Research input or
-GPU campaign.
+The fixed NAS daily-history recovery is complete and its reattested
+source-local panel now supplies six immutable D1 streams with a 2,179-session
+common subset. It remains current-listing coverage evidence rather than a PIT
+universe or ranking input. It unlocks a new frozen per-symbol campaign contract,
+not an automatic GPU dispatch.
 The prospective QQQ first-five pair is required only for its isolated
 prospective observation, pair-dependent campaign, and later pair-dependent
 promotion decisions; it does not make historical research input-pending.
@@ -275,9 +277,11 @@ to an ensemble, or turn its result into a Paper input.
    but its after-cost result was below the time-matched always-QQQ comparator.
    Do not retune the lookback, tie rule, cadence, costs, or comparators; do not
    promote it, use it in Paper work, or dispatch GPU depth work.
-9. Wait for the Data-owned source-local NAS historical D1 panel before freezing
-   the next distinct breadth campaign. The terminal cache is not itself a
-   Research input, and materialization is not a model, ranking, or GPU claim.
+9. Freeze one source-local NAS D1 sequence campaign contract from the attested
+   panel before training. It must preserve per-symbol evidence, a causal
+   completed-bar window, chronological split, target/cost semantics, and fixed
+   naive comparators without claiming a universe rank, a model result, GPU work,
+   or a Paper input.
 
 ## Durable Constraints
 
@@ -306,9 +310,9 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and both closed
-QQQ/SPY controls. The next upstream package is Data-owned historical NAS D1
-materialization from its existing terminal cache. After a hash-attested
-source-local input exists, freeze one distinct causal breadth hypothesis rather
-than retuning a closed rule. The fresh prospective baseline remains frozen while
-its first Paper outcome is observed; that outcome is execution evidence and
-cannot select or promote a research result.
+QQQ/SPY controls. The source-local NAS historical D1 panel is now attested; the
+next package freezes one per-symbol causal sequence campaign contract before a
+CPU or GPU model run. Do not use its current listing for rank, membership, or
+Paper claims. The fresh prospective baseline remains frozen while its first
+Paper outcome is observed; that outcome is execution evidence and cannot select
+or promote a research result.

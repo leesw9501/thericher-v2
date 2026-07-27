@@ -6533,3 +6533,33 @@ Reason: opportunity selection needs a distinct, time-matched allocation target
 rather than another label for the closed QQQ-versus-flat rule. Closing the
 candidate at its fixed comparator boundary preserves useful attribution without
 letting a partial relative win become a strategy claim.
+
+## 2026-07-28 - Materialize the terminal NAS daily-history cache as a source-local panel
+
+Decision: materialize the already terminal private KIS Paper NAS daily-history
+cache into the hash-attested
+`kis.paper.private.daily.nas.history.panel-v1` input. The loader reattests every
+index, snapshot-manifest, compressed raw-file, row-fingerprint, cursor-chain,
+and duplicate identity before exposing immutable completed D1 `CatalogedBars`.
+It accepts only the fixed current NAS registry and preserves unadjusted and
+corporate-action limitations rather than repairing or blending them.
+
+The D:-resident manifest is
+`D:\market_data\us_equities\kis_paper_private\daily-nas-history-panel\v1\panel=7e8d6fe54dd5252fc4b9\manifest.json`
+with dataset hash
+`sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`.
+Its separate external receipt is under
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-history-panel-v1`.
+The verified common intersection has 2,179 sessions from `2017-Q4` through
+`2026-Q3`. AAPL, AMZN, and NVDA are complete; GOOGL, META, and MSFT remain
+source-limited with their factual terminal reasons intact.
+
+The panel is eligible only as a source-local offline Research input. It makes
+no point-in-time membership, liquidity, ranking, strategy, model, Paper,
+profitability, or live claim. It made no network/KIS/credential/account/order
+call and persisted no raw row or value outside the existing source cache.
+
+Reason: the terminal cache was useful but not yet a reproducible long-history
+input. This narrow reattestation boundary unlocks an honest chronological
+campaign contract without treating a current listing as a historical universe
+or forcing a GPU job from unqualified bytes.

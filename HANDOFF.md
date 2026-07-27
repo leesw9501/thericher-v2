@@ -599,10 +599,17 @@ than the time-matched always-QQQ comparator. Its smoke/full receipts retain
 only aggregate external evidence; neither result selects a model or changes
 GPU, KIS Paper, or live routes.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is to materialize and
-attest a reusable source-local historical NAS D1 panel from the already terminal
-private KIS cache. It must not fetch data, read credentials, blend providers,
-infer point-in-time membership, rank symbols, dispatch GPU work, or create a
-Paper action. Keep Data, Research, and Execution evidence distinct, and let the
+The terminal NAS cache is now materialized as the source-local D1 panel
+`sha256:7e8d6fe5...d57dc8e`. It has a 2,179-session common intersection from
+`2017-Q4` through `2026-Q3`; AAPL, AMZN, and NVDA are complete while GOOGL,
+META, and MSFT retain their source-limited facts. The local manifest and external
+receipt contain provenance and aggregates only. This does not establish a PIT
+universe, ranking, model, Paper, or live result.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective is to freeze one
+source-local six-symbol NAS D1 sequence campaign contract from that panel. It
+must define causal features, chronological split, target/cost semantics, and
+naive comparators without training, GPU dispatch, replay, KIS use, or a Paper
+action. Keep Data, Research, and Execution evidence distinct, and let the
 independent intraday scheduler own its next due recovery attempt rather than
 the foreground.

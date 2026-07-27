@@ -2,85 +2,83 @@
 
 ## Objective
 
-Materialize and attest one reusable, source-local historical NAS D1 Research
-input from the already terminal private KIS Paper daily-history cache.
+Freeze one reusable, source-local six-symbol NAS D1 sequence campaign contract
+from the newly attested historical panel.
 
-The goal is a data-contract improvement: turn verified local cache bytes into
-an immutable, hash-attested D1 input with honest per-symbol coverage and
-provenance. It is not a new collection job, point-in-time universe, ranking,
-strategy, model campaign, GPU job, KIS Paper action, or profitability claim.
+This goal makes the next CPU/GPU model comparison eligible by fixing the causal
+feature window, target, chronological split, cost model, naive comparators, and
+input identities. It does not train, select, replay, rank, ensemble, promote,
+or route a model.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `DECISIONS.md`, and the active Data, Engine Research, Execution, and
-   orchestration stateboards.
-2. Inspect the existing terminal
-   `D:\market_data\us_equities\kis_paper_private\daily-nas-history\v1`
-   index and its immutable chunks before designing a consumer. Do not print raw
-   rows or manually repair source bytes.
-3. Ask Claude for a short falsification-first drift check only if the work
-   changes source authority, blends providers, establishes a point-in-time
-   universe/ranking claim, opens a sealed holdout, widens a broker route, or
-   changes a major runtime. Normal offline materialization does not wait on the
-   expired local Claude OAuth session.
+   `DECISIONS.md`, and the active stateboards.
+2. Reattest the materialized NAS history manifest and its source cache before
+   consuming a bar. The active panel identity is
+   `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`.
+3. Ask Claude for a short falsification-first drift check only if the work opens
+   a sealed holdout, moves a screened candidate into depth training, changes
+   source/ranking/Paper authority, or changes a major runtime. Ordinary offline
+   contract preparation does not wait on the expired local Claude OAuth session.
 
-## Frozen Scope
+## Frozen Contract
 
-- Use only the terminal KIS Paper NAS daily-history cache and its fixed current
-  registry: `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` on `NAS`.
-- Reuse the existing canonical daily-bar parser and preserve its
-  `MODP=0_unadjusted` and corporate-action limitations.
-- Retain each symbol's verified coverage and source-limited/complete status.
-  Form a common multi-symbol intersection only when the exact aligned-session
-  contract verifies; otherwise expose source-local streams without fabricating
-  alignment.
-- Store canonical data/manifests only under `D:\market_data`; store source-safe
-  provenance receipts only under `D:\thericher-v2\model-artifacts`.
+- Use only the six source-local NAS streams: `AAPL`, `AMZN`, `GOOGL`, `META`,
+  `MSFT`, and `NVDA`. Their current-listing provenance is not a point-in-time
+  universe, cross-sectional rank, liquidity claim, or Paper input.
+- Use the verified 2,179-session common D1 subset only. Keep the source's
+  `MODP=0_unadjusted`, corporate-action, and terminal source-limitation facts.
+- For each symbol, use exactly 20 completed daily close-return observations at
+  `t-19..t`, with no cross-symbol feature, target, rank, or action.
+- Define the later binary target strictly from one-share `t+1` open to `t+2`
+  open after the existing 1 bps fee and 2 bps slippage per fill. Target labels
+  are development-only and may not be exposed in the validation input.
+- Use chronological `1,510 / 22 / 647` common sessions for development / purge /
+  validation. A validation sample is eligible only when its full 20-session
+  feature window and both later execution bars remain inside validation.
+- Fix the later per-symbol comparators as `flat`, `always_long`, and
+  `previous_bar_direction`, with two-session non-overlapping decision slots.
 
 ## Work
 
-1. **Data:** implement a narrow loader/materializer that reattests the terminal
-   index, validates chunk and bar lineage, deduplicates only through the
-   existing canonical rules, and returns immutable `CatalogedBars`-style D1
-   streams plus a content hash. Make malformed, conflicting, missing, or
-   unverified source evidence fail closed for the affected symbol.
-2. **Data:** write a compact D:-resident panel manifest and an external
-   source-safe completion receipt. The receipt may contain source/cache/index
-   hashes, symbol identifiers, categorical status, counts, date buckets, and
-   limitations; it must not contain raw bars, prices, volumes, provider rows,
-   credentials, account facts, orders, or model outputs.
-3. **Validation:** add focused offline tests for lineage reattestation,
-   complete/source-limited propagation, cross-symbol alignment rejection,
-   immutable output paths, raw-field exclusion, and no network/credential/KIS
-   access. Add one CLI or small script only when it makes the bounded materializer
-   reproducible.
-4. **Engine Research:** consume no strategy output in this goal. Record only
-   whether the resulting input is eligible for a future source-local frozen
-   campaign; do not run a model, replay, parameter sweep, GPU job, ensemble, or
-   Paper action.
+1. **Data:** expose a narrow reattested phase-local adapter over the NAS panel.
+   It must reject index/hash drift, source-path changes, incomplete bars, phase
+   leakage, and source misalignment before Research receives samples.
+2. **Engine Research:** implement immutable campaign/input dataclasses and a
+   source-safe external precommit receipt. The receipt may identify source
+   hashes, counts, split geometry, feature schema, costs, and comparators; it
+   must not retain raw bars, feature values, labels, per-decision values, model
+   weights, checkpoints, or replay events.
+3. **Validation:** add focused offline tests for exact split geometry,
+   phase-local windows, withheld validation labels, per-symbol isolation,
+   source-limited propagation, cost/comparator binding, immutable external
+   output, and no network/credential/KIS/broker access.
+4. **Infra/Research:** do not train or use GPU in this objective. After a
+   successful contract, record the exact CPU-smoke and GPU-breadth package that
+   becomes eligible; do not dispatch it yet.
 
 ## Boundaries
 
-- No KIS calls, credentials, `.env` reads, paid data/model, provider download,
-  public service, order, account, quote, or live route.
-- No provider blending, historical membership inference, liquidity/ranking
-  claim, corporate-action repair, or raw-data disclosure.
-- No model training/checkpoint, strategy selection, backtest/PnL result, GPU
-  dispatch, or KIS Paper order.
+- No KIS call, credential or `.env` read, provider download, paid asset, public
+  service, account/quote/order route, or live behavior.
+- No model fitting, checkpoint, probability output, local-paper replay, PnL
+  result, parameter sweep, ensemble, ranking, or Paper order.
+- Do not blend another provider, repair corporate actions, or infer historical
+  membership or executable liquidity.
 - Keep data under `D:\market_data` and artifacts under
   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
   either.
 
 ## Completion
 
-- A reattestable, source-local historical NAS D1 input exists with immutable
-  local manifest and source-safe external receipt.
-- Each symbol's coverage and limitations are explicit, and any common
-  intersection is proven rather than assumed.
-- Tests prove the materializer is offline, credential-free, immutable, and
-  cannot become a ranking/model/Paper surface.
-- Refresh the stateboards and replace this file with exactly one next company
+- The six-symbol D1 sequence campaign contract reattests the panel and exposes
+  only phase-local development/validation samples to its named consumer.
+- A source-safe external precommit proves the fixed split, target, costs, and
+  comparators without raw/model/replay output.
+- The Research stateboard names the next eligible CPU smoke and GPU breadth
+  package, but no training or broker side effect occurs in this goal.
+- Refresh stateboards and replace this file with exactly one next company
   objective before ending.
 
 ## Verification
@@ -94,4 +92,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Materialize NAS daily history panel`
+`Freeze NAS D1 sequence campaign contract`

@@ -34,6 +34,11 @@ that worker, and preserves the exact cache meaning. Its fixed two-target
   hash-attested, source-local historical D1 Research input. It is a local
   verification and provenance task, not a new provider request, universe claim,
   model input, ranking, or Paper route.
+  That materialization is now complete at dataset
+  `sha256:7e8d6fe5...d57dc8e`: it exposes six immutable source-local D1 streams
+  and a verified 2,179-session common subset, while preserving GOOGL, META, and
+  MSFT terminal source limitations. It supplied no strategy, score, ranking,
+  replay, or broker surface.
 The bounded prospective QQQ runtime selector is now ready: it consumes only a
 verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
 minute window or a precise source-status fact. It does not require a 390-minute
@@ -416,8 +421,9 @@ endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact
-source-local evidence; preserve IWM's source-limited limitation. Materialize
-the terminal six-symbol NAS daily-history cache into a separately named,
-hash-attested source-local D1 input without fetching, blending, or exposing raw
-rows. It must retain per-symbol coverage limitations and may create a common
-intersection only when its exact aligned-session contract verifies.
+source-local evidence; preserve IWM's source-limited limitation. The terminal
+six-symbol NAS daily-history cache is now materialized under
+`D:\market_data\us_equities\kis_paper_private\daily-nas-history-panel\v1`;
+preserve its lineage and limitations without fetching, blending, or exposing raw
+rows. The next Research contract may consume it source-locally, but it must not
+reinterpret the common subset as a PIT universe or rank.
