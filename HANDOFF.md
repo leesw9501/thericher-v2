@@ -46,19 +46,25 @@ authorized private KIS Paper work.
   or promotion. The first-five QQQ 1m pair does not block historical Research,
   Data collection, local simulation, or Paper execution preparation.
 - A material company-goal block gets one compact alternatives record in the
-  existing orchestration board: exact stop fact, original plan, and ready
-  packages with owner, resource, engineering approach, completion evidence,
-  strongest kill test, and recovery action. First run the bounded Throughput
-  Review to prove that no undispatched ready package remains. An apparent
-  operator decision also records options, Codex's recommendation, and its
-  exact authority boundary. Claude challenges whether the block is real,
-  whether the alternative packages still advance the company outcome, and
-  whether the recommendation crosses that boundary. An expired CLI session is
-  `review_unavailable`, not a new wait. Codex immediately advances every
-  non-conflicting package inside standing authority. Claude/Codex agreement
-  resolves only an already-delegated reversible no-cost choice; for a reserved
-  live, paid, unclear-rights, public, or major-runtime choice it produces one
-  recommendation and safe preparation, never the authorization itself.
+  existing orchestration board: exact stop fact, original major-work plan and
+  dependency order, and ready packages with owner, resource, engineering
+  approach, completion evidence, strongest kill test, and recovery action.
+  First run the bounded Throughput Review to prove that no undispatched ready
+  package remains. An apparent operator decision also records options, Codex's
+  recommendation, and its exact authority boundary. Claude challenges whether
+  the block is real, whether the alternative packages still advance the company
+  outcome, and whether the recommendation crosses that boundary. An expired CLI
+  session is `review_unavailable`, not a new wait. Codex immediately advances
+  every non-conflicting package inside standing authority. Claude/Codex
+  agreement resolves only an already-delegated reversible no-cost choice; for a
+  reserved live, paid, unclear-rights, public, or major-runtime choice it
+  produces one recommendation and safe preparation, never the authorization
+  itself.
+- A shared-worktree file without a known author is a bounded integration input,
+  not a reason to hold a company objective. Codex reads the diff and provenance,
+  then reattests/tests it or replaces that one package. Only a concrete
+  contract/test failure can defer its dependent consumer; all other ready work
+  continues.
 - A timer, cooldown, or scheduled due time belongs to its owning worker. Codex
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The
@@ -577,9 +583,10 @@ authorized private KIS Paper work.
 Claude is a concise drift brake for material architecture, promotion, holdout,
 ensemble, scheduler-widening, execution-risk, blocked-goal, and operator-option
 decisions. On 2026-07-26, 2026-07-27, and 2026-07-28 KST the CLI OAuth session
-remained expired during the relevant checks, including route simplification and
-blocked-goal governance; no private material was sent. This is a scoped tooling
-fault, not a hold on ready private work or a substitute for reserved authority.
+remained expired during the relevant checks, including route simplification,
+blocked-goal governance, and the shared-worktree integration refinement; no
+private material was sent. This is a scoped tooling fault, not a hold on ready
+private work or a substitute for reserved authority.
 
 ## Recovery
 
@@ -606,10 +613,20 @@ META, and MSFT retain their source-limited facts. The local manifest and externa
 receipt contain provenance and aggregates only. This does not establish a PIT
 universe, ranking, model, Paper, or live result.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is to freeze one
-source-local six-symbol NAS D1 sequence campaign contract from that panel. It
-must define causal features, chronological split, target/cost semantics, and
-naive comparators without training, GPU dispatch, replay, KIS use, or a Paper
-action. Keep Data, Research, and Execution evidence distinct, and let the
-independent intraday scheduler own its next due recovery attempt rather than
-the foreground.
+The exact NAS D1 sequence campaign is now frozen from that same panel. Its
+source-safe external precommit is
+`sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`;
+it binds `1,510 / 22 / 647` phase-local sessions, 20 per-symbol completed-close
+returns with the `t-20` anchor also inside the phase, one-share `t+1` to `t+2`
+after-cost target semantics, and target-free validation inputs. It names six
+per-symbol CPU L2-logistic smokes followed by LSTM, causal TCN, and compact
+attention GPU breadth, but none has run. Its contract identity also binds the
+exact phase dates and fixed Decimal cost arithmetic, so a same-count split shift
+or ambient rounding setting cannot silently change the frozen target.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective is to implement that
+bounded candidate-only CPU/GPU breadth package without revealing validation
+labels, selecting a model, replaying local paper, computing PnL, calling KIS, or
+creating a Paper action. Keep Data, Research, and Execution evidence distinct,
+and let the independent intraday scheduler own its next due recovery attempt
+rather than the foreground.

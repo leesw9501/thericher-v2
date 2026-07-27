@@ -6563,3 +6563,65 @@ Reason: the terminal cache was useful but not yet a reproducible long-history
 input. This narrow reattestation boundary unlocks an honest chronological
 campaign contract without treating a current listing as a historical universe
 or forcing a GPU job from unqualified bytes.
+
+## 2026-07-28 - Freeze a phase-local per-symbol NAS D1 sequence campaign before training
+
+Decision: bind the materialized six-symbol NAS panel to one exact offline
+campaign contract before CPU or GPU model work. The Data adapter reattests the
+panel/cache and slices the verified common intersection into exactly `1,510 /
+22 / 647` development, purge, and validation sessions. It preserves each
+terminal source status and rejects index/hash/source-path drift, incomplete bars,
+misalignment, or phase crossing.
+
+Each per-symbol sample contains twenty completed daily close-return observations
+at `t-19..t`; its prior `t-20` close anchor is also required to be inside the
+same phase. Development labels are strict positive one-share after-cost outcomes
+from `t+1` open to `t+2` open with 1 bps fee and 2 bps slippage per fill.
+Validation uses a separate target-free sample type, so it cannot carry a label.
+Development examples have stride one; the later fixed comparators `flat`,
+`always_long`, and `previous_bar_direction` use two-session slots, with a
+previous-direction tie resolving to flat.
+
+The contract hash also binds the exact phase boundary dates and the cost-label
+calculation mode: a `0.0001` price quantum, 28 significant Decimal digits, and
+`ROUND_HALF_EVEN`. This prevents an ambient Decimal context or same-count split
+shift from silently changing a target before model work starts.
+
+The external immutable precommit is under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-sequence-campaign-v1`
+with contract hash
+`sha256:5a9ceb6df7b6c1909ef452b8851fbd7bd23ec03660e9fc75bb278377079aaea5`
+and receipt hash
+`sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`.
+It records only hashes, scopes, counts, costs, comparators, source limitations,
+and the next eligible packages: six independent per-symbol L2-logistic CPU
+smokes and target-free CUDA breadth across LSTM, causal TCN, and compact
+attention.
+
+No model fit, checkpoint, prediction, validation-label reveal, replay, PnL,
+selection, ensemble, KIS call, Paper action, or live route occurred. The current
+listing remains non-PIT and the unadjusted/corporate-action limitations remain
+unchanged.
+
+Reason: this fixes the causal and economic meaning before allocating the idle
+GPU, while retaining enough development coverage for a bounded breadth package
+and keeping the later validation/evaluation authority independent.
+
+## 2026-07-28 - Correct the NAS shared-worktree integration hold
+
+Decision: retire the earlier NAS integration hold. The phase-local adapter was
+already in the shared worktree, so its unknown authorship was not evidence of a
+technical contradiction. Codex inspected the diff and provenance, completed
+focused reattestation/isolation tests, and materialized the immutable campaign
+receipt. A shared-worktree file now receives that bounded treatment or a scoped
+replacement; it cannot itself defer unrelated work.
+
+The canonical blocked-goal, Claude-review, dispatch, and operator-authority
+rules remain in `AGENTS.md`; this decision adds no second workflow or authority
+rule. Claude's source-safe challenge was attempted on 2026-07-28 but its local
+OAuth session had expired, so the review status is `review_unavailable`.
+
+Reason: the old hold delayed a ready Research contract without producing a new
+data, model, validation, or execution fact. The correction makes the concrete
+implementation and its tests, rather than unverifiable authorship, the recovery
+boundary.

@@ -2,82 +2,83 @@
 
 ## Objective
 
-Freeze one reusable, source-local six-symbol NAS D1 sequence campaign contract
-from the newly attested historical panel.
+Run the first bounded source-local NAS D1 candidate-breadth package from the
+frozen campaign contract.
 
-This goal makes the next CPU/GPU model comparison eligible by fixing the causal
-feature window, target, chronological split, cost model, naive comparators, and
-input identities. It does not train, select, replay, rank, ensemble, promote,
-or route a model.
+First prove one independent per-symbol CPU L2-logistic smoke path. Then, when
+that path is sound and the existing Docker/PyTorch CUDA environment is usable,
+run the fixed per-symbol GPU architecture breadth across LSTM, causal TCN, and
+compact attention. This is model plumbing and descriptive candidate evidence,
+not a selection, ensemble, replay, PnL, or Paper decision.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `DECISIONS.md`, and the active stateboards.
-2. Reattest the materialized NAS history manifest and its source cache before
-   consuming a bar. The active panel identity is
-   `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`.
-3. Ask Claude for a short falsification-first drift check only if the work opens
-   a sealed holdout, moves a screened candidate into depth training, changes
-   source/ranking/Paper authority, or changes a major runtime. Ordinary offline
-   contract preparation does not wait on the expired local Claude OAuth session.
+2. Reattest the NAS phase input and precommit before consuming a sample:
+   - panel dataset: `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`
+   - campaign contract: `sha256:5a9ceb6df7b6c1909ef452b8851fbd7bd23ec03660e9fc75bb278377079aaea5`
+   - precommit: `sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`
+3. Use Claude only at a material promotion, sealed-label/holdout, depth-training,
+   source/routing authority, or major-runtime boundary. Initial bounded breadth
+   work does not wait on the expired local Claude OAuth session.
 
-## Frozen Contract
+## Frozen Input
 
-- Use only the six source-local NAS streams: `AAPL`, `AMZN`, `GOOGL`, `META`,
-  `MSFT`, and `NVDA`. Their current-listing provenance is not a point-in-time
-  universe, cross-sectional rank, liquidity claim, or Paper input.
-- Use the verified 2,179-session common D1 subset only. Keep the source's
-  `MODP=0_unadjusted`, corporate-action, and terminal source-limitation facts.
-- For each symbol, use exactly 20 completed daily close-return observations at
-  `t-19..t`, with no cross-symbol feature, target, rank, or action.
-- Define the later binary target strictly from one-share `t+1` open to `t+2`
-  open after the existing 1 bps fee and 2 bps slippage per fill. Target labels
-  are development-only and may not be exposed in the validation input.
-- Use chronological `1,510 / 22 / 647` common sessions for development / purge /
-  validation. A validation sample is eligible only when its full 20-session
-  feature window and both later execution bars remain inside validation.
-- Fix the later per-symbol comparators as `flat`, `always_long`, and
-  `previous_bar_direction`, with two-session non-overlapping decision slots.
+- Six source-local current NAS streams only: `AAPL`, `AMZN`, `GOOGL`, `META`,
+  `MSFT`, and `NVDA`; do not infer point-in-time membership, liquidity, or rank.
+- Exact `1,510 / 22 / 647` common D1 development / purge / validation sessions.
+- One per-symbol feature column: 20 completed close returns at `t-19..t`, with
+  the `t-20` return anchor inside the same phase.
+- Development labels only: strict-positive one-share after-cost return from
+  `t+1` open to `t+2` open using 1 bps fee and 2 bps slippage per fill.
+- Validation input is target-free. Do not materialize, inspect, reconstruct, or
+  persist validation labels in this objective.
 
 ## Work
 
-1. **Data:** expose a narrow reattested phase-local adapter over the NAS panel.
-   It must reject index/hash drift, source-path changes, incomplete bars, phase
-   leakage, and source misalignment before Research receives samples.
-2. **Engine Research:** implement immutable campaign/input dataclasses and a
-   source-safe external precommit receipt. The receipt may identify source
-   hashes, counts, split geometry, feature schema, costs, and comparators; it
-   must not retain raw bars, feature values, labels, per-decision values, model
-   weights, checkpoints, or replay events.
-3. **Validation:** add focused offline tests for exact split geometry,
-   phase-local windows, withheld validation labels, per-symbol isolation,
-   source-limited propagation, cost/comparator binding, immutable external
-   output, and no network/credential/KIS/broker access.
-4. **Infra/Research:** do not train or use GPU in this objective. After a
-   successful contract, record the exact CPU-smoke and GPU-breadth package that
-   becomes eligible; do not dispatch it yet.
+1. **Engine Research / CPU:** implement the fixed
+   `nas-d1-per-symbol-l2-logistic-smoke-v1` package. Fit six independent L2
+   logistic models from development samples only, with per-symbol
+   development-only standardization, deterministic seeds, a bounded CPU budget,
+   finite-loss checks, and target-free validation forward-shape checks.
+2. **Infra / Engine Research / GPU:** reuse the existing Docker PyTorch CUDA
+   runtime and shared sequence builders to implement and run
+   `nas-d1-per-symbol-sequence-breadth-v1`: LSTM, causal TCN, and compact
+   attention for each symbol. One GPU job runs at a time; preparation and tests
+   may run on CPU concurrently. Freeze architecture and budget settings before
+   the first fit. If CUDA is unavailable, record the exact runtime fact and
+   complete every non-GPU package without foreground waiting.
+3. **Validation:** add focused tests for development-only fitting,
+   per-symbol-only standardization, target-free validation inputs, deterministic
+   CPU smoke, GPU/Docker command construction, external-only artifacts,
+   safe checkpoint handling, and no network/credential/KIS/broker route.
+4. **Artifacts:** checkpoints and generated model data stay only under
+   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`. Persist only
+   source-safe aggregate receipts and hashes in Git-visible evidence; no raw
+   bars, feature rows, labels, per-decision probabilities, PnL, or broker
+   events.
 
 ## Boundaries
 
 - No KIS call, credential or `.env` read, provider download, paid asset, public
   service, account/quote/order route, or live behavior.
-- No model fitting, checkpoint, probability output, local-paper replay, PnL
-  result, parameter sweep, ensemble, ranking, or Paper order.
-- Do not blend another provider, repair corporate actions, or infer historical
-  membership or executable liquidity.
-- Keep data under `D:\market_data` and artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never commit
-  either.
+- No validation-label reveal, local-paper replay, PnL metric, parameter sweep,
+  winner selection, ensemble, promotion, or Paper order.
+- Do not change the source panel, split, feature window, target/cost semantics,
+  comparator contract, or source limitations.
+- Do not commit generated artifacts, checkpoints, weights, caches, or Docker
+  volumes.
 
 ## Completion
 
-- The six-symbol D1 sequence campaign contract reattests the panel and exposes
-  only phase-local development/validation samples to its named consumer.
-- A source-safe external precommit proves the fixed split, target, costs, and
-  comparators without raw/model/replay output.
-- The Research stateboard names the next eligible CPU smoke and GPU breadth
-  package, but no training or broker side effect occurs in this goal.
+- Six deterministic CPU smoke fits prove the frozen input path without using a
+  validation label or cross-symbol feature/standardizer.
+- The Docker CUDA breadth package has source-safe external evidence for every
+  attempted architecture/symbol, or an exact bounded CUDA-unavailable fact while
+  all CPU work is complete.
+- No outcome is interpreted as profitable, selected, ensembled, replayed, or
+  eligible for Paper trading.
 - Refresh stateboards and replace this file with exactly one next company
   objective before ending.
 
@@ -92,4 +93,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Freeze NAS D1 sequence campaign contract`
+`Add NAS D1 sequence architecture breadth`

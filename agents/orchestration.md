@@ -20,15 +20,18 @@ second goal.
   source-partitioned D1 eligibility receipt are complete and externally
   reattestable. The terminal NAS history cache is now independently
   materialized as dataset `sha256:7e8d6fe5...d57dc8e`, with six source-local
-  streams and a verified 2,179-session common subset; it made no new call.
+  streams and a verified 2,179-session common subset; it made no new call. Its
+  phase-local sequence adapter now exposes exact `1,510 / 22 / 647` source-local
+  slices and rejects source/index/phase drift before Research consumes them.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, CACC-D1,
   QQQ/SPY relative-regime, and QQQ/SPY relative-allocation controls are closed
   as falsified evidence. The allocation control used 443 phase-local slots and
   lost to its time-matched always-QQQ comparator, so it cannot feed a model,
   ensemble, GPU, or Paper route. The ETF D1 trend-regime control remains
-  descriptive only. The new NAS D1 input is ready only for a distinct frozen
-  per-symbol campaign contract; GPU remains ineligible until that contract is
-  complete.
+  descriptive only. The NAS D1 sequence contract is now frozen with source-safe
+precommit `sha256:c54e79...03d37e`; its CPU L2-logistic smoke and CUDA
+  LSTM/TCN/attention breadth are the next eligible Research package. No model,
+  selection, replay, PnL, or Paper evidence exists yet.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -41,30 +44,19 @@ second goal.
 ## Current Bottleneck
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
-schedule deployment, both independent QQQ/SPY controls, and NAS history
-materialization are complete. The current bottleneck is freezing one causal,
-chronological per-symbol NAS D1 campaign contract before assigning the idle GPU.
-This is a Research preparation task, not a provider or scheduler wait. The stale
-QQQ input remains evidence not to widen the fixed two-minute deadline, and it
-remains independent of every model claim or Paper-order target.
+schedule deployment, both independent QQQ/SPY controls, NAS history
+materialization, and the exact NAS phase-local campaign contract are complete.
+The current bottleneck is implementing its fixed target-free CPU smoke and CUDA
+architecture-breadth workers before the idle GPU can do useful work. This is a
+Research implementation task, not a provider, scheduler, or authority wait. The
+stale QQQ input remains evidence not to widen the fixed two-minute deadline, and
+it remains independent of every NAS model claim or Paper-order target.
 
-At the 2026-07-28 KST throughput review, the required phase-local NAS adapter
-exists only as an untracked shared-workspace file. Its ownership is unknown, so
-Codex preserves it and does not commit, overwrite, or build a dependent partial
-contract around it. This is a narrow integration hold on this one objective,
-not a Data, Paper, or Research authority hold.
-
-### Blocked-goal alternatives
-
-- **Data/Research — shared worktree:** owner confirms or integrates the
-  phase-local adapter; completion is a tracked adapter plus focused reattestation
-  tests; kill test is any hash, source-path, incomplete-bar, or phase-leakage
-  failure; recovery is to replace only that adapter with a fresh bounded
-  implementation.
-- **Validation — source-safe contract:** after that tracked boundary exists,
-  implement the immutable campaign/precommit and focused isolation tests;
-  completion is an immutable receipt with no raw/model/replay fields; kill test
-  is any label, feature value, broker, network, or credential path.
+**Current operating improvement:** a shared-worktree implementation is now
+treated as a bounded diff/provenance/attestation task, never as an unknown-owner
+hold. The NAS adapter was inspected, completed through focused tests, and bound
+to an immutable receipt; it neither pauses the current Research package nor
+blocks independent lanes.
 
 ## External Waits
 
@@ -88,8 +80,8 @@ relying on it; scope a failure to that item and keep independent packages moving
 
 ## Next Handoff
 
-Freeze the source-local NAS D1 sequence campaign contract while the
-already-deployed intraday schedule owns its next collection attempt. Do not turn
-a source-local historical input into a point-in-time universe, rank, model
-result, order, or global wait. First resolve ownership of the untracked
-phase-local adapter; do not overwrite it.
+Implement the frozen source-local NAS D1 CPU smoke and CUDA breadth package
+while the already-deployed intraday schedule owns its next collection attempt.
+Do not turn a source-local historical input into a point-in-time universe, rank,
+model selection, order, or global wait. Keep validation labels sealed from the
+target-free input and preserve the no-replay/no-PnL/no-Paper boundary.

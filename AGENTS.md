@@ -109,14 +109,24 @@ Codex is the product-development lead and integrator.
 - When a **company objective** is materially blocked rather than merely one
   lane being deferred, write one compact `blocked-goal alternatives` entry in
   `agents/orchestration.md`, not a new report or goal file. It states the exact
-  blocking fact, original plan, and two to four ready alternative packages.
-  Each package names its owner, resource, intended engineering approach,
-  bounded completion evidence, strongest kill test, and next recovery action.
+  blocking fact, original major-work plan and dependency order, and two to four
+  ready alternative packages. Each package names its owner, resource, intended
+  engineering approach, bounded completion evidence, strongest kill test, and
+  next recovery action. This is the operator-facing account of how Codex meant
+  to reach the objective; it must stay compact and operational rather than
+  becoming a second backlog or recurring report.
   First run the bounded Throughput Review to establish that this is a company
   block rather than an undispatched ready package. Claude's challenge tests
   whether the block is misclassified, whether each alternative still advances
   the named company outcome, and whether a proposed recovery crosses an
   authority boundary.
+  A file already present in the shared worktree is not an ownership block by
+  itself. Codex first reads its diff and provenance, then either reattests and
+  tests it as the bounded package, or replaces only that package with a fresh
+  implementation. An untracked file may block a dependent consumer only after
+  its own concrete contract or test failure; it never creates a company-wide
+  integration hold, a wait for an unknown owner, or a reason to leave another
+  ready package undispatched.
   For an apparent operator decision, the same compact record also states the
   options, Codex recommendation, and exact authority boundary. Ask Claude for
   a concise falsification-first challenge of that record, then immediately
@@ -307,8 +317,12 @@ named company outcome because of an external wait, unmeasured capability, or
 unresolved technical contradiction. A lane-local cooldown, stale input, or
 source-limited cursor is not a company block when another package is ready.
 The compact alternative record lives only in the existing orchestration
-projection. It is a dispatch/recovery aid, not a recurring report, approval
-gate, second goal, or strategy selection mechanism.
+projection. It states the original major-work graph and dependency order plus
+the ready recovery packages, so the operator can see how the objective was
+meant to complete without a separate report family. It is a dispatch/recovery
+aid, not a recurring report, approval gate, second goal, or strategy selection
+mechanism. Shared-worktree code is inspected, attested, tested, or replaced as
+one bounded package; missing authorship alone is not a block.
 
 ### Review And Claude
 

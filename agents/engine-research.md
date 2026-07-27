@@ -17,9 +17,12 @@ candidate-only screens and their fixed cross-fold falsification consumer are
 complete. Its result rejects the fixed pair but does not select a replacement.
 The fixed NAS daily-history recovery is complete and its reattested
 source-local panel now supplies six immutable D1 streams with a 2,179-session
-common subset. It remains current-listing coverage evidence rather than a PIT
-universe or ranking input. It unlocks a new frozen per-symbol campaign contract,
-not an automatic GPU dispatch.
+common subset. The new campaign contract is also frozen at
+`sha256:5a9ceb...9aaea5`: it has exact `1,510 / 22 / 647` phase geometry,
+20-return per-symbol windows, development-only labels, and target-free
+validation inputs. This remains current-listing coverage evidence rather than a
+PIT universe or ranking input. Its named CPU smoke and GPU breadth packages are
+eligible next, but no model has run yet.
 The prospective QQQ first-five pair is required only for its isolated
 prospective observation, pair-dependent campaign, and later pair-dependent
 promotion decisions; it does not make historical research input-pending.
@@ -277,11 +280,13 @@ to an ensemble, or turn its result into a Paper input.
    but its after-cost result was below the time-matched always-QQQ comparator.
    Do not retune the lookback, tie rule, cadence, costs, or comparators; do not
    promote it, use it in Paper work, or dispatch GPU depth work.
-9. Freeze one source-local NAS D1 sequence campaign contract from the attested
-   panel before training. It must preserve per-symbol evidence, a causal
-   completed-bar window, chronological split, target/cost semantics, and fixed
-   naive comparators without claiming a universe rank, a model result, GPU work,
-   or a Paper input.
+9. Run the frozen NAS D1 candidate-only breadth package in its exact order:
+   first six independent per-symbol L2-logistic CPU smoke fits, then the same
+   per-symbol target-free validation shape through LSTM, causal TCN, and compact
+   attention on CUDA. Standardization stays per-symbol development-only; retain
+   only external checkpoints, hashes, aggregate training facts, and target-free
+   validation-shape evidence. Do not reveal validation labels, select a winner,
+   ensemble, replay, compute PnL, or create a Paper input in that package.
 
 ## Durable Constraints
 
@@ -310,9 +315,10 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and both closed
-QQQ/SPY controls. The source-local NAS historical D1 panel is now attested; the
-next package freezes one per-symbol causal sequence campaign contract before a
-CPU or GPU model run. Do not use its current listing for rank, membership, or
-Paper claims. The fresh prospective baseline remains frozen while its first
-Paper outcome is observed; that outcome is execution evidence and cannot select
-or promote a research result.
+QQQ/SPY controls. The source-local NAS historical D1 panel and its exact
+per-symbol sequence campaign are now attested. The next package implements its
+fixed CPU L2-logistic smoke and CUDA LSTM/TCN/attention breadth without opening
+validation labels or producing selection/PnL/Paper evidence. Do not use its
+current listing for rank, membership, or Paper claims. The fresh prospective
+baseline remains frozen while its first Paper outcome is observed; that outcome
+is execution evidence and cannot select or promote a research result.
