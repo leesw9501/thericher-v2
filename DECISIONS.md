@@ -6301,6 +6301,29 @@ with fixed folds, cost semantics, baselines, and a clear falsification rule.
 Closing it preserves breadth evidence without turning GPU occupancy or
 parameter-search into progress.
 
+## 2026-07-28 - Complete the fixed ETF D1 trend-regime control without promotion
+
+Decision: complete one fixed source-local QQQ/SPY/IWM D1 trend-regime control
+under `D:\thericher-v2\model-artifacts\etf-d1-trend-regime-v1\etf-d1-trend-regime-20260728-0400`.
+The rule uses only each completed D1 stream's close, SMA20, and SMA50; it enters
+one simulated share at `t+1` open and exits at `t+2` open. Each ETF has a
+chronological 70/30 decision-slot split, no tuning, and a matched always-long
+local-paper comparator with the existing fixed costs. The source-safe result is
+not globally falsified: QQQ and IWM do not beat their validation comparator,
+while SPY does. IWM's `source_limited_history_scope` is a fail-closed input
+requirement.
+
+No model, winner, rank, ensemble, GPU job, Paper input, order, credential,
+network, KIS call, raw price, feature, or replay-event persistence follows from
+this control. The result is descriptive evidence only. The required concise
+Claude falsification request used no private values but returned
+`review_unavailable` because the local OAuth session expired.
+
+Reason: this is a causal, non-fitted, independently source-local timing control
+with a transparent comparator. Its one non-falsified slice is insufficient for
+selection or promotion; keeping it closed prevents a fixed ETF survivor set or
+single comparative outcome from becoming a strategy claim.
+
 ## 2026-07-28 - Bind a current-source-scoped universe without a liquidity claim
 
 Decision: materialize one deterministic, external D1-only manifest from the

@@ -1457,6 +1457,26 @@ and limitations. It performs no KIS call, credential read, network access,
 broker action, model fit, or GPU work. The narrow D1 proxy is not a claim about
 intraday liquidity, ranking, model quality, fillability, or Paper eligibility.
 
+### ETF D1 Trend-Regime Control
+
+To run the fixed source-local ETF D1 falsification control from existing local
+caches, use a unique external label:
+
+```powershell
+uv run python scripts\run_etf_d1_trend_regime_control.py --run-label <unique-label>
+```
+
+The command reattests the source-partitioned D1 eligibility receipt, then opens
+QQQ, SPY, and IWM independently. It applies only the completed-D1
+`close > SMA50 and SMA20 > SMA50` rule, enters at the next open, exits at the
+following open, and compares that fixed non-overlapping cadence with
+time-matched always-long local-paper replay. It writes only source-safe
+precommit and summary JSON beneath
+`D:\thericher-v2\model-artifacts\etf-d1-trend-regime-v1`; no raw bars, features,
+credentials, broker payloads, checkpoints, or replay event log are persisted.
+It is offline with respect to KIS and makes no model-selection, GPU, Paper, or
+live claim. IWM's source-limited history remains mandatory.
+
 ## Legacy Evidence
 
 Terminal metadata-only KIS probe/capacity-map scripts have been removed from

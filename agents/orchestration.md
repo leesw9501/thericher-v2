@@ -12,9 +12,9 @@ second goal.
   source-partitioned D1 eligibility receipt are complete and externally
   reattestable.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
-  screen are closed as falsified evidence. The next ready package is one
-  source-local ETF D1 trend-regime control, not a rank, ensemble, or Paper
-  decision.
+  screen are closed as falsified evidence. The ETF D1 trend-regime control is
+  also complete: its all-ETF falsification condition is false, but it is not a
+  rank, selection, ensemble, GPU, or Paper decision.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -26,9 +26,9 @@ second goal.
 
 ## Current Bottleneck
 
-The next material evidence gap is a first causal ETF-only D1 control that uses
-the completed eligibility fact without converting current membership or D1
-turnover into a cross-sectional rank, model promotion, or Paper input.
+The next material evidence gap is one fresh virtual-only QQQ Paper canary with
+an exact persisted intent or a truthful call-time no-intent/recovery result.
+It must remain independent of the completed ETF control and every model claim.
 
 ## External Waits
 
@@ -46,6 +46,6 @@ moving.
 
 ## Next Handoff
 
-Advance the bounded ETF-only D1 trend-regime control next. Preserve the
-prospective QQQ schedule as lane-owned asynchronous work; reattach only a
-genuinely new receipt while its scheduler owns the next due time.
+Advance one bounded fresh QQQ virtual-Paper canary next. Preserve the
+prospective scheduler as lane-owned asynchronous work; reattach only a genuinely
+new receipt while its scheduler owns the next due time.

@@ -88,6 +88,11 @@ The fresh head scheduler continues to own prospective session collection.
   It retains IWM's `source_limited_history_scope`, stores no observed price,
   volume, row, or turnover value, and makes no ranking, model, executable-
   liquidity, or Paper claim.
+- The completed ETF D1 trend-regime control consumed only the three independently
+  reopened ETF streams after receipt reattestation. Its source-safe external
+  summary is `D:\thericher-v2\model-artifacts\etf-d1-trend-regime-v1\etf-d1-trend-regime-20260728-0400\summary.json`.
+  It wrote no Data cache bytes and retained IWM's `source_limited_history_scope`;
+  no ETF/NAS alignment, source blend, rank, or executable-liquidity claim follows.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
@@ -251,10 +256,9 @@ The fresh head scheduler continues to own prospective session collection.
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
    universe, liquidity claim, stock ranking, or Paper use.
-6. Preserve the completed D1 eligibility receipt as a source-local data fact.
-   A later ETF-only causal control may consume it per instrument, but must not
-   align or blend it with the current NAS panel or reinterpret it as executable
-   liquidity.
+6. Preserve the completed D1 eligibility receipt and ETF trend-control evidence
+   as source-local facts. Do not align or blend them with the current NAS panel,
+   reopen IWM history, or reinterpret them as executable liquidity.
 
 ## Collection Progress Projection
 
@@ -345,6 +349,6 @@ QQQ/NAS and SPY/AMS prior-day probes do not support cursor collection; any
 later historical-minute attempt needs a separate endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
-result. The D1 eligibility receipt is complete for its exact two-source scope;
-the next ETF-only Research control must consume the retained bars independently
-and preserve IWM's source-limited limitation.
+result. The D1 eligibility receipt and its completed ETF control are exact
+source-local evidence; preserve IWM's source-limited limitation. The next QQQ
+Paper canary obtains a new call-time Data receipt and does not consume them.

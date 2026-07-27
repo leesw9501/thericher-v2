@@ -245,6 +245,17 @@ authorized private KIS Paper work.
   falsification-triggering observation only, not a winner, profitability,
   ranking, promotion, ensemble, GPU, or Paper-order result; the source is not
   PIT or corporate-action qualified.
+- The fixed ETF-source-local D1 trend-regime control completed offline from the
+  reattested QQQ/SPY/IWM eligibility receipt. It used the fixed completed-D1
+  20/50 SMA rule, next-two-open one-share `local_paper` replay, exact
+  chronological 70/30 decision-slot split, and a time-matched always-long
+  comparator. Its source-safe summary is
+  `D:\thericher-v2\model-artifacts\etf-d1-trend-regime-v1\etf-d1-trend-regime-20260728-0400\summary.json`;
+  its aggregate result is not globally falsified because only the SPY validation
+  slice exceeded its comparator. QQQ and IWM did not; IWM's source-limited
+  history limitation is fail-closed. This is neither a model, selection,
+  ensemble, GPU, nor Paper input. The required source-safe Claude result review
+  was unavailable because the local OAuth session is expired.
 - No GPU job is active. The completed daily evidence must not be promoted or
   used to choose a Paper order. The current six-symbol panel is too small for
   depth training. QQQ/SPY has sufficient historical count for the next newly
@@ -539,9 +550,10 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. The next company objective runs one fixed,
-ETF-source-local D1 trend-regime falsification control from existing local
-evidence. The fixed NAS daily-history collector remains terminal for its exact
+Follow NEXT_CODEX_GOAL.md. The next company objective advances one fresh,
+virtual-only QQQ Paper canary through the installed deterministic route. It is
+execution-learning evidence, not a consequence of the ETF control or any model
+result. The fixed NAS daily-history collector remains terminal for its exact
 current-listing scope; do not reopen a terminal target, blend a provider, or
 reinterpret the eligibility receipt as a PIT universe, rank, or Paper input.
 Keep Data, Research, and Execution evidence distinct, and let the scheduler own

@@ -127,6 +127,15 @@ to an ensemble, or turn its result into a Paper input.
   Paper, executable liquidity, and cross-partition alignment. It supplies no
   score, action, feature, replay, model, GPU, provider, credential, or broker
   surface.
+- The first ETF-source-local D1 trend-regime control is complete. Its fixed
+  completed-D1 20/50 SMA rule used a chronological 70/30 decision-slot split,
+  next-two-open one-share `local_paper` replay, and a time-matched always-long
+  comparator. The external source-safe summary is
+  `D:\thericher-v2\model-artifacts\etf-d1-trend-regime-v1\etf-d1-trend-regime-20260728-0400\summary.json`.
+  The all-ETF falsification condition is false because SPY alone exceeded its
+  comparator; QQQ and IWM did not, and IWM remains source-limited. This result
+  is not a selection, model, ensemble, GPU, PnL, or Paper input. Claude's
+  required result challenge was `review_unavailable` because local OAuth expired.
 - The first frozen six-symbol CPU local-paper control completed with an exact
   159/1/39 chronological split, three-bar fixed momentum, one-share replay,
   fixed after-cost economics, and an `always_long` comparator. Its external
@@ -240,10 +249,9 @@ to an ensemble, or turn its result into a Paper input.
 6. Observe the first fresh runtime window as a fixed control only. Do not tune
    the decision table from that session or turn an individual Paper outcome into
    a model, ensemble, GPU, or PnL claim.
-7. The next ETF-only causal D1 control may use the new eligibility fact only as
-   an input-quality boundary. Freeze its rule, temporal split, costs, baseline,
-   and kill test before its first CPU replay; do not treat the current NAS
-   basket as a cross-sectional training or selection set.
+7. Keep the completed ETF trend-regime control descriptive. Do not tune its SMA
+   windows, select SPY, add an ensemble member, allocate GPU work, or turn its
+   one non-falsified validation slice into a Paper input.
 
 ## Durable Constraints
 
@@ -270,11 +278,8 @@ work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair, tree, and CACC-D1 falsification evidence. The next Research
-package is an ETF-only causal D1 trend-regime control with a frozen nonoverlap
-rule, chronological split, after-cost local-paper comparator, and kill test.
-It must remain source-local, distinct from the completed 20-bar-return/CACC/
-tree candidates, and not become stock selection, a selected model, ensemble,
-GPU claim, or Paper input. The fresh prospective baseline remains frozen while
-its first Paper outcome is observed. Longer qualified intraday coverage becomes
-a separate campaign input rather than a rewrite of the daily evidence.
+Preserve the fixed-pair, tree, CACC-D1, and ETF trend-regime evidence. The fresh
+prospective baseline remains frozen while its first Paper outcome is observed;
+that outcome is execution evidence and cannot select or promote a research
+result. A future ETF replication requires a new precommitted contract and an
+independent review boundary, not a retune of the completed 20/50 control.
