@@ -2,59 +2,66 @@
 
 ## Objective
 
-Run one fixed-specification, candidate-only QQQ/SPY D1 sequence screen on the
-independent reattested `expanding-3` fold. It must not pool, tune from, or
-select against the completed `expanding-1` and `expanding-2` screens. Produce
-aggregate classification evidence only.
+Build one fixed, source-safe QQQ/SPY D1 cross-fold falsification verifier over
+the completed `expanding-1`, `expanding-2`, and `expanding-3` candidate-only
+CPU/CUDA summaries. It may falsify a fixed candidate against a fold-local class
+majority baseline, but it must not pool overlapping folds, rank candidates,
+select a model, tune, ensemble, replay, create PnL, or produce a Paper input.
 
 ## First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read HANDOFF.md, AGENTS.md, RUNBOOK.md, the active stateboards, and the
-   E3 source-safe fold/materializer/target receipts under the external artifact
-   root.
-3. Reattest the pinned E3 lineage before loading in-memory values. Expected
-   fold artifact/identity are
-   `sha256:40d6c9920a0edec12249f4b429c503b085b2e908466093496da8e0b6717128fc` /
-   `sha256:1cf334306f1e2cc0e907d688d697c850aaf6ca0ef7ed2c42ee807f2c9633d11e`.
-4. Attempt one concise Claude falsification-first drift-check before extending
-   the explicit sequence-screen pin. Do not send raw values, labels,
-   credentials, or account data; record an OAuth/tool failure as
+2. Read HANDOFF.md, AGENTS.md, DECISIONS.md, RUNBOOK.md, active stateboards,
+   and the six immutable source-safe screen summary/precommit pairs under
+   `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1`.
+3. Reattest each exact E1/E2/E3 CPU/CUDA artifact hash, fold identity, target
+   identity, split count, development-only normalization, candidate spec, and
+   scope before comparing any aggregate metric.
+4. Attempt one concise Claude falsification-first drift check for the proposed
+   fixed failure rule. Do not send raw values, labels, credentials, account
+   data, or unneeded artifact contents. Record an OAuth/tool failure as
    `review_unavailable` only.
 
 ## Required Work
 
-1. Extend the existing candidate-only sequence screen and runner with only one
-   explicit `expanding-3` pin. Preserve the completed E1/E2 artifacts and the
-   frozen linear/compact-GRU candidate specifications, threshold, normalization
-   policy, and v2 target/cost semantics. Do not create a generic campaign.
-2. Consume only E3's exact `2671 / 145` sparse development/validation indices.
-   Fit normalization on development only, retain `t-20..t+2`, and exclude the
-   final 151-session tail.
-3. Run one bounded CPU smoke and one network-disabled Docker CUDA screen with
-   distinct immutable labels under the external artifact root. Persist only
-   source-safe aggregate classification evidence, never rows, labels,
-   predictions, weights, replay, PnL, broker data, or credentials.
-4. Use temporary Data, Execution, and Validation roles for independent lineage,
-   split/tail, source-safety, and import/route-isolation checks.
-5. Add focused E3 pin/count/source-safety tests and refresh stateboards/runbook
-   only with resulting facts.
+1. Add a narrow offline verifier and runner with an explicit six-artifact pin
+   map. Reject a missing, mismatched, non-canonical, non-external, unsafe, or
+   unexpected artifact before reading aggregate metrics. Do not create a generic
+   campaign/report framework.
+2. Compare each frozen candidate only against the fold-local class-majority
+   baseline derived from that summary's aggregate observed-positive/evaluated
+   counts. Keep CPU and CUDA modes separate. Never pool, average, or weight
+   overlapping folds; never output a winner, ranking, probability, threshold,
+   prediction, label, row, PnL, replay, checkpoint, or action.
+3. Predeclare the only allowed conclusion states: `falsified` when a candidate
+   fails the fixed majority-baseline rule on a named mode/fold, otherwise
+   `inconclusive`. Neither state is promotion, selection, or a Paper input.
+4. Write one immutable source-safe external artifact under
+   `D:\thericher-v2\model-artifacts`, then use temporary Data, Execution, and
+   Validation roles to independently check lineage, no-pooling, source safety,
+   and route isolation.
+5. Add focused tests for pinning, unsafe/mismatched input rejection,
+   fold-local-baseline logic, no-pooling, artifact-outside-Git behavior, and
+   offline/no-credential/no-broker operation. Refresh stateboards/runbook only
+   with resulting facts.
 
 ## Hard Boundaries
 
 - Do not read `.env`, call KIS or Tiingo, invoke a broker/account endpoint, or
   access `KIS_LIVE_*`.
-- Do not select a model, tune an input, form an ensemble, claim profitability,
-  replay, create a Paper intent, or enable live behavior.
+- Do not retrain, start GPU work, select, rank, tune, ensemble, replay, create
+  PnL, create a Paper intent, or enable live behavior.
 - Keep market bytes under `D:\market_data` and generated artifacts outside Git
   under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
 ## Completion Evidence
 
-- Hash-bound CPU and CUDA aggregate summaries for E3 only.
-- Independent Validation of E3 lineage, `2671 / 145` counts, tail isolation,
-  source safety, and import/route isolation.
-- No selection, replay, PnL, Paper, account, order, or broker artifact.
+- One hash-bound, source-safe external falsification artifact over exactly the
+  six pinned summaries, with CPU/CUDA mode separation and no fold pooling.
+- Independent Validation of exact lineage, no-pooling, source safety, and
+  import/route isolation.
+- No selected candidate, model artifact, replay, PnL, Paper, account, order,
+  broker, or credential artifact.
 
 ## Verification
 
@@ -66,5 +73,5 @@ docker compose config --quiet
 ```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A Claude tooling fault or one fold-local failure does
-not stop independent ready work.
+next company objective. A Claude tooling fault or one candidate-local failure
+does not stop independent ready work.

@@ -12,14 +12,13 @@ modify broker submission or deterministic execution-risk behavior.
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as
-development-only falsification evidence. Both `expanding-1` and `expanding-2`
-candidate-only screens are complete, and `expanding-3` is now reattested as an
-independent source-safe input. Next run only its fixed-specification
-candidate-only screen without pooling, selecting, replaying, or promoting a
-model. The prospective QQQ first-five pair is
-required only for its isolated prospective observation, pair-dependent campaign,
-and later pair-dependent promotion decisions; it does not make historical
-research input-pending.
+development-only falsification evidence. All three independent E1/E2/E3
+candidate-only screens are complete. Next verify the six existing source-safe
+summaries in a fixed cross-fold falsification step without pooling, ranking,
+selecting, replaying, or promoting a model. The prospective QQQ first-five pair
+is required only for its isolated prospective observation, pair-dependent
+campaign, and later pair-dependent promotion decisions; it does not make
+historical research input-pending.
 
 ## Current Readiness
 
@@ -149,16 +148,22 @@ research input-pending.
   no source value, model, replay, broker, or Paper capability follows.
   Validation passed the tail and route checks, and Docker reattestation
   correctly refused immutable overwrite. Claude OAuth remains unavailable.
+- The same E3 input now completed one Docker CPU smoke and one network-disabled
+  CUDA screen with unchanged linear and compact-GRU specifications. Its
+  source-safe aggregate result identities are `sha256:438b...c20e87` and
+  `sha256:f3ad...03922a`; both keep the exact `2671 / 145` split,
+  development-only normalization, no persisted weights, and no selection,
+  replay, PnL, or Paper consequence. Independent Validation passed. Claude
+  OAuth remains unavailable, so no result is promotable.
 
 ## Ready Queue
 
 1. Keep the completed daily breadth, L2 control, and six-symbol control
    descriptive only. Do not retune a threshold, select a winner, create an
    ensemble, promote a checkpoint, or create a KIS Paper action from them.
-2. Run one fixed-specification candidate-only `expanding-3` CPU/CUDA screen
-   from its exact sparse split without consuming E1/E2 summaries for tuning.
-   It produces aggregate classification evidence only; no replay, winner
-   selection, ensemble, Paper action, or promotion follows.
+2. Build one fixed source-safe cross-fold falsification verifier over the six
+   completed E1/E2/E3 CPU/CUDA summaries. Keep folds mode-separated and do not
+   pool, rank, tune, select, ensemble, replay, or create a Paper action.
 3. Keep depth input-pending and ensemble empty until independent, error-diverse
    candidates exist. Consume a verified prospective pair as an additional
    observation/campaign input when Data provides it; it never rewrites
@@ -176,13 +181,12 @@ research input-pending.
 ## Recovery
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
-target receipts, and both candidate-only CPU/CUDA screens; resume for the
-third fixed-specification candidate screen. A failed consumer attempt creates new
-immutable evidence rather than overwriting either parent artifact. A missing
+target receipts, and all three candidate-only CPU/CUDA screens; resume for the
+fixed cross-fold falsification verifier. A failed consumer attempt creates new
+immutable evidence rather than overwriting a parent artifact. A missing
 prospective pair is input_unavailable only for its pair-bound observation.
 
 ## Next Handoff
 
-Return the reattested `expanding-3` lineage to a single fixed-specification
-candidate-only screen. Do not treat any fold's screen as stock selection, a
-selected model, replay, or a Paper input.
+Verify the six immutable fold summaries without pooling or ranking them. Do not
+treat any screen as stock selection, a selected model, replay, or a Paper input.

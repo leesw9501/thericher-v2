@@ -90,15 +90,17 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now the fixed-specification `expanding-3`
-candidate-only screen. All three independent input contracts are complete, but
-no fold result may be pooled, selected, replayed, or promoted. The fixed
-six-symbol panel remains too short and non-PIT for a depth campaign.
+The material bottleneck is a small cross-fold falsification check over the six
+completed E1/E2/E3 aggregate summaries. All three independent input contracts
+and CPU/CUDA screens are complete, but no fold result may be pooled, ranked,
+selected, replayed, or promoted. The fixed six-symbol panel remains too short
+and non-PIT for a depth campaign.
 
-The GPU is free and the one eligible consumer is the bounded E3 screen: run its
-CPU smoke first, then one network-disabled CUDA attempt if the CPU contract
-succeeds. The Claude OAuth outage is scoped to reliance, promotion, and
-execution boundaries; it does not require another ready private lane to wait.
+The GPU is free; no new GPU job is eligible until the frozen-summary check has
+either falsified a fixed candidate or preserved its limitations without creating
+a selection result. The Claude OAuth outage is scoped to reliance, promotion,
+and execution boundaries; it does not require another ready private lane to
+wait.
 
 ## Current Operating Improvement
 
@@ -127,15 +129,15 @@ parallel flood.
 ## Recovery
 
 Current class: complete for the daily catch-up, event-window contract, all
-three fold inputs/materializer/target receipts, and both candidate-only
-CPU/CUDA screens; resume for the `expanding-3` candidate screen. Reattest an
-individual cache, contract, campaign, or exact Paper intent before relying on it. Scope
-failure to that item and continue independent lanes.
+three fold inputs/materializer/target receipts, and all candidate-only CPU/CUDA
+screens; resume for the source-safe cross-fold falsification check. Reattest an
+individual cache, contract, campaign, or exact Paper intent before relying on it.
+Scope failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Run one fixed-specification `expanding-3` candidate-only screen while keeping
-Execution independent. Do not treat any completed screen, the historical
-catalog, or any daily control as a selected model or replay result. Record only
-an actual shared resource conflict, new external wait, bottleneck, or
-reversible operating improvement here.
+Run one fixed source-safe cross-fold falsification check while keeping Execution
+independent. Do not treat any completed screen, the historical catalog, or any
+daily control as a selected model or replay result. Record only an actual shared
+resource conflict, new external wait, bottleneck, or reversible operating
+improvement here.

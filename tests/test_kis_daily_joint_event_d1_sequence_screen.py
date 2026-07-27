@@ -33,7 +33,11 @@ from thericher_v2.kis_daily_joint_event_window_contract import (
 
 @pytest.mark.parametrize(
     ("fold_id", "expected_development_count", "expected_validation_count"),
-    (("expanding-1", 2345, 146), ("expanding-2", 2511, 128)),
+    (
+        ("expanding-1", 2345, 146),
+        ("expanding-2", 2511, 128),
+        ("expanding-3", 2671, 145),
+    ),
 )
 def test_sequence_input_preserves_causal_geometry_sparse_splits_and_tail(
     fold_id: str,
@@ -143,7 +147,7 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
     tmp_path: Path,
 ) -> None:
     _deny_external_access(monkeypatch)
-    materializer, adapter = _materializer_and_adapter(fold_id="expanding-2")
+    materializer, adapter = _materializer_and_adapter(fold_id="expanding-3")
     artifact_root = tmp_path / "model-artifacts"
 
     first = screen.run_kis_daily_joint_event_d1_sequence_screen(
@@ -173,12 +177,12 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
         "linear",
         "compact_gru",
     ]
-    assert summary["source"]["fold_id"] == "expanding-2"
+    assert summary["source"]["fold_id"] == "expanding-3"
     assert summary["split"] == {
-        "development_decision_count": 2511,
+        "development_decision_count": 2671,
         "pre_validation_gap_consumed": False,
         "untouched_tail_session_count": 151,
-        "validation_decision_count": 128,
+        "validation_decision_count": 145,
     }
     assert summary["scope"] == {
         "candidate_only": True,
@@ -194,7 +198,7 @@ def test_candidate_only_run_is_external_source_safe_and_offline(
         "replay_materialized": False,
         "target_values_persisted": False,
     }
-    assert all(result.metrics.evaluated_count == 128 for result in first.candidate_results)
+    assert all(result.metrics.evaluated_count == 145 for result in first.candidate_results)
     assert all(term not in serialized for term in ('"open"', '"close"', '"return"'))
     assert all(
         term not in serialized
@@ -323,7 +327,11 @@ def _sessions() -> tuple[date, ...]:
 
 def _fold_input(sessions: tuple[date, ...], *, fold_id: str) -> KisDailyJointEventFoldInput:
     fold_spec = screen.KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_SPECS[fold_id]
-    development_end = 3783 if fold_id == "expanding-1" else 4057
+    development_end = {
+        "expanding-1": 3783,
+        "expanding-2": 4057,
+        "expanding-3": 4331,
+    }[fold_id]
     gap_end = development_end + 22
     validation_end = gap_end + 252
     development_indices = tuple(range(20, 20 + fold_spec.development_decision_count))

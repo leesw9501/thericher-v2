@@ -12,7 +12,7 @@ from types import ModuleType, SimpleNamespace
 import pytest
 
 
-@pytest.mark.parametrize("fold_id", ("expanding-1", "expanding-2"))
+@pytest.mark.parametrize("fold_id", ("expanding-1", "expanding-2", "expanding-3"))
 def test_runner_stays_offline_when_its_external_inputs_are_injected(
     monkeypatch,
     capsys,
@@ -117,6 +117,27 @@ def test_runner_stays_offline_when_its_external_inputs_are_injected(
 
     assert json.loads(capsys.readouterr().out) == json.loads(
         summary_path.read_text(encoding="utf-8")
+    )
+
+
+def test_expanding_3_runner_pin_matches_the_frozen_external_contract() -> None:
+    script = _load_script()
+
+    assert script._SCREEN_FOLD_PINS["expanding-3"] == script._ScreenFoldPin(
+        fold_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "joint-event-window-fold-input-expanding-3-v1.json"
+        ),
+        target_cost_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "d1-target-cost-expanding-3-validation-first-v2.json"
+        ),
+        target_cost_receipt_sha256=(
+            "sha256:4c389d437ed5c6ad35908dd98e1639e8ab17d41db889a7e5d1d6437c78961560"
+        ),
+        target_cost_identity=(
+            "sha256:5511c3f072e81debe81c39792d6ca4b9500773ebf0d4029b9c7d501286176cc3"
+        ),
     )
 
 

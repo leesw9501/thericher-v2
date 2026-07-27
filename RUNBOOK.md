@@ -465,6 +465,19 @@ Its result identities are `sha256:96a29b18...a7106e` and
 explicit `2511 / 128` E2 split with development-only normalization. Neither
 result selects a model or permits replay, PnL, Paper, or live behavior.
 
+The completed independent `expanding-3` CPU and CUDA evidence is at:
+
+```text
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-expanding-3-20260727-r1
+D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-expanding-3-20260727-r1
+```
+
+Its result identities are `sha256:438b720b...c20e87` and
+`sha256:f3ad3199...03922a`. Each is an aggregate-only candidate screen over
+the explicit `2671 / 145` E3 split with development-only normalization. Neither
+result selects a model, changes a threshold, forms an ensemble, or permits
+replay, PnL, Paper, or live behavior.
+
 Use Docker's network-disabled research profile for any new immutable attempt:
 
 ```powershell
@@ -480,9 +493,9 @@ classification evidence only. Do not use either summary to tune, select,
 ensemble, replay, promote, or derive a Paper decision. In Docker, only the
 explicit `/app/market_data` and `/app/model_artifacts` bind mounts count as
 external storage; the host paths remain `D:\market_data` and
-`D:\thericher-v2\model-artifacts`. The runner currently recognizes only the
-explicit `expanding-1` and `expanding-2` pin profiles; pass the fold explicitly
-even though the historical E1 default remains available.
+`D:\thericher-v2\model-artifacts`. The runner recognizes only the explicit
+`expanding-1`, `expanding-2`, and `expanding-3` pin profiles; pass the fold
+explicitly even though the historical E1 default remains available.
 
 ### Masked D1 Naive Validation
 

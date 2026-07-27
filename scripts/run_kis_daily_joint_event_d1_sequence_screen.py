@@ -73,6 +73,22 @@ _SCREEN_FOLD_PINS = {
             "sha256:cd58b52816a7d0a744f8fce42a384091ce8ea9290c73316b699579a1a16291a0"
         ),
     ),
+    "expanding-3": _ScreenFoldPin(
+        fold_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "joint-event-window-fold-input-expanding-3-v1.json"
+        ),
+        target_cost_artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "d1-target-cost-expanding-3-validation-first-v2.json"
+        ),
+        target_cost_receipt_sha256=(
+            "sha256:4c389d437ed5c6ad35908dd98e1639e8ab17d41db889a7e5d1d6437c78961560"
+        ),
+        target_cost_identity=(
+            "sha256:5511c3f072e81debe81c39792d6ca4b9500773ebf0d4029b9c7d501286176cc3"
+        ),
+    ),
 }
 
 

@@ -47,13 +47,14 @@ KIS_DAILY_JOINT_EVENT_D1_CUDA_MAX_SECONDS = 180
 CandidateScreenMode = Literal["cpu-smoke", "cuda-screen"]
 CandidateModelId = Literal["linear", "compact_gru"]
 MaterializationPhase = Literal["development", "validation"]
-ScreenFoldId = Literal["expanding-1", "expanding-2"]
+ScreenFoldId = Literal["expanding-1", "expanding-2", "expanding-3"]
 SequenceRow = tuple[float, float, float]
 SequenceFeatures = tuple[SequenceRow, ...]
 
 KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_IDS: tuple[ScreenFoldId, ...] = (
     "expanding-1",
     "expanding-2",
+    "expanding-3",
 )
 
 
@@ -86,6 +87,11 @@ KIS_DAILY_JOINT_EVENT_D1_SEQUENCE_SCREEN_FOLD_SPECS = {
         fold_id="expanding-2",
         development_decision_count=2511,
         validation_decision_count=128,
+    ),
+    "expanding-3": KisDailyJointEventD1SequenceScreenFoldSpec(
+        fold_id="expanding-3",
+        development_decision_count=2671,
+        validation_decision_count=145,
     ),
 }
 

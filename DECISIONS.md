@@ -5782,3 +5782,30 @@ later, separately bounded candidate-only screen without reopening or pooling
 earlier screen evidence. Claude's E3 drift-check attempt again failed OAuth;
 Temporary Validation passed lineage, counts, tail, source-safety, and route
 isolation, so the fault remains a promotion/reliance limitation only.
+
+## 2026-07-27 - Complete the independent expanding-3 candidate-only D1 screen
+
+Decision: run exactly one CPU smoke and one network-disabled Docker CUDA screen
+for the already reattested `expanding-3` QQQ/SPY D1 fold. Both retain the
+existing linear and compact-GRU specifications, score threshold,
+development-only normalization policy, and v2 target/cost semantics. The
+immutable external result identities are
+`sha256:438b720b0aeb6e95b884d03b9e60add9e10b63030544af94a4451783b7c20e87`
+for CPU and
+`sha256:f3ad319969ac2b59965e1a545ef52cd17bb7afef9135c45cb4b250402803922a`
+for CUDA. They bind only the exact `2671 / 145` sparse split, fixed candidate
+specifications, normalizer identity, and aggregate classification metrics.
+
+Neither artifact retains rows, labels, predictions, model weights, replay,
+PnL, broker, account, order, or credential data. Neither changes a threshold,
+selects a model, forms an ensemble, creates a Paper decision, or supports a
+profitability claim. Temporary Validation independently passed lineage, split,
+tail, source-safety, write-once artifact behavior, and route isolation. Claude's
+concise E3 screen challenge could not authenticate; the fault remains a
+promotion/reliance limit, not a block on this candidate-only evidence.
+
+Reason: the third independent screen completes the fixed input/CUDA evidence
+without letting earlier folds steer the E3 parameters or choice. The next
+research step may inspect source-safe aggregate failures across fixed folds, but
+must not pool their overlapping windows or turn that inspection into a ranking,
+selection, replay, PnL, Paper, or live decision.

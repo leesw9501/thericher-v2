@@ -70,17 +70,16 @@ remains unavailable.
   every Execution route. Its source-safe aggregate artifacts have no account,
   order, intent, replay, KIS, Tiingo, or live effect. The next independent
   fold contract must retain that boundary.
-- The completed `expanding-3` input contract likewise remains outside every
-  Execution route. Its fold/materializer/target receipts have no account,
-  order, intent, replay, KIS, Tiingo, or live effect. The next candidate-only
-  screen must retain that boundary.
+- The completed `expanding-3` CPU/CUDA screen remains outside every Execution
+  route. Its fold/materializer/target receipts and aggregate artifacts have no
+  account, order, intent, replay, KIS, Tiingo, or live effect. The next
+  cross-fold falsification verifier must retain that boundary.
 
 ## Ready Queue
 
 1. Keep the completed decision-to-target-weight-to-local-paper-intent contract
-   stable while Data and Research run the fixed `expanding-3` D1 candidate-only
-   screen. It must remain separate from every replay,
-   account, intent, and broker route.
+   stable while Research verifies the source-safe E1/E2/E3 summaries. It must
+   remain separate from every replay, account, intent, and broker route.
 2. Use existing authorized KIS Paper scheduled/read-only evidence only when it
    improves a named integration. Preserve exact intent identity and do not infer
    a fill, cancellation, or PnL from incomplete evidence.
@@ -107,5 +106,5 @@ independent Data, Research, and authorized Paper work.
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
-binding and route boundaries intact. The next `expanding-3` candidate screen
-must not acquire an account, order, KIS, Tiingo, or replay path.
+binding and route boundaries intact. The cross-fold verifier must not acquire
+an account, order, KIS, Tiingo, or replay path.

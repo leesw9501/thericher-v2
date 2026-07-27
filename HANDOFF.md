@@ -287,6 +287,19 @@ authorized private KIS Paper work.
   151-session tail. Host and network-disabled Docker reattestation both kept
   the immutable-write boundary; Temporary Validation passed source-safety and
   route isolation. No model, replay, PnL, broker, or Paper artifact exists.
+- The final independent `expanding-3` candidate-only D1 screen is now complete.
+  Its immutable CPU and CUDA evidence is under
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cpu-smoke-expanding-3-20260727-r1`
+  and
+  `D:\thericher-v2\model-artifacts\kis-daily-joint-event-d1-sequence-screen-v1\cuda-screen-expanding-3-20260727-r1`,
+  with source-safe result identities
+  `sha256:438b720b0aeb6e95b884d03b9e60add9e10b63030544af94a4451783b7c20e87`
+  and `sha256:f3ad319969ac2b59965e1a545ef52cd17bb7afef9135c45cb4b250402803922a`.
+  Both consume only E3's `2671 / 145` sparse split with development-only
+  normalization and retain aggregate classification evidence only. Independent
+  Validation passed lineage, tail, source-safety, immutability, and route
+  isolation. No result selected a model, changed a threshold, created an
+  ensemble, replay, PnL, Paper decision, account, order, or broker artifact.
 - `expanding-1` ends before the parent contract's later `expanding-2` and
   `expanding-3` folds. The final 151-session unused tail begins after those
   folds, not immediately after `expanding-1`; exact sparse input lists prevent
