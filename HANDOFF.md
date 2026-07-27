@@ -591,8 +591,15 @@ global permission or progress latch.
 
 ## Next Handoff
 
+The QQQ/SPY D1 relative-regime CPU smoke and full control are complete. The
+phase-local 63-session rule used the existing 4,756-session hash-attested
+catalog and fixed `3,783 / 22 / 951` geometry, then classified `falsified`
+because its 312 local-paper validation trades were after-cost weaker than the
+time-matched always-long baseline. The external summaries retain only aggregate
+evidence; this does not select a model or change GPU, KIS Paper, or live routes.
+
 Follow NEXT_CODEX_GOAL.md. The next company objective is an offline, CPU-only
-QQQ/SPY D1 relative-regime falsification control. It uses the existing daily
+QQQ/SPY D1 relative-allocation falsification control. It uses the existing daily
 catalog only and must not consume the intraday-head recovery result, select a
 model, dispatch GPU work, or create a Paper action. The fixed NAS daily-history
 collector remains terminal for its exact current-listing scope; do not reopen a

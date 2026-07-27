@@ -2,12 +2,13 @@
 
 ## Objective
 
-Build and run one frozen, CPU-only QQQ/SPY D1 relative-regime falsification
+Build and run one frozen, CPU-only QQQ/SPY D1 relative-allocation falsification
 control against the existing hash-attested private daily catalog.
 
-This is breadth research only. It must produce local-paper evidence, not a
-selected model, ensemble member, GPU campaign, KIS Paper input, or profitability
-claim.
+This is a separate opportunity-selection test, not a retune of the closed
+QQQ-versus-flat relative-regime rule. It must produce local-paper evidence, not
+a selected model, ensemble member, GPU campaign, KIS Paper input, or
+profitability claim.
 
 ## Start
 
@@ -24,40 +25,43 @@ claim.
 
 ## Frozen Candidate
 
-- On completed daily session `t`, calculate each asset's 63-session close return
-  from QQQ and SPY only.
-- Enter one QQQ `local_paper` long position at `t+1` open only when QQQ's return
-  is strictly greater than SPY's; otherwise remain flat.
-- Flatten at `t+2` open. Use one share, the existing fixed after-cost economics,
-  and no overlapping positions.
-- Use the existing chronological 3,783 development / 22 purge / 951 validation
-  session contract. A validation decision is eligible only when its full
-  63-session causal feature window and both execution bars are inside its own
-  split.
-- Compare only fixed time-matched `always_long` and `flat` baselines. The
-  candidate is falsified if validation has zero trades or does not strictly beat
-  both comparators after costs. Do not tune the lookback, threshold, cadence,
-  costs, or comparator after seeing results.
+- On completed daily session `t`, calculate each asset's 63-session close
+  change from QQQ and SPY only.
+- At `t+1` open, hold exactly one local-paper share of QQQ when QQQ's change is
+  strictly greater than SPY's; otherwise hold exactly one local-paper share of
+  SPY. Flatten at `t+2` open.
+- Use fixed two-session non-overlapping slots, one share, and the existing
+  fixed after-cost economics.
+- Use the existing chronological `3,783 / 22 / 951` session contract. A
+  validation decision is eligible only when its full 63-session causal feature
+  window and both execution bars are inside its own phase.
+- Compare the same decision slots with `always_qqq`, `always_spy`, and `flat`.
+  The candidate is falsified if its validation after-cost PnL does not strictly
+  exceed all three comparators. Do not tune the lookback, tie rule, cadence,
+  costs, or comparators after seeing results.
 
 ## Work
 
-1. **Data:** add a narrow, source-safe loader/contract binding that reattests
-   QQQ/SPY catalog identity before it exposes the exact causal slices. Preserve
-   completed-bar, source, point-in-time, and corporate-action limitations.
-2. **Engine Research:** implement the fixed deterministic control and its
-   content-addressed external artifact under
+1. **Data:** reuse or extend the narrow QQQ/SPY phase-local loader only as
+   needed for a two-asset target. Preserve reattestation, complete-bar,
+   point-in-time, source, and corporate-action limitations.
+2. **Engine Research:** implement the fixed deterministic allocation control
+   and its content-addressed external artifact under
    `D:\thericher-v2\model-artifacts`. Persist only provenance, configuration,
    aggregate metrics, categorical outcome, and replay identity; never raw bars,
-   derived returns, per-decision values, model weights, or checkpoints.
-3. **Execution:** use the existing broker-free local paper simulator only. Every
-   fill must remain `source: local_paper`; do not create a KIS client, account
-   read, quote, order, or schedule.
-4. **Validation:** add focused tests for causal 63-session boundaries, split and
-   purge isolation, fixed baseline alignment, costs, no-overlap replay, result
-   immutability, no-network/credential/broker access, and the strict kill rule.
+   derived values, per-decision values, model weights, or checkpoints.
+3. **Execution:** use the existing broker-free local-paper simulator only.
+   Maintain one sequential account across QQQ/SPY selection so every fill stays
+   `source: local_paper`, positions remain flat between slots, and replay is
+   verified in memory. Do not create a KIS client, account read, quote, order,
+   or schedule.
+4. **Validation:** add focused tests for phase-local 63-session boundaries,
+   tie selection, baseline slot alignment, single-account no-overlap behavior,
+   fixed costs, immutable aggregate artifacts, no network/credential/broker
+   access, and the strict three-comparator kill rule.
 5. Run a deterministic CPU smoke first, then one full CPU control only if the
-   smoke passes. Keep GPU idle for this control; a non-falsified result still
-   requires an independent frozen replication before any GPU or ensemble work.
+   smoke passes. Keep GPU idle; a non-falsified result still requires an
+   independent frozen replication before any GPU or ensemble work.
 
 ## Boundaries
 

@@ -19,12 +19,14 @@ second goal.
   source-scoped D1 universe and
   source-partitioned D1 eligibility receipt are complete and externally
   reattestable.
-- **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
-  screen are closed as falsified evidence. The ETF D1 trend-regime control is
-  also complete: its all-ETF falsification condition is false, but it is not a
-  rank, selection, ensemble, GPU, or Paper decision. Its next ready preparation
-  is one precommitted QQQ/SPY D1 relative-regime CPU control; GPU remains
-  ineligible until a frozen campaign exists.
+- **Engine Research:** the fixed D1 pair, histogram-gradient tree, CACC-D1,
+  and QQQ/SPY relative-regime controls are closed as falsified evidence. The
+  latter reattested the 4,756-session QQQ/SPY panel, used phase-local 63-session
+  warmup with fixed `3,783 / 22 / 951` geometry, and failed its strict
+  after-cost always-long comparison across 443 validation slots. The ETF D1
+  trend-regime control remains descriptive only. The next ready preparation is
+  a separate two-ETF allocation target; GPU remains ineligible until its
+  campaign is frozen.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -37,12 +39,12 @@ second goal.
 ## Current Bottleneck
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
-schedule deployment, and first natural post-deployment result are complete. The
-current Data-local bottleneck is the scoped collection recovery behind its
-generation-23 `collection_exit_nonzero`; it does not block the independent D1
-relative-regime CPU contract. The stale QQQ input remains evidence not to widen
-the fixed two-minute deadline, and it remains independent of every model claim
-or Paper-order target.
+schedule deployment, first natural post-deployment result, and the independent
+relative-regime control are complete. The current Data-local bottleneck is the
+scoped collection recovery behind its generation-23 `collection_exit_nonzero`;
+it does not block the next D1 allocation contract. The stale QQQ input remains
+evidence not to widen the fixed two-minute deadline, and it remains independent
+of every model claim or Paper-order target.
 
 ## External Waits
 
@@ -66,6 +68,6 @@ relying on it; scope a failure to that item and keep independent packages moving
 
 ## Next Handoff
 
-Prepare the independent frozen QQQ/SPY D1 relative-regime CPU control while the
+Prepare the separate frozen QQQ/SPY D1 relative-allocation CPU control while the
 already-deployed schedule owns its next collection attempt. Do not turn a stale
 or conflicted classification into an approval, order, or global wait.

@@ -97,12 +97,15 @@ to an ensemble, or turn its result into a Paper input.
   manufacturing training for occupancy.
 - The 2026-07-28 throughput review found no frozen campaign eligible for GPU
   work: the existing D1 candidates are closed/falsified, and the natural QQQ
-  runtime receipt is execution evidence only. The next proposed breadth package
-  is a QQQ/SPY D1 relative-regime control using a fixed 63-session completed
-  return comparison, `local_paper` only, fixed costs, and a predeclared
-  always-long/flat kill test. It remains a proposal until its exact campaign
-  contract and tests are frozen; it is not a model, ensemble, GPU dispatch,
-  promotion, or Paper input.
+  runtime receipt is execution evidence only. The newly completed QQQ/SPY D1
+  relative-regime control reattested the 4,756-session common panel, preserved
+  the frozen `3,783 / 22 / 951` split, and warmed each phase independently for
+  its 63-session causal input. Its CPU smoke and full 443-slot validation used
+  only in-memory `local_paper` fills and source-safe external summaries. The
+  candidate made 312 validation trades but was after-cost weaker than the
+  time-matched always-long baseline, so the strict rule classifies it
+  `falsified`. It is closed: no retune, model, ensemble, GPU dispatch,
+  promotion, or Paper input follows.
 - The prospective loop now deterministically derives its 5m/10m views from one
   same-session 90 completed-minute QQQ/NAS window and replays the original
   proposal through `local_paper`. The current prior-session smoke is `stale`
@@ -260,10 +263,11 @@ to an ensemble, or turn its result into a Paper input.
 7. Keep the completed ETF trend-regime control descriptive. Do not tune its SMA
    windows, select SPY, add an ensemble member, allocate GPU work, or turn its
    one non-falsified validation slice into a Paper input.
-8. Prepare exactly one QQQ/SPY D1 relative-regime CPU falsification contract.
-   Freeze its 63-session causal feature, target cadence, cost model, split,
-   naive baselines, and strict kill rule before running it. Do not parameter
-   sweep, promote it, use its output in Paper work, or dispatch GPU depth work.
+8. Prepare exactly one QQQ/SPY D1 relative-allocation CPU falsification
+   contract. It must use an independently frozen two-ETF selection target and
+   time-matched QQQ, SPY, and flat comparators rather than retuning the closed
+   QQQ-versus-flat relative-regime rule. Do not parameter sweep, promote it,
+   use its output in Paper work, or dispatch GPU depth work.
 
 ## Durable Constraints
 
@@ -278,7 +282,8 @@ to an ensemble, or turn its result into a Paper input.
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
-artifact, the fixed daily tree breadth candidate, and CACC-D1. The completed
+artifact, the fixed daily tree breadth candidate, CACC-D1, and the QQQ/SPY
+relative-regime CPU smoke/full receipts. The completed
 daily-history continuation is transport and coverage evidence only: it creates
 no frozen Research input, replay, campaign, or GPU job. A new campaign requires
 its own contract; target-local daily-history recovery has no automatic Research
@@ -290,8 +295,10 @@ work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair, tree, CACC-D1, and ETF trend-regime evidence. The fresh
-prospective baseline remains frozen while its first Paper outcome is observed;
-that outcome is execution evidence and cannot select or promote a research
-result. A future ETF replication requires a new precommitted contract and an
-independent review boundary, not a retune of the completed 20/50 control.
+Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and closed QQQ/SPY
+relative-regime evidence. The next ready breadth package is a separate
+two-ETF allocation target, not a parameter change to the closed rule. The
+fresh prospective baseline remains frozen while its first Paper outcome is
+observed; that outcome is execution evidence and cannot select or promote a
+research result. A future ETF replication requires a new precommitted contract
+and an independent review boundary, not a retune of the completed 20/50 control.

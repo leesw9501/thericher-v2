@@ -6478,3 +6478,29 @@ Paper-only routing, legacy evidence, and the external artifact immutability
 model. A source-safe falsification-first Claude request was attempted before
 reliance on this execution-risk change, but the local OAuth session remained
 expired; its status is `review_unavailable`, not a private-work hold.
+
+## 2026-07-28 - Close the phase-local QQQ/SPY relative-regime control
+
+Decision: complete one fixed CPU-only QQQ/SPY D1 relative-regime falsification
+control against the existing hash-attested 4,756-session private catalog. Keep
+the existing `3,783 / 22 / 951` chronological geometry, but form each
+63-session causal comparison entirely inside its phase so no development or
+purge bar enters a validation feature. Use two-session non-overlapping slots,
+one-share fixed local-paper economics, and only time-matched `always_long` and
+`flat` comparators. Persist source-safe, content-addressed external receipts
+only; no bars, derived values, per-decision values, event logs, weights, or
+checkpoints are retained.
+
+The CPU smoke and full 443-slot validation completed. The candidate made 312
+local-paper trades but did not strictly exceed the after-cost always-long
+baseline, so the fixed strict kill rule classifies it `falsified`. It cannot be
+retuned, selected, ensembled, promoted, sent to GPU depth work, or routed to
+KIS Paper.
+
+Reason: phase-local warmup preserves the existing source contract without
+allowing a longer lookback to leak across its fixed phase boundary. The result
+is ordinary candidate-only falsification evidence, not a promotion or
+authority change, so no Claude result challenge was required. The separate
+source-safe governance challenge was reattempted on 2026-07-28 and the local
+Claude CLI OAuth session remained expired; that tooling fact did not hold this
+private offline control.
