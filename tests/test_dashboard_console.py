@@ -32,7 +32,12 @@ from thericher_v2.state import Event, EventStore
 
 
 @contextmanager
-def _dashboard(tmp_path: Path, *, token: str = ""):
+def _dashboard(
+    tmp_path: Path,
+    *,
+    token: str = "",
+    paper_account_snapshot_path: Path | None = None,
+):
     events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
     events.bootstrap()
     emergency = EmergencyStore(tmp_path / "emergency.json")
@@ -42,6 +47,7 @@ def _dashboard(tmp_path: Path, *, token: str = ""):
         emergency_store=emergency,
         token=token,
         mode="off",
+        paper_account_snapshot_path=paper_account_snapshot_path,
     )
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
@@ -294,6 +300,40 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     assert stale_snapshot.paper_account_status == "unavailable"
     assert stale_snapshot.paper_account is None
     assert stale_snapshot.kis_holdings_status == "unavailable"
+
+
+def test_dashboard_state_preserves_canonical_paper_account_envelope(tmp_path) -> None:
+    observed_at = datetime.now(UTC)
+    paper_snapshot_path = tmp_path / "paper_account_snapshot.json"
+    account = PaperAccountSnapshot(
+        status="complete",
+        observed_at=observed_at,
+        expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
+        orderable_foreign_funds=PaperAccountOrderableForeignFunds("USD", Decimal("1200.50")),
+        reference_orderability=PaperAccountReferenceOrderability(
+            "USD",
+            Decimal("1199.75"),
+            "NASD",
+            "SPY",
+            Decimal("1"),
+        ),
+        positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
+    )
+    write_paper_account_snapshot(account, paper_snapshot_path)
+
+    with _dashboard(
+        tmp_path,
+        paper_account_snapshot_path=paper_snapshot_path,
+    ) as (server, _events, _emergency):
+        status, _, state_body = _request(server, "GET", "/state")
+
+    state = json.loads(state_body)
+    assert status == 200
+    assert state["paper_account"] == account.to_dict()
+    assert state["paper_account"]["source"] == "kis_paper"
+    assert state["paper_account"]["read_only"] is True
+    assert state["paper_account"]["submission_capability"] is False
+    assert "account_number" not in json.dumps(state["paper_account"])
 
 
 def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_path: Path) -> None:

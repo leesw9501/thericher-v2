@@ -343,6 +343,21 @@ authorized private KIS Paper work.
   project. KIS_LIVE_* is never readable or callable.
 - The local operations console is credential-free and reads sanitized
   projections only.
+- The 2026-07-27 virtual-only `kis-readonly` bridge completed once and wrote
+  source-safe external evidence
+  `execution/kis-paper-console-bridge/20260727T020227800614Z-complete.json`
+  with SHA-256
+  `39eacd7453014d257216fc540939322f5105cdbdabe2bba8bc8313769b06e8db`.
+  The validated runtime reader observed a fresh complete `kis_paper` envelope
+  with `read_only: true` and `submission_capability: false`; no KIS order,
+  cancellation, modification, or reconciliation route ran. Its five-minute
+  runtime view later became safely unavailable rather than serving stale facts.
+- The loopback-only dashboard now preserves the canonical sanitized account
+  envelope in `/state`, including its source and read-only/submission
+  capability fields. The private view may render typed account facts required
+  by the local console, but never receives credentials, account identifiers, or
+  raw broker payloads; those facts never enter Git, external evidence, logs,
+  Claude, or chat.
 - Existing scheduled Paper facts are categorical. No current receipt proves a
   selected model, external fill, or realized PnL.
 - A target-position binding now derives a deterministic local-paper delta
@@ -430,8 +445,9 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Refresh one current KIS Paper read-only account
-projection through the existing virtual-only bridge and verify its local
-dashboard-facing sanitization. This is not an order, canary, live route, or
-model consequence. Do not reinterpret the fixed-pair failure as a ranking,
-selection, replay, PnL, or Paper input.
+Follow NEXT_CODEX_GOAL.md. Build the first resumable six-symbol KIS Paper
+daily-history collector from the existing fixed NAS registry, then run its
+first source-safe reach/collection cycle. Preserve the completed two-page probe
+and frozen panel as separate sources. This is market-data work only: do not
+call account/order/live routes, turn the current listing into a PIT universe,
+or promote a model from the new cache.

@@ -97,7 +97,12 @@ class DashboardSnapshot:
     market_data_freshness: MarketDataFreshnessRuntimeSnapshot | None = None
 
     def to_dict(self) -> dict[str, object]:
-        return to_jsonable(self)
+        payload = to_jsonable(self)
+        assert isinstance(payload, dict)
+        payload["paper_account"] = (
+            None if self.paper_account is None else self.paper_account.to_dict()
+        )
+        return payload
 
 
 @dataclass(frozen=True)

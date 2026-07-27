@@ -190,10 +190,11 @@ promotion decisions; it does not make historical research input-pending.
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, and the fixed
 cross-fold artifact. Await a separately contracted research campaign; the next
-read-only KIS Paper account projection has no Research input or GPU consequence.
-A failed consumer attempt creates new immutable evidence rather than overwriting
-a parent artifact. A missing prospective pair is input_unavailable only for its
-pair-bound observation.
+six-symbol daily-history collection establishes endpoint coverage only and has
+no automatic Research input or GPU consequence. A failed consumer attempt
+creates new immutable evidence rather than overwriting a parent artifact. A
+missing prospective pair is input_unavailable only for its pair-bound
+observation.
 
 ## Next Handoff
 

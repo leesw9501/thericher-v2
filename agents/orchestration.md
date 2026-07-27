@@ -90,18 +90,23 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
   is neither a replacement-model selection nor an execution input.
 - Execution completed the deterministic target-weight-to-local-paper-intent
   binding without changing local/KIS/live route isolation.
+- Execution completed one virtual-only KIS Paper account projection through the
+  existing read-only bridge. Its evidence is external and source-safe; direct
+  reader and loopback dashboard checks confirmed the Paper/read-only/no-submit
+  envelope. The snapshot's later TTL expiry is a scoped unavailable fact, not a
+  retry or broker-work dependency.
 - The only shared resources are KIS Paper market-data throughput and one GPU.
   Data owns the first; Research owns the second. There is no current storage
   conflict.
 
 ## Current Bottleneck
 
-The cross-fold falsification artifact is complete: it kept the six E1/E2/E3
-CPU/CUDA sources separate and falsified the fixed linear/compact-GRU pair on
-every fold-local majority comparison. The next material outcome is one current
-KIS Paper read-only account projection through the existing bridge. It is a
-bounded Execution fact, not a model-selection, order, canary, or live decision.
-The fixed six-symbol panel remains too short and non-PIT for a depth campaign.
+The cross-fold falsification artifact and the read-only account projection are
+complete. The material bottleneck is now useful daily coverage for the fixed
+six-symbol NAS registry: its existing probe demonstrates only two accepted
+pages per symbol and must not be mistaken for a historical universe or training
+panel. The next Data package needs a distinct resumable cache and measured
+reach/throughput evidence.
 
 The GPU is free, but no new GPU job is eligible from the falsified pair. A new
 Research campaign needs its own frozen hypothesis and input contract. The
@@ -130,15 +135,15 @@ path; the serial suite remains the authoritative goal-boundary check.
 
 Current class: complete for the daily catch-up, event-window contract, all
 three fold inputs/materializer/target receipts, all candidate-only CPU/CUDA
-screens, and the source-safe cross-fold artifact; resume for one read-only KIS
-Paper account projection. Reattest an individual cache, contract, campaign, or
-exact Paper intent before relying on it. Scope failure to that item and continue
+screens, the source-safe cross-fold artifact, and one read-only KIS Paper
+account projection. Reattest an individual cache, contract, campaign, or exact
+Paper intent before relying on it. Scope failure to that item and continue
 independent lanes.
 
 ## Next Handoff
 
-Run one current KIS Paper read-only account projection and verify its sanitized
-local dashboard boundary. Do not treat the failed fixed pair, the historical
-catalog, or any daily control as a selected model or replay result. Record only
-an actual shared resource conflict, new external wait, bottleneck, or reversible
+Build and run the first resumable daily-history collector for the fixed NAS
+six-symbol registry. Do not treat its current listing or raw cache as a PIT
+universe, selected model, replay result, or Paper order input. Record only an
+actual shared resource conflict, new external wait, bottleneck, or reversible
 operating improvement here.

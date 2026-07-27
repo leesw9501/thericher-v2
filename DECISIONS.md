@@ -5855,8 +5855,7 @@ request-start gate, 60-second categorical-limit cooldown, and five-minute
 cross-process token-start guard. Do not replace them with an unmeasured
 parallel request flood or a foreground sleep. One collector keeps one
 in-memory client/token while it remains valid for eligible pages in its own
-run; the token-start
-guard applies only when a new token POST is needed and does not imply
+run; the token-start guard applies only when a new token POST is needed and does not imply
 cross-process token sharing.
 
 For every active KIS coverage package, the Data stateboard must project only
@@ -5877,3 +5876,19 @@ collector is slowed or expanded. The required concise Claude drift-check was
 attempted with no private material but could not authenticate because the local
 OAuth session was expired; the reviewer outage does not change the existing
 measured controls or stop this reversible operating-policy clarification.
+
+## 2026-07-27 - Preserve the canonical read-only account envelope at `/state`
+
+Decision: have `DashboardSnapshot.to_dict()` replace the generic nested
+dataclass representation of `paper_account` with the validated
+`PaperAccountSnapshot.to_dict()` envelope. The local dashboard therefore
+retains `kind`, `source`, `read_only`, and `submission_capability` alongside
+the existing typed local account view. Its fresh factual view remains private
+and loopback-only; credentials, account identifiers, and raw broker payloads
+never enter the web process, Git, external evidence, logs, Claude, or chat.
+
+Reason: generic dataclass serialization omitted the account projection's
+provenance and capability fields, leaving `/state` unable to prove that a
+visible Paper account fact was from the virtual read-only path. The correction
+is a narrow dashboard serialization fix, does not call KIS, and does not add an
+order, account, or public-service route.

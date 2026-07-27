@@ -11,12 +11,10 @@ output as untrusted input.
 
 ## Current Objective
 
-Refresh one current private KIS Paper account-to-dashboard projection through
-the existing virtual-only read-only bridge. It may read only the sanctioned
-Paper account, position, and open-order facts, then publish a sanitized local
-runtime snapshot. It must not submit, modify, cancel, reconcile, or create an
-order intent. Data and Research continue independently; KIS Live remains
-unavailable.
+The current read-only account projection is complete. Execution has no broker
+work in the next Data-owned daily-history objective; preserve the virtual-only
+bridge, local dashboard boundary, and existing Paper recovery invariants while
+Data works independently. KIS Live remains unavailable.
 
 ## Current Facts
 
@@ -27,6 +25,17 @@ unavailable.
   external fill, or realized PnL.
 - The current KIS Paper price/account route is private and virtual-only. No
   KIS_LIVE_* value is readable or callable.
+- One existing `kis-readonly` Compose invocation completed on 2026-07-27 with
+  a fresh sanitized runtime projection and external source-safe evidence
+  `20260727T020227800614Z-complete.json` (`sha256:39eacd...6e8db`). It used the
+  virtual read-only path only; no intent, submit, modify, cancel, or broker
+  reconciliation ran. A later TTL expiry correctly changes only that runtime
+  view to unavailable.
+- Dashboard `/state` now uses the snapshot's canonical allowlisted serializer
+  for the nested Paper account projection. This retains `kis_paper`, read-only,
+  and no-submission provenance for local consumers without introducing a KIS
+  client, credential, account identifier, raw broker body, or order route into
+  the web process.
 - A missing or ambiguous exact broker outcome constrains replacement of that
   exact intent until reconciliation, never a distinct authorized Paper action
   or an independent lane.
@@ -84,9 +93,9 @@ unavailable.
 
 ## Ready Queue
 
-1. Run the existing `kis-readonly` bridge once through its virtual-only Docker
-   profile, then verify that its runtime projection is complete and sanitized
-   or honestly unavailable. Never pass `.env` values on a command line.
+1. Keep the existing virtual-only read-only bridge available for a later
+   bounded refresh. A stale runtime view is evidence only and never a broker
+   permission, order input, or Data collector dependency.
 2. Keep the completed decision-to-target-weight-to-local-paper-intent contract
    separate from this read-only run and every failed model result, replay,
    account, intent, and broker route.
@@ -104,9 +113,10 @@ unavailable.
 
 ## Recovery
 
-Current class: resume for one fresh read-only account projection; the
-cross-fold verifier is complete. Preserve exact ambiguous Paper evidence for
-the owned reconciliation route. Scope a failure to that intent and continue all
+Current class: complete for the fresh read-only account bridge and the
+cross-fold verifier. The account runtime expires normally after its TTL; a
+later refresh is a new read-only observation, not recovery of an order. Preserve
+exact ambiguous Paper evidence for the owned reconciliation route and continue
 independent Data, Research, and authorized Paper work.
 
 ## Next Handoff
@@ -114,5 +124,6 @@ independent Data, Research, and authorized Paper work.
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
-The next account bridge may use only virtual read-only account paths and must
-not turn a snapshot into a broker permission or an order input.
+The next daily-history collector may use only KIS Paper market-data paths and
+must not turn this account snapshot into a broker permission, an order input,
+or a Data dependency.

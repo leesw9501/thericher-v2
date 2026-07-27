@@ -21,8 +21,10 @@ or persist provider rows in response to the fixed-pair result. The full sequence
 dependency mask remains `t-20..t+2`, not
 merely the 20 visible feature rows `t-19..t`. The prospective QQQ 1m first-five
 pair is one Data product for a named future observer; it is not the only Data
-output or a company hold. The next KIS Paper account projection is Execution
-owned and does not require a Data fetch or provider-row mutation.
+output or a company hold. The next company objective is Data-owned: extend the
+fixed NAS six-symbol daily capability result into a separate resumable
+historical cache without changing the frozen two-page probe or any existing
+QQQ/SPY/IWM catalog.
 
 ## Current Facts
 
@@ -162,34 +164,32 @@ owned and does not require a Data fetch or provider-row mutation.
   `sha256:1bbbc7...18bc5d`; it added no provider bytes, cache mutation,
   credential, KIS call, source blend, or data-quality conclusion. Its
   fold-local falsification result applies only to the fixed candidates.
+- The completed 2026-07-27 KIS Paper account projection consumed no provider
+  row, market-data endpoint, cache, or `D:\market_data` mutation. Its scope is
+  independent Execution evidence only.
 
 ## Ready Queue
 
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. When a later engine loop names a new coverage need, use the bounded reach
-   probe and durable serial collector procedure below. Start a serial collector
-   only after that objective names its source scope; record the first measured
-   remaining-work and ETA category before claiming a collection schedule. A
-   falsified fixed model pair is not itself a data-collection hold or a request
-   to mutate a source.
+2. Implement and run the named six-symbol NAS daily-history coverage package.
+   Its new cache and durable cursors must remain separate from the two-page
+   probe; record first-run reach, pace, remaining-work, and ETA categories
+   before claiming broader coverage. A falsified fixed model pair is not itself
+   a data-collection hold or a request to mutate a source.
 
 ## Collection Progress Projection
 
-There is no active KIS Data collector in the current company objective, so no
-cursor ETA is claimed. The next read-only account projection consumes no
-provider rows or cache mutations.
+Prepared coverage package: KIS Paper daily endpoint for the fixed current
+`AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` `NAS` registry, in a new
+daily-history cache outside the existing two-page probe.
 
-For the next active KIS coverage package, replace this paragraph with one
-source-safe projection only:
-
-- named endpoint, symbol/venue, granularity, and cache scope;
-- durable cursor and recovery class;
-- accepted-page and categorical-failure counts plus measured request pace;
-- remaining-page estimate and ETA bucket, or `unknown` until the reach probe
-  yields enough evidence; and
-- this collector's `next_due`, if any.
+- durable cursor: `unknown` until the new collector initializes its own index;
+- accepted/categorical-failure page counts and measured pace: `unknown`;
+- remaining-page estimate and ETA bucket: `unknown` until the first reach
+  observation; and
+- `next_due`: none before the first owned worker run.
 
 The collector advances serially whenever its shared measured gate permits. A
 token-start or cooldown deferral yields only this worker; it is never a
@@ -228,15 +228,17 @@ another collector or lane.
 
 Current class: complete for the daily catch-up, joint event-window contract,
 all three fold inputs/materializer/target-cost receipts, all candidate screens,
-and the fixed source-safe cross-fold artifact. Await a newly named Data package;
-the next read-only KIS Paper account projection is not a Data consumer. Reattest
-existing metadata and committed summaries before a new consumer or future
-network call. A bad cache is reconcile/restart evidence for that cache; an
-empty or limited endpoint result is source evidence for that route only.
+and the fixed source-safe cross-fold artifact; prepare for the named
+six-symbol daily-history package. Reattest existing metadata and committed
+summaries before a new consumer or future network call. A bad cache is
+reconcile/restart evidence for that cache; an empty or limited endpoint result
+is source evidence for that route only.
 
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Do not infer PIT membership,
 corporate-action completeness, a ranking claim, or Paper-trading eligibility
-from either cache or the fixed-pair falsification result, and do not wait for a
-prospective pair before advancing other ready Data work.
+from either cache or the fixed-pair falsification result. The new daily-history
+cache may establish endpoint coverage only; do not use it as a historical
+universe, a model selection result, or a Paper-trading input without a separate
+qualified contract.
