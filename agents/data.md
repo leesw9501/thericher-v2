@@ -21,11 +21,14 @@ or persist provider rows in response to the fixed-pair result. The full sequence
 dependency mask remains `t-20..t+2`, not
 merely the 20 visible feature rows `t-19..t`. The prospective QQQ 1m first-five
 pair is one Data product for a named future observer; it is not the only Data
-output or a company hold. The next company objective is Data-owned: extend the
-fixed NAS six-symbol daily capability result into a separate resumable
-historical cache without changing the frozen two-page probe or any existing
-QQQ/SPY/IWM catalog. That collector is now implemented, independently validated,
-and running through its isolated KIS Paper Compose profile.
+output or a company hold. The first Data-owned objective extended the fixed NAS
+six-symbol capability result into a separate resumable historical cache without
+changing the frozen two-page probe or any existing QQQ/SPY/IWM catalog. That
+collector is implemented, independently validated, and has completed four
+bounded cycles. The next Data-owned objective is one bounded token-reusing
+continuation worker; it must retain an in-memory client only for its own
+process, preserve the existing cache meaning, and keep a target-local invalid
+response from halting other ready work.
 
 ## Current Facts
 
@@ -174,14 +177,14 @@ and running through its isolated KIS Paper Compose profile.
 1. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
-2. Implement and run the named six-symbol NAS daily-history coverage package.
-   Its new cache and durable cursors must remain separate from the two-page
-   probe; keep advancing its durable cursors through owned due-time resumes,
+2. Build and run the next bounded token-reusing continuation for the existing
+   six-symbol NAS daily-history cache. Keep the durable cursors separate from
+   the two-page probe; reuse one in-memory client only within its owned process,
    record measured reach and pace, and preserve `unknown` where a terminal
    estimate has not yet been observed. The corrected empty-terminal,
-   non-advancing-cursor, orphan-recovery, and canonical-root paths passed
-   independent Validation before the first real call. A falsified fixed model
-   pair is not itself a data-collection hold or a request to mutate a source.
+   non-advancing-cursor, orphan-recovery, and canonical-root paths remain
+   required. A target-local invalid response and a falsified fixed model pair
+   are not data-collection holds or requests to mutate a source.
 
 ## Collection Progress Projection
 
@@ -195,14 +198,18 @@ daily-history cache outside the existing two-page probe.
   `sha256:5f3a46...098238`, `sha256:18ba7a...7e45eb`, and
   `sha256:60d7eb...bec3ad`. They accepted 13, 50, and 69 pages respectively;
   observed cycle pace was 27.158, 32.664, and 27.962 pages/minute.
-- the latest completed projection is index generation 67: 132 accepted pages,
-  three categorical rate limits, and all six durable cursors at `20171120`.
-  A new owned one-shot resume is scheduled from the shared token-start due;
-  reattach the index and receipt after it exits rather than assuming this count
-  is terminal.
+- the fourth bounded resume accepted eight pages at 51.169 pages/minute and
+  wrote source-safe receipt `sha256:50a4f0...911fb`. The latest completed
+  projection is index generation 71: 140 accepted pages and four categorical
+  rate limits. `AAPL`, `AMZN`, `GOOGL`, and `META` are ready at `20170208`;
+  `NVDA` is ready at `20171120`; `MSFT` alone is deferred at `20171120` with
+  `daily_response_invalid`. That source fact is scoped to `MSFT`; it neither
+  closes the endpoint nor pauses the other ready cursors.
 - remaining-page estimate and ETA bucket: `unknown`; no source terminal or
   total-page yield has been observed.
-- `next_due`: owned by the scheduled resume worker; recovery: `resume`.
+- `next_due`: no active short-lived resume remains. The next bounded
+  continuation worker owns its source-safe due time; recovery is `resume` for
+  the five ready cursors and target-local `reconcile` for deferred `MSFT`.
 - raw rows remain only in the dedicated D: cache. The index retains no raw rows
   or credentials. The frozen probe, panel, and QQQ/SPY/IWM catalog hashes were
   rechecked unchanged after the real cycles.
@@ -244,17 +251,20 @@ another collector or lane.
 
 Current class: complete for the daily catch-up, joint event-window contract,
 all three fold inputs/materializer/target-cost receipts, all candidate screens,
-and the fixed source-safe cross-fold artifact; prepare for the named
-six-symbol daily-history package. Reattest existing metadata and committed
-summaries before a new consumer or future network call. A bad cache is
-reconcile/restart evidence for that cache; an empty or limited endpoint result
-is source evidence for that route only.
+the fixed source-safe cross-fold artifact, and the first daily-history
+collector. Reattach the daily-history index and its latest source-safe receipt
+before the continuation worker. Five ready cursors are `resume`; deferred
+`MSFT` is target-local `reconcile`. A bad cache is reconcile/restart evidence
+for that cache; an empty or limited endpoint result is source evidence for that
+route only.
 
 ## Next Handoff
 
-Preserve the frozen six-symbol source separately. Do not infer PIT membership,
-corporate-action completeness, a ranking claim, or Paper-trading eligibility
-from either cache or the fixed-pair falsification result. The new daily-history
-cache may establish endpoint coverage only; do not use it as a historical
-universe, a model selection result, or a Paper-trading input without a separate
-qualified contract.
+Preserve the frozen six-symbol source separately. Reattach the current
+daily-history index/receipt, then use the bounded token-reusing worker rather
+than chaining new token-start processes after each cooldown. Do not infer PIT
+membership, corporate-action completeness, a ranking claim, or Paper-trading
+eligibility from either cache or the fixed-pair falsification result. The new
+daily-history cache may establish endpoint coverage only; do not use it as a
+historical universe, a model selection result, or a Paper-trading input without
+a separate qualified contract.

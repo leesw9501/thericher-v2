@@ -107,10 +107,12 @@ six-symbol NAS registry: its existing probe demonstrates only two accepted
 pages per symbol and must not be mistaken for a historical universe or training
 panel. The distinct resumable-cache implementation is locally focused-tested;
 the empty-terminal, non-advancing-cursor, orphan-recovery, route-proof, and
-canonical-root corrections passed independent Validation. Its first real cycle
-and first owned due-time resume wrote separate source-safe receipts and advanced
-the dedicated cursors without touching the legacy probe, panel, or ETF catalog.
-The active bounded resume owns the remaining current collection work.
+canonical-root corrections passed independent Validation. Four completed bounded
+cycles advanced the dedicated cursors without touching the legacy probe, panel,
+or ETF catalog. The measured bottleneck is now token loss between short-lived
+processes: the next Data-owned package is one bounded continuation worker that
+keeps its client only in memory through its own due times. One deferred MSFT
+response is target-local recovery evidence, not a cross-lane hold.
 
 The GPU is free, but no new GPU job is eligible from the falsified pair. A new
 Research campaign needs its own frozen hypothesis and input contract. The
@@ -126,8 +128,10 @@ categories, and only that collector's `next_due`; `unknown` is valid until the
 reach probe can support an estimate. A non-conflicting ready package starts or
 attaches before an owned wait is reported. Focused tests may run in parallel
 only with isolated mutable state; the serial suite remains the authoritative
-goal-boundary check. This makes a real collector delay visible without
-inventing a daily quota, foreground sleep, or second goal.
+goal-boundary check. The next reversible improvement keeps a valid token inside
+one bounded owned Data process across its source-safe retry due, rather than
+creating a new process and token-start delay. This makes a real collector delay
+visible without inventing a daily quota, foreground sleep, or second goal.
 
 ## External Waits
 
@@ -135,9 +139,9 @@ inventing a daily quota, foreground sleep, or second goal.
   worker implementation, historical evidence preservation, or Execution.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
-- The active daily-history resume may yield at its own source-safe retry or
-  token-start due time. It does not hold Research, Execution, verification, or
-  a later owned continuation worker.
+- No short-lived daily-history resume is active. The next continuation worker
+  will own its retry due and token reuse; this does not hold Research,
+  Execution, verification, or another ready package.
 
 ## Recovery
 
@@ -150,9 +154,10 @@ independent lanes.
 
 ## Next Handoff
 
-Reattach the active daily-history index and latest receipt after its bounded
-worker exits, then keep eligible cursor work owned by its `next_due` rather
-than foreground waiting. Do not treat the current listing or raw cache as a PIT
-universe, selected model, replay result, or Paper order input. Record only an
-actual shared resource conflict, new external wait, bottleneck, or reversible
-operating improvement here.
+Reattach the completed daily-history index and latest receipt before the next
+bounded continuation worker. Keep its eligible cursor work owned by its
+`next_due` rather than foreground waiting; defer only the exact invalid MSFT
+target until its recovery path is known. Do not treat the current listing or raw
+cache as a PIT universe, selected model, replay result, or Paper order input.
+Record only an actual shared resource conflict, new external wait, bottleneck,
+or reversible operating improvement here.

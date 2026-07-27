@@ -413,15 +413,18 @@ authorized private KIS Paper work.
   `D:\\market_data\\us_equities\\kis_paper_private\\daily-nas-history\\v1`,
   with source-safe receipts under
   `D:\\thericher-v2\\model-artifacts\\data\\kis-paper-daily-nas-history-v1`.
-  Its first three real cycles accepted 13, 50, and 69 pages at observed pace
-  27.158, 32.664, and 27.962 pages/minute. The latest completed index projection
-  is generation 67 with 132 accepted pages, three categorical rate limits, and
-  all six cursors at `20171120`; each cycle wrote a separate source-safe
-  receipt. The cache has durable per-symbol cursors and retains raw rows only on
-  D:. Empty-terminal, non-progress, orphan-recovery, exact route, and
-  canonical-root regressions passed independent Validation before the first
-  call. A scheduled bounded resume owns the next receipt; reattach the index
-  rather than assuming its last observed counts are final.
+  Its first four real cycles accepted 13, 50, 69, and 8 pages at observed pace
+  27.158, 32.664, 27.962, and 51.169 pages/minute. The latest completed index
+  projection is generation 71 with 140 accepted pages and four categorical rate
+  limits. `AAPL`, `AMZN`, `GOOGL`, and `META` have reached `20170208`; `NVDA`
+  remains ready at `20171120`; and only `MSFT` is deferred at that cursor after
+  one `daily_response_invalid` source fact. Each cycle wrote a separate
+  source-safe receipt. The cache has durable per-symbol cursors and retains raw
+  rows only on D:. Empty-terminal, non-progress, orphan-recovery, exact route,
+  and canonical-root regressions passed independent Validation before the first
+  call. The next bounded objective replaces chained short-lived resumes with
+  one token-reusing continuation worker; the deferred `MSFT` target is a
+  target-local recovery fact, not a collection or lane hold.
 
 ## Active Lanes
 
@@ -468,11 +471,11 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Build the first resumable six-symbol KIS Paper
-daily-history collector from the existing fixed NAS registry. The collector,
-profile, P1/P2 corrections, focused tests, independent Validation, and first
-real/resumed cycles are complete. Reattach the active bounded worker's index and
-receipt, then use its source-safe `next_due` for any continued cursor work.
-Preserve the completed two-page probe and frozen panel as separate sources.
-This is market-data work only: do not call account/order/live routes, turn the
-current listing into a PIT universe, or promote a model from the new cache.
+Follow NEXT_CODEX_GOAL.md. The first resumable six-symbol KIS Paper
+daily-history collector, profile, P1/P2 corrections, focused tests,
+independent Validation, and four bounded cycles are complete. Build and run the
+next bounded token-reusing continuation worker from the reattached index and
+latest receipt; do not turn an owned retry due into a foreground wait. Preserve
+the completed two-page probe and frozen panel as separate sources. This is
+market-data work only: do not call account/order/live routes, turn the current
+listing into a PIT universe, or promote a model from the new cache.
