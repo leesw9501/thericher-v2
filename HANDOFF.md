@@ -123,6 +123,13 @@ authorized private KIS Paper work.
   and `sha256:55bfaaa68d29e8040dc08fa0c5459a7c7123fc242389b4da3f30394ae9250978`.
   It exposes per-symbol `CatalogedBars` only to offline/local-paper validation.
   It has no network, credential, KIS, order, ranking, or Paper-trading path.
+- The first source-scoped liquid-universe manifest is reattestable at
+  `D:\market_data\us_equities\source-scoped-liquid-universe\v1\us.equities.source-scoped-liquid-universe-v1-068c34ced08eac50.json`
+  with hash `sha256:068c34ced08eac50de53e9fbc27f3f78b36412b03aef6b602c35b4de5a083f4c`.
+  It binds the terminal QQQ/SPY/IWM D1 index and six-symbol current NAS D1
+  panel as separate source partitions and exposes nine offline unranked
+  instrument references. It makes no PIT membership, liquidity, ranking,
+  cross-partition alignment, model, Paper, or profitability claim.
 - The KIS private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions. The three-target QQQ/SPY/IWM intersection has 694 sessions;
   IWM remains source-limited at its qualified boundary.

@@ -294,6 +294,13 @@ from .trade_path_attribution import (
     TradePathEventArtifact,
     attribute_trade_paths_from_local_paper_events,
 )
+from .unranked_opportunity_selection import (
+    UNRANKED_OPPORTUNITY_SELECTION_INPUT_ID,
+    UnrankedOpportunityInstrument,
+    UnrankedOpportunitySelectionInput,
+    build_unranked_opportunity_selection_input,
+    require_attested_unranked_opportunity_selection_input,
+)
 from .validation import (
     CampaignReplayRun,
     GpuReadiness,
@@ -446,6 +453,9 @@ __all__ = [
     "RawPreEntryOutcomeAttributionResult",
     "TradePathAttributionResult",
     "TradePathEventArtifact",
+    "UNRANKED_OPPORTUNITY_SELECTION_INPUT_ID",
+    "UnrankedOpportunityInstrument",
+    "UnrankedOpportunitySelectionInput",
     "WalkForwardCandidate",
     "WalkForwardExperimentSummary",
     "WalkForwardResult",
@@ -484,6 +494,7 @@ __all__ = [
     "build_daily_training_batch",
     "build_candidate_training_dataset",
     "build_multi_slice_candidate_training_dataset",
+    "build_unranked_opportunity_selection_input",
     "default_short_experiment_specs",
     "default_candidate_breadth_variants",
     "derive_attribution_informed_threshold_pairs",
@@ -543,6 +554,7 @@ __all__ = [
     "run_gpu_training_smoke",
     "run_and_write_research_job",
     "run_walk_forward_queue",
+    "require_attested_unranked_opportunity_selection_input",
     "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
     "write_gpu_candidate_smoke_artifact",

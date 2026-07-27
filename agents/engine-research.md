@@ -112,6 +112,13 @@ to an ensemble, or turn its result into a Paper input.
   It has no PIT universe meaning, corporate-action qualification, ranking
   claim, or Research result yet; do not train an ensemble, select a model, or
   allocate GPU work from the small current-basket panel.
+- Research now has one pure unranked opportunity-selection input built only
+  from the reattested source-scoped D1 manifest. It preserves the ETF daily
+  catalog and current NAS panel as separate source IDs, exposes no bars,
+  scores, ranks, actions, selected symbols, model, replay, or broker field,
+  and explicitly remains ineligible for historical membership, liquidity,
+  ranking, Paper, or cross-partition alignment. It is a future input boundary,
+  not a campaign or GPU eligibility claim.
 - The first frozen six-symbol CPU local-paper control completed with an exact
   159/1/39 chronological split, three-bar fixed momentum, one-share replay,
   fixed after-cost economics, and an `always_long` comparator. Its external

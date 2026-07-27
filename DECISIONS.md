@@ -6300,3 +6300,27 @@ Reason: this was a causal rule distinct from the rejected return-window models,
 with fixed folds, cost semantics, baselines, and a clear falsification rule.
 Closing it preserves breadth evidence without turning GPU occupancy or
 parameter-search into progress.
+
+## 2026-07-28 - Bind a current-source-scoped universe without a liquidity claim
+
+Decision: materialize one deterministic, external D1-only manifest from the
+terminal private QQQ/SPY/IWM daily-catalog index and the frozen six-symbol
+current NAS daily panel. The active manifest is
+`sha256:068c34ced08eac50de53e9fbc27f3f78b36412b03aef6b602c35b4de5a083f4c`
+under `D:\market_data\us_equities\source-scoped-liquid-universe\v1`.
+It exposes nine stable instrument references to a pure offline unranked
+Research handoff, preserving source IDs instead of treating the ETF history and
+current NAS panel as one aligned cross-section.
+
+The manifest and its consumer explicitly set historical-membership, ranking,
+Paper, liquidity, and cross-partition-alignment eligibility to false. They
+read source-safe manifest/index/evidence metadata only; no raw bar, credential,
+provider, KIS, broker, model, replay, or order path exists in this change.
+
+Reason: the existing data can support a reproducible opportunity-selection
+foundation, but neither a current listing nor retained D1 coverage establishes
+survivorship-free membership, comparable liquidity, or a tradable rank. The
+compact contract makes the usable boundary explicit without creating a new
+data collection or approval workflow. Claude's source-safe falsification
+request could not authenticate because local OAuth was expired, so the review
+status is `review_unavailable` rather than external support or a work hold.

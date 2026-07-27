@@ -1311,6 +1311,23 @@ D:\thericher-v2\model-artifacts
 /app/model_artifacts
 ```
 
+### Source-Scoped Liquid Universe
+
+Reattest the current local source metadata without reading bars, credentials,
+or a provider:
+
+```powershell
+uv run python scripts/materialize_source_scoped_liquid_universe.py
+```
+
+The immutable manifest stays under
+`D:\market_data\us_equities\source-scoped-liquid-universe\v1`. It binds the
+private QQQ/SPY/IWM D1 cache index and the current six-symbol NAS D1 panel as
+separate partitions. It is not a point-in-time historical universe, liquidity
+qualification, stock rank, cross-sectional alignment, model input, or Paper
+authorization. The only current consumer is an offline unranked metadata
+handoff; a later rule must declare its own source/feature/cost contract.
+
 Run a CPU baseline before an eligible GPU campaign. GPU work needs a frozen
 dataset and falsifiable hypothesis; do not launch models solely to keep the GPU
 busy. One GPU job runs at a time while other lanes continue.

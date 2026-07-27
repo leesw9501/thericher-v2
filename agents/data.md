@@ -70,6 +70,15 @@ The fresh head scheduler continues to own prospective session collection.
   The adapter exposes a per-symbol completed-bar input for offline
   `local_paper` validation only. It has no credential, network, KIS, order,
   ranking, or paper-trading capability.
+- The first source-scoped liquid-universe manifest now reattests only source
+  metadata from the terminal QQQ/SPY/IWM daily index and the frozen six-symbol
+  NAS panel. Its external D: identity is
+  `sha256:068c34ced08eac50de53e9fbc27f3f78b36412b03aef6b602c35b4de5a083f4c`
+  at `D:\market_data\us_equities\source-scoped-liquid-universe\v1`.
+  It exposes nine stable D1 instrument references to an offline consumer while
+  preserving their two source partitions. It asserts no historical membership,
+  ranking, Paper, liquidity, or cross-partition-alignment eligibility and does
+  not read raw bars, credentials, or a provider.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
@@ -230,8 +239,9 @@ The fresh head scheduler continues to own prospective session collection.
    routes. Keep canonical qualified `1m` bytes once and derive `5m`, `10m`,
    `1h`, and `3h` locally when a valid source exists.
 5. Build a versioned liquid-universe manifest from already available
-   source-safe symbol evidence before widening beyond QQQ/SPY. It is a
-   collection schedule, not a point-in-time universe or stock-ranking claim.
+   source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
+   v1 source-scoped manifest is D1-only and does not authorize a point-in-time
+   universe, liquidity claim, stock ranking, or Paper use.
 
 ## Collection Progress Projection
 

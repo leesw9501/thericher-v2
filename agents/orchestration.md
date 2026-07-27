@@ -8,7 +8,8 @@ second goal.
 
 - **Data:** the installed prospective scheduler owns its next due time and its
   own current-head collection. Its receipt is asynchronously reattached when it
-  exists; no foreground task waits for it.
+  exists; no foreground task waits for it. The current-source-scoped D1
+  universe contract is complete and externally reattestable.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
   screen are closed as falsified evidence. CACC-D1 ran CPU-only against existing
   folds and did not consume GPU, KIS, credentials, or a broker resource.
@@ -48,9 +49,10 @@ second goal.
 
 ## Current Bottleneck
 
-The route bottleneck is resolved. The next material evidence gap is a small,
-versioned liquid-universe contract that can support opportunity-selection work
-without claiming point-in-time membership or stock ranking.
+The route bottleneck is resolved. The next material evidence gap is a first
+causal opportunity-selection eligibility rule that can consume the new
+source-partitioned universe without turning current membership, D1 coverage,
+or unqualified liquidity into a cross-sectional rank or Paper input.
 
 ## External Waits
 
