@@ -2,74 +2,68 @@
 
 ## Objective
 
-Build the first source-partitioned D1 liquidity-eligibility fact for offline
-opportunity research. It must test only whether each already attested current
-instrument has enough completed local D1 history and observed daily turnover for
-offline research eligibility. It must not turn that fact into a historical
-universe, a cross-sectional ranking, a model signal, a Paper input, or a claim
-of executable liquidity.
+Falsify one fixed, ETF-source-local D1 trend-regime control using the completed
+source-partitioned eligibility receipt. This is a deterministic offline Research
+screen, not stock selection, model promotion, an ensemble, or a KIS Paper input.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`,
    and all active stateboards.
-3. Reattest the existing source-scoped liquid-universe manifest and its two
-   source partitions before reading any bars. Do not broadly scan `D:`.
-4. Ask Claude for a short falsification-first challenge of the proposed D1
-   liquidity interpretation. Do not send rows, prices, volumes, credentials,
-   account data, or sealed labels. An OAuth failure is `review_unavailable`,
-   not a hold on private offline work.
+3. Reattest the current source-scoped universe and D1 eligibility receipt before
+   loading the named ETF streams. Do not scan `D:` broadly.
+4. Ask Claude for a concise falsification-first challenge of the fixed causal
+   rule, leakage checks, chronological split, cost comparator, and kill rule.
+   Do not send rows, prices, credentials, account data, or sealed labels. An
+   OAuth failure is `review_unavailable`, not a hold on this private screen.
 
 ## Work
 
-1. **Data:** define one small, deterministic D1 eligibility contract. Per
-   source partition only, require at least 60 completed D1 bars, 20 recent
-   completed D1 bars with positive volume, and a 20-bar median dollar-turnover
-   threshold of USD 10,000,000. Freeze the thresholds and source/feature
-   semantics in a source-safe external receipt; do not persist raw prices,
-   volumes, rows, or derived numeric turnover values.
-2. **Data:** use only the verified QQQ/SPY/IWM private daily catalog and the
-   verified six-symbol current NAS panel. Preserve source partitions: do not
-   align, compare, rank, or blend the ETF and NAS groups. A source-limited IWM
-   history fact remains visible rather than being repaired or excluded by
-   inference.
-3. **Engine Research:** add one pure offline consumer that receives the
-   per-instrument `eligible` or `ineligible` D1-research fact together with its
-   source partition and limitations. It must not score, rank, select a symbol,
-   fit a model, run local-paper replay, use the GPU, read credentials, call a
-   provider, or reach a broker.
-4. **Validation:** add focused tests for deterministic reattestation,
-   source-partition isolation, completed-bar-only calculations, threshold
-   boundaries, safe external outputs, no network/credential/broker access, and
-   rejection of historical-membership, ranking, Paper, or executable-liquidity
-   misuse.
+1. **Data:** consume only the ETF source partition (`QQQ`, `SPY`, `IWM`) from
+   the reattested receipt. Reopen each verified D1 stream independently; retain
+   IWM's source-limited history scope. Do not compare, rank, align, or blend
+   instruments, and do not use the current NAS basket for this control.
+2. **Engine Research:** freeze one causal, non-overlapping D1 trend-regime rule:
+   at completed session `t`, a symbol is long-eligible only when its closing
+   price is above its completed 50-session simple moving average and its
+   completed 20-session average is above its completed 50-session average.
+   Enter at `t+1` open, exit at `t+2` open, and skip a new signal while that
+   one-share local-paper position is open. Use no fitted parameters.
+3. **Validation:** use a fixed chronological 70/30 development/validation
+   boundary per ETF, with no tuning between them. Compare the exact same
+   non-overlapping cadence against an always-long local-paper comparator with
+   the existing fixed daily fee/slippage model. The fixed rule is falsified if
+   it fails to exceed its comparator after costs on every ETF validation slice.
+4. **Evidence:** write one source-safe external precommit and summary under
+   `D:\thericher-v2\model-artifacts`; retain only hashes, dates/counts,
+   aggregate metrics, categorical result, and limitations. All fills must be
+   `source: local_paper`. Do not persist raw rows, feature values, weights,
+   checkpoints, credentials, account data, or broker payloads.
 5. **Execution:** leave the installed prospective QQQ scheduler lane-owned.
-   Reattach a naturally arriving terminal receipt only; do not manually invoke
-   it and do not make it a completion condition.
+   Reattach only naturally arriving receipts; do not invoke it manually or make
+   it a completion condition.
 
 ## Boundaries
 
-- Do not call KIS, read `.env` or credentials, submit/modify/cancel an order,
-  enable live behavior, expose a public service, or download data for this goal.
-- `KIS_LIVE_*` remains unreadable and unavailable.
-- Keep market data under `D:\market_data`, generated artifacts under
-  `D:\thericher-v2\model-artifacts`, and never commit either.
-- D1 turnover is an offline data-eligibility proxy only. It does not establish
-  intraday liquidity, spread, depth, market impact, shortability, fillability,
-  historical PIT membership, a stock rank, model quality, or Paper eligibility.
+- Do not call KIS, read `.env` or credentials, download data, submit/modify/
+  cancel orders, enable live behavior, or expose a public service.
 - Do not retune, revive, ensemble, or route the falsified CACC-D1, tree,
   linear, or sequence candidates.
+- Do not use the result to rank symbols, select a model, allocate GPU work, or
+  create a Paper input. GPU stays available for a separately eligible frozen
+  campaign.
+- Market data remains under `D:\market_data`; generated artifacts remain under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; neither enters
+  Git.
 
 ## Completion
 
-- One immutable source-safe D1 eligibility receipt is externally stored and
-  reattestable from existing local sources.
-- An offline consumer preserves each source partition and the eligibility fact
-  without producing a score, action, model, replay, or broker input.
-- Every limitation remains explicit and no raw rows, price/volume values,
-  credentials, account data, order data, weights, or model artifacts persist.
-- Any scheduled QQQ evidence remains lane-owned and does not delay this goal.
+- One reattestable source-local ETF D1 precommit/summary exists externally.
+- The rule, causal timestamps, non-overlap behavior, split, costs, comparator,
+  and falsification outcome are deterministic and tested.
+- No source partition becomes a rank, model, ensemble, Paper, or live input.
+- The prospective scheduler remains independent of this objective.
 
 ## Verification
 
@@ -85,4 +79,4 @@ next company objective.
 
 ## Suggested Commit Message
 
-`Add source-partitioned D1 liquidity eligibility`
+`Add ETF D1 trend-regime baseline`

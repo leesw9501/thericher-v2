@@ -119,6 +119,14 @@ to an ensemble, or turn its result into a Paper input.
   and explicitly remains ineligible for historical membership, liquidity,
   ranking, Paper, or cross-partition alignment. It is a future input boundary,
   not a campaign or GPU eligibility claim.
+- The new source-partitioned D1 eligibility receipt has a pure Research
+  consumer that preserves the ETF and NAS groups as distinct partitions and
+  exposes only categorical per-instrument eligibility, reason codes, and
+  limitations. All current references meet the narrow data proxy, but the
+  handoff remains false for historical membership, ranking, model selection,
+  Paper, executable liquidity, and cross-partition alignment. It supplies no
+  score, action, feature, replay, model, GPU, provider, credential, or broker
+  surface.
 - The first frozen six-symbol CPU local-paper control completed with an exact
   159/1/39 chronological split, three-bar fixed momentum, one-share replay,
   fixed after-cost economics, and an `always_long` comparator. Its external
@@ -232,6 +240,10 @@ to an ensemble, or turn its result into a Paper input.
 6. Observe the first fresh runtime window as a fixed control only. Do not tune
    the decision table from that session or turn an individual Paper outcome into
    a model, ensemble, GPU, or PnL claim.
+7. The next ETF-only causal D1 control may use the new eligibility fact only as
+   an input-quality boundary. Freeze its rule, temporal split, costs, baseline,
+   and kill test before its first CPU replay; do not treat the current NAS
+   basket as a cross-sectional training or selection set.
 
 ## Durable Constraints
 
@@ -259,9 +271,10 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, and CACC-D1 falsification evidence. The next Research
-package must first freeze a causal hypothesis distinct from the completed
-20-bar-return candidates, then run only its eligible CPU/GPU work without
-treating the result as stock selection, a selected model, replay, or Paper
-input. The fresh prospective baseline remains frozen while its first Paper
-outcome is observed. Longer qualified intraday coverage becomes a separate
-campaign input rather than a rewrite of the daily evidence.
+package is an ETF-only causal D1 trend-regime control with a frozen nonoverlap
+rule, chronological split, after-cost local-paper comparator, and kill test.
+It must remain source-local, distinct from the completed 20-bar-return/CACC/
+tree candidates, and not become stock selection, a selected model, ensemble,
+GPU claim, or Paper input. The fresh prospective baseline remains frozen while
+its first Paper outcome is observed. Longer qualified intraday coverage becomes
+a separate campaign input rather than a rewrite of the daily evidence.

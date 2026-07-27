@@ -105,6 +105,14 @@ from .candidate_training import (
     parse_candidate_data_slices,
     run_bounded_candidate_training,
 )
+from .d1_research_eligibility import (
+    D1_RESEARCH_ELIGIBILITY_INPUT_ID,
+    D1ResearchEligibilityInput,
+    D1ResearchEligibilityInstrument,
+    D1ResearchEligibilityPartition,
+    build_d1_research_eligibility_input,
+    require_attested_d1_research_eligibility_input,
+)
 from .daily_campaign import (
     DAILY_CANDIDATES,
     DAILY_SYMBOLS,
@@ -428,6 +436,10 @@ __all__ = [
     "DailyThreeEtfRelativeStrengthConfig",
     "DailyThreeEtfRelativeStrengthResult",
     "DailyThreeEtfTrade",
+    "D1_RESEARCH_ELIGIBILITY_INPUT_ID",
+    "D1ResearchEligibilityInput",
+    "D1ResearchEligibilityInstrument",
+    "D1ResearchEligibilityPartition",
     "EntryQualityDiagnosticResult",
     "EntryQualityEntryFill",
     "EntryQualityTraceEntry",
@@ -494,6 +506,7 @@ __all__ = [
     "build_daily_training_batch",
     "build_candidate_training_dataset",
     "build_multi_slice_candidate_training_dataset",
+    "build_d1_research_eligibility_input",
     "build_unranked_opportunity_selection_input",
     "default_short_experiment_specs",
     "default_candidate_breadth_variants",
@@ -555,6 +568,7 @@ __all__ = [
     "run_and_write_research_job",
     "run_walk_forward_queue",
     "require_attested_unranked_opportunity_selection_input",
+    "require_attested_d1_research_eligibility_input",
     "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
     "write_gpu_candidate_smoke_artifact",

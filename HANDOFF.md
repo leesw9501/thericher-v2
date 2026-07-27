@@ -130,6 +130,14 @@ authorized private KIS Paper work.
   panel as separate source partitions and exposes nine offline unranked
   instrument references. It makes no PIT membership, liquidity, ranking,
   cross-partition alignment, model, Paper, or profitability claim.
+- The first source-partitioned D1 eligibility receipt is reattestable at
+  `D:\thericher-v2\model-artifacts\data\d1-liquidity-eligibility\v1\source.partitioned.d1.liquidity.eligibility-v1-7232c9c21c08b956.json`
+  with hash `sha256:7232c9c21c08b9564b526a34f02c109f499594a5b2a06af889b242edf2be09de`.
+  It records only a fixed 60-bar/20-bar-positive-volume/USD-10M-median-turnover
+  D1 proxy, source provenance, categorical eligibility, and limitations. The
+  ETF and NAS groups stay separate; IWM remains source-limited. The receipt
+  contains no raw rows, observed price/volume/turnover values, credentials,
+  account facts, orders, model data, ranking, or Paper authority.
 - The KIS private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions. The three-target QQQ/SPY/IWM intersection has 694 sessions;
   IWM remains source-limited at its qualified boundary.
@@ -531,10 +539,10 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. The next company objective builds a small,
-source-scoped liquid-universe manifest from existing local evidence. The fixed
-NAS daily-history collector remains terminal for its exact current-listing
-scope; do not reopen a terminal target, blend a provider, or reinterpret the
-manifest as a PIT universe. Keep Data, Research, and Execution evidence
-distinct, and let the scheduler own its session due time rather than the
-foreground.
+Follow NEXT_CODEX_GOAL.md. The next company objective runs one fixed,
+ETF-source-local D1 trend-regime falsification control from existing local
+evidence. The fixed NAS daily-history collector remains terminal for its exact
+current-listing scope; do not reopen a terminal target, blend a provider, or
+reinterpret the eligibility receipt as a PIT universe, rank, or Paper input.
+Keep Data, Research, and Execution evidence distinct, and let the scheduler own
+its session due time rather than the foreground.

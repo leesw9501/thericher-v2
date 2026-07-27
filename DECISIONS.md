@@ -6324,3 +6324,29 @@ compact contract makes the usable boundary explicit without creating a new
 data collection or approval workflow. Claude's source-safe falsification
 request could not authenticate because local OAuth was expired, so the review
 status is `review_unavailable` rather than external support or a work hold.
+
+## 2026-07-27 - Add source-partitioned D1 research eligibility
+
+Decision: create one immutable, externally stored D1 eligibility receipt from
+the reattested QQQ/SPY/IWM private daily index and frozen six-symbol current NAS
+panel. Each instrument independently requires at least 60 completed D1 bars,
+20 recent completed bars with positive volume, and a recent 20-bar median
+dollar-turnover proxy at or above USD 10,000,000. The active receipt is
+`sha256:7232c9c21c08b9564b526a34f02c109f499594a5b2a06af889b242edf2be09de`
+under `D:\thericher-v2\model-artifacts\data\d1-liquidity-eligibility\v1`.
+
+The receipt and its pure Research handoff preserve the ETF and NAS source
+partitions, source hashes, categorical eligibility, reason codes, and inherited
+limitations only. They persist no raw row, observed price, volume, observed
+turnover, credential, account, order, model, replay, or GPU data. All nine
+current references meet this narrow data proxy, while IWM retains its
+source-limited history limitation. Historical membership, ranking, model
+selection, Paper, executable liquidity, and cross-partition alignment remain
+false.
+
+Reason: the retained local data can now support one source-local causal control
+without pretending that current listing coverage or daily turnover establishes a
+cross-sectional universe, actual liquidity, or broker readiness. Claude's
+credential-free interpretation request again could not authenticate because the
+local OAuth session was expired; that `review_unavailable` result does not hold
+the completed private offline work.

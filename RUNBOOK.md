@@ -1439,6 +1439,24 @@ never source rows, symbols, dates, OHLCV, feature values, labels, prices, PnL,
 or broker data. A qualified result is development-only, not model, GPU,
 campaign, Paper, or live authority.
 
+### Source-Partitioned D1 Eligibility
+
+To recompute and reattest the current source-partitioned D1 eligibility receipt,
+run:
+
+```powershell
+uv run python scripts\materialize_source_partitioned_d1_liquidity_eligibility.py
+```
+
+It first reattests the source-scoped universe, then reads each ETF stream
+independently and the frozen NAS panel separately. It writes or reuses the
+canonical external receipt under
+`D:\thericher-v2\model-artifacts\data\d1-liquidity-eligibility\v1`. The
+receipt stores only source hashes, fixed thresholds, categorical eligibility,
+and limitations. It performs no KIS call, credential read, network access,
+broker action, model fit, or GPU work. The narrow D1 proxy is not a claim about
+intraday liquidity, ranking, model quality, fillability, or Paper eligibility.
+
 ## Legacy Evidence
 
 Terminal metadata-only KIS probe/capacity-map scripts have been removed from

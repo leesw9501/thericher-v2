@@ -79,6 +79,15 @@ The fresh head scheduler continues to own prospective session collection.
   preserving their two source partitions. It asserts no historical membership,
   ranking, Paper, liquidity, or cross-partition-alignment eligibility and does
   not read raw bars, credentials, or a provider.
+- The first source-partitioned D1 eligibility receipt is reattestable at
+  `D:\thericher-v2\model-artifacts\data\d1-liquidity-eligibility\v1\source.partitioned.d1.liquidity.eligibility-v1-7232c9c21c08b956.json`
+  with hash `sha256:7232c9c21c08b9564b526a34f02c109f499594a5b2a06af889b242edf2be09de`.
+  It independently evaluated the ETF and NAS source partitions after universe
+  reattestation. All nine current references meet only its fixed 60-completed-
+  bar, recent-positive-volume, and median-turnover research-eligibility proxy.
+  It retains IWM's `source_limited_history_scope`, stores no observed price,
+  volume, row, or turnover value, and makes no ranking, model, executable-
+  liquidity, or Paper claim.
 - The private daily cache has a QQQ/SPY common historical intersection of
   4,756 sessions and a QQQ/SPY/IWM intersection of 694 sessions. IWM is
   source-limited at its qualified bad-row boundary.
@@ -242,6 +251,10 @@ The fresh head scheduler continues to own prospective session collection.
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
    universe, liquidity claim, stock ranking, or Paper use.
+6. Preserve the completed D1 eligibility receipt as a source-local data fact.
+   A later ETF-only causal control may consume it per instrument, but must not
+   align or blend it with the current NAS panel or reinterpret it as executable
+   liquidity.
 
 ## Collection Progress Projection
 
@@ -332,4 +345,6 @@ QQQ/NAS and SPY/AMS prior-day probes do not support cursor collection; any
 later historical-minute attempt needs a separate endpoint or provider contract.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
-result.
+result. The D1 eligibility receipt is complete for its exact two-source scope;
+the next ETF-only Research control must consume the retained bars independently
+and preserve IWM's source-limited limitation.

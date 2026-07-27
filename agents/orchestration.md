@@ -8,11 +8,13 @@ second goal.
 
 - **Data:** the installed prospective scheduler owns its next due time and its
   own current-head collection. Its receipt is asynchronously reattached when it
-  exists; no foreground task waits for it. The current-source-scoped D1
-  universe contract is complete and externally reattestable.
+  exists; no foreground task waits for it. The source-scoped D1 universe and
+  source-partitioned D1 eligibility receipt are complete and externally
+  reattestable.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
-  screen are closed as falsified evidence. CACC-D1 ran CPU-only against existing
-  folds and did not consume GPU, KIS, credentials, or a broker resource.
+  screen are closed as falsified evidence. The next ready package is one
+  source-local ETF D1 trend-regime control, not a rank, ensemble, or Paper
+  decision.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -22,37 +24,11 @@ second goal.
   the exclusive GPU. D: has about 40 percent free space, above the 20/15
   percent warning/floor policy.
 
-## Blocked-Goal Alternatives
-
-- **Classification:** `redirected`; the prior company objective depended on a
-  future scheduler receipt, an external clock rather than an active company
-  package.
-- **Original plan:** wait for a later fresh prospective QQQ receipt and attach
-  it before closing the company objective.
-- **Execution package:** complete. The schedule script, Compose contract, task
-  installation, and focused tests now prove a single session/validator/terminal
-  chain with prebuilt images and conditional observation.
-- **Research package:** complete. CACC-D1 produced a reproducible offline CPU
-  result and was falsified by its fixed fold-local kill rule, not promoted.
-- **Data package:** let the installed scheduler collect when due and reattach
-  only its natural receipt. It owns the cache and source-safe receipt chain;
-  completion evidence is a new terminal receipt or its target-local recovery,
-  neither of which gates the other packages.
-- **Strongest kill tests:** any accidental second decision computation, runtime
-  image build, pair-less observer launch, KIS/credential access from CACC, or
-  changed CACC fold/cost/baseline contract rejects its named package.
-- **Claude challenge:** requested on 2026-07-28 with route and governance facts
-  only; local OAuth was expired, so it is `review_unavailable`. This cannot
-  authorize a reserved action and does not hold the dispatched private work.
-- **Recovery:** an unavailable scheduled receipt is lane-local; resume its own
-  task when due while the route and research packages continue.
-
 ## Current Bottleneck
 
-The route bottleneck is resolved. The next material evidence gap is a first
-causal opportunity-selection eligibility rule that can consume the new
-source-partitioned universe without turning current membership, D1 coverage,
-or unqualified liquidity into a cross-sectional rank or Paper input.
+The next material evidence gap is a first causal ETF-only D1 control that uses
+the completed eligibility fact without converting current membership or D1
+turnover into a cross-sectional rank, model promotion, or Paper input.
 
 ## External Waits
 
@@ -62,13 +38,14 @@ or unqualified liquidity into a cross-sectional rank or Paper input.
 
 ## Recovery
 
-The daily historical caches, fixed cross-fold screens, local-paper replay, and
-prospective QQQ route are complete for their exact scopes. Reattest a cache,
-campaign contract, or exact Paper intent before relying on it; scope a failure
-to that item and keep independent packages moving.
+The daily historical caches, D1 eligibility receipt, fixed cross-fold screens,
+local-paper replay, and prospective QQQ route are complete for their exact
+scopes. Reattest a cache, receipt, campaign contract, or exact Paper intent
+before relying on it; scope a failure to that item and keep independent packages
+moving.
 
 ## Next Handoff
 
-Advance a bounded Data-owned liquid-universe contract next. Preserve the
+Advance the bounded ETF-only D1 trend-regime control next. Preserve the
 prospective QQQ schedule as lane-owned asynchronous work; reattach only a
 genuinely new receipt while its scheduler owns the next due time.
