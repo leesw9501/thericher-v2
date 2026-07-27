@@ -772,13 +772,15 @@ change, use the scoped installer selector:
 
 ```powershell
 .\scripts\install_kis_paper_schedules.ps1 `
-  -ScheduleName thericher-kis-paper-intraday-head
+  -ScheduleName thericher-kis-paper-intraday-head `
+  -RequireExisting
 ```
 
 It validates the name before invoking Docker, rebuilds only the selected task's
 local services, and updates only that task definition; it does not run the
-service. Confirm the task exists first and use `-WhatIf` when reviewing the
-scope. Leaving out `-ScheduleName` retains the installer's all-task behavior.
+service. `-RequireExisting` fails before the build when a selected task is not
+already registered. Use `-WhatIf` when reviewing the scope. Leaving out
+`-ScheduleName` retains the installer's all-task behavior.
 
 The same named task dispatches the credential-bearing data collector, one
 virtual-only `kis-paper-prospective-qqq-session`, the offline

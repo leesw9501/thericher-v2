@@ -1,7 +1,8 @@
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "Medium")]
 param(
     [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
-    [string[]]$ScheduleName = @()
+    [string[]]$ScheduleName = @(),
+    [switch]$RequireExisting
 )
 
 $ErrorActionPreference = "Stop"
@@ -136,6 +137,19 @@ if ($ScheduleName.Count -gt 0) {
     $selectedSchedules = @(
         $schedules | Where-Object { $_.Name -in $requestedNames }
     )
+}
+
+if ($RequireExisting) {
+    $missingNames = @(
+        $selectedSchedules |
+            Where-Object {
+                $null -eq (Get-ScheduledTask -TaskName $_.Name -ErrorAction SilentlyContinue)
+            } |
+            ForEach-Object { [string]$_.Name }
+    )
+    if ($missingNames.Count -gt 0) {
+        throw "Required existing scheduled task is missing: $($missingNames -join ', ')"
+    }
 }
 
 Write-Host "Installing local Docker schedules for: $($selectedSchedules.Name -join ', ')"

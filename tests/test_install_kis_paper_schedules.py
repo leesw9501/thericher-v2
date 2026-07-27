@@ -42,9 +42,15 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '[string]$ProjectRoot = (Join-Path $PSScriptRoot "..")' in source
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "[string[]]$ScheduleName = @()" in source
+    assert "[switch]$RequireExisting" in source
     assert "$requestedNames = @($ScheduleName | Select-Object -Unique)" in source
     assert "Unknown local Docker schedule name(s)" in source
     assert "$selectedSchedules = @(\n        $schedules | Where-Object" in source
+    assert "Get-ScheduledTask -TaskName $_.Name -ErrorAction SilentlyContinue" in source
+    assert "Required existing scheduled task is missing" in source
+    assert source.index("Required existing scheduled task is missing") < source.index(
+        "Build-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot"
+    )
     assert "-Schedules $selectedSchedules" in source
     assert "foreach ($schedule in $selectedSchedules)" in source
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
