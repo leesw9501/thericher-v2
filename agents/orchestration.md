@@ -7,11 +7,12 @@ second goal.
 ## Current Cross-Lane View
 
 - **Data:** the installed prospective scheduler owns its next due time and its
-  own current-head collection. The 19:22Z clean capture remains completed
-  evidence, but the 19:31Z scheduled run found a later retained-cache conflict.
-  Its exact immutable markers are preserved and the current head cache is
-  `reconcile`; the rebuilt image will not infer a legacy unscoped page as a
-  quarantine-eligible head snapshot. The source-scoped D1 universe and
+  own current-head collection. The rebuilt route recovered a clean 19:48Z
+  QQQ/SPY head capture after the earlier exact conflict: generation 22 has
+  seven retained chunks and two exact markers per target, explicit `head` or
+  legacy scope only, and no current conflict origin or reason. The QQQ route
+  truthfully returned `no_intent/runtime_window_stale` for the 19:40Z completed
+  window observed at 19:48:57Z. The source-scoped D1 universe and
   source-partitioned D1 eligibility receipt are complete and externally
   reattestable.
 - **Engine Research:** the fixed D1 pair, histogram-gradient tree, and CACC-D1
@@ -29,12 +30,12 @@ second goal.
 
 ## Current Bottleneck
 
-The next material evidence gap is a clean current-head capture plus a bounded
-calibration of the KIS freshness budget. The completed 19:22:46Z QQQ route had
-a 19:20Z last completed bar and correctly returned `runtime_window_stale` under
-its fixed two-minute budget; the later 19:31Z route had only a 15:30Z active
-window after its scoped cache conflict. This remains independent of the
-completed ETF control and every model claim; it must not force a Paper order.
+The next material evidence gap is a source-safe, centralized current-freshness
+contract with deterministic boundaries and more regular-session observations.
+The completed 19:22:46Z and 19:48:57Z QQQ routes were both correctly stale
+under the fixed two-minute budget. That is not enough evidence to widen the
+budget, and it remains independent of the completed ETF control and every
+model claim; it must not force a Paper order.
 
 ## External Waits
 
@@ -46,18 +47,17 @@ completed ETF control and every model claim; it must not force a Paper order.
 ## Recovery
 
 The daily historical caches, D1 eligibility receipt, fixed cross-fold screens,
-local-paper replay, and the 19:22Z prospective QQQ terminal receipt are
-complete for their exact scopes. The current head cache is `reconcile`: old
-snapshot bytes stay immutable on D:, exact quarantine identity prevents their
-orphan reactivation, and the next clean page may create a persisted `head`
-snapshot. A historical or legacy unscoped terminal page cannot be quarantined
-by caller convention. Reattest a cache, receipt, campaign contract, or exact
-Paper intent before relying on it; scope a failure to that item and keep
-independent packages moving.
+local-paper replay, and 19:22Z/19:48Z prospective QQQ terminal receipts are
+complete for their exact scopes. The current head cache has recovered; old
+snapshot bytes and exact markers remain immutable on D:, and a historical or
+legacy unscoped terminal page still cannot be quarantined by caller convention.
+Reattest a cache, receipt, campaign contract, or exact Paper intent before
+relying on it; scope a failure to that item and keep independent packages
+moving.
 
 ## Next Handoff
 
-Recover one clean current head page, then calibrate runtime freshness from
-source-safe timestamps and its bounded schedule receipt. Preserve the
-prospective scheduler as lane-owned asynchronous work; do not turn a stale or
-conflicted classification into an approval, order, or global wait.
+Complete the source-safe runtime-freshness contract and its deterministic
+boundaries, then let the lane-owned schedule add regular-session evidence.
+Preserve the prospective scheduler as asynchronous work; do not turn a stale
+or conflicted classification into an approval, order, or global wait.

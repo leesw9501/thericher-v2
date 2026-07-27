@@ -112,6 +112,11 @@ Codex is the product-development lead and integrator.
   blocking fact, original plan, and two to four ready alternative packages.
   Each package names its owner, resource, intended engineering approach,
   bounded completion evidence, strongest kill test, and next recovery action.
+  First run the bounded Throughput Review to establish that this is a company
+  block rather than an undispatched ready package. Claude's challenge tests
+  whether the block is misclassified, whether each alternative still advances
+  the named company outcome, and whether a proposed recovery crosses an
+  authority boundary.
   For an apparent operator decision, the same compact record also states the
   options, Codex recommendation, and exact authority boundary. Ask Claude for
   a concise falsification-first challenge of that record, then immediately
@@ -127,6 +132,9 @@ Codex is the product-development lead and integrator.
   commitments, unclear rights, public exposure, major runtime replacement,
   `KIS_LIVE_*`, live capital, and material live-risk changes still require an
   explicit operator decision with the compact options and recommendation.
+  For one of those genuinely reserved decisions, Codex/Claude agreement yields
+  one recommended direction and any separately safe preparation; it never
+  authorizes the reserved action itself.
 - Separate fast feedback from authoritative verification. Focused, independent
   test groups may run concurrently only after their test artifacts, control
   roots, Docker services, and mutable environment are known not to conflict.

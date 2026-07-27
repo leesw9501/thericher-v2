@@ -48,13 +48,17 @@ authorized private KIS Paper work.
 - A material company-goal block gets one compact alternatives record in the
   existing orchestration board: exact stop fact, original plan, and ready
   packages with owner, resource, engineering approach, completion evidence,
-  strongest kill test, and recovery action. An apparent operator decision also
-  records options, Codex's recommendation, and its exact authority boundary.
-  Claude reviews that record when available; an expired CLI session is
+  strongest kill test, and recovery action. First run the bounded Throughput
+  Review to prove that no undispatched ready package remains. An apparent
+  operator decision also records options, Codex's recommendation, and its
+  exact authority boundary. Claude challenges whether the block is real,
+  whether the alternative packages still advance the company outcome, and
+  whether the recommendation crosses that boundary. An expired CLI session is
   `review_unavailable`, not a new wait. Codex immediately advances every
   non-conflicting package inside standing authority. Claude/Codex agreement
-  resolves only an already-delegated reversible no-cost choice; it never grants
-  reserved live, paid, unclear-rights, public, or major-runtime authority.
+  resolves only an already-delegated reversible no-cost choice; for a reserved
+  live, paid, unclear-rights, public, or major-runtime choice it produces one
+  recommendation and safe preparation, never the authorization itself.
 - A timer, cooldown, or scheduled due time belongs to its owning worker. Codex
   advances every other ready lane rather than foreground-waiting.
 - A company objective may have several disjoint role-owned packages. The

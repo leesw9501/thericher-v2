@@ -6417,3 +6417,31 @@ review challenged that risk; its focused tests passed. Claude's source-safe
 recovery challenge could not authenticate because the local OAuth session is
 expired, so its verdict is `review_unavailable`, not a stop on this reversible
 private recovery.
+
+## 2026-07-27 - Make blocked-goal recovery a falsifiable dispatch decision
+
+Decision: before declaring a company objective materially blocked, Codex runs
+the bounded Throughput Review to verify that no ready, non-conflicting package
+was simply left undispatched. The resulting compact `blocked-goal alternatives`
+record in `agents/orchestration.md` keeps the exact blocking fact and original
+plan, then names two to four concrete role-owned alternatives with resource,
+engineering approach, completion evidence, strongest kill test, and recovery
+action. Claude's falsification-first review tests the classification of the
+block, whether each alternative advances the named company outcome, and whether
+the proposed recovery crosses a reserved authority boundary.
+
+For an already-delegated reversible, no-cost choice, Codex may act only when
+its conclusion and Claude's successful `supported-with-limits` conclusion
+agree. For a true operator-authority decision, the same analysis produces one
+recommended direction and a list of independently safe preparation work; it
+does not self-authorize paid commitments, unclear rights, public exposure,
+major runtime replacement, `KIS_LIVE_*`, live capital, or material live-risk
+changes. `review_unavailable` records a Claude tooling fault only and never
+turns an external wait into a company-wide hold.
+
+Reason: autonomous long-running work needs a concrete recovery path when a
+goal's original route fails, while the operator must retain the few decisions
+that genuinely change business, external, or live-risk authority. This keeps
+alternative work product-oriented rather than growing a separate report or
+approval system. Claude received the source-safe challenge for this refinement,
+but the local CLI OAuth session was expired, so no verdict was available.
