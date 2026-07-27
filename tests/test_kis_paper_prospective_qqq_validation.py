@@ -265,7 +265,7 @@ def test_compose_validation_service_is_offline_and_has_no_kis_credential_surface
     compose = _COMPOSE.read_text(encoding="ascii")
     section = compose.split(
         "\n  kis-paper-prospective-qqq-validation:\n", maxsplit=1
-    )[1].split("\n  kis-paper-receipt-observer:\n", maxsplit=1)[0]
+    )[1].split("\n  kis-paper-intraday-head-receipt:\n", maxsplit=1)[0]
     lowered = section.lower()
 
     assert 'profiles: ["kis-paper-intraday-head"]' in section

@@ -15,9 +15,10 @@ reason to tune the fixed baseline from the observed session.
 1. Run `./scripts/start_next_codex_task.ps1`.
 2. Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`,
    `RUNBOOK.md`, and all active stateboards.
-3. Reattach the intraday-head schedule, its latest source-safe outputs, the
-   exact prospective-validation artifact, prospective local-paper evidence,
-   and any exact QQQ canary state. Do not print private data.
+3. Reattach the intraday-head schedule, its terminal source-safe dispatch
+   receipt, latest source-safe outputs, exact prospective-validation artifact,
+   prospective local-paper evidence, and any exact QQQ canary state. Do not
+   print private data.
 4. Retry Claude only for the required concise falsification-first review of a
    fresh-result interpretation or an exact canary recovery boundary. An OAuth
    failure is `review_unavailable`, not a hold on routine authorized work.
@@ -70,6 +71,8 @@ reason to tune the fixed baseline from the observed session.
   its target-local technical no-intent/recovery fact is durable and safe.
 - The matching external validator artifact independently reattests the exact
   session cache/window lineage and safe local-paper/canary envelope.
+- The matching terminal schedule receipt distinguishes a complete no-intent
+  from a required downstream technical recovery without exposing private data.
 - Stateboards, handoff, and the next objective accurately distinguish the
   current result from a model or PnL claim.
 

@@ -34,7 +34,9 @@ The bounded prospective QQQ runtime selector is now ready: it consumes only a
 verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
 minute window or a precise source-status fact. It does not require a 390-minute
 coverage session, open a provider, read credentials, or make an execution
-decision.
+decision. Its existing scheduled chain now finishes with an external
+source-safe dispatch receipt, so a collection success cannot conceal a required
+downstream runtime/validation fault from the task result.
 
 ## Current Facts
 
@@ -194,7 +196,8 @@ decision.
 2. At the next due head run, retain the Data-owned capture scope and publish
    the exact fresh 90-minute QQQ/NAS window or its source-status fact. A missing
    window yields its own no-decision evidence; it does not revive the terminal
-   daily-history cache or hold another lane.
+   daily-history cache or hold another lane. Reattach its terminal dispatch
+   receipt before treating a Task Scheduler result as complete.
 
 ## Collection Progress Projection
 

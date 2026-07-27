@@ -6047,3 +6047,32 @@ block this offline, non-authority-changing improvement.
 Reason: automatic independent re-computation closes the evidence gap between a
 scheduled session and later operator/Codex reattachment without widening KIS,
 Paper, or live behavior.
+
+## 2026-07-27 - Preserve scheduled QQQ downstream recovery evidence
+
+Decision: keep the existing named intraday-head task and its collection-first
+order, but append one network-disabled, credential-free terminal receipt writer
+after the prospective loop, QQQ session, offline validator, and legacy
+observer. The external receipt retains only each stage's exit/status category,
+safe session ID, and one target-local recovery class. Collection retains its
+own nonzero exit code. After a successful collection, a nonzero or missing safe
+payload from the required loop, QQQ session, or validator returns the fixed
+task recovery code `20`; a failed terminal writer returns `21`. A validated
+`no_intent` is normal task success. The older pair-bound observer remains
+recorded but optional for this QQQ runtime cycle.
+
+The kill cases are a downstream Docker or Python failure appearing as a
+successful Windows task, a successful-but-malformed payload bypassing exact
+validation evidence, a terminal receipt recording raw rows, credentials,
+account facts, or broker order data, or an optional legacy observer blocking a
+fresh QQQ result. Focused tests cover collection-code precedence, required
+stage exit and unavailable-status recovery, session-ID mismatch,
+optional-observer behavior, outside-Git storage, scheduler wiring, and the
+network-disabled Compose boundary. The required concise Claude recovery
+drift-check was attempted, but local OAuth refresh failed; no private data was
+sent.
+
+Reason: Task Scheduler is an operational recovery signal only when it cannot
+silently hide a required stage failure. This improves reattachment of the
+active QQQ execution-learning loop without widening KIS, Paper, live, cadence,
+capital, or authorization behavior.

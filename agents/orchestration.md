@@ -116,10 +116,11 @@ probe, panel, or ETF catalog.
 
 The next material bottleneck is a fresh, KIS-compatible prospective QQQ
 completed-bar window. Its baseline contract, local replay, QQQ/NASD position
-resolution, receipt-canary route, and independent exact-session validator are
-already integrated. The GPU is free but no new GPU job is eligible from the
-falsified pair. The Claude OAuth outage is scoped to reliance, promotion, and
-execution boundaries; it does not require another ready private lane to wait.
+resolution, receipt-canary route, independent exact-session validator, and
+source-safe terminal scheduler receipt are already integrated. The GPU is free
+but no new GPU job is eligible from the falsified pair. The Claude OAuth outage
+is scoped to reliance, promotion, and execution boundaries; it does not require
+another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -141,8 +142,8 @@ remains coverage-only and cannot delay another lane.
 ## External Waits
 
 - The scheduled intraday head owns the next fresh QQQ window. Its chained
-  offline loop and target-local Paper session do not hold Data, Research, or
-  Execution while it is not due.
+  offline loop, target-local Paper session, and terminal receipt do not hold
+  Data, Research, or Execution while it is not due.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
 - No daily-history worker is active and its terminal cache has no next due. The

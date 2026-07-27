@@ -49,6 +49,10 @@ eligible runtime receipt. KIS Live remains unavailable.
   `local_paper` state, including replay recovery and `source: local_paper`.
   Its separate virtual session uses the same verified cache evidence only for a
   current `enter` or `exit` receipt.
+- The existing intraday-head dispatcher now writes one source-safe terminal
+  receipt after its loop/session/validator chain. It contains only stage
+  categories and safe session IDs. A required technical fault is task recovery,
+  not a new broker retry, approval gate, or replacement-intent path.
 - QQQ/NASD one-share position resolution is now explicit: a fresh flat account
   permits only a buy, a fresh one-share QQQ/NASD account permits only a sell,
   and an incompatible position or QQQ open order is a target-local no-intent.
@@ -131,7 +135,8 @@ eligible runtime receipt. KIS Live remains unavailable.
 4. At the next fresh QQQ runtime receipt, let the existing receipt canary own
    its exact persisted intent and cancellation/reconciliation lifecycle. A
    no-intent outcome remains scoped to that target and does not require an
-   operator release.
+   operator release. Reattach the matching terminal dispatch receipt before
+   interpreting the scheduled session as complete.
 
 ## Durable Constraints
 

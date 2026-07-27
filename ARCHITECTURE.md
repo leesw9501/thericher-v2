@@ -287,6 +287,17 @@ writes one source-safe external artifact. It cannot construct a KIS client,
 read a credential, mutate local-paper state, or turn a stale/no-intent fact
 into a Paper action.
 
+After those required QQQ stages, the existing host dispatcher invokes one more
+network-disabled receipt writer. It persists only stage exit/status categories,
+safe session IDs, and a target-local recovery class outside Git. A collection
+failure keeps its own exit code; after a successful collection, a required
+loop/session/validator fault or missing safe payload returns the fixed recovery
+code `20`, while a failed receipt writer returns `21`. A normal validated
+`no_intent` remains task success. The older pair-bound observer is recorded but
+optional for this QQQ cycle, so its failure cannot hide or replace the exact
+QQQ result. This receipt is scheduler observability, not a data-quality gate,
+model outcome, broker action, or authorization control.
+
 ### Receipt-Linked Paper Observation
 
 `execution.kis_paper_receipt_observer` is a separate read-only path for one

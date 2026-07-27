@@ -151,7 +151,11 @@ authorized private KIS Paper work.
   `session-capture` mode and runs at 00:31, 02:31, 04:31, and 06:20 KST. After
   collection it runs a network-disabled prospective QQQ loop, an exact
   virtual-only QQQ session when a receipt is eligible, an offline exact-session
-  validator, and the older isolated observer. The 90-minute runtime selector
+  validator, the older isolated observer, and a source-safe terminal dispatch
+  receipt. The receipt records only stage categories and safe session IDs under
+  the external artifact root. It preserves a collection failure code and exposes
+  a required downstream fault as task recovery (`20`) rather than a false task
+  success; the older observer remains optional. The 90-minute runtime selector
   is distinct from the 390-minute coverage observer. Its first prior-session
   smoke was correctly `stale` and did not construct account, quote, or order
   clients; the new Docker validator independently recomputed that same stale
@@ -473,8 +477,9 @@ ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 throughput-governance, capture/profile integration, prospective-QQQ route,
 daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
-target-semantics, all candidate-only screen checks, the E3 input-contract, and
-the fixed cross-fold falsification check; no private material was sent. This is
+target-semantics, all candidate-only screen checks, the E3 input-contract, the
+fixed cross-fold falsification check, and terminal scheduled recovery; no
+private material was sent. This is
 a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery

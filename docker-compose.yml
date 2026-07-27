@@ -442,6 +442,27 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-intraday-head-receipt:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-head"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - -m
+      - thericher_v2.ops.kis_paper_intraday_head_schedule_receipt
+      - --help
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-receipt-observer:
     build:
       context: .

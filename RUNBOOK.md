@@ -733,12 +733,13 @@ limit, below its shortest 109-minute trigger gap. Do not manually start a
 duplicate run to compensate for a missed window; inspect the task result and
 use the existing owned recovery path.
 
-The same named task dispatches five sequential services in the same
+The same named task dispatches six sequential services in the same
 `kis-paper-intraday-head` Docker profile: the credential-bearing data
 collector, the offline `kis-paper-prospective-loop`, the virtual-only
 `kis-paper-prospective-qqq-session`, the offline
 `kis-paper-prospective-qqq-validation`, and the older pair-bound
-`kis-paper-intraday-observation`. The prospective loop is CPU-only,
+`kis-paper-intraday-observation`, followed by a network-disabled terminal
+schedule receipt writer. The prospective loop is CPU-only,
 `network_mode: none`, read-only, and receives no KIS environment values. It
 creates only a source-safe baseline/receipt and `local_paper` replay. The QQQ
 session recomputes that verified cache input and reads KIS Paper credentials,
@@ -748,9 +749,14 @@ offline and pending until its verified pair exists. The Validation service
 receives the exact QQQ execution-session ID, re-loads the local cache at the
 recorded timestamp, and writes an external source-safe validation artifact. It
 has no network or KIS environment values and cannot modify replay or broker
-state. The dispatcher preserves the collector exit code, so a downstream
-no-intent or fault cannot rewrite Data freshness or hide an incomplete target
-result.
+state. The terminal writer receives only allowlisted stage exit/status values
+and safe session IDs; it persists one external source-safe dispatch receipt.
+The dispatcher preserves a nonzero collector code. Once collection succeeds,
+an unavailable or nonzero required loop/session/validator stage exits `20`, and
+an unavailable receipt writer exits `21`; a fully validated `no_intent` still
+exits `0`. The older observer remains optional for this QQQ cycle. These are
+technical recovery signals, never a Paper authority, data-quality, or manual
+approval gate.
 
 ### Bounded Session Capture
 
