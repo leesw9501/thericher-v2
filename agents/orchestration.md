@@ -106,11 +106,11 @@ complete. The material bottleneck is now useful daily coverage for the fixed
 six-symbol NAS registry: its existing probe demonstrates only two accepted
 pages per symbol and must not be mistaken for a historical universe or training
 panel. The distinct resumable-cache implementation is locally focused-tested;
-temporary Validation found two P1 correctness defects (valid empty terminal
-pages and non-advancing cursors) plus an execution-root containment gap. Repair
-and regression-test those Data-local defects before the isolated Compose-profile
-review and first real collection cycle. This is technical correctness, not an
-operator approval or company-wide wait.
+the empty-terminal, non-advancing-cursor, orphan-recovery, route-proof, and
+canonical-root corrections passed independent Validation. Its first real cycle
+and first owned due-time resume wrote separate source-safe receipts and advanced
+the dedicated cursors without touching the legacy probe, panel, or ETF catalog.
+The active bounded resume owns the remaining current collection work.
 
 The GPU is free, but no new GPU job is eligible from the falsified pair. A new
 Research campaign needs its own frozen hypothesis and input contract. The
@@ -135,9 +135,9 @@ inventing a daily quota, foreground sleep, or second goal.
   worker implementation, historical evidence preservation, or Execution.
 - Claude CLI OAuth is expired. Retry it at the next material decision boundary;
   do not block ordinary private work.
-- The first daily-history run is intentionally not due until its recorded
-  terminal/non-progress/root-containment fixes pass. That scoped preflight does
-  not hold independent Data, Research, or Execution work.
+- The active daily-history resume may yield at its own source-safe retry or
+  token-start due time. It does not hold Research, Execution, verification, or
+  a later owned continuation worker.
 
 ## Recovery
 
@@ -150,9 +150,9 @@ independent lanes.
 
 ## Next Handoff
 
-Repair the recorded Data-local daily-history terminal, cursor-progress, and
-execution-root issues, then build and run the first resumable collector for the
-fixed NAS six-symbol registry. Do not treat its current listing or raw cache as
-a PIT universe, selected model, replay result, or Paper order input. Record
-only an actual shared resource conflict, new external wait, bottleneck, or
-reversible operating improvement here.
+Reattach the active daily-history index and latest receipt after its bounded
+worker exits, then keep eligible cursor work owned by its `next_due` rather
+than foreground waiting. Do not treat the current listing or raw cache as a PIT
+universe, selected model, replay result, or Paper order input. Record only an
+actual shared resource conflict, new external wait, bottleneck, or reversible
+operating improvement here.

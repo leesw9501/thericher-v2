@@ -207,6 +207,37 @@ The worker then continues another ready target; this is neither a Paper-order
 hold nor a global collection stop. A different endpoint, cursor, or
 evidence-backed parser contract starts a new bounded source scope.
 
+## KIS Fixed NAS Daily History
+
+The current-listing six-symbol history cache is separate from the ETF catalog,
+probe, and frozen panel:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-nas-history\v1
+D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-history-v1
+```
+
+Run only its dedicated Data-only Compose profile. Do not use host `--execute`
+paths or override its four canonical container roots:
+
+```powershell
+docker compose --profile kis-paper-daily-history run --rm --no-deps `
+  kis-paper-daily-history
+```
+
+The profile mounts only the dedicated cache, shared collection-control root, and
+dedicated artifact root. It injects only `KIS_PAPER_APP_KEY` and
+`KIS_PAPER_APP_SECRET` with `THERICHER_MODE=off`; it never receives account or
+live values. The collector permits only the KIS Paper token POST and its fixed
+NAS daily-price GET route.
+
+Before relying on a run, reattach the source-safe index/receipt rather than
+assuming a prior console output is current. Empty terminal pages produce no raw
+snapshot; non-advancing cursors stop only that target before duplicate storage;
+valid orphan snapshots are recovered before a new request. The worker's shared
+retry/token due belongs to the worker or a goal-owned continuation, never to a
+foreground Codex sleep or a different lane.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

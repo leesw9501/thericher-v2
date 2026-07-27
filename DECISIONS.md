@@ -5892,3 +5892,32 @@ provenance and capability fields, leaving `/state` unable to prove that a
 visible Paper account fact was from the virtual read-only path. The correction
 is a narrow dashboard serialization fix, does not call KIS, and does not add an
 order, account, or public-service route.
+
+## 2026-07-27 - Isolate the resumable fixed-NAS KIS Paper daily-history cache
+
+Decision: create a dedicated `kis-paper-daily-history` Compose profile and
+Data-only collector for the fixed current `AAPL`, `AMZN`, `GOOGL`, `META`,
+`MSFT`, and `NVDA` NAS registry. It uses one in-memory client/token per bounded
+worker, the existing 1.0-second shared request-start gate, a separate D: raw
+cache and cursor index, and an external source-safe receipt root. Its credential
+execution roots are fixed to the three dedicated Compose mounts and `/app`; the
+profile receives only the two KIS Paper app variables, has a read-only root and
+`/tmp` tmpfs, and cannot route account, position, quote, order, or live calls.
+
+A valid empty terminal page becomes a `source_limited` state with no raw
+snapshot. A non-advancing cursor becomes a scoped source-limited result before
+snapshot publication, while an interrupted valid orphan is reverified and
+recovered. The first three real cycles accepted 13, 50, and 69 pages at
+observed 27.158, 32.664, and 27.962 pages/minute; index generation 67 retained
+132 accepted pages and three categorical limits with all six cursors at
+`20171120`. Every result is source-scoped only: the registry remains current,
+not point-in-time, and cannot become a model, ranking, replay, PnL, or Paper
+decision input.
+
+Reason: the original two-page capability probe proved usable continuation but
+not durable historical coverage. The isolated collector creates a recoverable
+coverage loop without widening the generic ETF route, mutating legacy caches,
+or treating a rate response as an authority hold. Claude's required concise
+collector/profile challenge was attempted without private material but OAuth was
+unavailable; independent Execution and Validation passed route, mount,
+redaction, terminal, cursor, orphan, and root-containment checks.

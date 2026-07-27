@@ -409,6 +409,19 @@ authorized private KIS Paper work.
   remains current-head evidence, not permission to invent a historical cursor.
   Data collection may continue while Research and Execution advance independent
   ready work.
+- The new fixed NAS six-symbol daily-history collector is isolated at
+  `D:\\market_data\\us_equities\\kis_paper_private\\daily-nas-history\\v1`,
+  with source-safe receipts under
+  `D:\\thericher-v2\\model-artifacts\\data\\kis-paper-daily-nas-history-v1`.
+  Its first three real cycles accepted 13, 50, and 69 pages at observed pace
+  27.158, 32.664, and 27.962 pages/minute. The latest completed index projection
+  is generation 67 with 132 accepted pages, three categorical rate limits, and
+  all six cursors at `20171120`; each cycle wrote a separate source-safe
+  receipt. The cache has durable per-symbol cursors and retains raw rows only on
+  D:. Empty-terminal, non-progress, orphan-recovery, exact route, and
+  canonical-root regressions passed independent Validation before the first
+  call. A scheduled bounded resume owns the next receipt; reattach the index
+  rather than assuming its last observed counts are final.
 
 ## Active Lanes
 
@@ -456,13 +469,10 @@ global permission or progress latch.
 ## Next Handoff
 
 Follow NEXT_CODEX_GOAL.md. Build the first resumable six-symbol KIS Paper
-daily-history collector from the existing fixed NAS registry. Temporary
-Validation found three source-safe preflight corrections in the local
-implementation: handle a valid empty terminal page without an invalid raw
-snapshot, stop a non-advancing cursor without an endless duplicate loop, and
-bind `--execute` to the canonical isolated Compose roots before credential or
-network access. Fix and test those first, then run the first source-safe
-reach/collection cycle. Preserve the completed two-page probe and frozen panel
-as separate sources. This is market-data work only: do not call
-account/order/live routes, turn the current listing into a PIT universe, or
-promote a model from the new cache.
+daily-history collector from the existing fixed NAS registry. The collector,
+profile, P1/P2 corrections, focused tests, independent Validation, and first
+real/resumed cycles are complete. Reattach the active bounded worker's index and
+receipt, then use its source-safe `next_due` for any continued cursor work.
+Preserve the completed two-page probe and frozen panel as separate sources.
+This is market-data work only: do not call account/order/live routes, turn the
+current listing into a PIT universe, or promote a model from the new cache.

@@ -2,96 +2,79 @@
 
 ## Objective
 
-Build and run the first resumable KIS Paper daily-history acquisition campaign
-for the existing fixed current NAS basket: `AAPL`, `AMZN`, `GOOGL`, `META`,
-`MSFT`, and `NVDA` on `NAS`.
+Add and run one bounded token-reusing continuation worker for the existing
+fixed six-symbol KIS Paper daily-history cache.
 
-The campaign must turn the existing two-page capability observation into a
-separate durable historical cache with measured temporal reach and sustained
-accepted-page progress. It is data acquisition only, not a historical universe,
-model selection, replay, Paper order input, or live behavior.
+The first three real collection cycles proved that the isolated cache can
+advance at roughly 28--33 accepted pages per minute, but a short-lived Compose
+process cannot retain its already-valid in-memory token across a categorical
+cooldown. The worker must improve sustained historical coverage without an
+orchestrator foreground wait, request flood, new dataset meaning, broker route,
+or public service.
 
 ## First Reads
 
 1. Run `./scripts/start_next_codex_task.ps1`.
-2. Read HANDOFF.md, AGENTS.md, DECISIONS.md, RUNBOOK.md, and all active
+2. Read `HANDOFF.md`, `AGENTS.md`, `DECISIONS.md`, `RUNBOOK.md`, and all active
    stateboards.
-3. Read the existing daily-universe probe, private daily collector, KIS market
-   data client/rate gate, catch-up runner, Compose services, and focused tests.
-4. Ask Claude for a short falsification-first drift-check before introducing a
-   new collector or Compose profile. Do not send credentials, account facts,
-   raw rows, or data values. An unavailable Claude CLI is recorded as
-   `review_unavailable`, not a hold on this private Data work.
+3. Reattach the fixed NAS daily-history index and latest source-safe receipts
+   under `D:\market_data` and `D:\thericher-v2\model-artifacts`; do not print
+   raw rows, credentials, or broker bodies.
+4. Ask Claude for a concise falsification-first drift-check before widening the
+   collector into a token-reusing continuation worker. Do not send secrets,
+   account facts, raw rows, or source values. `review_unavailable` is not a hold
+   on this authorized private Data work.
 
 ## Required Work
 
-1. Create a new KIS-Paper-only daily-history collector and its own Docker
-   profile. It must use the existing fixed six-symbol NAS registry and start
-   from the qualified `2026-07-24` head, then move each durable cursor backward
-   toward `1990-01-01` or that symbol's actual source terminal.
-2. Keep its raw daily snapshots, immutable manifests, and per-target cursors
-   under a new `D:\market_data` cache root. Keep only source-safe receipts,
-   hashes, coverage buckets, and progress summaries under
-   `D:\thericher-v2\model-artifacts`. Do not mutate or blend the existing
-   two-page probe cache, frozen panel, or QQQ/SPY/IWM catalog.
-3. Use one reusable Paper client/token per active collector and the existing
-   measured 1.0-second shared request-start gate. A worker may continue serial
-   cursor pages while eligible; it yields only itself for a categorical limit,
-   shared retry time, storage floor, source terminal, or bounded worker runtime.
-   Never foreground-sleep, infer an unlimited daily quota, or issue a parallel
-   request flood. If an eligible cursor remains after a bounded run, its owner
-   launches or schedules the next bounded cycle without treating that owned
-   `next_due` as a company-wide wait; claim a throughput or completion estimate
-   only from the accepted-page measurements actually recorded.
-4. Make each active collector emit the Data stateboard projection required by
-   AGENTS.md: scope, cursor, accepted/categorical page counts, measured pace,
-   remaining-work estimate or `unknown`, ETA bucket or `unknown`, `next_due`,
-   and recovery class. A runtime-bound partial collection must be `resume`, not
-   a failure or a human approval hold.
-5. Resolve the independent Validation findings before the first real cycle:
-   an empty but valid terminal page must persist a source-safe terminal outcome
-   without creating an invalid empty raw snapshot; a page that does not advance
-   its durable cursor must not write a duplicate snapshot or remain endlessly
-   ready; and `--execute` must reject non-canonical cache, shared-control, or
-   artifact roots before any credential read or network request. Add direct
-   regression coverage for all three cases, including orphan recovery.
-6. Run the first real collection cycle through the new Compose profile only.
-   Compose may inject `KIS_PAPER_*`; do not open, print, copy, or pass `.env`
-   values on a command line. Record only source-safe output categories in chat
-   and Git.
-7. Add focused tests for the actual fixed-registry token-plus-daily transport
-   sequence, durable cursor resume, source-safe progress/ETA projection,
-   external storage containment, terminal and non-progress recovery, canonical
-   execution roots, and no account/order/live path. Do not monkeypatch below
-   the route validator when proving route isolation. Use temporary Execution
-   and Validation roles for independent route and resume/sanitization checks.
+1. Extend the dedicated daily-history CLI/profile so one bounded worker retains
+   one in-memory Paper client/token through its own verified retry due times and
+   resumes the same durable cache cursor without a new token POST per cycle.
+2. Bound the worker by a named total runtime and global page/chunk budget. It
+   may wait only inside its owned process for a source-safe `next_due`; it must
+   exit truthfully on completion, source limit, storage floor, unknown recovery,
+   or its bounded runtime/budget. Codex must not foreground-sleep for it.
+3. Preserve the existing 1.0-second shared request-start gate and measured
+   categorical cooldown. Do not infer a daily quota, lower the gate, create
+   parallel workers for the same cache, or issue a request flood.
+4. Emit one source-safe receipt per internal cycle plus a final aggregate
+   continuation summary: cumulative accepted/categorical counts, elapsed bucket,
+   client/token reuse fact, cursor projection, `next_due`, stop reason, and
+   recovery class. Keep raw rows only in the existing D: cache.
+5. Add focused tests proving client/token reuse after a retry wait, global
+   bounds, no foreground-orchestrator sleep seam, durable resume/orphan safety,
+   exact daily-only route isolation, canonical Compose roots, and no
+   account/order/quote/live path.
+6. Run one real bounded continuation through the dedicated Compose profile.
+   Recheck that the frozen probe, panel, and QQQ/SPY/IWM catalog hashes remain
+   unchanged. Update the Data stateboard with actual pace, coverage, estimate
+   or `unknown`, ETA bucket or `unknown`, `next_due`, and recovery.
 
 ## Hard Boundaries
 
-- Use `KIS_PAPER_*` only in the owned market-data collector/Compose profile.
-  Never read or route `KIS_LIVE_*`.
+- Use `KIS_PAPER_*` only in the dedicated Data-only collector/profile. Never
+  read or route `KIS_LIVE_*`.
 - Preserve `THERICHER_MODE=off`; do not call account, position, open-order,
   order submit, modify, cancel, reconciliation, quote, or live endpoints.
 - Do not call Tiingo, use paid data, change the fixed registry, or acquire a
   public historical universe.
-- The fixed current basket is not a point-in-time universe, ranking input, or
-  strategy result. Do not create a model, GPU campaign, replay, PnL claim, or
-  Paper decision from this collection.
+- Do not create a model, GPU campaign, replay, PnL claim, or Paper decision
+  from this current-listing cache.
 - Do not store raw market data, credentials, or generated artifacts in Git.
-- A source terminal, rate limit, storage stop, failed page, or incomplete
-  cursor applies only to that collector. Persist truthfully and continue every
-  independent ready lane.
+- A source delay or failed page applies only to the owned worker. Persist it
+  truthfully and continue every independent ready lane.
 
 ## Completion Evidence
 
-- New collector/profile and a first real source-safe collection outcome with a
-  separate D: cache, immutable manifest, cursor state, and external receipt.
-- Data stateboard contains the required current progress projection; `unknown`
-  is acceptable only where the first run cannot yet measure it.
-- Independent Execution/Validation confirms no account/order/live route,
-  no secret/raw value output, terminal/non-progress correctness, canonical
-  execution containment, and correct resume behavior.
-- No order, account, position, quote, Tiingo, or live broker call occurred.
+- The continuation worker/profile reuses one in-memory client/token across at
+  least one eligible retry cycle or records why that source condition was not
+  encountered within its bound.
+- Source-safe final summary and Data stateboard show cumulative progress,
+  current cursor, pacing, remaining estimate/ETA category, `next_due`, and
+  recovery state.
+- Independent Validation confirms Data-only route/mount containment, redaction,
+  bounds, and resumability.
+- No account, order, position, quote, Tiingo, or live broker call occurred.
 
 ## Verification
 
@@ -103,10 +86,9 @@ docker compose config --quiet
 ```
 
 Before ending, verify, commit, push, and replace this file with exactly one
-next company objective. A source-limited or recoverable partial run is evidence
-for this collector, not a reason to wait for operator approval or halt another
-lane.
+next company objective. A source-limited or recoverable partial worker is
+evidence for that worker, not a reason to halt a different ready lane.
 
 ## Suggested Commit Message
 
-`Add resumable six-symbol daily history collector`
+`Reuse token for bounded daily history continuation`

@@ -45,6 +45,12 @@ Data works independently. KIS Live remains unavailable.
   KIS route or make a network call.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
+- Temporary Execution and independent Validation both passed the new
+  six-symbol daily-history profile: its only permitted external paths are token
+  POST and fixed NAS daily-price GET; it receives only the Paper App Key/Secret,
+  uses a read-only root with three dedicated mounts, and has no account,
+  position, open-order, quote, intent, submit, cancel, modify, reconciliation,
+  dashboard, or live route. The first real cycles remain Data-owned facts only.
 - The completed QQQ/SPY daily sequence screen used the existing offline
   `local_paper` replay path only. Its six replay cells did not read a KIS
   credential, call a broker/account endpoint, create an intent, or widen an

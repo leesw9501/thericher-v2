@@ -244,9 +244,7 @@ class KisPaperMinuteQuery:
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
-        if self.exchange not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(
-            self.symbol, frozenset()
-        ):
+        if self.exchange not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(self.symbol, frozenset()):
             raise ValueError("minute market-data symbol/exchange pair is not supported")
         if (self.continuation_next is None) != (self.continuation_key is None):
             raise ValueError("continuation next and key must be supplied together")
@@ -275,9 +273,7 @@ class KisPaperDailyQuery:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         object.__setattr__(self, "by_date", self.by_date.strip())
-        approved_symbol_exchanges = _freeze_daily_symbol_exchanges(
-            self.approved_symbol_exchanges
-        )
+        approved_symbol_exchanges = _freeze_daily_symbol_exchanges(self.approved_symbol_exchanges)
         object.__setattr__(self, "approved_symbol_exchanges", approved_symbol_exchanges)
         if self.exchange not in approved_symbol_exchanges.get(self.symbol, frozenset()):
             raise ValueError("daily historical symbol/exchange pair is not approved")
@@ -376,8 +372,6 @@ class KisPaperDailyRawPage:
             raise KisPaperMarketDataError("daily_response_invalid")
         if len(self.rows) != self.page.row_count:
             raise KisPaperMarketDataError("daily_response_invalid")
-
-
 
 
 @dataclass(frozen=True)
@@ -685,6 +679,20 @@ def load_kis_paper_market_data_config(
     return _load_kis_paper_market_data_dotenv_config(dotenv_path)
 
 
+def load_kis_paper_market_data_environment_config(
+    *,
+    environment: Mapping[str, str] | None = None,
+) -> KisPaperMarketDataConfig:
+    """Require a complete KIS Paper pair from the supplied environment only."""
+
+    configured = _load_kis_paper_market_data_environment_config(
+        os.environ if environment is None else environment
+    )
+    if configured is None:
+        raise KisPaperMarketDataError("config_missing")
+    return configured
+
+
 def _load_kis_paper_market_data_environment_config(
     environment: Mapping[str, str],
 ) -> KisPaperMarketDataConfig | None:
@@ -727,9 +735,7 @@ def _load_kis_paper_market_data_dotenv_config(dotenv_path: Path) -> KisPaperMark
                     if set(values) == required:
                         break
                     continue
-                if key not in (
-                    _KIS_PAPER_CONFIG_NON_SECRET_KEYS | _KIS_PAPER_CONFIG_BLANK_KEYS
-                ):
+                if key not in (_KIS_PAPER_CONFIG_NON_SECRET_KEYS | _KIS_PAPER_CONFIG_BLANK_KEYS):
                     raise KisPaperMarketDataError("config_missing")
     except OSError as error:
         raise KisPaperMarketDataError("config_missing") from error
@@ -968,8 +974,7 @@ def _validate_request(
 
 def _is_token_request(request: KisMarketDataRequest) -> bool:
     return (
-        request.method == "POST"
-        and urllib.parse.urlsplit(request.url).path == KIS_PAPER_TOKEN_PATH
+        request.method == "POST" and urllib.parse.urlsplit(request.url).path == KIS_PAPER_TOKEN_PATH
     )
 
 
@@ -981,9 +986,7 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         or request.headers.get("custtype") != "P"
         or query.get("AUTH") != ""
         or query.get("EXCD")
-        not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(
-            str(query.get("SYMB")), frozenset()
-        )
+        not in KIS_PAPER_MINUTE_SYMBOL_EXCHANGES.get(str(query.get("SYMB")), frozenset())
         or query.get("NMIN") != "1"
         or query.get("NREC") != str(KIS_PAPER_MINUTE_MAX_ROWS)
         or query.get("FILL") != ""
@@ -1017,8 +1020,7 @@ def _is_approved_daily_request(
         and request.headers.get("tr_id") == KIS_PAPER_DAILY_TR_ID
         and request.headers.get("tr_cont", "") in {"", "F"}
         and query.get("AUTH") == ""
-        and query.get("EXCD")
-        in daily_symbol_exchanges.get(str(query.get("SYMB")), frozenset())
+        and query.get("EXCD") in daily_symbol_exchanges.get(str(query.get("SYMB")), frozenset())
         and query.get("GUBN") == "0"
         and isinstance(by_date, str)
         and len(by_date) == 8

@@ -24,7 +24,8 @@ pair is one Data product for a named future observer; it is not the only Data
 output or a company hold. The next company objective is Data-owned: extend the
 fixed NAS six-symbol daily capability result into a separate resumable
 historical cache without changing the frozen two-page probe or any existing
-QQQ/SPY/IWM catalog.
+QQQ/SPY/IWM catalog. That collector is now implemented, independently validated,
+and running through its isolated KIS Paper Compose profile.
 
 ## Current Facts
 
@@ -175,30 +176,36 @@ QQQ/SPY/IWM catalog.
    Keep partial or extended-session capture rows out of Research.
 2. Implement and run the named six-symbol NAS daily-history coverage package.
    Its new cache and durable cursors must remain separate from the two-page
-   probe; record first-run reach, pace, remaining-work, and ETA categories
-   before claiming broader coverage. Before its first real call, correct the
-   independent Validation findings: a valid empty terminal page must become a
-   source-safe terminal state without an invalid empty snapshot; a non-advancing
-   cursor must not create duplicate snapshots or an endless ready loop; and
-   `--execute` must accept only the canonical isolated Compose roots. A
-   falsified fixed model pair is not itself a data-collection hold or a request
-   to mutate a source.
+   probe; keep advancing its durable cursors through owned due-time resumes,
+   record measured reach and pace, and preserve `unknown` where a terminal
+   estimate has not yet been observed. The corrected empty-terminal,
+   non-advancing-cursor, orphan-recovery, and canonical-root paths passed
+   independent Validation before the first real call. A falsified fixed model
+   pair is not itself a data-collection hold or a request to mutate a source.
 
 ## Collection Progress Projection
 
-Prepared coverage package: KIS Paper daily endpoint for the fixed current
+Active coverage package: KIS Paper daily endpoint for the fixed current
 `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` `NAS` registry, in a new
 daily-history cache outside the existing two-page probe.
 
-- durable cursor: `unknown` until the new collector initializes its own index;
-- accepted/categorical-failure page counts and measured pace: `unknown`;
-- remaining-page estimate and ETA bucket: `unknown` until the first reach
-  observation; and
-- `next_due`: none before the first owned worker run.
-- temporary Validation found the three preflight correctness defects above in
-  the local uncommitted implementation. No KIS call, raw snapshot, or new cache
-  was created; these are Data-local implementation fixes, not an authority hold
-  or a reason to stop another ready lane.
+- independent Validation passed the P1/P2 correction and exact token-plus-fixed
+  NAS-daily route proof; the profile remains account/order/quote/live-free.
+- the first three real cycles have source-safe receipt hashes
+  `sha256:5f3a46...098238`, `sha256:18ba7a...7e45eb`, and
+  `sha256:60d7eb...bec3ad`. They accepted 13, 50, and 69 pages respectively;
+  observed cycle pace was 27.158, 32.664, and 27.962 pages/minute.
+- the latest completed projection is index generation 67: 132 accepted pages,
+  three categorical rate limits, and all six durable cursors at `20171120`.
+  A new owned one-shot resume is scheduled from the shared token-start due;
+  reattach the index and receipt after it exits rather than assuming this count
+  is terminal.
+- remaining-page estimate and ETA bucket: `unknown`; no source terminal or
+  total-page yield has been observed.
+- `next_due`: owned by the scheduled resume worker; recovery: `resume`.
+- raw rows remain only in the dedicated D: cache. The index retains no raw rows
+  or credentials. The frozen probe, panel, and QQQ/SPY/IWM catalog hashes were
+  rechecked unchanged after the real cycles.
 
 The collector advances serially whenever its shared measured gate permits. A
 token-start or cooldown deferral yields only this worker; it is never a
