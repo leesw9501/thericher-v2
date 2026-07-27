@@ -48,6 +48,24 @@ This is a Research preparation task, not a provider or scheduler wait. The stale
 QQQ input remains evidence not to widen the fixed two-minute deadline, and it
 remains independent of every model claim or Paper-order target.
 
+At the 2026-07-28 KST throughput review, the required phase-local NAS adapter
+exists only as an untracked shared-workspace file. Its ownership is unknown, so
+Codex preserves it and does not commit, overwrite, or build a dependent partial
+contract around it. This is a narrow integration hold on this one objective,
+not a Data, Paper, or Research authority hold.
+
+### Blocked-goal alternatives
+
+- **Data/Research — shared worktree:** owner confirms or integrates the
+  phase-local adapter; completion is a tracked adapter plus focused reattestation
+  tests; kill test is any hash, source-path, incomplete-bar, or phase-leakage
+  failure; recovery is to replace only that adapter with a fresh bounded
+  implementation.
+- **Validation — source-safe contract:** after that tracked boundary exists,
+  implement the immutable campaign/precommit and focused isolation tests;
+  completion is an immutable receipt with no raw/model/replay fields; kill test
+  is any label, feature value, broker, network, or credential path.
+
 ## External Waits
 
 - The scheduled intraday head owns its 2026-07-29 00:31 KST next collection
@@ -73,4 +91,5 @@ relying on it; scope a failure to that item and keep independent packages moving
 Freeze the source-local NAS D1 sequence campaign contract while the
 already-deployed intraday schedule owns its next collection attempt. Do not turn
 a source-local historical input into a point-in-time universe, rank, model
-result, order, or global wait.
+result, order, or global wait. First resolve ownership of the untracked
+phase-local adapter; do not overwrite it.
