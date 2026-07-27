@@ -5755,3 +5755,30 @@ limit, not a block on this candidate-only evidence.
 Reason: the second independently fixed fold confirms the narrow CPU/CUDA input
 and artifact path without letting the earlier fold steer parameters or choice.
 The remaining third expanding fold and final unused tail remain untouched.
+
+## 2026-07-27 - Reattest the final independent expanding-3 D1 input contract
+
+Decision: expose only the separately reattested `expanding-3` input to the
+existing pure D1 materializer and deterministic v2 target/cost adapter. Its
+external fold artifact is
+`sha256:40d6c9920a0edec12249f4b429c503b085b2e908466093496da8e0b6717128fc`
+with fold identity
+`sha256:1cf334306f1e2cc0e907d688d697c850aaf6ca0ef7ed2c42ee807f2c9633d11e`.
+It pins exactly `2671 / 145` sparse development/validation decisions. The
+source-safe validation materializer and target/cost receipts are
+`sha256:e0b90a504e10c12460282b71707649f59c49f9b2b4b4c03598d892ceb3c147c8`
+and `sha256:4c389d437ed5c6ad35908dd98e1639e8ab17d41db889a7e5d1d6437c78961560`.
+
+The explicit adapter allow-list now includes only `expanding-1`,
+`expanding-2`, and `expanding-3`; it does not create a generic multi-fold
+campaign. The E3 validation geometry is `t-20..t+2` and remains before the
+final 151-session tail. Host and network-disabled Docker reattestation write
+only to the external artifact mount and refuse immutable overwrite. No model,
+training, CUDA screen, replay, selection, ensemble, PnL, Paper action, or
+provider/broker call occurs in this decision.
+
+Reason: the third fixed fold completes the independent input set needed for a
+later, separately bounded candidate-only screen without reopening or pooling
+earlier screen evidence. Claude's E3 drift-check attempt again failed OAuth;
+Temporary Validation passed lineage, counts, tail, source-safety, and route
+isolation, so the fault remains a promotion/reliance limitation only.

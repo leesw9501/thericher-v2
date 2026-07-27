@@ -90,16 +90,15 @@ is a cross-lane projection, not a role lane, queue ledger, or second goal.
 
 ## Current Bottleneck
 
-The material bottleneck is now the independent `expanding-3` input contract.
-The first two candidate-only screens are complete but cannot be pooled,
-selected, replayed, or promoted. Reattest E3's exact sparse split and
-source-safe materializer/target receipts before another screen becomes ready.
-The fixed six-symbol panel remains too short and non-PIT for a depth campaign.
+The material bottleneck is now the fixed-specification `expanding-3`
+candidate-only screen. All three independent input contracts are complete, but
+no fold result may be pooled, selected, replayed, or promoted. The fixed
+six-symbol panel remains too short and non-PIT for a depth campaign.
 
-The GPU is free. There is no eligible training or screen job until the E3 input
-contract exists, so Research prepares that contract rather than manufacturing
-work. The Claude OAuth outage is scoped to reliance, promotion, and execution
-boundaries; it does not require another ready private lane to wait.
+The GPU is free and the one eligible consumer is the bounded E3 screen: run its
+CPU smoke first, then one network-disabled CUDA attempt if the CPU contract
+succeeds. The Claude OAuth outage is scoped to reliance, promotion, and
+execution boundaries; it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
@@ -127,16 +126,16 @@ parallel flood.
 
 ## Recovery
 
-Current class: complete for the daily catch-up, event-window contract, both
-completed fold inputs/materializer/target receipts, and both candidate-only
-CPU/CUDA screens; resume for the `expanding-3` input contract. Reattest an
+Current class: complete for the daily catch-up, event-window contract, all
+three fold inputs/materializer/target receipts, and both candidate-only
+CPU/CUDA screens; resume for the `expanding-3` candidate screen. Reattest an
 individual cache, contract, campaign, or exact Paper intent before relying on it. Scope
 failure to that item and continue independent lanes.
 
 ## Next Handoff
 
-Reattest the single `expanding-3` input contract while keeping Execution
-independent. Do not treat either completed screen, the historical catalog, or
-any daily control as a selected model or replay result. Record only an actual
-shared resource conflict, new external wait, bottleneck, or reversible
-operating improvement here.
+Run one fixed-specification `expanding-3` candidate-only screen while keeping
+Execution independent. Do not treat any completed screen, the historical
+catalog, or any daily control as a selected model or replay result. Record only
+an actual shared resource conflict, new external wait, bottleneck, or
+reversible operating improvement here.

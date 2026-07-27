@@ -266,7 +266,7 @@ def test_materializer_preserves_the_exact_t_minus_20_to_t_plus_2_window(
     assert window.target_references.exit_start.date() == source.common_sessions[decision_index + 2]
 
 
-def test_expanding_two_stays_a_distinct_single_fold_materializer_and_target(
+def test_expanding_three_stays_a_distinct_single_fold_materializer_and_target(
     tmp_path: Path,
 ) -> None:
     first_contract, _first_root, first_fold = _verified_fold_artifact(
@@ -277,32 +277,41 @@ def test_expanding_two_stays_a_distinct_single_fold_materializer_and_target(
         tmp_path / "expanding-two",
         fold_id="expanding-2",
     )
+    third_contract, _third_root, third_fold = _verified_fold_artifact(
+        tmp_path / "expanding-three",
+        fold_id="expanding-3",
+    )
     assert first_contract.contract_identity == second_contract.contract_identity
-    assert second_fold.fold_input.fold_id == "expanding-2"
+    assert second_contract.contract_identity == third_contract.contract_identity
+    assert third_fold.fold_input.fold_id == "expanding-3"
     assert (
-        second_fold.fold_input.validation_start_index
+        third_fold.fold_input.validation_start_index
         > first_fold.fold_input.validation_end_index
     )
-    assert second_fold.fold_input.development_eligible_decision_indices == (
-        second_contract.folds[1].development_eligible_decision_indices
+    assert (
+        third_fold.fold_input.validation_start_index
+        > second_fold.fold_input.validation_end_index
     )
-    assert second_fold.fold_input.validation_eligible_decision_indices == (
-        second_contract.folds[1].validation_eligible_decision_indices
+    assert third_fold.fold_input.development_eligible_decision_indices == (
+        third_contract.folds[2].development_eligible_decision_indices
     )
-    assert max(second_fold.fold_input.validation_eligible_decision_indices) < (
-        second_contract.final_unused_tail_start_index
+    assert third_fold.fold_input.validation_eligible_decision_indices == (
+        third_contract.folds[2].validation_eligible_decision_indices
     )
-    assert len(second_contract.sessions) - second_contract.final_unused_tail_start_index == 151
+    assert max(third_fold.fold_input.validation_eligible_decision_indices) + 2 < (
+        third_contract.final_unused_tail_start_index
+    )
+    assert len(third_contract.sessions) - third_contract.final_unused_tail_start_index == 151
 
     materializer = build_kis_daily_joint_event_d1_materializer(
-        fold_input_artifact=second_fold,
-        catalog=_catalog(second_contract, tmp_path / "expanding-two"),
+        fold_input_artifact=third_fold,
+        catalog=_catalog(third_contract, tmp_path / "expanding-three"),
     )
     adapter = build_kis_daily_joint_event_d1_target_cost_adapter(materializer=materializer)
     decision_index = materializer.eligible_decision_indices("validation")[0]
     target = adapter.derive(phase="validation", decision_index=decision_index)
 
-    assert materializer.fold_input.fold_id == "expanding-2"
+    assert materializer.fold_input.fold_id == "expanding-3"
     assert target.decision_index == decision_index
     assert target.entry_index == decision_index + 1
     assert target.exit_index == decision_index + 2
@@ -313,34 +322,38 @@ def test_expanding_two_stays_a_distinct_single_fold_materializer_and_target(
         )
 
 
-def test_expanding_two_pin_binds_exact_counts_and_container_paths() -> None:
+def test_expanding_three_pin_binds_exact_counts_and_container_paths() -> None:
     script_path = (
         Path(__file__).resolve().parents[1]
         / "scripts"
         / "prepare_kis_daily_joint_event_d1_materializer.py"
     )
-    namespace = runpy.run_path(str(script_path), run_name="joint_d1_second_fold_pin_test")
-    pin = namespace["_fold_pin"]("expanding-2")
+    namespace = runpy.run_path(str(script_path), run_name="joint_d1_third_fold_pin_test")
+    pin = namespace["_fold_pin"]("expanding-3")
 
-    assert KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS == ("expanding-1", "expanding-2")
-    assert pin.development_eligible_decision_count == 2511
-    assert pin.validation_eligible_decision_count == 128
+    assert KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS == (
+        "expanding-1",
+        "expanding-2",
+        "expanding-3",
+    )
+    assert pin.development_eligible_decision_count == 2671
+    assert pin.validation_eligible_decision_count == 145
     assert pin.artifact_sha256 == (
-        "sha256:79723a4713b5a4751b6a62ddcd700b67542012bf3ff17a44958b7bd3d67c9305"
+        "sha256:40d6c9920a0edec12249f4b429c503b085b2e908466093496da8e0b6717128fc"
     )
     assert pin.fold_input_identity == (
-        "sha256:6507570e49022133ff1055d49d610a6c32e80b92c0f881115f67d9e68e899f4e"
+        "sha256:1cf334306f1e2cc0e907d688d697c850aaf6ca0ef7ed2c42ee807f2c9633d11e"
     )
     assert namespace["_default_fold_artifact"](
         Path("/app/model_artifacts"),
-        "expanding-2",
+        "expanding-3",
     ) == (
         Path("/app/model_artifacts")
         / "research-contracts"
         / pin.artifact_name
     )
     with pytest.raises(ValueError, match="fold id"):
-        namespace["_fold_pin"]("expanding-3")
+        namespace["_fold_pin"]("expanding-4")
 
     container_repo = Path("/app").resolve()
     assert is_container_external_mount(Path("/app/market_data/source").resolve(), container_repo)
@@ -463,6 +476,8 @@ def test_materializer_receipt_is_external_source_safe_and_offline(
     assert '"credential"' not in serialized
     with pytest.raises(ValueError, match="not source-safe"):
         _assert_source_safe({"entry_open": "not-allowed"})
+    with pytest.raises(ValueError, match="not source-safe"):
+        _assert_source_safe({"lineage": {"open": "not-allowed"}})
     with pytest.raises(FileExistsError):
         write_kis_daily_joint_event_d1_materializer_receipt(
             destination=receipt.path,
@@ -576,18 +591,18 @@ def test_target_cost_adapter_reconstructs_one_sparse_causal_target(tmp_path: Pat
 def test_target_cost_adapter_uses_only_future_qqq_opens(tmp_path: Path) -> None:
     _artifact_root, baseline_materializer, baseline_adapter = _target_adapter(
         tmp_path,
-        fold_id="expanding-2",
+        fold_id="expanding-3",
     )
     decision_index = baseline_materializer.eligible_decision_indices("validation")[0]
     _artifact_root, future_materializer, future_adapter = _target_adapter(
         tmp_path / "future",
         qqq_open_overrides={decision_index + 2: Decimal("9999")},
-        fold_id="expanding-2",
+        fold_id="expanding-3",
     )
     _artifact_root, feature_materializer, feature_adapter = _target_adapter(
         tmp_path / "feature",
         qqq_close_overrides={decision_index: Decimal("9999")},
-        fold_id="expanding-2",
+        fold_id="expanding-3",
     )
 
     baseline_window = baseline_materializer.materialize(
@@ -698,6 +713,8 @@ def test_target_cost_receipt_is_external_source_safe_and_offline(
     assert '"order"' not in serialized
     with pytest.raises(ValueError, match="not source-safe"):
         _assert_target_receipt_source_safe({"entry_open": "not-allowed"})
+    with pytest.raises(ValueError, match="not source-safe"):
+        _assert_target_receipt_source_safe({"source_materializer": {"label": 1}})
     with pytest.raises(FileExistsError):
         write_kis_daily_joint_event_d1_target_cost_receipt(
             destination=receipt.path,

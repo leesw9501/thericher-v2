@@ -414,6 +414,28 @@ second write with `FileExistsError`; preserve that file and reattest its hash
 and lineage instead of overwriting it. In Docker, use the same
 `/app/model_artifacts` and `/app/market_data` arguments shown below.
 
+### Independent Expanding-3 Contract
+
+The completed third-fold artifacts remain external and immutable:
+
+```text
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-joint-event-window-fold-input-expanding-3-v1.json
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-materializer-expanding-3-validation-first-v1.json
+D:\thericher-v2\model-artifacts\research-contracts\snapshot=2026-07-24-qqq-spy-tiingo-events-v1-d1-target-cost-expanding-3-validation-first-v2.json
+```
+
+Their hashes are `sha256:40d6c992...7128fc`, `sha256:e0b90a50...c147c8`, and
+`sha256:4c389d43...961560`. The fold input binds `2671 / 145` sparse
+development/validation decisions. Its validation receipt proves only
+`4366 -> 4367..4386 -> 4387/4388` (`t-20..t+2`) geometry, before the final
+151-session tail beginning at index `4605`. The target semantics remain v2
+with Decimal precision 34.
+
+Use `--fold-id expanding-3` explicitly for any local or Docker reattestation.
+The existing receipt names are immutable: an attempted second write must fail
+with `FileExistsError`, which confirms the external mount and must not be
+worked around by overwrite or deletion.
+
 ### Candidate-Only D1 Sequence Screen
 
 The completed first-fold CPU and CUDA evidence is external only:

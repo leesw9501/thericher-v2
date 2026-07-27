@@ -73,6 +73,20 @@ _FOLD_PINS = {
         development_eligible_decision_count=2511,
         validation_eligible_decision_count=128,
     ),
+    "expanding-3": _FoldPin(
+        artifact_name=(
+            "snapshot=2026-07-24-qqq-spy-tiingo-events-v1-"
+            "joint-event-window-fold-input-expanding-3-v1.json"
+        ),
+        artifact_sha256=(
+            "sha256:40d6c9920a0edec12249f4b429c503b085b2e908466093496da8e0b6717128fc"
+        ),
+        fold_input_identity=(
+            "sha256:1cf334306f1e2cc0e907d688d697c850aaf6ca0ef7ed2c42ee807f2c9633d11e"
+        ),
+        development_eligible_decision_count=2671,
+        validation_eligible_decision_count=145,
+    ),
 }
 _SIDECAR_DATASET_HASH = "sha256:9a3e3b22c4a6045c4f26e6e77439cb3322cb61f8f6c04b422bb31412631d0de3"
 _SIDECAR_MANIFEST_HASH = "sha256:c6f4b7113507d27577fb7ee66328db53d274e08d2470d3854b6f4e9aa46d171d"

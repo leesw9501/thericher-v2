@@ -26,7 +26,11 @@ KIS_DAILY_JOINT_EVENT_D1_MATERIALIZER_KIND = "kis_daily_joint_event_d1_materiali
 KIS_DAILY_JOINT_EVENT_D1_SYMBOLS = ("QQQ", "SPY")
 KIS_DAILY_JOINT_EVENT_D1_CATALOG_ID = "kis.paper.private.daily.backfill-v1.common-panel"
 KIS_DAILY_JOINT_EVENT_D1_ADJUSTMENT_MODE = "MODP=0_unadjusted"
-KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS = ("expanding-1", "expanding-2")
+KIS_DAILY_JOINT_EVENT_D1_SUPPORTED_FOLD_IDS = (
+    "expanding-1",
+    "expanding-2",
+    "expanding-3",
+)
 
 MaterializationPhase = Literal["development", "validation"]
 

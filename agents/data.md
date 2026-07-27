@@ -13,10 +13,10 @@ Do not select strategies or make execution decisions.
 
 Preserve the completed six-symbol NAS-only KIS Paper daily panel as a frozen
 source-separated control input and the terminal QQQ/SPY/IWM cache as collection
-evidence. The active v2 QQQ/SPY joint-event contract has already reattested one
-fold-local input, materialized one source-safe D1 window, and fixed v2 target
-cost semantics. Serve the same catalog only to one bounded candidate-only D1
-sequence screen. Its full sequence dependency mask is `t-20..t+2`, not merely
+evidence. The active v2 QQQ/SPY joint-event contract has reattested all three
+fixed fold-local inputs, materialized source-safe D1 windows, and fixed v2
+target cost semantics. Serve the same catalog only to one bounded E3
+candidate-only D1 sequence screen. Its full sequence dependency mask is `t-20..t+2`, not merely
 the 20 visible feature rows `t-19..t`. The prospective QQQ 1m first-five pair
 is one Data product for a named future observer; it is not the only Data output
 or a company hold.
@@ -144,13 +144,19 @@ or a company hold.
   and `t-20..t+2` geometry. Research consumed it once for a completed
   aggregate-only CPU/CUDA screen without modifying the catalog or persisting
   provider values.
+- The same source catalog and parent now reattest `expanding-3` as external
+  fold input `sha256:40d6...7128fc` / `sha256:1cf3...3d11e`, with exact
+  `2671 / 145` sparse decisions. Its source-safe materializer and target/cost
+  receipts are `sha256:e0b9...c147c8` and `sha256:4c38...961560`; they retain
+  only lineage and `t-20..t+2` geometry before the final 151-session tail.
+  Neither altered cache bytes or persisted provider values.
 
 ## Ready Queue
 
-1. Reattest the parent into one exact `expanding-3` fold input for a future
-   candidate-only consumer. Preserve its `2671 / 145` sparse index tuple and
-   final 151-session tail; use values in memory only and do not fetch, blend,
-   or persist provider rows.
+1. Serve the completed `expanding-3` verified lineage to one fixed-specification
+   candidate-only Research screen. Preserve its exact `2671 / 145` sparse
+   index tuple and final 151-session tail; use values in memory only and do
+   not fetch, blend, or persist provider rows.
 2. Keep the frozen panel source-separated. Do not blend ETF, Norgate, Tiingo,
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
@@ -185,8 +191,8 @@ or cursor scope, never another collector or lane.
 ## Recovery
 
 Current class: complete for the daily catch-up, joint event-window contract,
-both completed fold inputs/materializer/target-cost receipts, and both completed
-candidate screens; resume for the independent `expanding-3` input contract.
+all three fold inputs/materializer/target-cost receipts, and both completed
+candidate screens; resume for the independent `expanding-3` candidate screen.
 Reattest existing metadata and committed snapshots before a new consumer or
 future network call. A bad cache
 is reconcile/restart evidence for that cache; an empty or limited endpoint
@@ -194,8 +200,8 @@ result is source evidence for that route only.
 
 ## Next Handoff
 
-Return one verified `expanding-3` lineage to a source-safe materializer/target
-consumer. Preserve the frozen six-symbol source separately. Do not infer PIT
+Return one verified `expanding-3` lineage to a fixed-specification candidate
+screen. Preserve the frozen six-symbol source separately. Do not infer PIT
 membership, corporate-action completeness, a ranking claim, or Paper-trading
 eligibility from either cache, and do not wait for a prospective pair before
 advancing other ready Data work.

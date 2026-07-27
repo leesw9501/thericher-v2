@@ -249,8 +249,8 @@ authorized private KIS Paper work.
   Both reattest byte-for-byte from the local catalog, retain only lineage and
   `t-20..t+2` geometry for validation decision `4099`, and persist no market
   values, labels, predictions, weights, replay, PnL, broker, account, or
-  credential data. The pure adapters accept only explicit `expanding-1` or
-  `expanding-2` pins; they do not form a multi-fold campaign.
+  credential data. The pure adapters now accept only explicit `expanding-1`,
+  `expanding-2`, or `expanding-3` pins; they do not form a multi-fold campaign.
 - Temporary Validation independently passed the second-fold parent lineage,
   `2511 / 128` counts, final 151-session-tail exclusion, source-safety, pure
   import/route isolation, and the narrowly scoped Docker external-mount rule.
@@ -271,6 +271,22 @@ authorized private KIS Paper work.
   Temporary Validation passed lineage, counts, tail, source-safety, and route
   isolation. The CUDA attempt used the research container's network-disabled
   GPU path once.
+- The final independent `expanding-3` input contract is now complete. Its
+  fold input is
+  `sha256:40d6c9920a0edec12249f4b429c503b085b2e908466093496da8e0b6717128fc`
+  with identity
+  `sha256:1cf334306f1e2cc0e907d688d697c850aaf6ca0ef7ed2c42ee807f2c9633d11e`.
+  It binds exact `2671 / 145` sparse development/validation decisions. Its
+  source-safe validation materializer and v2 target/cost receipts are
+  `sha256:e0b90a504e10c12460282b71707649f59c49f9b2b4b4c03598d892ceb3c147c8`
+  and `sha256:4c389d437ed5c6ad35908dd98e1639e8ab17d41db889a7e5d1d6437c78961560`,
+  with materializer/target identities
+  `sha256:72c41ae3a2d6494d65879839ff8e93d6652352e8873928769b775f44726de43d`
+  and `sha256:5511c3f072e81debe81c39792d6ca4b9500773ebf0d4029b9c7d501286176cc3`.
+  They preserve only parent lineage and `t-20..t+2` geometry before the final
+  151-session tail. Host and network-disabled Docker reattestation both kept
+  the immutable-write boundary; Temporary Validation passed source-safety and
+  route isolation. No model, replay, PnL, broker, or Paper artifact exists.
 - `expanding-1` ends before the parent contract's later `expanding-2` and
   `expanding-3` folds. The final 151-session unused tail begins after those
   folds, not immediately after `expanding-1`; exact sparse input lists prevent
@@ -360,7 +376,8 @@ ensemble, scheduler-widening, and execution-risk decisions. On 2026-07-26 and
 2026-07-27 KST the CLI OAuth session remained expired during
 throughput-governance, capture/profile integration, daily-campaign,
 six-symbol-control, joint-event leakage, both fold-local adapter boundaries,
-target-semantics, and both candidate-only screen checks; no private material was
+target-semantics, both candidate-only screen checks, and the E3 input-contract
+check; no private material was
 sent. This is a scoped tooling fault, not a hold on ready private work.
 
 ## Recovery
@@ -373,8 +390,8 @@ global permission or progress latch.
 
 ## Next Handoff
 
-Follow NEXT_CODEX_GOAL.md. Reattest only the independent `expanding-3` D1
-input and its source-safe materializer/target receipts. Do not pool the first
-two screen results, tune, select, replay, promote, or derive a Paper intent.
-Refresh this file only with resulting cross-lane facts after that bounded
-objective completes.
+Follow NEXT_CODEX_GOAL.md. Run one fixed-specification `expanding-3`
+candidate-only CPU smoke and one network-disabled CUDA screen. Do not pool any
+fold result, tune, select, replay, promote, or derive a Paper intent. Refresh
+this file only with resulting cross-lane facts after that bounded objective
+completes.
