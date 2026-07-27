@@ -169,8 +169,31 @@ owned and does not require a Data fetch or provider-row mutation.
    or legacy rows into it or treat its current listing as historical membership.
    Keep partial or extended-session capture rows out of Research.
 2. When a later engine loop names a new coverage need, use the bounded reach
-   probe and durable serial collector procedure below. A falsified fixed model
-   pair is not itself a data-collection hold or a request to mutate a source.
+   probe and durable serial collector procedure below. Start a serial collector
+   only after that objective names its source scope; record the first measured
+   remaining-work and ETA category before claiming a collection schedule. A
+   falsified fixed model pair is not itself a data-collection hold or a request
+   to mutate a source.
+
+## Collection Progress Projection
+
+There is no active KIS Data collector in the current company objective, so no
+cursor ETA is claimed. The next read-only account projection consumes no
+provider rows or cache mutations.
+
+For the next active KIS coverage package, replace this paragraph with one
+source-safe projection only:
+
+- named endpoint, symbol/venue, granularity, and cache scope;
+- durable cursor and recovery class;
+- accepted-page and categorical-failure counts plus measured request pace;
+- remaining-page estimate and ETA bucket, or `unknown` until the reach probe
+  yields enough evidence; and
+- this collector's `next_due`, if any.
+
+The collector advances serially whenever its shared measured gate permits. A
+token-start or cooldown deferral yields only this worker; it is never a
+foreground sleep or a reason to leave another ready lane idle.
 
 ## Future KIS Coverage Procedure
 
@@ -181,8 +204,10 @@ yield, continuation behavior, and categorical limits without printing rows.
 If that probe establishes useful reach, resume one durable serial collector
 with one reused client/token and its own cursor under the shared measured gate.
 The current five-minute token-start guard spaces token POST attempts only; it
-does not delay an existing collector. A terminal result closes only that probe
-or cursor scope, never another collector or lane.
+does not delay an existing collector. Calculate an ETA only from observed
+accepted-page pace and a bounded remaining-work estimate; otherwise preserve
+`unknown`. A terminal result closes only that probe or cursor scope, never
+another collector or lane.
 
 ## Durable Constraints
 

@@ -5847,3 +5847,33 @@ Reason: overlapping expanding folds can otherwise turn a useful falsification
 check into a disguised candidate-selection campaign. A strict fold-local
 comparison preserves the failure signal while keeping the next architecture or
 execution decision independent.
+
+## 2026-07-27 - Make KIS collection throughput observable and work-conserving
+
+Decision: preserve the evidence-backed 1.0-second shared KIS Paper market-data
+request-start gate, 60-second categorical-limit cooldown, and five-minute
+cross-process token-start guard. Do not replace them with an unmeasured
+parallel request flood or a foreground sleep. One collector keeps one
+in-memory client/token while it remains valid for eligible pages in its own
+run; the token-start
+guard applies only when a new token POST is needed and does not imply
+cross-process token sharing.
+
+For every active KIS coverage package, the Data stateboard must project only
+source-safe operational facts: named scope, durable cursor, accepted and
+categorical-failure page counts, measured pace, remaining-page estimate or
+`unknown`, ETA bucket or `unknown`, owned `next_due`, and recovery class. A
+bounded reach probe remains the first step for a new endpoint/granularity
+scope. After it establishes useful continuation semantics, a durable serial
+collector advances whenever the measured gate permits, yields only itself for
+a categorical retry, and resumes from its cursor. The estimate informs dispatch
+and recovery; it is neither a completion promise nor a dependency or approval
+gate for another lane.
+
+Reason: the project needs maximum sustained accepted-page progress and a
+truthful recovery handoff, not artificial idle time or an unsupported claim of
+unlimited daily capacity. This makes an actual bottleneck visible before a
+collector is slowed or expanded. The required concise Claude drift-check was
+attempted with no private material but could not authenticate because the local
+OAuth session was expired; the reviewer outage does not change the existing
+measured controls or stop this reversible operating-policy clarification.

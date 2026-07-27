@@ -110,12 +110,14 @@ it does not require another ready private lane to wait.
 
 ## Current Operating Improvement
 
-The current reversible improvement is measured test-feedback throughput. The
-same `1365 passed, 13 skipped` suite completed in 102.86 seconds through the
-isolated eight-worker helper and in 510.80 seconds serially. Use the parallel
-helper for in-goal diagnostics and reserve the serial suite for the required
-goal boundary. This frees the foreground to integrate Data, Research, and
-Execution work without weakening the authoritative final check.
+The current reversible improvement is an explicit source-safe KIS collection
+progress projection. When Data receives a coverage objective, it must publish
+the cursor, accepted/categorical page counts, measured pace, remaining-work and
+ETA categories, and only that collector's `next_due`; `unknown` is valid until
+the reach probe can support an estimate. This makes a real collector delay
+visible without inventing a daily quota, foreground sleep, or second goal. The
+existing isolated parallel test helper remains the standard in-goal feedback
+path; the serial suite remains the authoritative goal-boundary check.
 
 ## External Waits
 

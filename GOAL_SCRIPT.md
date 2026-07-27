@@ -36,6 +36,14 @@ them changes. External quota/cooldown waits belong to the named worker or
 scheduler as `next_due`; continue another ready lane rather than waiting in
 the foreground.
 
+For active KIS coverage work, require the Data stateboard to project the named
+scope, durable cursor, accepted/categorical page counts, measured pace,
+remaining-work estimate or `unknown`, ETA bucket or `unknown`, recovery class,
+and that worker's `next_due`. Advance a useful durable cursor serially whenever
+the measured gate permits. This is an operational forecast for dispatch and
+recovery, never a daily-quota claim, a completion promise, or a gate on another
+lane.
+
 After each bounded objective has completion evidence, run the required
 verification, commit, push, replace `NEXT_CODEX_GOAL.md` with exactly one next
 company objective, refresh the stateboards, and continue. A lane-local block

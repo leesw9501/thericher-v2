@@ -144,6 +144,15 @@ count, elapsed-time bucket, tested interval, and the fact that would revise the
 setting. It changes one pacing variable at a time, preserves one active
 collector per cache, and does not substitute a parallel flood for measurement.
 
+One collector keeps its one in-memory client and acquired access token while it
+remains valid for all eligible pages. The five-minute cross-process token-start
+guard spaces
+only a fresh token POST; it is neither a token lifetime nor a five-minute sleep
+for an already authenticated collector. Do not infer cross-process token reuse
+from that guard. A future shared-token mechanism must be a separately bounded
+private-state change that never writes a token to Git, artifacts, logs, or a
+stateboard.
+
 Before declaring a measured pace effective, inventory every delay on the actual
 end-to-end path: the shared gate, client, collector, and scheduler. Retain a
 second pacing delay only when it protects a path that cannot rely on the shared
@@ -160,6 +169,17 @@ client. It then resumes bounded serial collection from a durable cursor when
 the probe establishes a useful scope. The probe and collector record only
 source-safe coverage and pacing facts; neither becomes a foreground wait or a
 reason to stop independent lanes.
+
+Once a useful scope is established, maximize sustained accepted-page progress:
+advance the durable serial cursor whenever its measured gate permits, yield
+only that collector on a categorical limit or retry time, and resume it from
+the same cursor when due. Do not replace this with an uncontrolled request
+flood or confuse an unknown daily allowance with permission to retry forever.
+For every active KIS collection, the Data stateboard must show the named scope,
+durable cursor, accepted and categorical-failure page counts, measured pace,
+remaining-page estimate or `unknown`, source-safe ETA bucket or `unknown`,
+owned `next_due`, and recovery class. An estimate is an operational forecast,
+not a completion promise or a gate on another lane.
 
 ### Role Agents
 
@@ -459,6 +479,13 @@ current objective, ready queue, running work, operator help, durable knowledge,
 recovery, recent evidence pointers, and next handoff. History belongs in Git and
 external artifacts. Create a new stateboard only after a distinct lane has
 recurring work across multiple Codex tasks or owns an independent resource.
+
+For an active collection, record the progress fields required above in the
+Data projection instead of a diary: the cursor, page counts, pace,
+remaining-work/ETA category, and `next_due`. Use `unknown` when the endpoint
+has not yet yielded enough evidence to calculate a value. This keeps an
+interrupted collector recoverable without fabricating precision or adding a
+second data-goal file.
 
 At every bounded role handoff, refresh only the changed current objective,
 ready or running work, one evidence pointer, recovery class, and next action.

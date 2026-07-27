@@ -69,6 +69,11 @@ authorized private KIS Paper work.
   then uses one reused client and durable serial cursor progress at the measured
   request pace. It never turns a five-minute token-start guard into a worker
   sleep or replaces measured collection with a parallel request flood.
+- An active KIS collection records its scope, cursor, accepted and categorical
+  failure page counts, observed pace, remaining-page estimate or `unknown`, ETA
+  bucket or `unknown`, owned `next_due`, and recovery class in the Data
+  stateboard. That forecast is for dispatch and recovery only; it never blocks
+  another lane or promises an unsupported completion date.
 - GPU scheduling is work-conserving only for frozen eligible research: when the
   GPU is free, Research starts its next ready campaign or records the exact
   missing data, contract, or resource fact. It does not manufacture training to
@@ -355,7 +360,10 @@ authorized private KIS Paper work.
 - KIS documents a 24-hour access token and a six-hour renewal behavior. The
   current five-minute cross-process token-start guard prevents short-lived
   workers from colliding; it is not a token lifetime or a reason to idle a
-  ready lane.
+  ready lane. One running collector keeps its in-memory client/token across
+  eligible pages while it remains valid; the guard controls only a fresh token
+  POST and does not
+  imply cross-process token sharing.
 - The bounded calibration accepted a 1.0-second QQQ terminal-head candidate
   with one in-memory token, two full pages, and zero categorical errors. It is
   evidence for one end-to-end setting change, not a universal throughput claim;
