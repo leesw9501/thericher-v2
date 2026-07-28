@@ -46,6 +46,12 @@ second goal.
   passes. This remains non-promoting: no selection, ensemble, KIS, or
   Paper-order consequence follows. All fills were in-memory `local_paper`, all
   replays terminal-flat, and all checkpoints remain external.
+- **Prospective evidence:** the bounded offline NAS observer reattested the
+  frozen r2/r5 lineage and found zero common all-six-symbol D1 sessions after
+  the 2026-07-24 boundary. Its source-safe `input_unavailable` receipt is
+  complete for that observation only. Data now owns a distinct forward cache;
+  Research has no eligible GPU replay until it yields an exact three-session
+  common consumer window.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -59,11 +65,12 @@ second goal.
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
 schedule deployment, both independent QQQ/SPY controls, NAS history
-materialization, exact NAS phase-local campaign contract, and both sealed NAS
-candidate evaluations are complete. There is no shared recovery or authority
-blocker. The next Research bottleneck is a prospective post-r5 observation
-contract for the volatility-conditioned package; it is not a tuning pass and
-the stale QQQ input remains only a scoped runtime fact.
+materialization, exact NAS phase-local campaign contract, both sealed NAS
+candidate evaluations, and the bounded prospective observer are complete. The
+observer reattested zero post-2026-07-24 all-six-symbol common sessions and
+closed as `input_unavailable`; there is no shared recovery or authority blocker.
+The current bottleneck is Data-owned forward D1 coverage in a separate cache,
+not a tuning pass. The stale QQQ input remains only a scoped runtime fact.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -130,8 +137,10 @@ receipt, or any independent lane.
 ## Next Handoff
 
 The distinct causal NAS D1 volatility-conditioned package has a completed r5
-sealed receipt. Next, precommit a prospective local-cache shadow observer for
-the frozen candidates. Do not use either sealed aggregate result to choose a
-candidate and do not turn any observation into a point-in-time universe,
-ranking, selection, ensemble, broker order, or global wait. Keep both sealed
-result families immutable and non-promoting.
+sealed receipt and a completed prospective observer receipt. The observer found
+zero common sessions after its fixed 2026-07-24 boundary, which closes only
+that observation. Next, Data establishes a separately stored six-symbol NAS D1
+forward cache without mutating frozen historical input. Do not use either
+sealed aggregate result to choose a candidate and do not turn cache coverage
+into a point-in-time universe, ranking, selection, ensemble, broker order, or
+global wait. Keep both sealed result families immutable and non-promoting.

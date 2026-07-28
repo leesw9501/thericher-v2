@@ -679,8 +679,21 @@ bounded comparator rather than once per slot, matches CPU refits to their frozen
 receipt, writes a source-safe candidate-evidence failure receipt before target
 opening, and marks drawdown with entry, intrabar-low, and exit equity points.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is a bounded prospective
-NAS D1 shadow observer that consumes only new local-cache observations. It must
-not use the r5 outcomes to choose candidates, tune, ensemble, promote, or make
-a KIS Paper decision. Let the independent intraday scheduler own its next due
-recovery attempt rather than the foreground.
+The prospective NAS D1 shadow observer is now complete. It reattests the
+frozen r2/r5 artifact identities and derives its boundary from the frozen
+source input rather than file timestamps. It requires all six NAS symbols to
+share a complete post-boundary decision, `t+1`, and `t+2` D1 window before
+opening any target. Its network-disabled Docker smoke wrote immutable external
+precommit `sha256:628663053db396626e009ec154ce17b7849fb5f2614384f74a5818f6e46f24da`
+and `input_unavailable` receipt
+`sha256:56e0f503b7248e10e8461a1752c3baf7df5f1a70e89d0a63909f08cfde78616a`.
+There are currently zero six-symbol common sessions after the 2026-07-24 r5
+boundary. That closes only this observation attempt; it is not a Research,
+Data, or Paper hold.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective is Data-owned: establish
+one bounded, separately stored six-symbol NAS D1 forward cache that can supply
+new complete common sessions without mutating the frozen historical panel. It
+must not infer a PIT universe, rank candidates, or create a Paper order. Let
+the independent intraday scheduler own its next due recovery attempt rather
+than the foreground.

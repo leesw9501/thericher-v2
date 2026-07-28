@@ -69,6 +69,11 @@ current source-safe index is generation 22 with nine retained `head` chunk
 records per target and no current conflict origin or reason. Old immutable
 snapshots and exact quarantine markers remain on D:; legacy unscoped pages stay
 strict-reject-only rather than being inferred as head observations.
+The active Data package now opens a distinct six-symbol NAS D1 forward cache.
+It must leave the frozen historical panel unchanged, use only the owned KIS
+Paper market-data client for its bounded current-D1 probe and collection, and
+materialize any later common sessions without making a PIT, ranking, or broker
+claim.
 
 ## Current Facts
 
@@ -438,7 +443,15 @@ preserve its lineage and limitations without fetching, blending, or exposing raw
 rows. The next Research contract may consume it source-locally, but it must not
 reinterpret the common subset as a PIT universe or rank. The contract is now
 frozen through the earlier NAS D1 sequence precommit, the completed distinct
-volatility/trend candidate package, and its r5 sealed receipt. Data's next
-relevant consumer is an offline prospective shadow observer that accepts only a
-reattested post-r5 local freshness boundary. It is not a new provider request,
-cache expansion, historical-universe claim, selection, or Paper order.
+volatility/trend candidate package, and its r5 sealed receipt. The completed
+offline prospective observer reattested this source and found zero common
+all-six-symbol D1 sessions after the 2026-07-24 boundary, so its own scope is
+`input_unavailable`. That does not qualify, change, or mutate this frozen
+historical panel.
+
+The next Data-owned package is a separately stored six-symbol NAS D1 forward
+cache. It must collect only current complete D1 pages through the owned KIS
+Paper market-data client, preserve source provenance and a durable cursor, and
+keep the frozen historical panel hash unchanged. A later observer may consume a
+new complete common window, but this cache is not a PIT universe, candidate
+selection, ranking, or Paper order.

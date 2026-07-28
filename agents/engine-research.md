@@ -76,6 +76,13 @@ selection, ensemble, promotion, KIS, or Paper input. Every fill was in-memory
 and checkpoints stayed unretained. Claude's required post-evaluation challenge
 was `review_unavailable` because local OAuth could not refresh.
 
+The bounded prospective observer is also complete. It reattested the frozen
+r2/r5 identities, derived its boundary from the 2026-07-24 frozen source
+session, and found zero later common all-six-symbol D1 sessions; its immutable
+result is only `input_unavailable`. Data now owns a separate forward cache.
+There is no eligible new GPU campaign or prospective replay until that exact
+consumer input contains a complete decision, `t+1`, and `t+2` common window.
+
 ## Current Readiness
 
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
@@ -318,11 +325,14 @@ was `review_unavailable` because local OAuth could not refresh.
    The next breadth proposal must declare a distinct causal hypothesis, feature
    contract, costs, split, naive baseline, and strongest kill test before any
    CPU or GPU work begins.
-10. Keep the completed volatility-conditioned r5 receipt immutable. Its six
-    paired kill-rule passes do not select a candidate or authorize a Paper
-    action. The next Research package is a separately precommitted prospective
-    shadow observer using only post-r5 local-cache observations; it must not
-    tune, ensemble, promote, rank, or create a KIS Paper action.
+10. Keep the completed volatility-conditioned r5 receipt and completed
+    prospective observer immutable. The observer found zero all-six-symbol
+    common D1 sessions after its 2026-07-24 boundary and recorded only its own
+    `input_unavailable` receipt. It does not select a candidate, authorize a
+    Paper action, or create GPU work. Data now owns a separately stored forward
+    cache; Research remains ready to observe a later complete common window
+    without tuning, ensembling, promoting, ranking, or creating a KIS Paper
+    action.
 
 ## Durable Constraints
 
@@ -353,10 +363,11 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
-controls, and both immutable sealed NAS result families. The source-local NAS
-historical D1 panel and the volatility-conditioned r2/r5 artifact lineage are
-attested. Next, build a prospective shadow observer that reattests a fresh local
-post-r5 boundary and classifies the frozen package independently without using
-the r5 outcome to select, tune, ensemble, promote, rank, or create a KIS Paper
-action. Do not turn the current listing into a PIT membership claim. The fresh
-prospective baseline remains Execution evidence only.
+controls, both immutable sealed NAS result families, and the completed
+prospective observation receipt. The observer is complete and
+`input_unavailable` because no complete all-six-symbol window follows its
+2026-07-24 boundary. Data owns the next separately stored NAS D1 forward cache;
+Research must wait only for that exact later common-window consumer input, not
+turn the current listing into a PIT membership claim, or use r5 to select, tune,
+ensemble, promote, rank, or create a KIS Paper action. The fresh prospective
+baseline remains Execution evidence only.

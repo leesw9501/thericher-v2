@@ -6794,3 +6794,31 @@ Reason: a subset of pair-level passes is insufficient to create a trading
 decision, while an immutable, replayable receipt is useful input to a later
 independent prospective observation contract. The next package observes newly
 arriving local-cache data without reusing r5 to select a candidate.
+
+## 2026-07-28 - Add a bounded NAS D1 prospective shadow-observation contract
+
+Decision: add one offline prospective observer for the frozen six-symbol NAS
+volatility-conditioned package. It reattests exact r2 CPU/CUDA and r5 receipt
+hashes, derives the boundary from the reattested frozen validation session
+rather than file time, and accepts only a complete all-six-symbol D1 window:
+one post-boundary decision followed by complete `t+1` and `t+2` bars. It uses
+30 completed bars for causal features and non-overlapping three-session slots.
+If no such window exists it writes an immutable external `input_unavailable`
+receipt, which is a completed scoped state rather than a scheduler or trading
+gate.
+
+The observer's Docker smoke is network-disabled and wrote precommit
+`sha256:628663053db396626e009ec154ce17b7849fb5f2614384f74a5818f6e46f24da`
+and `input_unavailable` receipt
+`sha256:56e0f503b7248e10e8461a1752c3baf7df5f1a70e89d0a63909f08cfde78616a`.
+The local cache has zero common sessions after 2026-07-24. No r5 outcome,
+candidate selection, tuning, ranking, ensemble, KIS call, account route, or
+Paper order is consumed or created. When eligible data later exists, all 24
+frozen candidates must replay independently through in-memory `local_paper`
+and reconstruct terminal-flat accounts before aggregate-only evidence can be
+written. The target runtime remains the network-disabled Docker environment;
+the host runtime does not silently substitute a different frozen precommit.
+
+Reason: a prospective observation needs a hard temporal boundary and exact
+artifact lineage, but missing forward data must not stall independent Data work
+or fabricate a model result.

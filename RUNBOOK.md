@@ -1542,6 +1542,31 @@ rank, select, tune, ensemble, promote, or create a KIS Paper order. Never reuse
 a label, place artifacts in Git, or use the interrupted r3/r4 directories as a
 completed result.
 
+### NAS D1 Prospective Shadow Observation
+
+Run one new local-cache observation in the network-disabled research service:
+
+```powershell
+$env:COMPOSE_DISABLE_ENV_FILE = "1"
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_volatility_trend_prospective_observation.py `
+  --run-label <unique-observation-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --review-status review_unavailable
+```
+
+The runner reads no `.env`, credentials, KIS route, provider, account, or
+broker. It reattests the frozen r2/r5 receipt identities before writing a
+source-safe precommit, derives the boundary from the frozen source session, and
+requires all six symbols to have a post-boundary decision plus complete `t+1`
+and `t+2` D1 bars. No eligible window writes an immutable `input_unavailable`
+receipt; it is complete for that invocation and does not hold collection. An
+eligible window runs the fixed 24 candidates through in-memory `local_paper`
+only, requires replayed terminal-flat accounts, and retains no raw bars,
+targets, predictions, event rows, or checkpoint copies. Use the Docker command
+for an eligible observation because it is the frozen candidate runtime.
+
 ### KIS Daily Regime-Tree Breadth
 
 The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY
