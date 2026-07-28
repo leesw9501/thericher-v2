@@ -620,15 +620,14 @@ it binds `1,510 / 22 / 647` phase-local sessions, 20 per-symbol completed-close
 returns with the `t-20` anchor also inside the phase, one-share `t+1` to `t+2`
 after-cost target semantics, and target-free validation inputs.
 
-The first breadth package is complete. Its six deterministic CPU L2-logistic
-smokes are summarized by `sha256:4bfb8448...619067196`, and its network-disabled
-Docker CUDA run completed all 18 fixed LSTM, causal-TCN, and compact-attention
-cells on the RTX 4090. The CUDA summary is `sha256:43a4f91c...37492ed7` and its
-18 `state_dict` checkpoints remain only under
+The same-runtime Docker r2 breadth package is complete. Its six deterministic
+CPU L2-logistic smokes are summarized by `sha256:e60cf92...ffc4fa`, and its
+network-disabled Docker CUDA run completed all 18 fixed LSTM, causal-TCN, and
+compact-attention cells on the RTX 4090. The CUDA summary is
+`sha256:2c213d0...b99dae` and its 18 `state_dict` checkpoints remain only under
 `D:\thericher-v2\model-artifacts\research\kis-nas-d1-sequence-breadth-v1`.
-Every recorded validation forward was target-free, finite, and bounded; no
-validation label, prediction, replay, PnL, selection, ensemble, KIS call, or
-Paper action occurred.
+Every recorded validation forward was target-free, finite, and bounded before
+the separate sealed evaluator opened its in-memory targets.
 
 The Docker run exposed two path-validation defects before training: the panel
 reader did not recognize the mounted `/app/market_data`, and the immutable
@@ -637,18 +636,29 @@ the exact non-symlink `market_data` or `model_artifacts` mount beneath a
 repository root; normal Git children remain rejected. Claude's concise
 drift-check attempt was `review_unavailable` because local OAuth is expired.
 
-Independent review then tightened the completed breadth package without opening
-any target: the executable runner now requires the exact frozen campaign
-contract/precommit before it can write a CPU or CUDA artifact; CUDA accepts only
-a complete, source-safe CPU smoke receipt and immutable sibling precommit from
-outside the Git workspace; and the research container mounts repository `data`
-and `reports` read-only. A fresh host CPU reattestation (`cpu-smoke-20260728-r2`) reproduced
-the same summary hash `sha256:4bfb8448...619067196`; the isolated Docker mount
-check confirmed the two external mounts and the two read-only repository paths.
+Independent review then tightened the completed breadth package: the executable
+runner requires the exact frozen campaign contract/precommit before it can write
+a CPU or CUDA artifact; CUDA accepts only a complete, source-safe CPU smoke
+receipt and immutable sibling precommit from outside the Git workspace; and the
+research container mounts repository `data` and `reports` read-only. The first
+host/Docker hash mismatch remains an immutable r1 failure receipt, but r2
+regenerated the unchanged package fully in Docker rather than relaxing lineage.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is a precommitted,
-candidate-only sealed NAS validation and `local_paper` attribution package. It
-must keep the existing source limitations visible, use no KIS or live route,
-and make no selection, ensemble, promotion, or Paper-broker decision. Let the
+The Docker r4 sealed evaluator then completed all 24 fixed candidates and 18
+fixed comparators using only in-memory validation targets and `local_paper`
+fills. Every replay reconstructed to a terminal-flat account; no raw rows,
+labels, predictions, event rows, checkpoint copies, ranking, selection,
+ensemble, promotion, KIS call, or Paper order was retained or enabled. Its
+source-safe precommit and summary are `sha256:999750...f71746` and
+`sha256:032342...35fedf`; the latter records only a marker-detected
+`execution_environment: docker` class, not a Compose-security attestation. The
+versioned Compose profile and focused tests establish the network/mount contract.
+The independent review also required that field. Claude's source-safe drift-check
+attempt remained `review_unavailable` because local OAuth is expired.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective must precommit a distinct
+causal NAS D1 breadth hypothesis without using the sealed r4 aggregate outcome
+to select it. Keep source limitations visible, use no KIS or live route, and do
+not make a selection, ensemble, promotion, or Paper-broker decision. Let the
 independent intraday scheduler own its next due recovery attempt rather than the
 foreground.

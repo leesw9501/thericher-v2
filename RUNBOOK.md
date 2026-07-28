@@ -1448,6 +1448,40 @@ run label or move a checkpoint into Git. A completed breadth receipt is not
 validation evidence, model selection, an ensemble input, a replay, or a KIS
 Paper decision.
 
+### NAS D1 Sealed Local-Paper Evaluation
+
+After the exact same-runtime CPU and CUDA breadth receipts exist, run the fixed
+sealed evaluator only in the offline research container with a new immutable
+label:
+
+```powershell
+$env:COMPOSE_DISABLE_ENV_FILE = "1"
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_sealed_evaluation.py `
+  --run-label <unique-sealed-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --review-status review_unavailable
+```
+
+The command neither reads `.env` nor has network, KIS, credential, account, or
+broker access. It reattests the frozen panel and campaign, reloads each external
+checkpoint with `weights_only=True`, reconstructs validation targets only in
+memory, and simulates the fixed two-session slots through `local_paper`. Its
+external directory contains only immutable source-safe `precommit.json` and
+`summary.json`; no raw bars, prices, labels, probabilities, event rows, or
+checkpoint copies are retained. The receipts record only a marker-detected
+`execution_environment` class (`docker` or `host`) and its marker observation,
+not a path, device, hardware identifier, secret, or Compose-security attestation.
+The versioned Compose profile and its tests establish the network/mount contract.
+A completed sealed receipt is still candidate-only: it cannot rank, select,
+ensemble, promote, or create a KIS Paper order.
+
+The artifact root and every existing output-path component must be ordinary
+directories. The runner rejects a symlink or Windows junction before directory
+creation and again before receipt writing; do not place the sealed evaluator
+under a redirected artifact path.
+
 ### KIS Daily Regime-Tree Breadth
 
 The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY

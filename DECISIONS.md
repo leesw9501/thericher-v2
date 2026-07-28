@@ -6690,3 +6690,50 @@ Reason: breadth artifacts become a trustworthy fixed input to the later sealed
 evaluator only when their model lineage and write boundary are explicit. This
 does not convert the CPU or CUDA result into profitability evidence or a model
 selection rule.
+
+## 2026-07-28 - Complete sealed NAS attribution in one Docker runtime
+
+Decision: preserve the immutable r1 cross-runtime failure rather than relaxing
+its exact CPU parameter hashes or bridging host predictions into Docker. Rebuild
+the unchanged frozen six-CPU/18-CUDA breadth package inside the network-disabled
+Docker research runtime, then bind the sealed evaluator only to those r2
+receipts. The dataset, six symbols, phase split, feature definition, costs,
+candidate architectures, seeds, threshold, comparators, and non-promotion policy
+remain unchanged.
+
+Docker r2 completed with CPU and CUDA summaries
+`sha256:e60cf92d82b5b6dadb361213e2425845cab4d2f7f64c34a08799b7fd73ffc4fa`
+and
+`sha256:2c213d0a6aefa63c89aeddf551021d2e92370b59258cde672200301c84253a3f`.
+The later Docker r4 sealed evaluator completed the 24 fixed candidate and 18
+fixed comparator runs. Its immutable source-safe precommit and summary hashes
+are `sha256:99975045bdecd27a578d158c1b4e0ecb9eea3894983cffad5483175a03f71746`
+and `sha256:0323424fd24283edd09b517332b454d00bd13a72e698f6a9ce2d92d6b435fedf`.
+Every fill was in-memory `local_paper`, every replay reconstructed to a
+terminal-flat account, and no raw source row, target, prediction, event row,
+checkpoint copy, broker request, KIS call, selection, ensemble, promotion, or
+Paper order was produced.
+
+Independent review found that r2 receipts did not independently identify their
+runtime class. Add only the source-safe marker observation
+`execution_environment.kind` plus its detection field to sealed precommit,
+completion, and failure receipts; it is marker-bound to `docker` or `host` and
+excludes paths, hardware, network identifiers, values, and secrets. It does not
+attest Compose network or mount policy; versioned Compose configuration and its
+focused tests establish that contract. Docker r4 records `docker` with an
+explicit marker-detection field. The focused
+test proves marker behavior while the actual Docker run proves strict checkpoint
+reload, inference, local-paper replay, and receipt generation together.
+
+The external output writer now rejects every symlink or Windows junction
+component before it creates the fixed run directory, rechecks the created path,
+and rechecks receipt parents immediately before each write. This prevents an
+external artifact tree from redirecting sealed receipts into Git. Focused tests
+cover a linked output parent, a junction marker, and a forced post-precommit
+failure receipt. Claude's concise follow-up drift check for this output-boundary
+hardening was attempted but OAuth remained expired; it stays
+`review_unavailable` and does not change the candidate-only scope.
+
+Reason: runtime coherence preserves exact candidate lineage at the sealed
+boundary, and the minimal environment field makes the offline Docker evidence
+auditable without creating a reporting framework or exposing protected data.

@@ -23,14 +23,23 @@ common subset. The new campaign contract is also frozen at
 validation inputs. This remains current-listing coverage evidence rather than a
 PIT universe or ranking input. Its six per-symbol CPU L2-logistic smokes and
 18 Docker CUDA LSTM/causal-TCN/compact-attention cells are now complete under
-fixed source-safe receipts `sha256:4bfb8448...619067196` and
-`sha256:43a4f91c...37492ed7`. The latter retains 18 external `state_dict`
-checkpoints only. This is target-free model-plumbing evidence, not validation
-evaluation, selection, ensemble, replay, PnL, or Paper input.
+  fixed source-safe Docker r2 receipts `sha256:e60cf92...ffc4fa` and
+  `sha256:2c213d0...b99dae`. The latter retains 18 external `state_dict`
+  checkpoints only. This is target-free model-plumbing evidence, not validation
+  evaluation, selection, ensemble, replay, PnL, or Paper input.
 The executable breadth runner now rechecks the exact frozen campaign identity,
 and CUDA accepts only a complete sibling-attested CPU receipt before writing
-any output. The host reattestation `cpu-smoke-20260728-r2` reproduced the
-existing CPU hash; this strengthens lineage only and opens no target.
+any output. The host reattestation `cpu-smoke-20260728-r2` remains immutable;
+the r1 Docker mismatch was resolved by unchanged same-runtime Docker r2 breadth
+artifacts rather than hash relaxation or cross-runtime bridging. The Docker r4
+sealed evaluator completed all six CPU and 18 CUDA candidates plus the 18 fixed
+comparators. Its source-safe precommit and summary are
+`sha256:999750...f71746` and `sha256:032342...35fedf`; all fills are in-memory
+and replayable `local_paper`, all accounts are terminal flat, and no target,
+prediction, event row, source value, ranking, selection, ensemble, promotion,
+KIS, or Paper order was retained or enabled. The summary names only a
+marker-detected `execution_environment: docker` class; versioned Compose
+configuration and focused tests separately attest the network/mount contract.
 The prospective QQQ first-five pair is required only for its isolated
 prospective observation, pair-dependent campaign, and later pair-dependent
 promotion decisions; it does not make historical research input-pending.
@@ -288,11 +297,11 @@ to an ensemble, or turn its result into a Paper input.
    but its after-cost result was below the time-matched always-QQQ comparator.
    Do not retune the lookback, tie rule, cadence, costs, or comparators; do not
    promote it, use it in Paper work, or dispatch GPU depth work.
-9. Run the next precommitted sealed NAS D1 evaluator across the six deterministic
-   CPU controls and 18 external CUDA checkpoints. It may construct validation
-   targets only in-memory, must preserve target-free source artifacts, and must
-   use only fixed local-paper attribution and naive comparators. Do not tune,
-   select a winner, ensemble, promote, or create a KIS Paper input from it.
+9. Keep the completed sealed NAS r4 evaluator immutable. It is candidate-only
+   attribution evidence, not a winner, ensemble, promotion, or KIS Paper input.
+   The next breadth proposal must declare a distinct causal hypothesis, feature
+   contract, costs, split, naive baseline, and strongest kill test before any
+   CPU or GPU work begins.
 
 ## Durable Constraints
 
@@ -307,8 +316,9 @@ to an ensemble, or turn its result into a Paper input.
 
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
-artifact, the fixed daily tree breadth candidate, CACC-D1, and the QQQ/SPY
-relative-regime and relative-allocation CPU smoke/full receipts. The completed
+artifact, the fixed daily tree breadth candidate, CACC-D1, the QQQ/SPY
+relative-regime and relative-allocation CPU smoke/full receipts, and the sealed
+Docker r4 NAS 24-candidate/18-comparator local-paper evaluation. The completed
 daily-history continuation is transport and coverage evidence only: it creates
 no frozen Research input, replay, campaign, or GPU job. A new campaign requires
 its own contract; target-local daily-history recovery has no automatic Research
@@ -320,11 +330,11 @@ work or a promotion hold.
 
 ## Next Handoff
 
-Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, and both closed
-QQQ/SPY controls. The source-local NAS historical D1 panel, exact per-symbol
-campaign, and 6 CPU/18 CUDA breadth artifacts are now attested. The next package
-is an independently precommitted sealed evaluator with fixed local-paper
-attribution; it must not tune, select, ensemble, promote, or create a Paper
-input. Do not use the current listing for rank or membership claims. The fresh
-prospective baseline remains execution evidence and cannot select or promote a
-research result.
+Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
+controls, and immutable sealed NAS r4 result. The source-local NAS historical
+D1 panel, exact per-symbol campaign, Docker r2 breadth artifacts, and Docker r4
+evaluation are attested. The next package must be an independently precommitted
+causal hypothesis, not a retune or selection based on the sealed result. Do not
+use the current listing for rank or membership claims. The fresh prospective
+baseline remains execution evidence and cannot select or promote a research
+result.

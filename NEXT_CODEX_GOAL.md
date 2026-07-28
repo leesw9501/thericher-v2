@@ -2,79 +2,76 @@
 
 ## Objective
 
-Run one frozen, candidate-only sealed validation and `local_paper` attribution
-package for the completed NAS D1 breadth artifacts. This should connect the
-existing deterministic CPU control and 18 CUDA checkpoints to a reproducible
-after-cost local simulation without selecting a winner, building an ensemble,
-or sending any broker request.
+Build one bounded, candidate-only NAS D1 volatility-conditioned trend breadth
+campaign. It must be a new causal hypothesis, not a parameter retune or a
+selection derived from the completed sealed NAS r4 results. The campaign should
+test whether completed-bar trend evidence conditioned by recent realized range
+can improve a fixed long-versus-flat, after-cost local-paper decision relative
+to fixed naive comparators.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `DECISIONS.md`, `RUNBOOK.md`, and the active stateboards.
-2. Reattest the frozen inputs and evidence before any target is reconstructed:
-   - panel dataset: `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`
-   - campaign contract: `sha256:5a9ceb6df7b6c1909ef452b8851fbd7bd23ec03660e9fc75bb278377079aaea5`
-   - campaign precommit: `sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`
-   - CPU breadth summary: `sha256:4bfb8448a61cd741e63b12ab71fb58511be3700c936450286b2257b619067196`
-   - CUDA breadth summary: `sha256:43a4f91c96cf2a081e7c53fc2ab7fa93c03bf7d7beee0f8b2524f9aa37492ed7`
-3. Before opening or interpreting the sealed validation target, ask Claude for
-   the required concise falsification-first review. If local OAuth is still
-   expired, record `review_unavailable` and continue only this non-promoting,
-   no-cost candidate evaluation; do not treat the unavailable review as a
-   result endorsement.
+   `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
+2. Reattest the current source-local NAS panel
+   `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`
+   before building any feature rows.
+3. Ask Claude for a concise falsification-first drift check before freezing the
+   candidate contract. If local OAuth remains expired, record
+   `review_unavailable` and continue this private, non-promoting package.
 
-## Frozen Evaluation Contract
+## Contract
 
-- Use only `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` from the
-  source-local current NAS panel and the exact `1,510 / 22 / 647` phase split.
-- Refit the six CPU L2-logistic controls deterministically and require their
-  parameter hashes to match the CPU receipt. Load each GPU checkpoint only with
-  `weights_only=True` and require its architecture, standardizer, and campaign
-  lineage to match the CUDA receipt.
-- Reconstruct validation targets only in memory using the already frozen
-  `t+1` open to `t+2` open, one-share, 1 bps fee and 2 bps per-fill slippage
-  semantics. Never write labels, prices, feature rows, prediction vectors, or
-  per-decision outputs.
-- On every other chronological validation sample, map probability `>= 0.5` to
-  one long share and lower probability to flat. Use the existing fixed `flat`,
-  `always_long`, and `previous_bar_direction` comparators on the same
-  non-overlapping two-session slots. All simulated fills must retain
-  `source: local_paper`.
-- Treat the 24 fixed candidates independently. The package may report only
-  aggregate classification and after-cost attribution facts per candidate. It
-  may not rank, choose, retune, ensemble, promote, or create a Paper order.
+- Use only `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` from the existing
+  source-local NAS D1 panel. Do not construct a point-in-time universe or rank
+  the current listing.
+- Freeze a new chronological development/purge/validation split, fully causal
+  completed-bar feature timestamps, target timing, costs, model specifications,
+  naive comparators, compute budget, and strongest kill test before fitting.
+- The distinct hypothesis must use a predeclared volatility/range-conditioned
+  trend representation derived only from completed D1 OHLC bars. Preserve the
+  existing unadjusted/corporate-action limitations instead of repairing them.
+- Keep development labels and validation targets isolated. Never tune a
+  threshold, feature, seed, or architecture from validation outcomes.
+- Use deterministic CPU baselines first. If their contract and focused tests
+  pass, run one bounded network-disabled Docker CUDA breadth package with the
+  exclusive GPU. Generated checkpoints and receipts belong only under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
 
 ## Work
 
-1. **Validation:** build a sealed evaluator that owns validation-target
-   reconstruction and refuses unpinned source, checkpoint, CPU-model, split,
-   threshold, or comparator drift.
-2. **Engine Research:** implement the deterministic CPU re-fit and CUDA
-   checkpoint inference adapters, then run the 24 fixed candidate evaluations
-   through the broker-free local paper simulator.
-3. **Review:** use a temporary independent Validation role to verify target
-   isolation, no-tuning behavior, `local_paper` fills, source-safe external
-   receipts, and no KIS/network/credential/broker route.
-4. **Artifacts:** write immutable source-safe precommit and result receipts only
-   under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`. Keep
-   checkpoints outside Git and do not create a report or gate family.
+1. **Data:** add a narrow reattested feature-input adapter for the causal
+   volatility-conditioned D1 windows. It must reject source, symbol, phase,
+   incomplete-bar, and feature-timestamp drift.
+2. **Engine Research:** precommit the one hypothesis and its fixed falsification
+   rule, then run CPU baseline(s) and the eligible bounded CUDA breadth package.
+   Keep candidate families independent; do not create an ensemble.
+3. **Validation:** verify chronological isolation, target-free validation
+   forwards, safe checkpoint loading, Docker artifact placement, and replayable
+   `local_paper` attribution if the campaign opens a fixed evaluation path.
+4. **Execution:** remain independent. Do not create an intent, call KIS, or use
+   the campaign as a Paper input.
 
 ## Boundaries
 
 - No KIS call, `.env` or credential read, provider download, paid asset, public
-  service, account/quote/order route, live behavior, or broker submission.
-- No parameter sweep, threshold tuning, winner selection, ensemble, model
-  promotion, KIS Paper action, or live capital claim.
-- Do not modify the source panel, feature window, phase split, target/cost
-  semantics, candidate architectures, seeds, or source limitations.
+  service, account/quote/order route, broker submission, or live behavior.
+- Do not inspect, rank, select, ensemble, promote, or tune from the sealed NAS
+  r4 aggregate outcome.
+- Do not write raw bars, feature rows, labels, prediction vectors, event rows,
+  secrets, or model artifacts into Git.
+- A failed candidate closes only its own hypothesis. It cannot block Data,
+  Execution, scheduled collection, or another ready research package.
 
 ## Completion
 
-- All 24 fixed candidates either have a source-safe independent result or an
-  exact bounded failure receipt with no incomplete output.
-- Every retained replay fill is locally reconstructable with `source: local_paper`.
-- Validation targets and per-decision values never leave process memory.
+- An immutable source-safe precommit names the new causal feature contract,
+  split, cost model, comparators, model specifications, compute limit, and kill
+  test.
+- CPU baseline evidence is complete, or a bounded failure receipt identifies the
+  exact input/implementation fault without opening a broader hold.
+- If eligible, the CUDA breadth receipt is complete with external checkpoints
+  and target-free validation forwards.
 - Refresh stateboards and replace this file with exactly one next objective.
 
 ## Verification
@@ -88,4 +85,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Evaluate sealed NAS D1 breadth candidates`
+`Add NAS volatility trend breadth campaign`
