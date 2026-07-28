@@ -96,8 +96,8 @@ conflict target in panel
 The panel intentionally remains non-PIT, unadjusted, corporate-action
 unqualified, session-finality-unattested, and non-training. Research has no
 eligible GPU campaign until a distinct causal target/split/cost contract exists.
-The material bottleneck is now collection duty cycle after an observed shared
-rate limit, not panel materialization.
+The material bottleneck is now longitudinal collection depth, not panel
+materialization.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -116,12 +116,22 @@ one client/token per run, breadth-first target selection, target-local
 source-limit recovery, and one bounded same-client rate-limit recovery. A
 rebuilt-image 900-second continuation advanced the cache from generation 187 to
 604 with 417 chunks and 818 accepted pages, without a new categorical failure
-or a rate-recovery attempt. The next scheduled run remains 07:15 KST; no
-trigger-density change is justified from one no-limit sample. The material
-bottleneck is now longitudinal data depth: 604 of 2,119 targets have at most
-two pages. The current reversible improvement is an offline byte-stable panel
-snapshot and past-immutability comparison. `IgnoreNew`, the 870-minute task
-limit, storage floor, and fresh-head priority remain unchanged.
+or a rate-recovery attempt. A later scheduler-owned continuation advanced the
+mutable cache to generation 853 and exercised exactly one same-client recovery:
+it accepted 50 more pages before a second rate limit yielded. No trigger-density
+change is justified from this small evidence set. The material bottleneck is
+now longitudinal data depth: 853 of 2,119 targets have at most two pages. The
+current reversible improvement is an offline byte-stable panel snapshot and
+past-immutability comparison. `IgnoreNew`, the 870-minute task limit, storage
+floor, and fresh-head priority remain unchanged.
+
+The offline broad-panel continuity package now reattested generation 187 and
+generation 604 without opening the collector lock. Its source-safe external
+receipt records 187 shared targets, 35,975 shared rows, and zero fingerprint
+mismatches. This is a limited retained-overlap result, not source qualification
+or research readiness. The shared bottleneck remains longitudinal data depth;
+the collector continues independently while Engine Research prepares a distinct
+KIS-compatible hypothesis contract from already-qualified fixed-pair history.
 
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`

@@ -377,7 +377,10 @@ limits remain explicit.
     a queue proposal only: no contract, target materialization, GPU run,
     selection, ensemble, or Paper input exists yet.
 12. The KIS broad D1 cache now has a reattested source-local development
-    coverage panel at generation 187, but its current-listing/non-PIT,
+    coverage panel at generation 604, with 604 of 2,119 targets covered and
+    at most two pages per target. Its generation-187 overlap comparison found
+    zero changed fingerprints across 187 targets / 35,975 shared rows, but its
+    current-listing/non-PIT,
     unadjusted, corporate-action-unqualified, and session-finality-unattested
     scope is not an eligible target or split. Do not freeze a CPU baseline,
     use historical membership, rank targets, open labels, start GPU work, or

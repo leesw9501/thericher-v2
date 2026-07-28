@@ -45,6 +45,10 @@ KIS_PAPER_DAILY_BROAD_PANEL_ROOT = Path(
 KIS_PAPER_DAILY_BROAD_PANEL_EVIDENCE_ROOT = Path(
     "D:/thericher-v2/model-artifacts/data/kis-paper-daily-nas-broad-panel-v1"
 )
+KIS_PAPER_DAILY_BROAD_PANEL_CONTINUITY_ID = "kis.paper.private.daily.nas.broad.panel-continuity-v1"
+KIS_PAPER_DAILY_BROAD_PANEL_CONTINUITY_EVIDENCE_ROOT = Path(
+    "D:/thericher-v2/model-artifacts/data/kis-paper-daily-nas-broad-panel-continuity-v1"
+)
 
 _INDEX_FILENAME = "index.json"
 _RAW_COLUMNS = (
@@ -270,6 +274,95 @@ class KisPaperDailyBroadPanelMaterialization:
             raise ValueError("broad daily panel materialization is invalid")
 
 
+@dataclass(frozen=True, slots=True)
+class KisPaperDailyBroadPanelContinuityComparison:
+    """Source-safe immutable-overlap comparison for two frozen broad panels."""
+
+    status: Literal["equal", "mismatch"]
+    baseline_dataset_hash: str
+    baseline_index_generation: int
+    candidate_dataset_hash: str
+    candidate_index_generation: int
+    shared_target_count: int
+    shared_row_count: int
+    mismatched_target_count: int
+    mismatched_row_count: int
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        counts = (
+            self.baseline_index_generation,
+            self.candidate_index_generation,
+            self.shared_target_count,
+            self.shared_row_count,
+            self.mismatched_target_count,
+            self.mismatched_row_count,
+        )
+        if (
+            self.status not in {"equal", "mismatch"}
+            or not _is_sha256(self.baseline_dataset_hash)
+            or not _is_sha256(self.candidate_dataset_hash)
+            or any(type(value) is not int or value < 0 for value in counts)
+            or self.mismatched_target_count > self.shared_target_count
+            or self.mismatched_row_count > self.shared_row_count
+            or (self.status == "equal" and self.mismatched_row_count != 0)
+            or (self.status == "mismatch" and self.mismatched_row_count == 0)
+        ):
+            raise ValueError("broad daily panel continuity comparison is invalid")
+
+    def source_safe_document(self) -> dict[str, object]:
+        return {
+            "schema_version": self.schema_version,
+            "kind": KIS_PAPER_DAILY_BROAD_PANEL_CONTINUITY_ID,
+            "status": self.status,
+            "baseline": {
+                "dataset_hash": self.baseline_dataset_hash,
+                "index_generation": self.baseline_index_generation,
+            },
+            "candidate": {
+                "dataset_hash": self.candidate_dataset_hash,
+                "index_generation": self.candidate_index_generation,
+            },
+            "comparison": {
+                "shared_target_count": self.shared_target_count,
+                "shared_row_count": self.shared_row_count,
+                "mismatched_target_count": self.mismatched_target_count,
+                "mismatched_row_count": self.mismatched_row_count,
+            },
+            "scope": _scope_payload(),
+            "artifact_policy": {
+                "external_artifact_only": True,
+                "raw_market_data_persisted": False,
+                "raw_rows_persisted": False,
+                "prices_persisted": False,
+                "volumes_persisted": False,
+                "credentials_accessed": False,
+                "network_accessed": False,
+                "kis_accessed": False,
+                "account_data_persisted": False,
+                "order_data_persisted": False,
+                "broker_accessed": False,
+            },
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisPaperDailyBroadPanelContinuityMaterialization:
+    """Immutable external receipt for one broad-panel continuity comparison."""
+
+    comparison: KisPaperDailyBroadPanelContinuityComparison
+    receipt_path: Path
+    receipt_hash: str
+
+    def __post_init__(self) -> None:
+        if (
+            not self.receipt_path.is_file()
+            or not _is_sha256(self.receipt_hash)
+            or not isinstance(self.comparison, KisPaperDailyBroadPanelContinuityComparison)
+        ):
+            raise ValueError("broad daily panel continuity materialization is invalid")
+
+
 def build_kis_paper_daily_broad_panel(
     cache_root: Path | str = KIS_PAPER_DAILY_BROAD_CACHE_ROOT,
     *,
@@ -385,6 +478,121 @@ def load_materialized_kis_paper_daily_broad_panel(
     if payload != _manifest_payload(panel):
         raise ValueError("broad daily panel manifest does not reattest")
     return panel
+
+
+def compare_kis_paper_daily_broad_panels(
+    baseline: KisPaperDailyBroadPanel,
+    candidate: KisPaperDailyBroadPanel,
+) -> KisPaperDailyBroadPanelContinuityComparison:
+    """Compare canonical fingerprints for the two panels' shared target/session rows."""
+
+    if not isinstance(baseline, KisPaperDailyBroadPanel) or not isinstance(
+        candidate, KisPaperDailyBroadPanel
+    ):
+        raise TypeError("broad daily panel continuity comparison requires panels")
+    if (
+        baseline.registry_sha256 != candidate.registry_sha256
+        or baseline.source_manifest_sha256 != candidate.source_manifest_sha256
+        or baseline.source_file_sha256 != candidate.source_file_sha256
+        or baseline.target_keys != candidate.target_keys
+    ):
+        raise ValueError("broad daily panels do not share one registry contract")
+
+    shared_target_count = 0
+    shared_row_count = 0
+    mismatched_target_count = 0
+    mismatched_row_count = 0
+    for target_key in sorted(set(baseline.bars_by_target) & set(candidate.bars_by_target)):
+        baseline_rows = _bar_fingerprints_by_start(baseline.bars_by_target[target_key].bars)
+        candidate_rows = _bar_fingerprints_by_start(candidate.bars_by_target[target_key].bars)
+        shared_starts = sorted(set(baseline_rows) & set(candidate_rows))
+        if not shared_starts:
+            continue
+        shared_target_count += 1
+        shared_row_count += len(shared_starts)
+        target_mismatches = sum(
+            baseline_rows[start] != candidate_rows[start] for start in shared_starts
+        )
+        if target_mismatches:
+            mismatched_target_count += 1
+            mismatched_row_count += target_mismatches
+
+    return KisPaperDailyBroadPanelContinuityComparison(
+        status="mismatch" if mismatched_row_count else "equal",
+        baseline_dataset_hash=baseline.dataset_hash,
+        baseline_index_generation=baseline.index_generation,
+        candidate_dataset_hash=candidate.dataset_hash,
+        candidate_index_generation=candidate.index_generation,
+        shared_target_count=shared_target_count,
+        shared_row_count=shared_row_count,
+        mismatched_target_count=mismatched_target_count,
+        mismatched_row_count=mismatched_row_count,
+    )
+
+
+def materialize_kis_paper_daily_broad_panel_continuity(
+    *,
+    baseline_manifest_path: Path | str,
+    candidate_manifest_path: Path | str,
+    cache_root: Path | str = KIS_PAPER_DAILY_BROAD_CACHE_ROOT,
+    panel_root: Path | str = KIS_PAPER_DAILY_BROAD_PANEL_ROOT,
+    artifact_root: Path | str = KIS_PAPER_DAILY_BROAD_PANEL_CONTINUITY_EVIDENCE_ROOT,
+    repo_root: Path | str | None = None,
+) -> KisPaperDailyBroadPanelContinuityMaterialization:
+    """Reattest two frozen panels and write one raw-row-free comparison receipt."""
+
+    repository = _repository_root(repo_root)
+    evidence_root = _external_output_root(artifact_root, repository, "continuity evidence root")
+    baseline = load_materialized_kis_paper_daily_broad_panel(
+        baseline_manifest_path,
+        cache_root=cache_root,
+        panel_root=panel_root,
+        repo_root=repository,
+    )
+    candidate = load_materialized_kis_paper_daily_broad_panel(
+        candidate_manifest_path,
+        cache_root=cache_root,
+        panel_root=panel_root,
+        repo_root=repository,
+    )
+    comparison = compare_kis_paper_daily_broad_panels(baseline, candidate)
+    label = (
+        "baseline="
+        f"{comparison.baseline_dataset_hash.removeprefix('sha256:')[:20]}-candidate="
+        f"{comparison.candidate_dataset_hash.removeprefix('sha256:')[:20]}"
+    )
+    receipt_path = evidence_root / label / "receipt.json"
+    receipt = comparison.source_safe_document()
+    _write_or_verify_json(receipt_path, receipt)
+    return KisPaperDailyBroadPanelContinuityMaterialization(
+        comparison=comparison,
+        receipt_path=receipt_path,
+        receipt_hash=_sha256(receipt_path.read_bytes()),
+    )
+
+
+def _bar_fingerprints_by_start(bars: tuple[Bar, ...]) -> dict[datetime, str]:
+    fingerprints: dict[datetime, str] = {}
+    for bar in bars:
+        if bar.start_ts in fingerprints:
+            raise ValueError("broad daily panel stream has duplicate sessions")
+        fingerprints[bar.start_ts] = _sha256(
+            "\x1f".join(
+                (
+                    bar.symbol,
+                    bar.market,
+                    bar.timeframe.value,
+                    bar.start_ts.isoformat(),
+                    str(bar.open),
+                    str(bar.high),
+                    str(bar.low),
+                    str(bar.close),
+                    str(bar.volume),
+                    str(bar.complete).lower(),
+                )
+            ).encode("utf-8")
+        )
+    return fingerprints
 
 
 def _build_panel_from_index(

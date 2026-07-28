@@ -369,6 +369,21 @@ it is not a collector hold. The resulting panel remains current-listing,
 non-PIT, unadjusted, corporate-action-unqualified, and session-finality-
 unattested, so it is not a model target, ranking, or training contract.
 
+Compare two frozen panel manifests without reopening the mutable index or
+calling KIS. The command writes only a source-safe external receipt with
+dataset hashes and aggregate shared/mismatched fingerprint counts:
+
+```powershell
+uv run python scripts\compare_kis_paper_daily_broad_panel_continuity.py `
+  --baseline-manifest D:\market_data\us_equities\kis_paper_private\daily-nas-broad-panel\v1\<baseline>\manifest.json `
+  --candidate-manifest D:\market_data\us_equities\kis_paper_private\daily-nas-broad-panel\v1\<candidate>\manifest.json
+```
+
+An `equal` result establishes only canonical bar equality for shared
+target/session rows in those two frozen snapshots. A `mismatch` result exits
+nonzero and is not a harmless coverage warning. Neither outcome changes the
+collector, source scope, schedule, or research eligibility.
+
 ## KIS NAS D1 Forward Cache
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical

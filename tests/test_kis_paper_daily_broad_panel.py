@@ -7,7 +7,9 @@ import os
 import socket
 import urllib.request
 from collections.abc import Mapping
+from dataclasses import replace
 from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -15,6 +17,7 @@ import pytest
 import thericher_v2.data.kis_paper_daily_broad_panel as panel
 import thericher_v2.data.kis_paper_daily_broad_registry as registry_contract
 import thericher_v2.execution.kis_paper_daily_broad_backfill as broad_contract
+from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 from thericher_v2.execution.kis_market_data import (
     KisPaperDailyRawRow,
     KisPaperMarketDataCallCounts,
@@ -176,6 +179,113 @@ def test_materialized_snapshot_reattests_after_the_live_index_advances(
     )
 
     assert loaded.dataset_hash == result.panel.dataset_hash
+
+
+def test_materializes_an_equal_external_continuity_receipt_without_touching_the_worker(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    cache_root, repository_root = _write_broad_cache(tmp_path, monkeypatch)
+    panel_root = tmp_path / "panel"
+    panel_artifact_root = tmp_path / "panel-artifacts"
+    baseline = panel.materialize_kis_paper_daily_broad_panel(
+        cache_root=cache_root,
+        panel_root=panel_root,
+        artifact_root=panel_artifact_root,
+        repo_root=repository_root,
+    )
+    index = _read_json(cache_root / "index.json")
+    index["generation"] += 1
+    index["targets"][-1]["categorical_failure_count"] += 1
+    (cache_root / "index.json").write_bytes(_json_bytes(index))
+    candidate = panel.materialize_kis_paper_daily_broad_panel(
+        cache_root=cache_root,
+        panel_root=panel_root,
+        artifact_root=panel_artifact_root,
+        repo_root=repository_root,
+    )
+    lock_path = cache_root / "worker.lock"
+    lock_before = lock_path.read_bytes()
+    continuity_root = tmp_path / "continuity-artifacts"
+    _deny_external_access(monkeypatch)
+
+    result = panel.materialize_kis_paper_daily_broad_panel_continuity(
+        baseline_manifest_path=baseline.manifest_path,
+        candidate_manifest_path=candidate.manifest_path,
+        cache_root=cache_root,
+        panel_root=panel_root,
+        artifact_root=continuity_root,
+        repo_root=repository_root,
+    )
+
+    receipt = _read_json(result.receipt_path)
+    assert result.comparison.status == "equal"
+    assert result.comparison.shared_target_count == baseline.panel.covered_target_count
+    assert result.comparison.shared_row_count > 0
+    assert result.comparison.mismatched_target_count == 0
+    assert result.comparison.mismatched_row_count == 0
+    assert result.receipt_path.is_relative_to(continuity_root)
+    assert lock_path.read_bytes() == lock_before
+    assert receipt["artifact_policy"] == {
+        "account_data_persisted": False,
+        "broker_accessed": False,
+        "credentials_accessed": False,
+        "external_artifact_only": True,
+        "kis_accessed": False,
+        "network_accessed": False,
+        "order_data_persisted": False,
+        "prices_persisted": False,
+        "raw_market_data_persisted": False,
+        "raw_rows_persisted": False,
+        "volumes_persisted": False,
+    }
+    _assert_no_raw_fields(receipt)
+
+    with pytest.raises(ValueError, match="outside Git"):
+        panel.materialize_kis_paper_daily_broad_panel_continuity(
+            baseline_manifest_path=baseline.manifest_path,
+            candidate_manifest_path=candidate.manifest_path,
+            cache_root=cache_root,
+            panel_root=panel_root,
+            artifact_root=repository_root / "continuity-artifacts",
+            repo_root=repository_root,
+        )
+
+
+def test_flags_a_changed_shared_bar_fingerprint(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    cache_root, repository_root = _write_broad_cache(tmp_path, monkeypatch)
+    baseline = panel.build_kis_paper_daily_broad_panel(
+        cache_root=cache_root,
+        repo_root=repository_root,
+    )
+    target_key = next(iter(baseline.bars_by_target))
+    stream = baseline.bars_by_target[target_key]
+    changed_bar = replace(stream.bars[0], volume=stream.bars[0].volume + Decimal("1"))
+    candidate_streams = {
+        key: _cataloged_bars_from_verified_loader(
+            dataset_id=catalog.dataset_id,
+            dataset_hash="sha256:" + "d" * 64,
+            source_path=catalog.source_path,
+            bars=(changed_bar, *catalog.bars[1:]) if key == target_key else catalog.bars,
+        )
+        for key, catalog in baseline.bars_by_target.items()
+    }
+    candidate = replace(
+        baseline,
+        dataset_hash="sha256:" + "d" * 64,
+        bars_by_target=candidate_streams,
+    )
+
+    result = panel.compare_kis_paper_daily_broad_panels(baseline, candidate)
+
+    assert result.status == "mismatch"
+    assert result.shared_target_count == baseline.covered_target_count
+    assert result.shared_row_count > 0
+    assert result.mismatched_target_count == 1
+    assert result.mismatched_row_count == 1
 
 
 def test_module_has_no_network_credential_or_broker_route() -> None:

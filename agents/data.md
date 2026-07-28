@@ -436,12 +436,29 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   `sha256:598ef0cd59385024b364b34bb09eaa49310e7ab4a795945288aef5cba6762c70`.
   This is one sustained-progress sample, not a KIS rate-limit conclusion, so
   trigger density remains unchanged.
-- Current broad coverage is 604 of 2,119 targets (28.50 percent), 1,186
+- The frozen generation-604 panel records 604 of 2,119 targets (28.50 percent), 1,186
   accepted pages, one historical categorical failure, and at most two pages
   per target. It is useful breadth progress but remains shallow, current-
   listing/non-PIT, unadjusted, corporate-action-unqualified, and non-training.
-  Recovery class: `resume`; the next ready Data package is an offline
-  byte-stable panel snapshot plus past-immutability comparison.
+  The external generation-604 panel is dataset
+  `sha256:2c3b9ddddc7160620210edecdeaef7925ccea33151def62e180eb4f1d0022660`,
+  manifest `sha256:b0eca31e6bfbfcdec0395837040a8e543d9c83fa3c915f8e651c5cee6deba15e`,
+  and receipt `sha256:ddc6be570a034090052b79fef9f0070e60e92d99b74efa2ddbc6d1f7c1c0cf7a`.
+  Its offline continuity comparison with generation 187 reports 187 shared
+  targets / 35,975 shared rows / zero mismatched rows in external receipt
+  `sha256:6b221366068fa9c1c40e35d707a1475fabbdea384eb4bdb06f66a17945c69c8b`.
+  This proves retained overlap equality only; it does not relax any source or
+  training limitation. Recovery class: `resume`; the collector remains
+  independently schedule-owned.
+- The mutable cache then reached generation 853: 853 covered targets (40.25
+  percent), 1,672 accepted pages, three cumulative categorical failures, and
+  still at most two pages per target. Its latest source-safe receipt is
+  `sha256:69ee1bd010c8fab366e94ea9df5686f101af00af9c574c2d2613a8e00d3560b1`:
+  251 chunks, 486 accepted pages, two categorical rate limits, one same-client
+  recovery, and 50 accepted pages after that recovery before the second limit
+  yielded. This validates that run's bounded recovery path, not a general KIS
+  rate claim. Generation-604 remains the newest frozen panel; do not reinterpret
+  it as generation 853 without a later independent materialization.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
   Remaining page estimate and ETA remain `unknown` because breadth-first
   collection has not yet established a stable longitudinal-depth pace.

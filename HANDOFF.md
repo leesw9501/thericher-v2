@@ -811,3 +811,31 @@ request-start gate, five-minute fresh-token guard, `IgnoreNew` behavior, and
 source scope remain unchanged. The next bounded package materializes a new
 byte-stable panel snapshot and checks immutable overlapping lineage before any
 research consumer can use the expanded coverage.
+
+That panel continuity package completed offline. The generation-604 panel has
+dataset `sha256:2c3b9ddddc7160620210edecdeaef7925ccea33151def62e180eb4f1d0022660`,
+manifest `sha256:b0eca31e6bfbfcdec0395837040a8e543d9c83fa3c915f8e651c5cee6deba15e`,
+and receipt `sha256:ddc6be570a034090052b79fef9f0070e60e92d99b74efa2ddbc6d1f7c1c0cf7a`.
+It preserves 604 covered targets, 1,515 at zero, and zero quarantined targets.
+The external continuity receipt
+`sha256:6b221366068fa9c1c40e35d707a1475fabbdea384eb4bdb06f66a17945c69c8b`
+compared it with the generation-187 panel: 187 shared targets and 35,975 shared
+target/session fingerprints, with zero mismatched targets or rows. The code
+reattests both frozen panels and writes only aggregate hashes/counts; it opens
+neither the collector lock nor any network, credential, account, order, or live
+route. Claude CLI attempts returned no review body before their turn limits, so
+the review fact is `review_unavailable`. The equal comparison does not qualify
+PIT membership, adjustment semantics, corporate actions, session finality, or
+model training.
+
+The next independently scheduled continuation then advanced the mutable cache
+to generation 853: 853 of 2,119 targets now have coverage, with 1,672 accepted
+pages, three cumulative categorical failures, and at most two pages per target.
+Its source-safe receipt
+`sha256:69ee1bd010c8fab366e94ea9df5686f101af00af9c574c2d2613a8e00d3560b1`
+records 251 chunk attempts, 486 accepted pages, and two categorical rate limits.
+The bounded same-client recovery ran exactly once and accepted 50 more pages
+before the second rate limit yielded to the scheduler. This validates the one-
+recovery behavior for that run; it does not establish a provider-wide rate
+limit. The frozen generation-604 panel remains immutable and separate from this
+new mutable watermark.

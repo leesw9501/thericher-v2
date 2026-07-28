@@ -7052,6 +7052,35 @@ encounter a rate limit, so its recovery count was zero. That is sustained
 progress evidence only, not a claim that KIS rate recovery has been proven or a
 reason to widen the scheduler.
 
+A later scheduler-owned run provided the bounded real recovery evidence: it
+accepted 486 pages over 251 chunks, encountered two rate limits, retained the
+same client for exactly one recovery, and accepted 50 pages after that recovery
+before the second limit yielded. This supports the per-worker recovery behavior
+only; it does not identify a universal KIS quota or justify a trigger-density
+change.
+
 Reason: the prior off-window rate-limit result left a real restart gap. A single
 measured recovery removes that avoidable gap without creating a request flood,
 unbounded retry loop, new broker surface, or scheduler platform.
+
+## 2026-07-29 - Compare broad D1 panels by frozen shared-row fingerprints
+
+Decision: add an offline comparison of two materialized broad KIS D1 panel
+manifests. It reattests both frozen source snapshots, computes canonical hashes
+only in memory for each shared target/session bar, and writes an immutable
+external receipt containing dataset hashes and aggregate shared/mismatched
+counts. Any shared-row mismatch makes the result `mismatch` and returns a
+nonzero script status; it does not alter the cache, collector lock, or an
+existing panel.
+
+The first comparison reattested the generation-187 and generation-604 panels:
+187 shared targets and 35,975 shared rows had zero mismatches. Tests cover equal
+overlap, one altered shared bar, external-only output, retained worker-lock
+bytes, and no network/credential/broker route. Claude CLI attempts returned no
+review body before their turn limits, so this decision records
+`review_unavailable`, not Claude endorsement.
+
+Reason: expanding a mutable current-listing cache is useful only if a frozen
+consumer can detect changed retained values. The comparison adds that narrow
+lineage check without claiming provider correctness, PIT membership, corporate-
+action semantics, session finality, or research readiness.
