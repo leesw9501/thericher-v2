@@ -6822,3 +6822,37 @@ the host runtime does not silently substitute a different frozen precommit.
 Reason: a prospective observation needs a hard temporal boundary and exact
 artifact lineage, but missing forward data must not stall independent Data work
 or fabricate a model result.
+
+## 2026-07-28 - Separate NAS D1 forward cache from frozen history
+
+Decision: retain a distinct six-symbol, current-D1 KIS Paper forward cache under
+`D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1` and join
+it with the frozen NAS D1 panel only through a read-only in-memory projection.
+The first bounded single-client run accepted one daily page for each fixed NAS
+symbol and retained one common session. The frozen panel reattested unchanged at
+`sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`;
+the source-safe forward cache and index identities are
+`sha256:700f0f435ba6f09fc93fbd295d215d6da03245d2930a9cc8708d6cbf95aa3aa9`
+and `sha256:8e5a6a96c8da6c3a2924f35816770da0e7319381e57c5d29ecb9b703fe49ee18`.
+
+The cache keeps source-safe per-target accepted-page and categorical-failure
+counts. A valid exact retry increments only the accepted-page evidence and does
+not replace immutable raw snapshots. Transport, auth, rate, and other
+recoverable failures are `deferred`, never a speculative `source_limited`
+claim. A target-local cache conflict remains a reconcile event and the runner
+writes an immutable source-safe recovery receipt even when cache commit fails.
+The collection health and prospective consumer readiness are distinct: an
+incomplete all-six basket is `partial`, and the read-only consumer is
+`input_unavailable` until three common later sessions exist. No model,
+selection, ensemble, KIS Paper order, account route, or live behavior follows.
+
+The required concise Claude forward-cache drift-check was requested with no
+private material, but its local OAuth session was expired; record
+`review_unavailable`. The independent review identified the transient-failure,
+consumer-readiness, accepted-page, and failed-receipt risks above, and focused
+regression tests cover their fixes.
+
+Reason: forward observations must accumulate without rewriting the historical
+research input, while operational evidence must remain truthful enough to resume
+collection and avoid mistaking an external delay for a data boundary or model
+signal.

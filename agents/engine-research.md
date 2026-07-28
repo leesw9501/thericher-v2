@@ -328,11 +328,12 @@ consumer input contains a complete decision, `t+1`, and `t+2` common window.
 10. Keep the completed volatility-conditioned r5 receipt and completed
     prospective observer immutable. The observer found zero all-six-symbol
     common D1 sessions after its 2026-07-24 boundary and recorded only its own
-    `input_unavailable` receipt. It does not select a candidate, authorize a
-    Paper action, or create GPU work. Data now owns a separately stored forward
-    cache; Research remains ready to observe a later complete common window
-    without tuning, ensembling, promoting, ranking, or creating a KIS Paper
-    action.
+    `input_unavailable` receipt. Data's separate forward cache now has one
+    common all-six-symbol D1 session, still below the exact three-session
+    consumer requirement. It does not select a candidate, authorize a Paper
+    action, or create GPU work. Research remains ready to observe a later
+    complete common window without tuning, ensembling, promoting, ranking, or
+    creating a KIS Paper action.
 
 ## Durable Constraints
 
@@ -364,10 +365,10 @@ work or a promotion hold.
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
 controls, both immutable sealed NAS result families, and the completed
-prospective observation receipt. The observer is complete and
-`input_unavailable` because no complete all-six-symbol window follows its
-2026-07-24 boundary. Data owns the next separately stored NAS D1 forward cache;
-Research must wait only for that exact later common-window consumer input, not
-turn the current listing into a PIT membership claim, or use r5 to select, tune,
-ensemble, promote, rank, or create a KIS Paper action. The fresh prospective
-baseline remains Execution evidence only.
+prospective observation receipt. The forward cache now provides one common
+post-boundary all-six-symbol session, but its projection remains
+`input_unavailable` until three sessions exist. Research must wait only for
+that exact later common-window consumer input, not turn the current listing into
+a PIT membership claim, or use r5 to select, tune, ensemble, promote, rank, or
+create a KIS Paper action. The fresh prospective baseline remains Execution
+evidence only.

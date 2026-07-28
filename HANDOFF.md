@@ -691,9 +691,17 @@ There are currently zero six-symbol common sessions after the 2026-07-24 r5
 boundary. That closes only this observation attempt; it is not a Research,
 Data, or Paper hold.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is Data-owned: establish
-one bounded, separately stored six-symbol NAS D1 forward cache that can supply
-new complete common sessions without mutating the frozen historical panel. It
-must not infer a PIT universe, rank candidates, or create a Paper order. Let
-the independent intraday scheduler own its next due recovery attempt rather
-than the foreground.
+The separate NAS D1 forward cache is now present at
+`D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1`. Its
+first bounded Paper daily-data collection accepted six pages and retained one
+all-six-symbol post-boundary common session. The frozen panel reattests unchanged
+at `sha256:7e8d6fe5...d57dc8e`; the forward cache/index hashes are
+`sha256:700f0f...aa3aa9` and `sha256:8e5a6a...49ee18`, and the source-safe
+receipt is external under `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1`.
+The read-only historical-plus-forward projection has 29 frozen context bars per
+symbol but remains `input_unavailable` with zero target slots because it needs
+three common later sessions. A valid replay updates safe accepted-page counters
+without replacing snapshots; transient failures are `deferred`, while
+`source_limited` requires a proven source limitation. Follow NEXT_CODEX_GOAL.md
+to maintain this cache without foreground-waiting, a PIT claim, candidate
+selection, ranking, or broker order.

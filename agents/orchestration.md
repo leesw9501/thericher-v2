@@ -49,9 +49,10 @@ second goal.
 - **Prospective evidence:** the bounded offline NAS observer reattested the
   frozen r2/r5 lineage and found zero common all-six-symbol D1 sessions after
   the 2026-07-24 boundary. Its source-safe `input_unavailable` receipt is
-  complete for that observation only. Data now owns a distinct forward cache;
-  Research has no eligible GPU replay until it yields an exact three-session
-  common consumer window.
+  complete for that observation only. Data has now materialized a distinct
+  forward cache with one common all-six-symbol post-boundary session. Its
+  read-only projection remains `input_unavailable` until it yields the exact
+  three-session consumer window; Research has no eligible GPU replay yet.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -69,8 +70,10 @@ materialization, exact NAS phase-local campaign contract, both sealed NAS
 candidate evaluations, and the bounded prospective observer are complete. The
 observer reattested zero post-2026-07-24 all-six-symbol common sessions and
 closed as `input_unavailable`; there is no shared recovery or authority blocker.
-The current bottleneck is Data-owned forward D1 coverage in a separate cache,
-not a tuning pass. The stale QQQ input remains only a scoped runtime fact.
+The current bottleneck is additional Data-owned forward D1 coverage in the
+separate cache, not a tuning pass. One all-six-symbol common session is retained
+and reattested, while the required three-session consumer input is still absent.
+The stale QQQ input remains only a scoped runtime fact.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -137,10 +140,12 @@ receipt, or any independent lane.
 ## Next Handoff
 
 The distinct causal NAS D1 volatility-conditioned package has a completed r5
-sealed receipt and a completed prospective observer receipt. The observer found
-zero common sessions after its fixed 2026-07-24 boundary, which closes only
-that observation. Next, Data establishes a separately stored six-symbol NAS D1
-forward cache without mutating frozen historical input. Do not use either
-sealed aggregate result to choose a candidate and do not turn cache coverage
-into a point-in-time universe, ranking, selection, ensemble, broker order, or
-global wait. Keep both sealed result families immutable and non-promoting.
+sealed receipt and a completed prospective observer receipt. The observer's
+original zero-session result remains immutable. Data has now established a
+separate six-symbol NAS D1 forward cache without mutating frozen historical
+input: its first collection retained one common session and its read-only
+projection correctly remains `input_unavailable`. The next bounded objective
+may maintain that cache on later completed sessions; it must not turn calendar
+waiting into a foreground hold. Do not use either sealed aggregate result or
+cache coverage to choose a candidate, build an ensemble, rank, or create a
+broker order. Keep both sealed result families immutable and non-promoting.

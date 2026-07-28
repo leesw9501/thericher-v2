@@ -69,11 +69,17 @@ current source-safe index is generation 22 with nine retained `head` chunk
 records per target and no current conflict origin or reason. Old immutable
 snapshots and exact quarantine markers remain on D:; legacy unscoped pages stay
 strict-reject-only rather than being inferred as head observations.
-The active Data package now opens a distinct six-symbol NAS D1 forward cache.
-It must leave the frozen historical panel unchanged, use only the owned KIS
-Paper market-data client for its bounded current-D1 probe and collection, and
-materialize any later common sessions without making a PIT, ranking, or broker
-claim.
+The distinct six-symbol NAS D1 forward cache is now materialized under
+`D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1`. Its
+first bounded single-client current-D1 collection accepted six fixed NAS daily
+pages and retained one common post-boundary session without changing the frozen
+historical panel hash `sha256:7e8d6fe5...d57dc8e`. Its source-safe cache/index
+hashes are `sha256:700f0f...aa3aa9` and `sha256:8e5a6a...49ee18`; the immutable
+receipt is external under `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1`.
+The cache is a fixed current-listing consumer basket, not a PIT universe,
+ranking, model, or broker input. It has only one common session, so its
+three-session prospective consumer status is `input_unavailable`; that is a
+consumer-local fact, not a collection or company hold.
 
 ## Current Facts
 
@@ -423,6 +429,15 @@ infer a provider revision policy from observation time alone. The fixed
 two-minute runtime budget remains unchanged until future regular-session evidence
 supports a separately reviewed adjustment.
 
+Current class: complete for the first six-symbol NAS D1 forward-cache
+observation and its offline reattestation. A valid repeated page advances only
+the source-safe per-target accepted-page count and leaves raw snapshots intact.
+A transport, authentication, or rate fault is `deferred` for its target and
+resumes through the owned cache path. A cache-integrity fault emits a
+source-safe `reconcile` receipt. Neither is evidence of a source boundary;
+`source_limited` remains reserved for an evidence-backed endpoint/data
+limitation.
+
 ## Next Handoff
 
 Preserve the frozen six-symbol source separately. Continue the fresh prospective
@@ -449,9 +464,11 @@ all-six-symbol D1 sessions after the 2026-07-24 boundary, so its own scope is
 `input_unavailable`. That does not qualify, change, or mutate this frozen
 historical panel.
 
-The next Data-owned package is a separately stored six-symbol NAS D1 forward
-cache. It must collect only current complete D1 pages through the owned KIS
-Paper market-data client, preserve source provenance and a durable cursor, and
-keep the frozen historical panel hash unchanged. A later observer may consume a
-new complete common window, but this cache is not a PIT universe, candidate
-selection, ranking, or Paper order.
+The separately stored NAS D1 forward cache is complete for its first observation.
+It currently has one all-six-symbol common session; the read-only
+historical-plus-forward projection is therefore `input_unavailable` with zero
+eligible three-session target slots. The next Data-owned objective may schedule
+or invoke the same bounded profile for later completed sessions, preserving its
+single-client route, source-safe receipts, per-target recovery states, and the
+unchanged frozen panel. Do not turn cache coverage into a PIT universe,
+candidate selection, ranking, or Paper order.

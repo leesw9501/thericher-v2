@@ -279,6 +279,36 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/collection-control-v1:/app/collection_control
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-nas-history-v1:/app/model_artifacts
 
+  kis-paper-daily-nas-forward:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-daily-nas-forward"]
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/collect_kis_paper_daily_nas_forward.py
+      - --execute
+      - --cache-root
+      - /app/market_data
+      - --control-root
+      - /app/collection_control
+      - --artifact-root
+      - /app/model_artifacts
+      - --repository-root
+      - /app
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/daily-nas-forward/v1:/app/market_data
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/collection-control-v1:/app/collection_control
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-nas-forward-v1:/app/model_artifacts
+
   kis-paper-daily-spy-head:
     build:
       context: .

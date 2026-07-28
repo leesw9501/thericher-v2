@@ -288,6 +288,40 @@ transport failure remains deferred for only that target. Once all targets are
 terminal, the profile exits without constructing a KIS client or making a
 market-data request.
 
+## KIS NAS D1 Forward Cache
+
+The prospective six-symbol NAS D1 cache is separate from the frozen historical
+panel and exists only under external roots:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1
+D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1
+```
+
+Run its dedicated Data-only profile without overriding the canonical container
+roots:
+
+```powershell
+docker compose --profile kis-paper-daily-nas-forward run --rm --no-deps `
+  kis-paper-daily-nas-forward
+```
+
+It injects only the two KIS Paper market-data variables with `THERICHER_MODE=off`.
+The route permits only the virtual-paper token and fixed `AAPL`, `AMZN`, `GOOGL`,
+`META`, `MSFT`, and `NVDA` NAS daily-price requests. It has no account, order,
+live, model, or GPU surface. The collector retains only prior completed D1 rows
+strictly after the frozen boundary and never merges them into the historical
+panel.
+
+Every successful page advances the target's source-safe accepted-page count. An
+exact duplicate leaves the raw snapshot bytes unchanged. Transient transport,
+authentication, rate, or reconciliation failures are target-local `deferred`
+recovery, not `source_limited`; a global cache-integrity failure emits a
+source-safe `reconcile` receipt. The cache's all-six common-session count and
+the three-session prospective consumer status are distinct facts. Do not wait in
+the foreground for a future session; let an owned future invocation collect it
+while other ready work continues.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

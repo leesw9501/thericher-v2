@@ -2,70 +2,74 @@
 
 ## Objective
 
-Build one bounded, private six-symbol NAS D1 forward-cache path that can later
-supply a new all-symbol prospective observation without mutating the frozen
-historical panel.
+Connect the separate NAS D1 forward cache to one bounded, automatic prospective
+shadow-observation loop: collect at most once for each newly completed US
+equity D1 session, then consume the cache only when its fixed six-symbol,
+three-session common window is complete.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active stateboards.
-2. Reattest the frozen NAS D1 panel and the completed prospective
-   `input_unavailable` receipt before opening a new cache namespace.
-3. Ask Claude for a concise falsification-first check of the forward-cache
-   boundary, source provenance, and leakage/survivorship limitations. If OAuth
-   remains expired, record `review_unavailable` and continue this private,
-   non-promoting Data package.
+2. Reattach the frozen NAS panel, forward-cache index, and first source-safe
+   forward receipt. Confirm that the frozen panel remains unchanged and record
+   the current all-six common-session count without printing raw rows.
+3. Ask Claude for a concise falsification-first check of the proposed schedule
+   scope and the forward-cache-to-observer temporal boundary. If local OAuth is
+   still expired, record `review_unavailable` and continue this private,
+   non-promoting package.
 
 ## Contract
 
-- Data owns this package. Engine Research may prepare its consumer contract but
-  must not rerun the prospective observer until a complete all-six-symbol
-  decision, `t+1`, and `t+2` window exists. Execution remains independent.
-- Use the standing-authorized KIS Paper market-data client only for a bounded
-  current-D1 capability probe and collection. Do not call account or order
-  endpoints, read `KIS_LIVE_*`, submit a broker order, or expose data publicly.
-- Store raw cache bytes only under a new `D:\market_data` forward namespace;
-  never write data, credentials, raw provider bodies, or model artifacts to
-  Git. Keep source-safe status evidence and mutable cursor/recovery facts
-  separate from the frozen historical panel.
-- The fixed symbols are `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` on
-  NAS. They are a fixed consumer basket, not a point-in-time universe claim.
-- Do not merge, overwrite, backfill into, or reinterpret the frozen historical
-  NAS panel. Do not blend another provider, rank candidates, tune a model,
-  construct an ensemble, promote a result, or create a Paper order.
-- A partial result, endpoint limit, closed-session absence, or failed page
-  closes only the affected source/cache cursor with a source-safe recovery
-  state. It never blocks another ready lane or becomes a human approval gate.
+- Data owns the forward-cache maintenance trigger and source provenance. Engine
+  Research owns the read-only prospective consumer. Validation remains
+  independent; Execution has no assigned broker work.
+- Use only the existing KIS Paper market-data client and the fixed six-symbol
+  NAS D1 forward profile. Do not call account, position, order, quote, or live
+  endpoints; do not read `KIS_LIVE_*`, submit an order, or expose data publicly.
+- A goal-owned Windows scheduler may invoke the dedicated Docker profile after
+  a completed US session, but its worker must be idempotent, bounded to one
+  current-D1 page per symbol, observable through source-safe receipts, and
+  recoverable. It must not foreground-wait or invoke a parallel collector for
+  the same cache.
+- Retain raw rows only under the existing D: forward-cache root and generated
+  receipts only under the configured D: artifact root. Never write raw rows,
+  credentials, account data, model weights, or provider bodies to Git.
+- Keep the frozen historical panel immutable. A valid forward duplicate may
+  advance source-safe accepted-page evidence but must not replace snapshots.
+  Transient faults are `deferred`; `source_limited` requires evidence for a real
+  endpoint/data limitation.
+- The current listing basket is not a point-in-time universe. Do not select,
+  tune, rank, ensemble, promote, or create a Paper action from cache coverage
+  or a prospective observation.
 
 ## Work
 
-1. **Data:** define the forward-cache layout, immutable source-safe receipts,
-   deduplication key, durable cursor, recovery states, and a read-only
-   historical-plus-forward consumer projection. The projection must preserve
-   the frozen panel hash and must not write merged rows back into it.
-2. **Data:** run one bounded single-client KIS Paper current-D1 capability
-   probe, then collect useful complete pages serially at measured accepted-page
-   pace. Record source-safe coverage, accepted/error counts, and the next
-   recovery action without printing credentials or raw rows.
-3. **Validation:** add focused tests proving six-symbol isolation, frozen-panel
-   immutability, source-safe persistence, cursor recovery, and no credential,
-   account, order, or live route in offline test paths.
-4. **Engine Research:** preserve the frozen candidate package and only record
-   whether the new cache has the exact three-session common-window consumer
-   input. Do not run a new observation, rank a candidate, or dispatch GPU work
-   merely because the cache exists.
+1. **Data:** implement or adapt one idempotent goal-owned schedule that invokes
+   the existing `kis-paper-daily-nas-forward` Docker profile once after each
+   eligible completed D1 session. Reattach its last receipt/cache before a new
+   call and leave unrelated schedules untouched.
+2. **Engine Research:** extend the NAS shadow observer's input boundary to
+   consume the verified historical-plus-forward projection in memory. It must
+   emit a source-safe no-op or `input_unavailable` result below three common
+   sessions and run the already frozen observer path only when the exact common
+   window exists.
+3. **Validation:** add focused tests for schedule idempotency, no credential or
+   broker route in the offline consumer, unchanged frozen panel, strict three-
+   session all-six eligibility, and source-safe recovery receipts.
+4. **Orchestration:** run one bounded offline smoke. A future session waiting
+   state belongs only to the scheduler; continue another ready lane rather than
+   holding the company objective.
 
 ## Completion
 
-- A distinct six-symbol forward cache exists under `D:\market_data` with a
-  source-safe `ready`, `partial`, `input_unavailable`, or `source_limited`
-  status and a recoverable cursor where appropriate.
-- The frozen historical panel hash is reattested unchanged, and any newly
-  materialized common-session coverage is stated without raw rows or a
-  point-in-time universe claim.
-- Focused tests cover the cache contract and route boundaries. Refresh the
-  relevant stateboards and replace this file with exactly one next objective.
+- The daily forward collector has one bounded, recoverable automatic trigger
+  with source-safe evidence and no account/order/live surface.
+- The prospective observer reads a verified in-memory historical-plus-forward
+  projection and cannot consume an incomplete or non-common six-symbol window.
+- Focused tests cover the schedule, cache-to-observer boundary, and route
+  isolation. Refresh stateboards and replace this file with exactly one next
+  objective.
 
 ## Verification
 
@@ -78,4 +82,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add NAS D1 forward cache path`
+`Automate NAS D1 forward observation`
