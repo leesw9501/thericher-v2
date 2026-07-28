@@ -84,10 +84,12 @@ The bounded QQQ virtual-paper canary objective is complete as an exact
 `no_intent/receipt_not_eligible` session plus a network-disabled reattachment;
 no broker lifecycle occurred. The next material bottleneck is historical `1m`
 coverage: QQQ/NAS and SPY/AMS are source-limited for their exact continuation
-contracts, while the already allowlisted SPY/NAS alternate-exchange route is
-still untested. Research has no distinct frozen GPU campaign eligible for
-dispatch, so Codex will not duplicate an already-completed candidate merely to
-occupy the GPU.
+contracts, while SPY/NAS returned `minute_response_empty` on one `PINC=1`
+request and is therefore only `unavailable`. The immediate improvement is an
+explicit test of the existing safe empty-response classification plus one
+native-route control, not a retry flood or speculative cursor collector. Research has no distinct frozen GPU
+campaign eligible for dispatch, so Codex will not duplicate an already-completed
+candidate merely to occupy the GPU.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -160,9 +162,10 @@ non-promoting work.
   reattestation. Two more all-six common sessions are required only by its
   prospective consumer; the next company objective does not wait for them.
 - Claude CLI is authenticated. Its short execution-recovery and historical-minute
-  capability challenges both returned `supported-with-limits`; those limits are
-  expressed in the exact validator mapping and bounded per-route probe, not as
-  a new approval or foreground wait.
+  capability challenges returned `supported-with-limits`. The latter requires
+  the empty SPY/NAS observation to stay an exact request-shape fact until a
+explicit safe-classification test and native-route control disambiguate it; this
+is a bounded Data package, not a new approval or foreground wait.
 
 ## Recovery
 
@@ -201,8 +204,9 @@ The existing local operations console is reattached through source-safe external
 evidence `20260728T115736150112Z-complete.json`; it remains loopback-only,
 credential-free, and read-only/no-submission from the dashboard's perspective.
 The candle-state r3 package is complete; preserve its immutable r1/r2 recovery
-records plus r3 CPU/CUDA/attestation receipts. The next company objective is a
-bounded SPY/NAS `1m` alternate-route continuation probe. It must use no live
-route, account/order endpoint, model-selection shortcut, or parallel request
-flood. Data's forward task and Research's later prospective consumer continue
-independently.
+records plus r3 CPU/CUDA/attestation receipts. The SPY/NAS probe is now complete
+as an exact `unavailable` result. The next company objective tests the existing
+empty-minute response classification and runs one matched SPY/AMS native-route
+control, with no live route, account/order endpoint, model-selection shortcut,
+serial collector, or parallel request flood. Data's forward task and Research's
+later prospective consumer continue independently.

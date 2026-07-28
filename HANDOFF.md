@@ -175,6 +175,13 @@ authorized private KIS Paper work.
   `source_limited` for serial continuation; it does not claim that all KIS
   historical minute paths are unavailable, and no unsupported cursor queue was
   started.
+- The bounded 2026-07-28 `SPY/NAS` `PINC=1` minute probe made one token request
+  and one minute-page request, accepted zero pages, and retained the source-safe
+  `minute_response_empty` result at
+  `D:\\thericher-v2\\model-artifacts\\data\\kis-paper-minute-capability-probe\\20260728T161832343621Z-aeda6d998380bd52.json`.
+  This makes that exact request shape `unavailable`; it is not evidence that the
+  exchange mapping, provider, or all historical-minute paths are unavailable.
+  No retry, cache mutation, or serial collector followed.
 - The first fresh 2026-07-28 KST prospective QQQ head capture completed. It
   produced a ready same-session 90-minute QQQ/NAS runtime window while its
   distinct full-session coverage remains incomplete. QQQ/NAS and SPY/AMS each
@@ -612,13 +619,13 @@ global permission or progress latch.
 
 ## Next Handoff
 
-The validated QQQ Paper no-intent closes the current canary objective. The next
-company objective is a source-safe SPY/NAS `1m` alternate-exchange continuation
-probe: one reusable KIS Paper client, three pages maximum, the existing
-one-second request-start gate, and no parallel flood. It must prove strictly
-older cursor/date progress before any route-scoped serial backfill is enabled;
-otherwise it closes only that exact route as source-limited. The existing fresh
-head schedule continues at its own due time and is not a foreground wait.
+The validated QQQ Paper no-intent and the bounded SPY/NAS probe objectives are
+complete. The latter is `unavailable` for one exact `PINC=1` request shape, not
+source-limited or a provider-wide conclusion. The next company objective
+explicitly tests the existing safe distinction between an empty-successful
+payload and rejected/invalid responses, then uses one matched native-route
+control before drawing a route-specific inference. The existing fresh-head
+schedule continues at its own due time and is not a foreground wait.
 
 The QQQ/SPY D1 relative-regime and separate relative-allocation CPU controls
 are complete and falsified. The allocation control reused the hash-attested

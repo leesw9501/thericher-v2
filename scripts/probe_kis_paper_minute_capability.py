@@ -44,7 +44,7 @@ def main(
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--include-previous-day", action="store_true")
-    parser.add_argument("--target", choices=("QQQ/NAS", "SPY/AMS"), default="QQQ/NAS")
+    parser.add_argument("--target", choices=("QQQ/NAS", "SPY/AMS", "SPY/NAS"), default="QQQ/NAS")
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument(
         "--max-pages",

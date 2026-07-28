@@ -213,6 +213,13 @@ the offline observer only after a current or complete cache result. A
 - The bounded historical intraday cache has 21 complete QQQ and SPY
   regular-session inputs. It is a source-scoped pipeline control, not evidence
   of KIS's maximum historical reach or a sufficient model corpus.
+- The bounded `SPY/NAS` `PINC=1` alternate-route probe is complete as
+  `unavailable`: one token request and one minute request accepted zero pages
+  with `minute_response_empty`. Its source-safe receipt is external at
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20260728T161832343621Z-aeda6d998380bd52.json`.
+  It proves only that exact request shape returned no rows. Do not relabel it as
+  an exchange mismatch, source limitation, provider-wide reach result, or a
+  collector checkpoint; no retry or cache mutation occurred.
 - The first fresh 2026-07-28 KST scheduled capture wrote a source-safe Data
   receipt. It collected one current terminal page for each QQQ/NAS and SPY/AMS
   target, retained no complete 390-minute regular session, and preserved the
@@ -347,11 +354,13 @@ the offline observer only after a current or complete cache result. A
    `PINC=1` routes. They supplied no useful continuation cursor. Continue the
    independent fresh-head schedule without treating this source fact as a
    general KIS-history conclusion.
-4. A later Data package may probe one explicitly named alternate KIS endpoint,
-   exchange route, or compatible free source only when an active consumer needs
-   it. It must be a new source contract, not a retry flood against the terminal
-   routes. Keep canonical qualified `1m` bytes once and derive `5m`, `10m`,
-   `1h`, and `3h` locally when a valid source exists.
+4. The next bounded package explicitly tests the existing distinction between a
+   successful empty minute payload and a rejected or invalid provider response,
+   then issues at most one matched `SPY/AMS` `PINC=1` native-route control. It
+   must use the existing one-second gate and one client/token, preserve no raw
+   rows, and never retry SPY/NAS in that package. Keep canonical qualified `1m`
+   bytes once and derive `5m`, `10m`, `1h`, and `3h` locally when a valid source
+   exists.
 5. Build a versioned liquid-universe manifest from already available
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
@@ -452,6 +461,11 @@ infer a provider revision policy from observation time alone. The fixed
 two-minute runtime budget remains unchanged until future regular-session evidence
 supports a separately reviewed adjustment.
 
+Current class: complete for the one-page SPY/NAS alternate-route probe. Its
+`minute_response_empty` result is an `unavailable` request-shape fact, not
+`source_limited`; the next independent native-route control owns any further
+disambiguation. It has no cursor, retry, or cache-recovery action.
+
 Current class: complete for the first six-symbol NAS D1 forward-cache
 observation and its offline reattestation. A valid repeated page advances only
 the source-safe per-target accepted-page count and leaves raw snapshots intact.
@@ -465,11 +479,12 @@ limitation.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
 intraday schedule owns its next due at 2026-07-29 02:31 KST; do not manually
-trigger a duplicate run. The completed QQQ/NAS and SPY/AMS prior-day probes do
-not support cursor collection. The next Data package probes the already
-allowlisted SPY/NAS `1m` alternate-exchange route with one client, a three-page
-cap, the installed one-second gate, and source-safe cursor evidence before any
-serial historical collector is enabled.
+trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
+cursor collection. SPY/NAS is `unavailable` for one exact request shape, not a
+closed source limitation. The next Data package tests the existing safe
+empty-response classification and makes one matched SPY/AMS native-route
+control; it does not retry SPY/NAS, start a serial collector, or generalize a
+result to KIS.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact

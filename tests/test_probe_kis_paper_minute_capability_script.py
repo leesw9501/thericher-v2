@@ -99,7 +99,7 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
                 str(tmp_path / "artifacts"),
                 "--include-previous-day",
                 "--target",
-                "SPY/AMS",
+                "SPY/NAS",
                 "--minimum-request-interval-seconds",
                 "1.0",
             ]
@@ -117,7 +117,7 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
     assert probe["tested_request_interval_seconds"] == 1.0
     assert probe["max_pages"] == 3
     assert probe["include_previous_day"] is True
-    assert probe["target"] == ("SPY", "AMS")
+    assert probe["target"] == ("SPY", "NAS")
     client = probe["client"]
     assert isinstance(client, dict)
     assert client["client"]["max_minute_page_attempts"] == 3

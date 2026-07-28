@@ -57,8 +57,8 @@ def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> Non
     client = _MinuteClient(
         [
             _page((start + timedelta(minutes=3), start + timedelta(minutes=2)), "1"),
-            _page((start + timedelta(minutes=2), start + timedelta(minutes=1)), "1"),
-            _page((start + timedelta(minutes=1), start), None),
+            _page((start + timedelta(minutes=1), start), "1"),
+            _page((start - timedelta(minutes=1), start - timedelta(minutes=2)), None),
         ]
     )
     request_starts = tuple(
@@ -77,6 +77,12 @@ def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> Non
     assert outcome.status == "complete"
     assert outcome.accepted_page_count == 3
     assert outcome.continuation_category == "terminal"
+    assert outcome.page_progress_categories == (
+        "initial",
+        "strictly_older_nonoverlapping",
+        "strictly_older_nonoverlapping",
+    )
+    assert outcome.cursor_progress_category == "strictly_backward_nonoverlapping"
     assert outcome.probe_pattern_category == "cursor_chain"
     assert outcome.historical_range_category == "single_exchange_date"
     assert outcome.minute_spacing_category == "contiguous_after_deduplication"
@@ -94,7 +100,7 @@ def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> Non
     assert outcome.pacing_recalibration_fact == "existing_gate_measurement_only"
     assert client.queries[1].continuation_next == "1"
     assert client.queries[1].continuation_key == "20260724093000"
-    assert client.queries[2].continuation_key == "20260724092900"
+    assert client.queries[2].continuation_key == "20260724092800"
 
     serialized = json.dumps(outcome.safe_payload(), sort_keys=True)
     assert "12345.67" not in serialized
@@ -126,6 +132,8 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
     assert outcome.status == "complete"
     assert outcome.accepted_page_count == 2
     assert outcome.continuation_category == "terminal"
+    assert outcome.page_progress_categories == ("initial", "terminal_head_repeat")
+    assert outcome.cursor_progress_category == "terminal_head_repeat"
     assert outcome.probe_pattern_category == "terminal_head_repeat"
     assert outcome.token_reuse_category == "single_token_reused"
     assert outcome.request_start_category == "at_or_below_existing_gate"
@@ -137,7 +145,7 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
     assert all(query.continuation_next is None for query in client.queries)
 
 
-def test_probe_uses_prior_day_scope_from_its_first_request() -> None:
+def test_probe_allows_spy_nas_prior_day_scope_from_its_first_request() -> None:
     start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
     client = _MinuteClient([_page((start + timedelta(minutes=1), start), None)])
 
@@ -146,17 +154,75 @@ def test_probe_uses_prior_day_scope_from_its_first_request() -> None:
         request_start_times=(datetime(2026, 7, 24, 12, 0, tzinfo=UTC),) * 2,
         observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
         include_previous_day=True,
-        target=("SPY", "AMS"),
+        target=("SPY", "NAS"),
         repeat_terminal_head_once=False,
         monotonic_clock=_monotonic(0.0, 0.1),
     )
 
     assert outcome.include_previous_day is True
     assert outcome.safe_payload()["request_scope"] == "current_and_previous_day"
-    assert outcome.safe_payload()["target_key"] == "SPY/AMS/1m"
+    assert outcome.safe_payload()["target_key"] == "SPY/NAS/1m"
     assert client.queries[0].include_previous_day is True
     assert client.queries[0].symbol == "SPY"
-    assert client.queries[0].exchange == "AMS"
+    assert client.queries[0].exchange == "NAS"
+
+
+def test_probe_closes_duplicate_or_non_backward_cursor_chain_without_retaining_rows() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient(
+        [
+            _page((start + timedelta(minutes=2), start + timedelta(minutes=1)), "1"),
+            _page((start + timedelta(minutes=1), start), "1"),
+        ]
+    )
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(
+            datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+            datetime(2026, 7, 24, 12, 0, 1, tzinfo=UTC),
+            datetime(2026, 7, 24, 12, 0, 2, tzinfo=UTC),
+        ),
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        include_previous_day=True,
+        target=("SPY", "NAS"),
+        monotonic_clock=_monotonic(0.0, 2.0),
+    )
+
+    assert outcome.status == "complete"
+    assert outcome.accepted_page_count == 2
+    assert outcome.continuation_category == "duplicate_conflict"
+    assert outcome.page_progress_categories == ("initial", "overlap_or_not_older")
+    assert outcome.cursor_progress_category == "duplicate_or_not_older"
+    assert outcome.calibration_fact == "single_client_duplicate_or_non_backward_page"
+    assert len(client.queries) == 2
+    serialized = json.dumps(outcome.safe_payload(), sort_keys=True)
+    assert "12345.67" not in serialized
+    assert "20260724" not in serialized
+
+
+def test_probe_closes_a_duplicate_within_one_page_without_requesting_a_cursor() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient([_page((start, start), "1")])
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(
+            datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+            datetime(2026, 7, 24, 12, 0, 1, tzinfo=UTC),
+        ),
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        target=("SPY", "NAS"),
+        monotonic_clock=_monotonic(0.0, 0.1),
+    )
+
+    assert outcome.status == "complete"
+    assert outcome.accepted_page_count == 1
+    assert outcome.continuation_category == "duplicate_conflict"
+    assert outcome.page_progress_categories == ("duplicate_within_page",)
+    assert outcome.cursor_progress_category == "duplicate_or_not_older"
+    assert len(client.queries) == 1
+    assert "20260724" not in json.dumps(outcome.safe_payload(), sort_keys=True)
 
 
 def test_probe_records_partial_continuation_failure_without_retaining_rows() -> None:
@@ -185,6 +251,28 @@ def test_probe_records_partial_continuation_failure_without_retaining_rows() -> 
     assert outcome.categorical_limit_or_error_count == 1
     assert outcome.pacing_recalibration_fact == "rate_limit_observed_at_tested_interval"
     assert outcome.safe_payload()["raw_market_data_retained"] is False
+
+
+def test_probe_records_empty_route_without_starting_a_collector() -> None:
+    client = _MinuteClient([KisPaperMarketDataError("minute_response_empty")])
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(datetime(2026, 7, 24, 12, 0, tzinfo=UTC),) * 2,
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        include_previous_day=True,
+        target=("SPY", "NAS"),
+        monotonic_clock=_monotonic(0.0, 0.1),
+    )
+
+    assert outcome.status == "unavailable"
+    assert outcome.accepted_page_count == 0
+    assert outcome.continuation_category == "not_observed"
+    assert outcome.cursor_progress_category == "not_observed"
+    assert outcome.response_class == "minute_response_empty"
+    assert outcome.categorical_limit_or_error_count == 1
+    assert len(client.queries) == 1
+    assert "20260724" not in json.dumps(outcome.safe_payload(), sort_keys=True)
 
 
 def test_probe_records_the_installed_one_second_pace_without_retaining_rows() -> None:

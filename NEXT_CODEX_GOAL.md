@@ -2,72 +2,73 @@
 
 ## Objective
 
-Prove or close the `SPY/NAS` `1m` KIS Paper alternate-exchange historical
-continuation contract, then bootstrap only that exact route's durable serial
-collector if the source demonstrates real backward progress.
+Validate the existing KIS Paper overseas-stock `1m` empty-response
+classification without widening broker authority, then establish whether the
+observed `SPY/NAS` result is route-specific or request-shape-limited.
 
-`QQQ/NAS` and `SPY/AMS` already closed as source-limited for their exact
-`PINC=1` continuation contracts. This objective must not generalize either
-result to KIS as a provider.
+The completed `SPY/NAS` `PINC=1` probe made one token request and one minute
+request, accepted no page, and emitted `minute_response_empty`. It is
+`unavailable` for that exact request shape. It is not proof of an exchange
+mismatch, a source limitation, or provider-wide intraday reach.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active stateboards.
-2. Reattach the existing minute capability probe, intraday backfill collector,
-   provider configuration, and their focused tests. Do not inspect or print raw
-   market rows.
+   `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
+2. Reattach the read-only KIS minute client, capability probe, source-safe
+   transport tests, and existing QQQ/NAS and SPY/AMS evidence. Do not inspect or
+   print raw market rows.
 3. Ask Claude for one short falsification-first drift check before changing the
-   route configuration or collector contract. Reuse no credentials, raw rows,
-   account identifiers, or secret-bearing output in that prompt.
+   route-registry contract or relying on the paired capability inference. Do not include
+   credentials, account identifiers, raw rows, or provider bodies.
 
 ## Authority And Boundaries
 
-- `KIS_PAPER_*` is standing-authorized for this private **market-data-only**
-  work through the existing Data-owned client path. Do not call account, quote,
-  order, cancellation, modification, or reconciliation endpoints.
-- Use one in-memory client/token, the installed one-second request-start gate,
-  and one active collector for the exact cache. Do not parallelize requests or
-  create a request flood.
-- Probe no more than three pages. Stop the probe on the first categorical limit
-  or error. A second same-route attempt is allowed only when the recovery rule
-  has a documented, measured reason.
-- Store market data only under `D:\market_data` and generated evidence only
-  under `D:\thericher-v2\model-artifacts`. Keep raw rows, credentials, and
-  provider bodies out of Git, logs, stateboards, and Claude.
-- Do not read or route `KIS_LIVE_*`, enable live behavior, alter Paper-order
-  behavior, select a model, or add a dashboard/report workflow.
+- `KIS_PAPER_*` is standing-authorized only for private **market-data** work in
+  this objective. Do not call account, quote, order, cancellation, modification,
+  or reconciliation endpoints.
+- Use one in-memory client/token, one active probe, and the installed one-second
+  request-start gate. Do not parallelize requests or create a request flood.
+- Do not retry `SPY/NAS` in this objective. After local classification tests,
+  make at most one `SPY/AMS` `PINC=1` native-route control request.
+- Store data only under `D:\market_data` and evidence only under
+  `D:\thericher-v2\model-artifacts`. Keep raw rows, credentials, provider
+  bodies, and account facts out of Git, logs, stateboards, and Claude.
+- Do not read or route `KIS_LIVE_*`, change paper-order behavior, select or
+  promote a model, add a collector/scheduler, or add a dashboard/report flow.
 
 ## Work
 
-1. **Data:** add the already allowlisted `SPY/NAS` `1m` route to the existing
-   source-safe capability-probe interface. Preserve the current QQQ/NAS and
-   SPY/AMS evidence unchanged.
-2. Run one bounded `PINC=1` capability probe. Record only accepted-page count,
-   categorical limit/error count, continuation category, cursor-progress
-   category, historical-range category, and elapsed-time bucket.
-3. Treat the route as continuation-capable only if two or more accepted pages
-   have strict non-overlapping backward cursor/date progress and no duplicate
-   conflict. A terminal page, missing cursor, stalled cursor, or duplicate
-   conflict closes **only** SPY/NAS as `source_limited`.
-4. If continuation is proven, register only SPY/NAS in the existing durable
-   serial collector and perform a bounded bootstrap of at most 20 accepted
-   pages. Persist its cursor, counts, pace, recovery class, and next action.
-   Do not add another symbol, endpoint, or scheduler in this objective.
-5. **Validation:** add focused tests for route allowlisting, strict progression,
-   source-limited closure, cursor checkpoint recovery, and no account/order/live
-   surface. Keep raw provider rows mocked in tests.
+1. **Data:** add transport-level focused tests proving the existing client maps
+   a successful response with an empty `output2` to `minute_response_empty`
+   only after successful payload validation, while rejected or malformed
+   responses retain their distinct safe categories. Do not retain raw provider
+   code, message, body, or rows.
+2. Split the minute route registry into exact native routes established by
+   existing data-bearing evidence and observed-only candidates. Preserve current
+   QQQ/NAS and SPY/AMS contracts; retain SPY/NAS only as an observed unavailable
+   candidate, not a collection target.
+3. Add focused tests for classification, registry scope, no raw response
+   retention, no account/order/live surface, and the one-client request budget.
+4. Run one `SPY/AMS` `PINC=1` native-route control through the capability probe
+   with one page. Record only source-safe response and request categories.
+5. Interpret the pair narrowly:
+   - a native data-bearing control plus the prior SPY/NAS empty-success result
+     makes the alternate route unavailable for that exact request shape;
+   - a native empty-success result leaves time/request-shape capability
+     unresolved;
+   - a native rejection/invalid result leaves provider-route capability
+     unresolved.
+   In every outcome, do not bootstrap a historical collector here.
 
 ## Completion
 
-- A source-safe external probe receipt records the exact SPY/NAS result.
-- Either the route has a durable serial cursor checkpoint after its bounded
-  bootstrap, or it is truthfully closed as source-limited without a provider-wide
-  claim.
+- The prior SPY/NAS observation and one native SPY/AMS control have clear,
+  source-safe categories and remain exact-scope evidence.
 - No KIS account/order call, live route, secret output, raw-row Git artifact,
-  model promotion, or new approval gate exists.
-- Refresh the Data and orchestration stateboards, replace this file with exactly
-  one next objective, then continue.
+  model promotion, collector, or new approval gate exists.
+- Refresh Data and orchestration stateboards, replace this file with exactly one
+  next objective, then continue.
 
 ## Verification
 
@@ -80,4 +81,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Probe KIS intraday continuation route`
+`Classify KIS minute route capability`

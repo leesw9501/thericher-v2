@@ -59,6 +59,21 @@ _SAFE_FAILURE_REASONS = frozenset(
     }
 )
 
+_PageProgressCategory = Literal[
+    "initial",
+    "duplicate_within_page",
+    "strictly_older_nonoverlapping",
+    "overlap_or_not_older",
+    "terminal_head_repeat",
+]
+_CursorProgressCategory = Literal[
+    "not_observed",
+    "single_page",
+    "terminal_head_repeat",
+    "strictly_backward_nonoverlapping",
+    "duplicate_or_not_older",
+]
+
 
 class KisPaperMinuteCapabilityProbeClient(Protocol):
     @property
@@ -74,7 +89,7 @@ class KisPaperMinuteCapabilityProbeClient(Protocol):
 
 @dataclass(frozen=True)
 class KisPaperMinuteCapabilityProbeOutcome:
-    """Categorical evidence from one bounded QQQ/NAS minute probe."""
+    """Categorical evidence from one bounded allowlisted minute probe."""
 
     status: Literal["complete", "partial", "unavailable"]
     observed_at: datetime
@@ -87,7 +102,10 @@ class KisPaperMinuteCapabilityProbeOutcome:
         "available_at_probe_cap",
         "continuation_failed",
         "cursor_stalled",
+        "duplicate_conflict",
     ]
+    page_progress_categories: tuple[_PageProgressCategory, ...]
+    cursor_progress_category: _CursorProgressCategory
     probe_pattern_category: Literal[
         "single_terminal_page",
         "terminal_head_repeat",
@@ -165,6 +183,23 @@ class KisPaperMinuteCapabilityProbeOutcome:
             or self.target_key not in KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS
         ):
             raise ValueError("capability probe observation is invalid")
+        if len(self.page_progress_categories) != self.accepted_page_count:
+            raise ValueError("capability probe page progress is invalid")
+        if self.accepted_page_count == 0:
+            if self.page_progress_categories or self.cursor_progress_category != "not_observed":
+                raise ValueError("capability probe page progress is invalid")
+            return
+        if self.page_progress_categories[0] not in {"initial", "duplicate_within_page"}:
+            raise ValueError("capability probe page progress is invalid")
+        if any(
+            category == "initial" for category in self.page_progress_categories[1:]
+        ):
+            raise ValueError("capability probe page progress is invalid")
+        if "duplicate_within_page" in self.page_progress_categories[:-1]:
+            raise ValueError("capability probe page progress is invalid")
+        expected_progress = _cursor_progress_category(self.page_progress_categories)
+        if self.cursor_progress_category != expected_progress:
+            raise ValueError("capability probe page progress is invalid")
 
     def safe_payload(self) -> dict[str, object]:
         """Return metadata-only evidence that cannot contain provider rows."""
@@ -183,6 +218,8 @@ class KisPaperMinuteCapabilityProbeOutcome:
             "accepted_page_count": self.accepted_page_count,
             "accepted_page_size_category": self.accepted_page_size_category,
             "continuation_category": self.continuation_category,
+            "page_progress_categories": list(self.page_progress_categories),
+            "cursor_progress_category": self.cursor_progress_category,
             "probe_pattern_category": self.probe_pattern_category,
             "historical_range_category": self.historical_range_category,
             "minute_spacing_category": self.minute_spacing_category,
@@ -214,6 +251,7 @@ class _PageFacts:
     newest: datetime
     oldest: datetime
     timestamps: tuple[datetime, ...]
+    has_duplicate_timestamps: bool
     continuation_available: bool
     row_count: int
 
@@ -230,7 +268,7 @@ def run_kis_paper_minute_capability_probe(
     tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeOutcome:
-    """Read at most three QQQ minute pages and discard their raw contents."""
+    """Read at most three allowlisted minute pages and discard their raw contents."""
 
     if type(max_pages) is not int or not (
         1 <= max_pages <= KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES
@@ -246,9 +284,11 @@ def run_kis_paper_minute_capability_probe(
     captured_at = require_utc(observed_at or datetime.now(UTC), "observed_at")
     started = monotonic_clock()
     pages: list[_PageFacts] = []
+    page_progress_categories: list[_PageProgressCategory] = []
     cursor_key: str | None = None
     failure: str | None = None
     cursor_stalled = False
+    duplicate_or_not_older = False
     continuation_attempted = False
     terminal_head_repeat_count = 0
 
@@ -264,7 +304,19 @@ def run_kis_paper_minute_capability_probe(
             continuation_attempted = continuation_attempted or cursor_key is not None
             page = client.fetch_minute_page(query)
             facts = _page_facts(page)
+            progress_category = (
+                "terminal_head_repeat"
+                if cursor_key is None and terminal_head_repeat_count
+                else _page_progress_category(
+                    prior=pages[-1] if pages else None,
+                    candidate=facts,
+                )
+            )
             pages.append(facts)
+            page_progress_categories.append(progress_category)
+            if progress_category in {"duplicate_within_page", "overlap_or_not_older"}:
+                duplicate_or_not_older = True
+                break
             if not facts.continuation_available:
                 if (
                     cursor_key is None
@@ -301,7 +353,9 @@ def run_kis_paper_minute_capability_probe(
         failure=failure,
         continuation_attempted=continuation_attempted,
         cursor_stalled=cursor_stalled,
+        duplicate_or_not_older=duplicate_or_not_older,
     )
+    cursor_progress_category = _cursor_progress_category(page_progress_categories)
     probe_pattern_category = _probe_pattern_category(
         accepted_page_count=accepted_pages,
         continuation_attempted=continuation_attempted,
@@ -327,6 +381,8 @@ def run_kis_paper_minute_capability_probe(
         accepted_page_count=accepted_pages,
         accepted_page_size_category=_page_size_category(pages),
         continuation_category=continuation_category,
+        page_progress_categories=tuple(page_progress_categories),
+        cursor_progress_category=cursor_progress_category,
         probe_pattern_category=probe_pattern_category,
         historical_range_category=_historical_range_category(pages),
         minute_spacing_category=_minute_spacing_category(pages),
@@ -349,6 +405,7 @@ def run_kis_paper_minute_capability_probe(
             accepted_page_count=accepted_pages,
             probe_pattern_category=probe_pattern_category,
             token_reuse_category=token_reuse_category,
+            cursor_progress_category=cursor_progress_category,
         ),
         pacing_recalibration_fact=_pacing_recalibration_fact(
             status=status,
@@ -442,6 +499,7 @@ def _page_facts(page: KisPaperMinutePage) -> _PageFacts:
         newest=timestamps[-1],
         oldest=timestamps[0],
         timestamps=timestamps,
+        has_duplicate_timestamps=len(timestamps) != len(set(timestamps)),
         continuation_available=page.next_cursor is not None,
         row_count=len(page.bars),
     )
@@ -491,6 +549,7 @@ def _continuation_category(
     failure: str | None,
     continuation_attempted: bool,
     cursor_stalled: bool,
+    duplicate_or_not_older: bool,
 ) -> Literal[
     "not_observed",
     "terminal",
@@ -498,7 +557,10 @@ def _continuation_category(
     "available_at_probe_cap",
     "continuation_failed",
     "cursor_stalled",
+    "duplicate_conflict",
 ]:
+    if duplicate_or_not_older:
+        return "duplicate_conflict"
     if cursor_stalled:
         return "cursor_stalled"
     if not pages:
@@ -510,6 +572,41 @@ def _continuation_category(
     if len(pages) >= max_pages:
         return "available_at_probe_cap"
     return "continued"
+
+
+def _page_progress_category(
+    *,
+    prior: _PageFacts | None,
+    candidate: _PageFacts,
+) -> _PageProgressCategory:
+    if prior is None:
+        return "duplicate_within_page" if candidate.has_duplicate_timestamps else "initial"
+    if candidate.has_duplicate_timestamps:
+        return "duplicate_within_page"
+    return (
+        "strictly_older_nonoverlapping"
+        if candidate.newest < prior.oldest
+        else "overlap_or_not_older"
+    )
+
+
+def _cursor_progress_category(
+    page_progress_categories: Sequence[_PageProgressCategory],
+) -> _CursorProgressCategory:
+    if not page_progress_categories:
+        return "not_observed"
+    if "duplicate_within_page" in page_progress_categories:
+        return "duplicate_or_not_older"
+    if len(page_progress_categories) == 1:
+        return "single_page"
+    if tuple(page_progress_categories) == ("initial", "terminal_head_repeat"):
+        return "terminal_head_repeat"
+    if all(
+        category == "strictly_older_nonoverlapping"
+        for category in page_progress_categories[1:]
+    ):
+        return "strictly_backward_nonoverlapping"
+    return "duplicate_or_not_older"
 
 
 def _historical_range_category(
@@ -700,12 +797,16 @@ def _calibration_fact(
     accepted_page_count: int,
     probe_pattern_category: str,
     token_reuse_category: str,
+    cursor_progress_category: _CursorProgressCategory,
 ) -> str:
+    if cursor_progress_category == "duplicate_or_not_older":
+        return "single_client_duplicate_or_non_backward_page"
     if (
         status == "complete"
         and accepted_page_count > 1
         and probe_pattern_category == "cursor_chain"
         and token_reuse_category == "single_token_reused"
+        and cursor_progress_category == "strictly_backward_nonoverlapping"
     ):
         return "single_client_cursor_chain_under_existing_gate"
     if (
