@@ -2,72 +2,82 @@
 
 ## Objective
 
-Establish the first non-promoting, KIS-reconstructible D1 opportunity-selection
-development campaign from the existing frozen Norgate trial broad panel.
+Establish and start a resumable, source-separated KIS Paper D1 broad-backfill
+cache from the already hash-attested KIS current-directory source.
 
-`D:\market_data\us_equities\norgate_trial_broad_development_panel` already
-contains a frozen 523-symbol, 483-common-session D1 panel spanning 2024-07-18
-through 2026-06-22. It is static development-only evidence. It must not be
-treated as a point-in-time universe, a runtime KIS input, paper-trading evidence,
-or a promoted model source.
+This produces current-listing, non-PIT daily OHLCV coverage for later
+field-compatible research. It is not a historical-universe, ranking,
+corporate-action, profitability, or Paper-trading claim.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattach the frozen Norgate panel, membership/calendar lineage, existing
-   derived feature artifact, prior Norgate development receipts, and existing
-   KIS daily field contract. Do not print raw rows, symbols, prices, or volumes.
-3. Ask Claude for one short falsification-first drift check before freezing the
-   campaign or relying on any result. Include the survivorship, adjustment,
-   temporal-split, and KIS-runtime-reconstructibility kill tests; do not include
-   raw rows, credentials, account identifiers, or sealed labels.
+2. Reattach the existing KIS current-directory manifest/listing identity and
+   the fixed daily collector/backfill contracts without printing raw symbols,
+   rows, prices, volumes, tokens, or account identifiers.
+3. Ask Claude for a concise falsification-first drift check before generalizing
+   the collector or adding a scheduling/lease mechanism. Include current-listing
+   survivorship, exchange mapping, fresh-head priority, recovery, and storage
+   kill tests; do not send secrets or raw provider data.
 
 ## Authority And Boundaries
 
-- This is offline local Data and Engine Research work. Do not read `.env`, call
-  KIS or another provider, use the Norgate SDK/network, call account/order
-  endpoints, or enable Paper/live behavior.
-- Preserve source separation: no row-level mixing with KIS, Tiingo, Yahoo, or
-  the frozen NAS panel. Generated artifacts stay under
-  `D:\thericher-v2\model-artifacts`; source bytes stay under `D:\market_data`.
-- Only completed D1 OHLCV fields demonstrably available from the existing KIS
-  daily contract may enter the feature schema. Keep the unadjusted/corporate-
-  action limitation explicit.
-- The campaign is development-only: no ranking, model selection, ensemble,
-  PnL, Paper order, promotion, or live inference claim follows from it.
-- One GPU job may run only after the reattached source and a deterministic CPU
-  baseline succeed. Use an existing, unambiguous artifact run identity and do
-  not overwrite prior artifacts.
+- `KIS_PAPER_*` is standing-authorized for this **market-data-only** work.
+  Use no account, position, open-order, quote, submit, modify, cancel, or live
+  endpoint. Never read or route `KIS_LIVE_*`.
+- Read credentials only inside the existing credentialed market-data client;
+  never print, log, persist, send to Claude, or commit them.
+- Create a **new** D:-resident cache root and durable index. Do not widen or
+  mutate terminal QQQ/SPY/IWM or NAS cache contracts.
+- Build targets only from the hash-attested KIS current-directory source.
+  Do not seed targets from the static Norgate survivor panel, infer an exchange,
+  claim point-in-time membership, or join rows across providers.
+- Use one active collector/client/token for this cache, the measured one-second
+  request-start gate, and the existing categorical recovery behavior. A valid
+  in-memory client must not wait for the five-minute cross-process token-start
+  guard. Do not request-flood or foreground-sleep.
+- Fresh-session head collection retains priority. The new collector must use an
+  explicit owned lease or non-overlapping schedule before it can run recurring
+  catch-up work; a categorical cooldown blocks only its owned worker.
+- Raw market data and registry bytes remain on `D:\market_data`; receipts and
+  generated artifacts remain under `D:\thericher-v2\model-artifacts`; neither
+  belongs in Git. Respect the 20% warning and 15% free-space floor.
 
 ## Work
 
-1. **Data:** reattest the existing Norgate panel and feature artifact without
-   materializing raw rows in Git/logs. Record only source-safe hashes, geometry,
-   field availability, and limitations.
-2. **Engine Research:** freeze one small daily opportunity-selection campaign
-   contract using a completed-bar, KIS-reconstructible D1 feature schema, an
-   explicit next-session target, temporal split, costs, naive baseline, and
-   stop rule. It may use the Norgate panel only as a source-separated
-   development input.
-3. Run the deterministic CPU baseline. If it is sound and no duplicate run
-   exists, run one bounded CUDA breadth job from that same frozen contract;
-   retain weights/checkpoints only outside Git.
-4. **Validation:** independently check the campaign’s source separation,
-   temporal boundaries, artifact placement, and non-promotion scope. A strong
-   result requires the Claude verdict before any follow-up, not a new approval
-   gate for unrelated work.
+1. **Data:** create an external, hash-attested current-listing registry with
+   typed `non_pit` and `non_ranking` scope. Preserve per-target symbol/exchange,
+   initial cursor, state, and recovery fields only outside Git.
+2. **Data:** generalize the existing private daily collector/backfill contract
+   so a validated registry injects the exact symbol/exchange allowlist. It must
+   validate registry-parent drift before constructing a client, retain each
+   target's cursor and source-safe progress, and use existing failure taxonomy.
+3. **Validation:** add focused tests for registry drift before any client call,
+   target-specific exchange allowlists, external-only cache/index paths,
+   target-local failure/recovery, non-PIT scope propagation, and absence of
+   broker/account/live/credential access.
+4. **Data:** run one deterministic eight-target bootstrap, with at most one
+   bounded daily chunk per target. Record only source-safe accepted-page,
+   categorical-error, cursor, range, storage, and recovery facts. If a target
+   fails, scope the result to that target and continue ready targets.
+5. If the bootstrap has usable accepted data, install or start one bounded,
+   observable continuation worker for this exact cache. It may yield on lease,
+   cooldown, or next due; Codex continues unrelated ready work rather than
+   sleeping.
 
 ## Completion
 
-- A source-safe Data reattestation and campaign contract identify the exact
-  frozen D1 input and its KIS-runtime limitations.
-- CPU baseline evidence exists; any CUDA evidence is linked to it and stays
-  non-promoting.
-- No provider/broker/credential call, raw-row Git artifact, source blend,
-  Paper order, model promotion, or new approval gate exists.
-- Refresh Data, Engine Research, and orchestration stateboards, replace this
-  file with exactly one next objective, then continue.
+- A new external registry and cache index prove their parent identity and
+  non-PIT/non-ranking scope.
+- The first eight-target bootstrap has a source-safe external receipt with
+  accepted or precisely scoped source-limited/deferred outcomes.
+- A continuation/recovery path is owned and observable without duplicate
+  collectors or interference with fresh-head collection.
+- Tests prove no account/order/live route, provider-source blend, raw Git data,
+  credential output, or model/paper promotion was introduced.
+- Refresh affected stateboards, replace this file with exactly one next
+  objective, then continue.
 
 ## Verification
 
@@ -80,4 +90,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Bind Norgate D1 development campaign`
+`Start KIS broad D1 backfill`

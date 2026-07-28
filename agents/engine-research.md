@@ -102,6 +102,20 @@ The attempted Claude drift check returned `review_unavailable` because OAuth
 could not refresh, so this remains non-promoting: no selection, ensemble, PnL
 claim, KIS call, or Paper action follows.
 
+The first static Norgate broad D1 opportunity-development campaign is also
+complete. It reattached the frozen 523-symbol / 483-session source through the
+existing hash-attested feature artifact, but moved the validation boundary to a
+22-date purge so development labels and feature windows are disjoint from
+validation features. Its immutable external campaign contract, CPU baseline,
+and one Docker PyTorch CUDA causal-TCN breadth job are under
+`D:\thericher-v2\model-artifacts\norgate-broad-opportunity-development\norgate-broad-opportunity-development-r1`.
+The contract/CPU/CUDA identities are `sha256:27e0...d8d348`,
+`sha256:913e...3dbf42f5`, and `sha256:f091...541fa13`. Neither completion
+requested review, selected a model, produced PnL, ranked a symbol, or opened a
+KIS/Paper route. It remains field-compatible development plumbing only: static
+survivorship, adjustment/corporate-action, and cross-provider reconstruction
+limits remain explicit.
+
 ## Current Readiness
 
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
@@ -154,11 +168,11 @@ claim, KIS call, or Paper action follows.
   kill rule: the first was nonpositive after costs and all three failed to beat
   their time-matched always-long comparator. The candidate is closed with no
   tuning, GPU, ensemble, promotion, or Paper consequence.
-- No GPU job is active. The current objective explicitly excludes GPU work from
-  the 199-session current-basket panel. When another frozen campaign is ready,
-  Research starts it as the next exclusive GPU job; otherwise the stateboard
-  records the exact missing data, contract, or resource fact rather than
-  manufacturing training for occupancy.
+- No GPU job is active. The just-completed opportunity campaign used one fixed
+  causal-TCN breadth job after its CPU integrity result; it was not
+  performance-selected. The next constrained Research input is broad KIS D1
+  coverage, so Research prepares its field-reconstruction comparison while Data
+  generalizes collection rather than manufacturing another static-panel run.
 - The 2026-07-28 throughput review found no frozen campaign eligible for GPU
   work: the existing D1 candidates are closed/falsified, and the natural QQQ
   runtime receipt is execution evidence only. The newly completed QQQ/SPY D1

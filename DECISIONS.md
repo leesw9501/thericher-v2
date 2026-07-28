@@ -6933,3 +6933,25 @@ Reason: an immutable research contract must reject genuine drift while treating
 runtime-specific last-bit math differences and receipt-integrity gaps as
 versioned feature-semantic changes, not as reasons to relax reproducibility
 checks.
+
+## 2026-07-28 - Separate static D1 opportunity plumbing from KIS runtime evidence
+
+Decision: complete one development-only Norgate D1 opportunity campaign from
+the existing frozen 523-symbol panel, but keep it strictly separate from KIS
+runtime evidence. The contract uses a 22-date purge between development and
+validation so the feature/label dependency window cannot overlap. Its immutable
+external contract, CPU baseline, and single Docker PyTorch CUDA causal-TCN job
+are `sha256:27e0...d8d348`, `sha256:913e...3dbf42f5`, and
+`sha256:f091...541fa13`. The run has no model selection, ranking, ensemble,
+Pnl, broker, KIS, or Paper consequence.
+
+Claude's source-safe falsification review returned `supported-with-limits`: a
+static survivor panel remains unsuitable as a KIS collection registry, and D1
+field shape does not establish adjustment or corporate-action equivalence. The
+next coverage package therefore creates a separate cache from the already
+hash-attested KIS current-directory source, carries typed non-PIT/non-ranking
+scope, and never joins Norgate rows or target selection to KIS data.
+
+Reason: the campaign validates causal research plumbing and CUDA lineage without
+mistaking static trial data for executable runtime coverage, while preserving a
+direct path to a broad KIS-native D1 input.

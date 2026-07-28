@@ -627,14 +627,19 @@ global permission or progress latch.
 
 ## Next Handoff
 
-The validated QQQ Paper no-intent and the bounded minute-route comparison
-objectives are complete. QQQ/NAS and SPY/AMS remain source-limited only for
-their exact historical-continuation contracts; SPY/NAS remains an observed-only
-unavailable request shape. The next company objective reattests the existing
-523-symbol frozen Norgate trial D1 development panel and binds a new
-non-promoting, KIS-reconstructible D1 opportunity-selection research campaign
-to it. The existing fresh-head schedule continues at its own due time and is
-not a foreground wait.
+The validated QQQ Paper no-intent, bounded minute-route comparison, and first
+static Norgate D1 opportunity-development campaign are complete. The latter
+reattested the 523-symbol frozen panel, froze a 22-date-purge causal contract,
+and completed one offline CPU baseline plus one network-disabled Docker
+PyTorch CUDA causal-TCN job. Its external contract/CPU/CUDA hashes are
+`sha256:27e0...d8d348`, `sha256:913e...3dbf42f5`, and
+`sha256:f091...541fa13`; no result selected a model or opened a KIS/Paper
+route. QQQ/NAS and SPY/AMS remain source-limited only for their exact
+historical-minute continuation contracts, while SPY/NAS remains an observed-
+only unavailable request shape. The next company objective generalizes and
+starts a source-separated, resumable KIS Paper D1 broad-backfill cache from a
+local current-listing registry. The existing fresh-head schedule continues at
+its own due time and is not a foreground wait.
 
 The QQQ/SPY D1 relative-regime and separate relative-allocation CPU controls
 are complete and falsified. The allocation control reused the hash-attested

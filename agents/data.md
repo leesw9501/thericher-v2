@@ -230,6 +230,13 @@ the offline observer only after a current or complete cache result. A
   separate local source: 523 selected symbols and 483 common sessions from
   2024-07-18 through 2026-06-22. It is static development-only evidence, not a
   PIT universe, runtime KIS input, ranking, paper, or promotion result.
+- The completed offline opportunity-development consumer reattached that frozen
+  source and its existing derived feature artifact before freezing a new
+  source-safe campaign contract. Its 22-date purge leaves development labels
+  and feature windows disjoint from validation features. Data made no provider
+  call or cache mutation, and the campaign retains no raw row, KIS-row blend,
+  ranking, Paper, or promotion claim. Its fixed daily OHLCV field shape is only
+  a future KIS reconstruction target, not proof of adjustment equivalence.
 - The first fresh 2026-07-28 KST scheduled capture wrote a source-safe Data
   receipt. It collected one current terminal page for each QQQ/NAS and SPY/AMS
   target, retained no complete 390-minute regular session, and preserved the
@@ -364,12 +371,12 @@ the offline observer only after a current or complete cache result. A
    `PINC=1` routes. They supplied no useful continuation cursor. Continue the
    independent fresh-head schedule without treating this source fact as a
    general KIS-history conclusion.
-4. Reattest the frozen local Norgate broad D1 panel and its derived feature
-   artifact before an Engine Research development-only campaign consumes them.
-   Keep it source-separated from KIS, Tiingo, and the frozen NAS panel. A
-   campaign may use only completed D1 OHLCV features that KIS daily data can
-   recreate; its static-source limitations remain attached and it cannot become
-   a ranking, paper, or promoted-model input.
+4. Generalize the existing KIS private D1 collection pattern into a current-
+   listing broad-backfill registry and resumable cache. Reuse one client and the
+   measured request gate; retain target-local cursor/recovery/progress facts on
+   D: only. Build the registry only from the hash-attested KIS current-directory
+   source; the frozen Norgate panel cannot supply targets, historical membership,
+   or a row-level KIS join.
 5. Build a versioned liquid-universe manifest from already available
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
@@ -495,11 +502,13 @@ Preserve the frozen six-symbol source separately. The fresh prospective QQQ
 intraday schedule owns its next due at 2026-07-29 02:31 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
 cursor collection. SPY/NAS is an observed-only unavailable request shape, not
-a closed source limitation. The next Data package reattests the frozen 523-
-symbol Norgate D1 development panel and maps only KIS-reconstructible completed
-D1 fields into a source-separated campaign input. It does not fetch Norgate,
-retry SPY/NAS, start a serial collector, or turn static source evidence into a
-PIT, paper, or promotion claim.
+a closed source limitation. The frozen 523-symbol Norgate panel has now been
+consumed once through a fully offline, non-promoting D1 campaign with a
+22-date-purge boundary; no source row was joined to KIS. The next Data package
+  builds and begins a resumable KIS Paper D1 broad-backfill cache from a local
+  KIS current-listing target registry. It must not infer historical membership,
+  retry SPY/NAS, blend source rows, seed targets from the Norgate survivor panel,
+  or turn current-listing coverage into a ranking, Paper, or promotion claim.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact

@@ -54,6 +54,13 @@ second goal.
   and CPU-summary attestation in a new external artifact family. Its target-free
   CUDA summary is complete, while
   selection, ensemble, replay, PnL, KIS, and Paper routes remain absent.
+- **Engine Research, completed static development package:** the frozen
+  523-symbol Norgate D1 panel completed one CPU baseline and one
+  network-disabled Docker PyTorch CUDA causal-TCN breadth job after a
+  22-date purge separated development labels from validation features. Its
+  source-safe contract/CPU/CUDA identities are `sha256:27e0...d8d348`,
+  `sha256:913e...3dbf42f5`, and `sha256:f091...541fa13`. It does not select a
+  model, rank a symbol, create PnL, or open a KIS/Paper route.
 - **Prospective evidence:** the bounded offline NAS observer reattested the
   frozen r2/r5 lineage and found zero common all-six-symbol D1 sessions after
   the 2026-07-24 boundary. Its source-safe `input_unavailable` receipt is
@@ -80,18 +87,18 @@ second goal.
 
 ## Current Bottleneck
 
-The bounded QQQ virtual-paper canary objective is complete as an exact
-`no_intent/receipt_not_eligible` session plus a network-disabled reattachment;
-no broker lifecycle occurred. The next material bottleneck is historical `1m`
-coverage: QQQ/NAS and SPY/AMS are source-limited for their exact continuation
-contracts, while SPY/NAS remains observed-only `unavailable` after its empty
-`PINC=1` response and a later data-bearing SPY/AMS control. The next material
-ready input is the existing static Norgate D1 panel (523 symbols, 483 common
-sessions), which can support a clearly labeled development-only campaign while
-KIS native D1 remains the future runtime counterpart. Research has no distinct
-frozen GPU campaign eligible for dispatch until that source-separated campaign
-contract and CPU baseline are reattached; Codex will not duplicate an
-already-completed candidate merely to occupy the GPU.
+The bounded QQQ virtual-paper canary and static Norgate D1 development package
+are complete. The material bottleneck is now broad, source-separated KIS D1
+coverage: the existing private historical cache is truthful but fixed to three
+ETF targets, and the six-symbol NAS cache is not a broad current-listing input.
+The next Data package builds a new external cache root from the already
+hash-attested KIS current-directory source, with a deterministic eight-target
+bootstrap. The frozen Norgate survivor panel remains development-only and must
+not seed this registry. The broad cache is structurally current-listing and
+non-PIT, so downstream loaders must read its typed non-PIT/non-ranking scope.
+Research has no next frozen GPU campaign until this KIS coverage yields a
+separate field-compatible input; it will not rerun static breadth merely to
+occupy the GPU.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -105,7 +112,14 @@ and the validator is network-isolated. The excerpt did not re-review the full
 existing unknown-outcome recovery helper, so that exact intent remains governed
 by its current reconciliation path; no authority or policy changed.
 
-**Current operating improvement:** Docker bind mounts beneath `/app` are now
+**Current operating improvement:** the first broad KIS D1 bootstrap uses its
+own cache/index rather than widening a terminal ETF cache. It runs one client,
+one measured request-start gate, and a bounded deterministic batch, while
+fresh-head collection retains priority through an explicit owned lease or
+non-overlapping schedule. A categorical provider cooldown scopes the active
+collector and never makes another lane foreground-idle.
+
+Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
 root is a non-symlink mount; repository `data` and `reports` mounts are
 read-only. The CUDA consumer requires a complete sibling-attested CPU receipt,
@@ -208,7 +222,10 @@ credential-free, and read-only/no-submission from the dashboard's perspective.
 The candle-state r3 package is complete; preserve its immutable r1/r2 recovery
 records plus r3 CPU/CUDA/attestation receipts. The minute-route comparison is
 complete: SPY/AMS yielded one full native page, while SPY/NAS remains one exact
-unavailable request shape. The next company objective reattests the frozen
-Norgate 523-symbol D1 panel and starts only a non-promoting KIS-reconstructible
-D1 development campaign. No KIS call, live route, account/order endpoint,
-model-selection shortcut, serial collector, or source blend belongs to it.
+unavailable request shape. The static Norgate D1 opportunity-development
+campaign is also complete: its 22-date purge and source-safe external CPU/CUDA
+receipts do not select a model or open KIS/Paper. The next company objective
+creates a new, resumable broad KIS D1 cache from a KIS current-directory
+registry, then starts an eight-target data-only bootstrap. No account/order,
+live, Norgate target seeding, source-row blend, ranking, or model-promotion
+route belongs to it.
