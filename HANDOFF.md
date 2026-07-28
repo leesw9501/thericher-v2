@@ -182,6 +182,14 @@ authorized private KIS Paper work.
   This makes that exact request shape `unavailable`; it is not evidence that the
   exchange mapping, provider, or all historical-minute paths are unavailable.
   No retry, cache mutation, or serial collector followed.
+- A matched 2026-07-28 `SPY/AMS` `PINC=1` native-route control made one token
+  request and one minute-page request, accepted one full terminal page, and
+  retained source-safe evidence at
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20260728T171242245242Z-0cb5b3ecc42de3c5.json`.
+  It establishes only that the same client path was data-bearing on SPY/AMS
+  about 54 minutes after the empty SPY/NAS observation. SPY/NAS remains an
+  observed-only unavailable candidate; neither result establishes a permanent
+  route property or KIS-wide historical-minute reach.
 - The first fresh 2026-07-28 KST prospective QQQ head capture completed. It
   produced a ready same-session 90-minute QQQ/NAS runtime window while its
   distinct full-session coverage remains incomplete. QQQ/NAS and SPY/AMS each
@@ -619,13 +627,14 @@ global permission or progress latch.
 
 ## Next Handoff
 
-The validated QQQ Paper no-intent and the bounded SPY/NAS probe objectives are
-complete. The latter is `unavailable` for one exact `PINC=1` request shape, not
-source-limited or a provider-wide conclusion. The next company objective
-explicitly tests the existing safe distinction between an empty-successful
-payload and rejected/invalid responses, then uses one matched native-route
-control before drawing a route-specific inference. The existing fresh-head
-schedule continues at its own due time and is not a foreground wait.
+The validated QQQ Paper no-intent and the bounded minute-route comparison
+objectives are complete. QQQ/NAS and SPY/AMS remain source-limited only for
+their exact historical-continuation contracts; SPY/NAS remains an observed-only
+unavailable request shape. The next company objective reattests the existing
+523-symbol frozen Norgate trial D1 development panel and binds a new
+non-promoting, KIS-reconstructible D1 opportunity-selection research campaign
+to it. The existing fresh-head schedule continues at its own due time and is
+not a foreground wait.
 
 The QQQ/SPY D1 relative-regime and separate relative-allocation CPU controls
 are complete and falsified. The allocation control reused the hash-attested

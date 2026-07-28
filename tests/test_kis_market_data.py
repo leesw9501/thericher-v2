@@ -279,6 +279,68 @@ def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> Non
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
 
 
+def test_minute_client_classifies_a_successful_empty_list_after_payload_validation() -> None:
+    transport = _RecordingTransport(
+        [
+            _token(),
+            KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"next": "", "more": "0"},
+                    "output2": [],
+                }
+            ),
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_empty$"):
+        client.fetch_minute_page(
+            KisPaperMinuteQuery(exchange="AMS", symbol="SPY", include_previous_day=True)
+        )
+
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 1
+    assert [request.method for request in transport.requests] == ["POST", "GET"]
+
+
+def test_minute_client_keeps_rejected_and_malformed_payloads_out_of_empty_category() -> None:
+    rejected_transport = _RecordingTransport(
+        [_token(), KisMarketDataResponse.from_payload({"rt_cd": "1"})]
+    )
+    rejected_client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=rejected_transport,
+    )
+    malformed_transport = _RecordingTransport(
+        [
+            _token(),
+            KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"next": "", "more": "0"},
+                    "output2": "",
+                }
+            ),
+        ]
+    )
+    malformed_client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=malformed_transport,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_rejected$"):
+        rejected_client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$"):
+        malformed_client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
+
+    assert rejected_client.call_counts.minute_page_attempts == 1
+    assert malformed_client.call_counts.minute_page_attempts == 1
+
+
 def test_minute_raw_bar_rejects_invalid_calendar_timestamps() -> None:
     with pytest.raises(KisPaperMarketDataError, match="minute_exchange_timestamp_invalid"):
         kis_market_data.KisPaperMinuteRawBar(

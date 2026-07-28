@@ -536,7 +536,7 @@ class KisPaperMarketDataClient:
         payload = _successful_payload(response, "minute_response_rejected")
         output1 = payload.get("output1")
         output2 = payload.get("output2")
-        if not isinstance(output1, Mapping) or not isinstance(output2, Sequence):
+        if not isinstance(output1, Mapping) or not isinstance(output2, list):
             raise KisPaperMarketDataError("minute_response_invalid")
         rows = tuple(_parse_minute_bar(row) for row in output2)
         # KIS documents minute pagination through the response ``tr_cont``

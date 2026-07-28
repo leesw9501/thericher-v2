@@ -2,73 +2,72 @@
 
 ## Objective
 
-Validate the existing KIS Paper overseas-stock `1m` empty-response
-classification without widening broker authority, then establish whether the
-observed `SPY/NAS` result is route-specific or request-shape-limited.
+Establish the first non-promoting, KIS-reconstructible D1 opportunity-selection
+development campaign from the existing frozen Norgate trial broad panel.
 
-The completed `SPY/NAS` `PINC=1` probe made one token request and one minute
-request, accepted no page, and emitted `minute_response_empty`. It is
-`unavailable` for that exact request shape. It is not proof of an exchange
-mismatch, a source limitation, or provider-wide intraday reach.
+`D:\market_data\us_equities\norgate_trial_broad_development_panel` already
+contains a frozen 523-symbol, 483-common-session D1 panel spanning 2024-07-18
+through 2026-06-22. It is static development-only evidence. It must not be
+treated as a point-in-time universe, a runtime KIS input, paper-trading evidence,
+or a promoted model source.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattach the read-only KIS minute client, capability probe, source-safe
-   transport tests, and existing QQQ/NAS and SPY/AMS evidence. Do not inspect or
-   print raw market rows.
-3. Ask Claude for one short falsification-first drift check before changing the
-   route-registry contract or relying on the paired capability inference. Do not include
-   credentials, account identifiers, raw rows, or provider bodies.
+2. Reattach the frozen Norgate panel, membership/calendar lineage, existing
+   derived feature artifact, prior Norgate development receipts, and existing
+   KIS daily field contract. Do not print raw rows, symbols, prices, or volumes.
+3. Ask Claude for one short falsification-first drift check before freezing the
+   campaign or relying on any result. Include the survivorship, adjustment,
+   temporal-split, and KIS-runtime-reconstructibility kill tests; do not include
+   raw rows, credentials, account identifiers, or sealed labels.
 
 ## Authority And Boundaries
 
-- `KIS_PAPER_*` is standing-authorized only for private **market-data** work in
-  this objective. Do not call account, quote, order, cancellation, modification,
-  or reconciliation endpoints.
-- Use one in-memory client/token, one active probe, and the installed one-second
-  request-start gate. Do not parallelize requests or create a request flood.
-- Do not retry `SPY/NAS` in this objective. After local classification tests,
-  make at most one `SPY/AMS` `PINC=1` native-route control request.
-- Store data only under `D:\market_data` and evidence only under
-  `D:\thericher-v2\model-artifacts`. Keep raw rows, credentials, provider
-  bodies, and account facts out of Git, logs, stateboards, and Claude.
-- Do not read or route `KIS_LIVE_*`, change paper-order behavior, select or
-  promote a model, add a collector/scheduler, or add a dashboard/report flow.
+- This is offline local Data and Engine Research work. Do not read `.env`, call
+  KIS or another provider, use the Norgate SDK/network, call account/order
+  endpoints, or enable Paper/live behavior.
+- Preserve source separation: no row-level mixing with KIS, Tiingo, Yahoo, or
+  the frozen NAS panel. Generated artifacts stay under
+  `D:\thericher-v2\model-artifacts`; source bytes stay under `D:\market_data`.
+- Only completed D1 OHLCV fields demonstrably available from the existing KIS
+  daily contract may enter the feature schema. Keep the unadjusted/corporate-
+  action limitation explicit.
+- The campaign is development-only: no ranking, model selection, ensemble,
+  PnL, Paper order, promotion, or live inference claim follows from it.
+- One GPU job may run only after the reattached source and a deterministic CPU
+  baseline succeed. Use an existing, unambiguous artifact run identity and do
+  not overwrite prior artifacts.
 
 ## Work
 
-1. **Data:** add transport-level focused tests proving the existing client maps
-   a successful response with an empty `output2` to `minute_response_empty`
-   only after successful payload validation, while rejected or malformed
-   responses retain their distinct safe categories. Do not retain raw provider
-   code, message, body, or rows.
-2. Split the minute route registry into exact native routes established by
-   existing data-bearing evidence and observed-only candidates. Preserve current
-   QQQ/NAS and SPY/AMS contracts; retain SPY/NAS only as an observed unavailable
-   candidate, not a collection target.
-3. Add focused tests for classification, registry scope, no raw response
-   retention, no account/order/live surface, and the one-client request budget.
-4. Run one `SPY/AMS` `PINC=1` native-route control through the capability probe
-   with one page. Record only source-safe response and request categories.
-5. Interpret the pair narrowly:
-   - a native data-bearing control plus the prior SPY/NAS empty-success result
-     makes the alternate route unavailable for that exact request shape;
-   - a native empty-success result leaves time/request-shape capability
-     unresolved;
-   - a native rejection/invalid result leaves provider-route capability
-     unresolved.
-   In every outcome, do not bootstrap a historical collector here.
+1. **Data:** reattest the existing Norgate panel and feature artifact without
+   materializing raw rows in Git/logs. Record only source-safe hashes, geometry,
+   field availability, and limitations.
+2. **Engine Research:** freeze one small daily opportunity-selection campaign
+   contract using a completed-bar, KIS-reconstructible D1 feature schema, an
+   explicit next-session target, temporal split, costs, naive baseline, and
+   stop rule. It may use the Norgate panel only as a source-separated
+   development input.
+3. Run the deterministic CPU baseline. If it is sound and no duplicate run
+   exists, run one bounded CUDA breadth job from that same frozen contract;
+   retain weights/checkpoints only outside Git.
+4. **Validation:** independently check the campaign’s source separation,
+   temporal boundaries, artifact placement, and non-promotion scope. A strong
+   result requires the Claude verdict before any follow-up, not a new approval
+   gate for unrelated work.
 
 ## Completion
 
-- The prior SPY/NAS observation and one native SPY/AMS control have clear,
-  source-safe categories and remain exact-scope evidence.
-- No KIS account/order call, live route, secret output, raw-row Git artifact,
-  model promotion, collector, or new approval gate exists.
-- Refresh Data and orchestration stateboards, replace this file with exactly one
-  next objective, then continue.
+- A source-safe Data reattestation and campaign contract identify the exact
+  frozen D1 input and its KIS-runtime limitations.
+- CPU baseline evidence exists; any CUDA evidence is linked to it and stays
+  non-promoting.
+- No provider/broker/credential call, raw-row Git artifact, source blend,
+  Paper order, model promotion, or new approval gate exists.
+- Refresh Data, Engine Research, and orchestration stateboards, replace this
+  file with exactly one next objective, then continue.
 
 ## Verification
 
@@ -81,4 +80,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Classify KIS minute route capability`
+`Bind Norgate D1 development campaign`

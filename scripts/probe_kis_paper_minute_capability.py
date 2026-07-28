@@ -13,6 +13,7 @@ from pathlib import Path
 from thericher_v2.data.kis_paper_minute_capability_probe import (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS,
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
     probe_and_write_kis_paper_minute_capability,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -44,7 +45,14 @@ def main(
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--include-previous-day", action="store_true")
-    parser.add_argument("--target", choices=("QQQ/NAS", "SPY/AMS", "SPY/NAS"), default="QQQ/NAS")
+    parser.add_argument(
+        "--target",
+        choices=tuple(
+            target_key.removesuffix("/1m")
+            for target_key in sorted(KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS)
+        ),
+        default="QQQ/NAS",
+    )
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument(
         "--max-pages",

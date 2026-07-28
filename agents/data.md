@@ -220,6 +220,16 @@ the offline observer only after a current or complete cache result. A
   It proves only that exact request shape returned no rows. Do not relabel it as
   an exchange mismatch, source limitation, provider-wide reach result, or a
   collector checkpoint; no retry or cache mutation occurred.
+- The matched `SPY/AMS` `PINC=1` native-route control then accepted one full
+  terminal page through one token and one minute request. Its source-safe
+  receipt is external at
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20260728T171242245242Z-0cb5b3ecc42de3c5.json`.
+  It proves only a nearby-time data-bearing native control. SPY/NAS remains an
+  observed-only unavailable candidate, and no serial collector is eligible.
+- The already retained frozen Norgate trial broad D1 development panel is a
+  separate local source: 523 selected symbols and 483 common sessions from
+  2024-07-18 through 2026-06-22. It is static development-only evidence, not a
+  PIT universe, runtime KIS input, ranking, paper, or promotion result.
 - The first fresh 2026-07-28 KST scheduled capture wrote a source-safe Data
   receipt. It collected one current terminal page for each QQQ/NAS and SPY/AMS
   target, retained no complete 390-minute regular session, and preserved the
@@ -354,13 +364,12 @@ the offline observer only after a current or complete cache result. A
    `PINC=1` routes. They supplied no useful continuation cursor. Continue the
    independent fresh-head schedule without treating this source fact as a
    general KIS-history conclusion.
-4. The next bounded package explicitly tests the existing distinction between a
-   successful empty minute payload and a rejected or invalid provider response,
-   then issues at most one matched `SPY/AMS` `PINC=1` native-route control. It
-   must use the existing one-second gate and one client/token, preserve no raw
-   rows, and never retry SPY/NAS in that package. Keep canonical qualified `1m`
-   bytes once and derive `5m`, `10m`, `1h`, and `3h` locally when a valid source
-   exists.
+4. Reattest the frozen local Norgate broad D1 panel and its derived feature
+   artifact before an Engine Research development-only campaign consumes them.
+   Keep it source-separated from KIS, Tiingo, and the frozen NAS panel. A
+   campaign may use only completed D1 OHLCV features that KIS daily data can
+   recreate; its static-source limitations remain attached and it cannot become
+   a ranking, paper, or promoted-model input.
 5. Build a versioned liquid-universe manifest from already available
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
@@ -466,6 +475,11 @@ Current class: complete for the one-page SPY/NAS alternate-route probe. Its
 `source_limited`; the next independent native-route control owns any further
 disambiguation. It has no cursor, retry, or cache-recovery action.
 
+Current class: complete for the matched one-page SPY/AMS native control. It is
+source-safe accepted-page evidence only; its terminal continuation says no
+historical serial collector is ready. The next Data handoff is local Norgate D1
+reattest, not another KIS route call.
+
 Current class: complete for the first six-symbol NAS D1 forward-cache
 observation and its offline reattestation. A valid repeated page advances only
 the source-safe per-target accepted-page count and leaves raw snapshots intact.
@@ -480,11 +494,12 @@ limitation.
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
 intraday schedule owns its next due at 2026-07-29 02:31 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
-cursor collection. SPY/NAS is `unavailable` for one exact request shape, not a
-closed source limitation. The next Data package tests the existing safe
-empty-response classification and makes one matched SPY/AMS native-route
-control; it does not retry SPY/NAS, start a serial collector, or generalize a
-result to KIS.
+cursor collection. SPY/NAS is an observed-only unavailable request shape, not
+a closed source limitation. The next Data package reattests the frozen 523-
+symbol Norgate D1 development panel and maps only KIS-reconstructible completed
+D1 fields into a source-separated campaign input. It does not fetch Norgate,
+retry SPY/NAS, start a serial collector, or turn static source evidence into a
+PIT, paper, or promotion claim.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact

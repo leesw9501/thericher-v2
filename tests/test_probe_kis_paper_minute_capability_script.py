@@ -43,6 +43,20 @@ def test_probe_script_rejects_a_faster_than_official_candidate_before_credential
         script.main(["--execute", "--minimum-request-interval-seconds", "0.5"])
 
 
+def test_probe_script_rejects_observed_only_target_before_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    script = _load_script()
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_config",
+        lambda _: (_ for _ in ()).throw(AssertionError("credentials must stay unread")),
+    )
+
+    with pytest.raises(SystemExit, match="2"):
+        script.main(["--execute", "--target", "SPY/NAS"])
+
+
 def test_probe_script_records_one_second_candidate_through_data_only_route(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
@@ -99,7 +113,9 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
                 str(tmp_path / "artifacts"),
                 "--include-previous-day",
                 "--target",
-                "SPY/NAS",
+                "SPY/AMS",
+                "--max-pages",
+                "1",
                 "--minimum-request-interval-seconds",
                 "1.0",
             ]
@@ -115,12 +131,12 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
     probe = observed["probe"]
     assert isinstance(probe, dict)
     assert probe["tested_request_interval_seconds"] == 1.0
-    assert probe["max_pages"] == 3
+    assert probe["max_pages"] == 1
     assert probe["include_previous_day"] is True
-    assert probe["target"] == ("SPY", "NAS")
+    assert probe["target"] == ("SPY", "AMS")
     client = probe["client"]
     assert isinstance(client, dict)
-    assert client["client"]["max_minute_page_attempts"] == 3
+    assert client["client"]["max_minute_page_attempts"] == 1
     assert json.loads(capsys.readouterr().out) == {
         "evidence_path": str(tmp_path / "artifact.json"),
         "paper_only": True,

@@ -84,12 +84,14 @@ The bounded QQQ virtual-paper canary objective is complete as an exact
 `no_intent/receipt_not_eligible` session plus a network-disabled reattachment;
 no broker lifecycle occurred. The next material bottleneck is historical `1m`
 coverage: QQQ/NAS and SPY/AMS are source-limited for their exact continuation
-contracts, while SPY/NAS returned `minute_response_empty` on one `PINC=1`
-request and is therefore only `unavailable`. The immediate improvement is an
-explicit test of the existing safe empty-response classification plus one
-native-route control, not a retry flood or speculative cursor collector. Research has no distinct frozen GPU
-campaign eligible for dispatch, so Codex will not duplicate an already-completed
-candidate merely to occupy the GPU.
+contracts, while SPY/NAS remains observed-only `unavailable` after its empty
+`PINC=1` response and a later data-bearing SPY/AMS control. The next material
+ready input is the existing static Norgate D1 panel (523 symbols, 483 common
+sessions), which can support a clearly labeled development-only campaign while
+KIS native D1 remains the future runtime counterpart. Research has no distinct
+frozen GPU campaign eligible for dispatch until that source-separated campaign
+contract and CPU baseline are reattached; Codex will not duplicate an
+already-completed candidate merely to occupy the GPU.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -204,9 +206,9 @@ The existing local operations console is reattached through source-safe external
 evidence `20260728T115736150112Z-complete.json`; it remains loopback-only,
 credential-free, and read-only/no-submission from the dashboard's perspective.
 The candle-state r3 package is complete; preserve its immutable r1/r2 recovery
-records plus r3 CPU/CUDA/attestation receipts. The SPY/NAS probe is now complete
-as an exact `unavailable` result. The next company objective tests the existing
-empty-minute response classification and runs one matched SPY/AMS native-route
-control, with no live route, account/order endpoint, model-selection shortcut,
-serial collector, or parallel request flood. Data's forward task and Research's
-later prospective consumer continue independently.
+records plus r3 CPU/CUDA/attestation receipts. The minute-route comparison is
+complete: SPY/AMS yielded one full native page, while SPY/NAS remains one exact
+unavailable request shape. The next company objective reattests the frozen
+Norgate 523-symbol D1 panel and starts only a non-promoting KIS-reconstructible
+D1 development campaign. No KIS call, live route, account/order endpoint,
+model-selection shortcut, serial collector, or source blend belongs to it.

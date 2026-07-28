@@ -6,6 +6,9 @@ from decimal import Decimal
 from pathlib import Path
 
 from thericher_v2.data.kis_paper_minute_capability_probe import (
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS,
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS,
     run_kis_paper_minute_capability_probe,
     write_kis_paper_minute_capability_probe_evidence,
 )
@@ -18,6 +21,9 @@ from thericher_v2.execution.kis_market_data import (
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
+)
+from thericher_v2.execution.kis_private_intraday_backfill import (
+    KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
 )
 
 
@@ -50,6 +56,24 @@ class _MinuteClient:
         if isinstance(response, BaseException):
             raise response
         return response
+
+
+def test_capability_route_classes_keep_observed_only_target_out_of_collector() -> None:
+    assert KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS == {
+        "QQQ/NAS/1m",
+        "SPY/AMS/1m",
+    }
+    assert KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS == {"SPY/NAS/1m"}
+    assert (
+        KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS
+        == KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
+        | KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS
+    )
+    collector_targets = {
+        f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+    }
+    assert collector_targets == KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
+    assert collector_targets.isdisjoint(KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS)
 
 
 def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> None:
@@ -165,6 +189,27 @@ def test_probe_allows_spy_nas_prior_day_scope_from_its_first_request() -> None:
     assert client.queries[0].include_previous_day is True
     assert client.queries[0].symbol == "SPY"
     assert client.queries[0].exchange == "NAS"
+
+
+def test_probe_limits_a_native_control_to_one_minute_get() -> None:
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient([_page((start + timedelta(minutes=1), start), None)])
+
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(datetime(2026, 7, 24, 12, 0, tzinfo=UTC),) * 2,
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        max_pages=1,
+        include_previous_day=True,
+        target=("SPY", "AMS"),
+        monotonic_clock=_monotonic(0.0, 0.1),
+    )
+
+    assert outcome.accepted_page_count == 1
+    assert outcome.target_key == "SPY/AMS/1m"
+    assert outcome.minute_page_request_count == 1
+    assert outcome.token_request_count == 1
+    assert len(client.queries) == 1
 
 
 def test_probe_closes_duplicate_or_non_backward_cursor_chain_without_retaining_rows() -> None:
