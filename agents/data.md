@@ -44,6 +44,11 @@ that worker, and preserves the exact cache meaning. Its fixed two-target
   validation D1 slices. It rejects source-index/path drift, incomplete bars,
   misalignment, and phase crossing; it still emits no feature, label, model,
   score, ranking, replay, or broker output itself.
+  Its distinct causal volatility/trend view is also complete: it derives only
+  completed-bar `20 x 5` windows inside each phase, with no provider call,
+  cache mutation, validation label, ranking, or broker surface. Research has
+  consumed that view only for candidate-only plumbing; Data has not consumed a
+  performance result or changed the frozen source contract.
 The bounded prospective QQQ runtime selector is now ready: it consumes only a
 verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
 minute window or a precise source-status fact. It does not require a 390-minute
@@ -432,6 +437,7 @@ six-symbol NAS daily-history cache is now materialized under
 preserve its lineage and limitations without fetching, blending, or exposing raw
 rows. The next Research contract may consume it source-locally, but it must not
 reinterpret the common subset as a PIT universe or rank. The contract is now
-frozen through the external NAS D1 sequence precommit; Data's next relevant
-consumer is the named CPU/GPU breadth package, not a new provider request or
-another historical-universe claim.
+frozen through the earlier NAS D1 sequence precommit and the completed distinct
+volatility/trend candidate package. Data's next relevant consumer is a sealed,
+offline local-paper evaluation of that frozen package, not a new provider
+request, cache expansion, or historical-universe claim.

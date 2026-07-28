@@ -60,6 +60,18 @@ falsified across all three sparse validation folds. It used no training, GPU,
 network, credentials, KIS, or broker route. Do not retune its threshold, add it
 to an ensemble, or turn its result into a Paper input.
 
+The distinct NAS D1 volatility-conditioned trend package is complete as
+candidate-only plumbing. It fixes causal completed-bar `20 x 5` windows and
+development-only per-symbol normalization, then completed six CPU L2-logistic
+smokes and 18 network-disabled Docker CUDA LSTM/causal-TCN/compact-attention
+candidates. Its CPU/CUDA r2 summaries are
+`sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
+and `sha256:3158ac0e69c002394d97dc5f52946d70637e082f292a7c549498f4c045e5bc2c`.
+All validation forwards were target-free and all 18 `state_dict` checkpoints
+remain external. This is not a result, ranking, selection, ensemble, replay,
+PnL, KIS, or Paper input. Claude's required drift-check attempt was
+`review_unavailable` because local OAuth could not refresh.
+
 ## Current Readiness
 
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
@@ -302,6 +314,11 @@ to an ensemble, or turn its result into a Paper input.
    The next breadth proposal must declare a distinct causal hypothesis, feature
    contract, costs, split, naive baseline, and strongest kill test before any
    CPU or GPU work begins.
+10. The volatility-conditioned trend package is ready only for one fixed sealed
+    local-paper falsification. Reattest the r2 candidate artifacts and open
+    validation targets exactly once under a new immutable precommit. Classify
+    each frozen candidate against its declared comparators and kill rule without
+    selecting, tuning, ensembling, promoting, or creating a KIS Paper action.
 
 ## Durable Constraints
 
@@ -332,9 +349,9 @@ work or a promotion hold.
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
 controls, and immutable sealed NAS r4 result. The source-local NAS historical
-D1 panel, exact per-symbol campaign, Docker r2 breadth artifacts, and Docker r4
-evaluation are attested. The next package must be an independently precommitted
-causal hypothesis, not a retune or selection based on the sealed result. Do not
-use the current listing for rank or membership claims. The fresh prospective
-baseline remains execution evidence and cannot select or promote a research
-result.
+D1 panel and the distinct volatility-conditioned trend candidate artifacts are
+attested. The next package is one sealed local-paper falsification of the new
+frozen candidate set and its fixed comparators. Do not use its output to select,
+tune, ensemble, promote, rank, or create a KIS Paper action. Do not turn the
+current listing into a PIT membership claim. The fresh prospective baseline
+remains Execution evidence only.

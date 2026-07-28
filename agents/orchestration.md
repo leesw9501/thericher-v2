@@ -37,6 +37,12 @@ second goal.
   and source-safe receipts. Its summary is `sha256:032342...35fedf` and says
   marker-detected `execution_environment: docker`; it creates no ranking, selection, ensemble,
   promotion, KIS, or Paper-order consequence.
+- **Engine Research:** the distinct NAS volatility-conditioned trend package
+  completed its source-local causal `20 x 5` input adapter, six deterministic
+  CPU smokes, and 18 network-disabled Docker CUDA candidates. The r2 summary
+  hashes are `sha256:65ba9f...ad69a8` and `sha256:3158ac...e5bc2c`; all
+  validation forwards were target-free and all checkpoints remain external.
+  It has no selection, ensemble, replay, PnL, KIS, or Paper-order consequence.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -50,11 +56,11 @@ second goal.
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
 schedule deployment, both independent QQQ/SPY controls, NAS history
-materialization, exact NAS phase-local campaign contract, and sealed candidate
-evaluation are complete. There is no shared recovery or authority blocker. The
-next Research bottleneck is a distinct, precommitted causal hypothesis rather
-than another tuning pass over the sealed candidates; the stale QQQ input remains
-only a scoped runtime fact and does not block that work.
+materialization, exact NAS phase-local campaign contract, and prior sealed
+candidate evaluation are complete. There is no shared recovery or authority
+blocker. The next Research bottleneck is one precommitted sealed local-paper
+falsification for the new volatility-conditioned candidate package; it is not
+a tuning pass and the stale QQQ input remains only a scoped runtime fact.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -66,6 +72,12 @@ contract. The sealed writer also rejects every symlink or junction component
 before and after output-directory creation and before receipt writes. This makes
 the next fixed package auditable without persisting source values, hardware
 details, secrets, or event rows.
+
+The new candidate package performs full source/campaign attestation at its
+build and immutable-write boundaries, then checks a compact identity derived
+from frozen hashes for repeated in-memory consumer reads. This avoids repeated
+whole-panel rehashing during bounded CPU/GPU work without weakening the
+durable-boundary reattestation.
 
 ## Resolved Recovery
 
@@ -84,6 +96,8 @@ non-promoting work.
   attempt. It is normal lane-owned recovery, not a foreground company wait.
 - Claude CLI OAuth remains expired after the cross-runtime recovery challenge.
   Record `review_unavailable`; no lane foreground-waits on it.
+- The 2026-07-28 volatility/trend drift-check attempt also returned
+  `review_unavailable`; the candidate-only package remained non-promoting.
 
 ## Recovery
 
@@ -103,8 +117,10 @@ receipt, or any independent lane.
 
 ## Next Handoff
 
-Precommit one distinct causal NAS D1 breadth hypothesis before allocating the
-GPU again. Do not inspect the sealed aggregate result to choose it, and do not
-turn the source-local current listing into a point-in-time universe, rank,
-selection, ensemble, broker order, or global wait. Keep the sealed r4 result
+The distinct causal NAS D1 volatility-conditioned hypothesis is now frozen and
+its candidate-only CPU/CUDA breadth package is complete. Next, precommit one
+sealed local-paper falsification of those frozen candidates and comparators.
+Do not inspect the older sealed aggregate result to choose a candidate and do
+not turn any result into a point-in-time universe, ranking, selection,
+ensemble, broker order, or global wait. Keep both sealed result families
 immutable and non-promoting.

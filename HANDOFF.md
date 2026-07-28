@@ -656,9 +656,22 @@ versioned Compose profile and focused tests establish the network/mount contract
 The independent review also required that field. Claude's source-safe drift-check
 attempt remained `review_unavailable` because local OAuth is expired.
 
+The next distinct NAS D1 package is complete as candidate-only plumbing. It
+uses a causal five-channel volatility-conditioned trend feature sequence from
+the same source-local six-symbol panel, development-only labels, and target-free
+validation forwards. CPU r2 and Docker CUDA r2 source-safe summary identities
+are `sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
+and `sha256:3158ac0e69c002394d97dc5f52946d70637e082f292a7c549498f4c045e5bc2c`.
+The CUDA package has exactly 18 external safe-loadable checkpoints. No
+validation target, prediction, model ranking, selection, ensemble, replay,
+PnL, KIS request, or Paper action was opened. A later one-time sealed
+local-paper evaluator is the next falsification boundary. The required Claude
+challenge again returned `review_unavailable` because the local OAuth session
+could not refresh; this is not a promotion or an authority hold.
+
 Follow NEXT_CODEX_GOAL.md. The next company objective must precommit a distinct
-causal NAS D1 breadth hypothesis without using the sealed r4 aggregate outcome
-to select it. Keep source limitations visible, use no KIS or live route, and do
-not make a selection, ensemble, promotion, or Paper-broker decision. Let the
-independent intraday scheduler own its next due recovery attempt rather than the
-foreground.
+sealed local-paper falsification for the frozen volatility-conditioned package
+without using the older sealed r4 aggregate outcome to select it. Keep source
+limitations visible, use no KIS or live route, and do not make a selection,
+ensemble, promotion, or Paper-broker decision. Let the independent intraday
+scheduler own its next due recovery attempt rather than the foreground.

@@ -6737,3 +6737,35 @@ hardening was attempted but OAuth remained expired; it stays
 Reason: runtime coherence preserves exact candidate lineage at the sealed
 boundary, and the minimal environment field makes the offline Docker evidence
 auditable without creating a reporting framework or exposing protected data.
+
+## 2026-07-28 - Freeze a distinct NAS volatility-conditioned trend breadth package
+
+Decision: add one new, causal NAS D1 hypothesis without consulting the sealed
+r4 aggregate result: per-symbol completed-bar `20 x 5` windows of log return,
+10-bar trend, realized volatility, normalized true range, and range-conditioned
+trend. Freeze the existing source-local six-symbol panel, chronological phase
+geometry, development-only target construction, fixed costs, fixed comparator
+set, and the later paired local-paper kill rule before fitting. The candidate
+package is six deterministic CPU L2-logistic smokes followed by 18
+network-disabled Docker CUDA LSTM, causal-TCN, and compact-attention candidates.
+
+The immutable campaign precommit is
+`sha256:9f71107718c3235c1a52a092f3362b114e16f33387d7afaafc4b9d390e57deb9`.
+CPU r2 and CUDA r2 summaries are
+`sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
+and `sha256:3158ac0e69c002394d97dc5f52946d70637e082f292a7c549498f4c045e5bc2c`.
+The CUDA output contains 18 external `state_dict` checkpoints that passed
+safe `weights_only=True` reload. No validation target, prediction, PnL,
+ranking, selection, ensemble, promotion, KIS request, or Paper action was
+opened or retained.
+
+Full campaign attestation remains mandatory at construction and immutable-write
+boundaries. Repeated in-memory CPU/GPU consumers use a compact identity derived
+from the fully attested campaign and frozen standardizer hashes, avoiding
+repeated whole-panel rehashing without changing the durable evidence boundary.
+The Claude drift-check attempt was `review_unavailable` because OAuth could not
+refresh; the package stays candidate-only and non-promoting.
+
+Reason: this gives the engine a genuinely different causal representation and
+multiple architecture families while retaining a later sealed falsification
+boundary instead of converting training diagnostics into a trading conclusion.

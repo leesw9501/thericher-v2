@@ -1482,6 +1482,41 @@ directories. The runner rejects a symlink or Windows junction before directory
 creation and again before receipt writing; do not place the sealed evaluator
 under a redirected artifact path.
 
+### NAS D1 Volatility-Conditioned Trend Breadth
+
+The distinct source-local NAS campaign uses only causal completed-bar `20 x 5`
+volatility-conditioned trend windows. It trains on development labels only and
+executes validation as target-free forwards. Run the CPU smoke with a fresh
+external label:
+
+```powershell
+uv run --extra dev python scripts/run_kis_nas_d1_volatility_trend_breadth.py `
+  --mode cpu-smoke --run-label <unique-cpu-label> `
+  --market-data-root D:/market_data `
+  --artifact-root D:/thericher-v2/model-artifacts `
+  --review-status review_unavailable
+```
+
+Then run its bounded CUDA breadth in the network-disabled research service,
+without loading the local `.env`:
+
+```powershell
+$env:COMPOSE_DISABLE_ENV_FILE = "1"
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_volatility_trend_breadth.py `
+  --mode cuda-breadth --run-label <unique-cuda-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --review-status review_unavailable `
+  --cpu-smoke-summary /app/model_artifacts/research/kis-nas-d1-volatility-trend-breadth-v1/cpu-smoke/<unique-cpu-label>/summary.json
+```
+
+CUDA accepts only the exact external CPU summary and sibling immutable
+precommit, writes checkpoints only below `/app/model_artifacts`, and reloads
+them with `weights_only=True`. A completed receipt proves candidate plumbing
+and target-free forward shape only. It is not a validation result, selection,
+ensemble input, local-paper replay, KIS Paper decision, or live behavior.
+
 ### KIS Daily Regime-Tree Breadth
 
 The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY
