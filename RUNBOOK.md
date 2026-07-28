@@ -347,6 +347,24 @@ worker's 840-minute bound. Do not hand-edit its index or launch a second worker
 against the same cache. Inspect only source-safe aggregate receipts/index facts
 before relying on its coverage.
 
+Materialize a read-only source-local coverage snapshot without calling KIS:
+
+```powershell
+uv run python scripts\materialize_kis_paper_daily_broad_panel.py
+```
+
+The materializer takes a byte-stable index read, reattests the registry,
+target cursors, source manifests, raw hashes, and row lineage, then writes an
+immutable external manifest under
+`D:\market_data\us_equities\kis_paper_private\daily-nas-broad-panel\v1`
+and a source-safe receipt under
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-panel-v1`.
+It never opens the collector lock, calls a network/credential/broker route, or
+copies raw rows. A changing index or source hash fails the one materialization;
+it is not a collector hold. The resulting panel remains current-listing,
+non-PIT, unadjusted, corporate-action-unqualified, and session-finality-
+unattested, so it is not a model target, ranking, or training contract.
+
 ## KIS NAS D1 Forward Cache
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical

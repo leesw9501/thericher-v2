@@ -376,11 +376,14 @@ limits remain explicit.
     rule is that both symbols must beat every comparator after costs. This is
     a queue proposal only: no contract, target materialization, GPU run,
     selection, ensemble, or Paper input exists yet.
-12. The active KIS broad D1 cache is current-listing/non-PIT coverage only.
-    When Data produces a reattested source-local panel, inspect its exact stable
-    shape and freeze one CPU-only naive-baseline contract if it is sufficient.
-    Do not use its current listing as historical membership, rank targets, open
-    labels, start GPU work, or treat accumulating cache pages as a model result.
+12. The KIS broad D1 cache now has a reattested source-local development
+    coverage panel at generation 187, but its current-listing/non-PIT,
+    unadjusted, corporate-action-unqualified, and session-finality-unattested
+    scope is not an eligible target or split. Do not freeze a CPU baseline,
+    use historical membership, rank targets, open labels, start GPU work, or
+    treat accumulating cache pages as a model result. A later consumer needs a
+    date-based split, an independently qualified target/cost definition, and
+    an explicit leakage kill test.
 
 ## Durable Constraints
 

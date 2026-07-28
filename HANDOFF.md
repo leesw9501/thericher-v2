@@ -780,17 +780,19 @@ The broad KIS Paper D1 cache is now active at the dedicated external
 `daily-nas-broad/v1` root. Its hash-attested current-listing registry has 2,119
 NASDAQ common-stock targets with explicit non-PIT/non-ranking scope. A first
 eight-target bootstrap accepted 16 pages and a 32-target breadth-first
-continuation accepted 64 pages, both with zero categorical failures. Index
-generation 40 has 40 targets at two pages and 2,079 at zero pages; source-safe
-receipts are external at
-`sha256:f57a6aa036670c4a6282251ce45e8ab04765cbe4c86414fbb4b89f43c472b182`
-and
-`sha256:e8f98a779e49c1df0ed46bba812c113853db507c1f0f51aab8ed56b45eecc914`.
+continuation accepted 64 pages, both with zero categorical failures. Its first
+installed continuation advanced to generation 187: 187 targets with retained
+coverage, 1,932 at zero, 368 accepted pages, and one factual target-local rate
+limit. The latest source-safe receipt is `collected/reconcile` with 148 chunk
+attempts and 288 accepted pages.
 
 Its dedicated Docker profile has only KIS Paper market-data credentials and
 the daily endpoint. It cannot access account, position, quote, order, or live
-routes. The installed continuation schedule runs one worker at a time and
-never turns a known retry into an orchestrator wait. The next company objective
-is read-only materialization of a stable source-local broad D1 panel; it must
-not mutate the collector, mix providers, infer historical membership, or start
-model training before a separate frozen consumer contract exists.
+routes. The read-only panel materializer then reattested a byte-stable
+generation-187 snapshot and wrote only external manifest/receipt facts:
+dataset `sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7`,
+187 covered targets, zero quarantined conflicts, and all current-listing,
+non-PIT, unadjusted, corporate-action, and session-finality limitations. It
+did not call KIS or copy raw rows. The current 07:15-20:45 KST continuation
+window left a measured post-rate-limit restart gap; the next bounded objective
+tests same-client rate recovery before changing trigger density.

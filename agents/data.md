@@ -395,28 +395,44 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   `sha256:a0027b3c54ff7b6ea32c56826cdd131500c01a1d0e4a462a92cbe899a9b00750`.
   It has 2,119 current-listing targets and declares `current_listing_only`,
   `non_pit`, `non_ranking`, and `provider_price_data: false`.
-- The first deterministic eight-target bootstrap accepted 16 pages with zero
-  categorical failures. The first 32-target continuation accepted 64 pages
-  with zero categorical failures. Index generation is 40: 40 targets have two
-  accepted pages and 2,079 have zero; no raw rows appear in receipts.
+- The first deterministic eight-target bootstrap accepted 16 pages and the
+  first 32-target continuation accepted 64 pages, both with zero categorical
+  failures. The first installed continuation then reached generation 187:
+  187 targets have retained daily coverage, 1,932 remain at zero, 368 accepted
+  pages are recorded, and one target-local `rate_limited` result is factual
+  deferred/reconcile evidence. No raw rows appear in receipts or stateboards.
 - The two immutable source-safe receipt hashes are
   `sha256:f57a6aa036670c4a6282251ce45e8ab04765cbe4c86414fbb4b89f43c472b182`
   and
   `sha256:e8f98a779e49c1df0ed46bba812c113853db507c1f0f51aab8ed56b45eecc914`.
-  Raw rows, index, and registry remain only under the dedicated D: cache;
-  receipts remain only under the dedicated external artifact root.
+  The latest installed-worker receipt is `collected/reconcile` with 148 chunk
+  attempts, 288 accepted pages, one categorical rate limit, and 2,113 targets
+  remaining. Raw rows, index, and registry remain only under the dedicated D:
+  cache; receipts remain only under the dedicated external artifact root.
 - The selector prioritizes smaller accepted-page counts, then stable registry
   position, so initial continuation expands breadth rather than deepening one
   target. Two consecutive same-source invalid responses close only that target
   as `source_limited`; shared auth/rate failures remain deferred.
-- The installed owner uses one 14-hour continuation worker at a time, with
-  Tuesday-through-Saturday KST 30-minute restart triggers from 07:15 through
-  20:45. A known rate/token retry yields the worker before client construction;
-  it never foreground-sleeps. Fresh-head collection remains an independent
-  shared-gate consumer.
+- A new read-only source-local panel reattested byte-stable index generation
+  187 and wrote external-only dataset
+  `sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7`.
+  Its manifest and receipt hashes are
+  `sha256:f6331036d7e6d6598f180e0fb366f0ef9f117c3ede73755cbddae2dc790bd4e0`
+  and
+  `sha256:45c23248a096d6bc9b175f75018d1154d72bedaafc0a481378fd2d5b5da85831`.
+  It preserves all 2,119 target coverage facts, zero-covered targets, KIS-only
+  current-listing/non-PIT/non-ranking scope, unadjusted corporate-action and
+  session-finality limitations, and target-level conflict quarantine. It makes
+  no network, credential, broker, or KIS call and does not copy raw rows.
+- The installed owner remains one 14-hour continuation worker at a time. Its
+  current 30-minute 07:15-20:45 KST trigger window left a measured restart gap
+  after the 04:42 KST rate-limited run: its local retry fact was 04:48 KST but
+  the next trigger is 07:15 KST. This is an owned throughput issue, not a
+  data-permission or Research hold. The next bounded Data package will test a
+  same-client bounded rate-recovery path before widening trigger density.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
   Recovery class: `resume`; remaining page estimate and ETA are `unknown` until
-  more target-local continuation evidence exists.
+  a rate-recovery sample provides more accepted-page evidence.
 
 ## Collection Progress Projection
 

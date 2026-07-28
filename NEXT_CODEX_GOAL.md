@@ -2,69 +2,76 @@
 
 ## Objective
 
-Materialize and qualify the first source-local broad KIS Paper D1 development
-panel from the active `daily-nas-broad/v1` cache.
+Measure and reduce the broad KIS Paper D1 collector's rate-limit restart gap
+without changing its source scope or request rate.
 
-This is a field-compatibility and dataset-contract objective, not a historical
-universe, ranking, corporate-action, profitability, model-selection, or Paper
-trading claim. The active broad collector continues independently.
+The active current-listing `daily-nas-broad/v1` cache reached a source-safe
+`rate_limited` stop after useful accepted-page progress. Its current 07:15-20:45
+KST trigger window leaves a multi-hour restart gap after an off-window run. The
+goal is one bounded same-client recovery experiment, not a request flood,
+schedule platform, historical-universe claim, training campaign, or broker
+feature.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattach the broad registry/index identity and inspect only source-safe
-   aggregate coverage facts. Do not print raw symbols, rows, prices, volumes,
-   tokens, account identifiers, or provider response bodies.
-3. Ask Claude for a concise falsification-first drift check before freezing a
-   research split, target, or consumer contract. Include current-listing
-   survivorship, adjustment/corporate-action limitations, feature timestamps,
-   and the strongest leakage kill test.
+2. Reattach only source-safe aggregate broad-cache/index/receipt facts. Do not
+   print raw symbols, rows, prices, volumes, tokens, account identifiers, or
+   provider response bodies.
+3. Ask Claude for a short falsification-first drift check before changing the
+   collector's rate-limit recovery or its task trigger policy. Include the
+   observed 148-attempt/288-page/one-rate-limit run, one-second gate,
+   five-minute fresh-token guard, no-foreground-wait rule, and the strongest
+   throughput/rejection kill test.
 
 ## Authority And Boundaries
 
-- The installed broad collector owns its KIS Paper data schedule. This objective
-  must not issue an extra KIS request, alter its index, or compete for its lock.
-- Read only committed, reverified broad-cache snapshots. A changing index,
-  snapshot hash mismatch, or active-write race is scoped `retry/reconcile`
-  evidence, never a company hold.
-- Keep all raw data under `D:\market_data` and all generated artifacts under
-  `D:\thericher-v2\model-artifacts`; write neither to Git.
-- Keep the registry's `current_listing_only`, `non_pit`, and `non_ranking`
-  fields attached to every derived artifact. Do not blend Norgate, Tiingo,
-  ETF, legacy KIS, or other provider rows into this panel.
-- No account, position, quote, order, KIS live, dashboard, model promotion, or
-  GPU training route belongs to this objective.
-- Respect the 20 percent storage warning and 15 percent free-space floor.
+- `KIS_PAPER_*` may be used only by the existing broad KIS Paper `dailyprice`
+  client route. No account, position, quote, order, dashboard, KIS live, model,
+  GPU, or execution route belongs to this objective.
+- Keep one collector per broad cache and preserve the existing shared gate,
+  one-second request-start pace, source allowlist, D: storage policy, and
+  `IgnoreNew` duplicate protection.
+- Never write a token, credential, raw response, account fact, or broker body
+  to Git, a stateboard, a log, or a derived artifact.
+- A rate wait belongs only to the Docker collector; Codex must not foreground
+  sleep while another Data, Research, or Execution package is ready.
+- Do not widen trigger density until the bounded recovery experiment has
+  source-safe evidence that accepted-page progress resumes without a worse
+  rate-limit-per-accepted-page result. Keep any unchanged schedule fact visible.
 
 ## Work
 
-1. **Data:** implement a read-only broad-cache catalog/materializer that
-   reattests registry, index, manifests, raw hashes, target cursors, and source
-   scope before consuming a committed snapshot.
-2. **Data:** build one bounded external panel manifest from whatever stable
-   target/session coverage exists now. Preserve per-target coverage and missing
-   facts; do not demand full 2,119-target backfill before making useful local
-   progress.
-3. **Validation:** add focused tests for active-write/index drift, cache/raw
-   hash mismatch, source-scope propagation, external-only outputs, and absence
-   of network/credential/broker access.
-4. **Engine Research:** if the panel meets an explicitly frozen minimal shape,
-   prepare a CPU-only naive baseline contract. Do not train, rank, ensemble, or
-   open a target until its own data/split/cost contract and Claude review exist.
-5. Refresh the Data and Engine Research stateboards with only the current
-   source-safe coverage and handoff facts.
+1. **Data:** add one explicitly bounded same-client rate-recovery path: after a
+   `rate_limited` result, retain the in-memory client for at most one measured
+   gate-due retry within that worker's existing runtime budget. A second
+   rate-limit, another shared stop, expired runtime, invalid cache, or storage
+   floor yields to the owner scheduler with truthful recovery state.
+2. **Validation:** add focused deterministic tests proving one client/token is
+   reused, the wait is bounded and never occurs in Codex, no retry loop becomes
+   unbounded, source-safe receipts disclose recovery counts/outcomes only, and
+   account/order/live routes remain absent.
+3. **Data:** rebuild the Docker image and run one bounded real continuation
+   after deployment. Record only aggregate attempts, accepted pages,
+   categorical reasons, rate-recovery count, task result, and D: free-space
+   bucket. Do not interpret a single run as a provider limit.
+4. **Orchestration:** compare the run with the existing 148-attempt/288-page
+   receipt. If the probe resumes accepted progress and does not worsen
+   rate-limited-per-accepted-page evidence, propose the smallest trigger-window
+   change needed; otherwise retain the existing schedule and record the
+   reversal fact.
+5. Refresh affected stateboards, replace this file with exactly one next
+   objective, then continue.
 
 ## Completion
 
-- A reattestable external broad D1 panel manifest or a precise scoped
-  `input_unavailable/reconcile` artifact exists.
-- Derived artifacts preserve KIS-only and current-listing/non-PIT/non-ranking
-  limitations.
-- Focused tests prove the materializer is read-only and independent from the
-  active collector.
-- Refresh affected stateboards, replace this file with exactly one next
-  objective, then continue.
+- One bounded same-client rate-recovery implementation and source-safe real or
+  deterministic probe receipt exist outside Git.
+- The broad collector remains one-client, dailyprice-only, cache-owned, and
+  recoverable; no additional broker surface exists.
+- Trigger-policy evidence is explicit rather than inferred from a local
+  backoff constant.
 
 ## Verification
 
@@ -77,4 +84,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Materialize broad KIS D1 panel`
+`Recover broad KIS D1 rate limits`

@@ -7000,3 +7000,34 @@ quote, order, live, model, ranking, PnL, or provider-join route is introduced.
 Reason: broad KIS-native daily coverage should progress continuously without
 reusing a survivor panel or letting one broken target, a cooldown, or a process
 timeout stall the whole engine loop.
+
+## 2026-07-29 - Materialize broad KIS D1 only from a byte-stable source snapshot
+
+Decision: the active `daily-nas-broad/v1` cache now has a separate read-only
+panel materializer. It reads an index twice and accepts it only when the exact
+bytes match before and after registry/index/chunk/raw reattestation. It never
+opens the collector lock, calls KIS, reads credentials, or writes the cache.
+Its immutable D:-resident manifest carries source hashes, all target coverage
+and zero-coverage facts, source chunk references/hashes, and explicit
+current-listing/non-PIT/non-ranking, unadjusted, corporate-action, and
+session-finality limitations; it carries no raw rows, prices, volumes, account,
+or broker facts.
+
+The first stable panel is dataset
+`sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7`
+from index generation 187. It has 2,119 registry targets, 187 covered targets,
+1,932 zero-covered targets, and zero quarantined conflict targets. It is a
+development-coverage record only, not a PIT universe, adjustment qualification,
+research split, target, ranking, training, model, Paper, or live input.
+
+Claude's falsification-first review returned `supported-with-limits`. It
+required index-byte rather than generation-only stability, no collector-lock
+interference, target-wide quarantine for any conflict chunk, visible zero-
+coverage facts, and a later date-based split plus independently qualified
+target/cost contract. The strongest later kill test is past immutability across
+panel generations: shared `(target, session)` fingerprints must stay identical
+as collection advances.
+
+Reason: a current mutable collector can safely supply a frozen local consumer
+only when its source identity and limitations remain explicit, retryable, and
+independent from collection progress.

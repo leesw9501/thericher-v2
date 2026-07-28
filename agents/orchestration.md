@@ -88,14 +88,15 @@ second goal.
 ## Current Bottleneck
 
 The bounded QQQ virtual-paper canary and static Norgate D1 development package
-are complete. The material bottleneck is now the field-compatible broad KIS D1
-panel, not collection capability: a new current-listing cache has 2,119 targets
-and 40 targets with two committed pages each, while 2,079 remain at zero pages.
-The collector expands shallow coverage first under the shared one-second gate;
-it is source-separated from the Norgate survivor panel and carries typed
-non-PIT/non-ranking scope. Data can materialize a read-only stable panel without
-waiting for terminal backfill. Research has no eligible GPU campaign until that
-panel freezes a distinct causal input contract.
+are complete. The broad KIS D1 cache now has a read-only source-local coverage
+panel: 2,119 current-listing targets, 187 targets with retained coverage, 1,932
+at zero, and no quarantined conflict target in panel
+`sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7`.
+The panel intentionally remains non-PIT, unadjusted, corporate-action
+unqualified, session-finality-unattested, and non-training. Research has no
+eligible GPU campaign until a distinct causal target/split/cost contract exists.
+The material bottleneck is now collection duty cycle after an observed shared
+rate limit, not panel materialization.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -111,12 +112,15 @@ by its current reconciliation path; no authority or policy changed.
 
 **Current operating improvement:** the broad collector has its own cache/index,
 one client/token per run, breadth-first target selection, and target-local
-source-limit recovery. Tuesday-through-Saturday 30-minute triggers from 07:15
-to 20:45 KST keep a healthy 14-hour continuation running while `IgnoreNew`
-prevents duplication; a rate/token due yields before client construction and a
-later trigger resumes it. The task timeout is 870 minutes so the worker can
-write its 840-minute bounded receipt. Fresh-head work remains an independent
-shared-gate consumer.
+source-limit recovery. Its first installed run accepted 288 pages in 148 chunk
+attempts before one local `rate_limited` stop, but the 07:15-20:45 KST trigger
+window leaves a 04:48-to-07:15 restart gap. Claude's 2026-07-29 review is
+`supported-with-limits`: a denser trigger alone cannot raise instantaneous rate
+under the shared gate, but a 300-second period resonates with the 300-second
+fresh-token guard and creates unnecessary receipts. The next bounded Data
+package tests one same-client rate-recovery step and measures accepted pages
+and rate-limit density before changing the trigger policy. `IgnoreNew`, the
+870-minute task limit, storage floor, and fresh-head priority remain unchanged.
 
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
