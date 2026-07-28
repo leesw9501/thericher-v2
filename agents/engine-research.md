@@ -353,6 +353,15 @@ claim, KIS call, or Paper action follows.
     candidate, authorize a Paper action, or create GPU work. Research remains
     ready to observe a later complete common window without tuning, ensembling,
     promoting, ranking, or creating a KIS Paper action.
+11. After the current QQQ Paper canary closes, the next distinct breadth
+    proposal may freeze one QQQ/SPY D1 overnight-versus-intraday state
+    hypothesis. It must use only the existing 4,756-session source-local pair,
+    phase-local 20-session OHLCV sequences, the fixed `3,783 / 22 / 951`
+    chronology, after-cost `t+1` to `t+2` long-versus-flat target, and the
+    fixed flat/always-long/previous-bar-direction comparators. The strict kill
+    rule is that both symbols must beat every comparator after costs. This is
+    a queue proposal only: no contract, target materialization, GPU run,
+    selection, ensemble, or Paper input exists yet.
 
 ## Durable Constraints
 

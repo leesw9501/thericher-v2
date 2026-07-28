@@ -80,12 +80,26 @@ second goal.
 
 ## Current Bottleneck
 
-The candle-state r3 package has completed integration and authoritative
-verification. The next bounded company objective is the already deployed QQQ
-virtual-paper canary, whose only immediate dependency is one fresh completed
-QQQ/NAS runtime window. The forward-cache three-session requirement remains a
-different Research-consumer fact; it does not hold the canary or create a GPU
-wait.
+The bounded QQQ virtual-paper canary objective is complete as an exact
+`no_intent/receipt_not_eligible` session plus a network-disabled reattachment;
+no broker lifecycle occurred. The next material bottleneck is historical `1m`
+coverage: QQQ/NAS and SPY/AMS are source-limited for their exact continuation
+contracts, while the already allowlisted SPY/NAS alternate-exchange route is
+still untested. Research has no distinct frozen GPU campaign eligible for
+dispatch, so Codex will not duplicate an already-completed candidate merely to
+occupy the GPU.
+
+The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
+work remains independent of the next bounded Data capability probe and must not
+be duplicated by a foreground collector.
+
+Claude's 2026-07-28 source-excerpt drift check returned
+`supported-with-limits` for the unchanged canary boundary: client construction
+is gated by freshness/session/pause checks, intent precedes a side effect,
+submission rechecks freshness, accepted canaries immediately cancel/reconcile,
+and the validator is network-isolated. The excerpt did not re-review the full
+existing unknown-outcome recovery helper, so that exact intent remains governed
+by its current reconciliation path; no authority or policy changed.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -140,18 +154,23 @@ non-promoting work.
 
 ## External Waits
 
-- The scheduled intraday head owns its 2026-07-29 00:31 KST next collection
+- The scheduled intraday head owns its 2026-07-29 02:31 KST next collection
   attempt. It is normal lane-owned recovery, not a foreground company wait.
 - The NAS D1 forward task owns its 2026-07-29 06:40 KST next collection or
   reattestation. Two more all-six common sessions are required only by its
   prospective consumer; the next company objective does not wait for them.
-- Claude CLI OAuth remains expired after the cross-runtime recovery challenge.
-  Record `review_unavailable`; no lane foreground-waits on it.
-- The 2026-07-28 volatility/trend pre- and post-evaluation drift-check attempts
-  both returned `review_unavailable`; the r5 mixed candidate-only result remains
-  non-promoting.
+- Claude CLI is authenticated. Its short execution-recovery and historical-minute
+  capability challenges both returned `supported-with-limits`; those limits are
+  expressed in the exact validator mapping and bounded per-route probe, not as
+  a new approval or foreground wait.
 
 ## Recovery
+
+The 2026-07-29 00:31 KST parent terminal remains immutable
+`recovery/prospective_validation_exit_nonzero`. Its exact no-intent session was
+revalidated after the shared decision-receipt projection repair, so the fault is
+closed for that validator contract without rewriting the historical terminal or
+creating a replacement Paper intent.
 
 The daily historical caches, D1 eligibility receipt, fixed cross-fold screens,
 local-paper replay, 19:22Z/19:48Z prospective QQQ terminal receipts, and the
@@ -182,9 +201,8 @@ The existing local operations console is reattached through source-safe external
 evidence `20260728T115736150112Z-complete.json`; it remains loopback-only,
 credential-free, and read-only/no-submission from the dashboard's perspective.
 The candle-state r3 package is complete; preserve its immutable r1/r2 recovery
-records plus r3 CPU/CUDA/attestation receipts. The next company objective is
-one target-local QQQ `kis_paper` canary through the existing fresh-intraday
-route, followed by its network-disabled validator. It must use no historical
-receipt as a current input, no live route, and no model-selection shortcut.
-Data's forward task and Research's later prospective consumer continue
+records plus r3 CPU/CUDA/attestation receipts. The next company objective is a
+bounded SPY/NAS `1m` alternate-route continuation probe. It must use no live
+route, account/order endpoint, model-selection shortcut, or parallel request
+flood. Data's forward task and Research's later prospective consumer continue
 independently.

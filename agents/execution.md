@@ -32,6 +32,15 @@ Live remains unavailable.
 
 ## Current Facts
 
+- The 2026-07-29 00:31 KST scheduled QQQ route produced an exact
+  `paper_only` `no_intent/receipt_not_eligible` session. Its baseline `reduce`
+  action correctly narrowed to the non-entry `abstain` receipt; no canary or
+  broker lifecycle was created. The initial parent terminal remains
+  `recovery/prospective_validation_exit_nonzero` because the old offline
+  validator compared those two representations as raw strings. The corrected
+  network-disabled validator reattached the same retained session as
+  `runtime_recomputed` with no credential, account, quote, KIS, order, or
+  local-paper mutation path.
 - The 19:22Z manually invoked intraday-head route returned terminal `complete`;
   its prospective QQQ session returned `no_intent/runtime_window_stale` and its
   validator was `validated`. Its source window ended at 19:20Z and the session
@@ -238,14 +247,20 @@ fail-closed quarantine behavior for a legacy unscoped page. Keep the virtual
 route attached only to a fresh eligible receipt; do not read an account or
 construct a replacement intent merely because a collection retry is scheduled.
 
+The 00:31 KST parent recovery is also closed for its exact validator-contract
+fault: the immutable parent receipt remains unchanged, while the matching
+retained no-intent session now has successful independent offline validation.
+It does not authorize a replacement intent or alter a later scheduled session.
+
 ## Next Handoff
 
 Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
 The verified contract is deployed to the existing lane-owned schedule; observe
-its future regular-session result without forcing an intent. When a fresh QQQ
-receipt is eligible, its canary must use a
+its future regular-session result without forcing an intent. The bounded canary
+objective is complete as a validated no-intent. When a later fresh QQQ receipt
+is eligible, its canary must use a
 new exact durable Paper intent and re-read the current Paper account and fresh
 quote at its own call site; no stale account snapshot or historical Data receipt
 may act as permission or order input.

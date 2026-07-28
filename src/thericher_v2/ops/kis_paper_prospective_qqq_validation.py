@@ -23,6 +23,10 @@ from thericher_v2.execution.kis_paper_prospective_qqq_session import (
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_ARTIFACT_DIRECTORY,
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_KIND,
 )
+from thericher_v2.research.decision_receipt import (
+    ResearchDecisionReceipt,
+    receipt_projection_for_target_action,
+)
 
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND = "kis_paper_prospective_qqq_validation"
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY = (
@@ -257,7 +261,9 @@ def _recompute_loop(
     ):
         raise ValueError("prospective QQQ loop route is invalid")
     baseline = _object(loop.get("baseline"), "prospective QQQ baseline")
-    receipt = _object(loop.get("receipt"), "prospective QQQ receipt")
+    receipt = _validated_decision_receipt(
+        _object(loop.get("receipt"), "prospective QQQ receipt")
+    )
     stored_window = _object(loop.get("window"), "prospective QQQ runtime window")
     catalog = load_verified_kis_paper_private_intraday_catalog(
         cache_root=cache_root,
@@ -303,13 +309,24 @@ def _recompute_loop(
     if status == "canary_completed" and pre_submit_current is False:
         raise ValueError("completed canary cannot retain stale pre-submit freshness")
     observed_marker = observed_at.isoformat().replace("+00:00", "Z")
+    baseline_action = baseline.get("action")
+    if not isinstance(baseline_action, str):
+        raise ValueError("prospective QQQ baseline and receipt lineage is inconsistent")
+    try:
+        expected_decision_class, expected_reason_class = receipt_projection_for_target_action(
+            baseline_action,
+            input_status=recomputed.status,
+        )
+    except ValueError as error:
+        raise ValueError("prospective QQQ baseline and receipt lineage is inconsistent") from error
     if (
         baseline.get("input_status") != recomputed.status
-        or receipt.get("input_status") != recomputed.status
-        or receipt.get("input_manifest_ref") != recomputed.input_manifest_ref
-        or baseline.get("action") != receipt.get("decision_class")
+        or receipt.input_status != recomputed.status
+        or receipt.input_manifest_ref != recomputed.input_manifest_ref
+        or receipt.decision_class != expected_decision_class
+        or receipt.reason_class != expected_reason_class
         or baseline.get("decided_at") != observed_marker
-        or receipt.get("decided_at") != observed_marker
+        or receipt.decided_at.isoformat().replace("+00:00", "Z") != observed_marker
     ):
         raise ValueError("prospective QQQ baseline and receipt lineage is inconsistent")
     replay = _object_or_none(loop.get("local_paper_replay"), "prospective QQQ local-paper replay")
@@ -378,6 +395,40 @@ def _object(value: object, name: str) -> Mapping[str, object]:
 
 def _object_or_none(value: object, name: str) -> Mapping[str, object] | None:
     return None if value is None else _object(value, name)
+
+
+def _validated_decision_receipt(payload: Mapping[str, object]) -> ResearchDecisionReceipt:
+    try:
+        schema_version = payload.get("schema_version")
+        if not isinstance(schema_version, int):
+            raise ValueError("receipt schema_version is invalid")
+        return ResearchDecisionReceipt(
+            campaign_ref=_required_string(payload.get("campaign_ref"), "receipt campaign_ref"),
+            model_ref=_required_string(payload.get("model_ref"), "receipt model_ref"),
+            input_manifest_ref=_required_string(
+                payload.get("input_manifest_ref"),
+                "receipt input_manifest_ref",
+            ),
+            proposal_ref=_required_string(payload.get("proposal_ref"), "receipt proposal_ref"),
+            decision_id=_required_string(payload.get("decision_id"), "receipt decision_id"),
+            decision_class=_required_string(
+                payload.get("decision_class"),
+                "receipt decision_class",
+            ),
+            input_status=_required_string(payload.get("input_status"), "receipt input_status"),
+            decided_at=_parse_utc(payload.get("decided_at"), "receipt decided_at"),
+            valid_until=_parse_utc(payload.get("valid_until"), "receipt valid_until"),
+            reason_class=_required_string(payload.get("reason_class"), "receipt reason_class"),
+            schema_version=schema_version,
+        )
+    except (TypeError, ValueError) as error:
+        raise ValueError("prospective QQQ decision receipt is invalid") from error
+
+
+def _required_string(value: object, name: str) -> str:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be a string")
+    return value
 
 
 def _parse_utc(value: object, name: str) -> datetime:

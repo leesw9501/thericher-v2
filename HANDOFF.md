@@ -245,6 +245,18 @@ authorized private KIS Paper work.
   `runtime-freshness-v2` validator matched that exact session. No account,
   quote, prepared decision, canary, order, cancellation, live route, or duplicate
   task resulted. The named worker owns its next 00:31 KST recovery attempt.
+- The 2026-07-29 00:31 KST scheduled head collection returned `exit_zero` and
+  the exact QQQ virtual-only session returned
+  `no_intent/receipt_not_eligible`. Its baseline `reduce` action correctly
+  projected to a non-entry `abstain` decision receipt, so no canary, account,
+  quote, intent, order, cancellation, or live route followed. The immutable
+  parent terminal remains `recovery/prospective_validation_exit_nonzero`
+  because the earlier offline validator incorrectly compared those two
+  representations as raw strings. The shared receipt projection is now
+  revalidated by construction and the exact retained session independently
+  reattached through the network-disabled `runtime-freshness-v2` validator.
+  This repaired no KIS data, rewrote no terminal receipt, and created no new
+  broker action.
 - A finite 2026-07-26 `session-capture` invocation completed through the owned
   Paper market-data path. Its QQQ/SPY outcomes recovered existing cache state;
   it did not add a qualified 390-minute regular session or a Research input.
@@ -599,6 +611,14 @@ or a scheduled wait affects only its own input or worker. It cannot become a
 global permission or progress latch.
 
 ## Next Handoff
+
+The validated QQQ Paper no-intent closes the current canary objective. The next
+company objective is a source-safe SPY/NAS `1m` alternate-exchange continuation
+probe: one reusable KIS Paper client, three pages maximum, the existing
+one-second request-start gate, and no parallel flood. It must prove strictly
+older cursor/date progress before any route-scoped serial backfill is enabled;
+otherwise it closes only that exact route as source-limited. The existing fresh
+head schedule continues at its own due time and is not a foreground wait.
 
 The QQQ/SPY D1 relative-regime and separate relative-allocation CPU controls
 are complete and falsified. The allocation control reused the hash-attested

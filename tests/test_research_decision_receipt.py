@@ -21,6 +21,7 @@ from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
+    receipt_projection_for_target_action,
 )
 from thericher_v2.research.kis_paper_baseline import evaluate_kis_paper_baseline
 
@@ -104,14 +105,30 @@ def test_changed_capability_contract_projects_to_an_unavailable_abstain(
     assert receipt.reason_class == "input_unavailable"
 
 
-def test_ready_non_enter_proposals_remain_abstentions() -> None:
+@pytest.mark.parametrize(
+    ("action", "reason_class"),
+    (
+        ("hold", "non_entry_proposal"),
+        ("reduce", "non_entry_proposal"),
+        ("abstain", "model_abstain"),
+    ),
+)
+def test_ready_non_enter_proposals_remain_abstentions(
+    action: str,
+    reason_class: str,
+) -> None:
     receipt = receipt_from_target_exposure_proposal(
-        _proposal(action="hold", input_status="ready", reason="do-not-export-hold-detail"),
+        _proposal(action=action, input_status="ready", reason="do-not-export-hold-detail"),
         references=_references(),
     )
 
     assert receipt.decision_class == "abstain"
-    assert receipt.reason_class == "non_entry_proposal"
+    assert receipt.reason_class == reason_class
+
+
+def test_receipt_projection_rejects_unknown_action_before_unavailable_input() -> None:
+    with pytest.raises(ValueError, match="target action is invalid"):
+        receipt_projection_for_target_action("future_action", input_status="missing")
 
 
 def test_ready_exit_proposal_projects_to_an_explicit_exit_receipt() -> None:

@@ -138,6 +138,14 @@ the offline observer only after a current or complete cache result. A
   factual prior conflict marker and SPY records a scoped rate-limit result. The
   worker's next due is 2026-07-29 00:31 KST. This is collection recovery
   evidence, not a reason to reopen, manually trigger, or reinterpret raw rows.
+- The 2026-07-29 00:31 KST scheduled head collection returned `exit_zero`.
+  Its exact QQQ session was `paper_only` `no_intent/receipt_not_eligible`; the
+  parent terminal truthfully retained `recovery` because its first offline
+  validator exposed the normal `reduce`-to-`abstain` receipt projection as a
+  raw-string mismatch. After the shared receipt contract was corrected, the
+  same retained session reattached through the network-disabled validator as
+  `runtime_recomputed`. The reattachment made no KIS request or cache mutation.
+  The scheduled worker's next due is 2026-07-29 02:31 KST.
 
 - The isolated KIS Paper daily-universe probe pinned the official current
   directory manifest `sha256:129e...aecea4`, the NAS listing file
@@ -455,14 +463,13 @@ limitation.
 
 ## Next Handoff
 
-Preserve the frozen six-symbol source separately. Continue the fresh prospective
-QQQ intraday completed-bar schedule for the named baseline and let its next
-regular-session observation emit the current freshness field through the
-installed image. At this handoff the worker-owned `next_due` is 2026-07-29
-00:31 KST; do not manually trigger a duplicate run. The completed QQQ/NAS and
-SPY/AMS prior-day probes do not
-support cursor collection; any later historical-minute attempt needs a separate
-endpoint or provider contract.
+Preserve the frozen six-symbol source separately. The fresh prospective QQQ
+intraday schedule owns its next due at 2026-07-29 02:31 KST; do not manually
+trigger a duplicate run. The completed QQQ/NAS and SPY/AMS prior-day probes do
+not support cursor collection. The next Data package probes the already
+allowlisted SPY/NAS `1m` alternate-exchange route with one client, a three-page
+cap, the installed one-second gate, and source-safe cursor evidence before any
+serial historical collector is enabled.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact

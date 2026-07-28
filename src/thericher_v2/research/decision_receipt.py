@@ -43,6 +43,39 @@ _INPUT_MANIFEST_REFERENCE = re.compile(r"sha256:[0-9a-f]{64}")
 _DECISION_ID = re.compile(r"decision:sha256:[0-9a-f]{64}")
 
 
+def decision_class_for_target_action(action: str) -> DecisionClass:
+    """Return the narrowed receipt class for one target-exposure action."""
+
+    if action == "enter":
+        return "enter"
+    if action == "exit":
+        return "exit"
+    if action in {"hold", "reduce", "abstain"}:
+        return "abstain"
+    raise ValueError("target action is invalid")
+
+
+def receipt_projection_for_target_action(
+    action: str,
+    *,
+    input_status: TargetInputStatus,
+) -> tuple[DecisionClass, DecisionReasonClass]:
+    """Return the decision receipt projection for one target-exposure action."""
+
+    decision_class = decision_class_for_target_action(action)
+    if input_status not in _INPUT_STATUSES:
+        raise ValueError("input_status is invalid")
+    if input_status != "ready":
+        return "abstain", "input_unavailable"
+    if decision_class == "enter":
+        return "enter", "eligible_enter"
+    if decision_class == "exit":
+        return "exit", "eligible_exit"
+    if action == "abstain":
+        return "abstain", "model_abstain"
+    return "abstain", "non_entry_proposal"
+
+
 @dataclass(frozen=True)
 class DecisionReceiptReferences:
     """Caller-supplied opaque identities for a frozen research observation.
@@ -191,15 +224,10 @@ def receipt_from_target_exposure_proposal(
 def _classify_proposal(
     proposal: TargetExposureProposal,
 ) -> tuple[DecisionClass, DecisionReasonClass]:
-    if proposal.input_status != "ready":
-        return "abstain", "input_unavailable"
-    if proposal.action == "enter":
-        return "enter", "eligible_enter"
-    if proposal.action == "exit":
-        return "exit", "eligible_exit"
-    if proposal.action == "abstain":
-        return "abstain", "model_abstain"
-    return "abstain", "non_entry_proposal"
+    return receipt_projection_for_target_action(
+        proposal.action,
+        input_status=proposal.input_status,
+    )
 
 
 def _require_opaque_reference(value: str, field_name: str) -> None:

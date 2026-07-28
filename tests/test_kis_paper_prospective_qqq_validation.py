@@ -4,13 +4,13 @@ import json
 import os
 import socket
 import urllib.request
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
-from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.contracts import Bar, TargetExposureProposal, Timeframe
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
     select_kis_paper_intraday_runtime_window,
 )
@@ -24,6 +24,10 @@ from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY,
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
     validate_kis_paper_prospective_qqq_session,
+)
+from thericher_v2.research.decision_receipt import (
+    DecisionReceiptReferences,
+    receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.kis_paper_prospective_loop import run_kis_paper_prospective_loop
 
@@ -79,6 +83,167 @@ def test_recomputes_ready_window_and_local_paper_replay_without_external_access(
     assert "100.000" not in rendered
     assert '"price"' not in rendered
     assert "credential" not in rendered
+
+
+def test_accepts_reduce_baseline_narrowed_to_abstain_receipt(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    payload = loop.safe_payload()
+    _replace_loop_receipt_action(payload, action="reduce")
+
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-reduce",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=payload,
+        status="no_intent",
+        reason_code="receipt_not_eligible",
+    )
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id="prospective-qqq-validation-reduce",
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert result.session_status == "no_intent"
+    assert result.runtime_window is not None
+
+
+def test_rejects_reduce_baseline_with_enter_receipt(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    payload = loop.safe_payload()
+    baseline = payload["baseline"]
+    assert isinstance(baseline, dict)
+    baseline["action"] = "reduce"
+
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-reduce-mismatch",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=payload,
+        status="no_intent",
+        reason_code="receipt_not_eligible",
+    )
+
+    with pytest.raises(ValueError, match="baseline and receipt lineage"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-reduce-mismatch",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_reduce_baseline_with_model_abstain_receipt(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    payload = loop.safe_payload()
+    _replace_loop_receipt_action(payload, action="abstain")
+    baseline = payload["baseline"]
+    assert isinstance(baseline, dict)
+    baseline["action"] = "reduce"
+
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-reduce-reason-mismatch",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=payload,
+        status="no_intent",
+        reason_code="receipt_not_eligible",
+    )
+
+    with pytest.raises(ValueError, match="baseline and receipt lineage"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-reduce-reason-mismatch",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_unknown_persisted_baseline_action(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    payload = loop.safe_payload()
+    baseline = payload["baseline"]
+    assert isinstance(baseline, dict)
+    baseline["action"] = "future_action"
+
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-unknown-action",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=payload,
+        status="no_intent",
+        reason_code="receipt_not_eligible",
+    )
+
+    with pytest.raises(ValueError, match="baseline and receipt lineage"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-unknown-action",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_tampered_immutable_receipt_identity(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    payload = loop.safe_payload()
+    receipt = payload["receipt"]
+    assert isinstance(receipt, dict)
+    receipt["decision_id"] = "decision:sha256:" + "0" * 64
+
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-tampered-receipt",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=payload,
+        status="no_intent",
+        reason_code="receipt_not_eligible",
+    )
+
+    with pytest.raises(ValueError, match="decision receipt is invalid"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-tampered-receipt",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
 
 
 def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
@@ -568,6 +733,45 @@ def _ready_loop(catalog: CatalogedBars, *, tmp_path: Path, repository_root: Path
     )
     assert result.local_paper_replay is not None
     return result
+
+
+def _replace_loop_receipt_action(payload: dict[str, object], *, action: str) -> None:
+    baseline = payload["baseline"]
+    receipt = payload["receipt"]
+    assert isinstance(baseline, dict)
+    assert isinstance(receipt, dict)
+    decided_at = _parse_marker(baseline["decided_at"])
+    valid_until = _parse_marker(baseline["valid_until"])
+    proposal = TargetExposureProposal(
+        proposal_id="prospective-qqq-validation-proposal",
+        symbol="QQQ",
+        market="US",
+        action=action,  # type: ignore[arg-type]
+        target_exposure=Decimal("0.5") if action not in {"abstain", "exit"} else Decimal("0"),
+        confidence=Decimal("0.5"),
+        feature_schema_id="prospective-qqq-validation",
+        input_status=baseline["input_status"],  # type: ignore[arg-type]
+        decided_at=decided_at,
+        valid_until=valid_until,
+        feature_window_end=decided_at,
+        reason="test-only receipt projection",
+    )
+    projected = receipt_from_target_exposure_proposal(
+        proposal,
+        references=DecisionReceiptReferences(
+            campaign_ref=receipt["campaign_ref"],  # type: ignore[arg-type]
+            model_ref=receipt["model_ref"],  # type: ignore[arg-type]
+            input_manifest_ref=receipt["input_manifest_ref"],  # type: ignore[arg-type]
+            proposal_ref=receipt["proposal_ref"],  # type: ignore[arg-type]
+        ),
+    )
+    baseline["action"] = action
+    payload["receipt"] = projected.to_payload()
+
+
+def _parse_marker(value: object) -> datetime:
+    assert isinstance(value, str)
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 
 def _write_session(
