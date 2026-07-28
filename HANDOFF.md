@@ -712,3 +712,23 @@ with recovery `20` and cannot dispatch the observer. Claude's requested
 schedule drift-check remained `review_unavailable` because local OAuth could
 not refresh. This remains a forward-data mechanism, not a PIT claim, candidate
 selection, ranking, or broker-order path.
+
+## Current Candle-State r3 Package
+
+The current independent NAS D1 candle-state package is complete as
+candidate-only plumbing. It reattests the frozen six-symbol panel, derives five
+per-symbol OHLCV features from 40 completed bars under one fixed Decimal
+context, and canonicalizes its normalizer so host and Docker compute the same
+contract identity. The original r1 mismatch and r2 review findings remain
+immutable scoped recovery records; r3 uses the corrected schema and external
+artifact family under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-candle-state-breadth-v3`.
+
+The r3 CPU smoke and network-disabled Docker CUDA breadth both completed with
+target-free validation forwards. The CPU receipt has a source-safe immutable
+summary-attestation sidecar; CUDA ran the frozen LSTM, causal TCN, and
+compact-attention candidates, and checkpoints are external safe-weight
+artifacts. No selection, ensemble, PnL claim, KIS call, account action, Paper
+order, or live behavior follows. Claude's falsification-first request could not
+run because the local OAuth session was expired, so the evidence is explicitly
+`review_unavailable`, not a claimed reviewer agreement.

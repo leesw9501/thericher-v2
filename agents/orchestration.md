@@ -46,6 +46,14 @@ second goal.
   passes. This remains non-promoting: no selection, ensemble, KIS, or
   Paper-order consequence follows. All fills were in-memory `local_paper`, all
   replays terminal-flat, and all checkpoints remain external.
+- **Engine Research, current candidate-only package:** the causal NAS D1
+  candle-state r3 contract completed its six CPU smokes and 18
+  network-disabled CUDA LSTM/causal-TCN/compact-attention candidates. The
+  original r1 mismatch and r2 review findings are preserved as scoped recovery
+  evidence; r3 fixes fixed-context Decimal arithmetic, canonical normalizers,
+  and CPU-summary attestation in a new external artifact family. Its target-free
+  CUDA summary is complete, while
+  selection, ensemble, replay, PnL, KIS, and Paper routes remain absent.
 - **Prospective evidence:** the bounded offline NAS observer reattested the
   frozen r2/r5 lineage and found zero common all-six-symbol D1 sessions after
   the 2026-07-24 boundary. Its source-safe `input_unavailable` receipt is
@@ -72,16 +80,12 @@ second goal.
 
 ## Current Bottleneck
 
-The source-safe current-freshness contract, deterministic boundaries, in-place
-schedule deployment, both independent QQQ/SPY controls, NAS history
-materialization, exact NAS phase-local campaign contract, both sealed NAS
-candidate evaluations, and the bounded prospective observer are complete. The
-observer reattested zero post-2026-07-24 all-six-symbol common sessions and
-closed as `input_unavailable`; there is no shared recovery or authority blocker.
-The current bottleneck is additional Data-owned forward D1 coverage in the
-separate cache, not a tuning pass. One all-six-symbol common session is retained
-and reattested, while the required three-session consumer input is still absent.
-The stale QQQ input remains only a scoped runtime fact.
+The candle-state r3 package has completed integration and authoritative
+verification. The next bounded company objective is the already deployed QQQ
+virtual-paper canary, whose only immediate dependency is one fresh completed
+QQQ/NAS runtime window. The forward-cache three-session requirement remains a
+different Research-consumer fact; it does not hold the canary or create a GPU
+wait.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -99,6 +103,15 @@ build and immutable-write boundaries, then checks a compact identity derived
 from frozen hashes for repeated in-memory consumer reads. This avoids repeated
 whole-panel rehashing during bounded CPU/GPU work without weakening the
 durable-boundary reattestation.
+
+The current cross-runtime improvement is versioned candle-state r3
+canonicalization: every Decimal division/logarithm runs inside one fixed local
+context, the normalizer uses ordered `fsum` plus fixed-precision values, and a
+CPU summary needs an immutable sidecar attestation before CUDA consumes it. It
+turns the measured host/Docker mismatch and review findings into a new explicit
+contract rather than weakening the immutable r1/r2 evidence. A host/Docker
+precommit and breadth-input probe now match; the CPU and CUDA run consume that
+same r3 identity.
 
 The r5 evaluator additionally resolves each fixed comparator only after one
 comparator-scoped campaign reattestation rather than rehashing the full campaign
@@ -154,13 +167,24 @@ The r1 sealed failure is closed by the immutable same-runtime Docker r2/r4
 recovery; it does not invalidate the source panel, campaign contract, host r1
 receipt, or any independent lane.
 
+The candle-state r1 precommit mismatch is likewise `restart` only for that
+candidate contract: it proved shared source identity but nonportable libm-level
+feature hashes. Candle-state r2 then exposed a fixed-context/attestation gap in
+independent review. Both remain immutable evidence. Candle-state r3 freezes the
+corrected schema and external root, and completed both its host CPU and Docker
+CUDA target-free stages. Claude was asked for the associated drift check, but
+its expired OAuth session yielded `review_unavailable`, not a fabricated verdict
+or an authority hold.
+
 ## Next Handoff
 
 The existing local operations console is reattached through source-safe external
 evidence `20260728T115736150112Z-complete.json`; it remains loopback-only,
 credential-free, and read-only/no-submission from the dashboard's perspective.
-The next ready package is independent Engine Research: freeze and screen one
-new causal NAS D1 candle-state hypothesis from the immutable historical panel.
-It must not wait for forward-cache coverage, select an existing result, create
-an ensemble, rank a universe, or create a broker order. Data's later forward
-task continues independently.
+The candle-state r3 package is complete; preserve its immutable r1/r2 recovery
+records plus r3 CPU/CUDA/attestation receipts. The next company objective is
+one target-local QQQ `kis_paper` canary through the existing fresh-intraday
+route, followed by its network-disabled validator. It must use no historical
+receipt as a current input, no live route, and no model-selection shortcut.
+Data's forward task and Research's later prospective consumer continue
+independently.

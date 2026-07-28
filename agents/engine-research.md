@@ -87,12 +87,20 @@ verified forward-cache outcome. The current cache has one common session and
 the Docker observer correctly remains `input_unavailable`; PyTorch CUDA sees
 one device, but no eligible model run or generated model artifact follows.
 
-The next ready independent package does not wait for that forward cache: it
-uses the immutable historical NAS panel to freeze a candidate-only causal D1
-candle-state contract. It must define completed-bar OHLCV features, timing,
-split, cost model, naive baseline, compute budget, and kill test before a CPU
-smoke or network-disabled CUDA screen. It remains outside ranking, selection,
-ensemble, promotion, KIS, and Paper routes.
+The independent candle-state r3 package is now complete as candidate-only model
+plumbing. Its new per-symbol causal OHLCV contract uses 40 completed D1 bars,
+five Decimal-quantized candle-state features, the same frozen split/costs, six
+CPU L2-logistic smokes, and 18 network-disabled CUDA LSTM/causal-TCN/compact-
+attention candidates. The prior r1 host/Docker mismatch and r2 review findings
+remain immutable scoped evidence; r3 fixes fixed-context Decimal division,
+canonical normalizers, and the CPU summary attestation rather than relaxing a
+check. The r3 CPU and CUDA summaries plus the CPU sidecar attestation are
+external under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-candle-state-breadth-v3`.
+All validation forwards remained target-free and every checkpoint is external.
+The attempted Claude drift check returned `review_unavailable` because OAuth
+could not refresh, so this remains non-promoting: no selection, ensemble, PnL
+claim, KIS call, or Paper action follows.
 
 ## Current Readiness
 

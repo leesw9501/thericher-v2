@@ -6908,3 +6908,28 @@ Reason: the local console needs a current virtual account view, but accidental
 container-local persistence of a broker response is unnecessary risk. The
 existing volume contract is sufficient for the sanitized runtime projection and
 fact-minimized external evidence without widening KIS behavior.
+
+## 2026-07-28 - Make NAS D1 candle-state contracts host/Docker portable
+
+Decision: preserve the failed candle-state r1 precommit and r2 independent
+review findings as immutable scoped recovery evidence, then start a separate
+r3/v3 contract/artifact family. The r3 feature definition runs every Decimal
+division and logarithm inside one fixed local context, and its normalizer uses
+ordered `fsum` reduction with fixed-precision canonicalization before identity
+hashing. CPU writes an immutable source-safe summary-attestation sidecar before
+CUDA may consume its summary. This makes the frozen six-symbol source contract
+reproducible on the Windows host and network-disabled Linux CUDA container
+without weakening the immutable precommit rule.
+
+The new r3 package completed six CPU smoke candidates and 18 CUDA LSTM,
+causal-TCN, and compact-attention candidates with target-free validation
+forwards. Artifacts, including safe-weight checkpoints, remain only under
+`D:\thericher-v2\model-artifacts`. The requested Claude drift check was
+attempted without private material but the local OAuth session was expired, so
+the record is `review_unavailable`. No selection, ensemble, PnL claim, KIS
+call, Paper order, or live behavior follows.
+
+Reason: an immutable research contract must reject genuine drift while treating
+runtime-specific last-bit math differences and receipt-integrity gaps as
+versioned feature-semantic changes, not as reasons to relax reproducibility
+checks.

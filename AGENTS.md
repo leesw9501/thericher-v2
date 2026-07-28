@@ -133,6 +133,10 @@ Codex is the product-development lead and integrator.
   dispatch every non-conflicting package that remains inside standing
   authority. `review_unavailable` is evidence about Claude only; it never
   recreates the blocked state or turns an external wait into foreground idle.
+  A failed or expired Claude invocation is never a substantive verdict: record
+  its categorical failure and do not describe it as agreement. The named
+  promotion or authority boundary remains scoped to its own evidence while
+  every independent ready package continues.
 - Before escalating an apparent operator decision, Codex checks whether the
   action is already delegated and asks Claude when the decision is material.
   Codex may proceed when its conclusion and Claude's

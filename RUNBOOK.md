@@ -1514,6 +1514,44 @@ run label or move a checkpoint into Git. A completed breadth receipt is not
 validation evidence, model selection, an ensemble input, a replay, or a KIS
 Paper decision.
 
+### NAS D1 Candle-State Breadth v3
+
+The distinct candle-state package uses only the frozen six-symbol NAS D1 panel.
+Its five per-symbol features are built from 40 completed OHLCV bars under one
+fixed Decimal context. The per-symbol normalizer uses ordered `fsum` and fixed-
+precision canonicalization, while CPU writes a source-safe summary-attestation
+sidecar before CUDA can consume the summary. The host CPU smoke and Docker CUDA
+breadth therefore share one immutable contract identity. It is candidate-only:
+validation forwards contain no labels, and it cannot select, ensemble, replay,
+materialize PnL, call KIS, or create a Paper action.
+
+Run the CPU smoke without loading local credentials:
+
+```powershell
+uv run --extra dev python scripts/run_kis_nas_d1_candle_state_breadth.py `
+  --mode cpu-smoke --run-label <unique-cpu-label> `
+  --market-data-root D:/market_data `
+  --artifact-root D:/thericher-v2/model-artifacts `
+  --review-status review_unavailable
+```
+
+Then run the matching CUDA breadth with the credential-free example Compose
+environment and the exact external CPU receipt:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_candle_state_breadth.py `
+  --mode cuda-breadth --run-label <unique-cuda-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --cpu-smoke-summary /app/model_artifacts/research/kis-nas-d1-candle-state-breadth-v3/cpu-smoke/<unique-cpu-label>/summary.json `
+  --review-status review_unavailable
+```
+
+Do not reuse a label or write artifacts under Git. A precommit mismatch is a
+scoped recovery fact for that exact contract; preserve it and issue a new
+versioned contract only when feature semantics genuinely change.
+
 ### NAS D1 Sealed Local-Paper Evaluation
 
 After the exact same-runtime CPU and CUDA breadth receipts exist, run the fixed

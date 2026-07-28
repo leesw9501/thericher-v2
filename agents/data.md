@@ -49,6 +49,13 @@ that worker, and preserves the exact cache meaning. Its fixed two-target
   cache mutation, validation label, ranking, or broker surface. Research has
   consumed that view only for candidate-only plumbing; Data has not consumed a
   performance result or changed the frozen source contract.
+  The distinct candle-state r3 view also reattests only this frozen panel. It
+  requires 40 completed D1 OHLCV bars per causal `20 x 5` sample and derives
+  its values under one fixed Decimal context before float conversion. Its
+  per-symbol normalizer uses ordered `fsum` reduction plus fixed-precision
+  canonicalization, so the same source contract reproduces on the host and
+  Docker. It made no new collection, source blend, ranking, target, or broker
+  output.
 The bounded prospective QQQ runtime selector is now ready: it consumes only a
 verified QQQ/NAS cache stream and emits one same-session contiguous 90 completed
 minute window or a precise source-status fact. It does not require a 390-minute
