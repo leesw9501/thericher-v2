@@ -2,80 +2,67 @@
 
 ## Objective
 
-Establish and start a resumable, source-separated KIS Paper D1 broad-backfill
-cache from the already hash-attested KIS current-directory source.
+Materialize and qualify the first source-local broad KIS Paper D1 development
+panel from the active `daily-nas-broad/v1` cache.
 
-This produces current-listing, non-PIT daily OHLCV coverage for later
-field-compatible research. It is not a historical-universe, ranking,
-corporate-action, profitability, or Paper-trading claim.
+This is a field-compatibility and dataset-contract objective, not a historical
+universe, ranking, corporate-action, profitability, model-selection, or Paper
+trading claim. The active broad collector continues independently.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattach the existing KIS current-directory manifest/listing identity and
-   the fixed daily collector/backfill contracts without printing raw symbols,
-   rows, prices, volumes, tokens, or account identifiers.
-3. Ask Claude for a concise falsification-first drift check before generalizing
-   the collector or adding a scheduling/lease mechanism. Include current-listing
-   survivorship, exchange mapping, fresh-head priority, recovery, and storage
-   kill tests; do not send secrets or raw provider data.
+2. Reattach the broad registry/index identity and inspect only source-safe
+   aggregate coverage facts. Do not print raw symbols, rows, prices, volumes,
+   tokens, account identifiers, or provider response bodies.
+3. Ask Claude for a concise falsification-first drift check before freezing a
+   research split, target, or consumer contract. Include current-listing
+   survivorship, adjustment/corporate-action limitations, feature timestamps,
+   and the strongest leakage kill test.
 
 ## Authority And Boundaries
 
-- `KIS_PAPER_*` is standing-authorized for this **market-data-only** work.
-  Use no account, position, open-order, quote, submit, modify, cancel, or live
-  endpoint. Never read or route `KIS_LIVE_*`.
-- Read credentials only inside the existing credentialed market-data client;
-  never print, log, persist, send to Claude, or commit them.
-- Create a **new** D:-resident cache root and durable index. Do not widen or
-  mutate terminal QQQ/SPY/IWM or NAS cache contracts.
-- Build targets only from the hash-attested KIS current-directory source.
-  Do not seed targets from the static Norgate survivor panel, infer an exchange,
-  claim point-in-time membership, or join rows across providers.
-- Use one active collector/client/token for this cache, the measured one-second
-  request-start gate, and the existing categorical recovery behavior. A valid
-  in-memory client must not wait for the five-minute cross-process token-start
-  guard. Do not request-flood or foreground-sleep.
-- Fresh-session head collection retains priority. The new collector must use an
-  explicit owned lease or non-overlapping schedule before it can run recurring
-  catch-up work; a categorical cooldown blocks only its owned worker.
-- Raw market data and registry bytes remain on `D:\market_data`; receipts and
-  generated artifacts remain under `D:\thericher-v2\model-artifacts`; neither
-  belongs in Git. Respect the 20% warning and 15% free-space floor.
+- The installed broad collector owns its KIS Paper data schedule. This objective
+  must not issue an extra KIS request, alter its index, or compete for its lock.
+- Read only committed, reverified broad-cache snapshots. A changing index,
+  snapshot hash mismatch, or active-write race is scoped `retry/reconcile`
+  evidence, never a company hold.
+- Keep all raw data under `D:\market_data` and all generated artifacts under
+  `D:\thericher-v2\model-artifacts`; write neither to Git.
+- Keep the registry's `current_listing_only`, `non_pit`, and `non_ranking`
+  fields attached to every derived artifact. Do not blend Norgate, Tiingo,
+  ETF, legacy KIS, or other provider rows into this panel.
+- No account, position, quote, order, KIS live, dashboard, model promotion, or
+  GPU training route belongs to this objective.
+- Respect the 20 percent storage warning and 15 percent free-space floor.
 
 ## Work
 
-1. **Data:** create an external, hash-attested current-listing registry with
-   typed `non_pit` and `non_ranking` scope. Preserve per-target symbol/exchange,
-   initial cursor, state, and recovery fields only outside Git.
-2. **Data:** generalize the existing private daily collector/backfill contract
-   so a validated registry injects the exact symbol/exchange allowlist. It must
-   validate registry-parent drift before constructing a client, retain each
-   target's cursor and source-safe progress, and use existing failure taxonomy.
-3. **Validation:** add focused tests for registry drift before any client call,
-   target-specific exchange allowlists, external-only cache/index paths,
-   target-local failure/recovery, non-PIT scope propagation, and absence of
-   broker/account/live/credential access.
-4. **Data:** run one deterministic eight-target bootstrap, with at most one
-   bounded daily chunk per target. Record only source-safe accepted-page,
-   categorical-error, cursor, range, storage, and recovery facts. If a target
-   fails, scope the result to that target and continue ready targets.
-5. If the bootstrap has usable accepted data, install or start one bounded,
-   observable continuation worker for this exact cache. It may yield on lease,
-   cooldown, or next due; Codex continues unrelated ready work rather than
-   sleeping.
+1. **Data:** implement a read-only broad-cache catalog/materializer that
+   reattests registry, index, manifests, raw hashes, target cursors, and source
+   scope before consuming a committed snapshot.
+2. **Data:** build one bounded external panel manifest from whatever stable
+   target/session coverage exists now. Preserve per-target coverage and missing
+   facts; do not demand full 2,119-target backfill before making useful local
+   progress.
+3. **Validation:** add focused tests for active-write/index drift, cache/raw
+   hash mismatch, source-scope propagation, external-only outputs, and absence
+   of network/credential/broker access.
+4. **Engine Research:** if the panel meets an explicitly frozen minimal shape,
+   prepare a CPU-only naive baseline contract. Do not train, rank, ensemble, or
+   open a target until its own data/split/cost contract and Claude review exist.
+5. Refresh the Data and Engine Research stateboards with only the current
+   source-safe coverage and handoff facts.
 
 ## Completion
 
-- A new external registry and cache index prove their parent identity and
-  non-PIT/non-ranking scope.
-- The first eight-target bootstrap has a source-safe external receipt with
-  accepted or precisely scoped source-limited/deferred outcomes.
-- A continuation/recovery path is owned and observable without duplicate
-  collectors or interference with fresh-head collection.
-- Tests prove no account/order/live route, provider-source blend, raw Git data,
-  credential output, or model/paper promotion was introduced.
+- A reattestable external broad D1 panel manifest or a precise scoped
+  `input_unavailable/reconcile` artifact exists.
+- Derived artifacts preserve KIS-only and current-listing/non-PIT/non-ranking
+  limitations.
+- Focused tests prove the materializer is read-only and independent from the
+  active collector.
 - Refresh affected stateboards, replace this file with exactly one next
   objective, then continue.
 
@@ -90,4 +77,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Start KIS broad D1 backfill`
+`Materialize broad KIS D1 panel`

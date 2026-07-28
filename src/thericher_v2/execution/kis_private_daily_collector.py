@@ -590,6 +590,7 @@ def _result(
         reason=reason,
         symbol=target.symbol,
         exchange=target.exchange,
+        approved_symbol_exchanges=target.approved_symbol_exchanges,
     )
 
 

@@ -88,17 +88,14 @@ second goal.
 ## Current Bottleneck
 
 The bounded QQQ virtual-paper canary and static Norgate D1 development package
-are complete. The material bottleneck is now broad, source-separated KIS D1
-coverage: the existing private historical cache is truthful but fixed to three
-ETF targets, and the six-symbol NAS cache is not a broad current-listing input.
-The next Data package builds a new external cache root from the already
-hash-attested KIS current-directory source, with a deterministic eight-target
-bootstrap. The frozen Norgate survivor panel remains development-only and must
-not seed this registry. The broad cache is structurally current-listing and
-non-PIT, so downstream loaders must read its typed non-PIT/non-ranking scope.
-Research has no next frozen GPU campaign until this KIS coverage yields a
-separate field-compatible input; it will not rerun static breadth merely to
-occupy the GPU.
+are complete. The material bottleneck is now the field-compatible broad KIS D1
+panel, not collection capability: a new current-listing cache has 2,119 targets
+and 40 targets with two committed pages each, while 2,079 remain at zero pages.
+The collector expands shallow coverage first under the shared one-second gate;
+it is source-separated from the Norgate survivor panel and carries typed
+non-PIT/non-ranking scope. Data can materialize a read-only stable panel without
+waiting for terminal backfill. Research has no eligible GPU campaign until that
+panel freezes a distinct causal input contract.
 
 The installed intraday-head owner next runs at 02:31 KST. Its normal fresh-head
 work remains independent of the next bounded Data capability probe and must not
@@ -112,12 +109,14 @@ and the validator is network-isolated. The excerpt did not re-review the full
 existing unknown-outcome recovery helper, so that exact intent remains governed
 by its current reconciliation path; no authority or policy changed.
 
-**Current operating improvement:** the first broad KIS D1 bootstrap uses its
-own cache/index rather than widening a terminal ETF cache. It runs one client,
-one measured request-start gate, and a bounded deterministic batch, while
-fresh-head collection retains priority through an explicit owned lease or
-non-overlapping schedule. A categorical provider cooldown scopes the active
-collector and never makes another lane foreground-idle.
+**Current operating improvement:** the broad collector has its own cache/index,
+one client/token per run, breadth-first target selection, and target-local
+source-limit recovery. Tuesday-through-Saturday 30-minute triggers from 07:15
+to 20:45 KST keep a healthy 14-hour continuation running while `IgnoreNew`
+prevents duplication; a rate/token due yields before client construction and a
+later trigger resumes it. The task timeout is 870 minutes so the worker can
+write its 840-minute bounded receipt. Fresh-head work remains an independent
+shared-gate consumer.
 
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`

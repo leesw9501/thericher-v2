@@ -20,18 +20,21 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count("thericher-kis-paper-daily-spy-session") == 1
     assert source.count("thericher-kis-paper-intraday-head") == 1
     assert source.count('Name = "thericher-kis-paper-daily-nas-forward"') == 1
+    assert source.count('Name = "thericher-kis-paper-daily-broad-backfill"') == 1
     assert source.count('Profile = "kis-paper-daily-backfill"') == 1
     assert source.count('Profile = "kis-paper-session"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-head"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-session"') == 1
     assert source.count('Profile = "kis-paper-intraday-head"') == 1
     assert source.count('Profile = "kis-paper-daily-nas-forward"') == 1
+    assert source.count('Profile = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Service = "kis-paper-daily-backfill"') == 1
     assert source.count('Service = "kis-paper-session"') == 1
     assert source.count('Service = "kis-paper-daily-spy-head"') == 1
     assert source.count('Service = "kis-paper-daily-spy-session"') == 1
     assert source.count('Service = "kis-paper-intraday-head"') == 1
     assert source.count('Service = "kis-paper-daily-nas-forward"') == 1
+    assert source.count('Service = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
     forward_entry = source.split(
         'Name = "thericher-kis-paper-daily-nas-forward"', maxsplit=1
@@ -45,7 +48,20 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert 'At = "06:40"' in forward_entry
     assert "RecoverMissedRun = $true" in forward_entry
     assert "ExecutionLimitMinutes = 90" in forward_entry
+    broad_entry = source.split(
+        'Name = "thericher-kis-paper-daily-broad-backfill"', maxsplit=1
+    )[1].split("    },", maxsplit=1)[0]
+    assert 'Profile = "kis-paper-daily-broad-backfill"' in broad_entry
+    assert 'Service = "kis-paper-daily-broad-backfill"' in broad_entry
+    assert 'Runner = "run_kis_paper_daily_broad_schedule.ps1"' in broad_entry
+    assert '"07:15"' in broad_entry
+    assert '"20:45"' in broad_entry
+    assert "RecoverMissedRun = $false" in broad_entry
+    assert "ExecutionLimitMinutes = 870" in broad_entry
     assert source.index('Name = "thericher-kis-paper-daily-nas-forward"') < source.index(
+        'Name = "thericher-kis-paper-daily-broad-backfill"'
+    )
+    assert source.index('Name = "thericher-kis-paper-daily-broad-backfill"') < source.index(
         'Name = "thericher-kis-paper-daily-backfill"'
     )
 
@@ -108,6 +124,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         ("thericher-kis-paper-daily-spy-session", False, 90),
         ("thericher-kis-paper-intraday-head", True, 90),
         ("thericher-kis-paper-daily-nas-forward", True, 90),
+        ("thericher-kis-paper-daily-broad-backfill", False, 870),
         ("thericher-kis-paper-daily-backfill", True, 390),
     ):
         entry = source.split(f'Name = "{task_name}"', maxsplit=1)[1].split(

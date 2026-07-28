@@ -248,6 +248,56 @@ def test_daily_query_can_bind_a_separate_immutable_probe_scope_without_widening_
     )
 
 
+def test_daily_query_scope_reaches_urllib_transport_without_widening_default(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    opened: list[urllib.request.Request] = []
+    responses = [_token(), _daily_page("20260717", "20260716", continuation="")]
+
+    class _Response:
+        def __init__(self, response: KisMarketDataResponse) -> None:
+            self.status = response.status_code
+            self.headers = response.headers
+            self._body = response.body
+
+        def __enter__(self) -> _Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return self._body
+
+    class _RecordingOpener:
+        def open(self, request: urllib.request.Request, **_kwargs: object) -> _Response:
+            opened.append(request)
+            return _Response(responses.pop(0))
+
+    monkeypatch.setattr(urllib.request, "build_opener", lambda *_handlers: _RecordingOpener())
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=UrllibKisPaperMarketDataTransport(),
+    )
+
+    page = client.fetch_daily_raw_page(
+        KisPaperDailyQuery(
+            symbol="AAPL",
+            exchange="NAS",
+            by_date="20260719",
+            approved_symbol_exchanges={"AAPL": frozenset({"NAS"})},
+        )
+    )
+
+    assert page.page.row_count == 2
+    assert [request.full_url for request in opened] == [
+        f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_TOKEN_PATH}",
+        f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_DAILY_PATH}"
+        "?AUTH=&EXCD=NAS&SYMB=AAPL&GUBN=0&BYMD=20260719&MODP=0",
+    ]
+    assert "AAPL" not in kis_market_data.KIS_PAPER_DAILY_SYMBOL_EXCHANGES
+
+
 @pytest.mark.parametrize(
     "scope",
     [

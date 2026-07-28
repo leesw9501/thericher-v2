@@ -6955,3 +6955,48 @@ scope, and never joins Norgate rows or target selection to KIS data.
 Reason: the campaign validates causal research plumbing and CUDA lineage without
 mistaking static trial data for executable runtime coverage, while preserving a
 direct path to a broad KIS-native D1 input.
+
+## 2026-07-29 - Run broad KIS D1 collection as a source-separated, breadth-first cache
+
+Decision: use the hash-attested 2026-07-18 KIS current NASDAQ directory only to
+build a dedicated `daily-nas-broad/v1` current-listing registry. The registry
+has 2,119 current common-stock targets and carries explicit
+`current_listing_only`, `non_pit`, `non_ranking`, and no-provider-price scope.
+It is never a historical membership, survivorship repair, research ranking, or
+Paper-trading input.
+
+The new cache does not alter the terminal ETF or fixed NAS contracts. It
+reattests its registry before client construction, injects the exact daily
+symbol/exchange allowlist, keeps raw snapshots/index data on D:, and keeps
+source-safe receipts under the external artifact root. The initial deterministic
+bootstrap accepted 16 pages across eight chunks with zero categorical failures;
+the first continuation accepted 64 pages across 32 chunks with zero categorical
+failures. Their receipt hashes are
+`sha256:f57a6aa036670c4a6282251ce45e8ab04765cbe4c86414fbb4b89f43c472b182`
+and
+`sha256:e8f98a779e49c1df0ed46bba812c113853db507c1f0f51aab8ed56b45eecc914`.
+
+The selector prioritizes lower accepted-page counts before stable registry
+position so early work broadens coverage. Target-local repeated source failures
+persist a consecutive reason/count and become `source_limited` only after two
+same-source failures; auth/rate/token problems remain deferred. Known rate or
+token retry times yield before client construction, preserving the retry as
+owned scheduler state rather than foreground sleep. Legacy index records gain
+these retry fields only while the cache worker holds its lock.
+
+Install the continuation task with KST Tuesday-through-Saturday triggers every
+30 minutes from 07:15 through 20:45. One active worker is bounded at 24,000
+chunks or 840 minutes; task `IgnoreNew` avoids duplicate collectors, later
+triggers recover a failed worker, and the 870-minute Windows limit leaves time
+for Docker startup and final source-safe receipt writing. Fresh-head collection
+shares the measured one-second gate and remains independent.
+
+Claude's first source-safe review was `uncertain` and found repeat-failure
+starvation plus a potential long rate-limit sleep. Both were fixed with focused
+tests and a second manual continuation; the follow-up verdict was
+`supported-with-limits`, with the task-timeout adjustment adopted. No account,
+quote, order, live, model, ranking, PnL, or provider-join route is introduced.
+
+Reason: broad KIS-native daily coverage should progress continuously without
+reusing a survivor panel or letting one broken target, a cooldown, or a process
+timeout stall the whole engine loop.

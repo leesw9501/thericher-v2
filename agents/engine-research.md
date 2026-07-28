@@ -376,6 +376,11 @@ limits remain explicit.
     rule is that both symbols must beat every comparator after costs. This is
     a queue proposal only: no contract, target materialization, GPU run,
     selection, ensemble, or Paper input exists yet.
+12. The active KIS broad D1 cache is current-listing/non-PIT coverage only.
+    When Data produces a reattested source-local panel, inspect its exact stable
+    shape and freeze one CPU-only naive-baseline contract if it is sufficient.
+    Do not use its current listing as historical membership, rank targets, open
+    labels, start GPU work, or treat accumulating cache pages as a model result.
 
 ## Durable Constraints
 

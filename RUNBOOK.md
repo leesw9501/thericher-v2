@@ -288,6 +288,65 @@ transport failure remains deferred for only that target. Once all targets are
 terminal, the profile exits without constructing a KIS client or making a
 market-data request.
 
+## KIS Broad Current-Listing D1 Cache
+
+The broad daily cache is a source-separated current-listing acquisition path:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-nas-broad\v1
+D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-v1
+```
+
+It derives targets only from the pinned local NASDAQ directory snapshot mounted
+read-only at `/app/symbol_directory`. Its registry is explicitly current-listing,
+non-PIT, non-ranking, and not provider price data. It must never be treated as
+historical membership, an adjustment/corporate-action guarantee, a source blend,
+a ranking input, or a Paper-order input.
+
+For the deterministic eight-target bootstrap, run the dedicated profile without
+overriding its command:
+
+```powershell
+docker compose --profile kis-paper-daily-broad-backfill run --rm --no-deps `
+  kis-paper-daily-broad-backfill
+```
+
+The profile is read-only except for dedicated D: cache/control/artifact mounts.
+It receives only `KIS_PAPER_APP_KEY` and `KIS_PAPER_APP_SECRET` with
+`THERICHER_MODE=off`, uses only KIS Paper `dailyprice`, and has no account,
+position, quote, order, or live route. A preflight uses the same mounts but no
+credentials:
+
+```powershell
+docker compose --profile kis-paper-daily-broad-backfill run --rm --no-deps `
+  --entrypoint python kis-paper-daily-broad-backfill `
+  scripts/backfill_kis_paper_daily_broad.py --preflight
+```
+
+The worker reattests registry/index identity before client construction and
+validates every committed snapshot before consuming it. It keeps target-local
+cursors and progression externally. Breadth-first continuation chooses targets
+with fewer accepted pages before a deeper target. Two identical source-invalid
+responses close only that target as `source_limited`; shared rate/auth/token
+conditions remain deferred. Known rate/token retry due times yield before a
+client is constructed, so a worker does not foreground-sleep through a long
+cooldown.
+
+Install the continuation owner only after a successful bootstrap:
+
+```powershell
+.\scripts\install_kis_paper_schedules.ps1 `
+  -ScheduleName thericher-kis-paper-daily-broad-backfill
+```
+
+It triggers Tuesday through Saturday every 30 minutes from 07:15 to 20:45 KST.
+`IgnoreNew` retains one active 14-hour/24,000-chunk worker; a later trigger
+recovers a failed worker without a duplicate collector. The Windows task limit
+is 870 minutes so Docker startup and final receipt writing fit outside the
+worker's 840-minute bound. Do not hand-edit its index or launch a second worker
+against the same cache. Inspect only source-safe aggregate receipts/index facts
+before relying on its coverage.
+
 ## KIS NAS D1 Forward Cache
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical

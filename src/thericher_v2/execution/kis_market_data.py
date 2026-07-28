@@ -120,6 +120,20 @@ class KisMarketDataRequest:
     headers: Mapping[str, str] = field(repr=False)
     query: Mapping[str, str] = field(default_factory=dict, repr=False)
     json_body: Mapping[str, str] | None = field(default=None, repr=False)
+    daily_symbol_exchanges: Mapping[str, frozenset[str]] | None = field(
+        default=None,
+        repr=False,
+        compare=False,
+        hash=False,
+    )
+
+    def __post_init__(self) -> None:
+        if self.daily_symbol_exchanges is not None:
+            object.__setattr__(
+                self,
+                "daily_symbol_exchanges",
+                _freeze_daily_symbol_exchanges(self.daily_symbol_exchanges),
+            )
 
 
 @dataclass(frozen=True, repr=False)
@@ -180,7 +194,9 @@ class UrllibKisPaperMarketDataTransport:
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
         return self._request_with_daily_symbol_exchanges(
             request,
-            daily_symbol_exchanges=KIS_PAPER_DAILY_SYMBOL_EXCHANGES,
+            daily_symbol_exchanges=(
+                request.daily_symbol_exchanges or KIS_PAPER_DAILY_SYMBOL_EXCHANGES
+            ),
         )
 
     def _request_with_daily_symbol_exchanges(
@@ -582,6 +598,7 @@ class KisPaperMarketDataClient:
                     "BYMD": query.by_date,
                     "MODP": "0",
                 },
+                daily_symbol_exchanges=query.approved_symbol_exchanges,
             )
         )
         payload = _successful_payload(response, "daily_response_rejected")

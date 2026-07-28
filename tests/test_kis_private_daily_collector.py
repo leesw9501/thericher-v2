@@ -207,6 +207,27 @@ def test_private_daily_collector_reports_per_chunk_counts_when_reusing_one_clien
     ]
 
 
+def test_private_daily_collector_preserves_an_injected_daily_target_scope() -> None:
+    transport = _RecordingTransport([_token(), _daily_page([_row("20260717")], continuation="")])
+    scope = {"AAPL": frozenset({"NAS"})}
+
+    result = run_bounded_kis_paper_private_daily_collection(
+        _client(transport),
+        code_revision="git:test",
+        target=KisPaperPrivateDailyCollectionTarget(
+            symbol="AAPL",
+            exchange="NAS",
+            anchor_date="20260717",
+            approved_symbol_exchanges=scope,
+        ),
+        observed_at=_OBSERVED_AT,
+    )
+
+    assert result.symbol == "AAPL"
+    assert result.approved_symbol_exchanges == scope
+    assert transport.requests[1].daily_symbol_exchanges == scope
+
+
 def test_private_daily_collector_retains_a_recoverable_first_page_when_continuation_fails(
     tmp_path: Path,
 ) -> None:

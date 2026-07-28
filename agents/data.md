@@ -371,12 +371,10 @@ the offline observer only after a current or complete cache result. A
    `PINC=1` routes. They supplied no useful continuation cursor. Continue the
    independent fresh-head schedule without treating this source fact as a
    general KIS-history conclusion.
-4. Generalize the existing KIS private D1 collection pattern into a current-
-   listing broad-backfill registry and resumable cache. Reuse one client and the
-   measured request gate; retain target-local cursor/recovery/progress facts on
-   D: only. Build the registry only from the hash-attested KIS current-directory
-   source; the frozen Norgate panel cannot supply targets, historical membership,
-   or a row-level KIS join.
+4. The broad KIS D1 collector now owns its source-separated cache and schedule.
+   Reattach its source-safe registry/index/receipt facts only; do not mutate its
+   index, launch a duplicate collector, or use its current listing as historical
+   membership, a ranking input, or a row-level Norgate join.
 5. Build a versioned liquid-universe manifest from already available
    source-safe symbol evidence before widening beyond QQQ/SPY. Complete: the
    v1 source-scoped manifest is D1-only and does not authorize a point-in-time
@@ -387,6 +385,38 @@ the offline observer only after a current or complete cache result. A
 7. Reattest only the frozen NAS panel's source-safe D1 OHLCV field capability
    for the next candle-state candidate contract. This is a local metadata/read
    package with no KIS call, raw-row export, source blend, or universe claim.
+
+## Broad D1 Backfill
+
+Active package: KIS Paper `dailyprice` only, current NASDAQ common-stock
+registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
+
+- Registry identity is
+  `sha256:a0027b3c54ff7b6ea32c56826cdd131500c01a1d0e4a462a92cbe899a9b00750`.
+  It has 2,119 current-listing targets and declares `current_listing_only`,
+  `non_pit`, `non_ranking`, and `provider_price_data: false`.
+- The first deterministic eight-target bootstrap accepted 16 pages with zero
+  categorical failures. The first 32-target continuation accepted 64 pages
+  with zero categorical failures. Index generation is 40: 40 targets have two
+  accepted pages and 2,079 have zero; no raw rows appear in receipts.
+- The two immutable source-safe receipt hashes are
+  `sha256:f57a6aa036670c4a6282251ce45e8ab04765cbe4c86414fbb4b89f43c472b182`
+  and
+  `sha256:e8f98a779e49c1df0ed46bba812c113853db507c1f0f51aab8ed56b45eecc914`.
+  Raw rows, index, and registry remain only under the dedicated D: cache;
+  receipts remain only under the dedicated external artifact root.
+- The selector prioritizes smaller accepted-page counts, then stable registry
+  position, so initial continuation expands breadth rather than deepening one
+  target. Two consecutive same-source invalid responses close only that target
+  as `source_limited`; shared auth/rate failures remain deferred.
+- The installed owner uses one 14-hour continuation worker at a time, with
+  Tuesday-through-Saturday KST 30-minute restart triggers from 07:15 through
+  20:45. A known rate/token retry yields the worker before client construction;
+  it never foreground-sleeps. Fresh-head collection remains an independent
+  shared-gate consumer.
+- D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
+  Recovery class: `resume`; remaining page estimate and ETA are `unknown` until
+  more target-local continuation evidence exists.
 
 ## Collection Progress Projection
 
