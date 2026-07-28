@@ -33,6 +33,13 @@ PURGE_START_INDEX = 320
 PURGE_END_INDEX = 321
 VALIDATION_START_INDEX = 322
 VALIDATION_END_INDEX = 480
+NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION = "norgate-broad-opportunity-development-r1"
+OPPORTUNITY_DEVELOPMENT_START_INDEX = 20
+OPPORTUNITY_DEVELOPMENT_END_INDEX = 297
+OPPORTUNITY_PURGE_START_INDEX = 298
+OPPORTUNITY_PURGE_END_INDEX = 319
+OPPORTUNITY_VALIDATION_START_INDEX = 320
+OPPORTUNITY_VALIDATION_END_INDEX = 480
 CPU_LINEAR_STEPS = 160
 CPU_LINEAR_LEARNING_RATE = 0.08
 CPU_LINEAR_L2 = 0.0001
@@ -71,6 +78,29 @@ _LIMITATIONS = (
 
 
 @dataclass(frozen=True, slots=True)
+class NorgateBroadDevelopmentCampaignSpec:
+    """One fixed engineering-only temporal geometry over an attested artifact."""
+
+    campaign_id: str
+    artifact_directory: str
+    development_start_index: int
+    development_end_index: int
+    purge_start_index: int
+    purge_end_index: int
+    validation_start_index: int
+    validation_end_index: int
+    require_disjoint_feature_windows: bool
+    cuda_job_ids: tuple[str, ...]
+
+
+def _campaign_spec(campaign_id: str) -> NorgateBroadDevelopmentCampaignSpec:
+    try:
+        return _CAMPAIGN_SPECS[campaign_id]
+    except KeyError as exc:
+        raise ValueError("Norgate broad development campaign is not allowlisted") from exc
+
+
+@dataclass(frozen=True, slots=True)
 class NorgateBroadDevelopmentDataset:
     """Verified, canonical arrays supplied by the Data-owned feature artifact."""
 
@@ -91,6 +121,7 @@ class NorgateBroadDevelopmentDataset:
     split_ids: Any
     discontinuity_excluded_count: int
     limitations: tuple[str, ...] = ()
+    campaign_id: str = VALIDATION_VERSION
 
 
 @dataclass(frozen=True, slots=True)
@@ -145,6 +176,49 @@ CUDA_JOB_SPECS = (
     ),
 )
 
+OPPORTUNITY_CUDA_JOB_SPECS = (
+    NorgateCudaJobSpec(
+        "temporal-conv-seed-211",
+        "temporal_conv",
+        211,
+        epochs=8,
+        batch_size=8192,
+        learning_rate=0.0005,
+        weight_decay=0.0001,
+    ),
+)
+
+_LEGACY_CAMPAIGN = NorgateBroadDevelopmentCampaignSpec(
+    campaign_id=VALIDATION_VERSION,
+    artifact_directory="norgate-broad-development-validation",
+    development_start_index=DEVELOPMENT_START_INDEX,
+    development_end_index=DEVELOPMENT_END_INDEX,
+    purge_start_index=PURGE_START_INDEX,
+    purge_end_index=PURGE_END_INDEX,
+    validation_start_index=VALIDATION_START_INDEX,
+    validation_end_index=VALIDATION_END_INDEX,
+    require_disjoint_feature_windows=False,
+    cuda_job_ids=tuple(item.job_id for item in CUDA_JOB_SPECS),
+)
+NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_CAMPAIGN = NorgateBroadDevelopmentCampaignSpec(
+    campaign_id=NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
+    artifact_directory="norgate-broad-opportunity-development",
+    development_start_index=OPPORTUNITY_DEVELOPMENT_START_INDEX,
+    development_end_index=OPPORTUNITY_DEVELOPMENT_END_INDEX,
+    purge_start_index=OPPORTUNITY_PURGE_START_INDEX,
+    purge_end_index=OPPORTUNITY_PURGE_END_INDEX,
+    validation_start_index=OPPORTUNITY_VALIDATION_START_INDEX,
+    validation_end_index=OPPORTUNITY_VALIDATION_END_INDEX,
+    require_disjoint_feature_windows=True,
+    cuda_job_ids=tuple(item.job_id for item in OPPORTUNITY_CUDA_JOB_SPECS),
+)
+_CAMPAIGN_SPECS = {
+    _LEGACY_CAMPAIGN.campaign_id: _LEGACY_CAMPAIGN,
+    NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_CAMPAIGN.campaign_id: (
+        NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_CAMPAIGN
+    ),
+}
+
 
 @dataclass(frozen=True, slots=True)
 class NorgateCpuBaselineResult:
@@ -170,6 +244,17 @@ class NorgateCudaJobResult:
     review_required: bool
 
 
+@dataclass(frozen=True, slots=True)
+class NorgateBroadDevelopmentCampaignContract:
+    """Source-safe immutable precommit for one engineering-only campaign."""
+
+    contract_path: Path
+    contract_sha256: str
+    artifact_hash: str
+    derived_contract_hash: str
+    campaign_id: str
+
+
 CudaTrainer = Callable[
     [NorgateCudaJobSpec, Any, Any, Any, Path], tuple[Any, Mapping[str, Any]]
 ]
@@ -180,6 +265,7 @@ def load_verified_norgate_broad_development_dataset(
     *,
     artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
     market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    campaign_id: str = VALIDATION_VERSION,
     repo_root: Path | None = None,
 ) -> NorgateBroadDevelopmentDataset:
     """Re-attest the Data-owned artifact before every CPU or CUDA invocation."""
@@ -190,7 +276,72 @@ def load_verified_norgate_broad_development_dataset(
         market_data_root=market_data_root,
         repo_root=repo_root,
     )
-    return _dataset_from_verified_feature_artifact(artifact)
+    return _dataset_from_verified_feature_artifact(artifact, campaign_id=campaign_id)
+
+
+def freeze_norgate_broad_development_campaign_from_artifact(
+    feature_artifact_dir: Path,
+    *,
+    artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
+    market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
+    run_id: str = NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
+    campaign_id: str = NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
+    repo_root: Path | None = None,
+    code_revision: str = "unrecorded",
+) -> NorgateBroadDevelopmentCampaignContract:
+    """Freeze one external source-safe campaign precommit after Data reattestation."""
+
+    dataset = load_verified_norgate_broad_development_dataset(
+        feature_artifact_dir,
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        campaign_id=campaign_id,
+        repo_root=repo_root,
+    )
+    return freeze_norgate_broad_development_campaign(
+        dataset,
+        artifact_root=artifact_root,
+        run_id=run_id,
+        repo_root=repo_root,
+        code_revision=code_revision,
+    )
+
+
+def freeze_norgate_broad_development_campaign(
+    dataset: NorgateBroadDevelopmentDataset,
+    *,
+    artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
+    run_id: str = NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
+    repo_root: Path | None = None,
+    code_revision: str = "unrecorded",
+) -> NorgateBroadDevelopmentCampaignContract:
+    """Write or reattach one immutable, non-promoting campaign contract."""
+
+    arrays = _validated_arrays(dataset)
+    campaign = _campaign_spec(dataset.campaign_id)
+    output_dir = _validation_output_dir(
+        artifact_root,
+        campaign=campaign,
+        run_id=run_id,
+        repo_root=repo_root or Path.cwd(),
+    )
+    path = output_dir / "campaign-contract.json"
+    payload = _campaign_contract_payload(
+        dataset,
+        arrays,
+        campaign=campaign,
+        code_revision=code_revision,
+    )
+    if path.exists():
+        return _read_verified_campaign_contract(path, dataset=dataset, campaign=campaign)
+    _write_json_new(path, payload)
+    return NorgateBroadDevelopmentCampaignContract(
+        contract_path=path,
+        contract_sha256=_sha256_file(path),
+        artifact_hash=dataset.artifact_hash,
+        derived_contract_hash=dataset.contract_hash,
+        campaign_id=campaign.campaign_id,
+    )
 
 
 def run_norgate_broad_development_cpu_baseline_from_artifact(
@@ -198,7 +349,8 @@ def run_norgate_broad_development_cpu_baseline_from_artifact(
     *,
     artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
     market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
-    run_id: str = VALIDATION_VERSION,
+    run_id: str | None = None,
+    campaign_id: str = VALIDATION_VERSION,
     repo_root: Path | None = None,
     code_revision: str = "unrecorded",
 ) -> NorgateCpuBaselineResult:
@@ -208,6 +360,7 @@ def run_norgate_broad_development_cpu_baseline_from_artifact(
         feature_artifact_dir,
         artifact_root=artifact_root,
         market_data_root=market_data_root,
+        campaign_id=campaign_id,
         repo_root=repo_root,
     )
     return run_norgate_broad_development_cpu_baseline(
@@ -224,7 +377,8 @@ def run_norgate_broad_development_cuda_job_from_artifact(
     *,
     artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
     market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
-    run_id: str = VALIDATION_VERSION,
+    run_id: str | None = None,
+    campaign_id: str = VALIDATION_VERSION,
     job_id: str,
     repo_root: Path | None = None,
     code_revision: str = "unrecorded",
@@ -235,6 +389,7 @@ def run_norgate_broad_development_cuda_job_from_artifact(
         feature_artifact_dir,
         artifact_root=artifact_root,
         market_data_root=market_data_root,
+        campaign_id=campaign_id,
         repo_root=repo_root,
     )
     return run_norgate_broad_development_cuda_job(
@@ -251,18 +406,25 @@ def run_norgate_broad_development_cpu_baseline(
     dataset: NorgateBroadDevelopmentDataset,
     *,
     artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
-    run_id: str = VALIDATION_VERSION,
+    run_id: str | None = None,
     repo_root: Path | None = None,
     code_revision: str = "unrecorded",
 ) -> NorgateCpuBaselineResult:
     """Write deterministic CPU baselines after fail-closed dataset checks."""
 
     arrays = _validated_arrays(dataset)
+    campaign = _campaign_spec(dataset.campaign_id)
+    effective_run_id = run_id or campaign.campaign_id
     output_dir = _validation_output_dir(
         artifact_root,
-        run_id=run_id,
+        campaign=campaign,
+        run_id=effective_run_id,
         repo_root=repo_root or Path.cwd(),
     )
+    if campaign.campaign_id != VALIDATION_VERSION:
+        _read_verified_campaign_contract(
+            output_dir / "campaign-contract.json", dataset=dataset, campaign=campaign
+        )
     summary_path = output_dir / "cpu-baseline.json"
     if summary_path.exists():
         raise FileExistsError(f"CPU baseline already exists: {summary_path}")
@@ -341,7 +503,7 @@ def run_norgate_broad_development_cuda_job(
     dataset: NorgateBroadDevelopmentDataset,
     *,
     artifact_root: Path = DEFAULT_MODEL_ARTIFACT_ROOT,
-    run_id: str = VALIDATION_VERSION,
+    run_id: str | None = None,
     job_id: str,
     repo_root: Path | None = None,
     code_revision: str = "unrecorded",
@@ -350,12 +512,19 @@ def run_norgate_broad_development_cuda_job(
     """Run exactly one fixed CUDA job after verified CPU baseline evidence."""
 
     arrays = _validated_arrays(dataset)
-    spec = _cuda_job_spec(job_id)
+    campaign = _campaign_spec(dataset.campaign_id)
+    spec = _cuda_job_spec(job_id, campaign=campaign)
+    effective_run_id = run_id or campaign.campaign_id
     output_dir = _validation_output_dir(
         artifact_root,
-        run_id=run_id,
+        campaign=campaign,
+        run_id=effective_run_id,
         repo_root=repo_root or Path.cwd(),
     )
+    if campaign.campaign_id != VALIDATION_VERSION:
+        _read_verified_campaign_contract(
+            output_dir / "campaign-contract.json", dataset=dataset, campaign=campaign
+        )
     cpu_summary = _read_verified_cpu_summary(output_dir / "cpu-baseline.json", dataset)
     job_dir = output_dir / "cuda" / spec.job_id
     checkpoint_path = job_dir / "checkpoint.pt"
@@ -443,7 +612,7 @@ def run_norgate_broad_development_cuda_job(
             "review_required_before_any_follow_up": review_required,
             "stop_rule": (
                 "No tuning, seed expansion, model selection, ensemble, or reuse beyond "
-                "the four fixed jobs without a new contract."
+                "the fixed campaign job list without a new contract."
             ),
         }
         _write_json_new(summary_path, payload)
@@ -469,7 +638,10 @@ def run_norgate_broad_development_cuda_job(
 
 def _dataset_from_verified_feature_artifact(
     artifact: NorgateBroadDevelopmentFeatureArtifact,
+    *,
+    campaign_id: str = VALIDATION_VERSION,
 ) -> NorgateBroadDevelopmentDataset:
+    campaign = _campaign_spec(campaign_id)
     contract = artifact.contract
     if not isinstance(contract, Mapping):
         raise ValueError("verified Norgate feature artifact contract is invalid")
@@ -518,7 +690,6 @@ def _dataset_from_verified_feature_artifact(
     if not numpy.isin(source_labels, (0, 1)).all():
         raise ValueError("verified Norgate feature artifact binary labels are invalid")
     source_splits = numpy.asarray(artifact.split_ids, dtype=numpy.int8)
-    split_names = numpy.asarray(("development", "purge", "validation"))
     if not numpy.isin(source_splits, (0, 1, 2)).all():
         raise ValueError("verified Norgate feature artifact split codes are invalid")
     observed_counts = {
@@ -564,9 +735,10 @@ def _dataset_from_verified_feature_artifact(
         entry_indices=artifact.entry_indices,
         exit_indices=artifact.exit_indices,
         symbol_ranks=artifact.symbol_ranks,
-        split_ids=split_names[source_splits],
+        split_ids=_campaign_split_names(artifact.decision_indices, campaign=campaign),
         discontinuity_excluded_count=excluded_count,
         limitations=tuple(limitations),
+        campaign_id=campaign.campaign_id,
     )
 
 
@@ -582,6 +754,7 @@ def _validated_arrays(dataset: NorgateBroadDevelopmentDataset) -> dict[str, Any]
         or dataset.parent_manifest_hash != FIXED_PARENT_MANIFEST_HASH
     ):
         raise ValueError("Norgate broad validation requires the fixed parent lineage")
+    campaign = _campaign_spec(dataset.campaign_id)
     if dataset.discontinuity_excluded_count < 0:
         raise ValueError("discontinuity_excluded_count must be non-negative")
     numpy = _numpy()
@@ -626,16 +799,50 @@ def _validated_arrays(dataset: NorgateBroadDevelopmentDataset) -> dict[str, Any]
         raise ValueError("Norgate broad feature rows must use canonical date/rank order")
     if not numpy.all(arrays["decision_dates"][1:] >= arrays["decision_dates"][:-1]):
         raise ValueError("Norgate broad decision dates must be chronological")
-    _validate_split_contract(arrays)
+    _validate_split_contract(arrays, campaign=campaign)
+    if campaign.require_disjoint_feature_windows:
+        development = arrays["split_ids"] == "development"
+        validation = arrays["split_ids"] == "validation"
+        if not (
+            arrays["source_end_indices"][development].max()
+            < arrays["source_start_indices"][validation].min()
+            and arrays["exit_indices"][development].max()
+            < arrays["source_start_indices"][validation].min()
+        ):
+            raise ValueError(
+                "Norgate broad development campaign boundary overlaps a validation feature"
+            )
     return arrays
 
 
-def _validate_split_contract(arrays: Mapping[str, Any]) -> None:
+def _campaign_split_names(values: Any, *, campaign: NorgateBroadDevelopmentCampaignSpec) -> Any:
+    numpy = _numpy()
+    decision_indices = numpy.asarray(values, dtype=numpy.int64)
+    result = numpy.full(len(decision_indices), "", dtype="U16")
+    for name, start, end in _campaign_ranges(campaign):
+        result[(decision_indices >= start) & (decision_indices <= end)] = name
+    if not numpy.all(result != ""):
+        raise ValueError("Norgate broad development campaign excludes an artifact decision index")
+    return result
+
+
+def _campaign_ranges(
+    campaign: NorgateBroadDevelopmentCampaignSpec,
+) -> tuple[tuple[str, int, int], ...]:
+    return (
+        ("development", campaign.development_start_index, campaign.development_end_index),
+        ("purge", campaign.purge_start_index, campaign.purge_end_index),
+        ("validation", campaign.validation_start_index, campaign.validation_end_index),
+    )
+
+
+def _validate_split_contract(
+    arrays: Mapping[str, Any], *, campaign: NorgateBroadDevelopmentCampaignSpec
+) -> None:
     numpy = _numpy()
     expected = {
-        "development": numpy.arange(DEVELOPMENT_START_INDEX, DEVELOPMENT_END_INDEX + 1),
-        "purge": numpy.arange(PURGE_START_INDEX, PURGE_END_INDEX + 1),
-        "validation": numpy.arange(VALIDATION_START_INDEX, VALIDATION_END_INDEX + 1),
+        name: numpy.arange(start, end + 1)
+        for name, start, end in _campaign_ranges(campaign)
     }
     if set(arrays["split_ids"]) != set(expected):
         raise ValueError("Norgate broad split names are invalid")
@@ -897,6 +1104,70 @@ def _write_validation_predictions(
     return _sha256_file(path)
 
 
+def _campaign_contract_payload(
+    dataset: NorgateBroadDevelopmentDataset,
+    arrays: Mapping[str, Any],
+    *,
+    campaign: NorgateBroadDevelopmentCampaignSpec,
+    code_revision: str,
+) -> dict[str, Any]:
+    payload = _base_payload(
+        dataset,
+        arrays,
+        code_revision=code_revision,
+        phase="campaign_contract",
+    )
+    payload["kind"] = "norgate_broad_development_campaign_contract"
+    payload["campaign_contract"] = {
+        "campaign_id": campaign.campaign_id,
+        "candidate_output": "binary_direction_descriptive_only",
+        "naive_baselines": ["always_up", "regularized_linear"],
+        "cuda_job_ids": list(campaign.cuda_job_ids),
+        "cuda_dispatch_rule": "CPU completion and integrity only; no metric-conditioned selection.",
+        "stop_rule": (
+            "No tuning, additional seeds, ranking, ensemble, PnL, paper use, promotion, or "
+            "runtime reuse follows this contract."
+        ),
+        "field_compatibility": "completed daily OHLCV field shape only",
+    }
+    return payload
+
+
+def _read_verified_campaign_contract(
+    path: Path,
+    *,
+    dataset: NorgateBroadDevelopmentDataset,
+    campaign: NorgateBroadDevelopmentCampaignSpec,
+) -> NorgateBroadDevelopmentCampaignContract:
+    if not path.is_file() or path.is_symlink():
+        raise ValueError("verified campaign contract is required before this campaign runs")
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("campaign contract is malformed") from exc
+    contract = payload.get("campaign_contract") if isinstance(payload, dict) else None
+    if not isinstance(contract, Mapping) or (
+        payload.get("kind") != "norgate_broad_development_campaign_contract"
+        or payload.get("phase") != "campaign_contract"
+        or payload.get("scope") != _RESULT_SCOPE
+        or payload.get("validation_version") != campaign.campaign_id
+        or payload.get("lineage", {}).get("derived_artifact_hash") != dataset.artifact_hash
+        or payload.get("lineage", {}).get("derived_contract_hash") != dataset.contract_hash
+        or contract.get("campaign_id") != campaign.campaign_id
+        or tuple(contract.get("cuda_job_ids", ())) != campaign.cuda_job_ids
+        or contract.get("cuda_dispatch_rule")
+        != "CPU completion and integrity only; no metric-conditioned selection."
+    ):
+        raise ValueError("campaign contract does not match the verified dataset")
+    return NorgateBroadDevelopmentCampaignContract(
+        contract_path=path,
+        contract_sha256=_sha256_file(path),
+        artifact_hash=dataset.artifact_hash,
+        derived_contract_hash=dataset.contract_hash,
+        campaign_id=campaign.campaign_id,
+    )
+
+
 def _base_payload(
     dataset: NorgateBroadDevelopmentDataset,
     arrays: Mapping[str, Any],
@@ -904,10 +1175,25 @@ def _base_payload(
     code_revision: str,
     phase: str,
 ) -> dict[str, Any]:
+    campaign = _campaign_spec(dataset.campaign_id)
+    development_count = campaign.development_end_index - campaign.development_start_index + 1
+    purge_count = campaign.purge_end_index - campaign.purge_start_index + 1
+    validation_count = campaign.validation_end_index - campaign.validation_start_index + 1
+    limitations = list(_LIMITATIONS)
+    if campaign.require_disjoint_feature_windows:
+        limitations = [
+            item
+            for item in limitations
+            if "Validation feature windows overlap" not in item
+        ]
+        limitations.append(
+            "The 22-date purge keeps development labels and feature windows disjoint from "
+            "validation features."
+        )
     return {
         "schema_version": 1,
         "kind": "norgate_broad_development_engineering_validation",
-        "validation_version": VALIDATION_VERSION,
+        "validation_version": campaign.campaign_id,
         "phase": phase,
         "code_revision": _nonempty_text(code_revision, "code_revision"),
         "scope": dict(_RESULT_SCOPE),
@@ -927,15 +1213,24 @@ def _base_payload(
             "entry_index_offset": 1,
             "exit_index_offset": 2,
             "no_lookahead_verified": True,
+            "execution_cost_model": "not_evaluated; classification evidence is not PnL evidence",
         },
         "temporal_split": {
-            "development_decision_indices": [DEVELOPMENT_START_INDEX, DEVELOPMENT_END_INDEX],
-            "purge_decision_indices": [PURGE_START_INDEX, PURGE_END_INDEX],
-            "validation_decision_indices": [VALIDATION_START_INDEX, VALIDATION_END_INDEX],
-            "development_date_groups": 300,
-            "purge_date_groups": 2,
-            "validation_date_groups": 159,
-            "development_label_validation_feature_overlap": True,
+            "development_decision_indices": [
+                campaign.development_start_index,
+                campaign.development_end_index,
+            ],
+            "purge_decision_indices": [campaign.purge_start_index, campaign.purge_end_index],
+            "validation_decision_indices": [
+                campaign.validation_start_index,
+                campaign.validation_end_index,
+            ],
+            "development_date_groups": development_count,
+            "purge_date_groups": purge_count,
+            "validation_date_groups": validation_count,
+            "development_label_validation_feature_overlap": (
+                not campaign.require_disjoint_feature_windows
+            ),
         },
         "data_quality_conditioning": {
             "raw_discontinuity_threshold": 0.2,
@@ -951,7 +1246,7 @@ def _base_payload(
             split_id: int((arrays["split_ids"] == split_id).sum())
             for split_id in ("development", "purge", "validation")
         },
-        "limitations": list(dict.fromkeys((*_LIMITATIONS, *dataset.limitations))),
+        "limitations": list(dict.fromkeys((*limitations, *dataset.limitations))),
         "attestations": {
             "offline": True,
             "network_access": False,
@@ -966,6 +1261,7 @@ def _read_verified_cpu_summary(
     path: Path,
     dataset: NorgateBroadDevelopmentDataset,
 ) -> dict[str, Any]:
+    campaign = _campaign_spec(dataset.campaign_id)
     if not path.is_file() or path.is_symlink():
         raise ValueError("verified CPU baseline is required before a CUDA job")
     try:
@@ -975,6 +1271,7 @@ def _read_verified_cpu_summary(
     if not isinstance(payload, dict) or (
         payload.get("phase") != "cpu_baseline"
         or payload.get("scope") != _RESULT_SCOPE
+        or payload.get("validation_version") != campaign.campaign_id
         or payload.get("lineage", {}).get("derived_artifact_hash") != dataset.artifact_hash
         or payload.get("lineage", {}).get("derived_contract_hash") != dataset.contract_hash
         or not isinstance(payload.get("cpu_baselines"), dict)
@@ -986,7 +1283,13 @@ def _read_verified_cpu_summary(
     return payload
 
 
-def _validation_output_dir(artifact_root: Path, *, run_id: str, repo_root: Path) -> Path:
+def _validation_output_dir(
+    artifact_root: Path,
+    *,
+    campaign: NorgateBroadDevelopmentCampaignSpec,
+    run_id: str,
+    repo_root: Path,
+) -> Path:
     _safe_path_component(run_id, "run_id")
     root = Path(artifact_root)
     if not root.is_dir() or root.is_symlink():
@@ -1007,14 +1310,18 @@ def _validation_output_dir(artifact_root: Path, *, run_id: str, repo_root: Path)
     )
     if inside_repository and not docker_mount:
         raise ValueError("model artifacts must stay outside the Git workspace")
-    output = resolved_root / "norgate-broad-development-validation" / run_id
+    output = resolved_root / campaign.artifact_directory / run_id
     if output.is_symlink() or not output.is_relative_to(resolved_root):
         raise ValueError("validation artifact path escapes the artifact root")
     return output
 
 
-def _cuda_job_spec(job_id: str) -> NorgateCudaJobSpec:
-    for spec in CUDA_JOB_SPECS:
+def _cuda_job_spec(
+    job_id: str, *, campaign: NorgateBroadDevelopmentCampaignSpec
+) -> NorgateCudaJobSpec:
+    for spec in (*CUDA_JOB_SPECS, *OPPORTUNITY_CUDA_JOB_SPECS):
+        if spec.job_id not in campaign.cuda_job_ids:
+            continue
         if spec.job_id == job_id:
             return spec
     raise ValueError("CUDA job_id is not in the fixed exploration batch")

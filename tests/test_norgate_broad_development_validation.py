@@ -16,10 +16,18 @@ from thericher_v2.research.norgate_broad_development_validation import (
     FEATURE_WIDTH,
     FIXED_PARENT_DATASET_HASH,
     FIXED_PARENT_MANIFEST_HASH,
+    NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
+    OPPORTUNITY_DEVELOPMENT_END_INDEX,
+    OPPORTUNITY_DEVELOPMENT_START_INDEX,
+    OPPORTUNITY_PURGE_END_INDEX,
+    OPPORTUNITY_PURGE_START_INDEX,
+    OPPORTUNITY_VALIDATION_END_INDEX,
+    OPPORTUNITY_VALIDATION_START_INDEX,
     PURGE_END_INDEX,
     VALIDATION_END_INDEX,
     NorgateBroadDevelopmentDataset,
     _dataset_from_verified_feature_artifact,
+    freeze_norgate_broad_development_campaign,
     run_norgate_broad_development_cpu_baseline,
     run_norgate_broad_development_cuda_job,
 )
@@ -99,6 +107,57 @@ def test_rejects_lookahead_or_noncanonical_rows(tmp_path: Path) -> None:
             run_id="broken-order",
             repo_root=tmp_path / "repo",
         )
+
+
+def test_opportunity_campaign_requires_a_frozen_contract_and_disjoint_22_day_purge(
+    tmp_path: Path,
+) -> None:
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    artifact_root = tmp_path / "external-artifacts"
+    artifact_root.mkdir()
+    dataset = _opportunity_dataset(tmp_path)
+
+    with pytest.raises(ValueError, match="campaign contract is required"):
+        run_norgate_broad_development_cpu_baseline(
+            dataset,
+            artifact_root=artifact_root,
+            repo_root=repo,
+        )
+
+    contract = freeze_norgate_broad_development_campaign(
+        dataset,
+        artifact_root=artifact_root,
+        repo_root=repo,
+        code_revision="unit-test",
+    )
+    result = run_norgate_broad_development_cpu_baseline(
+        dataset,
+        artifact_root=artifact_root,
+        repo_root=repo,
+        code_revision="unit-test",
+    )
+    payload = json.loads(result.summary_path.read_text(encoding="utf-8"))
+
+    assert contract.contract_path.is_relative_to(artifact_root)
+    assert contract.campaign_id == NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION
+    assert payload["temporal_split"] == {
+        "development_decision_indices": [
+            OPPORTUNITY_DEVELOPMENT_START_INDEX,
+            OPPORTUNITY_DEVELOPMENT_END_INDEX,
+        ],
+        "purge_decision_indices": [OPPORTUNITY_PURGE_START_INDEX, OPPORTUNITY_PURGE_END_INDEX],
+        "validation_decision_indices": [
+            OPPORTUNITY_VALIDATION_START_INDEX,
+            OPPORTUNITY_VALIDATION_END_INDEX,
+        ],
+        "development_date_groups": 278,
+        "purge_date_groups": 22,
+        "validation_date_groups": 161,
+        "development_label_validation_feature_overlap": False,
+    }
+    assert payload["feature_contract"]["execution_cost_model"].startswith("not_evaluated")
+    assert payload["cpu_baselines"]["strong_result_review_required"] in {True, False}
 
 
 def test_rejects_cross_source_lookalike_parent_before_cpu_or_cuda(tmp_path: Path) -> None:
@@ -306,4 +365,28 @@ def _dataset(tmp_path: Path) -> NorgateBroadDevelopmentDataset:
         split_ids=split_ids,
         discontinuity_excluded_count=0,
         limitations=("unit limitation",),
+    )
+
+
+def _opportunity_dataset(tmp_path: Path) -> NorgateBroadDevelopmentDataset:
+    source = _dataset(tmp_path)
+    decision_indices = numpy.asarray(source.decision_indices, dtype=numpy.int64)
+    split_ids = numpy.full(len(decision_indices), "", dtype="U16")
+    split_ids[
+        (decision_indices >= OPPORTUNITY_DEVELOPMENT_START_INDEX)
+        & (decision_indices <= OPPORTUNITY_DEVELOPMENT_END_INDEX)
+    ] = "development"
+    split_ids[
+        (decision_indices >= OPPORTUNITY_PURGE_START_INDEX)
+        & (decision_indices <= OPPORTUNITY_PURGE_END_INDEX)
+    ] = "purge"
+    split_ids[
+        (decision_indices >= OPPORTUNITY_VALIDATION_START_INDEX)
+        & (decision_indices <= OPPORTUNITY_VALIDATION_END_INDEX)
+    ] = "validation"
+    assert numpy.all(split_ids != "")
+    return replace(
+        source,
+        split_ids=split_ids,
+        campaign_id=NORGATE_BROAD_OPPORTUNITY_DEVELOPMENT_VERSION,
     )
