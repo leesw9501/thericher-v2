@@ -309,6 +309,56 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/collection-control-v1:/app/collection_control
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-nas-forward-v1:/app/model_artifacts
 
+  kis-paper-daily-nas-forward-preflight:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-daily-nas-forward"]
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/collect_kis_paper_daily_nas_forward.py
+      - --preflight
+      - --cache-root
+      - /app/market_data
+      - --artifact-root
+      - /app/model_artifacts
+      - --repository-root
+      - /app
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/daily-nas-forward/v1:/app/market_data
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-nas-forward-v1:/app/model_artifacts
+
+  kis-paper-daily-nas-forward-observation:
+    build:
+      context: .
+      target: research
+    profiles: ["kis-paper-daily-nas-forward"]
+    network_mode: none
+    read_only: true
+    gpus: all
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_nas_d1_volatility_trend_prospective_observation.py
+    environment:
+      THERICHER_MODE: off
+      THERICHER_REPO_ROOT: /app
+      THERICHER_MARKET_DATA_ROOT: /app/market_data
+      THERICHER_MODEL_ARTIFACT_ROOT: /app/model_artifacts
+      PYTHONPATH: /app/src
+      NVIDIA_VISIBLE_DEVICES: all
+      CUBLAS_WORKSPACE_CONFIG: ":4096:8"
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-daily-spy-head:
     build:
       context: .

@@ -19,17 +19,35 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count("thericher-kis-paper-daily-spy-head") == 1
     assert source.count("thericher-kis-paper-daily-spy-session") == 1
     assert source.count("thericher-kis-paper-intraday-head") == 1
+    assert source.count('Name = "thericher-kis-paper-daily-nas-forward"') == 1
     assert source.count('Profile = "kis-paper-daily-backfill"') == 1
     assert source.count('Profile = "kis-paper-session"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-head"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-session"') == 1
     assert source.count('Profile = "kis-paper-intraday-head"') == 1
+    assert source.count('Profile = "kis-paper-daily-nas-forward"') == 1
     assert source.count('Service = "kis-paper-daily-backfill"') == 1
     assert source.count('Service = "kis-paper-session"') == 1
     assert source.count('Service = "kis-paper-daily-spy-head"') == 1
     assert source.count('Service = "kis-paper-daily-spy-session"') == 1
     assert source.count('Service = "kis-paper-intraday-head"') == 1
+    assert source.count('Service = "kis-paper-daily-nas-forward"') == 1
     assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
+    forward_entry = source.split(
+        'Name = "thericher-kis-paper-daily-nas-forward"', maxsplit=1
+    )[1].split("    },", maxsplit=1)[0]
+    assert 'Profile = "kis-paper-daily-nas-forward"' in forward_entry
+    assert 'Service = "kis-paper-daily-nas-forward"' in forward_entry
+    assert 'Runner = "run_kis_paper_daily_nas_forward_schedule.ps1"' in forward_entry
+    assert '"kis-paper-daily-nas-forward-preflight"' in forward_entry
+    assert '"kis-paper-daily-nas-forward"' in forward_entry
+    assert '"kis-paper-daily-nas-forward-observation"' in forward_entry
+    assert 'At = "06:40"' in forward_entry
+    assert "RecoverMissedRun = $true" in forward_entry
+    assert "ExecutionLimitMinutes = 90" in forward_entry
+    assert source.index('Name = "thericher-kis-paper-daily-nas-forward"') < source.index(
+        'Name = "thericher-kis-paper-daily-backfill"'
+    )
 
 
 def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() -> None:
@@ -43,6 +61,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "[string[]]$ScheduleName = @()" in source
     assert "[switch]$RequireExisting" in source
+    assert "[switch]$SkipImageBuild" in source
     assert "$requestedNames = @($ScheduleName | Select-Object -Unique)" in source
     assert "Unknown local Docker schedule name(s)" in source
     assert "$selectedSchedules = @(\n        $schedules | Where-Object" in source
@@ -56,12 +75,20 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "--project-directory `\"$resolvedProjectRoot`\"" in source
     assert "run --rm --no-deps --pull never $($schedule.Service)" in source
     assert "Build-LocalDockerScheduleImages" in source
+    assert "Assert-LocalDockerScheduleImages" in source
     assert "build @services" in source
+    assert "config --images @services" in source
     assert "Docker image build failed for scheduled task" in source
+    assert "Required scheduled Docker image is missing for task" in source
     assert "build scheduled Docker service images" in source
+    assert "Using verified existing schedule images." in source
     assert "kis-paper-prospective-qqq-session" in source
     assert "kis-paper-prospective-qqq-validation" in source
     assert "kis-paper-intraday-head-receipt" in source
+    assert "Assert-KoreaStandardTime" in source
+    assert '[System.TimeZoneInfo]::Local' in source
+    assert '"Korea Standard Time"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward"' in source
     assert 'New-ScheduledTaskAction -Execute "powershell.exe"' in source
     assert "-NoProfile -ExecutionPolicy Bypass -File" in source
     assert '$schedule.ContainsKey("Runner")' in source
@@ -74,11 +101,13 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert 'At = "23:50"' in source
     assert 'At = @("00:31", "02:31", "04:31", "06:20")' in source
     assert 'At = "07:00"' in source
+    assert 'At = "06:40"' in source
     for task_name, recover_missed_run, execution_limit_minutes in (
         ("thericher-kis-paper-quote-session", False, 90),
         ("thericher-kis-paper-daily-spy-head", True, 90),
         ("thericher-kis-paper-daily-spy-session", False, 90),
         ("thericher-kis-paper-intraday-head", True, 90),
+        ("thericher-kis-paper-daily-nas-forward", True, 90),
         ("thericher-kis-paper-daily-backfill", True, 390),
     ):
         entry = source.split(f'Name = "{task_name}"', maxsplit=1)[1].split(
@@ -138,5 +167,8 @@ def test_kis_paper_schedule_installer_has_no_secret_or_unapproved_route_surface(
     assert "kis_paper_app_key" not in source
     assert "kis_paper_app_secret" not in source
     assert "kis_paper_account" not in source
+    assert "account" not in source
+    assert "order" not in source
     assert "live" not in source
     assert "password" not in source
+    assert "secret" not in source

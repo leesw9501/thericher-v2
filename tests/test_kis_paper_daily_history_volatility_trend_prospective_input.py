@@ -4,7 +4,7 @@ import os
 import socket
 import urllib.request
 from collections.abc import Mapping
-from datetime import UTC, date, datetime
+from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from types import MappingProxyType
@@ -21,6 +21,9 @@ from thericher_v2.data.kis_paper_daily_history_panel import (
     KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS,
     KisPaperDailyHistoryPanel,
     KisPaperDailyHistoryPanelTarget,
+)
+from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
+    KisPaperDailyNasHistoricalForwardProjection,
 )
 from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 
@@ -147,6 +150,123 @@ def test_rejects_tampered_eligibility_and_non_date_boundary(tmp_path: Path) -> N
         )
 
 
+def test_verified_forward_projection_uses_only_three_exact_common_sessions(
+    tmp_path: Path,
+) -> None:
+    frozen_sessions = tuple(date(2026, 6, 1) + timedelta(days=index) for index in range(29))
+    frozen_boundary = frozen_sessions[-1]
+    panel = _panel(tmp_path / "frozen", sessions_by_symbol=_all_symbols(frozen_sessions))
+    index_before = panel.index_path.read_bytes()
+    common_forward_sessions = tuple(
+        frozen_boundary + timedelta(days=index) for index in range(1, 4)
+    )
+    projection = _forward_projection(
+        panel,
+        frozen_boundary=frozen_boundary,
+        sessions_by_symbol={
+            symbol: (
+                *common_forward_sessions,
+                *( (frozen_boundary + timedelta(days=4),) if symbol == "AAPL" else () ),
+            )
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+    )
+
+    result = prospective.build_kis_paper_daily_history_volatility_trend_prospective_input(
+        panel,
+        frozen_boundary=frozen_boundary,
+        historical_forward_projection=projection,
+        forward_cache_root=tmp_path / "forward-cache",
+    )
+
+    assert result.source_kind == "historical_forward_projection"
+    assert result.status == "ready"
+    assert result.post_boundary_common_sessions == common_forward_sessions
+    assert result.eligible_target_slot_count == 1
+    assert panel.index_path.read_bytes() == index_before
+    payload = result.safe_payload()
+    assert payload["source"]["kind"] == "historical_forward_projection"
+    assert payload["forward_cache_sha256"] == projection.forward_cache_hash
+    _assert_no_raw_fields(payload)
+
+
+def test_verified_forward_projection_with_partial_or_two_session_data_is_unavailable(
+    tmp_path: Path,
+) -> None:
+    frozen_sessions = tuple(date(2026, 6, 1) + timedelta(days=index) for index in range(29))
+    frozen_boundary = frozen_sessions[-1]
+    panel = _panel(tmp_path / "frozen", sessions_by_symbol=_all_symbols(frozen_sessions))
+    first_two = tuple(frozen_boundary + timedelta(days=index) for index in range(1, 3))
+    projection = _forward_projection(
+        panel,
+        frozen_boundary=frozen_boundary,
+        sessions_by_symbol={
+            symbol: (
+                *first_two,
+                *( (frozen_boundary + timedelta(days=3),) if symbol == "AAPL" else () ),
+            )
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+    )
+
+    result = prospective.build_kis_paper_daily_history_volatility_trend_prospective_input(
+        panel,
+        frozen_boundary=frozen_boundary,
+        historical_forward_projection=projection,
+        forward_cache_root=tmp_path / "forward-cache",
+    )
+
+    assert result.status == "input_unavailable"
+    assert result.input_available is False
+    assert result.post_boundary_common_sessions == first_two
+    assert result.eligible_target_slot_count == 0
+
+
+def test_forward_loader_reattests_without_external_or_credential_access(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    frozen_sessions = tuple(date(2026, 6, 1) + timedelta(days=index) for index in range(29))
+    frozen_boundary = frozen_sessions[-1]
+    panel = _panel(tmp_path / "frozen", sessions_by_symbol=_all_symbols(frozen_sessions))
+    projection = _forward_projection(
+        panel,
+        frozen_boundary=frozen_boundary,
+        sessions_by_symbol=_all_symbols(
+            tuple(frozen_boundary + timedelta(days=index) for index in range(1, 4))
+        ),
+    )
+    calls: list[str] = []
+
+    _deny_external_access(monkeypatch)
+    monkeypatch.setattr(
+        prospective,
+        "build_kis_paper_daily_history_panel",
+        lambda *_args, **_kwargs: panel,
+    )
+    monkeypatch.setattr(
+        prospective,
+        "load_verified_kis_paper_daily_nas_forward_cache",
+        lambda **_kwargs: calls.append("forward-cache") or object(),
+    )
+    monkeypatch.setattr(
+        prospective,
+        "build_kis_paper_daily_nas_historical_forward_projection",
+        lambda **_kwargs: calls.append("projection") or projection,
+    )
+
+    result = prospective.load_kis_paper_daily_history_volatility_trend_prospective_input(
+        frozen_boundary=frozen_boundary,
+        cache_root=tmp_path / "historical-cache",
+        forward_cache_root=tmp_path / "forward-cache",
+        repo_root=tmp_path / "repository",
+    )
+
+    assert calls == ["forward-cache", "projection"]
+    assert result.status == "ready"
+    assert result.source_kind == "historical_forward_projection"
+
+
 def _panel(
     root: Path,
     *,
@@ -216,6 +336,43 @@ def _bar(*, symbol: str, session: date, value: Decimal) -> Bar:
         close=value,
         volume=Decimal("1000"),
         complete=True,
+    )
+
+
+def _forward_projection(
+    panel: KisPaperDailyHistoryPanel,
+    *,
+    frozen_boundary: date,
+    sessions_by_symbol: Mapping[str, tuple[date, ...]],
+) -> KisPaperDailyNasHistoricalForwardProjection:
+    common_sessions = tuple(
+        sorted(set.intersection(*(set(values) for values in sessions_by_symbol.values())))
+    )
+    context_by_symbol = {
+        symbol: tuple(panel.bars_by_symbol[symbol].bars[-29:])
+        for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+    }
+    forward_by_symbol = {
+        symbol: tuple(
+            _bar(
+                symbol=symbol,
+                session=session,
+                value=Decimal(200 + symbol_offset + index),
+            )
+            for index, session in enumerate(sessions_by_symbol[symbol])
+        )
+        for symbol_offset, symbol in enumerate(KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS, start=1)
+    }
+    eligible_target_slot_count = len(common_sessions) // 3
+    return KisPaperDailyNasHistoricalForwardProjection(
+        frozen_panel_hash=panel.dataset_hash,
+        forward_cache_hash="sha256:" + "c" * 64,
+        frozen_boundary=frozen_boundary,
+        context_by_symbol=MappingProxyType(context_by_symbol),
+        forward_by_symbol=MappingProxyType(forward_by_symbol),
+        forward_common_sessions=common_sessions,
+        eligible_target_slot_count=eligible_target_slot_count,
+        status="ready" if eligible_target_slot_count else "input_unavailable",
     )
 
 

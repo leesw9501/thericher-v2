@@ -687,9 +687,9 @@ opening any target. Its network-disabled Docker smoke wrote immutable external
 precommit `sha256:628663053db396626e009ec154ce17b7849fb5f2614384f74a5818f6e46f24da`
 and `input_unavailable` receipt
 `sha256:56e0f503b7248e10e8461a1752c3baf7df5f1a70e89d0a63909f08cfde78616a`.
-There are currently zero six-symbol common sessions after the 2026-07-24 r5
-boundary. That closes only this observation attempt; it is not a Research,
-Data, or Paper hold.
+Its initial offline smoke had zero six-symbol common sessions after the
+2026-07-24 r5 boundary. That closes only that observation attempt; it is not a
+Research, Data, or Paper hold.
 
 The separate NAS D1 forward cache is now present at
 `D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1`. Its
@@ -700,8 +700,13 @@ at `sha256:7e8d6fe5...d57dc8e`; the forward cache/index hashes are
 receipt is external under `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1`.
 The read-only historical-plus-forward projection has 29 frozen context bars per
 symbol but remains `input_unavailable` with zero target slots because it needs
-three common later sessions. A valid replay updates safe accepted-page counters
-without replacing snapshots; transient failures are `deferred`, while
-`source_limited` requires a proven source limitation. Follow NEXT_CODEX_GOAL.md
-to maintain this cache without foreground-waiting, a PIT claim, candidate
-selection, ranking, or broker order.
+three common later sessions. The actual network-disabled observer smoke on the
+one-session cache produced that same scoped result without model execution,
+selection, KIS, or a broker effect. The installed
+`thericher-kis-paper-daily-nas-forward` task owns its next 06:40 KST run:
+credential-free preflight, collector only when required, then observer only on
+a current or complete cache. A partial/deferred collector or invalid cache exits
+with recovery `20` and cannot dispatch the observer. Claude's requested
+schedule drift-check remained `review_unavailable` because local OAuth could
+not refresh. This remains a forward-data mechanism, not a PIT claim, candidate
+selection, ranking, or broker-order path.

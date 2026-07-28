@@ -82,6 +82,10 @@ session, and found zero later common all-six-symbol D1 sessions; its immutable
 result is only `input_unavailable`. Data now owns a separate forward cache.
 There is no eligible new GPU campaign or prospective replay until that exact
 consumer input contains a complete decision, `t+1`, and `t+2` common window.
+The installed Data task now invokes this network-disabled observer after each
+verified forward-cache outcome. The current cache has one common session and
+the Docker observer correctly remains `input_unavailable`; PyTorch CUDA sees
+one device, but no eligible model run or generated model artifact follows.
 
 ## Current Readiness
 
@@ -330,10 +334,10 @@ consumer input contains a complete decision, `t+1`, and `t+2` common window.
     common D1 sessions after its 2026-07-24 boundary and recorded only its own
     `input_unavailable` receipt. Data's separate forward cache now has one
     common all-six-symbol D1 session, still below the exact three-session
-    consumer requirement. It does not select a candidate, authorize a Paper
-    action, or create GPU work. Research remains ready to observe a later
-    complete common window without tuning, ensembling, promoting, ranking, or
-    creating a KIS Paper action.
+    consumer requirement. Its automatic offline invocation does not select a
+    candidate, authorize a Paper action, or create GPU work. Research remains
+    ready to observe a later complete common window without tuning, ensembling,
+    promoting, ranking, or creating a KIS Paper action.
 
 ## Durable Constraints
 

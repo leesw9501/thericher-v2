@@ -555,7 +555,7 @@ def test_continuation_summary_rejects_git_storage_before_creating_a_path(tmp_pat
 def test_daily_history_docker_profile_is_data_only_and_dedicated() -> None:
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
     section = compose.split("\n  kis-paper-daily-history:\n", maxsplit=1)[1].split(
-        "\n  kis-paper-daily-spy-head:\n", maxsplit=1
+        "\n  kis-paper-daily-nas-forward:\n", maxsplit=1
     )[0]
 
     assert 'profiles: ["kis-paper-daily-history"]' in section

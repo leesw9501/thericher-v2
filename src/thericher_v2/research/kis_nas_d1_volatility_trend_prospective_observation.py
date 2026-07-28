@@ -29,9 +29,15 @@ from thericher_v2.data.kis_paper_daily_history_sequence_input import (
     require_attested_kis_paper_daily_history_sequence_input,
 )
 from thericher_v2.data.kis_paper_daily_history_volatility_trend_prospective_input import (
+    KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT,
     KisPaperDailyHistoryVolatilityTrendProspectiveInput,
     build_kis_paper_daily_history_volatility_trend_prospective_input,
     require_attested_kis_paper_daily_history_volatility_trend_prospective_input,
+)
+from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
+    KisPaperDailyNasHistoricalForwardProjection,
+    build_kis_paper_daily_nas_historical_forward_projection,
+    load_verified_kis_paper_daily_nas_forward_cache,
 )
 from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE, replay_local_paper_account
 from thericher_v2.research.causal_bar_features import (
@@ -59,6 +65,9 @@ from thericher_v2.state import Event
 
 KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_OBSERVATION_ID = (
     "kis-nas-d1-volatility-trend-prospective-observation-v1"
+)
+KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_WINDOW_CONSUMPTION_VERSION = (
+    "kis-nas-d1-volatility-trend-prospective-window-consumption-v1"
 )
 KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_OBSERVATION_ARTIFACT_ROOT = Path(
     "D:/thericher-v2/model-artifacts/research"
@@ -136,6 +145,7 @@ class KisNasD1VolatilityTrendProspectiveObservationInput:
     source_input: KisPaperDailyHistorySequenceInput
     prospective_panel: KisPaperDailyHistoryPanel
     prospective_input: KisPaperDailyHistoryVolatilityTrendProspectiveInput
+    forward_projection: KisPaperDailyNasHistoricalForwardProjection | None
     campaign_input: KisNasD1VolatilityTrendCampaignInput
     evidence: KisNasD1VolatilityTrendProspectiveEvidence
     cpu_summary_path: Path
@@ -248,6 +258,7 @@ class KisNasD1VolatilityTrendProspectiveObservationRun:
     receipt_path: Path
     receipt_hash: str
     candidate_results: tuple[KisNasD1VolatilityTrendProspectiveCandidateResult, ...]
+    completed_window_ids: tuple[str, ...]
     review_status: str
 
 
@@ -277,6 +288,8 @@ def build_kis_nas_d1_volatility_trend_prospective_observation_input(
     source_input: KisPaperDailyHistorySequenceInput,
     prospective_panel: KisPaperDailyHistoryPanel,
     *,
+    forward_projection: KisPaperDailyNasHistoricalForwardProjection | None = None,
+    forward_cache_root: Path | str | None = None,
     evidence: KisNasD1VolatilityTrendProspectiveEvidence,
     cpu_summary_path: Path | str,
     cuda_summary_path: Path | str,
@@ -303,11 +316,14 @@ def build_kis_nas_d1_volatility_trend_prospective_observation_input(
     prospective_input = build_kis_paper_daily_history_volatility_trend_prospective_input(
         prospective_panel,
         frozen_boundary=frozen_boundary,
+        historical_forward_projection=forward_projection,
+        forward_cache_root=forward_cache_root,
     )
     result = KisNasD1VolatilityTrendProspectiveObservationInput(
         source_input=source_input,
         prospective_panel=prospective_panel,
         prospective_input=prospective_input,
+        forward_projection=forward_projection,
         campaign_input=campaign_input,
         evidence=evidence,
         cpu_summary_path=Path(cpu_summary_path),
@@ -346,6 +362,19 @@ def require_attested_kis_nas_d1_volatility_trend_prospective_observation_input(
         or not value.prospective_panel.index_path.is_file()
         or tuple(value.prospective_panel.bars_by_symbol)
         != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        or (
+            value.prospective_input.source_kind == "historical_panel"
+            and value.forward_projection is not None
+        )
+        or (
+            value.prospective_input.source_kind == "historical_forward_projection"
+            and not _forward_projection_matches_input(
+                value.forward_projection,
+                prospective_input=value.prospective_input,
+                prospective_panel=value.prospective_panel,
+                frozen_boundary=value.frozen_boundary,
+            )
+        )
     ):
         raise ValueError("NAS D1 prospective observation input is not attested")
 
@@ -375,25 +404,49 @@ def run_kis_nas_d1_volatility_trend_prospective_observation(
         repository=repository,
         run_label=run_label,
     )
+    observation_root = output_dir.parent
     precommit_hash: str | None = None
     failure_stage = "frozen_lineage"
     try:
-        cpu_summary, cuda_summary = _validate_frozen_external_artifacts(
-            observation_input,
-            repository=repository,
-        )
         failure_stage = "precommit"
         precommit_payload = _precommit_payload(observation_input, review_status=review_status)
         _assert_source_safe(precommit_payload)
         precommit_path = output_dir / "precommit.json"
         precommit_hash = _write_json_new(precommit_path, precommit_payload)
         failure_stage = "freshness_reattest"
-        reattested_panel = _require_unchanged_prospective_input(
-            observation_input,
-            repository=repository,
+        reattested_panel, reattested_input, reattested_projection = (
+            _require_unchanged_prospective_input(
+                observation_input,
+                repository=repository,
+            )
         )
+        if reattested_input.status == "input_unavailable":
+            unavailable_payload = _input_unavailable_payload(
+                observation_input,
+                precommit_hash=precommit_hash,
+                review_status=review_status,
+            )
+            _assert_source_safe(unavailable_payload)
+            receipt_path = output_dir / "input_unavailable.json"
+            receipt_hash = _write_json_new(receipt_path, unavailable_payload)
+            return KisNasD1VolatilityTrendProspectiveObservationRun(
+                observation_input=observation_input,
+                run_label=run_label,
+                status="input_unavailable",
+                precommit_path=precommit_path,
+                precommit_hash=precommit_hash,
+                receipt_path=receipt_path,
+                receipt_hash=receipt_hash,
+                candidate_results=(),
+                completed_window_ids=(),
+                review_status=review_status,
+            )
         failure_stage = "slot_opening"
-        slots_by_symbol = _prospective_slots(observation_input, panel=reattested_panel)
+        slots_by_symbol = _prospective_slots(
+            observation_input,
+            panel=reattested_panel,
+            forward_projection=reattested_projection,
+        )
         if not any(slots_by_symbol.values()):
             unavailable_payload = _input_unavailable_payload(
                 observation_input,
@@ -412,8 +465,42 @@ def run_kis_nas_d1_volatility_trend_prospective_observation(
                 receipt_path=receipt_path,
                 receipt_hash=receipt_hash,
                 candidate_results=(),
+                completed_window_ids=(),
                 review_status=review_status,
             )
+        already_completed_window_ids = _load_completed_window_ids(observation_root)
+        slots_by_symbol, new_window_ids = _unconsumed_prospective_slots(
+            observation_input,
+            slots_by_symbol=slots_by_symbol,
+            completed_window_ids=already_completed_window_ids,
+        )
+        if not new_window_ids:
+            unavailable_payload = _input_unavailable_payload(
+                observation_input,
+                precommit_hash=precommit_hash,
+                review_status=review_status,
+                reason="no_unconsumed_complete_all_symbol_post_boundary_t_plus_2_window",
+            )
+            _assert_source_safe(unavailable_payload)
+            receipt_path = output_dir / "input_unavailable.json"
+            receipt_hash = _write_json_new(receipt_path, unavailable_payload)
+            return KisNasD1VolatilityTrendProspectiveObservationRun(
+                observation_input=observation_input,
+                run_label=run_label,
+                status="input_unavailable",
+                precommit_path=precommit_path,
+                precommit_hash=precommit_hash,
+                receipt_path=receipt_path,
+                receipt_hash=receipt_hash,
+                candidate_results=(),
+                completed_window_ids=(),
+                review_status=review_status,
+            )
+        failure_stage = "frozen_lineage"
+        cpu_summary, cuda_summary = _validate_frozen_external_artifacts(
+            observation_input,
+            repository=repository,
+        )
         failure_stage = "candidate_replay"
         prediction_batches = _prediction_batches(
             observation_input,
@@ -445,6 +532,7 @@ def run_kis_nas_d1_volatility_trend_prospective_observation(
             precommit_hash=precommit_hash,
             review_status=review_status,
             candidate_results=candidate_results,
+            completed_window_ids=new_window_ids,
         )
         _assert_source_safe(summary_payload)
         receipt_path = output_dir / "summary.json"
@@ -469,6 +557,7 @@ def run_kis_nas_d1_volatility_trend_prospective_observation(
         receipt_path=receipt_path,
         receipt_hash=receipt_hash,
         candidate_results=candidate_results,
+        completed_window_ids=new_window_ids,
         review_status=review_status,
     )
 
@@ -477,32 +566,85 @@ def _require_unchanged_prospective_input(
     observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
     *,
     repository: Path,
-) -> KisPaperDailyHistoryPanel:
+) -> tuple[
+    KisPaperDailyHistoryPanel,
+    KisPaperDailyHistoryVolatilityTrendProspectiveInput,
+    KisPaperDailyNasHistoricalForwardProjection | None,
+]:
     """Reject a cache mutation between the source-safe precommit and target use."""
 
     reattested_panel = build_kis_paper_daily_history_panel(
         cache_root=observation_input.prospective_panel.source_root,
         repo_root=repository,
     )
+    forward_projection: KisPaperDailyNasHistoricalForwardProjection | None = None
+    source_kind = getattr(
+        observation_input.prospective_input,
+        "source_kind",
+        "historical_panel",
+    )
+    if source_kind == "historical_forward_projection":
+        forward_cache_root = getattr(
+            observation_input.prospective_input,
+            "forward_cache_root",
+            None,
+        )
+        if forward_cache_root is None:
+            raise ValueError("NAS D1 prospective forward cache root is unavailable")
+        forward_cache = load_verified_kis_paper_daily_nas_forward_cache(
+            cache_root=forward_cache_root,
+            repo_root=repository,
+        )
+        forward_projection = build_kis_paper_daily_nas_historical_forward_projection(
+            frozen_panel=reattested_panel,
+            forward_cache=forward_cache,
+            frozen_boundary=observation_input.frozen_boundary,
+        )
     reattested = build_kis_paper_daily_history_volatility_trend_prospective_input(
         reattested_panel,
         frozen_boundary=observation_input.frozen_boundary,
+        historical_forward_projection=forward_projection,
+        forward_cache_root=(
+            getattr(observation_input.prospective_input, "forward_cache_root", None)
+            if forward_projection is not None
+            else None
+        ),
     )
     if (
         reattested.prospective_input_hash
         != observation_input.prospective_input.prospective_input_hash
     ):
         raise ValueError("NAS D1 prospective cache changed after precommit")
-    return reattested_panel
+    return reattested_panel, reattested, forward_projection
 
 
 def _prospective_slots(
     observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
     *,
     panel: KisPaperDailyHistoryPanel | None = None,
+    forward_projection: KisPaperDailyNasHistoricalForwardProjection | None = None,
 ) -> dict[str, tuple[KisNasD1VolatilityTrendProspectiveSlot, ...]]:
     """Open only complete, all-symbol D1 target windows after the frozen boundary."""
 
+    source_kind = getattr(
+        getattr(observation_input, "prospective_input", None),
+        "source_kind",
+        "historical_panel",
+    )
+    projection = forward_projection or getattr(
+        observation_input,
+        "forward_projection",
+        None,
+    )
+    if source_kind == "historical_forward_projection":
+        if projection is None:
+            raise ValueError("NAS D1 prospective forward projection is unavailable")
+        return _prospective_slots_from_forward_projection(
+            observation_input,
+            projection=projection,
+        )
+    if projection is not None:
+        raise ValueError("NAS D1 prospective legacy input cannot use a forward projection")
     panel = panel or observation_input.prospective_panel
     sessions = panel.common_sessions
     by_session = {session: index for index, session in enumerate(sessions)}
@@ -568,6 +710,145 @@ def _prospective_slots(
     if len(counts) != 1:
         raise ValueError("NAS D1 prospective symbol slot coverage is inconsistent")
     return result
+
+
+def _prospective_slots_from_forward_projection(
+    observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
+    *,
+    projection: KisPaperDailyNasHistoricalForwardProjection,
+) -> dict[str, tuple[KisNasD1VolatilityTrendProspectiveSlot, ...]]:
+    """Use only the immutable context plus exact all-six later sessions in memory."""
+
+    if not _forward_projection_matches_input(
+        projection,
+        prospective_input=observation_input.prospective_input,
+        prospective_panel=observation_input.prospective_panel,
+        frozen_boundary=observation_input.frozen_boundary,
+    ):
+        raise ValueError("NAS D1 prospective forward projection is not attested")
+    if projection.status == "input_unavailable":
+        return {symbol: () for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS}
+    forward_sessions = projection.forward_common_sessions
+    selected_offsets: list[int] = []
+    next_allowed = 0
+    for offset in range(len(forward_sessions) - 2):
+        if offset < next_allowed:
+            continue
+        selected_offsets.append(offset)
+        next_allowed = (
+            offset + KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_OBSERVATION_DECISION_STRIDE
+        )
+    result: dict[str, tuple[KisNasD1VolatilityTrendProspectiveSlot, ...]] = {}
+    for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
+        context = projection.context_by_symbol[symbol]
+        forward_by_session = {
+            bar.start_ts.date(): bar for bar in projection.forward_by_symbol[symbol]
+        }
+        if len(forward_by_session) != len(projection.forward_by_symbol[symbol]):
+            raise ValueError("NAS D1 prospective forward bars are ambiguous")
+        try:
+            forward_bars = tuple(forward_by_session[session] for session in forward_sessions)
+        except KeyError as exc:
+            raise ValueError("NAS D1 prospective forward common bars are incomplete") from exc
+        combined = tuple(context) + forward_bars
+        slots: list[KisNasD1VolatilityTrendProspectiveSlot] = []
+        for offset in selected_offsets:
+            signal_index = len(context) + offset
+            signal_bar = combined[signal_index]
+            entry_bar = combined[signal_index + 1]
+            exit_bar = combined[signal_index + 2]
+            if (
+                signal_bar.start_ts.date() != forward_sessions[offset]
+                or entry_bar.start_ts.date() != forward_sessions[offset + 1]
+                or exit_bar.start_ts.date() != forward_sessions[offset + 2]
+            ):
+                raise ValueError("NAS D1 prospective forward-session timing is invalid")
+            feature_sequence = build_kis_nas_d1_volatility_trend_feature_sequence(
+                combined,
+                symbol=symbol,
+                decision_index=signal_index,
+            )
+            slots.append(
+                KisNasD1VolatilityTrendProspectiveSlot(
+                    symbol=symbol,
+                    feature_sequence=feature_sequence,
+                    signal_bar=signal_bar,
+                    entry_bar=entry_bar,
+                    exit_bar=exit_bar,
+                    frozen_boundary=observation_input.frozen_boundary,
+                )
+            )
+        _validate_slot_order(slots)
+        result[symbol] = tuple(slots)
+    if {len(slots) for slots in result.values()} != {len(selected_offsets)}:
+        raise ValueError("NAS D1 prospective forward symbol slot coverage is inconsistent")
+    return result
+
+
+def _forward_projection_matches_input(
+    projection: KisPaperDailyNasHistoricalForwardProjection | None,
+    *,
+    prospective_input: KisPaperDailyHistoryVolatilityTrendProspectiveInput,
+    prospective_panel: KisPaperDailyHistoryPanel,
+    frozen_boundary: date,
+) -> bool:
+    if not isinstance(projection, KisPaperDailyNasHistoricalForwardProjection):
+        return False
+    if (
+        tuple(projection.context_by_symbol) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        or tuple(projection.forward_by_symbol) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        or any(
+            len(projection.context_by_symbol[symbol])
+            != KIS_NAS_D1_VOLATILITY_TREND_REQUIRED_BARS - 1
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        )
+        or any(
+            not isinstance(bar, Bar)
+            or bar.symbol != symbol
+            or not bar.complete
+            or bar.start_ts.date() > frozen_boundary
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            for bar in projection.context_by_symbol[symbol]
+        )
+        or any(
+            not isinstance(bar, Bar)
+            or bar.symbol != symbol
+            or not bar.complete
+            or bar.start_ts.date() <= frozen_boundary
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            for bar in projection.forward_by_symbol[symbol]
+        )
+    ):
+        return False
+    forward_sessions_by_symbol = {
+        symbol: {bar.start_ts.date() for bar in projection.forward_by_symbol[symbol]}
+        for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+    }
+    if (
+        any(
+            len(forward_sessions_by_symbol[symbol])
+            != len(projection.forward_by_symbol[symbol])
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        )
+        or tuple(sorted(set.intersection(*forward_sessions_by_symbol.values())))
+        != projection.forward_common_sessions
+        or projection.eligible_target_slot_count
+        != len(projection.forward_common_sessions)
+        // KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT
+        or (projection.status == "ready") != bool(projection.eligible_target_slot_count)
+    ):
+        return False
+    return (
+        prospective_input.source_kind == "historical_forward_projection"
+        and projection.frozen_panel_hash == prospective_panel.dataset_hash
+        and projection.forward_cache_hash == prospective_input.forward_cache_hash
+        and projection.frozen_boundary == frozen_boundary
+        and projection.forward_common_sessions
+        == prospective_input.post_boundary_common_sessions
+        and projection.eligible_target_slot_count
+        == prospective_input.eligible_target_slot_count
+        and projection.status == prospective_input.status
+    )
 
 
 def _prediction_batches(
@@ -1107,6 +1388,144 @@ def _validate_slot_order(slots: Sequence[KisNasD1VolatilityTrendProspectiveSlot]
             raise ValueError("NAS D1 prospective target windows overlap")
 
 
+def _unconsumed_prospective_slots(
+    observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
+    *,
+    slots_by_symbol: Mapping[str, Sequence[KisNasD1VolatilityTrendProspectiveSlot]],
+    completed_window_ids: frozenset[str],
+) -> tuple[
+    dict[str, tuple[KisNasD1VolatilityTrendProspectiveSlot, ...]],
+    tuple[str, ...],
+]:
+    """Keep only complete session windows without an immutable completion receipt."""
+
+    window_ids = _prospective_window_ids(
+        observation_input,
+        slots_by_symbol=slots_by_symbol,
+    )
+    selected_indices = tuple(
+        index for index, window_id in enumerate(window_ids) if window_id not in completed_window_ids
+    )
+    return (
+        {
+            symbol: tuple(slots_by_symbol[symbol][index] for index in selected_indices)
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+        tuple(window_ids[index] for index in selected_indices),
+    )
+
+
+def _prospective_window_ids(
+    observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
+    *,
+    slots_by_symbol: Mapping[str, Sequence[KisNasD1VolatilityTrendProspectiveSlot]],
+) -> tuple[str, ...]:
+    if tuple(slots_by_symbol) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
+        raise ValueError("NAS D1 prospective window symbols are invalid")
+    slot_counts = {len(slots_by_symbol[symbol]) for symbol in slots_by_symbol}
+    if len(slot_counts) != 1:
+        raise ValueError("NAS D1 prospective window coverage is inconsistent")
+    window_ids: list[str] = []
+    for index in range(next(iter(slot_counts), 0)):
+        geometry_by_symbol = {
+            symbol: _slot_session_geometry(slots_by_symbol[symbol][index])
+            for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        }
+        geometries = set(geometry_by_symbol.values())
+        if len(geometries) != 1:
+            raise ValueError("NAS D1 prospective window sessions are inconsistent")
+        sessions = next(iter(geometries))
+        if (
+            sessions[0] <= observation_input.frozen_boundary
+            or not sessions[0] < sessions[1] < sessions[2]
+        ):
+            raise ValueError("NAS D1 prospective window sessions are invalid")
+        window_ids.append(
+            _prospective_window_id(observation_input, sessions=sessions)
+        )
+    if len(set(window_ids)) != len(window_ids):
+        raise ValueError("NAS D1 prospective windows are duplicated")
+    return tuple(window_ids)
+
+
+def _slot_session_geometry(
+    slot: KisNasD1VolatilityTrendProspectiveSlot,
+) -> tuple[date, date, date]:
+    return (
+        slot.signal_bar.start_ts.date(),
+        slot.entry_bar.start_ts.date(),
+        slot.exit_bar.start_ts.date(),
+    )
+
+
+def _prospective_window_id(
+    observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
+    *,
+    sessions: tuple[date, date, date],
+) -> str:
+    """Fingerprint immutable frozen lineage plus one exact all-symbol D1 window."""
+
+    return _sha256_payload(
+        {
+            "kind": KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_WINDOW_CONSUMPTION_VERSION,
+            "schema_version": SCHEMA_VERSION,
+            "frozen": _frozen_payload(observation_input),
+            "symbols": list(KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS),
+            "sessions": [session.isoformat() for session in sessions],
+            "entry_exit": "t_plus_1_open_to_t_plus_2_open",
+            "decision_stride_sessions": (
+                KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_OBSERVATION_DECISION_STRIDE
+            ),
+        }
+    )
+
+
+def _load_completed_window_ids(observation_root: Path) -> frozenset[str]:
+    """Recover completed windows from immutable source-safe summary receipts only."""
+
+    completed: set[str] = set()
+    try:
+        run_directories = tuple(sorted(observation_root.iterdir()))
+    except OSError:
+        return frozenset()
+    for run_directory in run_directories:
+        if not run_directory.is_dir() or _is_link_or_junction(run_directory):
+            continue
+        summary_path = run_directory / "summary.json"
+        if not summary_path.is_file() or _is_link_or_junction(summary_path):
+            continue
+        try:
+            payload = _load_json_object(summary_path, "window summary")
+        except ValueError:
+            continue
+        window_ids = _completed_window_ids_from_summary(payload)
+        if window_ids is not None:
+            completed.update(window_ids)
+    return frozenset(completed)
+
+
+def _completed_window_ids_from_summary(payload: Mapping[str, object]) -> tuple[str, ...] | None:
+    consumption = payload.get("window_consumption")
+    if (
+        payload.get("kind") != "kis_nas_d1_volatility_trend_prospective_observation"
+        or payload.get("status") != "completed"
+        or not isinstance(consumption, Mapping)
+        or consumption.get("version")
+        != KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_WINDOW_CONSUMPTION_VERSION
+        or not isinstance(consumption.get("completed_window_ids"), list)
+    ):
+        return None
+    window_ids = tuple(consumption["completed_window_ids"])
+    if (
+        not window_ids
+        or any(not _is_sha256(window_id) for window_id in window_ids)
+        or len(set(window_ids)) != len(window_ids)
+        or consumption.get("completed_window_count") != len(window_ids)
+    ):
+        return None
+    return window_ids
+
+
 def _precommit_payload(
     observation_input: KisNasD1VolatilityTrendProspectiveObservationInput,
     *,
@@ -1151,7 +1570,14 @@ def _summary_payload(
     precommit_hash: str,
     review_status: str,
     candidate_results: Sequence[KisNasD1VolatilityTrendProspectiveCandidateResult],
+    completed_window_ids: Sequence[str],
 ) -> dict[str, object]:
+    if (
+        not completed_window_ids
+        or any(not _is_sha256(window_id) for window_id in completed_window_ids)
+        or len(set(completed_window_ids)) != len(completed_window_ids)
+    ):
+        raise ValueError("NAS D1 prospective completed windows are invalid")
     return {
         "schema_version": SCHEMA_VERSION,
         "kind": "kis_nas_d1_volatility_trend_prospective_observation",
@@ -1167,6 +1593,12 @@ def _summary_payload(
             "all_replays_terminal_flat": True,
             "r5_outcomes_consumed": False,
         },
+        "window_consumption": {
+            "version": KIS_NAS_D1_VOLATILITY_TREND_PROSPECTIVE_WINDOW_CONSUMPTION_VERSION,
+            "completed_window_count": len(completed_window_ids),
+            "completed_window_ids": list(completed_window_ids),
+            "recovery": "completed_summary_receipts_only",
+        },
         "candidates": [result.safe_payload() for result in candidate_results],
         "artifact_policy": _artifact_policy(),
         "reporting": _reporting_payload(),
@@ -1178,12 +1610,18 @@ def _input_unavailable_payload(
     *,
     precommit_hash: str,
     review_status: str,
+    reason: str = "no_complete_all_symbol_post_boundary_t_plus_2_window",
 ) -> dict[str, object]:
+    if reason not in {
+        "no_complete_all_symbol_post_boundary_t_plus_2_window",
+        "no_unconsumed_complete_all_symbol_post_boundary_t_plus_2_window",
+    }:
+        raise ValueError("NAS D1 prospective input-unavailable reason is invalid")
     return {
         "schema_version": SCHEMA_VERSION,
         "kind": "kis_nas_d1_volatility_trend_prospective_observation",
         "status": "input_unavailable",
-        "reason": "no_complete_all_symbol_post_boundary_t_plus_2_window",
+        "reason": reason,
         "precommit_hash": precommit_hash,
         "review_status": review_status,
         "frozen": _frozen_payload(observation_input),
@@ -1253,6 +1691,40 @@ def _reporting_payload() -> dict[str, object]:
     }
 
 
+def write_kis_nas_d1_volatility_trend_prospective_recovery_receipt(
+    *,
+    artifact_root: Path | str,
+    run_label: str,
+    repo_root: Path | str | None = None,
+) -> Path:
+    """Persist one credential-free forward-cache recovery receipt outside Git."""
+
+    repository = _repository_root(repo_root)
+    output_dir = _prepare_output_dir(
+        artifact_root=artifact_root,
+        repository=repository,
+        run_label=run_label,
+    )
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "kind": "kis_nas_d1_volatility_trend_prospective_observation",
+        "status": "input_unavailable",
+        "reason": "forward_cache_unavailable_or_invalid",
+        "recovery": {
+            "stage": "forward_cache_reattest",
+            "retryable": True,
+            "exception_detail_retained": False,
+            "source_local_only": True,
+        },
+        "artifact_policy": _artifact_policy(),
+        "reporting": _reporting_payload(),
+    }
+    _assert_source_safe(payload)
+    receipt_path = output_dir / "input_unavailable.json"
+    _write_json_new(receipt_path, payload)
+    return receipt_path
+
+
 def _prepare_output_dir(*, artifact_root: Path | str, repository: Path, run_label: str) -> Path:
     _validate_run_label(run_label)
     root = Path(artifact_root).absolute()
@@ -1312,9 +1784,13 @@ def _reject_link_or_junction_components(path: Path) -> None:
         if part == candidate.anchor:
             continue
         current /= part
-        is_junction = getattr(current, "is_junction", None)
-        if current.is_symlink() or (callable(is_junction) and is_junction()):
+        if _is_link_or_junction(current):
             raise ValueError("NAS D1 prospective artifact path cannot contain a link")
+
+
+def _is_link_or_junction(path: Path) -> bool:
+    is_junction = getattr(path, "is_junction", None)
+    return path.is_symlink() or (callable(is_junction) and is_junction())
 
 
 def _write_json_new(path: Path, payload: Mapping[str, object]) -> str:

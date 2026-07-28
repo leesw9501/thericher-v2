@@ -298,8 +298,8 @@ D:\market_data\us_equities\kis_paper_private\daily-nas-forward\v1
 D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1
 ```
 
-Run its dedicated Data-only profile without overriding the canonical container
-roots:
+The direct collector is credentialed and should be used only for a bounded
+Data-owned recovery or probe:
 
 ```powershell
 docker compose --profile kis-paper-daily-nas-forward run --rm --no-deps `
@@ -313,14 +313,41 @@ live, model, or GPU surface. The collector retains only prior completed D1 rows
 strictly after the frozen boundary and never merges them into the historical
 panel.
 
+The installed `thericher-kis-paper-daily-nas-forward` task invokes
+`scripts\run_kis_paper_daily_nas_forward_schedule.ps1` at 06:40 KST on
+Tuesday through Saturday. It first runs the credential-free preflight. A
+current verified cache runs the network-disabled observer; exit `10` runs the
+collector once, and only a complete collector result runs the observer. A
+`partial` or `deferred` collection returns recovery exit `20`, so stale or
+incomplete cache data cannot be observed as a new result. An invalid observer
+cache also returns `20` after writing its source-safe recovery receipt.
+
+The observer has no KIS credentials or network route, mounts market data
+read-only, and runs the frozen consumer only when exactly three all-six common
+post-boundary sessions exist. Below that threshold it writes a completed
+external `input_unavailable` receipt. It does not select, tune, rank, ensemble,
+promote, submit, or modify anything.
+
+Install or refresh the task normally with:
+
+```powershell
+.\scripts\install_kis_paper_schedules.ps1 `
+  -ScheduleName thericher-kis-paper-daily-nas-forward
+```
+
+That rebuilds its three images before updating the task. During a bounded
+installer recovery after those exact images have already been verified,
+`-SkipImageBuild` reattests each Compose image before registering the task; it
+does not bypass image existence checks.
+
 Every successful page advances the target's source-safe accepted-page count. An
 exact duplicate leaves the raw snapshot bytes unchanged. Transient transport,
 authentication, rate, or reconciliation failures are target-local `deferred`
 recovery, not `source_limited`; a global cache-integrity failure emits a
 source-safe `reconcile` receipt. The cache's all-six common-session count and
 the three-session prospective consumer status are distinct facts. Do not wait in
-the foreground for a future session; let an owned future invocation collect it
-while other ready work continues.
+the foreground for a future session; let the owned task collect it while other
+ready work continues.
 
 ## KIS Daily Event Sidecar
 

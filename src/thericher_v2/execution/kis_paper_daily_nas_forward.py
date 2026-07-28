@@ -60,7 +60,7 @@ def collect_kis_paper_daily_nas_forward_once(
     if type(frozen_boundary) is not date:
         raise ValueError("NAS forward boundary is invalid")
     observed = _require_utc(observed_at or datetime.now(UTC))
-    eligible_through = _latest_prior_us_equity_session(observed)
+    eligible_through = latest_completed_us_equity_d1_session(observed)
     if eligible_through is None:
         return commit_kis_paper_daily_nas_forward_observation(
             rows_by_symbol={symbol: () for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS},
@@ -71,7 +71,7 @@ def collect_kis_paper_daily_nas_forward_once(
             observed_at=observed,
         )
 
-    anchor = observed.astimezone(US_EQUITY_EASTERN).strftime("%Y%m%d")
+    anchor = eligible_through.strftime("%Y%m%d")
     rows_by_symbol: dict[str, tuple[KisPaperDailyNasForwardRow, ...]] = {}
     failures: dict[str, str] = {}
     for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
@@ -130,14 +130,17 @@ def _completed_forward_rows(
     return tuple(by_session[session] for session in sorted(by_session))
 
 
-def _latest_prior_us_equity_session(observed_at: datetime) -> date | None:
-    current_eastern_date = _require_utc(observed_at).astimezone(US_EQUITY_EASTERN).date()
-    for offset in range(1, 8):
+def latest_completed_us_equity_d1_session(observed_at: datetime) -> date | None:
+    """Return the latest 2026 US equity session whose actual close has passed."""
+
+    observed = _require_utc(observed_at)
+    current_eastern_date = observed.astimezone(US_EQUITY_EASTERN).date()
+    for offset in range(0, 8):
         try:
             session = us_equity_2026_session(current_eastern_date - timedelta(days=offset))
         except ValueError:
             return None
-        if session is not None:
+        if session is not None and session.window.close_ts <= observed:
             return session.session_date
     return None
 

@@ -2,7 +2,8 @@
 param(
     [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
     [string[]]$ScheduleName = @(),
-    [switch]$RequireExisting
+    [switch]$RequireExisting,
+    [switch]$SkipImageBuild
 )
 
 $ErrorActionPreference = "Stop"
@@ -36,6 +37,16 @@ function New-LocalDockerTaskSettings {
     return New-ScheduledTaskSettingsSet @settingsArguments
 }
 
+function Assert-KoreaStandardTime {
+    $localTimeZone = [System.TimeZoneInfo]::Local
+    if (
+        $localTimeZone.Id -ne "Korea Standard Time" `
+            -or $localTimeZone.BaseUtcOffset -ne [TimeSpan]::FromHours(9)
+    ) {
+        throw "The NAS D1 forward schedule requires the host time zone Korea Standard Time."
+    }
+}
+
 function Build-LocalDockerScheduleImages {
     param(
         [Parameter(Mandatory = $true)]
@@ -54,6 +65,36 @@ function Build-LocalDockerScheduleImages {
             build @services
         if ($LASTEXITCODE -ne 0) {
             throw "Docker image build failed for scheduled task: $($schedule.Name)"
+        }
+    }
+}
+
+function Assert-LocalDockerScheduleImages {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ProjectRoot,
+        [Parameter(Mandatory = $true)]
+        [hashtable[]]$Schedules
+    )
+
+    foreach ($schedule in $Schedules) {
+        $services = @($schedule.ImageServices)
+        if ($services.Count -eq 0) {
+            continue
+        }
+        $images = @(
+            & docker.exe compose --project-directory $ProjectRoot --profile $schedule.Profile `
+                config --images @services
+        )
+        $imageExitCode = [int]$LASTEXITCODE
+        if ($imageExitCode -ne 0 -or $images.Count -ne $services.Count) {
+            throw "Unable to verify scheduled Docker images for task: $($schedule.Name)"
+        }
+        foreach ($image in $images) {
+            & docker.exe image inspect $image | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                throw "Required scheduled Docker image is missing for task: $($schedule.Name)"
+            }
         }
     }
 }
@@ -116,6 +157,20 @@ $schedules = @(
         ExecutionLimitMinutes = 90
     },
     @{
+        Name = "thericher-kis-paper-daily-nas-forward"
+        Profile = "kis-paper-daily-nas-forward"
+        Service = "kis-paper-daily-nas-forward"
+        Runner = "run_kis_paper_daily_nas_forward_schedule.ps1"
+        ImageServices = @(
+            "kis-paper-daily-nas-forward-preflight",
+            "kis-paper-daily-nas-forward",
+            "kis-paper-daily-nas-forward-observation"
+        )
+        At = "06:40"
+        RecoverMissedRun = $true
+        ExecutionLimitMinutes = 90
+    },
+    @{
         Name = "thericher-kis-paper-daily-backfill"
         Profile = "kis-paper-daily-backfill"
         Service = "kis-paper-daily-backfill"
@@ -152,9 +207,16 @@ if ($RequireExisting) {
     }
 }
 
+if ($selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward") {
+    Assert-KoreaStandardTime
+}
+
 Write-Host "Installing local Docker schedules for: $($selectedSchedules.Name -join ', ')"
 
-if ($PSCmdlet.ShouldProcess($resolvedProjectRoot, "build scheduled Docker service images")) {
+if ($SkipImageBuild) {
+    Assert-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot -Schedules $selectedSchedules
+    Write-Host "Using verified existing schedule images."
+} elseif ($PSCmdlet.ShouldProcess($resolvedProjectRoot, "build scheduled Docker service images")) {
     Build-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot -Schedules $selectedSchedules
 }
 

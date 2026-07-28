@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from datetime import UTC, date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pytest
 
@@ -16,6 +17,7 @@ from thericher_v2.execution.kis_market_data import (
 )
 from thericher_v2.execution.kis_paper_daily_nas_forward import (
     collect_kis_paper_daily_nas_forward_once,
+    latest_completed_us_equity_d1_session,
 )
 
 
@@ -36,9 +38,11 @@ def test_collects_only_prior_completed_rows_for_exact_fixed_nas_scope(tmp_path: 
     assert all(query.exchange == "NAS" for query in client.queries)
     assert all(query.continuation is None for query in client.queries)
     assert all(
-        tuple(row.session_date for row in run.cache.rows_by_symbol[symbol]) == (date(2026, 7, 27),)
+        tuple(row.session_date for row in run.cache.rows_by_symbol[symbol])
+        == (date(2026, 7, 27), date(2026, 7, 28))
         for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
     )
+    assert {query.by_date for query in client.queries} == {"20260728"}
     payload = run.safe_payload()
     assert payload["route_isolation"] == {
         "daily_market_data_only": True,
@@ -90,6 +94,29 @@ def test_unknown_fetch_failure_is_sanitized_to_safe_reason(tmp_path: Path) -> No
         run.cache.targets_by_key["AAPL/NAS"].last_reason
         == "unexpected_private_daily_collector_error"
     )
+
+
+def test_latest_completed_session_uses_actual_regular_and_early_close_times() -> None:
+    korea = ZoneInfo("Asia/Seoul")
+
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 7, 27, 19, 59, tzinfo=UTC)
+    ) == date(2026, 7, 24)
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 7, 27, 20, 0, tzinfo=UTC)
+    ) == date(2026, 7, 27)
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 11, 27, 17, 59, tzinfo=UTC)
+    ) == date(2026, 11, 25)
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 11, 27, 18, 0, tzinfo=UTC)
+    ) == date(2026, 11, 27)
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 7, 28, 6, 40, tzinfo=korea).astimezone(UTC)
+    ) == date(2026, 7, 27)
+    assert latest_completed_us_equity_d1_session(
+        datetime(2026, 1, 6, 6, 40, tzinfo=korea).astimezone(UTC)
+    ) == date(2026, 1, 5)
 
 
 class _Client:

@@ -80,6 +80,11 @@ The cache is a fixed current-listing consumer basket, not a PIT universe,
 ranking, model, or broker input. It has only one common session, so its
 three-session prospective consumer status is `input_unavailable`; that is a
 consumer-local fact, not a collection or company hold.
+Its dedicated scheduled worker is installed for 06:40 KST Tuesday through
+Saturday. It performs a credential-free cache preflight, invokes the one
+credentialed collector only when a completed D1 session is missing, and invokes
+the offline observer only after a current or complete cache result. A
+`partial`/`deferred` collection is recovery exit `20`, not an observer trigger.
 
 ## Current Facts
 
@@ -467,8 +472,8 @@ historical panel.
 The separately stored NAS D1 forward cache is complete for its first observation.
 It currently has one all-six-symbol common session; the read-only
 historical-plus-forward projection is therefore `input_unavailable` with zero
-eligible three-session target slots. The next Data-owned objective may schedule
-or invoke the same bounded profile for later completed sessions, preserving its
-single-client route, source-safe receipts, per-target recovery states, and the
-unchanged frozen panel. Do not turn cache coverage into a PIT universe,
-candidate selection, ranking, or Paper order.
+eligible three-session target slots. The installed 06:40 KST task owns later
+completed-session collection or reattestation, preserving its single-client
+route, source-safe receipts, per-target recovery states, and the unchanged
+frozen panel. Do not turn cache coverage into a PIT universe, candidate
+selection, ranking, or Paper order.

@@ -1,9 +1,9 @@
 """Offline prospective-session metadata for the NAS D1 trend package.
 
-The daily-history panel remains the only owner of raw local rows.  This
-adapter reattests that panel, then exposes only a caller-pinned freshness
-boundary and the exact six-symbol common sessions after it.  It neither fetches
-nor writes data and deliberately retains no bars or price values.
+The frozen daily-history panel remains the owner of historical local rows. This
+adapter can bind that frozen identity to a separately verified, forward-only
+cache projection. It exposes only source-safe provenance and exact six-symbol
+session geometry; it neither fetches nor writes market data.
 """
 
 from __future__ import annotations
@@ -28,6 +28,11 @@ from thericher_v2.data.kis_paper_daily_history_panel import (
     KisPaperDailyHistoryPanelTarget,
     build_kis_paper_daily_history_panel,
 )
+from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
+    KisPaperDailyNasHistoricalForwardProjection,
+    build_kis_paper_daily_nas_historical_forward_projection,
+    load_verified_kis_paper_daily_nas_forward_cache,
+)
 from thericher_v2.data.local import CatalogedBars
 
 KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_INPUT_VERSION = (
@@ -39,6 +44,9 @@ KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_INPUT_ID = (
 
 KisPaperDailyHistoryVolatilityTrendProspectiveStatus = Literal[
     "ready", "input_unavailable"
+]
+KisPaperDailyHistoryVolatilityTrendProspectiveSource = Literal[
+    "historical_panel", "historical_forward_projection"
 ]
 
 KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT = 3
@@ -77,6 +85,9 @@ class KisPaperDailyHistoryVolatilityTrendProspectiveInput:
     source_index_path: Path
     source_targets_by_key: Mapping[str, KisPaperDailyHistoryPanelTarget]
     raw_price_limitations: tuple[str, ...]
+    source_kind: KisPaperDailyHistoryVolatilityTrendProspectiveSource
+    forward_cache_root: Path | None
+    forward_cache_hash: str | None
     frozen_boundary: date
     post_boundary_common_sessions: tuple[date, ...]
     eligible_target_slot_count: int
@@ -117,6 +128,7 @@ class KisPaperDailyHistoryVolatilityTrendProspectiveInput:
             "version": KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_INPUT_VERSION,
             "status": self.status,
             "source": {
+                "kind": self.source_kind,
                 "panel_dataset_id": self.panel_dataset_id,
                 "panel_dataset_hash": self.panel_dataset_hash,
                 "index_hash": self.index_hash,
@@ -140,6 +152,7 @@ class KisPaperDailyHistoryVolatilityTrendProspectiveInput:
                 },
             },
             "limitations": list(self.raw_price_limitations),
+            "forward_cache_sha256": self.forward_cache_hash,
             "prospective_input_hash": self.prospective_input_hash,
             "source_local_only": True,
             "raw_rows_persisted": False,
@@ -152,14 +165,31 @@ def load_kis_paper_daily_history_volatility_trend_prospective_input(
     *,
     frozen_boundary: date,
     cache_root: Path | str = KIS_PAPER_DAILY_HISTORY_CACHE_ROOT,
+    forward_cache_root: Path | str | None = None,
     repo_root: Path | str | None = None,
 ) -> KisPaperDailyHistoryVolatilityTrendProspectiveInput:
-    """Reattest the current local panel before exposing prospective metadata."""
+    """Reattest local frozen and optional forward cache inputs offline."""
 
     panel = build_kis_paper_daily_history_panel(cache_root, repo_root=repo_root)
+    if forward_cache_root is None:
+        return build_kis_paper_daily_history_volatility_trend_prospective_input(
+            panel,
+            frozen_boundary=frozen_boundary,
+        )
+    forward_cache = load_verified_kis_paper_daily_nas_forward_cache(
+        cache_root=forward_cache_root,
+        repo_root=repo_root,
+    )
+    projection = build_kis_paper_daily_nas_historical_forward_projection(
+        frozen_panel=panel,
+        forward_cache=forward_cache,
+        frozen_boundary=frozen_boundary,
+    )
     return build_kis_paper_daily_history_volatility_trend_prospective_input(
         panel,
         frozen_boundary=frozen_boundary,
+        historical_forward_projection=projection,
+        forward_cache_root=forward_cache_root,
     )
 
 
@@ -167,18 +197,37 @@ def build_kis_paper_daily_history_volatility_trend_prospective_input(
     panel: KisPaperDailyHistoryPanel,
     *,
     frozen_boundary: date,
+    historical_forward_projection: KisPaperDailyNasHistoricalForwardProjection | None = None,
+    forward_cache_root: Path | str | None = None,
 ) -> KisPaperDailyHistoryVolatilityTrendProspectiveInput:
-    """Project one already reattested panel to exact post-boundary availability."""
+    """Bind a frozen panel to legacy or verified-forward session availability."""
 
     _require_date(frozen_boundary, "frozen boundary")
     _validate_panel(panel)
-    post_boundary_common_sessions = tuple(
-        session for session in panel.common_sessions if session > frozen_boundary
-    )
-    eligible_target_slot_count = (
-        len(post_boundary_common_sessions)
-        // KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT
-    )
+    if (historical_forward_projection is None) != (forward_cache_root is None):
+        raise ValueError("NAS D1 prospective forward source is incomplete")
+    if historical_forward_projection is None:
+        source_kind: KisPaperDailyHistoryVolatilityTrendProspectiveSource = "historical_panel"
+        post_boundary_common_sessions = tuple(
+            session for session in panel.common_sessions if session > frozen_boundary
+        )
+        eligible_target_slot_count = (
+            len(post_boundary_common_sessions)
+            // KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT
+        )
+        normalized_forward_cache_root: Path | None = None
+        forward_cache_hash: str | None = None
+    else:
+        _validate_historical_forward_projection(
+            historical_forward_projection,
+            panel=panel,
+            frozen_boundary=frozen_boundary,
+        )
+        source_kind = "historical_forward_projection"
+        post_boundary_common_sessions = historical_forward_projection.forward_common_sessions
+        eligible_target_slot_count = historical_forward_projection.eligible_target_slot_count
+        normalized_forward_cache_root = Path(forward_cache_root)
+        forward_cache_hash = historical_forward_projection.forward_cache_hash
     status: KisPaperDailyHistoryVolatilityTrendProspectiveStatus = (
         "ready" if eligible_target_slot_count else "input_unavailable"
     )
@@ -199,6 +248,9 @@ def build_kis_paper_daily_history_volatility_trend_prospective_input(
         MappingProxyType(dict(panel.targets_by_key)),
     )
     object.__setattr__(result, "raw_price_limitations", panel.raw_price_limitations)
+    object.__setattr__(result, "source_kind", source_kind)
+    object.__setattr__(result, "forward_cache_root", normalized_forward_cache_root)
+    object.__setattr__(result, "forward_cache_hash", forward_cache_hash)
     object.__setattr__(result, "frozen_boundary", frozen_boundary)
     object.__setattr__(
         result,
@@ -236,6 +288,22 @@ def require_attested_kis_paper_daily_history_volatility_trend_prospective_input(
         or not _is_sha256(value.index_hash)
         or not _is_sha256(value.prospective_input_hash)
         or value.status not in {"ready", "input_unavailable"}
+        or value.source_kind not in {"historical_panel", "historical_forward_projection"}
+        or (
+            value.forward_cache_root is not None
+            and not isinstance(value.forward_cache_root, Path)
+        )
+        or (
+            value.source_kind == "historical_panel"
+            and (value.forward_cache_root is not None or value.forward_cache_hash is not None)
+        )
+        or (
+            value.source_kind == "historical_forward_projection"
+            and (
+                value.forward_cache_root is None
+                or not _is_sha256(value.forward_cache_hash)
+            )
+        )
     ):
         raise ValueError("NAS D1 prospective input requires an attested panel")
     _require_date(value.frozen_boundary, "frozen boundary")
@@ -334,6 +402,11 @@ def _input_hash(value: KisPaperDailyHistoryVolatilityTrendProspectiveInput) -> s
                 for target in value.source_targets_by_key.values()
             ],
             "raw_price_limitations": list(value.raw_price_limitations),
+            "source_kind": value.source_kind,
+            "forward_cache_root": (
+                str(value.forward_cache_root) if value.forward_cache_root is not None else None
+            ),
+            "forward_cache_hash": value.forward_cache_hash,
             "frozen_boundary": value.frozen_boundary.isoformat(),
             "post_boundary_common_sessions": [
                 session.isoformat() for session in value.post_boundary_common_sessions
@@ -342,6 +415,29 @@ def _input_hash(value: KisPaperDailyHistoryVolatilityTrendProspectiveInput) -> s
             "status": value.status,
         }
     )
+
+
+def _validate_historical_forward_projection(
+    projection: object,
+    *,
+    panel: KisPaperDailyHistoryPanel,
+    frozen_boundary: date,
+) -> None:
+    if (
+        not isinstance(projection, KisPaperDailyNasHistoricalForwardProjection)
+        or projection.frozen_panel_hash != panel.dataset_hash
+        or projection.frozen_boundary != frozen_boundary
+        or tuple(projection.context_by_symbol) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        or tuple(projection.forward_by_symbol) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        or any(
+            session <= frozen_boundary for session in projection.forward_common_sessions
+        )
+        or projection.eligible_target_slot_count
+        != len(projection.forward_common_sessions)
+        // KIS_PAPER_DAILY_HISTORY_VOLATILITY_TREND_PROSPECTIVE_TARGET_SLOT_SESSION_COUNT
+        or (projection.status == "ready") != bool(projection.eligible_target_slot_count)
+    ):
+        raise ValueError("NAS D1 prospective forward projection is invalid")
 
 
 def _target_state_payload(target: KisPaperDailyHistoryPanelTarget) -> dict[str, object]:

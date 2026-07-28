@@ -52,7 +52,12 @@ second goal.
   complete for that observation only. Data has now materialized a distinct
   forward cache with one common all-six-symbol post-boundary session. Its
   read-only projection remains `input_unavailable` until it yields the exact
-  three-session consumer window; Research has no eligible GPU replay yet.
+  three-session consumer window; Research has no eligible GPU replay yet. The
+  installed 06:40 KST forward task runs a credential-free preflight, the
+  collector only when current D1 data is absent, and the network-disabled
+  observer only after a complete/current cache. Its host smoke and CUDA runtime
+  probe succeeded; partial/deferred collection or invalid cache returns recovery
+  rather than a false observation.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -115,6 +120,9 @@ non-promoting work.
 
 - The scheduled intraday head owns its 2026-07-29 00:31 KST next collection
   attempt. It is normal lane-owned recovery, not a foreground company wait.
+- The NAS D1 forward task owns its 2026-07-29 06:40 KST next collection or
+  reattestation. Two more all-six common sessions are required only by its
+  prospective consumer; the next company objective does not wait for them.
 - Claude CLI OAuth remains expired after the cross-runtime recovery challenge.
   Record `review_unavailable`; no lane foreground-waits on it.
 - The 2026-07-28 volatility/trend pre- and post-evaluation drift-check attempts
@@ -145,7 +153,8 @@ original zero-session result remains immutable. Data has now established a
 separate six-symbol NAS D1 forward cache without mutating frozen historical
 input: its first collection retained one common session and its read-only
 projection correctly remains `input_unavailable`. The next bounded objective
-may maintain that cache on later completed sessions; it must not turn calendar
-waiting into a foreground hold. Do not use either sealed aggregate result or
-cache coverage to choose a candidate, build an ensemble, rank, or create a
-broker order. Keep both sealed result families immutable and non-promoting.
+has an independent Execution owner: reattach the existing local operations
+console to one fresh, sanitized KIS Paper account observation while the forward
+task continues. Do not use either sealed aggregate result or cache coverage to
+choose a candidate, build an ensemble, rank, or create a broker order. Keep both
+sealed result families immutable and non-promoting.

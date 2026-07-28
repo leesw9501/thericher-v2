@@ -6856,3 +6856,32 @@ Reason: forward observations must accumulate without rewriting the historical
 research input, while operational evidence must remain truthful enough to resume
 collection and avoid mistaking an external delay for a data boundary or model
 signal.
+
+## 2026-07-28 - Automate the NAS D1 forward observation chain
+
+Decision: install one KST 06:40 Tuesday-through-Saturday Windows task for the
+fixed NAS D1 forward cache. The task runs a credential-free preflight first. A
+verified current cache goes directly to the network-disabled observer; only
+preflight exit `10` invokes the credentialed six-symbol collector. A collector
+result of `partial` or `deferred`, and an invalid observer cache, returns
+recovery exit `20` and prevents observation. This preserves one bounded
+collector per cache while preventing stale or incomplete input from looking
+like a new prospective result.
+
+The observer container has no KIS credentials, has network disabled, reads D:
+market data read-only, and may use CUDA only for an eligible frozen consumer.
+The actual one-session smoke returned scoped `input_unavailable`; a CUDA probe
+confirmed one PyTorch-visible device but created no model artifact or training
+run. The task was installed only after its exact preflight, collector, and
+observer images were verified. The installer may reattest already-built images
+with `-SkipImageBuild` during bounded installer recovery; normal installation
+still builds them first.
+
+Claude's required scheduler/recovery challenge was attempted without private
+material and returned `review_unavailable` because local OAuth could not
+refresh. Independent review identified and the implementation fixed the
+partial-collection and observer-recovery false-success paths.
+
+Reason: current D1 data should advance automatically without turning calendar
+waiting into an orchestrator hold, and a prospective observation must be
+truthful about its source completeness before it can inform any later research.
