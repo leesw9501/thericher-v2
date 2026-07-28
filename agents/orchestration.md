@@ -89,8 +89,9 @@ second goal.
 
 The bounded QQQ virtual-paper canary and static Norgate D1 development package
 are complete. The broad KIS D1 cache now has a read-only source-local coverage
-panel: 2,119 current-listing targets, 187 targets with retained coverage, 1,932
-at zero, and no quarantined conflict target in panel
+panel from its earlier generation-187 checkpoint: 2,119 current-listing
+targets, 187 targets with retained coverage, 1,932 at zero, and no quarantined
+conflict target in panel
 `sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7`.
 The panel intentionally remains non-PIT, unadjusted, corporate-action
 unqualified, session-finality-unattested, and non-training. Research has no
@@ -111,16 +112,16 @@ existing unknown-outcome recovery helper, so that exact intent remains governed
 by its current reconciliation path; no authority or policy changed.
 
 **Current operating improvement:** the broad collector has its own cache/index,
-one client/token per run, breadth-first target selection, and target-local
-source-limit recovery. Its first installed run accepted 288 pages in 148 chunk
-attempts before one local `rate_limited` stop, but the 07:15-20:45 KST trigger
-window leaves a 04:48-to-07:15 restart gap. Claude's 2026-07-29 review is
-`supported-with-limits`: a denser trigger alone cannot raise instantaneous rate
-under the shared gate, but a 300-second period resonates with the 300-second
-fresh-token guard and creates unnecessary receipts. The next bounded Data
-package tests one same-client rate-recovery step and measures accepted pages
-and rate-limit density before changing the trigger policy. `IgnoreNew`, the
-870-minute task limit, storage floor, and fresh-head priority remain unchanged.
+one client/token per run, breadth-first target selection, target-local
+source-limit recovery, and one bounded same-client rate-limit recovery. A
+rebuilt-image 900-second continuation advanced the cache from generation 187 to
+604 with 417 chunks and 818 accepted pages, without a new categorical failure
+or a rate-recovery attempt. The next scheduled run remains 07:15 KST; no
+trigger-density change is justified from one no-limit sample. The material
+bottleneck is now longitudinal data depth: 604 of 2,119 targets have at most
+two pages. The current reversible improvement is an offline byte-stable panel
+snapshot and past-immutability comparison. `IgnoreNew`, the 870-minute task
+limit, storage floor, and fresh-head priority remain unchanged.
 
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`

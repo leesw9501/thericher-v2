@@ -426,13 +426,25 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   no network, credential, broker, or KIS call and does not copy raw rows.
 - The installed owner remains one 14-hour continuation worker at a time. Its
   current 30-minute 07:15-20:45 KST trigger window left a measured restart gap
-  after the 04:42 KST rate-limited run: its local retry fact was 04:48 KST but
-  the next trigger is 07:15 KST. This is an owned throughput issue, not a
-  data-permission or Research hold. The next bounded Data package will test a
-  same-client bounded rate-recovery path before widening trigger density.
+  after the 04:42 KST rate-limited run. The worker now retains its in-memory
+  client for exactly one gate-due recovery inside its existing runtime; a
+  second rate limit, another shared stop, runtime expiry, invalid cache, or
+  storage floor yields to the owner scheduler. The 2026-07-29 rebuilt-image
+  900-second continuation advanced generation 187 to 604 with 417 chunks and
+  818 accepted pages, zero new categorical failures, and no recovery attempt
+  needed. Its receipt is
+  `sha256:598ef0cd59385024b364b34bb09eaa49310e7ab4a795945288aef5cba6762c70`.
+  This is one sustained-progress sample, not a KIS rate-limit conclusion, so
+  trigger density remains unchanged.
+- Current broad coverage is 604 of 2,119 targets (28.50 percent), 1,186
+  accepted pages, one historical categorical failure, and at most two pages
+  per target. It is useful breadth progress but remains shallow, current-
+  listing/non-PIT, unadjusted, corporate-action-unqualified, and non-training.
+  Recovery class: `resume`; the next ready Data package is an offline
+  byte-stable panel snapshot plus past-immutability comparison.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
-  Recovery class: `resume`; remaining page estimate and ETA are `unknown` until
-  a rate-recovery sample provides more accepted-page evidence.
+  Remaining page estimate and ETA remain `unknown` because breadth-first
+  collection has not yet established a stable longitudinal-depth pace.
 
 ## Collection Progress Projection
 

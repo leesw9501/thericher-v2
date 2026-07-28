@@ -794,5 +794,20 @@ dataset `sha256:09de29cfd619b331853dd2e9063315b84e2fb9397e49b238cc565bdf8ec964b7
 187 covered targets, zero quarantined conflicts, and all current-listing,
 non-PIT, unadjusted, corporate-action, and session-finality limitations. It
 did not call KIS or copy raw rows. The current 07:15-20:45 KST continuation
-window left a measured post-rate-limit restart gap; the next bounded objective
-tests same-client rate recovery before changing trigger density.
+window left a measured post-rate-limit restart gap. The collector now permits
+exactly one same-client, gate-due rate recovery within its existing runtime;
+a second rate limit yields back to the existing scheduler. Its source-safe
+receipt records only the recovery count, categorical outcome, and aggregate
+post-recovery accepted-page count.
+
+After rebuilding the Docker image, one 900-second manual continuation advanced
+the cache from generation 187 to 604: 417 chunks accepted 818 pages with zero
+new categorical failures. The external receipt is
+`sha256:598ef0cd59385024b364b34bb09eaa49310e7ab4a795945288aef5cba6762c70`.
+It did not encounter another rate limit, so the new recovery path was not
+needed (`attempt_count: 0`); this is sustained-progress evidence, not proof
+that an actual KIS rate-limit recovery succeeds. The trigger window, one-second
+request-start gate, five-minute fresh-token guard, `IgnoreNew` behavior, and
+source scope remain unchanged. The next bounded package materializes a new
+byte-stable panel snapshot and checks immutable overlapping lineage before any
+research consumer can use the expanded coverage.

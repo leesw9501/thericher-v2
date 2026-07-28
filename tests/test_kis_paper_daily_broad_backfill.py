@@ -260,6 +260,225 @@ def test_rate_retry_yields_without_client_construction_or_foreground_sleep(
     assert sleeps == []
 
 
+def test_rate_limit_recovery_reuses_one_client_and_records_source_safe_progress(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    registry = _registry(tmp_path / "source")
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    clock = _RecoveryClock()
+    request_gate = KisPaperMarketDataRateGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+    )
+    token_gate = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+    )
+    created_clients: list[object] = []
+    attempts: list[str] = []
+
+    def fake_collect(
+        _client: object,
+        *,
+        target: KisPaperPrivateDailyCollectionTarget,
+        **_kwargs: object,
+    ) -> KisPaperPrivateDailyCollectionResult:
+        attempts.append(f"{target.symbol}/{target.exchange}")
+        if len(attempts) == 1:
+            request_gate.record_rate_limit()
+            return _rate_limited_result(target)
+        return _observed_result(target)
+
+    monkeypatch.setattr(
+        broad_contract,
+        "run_bounded_kis_paper_private_daily_collection",
+        fake_collect,
+    )
+    monkeypatch.setattr(
+        broad_contract,
+        "private_daily_cache_would_cross_free_space_floor",
+        lambda **_kwargs: False,
+    )
+
+    artifact_root = tmp_path / "artifacts"
+    run = broad_contract.run_kis_paper_daily_broad_backfill(
+        registry=registry,
+        client_factory=lambda: created_clients.append(object()) or created_clients[-1],
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=tmp_path / "market-data" / "daily-nas-broad",
+        evidence_root=artifact_root,
+        repo_root=repository_root,
+        code_revision="git:test",
+        bootstrap_only=True,
+        max_chunks=2,
+        max_runtime=timedelta(minutes=5),
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+        monotonic_clock=clock.monotonic,
+    )
+
+    receipt = json.loads(
+        next(artifact_root.glob("run=*/receipt.json")).read_text(encoding="utf-8")
+    )
+    assert len(created_clients) == 1
+    assert attempts == list(registry.bootstrap_target_keys[:2])
+    assert clock.sleeps == [60.0]
+    assert run.status == "collected"
+    assert run.rate_limit_recovery_count == 1
+    assert run.rate_limit_recovery_outcome == "resumed"
+    assert run.accepted_page_count_after_rate_limit_recovery == 1
+    assert receipt["outcome"]["rate_limit_recovery"] == {
+        "accepted_page_count_after_recovery": 1,
+        "attempt_count": 1,
+        "outcome": "resumed",
+    }
+    assert receipt["route_isolation"] == {
+        "account_endpoints_used": False,
+        "position_endpoints_used": False,
+        "open_order_endpoints_used": False,
+        "quote_endpoints_used": False,
+        "order_endpoints_used": False,
+        "live_endpoints_used": False,
+    }
+
+
+def test_second_rate_limit_yields_after_one_recovery_without_an_unbounded_loop(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    registry = _registry(tmp_path / "source")
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    clock = _RecoveryClock()
+    request_gate = KisPaperMarketDataRateGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+    )
+    token_gate = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+    )
+    created_clients: list[object] = []
+    attempts: list[str] = []
+
+    def fake_collect(
+        _client: object,
+        *,
+        target: KisPaperPrivateDailyCollectionTarget,
+        **_kwargs: object,
+    ) -> KisPaperPrivateDailyCollectionResult:
+        attempts.append(f"{target.symbol}/{target.exchange}")
+        request_gate.record_rate_limit()
+        return _rate_limited_result(target)
+
+    monkeypatch.setattr(
+        broad_contract,
+        "run_bounded_kis_paper_private_daily_collection",
+        fake_collect,
+    )
+    monkeypatch.setattr(
+        broad_contract,
+        "private_daily_cache_would_cross_free_space_floor",
+        lambda **_kwargs: False,
+    )
+
+    run = broad_contract.run_kis_paper_daily_broad_backfill(
+        registry=registry,
+        client_factory=lambda: created_clients.append(object()) or created_clients[-1],
+        request_gate=request_gate,
+        token_start_gate=token_gate,
+        cache_root=tmp_path / "market-data" / "daily-nas-broad",
+        evidence_root=tmp_path / "artifacts",
+        repo_root=repository_root,
+        code_revision="git:test",
+        bootstrap_only=True,
+        max_chunks=3,
+        max_runtime=timedelta(minutes=5),
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert len(created_clients) == 1
+    assert attempts == list(registry.bootstrap_target_keys[:2])
+    assert clock.sleeps == [60.0]
+    assert run.status == "deferred"
+    assert run.chunk_attempt_count == 2
+    assert run.rate_limit_recovery_count == 1
+    assert run.rate_limit_recovery_outcome == "rate_limited_again"
+    assert run.accepted_page_count_after_rate_limit_recovery == 0
+    assert run.next_due == _OBSERVED_AT + timedelta(seconds=120)
+
+
+def test_rate_limit_yields_when_the_existing_runtime_cannot_cover_one_recovery(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    registry = _registry(tmp_path / "source")
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    clock = _RecoveryClock()
+    request_gate = KisPaperMarketDataRateGate(
+        control_root=tmp_path / "control",
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+    )
+    attempts: list[str] = []
+
+    def fake_collect(
+        _client: object,
+        *,
+        target: KisPaperPrivateDailyCollectionTarget,
+        **_kwargs: object,
+    ) -> KisPaperPrivateDailyCollectionResult:
+        attempts.append(f"{target.symbol}/{target.exchange}")
+        request_gate.record_rate_limit()
+        return _rate_limited_result(target)
+
+    monkeypatch.setattr(
+        broad_contract,
+        "run_bounded_kis_paper_private_daily_collection",
+        fake_collect,
+    )
+    monkeypatch.setattr(
+        broad_contract,
+        "private_daily_cache_would_cross_free_space_floor",
+        lambda **_kwargs: False,
+    )
+
+    run = broad_contract.run_kis_paper_daily_broad_backfill(
+        registry=registry,
+        client_factory=object,
+        request_gate=request_gate,
+        token_start_gate=KisPaperMarketDataTokenStartGate(
+            control_root=tmp_path / "control",
+            clock=clock.utc_now,
+        ),
+        cache_root=tmp_path / "market-data" / "daily-nas-broad",
+        evidence_root=tmp_path / "artifacts",
+        repo_root=repository_root,
+        code_revision="git:test",
+        bootstrap_only=True,
+        max_chunks=2,
+        max_runtime=timedelta(seconds=60),
+        clock=clock.utc_now,
+        sleeper=clock.sleep,
+        monotonic_clock=clock.monotonic,
+    )
+
+    assert attempts == [registry.bootstrap_target_keys[0]]
+    assert clock.sleeps == []
+    assert run.status == "deferred"
+    assert run.rate_limit_recovery_count == 0
+    assert run.rate_limit_recovery_outcome == "runtime_exhausted"
+    assert run.next_due == _OBSERVED_AT + timedelta(seconds=60)
+
+
 def test_storage_floor_blocks_before_client_construction(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -480,6 +699,39 @@ def _rejected_result_with_rows(
             "reason": "daily_response_rejected",
         }
     )
+
+
+def _rate_limited_result(
+    target: KisPaperPrivateDailyCollectionTarget,
+) -> KisPaperPrivateDailyCollectionResult:
+    result = _observed_result(target)
+    return KisPaperPrivateDailyCollectionResult(
+        **{
+            **result.__dict__,
+            "pages": (),
+            "rows": (),
+            "reason": "rate_limited",
+            "status": "rejected",
+        }
+    )
+
+
+class _RecoveryClock:
+    def __init__(self) -> None:
+        self._now = _OBSERVED_AT
+        self._monotonic = 0.0
+        self.sleeps: list[float] = []
+
+    def utc_now(self) -> datetime:
+        return self._now
+
+    def monotonic(self) -> float:
+        return self._monotonic
+
+    def sleep(self, seconds: float) -> None:
+        self.sleeps.append(seconds)
+        self._now += timedelta(seconds=seconds)
+        self._monotonic += seconds
 
 
 def _request_gate(tmp_path: Path) -> KisPaperMarketDataRateGate:

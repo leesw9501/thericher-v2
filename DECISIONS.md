@@ -7031,3 +7031,27 @@ as collection advances.
 Reason: a current mutable collector can safely supply a frozen local consumer
 only when its source identity and limitations remain explicit, retryable, and
 independent from collection progress.
+
+## 2026-07-29 - Bound broad KIS D1 rate-limit recovery to one same client
+
+Decision: after the broad KIS Paper `dailyprice` worker receives a
+`rate_limited` result, it retains the one in-memory client/token and waits only
+until the existing shared request gate is due once, inside the worker's existing
+runtime. It then resumes normal breadth-first target selection. A second rate
+limit, another shared stop, expired runtime, invalid cache, or storage floor
+yields to the existing owner scheduler. The source-safe receipt carries only
+the recovery attempt count, categorical outcome, and aggregate pages accepted
+after recovery. The request-start pace, token-start guard, source scope,
+trigger window, and duplicate-worker policy do not change.
+
+Focused deterministic tests prove single-client reuse, one bounded worker wait,
+second-rate yield, source-safe receipt contents, and the absence of account,
+order, or live routes. A rebuilt-image 900-second real continuation accepted
+818 pages over 417 chunks with zero new categorical failures; it did not
+encounter a rate limit, so its recovery count was zero. That is sustained
+progress evidence only, not a claim that KIS rate recovery has been proven or a
+reason to widen the scheduler.
+
+Reason: the prior off-window rate-limit result left a real restart gap. A single
+measured recovery removes that avoidable gap without creating a request flood,
+unbounded retry loop, new broker surface, or scheduler platform.

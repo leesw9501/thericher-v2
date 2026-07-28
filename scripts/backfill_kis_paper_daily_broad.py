@@ -211,6 +211,11 @@ def _run_payload(result: KisPaperDailyBroadBackfillRun) -> dict[str, object]:
         "chunk_attempt_count": result.chunk_attempt_count,
         "accepted_page_count": result.accepted_page_count,
         "categorical_failure_count": result.categorical_failure_count,
+        "rate_limit_recovery_count": result.rate_limit_recovery_count,
+        "rate_limit_recovery_outcome": result.rate_limit_recovery_outcome,
+        "accepted_page_count_after_rate_limit_recovery": (
+            result.accepted_page_count_after_rate_limit_recovery
+        ),
         "remaining_target_count": result.remaining_target_count,
         "next_due_utc": (
             None if result.next_due is None else result.next_due.isoformat().replace("+00:00", "Z")

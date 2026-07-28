@@ -328,9 +328,13 @@ validates every committed snapshot before consuming it. It keeps target-local
 cursors and progression externally. Breadth-first continuation chooses targets
 with fewer accepted pages before a deeper target. Two identical source-invalid
 responses close only that target as `source_limited`; shared rate/auth/token
-conditions remain deferred. Known rate/token retry due times yield before a
-client is constructed, so a worker does not foreground-sleep through a long
-cooldown.
+conditions remain deferred. A `rate_limited` response from an already active
+client gets exactly one gate-due recovery within that worker's existing runtime;
+the same client/token is retained, the next normal target selection resumes,
+and a second rate limit yields to the owner scheduler. Known retry due times at
+worker start, auth/token stops, runtime expiry, and storage-floor conditions
+still yield without client construction. This recovery does not change the
+one-second request-start gate or turn Codex into a foreground sleeper.
 
 Install the continuation owner only after a successful bootstrap:
 

@@ -59,6 +59,7 @@ KIS_PAPER_DAILY_BROAD_BACKFILL_EVIDENCE_ROOT = Path(
 KIS_PAPER_DAILY_BROAD_BACKFILL_INDEX_FILENAME = "index.json"
 KIS_PAPER_DAILY_BROAD_BACKFILL_LOCK_FILENAME = "worker.lock"
 KIS_PAPER_DAILY_BROAD_BACKFILL_RETRY_DELAY = timedelta(minutes=2)
+KIS_PAPER_DAILY_BROAD_BACKFILL_MAX_RATE_LIMIT_RECOVERIES = 1
 
 _TARGET_STATES = frozenset({"ready", "deferred", "source_limited", "complete"})
 _TERMINAL_STATES = frozenset({"source_limited", "complete"})
@@ -136,6 +137,11 @@ class KisPaperDailyBroadBackfillRun:
     remaining_target_count: int
     next_due: datetime | None
     recovery: Literal["resume", "reconcile", "complete"]
+    rate_limit_recovery_count: int = 0
+    rate_limit_recovery_outcome: Literal[
+        "not_needed", "resumed", "runtime_exhausted", "rate_limited_again"
+    ] = "not_needed"
+    accepted_page_count_after_rate_limit_recovery: int = 0
     evidence_sha256: str | None = None
     schema_version: int = SCHEMA_VERSION
 
@@ -159,6 +165,29 @@ class KisPaperDailyBroadBackfillRun:
             or self.categorical_failure_count < 0
             or self.remaining_target_count < 0
             or self.recovery not in {"resume", "reconcile", "complete"}
+            or type(self.rate_limit_recovery_count) is not int
+            or not 0
+            <= self.rate_limit_recovery_count
+            <= KIS_PAPER_DAILY_BROAD_BACKFILL_MAX_RATE_LIMIT_RECOVERIES
+            or self.rate_limit_recovery_outcome
+            not in {
+                "not_needed",
+                "resumed",
+                "runtime_exhausted",
+                "rate_limited_again",
+            }
+            or type(self.accepted_page_count_after_rate_limit_recovery) is not int
+            or self.accepted_page_count_after_rate_limit_recovery < 0
+            or self.accepted_page_count_after_rate_limit_recovery > self.accepted_page_count
+            or (
+                self.rate_limit_recovery_count == 0
+                and self.rate_limit_recovery_outcome
+                not in {"not_needed", "runtime_exhausted"}
+            )
+            or (
+                self.rate_limit_recovery_count > 0
+                and self.rate_limit_recovery_outcome == "not_needed"
+            )
         ):
             raise ValueError("broad daily backfill run is invalid")
         if self.next_due is not None:
@@ -192,6 +221,13 @@ class KisPaperDailyBroadBackfillRun:
                 "categorical_failure_count": self.categorical_failure_count,
                 "remaining_target_count": self.remaining_target_count,
                 "next_due_utc": None if self.next_due is None else _format_utc(self.next_due),
+                "rate_limit_recovery": {
+                    "attempt_count": self.rate_limit_recovery_count,
+                    "outcome": self.rate_limit_recovery_outcome,
+                    "accepted_page_count_after_recovery": (
+                        self.accepted_page_count_after_rate_limit_recovery
+                    ),
+                },
             },
             "targets": [state.source_safe_document() for state in self.target_states],
             "route_isolation": {
@@ -294,6 +330,12 @@ def run_kis_paper_daily_broad_backfill(
         chunk_attempt_count = 0
         start_monotonic = monotonic_clock()
         next_due: datetime | None = None
+        rate_limit_recovery_count = 0
+        rate_limit_recovery_outcome: Literal[
+            "not_needed", "resumed", "runtime_exhausted", "rate_limited_again"
+        ] = "not_needed"
+        accepted_page_count_before_rate_limit_recovery = 0
+        rate_limit_recovery_pending = False
         status: Literal["collected", "complete", "deferred", "storage_floor_would_be_crossed"] = (
             "deferred"
         )
@@ -308,6 +350,21 @@ def run_kis_paper_daily_broad_backfill(
                 token_required=active_client is None,
             )
             if external_due is not None and external_due > require_utc(clock(), "clock"):
+                if rate_limit_recovery_pending and active_client is not None:
+                    if _wait_for_rate_limit_recovery(
+                        retry_due=external_due,
+                        max_runtime=max_runtime,
+                        start_monotonic=start_monotonic,
+                        clock=clock,
+                        sleeper=sleeper,
+                        monotonic_clock=monotonic_clock,
+                    ):
+                        rate_limit_recovery_count += 1
+                        rate_limit_recovery_pending = False
+                        rate_limit_recovery_outcome = "resumed"
+                        accepted_page_count_before_rate_limit_recovery = accepted_page_count
+                        continue
+                    rate_limit_recovery_outcome = "runtime_exhausted"
                 next_due = external_due
                 status = "collected" if accepted_page_count else "deferred"
                 break
@@ -366,6 +423,14 @@ def run_kis_paper_daily_broad_backfill(
                     observed_at=require_utc(clock(), "clock"),
                 )
                 _write_index(root=root, index=index, registry=registry)
+                if result.reason == "rate_limited":
+                    if (
+                        rate_limit_recovery_count
+                        < KIS_PAPER_DAILY_BROAD_BACKFILL_MAX_RATE_LIMIT_RECOVERIES
+                    ):
+                        rate_limit_recovery_pending = True
+                        continue
+                    rate_limit_recovery_outcome = "rate_limited_again"
                 if result.reason in _SHARED_STOP_REASONS:
                     next_due = _next_due(request_gate, token_start_gate, token_required=True)
                     status = "collected" if accepted_page_count else "deferred"
@@ -394,6 +459,14 @@ def run_kis_paper_daily_broad_backfill(
                 observed_at=require_utc(clock(), "clock"),
             )
             _write_index(root=root, index=index, registry=registry)
+            if result.reason == "rate_limited":
+                if (
+                    rate_limit_recovery_count
+                    < KIS_PAPER_DAILY_BROAD_BACKFILL_MAX_RATE_LIMIT_RECOVERIES
+                ):
+                    rate_limit_recovery_pending = True
+                    continue
+                rate_limit_recovery_outcome = "rate_limited_again"
             if result.reason in _SHARED_STOP_REASONS:
                 next_due = _next_due(request_gate, token_start_gate, token_required=True)
                 status = "collected" if accepted_page_count else "deferred"
@@ -412,6 +485,13 @@ def run_kis_paper_daily_broad_backfill(
             chunk_attempt_count=chunk_attempt_count,
             accepted_page_count=accepted_page_count,
             categorical_failure_count=categorical_failure_count,
+            rate_limit_recovery_count=rate_limit_recovery_count,
+            rate_limit_recovery_outcome=rate_limit_recovery_outcome,
+            accepted_page_count_after_rate_limit_recovery=(
+                accepted_page_count - accepted_page_count_before_rate_limit_recovery
+                if rate_limit_recovery_count
+                else 0
+            ),
             next_due=_future_due(
                 next_due
                 or _next_due(
@@ -1027,6 +1107,11 @@ def _build_run(
     accepted_page_count: int,
     categorical_failure_count: int,
     next_due: datetime | None,
+    rate_limit_recovery_count: int = 0,
+    rate_limit_recovery_outcome: Literal[
+        "not_needed", "resumed", "runtime_exhausted", "rate_limited_again"
+    ] = "not_needed",
+    accepted_page_count_after_rate_limit_recovery: int = 0,
 ) -> KisPaperDailyBroadBackfillRun:
     targets = tuple(
         KisPaperDailyBroadTargetState(
@@ -1055,6 +1140,11 @@ def _build_run(
         recovery="complete" if status == "complete" else "reconcile" if any(
             state.state == "deferred" for state in targets
         ) else "resume",
+        rate_limit_recovery_count=rate_limit_recovery_count,
+        rate_limit_recovery_outcome=rate_limit_recovery_outcome,
+        accepted_page_count_after_rate_limit_recovery=(
+            accepted_page_count_after_rate_limit_recovery
+        ),
     )
 
 
@@ -1097,6 +1187,27 @@ def _external_retry_due(
     )
     candidates = [value for value in (request_retry, token_retry) if value is not None]
     return max(candidates) if candidates else None
+
+
+def _wait_for_rate_limit_recovery(
+    *,
+    retry_due: datetime,
+    max_runtime: timedelta,
+    start_monotonic: float,
+    clock: Callable[[], datetime],
+    sleeper: Callable[[float], None],
+    monotonic_clock: Callable[[], float],
+) -> bool:
+    """Wait once in the owned worker without reserving another request start."""
+
+    now = require_utc(clock(), "clock")
+    delay_seconds = max((retry_due - now).total_seconds(), 0.0)
+    remaining_seconds = max_runtime.total_seconds() - (monotonic_clock() - start_monotonic)
+    if delay_seconds >= remaining_seconds:
+        return False
+    if delay_seconds > 0:
+        sleeper(delay_seconds)
+    return True
 
 
 def _next_due(
