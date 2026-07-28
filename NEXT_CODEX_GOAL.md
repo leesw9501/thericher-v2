@@ -2,66 +2,77 @@
 
 ## Objective
 
-Freeze and CPU-smoke one distinct KIS-compatible QQQ/SPY D1
-overnight-versus-intraday state hypothesis while the broad KIS D1 collector
-continues independently.
+Create the first source-separated KIS Paper QQQ/SPY D1 forward-validation
+cache while the broad KIS D1 collector continues independently.
 
-Use only the existing fixed source-local QQQ/SPY daily-history pair and its
-already recorded 4,756-session coverage. This is a new causal hypothesis, not
-a retune or relabel of the closed linear, compact-GRU, tree, CACC, ETF trend,
-relative-regime, relative-allocation, sealed NAS, or volatility-conditioned
-candidate families.
+The cache exists to accumulate an untouched out-of-time daily stream for later
+research. It is a Data product, not a strategy, model score, ranking, Paper
+trade signal, or broker action.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattach only existing source-safe fixed-pair lineage, split, and cost facts.
-   Do not print market rows, returns, labels, credentials, account identifiers,
+2. Reattach the fixed QQQ/SPY daily-source lineage and the existing broad D1
+   scheduler state without printing rows, prices, credentials, account facts,
    or broker bodies.
-3. Ask Claude for a concise falsification-first review before freezing the
-   hypothesis contract. State its causal timestamps, naive comparators, cost
-   model, split, leakage/survivorship checks, and strongest kill test.
+3. Ask Claude for a concise falsification-first drift check before changing a
+   collector or installing a schedule. State the source scope, current-session
+   exclusion, duplicate/recovery behavior, interaction with the broad worker,
+   and the fact that would reverse the design.
 
 ## Authority And Boundaries
 
-- This is offline Engine Research and temporary Validation work. Do not read
-  `.env`, call KIS, submit/modify/cancel orders, access account/position/quote
-  routes, enable live behavior, or expose a dashboard.
-- Use only KIS-compatible daily OHLCV-derived fields available from the fixed
-  pair. Do not blend Norgate, Tiingo, rankings, current-listing broad-panel
-  membership, news, or unavailable higher-frequency data.
-- Freeze the chronological split, after-cost long-versus-flat target, feature
-  timestamps, normalizer fit range, and comparators before the CPU run. No
-  threshold sweep, ensemble, model selection, Paper action, or GPU depth run
-  belongs to this objective.
-- Keep all generated artifacts under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`, never Git.
-- The broad collector and its scheduler remain independent. Its incomplete
-  current-listing panel is not a research input or a reason to hold this goal.
+- `KIS_PAPER_*` may be used only by the owned Data market-data path for this
+  exact QQQ/NAS and SPY/AMS daily scope. Do not read or route `KIS_LIVE_*`.
+- Do not call account, position, quote, order, modify, cancel, or live routes.
+- Store cache bytes only under `D:\market_data`; store source-safe receipts only
+  under `D:\thericher-v2\model-artifacts`; do not persist secrets or raw rows
+  in Git, logs, stateboards, or Claude prompts.
+- Retain only completed daily sessions. Exclude a current/incomplete US session
+  from the forward stream rather than substituting another provider or a prior
+  history row.
+- Preserve a separate forward-cache identity. Do not blend it into the fixed
+  historical QQQ/SPY catalog, the NAS forward cache, Norgate data, Tiingo data,
+  or the non-PIT broad current-listing panel.
+- Keep one owned collector per cache and honor the shared KIS request gate.
+  The new forward schedule must neither create a parallel request flood nor
+  block the existing broad collector; fresh collection may take its documented
+  priority only through the shared dispatcher.
+- No model, GPU training, full validation, ensemble, Paper intent, dashboard,
+  or performance claim belongs to this objective.
 
 ## Work
 
-1. **Engine Research:** define one explicit overnight-versus-intraday state
-   feature/target/split/cost contract using the fixed QQQ/SPY D1 source only.
-   Make the feature values reconstructible from KIS daily OHLCV fields.
-2. **Validation:** add focused causal/leakage and source-isolation tests plus
-   a naive flat, always-long, and previous-bar-direction comparison contract.
-3. **Engine Research:** run one bounded Docker CPU smoke only after the frozen
-   contract validates. Store source-safe aggregate artifacts externally.
-4. **Validation:** independently reattest the CPU artifact and reject any
-   leakage, split, provenance, or route-isolation violation. A failed or weak
-   result closes only this candidate.
-5. Refresh stateboards, replace this file with exactly one next objective, then
-   continue. A later GPU objective requires this exact CPU evidence; do not
-   preempt it merely to raise utilization.
+1. **Data:** inspect the existing forward-cache collector and schedule pattern;
+   reuse or narrowly generalize it instead of creating a parallel framework.
+2. **Data:** implement a two-target QQQ/NAS + SPY/AMS forward cache with exact
+   provenance, deduplication, completed-session filtering, source-safe
+   recovery state, and immutable external receipts.
+3. **Data:** install one recoverable goal-owned schedule at a measured
+   post-session time that does not overlap its own collector. It must safely
+   defer when the shared Data dispatcher is occupied and resume at its next due
+   time rather than sleeping the foreground orchestrator.
+4. **Validation:** add focused tests for route isolation, no credential/account
+   access outside the owned collector, current-session exclusion, idempotent
+   duplicate handling, source separation, external artifact placement, and
+   recovery after a deferred/failed target.
+5. **Data:** run an offline/preflight smoke. Run one bounded real KIS Paper
+   market-data collection only if the shared dispatcher is free and the
+   schedule/input is due; otherwise leave its owned next-due recovery state and
+   continue independent work.
+6. Refresh stateboards, replace this file with exactly one next objective, then
+   continue. A later Research consumer may use only the named forward-cache
+   contract after its declared out-of-time depth exists.
 
 ## Completion
 
-- One frozen KIS-compatible causal contract and CPU-only source-safe artifact
-  exist outside Git.
-- Independent Validation records whether the contract/artifact reattests.
-- No broker, credential, KIS network, Paper, live, or GPU work occurred.
+- A source-separated QQQ/SPY D1 forward-cache contract, cache path, and
+  recoverable schedule exist.
+- Focused tests prove cache/recovery and route isolation behavior.
+- A source-safe preflight or eligible first collection receipt exists outside
+  Git; a deferred first collection remains a scoped Data recovery fact.
+- No account, order, live, model, GPU, or Paper action occurred.
 
 ## Verification
 
@@ -74,4 +85,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add KIS-compatible overnight state contract`
+`Add QQQ SPY forward daily cache`

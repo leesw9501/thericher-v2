@@ -608,3 +608,14 @@ completed-session collection or reattestation, preserving its single-client
 route, source-safe receipts, per-target recovery states, and the unchanged
 frozen panel. Do not turn cache coverage into a PIT universe, candidate
 selection, ranking, or Paper order.
+
+The independent broad D1 collector remained active at the 2026-07-29 08:23 KST
+source-safe watermark: mutable generation 2,468 covers all 2,119 current
+NASDAQ targets, with 4,827 accepted pages and 15 categorical failures. The
+breadth pass is complete, while 2,014 targets remain ready for more historical
+depth; 94 are complete and 11 are source-limited for their exact cursors. This
+is an in-flight cache fact only. Preserve the one-worker cache lock and current
+pacing; do not call it a frozen panel, full historical depth, PIT universe, or
+Research input. A forward QQQ/SPY D1 cache is the next separately scoped Data
+package so later research can accrue an untouched out-of-time stream without
+interrupting this collector.

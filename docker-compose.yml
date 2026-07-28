@@ -91,6 +91,33 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-daily-overnight-intraday-state:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-daily-overnight-intraday-state"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_daily_overnight_intraday_state.py
+      - --run-label
+      - docker-cpu-smoke
+      - --cache-root
+      - /app/market_data/us_equities/kis_paper_private/daily
+      - --artifact-root
+      - /app/model_artifacts
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-intraday-observation:
     build:
       context: .

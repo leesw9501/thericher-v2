@@ -367,15 +367,13 @@ limits remain explicit.
     candidate, authorize a Paper action, or create GPU work. Research remains
     ready to observe a later complete common window without tuning, ensembling,
     promoting, ranking, or creating a KIS Paper action.
-11. After the current QQQ Paper canary closes, the next distinct breadth
-    proposal may freeze one QQQ/SPY D1 overnight-versus-intraday state
-    hypothesis. It must use only the existing 4,756-session source-local pair,
-    phase-local 20-session OHLCV sequences, the fixed `3,783 / 22 / 951`
-    chronology, after-cost `t+1` to `t+2` long-versus-flat target, and the
-    fixed flat/always-long/previous-bar-direction comparators. The strict kill
-    rule is that both symbols must beat every comparator after costs. This is
-    a queue proposal only: no contract, target materialization, GPU run,
-    selection, ensemble, or Paper input exists yet.
+11. The QQQ/SPY D1 overnight-versus-intraday directional-count CPU smoke is
+    complete, but Claude's falsification-first verdict is `unsupported`. Its
+    external precommit is `sha256:dc37ed...62dd5a1` and the independent Docker
+    validator reattached summary `sha256:3fde8e...030a8ca`. This is only
+    source/local-paper plumbing: no full run, GPU, selection, ensemble,
+    promotion, KIS Paper input, or order may follow. Do not retune its
+    lookback, count comparison, cadence, costs, or comparator family.
 12. The KIS broad D1 cache now has a reattested source-local development
     coverage panel at generation 604, with 604 of 2,119 targets covered and
     at most two pages per target. Its generation-187 overlap comparison found
@@ -417,11 +415,11 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
-controls, both immutable sealed NAS result families, and the completed
-prospective observation receipt. The forward cache now provides one common
-post-boundary all-six-symbol session, but its projection remains
-`input_unavailable` until three sessions exist. Research must wait only for
-that exact later common-window consumer input, not turn the current listing into
-a PIT membership claim, or use r5 to select, tune, ensemble, promote, rank, or
-create a KIS Paper action. The fresh prospective baseline remains Execution
-evidence only.
+controls, the unsupported overnight/intraday smoke, both immutable sealed NAS
+result families, and the completed prospective observation receipt. The next
+research candidate should not reuse the already-consumed fixed QQQ/SPY
+validation slice for another variant. Data instead owns a new QQQ/SPY forward
+D1 stream; Research may prepare its consumer contract but cannot score,
+select, tune, ensemble, promote, rank, or create a KIS Paper action until that
+named out-of-time input has the declared depth. The fresh prospective baseline
+remains Execution evidence only.

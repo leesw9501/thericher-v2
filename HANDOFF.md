@@ -839,3 +839,37 @@ before the second rate limit yielded to the scheduler. This validates the one-
 recovery behavior for that run; it does not establish a provider-wide rate
 limit. The frozen generation-604 panel remains immutable and separate from this
 new mutable watermark.
+
+At the 2026-07-29 08:23 KST source-safe index snapshot, the independent mutable
+collector had advanced to generation 2,468: all 2,119 current NASDAQ targets
+had at least one accepted page, for 4,827 accepted pages and 15 categorical
+failures. This closes breadth coverage only. It leaves 2,014 targets ready for
+further historical continuation; 94 are complete and 11 source-limited for
+their exact cursor contracts. It remains neither a frozen panel nor a PIT or
+Research-ready universe.
+
+## Overnight/Intraday State CPU Smoke
+
+The newly proposed QQQ/SPY D1 overnight-versus-intraday state rule completed
+only a two-slot Docker CPU operational smoke. It reattached the fixed 4,756
+session KIS-private pair, used phase-local 21-bar directional-count windows,
+and replayed its candidate plus flat, always-long, and previous-bar-direction
+comparators through in-memory `local_paper` only. Its source-safe precommit is
+`sha256:dc37edf85605ba78171b006f0c35dd27fcb4355442c9d50d5a3d154a462dd5a1`;
+the independent network-disabled validator reattached source and artifact
+identity with summary `sha256:3fde8e7efd4bbbf78dbe8603d5635036db01b16a5691599994e46b01e030a8ca`.
+
+Claude's falsification-first verdict on the revised non-telescoping rule was
+`unsupported`: its target mechanism, adjustment uncertainty, and selection
+surface do not justify a performance campaign. The retained result is therefore
+strictly CPU plumbing evidence. It is ineligible for a full run, GPU, model
+selection, ensemble, KIS Paper action, or order; no performance conclusion is
+made from its two slots. The external run directory contains exactly precommit,
+summary, and validation receipt JSON files, with no raw rows, event logs, model
+weights, credentials, network, broker, or GPU use.
+
+At 07:30 KST the independent broad D1 worker was still running at mutable
+generation 1,251: 1,251 of 2,119 targets had coverage, 2,451 pages were
+accepted, four categorical failures were recorded, and no target exceeded two
+pages. This is a live source-safe watermark, not a frozen panel or research
+input.

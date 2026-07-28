@@ -7084,3 +7084,33 @@ Reason: expanding a mutable current-listing cache is useful only if a frozen
 consumer can detect changed retained values. The comparison adds that narrow
 lineage check without claiming provider correctness, PIT membership, corporate-
 action semantics, session finality, or research readiness.
+
+## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
+
+Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1
+directional-count state rule, but prohibit a full validation, GPU run, model
+selection, ensemble, KIS Paper use, and order consequence. The rule consumes
+only 21 phase-local completed KIS D1 bars: it compares the count of positive
+intraday moves with the count of positive prior-close-to-open moves across 20
+observations, decides after completed session `t`, enters at `t+1` open, exits
+at `t+2` open, and uses a two-session stride. Its fixed comparators are flat,
+always-long, and previous-bar-direction. There is no fit, normalizer, threshold
+sweep, or training.
+
+The first proposed cumulative-growth version was discarded after Claude showed
+that it collapsed to a momentum expression. Claude's second falsification-first
+review of the non-telescoping count version was `unsupported`: the mechanism
+does not match its open-to-open payoff, unadjusted daily OHLC can contaminate
+gap counts, and the existing holdout has already been used by prior research.
+The CPU smoke therefore proves only source reattachment, causal action timing,
+local-paper replay, external artifact isolation, and independent validation.
+It has source-safe precommit
+`sha256:dc37edf85605ba78171b006f0c35dd27fcb4355442c9d50d5a3d154a462dd5a1`
+and independently reattested summary
+`sha256:3fde8e7efd4bbbf78dbe8603d5635036db01b16a5691599994e46b01e030a8ca`.
+
+Reason: a weak hypothesis may verify one bounded research path, but it must not
+consume GPU or acquire a false performance meaning merely because its mechanics
+run. The next D1 research opportunity should prefer a fresh forward stream and
+a new independently challenged causal contract over another variation on the
+already-used QQQ/SPY validation slice.

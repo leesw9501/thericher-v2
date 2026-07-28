@@ -243,3 +243,12 @@ creates a new, resumable broad KIS D1 cache from a KIS current-directory
 registry, then starts an eight-target data-only bootstrap. No account/order,
 live, Norgate target seeding, source-row blend, ranking, or model-promotion
 route belongs to it.
+
+The broad collector is independently running at the 2026-07-29 08:23 KST
+watermark of all 2,119 targets covered and 4,827 accepted pages. Its current
+bottleneck remains longitudinal depth, with 2,014 targets still ready for
+continuation. Research's newly completed QQQ/SPY overnight/intraday CPU smoke
+is explicitly `unsupported` by Claude and closed to full validation, GPU,
+selection, or Paper use. The shared next action is a source-separated QQQ/SPY
+forward D1 cache: it accrues future validation input without blocking the active
+breadth collector or treating its current-listing cache as research-ready.
