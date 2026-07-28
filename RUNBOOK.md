@@ -1173,6 +1173,11 @@ order. A successful bridge is current read-health evidence only; it never
 replays a prior receipt or substitutes for the fresh account and quote reads
 required by a later scheduled Paper session.
 
+The `kis-readonly` service has a read-only container root with `/tmp` as tmpfs.
+Its existing runtime and external artifact mounts are the only intended writable
+locations; do not add an unrestricted writable repository or data mount to this
+read-only account observation path.
+
 `raw_market_data_retained: false` is never a control condition for the console,
 a later collection, a KIS Paper call, an order, or a schedule. It records only
 the absence of bytes for its own historical result.

@@ -87,6 +87,13 @@ verified forward-cache outcome. The current cache has one common session and
 the Docker observer correctly remains `input_unavailable`; PyTorch CUDA sees
 one device, but no eligible model run or generated model artifact follows.
 
+The next ready independent package does not wait for that forward cache: it
+uses the immutable historical NAS panel to freeze a candidate-only causal D1
+candle-state contract. It must define completed-bar OHLCV features, timing,
+split, cost model, naive baseline, compute budget, and kill test before a CPU
+smoke or network-disabled CUDA screen. It remains outside ranking, selection,
+ensemble, promotion, KIS, and Paper routes.
+
 ## Current Readiness
 
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common

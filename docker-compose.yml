@@ -120,6 +120,9 @@ services:
       context: .
       target: base
     profiles: ["kis-readonly"]
+    read_only: true
+    tmpfs:
+      - /tmp
     command:
       - python
       - -m

@@ -336,6 +336,31 @@ def test_dashboard_state_preserves_canonical_paper_account_envelope(tmp_path) ->
     assert "account_number" not in json.dumps(state["paper_account"])
 
 
+def test_dashboard_http_hides_a_malformed_paper_account_snapshot(tmp_path) -> None:
+    paper_snapshot_path = tmp_path / "paper_account_snapshot.json"
+    raw_marker = "raw-broker-body-must-not-reach-dashboard"
+    paper_snapshot_path.write_text(
+        json.dumps({"unexpected": raw_marker}),
+        encoding="utf-8",
+    )
+
+    with _dashboard(
+        tmp_path,
+        paper_account_snapshot_path=paper_snapshot_path,
+    ) as (server, _events, _emergency):
+        status, _, state_body = _request(server, "GET", "/state")
+
+    state = json.loads(state_body)
+    assert status == 200
+    assert state["paper_account_status"] == "unavailable"
+    assert state["paper_account"] is None
+    assert state["kis_holdings_status"] == "unavailable"
+    assert state["kis_prices_status"] == "unavailable"
+    assert state["kis_buying_power_status"] == "unavailable"
+    assert state["kis_open_orders_status"] == "unavailable"
+    assert raw_marker not in json.dumps(state)
+
+
 def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_path: Path) -> None:
     events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
     events.bootstrap()
@@ -617,6 +642,8 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "KIS_PAPER_APP_KEY" in kis_section
     assert "KIS_LIVE" not in kis_section
     assert ".env" not in kis_section
+    assert "read_only: true" in kis_section
+    assert "- /tmp" in kis_section
 
     canary_section = compose.split("\n  kis-paper-canary:\n", maxsplit=1)[1].split(
         "\n  kis-paper-session:\n", maxsplit=1

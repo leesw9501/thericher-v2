@@ -6885,3 +6885,26 @@ partial-collection and observer-recovery false-success paths.
 Reason: current D1 data should advance automatically without turning calendar
 waiting into an orchestrator hold, and a prospective observation must be
 truthful about its source completeness before it can inform any later research.
+
+## 2026-07-28 - Harden the private Paper account console boundary
+
+Decision: make the existing `kis-readonly` Compose service root filesystem
+read-only and provide only `/tmp` tmpfs, while preserving its existing writable
+runtime and external artifact mounts. Add one dashboard HTTP integration test
+that injects a malformed account projection and proves the rendered state is
+fact-free `unavailable`, with the malformed raw marker absent.
+
+The post-hardening virtual-only bridge completed and wrote source-safe external
+evidence `execution/kis-paper-console-bridge/20260728T115736150112Z-complete.json`.
+The loopback dashboard consumed the fresh complete projection with read-only and
+no-submission provenance. No intent, submit, modify, cancel, reconciliation,
+live credential, or public endpoint was introduced. The source-safe Claude
+governance challenge for the surrounding blocked-goal/authority policy was
+attempted again and returned `review_unavailable` because local OAuth could not
+refresh; this small runtime hardening does not rely on a reviewer verdict or
+change an authority boundary.
+
+Reason: the local console needs a current virtual account view, but accidental
+container-local persistence of a broker response is unnecessary risk. The
+existing volume contract is sufficient for the sanitized runtime projection and
+fact-minimized external evidence without widening KIS behavior.

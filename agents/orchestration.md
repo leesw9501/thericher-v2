@@ -60,8 +60,11 @@ second goal.
   rather than a false observation.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
-  the legacy observer is conditional. Historical receipt facts remain in the
-  Execution stateboard and external evidence, not this projection.
+  the legacy observer is conditional. The existing local operations console has
+  now reattached a fresh virtual-only account projection through the hardened
+  `kis-readonly` service; its loopback dashboard smoke retained read-only/no-
+  submission provenance and local controls only. Historical receipt facts remain
+  in the Execution stateboard and external evidence, not this projection.
 - **Shared resources:** KIS Paper market-data throughput is one measured
   per-account dispatcher; fresh observations preempt backfill. Research owns
   the exclusive GPU. D: has about 40 percent free space, above the 20/15
@@ -105,6 +108,12 @@ entry, intrabar-low, and exit equity marks. The measured Docker evaluation
 finished in about 99 seconds, so no bar-identity cache was added without further
 evidence.
 
+The `kis-readonly` account bridge now also has a read-only root filesystem and
+`/tmp` tmpfs. Its pre-existing runtime and external artifact mounts remain the
+only writable locations, and a focused HTTP test proves a malformed account
+snapshot becomes an unavailable dashboard projection without rendering its raw
+content.
+
 ## Resolved Recovery
 
 The immutable r1 sealed receipt remains `failed_before_result_retention`: its
@@ -147,14 +156,11 @@ receipt, or any independent lane.
 
 ## Next Handoff
 
-The distinct causal NAS D1 volatility-conditioned package has a completed r5
-sealed receipt and a completed prospective observer receipt. The observer's
-original zero-session result remains immutable. Data has now established a
-separate six-symbol NAS D1 forward cache without mutating frozen historical
-input: its first collection retained one common session and its read-only
-projection correctly remains `input_unavailable`. The next bounded objective
-has an independent Execution owner: reattach the existing local operations
-console to one fresh, sanitized KIS Paper account observation while the forward
-task continues. Do not use either sealed aggregate result or cache coverage to
-choose a candidate, build an ensemble, rank, or create a broker order. Keep both
-sealed result families immutable and non-promoting.
+The existing local operations console is reattached through source-safe external
+evidence `20260728T115736150112Z-complete.json`; it remains loopback-only,
+credential-free, and read-only/no-submission from the dashboard's perspective.
+The next ready package is independent Engine Research: freeze and screen one
+new causal NAS D1 candle-state hypothesis from the immutable historical panel.
+It must not wait for forward-cache coverage, select an existing result, create
+an ensemble, rank a universe, or create a broker order. Data's later forward
+task continues independently.

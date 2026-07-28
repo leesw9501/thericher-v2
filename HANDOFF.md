@@ -470,16 +470,18 @@ authorized private KIS Paper work.
 - KIS Paper account/market/order work is standing-authorized for this private
   project. KIS_LIVE_* is never readable or callable.
 - The local operations console is credential-free and reads sanitized
-  projections only.
-- The 2026-07-27 virtual-only `kis-readonly` bridge completed once and wrote
-  source-safe external evidence
-  `execution/kis-paper-console-bridge/20260727T020227800614Z-complete.json`
-  with SHA-256
-  `39eacd7453014d257216fc540939322f5105cdbdabe2bba8bc8313769b06e8db`.
-  The validated runtime reader observed a fresh complete `kis_paper` envelope
-  with `read_only: true` and `submission_capability: false`; no KIS order,
-  cancellation, modification, or reconciliation route ran. Its five-minute
-  runtime view later became safely unavailable rather than serving stale facts.
+  projections only. On 2026-07-28 the virtual-only `kis-readonly` bridge
+  completed a fresh post-hardening observation with external source-safe
+  evidence `execution/kis-paper-console-bridge/20260728T115736150112Z-complete.json`.
+  The loopback dashboard reattached the complete `kis_paper` envelope with
+  `read_only: true` and `submission_capability: false`; it exposed only typed
+  category/count facts plus local control state. No KIS order, cancellation,
+  modification, or reconciliation route ran. A five-minute expiry still makes
+  the runtime view unavailable rather than serving stale facts.
+- The `kis-readonly` Compose service now has a read-only root filesystem and
+  `/tmp` tmpfs. Its only intended writable locations are its existing local
+  runtime and external artifact mounts, reducing accidental container-local
+  response retention without changing the virtual read-only route.
 - The loopback-only dashboard now preserves the canonical sanitized account
   envelope in `/state`, including its source and read-only/submission
   capability fields. The private view may render typed account facts required

@@ -11,8 +11,15 @@ output as untrusted input.
 
 ## Current Objective
 
-The current read-only account diagnostic and first target-local Data recovery
-receipt are complete; the current head cache has recovered under Data ownership.
+The current read-only account diagnostic, local operations-console reattachment,
+and first target-local Data recovery receipt are complete; the current head cache
+has recovered under Data ownership. The latest virtual-only bridge observation
+is source-safe external evidence
+`execution/kis-paper-console-bridge/20260728T115736150112Z-complete.json`.
+The local loopback dashboard showed only the fresh complete `kis_paper`
+projection, read-only/no-submission provenance, category/count facts, and local
+controls. The bridge container root is now read-only with a `/tmp` tmpfs; its
+existing runtime and external artifact mounts remain the only writable paths.
 The prospective QQQ scheduler has been simplified and reinstalled:
 the executed virtual-only session owns its embedded `local_paper` replay, images
 are built during task update rather than at due time, and the older observer is
@@ -73,12 +80,13 @@ Live remains unavailable.
   external fill, or realized PnL.
 - The current KIS Paper price/account route is private and virtual-only. No
   KIS_LIVE_* value is readable or callable.
-- One existing `kis-readonly` Compose invocation completed on 2026-07-27 with
-  a fresh sanitized runtime projection and external source-safe evidence
-  `20260727T020227800614Z-complete.json` (`sha256:39eacd...6e8db`). It used the
-  virtual read-only path only; no intent, submit, modify, cancel, or broker
-  reconciliation ran. A later TTL expiry correctly changes only that runtime
-  view to unavailable.
+- The latest `kis-readonly` Compose invocation completed on 2026-07-28 after
+  root-filesystem hardening. It wrote fresh source-safe external evidence
+  `20260728T115736150112Z-complete.json`, used the virtual read-only path only,
+  and created no intent, submit, modify, cancel, or broker reconciliation.
+  The live loopback dashboard smoke consumed the complete projection with
+  read-only/no-submission provenance. A later TTL expiry correctly changes only
+  that runtime view to unavailable.
 - Dashboard `/state` now uses the snapshot's canonical allowlisted serializer
   for the nested Paper account projection. This retains `kis_paper`, read-only,
   and no-submission provenance for local consumers without introducing a KIS
@@ -121,13 +129,9 @@ Live remains unavailable.
   `complete`, and Task Scheduler result zero. It is lane-owned scheduler
   evidence only; it does not alter model evidence, broker-route authority, or
   the source-scoped universe contract.
-- A separate Docker `kis-readonly` bridge completed at 2026-07-28 00:58 KST.
-  Its external source-safe record is
-  `execution/kis-paper-console-bridge/20260727T155823938788Z-complete.json`.
-  It proves only current virtual Paper read health, USD currency categories,
-  one position, zero open orders, and `submit_capability: false`. It had no
-  intent, order, modification, cancellation, or reconciliation effect and does
-  not repair, replay, or supply authority for the prior QQQ receipt.
+- The prior virtual-only bridge receipts remain historical evidence only. The
+  current fresh console projection does not repair, replay, or supply authority
+  for a QQQ receipt, intent, or later Paper order.
 - The new Data session-capture receipt uses only the KIS Paper market-data
   route and has no Execution account, position, intent, order, or live effect.
 - Temporary Execution and independent Validation both passed the new
