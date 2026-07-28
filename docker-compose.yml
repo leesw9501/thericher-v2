@@ -82,8 +82,8 @@ services:
       THERICHER_MODEL_ARTIFACT_ROOT: ${THERICHER_MODEL_ARTIFACT_ROOT:-/app/model_artifacts}
     volumes:
       - thericher-v2-runtime:/app/runtime
-      - ./data:/app/data
-      - ./reports:/app/reports
+      - ./data:/app/data:ro
+      - ./reports:/app/reports:ro
       - ./src:/app/src:ro
       - ./scripts:/app/scripts:ro
       - ./NEXT_CODEX_GOAL.md:/app/NEXT_CODEX_GOAL.md:ro

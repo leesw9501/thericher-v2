@@ -394,6 +394,17 @@ def write_kis_nas_d1_sequence_campaign_precommit(
     )
 
 
+def calculate_kis_nas_d1_sequence_campaign_precommit_hash(
+    campaign_input: KisNasD1SequenceCampaignInput,
+) -> str:
+    """Derive the immutable precommit identity without creating an artifact."""
+
+    require_attested_kis_nas_d1_sequence_campaign_input(campaign_input)
+    payload = _precommit_payload(campaign_input)
+    _assert_source_safe(payload)
+    return "sha256:" + hashlib.sha256(_json_bytes(payload)).hexdigest()
+
+
 def require_attested_kis_nas_d1_sequence_campaign_input(input: object) -> None:
     """Fail closed before a later CPU/GPU worker consumes campaign samples."""
 
@@ -895,7 +906,13 @@ def _external_output_root(root: Path | str, repository: Path) -> Path:
         raise ValueError("NAS D1 sequence precommit root is invalid") from error
     if candidate.is_symlink():
         raise ValueError("NAS D1 sequence precommit root is invalid")
-    if resolved.is_relative_to(repository):
+    mounted_artifact_root = repository / "model_artifacts"
+    permitted_mount = (
+        not mounted_artifact_root.is_symlink()
+        and mounted_artifact_root.is_mount()
+        and resolved.is_relative_to(mounted_artifact_root.resolve())
+    )
+    if resolved.is_relative_to(repository) and not permitted_mount:
         raise ValueError("NAS D1 sequence precommit root must stay outside the Git workspace")
     candidate.mkdir(parents=True, exist_ok=True)
     if candidate.is_symlink() or candidate.resolve() != resolved:

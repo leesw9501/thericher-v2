@@ -6625,3 +6625,68 @@ Reason: the old hold delayed a ready Research contract without producing a new
 data, model, validation, or execution fact. The correction makes the concrete
 implementation and its tests, rather than unverifiable authorship, the recovery
 boundary.
+
+## 2026-07-28 - Complete NAS D1 breadth without opening validation targets
+
+Decision: complete the frozen NAS D1 model-plumbing package exactly as
+precommitted: six independent per-symbol deterministic CPU L2-logistic smokes,
+then 18 network-disabled Docker CUDA candidates across LSTM, causal TCN, and
+compact attention. Every fit uses only its symbol's development samples and
+standardizer; every validation forward consumes a separate target-free type.
+The CPU summary is `sha256:4bfb8448a61cd741e63b12ab71fb58511be3700c936450286b2257b619067196`.
+The CUDA summary is `sha256:43a4f91c96cf2a081e7c53fc2ab7fa93c03bf7d7beee0f8b2524f9aa37492ed7`.
+All 18 checkpoints are external `state_dict` files that passed
+`weights_only=True` reload and strict state compatibility checks.
+
+This is not an evaluation, profitability, selection, ensemble, replay, PnL, or
+Paper result. Validation labels, predictions, and per-decision values remain
+unmaterialized. The current-listing, unadjusted, and corporate-action
+limitations remain unchanged. A later evaluator must precommit its target,
+threshold, local-paper attribution, comparators, and stop rule before reading
+any validation target.
+
+Reason: bounded breadth verifies that the source-local campaign can reach
+real CPU and CUDA model artifacts safely, while preserving an independent
+validation boundary rather than converting training loss into a trading claim.
+
+## 2026-07-28 - Treat exact Docker external mounts as external storage
+
+Decision: when a repository-rooted process runs in Docker, permit a path under
+`<repo>/market_data` or `<repo>/model_artifacts` only when that exact root is a
+real non-symlink mount and the requested path stays beneath it. All other Git
+children remain invalid. The NAS panel reader and campaign precommit writer now
+use this narrow rule; the breadth artifact runner applies the same check to its
+Docker artifact exception.
+
+Reason: the first two CUDA attempts correctly stopped before model execution
+because generic Git-root protection mistook the documented bind mounts for
+repository storage. The scoped mount check preserves the Git-artifact rule while
+making the offline Docker research runtime usable. Claude's concise
+falsification-first drift-check attempt was `review_unavailable` due expired
+local OAuth; no credential, network, KIS, broker, or live path was used.
+
+## 2026-07-28 - Require a complete frozen CPU receipt before NAS CUDA breadth
+
+Decision: harden the NAS D1 breadth entrypoint after independent review. The
+production runner must calculate and match the one frozen campaign contract and
+campaign-precommit identity before writing any breadth artifact. A CUDA run must
+also receive an immutable sibling CPU precommit and a complete source-safe CPU
+summary that exactly names the six fixed L2 specifications, per-symbol
+standardizers, development counts, target-free validation shapes, and
+non-selection policy. Both CPU input paths must remain outside the Git
+workspace. A minimal, mismatched, or Git-resident JSON summary is rejected
+before a CUDA output directory exists. The Docker research service keeps repository
+`data` and `reports` bind mounts read-only; only the documented external market
+data and artifact mounts can be used for mutable research bytes.
+
+The focused host reattestation `cpu-smoke-20260728-r2` reproduced existing CPU
+summary `sha256:4bfb8448a61cd741e63b12ab71fb58511be3700c936450286b2257b619067196`.
+The network-disabled Docker mount check confirmed `/app/market_data` and
+`/app/model_artifacts` are mounts while `/app/data` and `/app/reports` are not
+writable. No validation target, replay, PnL, selection, KIS request, or broker
+route was opened.
+
+Reason: breadth artifacts become a trustworthy fixed input to the later sealed
+evaluator only when their model lineage and write boundary are explicit. This
+does not convert the CPU or CUDA result into profitability evidence or a model
+selection rule.

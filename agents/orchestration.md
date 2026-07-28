@@ -28,10 +28,12 @@ second goal.
   as falsified evidence. The allocation control used 443 phase-local slots and
   lost to its time-matched always-QQQ comparator, so it cannot feed a model,
   ensemble, GPU, or Paper route. The ETF D1 trend-regime control remains
-  descriptive only. The NAS D1 sequence contract is now frozen with source-safe
-precommit `sha256:c54e79...03d37e`; its CPU L2-logistic smoke and CUDA
-  LSTM/TCN/attention breadth are the next eligible Research package. No model,
-  selection, replay, PnL, or Paper evidence exists yet.
+  descriptive only. The NAS D1 sequence contract is frozen with source-safe
+  precommit `sha256:c54e79...03d37e`; its six CPU L2-logistic smokes and all 18
+  CUDA LSTM/TCN/attention candidates now completed with summaries
+  `sha256:4bfb84...619067196` and `sha256:43a4f9...37492ed7`. The external
+  checkpoints and target-free forwards are model-plumbing evidence only: no
+  selection, replay, PnL, KIS, or Paper evidence exists.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -45,18 +47,21 @@ precommit `sha256:c54e79...03d37e`; its CPU L2-logistic smoke and CUDA
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
 schedule deployment, both independent QQQ/SPY controls, NAS history
-materialization, and the exact NAS phase-local campaign contract are complete.
-The current bottleneck is implementing its fixed target-free CPU smoke and CUDA
-architecture-breadth workers before the idle GPU can do useful work. This is a
-Research implementation task, not a provider, scheduler, or authority wait. The
-stale QQQ input remains evidence not to widen the fixed two-minute deadline, and
-it remains independent of every NAS model claim or Paper-order target.
+materialization, the exact NAS phase-local campaign contract, and its 6 CPU/18
+CUDA breadth artifacts are complete. The current bottleneck is a fixed sealed
+validation and local-paper attribution consumer, not a provider, scheduler, or
+authority wait. The stale QQQ input remains evidence not to widen the fixed
+two-minute deadline, and it remains independent of every NAS model claim or
+Paper-order target.
 
-**Current operating improvement:** a shared-worktree implementation is now
-treated as a bounded diff/provenance/attestation task, never as an unknown-owner
-hold. The NAS adapter was inspected, completed through focused tests, and bound
-to an immutable receipt; it neither pauses the current Research package nor
-blocks independent lanes.
+**Current operating improvement:** Docker bind mounts beneath `/app` are now
+accepted as external only when the exact `market_data` or `model_artifacts`
+root is a non-symlink mount; repository `data` and `reports` mounts are
+read-only. The CUDA consumer also requires the complete sibling-attested CPU
+receipt from outside Git before it can create an output. The two initial CUDA path failures and
+the later receipt-hardening review were scoped to these implementation facts,
+fixed with focused tests, and did not block the independent CPU package or
+create an approval hold.
 
 ## External Waits
 
@@ -80,8 +85,8 @@ relying on it; scope a failure to that item and keep independent packages moving
 
 ## Next Handoff
 
-Implement the frozen source-local NAS D1 CPU smoke and CUDA breadth package
-while the already-deployed intraday schedule owns its next collection attempt.
-Do not turn a source-local historical input into a point-in-time universe, rank,
-model selection, order, or global wait. Keep validation labels sealed from the
-target-free input and preserve the no-replay/no-PnL/no-Paper boundary.
+Run the frozen source-local NAS sealed validation and local-paper attribution
+package while the already-deployed intraday schedule owns its next collection
+attempt. Do not turn a source-local historical input into a point-in-time
+universe, rank, model selection, broker order, or global wait. Keep all
+selection, ensemble, promotion, and KIS Paper consequences disabled.

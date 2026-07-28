@@ -248,6 +248,9 @@ def test_precommit_is_offline_immutable_and_contains_no_value_level_data(
     payload = json.loads(first.precommit_path.read_text(encoding="utf-8"))
 
     assert first.precommit_hash == second.precommit_hash
+    assert campaign.calculate_kis_nas_d1_sequence_campaign_precommit_hash(campaign_input) == (
+        first.precommit_hash
+    )
     assert first.precommit_path.is_relative_to(artifact_root)
     assert payload["source"]["target_states"][4]["state"] == "source_limited"
     assert payload["inputs"]["validation"]["labels_exposed"] is False
@@ -273,6 +276,39 @@ def test_precommit_is_offline_immutable_and_contains_no_value_level_data(
             campaign_input,
             artifact_root=repo_root / "artifacts",
             repo_root=repo_root,
+        )
+
+
+def test_precommit_output_root_allows_only_a_mounted_repo_nested_artifact_root(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    mount_root = repository_root / "model_artifacts"
+    mount_root.mkdir()
+    output_root = mount_root / "research" / "campaigns"
+    original_is_mount = Path.is_mount
+
+    def is_mount(path: Path) -> bool:
+        return path.resolve() == mount_root.resolve() or original_is_mount(path)
+
+    monkeypatch.setattr(Path, "is_mount", is_mount)
+
+    assert (
+        campaign._external_output_root(  # noqa: SLF001
+            output_root,
+            repository_root,
+        )
+        == output_root.resolve()
+    )
+
+    non_mount_repository = tmp_path / "non-mount-repo"
+    non_mount_repository.mkdir()
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        campaign._external_output_root(  # noqa: SLF001
+            non_mount_repository / "model_artifacts" / "research",
+            non_mount_repository,
         )
 
 

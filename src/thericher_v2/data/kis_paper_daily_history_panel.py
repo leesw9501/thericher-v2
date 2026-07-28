@@ -805,7 +805,13 @@ def _external_existing_root(
     except OSError as error:
         raise ValueError(f"KIS paper daily history panel {label} is invalid") from error
     repository = _repository_root(repo_root)
-    if resolved.is_relative_to(repository):
+    mounted_market_data = repository / "market_data"
+    permitted_mount = (
+        not mounted_market_data.is_symlink()
+        and mounted_market_data.is_mount()
+        and resolved.is_relative_to(mounted_market_data.resolve())
+    )
+    if resolved.is_relative_to(repository) and not permitted_mount:
         raise ValueError(f"KIS paper daily history panel {label} must stay outside Git")
     return resolved
 

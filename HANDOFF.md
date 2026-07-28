@@ -613,20 +613,42 @@ META, and MSFT retain their source-limited facts. The local manifest and externa
 receipt contain provenance and aggregates only. This does not establish a PIT
 universe, ranking, model, Paper, or live result.
 
-The exact NAS D1 sequence campaign is now frozen from that same panel. Its
+The exact NAS D1 sequence campaign is frozen from that same panel. Its
 source-safe external precommit is
 `sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`;
 it binds `1,510 / 22 / 647` phase-local sessions, 20 per-symbol completed-close
 returns with the `t-20` anchor also inside the phase, one-share `t+1` to `t+2`
-after-cost target semantics, and target-free validation inputs. It names six
-per-symbol CPU L2-logistic smokes followed by LSTM, causal TCN, and compact
-attention GPU breadth, but none has run. Its contract identity also binds the
-exact phase dates and fixed Decimal cost arithmetic, so a same-count split shift
-or ambient rounding setting cannot silently change the frozen target.
+after-cost target semantics, and target-free validation inputs.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective is to implement that
-bounded candidate-only CPU/GPU breadth package without revealing validation
-labels, selecting a model, replaying local paper, computing PnL, calling KIS, or
-creating a Paper action. Keep Data, Research, and Execution evidence distinct,
-and let the independent intraday scheduler own its next due recovery attempt
-rather than the foreground.
+The first breadth package is complete. Its six deterministic CPU L2-logistic
+smokes are summarized by `sha256:4bfb8448...619067196`, and its network-disabled
+Docker CUDA run completed all 18 fixed LSTM, causal-TCN, and compact-attention
+cells on the RTX 4090. The CUDA summary is `sha256:43a4f91c...37492ed7` and its
+18 `state_dict` checkpoints remain only under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-sequence-breadth-v1`.
+Every recorded validation forward was target-free, finite, and bounded; no
+validation label, prediction, replay, PnL, selection, ensemble, KIS call, or
+Paper action occurred.
+
+The Docker run exposed two path-validation defects before training: the panel
+reader did not recognize the mounted `/app/market_data`, and the immutable
+precommit writer did not recognize `/app/model_artifacts`. Both now permit only
+the exact non-symlink `market_data` or `model_artifacts` mount beneath a
+repository root; normal Git children remain rejected. Claude's concise
+drift-check attempt was `review_unavailable` because local OAuth is expired.
+
+Independent review then tightened the completed breadth package without opening
+any target: the executable runner now requires the exact frozen campaign
+contract/precommit before it can write a CPU or CUDA artifact; CUDA accepts only
+a complete, source-safe CPU smoke receipt and immutable sibling precommit from
+outside the Git workspace; and the research container mounts repository `data`
+and `reports` read-only. A fresh host CPU reattestation (`cpu-smoke-20260728-r2`) reproduced
+the same summary hash `sha256:4bfb8448...619067196`; the isolated Docker mount
+check confirmed the two external mounts and the two read-only repository paths.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective is a precommitted,
+candidate-only sealed NAS validation and `local_paper` attribution package. It
+must keep the existing source limitations visible, use no KIS or live route,
+and make no selection, ensemble, promotion, or Paper-broker decision. Let the
+independent intraday scheduler own its next due recovery attempt rather than the
+foreground.

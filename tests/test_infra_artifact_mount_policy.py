@@ -17,6 +17,8 @@ def test_research_profile_mounts_external_artifact_and_market_data_roots() -> No
     assert "read_only: true" in research
     assert "- /tmp" in research
     assert "gpus: all" in research
+    assert "./data:/app/data:ro" in research
+    assert "./reports:/app/reports:ro" in research
     assert "./src:/app/src:ro" in research
     assert "./scripts:/app/scripts:ro" in research
     assert (

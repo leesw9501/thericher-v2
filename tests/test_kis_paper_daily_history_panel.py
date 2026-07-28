@@ -132,6 +132,56 @@ def test_rejects_mutable_outputs_and_paths_inside_git(tmp_path: Path) -> None:
         )
 
 
+def test_allows_only_a_mounted_repo_nested_market_data_root(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    mount_root = repository_root / "market_data"
+    cache_root = mount_root / "daily-history"
+    panel_root = mount_root / "daily-history-panel"
+    cache_root.mkdir(parents=True)
+    panel_root.mkdir()
+    original_is_mount = Path.is_mount
+
+    def is_mount(path: Path) -> bool:
+        return path.resolve() == mount_root.resolve() or original_is_mount(path)
+
+    monkeypatch.setattr(Path, "is_mount", is_mount)
+
+    assert (
+        panel._external_existing_root(  # noqa: SLF001
+            cache_root,
+            repository_root,
+            "history cache",
+        )
+        == cache_root.resolve()
+    )
+    assert (
+        panel._external_existing_root(  # noqa: SLF001
+            panel_root,
+            repository_root,
+            "panel root",
+        )
+        == panel_root.resolve()
+    )
+
+
+def test_rejects_a_non_mount_repo_nested_market_data_root(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repo"
+    cache_root = repository_root / "market_data" / "daily-history"
+    repository_root.mkdir()
+    cache_root.mkdir(parents=True)
+
+    with pytest.raises(ValueError, match="outside Git"):
+        panel._external_existing_root(  # noqa: SLF001
+            cache_root,
+            repository_root,
+            "history cache",
+        )
+
+
 def _write_history_cache(
     root: Path,
     *,

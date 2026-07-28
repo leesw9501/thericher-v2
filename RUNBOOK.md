@@ -1410,6 +1410,44 @@ artifact root. A code-only rerun may reuse the existing research image because
 the source and scripts are mounted read-only; rebuild only after a Dockerfile or
 runtime dependency change.
 
+### NAS D1 Per-Symbol Sequence Breadth
+
+The source-local NAS breadth runner reattests the fixed six-stream campaign
+before every run. It first writes six deterministic CPU L2-logistic smoke
+receipts, then writes external-only CUDA `state_dict` checkpoints for LSTM,
+causal TCN, and compact attention. Validation forwards remain target-free; this
+runner neither selects a candidate nor creates replay or PnL evidence.
+
+Run the CPU smoke on the host with a fresh label:
+
+```powershell
+uv run --extra dev python scripts/run_kis_nas_d1_sequence_breadth.py `
+  --mode cpu-smoke --run-label <unique-cpu-label> `
+  --market-data-root D:/market_data `
+  --artifact-root D:/thericher-v2/model-artifacts
+```
+
+Then run CUDA without loading the local `.env`; use the corresponding external
+CPU summary path inside the container:
+
+```powershell
+$env:COMPOSE_DISABLE_ENV_FILE = "1"
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_sequence_breadth.py `
+  --mode cuda-breadth --run-label <unique-cuda-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --cpu-smoke-summary /app/model_artifacts/research/kis-nas-d1-sequence-breadth-v1/cpu-smoke/<unique-cpu-label>/summary.json
+```
+
+Only the actual non-symlink `/app/market_data` and `/app/model_artifacts` bind
+mounts count as external storage; repository `/app/data` and `/app/reports` are
+read-only in this service. CUDA requires the complete sibling `precommit.json`
+and source-safe CPU summary from the exact fixed campaign. Never reuse a breadth
+run label or move a checkpoint into Git. A completed breadth receipt is not
+validation evidence, model selection, an ensemble input, a replay, or a KIS
+Paper decision.
+
 ### KIS Daily Regime-Tree Breadth
 
 The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY

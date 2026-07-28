@@ -2,85 +2,80 @@
 
 ## Objective
 
-Run the first bounded source-local NAS D1 candidate-breadth package from the
-frozen campaign contract.
-
-First prove one independent per-symbol CPU L2-logistic smoke path. Then, when
-that path is sound and the existing Docker/PyTorch CUDA environment is usable,
-run the fixed per-symbol GPU architecture breadth across LSTM, causal TCN, and
-compact attention. This is model plumbing and descriptive candidate evidence,
-not a selection, ensemble, replay, PnL, or Paper decision.
+Run one frozen, candidate-only sealed validation and `local_paper` attribution
+package for the completed NAS D1 breadth artifacts. This should connect the
+existing deterministic CPU control and 18 CUDA checkpoints to a reproducible
+after-cost local simulation without selecting a winner, building an ensemble,
+or sending any broker request.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `DECISIONS.md`, and the active stateboards.
-2. Reattest the NAS phase input and precommit before consuming a sample:
+   `DECISIONS.md`, `RUNBOOK.md`, and the active stateboards.
+2. Reattest the frozen inputs and evidence before any target is reconstructed:
    - panel dataset: `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`
    - campaign contract: `sha256:5a9ceb6df7b6c1909ef452b8851fbd7bd23ec03660e9fc75bb278377079aaea5`
-   - precommit: `sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`
-3. Use Claude only at a material promotion, sealed-label/holdout, depth-training,
-   source/routing authority, or major-runtime boundary. Initial bounded breadth
-   work does not wait on the expired local Claude OAuth session.
+   - campaign precommit: `sha256:c54e795b3fb2caa76c9367a72aadc1c0ac685241bd5c59e2e12bdb0af603d37e`
+   - CPU breadth summary: `sha256:4bfb8448a61cd741e63b12ab71fb58511be3700c936450286b2257b619067196`
+   - CUDA breadth summary: `sha256:43a4f91c96cf2a081e7c53fc2ab7fa93c03bf7d7beee0f8b2524f9aa37492ed7`
+3. Before opening or interpreting the sealed validation target, ask Claude for
+   the required concise falsification-first review. If local OAuth is still
+   expired, record `review_unavailable` and continue only this non-promoting,
+   no-cost candidate evaluation; do not treat the unavailable review as a
+   result endorsement.
 
-## Frozen Input
+## Frozen Evaluation Contract
 
-- Six source-local current NAS streams only: `AAPL`, `AMZN`, `GOOGL`, `META`,
-  `MSFT`, and `NVDA`; do not infer point-in-time membership, liquidity, or rank.
-- Exact `1,510 / 22 / 647` common D1 development / purge / validation sessions.
-- One per-symbol feature column: 20 completed close returns at `t-19..t`, with
-  the `t-20` return anchor inside the same phase.
-- Development labels only: strict-positive one-share after-cost return from
-  `t+1` open to `t+2` open using 1 bps fee and 2 bps slippage per fill.
-- Validation input is target-free. Do not materialize, inspect, reconstruct, or
-  persist validation labels in this objective.
+- Use only `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA` from the
+  source-local current NAS panel and the exact `1,510 / 22 / 647` phase split.
+- Refit the six CPU L2-logistic controls deterministically and require their
+  parameter hashes to match the CPU receipt. Load each GPU checkpoint only with
+  `weights_only=True` and require its architecture, standardizer, and campaign
+  lineage to match the CUDA receipt.
+- Reconstruct validation targets only in memory using the already frozen
+  `t+1` open to `t+2` open, one-share, 1 bps fee and 2 bps per-fill slippage
+  semantics. Never write labels, prices, feature rows, prediction vectors, or
+  per-decision outputs.
+- On every other chronological validation sample, map probability `>= 0.5` to
+  one long share and lower probability to flat. Use the existing fixed `flat`,
+  `always_long`, and `previous_bar_direction` comparators on the same
+  non-overlapping two-session slots. All simulated fills must retain
+  `source: local_paper`.
+- Treat the 24 fixed candidates independently. The package may report only
+  aggregate classification and after-cost attribution facts per candidate. It
+  may not rank, choose, retune, ensemble, promote, or create a Paper order.
 
 ## Work
 
-1. **Engine Research / CPU:** implement the fixed
-   `nas-d1-per-symbol-l2-logistic-smoke-v1` package. Fit six independent L2
-   logistic models from development samples only, with per-symbol
-   development-only standardization, deterministic seeds, a bounded CPU budget,
-   finite-loss checks, and target-free validation forward-shape checks.
-2. **Infra / Engine Research / GPU:** reuse the existing Docker PyTorch CUDA
-   runtime and shared sequence builders to implement and run
-   `nas-d1-per-symbol-sequence-breadth-v1`: LSTM, causal TCN, and compact
-   attention for each symbol. One GPU job runs at a time; preparation and tests
-   may run on CPU concurrently. Freeze architecture and budget settings before
-   the first fit. If CUDA is unavailable, record the exact runtime fact and
-   complete every non-GPU package without foreground waiting.
-3. **Validation:** add focused tests for development-only fitting,
-   per-symbol-only standardization, target-free validation inputs, deterministic
-   CPU smoke, GPU/Docker command construction, external-only artifacts,
-   safe checkpoint handling, and no network/credential/KIS/broker route.
-4. **Artifacts:** checkpoints and generated model data stay only under
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`. Persist only
-   source-safe aggregate receipts and hashes in Git-visible evidence; no raw
-   bars, feature rows, labels, per-decision probabilities, PnL, or broker
-   events.
+1. **Validation:** build a sealed evaluator that owns validation-target
+   reconstruction and refuses unpinned source, checkpoint, CPU-model, split,
+   threshold, or comparator drift.
+2. **Engine Research:** implement the deterministic CPU re-fit and CUDA
+   checkpoint inference adapters, then run the 24 fixed candidate evaluations
+   through the broker-free local paper simulator.
+3. **Review:** use a temporary independent Validation role to verify target
+   isolation, no-tuning behavior, `local_paper` fills, source-safe external
+   receipts, and no KIS/network/credential/broker route.
+4. **Artifacts:** write immutable source-safe precommit and result receipts only
+   under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`. Keep
+   checkpoints outside Git and do not create a report or gate family.
 
 ## Boundaries
 
-- No KIS call, credential or `.env` read, provider download, paid asset, public
-  service, account/quote/order route, or live behavior.
-- No validation-label reveal, local-paper replay, PnL metric, parameter sweep,
-  winner selection, ensemble, promotion, or Paper order.
-- Do not change the source panel, split, feature window, target/cost semantics,
-  comparator contract, or source limitations.
-- Do not commit generated artifacts, checkpoints, weights, caches, or Docker
-  volumes.
+- No KIS call, `.env` or credential read, provider download, paid asset, public
+  service, account/quote/order route, live behavior, or broker submission.
+- No parameter sweep, threshold tuning, winner selection, ensemble, model
+  promotion, KIS Paper action, or live capital claim.
+- Do not modify the source panel, feature window, phase split, target/cost
+  semantics, candidate architectures, seeds, or source limitations.
 
 ## Completion
 
-- Six deterministic CPU smoke fits prove the frozen input path without using a
-  validation label or cross-symbol feature/standardizer.
-- The Docker CUDA breadth package has source-safe external evidence for every
-  attempted architecture/symbol, or an exact bounded CUDA-unavailable fact while
-  all CPU work is complete.
-- No outcome is interpreted as profitable, selected, ensembled, replayed, or
-  eligible for Paper trading.
-- Refresh stateboards and replace this file with exactly one next company
-  objective before ending.
+- All 24 fixed candidates either have a source-safe independent result or an
+  exact bounded failure receipt with no incomplete output.
+- Every retained replay fill is locally reconstructable with `source: local_paper`.
+- Validation targets and per-decision values never leave process memory.
+- Refresh stateboards and replace this file with exactly one next objective.
 
 ## Verification
 
@@ -93,4 +88,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add NAS D1 sequence architecture breadth`
+`Evaluate sealed NAS D1 breadth candidates`
