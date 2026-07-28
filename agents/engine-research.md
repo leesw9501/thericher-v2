@@ -60,17 +60,21 @@ falsified across all three sparse validation folds. It used no training, GPU,
 network, credentials, KIS, or broker route. Do not retune its threshold, add it
 to an ensemble, or turn its result into a Paper input.
 
-The distinct NAS D1 volatility-conditioned trend package is complete as
-candidate-only plumbing. It fixes causal completed-bar `20 x 5` windows and
-development-only per-symbol normalization, then completed six CPU L2-logistic
-smokes and 18 network-disabled Docker CUDA LSTM/causal-TCN/compact-attention
-candidates. Its CPU/CUDA r2 summaries are
+The distinct NAS D1 volatility-conditioned trend package fixes causal
+completed-bar `20 x 5` windows and development-only per-symbol normalization.
+Its six CPU L2-logistic smokes and 18 network-disabled Docker CUDA
+LSTM/causal-TCN/compact-attention candidates have CPU/CUDA r2 summaries
 `sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
 and `sha256:3158ac0e69c002394d97dc5f52946d70637e082f292a7c549498f4c045e5bc2c`.
-All validation forwards were target-free and all 18 `state_dict` checkpoints
-remain external. This is not a result, ranking, selection, ensemble, replay,
-PnL, KIS, or Paper input. Claude's required drift-check attempt was
-`review_unavailable` because local OAuth could not refresh.
+All target-free forwards and all 18 `state_dict` checkpoints remain external.
+Its completed r5 sealed local-paper precommit and summary are
+`sha256:e7bd2cd8...d7b4618` and `sha256:803ead44...634d010`. The fixed package
+classified 24 candidates and 36 comparator cells, with six paired kill-rule
+passes. That mixed result remains evidence only: it creates no winner, ranking,
+selection, ensemble, promotion, KIS, or Paper input. Every fill was in-memory
+`local_paper`, replayed terminal-flat, and source values, predictions, fills,
+and checkpoints stayed unretained. Claude's required post-evaluation challenge
+was `review_unavailable` because local OAuth could not refresh.
 
 ## Current Readiness
 
@@ -314,11 +318,11 @@ PnL, KIS, or Paper input. Claude's required drift-check attempt was
    The next breadth proposal must declare a distinct causal hypothesis, feature
    contract, costs, split, naive baseline, and strongest kill test before any
    CPU or GPU work begins.
-10. The volatility-conditioned trend package is ready only for one fixed sealed
-    local-paper falsification. Reattest the r2 candidate artifacts and open
-    validation targets exactly once under a new immutable precommit. Classify
-    each frozen candidate against its declared comparators and kill rule without
-    selecting, tuning, ensembling, promoting, or creating a KIS Paper action.
+10. Keep the completed volatility-conditioned r5 receipt immutable. Its six
+    paired kill-rule passes do not select a candidate or authorize a Paper
+    action. The next Research package is a separately precommitted prospective
+    shadow observer using only post-r5 local-cache observations; it must not
+    tune, ensemble, promote, rank, or create a KIS Paper action.
 
 ## Durable Constraints
 
@@ -334,8 +338,9 @@ PnL, KIS, or Paper input. Claude's required drift-check attempt was
 Current class: complete for the joint contract, all three fold inputs/materializer/
 target receipts, all three candidate-only CPU/CUDA screens, the fixed cross-fold
 artifact, the fixed daily tree breadth candidate, CACC-D1, the QQQ/SPY
-relative-regime and relative-allocation CPU smoke/full receipts, and the sealed
-Docker r4 NAS 24-candidate/18-comparator local-paper evaluation. The completed
+relative-regime and relative-allocation CPU smoke/full receipts, the sealed
+Docker r4 NAS 24-candidate/18-comparator evaluation, and the sealed Docker r5
+volatility-conditioned 24-candidate/36-comparator local-paper evaluation. The completed
 daily-history continuation is transport and coverage evidence only: it creates
 no frozen Research input, replay, campaign, or GPU job. A new campaign requires
 its own contract; target-local daily-history recovery has no automatic Research
@@ -348,10 +353,10 @@ work or a promotion hold.
 ## Next Handoff
 
 Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
-controls, and immutable sealed NAS r4 result. The source-local NAS historical
-D1 panel and the distinct volatility-conditioned trend candidate artifacts are
-attested. The next package is one sealed local-paper falsification of the new
-frozen candidate set and its fixed comparators. Do not use its output to select,
-tune, ensemble, promote, rank, or create a KIS Paper action. Do not turn the
-current listing into a PIT membership claim. The fresh prospective baseline
-remains Execution evidence only.
+controls, and both immutable sealed NAS result families. The source-local NAS
+historical D1 panel and the volatility-conditioned r2/r5 artifact lineage are
+attested. Next, build a prospective shadow observer that reattests a fresh local
+post-r5 boundary and classifies the frozen package independently without using
+the r5 outcome to select, tune, ensemble, promote, rank, or create a KIS Paper
+action. Do not turn the current listing into a PIT membership claim. The fresh
+prospective baseline remains Execution evidence only.

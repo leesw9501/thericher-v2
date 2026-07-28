@@ -39,10 +39,13 @@ second goal.
   promotion, KIS, or Paper-order consequence.
 - **Engine Research:** the distinct NAS volatility-conditioned trend package
   completed its source-local causal `20 x 5` input adapter, six deterministic
-  CPU smokes, and 18 network-disabled Docker CUDA candidates. The r2 summary
-  hashes are `sha256:65ba9f...ad69a8` and `sha256:3158ac...e5bc2c`; all
-  validation forwards were target-free and all checkpoints remain external.
-  It has no selection, ensemble, replay, PnL, KIS, or Paper-order consequence.
+  CPU smokes, 18 network-disabled Docker CUDA candidates, and one r5 sealed
+  local-paper evaluation. The r2 input summaries are `sha256:65ba9f...ad69a8`
+  and `sha256:3158ac...e5bc2c`; the r5 summary is `sha256:803ead...634d010`.
+  It classified 24 candidates and 36 comparators, with six paired kill-rule
+  passes. This remains non-promoting: no selection, ensemble, KIS, or
+  Paper-order consequence follows. All fills were in-memory `local_paper`, all
+  replays terminal-flat, and all checkpoints remain external.
 - **Execution:** route simplification is complete and installed: the QQQ session
   owns one embedded recomputation, due-time dispatch does not build images, and
   the legacy observer is conditional. Historical receipt facts remain in the
@@ -56,11 +59,11 @@ second goal.
 
 The source-safe current-freshness contract, deterministic boundaries, in-place
 schedule deployment, both independent QQQ/SPY controls, NAS history
-materialization, exact NAS phase-local campaign contract, and prior sealed
-candidate evaluation are complete. There is no shared recovery or authority
-blocker. The next Research bottleneck is one precommitted sealed local-paper
-falsification for the new volatility-conditioned candidate package; it is not
-a tuning pass and the stale QQQ input remains only a scoped runtime fact.
+materialization, exact NAS phase-local campaign contract, and both sealed NAS
+candidate evaluations are complete. There is no shared recovery or authority
+blocker. The next Research bottleneck is a prospective post-r5 observation
+contract for the volatility-conditioned package; it is not a tuning pass and
+the stale QQQ input remains only a scoped runtime fact.
 
 **Current operating improvement:** Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
@@ -79,6 +82,14 @@ from frozen hashes for repeated in-memory consumer reads. This avoids repeated
 whole-panel rehashing during bounded CPU/GPU work without weakening the
 durable-boundary reattestation.
 
+The r5 evaluator additionally resolves each fixed comparator only after one
+comparator-scoped campaign reattestation rather than rehashing the full campaign
+for every slot. CPU refits must match the frozen CPU receipt; candidate-evidence
+drift writes a source-safe pre-target failure receipt; and drawdown includes
+entry, intrabar-low, and exit equity marks. The measured Docker evaluation
+finished in about 99 seconds, so no bar-identity cache was added without further
+evidence.
+
 ## Resolved Recovery
 
 The immutable r1 sealed receipt remains `failed_before_result_retention`: its
@@ -96,8 +107,9 @@ non-promoting work.
   attempt. It is normal lane-owned recovery, not a foreground company wait.
 - Claude CLI OAuth remains expired after the cross-runtime recovery challenge.
   Record `review_unavailable`; no lane foreground-waits on it.
-- The 2026-07-28 volatility/trend drift-check attempt also returned
-  `review_unavailable`; the candidate-only package remained non-promoting.
+- The 2026-07-28 volatility/trend pre- and post-evaluation drift-check attempts
+  both returned `review_unavailable`; the r5 mixed candidate-only result remains
+  non-promoting.
 
 ## Recovery
 
@@ -117,10 +129,9 @@ receipt, or any independent lane.
 
 ## Next Handoff
 
-The distinct causal NAS D1 volatility-conditioned hypothesis is now frozen and
-its candidate-only CPU/CUDA breadth package is complete. Next, precommit one
-sealed local-paper falsification of those frozen candidates and comparators.
-Do not inspect the older sealed aggregate result to choose a candidate and do
-not turn any result into a point-in-time universe, ranking, selection,
-ensemble, broker order, or global wait. Keep both sealed result families
-immutable and non-promoting.
+The distinct causal NAS D1 volatility-conditioned package has a completed r5
+sealed receipt. Next, precommit a prospective local-cache shadow observer for
+the frozen candidates. Do not use either sealed aggregate result to choose a
+candidate and do not turn any observation into a point-in-time universe,
+ranking, selection, ensemble, broker order, or global wait. Keep both sealed
+result families immutable and non-promoting.

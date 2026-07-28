@@ -656,22 +656,31 @@ versioned Compose profile and focused tests establish the network/mount contract
 The independent review also required that field. Claude's source-safe drift-check
 attempt remained `review_unavailable` because local OAuth is expired.
 
-The next distinct NAS D1 package is complete as candidate-only plumbing. It
-uses a causal five-channel volatility-conditioned trend feature sequence from
-the same source-local six-symbol panel, development-only labels, and target-free
-validation forwards. CPU r2 and Docker CUDA r2 source-safe summary identities
-are `sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
+The distinct NAS D1 volatility-conditioned package completed its one fixed
+Docker sealed local-paper falsification. Its r2 CPU/CUDA input summaries remain
+`sha256:65ba9f682bb6477bd7fdfa5d61761fb7ab67f3db23601187a92f88415bad69a8`
 and `sha256:3158ac0e69c002394d97dc5f52946d70637e082f292a7c549498f4c045e5bc2c`.
-The CUDA package has exactly 18 external safe-loadable checkpoints. No
-validation target, prediction, model ranking, selection, ensemble, replay,
-PnL, KIS request, or Paper action was opened. A later one-time sealed
-local-paper evaluator is the next falsification boundary. The required Claude
-challenge again returned `review_unavailable` because the local OAuth session
-could not refresh; this is not a promotion or an authority hold.
+The completed r5 precommit and source-safe summary are
+`sha256:e7bd2cd8b17959a9b6df5c49c8bfa5a22ae875d9b2a53311890d55e51d7b4618`
+and `sha256:803ead4440415dd2818c2bc81a5579f5ae01354a43955ad97e5a526a8634d010`.
+It independently classified 24 frozen candidates and 36 fixed comparator cells;
+six paired cells met the precommitted kill rule. This is a mixed candidate-only
+falsification result, not a winner, aggregate performance claim, selection,
+ensemble, promotion, or KIS Paper input. Every fill was in-memory
+`local_paper`, every replay reconstructed a terminal-flat account, and no raw
+row, target, prediction, event row, checkpoint copy, broker request, KIS call,
+or live route was retained or invoked. Claude's post-evaluation challenge again
+returned `review_unavailable` because OAuth could not refresh.
 
-Follow NEXT_CODEX_GOAL.md. The next company objective must precommit a distinct
-sealed local-paper falsification for the frozen volatility-conditioned package
-without using the older sealed r4 aggregate outcome to select it. Keep source
-limitations visible, use no KIS or live route, and do not make a selection,
-ensemble, promotion, or Paper-broker decision. Let the independent intraday
-scheduler own its next due recovery attempt rather than the foreground.
+The completed r3/r4 evaluation directories preserve precommit-only interrupted
+attempts. They are immutable recovery evidence; r5 is the only completed
+receipt for this exact package. The evaluator now reattests comparators once per
+bounded comparator rather than once per slot, matches CPU refits to their frozen
+receipt, writes a source-safe candidate-evidence failure receipt before target
+opening, and marks drawdown with entry, intrabar-low, and exit equity points.
+
+Follow NEXT_CODEX_GOAL.md. The next company objective is a bounded prospective
+NAS D1 shadow observer that consumes only new local-cache observations. It must
+not use the r5 outcomes to choose candidates, tune, ensemble, promote, or make
+a KIS Paper decision. Let the independent intraday scheduler own its next due
+recovery attempt rather than the foreground.

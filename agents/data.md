@@ -437,7 +437,8 @@ six-symbol NAS daily-history cache is now materialized under
 preserve its lineage and limitations without fetching, blending, or exposing raw
 rows. The next Research contract may consume it source-locally, but it must not
 reinterpret the common subset as a PIT universe or rank. The contract is now
-frozen through the earlier NAS D1 sequence precommit and the completed distinct
-volatility/trend candidate package. Data's next relevant consumer is a sealed,
-offline local-paper evaluation of that frozen package, not a new provider
-request, cache expansion, or historical-universe claim.
+frozen through the earlier NAS D1 sequence precommit, the completed distinct
+volatility/trend candidate package, and its r5 sealed receipt. Data's next
+relevant consumer is an offline prospective shadow observer that accepts only a
+reattested post-r5 local freshness boundary. It is not a new provider request,
+cache expansion, historical-universe claim, selection, or Paper order.

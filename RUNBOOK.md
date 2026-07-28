@@ -1517,6 +1517,31 @@ them with `weights_only=True`. A completed receipt proves candidate plumbing
 and target-free forward shape only. It is not a validation result, selection,
 ensemble input, local-paper replay, KIS Paper decision, or live behavior.
 
+### NAS D1 Volatility-Conditioned Sealed Evaluation
+
+After the exact r2 CPU and CUDA receipts exist, run the one fixed sealed
+evaluation in the network-disabled research container with a fresh label:
+
+```powershell
+$env:COMPOSE_DISABLE_ENV_FILE = "1"
+docker compose --profile research run --rm --no-deps research python `
+  scripts/run_kis_nas_d1_volatility_trend_sealed_evaluation.py `
+  --run-label <unique-sealed-label> `
+  --market-data-root /app/market_data `
+  --artifact-root /app/model_artifacts `
+  --review-status review_unavailable
+```
+
+The runner reattests the panel and exact r2 receipts before it writes its
+precommit. A candidate-evidence fault writes a source-safe failure receipt
+without opening validation targets; a completed summary retains aggregate
+candidate/comparator evidence only. CPU refits must match their frozen receipt;
+CUDA reload is strict and `weights_only=True`; all simulated fills are
+`local_paper` and replay terminal-flat. The result is candidate-only and cannot
+rank, select, tune, ensemble, promote, or create a KIS Paper order. Never reuse
+a label, place artifacts in Git, or use the interrupted r3/r4 directories as a
+completed result.
+
 ### KIS Daily Regime-Tree Breadth
 
 The fixed nonlinear breadth candidate uses the same 20 completed-bar QQQ/SPY

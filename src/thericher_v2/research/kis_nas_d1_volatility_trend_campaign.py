@@ -630,6 +630,22 @@ def is_kis_nas_d1_volatility_trend_reference_long(
     """Resolve a fixed reference decision without calculating PnL or ranking."""
 
     require_attested_kis_nas_d1_volatility_trend_campaign_input(campaign_input)
+    return resolve_kis_nas_d1_volatility_trend_reference_long_from_attested_input(
+        campaign_input,
+        sample,
+        comparator_id=comparator_id,
+    )
+
+
+def resolve_kis_nas_d1_volatility_trend_reference_long_from_attested_input(
+    campaign_input: KisNasD1VolatilityTrendCampaignInput,
+    sample: KisNasD1VolatilityTrendDevelopmentSample
+    | KisNasD1VolatilityTrendValidationSample,
+    *,
+    comparator_id: str,
+) -> bool:
+    """Resolve one fixed comparator after the caller has attested the campaign input."""
+
     if comparator_id not in KIS_NAS_D1_VOLATILITY_TREND_COMPARATORS:
         raise ValueError("NAS D1 volatility trend comparator is unsupported")
     if sample.symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:

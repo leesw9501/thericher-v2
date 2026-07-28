@@ -194,6 +194,28 @@ def test_campaign_filters_phase_ends_and_keeps_validation_target_free(tmp_path: 
         ) in {True, False}
 
 
+def test_attested_reference_resolver_matches_public_reference(tmp_path: Path) -> None:
+    campaign_input = campaign.build_kis_nas_d1_volatility_trend_campaign(
+        _source(tmp_path / "source")
+    )
+    sample = campaign_input.validation_samples("AAPL")[0]
+    campaign.require_attested_kis_nas_d1_volatility_trend_campaign_input(campaign_input)
+
+    for comparator_id in campaign.KIS_NAS_D1_VOLATILITY_TREND_COMPARATORS:
+        assert (
+            campaign.resolve_kis_nas_d1_volatility_trend_reference_long_from_attested_input(
+                campaign_input,
+                sample,
+                comparator_id=comparator_id,
+            )
+            == campaign.is_kis_nas_d1_volatility_trend_reference_long(
+                campaign_input,
+                sample,
+                comparator_id=comparator_id,
+            )
+        )
+
+
 def test_development_fit_stays_isolated_from_validation_values(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,

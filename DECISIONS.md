@@ -6769,3 +6769,28 @@ refresh; the package stays candidate-only and non-promoting.
 Reason: this gives the engine a genuinely different causal representation and
 multiple architecture families while retaining a later sealed falsification
 boundary instead of converting training diagnostics into a trading conclusion.
+
+## 2026-07-28 - Preserve the sealed NAS volatility trend result as mixed evidence
+
+Decision: complete one immutable Docker r5 sealed local-paper evaluation of the
+frozen NAS volatility-conditioned candidate package, then preserve it as mixed
+candidate-only evidence. The r5 precommit and source-safe summary are
+`sha256:e7bd2cd8b17959a9b6df5c49c8bfa5a22ae875d9b2a53311890d55e51d7b4618`
+and `sha256:803ead4440415dd2818c2bc81a5579f5ae01354a43955ad97e5a526a8634d010`.
+It classified all 24 frozen candidates and 36 fixed comparator cells; six
+paired cells met the precommitted kill rule. No candidate is selected, ranked,
+ensembled, promoted, or routed to KIS Paper from that result.
+
+The evaluator verifies CPU refit lineage against the frozen receipt, loads CUDA
+state with `weights_only=True`, writes a source-safe candidate-evidence failure
+receipt before a target can open, and calculates drawdown from entry, intrabar
+low, and exit equity marks. Every actual fill remained in-memory
+`source: local_paper` and replayed to a terminal-flat account. Raw bars,
+targets, predictions, event rows, checkpoint copies, KIS calls, broker effects,
+and live behavior remain absent. Claude's post-evaluation falsification check
+was attempted and returned `review_unavailable` because local OAuth is expired.
+
+Reason: a subset of pair-level passes is insufficient to create a trading
+decision, while an immutable, replayable receipt is useful input to a later
+independent prospective observation contract. The next package observes newly
+arriving local-cache data without reusing r5 to select a candidate.

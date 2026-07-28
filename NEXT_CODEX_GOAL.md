@@ -2,76 +2,71 @@
 
 ## Objective
 
-Run one bounded, sealed local-paper falsification of the frozen NAS D1
-volatility-conditioned trend candidate package. This is a fixed evaluation of
-already-frozen CPU and CUDA candidates and declared naive comparators, not a
-new training, parameter search, model selection, ensemble, promotion, or KIS
-Paper decision.
+Build one bounded prospective NAS D1 shadow-observation loop for the frozen
+volatility-conditioned trend candidate package.
+
+This converts neither the sealed r5 result nor any candidate into a winner. It
+prepares independent, newly observed evidence from the local cache while the
+existing Data schedule continues to own KIS collection.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
-   `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Reattest the source-local NAS D1 panel and the frozen volatility/trend
-   campaign precommit before opening any validation target.
-3. Ask Claude for a concise falsification-first review of the sealed-evaluation
-   contract. If OAuth remains expired, record `review_unavailable` and continue
-   this private, candidate-only package without treating it as a promotion.
+   `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active stateboards.
+2. Reattest the frozen NAS D1 panel, r2 CPU/CUDA artifacts, and the completed
+   r5 sealed receipt before writing any prospective receipt.
+3. Ask Claude for a concise falsification-first review of the prospective
+   observation boundary. If OAuth remains expired, record `review_unavailable`
+   and continue this private, non-promoting package.
 
 ## Contract
 
-- Consume only the existing six-symbol source-local NAS D1 panel and the exact
-  CPU/CUDA r2 candidate artifacts from the volatility-conditioned campaign.
-- Freeze evaluation slots, target timing, fixed after-cost local-paper model,
-  comparators, aggregation, metrics, candidate identifiers, and strongest kill
-  rule before reading validation targets or checkpoints.
-- Use in-memory validation targets and replayable fills labelled
-  `source: local_paper`. Retain only source-safe aggregate, immutable evidence
-  outside Git; never retain raw bars, target values, predictions, per-fill rows,
-  account identifiers, or checkpoint copies.
-- Evaluate every frozen candidate independently against fixed comparators,
-  including the ungated 5-day trend and volatility-gated 5-day trend rules.
-  Do not rank candidates, choose a winner, tune any threshold, create an
-  ensemble, or use an outcome as a KIS Paper input.
-- The primary kill rule is fixed before evaluation: a candidate fails unless it
-  strictly improves paired after-cost aggregate return versus ungated 5-day
-  trend without worsening maximum drawdown. A pass remains candidate-only and
-  cannot promote an action.
+- The observer consumes only local `D:\market_data` input and external frozen
+  artifacts under `D:\thericher-v2\model-artifacts`; it makes no KIS,
+  provider, broker, or credential call itself.
+- Freeze the post-r5 freshness boundary, causal feature timing, candidate
+  identities, local-paper costs, non-overlapping target timing, and source-safe
+  receipt schema before opening any newly observed target.
+- It may emit `input_unavailable` when no eligible post-boundary local session
+  exists. That is a completed scoped outcome, not a scheduler, Research, or
+  Paper-trading hold.
+- When eligible sessions exist, replay every frozen candidate independently
+  through in-memory `source: local_paper` fills. Retain only source-safe
+  aggregate evidence outside Git; never retain raw bars, target values,
+  predictions, per-fill rows, account identifiers, or checkpoint copies.
+- Do not rank, select, tune, ensemble, promote, or route a candidate to KIS
+  Paper. A prospective observation is evidence only.
 
 ## Work
 
-1. **Data:** provide only reattested source-local panel and phase identity;
-   do not fetch, mutate caches, or reinterpret current listings as a PIT
-   universe.
-2. **Engine Research:** write immutable evaluation precommit, load only the
-   frozen candidate checkpoints with safe weights-only loading, and run one
-   network-disabled Docker sealed local-paper evaluation.
-3. **Validation:** independently prove target isolation before the evaluation,
-   external artifact containment, immutable artifact hashes, replayable
-   `local_paper` fill source, terminal-flat accounting, and no KIS/network/
-   credential route.
+1. **Data:** expose a reattested local freshness boundary and exact eligible
+   post-boundary session contract without fetching, mutating caches, or making
+   a point-in-time universe claim.
+2. **Engine Research:** implement the frozen-candidate prospective observer,
+   immutable precommit/summary receipts, and one network-disabled Docker smoke.
+3. **Validation:** prove freshness-boundary isolation, local-paper-only replay,
+   artifact containment, no network/credential/broker route, and source-safe
+   unavailable/completed receipts.
 4. **Execution:** remain independent. Do not create an intent, query KIS, or
-   submit, modify, or cancel any broker order.
+   submit, modify, or cancel a broker order for this observer.
 
 ## Boundaries
 
 - No KIS call, `.env` or credential read, provider download, paid asset, public
   service, account/quote/order route, broker submission, or live behavior.
-- Do not inspect or use prior sealed NAS r4 aggregate outcomes to choose,
-  exclude, tune, or interpret this candidate set.
-- Do not create report/gate scaffolding. A failed candidate closes only its own
-  fixed claim and cannot block Data, Execution, scheduled collection, or a
-  distinct ready Research package.
+- Do not use r5 outcomes to choose candidate coverage, threshold, sizing,
+  aggregation, or a KIS Paper action.
+- Do not create report/gate scaffolding. A missing fresh session closes only the
+  observer's current receipt and cannot block the independent Data scheduler or
+  another ready lane.
 
 ## Completion
 
-- Immutable precommit and source-safe evaluation summary are written outside
-  Git with reattested candidate/panel lineage.
-- All frozen candidates receive a categorical independent result under the
-  fixed kill rule, or a scoped immutable failure receipt identifies the exact
-  input/runtime fault.
-- Tests prove local-paper-only replay, target isolation, artifact containment,
-  safe checkpoint loading, and no KIS/network/credential/broker access.
+- An immutable source-safe precommit and either an eligible prospective summary
+  or scoped `input_unavailable` receipt are written outside Git.
+- Frozen lineage, freshness isolation, local-paper replay, terminal-flat
+  accounting, artifact containment, and offline route boundaries have focused
+  tests.
 - Refresh stateboards and replace this file with exactly one next objective.
 
 ## Verification
@@ -85,4 +80,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Evaluate NAS volatility trend candidates`
+`Add prospective NAS shadow observer`
