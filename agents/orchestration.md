@@ -133,6 +133,15 @@ or research readiness. The shared bottleneck remains longitudinal data depth;
 the collector continues independently while Engine Research prepares a distinct
 KIS-compatible hypothesis contract from already-qualified fixed-pair history.
 
+The current reversible improvement keeps that collector moving while making its
+next stable consumer automatic: after a successful broad Docker run, the same
+task invokes one host-side `uv --offline` materialize-and-compare postprocess.
+It creates no second task, opens no KIS/broker route, and yields a scoped
+`retry` receipt if byte stability, full breadth, or generation-604 continuity
+is not present. Claude's latest drift-check is `supported-with-limits`; the
+implemented coverage checks address its warning that overlap equality alone
+does not prove a full-breadth snapshot.
+
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
 root is a non-symlink mount; repository `data` and `reports` mounts are

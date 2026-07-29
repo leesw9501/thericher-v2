@@ -384,6 +384,24 @@ target/session rows in those two frozen snapshots. A `mismatch` result exits
 nonzero and is not a harmless coverage warning. Neither outcome changes the
 collector, source scope, schedule, or research eligibility.
 
+The existing `thericher-kis-paper-daily-broad-backfill` task now runs one
+host-side postprocess only after its Docker collector exits zero:
+
+```powershell
+uv.exe run --offline python scripts\postprocess_kis_paper_daily_broad_panel.py
+```
+
+The postprocess reuses the byte-stable materializer, compares the candidate
+with the frozen generation-604 manifest, and writes one deterministic
+source-safe outcome receipt under
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-panel-postrun-v1`.
+It returns zero only when all current registry targets have non-quarantined
+coverage, coverage has not regressed from generation 604, and all baseline
+rows remain in the zero-mismatch overlap. A changing index, incomplete
+breadth, missing continuity, or mismatch writes a scoped `retry` receipt and
+returns `20`; it never stops or changes the collector. The host path reads no
+`.env` or credentials and calls no KIS, broker, or network route.
+
 ## KIS NAS D1 Forward Cache
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical

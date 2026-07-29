@@ -7085,6 +7085,36 @@ consumer can detect changed retained values. The comparison adds that narrow
 lineage check without claiming provider correctness, PIT membership, corporate-
 action semantics, session finality, or research readiness.
 
+## 2026-07-29 - Postprocess broad D1 panels only after their collector exits
+
+Decision: keep the materializer's existing two-index byte-stability contract
+and attach one offline materialize-and-compare postprocess to the successful
+exit path of the existing broad collector task. It does not add a second task
+or collector, and it runs only after the Docker collector process has returned
+zero. The postprocess writes a deterministic external source-safe receipt and
+returns recovery exit `20` for index drift, incomplete full breadth, candidate
+quarantine, coverage regression, unavailable continuity, or a shared-row
+mismatch. It returns zero only when all current registry targets are covered,
+the candidate is non-quarantined, generation-604 coverage is not reduced, and
+every retained baseline row is part of a zero-mismatch overlap.
+
+The host command is `uv run --offline`; it reads no `.env` or credentials and
+calls no KIS, account, broker, order, or live route. It writes neither raw rows
+nor prices, volumes, account facts, or model output. Its result is only a
+frozen source-local coverage/lineage fact, not research promotion or a
+collection-completion assertion.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its material
+caveat was that a zero-mismatch intersection can hide missing coverage; the
+full-breadth and baseline-coverage checks above make that caveat an executable
+condition for this exact consumer without blocking the collector or another
+lane.
+
+Reason: a separate clock-based post-run task could race a long broad worker.
+Sequencing the same offline consumer after the owner exits preserves the
+existing cache writer boundary while producing a stable, recoverable snapshot
+as soon as one is available.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

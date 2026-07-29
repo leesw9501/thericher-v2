@@ -906,6 +906,21 @@ continues independently; the pair cache's current deferred state is not a
 global hold. Claude's requested collector/scheduler drift check timed out
 without a review body, so it is recorded as `review_unavailable`.
 
+At the 10:36 KST watermark, the same active cache had advanced to generation
+4,314 with 8,389 accepted pages and `1,881 ready / 157 complete / 81
+source_limited`; every one of the 2,119 current NAS targets still had coverage.
+Its oldest active next-anchor bucket was 2024-01-05, so breadth is complete but
+longitudinal backfill remains active. The existing broad task runner now adds a
+single host-side `uv --offline` postprocess after a successful Docker collector
+exit. It reuses the two-read panel materializer, compares the candidate to
+generation 604, requires full non-quarantined coverage and non-regressing
+zero-mismatch overlap, and writes a deterministic source-safe receipt only
+under `D:\thericher-v2\model-artifacts`. A scoped `retry` result exits `20` and
+does not pause or alter the collector. The active 09:45 KST PowerShell process
+predates this runner update, so the next fresh task process owns the first
+automatic postprocess attempt. Claude's rerun gave `supported-with-limits`; its
+coverage caveat is implemented rather than treated as a panel-promotion claim.
+
 ## KIS Paper Account Readiness
 
 The current `kis-readonly` Docker image completed one bounded virtual-paper

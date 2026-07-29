@@ -459,6 +459,21 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   yielded. This validates that run's bounded recovery path, not a general KIS
   rate claim. Generation-604 remains the newest frozen panel; do not reinterpret
   it as generation 853 without a later independent materialization.
+- At the 2026-07-29 10:36 KST source-safe watermark, the active broad index was
+  generation 4,314: all 2,119 targets had retained coverage, 8,389 pages were
+  accepted, and target states were `1,881 ready / 157 complete / 81
+  source_limited`. The oldest active next-anchor bucket was 2024-01-05, so this
+  is complete breadth coverage but not a completed long-history backfill.
+- The existing broad-task runner now runs one offline postprocess only after
+  its Docker collector exits zero. It reuses the two-index materializer,
+  materializes a candidate panel, compares generation 604, and requires all
+  targets covered, zero candidate quarantine, non-regressing coverage, and
+  zero mismatch for the retained baseline overlap. It writes only a
+  deterministic source-safe postrun receipt under the external artifact root;
+  an unstable/incomplete/mismatched result is scoped `retry` exit `20`, never a
+  collector mutation, permission hold, or foreground wait. The active 09:45
+  KST PowerShell process predates this host-runner update, so the next fresh
+  task process owns the first automatic postprocess attempt.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
   Remaining page estimate and ETA remain `unknown` because breadth-first
   collection has not yet established a stable longitudinal-depth pace.
