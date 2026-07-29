@@ -420,10 +420,6 @@ the offline observer only after a current or complete cache result. A
 6. Preserve the completed D1 eligibility receipt and ETF trend-control evidence
    as source-local facts. Do not align or blend them with the current NAS panel,
    reopen IWM history, or reinterpret them as executable liquidity.
-7. Reattest only the frozen NAS panel's source-safe D1 OHLCV field capability
-   for the next candle-state candidate contract. This is a local metadata/read
-   package with no KIS call, raw-row export, source blend, or universe claim.
-
 ## Broad D1 Backfill
 
 Active package: KIS Paper `dailyprice` only, current NASDAQ common-stock
