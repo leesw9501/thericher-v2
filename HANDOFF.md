@@ -71,11 +71,18 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
-- The 2026-07-30 04:31 KST QQQ scheduler cycle closed `complete` with a
-  source-safe `no_intent/receipt_not_eligible` session and independent
-  validation. No canary lifecycle was created. Its next owned due time is
-  06:20 KST; this scoped no-intent fact does not authorize a decision-table
-  change or block another ready lane.
+- The 2026-07-30 06:20 KST QQQ scheduler cycle preserved a source-safe
+  Data-local recovery. Its capture receipt
+  `sha256:22c924be920a5a2a047ff25d4844da40cadc9a47a428f38585274742f15546cd`
+  rejected both exact minute inputs as `minute_duplicate_conflict`; the QQQ
+  session `sha256:e6d119fc72f95b758f1512276374c370ced8edb4c21cb48461851398d8a2e7cb`
+  was `paper_only` `no_intent/runtime_window_stale`, before account, quote,
+  intent, or canary work. Its paired terminal
+  `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`
+  records `recovery/collection_exit_nonzero` with prospective validation
+  `validated`. No lifecycle was created. The next owned due time is
+  2026-07-31 00:31 KST; this scoped recovery does not authorize a collector,
+  decision-table, sizing, or scheduler change.
 - A source-only Execution/Validation trace confirms this is not a static route
   contradiction: `receipt_not_eligible` exits before account, quote, or order
   work, and later fresh `enter` or `exit` sign pairs can use the same installed

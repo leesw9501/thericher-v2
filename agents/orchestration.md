@@ -30,27 +30,32 @@ second goal. Git and external artifacts retain historical evidence.
 ## Ready / Owned / Due
 
 - **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
-  canary through its first new lifecycle outcome. The latest 04:31 KST task
-  closed `no_intent/receipt_not_eligible` without a canary, so it is scoped
-  input evidence rather than completion, quota, or a new permission gate.
+  canary through its first new lifecycle outcome. The latest 06:20 KST task
+  retained an incomplete `minute_duplicate_conflict` capture and closed its
+  QQQ session as `no_intent/runtime_window_stale` without a canary, so it is
+  scoped input/recovery evidence rather than completion, quota, or a new
+  permission gate.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
-- **Due:** Task Scheduler owns the next source/canary trigger at 06:20 KST.
-  An absent fresh receipt is source-local evidence, not foreground idle or a
-  company hold.
+- **Due:** Task Scheduler owns the next source/canary trigger at 2026-07-31
+  00:31 KST. An absent fresh receipt is source-local evidence, not foreground
+  idle or a company hold.
 
 ## Current Bottleneck And Improvement
 
-There is no company-wide block. Source-only Validation confirmed that the two
-QQQ `receipt_not_eligible` outcomes are pre-account receipt facts, while the
-existing table still exposes reachable fresh `enter`/`exit` paths into the
-installed QQQ canary. The exact unknown-run recovery also exposed a reversible
-safety improvement: its read-only entrypoint now has a submit-proof branch and
-appends an immutable receipt instead of overwriting original failure evidence.
-The installed QQQ scheduler remains the only owner of the next fresh-session
-lifecycle. Claude's block-classification request timed out without a body, so
-the review is `review_unavailable` rather than agreement or a hold.
+There is no company-wide block. The latest QQQ cycle records a source-local
+minute-duplicate conflict before the stale-input session boundary; it created
+no account, intent, canary, or broker side effect. Earlier source-only
+Validation confirmed that `receipt_not_eligible` is likewise a pre-account
+fact, while the fixed table still exposes reachable fresh `enter`/`exit` paths
+into the installed QQQ canary. The exact unknown-run recovery also exposed a
+reversible safety improvement: its read-only entrypoint now has a submit-proof
+branch and appends an immutable receipt instead of overwriting original failure
+evidence. The installed QQQ scheduler remains the only owner of the next
+fresh-session lifecycle. Claude's block-classification request timed out
+without a body, so the review is `review_unavailable` rather than agreement or
+a hold.
 
 The isolated feedback helper `scripts/run_parallel_tests.ps1 -Workers 8`
 reattested on 2026-07-30 with `1762 passed, 14 skipped` in 284.47 seconds. It

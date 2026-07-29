@@ -48,11 +48,16 @@ decision-table edit, or live route is introduced.
   and records current `outcome_unknown/reconciliation_unresolved` only. No
   submit, cancel, modify, replacement, or live call occurred. This exact
   generic run is not the QQQ lifecycle objective and cannot block it.
-- The 2026-07-30 04:31 KST QQQ task closed terminal `complete` with a new
-  `paper_only` `no_intent/receipt_not_eligible` session and independent
-  validation. No canary existed, so no QQQ lifecycle, account-to-order path,
-  submit, cancel, modify, or live action followed. Its next scheduler-owned
-  observation is 06:20 KST; this no-intent result does not justify changing the
+- The 2026-07-30 06:20 KST QQQ task retained its exact Data-local collection
+  failure as `minute_duplicate_conflict` for both current minute inputs. Its
+  session `sha256:e6d119fc72f95b758f1512276374c370ced8edb4c21cb48461851398d8a2e7cb`
+  is `paper_only` `no_intent/runtime_window_stale`, with no pre-account or
+  pre-submit freshness pass, account, quote, intent, canary, submit, cancel,
+  modify, or live action. The paired terminal
+  `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`
+  is `recovery/collection_exit_nonzero` while independent prospective
+  validation is `validated`. The next scheduler-owned observation is
+  2026-07-31 00:31 KST; this scoped recovery does not justify changing the
   fixed decision table or forcing a replacement intent.
 - Temporary Validation traced `receipt_not_eligible` to the pre-account
   receipt-class gate. The existing fixed table still has reachable fresh
