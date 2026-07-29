@@ -7457,3 +7457,30 @@ retrospective event mask has a valid premise. A positive split signature only
 supports the narrow declaration; it cannot qualify Norgate, resolve
 survivorship, make sources interchangeable, or authorize training or Paper
 behavior.
+
+## 2026-07-30 - Preserve narrow KIS split evidence and census its complement
+
+Decision: accept the completed offline KIS D1 split-signature receipt
+`sha256:3930a95a...05176e` as narrow support for the cached `MODP=0`
+declaration. Its five fixed AAPL/AMZN/GOOGL/NVDA pairs all have a categorical
+large split signature; the artifact retains only source/contract hashes,
+per-symbol counts/statuses, and non-eligibility policy. It contains no rows,
+values, returns, dates, labels, credentials, network, KIS, broker, or live
+activity.
+
+Claude's result review was `supported-with-limits` for the narrow observation
+and `unsupported` for a retrospective-label exclusion adapter. The audit cannot
+detect dividend adjustment, uniform restatement, unknown corporate actions, or
+identity issues, and the adapter would not change the panel's otherwise
+unqualified status. Claude recommended a same-threshold complement census over
+every retained adjacent D1 pair and all six symbols. Adopt that next objective,
+with unexplained large moves treated only as categorical observations.
+
+Do not adopt Claude's proposed aggregate-order change: the fixed audit contract
+deliberately makes an unavailable or invalid required pair aggregate
+`inconclusive`, never a partial falsification. That fail-closed rule is an
+explicit objective boundary, not an accidental preference for success.
+
+Reason: the complement census creates an actual falsifier for a cheap source
+semantics check without inventing label plumbing, adding a provider, or
+mistaking a five-event spot check for full historical qualification.

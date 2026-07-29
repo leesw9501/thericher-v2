@@ -2,14 +2,15 @@
 
 ## Objective
 
-Falsify or narrowly support the retained six-symbol KIS Paper D1 cache's
-`MODP=0` declared-unadjusted semantics using only an offline split-signature
-audit.
+Build one offline, source-local unexplained-discontinuity census for the frozen
+six-symbol KIS Paper D1 history panel.
 
-This is an input-integrity check for future retrospective KIS labels. It is not
-a corporate-action feed, source transfer, data repair, feature, model,
-backtest, ranking, PnL, or Paper-trading task. It cannot make the Norgate/KIS
-conformance receipt model-eligible.
+The census stress-tests the narrow five-pair split-signature observation by
+checking every retained adjacent D1 pair across AAPL, AMZN, GOOGL, META, MSFT,
+and NVDA. It records only categorical counts of very large moves outside the
+same five fixed split pairs. An unexplained result is a data-semantic signal,
+not proof of a provider error, adjustment behavior, corporate action, or model
+eligibility.
 
 ## Start
 
@@ -20,30 +21,30 @@ conformance receipt model-eligible.
 3. Reattest the exact frozen six-symbol KIS D1 history panel through its
    existing offline loader. Do not invoke a provider, credential, or mutable
    cache path.
-4. Use the already-completed Claude challenge recorded in `DECISIONS.md`: a
-   Tiingo sidecar expansion is not the next action; the offline split-signature
-   kill test is.
+4. Use the completed Claude challenge recorded in `DECISIONS.md`: the prior
+   five-pair check remains narrow; do not build a label adapter from it.
 
-## Fixed Audit Contract
+## Fixed Census Contract
 
-- Audit only AAPL, AMZN, GOOGL, and NVDA against the following predeclared
-  public split-session pairs, all checked in memory against the named source
-  stream: `2020-08-28 -> 2020-08-31`, `2022-06-03 -> 2022-06-06`,
-  `2022-07-15 -> 2022-07-18`, `2021-07-19 -> 2021-07-20`, and
-  `2024-06-07 -> 2024-06-10` respectively, with both NVDA pairs required.
-- For every available pair, use the fixed signature
-  `abs(log(close_after / close_before)) >= log(3)`. There is no threshold
-  sweep, event-date search, parameter tuning, or use of a provider/event feed.
-- Return only one immutable external source-safe receipt with per-symbol
-  categorical results and one aggregate status:
-  `consistent_with_declared_unadjusted`, `declared_unadjusted_falsified`, or
-  `inconclusive`. A missing/incomplete/invalid required pair is
-  `inconclusive`, never a pass or falsification.
-- A positive result means only that these retained rows exhibit the expected
-  large split signature. It does not verify all adjustment behavior, qualify
-  corporate actions, resolve Norgate semantics, remove survivorship, or permit
-  a model, rank, replay, PnL claim, local-paper intent, KIS Paper action, or
-  GPU job.
+- Examine every ordered adjacent pair of completed retained D1 bars within each
+  source stream. Use the unchanged signature
+  `abs(log(close_later / close_earlier)) >= log(3)`, implemented with exact
+  positive Decimal ratio comparisons. There is no threshold sweep, event-date
+  discovery, parameter tuning, or provider/event feed.
+- Categorize a signature only as `known_fixed_split` when its later session is
+  one of the five predeclared pairs already committed in the prior audit.
+  Every other signature is `unexplained_large_discontinuity`.
+- Return one immutable external source-safe receipt with per-symbol aggregate
+  pair counts and categorical status plus one overall status:
+  `no_unexplained_large_discontinuity`,
+  `unexplained_large_discontinuity_observed`, or `inconclusive`.
+  Invalid or incomplete pair handling must be fail-closed to `inconclusive`.
+- Never persist source rows, prices, returns, timestamps, session/event dates,
+  per-pair records, or any location of an observed discontinuity. The fixed
+  event contract may be represented only by a checksum.
+- A zero unexplained count does not verify adjustment semantics, corporate
+  actions, source identity, sessions, gaps, survivorship, PIT eligibility, or
+  source transfer. A nonzero count does not identify a cause.
 
 ## Authority And Boundaries
 
@@ -53,39 +54,36 @@ conformance receipt model-eligible.
 - Do not read `.env`, credentials, tokens, account data, or KIS responses. Do
   not call KIS, Tiingo, another provider, broker, or live route. Do not mutate
   any cache, scheduler, task, cursor, or raw data.
-- Persist no raw rows, prices, volumes, returns, timestamps, event dates,
-  labels, predictions, model artifacts, account facts, broker bodies, or
-  secrets. The receipt may retain only source hashes, fixed-contract identity,
-  symbol names, categorical per-symbol results, aggregate counts/categories,
-  and scope limitations.
+- Do not construct labels, features, a rule, a model, an encoder probe, a
+  rank, an ensemble, a replay, PnL, a local-paper intent, or a KIS Paper action.
+  Do not create a corporate-action sidecar or change an earlier conformance or
+  split-signature receipt.
 - Do not introduce a dependency, public model/weight, runtime, worker, or
-  scheduler. Do not create a corporate-action sidecar or change the existing
-  dual-source conformance receipt.
+  scheduler.
 
 ## Parallel Work Packages
 
-1. **Data:** implement the deterministic in-memory KIS D1 split-signature
-   audit and immutable external receipt. It must reattest the frozen source
-   identity and fail closed to `inconclusive` when a required event pair is not
-   available or valid.
-2. **Engine Research:** define the exact interpretation boundary: all three
-   audit outcomes remain non-model and non-Paper; only a later independently
-   designed input contract may consume a narrow source-semantics fact.
-3. **Temporary Validation:** add focused tests for the three aggregate
-   outcomes, fixed threshold/event contract, no-network/no-credential route,
-   no raw value/date persistence, immutable receipt reattachment, and external
-   artifact-root enforcement.
+1. **Data:** implement the deterministic in-memory all-six-symbol census and
+   immutable external categorical receipt. It must reattest source identity and
+   avoid retaining any event-level observation.
+2. **Engine Research:** define the interpretation boundary: every census result
+   remains non-model, non-ranking, non-PnL, and non-Paper evidence; the result
+   cannot become a label adapter or causal campaign input.
+3. **Temporary Validation:** add focused tests for zero, nonzero, and
+   inconclusive outcomes; fixed pair exclusion; no-network/no-credential route;
+   no value/date/per-pair persistence; immutable receipt reattachment; and
+   external artifact-root enforcement.
 4. **Data / temporary Validation:** reattach any automatic broad postrun only
    through its existing receipt-bound path. Its absence or scoped retry does
-   not delay this audit.
+   not delay this census.
 
 ## Completion
 
-- The audit reattests one frozen KIS D1 source and produces only the allowed
+- The census reattests one frozen KIS D1 source and produces only the allowed
   categorical external receipt.
-- The result neither changes the existing Norgate/KIS conformance receipt nor
-  makes any research, model, ranking, PnL, local-paper, KIS Paper, or live
-  action eligible.
+- The result changes no source conformance, corporate-action qualification,
+  label eligibility, research, model, ranking, PnL, local-paper, KIS Paper, or
+  live action.
 - Refresh Data/Research/orchestration stateboards, replace this file with one
   next objective, verify, commit, push, and continue.
 
@@ -100,4 +98,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add D1 source conformance contract`
+`Audit KIS D1 split signatures`

@@ -993,7 +993,19 @@ model, PnL, credential, KIS, broker, or network data and is not model-eligible.
 Claude rejected a proposed Tiingo six-symbol corporate-action sidecar expansion
 as `unsupported`: it exceeded the documented standing token scope, would not
 resolve the conformance conflicts, and has a cheaper offline kill test. The
-next objective audits the frozen six-symbol KIS D1 panel's `MODP=0` declaration
-against predeclared split signatures only. It must preserve a scoped
-`consistent`, `falsified`, or `inconclusive` outcome and cannot enable transfer,
-training, ranking, PnL, or Paper action.
+offline audit then reattested the frozen six-symbol KIS D1 panel at contract
+`sha256:1a3b295e...6ded2cb` and receipt `sha256:3930a95a...05176e`. All five
+fixed AAPL/AMZN/GOOGL/NVDA split pairs were present and classified
+`signature_observed`, so the aggregate is narrowly
+`consistent_with_declared_unadjusted`. No source values, dates, rows, labels,
+requests, credentials, or broker data were retained.
+
+Claude's result review was `supported-with-limits` for that narrow observation,
+but `unsupported` for turning it into a retrospective-label exclusion adapter.
+The audit does not test dividend adjustments, full-panel restatement, the two
+unaudited symbols, or source identity. Its recommended next package is an
+offline all-six-symbol complement census of large adjacent-session
+discontinuities outside the five fixed pairs. Preserve the current contract's
+intentional rule that any missing/invalid required pair yields aggregate
+`inconclusive`; do not reinterpret that as a bug or change it while closing the
+audit objective.

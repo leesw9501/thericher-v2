@@ -91,7 +91,11 @@ corporate action, timezone, and gap semantics remain unknown. The interface is
 source-parameterized only and remains ineligible for transfer, model work,
 ranking, PnL, or Paper use. The next Research-adjacent input check is an
 offline KIS `MODP=0` split-signature falsification, not a causal
-label/model/GPU campaign.
+label/model/GPU campaign. That audit now has narrow `consistent` evidence for
+five fixed split pairs, but Claude rejected turning it into a label adapter:
+the result neither qualifies remaining corporate actions nor changes the
+non-model status. The next source-local check is an all-six-symbol unexplained
+large-discontinuity census, still with no label/model/GPU/Paper consequence.
 
 ## Current Objective
 

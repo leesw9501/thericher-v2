@@ -102,9 +102,14 @@ the offline observer only after a current or complete cache result. A
   semantics are `semantics_conflict`; corporate-action, timezone, and
   gap/halt semantics remain `unknown`. It is source-parameterized metadata
   only, with no row transfer, model, ranking, PnL, Paper, credential, network,
-  or cache-mutation path. The next Data package is an offline, source-local
-  falsification of the KIS `MODP=0` adjustment declaration; it does not touch
-  the running broad collector.
+  or cache-mutation path. The subsequent offline KIS `MODP=0` split-signature
+  audit is complete at `sha256:98d71c43...a6bcbdf`, with receipt
+  `sha256:3930a95a...05176e`: all five fixed split pairs across AAPL, AMZN,
+  GOOGL, and NVDA were present and categorical signatures were observed. This
+  narrowly supports the declared split behavior but does not qualify all
+  adjustments or corporate actions. The next Data package is an offline
+  all-six-symbol unexplained-discontinuity census; it does not touch the
+  running broad collector.
 - The sole `thericher-kis-paper-daily-broad-backfill` Task Scheduler owner is
   currently `Running` for its first receipt-capable process. The earlier
   generation-11,130 worker exited before the postprocess image update; no new
