@@ -3,8 +3,8 @@
 ## Objective
 
 Reattach the first automatic broad KIS Paper D1 panel-postprocess outcome and
-establish its source-local availability boundary for a later date-based
-Research contract, while the broad collector continues independently.
+record its source-local per-target chronology distribution for a later
+date-based Research design, while the broad collector continues independently.
 
 The result may establish only frozen coverage and lineage. It must not make a
 point-in-time universe, corporate-action, ranking, model, ensemble, PnL, Paper
@@ -20,7 +20,8 @@ signal, or broker claim.
    bodies.
 3. Ask Claude for a short falsification-first check before changing panel
    completeness semantics, creating a date split, or making a Research
-   eligibility claim.
+   eligibility claim. Treat a chronology distribution as an observation, never
+   as a boolean eligibility result.
 
 ## Authority And Boundaries
 
@@ -41,13 +42,15 @@ signal, or broker claim.
    generation-604 continuity receipt through existing offline loaders. Confirm
    all receipt hashes, full non-quarantined breadth, non-regressing coverage,
    and zero retained-row mismatches.
-2. **Validation:** record a compact external availability result that says only
-   whether the frozen candidate can support a future date-based split design.
-   It may contain hashes, aggregate coverage, and limitations; it must not
-   retain source rows, prices, labels, rankings, or model output.
-3. **Research:** if and only if the availability result is complete, prepare a
-   separate proposed causal dataset/split/cost/baseline/kill-test contract for
-   later review. Do not fit or dispatch it in this objective.
+2. **Validation:** record a compact, perishable external chronology observation
+   with candidate identity, aggregate per-target span buckets, and limitations.
+   Do not compute a global common-history threshold or `feasible` boolean: the
+   shallowest and source-limited current survivors must not become a hidden
+   Research eligibility rule. Retain no source rows, prices, labels, rankings,
+   or model output.
+3. **Research:** use only the observation to identify later design questions.
+   Do not treat it as a campaign contract, create a split/target/label, fit, or
+   dispatch a model in this objective.
 4. If postrun is `retry` or absent, preserve the scoped source-safe fact and
    leave the collector running. Do not poll or sleep in the foreground; advance
    only already-ready non-conflicting work.
@@ -58,8 +61,8 @@ signal, or broker claim.
 
 - A source-safe postrun result is independently reattached as `complete` or
   its scoped `retry` reason is preserved.
-- Any new availability result remains external, offline, aggregate-only, and
-  explicitly non-promoting.
+- Any chronology observation remains external, offline, aggregate-only,
+  perishable by candidate generation, and explicitly non-promoting.
 - No KIS call, credential read, raw-cache mutation, model/GPU run, Paper
   action, or live behavior occurred in this objective.
 

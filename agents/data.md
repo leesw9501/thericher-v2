@@ -459,9 +459,9 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   yielded. This validates that run's bounded recovery path, not a general KIS
   rate claim. Generation-604 remains the newest frozen panel; do not reinterpret
   it as generation 853 without a later independent materialization.
-- At the 2026-07-29 10:36 KST source-safe watermark, the active broad index was
-  generation 4,314: all 2,119 targets had retained coverage, 8,389 pages were
-  accepted, and target states were `1,881 ready / 157 complete / 81
+- At the 2026-07-29 11:06 KST source-safe watermark, the active broad index was
+  generation 4,712: all 2,119 targets had retained coverage, 9,166 pages were
+  accepted, and target states were `1,862 ready / 165 complete / 92
   source_limited`. The oldest active next-anchor bucket was 2024-01-05, so this
   is complete breadth coverage but not a completed long-history backfill.
 - The existing broad-task runner now runs one offline postprocess only after
@@ -474,6 +474,14 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   collector mutation, permission hold, or foreground wait. The active 09:45
   KST PowerShell process predates this host-runner update, so the next fresh
   task process owns the first automatic postprocess attempt.
+- A tested offline chronology observer is ready for a later `complete` postrun.
+  It reattests the postrun and frozen panel, then records only candidate-bound
+  aggregate per-target bar-count/calendar-span buckets and source-state counts.
+  It deliberately emits no global common-history threshold or `feasible`
+  result: current-listing and source-limited targets would turn that boolean
+  into a false Research eligibility proxy. Recovery class: `resume` pending the
+  next fresh collector process; no cache mutation, KIS call, or collector wait
+  belongs to the observer.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
   Remaining page estimate and ETA remain `unknown` because breadth-first
   collection has not yet established a stable longitudinal-depth pace.

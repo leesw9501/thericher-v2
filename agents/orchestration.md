@@ -142,6 +142,12 @@ is not present. Claude's latest drift-check is `supported-with-limits`; the
 implemented coverage checks address its warning that overlap equality alone
 does not prove a full-breadth snapshot.
 
+The next non-conflicting Validation package is ready but awaits its immutable
+postrun input: it will record only a candidate-generation-bound per-target
+chronology distribution. It must not reduce current-listing/source-limited
+coverage into a global common-history or Research-eligibility boolean. This
+keeps the idle GPU fact truthful rather than manufacturing an unqualified run.
+
 Docker bind mounts beneath `/app` are now
 accepted as external only when the exact `market_data` or `model_artifacts`
 root is a non-symlink mount; repository `data` and `reports` mounts are

@@ -402,6 +402,24 @@ breadth, missing continuity, or mismatch writes a scoped `retry` receipt and
 returns `20`; it never stops or changes the collector. The host path reads no
 `.env` or credentials and calls no KIS, broker, or network route.
 
+After a `complete` postrun, an explicit offline chronology observation may
+record only the frozen candidate's aggregate per-target bar-count and calendar-
+span buckets:
+
+```powershell
+uv run --offline python scripts\observe_kis_paper_daily_broad_panel_chronology.py `
+  --postrun-receipt D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-panel-postrun-v1\<receipt>.json `
+  --baseline-manifest D:\market_data\us_equities\kis_paper_private\daily-nas-broad-panel\v1\panel=2c3b9ddddc7160620210\manifest.json `
+  --candidate-manifest D:\market_data\us_equities\kis_paper_private\daily-nas-broad-panel\v1\<candidate>\manifest.json
+```
+
+It reattests the existing complete postrun and panel manifests, then writes one
+external aggregate-only observation. It never emits a global common-history
+threshold or a `feasible`/research-eligibility verdict: current-listing and
+source-limited targets make such a boolean misleading. The observation is
+perishable by candidate generation and is not a split, target, model, GPU,
+ranking, Paper, or live input.
+
 ## KIS NAS D1 Forward Cache
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical

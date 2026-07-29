@@ -906,8 +906,8 @@ continues independently; the pair cache's current deferred state is not a
 global hold. Claude's requested collector/scheduler drift check timed out
 without a review body, so it is recorded as `review_unavailable`.
 
-At the 10:36 KST watermark, the same active cache had advanced to generation
-4,314 with 8,389 accepted pages and `1,881 ready / 157 complete / 81
+At the 11:06 KST watermark, the same active cache had advanced to generation
+4,712 with 9,166 accepted pages and `1,862 ready / 165 complete / 92
 source_limited`; every one of the 2,119 current NAS targets still had coverage.
 Its oldest active next-anchor bucket was 2024-01-05, so breadth is complete but
 longitudinal backfill remains active. The existing broad task runner now adds a
@@ -920,6 +920,10 @@ does not pause or alter the collector. The active 09:45 KST PowerShell process
 predates this runner update, so the next fresh task process owns the first
 automatic postprocess attempt. Claude's rerun gave `supported-with-limits`; its
 coverage caveat is implemented rather than treated as a panel-promotion claim.
+The next offline observer is already tested but waits only on that immutable
+postrun input. It records a candidate-generation-bound per-target chronology
+distribution, never a global common-history/`feasible` decision, so current
+listing and source-limited targets cannot become an accidental Research gate.
 
 ## KIS Paper Account Readiness
 

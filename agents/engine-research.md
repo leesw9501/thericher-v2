@@ -382,9 +382,11 @@ limits remain explicit.
     unadjusted, corporate-action-unqualified, and session-finality-unattested
     scope is not an eligible target or split. Do not freeze a CPU baseline,
     use historical membership, rank targets, open labels, start GPU work, or
-    treat accumulating cache pages as a model result. A later consumer needs a
+    treat accumulating cache pages as a model result. A later candidate needs a
     date-based split, an independently qualified target/cost definition, and
-    an explicit leakage kill test.
+    an explicit leakage kill test. A future broad-panel chronology observation
+    records only per-target span distribution; it cannot provide a shared-span
+    threshold, campaign eligibility, or GPU dispatch signal.
 
 ## Durable Constraints
 

@@ -7115,6 +7115,32 @@ Sequencing the same offline consumer after the owner exits preserves the
 existing cache writer boundary while producing a stable, recoverable snapshot
 as soon as one is available.
 
+## 2026-07-29 - Observe broad D1 chronology by target distribution, not one common-span gate
+
+Decision: after a complete broad D1 postrun, retain at most one external,
+candidate-generation-bound chronology observation with aggregate per-target
+bar-count and calendar-span buckets plus source-state counts. It must reattach
+the existing postrun, candidate panel, and generation-604 comparison before
+writing. It records `recorded`, not `feasible`, and never computes a global
+common-history threshold.
+
+The current NAS registry is a current-listing, non-PIT survivor set and its
+source-limited targets can remain structurally shallow. Intersecting every
+target's history would let the shallowest such member define a misleading
+research gate. The observation therefore stays a perishable source fact, not a
+split, target, campaign, model, GPU, ensemble, ranking, PnL, Paper, or live
+input. It is offline, aggregate-only, external to Git, and has no credential,
+KIS, account, broker, order, or network route.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its caveat
+was adopted directly: overlap equality already attests retained rows, and a
+new chronology result should add only span distribution rather than an
+eligibility-like boolean.
+
+Reason: later research needs visibility into broad-cache depth without turning
+current-listing coverage or source limitations into an accidental model
+qualification rule.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1
