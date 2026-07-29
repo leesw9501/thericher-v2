@@ -906,10 +906,10 @@ continues independently; the pair cache's current deferred state is not a
 global hold. Claude's requested collector/scheduler drift check timed out
 without a review body, so it is recorded as `review_unavailable`.
 
-At the 11:06 KST watermark, the same active cache had advanced to generation
-4,712 with 9,166 accepted pages and `1,862 ready / 165 complete / 92
+At the 12:24 KST watermark, the same active cache had advanced to generation
+5,639 with 10,962 accepted pages and `1,806 ready / 188 complete / 125
 source_limited`; every one of the 2,119 current NAS targets still had coverage.
-Its oldest active next-anchor bucket was 2024-01-05, so breadth is complete but
+Its oldest active next anchor was 2023-03-23, so breadth is complete but
 longitudinal backfill remains active. The existing broad task runner now adds a
 single host-side `uv --offline` postprocess after a successful Docker collector
 exit. It reuses the two-read panel materializer, compares the candidate to
@@ -917,13 +917,17 @@ generation 604, requires full non-quarantined coverage and non-regressing
 zero-mismatch overlap, and writes a deterministic source-safe receipt only
 under `D:\thericher-v2\model-artifacts`. A scoped `retry` result exits `20` and
 does not pause or alter the collector. The active 09:45 KST PowerShell process
-predates this runner update, so the next fresh task process owns the first
-automatic postprocess attempt. Claude's rerun gave `supported-with-limits`; its
-coverage caveat is implemented rather than treated as a panel-promotion claim.
-The next offline observer is already tested but waits only on that immutable
-postrun input. It records a candidate-generation-bound per-target chronology
-distribution, never a global common-history/`feasible` decision, so current
-listing and source-limited targets cannot become an accidental Research gate.
+predates the first host-runner update, so the next fresh task process owns the
+first automatic postprocess attempt. That same fresh chain now invokes the
+tested offline observer only after a complete postprocess, using the exact
+digest-derived receipt rather than a latest-artifact lookup. A scoped observer
+recovery is warned and remains recoverable without changing an otherwise
+successful collector/postprocess task result. Claude's rerun gave
+`supported-with-limits`; its deterministic-receipt and failure-boundary
+caveats are implemented. The observer records a candidate-generation-bound
+per-target chronology distribution, never a global common-history/`feasible`
+decision, so current-listing and source-limited targets cannot become an
+accidental Research gate.
 
 The same installed broad task now has one 30-minute Tuesday-Saturday trigger
 per `:15`/`:45` slot across 00:15-23:45 KST. It retains `IgnoreNew`, the

@@ -30,8 +30,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--postrun-receipt", type=Path, required=True)
-    parser.add_argument("--baseline-manifest", type=Path, required=True)
-    parser.add_argument("--candidate-manifest", type=Path, required=True)
+    parser.add_argument("--baseline-manifest", type=Path)
+    parser.add_argument("--candidate-manifest", type=Path)
     parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_DAILY_BROAD_CACHE_ROOT)
     parser.add_argument("--panel-root", type=Path, default=KIS_PAPER_DAILY_BROAD_PANEL_ROOT)
     parser.add_argument("--artifact-root", type=Path, default=_ARTIFACT_ROOT)
@@ -51,14 +51,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         ):
             _emit({"status": "not_recorded", "reason": "postrun_not_complete"})
             return _RECOVERY_EXIT
+        baseline_manifest, candidate_manifest = _resolve_manifest_paths(
+            postrun=postrun,
+            panel_root=args.panel_root,
+            baseline_manifest=args.baseline_manifest,
+            candidate_manifest=args.candidate_manifest,
+        )
         baseline = load_materialized_kis_paper_daily_broad_panel(
-            args.baseline_manifest,
+            baseline_manifest,
             cache_root=args.cache_root,
             panel_root=args.panel_root,
             repo_root=repository_root,
         )
         candidate = load_materialized_kis_paper_daily_broad_panel(
-            args.candidate_manifest,
+            candidate_manifest,
             cache_root=args.cache_root,
             panel_root=args.panel_root,
             repo_root=repository_root,
@@ -69,7 +75,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             baseline=baseline,
             candidate=candidate,
             comparison=comparison,
-            candidate_manifest_path=args.candidate_manifest,
+            candidate_manifest_path=candidate_manifest,
         )
     except (OSError, ValueError):
         _emit({"status": "not_recorded", "reason": "postrun_reattest_failed"})
@@ -158,6 +164,41 @@ def _validate_complete_postrun(
         or comparison.shared_row_count < _row_count(baseline)
     ):
         raise ValueError("broad daily chronology postrun is invalid")
+
+
+def _resolve_manifest_paths(
+    *,
+    postrun: Mapping[str, object],
+    panel_root: Path,
+    baseline_manifest: Path | None,
+    candidate_manifest: Path | None,
+) -> tuple[Path, Path]:
+    if (baseline_manifest is None) != (candidate_manifest is None):
+        raise ValueError("broad daily chronology manifest arguments are incomplete")
+    if baseline_manifest is not None and candidate_manifest is not None:
+        return baseline_manifest, candidate_manifest
+    return (
+        _manifest_path_for_dataset_hash(
+            _text(_mapping(postrun, "baseline"), "dataset_hash"),
+            panel_root,
+        ),
+        _manifest_path_for_dataset_hash(
+            _text(_mapping(postrun, "candidate"), "dataset_hash"),
+            panel_root,
+        ),
+    )
+
+
+def _manifest_path_for_dataset_hash(dataset_hash: str, panel_root: Path) -> Path:
+    prefix = "sha256:"
+    digest = dataset_hash.removeprefix(prefix)
+    if (
+        not dataset_hash.startswith(prefix)
+        or len(digest) != 64
+        or any(character not in "0123456789abcdef" for character in digest)
+    ):
+        raise ValueError("broad daily chronology dataset hash is invalid")
+    return Path(panel_root) / f"panel={digest[:20]}" / "manifest.json"
 
 
 def _chronology_distribution(panel: KisPaperDailyBroadPanel) -> dict[str, object]:

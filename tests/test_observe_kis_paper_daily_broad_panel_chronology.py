@@ -110,6 +110,59 @@ def test_preserves_a_noncomplete_postrun_without_new_observation(
     assert not artifact_root.exists()
 
 
+def test_derives_frozen_manifest_paths_from_the_complete_postrun(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    script = _load_script()
+    repository_root = _repository_root(tmp_path)
+    baseline = _panel("a", generation=604, target_counts=(8, 8), states=("ready", "complete"))
+    candidate = _panel(
+        "b",
+        generation=4000,
+        target_counts=(300, 600),
+        states=("ready", "source_limited"),
+    )
+    panel_root = tmp_path / "panels"
+    baseline_manifest = _manifest_path(panel_root, baseline.dataset_hash)
+    candidate_manifest = _manifest_path(panel_root, candidate.dataset_hash)
+    baseline_manifest.parent.mkdir(parents=True)
+    candidate_manifest.parent.mkdir(parents=True)
+    baseline_manifest.write_text("{}\n", encoding="ascii")
+    candidate_manifest.write_text("{}\n", encoding="ascii")
+    postrun_path = tmp_path / "postrun.json"
+    postrun_path.write_text(
+        json.dumps(_postrun_payload(baseline, candidate, candidate_manifest), sort_keys=True),
+        encoding="ascii",
+    )
+    loaded_paths: list[Path] = []
+
+    def load_panel(path: Path, **_kwargs: object) -> SimpleNamespace:
+        loaded_paths.append(Path(path))
+        return baseline if Path(path) == baseline_manifest else candidate
+
+    monkeypatch.setattr(script, "load_materialized_kis_paper_daily_broad_panel", load_panel)
+    monkeypatch.setattr(script, "compare_kis_paper_daily_broad_panels", lambda *_args: _equal())
+
+    exit_code = script.main(
+        [
+            "--postrun-receipt",
+            str(postrun_path),
+            "--panel-root",
+            str(panel_root),
+            "--artifact-root",
+            str(tmp_path / "artifacts"),
+            "--repository-root",
+            str(repository_root),
+        ]
+    )
+
+    assert exit_code == 0
+    assert json.loads(capsys.readouterr().out)["status"] == "recorded"
+    assert loaded_paths == [baseline_manifest, candidate_manifest]
+
+
 def test_chronology_script_stays_offline_and_nonpromoting() -> None:
     source = (
         Path(__file__).resolve().parents[1]
@@ -229,6 +282,10 @@ def _load_script() -> ModuleType:
 
 def _sha256(payload: bytes) -> str:
     return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _manifest_path(panel_root: Path, dataset_hash: str) -> Path:
+    return panel_root / f"panel={dataset_hash.removeprefix('sha256:')[:20]}" / "manifest.json"
 
 
 def _assert_source_safe(value: object) -> None:

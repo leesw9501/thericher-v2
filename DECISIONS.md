@@ -7141,6 +7141,31 @@ Reason: later research needs visibility into broad-cache depth without turning
 current-listing coverage or source limitations into an accidental model
 qualification rule.
 
+## 2026-07-29 - Chain broad D1 chronology observation to a complete postrun
+
+Decision: extend the existing broad-task exit chain by invoking the already
+offline chronology observer only after a zero-exit `complete` postprocess. The
+runner resolves the postrun receipt from the postprocess's one JSON result and
+its SHA-256-derived immutable filename; it never discovers a mutable "latest"
+artifact. The observer derives both panel paths from the receipt's verified
+dataset hashes and reattests them before writing its aggregate-only external
+observation.
+
+If the observer returns its scoped recovery exit, the runner records a warning
+but returns the successful postprocess result. This preserves the factual task
+outcome while leaving only the observation eligible for recovery. The chain
+adds no trigger, collector, cache mutation, KIS request, credential read,
+network/broker route, model input, or research promotion.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its adopted
+conditions are deterministic receipt derivation, no mutable-artifact lookup,
+and a failure boundary that cannot mislabel a completed collection/postprocess
+as a task failure.
+
+Reason: an automatic, receipt-bound observer removes foreground polling and
+keeps the next source-safe consumer attached to the stable cache-owner
+boundary without converting an observation into a new collection gate.
+
 ## 2026-07-29 - Keep broad D1 collection eligible across the KST overnight gap
 
 Decision: extend only the existing
