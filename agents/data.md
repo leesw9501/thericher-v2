@@ -113,7 +113,11 @@ the offline observer only after a current or complete cache result. A
   `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`,
   with collection `exit_nonzero` and prospective validation `validated`. The
   scheduler owns the next 2026-07-31 00:31 KST observation; this does not call
-  for a manual collector launch or a change to the QQQ decision table.
+  for a manual collector launch or a change to the QQQ decision table. The
+  source-safe category does not distinguish a candidate-batch from a retained-
+  head mismatch; exact duplicates remain accepted, and focused recovery tests
+  establish that either mismatch yields to the next fresh page without a
+  collector or scheduler change.
 - The offline Norgate/KIS D1 metadata conformance receipt is complete at
   `sha256:17a5c604...bf26afa` with receipt
   `sha256:f57ff545...10d7f60`. Both inputs expose the same five D1 OHLCV
