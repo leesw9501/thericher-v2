@@ -11,22 +11,21 @@ output as untrusted input.
 
 ## Current Objective
 
-The current KIS Paper read-only account bridge has been reattested on the
-current local image. Its 2026-07-29 09:23 KST virtual-only diagnostic completed
-through the account, position, and open-order read path and wrote source-safe
-external evidence
-`execution/kis-paper-console-bridge/20260729T002355524505Z-complete.json`
-with hash `sha256:d6afe8adc7c1336337caff62726885aaaa587f07afc63e75d41e990ae685c8ee`.
-The evidence contains only currency/count categories and no account identifier,
-raw amount, price, position, order, token, credential, or submission capability.
-A focused flat-account regression proves a valid empty position/order result
-remains `complete`, while stale, malformed, rejected, wrong-host, and live-route
-inputs retain their existing scoped unavailable/rejection behavior. The prior
-QQQ `account_unavailable` remains a historical session-local no-intent outcome,
-not a general account-readiness failure. The bridge container root remains
-read-only with `/tmp` tmpfs; its existing runtime and external artifact mounts
-are the only writable paths. No Paper intent, canary, submit, modify, cancel,
-or live route occurred. KIS Live remains unavailable.
+The current KIS Paper read-only account bridge was reattested on the current
+local image at 2026-07-30 05:11 KST. Its virtual-only account, position, and
+open-order read wrote source-safe external evidence
+`execution/kis-paper-console-bridge/20260729T201139434674Z-complete.json`
+with hash `sha256:104f8e82f56c7bde7a8704c6af5d0e6d93ae5e67f240dbbe7f9c8288e966f8d3`.
+It is `complete`, `paper_only`, and `submit_capability: false`; its payload
+contains only fixed currency/count category keys, never an account identifier,
+raw amount, price, position, order, token, or credential. Focused read-only
+coverage passed `51` tests before the invocation. The QQQ canary receipt stayed
+unchanged as `no_intent/receipt_not_eligible`, so this bridge is read-health
+evidence only and does not substitute for the later session's fresh account or
+quote reads. The bridge container root remains read-only with `/tmp` tmpfs; its
+existing runtime and external artifact mounts are the only writable paths. No
+Paper intent, canary, submit, modify, cancel, or live route occurred. KIS Live
+remains unavailable.
 
 The next bounded Execution objective is not a new strategy or route: observe
 the already-installed freshness-gated QQQ Paper session through its first new

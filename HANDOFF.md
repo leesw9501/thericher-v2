@@ -992,10 +992,10 @@ one target-local source limit or scoped retry does not.
 ## KIS Paper Account Readiness
 
 The current `kis-readonly` Docker image completed one bounded virtual-paper
-account, position, and open-order read at 2026-07-29 09:23 KST. Its immutable
+account, position, and open-order read at 2026-07-30 05:11 KST. Its immutable
 source-safe evidence is
-`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260729T002355524505Z-complete.json`
-with hash `sha256:d6afe8adc7c1336337caff62726885aaaa587f07afc63e75d41e990ae685c8ee`.
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260729T201139434674Z-complete.json`
+with hash `sha256:104f8e82f56c7bde7a8704c6af5d0e6d93ae5e67f240dbbe7f9c8288e966f8d3`.
 It is `paper_only`, has `submit_capability: false`, and exposes only fixed
 currency/count category keys. It contains no credential, account identifier,
 raw balance, price, position, order, token, or broker body. No intent, canary,
