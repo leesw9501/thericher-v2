@@ -21,7 +21,6 @@ from thericher_v2.data.norgate_trial_development_panel import (
     DEFAULT_MARKET_DATA_ROOT,
     FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_HASH,
     FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_ID,
-    FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR,
     NorgateTrialDevelopmentPanelCatalog,
     load_verified_norgate_trial_development_panel_catalog,
 )
@@ -212,14 +211,28 @@ def load_frozen_observed_return_dataset(
 ) -> ObservedReturnDataset:
     """Reattest the static panel and derive only past-and-present return windows."""
 
+    snapshot_dir = frozen_norgate_panel_snapshot_dir(market_data_root)
     catalog = load_verified_norgate_trial_development_panel_catalog(
-        FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_SNAPSHOT_DIR,
+        snapshot_dir,
         expected_dataset_id=FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_ID,
         expected_dataset_hash=FROZEN_NORGATE_TRIAL_DEVELOPMENT_PANEL_DATASET_HASH,
         market_data_root=market_data_root,
         repo_root=repo_root,
     )
     return build_observed_return_dataset(catalog, geometry=geometry)
+
+
+def frozen_norgate_panel_snapshot_dir(market_data_root: Path) -> Path:
+    """Resolve the immutable panel beneath either the host or Docker data mount."""
+
+    return (
+        Path(market_data_root)
+        / "us_equities"
+        / "norgate_trial_broad_development_panel"
+        / "canonical"
+        / "ohlcv_1d"
+        / "snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1"
+    )
 
 
 def build_observed_return_dataset(

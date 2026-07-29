@@ -15,6 +15,7 @@ from thericher_v2.research.norgate_broad_representation import (
     RepresentationGeometry,
     build_observed_return_dataset,
     freeze_representation_campaign,
+    frozen_norgate_panel_snapshot_dir,
     mask_observed_windows,
 )
 
@@ -39,6 +40,13 @@ def test_observed_dataset_never_uses_a_future_bar_for_development_windows() -> N
     assert initial.diagnostic_window_sha256 != changed_future.diagnostic_window_sha256
     assert numpy.array_equal(initial.development_windows, changed_future.development_windows)
     assert not numpy.array_equal(initial.diagnostic_windows, changed_future.diagnostic_windows)
+
+
+def test_frozen_panel_path_is_relative_to_the_injected_market_data_root() -> None:
+    assert frozen_norgate_panel_snapshot_dir(Path("/app/market_data")) == Path(
+        "/app/market_data/us_equities/norgate_trial_broad_development_panel/canonical/"
+        "ohlcv_1d/snapshot=2026-07-18-norgate-trial-broad-d1-panel-r1"
+    )
 
 
 def test_masking_is_deterministic_and_exposes_only_observed_targets() -> None:
