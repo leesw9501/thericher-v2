@@ -2,69 +2,91 @@
 
 ## Objective
 
-Reattach the first automatic broad KIS Paper D1 panel-postprocess outcome and
-record its source-local per-target chronology distribution for a later
-date-based Research design, while the broad collector continues independently.
+Keep the automatic broad KIS Paper D1 collector independent while making the
+Engine Research lane continuously useful: implement auditable campaign custody
+and run the first source-isolated, target-free sequence-representation study on
+the frozen Norgate D1 development panel.
 
-The result may establish only frozen coverage and lineage. It must not make a
-point-in-time universe, corporate-action, ranking, model, ensemble, PnL, Paper
-signal, or broker claim.
+This is model-plumbing and representation evidence only. It must not establish
+profitability, a direction forecast, a point-in-time universe, ranking,
+ensemble, Paper signal, or broker claim.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Inspect the installed broad task, current source-safe index facts, the
-   generation-604 manifest, and any external postrun receipt without printing
-   raw rows, prices, volumes, symbols, credentials, account facts, or broker
-   bodies.
-3. Ask Claude for a short falsification-first check before changing panel
-   completeness semantics, creating a date split, or making a Research
-   eligibility claim. Treat a chronology distribution as an observation, never
-   as a boolean eligibility result.
+2. Inspect the installed broad task and source-safe postrun/chronology roots.
+   Do not start, stop, duplicate, or alter the collector.
+3. Reattest the exact frozen Norgate panel identity before Research reads it.
+   Do not reuse `norgate_broad_development_artifact` because its direction label
+   and discontinuity filter inspect future indices.
+4. Use the recorded Claude `supported-with-limits` review as the starting
+   falsification check. Ask Claude again before any change to source eligibility,
+   model promotion, comparative interpretation, Paper route, or public-model
+   runtime/dependency.
 
 ## Authority And Boundaries
 
-- The postrun consumer is offline. Do not read credentials, call KIS, start or
-  stop a collector, change a cache cursor/pacing gate, or launch a duplicate
-  task.
-- Do not mutate raw cache bytes or collector locks, acquire data, rank symbols,
-  create a target/label, fit a model, run GPU work, or create a Paper
-  intent/order/canary/live route.
-- Preserve the automatic task boundary: the broad task itself owns collection
-  and invokes postprocess only after its Docker collector returns zero.
-- A missing postrun artifact is an external timing fact, not a foreground wait
-  or a reason to weaken the two-index stability/coverage rules.
+- The broad collector remains the sole owner of KIS Paper credentials, network,
+  cursor, pacing, raw cache, and postprocess invocation. This goal makes no
+  manual KIS call and reads no credentials.
+- Research runs only in the Docker `research` service with network disabled,
+  read-only source mounts, and artifacts under `/app/model_artifacts` mapped to
+  `D:\thericher-v2\model-artifacts`.
+- Keep the frozen Norgate panel's static, non-PIT, unverified-adjustment scope
+  explicit. A target-free representation exercise does not change its
+  `campaign_eligible`, `model_eligible`, `gpu_eligible`, or Paper eligibility
+  fields.
+- Do not create a forward label, inspect `t+1` or later data for any sample,
+  load a public model/weight, use a public-model runtime, rank symbols, replay
+  PnL, create a local-paper intent, or create an ensemble.
+- Do not persist raw rows, source values, predictions, credentials, account
+  facts, or broker bodies. Generated weights must use a safe non-pickle format
+  and remain outside Git.
+- Fixed architecture losses are diagnostics only. No early stopping,
+  architecture winner, score leaderboard, threshold tuning, or model selection
+  is allowed in this objective.
 
-## Work
+## Parallel Work Packages
 
-1. **Data:** when a postrun receipt appears, reattach its candidate panel and
-   generation-604 continuity receipt through existing offline loaders. Confirm
-   all receipt hashes, full non-quarantined breadth, non-regressing coverage,
-   and zero retained-row mismatches.
-2. **Validation:** record a compact, perishable external chronology observation
-   with candidate identity, aggregate per-target span buckets, and limitations.
-   Do not compute a global common-history threshold or `feasible` boolean: the
-   shallowest and source-limited current survivors must not become a hidden
-   Research eligibility rule. Retain no source rows, prices, labels, rankings,
-   or model output.
-3. **Research:** use only the observation to identify later design questions.
-   Do not treat it as a campaign contract, create a split/target/label, fit, or
-   dispatch a model in this objective.
-4. If postrun is `retry` or absent, preserve the scoped source-safe fact and
-   leave the collector running. Do not poll or sleep in the foreground; advance
-   only already-ready non-conflicting work.
-5. Refresh the Data/Research/orchestration stateboards, replace this file with
-   exactly one next objective, and continue.
+1. **Data / temporary Validation:** When the automatic postrun receipt appears,
+   reattach it through the existing offline path and preserve the candidate-bound,
+   aggregate chronology observation or its scoped retry fact. A missing receipt
+   is external timing evidence only and does not delay Research.
+2. **Engine Research - campaign custody:** Implement a minimal append-only,
+   source-safe external campaign registry keyed by frozen contract hash. Record
+   dataset/split/cost/trial-family/trial-index/holdout-access identities and
+   terminal non-promoting outcome references; reject Git-local artifact roots.
+3. **Engine Research - sequence/DL track:** Build a separate Norgate observed-
+   window dataset from only completed `t-window+1..t` returns. Freeze its
+   geometry, masking objective, source identity, fixed architecture specs, and
+   stop budget in an external contract. Run a Docker CPU smoke before one
+   bounded GPU batch of GRU, LSTM, causal-TCN, and compact-attention masked-span
+   reconstruction jobs. Persist only source-safe summaries, checksums, and safe
+   external weights.
+4. **Strategy Discovery:** Produce one compact external source-safe handoff for
+   official public time-series model candidates. Include source identifier,
+   retrieval time, verbatim license text, mechanism, and stated discovery/
+   pretraining corpus period and instrument scope or `not_disclosed`. Do not
+   add a dependency, download a weight, or turn it into a campaign.
+5. **Validation:** Add focused tests proving the registry and representation
+   contract need no network, broker, KIS, or credential access; reject future
+   indices and Git-local artifacts; retain no raw data or score-based selection.
 
 ## Completion
 
-- A source-safe postrun result is independently reattached as `complete` or
-  its scoped `retry` reason is preserved.
-- Any chronology observation remains external, offline, aggregate-only,
-  perishable by candidate generation, and explicitly non-promoting.
-- No KIS call, credential read, raw-cache mutation, model/GPU run, Paper
-  action, or live behavior occurred in this objective.
+- The campaign registry is append-only, external, idempotent by frozen contract
+  identity, and covered by focused tests.
+- The target-free contract independently reattests the frozen panel and cannot
+  read a forward label or future-aware feature artifact.
+- CPU smoke and the bounded Docker CUDA batch complete or preserve a scoped,
+  source-safe failure/recovery artifact. Any weights are external safe files.
+- Strategy Discovery has either a source-safe handoff or a scoped no-source
+  result; it cannot block the other packages.
+- A broad postrun receipt, when available, is handled only through its existing
+  offline reattachment path.
+- Refresh Data/Research/orchestration stateboards, replace this file with one
+  next objective, verify, commit, push, and continue.
 
 ## Verification
 
@@ -77,4 +99,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Qualify broad D1 postprocess output`
+`Add target-free research pipeline`
