@@ -52,6 +52,40 @@ offline chronology observer. It avoids foreground polling, mutable
 latest-artifact discovery, duplicate collectors, and a false global
 research-eligibility decision.
 
+## Blocked-Goal Alternatives
+
+**Blocking fact:** the 09:45 KST owner has not yet emitted a postrun receipt;
+the existing worker cannot adopt runner code committed after it started. The
+major-work order remains `collector exit -> fresh collector/postprocess chain
+-> immutable postrun -> offline reattachment/chronology -> Research questions`.
+
+1. **Data + temporary Validation, frozen panel resource:** reattach the
+   generation-187/604 continuity contract through the existing offline
+   comparison. Completion evidence is an aggregate equal receipt; its strongest
+   kill test is reattestation or any shared-row fingerprint mismatch. On a kill,
+   preserve the source-safe failure and defer only the later candidate.
+2. **Infra Capability + Data, Task Scheduler resource:** attest that the
+   installed action still targets the current runner with one-owner `IgnoreNew`
+   and its fixed execution limit. Completion evidence is a source-safe task and
+   process projection; the kill test is action/path/settings divergence. On a
+   kill, reinstall only the existing task definition without launching it.
+3. **Temporary Validation, hermetic test resource:** run the focused postprocess,
+   observer, and runner contract tests. Completion evidence is a passing suite;
+   the kill test is mutable-latest lookup, stage-order, or recovery-boundary
+   failure. On a kill, repair that offline contract before consuming a receipt.
+
+Claude's falsification-first challenge timed out after 124 seconds and is
+`review_unavailable`, not a substantive verdict. All three packages remain
+inside existing authority and do not call KIS, read credentials, mutate the
+cache, run a model, or create a Paper action.
+
+**Dispatched evidence:** the frozen comparison reattached as `equal` across
+187 targets / 35,975 shared rows with zero mismatches, receipt
+`sha256:6b221366...45c69c8b`; the installed task still names the current runner,
+has one worker, `IgnoreNew`, and `PT14H30M`; the hermetic four-file suite passed
+`21`. No kill test fired. The original external receipt dependency remains the
+only block.
+
 ## Durable Knowledge
 
 - Generation-604 remains the frozen continuity baseline. Its later candidate
