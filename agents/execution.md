@@ -55,6 +55,13 @@ decision-table edit, or live route is introduced.
   submit, cancel, modify, or live action followed. Its next scheduler-owned
   observation is 06:20 KST; this no-intent result does not justify changing the
   fixed decision table or forcing a replacement intent.
+- Temporary Validation traced `receipt_not_eligible` to the pre-account
+  receipt-class gate. The existing fixed table still has reachable fresh
+  `enter` and `exit` rows, and its QQQ flat-entry/position-resolution tests
+  exercise the complete canary path. A later fresh sign pair can therefore
+  create a new eligible QQQ lifecycle without changing table, sizing,
+  freshness, scheduler, or strategy. This is an input-scoped no-intent result,
+  not a static route contradiction or an order authority hold.
 - The 2026-07-29 00:31 KST scheduled QQQ route produced an exact
   `paper_only` `no_intent/receipt_not_eligible` session. Its baseline `reduce`
   action correctly narrowed to the non-entry `abstain` receipt; no canary or

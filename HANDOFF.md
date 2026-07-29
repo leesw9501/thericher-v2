@@ -76,6 +76,14 @@ authorized private KIS Paper work.
   validation. No canary lifecycle was created. Its next owned due time is
   06:20 KST; this scoped no-intent fact does not authorize a decision-table
   change or block another ready lane.
+- A source-only Execution/Validation trace confirms this is not a static route
+  contradiction: `receipt_not_eligible` exits before account, quote, or order
+  work, and later fresh `enter` or `exit` sign pairs can use the same installed
+  QQQ one-share canary path without a table, sizing, freshness, or scheduler
+  change. The relevant focused tests cover the mocked fresh entry path, all
+  decision-table combinations, and QQQ intent route isolation. A Claude
+  block-classification request timed out without a body and is
+  `review_unavailable`, not a substantive conclusion.
 
 ## Operating Reset
 

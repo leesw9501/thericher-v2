@@ -42,11 +42,15 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-There is no company-wide block. The exact unknown-run recovery exposed a
-reversible safety improvement: the read-only entrypoint now has its own
-submit-proof branch and appends an immutable receipt instead of overwriting the
-original failure evidence. The installed QQQ scheduler remains the only owner
-of the next fresh-session lifecycle.
+There is no company-wide block. Source-only Validation confirmed that the two
+QQQ `receipt_not_eligible` outcomes are pre-account receipt facts, while the
+existing table still exposes reachable fresh `enter`/`exit` paths into the
+installed QQQ canary. The exact unknown-run recovery also exposed a reversible
+safety improvement: its read-only entrypoint now has a submit-proof branch and
+appends an immutable receipt instead of overwriting original failure evidence.
+The installed QQQ scheduler remains the only owner of the next fresh-session
+lifecycle. Claude's block-classification request timed out without a body, so
+the review is `review_unavailable` rather than agreement or a hold.
 
 ## Durable Knowledge
 
