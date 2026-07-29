@@ -29,6 +29,8 @@ def test_broad_schedule_runs_offline_finalization_only_after_collection_success(
     assert "observe_kis_paper_daily_broad_panel_chronology.py" in source
     assert "Resolve-KisPaperDailyBroadPostrunReceiptPath" in source
     assert "PostrunReceiptPath" in source
+    assert "[int]$CollectorMaxRuntimeSeconds = 28800" in source
+    assert "--max-runtime-seconds $MaxRuntimeSeconds" in source
     assert "Start-Sleep" not in source
     for forbidden in (".env", "KIS_PAPER_ACCOUNT", "KIS_LIVE", "submit", "cancel"):
         assert forbidden.lower() not in source.lower()
@@ -139,8 +141,9 @@ def _run_harness(
                 "$script:postprocessCalls = 0",
                 "$script:chronologyCalls = 0",
                 "function Invoke-KisPaperDailyBroadCollector {",
-                "    param([string]$ProjectRoot)",
+                "    param([string]$ProjectRoot, [int]$MaxRuntimeSeconds)",
                 "    $script:collectorCalls += 1",
+                "    $script:collectorMaxRuntimeSeconds = $MaxRuntimeSeconds",
                 f"    return {collector_exit}",
                 "}",
                 "function Invoke-KisPaperDailyBroadPanelPostprocess {",
@@ -164,6 +167,7 @@ def _run_harness(
                 "if ($script:collectorCalls -ne 1) { exit 91 }",
                 f"if ($script:postprocessCalls -ne {expected_postprocess_calls}) {{ exit 92 }}",
                 f"if ($script:chronologyCalls -ne {expected_chronology_calls}) {{ exit 93 }}",
+                "if ($script:collectorMaxRuntimeSeconds -ne 28800) { exit 94 }",
                 "exit $exitCode",
             )
         )

@@ -207,7 +207,8 @@ def test_compose_profile_and_schedule_runner_stay_data_only_and_restartable() ->
     assert "KIS_LIVE" not in section
     assert "--continuation" in runner
     assert "--max-chunks 24000" in runner
-    assert "--max-runtime-seconds 50400" in runner
+    assert "[int]$CollectorMaxRuntimeSeconds = 28800" in runner
+    assert "--max-runtime-seconds $MaxRuntimeSeconds" in runner
     assert "Start-Sleep" not in runner
     assert "KIS_PAPER_ACCOUNT" not in runner
     assert "KIS_LIVE" not in runner

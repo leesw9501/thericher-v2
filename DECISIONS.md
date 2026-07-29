@@ -7202,6 +7202,36 @@ gap after a bounded worker exited. Extending the same task's eligible start
 times improves sustained historical backfill without creating parallel KIS
 traffic or weakening recovery semantics.
 
+## 2026-07-29 - Bound fresh broad D1 workers to an eight-hour postrun cadence
+
+Decision: change only the host broad-task runner's default inner collector bound
+from 50,400 seconds to 28,800 seconds. The currently running 09:45 KST worker
+is not stopped or modified. The existing task, 30-minute triggers, `IgnoreNew`,
+cache lock, shared request gate, one-client-per-worker rule, 24,000-chunk cap,
+and 870-minute Windows envelope remain unchanged. A fresh worker still reaches
+postprocess only after its Docker collector exits zero.
+
+Measured context: the one active owner accepted 21,543 pages over roughly
+12 hours 35 minutes by 22:20 KST. The original bound would defer the next fresh
+postrun until roughly 14:15 KST; the eight-hour bound allows its first
+postprocess boundary around 08:15 KST without a parallel collector. This is a
+data-collection/validation feedback calibration, not a provider-rate claim.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its adopted
+kill test measures accepted pages per rolling 24-hour wall-clock, not active
+minutes, because restart/token/index-reverification overhead is real. Revert to
+50,400 seconds if the first calibrated cycle has zero accepted progress, a
+shared auth/rate failure, no terminal postprocess boundary, a
+`rate_limit_recovery_outcome` of `runtime_exhausted` caused by the shorter
+bound, or materially lower rolling-24-hour page yield. The first postrun and
+subsequent source-safe worker receipt decide retention; neither condition blocks
+another correctly scoped Data or Paper action.
+
+Reason: a long uninterrupted collector maximizes one-run duty cycle but delays
+the stable snapshot needed by the active validation loop. An eight-hour bound is
+a reversible compromise that keeps serial collection while making frozen
+lineage evidence available materially earlier.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

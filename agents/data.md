@@ -424,7 +424,10 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   current-listing/non-PIT/non-ranking scope, unadjusted corporate-action and
   session-finality limitations, and target-level conflict quarantine. It makes
   no network, credential, broker, or KIS call and does not copy raw rows.
-- The installed owner remains one 14-hour continuation worker at a time. Its
+- The installed owner remains one continuation worker at a time. The 09:45 KST
+  worker exited zero before it could adopt the postprocess/observer update; the
+  next fresh 22:45 KST worker uses an 8-hour inner bound to produce its first
+  postrun earlier. Its
   same-task 30-minute Tuesday-Saturday trigger set now covers 00:15-23:45 KST,
   so an eligible next trigger can resume after a terminal run without creating
   a second collector. The worker retains its in-memory
@@ -468,11 +471,12 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   yielded. This validates that run's bounded recovery path, not a general KIS
   rate claim. Generation-604 remains the newest frozen panel; do not reinterpret
   it as generation 853 without a later independent materialization.
-- At the 2026-07-29 12:24 KST source-safe watermark, the active broad index was
-  generation 5,639: all 2,119 targets had retained coverage, 10,962 pages were
-  accepted, and target states were `1,806 ready / 188 complete / 125
-  source_limited`. The oldest active next anchor was 2023-03-23, so this is
-  complete breadth coverage but not a completed long-history backfill.
+- At the 2026-07-29 22:30 KST terminal source-safe watermark, the pre-update
+  09:45 worker exited zero at generation 11,130: all 2,119 targets had retained
+  coverage, 21,683 pages were accepted, and target states were `1,539 ready /
+  301 complete / 279 source_limited`. Ready target anchors range from 2020-03-09
+  through 2022-03-23, so this is complete breadth coverage but not a completed,
+  uniform long-history backfill.
 - The existing broad-task runner now runs one offline postprocess only after
   its Docker collector exits zero. It reuses the two-index materializer,
   materializes a candidate panel, compares generation 604, and requires all
@@ -480,9 +484,9 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   zero mismatch for the retained baseline overlap. It writes only a
   deterministic source-safe postrun receipt under the external artifact root;
   an unstable/incomplete/mismatched result is scoped `retry` exit `20`, never a
-  collector mutation, permission hold, or foreground wait. The active 09:45
-  KST PowerShell process predates this host-runner update, so the next fresh
-  task process owns the first automatic postprocess attempt.
+  collector mutation, permission hold, or foreground wait. The pre-update 09:45
+  KST worker exited without this chain, so the fresh 22:45 KST task process owns
+  the first automatic postprocess attempt.
 - The next fresh broad-task process automatically invokes the tested offline
   chronology observer after a `complete` postrun, deriving its two manifests
   from the exact digest-bound receipt. It records only candidate-bound aggregate
@@ -491,8 +495,13 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   current-listing and source-limited targets would turn that boolean into a
   false Research eligibility proxy. An observer-only recovery is warned without
   changing a successful collector/postprocess result. Recovery class: `resume`
-  pending the next fresh collector process; no cache mutation, KIS call, or
+  pending the fresh 22:45 KST collector process; no cache mutation, KIS call, or
   collector wait belongs to the observer.
+- The fresh 8-hour postrun-cadence calibration preserves the one task, one
+  worker, cache lock, shared request gate, and 24,000-chunk cap. Its first
+  receipt must be compared by rolling 24-hour wall-clock accepted pages and
+  `rate_limit_recovery_outcome`, not active-minute throughput alone. Recovery
+  class: `resume`; the fresh 22:45 KST worker is the first calibrated run.
 - D: has about 40.44 percent free space, above the 20/15 percent warning/floor.
   Remaining page estimate and ETA remain `unknown` because breadth-first
   collection has not yet established a stable longitudinal-depth pace.

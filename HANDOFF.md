@@ -906,28 +906,31 @@ continues independently; the pair cache's current deferred state is not a
 global hold. Claude's requested collector/scheduler drift check timed out
 without a review body, so it is recorded as `review_unavailable`.
 
-At the 12:24 KST watermark, the same active cache had advanced to generation
-5,639 with 10,962 accepted pages and `1,806 ready / 188 complete / 125
-source_limited`; every one of the 2,119 current NAS targets still had coverage.
-Its oldest active next anchor was 2023-03-23, so breadth is complete but
-longitudinal backfill remains active. The existing broad task runner now adds a
-single host-side `uv --offline` postprocess after a successful Docker collector
-exit. It reuses the two-read panel materializer, compares the candidate to
-generation 604, requires full non-quarantined coverage and non-regressing
-zero-mismatch overlap, and writes a deterministic source-safe receipt only
-under `D:\thericher-v2\model-artifacts`. A scoped `retry` result exits `20` and
-does not pause or alter the collector. The active 09:45 KST PowerShell process
-predates the first host-runner update, so the next fresh task process owns the
-first automatic postprocess attempt. That same fresh chain now invokes the
-tested offline observer only after a complete postprocess, using the exact
-digest-derived receipt rather than a latest-artifact lookup. A scoped observer
-recovery is warned and remains recoverable without changing an otherwise
-successful collector/postprocess task result. Claude's rerun gave
-`supported-with-limits`; its deterministic-receipt and failure-boundary
-caveats are implemented. The observer records a candidate-generation-bound
-per-target chronology distribution, never a global common-history/`feasible`
-decision, so current-listing and source-limited targets cannot become an
-accidental Research gate.
+At the 2026-07-29 22:30 KST terminal source-safe watermark, the 09:45 KST
+worker had exited zero at mutable generation 11,130. All 2,119 current NAS
+targets retained coverage, with 21,683 accepted pages, 310 cumulative
+categorical failures, and states `1,539 ready / 301 complete / 279
+source_limited`. The ready target anchors ranged from 2020-03-09 through
+2022-03-23. Breadth is complete but longitudinal backfill remains incomplete
+and uneven. That worker loaded its runner before the host postprocess/observer
+updates, so both postrun roots remained absent after its successful exit; this
+is a scoped pre-update-worker fact, not a collector or data failure.
+
+The next fresh 22:45 KST same-task worker owns the first automatic chain. It
+uses an eight-hour inner bound, then runs one host-side `uv --offline`
+postprocess after a successful Docker collector exit. The postprocess reuses
+the two-read panel materializer, compares the candidate to generation 604,
+requires full non-quarantined coverage and non-regressing zero-mismatch
+overlap, and writes a deterministic source-safe receipt only under
+`D:\thericher-v2\model-artifacts`. A scoped `retry` result exits `20` and does
+not pause or alter the collector. The exact digest-bound receipt then invokes
+the tested offline observer after a complete postprocess; an observer recovery
+is warned without changing successful collector/postprocess state. Claude's
+rerun gave `supported-with-limits`; its deterministic-receipt and
+failure-boundary caveats are implemented. The observer records a
+candidate-generation-bound per-target chronology distribution, never a global
+common-history/`feasible` decision, so current-listing and source-limited
+targets cannot become an accidental Research gate.
 
 The same installed broad task now has one 30-minute Tuesday-Saturday trigger
 per `:15`/`:45` slot across 00:15-23:45 KST. It retains `IgnoreNew`, the

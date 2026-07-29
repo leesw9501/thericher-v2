@@ -344,12 +344,15 @@ Install the continuation owner only after a successful bootstrap:
 ```
 
 It triggers Tuesday through Saturday every 30 minutes from 00:15 through 23:45 KST.
-`IgnoreNew` retains one active 14-hour/24,000-chunk worker; a later trigger
+`IgnoreNew` retains one active 8-hour/24,000-chunk worker; a later trigger
 recovers a failed worker without a duplicate collector. The Windows task limit
-is 870 minutes so Docker startup and final receipt writing fit outside the
-worker's 840-minute bound. Do not hand-edit its index or launch a second worker
-against the same cache. Inspect only source-safe aggregate receipts/index facts
-before relying on its coverage.
+remains 870 minutes so Docker startup and final receipt writing fit outside the
+worker bound. This is a reversible postrun-cadence calibration: compare the
+first complete 8-hour cycle's source-safe `rate_limit_recovery_outcome`, terminal
+postprocess result, and rolling 24-hour wall-clock accepted-page count with the
+prior long-cycle evidence before retaining it. Do not hand-edit its index or
+launch a second worker against the same cache. Inspect only source-safe aggregate
+receipts/index facts before relying on its coverage.
 
 Materialize a read-only source-local coverage snapshot without calling KIS:
 

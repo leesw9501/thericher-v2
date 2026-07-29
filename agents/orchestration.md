@@ -11,13 +11,12 @@ second goal. Git and external artifacts retain historical evidence.
   distribution. It is a coverage/lineage observation, never a universe,
   target, model, ranking, PnL, Paper, or live decision.
 - **Data:** one Task Scheduler owner,
-  `thericher-kis-paper-daily-broad-backfill`, was running at the 2026-07-29
-  12:26 KST source-safe check. Its one worker began at 09:45 KST; `IgnoreNew`
-  kept one owner despite later triggers. The mutable D1 index was generation
-  5,670 with 2,119 targets, 11,022 accepted pages, and `1,804 ready / 189
-  complete / 126 source_limited`. Every target had coverage; the oldest active
-  next anchor was 2023-03-23. The postrun and chronology artifact roots were
-  absent at that check.
+  `thericher-kis-paper-daily-broad-backfill`, is ready for its 22:45 KST due
+  run. The pre-update 09:45 KST worker exited zero at terminal generation
+  11,130 with 2,119 targets, 21,683 accepted pages, and `1,539 ready / 301
+  complete / 279 source_limited`. Every target had coverage; ready anchors span
+  2020-03-09 through 2022-03-23. The postrun and chronology artifact roots are
+  absent because that worker loaded before the automatic chain was added.
 - **Engine Research:** no eligible campaign belongs to this objective. The GPU
   is intentionally idle: no chronology observation may create a split, target,
   model, ensemble, or training dispatch. Existing fixed-pair and source-local
@@ -36,28 +35,31 @@ second goal. Git and external artifacts retain historical evidence.
   candidate panel, and generation-604 continuity receipt; temporary Validation
   records the aggregate chronology observation; Research records only later
   design questions.
-- **Owned:** the current broad collector owns its cursor, lock, pacing, and
-  terminal exit. Do not start, stop, duplicate, or alter it from this goal.
-- **Due:** the next task trigger is owned by Task Scheduler. The current worker
-  loaded its runner before the postprocess/observer updates, so the next fresh
-  worker is the first one that can use the receipt-bound automatic chain.
+- **Owned:** the next broad collector owns its cursor, lock, pacing, and
+  terminal exit once Task Scheduler starts it. Do not start, stop, duplicate,
+  or alter it from this goal.
+- **Due:** Task Scheduler owns the 22:45 KST start. It is the first fresh worker
+  that can use the receipt-bound automatic chain and its new 8-hour inner
+  collector bound.
 
 ## Current Bottleneck And Improvement
 
 The sole company-goal bottleneck is an immutable postrun receipt, not an
-operator decision or an unmeasured provider capability. The collector continues
-independently. The reversible improvement is the installed same-task chain:
+operator decision or an unmeasured provider capability. The next collection
+continues independently. The reversible improvement is the installed same-task chain:
 successful collector exit, byte-stable postprocess, digest-derived receipt, and
 offline chronology observer. It avoids foreground polling, mutable
 latest-artifact discovery, duplicate collectors, and a false global
-research-eligibility decision.
+research-eligibility decision. The first fresh 8-hour cycle is a reversible
+calibration: retain it only when its postrun succeeds and rolling 24-hour
+wall-clock page yield plus `rate_limit_recovery_outcome` remain acceptable.
 
 ## Blocked-Goal Alternatives
 
-**Blocking fact:** the 09:45 KST owner has not yet emitted a postrun receipt;
-the existing worker cannot adopt runner code committed after it started. The
-major-work order remains `collector exit -> fresh collector/postprocess chain
--> immutable postrun -> offline reattachment/chronology -> Research questions`.
+**Blocking fact:** the pre-update 09:45 KST owner exited zero without emitting a
+postrun receipt; the first receipt-capable fresh worker is due at 22:45 KST. The
+major-work order remains `fresh collector/postprocess chain -> immutable postrun
+-> offline reattachment/chronology -> Research questions`.
 
 1. **Data + temporary Validation, frozen panel resource:** reattach the
    generation-187/604 continuity contract through the existing offline
@@ -81,10 +83,10 @@ cache, run a model, or create a Paper action.
 
 **Dispatched evidence:** the frozen comparison reattached as `equal` across
 187 targets / 35,975 shared rows with zero mismatches, receipt
-`sha256:6b221366...45c69c8b`; the installed task still names the current runner,
-has one worker, `IgnoreNew`, and `PT14H30M`; the hermetic four-file suite passed
-`21`. No kill test fired. The original external receipt dependency remains the
-only block.
+  `sha256:6b221366...45c69c8b`; the installed task still names the current runner,
+  uses `IgnoreNew` and `PT14H30M`; the hermetic four-file suite passed `21`. No
+  kill test fired. The first fresh receipt-capable worker remains the only
+  external dependency.
 
 ## Durable Knowledge
 

@@ -1,6 +1,8 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [ValidateRange(1, 50400)]
+    [int]$CollectorMaxRuntimeSeconds = 28800
 )
 
 $ErrorActionPreference = "Stop"
@@ -8,10 +10,14 @@ $ErrorActionPreference = "Stop"
 function Invoke-KisPaperDailyBroadContinuation {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$ProjectRoot
+        [string]$ProjectRoot,
+        [ValidateRange(1, 50400)]
+        [int]$CollectorMaxRuntimeSeconds = 28800
     )
 
-    $collectionExitCode = Invoke-KisPaperDailyBroadCollector -ProjectRoot $ProjectRoot
+    $collectionExitCode = Invoke-KisPaperDailyBroadCollector `
+        -ProjectRoot $ProjectRoot `
+        -MaxRuntimeSeconds $CollectorMaxRuntimeSeconds
     if ($collectionExitCode -ne 0) {
         return $collectionExitCode
     }
@@ -35,7 +41,10 @@ function Invoke-KisPaperDailyBroadContinuation {
 function Invoke-KisPaperDailyBroadCollector {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$ProjectRoot
+        [string]$ProjectRoot,
+        [Parameter(Mandatory = $true)]
+        [ValidateRange(1, 50400)]
+        [int]$MaxRuntimeSeconds
     )
 
     if (-not (Get-Command docker.exe -ErrorAction SilentlyContinue)) {
@@ -62,7 +71,7 @@ function Invoke-KisPaperDailyBroadCollector {
             --repository-root /app `
             --symbol-directory-root /app/symbol_directory `
             --max-chunks 24000 `
-            --max-runtime-seconds 50400
+            --max-runtime-seconds $MaxRuntimeSeconds
         $exitCode = [int]$LASTEXITCODE
     } finally {
         $ErrorActionPreference = $priorErrorActionPreference
@@ -205,5 +214,9 @@ function Invoke-KisPaperDailyBroadChronologyObservation {
 }
 
 if ($MyInvocation.InvocationName -ne ".") {
-    exit (Invoke-KisPaperDailyBroadContinuation -ProjectRoot $ProjectRoot)
+    exit (
+        Invoke-KisPaperDailyBroadContinuation `
+            -ProjectRoot $ProjectRoot `
+            -CollectorMaxRuntimeSeconds $CollectorMaxRuntimeSeconds
+    )
 }
