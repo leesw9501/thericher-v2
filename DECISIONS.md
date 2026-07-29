@@ -7141,6 +7141,42 @@ Reason: later research needs visibility into broad-cache depth without turning
 current-listing coverage or source limitations into an accidental model
 qualification rule.
 
+## 2026-07-29 - Keep broad D1 collection eligible across the KST overnight gap
+
+Decision: extend only the existing
+`thericher-kis-paper-daily-broad-backfill` Task Scheduler definition to its
+same 30-minute Tuesday-Saturday cadence across 00:15-23:45 KST. It remains one
+named task with `IgnoreNew`, the existing 870-minute Windows limit, one cache
+lock, one shared external request-control root, and the same postprocess only
+after a successful collector exit. The installer registers or updates the task
+definition but contains no task-start path. It creates no new task, route,
+credential surface, account/order capability, or live behavior.
+
+The first extended overnight window is an observational run. Its source-safe
+facts are accepted-page progress, categorical-result count, lock outcome, and
+whether a terminal collector exit reaches the existing postprocess boundary.
+The pre-observation baseline at 2026-07-29 11:24 KST is mutable index
+generation 4,946, 9,618 accepted pages, 110 cumulative target-local
+categorical results, and one active owner. Restore the former daytime-only
+trigger set immediately if there is evidence of more than one active owner.
+Restore it after two consecutive added-slot collector runs each make zero
+accepted-page progress because of the same shared rate/maintenance class.
+Do not count a target-local `source_limited` result or one scoped retry as
+that failure condition.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its required
+same-task/`IgnoreNew` and postprocess-boundary conditions are preserved. Its
+claim that the request gate would be per-process does not apply to the current
+implementation: `KisPaperMarketDataRateGate` persists timing state in the
+shared external control root. The ongoing one-second gate and 60-second
+categorical backoff remain unchanged until a separate measured capability probe
+justifies a recalibration.
+
+Reason: the previous 07:15-20:45 KST trigger coverage left a measured restart
+gap after a bounded worker exited. Extending the same task's eligible start
+times improves sustained historical backfill without creating parallel KIS
+traffic or weakening recovery semantics.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

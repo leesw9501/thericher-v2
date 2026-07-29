@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -68,8 +69,12 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert 'Profile = "kis-paper-daily-broad-backfill"' in broad_entry
     assert 'Service = "kis-paper-daily-broad-backfill"' in broad_entry
     assert 'Runner = "run_kis_paper_daily_broad_schedule.ps1"' in broad_entry
-    assert '"07:15"' in broad_entry
-    assert '"20:45"' in broad_entry
+    broad_times = tuple(re.findall(r'"(\d{2}:\d{2})"', broad_entry))
+    assert broad_times == tuple(
+        f"{hour:02d}:{minute:02d}"
+        for hour in range(24)
+        for minute in (15, 45)
+    )
     assert "RecoverMissedRun = $false" in broad_entry
     assert "ExecutionLimitMinutes = 870" in broad_entry
     assert source.index('Name = "thericher-kis-paper-daily-nas-forward"') < source.index(
@@ -167,6 +172,8 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "-Settings $settings" in source
     assert "Register-ScheduledTask" in source
     assert "-Force" in source
+    assert "Start-ScheduledTask" not in source
+    assert "Start-Process" not in source
     assert "Invokes only the local Docker profile" in source
 
 

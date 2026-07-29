@@ -343,7 +343,7 @@ Install the continuation owner only after a successful bootstrap:
   -ScheduleName thericher-kis-paper-daily-broad-backfill
 ```
 
-It triggers Tuesday through Saturday every 30 minutes from 07:15 to 20:45 KST.
+It triggers Tuesday through Saturday every 30 minutes from 00:15 through 23:45 KST.
 `IgnoreNew` retains one active 14-hour/24,000-chunk worker; a later trigger
 recovers a failed worker without a duplicate collector. The Windows task limit
 is 870 minutes so Docker startup and final receipt writing fit outside the

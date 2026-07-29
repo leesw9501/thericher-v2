@@ -125,6 +125,15 @@ current reversible improvement is an offline byte-stable panel snapshot and
 past-immutability comparison. `IgnoreNew`, the 870-minute task limit, storage
 floor, and fresh-head priority remain unchanged.
 
+The same broad task now has Tuesday-Saturday 30-minute triggers across
+00:15-23:45 KST. This fills the observed restart gap without a second task:
+the existing cache lock, shared external request-control root, `IgnoreNew`,
+870-minute task limit, and after-successful-exit postprocess boundary remain
+unchanged. The first overnight window is an observational continuity check, not
+a provider-rate claim or an additional execution route. The 11:24 KST
+pre-observation fact is one unchanged active owner at mutable generation 4,946
+with 9,618 accepted pages and 110 target-local categorical results.
+
 The offline broad-panel continuity package now reattested generation 187 and
 generation 604 without opening the collector lock. Its source-safe external
 receipt records 187 shared targets, 35,975 shared rows, and zero fingerprint

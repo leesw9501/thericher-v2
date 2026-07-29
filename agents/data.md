@@ -425,8 +425,9 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   session-finality limitations, and target-level conflict quarantine. It makes
   no network, credential, broker, or KIS call and does not copy raw rows.
 - The installed owner remains one 14-hour continuation worker at a time. Its
-  current 30-minute 07:15-20:45 KST trigger window left a measured restart gap
-  after the 04:42 KST rate-limited run. The worker now retains its in-memory
+  same-task 30-minute Tuesday-Saturday trigger set now covers 00:15-23:45 KST,
+  so an eligible next trigger can resume after a terminal run without creating
+  a second collector. The worker retains its in-memory
   client for exactly one gate-due recovery inside its existing runtime; a
   second rate limit, another shared stop, runtime expiry, invalid cache, or
   storage floor yields to the owner scheduler. The 2026-07-29 rebuilt-image
@@ -436,6 +437,14 @@ registry from the hash-attested 2026-07-18 local symbol-directory snapshot.
   `sha256:598ef0cd59385024b364b34bb09eaa49310e7ab4a795945288aef5cba6762c70`.
   This is one sustained-progress sample, not a KIS rate-limit conclusion, so
   trigger density remains unchanged.
+- The trigger update reattached at 11:24 KST without restarting the active
+  owner: it remained one worker at mutable generation 4,946, 9,618 accepted
+  pages, and 110 cumulative target-local categorical results. Those aggregate
+  facts are the first overnight-observation baseline. More than one active
+  owner is an immediate schedule-revert condition; two consecutive added-slot
+  runs with zero accepted-page progress from the same shared rate/maintenance
+  class also restore daytime-only triggers. A target-local source limit or one
+  scoped retry is not a global rollback signal.
 - The frozen generation-604 panel records 604 of 2,119 targets (28.50 percent), 1,186
   accepted pages, one historical categorical failure, and at most two pages
   per target. It is useful breadth progress but remains shallow, current-

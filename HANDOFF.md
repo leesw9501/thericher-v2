@@ -925,6 +925,18 @@ postrun input. It records a candidate-generation-bound per-target chronology
 distribution, never a global common-history/`feasible` decision, so current
 listing and source-limited targets cannot become an accidental Research gate.
 
+The same installed broad task now has one 30-minute Tuesday-Saturday trigger
+per `:15`/`:45` slot across 00:15-23:45 KST. It retains `IgnoreNew`, the
+870-minute outer limit, the shared cache lock/control root, and the existing
+postprocess-after-successful-collector-exit boundary. This is the first
+reversible overnight continuity observation, not a new task, concurrent
+collector, provider-rate conclusion, KIS account/order call, or live route.
+Its installed 11:24 KST baseline is one unchanged active owner at mutable
+generation 4,946, 9,618 accepted pages, and 110 target-local categorical
+results. More than one owner or two consecutive zero-progress added-slot runs
+from the same shared rate/maintenance class restores daytime-only triggers;
+one target-local source limit or scoped retry does not.
+
 ## KIS Paper Account Readiness
 
 The current `kis-readonly` Docker image completed one bounded virtual-paper
