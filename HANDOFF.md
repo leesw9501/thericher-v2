@@ -873,3 +873,34 @@ generation 1,251: 1,251 of 2,119 targets had coverage, 2,451 pages were
 accepted, four categorical failures were recorded, and no target exceeded two
 pages. This is a live source-safe watermark, not a frozen panel or research
 input.
+
+## QQQ/SPY D1 Forward Cache
+
+The first source-separated QQQ/NAS plus SPY/AMS D1 forward cache is now
+implemented under
+`D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v1`.
+It accepts only completed daily rows strictly after the 2026-07-24 frozen
+boundary and is never merged into the fixed QQQ/SPY history, six-symbol NAS
+forward cache, Norgate data, Tiingo data, or mutable broad current-listing
+cache. Raw cache bytes remain on D:; receipts remain external under
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v1`.
+
+The Docker preflight is network-disabled, read-only, and credential-free. Its
+`collection_required` receipt is
+`sha256:c35d30de11d2d12dddf60ccf43d0738c1474ad88ba2e6c4b8ef8395c5e14ade4`.
+The installed `thericher-kis-paper-daily-pair-forward` task runs at 06:55 KST
+Tuesday through Saturday, with a 10-minute execution limit and `IgnoreNew`.
+It defers through the same credential-free preflight whenever the NAS forward,
+broad, or legacy daily collector is running. A manual guarded smoke while the
+broad worker was active recorded only
+`unavailable/shared_dispatcher_busy`, with receipt
+`sha256:227a65afdf8e10f335fa7925ea94d7fe6d1707da927d50899f50e15ef78f86db`.
+No credentialed pair collection, account/position/quote/order route, model,
+GPU run, Paper action, or live route occurred.
+
+At the 2026-07-29 09:20 KST source-safe broad-cache snapshot, generation 3,519
+had all 2,119 targets covered, 6,850 accepted pages, 56 categorical failures,
+and target states `1,936 ready / 131 complete / 52 source_limited`. Broad
+depth collection continues independently; the pair cache's current deferred
+state is not a global hold. Claude's requested collector/scheduler drift check
+timed out without a review body, so it is recorded as `review_unavailable`.

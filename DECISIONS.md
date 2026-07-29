@@ -7114,3 +7114,36 @@ consume GPU or acquire a false performance meaning merely because its mechanics
 run. The next D1 research opportunity should prefer a fresh forward stream and
 a new independently challenged causal contract over another variation on the
 already-used QQQ/SPY validation slice.
+
+## 2026-07-29 - Separate QQQ/SPY D1 forward validation data from prior history
+
+Decision: create a dedicated KIS Paper daily forward cache for exactly
+`QQQ/NAS` and `SPY/AMS`, retaining only completed rows strictly after the
+2026-07-24 frozen boundary. It has its own D: cache, index, immutable external
+receipts, target-local recovery, and 06:55 KST Tuesday-Saturday schedule. It
+does not merge into the fixed QQQ/SPY catalog, NAS forward cache, Norgate,
+Tiingo, or broad current-listing cache.
+
+The cache's preflight is network-disabled, read-only, and credential-free. It
+returned `collection_required` with source-safe receipt
+`sha256:c35d30de11d2d12dddf60ccf43d0738c1474ad88ba2e6c4b8ef8395c5e14ade4`.
+When the broad Data worker was running, the first guarded invocation wrote only
+`unavailable/shared_dispatcher_busy`, with source-safe receipt
+`sha256:227a65afdf8e10f335fa7925ea94d7fe6d1707da927d50899f50e15ef78f86db`.
+That is a pair-cache `resume` fact, not an authority hold or an assertion about
+provider limits. No credentialed collection was started while the shared
+dispatcher was occupied.
+
+The credentialed route is allowlisted to the KIS virtual-paper daily endpoint
+and those two symbol/exchange pairs. It injects only KIS Paper market-data
+credentials with `THERICHER_MODE=off`; it has no account, position, quote,
+order, model, GPU, or live route. Focused tests cover source separation,
+completed-session filtering, duplicate preservation, target-local recovery,
+external artifact placement, and preflight/schedule isolation. The Claude
+falsification-first drift-check request timed out without a body, so this
+records `review_unavailable`, not reviewer endorsement.
+
+Reason: untouched out-of-time data must keep a distinct source identity from
+the already-consumed historical pair, while a busy broad collector should yield
+only this new cache's work instead of delaying independent collection or
+creating an unmeasured parallel request path.

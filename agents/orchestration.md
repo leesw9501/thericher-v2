@@ -244,11 +244,12 @@ registry, then starts an eight-target data-only bootstrap. No account/order,
 live, Norgate target seeding, source-row blend, ranking, or model-promotion
 route belongs to it.
 
-The broad collector is independently running at the 2026-07-29 08:23 KST
-watermark of all 2,119 targets covered and 4,827 accepted pages. Its current
-bottleneck remains longitudinal depth, with 2,014 targets still ready for
-continuation. Research's newly completed QQQ/SPY overnight/intraday CPU smoke
-is explicitly `unsupported` by Claude and closed to full validation, GPU,
-selection, or Paper use. The shared next action is a source-separated QQQ/SPY
-forward D1 cache: it accrues future validation input without blocking the active
-breadth collector or treating its current-listing cache as research-ready.
+At the 2026-07-29 09:20 KST source-safe watermark, the broad collector was
+running at generation 3,519 with all 2,119 targets covered, 6,850 accepted
+pages, and 1,936 target-local cursors still ready for longitudinal depth. The
+current shared bottleneck is that depth work, not breadth coverage. The new
+QQQ/SPY D1 forward cache is separately installed and its first guarded run
+correctly wrote `shared_dispatcher_busy` while broad collection owned the
+dispatcher; it neither slept the foreground nor called KIS. Its next 06:55 KST
+task owns retry. Research's overnight/intraday CPU smoke remains `unsupported`
+and closed to full validation, GPU, selection, or Paper use.

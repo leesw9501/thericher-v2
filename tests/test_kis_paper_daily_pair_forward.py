@@ -1,0 +1,323 @@
+from __future__ import annotations
+
+import json
+from datetime import UTC, date, datetime
+from decimal import Decimal
+from pathlib import Path
+
+import pytest
+
+from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
+    KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+    KisPaperDailyPairForwardCacheError,
+    KisPaperDailyPairForwardRow,
+    commit_kis_paper_daily_pair_forward_observation,
+    load_verified_kis_paper_daily_pair_forward_cache,
+)
+from thericher_v2.execution.kis_market_data import (
+    KisPaperDailyPage,
+    KisPaperDailyQuery,
+    KisPaperDailyRawPage,
+    KisPaperDailyRawRow,
+    KisPaperMarketDataError,
+)
+from thericher_v2.execution.kis_paper_daily_pair_forward import (
+    collect_kis_paper_daily_pair_forward_once,
+)
+
+COMPOSE = Path(__file__).resolve().parents[1] / "docker-compose.yml"
+
+
+def test_pair_cache_is_external_source_separated_and_replayable(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+
+    run = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 27), date(2026, 7, 28))),
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+        observed_at=datetime(2026, 7, 29, tzinfo=UTC),
+    )
+
+    assert run.status == "ready"
+    assert run.changed_target_count == 2
+    assert run.cache.common_sessions == (date(2026, 7, 27), date(2026, 7, 28))
+    assert tuple(run.cache.rows_by_target) == ("QQQ/NAS", "SPY/AMS")
+    assert run.cache.targets_by_key["QQQ/NAS"].row_count == 2
+    assert cache_root.is_dir()
+    assert not (repo_root / "cache").exists()
+    reloaded = load_verified_kis_paper_daily_pair_forward_cache(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert reloaded.cache_hash == run.cache.cache_hash
+    _assert_source_safe(run.safe_payload())
+
+
+def test_pair_cache_drops_preboundary_rows_and_preserves_prior_snapshots_on_retry(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    rows = _rows_for_pair((date(2026, 7, 24), date(2026, 7, 27)))
+
+    first = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=rows,
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    snapshots = tuple(sorted((cache_root / "snapshots").rglob("*.csv.gz")))
+    snapshot_bytes = {path.relative_to(cache_root): path.read_bytes() for path in snapshots}
+    index = json.loads((cache_root / "index.json").read_bytes())
+
+    second = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=rows,
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert first.status == "ready"
+    assert all(len(rows) == 1 for rows in first.cache.rows_by_target.values())
+    assert second.status == "unchanged"
+    assert tuple(sorted((cache_root / "snapshots").rglob("*.csv.gz"))) == snapshots
+    assert {
+        path.relative_to(cache_root): path.read_bytes()
+        for path in (cache_root / "snapshots").rglob("*.csv.gz")
+    } == snapshot_bytes
+    updated = json.loads((cache_root / "index.json").read_bytes())
+    assert updated["generation"] == index["generation"] + 1
+    assert all(target["accepted_page_count"] == 2 for target in updated["targets"])
+
+
+def test_pair_cache_defers_only_failed_target_and_rejects_conflicting_duplicate(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 27),)),
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    partial_rows = _rows_for_pair((date(2026, 7, 28),))
+    partial_rows.pop("SPY/AMS")
+    partial = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=partial_rows,
+        failure_reasons_by_target={"SPY/AMS": "transport_failure"},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    index_bytes = (cache_root / "index.json").read_bytes()
+    conflicting = _rows_for_pair((date(2026, 7, 27),))
+    conflicting["QQQ/NAS"] = (_row("QQQ", "NAS", date(2026, 7, 27), Decimal("999")),)
+
+    assert partial.status == "partial"
+    assert partial.cache.targets_by_key["SPY/AMS"].status == "deferred"
+    assert partial.cache.targets_by_key["QQQ/NAS"].row_count == 2
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="duplicate conflict"):
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=conflicting,
+            failure_reasons_by_target={},
+            cache_root=cache_root,
+            repo_root=repo_root,
+        )
+    assert (cache_root / "index.json").read_bytes() == index_bytes
+
+
+def test_pair_cache_rejects_git_root_and_wrong_exchange(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="outside Git"):
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=_rows_for_pair((date(2026, 7, 27),)),
+            failure_reasons_by_target={},
+            cache_root=repo_root / "cache",
+            repo_root=repo_root,
+        )
+    with pytest.raises(ValueError, match="pair forward row"):
+        KisPaperDailyPairForwardRow(
+            symbol="SPY",
+            exchange="NAS",
+            session_date=date(2026, 7, 27),
+            open=Decimal("100"),
+            high=Decimal("101"),
+            low=Decimal("99"),
+            close=Decimal("100"),
+            volume=Decimal("1"),
+        )
+
+
+def test_collector_uses_only_pair_targets_and_filters_incomplete_or_preboundary_rows(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    client = _FakeDailyClient(
+        {
+            "QQQ/NAS": _daily_page("20260730", "20260729", "20260724"),
+            "SPY/AMS": _daily_page("20260730", "20260729", "20260724"),
+        }
+    )
+
+    run = collect_kis_paper_daily_pair_forward_once(
+        client,
+        cache_root=cache_root,
+        repository_root=repo_root,
+        observed_at=datetime(2026, 7, 29, 22, tzinfo=UTC),
+    )
+
+    assert run.status == "ready"
+    assert [(query.symbol, query.exchange) for query in client.queries] == [
+        ("QQQ", "NAS"),
+        ("SPY", "AMS"),
+    ]
+    expected_allowlist = {"QQQ": frozenset({"NAS"}), "SPY": frozenset({"AMS"})}
+    assert all(query.approved_symbol_exchanges == expected_allowlist for query in client.queries)
+    assert run.cache.common_sessions == (date(2026, 7, 29),)
+    assert all(len(rows) == 1 for rows in run.cache.rows_by_target.values())
+
+
+def test_collector_marks_one_transport_fault_without_network_or_credentials(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    client = _FakeDailyClient(
+        {
+            "QQQ/NAS": _daily_page("20260729"),
+            "SPY/AMS": KisPaperMarketDataError("transport_failure"),
+        }
+    )
+
+    run = collect_kis_paper_daily_pair_forward_once(
+        client,
+        cache_root=tmp_path / "external" / "qqq-spy-forward",
+        repository_root=repo_root,
+        observed_at=datetime(2026, 7, 29, 22, tzinfo=UTC),
+    )
+
+    assert run.status == "partial"
+    assert run.cache.targets_by_key["SPY/AMS"].status == "deferred"
+    assert run.cache.targets_by_key["QQQ/NAS"].status == "ready"
+
+
+def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() -> None:
+    source = COMPOSE.read_text(encoding="ascii")
+    collector = source.split("  kis-paper-daily-pair-forward:\n", maxsplit=1)[1].split(
+        "  kis-paper-daily-pair-forward-preflight:\n",
+        maxsplit=1,
+    )[0]
+    preflight = source.split("  kis-paper-daily-pair-forward-preflight:\n", maxsplit=1)[1].split(
+        "  kis-paper-daily-nas-forward-preflight:\n",
+        maxsplit=1,
+    )[0]
+
+    assert 'profiles: ["kis-paper-daily-pair-forward"]' in collector
+    assert "KIS_PAPER_APP_KEY" in collector
+    assert "KIS_PAPER_APP_SECRET" in collector
+    assert "KIS_LIVE" not in collector
+    assert "account" not in collector.lower()
+    assert "order" not in collector.lower()
+    assert "network_mode: none" in preflight
+    assert "KIS_PAPER_APP_KEY" not in preflight
+    assert "KIS_PAPER_APP_SECRET" not in preflight
+    assert "KIS_LIVE" not in preflight
+    assert "/app/market_data:ro" in preflight
+    assert "read_only: true" in preflight
+
+
+def _rows_for_pair(
+    sessions: tuple[date, ...],
+) -> dict[str, tuple[KisPaperDailyPairForwardRow, ...]]:
+    return {
+        f"{symbol}/{exchange}": tuple(
+            _row(symbol, exchange, session, Decimal(100 + target_offset + index))
+            for index, session in enumerate(sessions)
+        )
+        for target_offset, (symbol, exchange) in enumerate(
+            KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+            start=1,
+        )
+    }
+
+
+def _row(
+    symbol: str,
+    exchange: str,
+    session: date,
+    close: Decimal,
+) -> KisPaperDailyPairForwardRow:
+    return KisPaperDailyPairForwardRow(
+        symbol=symbol,
+        exchange=exchange,
+        session_date=session,
+        open=close,
+        high=close + Decimal("1"),
+        low=close - Decimal("1"),
+        close=close,
+        volume=Decimal("1000"),
+    )
+
+
+class _FakeDailyClient:
+    def __init__(self, responses: dict[str, KisPaperDailyRawPage | BaseException]) -> None:
+        self._responses = responses
+        self.queries: list[KisPaperDailyQuery] = []
+
+    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+        self.queries.append(query)
+        response = self._responses[f"{query.symbol}/{query.exchange}"]
+        if isinstance(response, BaseException):
+            raise response
+        return response
+
+
+def _daily_page(*dates: str) -> KisPaperDailyRawPage:
+    query = KisPaperDailyQuery(
+        symbol="QQQ",
+        exchange="NAS",
+        by_date="20260729",
+        approved_symbol_exchanges={"QQQ": frozenset({"NAS"})},
+    )
+    rows = tuple(
+        KisPaperDailyRawRow(
+            xymd=value,
+            open="100",
+            high="101",
+            low="99",
+            clos="100",
+            tvol="1000",
+        )
+        for value in dates
+    )
+    return KisPaperDailyRawPage(
+        page=KisPaperDailyPage(
+            query=query,
+            row_count=len(rows),
+            newest_date=dates[0] if dates else None,
+            oldest_date=dates[-1] if dates else None,
+            required_ohlcv_fields_present=True,
+            continuation_available=False,
+            continuation_value=None,
+        ),
+        rows=rows,
+    )
+
+
+def _assert_source_safe(value: object) -> None:
+    forbidden = {"bars", "close", "entry", "exit", "high", "low", "open", "price", "volume"}
+    if isinstance(value, dict):
+        assert not (set(value) & forbidden)
+        for nested in value.values():
+            _assert_source_safe(nested)
+    elif isinstance(value, list):
+        for nested in value:
+            _assert_source_safe(nested)

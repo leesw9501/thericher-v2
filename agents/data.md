@@ -609,13 +609,25 @@ route, source-safe receipts, per-target recovery states, and the unchanged
 frozen panel. Do not turn cache coverage into a PIT universe, candidate
 selection, ranking, or Paper order.
 
-The independent broad D1 collector remained active at the 2026-07-29 08:23 KST
-source-safe watermark: mutable generation 2,468 covers all 2,119 current
-NASDAQ targets, with 4,827 accepted pages and 15 categorical failures. The
-breadth pass is complete, while 2,014 targets remain ready for more historical
-depth; 94 are complete and 11 are source-limited for their exact cursors. This
-is an in-flight cache fact only. Preserve the one-worker cache lock and current
-pacing; do not call it a frozen panel, full historical depth, PIT universe, or
-Research input. A forward QQQ/SPY D1 cache is the next separately scoped Data
-package so later research can accrue an untouched out-of-time stream without
-interrupting this collector.
+At the 2026-07-29 09:20 KST source-safe index snapshot, the independent broad
+D1 collector was running at mutable generation 3,519. It covers all 2,119
+current NASDAQ targets with 6,850 accepted pages and 56 cumulative categorical
+failures; 1,936 target cursors remain `ready`, 131 are `complete`, and 52 are
+`source_limited`. The breadth pass is complete, but historical depth remains
+in progress from the durable target-local cursors. This is an in-flight cache
+fact only. Preserve the one-worker cache lock and current measured pacing; do
+not call it a frozen panel, full historical depth, PIT universe, or Research
+input.
+
+The separate QQQ/NAS plus SPY/AMS D1 forward cache now exists at
+`D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v1`, with
+source-safe receipts under
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v1`.
+It retains only completed sessions strictly after the 2026-07-24 frozen
+boundary, never blends into the fixed pair history or the NAS forward cache,
+and has no model, account, order, or live route. Its credential-free,
+network-disabled preflight produced `collection_required`; the first guarded
+schedule invocation recorded `unavailable/shared_dispatcher_busy` while the
+broad worker was running. That deferral is `resume` only for this pair cache.
+The installed 06:55 KST Tuesday-Saturday task owns its next due collection;
+the broad worker and other ready lanes continue independently.

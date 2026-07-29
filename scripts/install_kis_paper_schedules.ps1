@@ -43,7 +43,7 @@ function Assert-KoreaStandardTime {
         $localTimeZone.Id -ne "Korea Standard Time" `
             -or $localTimeZone.BaseUtcOffset -ne [TimeSpan]::FromHours(9)
     ) {
-        throw "The NAS D1 forward schedule requires the host time zone Korea Standard Time."
+        throw "The daily forward schedules require the host time zone Korea Standard Time."
     }
 }
 
@@ -171,6 +171,19 @@ $schedules = @(
         ExecutionLimitMinutes = 90
     },
     @{
+        Name = "thericher-kis-paper-daily-pair-forward"
+        Profile = "kis-paper-daily-pair-forward"
+        Service = "kis-paper-daily-pair-forward"
+        Runner = "run_kis_paper_daily_pair_forward_schedule.ps1"
+        ImageServices = @(
+            "kis-paper-daily-pair-forward-preflight",
+            "kis-paper-daily-pair-forward"
+        )
+        At = "06:55"
+        RecoverMissedRun = $true
+        ExecutionLimitMinutes = 10
+    },
+    @{
         Name = "thericher-kis-paper-daily-broad-backfill"
         Profile = "kis-paper-daily-broad-backfill"
         Service = "kis-paper-daily-broad-backfill"
@@ -222,7 +235,10 @@ if ($RequireExisting) {
     }
 }
 
-if ($selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward") {
+if (
+    $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward"
+) {
     Assert-KoreaStandardTime
 }
 

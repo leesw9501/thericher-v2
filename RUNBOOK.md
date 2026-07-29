@@ -445,6 +445,47 @@ the three-session prospective consumer status are distinct facts. Do not wait in
 the foreground for a future session; let the owned task collect it while other
 ready work continues.
 
+## KIS QQQ/SPY D1 Forward Cache
+
+The QQQ/NAS plus SPY/AMS forward stream is a separate Data cache, not an
+extension of the frozen QQQ/SPY history or the six-symbol NAS forward stream:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v1
+D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v1
+```
+
+It retains only completed KIS Paper daily rows after 2026-07-24. The
+credential-free preflight is network-disabled and mounts the cache read-only:
+
+```powershell
+docker compose --profile kis-paper-daily-pair-forward run --rm --no-deps `
+  --pull never kis-paper-daily-pair-forward-preflight
+```
+
+Exit `10` means collection is required. The credentialed collector injects only
+the two KIS Paper market-data variables and has no account, position, quote,
+order, model, GPU, or live route:
+
+```powershell
+docker compose --profile kis-paper-daily-pair-forward run --rm --no-deps `
+  --pull never kis-paper-daily-pair-forward
+```
+
+Install or refresh the guarded task with:
+
+```powershell
+.\scripts\install_kis_paper_schedules.ps1 `
+  -ScheduleName thericher-kis-paper-daily-pair-forward
+```
+
+It runs at 06:55 KST Tuesday through Saturday. Before collection it checks the
+host KST identity and whether the NAS forward, broad, or legacy daily worker is
+running. A failed guard runs only the credential-free preflight with a
+source-safe recovery reason, returns `20`, and leaves retry to the next due
+time. It does not sleep the foreground, create a parallel request flood, or
+block independent work.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

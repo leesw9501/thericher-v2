@@ -418,8 +418,11 @@ Preserve the fixed-pair, tree, CACC-D1, ETF trend-regime, both closed QQQ/SPY
 controls, the unsupported overnight/intraday smoke, both immutable sealed NAS
 result families, and the completed prospective observation receipt. The next
 research candidate should not reuse the already-consumed fixed QQQ/SPY
-validation slice for another variant. Data instead owns a new QQQ/SPY forward
-D1 stream; Research may prepare its consumer contract but cannot score,
+validation slice for another variant. Data now owns a separate QQQ/SPY D1
+forward cache and its 06:55 KST collector. The initial credential-free
+preflight is `collection_required`; its guarded first invocation deferred while
+broad data collection was running, so the pair has no future common session
+yet. Research may prepare no more than its consumer contract and cannot score,
 select, tune, ensemble, promote, rank, or create a KIS Paper action until that
 named out-of-time input has the declared depth. The fresh prospective baseline
 remains Execution evidence only.
