@@ -13,6 +13,7 @@ import pytest
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.research.norgate_broad_representation import (
     RepresentationGeometry,
+    _batch_ranges,
     _write_or_verify_safe_weights,
     build_observed_return_dataset,
     freeze_representation_campaign,
@@ -182,6 +183,15 @@ def test_safe_weight_writer_uses_non_pickle_npz_arrays(tmp_path: Path) -> None:
         assert payload.files == ["encoder.weight"]
         assert numpy.array_equal(payload["encoder.weight"], numpy.asarray([[1.0, 2.0]]))
     assert _write_or_verify_safe_weights(path=path, model=FakeModel(), numpy=numpy) == first_hash
+
+
+def test_diagnostic_batch_ranges_bound_each_transformer_forward() -> None:
+    assert _batch_ranges(75_835, 4_096) == (
+        *((index * 4_096, (index + 1) * 4_096) for index in range(18)),
+        (73_728, 75_835),
+    )
+    with pytest.raises(ValueError, match="geometry"):
+        _batch_ranges(0, 4_096)
 
 
 def _catalog(*, last_close: Decimal) -> SimpleNamespace:

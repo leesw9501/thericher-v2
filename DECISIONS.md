@@ -7321,6 +7321,25 @@ selection available by artifact inspection. The r4 CPU smoke and its incomplete
 preflight contracts remain scoped non-promoting evidence; only a repaired
 contract may reach the named CUDA decision boundary.
 
+## 2026-07-29 - Batch target-free diagnostic forwards after the r5 CUDA fault
+
+Decision: treat r5 as an incomplete CUDA preflight, not a completed four-model
+batch. Its CPU GRU smoke completed, but the compact-attention diagnostic forward
+attempted all 75,835 rows at once and CUDA returned an invalid kernel
+configuration error. The run wrote no aggregate batch summary, registry outcome,
+ranking, selection, Paper action, or PnL result.
+
+The r6 recovery keeps the same fixed objective and architecture specifications,
+but evaluates diagnostics in deterministic 4,096-row chunks and aggregates only
+an in-memory finite check. A focused test fixes the 19 resulting bounded ranges.
+The r5 partial per-architecture artifacts remain external non-promoting failure
+evidence; they are not reused as a winner or a batch completion shortcut.
+
+Reason: bounded diagnostic inference is a runtime feasibility repair, not a
+parameter change or post-hoc model tuning. It prevents one architecture from
+receiving a different diagnostic geometry while preserving the source and
+selection boundaries established for r5.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

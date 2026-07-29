@@ -515,12 +515,14 @@ def _run_architecture(
         loss.backward()
         optimizer.step()
         last_loss = float(loss.detach().cpu())
+    model.eval()
     with torch.no_grad():
-        diagnostic_prediction = model(diagnostic_feature_tensor)
-        diagnostic_loss = _masked_mse(
-            diagnostic_prediction,
-            diagnostic_target_tensor,
-            diagnostic_mask_tensor,
+        diagnostic_loss = _batched_masked_mse(
+            model,
+            features=diagnostic_feature_tensor,
+            targets=diagnostic_target_tensor,
+            mask=diagnostic_mask_tensor,
+            batch_size=spec.batch_size,
         )
     diagnostic_value = float(diagnostic_loss.detach().cpu())
     if not math.isfinite(last_loss) or not math.isfinite(diagnostic_value):
@@ -667,6 +669,42 @@ def _masked_mse(prediction: Any, target: Any, mask: Any) -> Any:
     if denominator <= 0:
         raise RuntimeError("target-free representation mask is empty")
     return squared_error.sum() / denominator
+
+
+def _batched_masked_mse(
+    model: Any,
+    *,
+    features: Any,
+    targets: Any,
+    mask: Any,
+    batch_size: int,
+) -> Any:
+    if batch_size <= 0 or int(features.shape[0]) <= 0:
+        raise ValueError("diagnostic batch geometry is invalid")
+    squared_error_sum: Any | None = None
+    mask_sum: Any | None = None
+    for start, end in _batch_ranges(int(features.shape[0]), batch_size):
+        prediction = model(features[start:end])
+        current_mask = mask[start:end]
+        current_error = (prediction - targets[start:end]).square() * current_mask
+        squared_error_sum = (
+            current_error.sum()
+            if squared_error_sum is None
+            else squared_error_sum + current_error.sum()
+        )
+        mask_sum = current_mask.sum() if mask_sum is None else mask_sum + current_mask.sum()
+    if mask_sum is None or mask_sum <= 0 or squared_error_sum is None:
+        raise RuntimeError("target-free representation diagnostic mask is empty")
+    return squared_error_sum / mask_sum
+
+
+def _batch_ranges(row_count: int, batch_size: int) -> tuple[tuple[int, int], ...]:
+    if row_count <= 0 or batch_size <= 0:
+        raise ValueError("batch range geometry is invalid")
+    return tuple(
+        (start, min(start + batch_size, row_count))
+        for start in range(0, row_count, batch_size)
+    )
 
 
 def _configure_torch_determinism(
