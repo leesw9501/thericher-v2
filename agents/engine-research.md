@@ -35,6 +35,14 @@ licenses. It deliberately records pretraining period/instrument scope as
 and adds no dependency or runtime. This is one unconsumed handoff, not a
 campaign input or a reason to create a durable discovery lane.
 
+A separate 2026-07-30 official-source hygiene retrieval rejected runtime
+adoption of the currently listed Chronos, TimesFM, and Uni2TS/Moirai public
+model projects. Their official repositories state Apache-2.0 code licenses,
+but do not establish checkpoint rights plus a financial-instrument and
+pretraining-period scope sufficient to rule out evaluation overlap. It
+downloaded no weights, data, or dependency and is a rejection, not a second
+handoff, model candidate, runtime decision, or GPU job.
+
 ## Research Track Portfolio
 
 Engine Research owns four parallel tracks under one campaign and trial-custody

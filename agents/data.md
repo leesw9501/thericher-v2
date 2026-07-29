@@ -103,6 +103,15 @@ the offline observer only after a current or complete cache result. A
   Paper, or live status. Data now preserves the independent current QQQ head
   cache for the existing freshness-gated Execution canary; it does not use the
   quarantined historical D1 panel as a runtime input.
+- The 2026-07-30 04:31 KST intraday-head task returned terminal `complete` and
+  exit zero. Its QQQ session receipt
+  `sha256:a80700d80b9e6c26a0addc9d379fce61081d91e132581bccbd4b3caedf0948d1`
+  is `paper_only` `no_intent/receipt_not_eligible`; no canary was present.
+  The paired terminal receipt is
+  `sha256:a7dcf1e427afa399f2bdf49c867c9c6f3b090d15fbc8bcb4fe698446eeef72e6`,
+  with collection `exit_zero` and prospective validation `validated`. The
+  scheduler owns the next 06:20 KST observation; this does not call for a
+  manual collector launch or a change to the QQQ decision table.
 - The offline Norgate/KIS D1 metadata conformance receipt is complete at
   `sha256:17a5c604...bf26afa` with receipt
   `sha256:f57ff545...10d7f60`. Both inputs expose the same five D1 OHLCV

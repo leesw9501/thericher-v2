@@ -71,6 +71,11 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
+- The 2026-07-30 04:31 KST QQQ scheduler cycle closed `complete` with a
+  source-safe `no_intent/receipt_not_eligible` session and independent
+  validation. No canary lifecycle was created. Its next owned due time is
+  06:20 KST; this scoped no-intent fact does not authorize a decision-table
+  change or block another ready lane.
 
 ## Operating Reset
 
