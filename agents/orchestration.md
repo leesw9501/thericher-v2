@@ -6,45 +6,44 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** the KIS D1 split-signature audit is complete. External
-  receipt `sha256:3930a95a...05176e` reattests five fixed split pairs as
-  categorical signatures. It narrowly supports the cached `MODP=0` split
-  behavior; it does not qualify all adjustment/corporate-action semantics or
-  enable source transfer, model, ranking, PnL, Paper, or live behavior.
+- **Company objective:** the offline KIS D1 discontinuity census is complete.
+  Its v2 receipt `sha256:0f92a377...b93edb` retains one aggregate unexplained
+  AAPL signature and zero for the other five streams. It identifies no cause
+  and changes no historical-label, model, ranking, PnL, Paper, or live status.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, is `Running`. It alone owns KIS
   credentials, network, cursor, pacing, mutable cache, and postprocess. The
-  next Data package reads the frozen six-symbol D1 panel offline only.
+  current QQQ head-cache scheduler remains an independent Data source for the
+  existing Execution canary.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
-  campaign. GPU is free and correctly has no eligible job until a fresh,
-  source-qualified causal contract exists.
-- **Execution:** unchanged and not invoked. Existing KIS Paper dashboard and
-  virtual-only paths retain their own route, intent, and reconciliation
-  boundaries.
-- **Shared resources:** the next check uses a network-disabled, read-only
-  Docker research service and external artifact mount. Data retains the only
-  mutable KIS cache; D: remains above the storage warning/floor.
+  campaign. GPU is free and correctly has no eligible job while historical D1
+  input remains quarantined.
+- **Execution:** the existing KIS Paper QQQ session can already persist an
+  intent, submit/cancel, reconcile, and project source-safe lifecycle state.
+  Its first new current eligible lifecycle is the next independent product
+  evidence; KIS Live remains unavailable.
+- **Shared resources:** Data retains the mutable KIS cache. Execution owns only
+  its existing Paper state/control roots; no manual duplicate worker is ready.
 
 ## Ready / Owned / Due
 
-- **Ready:** an offline all-six-symbol unexplained D1 discontinuity census.
-  It records only categorical counts outside the five known split pairs and
-  cannot enable labels, transfer, training, or Paper action.
-- **Owned:** the broad collector owns its process, lock, request gate, cursor,
-  postprocess, and retry behavior. Do not start, stop, duplicate, or alter it.
-- **Due:** Task Scheduler owns later broad trigger slots. A trigger while the
-  process is active is not foreground work and does not create a second
-  collector.
+- **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
+  canary through its first new lifecycle outcome. Its completion observation is
+  not a per-goal quota or a new permission gate.
+- **Owned:** the broad collector and existing intraday-head scheduler own their
+  respective processes, credentials, locks, cursor, pacing, and retry state.
+  Do not start, stop, duplicate, or alter them outside their owner path.
+- **Due:** Task Scheduler owns the next source/canary trigger slots. An absent
+  fresh receipt is source-local evidence, not foreground idle or a company hold.
 
 ## Current Bottleneck And Improvement
 
-There is no company-wide block. Claude found that the five-pair audit cannot
-falsify large discontinuities outside its predeclared sessions and rejected a
-label-exclusion adapter as non-load-bearing plumbing. The reversible
-improvement is a complement census over every retained adjacent D1 pair, with
-unexplained signatures treated as a scoped data-semantic observation rather
-than an adjustment conclusion.
+There is no company-wide block. Claude found that repeated historical audit
+receipts have no consumer while an already-authorized Paper submit/reconcile
+path lacks one complete observed lifecycle. The reversible improvement is to
+use that existing path only when its own fresh receipt is eligible, preserving
+intent-before-side-effect and reconciliation-before-retry behavior.
 
 ## Durable Knowledge
 
@@ -54,15 +53,13 @@ than an adjustment conclusion.
 - Strategy Discovery has one pinned, code-license-only handoff. It did not
   establish checkpoint rights, financial-domain provenance, or a public-model
   runtime decision.
-- Norgate/KIS D1 conformance remains source-parameterized only. The KIS audit
-  supports only five fixed split signatures; it does not resolve adjustment,
-  corporate-action, identity, timezone, gap, survivorship, or point-in-time
-  limits.
+- The D1 census is source-semantics evidence only. The remaining AAPL category
+  may be an unlisted historical split or a gap; it is not a provider-fault,
+  label, or execution conclusion.
 
 ## Recovery And Next Handoff
 
-Data is `resume` only for the already-running broad worker. The split-signature
-audit is `complete`; its immutable result is scoped evidence, not a hold. The
-next consumer must reattest the same frozen panel, persist no dates or values,
-and distinguish a large unexplained discontinuity from a proof of provider
-error or adjustment semantics.
+Data is `resume` only for its already-running workers. Census is `complete`.
+Execution now owns the next outcome: any unknown Paper submission is reconciled
+only for that exact durable intent and never retried speculatively; a no-intent
+or stale input remains scoped to its session while other ready lanes continue.

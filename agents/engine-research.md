@@ -97,6 +97,12 @@ the result neither qualifies remaining corporate actions nor changes the
 non-model status. The next source-local check is an all-six-symbol unexplained
 large-discontinuity census, still with no label/model/GPU/Paper consequence.
 
+That v2 census is now complete with one aggregate AAPL category and zero for
+the other five streams. The symbol-aware fixed-pair exclusion is correct, but
+the category has no asserted cause and does not justify another historical
+adapter or any Research action. Historical D1 remains quarantined while
+Execution independently proves its existing KIS Paper lifecycle.
+
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as

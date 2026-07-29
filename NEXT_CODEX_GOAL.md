@@ -2,90 +2,77 @@
 
 ## Objective
 
-Build one offline, source-local unexplained-discontinuity census for the frozen
-six-symbol KIS Paper D1 history panel.
+Capture the first new, complete KIS Paper QQQ canary lifecycle through the
+already-installed freshness-gated session path.
 
-The census stress-tests the narrow five-pair split-signature observation by
-checking every retained adjacent D1 pair across AAPL, AMZN, GOOGL, META, MSFT,
-and NVDA. It records only categorical counts of very large moves outside the
-same five fixed split pairs. An unexplained result is a data-semantic signal,
-not proof of a provider error, adjustment behavior, corporate action, or model
-eligibility.
+This is execution-plumbing evidence, not a strategy/model validation. The
+existing deterministic QQQ receipt, one-share target resolution, durable intent,
+submit/cancel/reconciliation behavior, and source-safe runtime projection own
+the action. Historical D1 data and all Research artifacts remain out of scope.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Inspect the installed broad-D1 task only for its source-safe state. Do not
-   start, stop, duplicate, alter, or wait on the collector.
-3. Reattest the exact frozen six-symbol KIS D1 history panel through its
-   existing offline loader. Do not invoke a provider, credential, or mutable
-   cache path.
-4. Use the completed Claude challenge recorded in `DECISIONS.md`: the prior
-   five-pair check remains narrow; do not build a label adapter from it.
+2. Inspect existing Task Scheduler state and the current source-safe QQQ
+   head-cache/session receipts. Do not manually start, stop, duplicate, or
+   modify the Data collector or installed intraday-head task.
+3. Reattest the existing offline preconditions: current QQQ input, regular
+   session gate, deterministic target resolution, intent-before-side-effect,
+   route isolation, and ambiguous-outcome reconciliation contract. Do not edit
+   the decision table, sizing, freshness budget, or strategy.
+4. Use the completed Claude review in `DECISIONS.md`: historical D1 audit status
+   does not gate this independent authorized Paper lifecycle.
 
-## Fixed Census Contract
+## Paper Contract
 
-- Examine every ordered adjacent pair of completed retained D1 bars within each
-  source stream. Use the unchanged signature
-  `abs(log(close_later / close_earlier)) >= log(3)`, implemented with exact
-  positive Decimal ratio comparisons. There is no threshold sweep, event-date
-  discovery, parameter tuning, or provider/event feed.
-- Categorize a signature only as `known_fixed_split` when its later session is
-  one of the five predeclared pairs already committed in the prior audit.
-  Every other signature is `unexplained_large_discontinuity`.
-- Return one immutable external source-safe receipt with per-symbol aggregate
-  pair counts and categorical status plus one overall status:
-  `no_unexplained_large_discontinuity`,
-  `unexplained_large_discontinuity_observed`, or `inconclusive`.
-  Invalid or incomplete pair handling must be fail-closed to `inconclusive`.
-- Never persist source rows, prices, returns, timestamps, session/event dates,
-  per-pair records, or any location of an observed discontinuity. The fixed
-  event contract may be represented only by a checksum.
-- A zero unexplained count does not verify adjustment semantics, corporate
-  actions, source identity, sessions, gaps, survivorship, PIT eligibility, or
-  source transfer. A nonzero count does not identify a cause.
-
-## Authority And Boundaries
-
-- Use only existing local cache bytes and offline code. Docker research remains
-  network-disabled with read-only data mounts and external artifacts under
-  `/app/model_artifacts` mapped to `D:\thericher-v2\model-artifacts`.
-- Do not read `.env`, credentials, tokens, account data, or KIS responses. Do
-  not call KIS, Tiingo, another provider, broker, or live route. Do not mutate
-  any cache, scheduler, task, cursor, or raw data.
-- Do not construct labels, features, a rule, a model, an encoder probe, a
-  rank, an ensemble, a replay, PnL, a local-paper intent, or a KIS Paper action.
-  Do not create a corporate-action sidecar or change an earlier conformance or
-  split-signature receipt.
-- Do not introduce a dependency, public model/weight, runtime, worker, or
-  scheduler.
+- Only the existing KIS Paper virtual route may read `KIS_PAPER_*`, and only
+  after its own fresh eligible receipt passes its current regular-session and
+  execution-control checks. Never read or route `KIS_LIVE_*`.
+- Preserve the existing target resolution and one-share behavior. Do not add a
+  symbol, decision rule, model, ensemble, price rule, size rule, or retry rule.
+- Persist the exact durable intent before a broker side effect. An ambiguous
+  submit/cancel outcome pauses replacement of that exact intent until the
+  existing read-only reconciliation path resolves it; it never becomes a global
+  hold or a reason to retry speculatively.
+- The installed task remains the owner of collection and session invocation.
+  Do not add a per-goal reservation, one-shot wrapper, manual approval gate, or
+  duplicate scheduler. This goal's completion observation is the first new
+  lifecycle outcome, not a restriction on later correctly scoped Paper work.
+- Persist and report only source-safe lifecycle categories, intent/run hashes,
+  route mode, and reconciliation status. Do not persist or output credentials,
+  account identifiers, balances, prices, broker bodies, fill values, or PnL.
+- A clean lifecycle proves plumbing only. It does not validate a model, signal,
+  profitability, historical D1 data, or live readiness.
 
 ## Parallel Work Packages
 
-1. **Data:** implement the deterministic in-memory all-six-symbol census and
-   immutable external categorical receipt. It must reattest source identity and
-   avoid retaining any event-level observation.
-2. **Engine Research:** define the interpretation boundary: every census result
-   remains non-model, non-ranking, non-PnL, and non-Paper evidence; the result
-   cannot become a label adapter or causal campaign input.
-3. **Temporary Validation:** add focused tests for zero, nonzero, and
-   inconclusive outcomes; fixed pair exclusion; no-network/no-credential route;
-   no value/date/per-pair persistence; immutable receipt reattachment; and
-   external artifact-root enforcement.
-4. **Data / temporary Validation:** reattach any automatic broad postrun only
-   through its existing receipt-bound path. Its absence or scoped retry does
-   not delay this census.
+1. **Execution:** reattest the existing route's pre-submit and recovery
+   invariants, then let the installed fresh-session path own the first new
+   eligible Paper lifecycle. Reconcile an exact unknown outcome through the
+   existing read-only path only.
+2. **Data:** preserve the independent QQQ head-cache/currentness contract and
+   report only its source-safe ready/stale/no-intent facts. A stale receipt does
+   not cause a manual collector launch or stop other ready lanes.
+3. **Temporary Validation:** add or reattest focused coverage for intent
+   persistence, route isolation, no-live credentials, fresh-before-account and
+   fresh-before-submit checks, cancellation/reconciliation, and source-safe
+   artifact projection. Do not simulate a profitability result.
+4. **Engine Research:** remain independent. Do not consume canary or historical
+   D1 facts as a model, GPU, ensemble, ranking, or PnL input.
 
 ## Completion
 
-- The census reattests one frozen KIS D1 source and produces only the allowed
-  categorical external receipt.
-- The result changes no source conformance, corporate-action qualification,
-  label eligibility, research, model, ranking, PnL, local-paper, KIS Paper, or
-  live action.
-- Refresh Data/Research/orchestration stateboards, replace this file with one
-  next objective, verify, commit, push, and continue.
+- A new source-safe QQQ session evidence record reaches `canary_completed` and
+  its matching terminal lifecycle/reconciliation evidence is complete, or an
+  exact technical failure is preserved and recovered without duplicate submit.
+- No live route, model/strategy change, manual duplicate scheduler, broad
+  historical-data dependency, secret output, balance/price/fill/PnL output, or
+  Paper authority gate is introduced.
+- Refresh Execution/Data/Research/orchestration stateboards, replace this file
+  with one next objective, verify, commit, push, and continue. If the installed
+  task is awaiting its next eligible fresh receipt, keep it scheduled and move
+  independent ready work forward rather than foreground-waiting.
 
 ## Verification
 
@@ -98,4 +85,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Audit KIS D1 split signatures`
+`Add KIS D1 discontinuity census`

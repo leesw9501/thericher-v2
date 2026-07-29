@@ -28,6 +28,14 @@ read-only with `/tmp` tmpfs; its existing runtime and external artifact mounts
 are the only writable paths. No Paper intent, canary, submit, modify, cancel,
 or live route occurred. KIS Live remains unavailable.
 
+The next bounded Execution objective is not a new strategy or route: observe
+the already-installed freshness-gated QQQ Paper session through its first new
+canary lifecycle outcome. The existing session owns one-share target resolution,
+durable intent, submit/cancel/reconciliation behavior, and source-safe terminal
+projection. It must use only a current eligible intraday receipt, never the
+quarantined historical D1 panel. No manual duplicate task, new quota,
+decision-table edit, or live route is introduced.
+
 ## Current Facts
 
 - The 2026-07-29 00:31 KST scheduled QQQ route produced an exact

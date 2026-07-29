@@ -95,6 +95,14 @@ the offline observer only after a current or complete cache result. A
 
 ## Current Facts
 
+- The v2 offline KIS D1 discontinuity census is complete at
+  `sha256:2d9f684c...d638c69`, with receipt
+  `sha256:0f92a377...b93edb`. It retains one aggregate unexplained large
+  discontinuity for AAPL and zero for the other five streams, but neither a
+  location nor a cause. It changes no historical-label, model, ranking, PnL,
+  Paper, or live status. Data now preserves the independent current QQQ head
+  cache for the existing freshness-gated Execution canary; it does not use the
+  quarantined historical D1 panel as a runtime input.
 - The offline Norgate/KIS D1 metadata conformance receipt is complete at
   `sha256:17a5c604...bf26afa` with receipt
   `sha256:f57ff545...10d7f60`. Both inputs expose the same five D1 OHLCV

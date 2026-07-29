@@ -23,6 +23,7 @@ from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.data.kis_paper_daily_history_panel import (
     KIS_PAPER_DAILY_HISTORY_CACHE_ROOT,
     KIS_PAPER_DAILY_HISTORY_PANEL_ADJUSTMENT_MODE,
+    KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS,
     KisPaperDailyHistoryPanel,
     build_kis_paper_daily_history_panel,
 )
@@ -31,6 +32,9 @@ from thericher_v2.research.validation import _reject_repo_artifact_path, resolve
 KIS_D1_ADJUSTMENT_AUDIT_ID = "kis-d1-adjustment-split-signature-audit-v1"
 KIS_D1_ADJUSTMENT_AUDIT_VERSION = 1
 KIS_D1_ADJUSTMENT_AUDIT_DIRECTORY = "data/kis-d1-adjustment-audit"
+KIS_D1_DISCONTINUITY_CENSUS_ID = "kis-d1-unexplained-discontinuity-census-v2"
+KIS_D1_DISCONTINUITY_CENSUS_VERSION = 2
+KIS_D1_DISCONTINUITY_CENSUS_DIRECTORY = "data/kis-d1-discontinuity-census"
 SPLIT_SIGNATURE_THRESHOLD_MULTIPLIER = Decimal("3")
 _AUDITED_SYMBOLS = ("AAPL", "AMZN", "GOOGL", "NVDA")
 _SPLIT_SESSION_PAIRS = MappingProxyType(
@@ -50,6 +54,16 @@ AuditStatus = Literal[
     "inconclusive",
 ]
 SymbolStatus = Literal["signature_observed", "signature_absent", "inconclusive_pair"]
+CensusStatus = Literal[
+    "no_unexplained_large_discontinuity",
+    "unexplained_large_discontinuity_observed",
+    "inconclusive",
+]
+CensusSymbolStatus = Literal[
+    "no_unexplained_large_discontinuity",
+    "unexplained_large_discontinuity_observed",
+    "inconclusive_pair",
+]
 _FORBIDDEN_OUTPUT_KEYS = frozenset(
     {
         "open",
@@ -211,6 +225,274 @@ class KisD1AdjustmentAuditReceipt:
 
 
 KisPanelLoader = Callable[[Path, Path | None], KisPaperDailyHistoryPanel]
+
+
+@dataclass(frozen=True, slots=True)
+class KisD1DiscontinuityCensusResult:
+    """Aggregate discontinuity categories for one retained source stream."""
+
+    symbol: str
+    adjacent_pair_count: int
+    complete_pair_count: int
+    known_fixed_split_signature_count: int
+    unexplained_large_discontinuity_count: int
+    status: CensusSymbolStatus
+
+    def __post_init__(self) -> None:
+        expected_status: CensusSymbolStatus
+        if self.complete_pair_count != self.adjacent_pair_count:
+            expected_status = "inconclusive_pair"
+        elif self.unexplained_large_discontinuity_count > 0:
+            expected_status = "unexplained_large_discontinuity_observed"
+        else:
+            expected_status = "no_unexplained_large_discontinuity"
+        if (
+            self.symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            or self.adjacent_pair_count < 0
+            or not 0 <= self.complete_pair_count <= self.adjacent_pair_count
+            or not 0 <= self.known_fixed_split_signature_count <= self.complete_pair_count
+            or not 0 <= self.unexplained_large_discontinuity_count <= self.complete_pair_count
+            or self.known_fixed_split_signature_count
+            + self.unexplained_large_discontinuity_count
+            > self.complete_pair_count
+            or self.status != expected_status
+        ):
+            raise ValueError("KIS D1 discontinuity census result is invalid")
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "symbol": self.symbol,
+            "adjacent_pair_count": self.adjacent_pair_count,
+            "complete_pair_count": self.complete_pair_count,
+            "known_fixed_split_signature_count": self.known_fixed_split_signature_count,
+            "unexplained_large_discontinuity_count": self.unexplained_large_discontinuity_count,
+            "status": self.status,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisD1DiscontinuityCensus:
+    """A value-free complement census for the frozen KIS D1 source."""
+
+    source: KisD1AdjustmentAuditSource
+    contract_sha256: str
+    status: CensusStatus
+    results_by_symbol: Mapping[str, KisD1DiscontinuityCensusResult]
+
+    def __post_init__(self) -> None:
+        results = MappingProxyType(dict(self.results_by_symbol))
+        expected_status = _aggregate_census_status(tuple(results.values()))
+        if (
+            not _is_sha256(self.contract_sha256)
+            or tuple(results) != KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            or any(result.symbol != symbol for symbol, result in results.items())
+            or self.status != expected_status
+        ):
+            raise ValueError("KIS D1 discontinuity census is invalid")
+        object.__setattr__(self, "results_by_symbol", results)
+
+    @property
+    def model_eligible(self) -> bool:
+        return False
+
+    @property
+    def paper_trading_eligible(self) -> bool:
+        return False
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "source": self.source.to_payload(),
+            "contract_sha256": self.contract_sha256,
+            "status": self.status,
+            "results": [
+                self.results_by_symbol[symbol].to_payload()
+                for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            ],
+            "scope": {
+                "source_semantics_observation_only": True,
+                "unexplained_discontinuity_cause_identified": False,
+                "adjustment_semantics_fully_verified": False,
+                "corporate_action_qualified": False,
+                "norgate_conformance_changed": False,
+                "label_eligible": False,
+                "source_transfer_eligible": False,
+                "model_eligible": False,
+                "ranking_eligible": False,
+                "pnl_or_profitability_claim": False,
+                "paper_trading_eligible": False,
+            },
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisD1DiscontinuityCensusReceipt:
+    """Immutable external receipt for one value-free source census."""
+
+    census: KisD1DiscontinuityCensus
+    census_sha256: str
+    receipt_path: Path
+    receipt_sha256: str
+
+    def __post_init__(self) -> None:
+        if (
+            not _is_sha256(self.census_sha256)
+            or not _is_sha256(self.receipt_sha256)
+            or self.receipt_path.is_symlink()
+            or not self.receipt_path.is_file()
+        ):
+            raise ValueError("KIS D1 discontinuity census receipt is invalid")
+
+
+def build_kis_d1_discontinuity_census_receipt(
+    *,
+    artifact_root: Path | None = None,
+    market_data_root: Path,
+    repo_root: Path | None = None,
+    panel_loader: KisPanelLoader | None = None,
+) -> KisD1DiscontinuityCensusReceipt:
+    """Reattest a frozen KIS panel and write one categorical census receipt."""
+
+    root = _external_artifact_root(artifact_root or resolve_model_artifact_root(), repo_root)
+    load_panel = panel_loader or _load_kis_panel
+    panel = load_panel(Path(market_data_root), repo_root)
+    census = assess_kis_d1_discontinuity_census(panel)
+    census_payload = census.to_payload()
+    census_sha256 = _sha256_json(census_payload)
+    receipt_payload = {
+        "schema_version": SCHEMA_VERSION,
+        "kind": "kis_d1_discontinuity_census_receipt",
+        "version": KIS_D1_DISCONTINUITY_CENSUS_VERSION,
+        "census_id": KIS_D1_DISCONTINUITY_CENSUS_ID,
+        "census_sha256": census_sha256,
+        "census": census_payload,
+        "artifact_policy": {
+            "external_artifact_only": True,
+            "network_accessed": False,
+            "credentials_accessed": False,
+            "kis_accessed": False,
+            "broker_accessed": False,
+            "source_rows_persisted": False,
+            "market_values_persisted": False,
+            "returns_persisted": False,
+            "event_dates_persisted": False,
+            "per_pair_records_persisted": False,
+            "labels_persisted": False,
+            "predictions_persisted": False,
+            "model_artifacts_persisted": False,
+            "pnl_persisted": False,
+        },
+    }
+    _reject_forbidden_output_keys(receipt_payload)
+    target = root / KIS_D1_DISCONTINUITY_CENSUS_DIRECTORY / census_sha256[7:] / "receipt.json"
+    _write_or_verify_json(target, receipt_payload)
+    return KisD1DiscontinuityCensusReceipt(
+        census=census,
+        census_sha256=census_sha256,
+        receipt_path=target,
+        receipt_sha256=_sha256(target.read_bytes()),
+    )
+
+
+def assess_kis_d1_discontinuity_census(
+    panel: KisPaperDailyHistoryPanel,
+) -> KisD1DiscontinuityCensus:
+    """Census only aggregate large retained-pair signatures in memory."""
+
+    if panel.adjustment_mode != KIS_PAPER_DAILY_HISTORY_PANEL_ADJUSTMENT_MODE:
+        raise ValueError("KIS D1 adjustment mode is invalid")
+    results: dict[str, KisD1DiscontinuityCensusResult] = {}
+    for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
+        stream = panel.bars_by_symbol[symbol]
+        adjacent_pair_count = 0
+        complete_pair_count = 0
+        known_signature_count = 0
+        unexplained_count = 0
+        for before, after in zip(stream.bars[:-1], stream.bars[1:], strict=True):
+            adjacent_pair_count += 1
+            if (
+                not before.complete
+                or not after.complete
+                or before.close <= 0
+                or after.close <= 0
+            ):
+                continue
+            complete_pair_count += 1
+            if not _has_split_signature(before.close, after.close):
+                continue
+            if _is_known_fixed_split(symbol, before.start_ts.date(), after.start_ts.date()):
+                known_signature_count += 1
+            else:
+                unexplained_count += 1
+        status: CensusSymbolStatus
+        if complete_pair_count != adjacent_pair_count:
+            status = "inconclusive_pair"
+        elif unexplained_count > 0:
+            status = "unexplained_large_discontinuity_observed"
+        else:
+            status = "no_unexplained_large_discontinuity"
+        results[symbol] = KisD1DiscontinuityCensusResult(
+            symbol=symbol,
+            adjacent_pair_count=adjacent_pair_count,
+            complete_pair_count=complete_pair_count,
+            known_fixed_split_signature_count=known_signature_count,
+            unexplained_large_discontinuity_count=unexplained_count,
+            status=status,
+        )
+    source = KisD1AdjustmentAuditSource(
+        dataset_id=panel.dataset_id,
+        dataset_sha256=panel.dataset_hash,
+        index_sha256=panel.index_hash,
+        adjustment_mode=panel.adjustment_mode,
+    )
+    return KisD1DiscontinuityCensus(
+        source=source,
+        contract_sha256=_census_contract_sha256(),
+        status=_aggregate_census_status(tuple(results.values())),
+        results_by_symbol=results,
+    )
+
+
+def _aggregate_census_status(results: tuple[KisD1DiscontinuityCensusResult, ...]) -> CensusStatus:
+    if any(result.status == "inconclusive_pair" for result in results):
+        return "inconclusive"
+    if any(
+        result.status == "unexplained_large_discontinuity_observed" for result in results
+    ):
+        return "unexplained_large_discontinuity_observed"
+    return "no_unexplained_large_discontinuity"
+
+
+def _known_fixed_split_pairs() -> frozenset[tuple[str, date, date]]:
+    return frozenset(
+        (symbol, before_session, after_session)
+        for symbol, pairs in _SPLIT_SESSION_PAIRS.items()
+        for before_session, after_session in pairs
+    )
+
+
+def _is_known_fixed_split(symbol: str, before_session: date, after_session: date) -> bool:
+    return (symbol, before_session, after_session) in _known_fixed_split_pairs()
+
+
+def _census_contract_sha256() -> str:
+    return _sha256_json(
+        {
+            "census_id": KIS_D1_DISCONTINUITY_CENSUS_ID,
+            "version": KIS_D1_DISCONTINUITY_CENSUS_VERSION,
+            "signature": "abs(log(close_later / close_earlier)) >= log(3)",
+            "known_fixed_split_pairs": [
+                {
+                    "symbol": symbol,
+                    "before_session": before_session.isoformat(),
+                    "after_session": after_session.isoformat(),
+                }
+                for symbol in _AUDITED_SYMBOLS
+                for before_session, after_session in _SPLIT_SESSION_PAIRS[symbol]
+            ],
+            "scan_symbols": list(KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS),
+            "pair_scope": "ordered_adjacent_retained_completed_d1_pairs",
+        }
+    )
 
 
 def build_kis_d1_adjustment_audit_receipt(

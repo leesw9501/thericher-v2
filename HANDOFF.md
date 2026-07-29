@@ -1009,3 +1009,22 @@ discontinuities outside the five fixed pairs. Preserve the current contract's
 intentional rule that any missing/invalid required pair yields aggregate
 `inconclusive`; do not reinterpret that as a bug or change it while closing the
 audit objective.
+
+## KIS D1 Discontinuity Census
+
+The symbol-aware v2 complement census is complete under receipt
+`sha256:0f92a3778020bfab20a74405e03f74de580a8a18ab13522d7788b0b4f2b93edb`.
+It reattested the same frozen source and found one aggregate unexplained large
+discontinuity for AAPL, with zero for AMZN, GOOGL, META, MSFT, and NVDA. It
+retains no per-pair record, date, location, price, return, raw row, provider
+call, credential, broker event, model, label, or PnL. The category has no
+asserted cause and historical D1 remains quarantined.
+
+Claude's follow-up review was `uncertain` about treating the category as a
+source defect. It identified an incomplete static split list and corrected
+symbol-keyed matching as the local code issue; that fix is in v2. It recommended
+against another historical adapter/census now because none has a consumer, and
+recommended the already-authorized KIS Paper canary lifecycle instead. The
+next objective therefore reattests and observes the existing freshness-gated
+QQQ virtual-paper session through its first new lifecycle outcome. It adds no
+strategy, historical-data dependency, paper quota, or live route.

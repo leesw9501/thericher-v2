@@ -7484,3 +7484,33 @@ explicit objective boundary, not an accidental preference for success.
 Reason: the complement census creates an actual falsifier for a cheap source
 semantics check without inventing label plumbing, adding a provider, or
 mistaking a five-event spot check for full historical qualification.
+
+## 2026-07-30 - Close D1 census and prioritize the existing Paper lifecycle
+
+Decision: accept the symbol-aware v2 discontinuity census receipt
+`sha256:0f92a377...b93edb` as scoped source-semantics evidence only. It records
+one aggregate AAPL large discontinuity outside the five predeclared pairs and
+zero for the other five streams. No event location, value, return, date, raw
+row, network request, credential, broker body, label, model, PnL, or Paper
+action is retained. The category neither proves an adjustment defect nor
+qualifies the historical panel.
+
+Claude's verdict was `uncertain`: the static split list may be incomplete,
+array adjacency is not calendar continuity, and the previous exclusion
+implementation incorrectly discarded symbol identity. Fix the code by matching
+`(symbol, before_session, after_session)` and version the census contract to
+v2; do not infer a cause or add another label/corporate-action adapter. The
+current result remains an AAPL-only aggregate after the fix.
+
+Claude correctly noted that the historical D1 panel has no eligible consumer
+while the existing KIS Paper virtual canary has never completed a submit/cancel/
+reconciliation lifecycle. Adopt that independent next objective under standing
+Paper authority. It must rely only on the existing current QQQ freshness gate,
+persist intent before side effects, never retry an ambiguous exact intent before
+read-only reconciliation, and retain only source-safe lifecycle categories. It
+does not change strategy, sizing, historical data, model eligibility, Paper
+authority, or any live route.
+
+Reason: this advances the actual private Paper execution loop without making
+historical data qualification a false precondition. It also breaks the emerging
+pattern of adding audit artifacts that nothing downstream can safely consume.
