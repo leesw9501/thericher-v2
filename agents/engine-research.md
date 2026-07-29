@@ -43,6 +43,16 @@ pretraining-period scope sufficient to rule out evaluation overlap. It
 downloaded no weights, data, or dependency and is a rejection, not a second
 handoff, model candidate, runtime decision, or GPU job.
 
+The additional source-safe handoff
+`ohlcv-mechanism-source-pass-20260730-r1` is external at
+`D:\thericher-v2\model-artifacts\research\strategy-discovery` with hash
+`sha256:08802d6838cb51c87842975b25edfe296e34d53acd710568f99a1f7d4431f7ef`.
+It records one each of chart-structure, time-series-momentum, and
+cross-sectional-tree references, all explicitly `source_unverified`. None has
+an independently re-retrieved rights, source-semantics, adjustment, or
+point-in-time compatibility claim, so this is an unconsumed discovery handoff,
+not a hypothesis, campaign, GPU job, ensemble input, or Paper input.
+
 ## Research Track Portfolio
 
 Engine Research owns four parallel tracks under one campaign and trial-custody
