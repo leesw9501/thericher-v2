@@ -265,10 +265,27 @@ Dataset limitations must remain visible.
 ### Engine Research Agent
 
 Owns hypotheses, features, models, research campaigns, GPU work, analytical
-backtests, walk-forward evaluation, and model-side PnL attribution.
+backtests, walk-forward evaluation, portfolio-construction and ensemble
+research, and model-side PnL attribution.
 
 - Use one campaign contract for a dataset, target, split, cost model, metrics,
   baselines, compute budget, and stop rules.
+- Organize ready work as narrowly scoped research tracks, not separate durable
+  agents: technical rule and chart structure, momentum/regime/cross-sectional
+  mechanisms, classical statistical/ML models, and sequence/DL or public-model
+  benchmarks. A track owns one hypothesis at a time and uses the same campaign
+  contract discipline; it does not get its own stateboard, authority, or goal.
+- Keep public foundation-model work source- and weight-provenance isolated.
+  Its claimed discovery/evaluation sample and, when applicable, pretraining
+  corpus period and instrument scope must be known or explicitly
+  `not_disclosed` before comparative use. A source with overlap or unknown
+  coverage against a campaign's validation/holdout may support only an
+  isolated non-promoting representation or runtime study, never a comparative
+  result, ensemble input, or promotion claim.
+- A post-cost comparative, ensemble, or paper-candidate claim carries an
+  Execution-attested replay-parity record for its cost, latency, fill, and
+  availability assumptions. This is evidence custody, not a manual approval
+  gate and never blocks a separately scoped paper canary or exploratory study.
 - Maintain breadth, depth, ensemble, and replication queues when useful.
 - Treat GPU utilization as a consequence of eligible research, not a KPI.
 - When the exclusive GPU is idle, dispatch the first ready frozen campaign or
@@ -285,6 +302,10 @@ risk limits, emergency controls, and later KIS adapters.
 - Treat model output as untrusted input to deterministic sizing and risk.
 - Persist intent before broker side effects and reconcile unknown outcomes.
 - Never introduce strategy logic or load arbitrary public model code.
+- Reattest the deterministic cost, latency, fill, and availability semantics
+  used by a research promotion claim without choosing the strategy or model.
+  A parity attestation is evidence only; it does not create a manual paper
+  approval or inhibit a separately scoped virtual-paper action.
 - `KIS_PAPER_*` and paper operations are already authorized. `KIS_LIVE_*`
   remains unavailable.
 
@@ -297,10 +318,55 @@ durable lane. It receives frozen datasets, candidates, costs, and holdouts. It
 does not tune the candidate it evaluates. It writes linked evidence into the
 shared history and then exits.
 
+### Cross-Track Synthesis
+
+Cross-Track Synthesis is a temporary Validation assignment, not a durable lane
+or an Engine Research subteam. It is invoked only when at least two independently
+frozen candidate outputs have aligned out-of-fold timestamps, the same
+availability grade, and comparable cost and replay assumptions.
+
+- It receives only frozen candidate evidence and evaluates incremental net
+  value, prediction/error dependence, turnover, concentration, drawdown, and
+  stale/missing behavior. It never retrains, retunes, reweights, or replaces a
+  member model.
+- Its result is either `no_combination` or a source-safe proposal for one new
+  Engine Research ensemble campaign. It cannot select a winner, promote a
+  model, create a Paper intent, or override Execution risk.
+- It gets no stateboard until two separate company-goal boundaries show an
+  independent synthesis changed a promotion or no-promotion decision. Until
+  then it is an invoked sub-agent with an external evidence receipt only.
+
 ### Infra Capability
 
 Infra is invoked for Docker, CUDA, dependencies, mounts, CI, storage, and
 runtime reproducibility. It has no standing queue or separate authority.
+
+### Strategy Discovery
+
+Strategy Discovery is an invoked, bounded public-source research assignment,
+not a durable lane or stateboard. It improves feature/model research by finding
+source-derived candidate proposals from market-structure references, papers,
+official open-source repositories, and public model documentation.
+
+- It may state only the source's claimed mechanism, a retrievable identifier
+  (URL, DOI, arXiv identifier, or commit), retrieval time, verbatim license
+  text, and the source's stated discovery/evaluation or pretraining-corpus
+  period and instrument scope (or `not_disclosed`). Until Engine Research
+  independently re-retrieves it, the proposal is `source_unverified`, not
+  durable knowledge or evidence.
+- It never owns a hypothesis, costs, a kill test, a campaign contract, model
+  implementation, data collection, training, backtest, scheduler, queue, or
+  readiness gate. Engine Research alone turns a re-retrieved proposal into a
+  hypothesis and frozen campaign contract.
+- It may not create a broker, Paper, live, account, credential, ranking, or
+  public-serving path. A discovery handoff cannot block any other lane.
+- Its source-safe receipt belongs under the external artifact root. Do not make
+  a recurring Markdown report family or a per-agent next-goal file.
+- Promote it to a durable stateboard only after two consecutive company-goal
+  boundaries show independently re-retrieved handoffs actually consumed by
+  Engine Research and at least one handoff was rejected on a recorded source
+  hygiene ground. Retire the trial if a source fails re-retrieval or the
+  handoffs are not consumed.
 
 ### Throughput Review
 
@@ -532,6 +598,17 @@ D:\thericher-v2\model-artifacts\_control\catalog.sqlite
 Git owns code, policy, decisions, and the current goal. `D:\market_data` owns
 dataset bytes. Execution event history remains authoritative for local
 reconstruction; KIS is authoritative for external paper/live broker state.
+
+Campaign custody is a shared evidence contract, not a fourth durable research
+role. The external ledger reserves one append-only source-safe campaign record
+per frozen contract, keyed by its contract hash. It carries dataset, split,
+cost, trial-family, trial-index, holdout-access, and terminal-outcome identities
+without rows, labels, predictions, credentials, account facts, or weights.
+Validation links an independent evaluation to that same record. This is how
+the project measures repeated use of one panel and comparable cost assumptions;
+it is not an approval gate on paper work. Until the registry is implemented,
+completed work must not claim quantified multiple-trial control or a promoted
+research result from that absent mechanism.
 
 The durable handoff record is a source-safe shared event, not a role diary. Its
 minimum shape is role, bounded objective, run or Git reference, durable phase,

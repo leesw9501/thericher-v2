@@ -7232,6 +7232,69 @@ the stable snapshot needed by the active validation loop. An eight-hour bound is
 a reversible compromise that keeps serial collection while making frozen
 lineage evidence available materially earlier.
 
+## 2026-07-29 - Trial strategy discovery before creating a durable research lane
+
+Decision: begin Strategy Discovery as an invoked, bounded public-source
+assignment rather than create `agents/strategy-research.md` immediately.
+Existing Engine Research retains hypotheses, campaign contracts, CPU/GPU work,
+backtests, validation, and model-side attribution. Strategy Discovery may hand
+off only retrievable source identifiers, retrieval times, verbatim license text,
+source-derived mechanism proposals, and the source's stated discovery/
+evaluation or pretraining-corpus period and instrument scope. Engine Research
+independently re-retrieves a proposal before it can become a hypothesis or
+campaign; unknown or overlapping public-model provenance cannot support a
+comparative or promoted result.
+
+Claude's falsification-first verdict was `uncertain`. The policy's durable-role
+precondition is not yet evidenced, and a separate role owning hypotheses or
+kill tests would duplicate Engine Research. The adopted safeguards forbid it
+from owning a queue, gate, model, data, benchmark, campaign, or broker route.
+Its external source-safe receipt is evidence only. A failed source re-retrieval
+or unconsumed handoff retires the trial; two consecutive goal boundaries with
+independently re-retrieved handoffs consumed by Engine Research, including one
+recorded source-hygiene rejection, are required before promotion to a durable
+stateboard.
+
+Reason: the project needs a repeatable way to discover genuinely new causal
+mechanisms after several fixed D1 candidates were falsified, but a permanent
+agent without demonstrated independent work would add process structure rather
+than advance the feature/model research loop.
+
+## 2026-07-29 - Named research tracks and temporary cross-track synthesis
+
+Decision: keep Data, Engine Research, Execution, and Codex orchestration as the
+only durable team lanes. Within Engine Research, dispatch rule/chart structure,
+momentum-regime/cross-sectional, classical statistical/ML, and sequence/DL or
+public-model benchmark work as separately bounded tracks under the same
+campaign and trial-custody contract. Do not create one stateboard per method.
+
+When two independently frozen candidates have aligned out-of-fold evidence and
+comparable cost/availability assumptions, invoke Cross-Track Synthesis through
+temporary Validation. It measures incremental net value, error dependence,
+turnover, drawdown, and missing/stale behavior; it may return only
+`no_combination` or one new ensemble-campaign proposal. It cannot tune members,
+select weights, promote a model, or create a Paper route.
+
+Claude's falsification-first verdict was `supported-with-limits`. It identified
+the material missing boundary as evidence custody rather than more idea roles:
+repeated trials on the same panel, split/holdout access, and cost-realism parity
+need a shared append-only external registry. The adopted next improvement is a
+source-safe campaign record keyed by contract hash, not a new manager or
+Markdown ledger. Until it is implemented, historical research remains
+non-promoting and may not claim quantified multiple-trial control.
+
+For a post-cost comparative, ensemble, or paper-candidate claim, Execution
+must independently reattest the same cost, latency, fill, and availability
+assumptions. That parity evidence is not a manual approval or a blockage on a
+separately scoped exploratory/paper action; it closes self-certification only
+when a Research result is being interpreted as execution-feasible.
+
+Reason: distinct mechanisms deserve parallel exploration, but treating each
+model family as an independent permanent agent would duplicate contracts and
+make ensemble selection less independent. The temporary synthesis boundary
+preserves diversity testing without turning integration into another source of
+in-sample tuning.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

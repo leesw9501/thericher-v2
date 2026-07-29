@@ -9,6 +9,59 @@ Own hypotheses, features, models, campaigns, analytical backtests,
 walk-forward evaluation, GPU work, and model-side PnL attribution. Never
 modify broker submission or deterministic execution-risk behavior.
 
+## Strategy Discovery Intake
+
+An invoked Strategy Discovery assignment now owns one bounded public-source
+landscape pass for target-free sequence representation and public time-series
+model candidates. It may provide only retrievable source identifiers, retrieval
+time, verbatim license text, a source-derived mechanism proposal, and the
+source's stated discovery/evaluation or pretraining-corpus period and
+instrument scope (or `not_disclosed`). Engine Research independently
+re-retrieves any candidate before it becomes a hypothesis, causal task,
+campaign, or GPU job.
+
+This is deliberately not `agents/strategy-research.md` yet: it has no durable
+queue, model, benchmark, data, broker, or Paper authority. Promotion requires
+two consecutive company-goal boundaries with independently re-retrieved
+handoffs that Engine Research actually consumes and one source-hygiene
+rejection. A failed re-retrieval or an unconsumed handoff retires the trial.
+Unknown or overlapping discovery/pretraining coverage may support only an
+isolated non-promoting study. Current next action: use the result only to
+inform a frozen, target-free Norgate representation contract; do not reuse the
+existing forward-direction label or its future-aware discontinuity filter.
+
+## Research Track Portfolio
+
+Engine Research owns four parallel tracks under one campaign and trial-custody
+contract; these are work packages, not independent agents or Markdown queues.
+
+- **Technical Rule And Chart Structure:** completed-bar price, candle, volume,
+  breakout, reversion, and deterministic exit hypotheses. Rejected rules are
+  not retuned under a new name.
+- **Momentum, Regime, And Cross-Section:** relative strength, trend, volatility,
+  correlation, and opportunity-selection hypotheses. A point-in-time universe
+  and corporate-action limitation remain explicit; static Norgate work is
+  development-only until KIS reconstruction is qualified.
+- **Classical Statistical And ML:** naive, linear, tree, and calibrated
+  tabular controls. CPU breadth precedes scarce depth work.
+- **Sequence, DL, And Public Models:** LSTM/GRU/TCN/attention-family
+  representation or forecast candidates, plus isolated public-model benchmarks
+  after source, weight, and training-corpus provenance review. The exclusive
+  GPU takes the first ready frozen job, not an arbitrary queue item.
+
+**Cross-Track Synthesis** remains dormant until at least two independently
+frozen candidates expose aligned out-of-fold evidence with comparable costs and
+availability. Temporary Validation then tests incremental net value, error
+dependence, turnover, drawdown, and stale-data behavior. It can return only
+`no_combination` or one new frozen ensemble-campaign proposal; it does not
+choose weights, tune members, promote a result, or create a Paper action.
+
+Campaign custody is not yet implemented as a durable registry. Therefore the
+current historical breadth work remains non-promoting and no result may claim
+quantified multiple-trial control. The next eligible custody package must
+implement an append-only external contract registry before any candidate is
+considered for a promoted Research decision.
+
 ## Current Objective
 
 Keep the completed KIS-native QQQ/SPY controls and six-symbol daily control as

@@ -56,9 +56,12 @@ unavailable.
 - `data.md`: acquisition, canonical data, provenance, calendars, dataset
   manifests, splits, resampling, and data quality.
 - `engine-research.md`: hypotheses, campaign contracts, CPU/GPU models,
-  backtests, walk-forward validation, and analytical attribution.
+  backtests, walk-forward validation, analytical attribution, and the named
+  rule/chart, momentum/regime, classical ML, and sequence/DL research tracks.
 - `execution.md`: local simulation, account/order/fill/position contracts,
   reconciliation, accounting PnL, risk, emergency behavior, and later KIS.
+  It also independently reattests the execution-cost parity of any promoted
+  Research claim without selecting the strategy.
 - `orchestration.md`: Codex-owned cross-lane resource and throughput view; not
   a Role Agent, implementation queue, or historical ledger.
 
@@ -68,6 +71,16 @@ unavailable.
   linked evidence, and exits; it has no durable stateboard yet.
 - Infra is invoked for Docker, GPU, dependencies, mounts, storage, CI, and
   runtime reproducibility.
+- Strategy Discovery is an invoked public-source research assignment. It can
+  produce a source-derived candidate proposal, but Engine Research alone may
+  turn that proposal into a hypothesis or campaign. It has no stateboard until
+  two consecutive goal boundaries show independently re-retrieved proposals
+  being consumed and one source-hygiene rejection demonstrates that the intake
+  is discriminating.
+- Cross-Track Synthesis is an invoked temporary Validation assignment. It sees
+  only aligned frozen out-of-fold evidence from two or more candidates and can
+  propose, but never tune or promote, one ensemble campaign. It has no
+  stateboard until repeated independent synthesis changes a promotion decision.
 - Throughput Review is an invoked, bounded operating check. It can inspect
   ready work, active-job ownership, resource contention, test feedback latency,
   and worker waits to propose one measured, reversible improvement for a named

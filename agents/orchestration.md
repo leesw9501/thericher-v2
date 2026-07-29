@@ -54,6 +54,13 @@ research-eligibility decision. The first fresh 8-hour cycle is a reversible
 calibration: retain it only when its postrun succeeds and rolling 24-hour
 wall-clock page yield plus `rate_limit_recovery_outcome` remain acceptable.
 
+The current team-portfolio improvement is deliberately not a new durable lane:
+Engine Research now dispatches four named research tracks, while public-source
+discovery and cross-track synthesis remain invoked assignments. The next
+evidence-custody improvement is an append-only external campaign registry;
+until it exists, historical candidates remain non-promoting rather than being
+combined or selected from an uncounted trial family.
+
 ## Blocked-Goal Alternatives
 
 **Blocking fact:** the pre-update 09:45 KST owner exited zero without emitting a
