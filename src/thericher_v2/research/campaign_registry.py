@@ -18,6 +18,7 @@ from thericher_v2.contracts import SCHEMA_VERSION
 from .validation import _reject_repo_artifact_path, resolve_model_artifact_root
 
 CAMPAIGN_REGISTRY_VERSION = 1
+CAMPAIGN_REGISTRY_NAMESPACE = "research_campaign_custody"
 CAMPAIGN_FROZEN_RECORD_TYPE = "campaign_frozen"
 CAMPAIGN_OUTCOME_RECORD_TYPE = "campaign_outcome"
 _RECORD_TYPES = frozenset({CAMPAIGN_FROZEN_RECORD_TYPE, CAMPAIGN_OUTCOME_RECORD_TYPE})
@@ -110,6 +111,7 @@ def register_frozen_campaign(
         )
         record = {
             "schema_version": SCHEMA_VERSION,
+            "registry_namespace": CAMPAIGN_REGISTRY_NAMESPACE,
             "registry_version": CAMPAIGN_REGISTRY_VERSION,
             "record_type": CAMPAIGN_FROZEN_RECORD_TYPE,
             "record_id": f"campaign:{identity['campaign_contract_hash'][7:]}",
@@ -171,6 +173,7 @@ def register_campaign_outcome(
 
         record = {
             "schema_version": SCHEMA_VERSION,
+            "registry_namespace": CAMPAIGN_REGISTRY_NAMESPACE,
             "registry_version": CAMPAIGN_REGISTRY_VERSION,
             "record_type": CAMPAIGN_OUTCOME_RECORD_TYPE,
             "record_id": (
@@ -247,6 +250,8 @@ def _iter_verified_records(ledger_root: Path) -> Iterator[tuple[dict[str, Any], 
                 raise ValueError("campaign registry contains malformed JSON") from exc
             if not isinstance(record, dict):
                 raise ValueError("campaign registry record must be an object")
+            if record.get("registry_namespace") != CAMPAIGN_REGISTRY_NAMESPACE:
+                continue
             _validate_record(record, source=f"{path.name}:{line_number}")
             yield record, path
 
@@ -290,6 +295,7 @@ def _signed_record(record: Mapping[str, Any]) -> dict[str, Any]:
 def _validate_record(record: Mapping[str, Any], *, source: str) -> None:
     if (
         record.get("schema_version") != SCHEMA_VERSION
+        or record.get("registry_namespace") != CAMPAIGN_REGISTRY_NAMESPACE
         or record.get("registry_version") != CAMPAIGN_REGISTRY_VERSION
         or record.get("record_type") not in _RECORD_TYPES
         or record.get("role") != "engine_research"

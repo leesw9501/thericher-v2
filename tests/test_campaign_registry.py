@@ -44,6 +44,7 @@ def test_registry_appends_idempotent_frozen_contract_and_outcome(tmp_path: Path)
         "record_sha256": first.record_sha256,
         "record_type": "campaign_frozen",
         "recorded_at": "2026-07-29T12:00:00+00:00",
+        "registry_namespace": "research_campaign_custody",
         "registry_version": 1,
         "role": "engine_research",
         "schema_version": 1,
@@ -143,6 +144,32 @@ def test_registry_lock_is_scoped_to_the_external_ledger(tmp_path: Path) -> None:
             artifact_root=artifact_root,
             repo_root=tmp_path / "repo",
         )
+
+
+def test_registry_ignores_other_role_records_in_the_shared_ledger(tmp_path: Path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    ledger_root = artifact_root / "_control" / "ledger"
+    ledger_root.mkdir(parents=True)
+    ledger_path = ledger_root / "2026-07.jsonl"
+    ledger_path.write_text(
+        json.dumps({"role": "data", "event": "unrelated-shared-ledger-record"}) + "\n",
+        encoding="utf-8",
+    )
+
+    entry = register_frozen_campaign(
+        contract_hash=_digest("contract"),
+        dataset_hash=_digest("dataset"),
+        split_hash=_digest("split"),
+        cost_model_hash=_digest("cost"),
+        trial_family="unit-test-family",
+        holdout_access="none",
+        artifact_root=artifact_root,
+        repo_root=tmp_path / "repo",
+        recorded_at=datetime(2026, 7, 29, tzinfo=UTC),
+    )
+
+    assert entry.trial_index == 1
+    assert len(_records(ledger_path)) == 2
 
 
 def _records(path: Path) -> list[dict[str, object]]:
