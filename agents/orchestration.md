@@ -52,6 +52,12 @@ The installed QQQ scheduler remains the only owner of the next fresh-session
 lifecycle. Claude's block-classification request timed out without a body, so
 the review is `review_unavailable` rather than agreement or a hold.
 
+The isolated feedback helper `scripts/run_parallel_tests.ps1 -Workers 8`
+reattested on 2026-07-30 with `1762 passed, 14 skipped` in 284.47 seconds. It
+does not touch KIS, Docker, market data, or artifacts, so retain it for focused
+implementation feedback while preserving serial `pytest -q` as the required
+goal-boundary verification.
+
 ## Durable Knowledge
 
 - Target-free r6 artifacts are restricted derived external weights, not
