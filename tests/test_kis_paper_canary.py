@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import threading
 import urllib.error
@@ -736,6 +737,8 @@ def test_read_only_unknown_run_recovery_rebuilds_the_persisted_decision(
     )
 
     assert first.phase == "outcome_unknown"
+    initial_evidence = first.evidence_path.read_bytes()
+    initial_evidence_digest = "sha256:" + hashlib.sha256(initial_evidence).hexdigest()
     request_count_before_recovery = len(transport.requests)
 
     transport.fail_submit = False
@@ -751,15 +754,86 @@ def test_read_only_unknown_run_recovery_rebuilds_the_persisted_decision(
     recovery_requests = transport.requests[request_count_before_recovery:]
     assert recovered.phase == "outcome_unknown"
     assert recovery_requests
+    assert recovered.evidence_path != first.evidence_path
+    assert first.evidence_path.read_bytes() == initial_evidence
+    recovery_evidence = json.loads(recovered.evidence_path.read_text(encoding="utf-8"))
+    assert recovery_evidence["kind"] == "kis_paper_canary_reconciliation_evidence"
+    assert recovery_evidence["prior_evidence_sha256"] == initial_evidence_digest
+    assert recovery_evidence["prior_phase"] == "outcome_unknown"
+    assert recovery_evidence["prior_reason_code"] == first.reason_code
     assert all(
         request.method != "POST" or request.url.endswith("/oauth2/tokenP")
         for request in recovery_requests
     )
     assert all(
         request.headers.get("tr_id")
-        not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_CANCEL_TR_ID}
+        not in {
+            KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_CANCEL_TR_ID,
+        }
         for request in recovery_requests
     )
+
+
+def test_read_only_unknown_run_recovery_rejects_a_replaced_intent_recorded_state(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    transport = FakeKisPaperCanaryTransport(fail_submit=True)
+    run_id = "unknown-read-only-replaced-state-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    request_count_before_recovery = len(transport.requests)
+    original_record_intent = KisPaperCanaryStateStore.record_intent
+
+    def replace_with_intent_recorded(
+        store: KisPaperCanaryStateStore,
+        intent: KisPaperCanaryIntent,
+        *,
+        cancel_after_submit: bool,
+        now: datetime,
+    ) -> KisPaperCanaryState:
+        current = original_record_intent(
+            store,
+            intent,
+            cancel_after_submit=cancel_after_submit,
+            now=now,
+        )
+        return KisPaperCanaryState(
+            intent=current.intent,
+            phase="intent_recorded",
+            updated_at=current.updated_at,
+            reason_code="preview",
+            cancel_after_submit=current.cancel_after_submit,
+        )
+
+    monkeypatch.setattr(KisPaperCanaryStateStore, "record_intent", replace_with_intent_recorded)
+
+    with pytest.raises(KisPaperCanaryError, match="recovery_phase_not_reconcilable"):
+        reconcile_kis_paper_canary_unknown_run(
+            run_id=run_id,
+            environment=_paper_environment(),
+            state_path=state_path,
+            transport=transport,
+            now=NOW + timedelta(minutes=1),
+            **paths,
+        )
+
+    assert len(transport.requests) == request_count_before_recovery
 
 
 def test_read_only_unknown_run_recovery_rejects_nonambiguous_state(tmp_path: Path) -> None:

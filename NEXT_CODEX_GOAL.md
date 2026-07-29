@@ -85,4 +85,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add KIS D1 discontinuity census`
+`Capture KIS Paper QQQ canary lifecycle`

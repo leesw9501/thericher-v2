@@ -1152,6 +1152,7 @@ def _run_kis_paper_canary(
     require_existing_state: bool = False,
     price_contract_ref: str | None = None,
     reuse_existing_intent_if_same_decision: bool = False,
+    read_only_recovery: bool = False,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -1178,11 +1179,28 @@ def _run_kis_paper_canary(
         cancel_after_submit=cancel_after_submit,
         now=observed_at,
     )
+    prior_recovery_state = state if read_only_recovery else None
     emergency = EmergencyStore(emergency_state_path).read()
     execution_control = PaperExecutionControlStore(execution_control_path).read()
     reconciliation = _unavailable_reconciliation()
 
-    if not execute:
+    if read_only_recovery:
+        # This entry point is intentionally unable to reach submit or cancel branches.
+        if (
+            not execute
+            or not require_existing_state
+            or state.phase not in _READ_ONLY_RECOVERY_PHASES
+        ):
+            raise KisPaperCanaryError("recovery_phase_not_reconcilable")
+        state, reconciliation = _recover_existing_canary(
+            state=state,
+            state_store=state_store,
+            environment=environment,
+            transport=transport,
+            client=client,
+            observed_at=observed_at,
+        )
+    elif not execute:
         # Preview persists the intent but never reads credentials or calls KIS.
         pass
     elif state.phase != "intent_recorded":
@@ -1347,6 +1365,7 @@ def _run_kis_paper_canary(
         artifact_root=artifact_root,
         repository_root=repository_root,
         observed_at=observed_at,
+        prior_recovery_state=prior_recovery_state,
     )
     return KisPaperCanaryOutcome(
         run_id=run_id,
@@ -1473,6 +1492,7 @@ def reconcile_kis_paper_canary_unknown_run(
             clock=clock,
             execution_control_path=execution_control_path,
             require_existing_state=True,
+            read_only_recovery=True,
         )
 
 
@@ -1943,16 +1963,39 @@ def _write_evidence(
     artifact_root: Path,
     repository_root: Path,
     observed_at: datetime,
+    prior_recovery_state: KisPaperCanaryState | None = None,
 ) -> Path:
     root = artifact_root.resolve()
     repo = repository_root.resolve()
     if not _is_permitted_artifact_root(root, repo):
         raise KisPaperCanaryError("artifact_root_inside_repository")
-    destination = root / "execution" / "kis-paper-canary" / state.intent.run_id / "evidence.json"
+    run_root = root / "execution" / "kis-paper-canary" / state.intent.run_id
+    primary_destination = run_root / "evidence.json"
+    destination = primary_destination
+    prior_evidence_sha256: str | None = None
+    if prior_recovery_state is not None:
+        if primary_destination.is_file():
+            prior_evidence_sha256 = "sha256:" + hashlib.sha256(
+                primary_destination.read_bytes()
+            ).hexdigest()
+        identity = "|".join(
+            (
+                prior_recovery_state.intent.fingerprint,
+                prior_recovery_state.updated_at.isoformat(),
+                observed_at.isoformat(),
+            )
+        )
+        suffix = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
+        timestamp = observed_at.strftime("%Y%m%dT%H%M%S%fZ")
+        destination = run_root / "reconciliations" / f"{timestamp}-{suffix}.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": SCHEMA_VERSION,
-        "kind": "kis_paper_canary_evidence",
+        "kind": (
+            "kis_paper_canary_evidence"
+            if prior_recovery_state is None
+            else "kis_paper_canary_reconciliation_evidence"
+        ),
         "paper_only": True,
         "run_id": state.intent.run_id,
         "order_side": state.intent.side,
@@ -1988,7 +2031,23 @@ def _write_evidence(
         },
         "runtime_projection_sha256": runtime_digest,
     }
+    if prior_recovery_state is not None:
+        payload.update(
+            {
+                "prior_phase": prior_recovery_state.phase,
+                "prior_reason_code": prior_recovery_state.reason_code,
+                "prior_evidence_sha256": prior_evidence_sha256,
+            }
+        )
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    immutable = prior_recovery_state is not None
+    if immutable and destination.exists():
+        try:
+            if destination.read_bytes() == encoded + b"\n":
+                return destination
+        except OSError as error:
+            raise KisPaperCanaryError("recovery_evidence_collision") from error
+        raise KisPaperCanaryError("recovery_evidence_collision")
     staging = destination.with_name(f".{destination.name}.{os.getpid()}.tmp")
     try:
         with staging.open("wb") as handle:

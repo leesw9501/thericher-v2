@@ -38,6 +38,17 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- The exact prior KIS Paper `outcome_unknown` run
+  `canary-20260729T143501313369Z` completed one read-only reconciliation after
+  the recovery entrypoint was hardened to bypass every submit/cancel branch.
+  Its original evidence remains hash
+  `sha256:2e612d02224e768c1f16aeff6a9874bc06cbf549048964795bac8370fae1858c`;
+  the separate immutable reconciliation receipt is
+  `sha256:c3ec1489d61e23ee82b2986355fafa17298be53c7fb58fe130c6a02103f83b90`.
+  The receipt preserves its prior `outcome_unknown/submit_rate_limited` fact
+  and records current `outcome_unknown/reconciliation_unresolved` only. No
+  submit, cancel, modify, replacement, or live call occurred. This exact
+  generic run is not the QQQ lifecycle objective and cannot block it.
 - The 2026-07-29 00:31 KST scheduled QQQ route produced an exact
   `paper_only` `no_intent/receipt_not_eligible` session. Its baseline `reduce`
   action correctly narrowed to the non-entry `abstain` receipt; no canary or
@@ -213,9 +224,10 @@ decision-table edit, or live route is introduced.
 2. Keep the completed decision-to-target-weight-to-local-paper-intent contract
    separate from this read-only run and every failed model result, replay,
    account, intent, and broker route.
-3. Preserve exact ambiguous Paper evidence without replacing that exact intent.
-   A read-only snapshot neither reconciles it nor blocks another correctly
-   scoped authorized Paper action.
+3. Preserve the reconciled exact ambiguous Paper run without replacing it. Its
+   primary and recovery receipts remain immutable, and its unresolved result
+   neither retries that intent nor blocks another correctly scoped authorized
+   Paper action.
 4. At a later fresh QQQ runtime receipt, let the existing receipt canary own
    only its new exact persisted intent and cancellation/reconciliation lifecycle.
    Reattach the matching terminal dispatch receipt before interpreting that
@@ -237,13 +249,14 @@ decision-table edit, or live route is introduced.
 
 Current class: `recovery` only for the exact 2026-07-28 06:20 KST parent
 collection worker; its matched QQQ `no_intent` session and v2 validator are
-complete for their own stale-input scope. The fresh read-only account bridge,
-cross-fold verifier, account diagnostic, recovered QQQ/SPY head cache, and
-first contract-v2 QQQ terminal reattachment remain complete. The account runtime
-expires normally after its TTL; a later refresh is a new read-only observation,
-not recovery of an order.
-Preserve exact ambiguous Paper evidence for the owned reconciliation route and
-continue independent Data, Research, and authorized Paper work. The new QQQ
+complete for their own stale-input scope. The exact prior generic canary
+reconciliation is also complete as a read-only observation, but its durable
+intent remains `outcome_unknown`; it never receives a replacement submit.
+The fresh read-only account bridge, cross-fold verifier, account diagnostic,
+recovered QQQ/SPY head cache, and first contract-v2 QQQ terminal reattachment
+remain complete. The account runtime expires normally after its TTL; a later
+refresh is a new read-only observation, not recovery of an order.
+Continue independent Data, Research, and authorized Paper work. The new QQQ
 route has a complete offline and unit-tested recovery path;
 `account_unavailable` constrains only the completed receipt that recorded it.
 
@@ -264,11 +277,10 @@ Return any future Data/Research integration request with the existing target
 binding and route boundaries intact. The completed cross-fold verifier never
 acquired an account, order, KIS, Tiingo, or replay path; preserve that boundary.
 The verified contract is deployed to the existing lane-owned schedule; observe
-its future regular-session result without forcing an intent. The bounded canary
-objective is complete as a validated no-intent. When a later fresh QQQ receipt
-is eligible, its canary must use a
-new exact durable Paper intent and re-read the current Paper account and fresh
-quote at its own call site; no stale account snapshot or historical Data receipt
-may act as permission or order input.
+its future regular-session result without forcing an intent. The bounded QQQ
+canary objective remains open until a later fresh QQQ receipt owns its new
+exact durable Paper intent and terminal lifecycle evidence. It must re-read the
+current Paper account and fresh quote at its own call site; no stale account
+snapshot or historical Data receipt may act as permission or order input.
 The later recurring baseline must use the same call-time technical checks and
 never reuse a stale account projection or an unknown exact intent.

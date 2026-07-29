@@ -7514,3 +7514,31 @@ authority, or any live route.
 Reason: this advances the actual private Paper execution loop without making
 historical data qualification a false precondition. It also breaks the emerging
 pattern of adding audit artifacts that nothing downstream can safely consume.
+
+## 2026-07-30 - Make exact Paper unknown recovery submit-proof and immutable
+
+Decision: retain the dedicated exact unknown-run reconciliation entrypoint, but
+give it an explicit read-only recovery branch that cannot fall through to the
+generic submit/cancel path even if its second state read is no longer an
+ambiguity phase. Reconciliation writes a new immutable external receipt that
+links to the primary evidence hash and preserves the prior safe phase/reason;
+it never overwrites the original failure evidence.
+
+Claude's falsification-first review was `supported-with-limits`. It identified
+the generic runner's second state read and fixed evidence path as the real
+load-bearing risks, not the initial phase check alone. Focused tests now prove
+that a substituted `intent_recorded` state raises before any transport request,
+and that recovery issues no non-token POST, no buy/sell/cancel route, and leaves
+the original evidence bytes unchanged.
+
+The exact private Paper run `canary-20260729T143501313369Z` then completed this
+read-only recovery. Original evidence remains
+`sha256:2e612d02224e768c1f16aeff6a9874bc06cbf549048964795bac8370fae1858c`;
+the new receipt is
+`sha256:c3ec1489d61e23ee82b2986355fafa17298be53c7fb58fe130c6a02103f83b90`.
+It remained `outcome_unknown/reconciliation_unresolved`, made no submit,
+cancel, modify, replacement, or live call, and does not count as the pending
+fresh QQQ scheduler lifecycle.
+
+Reason: exact unknown outcomes need recoverable evidence without mutating their
+causal record or allowing a recovery tool to become an accidental order retry.
