@@ -244,12 +244,13 @@ registry, then starts an eight-target data-only bootstrap. No account/order,
 live, Norgate target seeding, source-row blend, ranking, or model-promotion
 route belongs to it.
 
-At the 2026-07-29 09:20 KST source-safe watermark, the broad collector was
-running at generation 3,519 with all 2,119 targets covered, 6,850 accepted
-pages, and 1,936 target-local cursors still ready for longitudinal depth. The
-current shared bottleneck is that depth work, not breadth coverage. The new
-QQQ/SPY D1 forward cache is separately installed and its first guarded run
-correctly wrote `shared_dispatcher_busy` while broad collection owned the
-dispatcher; it neither slept the foreground nor called KIS. Its next 06:55 KST
-task owns retry. Research's overnight/intraday CPU smoke remains `unsupported`
-and closed to full validation, GPU, selection, or Paper use.
+At the 2026-07-29 09:50 KST source-safe watermark, the broad collector was
+running its 09:45 bounded run at generation 3,649: all 2,119 targets have
+coverage, 7,102 pages are accepted, and 1,928 target-local cursors remain
+ready for longitudinal depth. The current shared bottleneck is that depth work,
+not breadth coverage. The new QQQ/SPY D1 forward cache remains separately
+installed with a 06:55 KST next due. Execution's current `kis-readonly`
+diagnostic is complete and source-safe, but it is read health only, not a
+Paper-order signal or permission proxy. Research's overnight/intraday CPU smoke
+remains `unsupported` and closed to full validation, GPU, selection, or Paper
+use.

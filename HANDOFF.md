@@ -898,9 +898,29 @@ broad worker was active recorded only
 No credentialed pair collection, account/position/quote/order route, model,
 GPU run, Paper action, or live route occurred.
 
-At the 2026-07-29 09:20 KST source-safe broad-cache snapshot, generation 3,519
-had all 2,119 targets covered, 6,850 accepted pages, 56 categorical failures,
-and target states `1,936 ready / 131 complete / 52 source_limited`. Broad
-depth collection continues independently; the pair cache's current deferred
-state is not a global hold. Claude's requested collector/scheduler drift check
-timed out without a review body, so it is recorded as `review_unavailable`.
+At the 2026-07-29 09:50 KST source-safe broad-cache snapshot, the 09:45 KST
+bounded collector run was active at generation 3,649. All 2,119 targets had
+coverage, with 7,102 accepted pages, 60 categorical failures, and states
+`1,928 ready / 136 complete / 55 source_limited`. Broad depth collection
+continues independently; the pair cache's current deferred state is not a
+global hold. Claude's requested collector/scheduler drift check timed out
+without a review body, so it is recorded as `review_unavailable`.
+
+## KIS Paper Account Readiness
+
+The current `kis-readonly` Docker image completed one bounded virtual-paper
+account, position, and open-order read at 2026-07-29 09:23 KST. Its immutable
+source-safe evidence is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260729T002355524505Z-complete.json`
+with hash `sha256:d6afe8adc7c1336337caff62726885aaaa587f07afc63e75d41e990ae685c8ee`.
+It is `paper_only`, has `submit_capability: false`, and exposes only fixed
+currency/count category keys. It contains no credential, account identifier,
+raw balance, price, position, order, token, or broker body. No intent, canary,
+submit, modify, cancel, quote, or live endpoint was called.
+
+The existing bridge already distinguishes a fresh complete snapshot from a
+stale/malformed/rejected input. A new focused test additionally proves that a
+valid flat account with zero positions and zero open orders is a complete
+readiness observation, not `account_unavailable`. The historical QQQ
+`account_unavailable` receipt remains scoped to that earlier session path and
+does not contradict the present virtual read-only result.

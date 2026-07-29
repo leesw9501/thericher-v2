@@ -609,15 +609,15 @@ route, source-safe receipts, per-target recovery states, and the unchanged
 frozen panel. Do not turn cache coverage into a PIT universe, candidate
 selection, ranking, or Paper order.
 
-At the 2026-07-29 09:20 KST source-safe index snapshot, the independent broad
-D1 collector was running at mutable generation 3,519. It covers all 2,119
-current NASDAQ targets with 6,850 accepted pages and 56 cumulative categorical
-failures; 1,936 target cursors remain `ready`, 131 are `complete`, and 52 are
-`source_limited`. The breadth pass is complete, but historical depth remains
-in progress from the durable target-local cursors. This is an in-flight cache
-fact only. Preserve the one-worker cache lock and current measured pacing; do
-not call it a frozen panel, full historical depth, PIT universe, or Research
-input.
+At the 2026-07-29 09:50 KST source-safe index snapshot, the independent broad
+D1 collector was running its 09:45 KST bounded run at mutable generation 3,649.
+It covers all 2,119 current NASDAQ targets with 7,102 accepted pages and 60
+cumulative categorical failures; 1,928 target cursors remain `ready`, 136 are
+`complete`, and 55 are `source_limited`. The breadth pass is complete, but
+historical depth remains in progress from the durable target-local cursors.
+This is an in-flight cache fact only. Preserve the one-worker cache lock and
+current measured pacing; do not call it a frozen panel, full historical depth,
+PIT universe, or Research input.
 
 The separate QQQ/NAS plus SPY/AMS D1 forward cache now exists at
 `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v1`, with

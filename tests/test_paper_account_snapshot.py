@@ -38,6 +38,7 @@ NOW = datetime(2026, 7, 20, 12, 0, tzinfo=UTC)
 class FakeKisTransport:
     runtime_snapshot_path: Path
     reject_open_orders: bool = False
+    flat_account: bool = False
     reject_open_orders_code: object = "raw-server-code-must-not-persist"
     reject_open_orders_message: str = "raw-response-text-must-not-persist"
     requests: list[KisHttpRequest] = field(default_factory=list)
@@ -63,7 +64,7 @@ class FakeKisTransport:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
             exchange = request.query["OVRS_EXCG_CD"]
-            rows = [_position_payload()] if exchange == "NASD" else []
+            rows = [] if self.flat_account or exchange != "NASD" else [_position_payload()]
             return KisHttpResponse.from_payload({"rt_cd": "0", "output1": rows})
         if tr_id == KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT.tr_id:
             return KisHttpResponse.from_payload(
@@ -181,6 +182,35 @@ def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_pa
         "1199.75",
         "ORD-",
     ):
+        assert forbidden not in evidence
+
+
+def test_bridge_accepts_a_valid_flat_account_without_exposing_account_facts(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    outcome = run_kis_paper_console_bridge(
+        environment=_paper_environment(),
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=FakeKisTransport(runtime_snapshot_path, flat_account=True),
+        clock=lambda: NOW,
+    )
+
+    assert outcome.status == "complete"
+    snapshot = read_paper_account_snapshot(runtime_snapshot_path, now=NOW)
+    assert snapshot.status == "available"
+    assert snapshot.snapshot is not None
+    assert snapshot.snapshot.positions == ()
+    assert snapshot.snapshot.open_orders == ()
+
+    payload = json.loads(outcome.evidence_path.read_text(encoding="utf-8"))
+    assert payload["status"] == "complete"
+    assert payload["paper_only"] is True
+    assert payload["submit_capability"] is False
+    assert payload["facts"]["position_count"] == 0
+    assert payload["facts"]["open_order_count"] == 0
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    for forbidden in ("12345678", "test-app-key", "test-app-secret", "SPY", "1200.50"):
         assert forbidden not in evidence
 
 

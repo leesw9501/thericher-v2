@@ -11,24 +11,22 @@ output as untrusted input.
 
 ## Current Objective
 
-The current read-only account diagnostic, local operations-console reattachment,
-and first target-local Data recovery receipt are complete; the current head cache
-has recovered under Data ownership. The latest virtual-only bridge observation
-is source-safe external evidence
-`execution/kis-paper-console-bridge/20260728T115736150112Z-complete.json`.
-The local loopback dashboard showed only the fresh complete `kis_paper`
-projection, read-only/no-submission provenance, category/count facts, and local
-controls. The bridge container root is now read-only with a `/tmp` tmpfs; its
-existing runtime and external artifact mounts remain the only writable paths.
-The prospective QQQ scheduler has been simplified and reinstalled:
-the executed virtual-only session owns its embedded `local_paper` replay, images
-are built during task update rather than at due time, and the older observer is
-conditional on its Data pair. Preserve the local dashboard boundary and existing
-Paper recovery invariants. The latest fresh QQQ receipt is a validated scoped
-no-intent; next work calibrates its runtime freshness classification rather
-than forcing a canary. A recurring fixed Paper baseline follows only from
-reliable execution evidence and remains independent of model promotion. KIS
-Live remains unavailable.
+The current KIS Paper read-only account bridge has been reattested on the
+current local image. Its 2026-07-29 09:23 KST virtual-only diagnostic completed
+through the account, position, and open-order read path and wrote source-safe
+external evidence
+`execution/kis-paper-console-bridge/20260729T002355524505Z-complete.json`
+with hash `sha256:d6afe8adc7c1336337caff62726885aaaa587f07afc63e75d41e990ae685c8ee`.
+The evidence contains only currency/count categories and no account identifier,
+raw amount, price, position, order, token, credential, or submission capability.
+A focused flat-account regression proves a valid empty position/order result
+remains `complete`, while stale, malformed, rejected, wrong-host, and live-route
+inputs retain their existing scoped unavailable/rejection behavior. The prior
+QQQ `account_unavailable` remains a historical session-local no-intent outcome,
+not a general account-readiness failure. The bridge container root remains
+read-only with `/tmp` tmpfs; its existing runtime and external artifact mounts
+are the only writable paths. No Paper intent, canary, submit, modify, cancel,
+or live route occurred. KIS Live remains unavailable.
 
 ## Current Facts
 
