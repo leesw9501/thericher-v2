@@ -95,6 +95,16 @@ the offline observer only after a current or complete cache result. A
 
 ## Current Facts
 
+- The offline Norgate/KIS D1 metadata conformance receipt is complete at
+  `sha256:17a5c604...bf26afa` with receipt
+  `sha256:f57ff545...10d7f60`. Both inputs expose the same five D1 OHLCV
+  fields and completed-bar declaration, but adjustment and symbol-identity
+  semantics are `semantics_conflict`; corporate-action, timezone, and
+  gap/halt semantics remain `unknown`. It is source-parameterized metadata
+  only, with no row transfer, model, ranking, PnL, Paper, credential, network,
+  or cache-mutation path. The next Data package is an offline, source-local
+  falsification of the KIS `MODP=0` adjustment declaration; it does not touch
+  the running broad collector.
 - The sole `thericher-kis-paper-daily-broad-backfill` Task Scheduler owner is
   currently `Running` for its first receipt-capable process. The earlier
   generation-11,130 worker exited before the postprocess image update; no new

@@ -979,3 +979,21 @@ valid flat account with zero positions and zero open orders is a complete
 readiness observation, not `account_unavailable`. The historical QQQ
 `account_unavailable` receipt remains scoped to that earlier session path and
 does not contradict the present virtual read-only result.
+
+## D1 Source Conformance
+
+The offline Norgate/KIS D1 conformance objective completed under external
+receipt `sha256:f57ff5456f1a21d2e110f0a5a0a5e170805cbcdea3b139177a747b7e910d7f60`
+and contract `sha256:17a5c6043b410d7019a6a0e02a9d38f5c3f939ebe3fc80f24eb719a10bf26afa`.
+It found the same completed-bar OHLCV shape but explicit adjustment and symbol
+identity conflicts; corporate-action, timezone, and gap semantics remain
+unknown. The receipt has no source rows, values, dates, labels, predictions,
+model, PnL, credential, KIS, broker, or network data and is not model-eligible.
+
+Claude rejected a proposed Tiingo six-symbol corporate-action sidecar expansion
+as `unsupported`: it exceeded the documented standing token scope, would not
+resolve the conformance conflicts, and has a cheaper offline kill test. The
+next objective audits the frozen six-symbol KIS D1 panel's `MODP=0` declaration
+against predeclared split signatures only. It must preserve a scoped
+`consistent`, `falsified`, or `inconclusive` outcome and cannot enable transfer,
+training, ranking, PnL, or Paper action.

@@ -2,83 +2,90 @@
 
 ## Objective
 
-Establish the first offline, dual-source D1 metadata-conformance contract for
-future KIS-reconstructible research inputs.
+Falsify or narrowly support the retained six-symbol KIS Paper D1 cache's
+`MODP=0` declared-unadjusted semantics using only an offline split-signature
+audit.
 
-The contract compares the already-local frozen Norgate D1 development panel
-with an already-local KIS Paper D1 cache. It answers only whether their source
-metadata and available field semantics can support a later source-parameterized
-feature interface. It does not claim that the sources are interchangeable or
-that a Norgate result transfers to KIS.
+This is an input-integrity check for future retrospective KIS labels. It is not
+a corporate-action feed, source transfer, data repair, feature, model,
+backtest, ranking, PnL, or Paper-trading task. It cannot make the Norgate/KIS
+conformance receipt model-eligible.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1` and read `HANDOFF.md`, `AGENTS.md`,
    `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and active stateboards.
-2. Inspect the installed broad-D1 task and source-safe postrun roots. Do not
-   start, stop, duplicate, or alter the collector.
-3. Reattest the exact frozen Norgate panel and select one existing KIS Paper D1
-   cache through an offline loader. Do not invoke a provider, credential, or
-   mutable cache path.
-4. Start from Claude's `supported-with-limits` challenge: static Norgate alone
-   cannot prove KIS reconstruction; its adjustment semantics and survivorship
-   remain limitations; full-panel target-free weights cannot be reused by a
-   future held-out label campaign.
+2. Inspect the installed broad-D1 task only for its source-safe state. Do not
+   start, stop, duplicate, alter, or wait on the collector.
+3. Reattest the exact frozen six-symbol KIS D1 history panel through its
+   existing offline loader. Do not invoke a provider, credential, or mutable
+   cache path.
+4. Use the already-completed Claude challenge recorded in `DECISIONS.md`: a
+   Tiingo sidecar expansion is not the next action; the offline split-signature
+   kill test is.
+
+## Fixed Audit Contract
+
+- Audit only AAPL, AMZN, GOOGL, and NVDA against the following predeclared
+  public split-session pairs, all checked in memory against the named source
+  stream: `2020-08-28 -> 2020-08-31`, `2022-06-03 -> 2022-06-06`,
+  `2022-07-15 -> 2022-07-18`, `2021-07-19 -> 2021-07-20`, and
+  `2024-06-07 -> 2024-06-10` respectively, with both NVDA pairs required.
+- For every available pair, use the fixed signature
+  `abs(log(close_after / close_before)) >= log(3)`. There is no threshold
+  sweep, event-date search, parameter tuning, or use of a provider/event feed.
+- Return only one immutable external source-safe receipt with per-symbol
+  categorical results and one aggregate status:
+  `consistent_with_declared_unadjusted`, `declared_unadjusted_falsified`, or
+  `inconclusive`. A missing/incomplete/invalid required pair is
+  `inconclusive`, never a pass or falsification.
+- A positive result means only that these retained rows exhibit the expected
+  large split signature. It does not verify all adjustment behavior, qualify
+  corporate actions, resolve Norgate semantics, remove survivorship, or permit
+  a model, rank, replay, PnL claim, local-paper intent, KIS Paper action, or
+  GPU job.
 
 ## Authority And Boundaries
 
-- The broad collector remains the sole owner of KIS Paper credentials, network,
-  cursor, pacing, raw cache, and postprocess invocation. This goal makes no
-  manual KIS call and reads no credentials.
-- Use only existing local sources and offline paths. Docker research remains
+- Use only existing local cache bytes and offline code. Docker research remains
   network-disabled with read-only data mounts and external artifacts under
   `/app/model_artifacts` mapped to `D:\thericher-v2\model-artifacts`.
-- Inspect source metadata in memory only. Persist only source-safe identities,
-  field-presence/absence, declared semantics, aggregate session/timezone/gap
-  categories, and conformance result categories. Do not persist raw rows,
-  prices, volumes, returns, timestamps, labels, predictions, account facts,
-  broker bodies, or credentials.
-- Do not pool, join, normalize, or substitute row values across providers. Do
-  not construct labels, features, costs, a rule, a model, an encoder probe,
-  a rank, an ensemble, a replay, PnL, a local-paper intent, or a KIS Paper
-  action.
-- An unknown or unqualified adjustment/corporate-action, symbol-identity,
-  timezone/session, or gap/halts semantic must remain `unknown` or
-  `semantics_conflict`; it cannot become a positive transfer or model-eligibility
-  claim.
-- Do not load a public model/weight or introduce a runtime/dependency. A future
-  causal campaign must refit any representation inside its own training fold.
+- Do not read `.env`, credentials, tokens, account data, or KIS responses. Do
+  not call KIS, Tiingo, another provider, broker, or live route. Do not mutate
+  any cache, scheduler, task, cursor, or raw data.
+- Persist no raw rows, prices, volumes, returns, timestamps, event dates,
+  labels, predictions, model artifacts, account facts, broker bodies, or
+  secrets. The receipt may retain only source hashes, fixed-contract identity,
+  symbol names, categorical per-symbol results, aggregate counts/categories,
+  and scope limitations.
+- Do not introduce a dependency, public model/weight, runtime, worker, or
+  scheduler. Do not create a corporate-action sidecar or change the existing
+  dual-source conformance receipt.
 
 ## Parallel Work Packages
 
-1. **Data:** implement an offline source-parameterized D1 metadata attestation
-   for the named Norgate and KIS inputs. It must reattest both source identities,
-   report only allowed aggregate metadata, and write an immutable external
-   conformance receipt. It may return `metadata_conforming_with_limits`,
-   `semantics_conflict`, or `input_unavailable`; none enables a model.
-2. **Engine Research:** define the smallest shared D1 interface map from the
-   attestation: source field availability, completed-session timing, and each
-   source's declared/unknown semantics. It must make no causal-label, training,
-   or GPU dispatch decision. Preserve static-survivorship and adjustment limits
-   as interface facts rather than a kill-test or a score.
-3. **Temporary Validation:** add focused tests that prove the attestation needs
-   no network, KIS, broker, credential, source row persistence, cross-source
-   pooling, label, model, or PnL path. Test positive metadata-only conformance,
-   an unqualified semantic conflict, and external-artifact-root enforcement.
-4. **Data / temporary Validation:** when the automatic broad postrun receipt
-   appears, reattach it only through the existing offline receipt-bound path.
-   Its absence or scoped retry does not delay the conformance work.
+1. **Data:** implement the deterministic in-memory KIS D1 split-signature
+   audit and immutable external receipt. It must reattest the frozen source
+   identity and fail closed to `inconclusive` when a required event pair is not
+   available or valid.
+2. **Engine Research:** define the exact interpretation boundary: all three
+   audit outcomes remain non-model and non-Paper; only a later independently
+   designed input contract may consume a narrow source-semantics fact.
+3. **Temporary Validation:** add focused tests for the three aggregate
+   outcomes, fixed threshold/event contract, no-network/no-credential route,
+   no raw value/date persistence, immutable receipt reattachment, and external
+   artifact-root enforcement.
+4. **Data / temporary Validation:** reattach any automatic broad postrun only
+   through its existing receipt-bound path. Its absence or scoped retry does
+   not delay this audit.
 
 ## Completion
 
-- The dual-source receipt pins both local source identities and records only
-  allowed aggregate metadata plus a categorical result.
-- The shared interface map makes no transfer, adjustment, PIT, survivorship,
-  model, profitability, ranking, Paper, or live claim.
-- A mismatch is immutable useful evidence with a scoped next recovery action;
-  it is not a company-wide pause.
-- Any broad postrun receipt available during the objective is handled through
-  its existing offline path only.
+- The audit reattests one frozen KIS D1 source and produces only the allowed
+  categorical external receipt.
+- The result neither changes the existing Norgate/KIS conformance receipt nor
+  makes any research, model, ranking, PnL, local-paper, KIS Paper, or live
+  action eligible.
 - Refresh Data/Research/orchestration stateboards, replace this file with one
   next objective, verify, commit, push, and continue.
 

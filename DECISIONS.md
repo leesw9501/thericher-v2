@@ -7430,3 +7430,30 @@ Reason: untouched out-of-time data must keep a distinct source identity from
 the already-consumed historical pair, while a busy broad collector should yield
 only this new cache's work instead of delaying independent collection or
 creating an unmeasured parallel request path.
+
+## 2026-07-30 - Audit KIS D1 adjustment semantics before extending a sidecar
+
+Decision: accept the completed offline Norgate/KIS D1 metadata conformance
+receipt `sha256:f57ff545...10d7f60` as a scoped mismatch, not as source
+transfer evidence. Both panels expose completed D1 OHLCV metadata, but their
+adjustment and symbol-identity declarations conflict; corporate-action,
+timezone, and gap semantics remain unknown. The interface is therefore
+source-parameterized only and remains ineligible for model, ranking, PnL, or
+Paper use.
+
+Claude's falsification-first verdict on a proposed six-symbol Tiingo
+corporate-action sidecar was `unsupported`. Its key findings were that the
+documented standing Tiingo scope does not include the six-symbol NAS panel, a
+KIS-only sidecar would add rather than resolve the existing dual-source
+conflict, and a cheaper offline test can falsify the central `MODP=0`
+assumption first. The next bounded package therefore checks fixed split-event
+pairs in the existing KIS cache entirely in memory. It persists only
+per-symbol categorical signature results and aggregate status, never dates,
+prices, returns, rows, credentials, requests, or cache changes.
+
+Reason: evidence about the provider's actual cached adjustment behavior is more
+valuable than widening an external-data dependency before knowing whether a
+retrospective event mask has a valid premise. A positive split signature only
+supports the narrow declaration; it cannot qualify Norgate, resolve
+survivorship, make sources interchangeable, or authorize training or Paper
+behavior.

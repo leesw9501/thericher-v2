@@ -84,8 +84,14 @@ Claude's later review was `supported-with-limits`: a static Norgate-only result
 cannot prove KIS reconstruction, the full-panel target-free weights cannot be
 reused by a downstream held-out label task, adjustment semantics are not yet
 qualified, and survivorship is a declared limitation rather than a killable
-test. The next Research consumer is therefore an offline dual-source
-conformance contract before any causal label/model breadth work.
+test. The completed offline dual-source conformance receipt is
+`sha256:17a5c604...bf26afa`: it found only a shared five-field D1 shape and
+completed-bar declaration; adjustment and symbol identity conflict, while
+corporate action, timezone, and gap semantics remain unknown. The interface is
+source-parameterized only and remains ineligible for transfer, model work,
+ranking, PnL, or Paper use. The next Research-adjacent input check is an
+offline KIS `MODP=0` split-signature falsification, not a causal
+label/model/GPU campaign.
 
 ## Current Objective
 
