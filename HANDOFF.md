@@ -40,6 +40,23 @@ Its incremental policy graph is:
 Research evidence improves the model claim. It is not an approval chain for
 authorized private KIS Paper work.
 
+## Latest Research Integration
+
+- The target-free Norgate D1 representation plumbing campaign completed its r6
+  Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
+  attention. It is source-isolated, static-survivorship-conditioned, and
+  non-promoting; it produced no forecast, ranking, PnL, Paper signal, or model
+  selection. Weights remain safe numeric files only under the external artifact
+  root.
+- Campaign custody now uses the append-only external control ledger. The first
+  Strategy Discovery handoff pins official Chronos, TimesFM, and Uni2TS/Moirai
+  code sources and licenses, but does not establish checkpoint rights,
+  financial-data provenance, or a runtime adoption decision.
+- Claude's `supported-with-limits` challenge found that Norgate alone cannot
+  prove a KIS-reconstructible input contract. The next causal-model preparation
+  step is an offline dual-source metadata conformance check, not a new GPU
+  training run or a performance campaign.
+
 ## Operating Reset
 
 - A prospective input requirement controls only its named consumer, campaign,

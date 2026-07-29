@@ -95,6 +95,12 @@ the offline observer only after a current or complete cache result. A
 
 ## Current Facts
 
+- The sole `thericher-kis-paper-daily-broad-backfill` Task Scheduler owner is
+  currently `Running` for its first receipt-capable process. The earlier
+  generation-11,130 worker exited before the postprocess image update; no new
+  postrun or chronology artifact exists yet. Future scheduler slots remain
+  owned by that task and do not justify a manual launch, stop, duplicate, cache
+  mutation, or KIS call. This is a `resume` fact for that exact worker only.
 - The source-safe terminal receipt
   `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20260727T1922500308577Z.json`
   is `complete`. Its paired session capture
@@ -615,6 +621,11 @@ source-safe `reconcile` receipt. Neither is evidence of a source boundary;
 limitation.
 
 ## Next Handoff
+
+Keep the currently running broad collector independent. When its digest-bound
+postrun receipt appears, consume it only through the installed offline
+reattachment/chronology path; an absent receipt is external timing evidence and
+does not delay the offline Norgate/KIS metadata-conformance package.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
 intraday schedule owns its next due at 2026-07-29 02:31 KST; do not manually

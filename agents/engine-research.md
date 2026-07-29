@@ -26,9 +26,14 @@ two consecutive company-goal boundaries with independently re-retrieved
 handoffs that Engine Research actually consumes and one source-hygiene
 rejection. A failed re-retrieval or an unconsumed handoff retires the trial.
 Unknown or overlapping discovery/pretraining coverage may support only an
-isolated non-promoting study. Current next action: use the result only to
-inform a frozen, target-free Norgate representation contract; do not reuse the
-existing forward-direction label or its future-aware discontinuity filter.
+isolated non-promoting study. The first external source-safe handoff is
+`official-time-series-foundation-source-pass-20260729-r1`, under
+`D:\thericher-v2\model-artifacts\research\strategy-discovery`; it pins
+Chronos, TimesFM, and Uni2TS/Moirai code sources and their verbatim repository
+licenses. It deliberately records pretraining period/instrument scope as
+`not_disclosed_in_pinned_readme`, checks neither checkpoint rights nor weights,
+and adds no dependency or runtime. This is one unconsumed handoff, not a
+campaign input or a reason to create a durable discovery lane.
 
 ## Research Track Portfolio
 
@@ -56,11 +61,31 @@ dependence, turnover, drawdown, and stale-data behavior. It can return only
 `no_combination` or one new frozen ensemble-campaign proposal; it does not
 choose weights, tune members, promote a result, or create a Paper action.
 
-Campaign custody is not yet implemented as a durable registry. Therefore the
-current historical breadth work remains non-promoting and no result may claim
-quantified multiple-trial control. The next eligible custody package must
-implement an append-only external contract registry before any candidate is
-considered for a promoted Research decision.
+Campaign custody is now implemented as the append-only
+`research_campaign_custody` namespace in the external control ledger. It keys
+frozen contracts, trial-family indexes, and non-promoting outcomes by checksum,
+rejects Git-local artifact roots, and has focused contract coverage. Historical
+breadth remains non-promoting: the registry makes trial custody auditable; it
+does not make an old result comparable, selectable, or promotable.
+
+## Current Target-Free Representation Evidence
+
+The first separate Norgate target-free representation campaign completed under
+external r6 contract `sha256:ef3745da...a4aacc2`. Its CPU GRU smoke and one
+Docker CUDA batch completed fixed GRU, LSTM, temporal-convolution, and compact
+attention reconstruction jobs. The aggregate batch evidence is
+`sha256:1f91c4d3...2a4481`; all weights are external numeric non-pickle `.npz`
+files, and the registry outcome is `sha256:e011f1d6...0b65bd`. The r5 attention
+failure remains immutable preflight evidence; r6 corrected only bounded
+diagnostic batching and did not select a model, retain a numeric score, create a
+forecast, ranking, PnL claim, ensemble, KIS input, or Paper action.
+
+Claude's later review was `supported-with-limits`: a static Norgate-only result
+cannot prove KIS reconstruction, the full-panel target-free weights cannot be
+reused by a downstream held-out label task, adjustment semantics are not yet
+qualified, and survivorship is a declared limitation rather than a killable
+test. The next Research consumer is therefore an offline dual-source
+conformance contract before any causal label/model breadth work.
 
 ## Current Objective
 

@@ -7340,6 +7340,34 @@ parameter change or post-hoc model tuning. It prevents one architecture from
 receiving a different diagnostic geometry while preserving the source and
 selection boundaries established for r5.
 
+## 2026-07-30 - Complete target-free representation plumbing and require source conformance
+
+Decision: accept r6 as completed non-promoting representation plumbing. Its
+external contract `sha256:ef3745da...a4aacc2` completed a CPU GRU smoke and the
+fixed CUDA GRU/LSTM/temporal-convolution/compact-attention batch, with aggregate
+summary `sha256:1f91c4d3...2a4481` and registry outcome
+`sha256:e011f1d6...0b65bd`. Safe numeric weights stay outside Git. r5 remains
+immutable incomplete preflight evidence; r6 neither reuses it as a winner nor
+persists a numeric comparison surface.
+
+The first Strategy Discovery handoff pins official Chronos, TimesFM, and
+Uni2TS/Moirai code sources under the external artifact root. It records their
+repository license text but does not infer checkpoint rights, financial-domain
+pretraining provenance, causal availability, or KIS/Paper eligibility.
+
+Claude's falsification-first verdict was `supported-with-limits`: a static,
+adjustment-unqualified Norgate panel alone cannot prove that an input/output
+contract reconstructs from KIS, and full-panel target-free weights cannot enter
+a later held-out label experiment. Before any causal Norgate breadth campaign,
+build an offline source-parameterized Norgate/KIS D1 metadata-conformance
+contract. It must compare only source semantics and field availability, keep
+survivorship as a declared limitation, and create no labels, costs, rankings,
+models, PnL, Paper input, or cross-source row pool.
+
+Reason: this attacks the actual transfer risk before spending a new training
+budget. A conformance mismatch is useful scoped evidence, not a global hold or
+an excuse to manufacture GPU work.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1
