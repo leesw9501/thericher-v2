@@ -13,6 +13,7 @@ import pytest
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.research.norgate_broad_representation import (
     RepresentationGeometry,
+    _write_or_verify_safe_weights,
     build_observed_return_dataset,
     freeze_representation_campaign,
     frozen_norgate_panel_snapshot_dir,
@@ -137,6 +138,36 @@ def test_contract_rejects_git_local_artifacts(tmp_path: Path) -> None:
             run_id="unit-target-free",
             code_revision="unit",
         )
+
+
+def test_safe_weight_writer_uses_non_pickle_npz_arrays(tmp_path: Path) -> None:
+    class FakeTensor:
+        def __init__(self, values: object) -> None:
+            self.values = values
+
+        def detach(self) -> FakeTensor:
+            return self
+
+        def cpu(self) -> FakeTensor:
+            return self
+
+        def contiguous(self) -> FakeTensor:
+            return self
+
+        def numpy(self) -> object:
+            return self.values
+
+    class FakeModel:
+        def state_dict(self) -> dict[str, FakeTensor]:
+            return {"encoder.weight": FakeTensor(numpy.asarray([[1.0, 2.0]], dtype=numpy.float32))}
+
+    path = tmp_path / "weights.npz"
+    first_hash = _write_or_verify_safe_weights(path=path, model=FakeModel(), numpy=numpy)
+
+    with numpy.load(path, allow_pickle=False) as payload:
+        assert payload.files == ["encoder.weight"]
+        assert numpy.array_equal(payload["encoder.weight"], numpy.asarray([[1.0, 2.0]]))
+    assert _write_or_verify_safe_weights(path=path, model=FakeModel(), numpy=numpy) == first_hash
 
 
 def _catalog(*, last_close: Decimal) -> SimpleNamespace:

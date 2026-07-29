@@ -523,7 +523,11 @@ def _run_architecture(
         raise RuntimeError("target-free representation metrics are non-finite")
     output_dir = contract.run_directory / f"{phase}-{spec.architecture_id}"
     weights_path = output_dir / "weights.npz"
-    weights_hash = _write_or_verify_safe_weights(weights_path, model=model, numpy=numpy)
+    weights_hash = _write_or_verify_safe_weights(
+        path=weights_path,
+        model=model,
+        numpy=numpy,
+    )
     summary_payload = {
         "schema_version": SCHEMA_VERSION,
         "campaign_id": NORGATE_BROAD_REPRESENTATION_ID,
