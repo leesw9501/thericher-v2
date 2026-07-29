@@ -41,6 +41,11 @@ second goal. Git and external artifacts retain historical evidence.
 - **Due:** Task Scheduler owns the next source/canary trigger at 2026-07-31
   00:31 KST. An absent fresh receipt is source-local evidence, not foreground
   idle or a company hold.
+- **Verification:** an independent QQQ-path reattestation passed 64 focused
+  tests. The required serial suite exceeded its 12-minute limit and is
+  unavailable rather than substituted; Ruff and both Compose configurations
+  passed. This leaves the installed scheduler, its current receipt contract,
+  and the next due action unchanged.
 
 ## Current Bottleneck And Improvement
 

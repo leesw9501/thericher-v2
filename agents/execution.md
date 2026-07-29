@@ -59,6 +59,14 @@ decision-table edit, or live route is introduced.
   validation is `validated`. The next scheduler-owned observation is
   2026-07-31 00:31 KST; this scoped recovery does not justify changing the
   fixed decision table or forcing a replacement intent.
+- The 2026-07-30 operating review independently reattested the installed QQQ
+  path's receipt-derived identity, pre-account and pre-submit freshness,
+  virtual-route isolation, intent-before-side-effect, and
+  cancel/reconciliation behavior. Its 64 focused tests passed. The required
+  serial `pytest -q` reached the 12-minute authority limit and is recorded as
+  unavailable, not as a pass; Ruff and both Compose configurations passed.
+  This verification fact does not change scheduler ownership, receipt
+  eligibility, or any Paper intent.
 - Temporary Validation traced `receipt_not_eligible` to the pre-account
   receipt-class gate. The existing fixed table still has reachable fresh
   `enter` and `exit` rows, and its QQQ flat-entry/position-resolution tests
