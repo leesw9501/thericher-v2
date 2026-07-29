@@ -37,7 +37,7 @@ NORGATE_BROAD_REPRESENTATION_ID = "norgate-broad-target-free-representation-v1"
 DEFAULT_WINDOW_LENGTH = 40
 DEFAULT_MASK_SPAN = 4
 DEVELOPMENT_END_RETURN_INDEX = 297
-DIAGNOSTIC_START_RETURN_INDEX = 320
+DIAGNOSTIC_START_RETURN_INDEX = 337
 DEFAULT_TRAINING_STEPS = 192
 DEFAULT_CPU_SMOKE_STEPS = 3
 DEFAULT_BATCH_SIZE = 4096
@@ -46,11 +46,11 @@ DEFAULT_ATTENTION_HEADS = 4
 DEFAULT_TCN_KERNEL_SIZE = 3
 DEFAULT_LEARNING_RATE = 0.0008
 DEFAULT_WEIGHT_DECAY = 0.0001
-RepresentationArchitectureId = Literal["gru", "lstm", "causal_tcn", "compact_attention"]
+RepresentationArchitectureId = Literal["gru", "lstm", "temporal_conv", "compact_attention"]
 REPRESENTATION_ARCHITECTURE_IDS = (
     "gru",
     "lstm",
-    "causal_tcn",
+    "temporal_conv",
     "compact_attention",
 )
 
@@ -71,8 +71,10 @@ class RepresentationGeometry:
             raise ValueError("representation mask span must fit inside the observed window")
         if self.development_end_return_index < self.window_length - 1:
             raise ValueError("development return end must include one complete window")
-        if self.diagnostic_start_return_index <= self.development_end_return_index:
-            raise ValueError("diagnostic return range must follow development")
+        if self.diagnostic_start_return_index < (
+            self.development_end_return_index + self.window_length
+        ):
+            raise ValueError("diagnostic return windows must not overlap development windows")
 
     @property
     def development_start_return_index(self) -> int:
@@ -116,6 +118,7 @@ class RepresentationArchitectureSpec:
             or self.attention_heads <= 0
             or self.hidden_size % self.attention_heads != 0
             or self.tcn_kernel_size <= 0
+            or self.tcn_kernel_size % 2 == 0
             or self.learning_rate <= 0
             or self.weight_decay < 0
         ):
@@ -138,7 +141,7 @@ class RepresentationArchitectureSpec:
 DEFAULT_ARCHITECTURE_SPECS = (
     RepresentationArchitectureSpec("gru", seed=4103),
     RepresentationArchitectureSpec("lstm", seed=4109),
-    RepresentationArchitectureSpec("causal_tcn", seed=4111),
+    RepresentationArchitectureSpec("temporal_conv", seed=4111),
     RepresentationArchitectureSpec("compact_attention", seed=4117),
 )
 
@@ -187,8 +190,8 @@ class RepresentationRunResult:
     summary_sha256: str
     weights_path: Path
     weights_sha256: str
-    final_training_masked_mse: float
-    diagnostic_masked_mse: float
+    training_loss_finite: bool
+    diagnostic_loss_finite: bool
     device: str
 
 
@@ -325,12 +328,15 @@ def mask_observed_windows(
 
     numpy = _numpy()
     values = numpy.asarray(windows, dtype=numpy.float32)
-    if values.ndim != 2 or values.shape[0] == 0 or values.shape[1] <= mask_span:
+    if values.ndim != 2 or values.shape[0] == 0 or values.shape[1] <= mask_span + 1:
         raise ValueError("observed window masking geometry is invalid")
     if not numpy.isfinite(values).all() or mask_span <= 0 or seed < 0:
         raise ValueError("observed window masking inputs are invalid")
+    # Keep both boundary returns visible so reconstruction cannot become a
+    # terminal next-step forecast or an initial-value extrapolation task.
+    interior_start_count = values.shape[1] - mask_span - 1
     row_indexes = numpy.arange(values.shape[0], dtype=numpy.int64)
-    starts = ((row_indexes * 1_103_515_245) + seed) % (values.shape[1] - mask_span + 1)
+    starts = 1 + (((row_indexes * 1_103_515_245) + seed) % interior_start_count)
     mask = numpy.zeros(values.shape, dtype=numpy.float32)
     offsets = numpy.arange(mask_span, dtype=numpy.int64)
     mask[row_indexes[:, None], starts[:, None] + offsets[None, :]] = 1.0
@@ -460,9 +466,7 @@ def _run_architecture(
     torch = _torch()
     numpy = _numpy()
     device = torch.device(device_name)
-    torch.manual_seed(spec.seed)
-    if device_name == "cuda":
-        torch.cuda.manual_seed_all(spec.seed)
+    determinism = _configure_torch_determinism(torch, seed=spec.seed, device_name=device_name)
     train_features, train_targets, train_mask = mask_observed_windows(
         contract.dataset.development_windows,
         mask_span=contract.dataset.geometry.mask_span,
@@ -537,9 +541,12 @@ def _run_architecture(
         "objective": "masked_span_reconstruction_of_observed_returns",
         "architecture": spec.payload(),
         "device": device_name,
-        "training_masked_mse_final": last_loss,
-        "diagnostic_masked_mse": diagnostic_value,
+        "training_loss_finite": True,
+        "diagnostic_loss_finite": True,
+        "determinism": determinism,
         "weights_format": "npz_numpy_arrays_no_pickle",
+        "derived_weights_may_encode_source_information": True,
+        "direct_raw_rows_or_value_arrays_retained": False,
         "weights_sha256": weights_hash,
         "selection": "disabled",
     }
@@ -557,8 +564,8 @@ def _run_architecture(
         summary_sha256=summary["summary_sha256"],
         weights_path=weights_path,
         weights_sha256=weights_hash,
-        final_training_masked_mse=last_loss,
-        diagnostic_masked_mse=diagnostic_value,
+        training_loss_finite=math.isfinite(last_loss),
+        diagnostic_loss_finite=math.isfinite(diagnostic_value),
         device=device_name,
     )
 
@@ -570,8 +577,13 @@ def _build_reconstruction_model(*, torch: Any, spec: RepresentationArchitectureS
         class GruReconstructionModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
-                self.encoder = nn.GRU(2, spec.hidden_size, batch_first=True)
-                self.head = nn.Linear(spec.hidden_size, 1)
+                self.encoder = nn.GRU(
+                    2,
+                    spec.hidden_size,
+                    batch_first=True,
+                    bidirectional=True,
+                )
+                self.head = nn.Linear(spec.hidden_size * 2, 1)
 
             def forward(self, values: Any) -> Any:
                 encoded, _ = self.encoder(values)
@@ -583,33 +595,37 @@ def _build_reconstruction_model(*, torch: Any, spec: RepresentationArchitectureS
         class LstmReconstructionModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
-                self.encoder = nn.LSTM(2, spec.hidden_size, batch_first=True)
-                self.head = nn.Linear(spec.hidden_size, 1)
+                self.encoder = nn.LSTM(
+                    2,
+                    spec.hidden_size,
+                    batch_first=True,
+                    bidirectional=True,
+                )
+                self.head = nn.Linear(spec.hidden_size * 2, 1)
 
             def forward(self, values: Any) -> Any:
                 encoded, _ = self.encoder(values)
                 return self.head(encoded)
 
         return LstmReconstructionModel()
-    if spec.architecture_id == "causal_tcn":
+    if spec.architecture_id == "temporal_conv":
 
-        class CausalTcnReconstructionModel(nn.Module):
+        class TemporalConvReconstructionModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
                 self.convolution = nn.Conv1d(
                     2,
                     spec.hidden_size,
                     kernel_size=spec.tcn_kernel_size,
-                    padding=spec.tcn_kernel_size - 1,
+                    padding=spec.tcn_kernel_size // 2,
                 )
                 self.head = nn.Linear(spec.hidden_size, 1)
 
             def forward(self, values: Any) -> Any:
-                length = values.shape[1]
-                encoded = self.convolution(values.transpose(1, 2))[:, :, :length]
+                encoded = self.convolution(values.transpose(1, 2))
                 return self.head(torch.relu(encoded).transpose(1, 2))
 
-        return CausalTcnReconstructionModel()
+        return TemporalConvReconstructionModel()
 
     class CompactAttentionReconstructionModel(nn.Module):
         def __init__(self) -> None:
@@ -639,19 +655,7 @@ def _build_reconstruction_model(*, torch: Any, spec: RepresentationArchitectureS
             )
             positional[:, 0::2] = torch.sin(positions * divisors)
             positional[:, 1::2] = torch.cos(positions * divisors)
-            causal_mask = torch.triu(
-                torch.full(
-                    (length, length),
-                    float("-inf"),
-                    dtype=values.dtype,
-                    device=values.device,
-                ),
-                diagonal=1,
-            )
-            encoded = self.encoder(
-                self.input_projection(values) + positional.unsqueeze(0),
-                mask=causal_mask,
-            )
+            encoded = self.encoder(self.input_projection(values) + positional.unsqueeze(0))
             return self.head(encoded)
 
     return CompactAttentionReconstructionModel()
@@ -663,6 +667,36 @@ def _masked_mse(prediction: Any, target: Any, mask: Any) -> Any:
     if denominator <= 0:
         raise RuntimeError("target-free representation mask is empty")
     return squared_error.sum() / denominator
+
+
+def _configure_torch_determinism(
+    torch: Any,
+    *,
+    seed: int,
+    device_name: Literal["cpu", "cuda"],
+) -> dict[str, object]:
+    torch.manual_seed(seed)
+    torch.use_deterministic_algorithms(True)
+    if device_name == "cpu":
+        return {
+            "algorithms_enforced": True,
+            "seed": seed,
+            "tf32_disabled": True,
+            "cudnn_benchmark": False,
+        }
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cuda.matmul.allow_tf32 = False
+    if hasattr(torch, "set_float32_matmul_precision"):
+        torch.set_float32_matmul_precision("highest")
+    return {
+        "algorithms_enforced": True,
+        "seed": seed,
+        "tf32_disabled": True,
+        "cudnn_benchmark": False,
+    }
 
 
 def _architecture_spec(
@@ -756,6 +790,8 @@ def _contract_payload(
             "development_window_sha256": dataset.development_window_sha256,
             "diagnostic_window_sha256": dataset.diagnostic_window_sha256,
             "mask_span": dataset.geometry.mask_span,
+            "mask_boundary_positions_visible": True,
+            "normalization": "none",
             "forward_labels": False,
             "future_aware_quality_filter": False,
         },
@@ -769,6 +805,8 @@ def _contract_payload(
             "early_stopping": False,
             "architecture_selection": False,
             "score_leaderboard": False,
+            "diagnostic_overlap_with_development": False,
+            "representation_context": "bidirectional_within_completed_window",
             "weight_format": "npz_numpy_arrays_no_pickle",
         },
     }
@@ -896,7 +934,9 @@ def _write_json_new(path: Path, payload: Mapping[str, Any]) -> None:
 def _non_promoting_scope() -> dict[str, bool]:
     return {
         "target_free": True,
+        "static_survivorship_conditioned": True,
         "point_in_time_eligible": False,
+        "cross_sectional_selection_eligible": False,
         "ranking_eligible": False,
         "forecast_eligible": False,
         "model_promotion_eligible": False,

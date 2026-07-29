@@ -26,7 +26,7 @@ def test_observed_dataset_never_uses_a_future_bar_for_development_windows() -> N
         window_length=4,
         mask_span=2,
         development_end_return_index=7,
-        diagnostic_start_return_index=10,
+        diagnostic_start_return_index=11,
     )
     catalog = _catalog(last_close=Decimal("112"))
     initial = build_observed_return_dataset(catalog, geometry=geometry)
@@ -50,6 +50,16 @@ def test_frozen_panel_path_is_relative_to_the_injected_market_data_root() -> Non
     )
 
 
+def test_geometry_rejects_diagnostic_windows_that_overlap_development() -> None:
+    with pytest.raises(ValueError, match="must not overlap"):
+        RepresentationGeometry(
+            window_length=40,
+            mask_span=4,
+            development_end_return_index=297,
+            diagnostic_start_return_index=320,
+        )
+
+
 def test_masking_is_deterministic_and_exposes_only_observed_targets() -> None:
     windows = numpy.asarray(
         [[0.01, -0.02, 0.03, 0.04], [0.05, 0.06, -0.07, 0.08]],
@@ -67,6 +77,8 @@ def test_masking_is_deterministic_and_exposes_only_observed_targets() -> None:
     assert numpy.array_equal(targets[..., 0], windows)
     assert numpy.array_equal(features[..., 1], mask[..., 0])
     assert numpy.all(mask.sum(axis=(1, 2)) == 2)
+    assert numpy.all(mask[:, 0, 0] == 0.0)
+    assert numpy.all(mask[:, -1, 0] == 0.0)
     assert numpy.all(features[..., 0][mask[..., 0].astype(bool)] == 0.0)
 
 
@@ -79,7 +91,7 @@ def test_contract_is_external_target_free_and_registry_backed(tmp_path: Path) ->
             window_length=4,
             mask_span=2,
             development_end_return_index=7,
-            diagnostic_start_return_index=10,
+            diagnostic_start_return_index=11,
         ),
     )
 
@@ -99,8 +111,10 @@ def test_contract_is_external_target_free_and_registry_backed(tmp_path: Path) ->
     assert payload["observed_windows"]["future_aware_quality_filter"] is False
     assert payload["training_policy"] == {
         "architecture_selection": False,
+        "diagnostic_overlap_with_development": False,
         "early_stopping": False,
         "fixed_steps": True,
+        "representation_context": "bidirectional_within_completed_window",
         "score_leaderboard": False,
         "weight_format": "npz_numpy_arrays_no_pickle",
     }
@@ -126,7 +140,7 @@ def test_contract_rejects_git_local_artifacts(tmp_path: Path) -> None:
             window_length=4,
             mask_span=2,
             development_end_return_index=7,
-            diagnostic_start_return_index=10,
+            diagnostic_start_return_index=11,
         ),
     )
 
@@ -171,8 +185,8 @@ def test_safe_weight_writer_uses_non_pickle_npz_arrays(tmp_path: Path) -> None:
 
 
 def _catalog(*, last_close: Decimal) -> SimpleNamespace:
-    sessions = tuple(date(2025, 1, 1) + timedelta(days=index) for index in range(12))
-    closes = tuple(Decimal("100") + Decimal(index) for index in range(11)) + (last_close,)
+    sessions = tuple(date(2025, 1, 1) + timedelta(days=index) for index in range(13))
+    closes = tuple(Decimal("100") + Decimal(index) for index in range(12)) + (last_close,)
     bars_by_symbol = {
         symbol: SimpleNamespace(bars=_bars(symbol, sessions, closes))
         for symbol in ("AAA", "BBB")

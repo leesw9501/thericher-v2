@@ -7295,6 +7295,32 @@ make ensemble selection less independent. The temporary synthesis boundary
 preserves diversity testing without turning integration into another source of
 in-sample tuning.
 
+## 2026-07-29 - Repair target-free representation before CUDA dispatch
+
+Decision: do not dispatch the first Norgate target-free CUDA batch under its
+initial r4 contract. Claude's falsification-first verdict was `uncertain`:
+the original 22-index gap allowed 40-return diagnostic windows to overlap the
+development input, a causal terminal mask could become a next-step predictor,
+and numeric per-architecture losses would leave a de facto selection
+leaderboard. The static 523-symbol panel also remains full-span survivorship
+conditioned and adjustment-unverified, so its scope stays explicitly
+non-promoting.
+
+The repaired r5 contract uses a 40-index non-overlap gap, masks only interior
+positions with both observed left and right context, uses bidirectional
+GRU/LSTM, symmetric temporal convolution, and noncausal compact attention, and
+records only finite-loss facts. CUDA enables deterministic algorithms, disables
+TF32 and cuDNN benchmarking, and records the configuration. Direct source rows
+and value arrays remain unretained, but learned external weights are now
+truthfully treated as restricted derived artifacts that may encode source
+information.
+
+Reason: this preserves a useful GPU representation plumbing exercise without
+relabeling it as a forecast, hiding temporal overlap, or making architecture
+selection available by artifact inspection. The r4 CPU smoke and its incomplete
+preflight contracts remain scoped non-promoting evidence; only a repaired
+contract may reach the named CUDA decision boundary.
+
 ## 2026-07-29 - Contain the challenged QQQ/SPY overnight/intraday state as CPU plumbing
 
 Decision: retain exactly one Docker CPU smoke for a newly proposed QQQ/SPY D1

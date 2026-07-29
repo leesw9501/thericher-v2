@@ -40,12 +40,18 @@ ensemble, Paper signal, or broker claim.
 - Do not create a forward label, inspect `t+1` or later data for any sample,
   load a public model/weight, use a public-model runtime, rank symbols, replay
   PnL, create a local-paper intent, or create an ensemble.
-- Do not persist raw rows, source values, predictions, credentials, account
-  facts, or broker bodies. Generated weights must use a safe non-pickle format
-  and remain outside Git.
-- Fixed architecture losses are diagnostics only. No early stopping,
-  architecture winner, score leaderboard, threshold tuning, or model selection
-  is allowed in this objective.
+- Do not persist direct raw rows/value arrays, predictions, credentials, account
+  facts, or broker bodies. Generated weights may encode source information, so
+  treat them as restricted derived external artifacts; use a safe non-pickle
+  format and keep them outside Git.
+- Diagnostic return windows must be disjoint from development return windows.
+  Mask spans keep the first and final return visible and use bidirectional
+  context only inside the fully observed decision window; they must not become
+  a terminal next-step forecast. Do not fit panel-wide normalization statistics.
+- Fixed architecture loss is checked only for finiteness and is not retained as
+  a score. No early stopping, architecture winner, score leaderboard, threshold
+  tuning, or model selection is allowed in this objective. CUDA must enforce
+  deterministic algorithms and disable TF32 before the batch begins.
 
 ## Parallel Work Packages
 
@@ -61,9 +67,9 @@ ensemble, Paper signal, or broker claim.
    window dataset from only completed `t-window+1..t` returns. Freeze its
    geometry, masking objective, source identity, fixed architecture specs, and
    stop budget in an external contract. Run a Docker CPU smoke before one
-   bounded GPU batch of GRU, LSTM, causal-TCN, and compact-attention masked-span
-   reconstruction jobs. Persist only source-safe summaries, checksums, and safe
-   external weights.
+   bounded GPU batch of GRU, LSTM, temporal-convolution, and compact-attention
+   masked-span reconstruction jobs. Persist only source-safe summaries,
+   checksums, finite-status facts, and safe external weights.
 4. **Strategy Discovery:** Produce one compact external source-safe handoff for
    official public time-series model candidates. Include source identifier,
    retrieval time, verbatim license text, mechanism, and stated discovery/
