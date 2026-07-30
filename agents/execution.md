@@ -37,6 +37,13 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- The 2026-07-30 23:50 KST daily SPY session completed its own Paper-only
+  receipt boundary as `no_intent/target_already_satisfied`. Its exact session
+  identity is `daily-spy-20260730T145001334439Z` and its receipt reference is
+  `sha256:3b3a6c8aae66004b4a29c31b799632272c30b03e4a712137f58fc66019e028ef`.
+  No canary run existed; both receipt observation and terminal-field probing
+  were `not_attempted`. This records a target-local no-intent only: it makes no
+  fill or PnL claim and does not affect the independent QQQ lifecycle.
 - The exact prior KIS Paper `outcome_unknown` run
   `canary-20260729T143501313369Z` completed one read-only reconciliation after
   the recovery entrypoint was hardened to bypass every submit/cancel branch.
