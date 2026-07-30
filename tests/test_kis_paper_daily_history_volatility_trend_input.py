@@ -34,12 +34,48 @@ from thericher_v2.research.causal_bar_features import (
 )
 
 
+@pytest.fixture(scope="module")
+def baseline_source(
+    tmp_path_factory: pytest.TempPathFactory,
+) -> sequence_input.KisPaperDailyHistorySequenceInput:
+    return _source(tmp_path_factory.mktemp("volatility-trend-source") / "panel")
+
+
+@pytest.fixture(scope="module")
+def baseline_volatility_input(
+    baseline_source: sequence_input.KisPaperDailyHistorySequenceInput,
+) -> volatility_input.KisPaperDailyHistoryVolatilityTrendInput:
+    return volatility_input.build_kis_paper_daily_history_volatility_trend_input(baseline_source)
+
+
+@pytest.fixture(scope="module")
+def baseline_campaign_input(
+    baseline_source: sequence_input.KisPaperDailyHistorySequenceInput,
+) -> campaign.KisNasD1VolatilityTrendCampaignInput:
+    return campaign.build_kis_nas_d1_volatility_trend_campaign(baseline_source)
+
+
+@pytest.fixture(scope="module")
+def baseline_breadth_input(
+    baseline_campaign_input: campaign.KisNasD1VolatilityTrendCampaignInput,
+) -> breadth.KisNasD1VolatilityTrendBreadthInput:
+    return breadth.build_kis_nas_d1_volatility_trend_breadth_input(
+        baseline_campaign_input,
+        campaign_precommit_hash=(
+            campaign.calculate_kis_nas_d1_volatility_trend_campaign_precommit_hash(
+                baseline_campaign_input,
+                review_status="review_unavailable",
+            )
+        ),
+        review_status="review_unavailable",
+    )
+
+
 def test_completed_features_ignore_the_next_two_bars_and_have_frozen_shape(
     tmp_path: Path,
+    baseline_volatility_input: volatility_input.KisPaperDailyHistoryVolatilityTrendInput,
 ) -> None:
-    baseline = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
-        _source(tmp_path / "baseline")
-    )
+    baseline = baseline_volatility_input
     future_changed = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
         _source(
             tmp_path / "future-changed",
@@ -63,10 +99,10 @@ def test_completed_features_ignore_the_next_two_bars_and_have_frozen_shape(
     assert baseline_sample.decision_start < baseline_sample.decision_end
 
 
-def test_validation_samples_are_target_free_and_safe_payload_hides_values(tmp_path: Path) -> None:
-    prepared = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
-        _source(tmp_path / "source")
-    )
+def test_validation_samples_are_target_free_and_safe_payload_hides_values(
+    baseline_volatility_input: volatility_input.KisPaperDailyHistoryVolatilityTrendInput,
+) -> None:
+    prepared = baseline_volatility_input
     sample = prepared.validation_samples("AAPL")[0]
     payload = prepared.safe_payload()
 
@@ -79,10 +115,11 @@ def test_validation_samples_are_target_free_and_safe_payload_hides_values(tmp_pa
     _assert_no_value_fields(payload)
 
 
-def test_symbol_changes_are_isolated_but_own_symbol_changes_are_detected(tmp_path: Path) -> None:
-    baseline = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
-        _source(tmp_path / "baseline")
-    )
+def test_symbol_changes_are_isolated_but_own_symbol_changes_are_detected(
+    tmp_path: Path,
+    baseline_volatility_input: volatility_input.KisPaperDailyHistoryVolatilityTrendInput,
+) -> None:
+    baseline = baseline_volatility_input
     other_symbol_changed = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
         _source(
             tmp_path / "other-symbol",
@@ -162,21 +199,22 @@ def test_incomplete_non_d1_short_misaligned_and_invalid_ohlc_inputs_reject(tmp_p
 
 def test_builder_stays_offline_and_credential_free(
     monkeypatch: pytest.MonkeyPatch,
-    tmp_path: Path,
+    baseline_source: sequence_input.KisPaperDailyHistorySequenceInput,
 ) -> None:
-    source = _source(tmp_path / "source")
     _deny_external_access(monkeypatch)
 
-    prepared = volatility_input.build_kis_paper_daily_history_volatility_trend_input(source)
+    prepared = volatility_input.build_kis_paper_daily_history_volatility_trend_input(
+        baseline_source
+    )
 
     assert prepared.development.feature_input_hash.startswith("sha256:")
     assert prepared.validation.feature_input_hash.startswith("sha256:")
 
 
-def test_campaign_filters_phase_ends_and_keeps_validation_target_free(tmp_path: Path) -> None:
-    campaign_input = campaign.build_kis_nas_d1_volatility_trend_campaign(
-        _source(tmp_path / "source")
-    )
+def test_campaign_filters_phase_ends_and_keeps_validation_target_free(
+    baseline_campaign_input: campaign.KisNasD1VolatilityTrendCampaignInput,
+) -> None:
+    campaign_input = baseline_campaign_input
 
     for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
         development = campaign_input.development_samples(symbol)
@@ -194,10 +232,10 @@ def test_campaign_filters_phase_ends_and_keeps_validation_target_free(tmp_path: 
         ) in {True, False}
 
 
-def test_attested_reference_resolver_matches_public_reference(tmp_path: Path) -> None:
-    campaign_input = campaign.build_kis_nas_d1_volatility_trend_campaign(
-        _source(tmp_path / "source")
-    )
+def test_attested_reference_resolver_matches_public_reference(
+    baseline_campaign_input: campaign.KisNasD1VolatilityTrendCampaignInput,
+) -> None:
+    campaign_input = baseline_campaign_input
     sample = campaign_input.validation_samples("AAPL")[0]
     campaign.require_attested_kis_nas_d1_volatility_trend_campaign_input(campaign_input)
 
@@ -219,9 +257,10 @@ def test_attested_reference_resolver_matches_public_reference(tmp_path: Path) ->
 def test_development_fit_stays_isolated_from_validation_values(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    baseline_breadth_input: breadth.KisNasD1VolatilityTrendBreadthInput,
 ) -> None:
     _fast_cpu(monkeypatch)
-    baseline = _breadth_input(tmp_path / "baseline")
+    baseline = baseline_breadth_input
     changed = _breadth_input(
         tmp_path / "validation-changed",
         altered_symbol="AAPL",
@@ -246,10 +285,11 @@ def test_development_fit_stays_isolated_from_validation_values(
 def test_cpu_and_fake_cuda_breadth_are_offline_source_safe_and_external(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    baseline_breadth_input: breadth.KisNasD1VolatilityTrendBreadthInput,
 ) -> None:
     _fast_cpu(monkeypatch)
     _deny_external_access(monkeypatch)
-    prepared = _breadth_input(tmp_path / "source")
+    prepared = baseline_breadth_input
     artifact_root = tmp_path / "external-model-artifacts"
     cpu = breadth.run_kis_nas_d1_volatility_trend_l2_logistic_smoke(
         prepared,
@@ -300,9 +340,10 @@ def test_cpu_and_fake_cuda_breadth_are_offline_source_safe_and_external(
 def test_breadth_rejects_git_and_linked_artifact_roots(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    baseline_breadth_input: breadth.KisNasD1VolatilityTrendBreadthInput,
 ) -> None:
     _fast_cpu(monkeypatch)
-    prepared = _breadth_input(tmp_path / "source")
+    prepared = baseline_breadth_input
     repository = tmp_path / "repo"
     repository.mkdir()
     with pytest.raises(ValueError, match="outside the Git workspace"):
@@ -332,9 +373,10 @@ def test_breadth_rejects_git_and_linked_artifact_roots(
 def test_cuda_rejects_a_cpu_summary_with_the_wrong_sibling_precommit_hash(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    baseline_breadth_input: breadth.KisNasD1VolatilityTrendBreadthInput,
 ) -> None:
     _fast_cpu(monkeypatch)
-    prepared = _breadth_input(tmp_path / "source")
+    prepared = baseline_breadth_input
     artifact_root = tmp_path / "external-model-artifacts"
     cpu = breadth.run_kis_nas_d1_volatility_trend_l2_logistic_smoke(
         prepared,

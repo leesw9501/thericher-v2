@@ -5,6 +5,7 @@ import json
 import os
 import socket
 import urllib.request
+from collections.abc import Callable
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -42,6 +43,7 @@ def evaluation_bundle(tmp_path_factory: pytest.TempPathFactory) -> SimpleNamespa
     )
     monkeypatch.setattr(breadth, "KIS_NAS_D1_SEQUENCE_CPU_LOGISTIC_SPECS", specs)
     monkeypatch.setattr(sealed, "KIS_NAS_D1_SEQUENCE_CPU_LOGISTIC_SPECS", specs)
+    assert_breadth_unchanged: Callable[[], None] | None = None
     try:
         root = tmp_path_factory.mktemp("sealed-evaluation")
         repository_root = root / "repository"
@@ -57,6 +59,7 @@ def evaluation_bundle(tmp_path_factory: pytest.TempPathFactory) -> SimpleNamespa
             campaign_input,
             campaign_precommit_hash=campaign_precommit_hash,
         )
+        assert_breadth_unchanged = _memoize_breadth_input_attestation(monkeypatch, breadth_input)
         artifact_root = root / "external-model-artifacts"
         cpu_summary_path, cpu_summary_hash, cpu_models = _write_cpu_smoke_evidence(
             breadth_input,
@@ -93,7 +96,11 @@ def evaluation_bundle(tmp_path_factory: pytest.TempPathFactory) -> SimpleNamespa
             repository_root=repository_root,
         )
     finally:
-        monkeypatch.undo()
+        try:
+            if assert_breadth_unchanged is not None:
+                assert_breadth_unchanged()
+        finally:
+            monkeypatch.undo()
 
 
 def test_sealed_evaluation_is_offline_local_paper_and_replayable(
@@ -690,6 +697,30 @@ def _write_cuda_breadth_evidence(
     )
     summary_path.write_bytes(summary_bytes)
     return summary_path, _sha256_bytes(summary_bytes), checkpoint_root
+
+
+def _memoize_breadth_input_attestation(
+    monkeypatch: pytest.MonkeyPatch,
+    prepared: breadth.KisNasD1SequenceBreadthInput,
+) -> Callable[[], None]:
+    """Keep a full entry and teardown attestation around immutable fixture setup."""
+
+    original = breadth._require_attested_breadth_input  # noqa: SLF001
+    was_attested = False
+
+    def require_attested(value: object) -> None:
+        nonlocal was_attested
+        if value is not prepared or not was_attested:
+            original(value)
+            if value is prepared:
+                was_attested = True
+
+    monkeypatch.setattr(breadth, "_require_attested_breadth_input", require_attested)
+
+    def assert_prepared_unchanged() -> None:
+        original(prepared)
+
+    return assert_prepared_unchanged
 
 
 def _panel(root: Path) -> KisPaperDailyHistoryPanel:
