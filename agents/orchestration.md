@@ -46,6 +46,12 @@ second goal. Git and external artifacts retain historical evidence.
   unavailable rather than substituted; Ruff and both Compose configurations
   passed. This leaves the installed scheduler, its current receipt contract,
   and the next due action unchanged.
+- **Verification throughput:** after the current submit-ordering coverage was
+  added, a fresh serial `pytest -q` again exceeded the 12-minute authority
+  window and remains `unavailable`, not passed. The isolated feedback helper
+  `scripts/run_parallel_tests.ps1 -Workers 4` completed `1763 passed, 14
+  skipped` in 321.36 seconds. Its duration profile shows several bounded,
+  compute-heavy Research tests rather than a replacement serial authority.
 
 ## Current Bottleneck And Improvement
 
@@ -70,6 +76,11 @@ reattested on 2026-07-30 with `1762 passed, 14 skipped` in 284.47 seconds. It
 does not touch KIS, Docker, market data, or artifacts, so retain it for focused
 implementation feedback while preserving serial `pytest -q` as the required
 goal-boundary verification.
+
+The current reversible verification improvement is to retain the isolated
+file-distributed feedback runner while a later, separately scoped test-speed
+package reduces the measured compute-heavy serial work. Its result cannot close
+the QQQ lifecycle goal or replace the required serial suite.
 
 ## Durable Knowledge
 
