@@ -61,7 +61,7 @@ second goal. Git and external artifacts retain historical evidence.
   added, a fresh serial `pytest -q` again exceeded the 12-minute authority
   window and remains `unavailable`, not passed. The isolated feedback helper
   `scripts/run_parallel_tests.ps1 -Workers 4` completed `1763 passed, 14
-  skipped` in 321.36 seconds. Its duration profile shows several bounded,
+  skipped` in 248.09 seconds. Its duration profile shows several bounded,
   compute-heavy Research tests rather than a replacement serial authority.
 
 ## Current Bottleneck And Improvement
