@@ -149,12 +149,16 @@ the offline observer only after a current or complete cache result. A
   adjustments or corporate actions. The next Data package is an offline
   all-six-symbol unexplained-discontinuity census; it does not touch the
   running broad collector.
-- The sole `thericher-kis-paper-daily-broad-backfill` Task Scheduler owner is
-  currently `Running` for its first receipt-capable process. The earlier
-  generation-11,130 worker exited before the postprocess image update; no new
-  postrun or chronology artifact exists yet. Future scheduler slots remain
-  owned by that task and do not justify a manual launch, stop, duplicate, cache
-  mutation, or KIS call. This is a `resume` fact for that exact worker only.
+- At 2026-07-31 07:09 KST, the sole
+  `thericher-kis-paper-daily-broad-backfill` owner remains `Running` through
+  its one Docker collector, started at 00:15 KST with a bounded 28,800-second
+  runtime. Its current source-safe D: index is generation 21,162: 2,119 current
+  NAS targets, 40,935 accepted pages, 754 categorical failures, and target
+  states `723 complete / 715 ready / 681 source_limited`. Remaining page count
+  and ETA are `unknown`; the next Task Scheduler trigger is 07:15 KST and the
+  current process remains `resume`. No postrun receipt exists yet. The task
+  alone owns its cursor, lock, client, pacing, and cache; do not manually launch,
+  stop, duplicate, mutate, or make a parallel KIS call.
 - The source-safe terminal receipt
   `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20260727T1922500308577Z.json`
   is `complete`. Its paired session capture
@@ -712,16 +716,6 @@ completed-session collection or reattestation, preserving its single-client
 route, source-safe receipts, per-target recovery states, and the unchanged
 frozen panel. Do not turn cache coverage into a PIT universe, candidate
 selection, ranking, or Paper order.
-
-At the 2026-07-29 09:50 KST source-safe index snapshot, the independent broad
-D1 collector was running its 09:45 KST bounded run at mutable generation 3,649.
-It covers all 2,119 current NASDAQ targets with 7,102 accepted pages and 60
-cumulative categorical failures; 1,928 target cursors remain `ready`, 136 are
-`complete`, and 55 are `source_limited`. The breadth pass is complete, but
-historical depth remains in progress from the durable target-local cursors.
-This is an in-flight cache fact only. Preserve the one-worker cache lock and
-current measured pacing; do not call it a frozen panel, full historical depth,
-PIT universe, or Research input.
 
 The separate QQQ/NAS plus SPY/AMS D1 forward cache now exists at
 `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v1`, with
