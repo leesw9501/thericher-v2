@@ -48,14 +48,14 @@ decision-table edit, or live route is introduced.
   and records current `outcome_unknown/reconciliation_unresolved` only. No
   submit, cancel, modify, replacement, or live call occurred. This exact
   generic run is not the QQQ lifecycle objective and cannot block it.
-- The 2026-07-31 02:31 KST QQQ task had a clean capture and terminal `complete`,
-  but its session
-  `sha256:26c5ebc12eebc93805eb7882e5ee3759d9bafa73fce040d73e0a9e27bcec4c1f`
-  closed `paper_only` `no_intent/receipt_not_eligible` before account, quote,
-  canary, durable intent, submit, cancel, modify, or live action. This later
-  receipt does not recover or rewrite the prior 00:31 `account_unavailable`
-  receipt. The next scheduler-owned observation is 04:31 KST; no decision-table
-  change or replacement intent follows.
+- The 2026-07-31 02:31 and 04:31 KST QQQ tasks had clean captures and terminal
+  `complete`, but both sessions were `paper_only` `no_intent/receipt_not_eligible`
+  before account, quote, canary, durable intent, submit, cancel, modify, or
+  live action. The latest session is
+  `sha256:eca780e356bc6e8d44ef6117bc1c41c05cd83bd898b66a8933faaf841f51541b`.
+  These later receipts do not recover or rewrite the prior 00:31
+  `account_unavailable` receipt. The next scheduler-owned observation is 06:20
+  KST; no decision-table change or replacement intent follows.
 - The 2026-07-31 00:31 KST QQQ task had a fresh eligible-exit input and
   terminal `complete`, but its session
   `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb`

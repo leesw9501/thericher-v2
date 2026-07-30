@@ -71,14 +71,14 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
-- The 2026-07-31 02:31 KST QQQ scheduler cycle retained clean current head
-  pages and terminal `complete`; its session
-  `sha256:26c5ebc12eebc93805eb7882e5ee3759d9bafa73fce040d73e0a9e27bcec4c1f`
+- The 2026-07-31 02:31 and 04:31 KST QQQ scheduler cycles both retained clean
+  current head pages and terminal `complete`. The latest session
+  `sha256:eca780e356bc6e8d44ef6117bc1c41c05cd83bd898b66a8933faaf841f51541b`
   closed `paper_only` `no_intent/receipt_not_eligible` before account, quote,
-  intent, or canary work. The paired terminal
-  `sha256:566d6c8f33b8a9f459225581a5efc8eaf357ba804634e03c1c657ff5b28f3b49`
+  intent, or canary work; its paired terminal
+  `sha256:df7668bd44db53f67b9df85eb37e0f13c714896a1a38643496cecf866c662d95`
   has successful collection and prospective validation. The next owned due
-  time is 04:31 KST; no collector, decision-table, sizing, or scheduler change
+  time is 06:20 KST; no collector, decision-table, sizing, or scheduler change
   follows.
 - The 2026-07-31 00:31 KST QQQ scheduler cycle captured clean current head
   pages and reached its fresh eligible-exit receipt, but its session

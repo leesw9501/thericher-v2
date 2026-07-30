@@ -103,14 +103,15 @@ the offline observer only after a current or complete cache result. A
   Paper, or live status. Data now preserves the independent current QQQ head
   cache for the existing freshness-gated Execution canary; it does not use the
   quarantined historical D1 panel as a runtime input.
-- The 2026-07-31 02:31 KST intraday-head task retained a complete source-safe
-  capture `sha256:8a0fc4eefcb5e7c58953cb312dd1a7c2d0afafccbc125c36e7cbe1ad7dfc3ce3`:
-  QQQ/NAS/1m and SPY/AMS/1m each collected 120 rows with zero exact overlap or
-  conflict. The paired QQQ session closed `paper_only`
+- The 2026-07-31 02:31 and 04:31 KST intraday-head tasks both retained complete
+  source-safe captures. The latest capture
+  `sha256:f3a8c940cee139784ba2221b0a38ddaf123c87b5027824edbae6fd7900435259`
+  collected 120 rows for each QQQ/NAS/1m and SPY/AMS/1m with zero exact overlap
+  or conflict. Its paired QQQ session closed `paper_only`
   `no_intent/receipt_not_eligible` before account, quote, intent, or canary
-  work; its terminal `sha256:566d6c8f33b8a9f459225581a5efc8eaf357ba804634e03c1c657ff5b28f3b49`
+  work; terminal `sha256:df7668bd44db53f67b9df85eb37e0f13c714896a1a38643496cecf866c662d95`
   is complete with prospective validation `validated`. The scheduler owns the
-  next 04:31 KST observation; this does not call for a manual collector launch
+  next 06:20 KST observation; this does not call for a manual collector launch
   or a change to the QQQ decision table.
 - The 2026-07-31 00:31 KST intraday-head task retained a complete source-safe
   capture `sha256:710b63a89b1ba0c873dccffe6b649f359d76f1e903c0417cadad8762108a688d`:
@@ -668,7 +669,7 @@ reattachment/chronology path; an absent receipt is external timing evidence and
 does not delay the offline Norgate/KIS metadata-conformance package.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
-intraday schedule owns its next due at 2026-07-31 04:31 KST; do not manually
+intraday schedule owns its next due at 2026-07-31 06:20 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
 cursor collection. SPY/NAS is an observed-only unavailable request shape, not
 a closed source limitation. The frozen 523-symbol Norgate panel has now been
