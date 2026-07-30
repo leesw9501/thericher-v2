@@ -48,6 +48,14 @@ decision-table edit, or live route is introduced.
   and records current `outcome_unknown/reconciliation_unresolved` only. No
   submit, cancel, modify, replacement, or live call occurred. This exact
   generic run is not the QQQ lifecycle objective and cannot block it.
+- The 2026-07-31 02:31 KST QQQ task had a clean capture and terminal `complete`,
+  but its session
+  `sha256:26c5ebc12eebc93805eb7882e5ee3759d9bafa73fce040d73e0a9e27bcec4c1f`
+  closed `paper_only` `no_intent/receipt_not_eligible` before account, quote,
+  canary, durable intent, submit, cancel, modify, or live action. This later
+  receipt does not recover or rewrite the prior 00:31 `account_unavailable`
+  receipt. The next scheduler-owned observation is 04:31 KST; no decision-table
+  change or replacement intent follows.
 - The 2026-07-31 00:31 KST QQQ task had a fresh eligible-exit input and
   terminal `complete`, but its session
   `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb`
@@ -56,9 +64,8 @@ decision-table edit, or live route is introduced.
   read-only bridge completed one minute later, but its `submit_capability: false`
   scope cannot recover or substitute for this scheduled session's
   account/quote boundary. Claude's falsification-first verdict is
-  `unsupported` for treating this pair as exact-session recovery. The next
-  scheduler-owned observation is 02:31 KST; no decision-table change or
-  replacement intent follows.
+  `unsupported` for treating this pair as exact-session recovery. No
+  decision-table change or replacement intent follows.
 - The 2026-07-30 operating review independently reattested the installed QQQ
   path's receipt-derived identity, pre-account and pre-submit freshness,
   virtual-route isolation, intent-before-side-effect, and

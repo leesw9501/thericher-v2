@@ -71,6 +71,15 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
+- The 2026-07-31 02:31 KST QQQ scheduler cycle retained clean current head
+  pages and terminal `complete`; its session
+  `sha256:26c5ebc12eebc93805eb7882e5ee3759d9bafa73fce040d73e0a9e27bcec4c1f`
+  closed `paper_only` `no_intent/receipt_not_eligible` before account, quote,
+  intent, or canary work. The paired terminal
+  `sha256:566d6c8f33b8a9f459225581a5efc8eaf357ba804634e03c1c657ff5b28f3b49`
+  has successful collection and prospective validation. The next owned due
+  time is 04:31 KST; no collector, decision-table, sizing, or scheduler change
+  follows.
 - The 2026-07-31 00:31 KST QQQ scheduler cycle captured clean current head
   pages and reached its fresh eligible-exit receipt, but its session
   `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb402e7`
@@ -82,8 +91,8 @@ authorized private KIS Paper work.
   `sha256:9dfe4e83a1cd7ed33c81930c34e4c9afd430032a3ceb7942fb6149722f3a99b4`,
   but cannot substitute for this session's account/quote boundary. Claude's
   falsification-first verdict was `unsupported` for treating that bridge as
-  exact-session recovery. The next owned due time is 02:31 KST; no collector,
-  decision-table, sizing, or scheduler change follows.
+  exact-session recovery. This scoped fact does not authorize a collector,
+  decision-table, sizing, or scheduler change.
 - A source-only Execution/Validation trace confirms this is not a static route
   contradiction: `receipt_not_eligible` exits before account, quote, or order
   work, and later fresh `enter` or `exit` sign pairs can use the same installed
