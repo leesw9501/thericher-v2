@@ -77,9 +77,19 @@ authorized private KIS Paper work.
   closed `paper_only` `no_intent/receipt_not_eligible` before account, quote,
   intent, or canary work; its paired terminal
   `sha256:df7668bd44db53f67b9df85eb37e0f13c714896a1a38643496cecf866c662d95`
-  has successful collection and prospective validation. The next owned due
-  time is 06:20 KST; no collector, decision-table, sizing, or scheduler change
-  follows.
+  has successful collection and prospective validation. These clean no-intent
+  sessions do not change the fixed route.
+- The 2026-07-31 06:20 KST QQQ scheduler cycle retained a source-safe
+  Data-local recovery. Its capture
+  `sha256:e76e76df43243c521ef7a7b14f8a24d4fddeb386d9a74b660c2d441f41aac529`
+  rejected both current minute inputs as `minute_duplicate_conflict`; its QQQ
+  session `sha256:e2c213f9558d0d2dcde3ba2e1903aee88e367a6d3f7741dd697ffaeb2e8d068c`
+  closed `paper_only` `no_intent/runtime_window_stale`, before account, quote,
+  intent, or canary work. Its terminal
+  `sha256:d895258c638d0d4f85fdb27aeff68e8cfd76aed707e7d8694acab2c743ba21a2`
+  is `recovery/collection_exit_nonzero` with prospective validation `validated`.
+  The next owned due time is 2026-08-01 00:31 KST; no collector, decision-table,
+  sizing, or scheduler change follows.
 - The 2026-07-31 00:31 KST QQQ scheduler cycle captured clean current head
   pages and reached its fresh eligible-exit receipt, but its session
   `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb402e7`

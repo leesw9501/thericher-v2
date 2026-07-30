@@ -111,8 +111,17 @@ the offline observer only after a current or complete cache result. A
   `no_intent/receipt_not_eligible` before account, quote, intent, or canary
   work; terminal `sha256:df7668bd44db53f67b9df85eb37e0f13c714896a1a38643496cecf866c662d95`
   is complete with prospective validation `validated`. The scheduler owns the
-  next 06:20 KST observation; this does not call for a manual collector launch
-  or a change to the QQQ decision table.
+  later 06:20 KST observation; these clean no-intent sessions do not call for a
+  manual collector launch or a change to the QQQ decision table.
+- The 2026-07-31 06:20 KST intraday-head task retained a source-safe incomplete
+  capture `sha256:e76e76df43243c521ef7a7b14f8a24d4fddeb386d9a74b660c2d441f41aac529`:
+  both QQQ/NAS/1m and SPY/AMS/1m were rejected as `minute_duplicate_conflict`.
+  Its QQQ session is `paper_only` `no_intent/runtime_window_stale`; terminal
+  `sha256:d895258c638d0d4f85fdb27aeff68e8cfd76aed707e7d8694acab2c743ba21a2`
+  is `recovery/collection_exit_nonzero` while prospective validation is
+  `validated`. The scheduler owns the next 2026-08-01 00:31 KST observation;
+  this does not call for a manual collector launch or a change to the QQQ
+  decision table.
 - The 2026-07-31 00:31 KST intraday-head task retained a complete source-safe
   capture `sha256:710b63a89b1ba0c873dccffe6b649f359d76f1e903c0417cadad8762108a688d`:
   QQQ/NAS/1m and SPY/AMS/1m each collected 120 rows with zero exact overlap or
@@ -669,7 +678,7 @@ reattachment/chronology path; an absent receipt is external timing evidence and
 does not delay the offline Norgate/KIS metadata-conformance package.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
-intraday schedule owns its next due at 2026-07-31 06:20 KST; do not manually
+intraday schedule owns its next due at 2026-08-01 00:31 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
 cursor collection. SPY/NAS is an observed-only unavailable request shape, not
 a closed source limitation. The frozen 523-symbol Norgate panel has now been

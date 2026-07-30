@@ -56,6 +56,16 @@ decision-table edit, or live route is introduced.
   These later receipts do not recover or rewrite the prior 00:31
   `account_unavailable` receipt. The next scheduler-owned observation is 06:20
   KST; no decision-table change or replacement intent follows.
+- The 2026-07-31 06:20 KST QQQ task retained its exact Data-local collection
+  failure as `minute_duplicate_conflict` for both current minute inputs. Its
+  session `sha256:e2c213f9558d0d2dcde3ba2e1903aee88e367a6d3f7741dd697ffaeb2e8d068c`
+  is `paper_only` `no_intent/runtime_window_stale`, with no account, quote,
+  intent, canary, submit, cancel, modify, or live action. The paired terminal
+  `sha256:d895258c638d0d4f85fdb27aeff68e8cfd76aed707e7d8694acab2c743ba21a2`
+  is `recovery/collection_exit_nonzero` while independent prospective
+  validation is `validated`. The next scheduler-owned observation is
+  2026-08-01 00:31 KST; this scoped recovery does not justify changing the
+  fixed decision table or forcing a replacement intent.
 - The 2026-07-31 00:31 KST QQQ task had a fresh eligible-exit input and
   terminal `complete`, but its session
   `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb`

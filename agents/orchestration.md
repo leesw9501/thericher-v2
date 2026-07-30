@@ -30,15 +30,16 @@ second goal. Git and external artifacts retain historical evidence.
 ## Ready / Owned / Due
 
 - **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
-  canary through its first new lifecycle outcome. The latest 02:31 and 04:31
-  KST tasks captured clean input but closed `no_intent/receipt_not_eligible`
-  before a canary or durable intent existed. That is scoped session evidence,
-  not completion, quota, or a new permission gate.
+  canary through its first new lifecycle outcome. The latest 06:20 KST task
+  retained an incomplete `minute_duplicate_conflict` capture and closed its
+  QQQ session as `no_intent/runtime_window_stale` before a canary or durable
+  intent existed. That is scoped input/recovery evidence, not completion,
+  quota, or a new permission gate.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
-- **Due:** Task Scheduler owns the next source/canary trigger at 2026-07-31
-  06:20 KST. An absent fresh receipt is source-local evidence, not foreground
+- **Due:** Task Scheduler owns the next source/canary trigger at 2026-08-01
+  00:31 KST. An absent fresh receipt is source-local evidence, not foreground
   idle or a company hold.
 - **Verification:** an independent QQQ-path reattestation passed 64 focused
   tests. The required serial suite exceeded its 12-minute limit and is
