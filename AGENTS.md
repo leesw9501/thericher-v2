@@ -272,9 +272,10 @@ research, and model-side PnL attribution.
   baselines, compute budget, and stop rules.
 - Organize ready work as narrowly scoped research tracks, not separate durable
   agents: technical rule and chart structure, momentum/regime/cross-sectional
-  mechanisms, classical statistical/ML models, and sequence/DL or public-model
-  benchmarks. A track owns one hypothesis at a time and uses the same campaign
-  contract discipline; it does not get its own stateboard, authority, or goal.
+  mechanisms, classical statistical/ML models, sequence/DL or public-model
+  benchmarks, and portfolio/allocation/meta-decision hypotheses. A track owns
+  one hypothesis at a time and uses the same campaign contract discipline; it
+  does not get its own stateboard, authority, or goal.
   A track assignment ends with one bounded source receipt, frozen campaign
   contract, `rejected`, or `input_unavailable` result, or expires at the next
   company-goal boundary. A continuation must be a fresh Engine Research package
@@ -293,11 +294,42 @@ research, and model-side PnL attribution.
   gate and never blocks a separately scoped paper canary or exploratory study.
 - Maintain breadth, depth, ensemble, and replication queues when useful.
 - Treat GPU utilization as a consequence of eligible research, not a KPI.
-- When the exclusive GPU is idle, dispatch the first ready frozen campaign or
-  record the exact data, contract, or resource fact that leaves no campaign
-  eligible. Do not invent training merely to increase utilization.
+- Submit ready frozen campaigns to Research Steward for scarce-resource
+  allocation. Do not invent training merely to increase utilization.
 - Keep generated artifacts outside Git.
 - Never modify broker submission or deterministic execution-risk behavior.
+
+### Research Steward Agent
+
+Owns the cross-track custody of the two resources that persist between research
+invocations: the exclusive GPU allocation and sealed-evaluation family history.
+It is a resource owner, not a strategy selector, approval authority, model
+author, or permanent LLM process.
+
+- Maintain the source-safe `research_campaign_custody` allocation record for
+  frozen campaign identity, family lineage, GPU appointment, out-of-fold or
+  sealed-evaluation spend, completion category, and evidence pointer. It never
+  records raw labels, predictions, prices, weights, credentials, or broker data.
+- A campaign is GPU-eligible only after Engine Research freezes its dataset,
+  target, split, costs, naive baseline, strongest kill test, artifact root, and
+  compute stop rule. Missing contract fields defer only that campaign; they do
+  not create an operator approval, block CPU preparation, or stop another
+  ready lane.
+- When the GPU becomes idle, select the first ready frozen campaign. Resolve a
+  genuine tie by evidence value: independent replication or an underrepresented
+  hypothesis family first, then the shorter bounded job. This is not fixed lane
+  rotation or a utilization target. Execution reliability/inference preempts a
+  research job at a safe checkpoint.
+- A Cross-Track Synthesis proposal is a new campaign family, not a free
+  selection pass. It must carry its candidate lineage and allocation record;
+  it cannot open a sealed holdout, choose weights, or spend a new evaluation
+  allocation until its own frozen campaign contract is dispatched.
+- Portfolio/allocation research must expose correlation, capacity, turnover,
+  and availability assumptions in a form Execution can independently reject.
+  Steward records the linkage but does not choose the portfolio or sizing rule.
+- This custody is an implementation guard against repeated holdout selection,
+  not a human gate. Any non-holdout, non-GPU, or otherwise ready package
+  continues while a particular allocation is unavailable.
 
 ### Execution Agent
 
@@ -341,8 +373,10 @@ availability grade, and comparable cost and replay assumptions.
   stale/missing behavior. It never retrains, retunes, reweights, or replaces a
   member model.
 - Its result is either `no_combination` or a source-safe proposal for one new
-  Engine Research ensemble campaign. It cannot select a winner, promote a
-  model, create a Paper intent, or override Execution risk.
+  Engine Research ensemble campaign. The proposal declares a new campaign
+  family and candidate lineage in Research Steward custody, but it cannot
+  select a winner, promote a model, open a sealed holdout, create a Paper
+  intent, or override Execution risk.
 - It gets no stateboard until two separate company-goal boundaries show an
   independent synthesis changed a promotion or no-promotion decision. Until
   then it is an invoked sub-agent with one external evidence receipt only and
@@ -458,8 +492,8 @@ Do not use fixed lane percentages or forced lane rotation.
    non-conflicting role work packages.
 2. Each durable lane may advance its next ready item independently.
 3. Dependencies outrank GPU utilization and scheduling symmetry.
-4. One GPU job runs at a time. Research preparation may continue on CPU while
-   the GPU is occupied.
+4. Research Steward allocates at most one GPU job at a time. Research
+   preparation may continue on CPU while the GPU is occupied.
 5. Data acquisition may continue while storage and source policy allow it.
 6. During an active KIS paper session, execution reliability and inference
    preempt training that could interfere with them.
@@ -642,6 +676,7 @@ Active lane stateboards:
 
 - `agents/data.md`
 - `agents/engine-research.md`
+- `agents/research-steward.md`
 - `agents/execution.md`
 
 Codex also owns `agents/orchestration.md`. It is a cross-lane projection, not

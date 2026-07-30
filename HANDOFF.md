@@ -659,8 +659,10 @@ authorized private KIS Paper work.
 
 - Data owns provider behavior, cache correctness, calendars, resampling,
   manifests, and capability measurement.
-- Engine Research owns campaigns, features, models, validation, GPU work, and
-  model-side PnL attribution.
+- Engine Research owns campaigns, features, models, validation, research-side
+  portfolio hypotheses, and model-side PnL attribution.
+- Research Steward owns cross-track exclusive-GPU and sealed-evaluation
+  allocation, not strategy or Execution risk.
 - Execution owns deterministic risk, intents, fills, reconciliation, account
   facts, and KIS adapters.
 - Validation and Infra are invoked only when a bounded package needs them.

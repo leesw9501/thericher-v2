@@ -18,6 +18,10 @@ second goal. Git and external artifacts retain historical evidence.
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
   campaign. GPU is free and correctly has no eligible job while historical D1
   input remains quarantined.
+- **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
+  durable owner. No frozen labelled campaign or sealed-evaluation allocation is
+  currently eligible; this is a scoped resource fact, not a hold on Data or
+  Execution.
 - **Execution:** the existing KIS Paper QQQ session can already persist an
   intent, submit/cancel, reconcile, and project source-safe lifecycle state.
   A separate exact generic unknown run was read-only reconciled with immutable
@@ -25,7 +29,8 @@ second goal. Git and external artifacts retain historical evidence.
   intent. The next current eligible QQQ lifecycle is still the product evidence;
   KIS Live remains unavailable.
 - **Shared resources:** Data retains the mutable KIS cache. Execution owns only
-  its existing Paper state/control roots; no manual duplicate worker is ready.
+  its existing Paper state/control roots; Research Steward owns exclusive-GPU
+  appointment and campaign-family custody; no manual duplicate worker is ready.
 
 ## Ready / Owned / Due
 

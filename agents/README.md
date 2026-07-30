@@ -11,9 +11,10 @@ Operator -> Codex Orchestrator -> Role Agents
 ```
 
 Codex decomposes one company objective into disjoint work packages and assigns
-them to ready roles. Data, Research, and Execution may progress in parallel. A
-blocked lane does not stop another ready lane. Codex integrates shared contracts,
-verification, Git, recovery, and the next objective.
+them to ready roles. Data, Research, Research Steward, and Execution may
+progress in parallel. A blocked lane does not stop another ready lane. Codex
+integrates shared contracts, verification, Git, recovery, and the next
+objective.
 
 ## Material Goal Blocks
 
@@ -57,13 +58,23 @@ unavailable.
   manifests, splits, resampling, and data quality.
 - `engine-research.md`: hypotheses, campaign contracts, CPU/GPU models,
   backtests, walk-forward validation, analytical attribution, and the named
-  rule/chart, momentum/regime, classical ML, and sequence/DL research tracks.
+  rule/chart, momentum/regime, classical ML, sequence/DL, and
+  portfolio/allocation research tracks.
+- `research-steward.md`: source-safe cross-track custody for the exclusive GPU,
+  campaign families, and sealed-evaluation allocation. It cannot select a
+  strategy, tune a model, or create an operator approval step.
 - `execution.md`: local simulation, account/order/fill/position contracts,
   reconciliation, accounting PnL, risk, emergency behavior, and later KIS.
   It also independently reattests the execution-cost parity of any promoted
   Research claim without selecting the strategy.
 - `orchestration.md`: Codex-owned cross-lane resource and throughput view; not
   a Role Agent, implementation queue, or historical ledger.
+
+Research tracks remain queues inside `engine-research.md`; they are not durable
+agents. Research Steward is durable because it owns a cross-track mutable
+resource and evidence that must survive between objectives. Strategy Discovery,
+Validation, and Cross-Track Synthesis remain invoked until their work itself
+meets that same boundary.
 
 ## Independent And Invoked Roles
 
@@ -99,6 +110,9 @@ repeated independent work.
 
 - Engine Research has the single-shot
   `thericher-v2-engine-research-agent` worker.
+- Research Steward has no independent worker, coordinator, model runtime, or
+  broker route; Codex invokes its bounded allocation work against the shared
+  external custody record.
 - Data has the single-shot `thericher-v2-data-agent` worker.
 - Execution has the goal-owned `kis-paper-canary` recovery worker and the
   `kis-paper-session` Docker worker for a narrow quote-derived virtual-paper

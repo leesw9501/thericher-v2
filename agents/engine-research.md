@@ -6,8 +6,10 @@ is the current Research projection, not a campaign ledger.
 ## Ownership
 
 Own hypotheses, features, models, campaigns, analytical backtests,
-walk-forward evaluation, GPU work, and model-side PnL attribution. Never
-modify broker submission or deterministic execution-risk behavior.
+walk-forward evaluation, research-side portfolio/allocation hypotheses, and
+model-side PnL attribution. Research Steward owns exclusive-GPU and
+sealed-evaluation allocation. Never modify broker submission or deterministic
+execution-risk behavior.
 
 ## Strategy Discovery Intake
 
@@ -65,7 +67,7 @@ causal data, timing, split, costs, and falsifier before it may use it.
 
 ## Research Track Portfolio
 
-Engine Research owns four parallel tracks under one campaign and trial-custody
+Engine Research owns five parallel tracks under one campaign and trial-custody
 contract; these are work packages, not independent agents or Markdown queues.
 
 - **Technical Rule And Chart Structure:** completed-bar price, candle, volume,
@@ -79,22 +81,31 @@ contract; these are work packages, not independent agents or Markdown queues.
   tabular controls. CPU breadth precedes scarce depth work.
 - **Sequence, DL, And Public Models:** LSTM/GRU/TCN/attention-family
   representation or forecast candidates, plus isolated public-model benchmarks
-  after source, weight, and training-corpus provenance review. The exclusive
-  GPU takes the first ready frozen job, not an arbitrary queue item.
+  after source, weight, and training-corpus provenance review. Research Steward
+  allocates the exclusive GPU to the first ready frozen job, not an arbitrary
+  queue item.
+- **Portfolio, Allocation, And Meta-Decision:** cross-candidate combination,
+  target-weight, capacity, and sizing hypotheses. Each candidate exposes its
+  correlation, turnover, availability, and capacity assumptions for independent
+  Execution rejection; it never changes deterministic risk directly.
 
 **Cross-Track Synthesis** remains dormant until at least two independently
 frozen candidates expose aligned out-of-fold evidence with comparable costs and
 availability. Temporary Validation then tests incremental net value, error
 dependence, turnover, drawdown, and stale-data behavior. It can return only
 `no_combination` or one new frozen ensemble-campaign proposal; it does not
-choose weights, tune members, promote a result, or create a Paper action.
+choose weights, tune members, open a sealed holdout, promote a result, or create
+a Paper action. A proposal is recorded as a new candidate family before any
+future sealed evaluation allocation.
 
 Campaign custody is now implemented as the append-only
 `research_campaign_custody` namespace in the external control ledger. It keys
 frozen contracts, trial-family indexes, and non-promoting outcomes by checksum,
 rejects Git-local artifact roots, and has focused contract coverage. Historical
 breadth remains non-promoting: the registry makes trial custody auditable; it
-does not make an old result comparable, selectable, or promotable.
+does not make an old result comparable, selectable, or promotable. Research
+Steward owns its cross-track allocation and sealed-evaluation usage; Engine
+Research owns the candidate contracts and implementations.
 
 ## Current Target-Free Representation Evidence
 

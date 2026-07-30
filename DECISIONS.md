@@ -7567,3 +7567,21 @@ The explicit expiry and exact compatibility tuple above resolve that limitation.
 Reason: breadth is useful only when every method can be independently falsified
 and later compared on the same causal contract. This preserves parallel research
 without turning organization itself into a strategy or an authority path.
+
+## 2026-07-31 - Research steward and track topology
+
+Decision: retain Data, Engine Research, Research Steward, and Execution as the
+durable lanes. Keep technical/chart, momentum/regime, classical ML,
+sequence/DL/public-model, and portfolio/allocation work as parallel tracks
+inside Engine Research, not separate stateboards. Research Steward owns only
+the cross-track GPU appointment and sealed-evaluation family/allocation record.
+Strategy Discovery, Validation, Cross-Track Synthesis, Infra, and Throughput
+Review remain invoked roles.
+
+Reason: model-method stateboards would duplicate queues while competing for one
+GPU and the same finite evaluation evidence. The shared scarce-resource record
+needs durable ownership across objectives, but it must not become a manual
+approval, model-selection, or Paper-trading gate. Claude's 2026-07-31
+falsification-first review was `supported-with-limits`: it required explicit
+GPU arbitration, holdout-spend lineage for synthesis proposals, and a clear
+portfolio-to-Execution contract seam.
