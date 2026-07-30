@@ -67,6 +67,7 @@ def test_cpu_smoke_is_per_symbol_deterministic_and_target_free(
 ) -> None:
     _deny_external_access(monkeypatch)
     prepared = baseline_breadth_input
+    assert_prepared_unchanged = _memoize_prepared_input_attestation(monkeypatch, prepared)
     artifact_root = tmp_path / "model-artifacts"
 
     first = breadth.run_kis_nas_d1_l2_logistic_smoke(
@@ -96,6 +97,7 @@ def test_cpu_smoke_is_per_symbol_deterministic_and_target_free(
     assert summary["reporting"]["pnl_materialized"] is False
     assert first.summary_path.is_relative_to(artifact_root)
     _assert_no_value_level_fields(summary)
+    assert_prepared_unchanged()
 
 
 def test_symbol_and_validation_changes_do_not_cross_the_fit_boundary(
@@ -622,20 +624,41 @@ def _memoize_prepared_input_attestation(
 ) -> Callable[[], None]:
     """Keep one real attestation while avoiding repeat hashes of this immutable fixture."""
 
-    original = breadth._require_attested_breadth_input  # noqa: SLF001
-    was_attested = False
+    original_breadth = breadth._require_attested_breadth_input  # noqa: SLF001
+    original_campaign = campaign.require_attested_kis_nas_d1_sequence_campaign_input
+    prepared_campaign = prepared.campaign_input
+    breadth_was_attested = False
+    campaign_was_attested = False
+
+    def require_campaign_attested(value: object) -> None:
+        nonlocal campaign_was_attested
+        if value is not prepared_campaign or not campaign_was_attested:
+            original_campaign(value)
+            if value is prepared_campaign:
+                campaign_was_attested = True
 
     def require_attested(value: object) -> None:
-        nonlocal was_attested
-        if value is not prepared or not was_attested:
-            original(value)
+        nonlocal breadth_was_attested
+        if value is not prepared or not breadth_was_attested:
+            original_breadth(value)
             if value is prepared:
-                was_attested = True
+                breadth_was_attested = True
 
+    monkeypatch.setattr(
+        campaign,
+        "require_attested_kis_nas_d1_sequence_campaign_input",
+        require_campaign_attested,
+    )
+    monkeypatch.setattr(
+        breadth,
+        "require_attested_kis_nas_d1_sequence_campaign_input",
+        require_campaign_attested,
+    )
     monkeypatch.setattr(breadth, "_require_attested_breadth_input", require_attested)
 
     def assert_prepared_unchanged() -> None:
-        original(prepared)
+        original_campaign(prepared_campaign)
+        original_breadth(prepared)
 
     return assert_prepared_unchanged
 

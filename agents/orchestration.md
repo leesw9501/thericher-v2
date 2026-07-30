@@ -11,12 +11,12 @@ second goal. Git and external artifacts retain historical evidence.
   complete and does not gate this execution-only objective.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, completed its 08:15 KST bounded
-  continuation as `collected` / `resume` and is now `Ready` for 08:45 KST. Its
-  source-safe receipt records 3,995 accepted pages, 137 categorical failures,
-  and 695 remaining targets; aggregate page ETA remains `unknown`. It alone
-  owns KIS credentials, network, cursor, pacing, mutable cache, and postprocess.
-  The current QQQ head-cache scheduler remains an independent Data source for
-  the existing Execution canary.
+  continuation as `collected` / `resume` and is now `Running` its 08:45 KST
+  continuation. Its last source-safe receipt records 3,995 accepted pages, 137
+  categorical failures, and 695 remaining targets; aggregate page ETA remains
+  `unknown`. It alone owns KIS credentials, network, cursor, pacing, mutable
+  cache, and postprocess. The current QQQ head-cache scheduler remains an
+  independent Data source for the existing Execution canary.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
   campaign. GPU is free and correctly has no eligible job while historical D1
@@ -46,9 +46,9 @@ second goal. Git and external artifacts retain historical evidence.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
-- **Due:** Data owns its next broad continuation at 2026-07-31 08:45 KST;
-  the QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent
-  fresh receipt is source-local evidence, not foreground idle or a company hold.
+- **Due:** Data owns the active 2026-07-31 08:45 KST broad continuation; the
+  QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent fresh
+  receipt is source-local evidence, not foreground idle or a company hold.
 - **Verification:** the current independent QQQ-path reattestation passed
   `134 passed, 1 skipped` focused tests in 3.56 seconds. Its serial
   `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
@@ -61,7 +61,7 @@ second goal. Git and external artifacts retain historical evidence.
   added, a fresh serial `pytest -q` again exceeded the 12-minute authority
   window and remains `unavailable`, not passed. The isolated feedback helper
   `scripts/run_parallel_tests.ps1 -Workers 4` completed `1763 passed, 14
-  skipped` in 248.09 seconds. Its duration profile shows several bounded,
+  skipped` in 225.60 seconds. Its duration profile shows several bounded,
   compute-heavy Research tests rather than a replacement serial authority.
 
 ## Current Bottleneck And Improvement
@@ -89,15 +89,14 @@ implementation feedback while preserving serial `pytest -q` as the required
 goal-boundary verification.
 
 The current reversible verification improvement retains the isolated
-file-distributed feedback runner and adds two test-only fast paths: three fresh
+file-distributed feedback runner and adds test-only fast paths: three fresh
 daily-gate replay tests allocate per-path event sequences without rescanning an
-empty temporary JSONL, while three CUDA breadth tests retain one original input
-attestation at both entry and exit rather than rehashing an unchanged fixture
-per candidate. Focused results are `3 passed in 28.33s` for the CUDA cases
-(formerly 52--59 seconds each in the prior profile) and `3 passed in 41.88s`
-for the daily-gate cases. Production event, model, KIS, and scheduler behavior
-is unchanged; the result cannot close the QQQ lifecycle goal or replace the
-required serial suite.
+empty temporary JSONL, while four NAS D1 breadth tests attest their immutable
+campaign fixture at first use and test exit rather than rehashing it per
+candidate. The latest focused CPU-breadth case passed in 5.15 seconds (formerly
+41.36 seconds); the whole module passed `11` tests in 55.56 seconds. Production
+event, model, KIS, and scheduler behavior is unchanged; the result cannot close
+the QQQ lifecycle goal or replace the required serial suite.
 
 ## Durable Knowledge
 
