@@ -71,18 +71,19 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
-- The 2026-07-30 06:20 KST QQQ scheduler cycle preserved a source-safe
-  Data-local recovery. Its capture receipt
-  `sha256:22c924be920a5a2a047ff25d4844da40cadc9a47a428f38585274742f15546cd`
-  rejected both exact minute inputs as `minute_duplicate_conflict`; the QQQ
-  session `sha256:e6d119fc72f95b758f1512276374c370ced8edb4c21cb48461851398d8a2e7cb`
-  was `paper_only` `no_intent/runtime_window_stale`, before account, quote,
-  intent, or canary work. Its paired terminal
-  `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`
-  records `recovery/collection_exit_nonzero` with prospective validation
-  `validated`. No lifecycle was created. The next owned due time is
-  2026-07-31 00:31 KST; this scoped recovery does not authorize a collector,
-  decision-table, sizing, or scheduler change.
+- The 2026-07-31 00:31 KST QQQ scheduler cycle captured clean current head
+  pages and reached its fresh eligible-exit receipt, but its session
+  `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb402e7`
+  closed `paper_only` `no_intent/account_unavailable`. It made no canary,
+  durable order intent, submit, cancel, modify, or live call. Its paired
+  terminal `sha256:235a322afd6ff0db56fbd49a759ea39fea2b1e34489b28ff9bf85abfa32de4fc`
+  is `complete` with collection and prospective validation both successful.
+  A separate virtual-only read-only bridge completed one minute later under
+  `sha256:9dfe4e83a1cd7ed33c81930c34e4c9afd430032a3ceb7942fb6149722f3a99b4`,
+  but cannot substitute for this session's account/quote boundary. Claude's
+  falsification-first verdict was `unsupported` for treating that bridge as
+  exact-session recovery. The next owned due time is 02:31 KST; no collector,
+  decision-table, sizing, or scheduler change follows.
 - A source-only Execution/Validation trace confirms this is not a static route
   contradiction: `receipt_not_eligible` exits before account, quote, or order
   work, and later fresh `enter` or `exit` sign pairs can use the same installed

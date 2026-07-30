@@ -103,21 +103,18 @@ the offline observer only after a current or complete cache result. A
   Paper, or live status. Data now preserves the independent current QQQ head
   cache for the existing freshness-gated Execution canary; it does not use the
   quarantined historical D1 panel as a runtime input.
-- The 2026-07-30 06:20 KST intraday-head task retained a source-safe incomplete
-  capture receipt `sha256:22c924be920a5a2a047ff25d4844da40cadc9a47a428f38585274742f15546cd`:
-  both QQQ/NAS/1m and SPY/AMS/1m were rejected as `minute_duplicate_conflict`.
-  Its QQQ session receipt
-  `sha256:e6d119fc72f95b758f1512276374c370ced8edb4c21cb48461851398d8a2e7cb`
-  is `paper_only` `no_intent/runtime_window_stale`, before account, quote,
-  intent, or canary work. The paired terminal receipt is
-  `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`,
-  with collection `exit_nonzero` and prospective validation `validated`. The
-  scheduler owns the next 2026-07-31 00:31 KST observation; this does not call
-  for a manual collector launch or a change to the QQQ decision table. The
-  source-safe category does not distinguish a candidate-batch from a retained-
-  head mismatch; exact duplicates remain accepted, and focused recovery tests
-  establish that either mismatch yields to the next fresh page without a
-  collector or scheduler change.
+- The 2026-07-31 00:31 KST intraday-head task retained a complete source-safe
+  capture `sha256:710b63a89b1ba0c873dccffe6b649f359d76f1e903c0417cadad8762108a688d`:
+  QQQ/NAS/1m and SPY/AMS/1m each collected 120 rows with zero exact overlap or
+  conflict. The paired QQQ session reached a current eligible-exit input but
+  closed `paper_only` `no_intent/account_unavailable` before canary work; its
+  terminal `sha256:235a322afd6ff0db56fbd49a759ea39fea2b1e34489b28ff9bf85abfa32de4fc`
+  is complete with prospective validation `validated`. The scheduler owns the
+  next 02:31 KST observation; this does not call for a manual collector launch
+  or a change to the QQQ decision table. The earlier source-safe
+  `minute_duplicate_conflict` category remains origin-opaque; exact duplicates
+  remain accepted, and focused recovery tests establish that either mismatch
+  yields to the next fresh page without a collector or scheduler change.
 - The offline Norgate/KIS D1 metadata conformance receipt is complete at
   `sha256:17a5c604...bf26afa` with receipt
   `sha256:f57ff545...10d7f60`. Both inputs expose the same five D1 OHLCV
@@ -662,7 +659,7 @@ reattachment/chronology path; an absent receipt is external timing evidence and
 does not delay the offline Norgate/KIS metadata-conformance package.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
-intraday schedule owns its next due at 2026-07-31 00:31 KST; do not manually
+intraday schedule owns its next due at 2026-07-31 02:31 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
 cursor collection. SPY/NAS is an observed-only unavailable request shape, not
 a closed source limitation. The frozen 523-symbol Norgate panel has now been

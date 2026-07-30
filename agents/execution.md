@@ -12,10 +12,10 @@ output as untrusted input.
 ## Current Objective
 
 The current KIS Paper read-only account bridge was reattested on the current
-local image at 2026-07-30 05:11 KST. Its virtual-only account, position, and
+local image at 2026-07-31 00:32 KST. Its virtual-only account, position, and
 open-order read wrote source-safe external evidence
-`execution/kis-paper-console-bridge/20260729T201139434674Z-complete.json`
-with hash `sha256:104f8e82f56c7bde7a8704c6af5d0e6d93ae5e67f240dbbe7f9c8288e966f8d3`.
+`execution/kis-paper-console-bridge/20260730T153229125231Z-complete.json`
+with hash `sha256:9dfe4e83a1cd7ed33c81930c34e4c9afd430032a3ceb7942fb6149722f3a99b4`.
 It is `complete`, `paper_only`, and `submit_capability: false`; its payload
 contains only fixed currency/count category keys, never an account identifier,
 raw amount, price, position, order, token, or credential. Focused read-only
@@ -48,17 +48,17 @@ decision-table edit, or live route is introduced.
   and records current `outcome_unknown/reconciliation_unresolved` only. No
   submit, cancel, modify, replacement, or live call occurred. This exact
   generic run is not the QQQ lifecycle objective and cannot block it.
-- The 2026-07-30 06:20 KST QQQ task retained its exact Data-local collection
-  failure as `minute_duplicate_conflict` for both current minute inputs. Its
-  session `sha256:e6d119fc72f95b758f1512276374c370ced8edb4c21cb48461851398d8a2e7cb`
-  is `paper_only` `no_intent/runtime_window_stale`, with no pre-account or
-  pre-submit freshness pass, account, quote, intent, canary, submit, cancel,
-  modify, or live action. The paired terminal
-  `sha256:6810389d11e3cb8d8dad2dc96c8b574608d1af3360b99462babe675ae27fa84e`
-  is `recovery/collection_exit_nonzero` while independent prospective
-  validation is `validated`. The next scheduler-owned observation is
-  2026-07-31 00:31 KST; this scoped recovery does not justify changing the
-  fixed decision table or forcing a replacement intent.
+- The 2026-07-31 00:31 KST QQQ task had a fresh eligible-exit input and
+  terminal `complete`, but its session
+  `sha256:4d4be5eaf55c5ddcc8e7d80b0c4af60e53618817521ee47deed67b1c7cb`
+  closed `paper_only` `no_intent/account_unavailable`. It created no canary,
+  durable intent, submit, cancel, modify, or live action. The separate
+  read-only bridge completed one minute later, but its `submit_capability: false`
+  scope cannot recover or substitute for this scheduled session's
+  account/quote boundary. Claude's falsification-first verdict is
+  `unsupported` for treating this pair as exact-session recovery. The next
+  scheduler-owned observation is 02:31 KST; no decision-table change or
+  replacement intent follows.
 - The 2026-07-30 operating review independently reattested the installed QQQ
   path's receipt-derived identity, pre-account and pre-submit freshness,
   virtual-route isolation, intent-before-side-effect, and
