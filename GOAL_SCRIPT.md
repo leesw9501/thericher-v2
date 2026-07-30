@@ -9,8 +9,8 @@ Working directory: C:\Users\Public\Documents\thericher-v2
 
 Run .\scripts\start_next_codex_task.ps1. Then read and follow
 `NEXT_CODEX_GOAL.md`, `HANDOFF.md`, `AGENTS.md`, and the active stateboards:
-`agents/data.md`, `agents/engine-research.md`, `agents/execution.md`, and
-`agents/orchestration.md`.
+`agents/data.md`, `agents/engine-research.md`, `agents/research-steward.md`,
+`agents/execution.md`, and `agents/orchestration.md`.
 
 Act as the Codex Orchestrator. Decompose the single company objective into
 disjoint, ready work packages. Run non-conflicting Data, Engine Research, and
@@ -34,9 +34,10 @@ Claude agreement can resolve only a reversible, no-cost choice already inside
 standing authority; it cannot replace explicit approval for live capital, paid
 commitments, unclear rights, public exposure, or a major runtime change.
 
-When the exclusive GPU is free, have Engine Research start its first ready,
-frozen campaign or record the exact data, contract, or resource fact that makes
-none eligible. Do not manufacture training merely to maximize utilization.
+When the exclusive GPU is free, have Research Steward allocate the first ready,
+frozen Engine Research campaign or record the exact data, contract, or resource
+fact that makes none eligible. Do not manufacture training merely to maximize
+utilization.
 
 Treat a genuinely unknown private non-live provider, runtime, data-capability,
 or throughput behavior as a bounded capability probe. Do not turn it into an

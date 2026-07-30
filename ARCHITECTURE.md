@@ -99,9 +99,11 @@ dashboard/   read-focused monitor plus emergency controls
 ops/         daily reports, next-goal scripts, scheduled maintenance
 ```
 
-Durable work is owned by Data, Engine Research, and Execution lanes. Codex may
-run their disjoint work packages in parallel. Validation is independent and
-temporary; Infra and Review are invoked capabilities.
+Durable work is owned by Data, Engine Research, Research Steward, and Execution
+lanes. Research Steward owns only cross-track GPU and sealed-evaluation custody;
+it does not select a strategy or modify execution risk. Codex may run their
+disjoint work packages in parallel. Validation is independent and temporary;
+Infra and Review are invoked capabilities.
 
 ## Target-Position Policy Graph
 

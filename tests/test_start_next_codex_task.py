@@ -13,6 +13,7 @@ def test_start_preflight_requires_and_reports_only_active_stateboards() -> None:
     for stateboard in (
         "agents/data.md",
         "agents/engine-research.md",
+        "agents/research-steward.md",
         "agents/execution.md",
         "agents/orchestration.md",
     ):

@@ -28,6 +28,7 @@ Write-Host "== Required first-read files =="
 $activeStateboards = @(
     "agents/data.md",
     "agents/engine-research.md",
+    "agents/research-steward.md",
     "agents/execution.md",
     "agents/orchestration.md"
 )
