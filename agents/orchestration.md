@@ -41,11 +41,13 @@ second goal. Git and external artifacts retain historical evidence.
 - **Due:** Task Scheduler owns the next source/canary trigger at 2026-08-01
   00:31 KST. An absent fresh receipt is source-local evidence, not foreground
   idle or a company hold.
-- **Verification:** an independent QQQ-path reattestation passed 64 focused
-  tests. The required serial suite exceeded its 12-minute limit and is
-  unavailable rather than substituted; Ruff and both Compose configurations
-  passed. This leaves the installed scheduler, its current receipt contract,
-  and the next due action unchanged.
+- **Verification:** the current independent QQQ-path reattestation passed
+  `134 passed, 1 skipped` focused tests in 3.56 seconds. Its serial
+  `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
+  12-minute authority window and is `unavailable`, not passed or substituted;
+  the last Ruff and both Compose configurations remain passed. This leaves the
+  installed scheduler, its current receipt contract, and the next due action
+  unchanged.
 - **Verification throughput:** after the current submit-ordering coverage was
   added, a fresh serial `pytest -q` again exceeded the 12-minute authority
   window and remains `unavailable`, not passed. The isolated feedback helper
