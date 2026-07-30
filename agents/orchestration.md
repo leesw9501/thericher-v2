@@ -77,10 +77,16 @@ does not touch KIS, Docker, market data, or artifacts, so retain it for focused
 implementation feedback while preserving serial `pytest -q` as the required
 goal-boundary verification.
 
-The current reversible verification improvement is to retain the isolated
-file-distributed feedback runner while a later, separately scoped test-speed
-package reduces the measured compute-heavy serial work. Its result cannot close
-the QQQ lifecycle goal or replace the required serial suite.
+The current reversible verification improvement retains the isolated
+file-distributed feedback runner and adds two test-only fast paths: three fresh
+daily-gate replay tests allocate per-path event sequences without rescanning an
+empty temporary JSONL, while three CUDA breadth tests retain one original input
+attestation at both entry and exit rather than rehashing an unchanged fixture
+per candidate. Focused results are `3 passed in 28.33s` for the CUDA cases
+(formerly 52--59 seconds each in the prior profile) and `3 passed in 41.88s`
+for the daily-gate cases. Production event, model, KIS, and scheduler behavior
+is unchanged; the result cannot close the QQQ lifecycle goal or replace the
+required serial suite.
 
 ## Durable Knowledge
 

@@ -6,6 +6,7 @@ import os
 import socket
 import sys
 import urllib.request
+from collections.abc import Callable
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -150,6 +151,7 @@ def test_cuda_breadth_writes_external_source_safe_fake_checkpoints(
 ) -> None:
     _deny_external_access(monkeypatch)
     prepared = baseline_breadth_input
+    assert_prepared_unchanged = _memoize_prepared_input_attestation(monkeypatch, prepared)
     artifact_root = tmp_path / "model-artifacts"
     cpu_summary = _write_cpu_smoke_summary(prepared, artifact_root / "cpu-summary.json")
 
@@ -178,6 +180,7 @@ def test_cuda_breadth_writes_external_source_safe_fake_checkpoints(
     source = Path(breadth.__file__).read_text(encoding="utf-8")
     assert "weights_only=True" in source
     assert "weights_only=False" not in source
+    assert_prepared_unchanged()
 
 
 def test_cuda_breadth_rejects_an_unattested_cpu_smoke_summary(
@@ -248,6 +251,7 @@ def test_cuda_unavailable_is_a_scoped_source_safe_receipt(
     baseline_breadth_input: breadth.KisNasD1SequenceBreadthInput,
 ) -> None:
     prepared = baseline_breadth_input
+    assert_prepared_unchanged = _memoize_prepared_input_attestation(monkeypatch, prepared)
     artifact_root = tmp_path / "model-artifacts"
     cpu_summary = _write_cpu_smoke_summary(prepared, artifact_root / "cpu-summary.json")
     fake_cuda = SimpleNamespace(is_available=lambda: False)
@@ -266,6 +270,7 @@ def test_cuda_unavailable_is_a_scoped_source_safe_receipt(
     assert run.candidates == ()
     assert summary["reason"] == "PyTorch CUDA is unavailable in the research runtime"
     assert summary["artifact_policy"]["checkpoints_written"] is False
+    assert_prepared_unchanged()
 
 
 def test_cuda_candidate_failure_cleans_its_incomplete_checkpoint(
@@ -275,6 +280,7 @@ def test_cuda_candidate_failure_cleans_its_incomplete_checkpoint(
 ) -> None:
     _deny_external_access(monkeypatch)
     prepared = baseline_breadth_input
+    assert_prepared_unchanged = _memoize_prepared_input_attestation(monkeypatch, prepared)
     artifact_root = tmp_path / "model-artifacts"
     cpu_summary = _write_cpu_smoke_summary(prepared, artifact_root / "cpu-summary.json")
 
@@ -297,6 +303,7 @@ def test_cuda_candidate_failure_cleans_its_incomplete_checkpoint(
     assert summary["artifact_policy"]["checkpoints_written"] is False
     assert summary["failure"]["category"] == "runtime"
     _assert_no_value_level_fields(summary)
+    assert_prepared_unchanged()
 
 
 def test_breadth_rejects_repository_and_symlink_artifacts_and_exposes_offline_docker_contract(
@@ -607,6 +614,30 @@ def _deny_external_access(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(socket, "create_connection", denied)
     monkeypatch.setattr(urllib.request, "urlopen", denied)
     monkeypatch.setattr(os, "getenv", denied)
+
+
+def _memoize_prepared_input_attestation(
+    monkeypatch: pytest.MonkeyPatch,
+    prepared: breadth.KisNasD1SequenceBreadthInput,
+) -> Callable[[], None]:
+    """Keep one real attestation while avoiding repeat hashes of this immutable fixture."""
+
+    original = breadth._require_attested_breadth_input  # noqa: SLF001
+    was_attested = False
+
+    def require_attested(value: object) -> None:
+        nonlocal was_attested
+        if value is not prepared or not was_attested:
+            original(value)
+            if value is prepared:
+                was_attested = True
+
+    monkeypatch.setattr(breadth, "_require_attested_breadth_input", require_attested)
+
+    def assert_prepared_unchanged() -> None:
+        original(prepared)
+
+    return assert_prepared_unchanged
 
 
 def _assert_no_value_level_fields(payload: object) -> None:

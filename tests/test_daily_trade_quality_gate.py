@@ -28,11 +28,31 @@ from thericher_v2.research.kis_daily_comparative_validation import (
     PrecontractExposure,
     freeze_kis_daily_comparative_contract,
 )
+from thericher_v2.state.event_log import EventStore
 
 _SYMBOLS = ("QQQ", "SPY", "IWM")
 
 
-def test_runs_frozen_l2_gate_offline_with_local_paper_only(tmp_path: Path, monkeypatch) -> None:
+@pytest.fixture
+def fresh_event_sequences(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Fast sequence allocation for gate replays created in fresh test directories only."""
+
+    next_sequences: dict[Path, int] = {}
+
+    def next_seq(store: EventStore) -> int:
+        path = store.jsonl_path.resolve()
+        sequence = next_sequences.get(path, 1)
+        next_sequences[path] = sequence + 1
+        return sequence
+
+    monkeypatch.setattr(EventStore, "next_seq", next_seq)
+
+
+def test_runs_frozen_l2_gate_offline_with_local_paper_only(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    fresh_event_sequences: None,
+) -> None:
     full_catalog = _catalog(tmp_path, session_count=374)
     contract = _contract(full_catalog)
     catalog = _prefix(full_catalog, contract)
@@ -98,6 +118,7 @@ def test_runs_frozen_l2_gate_offline_with_local_paper_only(tmp_path: Path, monke
         json.loads(line)
         for line in events_path.read_text(encoding="utf-8").splitlines()
     ]
+    assert [event["seq"] for event in events] == list(range(1, len(events) + 1))
     fills = [event for event in events if event["event_type"] == "fill"]
     assert fills
     assert all(event["payload"]["source"] == "local_paper" for event in fills)
@@ -131,7 +152,10 @@ def test_core_rejects_full_catalog_before_burned_holdout_materialization(tmp_pat
         )
 
 
-def test_validation_values_do_not_change_development_model(tmp_path: Path) -> None:
+def test_validation_values_do_not_change_development_model(
+    tmp_path: Path,
+    fresh_event_sequences: None,
+) -> None:
     first_full = _catalog(tmp_path / "first", session_count=374)
     second_full = _catalog(
         tmp_path / "second",
@@ -170,7 +194,10 @@ def test_validation_values_do_not_change_development_model(tmp_path: Path) -> No
     assert first_result.model_path.read_bytes() == second_result.model_path.read_bytes()
 
 
-def test_gate_accepts_only_the_prefix_through_its_embargo(tmp_path: Path) -> None:
+def test_gate_accepts_only_the_prefix_through_its_embargo(
+    tmp_path: Path,
+    fresh_event_sequences: None,
+) -> None:
     full_catalog = _catalog(tmp_path / "full", session_count=374)
     contract = _contract(full_catalog)
     prefix = _prefix(full_catalog, contract)
