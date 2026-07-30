@@ -53,6 +53,16 @@ an independently re-retrieved rights, source-semantics, adjustment, or
 point-in-time compatibility claim, so this is an unconsumed discovery handoff,
 not a hypothesis, campaign, GPU job, ensemble input, or Paper input.
 
+The separate source-only multi-track pass
+`multi-track-source-pass-20260731-r1` is external under the same root with
+hash `sha256:9fd0f4398d5e56b3eebd740d6eb3a56146c0eca85075aca166c003ec65ca2343`.
+It records two technical/chart, two momentum/regime, and one official Qlib
+classical-ML reference. All five remain `source_unverified` and unconsumed:
+they neither qualify the current source data nor authorize code, data,
+dependency, runtime, GPU, ensemble, KIS, or Paper work. A later Engine
+Research package must independently re-retrieve one source and freeze its own
+causal data, timing, split, costs, and falsifier before it may use it.
+
 ## Research Track Portfolio
 
 Engine Research owns four parallel tracks under one campaign and trial-custody
