@@ -275,6 +275,11 @@ research, and model-side PnL attribution.
   mechanisms, classical statistical/ML models, and sequence/DL or public-model
   benchmarks. A track owns one hypothesis at a time and uses the same campaign
   contract discipline; it does not get its own stateboard, authority, or goal.
+  A track assignment ends with one bounded source receipt, frozen campaign
+  contract, `rejected`, or `input_unavailable` result, or expires at the next
+  company-goal boundary. A continuation must be a fresh Engine Research package
+  with new bounded evidence; tracks cannot become shadow queues or promotion
+  paths outside the durable lane.
 - Keep public foundation-model work source- and weight-provenance isolated.
   Its claimed discovery/evaluation sample and, when applicable, pretraining
   corpus period and instrument scope must be known or explicitly
@@ -325,6 +330,12 @@ or an Engine Research subteam. It is invoked only when at least two independentl
 frozen candidate outputs have aligned out-of-fold timestamps, the same
 availability grade, and comparable cost and replay assumptions.
 
+- Before invocation, each candidate must predeclare the same out-of-fold row
+  keys, completed-bar/source-adjustment semantics, decision-to-execution
+  availability/latency, cost/fill model, and frozen temporal split. A missing
+  or mismatched field returns `no_combination`; the synthesis assignment may
+  not repair the alignment, union incompatible samples, or tune a member after
+  seeing its common out-of-fold evidence.
 - It receives only frozen candidate evidence and evaluates incremental net
   value, prediction/error dependence, turnover, concentration, drawdown, and
   stale/missing behavior. It never retrains, retunes, reweights, or replaces a
@@ -334,7 +345,8 @@ availability grade, and comparable cost and replay assumptions.
   model, create a Paper intent, or override Execution risk.
 - It gets no stateboard until two separate company-goal boundaries show an
   independent synthesis changed a promotion or no-promotion decision. Until
-  then it is an invoked sub-agent with an external evidence receipt only.
+  then it is an invoked sub-agent with one external evidence receipt only and
+  exits after `no_combination` or a single frozen ensemble-campaign proposal.
 
 ### Infra Capability
 

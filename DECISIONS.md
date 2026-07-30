@@ -7542,3 +7542,28 @@ fresh QQQ scheduler lifecycle.
 
 Reason: exact unknown outcomes need recoverable evidence without mutating their
 causal record or allowing a recovery tool to become an accidental order retry.
+
+## 2026-07-31 - Research method tracks remain one lane with disposable synthesis
+
+Decision: retain one durable Engine Research lane. Technical/chart,
+momentum/regime/cross-section, classical ML, and sequence/DL/public-model work
+remain bounded track packages inside that lane rather than separate agents,
+stateboards, goals, or promotion authorities. Each assignment expires with its
+bounded result or at the next company-goal boundary; continuation requires a
+fresh Engine Research package and evidence reference.
+
+Cross-Track Synthesis remains a temporary Validation assignment. It may run only
+when at least two independently frozen candidates predeclare identical
+out-of-fold row keys, completed-bar/source-adjustment semantics,
+decision-to-execution availability/latency, cost/fill model, and temporal split.
+Any mismatch returns `no_combination`; the assignment cannot repair alignment,
+retune members, select a winner, create a Paper action, or persist a queue.
+
+Claude's falsification-first verdict was `supported-with-limits`. It identified
+undefined expiry and alignment as the main ways a useful track portfolio could
+quietly become permanent parallel teams and a post-hoc ensemble-selection path.
+The explicit expiry and exact compatibility tuple above resolve that limitation.
+
+Reason: breadth is useful only when every method can be independently falsified
+and later compared on the same causal contract. This preserves parallel research
+without turning organization itself into a strategy or an authority path.
