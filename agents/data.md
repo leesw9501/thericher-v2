@@ -146,18 +146,19 @@ the offline observer only after a current or complete cache result. A
   `sha256:3930a95a...05176e`: all five fixed split pairs across AAPL, AMZN,
   GOOGL, and NVDA were present and categorical signatures were observed. This
   narrowly supports the declared split behavior but does not qualify all
-  adjustments or corporate actions. The next Data package is an offline
-  all-six-symbol unexplained-discontinuity census; it does not touch the
-  running broad collector.
-- At 2026-07-31 07:09 KST, the sole
-  `thericher-kis-paper-daily-broad-backfill` owner remains `Running` through
-  its one Docker collector, started at 00:15 KST with a bounded 28,800-second
-  runtime. Its current source-safe D: index is generation 21,162: 2,119 current
-  NAS targets, 40,935 accepted pages, 754 categorical failures, and target
-  states `723 complete / 715 ready / 681 source_limited`. Remaining page count
-  and ETA are `unknown`; the next Task Scheduler trigger is 07:15 KST and the
-  current process remains `resume`. No postrun receipt exists yet. The task
-  alone owns its cursor, lock, client, pacing, and cache; do not manually launch,
+  adjustments or corporate actions. The all-six-symbol unexplained-discontinuity
+  census is complete and did not touch the independent broad collector.
+- At 2026-07-31 08:15 KST, the sole
+  `thericher-kis-paper-daily-broad-backfill` owner completed its bounded
+  continuation as `collected` / `resume`. Its latest source-safe receipt is
+  `run=20260730T231517933713Z-add9194db7ea`: 2,145 chunk attempts, 3,995
+  accepted pages, 137 categorical failures, and target states
+  `731 complete / 695 ready / 693 source_limited`. The durable per-target
+  cursor remains owned by the cache; aggregate remaining pages and ETA are
+  `unknown`. Task Scheduler is `Ready` with result `0` and next due at
+  2026-07-31 08:45 KST. No stable full-breadth postrun receipt exists yet,
+  which is expected for this non-terminal collection result. The task alone
+  owns its cursor, lock, client, pacing, and cache; do not manually launch,
   stop, duplicate, mutate, or make a parallel KIS call.
 - The source-safe terminal receipt
   `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20260727T1922500308577Z.json`
@@ -676,10 +677,10 @@ limitation.
 
 ## Next Handoff
 
-Keep the currently running broad collector independent. When its digest-bound
-postrun receipt appears, consume it only through the installed offline
-reattachment/chronology path; an absent receipt is external timing evidence and
-does not delay the offline Norgate/KIS metadata-conformance package.
+Keep the scheduler-owned broad collector independent. Reattach the latest
+`collected` receipt only through its installed offline postprocess/chronology
+path when it becomes terminal; an absent stable full-breadth postrun receipt is
+normal for the current non-terminal result and does not delay another lane.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
 intraday schedule owns its next due at 2026-08-01 00:31 KST; do not manually

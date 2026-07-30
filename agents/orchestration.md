@@ -10,10 +10,13 @@ second goal. Git and external artifacts retain historical evidence.
   lifecycle through the installed scheduler. The earlier D1 census remains
   complete and does not gate this execution-only objective.
 - **Data:** the sole broad-D1 Task Scheduler owner,
-  `thericher-kis-paper-daily-broad-backfill`, is `Running`. It alone owns KIS
-  credentials, network, cursor, pacing, mutable cache, and postprocess. The
-  current QQQ head-cache scheduler remains an independent Data source for the
-  existing Execution canary.
+  `thericher-kis-paper-daily-broad-backfill`, completed its 08:15 KST bounded
+  continuation as `collected` / `resume` and is now `Ready` for 08:45 KST. Its
+  source-safe receipt records 3,995 accepted pages, 137 categorical failures,
+  and 695 remaining targets; aggregate page ETA remains `unknown`. It alone
+  owns KIS credentials, network, cursor, pacing, mutable cache, and postprocess.
+  The current QQQ head-cache scheduler remains an independent Data source for
+  the existing Execution canary.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
   campaign. GPU is free and correctly has no eligible job while historical D1
@@ -43,9 +46,9 @@ second goal. Git and external artifacts retain historical evidence.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
-- **Due:** Task Scheduler owns the next source/canary trigger at 2026-08-01
-  00:31 KST. An absent fresh receipt is source-local evidence, not foreground
-  idle or a company hold.
+- **Due:** Data owns its next broad continuation at 2026-07-31 08:45 KST;
+  the QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent
+  fresh receipt is source-local evidence, not foreground idle or a company hold.
 - **Verification:** the current independent QQQ-path reattestation passed
   `134 passed, 1 skipped` focused tests in 3.56 seconds. Its serial
   `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
@@ -109,9 +112,9 @@ required serial suite.
 
 ## Recovery And Next Handoff
 
-Data is `resume` only for its already-running workers. Census is `complete`.
-The generic unknown canary's read-only recovery is `complete` while its exact
-intent remains unresolved and unretried. Execution now owns the next QQQ
-outcome: any unknown Paper submission is reconciled only for that exact durable
-intent and never retried speculatively; a no-intent or stale input remains
-scoped to its session while other ready lanes continue.
+Data is `resume` through its scheduler-owned broad continuation; census is
+`complete`. The generic unknown canary's read-only recovery is `complete` while
+its exact intent remains unresolved and unretried. Execution now owns the next
+QQQ outcome: any unknown Paper submission is reconciled only for that exact
+durable intent and never retried speculatively; a no-intent or stale input
+remains scoped to its session while other ready lanes continue.
