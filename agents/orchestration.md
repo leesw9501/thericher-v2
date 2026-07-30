@@ -53,7 +53,8 @@ second goal. Git and external artifacts retain historical evidence.
   `134 passed, 1 skipped` focused tests in 3.56 seconds. Its serial
   `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
   12-minute authority window and is `unavailable`, not passed or substituted;
-  the last Ruff and both Compose configurations remain passed. This leaves the
+  the 2026-07-31 operating-review serial rerun also timed out at the same
+  authority limit. Ruff and both Compose configurations passed. This leaves the
   installed scheduler, its current receipt contract, and the next due action
   unchanged.
 - **Verification throughput:** after the current submit-ordering coverage was
