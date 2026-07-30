@@ -84,6 +84,13 @@ decision-table edit, or live route is introduced.
   unavailable, not as a pass; Ruff and both Compose configurations passed.
   This verification fact does not change scheduler ownership, receipt
   eligibility, or any Paper intent.
+- The 2026-07-31 temporary Validation reattestation added one direct ordering
+  assertion: the injected virtual-paper submit transport reads the durable
+  state as `submission_started` at the exact submit side-effect boundary. The
+  isolated QQQ lifecycle/schedule/route suite then passed 155 tests, with no
+  KIS call, credential read, scheduler mutation, or Paper intent. This closes a
+  test-observability gap only; it does not change the existing route, decision
+  table, sizing, freshness, or next due session.
 - Temporary Validation traced `receipt_not_eligible` to the pre-account
   receipt-class gate. The existing fixed table still has reachable fresh
   `enter` and `exit` rows, and its QQQ flat-entry/position-resolution tests

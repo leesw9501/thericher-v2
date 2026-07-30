@@ -166,6 +166,22 @@ class BlockingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
         return super().request(request)
 
 
+class StateInspectingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
+    def __init__(self, *, state_path: Path) -> None:
+        super().__init__()
+        self._state_path = state_path
+        self.submit_phases: list[str | None] = []
+
+    def request(self, request: KisHttpRequest) -> KisHttpResponse:
+        if request.headers.get("tr_id") in {
+            KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+        }:
+            state = KisPaperCanaryStateStore(self._state_path).read()
+            self.submit_phases.append(None if state is None else state.phase)
+        return super().request(request)
+
+
 def _paper_post_headers() -> dict[str, str]:
     return {
         "authorization": "Bearer test-token",
@@ -598,6 +614,26 @@ def test_virtual_buy_canary_submits_once_cancels_and_publishes_only_sanitized_st
     persisted_state = KisPaperCanaryStateStore(state_path).read()
     assert persisted_state is not None
     assert persisted_state.submitted_at == NOW
+
+
+def test_canary_persists_submission_started_before_submit_side_effect(tmp_path: Path) -> None:
+    state_path = tmp_path / "private" / "submission-order-1.json"
+    transport = StateInspectingKisPaperCanaryTransport(state_path=state_path)
+
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="submission-order-1",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert transport.submit_phases == ["submission_started"]
+    assert outcome.phase == "submitted"
 
 
 def test_submission_time_is_write_once_across_later_state_transitions(tmp_path: Path) -> None:
