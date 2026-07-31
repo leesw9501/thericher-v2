@@ -114,6 +114,13 @@ candidate. The latest focused CPU-breadth case passed in 5.15 seconds (formerly
 event, model, KIS, and scheduler behavior is unchanged; the result cannot close
 the QQQ lifecycle goal or replace the required serial suite.
 
+The latest test-only improvement keeps the real local-paper replay assertion in
+its dedicated intraday campaign test, while the separate runner-order test now
+uses a lightweight baseline to verify only the six-call dispatch contract. Its
+targeted time fell from 26.58 seconds to 0.50 seconds; the isolated four-worker
+feedback run remains `1769 passed, 14 skipped` and fell from 234.37 to 224.31
+seconds. Production replay, model, KIS, and scheduler behavior is unchanged.
+
 ## Durable Knowledge
 
 - Target-free r6 artifacts are restricted derived external weights, not

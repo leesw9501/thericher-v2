@@ -7,6 +7,7 @@ import urllib.request
 from datetime import date, timedelta
 from decimal import Decimal
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -181,10 +182,36 @@ def test_runner_dispatches_all_naive_paths_in_fixed_phase_order(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
+    calls: list[dict[str, object]] = []
+
+    def fake_baseline(*args: object, **kwargs: object) -> SimpleNamespace:
+        calls.append({"cataloged_bars": args[0], **kwargs})
+        baseline_id = kwargs["baseline_id"]
+        phase = kwargs["phase"]
+        run_label = kwargs["run_label"]
+        assert isinstance(baseline_id, str)
+        assert isinstance(phase, str)
+        assert isinstance(run_label, str)
+        return SimpleNamespace(
+            baseline_id=baseline_id,
+            fill_source="local_paper",
+            replay_evidence=SimpleNamespace(
+                fill_source="local_paper",
+                event_jsonl_path=kwargs["work_dir"] / "events.jsonl",
+            ),
+            result=SimpleNamespace(
+                final_position=0,
+                run_id=f"unit-{phase}-{baseline_id}-{run_label}",
+                decisions_seen=len(kwargs["eligible_signal_starts"]),
+                trades=("trade",) if baseline_id == "always_long" else (),
+            ),
+        )
+
     session_dates = _regular_session_dates()
     catalog = _catalog(tmp_path, session_dates, rising=False)
     _install_selector(monkeypatch, selected=catalog)
     plan = build_kis_intraday_cpu_campaign_plan(catalog, session_dates=session_dates)
+    monkeypatch.setattr(kis_intraday_campaign, "run_naive_cpu_baseline", fake_baseline)
     result = run_kis_intraday_cpu_naive_baselines(
         plan,
         artifact_root=tmp_path / "artifacts",
@@ -225,6 +252,18 @@ def test_runner_dispatches_all_naive_paths_in_fixed_phase_order(
         run.replay_evidence.event_jsonl_path.is_relative_to(tmp_path / "work")
         for run in always_long_runs
     )
+    assert all(call["cataloged_bars"] is plan.cataloged_bars for call in calls)
+    assert [
+        (call["phase"], call["baseline_id"], len(call["eligible_signal_starts"]))
+        for call in calls
+    ] == [
+        ("development", "flat", 10 * 299),
+        ("development", "always_long", 10 * 299),
+        ("development", "previous_bar_direction", 10 * 299),
+        ("validation", "flat", 9 * 299),
+        ("validation", "always_long", 9 * 299),
+        ("validation", "previous_bar_direction", 9 * 299),
+    ]
 
 
 def test_declared_session_windows_do_not_hide_an_intrasession_gap(tmp_path: Path) -> None:
