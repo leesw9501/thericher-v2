@@ -259,11 +259,19 @@ def test_baseline_recovers_only_its_marked_stale_transient_replay(
         encoding="utf-8",
     )
 
-    baseline.run_kis_paper_daily_universe_cpu_baseline(
-        artifact_root=artifact_root,
-        run_label="stale-cleanup",
-        repo_root=repo_root,
-    )
+    class StopReplay(Exception):
+        pass
+
+    def stop_before_replay(**_kwargs: object) -> None:
+        raise StopReplay
+
+    monkeypatch.setattr(baseline, "_run_momentum_cells", stop_before_replay)
+    with pytest.raises(StopReplay):
+        baseline.run_kis_paper_daily_universe_cpu_baseline(
+            artifact_root=artifact_root,
+            run_label="stale-cleanup",
+            repo_root=repo_root,
+        )
 
     assert not stale.exists()
     assert {path.name for path in transient_root.iterdir()} == {active.name}

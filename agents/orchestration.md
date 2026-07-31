@@ -121,6 +121,14 @@ targeted time fell from 26.58 seconds to 0.50 seconds; the isolated four-worker
 feedback run remains `1769 passed, 14 skipped` and fell from 234.37 to 224.31
 seconds. Production replay, model, KIS, and scheduler behavior is unchanged.
 
+The daily-universe stale-transient cleanup test now reaches the public runner's
+pre-replay cleanup hook, then stops before an unrelated twelve-cell local-paper
+baseline. Its focused time fell from 13.10 to 0.28 seconds, while the latest
+four-worker full run remained `1769 passed, 14 skipped` in 222.47 seconds.
+Treat the small whole-suite variation as scheduling noise rather than an
+additive speed claim; the production baseline still has its dedicated
+end-to-end replay test.
+
 ## Durable Knowledge
 
 - Target-free r6 artifacts are restricted derived external weights, not
