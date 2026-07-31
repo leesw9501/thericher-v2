@@ -49,6 +49,11 @@ second goal. Git and external artifacts retain historical evidence.
 - **Due:** Data owns the active 2026-07-31 08:45 KST broad continuation; the
   QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent fresh
   receipt is source-local evidence, not foreground idle or a company hold.
+- **Monitor:** the existing source-safe intraday-head result monitor is the
+  only post-session observer. It now requires a QQQ completion claim to match
+  an explicitly Paper-only `cancelled` canary with `clean` reconciliation and
+  matching validator/terminal evidence; it never invokes KIS, Docker,
+  collection, account, or order paths.
 - **Verification:** the current independent QQQ-path reattestation passed
   `148` focused tests, and the validator boundary passed `26` focused tests.
   The offline reattachment of the retained no-intent session remained
@@ -64,8 +69,8 @@ second goal. Git and external artifacts retain historical evidence.
 - **Verification throughput:** after the current submit-ordering coverage was
   added, a fresh serial `pytest -q` again exceeded the 12-minute authority
   window and remains `unavailable`, not passed. The isolated feedback helper
-  `scripts/run_parallel_tests.ps1 -Workers 4` completed `1763 passed, 14
-  skipped` in 225.60 seconds. Its duration profile shows several bounded,
+  `scripts/run_parallel_tests.ps1 -Workers 4` completed `1769 passed, 14
+  skipped` in 234.37 seconds. Its duration profile shows several bounded,
   compute-heavy Research tests rather than a replacement serial authority.
 
 ## Current Bottleneck And Improvement
