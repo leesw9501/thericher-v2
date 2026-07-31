@@ -59,6 +59,16 @@ authorized private KIS Paper work.
 
 ## Latest Execution Integration
 
+- Completion interpretation for the pending QQQ canary is now fail-closed at
+  the independent offline validator. A session labelled `canary_completed`
+  counts only when its embedded route is explicitly Paper-only, its canary
+  phase is `cancelled`, and reconciliation is `clean`; a submitted, ambiguous,
+  future, non-Paper, or unresolved record remains recovery evidence rather than
+  lifecycle completion. The change neither submits nor retries an order, nor
+  changes the installed scheduler, decision table, sizing, or live boundary.
+  Claude's falsification-first review was `supported-with-limits`: this proves
+  a persisted record is self-consistent, while exact ambiguous intents still
+  require their existing reconcile-first recovery path.
 - The exact prior KIS Paper `outcome_unknown` run
   `canary-20260729T143501313369Z` was reconciled through the hardened
   read-only entrypoint. Its original source-safe evidence remains hash

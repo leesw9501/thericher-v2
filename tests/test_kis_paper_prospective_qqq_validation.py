@@ -295,6 +295,7 @@ def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
         ("outcome_unknown", "unresolved"),
         ("submitted", "clean"),
         ("cancelled", "unresolved"),
+        ("future_terminal", "clean"),
     ],
 )
 def test_rejects_completed_canary_without_terminal_clean_reconciliation(
@@ -327,6 +328,51 @@ def test_rejects_completed_canary_without_terminal_clean_reconciliation(
     with pytest.raises(ValueError, match="canary (lifecycle|reconciliation) is incomplete"):
         validate_kis_paper_prospective_qqq_session(
             session_id=f"prospective-qqq-validation-incomplete-{phase}-{reconciliation_status}",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+@pytest.mark.parametrize(
+    "canary",
+    [
+        {
+            "paper_only": False,
+            "phase": "cancelled",
+            "reconciliation_status": "clean",
+        },
+        {
+            "phase": "cancelled",
+            "reconciliation_status": "clean",
+        },
+    ],
+)
+def test_rejects_completed_canary_without_explicit_paper_only_route(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    canary: dict[str, object],
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-non-paper-route",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="canary_completed",
+        reason_code="cancelled",
+        position_resolution={"paper_only": True, "action": "buy"},
+        prepared={"route": "kis_paper", "status": "ready"},
+        canary=canary,
+    )
+
+    with pytest.raises(ValueError, match="prepared route is invalid"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-non-paper-route",
             cache_root=tmp_path / "cache",
             artifact_root=artifact_root,
             repository_root=repository_root,

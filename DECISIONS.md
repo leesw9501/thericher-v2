@@ -7585,3 +7585,26 @@ approval, model-selection, or Paper-trading gate. Claude's 2026-07-31
 falsification-first review was `supported-with-limits`: it required explicit
 GPU arbitration, holdout-spend lineage for synthesis proposals, and a clear
 portfolio-to-Execution contract seam.
+
+## 2026-07-31 - Require clean cancellation evidence for QQQ lifecycle completion
+
+Decision: retain the installed QQQ session and scheduler unchanged, but make
+the independent offline validator fail closed when interpreting its
+`canary_completed` record. Completion now requires an explicitly Paper-only
+canary payload, terminal `cancelled` phase, and `clean` reconciliation. It
+rejects submitted, ambiguous, unresolved, unknown future, absent-route, and
+non-Paper variants. Rejection preserves scoped recovery evidence; it neither
+submits nor replaces an intent.
+
+Claude's falsification-first verdict was `supported-with-limits`. The adopted
+limit is explicit: this validation proves only that the persisted source-safe
+record is self-consistent, not that a venue independently confirms the
+cancellation. A filled or rejected outcome remains non-completion for this
+cancel-after-submit canary, and any exact ambiguous intent keeps its existing
+reconcile-first recovery path. Focused validator and full QQQ-path tests cover
+the terminal allowlist and explicit Paper-route boundary without a KIS call,
+credential read, scheduler mutation, or Paper intent.
+
+Reason: a session status label alone is insufficient completion evidence. The
+strict conjunction prevents a false lifecycle claim while preserving the
+existing no-duplicate, reconcile-first recovery contract.

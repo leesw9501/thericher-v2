@@ -50,7 +50,11 @@ second goal. Git and external artifacts retain historical evidence.
   QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent fresh
   receipt is source-local evidence, not foreground idle or a company hold.
 - **Verification:** the current independent QQQ-path reattestation passed
-  `134 passed, 1 skipped` focused tests in 3.56 seconds. Its serial
+  `148` focused tests, and the validator boundary passed `26` focused tests.
+  The offline reattachment of the retained no-intent session remained
+  credential-, network-, account-, and order-free. Claude's
+  `supported-with-limits` review requires completion to mean a self-consistent
+  persisted Paper record, not an assertion of venue cancellation. Its serial
   `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
   12-minute authority window and is `unavailable`, not passed or substituted;
   the 2026-07-31 operating-review serial rerun also timed out at the same
@@ -81,6 +85,13 @@ The later 02:31 and 04:31 KST clean-capture sessions were independently
 `receipt_not_eligible` before their account boundaries. They do not recover or
 rewrite the exact 00:31 receipt, but they confirm that new scheduled sessions
 continue independently without a duplicate intent or broker side effect.
+
+The current reversible completion improvement makes the offline validator
+fail closed unless the QQQ record is explicitly Paper-only with a `cancelled`
+phase and `clean` reconciliation. It rejects future or ambiguous phase values
+and cannot create a retry; the existing exact-intent reconciliation path still
+owns recovery. This strengthens evidence interpretation without changing the
+route, task, sizing, signal, or live authority.
 
 The isolated feedback helper `scripts/run_parallel_tests.ps1 -Workers 8`
 reattested on 2026-07-30 with `1762 passed, 14 skipped` in 284.47 seconds. It

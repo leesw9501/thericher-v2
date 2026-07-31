@@ -37,6 +37,14 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- The independent offline QQQ validator now rejects a `canary_completed`
+  record unless it is explicitly `paper_only`, has the terminal `cancelled`
+  phase, and reports `clean` reconciliation. It also rejects submitted,
+  ambiguous, future, missing-route, and unresolved variants. The focused
+  validator and full QQQ-path suites passed without a KIS call, credential
+  read, scheduler mutation, or Paper intent. This is completion interpretation
+  only: a rejected exact lifecycle remains reconcile-first recovery evidence and
+  cannot trigger a replacement submit.
 - The 2026-07-30 23:50 KST daily SPY session completed its own Paper-only
   receipt boundary as `no_intent/target_already_satisfied`. Its exact session
   identity is `daily-spy-20260730T145001334439Z` and its receipt reference is
