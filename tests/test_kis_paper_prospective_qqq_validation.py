@@ -269,7 +269,11 @@ def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
             "reason_code": "flat_qqq_position",
         },
         prepared={"route": "kis_paper", "status": "ready"},
-        canary={"paper_only": True, "phase": "cancelled"},
+        canary={
+            "paper_only": True,
+            "phase": "cancelled",
+            "reconciliation_status": "clean",
+        },
     )
 
     result = validate_kis_paper_prospective_qqq_session(
@@ -283,6 +287,50 @@ def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
     assert result.canary_present is True
     assert result.runtime_window is not None
     assert result.runtime_window["input_manifest_ref"] == loop.window.input_manifest_ref
+
+
+@pytest.mark.parametrize(
+    ("phase", "reconciliation_status"),
+    [
+        ("outcome_unknown", "unresolved"),
+        ("submitted", "clean"),
+        ("cancelled", "unresolved"),
+    ],
+)
+def test_rejects_completed_canary_without_terminal_clean_reconciliation(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    phase: str,
+    reconciliation_status: str,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    _write_session(
+        artifact_root,
+        session_id=f"prospective-qqq-validation-incomplete-{phase}-{reconciliation_status}",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="canary_completed",
+        reason_code="reconciliation_unresolved",
+        position_resolution={"paper_only": True, "action": "buy"},
+        prepared={"route": "kis_paper", "status": "ready"},
+        canary={
+            "paper_only": True,
+            "phase": phase,
+            "reconciliation_status": reconciliation_status,
+        },
+    )
+
+    with pytest.raises(ValueError, match="canary (lifecycle|reconciliation) is incomplete"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id=f"prospective-qqq-validation-incomplete-{phase}-{reconciliation_status}",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
 
 
 def test_stale_window_is_a_valid_target_local_no_intent_fact(

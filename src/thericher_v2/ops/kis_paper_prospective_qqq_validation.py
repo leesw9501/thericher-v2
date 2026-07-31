@@ -42,6 +42,7 @@ DEFAULT_KIS_PAPER_PROSPECTIVE_QQQ_ARTIFACT_ROOT = Path(
 _DEFAULT_REPOSITORY_ROOT = Path.cwd()
 _SAFE_SESSION_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
 _SHA256_REF = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
+_TERMINAL_CANARY_PHASES = frozenset({"cancelled"})
 
 
 @dataclass(frozen=True)
@@ -231,6 +232,10 @@ def _validate_session_envelope(
             raise ValueError("completed prospective QQQ canary evidence is incomplete")
         if canary.get("paper_only") is not True:
             raise ValueError("prospective QQQ prepared route is invalid")
+        if canary.get("phase") not in _TERMINAL_CANARY_PHASES:
+            raise ValueError("prospective QQQ canary lifecycle is incomplete")
+        if canary.get("reconciliation_status") != "clean":
+            raise ValueError("prospective QQQ canary reconciliation is incomplete")
         baseline = _object(loop.get("baseline"), "prospective QQQ baseline")
         if baseline.get("action") not in {"enter", "exit"}:
             raise ValueError("prospective QQQ canary has no eligible baseline action")
