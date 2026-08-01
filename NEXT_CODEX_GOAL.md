@@ -2,75 +2,94 @@
 
 ## Objective
 
-Prepare a Data-owned KIS Paper SPY 1m fresh-session capture runner that can
-materialize one source-safe prospective baseline receipt after a completed
-15:30 ET decision window. This advances KIS-reconstructible input evidence;
-it is not a KIS order, account operation, historical backtest, model-training,
-or profitability target.
+Build and run one bounded CPU falsification of
+`tiingo-d1-trend-mean-reversion-rotation-v1`: a trend-conditioned short-horizon
+mean-reversion rotation over the existing immutable Tiingo D1 `SPY/QQQ/IWM`
+snapshot. This advances the portfolio-selection stage of the engine without
+claiming profitability, selecting a model, or creating an execution route.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`,
    `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active
-   Data, Engine Research, Research Steward, Execution, and orchestration
+   Engine Research, Research Steward, Data, Execution, and orchestration
    stateboards.
-2. Ask Claude for a concise falsification-first drift check before adding or
-   changing a KIS capture/receipt runner. Never include credentials, raw prices,
-   account facts, fills, labels, or raw market rows.
+2. Ask Claude for a concise falsification-first drift check before freezing the
+   campaign code. Include the causal decision/target timing, chronological
+   split, event/discontinuity masking, costs, comparators, strongest kill test,
+   and sealed-tail boundary. Do not include raw rows, credentials, or account
+   facts.
 
-## Boundaries
+## Fixed Source And Boundaries
 
-- `KIS_PAPER_*` market-data reads are authorized for `SPY/AMS/1m` only. Reuse
-  the existing private KIS head/cache collection path where it fits. Do not
-  read `KIS_LIVE_*`, query account/position/open-order state, or submit/modify/
-  cancel any KIS order.
-- Retain raw KIS rows and mutable capture state only under `D:\market_data`.
-  Keep only source-safe receipts/artifacts under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never put them
-  in Git.
-- A receipt must bind the verified cache/source identity, the fixed 09:30-16:00
-  America/New_York session, complete 1m coverage through the fixed 15:30 ET
-  cutoff, and the content-bound prospective baseline observation. It must not
-  serialize OHLCV values, paths, credentials, account data, order data, fills,
-  quantities, or PnL.
-- If a fresh completed session is unavailable, preserve a source-safe
-  `not_yet_observed` or input-local result for that runner only. Do not wait in
-  the foreground, fabricate bars, or block another ready lane.
-- Do not train, tune, select, ensemble, allocate GPU work, or claim PnL or
-  profitability in this objective. Any local-paper replay remains broker-free
-  and retains `source: local_paper`.
+- Read only the already retained local snapshot:
+  `D:\market_data\us_equities\tiingo_etf_daily\canonical\snapshot=20260801T173121Z-tiingo-etf-d1-r1`
+  with dataset hash
+  `sha256:b47539a373bf2d625ad2380376808cf412219f6c5d932b66631bb3aa553683cf`.
+  Reattest its manifest and hashes before use.
+- No Tiingo API/network call, `.env` or credential read, KIS call, account
+  read, broker order, local/live Paper action, dashboard, data download, or
+  public service.
+- Raw source rows remain on `D:`. Write only source-safe contract and aggregate
+  result evidence to `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`; never write data, weights, predictions, or artifacts
+  to Git.
+- This is CPU-only. Do not allocate GPU, train a neural model, open the sealed
+  tail, tune parameters, select a winner, ensemble candidates, or claim PnL or
+  profitability.
+
+## Frozen Campaign Contract
+
+- Use the common completed D1 session calendar of `SPY`, `QQQ`, and `IWM`.
+  At completed close `t`, each ETF is eligible only when its 60-session simple
+  close-to-close trend is positive and its five-session simple return is
+  negative. Score eligible ETFs by `(-five_session_return) / prior_20_session
+  realized_volatility`, where volatility is the population standard deviation
+  of the preceding 20 one-session simple close returns and a zero volatility
+  rejects that ETF. Select the greatest score; ties use fixed symbol order
+  `SPY`, `QQQ`, `IWM`. No eligible ETF means flat.
+- A decision at `t` enters the selected ETF at `t+1` open and exits at `t+1`
+  close. Exclude a decision when any fixed-universe component has a known
+  dividend/split marker from `t-60` through `t+1`, or any absolute one-session
+  close return above `20%` from `t-60` through `t`. This is retrospective
+  source-local falsification only, not a prospective availability claim.
+- Split decision dates before masking into chronological 60% development, 10%
+  validation A, 10% validation B, and 20% sealed tail, with a 61-session purge
+  between adjacent phases. Evaluate development only as plumbing evidence and
+  validation A/B only for the frozen kill test. Do not read or report the
+  sealed-tail rows after snapshot reattestation.
+- Apply round-trip cost scenarios of `5`, `10`, and `20` bp to every active
+  portfolio-day. Use `10` bp as the primary view. Fixed comparators are
+  always-flat, equal-weight `SPY/QQQ/IWM` open-to-close, and a 60-session trend
+  rotation that selects the greatest positive 60-session return using the same
+  timing, mask, tie order, and costs.
+- Kill the family if either validation block is flat-or-worse at `20` bp, or if
+  across all three cost scenarios it is weaker than both active comparators.
+  Do not alter a window, threshold, mask, split, tie rule, target, cost, or
+  comparator after results are visible.
 
 ## Work
 
-1. **Data:** inspect and reuse the existing KIS Paper intraday head/cache
-   contracts. Build a bounded runner/adapter that selects exactly one complete
-   SPY/AMS regular session, attests cache/source identity and bar completeness,
-   and passes only eligible injected bars to the prospective session-record
-   factory. Make its retry/schedule ownership explicit without adding an
-   orchestrator sleep or a second scheduler platform.
-2. **Engine Research:** turn an eligible record into the fixed content-bound
-   observation receipt exactly once, and persist only its source-safe canonical
-   payload outside Git. A missing, stale, incomplete, duplicate, or
-   non-contiguous input must create no decision receipt or source substitution.
-3. **Execution:** reattest that this runner has no account, intent, broker, or
-   KIS order surface. Keep the existing local-paper replay evidence distinct
-   from any KIS-derived receipt.
-4. **Validation:** add focused cache/runner tests for correct session selection,
-   DST/session geometry, source-safe redaction, idempotent receipt persistence,
-   `not_yet_observed` recovery, and absence of credential/network/broker access
-   in offline unit tests. A bounded authorized KIS Paper market-data probe may
-   verify only the runner's named read path and must record no raw response.
+1. **Engine Research:** implement the pure campaign contract, verified local
+   snapshot adapter, deterministic evaluation, and source-safe aggregate
+   artifact writer. Keep numeric rows, scores, and individual returns in memory.
+2. **Validation:** add focused tests for causal timing, common-calendar/split
+   boundaries, masking, ties, all-flat behavior, cost accounting, kill logic,
+   tail non-access, idempotent external artifact handling, and offline/no-
+   credential/no-broker behavior.
+3. **Research Steward:** record that this is CPU-only with no GPU or sealed-tail
+   allocation. **Execution:** attest that it creates no intent, order, fill,
+   account, or broker surface.
 
 ## Completion
 
-- One KIS-reconstructible SPY fresh-session capture/receipt path is implemented
-  and tested.
-- It either captures one eligible source-safe observation or leaves an owned,
-  non-blocking `not_yet_observed` recovery state for the next market session.
-- No account query, KIS order, live route, model training, GPU artifact, raw
-  data in Git, or PnL/profitability claim occurs.
+- One immutable source-safe contract and CPU validation A/B result exist under
+  the external artifact root.
+- The sealed tail is untouched, and the result is either a clearly falsified
+  family or a non-promoting validation fact that needs a separate future
+  replication decision.
 - Refresh this file with exactly one next objective, verify, commit, push, and
-  continue without foreground waiting for market time.
+  continue without foreground waiting.
 
 ## Verification
 
@@ -85,4 +104,4 @@ docker compose --profile research config --quiet
 
 ## Suggested Commit Message
 
-`Prepare prospective SPY capture runner`
+`Add Tiingo D1 mean reversion falsification`

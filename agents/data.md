@@ -799,6 +799,30 @@ receipt evidence. It has no account, order, live, or foreground-wait behavior:
 an unavailable fresh session is local to that invocation and does not defer
 another ready lane.
 
+## Prospective SPY Capture Runner (2026-08-02)
+
+State: `complete` for the implementation package; `ready` for the next regular
+same-day 15:30 ET invocation. The Data-owned runner is
+`scripts/capture_kis_paper_prospective_spy_observation.py`. It reads only the
+already verified `SPY/AMS/1m` cache, requires a regular 2026 session with all
+09:30-15:30 ET completed minutes, then writes exactly one canonical
+content-bound receipt below `D:\thericher-v2\model-artifacts`. It opens no KIS
+client, credential, account, order, or network path itself.
+
+The existing head collector remains the sole cache producer and scheduler
+owner. This runner adds no task, timer, or second scheduling platform; a
+missing, non-current, pre-cutoff, incomplete, or unavailable source returns
+only an invocation-local `not_yet_observed` result. Its 2026-08-02 weekend
+smoke returned `regular_session_unavailable` before opening the cache and
+wrote no artifact.
+
+The receipt source contract hashes the full selected 09:30-15:30 source bars,
+not the mutable whole-cache hash. Therefore later post-cutoff or unrelated
+cache growth does not create a second receipt, while any selected source change
+conflicts with the already captured session evidence. Raw bars, cache paths,
+and values remain on `D:`. Claude's requested narrow drift check timed out;
+record `review_unavailable`, not agreement or a hold.
+
 The prior Data-owned MIM-30 SPY 1m capability qualification is closed as
 `input_unavailable`. Read-only inventory found 21 complete 390-minute
 SPY/AMS sessions under `intraday\v1`, of which 20 have the preceding regular

@@ -266,3 +266,27 @@ statements above; their historical facts remain scoped to their original work.
   insufficient for the required content binding, so Codex selected the
   dedicated receipt. This is not approval of a generic extraction, profitability,
   promotion, or Paper action.
+
+## Capture Runner Update (2026-08-02)
+
+- **Ready:** the Data-owned SPY/AMS/1m fresh-session runner is implemented and
+  locally verified. It is ready for the next eligible same-day 15:30 ET cache
+  invocation; Engine preparation remains independently dispatchable now.
+- **Owned:** the existing KIS head collector owns cache mutation and its
+  schedule. The new runner reads that verified cache only and owns one external
+  source-safe receipt per session. It creates no scheduler, KIS client,
+  account, order, or broker activity.
+- **Due:** a market-time miss returns `not_yet_observed` to this runner only.
+  It cannot make the foreground orchestrator wait or delay an Engine package.
+- **Improvement:** receipt identity now binds the selected full decision-session
+  content rather than a mutable whole-cache hash, so post-cutoff cache growth
+  cannot cause an artificial replay conflict.
+- **Review:** the KIS capture-runner Claude invocation expired without a
+  substantive verdict (`review_unavailable`). Independent tests and non-KIS
+  work continue; this is not agreement, an approval, or a hold.
+
+- **Next ready Engine package:** `tiingo-d1-trend-mean-reversion-rotation-v1`
+  uses the existing immutable three-ETF Tiingo D1 snapshot for a CPU-only,
+  precommitted causal falsification. It is a distinct rule family, has no KIS,
+  credential, broker, GPU, or sealed-tail action, and begins without waiting
+  for the SPY fresh-session clock.

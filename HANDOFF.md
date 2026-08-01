@@ -1398,3 +1398,33 @@ Next: prepare the Data-owned KIS Paper SPY fresh-session capture/receipt runner
 for a newly complete 15:30 ET window. It uses market-data reads only, retains
 raw bars on `D:`, emits source-safe evidence, and must not make the foreground
 orchestrator wait for market time.
+
+## Prospective SPY Fresh-Session Capture Runner
+
+The Data runner is complete at
+`scripts/capture_kis_paper_prospective_spy_observation.py` and
+`thericher_v2.data.kis_paper_prospective_spy_capture`. It consumes only the
+verified local `SPY/AMS/1m` cache, accepts the same America/New_York date only
+after the fixed 15:30 ET cutoff, checks all 360 required completed minutes,
+then invokes the pure session-record and dedicated receipt factories. It writes
+one canonical receipt per session outside Git, under the configured model
+artifact root. It never reads `.env`, starts a KIS client, calls a network,
+reads account state, constructs an intent, or submits an order.
+
+The source hash is scoped to all selected 09:30-15:30 source bars rather than
+the mutable whole cache. A post-cutoff cache append does not alter a retry;
+a changed selected minute conflicts with the immutable session receipt. Missing
+or stale conditions emit only `not_yet_observed` and create no artifact. The
+weekend smoke safely stopped as `regular_session_unavailable` before cache I/O.
+The existing head collector remains the only scheduler/cache writer. Claude's
+short drift check timed out (`review_unavailable`), so no Claude conclusion is
+claimed.
+
+Next Engine package: implement the CPU-only
+`tiingo-d1-trend-mean-reversion-rotation-v1` falsification on the already
+verified immutable `SPY/QQQ/IWM` Tiingo snapshot
+`sha256:b47539a373bf2d625ad2380376808cf412219f6c5d932b66631bb3aa553683cf`.
+It is a new trend-conditioned short-horizon mean-reversion portfolio rule, not
+a retune of the failed momentum or sequence family. Keep its tail sealed, do
+not allocate GPU, use no KIS or credentials, and make no profitability or
+Paper-input claim.

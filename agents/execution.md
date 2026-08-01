@@ -438,3 +438,14 @@ never reuse a stale account projection or an unknown exact intent.
   abstain creates no intent or fill. The test guards socket and `.env` access,
   uses only pytest temporary state, and makes no KIS call, account read, order,
   route change, artifact, or live action.
+
+## SPY Capture Isolation (2026-08-02)
+
+The new Data-owned prospective SPY cache runner produces a receipt only. Its
+subprocess isolation test denies network, `.env`, environment credential,
+client, account, intent, order, broker, and fill behavior while exercising a
+captured result; only the safe external receipt is written. The existing cache
+loader has a legacy transitive import of Execution types, so this is behavioral
+isolation rather than an import-purity claim. Removing that historical coupling
+is a separate simplification candidate, not a reason to alter this runner or
+block its Data-owned fresh-session invocation.

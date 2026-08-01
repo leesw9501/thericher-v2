@@ -1905,6 +1905,25 @@ and the frozen chronological decision/fill plan. A buy must have exactly its
 planned local-paper entry and exit fills; malformed, extra, or unplanned events
 invalidate the receipt rather than being repaired.
 
+### Prospective SPY Fresh-Session Capture
+
+After the existing Data-owned KIS head collector has retained a complete SPY
+session, materialize its safe 15:30 ET observation receipt with:
+
+```powershell
+uv run python scripts/capture_kis_paper_prospective_spy_observation.py `
+  --session-date 2026-08-03
+```
+
+The command is cache-only: it reads no `.env`, credential, KIS client, account,
+order, or network state. It requires the supplied date to be the current
+America/New_York date and the current time to be at or after 15:30 ET. A normal
+pre-cutoff, weekend, missing, or incomplete source returns source-safe
+`not_yet_observed` with no artifact. A capture writes only canonical receipt
+facts under `D:\thericher-v2\model-artifacts`; raw cache rows remain under
+`D:\market_data`. Do not add a second scheduler for this command: the existing
+head collector remains the schedule owner.
+
 ### Static Norgate Development Receipt
 
 To re-attest the already retained static Norgate trial panel and write or verify

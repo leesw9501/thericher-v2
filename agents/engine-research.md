@@ -767,3 +767,27 @@ only structural timestamp/count metadata. It does not create a model, target,
 GPU appointment, score, rank, artifact, PnL, or Paper path. The next recovery
 fact is a new, separately frozen campaign or a calendar-aware upstream segment
 adapter; do not fill session gaps or reuse consumed QQQ window evidence.
+
+## Next Frozen Breadth Candidate
+
+The next ready Engine package is
+`tiingo-d1-trend-mean-reversion-rotation-v1`, a CPU-only falsification of a
+distinct three-ETF portfolio-selection hypothesis. It reuses only the immutable
+local Tiingo `SPY/QQQ/IWM` snapshot
+`us_equities.tiingo_etf_daily.snapshot=20260801T173121Z-tiingo-etf-d1-r1`
+with dataset hash
+`sha256:b47539a373bf2d625ad2380376808cf412219f6c5d932b66631bb3aa553683cf`.
+At a completed D1 close it may select at most one ETF with positive 60-session
+trend and the largest negative five-session return normalized by prior
+20-session realized volatility; no qualifying decline means flat. The frozen
+next-session open-to-close target, three-way cost band, chronological
+development/validation-A/validation-B/sealed-tail geometry, 61-session purges,
+and event/discontinuity mask are a new family contract, not a retune of the
+failed momentum or sequence families.
+
+It is CPU-only and receives no GPU or sealed-tail appointment. Its strongest
+kill test is a net result at the fixed 20-bp cost that is flat-or-worse in
+either validation block, or consistently weaker than both fixed active
+comparators across the cost band. The sealed tail stays unopened. A result is
+only a source-local falsification fact: it cannot claim profitability, select a
+model, form an ensemble, become a KIS Paper input, or justify an order.

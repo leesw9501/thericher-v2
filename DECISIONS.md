@@ -8175,3 +8175,20 @@ Reason: make replay evidence deterministic and input-content-bound without
 retaining market data or widening provider, credential, account, broker, or
 live authority. The next fresh-session capture remains a Data-owned
 market-data-only runner and cannot turn market time into foreground idle.
+
+## 2026-08-02 - Scope fresh-session identity to selected source content
+
+Decision: the prospective SPY capture runner uses a hash of every selected
+09:30-15:30 ET `SPY/AMS/1m` source bar in its source contract, rather than the
+whole verified cache hash. The complete selected source identity is therefore
+stable when the collector appends a later minute or an unrelated cache chunk,
+while any changed decision-session source value still produces a distinct
+receipt and conflicts with an already materialized session artifact.
+
+The runner is cache-only and same-Eastern-date: it accepts a regular 2026
+session only after 15:30 ET, then writes a single canonical receipt outside
+Git. `not_yet_observed` is an invocation-local source condition, never a
+scheduler hold. Existing head collection retains cache and schedule ownership;
+the runner adds no KIS client, credential, account, order, broker, or live
+surface. The Claude drift check expired before a verdict, recorded as
+`review_unavailable` rather than approval.
