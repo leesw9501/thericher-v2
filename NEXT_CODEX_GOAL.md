@@ -2,15 +2,10 @@
 
 ## Objective
 
-Qualify the MIM-30 SPY long-only derivative one-minute input contract from the
-existing local KIS cache and the KIS Paper market-data route.
-
-The source paper's MIM rule is directional: use the previous regular-session
-close through 10:00 ET as a direction fact, then go long when positive and
-short otherwise from 15:30 to 16:00 ET. This project starts only its explicit
-long-only derivative: positive signal means long and all other cases are flat.
-It is not a paper replication. This objective is about reconstructible data and
-causal timing only; it does not train, tune, select, ensemble, or route a model.
+Prepare one bounded prospective intraday engine baseline for SPY using only
+newly observed completed KIS Paper market data. The baseline must be distinct
+from MIM-30: it is a causal engineering and Paper-readiness path, not a source
+replication, historical MIM backtest, or profitability claim.
 
 ## Start
 
@@ -18,80 +13,59 @@ causal timing only; it does not train, tune, select, ensemble, or route a model.
    `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active
    Data, Engine Research, Research Steward, Execution, and orchestration
    stateboards.
-2. Engine Research reattaches the independently retrieved original MIM-30
-   source as a source-safe external
-   receipt: retrievable identifier, stated sample/scope, stated time boundaries,
-   source license/copyright facts, and the long-only derivative reconstruction
-   outline.
-3. Ask Claude for a short falsification-first check before freezing any
-   source-data/campaign contract. Include no credentials, raw rows, prices,
-   account facts, fills, or sealed labels.
+2. Ask Claude for a concise falsification-first drift check before changing a
+   Paper execution route, scheduler behavior, or execution/research contract.
+   Never include credentials, raw prices, account facts, fills, or labels.
 
 ## Boundaries
 
-- `KIS_PAPER_*` may be used only by the Data-owned SPY/AMS market-data client.
-  Account, position, open-order, quote, broker order, submit, modify, cancel,
-  and every `KIS_LIVE_*` path are out of scope.
-- Keep raw data and collector state under `D:\market_data`; keep only
-  source-safe receipts under `D:\thericher-v2\model-artifacts`. Never put raw
-  rows, tokens, headers, account values, or model artifacts in Git or Claude.
-- Keep one reusable in-memory KIS client/token for an active collector. Measure
-  one pacing variable at a time and retain the durable cursor; do not use a
-  parallel request flood or an unbounded retry loop.
-- Do not start a model, GPU job, parameter sweep, backtest, Paper action, or
-  public service in this objective. A useful dataset contract may prepare a
-  later CPU-first campaign only.
-- Preserve at least 20 percent free space as a warning and never start new
-  large collection work that would cross the 15 percent floor.
+- `KIS_PAPER_*` is authorized for this private prospective work. Do not read
+  `KIS_LIVE_*` or route anything to live.
+- Retain raw market data and mutable capture state only under `D:\market_data`.
+  Keep source-safe receipts and generated artifacts only under
+  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never store
+  them in Git.
+- Keep the existing KIS Paper route and deterministic risk boundaries intact.
+  A proposed baseline may exercise an already-supported virtual-paper canary
+  only after its call-time identity, freshness, durable-intent, reconciliation,
+  and cancellation rules pass. It must not reuse an unknown prior intent.
+- The baseline may not claim to replicate MIM-30, may not use MIM historical
+  results, and may not claim profitability from a prospective observation.
 
 ## Work
 
-1. **Engine Research:** persist the original MIM source receipt and freeze the
-   explicit derivative hypothesis without adding filters: SPY/AMS, prior regular
-   close to 10:00 ET direction, long-only final-thirty-minute interval when
-   positive and flat otherwise, no short, no QQQ expansion, no
-   volume/volatility filter. Do not describe this as a source replication.
-   Predeclare the
-   future campaign's 60/20/20 chronological split, fixed `1.0x/1.5x/2.0x`
-   Execution-attested cost band, flat and same-window always-long comparators,
-   and strongest kill test: no positive after-cost sealed result at 1.5x costs
-   or no improvement over always-long rejects the family without retuning.
-2. **Data:** inventory the useful SPY/AMS one-minute local-cache subset from
-   manifests/indexes before reading raw files. Count complete regular sessions
-   with a reconstructible prior close, 10:00 ET boundary, and 15:30-16:00 ET
-   segment. The existing read-only inventory has 20 such sessions; record
-   source-safe span/count/completeness categories only.
-3. **Data:** if the cache is short, run a bounded capability probe on the exact
-   KIS Paper minute route using one reusable client. Establish temporal reach,
-   page yield, continuation semantics, and measured accepted/error categories
-   across a few widely separated dates. Do not claim source limitation from one
-   empty page or infer a rate limit from a local sleep.
-4. **Data:** when the probe establishes useful continuation, create or resume
-   one durable SPY/AMS serial collector under `D:`. It must retain the source
-   contract, cursor, accepted/categorical-failure page counts, tested pace,
-   remaining-page estimate or `unknown`, ETA bucket or `unknown`, and recovery
-   class. Continue this owned collector in the background; it must not hold
-   Engine, Execution, or the foreground orchestrator.
-5. **Validation:** reject any session with ambiguous ET/DST conversion, missing
-   prior regular close, missing 10:00 boundary, early close, incomplete required
-   minute bar, or source-contract mismatch. Confirm the probe/collector has no
-   account/order/live path and retains no secrets in receipts. A 252-complete-
-   session threshold controls only this MIM campaign; it is not a company hold.
+1. **Data:** define and test one source-safe prospective SPY session record
+   from completed 1m bars. It must declare ET/DST/session geometry, its
+   source-contract identity, and which 1m/5m/10m/1h/3h views are actually
+   complete at each decision cutoff. Missing or early-close segments must
+   abstain rather than be filled.
+2. **Engine Research:** connect that record to the existing causal
+   multi-timeframe sequence contract and one fixed, deterministic baseline
+   decision. Freeze its lookbacks, decision cutoff, target state, no-trade
+   behavior, cost assumptions, and a naive comparator before observing any
+   prospective outcome. Build only pure, testable decision/input plumbing;
+   do not train, tune, select, or ensemble a model in this objective.
+3. **Execution:** reattest the existing local-paper and KIS Paper boundary for
+   this distinct baseline. A local replay must retain `source: local_paper`.
+   A KIS Paper canary, if the existing route reaches one during a regular
+   session, must retain its own route identity and immutable lifecycle receipt;
+   it is not a local-paper fill and is not a model validation result.
+4. **Validation:** prove that the prospective record and decision are causal,
+   require no broker/network/credential access in unit tests, abstain on stale
+   or incomplete data, and cannot create a duplicate Paper intent. Record
+   whether the first fresh-session observation was captured or remains
+   scheduler-owned without making that external time a company hold.
 
 ## Completion
 
-- A source-safe MIM receipt records the independently retrieved source facts,
-  KIS route capability, local-cache/session coverage, and one of: `qualified`,
-  `collection_in_progress`, or `input_unavailable`.
-- If fewer than 252 qualifying sessions are presently available, retain the
-  exact coverage/recovery fact and continue any useful owned collector; do not
-  lower the threshold, synthesize a proxy, train a model, or turn the outcome
-  into a Paper input.
-- The next objective may use only a `qualified` MIM contract for a CPU-first
-  frozen campaign. It may not reuse this objective to tune time boundaries,
-  filters, or costs after observing data.
+- One source-safe prospective-baseline contract and focused tests are complete.
+- The baseline has an explicit no-trade path and cannot consume MIM historical
+  evidence or source-window proxy semantics.
+- A fresh session may be `not_yet_observed`; then its scheduler remains owned
+  by Data/Execution while the next objective proceeds. Do not wait in the
+  foreground for market time.
 - Refresh this file with exactly one next objective, verify, commit, push, and
-  continue. A Data-route limitation is lane-local; other ready work continues.
+  continue.
 
 ## Verification
 
@@ -106,4 +80,4 @@ docker compose --profile research config --quiet
 
 ## Suggested Commit Message
 
-`Qualify MIM-30 minute input`
+`Add prospective intraday baseline`

@@ -48,6 +48,13 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- The MIM-30 long-only derivative has a truthful Execution parity fact, not an
+  execution route: current local-paper replay enters at the next completed-bar
+  open and exits at the terminal 15:59 open. It cannot represent the source's
+  15:30-to-16:00 close/auction window, so its attestation is explicitly
+  `source_window_compatible: false`. This makes only the MIM historical
+  interpretation `input_unavailable`; it creates no KIS call, Paper intent,
+  order, or general execution hold.
 - The 2026-08-01 offline QQQ-path reattestation passed 95 focused tests. It
   includes a direct lower-canary submit-boundary test that denies the QQQ
   session's `submit_permitted` callback and proves no submit or cancel side

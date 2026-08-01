@@ -26,15 +26,31 @@ not influence the source contract, receipt, or bridge. This is graph plumbing,
 not an opportunity selector, model result, ensemble, PnL claim, or Paper
 candidate.
 
-The original MIM source was independently re-retrieved: its directional SPY
-strategy is previous regular close through 10:00 ET, then long when positive
-and short otherwise from 15:30 to 16:00 ET. The contemplated long-only version
-is therefore `mim30-spy-long-only-derivative-v1`, not a paper replication. Its
-durable source receipt and KIS-compatible 1m contract remain the next bounded
-package. The local cache supplies only 20 structurally complete candidate
-sessions, 232 below the frozen 252-session minimum, so it has no campaign, GPU,
-Paper, or model-weight consequence. Claude's adapter drift check timed out, so
-this integration is `review_unavailable`, not an endorsed promotion decision.
+The original MIM source was independently re-retrieved through public SSRN,
+DOI, RePEc, and Rutgers metadata. The source-safe receipt is
+`D:\thericher-v2\model-artifacts\research\mim30-source-receipt-v1\mim30-primary-source-20260802-r1.json`
+(`sha256:4d91b03e4a1f688d31a7a67e0595a2493650a2d7abfefb5372774a8c2e186d91`).
+Its pure contract is `mim30-spy-long-only-derivative-v1`
+(`sha256:2ef4d43bc0905c02d6cc95cae9c40c395b560b4d06ac903a09dc001013d5884f`):
+SPY/AMS 1m, prior regular close through 10:00 ET, positive-to-long and
+nonpositive-to-flat only, no short or filter, two-sided early-close exclusion,
+60/20/20 chronological split, 252-session/30-sealed-entry minimum, and fixed
+10/15/20-bp (`1.0x/1.5x/2.0x`) round-trip scenarios. It is explicitly a
+long-only derivative, not a source replication. Current local Paper uses
+next-completed-bar open entry and terminal 15:59-open exit, not a 16:00 close or
+auction fill. Consequently an explicit execution-parity attestation is required
+for research interpretation, but this contract remains data/research-only and
+Paper-ineligible until a later Execution implementation reattests it. The local
+cache supplies only 20 structurally complete candidate sessions, 232 below the
+frozen 252-session minimum. The exact KIS `SPY/AMS/1m` capability probe found a
+head-only terminal continuation shape with no initial historical-date field, so
+the source input is `input_unavailable` for this campaign rather than a reason
+to manufacture a collector, model, GPU job, Paper input, or model weight.
+Claude's MIM falsification-first verdict was `unsupported`: the exact route
+cannot support the frozen historical split, and source-window timing, early
+close, and corporate-action interpretation remain non-promoting. That verdict
+closes only this historical MIM campaign; it does not block a separately frozen
+prospective engine or another Data/Research package.
 
 ## Strategy Discovery Intake
 

@@ -1313,12 +1313,41 @@ abstention and no local-paper intent. Future bars cannot alter the decision,
 receipt, or bridge. All replay fills remain `source: local_paper`, terminal
 flat, and broker-free.
 
-The short Claude drift-check invocation timed out, so the review state is
-`review_unavailable`; it is not a promotion or execution hold. The original MIM
-source was independently re-retrieved and uses a directional long/short SPY
-rule; the proposed long-only version is a derivative candidate, not a paper
-replication. Read-only Data inventory found only 20 structurally complete local
-SPY 1m candidate sessions, 232 short of the predeclared 252. The next bounded
-Data/Engine package persists the source receipt and probes the KIS minute route
-before resuming a dedicated cursor collector. No model training or GPU
-appointment is ready until then.
+The short Claude drift-check for the preceding current-source adapter timed out,
+so that adapter's review state remains `review_unavailable`; it is not a
+promotion or execution hold. Its later MIM follow-up is closed with current
+source facts in the next section. The MIM derivative is not a paper replication
+and its endpoint-scoped input result never alters the completed current-source
+adapter, the existing scheduler, or another ready engine package.
+
+## MIM-30 One-Minute Input Qualification
+
+The bounded MIM-30 derivative input qualification is complete as
+`input_unavailable` for that exact historical campaign. The source-safe public
+source receipt is under
+`D:\thericher-v2\model-artifacts\research\mim30-source-receipt-v1\mim30-primary-source-20260802-r1.json`
+with hash
+`sha256:4d91b03e4a1f688d31a7a67e0595a2493650a2d7abfefb5372774a8c2e186d91`.
+The frozen pure contract is
+`mim30-spy-long-only-derivative-v1` with hash
+`sha256:2ef4d43bc0905c02d6cc95cae9c40c395b560b4d06ac903a09dc001013d5884f`.
+
+The local KIS cache has 20 structurally complete SPY/AMS 1m sessions, 232 below
+the fixed 252-session requirement. A fresh Data-owned exact-route probe made
+two accepted 120-row requests with one reusable token/client and no categorical
+error, but found only a terminal head continuation for one exchange-date
+category. The route exposes no first-request historical-date input; `KEYB/NEXT`
+is response continuation only. The source-safe probe receipt is
+`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20260801T210917385848Z-b061b611439008a3.json`
+with payload hash
+`sha256:b061b611439008a30dbcba230d950faeecbfb5074dd08bb5edffa580eff20a18`.
+This is endpoint-scoped evidence, not a KIS-provider-wide history conclusion.
+
+Claude's falsification-first verdict was `unsupported` for historical MIM
+evaluation from this input. Current local-paper semantics also use a
+next-completed-bar open entry and terminal 15:59 open exit, not a 16:00
+close/auction fill. The contract records that source-window incompatibility
+truthfully and cannot turn it into a Paper or profitability claim. No MIM GPU
+appointment, model training, paper intent, or broker route follows. The next
+company objective is a separately named prospective intraday baseline that can
+advance while Data and Execution session workers wait on their own clocks.

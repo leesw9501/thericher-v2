@@ -6,18 +6,22 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** qualify the MIM-30 SPY long-only derivative 1m input
-  against the existing KIS cache and one bounded endpoint-capability probe.
-  The original source uses a directional long/short rule, so the no-short
-  version is explicitly not a replication. Read-only inventory has only 20
-  structurally complete candidate sessions against the frozen 252 requirement.
-  The completed current-source adapter now separates a caller-owned
-  candidate from current source compatibility in a distinct v2 local replay:
-  matching facts preserve digest
-  `sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`,
-  while an ineligible, stale, gapped, or duplicate source can only abstain with
-  no intent. The v1 artifact remains immutable. Neither fact selects a symbol,
-  trains a model, allocates GPU, or changes a Paper route.
+- **MIM input qualification:** complete as `input_unavailable` for its exact
+  historical contract. The original source is a directional long/short SPY
+  rule; the frozen no-short contract is explicitly a derivative. Local data has
+  20 structurally complete sessions against 252 required. The exact
+  `SPY/AMS/1m` KIS capability receipt is head-only with terminal continuation
+  and no initial historical-date field, so no invented serial collector is
+  ready. This is not a provider-wide history conclusion. Claude returned
+  `unsupported` for historical evaluation from this input. The MIM local-paper
+  proxy also truthfully records source-window incompatibility, so neither a
+  GPU job nor a Paper claim follows.
+- **Company objective:** prepare a separately named prospective intraday
+  baseline that consumes only newly observed completed KIS data, preserves
+  causal multi-timeframe inputs, and can later exercise the existing KIS Paper
+  lifecycle without claiming that it reproduces MIM-30. It is independent of
+  the MIM cache limitation and does not make a market-session scheduler a
+  foreground wait.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
   generation-26,368 cache: all 2,119 current NAS targets are covered with no
@@ -77,11 +81,12 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Ready / Owned / Due
 
-- **Ready:** Data can capability-probe MIM-30's SPY 1m source and then resume
-  one bounded collector without waiting for Norgate's later tail. Engine
-  Research can persist the source receipt and freeze only the non-training
-  derivative-campaign outline.
-  The KIS freshness scheduler continues as an independent owned route.
+- **Ready:** Data can implement the prospective SPY completed-bar session
+  record; Engine Research can bind its actual complete 1m/5m/10m/1h/3h views
+  to the existing causal sequence contract and one fixed no-trade-capable
+  baseline; Execution can reattest the existing local/KIS Paper route identity.
+  These packages do not depend on MIM history or a fresh market session. The
+  KIS freshness scheduler continues as an independent owned route.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.

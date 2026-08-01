@@ -8095,3 +8095,29 @@ Claude's requested falsification-first drift check timed out. Record this as
 `review_unavailable`, not agreement or a new approval hold. The next valid
 research action is source qualification for the independently discovered MIM-30
 SPY one-minute hypothesis before any training allocation.
+
+## 2026-08-02 - Close MIM-30 history qualification without inventing a collector
+
+Decision: close `mim30-spy-long-only-derivative-v1` as `input_unavailable` for
+its frozen historical evaluation contract. The local cache has 20 eligible
+SPY/AMS 1m sessions against the predeclared 252. The bounded exact KIS minute
+probe accepted two full pages without a categorical error but established only a
+head-only terminal continuation shape with no initial historical-date field.
+Do not reinterpret response `KEYB/NEXT` as an undocumented date selector, and
+do not infer a provider-wide historical-data limit from this endpoint fact.
+
+The source-safe MIM receipt is
+`sha256:4d91b03e4a1f688d31a7a67e0595a2493650a2d7abfefb5372774a8c2e186d91`;
+the exact route receipt is
+`sha256:b061b611439008a30dbcba230d950faeecbfb5074dd08bb5edffa580eff20a18`.
+Claude's falsification-first result is `unsupported` for evaluating this
+historical source from the available input. In addition, current local-paper
+semantics are a next-completed-bar-open/terminal-15:59-open proxy, not the
+source's 15:30-to-16:00 close/auction window, so the contract must keep
+`source_window_compatible: false` until a separately attested implementation
+exists.
+
+Reason: preserve a useful source and execution fact without producing an
+unsupported MIM backtest, GPU run, or Paper claim. This ends only this campaign;
+it does not stop a distinct prospective intraday engine baseline, Data work, or
+authorized KIS Paper lifecycle.
