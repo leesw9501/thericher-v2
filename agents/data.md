@@ -95,6 +95,17 @@ the offline observer only after a current or complete cache result. A
 
 ## Current Facts
 
+- The bounded source-local Tiingo raw-D1 snapshot is complete at
+  `D:\market_data\us_equities\tiingo_etf_daily\canonical\snapshot=20260801T173121Z-tiingo-etf-d1-r1`.
+  It retains exactly SPY/QQQ/IWM raw rows only on D:, with aggregate coverage
+  `8,433 / 6,891 / 6,583` sessions from `1993-01-29 / 1999-03-10 /
+  2000-05-26` through `2026-07-31`. The aggregate-only collection receipt is
+  `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\8b2e375a027e645ea2065ec61b252b7097da5e743155eb819129391125c072de.json`.
+  It is raw-OHLCV-with-event-markers, retrospective-only, non-PIT,
+  non-ranking, non-Paper, and separate from KIS/Norgate. Recovery: a later
+  consumer that needs a different adjustment or availability meaning must
+  collect or qualify that exact source contract; it must not blend or repair
+  this snapshot with another provider.
 - The 2026-08-01 offline broad-D1 postprocess reattested the terminal
   2,119-target current NAS cache at generation 26,368. Its candidate panel is
   `sha256:6f83952b101050f221032ee48f71d1dc70bb392aa3fa5e139dba1335c8659c08`,

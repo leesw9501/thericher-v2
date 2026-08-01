@@ -14,6 +14,11 @@ weights, modify execution risk, or call a broker.
 
 ## Current Resource State
 
+- The new Tiingo three-ETF D1 CPU control has no GPU appointment. Its source is
+  explicitly retrospective/non-PIT and its predeclared momentum cells did not
+  clear the flat-after-cost control; two 60-session validation cells are also
+  input-unavailable. This records a scoped ineligibility for that exact family,
+  not a GPU hold on another frozen campaign.
 - GPU: free. The independently frozen QQQ 1m window-sensitivity CPU preflight
   closed `no_structure`, so it has no CUDA appointment. Historical D1 remains
   quarantined. This does not block Data, Execution, or other CPU Research

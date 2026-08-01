@@ -42,6 +42,17 @@ authorized private KIS Paper work.
 
 ## Latest Research Integration
 
+- The first source-local Tiingo raw-D1 snapshot is complete for SPY, QQQ, and
+  IWM at `D:\market_data\us_equities\tiingo_etf_daily\canonical\snapshot=20260801T173121Z-tiingo-etf-d1-r1`.
+  It spans available raw daily history through 2026-07-31 and has a source-safe
+  aggregate receipt under `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1`.
+  The companion CPU control precommitted a causal `5/20/60` lookback matrix,
+  70/30 chronological split, 61-session purge, raw feature-side discontinuity
+  mask, event window, and fixed `5/10/20`-bp cost band. Its evaluated validation
+  momentum cells were below flat across the band; SPY/QQQ 60-session validation cells were
+  input-unavailable. It is descriptive offline evidence only: no winner, GPU
+  appointment, ensemble, KIS runtime input, Paper action, or profitability
+  claim follows. A later daily family needs a new hypothesis and source contract.
 - The independent QQQ 1m window-sensitivity CPU preflight completed against the
   retained 20-session KIS cache. Its frozen `30/60/90/120/180`-bar matrix had
   a real Brier spread of `0.000233701152146`, below its session-block-permuted

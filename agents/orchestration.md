@@ -6,9 +6,9 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** capture the first new freshness-gated QQQ KIS Paper
-  lifecycle through the installed scheduler. The earlier D1 census remains
-  complete and does not gate this execution-only objective.
+- **Company objective:** build one bounded, source-separated Tiingo raw-D1
+  research input and descriptive CPU control for SPY/QQQ/IWM. The existing
+  KIS Paper scheduler remains independently owned and is not a dependency.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
   generation-26,368 cache: all 2,119 current NAS targets are covered with no
@@ -19,6 +19,9 @@ second goal. Git and external artifacts retain historical evidence.
   It alone owns any future KIS credentials, network, cursor, pacing, mutable
   cache, and postprocess. The current QQQ head-cache scheduler remains an
   independent Data source for the existing Execution canary.
+- **Data (Tiingo):** the raw-D1 snapshot and aggregate receipt are complete
+  under separate D:/artifact roots. They have no KIS, Norgate, Paper, or live
+  route, and no retry, cooldown, or data-worker wait remains owned.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
   campaign. The independent QQQ 1m window-sensitivity preflight completed on
@@ -35,6 +38,10 @@ second goal. Git and external artifacts retain historical evidence.
   completed D1 bars and exact source-date state, while availability, historical
   identity, adjustment, and corporate-action limits keep all model/GPU/Paper
   eligibility false. Historical KIS D1 remains quarantined.
+- **Engine Research (Tiingo):** the frozen `5/20/60` CPU control completed
+  source-locally. Its evaluated validation cells are below flat across the fixed
+  cost band and two event-masked 60-session cells are input-unavailable, so it has
+  no model selection, ensemble, Paper, or GPU consequence.
 - **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
   durable owner. No frozen labelled campaign or sealed-evaluation allocation is
   currently eligible; this is a scoped resource fact, not a hold on Data or
@@ -51,20 +58,10 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Ready / Owned / Due
 
-- **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
-  canary through its first new lifecycle outcome. The completed non-promoting
-  QQQ 1m window-sensitivity preflight is immutable `no_structure` evidence;
-  Engine Research has completed the separate pure target-position policy
-  foundation, baseline-input adapter, completed consensus replay, and closed
-  equal-count subset diagnostic, and pure target-exposure allocator. The
-  Norgate daily consumer contract and the separate Data-owned date-indexed
-  pilot are complete; their next recovery is campaign-local qualification, not
-  another source read.
-  The latest 06:20 KST task closed `recovery/collection_exit_nonzero`; its paired QQQ
-  session was explicitly `paper_only` `no_intent/runtime_window_stale`, and the
-  matching offline validator reattested its stale session/window lineage with
-  no canary or local-paper replay. That is scoped recovery evidence, not
-  completion, quota, or a new permission gate.
+- **Ready:** the Tiingo snapshot and CPU control are complete. Their fixed
+  baseline is no-selection evidence, so the next Engine Research package must
+  be a distinct causal family; it need not wait for new Tiingo data. The KIS
+  freshness scheduler continues as an independent owned route.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
@@ -103,16 +100,20 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-The QQQ execution leg is in a scheduler-owned external wait, not an operator
-decision. It did not defer the independent CPU-first window-sensitivity
-preflight, target-position policy, momentum adapter, fixed-cost local-paper
-consensus replay, or its equal-count subset null. The null exactly reproduced
-the baseline but classified the two-entry result `selection_unqualified`, so it
-cannot support a selection or profitability claim. The current reversible
-improvement was the bounded Norgate daily-source contract, now completed as a
-qualified offline-only capability receipt and a three-case aligned D1 pilot.
-Its remaining PIT/availability limitations are source-local and cannot alter the
-QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
+The Tiingo three-ETF target had no external wait: three bounded source calls,
+one external snapshot, and its CPU control all completed in the same objective.
+Its material bottleneck is now the absence of a distinct next causal family,
+not provider scheduling, GPU availability, or an operator decision. The QQQ
+execution leg remains a separate scheduler-owned external wait. It did not
+defer the independent CPU-first window-sensitivity preflight, target-position
+policy, momentum adapter, fixed-cost local-paper consensus replay, or its
+equal-count subset null. The null exactly reproduced the baseline but classified
+the two-entry result `selection_unqualified`, so it cannot support a selection
+or profitability claim. The current reversible improvement was the bounded
+Norgate daily-source contract, now completed as a qualified offline-only
+capability receipt and a three-case aligned D1 pilot. Its remaining
+PIT/availability limitations are source-local and cannot alter the QQQ scheduler.
+The latest 06:20 KST QQQ cycle produced a source-safe terminal
 `recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached

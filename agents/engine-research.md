@@ -287,6 +287,17 @@ limits remain explicit.
 
 ## Current Readiness
 
+- The first source-local Tiingo D1 CPU control is complete at
+  `D:\thericher-v2\model-artifacts\tiingo-etf-d1-cpu-baseline-v1\20260801T173121Z-cpu-baseline-r2`.
+  It precommitted raw completed-D1 `5/20/60` trailing momentum, a 70/30 split,
+  61-session purge, target-day open-to-close direction, a fixed `5/10/20`-bp
+  round-trip cost band, and flat/momentum baselines. Every evaluated validation
+  momentum cell was below flat across the band; SPY and QQQ 60-session validation cells are
+  `input_unavailable` because their fixed retrospective event mask leaves fewer
+  than 50 samples. This is an honest descriptive control, not a winner,
+  ensemble member, PnL claim, Paper input, or GPU appointment. Recovery: a new
+  daily family must freeze a distinct causal hypothesis and cannot retune this
+  matrix after reading these results.
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
   history and a bounded complete QQQ/SPY intraday scope.
 - The frozen daily CPU run completed on 4,756 QQQ KIS-private sessions with

@@ -60,6 +60,25 @@ missing dependency. It is not replaced by an inferred value, a hidden provider,
 or a paper-trading blocker. A later observed KIS capability can reactivate that
 branch through a new bounded contract.
 
+### Source-Local Tiingo Daily Research Control
+
+The bounded Tiingo `SPY`/`QQQ`/`IWM` raw-D1 snapshot is a separate offline
+research namespace. Its immutable D: snapshot retains provider rows; its
+external receipt and CPU artifacts retain only source identity, hashes,
+aggregate coverage, a precommitted causal contract, and aggregate results. The
+control consumes raw OHLCV plus dividend/split markers, never adjusted fields,
+and its output cannot become a KIS runtime feature, a source blend, a ranking,
+a Paper input, or a sealed-evaluation claim.
+
+The first control fixes a `5/20/60`-session trailing-close matrix, a 70/30
+chronological development/validation split separated by a 61-session
+lookback-plus-horizon purge, and next-session open-to-close direction with a
+fixed `5/10/20`-bp round-trip cost band. Event windows are rejected retrospectively; discontinuity checks
+apply only through feature time `t`, never the unseen target day. A later
+candidate must freeze a distinct hypothesis and a KIS-reconstructibility or
+explicit offline-only interpretation; it cannot silently weaken the event mask
+or reuse this descriptive result as a selection pass.
+
 ### Current Daily Paper Slice
 
 The first deployable daily slice is deliberately narrow: a forward KIS Paper

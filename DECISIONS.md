@@ -7964,3 +7964,39 @@ segmenter rather than fill gaps or relax structural validation.
 Reason: model families need one causal, testable way to receive varied lookback
 windows before a later frozen campaign can compare rule, classical, sequence,
 or attention hypotheses without hidden timestamp semantics.
+
+## 2026-08-01 - Keep the Tiingo three-ETF D1 control source-local and descriptive
+
+Decision: accept the immutable Tiingo raw-D1 snapshot
+`us_equities.tiingo_etf_daily.snapshot=20260801T173121Z-tiingo-etf-d1-r1` and
+its `tiingo-etf-d1-cpu-baseline-v1` external precommit/summary as one bounded
+offline control. The source covers SPY, QQQ, and IWM independently, uses raw
+OHLCV plus event markers only, and keeps all provider rows on D:. The collector
+and receipt expose only hashes, aggregate coverage, and categorical source
+facts; they never expose the token, request URL, raw rows, KIS, Norgate, broker,
+or live behavior.
+
+The frozen control uses trailing raw-close `5/20/60` features available through
+completed day `t`, a 70/30 chronological split with a 61-session purge,
+next-session open-to-close direction, a fixed `5/10/20`-bp round-trip cost band,
+always-flat and simple momentum baselines, and a feature-side-only discontinuity
+kill test. Known event windows are excluded retrospectively. The completed result
+leaves all evaluated validation momentum cells below flat across the band; SPY and QQQ
+60-session validation cells are `input_unavailable` because the event mask
+leaves fewer than fifty observations.
+
+Claude's self-contained falsification-first review was `supported-with-limits`.
+It required the target-day discontinuity check to stay out of feature filtering,
+the trailing-return dependency to use `L+1` price sessions, the event scope to
+remain explicitly retrospective/descriptive, and each validation cell to meet
+the predeclared sample floor. The implementation and receipt reflect those
+limits; cross-ETF agreement is not treated as independent replication.
+
+No model is selected, no GPU appointment is made, and no Paper/runtime feature
+or profitability claim follows. A new daily campaign must freeze a distinct
+hypothesis and source interpretation; it cannot retune the observed matrix,
+weaken the event mask, or blend Tiingo with KIS/Norgate rows.
+
+Reason: the control proves a reproducible source-separated daily research loop
+and rejects a simple after-cost baseline without letting an offline source or a
+negative result turn into a general data or execution gate.
