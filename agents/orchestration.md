@@ -25,7 +25,9 @@ second goal. Git and external artifacts retain historical evidence.
   the retained offline cache and closed `no_structure` because its real
   aggregate spread stayed below the session-block null P95. It selected no
   window and has no CUDA follow-up. The pure target-position policy foundation
-  is now complete; historical D1 remains quarantined.
+  and completed-bar multi-timeframe momentum adapter are now complete. The
+  next independent package is one fixed local-paper consensus replay;
+  historical D1 remains quarantined.
 - **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
   durable owner. No frozen labelled campaign or sealed-evaluation allocation is
   currently eligible; this is a scoped resource fact, not a hold on Data or
@@ -46,7 +48,8 @@ second goal. Git and external artifacts retain historical evidence.
   canary through its first new lifecycle outcome. The completed non-promoting
   QQQ 1m window-sensitivity preflight is immutable `no_structure` evidence;
   Engine Research has completed the separate pure target-position policy
-  foundation and may continue with a fresh baseline-input package.
+  foundation and baseline-input adapter, and now owns one fixed consensus replay
+  package.
   The latest 06:20 KST task closed `recovery/collection_exit_nonzero`; its paired QQQ
   session was explicitly `paper_only` `no_intent/runtime_window_stale`, and the
   matching offline validator reattested its stale session/window lineage with
@@ -95,7 +98,9 @@ decision. It did not defer the independent CPU-first window-sensitivity
 preflight, which has now completed as `no_structure` and released its GPU
 appointment. The current reversible improvement is the no-I/O target-position
 policy foundation, now complete, which kept the engine product path moving
-without touching the QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
+without touching the QQQ scheduler. The next bounded improvement is the
+fixed-cost local-paper consensus replay, which remains offline and cannot
+alter the QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
 `recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached

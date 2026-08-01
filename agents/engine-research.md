@@ -569,6 +569,13 @@ limits remain explicit.
     `TargetExposureProposal` and the existing local-paper preparation bridge,
     never a KIS route or Paper submit. The Claude drift invocation timed out,
     so the result is `review_unavailable`, not a promotion verdict.
+15. Run one fixed 20-session multi-timeframe consensus replay baseline from the
+    completed KIS-private QQQ 1m cache. Freeze the existing five momentum
+    expert specs, policy thresholds, 19:30Z decision point, next-minute entry,
+    30-minute deterministic exit, one-share local-paper sizing, and the flat
+    plus time-matched always-long comparators before reading results. This is a
+    single descriptive local-paper PnL/attribution baseline, not a tuning pass,
+    GPU job, winner, ensemble, KIS Paper order, or profitability claim.
 
 ## Durable Constraints
 

@@ -59,6 +59,13 @@ authorized private KIS Paper work.
   a unanimous entry reaches only the existing `local_paper` preparation bridge.
   The requested Claude drift check timed out, so it is recorded only as
   `review_unavailable`, not as support for a later model or Paper promotion.
+- The completed-bar multi-timeframe momentum adapter now creates those five
+  evidence inputs causally from one KIS-private 1m session. Its actual offline
+  QQQ 2026-07-21 smoke found `sell/sell/buy/sell/sell` and correctly returned
+  `expert_conflict` / `abstain`; it did not invent a signal, order, KIS call,
+  credential read, network call, checkpoint, or raw-data artifact. Its
+  source-safe external summary is under
+  `D:\\thericher-v2\\model-artifacts\\research\\multitimeframe-momentum-policy-smoke-v1\\qqq-20260721-r1\\summary.json`.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and

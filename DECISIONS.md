@@ -7757,3 +7757,29 @@ Reason: the QQQ scheduler wait should not leave the core target-position engine
 unimplemented. A caller-configured, fail-closed proposal boundary lets later
 simple and learned experts share one execution-safe shape without prematurely
 choosing an alpha model or widening broker behavior.
+
+## 2026-08-01 - Build causal multi-timeframe momentum evidence before replay
+
+Decision: add one no-I/O adapter from a caller-owned, completed KIS-private 1m
+session to explicit `1m/5m/10m/1h/3h` `MomentumModel` predictions. Every expert
+has a caller-frozen lookback and threshold; the adapter filters bars at its
+declared `as_of`, anchors resampling to the explicit session, requires the last
+expected completed bucket, and returns a categorical input condition instead of
+using an older incomplete bucket. It feeds the existing pure target-position
+policy only; it does not select a model, read credentials, call KIS/network,
+write raw data/checkpoints, create an order, or use GPU.
+
+The first real local-cache smoke on QQQ 2026-07-21 built all five predictions
+and observed `sell/sell/buy/sell/sell`, so the policy correctly emitted
+`expert_conflict` / `abstain`. This is structural evidence, not a trading or
+profitability result.
+
+Next, run one exact 20-session local-paper consensus replay with the frozen
+expert specs, policy configuration, 19:30Z decision time, next-minute entry,
+30-minute forced exit, one-share sizing, and flat/time-matched always-long
+comparators. Do not tune any dimension after its results are seen.
+
+Reason: before a multi-timeframe policy can be evaluated, every model input must
+be built causally from the same KIS-shaped bar stream. The smoke proves the
+product path can abstain on genuine disagreement rather than manufacturing a
+trade while the independent QQQ scheduler waits.

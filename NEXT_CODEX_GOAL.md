@@ -2,17 +2,16 @@
 
 ## Objective
 
-Advance the QQQ KIS Paper lifecycle and the first bounded intraday
-window-sensitivity research package **in parallel**.
+Advance the QQQ KIS Paper lifecycle and one fixed intraday multi-timeframe
+consensus replay baseline **in parallel**.
 
 The installed freshness-gated QQQ scheduler remains the sole owner of its next
 Paper lifecycle. The independent offline 1m window-sensitivity preflight has
 already removed the fixed-90-bar blind spot for this small cache and closed
 `no_structure`; it selected no window and qualified no CUDA work. While the
-scheduler awaits a fresh session, Engine Research must build the pure
-target-position policy foundation that connects future opportunity/evidence
-outputs to the existing local-paper bridge. Neither lane is an approval gate for
-the other.
+scheduler awaits a fresh session, Engine Research must run one frozen offline
+consensus replay using the completed policy foundation and completed-bar
+momentum adapter. Neither lane is an approval gate for the other.
 
 ## Start
 
@@ -23,10 +22,10 @@ the other.
    modify the Data collector or installed intraday-head task.
 3. Reattest the existing QQQ route's pre-submit and recovery invariants without
    changing its decision table, sizing, freshness budget, or strategy.
-4. Reattest the completed independent Research preflight and completed
-   target-position policy foundation below, then dispatch the next separately
-   bounded baseline-input package. It must not read `.env`, KIS credentials,
-   account facts, broker state, or `KIS_LIVE_*`.
+4. Reattest the completed independent Research preflight, target-position
+   policy foundation, and momentum adapter below, then run the frozen replay
+   baseline. It must not read `.env`, KIS credentials, account facts, broker
+   state, or `KIS_LIVE_*`.
 
 ## Parallel Work Packages
 
@@ -45,7 +44,9 @@ the other.
    conflicting evidence abstains. It connects to the existing
    `ResearchDecisionReceipt` and `local_paper` preparation path only in tests,
    and does not read credentials, call KIS/network, select a model, or submit an
-   order. Dispatch the next baseline-input package independently.
+   order. Its completed-bar momentum adapter creates the exact five predictions
+   from one local KIS 1m session; its first actual smoke abstained on a genuine
+   expert conflict. Use both components unchanged in the replay below.
 4. **Research Steward:** do not allocate CUDA to the completed window family.
    Allocate the GPU only when a separate frozen campaign is actually eligible;
    `no_structure` is useful evidence, not a reason to manufacture training.
@@ -97,6 +98,24 @@ the other.
   stale/duplicate/misaligned evidence, and a sell consensus with/without an
   existing exposure.
 
+## Consensus Replay Contract
+
+- Use exactly the retained chronological 20 complete QQQ KIS-private 1m
+  sessions. Freeze the existing five momentum expert specs, policy config,
+  `19:30Z` decision time, next completed 1m entry, 30-minute deterministic
+  exit, and one-share local-paper sizing before the replay runs.
+- Every session begins flat. A unanimous valid entry can open one local-paper
+  position; an abstain, hold, or exit while flat produces no order. End every
+  session flat and prove the persisted local-paper fills are replayable.
+- Compare only the frozen consensus rule with flat and a time-matched
+  always-long next-minute/30-minute local-paper comparator. Report aggregate
+  after-cost PnL, trade count, drawdown, and abstention count; no threshold,
+  lookback, timeframe, sizing, hold period, or member weight may be changed
+  after outcomes are read.
+- This is descriptive baseline evidence. It may not select a model, form an
+  ensemble, open a sealed evaluation, schedule KIS Paper behavior, or claim
+  profitability. Its result supplies a clear next kill/replication decision.
+
 ## Paper Contract
 
 - Only the existing KIS Paper virtual route may read `KIS_PAPER_*`, and only
@@ -116,10 +135,12 @@ the other.
 
 - The Engine Research preflight has immutable external `no_structure` evidence
   and its focused tests prove the stated isolation and causal invariants. The
-  target-position policy foundation has focused proof of its pure I/O boundary,
-  categorical abstention behavior, all-five-timeframe contract, and
-  local-paper-only preparation integration. Its requested Claude drift-check
-  timed out and therefore remains `review_unavailable`, not a promotion result.
+  target-position policy foundation and momentum adapter have focused proof of
+  their pure I/O boundary, categorical abstention behavior, all-five-timeframe
+  contract, and local-paper-only preparation integration. Its requested Claude
+  drift-check timed out and therefore remains `review_unavailable`, not a
+  promotion result. The frozen consensus replay has one immutable external
+  result with local-paper replay proof and only the named comparators.
 - A new source-safe QQQ session reaches `canary_completed` with matching
   terminal/reconciliation evidence, or an exact technical failure is preserved
   and recovered without duplicate submit.
@@ -142,4 +163,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add target position policy foundation`
+`Add intraday consensus replay baseline`
