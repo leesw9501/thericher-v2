@@ -217,9 +217,12 @@ not a depth-training corpus or a reason to manufacture GPU work.
 The completed data-backed 1m sequence screen used one fixed 90-bar horizon; it
 was an architecture comparison, not a `{15, 30, 60, 90, 120, 180}` window
 sweep. Its after-cost outcomes did not produce a selectable candidate. The
-window protocol above governs the next eligible intraday family after the
-current execution-only QQQ objective; it does not alter the installed QQQ
-decision table or create a Paper action now.
+separate non-promoting 1m window-sensitivity preflight is now complete on the
+retained 20-session KIS cache: its aggregate real spread was below the
+predeclared session-block null P95, so it closed `no_structure`. It does not
+alter the installed QQQ decision table, create a Paper action, or qualify CUDA.
+The fixed comparison sessions are spent for this family; a later intraday
+candidate needs later or otherwise disjoint evidence.
 
 The fixed CACC-D1 closing-auction co-confirmation screen is also complete and
 falsified across all three sparse validation folds. It used no training, GPU,
@@ -552,12 +555,12 @@ limits remain explicit.
     split, independently qualified target/cost definition, and explicit
     leakage kill test; this chronology record cannot provide a shared-span
     threshold, campaign eligibility, or GPU dispatch signal.
-13. After the current execution-only QQQ objective, the next eligible intraday
-    hypothesis may use the frozen window/timeframe protocol. It must declare a
-    finite subset, shared family budget, effective-sample rule, 1.0x/1.5x/2.0x
-    cost band, naive baseline, and later/disjoint replication path before CPU
-    or GPU dispatch. It is not permission to grid-search the 21-session cache
-    or promote a best-looking cell.
+13. Keep the completed 1m window-sensitivity preflight immutable. Its
+    `30/60/90/120/180` matrix closed `no_structure` after the real aggregate
+    spread stayed below the frozen session-block null P95. Do not reuse its
+    comparison sessions to retune a window, start CUDA, select a model, create
+    an ensemble, or change Paper behavior. A later intraday candidate needs a
+    fresh later/disjoint family and its own contract.
 
 ## Durable Constraints
 

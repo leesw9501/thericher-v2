@@ -21,8 +21,10 @@ second goal. Git and external artifacts retain historical evidence.
   independent Data source for the existing Execution canary.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
-  campaign. GPU is free and correctly has no eligible job while historical D1
-  input remains quarantined.
+  campaign. The independent QQQ 1m window-sensitivity preflight completed on
+  the retained offline cache and closed `no_structure` because its real
+  aggregate spread stayed below the session-block null P95. It selected no
+  window and has no CUDA follow-up; historical D1 remains quarantined.
 - **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
   durable owner. No frozen labelled campaign or sealed-evaluation allocation is
   currently eligible; this is a scoped resource fact, not a hold on Data or
@@ -40,12 +42,14 @@ second goal. Git and external artifacts retain historical evidence.
 ## Ready / Owned / Due
 
 - **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
-  canary through its first new lifecycle outcome. The latest 06:20 KST task
-  closed `recovery/collection_exit_nonzero`; its paired QQQ session was
-  explicitly `paper_only` `no_intent/runtime_window_stale`, and the matching
-  offline validator reattested its stale session/window lineage with no canary
-  or local-paper replay. That is scoped recovery evidence, not completion,
-  quota, or a new permission gate.
+  canary through its first new lifecycle outcome. The completed non-promoting
+  QQQ 1m window-sensitivity preflight is immutable `no_structure` evidence;
+  Engine Research may now take a separate fresh/disjoint preparation package.
+  The latest 06:20 KST task closed `recovery/collection_exit_nonzero`; its paired QQQ
+  session was explicitly `paper_only` `no_intent/runtime_window_stale`, and the
+  matching offline validator reattested its stale session/window lineage with
+  no canary or local-paper replay. That is scoped recovery evidence, not
+  completion, quota, or a new permission gate.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
@@ -84,9 +88,11 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-The active company objective is in a scheduler-owned external wait, not an
-operator decision. The latest 06:20 KST QQQ cycle produced a source-safe
-terminal `recovery/collection_exit_nonzero`; its explicitly
+The QQQ execution leg is in a scheduler-owned external wait, not an operator
+decision. It did not defer the independent CPU-first window-sensitivity
+preflight, which has now completed as `no_structure` and released its GPU
+appointment. The latest 06:20 KST QQQ cycle produced a source-safe terminal
+`recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached
 the same session hash and stale runtime-window lineage as `validated`, so this

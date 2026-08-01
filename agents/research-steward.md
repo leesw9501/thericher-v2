@@ -14,9 +14,10 @@ weights, modify execution risk, or call a broker.
 
 ## Current Resource State
 
-- GPU: free. No frozen labelled campaign is eligible while the historical D1
-  input remains quarantined. This is not a request to manufacture training and
-  does not block independent Data, Execution, or CPU Research preparation.
+- GPU: free. The independently frozen QQQ 1m window-sensitivity CPU preflight
+  closed `no_structure`, so it has no CUDA appointment. Historical D1 remains
+  quarantined. This does not block Data, Execution, or other CPU Research
+  preparation, and it is not a request to manufacture training.
 - Sealed evaluation: no newly allocated family. Earlier target-free and sealed
   receipts remain historical evidence; they cannot be reused as a new campaign
   or selection pass.

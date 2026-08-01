@@ -522,7 +522,10 @@ Do not use fixed lane percentages or forced lane rotation.
 5. Data acquisition may continue while storage and source policy allow it.
 6. During an active KIS paper session, execution reliability and inference
    preempt training that could interfere with them.
-7. A blocked lane does not stop another ready lane.
+7. A blocked lane does not stop another ready lane. In particular, a
+   scheduler-owned Execution observation never defers a separately scoped,
+   frozen non-promoting Research package whose inputs and side effects do not
+   depend on that observation.
 8. Shared contracts are integrated by Codex before dependent work relies on
    them.
 9. A genuinely unknown capability is resolved by a scoped probe; its result

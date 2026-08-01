@@ -7674,3 +7674,61 @@ turnover, and cost exposure. Treating it as an invisible constant left the
 research too narrow; treating it as an unbounded grid would overfit the short
 intraday history. The frozen, budgeted matrix makes the comparison useful while
 preserving a later independent falsification path.
+
+## 2026-08-01 - Run the intraday window probe independently of the QQQ canary
+
+Decision: the scheduler-owned QQQ Paper lifecycle is an Execution observation,
+not a dependency for separately frozen offline Research. Start a bounded,
+non-promoting QQQ 1m window-sensitivity preflight now, using the retained
+20-session KIS private catalog and frozen `30/60/90/120/180` completed-bar
+cells. The QQQ scheduler, decision table, sizing, freshness budget, and Paper
+route remain unchanged.
+
+The preflight uses the existing chronological `10/1/9` session geometry,
+session-local histories and targets, development-only normalization, and
+session-block effective-sample accounting. It must run a deterministic
+session-block label-permuted null before interpreting the real matrix. Model
+capacity is normalized by fixed optimizer-step count per cell; short windows
+cannot receive more updates merely because they yield more overlapping rows.
+The result exposes only aggregate metric distributions and its
+`structure_present` or `no_structure` gate, never a ranked window or model.
+
+CUDA is conditionally eligible only when the real predeclared structure
+statistic exceeds the block-permuted null threshold. A null result terminates
+the family without manufactured GPU work. A positive gate still creates only a
+descriptive external LSTM/causal-TCN/compact-attention screen; it cannot select
+a winner, form an ensemble, open sealed evaluation, make a profitability claim,
+or change Paper behavior. Any future candidate needs later or disjoint
+replication custody.
+
+Claude's falsification-first verdict was `supported-with-limits`. It required
+per-cell training-capacity normalization, a CPU structure gate before CUDA,
+strict session reset and development-only normalization, one-shot comparison
+data custody, aggregate-only reporting, and the label-permuted block null as
+the strongest kill test. The contract adopts all six limits.
+
+Reason: serializing Research behind a scheduler-owned Paper observation leaves
+the engine idle for no causal reason. The bounded null-first experiment advances
+the specific fixed-90-bar uncertainty without pretending that 21 sessions can
+select or promote a profitable engine.
+
+## 2026-08-01 - Close the QQQ 1m window family on its predeclared null
+
+Decision: accept the completed external
+`kis-intraday-window-matrix-v1/qqq-20260623-20260721-window-null-r1` result as
+the terminal outcome of the frozen `30/60/90/120/180`-bar family. Its real
+aggregate Brier spread was `0.000233701152146`, below the deterministic
+session-block-permuted null P95 of `0.000627602629947`; the result is therefore
+`no_structure`. No window, model, ensemble, profitability claim, Paper input,
+or CUDA appointment is selected.
+
+The result retains no raw data or checkpoint and writes only source-safe
+precommit/summary evidence under `D:\\thericher-v2\\model-artifacts`. Its
+comparison sessions are spent for this family: they cannot be reused to retune
+a lookback or reopen a GPU screen. A later intraday candidate must have a
+separate hypothesis and later or otherwise disjoint evaluation contract.
+
+Reason: the predeclared null test failed to distinguish window-length variation
+from session-level noise. Closing it avoids using the idle GPU to amplify an
+unsupported choice while leaving independent Engine Research, Data, and KIS
+Paper work active.

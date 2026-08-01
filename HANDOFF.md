@@ -42,6 +42,15 @@ authorized private KIS Paper work.
 
 ## Latest Research Integration
 
+- The independent QQQ 1m window-sensitivity CPU preflight completed against the
+  retained 20-session KIS cache. Its frozen `30/60/90/120/180`-bar matrix had
+  a real Brier spread of `0.000233701152146`, below its session-block-permuted
+  null P95 of `0.000627602629947`, so the predeclared result is
+  `no_structure`. The source-safe external summary is
+  `D:\\thericher-v2\\model-artifacts\\research\\kis-intraday-window-matrix-v1\\qqq-20260623-20260721-window-null-r1\\summary.json`.
+  It selected no window, wrote no checkpoint or raw data, made no KIS/broker
+  call, and does not qualify a CUDA follow-up. The spent comparison sessions
+  cannot be reused to retune this family.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and
