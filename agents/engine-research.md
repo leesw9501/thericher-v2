@@ -507,18 +507,17 @@ limits remain explicit.
     source/local-paper plumbing: no full run, GPU, selection, ensemble,
     promotion, KIS Paper input, or order may follow. Do not retune its
     lookback, count comparison, cadence, costs, or comparator family.
-12. The KIS broad D1 cache now has a reattested source-local development
-    coverage panel at generation 604, with 604 of 2,119 targets covered and
-    at most two pages per target. Its generation-187 overlap comparison found
-    zero changed fingerprints across 187 targets / 35,975 shared rows, but its
-    current-listing/non-PIT,
-    unadjusted, corporate-action-unqualified, and session-finality-unattested
-    scope is not an eligible target or split. Do not freeze a CPU baseline,
-    use historical membership, rank targets, open labels, start GPU work, or
-    treat accumulating cache pages as a model result. A later candidate needs a
-    date-based split, an independently qualified target/cost definition, and
-    an explicit leakage kill test. A future broad-panel chronology observation
-    records only per-target span distribution; it cannot provide a shared-span
+12. The KIS broad D1 cache now has a complete source-local coverage panel at
+    generation 26,368: all 2,119 current NAS targets have retained coverage,
+    the generation-604 overlap is equal with zero mismatches, and its external
+    chronology records only per-target span buckets plus `1,089 complete / 1,030
+    source_limited` states. Its current-listing/non-PIT, unadjusted,
+    corporate-action-unqualified, and session-finality-unattested scope is not
+    an eligible target or split. Do not freeze a CPU baseline, use historical
+    membership, rank targets, open labels, start GPU work, or treat aggregate
+    coverage as a model result. A later candidate still needs a date-based
+    split, independently qualified target/cost definition, and explicit
+    leakage kill test; this chronology record cannot provide a shared-span
     threshold, campaign eligibility, or GPU dispatch signal.
 
 ## Durable Constraints

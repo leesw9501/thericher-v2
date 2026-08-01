@@ -10,11 +10,13 @@ second goal. Git and external artifacts retain historical evidence.
   lifecycle through the installed scheduler. The earlier D1 census remains
   complete and does not gate this execution-only objective.
 - **Data:** the sole broad-D1 Task Scheduler owner,
-  `thericher-kis-paper-daily-broad-backfill`, completed its 08:15 KST bounded
-  continuation as `collected` / `resume` and is now `Running` its 08:45 KST
-  continuation. Its last source-safe receipt records 3,995 accepted pages, 137
-  categorical failures, and 695 remaining targets; aggregate page ETA remains
-  `unknown`. It alone owns KIS credentials, network, cursor, pacing, mutable
+  `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
+  generation-26,368 cache: all 2,119 current NAS targets are covered with no
+  remaining cursor work. An offline postprocess materialized its external
+  panel and equal-overlap continuity receipt, then recorded a per-target
+  chronology distribution; the `current_listing_only`, `non_pit`,
+  `non_ranking`, adjustment, and session-finality limitations remain explicit.
+  It alone owns any future KIS credentials, network, cursor, pacing, mutable
   cache, and postprocess. The current QQQ head-cache scheduler remains an
   independent Data source for the existing Execution canary.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
@@ -47,9 +49,10 @@ second goal. Git and external artifacts retain historical evidence.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
-- **Due:** Data owns the active 2026-07-31 08:45 KST broad continuation; the
-  QQQ source/canary task next due is 2026-08-04 00:31 KST. An absent fresh
-  receipt is source-local evidence, not foreground idle or a company hold.
+- **Due:** the broad cache has no remaining cursor work; its installed task
+  retains ownership of any future scoped collection. The QQQ source/canary
+  task next due is 2026-08-04 00:31 KST. An absent fresh receipt is source-local
+  evidence, not foreground idle or a company hold.
 - **Monitor:** the existing source-safe intraday-head result monitor is the
   only post-session observer. It now requires a QQQ completion claim to match
   an explicitly Paper-only `cancelled` canary with `clean` reconciliation and

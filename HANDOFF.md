@@ -907,6 +907,20 @@ run because the local OAuth session was expired, so the evidence is explicitly
 
 ## Latest Broad KIS D1 Update
 
+The 2026-08-01 offline postprocess reattached the terminal broad cache without
+a KIS, credential, network, account, order, or live call. Its generation-26,368
+candidate panel covers all 2,119 current NAS targets with zero coverage gaps or
+quarantines. The source-safe postrun receipt is
+`sha256:5b24100dc992a4fed284859345c63b9b80f13e5c85cba0852adcef2b9453a593`;
+its generation-604 overlap comparison is equal with zero target or row
+mismatches. The paired chronology receipt
+`sha256:d589714101992bea848ed430d30857d469bd7d5c62816c0fac177c645d10af7e`
+records only aggregate span buckets and `1,089 complete / 1,030 source_limited`
+target states. This completes the cache's source-local coverage observation but
+does not create a PIT universe, common-history threshold, model input, ranking,
+strategy, Paper action, or GPU eligibility. Any future collection remains owned
+by the installed task.
+
 The broad KIS Paper D1 cache is now active at the dedicated external
 `daily-nas-broad/v1` root. Its hash-attested current-listing registry has 2,119
 NASDAQ common-stock targets with explicit non-PIT/non-ranking scope. A first

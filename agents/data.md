@@ -95,6 +95,23 @@ the offline observer only after a current or complete cache result. A
 
 ## Current Facts
 
+- The 2026-08-01 offline broad-D1 postprocess reattested the terminal
+  2,119-target current NAS cache at generation 26,368. Its candidate panel is
+  `sha256:6f83952b101050f221032ee48f71d1dc70bb392aa3fa5e139dba1335c8659c08`,
+  with 2,119 covered targets, zero coverage gaps, zero quarantines, and
+  4,861,551 retained source rows that remain only under `D:`. The immutable
+  source-safe postrun receipt is
+  `sha256:5b24100dc992a4fed284859345c63b9b80f13e5c85cba0852adcef2b9453a593`.
+  It compared the 604-target baseline overlap as `equal` with zero target or
+  row mismatches. The follow-on chronology receipt
+  `sha256:d589714101992bea848ed430d30857d469bd7d5c62816c0fac177c645d10af7e`
+  records only aggregate span buckets and `1,089 complete / 1,030
+  source_limited` target states. Neither artifact accesses network, KIS,
+  credentials, account, order, or live routes. This is a complete
+  source-local coverage observation, not a PIT universe, common-history
+  threshold, model input, ranking, or Research campaign contract. Recovery:
+  `complete` for this postprocess; any future collector work stays owned by the
+  installed scheduler.
 - The v2 offline KIS D1 discontinuity census is complete at
   `sha256:2d9f684c...d638c69`, with receipt
   `sha256:0f92a377...b93edb`. It retains one aggregate unexplained large
