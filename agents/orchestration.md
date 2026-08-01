@@ -78,8 +78,9 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-There is no company-wide block. The latest 06:20 KST QQQ cycle produced a
-source-safe terminal `recovery/collection_exit_nonzero`; its explicitly
+The active company objective is in a scheduler-owned external wait, not an
+operator decision. The latest 06:20 KST QQQ cycle produced a source-safe
+terminal `recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached
 the same session hash and stale runtime-window lineage as `validated`, so this
@@ -90,6 +91,21 @@ exact unknown-run recovery also exposed a reversible safety improvement:
 its read-only entrypoint now has a submit-proof branch and appends an immutable
 receipt instead of overwriting original failure evidence. The installed QQQ
 scheduler remains the only owner of the next fresh-session lifecycle.
+
+**Blocked-goal alternatives (2026-08-01):** the planned path is existing
+QQQ scheduler -> current eligible receipt -> existing durable Paper intent and
+canary -> matching offline validator and terminal reconciliation. **Execution**
+owns the installed task and source-safe monitor; its evidence is a new
+Paper-only `canary_completed` record with `cancelled`/`clean` terminal parity;
+its kill test is a stale, missing, or ambiguous outcome, which starts exact
+technical recovery without a duplicate submit. **Data** owns the existing head
+cache and scheduler; its evidence is a current receipt, while an exact
+collection failure remains a lane-local cache recovery. **Validation** owns
+only the matching offline reattachment; a mismatch rejects completion and
+cannot create an order. A first malformed Claude CLI prompt was discarded; the
+completed rerun was `supported-with-limits`: the wait is appropriate now, but
+another stale-window outcome must be treated as a bounded technical fault for
+Codex recovery, never an operator approval request.
 
 The later 02:31 and 04:31 KST clean-capture sessions were independently
 `receipt_not_eligible` before their account boundaries. They do not recover or
