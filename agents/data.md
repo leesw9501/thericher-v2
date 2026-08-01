@@ -735,7 +735,7 @@ path when it becomes terminal; an absent stable full-breadth postrun receipt is
 normal for the current non-terminal result and does not delay another lane.
 
 Preserve the frozen six-symbol source separately. The fresh prospective QQQ
-intraday schedule owns its next due at 2026-08-01 00:31 KST; do not manually
+intraday schedule owns its next due at 2026-08-04 00:31 KST; do not manually
 trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
 cursor collection. SPY/NAS is an observed-only unavailable request shape, not
 a closed source limitation. The frozen 523-symbol Norgate panel has now been

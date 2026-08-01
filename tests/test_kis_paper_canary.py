@@ -497,6 +497,38 @@ def test_expired_intent_never_reads_credentials_or_submits(tmp_path: Path) -> No
     assert transport.requests == []
 
 
+def test_submit_permission_denial_blocks_side_effect_at_submit_boundary(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport()
+    checked_at: list[datetime] = []
+
+    def deny_submit(submit_at: datetime) -> bool:
+        checked_at.append(submit_at)
+        return False
+
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="submit-permission-denied-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "submit-permission-denied-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        submit_permitted=deny_submit,
+        **_paths(tmp_path),
+    )
+
+    assert checked_at == [NOW]
+    assert outcome.phase == "intent_recorded"
+    assert outcome.reason_code == "session_closed"
+    assert _submission_count(transport) == 0
+    assert _sell_submission_count(transport) == 0
+    assert all(
+        request.headers.get("tr_id") != KIS_PAPER_US_CANCEL_TR_ID
+        for request in transport.requests
+    )
+
+
 def test_buy_pause_blocks_direct_canary_before_credentials_or_network(tmp_path: Path) -> None:
     class UnusedEnvironment(dict[str, str]):
         def get(self, key: str, default: str = "") -> str:

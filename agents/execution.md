@@ -37,6 +37,13 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- The 2026-08-01 offline QQQ-path reattestation passed 95 focused tests. It
+  includes a direct lower-canary submit-boundary test that denies the QQQ
+  session's `submit_permitted` callback and proves no submit or cancel side
+  effect follows. Together with the session's pre-account and pre-submit
+  freshness tests, this preserves the current stale-input and closed-session
+  boundary without a KIS call, credential read, scheduler change, or Paper
+  action.
 - The independent offline QQQ validator now rejects a `canary_completed`
   record unless it is explicitly `paper_only`, has the terminal `cancelled`
   phase, and reports `clean` reconciliation. It also rejects submitted,
