@@ -58,6 +58,12 @@ second goal. Git and external artifacts retain historical evidence.
   an explicitly Paper-only `cancelled` canary with `clean` reconciliation and
   matching validator/terminal evidence; it never invokes KIS, Docker,
   collection, account, or order paths.
+- **Resume review (2026-08-01):** the latest terminal, session, and offline
+  validator hashes reattached unchanged; the named task is `Ready` for
+  2026-08-04 00:31 KST with no active owned worker, and the existing result
+  monitor is active. The credential-, network-, and order-free QQQ path suite
+  passed `123` focused tests. No additional package inside this execution-only
+  objective is ready before a new scheduler-owned session result.
 - **Verification:** the current independent QQQ-path reattestation passed
   `148` focused tests, and the validator boundary passed `26` focused tests.
   The offline reattachment of the retained no-intent session remained
