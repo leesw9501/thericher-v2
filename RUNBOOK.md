@@ -2000,13 +2000,21 @@ historical terminal page from becoming a quarantine target.
 Run at every bounded goal boundary:
 
 ```powershell
-uv run --extra dev pytest -q
+uv run --extra dev pytest -q <changed paths>
+.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
 ```
 
-### Faster Local Test Feedback
+The focused serial group covers the changed production and contract paths. The
+parallel command is the full-suite authority: it must exit zero, use a clean
+`C:\trpy` root, and retain the expected test/skip cardinality. Authority mode
+prunes only helper-owned non-link roots older than 24 hours after checking their
+resolved parent; a recent root, mismatch, nonzero exit, or retained current-run
+temp root fails verification.
+
+### Fast Local Test Feedback
 
 For repeatable Windows feedback between goal boundaries, use:
 
@@ -2024,9 +2032,9 @@ available for diagnosis. Override the worker count when needed:
 .\scripts\run_parallel_tests.ps1 -Workers 4
 ```
 
-It has no KIS, credential, Docker, market-data, or artifact access. The command
-above is a faster feedback path, not a replacement for the authoritative serial
-verification at a bounded-goal boundary. On 2026-07-27, the same full suite
-completed with `1365 passed, 13 skipped` in 102.86 seconds using eight workers
-and in 510.80 seconds serially. Use the parallel helper during implementation;
-retain the serial run only for the final goal-boundary proof.
+It has no KIS, credential, Docker, market-data, or artifact access. On
+2026-07-31, the completed full serial baseline was `1769 passed, 14 skipped` in
+806.07 seconds; matching clean parallel results completed with four and eight
+workers. Run serial `pytest -q` at least weekly and before a material live-route
+or execution-recovery promotion. It is a compatibility diagnostic rather than
+a routine goal-boundary hold.

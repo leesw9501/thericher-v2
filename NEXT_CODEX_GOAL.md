@@ -77,7 +77,8 @@ the action. Historical D1 data and all Research artifacts remain out of scope.
 ## Verification
 
 ```powershell
-uv run --extra dev pytest -q
+uv run --extra dev pytest -q <changed paths>
+.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet

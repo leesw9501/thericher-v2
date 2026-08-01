@@ -103,6 +103,41 @@ the offline observer only after a current or complete cache result. A
   Paper, or live status. Data now preserves the independent current QQQ head
   cache for the existing freshness-gated Execution canary; it does not use the
   quarantined historical D1 panel as a runtime input.
+- The 2026-08-01 06:20 KST intraday-head task retained source-safe terminal
+  `sha256:f063df8e542b63698d827085d5d33e349e541e9cc7a0f0c5956f1ff70acc9b9c`
+  as `recovery/collection_exit_nonzero` with collection exit one. Its paired
+  QQQ session `sha256:6d4749bad343e070491f76b5924b0174e6fb42d87c2367d6b90523c0e4605f5b`
+  is explicitly `paper_only` `no_intent/runtime_window_stale`; the matching
+  offline validation `sha256:48858f9f1c5ffb50701fcdb435e88b36176698cd352a3cfef3aaff7b42b22a2c`
+  reattests its stale runtime-window/session lineage as `validated` and shows
+  no canary. This source-local recovery requires neither a manual collection
+  action nor a QQQ decision-table or scheduler change; the installed task owns
+  the next observation.
+- The 2026-08-01 04:31 KST intraday-head task retained source-safe terminal
+  `sha256:f14100fe40688c506e6f5eeaeebab589ff8cf5b0fa1572f9c27970251c1fbf67`
+  as `complete/complete`, with collection exit zero. Its paired QQQ session
+  kept a runtime-ready immutable input-manifest lineage but closed explicitly
+  `paper_only` `no_intent/account_unavailable`; matching prospective validation
+  was `validated` and local-paper replay matched `no_intent`. This session-local
+  recovery evidence requires neither a manual collection action nor a QQQ
+  decision-table or scheduler change; the installed task owns the next
+  observation.
+- The 2026-08-01 02:31 KST intraday-head task retained source-safe terminal
+  `sha256:df085f929f3bfccf359109533e2dc0a4238c6058e849f75604dbbac26af86fa3`
+  as `complete/complete`, with collection exit zero. Its paired QQQ session
+  kept a runtime-ready immutable input-manifest lineage but closed explicitly
+  `paper_only` `no_intent/account_unavailable`; matching prospective validation
+  was `validated`. This session-local recovery evidence requires neither a
+  manual collection action nor a QQQ decision-table or scheduler change; the
+  installed task owns the next observation.
+- The 2026-08-01 00:31 KST intraday-head task retained a source-safe complete
+  terminal `sha256:a3d01a68f3427c81ea5cb41f0651488cfad2e7a5431f8986484f1063378a2f35`.
+  Its paired QQQ session's immutable input-manifest lineage was runtime-ready,
+  while the session itself was explicitly `paper_only`
+  `no_intent/receipt_not_eligible`; collection exited zero and prospective
+  validation was `validated`. This input-local abstain requires neither a
+  manual collector launch nor a QQQ decision-table or scheduler change; the
+  installed task owns the next 02:31 KST observation.
 - The 2026-07-31 02:31 and 04:31 KST intraday-head tasks both retained complete
   source-safe captures. The latest capture
   `sha256:f3a8c940cee139784ba2221b0a38ddaf123c87b5027824edbae6fd7900435259`

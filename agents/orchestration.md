@@ -39,15 +39,16 @@ second goal. Git and external artifacts retain historical evidence.
 
 - **Ready:** reattest and observe the installed QQQ freshness-gated KIS Paper
   canary through its first new lifecycle outcome. The latest 06:20 KST task
-  retained an incomplete `minute_duplicate_conflict` capture and closed its
-  QQQ session as `no_intent/runtime_window_stale` before a canary or durable
-  intent existed. That is scoped input/recovery evidence, not completion,
+  closed `recovery/collection_exit_nonzero`; its paired QQQ session was
+  explicitly `paper_only` `no_intent/runtime_window_stale`, and the matching
+  offline validator reattested its stale session/window lineage with no canary
+  or local-paper replay. That is scoped recovery evidence, not completion,
   quota, or a new permission gate.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
 - **Due:** Data owns the active 2026-07-31 08:45 KST broad continuation; the
-  QQQ source/canary task remains due at 2026-08-01 00:31 KST. An absent fresh
+  QQQ source/canary task next due is 2026-08-04 00:31 KST. An absent fresh
   receipt is source-local evidence, not foreground idle or a company hold.
 - **Monitor:** the existing source-safe intraday-head result monitor is the
   only post-session observer. It now requires a QQQ completion claim to match
@@ -59,29 +60,30 @@ second goal. Git and external artifacts retain historical evidence.
   The offline reattachment of the retained no-intent session remained
   credential-, network-, account-, and order-free. Claude's
   `supported-with-limits` review requires completion to mean a self-consistent
-  persisted Paper record, not an assertion of venue cancellation. Its serial
-  `pytest -q` preflight after `8771589` reached 48 percent but exceeded the
-  12-minute authority window and is `unavailable`, not passed or substituted;
-  the 2026-07-31 operating-review serial rerun also timed out at the same
-  authority limit. Ruff and both Compose configurations passed. This leaves the
-  installed scheduler, its current receipt contract, and the next due action
-  unchanged.
-- **Verification throughput:** after the current submit-ordering coverage was
-  added, a fresh serial `pytest -q` again exceeded the 12-minute authority
-  window and remains `unavailable`, not passed. The isolated feedback helper
-  `scripts/run_parallel_tests.ps1 -Workers 4` completed `1769 passed, 14
-  skipped` in 234.37 seconds. Its duration profile shows several bounded,
-  compute-heavy Research tests rather than a replacement serial authority.
+  persisted Paper record, not an assertion of venue cancellation. The full
+  serial baseline then completed `1769 passed, 14 skipped` in 806.07 seconds;
+  full isolated four/eight-worker runs match that cardinality. Goal-boundary
+  verification now uses changed-path serial tests plus the clean-root parallel
+  runner, Ruff, and both Compose configurations. Full serial remains a
+  weekly/material-routing diagnostic rather than a routine foreground hold.
+- **Verification throughput:** current full feedback passed `1769 passed, 14
+  skipped` in 222.47 seconds with four workers and 137.53 seconds with eight.
+  The runner's clean-root authority mode safely prunes only verified helper
+  roots older than 24 hours and rejects a recent `C:\trpy` worker root; it
+  propagates pytest's exit status. This change is verification plumbing only;
+  it does not alter KIS, Data, Research, Execution, or live authority.
 
 ## Current Bottleneck And Improvement
 
-There is no company-wide block. The 00:31 QQQ cycle reached a fresh eligible
-account boundary but returned scoped `account_unavailable` before any canary or
-intent. A separate virtual-only read-only bridge completed afterward, but it
-cannot substitute for the session's own account/quote boundary; Claude's
-falsification-first verdict is `unsupported` for closing the goal from that
-pair. The earlier `minute_duplicate_conflict` remains source-local containment.
-The exact unknown-run recovery also exposed a reversible safety improvement:
+There is no company-wide block. The latest 06:20 KST QQQ cycle produced a
+source-safe terminal `recovery/collection_exit_nonzero`; its explicitly
+`paper_only` session reached `no_intent/runtime_window_stale` before a canary,
+durable intent, or local-paper replay. The independent validator reattached
+the same session hash and stale runtime-window lineage as `validated`, so this
+cannot satisfy the required Paper-only cancelled-and-clean lifecycle. The
+earlier `receipt_not_eligible`, `account_unavailable`, and
+`minute_duplicate_conflict` facts remain scoped to their exact sessions. The
+exact unknown-run recovery also exposed a reversible safety improvement:
 its read-only entrypoint now has a submit-proof branch and appends an immutable
 receipt instead of overwriting original failure evidence. The installed QQQ
 scheduler remains the only owner of the next fresh-session lifecycle.

@@ -152,10 +152,21 @@ Codex is the product-development lead and integrator.
 - Separate fast feedback from authoritative verification. Focused, independent
   test groups may run concurrently only after their test artifacts, control
   roots, Docker services, and mutable environment are known not to conflict.
-  `pytest-xdist` or separate test processes are a feedback optimization, not
-  evidence that the suite is isolation-safe. The required serial `pytest -q`
-  remains the goal-boundary authority unless a future objective explicitly
-  proves and adopts an equivalent deterministic replacement.
+  The goal-boundary Python authority is the changed-path serial group plus
+  `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
+  both Compose configurations. The helper uses file-level xdist distribution,
+  a fresh short temp root, an explicit clean-root precondition, and propagates
+  pytest's exit code. Authority mode prunes only helper-owned, non-link temp
+  roots older than 24 hours after resolved-parent verification; any recent root
+  fails closed. Treat a nonzero exit, retained current-run temp root,
+  unexpected count/skip cardinality, or worker-count divergence as failed
+  verification. This replacement is supported by a completed 2026-07-31 serial
+  baseline and matching full-suite results with four and eight workers; it does
+  not relax execution or live-risk tests.
+  Run full serial `pytest -q` at least weekly and before material live-route or
+  execution-recovery promotion as a diagnostic/compatibility check. It does
+  not foreground-block an otherwise verified private Paper objective or an
+  independent lane.
 - Enact reversible, no-cost operating and role-lifecycle decisions
   autonomously when they stay inside existing business, credential, capital,
   safety, rights, and public-exposure authority.
@@ -718,11 +729,12 @@ Before ending a long task, Codex refreshes the next goal. When a long Codex goal
 still has capacity and no true approval blocker, continue with the refreshed
 goal rather than waiting for routine operator direction.
 
-Use isolated parallel tests for fast local feedback only when their fixtures,
-artifact roots, and external workers do not conflict; `pytest -n auto` is an
-available focused-feedback option. The required goal-boundary verification
-remains the authoritative serial suite unless its command is explicitly changed
-by the project contract.
+Use isolated parallel tests only when their fixtures, artifact roots, and
+external workers do not conflict; `pytest -n auto` remains available for
+focused feedback. At a goal boundary, use the clean-root full parallel contract
+and changed-path serial coverage defined above. The weekly/material-routing
+serial diagnostic checks compatibility without becoming a foreground hold on
+independent work.
 
 When the daily KST operating-review automation is enabled, publish one concise
 operator summary. It

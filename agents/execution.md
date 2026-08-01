@@ -63,6 +63,44 @@ decision-table edit, or live route is introduced.
   and records current `outcome_unknown/reconciliation_unresolved` only. No
   submit, cancel, modify, replacement, or live call occurred. This exact
   generic run is not the QQQ lifecycle objective and cannot block it.
+- The 2026-08-01 06:20 KST QQQ task produced a new source-safe terminal
+  `sha256:f063df8e542b63698d827085d5d33e349e541e9cc7a0f0c5956f1ff70acc9b9c`
+  as `recovery/collection_exit_nonzero`. Its session
+  `sha256:6d4749bad343e070491f76b5924b0174e6fb42d87c2367d6b90523c0e4605f5b`
+  is explicitly `paper_only` `no_intent/runtime_window_stale` before a canary
+  or durable intent; its matching offline validator
+  `sha256:48858f9f1c5ffb50701fcdb435e88b36176698cd352a3cfef3aaff7b42b22a2c`
+  reattests the same stale session lineage as `validated`, with no
+  local-paper replay. It cannot meet the cancelled-and-clean completion
+  contract or create a replacement submit; recovery remains scoped to this
+  exact session.
+- The 2026-08-01 04:31 KST QQQ task retained a runtime-ready window and
+  complete terminal, but its session
+  `sha256:1cc710fdc948f0108dd5397eba85e654150c0ab41a48dccfdaba6902fdf5aeb6`
+  closed explicitly `paper_only` `no_intent/account_unavailable`. Its matching
+  terminal `sha256:f14100fe40688c506e6f5eeaeebab589ff8cf5b0fa1572f9c27970251c1fbf67`
+  records collection exit zero and validated offline local-paper replay evidence
+  for the same session, but no canary record or durable intent exists. It cannot
+  meet the cancelled-and-clean canary completion contract or create a
+  replacement submit; its recovery remains scoped to this session.
+- The 2026-08-01 02:31 KST QQQ task retained a runtime-ready window and
+  complete terminal, but its session
+  `sha256:a9dffdc9de7d6e9d9f0628ca9281ef2b5d5805aca6c3be5357b559b01527373e`
+  closed explicitly `paper_only` `no_intent/account_unavailable`. Its matching
+  terminal `sha256:df085f929f3bfccf359109533e2dc0a4238c6058e849f75604dbbac26af86fa3`
+  records collection exit zero and validated offline replay evidence for the
+  same session, but no canary record or durable intent exists. It cannot meet
+  the cancelled-and-clean canary completion contract or create a replacement
+  submit; its recovery remains scoped to this session.
+- The 2026-08-01 00:31 KST QQQ task had a current input-ready abstain and
+  terminal `complete`, but its session
+  `sha256:04a272bfb8445748718dc26ddc57173327443b1116b158f931b542880f1d2f09`
+  closed explicitly `paper_only` `no_intent/receipt_not_eligible`. Its matching
+  terminal `sha256:a3d01a68f3427c81ea5cb41f0651488cfad2e7a5431f8986484f1063378a2f35`
+  records collection exit zero and validated offline local-paper replay
+  evidence, also `no_intent`. No canary, durable intent, account/quote work,
+  submit, cancel, modify, or live action follows; this cannot complete the
+  required cancelled-and-clean canary lifecycle or create a replacement intent.
 - The 2026-07-31 02:31 and 04:31 KST QQQ tasks had clean captures and terminal
   `complete`, but both sessions were `paper_only` `no_intent/receipt_not_eligible`
   before account, quote, canary, durable intent, submit, cancel, modify, or

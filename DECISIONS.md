@@ -7608,3 +7608,34 @@ credential read, scheduler mutation, or Paper intent.
 Reason: a session status label alone is insufficient completion evidence. The
 strict conjunction prevents a false lifecycle claim while preserving the
 existing no-duplicate, reconcile-first recovery contract.
+
+## 2026-07-31 - Make clean parallel tests the routine goal-boundary authority
+
+Decision: replace the routine full serial `pytest -q` goal-boundary hold with
+changed-path serial tests plus the existing clean-root,
+file-distributed `run_parallel_tests.ps1 -RequireCleanTempRoot` full-suite
+command. The authority also includes Ruff and both Compose configurations. A
+nonzero result, retained current-run temp root, unexpected test/skip cardinality,
+or worker-count divergence is verification failure. This changes no KIS, data,
+model, Paper-order, or live path.
+
+The completed serial baseline is `1769 passed, 14 skipped` in 806.07 seconds.
+The same suite then matched with repeated four-worker and one eight-worker
+isolated runs. The runner has a unique short temp root, file-level distribution,
+explicit clean-root mode that prunes only verified helper roots older than 24
+hours, and a test-backed direct propagation of pytest's exit status. Full serial
+`pytest -q` remains a weekly and material live-route or
+execution-recovery compatibility diagnostic; it does not hold an otherwise
+verified private Paper objective or another lane.
+
+Claude's falsification-first verdict was `supported-with-limits`. Its adopted
+conditions are the completed serial anchor, clean-root assertion, exit-code
+contract, cardinality comparison, worker-count rotation, and conservative
+changed-path serial selection. Cross-file serial-order bugs remain possible,
+which is why the periodic diagnostic remains explicit rather than being
+silently retired.
+
+Reason: a repeatedly timing-out validation command should not masquerade as
+authoritative proof or slow every bounded objective when the same suite has
+measured isolated parallel evidence. The retained serial diagnostic preserves a
+separate compatibility signal without foreground-blocking routine progress.

@@ -59,6 +59,28 @@ authorized private KIS Paper work.
 
 ## Latest Execution Integration
 
+- The 2026-08-01 06:20 KST QQQ scheduler cycle retained a new source-safe
+  terminal `sha256:f063df8e542b63698d827085d5d33e349e541e9cc7a0f0c5956f1ff70acc9b9c`
+  as `recovery/collection_exit_nonzero` with scheduler exit one. Its paired
+  session `sha256:6d4749bad343e070491f76b5924b0174e6fb42d87c2367d6b90523c0e4605f5b`
+  is explicitly `paper_only` but closed `no_intent/runtime_window_stale`;
+  no canary or durable intent is present. The matching offline validator
+  `sha256:48858f9f1c5ffb50701fcdb435e88b36176698cd352a3cfef3aaff7b42b22a2c`
+  reattests the same session hash and stale runtime-window lineage as
+  `validated`, with no local-paper replay or canary to interpret. This is
+  scoped source/collection recovery evidence, not a `canary_completed`
+  lifecycle, fill/PnL evidence, or a replacement-submit trigger.
+- The 2026-08-01 04:31 KST QQQ scheduler cycle retained a fresh runtime window
+  and complete terminal. Its session
+  `sha256:1cc710fdc948f0108dd5397eba85e654150c0ab41a48dccfdaba6902fdf5aeb6`
+  was explicitly `paper_only` but closed
+  `no_intent/account_unavailable`; no canary or durable intent was present.
+  The paired terminal
+  `sha256:f14100fe40688c506e6f5eeaeebab589ff8cf5b0fa1572f9c27970251c1fbf67`
+  is `complete/complete` with collection exit zero and matching prospective
+  validation `validated`; the offline local-paper replay likewise matched the
+  session as `no_intent`. This is scoped recovery evidence, not a
+  `canary_completed` lifecycle or a replacement-submit trigger.
 - Completion interpretation for the pending QQQ canary is now fail-closed at
   the independent offline validator. A session labelled `canary_completed`
   counts only when its embedded route is explicitly Paper-only, its canary
@@ -81,6 +103,27 @@ authorized private KIS Paper work.
   freshness-gated scheduler owns its next eligible session. The recovered
   generic unknown run is evidence about its own exact intent, not a new QQQ
   lifecycle or a hold on another authorized Paper action.
+- The 2026-08-01 02:31 KST QQQ scheduler cycle retained a complete terminal
+  and a runtime-ready immutable input-manifest lineage. Its session
+  `sha256:a9dffdc9de7d6e9d9f0628ca9281ef2b5d5805aca6c3be5357b559b01527373e`
+  was explicitly `paper_only` but closed `no_intent/account_unavailable`;
+  no canary record existed. The paired terminal
+  `sha256:df085f929f3bfccf359109533e2dc0a4238c6058e849f75604dbbac26af86fa3`
+  is `complete/complete` with collection exit zero and matching prospective
+  validation `validated`; the offline local-paper replay evidence matched the
+  same session. This is scoped recovery evidence, not a
+  `canary_completed` lifecycle, and it creates no replacement intent.
+- The 2026-08-01 00:31 KST QQQ scheduler cycle retained a complete,
+  source-safe current-window lineage and terminal `complete`. Its session
+  `sha256:04a272bfb8445748718dc26ddc57173327443b1116b158f931b542880f1d2f09`
+  was explicitly `paper_only` but closed `no_intent/receipt_not_eligible` from
+  an input-ready abstain before account, quote, intent, canary, or broker work.
+  The paired terminal
+  `sha256:a3d01a68f3427c81ea5cb41f0651488cfad2e7a5431f8986484f1063378a2f35`
+  is `complete/complete` with collection exit zero and prospective validation
+  `validated`; its matching offline replay is likewise `no_intent`. It is not
+  a `canary_completed` lifecycle and changes neither the fixed route nor the
+  scheduler-owned next observation at 02:31 KST.
 - The 2026-07-31 02:31 and 04:31 KST QQQ scheduler cycles both retained clean
   current head pages and terminal `complete`. The latest session
   `sha256:eca780e356bc6e8d44ef6117bc1c41c05cd83bd898b66a8933faaf841f51541b`
@@ -168,7 +211,11 @@ authorized private KIS Paper work.
   do not create role diaries or per-role next-goal files.
 - Use parallel focused tests only when their mutable artifacts, control roots,
   Docker services, and environment are isolated. They accelerate feedback but
-  do not replace the required serial goal-boundary `pytest -q`.
+  do not replace changed-path serial coverage. The full clean-root parallel
+  runner is the goal-boundary Python authority after its completed 2026-07-31
+  serial baseline and matching four/eight-worker results; serial `pytest -q`
+  remains a weekly/material-routing compatibility diagnostic, never an
+  unrelated foreground hold.
 - Commit work that changes behavior, a contract, a test, or a measured fact.
   Do not substitute schedule reattestation or document repetition for engine
   progress.
