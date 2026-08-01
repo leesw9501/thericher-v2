@@ -2,76 +2,96 @@
 
 ## Objective
 
-Reattest the frozen Norgate US trial D1 development panel against the updated
-local database, then decide whether it has an independent broad
-cross-sectional campaign input.
+Qualify the MIM-30 SPY long-only derivative one-minute input contract from the
+existing local KIS cache and the KIS Paper market-data route.
 
-The only outcome is a source-safe readiness result: `ready`, `restated`,
-`survivorship_unqualified`, or `input_unavailable`. This is Data-owned
-validation of an existing local source, not a new model, ranking, ensemble,
-GPU appointment, KIS action, or Paper input.
+The source paper's MIM rule is directional: use the previous regular-session
+close through 10:00 ET as a direction fact, then go long when positive and
+short otherwise from 15:30 to 16:00 ET. This project starts only its explicit
+long-only derivative: positive signal means long and all other cases are flat.
+It is not a paper replication. This objective is about reconstructible data and
+causal timing only; it does not train, tune, select, ensemble, or route a model.
 
 ## Start
 
 1. Run `./scripts/start_next_codex_task.ps1`, then read `HANDOFF.md`,
    `AGENTS.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `RUNBOOK.md`, and the active
-   Data, Engine Research, Research Steward, and orchestration stateboards.
-2. Reattach the existing frozen panel contract:
-   - dataset hash
-     `sha256:3d0841b90ddfd8d861f2432e404617ec0fc6e1afb8c902a81972df518720402d`
-   - 523 selected symbols, 483 common sessions
-   - `2024-07-18` through `2026-06-22`
-3. Use only the installed, official local Norgate Python interface and its
-   actual active database root. Do not assume that a copied `D:` directory is
-   the active root; do not parse `.ngdb` files manually, download data, make
-   network calls, read `.env`, use KIS, or submit an order.
+   Data, Engine Research, Research Steward, Execution, and orchestration
+   stateboards.
+2. Engine Research reattaches the independently retrieved original MIM-30
+   source as a source-safe external
+   receipt: retrievable identifier, stated sample/scope, stated time boundaries,
+   source license/copyright facts, and the long-only derivative reconstruction
+   outline.
+3. Ask Claude for a short falsification-first check before freezing any
+   source-data/campaign contract. Include no credentials, raw rows, prices,
+   account facts, fills, or sealed labels.
+
+## Boundaries
+
+- `KIS_PAPER_*` may be used only by the Data-owned SPY/AMS market-data client.
+  Account, position, open-order, quote, broker order, submit, modify, cancel,
+  and every `KIS_LIVE_*` path are out of scope.
+- Keep raw data and collector state under `D:\market_data`; keep only
+  source-safe receipts under `D:\thericher-v2\model-artifacts`. Never put raw
+  rows, tokens, headers, account values, or model artifacts in Git or Claude.
+- Keep one reusable in-memory KIS client/token for an active collector. Measure
+  one pacing variable at a time and retain the durable cursor; do not use a
+  parallel request flood or an unbounded retry loop.
+- Do not start a model, GPU job, parameter sweep, backtest, Paper action, or
+  public service in this objective. A useful dataset contract may prepare a
+  later CPU-first campaign only.
+- Preserve at least 20 percent free space as a warning and never start new
+  large collection work that would cross the 15 percent floor.
 
 ## Work
 
-1. **Data:** record a source-safe fingerprint of the active Norgate database
-   build using the existing official-interface helper. First measure the
-   completed US-session tail strictly after `2026-06-22`; `126` common sessions
-   is predeclared as the minimum for a later independent broad campaign's
-   holdout allocation. If even the source-local calendar maximum is below 126,
-   record `input_unavailable` and do not rebuild the 523-symbol panel merely to
-   repeat a known-failing condition. This threshold controls only that
-   prospective campaign; it does not block unrelated Data, Research, Execution,
-   or Paper work.
-2. **Data:** only if the tail passes, rebuild the exact frozen panel contract
-   into a new external `D:\market_data` snapshot and compare its canonical
-   identity with the frozen dataset hash. A difference is `restated`, not an
-   invitation to train on a silently changed history.
-3. **Data:** only if the tail passes, independently verify the original
-   membership construction against `S&P 500 Current & Past`, reporting both at
-   least one source-confirmed former member and the aggregate former-member
-   count/share at the original as-of boundary. A current-only reconstruction is
-   `survivorship_unqualified`. Report per-symbol tail availability as well as a
-   common intersection; do not let a survivor-conditioned intersection hide
-   missing symbols.
-4. **Engine Research / Research Steward:** prepare no model or GPU job in this
-   objective. Attach the readiness result to existing campaign custody and
-   state whether a later distinct causal family can be frozen. Do not reuse
-   already consumed broad-panel evaluation windows or call a short tail an
-   independent validation set.
-5. **Validation:** verify the result needs no credentials, network, broker,
-   raw-row artifacts, or Git-stored market data. Keep any receipt under the
-   external artifact root and update only the Data, Engine Research, Research
-   Steward, and orchestration stateboards with aggregate evidence.
+1. **Engine Research:** persist the original MIM source receipt and freeze the
+   explicit derivative hypothesis without adding filters: SPY/AMS, prior regular
+   close to 10:00 ET direction, long-only final-thirty-minute interval when
+   positive and flat otherwise, no short, no QQQ expansion, no
+   volume/volatility filter. Do not describe this as a source replication.
+   Predeclare the
+   future campaign's 60/20/20 chronological split, fixed `1.0x/1.5x/2.0x`
+   Execution-attested cost band, flat and same-window always-long comparators,
+   and strongest kill test: no positive after-cost sealed result at 1.5x costs
+   or no improvement over always-long rejects the family without retuning.
+2. **Data:** inventory the useful SPY/AMS one-minute local-cache subset from
+   manifests/indexes before reading raw files. Count complete regular sessions
+   with a reconstructible prior close, 10:00 ET boundary, and 15:30-16:00 ET
+   segment. The existing read-only inventory has 20 such sessions; record
+   source-safe span/count/completeness categories only.
+3. **Data:** if the cache is short, run a bounded capability probe on the exact
+   KIS Paper minute route using one reusable client. Establish temporal reach,
+   page yield, continuation semantics, and measured accepted/error categories
+   across a few widely separated dates. Do not claim source limitation from one
+   empty page or infer a rate limit from a local sleep.
+4. **Data:** when the probe establishes useful continuation, create or resume
+   one durable SPY/AMS serial collector under `D:`. It must retain the source
+   contract, cursor, accepted/categorical-failure page counts, tested pace,
+   remaining-page estimate or `unknown`, ETA bucket or `unknown`, and recovery
+   class. Continue this owned collector in the background; it must not hold
+   Engine, Execution, or the foreground orchestrator.
+5. **Validation:** reject any session with ambiguous ET/DST conversion, missing
+   prior regular close, missing 10:00 boundary, early close, incomplete required
+   minute bar, or source-contract mismatch. Confirm the probe/collector has no
+   account/order/live path and retains no secrets in receipts. A 252-complete-
+   session threshold controls only this MIM campaign; it is not a company hold.
 
 ## Completion
 
-- The active Norgate build fingerprint and post-`2026-06-22` completed-session
-  count are recorded externally. Exact panel comparison, membership result, and
-  per-symbol tail availability are required only when the predeclared tail
-  minimum passes.
-- The result is exactly one of `ready`, `restated`,
-  `survivorship_unqualified`, or `input_unavailable` with a concrete recovery
-  fact.
-- No Norgate download, KIS call, credential read, model training, GPU job,
-  ranking, model selection, ensemble, Paper action, or live behavior occurs.
+- A source-safe MIM receipt records the independently retrieved source facts,
+  KIS route capability, local-cache/session coverage, and one of: `qualified`,
+  `collection_in_progress`, or `input_unavailable`.
+- If fewer than 252 qualifying sessions are presently available, retain the
+  exact coverage/recovery fact and continue any useful owned collector; do not
+  lower the threshold, synthesize a proxy, train a model, or turn the outcome
+  into a Paper input.
+- The next objective may use only a `qualified` MIM contract for a CPU-first
+  frozen campaign. It may not reuse this objective to tune time boundaries,
+  filters, or costs after observing data.
 - Refresh this file with exactly one next objective, verify, commit, push, and
-  continue. A source-local deficiency remains lane-local and must not create a
-  global wait.
+  continue. A Data-route limitation is lane-local; other ready work continues.
 
 ## Verification
 
@@ -81,8 +101,9 @@ uv run --extra dev pytest -q <changed paths>
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose config --quiet
+docker compose --profile research config --quiet
 ```
 
 ## Suggested Commit Message
 
-`Reattest Norgate broad panel input`
+`Qualify MIM-30 minute input`

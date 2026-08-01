@@ -14,6 +14,12 @@ weights, modify execution risk, or call a broker.
 
 ## Current Resource State
 
+- The current-source opportunity adapter is a CPU-only graph contract. Its
+  valid-source replay parity and stale-source abstention proof create no GPU or
+  sealed-evaluation appointment. The original directional MIM source is
+  re-retrieved, but the proposed long-only derivative has only 20 locally
+  complete SPY 1m sessions against its 252-session contract; do not allocate
+  GPU work for it yet.
 - The Tiingo three-ETF D1 momentum control remains CPU-only and ineligible for
   follow-up. The distinct frozen sequence breadth family consumed one completed
   CUDA appointment: two windows times GRU, causal TCN, and compact attention,

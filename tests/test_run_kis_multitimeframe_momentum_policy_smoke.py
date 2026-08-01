@@ -5,6 +5,7 @@ import json
 import os
 import socket
 import urllib.request
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -69,6 +70,10 @@ def test_script_writes_only_a_safe_external_structural_summary(
     assert payload == json.loads(summary_path.read_text(encoding="utf-8"))
     assert payload["mode"] == "offline_local_cache_no_broker"
     assert payload["evidence"]["timeframes"] == ["1m", "5m", "10m", "1h", "3h"]
+    assert payload["opportunity"] == {
+        "input_status": "ready",
+        "reason": "source_compatible",
+    }
     assert payload["artifact_policy"] == {
         "artifact_root": str(artifact_root.resolve()),
         "broker_called": False,
@@ -87,6 +92,53 @@ def test_script_rejects_an_artifact_root_inside_the_workspace(tmp_path: Path) ->
     with pytest.raises(ValueError, match="outside the Git workspace"):
         script._reject_repo_artifact_root(_SCRIPT_PATH.parents[1])
     assert not (tmp_path / "unexpected").exists()
+
+
+def test_script_does_not_mint_an_ineligible_candidate(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    source = _source()
+    monkeypatch.setattr(
+        script,
+        "load_verified_kis_paper_private_intraday_catalog",
+        lambda **_kwargs: object(),
+    )
+    monkeypatch.setattr(
+        script,
+        "require_complete_kis_paper_private_intraday_session",
+        lambda _catalog, **_kwargs: source,
+    )
+
+    def ineligible_candidate(**kwargs: object) -> object:
+        candidate = script._predeclared_smoke_candidate(**kwargs)
+        return replace(candidate, eligible=False)
+
+    script.main(
+        [
+            "--session-date",
+            "2026-07-21",
+            "--symbol",
+            "QQQ",
+            "--artifact-root",
+            str(tmp_path / "external-artifacts"),
+            "--run-label",
+            "ineligible-r1",
+        ],
+        upstream_candidate_factory=ineligible_candidate,
+    )
+
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["opportunity"] == {
+        "input_status": "ready",
+        "reason": "upstream_ineligible",
+    }
+    assert payload["proposal"] == {
+        "action": "abstain",
+        "input_status": "ready",
+        "reason": "opportunity_ineligible",
+    }
 
 
 def _source() -> CatalogedBars:

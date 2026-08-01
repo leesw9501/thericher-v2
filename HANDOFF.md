@@ -1298,3 +1298,27 @@ artifact, PnL, local-paper, or broker path. It guarantees structural causality
 only: Data remains responsible for session segments, resampling, data vintage,
 and PIT/finality evidence. A real multi-session consumer must add a
 calendar-aware upstream segmenter rather than fill gaps or weaken this contract.
+
+## Current Source Opportunity Eligibility
+
+The pure current-source opportunity adapter is now wired into the local KIS
+intraday momentum smoke and a distinct fixed twenty-session v2 consensus replay.
+It projects only a caller-supplied candidate using a causal completed-bar-prefix
+source contract, symbol/market, completedness, and validity facts; it never
+ranks/selects symbols or mints a candidate. The historical v1 external replay
+artifact remains immutable. Matching v2 facts reproduce digest
+`sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`;
+an ineligible candidate, stale source, source gap, or duplicate yields only an
+abstention and no local-paper intent. Future bars cannot alter the decision,
+receipt, or bridge. All replay fills remain `source: local_paper`, terminal
+flat, and broker-free.
+
+The short Claude drift-check invocation timed out, so the review state is
+`review_unavailable`; it is not a promotion or execution hold. The original MIM
+source was independently re-retrieved and uses a directional long/short SPY
+rule; the proposed long-only version is a derivative candidate, not a paper
+replication. Read-only Data inventory found only 20 structurally complete local
+SPY 1m candidate sessions, 232 short of the predeclared 252. The next bounded
+Data/Engine package persists the source receipt and probes the KIS minute route
+before resuming a dedicated cursor collector. No model training or GPU
+appointment is ready until then.

@@ -11,6 +11,31 @@ model-side PnL attribution. Research Steward owns exclusive-GPU and
 sealed-evaluation allocation. Never modify broker submission or deterministic
 execution-risk behavior.
 
+## Current Source Opportunity Contract
+
+The pure current-source opportunity adapter is complete for the existing local
+KIS intraday graph. It accepts an already supplied candidate plus a caller-pinned
+causal completed-bar-prefix contract, symbol/market, completedness, and validity
+facts; it can only preserve or downgrade that candidate. The historical v1
+external replay artifact remains immutable; the corrected v2 synthetic replay
+is pinned at
+`sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`
+when its facts match. An ineligible candidate, stale source, source gap, or
+duplicate produces only an abstention and no local-paper intent. Future bars do
+not influence the source contract, receipt, or bridge. This is graph plumbing,
+not an opportunity selector, model result, ensemble, PnL claim, or Paper
+candidate.
+
+The original MIM source was independently re-retrieved: its directional SPY
+strategy is previous regular close through 10:00 ET, then long when positive
+and short otherwise from 15:30 to 16:00 ET. The contemplated long-only version
+is therefore `mim30-spy-long-only-derivative-v1`, not a paper replication. Its
+durable source receipt and KIS-compatible 1m contract remain the next bounded
+package. The local cache supplies only 20 structurally complete candidate
+sessions, 232 below the frozen 252-session minimum, so it has no campaign, GPU,
+Paper, or model-weight consequence. Claude's adapter drift check timed out, so
+this integration is `review_unavailable`, not an endorsed promotion decision.
+
 ## Strategy Discovery Intake
 
 An invoked Strategy Discovery assignment now owns one bounded public-source

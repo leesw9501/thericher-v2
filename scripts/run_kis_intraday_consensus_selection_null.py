@@ -8,6 +8,9 @@ from datetime import date
 from pathlib import Path
 
 from thericher_v2.data import load_verified_kis_paper_private_intraday_catalog
+from thericher_v2.research.kis_intraday_consensus_replay import (
+    predeclared_consensus_replay_candidate,
+)
 from thericher_v2.research.kis_intraday_consensus_selection_null import (
     run_kis_intraday_consensus_selection_null,
 )
@@ -18,7 +21,7 @@ _DEFAULT_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 _DEFAULT_BASELINE_SUMMARY = (
     _DEFAULT_ARTIFACT_ROOT
     / "research"
-    / "kis-intraday-multitimeframe-consensus-replay-v1"
+    / "kis-intraday-multitimeframe-consensus-replay-v2"
     / "qqq-20260623-20260721-consensus-r1"
     / "summary.json"
 )
@@ -63,6 +66,7 @@ def main(argv: Sequence[str] | None = None) -> None:
     run = run_kis_intraday_consensus_selection_null(
         catalog,
         session_dates=_parse_session_dates(parser, arguments.session_date),
+        upstream_candidate_factory=predeclared_consensus_replay_candidate,
         baseline_summary_path=Path(arguments.baseline_summary),
         artifact_root=Path(arguments.artifact_root),
         run_label=str(arguments.run_label),

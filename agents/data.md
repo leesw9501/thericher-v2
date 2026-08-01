@@ -782,6 +782,17 @@ limitation.
 
 ## Next Handoff
 
+The next Data-owned research input package is a bounded MIM-30 SPY 1m
+capability qualification. Read-only inventory found 21 complete 390-minute
+SPY/AMS sessions under `intraday\v1`, of which 20 have the preceding regular
+close plus 10:00 ET and 15:30-16:00 ET structure; this is 232 below the frozen
+252-session threshold. First probe the exact endpoint's temporal
+reach/continuation semantics with one reusable client. It may start one durable
+serial cursor collector only after the probe establishes useful scope; it must
+record source-safe coverage, cursor, accepted/failure counts, pace, ETA bucket,
+and recovery class. It does not train, rank, create a Paper input, or block
+another ready lane.
+
 The scheduler-owned broad-D1 cache is terminal for its exact current-listing
 scope: generation 26,368 covers all 2,119 targets with zero coverage gaps or
 quarantines. Its offline postprocess is `complete`; the generation-604

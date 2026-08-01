@@ -10,14 +10,20 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from typing import Literal
 
-from thericher_v2.contracts import Bar, EmergencyState, OrderIntent, Timeframe
+from thericher_v2.contracts import (
+    Bar,
+    EmergencyState,
+    OrderIntent,
+    TargetInputStatus,
+    Timeframe,
+)
 from thericher_v2.data import CatalogedBars, SessionWindow
 from thericher_v2.execution import LOCAL_PAPER_SOURCE, LocalPaperBroker, replay_local_paper_account
 from thericher_v2.execution.paper_decision_bridge import (
@@ -26,10 +32,14 @@ from thericher_v2.execution.paper_decision_bridge import (
     prepare_local_paper_intent,
 )
 from thericher_v2.models import (
+    CurrentSourceContract,
+    CurrentSourceMetadata,
     MultiTimeframeMomentumConfig,
     MultiTimeframeMomentumSpec,
     OpportunityEligibility,
     TargetPositionPolicyConfig,
+    adapt_current_source_opportunity_eligibility,
+    build_causal_bar_source_contract,
     build_multitimeframe_momentum_evidence,
     propose_target_exposure,
 )
@@ -46,7 +56,8 @@ from .kis_intraday_campaign import (
     build_kis_intraday_cpu_campaign_plan,
 )
 
-KIS_INTRADAY_CONSENSUS_REPLAY_ID = "kis-intraday-multitimeframe-consensus-replay-v1"
+KIS_INTRADAY_CONSENSUS_REPLAY_ID = "kis-intraday-multitimeframe-consensus-replay-v2"
+KIS_INTRADAY_CONSENSUS_SOURCE_CONTRACT_ID = "kis-private-intraday-consensus-v2"
 KIS_INTRADAY_CONSENSUS_DECISION_OFFSET = timedelta(hours=6)
 KIS_INTRADAY_CONSENSUS_HORIZON = timedelta(minutes=30)
 KIS_INTRADAY_CONSENSUS_STARTING_CASH = Decimal("10000")
@@ -117,10 +128,10 @@ class _SessionDecision:
     proposal_reason: str
     receipt: ResearchDecisionReceipt
     bridge: PaperDecisionBridgeResult
-    signal_bar: Bar
-    entry_bar: Bar
-    exit_signal_bar: Bar
-    exit_bar: Bar
+    signal_bar: Bar | None
+    entry_bar: Bar | None
+    exit_signal_bar: Bar | None
+    exit_bar: Bar | None
 
 
 @dataclass(frozen=True)
@@ -175,7 +186,7 @@ def frozen_target_position_policy_config() -> TargetPositionPolicyConfig:
     """Return the fixed consensus policy geometry without any tuned weights."""
 
     return TargetPositionPolicyConfig(
-        policy_id="multitimeframe-momentum-consensus-replay-v1",
+        policy_id="multitimeframe-momentum-consensus-replay-v2",
         feature_schema_id="multitimeframe-momentum-ohlcv-v1",
         required_timeframes=KIS_INTRADAY_CONSENSUS_TIMEFRAMES,
         maximum_evidence_age={
@@ -192,10 +203,42 @@ def frozen_target_position_policy_config() -> TargetPositionPolicyConfig:
     )
 
 
+def predeclared_consensus_replay_candidate(
+    *,
+    symbol: str,
+    market: str,
+    session_date: date,
+    as_of: datetime,
+) -> OpportunityEligibility:
+    """Return the explicit fixed-scope candidate used by a structural replay.
+
+    This is intentionally a caller-invoked fixture, not a data-derived
+    opportunity selector. A production selector must supply its own candidate
+    factory to the replay entry point.
+    """
+
+    return OpportunityEligibility(
+        opportunity_ref=_opaque_reference(
+            "predeclared-consensus-candidate-v2",
+            symbol,
+            market,
+            session_date.isoformat(),
+            as_of.isoformat(),
+        ),
+        symbol=symbol,
+        market=market,
+        eligible=True,
+        input_status="ready",
+        observed_at=as_of,
+        valid_until=as_of + timedelta(minutes=2),
+    )
+
+
 def run_kis_intraday_consensus_replay(
     catalog: CatalogedBars,
     *,
     session_dates: Sequence[date],
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
     artifact_root: Path,
     run_label: str,
     repo_root: Path | None = None,
@@ -229,7 +272,10 @@ def run_kis_intraday_consensus_replay(
         _precommit_payload(plan=plan, run_label=run_label, artifact_root=root),
     )
 
-    session_outcomes = _replay_plan_sessions(plan)
+    session_outcomes = _replay_plan_sessions(
+        plan,
+        upstream_candidate_factory=upstream_candidate_factory,
+    )
     consensus_runs = tuple(item.consensus for item in session_outcomes)
     always_long_runs = tuple(item.always_long for item in session_outcomes)
     consensus = _strategy_totals(consensus_runs)
@@ -282,6 +328,7 @@ def replay_frozen_consensus_sessions(
     catalog: CatalogedBars,
     *,
     session_dates: Sequence[date],
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
 ) -> tuple[KisIntradayConsensusSessionReplay, ...]:
     """Reproduce frozen in-memory session outcomes without writing an artifact."""
 
@@ -292,11 +339,16 @@ def replay_frozen_consensus_sessions(
     )
     if len(plan.session_dates) != KIS_INTRADAY_SESSION_COUNT:
         raise RuntimeError("consensus replay must retain exactly twenty sessions")
-    return replay_frozen_consensus_plan(plan)
+    return replay_frozen_consensus_plan(
+        plan,
+        upstream_candidate_factory=upstream_candidate_factory,
+    )
 
 
 def replay_frozen_consensus_plan(
     plan: KisIntradayCpuCampaignPlan,
+    *,
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
 ) -> tuple[KisIntradayConsensusSessionReplay, ...]:
     """Reproduce one already-selected plan without changing its source identity."""
 
@@ -304,7 +356,10 @@ def replay_frozen_consensus_plan(
         raise TypeError("consensus replay requires a frozen KIS intraday plan")
     if len(plan.session_dates) != KIS_INTRADAY_SESSION_COUNT:
         raise ValueError("consensus replay requires exactly twenty selected sessions")
-    return _replay_plan_sessions(plan)
+    return _replay_plan_sessions(
+        plan,
+        upstream_candidate_factory=upstream_candidate_factory,
+    )
 
 
 def consensus_session_replay_digest(
@@ -320,10 +375,18 @@ def consensus_session_replay_digest(
 
 def _replay_plan_sessions(
     plan: KisIntradayCpuCampaignPlan,
+    *,
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
+    source_metadata_factory: Callable[..., CurrentSourceMetadata] | None = None,
 ) -> tuple[KisIntradayConsensusSessionReplay, ...]:
     outcomes: list[KisIntradayConsensusSessionReplay] = []
     for index in range(len(plan.session_dates)):
-        decision, consensus, always_long = _run_session(plan=plan, index=index)
+        decision, consensus, always_long = _run_session(
+            plan=plan,
+            index=index,
+            upstream_candidate_factory=upstream_candidate_factory,
+            source_metadata_factory=source_metadata_factory,
+        )
         outcomes.append(
             KisIntradayConsensusSessionReplay(
                 session_date=decision.session_date,
@@ -339,14 +402,17 @@ def _run_session(
     *,
     plan: KisIntradayCpuCampaignPlan,
     index: int,
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
+    source_metadata_factory: Callable[..., CurrentSourceMetadata] | None = None,
 ) -> tuple[_SessionDecision, _TradeReplay, _TradeReplay]:
     session = plan.session_windows[index]
     bars = _session_bars(plan.cataloged_bars, session=session)
     decision = _build_session_decision(
         bars,
         session=session,
-        source_dataset_hash=plan.cataloged_bars.dataset_hash,
         session_date=plan.session_dates[index],
+        upstream_candidate_factory=upstream_candidate_factory,
+        source_metadata_factory=source_metadata_factory,
     )
     consensus = _run_consensus_local_paper(decision)
     always_long = _run_always_long_local_paper(decision)
@@ -357,48 +423,62 @@ def _build_session_decision(
     bars: Sequence[Bar],
     *,
     session: SessionWindow,
-    source_dataset_hash: str,
     session_date: date,
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
+    source_metadata_factory: Callable[..., CurrentSourceMetadata] | None = None,
 ) -> _SessionDecision:
     as_of = session.open_ts + KIS_INTRADAY_CONSENSUS_DECISION_OFFSET
     if as_of + KIS_INTRADAY_CONSENSUS_HORIZON != session.close_ts:
         raise ValueError("consensus replay requires a thirty-minute terminal session horizon")
-    by_start = {bar.start_ts: bar for bar in bars}
-    signal_bar = _required_bar(by_start, as_of - Timeframe.M1.duration, "decision signal")
-    entry_bar = _required_bar(by_start, as_of, "entry")
-    exit_bar = _required_bar(
-        by_start,
-        session.close_ts - Timeframe.M1.duration,
-        "terminal exit",
-    )
-    exit_signal_bar = _required_bar(
-        by_start,
-        exit_bar.start_ts - Timeframe.M1.duration,
-        "terminal exit signal",
-    )
-    evidence = build_multitimeframe_momentum_evidence(
+    source_contract = build_causal_bar_source_contract(
         bars,
-        session=session,
-        config=frozen_multitimeframe_momentum_config(),
+        contract_id=KIS_INTRADAY_CONSENSUS_SOURCE_CONTRACT_ID,
         as_of=as_of,
     )
-    opportunity_ref = _opaque_reference(
-        "opportunity",
-        source_dataset_hash,
-        session_date.isoformat(),
-        as_of.isoformat(),
+    source_symbol, source_market = _source_identity(bars)
+    upstream_candidate = upstream_candidate_factory(
+        symbol=source_symbol,
+        market=source_market,
+        session_date=session_date,
+        as_of=as_of,
     )
+    opportunity = _adapt_session_opportunity(
+        upstream_candidate=upstream_candidate,
+        source_contract=source_contract,
+        bars=bars,
+        session=session,
+        as_of=as_of,
+        source_metadata_factory=source_metadata_factory,
+    )
+    signal_bar: Bar | None = None
+    entry_bar: Bar | None = None
+    exit_signal_bar: Bar | None = None
+    exit_bar: Bar | None = None
+    predictions = ()
+    if opportunity.input_status == "ready":
+        by_start = {bar.start_ts: bar for bar in bars}
+        signal_bar = _required_bar(by_start, as_of - Timeframe.M1.duration, "decision signal")
+        entry_bar = _required_bar(by_start, as_of, "entry")
+        exit_bar = _required_bar(
+            by_start,
+            session.close_ts - Timeframe.M1.duration,
+            "terminal exit",
+        )
+        exit_signal_bar = _required_bar(
+            by_start,
+            exit_bar.start_ts - Timeframe.M1.duration,
+            "terminal exit signal",
+        )
+        evidence = build_multitimeframe_momentum_evidence(
+            bars,
+            session=session,
+            config=frozen_multitimeframe_momentum_config(),
+            as_of=as_of,
+        )
+        predictions = evidence.predictions
     proposal = propose_target_exposure(
-        OpportunityEligibility(
-            opportunity_ref=opportunity_ref,
-            symbol=signal_bar.symbol,
-            market=signal_bar.market,
-            eligible=evidence.input_status == "ready",
-            input_status=evidence.input_status,
-            observed_at=as_of,
-            valid_until=as_of + timedelta(minutes=2),
-        ),
-        evidence.predictions,
+        opportunity,
+        predictions,
         current_exposure=Decimal("0"),
         config=frozen_target_position_policy_config(),
         as_of=as_of,
@@ -410,10 +490,10 @@ def _build_session_decision(
             campaign_ref=_opaque_reference(
                 "campaign",
                 KIS_INTRADAY_CONSENSUS_REPLAY_ID,
-                source_dataset_hash,
+                source_contract.contract_hash,
             ),
             model_ref=_opaque_reference("model", _model_contract_digest()),
-            input_manifest_ref=source_dataset_hash,
+            input_manifest_ref=source_contract.contract_hash,
             proposal_ref=proposal_ref,
         ),
     )
@@ -421,7 +501,7 @@ def _build_session_decision(
         receipt,
         binding=LocalPaperTargetBinding(
             proposal_ref=proposal_ref,
-            symbol=signal_bar.symbol,
+            symbol=source_symbol,
             target_exposure=proposal.target_exposure,
             current_quantity=Decimal("0"),
             maximum_quantity=KIS_INTRADAY_CONSENSUS_MAXIMUM_QUANTITY,
@@ -442,11 +522,115 @@ def _build_session_decision(
     )
 
 
+def _adapt_session_opportunity(
+    *,
+    upstream_candidate: OpportunityEligibility,
+    source_contract: CurrentSourceContract,
+    bars: Sequence[Bar],
+    session: SessionWindow,
+    as_of: datetime,
+    source_metadata_factory: Callable[..., CurrentSourceMetadata] | None,
+) -> OpportunityEligibility:
+    """Project a caller-owned candidate through causal source facts only."""
+
+    source_metadata = (source_metadata_factory or _current_source_metadata)(
+        contract=source_contract,
+        bars=bars,
+        session=session,
+        symbol=upstream_candidate.symbol,
+        market=upstream_candidate.market,
+        as_of=as_of,
+    )
+    return adapt_current_source_opportunity_eligibility(
+        upstream_candidate,
+        source_metadata,
+        expected_contract=source_contract,
+        as_of=as_of,
+    ).eligibility
+
+
+def _current_source_metadata(
+    *,
+    contract: CurrentSourceContract,
+    bars: Sequence[Bar],
+    session: SessionWindow,
+    symbol: str,
+    market: str,
+    as_of: datetime,
+) -> CurrentSourceMetadata:
+    input_status = _current_source_input_status(
+        bars,
+        session=session,
+        symbol=symbol,
+        market=market,
+        as_of=as_of,
+    )
+    return CurrentSourceMetadata(
+        contract=contract,
+        symbol=symbol,
+        market=market,
+        input_status=input_status,
+        complete=input_status == "ready",
+        observed_at=as_of,
+        valid_until=as_of + timedelta(minutes=2),
+    )
+
+
+def _current_source_input_status(
+    bars: Sequence[Bar],
+    *,
+    session: SessionWindow,
+    symbol: str,
+    market: str,
+    as_of: datetime,
+) -> TargetInputStatus:
+    normalized_bars = tuple(bars)
+    if any(not isinstance(bar, Bar) for bar in normalized_bars):
+        raise TypeError("bars must contain Bar values")
+    prefix = tuple(bar for bar in normalized_bars if bar.end_ts <= as_of)
+    if not prefix:
+        return "missing"
+    if any(
+        bar.symbol != symbol or bar.market != market or bar.timeframe is not Timeframe.M1
+        for bar in prefix
+    ):
+        return "misaligned"
+    starts = tuple(bar.start_ts for bar in prefix)
+    if len(starts) != len(set(starts)):
+        return "duplicate"
+    if any(not bar.complete for bar in prefix):
+        return "incomplete"
+    expected_count = int((as_of - session.open_ts) / Timeframe.M1.duration)
+    expected_starts = tuple(
+        session.open_ts + Timeframe.M1.duration * offset for offset in range(expected_count)
+    )
+    if tuple(sorted(starts)) != expected_starts:
+        return "non_contiguous"
+    return "ready"
+
+
+def _source_identity(bars: Sequence[Bar]) -> tuple[str, str]:
+    normalized_bars = tuple(bars)
+    if not normalized_bars:
+        raise ValueError("consensus replay session has no source bars")
+    if any(not isinstance(bar, Bar) for bar in normalized_bars):
+        raise TypeError("bars must contain Bar values")
+    first = normalized_bars[0]
+    return first.symbol, first.market
+
+
 def _run_consensus_local_paper(decision: _SessionDecision) -> _TradeReplay:
     if decision.bridge.route != "local_paper":
         raise RuntimeError("consensus replay must use local paper only")
     if decision.bridge.status == "no_intent":
         return _empty_trade_replay()
+    if (
+        decision.signal_bar is None
+        or decision.entry_bar is None
+        or decision.exit_signal_bar is None
+        or decision.exit_bar is None
+    ):
+        raise RuntimeError("consensus replay intent requires complete local bars")
     entry_order = decision.bridge.local_paper_intent
     if entry_order is None or entry_order.quantity != KIS_INTRADAY_CONSENSUS_QUANTITY:
         raise RuntimeError("consensus entry must prepare exactly one local-paper share")
@@ -461,6 +645,13 @@ def _run_consensus_local_paper(decision: _SessionDecision) -> _TradeReplay:
 
 
 def _run_always_long_local_paper(decision: _SessionDecision) -> _TradeReplay:
+    if (
+        decision.signal_bar is None
+        or decision.entry_bar is None
+        or decision.exit_signal_bar is None
+        or decision.exit_bar is None
+    ):
+        return _empty_trade_replay()
     entry_order = OrderIntent(
         client_order_id=_client_order_id(
             "always-long-entry",

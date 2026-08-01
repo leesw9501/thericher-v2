@@ -1,5 +1,13 @@
 """Model implementations."""
 
+from .current_source_opportunity_eligibility import (
+    CAUSAL_BAR_SOURCE_CONTRACT_SCHEMA_ID,
+    CurrentSourceContract,
+    CurrentSourceMetadata,
+    CurrentSourceOpportunityEligibility,
+    adapt_current_source_opportunity_eligibility,
+    build_causal_bar_source_contract,
+)
 from .momentum import MomentumModel
 from .multitimeframe_momentum import (
     MultiTimeframeMomentumConfig,
@@ -29,9 +37,13 @@ from .target_position_policy import (
 __all__ = [
     "MomentumModel",
     "CAUSAL_SEQUENCE_WINDOW_SCHEMA_ID",
+    "CAUSAL_BAR_SOURCE_CONTRACT_SCHEMA_ID",
     "SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES",
     "CausalMultiTimeframeSequenceWindow",
     "CausalSequenceWindow",
+    "CurrentSourceContract",
+    "CurrentSourceMetadata",
+    "CurrentSourceOpportunityEligibility",
     "MultiTimeframeMomentumConfig",
     "MultiTimeframeMomentumEvidence",
     "MultiTimeframeMomentumSpec",
@@ -41,6 +53,8 @@ __all__ = [
     "TargetPositionPolicyConfig",
     "SequenceWindowInputError",
     "allocate_target_exposure",
+    "adapt_current_source_opportunity_eligibility",
+    "build_causal_bar_source_contract",
     "build_causal_multitimeframe_sequence_window",
     "build_multitimeframe_momentum_evidence",
     "propose_target_exposure",

@@ -32,11 +32,12 @@ def test_script_uses_the_fixed_local_cache_replay_contract(
     def run_replay(actual_catalog: object, **kwargs: object) -> SimpleNamespace:
         assert actual_catalog is catalog
         assert kwargs["session_dates"] == script._DEFAULT_SESSION_DATES
+        assert kwargs["upstream_candidate_factory"] is script.predeclared_consensus_replay_candidate
         assert kwargs["run_label"] == "script-unit-r1"
         summary_path = (
             artifact_root
             / "research"
-            / "kis-intraday-multitimeframe-consensus-replay-v1"
+            / "kis-intraday-multitimeframe-consensus-replay-v2"
             / "script-unit-r1"
             / "summary.json"
         )
@@ -62,7 +63,7 @@ def test_script_uses_the_fixed_local_cache_replay_contract(
     summary_path = (
         artifact_root
         / "research"
-        / "kis-intraday-multitimeframe-consensus-replay-v1"
+        / "kis-intraday-multitimeframe-consensus-replay-v2"
         / "script-unit-r1"
         / "summary.json"
     )

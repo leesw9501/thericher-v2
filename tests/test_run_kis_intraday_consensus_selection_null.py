@@ -35,6 +35,7 @@ def test_script_uses_the_frozen_default_baseline_and_session_scope(
     def run_diagnostic(actual_catalog: object, **kwargs: object) -> SimpleNamespace:
         assert actual_catalog is catalog
         assert kwargs["session_dates"] == script._DEFAULT_SESSION_DATES
+        assert kwargs["upstream_candidate_factory"] is script.predeclared_consensus_replay_candidate
         assert kwargs["baseline_summary_path"] == script._DEFAULT_BASELINE_SUMMARY
         summary_path = artifact_root / "summary.json"
         summary_path.parent.mkdir(parents=True)

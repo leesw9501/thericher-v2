@@ -7,7 +7,7 @@ import json
 import math
 import random
 import re
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Literal
 
 from thericher_v2.data import CatalogedBars
+from thericher_v2.models import OpportunityEligibility
 
 from .kis_intraday_campaign import (
     KIS_INTRADAY_SESSION_COUNT,
@@ -32,7 +33,7 @@ from .kis_intraday_consensus_replay import (
     replay_frozen_consensus_plan,
 )
 
-KIS_INTRADAY_CONSENSUS_SELECTION_NULL_ID = "kis-intraday-consensus-selection-null-v1"
+KIS_INTRADAY_CONSENSUS_SELECTION_NULL_ID = "kis-intraday-consensus-selection-null-v2"
 KIS_INTRADAY_CONSENSUS_SELECTION_MINIMUM_ROUND_TRIPS = 30
 KIS_INTRADAY_CONSENSUS_SELECTION_MAX_EXACT_COMBINATIONS = 100_000
 KIS_INTRADAY_CONSENSUS_SELECTION_PERMUTATIONS = 4_096
@@ -81,6 +82,7 @@ def run_kis_intraday_consensus_selection_null(
     catalog: CatalogedBars,
     *,
     session_dates: Sequence[date],
+    upstream_candidate_factory: Callable[..., OpportunityEligibility],
     baseline_summary_path: Path,
     artifact_root: Path,
     run_label: str,
@@ -127,7 +129,10 @@ def run_kis_intraday_consensus_selection_null(
         ),
     )
 
-    outcomes = replay_frozen_consensus_plan(plan)
+    outcomes = replay_frozen_consensus_plan(
+        plan,
+        upstream_candidate_factory=upstream_candidate_factory,
+    )
     actual_replay_digest = consensus_session_replay_digest(outcomes)
     if actual_replay_digest != binding.replay_digest:
         raise RuntimeError("selection null must reproduce the immutable baseline replay digest")

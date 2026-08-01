@@ -9,6 +9,7 @@ from pathlib import Path
 
 from thericher_v2.data import load_verified_kis_paper_private_intraday_catalog
 from thericher_v2.research.kis_intraday_consensus_replay import (
+    predeclared_consensus_replay_candidate,
     run_kis_intraday_consensus_replay,
 )
 
@@ -56,6 +57,7 @@ def main(argv: Sequence[str] | None = None) -> None:
     run = run_kis_intraday_consensus_replay(
         catalog,
         session_dates=session_dates,
+        upstream_candidate_factory=predeclared_consensus_replay_candidate,
         artifact_root=Path(arguments.artifact_root),
         run_label=str(arguments.run_label),
         repo_root=_REPO_ROOT,

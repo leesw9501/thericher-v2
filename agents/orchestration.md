@@ -6,13 +6,18 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** reattest the frozen Norgate broad-panel input against
-  the updated active local database. The fast tail kill test is complete:
-  28 completed SPY/QQQ/IWM common sessions after 2026-06-22 and even its
-  41-calendar-day maximum cannot meet the frozen 126-session independent
-  holdout requirement. It closes only that prospective broad campaign as
-  `input_unavailable`; the existing KIS Paper scheduler remains independently
-  owned and is not a dependency.
+- **Company objective:** qualify the MIM-30 SPY long-only derivative 1m input
+  against the existing KIS cache and one bounded endpoint-capability probe.
+  The original source uses a directional long/short rule, so the no-short
+  version is explicitly not a replication. Read-only inventory has only 20
+  structurally complete candidate sessions against the frozen 252 requirement.
+  The completed current-source adapter now separates a caller-owned
+  candidate from current source compatibility in a distinct v2 local replay:
+  matching facts preserve digest
+  `sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`,
+  while an ineligible, stale, gapped, or duplicate source can only abstain with
+  no intent. The v1 artifact remains immutable. Neither fact selects a symbol,
+  trains a model, allocates GPU, or changes a Paper route.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
   generation-26,368 cache: all 2,119 current NAS targets are covered with no
@@ -72,10 +77,11 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Ready / Owned / Due
 
-- **Ready:** the Norgate tail result is closed after goal-boundary verification.
-  The next Engine Research package must be source-independent or use a new
-  frozen KIS-reconstructible contract; it need not wait for Norgate's later
-  tail. The KIS freshness scheduler continues as an independent owned route.
+- **Ready:** Data can capability-probe MIM-30's SPY 1m source and then resume
+  one bounded collector without waiting for Norgate's later tail. Engine
+  Research can persist the source receipt and freeze only the non-training
+  derivative-campaign outline.
+  The KIS freshness scheduler continues as an independent owned route.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.

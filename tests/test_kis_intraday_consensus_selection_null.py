@@ -49,6 +49,7 @@ def test_selection_null_reproduces_the_baseline_before_exact_equal_count_null(
     baseline = consensus_replay.run_kis_intraday_consensus_replay(
         catalog,
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
         artifact_root=artifact_root,
         run_label="baseline-r1",
         repo_root=Path.cwd(),
@@ -57,6 +58,7 @@ def test_selection_null_reproduces_the_baseline_before_exact_equal_count_null(
     run = selection_null.run_kis_intraday_consensus_selection_null(
         catalog,
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
         baseline_summary_path=baseline.summary_path,
         artifact_root=artifact_root,
         run_label="null-r1",
@@ -107,6 +109,7 @@ def test_selection_null_rejects_a_baseline_replay_digest_mismatch(tmp_path: Path
     baseline = consensus_replay.run_kis_intraday_consensus_replay(
         catalog,
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
         artifact_root=artifact_root,
         run_label="baseline-r2",
         repo_root=Path.cwd(),
@@ -127,6 +130,7 @@ def test_selection_null_rejects_a_baseline_replay_digest_mismatch(tmp_path: Path
         selection_null.run_kis_intraday_consensus_selection_null(
             catalog,
             session_dates=_SESSION_DATES,
+            upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
             baseline_summary_path=mismatch_summary,
             artifact_root=artifact_root,
             run_label="null-mismatch-r1",
@@ -141,6 +145,7 @@ def test_session_replay_projection_is_source_safe_and_matches_baseline_digest(
     baseline = consensus_replay.run_kis_intraday_consensus_replay(
         catalog,
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
         artifact_root=tmp_path / "model-artifacts",
         run_label="baseline-r3",
         repo_root=Path.cwd(),
@@ -149,6 +154,7 @@ def test_session_replay_projection_is_source_safe_and_matches_baseline_digest(
     outcomes = consensus_replay.replay_frozen_consensus_sessions(
         catalog,
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
     )
 
     assert len(outcomes) == 20

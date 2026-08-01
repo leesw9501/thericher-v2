@@ -5,8 +5,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from collections.abc import Sequence
-from datetime import date, timedelta
+from collections.abc import Callable, Sequence
+from datetime import date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -17,10 +17,13 @@ from thericher_v2.data import (
     us_equity_2026_session,
 )
 from thericher_v2.models import (
+    CurrentSourceMetadata,
     MultiTimeframeMomentumConfig,
     MultiTimeframeMomentumSpec,
     OpportunityEligibility,
     TargetPositionPolicyConfig,
+    adapt_current_source_opportunity_eligibility,
+    build_causal_bar_source_contract,
     build_multitimeframe_momentum_evidence,
     propose_target_exposure,
 )
@@ -32,7 +35,11 @@ _SYMBOL_EXCHANGES = {"QQQ": "NAS", "SPY": "AMS"}
 _TIMEFRAMES = (Timeframe.M1, Timeframe.M5, Timeframe.M10, Timeframe.H1, Timeframe.H3)
 
 
-def main(argv: Sequence[str] | None = None) -> None:
+def main(
+    argv: Sequence[str] | None = None,
+    *,
+    upstream_candidate_factory: Callable[..., OpportunityEligibility] | None = None,
+) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--session-date", required=True)
     parser.add_argument("--symbol", choices=tuple(_SYMBOL_EXCHANGES), default="QQQ")
@@ -68,21 +75,34 @@ def main(argv: Sequence[str] | None = None) -> None:
         config=_momentum_config(),
         as_of=session.window.close_ts,
     )
-    opportunity_ref = _opaque_reference(
-        source.dataset_hash,
-        session.session_date.isoformat(),
-        "multitimeframe-momentum-policy-smoke-v1",
+    expected_contract = build_causal_bar_source_contract(
+        source.bars,
+        contract_id="kis-private-intraday-momentum-smoke-v1",
+        as_of=session.window.close_ts,
     )
-    proposal = propose_target_exposure(
-        OpportunityEligibility(
-            opportunity_ref=opportunity_ref,
+    source_complete = all(bar.complete for bar in source.bars)
+    candidate = (upstream_candidate_factory or _predeclared_smoke_candidate)(
+        symbol=symbol,
+        market="US",
+        session_date=session.session_date,
+        as_of=session.window.close_ts,
+    )
+    opportunity = adapt_current_source_opportunity_eligibility(
+        candidate,
+        CurrentSourceMetadata(
+            contract=expected_contract,
             symbol=symbol,
             market="US",
-            eligible=evidence.input_status == "ready",
-            input_status=evidence.input_status,
+            input_status="ready" if source_complete else "incomplete",
+            complete=source_complete,
             observed_at=session.window.close_ts,
             valid_until=session.window.close_ts + timedelta(minutes=2),
         ),
+        expected_contract=expected_contract,
+        as_of=session.window.close_ts,
+    )
+    proposal = propose_target_exposure(
+        opportunity.eligibility,
         evidence.predictions,
         current_exposure=Decimal("0"),
         config=_policy_config(),
@@ -113,6 +133,10 @@ def main(argv: Sequence[str] | None = None) -> None:
             ],
             "actions": [prediction.signal.action for prediction in evidence.predictions],
         },
+        "opportunity": {
+            "input_status": opportunity.input_status,
+            "reason": opportunity.reason,
+        },
         "proposal": {
             "action": proposal.action,
             "input_status": proposal.input_status,
@@ -134,6 +158,32 @@ def main(argv: Sequence[str] | None = None) -> None:
     summary_path = output_dir / "summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(summary, sort_keys=True))
+
+
+def _predeclared_smoke_candidate(
+    *,
+    symbol: str,
+    market: str,
+    session_date: date,
+    as_of: datetime,
+) -> OpportunityEligibility:
+    """Return the explicit fixed-scope candidate for this structural smoke."""
+
+    return OpportunityEligibility(
+        opportunity_ref=_opaque_reference(
+            "predeclared-momentum-smoke-candidate-v1",
+            symbol,
+            market,
+            session_date.isoformat(),
+            as_of.isoformat(),
+        ),
+        symbol=symbol,
+        market=market,
+        eligible=True,
+        input_status="ready",
+        observed_at=as_of,
+        valid_until=as_of + timedelta(minutes=2),
+    )
 
 
 def _momentum_config() -> MultiTimeframeMomentumConfig:

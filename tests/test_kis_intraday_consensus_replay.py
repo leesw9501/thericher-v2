@@ -4,7 +4,7 @@ import json
 import socket
 import urllib.request
 from dataclasses import replace
-from datetime import date
+from datetime import date, timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -13,6 +13,7 @@ import pytest
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.us_equity_session import us_equity_2026_session
+from thericher_v2.models.current_source_opportunity_eligibility import CurrentSourceMetadata
 from thericher_v2.research import kis_intraday_consensus_replay as consensus_replay
 
 _SESSION_DATES = (
@@ -37,6 +38,7 @@ _SESSION_DATES = (
     date(2026, 7, 20),
     date(2026, 7, 21),
 )
+_V2_REPLAY_DIGEST = "sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1"
 
 
 def test_consensus_replay_is_external_aggregate_only_and_local_paper(
@@ -49,6 +51,7 @@ def test_consensus_replay_is_external_aggregate_only_and_local_paper(
     run = consensus_replay.run_kis_intraday_consensus_replay(
         _catalog(),
         session_dates=_SESSION_DATES,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
         artifact_root=artifact_root,
         run_label="unit-r1",
         repo_root=Path.cwd(),
@@ -64,6 +67,7 @@ def test_consensus_replay_is_external_aggregate_only_and_local_paper(
     assert dict(run.decision_action_counts) == {"enter": 10, "hold": 10}
     assert run.all_fills_local_paper is True
     assert run.all_terminal_flat is True
+    assert run.replay_digest == _V2_REPLAY_DIGEST
     assert run.precommit_path.is_relative_to(artifact_root)
     assert run.summary_path.is_relative_to(artifact_root)
 
@@ -113,14 +117,14 @@ def test_decision_ignores_post_as_of_bars_even_when_terminal_outcome_changes() -
     original = consensus_replay._build_session_decision(
         bars,
         session=session.window,
-        source_dataset_hash=catalog.dataset_hash,
         session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
     )
     shifted = consensus_replay._build_session_decision(
         changed,
         session=session.window,
-        source_dataset_hash=catalog.dataset_hash,
         session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
     )
 
     assert original.proposal_action == "enter"
@@ -130,11 +134,161 @@ def test_decision_ignores_post_as_of_bars_even_when_terminal_outcome_changes() -
     assert shifted.bridge == original.bridge
 
 
+def test_incomplete_current_source_abstains_even_when_as_of_model_evidence_is_ready() -> None:
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    as_of = session.window.open_ts + consensus_replay.KIS_INTRADAY_CONSENSUS_DECISION_OFFSET
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+    evidence = consensus_replay.build_multitimeframe_momentum_evidence(
+        bars,
+        session=session.window,
+        config=consensus_replay.frozen_multitimeframe_momentum_config(),
+        as_of=as_of,
+    )
+
+    def incomplete_source_metadata(*args: object, **kwargs: object) -> CurrentSourceMetadata:
+        source = consensus_replay._current_source_metadata(*args, **kwargs)
+        return replace(source, complete=False)
+
+    decision = consensus_replay._build_session_decision(
+        bars,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+        source_metadata_factory=incomplete_source_metadata,
+    )
+
+    assert evidence.input_status == "ready"
+    assert decision.proposal_action == "abstain"
+    assert decision.proposal_reason == "opportunity_incomplete"
+    assert decision.bridge.status == "no_intent"
+
+
+def test_ineligible_upstream_candidate_abstains_without_a_local_paper_intent() -> None:
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+
+    def ineligible_candidate(**kwargs: object) -> object:
+        candidate = consensus_replay.predeclared_consensus_replay_candidate(**kwargs)
+        return replace(candidate, eligible=False)
+
+    decision = consensus_replay._build_session_decision(
+        bars,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=ineligible_candidate,
+    )
+
+    assert decision.proposal_action == "abstain"
+    assert decision.proposal_reason == "opportunity_ineligible"
+    assert decision.bridge.status == "no_intent"
+    assert decision.bridge.local_paper_intent is None
+
+
+@pytest.mark.parametrize(
+    ("mutate", "reason"),
+    (
+        (
+            lambda bars, session: tuple(
+                bar for bar in bars if bar.start_ts != session.open_ts
+            ),
+            "opportunity_non_contiguous",
+        ),
+        (
+            lambda bars, _session: (*bars, bars[0]),
+            "opportunity_duplicate",
+        ),
+        (
+            lambda bars, session: tuple(
+                bar
+                for bar in bars
+                if bar.start_ts
+                != session.open_ts
+                + consensus_replay.KIS_INTRADAY_CONSENSUS_DECISION_OFFSET
+                - Timeframe.M1.duration
+            ),
+            "opportunity_non_contiguous",
+        ),
+    ),
+)
+def test_current_source_gaps_or_duplicates_abstain_without_a_local_paper_intent(
+    mutate: object,
+    reason: str,
+) -> None:
+    assert callable(mutate)
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+    decision = consensus_replay._build_session_decision(
+        mutate(bars, session.window),
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+
+    assert decision.proposal_action == "abstain"
+    assert decision.proposal_reason == reason
+    assert decision.bridge.status == "no_intent"
+    assert decision.bridge.local_paper_intent is None
+
+
+def test_stale_current_source_can_only_add_abstentions_to_the_frozen_replay() -> None:
+    plan = consensus_replay.build_kis_intraday_cpu_campaign_plan(
+        _catalog(),
+        session_dates=_SESSION_DATES,
+        campaign_id=consensus_replay.KIS_INTRADAY_CONSENSUS_REPLAY_ID,
+    )
+    baseline = consensus_replay._replay_plan_sessions(
+        plan,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+
+    def stale_source_metadata(*args: object, **kwargs: object) -> CurrentSourceMetadata:
+        source = consensus_replay._current_source_metadata(*args, **kwargs)
+        return replace(
+            source,
+            observed_at=source.observed_at - timedelta(minutes=1),
+            valid_until=source.observed_at - timedelta(microseconds=1),
+        )
+
+    downgraded = consensus_replay._replay_plan_sessions(
+        plan,
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+        source_metadata_factory=stale_source_metadata,
+    )
+
+    assert consensus_replay.consensus_session_replay_digest(baseline) == _V2_REPLAY_DIGEST
+    assert tuple(item.proposal_action for item in downgraded) == ("abstain",) * 20
+    assert sum(item.consensus.fill_count for item in downgraded) == 0
+    assert sum(item.consensus.fill_count for item in downgraded) <= sum(
+        item.consensus.fill_count for item in baseline
+    )
+    assert all(item.consensus.all_fills_local_paper for item in downgraded)
+    assert all(item.consensus.terminal_flat for item in downgraded)
+
+
 def test_consensus_replay_rejects_an_artifact_root_inside_the_workspace() -> None:
     with pytest.raises(ValueError, match="outside the Git workspace"):
         consensus_replay.run_kis_intraday_consensus_replay(
             _catalog(),
             session_dates=_SESSION_DATES,
+            upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
             artifact_root=Path.cwd(),
             run_label="inside-repo-r1",
             repo_root=Path.cwd(),

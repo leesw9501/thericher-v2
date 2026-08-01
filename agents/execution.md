@@ -9,6 +9,17 @@ Own deterministic orders, fills, positions, cash, reconciliation, accounting
 PnL, risk controls, emergency controls, and later KIS adapters. Treat model
 output as untrusted input.
 
+## Current Contract Reattestation
+
+The local KIS intraday model graph now receives a monotone current-source
+projection before target policy. It remains pure and has no credential,
+provider, network, broker, order-intent, or Paper-submit import path. The v2
+synthetic twenty-session replay is deterministic for matching caller candidate
+and causal source-prefix facts, while an ineligible, stale, gapped, or duplicate
+source can only abstain with no intent. This changes no KIS Paper route, account
+check, sizing, risk limit, or scheduler; the v1 external replay artifact remains
+unchanged.
+
 ## Current Objective
 
 The current KIS Paper read-only account bridge was reattested on the current

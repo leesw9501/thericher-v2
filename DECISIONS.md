@@ -8068,3 +8068,30 @@ Reason: measuring the calendar maximum first prevents a long source-local
 rebuild from disguising a known insufficient independent validation window. It
 limits only this prospective Norgate family and cannot make the company wait for
 the next Norgate update.
+
+## 2026-08-02 - Keep current-source compatibility monotone and causal
+
+Decision: insert a pure current-source opportunity projection between the
+caller-supplied opportunity fact and the existing local KIS intraday target
+policy. It binds a source contract hash, symbol/market, completedness, and
+validity window, but may only preserve or downgrade the upstream candidate. It
+does not rank/select symbols, infer liquidity, create a candidate, read a
+provider or credential, or reach an order path.
+
+The existing v1 external replay evidence remains immutable. The corrected
+interface is a distinct v2 replay because its caller-owned candidate and
+per-decision causal source-prefix contract correctly change decision identity.
+Its synthetic twenty-session replay is pinned by digest
+`sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`:
+matching v2 facts reproduce decisions and `source: local_paper` terminal-flat
+fills exactly. An ineligible upstream candidate, stale source, source gap, or
+source duplicate yields an abstention with no local-paper intent. Source
+contracts hash only bars completed through the decision cutoff, so a future-bar
+change cannot alter the decision, receipt, or bridge. The integration is graph
+plumbing rather than a strategy, model, profitability, ensemble, GPU, or
+Paper-promotion result.
+
+Claude's requested falsification-first drift check timed out. Record this as
+`review_unavailable`, not agreement or a new approval hold. The next valid
+research action is source qualification for the independently discovered MIM-30
+SPY one-minute hypothesis before any training allocation.
