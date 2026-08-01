@@ -240,3 +240,27 @@ foreground. There is no GPU-eligible frozen campaign in this package. The
 current reversible operating improvement remains lane-local waits: a Data or
 Execution timer yields only its owner while Codex dispatches a ready Engine,
 Validation, or Infra package.
+
+## Prospective SPY Objective Update (2026-08-02)
+
+This concise projection supersedes earlier mutable dispatch and bottleneck
+statements above; their historical facts remain scoped to their original work.
+
+- **Ready:** the pure SPY regular-session baseline and its causal validation
+  are complete. The next Data/Engine handoff is one source-safe receipt for a
+  newly observed complete session; it may be prepared or consumed without a
+  broker, credential, provider, order, raw-data, or artifact side effect.
+- **Owned:** Data owns any KIS collection and receipt path; Engine owns the
+  fixed research-only baseline; Execution keeps the existing local/KIS Paper
+  route distinction. No Paper order is part of this objective.
+- **Due:** a fresh complete session is external timing for the receipt only.
+  It is not a foreground wait, company block, or reason to leave another ready
+  package undispatched.
+- **Improvement:** keep session collection and any retry in the Data-owned
+  worker, while Codex continues independent ready Research, Validation, or
+  Infra work. The receipt stores source-safe coverage and categorical outcome
+  only.
+- **Review:** Claude's static drift review is `supported-with-limits` for the
+  pure extraction/import-isolation claim. It requires the running runtime
+  suite/subprocess verification and the tightened tamper test; it is not a
+  profitability, promotion, or Paper verdict.

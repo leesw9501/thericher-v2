@@ -20,6 +20,25 @@ source can only abstain with no intent. This changes no KIS Paper route, account
 check, sizing, risk limit, or scheduler; the v1 external replay artifact remains
 unchanged.
 
+## Prospective SPY Baseline Boundary
+
+The distinct prospective SPY baseline may emit only a model-side target
+proposal in this objective; it is not an order or fill. Any offline replay stays
+broker-free and every simulated fill retains `source: local_paper`. A future
+virtual KIS Paper canary must retain its own `kis_paper` identity and immutable
+lifecycle receipt, then re-pass the existing call-time virtual-host/identity,
+eligible-current-input, pre-account/pre-submit freshness, durable-intent,
+account/quote/position, pause/emergency, cancellation, and reconciliation
+checks. It cannot consume an unknown exact intent, be relabeled as local paper,
+or reinterpret a prospective observation as MIM-30 validation, source-window
+parity, realized PnL, or profitability.
+
+Integration boundary suite: `tests/test_local_paper_execution.py`,
+`tests/test_paper_decision_bridge.py`, `tests/test_kis_paper_intraday_freshness.py`,
+`tests/test_kis_paper_prospective_qqq_session.py`,
+`tests/test_kis_paper_receipt_canary.py`, `tests/test_kis_paper_canary.py`, and
+`tests/test_broker_lifecycle.py`.
+
 ## Current Objective
 
 The current KIS Paper read-only account bridge was reattested on the current

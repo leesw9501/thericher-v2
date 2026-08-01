@@ -16,7 +16,7 @@ from thericher_v2.contracts import (
     decimal_value,
     require_utc,
 )
-from thericher_v2.data.resample import (
+from thericher_v2.market.resample import (
     SUPPORTED_RESAMPLE_TIMEFRAMES,
     SessionWindow,
     resample_session_bars,

@@ -52,6 +52,21 @@ close, and corporate-action interpretation remain non-promoting. That verdict
 closes only this historical MIM campaign; it does not block a separately frozen
 prospective engine or another Data/Research package.
 
+The pure `prospective-spy-intraday-baseline-v1` consumes the Data Agent's
+`SPY/US` prospective session record with exact causal `1m/5m/10m/1h/3h`
+lookbacks of `30/6/3/2/2`. It proposes the fixed research-only `0.02` long
+target only when every view's final close exceeds its first close, and otherwise
+emits abstain/no-trade. Its one-minute TTL, `10`-bp round-trip metadata, and
+always-flat comparator are fixed; it has no training, tuning, ensemble,
+historical claim, artifact, provider, execution, or Paper authority. Proposal
+identity uses only source/contract identities, structural/timestamp facts, and
+the derived categorical action, never OHLCV values.
+
+The `3h=2` correction is a pre-outcome contract fix: at the 15:30 decision
+boundary two completed three-hour bars exist, so the frozen unanimous trailing
+return predicate remains evaluable without a hidden reinterpretation. KIS route
+or venue codes are not model-side Bar identity; Execution owns that translation.
+
 ## Strategy Discovery Intake
 
 An invoked Strategy Discovery assignment now owns one bounded public-source

@@ -2,10 +2,10 @@
 
 ## Objective
 
-Prepare one bounded prospective intraday engine baseline for SPY using only
-newly observed completed KIS Paper market data. The baseline must be distinct
-from MIM-30: it is a causal engineering and Paper-readiness path, not a source
-replication, historical MIM backtest, or profitability claim.
+Connect the fixed prospective SPY intraday baseline to one source-safe
+observation receipt and the existing broker-free `local_paper` replay path.
+This is an engineering and replayability target, not a historical backtest,
+profitability result, KIS Paper order, or live-trading action.
 
 ## Start
 
@@ -14,58 +14,54 @@ replication, historical MIM backtest, or profitability claim.
    Data, Engine Research, Research Steward, Execution, and orchestration
    stateboards.
 2. Ask Claude for a concise falsification-first drift check before changing a
-   Paper execution route, scheduler behavior, or execution/research contract.
-   Never include credentials, raw prices, account facts, fills, or labels.
+   receipt/replay contract or execution boundary. Never include credentials,
+   raw prices, account facts, fills, or labels.
 
 ## Boundaries
 
-- `KIS_PAPER_*` is authorized for this private prospective work. Do not read
-  `KIS_LIVE_*` or route anything to live.
-- Retain raw market data and mutable capture state only under `D:\market_data`.
-  Keep source-safe receipts and generated artifacts only under
-  `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; never store
-  them in Git.
-- Keep the existing KIS Paper route and deterministic risk boundaries intact.
-  A proposed baseline may exercise an already-supported virtual-paper canary
-  only after its call-time identity, freshness, durable-intent, reconciliation,
-  and cancellation rules pass. It must not reuse an unknown prior intent.
-- The baseline may not claim to replicate MIM-30, may not use MIM historical
-  results, and may not claim profitability from a prospective observation.
+- `KIS_PAPER_*` market-data reads are authorized only if Data needs to attach a
+  newly completed SPY session. Do not read `KIS_LIVE_*`, submit a KIS order, or
+  query account state in this objective.
+- Retain raw market data only under `D:\market_data`. Keep source-safe receipts
+  and generated artifacts only under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`; never store them in Git.
+- Use only the existing local simulator for any replay. Every simulated fill
+  must remain `source: local_paper` and must not be relabeled as KIS Paper.
+- The fixed baseline may not be trained, tuned, selected, ensembled, or used to
+  claim PnL or profitability. Do not allocate GPU work from this objective.
+- A missing fresh session is local to capture. It must not make Codex wait or
+  block another ready package.
 
 ## Work
 
-1. **Data:** define and test one source-safe prospective SPY session record
-   from completed 1m bars. It must declare ET/DST/session geometry, its
-   source-contract identity, and which 1m/5m/10m/1h/3h views are actually
-   complete at each decision cutoff. Missing or early-close segments must
-   abstain rather than be filled.
-2. **Engine Research:** connect that record to the existing causal
-   multi-timeframe sequence contract and one fixed, deterministic baseline
-   decision. Freeze its lookbacks, decision cutoff, target state, no-trade
-   behavior, cost assumptions, and a naive comparator before observing any
-   prospective outcome. Build only pure, testable decision/input plumbing;
-   do not train, tune, select, or ensemble a model in this objective.
-3. **Execution:** reattest the existing local-paper and KIS Paper boundary for
-   this distinct baseline. A local replay must retain `source: local_paper`.
-   A KIS Paper canary, if the existing route reaches one during a regular
-   session, must retain its own route identity and immutable lifecycle receipt;
-   it is not a local-paper fill and is not a model validation result.
-4. **Validation:** prove that the prospective record and decision are causal,
-   require no broker/network/credential access in unit tests, abstain on stale
-   or incomplete data, and cannot create a duplicate Paper intent. Record
-   whether the first fresh-session observation was captured or remains
-   scheduler-owned without making that external time a company hold.
+1. **Data:** define a source-safe observation receipt from a verified
+   `ProspectiveSpyIntradaySessionRecord`. It may contain only identities,
+   structural timestamps, completeness/status, and categorical decision facts;
+   reject raw OHLCV values, provider credentials, file paths, account data, and
+   mutable duplicate identifiers. Prepare the Data-owned fresh-session adapter
+   without waiting for a market session.
+2. **Engine Research:** evaluate the frozen SPY baseline exactly once per
+   immutable record and bind its target proposal to the receipt. Preserve its
+   fixed 30/6/3/2/2 structure, 2 percent target, abstain path, TTL, cost
+   metadata, and always-flat comparator. Do not change its rule after observing
+   an outcome.
+3. **Execution:** use the existing target-proposal-to-local-paper replay seam
+   with injected completed bars. Prove an eligible `enter` has a deterministic,
+   replayable local-paper lifecycle and an abstain creates no intent/fill. Do
+   not invoke the KIS Paper route or create a durable broker intent.
+4. **Validation:** add focused tests for idempotent receipt identity, raw-value
+   exclusion, no provider/network/credential/broker access in unit tests,
+   duplicate-record rejection, and local-paper fill provenance. A fresh KIS
+   session capture may remain `not_yet_observed` after its adapter is prepared.
 
 ## Completion
 
-- One source-safe prospective-baseline contract and focused tests are complete.
-- The baseline has an explicit no-trade path and cannot consume MIM historical
-  evidence or source-window proxy semantics.
-- A fresh session may be `not_yet_observed`; then its scheduler remains owned
-  by Data/Execution while the next objective proceeds. Do not wait in the
-  foreground for market time.
+- The baseline-to-receipt-to-local-paper contract is deterministic and tested.
+- Raw data remains external and every receipt is source-safe.
+- No KIS order, account read, live route, model training, GPU artifact, or PnL
+  claim occurs.
 - Refresh this file with exactly one next objective, verify, commit, push, and
-  continue.
+  continue without foreground waiting for market time.
 
 ## Verification
 
@@ -80,4 +76,4 @@ docker compose --profile research config --quiet
 
 ## Suggested Commit Message
 
-`Add prospective intraday baseline`
+`Connect prospective baseline to local paper`

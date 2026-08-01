@@ -782,6 +782,16 @@ limitation.
 
 ## Next Handoff
 
+The pure provider-free prospective SPY intraday session-record contract is
+ready for an Execution-owned prospective canary consumer. It accepts only one
+weekday regular 09:30-16:00 America/New_York session with a fixed 15:30 ET
+cutoff, completed contiguous SPY 1m input, and derives the causal
+1m/5m/10m/1h/3h views with fixed 30/6/3/2/2 lookbacks from the bars' own
+market identity. It reads no cache,
+provider, credentials, network, or artifact path; missing/incomplete input is
+only an input-local no-record fact. It does not attest a provider's bar-finality
+or create a Paper order, schedule, collector, historical dataset, or promotion.
+
 The next Data-owned research input package is a bounded MIM-30 SPY 1m
 capability qualification. Read-only inventory found 21 complete 390-minute
 SPY/AMS sessions under `intraday\v1`, of which 20 have the preceding regular

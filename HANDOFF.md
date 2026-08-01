@@ -1351,3 +1351,29 @@ truthfully and cannot turn it into a Paper or profitability claim. No MIM GPU
 appointment, model training, paper intent, or broker route follows. The next
 company objective is a separately named prospective intraday baseline that can
 advance while Data and Execution session workers wait on their own clocks.
+
+## Prospective SPY Regular-Session Baseline
+
+The first prospective SPY baseline is implemented as a pure research contract,
+not a profitability result or a Paper action. It accepts only a complete
+09:30-16:00 America/New_York session and decides at 15:30 ET from causal
+1m/5m/10m/1h/3h selected tails of 30/6/3/2/2. Its fixed rule proposes a 2
+percent long target only when every trailing view rises; otherwise it abstains.
+It has no provider, network, credential, broker, order, raw-data, or artifact
+authority.
+
+Validation now rejects tampered duplicate or missing selected bars before the
+baseline can evaluate them. Pure resampling moved to `thericher_v2.market` and
+`data.resample` remains a compatibility export, so importing the baseline leaf
+does not eagerly load KIS, provider, or execution modules. No prospective
+session was captured, no KIS call or order occurred, and no GPU was used.
+Claude's static drift review is `supported-with-limits`: it confirms the pure
+extraction/import-isolation claim subject to the running runtime suite and
+subprocess verification and the tightened tamper test.
+
+Next context: Data should attach one newly observed complete SPY session to a
+source-safe prospective observation receipt, then Engine may record the fixed
+baseline's categorical proposal. Keep raw market data on D:, retain only
+source-safe receipt facts outside Git as needed, and do not make the
+orchestrator wait for the market session. A receipt is evidence only; a later
+GPU campaign or Paper action needs its own bounded contract.

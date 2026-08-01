@@ -8121,3 +8121,31 @@ Reason: preserve a useful source and execution fact without producing an
 unsupported MIM backtest, GPU run, or Paper claim. This ends only this campaign;
 it does not stop a distinct prospective intraday engine baseline, Data work, or
 authorized KIS Paper lifecycle.
+
+## 2026-08-02 - Keep the prospective SPY baseline import-pure and tamper-safe
+
+Decision: keep the prospective SPY regular-session baseline as a pure
+research-only contract. Extract shared resampling primitives to
+`thericher_v2.market`, retain `data.resample` as compatibility exports, and
+keep the baseline leaf outside eager Data and Research package initialization.
+Revalidate its frozen selected 1m/5m/10m/1h/3h tails when a prospective session
+record is constructed, rather than trusting a structurally supplied window.
+
+The fixed 15:30 ET baseline uses only a complete 09:30-16:00
+America/New_York session and lookbacks 30/6/3/2/2. It is not a model-training,
+GPU, profitability, ensemble, or Paper-promotion decision. It has no provider,
+network, credential, broker, order, raw-data, or artifact behavior. The change
+fixes two validation findings: tampered duplicate or missing selected bars are
+rejected, and importing the baseline leaf no longer eagerly loads KIS, provider,
+or execution modules.
+
+Claude's static drift review is `supported-with-limits` for the pure
+extraction/import-isolation claim. Its conditions are the running runtime suite
+and subprocess verification plus the tightened tamper test; it is not a
+profitability, promotion, or Paper verdict. No prospective session, KIS call,
+Paper order, raw data, artifact, or GPU use occurred in this objective.
+
+Reason: preserve causal input and import isolation so the next source-safe
+prospective observation receipt can become usable research evidence without
+turning market-session timing into an orchestrator wait or widening execution
+authority.
