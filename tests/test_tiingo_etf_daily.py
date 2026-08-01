@@ -25,6 +25,21 @@ _START = date(2024, 1, 2)
 _END = date(2024, 1, 5)
 
 
+def test_named_docker_mount_is_external_only_for_its_declared_root() -> None:
+    container_repo = Path("/app").resolve()
+
+    assert tiingo_etf_daily._is_container_external_mount(
+        (container_repo / "market_data").resolve(),
+        container_repo,
+        mount_name="market_data",
+    )
+    assert not tiingo_etf_daily._is_container_external_mount(
+        (container_repo / "model_artifacts").resolve(),
+        container_repo,
+        mount_name="market_data",
+    )
+
+
 def test_acquisition_is_external_source_safe_and_replayable(tmp_path: Path) -> None:
     market_root = tmp_path / "market-data"
     market_root.mkdir()

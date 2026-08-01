@@ -8000,3 +8000,40 @@ weaken the event mask, or blend Tiingo with KIS/Norgate rows.
 Reason: the control proves a reproducible source-separated daily research loop
 and rejects a simple after-cost baseline without letting an offline source or a
 negative result turn into a general data or execution gate.
+
+## 2026-08-02 - Keep Tiingo D1 sequence breadth descriptive and source-local
+
+Decision: accept exactly one Tiingo SPY/QQQ/IWM D1 sequence breadth family under
+`D:\thericher-v2\model-artifacts\research\tiingo-d1-sequence-breadth-v1`.
+It reattests immutable source snapshot
+`us_equities.tiingo_etf_daily.snapshot=20260801T173121Z-tiingo-etf-d1-r1` and
+freezes completed raw-OHLCV `5/20` sequences, development-only normalization,
+next-session open-to-close direction with non-up labeled zero, a 70/30
+chronological split, 22-session dependency purge, feature-side discontinuity
+screen, descriptive known event window through `t+1`, and fixed `5/10/20`-bp
+round-trip costs. The CPU comparator and Docker PyTorch CUDA breadth are bound
+to source-contract input
+`sha256:340a6acede3e8d9d8058a766c9a7b1bfc6fb98a0bab68656d2bad3ed928d7849`.
+
+The host CPU control and the network-disabled CUDA appointment used only the
+three-ETF external snapshot. CUDA 12.8 ran fixed GRU, causal TCN, and compact
+attention models for both windows, with four epochs and a 90-second/model stop.
+No raw rows, labels, predictions, checkpoint, model weight, credential, KIS,
+broker, Paper, or live side effect was written. Every six architecture-window
+aggregate is negative at the fixed 10-bp cost view, so no winner, ensemble,
+depth run, replay, PnL claim, or Paper input follows.
+
+Claude's falsification-first verdict was `supported-with-limits`. It required
+the 22-session purge with direct dependency separation, target-side events to
+remain a known calendar/descriptive mask rather than a target-price filter, and
+zero next-day return to be predeclared as non-up. The implementation also keeps
+the input identity as source snapshot, frozen contract, and sample structure;
+runtime numerical normalizer hashes remain diagnostics, avoiding a false
+Windows-versus-Docker mismatch without weakening source or path reattestation.
+Only the named Docker `/app/market_data` and `/app/model_artifacts` mounts are
+recognized as external storage under `/app`; all other repository paths remain
+rejected.
+
+Reason: this proves the first small, reproducible CUDA breadth loop without
+mistaking correlated ETFs, a single historical tail, or GPU activity for a
+tradable model claim.

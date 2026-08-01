@@ -6,9 +6,10 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** build one bounded, source-separated Tiingo raw-D1
-  research input and descriptive CPU control for SPY/QQQ/IWM. The existing
-  KIS Paper scheduler remains independently owned and is not a dependency.
+- **Company objective:** complete one bounded, source-local Tiingo D1 sequence
+  breadth campaign for SPY/QQQ/IWM. The CPU comparator and six-model Docker
+  CUDA batch are complete pending goal-boundary verification; the existing KIS
+  Paper scheduler remains independently owned and is not a dependency.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
   generation-26,368 cache: all 2,119 current NAS targets are covered with no
@@ -42,10 +43,15 @@ second goal. Git and external artifacts retain historical evidence.
   source-locally. Its evaluated validation cells are below flat across the fixed
   cost band and two event-masked 60-session cells are input-unavailable, so it has
   no model selection, ensemble, Paper, or GPU consequence.
-- **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
-  durable owner. No frozen labelled campaign or sealed-evaluation allocation is
-  currently eligible; this is a scoped resource fact, not a hold on Data or
-  Execution.
+- **Engine Research (Tiingo sequence):** the distinct `5/20` raw-OHLCV family
+  completed its CPU control and its one bounded CUDA appointment on the immutable
+  Tiingo snapshot. Its source-contract input is
+  `sha256:340a6acede3e8d9d8058a766c9a7b1bfc6fb98a0bab68656d2bad3ed928d7849`.
+  All six fixed GPU architecture-window aggregates are negative at 10 bp; no
+  checkpoint, winner, ensemble, Paper input, or promotion exists.
+- **Research Steward:** the Tiingo appointment is complete and the GPU is free.
+  No sealed evaluation was allocated. This is a scoped resource fact, not a hold
+  on Data or Execution.
 - **Execution:** the existing KIS Paper QQQ session can already persist an
   intent, submit/cancel, reconcile, and project source-safe lifecycle state.
   A separate exact generic unknown run was read-only reconciled with immutable
@@ -58,10 +64,9 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Ready / Owned / Due
 
-- **Ready:** the Tiingo snapshot and CPU control are complete. Their fixed
-  baseline is no-selection evidence, so the next Engine Research package must
-  be a distinct causal family; it need not wait for new Tiingo data. The KIS
-  freshness scheduler continues as an independent owned route.
+- **Ready:** after goal-boundary verification, the next Engine Research package
+  must be a distinct causal family; it need not wait for new Tiingo data. The
+  KIS freshness scheduler continues as an independent owned route.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
@@ -100,10 +105,12 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-The Tiingo three-ETF target had no external wait: three bounded source calls,
-one external snapshot, and its CPU control all completed in the same objective.
-Its material bottleneck is now the absence of a distinct next causal family,
-not provider scheduling, GPU availability, or an operator decision. The QQQ
+The Tiingo three-ETF target had no external wait: its source snapshot, CPU
+control, and bounded CUDA sequence breadth all completed under one frozen
+contract. The Docker named-mount check now recognizes only `/app/market_data`
+and `/app/model_artifacts` as external storage, preserving normal repository
+path rejection. The next material bottleneck is a distinct causal family, not
+provider scheduling, GPU availability, or an operator decision. The QQQ
 execution leg remains a separate scheduler-owned external wait. It did not
 defer the independent CPU-first window-sensitivity preflight, target-position
 policy, momentum adapter, fixed-cost local-paper consensus replay, or its

@@ -14,15 +14,19 @@ weights, modify execution risk, or call a broker.
 
 ## Current Resource State
 
-- The new Tiingo three-ETF D1 CPU control has no GPU appointment. Its source is
-  explicitly retrospective/non-PIT and its predeclared momentum cells did not
-  clear the flat-after-cost control; two 60-session validation cells are also
-  input-unavailable. This records a scoped ineligibility for that exact family,
-  not a GPU hold on another frozen campaign.
-- GPU: free. The independently frozen QQQ 1m window-sensitivity CPU preflight
-  closed `no_structure`, so it has no CUDA appointment. Historical D1 remains
-  quarantined. This does not block Data, Execution, or other CPU Research
-  preparation, and it is not a request to manufacture training.
+- The Tiingo three-ETF D1 momentum control remains CPU-only and ineligible for
+  follow-up. The distinct frozen sequence breadth family consumed one completed
+  CUDA appointment: two windows times GRU, causal TCN, and compact attention,
+  four epochs each, bounded by 90 seconds per model. Its external CPU/CUDA
+  summaries are under `research\tiingo-d1-sequence-breadth-v1`, have source
+  contract input `sha256:340a6acede3e8d9d8058a766c9a7b1bfc6fb98a0bab68656d2bad3ed928d7849`,
+  and write no checkpoint or sealed evaluation. Every architecture-window is
+  negative at its fixed 10-bp aggregate view, so the appointment is closed with
+  no selection, depth continuation, or ensemble consequence.
+- GPU: free. The completed Tiingo batch and the independently frozen QQQ 1m
+  window-sensitivity preflight create no follow-up CUDA work. Historical D1
+  remains quarantined. This does not block Data, Execution, or other CPU
+  Research preparation, and it is not a request to manufacture training.
 - The completed QQQ consensus replay and its next equal-count subset null are
   CPU-only descriptive validation. Neither consumes a GPU appointment or
   sealed-evaluation allocation; later/disjoint replication must first meet the

@@ -295,9 +295,26 @@ limits remain explicit.
   momentum cell was below flat across the band; SPY and QQQ 60-session validation cells are
   `input_unavailable` because their fixed retrospective event mask leaves fewer
   than 50 samples. This is an honest descriptive control, not a winner,
-  ensemble member, PnL claim, Paper input, or GPU appointment. Recovery: a new
-  daily family must freeze a distinct causal hypothesis and cannot retune this
-  matrix after reading these results.
+   ensemble member, PnL claim, Paper input, or GPU appointment. Recovery: a new
+   daily family must freeze a distinct causal hypothesis and cannot retune this
+   matrix after reading these results.
+- The distinct Tiingo D1 sequence breadth family is complete at
+  `D:\thericher-v2\model-artifacts\research\tiingo-d1-sequence-breadth-v1`.
+  Its host CPU comparator and Docker CUDA breadth use the immutable SPY/QQQ/IWM
+  snapshot, completed raw-OHLCV sequence lengths `5/20`, a 70/30 chronological
+  split, 22-session dependency purge, feature-side discontinuity rule, known
+  event mask through `t+1` for retrospective description, and fixed `5/10/20`
+  bp costs. The CPU summary is
+  `cpu\sequence-cpu-20260802T032249\summary.json`; the completed PyTorch CUDA
+  12.8 GRU/causal-TCN/compact-attention batch is
+  `cuda\sequence-cuda-20260802T032438-r2\summary.json`, bound to source-contract
+  input `sha256:340a6acede3e8d9d8058a766c9a7b1bfc6fb98a0bab68656d2bad3ed928d7849`.
+  It writes no checkpoint, raw value, prediction, or weight. All six fixed
+  architecture-window aggregates are negative at the fixed 10-bp cost view, so
+  it is descriptive breadth evidence only: no winner, ensemble, replay, PnL,
+  Paper input, or next GPU allocation follows. Recovery: freeze a different
+  causal family and source interpretation; do not retune this one after result
+  inspection.
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
   history and a bounded complete QQQ/SPY intraday scope.
 - The frozen daily CPU run completed on 4,756 QQQ KIS-private sessions with

@@ -724,7 +724,13 @@ def _validate_destination(
         raise ValueError("Tiingo ETF daily destination name is invalid")
     if repo_root is not None:
         resolved_repo = Path(repo_root).resolve(strict=True)
-        if target == resolved_repo or resolved_repo in target.parents:
+        if (
+            target == resolved_repo or resolved_repo in target.parents
+        ) and not _is_container_external_mount(
+            root,
+            resolved_repo,
+            mount_name="market_data",
+        ):
             raise ValueError("Tiingo ETF daily data must stay outside the Git workspace")
     if target.exists() or target.is_symlink():
         raise FileExistsError("Tiingo ETF daily destination already exists")
@@ -746,7 +752,13 @@ def _validate_existing_snapshot(
         raise ValueError("Tiingo ETF daily snapshot must remain under market_data")
     if repo_root is not None:
         resolved_repo = Path(repo_root).resolve(strict=True)
-        if resolved == resolved_repo or resolved_repo in resolved.parents:
+        if (
+            resolved == resolved_repo or resolved_repo in resolved.parents
+        ) and not _is_container_external_mount(
+            root,
+            resolved_repo,
+            mount_name="market_data",
+        ):
             raise ValueError("Tiingo ETF daily snapshot must stay outside the Git workspace")
     return resolved, root
 
@@ -756,8 +768,24 @@ def _validate_external_artifact_root(root: Path, *, repo_root: Path | None) -> N
         if candidate is None:
             continue
         resolved_repository = Path(candidate).resolve(strict=True)
-        if root == resolved_repository or root.is_relative_to(resolved_repository):
+        if (
+            root == resolved_repository or root.is_relative_to(resolved_repository)
+        ) and not _is_container_external_mount(
+            root,
+            resolved_repository,
+            mount_name="model_artifacts",
+        ):
             raise ValueError("Tiingo ETF daily receipt must stay outside the Git workspace")
+
+
+def _is_container_external_mount(path: Path, repo_root: Path, *, mount_name: str) -> bool:
+    """Allow only named Docker bind mounts beneath the container worktree."""
+
+    container_repo = Path("/app").resolve()
+    if repo_root != container_repo:
+        return False
+    mount_root = container_repo / mount_name
+    return path == mount_root or path.is_relative_to(mount_root)
 
 
 def _validate_storage(root: Path, *, disk_usage: Callable[[str | Path], Any]) -> float:

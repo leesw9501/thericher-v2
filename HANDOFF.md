@@ -53,6 +53,19 @@ authorized private KIS Paper work.
   input-unavailable. It is descriptive offline evidence only: no winner, GPU
   appointment, ensemble, KIS runtime input, Paper action, or profitability
   claim follows. A later daily family needs a new hypothesis and source contract.
+- The distinct Tiingo sequence breadth campaign is also complete. Its source-
+  contract input is `sha256:340a6acede3e8d9d8058a766c9a7b1bfc6fb98a0bab68656d2bad3ed928d7849`;
+  its CPU comparator is at
+  `D:\thericher-v2\model-artifacts\research\tiingo-d1-sequence-breadth-v1\cpu\sequence-cpu-20260802T032249\summary.json`
+  and its network-disabled Docker PyTorch CUDA summary is at
+  `D:\thericher-v2\model-artifacts\research\tiingo-d1-sequence-breadth-v1\cuda\sequence-cuda-20260802T032438-r2\summary.json`.
+  The family fixes `5/20` raw-OHLCV sequences through completed `t`, a next-day
+  open-to-close direction label, a 70/30 split, 22-session purge, retrospective
+  event masking, and `5/10/20`-bp costs. GRU, causal TCN, and compact attention
+  wrote no weights or checkpoints; all six fixed architecture-window aggregates
+  are negative at 10 bp. This is descriptive no-selection evidence, not a model
+  winner, ensemble, profitability claim, KIS runtime feature, or Paper action.
+  A later campaign must use a distinct hypothesis rather than retuning this run.
 - The independent QQQ 1m window-sensitivity CPU preflight completed against the
   retained 20-session KIS cache. Its frozen `30/60/90/120/180`-bar matrix had
   a real Brier spread of `0.000233701152146`, below its session-block-permuted

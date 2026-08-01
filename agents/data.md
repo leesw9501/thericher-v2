@@ -103,9 +103,17 @@ the offline observer only after a current or complete cache result. A
   `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\8b2e375a027e645ea2065ec61b252b7097da5e743155eb819129391125c072de.json`.
   It is raw-OHLCV-with-event-markers, retrospective-only, non-PIT,
   non-ranking, non-Paper, and separate from KIS/Norgate. Recovery: a later
-  consumer that needs a different adjustment or availability meaning must
-  collect or qualify that exact source contract; it must not blend or repair
-  this snapshot with another provider.
+   consumer that needs a different adjustment or availability meaning must
+   collect or qualify that exact source contract; it must not blend or repair
+   this snapshot with another provider.
+- The Tiingo D1 sequence breadth campaign reattached this exact snapshot on the
+  host and through the named Docker `/app/market_data` mount. Data retained no
+  derived rows, labels, predictions, or model artifact: only the existing D:
+  snapshot supplied its source identity and event markers. The mount is an
+  external-storage path only when explicitly declared as `market_data`; it does
+  not relax the Git-workspace check for any other `/app` path. Recovery: later
+  source work must still use a separate frozen contract rather than treating
+  this successful reattachment as a source-quality or Paper-eligibility claim.
 - The 2026-08-01 offline broad-D1 postprocess reattested the terminal
   2,119-target current NAS cache at generation 26,368. Its candidate panel is
   `sha256:6f83952b101050f221032ee48f71d1dc70bb392aa3fa5e139dba1335c8659c08`,
