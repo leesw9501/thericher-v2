@@ -65,9 +65,12 @@ At task resume or after an observed unexplained foreground idle period, perform
 one bounded Throughput Review from the stateboards and active-job facts. Keep
 only one measured, reversible improvement in `agents/orchestration.md`; do not
 create a standing process lane or an approval gate. Use isolated parallel tests
-only for faster feedback, including `pytest -n auto` when fixtures, artifact
-roots, and external workers are process-isolated. The required goal-boundary
-verification remains the authoritative serial suite.
+only when fixtures, artifact roots, and external workers are process-isolated.
+At a goal boundary, use the changed-path serial group and
+`.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
+both Compose configurations. Run full serial `pytest -q` weekly and before a
+material live-route or execution-recovery promotion as a compatibility
+diagnostic, not an unrelated foreground hold.
 
 Stop and report only for an actual operator-authority decision: reading or
 using `KIS_LIVE_*`, enabling live or real-money behavior, allocating live

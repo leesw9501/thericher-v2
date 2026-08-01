@@ -193,8 +193,10 @@ history documents, daily goal files, or recovery reports.
 
 Focused test feedback may use independent parallel processes or `pytest-xdist`
 after the affected tests have no shared mutable artifact, control root, Docker
-service, or environment dependency. The required serial `pytest -q` remains
-the authoritative goal-boundary verification.
+service, or environment dependency. At a goal boundary, follow `AGENTS.md`:
+run the changed-path serial group and the clean-root full parallel runner, then
+Ruff and both Compose configurations. Full serial `pytest -q` remains a weekly
+and material-routing compatibility diagnostic.
 
 ## Lifecycle
 

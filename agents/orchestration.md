@@ -100,11 +100,11 @@ and cannot create a retry; the existing exact-intent reconciliation path still
 owns recovery. This strengthens evidence interpretation without changing the
 route, task, sizing, signal, or live authority.
 
-The isolated feedback helper `scripts/run_parallel_tests.ps1 -Workers 8`
-reattested on 2026-07-30 with `1762 passed, 14 skipped` in 284.47 seconds. It
-does not touch KIS, Docker, market data, or artifacts, so retain it for focused
-implementation feedback while preserving serial `pytest -q` as the required
-goal-boundary verification.
+The clean-root full parallel runner now serves as the goal-boundary Python
+authority alongside changed-path serial coverage. It has no KIS, Docker,
+market-data, or artifact access. Full serial `pytest -q` remains a weekly and
+material-routing compatibility diagnostic rather than a routine foreground
+hold.
 
 The current reversible verification improvement retains the isolated
 file-distributed feedback runner and adds test-only fast paths: three fresh
@@ -114,7 +114,7 @@ campaign fixture at first use and test exit rather than rehashing it per
 candidate. The latest focused CPU-breadth case passed in 5.15 seconds (formerly
 41.36 seconds); the whole module passed `11` tests in 55.56 seconds. Production
 event, model, KIS, and scheduler behavior is unchanged; the result cannot close
-the QQQ lifecycle goal or replace the required serial suite.
+the QQQ lifecycle goal or replace the required clean-root verification contract.
 
 The latest test-only improvement keeps the real local-paper replay assertion in
 its dedicated intraday campaign test, while the separate runner-order test now
