@@ -106,8 +106,9 @@ The prospective SPY observation receipt is now complete, but it is evidence
 only and does not allocate the GPU or permit training, selection, ensemble use,
 or Paper action. A Data-owned fresh-session runner is not an eligibility event.
 
-The next frozen `tiingo-d1-trend-mean-reversion-rotation-v1` family is a CPU
-falsification only. It has no GPU appointment, no model artifact, and no sealed
-tail allocation; its two validation blocks must first meet the named kill test.
-The free GPU remains available for a later independently eligible campaign and
-must not be filled by this rule evaluation.
+The frozen `tiingo-d1-trend-mean-reversion-rotation-v1` family closed
+`input_unavailable` during CPU preflight: the causal event mask left three
+active validation decisions against its fixed 100-decision minimum. It created
+no GPU appointment, model artifact, sealed-evaluation allocation, target
+evaluation, selection, or promotion. The free GPU remains available for a
+later independently eligible campaign and must not be filled by this rule.

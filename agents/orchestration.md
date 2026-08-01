@@ -285,8 +285,10 @@ statements above; their historical facts remain scoped to their original work.
   substantive verdict (`review_unavailable`). Independent tests and non-KIS
   work continue; this is not agreement, an approval, or a hold.
 
-- **Next ready Engine package:** `tiingo-d1-trend-mean-reversion-rotation-v1`
-  uses the existing immutable three-ETF Tiingo D1 snapshot for a CPU-only,
-  precommitted causal falsification. It is a distinct rule family, has no KIS,
-  credential, broker, GPU, or sealed-tail action, and begins without waiting
-  for the SPY fresh-session clock.
+- **Engine outcome:** the CPU-only
+  `tiingo-d1-trend-mean-reversion-rotation-v1` repeat-source falsification
+  closed `input_unavailable`: its causal event mask left three active validation
+  decisions against a fixed minimum of 100, so no target return, performance,
+  kill, selection, GPU, KIS, credential, broker, Paper, or sealed-evaluation
+  action occurred. This is scoped evidence, not a hold on the next ready Engine
+  package.

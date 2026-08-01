@@ -67,6 +67,14 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- Execution reattests the frozen `tiingo-d1-trend-mean-reversion-rotation-v1`
+  CPU falsification contract as outside every Execution surface: it reads only
+  the retained Tiingo D1 snapshot and writes source-safe contract/aggregate
+  evidence under the external artifact root. Its bounded scope contains no
+  intent, order, fill, account, broker, KIS, local-paper, or live action. This
+  is a pre-run contract attestation, not an execution result or Paper-input
+  claim; any implementation that widens that scope requires a new exact
+  Execution review.
 - The MIM-30 long-only derivative has a truthful Execution parity fact, not an
   execution route: current local-paper replay enters at the next completed-bar
   open and exits at the terminal 15:59 open. It cannot represent the source's

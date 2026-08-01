@@ -8192,3 +8192,21 @@ scheduler hold. Existing head collection retains cache and schedule ownership;
 the runner adds no KIS client, credential, account, order, broker, or live
 surface. The Claude drift check expired before a verdict, recorded as
 `review_unavailable` rather than approval.
+
+## 2026-08-02 - Narrow Tiingo mean-reversion to honest repeat-source falsification
+
+Decision: the next Tiingo D1 portfolio-rotation rule remains CPU-only, but it
+does not call a previously traversed three-ETF snapshot a sealed or independent
+holdout. Its chronological validation is an explicitly non-promoting
+falsification surface. The campaign records the two prior Tiingo family uses,
+requires at least 100 active validation decisions before opening target-day
+returns, and otherwise closes as `input_unavailable` rather than manufacturing
+a weak kill result.
+
+Claude's `uncertain` drift check identified two material design corrections:
+the event/discontinuity mask now stops at decision time rather than reading a
+target-day event marker, and active comparators run on exactly the candidate's
+active dates to separate signal quality from passive exposure. Costs are fixed
+as all-in round-trip `5/10/20` bp. The result cannot select, promote, ensemble,
+allocate GPU, form a KIS input, or claim profitability; a later data tail needs
+its own genuinely fresh, single-use evaluation contract.

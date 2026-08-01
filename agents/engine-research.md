@@ -780,14 +780,39 @@ with dataset hash
 At a completed D1 close it may select at most one ETF with positive 60-session
 trend and the largest negative five-session return normalized by prior
 20-session realized volatility; no qualifying decline means flat. The frozen
-next-session open-to-close target, three-way cost band, chronological
-development/validation-A/validation-B/sealed-tail geometry, 61-session purges,
+next-session open-to-close target, three-way all-in round-trip cost band,
+chronological 70% development / 61-session purge / 30% validation geometry,
 and event/discontinuity mask are a new family contract, not a retune of the
-failed momentum or sequence families.
+failed momentum or sequence families. The snapshot was already used by two
+Tiingo families, so this is explicitly repeat-source falsification, not a
+sealed or independent holdout. The mask stops at decision time `t`; it cannot
+read a target-day event marker to skip an outcome.
 
-It is CPU-only and receives no GPU or sealed-tail appointment. Its strongest
-kill test is a net result at the fixed 20-bp cost that is flat-or-worse in
-either validation block, or consistently weaker than both fixed active
-comparators across the cost band. The sealed tail stays unopened. A result is
-only a source-local falsification fact: it cannot claim profitability, select a
-model, form an ensemble, become a KIS Paper input, or justify an order.
+It is CPU-only and receives no GPU or new sealed-evaluation appointment. Its strongest
+kill test is a net result at the fixed 20-bp cost that is flat-or-worse, or
+consistently weaker than both fixed exposure-matched active comparators across
+the cost band. A minimum 100 active validation decisions is a preflight
+requirement; otherwise it closes `input_unavailable` before target evaluation.
+A result is only a source-local falsification fact: it cannot claim
+profitability, select a model, form an ensemble, become a KIS Paper input, or
+justify an order.
+
+## Tiingo D1 Mean-Reversion Rotation Result (2026-08-02)
+
+The frozen `tiingo-d1-trend-mean-reversion-rotation-v1` is complete as
+`input_unavailable`, not as a performance or kill conclusion. The verified
+immutable Tiingo three-ETF source reattested to dataset hash
+`sha256:b47539a373bf2d625ad2380376808cf412219f6c5d932b66631bb3aa553683cf`
+and manifest hash `sha256:8b2e375a...c072de`. Its source-safe external run is
+`20260802T081500Z-r1`, with precommit
+`sha256:665532f2...b3c65137` and input
+`sha256:0716b811...6b9295d3`.
+
+The fixed causal event mask left only three active validation decisions, below
+the precommitted 100-decision floor. Target-day returns were therefore not
+evaluated, no aggregate performance result exists, and the family is neither
+falsified nor a candidate. The run remained CPU-only, repeat-source-only, and
+outside GPU, sealed-tail, KIS, Paper, broker, account, and promotion surfaces.
+The requested Claude CLI drift check timed out, recorded only as
+`review_unavailable`; it is not a substantive verdict or hold on independent
+work.

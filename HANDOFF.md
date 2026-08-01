@@ -1425,6 +1425,30 @@ Next Engine package: implement the CPU-only
 verified immutable `SPY/QQQ/IWM` Tiingo snapshot
 `sha256:b47539a373bf2d625ad2380376808cf412219f6c5d932b66631bb3aa553683cf`.
 It is a new trend-conditioned short-horizon mean-reversion portfolio rule, not
-a retune of the failed momentum or sequence family. Keep its tail sealed, do
-not allocate GPU, use no KIS or credentials, and make no profitability or
-Paper-input claim.
+a retune of the failed momentum or sequence family. Do not allocate GPU, create
+or open a new sealed evaluation, use KIS or credentials, or make a profitability
+or Paper-input claim. Correction from Claude's falsification review: the snapshot
+has already been used, so do not claim a sealed or independent tail. Use a
+repeat-source 70% development / 61-session purge / 30% falsification split,
+mask only facts through decision time, require at least 100 active validation
+decisions before target evaluation, and compare active benchmarks on the same
+candidate dates.
+
+## Tiingo D1 Mean-Reversion Rotation Outcome (2026-08-02)
+
+The bounded CPU-only repeat-source falsification completed with truthful
+`input_unavailable`. The immutable three-ETF snapshot reattested to the frozen
+dataset hash `sha256:b47539a...553683cf` and manifest hash
+`sha256:8b2e375a...c072de`; its source-safe external run is
+`20260802T081500Z-r1` with precommit `sha256:665532f2...b3c65137`. The frozen
+event mask yielded three active validation decisions, below the required 100,
+so no target-day return, result total, kill conclusion, selection, PnL, or
+profitability claim was produced. The run made no network, credential, KIS,
+account, order, local-paper, broker, GPU, sealed-tail, or live action.
+
+The code now pins the 20-bp kill scenario separately from the 10-bp primary
+view, preventing a cost-label mismatch. Focused tests passed. The requested
+Claude CLI drift check timed out and is `review_unavailable`, not a conclusion
+or a blocker. A later genuinely fresh source tail would need a new frozen
+single-use replication contract; do not loosen this campaign's fixed event
+mask or minimum-decision preflight.
