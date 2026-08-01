@@ -107,6 +107,32 @@ does not make an old result comparable, selectable, or promotable. Research
 Steward owns its cross-track allocation and sealed-evaluation usage; Engine
 Research owns the candidate contracts and implementations.
 
+## Window And Timeframe Experiment Protocol
+
+Timeframe and observation window are first-class campaign parameters, not a
+late threshold tweak. The first intraday seed matrix is a bounded menu, not a
+requirement to train every combination: 1m `{15, 30, 60, 90, 120, 180}` bars,
+5m `{3, 6, 12, 18, 36}` bars, and 10m `{3, 6, 12, 18}` bars. A 1h or 3h regime
+view must be an explicitly named matrix cell under the same contract or a new
+campaign family. Each campaign freezes its exact subset before reading an
+outcome.
+
+- Every cell uses the same causal availability rule, split, target, fill/cost
+  model, naive comparator, and family-level stop budget. The budget is shared
+  across the matrix rather than multiplied by its cells.
+- The contract declares a minimum complete-causal-observation and block-aware
+  effective-sample rule per cell. Overlapping windows are not counted as
+  independent observations. A cell that misses the predeclared rule is
+  `input_unavailable`, not silently dropped after results appear.
+- Screen evidence reports the number of cells considered, turnover, after-cost
+  result, and the fixed `1.0x/1.5x/2.0x` cost band. A development or out-of-fold
+  survivor is not a winner: it receives a new family lineage and a later or
+  disjoint replication/depth contract before any sealed evaluation, ensemble,
+  or Paper consideration.
+- Target-free or data-scarce window studies may improve representations and
+  runtime plumbing, but are ledgered as non-promoting and cannot become a
+  profitability claim by relabeling the same artifacts.
+
 ## Current Target-Free Representation Evidence
 
 The first separate Norgate target-free representation campaign completed under
@@ -187,6 +213,13 @@ not retune the rejected linear, sequence, or tree candidates. GPU work starts
 only after an eligible campaign's dataset, target, split, costs, and naive
 baseline are frozen. The 21-session intraday cache remains a pipeline control,
 not a depth-training corpus or a reason to manufacture GPU work.
+
+The completed data-backed 1m sequence screen used one fixed 90-bar horizon; it
+was an architecture comparison, not a `{15, 30, 60, 90, 120, 180}` window
+sweep. Its after-cost outcomes did not produce a selectable candidate. The
+window protocol above governs the next eligible intraday family after the
+current execution-only QQQ objective; it does not alter the installed QQQ
+decision table or create a Paper action now.
 
 The fixed CACC-D1 closing-auction co-confirmation screen is also complete and
 falsified across all three sparse validation folds. It used no training, GPU,
@@ -519,6 +552,12 @@ limits remain explicit.
     split, independently qualified target/cost definition, and explicit
     leakage kill test; this chronology record cannot provide a shared-span
     threshold, campaign eligibility, or GPU dispatch signal.
+13. After the current execution-only QQQ objective, the next eligible intraday
+    hypothesis may use the frozen window/timeframe protocol. It must declare a
+    finite subset, shared family budget, effective-sample rule, 1.0x/1.5x/2.0x
+    cost band, naive baseline, and later/disjoint replication path before CPU
+    or GPU dispatch. It is not permission to grid-search the 21-session cache
+    or promote a best-looking cell.
 
 ## Durable Constraints
 

@@ -26,20 +26,27 @@ weights, modify execution risk, or call a broker.
 
 ## Dispatch Contract
 
-1. Engine Research freezes the dataset, target, split, cost model, naive
-   baseline, compute stop rule, strongest kill test, artifact root, and family
-   lineage before a GPU or sealed-evaluation request is eligible.
-2. When the GPU is free, allocate the first ready frozen campaign. Break a real
+1. Engine Research freezes the dataset, target, split, timeframe/window matrix
+   (or one fixed horizon), cost model, naive baseline, compute stop rule,
+   strongest kill test, artifact root, and family lineage before a GPU or
+   sealed-evaluation request is eligible.
+2. A window/timeframe matrix consumes one shared family compute budget, not one
+   budget per cell. Its custody record declares cell count, block-aware
+   effective-sample and complete-causal-observation rule, cost-sensitivity band,
+   and development/out-of-fold selection boundary. A screen survivor needs a
+   new replication/depth contract on later or disjoint data; it cannot reuse a
+   sealed segment by changing its grid.
+3. When the GPU is free, allocate the first ready frozen campaign. Break a real
    tie with independent replication or an underrepresented hypothesis family,
    then the shorter bounded job. Do not use fixed rotation or train merely for
    utilization.
-3. A Cross-Track Synthesis proposal creates a new family record. It may combine
+4. A Cross-Track Synthesis proposal creates a new family record. It may combine
    frozen out-of-fold evidence, but it cannot consume a sealed evaluation or
    become a promoted ensemble until its own frozen campaign is allocated.
-4. Research-side portfolio/allocation candidates state correlation, capacity,
+5. Research-side portfolio/allocation candidates state correlation, capacity,
    turnover, and availability assumptions. Execution may reject those inputs
    independently; Steward records linkage only.
-5. A missing field or unavailable resource defers only that candidate. It never
+6. A missing field or unavailable resource defers only that candidate. It never
    asks the operator for routine approval or blocks another ready package.
 
 ## Durable Knowledge

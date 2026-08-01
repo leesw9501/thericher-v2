@@ -7639,3 +7639,38 @@ Reason: a repeatedly timing-out validation command should not masquerade as
 authoritative proof or slow every bounded objective when the same suite has
 measured isolated parallel evidence. The retained serial diagnostic preserves a
 separate compatibility signal without foreground-blocking routine progress.
+
+## 2026-08-01 - Make timeframe and observation window a frozen research axis
+
+Decision: add timeframe and observation window to every Engine Research
+campaign contract. A campaign either declares one fixed horizon or freezes a
+finite matrix before outcomes are read. The initial intraday seed menu is 1m
+`15/30/60/90/120/180` bars, 5m `3/6/12/18/36` bars, and 10m `3/6/12/18` bars;
+1h and 3h belong only as explicit cells under the same contract or as a new
+campaign. This is a breadth mechanism, not automatic permission to run every
+combination or tune the best observed window.
+
+Each matrix shares one family-level compute/selection budget, records its cell
+count, uses a predeclared minimum complete-causal-observation and block-aware
+effective-sample rule, and reports a fixed `1.0x/1.5x/2.0x` cost-sensitivity
+band. Development or out-of-fold evidence can screen cells, but any survivor
+must receive a new lineage and a later or disjoint replication/depth contract
+before sealed evaluation, ensemble use, or Paper consideration. Data-scarce or
+target-free window studies remain ledgered as non-promoting.
+
+The prior data-backed intraday architecture screen used only one 90-minute
+window, so it was not a window comparison. Its LSTM, causal-TCN, and compact
+attention replay outcomes did not create a selected candidate; no claim of a
+profitable intraday engine follows from it.
+
+Claude's falsification-first review was `supported-with-limits`. It required a
+shared budget rather than per-cell budget multiplication, effective-sample
+accounting for overlapping windows, a cost band, and one-shot sealed-set family
+custody. These limits are now part of the Engine Research and Research Steward
+contracts.
+
+Reason: window length materially changes signal horizon, sample dependence,
+turnover, and cost exposure. Treating it as an invisible constant left the
+research too narrow; treating it as an unbounded grid would overfit the short
+intraday history. The frozen, budgeted matrix makes the comparison useful while
+preserving a later independent falsification path.

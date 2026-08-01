@@ -279,8 +279,20 @@ Owns hypotheses, features, models, research campaigns, GPU work, analytical
 backtests, walk-forward evaluation, portfolio-construction and ensemble
 research, and model-side PnL attribution.
 
-- Use one campaign contract for a dataset, target, split, cost model, metrics,
-  baselines, compute budget, and stop rules.
+- Use one campaign contract for a dataset, target, split, feature availability,
+  timeframe/window matrix, cost model, metrics, baselines, compute budget, and
+  stop rules.
+- Treat timeframe and observation window as a predeclared research axis. A
+  campaign either fixes one horizon or freezes a finite matrix before any
+  outcome is read. A matrix shares one family-level compute/selection budget;
+  it is not a per-cell budget multiplier. It records its cell count,
+  block-aware effective-sample/complete-causal-observation rule, and a fixed
+  cost-sensitivity band. Development or out-of-fold evidence may screen a
+  matrix, but a survivor needs a fresh replication/depth contract on disjoint
+  or later data before sealed evaluation, ensemble use, or Paper consideration.
+  A 1h/3h alternative is either an explicit matrix cell under the same rules or
+  a separate campaign. Target-free or data-scarce studies remain structurally
+  non-promoting and cannot re-enter as a relabeled profitability claim.
 - Organize ready work as narrowly scoped research tracks, not separate durable
   agents: technical rule and chart structure, momentum/regime/cross-sectional
   mechanisms, classical statistical/ML models, sequence/DL or public-model
@@ -322,9 +334,11 @@ author, or permanent LLM process.
   sealed-evaluation spend, completion category, and evidence pointer. It never
   records raw labels, predictions, prices, weights, credentials, or broker data.
 - A campaign is GPU-eligible only after Engine Research freezes its dataset,
-  target, split, costs, naive baseline, strongest kill test, artifact root, and
-  compute stop rule. Missing contract fields defer only that campaign; they do
-  not create an operator approval, block CPU preparation, or stop another
+  target, split, timeframe/window matrix (or one fixed horizon), costs, naive
+  baseline, strongest kill test, artifact root, and compute stop rule. A matrix
+  also declares its shared family budget, effective-sample rule, cost band, and
+  cell count in custody. Missing contract fields defer only that campaign; they
+  do not create an operator approval, block CPU preparation, or stop another
   ready lane.
 - When the GPU becomes idle, select the first ready frozen campaign. Resolve a
   genuine tie by evidence value: independent replication or an underrepresented
