@@ -29,19 +29,25 @@ GPU appointment, KIS action, or Paper input.
 ## Work
 
 1. **Data:** record a source-safe fingerprint of the active Norgate database
-   build using the existing official-interface helper. Rebuild the exact frozen
-   panel contract into a new external `D:\market_data` snapshot and compare its
-   canonical identity with the frozen dataset hash. A difference is
-   `restated`, not an invitation to train on a silently changed history.
-2. **Data:** independently verify the original membership construction against
-   `S&P 500 Current & Past`, including at least one source-confirmed former
-   member at the original as-of boundary. A current-only reconstruction is
-   `survivorship_unqualified`.
-3. **Data:** measure the exact common completed-session tail strictly after
-   `2026-06-22` using the active local source. Predeclare `126` common sessions
-   as the minimum for a later independent broad campaign's holdout allocation.
-   This threshold controls only that prospective campaign; it does not block
-   unrelated Data, Research, Execution, or Paper work.
+   build using the existing official-interface helper. First measure the
+   completed US-session tail strictly after `2026-06-22`; `126` common sessions
+   is predeclared as the minimum for a later independent broad campaign's
+   holdout allocation. If even the source-local calendar maximum is below 126,
+   record `input_unavailable` and do not rebuild the 523-symbol panel merely to
+   repeat a known-failing condition. This threshold controls only that
+   prospective campaign; it does not block unrelated Data, Research, Execution,
+   or Paper work.
+2. **Data:** only if the tail passes, rebuild the exact frozen panel contract
+   into a new external `D:\market_data` snapshot and compare its canonical
+   identity with the frozen dataset hash. A difference is `restated`, not an
+   invitation to train on a silently changed history.
+3. **Data:** only if the tail passes, independently verify the original
+   membership construction against `S&P 500 Current & Past`, reporting both at
+   least one source-confirmed former member and the aggregate former-member
+   count/share at the original as-of boundary. A current-only reconstruction is
+   `survivorship_unqualified`. Report per-symbol tail availability as well as a
+   common intersection; do not let a survivor-conditioned intersection hide
+   missing symbols.
 4. **Engine Research / Research Steward:** prepare no model or GPU job in this
    objective. Attach the readiness result to existing campaign custody and
    state whether a later distinct causal family can be frozen. Do not reuse
@@ -54,8 +60,10 @@ GPU appointment, KIS action, or Paper input.
 
 ## Completion
 
-- The active Norgate build fingerprint, exact panel comparison, membership
-  result, and post-`2026-06-22` common-session count are recorded externally.
+- The active Norgate build fingerprint and post-`2026-06-22` completed-session
+  count are recorded externally. Exact panel comparison, membership result, and
+  per-symbol tail availability are required only when the predeclared tail
+  minimum passes.
 - The result is exactly one of `ready`, `restated`,
   `survivorship_unqualified`, or `input_unavailable` with a concrete recovery
   fact.
