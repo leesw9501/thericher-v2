@@ -66,6 +66,18 @@ authorized private KIS Paper work.
   are negative at 10 bp. This is descriptive no-selection evidence, not a model
   winner, ensemble, profitability claim, KIS runtime feature, or Paper action.
   A later campaign must use a distinct hypothesis rather than retuning this run.
+- The updated local Norgate trial was tail-checked before an expensive broad
+  rebuild. The official Windows host interface resolves the active US database
+  to `D:\market_data\us_equities\norgate_us_platinum_trial`; its aggregate-only
+  receipt is
+  `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-norgate-tail-20260802-r1`
+  (`sha256:457b27d392c812782b56da2962bccbc2e8bcd8e00d593ead15f09cc960a13952`).
+  SPY/QQQ/IWM expose 28 common completed sessions after 2026-06-22, and the
+  41-calendar-day interval cannot reach the predeclared 126-session independent
+  holdout. The prospective Norgate broad campaign is therefore
+  `input_unavailable`; no rebuild, membership recheck, per-symbol scan, GPU
+  appointment, model result, or Paper consequence follows. This scoped data
+  fact must not delay another ready engine or execution package.
 - The independent QQQ 1m window-sensitivity CPU preflight completed against the
   retained 20-session KIS cache. Its frozen `30/60/90/120/180`-bar matrix had
   a real Brier spread of `0.000233701152146`, below its session-block-permuted

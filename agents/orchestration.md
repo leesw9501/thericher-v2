@@ -6,10 +6,13 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Cross-Lane View
 
-- **Company objective:** complete one bounded, source-local Tiingo D1 sequence
-  breadth campaign for SPY/QQQ/IWM. The CPU comparator and six-model Docker
-  CUDA batch are complete pending goal-boundary verification; the existing KIS
-  Paper scheduler remains independently owned and is not a dependency.
+- **Company objective:** reattest the frozen Norgate broad-panel input against
+  the updated active local database. The fast tail kill test is complete:
+  28 completed SPY/QQQ/IWM common sessions after 2026-06-22 and even its
+  41-calendar-day maximum cannot meet the frozen 126-session independent
+  holdout requirement. It closes only that prospective broad campaign as
+  `input_unavailable`; the existing KIS Paper scheduler remains independently
+  owned and is not a dependency.
 - **Data:** the sole broad-D1 Task Scheduler owner,
   `thericher-kis-paper-daily-broad-backfill`, now has a terminal source-safe
   generation-26,368 cache: all 2,119 current NAS targets are covered with no
@@ -23,6 +26,11 @@ second goal. Git and external artifacts retain historical evidence.
 - **Data (Tiingo):** the raw-D1 snapshot and aggregate receipt are complete
   under separate D:/artifact roots. They have no KIS, Norgate, Paper, or live
   route, and no retry, cooldown, or data-worker wait remains owned.
+- **Data (Norgate tail):** the official host interface identifies the updated
+  D: database as active. Its external aggregate-only receipt is
+  `sha256:457b27d392c812782b56da2962bccbc2e8bcd8e00d593ead15f09cc960a13952`.
+  No broad-panel rebuild, membership check, per-symbol tail scan, or model job
+  is justified after the earlier calendar maximum kill test.
 - **Engine Research:** target-free r6 plumbing remains complete under contract
   `sha256:ef3745da...a4aacc2`; its weights are not reusable for a labelled
   campaign. The independent QQQ 1m window-sensitivity preflight completed on
@@ -64,9 +72,10 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Ready / Owned / Due
 
-- **Ready:** after goal-boundary verification, the next Engine Research package
-  must be a distinct causal family; it need not wait for new Tiingo data. The
-  KIS freshness scheduler continues as an independent owned route.
+- **Ready:** the Norgate tail result is closed after goal-boundary verification.
+  The next Engine Research package must be source-independent or use a new
+  frozen KIS-reconstructible contract; it need not wait for Norgate's later
+  tail. The KIS freshness scheduler continues as an independent owned route.
 - **Owned:** the broad collector and existing intraday-head scheduler own their
   respective processes, credentials, locks, cursor, pacing, and retry state.
   Do not start, stop, duplicate, or alter them outside their owner path.
@@ -105,12 +114,12 @@ second goal. Git and external artifacts retain historical evidence.
 
 ## Current Bottleneck And Improvement
 
-The Tiingo three-ETF target had no external wait: its source snapshot, CPU
-control, and bounded CUDA sequence breadth all completed under one frozen
-contract. The Docker named-mount check now recognizes only `/app/market_data`
-and `/app/model_artifacts` as external storage, preserving normal repository
-path rejection. The next material bottleneck is a distinct causal family, not
-provider scheduling, GPU availability, or an operator decision. The QQQ
+The Tiingo three-ETF target completed under one frozen contract, but its six
+fixed CUDA cells are negative at 10 bp. The Norgate tail reattestation now
+adds a separate fact: an independent 126-session broad holdout is impossible
+before the local source accumulates more completed sessions. This is not a
+provider, GPU, or operator wait. The next material bottleneck is a distinct
+KIS-reconstructible Engine package rather than another static-Norgate run. The QQQ
 execution leg remains a separate scheduler-owned external wait. It did not
 defer the independent CPU-first window-sensitivity preflight, target-position
 policy, momentum adapter, fixed-cost local-paper consensus replay, or its

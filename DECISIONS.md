@@ -8037,3 +8037,34 @@ rejected.
 Reason: this proves the first small, reproducible CUDA breadth loop without
 mistaking correlated ETFs, a single historical tail, or GPU activity for a
 tradable model claim.
+
+## 2026-08-02 - Kill short Norgate broad-holdout tail before rebuilding the panel
+
+Decision: close the updated-local-Norgate tail readiness target as
+`input_unavailable` before rebuilding the 523-symbol static panel. The official
+host-only Norgate Python interface (package 1.0.77) reported the active US
+Equities update at `2026-08-01T18:59:55Z`; only
+`D:\market_data\us_equities\norgate_us_platinum_trial` matched that update
+through its core metadata. Its build fingerprint is
+`sha256:6cc5daacd420bf8531e25afb68d1875ee5017b0ea94fd91c8868ce5ad3563a1b`.
+
+The source-safe external receipt is
+`D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-norgate-tail-20260802-r1`
+with hash `sha256:457b27d392c812782b56da2962bccbc2e8bcd8e00d593ead15f09cc960a13952`.
+SPY, QQQ, and IWM each have 28 completed D1 sessions strictly after the frozen
+2026-06-22 panel end. The full calendar interval through 2026-08-02 has only
+41 days, so it cannot possibly satisfy the predeclared 126-session independent
+holdout allocation. No raw rows were retained in the receipt and no full
+panel rebuild, membership scan, model, GPU job, KIS call, broker action, or
+credential path followed.
+
+Claude's falsification-first verdict was `supported-with-limits`: preserve the
+126 threshold rather than lowering it after seeing the tail, and when the tail
+eventually passes report former-member count/share and per-symbol availability
+beside any common intersection. A hash match would attest source bytes only,
+not adjustment semantics or point-in-time availability.
+
+Reason: measuring the calendar maximum first prevents a long source-local
+rebuild from disguising a known insufficient independent validation window. It
+limits only this prospective Norgate family and cannot make the company wait for
+the next Norgate update.

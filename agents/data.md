@@ -387,6 +387,19 @@ the offline observer only after a current or complete cache result. A
   remains local/offline-only; current-build restatement risk, provider-ticker
   identity, adjustment semantics, and corporate-action completeness
   remain source limitations, not a retry, cache, or promotion condition.
+- The 2026-08-02 Norgate tail readiness kill test resolved the actual active
+  local database root as `D:\market_data\us_equities\norgate_us_platinum_trial`:
+  the official host interface's US Equities update timestamp matched its core
+  metadata, not the preserved C: copy. Its source-safe receipt is
+  `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-norgate-tail-20260802-r1`
+  with receipt `sha256:457b27d392c812782b56da2962bccbc2e8bcd8e00d593ead15f09cc960a13952`
+  and build fingerprint `sha256:6cc5daacd420bf8531e25afb68d1875ee5017b0ea94fd91c8868ce5ad3563a1b`.
+  SPY/QQQ/IWM each expose 28 completed D1 sessions after 2026-06-22; even the
+  41-calendar-day maximum is below the frozen 126-session independent-holdout
+  minimum. The result is `input_unavailable` before any 523-symbol rebuild,
+  membership check, or raw-row retention. Recovery: wait for a later completed
+  local tail or establish a distinct source contract; this exact input limit
+  cannot stop independent Data, Research, Execution, or Paper work.
 - The completed offline opportunity-development consumer reattached that frozen
   source and its existing derived feature artifact before freezing a new
   source-safe campaign contract. Its 22-date purge leaves development labels

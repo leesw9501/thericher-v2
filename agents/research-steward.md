@@ -27,6 +27,12 @@ weights, modify execution risk, or call a broker.
   window-sensitivity preflight create no follow-up CUDA work. Historical D1
   remains quarantined. This does not block Data, Execution, or other CPU
   Research preparation, and it is not a request to manufacture training.
+- The Norgate tail readiness receipt is `input_unavailable`: 28 common
+  completed reference sessions after the static panel end cannot meet the
+  precommitted 126-session independent-holdout allocation. It has no GPU
+  appointment, no sealed evaluation, and no permission consequence for another
+  frozen campaign. Do not fill the free GPU by retraining the static Norgate
+  family or selecting from its already spent windows.
 - The completed QQQ consensus replay and its next equal-count subset null are
   CPU-only descriptive validation. Neither consumes a GPU appointment or
   sealed-evaluation allocation; later/disjoint replication must first meet the

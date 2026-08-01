@@ -315,6 +315,14 @@ limits remain explicit.
   Paper input, or next GPU allocation follows. Recovery: freeze a different
   causal family and source interpretation; do not retune this one after result
   inspection.
+- The updated Norgate local trial cannot yet provide an independent broad
+  cross-sectional holdout for a distinct campaign. Its actual 2026-06-23
+  onward SPY/QQQ/IWM common tail is 28 completed sessions and its entire
+  41-calendar-day interval is below the precommitted 126-session requirement.
+  This is `input_unavailable` for that prospective family, not a negative model
+  result, a broad-panel restatement claim, or a restriction on KIS/Tiingo or
+  source-independent Engine packages. Do not manufacture a GPU job from the
+  static panel or lower the threshold after observing the tail.
 - Eligible source-separated KIS historical input exists: QQQ/SPY daily common
   history and a bounded complete QQQ/SPY intraday scope.
 - The frozen daily CPU run completed on 4,756 QQQ KIS-private sessions with
