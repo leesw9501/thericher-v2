@@ -7732,3 +7732,28 @@ Reason: the predeclared null test failed to distinguish window-length variation
 from session-level noise. Closing it avoids using the idle GPU to amplify an
 unsupported choice while leaving independent Engine Research, Data, and KIS
 Paper work active.
+
+## 2026-08-01 - Establish the pure target-position policy foundation
+
+Decision: implement one pure product-graph segment that receives only an
+already-computed opportunity eligibility fact, caller-frozen configuration,
+explicit `1m/5m/10m/1h/3h` `ModelPrediction` evidence, and current exposure.
+It produces a model-side `TargetExposureProposal` with a categorical reason.
+It has no default alpha, feature/data source, weight, network, credential,
+KIS, account, broker, order, or model-selection behavior. Incomplete, stale,
+duplicate, misaligned, future, ineligible, and conflicting inputs become
+categorical abstentions rather than a hidden fallback decision.
+
+The existing receipt and `local_paper` preparation bridge remain the only
+tested downstream connection. Execution continues to own risk, quantities,
+cash, durable intent, and broker behavior. This establishes product plumbing,
+not a strategy, profitable model, ensemble, Paper action, or CUDA campaign.
+
+The required Claude drift invocation exceeded its bounded timeout and returned
+no verdict. It is recorded as `review_unavailable`, not as agreement or a
+reason to defer this reversible no-I/O foundation.
+
+Reason: the QQQ scheduler wait should not leave the core target-position engine
+unimplemented. A caller-configured, fail-closed proposal boundary lets later
+simple and learned experts share one execution-safe shape without prematurely
+choosing an alpha model or widening broker behavior.

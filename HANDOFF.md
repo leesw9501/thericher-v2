@@ -51,6 +51,14 @@ authorized private KIS Paper work.
   It selected no window, wrote no checkpoint or raw data, made no KIS/broker
   call, and does not qualify a CUDA follow-up. The spent comparison sessions
   cannot be reused to retune this family.
+- The pure target-position policy foundation now joins an already-attested
+  opportunity fact, explicit `1m/5m/10m/1h/3h` model evidence, and current
+  exposure into a `TargetExposureProposal`. It has no default alpha, data read,
+  credential, network, KIS, or order behavior; stale, missing, duplicate,
+  misaligned, future, and conflicting inputs abstain. Focused tests prove that
+  a unanimous entry reaches only the existing `local_paper` preparation bridge.
+  The requested Claude drift check timed out, so it is recorded only as
+  `review_unavailable`, not as support for a later model or Paper promotion.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and

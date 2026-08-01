@@ -561,6 +561,14 @@ limits remain explicit.
     comparison sessions to retune a window, start CUDA, select a model, create
     an ensemble, or change Paper behavior. A later intraday candidate needs a
     fresh later/disjoint family and its own contract.
+14. The pure target-position policy foundation is complete. It combines only
+    caller-supplied opportunity eligibility, current exposure, and explicit
+    completed-bar multi-timeframe predictions; it has no default alpha, data
+    read, network, credential, broker, model-selection, or order authority.
+    Invalid or conflicting evidence abstains. Its bounded proof ends at
+    `TargetExposureProposal` and the existing local-paper preparation bridge,
+    never a KIS route or Paper submit. The Claude drift invocation timed out,
+    so the result is `review_unavailable`, not a promotion verdict.
 
 ## Durable Constraints
 

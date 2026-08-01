@@ -9,9 +9,10 @@ The installed freshness-gated QQQ scheduler remains the sole owner of its next
 Paper lifecycle. The independent offline 1m window-sensitivity preflight has
 already removed the fixed-90-bar blind spot for this small cache and closed
 `no_structure`; it selected no window and qualified no CUDA work. While the
-scheduler awaits a fresh session, Engine Research must continue with a separate
-fresh/disjoint preparation package. Neither lane is an approval gate for the
-other.
+scheduler awaits a fresh session, Engine Research must build the pure
+target-position policy foundation that connects future opportunity/evidence
+outputs to the existing local-paper bridge. Neither lane is an approval gate for
+the other.
 
 ## Start
 
@@ -22,10 +23,10 @@ other.
    modify the Data collector or installed intraday-head task.
 3. Reattest the existing QQQ route's pre-submit and recovery invariants without
    changing its decision table, sizing, freshness budget, or strategy.
-4. Reattest the completed independent Research preflight below, then dispatch
-   the next separately bounded Research preparation package. Both are offline
-   cache consumers and must not read `.env`, KIS credentials, account facts,
-   broker state, or `KIS_LIVE_*`.
+4. Reattest the completed independent Research preflight and completed
+   target-position policy foundation below, then dispatch the next separately
+   bounded baseline-input package. It must not read `.env`, KIS credentials,
+   account facts, broker state, or `KIS_LIVE_*`.
 
 ## Parallel Work Packages
 
@@ -36,10 +37,15 @@ other.
    publish only its source-safe ready/stale/no-intent facts. A stale receipt
    does not cause a manual collector launch or stop Research.
 3. **Engine Research:** preserve the completed bounded QQQ 1m
-   window-sensitivity CPU preflight as immutable `no_structure` evidence. Then
-   prepare the next independent campaign without reusing that family's spent
-   comparison sessions. It writes artifacts only below
-   `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`.
+   window-sensitivity CPU preflight as immutable `no_structure` evidence. The
+   pure target-position policy is complete: it consumes only an already-
+   computed opportunity fact, explicit caller-configured `1m/5m/10m/1h/3h`
+   `ModelPrediction` evidence, and current exposure. It emits only a
+   `TargetExposureProposal`; stale, missing, duplicate, misaligned, future, or
+   conflicting evidence abstains. It connects to the existing
+   `ResearchDecisionReceipt` and `local_paper` preparation path only in tests,
+   and does not read credentials, call KIS/network, select a model, or submit an
+   order. Dispatch the next baseline-input package independently.
 4. **Research Steward:** do not allocate CUDA to the completed window family.
    Allocate the GPU only when a separate frozen campaign is actually eligible;
    `no_structure` is useful evidence, not a reason to manufacture training.
@@ -76,6 +82,21 @@ other.
   or Paper order. A later candidate needs a new later/disjoint replication
   family and fresh evaluation custody.
 
+## Target-Position Policy Foundation
+
+- The completed caller-owned foundation freezes the policy ID, feature-schema ID, required timeframe
+  set, per-timeframe maximum evidence age, confidence/edge thresholds, target
+  exposure, and decision TTL. The module has no hidden default strategy,
+  weights, data source, or model selection.
+- It performs only the graph segment `opportunity + evidence + current
+  exposure -> target proposal`. Deterministic Execution remains the only owner
+  of order intent creation, broker calls, cash/position constraints, and risk
+  limits.
+- Focused synthetic tests must cover all five intraday timeframes, an entry
+  proposal that reaches only `local_paper` intent preparation, disagreement,
+  stale/duplicate/misaligned evidence, and a sell consensus with/without an
+  existing exposure.
+
 ## Paper Contract
 
 - Only the existing KIS Paper virtual route may read `KIS_PAPER_*`, and only
@@ -95,8 +116,10 @@ other.
 
 - The Engine Research preflight has immutable external `no_structure` evidence
   and its focused tests prove the stated isolation and causal invariants. The
-  next separate Research package has a frozen scope and its own bounded
-  completion evidence.
+  target-position policy foundation has focused proof of its pure I/O boundary,
+  categorical abstention behavior, all-five-timeframe contract, and
+  local-paper-only preparation integration. Its requested Claude drift-check
+  timed out and therefore remains `review_unavailable`, not a promotion result.
 - A new source-safe QQQ session reaches `canary_completed` with matching
   terminal/reconciliation evidence, or an exact technical failure is preserved
   and recovered without duplicate submit.
@@ -119,4 +142,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add intraday window sensitivity preflight`
+`Add target position policy foundation`
