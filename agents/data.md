@@ -729,22 +729,26 @@ limitation.
 
 ## Next Handoff
 
-Keep the scheduler-owned broad collector independent. Reattach the latest
-`collected` receipt only through its installed offline postprocess/chronology
-path when it becomes terminal; an absent stable full-breadth postrun receipt is
-normal for the current non-terminal result and does not delay another lane.
+The scheduler-owned broad-D1 cache is terminal for its exact current-listing
+scope: generation 26,368 covers all 2,119 targets with zero coverage gaps or
+quarantines. Its offline postprocess is `complete`; the generation-604
+continuity comparison is `equal` with zero target or row mismatches, and the
+chronology receipt records `1,089 complete / 1,030 source_limited` target
+states. There is no remaining cursor work and no manual collector or
+postprocess rerun; the installed task alone retains ownership of any future
+scoped collection.
 
-Preserve the frozen six-symbol source separately. The fresh prospective QQQ
-intraday schedule owns its next due at 2026-08-04 00:31 KST; do not manually
-trigger a duplicate run. QQQ/NAS and SPY/AMS prior-day probes do not support
-cursor collection. SPY/NAS is an observed-only unavailable request shape, not
-a closed source limitation. The frozen 523-symbol Norgate panel has now been
-consumed once through a fully offline, non-promoting D1 campaign with a
-22-date-purge boundary; no source row was joined to KIS. The next Data package
-  builds and begins a resumable KIS Paper D1 broad-backfill cache from a local
-  KIS current-listing target registry. It must not infer historical membership,
-  retry SPY/NAS, blend source rows, seed targets from the Norgate survivor panel,
-  or turn current-listing coverage into a ranking, Paper, or promotion claim.
+Preserve the source-local limitations: current-listing only, non-PIT,
+non-ranking, unadjusted, corporate-action-unqualified,
+session-finality-unattested, and per-target chronology rather than a
+common-history threshold. It is not Research eligibility, a model input,
+ranking, Paper action, or promotion evidence.
+
+The installed QQQ intraday-head scheduler owns its next due at 2026-08-04
+00:31 KST; do not manually trigger or modify it. The separate QQQ/NAS plus
+SPY/AMS pair-forward cache and its installed 06:55 KST Tuesday-Saturday task
+remain independently owned; its source-safe `resume` state does not affect the
+terminal broad cache or another lane.
 Do not infer PIT membership, corporate-action completeness, a ranking claim, or
 Paper-trading eligibility from either cache or the fixed-pair falsification
 result. The D1 eligibility receipt and its completed ETF control are exact
