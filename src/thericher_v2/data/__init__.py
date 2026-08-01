@@ -171,6 +171,22 @@ from .local import (
     load_cataloged_yahoo_intraday_1m_bars,
 )
 from .norgate_daily import NorgateRawDailyBarProvider, NorgateUnavailableError
+from .norgate_trial_daily_capability_probe import (
+    DEFAULT_NORGATE_HOST_DATA_ROOT,
+    DEFAULT_NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_ROOT,
+    DEFAULT_NORGATE_TRIAL_DAILY_PROBE_CASES,
+    NORGATE_FORMER_MEMBER_SELECTION_RULE,
+    NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_ID,
+    NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_VERSION,
+    NorgateTrialDailyCapabilityProbeError,
+    NorgateTrialDailyCapabilityProbeResult,
+    NorgateTrialDailyProbeCase,
+    build_norgate_trial_daily_capability_probe,
+    default_norgate_trial_daily_capability_probe_dir,
+    fingerprint_norgate_us_database_build,
+    require_attested_norgate_trial_daily_capability_probe,
+    verify_norgate_trial_daily_capability_probe,
+)
 from .provider import BarQuery, MarketDataProvider
 from .quality import BarQualityReport, BarQualityWarning, assess_bar_quality
 from .resample import (
@@ -301,6 +317,15 @@ __all__ = [
     "KisPaperDailyHistorySequencePhaseInput",
     "NorgateRawDailyBarProvider",
     "NorgateUnavailableError",
+    "DEFAULT_NORGATE_HOST_DATA_ROOT",
+    "DEFAULT_NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_ROOT",
+    "DEFAULT_NORGATE_TRIAL_DAILY_PROBE_CASES",
+    "NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_ID",
+    "NORGATE_TRIAL_DAILY_CAPABILITY_PROBE_VERSION",
+    "NORGATE_FORMER_MEMBER_SELECTION_RULE",
+    "NorgateTrialDailyCapabilityProbeError",
+    "NorgateTrialDailyCapabilityProbeResult",
+    "NorgateTrialDailyProbeCase",
     "SUPPORTED_RESAMPLE_TIMEFRAMES",
     "SampleBarProvider",
     "SourceScopedLiquidUniverse",
@@ -316,8 +341,11 @@ __all__ = [
     "build_training_readiness_catalog",
     "build_fixed_etf_daily_raw_subset",
     "build_fixed_etf_daily_subset",
+    "build_norgate_trial_daily_capability_probe",
     "derive_catalog_id",
     "generate_trending_bars",
+    "default_norgate_trial_daily_capability_probe_dir",
+    "fingerprint_norgate_us_database_build",
     "inspect_ohlcv_file",
     "load_broad_daily_development_universe",
     "load_cataloged_yahoo_intraday_1m_bars",
@@ -361,8 +389,10 @@ __all__ = [
     "evaluate_d1_liquidity_eligibility",
     "require_attested_source_partitioned_d1_liquidity_eligibility",
     "require_attested_source_scoped_liquid_universe",
+    "require_attested_norgate_trial_daily_capability_probe",
     "sha256_kis_paper_private_intraday_v1_index_bytes",
     "select_catalog_dataset",
     "write_training_readiness_catalog",
     "us_equity_2026_session",
+    "verify_norgate_trial_daily_capability_probe",
 ]

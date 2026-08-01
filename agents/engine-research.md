@@ -642,7 +642,12 @@ advance the engine's sizing stage without consuming this evidence.
 
 The next meaningful Engine Research input is not another variant on the spent
 QQQ sessions. Data may turn the existing local Norgate trial into a bounded
-date-indexed daily source contract. Research may freeze only its KIS-shaped
-OHLCV/availability mapping and a later campaign outline until the Data-owned
-contract explicitly classifies the source scope; it may not reinterpret a
-static panel as point-in-time or Paper-ready evidence.
+date-indexed daily source contract. The 2026-08-01 three-case receipt is now
+`qualified_for_offline_research`, and the pure consumer outline freezes only
+completed D1 bars, a next-regular-session candidate decision boundary,
+chronological split with campaign-local purge, later Execution-attested costs,
+an always-flat baseline, and an availability-time shift kill test. It still
+cannot score, fit, tune, rank, ensemble, allocate GPU, claim PnL, or form a
+Paper input. A fresh date-indexed pilot may test the source loader; a labelled
+campaign requires its own frozen source, target, split, costs, baseline, and
+falsifier rather than reinterpreting a static panel as point-in-time evidence.

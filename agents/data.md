@@ -347,6 +347,17 @@ the offline observer only after a current or complete cache result. A
   separate local source: 523 selected symbols and 483 common sessions from
   2024-07-18 through 2026-06-22. It is static development-only evidence, not a
   PIT universe, runtime KIS input, ranking, paper, or promotion result.
+- The 2026-08-01 local Norgate date-indexed daily capability probe is
+  `qualified_for_offline_research` at
+  `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=20260801T152000Z-norgate-trial-daily-capability-r1`
+  with receipt `sha256:8a6433a5...ae1d908d`. It used package `1.0.77`, one
+  current-member case, one observed in-horizon membership-change case, and one
+  source-confirmed former-member case; all three returned date-indexed
+  membership/listing, unadjusted-D1 field, and capital-event-marker availability
+  aggregates. The receipt retains no raw row or value and remains structurally
+  `offline_research_only`: availability time, adjustment semantics, and marker
+  completeness are `unknown`; it is not PIT, ranking, model, GPU, Paper, PnL,
+  or live evidence.
 - The completed offline opportunity-development consumer reattached that frozen
   source and its existing derived feature artifact before freezing a new
   source-safe campaign contract. Its 22-date purge leaves development labels
@@ -716,7 +727,7 @@ disambiguation. It has no cursor, retry, or cache-recovery action.
 Current class: complete for the matched one-page SPY/AMS native control. It is
 source-safe accepted-page evidence only; its terminal continuation says no
 historical serial collector is ready. The next Data handoff is local Norgate D1
-reattest, not another KIS route call.
+pilot materialization, not another KIS route call.
 
 Current class: complete for the first six-symbol NAS D1 forward-cache
 observation and its offline reattestation. A valid repeated page advances only
@@ -743,6 +754,13 @@ non-ranking, unadjusted, corporate-action-unqualified,
 session-finality-unattested, and per-target chronology rather than a
 common-history threshold. It is not Research eligibility, a model input,
 ranking, Paper action, or promotion evidence.
+
+The qualified Norgate capability receipt may now support one fresh,
+precommitted three-symbol date-indexed D1 pilot under `D:`. That pilot must keep
+per-date membership separate from OHLCV, retain the source namespace, and
+remain offline-only until a later campaign independently binds availability and
+adjustment assumptions. It does not authorize a full-union extraction, source
+blend, ranking, model result, GPU appointment, or Paper input.
 
 The installed QQQ intraday-head scheduler owns its next due at 2026-08-04
 00:31 KST; do not manually trigger or modify it. The separate QQQ/NAS plus

@@ -1922,6 +1922,25 @@ never source rows, symbols, dates, OHLCV, feature values, labels, prices, PnL,
 or broker data. A qualified result is development-only, not model, GPU,
 campaign, Paper, or live authority.
 
+### Norgate Date-Indexed Capability Probe
+
+Run this only with the isolated Windows host runtime that contains the locally
+installed Norgate package; it is intentionally not a project or Docker
+dependency:
+
+```powershell
+D:\thericher-v2\host-runtimes\norgate-python\Scripts\python.exe `
+  scripts\run_norgate_trial_daily_capability_probe.py --run-label <unique-label>
+```
+
+The command writes a precommit, aggregate receipt, and trial-retention marker
+under `D:\market_data\us_equities\norgate_trial\daily_capability_probe`. It reads
+no `.env`, credential, KIS, account, broker, or Docker path and prints no raw
+OHLCV. A `qualified_for_offline_research` result verifies only the frozen
+three-case field response. It does not establish vendor availability time,
+adjustment or corporate-action semantics, model eligibility, GPU work, ranking,
+Paper behavior, or a full-union panel.
+
 ### Source-Partitioned D1 Eligibility
 
 To recompute and reattest the current source-partitioned D1 eligibility receipt,

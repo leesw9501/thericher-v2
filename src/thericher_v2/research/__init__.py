@@ -323,6 +323,12 @@ from .kis_paper_baseline import (
     KisPaperBaselineInput,
     evaluate_kis_paper_baseline,
 )
+from .norgate_trial_daily_consumer_outline import (
+    NORGATE_TRIAL_DAILY_CONSUMER_OUTLINE_ID,
+    NorgateTrialDailyConsumerOutline,
+    build_norgate_trial_daily_consumer_outline,
+    require_attested_norgate_trial_daily_consumer_outline,
+)
 from .raw_pre_entry_outcome_attribution import (
     RawPreEntryOutcomeAttributionConfig,
     RawPreEntryOutcomeAttributionResult,
@@ -399,6 +405,7 @@ __all__ = [
     "KIS_INTRADAY_WINDOW_MATRIX_NULL_REPLICATES",
     "KIS_INTRADAY_WINDOW_MATRIX_OPTIMIZER_STEPS",
     "KIS_INTRADAY_WINDOW_MATRIX_WINDOWS",
+    "NORGATE_TRIAL_DAILY_CONSUMER_OUTLINE_ID",
     "KIS_INTRADAY_CONSENSUS_DECISION_OFFSET",
     "KIS_INTRADAY_CONSENSUS_HORIZON",
     "KIS_INTRADAY_CONSENSUS_REPLAY_ID",
@@ -424,6 +431,7 @@ __all__ = [
     "KisIntradaySequenceArchitectureSpec",
     "KisIntradayTrainedSequenceArchitecture",
     "KisIntradayWindowMatrixCellResult",
+    "NorgateTrialDailyConsumerOutline",
     "KisIntradayWindowMatrixPreflightRun",
     "ConsensusReplayStrategyTotals",
     "KisIntradayConsensusReplayRun",
@@ -553,6 +561,7 @@ __all__ = [
     "build_kis_intraday_feature_development_samples",
     "build_kis_intraday_feature_dataset",
     "build_kis_intraday_cuda_sequence_input",
+    "build_norgate_trial_daily_consumer_outline",
     "build_daily_training_batch",
     "build_candidate_training_dataset",
     "build_multi_slice_candidate_training_dataset",
@@ -627,6 +636,7 @@ __all__ = [
     "run_walk_forward_queue",
     "require_attested_unranked_opportunity_selection_input",
     "require_attested_d1_research_eligibility_input",
+    "require_attested_norgate_trial_daily_consumer_outline",
     "select_walk_forward_candidate",
     "write_experiment_metrics_artifact",
     "write_gpu_candidate_smoke_artifact",

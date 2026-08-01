@@ -1215,3 +1215,23 @@ recommended the already-authorized KIS Paper canary lifecycle instead. The
 next objective therefore reattests and observes the existing freshness-gated
 QQQ virtual-paper session through its first new lifecycle outcome. It adds no
 strategy, historical-data dependency, paper quota, or live route.
+
+## Norgate Date-Indexed Capability
+
+The bounded local Windows Norgate capability probe is complete at
+`D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=20260801T152000Z-norgate-trial-daily-capability-r1`.
+Its source-safe receipt is `sha256:8a6433a5...ae1d908d` and its local database
+metadata fingerprint is `sha256:bbaae9c0...f3c06f5`. The precommit fixed AAPL
+as a current-member case, PLTR as an in-horizon membership-change case, and AAL
+as the source-confirmed former-member case. Norgate package `1.0.77` returned
+the declared date-indexed membership/listing, unadjusted D1 OHLCV field, and
+capital-event-marker aggregates for all three. No raw Norgate row or price was
+put in Git, a model artifact, or the receipt.
+
+The result is `qualified_for_offline_research`, not PIT/model/GPU/ranking/PnL/
+Paper eligibility. Membership availability time, adjustment semantics, and
+capital-event completeness remain `unknown`; the runtime namespace remains
+`norgate_trial_daily_offline_research_only`. The pure Engine consumer outline
+is complete and carries only completed-bar, next-session, chronological-split,
+cost, naive-baseline, and availability-shift kill-test wording. The next ready
+Data package is a separate precommitted three-symbol date-indexed D1 pilot.

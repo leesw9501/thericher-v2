@@ -7868,3 +7868,32 @@ Reason: separating target selection from capacity sizing matches the product
 graph, makes later learned allocation testable against a deterministic baseline,
 and avoids letting a research-side convenience layer masquerade as execution
 authority.
+
+## 2026-08-01 - Qualify the local Norgate trial only for offline source research
+
+Decision: accept the host-only three-case Norgate daily capability receipt at
+`D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=20260801T152000Z-norgate-trial-daily-capability-r1`
+as `qualified_for_offline_research`. Its frozen current/member-change/former
+cases confirmed date-indexed membership, major-exchange-listing, unadjusted D1
+OHLCV field presence, and capital-event marker field availability through
+Norgate package `1.0.77`; the aggregate receipt is
+`sha256:8a6433a5aa410d3dc6c72077e05f346776348aed76e3b34a42fb55b7ae1d908d`.
+
+The receipt is deliberately narrower than a PIT or model qualification. Vendor
+membership availability time, price-adjustment semantics, and corporate-action
+marker completeness remain unknown. It retains no raw source row, price, model,
+GPU artifact, credential, KIS request, broker behavior, ranking, or Paper input.
+The source namespace is structurally `offline_research_only`; every model, GPU,
+ranking, PnL, Paper, and live eligibility flag remains false.
+
+Claude's falsification-first direction check was `supported-with-limits`: bind
+the local database build, recheck the frozen former-member case at runtime, and
+do not infer point-in-time availability from date-indexed field values. The
+implemented precommit/receipt and pure future-consumer outline adopt those
+limits. A later date-indexed D1 pilot must have its own frozen source scope and
+must not turn this capability receipt into a promotion shortcut.
+
+Reason: this establishes the smallest reproducible local source boundary needed
+to replace a static-survivorship assumption with an explicit date-indexed
+experiment, while keeping the active KIS Paper graph and all live authority
+unchanged.

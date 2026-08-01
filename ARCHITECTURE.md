@@ -552,6 +552,19 @@ It is reusable data plumbing only: its survivorship-selected static universe and
 unverified adjustment semantics do not become a model, ranking, PnL, GPU, or
 paper-trading input by passing through this loader.
 
+`data.norgate_trial_daily_capability_probe` is a separate Windows-host-only
+ingress boundary. It freezes a small precommit before local Norgate calls and
+writes only an external aggregate receipt under `D:\market_data`; raw source rows
+never enter Git or the receipt. `qualified_for_offline_research` means only that
+the declared date-indexed membership/listing, unadjusted-D1, and capital-event
+fields responded for the frozen sample. Vendor availability time, adjustment
+semantics, and event-marker completeness remain unknown, so the namespace stays
+`norgate_trial_daily_offline_research_only`. The pure
+`research.norgate_trial_daily_consumer_outline` accepts only that attested
+result and fixes a future completed-bar, next-session, chronological-split,
+cost, baseline, and leakage-kill-test outline. It has no source read, model,
+ranking, GPU, Paper, or broker route.
+
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.
 
