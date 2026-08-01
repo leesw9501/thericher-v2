@@ -7897,3 +7897,38 @@ Reason: this establishes the smallest reproducible local source boundary needed
 to replace a static-survivorship assumption with an explicit date-indexed
 experiment, while keeping the active KIS Paper graph and all live authority
 unchanged.
+
+## 2026-08-01 - Materialize only the three-case date-indexed Norgate D1 pilot
+
+Decision: accept the fresh precommitted pilot at
+`D:\market_data\us_equities\norgate_trial\daily_pilot\pilot=20260801T161934Z-norgate-trial-daily-pilot-r2`
+as `qualified_for_offline_research`, linked to capability receipt
+`sha256:8a6433a5aa410d3dc6c72077e05f346776348aed76e3b34a42fb55b7ae1d908d`.
+The pilot manifest is
+`sha256:7c81f09ad34151acb3896ef7f4cf22cadceedfb2992ac9241578a64db54fd264`.
+It retained separate external D1, membership, and listing files for AAPL (10
+aligned rows), PLTR (8 aligned rows and one membership transition), and AAL
+(10 aligned rows), all bound to Norgate package `1.0.77` and the same local
+database metadata fingerprint as the capability receipt.
+
+The pure loader exposes completed `Bar`s and state only at an exact declared
+source date. It rejects missing or cross-file date mismatch and does not accept
+a static-current membership/listing substitute. Raw rows stay solely under
+`D:\market_data`; Git and the manifest retain hashes, aggregate coverage, and
+limitations only. It has no KIS, credential, network-provider, Docker-provider,
+model, GPU, ranking, PnL, broker, or Paper behavior.
+
+Claude's `supported-with-limits` review is incorporated as a source limitation,
+not a new hold: this proves date-indexed field alignment in the current local
+database build, but not point-in-time availability. The simplified r2 contract
+keys rows only by provider ticker strings rather than overstating a current
+`assetid` roundtrip as historical identity. Adjustment and corporate-action
+semantics remain unknown. On any unqualified source-contract response its
+manifest now retains the failing case, aggregate counts, and first divergent
+date without retaining raw rows. The pilot is never a model or Paper promotion
+path; the next recovery fact is to freeze a separate campaign only after those
+assumptions are independently qualified.
+
+Reason: the bounded pilot replaces an implicit static-list assumption with a
+tested, source-date-aligned loader while preserving the distinction between
+useful data plumbing and causal research evidence.

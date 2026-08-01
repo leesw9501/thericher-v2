@@ -187,6 +187,18 @@ from .norgate_trial_daily_capability_probe import (
     require_attested_norgate_trial_daily_capability_probe,
     verify_norgate_trial_daily_capability_probe,
 )
+from .norgate_trial_daily_pilot import (
+    NorgateTrialDailyMembershipState,
+    NorgateTrialDailyPilotBars,
+    NorgateTrialDailyPilotError,
+    NorgateTrialDailyPilotResult,
+    build_norgate_trial_daily_pilot,
+    default_norgate_trial_daily_pilot_dir,
+    load_attested_norgate_trial_daily_pilot_bars,
+    require_attested_norgate_trial_daily_pilot,
+    require_attested_norgate_trial_daily_pilot_bars,
+    verify_norgate_trial_daily_pilot,
+)
 from .provider import BarQuery, MarketDataProvider
 from .quality import BarQualityReport, BarQualityWarning, assess_bar_quality
 from .resample import (
@@ -326,6 +338,10 @@ __all__ = [
     "NorgateTrialDailyCapabilityProbeError",
     "NorgateTrialDailyCapabilityProbeResult",
     "NorgateTrialDailyProbeCase",
+    "NorgateTrialDailyMembershipState",
+    "NorgateTrialDailyPilotBars",
+    "NorgateTrialDailyPilotError",
+    "NorgateTrialDailyPilotResult",
     "SUPPORTED_RESAMPLE_TIMEFRAMES",
     "SampleBarProvider",
     "SourceScopedLiquidUniverse",
@@ -342,9 +358,11 @@ __all__ = [
     "build_fixed_etf_daily_raw_subset",
     "build_fixed_etf_daily_subset",
     "build_norgate_trial_daily_capability_probe",
+    "build_norgate_trial_daily_pilot",
     "derive_catalog_id",
     "generate_trending_bars",
     "default_norgate_trial_daily_capability_probe_dir",
+    "default_norgate_trial_daily_pilot_dir",
     "fingerprint_norgate_us_database_build",
     "inspect_ohlcv_file",
     "load_broad_daily_development_universe",
@@ -357,6 +375,7 @@ __all__ = [
     "load_source_partitioned_d1_liquidity_eligibility",
     "load_source_scoped_liquid_universe_manifest",
     "load_kis_paper_daily_spy_input",
+    "load_attested_norgate_trial_daily_pilot_bars",
     "load_frozen_kis_paper_daily_universe_panel",
     "load_verified_kis_paper_private_intraday_catalog",
     "prepare_kis_paper_intraday_feature_input",
@@ -390,9 +409,12 @@ __all__ = [
     "require_attested_source_partitioned_d1_liquidity_eligibility",
     "require_attested_source_scoped_liquid_universe",
     "require_attested_norgate_trial_daily_capability_probe",
+    "require_attested_norgate_trial_daily_pilot",
+    "require_attested_norgate_trial_daily_pilot_bars",
     "sha256_kis_paper_private_intraday_v1_index_bytes",
     "select_catalog_dataset",
     "write_training_readiness_catalog",
     "us_equity_2026_session",
     "verify_norgate_trial_daily_capability_probe",
+    "verify_norgate_trial_daily_pilot",
 ]

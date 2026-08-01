@@ -358,6 +358,16 @@ the offline observer only after a current or complete cache result. A
   `offline_research_only`: availability time, adjustment semantics, and marker
   completeness are `unknown`; it is not PIT, ranking, model, GPU, Paper, PnL,
   or live evidence.
+- Its separate three-case D1 pilot is now `qualified_for_offline_research` at
+  `D:\market_data\us_equities\norgate_trial\daily_pilot\pilot=20260801T161934Z-norgate-trial-daily-pilot-r2`
+  with manifest `sha256:7c81f09ad34151acb3896ef7f4cf22cadceedfb2992ac9241578a64db54fd264`.
+  It retained raw D1, per-date membership, and per-date listing rows separately
+  under `D:` only: AAPL 10 aligned rows, PLTR 8 aligned rows with one membership
+  transition, and AAL 10 aligned rows. The loader verifies hashes and exact
+  cross-file dates before exposing completed D1 `Bar`s plus exact-date state. It
+  remains local/offline-only; current-build restatement risk, provider-ticker
+  identity, adjustment semantics, and corporate-action completeness
+  remain source limitations, not a retry, cache, or promotion condition.
 - The completed offline opportunity-development consumer reattached that frozen
   source and its existing derived feature artifact before freezing a new
   source-safe campaign contract. Its 22-date purge leaves development labels
@@ -755,12 +765,11 @@ session-finality-unattested, and per-target chronology rather than a
 common-history threshold. It is not Research eligibility, a model input,
 ranking, Paper action, or promotion evidence.
 
-The qualified Norgate capability receipt may now support one fresh,
-precommitted three-symbol date-indexed D1 pilot under `D:`. That pilot must keep
-per-date membership separate from OHLCV, retain the source namespace, and
-remain offline-only until a later campaign independently binds availability and
-adjustment assumptions. It does not authorize a full-union extraction, source
-blend, ranking, model result, GPU appointment, or Paper input.
+The qualified Norgate date-indexed D1 pilot is complete. Preserve its immutable
+external hash lineage and limits; do not rerun, expand to a union, blend it with
+another source, rank, score, train, allocate GPU, or form a Paper input from it.
+Its one next recovery fact is a separate campaign only after availability and
+adjustment assumptions are independently qualified.
 
 The installed QQQ intraday-head scheduler owns its next due at 2026-08-04
 00:31 KST; do not manually trigger or modify it. The separate QQQ/NAS plus

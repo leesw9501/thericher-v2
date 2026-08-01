@@ -648,6 +648,13 @@ completed D1 bars, a next-regular-session candidate decision boundary,
 chronological split with campaign-local purge, later Execution-attested costs,
 an always-flat baseline, and an availability-time shift kill test. It still
 cannot score, fit, tune, rank, ensemble, allocate GPU, claim PnL, or form a
-Paper input. A fresh date-indexed pilot may test the source loader; a labelled
-campaign requires its own frozen source, target, split, costs, baseline, and
-falsifier rather than reinterpreting a static panel as point-in-time evidence.
+Paper input. The fresh date-indexed pilot is complete at
+`D:\market_data\us_equities\norgate_trial\daily_pilot\pilot=20260801T161934Z-norgate-trial-daily-pilot-r2`.
+Its pure loader now provides 28 completed D1 `Bar`s with an exact source-date
+state lookup and rejects static substitution or date misalignment. It is useful
+only as offline loader plumbing: the dynamic values may be restated, provider
+ticker identity is not historical security identity, and source availability,
+adjustment, and corporate-action semantics remain unknown. A labelled campaign
+still needs its own frozen source, target, split, costs, baseline, and falsifier;
+this pilot cannot score, fit, tune, rank, ensemble, allocate GPU, claim PnL, or
+form a Paper input.

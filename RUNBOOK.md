@@ -1941,6 +1941,28 @@ three-case field response. It does not establish vendor availability time,
 adjustment or corporate-action semantics, model eligibility, GPU work, ranking,
 Paper behavior, or a full-union panel.
 
+### Norgate Date-Indexed D1 Pilot
+
+After reattesting a qualified capability receipt, materialize the three frozen
+cases with the same isolated Windows host runtime:
+
+```powershell
+D:\thericher-v2\host-runtimes\norgate-python\Scripts\python.exe `
+  scripts\run_norgate_trial_daily_pilot.py `
+  --run-label <unique-label> `
+  --capability-receipt D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=20260801T152000Z-norgate-trial-daily-capability-r1
+```
+
+The runner fingerprints the local Norgate database build, requires it to match
+the receipt, writes a new precommit before source reads, and stores raw D1,
+membership, and listing CSVs only under
+`D:\market_data\us_equities\norgate_trial\daily_pilot`. Its JSON output is
+source-safe: status, hashes, package, limitations, and scope only. Reattach the
+result using `load_attested_norgate_trial_daily_pilot_bars` for completed D1
+`Bar`s and exact source-date state lookup. Do not treat that lookup as PIT
+availability, a static-universe replacement, model/ranking/GPU/PnL evidence, or
+a Paper/KIS route.
+
 ### Source-Partitioned D1 Eligibility
 
 To recompute and reattest the current source-partitioned D1 eligibility receipt,

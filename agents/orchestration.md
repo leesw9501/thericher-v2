@@ -30,11 +30,11 @@ second goal. Git and external artifacts retain historical evidence.
   complete. The diagnostic reproduced the baseline digest but classified the
   two entry sessions `selection_unqualified`; this family cannot produce a
   model claim. The pure target-exposure allocator is now complete. The bounded
-  Norgate trial daily capability probe is `qualified_for_offline_research`; its
-  pure future-consumer outline is complete, while its availability, adjustment,
-  and corporate-action limits keep all model/GPU/Paper eligibility false. The
-  next independent package is a three-symbol date-indexed D1 pilot; historical
-  KIS D1 remains quarantined.
+  Norgate trial daily capability probe and its separate three-symbol D1 pilot
+  are `qualified_for_offline_research`; their pure loader has 28 aligned
+  completed D1 bars and exact source-date state, while availability, historical
+  identity, adjustment, and corporate-action limits keep all model/GPU/Paper
+  eligibility false. Historical KIS D1 remains quarantined.
 - **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
   durable owner. No frozen labelled campaign or sealed-evaluation allocation is
   currently eligible; this is a scoped resource fact, not a hold on Data or
@@ -57,8 +57,9 @@ second goal. Git and external artifacts retain historical evidence.
   Engine Research has completed the separate pure target-position policy
   foundation, baseline-input adapter, completed consensus replay, and closed
   equal-count subset diagnostic, and pure target-exposure allocator. The
-  Norgate daily consumer contract is now prepared from the qualified capability
-  receipt; only its separate Data-owned date-indexed pilot is ready next.
+  Norgate daily consumer contract and the separate Data-owned date-indexed
+  pilot are complete; their next recovery is campaign-local qualification, not
+  another source read.
   The latest 06:20 KST task closed `recovery/collection_exit_nonzero`; its paired QQQ
   session was explicitly `paper_only` `no_intent/runtime_window_stale`, and the
   matching offline validator reattested its stale session/window lineage with
@@ -109,8 +110,9 @@ consensus replay, or its equal-count subset null. The null exactly reproduced
 the baseline but classified the two-entry result `selection_unqualified`, so it
 cannot support a selection or profitability claim. The current reversible
 improvement was the bounded Norgate daily-source contract, now completed as a
-qualified offline-only capability receipt. Its next date-indexed pilot remains
-offline and cannot alter the QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
+qualified offline-only capability receipt and a three-case aligned D1 pilot.
+Its remaining PIT/availability limitations are source-local and cannot alter the
+QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
 `recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached

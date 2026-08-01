@@ -1233,5 +1233,16 @@ Paper eligibility. Membership availability time, adjustment semantics, and
 capital-event completeness remain `unknown`; the runtime namespace remains
 `norgate_trial_daily_offline_research_only`. The pure Engine consumer outline
 is complete and carries only completed-bar, next-session, chronological-split,
-cost, naive-baseline, and availability-shift kill-test wording. The next ready
-Data package is a separate precommitted three-symbol date-indexed D1 pilot.
+cost, naive-baseline, and availability-shift kill-test wording.
+
+That separate pilot is now complete at
+`D:\market_data\us_equities\norgate_trial\daily_pilot\pilot=20260801T161934Z-norgate-trial-daily-pilot-r2`.
+Its manifest `sha256:7c81f09ad34151acb3896ef7f4cf22cadceedfb2992ac9241578a64db54fd264`
+links the qualified capability receipt, package `1.0.77`, and unchanged database
+metadata fingerprint. It retains raw D1, membership, and listing rows only on
+`D:`: AAPL has 10 aligned source dates, PLTR has 8 and one membership transition,
+and AAL has 10. The loader creates completed D1 `Bar`s plus a required exact-date
+state lookup and rejects static substitution or source-date mismatch. This is
+field-alignment plumbing only. The availability/PIT, provider-ticker identity,
+adjustment, and corporate-action limits remain explicit; no model, GPU, ranking,
+PnL, KIS, broker, or Paper path follows from it.

@@ -565,6 +565,19 @@ result and fixes a future completed-bar, next-session, chronological-split,
 cost, baseline, and leakage-kill-test outline. It has no source read, model,
 ranking, GPU, Paper, or broker route.
 
+`data.norgate_trial_daily_pilot` is the separate, date-indexed materialization
+boundary for that receipt. It writes the three frozen cases' raw D1, membership,
+and listing rows as separate hash-attested external files, keys them by the
+provider ticker string, and exposes only completed D1 `Bar`s plus an exact
+source-date membership/listing lookup. The loader rejects missing or misaligned
+dates and has no Norgate import, write, model, KIS, broker, or Paper path. This
+confirms field alignment for the current local database build, not knowledge
+available on each historical date: membership can be restated, ticker-to-entity
+identity is not established, and adjustment and corporate-action semantics
+remain unknown. Its scope therefore remains
+`norgate_trial_daily_offline_research_only` with all PIT/model/GPU/ranking/PnL/
+Paper eligibility false.
+
 Warn before projected free space falls below 20 percent. Do not begin large
 acquisition or training work that would cross the 15 percent floor.
 
