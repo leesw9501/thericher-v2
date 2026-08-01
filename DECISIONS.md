@@ -7812,3 +7812,27 @@ replication is still required before any comparative or Paper-input claim.
 Reason: the replay successfully proves the causal product path and local-paper
 replay invariants, but a two-trade selected subset versus an all-session total
 cannot distinguish skill from a small sample of favorable sessions.
+
+## 2026-08-01 - Close the QQQ consensus selection family without promotion
+
+Decision: accept the immutable external
+`kis-intraday-consensus-selection-null-v1/qqq-20260623-20260721-null-r1`
+diagnostic as the completion of the first QQQ consensus interpretation family.
+It reattached the exact baseline summary and precommit, reproduced its complete
+in-memory local-paper replay digest, and enumerated all `190` equal-count
+two-session subsets. The observed one-sided subset-null value was about
+`0.1684`; the fixed policy generated only two round trips against the
+predeclared minimum of `30` for any follow-up. Its categorical result is
+`selection_unqualified`.
+
+The diagnostic retained no raw prices, fill events, decision mask, or
+per-session PnL. It read no credential, called no KIS/network/broker path,
+used no GPU, altered no scheduler, and creates no winner, tuning pass,
+ensemble, sealed evaluation, profitability claim, or Paper input. The baseline
+and null artifacts are immutable; later or disjoint sessions require a fresh
+candidate/replication contract rather than reusing this family.
+
+Reason: equal-count comparison distinguishes the selected two-session subset
+from its all-session total, but the observed sample is too small to support a
+model claim. Closing the interpretation avoids false optimism while allowing
+the independent target-exposure sizing foundation to proceed.

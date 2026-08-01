@@ -80,6 +80,15 @@ authorized private KIS Paper work.
   followed by later/disjoint replication rather than parameter tuning.
   The requested Claude invocation exceeded its time limit, so it is recorded
   as `review_unavailable`; no Claude verdict is relied upon.
+- The separately frozen equal-count selection-null diagnostic completed at
+  `D:\\thericher-v2\\model-artifacts\\research\\kis-intraday-consensus-selection-null-v1\\qqq-20260623-20260721-null-r1\\summary.json`.
+  It reproduced the baseline replay digest exactly, enumerated all `190`
+  equal-count two-session subsets, and observed a one-sided subset-null value
+  of about `0.1684`. With only two round trips against the predeclared minimum
+  of `30`, it is `selection_unqualified`. This confirms the initial positive
+  aggregate is not a model or profitability result; it creates no GPU,
+  ensemble, KIS, Paper, or tuning follow-up. Future comparative evidence needs
+  later/disjoint sessions under an unchanged candidate contract.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and

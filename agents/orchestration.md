@@ -26,10 +26,11 @@ second goal. Git and external artifacts retain historical evidence.
   aggregate spread stayed below the session-block null P95. It selected no
   window and has no CUDA follow-up. The pure target-position policy foundation,
   completed-bar multi-timeframe momentum adapter, and the first fixed
-  local-paper consensus replay are complete. The replay's two entry sessions
-  are descriptive only because its all-session always-long comparator is not
-  an equal-count selection null. The next independent CPU package is a frozen
-  equal-count subset diagnostic; historical D1 remains quarantined.
+  local-paper consensus replay and its equal-count subset diagnostic are
+  complete. The diagnostic reproduced the baseline digest but classified the
+  two entry sessions `selection_unqualified`; this family cannot produce a
+  model claim. The next independent package is the pure target-exposure
+  allocator foundation; historical D1 remains quarantined.
 - **Research Steward:** cross-track GPU and sealed-evaluation custody now has a
   durable owner. No frozen labelled campaign or sealed-evaluation allocation is
   currently eligible; this is a scoped resource fact, not a hold on Data or
@@ -50,8 +51,9 @@ second goal. Git and external artifacts retain historical evidence.
   canary through its first new lifecycle outcome. The completed non-promoting
   QQQ 1m window-sensitivity preflight is immutable `no_structure` evidence;
   Engine Research has completed the separate pure target-position policy
-  foundation, baseline-input adapter, and completed consensus replay. It now
-  owns one frozen equal-count subset diagnostic package.
+  foundation, baseline-input adapter, completed consensus replay, and closed
+  equal-count subset diagnostic. It now owns one pure target-exposure allocator
+  package.
   The latest 06:20 KST task closed `recovery/collection_exit_nonzero`; its paired QQQ
   session was explicitly `paper_only` `no_intent/runtime_window_stale`, and the
   matching offline validator reattested its stale session/window lineage with
@@ -97,11 +99,12 @@ second goal. Git and external artifacts retain historical evidence.
 
 The QQQ execution leg is in a scheduler-owned external wait, not an operator
 decision. It did not defer the independent CPU-first window-sensitivity
-preflight, target-position policy, momentum adapter, or fixed-cost local-paper
-consensus replay. The latter used only two entry sessions, so its all-session
-always-long comparator cannot support a selection or profitability claim. The
-current reversible improvement is a separately frozen equal-count subset null
-diagnostic, which remains offline and cannot alter the QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
+preflight, target-position policy, momentum adapter, fixed-cost local-paper
+consensus replay, or its equal-count subset null. The null exactly reproduced
+the baseline but classified the two-entry result `selection_unqualified`, so it
+cannot support a selection or profitability claim. The current reversible
+improvement is a pure target-exposure allocator foundation, which remains
+offline and cannot alter the QQQ scheduler. The latest 06:20 KST QQQ cycle produced a source-safe terminal
 `recovery/collection_exit_nonzero`; its explicitly
 `paper_only` session reached `no_intent/runtime_window_stale` before a canary,
 durable intent, or local-paper replay. The independent validator reattached

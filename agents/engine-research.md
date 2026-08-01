@@ -578,7 +578,11 @@ limits remain explicit.
     timing, sizing, or horizon; do not promote it, allocate CUDA, create an
     ensemble, or change KIS Paper behavior. The next bounded package freezes
     an equal-count session-subset null diagnostic and then requires later or
-    disjoint replication for any candidate claim.
+    disjoint replication for any candidate claim. The new diagnostic completed
+    with exact replay-digest parity, `190` two-session subsets, and a one-sided
+    null value near `0.1684`; it is `selection_unqualified` because the fixed
+    rule entered only two sessions, below the minimum `30`. Close this family:
+    it cannot be retuned, promoted, ensembled, routed, or used for GPU work.
 
 ## Durable Constraints
 
@@ -621,8 +625,8 @@ select, tune, ensemble, promote, rank, or create a KIS Paper action until that
 named out-of-time input has the declared depth. The fresh prospective baseline
 remains Execution evidence only.
 
-The completed QQQ consensus replay is a separate local-cache product-path
-baseline. It selected two entry sessions under its frozen contract, which is
-too little and not comparator-matched evidence for a return claim. Freeze the
-next diagnostic before recalculating any session subset statistic; it may
-explain this result but cannot select, tune, promote, ensemble, or route it.
+The completed QQQ consensus replay and its equal-count null are a closed
+local-cache product-path family. They prove causal adapter/receipt/local-paper
+plumbing but not selection skill. Later/disjoint data may support a fresh
+replication family; meanwhile, a separate pure target-exposure allocator can
+advance the engine's sizing stage without consuming this evidence.

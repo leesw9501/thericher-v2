@@ -100,6 +100,16 @@ class KisIntradayConsensusReplayRun:
 
 
 @dataclass(frozen=True)
+class KisIntradayConsensusSessionReplay:
+    """One in-memory session outcome; no prices, fills, or features are exposed."""
+
+    session_date: date
+    proposal_action: str
+    consensus: _TradeReplay
+    always_long: _TradeReplay
+
+
+@dataclass(frozen=True)
 class _SessionDecision:
     session_date: date
     as_of: datetime
@@ -219,12 +229,9 @@ def run_kis_intraday_consensus_replay(
         _precommit_payload(plan=plan, run_label=run_label, artifact_root=root),
     )
 
-    session_results = tuple(
-        _run_session(plan=plan, index=index) for index in range(len(plan.session_dates))
-    )
-    consensus_runs = tuple(item[1] for item in session_results)
-    always_long_runs = tuple(item[2] for item in session_results)
-    decisions = tuple(item[0] for item in session_results)
+    session_outcomes = _replay_plan_sessions(plan)
+    consensus_runs = tuple(item.consensus for item in session_outcomes)
+    always_long_runs = tuple(item.always_long for item in session_outcomes)
     consensus = _strategy_totals(consensus_runs)
     always_long = _strategy_totals(always_long_runs)
     all_fills_local_paper = all(
@@ -233,8 +240,8 @@ def run_kis_intraday_consensus_replay(
     all_terminal_flat = all(item.terminal_flat for item in (*consensus_runs, *always_long_runs))
     if not all_fills_local_paper or not all_terminal_flat:
         raise RuntimeError("consensus replay must preserve local-paper-only replayable flat fills")
-    decision_action_counts = _action_counts(decisions)
-    replay_digest = _replay_digest(consensus_runs, always_long_runs)
+    decision_action_counts = _action_counts(session_outcomes)
+    replay_digest = consensus_session_replay_digest(session_outcomes)
     summary_path = output_dir / "summary.json"
     _write_json(
         summary_path,
@@ -245,7 +252,7 @@ def run_kis_intraday_consensus_replay(
             consensus=consensus,
             always_long=always_long,
             abstention_count=sum(
-                1 for decision in decisions if decision.proposal_action == "abstain"
+                1 for outcome in session_outcomes if outcome.proposal_action == "abstain"
             ),
             decision_action_counts=decision_action_counts,
             all_fills_local_paper=all_fills_local_paper,
@@ -261,12 +268,71 @@ def run_kis_intraday_consensus_replay(
         session_count=len(plan.session_dates),
         consensus=consensus,
         always_long=always_long,
-        abstention_count=sum(1 for decision in decisions if decision.proposal_action == "abstain"),
+        abstention_count=sum(
+            1 for outcome in session_outcomes if outcome.proposal_action == "abstain"
+        ),
         decision_action_counts=decision_action_counts,
         all_fills_local_paper=all_fills_local_paper,
         all_terminal_flat=all_terminal_flat,
         replay_digest=replay_digest,
     )
+
+
+def replay_frozen_consensus_sessions(
+    catalog: CatalogedBars,
+    *,
+    session_dates: Sequence[date],
+) -> tuple[KisIntradayConsensusSessionReplay, ...]:
+    """Reproduce frozen in-memory session outcomes without writing an artifact."""
+
+    plan = build_kis_intraday_cpu_campaign_plan(
+        catalog,
+        session_dates=tuple(session_dates),
+        campaign_id=KIS_INTRADAY_CONSENSUS_REPLAY_ID,
+    )
+    if len(plan.session_dates) != KIS_INTRADAY_SESSION_COUNT:
+        raise RuntimeError("consensus replay must retain exactly twenty sessions")
+    return replay_frozen_consensus_plan(plan)
+
+
+def replay_frozen_consensus_plan(
+    plan: KisIntradayCpuCampaignPlan,
+) -> tuple[KisIntradayConsensusSessionReplay, ...]:
+    """Reproduce one already-selected plan without changing its source identity."""
+
+    if not isinstance(plan, KisIntradayCpuCampaignPlan):
+        raise TypeError("consensus replay requires a frozen KIS intraday plan")
+    if len(plan.session_dates) != KIS_INTRADAY_SESSION_COUNT:
+        raise ValueError("consensus replay requires exactly twenty selected sessions")
+    return _replay_plan_sessions(plan)
+
+
+def consensus_session_replay_digest(
+    outcomes: Sequence[KisIntradayConsensusSessionReplay],
+) -> str:
+    """Return the safe full replay identity used by an immutable baseline summary."""
+
+    return _replay_digest(
+        tuple(outcome.consensus for outcome in outcomes),
+        tuple(outcome.always_long for outcome in outcomes),
+    )
+
+
+def _replay_plan_sessions(
+    plan: KisIntradayCpuCampaignPlan,
+) -> tuple[KisIntradayConsensusSessionReplay, ...]:
+    outcomes: list[KisIntradayConsensusSessionReplay] = []
+    for index in range(len(plan.session_dates)):
+        decision, consensus, always_long = _run_session(plan=plan, index=index)
+        outcomes.append(
+            KisIntradayConsensusSessionReplay(
+                session_date=decision.session_date,
+                proposal_action=decision.proposal_action,
+                consensus=consensus,
+                always_long=always_long,
+            )
+        )
+    return tuple(outcomes)
 
 
 def _run_session(
@@ -510,10 +576,12 @@ def _strategy_totals(runs: Sequence[_TradeReplay]) -> ConsensusReplayStrategyTot
     )
 
 
-def _action_counts(decisions: Sequence[_SessionDecision]) -> tuple[tuple[str, int], ...]:
+def _action_counts(
+    outcomes: Sequence[KisIntradayConsensusSessionReplay],
+) -> tuple[tuple[str, int], ...]:
     counts: dict[str, int] = {}
-    for decision in decisions:
-        counts[decision.proposal_action] = counts.get(decision.proposal_action, 0) + 1
+    for outcome in outcomes:
+        counts[outcome.proposal_action] = counts.get(outcome.proposal_action, 0) + 1
     return tuple(sorted(counts.items()))
 
 

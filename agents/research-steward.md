@@ -22,6 +22,9 @@ weights, modify execution risk, or call a broker.
   CPU-only descriptive validation. Neither consumes a GPU appointment or
   sealed-evaluation allocation; later/disjoint replication must first meet the
   normal frozen-campaign eligibility contract.
+- The equal-count diagnostic is now complete: it reproduced the frozen replay
+  digest, classified the two-entry result `selection_unqualified`, and left the
+  GPU free. It is closed evidence, not an allocation request.
 - Sealed evaluation: no newly allocated family. Earlier target-free and sealed
   receipts remain historical evidence; they cannot be reused as a new campaign
   or selection pass.
