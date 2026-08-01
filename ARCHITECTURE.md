@@ -133,6 +133,16 @@ the error came from symbol selection, timing, sizing, exit handling, or fills.
 The initial production-shaped scope is long-only. Shorting, leverage, and any
 learned direct-order policy require their own later authority and validation.
 
+The first allocation foundation is a pure caller-owned scale-then-cap stage:
+it multiplies an already-proposed long-only entry target by declared confidence
+and risk multipliers before applying current portfolio capacity and per-symbol
+concentration caps. It cannot select a symbol, infer an alpha value, reserve
+portfolio capacity, or create an order. A caller serializes multiple same-cycle
+allocations and refreshes its exposure snapshot; Execution independently
+rechecks feasible targets and order quantization. A fresh upstream reduction or
+exit bypasses unavailable allocation capacity so this research layer cannot
+suppress a risk reduction.
+
 ### Ownership Boundary
 
 - **Data** owns the point-in-time eligibility facts, calendars, completed-bar

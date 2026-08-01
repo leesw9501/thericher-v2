@@ -7836,3 +7836,35 @@ Reason: equal-count comparison distinguishes the selected two-session subset
 from its all-session total, but the observed sample is too small to support a
 model claim. Closing the interpretation avoids false optimism while allowing
 the independent target-exposure sizing foundation to proceed.
+
+## 2026-08-01 - Separate pure allocation from model selection and execution
+
+Decision: add `target-exposure-allocation-v1` as the small model-side stage
+after an existing `TargetExposureProposal`. It is long-only and receives only
+caller-owned current symbol/portfolio exposure, available capacity, portfolio
+and per-symbol caps, bounded confidence/risk multipliers, input status, and an
+injected decision timestamp. It first applies the two multipliers to the
+already-proposed entry target, then caps only the resulting increase by the
+declared headroom. It has no default target, data read, network, credential,
+KIS, broker, order, artifact, or GPU behavior.
+
+Unqualified, stale, future, or internally inconsistent allocation facts yield
+an abstaining no-increase proposal. Exhausted capacity or a scaled target below
+the current symbol exposure yields a hold, never an accidental reduction. A
+fresh upstream `reduce` or `exit` passes through allocation-capacity faults;
+an expired source proposal still abstains. The allocator is a snapshot
+calculation rather than a portfolio reservation: a caller serializes multiple
+allocations and refreshes exposure, while Execution independently checks its
+own capacity, risk, and order quantization.
+
+Claude's falsification-first review was `supported-with-limits`. The implemented
+contract adopts its injected-clock, fixed scale-then-cap, long-only,
+exit-preservation, and caller-serialization caveats. The new direct local-paper
+composition test also revealed and corrected an eager `research`/`execution`
+import cycle by deferring KIS-only research decision imports until their KIS
+preparation function is called. No broker semantics changed.
+
+Reason: separating target selection from capacity sizing matches the product
+graph, makes later learned allocation testable against a deterministic baseline,
+and avoids letting a research-side convenience layer masquerade as execution
+authority.

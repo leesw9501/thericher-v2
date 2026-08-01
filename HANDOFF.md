@@ -89,6 +89,18 @@ authorized private KIS Paper work.
   aggregate is not a model or profitability result; it creates no GPU,
   ensemble, KIS, Paper, or tuning follow-up. Future comparative evidence needs
   later/disjoint sessions under an unchanged candidate contract.
+- The pure `target-exposure-allocation-v1` foundation is complete. It takes an
+  existing long-only target proposal plus caller-owned exposure/capacity facts,
+  applies confidence and risk multipliers before capacity/concentration caps,
+  and returns only a deterministic target state. A stale, unqualified, or
+  inconsistent entry allocation abstains; exhausted capacity holds current
+  exposure; a fresh upstream reduce/exit is preserved. It has no data, KIS,
+  credential, network, broker, artifact, or GPU path. Multi-symbol atomicity
+  remains a caller-serialization and Execution revalidation responsibility.
+- The local `paper_decision_bridge` can now be imported independently of the
+  broad research re-export surface. Its KIS-only decision classes load only at
+  KIS preparation time; this fixes a direct-import cycle without changing a
+  route, order, credential, or broker behavior.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and

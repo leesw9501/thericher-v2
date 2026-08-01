@@ -583,6 +583,15 @@ limits remain explicit.
     null value near `0.1684`; it is `selection_unqualified` because the fixed
     rule entered only two sessions, below the minimum `30`. Close this family:
     it cannot be retuned, promoted, ensembled, routed, or used for GPU work.
+16. The pure `target-exposure-allocation-v1` model-side foundation is complete.
+    It takes an already-issued long-only target and caller-owned exposure,
+    capacity, confidence, and risk facts; it applies multipliers before caps,
+    emits only a target-state proposal, and has no source/model/IO/GPU/broker
+    authority. Stale, unqualified, or inconsistent entry capacity abstains;
+    exhaustion holds; a fresh reduction or exit remains pass-through. It is not
+    an allocation model, portfolio reservation, execution approval, or paper
+    input. A later learned allocator needs a new frozen campaign with aligned
+    out-of-fold upstream predictions and a deterministic baseline comparison.
 
 ## Durable Constraints
 
@@ -630,3 +639,10 @@ local-cache product-path family. They prove causal adapter/receipt/local-paper
 plumbing but not selection skill. Later/disjoint data may support a fresh
 replication family; meanwhile, a separate pure target-exposure allocator can
 advance the engine's sizing stage without consuming this evidence.
+
+The next meaningful Engine Research input is not another variant on the spent
+QQQ sessions. Data may turn the existing local Norgate trial into a bounded
+date-indexed daily source contract. Research may freeze only its KIS-shaped
+OHLCV/availability mapping and a later campaign outline until the Data-owned
+contract explicitly classifies the source scope; it may not reinterpret a
+static panel as point-in-time or Paper-ready evidence.

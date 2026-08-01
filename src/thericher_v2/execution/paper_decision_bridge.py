@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from datetime import datetime
 from decimal import Decimal
-from typing import Final, Literal
+from typing import TYPE_CHECKING, Final, Literal
 
 from thericher_v2.contracts import (
     SCHEMA_VERSION,
@@ -16,14 +16,12 @@ from thericher_v2.contracts import (
     positive,
     require_utc,
 )
-from thericher_v2.research.decision_receipt import ResearchDecisionReceipt
-from thericher_v2.research.kis_paper_canary_intent import (
-    KisPaperCanaryBuyDecision,
-    KisPaperCanaryOrderDecision,
-    KisPaperCanarySellDecision,
-)
 
 from .target_position import target_proposal_to_order_intent
+
+if TYPE_CHECKING:
+    from thericher_v2.research.decision_receipt import ResearchDecisionReceipt
+    from thericher_v2.research.kis_paper_canary_intent import KisPaperCanaryOrderDecision
 
 _OPAQUE_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}")
 _SHA256_REFERENCE: Final = re.compile(r"sha256:[0-9a-f]{64}")
@@ -253,6 +251,11 @@ def prepare_kis_paper_decision(
     as_of: datetime,
 ) -> PaperDecisionBridgeResult:
     """Prepare an existing virtual-paper entry or exit decision without submitting it."""
+
+    from thericher_v2.research.kis_paper_canary_intent import (
+        KisPaperCanaryBuyDecision,
+        KisPaperCanarySellDecision,
+    )
 
     if not isinstance(binding, PaperDecisionExecutionBinding):
         raise TypeError("KIS paper requires a paper execution binding")

@@ -25,6 +25,9 @@ weights, modify execution risk, or call a broker.
 - The equal-count diagnostic is now complete: it reproduced the frozen replay
   digest, classified the two-entry result `selection_unqualified`, and left the
   GPU free. It is closed evidence, not an allocation request.
+- The pure target-exposure allocation foundation is complete and CPU-only. It
+  produces no model artifact or GPU eligibility; a later learned allocation
+  candidate still needs a distinct frozen contract and deterministic baseline.
 - Sealed evaluation: no newly allocated family. Earlier target-free and sealed
   receipts remain historical evidence; they cannot be reused as a new campaign
   or selection pass.
