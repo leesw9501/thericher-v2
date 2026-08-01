@@ -62,6 +62,14 @@ historical claim, artifact, provider, execution, or Paper authority. Proposal
 identity uses only source/contract identities, structural/timestamp facts, and
 the derived categorical action, never OHLCV values.
 
+The completed dedicated `prospective-spy-observation-receipt-v1` evaluates this
+already-frozen baseline once per immutable session record and binds the result
+to a SHA-256 commitment over the selected causal input bars. The receipt keeps
+only source/record hashes, structural timestamps, baseline/feature identities,
+and `enter` or `abstain` category/reason; it carries no raw values, PnL,
+training result, selection, or Paper claim. A future fresh receipt preserves
+this rule unchanged and is not a GPU or model-campaign input by itself.
+
 The `3h=2` correction is a pre-outcome contract fix: at the 15:30 decision
 boundary two completed three-hour bars exist, so the frozen unanimous trailing
 return predicate remains evaluable without a hidden reinterpretation. KIS route
@@ -723,8 +731,9 @@ preflight is `collection_required`; its guarded first invocation deferred while
 broad data collection was running, so the pair has no future common session
 yet. Research may prepare no more than its consumer contract and cannot score,
 select, tune, ensemble, promote, rank, or create a KIS Paper action until that
-named out-of-time input has the declared depth. The fresh prospective baseline
-remains Execution evidence only.
+named out-of-time input has the declared depth. The completed prospective
+receipt/replay is engineering evidence only; a future fresh captured receipt
+remains neither a training result nor a candidate, PnL, or Paper claim.
 
 The completed QQQ consensus replay and its equal-count null are a closed
 local-cache product-path family. They prove causal adapter/receipt/local-paper

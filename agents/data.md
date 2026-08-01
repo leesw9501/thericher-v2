@@ -782,18 +782,25 @@ limitation.
 
 ## Next Handoff
 
-The pure provider-free prospective SPY intraday session-record contract is
-ready for an Execution-owned prospective canary consumer. It accepts only one
-weekday regular 09:30-16:00 America/New_York session with a fixed 15:30 ET
-cutoff, completed contiguous SPY 1m input, and derives the causal
-1m/5m/10m/1h/3h views with fixed 30/6/3/2/2 lookbacks from the bars' own
-market identity. It reads no cache,
-provider, credentials, network, or artifact path; missing/incomplete input is
-only an input-local no-record fact. It does not attest a provider's bar-finality
-or create a Paper order, schedule, collector, historical dataset, or promotion.
+The pure provider-free prospective SPY intraday session-record contract now
+feeds the dedicated `prospective-spy-observation-receipt-v1`. It accepts one
+weekday 09:30-16:00 America/New_York session with a 15:30 ET cutoff and derives
+the causal 1m/5m/10m/1h/3h views with fixed 30/6/3/2/2 lookbacks. The receipt
+binds the selected completed bars with a SHA-256 content commitment while
+retaining only structural/session timestamps, source and record hashes,
+baseline/feature identities, and categorical `ready` plus `enter` or `abstain`
+facts. It never serializes OHLCV, provider credentials, paths, account or order
+data, or mutable duplicate identifiers.
 
-The next Data-owned research input package is a bounded MIM-30 SPY 1m
-capability qualification. Read-only inventory found 21 complete 390-minute
+Next Data work is a KIS Paper SPY fresh-session capture/receipt runner for a
+newly complete 15:30 ET decision window. It may use the standing market-data
+read authority, retains raw bars only on `D:`, and emits only source-safe
+receipt evidence. It has no account, order, live, or foreground-wait behavior:
+an unavailable fresh session is local to that invocation and does not defer
+another ready lane.
+
+The prior Data-owned MIM-30 SPY 1m capability qualification is closed as
+`input_unavailable`. Read-only inventory found 21 complete 390-minute
 SPY/AMS sessions under `intraday\v1`, of which 20 have the preceding regular
 close plus 10:00 ET and 15:30-16:00 ET structure; this is 232 below the frozen
 252-session threshold. The fresh exact `SPY/AMS/1m` route recheck is complete:

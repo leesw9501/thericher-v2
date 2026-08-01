@@ -8149,3 +8149,29 @@ Reason: preserve causal input and import isolation so the next source-safe
 prospective observation receipt can become usable research evidence without
 turning market-session timing into an orchestrator wait or widening execution
 authority.
+
+## 2026-08-02 - Use a dedicated content-bound prospective observation receipt
+
+Decision: use `prospective-spy-observation-receipt-v1` rather than a generic
+proposal receipt for the fixed SPY 15:30 ET baseline. A generic structural
+record or caller-supplied proposal reference would not reliably distinguish
+changed OHLCV content with identical timestamps and counts, and would widen the
+receipt around mutable identity. The dedicated receipt evaluates the frozen
+baseline once per immutable record and derives its deterministic identity from
+only source/record hashes, structural/session timestamps, baseline/feature
+identities, ready status, categorical decision/reason, and a SHA-256 commitment
+over the selected causal bars. It serializes none of those bars' OHLCV values,
+prices, account/order/fill facts, paths, credentials, or mutable IDs.
+
+Claude's `supported-with-limits` result applied only to the proposed pure
+generic-receipt extraction as an architectural concern, subject to runtime,
+subprocess, and stronger tamper verification. Data review found that generic
+semantics did not satisfy the necessary source-safe content binding, so Codex
+selected the dedicated receipt instead. Claude's scoped review did not approve
+the final dedicated receipt design, a profitability claim, model promotion, GPU
+work, or a Paper order.
+
+Reason: make replay evidence deterministic and input-content-bound without
+retaining market data or widening provider, credential, account, broker, or
+live authority. The next fresh-session capture remains a Data-owned
+market-data-only runner and cannot turn market time into foreground idle.

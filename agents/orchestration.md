@@ -246,21 +246,23 @@ Validation, or Infra package.
 This concise projection supersedes earlier mutable dispatch and bottleneck
 statements above; their historical facts remain scoped to their original work.
 
-- **Ready:** the pure SPY regular-session baseline and its causal validation
-  are complete. The next Data/Engine handoff is one source-safe receipt for a
-  newly observed complete session; it may be prepared or consumed without a
-  broker, credential, provider, order, raw-data, or artifact side effect.
-- **Owned:** Data owns any KIS collection and receipt path; Engine owns the
-  fixed research-only baseline; Execution keeps the existing local/KIS Paper
-  route distinction. No Paper order is part of this objective.
-- **Due:** a fresh complete session is external timing for the receipt only.
-  It is not a foreground wait, company block, or reason to leave another ready
-  package undispatched.
-- **Improvement:** keep session collection and any retry in the Data-owned
-  worker, while Codex continues independent ready Research, Validation, or
-  Infra work. The receipt stores source-safe coverage and categorical outcome
-  only.
-- **Review:** Claude's static drift review is `supported-with-limits` for the
-  pure extraction/import-isolation claim. It requires the running runtime
-  suite/subprocess verification and the tightened tamper test; it is not a
-  profitability, promotion, or Paper verdict.
+- **Ready:** the fixed SPY baseline, dedicated content-bound observation
+  receipt, validation, and injected local-paper replay are complete. Next is a
+  Data-owned KIS Paper fresh-session capture/receipt runner, prepared now and
+  invoked only when a newly complete 15:30 ET window exists.
+- **Owned:** Data owns the market-data capture and source-safe receipt write;
+  Engine owns the unchanged fixed baseline; Execution owns only the existing
+  broker-free local replay boundary. No account read, KIS order, or live route
+  belongs to this package.
+- **Due:** market time belongs to the runner, not the foreground orchestrator.
+  A missing fresh session is an invocation-local result and cannot block another
+  ready lane.
+- **Improvement:** retain the content commitment in the receipt so changed bar
+  values cannot share a structural record identity, while raw bars stay on `D:`.
+  Continue independent ready Research, Validation, or Infra work during any
+  Data-owned timer or retry.
+- **Review:** Claude found the proposed pure generic-receipt extraction
+  `supported-with-limits` as an architectural concern. Data found its semantics
+  insufficient for the required content binding, so Codex selected the
+  dedicated receipt. This is not approval of a generic extraction, profitability,
+  promotion, or Paper action.

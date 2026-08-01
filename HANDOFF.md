@@ -1377,3 +1377,24 @@ baseline's categorical proposal. Keep raw market data on D:, retain only
 source-safe receipt facts outside Git as needed, and do not make the
 orchestrator wait for the market session. A receipt is evidence only; a later
 GPU campaign or Paper action needs its own bounded contract.
+
+## Prospective SPY Observation Receipt And Local Replay
+
+The dedicated `prospective-spy-observation-receipt-v1` is complete. It evaluates
+the frozen 15:30 ET SPY baseline once per immutable session record and emits
+only structural/session timestamps, source and record hashes, baseline/feature
+identities, `ready`, and categorical `enter`/`abstain` decision facts. A
+SHA-256 content commitment over all selected causal input bars binds the actual
+input without retaining raw OHLCV. The receipt excludes prices, account/order/
+fill data, paths, credentials, and mutable identifiers.
+
+The injected local replay proves a rising record creates exactly one
+`source: local_paper` fill, a rerun does not duplicate it, and abstention creates
+no intent or fill. The focused integrated suite has 67 passing tests. No KIS
+call, account read, KIS order, live behavior, raw-data persistence, artifact,
+GPU use, training, PnL, or profitability claim occurred.
+
+Next: prepare the Data-owned KIS Paper SPY fresh-session capture/receipt runner
+for a newly complete 15:30 ET window. It uses market-data reads only, retains
+raw bars on `D:`, emits source-safe evidence, and must not make the foreground
+orchestrator wait for market time.

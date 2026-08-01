@@ -35,12 +35,11 @@ weights, modify execution risk, or call a broker.
   window-sensitivity preflight create no follow-up CUDA work. Historical D1
   remains quarantined. This does not block Data, Execution, or other CPU
   Research preparation, and it is not a request to manufacture training.
-- The prospective SPY regular-session baseline is a pure, fixed CPU
-  preparation: it requires a 09:30-16:00 America/New_York session, makes its
-  decision at 15:30 ET from causal 1m/5m/10m/1h/3h tails of 30/6/3/2/2, and
-  has not captured a prospective session. It has no GPU appointment, artifact,
-  Paper consequence, or eligible frozen campaign. A later GPU request needs a
-  source-safe prospective receipt and a new complete frozen campaign contract.
+- The prospective SPY regular-session baseline and its dedicated source-safe
+  observation receipt are fixed CPU engineering work. The receipt's content
+  commitment does not create a GPU appointment, artifact, Paper consequence,
+  or eligible frozen campaign. GPU remains free; a future appointment still
+  needs a new complete campaign contract, not merely a fresh captured receipt.
 - The Norgate tail readiness receipt is `input_unavailable`: 28 common
   completed reference sessions after the static panel end cannot meet the
   precommitted 126-session independent-holdout allocation. It has no GPU
@@ -103,6 +102,6 @@ eligible allocation. On resume, reattach the latest custody receipt, verify
 that an active GPU job and allocation record agree, then dispatch the first
 eligible frozen campaign or record the exact scoped eligibility fact.
 
-The next likely eligibility input is a source-safe prospective SPY observation
-receipt. It is evidence only; it does not itself allocate the GPU or permit
-training, selection, ensemble use, or Paper action.
+The prospective SPY observation receipt is now complete, but it is evidence
+only and does not allocate the GPU or permit training, selection, ensemble use,
+or Paper action. A Data-owned fresh-session runner is not an eligibility event.

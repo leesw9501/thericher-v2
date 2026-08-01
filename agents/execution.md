@@ -430,3 +430,11 @@ current Paper account and fresh quote at its own call site; no stale account
 snapshot or historical Data receipt may act as permission or order input.
 The later recurring baseline must use the same call-time technical checks and
 never reuse a stale account projection or an unknown exact intent.
+
+- The dedicated prospective SPY observation receipt binds a fixed 15:30 ET
+  baseline decision to a content commitment without exposing raw bars. Its
+  injected-bar, broker-free replay proves one rising target produces exactly
+  one `source: local_paper` fill, an exact rerun creates no duplicate, and an
+  abstain creates no intent or fill. The test guards socket and `.env` access,
+  uses only pytest temporary state, and makes no KIS call, account read, order,
+  route change, artifact, or live action.
