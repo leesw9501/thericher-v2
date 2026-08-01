@@ -66,6 +66,20 @@ authorized private KIS Paper work.
   credential read, network call, checkpoint, or raw-data artifact. Its
   source-safe external summary is under
   `D:\\thericher-v2\\model-artifacts\\research\\multitimeframe-momentum-policy-smoke-v1\\qqq-20260721-r1\\summary.json`.
+- The first fixed 20-session QQQ multi-timeframe consensus replay completed
+  locally at
+  `D:\\thericher-v2\\model-artifacts\\research\\kis-intraday-multitimeframe-consensus-replay-v1\\qqq-20260623-20260721-consensus-r1\\summary.json`.
+  It used only the retained verified cache, the existing receipt-to-
+  `local_paper` bridge, one-share next-bar execution, and in-memory replayed
+  terminal-flat fills. It retained no raw bar or fill events, called no KIS,
+  broker, network, or credential path, and wrote no checkpoint. Its two entry
+  sessions had a positive aggregate after-cost result, but the all-20-session
+  always-long comparator is not an equal-count selection null. Treat it only
+  as descriptive plumbing and preserve it immutable; the next Engine Research
+  package is a separately frozen equal-count session-subset null diagnostic,
+  followed by later/disjoint replication rather than parameter tuning.
+  The requested Claude invocation exceeded its time limit, so it is recorded
+  as `review_unavailable`; no Claude verdict is relied upon.
 - The target-free Norgate D1 representation plumbing campaign completed its r6
   Docker CUDA batch across GRU, LSTM, temporal-convolution, and compact
   attention. It is source-isolated, static-survivorship-conditioned, and

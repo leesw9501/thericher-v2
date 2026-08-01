@@ -7783,3 +7783,32 @@ Reason: before a multi-timeframe policy can be evaluated, every model input must
 be built causally from the same KIS-shaped bar stream. The smoke proves the
 product path can abstain on genuine disagreement rather than manufacturing a
 trade while the independent QQQ scheduler waits.
+
+## 2026-08-01 - Keep the first QQQ consensus replay descriptive
+
+Decision: accept the fixed 20-session QQQ consensus replay as completed
+product-path evidence only. Its external precommit and aggregate summary are
+under `D:\thericher-v2\model-artifacts\research\kis-intraday-multitimeframe-consensus-replay-v1\qqq-20260623-20260721-consensus-r1`.
+The run used causal completed-bar evidence, the existing receipt-to-
+`local_paper` preparation path, one-share local-paper next-bar fills, and
+in-memory terminal replay. It retained neither raw bars nor fill events and
+did not read credentials, call KIS/network, submit a broker order, write a
+checkpoint, alter the QQQ scheduler, or touch live behavior.
+
+The frozen policy entered only two of the twenty sessions. Its aggregate
+after-cost result and the all-session always-long total are not evidence that
+the gate selected profitable sessions: the two consensus trades share the
+same entry, exit, quantity, and local-paper cost mechanics as the matching
+always-long trades, while the named comparator spans all twenty sessions.
+Do not tune any replay parameter or promote a model from that contrast.
+
+The required Claude command exceeded its bounded time limit, so this decision
+records it as `review_unavailable` and does not rely on a Claude verdict. The
+next independent, no-GPU package must write a fresh immutable precommit for an
+equal-count session-subset null diagnostic. It may explain the current
+selection effect but cannot establish a candidate; a later or disjoint
+replication is still required before any comparative or Paper-input claim.
+
+Reason: the replay successfully proves the causal product path and local-paper
+replay invariants, but a two-trade selected subset versus an all-session total
+cannot distinguish skill from a small sample of favorable sessions.

@@ -569,13 +569,16 @@ limits remain explicit.
     `TargetExposureProposal` and the existing local-paper preparation bridge,
     never a KIS route or Paper submit. The Claude drift invocation timed out,
     so the result is `review_unavailable`, not a promotion verdict.
-15. Run one fixed 20-session multi-timeframe consensus replay baseline from the
-    completed KIS-private QQQ 1m cache. Freeze the existing five momentum
-    expert specs, policy thresholds, 19:30Z decision point, next-minute entry,
-    30-minute deterministic exit, one-share local-paper sizing, and the flat
-    plus time-matched always-long comparators before reading results. This is a
-    single descriptive local-paper PnL/attribution baseline, not a tuning pass,
-    GPU job, winner, ensemble, KIS Paper order, or profitability claim.
+15. The fixed 20-session multi-timeframe consensus replay is complete at
+    `kis-intraday-multitimeframe-consensus-replay-v1/qqq-20260623-20260721-consensus-r1`.
+    It proved the causal model-to-receipt-to-`local_paper` route and terminal
+    replay, but generated only two entries. Its all-session always-long
+    comparator is descriptive, not an equal-count selection null. Preserve
+    the contract and artifact immutable: do not tune its experts, thresholds,
+    timing, sizing, or horizon; do not promote it, allocate CUDA, create an
+    ensemble, or change KIS Paper behavior. The next bounded package freezes
+    an equal-count session-subset null diagnostic and then requires later or
+    disjoint replication for any candidate claim.
 
 ## Durable Constraints
 
@@ -617,3 +620,9 @@ yet. Research may prepare no more than its consumer contract and cannot score,
 select, tune, ensemble, promote, rank, or create a KIS Paper action until that
 named out-of-time input has the declared depth. The fresh prospective baseline
 remains Execution evidence only.
+
+The completed QQQ consensus replay is a separate local-cache product-path
+baseline. It selected two entry sessions under its frozen contract, which is
+too little and not comparator-matched evidence for a return claim. Freeze the
+next diagnostic before recalculating any session subset statistic; it may
+explain this result but cannot select, tune, promote, ensemble, or route it.

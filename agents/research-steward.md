@@ -18,6 +18,10 @@ weights, modify execution risk, or call a broker.
   closed `no_structure`, so it has no CUDA appointment. Historical D1 remains
   quarantined. This does not block Data, Execution, or other CPU Research
   preparation, and it is not a request to manufacture training.
+- The completed QQQ consensus replay and its next equal-count subset null are
+  CPU-only descriptive validation. Neither consumes a GPU appointment or
+  sealed-evaluation allocation; later/disjoint replication must first meet the
+  normal frozen-campaign eligibility contract.
 - Sealed evaluation: no newly allocated family. Earlier target-free and sealed
   receipts remain historical evidence; they cannot be reused as a new campaign
   or selection pass.
