@@ -813,3 +813,12 @@ schedule invocation recorded `unavailable/shared_dispatcher_busy` while the
 broad worker was running. That deferral is `resume` only for this pair cache.
 The installed 06:55 KST Tuesday-Saturday task owns its next due collection;
 the broad worker and other ready lanes continue independently.
+
+The Engine-side `causal-multitimeframe-sequence-window-v1` now consumes only
+caller-supplied completed `1m/5m/10m/1h/3h` segments. Data remains responsible
+for the segment before it crosses the contract boundary: provider provenance,
+calendar/session handling, resampling, finality, and data-vintage/PIT evidence.
+For a multi-session consumer, add a bounded calendar-aware segment adapter;
+never pad a gap or mark an unavailable bar complete merely to satisfy a
+lookback. This is a source-contract recovery fact, not a scheduler or Research
+promotion gate.

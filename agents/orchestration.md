@@ -203,3 +203,12 @@ its exact intent remains unresolved and unretried. Execution now owns the next
 QQQ outcome: any unknown Paper submission is reconciled only for that exact
 durable intent and never retried speculatively; a no-intent or stale input
 remains scoped to its session while other ready lanes continue.
+
+Current shared dispatch fact: the Norgate D1 pilot is complete and its next
+Data recovery is independent of Engine work. Engine Research immediately used
+that available foreground capacity for the pure causal multi-timeframe sequence
+window contract; no KIS scheduler retry or next-due timestamp owns the
+foreground. There is no GPU-eligible frozen campaign in this package. The
+current reversible operating improvement remains lane-local waits: a Data or
+Execution timer yields only its owner while Codex dispatches a ready Engine,
+Validation, or Infra package.

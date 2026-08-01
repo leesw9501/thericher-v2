@@ -658,3 +658,11 @@ adjustment, and corporate-action semantics remain unknown. A labelled campaign
 still needs its own frozen source, target, split, costs, baseline, and falsifier;
 this pilot cannot score, fit, tune, rank, ensemble, allocate GPU, claim PnL, or
 form a Paper input.
+
+The reusable `causal-multitimeframe-sequence-window-v1` input contract is now
+complete for injected `1m/5m/10m/1h/3h` `Bar` sequences. It has caller-frozen
+lookbacks, one UTC cutoff, exact cross-timeframe symbol/market identity, and
+only structural timestamp/count metadata. It does not create a model, target,
+GPU appointment, score, rank, artifact, PnL, or Paper path. The next recovery
+fact is a new, separately frozen campaign or a calendar-aware upstream segment
+adapter; do not fill session gaps or reuse consumed QQQ window evidence.

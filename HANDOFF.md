@@ -1246,3 +1246,19 @@ state lookup and rejects static substitution or source-date mismatch. This is
 field-alignment plumbing only. The availability/PIT, provider-ticker identity,
 adjustment, and corporate-action limits remain explicit; no model, GPU, ranking,
 PnL, KIS, broker, or Paper path follows from it.
+
+## Causal Multi-Timeframe Sequence Input
+
+The pure `causal-multitimeframe-sequence-window-v1` Engine contract is complete.
+It accepts injected completed `Bar` sequences only for `1m/5m/10m/1h/3h`, with
+caller-declared positive lookbacks and one UTC cutoff. It preserves each
+timeframe's ordered selected tail and completed-bar end while rejecting
+incomplete, future, duplicate, non-contiguous, insufficient, or
+symbol/market/timeframe-misaligned input. A valid higher-timeframe tail may
+lag the cutoff by less than its own duration; a common close is not required.
+
+It has no data-provider, KIS, credential, network, model, label, target,
+artifact, PnL, local-paper, or broker path. It guarantees structural causality
+only: Data remains responsible for session segments, resampling, data vintage,
+and PIT/finality evidence. A real multi-session consumer must add a
+calendar-aware upstream segmenter rather than fill gaps or weaken this contract.

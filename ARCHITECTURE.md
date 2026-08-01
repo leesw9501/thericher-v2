@@ -230,6 +230,29 @@ rejects out-of-window bars, and exposes skipped partial or gapped buckets. It
 does not infer an exchange calendar or daylight-saving rule. Callers must state
 the session source and evidence grade they use when activating a timeframe.
 
+### Causal Multi-Timeframe Sequence Input
+
+`CausalMultiTimeframeSequenceWindow` is the small provider-neutral Engine input
+contract for `1m`, `5m`, `10m`, `1h`, and `3h` models. The caller supplies one
+explicit positive lookback per timeframe and one UTC cutoff. It returns only
+ordered, complete `Bar` tails and structural timestamp/count metadata; it does
+not create labels, scores, predictions, targets, artifacts, PnL, or broker
+effects.
+
+Every window must have one symbol and market, and all five windows must agree on
+that pair. No bar may end after the cutoff. The final completed bar for each
+timeframe must be no older than its own duration at that cutoff, so ordinary
+decision times can retain the most recent completed higher-timeframe bar rather
+than waiting for a common three-hour boundary. Exact common-boundary callers
+still retain equal window ends. Duplicate, incomplete, future, non-contiguous,
+or mismatched input fails closed.
+
+This is a structural-causality contract, not a calendar, session, halt, or
+data-vintage guarantee. Upstream Data must provide a continuous observation
+segment and owns resampling, session boundaries, restatement/PIT evidence, and
+any future multi-session adapter. A generic sequence window cannot fill a gap
+or make an unavailable bar current.
+
 ### Initial KIS Paper Baseline
 
 The first intended deployable candidate deliberately uses less than the observed

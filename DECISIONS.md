@@ -7932,3 +7932,35 @@ assumptions are independently qualified.
 Reason: the bounded pilot replaces an implicit static-list assumption with a
 tested, source-date-aligned loader while preserving the distinction between
 useful data plumbing and causal research evidence.
+
+## 2026-08-01 - Add a pure causal multi-timeframe sequence-window contract
+
+Decision: add `causal-multitimeframe-sequence-window-v1` as one reusable,
+in-memory Engine input for caller-supplied `1m/5m/10m/1h/3h` completed `Bar`
+sequences. Every caller declares its own positive lookback per timeframe and
+one UTC cutoff. The contract sorts deterministically, preserves the selected
+tail and each completed-bar end, requires a single cross-timeframe
+symbol/market identity, and rejects incomplete, future, duplicate,
+non-contiguous, insufficient, or mismatched inputs. Each timeframe's latest
+bar may end before the cutoff only when it remains within that timeframe's own
+duration; this allows ordinary decision times without pretending all timeframes
+close together.
+
+The function is intentionally only structural and has no provider, calendar,
+KIS, credential, network, model, target, artifact, PnL, local-paper, or broker
+behavior. Its metadata contains counts and timestamps only. It neither makes a
+window a model campaign nor makes the current Norgate pilot a training input.
+Session segmentation, resampling, source finality, and data-vintage/PIT truth
+remain Data-owned upstream responsibilities.
+
+The first Claude CLI response was discarded as context-invalid because it
+referred to an unrelated path. The self-contained rerun was
+`supported-with-limits`: it required the explicit cross-timeframe identity
+check, cutoff-lag semantics rather than a global equality rule, and a stated
+continuous-segment/data-vintage limitation. These changes are applied. The next
+recovery fact is that a real multi-session consumer must add a calendar-aware
+segmenter rather than fill gaps or relax structural validation.
+
+Reason: model families need one causal, testable way to receive varied lookback
+windows before a later frozen campaign can compare rule, classical, sequence,
+or attention hypotheses without hidden timestamp semantics.
