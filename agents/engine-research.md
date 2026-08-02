@@ -998,3 +998,25 @@ consumer that explicitly tolerates its static current-listing, non-PIT,
 adjustment, corporate-action, and availability limitations. It does not change
 the panel's `model_eligible=false`, `gpu_eligible=false`, or `paper_trading_eligible=false`
 scope, and it does not revive the closed fixed-trio GBT or momentum families.
+
+## Injected Multi-Timeframe Replay Seam (2026-08-02)
+
+The new injected-bar seam is complete as integration evidence, not a research
+result. It reuses the existing causal `1m/5m/10m/1h/3h` window builder,
+completed-bar `MomentumModel`, target-position policy, immutable decision
+receipt, local-paper bridge/fill/replay, and next-bar timing harness. Two
+independent deterministic fixture runs plus a same-store retry produced the
+same safe projection and proved window availability, receipt-to-intent identity,
+`source: local_paper`, and replay identity. The timing-only backtest is checked
+before any local-paper event, so invalid or too-short injected 1m inputs cannot
+leave partial local execution state.
+
+It trains nothing, consumes no dataset, model artifact, GPU appointment,
+holdout, public weight, KIS route, or Paper account, and makes no predictive,
+selection, ensemble, PnL, or profitability claim. The next ready Engine
+candidate is a fresh, CPU-only, source-local KIS NAS D1 volume-exhaustion
+reversal falsification contract: volume/range/close-location conditions must
+be frozen before target access, use a next-session within-session target,
+include flat/candle-only/date-block-null comparators and a signal-count kill
+test, and receive Claude's bounded challenge before implementation. It is not
+yet an eligible GPU campaign or Paper input.

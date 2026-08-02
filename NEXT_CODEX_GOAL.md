@@ -8,90 +8,86 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build and run `norgate-broad-d1-active-build-conformance-taxonomy-v1`.
+Build and run `injected-multitimeframe-local-paper-replay-seam-v1`.
 
-This Data-owned objective measures whether the immutable static Norgate broad
-D1 development panel can be compared meaningfully with the active local
-Windows Norgate build. Its only consumer is a later, separately frozen,
-non-promoting broad engineering campaign. It must not turn a present-build
-comparison into proof of point-in-time availability, adjustment semantics,
-corporate-action correctness, membership continuity, a model input, or a
-GPU/Paper/PnL decision.
+This Engine/Execution-owned objective closes one concrete integration gap: a
+caller-injected, hermetic replay must traverse the existing causal
+multi-timeframe window contract, existing completed-bar momentum prediction,
+existing target-position policy, immutable research receipt, existing local
+paper intent bridge, local-paper fill/replay, and the existing next-bar
+backtest timing harness.
+
+It is engine plumbing for later qualified model data. It is not a new scoring
+framework, predictive study, strategy evaluation, or a reason to wait for a
+data scheduler.
 
 ## Frozen Scope
 
-- Use only the existing hash-attested Norgate broad D1 panel: 523 selected
-  symbols, 483 common sessions, and 252,609 retained rows. Read the matching
-  range twice per symbol through one Windows-local `norgatedata` client.
-  Do not update/download Norgate data, call KIS, read `.env` or credentials,
-  access accounts, submit/cancel orders, enable live behavior, expose a public
-  endpoint, or use a paid service.
-- Retain raw bars only in the existing `D:\market_data` snapshot. Write a
-  single immutable source-safe receipt under
-  `D:\thericher-v2\model-artifacts`, never Git. Do not persist or print raw
-  bars, dates, prices, row-level values, source paths, credentials, or error
-  text.
-- Run one serial local client; do not add artificial sleeps, an uncontrolled
-  parallel reader flood, a scheduler, a model, a feature artifact, a GPU job,
-  public weights, a sealed holdout, an ensemble, PnL, ranking, or Paper input.
-  A failed symbol is evidence about this probe only and cannot pause other
-  ready lanes.
-- Keep the fixed-trio momentum and GBT families closed. Do not use this task to
-  retune, promote, or reinterpret either outcome.
-
-## Required Taxonomy
-
-1. Reattach and validate the immutable broad panel before the active client is
-   constructed. Freeze its dataset/manifest identity, selected-symbol count,
-   common-session count, and complete D1 bar geometry.
-2. For each fixed symbol, compare two active reads for repeatability and then
-   compare the reference and active series by timestamp. Persist only the
-   symbol, stable-reader category, reference/active/shared counts, missing and
-   surplus session counts, and value-mismatch count on shared sessions.
-3. Classify outcomes before the run:
-   - `matching`: every symbol has repeatable exact session coverage and zero
-     shared-session value mismatches;
-   - `revision_detected`: all symbols are repeatable with exact coverage, but
-     one or more shared-session OHLCV values differ;
-   - `input_unavailable`: any active reader/client failure, nonrepeatability,
-     absent symbol, or session-coverage mismatch. Preserve aggregate and
-     per-symbol categorical counts without attributing it to data revision.
-4. A matching receipt is only a current-build reproducibility fact for this
-   frozen scope. A `revision_detected` receipt closes only a later consumer that
-   requires exact values. An `input_unavailable` receipt closes only its own
-   source-conformance attempt. None is a general Research, Paper, GPU, or
-   operator gate.
-5. Canonicalize Decimal representations before response hashing so equal
-   numeric reads have one stable source-safe hash. Make every receipt
-   provider-free reattachable and no-clobber/idempotent.
+- Use only deterministic in-memory synthetic completed `Bar` fixtures and
+  test-owned temporary local-paper state. Do not read `D:\market_data`, Norgate,
+  Tiingo, KIS caches, `.env`, credentials, accounts, or external artifacts.
+- Reuse, rather than duplicate, these existing paths:
+  - `build_causal_multitimeframe_sequence_window`,
+  - `MomentumModel` / existing `ModelPrediction`,
+  - `propose_target_exposure`,
+  - `receipt_from_target_exposure_proposal`,
+  - `prepare_local_paper_intent`,
+  - existing local-paper fill/replay behavior, and
+  - `run_next_bar_backtest`.
+- Add at most one small pure replay module and one focused test module. Do not
+  add a new score/prediction/decision/intent dataclass, a generic plugin
+  framework, a queue, scheduler, dashboard, provider, persistent report, or
+  model registry.
+- The only scorer is the already implemented fixed momentum model over caller
+  supplied completed windows. Do not train, tune, compare models, run GPU,
+  load public weights, use a sealed holdout, create PnL/profitability metrics,
+  rank symbols, create an ensemble, or persist model artifacts.
+- Keep all fills `source: local_paper`. Do not invoke KIS, read KIS credentials,
+  prepare a KIS Paper decision, submit/modify/cancel an order, enable live
+  behavior, or expose a public endpoint.
+- A test-local `EventStore`/emergency file is permitted solely to exercise the
+  existing local-paper fill and replay behavior. It must contain no raw market
+  source, credentials, or external account state and must not become an
+  artifact or a runtime dependency.
+- Do not use the current-listing Norgate broad panel or KIS broad panel. They
+  remain non-PIT and non-model-eligible. Do not revisit the closed fixed-trio
+  GBT, fixed-trio momentum, KIS D1 candle-noise, or exhausted intraday families.
 
 ## Required Work
 
-1. Data: implement the smallest Windows-host-only conformance module and
-   runner. Reuse the existing broad-panel verifier and active-reader pattern,
-   but do not generalize either into a new framework.
-2. Tests: prove taxonomy classification for exact, value-mismatch,
-   absent-symbol, missing/surplus-session, and nonrepeatable-reader cases;
-   Decimal-hash stability; provider-free receipt reattachment; external-root
-   containment; idempotence/no-clobber; and no network/credential/KIS/broker
-   access or raw leakage.
-3. Run the actual bounded local conformance once. Report only the safe
-   categorical result, counts, hashes, artifact location, elapsed-time bucket,
-   and source limitations. Do not lower or relitigate the taxonomy after the
-   result.
-4. Update Data, Engine Research, Research Steward, orchestration, handoff, and
-   decision stateboards with the outcome and exact next readiness. Engine may
-   prepare no more than the later consumer contract; it may not start a model
-   from this panel in this objective.
+1. Engine: implement the smallest caller-injected replay helper using existing
+   domain types. It must construct all five `1m/5m/10m/1h/3h` causal windows at
+   one UTC cutoff, derive existing momentum predictions, produce an eligible
+   target-exposure proposal, narrow it to an immutable receipt, prepare a
+   local-paper intent, fill it at the next bar, and replay the same fill.
+2. Backtest: invoke the existing next-bar backtest harness on the same injected
+   1m sequence as a timing assertion only. Do not interpret its numerical
+   result as PnL or performance evidence.
+3. Tests: prove a fixture-injected run is deterministic across two independent
+   local-paper stores; all required timeframes, cutoff/window availability,
+   decision-to-intent identity, next-bar timing, `source: local_paper`, and
+   replay identity hold. Monkeypatch sentinels around the named existing paths
+   and prove the helper traverses each one. Deny socket, URL, environment,
+   provider/cache, KIS, and credential access. Reject incomplete/future/stale
+   inputs without minting an intent.
+4. Keep any returned or printed result source-safe: only opaque identities,
+   categorical status, timeframe counts, and replay facts; never OHLCV values,
+   raw timestamps, raw paths, account fields, or secrets.
+5. Update Engine Research, Execution, orchestration, handoff, and decision
+   stateboards with the bounded seam result. State explicitly that it is not a
+   predictive/model-quality/PnL/Paper/KIS/GPU result and name the next data
+   qualification needed before a trained model can consume it.
 
 ## Claude Review
 
-Claude returned `supported-with-limits` for this objective after rejecting the
-naive one-count broad revision probe. Its required pre-registered boundary is
-the value-mismatch versus symbol-absent/session-coverage taxonomy above.
-Re-invoke Claude only if implementation broadens the taxonomy, a result is
-interpreted as source-quality promotion, or a later consumer seeks model/GPU/
-Paper consequences.
+Claude's falsification-first verdict is `supported-with-limits`.
+
+It found the individual components already exist. The only justified work is
+the injected-bar seam, not a duplicate architecture. Its strongest failure mode
+is a parallel score/decision/intent path that bypasses the existing modules.
+The required kill test is sentinel coverage for every named existing path plus
+two byte-stable logical replay projections. If the implementation can pass
+without traversing any named path, stop and remove the duplicate seam.
 
 ## Verification
 
@@ -112,8 +108,7 @@ verification commands.
 
 ## Completion
 
-Report the taxonomy outcome, focused and full verification, artifact
-location/hash, Claude result, elapsed-time bucket, commit hash, intentionally
-omitted model/GPU/Paper/PnL work, and the next recommended objective. Commit
-and push completion evidence before replacing this file with exactly one next
-objective and continuing.
+Report focused and full verification, Claude result, exactly which existing
+paths were traversed, and why no model/GPU/data/KIS/Paper/PnL work was added.
+Commit and push completion evidence before replacing this file with exactly one
+next objective and continuing.

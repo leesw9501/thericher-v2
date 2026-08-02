@@ -485,3 +485,22 @@ required event evidence is absent.
   from shared-session value revision before a wide static source can be
   interpreted, avoiding a broad one-count false diagnosis without adding an
   approval gate.
+
+## Injected Multi-Timeframe Replay Seam (2026-08-02)
+
+- **Ready:** the no-I/O injected-bar model-to-local-paper seam is complete; the
+  next independent Engine package can freeze a distinct CPU-only hypothesis
+  without waiting for any collector or market session.
+- **Owned:** Engine owns the caller-injected causal-window/prediction/policy
+  chain; Execution owns the existing local-paper bridge and replay consequence.
+  Data has no dependency and Research Steward retains an unallocated GPU.
+- **Due:** now. The seam uses deterministic fixtures and temporary state only;
+  no schedule, retry, data cache, GPU, or account fact owns the foreground.
+- **Improvement:** one integration test now proves the existing five-component
+  chain is actually traversed, rather than letting a later campaign rebuild
+  parallel score, decision, or intent types. It is not a model or Paper
+  promotion path.
+- **Verification:** focused/adjacent coverage passed `39` tests; fresh-root
+  parallel and full serial suites both passed `2082 passed, 14 skipped`.
+  The clean-root helper still preserves its scoped two-interrupted-root failure
+  without blocking this completed package or the next ready Engine work.

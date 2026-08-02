@@ -8503,3 +8503,31 @@ adjustment, corporate-action, availability, campaign, model, GPU, ranking,
 Paper, PnL, or live eligibility.
 Any later provider-free consumer must pin this receipt hash; a valid JSON
 receipt without the consumer's expected hash is only self-consistent evidence.
+
+## 2026-08-02 - Close the injected multi-timeframe model-to-local-paper seam
+
+Decision: add one caller-injected, deterministic replay helper that reuses the
+existing causal `1m/5m/10m/1h/3h` window contract, `MomentumModel`, target
+position policy, research decision receipt, local-paper intent bridge,
+local-paper fill/replay, and next-bar timing harness. It writes no artifact and
+has no provider, cache, credential, network, KIS, account, or live route. Its
+temporary local-paper state exists only inside tests.
+
+Reason: Data schedulers must not create foreground engine idle time, but the
+individual components already existed. Claude's `supported-with-limits`
+falsification review found that a new score/decision/intent framework would be
+duplicate drift. The retained seam instead has a sentinel kill test that proves
+each existing path is traversed and two independent fixture runs yield the same
+safe projection, including receipt-to-intent identity, next-bar timing, and a
+replayable `source: local_paper` fill. Independent review additionally exposed
+two local side-effect hazards: a too-short next-bar harness was checked after a
+fill, and a same-store retry could record a duplicate rejection. The seam now
+validates contiguous backtest timing before the first local event and first
+tries the existing recorded-fill recovery path on a retry.
+
+This is neither a predictive result nor an execution authorization: no market
+dataset, PnL, training, model comparison, GPU, model artifact, ranking,
+ensemble, KIS Paper decision, or broker order follows. The next model work must
+freeze its own source-qualified causal campaign; the candidate KIS NAS D1
+volume-exhaustion reversal remains only a proposed distinct CPU falsification
+until that contract and its Claude challenge exist.

@@ -489,3 +489,21 @@ reinstalled for its normal 23:50 KST schedule without a manual run. A future
 broker-correlation capability probe may assess whether a late identical
 lookalike can be distinguished; it is not a global execution hold. KIS Live
 remains unavailable.
+
+## Injected Local-Paper Replay Seam (2026-08-02)
+
+Execution reattached no account and made no broker call for the bounded
+injected multi-timeframe seam. A caller-owned temporary local-paper broker was
+the only execution surface: an existing immutable research receipt prepared an
+existing local-paper intent, filled once at the next injected `1m` bar, and
+replayed the identical fill with `source: local_paper`. The helper rejects stale
+receipt/proposal inputs as `no_intent`; incomplete or future windows fail before
+any local-paper event is written. It also validates contiguous, backtestable
+1m timing before the first event and recovers an already-recorded matching fill
+on an identical same-store retry without writing a duplicate rejection.
+
+This is test-only local execution evidence. It does not create a KIS Paper
+decision, account query, submission, cancellation, modification, schedule,
+price proof, capital allocation, PnL claim, or live capability. Keep the seam
+as the model-to-local-paper contract for later qualified campaigns; Execution
+still independently attests any future cost/fill/availability assumptions.

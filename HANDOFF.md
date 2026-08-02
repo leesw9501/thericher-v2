@@ -1769,3 +1769,40 @@ per-symbol evidence if a later provider failure occurs, and accepts an
 `expected_receipt_sha256` for provider-free consumers. A future consumer must
 pin this receipt hash in its own frozen contract; receipt self-consistency alone
 is not a source-authentication claim.
+
+## Injected Multi-Timeframe Local-Paper Replay Seam (2026-08-02)
+
+The bounded `injected-multitimeframe-local-paper-replay-seam-v1` integration
+now takes caller-injected, deterministic completed `1m/5m/10m/1h/3h` bars
+through the existing causal-window builder, existing momentum predictions,
+target-position policy, immutable research receipt, local-paper intent bridge,
+next-bar fill/replay, and the existing next-bar timing harness. Its focused
+suite traversed every named existing path twice against independent temporary
+stores, then retried against the same store. It confirmed a deterministic
+eligible proposal, receipt-to-intent identity, `source: local_paper` fill,
+exact fill replay, and next-bar timing. Backtest geometry and whole-1m
+continuity are now validated before the first local-paper event; a short or
+invalid timing sequence leaves no accepted, fill, or snapshot event behind.
+
+The helper has no provider/cache, credential, network, KIS, account, external
+broker route, model training, artifact, or GPU dependency. It returns only categorical
+and opaque-reference facts; it does not return raw bars, timestamps, prices,
+paths, account state, PnL, a predictive model-quality result, a ranking, an
+ensemble, a KIS Paper decision, or an order. Claude's falsification-first
+verdict was `supported-with-limits`: it approved only this existing-path seam
+and rejected a duplicate score/decision/intent framework. Independent review
+also required same-store fill recovery and pre-side-effect timing validation;
+both are now covered by focused tests.
+
+Focused seam/adjacent coverage passed `39` tests. The final fresh-root parallel
+and full serial suites both passed `2082 passed, 14 skipped`; Ruff and both
+Compose configurations passed. The clean-root helper remains correctly
+fail-closed only because of two prior interrupted helper roots, which were not
+deleted or bypassed.
+
+The next trained-model consumer still requires a separately frozen,
+source-qualified causal campaign with an independent temporal evaluation
+surface. The promising distinct CPU candidate is a KIS-shaped six-symbol D1
+volume-exhaustion reversal falsification; it needs its own Claude challenge,
+precommitted target/cost/null contract, and cannot use this seam as a
+performance or Paper promotion shortcut.
