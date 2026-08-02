@@ -8,18 +8,17 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `causal-mtf-prediction-window-binding-v1`.
+Build `causal-mtf-momentum-expert-adapter-v1`.
 
-Add the smallest pure Engine Research boundary that proves each existing
-multi-timeframe `ModelPrediction.feature_window_end` is the actual end of its
-declared completed causal bar window. This advances the per-symbol
-multi-timeframe decision layer while the Data-owned QQQ/SPY forward observer
-accumulates independently.
+Give the existing completed-bar multi-timeframe momentum experts one direct,
+pure input path from `CausalMultiTimeframeSequenceWindow`. This makes the
+model-side expert inputs use the same revalidated 1m/5m/10m/1h/3h causal bar
+windows that the target-position policy can bind to its predictions.
 
-Do not create a new evidence bundle, feature-envelope framework, model family,
-or policy graph. Reuse the existing causal sequence-window and target-position
-policy contracts. The result is a fail-closed structural binding, not a model
-quality or trading claim.
+The adapter is an existing-model extension, not a new feature-envelope,
+source-contract wrapper, model family, or strategy claim. The prior
+prediction-window binding remains the output-side check; this objective closes
+the corresponding existing momentum input-side path.
 
 ## Hard Boundaries
 
@@ -29,48 +28,46 @@ quality or trading claim.
   modify the QQQ/SPY prospective observer, its Data scheduler, or its store.
 - Do not open targets or returns, calculate PnL, train/tune/load weights, use
   CUDA/GPU, allocate Research Steward GPU custody, or write a model artifact.
-- Do not introduce a new `ModelPrediction` metadata convention, source-manifest
-  field, feature-schema field, evidence dataclass, wrapper policy, or second
-  freshness/missing/duplicate/future implementation when an existing contract
-  already owns that behavior.
+- Do not introduce a generic feature tensor/envelope framework, a
+  `ModelPrediction` metadata convention, a source-contract wrapper, a new
+  model family, or a second causal-window validator. Reuse
+  `CausalMultiTimeframeSequenceWindow` and its existing builder.
 - Keep the work pure and in-memory: no filesystem, network, environment,
   execution, artifact, or schedule surface.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first drift check before changing
-   the causal-window/policy boundary. Record a timeout or malformed response as
-   `review_unavailable`, never as agreement or a hold.
-2. Inventory every current direct consumer of
-   `CausalMultiTimeframeSequenceWindow` and `propose_target_exposure`. Choose
-   the narrowest integration point that binds actual causal windows without
-   weakening existing callers or duplicating `_index_evidence` checks.
-3. Add one pure structural predicate or equally small existing-contract
-   extension. For every supplied prediction, it must require matching
-   symbol/market/timeframe and exact equality between
-   `feature_window_end` and the matching causal window's completed final-bar
-   end. Existing policy-owned missing, duplicate, generated-at, future, and
-   freshness handling stays single-sourced.
-4. First run a real-producer compatibility test: construct one existing
-   `CausalMultiTimeframeSequenceWindow` and compare it with predictions from
-   `build_multitimeframe_momentum_evidence`. If legitimate producer output
-   cannot satisfy exact binding because bucket anchoring differs, close this
-   package as `input_unavailable` with the factual mismatch and do not invent a
-   tolerance or alternate bucket rule.
-5. Add focused tests proving the compatible path is deterministic and the
-   strongest forgery fails closed: an H1 or 3h prediction stamped at the cutoff
-   rather than its actual completed bar end must not be accepted. Cover wrong
-   symbol/market/timeframe, missing window, non-causal/future window, and
-   import/I-O isolation only where those checks are not already owned by the
-   existing policy or sequence-window tests.
-6. Update the Engine Research, Execution, orchestration, handoff, and decision
-   stateboards with the exact result and Claude verdict. State explicitly that
-   the 0-record QQQ/SPY observer is not a foreground wait and no GPU/model/PnL/
-   Paper/live result was created.
+1. Record the preceding short Claude drift-check timeout as
+   `review_unavailable`; it is not agreement or a hold. Before adding any new
+   abstraction, verify from current direct consumers that an existing
+   `MultiTimeframeMomentumEvidence` extension is narrower than a new wrapper.
+2. Add the smallest public pure adapter to the existing multi-timeframe
+   momentum module. It accepts one causal multi-timeframe window and the
+   existing momentum config, revalidates the selected bars with the existing
+   builder, and emits the same typed evidence/prediction contracts using each
+   expert's required completed trailing bars.
+3. Require every configured expert timeframe to exist in the canonical causal
+   window and require at least `lookback + 1` bars for that expert. Preserve
+   the existing per-expert feature-window end, symbol, market, and decision
+   cutoff semantics. Return the existing categorical unready evidence for a
+   model-input insufficiency where that type can represent it; do not invent
+   a tolerance, fallback resampling, or implicit lookback expansion.
+4. Add a real CPU compatibility test: derive one causal window from the same
+   completed session bars and prove the current raw-bar momentum builder and
+   the new direct-window adapter produce identical ready evidence. Pass the
+   adapter output through the existing policy with the same window.
+5. Add focused fail-closed tests for the strongest forgery: a matching outer
+   QQQ header containing SPY H1 or 3h bars. Also cover a future/incomplete or
+   non-contiguous selected bar, an insufficient expert lookback, and
+   import/I-O isolation without duplicating sequence-window test coverage.
+6. Refresh Engine Research, Execution, orchestration, handoff, and decision
+   stateboards with the exact result. State that the 0-record QQQ/SPY observer
+   is not a foreground wait and that no GPU/model-training/PnL/Paper/live
+   result was created.
 
 ## Verification
 
-Run focused tests and an injected CPU-only producer smoke, then:
+Run focused tests and an injected CPU-only adapter smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -85,7 +82,8 @@ that fact and run its fresh-root mode plus the remaining verification commands.
 
 ## Completion
 
-Report the selected integration point, Claude verdict, producer compatibility
-result, strongest forgery result, tests, and why no model/GPU/PnL/Paper/live
-claim was created. Commit and push completion evidence before replacing this
-file with exactly one next objective and continuing.
+Report the selected integration point, Claude result, raw-vs-window
+compatibility result, strongest forgery result, tests, and why no
+GPU/model-training/PnL/Paper/live claim was created. Commit and push completion
+evidence before replacing this file with exactly one next objective and
+continuing.

@@ -8681,3 +8681,23 @@ the outer window header. The sole existing target-policy consumer that already
 owns a causal window now passes it explicitly. Other consumers without a
 causal window remain unchanged until a separate input-boundary package can
 supply one truthfully.
+
+## 2026-08-01 - Let existing MTF momentum experts consume causal windows directly
+
+Decision: add one public pure
+`build_multitimeframe_momentum_evidence_from_causal_window` function to the
+existing multi-timeframe momentum module. It takes the already-owned
+`CausalMultiTimeframeSequenceWindow` and the existing expert config, rebuilds
+the selected bars through the existing validator, uses only each
+`lookback + 1` trailing tail, and emits the unchanged evidence and prediction
+types. The raw 1m/session-resampling entry point stays supported.
+
+Reason: a separate feature envelope or source-contract wrapper would have no
+current consumer and would duplicate the causal-window contract. Direct input
+binding keeps the existing momentum producer and output-side policy binding on
+the same bar identity without widening or silently resampling a model input.
+The raw and direct paths produce identical five-expert CPU evidence; a forged
+QQQ header with foreign slow/all-frame bars and invalid selected bars becomes
+categorical unready evidence. The Claude CLI call timed out and is recorded as
+`review_unavailable`, not a verdict or a hold. This is not a data, target,
+return, PnL, training, GPU, artifact, Paper, broker, or live decision.

@@ -23,6 +23,11 @@ from thericher_v2.market.resample import (
 )
 
 from .momentum import MomentumModel
+from .sequence_window import (
+    CausalMultiTimeframeSequenceWindow,
+    SequenceWindowInputError,
+    build_causal_multitimeframe_sequence_window,
+)
 
 _INPUT_STATUSES: Final = frozenset(
     {
@@ -153,7 +158,7 @@ def build_multitimeframe_momentum_evidence(
 
     symbol = source_bars[0].symbol
     market = source_bars[0].market
-    predictions: list[ModelPrediction] = []
+    expert_bars: dict[Timeframe, tuple[Bar, ...]] = {}
     for spec in config.experts:
         resampled = resample_session_bars(source_bars, spec.timeframe, session=session).bars
         expected_end = _last_expected_completed_bucket_end(
@@ -190,22 +195,76 @@ def build_multitimeframe_momentum_evidence(
                 "non_contiguous",
                 f"non_contiguous_{spec.timeframe.value}",
             )
-        model = MomentumModel(
-            model_id=spec.model_id,
-            model_version=spec.model_version,
-            lookback=spec.lookback,
-            buy_threshold_bps=spec.buy_threshold_bps,
-            sell_threshold_bps=spec.sell_threshold_bps,
-        )
-        predictions.append(model.predict(list(window)))
-    return MultiTimeframeMomentumEvidence(
+        expert_bars[spec.timeframe] = window
+    return _ready_evidence_from_expert_bars(
         symbol=symbol,
         market=market,
         as_of=now,
-        input_status="ready",
-        reason="completed_bar_momentum_evidence",
-        predictions=tuple(predictions),
-        feature_window_end=max(item.feature_window_end for item in predictions),
+        config=config,
+        expert_bars=expert_bars,
+    )
+
+
+def build_multitimeframe_momentum_evidence_from_causal_window(
+    causal_window: CausalMultiTimeframeSequenceWindow,
+    *,
+    config: MultiTimeframeMomentumConfig,
+) -> MultiTimeframeMomentumEvidence:
+    """Build existing momentum evidence from one revalidated causal window.
+
+    This direct model-input path neither resamples nor expands the selected
+    bars. The returned predictions retain the existing per-expert final
+    completed-bar timestamps.
+    """
+
+    if not isinstance(causal_window, CausalMultiTimeframeSequenceWindow):
+        raise TypeError("causal_window must be a CausalMultiTimeframeSequenceWindow")
+    if not isinstance(config, MultiTimeframeMomentumConfig):
+        raise TypeError("config must be a MultiTimeframeMomentumConfig")
+    try:
+        validated_window = build_causal_multitimeframe_sequence_window(
+            {
+                timeframe: window.bars
+                for timeframe, window in causal_window.windows.items()
+            },
+            lookbacks={
+                timeframe: len(window.bars)
+                for timeframe, window in causal_window.windows.items()
+            },
+            cutoff=causal_window.cutoff,
+        )
+    except SequenceWindowInputError as error:
+        return _unready_window_evidence(
+            causal_window,
+            error.status,
+            f"causal_window_{error.status}",
+        )
+    if (
+        validated_window.symbol != causal_window.symbol
+        or validated_window.market != causal_window.market
+    ):
+        return _unready_window_evidence(
+            causal_window,
+            "misaligned",
+            "causal_window_identity_mismatch",
+        )
+
+    expert_bars: dict[Timeframe, tuple[Bar, ...]] = {}
+    for spec in config.experts:
+        window = validated_window.windows.get(spec.timeframe)
+        if window is None or len(window.bars) < spec.lookback + 1:
+            return _unready_window_evidence(
+                validated_window,
+                "missing",
+                f"missing_{spec.timeframe.value}",
+            )
+        expert_bars[spec.timeframe] = window.bars[-(spec.lookback + 1) :]
+    return _ready_evidence_from_expert_bars(
+        symbol=validated_window.symbol,
+        market=validated_window.market,
+        as_of=validated_window.cutoff,
+        config=config,
+        expert_bars=expert_bars,
     )
 
 
@@ -271,4 +330,49 @@ def _unready_evidence(
         reason=reason,
         predictions=(),
         feature_window_end=None,
+    )
+
+
+def _unready_window_evidence(
+    causal_window: CausalMultiTimeframeSequenceWindow,
+    input_status: TargetInputStatus,
+    reason: str,
+) -> MultiTimeframeMomentumEvidence:
+    return MultiTimeframeMomentumEvidence(
+        symbol=causal_window.symbol,
+        market=causal_window.market,
+        as_of=causal_window.cutoff,
+        input_status=input_status,
+        reason=reason,
+        predictions=(),
+        feature_window_end=None,
+    )
+
+
+def _ready_evidence_from_expert_bars(
+    *,
+    symbol: str,
+    market: str,
+    as_of: datetime,
+    config: MultiTimeframeMomentumConfig,
+    expert_bars: dict[Timeframe, tuple[Bar, ...]],
+) -> MultiTimeframeMomentumEvidence:
+    predictions: list[ModelPrediction] = []
+    for spec in config.experts:
+        model = MomentumModel(
+            model_id=spec.model_id,
+            model_version=spec.model_version,
+            lookback=spec.lookback,
+            buy_threshold_bps=spec.buy_threshold_bps,
+            sell_threshold_bps=spec.sell_threshold_bps,
+        )
+        predictions.append(model.predict(list(expert_bars[spec.timeframe])))
+    return MultiTimeframeMomentumEvidence(
+        symbol=symbol,
+        market=market,
+        as_of=as_of,
+        input_status="ready",
+        reason="completed_bar_momentum_evidence",
+        predictions=tuple(predictions),
+        feature_window_end=max(item.feature_window_end for item in predictions),
     )

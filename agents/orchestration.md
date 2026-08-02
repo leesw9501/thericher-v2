@@ -588,3 +588,26 @@ required event evidence is absent.
   causal window exists. The existing consumer that owns one passes it through;
   the policy's freshness or missing-data rules remain single-sourced and no new
   evidence framework was added.
+
+## Causal MTF Momentum Expert Adapter (2026-08-01)
+
+- **Ready:** the direct causal-window momentum input boundary is complete; a
+  next Engine integration package can now attach the existing raw/session
+  consumer to this same window without a collector, market-time, GPU, or
+  operator dependency.
+- **Owned:** Engine owns the pure adapter and its causal-input tests. Data
+  retains the 0-record QQQ/SPY observer and its schedule; Execution has no
+  route; Research Steward has no eligible GPU appointment.
+- **Due:** none in the foreground. The observer's next session belongs only to
+  its installed Data worker and is not a reason to wait.
+- **Improvement:** raw 1m/session resampling and direct causal-window
+  consumption now yield identical existing momentum evidence, while internal
+  H1/3h identity forgery, header mismatch, invalid bars, and short lookbacks
+  fail closed before a prediction can reach policy or Execution. The bounded
+  Claude CLI call was `review_unavailable`; a temporary independent Review
+  assignment supplied the implementation-level falsification check.
+- **Verification:** focused coverage passed `25` tests; fresh-root parallel
+  and full serial both passed `2153 passed, 16 skipped`. Ruff and both
+  credential-free Compose configurations passed. The clean-root authority mode
+  still preserves its two recent interrupted helper roots without blocking this
+  completed package or the next ready Engine work.

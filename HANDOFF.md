@@ -1933,3 +1933,32 @@ through untyped mutable prediction metadata. No provider, data cache, target,
 return, PnL, training, GPU, artifact, Paper/local-paper, broker, or live route
 was opened. The QQQ/SPY observer remains at `0` forward records and continues
 independently; it is not a foreground wait.
+
+## Causal MTF Momentum Expert Adapter (2026-08-01)
+
+`causal-mtf-momentum-expert-adapter-v1` is complete as the smallest existing
+momentum-model extension. The new direct input function consumes one existing
+`CausalMultiTimeframeSequenceWindow`, rebuilds its selected bars through the
+existing causal validator, and creates the existing
+`MultiTimeframeMomentumEvidence` with exactly each expert's `lookback + 1`
+trailing bars. It does not resample, widen a lookback, add a wrapper, or use
+prediction metadata for source identity.
+
+The raw completed-1m producer and the direct-window path produced identical
+five-expert evidence in a CPU smoke and passed unchanged through the existing
+causal-window-bound policy. Matching QQQ headers with internally foreign H1,
+3h, or fully SPY bars, plus future, incomplete, non-contiguous, and
+insufficient windows, all fail closed with empty predictions. The bounded
+Claude CLI call timed out and is `review_unavailable`, not agreement or a
+hold; an independent Review role confirmed the narrow API and strongest
+identity-forgery test. Focused coverage passed `25` tests.
+
+Goal-boundary verification then passed `2153 passed, 16 skipped` in a fresh
+parallel temp root and again in full serial mode. Ruff and both credential-free
+base/research Compose configurations passed. The clean-root authority mode
+remains correctly blocked only by its two preserved recent interrupted roots.
+
+No provider, credentials, source cache, target, return, PnL, model training,
+GPU, artifact, Paper/local-paper, broker, or live route was opened. The
+QQQ/SPY observer remains at `0` forward records under its independent Data
+schedule and does not delay the next Engine package.

@@ -531,3 +531,13 @@ revalidated before model evidence can form a target proposal. No local-paper
 replay, KIS account/quote/order call, intent, fill, artifact, or capital state
 was opened or changed. A later qualified Engine campaign may use this binding
 before reaching the unchanged deterministic Execution boundary.
+
+## Causal MTF Momentum Expert Adapter (2026-08-01)
+
+Execution has no route or side effect in the pure Engine
+`causal-mtf-momentum-expert-adapter-v1` extension. It gives the existing
+multi-timeframe momentum producer a direct revalidated causal-window input but
+does not create a target proposal, intent, local-paper replay, KIS call,
+account access, order, fill, artifact, capital state, or live behavior. A
+future qualified consumer must still pass its evidence through the unchanged
+policy and deterministic Execution boundary.

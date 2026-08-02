@@ -14,6 +14,7 @@ from .multitimeframe_momentum import (
     MultiTimeframeMomentumEvidence,
     MultiTimeframeMomentumSpec,
     build_multitimeframe_momentum_evidence,
+    build_multitimeframe_momentum_evidence_from_causal_window,
 )
 from .sequence_window import (
     CAUSAL_SEQUENCE_WINDOW_SCHEMA_ID,
@@ -57,5 +58,6 @@ __all__ = [
     "build_causal_bar_source_contract",
     "build_causal_multitimeframe_sequence_window",
     "build_multitimeframe_momentum_evidence",
+    "build_multitimeframe_momentum_evidence_from_causal_window",
     "propose_target_exposure",
 ]

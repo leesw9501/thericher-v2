@@ -1130,3 +1130,22 @@ source/schema convention. This work created no model, dataset use, target,
 return, PnL, training, GPU appointment, artifact, Paper, or live claim. The
 QQQ/SPY observer still has `0` forward records, but its collection is
 independent of ready Engine work.
+
+## Causal MTF Momentum Expert Adapter (2026-08-01)
+
+The direct `CausalMultiTimeframeSequenceWindow` input path is complete for the
+existing momentum experts. It revalidates caller-supplied selected bars through
+the sequence-window builder, compares reconstructed identity with the outer
+header, and supplies exactly the existing `lookback + 1` tail to each configured
+expert. It adds no generic envelope, feature schema, source wrapper, model
+family, or fallback resampling behavior.
+
+The fixed five-expert raw/session path and direct-window path produced exactly
+equal CPU evidence, then passed the existing causal-window-bound target policy.
+A QQQ header containing SPY H1/3h or fully SPY bars, plus future, incomplete,
+non-contiguous, and short windows, returns categorical empty evidence. The
+Claude CLI check timed out as `review_unavailable`; the temporary independent
+Review assignment instead confirmed the narrow API and forgery coverage. No
+dataset, target, return, PnL, training, GPU allocation, artifact, Paper, or
+live result follows. The 0-record QQQ/SPY forward observer remains a separate
+Data-owned schedule, not a foreground wait.
