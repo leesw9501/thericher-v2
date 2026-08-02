@@ -1650,3 +1650,30 @@ evaluation, KIS/network call, account, order, local-paper, PnL, or live action
 occurred. This closes only the proposed encoder-preflight path for this exact
 source/split; it does not prohibit a distinct eligible Engine campaign or the
 independent KIS Paper lifecycle work.
+
+## KIS Paper ID-less Canary Recovery (2026-08-02)
+
+The virtual-only canary can now recover one exact persisted
+`outcome_unknown` intent after a successful submit response omitted its order
+reference. A normal recovery binds an order reference only from the current
+in-process open-order record when the original response category is a known
+successful ID-less category and exactly one open order agrees on symbol,
+exchange, side, remaining quantity, and limit price. It persists that private
+reference, re-reads the same exact lifecycle, and only then uses the existing
+cancellation path. Zero, multiple, contradictory, pre-submit-conflict, and
+explicit read-only-recovery cases remain unknown and make no replacement or
+cancellation side effect.
+
+Raw order references stay in process memory and never enter safe runtime,
+evidence, logs, Git, or artifacts. The bounded limitation is that a later,
+unrelated order with the identical five attributes cannot be distinguished
+without a separately verified broker-side correlation capability; a future
+capability probe may assess that fact, but it does not block this narrow
+recovery. Claude reviewed the repair as `supported-with-limits`.
+
+Focused recovery coverage passed 84 tests. The full parallel and serial suites
+both passed `2035 passed, 14 skipped`; Ruff and both Compose configurations
+also passed. The existing `thericher-kis-paper-daily-spy-session` task was
+rebuilt and reinstalled for its next regular schedule without a manual run.
+The installer now resolves its default project root after parameter binding so
+a normal PowerShell `-File` invocation does not lose that path.

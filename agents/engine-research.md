@@ -928,3 +928,21 @@ source-local hypothesis, fresh source coverage, or independent Paper-engine
 work can proceed without consuming this closed family. No weights, GPU,
 sealed evaluation, KIS/network, account, order, local-paper, PnL, or live path
 was involved.
+
+## Current Engine Preparation (2026-08-02)
+
+No GPU-eligible predictive campaign exists now. The prior KIS causal-TCN
+runtime study, candle noise-floor, Norgate trio momentum, and limited intraday
+families are closed and cannot be retuned into a new selection pass. The active
+Platinum build needs Data-owned revision evidence before any source-local model
+contract is frozen.
+
+Strategy Discovery identified a from-scratch, causally engineered LightGBM D1
+baseline as the first comparative implementation candidate after a qualified
+source contract; it must retain `always_flat`, exposure-matched `always_long`,
+and a one-session availability-shift falsifier. PatchTST is comparable only
+when initialized and trained within the project's causal development scope;
+public pretrained Chronos weights remain isolated runtime/representation work
+because their pretraining coverage is not fully disclosed. The immediate Engine
+package is the independent target-free-plan integrity repair, not a premature
+window/template or GPU dispatch.

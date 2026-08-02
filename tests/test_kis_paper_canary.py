@@ -62,6 +62,7 @@ class FakeKisPaperCanaryTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
     fail_auth: bool = False
     fail_submit: bool = False
+    submit_response_missing_order_id: bool = False
     submit_status_code: int | None = None
     submit_result_code: str | None = None
     submit_message_code: str | None = None
@@ -71,6 +72,7 @@ class FakeKisPaperCanaryTransport:
     cancellation_seen: bool = False
     order_open: bool = False
     order_side: str = "buy"
+    open_order_rows: list[dict[str, str]] | None = None
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -100,9 +102,9 @@ class FakeKisPaperCanaryTransport:
                     payload["msg1"] = self.submit_message_text
                 return KisHttpResponse.from_payload(payload)
             self.order_open = True
-            self.order_side = (
-                "buy" if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID else "sell"
-            )
+            self.order_side = "buy" if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID else "sell"
+            if self.submit_response_missing_order_id:
+                return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
             self.cancellation_seen = True
@@ -116,6 +118,11 @@ class FakeKisPaperCanaryTransport:
                 )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
+            if self.open_order_rows is not None:
+                if request.query["OVRS_EXCG_CD"] == "NASD":
+                    return KisHttpResponse.from_payload(
+                        {"rt_cd": "0", "output": self.open_order_rows}
+                    )
             if self.order_open:
                 if request.query["OVRS_EXCG_CD"] == "NASD":
                     return KisHttpResponse.from_payload(
@@ -171,6 +178,7 @@ class StateInspectingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
         super().__init__()
         self._state_path = state_path
         self.submit_phases: list[str | None] = []
+        self.cancel_states: list[tuple[str | None, bool]] = []
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         if request.headers.get("tr_id") in {
@@ -179,6 +187,14 @@ class StateInspectingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
         }:
             state = KisPaperCanaryStateStore(self._state_path).read()
             self.submit_phases.append(None if state is None else state.phase)
+        if request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID:
+            state = KisPaperCanaryStateStore(self._state_path).read()
+            self.cancel_states.append(
+                (
+                    None if state is None else state.phase,
+                    state is not None and state.broker_order_id is not None,
+                )
+            )
         return super().request(request)
 
 
@@ -378,8 +394,7 @@ def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport()
         KisHttpRequest(
             method="POST",
             url=(
-                "https://openapivts.koreainvestment.com:29443"
-                f"{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
+                f"https://openapivts.koreainvestment.com:29443{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
             ),
             headers={
                 **_paper_post_headers(),
@@ -390,8 +405,7 @@ def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport()
         KisHttpRequest(
             method="POST",
             url=(
-                "https://openapivts.koreainvestment.com:29443"
-                f"{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
+                f"https://openapivts.koreainvestment.com:29443{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
             ),
             headers={
                 **_paper_post_headers(),
@@ -402,18 +416,14 @@ def test_injected_clients_reject_live_or_unallowlisted_routes_before_transport()
         KisHttpRequest(
             method="POST",
             url=(
-                "https://openapivts.koreainvestment.com:29443"
-                f"{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
+                f"https://openapivts.koreainvestment.com:29443{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}"
             ),
             headers=_paper_post_headers(),
             json_body={**_buy_limit_body(), "ORD_DVSN": "01"},
         ),
         KisHttpRequest(
             method="GET",
-            url=(
-                "https://openapivts.koreainvestment.com:29443"
-                f"{KIS_PAPER_US_CCNCL_PATH}"
-            ),
+            url=(f"https://openapivts.koreainvestment.com:29443{KIS_PAPER_US_CCNCL_PATH}"),
             headers={
                 "authorization": "Bearer test-token",
                 "appkey": "paper-app-key",
@@ -524,8 +534,7 @@ def test_submit_permission_denial_blocks_side_effect_at_submit_boundary(tmp_path
     assert _submission_count(transport) == 0
     assert _sell_submission_count(transport) == 0
     assert all(
-        request.headers.get("tr_id") != KIS_PAPER_US_CANCEL_TR_ID
-        for request in transport.requests
+        request.headers.get("tr_id") != KIS_PAPER_US_CANCEL_TR_ID for request in transport.requests
     )
 
 
@@ -781,6 +790,223 @@ def test_unknown_submission_recovery_never_uses_an_order_post_route(tmp_path: Pa
     assert all(
         request.headers.get("tr_id")
         not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_CANCEL_TR_ID}
+        for request in recovery_requests
+    )
+
+
+def test_idless_accepted_submission_binds_and_cancels_one_unique_open_order(
+    tmp_path: Path,
+) -> None:
+    run_id = "idless-accepted-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    transport = StateInspectingKisPaperCanaryTransport(state_path=state_path)
+    transport.submit_response_missing_order_id = True
+    paths = _paths(tmp_path)
+
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    assert KisPaperCanaryStateStore(state_path).read().broker_order_id is None
+    request_count_before_recovery = len(transport.requests)
+
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    recovered_state = KisPaperCanaryStateStore(state_path).read()
+    assert recovered.phase == "cancelled"
+    assert recovered_state.phase == "cancelled"
+    assert recovered_state.broker_order_id is not None
+    assert transport.cancel_states == [("cancel_started", True)]
+    assert _submission_count(transport) == 1
+    assert (
+        sum(
+            request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
+            for request in recovery_requests
+        )
+        == 1
+    )
+    assert all(
+        request.headers.get("tr_id")
+        not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID}
+        for request in recovery_requests
+    )
+    for safe_path in (recovered.evidence_path, recovered.runtime_path):
+        assert "ORD-123456789" not in safe_path.read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("open_order_case", ["zero", "multiple", "contradictory"])
+def test_idless_recovery_leaves_nonunique_or_nonmatching_open_orders_unknown(
+    tmp_path: Path,
+    open_order_case: str,
+) -> None:
+    run_id = f"idless-{open_order_case}-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    transport = FakeKisPaperCanaryTransport(submit_response_missing_order_id=True)
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    if open_order_case == "zero":
+        transport.open_order_rows = []
+    elif open_order_case == "multiple":
+        transport.open_order_rows = [
+            _matching_open_order_payload(),
+            {**_matching_open_order_payload(), "odno": "ORD-987654321"},
+        ]
+    else:
+        transport.open_order_rows = [{**_matching_open_order_payload(), "ft_ord_unpr3": "500.26"}]
+    request_count_before_recovery = len(transport.requests)
+
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    recovered_state = KisPaperCanaryStateStore(state_path).read()
+    assert recovered.phase == "outcome_unknown"
+    assert recovered_state.broker_order_id is None
+    assert recovered.reconciliation.status == "unresolved"
+    assert transport.cancellation_seen is False
+    assert _submission_count(transport) == 1
+    assert all(
+        request.headers.get("tr_id")
+        not in {
+            KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_CANCEL_TR_ID,
+        }
+        for request in recovery_requests
+    )
+
+
+def test_pre_submit_open_order_conflict_is_never_bound_or_cancelled_on_recovery(
+    tmp_path: Path,
+) -> None:
+    run_id = "pre-submit-open-order-conflict-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    transport = FakeKisPaperCanaryTransport(order_open=True)
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    assert first.reason_code == "matching_open_order"
+    assert _submission_count(transport) == 0
+    request_count_before_recovery = len(transport.requests)
+
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    recovered_state = KisPaperCanaryStateStore(state_path).read()
+    assert recovered.phase == "outcome_unknown"
+    assert recovered_state.broker_order_id is None
+    assert transport.cancellation_seen is False
+    assert _submission_count(transport) == 0
+    assert all(
+        request.headers.get("tr_id")
+        not in {
+            KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_CANCEL_TR_ID,
+        }
+        for request in recovery_requests
+    )
+
+
+def test_read_only_idless_recovery_never_binds_or_cancels_a_unique_open_order(
+    tmp_path: Path,
+) -> None:
+    run_id = "idless-read-only-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    transport = FakeKisPaperCanaryTransport(submit_response_missing_order_id=True)
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    assert first.phase == "outcome_unknown"
+    request_count_before_recovery = len(transport.requests)
+    recovered = reconcile_kis_paper_canary_unknown_run(
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    recovered_state = KisPaperCanaryStateStore(state_path).read()
+    assert recovered.phase == "outcome_unknown"
+    assert recovered_state.broker_order_id is None
+    assert transport.cancellation_seen is False
+    assert all(
+        request.method != "POST" or request.url.endswith("/oauth2/tokenP")
         for request in recovery_requests
     )
 
@@ -1108,9 +1334,7 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
             "success_output_missing",
         ),
         (
-            KisHttpResponse.from_payload(
-                {"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}}
-            ),
+            KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}}),
             "acknowledged_order_reference",
         ),
         (KisHttpResponse(status_code=503, headers={}, body=b"broker secret"), "http_non_200"),
@@ -1508,9 +1732,7 @@ def test_sell_canary_uses_only_the_virtual_sell_limit_route(tmp_path: Path) -> N
     )
     assert sell_request.json_body is not None
     assert sell_request.json_body["SLL_TYPE"] == "00"
-    state = KisPaperCanaryStateStore(
-        tmp_path / "private" / "sell-canary-1.json"
-    ).read()
+    state = KisPaperCanaryStateStore(tmp_path / "private" / "sell-canary-1.json").read()
     assert state is not None
     assert state.intent.side == "sell"
     lifecycle = read_paper_canary_lifecycle_fact(outcome.evidence_path)

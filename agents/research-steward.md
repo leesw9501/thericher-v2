@@ -175,3 +175,12 @@ CPU-only and closed `noise_not_separable` with external summary
 The GPU remains available for a different frozen campaign with a distinct,
 eligible source/contract. This closure does not authorize a retry, retune, or
 encoder comparison for the same source/split.
+
+## Current GPU Readiness (2026-08-02)
+
+The GPU is free, but there is no eligible appointment to fill it. The next
+candidate must wait only on its own source hash, causal availability rule,
+split/cost/baseline/kill-test contract, and CPU preflight; it does not wait on
+market time or the KIS Paper schedule. The active Norgate revision probe and
+Engine target-free-plan integrity repair are CPU/Data work and consume neither
+GPU custody nor sealed-evaluation budget.

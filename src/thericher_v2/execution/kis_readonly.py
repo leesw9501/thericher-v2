@@ -347,6 +347,7 @@ class UrllibKisHttpTransport:
         except (OSError, TimeoutError, urllib.error.URLError) as error:
             raise KisPaperReadOnlyError("transport_failure") from error
 
+
 @dataclass(frozen=True)
 class KisPaperAccountIdentity:
     masked_account: str
@@ -448,6 +449,14 @@ class KisPaperOpenOrder:
         object.__setattr__(self, "captured_at", require_utc(self.captured_at, "captured_at"))
 
 
+@dataclass(frozen=True, repr=False)
+class _KisPaperOpenOrderRecord:
+    """One parsed open order with its raw ID kept inside the client process only."""
+
+    raw_order_id: str
+    order: KisPaperOpenOrder
+
+
 @dataclass(frozen=True)
 class KisPaperOpenOrdersSnapshot:
     """Complete virtual-paper open-order evidence from the fixed read-only query."""
@@ -501,9 +510,7 @@ class KisPaperTerminalFieldObservation:
     """
 
     identity_match: Literal["exact_order", "original_order_lineage", "absent", "ambiguous"]
-    field_states: Mapping[
-        str, Literal["not_observed", "present", "missing_or_invalid"]
-    ]
+    field_states: Mapping[str, Literal["not_observed", "present", "missing_or_invalid"]]
     pagination_status: Literal["complete"] = "complete"
     terminal_state_support: Literal["unqualified"] = "unqualified"
     pnl_status: Literal["not_observed"] = "not_observed"
@@ -714,6 +721,7 @@ class KisPaperReadOnlyClient:
         self._config = config
         self._transport = transport
         self._access_token = access_token
+        self._latest_open_order_records: tuple[_KisPaperOpenOrderRecord, ...] | None = None
 
     def _dispatch(self, request: KisHttpRequest) -> KisHttpResponse:
         """Validate before every transport, including injected test transports."""
@@ -760,6 +768,34 @@ class KisPaperReadOnlyClient:
             row_count=history.row_count,
         )
 
+    def _find_unique_exact_open_order_id(
+        self,
+        *,
+        symbol: str,
+        exchange: str,
+        side: Literal["buy", "sell"],
+        quantity: Decimal,
+        limit_price: Decimal,
+    ) -> str | None:
+        """Return one raw ID only when an exact open-order match is unique."""
+
+        records = self._latest_open_order_records
+        if records is None:
+            access_token = self._access_token or self._issue_access_token()
+            records = self._open_order_records(access_token, datetime.now(UTC))
+        matches = [
+            record.raw_order_id
+            for record in records
+            if (
+                record.order.symbol == symbol
+                and record.order.exchange == exchange
+                and record.order.side == side
+                and record.order.remaining_quantity == quantity
+                and record.order.limit_price == limit_price
+            )
+        ]
+        return matches[0] if len(matches) == 1 else None
+
     def inspect_order_history_terminal_fields(
         self,
         raw_order_id: str,
@@ -782,9 +818,8 @@ class KisPaperReadOnlyClient:
         )
         matches: tuple[
             tuple[Literal["exact_order", "original_order_lineage"], Mapping[str, Any]], ...
-        ] = (
-            tuple(("exact_order", row) for row in direct_matches)
-            + tuple(("original_order_lineage", row) for row in lineage_matches)
+        ] = tuple(("exact_order", row) for row in direct_matches) + tuple(
+            ("original_order_lineage", row) for row in lineage_matches
         )
         if not matches:
             return KisPaperTerminalFieldObservation(
@@ -1013,7 +1048,21 @@ class KisPaperReadOnlyClient:
         access_token: str,
         captured_at: datetime,
     ) -> KisPaperOpenOrdersSnapshot:
-        orders: list[KisPaperOpenOrder] = []
+        records = self._open_order_records(access_token, captured_at)
+        self._latest_open_order_records = records
+        return KisPaperOpenOrdersSnapshot(
+            orders=tuple(
+                sorted((record.order for record in records), key=lambda item: item.order_reference)
+            ),
+            captured_at=captured_at,
+        )
+
+    def _open_order_records(
+        self,
+        access_token: str,
+        captured_at: datetime,
+    ) -> tuple[_KisPaperOpenOrderRecord, ...]:
+        records: list[_KisPaperOpenOrderRecord] = []
         for exchange in KIS_PAPER_OPEN_ORDER_QUERY_EXCHANGES:
             query = {
                 "CANO": self._config.account_number,
@@ -1036,7 +1085,7 @@ class KisPaperReadOnlyClient:
                     "open_orders_rejected",
                     endpoint=KIS_PAPER_OPEN_ORDERS_ENDPOINT,
                 )
-                orders.extend(_parse_open_orders(payload, captured_at))
+                records.extend(_parse_open_order_records(payload, captured_at))
                 continuation = response.header("tr_cont").strip().upper()
                 if continuation not in {"M", "F"}:
                     break
@@ -1054,11 +1103,8 @@ class KisPaperReadOnlyClient:
                 continuation_header = "N"
             else:
                 raise KisPaperReadOnlyError("open_orders_pagination_incomplete")
-        _ensure_unique_open_orders(orders)
-        return KisPaperOpenOrdersSnapshot(
-            orders=tuple(sorted(orders, key=lambda item: item.order_reference)),
-            captured_at=captured_at,
-        )
+        _ensure_unique_open_orders([record.order for record in records])
+        return tuple(sorted(records, key=lambda item: item.order.order_reference))
 
     def _read_only_get(
         self,
@@ -1508,8 +1554,7 @@ def validate_kis_paper_readonly_diagnostic(diagnostic: Mapping[str, str]) -> Non
     if not status.isdecimal() or not 100 <= int(status) <= 599:
         raise ValueError("read-only diagnostic status must be an HTTP status")
     if "upstream_code" in diagnostic and (
-        safe_kis_paper_upstream_code(diagnostic["upstream_code"])
-        != diagnostic["upstream_code"]
+        safe_kis_paper_upstream_code(diagnostic["upstream_code"]) != diagnostic["upstream_code"]
     ):
         raise ValueError("read-only diagnostic upstream code is not allowlisted")
 
@@ -1578,6 +1623,13 @@ def _parse_open_orders(
     payload: Mapping[str, Any],
     captured_at: datetime,
 ) -> list[KisPaperOpenOrder]:
+    return [record.order for record in _parse_open_order_records(payload, captured_at)]
+
+
+def _parse_open_order_records(
+    payload: Mapping[str, Any],
+    captured_at: datetime,
+) -> list[_KisPaperOpenOrderRecord]:
     raw_rows = payload.get("output")
     if isinstance(raw_rows, Mapping):
         rows = [raw_rows] if raw_rows else []
@@ -1585,45 +1637,43 @@ def _parse_open_orders(
         rows = raw_rows
     else:
         raise KisPaperReadOnlyError("open_orders_response_incomplete")
-    orders: list[KisPaperOpenOrder] = []
+    records: list[_KisPaperOpenOrderRecord] = []
     for row in rows:
         if not isinstance(row, Mapping):
             raise KisPaperReadOnlyError("open_orders_response_incomplete")
         exchange = _response_text(row, "ovrs_excg_cd", "open_orders_response_incomplete").upper()
         if exchange not in KIS_PAPER_US_EXCHANGES:
             raise KisPaperReadOnlyError("open_orders_response_incomplete")
-        requested_quantity = _response_decimal(
-            row, "ft_ord_qty", "open_orders_response_incomplete"
-        )
-        filled_quantity = _response_decimal(
-            row, "ft_ccld_qty", "open_orders_response_incomplete"
-        )
-        remaining_quantity = _response_decimal(
-            row, "nccs_qty", "open_orders_response_incomplete"
-        )
+        requested_quantity = _response_decimal(row, "ft_ord_qty", "open_orders_response_incomplete")
+        filled_quantity = _response_decimal(row, "ft_ccld_qty", "open_orders_response_incomplete")
+        remaining_quantity = _response_decimal(row, "nccs_qty", "open_orders_response_incomplete")
         if (
             requested_quantity <= 0
             or remaining_quantity <= 0
             or filled_quantity + remaining_quantity != requested_quantity
         ):
             raise KisPaperReadOnlyError("open_orders_response_incomplete")
-        orders.append(
-            KisPaperOpenOrder(
-                order_reference=_redacted_order_reference(
-                    _response_text(row, "odno", "open_orders_response_incomplete")
+        raw_order_id = _response_text(row, "odno", "open_orders_response_incomplete")
+        if _RAW_KIS_PAPER_ORDER_ID.fullmatch(raw_order_id) is None:
+            raise KisPaperReadOnlyError("open_orders_response_incomplete")
+        records.append(
+            _KisPaperOpenOrderRecord(
+                raw_order_id=raw_order_id,
+                order=KisPaperOpenOrder(
+                    order_reference=_redacted_order_reference(raw_order_id),
+                    symbol=_response_text(row, "pdno", "open_orders_response_incomplete"),
+                    exchange=exchange,
+                    currency=_response_text(row, "tr_crcy_cd", "open_orders_response_incomplete"),
+                    side=_open_order_side(row),
+                    requested_quantity=requested_quantity,
+                    filled_quantity=filled_quantity,
+                    remaining_quantity=remaining_quantity,
+                    limit_price=_optional_order_price(row),
+                    captured_at=captured_at,
                 ),
-                symbol=_response_text(row, "pdno", "open_orders_response_incomplete"),
-                exchange=exchange,
-                currency=_response_text(row, "tr_crcy_cd", "open_orders_response_incomplete"),
-                side=_open_order_side(row),
-                requested_quantity=requested_quantity,
-                filled_quantity=filled_quantity,
-                remaining_quantity=remaining_quantity,
-                limit_price=_optional_order_price(row),
-                captured_at=captured_at,
             )
         )
-    return orders
+    return records
 
 
 def _ensure_unique_open_orders(orders: list[KisPaperOpenOrder]) -> None:

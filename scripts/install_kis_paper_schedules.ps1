@@ -1,12 +1,16 @@
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "Medium")]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [string]$ProjectRoot = "",
     [string[]]$ScheduleName = @(),
     [switch]$RequireExisting,
     [switch]$SkipImageBuild
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($ProjectRoot)) {
+    $ProjectRoot = Join-Path $PSScriptRoot ".."
+}
 
 function New-LocalDockerTaskDescription {
     param(

@@ -950,3 +950,23 @@ current-vintage, aggregate-only relationship fact; it does not qualify PIT,
 corporate actions, availability, source interchangeability, ranking, model,
 or Paper use. A later Data package needs a distinct event-bearing or
 source-vintage hypothesis, not a replay of this empty event stratum.
+
+## Active Norgate Platinum Build Intake (2026-08-02)
+
+The active local Platinum build is under
+`D:\market_data\us_equities\norgate_us_platinum_trial`. Its core database is
+the Norgate-specific `SAFS 31` format with related price, dilution, and
+capital-event stores; it is not SQLite. The supported reader is the
+Windows-host `norgatedata==1.0.77` extra, not a Docker or base research
+runtime. A bounded inspection established a static 523-symbol D1 development
+panel with 483 common sessions from 2024-07-18 through 2026-06-22, while the
+subsequent common SPY/QQQ/IWM tail has only 28 sessions.
+
+The next ready Data package is `norgate-active-build-revision-probe-v1`:
+compare the active build with the immutable fixed-trio development period and
+record only source-safe agreement or divergence evidence. One bar-level
+divergence is the kill test for treating the old static materialization as
+stable under the current build. PIT availability, historical revision policy,
+entity identity, and adjustment/corporate-action semantics remain declared
+limitations rather than established facts. This is not a ranking, model, GPU,
+Paper, or provider update task.

@@ -405,3 +405,19 @@ required event evidence is absent.
 - **Improvement:** a cheap fixed-label null and seed-spread check now rejects
   an underpowered encoder expansion before consuming GPU time, without adding
   a general model gate or an operator decision.
+
+## Current Dispatch (2026-08-02)
+
+- **Ready:** the ID-less virtual canary recovery is verified and its existing
+  daily SPY task is reinstalled without a manual invocation. Data next owns an
+  active-Norgate-build revision probe; Engine next owns the independent
+  target-free-plan integrity repair. Neither depends on market time.
+- **Owned:** Execution owns the exact virtual recovery and future correlation
+  probe. Data owns host-only Norgate access and source revision evidence.
+  Engine owns research-boundary hardening. Research Steward has no eligible
+  GPU appointment until a hash-pinned source-local campaign exists.
+- **Due:** the Paper task next runs on its normal regular-session schedule;
+  it does not hold the foreground. All other named packages are ready now.
+- **Improvement:** use the test-locked interval for Data, Engine, and public
+  source preparation rather than foreground waiting; keep raw broker IDs and
+  raw market data outside shared state and Git.

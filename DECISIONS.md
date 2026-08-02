@@ -8423,3 +8423,26 @@ time while the simpler target association remains indistinguishable from its
 own noise control. This is a scoped research conclusion, not a model failure,
 data prohibition, GPU-idle rule, Paper gate, or operator-approval boundary.
 Independent eligible Engine, Data, and KIS Paper work continues.
+
+## 2026-08-02 - Recover a successful ID-less KIS virtual canary conservatively
+
+Decision: a normal virtual-Paper canary recovery may bind a missing private
+broker order reference only for a persisted `outcome_unknown` intent whose
+submit response was categorically successful but omitted that reference. The
+current virtual open-order snapshot must yield exactly one match on the
+persisted symbol, exchange, side, remaining quantity, and limit price. The
+private reference is persisted before the existing cancellation route is
+eligible, then the same intent is reconciled again. The explicit unknown-run
+reconciler stays read-only.
+
+Zero, multiple, contradictory, or pre-submit-conflict matches remain scoped
+unknown; they cannot create a replacement order, cancel a lookalike, become a
+future-session permission state, or affect live routing. Raw references remain
+inside the process and are excluded from safe projections and evidence.
+
+Reason: this repairs the only deterministic recovery path available after a
+successful response lost its order reference while preserving virtual-host
+pinning and intent identity. A later unrelated exact lookalike remains a known
+identity limitation pending a separate documented broker-correlation probe.
+Claude's falsification review was `supported-with-limits`; tests prove
+persist-before-cancel, no resubmit, and read-only isolation.

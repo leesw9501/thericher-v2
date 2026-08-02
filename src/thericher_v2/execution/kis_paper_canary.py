@@ -14,7 +14,7 @@ import urllib.parse
 import urllib.request
 from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -165,9 +165,7 @@ _STATE_PHASES = frozenset(
         "cancelled",
     }
 )
-_READ_ONLY_RECOVERY_PHASES = frozenset(
-    {"submission_started", "outcome_unknown", "cancel_started"}
-)
+_READ_ONLY_RECOVERY_PHASES = frozenset({"submission_started", "outcome_unknown", "cancel_started"})
 _SAFE_SUBMIT_RESPONSE_CATEGORIES = frozenset(
     {
         "acknowledged_order_reference",
@@ -180,6 +178,9 @@ _SAFE_SUBMIT_RESPONSE_CATEGORIES = frozenset(
         "success_output_missing",
         "transport_unavailable",
     }
+)
+_IDLESS_RECOVERABLE_SUBMIT_CATEGORIES = frozenset(
+    {"success_order_reference_missing", "success_output_missing"}
 )
 _SAFE_REASON_CODES = frozenset(
     {
@@ -351,16 +352,20 @@ class KisPaperCanaryIntent:
         object.__setattr__(self, "valid_until", require_utc(self.valid_until, "valid_until"))
         if self.valid_until <= self.created_at:
             raise ValueError("canary validity is invalid")
-        if self.price_contract_ref is not None and _SHA256_REFERENCE.fullmatch(
-            self.price_contract_ref
-        ) is None:
+        if (
+            self.price_contract_ref is not None
+            and _SHA256_REFERENCE.fullmatch(self.price_contract_ref) is None
+        ):
             raise ValueError("canary price contract reference is invalid")
 
     @property
     def fingerprint(self) -> str:
-        return "sha256:" + hashlib.sha256(
-            json.dumps(self.to_dict(), sort_keys=True, separators=(",", ":")).encode("utf-8")
-        ).hexdigest()
+        return (
+            "sha256:"
+            + hashlib.sha256(
+                json.dumps(self.to_dict(), sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+        )
 
     def to_dict(self) -> dict[str, str]:
         payload = {
@@ -448,8 +453,7 @@ class KisPaperCanaryState:
             raise ValueError("canary cancellation policy is invalid")
         if (
             self.submit_upstream_code is not None
-            and safe_kis_paper_upstream_code(self.submit_upstream_code)
-            != self.submit_upstream_code
+            and safe_kis_paper_upstream_code(self.submit_upstream_code) != self.submit_upstream_code
         ):
             raise ValueError("canary submit upstream code is invalid")
         if (
@@ -469,9 +473,7 @@ class KisPaperCanaryState:
             "updated_at": self.updated_at.isoformat(),
             "reason_code": self.reason_code,
             "broker_order_id": self.broker_order_id,
-            "submitted_at": (
-                None if self.submitted_at is None else self.submitted_at.isoformat()
-            ),
+            "submitted_at": (None if self.submitted_at is None else self.submitted_at.isoformat()),
             "cancel_after_submit": self.cancel_after_submit,
             "submit_upstream_code": self.submit_upstream_code,
             "submit_response_category": self.submit_response_category,
@@ -495,10 +497,7 @@ class KisPaperCanaryState:
             "submit_upstream_code",
             "submit_response_category",
         }
-        if (
-            not isinstance(payload, Mapping)
-            or not expected <= set(payload) <= expected | optional
-        ):
+        if not isinstance(payload, Mapping) or not expected <= set(payload) <= expected | optional:
             raise KisPaperCanaryError("state_invalid")
         if (
             payload["schema_version"] != SCHEMA_VERSION
@@ -519,11 +518,7 @@ class KisPaperCanaryState:
                 limit_price=_positive_decimal(raw_intent.get("limit_price")),
                 created_at=_utc_datetime(raw_intent.get("created_at")),
                 valid_until=_utc_datetime(raw_intent.get("valid_until")),
-                side=(
-                    "buy"
-                    if "side" not in raw_intent
-                    else _required_text(raw_intent["side"])
-                ),
+                side=("buy" if "side" not in raw_intent else _required_text(raw_intent["side"])),
                 price_contract_ref=(
                     None
                     if "price_contract_ref" not in raw_intent
@@ -579,6 +574,7 @@ class KisPaperCanaryReconciliation:
     matching_ccnl: bool
     status: Literal["clean", "unresolved"]
     reason_code: str | None = None
+    recovered_broker_order_id: str | None = field(default=None, repr=False)
 
     @property
     def position_count(self) -> int:
@@ -680,13 +676,9 @@ class KisPaperCanaryStateStore:
                 updated_at=now,
                 reason_code=reason_code,
                 broker_order_id=(
-                    current.broker_order_id
-                    if broker_order_id is None
-                    else broker_order_id
+                    current.broker_order_id if broker_order_id is None else broker_order_id
                 ),
-                submitted_at=(
-                    current.submitted_at if submitted_at is None else submitted_at
-                ),
+                submitted_at=(current.submitted_at if submitted_at is None else submitted_at),
                 cancel_after_submit=current.cancel_after_submit,
                 submit_upstream_code=(
                     current.submit_upstream_code
@@ -771,6 +763,17 @@ class KisPaperCanaryClient:
                     as_of=now,
                 )
             )
+            recovered_broker_order_id = (
+                None
+                if state.phase != "outcome_unknown" or state.broker_order_id is not None
+                else read_only_client._find_unique_exact_open_order_id(
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
+                    limit_price=state.intent.limit_price,
+                )
+            )
         except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
             return _unavailable_reconciliation(reason_code=_safe_reconciliation_reason_code(error))
         order_reference = (
@@ -781,8 +784,7 @@ class KisPaperCanaryClient:
         matching_open = bool(
             order_reference
             and any(
-                order.order_reference == order_reference
-                for order in snapshot.open_orders.orders
+                order.order_reference == order_reference for order in snapshot.open_orders.orders
             )
         )
         matching_ccnl = bool(same_day_order and same_day_order.same_day_order_id_seen)
@@ -801,6 +803,7 @@ class KisPaperCanaryClient:
             matching_open_order=matching_open,
             matching_ccnl=matching_ccnl,
             status=status,
+            recovered_broker_order_id=recovered_broker_order_id,
         )
 
     def fetch_spy_quote(self) -> KisPaperSpyQuote:
@@ -1199,6 +1202,7 @@ def _run_kis_paper_canary(
             transport=transport,
             client=client,
             observed_at=observed_at,
+            allow_order_side_effects=False,
         )
     elif not execute:
         # Preview persists the intent but never reads credentials or calls KIS.
@@ -1211,6 +1215,7 @@ def _run_kis_paper_canary(
             transport=transport,
             client=client,
             observed_at=observed_at,
+            allow_order_side_effects=True,
         )
     elif observed_at >= intent.valid_until:
         state = state_store.transition(
@@ -1228,11 +1233,7 @@ def _run_kis_paper_canary(
             reason_code="emergency_stop_new_orders",
             now=observed_at,
         )
-    elif (
-        execution_control.pause_buys
-        if intent.side == "buy"
-        else execution_control.pause_sells
-    ):
+    elif execution_control.pause_buys if intent.side == "buy" else execution_control.pause_sells:
         state = state_store.transition(
             intent,
             expected=frozenset({"intent_recorded"}),
@@ -1655,6 +1656,7 @@ def _recover_existing_canary(
     transport: KisHttpTransport | None,
     client: KisPaperCanaryClient | None,
     observed_at: datetime,
+    allow_order_side_effects: bool,
 ) -> tuple[KisPaperCanaryState, KisPaperCanaryReconciliation]:
     try:
         if client is None:
@@ -1663,12 +1665,30 @@ def _recover_existing_canary(
                 transport=transport or UrllibKisPaperCanaryTransport(),
             )
         reconciliation = client.reconcile(state, now=observed_at)
+        if (
+            allow_order_side_effects
+            and state.phase == "outcome_unknown"
+            and state.broker_order_id is None
+            and state.submit_response_category in _IDLESS_RECOVERABLE_SUBMIT_CATEGORIES
+            and reconciliation.recovered_broker_order_id is not None
+        ):
+            state = state_store.transition(
+                state.intent,
+                expected=frozenset({"outcome_unknown"}),
+                phase="submitted",
+                reason_code="reconciliation_clean",
+                now=observed_at,
+                broker_order_id=reconciliation.recovered_broker_order_id,
+                submitted_at=observed_at,
+            )
+            reconciliation = client.reconcile(state, now=observed_at)
     except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
         return state, _unavailable_reconciliation(
             reason_code=_safe_reconciliation_reason_code(error)
         )
     if (
-        state.phase == "submitted"
+        allow_order_side_effects
+        and state.phase == "submitted"
         and state.cancel_after_submit
         and state.broker_order_id is not None
         and reconciliation.matching_open_order
@@ -1975,9 +1995,9 @@ def _write_evidence(
     prior_evidence_sha256: str | None = None
     if prior_recovery_state is not None:
         if primary_destination.is_file():
-            prior_evidence_sha256 = "sha256:" + hashlib.sha256(
-                primary_destination.read_bytes()
-            ).hexdigest()
+            prior_evidence_sha256 = (
+                "sha256:" + hashlib.sha256(primary_destination.read_bytes()).hexdigest()
+            )
         identity = "|".join(
             (
                 prior_recovery_state.intent.fingerprint,

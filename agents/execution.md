@@ -471,3 +471,21 @@ loader has a legacy transitive import of Execution types, so this is behavioral
 isolation rather than an import-purity claim. Removing that historical coupling
 is a separate simplification candidate, not a reason to alter this runner or
 block its Data-owned fresh-session invocation.
+
+## ID-less Virtual Canary Recovery (2026-08-02)
+
+The normal virtual-only canary recovery now has one narrow ID-less path:
+`outcome_unknown` plus a categorically successful missing-reference response
+may bind exactly one current open order with identical symbol, exchange, side,
+remaining quantity, and limit price. The private reference is persisted before
+the existing cancellation route and the same intent is reconciled again.
+Explicit read-only recovery, zero/multiple/contradictory matches, and a
+pre-submit existing order remain `outcome_unknown` without a cancellation or
+replacement submit. The reference remains process-private and is absent from
+runtime/evidence projections.
+
+The existing `thericher-kis-paper-daily-spy-session` task was rebuilt and
+reinstalled for its normal 23:50 KST schedule without a manual run. A future
+broker-correlation capability probe may assess whether a late identical
+lookalike can be distinguished; it is not a global execution hold. KIS Live
+remains unavailable.
