@@ -1087,8 +1087,8 @@ source claim. The panel remains `current_listing_only`, non-PIT, `MODP=0` /
 unadjusted, and corporate-action/session-finality unqualified. Its local
 screen result cannot qualify the panel for ranking, Paper, or promotion.
 
-The next ready Data package remains the Norgate membership-aware source
-contract: it must establish only the exact current-membership/availability
+At that boundary, the next ready Data package was the Norgate membership-aware
+source contract. It established only exact current-membership/availability
 facts a later consumer can tolerate, without treating this HMM result as a
 collection gate or a reason to reopen its consumed slice.
 
@@ -1100,5 +1100,22 @@ source-safe precommit. It made no provider call or cache mutation. The
 consumer is `persistence_falsified`; this preserves, rather than repairs, the
 panel's current-listing, non-PIT, unadjusted, corporate-action, and session
 limitations. Do not reopen the HMM's original screen or collect data in
-response to this result. The Norgate membership-aware contract remains the
-next ready independent Data package.
+response to this result. The Norgate membership-aware contract subsequently
+completed as the separate reattestation recorded below.
+
+## Norgate Membership Reattestation (2026-08-02)
+
+The independent `norgate-membership-source-reattest-v1` package is complete.
+It reverified the existing external Current & Past snapshot twice and obtained
+the same source identity
+`sha256:6a574eb30a1f00e57c126fc8a6ca21e71455911c2f97fdaf4a0c6d074a644d2d`.
+Its external aggregate-only receipt is
+`sha256:a61a45322b089e94f7cbbf1fe86aac76d20dbdc799e38d4cfa079c63cd9bc95f`.
+No source refresh, provider import, network call, credential access, cache
+mutation, raw-row/symbol persistence, or model consumer occurred.
+
+The 541-candidate, 266,647-row sparse range remains a source fact only. Its
+direct-historical-universe, publication-time, PIT, campaign, model, ranking,
+and sealed-holdout flags are all explicitly false and rechecked before receipt
+publication. Do not use this result to admit a scored campaign, or repair its
+survivorship, corporate-action, adjustment, or availability limitations.

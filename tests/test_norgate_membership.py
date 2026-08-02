@@ -245,6 +245,23 @@ def test_rejects_low_disk_or_existing_destination_and_detects_tampering(tmp_path
         )
 
 
+@pytest.mark.parametrize("scope_key", ("ranking_eligible", "sealed_holdout_eligible"))
+def test_rejects_a_snapshot_that_claims_additional_eligibility(
+    tmp_path: Path, scope_key: str
+) -> None:
+    root = _market_root(tmp_path)
+    result = _build(_destination(root), _client(), root)
+    manifest_path = result.snapshot_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["scope"][scope_key] = True
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="scope must stay ineligible"):
+        verify_norgate_sp500_membership_snapshot(
+            result.snapshot_dir, market_data_root=root, repo_root=tmp_path / "repo"
+        )
+
+
 def _build(
     destination: Path,
     client: _FakeNorgate | None,

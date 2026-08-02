@@ -664,3 +664,21 @@ same-session causal misreading without adding a new gate.
   input make the later-tail result a bounded persistence falsifier rather than
   a hidden reuse of the prior screen. The falsification prevents GPU churn and
   leaves a different ready lane dispatchable immediately.
+
+## Source And Window Contract Preparation Completion (2026-08-02)
+
+- **Ready:** Data's Norgate reattestation and Engine's MTF catalog are
+  complete. The next immediate package is a target-free actual-cache MTF input
+  preflight over the verified QQQ/SPY 21-session KIS-shaped cache; it does not
+  wait for a market session, collector, GPU, Paper result, or operator decision.
+- **Owned:** Data owns read-only cache and resampling provenance; Engine owns
+  the catalog and projection contract; temporary Validation owns its mutation
+  and constituent-containment evidence; Research Steward keeps GPU unappointed;
+  Execution has no consequence.
+- **Due:** none in the foreground. Existing prospective collection and Paper
+  schedules remain owned external work and cannot delay this local preflight.
+- **Improvement:** catalog registration is separated from any future campaign
+  selection, whose custody belongs in the actual campaign contract rather than
+  this target-free leaf. Claude also requires constituent-minute containment
+  for slow resampled bars, which the next package will test rather than
+  inferring causality from bar timestamps.

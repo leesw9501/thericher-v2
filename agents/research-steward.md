@@ -236,3 +236,13 @@ the original CPU preflight nor this continuation is eligible for depth training,
 CUDA, an ensemble, or a sealed-evaluation allocation. GPU remains free for a
 different frozen family; do not consume it by attempting to repair the closed
 HMM configuration.
+
+## Causal MTF Catalog Custody (2026-08-02)
+
+The causal MTF profile catalog is structural preparation only, not a campaign
+family or GPU request. Its external catalog registration contains no selected
+profile, data, label, target, model, or evaluation spend. Research Steward
+records no appointment from this result. A later campaign may request ordinary
+custody only after its one immutable profile-selection precommit and its full
+dataset, target, split, cost, baseline, kill-test, and compute-stop contract
+exist.

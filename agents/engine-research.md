@@ -1202,3 +1202,20 @@ persistence check, not independent replication. This failure closes the HMM
 family without a PnL, architecture, model-selection, ensemble, GPU, Paper, or
 live consequence. Do not repair it with a new initialization, threshold,
 window, source slice, or cost band.
+
+## Causal MTF Window Profile Catalog (2026-08-02)
+
+`causal-mtf-window-profile-feasibility-v1` froze six named causal lookback
+vectors over the existing `1m/5m/10m/1h/3h` structural contract. The catalog
+identity is `sha256:ba7d1aeffdadad340d87667c7bfc4b16b1d2ce25632f330b597a0e2437e499e0`;
+its catalog-only external registration receipt is
+`sha256:891b8fb3b29571be9de68c1df9d6b14f133eb3417277320c4557dbae5899fc19`.
+All six passed deterministic synthetic completed-bar feasibility, while future,
+incomplete, duplicate, non-contiguous, and stale slow-timeframe input stays a
+categorical failure.
+
+This is not a profile selection or a predictive campaign. No source/cache,
+label, return, target, model, GPU, Paper, broker, PnL, or live path was opened.
+A future frozen campaign must define one-profile selection custody in its own
+contract before data or evaluation. That selection mechanism is intentionally
+not prebuilt by this target-free catalog leaf.

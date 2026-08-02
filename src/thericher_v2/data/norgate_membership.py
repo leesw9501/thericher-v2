@@ -315,6 +315,8 @@ def _verify_snapshot(
             "pit_eligible",
             "campaign_eligible",
             "model_eligible",
+            "ranking_eligible",
+            "sealed_holdout_eligible",
         )
     ):
         raise ValueError("Norgate membership scope must stay ineligible")

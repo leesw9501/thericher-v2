@@ -2040,3 +2040,34 @@ and summary `sha256:f226557a1cb5a1881550eba417525bc117b6e9615939bcf776bddf9d0243
 Claude's design verdict was `uncertain`: this was honestly a frozen-fit
 persistence check, not independent replication, and its falsification closes
 only that family.
+
+## Source And Window Contract Preparation (2026-08-02)
+
+`source-and-window-contract-preparation-v1` completed two independent,
+non-promoting packages. Data reattested the existing external Norgate Current
+& Past membership snapshot twice with the same source identity and wrote only a
+source-safe receipt under `D:\thericher-v2\model-artifacts`. Its receipt is
+`sha256:a61a45322b089e94f7cbbf1fe86aac76d20dbdc799e38d4cfa079c63cd9bc95f`;
+the unchanged source identity is
+`sha256:6a574eb30a1f00e57c126fc8a6ca21e71455911c2f97fdaf4a0c6d074a644d2d`.
+It records only aggregate 541-candidate / 266,647-row scope and the sparse
+2024-07-18 through 2026-07-17 range, never a source row, symbol, path, or
+credential. All direct-historical-universe, publication-time, PIT, campaign,
+model, ranking, and sealed-holdout flags remain false.
+
+Engine Research froze the six-cell causal `1m/5m/10m/1h/3h` catalog at
+`sha256:ba7d1aeffdadad340d87667c7bfc4b16b1d2ce25632f330b597a0e2437e499e0`
+and registered the catalog-only receipt
+`sha256:891b8fb3b29571be9de68c1df9d6b14f133eb3417277320c4557dbae5899fc19`.
+All six profiles pass the synthetic completed-bar feasibility smoke. The
+registration selects neither a profile nor a campaign. A future campaign must
+define its own one-profile selection custody in its frozen contract before
+opening data or evaluation; no selection mechanism is created by this catalog
+leaf. No dataset, target, label, return, GPU, Paper, broker, PnL, or live path
+was used.
+
+Claude's post-implementation verdict was `supported-with-limits`: the Norgate
+snapshot remains current-and-past survivorship/backfill evidence, not as-of
+universe truth, and the catalog's multiplicity must remain bounded by the
+per-campaign immutable selection record. Neither limitation is an approval hold
+on unrelated work.

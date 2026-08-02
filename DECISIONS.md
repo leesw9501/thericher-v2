@@ -8751,3 +8751,22 @@ per-symbol primary guard failed. Claude called the design `uncertain` unless
 described as a persistence check rather than independent replication; the
 falsification confirms no stronger interpretation is available. Do not retune,
 retrain, ensemble, allocate GPU, or form a Paper input from this family.
+
+## 2026-08-02 - Preserve Norgate ineligibility and freeze causal MTF windows
+
+Decision: reattest the existing Norgate Current & Past membership snapshot
+read-only and preserve every declared direct-historical-universe,
+publication-time, PIT, campaign, model, ranking, and sealed-holdout flag as
+false. The reattestation is source-safe aggregate evidence only; it cannot
+qualify a universe, source, model, ranking, holdout, or Paper input.
+
+Decision: freeze the six explicit causal `1m/5m/10m/1h/3h` window profiles as
+one outcome-free catalog. Register the catalog without selecting a cell. A
+future campaign must introduce its own one-profile selection custody in that
+campaign's frozen contract before it opens data or evaluation; this catalog leaf
+does not create a speculative selection mechanism.
+
+Reason: Claude's `supported-with-limits` review identifies current-and-past
+survivorship/backfill and enumerated-window multiplicity as the remaining
+risks. These controls preserve their limits without creating a scheduler,
+research queue, model, GPU appointment, or paper-trading gate.

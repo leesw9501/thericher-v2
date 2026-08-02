@@ -8,106 +8,100 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `source-and-window-contract-preparation-v1`.
+Build `kis-mtf-profiled-feature-input-preflight-v1`.
 
-Advance two independent, non-promoting inputs for later model research in
-parallel:
-
-1. a read-only reattestation of the existing external Norgate S&P 500 Current
-   & Past membership snapshot; and
-2. a hash-sealed, target-free causal `1m/5m/10m/1h/3h` window-profile catalog
-   that a later frozen campaign can select from exactly once before opening its
-   target or evaluation slice.
-
-This is one preparation objective, not a Norgate qualification, predictive
-campaign, window search, model selection, or execution change.
+Prove that the six frozen causal `1m/5m/10m/1h/3h` window profiles can form
+target-free, completed-bar feature inputs from the already verified local
+QQQ/SPY 21-session KIS-shaped cache. This establishes only a real input
+boundary for a later frozen model campaign; it is not a model, profile
+selection, return study, ranking, PnL claim, Paper action, or source
+qualification.
 
 ## Boundaries
 
-- Do not call a provider, KIS, Norgate, Tiingo, or a broker. Do not read
+- Do not call KIS, Norgate, Tiingo, a provider, or a broker. Do not read
   `.env`, credentials, account data, or `KIS_LIVE_*`.
-- Do not modify, rebuild, refresh, re-pull, or copy the Norgate snapshot. Read
-  only the known external snapshot at
-  `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
-- Do not print or persist raw membership rows, candidate symbols, OHLCV,
-  prices, labels, returns, targets, predictions, fitted parameters, or local
-  paths in generated receipts. Source-safe derived receipts belong only under
-  `D:\thericher-v2\model-artifacts`.
-- Preserve every membership manifest ineligibility: no PIT, publication-time,
-  historical-universe, delisting, adjustment, corporate-action, model,
-  ranking, campaign, sealed-holdout, or Paper eligibility follows from this
-  work.
-- The MTF catalog may use only deterministic synthetic `Bar` fixtures and the
-  existing pure sequence-window contract. It must not read a local cache,
-  dataset, target, return, prior result, model artifact, or GPU.
-- Do not create a scheduler, queue, generic experiment framework, model,
-  ensemble, PnL claim, Paper/local-paper action, or live behavior.
-- Keep the D: storage policy intact. Current free space is an observed
-  `40.42%`; stop only the package that would cross the documented floor.
+- Read only the existing verified local QQQ/SPY 21-session cache and its named
+  availability/lineage contracts. Do not mutate, refresh, copy, extend, or
+  write market data under `D:\market_data`.
+- Use only the frozen catalog
+  `sha256:ba7d1aeffdadad340d87667c7bfc4b16b1d2ce25632f330b597a0e2437e499e0`.
+  Iterate all six profiles for structural coverage, but do not select a profile
+  or create a `campaign_id` precommit.
+- Do not open or construct any target, label, return, cost, score, prediction,
+  model weight, GPU job, Paper/local-paper event, broker intent, PnL, or live
+  path.
+- Generated source-safe evidence belongs only under
+  `D:\thericher-v2\model-artifacts`. It may retain hashes, aggregate coverage,
+  schema/profile identifiers, categorical statuses, and structural timestamps;
+  it must not retain bars, prices, OHLCV, symbols, dates, cache paths, feature
+  values, labels, targets, or secrets.
+- Keep Norgate membership and every non-PIT/current-listing limitation outside
+  this objective. Do not use the Norgate snapshot as a universe, ranking, or
+  feature input.
+- Do not create a scheduler, generic feature framework, model, ensemble,
+  dashboard, report family, or approval gate.
 
 ## Required Work
 
-### Data package: `norgate-membership-source-reattest-v1`
+### Data package
 
-1. Reuse `verify_norgate_sp500_membership_snapshot()` as the sole snapshot
-   reader. Verify the existing snapshot's path containment, file hashes,
-   counts, manifest identity, sparse date range, package metadata, immutable
-   ineligibility flags, and free-space fact without importing `norgatedata` or
-   creating any network, environment, credential, or provider path.
-2. Add only the minimal source-safe immutable receipt/runner if the existing
-   verifier cannot expose a reattestation record. Its payload may contain
-   hashes, aggregate counts, aggregate date bounds, categorical integrity
-   status, and scope flags, but never raw rows, symbols, paths, or secrets.
-   Capture a pre/post read-only file identity so reattestation cannot silently
-   mutate the snapshot.
-3. Treat an unavailable, changed, malformed, or out-of-root snapshot as its
-   own `input_unavailable` or `integrity_mismatch` result. Do not recollect or
-   repair it. The Engine package continues independently.
-4. Add focused tests for lazy Norgate import, no network/environment access,
-   external artifact-root enforcement, immutable/write-free source handling,
-   source-safe redaction, and a manifest that remains ineligible.
+1. Reattest the existing local QQQ/SPY intraday availability/lineage contract
+   through its verified loader before reading a bar. Read the historical cache
+   only; do not invoke a collector or provider client.
+2. At the fixed existing regular-session cutoff, materialize the minimal
+   read-only `1m/5m/10m/1h/3h` completed-bar inputs for each eligible session
+   and each frozen profile. Record only aggregate per-profile/session readiness
+   and input identity in an immutable source-safe receipt.
+3. Establish constituent containment directly: every selected resampled `1h`
+   or `3h` bar must be traceable to exactly 60 or 180 contiguous completed
+   minute constituents ending strictly before the feature cutoff, and its full
+   OHLCV/volume values must equal a fresh reconstruction from those
+   constituents. A bar timestamp or bar-open label alone is insufficient. A
+   missing containment or reconstruction proof is `input_unavailable`, not a
+   repaired bar or inferred causal claim.
 
-### Engine package: `causal-mtf-window-profile-feasibility-v1`
+### Engine Research package
 
-1. Add a small immutable profile catalog built on
-   `CausalMultiTimeframeSequenceWindow`. Freeze this ordered profile set before
-   any consumer exists:
+1. Add a small typed, deterministic target-free MTF feature-input projection
+   on top of `CausalMultiTimeframeSequenceWindow` and the fixed profile catalog.
+   Reuse an existing pure feature primitive when one fits; otherwise add only
+   the smallest fixed normalized completed-bar projection needed to prove the
+   input boundary. Do not introduce a generic feature platform.
+2. Bind every projection to its catalog hash, selected window ends, feature
+   timestamp, and completed-bar status. The feature timestamp must equal the
+   latest actual selected window end under the fixed cutoff. Keep values
+   in-memory only; receipts expose structural metadata and hashes only.
+3. Require same cutoffs and source identity for both legs when emitting a pair
+   fact. A missing or structurally invalid leg yields a categorical no-result
+   for that session/profile, while independent ready work continues.
 
-   - `short`: `15/3/3/2/2`
-   - `kis_baseline`: `30/6/3/2/2`
-   - `one_hour`: `60/12/6/2/2`
-   - `medium`: `90/18/12/2/2`
-   - `long`: `120/36/12/2/2`
-   - `extended`: `180/36/18/2/2`
+### Validation package
 
-   Each tuple is in canonical `1m/5m/10m/1h/3h` order. Do not add, remove,
-   reorder, or tune cells after seeing any target, return, label, or prior
-   result.
-2. Give the catalog a deterministic SHA-256 identity and a source-safe,
-   timestamped external pre-registration receipt. A future predictive campaign
-   must record exactly one catalog cell and this catalog identity before it
-   opens a target, split, cost model, or evaluation output; this objective must
-   not create or choose such a campaign.
-3. Prove with deterministic synthetic bars that every profile builds only from
-   completed, contiguous, single-symbol bars at one cutoff. Fail the entire
-   profile on future, incomplete, duplicate, non-contiguous, or stale `1h`/
-   `3h` input. Preserve the existing `30/6/3/2/2` compatibility behavior.
-4. Add focused tests that the catalog and receipt do not touch network,
-   environment, credentials, provider, cache, labels, targets, model weights,
-   GPU, local paper, or broker code; that the catalog digest is stable; and
-   that a forged or altered profile cannot pass as the frozen catalog.
+1. Add focused tests for all six profiles, QQQ/SPY pair alignment, catalog
+   digest binding, no network/environment/credential/provider/cache-mutation
+   path, and source-safe external artifact-root enforcement.
+2. Mutate every post-cutoff minute and the next target-shaped minute in a
+   fixture: the feature projection and source-safe digest must remain exactly
+   unchanged. Mutate a constituent minute inside a selected slow bar and prove
+   the containment check rejects it or the feature output changes only when the
+   minute is legitimately pre-cutoff.
+3. Reject future, incomplete, duplicate, non-contiguous, mismatched-symbol,
+   and stale `1h`/`3h` input. Do not test or claim predictive quality.
 
 ## Claude Challenge
 
-Claude's compact preflight verdict is `supported-with-limits`. Preserve its
-two guards: the catalog must be hash-sealed and timestamped before a consumer,
-and later campaigns need one-cell-per-campaign selection custody. The proposal
-is invalid if profile geometry came from labels, returns, or prior evaluation,
-or if Norgate reattestation can mutate or re-pull the snapshot.
+Claude's preflight verdict is `supported-with-limits`. The decisive guard is
+constituent-minute containment for resampled slow bars: this objective becomes
+unsupported if a `1h`/`3h` bar stamped before cutoff can include any minute at
+or after cutoff, or if its values cannot be reproduced from those exact
+constituents. Timestamp equality and ordinary staleness checks alone are not
+enough.
 
 ## Verification
 
-Run focused Data and Engine tests plus a local no-provider smoke, then:
+Run focused Data, Engine, and Validation tests plus a local no-provider smoke,
+then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
