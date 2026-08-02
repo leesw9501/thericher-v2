@@ -8378,3 +8378,30 @@ Paper input, or live route. Review hardened common-predecessor construction,
 equal-anchor shifts, noncommon-event projection, nested-path containment, and
 exclusive immutable receipt creation before the real run. These are correctness
 repairs, not a new framework or approval boundary.
+
+## 2026-08-02 - Keep KIS D1 causal representation strictly non-promoting
+
+Decision: the single `kis-d1-causal-representation-feasibility-v1` causal-TCN
+campaign may use only the attested 1,510-session KIS D1 development phase,
+with a fixed 32-row window, four terminal masked rows, three left-causal TCN
+blocks, four CPU smoke steps, and one 192-step CUDA appointment. It completed
+both runtime phases with finite categorical losses. The CUDA terminal mini-batch
+did not decrease relative to its first mini-batch, so no learning-quality or
+model-selection inference is available or needed for this feasibility result.
+
+The campaign has no return label, validation-phase access, forecast,
+profitability/PnL calculation, ranking, ensemble, Paper, broker, account,
+credential, network, or live effect. Weights use external non-pickle `.npz`
+storage only. Review required summary-to-contract binding, idempotent custody
+closure, container-aware artifact defaults, and fail-closed orphaned-weight
+handling; reattachment after those repairs confirmed the stored CPU and CUDA
+receipts bind to the same frozen contract. A cooperative per-step timer remains
+supplemented by the Docker `timeout` wrapper for any future bounded CUDA call.
+
+Reason: use an actually KIS-shaped model input and the available GPU without
+pretending a target-free reconstruction study is a trading signal. Claude's
+subsequent falsification challenge rejects dispatch of the proposed Norgate SPY
+pullback rule, not because of overlap but because its expected six-to-nine
+active rows cannot distinguish a 5/10/20-bp cost effect from noise. Preserve a
+30-active-row floor and treat more Norgate D1 coverage as an input requirement;
+do not consume the current small segment as a pretend alpha test.

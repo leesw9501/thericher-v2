@@ -1592,3 +1592,37 @@ or a Paper consequence. The source-safe receipt contains aggregates and hashes
 only. The reviewed implementation uses common-session predecessors, matched
 shift anchors, fail-closed noncommon-event projection, and no-clobber external
 receipt writes; those plumbing improvements make no source-quality claim.
+
+## KIS D1 Causal Representation Feasibility Outcome (2026-08-02)
+
+`kis-d1-causal-representation-feasibility-v1` completed its bounded offline
+Engine Research runtime study from the attested six-symbol KIS D1 development
+phase only. The repaired `implementation-r2` contract is
+`sha256:1303c4f67694322dc3b9f70418c7e41203ffaab8221e5ba5080f6630e6007a7d`.
+Its Docker CPU smoke completed four steps and its single Docker CUDA appointment
+completed all 192 fixed steps. Both runs recorded finite training and diagnostic
+loss categories; the CUDA terminal-mini-batch decrease flag is false and is not
+interpreted as a quality result. The CPU summary is
+`sha256:ff7a5e01b5e100618fdb3f09abfc4dc970bfd6ccfb2f42a665407dfaa6931ff5`,
+the CUDA summary is
+`sha256:ea43ae579732f0f4c585bda98c2685987f6d664f862b698be0a2e7a01dff464e`,
+and the CUDA custody outcome is
+`sha256:0662586e9a22346326af174866825ab8307f9f11ab4789860b2785bfea56613c`.
+
+Generated `.npz` weights and all receipts remain only under the configured
+external artifact root. They are bound to the current campaign hash, rechecked
+with `allow_pickle=False`, and an orphaned weight file fails closed. The first
+implementation attempt ended at an argument-wiring error before a CPU receipt
+or weight artifact; its external recovery receipt is
+`sha256:487144d8f657102e5e96cc15d98d19fbfb07821e3864d2398e3e1171f787b879`
+and it is closed as `non_promoting_abandoned`.
+
+This proves only a reproducible KIS-shaped causal-TCN representation and GPU
+artifact path. It does not produce a forecast, alpha, model selection,
+ensemble, PnL/profitability claim, Paper input, KIS call, credential read,
+account access, order, broker effect, or live behavior. A proposed distinct
+SPY pullback-in-uptrend rule on the unused Norgate D1 segment was challenged by
+Claude as `unsupported` for execution: its fixed 98-row window would likely
+produce only about six to nine active rows, below the predeclared 30-row floor.
+Retain that as a source-coverage requirement, not as a failed rule, next goal,
+or wait on independent Engine and Paper work.

@@ -372,4 +372,21 @@ statements above; their historical facts remain scoped to their original work.
 - **Improvement:** common-session predecessors, equal-anchor shift probes, and
   no-clobber external receipts make the falsifier replayable without creating a
   generic framework. Quiet agreement cannot promote the sources while the
-  required event evidence is absent.
+required event evidence is absent.
+
+## KIS D1 Causal Representation Dispatch Outcome (2026-08-02)
+
+- **Ready:** the bounded representation runtime objective is complete. Claude
+  found the proposed SPY pullback rule underpowered before target access, so it
+  is recorded as a Data coverage need rather than dispatched. Data's forward
+  collectors and independent Paper/Engine preparation continue now.
+- **Owned:** Engine owns the external non-promoting TCN artifact and its next
+  distinct rule hypothesis. Research Steward closed the single CUDA custody
+  outcome and released the GPU. Execution has no dependency or route.
+- **Due:** none. The completed CPU/CUDA receipts reattach under a Docker
+  timeout without retraining, and no market-time, data retry, or GPU wait owns
+  the foreground.
+- **Improvement:** summary receipts now bind to their frozen campaign hash,
+  CUDA reattachment closes missing custody outcomes, and summary-less `.npz`
+  files fail closed. This improves recovery without making a new scheduler,
+  gate, or model-selection path.

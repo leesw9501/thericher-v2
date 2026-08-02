@@ -888,3 +888,25 @@ stratum has no observations. It creates no candidate, training, GPU
 appointment, ensemble, sealed evaluation, KIS Paper input, or strategy change.
 Do not relax the event condition after observing the empty stratum; a later
 Engine campaign requires its own source and causal contract.
+
+## KIS D1 Causal Representation Feasibility Outcome
+
+The fixed `kis-d1-causal-representation-feasibility-v1` campaign completed a
+four-step Docker CPU smoke and one 192-step Docker CUDA appointment from the
+attested six-symbol D1 development phase alone. The external contract is
+`sha256:1303c4f67694322dc3b9f70418c7e41203ffaab8221e5ba5080f6630e6007a7d`.
+Both categorical loss-finiteness checks passed; the CUDA terminal-mini-batch
+decrease flag is false. This is a runtime and causal-input fact, not a model
+quality, alpha, forecast, ranking, ensemble, PnL, Paper, or promotion result.
+No historical validation phase, target return, source blend, KIS request,
+credential, account, broker, local-paper, or live path was used.
+
+The first pretraining wiring attempt had no receipt or weight output and is
+closed externally as `non_promoting_abandoned`; the completed `implementation-r2`
+weights are safe external `.npz` artifacts only. Do not reuse them as a
+representation input for a predictive, portfolio, or Paper candidate. Claude
+reviewed the proposed `norgate-d1-spy-pullback-uptrend-falsification-v1` and
+returned `unsupported` before target access: its unused 98-row segment would
+likely yield only six to nine active rows. Preserve a 30-active-row floor and
+record this as a longer-D1-coverage need, not as a rule rejection or a queue
+hold on independent Engine/Paper work.

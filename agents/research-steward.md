@@ -149,3 +149,19 @@ event-adjacent source check has zero observations. Its quiet-bar agreement is
 data-contract evidence only; it creates no model artifact, GPU appointment,
 or sealed-evaluation allocation. The GPU remains free for a distinct frozen
 campaign with an eligible source and independent evaluation contract.
+
+## Causal Representation Appointment (2026-08-02)
+
+The frozen `kis-d1-causal-representation-feasibility-v1` `implementation-r2`
+contract (`sha256:1303c4f67694322dc3b9f70418c7e41203ffaab8221e5ba5080f6630e6007a7d`)
+received one CUDA appointment only after its four-step CPU smoke completed. The
+single 192-step CUDA job completed with finite categorical training and
+diagnostic-loss facts and an external custody outcome. It produced no sealed
+evaluation spend, score comparison, candidate selection, ensemble lineage,
+Paper input, or promotion. Its non-pickle weights stay outside Git.
+
+The initial wiring-only frozen record is separately closed as
+`non_promoting_abandoned` before any weight or CPU receipt existed. The GPU is
+free again. The proposed SPY pullback rule is not dispatched because its
+pre-target active-row forecast is below 30; it does not consume this appointment
+or create a reason to retrain the representation model.
