@@ -840,3 +840,18 @@ sample is much broader, this is a small rejection fact only. Do not retune or
 promote this timing/sign family, make an ensemble member, request GPU, or form
 a Paper input. Claude returned `review_unavailable`, not a verdict or hold on a
 distinct next hypothesis.
+
+## Latest Engine Outcome
+
+`spy-intraday-mtf-logistic-10m-v1` completed as a CPU-only source-local
+baseline with `input_unavailable`. All 190 scheduled causal feature rows were
+available in both development and validation, but its fixed development-only
+L2 logistic policy produced fewer than the precommitted 30 target-free
+validation long decisions. It therefore did not read validation targets,
+calculate any return/cost/kill metric, or claim falsification, PnL,
+profitability, selection, ensemble eligibility, Paper input, or promotion.
+
+The fixed threshold, model, costs, and floor remain closed to retroactive
+repair. It has no GPU appointment, checkpoint, or artifact beyond its
+aggregate-only external receipt; the next package must be a distinct frozen
+hypothesis rather than a threshold retune.

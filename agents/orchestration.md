@@ -305,3 +305,9 @@ statements above; their historical facts remain scoped to their original work.
   scoped source-local rejection with no KIS, credential, account, order,
   Paper, broker, GPU, or live effect. It does not create a foreground wait;
   select a distinct frozen hypothesis at goal integration.
+- **Engine outcome:** `spy-intraday-mtf-logistic-10m-v1` completed offline with
+  all 190 causal feature rows in each phase, then closed `input_unavailable`
+  before validation target access because the fixed policy had fewer than 30
+  target-free long decisions. It made no return, PnL, KIS, credential, broker,
+  Paper, GPU, or live claim. This closes only that frozen candidate and leaves
+  the foreground free to dispatch the next distinct Engine package.

@@ -123,3 +123,9 @@ independently eligible frozen campaign.
 falsification and failed its fixed 20-bp kill. It created no training, GPU
 appointment, checkpoint, sealed-evaluation allocation, or model artifact.
 GPU remains free for an independently eligible campaign.
+
+`spy-intraday-mtf-logistic-10m-v1` completed CPU-only as `input_unavailable`:
+its frozen policy did not meet the target-free 30-long-decision floor, so no
+validation target, performance metric, checkpoint, GPU appointment, or
+sealed-evaluation allocation was created. GPU remains free; the current
+ten-session source scope is not an eligible reason to consume it.

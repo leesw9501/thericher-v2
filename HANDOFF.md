@@ -1500,3 +1500,33 @@ or broker data. This package made no KIS call, environment/credential read,
 account, order, local-paper, broker, GPU, training, or live action. Do not
 retune its first-30m/final-30m window, sign, costs, or filters after this
 result. Claude's bounded request was `review_unavailable`, not a hold.
+
+Next Engine package: `spy-intraday-mtf-logistic-10m-v1` is a deterministic
+CPU-only, development-only L2 logistic baseline over causal completed
+`1m/5m/10m/1h/3h` SPY inputs. It has 190 scheduled feature rows in each of the
+ten development and ten validation sessions, but the effective validation unit
+remains ten session blocks. Freeze `C=0.1`, no class weights, `0.55` long-only
+threshold, fixed 10-minute target, 150-row/30-long-decision preflight, and the
+20-bp positive-total plus per-executed-event always-long comparison kill. It
+uses the existing dependency, is non-promoting, and receives no GPU. The
+feasibility receipt is under
+`D:\thericher-v2\model-artifacts\engine-research\spy-intraday-mtf-logistic-10m-feasibility-20260802.md`.
+
+## SPY Intraday MTF Logistic Outcome (2026-08-02)
+
+The bounded CPU-only `spy-intraday-mtf-logistic-10m-v1` package completed on
+the same verified local `SPY/AMS` 1m cache. Its causal feature preflight
+produced all 190 scheduled rows in each development and validation phase, but
+the fixed development-only L2 logistic policy at its frozen `0.55` threshold
+produced fewer than the required 30 target-free validation long decisions.
+It therefore closed truthfully as `input_unavailable` before reading validation
+targets or calculating returns, PnL, costs, or a kill result. This is neither a
+falsification nor a profitability result.
+
+The aggregate-only external receipt is
+`D:\thericher-v2\model-artifacts\research\spy-intraday-mtf-logistic-10m-v1\cpu-baseline-20260802-r2`.
+It contains the frozen source/contract, structural counts, model hash, and
+categorical outcome only. The run made no KIS, network, credential,
+environment, account, order, local-paper, broker, GPU, checkpoint, or live
+action. Do not lower this campaign's threshold or minimum-decision floor after
+the result; a distinct next package must freeze its own hypothesis and contract.

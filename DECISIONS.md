@@ -8279,3 +8279,33 @@ Do not tune the sign, timing, cost, filters, or direction-inverted reference
 after outcomes were read. The external receipt holds aggregates only. No
 selection, ensemble, GPU, Paper input, order, account, broker, credential, or
 live behavior follows from the result.
+
+## 2026-08-02 - Freeze a small causal MTF logistic baseline
+
+Decision: use the existing pinned `scikit-learn` dependency for one
+development-only standardized L2 logistic baseline over causal completed
+`1m/5m/10m/1h/3h` SPY features. The 21-session cache supplies 190 scheduled
+rows in each development and validation phase, but the ten validation sessions
+remain the effective independent units. The package is a CPU breadth baseline,
+not a reason to occupy GPU or claim a deployable model.
+
+The fixed `C=0.1`, no-class-weight fit and `0.55` long-only threshold cannot
+change after target access. At 20 bp it must be strictly positive in aggregate
+and exceed an always-long reference by net mean per executed event; comparing
+different trade counts by total would be invalid. This remains source-local,
+aggregate-only, non-promoting, and outside Paper, broker, account, credential,
+and live surfaces.
+
+## 2026-08-02 - Close the fixed MTF logistic baseline before target evaluation
+
+Decision: retain `spy-intraday-mtf-logistic-10m-v1` as `input_unavailable`.
+The 21-session cache met its structural causal-row preflight with 190 rows in
+each phase, but the fixed development-only model and `0.55` policy left fewer
+than 30 target-free validation long decisions. Validation targets, returns,
+cost totals, and kill logic consequently remained unopened.
+
+Do not retroactively lower the threshold, relax the long-decision floor, or
+reuse the result as a model, ensemble, GPU, Paper, PnL, or profitability claim.
+The aggregate-only receipt stays external and records only contract, source,
+structural counts, model identity, and categorical outcome. A follow-up is a
+new frozen hypothesis, not a parameter repair of this one.

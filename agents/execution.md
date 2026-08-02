@@ -77,6 +77,10 @@ decision-table edit, or live route is introduced.
   offline Research only. Its aggregate 20-bp kill rejection has no execution
   implication; it had no KIS, credential, account, intent, order, fill,
   local-paper, broker, or live surface.
+- Execution reattests `spy-intraday-mtf-logistic-10m-v1` as completed offline
+  Research only. Its target-free long-decision preflight closed
+  `input_unavailable` before validation returns; it has no KIS, credential,
+  account, intent, order, fill, local-paper, broker, GPU, or live surface.
 - Execution reattests the frozen `tiingo-d1-trend-mean-reversion-rotation-v1`
   CPU falsification contract as outside every Execution surface: it reads only
   the retained Tiingo D1 snapshot and writes source-safe contract/aggregate

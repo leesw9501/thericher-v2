@@ -1,67 +1,75 @@
 # Next Codex Goal
 
-Read `HANDOFF.md`, `AGENTS.md`, `agents/engine-research.md`,
-`agents/research-steward.md`, `agents/execution.md`, and
-`agents/orchestration.md` first. Then continue from
+Read `HANDOFF.md`, `AGENTS.md`, `ARCHITECTURE.md`,
+`agents/engine-research.md`, `agents/research-steward.md`, `agents/execution.md`,
+and `agents/orchestration.md` first. Then continue from
 `C:\Users\Public\Documents\thericher-v2`.
 
 ## Objective
 
-Build and run one bounded CPU-only source-local falsification:
-`spy-first30-final30-momentum-v1`.
+Build and run one bounded CPU-only source-local ML baseline:
+`spy-intraday-mtf-logistic-10m-v1`.
 
-It tests the distinct Gao et al. market-intraday-momentum premise using the
-existing verified local `SPY/AMS` 1m cache. It is not model selection, a
-profitability claim, Paper input, order, or live route.
+It is a deterministic regularized logistic breadth baseline over completed
+`1m`, `5m`, `10m`, `1h`, and `3h` SPY inputs. It is not a promotion, model
+selection, profitability claim, Paper input, order, or live route.
 
 ## Frozen Source And Contract
 
 - Source: `kis.paper.private.intraday.spy.ams.m1.v1`, hash
   `sha256:64f149f5ff1c9002107f001a44f78c54c8944e9c030d6153898b1229d9c742e6`.
-- Research source: Gao, Han, Li, and Zhou, *Market intraday momentum*,
-  Journal of Financial Economics 129(2), 2018, DOI
-  `10.1016/j.jfineco.2018.05.009`. Its stated SPY sample is 1993-2013; the
-  current 21-session cache is a small non-promoting replication only.
-- Require exactly 21 complete regular sessions, ordered as `10 development /
-  1 purge / 10 validation`. The first session may be structurally unavailable
-  because it has no prior in-cache close.
-- At completed 10:00 ET, compute the sign of current 09:30-10:00 return from
-  the prior completed session's 16:00 close. Freeze it with no later input.
-- One eligible signed long/short decision per session enters at 15:30 ET and
-  exits at the completed 16:00 ET close. The target is evaluated only after
-  target-free preflight.
-- Require at least eight eligible validation decisions before target access.
-- Use all-in round-trip costs of `5`, `10`, and `20` bps. The hard kill is a
-  non-positive signed validation total at `20` bps. The direction-inverted,
-  same-timestamp counterpart is the comparative reference; it is not a
-  selection or ensemble input.
-- No parameter/window/filter tuning after any target access.
+- Require exactly 21 complete regular sessions in chronological
+  `10 development / 1 purge / 10 validation` order.
+- Decision slots: every ten minutes from completed 12:30 ET through completed
+  15:30 ET inclusive: 19 slots per session, 190 development and 190 validation
+  feature rows. Each feature cutoff exposes completed same-session bars only.
+- Fixed features: 30-minute 1m return; 30-minute 1m realized range; six-bar
+  completed 5m return; three-bar completed 10m return; latest completed 1h
+  candle return; latest completed 3h candle return.
+- Target: the sign of the next ten-minute M1 open-to-open return. Development
+  labels may be read only after target-free feature preflight; validation
+  targets remain unread until after model fitting and target-free policy
+  decision construction.
+- Fit exactly one development-only standardized L2 logistic regression using
+  `C=0.1`, no class weights, and no refit after development. The policy is long
+  only at probability `>= 0.55`, otherwise flat.
+- Preflight requires 150 causal rows in each phase and at least 30 target-free
+  validation long decisions. The effective validation unit remains ten session
+  blocks, not 190 independent observations.
+- Costs are all-in round-trip `5`, `10`, and `20` bps. At 20 bps, reject the
+  exact policy unless its validation net total is strictly positive and its net
+  mean per executed event strictly exceeds an always-long same-schedule,
+  same-cost reference.
+- No feature, scaling, regularization, threshold, or cost tuning after any
+  validation target access.
 
 ## Boundaries
 
 - Do not call KIS, read `.env` or credentials, submit orders, access accounts,
-  use local-paper, network, GPU, training, model weights, or live behavior.
-- Use only the verified offline loader and existing local cache.
-- Do not store raw bars, timestamps, prices, returns, credentials, or model
-  artifacts in Git. Write source-safe aggregate receipts only below
-  `D:\thericher-v2\model-artifacts`.
-- A result remains non-promoting: no model selection, PnL/profitability claim,
-  Paper candidate, or GPU appointment.
+  use local-paper, network, GPU, model weights, or live behavior.
+- Use only the verified offline loader, existing cache, and existing pinned
+  `scikit-learn` dependency. Do not add or replace a runtime.
+- Do not store raw bars, timestamps, prices, row-level labels/predictions,
+  model coefficients/checkpoints, credentials, or model artifacts in Git.
+  Write aggregate-only receipts below `D:\thericher-v2\model-artifacts`.
+- The result stays non-promoting: no Paper candidate, ensemble member, GPU
+  appointment, live claim, or model selection.
 
 ## Required Work
 
-1. Implement the frozen causal preparation/evaluation/run path and a small
-   runner with pinned source identity.
-2. Run target-free preflight before accessing target values; report only
-   source-safe aggregate counts.
-3. Run one real CPU falsification from the local cache with an external,
-   idempotent run label.
-4. Add focused tests for causal prior-close/first-30m inputs, target isolation,
-   complete-session handling, cost/anti-signal comparison, external artifact
-   redaction, and absence of network, credential, broker, account, order,
-   local-paper, GPU, and live surfaces.
-5. Treat Claude's failed bounded check as `review_unavailable`, not agreement
-   or a hold. Record it only if it materially affects the result context.
+1. Implement the frozen causal feature/preflight/fit/evaluate/run path and a
+   pinned offline runner.
+2. Ensure standardization and fitting use development rows only; validation
+   target fields may not be read before target-free decisions are fixed.
+3. Run one real CPU baseline against the local cache under an idempotent
+   external run label.
+4. Add focused tests for completed-bar causality across all five timeframes,
+   development-only fitting, validation target isolation, minimum rows/long
+   decisions, cost/comparator semantics, artifact redaction, and absence of
+   network, credential, KIS, broker, account, order, local-paper, GPU, and
+   live surfaces.
+5. Keep the `review_unavailable`/Claude comparator correction as context only;
+   it is not agreement or a dispatch hold.
 
 ## Verification
 
@@ -79,7 +87,7 @@ docker compose --profile research config --quiet
 
 ## Completion
 
-Report the frozen source and contract, source-safe CPU result, external
-artifact location, tests, commit hash, intentional omissions, and the next
-recommended objective. Replace this file with exactly one next objective only
-after completion evidence is committed and pushed.
+Report source and frozen contract, source-safe CPU outcome, external artifact
+path, tests, commit hash, intentional omissions, and the next recommended
+objective. Replace this file with exactly one next objective only after
+completion evidence is committed and pushed.
