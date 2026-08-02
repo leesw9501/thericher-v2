@@ -53,8 +53,6 @@ def main(argv: Sequence[str] | None = None) -> None:
         repo_root=_REPOSITORY_ROOT,
     )
     result = run_norgate_d1_trio_momentum_falsification(panel.bars_by_symbol)
-    if not isinstance(result, NorgateD1TrioMomentumResult):
-        raise TypeError("D1 trio momentum runner requires its typed result")
     receipt = _receipt_payload(result)
     encoded = _canonical_json(receipt)
     receipt_path = _receipt_path(
@@ -77,8 +75,9 @@ def main(argv: Sequence[str] | None = None) -> None:
     )
 
 
-def _receipt_payload(result: NorgateD1TrioMomentumResult) -> dict[str, object]:
-    outcome = result.safe_payload()
+def _receipt_payload(result: object) -> dict[str, object]:
+    canonical_result = _canonical_result(result)
+    outcome = NorgateD1TrioMomentumResult.safe_payload(canonical_result)
     if outcome.get("campaign_id") != _CAMPAIGN_ID:
         raise ValueError("D1 trio momentum result identity is invalid")
     contract = frozen_norgate_d1_trio_momentum_contract()
@@ -103,6 +102,26 @@ def _receipt_payload(result: NorgateD1TrioMomentumResult) -> dict[str, object]:
         "paper_input_allowed": False,
         "profitability_claim_allowed": False,
     }
+
+
+def _canonical_result(result: object) -> NorgateD1TrioMomentumResult:
+    """Revalidate the exact aggregate result at the receipt boundary."""
+
+    if type(result) is not NorgateD1TrioMomentumResult:
+        raise TypeError("D1 trio momentum runner requires its exact typed result")
+    try:
+        return NorgateD1TrioMomentumResult(
+            status=result.status,
+            reason=result.reason,
+            target_evaluation_performed=result.target_evaluation_performed,
+            validation_long_decision_count=result.validation_long_decision_count,
+            validation_target_evaluable_slot_count=result.validation_target_evaluable_slot_count,
+            rule_hit_count=result.rule_hit_count,
+            always_long_hit_count=result.always_long_hit_count,
+            schema_version=result.schema_version,
+        )
+    except (TypeError, ValueError) as exc:
+        raise ValueError("D1 trio momentum result semantics are invalid") from exc
 
 
 def _receipt_path(*, artifact_root: Path, run_label: str) -> Path:

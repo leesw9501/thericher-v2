@@ -421,3 +421,35 @@ required event evidence is absent.
 - **Improvement:** use the test-locked interval for Data, Engine, and public
   source preparation rather than foreground waiting; keep raw broker IDs and
   raw market data outside shared state and Git.
+
+## Norgate Active-Build Revision Outcome (2026-08-02)
+
+- **Ready:** the fixed-trio active-build probe is complete as `matching`; the
+  next company package is a frozen, source-local CPU gradient-boosted-tree
+  discrimination preflight with a multiplier-invariant target and block-null,
+  not a market-time wait. The completed trio diagnostic remains closed and is
+  not a tuning input.
+- **Owned:** Data retains source provenance and its declared limitations;
+  Engine owns the new causal baseline contract and implementation; Research
+  Steward retains an unallocated GPU; Execution has no route or dependency.
+- **Due:** now. There is no external retry, KIS schedule, or GPU condition
+  before contract preparation and CPU smoke.
+- **Improvement:** active-reader A/A comparison and provider-free receipt
+  reattachment distinguish present-build reproducibility from source promotion;
+  canonical receipt validation prevents an injected result object from forging
+  diagnostic evidence.
+
+## Verification Throughput Fact (2026-08-02)
+
+- **Ready:** the revision-probe change passed focused coverage, full serial
+  `2047 passed, 14 skipped`, and independent eight-worker parallel coverage
+  with the same count. The next Engine package remains ready now.
+- **Owned:** two helper-owned recent temp roots from interrupted tool runs stay
+  under the helper root because its clean-root policy correctly refuses manual
+  deletion by default. They own only test hygiene; no Data, Engine, GPU, or
+  Execution resource is blocked.
+- **Due:** no foreground timer. Re-run `-RequireCleanTempRoot` after the
+  helper's normal stale-root recovery can safely remove those roots.
+- **Improvement:** retain the passing fresh-root parallel result and use its
+  measured 3:01 duration; treat the 17:47 serial diagnostic as a separate
+  compatibility check rather than foreground idling.

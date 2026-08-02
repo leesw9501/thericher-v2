@@ -1677,3 +1677,35 @@ also passed. The existing `thericher-kis-paper-daily-spy-session` task was
 rebuilt and reinstalled for its next regular schedule without a manual run.
 The installer now resolves its default project root after parameter binding so
 a normal PowerShell `-File` invocation does not lose that path.
+
+## Norgate Active-Build Revision Probe (2026-08-02)
+
+`norgate-active-build-revision-probe-v1` completed through the Windows-only
+`norgatedata==1.0.77` host reader. Two identical active reads per fixed symbol
+matched the immutable raw-D1 `SPY/QQQ/IWM` contract: 1,533 reference bars,
+1,533 active bars, and zero bar-level divergences. The source-safe external
+receipt is `sha256:aa3989e4246a21db6d45f5e85605f896ac0550ee5f6e8f535ee47b328a510bc7`;
+its active response commitment is
+`sha256:960bf9eb5ae10f2459456ea87fcd22d0b03ba5495b338433670558ece362773f`.
+Provider-free reattachment confirmed the one-file receipt and redaction.
+
+This is a present local-build reproducibility fact only. It does not establish
+PIT availability, historical revision policy, corporate-action or adjustment
+correctness, tradability, ranking, profitability, Paper eligibility, or a GPU
+appointment. The next distinct Engine package may freeze one source-local CPU
+baseline contract; it must retain those limitations rather than treating this
+probe as source promotion.
+
+The existing trio diagnostic receipt writer now reconstructs and validates the
+exact base result immediately before persistence, so a mutated object or an
+overridden subclass projection cannot forge a receipt. The combined active
+probe, diagnostic, and scheduler-contract focused suite passed 33 tests. Full
+serial regression passed `2047 passed, 14 skipped` in 17:47; the independent
+eight-worker run passed the same count in 3:01. Ruff and both Compose
+configurations passed.
+
+The clean-root variant of the parallel helper is temporarily unable to start
+because two recent helper-owned roots remain from interrupted tool executions.
+They were not manually deleted or repurposed; the helper's default fresh-root
+run passed. This is a test-hygiene recovery fact only, not an Engine, Data, or
+Execution hold.

@@ -184,3 +184,13 @@ split/cost/baseline/kill-test contract, and CPU preflight; it does not wait on
 market time or the KIS Paper schedule. The active Norgate revision probe and
 Engine target-free-plan integrity repair are CPU/Data work and consume neither
 GPU custody nor sealed-evaluation budget.
+
+## Norgate CPU Baseline Preparation (2026-08-02)
+
+The fixed-trio active-build probe is `matching`, but this consumes no GPU or
+sealed-evaluation resource. The next Engine candidate is a CPU-only causal
+gradient-boosted-tree discrimination preflight with a multiplier-invariant
+feature/label contract and a date-block null. It has no appointment until a
+later distinct campaign supplies eligible source, causal target/split, costs,
+comparators, kill test, artifact root, and compute stop rule. GPU remains free
+rather than being filled by an unqualified training job.

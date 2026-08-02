@@ -946,3 +946,24 @@ public pretrained Chronos weights remain isolated runtime/representation work
 because their pretraining coverage is not fully disclosed. The immediate Engine
 package is the independent target-free-plan integrity repair, not a premature
 window/template or GPU dispatch.
+
+## Norgate Revision Reattested; CPU Baseline Next (2026-08-02)
+
+Data completed the fixed-trio active-build probe as `matching` with two stable
+active reads per symbol, 1,533 equal bars, and source-safe receipt
+`sha256:aa3989e4246a21db6d45f5e85605f896ac0550ee5f6e8f535ee47b328a510bc7`.
+The target-free trio receipt boundary is also hardened against overridden or
+mutated result projections. Neither fact is a predictive result.
+
+Claude's falsification review is `uncertain`: build reproducibility is now
+known, but cross-session raw-price targets remain adjustment-sensitive and 140
+date groups cannot resolve a small edge. The next ready Engine package is one
+frozen, from-scratch causal D1 gradient-boosted-tree CPU discrimination
+preflight. It must use only per-session ratio features and a next-session
+within-session ratio label, so a uniform session price multiplier cannot alter
+either. It must predeclare decision/label availability, chronological split,
+fixed hyperparameters, `always_flat` and exposure-matched `always_long`
+descriptions, a one-session availability shift, a date-block permutation null,
+and a minimum detectable-effect floor. It must not allocate GPU, open a sealed
+holdout, load public weights, create PnL/profitability, rank, ensemble, or
+Paper input.

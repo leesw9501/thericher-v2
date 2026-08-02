@@ -95,7 +95,9 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "$PSCmdlet.ShouldProcess" in source
     assert "Get-Command docker.exe" in source
     assert "docker-compose.yml" in source
-    assert '[string]$ProjectRoot = (Join-Path $PSScriptRoot "..")' in source
+    assert '[string]$ProjectRoot = ""' in source
+    assert "if ([string]::IsNullOrWhiteSpace($ProjectRoot))" in source
+    assert '$ProjectRoot = Join-Path $PSScriptRoot ".."' in source
     assert "Resolve-Path -LiteralPath $ProjectRoot" in source
     assert "[string[]]$ScheduleName = @()" in source
     assert "[switch]$RequireExisting" in source

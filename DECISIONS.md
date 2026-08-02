@@ -8446,3 +8446,25 @@ pinning and intent identity. A later unrelated exact lookalike remains a known
 identity limitation pending a separate documented broker-correlation probe.
 Claude's falsification review was `supported-with-limits`; tests prove
 persist-before-cancel, no resubmit, and read-only isolation.
+
+## 2026-08-02 - Treat active Norgate matching as a narrow source-local input fact
+
+Decision: the fixed `SPY/QQQ/IWM` raw-D1 materialization matched two sequential
+active Windows-host reads per symbol with 1,533 matching bars and zero
+divergences. A distinct, explicitly frozen, CPU-only source-local baseline may
+now use that materialization. It must predeclare causal timestamps, temporal
+split, cost assumptions, naive comparators, and a kill test; the result remains
+non-promoting and cannot create a ranking, ensemble, Paper input, or GPU
+appointment by implication.
+
+The source-safe probe receipt is
+`sha256:aa3989e4246a21db6d45f5e85605f896ac0550ee5f6e8f535ee47b328a510bc7`.
+It is an active-response comparison, not evidence of point-in-time
+availability, historical revision policy, corporate actions, adjustment
+semantics, entity identity, or tradeability. Do not turn a matching present
+build into a source-quality promotion or a reason to retune the closed trio
+momentum diagnostic.
+
+The related trio receipt boundary now canonicalizes and revalidates the exact
+base result before writing. This removes a narrow typed-subclass or frozen
+object-mutation path without changing the target-free diagnostic strategy.

@@ -970,3 +970,20 @@ stable under the current build. PIT availability, historical revision policy,
 entity identity, and adjustment/corporate-action semantics remain declared
 limitations rather than established facts. This is not a ranking, model, GPU,
 Paper, or provider update task.
+
+## Active-Build Revision Outcome (2026-08-02)
+
+`norgate-active-build-revision-probe-v1` is complete as `matching`. The
+Windows-only `norgatedata==1.0.77` reader produced the same result twice for
+each fixed symbol; the aggregate comparison has 1,533 reference bars, 1,533
+active bars, and zero divergences. Its source-safe receipt is
+`sha256:aa3989e4246a21db6d45f5e85605f896ac0550ee5f6e8f535ee47b328a510bc7`.
+It reattaches without a provider call and retains only counts, categorical
+outcome, and hashes.
+
+This closes only the current-build reproducibility question for this immutable
+trio contract. PIT, adjustment, corporate-action, entity, availability, and
+historical-revision limitations remain unchanged. Data's next ready support is
+to attest the exact source/cursor assumptions named by the first source-local
+CPU baseline; it does not recollect, update, or broaden the Norgate source by
+default.

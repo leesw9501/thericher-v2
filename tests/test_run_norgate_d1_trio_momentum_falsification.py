@@ -183,6 +183,71 @@ def test_runner_rejects_an_untyped_result_before_writing_evidence(
     assert not any(artifact_root.rglob("validation-receipt.json"))
 
 
+def test_receipt_boundary_rejects_a_subclass_safe_payload_override() -> None:
+    runner = _load_runner()
+
+    class ForgedResult(NorgateD1TrioMomentumResult):
+        def safe_payload(self) -> dict[str, object]:
+            return {
+                "campaign_id": runner._CAMPAIGN_ID,
+                "status": "inconclusive_non_promoting",
+                "raw_bar": "must-not-be-serialized",
+            }
+
+    result = ForgedResult(
+        status="rejected",
+        reason="rule_hit_rate_not_above_always_long",
+        target_evaluation_performed=True,
+        validation_long_decision_count=30,
+        validation_target_evaluable_slot_count=138,
+        rule_hit_count=12,
+        always_long_hit_count=70,
+    )
+
+    with pytest.raises(TypeError, match="exact typed result"):
+        runner._receipt_payload(result)
+
+
+def test_runner_rejects_mutated_result_semantics_before_receipt_write(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runner = _load_runner()
+    artifact_root = tmp_path / "model-artifacts"
+    result = _result(
+        status="rejected",
+        reason="rule_hit_rate_not_above_always_long",
+        rule_longs=30,
+        rule_hits=12,
+        always_long_hits=70,
+    )
+    object.__setattr__(result, "status", "inconclusive_non_promoting")
+    monkeypatch.setattr(
+        runner,
+        "load_verified_norgate_d1_diagnostic_panel",
+        lambda *_args, **_kwargs: SimpleNamespace(bars_by_symbol={"SPY": (), "QQQ": (), "IWM": ()}),
+    )
+    monkeypatch.setattr(
+        runner,
+        "run_norgate_d1_trio_momentum_falsification",
+        lambda *_args, **_kwargs: result,
+    )
+
+    with pytest.raises(ValueError, match="result semantics"):
+        runner.main(
+            [
+                "--snapshot",
+                str(tmp_path / "market-data" / "snapshot=private-source"),
+                "--run-label",
+                "invalid",
+                "--artifact-root",
+                str(artifact_root),
+            ]
+        )
+
+    assert not any(artifact_root.rglob("validation-receipt.json"))
+
+
 def test_runner_has_no_external_or_execution_surface() -> None:
     source = _script_path().read_text(encoding="ascii").lower()
     for forbidden in (
