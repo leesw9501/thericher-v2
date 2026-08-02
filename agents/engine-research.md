@@ -1265,3 +1265,14 @@ Do not open that screen as a new historical PnL or GPU campaign. The ready next
 engine loop is instead a fresh prospective input feeding the existing small
 fixed Paper baseline, where its result is execution learning rather than a
 static-source profitability claim.
+
+## Prospective SPY Paper Receipt Bridge
+
+The frozen `prospective-spy-intraday-baseline-v1` now has one pure consumer
+bridge: its immutable source-safe observation receipt derives an opaque
+`ResearchDecisionReceipt` and input-manifest identity. Any selected-bar content
+change produces a different manifest, proposal, and decision identity; an
+abstain remains an abstain. This adds no fitting, tuning, comparison, campaign,
+GPU appointment, artifact, ensemble, or profitability claim. The next fresh
+receipt can provide execution-learning evidence only through Execution's
+independent deterministic route.

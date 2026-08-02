@@ -2134,3 +2134,27 @@ passed, 20 skipped`, and the diagnostic full serial run matched it. Ruff and
 both credential-free Compose configurations passed. This completion creates no
 fresh observation, target, model, GPU job, local-paper event, Paper action, or
 live behavior.
+
+## Fresh Prospective SPY Paper Adapter
+
+`fresh-paper-baseline-loop-v1` closes the code-level gap between the fixed
+15:30 ET SPY `1m/5m/10m/1h/3h` observation receipt and the existing
+deterministic KIS virtual-paper canary. Data now revalidates only the exact
+canonical external receipt; Engine turns its full immutable identity into a
+pure `ResearchDecisionReceipt`; Execution uses one SPY-specific adapter rather
+than altering the distinct daily SPY path or adding a generic route/schedule.
+Missing, malformed, stale, or abstaining receipt evidence returns no-intent
+before configuration, account, quote, or canary activity. Broker-free replay
+remains separately labeled `source: local_paper`; this adapter emits only
+`kis_paper` route evidence.
+
+Claude's falsification-first verdict is `uncertain`: before a named activation
+can rely on this adapter, independently reattest import-time credential
+isolation, timestamp-derived freshness, and route-discriminated durable
+identity. Focused adapter/legacy regression coverage passed `126` tests and
+Ruff passed; the full serial suite genuinely timed out at its 12-minute cap,
+and the clean-root parallel helper failed closed on three recent roots. Both
+Compose configurations passed. The existing `kis-readonly` container completed
+one current virtual account health observation on 2026-08-02 UTC with a
+complete snapshot and no order route. No fresh intraday receipt was
+manufactured and no new virtual canary was submitted by this objective.

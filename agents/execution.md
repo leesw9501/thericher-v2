@@ -551,3 +551,24 @@ query, KIS call, broker order, local-paper event, artifact format, capital
 state, or live behavior. A ready Engine evidence mismatch now fails before it
 can form a policy result, leaving the deterministic Execution boundary
 unchanged.
+
+## Prospective SPY Virtual Adapter
+
+Execution now owns a narrow `prospective-spy` adapter that loads the
+revalidated frozen receipt before reading Paper configuration, account facts,
+or a quote. Only a current ready `enter` reuses the existing one-share SPY
+canary, durable identity, cancellation, and reconciliation implementation;
+missing, malformed, stale, or abstaining evidence remains no-intent. The daily
+SPY D1 route and local replay are unchanged. The adapter is unscheduled until
+a separate Data-owned capture invocation is integrated and observed.
+
+The existing `kis-readonly` virtual account bridge completed on 2026-08-02 UTC
+with a complete snapshot and no order route. This is current read-health
+evidence, not a submission permission or replacement for the adapter's own
+fresh account/quote checks.
+
+Claude's route challenge is `uncertain`: keep the adapter unscheduled and
+reattest its import-time credential isolation, timestamp-derived freshness,
+and route-discriminated durable identity before relying on a named activation.
+This affects only this adapter's activation boundary; it does not pause the
+daily SPY route, local-paper replay, or another authorized Paper action.

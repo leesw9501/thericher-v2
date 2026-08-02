@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import uuid
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, time
 from pathlib import Path
@@ -227,6 +228,41 @@ def capture_kis_paper_prospective_spy_observation(
     )
 
 
+def load_kis_paper_prospective_spy_observation_receipt(
+    *,
+    artifact_root: Path | str,
+    repo_root: Path | str,
+    session_date: date,
+) -> ProspectiveSpyIntradayObservationReceipt:
+    """Load one exact canonical receipt without reopening market-data input.
+
+    The receipt has already bound the completed-bar input at capture time. This
+    consumer only accepts the expected same-session external artifact and
+    revalidates its canonical identity before Execution can inspect it.
+    """
+
+    if type(session_date) is not date:
+        raise ValueError("session_date must be a date")
+    root = _external_artifact_root(Path(artifact_root), Path(repo_root))
+    destination = _receipt_source_path(root=root, session_date=session_date)
+    try:
+        encoded = destination.read_text(encoding="utf-8")
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("prospective SPY receipt is unavailable") from error
+    if not isinstance(payload, Mapping):
+        raise ValueError("prospective SPY receipt payload is invalid")
+    receipt = ProspectiveSpyIntradayObservationReceipt.from_payload(payload)
+    if encoded != receipt.canonical_json() + "\n":
+        raise ValueError("prospective SPY receipt is not canonical")
+    if (
+        receipt.cutoff.astimezone(_EASTERN).date() != session_date
+        or receipt.cutoff.astimezone(_EASTERN).time() != _DECISION_TIME
+    ):
+        raise ValueError("prospective SPY receipt session is invalid")
+    return receipt
+
+
 def _not_yet_observed(
     *,
     session_date: date,
@@ -313,6 +349,20 @@ def _receipt_destination(
     resolved_destination = destination.resolve(strict=False)
     if not resolved_destination.is_relative_to(root):
         raise ValueError("prospective SPY receipt destination is invalid")
+    return destination
+
+
+def _receipt_source_path(*, root: Path, session_date: date) -> Path:
+    capture_root = root / KIS_PAPER_PROSPECTIVE_SPY_CAPTURE_ARTIFACT_DIR
+    session_root = capture_root / session_date.isoformat()
+    for directory in (capture_root, session_root):
+        if directory.exists() and (directory.is_symlink() or not directory.is_dir()):
+            raise ValueError("prospective SPY receipt source is invalid")
+    destination = session_root / "receipt.json"
+    if not destination.is_file() or destination.is_symlink():
+        raise ValueError("prospective SPY receipt is unavailable")
+    if not destination.resolve(strict=True).is_relative_to(root):
+        raise ValueError("prospective SPY receipt source is invalid")
     return destination
 
 

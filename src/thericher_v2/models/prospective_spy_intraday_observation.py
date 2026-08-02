@@ -6,7 +6,7 @@ import hashlib
 import json
 from collections.abc import Mapping
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, require_utc
@@ -85,9 +85,17 @@ class ProspectiveSpyIntradayObservationReceipt:
             object.__setattr__(self, field_name, require_utc(getattr(self, field_name), field_name))
         if self.session_open_ts >= self.session_close_ts:
             raise ValueError("receipt session geometry is invalid")
+        if (
+            self.cutoff != self.session_open_ts + timedelta(hours=6)
+            or self.session_close_ts != self.cutoff + timedelta(minutes=30)
+        ):
+            raise ValueError("receipt session geometry is invalid")
         if not self.session_open_ts < self.cutoff < self.session_close_ts:
             raise ValueError("receipt cutoff is outside its session")
-        if self.decided_at != self.cutoff or self.valid_until < self.decided_at:
+        if (
+            self.decided_at != self.cutoff
+            or self.valid_until != self.decided_at + timedelta(minutes=1)
+        ):
             raise ValueError("receipt decision timing is invalid")
         if self.input_status != "ready":
             raise ValueError("receipt input_status is invalid")
@@ -137,6 +145,68 @@ class ProspectiveSpyIntradayObservationReceipt:
             ensure_ascii=True,
             separators=(",", ":"),
             sort_keys=True,
+        )
+
+    @classmethod
+    def from_payload(
+        cls,
+        payload: Mapping[str, object],
+    ) -> ProspectiveSpyIntradayObservationReceipt:
+        """Rebuild one canonical source-safe receipt without touching its source."""
+
+        expected_keys = {
+            "receipt_id",
+            "receipt_schema_id",
+            "baseline_id",
+            "feature_schema_id",
+            "source_contract_hash",
+            "record_contract_hash",
+            "bar_content_commitment_sha256",
+            "session_open_ts",
+            "session_close_ts",
+            "cutoff",
+            "decided_at",
+            "valid_until",
+            "input_status",
+            "decision_class",
+            "reason_class",
+            "schema_version",
+        }
+        if set(payload) != expected_keys:
+            raise ValueError("receipt payload fields are invalid")
+        if payload["receipt_schema_id"] != PROSPECTIVE_SPY_INTRADAY_OBSERVATION_RECEIPT_ID:
+            raise ValueError("receipt schema id is invalid")
+        if payload["baseline_id"] != PROSPECTIVE_SPY_INTRADAY_BASELINE_ID:
+            raise ValueError("receipt baseline id is invalid")
+        if (
+            payload["feature_schema_id"]
+            != PROSPECTIVE_SPY_INTRADAY_BASELINE_FEATURE_SCHEMA_ID
+        ):
+            raise ValueError("receipt feature schema id is invalid")
+        schema_version = payload["schema_version"]
+        if not isinstance(schema_version, int) or isinstance(schema_version, bool):
+            raise ValueError("receipt schema version is invalid")
+        return cls(
+            source_contract_hash=_require_string(
+                payload["source_contract_hash"], "source_contract_hash"
+            ),
+            record_contract_hash=_require_string(
+                payload["record_contract_hash"], "record_contract_hash"
+            ),
+            bar_content_commitment_sha256=_require_string(
+                payload["bar_content_commitment_sha256"],
+                "bar_content_commitment_sha256",
+            ),
+            session_open_ts=_parse_utc_marker(payload["session_open_ts"], "session_open_ts"),
+            session_close_ts=_parse_utc_marker(payload["session_close_ts"], "session_close_ts"),
+            cutoff=_parse_utc_marker(payload["cutoff"], "cutoff"),
+            decided_at=_parse_utc_marker(payload["decided_at"], "decided_at"),
+            valid_until=_parse_utc_marker(payload["valid_until"], "valid_until"),
+            decision_class=_require_string(payload["decision_class"], "decision_class"),  # type: ignore[arg-type]
+            reason_class=_require_string(payload["reason_class"], "reason_class"),  # type: ignore[arg-type]
+            receipt_id=_require_string(payload["receipt_id"], "receipt_id"),
+            input_status=_require_string(payload["input_status"], "input_status"),  # type: ignore[arg-type]
+            schema_version=schema_version,
         )
 
 
@@ -268,6 +338,24 @@ def _require_sha256(value: object, field_name: str) -> None:
         or any(character not in "0123456789abcdef" for character in value[len(_SHA256_PREFIX) :])
     ):
         raise ValueError(f"{field_name} must use sha256:<64 lowercase hex> format")
+
+
+def _require_string(value: object, field_name: str) -> str:
+    if not isinstance(value, str):
+        raise ValueError(f"{field_name} must be a string")
+    return value
+
+
+def _parse_utc_marker(value: object, field_name: str) -> datetime:
+    marker = _require_string(value, field_name)
+    try:
+        parsed = datetime.fromisoformat(marker.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError(f"{field_name} is invalid") from error
+    normalized = require_utc(parsed, field_name)
+    if _utc_marker(normalized) != marker:
+        raise ValueError(f"{field_name} is not canonical UTC")
+    return normalized
 
 
 def _require_safe_payload(value: object) -> None:

@@ -1158,3 +1158,12 @@ subdirectories from symlink escape. A clean-process import test confirms that
 this data-only observer core never loads an Execution, provider, credential,
 broker, local-paper, or live module. It remains a source-safe forward-input
 witness only.
+
+## Prospective SPY Receipt Consumer
+
+The fixed 15:30 ET prospective SPY capture now has a strict consumer loader.
+It reads only the expected same-session external `receipt.json`, rejects
+missing, symlinked, malformed, noncanonical, or wrong-session content, and
+reconstructs the immutable receipt without reopening bars or mutating a cache.
+It creates no schedule in this package. Its scoped unavailable result belongs
+only to the prospective SPY Paper adapter and cannot pause other Data work.

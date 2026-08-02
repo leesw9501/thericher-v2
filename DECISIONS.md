@@ -8815,3 +8815,24 @@ equality is required for duplicate recovery, and corrupt or conflicting stored
 records fail rather than becoming observations. These are evidence-integrity
 properties of this one forward witness, not a new collection, approval, or
 execution control.
+
+## 2026-08-02 - Bind the fixed prospective SPY receipt directly to the existing virtual canary
+
+Decision: add a named SPY-intraday receipt bridge and one Execution adapter,
+not a generic route or scheduler. The Data loader accepts only a canonical
+same-session external receipt; the Engine bridge derives an opaque
+`ResearchDecisionReceipt` from its complete immutable identity; Execution
+accepts only a current ready `enter` receipt before reusing the existing
+one-share SPY account/quote/intent/cancel/reconciliation canary. The daily SPY
+D1 route and broker-free local replay remain distinct.
+
+Reason: the previously existing daily and intraday paths used different model
+contracts, so routing the intraday receipt through the daily baseline would
+misstate the decision source. Missing, malformed, stale, and abstaining inputs
+now stop before credential/config/account/quote activity; changed receipt
+content changes the research receipt and durable canary identity. Claude's
+falsification-first verdict was `uncertain`: the implementation is retained,
+but the next named activation review must independently prove import-time
+credential isolation, timestamp-derived staleness, and route-discriminated
+durable identity. This scoped Paper-route condition is not a hold on Data,
+Research, or unrelated Paper work, and is not a model/PnL/GPU/live decision.

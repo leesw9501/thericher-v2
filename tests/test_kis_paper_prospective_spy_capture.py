@@ -14,6 +14,7 @@ from typing import Any
 import pytest
 
 import thericher_v2.data.kis_paper_prospective_spy_capture as capture
+import thericher_v2.models.prospective_spy_intraday_observation as observation_module
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN, us_equity_2026_session
@@ -105,6 +106,107 @@ def test_capture_writes_one_canonical_external_receipt_and_is_idempotent(
             "exchange": "AMS",
         },
     ]
+
+
+def test_receipt_loader_revalidates_the_exact_canonical_capture_artifact(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    session_date = date(2026, 8, 3)
+    session = _regular_session(session_date)
+    _install_catalog(monkeypatch, _catalog(session_date))
+    repo_root = tmp_path / "repo"
+    artifact_root = tmp_path / "artifacts"
+    repo_root.mkdir()
+
+    captured = capture.capture_kis_paper_prospective_spy_observation(
+        cache_root=tmp_path / "market-data",
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        session_date=session_date,
+        observed_at=_cutoff(session),
+    )
+    loaded = capture.load_kis_paper_prospective_spy_observation_receipt(
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        session_date=session_date,
+    )
+
+    assert captured.receipt is not None
+    assert loaded == captured.receipt
+    assert loaded.canonical_json() == captured.receipt.canonical_json()
+
+
+def test_receipt_loader_rejects_a_noncanonical_or_wrong_session_artifact(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    session_date = date(2026, 8, 3)
+    session = _regular_session(session_date)
+    _install_catalog(monkeypatch, _catalog(session_date))
+    repo_root = tmp_path / "repo"
+    artifact_root = tmp_path / "artifacts"
+    repo_root.mkdir()
+    captured = capture.capture_kis_paper_prospective_spy_observation(
+        cache_root=tmp_path / "market-data",
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        session_date=session_date,
+        observed_at=_cutoff(session),
+    )
+    assert captured.artifact_path is not None
+    captured.artifact_path.write_text(captured.receipt.canonical_json() + "\n\n", encoding="utf-8")  # type: ignore[union-attr]
+
+    with pytest.raises(ValueError, match="canonical"):
+        capture.load_kis_paper_prospective_spy_observation_receipt(
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            session_date=session_date,
+        )
+    with pytest.raises(ValueError, match="unavailable"):
+        capture.load_kis_paper_prospective_spy_observation_receipt(
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            session_date=date(2026, 8, 4),
+        )
+
+
+def test_receipt_loader_rejects_a_rehashed_canonical_receipt_with_extended_ttl(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    session_date = date(2026, 8, 3)
+    session = _regular_session(session_date)
+    _install_catalog(monkeypatch, _catalog(session_date))
+    repo_root = tmp_path / "repo"
+    artifact_root = tmp_path / "artifacts"
+    repo_root.mkdir()
+    captured = capture.capture_kis_paper_prospective_spy_observation(
+        cache_root=tmp_path / "market-data",
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        session_date=session_date,
+        observed_at=_cutoff(session),
+    )
+    assert captured.receipt is not None
+    assert captured.artifact_path is not None
+    payload = captured.receipt.to_payload()
+    extended_valid_until = captured.receipt.valid_until + timedelta(minutes=1)
+    payload["valid_until"] = extended_valid_until.isoformat().replace("+00:00", "Z")
+    payload["receipt_id"] = observation_module._receipt_id(
+        {key: value for key, value in payload.items() if key != "receipt_id"}
+    )
+    captured.artifact_path.write_text(
+        json.dumps(payload, ensure_ascii=True, separators=(",", ":"), sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="decision timing"):
+        capture.load_kis_paper_prospective_spy_observation_receipt(
+            artifact_root=artifact_root,
+            repo_root=repo_root,
+            session_date=session_date,
+        )
 
 
 @pytest.mark.parametrize(

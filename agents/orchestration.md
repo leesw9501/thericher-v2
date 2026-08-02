@@ -741,3 +741,24 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** favor fresh forward execution evidence over another pass
   across a repeatedly screened static panel. This advances the paper-trading
   loop and preserves later model-evaluation integrity without a new workflow.
+
+## Fresh SPY Paper Adapter
+
+- **Ready:** the frozen 15:30 ET SPY receipt now reaches a tested named
+  virtual-paper adapter without reusing the incompatible daily D1 model route.
+  The next bounded package can attach the existing capture to one owned
+  prospective invocation and observe its scoped result without a foreground
+  market wait.
+- **Owned:** Data owns receipt capture and canonical revalidation; Engine owns
+  the pure immutable-to-research receipt bridge; Execution owns the current
+  account/quote/canary path. Research Steward remains unappointed because no
+  new frozen research campaign exists.
+- **Due:** a future 15:30 ET capture belongs to its owner and must not idle
+  Codex. The adapter has no new schedule in this objective.
+- **Improvement:** the current receipt's complete immutable identity now
+  determines the Paper decision identity, while stale/malformed/abstaining
+  input reaches no credential, account, quote, local-fill, or order path.
+  Claude's falsification-first result is `uncertain`; the next named activation
+  reattests import-time isolation, clock-derived freshness, and durable route
+  separation. This scoped check does not hold unrelated authorized Paper,
+  Data, or Research work.
