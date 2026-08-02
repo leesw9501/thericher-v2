@@ -1119,3 +1119,18 @@ direct-historical-universe, publication-time, PIT, campaign, model, ranking,
 and sealed-holdout flags are all explicitly false and rechecked before receipt
 publication. Do not use this result to admit a scored campaign, or repair its
 survivorship, corporate-action, adjustment, or availability limitations.
+
+## KIS MTF Profiled Feature-Input Preflight (2026-08-03)
+
+The read-only local-cache preflight reattached the verified QQQ/SPY minute
+catalogs, kept their source identities bound, and found 21 common regular
+15:30 ET prefixes. All six fixed profiles produced 126 aligned pair inputs.
+Every selected `1h`/`3h` bar passed exact 60/180-minute contiguous
+reconstruction and full OHLCV/volume equality before Engine received an
+in-memory projection. The external summary is
+`sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
+
+This is still prospective-input geometry only. It did not refresh, mutate,
+copy, or broaden the cache; call a provider; retain raw rows; or qualify the
+21 sessions for historical model evaluation, ranking, Paper, or execution.
+The existing prospective observer remains the owner of later-session capture.

@@ -246,3 +246,13 @@ records no appointment from this result. A later campaign may request ordinary
 custody only after its one immutable profile-selection precommit and its full
 dataset, target, split, cost, baseline, kill-test, and compute-stop contract
 exist.
+
+## Profiled MTF Input Boundary (2026-08-03)
+
+The completed KIS QQQ/SPY preflight proves 21 aligned 15:30 ET input shapes
+for every frozen profile, not an evaluable model dataset. Its 126 pair inputs
+have no target, return, cost, score, model, or sealed-evaluation allocation.
+Research Steward records no GPU appointment or evaluation spend from the
+source-safe summary `sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
+The GPU remains available only to a future independently frozen eligible
+campaign; do not use input geometry as a reason to train a model.

@@ -8,99 +8,90 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `kis-mtf-profiled-feature-input-preflight-v1`.
+Build `kis-mtf-profiled-prospective-observer-v1`.
 
-Prove that the six frozen causal `1m/5m/10m/1h/3h` window profiles can form
-target-free, completed-bar feature inputs from the already verified local
-QQQ/SPY 21-session KIS-shaped cache. This establishes only a real input
-boundary for a later frozen model campaign; it is not a model, profile
-selection, return study, ranking, PnL claim, Paper action, or source
-qualification.
+Extend the existing data-only QQQ/SPY prospective-observation path so each
+future eligible 15:30 ET pair can prove all six frozen causal
+`1m/5m/10m/1h/3h` profile inputs using the completed constituent-reconstruction
+boundary. This is a forward-input witness for a later frozen model campaign,
+not a model, target, return, strategy, profile selection, PnL, or Paper action.
 
 ## Boundaries
 
-- Do not call KIS, Norgate, Tiingo, a provider, or a broker. Do not read
-  `.env`, credentials, account data, or `KIS_LIVE_*`.
-- Read only the existing verified local QQQ/SPY 21-session cache and its named
-  availability/lineage contracts. Do not mutate, refresh, copy, extend, or
-  write market data under `D:\market_data`.
+- During this objective do not call KIS, Norgate, Tiingo, a provider, or a
+  broker. Do not read `.env`, credentials, account data, or `KIS_LIVE_*`.
+- Reuse the existing prospective observer and attempt-store concepts where they
+  fit. Do not create a parallel scheduler, generic event platform, dashboard,
+  report family, or approval gate.
+- Read only verified local historical/head cache fixtures or existing local
+  cache inputs. Do not refresh, collect, copy, extend, or write market data
+  under `D:\market_data`.
 - Use only the frozen catalog
   `sha256:ba7d1aeffdadad340d87667c7bfc4b16b1d2ce25632f330b597a0e2437e499e0`.
-  Iterate all six profiles for structural coverage, but do not select a profile
-  or create a `campaign_id` precommit.
-- Do not open or construct any target, label, return, cost, score, prediction,
-  model weight, GPU job, Paper/local-paper event, broker intent, PnL, or live
-  path.
-- Generated source-safe evidence belongs only under
-  `D:\thericher-v2\model-artifacts`. It may retain hashes, aggregate coverage,
-  schema/profile identifiers, categorical statuses, and structural timestamps;
-  it must not retain bars, prices, OHLCV, symbols, dates, cache paths, feature
-  values, labels, targets, or secrets.
-- Keep Norgate membership and every non-PIT/current-listing limitation outside
-  this objective. Do not use the Norgate snapshot as a universe, ranking, or
-  feature input.
-- Do not create a scheduler, generic feature framework, model, ensemble,
-  dashboard, report family, or approval gate.
+  Observe every profile; do not select one or create a campaign precommit.
+- Exclude the completed 21-session historical cache from every forward count.
+  A missing or invalid fresh pair is one scoped categorical observation result,
+  never a hold on another lane.
+- Persist source-safe evidence only under `D:\thericher-v2\model-artifacts`.
+  It may contain opaque hashes, profile identifiers, aggregate counts,
+  categorical statuses, and structural cutoff geometry. It must not contain
+  bars, prices, OHLCV, symbols, dates, cache paths, feature values, targets,
+  labels, predictions, secrets, account data, or order data.
+- Do not construct a target, label, return, cost, score, prediction, model
+  weight, GPU job, local-paper event, broker intent, PnL, or live path.
 
 ## Required Work
 
 ### Data package
 
-1. Reattest the existing local QQQ/SPY intraday availability/lineage contract
-   through its verified loader before reading a bar. Read the historical cache
-   only; do not invoke a collector or provider client.
-2. At the fixed existing regular-session cutoff, materialize the minimal
-   read-only `1m/5m/10m/1h/3h` completed-bar inputs for each eligible session
-   and each frozen profile. Record only aggregate per-profile/session readiness
-   and input identity in an immutable source-safe receipt.
-3. Establish constituent containment directly: every selected resampled `1h`
-   or `3h` bar must be traceable to exactly 60 or 180 contiguous completed
-   minute constituents ending strictly before the feature cutoff, and its full
-   OHLCV/volume values must equal a fresh reconstruction from those
-   constituents. A bar timestamp or bar-open label alone is insufficient. A
-   missing containment or reconstruction proof is `input_unavailable`, not a
-   repaired bar or inferred causal claim.
+1. Reattest the existing verified historical/head source identities through the
+   current local loader and bind the new observer contract to the completed
+   `kis-mtf-profiled-feature-input-preflight-v1` summary
+   `sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
+2. For one eligible forward session, build all six profile pair projections by
+   reusing the existing exact 60/180-minute slow-bar containment guard. The
+   historical 21 sessions may prove compatibility but must never count as
+   forward observations.
+3. Persist one immutable, idempotent source-safe observation commitment per
+   session, with per-profile aggregate readiness and opaque content identities.
+   Reconciliation of an identical retry must not duplicate a record.
 
 ### Engine Research package
 
-1. Add a small typed, deterministic target-free MTF feature-input projection
-   on top of `CausalMultiTimeframeSequenceWindow` and the fixed profile catalog.
-   Reuse an existing pure feature primitive when one fits; otherwise add only
-   the smallest fixed normalized completed-bar projection needed to prove the
-   input boundary. Do not introduce a generic feature platform.
-2. Bind every projection to its catalog hash, selected window ends, feature
-   timestamp, and completed-bar status. The feature timestamp must equal the
-   latest actual selected window end under the fixed cutoff. Keep values
-   in-memory only; receipts expose structural metadata and hashes only.
-3. Require same cutoffs and source identity for both legs when emitting a pair
-   fact. A missing or structurally invalid leg yields a categorical no-result
-   for that session/profile, while independent ready work continues.
+1. Reuse the small target-free normalized projection rather than introducing a
+   new feature schema. Bind each observed profile to the catalog hash, source
+   contract, cutoff, feature timestamp, and completed-bar status in memory.
+2. Make a pair `observed` only when both legs share the same source-contract
+   identity, cutoff, profile set, and feature timestamp. Otherwise emit the
+   narrow categorical no-result for that prospective session.
+3. Keep the observer's contract distinct from a future model campaign: no
+   profile winner, target, score, fit, comparison, model artifact, GPU request,
+   or execution consequence is allowed.
 
 ### Validation package
 
-1. Add focused tests for all six profiles, QQQ/SPY pair alignment, catalog
-   digest binding, no network/environment/credential/provider/cache-mutation
-   path, and source-safe external artifact-root enforcement.
-2. Mutate every post-cutoff minute and the next target-shaped minute in a
-   fixture: the feature projection and source-safe digest must remain exactly
-   unchanged. Mutate a constituent minute inside a selected slow bar and prove
-   the containment check rejects it or the feature output changes only when the
-   minute is legitimately pre-cutoff.
-3. Reject future, incomplete, duplicate, non-contiguous, mismatched-symbol,
-   and stale `1h`/`3h` input. Do not test or claim predictive quality.
+1. Add focused fixture tests for all six profiles, forward-only historical
+   exclusion, duplicate-retry idempotence, conflicting-session rejection, and
+   external artifact-root/symlink enforcement.
+2. Prove post-cutoff and next-target-shaped minutes leave the sealed profile
+   commitments unchanged; a pre-cutoff slow constituent mutation must fail
+   reconstruction or change the resulting opaque commitment after legitimate
+   resampling.
+3. Prove no network, provider, environment, credential, cache-mutation,
+   model, GPU, local-paper, broker, account, order, or live path is imported or
+   called by the new observer run.
 
 ## Claude Challenge
 
-Claude's preflight verdict is `supported-with-limits`. The decisive guard is
-constituent-minute containment for resampled slow bars: this objective becomes
-unsupported if a `1h`/`3h` bar stamped before cutoff can include any minute at
-or after cutoff, or if its values cannot be reproduced from those exact
-constituents. Timestamp equality and ordinary staleness checks alone are not
-enough.
+Before an observer-contract or store-format change, ask Claude for a concise
+falsification-first drift check. The decisive concerns are accidental reuse of
+the completed historical 21 sessions as forward evidence, profile-selection
+leakage, and any persisted value/date/symbol data. An adverse verdict pauses
+only that contract/store decision; independent work continues.
 
 ## Verification
 
-Run focused Data, Engine, and Validation tests plus a local no-provider smoke,
+Run focused Data, Engine, and Validation tests plus a local fixture-only smoke,
 then:
 
 ```powershell

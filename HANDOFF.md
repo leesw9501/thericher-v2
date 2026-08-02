@@ -2071,3 +2071,26 @@ snapshot remains current-and-past survivorship/backfill evidence, not as-of
 universe truth, and the catalog's multiplicity must remain bounded by the
 per-campaign immutable selection record. Neither limitation is an approval hold
 on unrelated work.
+
+## KIS MTF Profiled Feature-Input Preflight (2026-08-03)
+
+`kis-mtf-profiled-feature-input-preflight-v1` reattached the two verified local
+KIS minute catalogs and built all six frozen causal `1m/5m/10m/1h/3h` profiles
+at the fixed 15:30 ET cutoff. Its aggregate-only result is
+`feature_inputs_ready`: 21 common sessions and 126 aligned profile-pair inputs.
+The external precommit is
+`sha256:25e8ac3aa820ec6c33eb70427765c36c7c05c6cd67140e5f4408415f0b510c4c`,
+the contract is
+`sha256:25ed7202b60b2ac992e46aaca8d423875fee06f54a14e53bbf0fd8ad6280adbb`,
+and the source-safe summary is
+`sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
+
+Each selected `1h` and `3h` bar is reconstructed from exactly 60 or 180
+contiguous completed minute constituents and must exactly match their full
+OHLCV/volume aggregate. Post-cutoff and next-target-shaped minutes cannot alter
+the in-memory projection/digest, while a legitimate pre-cutoff constituent
+change changes it and a forged slow bar fails. The persisted receipt has only
+hashes, profile identifiers, and aggregate readiness: it has no symbols,
+dates, paths, OHLCV, feature values, targets, labels, credentials, or broker
+state. This is an input boundary only, not a model, profile selection, target,
+return, PnL, GPU, Paper, or live result.

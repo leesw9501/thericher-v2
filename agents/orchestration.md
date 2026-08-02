@@ -682,3 +682,21 @@ same-session causal misreading without adding a new gate.
   this target-free leaf. Claude also requires constituent-minute containment
   for slow resampled bars, which the next package will test rather than
   inferring causality from bar timestamps.
+
+## KIS MTF Profiled Feature-Input Preflight Completion (2026-08-03)
+
+- **Ready:** the local QQQ/SPY cache now has a tested target-free causal input
+  boundary for all six profiles: 21 aligned sessions and 126 profile-pair
+  inputs at the fixed 15:30 ET cutoff. The next bounded package can improve a
+  distinct Engine or prospective Data consumer without waiting for a market
+  session, collector retry, GPU, Paper result, or operator decision.
+- **Owned:** Data retains local-cache/source provenance and the existing
+  prospective observer; Engine owns the normalized projection seam; temporary
+  Validation's containment/mutation evidence is complete; Research Steward has
+  no GPU appointment; Execution has no consequence.
+- **Due:** none in the foreground. Existing collection and Paper schedules
+  retain their own due times and cannot delay the next ready package.
+- **Improvement:** 1h/3h causality now requires exact constituent reconstruction
+  rather than a bar timestamp assertion. Post-cutoff minutes leave the input
+  digest unchanged, while forged or structurally invalid slow bars become a
+  scoped `input_unavailable` result instead of a repaired input or global hold.

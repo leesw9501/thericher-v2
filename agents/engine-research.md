@@ -1219,3 +1219,19 @@ label, return, target, model, GPU, Paper, broker, PnL, or live path was opened.
 A future frozen campaign must define one-profile selection custody in its own
 contract before data or evaluation. That selection mechanism is intentionally
 not prebuilt by this target-free catalog leaf.
+
+## KIS MTF Profiled Feature-Input Preflight (2026-08-03)
+
+The small `NormalizedCompletedBarProjection` seam now binds a profile catalog
+hash, per-timeframe selected window ends, a feature timestamp, completed-bar
+status, and fixed normalized close/volume values held only in memory. It uses
+the existing causal sequence-window validator and emits a pair only when both
+legs have the same source-contract identity, cutoff, and feature timestamp.
+The actual read-only cache smoke is `feature_inputs_ready` for 21 sessions and
+all six profiles; its aggregate summary is
+`sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
+
+This is not a candidate model, target, score, return, cost, validation,
+profile choice, GPU appointment, ensemble member, Paper input, or PnL claim.
+The next model-facing package must state a separate bounded campaign contract
+and may not turn this structural receipt into a historical performance result.

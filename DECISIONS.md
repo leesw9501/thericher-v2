@@ -8770,3 +8770,21 @@ Reason: Claude's `supported-with-limits` review identifies current-and-past
 survivorship/backfill and enumerated-window multiplicity as the remaining
 risks. These controls preserve their limits without creating a scheduler,
 research queue, model, GPU appointment, or paper-trading gate.
+
+## 2026-08-03 - Require constituent reconstruction for KIS slow MTF inputs
+
+Decision: the target-free KIS QQQ/SPY MTF input boundary materializes every
+frozen profile only from the verified local 1m prefix at 15:30 ET. Before a
+selected `1h` or `3h` bar can reach the in-memory normalized projection, it
+must have exactly 60 or 180 contiguous completed minute constituents in its
+own interval, all ending by the cutoff, and a fresh full OHLCV/volume
+reconstruction must equal the selected bar. A timestamp label alone is never
+causal evidence.
+
+Reason: Claude's preflight was `supported-with-limits` specifically on this
+leakage surface. The implemented read-only smoke produced 21 common sessions
+and 126 profile-pair inputs with only aggregate/hash evidence outside the
+workspace. The boundary neither selects a profile nor opens a target, return,
+model, evaluation, GPU, Paper, broker, or live consequence. A later campaign
+must still freeze its own profile-selection, target, split, cost, baseline,
+kill-test, and compute-stop contract.
