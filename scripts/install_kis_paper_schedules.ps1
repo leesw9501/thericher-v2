@@ -151,9 +151,7 @@ $schedules = @(
         Runner = "run_kis_paper_intraday_head_schedule.ps1"
         ImageServices = @(
             "kis-paper-intraday-head",
-            "kis-paper-prospective-qqq-session",
-            "kis-paper-prospective-qqq-validation",
-            "kis-paper-intraday-observation",
+            "kis-paper-intraday-pair-observation",
             "kis-paper-intraday-head-receipt"
         )
         At = @("00:31", "02:31", "04:31", "06:20")

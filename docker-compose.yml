@@ -142,6 +142,27 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-intraday-pair-observation:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-head"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_qqq_spy_mtf_prospective_attempt.py
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-readonly:
     build:
       context: .
@@ -721,6 +742,7 @@ services:
       - --execute
       - --mode
       - session-capture
+      - --skip-legacy-preparation
       - --pages-per-target
       - "4"
       - --preparation-artifact-root

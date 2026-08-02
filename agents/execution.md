@@ -507,3 +507,17 @@ decision, account query, submission, cancellation, modification, schedule,
 price proof, capital allocation, PnL claim, or live capability. Keep the seam
 as the model-to-local-paper contract for later qualified campaigns; Execution
 still independently attests any future cost/fill/availability assumptions.
+
+## QQQ/SPY Data-Only Observer Boundary
+
+For the current frozen QQQ/SPY prospective-input objective, the existing
+intraday-head schedule invokes only its Data collector, credential-free pair
+observer, and schedule receipt. The legacy QQQ Paper/local-paper stages are
+explicitly `not_applicable` for this one path; they are neither invoked nor
+treated as a failure. Execution owns no account, quote, intent, fill,
+reconciliation, or broker consequence in this observer.
+
+The observer's valid `not_observed` record is Data evidence only. Its
+unavailable input or busy append condition becomes a recovery receipt rather
+than an execution decision. This leaves the existing local-paper replay seam
+unchanged for a separately qualified future campaign.

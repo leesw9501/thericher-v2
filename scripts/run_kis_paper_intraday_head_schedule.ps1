@@ -82,21 +82,6 @@ function Get-ProfileStatus {
     return "unavailable"
 }
 
-function Get-SafeProfileSessionId {
-    param(
-        [object]$Payload
-    )
-
-    if ($null -eq $Payload) {
-        return $null
-    }
-    $candidate = [string]$Payload.session_id
-    if ($candidate -match '^[A-Za-z0-9._-]{1,160}$') {
-        return $candidate
-    }
-    return $null
-}
-
 function New-ScheduleRunId {
     param(
         [Parameter(Mandatory = $true)]
@@ -108,23 +93,6 @@ function New-ScheduleRunId {
         [System.Globalization.CultureInfo]::InvariantCulture
     )
     return "intraday-head-$stamp"
-}
-
-function Test-ProspectiveObservationPairReady {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string]$ModelArtifactRoot
-    )
-
-    $preparationRoot = Join-Path `
-        $ModelArtifactRoot `
-        "kis-intraday-prospective-head-observation\scheduled-head-v1"
-    $requiredFiles = @("precommit.json", "planning-receipt.json")
-    return @(
-        $requiredFiles | ForEach-Object {
-            Test-Path -LiteralPath (Join-Path $preparationRoot $_) -PathType Leaf
-        }
-    ) -notcontains $false
 }
 
 function Get-DispatchTerminalExitCode {
@@ -186,80 +154,38 @@ $collection = Invoke-HeadProfileService `
     -Service "kis-paper-intraday-head"
 $collectionExitCode = [int]$collection.ExitCode
 
-# This service opens the virtual-only execution route only for its own current
-# eligible receipt. It performs its own embedded local-paper replay before the
-# virtual route and its no-intent result never changes collection recovery.
+# This schedule currently owns a data-only observation loop. The legacy QQQ
+# Paper route remains installed for later explicitly scoped work, but is not
+# invoked here: the frozen objective forbids both Paper and local-paper work.
 $prospectiveLoopExitCode = 0
-$prospectiveLoopStatus = "embedded"
-$prospectiveSession = Invoke-HeadProfileService `
-    -ProjectRoot $resolvedProjectRoot `
-    -Service "kis-paper-prospective-qqq-session"
-$prospectiveSessionExitCode = [int]$prospectiveSession.ExitCode
-$prospectiveSessionPayload = Get-ProfilePayload `
-    -Output $prospectiveSession.Output `
-    -Kind "kis_paper_prospective_qqq_session"
-$prospectiveSessionId = Get-SafeProfileSessionId -Payload $prospectiveSessionPayload
-$prospectiveSessionStatus = Get-ProfileStatus `
-    -Output $prospectiveSession.Output `
-    -Kind "kis_paper_prospective_qqq_session" `
-    -AllowedStatuses @("no_intent", "canary_completed")
-
-# Validation re-loads the exact retained cache for the execution session. It has
-# no network or KIS environment values and cannot create a Paper side effect.
+$prospectiveLoopStatus = "not_applicable"
+$prospectiveSessionExitCode = 0
+$prospectiveSessionStatus = "not_applicable"
+$prospectiveSessionId = $null
 $prospectiveValidationExitCode = 0
-$prospectiveValidationStatus = "not_run"
-$prospectiveValidationPayload = $null
-if (
-    $prospectiveSessionExitCode -eq 0 `
-        -and $prospectiveSessionStatus -in @("no_intent", "canary_completed") `
-        -and $null -ne $prospectiveSessionId
-) {
-    $sessionId = $prospectiveSessionId
-    if ($sessionId -match '^[A-Za-z0-9._-]{1,160}$') {
-        $prospectiveValidation = Invoke-HeadProfileService `
-            -ProjectRoot $resolvedProjectRoot `
-            -Service "kis-paper-prospective-qqq-validation" `
-            -CommandOverride @(
-                "python",
-                "-m",
-                "thericher_v2.ops.kis_paper_prospective_qqq_validation",
-                "--session-id",
-                $sessionId,
-                "--cache-root",
-                "/app/market_data/us_equities/kis_paper_private/intraday-head",
-                "--artifact-root",
-                "/app/model_artifacts",
-                "--repository-root",
-                "/app"
-            )
-        $prospectiveValidationExitCode = [int]$prospectiveValidation.ExitCode
-        $prospectiveValidationPayload = Get-ProfilePayload `
-            -Output $prospectiveValidation.Output `
-            -Kind "kis_paper_prospective_qqq_validation"
-        if ($prospectiveValidationExitCode -eq 0 -and $null -ne $prospectiveValidationPayload) {
-            $prospectiveValidationStatus = "validated"
-        } else {
-            $prospectiveValidationStatus = "unavailable"
-        }
-    } else {
-        $prospectiveValidationStatus = "unavailable"
-    }
-}
-$prospectiveValidationSessionId = Get-SafeProfileSessionId -Payload $prospectiveValidationPayload
+$prospectiveValidationStatus = "not_applicable"
+$prospectiveValidationSessionId = $null
 
-# The older observer remains optional for the QQQ lifecycle. Do not create its
-# container until Data has written both preparation evidence files.
 $observationExitCode = 0
-$observationStatus = "pending"
-if (Test-ProspectiveObservationPairReady -ModelArtifactRoot "D:\thericher-v2\model-artifacts") {
-    $observation = Invoke-HeadProfileService `
+$observationStatus = "not_applicable"
+if ($collectionExitCode -eq 0) {
+    $pairObservation = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
-        -Service "kis-paper-intraday-observation"
-    $observationExitCode = [int]$observation.ExitCode
+        -Service "kis-paper-intraday-pair-observation"
+    $observationExitCode = [int]$pairObservation.ExitCode
     $observationStatus = Get-ProfileStatus `
-        -Output $observation.Output `
-        -Kind "kis_intraday_prospective_observation" `
-        -AllowedStatuses @("pending", "unavailable", "complete")
+        -Output $pairObservation.Output `
+        -Kind "kis_qqq_spy_mtf_prospective_observation" `
+        -AllowedStatuses @(
+            "pending",
+            "unavailable",
+            "observed",
+            "not_observed",
+            "duplicate",
+            "conflict",
+            "cap_reached",
+            "busy"
+        )
 }
 
 $scheduleObservedAt = (Get-Date).ToUniversalTime()
@@ -299,12 +225,6 @@ $scheduleReceiptCommand = @(
     "--repository-root",
     "/app"
 )
-if ($null -ne $prospectiveSessionId) {
-    $scheduleReceiptCommand += @("--prospective-session-id", $prospectiveSessionId)
-}
-if ($null -ne $prospectiveValidationSessionId) {
-    $scheduleReceiptCommand += @("--prospective-validation-session-id", $prospectiveValidationSessionId)
-}
 $scheduleReceipt = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-intraday-head-receipt" `

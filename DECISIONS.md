@@ -8638,3 +8638,20 @@ could inspect a target, classify a target-free unavailable preflight with
 revision hash. This decision creates no model selection, GPU appointment,
 ensemble, PnL/profitability, Paper input, KIS call, broker action, or live
 authority.
+
+## 2026-08-01 - Require a terminal fact from the QQQ/SPY data-only observer
+
+Decision: reuse the existing intraday-head task for one credential-bearing
+Data collection followed by a credential-free QQQ/SPY pair observer and a
+source-safe schedule receipt. During this bounded objective, the legacy QQQ
+Paper and local-paper stages are explicitly `not_applicable`, not silently
+skipped. A sealed `not_observed` attempt is a normal zero/one-leg result, while
+an unavailable contract/input or busy append lock is terminal `recovery`.
+
+Reason: the observer must accumulate every eligible session fact without
+turning missing source legs into a scheduler failure, but it must not report an
+eligible input/contract fault as a completed observation. Claude's
+falsification-first review was `supported-with-limits` and required this
+data-only terminal distinction. This changes neither broker authority nor the
+historical 21-session exclusion, and creates no model, target, PnL, GPU, Paper,
+or live claim.

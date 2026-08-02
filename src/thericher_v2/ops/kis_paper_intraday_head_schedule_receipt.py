@@ -24,10 +24,23 @@ SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE = 20
 _DEFAULT_REPOSITORY_ROOT = Path.cwd()
 
 _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
-_LOOP_STATUSES = frozenset({"embedded", "preview", "no_intent", "unavailable"})
-_SESSION_STATUSES = frozenset({"no_intent", "canary_completed", "unavailable"})
-_VALIDATION_STATUSES = frozenset({"validated", "not_run", "unavailable"})
-_OBSERVATION_STATUSES = frozenset({"pending", "unavailable", "complete"})
+_LOOP_STATUSES = frozenset({"embedded", "preview", "no_intent", "unavailable", "not_applicable"})
+_SESSION_STATUSES = frozenset({"no_intent", "canary_completed", "unavailable", "not_applicable"})
+_VALIDATION_STATUSES = frozenset({"validated", "not_run", "unavailable", "not_applicable"})
+_OBSERVATION_STATUSES = frozenset(
+    {
+        "pending",
+        "unavailable",
+        "complete",
+        "not_applicable",
+        "observed",
+        "not_observed",
+        "duplicate",
+        "conflict",
+        "cap_reached",
+        "busy",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -82,6 +95,7 @@ class KisPaperIntradayHeadScheduleReceipt:
                     "exit_code": self.observation_exit_code,
                     "status": self.observation_status,
                     "required_for_qqq_cycle": False,
+                    "data_only_pair_observation": True,
                 },
             },
             "terminal": {
@@ -123,11 +137,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
 ) -> KisPaperIntradayHeadScheduleReceipt:
     """Write a terminal receipt without retaining provider, account, or order data.
 
-    The collection process remains the authority for its own exit code. Once
-    collection succeeds, the execution session's embedded prospective loop, and
-    exact offline validation are all required to publish an allowlisted terminal
-    outcome. The older observation remains explicitly optional for this QQQ
-    cycle. `preview` remains accepted only for immutable historical receipts.
+    The collection process remains the authority for its own exit code. A
+    data-only dispatch can mark the legacy QQQ execution stages
+    ``not_applicable`` while it publishes a credential-free pair observation.
+    Older execution receipts retain their original allowlisted terminal rules.
     """
 
     _require_safe_id(run_id, "run id")
@@ -158,6 +171,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_exit_code=prospective_validation_exit_code,
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
+        observation_exit_code=observation_exit_code,
+        observation_status=observation_status,
     )
     root = _external_artifact_root(artifact_root=artifact_root, repository_root=repository_root)
     result = KisPaperIntradayHeadScheduleReceipt(
@@ -196,6 +211,8 @@ def _terminal_outcome(
     prospective_validation_exit_code: int,
     prospective_validation_status: str,
     prospective_validation_session_id: str | None,
+    observation_exit_code: int,
+    observation_status: str,
 ) -> tuple[str, str, int]:
     if collection_exit_code != 0:
         return "recovery", "collection_exit_nonzero", collection_exit_code
@@ -211,6 +228,13 @@ def _terminal_outcome(
         prospective_validation_session_id=prospective_validation_session_id,
     )
     if recovery_class is None:
+        if prospective_loop_status == "not_applicable":
+            observation_recovery = _data_only_observation_recovery_class(
+                observation_exit_code=observation_exit_code,
+                observation_status=observation_status,
+            )
+            if observation_recovery is not None:
+                return "recovery", observation_recovery, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
         return "complete", "complete", 0
     return "recovery", recovery_class, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
 
@@ -228,6 +252,17 @@ def _first_downstream_recovery_class(
 ) -> str | None:
     if prospective_loop_exit_code != 0:
         return "prospective_loop_exit_nonzero"
+    if prospective_loop_status == "not_applicable":
+        if (
+            prospective_session_exit_code == 0
+            and prospective_session_status == "not_applicable"
+            and prospective_session_id is None
+            and prospective_validation_exit_code == 0
+            and prospective_validation_status == "not_applicable"
+            and prospective_validation_session_id is None
+        ):
+            return None
+        return "not_applicable_execution_branch_invalid"
     if prospective_loop_status not in {"embedded", "preview", "no_intent"}:
         return "prospective_loop_payload_unavailable"
     if prospective_session_exit_code != 0:
@@ -242,6 +277,27 @@ def _first_downstream_recovery_class(
         return "prospective_validation_payload_unavailable"
     if prospective_validation_session_id != prospective_session_id:
         return "prospective_validation_session_mismatch"
+    return None
+
+
+def _data_only_observation_recovery_class(
+    *,
+    observation_exit_code: int,
+    observation_status: str,
+) -> str | None:
+    """Require the current data-only branch to expose its own terminal fact."""
+
+    if observation_exit_code != 0:
+        return "observation_exit_nonzero"
+    if observation_status not in {
+        "pending",
+        "observed",
+        "not_observed",
+        "duplicate",
+        "conflict",
+        "cap_reached",
+    }:
+        return "observation_payload_unavailable"
     return None
 
 

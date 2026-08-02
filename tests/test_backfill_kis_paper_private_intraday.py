@@ -272,6 +272,64 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
     )
 
 
+def test_intraday_head_can_skip_legacy_preparation_for_data_only_collection(
+    monkeypatch,
+    capsys,
+) -> None:
+    script = _load_script()
+    monkeypatch.setattr(script, "_load_paper_config", lambda _: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "run_kis_paper_private_intraday_backfill_cycle",
+        lambda **_kwargs: (
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="QQQ/NAS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
+            KisPaperPrivateIntradayBackfillRun(
+                status="collected",
+                target_key="SPY/AMS/1m",
+                row_count=120,
+                exact_overlap_rows=0,
+            ),
+        ),
+    )
+    monkeypatch.setattr(
+        script,
+        "_prepare_head_observation",
+        lambda **_kwargs: (_ for _ in ()).throw(AssertionError("legacy preparation is skipped")),
+    )
+
+    assert script.main(
+        ["--execute", "--mode", "head", "--skip-legacy-preparation"],
+        code_revision=lambda _: "git:test",
+    ) == 0
+
+    assert json.loads(capsys.readouterr().out) == {
+        "mode": "head",
+        "status": "complete",
+        "targets": [
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "QQQ/NAS/1m",
+            },
+            {
+                "exact_overlap_rows": 0,
+                "reason": None,
+                "row_count": 120,
+                "status": "collected",
+                "target_key": "SPY/AMS/1m",
+            },
+        ],
+    }
+
+
 @pytest.mark.parametrize(
     ("child_outcome", "expected_reason"),
     [
@@ -553,6 +611,7 @@ def test_intraday_head_docker_profile_mounts_only_the_explicit_preparation_artif
 
     assert 'profiles: ["kis-paper-intraday-head"]' in section
     assert "- --mode\n      - session-capture" in section
+    assert "- --skip-legacy-preparation" in section
     assert "- --mode\n      - head" not in section
     assert "--preparation-artifact-root" in section
     assert "/app/model_artifacts" in section
@@ -579,6 +638,25 @@ def test_intraday_head_profile_has_a_cpu_only_offline_observation_service() -> N
     assert "gpus:" not in section
     assert "KIS_PAPER" not in section
     assert "KIS_LIVE" not in section
+    assert ":/app/market_data:ro" in section
+    assert ":/app/model_artifacts" in section
+
+
+def test_intraday_head_profile_has_a_credential_free_pair_observation_service() -> None:
+    compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
+    section = compose.split(
+        "\n  kis-paper-intraday-pair-observation:\n", maxsplit=1
+    )[1].split("\n  kis-readonly:\n", maxsplit=1)[0]
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "target: base" in section
+    assert "network_mode: none" in section
+    assert "read_only: true" in section
+    assert "scripts/run_kis_qqq_spy_mtf_prospective_attempt.py" in section
+    assert "gpus:" not in section
+    assert "KIS_PAPER" not in section
+    assert "KIS_LIVE" not in section
+    assert "ACCOUNT" not in section
     assert ":/app/market_data:ro" in section
     assert ":/app/model_artifacts" in section
 

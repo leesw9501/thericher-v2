@@ -122,8 +122,9 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "Required scheduled Docker image is missing for task" in source
     assert "build scheduled Docker service images" in source
     assert "Using verified existing schedule images." in source
-    assert "kis-paper-prospective-qqq-session" in source
-    assert "kis-paper-prospective-qqq-validation" in source
+    assert "kis-paper-intraday-pair-observation" in source
+    assert "kis-paper-prospective-qqq-session" not in source
+    assert "kis-paper-prospective-qqq-validation" not in source
     assert "kis-paper-intraday-head-receipt" in source
     assert "Assert-KoreaStandardTime" in source
     assert '[System.TimeZoneInfo]::Local' in source

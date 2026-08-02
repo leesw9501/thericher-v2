@@ -11,19 +11,13 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
     collection_call = ' -Service "kis-paper-intraday-head"'
-    prospective_session_call = ' -Service "kis-paper-prospective-qqq-session"'
-    prospective_validation_call = ' -Service "kis-paper-prospective-qqq-validation"'
-    observation_call = ' -Service "kis-paper-intraday-observation"'
+    observation_call = ' -Service "kis-paper-intraday-pair-observation"'
     receipt_call = ' -Service "kis-paper-intraday-head-receipt"'
     assert "--profile kis-paper-intraday-head" in source
     assert "run --rm --no-deps --pull never $Service" in source
     assert collection_call in source
-    assert prospective_session_call in source
-    assert prospective_validation_call in source
     assert observation_call in source
-    assert source.index(collection_call) < source.index(prospective_session_call)
-    assert source.index(prospective_session_call) < source.index(prospective_validation_call)
-    assert source.index(prospective_validation_call) < source.index(observation_call)
+    assert source.index(collection_call) < source.index(observation_call)
     assert source.index(observation_call) < source.index(receipt_call)
     assert "Get-DispatchTerminalExitCode" in source
     assert "New-ScheduleRunId" in source
@@ -36,7 +30,7 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "exit $collectionExitCode" not in source
     assert "prospective_loop_exit_code" in source
     assert "prospective_loop_status" in source
-    assert '$prospectiveLoopStatus = "embedded"' in source
+    assert '$prospectiveLoopStatus = "not_applicable"' in source
     assert "kis-paper-prospective-loop" not in source
     assert "prospective_session_exit_code" in source
     assert "prospective_session_status" in source
@@ -47,16 +41,11 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "Get-ProfileStatus" in source
     assert "2>&1" in source
     assert '$ErrorActionPreference = "Continue"' in source
-    assert "no_intent\", \"canary_completed" in source
-    assert "canary_completed" in source
-    assert "kis_paper_prospective_qqq_validation" in source
-    assert '$prospectiveValidationStatus = "validated"' in source
-    assert "CommandOverride" in source
-    assert "pending\", \"unavailable\", \"complete" in source
-    assert "Test-ProspectiveObservationPairReady" in source
-    assert "precommit.json" in source
-    assert "planning-receipt.json" in source
-    assert source.index("Test-ProspectiveObservationPairReady") < source.index(observation_call)
+    assert '"observed"' in source
+    assert '"not_observed"' in source
+    assert "kis-paper-prospective-qqq-session" not in source
+    assert "kis-paper-prospective-qqq-validation" not in source
+    assert "kis-paper-intraday-observation" not in source
 
 
 def test_head_schedule_dispatcher_has_no_secret_or_live_route_surface() -> None:

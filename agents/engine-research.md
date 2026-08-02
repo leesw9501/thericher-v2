@@ -1095,3 +1095,18 @@ No GPU appointment is eligible from this receipt. The next Engine contract is
 source identities, structural availability, and content commitments. Only then
 may a distinct model/target/cost/baseline/kill contract be frozen. This is a
 research discipline, not a wait on the foreground or another lane.
+
+## QQQ/SPY Forward-Observation Handoff
+
+Data has installed the credential-free `kis-qqq-spy-mtf-prospective-observation-v1`
+consumer behind its owned intraday collector. The current forward-record count
+is `0`; its 30-record accumulation remains prospective input evidence only and
+does not make a target, model, PnL, GPU, Paper, or ensemble campaign eligible.
+The 21 earlier local-cache sessions remain excluded.
+
+This does not idle Engine Research. Ready Engine work may improve the
+model-neutral hierarchical decision contracts, causal feature adapters, and
+offline validation fixtures without opening a return or reusing the future
+observer as a selection surface. Any later training campaign still freezes its
+own dataset, target, split, costs, baseline, kill test, artifact root, and GPU
+stop rule before Research Steward allocation.

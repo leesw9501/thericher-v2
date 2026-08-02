@@ -60,6 +60,7 @@ def main(
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--project-only", action="store_true")
+    parser.add_argument("--skip-legacy-preparation", action="store_true")
     parser.add_argument("--pages-per-target", type=int, default=2)
     parser.add_argument(
         "--mode",
@@ -171,7 +172,11 @@ def main(
                 for result in results
             ],
         }
-    if args.mode in {"head", "session-capture"} and _head_preparation_input_succeeded(results):
+    if (
+        not args.skip_legacy_preparation
+        and args.mode in {"head", "session-capture"}
+        and _head_preparation_input_succeeded(results)
+    ):
         payload["preparation"] = _prepare_head_observation(
             head_cache_root=_cache_root("head"),
             artifact_root=Path(args.preparation_artifact_root),

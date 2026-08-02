@@ -1892,3 +1892,22 @@ campaign. Engine's next evidence path is a source-safe, forward-only QQQ/SPY
 pair observation sequence that excludes these 21 sessions; it can then freeze
 a distinct campaign after 30 fresh aligned records. Claude's bounded structural
 request returned no final verdict, so it is recorded as `review_unavailable`.
+
+## QQQ/SPY MTF Prospective Observer
+
+The current data-only `kis-qqq-spy-mtf-prospective-observation-v1` path is
+implemented through the existing intraday-head chain. After its owned
+collector, the credential-free pair observer consumes only local QQQ/NAS and
+SPY/AMS cache prefixes and writes source-safe immutable records below
+`D:\thericher-v2\model-artifacts\data\kis-qqq-spy-mtf-prospective-observation-v1`.
+The initial offline/no-op verification created no fresh KIS observation, so the
+forward primary-record count is `0`; the 21 historical availability sessions
+remain explicitly excluded.
+
+The current schedule is data-only: its legacy QQQ Paper/local-paper stages are
+`not_applicable` for this frozen objective. `not_observed` is a valid sealed
+zero/one-leg attempt; an unavailable verified input or busy append lock instead
+produces a terminal recovery receipt so an eligible session cannot disappear as
+a false success. Claude's drift check was `supported-with-limits`. This is not
+a model, target, PnL, GPU, Paper, or live claim. Engine preparation continues
+independently while the Data-owned future-session worker accumulates records.

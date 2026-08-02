@@ -554,3 +554,21 @@ required event evidence is absent.
 - **Improvement:** distinguish 21 independent session blocks from thousands of
   correlated minute rows, so a causal input proof cannot be misread as enough
   validation evidence or used to manufacture GPU work.
+
+## QQQ/SPY Prospective Observer Dispatch
+
+- **Ready:** the existing intraday-head schedule now has a tested data-only
+  QQQ/SPY pair-observation continuation. A distinct Engine preparation package
+  is ready now; it must not wait for a future market session.
+- **Owned:** Data owns the collector, future-session invocation, and sealed
+  source-safe observer store. Engine owns independent model-neutral contract
+  work. Execution has no route in this frozen objective; Research Steward has
+  no eligible GPU appointment.
+- **Due:** the observer's first fresh attempt is owned by the next eligible
+  schedule invocation. Current count is `0`; the 21 historical availability
+  sessions are excluded. An unavailable input or busy store becomes scoped
+  recovery, while an actual zero/one-leg availability result is sealed.
+- **Improvement:** data-only terminal accounting now distinguishes a genuine
+  `not_observed` session from an unavailable observer, so the scheduler cannot
+  report an eligible missing input as a completed record. This adds no approval
+  gate and leaves the foreground free to dispatch Engine work.

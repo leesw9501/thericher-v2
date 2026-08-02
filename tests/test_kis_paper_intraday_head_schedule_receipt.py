@@ -162,6 +162,76 @@ def test_schedule_receipt_keeps_the_legacy_observer_optional(tmp_path: Path) -> 
     assert result.scheduler_exit_code == 0
 
 
+def test_schedule_receipt_accepts_the_explicit_data_only_execution_branch(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    kwargs = _complete_kwargs()
+    kwargs.update(
+        prospective_loop_status="not_applicable",
+        prospective_session_status="not_applicable",
+        prospective_session_id=None,
+        prospective_validation_status="not_applicable",
+        prospective_validation_session_id=None,
+        observation_status="not_observed",
+    )
+
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **kwargs,
+        artifact_root=tmp_path / "model-artifacts",
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    assert result.terminal_status == "complete"
+    assert result.scheduler_exit_code == 0
+    assert result.safe_payload()["stages"]["observation"] == {
+        "exit_code": 0,
+        "status": "not_observed",
+        "required_for_qqq_cycle": False,
+        "data_only_pair_observation": True,
+    }
+
+
+@pytest.mark.parametrize(
+    ("overrides", "expected_recovery_class"),
+    [
+        (
+            {"observation_exit_code": 20, "observation_status": "unavailable"},
+            "observation_exit_nonzero",
+        ),
+        ({"observation_status": "unavailable"}, "observation_payload_unavailable"),
+        ({"observation_status": "busy"}, "observation_payload_unavailable"),
+    ],
+)
+def test_data_only_schedule_receipt_requires_a_terminal_observation_fact(
+    tmp_path: Path,
+    overrides: dict[str, object],
+    expected_recovery_class: str,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    kwargs = _complete_kwargs()
+    kwargs.update(
+        prospective_loop_status="not_applicable",
+        prospective_session_status="not_applicable",
+        prospective_session_id=None,
+        prospective_validation_status="not_applicable",
+        prospective_validation_session_id=None,
+    )
+    kwargs.update(overrides)
+
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **kwargs,
+        artifact_root=tmp_path / "model-artifacts",
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    assert result.terminal_status == "recovery"
+    assert result.recovery_class == expected_recovery_class
+    assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+
+
 def test_schedule_receipt_rejects_a_git_workspace_artifact_root(tmp_path: Path) -> None:
     repository_root = tmp_path / "repository"
     repository_root.mkdir()

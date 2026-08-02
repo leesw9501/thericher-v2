@@ -1063,3 +1063,18 @@ cache mutation. It is an input-shape fact only: do not call the 21 sessions a
 historical model-evaluation, ranking, Paper, or execution panel. The existing
 collector remains the sole cache/scheduler owner; next Data support is a
 forward-only QQQ/SPY pair receipt that excludes this historical set.
+
+## QQQ/SPY MTF Prospective Observer
+
+The existing intraday-head task now runs a data-only QQQ/SPY pair observer
+after a successful owned collection. The observer has no credential, provider,
+account, order, local-paper, model, target, PnL, or GPU surface; it consumes
+only verified local head caches and writes source-safe sealed records under the
+external artifact root. Its initial offline/no-op verification left the forward
+primary-record count at `0` and preserved the 21 historical exclusions.
+
+An available/missing/invalid leg produces one immutable `observed` or
+`not_observed` record for the eligible session. A contract/input fault or busy
+append lock is terminal `recovery`, not a false completed schedule. The Data
+worker owns the next eligible invocation; that market-time due never blocks a
+ready Engine or Execution package.
