@@ -1018,6 +1018,28 @@ is `source: diagnostic_overlay`, any later replay must remain existing
 broker-free local paper, and the prefilter has no execution, risk, or promotion
 authority.
 
+## 2026-08-02 - Treat the verified KIS intraday cache as prospective-input evidence, not a historical validation panel
+
+Decision: freeze `kis-intraday-mtf-availability-receipt-v1` as an offline
+availability contract for the verified local QQQ/NAS and SPY/AMS one-minute
+caches. At a fixed 15:30 America/New_York cutoff it requires the exact causal
+360-minute prefix and complete `1m/5m/10m/1h/3h` tails of `30/6/3/2/2` before a
+common session counts. The external receipt stores only source identities,
+geometry, aggregate counts, categories, and hashes.
+
+Reason: local minute rows are plentiful, but the 21 aligned regular sessions
+are only 21 independent session blocks. Treating individual bars as independent
+validation observations would manufacture confidence and invite static-panel
+fishing. The receipt therefore qualifies the data only for prospective input
+construction and content-bound observation, not for a performance claim,
+model selection, GPU appointment, ensemble, Paper input, or broker action.
+
+The next candidate must exclude these historical sessions and accumulate a
+forward-only aligned QQQ/SPY sequence. A frozen Engine campaign may be proposed
+after 30 fresh pair records establish an independent temporal surface. Claude's
+bounded architecture prompt returned no final verdict; record
+`review_unavailable`, not agreement or a hold.
+
 ## 2026-07-18 - Readiness-driven role agents and recoverable memory
 
 Decision: Codex orchestrates three durable lanes: Data, Engine Research, and

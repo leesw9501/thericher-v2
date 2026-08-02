@@ -538,3 +538,19 @@ required event evidence is absent.
 - **Improvement:** direct Data leaves now avoid unrelated Execution imports,
   and a repeated campaign run validates and reattaches an exact allowlisted
   external summary before any target evaluation can occur.
+
+## KIS Intraday MTF Availability Outcome (2026-08-02)
+
+- **Ready:** the local QQQ/SPY KIS 1m caches now prove 21 common causal
+  15:30 ET `1m/5m/10m/1h/3h` inputs. The next company package can prepare a
+  forward-only pair-observation contract without waiting for a historical
+  collector, model result, or GPU job.
+- **Owned:** Data owns the immutable local-cache availability receipt and the
+  existing collector; Engine owns the future 30-observation contract; Research
+  Steward keeps the GPU unallocated because the receipt establishes no valid
+  historical validation surface; Execution has no dependency or route.
+- **Due:** market-time belongs only to the future observation worker. The
+  foreground continues with its next bounded package now.
+- **Improvement:** distinguish 21 independent session blocks from thousands of
+  correlated minute rows, so a causal input proof cannot be misread as enough
+  validation evidence or used to manufacture GPU work.

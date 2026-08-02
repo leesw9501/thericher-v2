@@ -1045,3 +1045,21 @@ retrospective, non-PIT, corporate-action, availability, or Paper-input limits.
 No Tiingo recollection, source blend, or historical rewrite follows. A future
 consumer must name an independent source/temporal requirement rather than
 reuse this static snapshot as a selection surface.
+
+## KIS Intraday MTF Availability Outcome (2026-08-02)
+
+The offline `kis-intraday-mtf-availability-receipt-v1` is complete as
+`qualified_for_prospective_input`. It reattached only verified
+`QQQ/NAS/1m` and `SPY/AMS/1m` catalogs under the existing `intraday\v1` cache.
+Each has 21 complete causal 09:30-15:30 ET regular-session prefixes, all 21
+session dates align, and every fixed `1m/5m/10m/1h/3h` tail is structurally
+available at the fixed `30/6/3/2/2` lookbacks. Its external precommit/summary
+are under `D:\thericher-v2\model-artifacts\data\kis-intraday-mtf-availability-receipt-v1\local-cache-20260802-r2`.
+
+The receipt retains only identities, geometry, aggregate counts, categories,
+and hashes. It does not persist rows, dates, OHLCV, paths, targets, returns,
+predictions, account data, or broker data, and it makes no provider/KIS call or
+cache mutation. It is an input-shape fact only: do not call the 21 sessions a
+historical model-evaluation, ranking, Paper, or execution panel. The existing
+collector remains the sole cache/scheduler owner; next Data support is a
+forward-only QQQ/SPY pair receipt that excludes this historical set.

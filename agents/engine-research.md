@@ -1078,3 +1078,20 @@ allowlisted artifact before target access; `input_unavailable` preflights are
 recorded as `holdout_access=none`. The GPU remains unallocated: this result is
 not a reason to invent a depth training job. The next Engine package needs a
 separate qualified source or a genuinely distinct non-reused hypothesis.
+
+## KIS Intraday MTF Availability Integration (2026-08-02)
+
+The fixed local KIS input contract is now verified: 21 aligned QQQ/SPY regular
+sessions have each causal `1m/5m/10m/1h/3h` tail available at the fixed 15:30
+ET `30/6/3/2/2` geometry. This makes the existing prospective baseline and
+future pair observation technically reconstructible from KIS-shaped bars.
+It is not a fresh historical campaign: 21 independent session blocks permit at
+most a weak `10/1/10` session split, and prior QQQ/SPY intraday families have
+already consumed or closed their own static evidence.
+
+No GPU appointment is eligible from this receipt. The next Engine contract is
+`kis-qqq-spy-mtf-prospective-observation-v1`: retain 30 new aligned QQQ/SPY
+15:30 observations, exclude these 21 historical sessions, and persist only
+source identities, structural availability, and content commitments. Only then
+may a distinct model/target/cost/baseline/kill contract be frozen. This is a
+research discipline, not a wait on the foreground or another lane.

@@ -1868,3 +1868,27 @@ hashes the Data package initializer as part of the campaign revision. Claude's
 bounded contract and import-boundary requests both timed out as
 `review_unavailable`; independent review and focused tests supplied the final
 correction evidence.
+
+## KIS Intraday Multi-Timeframe Availability (2026-08-02)
+
+`kis-intraday-mtf-availability-receipt-v1` is complete and
+`qualified_for_prospective_input`. Its immutable external precommit and
+summary are under
+`D:\thericher-v2\model-artifacts\data\kis-intraday-mtf-availability-receipt-v1\local-cache-20260802-r2`,
+with contract `sha256:31c301bd2e8c4c7a3bcc837aa07ab594ac044e2bc1aace9f827068b2a5421d53`,
+precommit `sha256:5a13c89123f8898ca10b554798c2981feed2afe8a9d41a37cf0445a1305e5307`,
+and summary `sha256:2b02ff48092b13a8d09ea19040434db2317a5ef212f96df69bc5475b8028d512`.
+
+It reattached only the verified local `QQQ/NAS/1m` and `SPY/AMS/1m` KIS caches.
+Both have 21 common regular-session 09:30-15:30 ET causal prefixes, and every
+one reconstructs the fixed `1m/5m/10m/1h/3h` tails of `30/6/3/2/2`. The
+receipt retains source identities, geometry, counts, categories, and hashes
+only; no rows, dates, OHLCV, targets, returns, predictions, PnL, KIS call,
+credentials, broker action, model, GPU, or checkpoint were used or persisted.
+
+This proves the prospective input shape, not a historical evaluation surface:
+21 session blocks are insufficient for a new independent train/validation
+campaign. Engine's next evidence path is a source-safe, forward-only QQQ/SPY
+pair observation sequence that excludes these 21 sessions; it can then freeze
+a distinct campaign after 30 fresh aligned records. Claude's bounded structural
+request returned no final verdict, so it is recorded as `review_unavailable`.
