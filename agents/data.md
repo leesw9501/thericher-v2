@@ -1091,3 +1091,14 @@ The next ready Data package remains the Norgate membership-aware source
 contract: it must establish only the exact current-membership/availability
 facts a later consumer can tolerate, without treating this HMM result as a
 collection gate or a reason to reopen its consumed slice.
+
+## NAS D1 Later-Tail Consumer Closure (2026-08-03)
+
+The HMM persistence consumer reattached the same immutable NAS D1 panel and
+read only its explicitly named later tail `1000..1509` after a committed
+source-safe precommit. It made no provider call or cache mutation. The
+consumer is `persistence_falsified`; this preserves, rather than repairs, the
+panel's current-listing, non-PIT, unadjusted, corporate-action, and session
+limitations. Do not reopen the HMM's original screen or collect data in
+response to this result. The Norgate membership-aware contract remains the
+next ready independent Data package.

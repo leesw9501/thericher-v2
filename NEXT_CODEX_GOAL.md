@@ -8,68 +8,106 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `kis-nas-d1-intraday-regime-hmm-persistence-v1`.
+Build `source-and-window-contract-preparation-v1`.
 
-Run exactly one date-disjoint, source-local persistence check of the frozen NAS
-D1 HMM fit. It must reuse the fixed family semantics without selecting a
-window, state count, threshold, initialization, or cost after seeing the first
-screen or the later labels. It is not an independent replication of the fit.
+Advance two independent, non-promoting inputs for later model research in
+parallel:
+
+1. a read-only reattestation of the existing external Norgate S&P 500 Current
+   & Past membership snapshot; and
+2. a hash-sealed, target-free causal `1m/5m/10m/1h/3h` window-profile catalog
+   that a later frozen campaign can select from exactly once before opening its
+   target or evaluation slice.
+
+This is one preparation objective, not a Norgate qualification, predictive
+campaign, window search, model selection, or execution change.
 
 ## Boundaries
 
 - Do not call a provider, KIS, Norgate, Tiingo, or a broker. Do not read
   `.env`, credentials, account data, or `KIS_LIVE_*`.
-- Reattest only the existing six-symbol NAS D1 panel. Never open its existing
-  647-session validation phase. Generated source-safe receipts belong only
-  under `D:\thericher-v2\model-artifacts`.
-- No Paper/local-paper action, model selection, ensemble, checkpoint,
-  GPU/CUDA appointment, PnL/profitability, or live claim is allowed.
-- Preserve the current-listing, non-PIT, unadjusted/MODP=0,
-  corporate-action, and session-finality limitations. A passing replication
-  remains source-local and non-promoting.
+- Do not modify, rebuild, refresh, re-pull, or copy the Norgate snapshot. Read
+  only the known external snapshot at
+  `D:\market_data\us_equities\norgate_membership\canonical\sp500_current_past\snapshot=2026-07-18-norgate-sp500-membership-r1`.
+- Do not print or persist raw membership rows, candidate symbols, OHLCV,
+  prices, labels, returns, targets, predictions, fitted parameters, or local
+  paths in generated receipts. Source-safe derived receipts belong only under
+  `D:\thericher-v2\model-artifacts`.
+- Preserve every membership manifest ineligibility: no PIT, publication-time,
+  historical-universe, delisting, adjustment, corporate-action, model,
+  ranking, campaign, sealed-holdout, or Paper eligibility follows from this
+  work.
+- The MTF catalog may use only deterministic synthetic `Bar` fixtures and the
+  existing pure sequence-window contract. It must not read a local cache,
+  dataset, target, return, prior result, model artifact, or GPU.
+- Do not create a scheduler, queue, generic experiment framework, model,
+  ensemble, PnL claim, Paper/local-paper action, or live behavior.
+- Keep the D: storage policy intact. Current free space is an observed
+  `40.42%`; stop only the package that would cross the documented floor.
 
 ## Required Work
 
-1. Preserve the completed Claude `uncertain` review: call this a persistence
-   check, not a replication. A failed later review is `review_unavailable`,
-   never agreement or a hold.
-2. Commit the fixed implementation before the local-cache runner materializes
-   any later labels. Its runner must first write an immutable source-safe
-   precommit containing the exact config/code hash, then load data.
-3. Freeze one exact contract before later labels:
-   - re-fit only the existing two-state diagonal Gaussian HMM on `0..599` and
-     derive each long-state map from fit labels `0..598` only;
-   - build an input that retains only train bars `0..599` and tail bars
-     `1000..1509`; it must expose neither original screen bars nor labels
-     `600..999` to any model/evaluation helper;
-   - use completed source bars `1000..1019` solely to warm the already-frozen
-     forward filter, then make decisions `t=1020..1508` for target bar `t+1`;
-   - retain the existing same-session ratio features, 10/15/20bp cost band,
-     15bp primary all-long comparator, 1,000 joint ten-session-block label
-     null, 15 percent extreme control, and source-safe artifact policy;
-   - fail unless the one pooled 15bp statistic clears all-long and null P95 by
-     the fixed margin and every symbol has the fixed availability count with
-     no negative 15bp candidate-versus-all-long relation.
-4. Add only the minimal offline leaf/runner extension needed. Make the
-   original preflight receipt an immutable lineage input; do not persist bars,
-   dates, labels, probabilities, fitted parameters, weights, or numeric
-   performance values.
-5. Add focused tests for precommit-before-load ordering, no original-screen
-   bar/label access, tail boundary
-   geometry, `t -> t+1` causality, frozen state mapping, joint-null alignment,
-   extreme/multiplier/prefix controls, artifact redaction, and no
-   network/credential/broker/GPU path.
-6. Run one local-cache CPU persistence smoke only after the precommit code is
-   committed and pushed. The terminal category is `input_unavailable`,
-   `persistence_falsified`, or
-   `source_local_non_promoting`; only the final category clears the fixed
-   all-long and null relations. Update the Data, Engine, Steward,
-   orchestration, handoff, and decision stateboards with the Claude verdict,
-   exact lineage, and why no promotion follows.
+### Data package: `norgate-membership-source-reattest-v1`
+
+1. Reuse `verify_norgate_sp500_membership_snapshot()` as the sole snapshot
+   reader. Verify the existing snapshot's path containment, file hashes,
+   counts, manifest identity, sparse date range, package metadata, immutable
+   ineligibility flags, and free-space fact without importing `norgatedata` or
+   creating any network, environment, credential, or provider path.
+2. Add only the minimal source-safe immutable receipt/runner if the existing
+   verifier cannot expose a reattestation record. Its payload may contain
+   hashes, aggregate counts, aggregate date bounds, categorical integrity
+   status, and scope flags, but never raw rows, symbols, paths, or secrets.
+   Capture a pre/post read-only file identity so reattestation cannot silently
+   mutate the snapshot.
+3. Treat an unavailable, changed, malformed, or out-of-root snapshot as its
+   own `input_unavailable` or `integrity_mismatch` result. Do not recollect or
+   repair it. The Engine package continues independently.
+4. Add focused tests for lazy Norgate import, no network/environment access,
+   external artifact-root enforcement, immutable/write-free source handling,
+   source-safe redaction, and a manifest that remains ineligible.
+
+### Engine package: `causal-mtf-window-profile-feasibility-v1`
+
+1. Add a small immutable profile catalog built on
+   `CausalMultiTimeframeSequenceWindow`. Freeze this ordered profile set before
+   any consumer exists:
+
+   - `short`: `15/3/3/2/2`
+   - `kis_baseline`: `30/6/3/2/2`
+   - `one_hour`: `60/12/6/2/2`
+   - `medium`: `90/18/12/2/2`
+   - `long`: `120/36/12/2/2`
+   - `extended`: `180/36/18/2/2`
+
+   Each tuple is in canonical `1m/5m/10m/1h/3h` order. Do not add, remove,
+   reorder, or tune cells after seeing any target, return, label, or prior
+   result.
+2. Give the catalog a deterministic SHA-256 identity and a source-safe,
+   timestamped external pre-registration receipt. A future predictive campaign
+   must record exactly one catalog cell and this catalog identity before it
+   opens a target, split, cost model, or evaluation output; this objective must
+   not create or choose such a campaign.
+3. Prove with deterministic synthetic bars that every profile builds only from
+   completed, contiguous, single-symbol bars at one cutoff. Fail the entire
+   profile on future, incomplete, duplicate, non-contiguous, or stale `1h`/
+   `3h` input. Preserve the existing `30/6/3/2/2` compatibility behavior.
+4. Add focused tests that the catalog and receipt do not touch network,
+   environment, credentials, provider, cache, labels, targets, model weights,
+   GPU, local paper, or broker code; that the catalog digest is stable; and
+   that a forged or altered profile cannot pass as the frozen catalog.
+
+## Claude Challenge
+
+Claude's compact preflight verdict is `supported-with-limits`. Preserve its
+two guards: the catalog must be hash-sealed and timestamped before a consumer,
+and later campaigns need one-cell-per-campaign selection custody. The proposal
+is invalid if profile geometry came from labels, returns, or prior evaluation,
+or if Norgate reattestation can mutate or re-pull the snapshot.
 
 ## Verification
 
-Run focused tests and the CPU smoke, then:
+Run focused Data and Engine tests plus a local no-provider smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot

@@ -2017,3 +2017,26 @@ locally," not edge evidence. It has no PIT/current-membership, adjustment,
 corporate-action, turnover, independent-date, sealed-holdout, PnL, Paper,
 ensemble, GPU, or live claim. The next distinct contract must test stability
 without selecting a configuration from this screen.
+
+## KIS NAS D1 HMM Persistence Closure (2026-08-03)
+
+The committed preflight code was later run once as
+`kis-nas-d1-intraday-regime-hmm-persistence-v1`. Its precommit was written
+before loading the local panel and exposed only fit bars `0..599` plus later
+tail bars `1000..1509`; original screen bars `600..999` were not retained by
+the input object. The tail used `1000..1019` only for completed-bar filter
+warmup and made `1020..1508 -> 1021..1509` next-session decisions.
+
+The fixed persistence check is `persistence_falsified`: its source-safe screen
+relations are at or below the all-long and joint-null comparators across the
+predeclared `10/15/20`bp band, and the per-symbol primary relation fails its
+nonnegative guard. Preserve the family closed; do not retune, retrain, use
+GPU, form an ensemble, or create a Paper input from either HMM receipt. The
+external precommit, contract, and summary are at
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-intraday-regime-hmm-persistence-v1\cpu-persistence-r1`
+with precommit `sha256:8c0230ab77a2dd6d5b9686cca19224012a03f6d6d6511539df49e906460b4ce1`,
+contract `sha256:187d72bc5c91e1a24bbf80ff598219386407dd43c89f4850f4493d258ecb5331`,
+and summary `sha256:f226557a1cb5a1881550eba417525bc117b6e9615939bcf776bddf9d0243f600`.
+Claude's design verdict was `uncertain`: this was honestly a frozen-fit
+persistence check, not independent replication, and its falsification closes
+only that family.

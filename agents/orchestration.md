@@ -636,15 +636,31 @@ required event evidence is absent.
 
 ## KIS NAS D1 HMM Preflight Outcome (2026-08-02)
 
-- **Ready:** a distinct no-selection HMM stability/replication package can
-  proceed now. The source-local preflight has completed and does not wait for a
-  collector, market session, GPU, Paper route, or operator decision.
+- **Ready at that boundary:** the separately frozen later-tail HMM persistence
+  check could proceed. The source-local preflight did not wait for a collector,
+  market session, GPU, Paper route, or operator decision.
 - **Owned:** Engine owns the frozen HMM receipt and its non-retune boundary;
   Data retains the immutable NAS panel limitations; Research Steward retains a
   free but unappointed GPU; Execution owns no consequence.
 - **Due:** none. The QQQ/SPY observer and any Data retry remain lane-owned
   schedules, not foreground waits.
 - **Improvement:** host runners now choose `D:` artifact roots on Windows even
-  when a Docker-style `C:\app` directory exists. The current result is
-  explicitly described as completed-bar `t` to next-bar `t+1`, preventing a
-  same-session causal misreading without adding a new gate.
+when a Docker-style `C:\app` directory exists. The current result is
+explicitly described as completed-bar `t` to next-bar `t+1`, preventing a
+same-session causal misreading without adding a new gate.
+
+## KIS NAS D1 HMM Persistence Closure (2026-08-03)
+
+- **Ready:** the HMM family is closed. The read-only Norgate membership
+  reattestation and target-free causal-MTF window profile package are ready in
+  parallel; neither waits for a market session, GPU, collector retry, Paper
+  result, or operator decision.
+- **Owned:** Engine owns the immutable closed HMM receipts and MTF catalog;
+  Data owns unchanged NAS source limits and Norgate reattestation; Research
+  Steward has free but unappointed GPU custody; Execution has no consequence.
+- **Due:** none in the foreground. Existing KIS schedules continue only under
+  their own owners and cannot turn this closed family into a wait.
+- **Improvement:** the committed precommit-before-load runner and segmented
+  input make the later-tail result a bounded persistence falsifier rather than
+  a hidden reuse of the prior screen. The falsification prevents GPU churn and
+  leaves a different ready lane dispatchable immediately.

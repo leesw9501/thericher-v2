@@ -1184,4 +1184,21 @@ reading: configuration-search accounting, HMM initialization stability,
 turnover-conditioned costs, adjusted prices, and an independent temporal or
 source contract remain missing. Preserve this family as non-promoting; do not
 retune its screen, select an ensemble member, create a Paper intent, or use
-the free GPU. A new independent stability/replication package is ready now.
+the free GPU. The only permitted continuation was the separately frozen
+later-tail persistence check documented below.
+
+## KIS NAS D1 HMM Persistence Closure (2026-08-03)
+
+The one fixed later-tail continuation is complete and `persistence_falsified`.
+The committed runner wrote the source-safe precommit before loading data, and
+the guarded input contained fit `0..599` plus tail `1000..1509` only; the old
+screen `600..999` was not retained. The frozen model made `1020..1508` decisions
+for next bars `1021..1509`, then failed its primary all-long, joint-null,
+per-symbol, and extreme-control persistence requirements. Its final summary is
+`sha256:f226557a1cb5a1881550eba417525bc117b6e9615939bcf776bddf9d0243f600`.
+
+Claude's `uncertain` challenge correctly narrowed the claim to a frozen-fit
+persistence check, not independent replication. This failure closes the HMM
+family without a PnL, architecture, model-selection, ensemble, GPU, Paper, or
+live consequence. Do not repair it with a new initialization, threshold,
+window, source slice, or cost band.

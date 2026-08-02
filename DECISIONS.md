@@ -8736,3 +8736,18 @@ unadjusted, non-PIT, development-only source. Claude's
 adjusted-price correctness, initialization stability, and turnover-aware cost
 accounting before any comparative claim. This decision creates no Paper input,
 ensemble, GPU appointment, PnL/profitability claim, or live authority.
+
+## 2026-08-03 - Close the KIS NAS D1 HMM family after the later-tail persistence check
+
+Decision: close `kis-nas-d1-intraday-regime-hmm-preflight-v1` and its fixed
+`kis-nas-d1-intraday-regime-hmm-persistence-v1` continuation as one
+non-promoting HMM family. The later check was precommitted before source load,
+fit only `0..599`, excluded original screen `600..999` from its input, and
+evaluated only later `1020..1508 -> 1021..1509` decisions.
+
+Reason: the source-local first screen did not persist under the fixed later
+window: all predeclared cost relations are at or below comparator and the
+per-symbol primary guard failed. Claude called the design `uncertain` unless
+described as a persistence check rather than independent replication; the
+falsification confirms no stronger interpretation is available. Do not retune,
+retrain, ensemble, allocate GPU, or form a Paper input from this family.

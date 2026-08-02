@@ -227,3 +227,12 @@ GPU remains free; it must not be filled by rerunning this already-spent
 development screen. A later independently frozen replication family may ask
 for an appointment only after it declares those controls and its no-selection
 rule.
+
+## HMM Persistence Closure (2026-08-03)
+
+The HMM later-tail continuation has one `holdout_access=opened` custody record
+and a `non_promoting_failed` outcome. It is `persistence_falsified`, so neither
+the original CPU preflight nor this continuation is eligible for depth training,
+CUDA, an ensemble, or a sealed-evaluation allocation. GPU remains free for a
+different frozen family; do not consume it by attempting to repair the closed
+HMM configuration.
