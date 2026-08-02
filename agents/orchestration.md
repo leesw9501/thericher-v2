@@ -523,3 +523,18 @@ required event evidence is absent.
   Review also fixed full dependency code-revision custody, full abstention on a
   nonpositive trailing-volume median, fixed partial null tails, and external
   artifact-root rejection before Git or symlink traversal can write.
+
+## Tiingo D1 Compression-Continuation Outcome (2026-08-02)
+
+- **Ready:** the independent Engine r2 is complete and `falsified`; its closed
+  repeat-source family creates no wait. Data collection, KIS Paper lifecycle,
+  and any separately qualified Engine package continue independently.
+- **Owned:** Engine retains the final r2 receipt and no-retune rule. Data
+  retains only the unchanged Tiingo source limitation; Research Steward has no
+  GPU appointment; Execution has no route or consequence.
+- **Due:** no retry or market-clock wait belongs to this result. The next
+  company objective may choose a distinct qualified source or another clearly
+  independent hypothesis without reopening this static Tiingo evaluation.
+- **Improvement:** direct Data leaves now avoid unrelated Execution imports,
+  and a repeated campaign run validates and reattaches an exact allowlisted
+  external summary before any target evaluation can occur.

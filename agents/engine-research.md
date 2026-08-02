@@ -1053,3 +1053,28 @@ sealed evaluation, or live behavior occurred.
 The GPU remains unallocated. A future Engine package must be a distinct
 source-qualified hypothesis with a fresh contract; the one-session NAS forward
 cache is still not enough for an independent prospective outcome surface.
+
+## Tiingo D1 Compression-Continuation Outcome (2026-08-02)
+
+`tiingo-d1-trio-intraday-compression-continuation-falsification-v1` closed as
+`falsified` with final r2 contract
+`sha256:2b7be8338f99399d7c1af6c9710d9634fb6e2dc74eb428ccdefea9c649743c7b`
+and source-safe summary
+`sha256:d1964e6b40cff6691eafd6c8300f140d8727c300bd8d2d6a535f44595ed3a39d`.
+It used the already-consumed Tiingo ETF snapshot only as explicitly
+repeat-source, non-promoting evidence: 6,583 common sessions, 702 target-free
+development signals across all three ETFs, and 214 fixed active validation
+days after the 61-session purge.
+
+At the frozen 10/15/20bp costs, its 20bp relation to flat was nonpositive and
+it did not strictly exceed same-date equal exposure or the joint block-null
+P95. These are categorical rule-family kill facts only. Do not retune its
+compression threshold, close location, event/discontinuity rule, split, target,
+comparators, cost, or null. It cannot become a model, ensemble, GPU appointment,
+Paper input, KIS input, or PnL/profitability claim.
+
+The r1 artifact is recovery-only. Final r2 summary custody reattaches an exact
+allowlisted artifact before target access; `input_unavailable` preflights are
+recorded as `holdout_access=none`. The GPU remains unallocated: this result is
+not a reason to invent a depth training job. The next Engine package needs a
+separate qualified source or a genuinely distinct non-reused hypothesis.

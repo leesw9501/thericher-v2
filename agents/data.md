@@ -1030,3 +1030,18 @@ corporate-action, or session-finality limitations.
 No new Data work is required for the closed family. Independently accumulating
 forward sessions remain the only path to a separate prospective contract; the
 current one common forward session still supplies no independent outcome slot.
+
+## Tiingo Trio Reattachment And Compression Consumer (2026-08-02)
+
+The Data-owned read-only reattachment of the immutable Tiingo ETF snapshot
+succeeded with `8,433 / 6,891 / 6,583` source rows for `SPY / QQQ / IWM` and
+6,583 common aligned D1 sessions. It made no provider, KIS, credential, or
+filesystem write. The Engine consumer used exactly that pinned snapshot for a
+repeat-source-only CPU falsification and retained no rows, dates, labels, or
+predictions outside D:.
+
+The consumer's r2 result is `falsified`, but this does not improve the source's
+retrospective, non-PIT, corporate-action, availability, or Paper-input limits.
+No Tiingo recollection, source blend, or historical rewrite follows. A future
+consumer must name an independent source/temporal requirement rather than
+reuse this static snapshot as a selection surface.

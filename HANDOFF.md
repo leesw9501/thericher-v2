@@ -1835,3 +1835,36 @@ before creation. The direct Research leaf import is lazy/execution-free while
 legacy public imports remain compatible. Claude's bounded architecture challenge
 timed out (`review_unavailable`), so focused independent review and tests, not
 a Claude verdict, support the final implementation.
+
+## Tiingo D1 Compression-Continuation Falsification (2026-08-02)
+
+The fixed
+`tiingo-d1-trio-intraday-compression-continuation-falsification-v1` CPU-only
+repeat-source r2 attempt is complete and `falsified`. Its external contract and
+summary are under
+`D:\thericher-v2\model-artifacts\research\tiingo-d1-trio-intraday-compression-continuation-falsification-v1\cpu-falsification-r2`,
+with contract
+`sha256:2b7be8338f99399d7c1af6c9710d9634fb6e2dc74eb428ccdefea9c649743c7b`,
+summary
+`sha256:d1964e6b40cff6691eafd6c8300f140d8727c300bd8d2d6a535f44595ed3a39d`,
+and custody outcome
+`sha256:da53555be430ff632c39a16763b7745288e438fae3a97ab60a3e4ac225ebc085`.
+
+It reattached only the immutable local Tiingo SPY/QQQ/IWM snapshot: 6,583
+common sessions, 4,608 target-free development sessions, a 61-session purge,
+and 1,914 validation sessions. The frozen causal census found 702 qualifying
+symbol signals across all three ETFs; 214 candidate-active days and 316 active
+positions then entered the one fixed evaluation. At 10/15/20bp, the candidate
+did not strictly exceed same-date equal exposure or the 64 joint 10-session
+block-null P95, and its 20bp relation to flat was nonpositive.
+
+This is a closed, repeat-source rule-family rejection, not a profitability,
+PnL, model, ensemble, GPU, Paper, KIS, or live result. Do not retune the
+thresholds, split, target, comparator, cost band, or null. The first r1 receipt
+is recovery-only because review found repeated target reopening and incomplete
+summary custody. The final r2 reattaches an exact allowlisted summary before
+any evaluation, records target-free preflights as `holdout_access=none`, and
+hashes the Data package initializer as part of the campaign revision. Claude's
+bounded contract and import-boundary requests both timed out as
+`review_unavailable`; independent review and focused tests supplied the final
+correction evidence.

@@ -8577,3 +8577,42 @@ trailing volume as a full abstention. This creates no model selection, GPU
 appointment, ensemble, PnL/profitability, Paper input, KIS call, broker action,
 or live authority. A future candidate needs a fresh causal contract and
 independent data; threshold retuning for this closed family is forbidden.
+
+## 2026-08-02 - Keep direct Data leaves execution-free without breaking public imports
+
+Decision: move the eager `thericher_v2.data` public API imports behind
+`data/_public_api.py` and expose them through the same lazy compatibility
+pattern used by Research. A direct `thericher_v2.data.tiingo_etf_daily` import
+now loads only its own source leaf, while legacy `from thericher_v2.data import
+ExistingPublicName` imports remain available on demand.
+
+Reason: the offline Tiingo campaign otherwise transitively loaded unrelated
+KIS/Execution modules through Data's eager package initializer. The change
+preserves the public surface while making direct source-local research imports
+truthful and faster. Claude's bounded architecture request timed out as
+`review_unavailable`; subprocess and legacy-import tests are the supporting
+evidence.
+
+## 2026-08-02 - Close Tiingo D1 compression-continuation as falsified
+
+Decision: close
+`tiingo-d1-trio-intraday-compression-continuation-falsification-v1` with its
+final `cpu-falsification-r2` contract
+`sha256:2b7be8338f99399d7c1af6c9710d9634fb6e2dc74eb428ccdefea9c649743c7b`
+and source-safe summary
+`sha256:d1964e6b40cff6691eafd6c8300f140d8727c300bd8d2d6a535f44595ed3a39d`.
+
+The repeat-source Tiingo snapshot supplied only a fixed 70 percent target-free
+development census, 61-session purge, and one remaining validation segment.
+The compression/close-location rule, equal-exposure comparator, 10/15/20bp
+cost band, and 64 joint return-block null were fixed before target access. Its
+candidate failed each predeclared 20bp/equal-exposure/null relation, so the
+family is `falsified` and cannot be retuned or promoted.
+
+The r1 receipt remains immutable recovery evidence only. Review required the
+final r2 to reattach a canonical exact-allowlisted summary before a second run
+could inspect a target, classify a target-free unavailable preflight with
+`holdout_access=none`, and include the executing Data initializer in the code
+revision hash. This decision creates no model selection, GPU appointment,
+ensemble, PnL/profitability, Paper input, KIS call, broker action, or live
+authority.
