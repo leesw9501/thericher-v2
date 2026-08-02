@@ -118,3 +118,8 @@ falsification and failed its 20-bp aggregate kill test. It used existing local
 bars and created no training, GPU appointment, checkpoint, sealed-evaluation
 allocation, model artifact, or promotion. GPU remains free for the next
 independently eligible frozen campaign.
+
+`spy-first30-final30-momentum-v1` completed as a CPU-only deterministic
+falsification and failed its fixed 20-bp kill. It created no training, GPU
+appointment, checkpoint, sealed-evaluation allocation, or model artifact.
+GPU remains free for an independently eligible campaign.

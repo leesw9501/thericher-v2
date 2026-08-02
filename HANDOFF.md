@@ -1472,3 +1472,31 @@ promote this exact long-only regime/micro-consensus family from this result; the
 next Engine package must freeze an independently motivated hypothesis. Claude
 produced no substantive verdict after two bounded attempts
 (`review_unavailable`), which is not agreement or a work hold.
+
+Next Engine package: `spy-first30-final30-momentum-v1` is a distinct,
+source-local CPU falsification of Gao et al.'s first-half-hour/final-half-hour
+SPY premise. The verified 21-session cache supports nine development and ten
+validation daily decisions after the required prior-close lookup. Its small
+sample makes every result non-promoting. Freeze the 10:00 ET causal sign,
+15:30-to-16:00 target, `5/10/20` bps cost band, eight-decision validation
+floor, and 20-bp non-positive-total kill before any target access. The
+direction-inverted same-timestamp counterpart is comparative evidence only.
+Claude's latest short check ended `review_unavailable`, which is not a hold.
+
+## SPY First-30m/Final-30m Momentum Outcome (2026-08-02)
+
+The bounded CPU-only `spy-first30-final30-momentum-v1` run completed on the
+same verified local `SPY/AMS` 1m cache. Its causal preflight retained all ten
+validation decisions above the fixed eight-decision floor, but the signed
+candidate failed its precommitted 20-bp net-total kill test and is truthfully
+`falsified`. The direction-inverted counterpart is comparative aggregate
+evidence only; neither side is a model choice, profitability claim, PnL,
+Paper-input, or promotion result.
+
+The source-safe receipt is outside Git at
+`D:\thericher-v2\model-artifacts\research\spy-first30-final30-momentum-v1\cpu-falsification-20260802-r1`.
+It contains no raw bars, timestamps, prices, individual returns, credentials,
+or broker data. This package made no KIS call, environment/credential read,
+account, order, local-paper, broker, GPU, training, or live action. Do not
+retune its first-30m/final-30m window, sign, costs, or filters after this
+result. Claude's bounded request was `review_unavailable`, not a hold.

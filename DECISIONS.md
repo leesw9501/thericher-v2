@@ -8247,3 +8247,35 @@ had no KIS, credential, account, order, broker, Paper, GPU, or live surface.
 Do not derive a parameter search, ensemble member, model selection, or Paper
 input from this failed family. A future Engine package must declare a distinct
 hypothesis and fresh frozen contract before target evaluation.
+
+## 2026-08-02 - Freeze a small source-local first-30m/final-30m falsification
+
+Decision: test a distinct direction-signed SPY intraday-momentum premise from
+Gao et al. (2018), whose official publication record states a 1993-2013
+high-frequency SPY sample. The existing source-local cache can provide ten
+chronological validation decisions after the frozen `10 / 1 / 10` split. This
+is deliberately a small non-promoting replication, not a claim that its scope
+matches the source paper.
+
+At the completed 10:00 ET boundary, use only prior completed regular-session
+close and the current first half-hour to freeze sign. Evaluate one signed
+15:30-to-16:00 decision per eligible session against `5/10/20` bp all-in
+costs. A non-positive signed validation total at 20 bp rejects the exact
+family; no outcome may tune inputs, select a model, request GPU, form an
+ensemble, or become Paper input. Direction inversion at the same timestamps is
+comparative evidence, not a winner-selection mechanism. A concise Claude
+check failed to return a verdict (`review_unavailable`), which does not block
+this reversible private CPU work.
+
+## 2026-08-02 - Reject the fixed first-30m/final-30m momentum hypothesis
+
+Decision: retain the fixed source-local result as a rejection of the exact
+Gao-derived first-30m/final-30m direction-signed family. Its 10 validation
+decisions met the precommitted eight-decision preflight, then failed the fixed
+20-bp all-in net-total kill test. The small current cache means this is neither
+a source-paper replication claim nor a live-performance conclusion.
+
+Do not tune the sign, timing, cost, filters, or direction-inverted reference
+after outcomes were read. The external receipt holds aggregates only. No
+selection, ensemble, GPU, Paper input, order, account, broker, credential, or
+live behavior follows from the result.

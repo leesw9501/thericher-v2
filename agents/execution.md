@@ -73,6 +73,10 @@ decision-table edit, or live route is introduced.
   implication. It read the verified local SPY cache and wrote external aggregate
   evidence only; it had no KIS client, credential, account, intent, order,
   fill, local-paper, broker, or live surface.
+- Execution reattests the completed `spy-first30-final30-momentum-v1` as
+  offline Research only. Its aggregate 20-bp kill rejection has no execution
+  implication; it had no KIS, credential, account, intent, order, fill,
+  local-paper, broker, or live surface.
 - Execution reattests the frozen `tiingo-d1-trend-mean-reversion-rotation-v1`
   CPU falsification contract as outside every Execution surface: it reads only
   the retained Tiingo D1 snapshot and writes source-safe contract/aggregate

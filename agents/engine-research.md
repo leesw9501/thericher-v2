@@ -828,3 +828,15 @@ this is neither realized PnL nor model-selection, Paper-input, ensemble, GPU,
 or promotion evidence. Do not tune the same long-only regime/micro family from
 this result. Claude's two bounded review attempts remain `review_unavailable`,
 not a verdict or a hold on the next distinct hypothesis.
+
+## Latest Engine Outcome
+
+`spy-first30-final30-momentum-v1` completed as a distinct CPU-only,
+source-local falsification. Its fixed `10 / 1 / 10` structure retained all ten
+validation decisions after causal prior-close/first-30m preparation, but its
+signed candidate failed the 20-bp net-total kill test and is `falsified`.
+Because the underlying cache is only 21 sessions while Gao et al.'s cited SPY
+sample is much broader, this is a small rejection fact only. Do not retune or
+promote this timing/sign family, make an ensemble member, request GPU, or form
+a Paper input. Claude returned `review_unavailable`, not a verdict or hold on a
+distinct next hypothesis.

@@ -299,3 +299,9 @@ statements above; their historical facts remain scoped to their original work.
   This is scoped aggregate research evidence only: no KIS, credential, account,
   order, Paper, broker, GPU, or live action occurred. The next Engine package
   must be a distinct frozen hypothesis; this result is not a foreground wait.
+- **Engine outcome:** `spy-first30-final30-momentum-v1` completed offline on
+  the verified SPY cache. Its ten causal validation decisions met the fixed
+  preflight, then its signed candidate failed the 20-bp kill test. This is a
+  scoped source-local rejection with no KIS, credential, account, order,
+  Paper, broker, GPU, or live effect. It does not create a foreground wait;
+  select a distinct frozen hypothesis at goal integration.
