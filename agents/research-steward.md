@@ -206,3 +206,11 @@ causal hypothesis; this exact CPU family cannot be retried as a GPU job.
 The Docker research-service reproduction also used only the sklearn CPU path.
 Its image may expose the installed CUDA runtime, but this campaign did not load
 Torch, issue a CUDA operation, or create a GPU custody appointment.
+
+## Broad Conformance Does Not Allocate GPU (2026-08-02)
+
+The broad active-build taxonomy completed as Data provenance evidence only:
+523 exact repeatable symbols and no taxonomy faults. It creates neither a
+predictive campaign nor a GPU appointment; the static panel's model/GPU scope
+remains false. GPU stays free for a distinct frozen campaign with a valid
+source/causal/evaluation contract rather than being filled from this match.

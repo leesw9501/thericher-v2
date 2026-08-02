@@ -8,84 +8,90 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build and run `norgate-d1-trio-intraday-structure-gbt-preflight-v1`.
+Build and run `norgate-broad-d1-active-build-conformance-taxonomy-v1`.
 
-This is the first bounded source-local predictive-engine experiment after the
-active Norgate build matched the immutable fixed `SPY/QQQ/IWM` D1 source. It
-must determine only whether a single frozen causal gradient-boosted-tree model
-has discrimination above a date-block permutation null. It is not a PnL,
-profitability, ranking, portfolio, Paper, or GPU objective.
+This Data-owned objective measures whether the immutable static Norgate broad
+D1 development panel can be compared meaningfully with the active local
+Windows Norgate build. Its only consumer is a later, separately frozen,
+non-promoting broad engineering campaign. It must not turn a present-build
+comparison into proof of point-in-time availability, adjustment semantics,
+corporate-action correctness, membership continuity, a model input, or a
+GPU/Paper/PnL decision.
 
 ## Frozen Scope
 
-- Use only the existing immutable fixed-trio D1 materialization and reattach
-  the external active-build revision receipt provider-free before model work.
+- Use only the existing hash-attested Norgate broad D1 panel: 523 selected
+  symbols, 483 common sessions, and 252,609 retained rows. Read the matching
+  range twice per symbol through one Windows-local `norgatedata` client.
   Do not update/download Norgate data, call KIS, read `.env` or credentials,
-  access accounts, submit/cancel an order, enable live behavior, expose a
-  public endpoint, or use a paid service.
-- Keep all generated contracts, summaries, and optional serialized model
-  artifacts under `D:\thericher-v2\model-artifacts`, never Git. Persist no raw
-  bars, dates, row-level labels, predictions, credentials, or source paths.
-- Use one fixed `sklearn.ensemble.HistGradientBoostingClassifier` CPU
-  configuration only. Do not sweep feature windows, thresholds, model
-  hyperparameters, seeds, or classifiers. Do not allocate GPU, load public
-  weights, open a sealed holdout, build an ensemble, or create a Paper input.
-- The completed cross-ETF 20-day momentum diagnostic is closed. Do not retune
-  it or reuse its outcome as a feature-selection pass.
+  access accounts, submit/cancel orders, enable live behavior, expose a public
+  endpoint, or use a paid service.
+- Retain raw bars only in the existing `D:\market_data` snapshot. Write a
+  single immutable source-safe receipt under
+  `D:\thericher-v2\model-artifacts`, never Git. Do not persist or print raw
+  bars, dates, prices, row-level values, source paths, credentials, or error
+  text.
+- Run one serial local client; do not add artificial sleeps, an uncontrolled
+  parallel reader flood, a scheduler, a model, a feature artifact, a GPU job,
+  public weights, a sealed holdout, an ensemble, PnL, ranking, or Paper input.
+  A failed symbol is evidence about this probe only and cannot pause other
+  ready lanes.
+- Keep the fixed-trio momentum and GBT families closed. Do not use this task to
+  retune, promote, or reinterpret either outcome.
 
-## Required Contract
+## Required Taxonomy
 
-1. Decisions at completed D1 session `t` may use only same-session price-ratio
-   features from completed bars through `t`: body, range, and close-location
-   structure aggregated over frozen `1/5/10/20` session windows. Do not use
-   cross-session price ratios, price levels, calendar dates, or volume in this
-   first preflight.
-2. The label is the sign of the next session's within-session `close/open`
-   ratio. A uniform multiplier applied to every OHLC value in any one session
-   must leave both the feature vector and label unchanged. Prove this in tests.
-3. Freeze the exact 511-session chronological geometry: development ends before
-   the existing 21-session purge, validation uses only target-evaluable dates,
-   and all preprocessing/model fitting uses development rows only. Validate the
-   exact decision-to-label indices and prove future labels cannot alter features
-   or the fitted development state.
-4. Evaluate only aggregate, date-clustered balanced accuracy. Record
-   `always_flat` as a no-decision reference and `always_long` as a directional
-   comparator, but do not compute after-cost PnL or claim an execution edge.
-5. Require at least 120 validation date groups. Compare the actual model only
-   against 64 fixed nonzero circular date-block label shifts. Predeclare a
-   minimum 0.08 date-balanced-accuracy advantage above 0.50 and the 95th
-   percentile null threshold. If either condition fails, close
-   `noise_not_separable`; do not tune or retry. If both pass, record
-   `review_required` and ask Claude for a falsification review before any
-   interpretation. A one-session label-shift control must also be recorded and
-   an anomalously strong shifted result must fail the claimed alignment.
+1. Reattach and validate the immutable broad panel before the active client is
+   constructed. Freeze its dataset/manifest identity, selected-symbol count,
+   common-session count, and complete D1 bar geometry.
+2. For each fixed symbol, compare two active reads for repeatability and then
+   compare the reference and active series by timestamp. Persist only the
+   symbol, stable-reader category, reference/active/shared counts, missing and
+   surplus session counts, and value-mismatch count on shared sessions.
+3. Classify outcomes before the run:
+   - `matching`: every symbol has repeatable exact session coverage and zero
+     shared-session value mismatches;
+   - `revision_detected`: all symbols are repeatable with exact coverage, but
+     one or more shared-session OHLCV values differ;
+   - `input_unavailable`: any active reader/client failure, nonrepeatability,
+     absent symbol, or session-coverage mismatch. Preserve aggregate and
+     per-symbol categorical counts without attributing it to data revision.
+4. A matching receipt is only a current-build reproducibility fact for this
+   frozen scope. A `revision_detected` receipt closes only a later consumer that
+   requires exact values. An `input_unavailable` receipt closes only its own
+   source-conformance attempt. None is a general Research, Paper, GPU, or
+   operator gate.
+5. Canonicalize Decimal representations before response hashing so equal
+   numeric reads have one stable source-safe hash. Make every receipt
+   provider-free reattachable and no-clobber/idempotent.
 
 ## Required Work
 
-1. Data: build the smallest provider-free loader boundary that verifies the
-   fixed source hashes and the matching active-build receipt before the Engine
-   module receives `Bar` data. Preserve all existing source limitations.
-2. Engine: implement the frozen feature/label geometry, model fit, aggregate
-   metrics, date-block null, availability-shift control, result validation, and
-   source-safe external receipt. Keep the core offline and deterministic.
-3. Validation: add focused tests for causal index geometry, multiplier
-   invariance, development-only fitting, null determinism, no raw artifact
-   leakage, external-root containment, no network/credential/broker access,
-   and a synthetic `noise_not_separable` outcome.
-4. Run a real CPU-only preflight against the fixed local source. Report only
-   safe hashes, counts, categorical outcome, and metric categories. Do not
-   output raw data or individual predictions.
-5. Update Data, Engine Research, Research Steward, orchestration, handoff, and
-   decision stateboards with the frozen contract, result, and next readiness.
+1. Data: implement the smallest Windows-host-only conformance module and
+   runner. Reuse the existing broad-panel verifier and active-reader pattern,
+   but do not generalize either into a new framework.
+2. Tests: prove taxonomy classification for exact, value-mismatch,
+   absent-symbol, missing/surplus-session, and nonrepeatable-reader cases;
+   Decimal-hash stability; provider-free receipt reattachment; external-root
+   containment; idempotence/no-clobber; and no network/credential/KIS/broker
+   access or raw leakage.
+3. Run the actual bounded local conformance once. Report only the safe
+   categorical result, counts, hashes, artifact location, elapsed-time bucket,
+   and source limitations. Do not lower or relitigate the taxonomy after the
+   result.
+4. Update Data, Engine Research, Research Steward, orchestration, handoff, and
+   decision stateboards with the outcome and exact next readiness. Engine may
+   prepare no more than the later consumer contract; it may not start a model
+   from this panel in this objective.
 
 ## Claude Review
 
-Claude already returned `uncertain` for a raw cross-session target because
-adjustment semantics and 140 date groups cannot resolve a small effect. This
-goal adopts its required multiplier-invariant feature/label, fixed-model,
-date-block-null, and effect-floor conditions. Ask Claude again only if the
-actual result clears the frozen strong-result condition or implementation
-widens scope.
+Claude returned `supported-with-limits` for this objective after rejecting the
+naive one-count broad revision probe. Its required pre-registered boundary is
+the value-mismatch versus symbol-absent/session-coverage taxonomy above.
+Re-invoke Claude only if implementation broadens the taxonomy, a result is
+interpreted as source-quality promotion, or a later consumer seeks model/GPU/
+Paper consequences.
 
 ## Verification
 
@@ -106,8 +112,8 @@ verification commands.
 
 ## Completion
 
-Report the categorical preflight outcome, focused and full verification,
-artifact location/hash, Claude result if invoked, commit hash, intentionally
-omitted GPU/Paper/PnL work, and the next recommended objective. Commit and push
-completion evidence before replacing this file with exactly one next objective
-and continuing.
+Report the taxonomy outcome, focused and full verification, artifact
+location/hash, Claude result, elapsed-time bucket, commit hash, intentionally
+omitted model/GPU/Paper/PnL work, and the next recommended objective. Commit
+and push completion evidence before replacing this file with exactly one next
+objective and continuing.

@@ -988,3 +988,13 @@ The existing no-network Docker `research` service reproduced the same
 aggregate-only receipt through its `/app/market_data` and
 `/app/model_artifacts` mounts. The run used sklearn CPU code only, not Torch or
 CUDA. Host/container root mapping is now covered by the runner boundary tests.
+
+## Broad Current-Build Reproducibility (2026-08-02)
+
+The frozen 523-symbol Norgate D1 panel now has a narrow active-build matching
+receipt: every one of 252,609 retained D1 bars matched two repeatable active
+reads. This may support a later separately frozen, non-promoting engineering
+consumer that explicitly tolerates its static current-listing, non-PIT,
+adjustment, corporate-action, and availability limitations. It does not change
+the panel's `model_eligible=false`, `gpu_eligible=false`, or `paper_trading_eligible=false`
+scope, and it does not revive the closed fixed-trio GBT or momentum families.

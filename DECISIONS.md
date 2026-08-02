@@ -8485,3 +8485,21 @@ model promotion, ranking, ensemble, GPU appointment, Paper input, PnL claim,
 or execution consequence. A later candidate must use independently reattested
 breadth or a distinct causal hypothesis and must freeze a fresh contract before
 target evaluation.
+
+## 2026-08-02 - Separate broad active-build value revisions from availability changes
+
+Decision: the frozen Norgate broad D1 panel is currently reproducible from the
+active local build: 523 rank-ordered symbols, 483 common sessions, and 252,609
+bars had two repeatable reads and zero taxonomy differences. The external
+receipt is `sha256:235af9ebdef1f61081314edc71f1bc0d2de9f266e1ed2e7d265294a1e853cf7a`.
+
+For this exact conformance contract, a shared-session OHLCV mismatch is the
+only `revision_detected` condition. Absent symbols, missing/surplus sessions,
+malformed responses, and nonrepeatability remain `input_unavailable`; they are
+not retrospectively relabeled as price revisions. This taxonomy preserves a
+useful current-build reproducibility fact without conflating database membership
+or adjustment behavior with values. It does not change static-panel PIT,
+adjustment, corporate-action, availability, campaign, model, GPU, ranking,
+Paper, PnL, or live eligibility.
+Any later provider-free consumer must pin this receipt hash; a valid JSON
+receipt without the consumer's expected hash is only self-consistent evidence.

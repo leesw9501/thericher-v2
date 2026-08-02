@@ -1740,3 +1740,32 @@ Do not retune this exact feature set, split, classifier, or thresholds. The
 next Engine direction needs independently reattested breadth or a distinct
 causal hypothesis; the closed three-ETF preflight is not a generic ban on
 research, Data work, Paper execution learning, or future GPU candidates.
+
+## Norgate Broad Active-Build Conformance Taxonomy (2026-08-02)
+
+`norgate-broad-d1-active-build-conformance-taxonomy-v1` completed on the
+Windows-local `norgatedata==1.0.77` path in under 30 seconds. The hash-attested
+523-symbol / 483-common-session broad D1 panel has 252,609 reference and
+active bars. Both active reads per symbol were repeatable: 523 exact matches,
+zero shared-session value mismatches, absent symbols, coverage mismatches,
+malformed responses, and nonrepeatable responses. The source-safe receipt is
+`sha256:235af9ebdef1f61081314edc71f1bc0d2de9f266e1ed2e7d265294a1e853cf7a`
+under `D:\thericher-v2\model-artifacts\data\norgate-broad-d1-active-build-conformance-v1\active-build-taxonomy-20260802-r2`;
+its canonical active-response hash is
+`sha256:f949b05fa2124d87f5b44b16cdb66130d9d115f4e74a958b8cb0a1e1883443c0`.
+
+Claude's `supported-with-limits` review correctly replaced the naive broad
+one-count revision test with a predeclared taxonomy: only shared-session value
+mismatch can yield `revision_detected`; absent symbols, session coverage,
+reader nonrepeatability, or malformed responses yield `input_unavailable`.
+The receipt holds only per-symbol categories/counts and hashes, no raw data,
+dates, paths, exception text, credentials, models, PnL, GPU, Paper, or live
+behavior. This is a frozen current-build reproducibility fact, not proof of
+PIT, adjustment/corporate-action, availability, membership, model, ranking,
+Paper, or GPU eligibility.
+
+The r2 receipt pins the reference manifest before reads, preserves prior
+per-symbol evidence if a later provider failure occurs, and accepts an
+`expected_receipt_sha256` for provider-free consumers. A future consumer must
+pin this receipt hash in its own frozen contract; receipt self-consistency alone
+is not a source-authentication claim.

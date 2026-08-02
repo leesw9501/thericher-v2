@@ -468,3 +468,20 @@ required event evidence is absent.
 - **Improvement:** multiplier-invariant features/label, a fixed 64-shift
   date-block null, and a one-session alignment control turn a small-panel model
   result into a bounded evidence decision without creating a promotion gate.
+
+## Broad Active-Build Taxonomy Outcome (2026-08-02)
+
+- **Ready:** the 523-symbol static Norgate D1 panel is reattached and matches
+  the active local build under the predeclared value/coverage taxonomy. A
+  distinct causal consumer or an independent KIS/Data package may proceed; the
+  matching receipt does not create a GPU or Paper dependency.
+- **Owned:** Data owns the immutable taxonomy receipt and unchanged source
+  limitations. Engine owns any fresh campaign contract; Research Steward keeps
+  the GPU unallocated; Execution has no route or consequence.
+- **Due:** none. The 17-second host probe and its provider-free idempotent
+  reattachment completed now; no retry, market clock, or scheduler owns the
+  foreground.
+- **Improvement:** source availability/membership changes are now separated
+  from shared-session value revision before a wide static source can be
+  interpreted, avoiding a broad one-count false diagnosis without adding an
+  approval gate.

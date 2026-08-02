@@ -999,3 +999,20 @@ none of the source's PIT, adjustment, corporate-action, entity, availability,
 or historical-revision limitations. The next Data readiness question is an
 independently scoped breadth/source contract, not a recollection or a retune of
 this fixed trio.
+
+## Broad Active-Build Taxonomy Outcome (2026-08-02)
+
+The static broad D1 panel now has a matching current-build conformance receipt:
+523 symbols, 483 common sessions, and 252,609 exact active/reference bars.
+Two reads per rank-ordered symbol were repeatable; zero entries fell into
+value-mismatch, symbol-absent, session-coverage, malformed, or nonrepeatable
+categories. The source-safe receipt is
+`sha256:235af9ebdef1f61081314edc71f1bc0d2de9f266e1ed2e7d265294a1e853cf7a`
+under the external conformance artifact root. It persists only category/count
+evidence and hashes.
+
+This is not a historical membership, PIT, adjustment, corporate-action, or
+availability qualification. A later consumer may depend on exact current-build
+reproducibility only after it declares which remaining source limitations it
+can tolerate and pins this receipt hash. The matching receipt does not itself
+authorise model, ranking, GPU, Paper, or provider-update work.
