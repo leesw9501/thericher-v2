@@ -216,13 +216,15 @@ def test_pure_projection_rejects_stale_and_malformed_slow_bars(
     session = us_equity_2026_session(_SESSION_DATE)
     assert session is not None
     cutoff = preflight._session_cutoff(session.window)
-    prefix = preflight._complete_causal_prefix(
+    prefix = preflight.completed_causal_minute_prefix(
         catalogs["QQQ/NAS/1m"].bars,
         expected_symbol="QQQ",
         session=session.window,
         cutoff=cutoff,
     )
-    supplied = preflight._resample_completed_prefix(prefix, session=session.window, cutoff=cutoff)
+    supplied = preflight.resample_completed_causal_prefix(
+        prefix, session=session.window, cutoff=cutoff
+    )
     invalid = mutate(supplied, cutoff)
 
     with pytest.raises(SequenceWindowInputError) as raised:
@@ -249,7 +251,7 @@ def test_slow_constituents_cannot_cross_cutoff_or_forge_values() -> None:
     session = us_equity_2026_session(_SESSION_DATE)
     assert session is not None
     cutoff = preflight._session_cutoff(session.window)
-    prefix = preflight._complete_causal_prefix(
+    prefix = preflight.completed_causal_minute_prefix(
         catalogs["QQQ/NAS/1m"].bars,
         expected_symbol="QQQ",
         session=session.window,

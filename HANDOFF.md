@@ -2094,3 +2094,43 @@ hashes, profile identifiers, and aggregate readiness: it has no symbols,
 dates, paths, OHLCV, feature values, targets, labels, credentials, or broker
 state. This is an input boundary only, not a model, profile selection, target,
 return, PnL, GPU, Paper, or live result.
+
+## KIS MTF Profiled Prospective Observer (2026-08-03)
+
+kis-mtf-profiled-prospective-observer-v1 now provides the forward-only
+counterpart to the completed 21-session preflight. It leaves the installed
+legacy observer and its scheduler-owned date/symbol-bearing store untouched:
+the new leaf has its own small external hash-only commitment store because its
+receipt must not retain symbols, dates, cache paths, timestamps, or OHLCV.
+
+For one eligible future 15:30 ET session, it reattests both verified local
+historical and head catalogs, excludes the exact historical 21-session set in
+memory, and evaluates every frozen profile through the shared normalized
+projection. Both legs must share the causal-prefix source contract, profile,
+cutoff, feature timestamp, and completed-bar status. The saved commitment has
+only opaque identities, six profile identifiers, per-profile categorical
+readiness, and scope flags. An exact retry is duplicate; different sealed
+content for the same opaque session key is an immutable conflict.
+
+The head source identity is derived from the completed 09:30-15:30 prefix,
+not the mutable whole head-cache hash. Therefore post-cutoff or
+next-target-shaped data cannot alter a sealed result, while an altered
+pre-cutoff constituent either fails the exact 60/180-minute reconstruction or
+changes the opaque commitment after legitimate resampling. The current actual
+head cache has no common ready prospective session, so no real forward
+observation or model/GPU/Paper consequence exists yet. Claude's design check
+was supported-with-limits; its decisive conditions are the historical
+exclusion, prefix-only identity, and source-safe persistence tests.
+
+Post-review hardening now reattests the exact frozen preflight source contract
+and receipt rather than accepting an arbitrary 21-session fixture as equivalent
+history. The observer's import boundary is also verified in a clean subprocess:
+the data-only core and its resolved type hints do not import an Execution,
+provider, credential, broker, local-paper, or live route. Exact canonical
+payload equality is required for a duplicate retry; unreadable, noncanonical,
+or conflicting stored content cannot be mistaken for success. Focused coverage
+passed `44 passed, 3 skipped`; a fresh-root full parallel run passed `2219
+passed, 20 skipped`, and the diagnostic full serial run matched it. Ruff and
+both credential-free Compose configurations passed. This completion creates no
+fresh observation, target, model, GPU job, local-paper event, Paper action, or
+live behavior.

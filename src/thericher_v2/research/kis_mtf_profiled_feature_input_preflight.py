@@ -335,7 +335,9 @@ def materialize_kis_mtf_profiled_feature_inputs(
                     )
                     for target_key in KIS_MTF_PROFILED_FEATURE_INPUT_TARGET_KEYS
                 )
-                pair = _build_pair(profile.profile_id, contract.source_contract_sha256, legs)
+                pair = build_target_free_mtf_feature_pair(
+                    profile.profile_id, contract.source_contract_sha256, legs
+                )
             except (SequenceWindowInputError, TypeError, ValueError):
                 unavailable += 1
                 continue
@@ -556,7 +558,7 @@ def _materialize_leg(
     if session is None or session.kind != "regular":
         raise ValueError("profiled feature-input session is not regular")
     cutoff = _session_cutoff(session.window)
-    prefix = _complete_causal_prefix(
+    prefix = completed_causal_minute_prefix(
         source_catalog.bars,
         expected_symbol=source.target_key.split("/", maxsplit=1)[0],
         session=session.window,
@@ -568,17 +570,23 @@ def _materialize_leg(
         catalog=catalog,
         profile_id=profile_id,
         minute_bars=prefix,
-        bars_by_timeframe=_resample_completed_prefix(prefix, session=session.window, cutoff=cutoff),
+        bars_by_timeframe=resample_completed_causal_prefix(
+            prefix, session=session.window, cutoff=cutoff
+        ),
         cutoff=cutoff,
     )
 
 
-def _build_pair(
+def build_target_free_mtf_feature_pair(
     profile_id: str,
     source_contract_sha256: str,
     legs: Sequence[NormalizedCompletedBarProjection],
 ) -> KisMtfProfiledFeatureInputPair:
+    """Bind two normalized projections without exposing their feature values."""
+
     legs = tuple(legs)
+    if len(legs) != 2:
+        raise ValueError("profiled feature-input pair requires exactly two legs")
     cutoff = legs[0].cutoff
     return KisMtfProfiledFeatureInputPair(
         profile_id=profile_id,
@@ -597,7 +605,7 @@ def _build_pair(
     )
 
 
-def _complete_causal_prefix(
+def completed_causal_minute_prefix(
     bars: Sequence[Bar],
     *,
     expected_symbol: str,
@@ -625,7 +633,7 @@ def _complete_causal_prefix(
     return tuple(sorted(source, key=lambda bar: bar.start_ts))
 
 
-def _resample_completed_prefix(
+def resample_completed_causal_prefix(
     prefix: Sequence[Bar],
     *,
     session: SessionWindow,

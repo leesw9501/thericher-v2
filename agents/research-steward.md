@@ -256,3 +256,18 @@ Research Steward records no GPU appointment or evaluation spend from the
 source-safe summary `sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e`.
 The GPU remains available only to a future independently frozen eligible
 campaign; do not use input geometry as a reason to train a model.
+
+## Profiled MTF Forward Witness (2026-08-03)
+
+The new forward observer is evidence custody only. It stores six
+profile-readiness categories and opaque commitments, not a candidate model,
+loss, prediction, evaluation allocation, or selected profile. The actual head
+cache currently has no common ready session, so Research Steward records no
+GPU appointment and no sealed-evaluation spend. The GPU remains available for
+a distinct frozen campaign that independently satisfies its contract.
+
+Claude's repeat-source challenge rules out using the already-read QQQ/SPY D1
+panel for another apparent breadth winner without a reconstructible untouched
+partition and family-wise accounting. This does not reserve the GPU or block
+the fresh prospective Paper loop; no current frozen campaign satisfies the
+GPU-appointment contract.

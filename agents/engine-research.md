@@ -1235,3 +1235,33 @@ This is not a candidate model, target, score, return, cost, validation,
 profile choice, GPU appointment, ensemble member, Paper input, or PnL claim.
 The next model-facing package must state a separate bounded campaign contract
 and may not turn this structural receipt into a historical performance result.
+
+## Profiled MTF Forward Input Witness (2026-08-03)
+
+The Engine-facing continuation reuses the same NormalizedCompletedBarProjection
+and pair validator for all six frozen profiles. A forward pair becomes
+observed only after both legs share the causal-prefix source contract, cutoff,
+profile identifier, feature timestamp, and completed-bar status. The
+observer's saved record contains no projection values and is not a feature
+schema, model input batch, target, score, campaign result, or profile choice.
+
+No campaign or GPU appointment follows from the current zero-record forward
+state. A later model package must freeze one profile and a separate dataset,
+target, temporal split, cost model, baseline, kill test, and compute stop rule
+before it can request Research Steward resources.
+
+The observer's historical binding is now pinned to the actual frozen preflight
+source and receipt identities, and its strict duplicate semantics cannot turn
+corrupt or differently canonicalized stored content into an observed record.
+This preserves the target-free boundary: it supplies no profile winner,
+prediction batch, score, return, candidate family, or GPU eligibility.
+
+The proposed additional static QQQ/SPY D1 relative-drawdown reversal screen was
+challenged before dispatch. Claude's `supported-with-limits` review found that
+the already-read 4,756-session source cannot make a fresh comparative claim
+without reconstructing every prior family and an untouched evaluation partition;
+a predeclared parameter set alone would not solve repeat-source data snooping.
+Do not open that screen as a new historical PnL or GPU campaign. The ready next
+engine loop is instead a fresh prospective input feeding the existing small
+fixed Paper baseline, where its result is execution learning rather than a
+static-source profitability claim.

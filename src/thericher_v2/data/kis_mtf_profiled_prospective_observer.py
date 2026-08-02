@@ -1,0 +1,952 @@
+"""Source-safe forward witness for frozen KIS multi-timeframe profile inputs."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from collections.abc import Callable, Iterator, Mapping
+from contextlib import contextmanager
+from dataclasses import dataclass, field
+from datetime import UTC, date, datetime, time
+from pathlib import Path
+from typing import Literal
+from zoneinfo import ZoneInfo
+
+from thericher_v2.contracts import SCHEMA_VERSION, Bar, require_utc
+from thericher_v2.data.kis_intraday_mtf_availability import (
+    KIS_INTRADAY_MTF_AVAILABILITY_TARGETS,
+    KisIntradayMtfAvailabilityReceipt,
+    freeze_kis_intraday_mtf_availability_contract,
+    materialize_kis_intraday_mtf_availability,
+)
+from thericher_v2.data.local import CatalogedBars
+from thericher_v2.data.resample import SessionWindow
+from thericher_v2.data.us_equity_session import us_equity_2026_session
+from thericher_v2.models.sequence_window import SequenceWindowInputError
+from thericher_v2.research.artifact_paths import ensure_external_artifact_directory
+from thericher_v2.research.causal_mtf_window_profile_feasibility import (
+    CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG,
+)
+from thericher_v2.research.kis_mtf_profiled_feature_input_preflight import (
+    KIS_MTF_PROFILED_FEATURE_INPUT_CATALOG_SHA256,
+    build_target_free_mtf_feature_pair,
+    build_target_free_mtf_feature_projection,
+    completed_causal_minute_prefix,
+    resample_completed_causal_prefix,
+)
+
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID = "kis-mtf-profiled-prospective-observer-v1"
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ARTIFACT_DIRECTORY = (
+    "mtf-prospective-v1"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SUMMARY_SHA256 = (
+    "sha256:ad00069df6c3da2874eca7070c08c07126b56699db0c4cec91a2f30718a8168e"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_PRECOMMIT_SHA256 = (
+    "sha256:25e8ac3aa820ec6c33eb70427765c36c7c05c6cd67140e5f4408415f0b510c4c"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_CONTRACT_SHA256 = (
+    "sha256:25ed7202b60b2ac992e46aaca8d423875fee06f54a14e53bbf0fd8ad6280adbb"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_CODE_REVISION = (
+    "sha256:c85ecd2c9937f0e124d9ae39a8d40e496492b585557fd3ba8d6b1a3ce548c9f6"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_CONTRACT_SHA256 = (
+    "sha256:5b8cf474be34f4e4bbfb0710584bf540374daa747b7b2acf2a1ec25443aad4a1"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_RECEIPT_SHA256 = (
+    "sha256:e88ded3c41960837472f5abdf195af44f35b04cbc5449e7e805a95f714143584"
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_HISTORICAL_SESSION_COUNT = 21
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_CUTOFF = time(15, 30)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS = tuple(
+    f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_INTRADAY_MTF_AVAILABILITY_TARGETS
+)
+KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS = tuple(
+    profile.profile_id for profile in CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG.profiles
+)
+
+ObservationStatus = Literal["observed", "input_unavailable"]
+StoreOutcome = Literal["appended", "duplicate", "conflict", "busy"]
+CatalogLoader = Callable[..., Mapping[str, CatalogedBars]]
+_EASTERN = ZoneInfo("America/New_York")
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledProspectiveObserverContract:
+    """Frozen historical exclusion and feature-input provenance, kept value-free."""
+
+    historical_source_contract_sha256: str
+    historical_receipt_sha256: str
+    preflight_summary_sha256: str
+    catalog_sha256: str
+    historical_session_count: int
+    historical_exclusion_sha256: str
+    code_revision: str
+    contract_sha256: str
+    _historical_session_dates: tuple[date, ...] = field(repr=False)
+
+    def __post_init__(self) -> None:
+        dates = tuple(self._historical_session_dates)
+        object.__setattr__(self, "_historical_session_dates", dates)
+        if (
+            not all(
+                _is_sha256(value)
+                for value in (
+                    self.historical_source_contract_sha256,
+                    self.historical_receipt_sha256,
+                    self.preflight_summary_sha256,
+                    self.historical_exclusion_sha256,
+                    self.code_revision,
+                    self.contract_sha256,
+                )
+            )
+            or self.preflight_summary_sha256
+            != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SUMMARY_SHA256
+            or self.catalog_sha256 != KIS_MTF_PROFILED_FEATURE_INPUT_CATALOG_SHA256
+            or self.historical_session_count
+            != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_HISTORICAL_SESSION_COUNT
+            or len(dates) != self.historical_session_count
+            or tuple(sorted(dates)) != dates
+            or len(set(dates)) != len(dates)
+            or self.historical_exclusion_sha256 != _historical_exclusion_sha256(dates)
+        ):
+            raise ValueError("prospective observer contract is invalid")
+        expected = _contract_sha256(
+            historical_source_contract_sha256=self.historical_source_contract_sha256,
+            historical_receipt_sha256=self.historical_receipt_sha256,
+            preflight_summary_sha256=self.preflight_summary_sha256,
+            catalog_sha256=self.catalog_sha256,
+            historical_session_count=self.historical_session_count,
+            historical_exclusion_sha256=self.historical_exclusion_sha256,
+            code_revision=self.code_revision,
+        )
+        if self.contract_sha256 != expected:
+            raise ValueError("prospective observer contract hash is invalid")
+
+    @property
+    def historical_session_dates(self) -> frozenset[date]:
+        """Expose dates only to the in-memory forward-exclusion check."""
+
+        return frozenset(self._historical_session_dates)
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "kind": KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID,
+            "contract_sha256": self.contract_sha256,
+            "historical_source_contract_sha256": self.historical_source_contract_sha256,
+            "historical_receipt_sha256": self.historical_receipt_sha256,
+            "preflight_summary_sha256": self.preflight_summary_sha256,
+            "catalog_sha256": self.catalog_sha256,
+            "historical_session_count": self.historical_session_count,
+            "historical_exclusion_sha256": self.historical_exclusion_sha256,
+            "code_revision": self.code_revision,
+            "geometry": {
+                "cutoff": "15:30:00",
+                "completed_constituents_required": True,
+                "historical_sessions_count_as_forward": False,
+            },
+            "scope": _source_safe_scope(),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledProspectiveProfileCommitment:
+    """One profile's opaque pair commitment, without features or timestamps."""
+
+    profile_id: str
+    status: ObservationStatus
+    pair_input_sha256: str | None
+
+    def __post_init__(self) -> None:
+        if (
+            self.profile_id not in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS
+            or self.status not in {"observed", "input_unavailable"}
+            or (self.status == "observed") != (self.pair_input_sha256 is not None)
+            or (self.pair_input_sha256 is not None and not _is_sha256(self.pair_input_sha256))
+        ):
+            raise ValueError("prospective profile commitment is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "profile_id": self.profile_id,
+            "status": self.status,
+            "pair_input_sha256": self.pair_input_sha256,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledProspectiveObservation:
+    """One eligible forward-session result with no raw time or market values."""
+
+    contract_sha256: str
+    session_key_sha256: str
+    head_source_contract_sha256: str | None
+    status: ObservationStatus
+    profiles: tuple[KisMtfProfiledProspectiveProfileCommitment, ...]
+    content_commitment_sha256: str
+    observation_sha256: str
+    _session_date: date = field(repr=False)
+
+    def __post_init__(self) -> None:
+        profiles = tuple(self.profiles)
+        object.__setattr__(self, "profiles", profiles)
+        if (
+            not _is_sha256(self.contract_sha256)
+            or not _is_sha256(self.session_key_sha256)
+            or not _is_sha256(self.content_commitment_sha256)
+            or not _is_sha256(self.observation_sha256)
+            or (
+                self.head_source_contract_sha256 is not None
+                and not _is_sha256(self.head_source_contract_sha256)
+            )
+            or tuple(profile.profile_id for profile in profiles)
+            != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS
+            or self.status != _status_for_profiles(profiles)
+            or (
+                self.status == "observed"
+                and self.head_source_contract_sha256 is None
+            )
+            or self.session_key_sha256
+            != _session_key_sha256(
+                contract_sha256=self.contract_sha256,
+                session_date=self._session_date,
+            )
+        ):
+            raise ValueError("prospective observation is invalid")
+        expected_content = _content_commitment_sha256(
+            contract_sha256=self.contract_sha256,
+            session_key_sha256=self.session_key_sha256,
+            head_source_contract_sha256=self.head_source_contract_sha256,
+            status=self.status,
+            profiles=profiles,
+        )
+        if self.content_commitment_sha256 != expected_content:
+            raise ValueError("prospective observation content commitment is invalid")
+        expected_observation = _observation_sha256(
+            contract_sha256=self.contract_sha256,
+            session_key_sha256=self.session_key_sha256,
+            head_source_contract_sha256=self.head_source_contract_sha256,
+            status=self.status,
+            profiles=profiles,
+            content_commitment_sha256=self.content_commitment_sha256,
+        )
+        if self.observation_sha256 != expected_observation:
+            raise ValueError("prospective observation hash is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "kind": KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID,
+            "contract_sha256": self.contract_sha256,
+            "session_key_sha256": self.session_key_sha256,
+            "head_source_contract_sha256": self.head_source_contract_sha256,
+            "status": self.status,
+            "profile_aggregates": [profile.safe_payload() for profile in self.profiles],
+            "content_commitment_sha256": self.content_commitment_sha256,
+            "observation_sha256": self.observation_sha256,
+            "scope": _source_safe_scope(),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledProspectiveStoreResult:
+    """Outcome of an immutable forward-observation reconciliation."""
+
+    outcome: StoreOutcome
+    observation: KisMtfProfiledProspectiveObservation
+    conflict_sha256: str | None = None
+
+    def __post_init__(self) -> None:
+        if (
+            self.outcome not in {"appended", "duplicate", "conflict", "busy"}
+            or (self.outcome == "conflict") != (self.conflict_sha256 is not None)
+            or (self.conflict_sha256 is not None and not _is_sha256(self.conflict_sha256))
+        ):
+            raise ValueError("prospective observer store result is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        payload: dict[str, object] = {
+            "kind": KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID,
+            "status": self.observation.status if self.outcome == "appended" else self.outcome,
+            "store_outcome": self.outcome,
+            "observation": self.observation.safe_payload(),
+        }
+        if self.conflict_sha256 is not None:
+            payload["conflict_sha256"] = self.conflict_sha256
+        return payload
+
+
+def freeze_kis_mtf_profiled_prospective_observer_contract(
+    *,
+    historical_catalogs: Mapping[str, CatalogedBars],
+    code_revision: str,
+    preflight_summary_sha256: str | None = None,
+) -> KisMtfProfiledProspectiveObserverContract:
+    """Reattest the completed historical baseline before a forward observation."""
+
+    _require_sha256(code_revision, "code_revision")
+    if preflight_summary_sha256 is None:
+        preflight_summary_sha256 = KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SUMMARY_SHA256
+    if preflight_summary_sha256 != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SUMMARY_SHA256:
+        raise ValueError("prospective observer preflight summary is not the frozen input")
+    historical_source_contract = freeze_kis_intraday_mtf_availability_contract(
+        historical_catalogs,
+        code_revision=KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_CODE_REVISION,
+    )
+    historical_receipt = materialize_kis_intraday_mtf_availability(
+        historical_source_contract,
+        historical_catalogs,
+    )
+    dates = _common_eligible_session_dates(historical_receipt)
+    if (
+        historical_source_contract.contract_sha256
+        != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_CONTRACT_SHA256
+        or historical_receipt.receipt_sha256
+        != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PREFLIGHT_SOURCE_RECEIPT_SHA256
+        or len(dates) != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_HISTORICAL_SESSION_COUNT
+    ):
+        raise ValueError("prospective observer historical scope is not the frozen completed cache")
+    exclusion_sha256 = _historical_exclusion_sha256(dates)
+    fields = {
+        "historical_source_contract_sha256": historical_source_contract.contract_sha256,
+        "historical_receipt_sha256": historical_receipt.receipt_sha256,
+        "preflight_summary_sha256": preflight_summary_sha256,
+        "catalog_sha256": KIS_MTF_PROFILED_FEATURE_INPUT_CATALOG_SHA256,
+        "historical_session_count": len(dates),
+        "historical_exclusion_sha256": exclusion_sha256,
+        "code_revision": code_revision,
+    }
+    return KisMtfProfiledProspectiveObserverContract(
+        **fields,
+        contract_sha256=_contract_sha256(**fields),
+        _historical_session_dates=dates,
+    )
+
+
+def materialize_kis_mtf_profiled_prospective_observation(
+    contract: KisMtfProfiledProspectiveObserverContract,
+    *,
+    historical_catalogs: Mapping[str, CatalogedBars],
+    head_catalogs: Mapping[str, CatalogedBars | None],
+    observed_at: datetime,
+) -> KisMtfProfiledProspectiveObservation | None:
+    """Build one all-profile forward witness entirely from verified local catalogs."""
+
+    window = _prospective_observation_window(observed_at)
+    if window is None:
+        return None
+    session_date, session, cutoff = window
+    if session_date in contract.historical_session_dates:
+        return None
+    reattested = freeze_kis_mtf_profiled_prospective_observer_contract(
+        historical_catalogs=historical_catalogs,
+        code_revision=contract.code_revision,
+        preflight_summary_sha256=contract.preflight_summary_sha256,
+    )
+    if reattested != contract:
+        raise ValueError("prospective observer historical input changed")
+    session_key_sha256 = _session_key_sha256(
+        contract_sha256=contract.contract_sha256,
+        session_date=session_date,
+    )
+    profiles, head_source_contract_sha256 = _profile_commitments(
+        head_catalogs=head_catalogs,
+        code_revision=contract.code_revision,
+        session=session,
+        cutoff=cutoff,
+    )
+    status = _status_for_profiles(profiles)
+    content_commitment_sha256 = _content_commitment_sha256(
+        contract_sha256=contract.contract_sha256,
+        session_key_sha256=session_key_sha256,
+        head_source_contract_sha256=head_source_contract_sha256,
+        status=status,
+        profiles=profiles,
+    )
+    return KisMtfProfiledProspectiveObservation(
+        contract_sha256=contract.contract_sha256,
+        session_key_sha256=session_key_sha256,
+        head_source_contract_sha256=head_source_contract_sha256,
+        status=status,
+        profiles=profiles,
+        content_commitment_sha256=content_commitment_sha256,
+        observation_sha256=_observation_sha256(
+            contract_sha256=contract.contract_sha256,
+            session_key_sha256=session_key_sha256,
+            head_source_contract_sha256=head_source_contract_sha256,
+            status=status,
+            profiles=profiles,
+            content_commitment_sha256=content_commitment_sha256,
+        ),
+        _session_date=session_date,
+    )
+
+
+def run_kis_mtf_profiled_prospective_observer(
+    *,
+    historical_cache_root: Path | str,
+    head_cache_root: Path | str,
+    artifact_root: Path | str,
+    repo_root: Path | str,
+    code_revision: str,
+    observed_at: datetime,
+    catalog_loader: CatalogLoader,
+) -> KisMtfProfiledProspectiveStoreResult | None:
+    """Load local cache inputs, record one eligible result, and never call a provider."""
+
+    if _prospective_observation_window(observed_at) is None:
+        return None
+    repository = Path(repo_root)
+    historical_catalogs = catalog_loader(
+        cache_root=Path(historical_cache_root),
+        repo_root=repository,
+    )
+    contract = freeze_kis_mtf_profiled_prospective_observer_contract(
+        historical_catalogs=historical_catalogs,
+        code_revision=code_revision,
+    )
+    try:
+        loaded_head_catalogs = catalog_loader(
+            cache_root=Path(head_cache_root),
+            repo_root=repository,
+        )
+        head_catalogs: Mapping[str, CatalogedBars | None] = loaded_head_catalogs
+    except (OSError, ValueError):
+        head_catalogs = {
+            target_key: None for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        }
+    observation = materialize_kis_mtf_profiled_prospective_observation(
+        contract,
+        historical_catalogs=historical_catalogs,
+        head_catalogs=head_catalogs,
+        observed_at=observed_at,
+    )
+    if observation is None:
+        return None
+    return append_kis_mtf_profiled_prospective_observation(
+        artifact_root=artifact_root,
+        repo_root=repository,
+        contract=contract,
+        observation=observation,
+    )
+
+
+def _prospective_observation_window(
+    observed_at: datetime,
+) -> tuple[date, SessionWindow, datetime] | None:
+    """Return only a same-day regular-session causal cutoff geometry."""
+
+    observed = require_utc(observed_at, "observed_at")
+    session_date = observed.astimezone(_EASTERN).date()
+    source_session = us_equity_2026_session(session_date)
+    if source_session is None or source_session.kind != "regular":
+        return None
+    cutoff = datetime.combine(
+        session_date,
+        KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_CUTOFF,
+        _EASTERN,
+    ).astimezone(UTC)
+    if observed < cutoff:
+        return None
+    return session_date, source_session.window, cutoff
+
+
+def append_kis_mtf_profiled_prospective_observation(
+    *,
+    artifact_root: Path | str,
+    repo_root: Path | str,
+    contract: KisMtfProfiledProspectiveObserverContract,
+    observation: KisMtfProfiledProspectiveObservation,
+) -> KisMtfProfiledProspectiveStoreResult:
+    """Append one immutable source-safe observation or reconcile an exact retry."""
+
+    if observation.contract_sha256 != contract.contract_sha256:
+        raise ValueError("prospective observation contract does not match the store")
+    root = _observation_store_root(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+        contract_sha256=contract.contract_sha256,
+    )
+    candidate_payload = observation.safe_payload()
+    candidate_encoded = _canonical_json(candidate_payload)
+    try:
+        with _exclusive_store_lock(root / ".append.lock"):
+            _write_immutable_json(root / "contract.json", contract.safe_payload())
+            destination = (
+                root / "observations" / f"{_storage_key(observation.session_key_sha256)}.json"
+            )
+            existing = _read_existing_observation(destination)
+            if existing is None:
+                _write_immutable_json(destination, candidate_payload)
+                return KisMtfProfiledProspectiveStoreResult(
+                    outcome="appended",
+                    observation=observation,
+                )
+            existing_bytes, existing_payload = existing
+            if existing_bytes == candidate_encoded:
+                return KisMtfProfiledProspectiveStoreResult(
+                    outcome="duplicate",
+                    observation=observation,
+                )
+            conflict_sha256 = _sha256(
+                {
+                    "existing_content_commitment_sha256": existing_payload[
+                        "content_commitment_sha256"
+                    ],
+                    "candidate_content_commitment_sha256": observation.content_commitment_sha256,
+                }
+            )
+            _write_immutable_json(
+                root
+                / "conflicts"
+                / (
+                    f"{_storage_key(observation.session_key_sha256)}-"
+                    f"{_storage_key(conflict_sha256)}.json"
+                ),
+                {
+                    "kind": KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID,
+                    "session_key_sha256": observation.session_key_sha256,
+                    "existing_content_commitment_sha256": existing_payload[
+                        "content_commitment_sha256"
+                    ],
+                    "candidate_content_commitment_sha256": observation.content_commitment_sha256,
+                    "conflict_sha256": conflict_sha256,
+                },
+            )
+            return KisMtfProfiledProspectiveStoreResult(
+                outcome="conflict",
+                observation=observation,
+                conflict_sha256=conflict_sha256,
+            )
+    except BlockingIOError:
+        return KisMtfProfiledProspectiveStoreResult(outcome="busy", observation=observation)
+
+
+def _profile_commitments(
+    *,
+    head_catalogs: Mapping[str, CatalogedBars | None],
+    code_revision: str,
+    session: SessionWindow,
+    cutoff: datetime,
+) -> tuple[tuple[KisMtfProfiledProspectiveProfileCommitment, ...], str | None]:
+    if set(head_catalogs) != set(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS) or any(
+        catalog is None for catalog in head_catalogs.values()
+    ):
+        return _unavailable_profiles(), None
+    present_catalogs = {
+        target_key: catalog
+        for target_key, catalog in head_catalogs.items()
+        if isinstance(catalog, CatalogedBars)
+    }
+    try:
+        head_contract = freeze_kis_intraday_mtf_availability_contract(
+            present_catalogs,
+            code_revision=code_revision,
+        )
+        source_by_target = {
+            source.target_key: source for source in head_contract.source_identities
+        }
+        prefix_by_target = {
+            target_key: completed_causal_minute_prefix(
+                present_catalogs[target_key].bars,
+                expected_symbol=source_by_target[target_key].target_key.split("/", maxsplit=1)[0],
+                session=session,
+                cutoff=cutoff,
+            )
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        }
+        prefix_source_hash_by_target = {
+            target_key: _causal_prefix_source_sha256(
+                target_key=target_key,
+                prefix=prefix_by_target[target_key],
+            )
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        }
+        bars_by_timeframe = {
+            target_key: resample_completed_causal_prefix(
+                prefix_by_target[target_key],
+                session=session,
+                cutoff=cutoff,
+            )
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        }
+    except (SequenceWindowInputError, TypeError, ValueError):
+        return _unavailable_profiles(), None
+    head_source_contract_sha256 = _causal_head_source_contract_sha256(
+        code_revision=code_revision,
+        prefix_source_hash_by_target=prefix_source_hash_by_target,
+    )
+    profiles: list[KisMtfProfiledProspectiveProfileCommitment] = []
+    for profile_id in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS:
+        try:
+            legs = tuple(
+                build_target_free_mtf_feature_projection(
+                    source_contract_sha256=head_source_contract_sha256,
+                    source_dataset_hash=prefix_source_hash_by_target[target_key],
+                    catalog=CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG,
+                    profile_id=profile_id,
+                    minute_bars=prefix_by_target[target_key],
+                    bars_by_timeframe=bars_by_timeframe[target_key],
+                    cutoff=cutoff,
+                )
+                for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+            )
+            pair = build_target_free_mtf_feature_pair(
+                profile_id,
+                head_source_contract_sha256,
+                legs,
+            )
+        except (SequenceWindowInputError, TypeError, ValueError):
+            profiles.append(
+                KisMtfProfiledProspectiveProfileCommitment(
+                    profile_id=profile_id,
+                    status="input_unavailable",
+                    pair_input_sha256=None,
+                )
+            )
+        else:
+            profiles.append(
+                KisMtfProfiledProspectiveProfileCommitment(
+                    profile_id=profile_id,
+                    status="observed",
+                    pair_input_sha256=pair.pair_input_sha256,
+                )
+            )
+    return tuple(profiles), head_source_contract_sha256
+
+
+def _unavailable_profiles() -> tuple[KisMtfProfiledProspectiveProfileCommitment, ...]:
+    return tuple(
+        KisMtfProfiledProspectiveProfileCommitment(
+            profile_id=profile_id,
+            status="input_unavailable",
+            pair_input_sha256=None,
+        )
+        for profile_id in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS
+    )
+
+
+def _status_for_profiles(
+    profiles: tuple[KisMtfProfiledProspectiveProfileCommitment, ...],
+) -> ObservationStatus:
+    if all(profile.status == "observed" for profile in profiles):
+        return "observed"
+    return "input_unavailable"
+
+
+def _common_eligible_session_dates(
+    receipt: KisIntradayMtfAvailabilityReceipt,
+) -> tuple[date, ...]:
+    dates = [target.eligible_session_dates for target in receipt.targets]
+    common = set(dates[0]) if dates else set()
+    for target_dates in dates[1:]:
+        common.intersection_update(target_dates)
+    return tuple(sorted(common))
+
+
+def _observation_store_root(
+    *,
+    artifact_root: Path,
+    repo_root: Path,
+    contract_sha256: str,
+) -> Path:
+    _reject_market_data_artifact_root(artifact_root)
+    parts = (
+        "research",
+        KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ARTIFACT_DIRECTORY,
+        "c",
+        _storage_key(contract_sha256),
+    )
+    root = ensure_external_artifact_directory(
+        artifact_root,
+        repo_root,
+        *parts,
+    )
+    for directory_name in ("observations", "conflicts"):
+        ensure_external_artifact_directory(artifact_root, repo_root, *parts, directory_name)
+    return root
+
+
+def _reject_market_data_artifact_root(artifact_root: Path) -> None:
+    candidate = artifact_root.absolute().resolve(strict=False)
+    market_data_root = Path("D:/market_data").absolute().resolve(strict=False)
+    if candidate == market_data_root or candidate.is_relative_to(market_data_root):
+        raise ValueError("prospective observer artifacts must not use the market-data root")
+
+
+@contextmanager
+def _exclusive_store_lock(path: Path) -> Iterator[None]:
+    if path.exists() or path.is_symlink():
+        raise BlockingIOError("prospective observer store is busy")
+    try:
+        descriptor = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError as error:
+        raise BlockingIOError("prospective observer store is busy") from error
+    try:
+        os.close(descriptor)
+        yield
+    finally:
+        path.unlink(missing_ok=True)
+
+
+def _write_immutable_json(destination: Path, payload: Mapping[str, object]) -> None:
+    if (
+        destination.is_symlink()
+        or destination.parent.is_symlink()
+        or not destination.parent.is_dir()
+    ):
+        raise ValueError("prospective observer artifact must not be a symlink")
+    encoded = _canonical_json(payload)
+    if destination.exists():
+        if not destination.is_file() or destination.read_bytes() != encoded:
+            raise ValueError("prospective observer immutable artifact conflicts")
+        return
+    staging = destination.parent / f".{destination.name}.stage"
+    try:
+        staging.unlink(missing_ok=True)
+        staging.write_bytes(encoded)
+        os.replace(staging, destination)
+    finally:
+        staging.unlink(missing_ok=True)
+
+
+def _read_existing_observation(
+    destination: Path,
+) -> tuple[bytes, dict[str, object]] | None:
+    if not destination.exists():
+        return None
+    if destination.is_symlink() or not destination.is_file():
+        raise ValueError("prospective observer stored observation is invalid")
+    try:
+        encoded = destination.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("prospective observer stored observation is invalid") from error
+    if (
+        not isinstance(payload, dict)
+        or encoded != _canonical_json(payload)
+        or not _is_safe_observation_payload(payload)
+    ):
+        raise ValueError("prospective observer stored observation is invalid")
+    return encoded, payload
+
+
+def _is_safe_observation_payload(payload: Mapping[str, object]) -> bool:
+    expected_keys = {
+        "schema_version",
+        "kind",
+        "contract_sha256",
+        "session_key_sha256",
+        "head_source_contract_sha256",
+        "status",
+        "profile_aggregates",
+        "content_commitment_sha256",
+        "observation_sha256",
+        "scope",
+    }
+    profiles = payload.get("profile_aggregates")
+    if (
+        set(payload) != expected_keys
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID
+        or not all(
+            _is_sha256(payload.get(field_name))
+            for field_name in (
+                "contract_sha256",
+                "session_key_sha256",
+                "content_commitment_sha256",
+                "observation_sha256",
+            )
+        )
+        or payload.get("head_source_contract_sha256") is not None
+        and not _is_sha256(payload.get("head_source_contract_sha256"))
+        or payload.get("status") not in {"observed", "input_unavailable"}
+        or not isinstance(profiles, list)
+        or payload.get("scope") != _source_safe_scope()
+    ):
+        return False
+    if len(profiles) != len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS):
+        return False
+    for profile, profile_id in zip(
+        profiles,
+        KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS,
+        strict=True,
+    ):
+        if (
+            not isinstance(profile, Mapping)
+            or set(profile) != {"profile_id", "status", "pair_input_sha256"}
+            or profile.get("profile_id") != profile_id
+            or profile.get("status") not in {"observed", "input_unavailable"}
+            or (profile.get("status") == "observed")
+            != (profile.get("pair_input_sha256") is not None)
+            or profile.get("pair_input_sha256") is not None
+            and not _is_sha256(profile.get("pair_input_sha256"))
+        ):
+            return False
+    return True
+
+
+def _contract_sha256(
+    *,
+    historical_source_contract_sha256: str,
+    historical_receipt_sha256: str,
+    preflight_summary_sha256: str,
+    catalog_sha256: str,
+    historical_session_count: int,
+    historical_exclusion_sha256: str,
+    code_revision: str,
+) -> str:
+    return _sha256(
+        {
+            "kind": KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_ID,
+            "historical_source_contract_sha256": historical_source_contract_sha256,
+            "historical_receipt_sha256": historical_receipt_sha256,
+            "preflight_summary_sha256": preflight_summary_sha256,
+            "catalog_sha256": catalog_sha256,
+            "historical_session_count": historical_session_count,
+            "historical_exclusion_sha256": historical_exclusion_sha256,
+            "code_revision": code_revision,
+        }
+    )
+
+
+def _historical_exclusion_sha256(dates: tuple[date, ...]) -> str:
+    return _sha256({"historical_session_dates": [value.isoformat() for value in dates]})
+
+
+def _causal_prefix_source_sha256(*, target_key: str, prefix: tuple[Bar, ...]) -> str:
+    return _sha256(
+        {
+            "target_key": target_key,
+            "completed_minute_prefix": [
+                {
+                    "symbol": bar.symbol,
+                    "market": bar.market,
+                    "timeframe": bar.timeframe.value,
+                    "start_ts": bar.start_ts.isoformat(),
+                    "open": str(bar.open),
+                    "high": str(bar.high),
+                    "low": str(bar.low),
+                    "close": str(bar.close),
+                    "volume": str(bar.volume),
+                    "complete": bar.complete,
+                }
+                for bar in prefix
+            ],
+        }
+    )
+
+
+def _causal_head_source_contract_sha256(
+    *,
+    code_revision: str,
+    prefix_source_hash_by_target: Mapping[str, str],
+) -> str:
+    if set(prefix_source_hash_by_target) != set(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS):
+        raise ValueError("prospective observer causal source identities are invalid")
+    return _sha256(
+        {
+            "code_revision": code_revision,
+            "catalog_sha256": KIS_MTF_PROFILED_FEATURE_INPUT_CATALOG_SHA256,
+            "prefix_source_hashes": [
+                prefix_source_hash_by_target[target_key]
+                for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+            ],
+        }
+    )
+
+
+def _session_key_sha256(*, contract_sha256: str, session_date: date) -> str:
+    return _sha256(
+        {
+            "contract_sha256": contract_sha256,
+            "session_date": session_date.isoformat(),
+        }
+    )
+
+
+def _content_commitment_sha256(
+    *,
+    contract_sha256: str,
+    session_key_sha256: str,
+    head_source_contract_sha256: str | None,
+    status: ObservationStatus,
+    profiles: tuple[KisMtfProfiledProspectiveProfileCommitment, ...],
+) -> str:
+    return _sha256(
+        {
+            "contract_sha256": contract_sha256,
+            "session_key_sha256": session_key_sha256,
+            "head_source_contract_sha256": head_source_contract_sha256,
+            "status": status,
+            "profiles": [profile.safe_payload() for profile in profiles],
+        }
+    )
+
+
+def _observation_sha256(
+    *,
+    contract_sha256: str,
+    session_key_sha256: str,
+    head_source_contract_sha256: str | None,
+    status: ObservationStatus,
+    profiles: tuple[KisMtfProfiledProspectiveProfileCommitment, ...],
+    content_commitment_sha256: str,
+) -> str:
+    return _sha256(
+        {
+            "contract_sha256": contract_sha256,
+            "session_key_sha256": session_key_sha256,
+            "head_source_contract_sha256": head_source_contract_sha256,
+            "status": status,
+            "profiles": [profile.safe_payload() for profile in profiles],
+            "content_commitment_sha256": content_commitment_sha256,
+        }
+    )
+
+
+def _source_safe_scope() -> dict[str, bool]:
+    return {
+        "target_or_label_opened": False,
+        "return_or_cost_opened": False,
+        "model_or_prediction_opened": False,
+        "pnl_calculated": False,
+        "gpu_used": False,
+        "paper_or_broker_action": False,
+        "provider_or_network_called": False,
+        "credentials_or_environment_read": False,
+        "raw_market_data_written": False,
+        "raw_market_data_persisted": False,
+    }
+
+
+def _storage_key(value: str) -> str:
+    _require_sha256(value, "storage key")
+    return value.removeprefix("sha256:")[:16]
+
+
+def _canonical_json(payload: Mapping[str, object]) -> bytes:
+    return (
+        json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")) + "\n"
+    ).encode("utf-8")
+
+
+def _sha256(payload: Mapping[str, object]) -> str:
+    return "sha256:" + hashlib.sha256(_canonical_json(payload)).hexdigest()
+
+
+def _require_sha256(value: str, field_name: str) -> None:
+    if not _is_sha256(value):
+        raise ValueError(f"{field_name} must be a lowercase SHA-256 digest")
+
+
+def _is_sha256(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and value.startswith("sha256:")
+        and len(value) == 71
+        and all(character in "0123456789abcdef" for character in value.removeprefix("sha256:"))
+    )

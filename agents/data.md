@@ -1134,3 +1134,27 @@ This is still prospective-input geometry only. It did not refresh, mutate,
 copy, or broaden the cache; call a provider; retain raw rows; or qualify the
 21 sessions for historical model evaluation, ranking, Paper, or execution.
 The existing prospective observer remains the owner of later-session capture.
+
+## Profiled MTF Forward Witness (2026-08-03)
+
+Data now has a separate kis-mtf-profiled-prospective-observer-v1 leaf for a
+future QQQ/SPY pair. It reuses the verified local loader but does not replace
+the installed legacy pair observer, whose persisted date/symbol payload cannot
+meet this leaf's stricter source-safe contract. The new leaf excludes the
+frozen 21 historical sessions in memory and writes only opaque commitment
+identities plus six profile readiness categories outside Git.
+
+Its head identity is calculated from the causal completed-minute prefix, so
+later cache additions do not rewrite a prior witness. Missing or malformed
+head input becomes that session's input_unavailable result only. Current head
+coverage has zero common complete prospective sessions; this is a lane-local
+input fact, not a reason to pause Engine, Execution, or another Data package.
+
+The leaf now reattests the exact frozen preflight source/receipt lineage before
+it can observe a pair; an arbitrary fixture with the same session count cannot
+claim that historical binding. Its duplicate store accepts only byte-identical
+canonical content, rejects malformed persistence, and protects both commitment
+subdirectories from symlink escape. A clean-process import test confirms that
+this data-only observer core never loads an Execution, provider, credential,
+broker, local-paper, or live module. It remains a source-safe forward-input
+witness only.

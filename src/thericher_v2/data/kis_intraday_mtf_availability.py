@@ -25,8 +25,6 @@ from thericher_v2.data.resample import SessionWindow, resample_session_bars
 from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.research.artifact_paths import ensure_external_artifact_directory
 
-from .kis_paper_intraday import load_verified_kis_paper_private_intraday_catalog
-
 KIS_INTRADAY_MTF_AVAILABILITY_RECEIPT_ID = "kis-intraday-mtf-availability-receipt-v1"
 KIS_INTRADAY_MTF_AVAILABILITY_ARTIFACT_DIRECTORY = (
     "kis-intraday-mtf-availability-receipt-v1"
@@ -290,6 +288,25 @@ def load_kis_intraday_mtf_availability_catalogs(
         )
         for symbol, exchange in KIS_INTRADAY_MTF_AVAILABILITY_TARGETS
     }
+
+
+def load_verified_kis_paper_private_intraday_catalog(
+    *,
+    cache_root: Path,
+    repo_root: Path,
+    symbol: str,
+    exchange: str,
+) -> CatalogedBars:
+    """Defer the legacy cache reader so pure availability imports stay offline."""
+
+    from .kis_paper_intraday import load_verified_kis_paper_private_intraday_catalog as loader
+
+    return loader(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        symbol=symbol,
+        exchange=exchange,
+    )
 
 
 def freeze_kis_intraday_mtf_availability_contract(

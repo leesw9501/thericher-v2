@@ -8788,3 +8788,30 @@ workspace. The boundary neither selects a profile nor opens a target, return,
 model, evaluation, GPU, Paper, broker, or live consequence. A later campaign
 must still freeze its own profile-selection, target, split, cost, baseline,
 kill-test, and compute-stop contract.
+
+## 2026-08-03 - Bind forward MTF commitments to the causal prefix, not whole head cache
+
+Decision: retain the installed legacy QQQ/SPY observer for its existing
+scheduler, but implement a separate kis-mtf-profiled-prospective-observer-v1
+for six-profile forward input evidence. Its contract binds the completed
+preflight summary and the exact in-memory 21-session historical exclusion.
+For a fresh eligible session, the head source contract is hashed from each
+verified completed 09:30-15:30 ET minute prefix rather than the mutable
+whole-cache dataset hash. The immutable external store retains only opaque
+hashes, profile identifiers, categorical readiness, and structural scope.
+
+Reason: the legacy store persists session dates, symbols, and timestamps, which
+cannot satisfy the new source-safe artifact boundary. A whole-cache identity
+would also allow a post-cutoff collector append to alter a sealed 15:30
+observation despite unchanged causal input. Prefix-derived identity preserves
+that invariance while the shared projection still reconstructs every selected
+1h/3h bar from exact 60/180 completed minute constituents. This creates no
+model, target, selection, training, GPU, Paper, broker, or live consequence.
+
+The implementation additionally reattests the original frozen preflight source
+contract and receipt identities before accepting a historical binding; matching
+only the number of historical sessions is insufficient. Exact canonical payload
+equality is required for duplicate recovery, and corrupt or conflicting stored
+records fail rather than becoming observations. These are evidence-integrity
+properties of this one forward witness, not a new collection, approval, or
+execution control.

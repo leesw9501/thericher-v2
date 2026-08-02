@@ -700,3 +700,44 @@ same-session causal misreading without adding a new gate.
   rather than a bar timestamp assertion. Post-cutoff minutes leave the input
   digest unchanged, while forged or structurally invalid slow bars become a
   scoped `input_unavailable` result instead of a repaired input or global hold.
+
+## KIS MTF Profiled Prospective Observer (2026-08-03)
+
+- **Ready:** the new forward witness is fully verified. It can record one
+  eligible future QQQ/SPY pair without a new scheduler or external call.
+  Separately ready Engine work must continue while the actual head-cache pair
+  remains unavailable.
+- **Owned:** Data owns verified catalog reattestation and the hash-only
+  commitment store; Engine owns the shared normalized projection seam;
+  Validation owns the six-profile, mutation, exclusion, and source-safe
+  evidence; Research Steward has no appointment; Execution has no consequence.
+- **Due:** no foreground wait. The next actual head observation belongs to its
+  existing owner; it cannot delay a distinct CPU or GPU campaign preparation.
+- **Improvement:** causal-prefix identity replaces whole mutable-head-cache
+  identity for the forward commitment. This preserves post-cutoff invariance
+  without weakening the exact slow-constituent reconstruction check. The final
+  reattestation also binds the real frozen preflight source/receipt identities,
+  and a clean import probe confirms the core has no Execution or provider route.
+- **Verification:** focused tests passed `44 passed, 3 skipped`; fresh-root
+  parallel and full serial both passed `2219 passed, 20 skipped`. Ruff and both
+  credential-free Compose configurations passed. The two preserved interrupted
+  helper temp roots remain a helper-local fact, not a hold.
+
+## Throughput Review: Fresh Paper Loop (2026-08-03)
+
+- **Ready:** the existing prospective fixed baseline, deterministic Paper
+  boundary, and one-source session path can be exercised from a fresh captured
+  input without waiting for a new historical research dataset. A static QQQ/SPY
+  drawdown reversal pass is not dispatched: Claude found repeat-source
+  accounting and an untouched partition insufficiently established for a new
+  comparative claim.
+- **Owned:** Data owns the one fresh-session capture; Engine owns the existing
+  fixed baseline receipt; Execution owns current account/quote, durable intent,
+  virtual submit, cancellation, and reconciliation. Research Steward remains
+  unappointed; the GPU is not an idle-work queue.
+- **Due:** any market-time capture and virtual submission remain owned by their
+  installed schedule. They do not hold foreground preparation, verification, or
+  a later distinct Engine campaign.
+- **Improvement:** favor fresh forward execution evidence over another pass
+  across a repeatedly screened static panel. This advances the paper-trading
+  loop and preserves later model-evaluation integrity without a new workflow.
