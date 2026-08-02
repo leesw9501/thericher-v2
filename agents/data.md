@@ -1078,3 +1078,16 @@ An available/missing/invalid leg produces one immutable `observed` or
 append lock is terminal `recovery`, not a false completed schedule. The Data
 worker owns the next eligible invocation; that market-time due never blocks a
 ready Engine or Execution package.
+
+## NAS D1 HMM Consumer Fact (2026-08-02)
+
+The completed HMM preflight consumed only the reattested six-symbol NAS D1
+development prefix `0..999`; it made no provider call, cache mutation, or new
+source claim. The panel remains `current_listing_only`, non-PIT, `MODP=0` /
+unadjusted, and corporate-action/session-finality unqualified. Its local
+screen result cannot qualify the panel for ranking, Paper, or promotion.
+
+The next ready Data package remains the Norgate membership-aware source
+contract: it must establish only the exact current-membership/availability
+facts a later consumer can tolerate, without treating this HMM result as a
+collection gate or a reason to reopen its consumed slice.

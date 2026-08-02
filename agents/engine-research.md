@@ -1167,3 +1167,21 @@ adapter invocation for a malformed completed prefix. Claude timed out as
 semantic mismatch. This is not a new campaign, dataset, target, return, PnL,
 model, training, GPU allocation, artifact, Paper action, or live result. The
 0-record QQQ/SPY observer remains independent Data work rather than a wait.
+
+## KIS NAS D1 HMM Preflight (2026-08-02)
+
+The fixed `kis-nas-d1-intraday-regime-hmm-preflight-v1` CPU leaf completed
+`source_local_non_promoting` at external contract
+`sha256:a98f89dba03cb6970d9a59bd33f923e31f401aa698e9992c75758e049304d1bd`
+and summary `sha256:b70a2bcff4e846656309fa3ff6094a5b80db69ba48def308b626fb5049efd6f1`.
+It fits only `0..599`, uses a frozen-filter warmup inside the `600..621`
+boundary buffer, and predicts next-session `t+1` open-to-close from completed
+bar `t`, never the same session. The pooled 10/15/20bp screen survived its
+fixed all-long, joint-null, multiplier, prefix, and extreme checks.
+
+Claude's `supported-with-limits` review prevents any comparative or promotion
+reading: configuration-search accounting, HMM initialization stability,
+turnover-conditioned costs, adjusted prices, and an independent temporal or
+source contract remain missing. Preserve this family as non-promoting; do not
+retune its screen, select an ensemble member, create a Paper intent, or use
+the free GPU. A new independent stability/replication package is ready now.

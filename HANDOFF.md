@@ -1996,3 +1996,24 @@ no-fallback constraints. No provider, credential, account, order, new
 local-paper action, data change, target, return, PnL, model, training, GPU,
 artifact, or live behavior was created. The QQQ/SPY observer remains a
 separate 0-record Data schedule, not a foreground wait.
+
+## KIS NAS D1 HMM Source-Local Preflight (2026-08-02)
+
+`kis-nas-d1-intraday-regime-hmm-preflight-v1` completed as
+`source_local_non_promoting`. It reattached the immutable six-symbol NAS D1
+panel and used only development-source indices `0..999`: per-symbol HMM
+parameters and the long-state map use `0..599` only; `600..621` is a boundary
+buffer whose `602..621` bars warm an already-frozen forward filter; a completed
+bar at decision `t=622..998` predicts only bar `t+1` open-to-close after costs.
+The screen clears its fixed pooled all-long and 1,000 joint ten-session-block
+null relations at 10/15/20bp and survives the 15 percent extreme control.
+
+The external source-safe contract and summary are under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-intraday-regime-hmm-preflight-v1\cpu-preflight-r1`
+with contract `sha256:a98f89dba03cb6970d9a59bd33f923e31f401aa698e9992c75758e049304d1bd`
+and summary `sha256:b70a2bcff4e846656309fa3ff6094a5b80db69ba48def308b626fb5049efd6f1`.
+Claude returned `supported-with-limits`: this is only "not yet falsified
+locally," not edge evidence. It has no PIT/current-membership, adjustment,
+corporate-action, turnover, independent-date, sealed-holdout, PnL, Paper,
+ensemble, GPU, or live claim. The next distinct contract must test stability
+without selecting a configuration from this screen.

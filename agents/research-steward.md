@@ -214,3 +214,16 @@ The broad active-build taxonomy completed as Data provenance evidence only:
 predictive campaign nor a GPU appointment; the static panel's model/GPU scope
 remains false. GPU stays free for a distinct frozen campaign with a valid
 source/causal/evaluation contract rather than being filled from this match.
+
+## HMM Preflight Custody (2026-08-02)
+
+`kis-nas-d1-intraday-regime-hmm-preflight-v1` has one external
+`holdout_access=none` custody record and a completed non-promoting outcome.
+Its source-local screen survived fixed controls, but no sealed evaluation,
+depth selection, or GPU appointment exists. Claude's `supported-with-limits`
+review specifically leaves initialization stability, searched-configuration
+accounting, turnover-aware costs, and independent adjusted/PIT evidence open.
+GPU remains free; it must not be filled by rerunning this already-spent
+development screen. A later independently frozen replication family may ask
+for an appointment only after it declares those controls and its no-selection
+rule.

@@ -633,3 +633,18 @@ required event evidence is absent.
   credential-free Compose configurations passed. The clean-root authority mode
   still preserves its two recent interrupted helper roots without blocking this
   completed package or the next ready work.
+
+## KIS NAS D1 HMM Preflight Outcome (2026-08-02)
+
+- **Ready:** a distinct no-selection HMM stability/replication package can
+  proceed now. The source-local preflight has completed and does not wait for a
+  collector, market session, GPU, Paper route, or operator decision.
+- **Owned:** Engine owns the frozen HMM receipt and its non-retune boundary;
+  Data retains the immutable NAS panel limitations; Research Steward retains a
+  free but unappointed GPU; Execution owns no consequence.
+- **Due:** none. The QQQ/SPY observer and any Data retry remain lane-owned
+  schedules, not foreground waits.
+- **Improvement:** host runners now choose `D:` artifact roots on Windows even
+  when a Docker-style `C:\app` directory exists. The current result is
+  explicitly described as completed-bar `t` to next-bar `t+1`, preventing a
+  same-session causal misreading without adding a new gate.

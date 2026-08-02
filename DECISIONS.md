@@ -8720,3 +8720,19 @@ typed local fixture result remain unchanged. Claude timed out as
 completed prefix, canonical order, and `lookback + 1` geometry are preserved.
 This creates no provider, account, order, Paper action, PnL, training, GPU,
 artifact, or live decision.
+
+## 2026-08-02 - Keep the KIS NAS D1 HMM preflight source-local and non-promoting
+
+Decision: retain `kis-nas-d1-intraday-regime-hmm-preflight-v1` only as a
+source-local preflight. Its fixed per-symbol two-state HMM fit and state map
+use source indices `0..599`; the forward-only screen uses completed decision
+bars `t=622..998` solely to classify the next bar `t+1` open-to-close target.
+The `602..621` filter warmup does not enter fit, scaling, or target mapping.
+
+Reason: the result clears its predeclared all-long, joint-null, cost, prefix,
+multiplier, and extreme controls, but it remains a six-current-listing,
+unadjusted, non-PIT, development-only source. Claude's
+`supported-with-limits` review requires independent date/source replication,
+adjusted-price correctness, initialization stability, and turnover-aware cost
+accounting before any comparative claim. This decision creates no Paper input,
+ensemble, GPU appointment, PnL/profitability claim, or live authority.
