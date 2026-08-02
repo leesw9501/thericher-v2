@@ -327,3 +327,34 @@ statements above; their historical facts remain scoped to their original work.
   than Docker's `research` extra, and an identical snapshot rerun verifies
   before source access. This removes host-runtime leakage and duplicate local
   work without creating a new gate.
+
+## Source-Local D1 Diagnostic Dispatch (2026-08-02)
+
+- **Ready:** Engine owns one fixed CPU-only cross-ETF momentum falsification
+  diagnostic against the retained D1 source. Claude's result was
+  `supported-with-limits`; its scope remains source-local, aggregate-only, and
+  non-promoting.
+- **Owned:** Data retains snapshot provenance only. Engine owns the frozen
+  rule/timing/split/comparator contract. Research Steward has no GPU
+  appointment; Execution has no route or dependency.
+- **Due:** now. There is no external timer, KIS dependency, source retry, or
+  GPU wait.
+- **Improvement:** use the existing immutable snapshot and a target-free
+  decision construction rather than reopening source collection or inventing a
+  model-eligibility gate. A diagnostic result cannot be reused to tune the
+  same rule.
+
+## Norgate D1 Diagnostic Outcome (2026-08-02)
+
+- **Ready:** the fixed diagnostic is complete. Its `inconclusive_non_promoting`
+  result does not create a follow-on retune; a distinct Engine or Data package
+  is now ready without a market-time, GPU, or source retry dependency.
+- **Owned:** Data retains the immutable-source limitation; Engine retains the
+  closed rule outcome; Research Steward has no allocation; Execution remains
+  uninvolved.
+- **Due:** none for this exact rule. The source and receipt reattached
+  idempotently without a Norgate client call.
+- **Improvement:** the first source consumer separates target-free decisions
+  from target signs and emits only aggregate evidence. It advances the engine
+  loop without turning a small directional difference into a model or Paper
+  promotion path.

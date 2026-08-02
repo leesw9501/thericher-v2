@@ -932,3 +932,11 @@ adjustment semantics, and corporate-action completeness are still unknown;
 therefore this is not a universe/ranking/Paper/promotion input. The next Data
 fact is not another collector retry: it is a consumer-owned frozen campaign
 contract that names exactly which of these limitations it can tolerate.
+
+The first offline consumer reattested the same D1 source and found the frozen
+511-session panel intact. It performed no provider call and wrote only a
+source-safe aggregate receipt. This does not improve any source limitation:
+the requested `NONE` setting, corporate-action evidence, source availability
+time, and PIT state remain unverified. A future Data package may test a new
+source-vintage stability fact, but this completed consumer is not a reason to
+recollect or alter the immutable snapshot.

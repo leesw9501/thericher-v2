@@ -136,3 +136,10 @@ contract and no point-in-time or availability qualification. It creates no GPU
 appointment, checkpoint, or sealed-evaluation allocation. GPU remains free for
 a later independently eligible campaign; the new source is preparation, not a
 reason to manufacture training.
+
+The completed Norgate D1 trio momentum diagnostic remains CPU-only and
+`inconclusive_non_promoting`. Its directional aggregate is not a model result,
+candidate, or validation allocation; it creates no checkpoint, GPU appointment,
+sealed-evaluation spend, or ensemble lineage. The GPU remains free for a later
+independently eligible campaign, not for a retune of this fixed source-local
+rule.

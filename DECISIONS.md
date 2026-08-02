@@ -8327,3 +8327,36 @@ time membership, adjustment semantics, and corporate-action completeness remain
 unverified, so it cannot rank, promote, create a Paper input, or support a
 profitability claim. A later Engine package needs a new explicit source-local
 campaign contract; this raw-source qualification is not that contract.
+
+## 2026-08-02 - Use the fixed Norgate D1 panel only for one falsification diagnostic
+
+Decision: the current fixed `SPY/QQQ/IWM` panel may support one predeclared,
+CPU-only, source-local rule diagnostic. It remains a falsification instrument,
+not a trained model or source promotion: it cannot select a candidate, consume
+GPU, create a PnL/profitability claim, or reach Paper. Its results stay
+aggregate-only outside Git, and a non-rejection is still only an inconclusive
+source-local observation.
+
+Claude's concise challenge was `supported-with-limits`: use a chronological
+split, completed-bar decision timing, a frozen naive comparator and kill test,
+and no reuse of this diagnostic to tune the same rule. Codex retains the
+source's unverified adjustment, corporate-action, PIT, and availability
+semantics rather than treating the requested `NONE` adjustment setting as a
+proof of historical tradeability. This is a narrow research-scope decision,
+not an approval gate on KIS, independent data work, or another research lane.
+
+## 2026-08-02 - Close the fixed Norgate D1 momentum diagnostic without promotion
+
+Decision: `norgate-d1-trio-momentum-falsification-v1` is closed as
+`inconclusive_non_promoting`. Its fixed rule had 59 validation long decisions
+with an aggregate positive-sign rate of `0.559322...`, while the frozen
+always-long comparator had `0.536231...` across 138 structural slots. This is
+one source-local directional observation only, not evidence that the rule is
+profitable, robust, tradable, or eligible for a model, GPU, Paper, ensemble,
+ranking, or source upgrade.
+
+The same panel/rule/validation slice may not be retuned, threshold-swept, or
+reused as a selection pass. The next package must state a distinct hypothesis
+or independently test source stability. This preserves useful negative or
+inconclusive evidence without turning it into a new approval process or
+blocking independent KIS, Data, Engine, or Execution work.

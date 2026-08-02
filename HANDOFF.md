@@ -1550,3 +1550,24 @@ campaign contract before Engine may train or evaluate a model. No KIS,
 credential, account, broker, local-paper, GPU, or live route ran. The original
 same-label rerun reattests the immutable snapshot without invoking the Norgate
 client again.
+
+## Norgate D1 Trio Momentum Diagnostic Outcome (2026-08-02)
+
+The fixed CPU-only `norgate-d1-trio-momentum-falsification-v1` diagnostic
+reattested the existing local source without invoking the Norgate client. Its
+frozen `350 / 21 / 140` session geometry produced 138 structurally eligible
+validation slots and 59 long-rule decisions. The rule had 33 positive target
+signs (`0.559322...`) versus 74 across the always-long comparator's 138 slots
+(`0.536231...`), so it closed as `inconclusive_non_promoting`, not as a model,
+candidate, performance, PnL, profitability, Paper, or promotion result. The
+aggregate-only external receipt is identified by
+`sha256:6211339e...7c868149` and contains no retained bars, dates, prices,
+labels, decisions, or source paths.
+
+Do not retune the 20-session rule, its strict-positive condition, split, or
+comparator against this source. It created no model weights, GPU appointment,
+KIS call, credential/environment read, account access, order, broker/local-
+paper action, network request, or live route. A later package must be a
+distinct frozen hypothesis or a source-stability check; this outcome is not a
+reason to upgrade the raw source's availability, PIT, adjustment, corporate-
+action, ranking, or Paper status.

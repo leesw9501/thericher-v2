@@ -862,7 +862,21 @@ The new local `SPY/QQQ/IWM` D1 source is hash-attested with 511 common sessions,
 but its successful materialization alone does not create a campaign. The source
 is offline-only with unverified availability/PIT, adjustment, and corporate-
 action semantics, and the raw snapshot remains non-ranking and non-promoting.
-Do not train, evaluate, allocate GPU, select, ensemble, or form a Paper input
-from it yet. A next Engine package may only freeze a narrowly source-local
-development contract that names these limitations, uses a fresh temporal split
-and causal availability treatment, and has a simple baseline plus kill test.
+Do not train a model, allocate GPU, select, ensemble, or form a Paper input
+from it. The next ready Engine package is one fixed source-local rule
+falsification diagnostic: it names the limitations, uses a chronological split
+and completed-bar timing, and ends in rejection, input-unavailable, or a
+strictly non-promoting inconclusive observation. It cannot become an implicit
+training, selection, or promotion path.
+
+## Norgate D1 Trio Momentum Outcome
+
+`norgate-d1-trio-momentum-falsification-v1` completed CPU-only as
+`inconclusive_non_promoting`. The fixed 20-session strict-positive consensus
+made 59 long decisions across 138 target-evaluable validation slots; its
+aggregate directional hit rate was `0.559322...` compared with `0.536231...`
+for always-long. This is not an alpha, PnL, profitability, model-selection,
+ensemble, GPU, Paper, or promotion claim. Keep the exact split, rule,
+comparator, and validation slice closed to retuning. The next Engine package
+must be a distinct hypothesis or an independently specified source-stability
+falsification.
