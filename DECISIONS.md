@@ -8531,3 +8531,49 @@ ensemble, KIS Paper decision, or broker order follows. The next model work must
 freeze its own source-qualified causal campaign; the candidate KIS NAS D1
 volume-exhaustion reversal remains only a proposed distinct CPU falsification
 until that contract and its Claude challenge exist.
+
+## 2026-08-02 - Keep direct Research leaves execution-free without breaking public imports
+
+Decision: move the existing eager `thericher_v2.research` public API imports
+behind a lazy compatibility module. Direct `thericher_v2.research.<leaf>`
+imports now load only the requested leaf and its declared dependencies; legacy
+`from thericher_v2.research import ExistingPublicName` imports the preserved
+public surface on demand. The shared campaign registry now uses an
+execution-free artifact-path helper with checked intermediate directories.
+
+Reason: independent review found that the new offline volume falsification leaf
+transitively loaded `research.validation` and therefore Execution merely by
+being imported. That violated the leaf's fixed no-broker/Paper import boundary.
+The lazy boundary preserves existing public API behavior while making direct
+offline leaves honest and reducing unrelated startup work. The Claude
+falsification request for this narrow architecture correction timed out as
+`review_unavailable`; focused subprocess tests prove the leaf imports without
+Execution and that the legacy public API remains available.
+
+## 2026-08-02 - Close the KIS NAS D1 volume-exhaustion reversal as falsified
+
+Decision: close `kis-nas-d1-volume-exhaustion-reversal-v1` using only the
+attested 1,510-session six-symbol development phase. The corrected immutable
+`cpu-falsification-r4` contract is
+`sha256:ffe46f6a81e0e44e736db69fefcc7809a33b1e8eef9d1cc66aacb1a05d5f2e9d`;
+the source-safe summary is
+`sha256:0fd63b26eaf6680825c13a02bb5fae4b642af0ef121a156e815d0e92e5f87eb4`.
+
+The contract left the consumed 647-session validation partition untouched,
+ran a target-free structural census before target access, applied a 22-session
+purge, and evaluated exactly the precommitted 10/15/20bp, candle-only, and
+64 within-symbol full-10-session-block-null kill tests. Its candidate failed
+the fixed 20bp flat relation, candle-only relation, and null P95 relation, so
+the family is `falsified`. The final seven-session partial null block per
+symbol stayed fixed.
+
+The original r1-r3 attempts remain immutable but are superseded and not relied
+on: review found a transitive Execution import, leaf-only code-revision custody,
+incorrect nonpositive-volume abstention, unsafe child-path handling, Git-root
+creation before rejection, and an artifact-root symlink route. The r4 contract
+hashes every direct campaign dependency and rejects Git-resident or
+symlink-traversing artifact roots before creation, while treating nonpositive
+trailing volume as a full abstention. This creates no model selection, GPU
+appointment, ensemble, PnL/profitability, Paper input, KIS call, broker action,
+or live authority. A future candidate needs a fresh causal contract and
+independent data; threshold retuning for this closed family is forbidden.

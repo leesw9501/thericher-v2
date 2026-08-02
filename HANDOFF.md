@@ -1806,3 +1806,32 @@ surface. The promising distinct CPU candidate is a KIS-shaped six-symbol D1
 volume-exhaustion reversal falsification; it needs its own Claude challenge,
 precommitted target/cost/null contract, and cannot use this seam as a
 performance or Paper promotion shortcut.
+
+## KIS NAS D1 Volume-Exhaustion Falsification (2026-08-02)
+
+The fixed `kis-nas-d1-volume-exhaustion-reversal-v1` CPU-only r4 attempt is
+complete and `falsified`. Its external contract and summary live under
+`D:\thericher-v2\model-artifacts\research\kis-nas-d1-volume-exhaustion-reversal-v1\cpu-falsification-r4`
+with contract `sha256:ffe46f6a81e0e44e736db69fefcc7809a33b1e8eef9d1cc66aacb1a05d5f2e9d`,
+summary `sha256:0fd63b26eaf6680825c13a02bb5fae4b642af0ef121a156e815d0e92e5f87eb4`,
+and custody outcome `sha256:e2d3a129530315a3d2fa6a450d900b16bf97268fd5b96d7bc86d54099b65123c`.
+
+It consumed only the attested six-symbol NAS D1 development phase. A
+target-free 5,880-slot census found 107 structural signals across six symbols;
+the frozen 22-session purge left a 2,802-slot one-shot falsification. At the
+fixed 10/15/20bp band, the candidate was nonpositive versus flat at 20bp and
+did not strictly exceed either candle-only or the 64 within-symbol 10-session
+block-null P95. No raw OHLCV, dates, targets, numeric performance values,
+predictions, credentials, account data, or checkpoints were persisted.
+
+This is a closed source-local rule family, not a model, PnL/profitability,
+GPU, ensemble, Paper, KIS, or live result. Do not retune or reuse it. The
+earlier r1-r3 artifacts are retained only as non-promoting recovery evidence:
+review successively fixed an Execution import route, leaf-only code custody,
+abstention and child-symlink handling, Git-root creation before rejection, and
+an artifact-root symlink route. The final r4 contract hashes all campaign code
+dependencies and rejects Git-resident or symlink-traversing artifact roots
+before creation. The direct Research leaf import is lazy/execution-free while
+legacy public imports remain compatible. Claude's bounded architecture challenge
+timed out (`review_unavailable`), so focused independent review and tests, not
+a Claude verdict, support the final implementation.

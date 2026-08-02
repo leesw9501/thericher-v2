@@ -4,111 +4,108 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 `DECISIONS.md`, `RUNBOOK.md`, `agents/README.md`, `agents/data.md`,
 `agents/engine-research.md`, `agents/research-steward.md`,
 `agents/execution.md`, and `agents/orchestration.md` first. Then continue from
-`C:\Users\Public\Documents\thericher-v2`.
+`C:\\Users\\Public\\Documents\\thericher-v2`.
 
 ## Objective
 
-Build and run `injected-multitimeframe-local-paper-replay-seam-v1`.
+Build and run `kis-nas-d1-volume-exhaustion-reversal-v1`.
 
-This Engine/Execution-owned objective closes one concrete integration gap: a
-caller-injected, hermetic replay must traverse the existing causal
-multi-timeframe window contract, existing completed-bar momentum prediction,
-existing target-position policy, immutable research receipt, existing local
-paper intent bridge, local-paper fill/replay, and the existing next-bar
-backtest timing harness.
+This is one fixed, CPU-only, source-local falsification of a completed-D1
+volume-exhaustion reversal rule. It advances Engine Research while independent
+Data and Execution schedules wait for fresh sessions. It must not reuse the
+already consumed 647-session NAS validation partition, the r4/r5 sealed
+results, or any previous candidate outcome as a selection surface.
 
-It is engine plumbing for later qualified model data. It is not a new scoring
-framework, predictive study, strategy evaluation, or a reason to wait for a
-data scheduler.
+## Frozen Contract
 
-## Frozen Scope
-
-- Use only deterministic in-memory synthetic completed `Bar` fixtures and
-  test-owned temporary local-paper state. Do not read `D:\market_data`, Norgate,
-  Tiingo, KIS caches, `.env`, credentials, accounts, or external artifacts.
-- Reuse, rather than duplicate, these existing paths:
-  - `build_causal_multitimeframe_sequence_window`,
-  - `MomentumModel` / existing `ModelPrediction`,
-  - `propose_target_exposure`,
-  - `receipt_from_target_exposure_proposal`,
-  - `prepare_local_paper_intent`,
-  - existing local-paper fill/replay behavior, and
-  - `run_next_bar_backtest`.
-- Add at most one small pure replay module and one focused test module. Do not
-  add a new score/prediction/decision/intent dataclass, a generic plugin
-  framework, a queue, scheduler, dashboard, provider, persistent report, or
-  model registry.
-- The only scorer is the already implemented fixed momentum model over caller
-  supplied completed windows. Do not train, tune, compare models, run GPU,
-  load public weights, use a sealed holdout, create PnL/profitability metrics,
-  rank symbols, create an ensemble, or persist model artifacts.
-- Keep all fills `source: local_paper`. Do not invoke KIS, read KIS credentials,
-  prepare a KIS Paper decision, submit/modify/cancel an order, enable live
-  behavior, or expose a public endpoint.
-- A test-local `EventStore`/emergency file is permitted solely to exercise the
-  existing local-paper fill and replay behavior. It must contain no raw market
-  source, credentials, or external account state and must not become an
-  artifact or a runtime dependency.
-- Do not use the current-listing Norgate broad panel or KIS broad panel. They
-  remain non-PIT and non-model-eligible. Do not revisit the closed fixed-trio
-  GBT, fixed-trio momentum, KIS D1 candle-noise, or exhausted intraday families.
+- Consume only the attested six-symbol KIS NAS D1 `development` phase: 1,510
+  common sessions for `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA`.
+  Do not access the sequence input's `purge` or `validation` phases in the
+  campaign implementation. The historical loader may reattest the parent
+  panel, but the campaign must pass only `development` onward.
+- Reserve source indices `0..999` for a target-free structural/signal census,
+  `1000..1021` as a 22-session purge, and use only decision indices
+  `1042..1508` for one fixed falsification. Every target is the next session's
+  `open -> close` return at `t+1`; no target is used in the structural census.
+- At completed D1 `t`, long only when all are true:
+  - `(high - low) / open >= 2.0 * median(prior 20 range/open)`,
+  - `close_location = (close - low) / (high - low) <= 0.25`,
+  - `close - open < 0`,
+  - `volume >= 1.5 * median(prior 20 volume)`, and
+  - no close-to-close move with absolute magnitude at least 20 percent exists
+    inside the causal `t-20..t` chain.
+- A zero range, nonpositive trailing volume median, incomplete/non-D1 bar,
+  missing causal chain, or invalid chronology abstains. It must never be
+  repaired by looking forward.
+- The target-free census requires at least 50 eligible signals spread across
+  at least four symbols. Otherwise close `input_unavailable` before opening
+  evaluation targets.
+- Fixed comparators are `flat` and `candle_only` (the same rule without the
+  volume condition). Evaluate round-trip cost bands `10/15/20` bps; 20 bps is
+  primary. The candidate is falsified when its 20-bp mean net return is not
+  positive, when it does not strictly exceed `candle_only` at every cost, or
+  when it does not exceed the fixed null P95 at 20 bps.
+- The null is exactly 64 deterministic within-symbol permutations of full
+  contiguous 10-session target-return blocks. The final seven-session partial
+  block per symbol remains fixed. This preserves each symbol's target blocks
+  and signal count while breaking signal-date alignment.
+- Any non-falsified result is `inconclusive_non_promoting`, not a winner,
+  model, ensemble member, GPU appointment, PnL/profitability claim, or Paper
+  input. The source stays current-listing-only, non-PIT, `MODP=0` unadjusted,
+  and corporate-action-unqualified.
 
 ## Required Work
 
-1. Engine: implement the smallest caller-injected replay helper using existing
-   domain types. It must construct all five `1m/5m/10m/1h/3h` causal windows at
-   one UTC cutoff, derive existing momentum predictions, produce an eligible
-   target-exposure proposal, narrow it to an immutable receipt, prepare a
-   local-paper intent, fill it at the next bar, and replay the same fill.
-2. Backtest: invoke the existing next-bar backtest harness on the same injected
-   1m sequence as a timing assertion only. Do not interpret its numerical
-   result as PnL or performance evidence.
-3. Tests: prove a fixture-injected run is deterministic across two independent
-   local-paper stores; all required timeframes, cutoff/window availability,
-   decision-to-intent identity, next-bar timing, `source: local_paper`, and
-   replay identity hold. Monkeypatch sentinels around the named existing paths
-   and prove the helper traverses each one. Deny socket, URL, environment,
-   provider/cache, KIS, and credential access. Reject incomplete/future/stale
-   inputs without minting an intent.
-4. Keep any returned or printed result source-safe: only opaque identities,
-   categorical status, timeframe counts, and replay facts; never OHLCV values,
-   raw timestamps, raw paths, account fields, or secrets.
-5. Update Engine Research, Execution, orchestration, handoff, and decision
-   stateboards with the bounded seam result. State explicitly that it is not a
-   predictive/model-quality/PnL/Paper/KIS/GPU result and name the next data
-   qualification needed before a trained model can consume it.
+1. Reuse the existing attested NAS D1 development input and campaign custody
+   utilities. Add the smallest dedicated Engine Research leaf plus a narrow
+   offline runner; do not create a generic strategy framework, scheduler,
+   provider, dashboard, KIS adapter, or model registry.
+2. Freeze the rule, split, cost band, null geometry, kill tests, source limits,
+   and non-promotion scope into an immutable external artifact under
+   `D:\\thericher-v2\\model-artifacts`. Persist only source-safe identities,
+   counts, categorical metric relations, and hashes: no rows, dates, OHLCV,
+   target values, predictions, account data, or secrets.
+3. Add focused tests for causal boundary exclusion, target-free census,
+   zero-range/volume/discontinuity abstention, per-symbol block null behavior,
+   strict falsification logic, idempotent external custody, and no
+   network/environment/KIS/broker/GPU/import route.
+4. Run the one frozen CPU attempt after its contract is written. Do not tune
+   thresholds, rerun with changed geometry, open the consumed validation phase,
+   use CUDA, train a model, write a checkpoint, or submit any Paper intent.
+5. Update the Engine Research, Data, orchestration, handoff, and decision
+   stateboards with the exact terminal category and the next independent data
+   requirement. A target-free/input-unavailable or falsified result must not
+   stop other ready lanes.
 
 ## Claude Review
 
-Claude's falsification-first verdict is `supported-with-limits`.
-
-It found the individual components already exist. The only justified work is
-the injected-bar seam, not a duplicate architecture. Its strongest failure mode
-is a parallel score/decision/intent path that bypasses the existing modules.
-The required kill test is sentinel coverage for every named existing path plus
-two byte-stable logical replay projections. If the implementation can pass
-without traversing any named path, stop and remove the duplicate seam.
+The pre-implementation source-safe Claude falsification request for this
+candidate exceeded its bounded command timeout, so its result is
+`review_unavailable`; do not describe it as endorsement. This is an early,
+CPU-only, non-promoting falsification and has no promotion, holdout, GPU,
+execution, broker, or authority consequence. Its strongest kill test remains
+the fixed 20-bp/candle-only/null triad above.
 
 ## Verification
 
-Run focused tests, then:
+Run focused tests and the frozen offline CPU runner, then:
 
 ```powershell
-.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
+.\\scripts\\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
 ```
 
-If the clean-root helper precondition is still blocked by its known interrupted
+If the clean-root helper precondition remains blocked by its known interrupted
 run roots, do not delete, rename, or bypass them. Record that scoped recovery
 fact and run the helper's independent fresh-root mode plus the remaining
 verification commands.
 
 ## Completion
 
-Report focused and full verification, Claude result, exactly which existing
-paths were traversed, and why no model/GPU/data/KIS/Paper/PnL work was added.
-Commit and push completion evidence before replacing this file with exactly one
-next objective and continuing.
+Report the frozen rule and split, terminal category, artifact hashes/locations,
+focused and full verification, and why this result created no GPU/model/PnL/
+KIS/Paper/live claim. Commit and push completion evidence before replacing this
+file with exactly one next objective and continuing.

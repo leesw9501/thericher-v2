@@ -1016,3 +1016,17 @@ availability qualification. A later consumer may depend on exact current-build
 reproducibility only after it declares which remaining source limitations it
 can tolerate and pins this receipt hash. The matching receipt does not itself
 authorise model, ranking, GPU, Paper, or provider-update work.
+
+## NAS D1 Volume-Exhaustion Consumer Outcome (2026-08-02)
+
+The closed Engine `kis-nas-d1-volume-exhaustion-reversal-v1` r4 falsification
+reattested the existing six-symbol NAS history but passed only its
+`development` phase into the campaign. It did not access the consumed
+647-session validation phase, mutate the panel/cache, invoke KIS, or request a
+new collection. Its `falsified` result is scoped to that fixed source-local
+rule and does not change this panel's current-listing, non-PIT, unadjusted,
+corporate-action, or session-finality limitations.
+
+No new Data work is required for the closed family. Independently accumulating
+forward sessions remain the only path to a separate prospective contract; the
+current one common forward session still supplies no independent outcome slot.

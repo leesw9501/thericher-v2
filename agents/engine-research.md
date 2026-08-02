@@ -1020,3 +1020,36 @@ be frozen before target access, use a next-session within-session target,
 include flat/candle-only/date-block-null comparators and a signal-count kill
 test, and receive Claude's bounded challenge before implementation. It is not
 yet an eligible GPU campaign or Paper input.
+
+## KIS NAS D1 Volume-Exhaustion Outcome (2026-08-02)
+
+`kis-nas-d1-volume-exhaustion-reversal-v1` is closed as `falsified` by its
+final `cpu-falsification-r4` contract
+`sha256:ffe46f6a81e0e44e736db69fefcc7809a33b1e8eef9d1cc66aacb1a05d5f2e9d`
+and source-safe summary
+`sha256:0fd63b26eaf6680825c13a02bb5fae4b642af0ef121a156e815d0e92e5f87eb4`.
+It used only the attested six-symbol, 1,510-session development phase: a
+target-free 5,880-slot census yielded 107 signals across all six symbols, then
+one fixed 2,802-slot post-purge falsification opened only `t+1` targets.
+
+At the frozen 10/15/20bp cost band, the candidate did not strictly exceed its
+same-rule-without-volume comparator or its within-symbol block-null P95; the
+primary 20bp relation to flat was also nonpositive. These are categorical
+source-local kill facts, not a model-quality, PnL, or profitability claim.
+Do not retune the thresholds, rule, chronology, comparator, cost band, null,
+or this source partition. This family cannot become a model, ensemble, GPU
+appointment, Paper input, or KIS order path.
+
+The pre-final `cpu-falsification-r1` through `r3` receipts are retained only as
+scoped, non-promoting recovery evidence. Independent review successively fixed
+an Execution import route, incomplete code custody, volume abstention,
+Git-root creation before rejection, and artifact-root symlink traversal. The
+final r4 contract hashes direct campaign dependencies and accepts only a
+non-symlink external root before writes. Claude's bounded architecture challenge
+timed out as `review_unavailable`; no Claude endorsement is claimed. No KIS
+call, credential, network, broker, local-paper, GPU, training, checkpoint,
+sealed evaluation, or live behavior occurred.
+
+The GPU remains unallocated. A future Engine package must be a distinct
+source-qualified hypothesis with a fresh contract; the one-session NAS forward
+cache is still not enough for an independent prospective outcome surface.

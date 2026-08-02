@@ -15,7 +15,7 @@ from typing import Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION
 
-from .validation import _reject_repo_artifact_path, resolve_model_artifact_root
+from .artifact_paths import ensure_external_artifact_directory, resolve_model_artifact_root
 
 CAMPAIGN_REGISTRY_VERSION = 1
 CAMPAIGN_REGISTRY_NAMESPACE = "research_campaign_custody"
@@ -198,16 +198,12 @@ def resolve_campaign_registry_root(
 ) -> Path:
     """Resolve the external append-only ledger root without creating repo state."""
 
-    root = Path(artifact_root or resolve_model_artifact_root())
-    if not root.is_dir() or root.is_symlink():
-        raise ValueError("model artifact root must be an existing non-symlink directory")
-    _reject_repo_artifact_path(root, repo_root or Path.cwd())
-    resolved_root = root.resolve()
-    ledger_root = resolved_root / "_control" / "ledger"
-    if ledger_root.exists() and ledger_root.is_symlink():
-        raise ValueError("campaign registry ledger root must not be a symlink")
-    ledger_root.mkdir(parents=True, exist_ok=True)
-    return ledger_root
+    return ensure_external_artifact_directory(
+        Path(artifact_root or resolve_model_artifact_root()),
+        repo_root or Path.cwd(),
+        "_control",
+        "ledger",
+    )
 
 
 def _campaign_identity(

@@ -504,3 +504,22 @@ required event evidence is absent.
   parallel and full serial suites both passed `2082 passed, 14 skipped`.
   The clean-root helper still preserves its scoped two-interrupted-root failure
   without blocking this completed package or the next ready Engine work.
+
+## KIS NAS D1 Volume-Exhaustion Outcome (2026-08-02)
+
+- **Ready:** the independent Engine `cpu-falsification-r4` is complete and
+  `falsified`; its closed rule family creates no wait. Data forward collection,
+  Norgate source work, and existing KIS Paper lifecycle schedules remain
+  independently ready or owned according to their own contracts.
+- **Owned:** Engine retains only the closed r4 receipt and its no-retune rule.
+  Data retains the immutable NAS history/forward caches; Research Steward has
+  no GPU appointment; Execution has no dependency or order consequence.
+- **Due:** no retry or market-time wait belongs to this result. A fresh Engine
+  hypothesis can be frozen immediately from a separately qualified source;
+  one NAS forward session remains insufficient for an independent prospective
+  evaluation.
+- **Improvement:** direct Research leaves now import lazily without the
+  unrelated Execution route, while legacy public imports stay compatible.
+  Review also fixed full dependency code-revision custody, full abstention on a
+  nonpositive trailing-volume median, fixed partial null tails, and external
+  artifact-root rejection before Git or symlink traversal can write.
