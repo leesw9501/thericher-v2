@@ -8468,3 +8468,20 @@ momentum diagnostic.
 The related trio receipt boundary now canonicalizes and revalidates the exact
 base result before writing. This removes a narrow typed-subclass or frozen
 object-mutation path without changing the target-free diagnostic strategy.
+
+## 2026-08-02 - Close the fixed trio GBT discrimination preflight without promotion
+
+Decision: close `norgate-d1-trio-intraday-structure-gbt-preflight-v1` as
+`noise_not_separable`. Its one frozen HistGradientBoosting CPU configuration
+used only multiplier-invariant same-session candle ratios at completed `t` and
+the next session's within-session direction label. Across 139 validation date
+groups it cleared neither its 0.08 advantage floor nor the 95th percentile of
+64 nonzero circular date-block label shifts. The one-session shifted-label
+control was not anomalously strong.
+
+Do not change its windows, features, label, split, classifier, seed, null
+shifts, effect floor, or thresholds after seeing this outcome. It creates no
+model promotion, ranking, ensemble, GPU appointment, Paper input, PnL claim,
+or execution consequence. A later candidate must use independently reattested
+breadth or a distinct causal hypothesis and must freeze a fresh contract before
+target evaluation.

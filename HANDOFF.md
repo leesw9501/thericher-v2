@@ -1709,3 +1709,34 @@ because two recent helper-owned roots remain from interrupted tool executions.
 They were not manually deleted or repurposed; the helper's default fresh-root
 run passed. This is a test-hygiene recovery fact only, not an Engine, Data, or
 Execution hold.
+
+## Norgate D1 Intraday-Structure GBT Preflight (2026-08-02)
+
+`norgate-d1-trio-intraday-structure-gbt-preflight-v1` completed CPU-only after
+provider-free reattachment of the matching active-build receipt and fixed
+source hashes. The frozen contract is
+`sha256:ef3d6406a2aee63eacdb3c9abf6ea29e4df9bd24598dfbaa741326b5467c1bd0`;
+the external source-safe receipt is
+`sha256:ad4cb0f0050bb3d46236845e4ad51d6243cb14dd7310c54d1846b876fb419570`.
+
+The result is `noise_not_separable` with reason
+`effect_and_null_threshold_not_met`. Its fixed 1/5/10/20-session same-candle
+ratio features and next-session within-candle label were multiplier-invariant,
+but 139 validation date groups did not clear either the precommitted 0.08
+balanced-accuracy advantage or the 64-shift date-block null threshold. The
+one-session shifted-label control was below chance, so it did not indicate an
+alignment fault. No raw bars, dates, labels, predictions, weights, network,
+credentials, KIS, account, broker, local-paper, PnL, GPU, or live behavior was
+used. Claude was not re-invoked because the strong-result condition did not
+occur.
+
+The existing no-network Docker `research` service reproduced the identical
+source-safe receipt using `/app/market_data` and `/app/model_artifacts`. The
+container invoked only the CPU sklearn path; it did not invoke Torch or CUDA
+code and wrote no weights. Runner tests now pin both the host receipt-parent
+root and the container market-data-root mapping.
+
+Do not retune this exact feature set, split, classifier, or thresholds. The
+next Engine direction needs independently reattested breadth or a distinct
+causal hypothesis; the closed three-ETF preflight is not a generic ban on
+research, Data work, Paper execution learning, or future GPU candidates.

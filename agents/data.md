@@ -987,3 +987,15 @@ historical-revision limitations remain unchanged. Data's next ready support is
 to attest the exact source/cursor assumptions named by the first source-local
 CPU baseline; it does not recollect, update, or broaden the Norgate source by
 default.
+
+## Fixed-Trio GBT Consumer Outcome (2026-08-02)
+
+The first source-local GBT consumer reattached the fixed source and matching
+active-build receipt without a provider call, then closed
+`noise_not_separable`. Its external receipt is
+`sha256:ad4cb0f0050bb3d46236845e4ad51d6243cb14dd7310c54d1846b876fb419570`.
+No raw data, dates, derived labels, or predictions were retained. This changes
+none of the source's PIT, adjustment, corporate-action, entity, availability,
+or historical-revision limitations. The next Data readiness question is an
+independently scoped breadth/source contract, not a recollection or a retune of
+this fixed trio.

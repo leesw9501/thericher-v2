@@ -967,3 +967,24 @@ descriptions, a one-session availability shift, a date-block permutation null,
 and a minimum detectable-effect floor. It must not allocate GPU, open a sealed
 holdout, load public weights, create PnL/profitability, rank, ensemble, or
 Paper input.
+
+## Fixed-Trio GBT Preflight Outcome (2026-08-02)
+
+`norgate-d1-trio-intraday-structure-gbt-preflight-v1` completed CPU-only as
+`noise_not_separable` (`effect_and_null_threshold_not_met`). The exact frozen
+same-session 1/5/10/20 candle-structure features and next-session intraday
+label did not clear the 0.08 balanced-accuracy advantage or 64-shift date-block
+null threshold across 139 validation dates. Its one-session shift control was
+below chance, so the result is a normal no-signal outcome rather than an
+alignment incident.
+
+Do not retune this feature/label/model/split/null family. No weights, GPU,
+sealed evaluation, PnL, Paper input, KIS, credential, broker, or live path was
+used. The next candidate needs broader independently reattested source coverage
+or a distinct causal hypothesis; this closure does not suppress other ready
+research or execution packages.
+
+The existing no-network Docker `research` service reproduced the same
+aggregate-only receipt through its `/app/market_data` and
+`/app/model_artifacts` mounts. The run used sklearn CPU code only, not Torch or
+CUDA. Host/container root mapping is now covered by the runner boundary tests.

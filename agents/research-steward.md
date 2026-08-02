@@ -194,3 +194,15 @@ feature/label contract and a date-block null. It has no appointment until a
 later distinct campaign supplies eligible source, causal target/split, costs,
 comparators, kill test, artifact root, and compute stop rule. GPU remains free
 rather than being filled by an unqualified training job.
+
+## Fixed-Trio GBT CPU Closure (2026-08-02)
+
+The fixed-trio GBT discrimination preflight closed `noise_not_separable` before
+any GPU eligibility question. It wrote a source-safe external receipt only and
+used no weights, sealed evaluation, or CUDA resource. GPU remains unallocated
+for a distinct frozen campaign with independently reattested breadth or a new
+causal hypothesis; this exact CPU family cannot be retried as a GPU job.
+
+The Docker research-service reproduction also used only the sklearn CPU path.
+Its image may expose the installed CUDA runtime, but this campaign did not load
+Torch, issue a CUDA operation, or create a GPU custody appointment.

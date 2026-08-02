@@ -453,3 +453,18 @@ required event evidence is absent.
 - **Improvement:** retain the passing fresh-root parallel result and use its
   measured 3:01 duration; treat the 17:47 serial diagnostic as a separate
   compatibility check rather than foreground idling.
+
+## Fixed-Trio GBT Preflight Outcome (2026-08-02)
+
+- **Ready:** the source-local CPU GBT preflight is complete as
+  `noise_not_separable`; a new Data breadth/source-contract package is ready
+  now. The exact trio feature/model family is closed rather than queued for a
+  parameter retry.
+- **Owned:** Data owns any broadened source provenance; Engine owns a future
+  distinct causal campaign; Research Steward keeps the GPU unallocated;
+  Execution has no dependency or route.
+- **Due:** none. The outcome does not wait for market time, KIS, GPU, or
+  operator input.
+- **Improvement:** multiplier-invariant features/label, a fixed 64-shift
+  date-block null, and a one-session alignment control turn a small-panel model
+  result into a bounded evidence decision without creating a promotion gate.
