@@ -8210,3 +8210,40 @@ active dates to separate signal quality from passive exposure. Costs are fixed
 as all-in round-trip `5/10/20` bp. The result cannot select, promote, ensemble,
 allocate GPU, form a KIS input, or claim profitability; a later data tail needs
 its own genuinely fresh, single-use evaluation contract.
+
+## 2026-08-02 - Freeze a source-local SPY regime and micro-consensus falsification
+
+Decision: use the existing verified `SPY/AMS` 1m KIS-private cache only through
+its offline loader for one CPU-only, non-promoting deterministic intraday
+falsification. The fixed 21 complete sessions split into `10 / 1 / 10`
+development/purge/validation sessions. Before opening any target return, the
+source-safe preflight tested feature availability only: a 12:30-15:30 ET,
+ten-minute, non-overlapping regime/micro-consensus schedule has 32 active
+validation decisions against a frozen 30-decision minimum.
+
+The regime gate uses completed 3h and 1h bars; the micro consensus uses
+completed 10m, 5m, and 30-minute 1m states. An eligible decision has a fixed
+next-ten-minute open-to-open target and `5/10/20` bp all-in costs. Its main
+selection comparator is macro-regime-only net bps per active decision; a
+schedule-wide always-long view is descriptive. This avoids the invalid
+candidate-active always-long comparison, which would duplicate the exact same
+long-only entries. This is a small source-local falsification, not a PIT
+result, model choice, PnL claim, Paper signal, or GPU request. Two concise
+Claude calls yielded no substantive verdict
+(`review_unavailable`); that fact narrows no standing authority and does not
+hold this reversible offline work.
+
+## 2026-08-02 - Reject the fixed SPY regime and micro-consensus hypothesis
+
+Decision: retain the frozen source-local result as a rejection of this exact
+long-only macro/micro consensus family. The 21-session `SPY/AMS` 1m cache met
+the target-free 32-decision validation preflight, then the aggregate evaluation
+failed its precommitted 20-bp net-total kill test. The rejection is not a claim
+about live performance, a source-wide PnL result, or a reason to change the
+fixed split, schedule, costs, or candidate after observing validation outcomes.
+
+The source-safe external receipt records aggregate evidence only and the run
+had no KIS, credential, account, order, broker, Paper, GPU, or live surface.
+Do not derive a parameter search, ensemble member, model selection, or Paper
+input from this failed family. A future Engine package must declare a distinct
+hypothesis and fresh frozen contract before target evaluation.

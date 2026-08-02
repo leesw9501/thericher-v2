@@ -1452,3 +1452,23 @@ Claude CLI drift check timed out and is `review_unavailable`, not a conclusion
 or a blocker. A later genuinely fresh source tail would need a new frozen
 single-use replication contract; do not loosen this campaign's fixed event
 mask or minimum-decision preflight.
+
+## SPY Intraday Regime/Micro Consensus Outcome (2026-08-02)
+
+The bounded CPU-only `kis-spy-intraday-regime-micro-consensus-v1` run completed
+against the verified local `SPY/AMS` 1m cache with the frozen 21-session
+`10 / 1 / 10` split. Its target-free preflight retained 32 validation decisions
+above the fixed 30-decision floor. The subsequent aggregate-only evaluation is
+truthfully `falsified`: the candidate's 20-bp all-in net total was not positive.
+The result is a hypothesis rejection, not realized PnL, model selection,
+profitability, Paper-input, or promotion evidence.
+
+The source-safe receipt is outside Git at
+`D:\thericher-v2\model-artifacts\research\kis-spy-intraday-regime-micro-consensus-v1\cpu-falsification-20260802-r1`.
+It contains source identity, frozen contract, counts, and aggregate outcomes
+only. The run made no KIS call, credential/environment read, account, order,
+local-paper, broker, GPU, sealed-evaluation, or live action. Do not retune or
+promote this exact long-only regime/micro-consensus family from this result; the
+next Engine package must freeze an independently motivated hypothesis. Claude
+produced no substantive verdict after two bounded attempts
+(`review_unavailable`), which is not agreement or a work hold.

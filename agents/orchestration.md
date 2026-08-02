@@ -292,3 +292,10 @@ statements above; their historical facts remain scoped to their original work.
   kill, selection, GPU, KIS, credential, broker, Paper, or sealed-evaluation
   action occurred. This is scoped evidence, not a hold on the next ready Engine
   package.
+- **Engine outcome:** the offline CPU-only
+  `kis-spy-intraday-regime-micro-consensus-v1` completed on the verified
+  `SPY/AMS` 1m cache. Its target-free preflight retained 32 validation decisions,
+  then its fixed 20-bp kill test rejected the long-only regime/micro candidate.
+  This is scoped aggregate research evidence only: no KIS, credential, account,
+  order, Paper, broker, GPU, or live action occurred. The next Engine package
+  must be a distinct frozen hypothesis; this result is not a foreground wait.

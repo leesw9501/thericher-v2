@@ -112,3 +112,9 @@ active validation decisions against its fixed 100-decision minimum. It created
 no GPU appointment, model artifact, sealed-evaluation allocation, target
 evaluation, selection, or promotion. The free GPU remains available for a
 later independently eligible campaign and must not be filled by this rule.
+
+`kis-spy-intraday-regime-micro-consensus-v1` completed as a CPU-only fixed-rule
+falsification and failed its 20-bp aggregate kill test. It used existing local
+bars and created no training, GPU appointment, checkpoint, sealed-evaluation
+allocation, model artifact, or promotion. GPU remains free for the next
+independently eligible frozen campaign.

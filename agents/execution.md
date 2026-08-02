@@ -67,6 +67,12 @@ decision-table edit, or live route is introduced.
 
 ## Current Facts
 
+- Execution reattests the completed
+  `kis-spy-intraday-regime-micro-consensus-v1` as offline Research-only:
+  its aggregate 20-bp kill result rejected the candidate and has no execution
+  implication. It read the verified local SPY cache and wrote external aggregate
+  evidence only; it had no KIS client, credential, account, intent, order,
+  fill, local-paper, broker, or live surface.
 - Execution reattests the frozen `tiingo-d1-trend-mean-reversion-rotation-v1`
   CPU falsification contract as outside every Execution surface: it reads only
   the retained Tiingo D1 snapshot and writes source-safe contract/aggregate

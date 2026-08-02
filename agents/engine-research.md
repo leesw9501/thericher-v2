@@ -816,3 +816,15 @@ outside GPU, sealed-tail, KIS, Paper, broker, account, and promotion surfaces.
 The requested Claude CLI drift check timed out, recorded only as
 `review_unavailable`; it is not a substantive verdict or hold on independent
 work.
+
+## Latest Engine Outcome
+
+`kis-spy-intraday-regime-micro-consensus-v1` completed as a CPU-only,
+source-local falsification on the verified 21-session `SPY/AMS` 1m cache. Its
+frozen `10 / 1 / 10` geometry and target-free 32-decision validation preflight
+held. Once targets were opened, the candidate failed the precommitted 20-bp
+net-total kill test and is `falsified`. The receipt contains aggregates only;
+this is neither realized PnL nor model-selection, Paper-input, ensemble, GPU,
+or promotion evidence. Do not tune the same long-only regime/micro family from
+this result. Claude's two bounded review attempts remain `review_unavailable`,
+not a verdict or a hold on the next distinct hypothesis.
