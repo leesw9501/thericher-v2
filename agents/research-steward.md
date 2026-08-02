@@ -129,3 +129,10 @@ its frozen policy did not meet the target-free 30-long-decision floor, so no
 validation target, performance metric, checkpoint, GPU appointment, or
 sealed-evaluation allocation was created. GPU remains free; the current
 ten-session source scope is not an eligible reason to consume it.
+
+The Norgate local fixed-trio D1 source is now materialized and
+`qualified_for_offline_research`, but it has no frozen target/split/cost/baseline
+contract and no point-in-time or availability qualification. It creates no GPU
+appointment, checkpoint, or sealed-evaluation allocation. GPU remains free for
+a later independently eligible campaign; the new source is preparation, not a
+reason to manufacture training.

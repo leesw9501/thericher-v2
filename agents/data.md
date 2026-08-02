@@ -916,3 +916,19 @@ For a multi-session consumer, add a bounded calendar-aware segment adapter;
 never pad a gap or mark an unavailable bar complete merely to satisfy a
 lookback. This is a source-contract recovery fact, not a scheduler or Research
 promotion gate.
+
+## Norgate Local D1 ETF Source (2026-08-02)
+
+State: `qualified_for_offline_research` for one current local-NDU fixed-trio
+D1 snapshot. It has 511 common completed sessions and 1,533 D:-retained raw
+rows, with immutable data/manifest hashes reattested by a no-client rerun.
+The official client is available only through the Windows `norgate-host` extra;
+the base and Docker research images do not install it. A missing client,
+unavailable updater, or malformed response produces a source-scoped categorical
+outcome and no raw snapshot.
+
+The scope is intentionally source-local only. Availability time, PIT state,
+adjustment semantics, and corporate-action completeness are still unknown;
+therefore this is not a universe/ranking/Paper/promotion input. The next Data
+fact is not another collector retry: it is a consumer-owned frozen campaign
+contract that names exactly which of these limitations it can tolerate.

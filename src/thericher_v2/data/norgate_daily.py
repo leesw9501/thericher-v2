@@ -23,8 +23,25 @@ class NorgateUnavailableError(RuntimeError):
     """Raised when the host-only Norgate client cannot serve a daily query."""
 
 
+class NorgateClientUnavailableError(NorgateUnavailableError):
+    """Raised when the optional official Norgate Python client is absent."""
+
+
+class NorgateLocalUpdaterUnavailableError(NorgateUnavailableError):
+    """Raised when the installed local Norgate service cannot serve a query."""
+
+
+class NorgateMalformedResponseError(NorgateUnavailableError, ValueError):
+    """Raised when a local Norgate response violates the bounded D1 contract."""
+
+
 def _load_norgatedata() -> Any:
-    return importlib.import_module("norgatedata")
+    try:
+        return importlib.import_module("norgatedata")
+    except ModuleNotFoundError as exc:
+        raise NorgateClientUnavailableError(
+            "Norgate Python client is unavailable; use the host-only norgate-host extra"
+        ) from exc
 
 
 @dataclass(frozen=True)
@@ -66,8 +83,13 @@ class NorgateRawDailyBarProvider:
                 interval="D",
             )
         except Exception as exc:
-            raise NorgateUnavailableError("Norgate daily data is unavailable") from exc
-        return filter_bars(_map_rows(rows, query), query)
+            raise NorgateLocalUpdaterUnavailableError(
+                "Norgate local updater or daily data is unavailable"
+            ) from exc
+        try:
+            return filter_bars(_map_rows(rows, query), query)
+        except ValueError as exc:
+            raise NorgateMalformedResponseError("Norgate daily response is malformed") from exc
 
     def _validate_query(self, query: BarQuery) -> None:
         if self.platform_name != "win32":
@@ -88,8 +110,16 @@ class NorgateRawDailyBarProvider:
             client = self.client_loader()
             adjustment = client.StockPriceAdjustmentType.NONE
             padding = client.PaddingType.NONE
+        except NorgateClientUnavailableError:
+            raise
+        except ModuleNotFoundError as exc:
+            raise NorgateClientUnavailableError(
+                "Norgate Python client is unavailable; use the host-only norgate-host extra"
+            ) from exc
         except Exception as exc:
-            raise NorgateUnavailableError("Norgate daily data is unavailable") from exc
+            raise NorgateLocalUpdaterUnavailableError(
+                "Norgate local updater or daily data is unavailable"
+            ) from exc
         return client, adjustment, padding
 
 

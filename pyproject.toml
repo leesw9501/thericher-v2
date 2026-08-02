@@ -23,6 +23,9 @@ research = [
   "pandas>=2.2",
   "scikit-learn>=1.7,<2",
 ]
+norgate-host = [
+  "norgatedata==1.0.77",
+]
 
 [project.scripts]
 thericher-v2-daily-report = "thericher_v2.ops.daily_report:main"

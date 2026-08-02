@@ -194,6 +194,39 @@ def test_external_tampering_fails_closed(tmp_path: Path, filename: str) -> None:
         )
 
 
+def test_matching_existing_snapshot_reattests_without_new_provider_calls(tmp_path: Path) -> None:
+    root, repo, destination = _paths(tmp_path)
+    first = _build(destination, root, repo)
+
+    def fail_provider(*_args: object, **_kwargs: object) -> Sequence[Bar]:
+        raise AssertionError("matching immutable snapshot must not recollect bars")
+
+    def fail_events(*_args: object, **_kwargs: object) -> NorgateCapitalEventEvidence:
+        raise AssertionError("matching immutable snapshot must not recollect events")
+
+    rerun = _build(
+        destination,
+        root,
+        repo,
+        bars=fail_provider,
+        events=fail_events,
+    )
+
+    assert rerun == first
+    with pytest.raises(ValueError, match="request does not match"):
+        build_norgate_trial_raw_d1_snapshot(
+            destination=destination,
+            requested_start=_START,
+            requested_end=date(2024, 1, 4),
+            retrieved_at_utc=datetime(2026, 7, 19, tzinfo=UTC),
+            norgate_bars=fail_provider,
+            capital_event_evidence=fail_events,
+            norgate_package_version="test-version",
+            market_data_root=root,
+            repo_root=repo,
+        )
+
+
 def test_uneven_sessions_or_event_coverage_leave_no_published_snapshot(tmp_path: Path) -> None:
     root, repo, destination = _paths(tmp_path)
 

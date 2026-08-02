@@ -855,3 +855,14 @@ The fixed threshold, model, costs, and floor remain closed to retroactive
 repair. It has no GPU appointment, checkpoint, or artifact beyond its
 aggregate-only external receipt; the next package must be a distinct frozen
 hypothesis rather than a threshold retune.
+
+## Norgate D1 Readiness
+
+The new local `SPY/QQQ/IWM` D1 source is hash-attested with 511 common sessions,
+but its successful materialization alone does not create a campaign. The source
+is offline-only with unverified availability/PIT, adjustment, and corporate-
+action semantics, and the raw snapshot remains non-ranking and non-promoting.
+Do not train, evaluate, allocate GPU, select, ensemble, or form a Paper input
+from it yet. A next Engine package may only freeze a narrowly source-local
+development contract that names these limitations, uses a fresh temporal split
+and causal availability treatment, and has a simple baseline plus kill test.

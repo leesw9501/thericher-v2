@@ -8309,3 +8309,21 @@ reuse the result as a model, ensemble, GPU, Paper, PnL, or profitability claim.
 The aggregate-only receipt stays external and records only contract, source,
 structural counts, model identity, and categorical outcome. A follow-up is a
 new frozen hypothesis, not a parameter repair of this one.
+
+## 2026-08-02 - Isolate the Norgate client and qualify a fixed ETF D1 source
+
+Decision: `norgatedata==1.0.77` is a dedicated Windows host-only
+`norgate-host` optional dependency, not part of the base or Docker-installed
+`research` extra. The installed local trial is accessed only through its lazy
+provider path; missing client, unavailable local updater, and malformed D1
+responses have separate categorical outcomes. No `.env`, KIS, account, order,
+broker, local-paper, GPU, or live path belongs to this source foundation.
+
+The fixed three-ETF D1 materialization is hash-attested and idempotent: an
+identical rerun verifies the retained D: snapshot before any provider call, and
+an incompatible requested window fails closed. Its 511 common-session source
+is `qualified_for_offline_research` only. Local availability timing, point-in-
+time membership, adjustment semantics, and corporate-action completeness remain
+unverified, so it cannot rank, promote, create a Paper input, or support a
+profitability claim. A later Engine package needs a new explicit source-local
+campaign contract; this raw-source qualification is not that contract.

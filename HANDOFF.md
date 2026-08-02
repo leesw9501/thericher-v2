@@ -1530,3 +1530,23 @@ categorical outcome only. The run made no KIS, network, credential,
 environment, account, order, local-paper, broker, GPU, checkpoint, or live
 action. Do not lower this campaign's threshold or minimum-decision floor after
 the result; a distinct next package must freeze its own hypothesis and contract.
+
+## Norgate Local D1 ETF Source Outcome (2026-08-02)
+
+The official `norgatedata==1.0.77` client is now isolated in the dedicated
+Windows-only `norgate-host` extra; it is absent from the base, `research`, and
+Docker runtime dependencies. A real local-NDU materialization produced one
+immutable fixed `SPY/QQQ/IWM` D1 source snapshot below `D:\market_data` and a
+separate aggregate-only external receipt. Its reattested content has 511 common
+completed sessions and 1,533 retained D: rows. The receipt hash is
+`sha256:9e7c7561...6b3f5a08`; its source identity is
+`sha256:efa1b14f...e15c58e7` with manifest
+`sha256:7f30253d...69a33d45`.
+
+This is `qualified_for_offline_research`, not a point-in-time, availability,
+adjustment, corporate-action, ranking, model-promotion, Paper-input, PnL, or
+live claim. The current raw snapshot's source scope still requires a separate
+campaign contract before Engine may train or evaluate a model. No KIS,
+credential, account, broker, local-paper, GPU, or live route ran. The original
+same-label rerun reattests the immutable snapshot without invoking the Norgate
+client again.

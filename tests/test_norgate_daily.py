@@ -17,6 +17,11 @@ from thericher_v2.data import (
     NorgateRawDailyBarProvider,
     NorgateUnavailableError,
 )
+from thericher_v2.data.norgate_daily import (
+    NorgateClientUnavailableError,
+    NorgateLocalUpdaterUnavailableError,
+    NorgateMalformedResponseError,
+)
 
 
 class _Dtype:
@@ -155,7 +160,21 @@ def test_missing_optional_client_fails_closed() -> None:
 
     provider = NorgateRawDailyBarProvider(client_loader=unavailable, platform_name="win32")
 
-    with pytest.raises(NorgateUnavailableError, match="unavailable"):
+    with pytest.raises(NorgateClientUnavailableError, match="unavailable"):
+        provider.get_bars(_query())
+
+
+def test_local_updater_failure_has_its_own_category() -> None:
+    class _UnavailableClient(_FakeNorgate):
+        def price_timeseries(self, symbol: str, **kwargs: Any) -> _Rows:
+            raise RuntimeError("local service unavailable")
+
+    provider = NorgateRawDailyBarProvider(
+        client_loader=lambda: _UnavailableClient(_Rows([])),
+        platform_name="win32",
+    )
+
+    with pytest.raises(NorgateLocalUpdaterUnavailableError, match="unavailable"):
         provider.get_bars(_query())
 
 
@@ -174,7 +193,7 @@ def test_rejects_non_midnight_bounds_and_invalid_raw_ohlcv() -> None:
                 end=datetime(2024, 1, 3, 1, tzinfo=UTC),
             )
         )
-    with pytest.raises(ValueError, match="high/low"):
+    with pytest.raises(NorgateMalformedResponseError, match="malformed"):
         provider.get_bars(_query())
 
 

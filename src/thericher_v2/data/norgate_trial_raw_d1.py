@@ -74,6 +74,10 @@ class NorgateTrialRawD1Error(RuntimeError):
     """Raised when one bounded Norgate trial snapshot cannot be retained."""
 
 
+class NorgateCapitalEventUnavailableError(NorgateTrialRawD1Error):
+    """Raised when the local Norgate capital-event evidence cannot be read."""
+
+
 @dataclass(frozen=True, slots=True)
 class NorgateCapitalEventEvidence:
     """Aggregate event-query facts plus in-window nonzero marker dates."""
@@ -191,7 +195,9 @@ def load_norgate_capital_event_evidence(
             timeseriesformat="numpy-recarray",
         )
     except Exception as exc:
-        raise NorgateTrialRawD1Error("Norgate capital-event data is unavailable") from exc
+        raise NorgateCapitalEventUnavailableError(
+            "Norgate capital-event data is unavailable"
+        ) from exc
     fields = tuple(getattr(getattr(response, "dtype", None), "names", ()) or ())
     if "Date" not in fields or "Capital Event" not in fields:
         raise ValueError("Norgate capital-event response is missing required fields")
@@ -287,6 +293,14 @@ def build_norgate_trial_raw_d1_snapshot(
     _validate_window(requested_start, requested_end)
     if platform_name != "win32":
         raise NorgateTrialRawD1Error("Norgate trial raw-D1 snapshot requires Windows")
+    if Path(destination).exists() or Path(destination).is_symlink():
+        return verify_norgate_trial_raw_d1_snapshot(
+            destination,
+            market_data_root=market_data_root,
+            repo_root=repo_root,
+            expected_requested_start=requested_start,
+            expected_requested_end=requested_end,
+        )
     retrieved_at = _utc_datetime(retrieved_at_utc, "Norgate trial raw-D1 retrieval time")
     target, root = _validate_destination(
         destination,
@@ -354,6 +368,8 @@ def verify_norgate_trial_raw_d1_snapshot(
     *,
     market_data_root: Path = DEFAULT_MARKET_DATA_ROOT,
     repo_root: Path | None = None,
+    expected_requested_start: date | None = None,
+    expected_requested_end: date | None = None,
 ) -> NorgateTrialRawD1Result:
     """Re-attest one retained snapshot without client, network, or token access."""
 
@@ -370,7 +386,12 @@ def verify_norgate_trial_raw_d1_snapshot(
         raise ValueError("Norgate trial raw-D1 manifest is invalid") from exc
     if not isinstance(manifest, dict):
         raise ValueError("Norgate trial raw-D1 manifest is invalid")
-    _validate_manifest_header(manifest, snapshot=snapshot)
+    _validate_manifest_header(
+        manifest,
+        snapshot=snapshot,
+        expected_requested_start=expected_requested_start,
+        expected_requested_end=expected_requested_end,
+    )
     details = _validate_written_snapshot(snapshot, manifest)
     return NorgateTrialRawD1Result(
         snapshot_dir=snapshot,
@@ -1054,7 +1075,13 @@ def _event_document(value: NorgateCapitalEventEvidence) -> dict[str, Any]:
     }
 
 
-def _validate_manifest_header(manifest: dict[str, Any], *, snapshot: Path) -> None:
+def _validate_manifest_header(
+    manifest: dict[str, Any],
+    *,
+    snapshot: Path,
+    expected_requested_start: date | None = None,
+    expected_requested_end: date | None = None,
+) -> None:
     if (
         manifest.get("schema_version") != 1
         or manifest.get("kind") != "fixed_etf_norgate_trial_raw_d1"
@@ -1092,6 +1119,10 @@ def _validate_manifest_header(manifest: dict[str, Any], *, snapshot: Path) -> No
         or requested.get("end_semantics") != "inclusive source-session date"
     ):
         raise ValueError("Norgate trial raw-D1 requested window is invalid")
+    if (expected_requested_start is not None and requested_start != expected_requested_start) or (
+        expected_requested_end is not None and requested_end != expected_requested_end
+    ):
+        raise ValueError("Norgate trial raw-D1 snapshot request does not match existing evidence")
     _validate_storage_document(manifest.get("storage"))
     _validate_retention_document(manifest.get("retention"))
 
@@ -1739,7 +1770,9 @@ def _load_norgatedata(loader: ClientLoader | None) -> Any:
 
         return importlib.import_module("norgatedata")
     except Exception as exc:
-        raise NorgateTrialRawD1Error("Norgate capital-event client is unavailable") from exc
+        raise NorgateCapitalEventUnavailableError(
+            "Norgate capital-event client is unavailable"
+        ) from exc
 
 
 def _validate_storage_document(value: object) -> None:

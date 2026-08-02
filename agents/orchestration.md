@@ -311,3 +311,19 @@ statements above; their historical facts remain scoped to their original work.
   target-free long decisions. It made no return, PnL, KIS, credential, broker,
   Paper, GPU, or live claim. This closes only that frozen candidate and leaves
   the foreground free to dispatch the next distinct Engine package.
+
+## Norgate Local D1 Source Update (2026-08-02)
+
+- **Ready:** one immutable local-NDU `SPY/QQQ/IWM` D1 source is now
+  `qualified_for_offline_research`; it is independently reattestable without a
+  client call. Its next consumer is a new source-local Engine contract, not a
+  retry timer or a provider expansion.
+- **Owned:** Data owns the host-only client and D: snapshot provenance; Engine
+  owns any later hypothesis contract. Research Steward owns no allocation yet;
+  Execution has no route in this work.
+- **Due:** none. The snapshot exists now and does not wait for KIS, market
+  time, GPU, or an external retry.
+- **Improvement:** the client lives in a dedicated `norgate-host` extra rather
+  than Docker's `research` extra, and an identical snapshot rerun verifies
+  before source access. This removes host-runtime leakage and duplicate local
+  work without creating a new gate.
