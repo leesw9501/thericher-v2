@@ -1110,3 +1110,23 @@ offline validation fixtures without opening a return or reusing the future
 observer as a selection surface. Any later training campaign still freezes its
 own dataset, target, split, costs, baseline, kill test, artifact root, and GPU
 stop rule before Research Steward allocation.
+
+## Causal MTF Prediction-Window Binding
+
+The pure `causal-mtf-prediction-window-binding-v1` extension is complete.
+When a caller provides its existing `CausalMultiTimeframeSequenceWindow` to the
+target-position policy, the policy revalidates the selected bars and requires
+each expert's `feature_window_end` to equal the actual completed bar end for
+its timeframe. This prevents a stale or partial slow-timeframe expert from
+claiming a fast decision cutoff while leaving existing policy-owned freshness,
+missing, duplicate, and future checks single-sourced.
+
+The existing momentum producer passed an injected five-timeframe compatibility
+smoke; forged H1 ends, header-versus-contained-bar identity/cutoff mismatch,
+and future bars fail closed. The existing target-policy consumer that already
+has a causal window supplies it explicitly. Claude's `supported-with-limits`
+review rejected a duplicate evidence bundle and untyped metadata-based
+source/schema convention. This work created no model, dataset use, target,
+return, PnL, training, GPU appointment, artifact, Paper, or live claim. The
+QQQ/SPY observer still has `0` forward records, but its collection is
+independent of ready Engine work.

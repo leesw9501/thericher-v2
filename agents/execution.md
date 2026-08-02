@@ -521,3 +521,13 @@ The observer's valid `not_observed` record is Data evidence only. Its
 unavailable input or busy append condition becomes a recovery receipt rather
 than an execution decision. This leaves the existing local-paper replay seam
 unchanged for a separately qualified future campaign.
+
+## Causal MTF Prediction-Window Binding
+
+Execution has no route or side effect in the pure Engine
+`causal-mtf-prediction-window-binding-v1` extension. It only lets an existing
+target-position policy caller provide a causal input window, which is
+revalidated before model evidence can form a target proposal. No local-paper
+replay, KIS account/quote/order call, intent, fill, artifact, or capital state
+was opened or changed. A later qualified Engine campaign may use this binding
+before reaching the unchanged deterministic Execution boundary.

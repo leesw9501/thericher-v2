@@ -195,6 +195,7 @@ def run_injected_multitimeframe_local_paper_replay(
         current_exposure=current_exposure,
         config=policy_config,
         as_of=now,
+        causal_window=window,
     )
     receipt = receipt_from_target_exposure_proposal(
         proposal,

@@ -20,6 +20,11 @@ from thericher_v2.contracts import (
     decimal_value,
     require_utc,
 )
+from thericher_v2.models.sequence_window import (
+    CausalMultiTimeframeSequenceWindow,
+    SequenceWindowInputError,
+    build_causal_multitimeframe_sequence_window,
+)
 
 _OPPORTUNITY_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}")
 _INPUT_STATUSES: Final = frozenset(
@@ -124,6 +129,7 @@ def propose_target_exposure(
     current_exposure: Decimal,
     config: TargetPositionPolicyConfig,
     as_of: datetime,
+    causal_window: CausalMultiTimeframeSequenceWindow | None = None,
 ) -> TargetExposureProposal:
     """Fuse fresh completed-bar evidence without orders, I/O, or model selection."""
 
@@ -131,6 +137,10 @@ def propose_target_exposure(
         raise TypeError("eligibility must be an OpportunityEligibility")
     if not isinstance(config, TargetPositionPolicyConfig):
         raise TypeError("config must be a TargetPositionPolicyConfig")
+    if causal_window is not None and not isinstance(
+        causal_window, CausalMultiTimeframeSequenceWindow
+    ):
+        raise TypeError("causal_window must be a CausalMultiTimeframeSequenceWindow")
     now = require_utc(as_of, "as_of")
     normalized_current_exposure = decimal_value(current_exposure, "current_exposure")
     if not 0 <= normalized_current_exposure <= 1:
@@ -177,6 +187,7 @@ def propose_target_exposure(
         predictions,
         config=config,
         as_of=now,
+        causal_window=causal_window,
     )
     if input_status is not None:
         return _abstain(
@@ -306,6 +317,7 @@ def _index_evidence(
     *,
     config: TargetPositionPolicyConfig,
     as_of: datetime,
+    causal_window: CausalMultiTimeframeSequenceWindow | None,
 ) -> tuple[dict[Timeframe, ModelPrediction], TargetInputStatus | None]:
     indexed: dict[Timeframe, ModelPrediction] = {}
     for prediction in predictions:
@@ -330,7 +342,57 @@ def _index_evidence(
         indexed[timeframe] = prediction
     if set(indexed) != set(config.required_timeframes):
         return {}, "missing"
+    if causal_window is not None:
+        binding_status = _causal_window_binding_status(
+            eligibility,
+            indexed,
+            causal_window=causal_window,
+            as_of=as_of,
+        )
+        if binding_status is not None:
+            return {}, binding_status
     return indexed, None
+
+
+def _causal_window_binding_status(
+    eligibility: OpportunityEligibility,
+    predictions: Mapping[Timeframe, ModelPrediction],
+    *,
+    causal_window: CausalMultiTimeframeSequenceWindow,
+    as_of: datetime,
+) -> TargetInputStatus | None:
+    """Bind self-reported feature ends to revalidated completed-bar windows."""
+
+    if (
+        causal_window.cutoff != as_of
+        or causal_window.symbol != eligibility.symbol
+        or causal_window.market != eligibility.market
+    ):
+        return "misaligned"
+    try:
+        validated_window = build_causal_multitimeframe_sequence_window(
+            {
+                timeframe: window.bars
+                for timeframe, window in causal_window.windows.items()
+            },
+            lookbacks={
+                timeframe: len(window.bars)
+                for timeframe, window in causal_window.windows.items()
+            },
+            cutoff=as_of,
+        )
+    except SequenceWindowInputError as error:
+        return error.status
+    if (
+        validated_window.symbol != eligibility.symbol
+        or validated_window.market != eligibility.market
+    ):
+        return "misaligned"
+    for timeframe, prediction in predictions.items():
+        window = validated_window.windows[timeframe]
+        if prediction.feature_window_end != window.end_ts:
+            return "misaligned"
+    return None
 
 
 def _abstain(

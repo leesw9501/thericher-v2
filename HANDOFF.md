@@ -1911,3 +1911,25 @@ produces a terminal recovery receipt so an eligible session cannot disappear as
 a false success. Claude's drift check was `supported-with-limits`. This is not
 a model, target, PnL, GPU, Paper, or live claim. Engine preparation continues
 independently while the Data-owned future-session worker accumulates records.
+
+## Causal MTF Prediction-Window Binding
+
+`causal-mtf-prediction-window-binding-v1` is complete as a pure Engine
+contract extension. `propose_target_exposure` now accepts an optional existing
+`CausalMultiTimeframeSequenceWindow`; when supplied, it rebuilds the selected
+completed-bar windows through the existing causal validator and requires every
+prediction's `feature_window_end` to equal that timeframe's actual final bar
+end. It also checks the identity reconstructed from the contained bars, so a
+QQQ header cannot hide an internally consistent SPY window. A forged H1 cutoff
+stamp, header/bar identity mismatch, or future bar becomes a categorical
+abstain rather than an apparently fresh expert vote. The existing injected MTF
+consumer that already owns a causal window now supplies it to the policy.
+
+The injected CPU-only compatibility smoke confirmed the existing momentum
+producer aligns all five timeframes with its causal windows. Claude's verdict
+was `supported-with-limits`: do not add another evidence bundle or duplicate
+freshness/missing/future checks, and do not bind source or feature-schema IDs
+through untyped mutable prediction metadata. No provider, data cache, target,
+return, PnL, training, GPU, artifact, Paper/local-paper, broker, or live route
+was opened. The QQQ/SPY observer remains at `0` forward records and continues
+independently; it is not a foreground wait.

@@ -10,11 +10,13 @@ import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data import SessionWindow
+from thericher_v2.data.resample import resample_session_bars
 from thericher_v2.models.multitimeframe_momentum import (
     MultiTimeframeMomentumConfig,
     MultiTimeframeMomentumSpec,
     build_multitimeframe_momentum_evidence,
 )
+from thericher_v2.models.sequence_window import build_causal_multitimeframe_sequence_window
 from thericher_v2.models.target_position_policy import (
     OpportunityEligibility,
     TargetPositionPolicyConfig,
@@ -83,11 +85,20 @@ def test_missing_terminal_source_bar_fails_closed_as_incomplete() -> None:
 
 
 def test_generated_evidence_flows_to_the_target_policy_without_any_order_path() -> None:
+    bars = _bars()
     evidence = build_multitimeframe_momentum_evidence(
-        _bars(),
+        bars,
         session=_SESSION,
         config=_config(),
         as_of=_SESSION.close_ts,
+    )
+    causal_window = build_causal_multitimeframe_sequence_window(
+        {
+            timeframe: resample_session_bars(bars, timeframe, session=_SESSION).bars
+            for timeframe in _TIMEFRAMES
+        },
+        lookbacks={spec.timeframe: spec.lookback + 1 for spec in _config().experts},
+        cutoff=_SESSION.close_ts,
     )
     eligibility = OpportunityEligibility(
         opportunity_ref="ref:" + "1" * 64,
@@ -119,6 +130,7 @@ def test_generated_evidence_flows_to_the_target_policy_without_any_order_path() 
             decision_ttl=timedelta(minutes=2),
         ),
         as_of=_SESSION.close_ts,
+        causal_window=causal_window,
     )
 
     assert (proposal.action, proposal.input_status, proposal.reason) == (

@@ -572,3 +572,19 @@ required event evidence is absent.
   `not_observed` session from an unavailable observer, so the scheduler cannot
   report an eligible missing input as a completed record. This adds no approval
   gate and leaves the foreground free to dispatch Engine work.
+
+## Causal MTF Prediction-Window Binding
+
+- **Ready:** the pure causal-to-prediction binding is complete; a next Engine
+  input/feature preparation package can proceed now without a market-time,
+  collector, GPU, or operator dependency.
+- **Owned:** Engine owns the optional policy input binding and its pure tests.
+  Data continues the 0-record QQQ/SPY observer independently; Execution has no
+  route, and Research Steward has no GPU-eligible campaign.
+- **Due:** none in the foreground. The observer's next fresh session remains
+  owned by its installed Data schedule, not by this Engine package.
+- **Improvement:** slow-timeframe expert timestamps and the bar-reconstructed
+  identity are now checked against revalidated completed bars where an actual
+  causal window exists. The existing consumer that owns one passes it through;
+  the policy's freshness or missing-data rules remain single-sourced and no new
+  evidence framework was added.

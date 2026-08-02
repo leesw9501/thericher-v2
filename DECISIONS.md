@@ -8655,3 +8655,29 @@ falsification-first review was `supported-with-limits` and required this
 data-only terminal distinction. This changes neither broker authority nor the
 historical 21-session exclusion, and creates no model, target, PnL, GPU, Paper,
 or live claim.
+
+## 2026-08-01 - Bind optional multi-timeframe predictions to actual causal bars
+
+Decision: extend the existing target-position policy with an optional
+`CausalMultiTimeframeSequenceWindow`. When a caller owns that window, the
+policy reuses the existing causal-window validator and rejects a prediction
+unless its symbol, market, decision cutoff, and exact per-timeframe
+`feature_window_end` agree with the revalidated completed bars. Existing
+missing, duplicate, generated-at, future, and freshness behavior remains in
+the single existing policy path.
+
+Reason: a prediction previously self-reported its feature end, so a slow H1 or
+3h expert could claim the decision cutoff while actually using an older or
+partial bar. The real existing momentum producer passed the exact-equality
+smoke, while a forged slow-timeframe cutoff stamp fails closed. Claude returned
+`supported-with-limits`: a new evidence bundle would duplicate existing
+contracts, and source/feature-schema binding cannot truthfully use mutable
+untyped `ModelPrediction.metadata`. This is an opt-in structural boundary, not
+a model-selection, training, GPU, target, PnL, Paper, broker, or live decision.
+
+Independent review additionally required the policy to compare the identity
+reconstructed from the contained bars after revalidation, rather than trusting
+the outer window header. The sole existing target-policy consumer that already
+owns a causal window now passes it explicitly. Other consumers without a
+causal window remain unchanged until a separate input-boundary package can
+supply one truthfully.
