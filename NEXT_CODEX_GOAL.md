@@ -8,12 +8,12 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `kis-nas-d1-intraday-regime-hmm-replication-v1`.
+Build `kis-nas-d1-intraday-regime-hmm-persistence-v1`.
 
-Run exactly one date-disjoint, source-local replication of the frozen NAS D1
-HMM preflight. It must reuse the fixed family semantics without selecting a
+Run exactly one date-disjoint, source-local persistence check of the frozen NAS
+D1 HMM fit. It must reuse the fixed family semantics without selecting a
 window, state count, threshold, initialization, or cost after seeing the first
-screen or the replication labels.
+screen or the later labels. It is not an independent replication of the fit.
 
 ## Boundaries
 
@@ -30,28 +30,38 @@ screen or the replication labels.
 
 ## Required Work
 
-1. Ask Claude for a concise falsification-first review before opening the
-   date-disjoint labels. Treat a failed review as `review_unavailable`, never
-   as agreement or a hold.
-2. Freeze one exact contract before replication labels:
+1. Preserve the completed Claude `uncertain` review: call this a persistence
+   check, not a replication. A failed later review is `review_unavailable`,
+   never agreement or a hold.
+2. Commit the fixed implementation before the local-cache runner materializes
+   any later labels. Its runner must first write an immutable source-safe
+   precommit containing the exact config/code hash, then load data.
+3. Freeze one exact contract before later labels:
    - re-fit only the existing two-state diagonal Gaussian HMM on `0..599` and
      derive each long-state map from fit labels `0..598` only;
-   - never reopen or use the original `622..998` screen labels for a decision;
+   - build an input that retains only train bars `0..599` and tail bars
+     `1000..1509`; it must expose neither original screen bars nor labels
+     `600..999` to any model/evaluation helper;
    - use completed source bars `1000..1019` solely to warm the already-frozen
      forward filter, then make decisions `t=1020..1508` for target bar `t+1`;
    - retain the existing same-session ratio features, 10/15/20bp cost band,
      15bp primary all-long comparator, 1,000 joint ten-session-block label
-     null, 15 percent extreme control, and source-safe artifact policy.
-3. Add only the minimal offline leaf/runner extension needed. Make the
+     null, 15 percent extreme control, and source-safe artifact policy;
+   - fail unless the one pooled 15bp statistic clears all-long and null P95 by
+     the fixed margin and every symbol has the fixed availability count with
+     no negative 15bp candidate-versus-all-long relation.
+4. Add only the minimal offline leaf/runner extension needed. Make the
    original preflight receipt an immutable lineage input; do not persist bars,
    dates, labels, probabilities, fitted parameters, weights, or numeric
    performance values.
-4. Add focused tests for no original-screen-label access, tail boundary
+5. Add focused tests for precommit-before-load ordering, no original-screen
+   bar/label access, tail boundary
    geometry, `t -> t+1` causality, frozen state mapping, joint-null alignment,
    extreme/multiplier/prefix controls, artifact redaction, and no
    network/credential/broker/GPU path.
-5. Run one local-cache CPU replication smoke if the frozen input is ready. The
-   terminal category is `input_unavailable`, `replication_falsified`, or
+6. Run one local-cache CPU persistence smoke only after the precommit code is
+   committed and pushed. The terminal category is `input_unavailable`,
+   `persistence_falsified`, or
    `source_local_non_promoting`; only the final category clears the fixed
    all-long and null relations. Update the Data, Engine, Steward,
    orchestration, handoff, and decision stateboards with the Claude verdict,
