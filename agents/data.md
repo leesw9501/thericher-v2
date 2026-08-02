@@ -940,3 +940,13 @@ the requested `NONE` setting, corporate-action evidence, source availability
 time, and PIT state remain unverified. A future Data package may test a new
 source-vintage stability fact, but this completed consumer is not a reason to
 recollect or alter the immutable snapshot.
+
+The direct `norgate-kis-d1-bar-conformance-v1` consumer is also complete as
+`input_unavailable`. It reattested the fixed Norgate and pinned KIS `SPY/QQQ`
+catalogs, found 501 common sessions per symbol, and passed every quiet-stratum
+relationship/shift comparison. Both sources had zero fixed discontinuity events,
+so the required event-adjacent evidence is absent. Preserve the result as a
+current-vintage, aggregate-only relationship fact; it does not qualify PIT,
+corporate actions, availability, source interchangeability, ranking, model,
+or Paper use. A later Data package needs a distinct event-bearing or
+source-vintage hypothesis, not a replay of this empty event stratum.

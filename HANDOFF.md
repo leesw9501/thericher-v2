@@ -1571,3 +1571,24 @@ paper action, network request, or live route. A later package must be a
 distinct frozen hypothesis or a source-stability check; this outcome is not a
 reason to upgrade the raw source's availability, PIT, adjustment, corporate-
 action, ranking, or Paper status.
+
+## Norgate/KIS D1 Bar Conformance Outcome (2026-08-02)
+
+The offline `norgate-kis-d1-bar-conformance-v1` reattested the fixed Norgate
+snapshot and the pinned KIS `SPY/QQQ` private catalog without a KIS client,
+credential, network, account, order, broker, local-paper, GPU, or model path.
+Across 501 common sessions per symbol, every quiet-stratum field passed the
+frozen 95-percent aligned-agreement and shifted-date discrimination tests;
+aligned relationship agreement ranged from about 99.6 to 100 percent while
+the shifted controls ranged from about 2.0 to 9.4 percent. The source-safe
+receipt is `sha256:30914a1c5d0c70f9a5b3bca20cff0242ab8bc1f2bf5291a77512ebcdd6a46f9c`.
+
+Both inputs had zero frozen 20-percent discontinuity events, so every required
+event-adjacent stratum was empty and the aggregate result is
+`input_unavailable`. This is useful current-vintage quiet-bar evidence only;
+it does not establish point-in-time availability, corporate-action correctness,
+tradability, source interchangeability, model eligibility, GPU eligibility,
+or a Paper consequence. The source-safe receipt contains aggregates and hashes
+only. The reviewed implementation uses common-session predecessors, matched
+shift anchors, fail-closed noncommon-event projection, and no-clobber external
+receipt writes; those plumbing improvements make no source-quality claim.

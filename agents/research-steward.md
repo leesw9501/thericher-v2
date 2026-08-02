@@ -143,3 +143,9 @@ candidate, or validation allocation; it creates no checkpoint, GPU appointment,
 sealed-evaluation spend, or ensemble lineage. The GPU remains free for a later
 independently eligible campaign, not for a retune of this fixed source-local
 rule.
+
+The Norgate/KIS D1 bar-conformance result is `input_unavailable` because its
+event-adjacent source check has zero observations. Its quiet-bar agreement is
+data-contract evidence only; it creates no model artifact, GPU appointment,
+or sealed-evaluation allocation. The GPU remains free for a distinct frozen
+campaign with an eligible source and independent evaluation contract.

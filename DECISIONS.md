@@ -8360,3 +8360,21 @@ reused as a selection pass. The next package must state a distinct hypothesis
 or independently test source stability. This preserves useful negative or
 inconclusive evidence without turning it into a new approval process or
 blocking independent KIS, Data, Engine, or Execution work.
+
+## 2026-08-02 - Close direct Norgate/KIS D1 bar conformance without source promotion
+
+Decision: retain `norgate-kis-d1-bar-conformance-v1` as
+`input_unavailable`. The pinned offline sources have 501 common D1 sessions
+per required symbol. All quiet-stratum price-relationship and volume-ratio
+checks passed their frozen 5-bp/5-percent tolerances and beat both equal-count
+one-session shift controls, but neither source produced a 20-percent raw
+discontinuity. The required event-adjacent falsifier therefore had zero
+samples and cannot support a conformance pass.
+
+The result is limited to present-vintage quiet-bar relationship agreement. It
+does not repair the existing adjustment, corporate-action, PIT, availability,
+or source-identity limits; it cannot qualify a model, GPU campaign, ensemble,
+Paper input, or live route. Review hardened common-predecessor construction,
+equal-anchor shifts, noncommon-event projection, nested-path containment, and
+exclusive immutable receipt creation before the real run. These are correctness
+repairs, not a new framework or approval boundary.

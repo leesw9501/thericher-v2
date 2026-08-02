@@ -880,3 +880,11 @@ ensemble, GPU, Paper, or promotion claim. Keep the exact split, rule,
 comparator, and validation slice closed to retuning. The next Engine package
 must be a distinct hypothesis or an independently specified source-stability
 falsification.
+
+`norgate-kis-d1-bar-conformance-v1` is closed as `input_unavailable`, not a
+model input qualification. The present-vintage quiet D1 relationships match on
+the fixed Norgate/KIS `SPY/QQQ` overlap, but the required discontinuity-adjacent
+stratum has no observations. It creates no candidate, training, GPU
+appointment, ensemble, sealed evaluation, KIS Paper input, or strategy change.
+Do not relax the event condition after observing the empty stratum; a later
+Engine campaign requires its own source and causal contract.

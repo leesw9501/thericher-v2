@@ -358,3 +358,18 @@ statements above; their historical facts remain scoped to their original work.
   from target signs and emits only aggregate evidence. It advances the engine
   loop without turning a small directional difference into a model or Paper
   promotion path.
+
+## Norgate/KIS D1 Conformance Outcome (2026-08-02)
+
+- **Ready:** this exact offline source-value package is complete; a distinct
+  Engine or Data package is ready now without market-time, KIS, GPU, or retry
+  dependence.
+- **Owned:** Data retains the immutable source limitations and Engine retains
+  the no-promotion consequence. Research Steward has no allocation; Execution
+  has no dependency.
+- **Due:** none. The 501-session quiet comparison reattests idempotently;
+  zero event-adjacent observations are an input fact, not a timer or hold.
+- **Improvement:** common-session predecessors, equal-anchor shift probes, and
+  no-clobber external receipts make the falsifier replayable without creating a
+  generic framework. Quiet agreement cannot promote the sources while the
+  required event evidence is absent.
