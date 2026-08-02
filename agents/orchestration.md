@@ -390,3 +390,18 @@ required event evidence is absent.
   CUDA reattachment closes missing custody outcomes, and summary-less `.npz`
   files fail closed. This improves recovery without making a new scheduler,
   gate, or model-selection path.
+
+## KIS D1 Candle Noise-Floor Outcome (2026-08-02)
+
+- **Ready:** the CPU signal/noise-floor package is complete. Its fixed
+  actual-label logistic result is `noise_not_separable`, so an encoder
+  comparison on this exact source/split is closed. Independent Data, Paper,
+  and distinct Engine packages remain ready.
+- **Owned:** Engine retains the closed source-local result. Research Steward
+  recorded no GPU or sealed-evaluation spend and released no new dependency.
+  Execution has no route or consequence.
+- **Due:** none. The Docker run and immutable receipt completed now; no market
+  clock, source retry, or GPU wait owns the foreground.
+- **Improvement:** a cheap fixed-label null and seed-spread check now rejects
+  an underpowered encoder expansion before consuming GPU time, without adding
+  a general model gate or an operator decision.

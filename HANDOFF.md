@@ -1626,3 +1626,27 @@ Claude as `unsupported` for execution: its fixed 98-row window would likely
 produce only about six to nine active rows, below the predeclared 30-row floor.
 Retain that as a source-coverage requirement, not as a failed rule, next goal,
 or wait on independent Engine and Paper work.
+
+## KIS D1 Candle Noise-Floor Outcome (2026-08-02)
+
+The CPU-only `kis-d1-candle-noise-floor-v1` campaign completed against the
+same attested six-symbol KIS D1 development source, with contract
+`sha256:ef296e312e5a1ddc58ac8884f176a330f928020153ddc2da7496a01379ed08f5`,
+summary `sha256:e84540377f7f1985a325d5e730334ed4c3d9a941fcb30a12737e0de3ab70b48e`,
+and custody outcome
+`sha256:00a5abcd957b67733560dc179a2238cfe0b0dd9a17208e0389c13b4589b99c24`.
+
+It used only 32 causal same-candle OHLC ratios, a frozen 1,000 / 33 / remaining
+development split, five fixed-seed L2 logistic fits, and 64 within-symbol
+contiguous-block label nulls. The result is `noise_not_separable`: the
+actual-label median balanced-accuracy signal did not clear the precommitted
+null-margin and seed-spread kill test. The external receipt has structural
+counts, hashes, and metric categories only; it retains no raw bars, dates,
+features, labels, probabilities, coefficients, numeric metrics, credentials,
+or broker data.
+
+No CUDA appointment, LSTM/TCN/Transformer training, checkpoint, sealed
+evaluation, KIS/network call, account, order, local-paper, PnL, or live action
+occurred. This closes only the proposed encoder-preflight path for this exact
+source/split; it does not prohibit a distinct eligible Engine campaign or the
+independent KIS Paper lifecycle work.

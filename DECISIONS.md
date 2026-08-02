@@ -8405,3 +8405,21 @@ pullback rule, not because of overlap but because its expected six-to-nine
 active rows cannot distinguish a 5/10/20-bp cost effect from noise. Preserve a
 30-active-row floor and treat more Norgate D1 coverage as an input requirement;
 do not consume the current small segment as a pretend alpha test.
+
+## 2026-08-02 - Require a passed source-local noise floor before encoder comparison
+
+Decision: do not dispatch an LSTM, TCN, or Transformer architecture comparison
+against the current six-symbol KIS D1 development source after the fixed
+`kis-d1-candle-noise-floor-v1` baseline closed `noise_not_separable`. The
+campaign used adjustment-robust same-candle ratios rather than cross-session
+returns, a chronological 1,000 / 33 / remaining split, five fixed logistic
+seeds, and 64 within-symbol contiguous-block nulls. Its actual-label result
+did not clear the frozen null-margin plus seed-spread falsifier.
+
+Reason: Claude's `uncertain` challenge correctly identified current-listing
+survivorship, unqualified corporate-action semantics, and low effective
+cross-sectional breadth. A more expressive encoder would consume scarce GPU
+time while the simpler target association remains indistinguishable from its
+own noise control. This is a scoped research conclusion, not a model failure,
+data prohibition, GPU-idle rule, Paper gate, or operator-approval boundary.
+Independent eligible Engine, Data, and KIS Paper work continues.

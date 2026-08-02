@@ -910,3 +910,21 @@ returned `unsupported` before target access: its unused 98-row segment would
 likely yield only six to nine active rows. Preserve a 30-active-row floor and
 record this as a longer-D1-coverage need, not as a rule rejection or a queue
 hold on independent Engine/Paper work.
+
+## KIS D1 Candle Noise-Floor Outcome
+
+`kis-d1-candle-noise-floor-v1` completed CPU-only as `noise_not_separable`.
+It used only 32 causal same-candle OHLC ratios from the attested six-symbol
+development source, a fixed 1,000 / 33 / remaining chronology, five L2
+logistic seeds, and 64 within-symbol contiguous-block label nulls. The
+actual-label association did not clear the frozen null-margin and seed-spread
+kill test. Its aggregate-only external summary is
+`sha256:e84540377f7f1985a325d5e730334ed4c3d9a941fcb30a12737e0de3ab70b48e`.
+
+Do not retune the candle features, split, C, threshold, seed set, null block
+size, or kill margin, and do not dispatch LSTM/TCN/Transformer arms against
+this exact source/split. This is not a broad ban on model research: a distinct
+source-local hypothesis, fresh source coverage, or independent Paper-engine
+work can proceed without consuming this closed family. No weights, GPU,
+sealed evaluation, KIS/network, account, order, local-paper, PnL, or live path
+was involved.

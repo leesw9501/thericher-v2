@@ -165,3 +165,13 @@ The initial wiring-only frozen record is separately closed as
 free again. The proposed SPY pullback rule is not dispatched because its
 pre-target active-row forecast is below 30; it does not consume this appointment
 or create a reason to retrain the representation model.
+
+## Candle Noise-Floor CPU Closure (2026-08-02)
+
+`kis-d1-candle-noise-floor-v1` received no GPU appointment and opened no sealed
+evaluation. Its five fixed logistic seeds and 64 block-null calculations ran
+CPU-only and closed `noise_not_separable` with external summary
+`sha256:e84540377f7f1985a325d5e730334ed4c3d9a941fcb30a12737e0de3ab70b48e`.
+The GPU remains available for a different frozen campaign with a distinct,
+eligible source/contract. This closure does not authorize a retry, retune, or
+encoder comparison for the same source/split.

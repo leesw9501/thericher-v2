@@ -8,106 +8,108 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build and run `kis-d1-causal-representation-feasibility-v1`: one bounded,
-offline Engine Research campaign that proves a single causal TCN can consume
-the existing KIS-shaped completed daily-bar input, train reproducibly in the
-Docker research runtime, and keep its generated weights outside Git.
+Build and run `kis-d1-candle-noise-floor-v1`: one bounded CPU-only Engine
+Research campaign that determines whether a fixed, adjustment-robust
+daily-candle logistic baseline has validation association distinguishable from
+its predeclared contiguous-block label null on the existing KIS-shaped D1
+six-symbol development source.
 
-This is real model-engineering work, but it is not an alpha, forecasting,
-profitability, PnL, ranking, ensemble, Paper-input, order, account, or live
-claim. Its result is only a reproducible causal representation/runtime fact for
-one frozen source-local input.
+This is a signal/noise-floor and data-shape result only. It cannot select an
+architecture, claim alpha, profitability, PnL, ranking, portfolio allocation,
+ensemble membership, Paper input, broker action, or live behavior. A later
+encoder campaign requires a new objective even if this one passes.
 
 ## Frozen Contract
 
 - Reattest only `load_kis_paper_daily_history_sequence_input` against
   `kis.paper.private.daily.nas.history.panel-v1` and exact dataset hash
   `sha256:7e8d6fe54dd5252fc4b9548b70e3bb31aefcd282922a50c1ca7c58a94d57dc8e`.
-  Use only its six-symbol completed-D1 development phase (`1,510` common
-  sessions): `AAPL`, `AMZN`, `GOOGL`, `META`, `MSFT`, and `NVDA`. The purge and
-  validation phases may be reattested by the existing loader but must not be
-  materialized into model examples or used for model selection.
-- Derive one in-memory, causal `32`-session feature window per symbol from
-  completed bars only. The fixed features are close-to-prior-close log return,
-  high-to-open log ratio, low-to-open log ratio, close-to-open log ratio, and
-  log volume change. Normalize from the predeclared training prefix only; do
-  not persist feature values or raw bars.
-- The self-supervised task masks the final `4` feature rows of each input
-  window. The causal TCN receives only the preceding visible rows plus an
-  explicit mask channel and reconstructs the masked rows. Targets are used
-  solely in-memory for optimization; they are not trade labels, predictions,
-  scores, or a backtest target.
-- Use one fixed architecture: three causal dilated TCN blocks, `32` hidden
-  channels, kernel size `3`, seed `20260802`, AdamW learning rate `0.001`,
-  weight decay `0.0001`, batch size `256`, and at most `192` optimizer steps.
-  Do not add an architecture matrix, window sweep, threshold sweep, model
-  selection, or ensemble.
-- Freeze one internal development-only geometry before target access: the
-  earliest `1,000` development sessions supply normalization and training
-  examples; the next `32` sessions are unused purge; the remaining development
-  sessions supply a diagnostic reconstruction pass only. A finite diagnostic
-  loss is a runtime fact, not a score or comparison result.
-- Run a four-step CPU smoke first. If it passes and Docker CUDA is available,
-  run exactly one bounded CUDA job under the existing `research` Compose
-  service. If CUDA is unavailable, emit `runtime_unavailable`; do not fake a
-  GPU result or extend/retry indefinitely. Stop a CUDA job at `192` steps or
-  five minutes, whichever comes first.
-- Write one immutable campaign contract, CPU receipt, CUDA-or-unavailable
-  receipt, and safe non-pickle `.npz` weight artifact only under
-  `D:\thericher-v2\model-artifacts\research\kis-d1-causal-representation-feasibility-v1`.
-  Receipts may contain hashes, shapes, architecture identity, device category,
-  step counts, and categorical finite/decreased-loss facts, but no raw bars,
-  dates, prices, features, targets, predictions, numeric losses, PnL,
-  credentials, account data, or broker payloads.
+  Use its completed-D1 development phase only for `AAPL`, `AMZN`, `GOOGL`,
+  `META`, `MSFT`, and `NVDA`. Do not materialize the source's named purge or
+  validation phases.
+- Each decision uses exactly 32 prior completed D1 candles. Its input contains
+  only same-candle log high/open, log low/open, and log close/open values. It
+  excludes price levels, prior-close returns, cross-session gaps, volume,
+  corporate-action fields, and any data not available by the previous close.
+  This narrows, but does not qualify, the source's unverified adjustment and
+  availability semantics.
+- The in-memory target is only the next completed D1 candle's open-to-close
+  direction. No target, prediction, probability, raw bar, date, price, feature
+  value, or per-symbol result may be written to Git or an artifact.
+- Freeze source-time geometry before target access: per symbol, source sessions
+  `0..999` supply training examples (anchors `31..998`), sessions `1000..1032`
+  are a 33-session purge, and sessions `1033..1509` supply validation examples
+  (anchors `1064..1508`). Missing identities, nonconsecutive sessions, invalid
+  OHLC ratios, or insufficient rows end `input_unavailable` before fitting.
+- Fit exactly five CPU-only L2 logistic models with the existing project
+  dependency, fixed `C=0.1`, no class weighting, threshold `0.50`, and seeds
+  `20260802..20260806`. Normalize only from the pooled training examples. The
+  fixed non-model comparator is always-long.
+- Build exactly 64 validation-label nulls by permuting labels in independent,
+  within-symbol contiguous blocks of ten decision sessions. Keep each model's
+  predictions fixed while scoring the null labels. Do not shuffle timestamps,
+  pool symbols before permutation, tune block length, tune `C`, alter the
+  threshold, or add another model family after observing results.
+- The strongest kill test is precommitted: `noise_not_separable` unless the
+  median actual-label balanced accuracy exceeds the 95th-percentile block-null
+  balanced accuracy by at least 0.015 and the five-seed spread is strictly less
+  than that excess. A pass is still source-local, non-promoting CPU evidence;
+  it only makes a later, separately frozen encoder-feasibility objective
+  eligible for consideration.
+- Write one immutable contract and aggregate-only result below
+  `D:\thericher-v2\model-artifacts\research\kis-d1-candle-noise-floor-v1`.
+  Retain hashes, counts, categorical outcome, seed-count, block/null geometry,
+  and rounded aggregate metric categories only. Generated artifacts remain
+  outside Git; this CPU objective writes no model checkpoint.
 
 ## Boundaries
 
-- Do not call KIS, Norgate, Tiingo, or any network provider; read no `.env` or
-  credentials.
-- Do not access accounts, positions, orders, local-paper, brokers, or live
-  behavior. Do not make this model available to Execution or Paper work.
-- Do not use the historical KIS validation phase, prior candidate outputs,
-  cross-source data, or a previously closed validation slice to choose any
-  design or report an advantage.
-- Do not add a generic training framework, scheduler, dashboard, public model
-  dependency, or runtime replacement. Reuse the existing Docker research
-  image and lazy PyTorch import boundary.
-- Do not write raw data, model artifacts, or generated receipts to Git.
+- Do not call KIS, Norgate, Tiingo, or another network provider; read no
+  `.env`, credentials, account, position, or order state.
+- Do not submit, modify, cancel, prepare, replay, or simulate any Paper or
+  broker order. Do not enable or read any live route.
+- Do not use GPU, train an LSTM/TCN/Transformer, reuse the completed causal-TCN
+  weights, open a sealed holdout, or start a scheduler. GPU work is deferred
+  only for this exact next-step decision, not as a global resource hold.
+- Do not add a generic benchmark framework, dashboard, public dependency, or
+  data-cleaning/source-promotion path. Keep one typed input preparation, one
+  fixed logistic/null evaluation, one runner, and focused tests.
 
 ## Required Work
 
-1. Engine Research: implement the fixed loader-to-causal-TCN campaign, safe
-   serialization, and runner. Keep the module small and import-pure until its
-   run function is invoked.
-2. Research Steward: freeze the external campaign custody record before the
-   CUDA appointment and close it with its categorical result. GPU work is
-   justified only by the frozen contract above, not utilization alone.
-3. Validation: add focused tests for source reattestation, causal masking,
-   training-prefix normalization, phase exclusion, deterministic CPU smoke,
-   CUDA-unavailable handling, external artifact containment/immutability, safe
-   serialization, and absence of credential/network/KIS/broker/Paper/live
-   access.
-4. Run the CPU smoke and, when available, the bounded Docker CUDA run. Update
-   only the relevant stateboards, handoff, decisions, and orchestration with
-   source-safe categorical evidence. Record the next distinct CPU rule
-   candidate as a one-line Engine queue item; do not implement it in this
-   objective.
+1. Engine Research: implement the typed candle-only input preparation, fixed
+   logistic/null runner, aggregate-only immutable evidence, and source-safe
+   outcome categories.
+2. Research Steward: record this as CPU-only, with no GPU appointment or
+   sealed-evaluation spend. Preserve the completed representation artifact as
+   a separate non-reusable runtime result.
+3. Validation: add focused tests for source hash pinning, chronological split
+   and purge exclusion, candle-ratio-only features, train-only normalization,
+   block-local null construction, fixed kill test, artifact redaction and
+   immutability, and absence of network/KIS/credential/account/order/Paper/
+   broker/GPU/live surfaces.
+4. Run the real CPU campaign against the retained D: source. Update only the
+   relevant stateboards, handoff, decisions, and orchestration with source-safe
+   aggregate facts. Record any encoder follow-up only as a conditional next
+   research item; do not implement it here.
 
 ## Claude Context
 
-Claude's new recommendation was an additional KIS/Norgate adjustment
-reconciliation. Codex does not select it first because the immediately prior
-goal already completed a narrower direct conformance test and this company
-objective is explicitly engine development. Temporary Validation instead
-recommended this causal self-supervised feasibility campaign as
-`supported-with-limits`: it uses a new non-promoting task, avoids reusing
-historical validation targets, and has a clear runtime/artifact kill test.
-The campaign remains non-promoting even if CPU and CUDA both complete.
+Claude returned `uncertain` for directly comparing LSTM, TCN, and Transformer
+arms on this source. It identified current-listing survivorship, unqualified
+corporate-action handling, reused source-slice selection pressure, and roughly
+one-to-two effective cross-sectional units as the material concerns. Codex
+accepts its bounded recommendation: first characterize the CPU noise floor
+with a simple fixed baseline and block-permuted-label null. The same-candle
+ratios deliberately avoid cross-session split jumps, but do not promote the
+source or resolve its broader limitations. A failed null test ends this family;
+a passed test does not rank models or authorize GPU/Paper work.
 
 ## Verification
 
+Run focused tests, then:
+
 ```powershell
-uv run --extra dev pytest -q <focused tests>
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
@@ -117,7 +119,7 @@ docker compose --env-file .env.example --profile research config --quiet
 
 ## Completion
 
-Report the frozen causal contract, CPU/CUDA categorical outcomes, artifact
-hashes and root, tests, commit hash, intentional omissions, and the next
+Report the frozen source/split/null contract, source-safe CPU result, external
+artifact hash/root, tests, commit hash, intentional omissions, and the next
 recommended objective. Replace this file with exactly one next objective only
 after completion evidence is committed and pushed.
