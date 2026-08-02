@@ -8701,3 +8701,22 @@ QQQ header with foreign slow/all-frame bars and invalid selected bars becomes
 categorical unready evidence. The Claude CLI call timed out and is recorded as
 `review_unavailable`, not a verdict or a hold. This is not a data, target,
 return, PnL, training, GPU, artifact, Paper, broker, or live decision.
+
+## 2026-08-01 - Bind the frozen consensus replay to one causal input window
+
+Decision: retain the fixed consensus replay's raw completed-1m builder only as
+an unready compatibility preflight. For ready evidence, reconstruct one
+canonical five-timeframe window from the same completed prefix, use the direct
+momentum adapter as the sole ready prediction source, require exact evidence
+equality, and pass that exact window to the existing target-position policy.
+
+Reason: this extends the causal input/output integrity chain into the only
+existing frozen multi-timeframe consumer without changing its strategy,
+resampling rule, data, target, cost, sizing, source provenance, or digest. A
+reconstruction/direct mismatch fails before policy; an unready raw preflight
+keeps the existing no-window abstention path. The fixed 20-session digest and
+typed local fixture result remain unchanged. Claude timed out as
+`review_unavailable`; independent review found no semantic mismatch when the
+completed prefix, canonical order, and `lookback + 1` geometry are preserved.
+This creates no provider, account, order, Paper action, PnL, training, GPU,
+artifact, or live decision.

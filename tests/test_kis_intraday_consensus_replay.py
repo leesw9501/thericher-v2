@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import socket
 import urllib.request
 from dataclasses import replace
@@ -132,6 +133,190 @@ def test_decision_ignores_post_as_of_bars_even_when_terminal_outcome_changes() -
     assert shifted.proposal_reason == original.proposal_reason
     assert shifted.receipt == original.receipt
     assert shifted.bridge == original.bridge
+
+
+def test_ready_decision_uses_one_causal_window_for_adapter_and_policy(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _deny_external_access(monkeypatch)
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+    adapter_windows: list[object] = []
+    policy_windows: list[object | None] = []
+    original_adapter = consensus_replay.build_multitimeframe_momentum_evidence_from_causal_window
+    original_policy = consensus_replay.propose_target_exposure
+
+    def capture_adapter(*args: object, **kwargs: object) -> object:
+        adapter_windows.append(args[0])
+        return original_adapter(*args, **kwargs)
+
+    def capture_policy(*args: object, **kwargs: object) -> object:
+        policy_windows.append(kwargs.get("causal_window"))
+        return original_policy(*args, **kwargs)
+
+    monkeypatch.setattr(
+        consensus_replay,
+        "build_multitimeframe_momentum_evidence_from_causal_window",
+        capture_adapter,
+    )
+    monkeypatch.setattr(consensus_replay, "propose_target_exposure", capture_policy)
+
+    decision = consensus_replay._build_session_decision(
+        bars,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+
+    assert decision.proposal_action == "enter"
+    assert len(adapter_windows) == len(policy_windows) == 1
+    assert policy_windows[0] is adapter_windows[0]
+
+
+def test_bound_decision_ignores_post_as_of_bars(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+    as_of = session.window.open_ts + consensus_replay.KIS_INTRADAY_CONSENSUS_DECISION_OFFSET
+    changed = tuple(
+        _shift_bar(bar, Decimal("50")) if bar.start_ts >= as_of else bar for bar in bars
+    )
+    adapter_windows: list[object] = []
+    policy_windows: list[object | None] = []
+    original_adapter = consensus_replay.build_multitimeframe_momentum_evidence_from_causal_window
+    original_policy = consensus_replay.propose_target_exposure
+
+    def capture_adapter(*args: object, **kwargs: object) -> object:
+        adapter_windows.append(args[0])
+        return original_adapter(*args, **kwargs)
+
+    def capture_policy(*args: object, **kwargs: object) -> object:
+        policy_windows.append(kwargs.get("causal_window"))
+        return original_policy(*args, **kwargs)
+
+    monkeypatch.setattr(
+        consensus_replay,
+        "build_multitimeframe_momentum_evidence_from_causal_window",
+        capture_adapter,
+    )
+    monkeypatch.setattr(consensus_replay, "propose_target_exposure", capture_policy)
+
+    original = consensus_replay._build_session_decision(
+        bars,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+    shifted = consensus_replay._build_session_decision(
+        changed,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+
+    assert shifted.proposal_action == original.proposal_action
+    assert shifted.proposal_reason == original.proposal_reason
+    assert shifted.receipt == original.receipt
+    assert shifted.bridge == original.bridge
+    assert len(adapter_windows) == len(policy_windows) == 2
+    assert policy_windows[0] is adapter_windows[0]
+    assert policy_windows[1] is adapter_windows[1]
+    assert adapter_windows[0] == adapter_windows[1]
+
+
+def test_malformed_source_never_calls_adapter_or_binds_a_policy_window(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _deny_external_access(monkeypatch)
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts
+        and bar.end_ts <= session.window.close_ts
+        and bar.start_ts != session.window.open_ts
+    )
+    adapter_calls: list[object] = []
+    policy_windows: list[object | None] = []
+    original_policy = consensus_replay.propose_target_exposure
+
+    def fail_if_adapter_called(*args: object, **kwargs: object) -> object:
+        adapter_calls.append(args)
+        raise AssertionError("malformed source must not construct direct causal evidence")
+
+    def capture_policy(*args: object, **kwargs: object) -> object:
+        policy_windows.append(kwargs.get("causal_window"))
+        return original_policy(*args, **kwargs)
+
+    monkeypatch.setattr(
+        consensus_replay,
+        "build_multitimeframe_momentum_evidence_from_causal_window",
+        fail_if_adapter_called,
+    )
+    monkeypatch.setattr(consensus_replay, "propose_target_exposure", capture_policy)
+
+    decision = consensus_replay._build_session_decision(
+        bars,
+        session=session.window,
+        session_date=_SESSION_DATES[0],
+        upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+    )
+
+    assert decision.proposal_reason == "opportunity_non_contiguous"
+    assert decision.bridge.status == "no_intent"
+    assert adapter_calls == []
+    assert policy_windows == [None]
+
+
+def test_ready_direct_evidence_disagreement_fails_before_policy(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    catalog = _catalog()
+    session = us_equity_2026_session(_SESSION_DATES[0])
+    assert session is not None
+    bars = tuple(
+        bar
+        for bar in catalog.bars
+        if bar.start_ts >= session.window.open_ts and bar.end_ts <= session.window.close_ts
+    )
+    original_adapter = consensus_replay.build_multitimeframe_momentum_evidence_from_causal_window
+
+    def mismatched_adapter(*args: object, **kwargs: object) -> object:
+        evidence = original_adapter(*args, **kwargs)
+        return replace(evidence, reason="forced_direct_evidence_mismatch")
+
+    def fail_if_policy_called(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("unbound evidence must not reach the target policy")
+
+    monkeypatch.setattr(
+        consensus_replay,
+        "build_multitimeframe_momentum_evidence_from_causal_window",
+        mismatched_adapter,
+    )
+    monkeypatch.setattr(consensus_replay, "propose_target_exposure", fail_if_policy_called)
+
+    with pytest.raises(RuntimeError, match="must match its causal-window input"):
+        consensus_replay._build_session_decision(
+            bars,
+            session=session.window,
+            session_date=_SESSION_DATES[0],
+            upstream_candidate_factory=consensus_replay.predeclared_consensus_replay_candidate,
+        )
 
 
 def test_incomplete_current_source_abstains_even_when_as_of_model_evidence_is_ready() -> None:
@@ -346,3 +531,13 @@ def _deny_network(monkeypatch: pytest.MonkeyPatch) -> None:
 
     monkeypatch.setattr(socket, "create_connection", fail_external)
     monkeypatch.setattr(urllib.request, "urlopen", fail_external)
+
+
+def _deny_external_access(monkeypatch: pytest.MonkeyPatch) -> None:
+    def fail_external(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("consensus decision must not access external state")
+
+    monkeypatch.setattr(os, "getenv", fail_external)
+    monkeypatch.setattr(socket, "create_connection", fail_external)
+    monkeypatch.setattr(urllib.request, "urlopen", fail_external)
+    monkeypatch.setattr(Path, "read_text", fail_external)

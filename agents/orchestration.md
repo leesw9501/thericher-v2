@@ -611,3 +611,25 @@ required event evidence is absent.
   credential-free Compose configurations passed. The clean-root authority mode
   still preserves its two recent interrupted helper roots without blocking this
   completed package or the next ready Engine work.
+
+## Causal MTF Consensus Replay Input Integration (2026-08-01)
+
+- **Ready:** the frozen consensus consumer now uses the same direct causal
+  momentum input and policy window when its raw compatibility preflight is
+  ready. A distinct Engine/Data package is ready next without a collector,
+  market-time, GPU, or operator dependency.
+- **Owned:** Engine owns the input-integrity integration and its fixed replay
+  regression evidence. Data retains the independent 0-record QQQ/SPY observer;
+  Execution owns no new route; Research Steward has no eligible GPU appointment.
+- **Due:** none in the foreground. The observer's next session belongs only to
+  its installed Data worker and cannot delay the next package.
+- **Improvement:** one completed prefix now produces one canonical MTF window,
+  direct evidence, and policy binding. A raw/direct mismatch fails before
+  policy, a malformed source invokes no adapter, and the frozen digest remains
+  unchanged. Claude was `review_unavailable`; temporary independent review
+  confirmed the completed-prefix and no-fallback conditions.
+- **Verification:** focused coverage passed `36` tests; fresh-root parallel
+  and full serial both passed `2157 passed, 16 skipped`. Ruff and both
+  credential-free Compose configurations passed. The clean-root authority mode
+  still preserves its two recent interrupted helper roots without blocking this
+  completed package or the next ready work.

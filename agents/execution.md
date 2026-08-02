@@ -541,3 +541,13 @@ does not create a target proposal, intent, local-paper replay, KIS call,
 account access, order, fill, artifact, capital state, or live behavior. A
 future qualified consumer must still pass its evidence through the unchanged
 policy and deterministic Execution boundary.
+
+## Causal MTF Consensus Replay Input Integration (2026-08-01)
+
+Execution has no new route or side effect in the frozen consensus replay input
+integration. The existing offline regression fixture retains its prior
+test-only local-paper behavior and digest; this objective added no account
+query, KIS call, broker order, local-paper event, artifact format, capital
+state, or live behavior. A ready Engine evidence mismatch now fails before it
+can form a policy result, leaving the deterministic Execution boundary
+unchanged.

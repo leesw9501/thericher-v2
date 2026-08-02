@@ -8,66 +8,67 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
 
 ## Objective
 
-Build `causal-mtf-momentum-expert-adapter-v1`.
+Build `causal-mtf-consensus-replay-input-integration-v1`.
 
-Give the existing completed-bar multi-timeframe momentum experts one direct,
-pure input path from `CausalMultiTimeframeSequenceWindow`. This makes the
-model-side expert inputs use the same revalidated 1m/5m/10m/1h/3h causal bar
-windows that the target-position policy can bind to its predictions.
+Connect the existing fixed offline multi-timeframe consensus replay to the
+new direct causal-window momentum adapter and the existing optional policy
+window binding. The replay must use one reconstructed 1m/5m/10m/1h/3h causal
+window for its ready expert evidence and target-policy input, while preserving
+the frozen replay's typed results and exact regression digest.
 
-The adapter is an existing-model extension, not a new feature-envelope,
-source-contract wrapper, model family, or strategy claim. The prior
-prediction-window binding remains the output-side check; this objective closes
-the corresponding existing momentum input-side path.
+This is a no-behavior-change input-integrity integration. It is not a new
+strategy, replay rerun for research, model result, or Paper action.
 
 ## Hard Boundaries
 
 - Do not call KIS, Tiingo, Norgate, or another provider. Do not read `.env`,
   credentials, account data, or `KIS_LIVE_*`.
-- Do not submit, simulate, or replay a Paper/broker/local-paper order. Do not
-  modify the QQQ/SPY prospective observer, its Data scheduler, or its store.
-- Do not open targets or returns, calculate PnL, train/tune/load weights, use
-  CUDA/GPU, allocate Research Steward GPU custody, or write a model artifact.
-- Do not introduce a generic feature tensor/envelope framework, a
-  `ModelPrediction` metadata convention, a source-contract wrapper, a new
-  model family, or a second causal-window validator. Reuse
-  `CausalMultiTimeframeSequenceWindow` and its existing builder.
-- Keep the work pure and in-memory: no filesystem, network, environment,
-  execution, artifact, or schedule surface.
+- Do not manually run, add, submit, modify, cancel, or reconcile any Paper or
+  broker order. Existing test-only local-paper fixtures may run only as an
+  unchanged regression dependency of the frozen offline suite.
+- Do not change campaign data, dates, targets, returns, costs, thresholds,
+  sizing, order behavior, artifact formats, replay digest contract, or source
+  provenance. Do not write an artifact outside pytest temporary state.
+- Do not train/tune/load weights, use CUDA/GPU, allocate Research Steward GPU
+  custody, create a model family, ensemble, feature framework, or new source
+  wrapper.
+- Do not silently fall back from a ready causal window to a separate raw model
+  input path. A structural input mismatch must stay categorical and fail closed
+  before a target proposal; do not invent a tolerance or re-bucket rule.
 
 ## Required Work
 
-1. Record the preceding short Claude drift-check timeout as
-   `review_unavailable`; it is not agreement or a hold. Before adding any new
-   abstraction, verify from current direct consumers that an existing
-   `MultiTimeframeMomentumEvidence` extension is narrower than a new wrapper.
-2. Add the smallest public pure adapter to the existing multi-timeframe
-   momentum module. It accepts one causal multi-timeframe window and the
-   existing momentum config, revalidates the selected bars with the existing
-   builder, and emits the same typed evidence/prediction contracts using each
-   expert's required completed trailing bars.
-3. Require every configured expert timeframe to exist in the canonical causal
-   window and require at least `lookback + 1` bars for that expert. Preserve
-   the existing per-expert feature-window end, symbol, market, and decision
-   cutoff semantics. Return the existing categorical unready evidence for a
-   model-input insufficiency where that type can represent it; do not invent
-   a tolerance, fallback resampling, or implicit lookback expansion.
-4. Add a real CPU compatibility test: derive one causal window from the same
-   completed session bars and prove the current raw-bar momentum builder and
-   the new direct-window adapter produce identical ready evidence. Pass the
-   adapter output through the existing policy with the same window.
-5. Add focused fail-closed tests for the strongest forgery: a matching outer
-   QQQ header containing SPY H1 or 3h bars. Also cover a future/incomplete or
-   non-contiguous selected bar, an insufficient expert lookback, and
-   import/I-O isolation without duplicating sequence-window test coverage.
+1. Ask Claude for a concise falsification-first drift check before changing
+   the frozen replay's causal-input/policy boundary. A timeout or malformed
+   response is `review_unavailable`, never agreement or a hold.
+2. Inventory the replay's current raw 1m evidence construction, decision
+   cutoff, resampling, and policy call. Choose the smallest internal helper or
+   direct use that derives one causal window from the same completed source
+   prefix and frozen momentum config, then uses
+   `build_multitimeframe_momentum_evidence_from_causal_window` for ready
+   evidence and passes that exact window to `propose_target_exposure`.
+3. Preserve existing categorical unready behavior. If the raw path reports an
+   unready input, do not construct or pass a partial causal window. If it is
+   ready but the causal reconstruction/direct adapter disagrees, fail closed
+   with a local implementation error or existing categorical status; never
+   continue with unbound predictions.
+4. Add focused tests proving the ready replay path calls the direct adapter and
+   binds the same causal window to policy, without network, credentials, or
+   filesystem reads. Prove future raw bars do not alter the resulting bound
+   decision and a malformed source input produces no bound target proposal.
+5. Run the existing frozen replay fixture only as a regression assertion and
+   prove its aggregate replay digest and typed outcome are unchanged. Do not
+   interpret it as a new PnL, selection, or Paper result.
 6. Refresh Engine Research, Execution, orchestration, handoff, and decision
-   stateboards with the exact result. State that the 0-record QQQ/SPY observer
-   is not a foreground wait and that no GPU/model-training/PnL/Paper/live
-   result was created.
+   stateboards with the exact integration and review result. State explicitly
+   that no new provider, account, order, local-paper action, GPU, training,
+   target, return, PnL, artifact, or live behavior was created, and that the
+   QQQ/SPY observer remains an independent 0-record Data schedule rather than
+   a foreground wait.
 
 ## Verification
 
-Run focused tests and an injected CPU-only adapter smoke, then:
+Run focused tests and a CPU-only no-network integration smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -82,8 +83,7 @@ that fact and run its fresh-root mode plus the remaining verification commands.
 
 ## Completion
 
-Report the selected integration point, Claude result, raw-vs-window
-compatibility result, strongest forgery result, tests, and why no
-GPU/model-training/PnL/Paper/live claim was created. Commit and push completion
-evidence before replacing this file with exactly one next objective and
-continuing.
+Report the integration point, Claude result, causal-window/policy call proof,
+frozen digest result, tests, and why no new model/GPU/training/PnL/Paper/live
+claim was created. Commit and push completion evidence before replacing this
+file with exactly one next objective and continuing.

@@ -1149,3 +1149,21 @@ Review assignment instead confirmed the narrow API and forgery coverage. No
 dataset, target, return, PnL, training, GPU allocation, artifact, Paper, or
 live result follows. The 0-record QQQ/SPY forward observer remains a separate
 Data-owned schedule, not a foreground wait.
+
+## Causal MTF Consensus Replay Input Integration (2026-08-01)
+
+The existing fixed consensus replay now binds its ready MTF momentum evidence
+to one reconstructed causal window and supplies that same object to the
+existing policy. Its raw builder remains only an unready compatibility
+preflight. Ready evidence is replaced only by an exactly equal direct-window
+result; a reconstruction failure or disagreement raises before policy, while
+unready inputs construct no causal window and retain the existing abstention
+path.
+
+The fixed 20-session replay digest and typed result remain unchanged. Focused
+spies prove one shared adapter/policy window, post-cutoff invariance, and no
+adapter invocation for a malformed completed prefix. Claude timed out as
+`review_unavailable`; the temporary independent Review found no blocking
+semantic mismatch. This is not a new campaign, dataset, target, return, PnL,
+model, training, GPU allocation, artifact, Paper action, or live result. The
+0-record QQQ/SPY observer remains independent Data work rather than a wait.

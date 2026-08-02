@@ -31,16 +31,21 @@ from thericher_v2.execution.paper_decision_bridge import (
     PaperDecisionBridgeResult,
     prepare_local_paper_intent,
 )
+from thericher_v2.market.resample import resample_session_bars
 from thericher_v2.models import (
+    CausalMultiTimeframeSequenceWindow,
     CurrentSourceContract,
     CurrentSourceMetadata,
     MultiTimeframeMomentumConfig,
     MultiTimeframeMomentumSpec,
     OpportunityEligibility,
+    SequenceWindowInputError,
     TargetPositionPolicyConfig,
     adapt_current_source_opportunity_eligibility,
     build_causal_bar_source_contract,
+    build_causal_multitimeframe_sequence_window,
     build_multitimeframe_momentum_evidence,
+    build_multitimeframe_momentum_evidence_from_causal_window,
     propose_target_exposure,
 )
 from thericher_v2.research.decision_receipt import (
@@ -455,6 +460,7 @@ def _build_session_decision(
     exit_signal_bar: Bar | None = None
     exit_bar: Bar | None = None
     predictions = ()
+    causal_window: CausalMultiTimeframeSequenceWindow | None = None
     if opportunity.input_status == "ready":
         by_start = {bar.start_ts: bar for bar in bars}
         signal_bar = _required_bar(by_start, as_of - Timeframe.M1.duration, "decision signal")
@@ -469,12 +475,29 @@ def _build_session_decision(
             exit_bar.start_ts - Timeframe.M1.duration,
             "terminal exit signal",
         )
+        momentum_config = frozen_multitimeframe_momentum_config()
         evidence = build_multitimeframe_momentum_evidence(
             bars,
             session=session,
-            config=frozen_multitimeframe_momentum_config(),
+            config=momentum_config,
             as_of=as_of,
         )
+        if evidence.input_status == "ready":
+            causal_window = _build_causal_momentum_window(
+                bars,
+                session=session,
+                config=momentum_config,
+                as_of=as_of,
+            )
+            bound_evidence = build_multitimeframe_momentum_evidence_from_causal_window(
+                causal_window,
+                config=momentum_config,
+            )
+            if bound_evidence != evidence:
+                raise RuntimeError(
+                    "ready consensus momentum evidence must match its causal-window input"
+                )
+            evidence = bound_evidence
         predictions = evidence.predictions
     proposal = propose_target_exposure(
         opportunity,
@@ -482,6 +505,7 @@ def _build_session_decision(
         current_exposure=Decimal("0"),
         config=frozen_target_position_policy_config(),
         as_of=as_of,
+        causal_window=causal_window,
     )
     proposal_ref = _opaque_reference("proposal", proposal.proposal_id)
     receipt = receipt_from_target_exposure_proposal(
@@ -520,6 +544,35 @@ def _build_session_decision(
         exit_signal_bar=exit_signal_bar,
         exit_bar=exit_bar,
     )
+
+
+def _build_causal_momentum_window(
+    bars: Sequence[Bar],
+    *,
+    session: SessionWindow,
+    config: MultiTimeframeMomentumConfig,
+    as_of: datetime,
+) -> CausalMultiTimeframeSequenceWindow:
+    """Reconstruct the exact completed raw prefix used by ready consensus evidence."""
+
+    completed_prefix = tuple(bar for bar in bars if bar.end_ts <= as_of)
+    try:
+        return build_causal_multitimeframe_sequence_window(
+            {
+                timeframe: resample_session_bars(
+                    completed_prefix,
+                    timeframe,
+                    session=session,
+                ).bars
+                for timeframe in KIS_INTRADAY_CONSENSUS_TIMEFRAMES
+            },
+            lookbacks={spec.timeframe: spec.lookback + 1 for spec in config.experts},
+            cutoff=as_of,
+        )
+    except SequenceWindowInputError as error:
+        raise RuntimeError(
+            "ready consensus momentum evidence must reconstruct a causal window"
+        ) from error
 
 
 def _adapt_session_opportunity(

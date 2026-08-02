@@ -1962,3 +1962,37 @@ No provider, credentials, source cache, target, return, PnL, model training,
 GPU, artifact, Paper/local-paper, broker, or live route was opened. The
 QQQ/SPY observer remains at `0` forward records under its independent Data
 schedule and does not delay the next Engine package.
+
+## Causal MTF Consensus Replay Input Integration (2026-08-01)
+
+`causal-mtf-consensus-replay-input-integration-v1` is complete as a
+no-behavior-change integrity integration. The frozen consensus replay retains
+the existing raw completed-1m momentum builder as an unready compatibility
+preflight. Only when that evidence is ready does it rebuild one canonical
+`1m/5m/10m/1h/3h` causal window from the same `end_ts <= as_of` prefix and
+frozen `lookback + 1` geometry, generate the direct-window evidence, require
+exact equality with the preflight evidence, and pass that same window to the
+existing target-position policy.
+
+A ready/direct disagreement or causal reconstruction failure raises before the
+policy can receive unbound predictions. An unready source does not construct an
+adapter window and passes `None` to the policy. Focused spies prove the adapter
+and policy receive the same object; post-cutoff raw price changes preserve the
+bound decision/window; a missing in-prefix bar calls no adapter; and the
+existing 20-session fixture retains its fixed
+`sha256:8855ec22147b9218fc83ac60eaf3cb17dd2a70b38bc46b7568aec5033ad383d1`
+digest and typed outcome. Focused coverage passed `36` tests, including the
+CPU-only no-network integration smoke.
+
+Goal-boundary verification then passed `2157 passed, 16 skipped` in a fresh
+parallel temp root and again in full serial mode. Ruff and both credential-free
+base/research Compose configurations passed. The clean-root authority mode
+remains correctly blocked only by its two preserved recent interrupted roots.
+
+The Claude CLI call timed out and is `review_unavailable`, not agreement or a
+hold. The temporary independent Review role found no blocking semantic mismatch
+and confirmed the completed-prefix, canonical-order, `lookback + 1`, and
+no-fallback constraints. No provider, credential, account, order, new
+local-paper action, data change, target, return, PnL, model, training, GPU,
+artifact, or live behavior was created. The QQQ/SPY observer remains a
+separate 0-record Data schedule, not a foreground wait.
