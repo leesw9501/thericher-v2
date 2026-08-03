@@ -6,12 +6,14 @@ Then continue from `C:\Users\Public\Documents\thericher-v2`.
 
 ## Objective
 
-Build `profiled-mtf-model-input-contract-v1`: turn the existing
-`NormalizedCompletedBarProjection` into one small, pure model-input contract
-that preserves each caller-selected `1m`, `5m`, `10m`, `1h`, and `3h` causal
-sequence for later MLP, LSTM, causal-TCN, and attention experts. This advances
-feature/model research while forward data accumulates; it is not a model
-selection, training, PnL, Paper, or GPU-utilization objective.
+Build `profiled-mtf-flattened-control-v1`: add one small, pure deterministic
+flattened control view over an existing `NormalizedCompletedBarProjection`.
+It must publish the exact `1m`, `5m`, `10m`, `1h`, and `3h` block order,
+offset, length, and normalization-anchor policy for a later MLP-style control.
+The existing projection already exposes immutable per-timeframe sequences, so
+do not wrap or align them for LSTM, causal-TCN, or attention work yet. This
+advances feature/model research while forward data accumulates; it is not a
+model selection, training, PnL, Paper, or GPU-utilization objective.
 
 ## Boundaries
 
@@ -31,16 +33,17 @@ selection, training, PnL, Paper, or GPU-utilization objective.
 ## Required Work
 
 1. Inventory the existing projection, causal window, and sequence-architecture
-   APIs. Add only the smallest typed, model-neutral adapter needed to expose
-   immutable per-timeframe feature sequences and a deterministic flattened
-   control view.
-2. Bind the adapter to one explicit profile, source identity, cutoff, feature
-   timestamp, per-timeframe window ends, and projection digest. It must reject
-   a malformed, mixed-symbol, incomplete, future, stale, reordered, or
-   identity-mismatched projection before exposing values.
-3. Keep PyTorch optional and out of module import. The result may be consumed
-   by later MLP/sequence work, but this objective must not add a trainer,
-   model registry, artifact writer, or CUDA appointment.
+   APIs. Add only the smallest typed flattened view and published block layout;
+   do not re-export per-timeframe sequences the projection already exposes.
+2. Bind the view to one explicit profile, source identity, cutoff, feature
+   timestamp, per-timeframe window ends, projection digest, and canonical
+   `(timeframe, offset, length, anchor policy)` layout. It must reject a wrong
+   type, identity/geometry mismatch, reordered layout, or a projection that is
+   not already causal and structurally valid.
+3. State the precise boundary: this view validates inherited projection identity
+   and geometry, not independent value provenance. Keep PyTorch optional and
+   out of module import. Do not add a trainer, model registry, artifact writer,
+   CUDA appointment, or cross-timeframe sequence alignment.
 4. Add focused tests for deterministic identity, flattened/per-timeframe
    geometry, mutation sensitivity, causal rejection, and import/no-I/O
    isolation. Update the Engine and orchestration stateboards with the exact
@@ -48,7 +51,7 @@ selection, training, PnL, Paper, or GPU-utilization objective.
 
 ## Completion Evidence
 
-- a pure model-input adapter composes with the existing causal projection;
+- a pure flattened control view composes with the existing causal projection;
 - no data, credential, broker, Paper, model-weight, or GPU side effect occurs;
 - focused tests demonstrate causal and identity containment;
 - commit and push, then replace this file with exactly one next objective.

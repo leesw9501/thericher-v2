@@ -9,7 +9,12 @@ def test_parallel_test_runner_uses_bounded_workers_and_short_isolated_temp_root(
 
     assert "[int]$Workers = [Math]::Min(8, [Environment]::ProcessorCount)" in source
     assert "[switch]$RequireCleanTempRoot" in source
-    assert '$tempRoot = "C:\\trpy"' in source
+    assert '$tempParent = "C:\\trpy"' in source
+    assert '$tempRoot = Join-Path $tempParent "runs"' in source
+    assert "$tempParentEntry = Get-Item -LiteralPath $tempParent" in source
+    assert "$tempRootEntry = Get-Item -LiteralPath $tempRoot" in source
+    assert "$resolvedTempParent = [IO.Path]::GetFullPath($tempParent)" in source
+    assert "$resolvedTempRoot = [IO.Path]::GetFullPath($tempRoot)" in source
     assert "$existingTempRoots = @(" in source
     assert "$staleTempRootCutoff = [DateTime]::UtcNow.AddHours(-24)" in source
     assert "[IO.FileAttributes]::ReparsePoint" in source

@@ -778,3 +778,37 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** exact `valid_until` is now an exclusive execution boundary,
   eliminating a late quote path that could never create a valid canary. Claude
   timed out as `review_unavailable`; no approval state or lane hold follows.
+
+## Profiled MTF Flattened Control
+
+- **Ready:** Engine completed a pure flattened MLP-style control over the
+  existing causal QQQ/SPY projection. The next ready local package inventories
+  usable retained data and freezes one actual campaign contract; it does not
+  wait for a fresh session, collector retry, or Paper invocation.
+- **Owned:** Engine owns the control contract and candidate freeze; Data owns
+  source provenance and any local-data inventory; Research Steward has no GPU
+  appointment until the candidate has dataset, target, split, costs, baseline,
+  kill test, artifact root, and compute stop evidence; Execution has no change.
+- **Due:** none in the foreground. Prospective collection and virtual-Paper
+  schedules retain their own clocks while local Engine work continues.
+- **Improvement:** preserve the existing ragged causal sequences as their own
+  contract, publishing only one explicit flattened layout. A later sequence
+  architecture must declare its own alignment/mask semantics instead of hiding
+  them in shared input plumbing.
+
+## Shared Parallel Test Root Recovery
+
+- **Ready:** the current Engine input package now has clean-root full-suite
+  evidence: `2245 passed, 21 skipped` in 188.40 seconds. Existing direct
+  legacy roots remain untouched; they are not an Engine, Data, GPU, or Paper
+  dependency.
+- **Owned:** Infra Capability completed the test-only migration after a
+  no-active-pytest process check. Both fast and authority test runs now share
+  `C:\trpy\runs`; no durable Infra lane or scheduler was created.
+- **Due:** none. A recent root in the shared active path still fails authority
+  verification until its documented recovery condition is met.
+- **Improvement:** the authority precondition now observes the same current
+  fast-lane roots it needs to detect, while old diagnostic roots cannot keep
+  unrelated bounded work idle forever. Claude's verdict was
+  `supported-with-limits`; parent/child non-link checks and 24-hour recovery
+  remain mandatory.

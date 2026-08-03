@@ -9,14 +9,41 @@ param(
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$tempRoot = "C:\trpy"
+$tempParent = "C:\trpy"
+$tempRoot = Join-Path $tempParent "runs"
+
+New-Item -ItemType Directory -Force -Path $tempParent | Out-Null
+$tempParentEntry = Get-Item -LiteralPath $tempParent -Force -ErrorAction Stop
+$parentIsReparsePoint = [bool](
+    $tempParentEntry.Attributes -band [IO.FileAttributes]::ReparsePoint
+)
+if ($tempParentEntry.LinkType -or $parentIsReparsePoint) {
+    throw "Refusing to use a linked parallel pytest temp parent: $tempParent"
+}
+$resolvedTempParent = [IO.Path]::GetFullPath($tempParent).TrimEnd([char[]]@('\', '/'))
 
 New-Item -ItemType Directory -Force -Path $tempRoot | Out-Null
+$tempRootEntry = Get-Item -LiteralPath $tempRoot -Force -ErrorAction Stop
+$rootIsReparsePoint = [bool](
+    $tempRootEntry.Attributes -band [IO.FileAttributes]::ReparsePoint
+)
+$resolvedTempRoot = [IO.Path]::GetFullPath($tempRoot).TrimEnd([char[]]@('\', '/'))
+if (
+    $tempRootEntry.LinkType -or
+    $rootIsReparsePoint -or
+    -not [string]::Equals(
+        [IO.Path]::GetDirectoryName($resolvedTempRoot),
+        $resolvedTempParent,
+        [StringComparison]::OrdinalIgnoreCase
+    )
+) {
+    throw "Refusing to use an unmanaged parallel pytest temp root: $tempRoot"
+}
+
 $existingTempRoots = @(
     Get-ChildItem -LiteralPath $tempRoot -Directory -Force -Filter "r-*" -ErrorAction Stop
 )
 if ($RequireCleanTempRoot) {
-    $resolvedTempRoot = [IO.Path]::GetFullPath($tempRoot).TrimEnd([char[]]@('\', '/'))
     $staleTempRootCutoff = [DateTime]::UtcNow.AddHours(-24)
     foreach ($candidate in $existingTempRoots) {
         if ($candidate.LastWriteTimeUtc -ge $staleTempRootCutoff) {

@@ -1276,3 +1276,30 @@ abstain remains an abstain. This adds no fitting, tuning, comparison, campaign,
 GPU appointment, artifact, ensemble, or profitability claim. The next fresh
 receipt can provide execution-learning evidence only through Execution's
 independent deterministic route.
+
+## Profiled MTF Flattened Control (2026-08-03)
+
+`profiled-mtf-flattened-control-v1` now exposes one immutable MLP-style control
+over each existing `NormalizedCompletedBarProjection`. Its digest binds the
+upstream projection digest, canonical `1m/5m/10m/1h/3h` block order, offsets,
+lengths, per-timeframe window ends, normalization-anchor policy, and flattened
+close/volume values. It reuses the causal-window validator and profile catalog
+before exposing values, but correctly does not claim to rederive their raw-bar
+provenance.
+
+Claude's `supported-with-limits` review narrowed this to the flattened control:
+the underlying timeframe sequences are ragged, so an LSTM, causal-TCN, or
+attention consumer needs its own frozen cross-timeframe alignment, masking,
+target, and availability contract. No model, target, score, training, GPU
+appointment, artifact, Paper input, or PnL claim follows from this input view.
+
+The exact next Engine dependency is a separately frozen source-local campaign
+contract selecting one usable dataset and one profile, target, temporal split,
+cost model, naive baseline, strongest kill test, artifact root, and compute
+stop rule. That local inventory/contract package is ready now and does not wait
+for a prospective market observation.
+
+Focused control coverage passed `21 passed, 1 skipped`; related causal/MTF
+regression coverage passed `33 passed, 2 skipped`; the restored clean-root full
+parallel authority passed `2245 passed, 21 skipped`. This does not convert the
+input view into a trained or selected model.

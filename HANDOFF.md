@@ -2182,3 +2182,28 @@ coverage passed `109 passed`; Ruff and both credential-free Compose
 configurations passed. Claude's bounded review timed out, so the record is
 `review_unavailable`, not a verdict. This does not hold independent Engine
 work.
+
+## Profiled MTF Flattened Control
+
+`profiled-mtf-flattened-control-v1` is a small, pure MLP-style view over the
+existing `NormalizedCompletedBarProjection`. It retains the projection instead
+of copying its provenance and publishes canonical `1m/5m/10m/1h/3h` block
+offsets, lengths, window ends, anchor policy, flattened values, and a digest
+bound to the projection digest. It revalidates causal geometry through the
+existing sequence-window contract and is deliberately not an independent
+raw-value provenance calculation.
+
+Claude's result was `supported-with-limits`: no LSTM, causal-TCN, or attention
+adapter was added because the five timeframe sequences are ragged and their
+alignment/masking must be selected in a future frozen campaign. Focused control
+coverage passed `21 passed, 1 skipped`; related causal/MTF regression coverage
+passed `33 passed, 2 skipped`; restored clean-root parallel authority passed
+`2245 passed, 21 skipped`; targeted Ruff and both credential-free Compose
+configurations passed. No cache, credential, network, model, GPU, artifact,
+Paper, or broker route was touched.
+
+The test helper now uses one shared active `C:\trpy\runs` root for ordinary and
+authority runs, with parent/child non-link checks and the prior 24-hour
+fail-closed recovery retained. The direct legacy roots were not moved or
+deleted. Claude's review was `supported-with-limits`; the shared root preserves
+current fast-lane visibility rather than silently bypassing it.

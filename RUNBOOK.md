@@ -2069,10 +2069,14 @@ docker compose config --quiet
 
 The focused serial group covers the changed production and contract paths. The
 parallel command is the full-suite authority: it must exit zero, use a clean
-`C:\trpy` root, and retain the expected test/skip cardinality. Authority mode
-prunes only helper-owned non-link roots older than 24 hours after checking their
-resolved parent; a recent root, mismatch, nonzero exit, or retained current-run
-temp root fails verification.
+shared `C:\trpy\runs` root, and retain the expected test/skip cardinality.
+Both ordinary feedback and authority invocations use that same root, so a recent
+fast-lane run remains visible to the authority precondition. Authority mode
+prunes only helper-owned non-link roots older than 24 hours after checking the
+resolved parent and active child; a recent root, mismatch, nonzero exit, or
+retained current-run temp root fails verification. Legacy direct
+`C:\trpy\r-*` roots are preserved outside the active root and are never moved
+or deleted by the helper.
 
 ### Fast Local Test Feedback
 
@@ -2084,9 +2088,10 @@ For repeatable Windows feedback between goal boundaries, use:
 
 It runs the same suite with up to eight `pytest-xdist` workers (bounded by the
 host CPU count) and file-level distribution. The helper gives each run a short,
-unique base temp path beneath `C:\trpy`; this avoids Windows worker-path length
-failures, cleans a successful run's private temp path, and leaves a failed run
-available for diagnosis. Override the worker count when needed:
+unique base temp path beneath the shared `C:\trpy\runs` root; this avoids
+Windows worker-path length failures, cleans a successful run's private temp
+path, and leaves a failed run available for diagnosis. Override the worker
+count when needed:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -Workers 4

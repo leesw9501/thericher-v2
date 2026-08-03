@@ -18,10 +18,20 @@ from thericher_v2.data.kis_intraday_mtf_availability import (
 )
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.us_equity_session import us_equity_2026_session
-from thericher_v2.models.sequence_window import SequenceWindowInputError
+from thericher_v2.models.sequence_window import (
+    SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES,
+    CausalMultiTimeframeSequenceWindow,
+    CausalSequenceWindow,
+    SequenceWindowInputError,
+)
 from thericher_v2.research import kis_mtf_profiled_feature_input_preflight as preflight
 from thericher_v2.research.causal_mtf_window_profile_feasibility import (
     CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG,
+)
+from thericher_v2.research.profiled_mtf_flattened_control import (
+    PROFILED_MTF_FLATTENED_CONTROL_ANCHOR_POLICY,
+    PROFILED_MTF_FLATTENED_CONTROL_FEATURE_NAMES,
+    build_profiled_mtf_flattened_control,
 )
 
 _SESSION_DATE = date(2026, 7, 6)
@@ -64,6 +74,69 @@ def test_all_frozen_profiles_form_aligned_target_free_pairs() -> None:
             } == dict(expected.lookbacks)
 
 
+def test_flattened_control_preserves_projection_identity_and_canonical_block_layout() -> None:
+    materialization = _materialize(_catalogs())
+
+    for pair in materialization.pairs:
+        expected_profile = CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG.profile(pair.profile_id)
+        for projection in pair.legs:
+            control = build_profiled_mtf_flattened_control(projection)
+            expected_values = tuple(
+                value
+                for timeframe in SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES
+                for row in projection.feature_values[timeframe]
+                for value in row
+            )
+
+            assert control.projection is projection
+            assert control.control_sha256 == build_profiled_mtf_flattened_control(
+                projection
+            ).control_sha256
+            assert control.projection_sha256 == projection.projection_sha256
+            assert control.profile_id == projection.profile_id
+            assert control.source_contract_sha256 == projection.source_contract_sha256
+            assert control.source_dataset_hash == projection.source_dataset_hash
+            assert control.cutoff == projection.cutoff
+            assert control.feature_timestamp == projection.feature_timestamp
+            assert control.window_ends == projection.window_ends
+            assert tuple(block.timeframe for block in control.blocks) == (
+                SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES
+            )
+            assert tuple(block.bar_count for block in control.blocks) == tuple(
+                expected_profile.lookbacks[timeframe]
+                for timeframe in SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES
+            )
+            assert tuple(block.window_end for block in control.blocks) == tuple(
+                end_ts for _, end_ts in projection.window_ends
+            )
+            assert all(
+                block.anchor_policy == PROFILED_MTF_FLATTENED_CONTROL_ANCHOR_POLICY
+                for block in control.blocks
+            )
+            assert control.flattened_values == expected_values
+            assert control.feature_width == len(expected_values)
+            assert control.feature_width == sum(block.feature_width for block in control.blocks)
+            assert PROFILED_MTF_FLATTENED_CONTROL_FEATURE_NAMES == (
+                "close_relative_to_first_completed_bar",
+                "volume_relative_to_first_completed_bar_or_one",
+            )
+            feature_offset = 0
+            for block in control.blocks:
+                assert block.feature_offset == feature_offset
+                feature_offset += block.feature_width
+
+
+def test_flattened_control_construction_is_external_access_free(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _deny_external_access(monkeypatch)
+    projection = _materialize(_catalogs()).pairs[0].legs[0]
+
+    control = build_profiled_mtf_flattened_control(projection)
+
+    assert control.projection_sha256 == projection.projection_sha256
+
+
 def test_post_cutoff_and_next_target_minutes_do_not_change_projection() -> None:
     baseline = _materialize(_catalogs(include_post_cutoff=True))
     changed = _materialize(_catalogs(include_post_cutoff=True, mutate_post_cutoff=True))
@@ -71,6 +144,7 @@ def test_post_cutoff_and_next_target_minutes_do_not_change_projection() -> None:
     assert _pair_digests(changed) == _pair_digests(baseline)
     assert _feature_values(changed) == _feature_values(baseline)
     assert changed.receipt.receipt_sha256 == baseline.receipt.receipt_sha256
+    assert _control_digests(changed) == _control_digests(baseline)
 
 
 def test_pre_cutoff_slow_constituent_change_requires_reconstruction_and_changes_digest() -> None:
@@ -104,6 +178,52 @@ def test_pre_cutoff_slow_constituent_change_requires_reconstruction_and_changes_
     }
     recomputed = _materialize(changed_catalogs)
     assert _pair_digests(recomputed) != _pair_digests(baseline)
+    assert _control_digests(recomputed) != _control_digests(baseline)
+
+
+def test_flattened_control_rejects_self_consistent_but_noncausal_or_mismatched_geometry() -> None:
+    projection = _materialize(_catalogs()).pairs[0].legs[0]
+    future_h1 = CausalSequenceWindow(
+        timeframe=Timeframe.H1,
+        bars=(
+            *projection.window.windows[Timeframe.H1].bars[:-1],
+            replace(
+                projection.window.windows[Timeframe.H1].bars[-1],
+                start_ts=projection.cutoff,
+            ),
+        ),
+        cutoff=projection.cutoff,
+    )
+    future_window = CausalMultiTimeframeSequenceWindow(
+        symbol=projection.window.symbol,
+        market=projection.window.market,
+        cutoff=projection.cutoff,
+        windows={
+            timeframe: (
+                future_h1 if timeframe is Timeframe.H1 else projection.window.windows[timeframe]
+            )
+            for timeframe in SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES
+        },
+    )
+    future_projection = _forged_projection(projection, window=future_window)
+    wrong_profile = "short" if projection.profile_id != "short" else "long"
+    wrong_profile_projection = _forged_projection(projection, profile_id=wrong_profile)
+
+    with pytest.raises(SequenceWindowInputError) as future_error:
+        build_profiled_mtf_flattened_control(future_projection)
+    assert future_error.value.status == "future"
+    assert future_error.value.timeframe is Timeframe.H1
+    with pytest.raises(ValueError, match="profile geometry"):
+        build_profiled_mtf_flattened_control(wrong_profile_projection)
+    with pytest.raises(TypeError, match="NormalizedCompletedBarProjection"):
+        build_profiled_mtf_flattened_control(object())  # type: ignore[arg-type]
+
+
+def test_flattened_control_rejects_reordered_block_layout() -> None:
+    control = build_profiled_mtf_flattened_control(_materialize(_catalogs()).pairs[0].legs[0])
+
+    with pytest.raises(ValueError, match="layout"):
+        replace(control, blocks=tuple(reversed(control.blocks)))
 
 
 @pytest.mark.parametrize("mutation", ("future", "incomplete", "duplicate", "gap", "mismatched"))
@@ -482,6 +602,46 @@ def _feature_values(
     return tuple(
         tuple(tuple(leg.feature_values.items()) for leg in pair.legs)
         for pair in materialization.pairs
+    )
+
+
+def _control_digests(
+    materialization: preflight.KisMtfProfiledFeatureInputMaterialization,
+) -> tuple[str, ...]:
+    return tuple(
+        build_profiled_mtf_flattened_control(leg).control_sha256
+        for pair in materialization.pairs
+        for leg in pair.legs
+    )
+
+
+def _forged_projection(
+    projection: preflight.NormalizedCompletedBarProjection,
+    *,
+    profile_id: str | None = None,
+    window: CausalMultiTimeframeSequenceWindow | None = None,
+) -> preflight.NormalizedCompletedBarProjection:
+    resolved_window = projection.window if window is None else window
+    return preflight.NormalizedCompletedBarProjection(
+        source_contract_sha256=projection.source_contract_sha256,
+        source_dataset_hash=projection.source_dataset_hash,
+        catalog_sha256=projection.catalog_sha256,
+        profile_id=projection.profile_id if profile_id is None else profile_id,
+        cutoff=projection.cutoff,
+        window=resolved_window,
+        feature_values=projection.feature_values,
+        projection_sha256=preflight._projection_sha256(
+            source_contract_sha256=projection.source_contract_sha256,
+            source_dataset_hash=projection.source_dataset_hash,
+            catalog_sha256=projection.catalog_sha256,
+            profile_id=projection.profile_id if profile_id is None else profile_id,
+            cutoff=projection.cutoff,
+            window_ends=tuple(
+                (timeframe, sequence.end_ts)
+                for timeframe, sequence in resolved_window.windows.items()
+            ),
+            feature_values=projection.feature_values,
+        ),
     )
 
 

@@ -155,10 +155,13 @@ Codex is the product-development lead and integrator.
   The goal-boundary Python authority is the changed-path serial group plus
   `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
   both Compose configurations. The helper uses file-level xdist distribution,
-  a fresh short temp root, an explicit clean-root precondition, and propagates
-  pytest's exit code. Authority mode prunes only helper-owned, non-link temp
-  roots older than 24 hours after resolved-parent verification; any recent root
-  fails closed. Treat a nonzero exit, retained current-run temp root,
+  one fresh short shared temp child root beneath `C:\trpy` for both fast
+  feedback and authority runs, an explicit clean-root precondition, and
+  propagates pytest's exit code. Authority mode prunes only helper-owned,
+  non-link temp roots older than 24 hours after resolved-parent verification;
+  any recent root in that shared active root fails closed. It verifies both the
+  parent and active child are not links before use. Treat a nonzero exit,
+  retained current-run temp root,
   unexpected count/skip cardinality, or worker-count divergence as failed
   verification. This replacement is supported by a completed 2026-07-31 serial
   baseline and matching full-suite results with four and eight workers; it does

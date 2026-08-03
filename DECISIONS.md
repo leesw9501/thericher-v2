@@ -8852,3 +8852,42 @@ Subprocess import isolation, all ineligible exits, a clock crossing during
 preparation, D1/intraday durable identity separation, and virtual-host
 rejection are covered without a KIS call. Claude timed out as
 `review_unavailable`; this is not treated as approval or disagreement.
+
+## Profiled MTF Flattened Control - Keep sequence alignment model-specific
+
+Decision: expose one deterministic flattened MLP-style view over the existing
+`NormalizedCompletedBarProjection`, but do not introduce a universal sequence
+adapter for LSTM, causal-TCN, or attention models. The flattened layout is
+canonical and self-identifying: timeframe, offset, bar count, end timestamp,
+and per-timeframe normalization-anchor policy are bound with the upstream
+projection digest and values.
+
+Reason: the existing projection already owns causal ragged per-timeframe
+sequences, source/profile/cutoff provenance, and feature values. A generic
+sequence wrapper would either duplicate that contract or silently choose
+cross-timeframe alignment, padding, masking, and availability semantics before
+a model campaign has frozen them. The new view therefore revalidates inherited
+causal geometry only; it does not claim independent raw-value provenance. A
+later sequence model must make those choices in its own frozen campaign
+contract.
+
+## Shared Active Root For Parallel Pytest Verification
+
+Decision: move both ordinary and `-RequireCleanTempRoot` pytest-helper runs to
+the same active child root, `C:\trpy\runs`. Before either root is used, verify
+the `C:\trpy` parent and active child are ordinary non-link directories with a
+resolved direct-parent relationship. Retain the existing unique per-run child,
+24-hour stale-root cleanup, and fail-closed treatment of any recent active root.
+The direct legacy `C:\trpy\r-*` roots are preserved untouched; they are neither
+deleted nor moved by this change.
+
+Reason: a unique per-run base path already prevents temp-file collision, but
+the former global direct-root precondition could keep every later authority run
+red solely because an interrupted earlier run remained for diagnosis. A shared
+new active root keeps current fast-lane and authority runs mutually visible, so
+it does not hide an in-flight or unresolved current run. Immediately before the
+migration, no pytest/xdist process was observed; the legacy roots remain outside
+the new active namespace. Claude's falsification-first verdict was
+`supported-with-limits`; its binding conditions are the single shared root,
+parent-and-child link checks, retained 24-hour cleanup, explicit documentation,
+and regression assertions for all of those properties.
