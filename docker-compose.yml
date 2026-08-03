@@ -778,6 +778,20 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-paper-prospective-spy-timing-probe:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-head"]
+    command:
+      - python
+      - -m
+      - thericher_v2.ops.kis_paper_prospective_spy_timing_probe
+    network_mode: none
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-prospective-qqq-session:
     build:
       context: .

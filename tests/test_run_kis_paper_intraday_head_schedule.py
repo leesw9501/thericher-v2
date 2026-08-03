@@ -11,6 +11,7 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
     collection_call = ' -Service "kis-paper-intraday-head"'
+    timing_probe_call = ' -Service "kis-paper-prospective-spy-timing-probe"'
     spy_cycle_call = ' -Service "kis-paper-prospective-spy-cycle"'
     capture_call = ' -Service "profiled-mtf-forward-capture-cycle"'
     observation_call = ' -Service "kis-paper-intraday-pair-observation"'
@@ -18,9 +19,12 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "--profile kis-paper-intraday-head" in source
     assert "run --rm --no-deps --pull never $Service" in source
     assert collection_call in source
+    assert timing_probe_call in source
     assert spy_cycle_call in source
     assert capture_call in source
     assert observation_call in source
+    assert source.index(collection_call) < source.index(timing_probe_call)
+    assert source.index(timing_probe_call) < source.index(spy_cycle_call)
     assert source.index(collection_call) < source.index(spy_cycle_call)
     assert source.index(spy_cycle_call) < source.index(capture_call)
     assert source.index(collection_call) < source.index(observation_call)
@@ -47,6 +51,12 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "prospective_spy_cycle_exit_code" in source
     assert "prospective_spy_cycle_status" in source
     assert "$prospectiveSpyCycleStatus = \"not_applicable\"" in source
+    assert "$collectionStartedAt = (Get-Date).ToUniversalTime()" in source
+    assert "$collectionReturnedAt = (Get-Date).ToUniversalTime()" in source
+    assert "kis_paper_intraday_session_capture" in source
+    assert "--scheduler-started-at" in source
+    assert "--collector-returned-at" in source
+    assert "prospective_spy_timing" not in source.split("$scheduleReceiptCommand", maxsplit=1)[1]
     assert "observation_exit_code" in source
     assert "observation_status" in source
     assert "capture_cycle_exit_code" in source

@@ -374,7 +374,7 @@ def test_compose_capture_cycle_service_is_offline_and_has_no_kis_surface() -> No
 def test_compose_prospective_spy_cycle_has_only_the_virtual_paper_route() -> None:
     compose = _COMPOSE.read_text(encoding="ascii")
     section = compose.split("\n  kis-paper-prospective-spy-cycle:\n", maxsplit=1)[1].split(
-        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+        "\n  kis-paper-prospective-spy-timing-probe:\n", maxsplit=1
     )[0]
     lowered = section.lower()
 
@@ -390,6 +390,21 @@ def test_compose_prospective_spy_cycle_has_only_the_virtual_paper_route() -> Non
     assert ":/app/market_data:ro" in section
     assert ":/app/model_artifacts" in section
     assert "network_mode: none" not in lowered
+
+
+def test_compose_prospective_spy_timing_probe_is_network_disabled_and_credential_free() -> None:
+    compose = _COMPOSE.read_text(encoding="ascii")
+    section = compose.split("\n  kis-paper-prospective-spy-timing-probe:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+    )[0]
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "thericher_v2.ops.kis_paper_prospective_spy_timing_probe" in section
+    assert "network_mode: none" in section
+    assert "KIS_" not in section
+    assert "THERICHER_MODE" not in section
+    assert ":/app/market_data:ro" in section
+    assert ":/app/model_artifacts" in section
 
 
 def _complete_kwargs() -> dict[str, object]:

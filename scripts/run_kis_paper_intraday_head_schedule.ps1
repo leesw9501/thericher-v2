@@ -149,13 +149,23 @@ if (-not (Test-Path -LiteralPath $composePath -PathType Leaf)) {
     throw "Project root must contain docker-compose.yml: $resolvedProjectRoot"
 }
 
+$collectionStartedAt = (Get-Date).ToUniversalTime()
 $collection = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-intraday-head"
+$collectionReturnedAt = (Get-Date).ToUniversalTime()
 $collectionExitCode = [int]$collection.ExitCode
-$scheduleObservedAt = (Get-Date).ToUniversalTime()
+$scheduleObservedAt = $collectionReturnedAt
 $scheduleRunId = New-ScheduleRunId -ObservedAt $scheduleObservedAt
 $scheduleObservedAtMarker = $scheduleObservedAt.ToString(
+    "o",
+    [System.Globalization.CultureInfo]::InvariantCulture
+)
+$collectionStartedAtMarker = $collectionStartedAt.ToString(
+    "o",
+    [System.Globalization.CultureInfo]::InvariantCulture
+)
+$collectionReturnedAtMarker = $collectionReturnedAt.ToString(
     "o",
     [System.Globalization.CultureInfo]::InvariantCulture
 )
@@ -180,6 +190,59 @@ $captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
 if ($collectionExitCode -eq 0) {
+    # This independent receipt cannot affect the scheduled task terminal status.
+    $spyCollectionStatus = "unavailable"
+    $spyRowCount = 0
+    $spyExactOverlapRows = 0
+    $spyCollectionReason = $null
+    $collectionPayload = Get-ProfilePayload `
+        -Output $collection.Output `
+        -Kind "kis_paper_intraday_session_capture"
+    if ($null -ne $collectionPayload) {
+        $spyTargets = @(
+            $collectionPayload.targets |
+                Where-Object { $_.target_key -eq "SPY/AMS/1m" }
+        )
+        if ($spyTargets.Count -eq 1) {
+            $spyTarget = $spyTargets[0]
+            $spyCollectionStatus = [string]$spyTarget.status
+            $spyRowCount = [int]$spyTarget.row_count
+            $spyExactOverlapRows = [int]$spyTarget.exact_overlap_rows
+            if ($null -ne $spyTarget.reason) {
+                $spyCollectionReason = [string]$spyTarget.reason
+            }
+        }
+    }
+    $timingProbeCommand = @(
+        "python",
+        "-m",
+        "thericher_v2.ops.kis_paper_prospective_spy_timing_probe",
+        "--scheduler-started-at",
+        $collectionStartedAtMarker,
+        "--collector-returned-at",
+        $collectionReturnedAtMarker,
+        "--collection-exit-code",
+        [string]$collectionExitCode,
+        "--spy-collection-status",
+        $spyCollectionStatus,
+        "--spy-row-count",
+        [string]$spyRowCount,
+        "--spy-exact-overlap-rows",
+        [string]$spyExactOverlapRows,
+        "--cache-root",
+        "/app/market_data/us_equities/kis_paper_private/intraday-head",
+        "--artifact-root",
+        "/app/model_artifacts",
+        "--repository-root",
+        "/app"
+    )
+    if ($null -ne $spyCollectionReason) {
+        $timingProbeCommand += @("--spy-reason", $spyCollectionReason)
+    }
+    $null = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "kis-paper-prospective-spy-timing-probe" `
+        -CommandOverride $timingProbeCommand
     $prospectiveSpyCycle = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
         -Service "kis-paper-prospective-spy-cycle"

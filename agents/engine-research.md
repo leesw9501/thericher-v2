@@ -1602,3 +1602,13 @@ measured completed-bar availability result at the existing schedule cadence.
 Engine will assess that probe's availability semantics only after Data records
 the source-safe timing evidence; no result may change the baseline or make a
 profitability claim by itself.
+
+## Prospective SPY Timing Interpretation Contract (2026-08-04)
+
+The Data timing probe records only a post-collection cache observation. Engine
+must retain `decision_time_availability: not_observed` for every such receipt:
+a completed prefix found after the collector returns cannot be projected back
+to the frozen 15:30 ET decision. Its schedule-relation categories carry their
+explicit Eastern offset/DST context. They do not tune the fixed
+`30/6/3/2/2` baseline, open a target, create a campaign, request GPU, or make a
+promotion or profitability claim.

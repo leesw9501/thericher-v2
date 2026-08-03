@@ -1942,6 +1942,25 @@ Data-owned timing probe must measure 15:30 ET completed-bar availability and
 end-to-end collection timing first. A no-intent probe does not need an
 Execution, account, quote, or order call.
 
+### Prospective SPY Completed-Bar Timing Probe
+
+After a successful existing intraday-head collection, the same scheduler runs
+the separate `kis-paper-prospective-spy-timing-probe` container before its
+existing SPY cycle. The probe is network-disabled, receives no `KIS_*` or mode
+environment values, and has only the read-only market-data and external
+artifact mounts. It receives the scheduler's raw host dispatch/return
+timestamps plus the collector's existing source-safe SPY aggregate result.
+It then records whether the frozen prefix was present *after collection*.
+
+The probe does not add a Windows task, start another collector, alter the
+terminal schedule receipt, or affect the scheduled task exit code. Its receipt
+records UTC and America/New_York endpoints with offset/DST state, a
+Docker-inclusive host duration, schedule relation, aggregate collection facts,
+and `decision_time_availability: not_observed`. It never establishes that data
+was available at 15:30 ET or that a Paper decision could have executed before
+expiry. Do not change the trigger or validity contract from one receipt;
+interpret a real measurement through the next bounded Data/Engine review.
+
 ### Static Norgate Development Receipt
 
 To re-attest the already retained static Norgate trial panel and write or verify

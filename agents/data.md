@@ -1440,3 +1440,20 @@ left `D:`. The remaining Data-owned fact is the exact availability of the
 15:30 ET completed prefix at the current schedule cadence. It needs a
 session-time capability probe before any cadence, TTL, or source-finality
 claim changes.
+
+## Prospective SPY Completed-Bar Timing Probe (2026-08-04)
+
+The existing `session-capture` collector now exposes its already source-safe
+SPY target status, row count, overlap count, and sanitized reason to one
+post-collection timing probe. The scheduler records host dispatch and return
+endpoints, while the network-disabled probe reads the same `intraday-head`
+cache and records an external aggregate receipt. It starts no new KIS client,
+collector, cache, or raw-data retention path.
+
+The receipt explicitly distinguishes `present_after_collection` from
+decision-time availability, carries UTC plus America/New_York offset/DST
+timestamps, and labels the schedule relation without making a feasibility
+claim. The owned task is ready for its next scheduled measurement. Its current
+04:31 KST daylight relation is at or after the exclusive expiry boundary;
+winter 04:31 KST is before the decision cutoff. A real receipt quantifies only
+the current source/collector lag for a later schedule proposal.

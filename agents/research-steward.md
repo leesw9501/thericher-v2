@@ -427,3 +427,10 @@ research campaign. It creates no model lineage, sealed-evaluation spend,
 candidate selection, ensemble record, checkpoint, or GPU appointment. The
 RTX 4090 remains available for a separate frozen campaign with qualified
 inputs; it must not be occupied by this timing or route-integration work.
+
+## Prospective SPY Timing-Probe Custody (2026-08-04)
+
+The completed-bar timing probe is Data/Engine observability, not a research
+campaign. It creates no model lineage, sealed-evaluation spend, candidate
+selection, checkpoint, ensemble record, or GPU appointment. GPU custody stays
+available for a separately frozen research contract.

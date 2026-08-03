@@ -2588,3 +2588,32 @@ diagnostic interval, so this is a test-throughput finding rather than a route
 or product failure. Keep the clean-root parallel runner as the goal-boundary
 authority and investigate the serial runtime only as a separately bounded
 throughput package.
+
+## Prospective SPY Completed-Bar Timing Probe (2026-08-04)
+
+`kis-spy-completed-bar-decision-timing-probe-v1` now has an independent
+Data-only receipt path. The existing intraday-head scheduler records its host
+collector dispatch and return endpoints, extracts only the existing
+kind-tagged SPY aggregate counts, and invokes a network-disabled container
+after a successful collection. That container has no KIS environment values,
+does not create a client, and uses the read-only head cache only to classify
+whether the prefix exists *after* collection. Its receipt includes UTC and
+America/New_York timestamps, offsets, DST state, collector wall-clock order,
+and a categorical schedule relation; it never emits a decision-time
+availability or feasibility verdict. The probe is deliberately absent from the
+terminal scheduler receipt, so its own failure cannot turn a Data measurement
+into a scheduled-task recovery result.
+
+Claude's timing challenge was `supported-with-limits`: a post-collection cache
+cannot be relabeled as 15:30 availability, Docker lifecycle time must stay
+visible, and the fixed 04:31 KST trigger has different semantics across DST.
+The static schedule relation is already clear: it is before the decision
+cutoff in standard time and at or after the exclusive expiry boundary in
+daylight time. The pending worker records lag magnitude and source state only;
+it cannot justify a cadence or TTL change by itself.
+
+Focused tests, host smoke, network-disabled Docker smoke, and the clean-root
+parallel suite (`2,379 passed, 23 skipped` in 189.72 seconds) all passed. The
+existing `thericher-kis-paper-intraday-head` task is `Ready` with its next
+owned run at 02:31 KST; no foreground wait, new collector, KIS account/quote/
+order call, Paper action, GPU appointment, or model change was created.

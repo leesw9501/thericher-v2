@@ -152,6 +152,7 @@ $schedules = @(
         ImageServices = @(
             "kis-paper-intraday-head",
             "kis-paper-prospective-spy-cycle",
+            "kis-paper-prospective-spy-timing-probe",
             "profiled-mtf-forward-capture-cycle",
             "kis-paper-intraday-pair-observation",
             "kis-paper-intraday-head-receipt"

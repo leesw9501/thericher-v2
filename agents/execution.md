@@ -633,3 +633,13 @@ Paper request was made. Claude's final route review returned
 `review_unavailable`; that does not change the tested route boundary. The
 next timing probe is Data/Engine-only and must not make account, quote, or
 order calls.
+
+## Prospective SPY Timing-Probe Execution Isolation (2026-08-04)
+
+The timing probe's compose service is network-disabled, carries no `KIS_*` or
+mode environment value, and imports no Execution module. It has only the
+read-only market-data mount and writable external artifact mount. Its route
+cannot load Paper configuration or reach account, quote, order, intent,
+canary, local-paper, or live behavior. The existing virtual-Paper cycle and
+its call-time expiry boundary remain unchanged; timing evidence is not a
+submission permission.

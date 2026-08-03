@@ -1093,3 +1093,22 @@ same-session causal misreading without adding a new gate.
   runner. It completed `2,373 passed, 23 skipped` in 188.50 seconds while the
   changed-path serial group passed independently. This is an evidence-backed
   verification path, not a relaxation of execution tests.
+
+## Prospective SPY Timing-Probe Dispatch (2026-08-04)
+
+- **Ready:** the data-only timing receipt, scheduler hook, and Docker isolation
+  are implemented and smoke-tested. The next owned intraday-head task may
+  write one actual measurement; no foreground wait is dispatched.
+- **Owned:** Data owns source and collector timing; Engine owns the strictly
+  causal interpretation; Execution owns no probe action; Research Steward
+  keeps GPU free. The probe does not alter the terminal scheduler receipt or
+  its exit authority.
+- **Due:** the existing task is `Ready` for 02:31 KST, followed by its 04:31
+  KST daylight-boundary observation. The task, not Codex, owns those times.
+- **Improvement:** the independent, network-disabled receipt reports raw UTC
+  and Eastern endpoints plus Docker-inclusive host duration, rather than
+  treating the post-collection cache as an availability claim. This removes a
+  timing-leakage ambiguity without widening KIS or Paper side effects.
+- **Review:** Claude returned `supported-with-limits`; its limits are external
+  receipt isolation, DST-aware timestamps, no terminal-exit coupling, and no
+  feasibility verdict. The constraints are implemented and tested.

@@ -8949,6 +8949,28 @@ returned `supported-with-limits`; its binding limits are no wall-clock review
 worker, no mandatory write for an unchanged state, and no authority for the
 review to hold a ready lane.
 
+## 2026-08-04 - Measure prospective SPY timing without widening the scheduler outcome
+
+Decision: add one network-disabled, credential-free
+`kis-paper-prospective-spy-timing-probe` service after the existing successful
+intraday-head collector and before the existing SPY cycle. The scheduler passes
+only its raw host dispatch/return timestamps and the collector's existing
+source-safe SPY aggregate fields. The probe writes its own external receipt
+and may read the existing head cache through the cache-only prospective capture
+boundary. It must not become a terminal schedule stage, a scheduler exit-code
+input, a second collector, an account/quote/order route, or a Paper permission.
+
+Reason: a post-collection cache observation is useful for quantifying current
+source and container lag, but it cannot prove the cache was available at the
+15:30 ET decision. The fixed 04:31 KST timing is also DST-dependent: it is
+before the cutoff in standard time and at or after the exclusive 15:31 ET
+expiry in daylight time. Preserve raw UTC and Eastern endpoints, explicit
+offset/DST facts, and Docker-inclusive duration so a later schedule proposal
+has evidence without fabricating a feasibility conclusion. Claude's
+falsification-first verdict was `supported-with-limits`; the external receipt,
+network isolation, no-terminal-coupling, and no-feasibility constraints are
+binding.
+
 ## 2026-08-04 - Couple the prospective SPY receipt to the existing virtual-Paper canary
 
 Decision: append one `kis-paper-prospective-spy-cycle` Docker service to the
